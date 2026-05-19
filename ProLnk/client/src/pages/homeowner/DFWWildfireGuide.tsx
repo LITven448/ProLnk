@@ -85,7 +85,7 @@ export default function DFWWildfireGuide() {
   return (
     <div style={{ background: '#0a0a0a', color: '#e5e7eb', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280' }}>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280′ }}>
           🔥 ProLnk Homeowner Resource — DFW Edition
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 5vw, 40px)', fontWeight: 700, color: '#f9fafb', lineHeight: 1.2, marginBottom: 16 }}>

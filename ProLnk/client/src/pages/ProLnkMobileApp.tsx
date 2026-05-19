@@ -62,7 +62,7 @@ export default function ProLnkMobileApp() {
             {scenarios.map((s, i) => (
               <button key={i} onClick={() => setScenario(i)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: scenario === i ? '#F5E642' : '#1e3a5f', color: scenario === i ? '#0A1628' : '#fff' }}>
+                  background: scenario === i ? '#F5E642′ : '#1e3a5f', color: scenario === i ? '#0A1628' : '#fff' }}>
                 {s.label}
               </button>
             ))}

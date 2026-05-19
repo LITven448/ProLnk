@@ -91,8 +91,8 @@ export default function DFWExpansionTankGuide() {
         <h2 style={styles.sectionTitle}>📍 The DFW Closed System Problem</h2>
         <p style={styles.text}>Every DFW city now uses backflow preventers on municipal water connections — which creates a "closed system." When your water heater heats water, it expands (water increases volume ~2% when heated from 50°F to 120°F). In an open system, this expansion flows back toward the street. In a closed DFW system, it has nowhere to go.</p>
         <div style={styles.alert}>
-          <strong style={{ color: '#fca5a5' }}>🚨 Without an Expansion Tank:</strong>
-          <span style={{ color: '#fca5a5' }}> Thermal expansion creates pressure spikes of 150+ PSI daily. This stresses pipe fittings, PRV, and water heater — shortening all three by years and frequently tripping the T&P relief valve.</span>
+          <strong style={{ color: '#fca5a5′ }}>🚨 Without an Expansion Tank:</strong>
+          <span style={{ color: '#fca5a5′ }}> Thermal expansion creates pressure spikes of 150+ PSI daily. This stresses pipe fittings, PRV, and water heater — shortening all three by years and frequently tripping the T&P relief valve.</span>
         </div>
         <div style={styles.grid}>
           <div style={styles.card}><div style={styles.cardTitle}>🏙️ DFW Mandate</div><div style={styles.text}>All major DFW cities require expansion tanks on water heater permits — but millions of pre-code homes are unprotected</div></div>
@@ -115,9 +115,9 @@ export default function DFWExpansionTankGuide() {
         <label style={styles.label}>Home Type / Age</label>
         <select style={styles.select} value={homeType} onChange={e => setHomeType(e.target.value)}>
           <option value="">Select home age...</option>
-          <option value="pre2000">Pre-2000 construction</option>
-          <option value="2000_2010">2000–2010 construction</option>
-          <option value="post2010">Post-2010 construction</option>
+          <option value="pre2000″>Pre-2000 construction</option>
+          <option value="2000_2010″>2000–2010 construction</option>
+          <option value="post2010″>Post-2010 construction</option>
           <option value="new_heater">Getting a new water heater now</option>
         </select>
         <label style={styles.label}>DFW City</label>
@@ -138,9 +138,9 @@ export default function DFWExpansionTankGuide() {
           <div style={styles.result}>
             <div style={styles.resultTitle}>Expansion Tank Assessment</div>
             <span style={{ ...styles.badge, backgroundColor: result.color + '22', color: result.color, border: `1px solid ${result.color}` }}>{result.requirement}</span>
-            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642' }}>Risk Without Tank:</strong> {result.risk}</p>
-            <p style={{ color: '#cbd5e1', marginTop: '8px' }}><strong style={{ color: '#F5E642' }}>Cost:</strong> {result.cost}</p>
-            <p style={{ color: '#cbd5e1', marginTop: '8px' }}><strong style={{ color: '#F5E642' }}>Urgency:</strong> {result.urgency}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642′ }}>Risk Without Tank:</strong> {result.risk}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '8px' }}><strong style={{ color: '#F5E642′ }}>Cost:</strong> {result.cost}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '8px' }}><strong style={{ color: '#F5E642′ }}>Urgency:</strong> {result.urgency}</p>
             {city && cityExpansion[city] && <p style={{ color: '#94a3b8', marginTop: '12px', fontSize: '0.875rem' }}>📍 {cityExpansion[city].note}</p>}
           </div>
         )}

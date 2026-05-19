@@ -23,7 +23,7 @@ export default function DFWHVACPostInstallCheck2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '28px' }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', backgroundColor: selected === s.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
+              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f', backgroundColor: selected === s.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: ’pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
               🌡️ {s.label}
             </button>
           ))}
@@ -38,10 +38,10 @@ export default function DFWHVACPostInstallCheck2026() {
         )}
 
         <div style={{ backgroundColor: '#0d1f3c', borderRadius: '12px', padding: '24px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642' }}>📋 Day-1 Post-Install Checklist</h2>
-          {['Manifold gauge readings documented by installer','Temperature differential 15-20°F confirmed','Static pressure under 0.5" w.c.','All registers open and flowing','Condensate drain flowing freely','Permit inspection scheduled'].map((item, i) => (
+          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642′ }}>📋 Day-1 Post-Install Checklist</h2>
+          {['Manifold gauge readings documented by installer','Temperature differential 15-20°F confirmed','Static pressure under 0.5″ w.c.','All registers open and flowing','Condensate drain flowing freely','Permit inspection scheduled'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
-              <span style={{ color: '#F5E642' }}>✅</span>
+              <span style={{ color: '#F5E642′ }}>✅</span>
               <span style={{ color: '#cbd5e1', fontSize: '14px' }}>{item}</span>
             </div>
           ))}

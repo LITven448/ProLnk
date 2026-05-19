@@ -19,7 +19,7 @@ const results: ResultMap = {
     'Shaded / North Facing': { caulkType: 'Paintable Latex Caulk', product: 'Any quality paintable latex; match to interior paint color', tips: 'Standard interior latex caulk works well for all interior DFW window trim. Sand and prime trim before painting over caulk.', redoFrequency: 'Every 5–8 years' },
     'High Humidity Area': { caulkType: 'Mold-Resistant Paintable Latex or Silicone', product: 'GE Advanced Silicone for bathroom windows', tips: 'For windows in bathrooms or laundry rooms, use silicone or mold-resistant formula even on interior to prevent black mold growth.', redoFrequency: 'Every 4–6 years in high-humidity interior spaces' },
     'New Window Installation': { caulkType: 'Paintable Latex Caulk', product: 'Apply between window casing and drywall / wall surface', tips: 'Fill gap between trim and wall, tool smooth, prime before painting. Interior latex is fine — save silicone for the exterior.', redoFrequency: 'Inspect at 3 years; touch up as needed' },
-    'Recaulking Existing Window': { caulkType: 'Paintable Latex Caulk', product: 'Remove cracked or separated caulk before applying fresh bead', tips: 'DFW interior temperature fluctuations cause latex to crack at trim joints over time. Re-caulking is a simple DIY repair.', redoFrequency: 'Touch up every 3–5 years; full redo every 7–10' },
+    'Recaulking Existing Window': { caulkType: 'Paintable Latex Caulk', product: 'Remove cracked or separated caulk before applying fresh bead', tips: 'DFW interior temperature fluctuations cause latex to crack at trim joints over time. Re-caulking is a simple DIY repair.', redoFrequency: 'Touch up every 3–5 years; full redo every 7–10′ },
   },
   'Window-to-Siding Joint': {
     'Full DFW Sun / South or West Facing': { caulkType: '100% Silicone or Polyurethane', product: 'Quad Max or 100% silicone — polyurethane bonds well to masonry/brick', tips: 'Window-to-brick or window-to-stucco joints in DFW move significantly from thermal expansion. Polyurethane stays flexible better than latex on masonry.', redoFrequency: 'Every 5–8 years; inspect annually on south/west facades' },
@@ -54,13 +54,13 @@ export default function DFWWindowCaulkTypes() {
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642', letterSpacing: '0.08em', textTransform: 'uppercase' }}>🪟 DFW Window Guide</div>
-        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25' }}>Window Caulk Types for DFW Homes</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25′ }}>Window Caulk Types for DFW Homes</h1>
+        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6′ }}>
           DFW windows face extreme thermal cycling — hot summers, sudden cold snaps, and high UV. The wrong caulk fails within 2–3 years. Silicone dominates exterior applications; paintable latex works for interior trim; acoustic caulk adds sound control. Get the right caulk for your specific location and DFW conditions.
         </p>
 
         <div style={{ backgroundColor: '#111E35', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642' }}>⚙️ Get Your DFW Caulk Recommendation</h2>
+          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642′ }}>⚙️ Get Your DFW Caulk Recommendation</h2>
           <div style={{ display: 'grid', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '13px', color: '#94A3B8', marginBottom: '6px' }}>Caulking Location</label>
@@ -80,12 +80,12 @@ export default function DFWWindowCaulkTypes() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642′ }}>
             <div style={{ fontSize: '13px', color: '#F5E642', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>✅ Recommended Caulk</div>
             <div style={{ fontSize: '20px', fontWeight: '700', marginBottom: '4px' }}>{result.caulkType}</div>
             <div style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '12px' }}>📦 {result.product}</div>
             <p style={{ color: '#94A3B8', lineHeight: '1.6', fontSize: '14px', marginBottom: '10px' }}>{result.tips}</p>
-            <div style={{ fontSize: '13px', color: '#F5E642' }}>🔄 Redo frequency: {result.redoFrequency}</div>
+            <div style={{ fontSize: '13px', color: '#F5E642′ }}>🔄 Redo frequency: {result.redoFrequency}</div>
           </div>
         )}
 

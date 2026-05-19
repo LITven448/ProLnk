@@ -49,7 +49,7 @@ export default function DFWBathroomRenovationTimeline() {
           <h2 style={{ fontSize: 15, fontWeight: 600, color: '#F5E642', marginBottom: 14 }}>🛁 Select Your Bathroom Type</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {Object.entries(bathroomTypes).map(([key, val]) => (
-              <button key={key} onClick={() => setType(key)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${type === key ? '#F5E642' : '#1E3050'}`, background: type === key ? '#F5E642' : 'transparent', color: type === key ? '#0A1628' : '#9BAEC8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>{val.label}</button>
+              <button key={key} onClick={() => setType(key)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${type === key ? '#F5E642' : '#1E3050'}`, background: type === key ? '#F5E642′ : ’transparent', color: type === key ? '#0A1628′ : '#9BAEC8', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>{val.label}</button>
             ))}
           </div>
           {selected && (

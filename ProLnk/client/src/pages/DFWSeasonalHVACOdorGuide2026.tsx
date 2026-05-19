@@ -105,8 +105,8 @@ export default function DFWSeasonalHVACOdorGuide2026() {
               ].map(o => (
                 <button key={o.v} onClick={() => setSmell(o.v)}
                   style={{ padding: '12px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: smell === o.v ? '#F5E642' : '#1e3a5f',
-                    backgroundColor: smell === o.v ? '#F5E64220' : '#0d1f3c',
+                    borderColor: smell === o.v ? '#F5E642′ : '#1e3a5f',
+                    backgroundColor: smell === o.v ? '#F5E64220′ : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -124,8 +124,8 @@ export default function DFWSeasonalHVACOdorGuide2026() {
               ].map(o => (
                 <button key={o.v} onClick={() => setSituation(o.v)}
                   style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: situation === o.v ? '#F5E642' : '#1e3a5f',
-                    backgroundColor: situation === o.v ? '#F5E64220' : '#0d1f3c',
+                    borderColor: situation === o.v ? '#F5E642′ : '#1e3a5f',
+                    backgroundColor: situation === o.v ? '#F5E64220′ : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -143,7 +143,7 @@ export default function DFWSeasonalHVACOdorGuide2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #F5E64240' }}>
+        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #F5E64240′ }}>
           <p style={{ color: '#F5E642', fontWeight: 600, margin: '0 0 4px' }}>🔗 ProLnk DFW HVAC Pros Standing By</p>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Get connected with certified DFW HVAC techs for any smell that concerns you.</p>
         </div>

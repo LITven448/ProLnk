@@ -42,7 +42,7 @@ export default function ProLnkMatchingExplained() {
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, marginBottom: 40, boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628' }}>🆚 Why ProLnk Beats Angi & Thumbtack</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628′ }}>🆚 Why ProLnk Beats Angi & Thumbtack</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginTop: 20 }}>
             {[
               { platform: 'Angi', color: '#ff6b6b', issues: ['Pay-per-click leads', 'Same lead sold to 5+ pros', 'No quality guarantee', 'Pros pass cost to you'] },
@@ -58,11 +58,11 @@ export default function ProLnkMatchingExplained() {
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628' }}>⚙️ How Matching Works for Your Job Type</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628′ }}>⚙️ How Matching Works for Your Job Type</h2>
           <p style={{ color: '#555', fontSize: 15, marginBottom: 20 }}>Select a job type to see exactly how ProLnk finds your match.</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {jobTypes.map((j, i) => (
-              <button key={j.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+              <button key={j.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                 {j.icon} {j.label}
               </button>
             ))}

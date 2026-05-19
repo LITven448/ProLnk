@@ -43,15 +43,15 @@ export default function HomesteadExemptionGuide() {
           Save $1,200+ on Property Taxes Every Year
         </p>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#f8fafc' }}>📋 What Is a Homestead Exemption?</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>
-            Texas law allows homeowners to reduce their taxable home value by <strong style={{ color: '#38bdf8' }}>$100,000 for school district taxes</strong>, plus a <strong style={{ color: '#38bdf8' }}>20% cap on annual tax assessment increases</strong>. This is one of the most powerful tax benefits available to Texas homeowners — and many miss it simply because they never filed.
+            Texas law allows homeowners to reduce their taxable home value by <strong style={{ color: '#38bdf8′ }}>$100,000 for school district taxes</strong>, plus a <strong style={{ color: '#38bdf8' }}>20% cap on annual tax assessment increases</strong>. This is one of the most powerful tax benefits available to Texas homeowners — and many miss it simply because they never filed.
           </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
-          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155' }}>
+          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155′ }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>✅</div>
             <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f8fafc', marginBottom: 8 }}>Qualifications</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#94a3b8', lineHeight: 1.8 }}>
@@ -61,7 +61,7 @@ export default function HomesteadExemptionGuide() {
               <li>• No other homestead exemption in any state</li>
             </ul>
           </div>
-          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155' }}>
+          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155′ }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>📅</div>
             <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f8fafc', marginBottom: 8 }}>Key Deadlines</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#94a3b8', lineHeight: 1.8 }}>
@@ -73,7 +73,7 @@ export default function HomesteadExemptionGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#f8fafc' }}>📍 How to File by County</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {Object.entries(countyLinks).map(([key, info]) => (
@@ -92,7 +92,7 @@ export default function HomesteadExemptionGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#f8fafc' }}>🧮 Savings Calculator</h2>
           <div style={{ display: 'flex', gap: 16, marginBottom: 20, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 200 }}>
@@ -101,7 +101,7 @@ export default function HomesteadExemptionGuide() {
                 type="number"
                 value={homeValue}
                 onChange={e => setHomeValue(e.target.value)}
-                placeholder="485000"
+                placeholder="485000″
                 style={{ width: '100%', padding: '10px 14px', backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: 8, color: '#f1f5f9', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -126,9 +126,9 @@ export default function HomesteadExemptionGuide() {
             Calculate My Savings
           </button>
           {savings && (
-            <div style={{ marginTop: 20, backgroundColor: '#0c2340', borderRadius: 10, padding: 20, border: '1px solid #0ea5e9' }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0c2340', borderRadius: 10, padding: 20, border: '1px solid #0ea5e9′ }}>
               <div style={{ fontSize: 13, color: '#7dd3fc', marginBottom: 4 }}>Estimated Annual School Tax Savings</div>
-              <div style={{ fontSize: 32, fontWeight: 800, color: '#38bdf8' }}>
+              <div style={{ fontSize: 32, fontWeight: 800, color: '#38bdf8′ }}>
                 ${savings.low.toLocaleString()} – ${savings.high.toLocaleString()}/yr
               </div>
               <div style={{ fontSize: 13, color: '#64748b', marginTop: 4 }}>Based on {countyLinks[county].name} school district tax rate + homestead exemption of $100,000</div>
@@ -137,14 +137,14 @@ export default function HomesteadExemptionGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
-          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155' }}>
+          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155′ }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>👴</div>
             <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f8fafc', marginBottom: 8 }}>Over-65 Additional Exemption</h3>
             <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: 14 }}>
               Additional $10,000 exemption on school district taxes. School taxes are <strong style={{ color: '#f8fafc' }}>frozen</strong> at the year you turn 65 — they can never increase again on that home.
             </p>
           </div>
-          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155' }}>
+          <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155′ }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>🎖️</div>
             <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f8fafc', marginBottom: 8 }}>Disabled Veteran Exemption</h3>
             <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: 14 }}>

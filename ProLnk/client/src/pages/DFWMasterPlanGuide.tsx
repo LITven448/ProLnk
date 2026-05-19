@@ -72,7 +72,7 @@ export default function DFWMasterPlanGuide() {
 
         <div style={{ backgroundColor: '#1e2d4a', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '16px', marginBottom: '10px' }}>📋 Why This Matters Before Buying</h2>
-          <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.7' }}>
+          <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.7′ }}>
             That empty field next to a DFW home listing could be zoned for an apartment complex, commercial strip, or tollway expansion. 
             Every DFW city publishes a comprehensive plan and a zoning map. Checking these before purchase is critical — 
             changes can be approved in as little as 3–6 months and dramatically affect your property value and quality of life.
@@ -87,8 +87,8 @@ export default function DFWMasterPlanGuide() {
                 key={c.city}
                 onClick={() => { setSelectedCity(c.city); setActiveConcern(null); }}
                 style={{
-                  backgroundColor: selectedCity === c.city ? '#F5E642' : '#1e2d4a',
-                  color: selectedCity === c.city ? '#0A1628' : '#fff',
+                  backgroundColor: selectedCity === c.city ? '#F5E642′ : '#1e2d4a',
+                  color: selectedCity === c.city ? '#0A1628′ : '#fff',
                   border: '1px solid #F5E642',
                   borderRadius: '8px',
                   padding: '10px 18px',
@@ -134,12 +134,12 @@ export default function DFWMasterPlanGuide() {
                     borderRadius: '10px',
                     padding: '16px',
                     cursor: 'pointer',
-                    border: activeConcern === idx ? '2px solid #F5E642' : '2px solid transparent',
+                    border: activeConcern === idx ? '2px solid #F5E642′ : '2px solid transparent',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontWeight: '600', fontSize: '15px' }}>🔎 {c.concern}</span>
-                    <span style={{ color: '#F5E642' }}>{activeConcern === idx ? '▲' : '▼'}</span>
+                    <span style={{ color: '#F5E642′ }}>{activeConcern === idx ? '▲' : '▼'}</span>
                   </div>
                   {activeConcern === idx && (
                     <p style={{ color: '#cbd5e1', fontSize: '13px', lineHeight: '1.7', marginTop: '12px' }}>{c.lookup}</p>

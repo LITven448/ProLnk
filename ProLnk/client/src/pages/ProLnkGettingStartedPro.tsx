@@ -47,8 +47,8 @@ export default function ProLnkGettingStartedPro() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {Object.keys(tradeTimeMap).map(t => (
               <button key={t} onClick={() => setTrade(t)} style={{
-                background: trade === t ? '#F5E642' : '#1A2F4A',
-                color: trade === t ? '#0A1628' : '#fff',
+                background: trade === t ? '#F5E642′ : '#1A2F4A',
+                color: trade === t ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14
               }}>{t}</button>
             ))}

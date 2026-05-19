@@ -15,7 +15,7 @@ const months = [
   { name: 'Dec', label: 'December', avail: 'high', index: 1, wait: '1 – 3 days', note: 'Winter deals — lowest demand all year' },
 ];
 
-const colors: Record<string, string> = { high: '#22c55e', medium: '#F5E642', low: '#ef4444' };
+const colors: Record<string, string> = { high: '#22c55e', medium: '#F5E642', low: '#ef4444′ };
 const labels: Record<string, string> = { high: '✅ High Availability', medium: '⚠️ Moderate', low: '🔴 Booked Out' };
 
 export default function DFWBestTimeToHireRoofer2026() {
@@ -40,8 +40,8 @@ export default function DFWBestTimeToHireRoofer2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 28 }}>
           {months.map((m, i) => (
             <button key={m.name} onClick={() => setSelected(i)} style={{
-              background: selected === i ? '#F5E642' : '#1e2d45',
-              color: selected === i ? '#0A1628' : '#fff',
+              background: selected === i ? '#F5E642′ : '#1e2d45',
+              color: selected === i ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 8, padding: '10px 4px', cursor: 'pointer', fontWeight: 600, fontSize: 14,
             }}>{m.name}</button>
           ))}

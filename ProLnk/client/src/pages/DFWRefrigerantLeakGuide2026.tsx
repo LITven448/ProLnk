@@ -65,8 +65,8 @@ export default function DFWRefrigerantLeakGuide2026() {
             'Running a compressor with insufficient refrigerant causes liquid slugging — often results in compressor replacement ($1,800–$3,500).',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ color: '#F5E642' }}>▸</span>
-              <span style={{ color: '#cbd5e1' }}>{fact}</span>
+              <span style={{ color: '#F5E642′ }}>▸</span>
+              <span style={{ color: '#cbd5e1′ }}>{fact}</span>
             </div>
           ))}
         </div>
@@ -77,8 +77,8 @@ export default function DFWRefrigerantLeakGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => toggleSymptom(s.id)}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', borderRadius: '8px', border: selected.includes(s.id) ? '2px solid #F5E642' : '2px solid #1e3a5f', cursor: 'pointer', background: selected.includes(s.id) ? '#1a2f4a' : '#0d1f36', color: '#e2e8f0', textAlign: 'left', fontSize: '0.95rem' }}>
-                <span style={{ width: '18px', height: '18px', borderRadius: '4px', border: '2px solid', borderColor: selected.includes(s.id) ? '#F5E642' : '#475569', background: selected.includes(s.id) ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', borderRadius: '8px', border: selected.includes(s.id) ? '2px solid #F5E642′ : '2px solid #1e3a5f', cursor: ’pointer', background: selected.includes(s.id) ? '#1a2f4a' : '#0d1f36', color: '#e2e8f0', textAlign: 'left', fontSize: '0.95rem' }}>
+                <span style={{ width: '18px', height: '18px', borderRadius: '4px', border: '2px solid', borderColor: selected.includes(s.id) ? '#F5E642′ : '#475569', background: selected.includes(s.id) ? '#F5E642' : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   {selected.includes(s.id) && <span style={{ color: '#0A1628', fontSize: '12px', fontWeight: 700 }}>✓</span>}
                 </span>
                 {s.label}

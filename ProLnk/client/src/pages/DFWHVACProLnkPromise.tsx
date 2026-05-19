@@ -74,11 +74,11 @@ export default function DFWHVACProLnkPromise() {
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ color: '#F5E642', fontSize: '0.85rem', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>ProLnk in DFW</span>
           <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '0.5rem 0 0.75rem' }}>The ProLnk HVAC Promise for DFW</h1>
-          <p style={{ color: '#94A3B8', lineHeight: 1.7 }}>ProLnk isn't just a matching service — it's a set of binding commitments to every DFW homeowner. Here's exactly what we promise and how you can hold us to every one of them.</p>
+          <p style={{ color: '#94A3B8', lineHeight: 1.7 }}>ProLnk isn't just a matching service — it’s a set of binding commitments to every DFW homeowner. Here’s exactly what we promise and how you can hold us to every one of them.</p>
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <label style={{ display: 'block', fontWeight: 600, marginBottom: '0.5rem', color: '#CBD5E1' }}>What's your HVAC concern?</label>
+          <label style={{ display: 'block', fontWeight: 600, marginBottom: '0.5rem', color: '#CBD5E1′ }}>What’s your HVAC concern?</label>
           <input
             value={concern}
             onChange={e => setConcern(e.target.value)}
@@ -104,7 +104,7 @@ export default function DFWHVACProLnkPromise() {
               style={{ background: '#0F2140', border: `1px solid ${active === p.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <span style={{ fontSize: '1.5rem' }}>{p.icon}</span>
-                <span style={{ fontWeight: 600, color: active === p.id ? '#F5E642' : '#E8EDF5' }}>{p.title}</span>
+                <span style={{ fontWeight: 600, color: active === p.id ? '#F5E642′ : '#E8EDF5' }}>{p.title}</span>
               </div>
               {active === p.id && (
                 <div style={{ marginTop: '1rem' }}>

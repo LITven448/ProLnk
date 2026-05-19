@@ -45,43 +45,43 @@ export default function DFWWellnessSpaceGuide() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW homes average 2,500+ sqft — most have a spare room that can become a daily wellness sanctuary. This is the fastest-growing home upgrade category in 2026.</p>
 
         <div style={{ background: '#1e293b', borderRadius: 10, padding: '16px 20px', marginBottom: 32, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, textAlign: 'center' }}>
-          <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>+22%</div><div style={{ fontSize: 12, color: '#94a3b8' }}>wellness space requests in DFW 2025-26</div></div>
-          <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>$12K</div><div style={{ fontSize: 12, color: '#94a3b8' }}>avg DFW wellness conversion spend</div></div>
-          <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>60%</div><div style={{ fontSize: 12, color: '#94a3b8' }}>recoup at resale (vs 45% national avg)</div></div>
+          <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>+22%</div><div style={{ fontSize: 12, color: '#94a3b8' }}>wellness space requests in DFW 2025-26</div></div>
+          <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>$12K</div><div style={{ fontSize: 12, color: '#94a3b8' }}>avg DFW wellness conversion spend</div></div>
+          <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>60%</div><div style={{ fontSize: 12, color: '#94a3b8' }}>recoup at resale (vs 45% national avg)</div></div>
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌿 Wellness Space Options</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌿 Wellness Space Options</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 36 }}>
           {wellnessTypes.map(w => (
-            <div key={w.type} style={{ background: '#1e293b', borderRadius: 10, padding: '16px 18px', border: '1px solid #334155' }}>
+            <div key={w.type} style={{ background: '#1e293b', borderRadius: 10, padding: '16px 18px', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
                   <span style={{ fontSize: 22 }}>{w.icon}</span>
                   <div>
                     <div style={{ fontWeight: 700 }}>{w.type}</div>
-                    <div style={{ fontSize: 12, color: '#94a3b8' }}>Min: {w.minSqft} sqft</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>Min: {w.minSqft} sqft</div>
                   </div>
                 </div>
                 <span style={{ color: '#F5E642', fontWeight: 600, fontSize: 14 }}>{w.cost}</span>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                 {w.requirements.map((r, i) => (
-                  <span key={i} style={{ fontSize: 12, background: '#0A1628', padding: '4px 8px', borderRadius: 4, color: '#94a3b8' }}>✓ {r}</span>
+                  <span key={i} style={{ fontSize: 12, background: '#0A1628', padding: '4px 8px', borderRadius: 4, color: '#94a3b8′ }}>✓ {r}</span>
                 ))}
               </div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Wellness Space Planner</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Wellness Space Planner</h2>
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', marginBottom: 24 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Available Sq Footage</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Available Sq Footage</label>
               <input type="number" value={sqftAvail} onChange={e => setSqftAvail(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Wellness Goal</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Wellness Goal</label>
               <select value={wellnessGoal} onChange={e => setWellnessGoal(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="meditation">Meditation / Mindfulness</option>
                 <option value="yoga">Yoga Studio</option>
@@ -92,9 +92,9 @@ export default function DFWWellnessSpaceGuide() {
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Budget: ${parseInt(budget).toLocaleString()}</label>
-            <input type="range" min="1500" max="25000" step="500" value={budget} onChange={e => setBudget(e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#94a3b8' }}><span>$1.5K</span><span>$25K</span></div>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Budget: ${parseInt(budget).toLocaleString()}</label>
+            <input type="range" min="1500″ max="25000" step="500" value={budget} onChange={e => setBudget(e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#94a3b8′ }}><span>$1.5K</span><span>$25K</span></div>
           </div>
           <button onClick={calculate} style={{ width: '100%', padding: '12px', background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Design My Wellness Space →
@@ -104,7 +104,7 @@ export default function DFWWellnessSpaceGuide() {
         {result && (
           <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', border: `1px solid ${result.feasible ? '#F5E642' : '#f87171'}` }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16, fontWeight: 700 }}>{result.type.icon} Your Wellness Space Plan</h3>
-            <div style={{ background: result.feasible ? '#14532d30' : '#7f1d1d30', border: `1px solid ${result.feasible ? '#4ade80' : '#f87171'}`, borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 14 }}>
+            <div style={{ background: result.feasible ? '#14532d30′ : '#7f1d1d30', border: `1px solid ${result.feasible ? '#4ade80' : '#f87171'}`, borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 14 }}>
               {result.feasible ? '✅' : '⚠️'} {result.note}
             </div>
             <div style={{ marginBottom: 16 }}><strong>Requirements for {result.type.type}:</strong>

@@ -26,25 +26,25 @@ export default function DFWEmergencyShutoffsGuide2026() {
   const info = homeTypes[selected];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>🚨</div>
-          <h1 style={{ color: "#F5E642", fontSize: "2rem", marginBottom: ".5rem" }}>DFW Emergency Home Shutoffs Guide 2026</h1>
-          <p style={{ color: "#94a3b8" }}>Every DFW homeowner must know how to shut off water, gas, electric, and HVAC</p>
+          <h1 style={{ color: "#F5E642″, fontSize: "2rem", marginBottom: ".5rem" }}>DFW Emergency Home Shutoffs Guide 2026</h1>
+          <p style={{ color: "#94a3b8″ }}>Every DFW homeowner must know how to shut off water, gas, electric, and HVAC</p>
         </div>
 
-        <div style={{ background: "#3b0000", border: "1px solid #ef4444", borderRadius: 12, padding: "1rem", marginBottom: "1.5rem" }}>
-          <div style={{ color: "#ef4444", fontWeight: 700 }}>⚠️ IN A GAS EMERGENCY</div>
-          <div style={{ color: "#fca5a5", marginTop: ".5rem" }}>Do NOT use light switches or phones inside. Evacuate immediately. Call 911 and Atmos Energy (1-888-286-6700) from outside or a neighbors home.</div>
+        <div style={{ background: "#3b0000″, border: "1px solid #ef4444", borderRadius: 12, padding: "1rem", marginBottom: "1.5rem" }}>
+          <div style={{ color: "#ef4444″, fontWeight: 700 }}>⚠️ IN A GAS EMERGENCY</div>
+          <div style={{ color: "#fca5a5″, marginTop: ".5rem" }}>Do NOT use light switches or phones inside. Evacuate immediately. Call 911 and Atmos Energy (1-888-286-6700) from outside or a neighbors home.</div>
         </div>
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", marginBottom: "1rem" }}>🏠 Select Your Home Type</h2>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, marginBottom: "1rem" }}>🏠 Select Your Home Type</h2>
           <select
             value={selected}
             onChange={e => setSelected(e.target.value)}
-            style={{ width: "100%", padding: "0.75rem", borderRadius: 8, background: "#1a3a5c", color: "#fff", border: "1px solid #F5E642", fontSize: "1rem" }}
+            style={{ width: "100%", padding: "0.75rem", borderRadius: 8, background: "#1a3a5c", color: "#fff", border: "1px solid #F5E642″, fontSize: "1rem" }}
           >
             {Object.keys(homeTypes).map(t => <option key={t}>{t}</option>)}
           </select>
@@ -53,18 +53,18 @@ export default function DFWEmergencyShutoffsGuide2026() {
         {info && (
           <div style={{ display: "grid", gap: "1rem" }}>
             {[info.water, info.gas, info.electric, info.hvac].map((desc, i) => (
-              <div key={i} style={{ background: "#0f2040", borderRadius: 12, padding: "1.25rem", borderLeft: "4px solid #F5E642" }}>
-                <div style={{ color: "#94a3b8", lineHeight: 1.6 }}>{desc}</div>
+              <div key={i} style={{ background: "#0f2040″, borderRadius: 12, padding: "1.25rem", borderLeft: "4px solid #F5E642" }}>
+                <div style={{ color: "#94a3b8″, lineHeight: 1.6 }}>{desc}</div>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.25rem", marginTop: "1.5rem" }}>
-          <h3 style={{ color: "#F5E642" }}>🔧 Shutoff Tools to Keep Handy</h3>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.25rem", marginTop: "1.5rem" }}>
+          <h3 style={{ color: "#F5E642″ }}>🔧 Shutoff Tools to Keep Handy</h3>
           {["Adjustable wrench (gas meter key)", "Flathead screwdriver (curb stop water box)", "Headlamp for dark utility areas", "Emergency contacts posted inside cabinet door"].map(s => (
-            <div key={s} style={{ display: "flex", gap: ".75rem", marginTop: ".75rem", color: "#94a3b8" }}>
-              <span style={{ color: "#F5E642" }}>✓</span> {s}
+            <div key={s} style={{ display: "flex", gap: ".75rem", marginTop: ".75rem", color: "#94a3b8″ }}>
+              <span style={{ color: "#F5E642″ }}>✓</span> {s}
             </div>
           ))}
         </div>

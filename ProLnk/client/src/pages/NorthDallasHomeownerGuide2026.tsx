@@ -64,7 +64,7 @@ export default function NorthDallasHomeownerGuide2026() {
         <h2 style={{ color: '#F5E642', marginBottom: 16 }}>Select Your Home Age</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 32 }}>
           {ages.map(a => (
-            <button key={a.id} onClick={() => setSelectedAge(a.id)} style={{ background: selectedAge === a.id ? a.color : '#0D1F3C', border: `2px solid ${a.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedAge === a.id ? '#0A1628' : '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+            <button key={a.id} onClick={() => setSelectedAge(a.id)} style={{ background: selectedAge === a.id ? a.color : '#0D1F3C', border: `2px solid ${a.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedAge === a.id ? '#0A1628′ : '#fff', textAlign: ’left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{a.label}</div>
               <div style={{ fontSize: 13, opacity: 0.85 }}>{a.desc}</div>
             </button>

@@ -59,7 +59,7 @@ export default function DFWRentalPropertyROIGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🧮 ROI Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
             {[
@@ -85,7 +85,7 @@ export default function DFWRentalPropertyROIGuide() {
             ].map(({ label, value, sub, good }) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center', border: `1px solid ${good ? '#4ADE80' : '#F87171'}` }}>
                 <div style={{ color: '#8899AA', fontSize: 13 }}>{label}</div>
-                <div style={{ color: good ? '#4ADE80' : '#F87171', fontSize: 30, fontWeight: 800, margin: '8px 0 4px' }}>{value}</div>
+                <div style={{ color: good ? '#4ADE80′ : '#F87171', fontSize: 30, fontWeight: 800, margin: '8px 0 4px' }}>{value}</div>
                 <div style={{ color: '#8899AA', fontSize: 11 }}>{sub}</div>
               </div>
             ))}

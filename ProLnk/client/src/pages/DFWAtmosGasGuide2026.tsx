@@ -21,7 +21,7 @@ export default function DFWAtmosGasGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Atmos Energy serves most of DFW for natural gas delivery. They own the pipelines — separate from your billing if you've chosen a gas marketer.</p>
         </div>
 
-        <div style={{ backgroundColor: '#7f1d1d', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #ef4444' }}>
+        <div style={{ backgroundColor: '#7f1d1d', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #ef4444′ }}>
           <h2 style={{ color: '#fca5a5', fontSize: 16, marginBottom: 8 }}>🚨 GAS EMERGENCY — Smell Gas?</h2>
           <p style={{ color: '#fecaca', fontSize: 14, lineHeight: 1.6, margin: 0 }}>Leave immediately. Don't use phones, switches, or lighters inside. Call <strong>888-286-6700</strong> from outside. Atmos responds 24/7.</p>
         </div>
@@ -39,7 +39,7 @@ export default function DFWAtmosGasGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {needs.map(n => (
             <button key={n.id} onClick={() => setSelected(selected === n.id ? null : n.id)}
-              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220' : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220′ : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
               {n.label}
             </button>
           ))}

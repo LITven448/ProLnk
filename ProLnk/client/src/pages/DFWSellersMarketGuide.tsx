@@ -65,7 +65,7 @@ export default function DFWSellersMarketGuide() {
           DFW Seller's Market Guide
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 32, lineHeight: 1.6 }}>
-          DFW is predominantly a seller's market. Population growth, corporate relocations, and constrained supply in desirable corridors keep leverage with sellers. Here's how to maximize your position.
+          DFW is predominantly a seller's market. Population growth, corporate relocations, and constrained supply in desirable corridors keep leverage with sellers. Here’s how to maximize your position.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 28 }}>
@@ -79,7 +79,7 @@ export default function DFWSellersMarketGuide() {
               <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4, textTransform: 'uppercase', letterSpacing: 1 }}>{label}</div>
               <div style={{ fontSize: 17, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{value}</div>
-              <div style={{ fontSize: 12, color: '#94A3B8' }}>{sub}</div>
+              <div style={{ fontSize: 12, color: '#94A3B8′ }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -109,11 +109,11 @@ export default function DFWSellersMarketGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 20 }}>
                 <div style={{ textAlign: 'center', background: '#0F2040', borderRadius: 8, padding: 12 }}>
                   <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4 }}>EXPECTED DOM</div>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{result.dom}</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{result.dom}</div>
                 </div>
                 <div style={{ textAlign: 'center', background: '#0F2040', borderRadius: 8, padding: 12 }}>
                   <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4 }}>OFFER PREMIUM</div>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{result.premium}</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{result.premium}</div>
                 </div>
               </div>
               <div style={{ marginBottom: 16 }}>
@@ -136,7 +136,7 @@ export default function DFWSellersMarketGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🔑 DFW Seller's Playbook: Top 5 Rules</h2>
           {['List Thursday — Friday-Sunday showings drive offer velocity.', 'Set an offer deadline — creates urgency and prevents lowballs from anchoring.', 'Don\’t skip pre-listing inspection — surprises at closing kill deals.', 'Stage or virtually stage — DFW buyers browse Zillow before driving.', 'Price it right day one — stale listings lose 3-8% vs. comparable fresh ones.'].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
-              <div style={{ minWidth: 28, height: 28, background: '#F5E642', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: '#0A1628' }}>{i + 1}</div>
+              <div style={{ minWidth: 28, height: 28, background: '#F5E642', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: '#0A1628′ }}>{i + 1}</div>
               <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.5, paddingTop: 4 }}>{tip}</div>
             </div>
           ))}

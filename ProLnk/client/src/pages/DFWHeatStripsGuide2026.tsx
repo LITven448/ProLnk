@@ -30,8 +30,8 @@ export default function DFWHeatStripsGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Electric Heat Strips Guide 2026</h1>
-          <p style={{ color: '#a0aec0' }}>Why your January bill spikes and what to do about it</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Electric Heat Strips Guide 2026</h1>
+          <p style={{ color: '#a0aec0′ }}>Why your January bill spikes and what to do about it</p>
         </div>
 
         <div style={{ background: '#1a0a0a', border: '2px solid #e53e3e', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>

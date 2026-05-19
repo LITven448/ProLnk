@@ -66,8 +66,8 @@ export default function ProLnkSmartMatchPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {jobScenarios.map((j, i) => (
               <button key={i} onClick={() => setSelected(i)} style={{
-                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '1px solid #1e3a5f',
-                background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
+                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '1px solid #1e3a5f',
+                background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{j.label}</button>
             ))}
@@ -75,9 +75,9 @@ export default function ProLnkSmartMatchPage() {
           {selected !== null && (
             <div style={{ background: '#0A1628', border: '1px solid #F5E642', borderRadius: 12, padding: 22 }}>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 14 }}>
-                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#94a3b8' }}>🔨 {jobScenarios[selected].trade}</span>
-                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#94a3b8' }}>⚡ {jobScenarios[selected].urgency}</span>
-                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#F5E642' }}>⏱ Response: {jobScenarios[selected].response}</span>
+                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#94a3b8′ }}>🔨 {jobScenarios[selected].trade}</span>
+                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#94a3b8′ }}>⚡ {jobScenarios[selected].urgency}</span>
+                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#F5E642′ }}>⏱ Response: {jobScenarios[selected].response}</span>
               </div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.8, marginBottom: 12 }}>{jobScenarios[selected].process}</div>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600 }}>📋 {jobScenarios[selected].quotes}</div>

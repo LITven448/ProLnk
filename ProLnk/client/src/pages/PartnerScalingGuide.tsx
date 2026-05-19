@@ -94,7 +94,7 @@ export default function PartnerScalingGuide() {
                 <span style={{ background: p.color, color: '#FFF', fontWeight: 700, fontSize: 12, padding: '4px 10px', borderRadius: 20 }}>{p.label}</span>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700, color: '#111827', fontSize: 16 }}>{p.focus}</div>
-                  <div style={{ fontSize: 13, color: '#6B7280' }}>{p.range} · Target: {p.target}</div>
+                  <div style={{ fontSize: 13, color: '#6B7280′ }}>{p.range} · Target: {p.target}</div>
                 </div>
                 <span style={{ fontSize: 20, color: '#9CA3AF', transform: openPhase === i ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}>⌄</span>
               </div>
@@ -117,20 +117,20 @@ export default function PartnerScalingGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 56 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', background: '#FFFFFF', borderRadius: 12, overflow: 'hidden', boxShadow: '0 1px 4px rgba(0,0,0,.08)' }}>
             <thead>
-              <tr style={{ background: '#F3F4F6' }}>
-                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: 13, fontWeight: 700, color: '#374151' }}>Milestone</th>
-                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#374151' }}>Conservative</th>
-                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#10B981' }}>On Track</th>
-                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#8B5CF6' }}>Top Performer</th>
+              <tr style={{ background: '#F3F4F6′ }}>
+                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: 13, fontWeight: 700, color: '#374151′ }}>Milestone</th>
+                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#374151′ }}>Conservative</th>
+                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#10B981′ }}>On Track</th>
+                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#8B5CF6′ }}>Top Performer</th>
               </tr>
             </thead>
             <tbody>
               {projections.map((row, i) => (
-                <tr key={i} style={{ borderTop: '1px solid #F3F4F6' }}>
-                  <td style={{ padding: '14px 20px', fontWeight: 600, color: '#111827' }}>{row.month}</td>
-                  <td style={{ padding: '14px 20px', textAlign: 'right', color: '#6B7280' }}>${row.low.toLocaleString()}</td>
-                  <td style={{ padding: '14px 20px', textAlign: 'right', fontWeight: 700, color: '#10B981' }}>${row.mid.toLocaleString()}</td>
-                  <td style={{ padding: '14px 20px', textAlign: 'right', fontWeight: 700, color: '#8B5CF6' }}>${row.high.toLocaleString()}</td>
+                <tr key={i} style={{ borderTop: '1px solid #F3F4F6′ }}>
+                  <td style={{ padding: '14px 20px', fontWeight: 600, color: '#111827′ }}>{row.month}</td>
+                  <td style={{ padding: '14px 20px', textAlign: 'right', color: '#6B7280′ }}>${row.low.toLocaleString()}</td>
+                  <td style={{ padding: '14px 20px', textAlign: 'right', fontWeight: 700, color: '#10B981′ }}>${row.mid.toLocaleString()}</td>
+                  <td style={{ padding: '14px 20px', textAlign: 'right', fontWeight: 700, color: '#8B5CF6′ }}>${row.high.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>

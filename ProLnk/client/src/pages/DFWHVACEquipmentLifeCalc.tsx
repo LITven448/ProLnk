@@ -34,7 +34,7 @@ export default function DFWHVACEquipmentLifeCalc() {
   const urgency =
     pctUsed >= 90 ? 'Replace Now' : pctUsed >= 75 ? 'Plan Replacement' : pctUsed >= 50 ? 'Monitor Closely' : 'In Good Shape';
   const urgencyColor =
-    pctUsed >= 90 ? '#ef4444' : pctUsed >= 75 ? '#f97316' : pctUsed >= 50 ? '#eab308' : '#22c55e';
+    pctUsed >= 90 ? '#ef4444′ : pctUsed >= 75 ? '#f97316' : pctUsed >= 50 ? '#eab308' : '#22c55e';
 
   const northernHrsPerYr = 900;
   const northernEquiv = Math.round(hoursUsed / northernHrsPerYr);
@@ -51,7 +51,7 @@ export default function DFWHVACEquipmentLifeCalc() {
         <div style={{ background: '#111c35', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>🗓️ System Install Year: <span style={{ color: '#F5E642', fontWeight: 700 }}>{year}</span> ({age} yrs old)</div>
           <input type="range" min={1995} max={2025} value={year} onChange={e => setYear(Number(e.target.value))}
-            style={{ width: '100%', accentColor: '#F5E642' }} />
+            style={{ width: '100%', accentColor: '#F5E642′ }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#64748b', marginTop: 4 }}>
             <span>1995</span><span>2025</span>
           </div>
@@ -91,11 +91,11 @@ export default function DFWHVACEquipmentLifeCalc() {
           <div style={{ background: '#111c35', borderRadius: 16, padding: 24 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>Life Used</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>Life Used</div>
                 <div style={{ fontSize: 38, fontWeight: 800, color: urgencyColor }}>{pctUsed}%</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>Status</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>Status</div>
                 <div style={{ fontSize: 22, fontWeight: 800, color: urgencyColor }}>{urgency}</div>
               </div>
             </div>
@@ -111,12 +111,12 @@ export default function DFWHVACEquipmentLifeCalc() {
               ].map(({ label, val }) => (
                 <div key={label} style={{ background: '#1e2d4a', borderRadius: 10, padding: 14 }}>
                   <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                  <div style={{ fontSize: 17, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                  <div style={{ fontSize: 17, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                 </div>
               ))}
             </div>
-            <div style={{ background: '#1a1a2e', borderRadius: 10, padding: 14, fontSize: 13, color: '#94a3b8' }}>
-              💡 DFW units accumulate roughly <strong style={{ color: '#fff' }}>{useLevel.hrsPerYr.toLocaleString()} hours/year</strong>. This system has used the equivalent of a <strong style={{ color: '#F5E642' }}>{northernEquiv}-year-old</strong> northern-state unit.
+            <div style={{ background: '#1a1a2e', borderRadius: 10, padding: 14, fontSize: 13, color: '#94a3b8′ }}>
+              💡 DFW units accumulate roughly <strong style={{ color: '#fff' }}>{useLevel.hrsPerYr.toLocaleString()} hours/year</strong>. This system has used the equivalent of a <strong style={{ color: '#F5E642′ }}>{northernEquiv}-year-old</strong> northern-state unit.
             </div>
           </div>
         )}

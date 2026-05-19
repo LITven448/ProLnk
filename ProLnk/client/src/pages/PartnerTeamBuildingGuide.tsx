@@ -94,7 +94,7 @@ export default function PartnerTeamBuildingGuide() {
               </div>
               <div>
                 <div style={{ fontSize: 13, color: '#bfdbfe', marginBottom: 6 }}>EST. MONTHLY COMMISSION</div>
-                <div style={{ fontSize: 40, fontWeight: 800, color: '#4ade80' }}>${monthlyCommission.toLocaleString()}</div>
+                <div style={{ fontSize: 40, fontWeight: 800, color: '#4ade80′ }}>${monthlyCommission.toLocaleString()}</div>
                 <div style={{ fontSize: 13, color: '#93c5fd' }}>at 35% avg tier</div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function PartnerTeamBuildingGuide() {
 
         <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #1d4ed8)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🚀</div>
-          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9' }}>Ready to Build Your Team?</h3>
+          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9′ }}>Ready to Build Your Team?</h3>
           <p style={{ color: '#93c5fd', marginBottom: 24 }}>Apply now before Charter membership closes at 25 partners. Lock in your position before the waitlist fills.</p>
           <a href="/apply" style={{ display: 'inline-block', background: '#fff', color: '#1d4ed8', padding: '14px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
             Apply for Charter Membership →

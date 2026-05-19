@@ -53,7 +53,7 @@ export default function DFWSolarInstallationGuide() {
         {/* 2026 Stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 48 }}>
           {[
-            { val: '30%', label: 'Federal ITC through 2032' },
+            { val: '30%', label: 'Federal ITC through 2032′ },
             { val: '5.8', label: 'Peak sun hours/day (top 20%)' },
             { val: '7–10 yr', label: 'DFW avg payback period' },
             { val: '1,200', label: 'kWh/mo avg DFW home uses' },
@@ -92,7 +92,7 @@ export default function DFWSolarInstallationGuide() {
             ].map((item, i) => (
               <div key={i} style={{ background: '#0d1117', borderRadius: 10, padding: 16 }}>
                 <div style={{ fontSize: 12, color: '#8b949e', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#e6edf3' }}>{item.val}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, color: '#e6edf3′ }}>{item.val}</div>
               </div>
             ))}
           </div>
@@ -104,7 +104,7 @@ export default function DFWSolarInstallationGuide() {
             </div>
             <div style={{ background: '#0d2818', border: '1px solid #238636', borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 13, color: '#3fb950', marginBottom: 4 }}>25-Year Net Savings</div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: '#3fb950' }}>${Math.max(0, savings25yr).toLocaleString()}</div>
+              <div style={{ fontSize: 36, fontWeight: 800, color: '#3fb950′ }}>${Math.max(0, savings25yr).toLocaleString()}</div>
             </div>
           </div>
         </div>

@@ -57,14 +57,14 @@ export default function FoundingMembershipPage() {
             ].map((sl, i) => (
               <div key={i}>
                 <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '6px' }}>{sl.label}</label>
-                <input type="range" min={sl.min} max={sl.max} step={sl.step || 1} value={sl.val} onChange={e => sl.setter(+e.target.value)} style={{ width: '100%', accentColor: '#3b82f6' }} />
+                <input type="range" min={sl.min} max={sl.max} step={sl.step || 1} value={sl.val} onChange={e => sl.setter(+e.target.value)} style={{ width: '100%', accentColor: '#3b82f6′ }} />
               </div>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', marginBottom: '16px' }}>
             {[
               { label: 'Direct (20%)', val: `$${directEarnings.toLocaleString(undefined, {maximumFractionDigits:0})}`, color: '#60a5fa' },
-              { label: 'Team Override', val: `$${teamOverride.toLocaleString(undefined, {maximumFractionDigits:0})}`, color: '#34d399' },
+              { label: 'Team Override', val: `$${teamOverride.toLocaleString(undefined, {maximumFractionDigits:0})}`, color: '#34d399′ },
               { label: 'Orig. Rights Est.', val: `$${origEstimate.toLocaleString(undefined, {maximumFractionDigits:0})}`, color: '#a78bfa' },
             ].map((r, i) => (
               <div key={i} style={{ background: '#0a0f1e', borderRadius: '10px', padding: '16px', textAlign: 'center' }}>

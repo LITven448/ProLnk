@@ -161,12 +161,12 @@ export default function DFWMigrationPatternGuide() {
               <div key={state} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                 <div style={{ fontSize: 22, marginBottom: 6 }}>{icon}</div>
                 <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{pct}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8' }}>{state}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{state}</div>
               </div>
             ))}
           </div>
           <p style={{ fontSize: 13, color: '#64748B', marginTop: 16, marginBottom: 0 }}>
-            Why they're coming: no state income tax (saves $8K-$33K/yr vs CA/NY), lower cost of living relative to origin, strong job market, and space that origin metros can't offer at any price.
+            Why they're coming: no state income tax (saves $8K-$33K/yr vs CA/NY), lower cost of living relative to origin, strong job market, and space that origin metros can’t offer at any price.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export default function DFWMigrationPatternGuide() {
           {profile && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{originState} Migrants</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{originState} Migrants</div>
                 <div style={{ background: '#F5E642', color: '#0A1628', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 20 }}>{profile.rank}</div>
               </div>
               <div style={{ marginBottom: 16 }}>
@@ -194,8 +194,8 @@ export default function DFWMigrationPatternGuide() {
                 <div style={{ fontSize: 12, color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Why They're Coming</div>
                 {profile.whyComing.map((r, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-                    <span style={{ color: '#F5E642' }}>✓</span>
-                    <span style={{ fontSize: 14, color: '#94A3B8' }}>{r}</span>
+                    <span style={{ color: '#F5E642′ }}>✓</span>
+                    <span style={{ fontSize: 14, color: '#94A3B8′ }}>{r}</span>
                   </div>
                 ))}
               </div>
@@ -203,8 +203,8 @@ export default function DFWMigrationPatternGuide() {
                 <div style={{ fontSize: 12, color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>🏡 Home Expectations</div>
                 {profile.homeExpectations.map((e, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-                    <span style={{ color: '#94A3B8' }}>→</span>
-                    <span style={{ fontSize: 14, color: '#94A3B8' }}>{e}</span>
+                    <span style={{ color: '#94A3B8′ }}>→</span>
+                    <span style={{ fontSize: 14, color: '#94A3B8′ }}>{e}</span>
                   </div>
                 ))}
               </div>
@@ -217,7 +217,7 @@ export default function DFWMigrationPatternGuide() {
                   </div>
                 ))}
               </div>
-              <div style={{ padding: 14, background: '#F5E64210', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+              <div style={{ padding: 14, background: '#F5E64210', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>Cultural Note</div>
                 <div style={{ fontSize: 14, color: '#E8EDF5', lineHeight: 1.6 }}>{profile.culturalNote}</div>
               </div>

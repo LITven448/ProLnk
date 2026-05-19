@@ -31,33 +31,33 @@ export default function DFWHVACDFWMoment() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: "820px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <div style={{ fontSize: "48px", marginBottom: "12px" }}>⏱️</div>
-          <h1 style={{ fontSize: "2.4rem", fontWeight: "800", color: "#F5E642", marginBottom: "16px", lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: "2.4rem", fontWeight: "800″, color: "#F5E642", marginBottom: "16px", lineHeight: 1.2 }}>
             What DFW Homeowners Should Know Right Now
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#94a3b8", maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "1.1rem", color: "#94a3b8″, maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
             May 2026 is a specific moment with specific stakes. Summer is 3-4 weeks away. The tune-up window is closing. The Charter waitlist is closing. Here is what to do today based on your situation.
           </p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "36px" }}>
           {[
-            { label: "Weeks to Peak Heat", value: "3-4", desc: "DFW July average: 99F" },
+            { label: "Weeks to Peak Heat", value: "3-4″, desc: "DFW July average: 99F" },
             { label: "Pages Available Now", value: "3,200+", desc: "All DFW HVAC content" },
             { label: "Charter Spots Left", value: "Limited", desc: "Closes at 500 applications" },
           ].map((stat, i) => (
-            <div key={i} style={{ backgroundColor: "#0F2040", borderRadius: "12px", padding: "20px", textAlign: "center", border: "1px solid #1e3a5f" }}>
-              <div style={{ fontSize: "1.8rem", fontWeight: "800", color: "#F5E642", marginBottom: "4px" }}>{stat.value}</div>
-              <div style={{ fontSize: "0.85rem", fontWeight: "700", color: "#fff", marginBottom: "4px" }}>{stat.label}</div>
-              <div style={{ fontSize: "0.78rem", color: "#94a3b8" }}>{stat.desc}</div>
+            <div key={i} style={{ backgroundColor: "#0F2040″, borderRadius: "12px", padding: "20px", textAlign: "center", border: "1px solid #1e3a5f" }}>
+              <div style={{ fontSize: "1.8rem", fontWeight: "800″, color: "#F5E642", marginBottom: "4px" }}>{stat.value}</div>
+              <div style={{ fontSize: "0.85rem", fontWeight: "700″, color: "#fff", marginBottom: "4px" }}>{stat.label}</div>
+              <div style={{ fontSize: "0.78rem", color: "#94a3b8″ }}>{stat.desc}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: "1.4rem", fontWeight: "700", color: "#fff", marginBottom: "20px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "1.4rem", fontWeight: "700″, color: "#fff", marginBottom: "20px", textAlign: "center" }}>
           Select your situation right now to see what to do today
         </h2>
 
@@ -67,22 +67,22 @@ export default function DFWHVACDFWMoment() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                backgroundColor: selected === i ? "#F5E642" : "#0F2040",
-                color: selected === i ? "#0A1628" : "#fff",
-                border: "1px solid " + (selected === i ? "#F5E642" : "#1e3a5f"),
+                backgroundColor: selected === i ? "#F5E642″ : "#0F2040",
+                color: selected === i ? "#0A1628″ : "#fff",
+                border: "1px solid " + (selected === i ? "#F5E642″ : "#1e3a5f"),
                 borderRadius: "10px",
                 padding: "16px 20px",
                 textAlign: "left",
                 cursor: "pointer",
                 fontSize: "1rem",
-                fontWeight: "600",
+                fontWeight: "600″,
                 transition: "all 0.2s",
                 width: "100%",
               }}
             >
               {selected === i ? "✅" : "📍"} {item.now}
               {selected === i && (
-                <div style={{ marginTop: "10px", fontSize: "0.92rem", fontWeight: "400", color: "#0A1628", lineHeight: 1.6 }}>
+                <div style={{ marginTop: "10px", fontSize: "0.92rem", fontWeight: "400″, color: "#0A1628", lineHeight: 1.6 }}>
                   ⚡ {item.action}
                 </div>
               )}
@@ -90,9 +90,9 @@ export default function DFWHVACDFWMoment() {
           ))}
         </div>
 
-        <div style={{ backgroundColor: "#0F2040", borderRadius: "16px", padding: "28px", border: "1px solid #F5E642" }}>
-          <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "#F5E642", marginBottom: "10px" }}>🕐 The Window That Closes</h3>
-          <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0 }}>
+        <div style={{ backgroundColor: "#0F2040″, borderRadius: "16px", padding: "28px", border: "1px solid #F5E642" }}>
+          <h3 style={{ fontSize: "1.2rem", fontWeight: "700″, color: "#F5E642", marginBottom: "10px" }}>🕐 The Window That Closes</h3>
+          <p style={{ color: "#94a3b8″, lineHeight: 1.7, margin: 0 }}>
             Two windows close this month: the HVAC tune-up window (before summer demand peaks) and the Charter waitlist (before ProLnk goes live). Both are time-sensitive. Both have permanent consequences. DFW homeowners who act in May 2026 will look back at this as the right moment.
           </p>
         </div>

@@ -57,10 +57,10 @@ export default function DFWRepipingGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>🔧 DFW WHOLE-HOME REPIPING</div>
-          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Complete Repiping Guide<br /><span style={{ color: '#F5E642' }}>for DFW Homes</span></h1>
+          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Complete Repiping Guide<br /><span style={{ color: '#F5E642′ }}>for DFW Homes</span></h1>
           <p style={{ fontSize: 16, color: '#8BA3C7', maxWidth: 620, margin: 0 }}>DFW has one of the highest rates of problematic pipe materials in Texas. Polybutylene plastic, aging galvanized steel, and stressed CPVC are ticking timebombs — especially in DFW's thermal cycling climate.</p>
         </div>
       </div>
@@ -71,9 +71,9 @@ export default function DFWRepipingGuide() {
           <div style={{ display: 'grid', gap: 14 }}>
             {PIPE_MATERIALS.slice(0, 4).map(p => (
               <div key={p.value} style={{ background: '#112240', border: `1px solid ${p.urgencyBase >= 9 ? '#FF4444' : p.urgencyBase >= 5 ? '#FF8800' : '#1E3A5F'}`, borderRadius: 10, padding: 18 }}>
-                <div style={{ fontWeight: 800, color: p.urgencyBase >= 9 ? '#FF4444' : p.urgencyBase >= 5 ? '#F5E642' : '#E8EDF5', marginBottom: 6, fontSize: 15 }}>{p.label}</div>
+                <div style={{ fontWeight: 800, color: p.urgencyBase >= 9 ? '#FF4444′ : p.urgencyBase >= 5 ? '#F5E642' : '#E8EDF5', marginBottom: 6, fontSize: 15 }}>{p.label}</div>
                 <div style={{ color: '#8BA3C7', fontSize: 14, lineHeight: 1.6 }}>{p.description}</div>
-                {p.urgencyBase >= 9 && <div style={{ marginTop: 8, background: '#FF444420', border: '1px solid #FF4444', borderRadius: 6, padding: '6px 12px', fontSize: 13, color: '#FF8888' }}>🚨 High replacement priority in DFW</div>}
+                {p.urgencyBase >= 9 && <div style={{ marginTop: 8, background: '#FF444420', border: '1px solid #FF4444', borderRadius: 6, padding: '6px 12px', fontSize: 13, color: '#FF8888′ }}>🚨 High replacement priority in DFW</div>}
               </div>
             ))}
           </div>
@@ -83,8 +83,8 @@ export default function DFWRepipingGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 800, marginBottom: 16 }}>🔬 Copper vs PEX for DFW Homes</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              { name: 'PEX', emoji: '✅', pros: ['Flexible — handles DFW expansion/contraction', 'Resists hard water scale better than copper', '20–25% lower installed cost', 'No soldering — faster installation', '50-year lifespan in DFW conditions'], cons: ['Cannot be used outdoors (UV degrades)', 'Some municipalities restrict in hot water solar systems'], verdict: 'Best choice for DFW full repipes', color: '#4ECDC4' },
-              { name: 'Copper', emoji: '🟤', pros: ['Proven 50+ year track record', 'Fully recyclable', 'Works with solar thermal systems', 'Some homebuyers prefer it'], cons: ['DFW hard water causes pinhole leaks after 40 yrs', '40% higher material + labor cost', 'Thermal expansion stresses joints over time', 'Requires skilled soldering'], verdict: 'Good but pricier — PEX preferred for DFW', color: '#F5E642' },
+              { name: 'PEX', emoji: '✅', pros: ['Flexible — handles DFW expansion/contraction', 'Resists hard water scale better than copper', '20–25% lower installed cost', 'No soldering — faster installation', '50-year lifespan in DFW conditions'], cons: ['Cannot be used outdoors (UV degrades)', 'Some municipalities restrict in hot water solar systems'], verdict: 'Best choice for DFW full repipes', color: '#4ECDC4′ },
+              { name: 'Copper', emoji: '🟤', pros: ['Proven 50+ year track record', 'Fully recyclable', 'Works with solar thermal systems', 'Some homebuyers prefer it'], cons: ['DFW hard water causes pinhole leaks after 40 yrs', '40% higher material + labor cost', 'Thermal expansion stresses joints over time', 'Requires skilled soldering'], verdict: 'Good but pricier — PEX preferred for DFW', color: '#F5E642′ },
             ].map(item => (
               <div key={item.name} style={{ background: '#112240', border: `2px solid ${item.color}`, borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 22, fontWeight: 900, color: item.color, marginBottom: 12 }}>{item.emoji} {item.name}</div>
@@ -112,7 +112,7 @@ export default function DFWRepipingGuide() {
             </div>
             <div>
               <label style={{ color: '#8BA3C7', fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>HOME SQUARE FOOTAGE</label>
-              <input type="number" placeholder="e.g. 2200" value={sqft} onChange={e => { setSqft(e.target.value); setShowResult(false); }} style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" placeholder="e.g. 2200″ value={sqft} onChange={e => { setSqft(e.target.value); setShowResult(false); }} style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
@@ -120,13 +120,13 @@ export default function DFWRepipingGuide() {
             <div style={{ display: 'grid', gap: 8 }}>
               {SYMPTOMS_LIST.map(s => (
                 <label key={s.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', background: symptoms.has(s.id) ? '#0D2B4E' : '#0A1628', border: `1px solid ${symptoms.has(s.id) ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8, padding: '10px 14px' }}>
-                  <input type="checkbox" checked={symptoms.has(s.id)} onChange={() => toggleSymptom(s.id)} style={{ accentColor: '#F5E642' }} />
+                  <input type="checkbox" checked={symptoms.has(s.id)} onChange={() => toggleSymptom(s.id)} style={{ accentColor: '#F5E642′ }} />
                   <span style={{ color: '#C0D0E8', fontSize: 14 }}>{s.label}</span>
                 </label>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowResult(true)} disabled={!material} style={{ background: material ? '#F5E642' : '#1E3A5F', color: '#0A1628', border: 'none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: material ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 20 }}>
+          <button onClick={() => setShowResult(true)} disabled={!material} style={{ background: material ? '#F5E642′ : '#1E3A5F', color: '#0A1628', border: ’none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: material ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 20 }}>
             Get My Urgency Score + Cost Estimate
           </button>
           {showResult && material && (
@@ -138,8 +138,8 @@ export default function DFWRepipingGuide() {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {[
-                  { label: 'PEX Repipe', range: `$${costs.pex.low.toLocaleString()} – $${costs.pex.high.toLocaleString()}`, note: 'Recommended for DFW', color: '#4ECDC4' },
-                  { label: 'Copper Repipe', range: `$${costs.copper.low.toLocaleString()} – $${costs.copper.high.toLocaleString()}`, note: 'Premium option', color: '#F5E642' },
+                  { label: 'PEX Repipe', range: `$${costs.pex.low.toLocaleString()} – $${costs.pex.high.toLocaleString()}`, note: 'Recommended for DFW', color: '#4ECDC4′ },
+                  { label: 'Copper Repipe', range: `$${costs.copper.low.toLocaleString()} – $${costs.copper.high.toLocaleString()}`, note: 'Premium option', color: '#F5E642′ },
                 ].map(c => (
                   <div key={c.label} style={{ background: '#0D1B2E', border: `1px solid ${c.color}`, borderRadius: 10, padding: 16, textAlign: 'center' }}>
                     <div style={{ color: c.color, fontWeight: 800, marginBottom: 6 }}>{c.label}</div>

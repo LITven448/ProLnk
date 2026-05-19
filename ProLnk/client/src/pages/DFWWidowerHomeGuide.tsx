@@ -51,16 +51,16 @@ export default function DFWWidowerHomeGuide() {
           🏡 Home Management After Loss
         </h1>
         <p style={{ fontSize: 16, color: '#444', marginBottom: 8, lineHeight: 1.6 }}>
-          If your spouse handled the home and now you're on your own, you're not behind — you just need a clear starting point. This guide is for surviving spouses in DFW who want to feel confident, not overwhelmed.
+          If your spouse handled the home and now you're on your own, you’re not behind — you just need a clear starting point. This guide is for surviving spouses in DFW who want to feel confident, not overwhelmed.
         </p>
         <p style={{ fontSize: 15, color: '#666', marginBottom: 32, fontStyle: 'italic' }}>
           No shame in not knowing. Every homeowner learned this somewhere.
         </p>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>⚠️ The DFW Home Reality Check</h2>
           <p style={{ color: '#555', lineHeight: 1.7, marginBottom: 12 }}>DFW has specific challenges most homeowners don't learn until something breaks:</p>
-          <ul style={{ lineHeight: 2, paddingLeft: 20, color: '#333' }}>
+          <ul style={{ lineHeight: 2, paddingLeft: 20, color: '#333′ }}>
             <li><strong>Extreme heat:</strong> AC failure in July is an emergency, not an inconvenience</li>
             <li><strong>Clay soil:</strong> Foundation movement is normal — but you need to know your baseline</li>
             <li><strong>Hail:</strong> DFW gets hail every year. Know how to document and file a claim</li>
@@ -68,7 +68,7 @@ export default function DFWWidowerHomeGuide() {
           </ul>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>📋 Build Your Priority List</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>Home age (years)</label>
@@ -76,7 +76,7 @@ export default function DFWWidowerHomeGuide() {
               type="number"
               value={homeAge}
               onChange={e => setHomeAge(e.target.value)}
-              placeholder="e.g. 18"
+              placeholder="e.g. 18″
               style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }}
             />
           </div>
@@ -106,11 +106,11 @@ export default function DFWWidowerHomeGuide() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #e0ddd5' }}>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #e0ddd5′ }}>
               <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>✅ Protection Checklist</h3>
               {result.checklist.map((c, i) => <div key={i} style={{ marginBottom: 8, fontSize: 14, lineHeight: 1.6 }}>{c}</div>)}
             </div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e0ddd5' }}>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e0ddd5′ }}>
               <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🛡️ Trusted Service Setup</h3>
               <p style={{ color: '#666', fontSize: 14, marginBottom: 12 }}>ProLnk screens every contractor before they can contact you. No cold calls, no fake reviews.</p>
               {result.setup.map((s, i) => (

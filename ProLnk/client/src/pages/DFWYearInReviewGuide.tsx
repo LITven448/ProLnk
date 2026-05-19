@@ -34,7 +34,7 @@ export default function DFWYearInReviewGuide() {
           <p style={{ color: '#64748b', fontSize: 16 }}>Your annual homeowner financial + condition review for {currentYear}</p>
         </div>
         <div style={{ background: '#fff', borderRadius: 20, padding: 32, boxShadow: '0 4px 24px rgba(0,0,0,0.07)', marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#0A1628' }}>🏡 Your Home Stats</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#0A1628′ }}>🏡 Your Home Stats</h2>
           {field('Original Purchase Price', 'purchasePrice', '$')}
           {field('Current Estimated Value', 'currentValue', '$')}
           {field('Remaining Mortgage Balance', 'mortgage', '$')}
@@ -52,7 +52,7 @@ export default function DFWYearInReviewGuide() {
                 { label: 'Total ROI', value: , icon: '📈' },
                 { label: 'Home Spend', value: , icon: '🔧' },
               ].map(s => (
-                <div key={s.label} style={{ background: '#fff', borderRadius: 16, padding: '20px 16px', textAlign: 'center', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '2px solid #F5E642' }}>
+                <div key={s.label} style={{ background: '#fff', borderRadius: 16, padding: '20px 16px', textAlign: 'center', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '2px solid #F5E642′ }}>
                   <div style={{ fontSize: 28 }}>{s.icon}</div>
                   <div style={{ fontWeight: 900, fontSize: 22, color: '#0A1628', margin: '6px 0 4px' }}>{s.value}</div>
                   <div style={{ color: '#64748b', fontSize: 13 }}>{s.label}</div>
@@ -60,7 +60,7 @@ export default function DFWYearInReviewGuide() {
               ))}
             </div>
             <div style={{ background: '#fff', borderRadius: 20, padding: 28, boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
-              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#0A1628' }}>🎯 Goals for {currentYear + 1}</h3>
+              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#0A1628′ }}>🎯 Goals for {currentYear + 1}</h3>
               {['Complete deferred maintenance', 'Review and update homeowner insurance', 'Add your home to ProLnk Home Health Vault', 'Build contractor relationships via ProLnk', 'Increase equity through targeted improvements'].map((g, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0', borderBottom: '1px solid #f1f5f9', color: '#475569', fontSize: 15 }}>
                   <span style={{ color: '#F5E642', fontSize: 18 }}>→</span> {g}

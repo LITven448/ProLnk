@@ -38,14 +38,14 @@ export default function DFWIBuyerGuide() {
   const fmt = (n: number) => `$${Math.round(n).toLocaleString()}`;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: "'Inter', system-ui, sans-serif", color: '#e8e8e8' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: "'Inter', system-ui, sans-serif", color: '#e8e8e8′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#F5E642', fontWeight: 600 }}>DFW Seller Guide</div>
         <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 12px', lineHeight: 1.2, color: '#fff' }}>
           🤖 iBuyers in DFW: Opendoor & Offerpad
         </h1>
         <p style={{ fontSize: 17, color: '#aaa', marginBottom: 40, lineHeight: 1.7 }}>
-          iBuyers are instant cash buyers who purchase homes directly — skipping the traditional listing process. In DFW they're most active in Frisco, McKinney, Plano, Allen, and Irving. Here's what you need to know before requesting an offer.
+          iBuyers are instant cash buyers who purchase homes directly — skipping the traditional listing process. In DFW they're most active in Frisco, McKinney, Plano, Allen, and Irving. Here’s what you need to know before requesting an offer.
         </p>
 
         <div style={{ display: 'grid', gap: 20, marginBottom: 40 }}>
@@ -65,7 +65,7 @@ export default function DFWIBuyerGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, padding: '32px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px', color: '#F5E642' }}>📊 iBuyer vs. Traditional Listing Comparison</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px', color: '#F5E642′ }}>📊 iBuyer vs. Traditional Listing Comparison</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 14, fontWeight: 600, display: 'block', marginBottom: 6, color: '#ccc' }}>Estimated Market Value</label>
@@ -73,7 +73,7 @@ export default function DFWIBuyerGuide() {
                 type="text"
                 value={homeValue}
                 onChange={e => setHomeValue(e.target.value)}
-                placeholder="e.g. 480,000"
+                placeholder="e.g. 480,000″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid rgba(255,255,255,0.15)', fontSize: 15, background: 'rgba(255,255,255,0.08)', color: '#fff', boxSizing: 'border-box' }}
               />
             </div>
@@ -122,15 +122,15 @@ export default function DFWIBuyerGuide() {
                     <div style={{ fontWeight: 700, fontSize: 15, color: p.color, marginBottom: 16 }}>{p.label}</div>
                     <div style={{ display: 'grid', gap: 10 }}>
                       <div>
-                        <div style={{ fontSize: 12, color: '#777' }}>Offer/Sale Price</div>
+                        <div style={{ fontSize: 12, color: '#777′ }}>Offer/Sale Price</div>
                         <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>{fmt(p.offer)}</div>
                       </div>
                       <div>
-                        <div style={{ fontSize: 12, color: '#777' }}>{p.costLabel}</div>
-                        <div style={{ fontSize: 16, fontWeight: 600, color: '#eb5757' }}>-{fmt(p.costs)}</div>
+                        <div style={{ fontSize: 12, color: '#777′ }}>{p.costLabel}</div>
+                        <div style={{ fontSize: 16, fontWeight: 600, color: '#eb5757′ }}>-{fmt(p.costs)}</div>
                       </div>
                       <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 10 }}>
-                        <div style={{ fontSize: 12, color: '#777' }}>Est. Net Proceeds</div>
+                        <div style={{ fontSize: 12, color: '#777′ }}>Est. Net Proceeds</div>
                         <div style={{ fontSize: 22, fontWeight: 800, color: p.color }}>{fmt(p.net)}</div>
                       </div>
                     </div>
@@ -138,7 +138,7 @@ export default function DFWIBuyerGuide() {
                 ))}
               </div>
               <div style={{ padding: '16px 20px', background: result.diff > 20000 ? 'rgba(111,207,151,0.1)' : 'rgba(245,230,66,0.1)', borderRadius: 10, border: `1px solid ${result.diff > 20000 ? '#6fcf97' : '#F5E642'}44`, marginBottom: 20 }}>
-                <div style={{ fontSize: 18, fontWeight: 700, color: result.diff > 20000 ? '#6fcf97' : '#F5E642', marginBottom: 8 }}>
+                <div style={{ fontSize: 18, fontWeight: 700, color: result.diff > 20000 ? '#6fcf97′ : '#F5E642', marginBottom: 8 }}>
                   Traditional listing nets ~{fmt(result.diff)} more
                 </div>
                 <div style={{ fontSize: 14, color: '#ccc', lineHeight: 1.6 }}>{result.rec}</div>
@@ -160,7 +160,7 @@ export default function DFWIBuyerGuide() {
                   <span style={{ fontSize: 12, fontWeight: 600, color: '#6fcf97', background: 'rgba(111,207,151,0.15)', padding: '2px 10px', borderRadius: 20 }}>{b.status}</span>
                 </div>
                 <div style={{ fontSize: 13, color: '#aaa', marginBottom: 4 }}>📍 {b.coverage}</div>
-                <div style={{ fontSize: 13, color: '#777' }}>{b.note}</div>
+                <div style={{ fontSize: 13, color: '#777′ }}>{b.note}</div>
               </div>
             ))}
           </div>

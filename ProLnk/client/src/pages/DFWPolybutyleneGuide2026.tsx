@@ -37,7 +37,7 @@ export default function DFWPolybutyleneGuide2026() {
         <div style={{ background: '#132035', borderRadius: 12, padding: '24px' }}>
           <h2 style={{ color: '#F5E642', marginBottom: 16 }}>🏠 PB Risk Assessment by Build Year</h2>
           <p style={{ color: '#94A3B8', marginBottom: 12 }}>Enter your home's year of construction:</p>
-          <input value={yearBuilt} onChange={e => setYearBuilt(e.target.value)} type="number" placeholder="e.g. 1989" style={{ width: '100%', padding: '12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#fff', marginBottom: 12, boxSizing: 'border-box' }} />
+          <input value={yearBuilt} onChange={e => setYearBuilt(e.target.value)} type="number" placeholder="e.g. 1989″ style={{ width: '100%', padding: '12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#fff', marginBottom: 12, boxSizing: 'border-box' }} />
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: 'pointer' }}>
             Check My Risk
           </button>
@@ -46,7 +46,7 @@ export default function DFWPolybutyleneGuide2026() {
 
         <div style={{ marginTop: 32, padding: '20px', background: '#132035', borderRadius: 12, textAlign: 'center' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Get a PB inspection or repipe quote in DFW</div>
-          <div style={{ color: '#94A3B8' }}>ProLnk connects you with licensed plumbers who specialize in polybutylene replacement — free quotes.</div>
+          <div style={{ color: '#94A3B8′ }}>ProLnk connects you with licensed plumbers who specialize in polybutylene replacement — free quotes.</div>
         </div>
       </div>
     </div>

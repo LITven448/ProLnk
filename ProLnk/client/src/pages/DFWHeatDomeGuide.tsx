@@ -65,15 +65,15 @@ export default function DFWHeatDomeGuide() {
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: result.color + '22', border: `2px solid ${result.color}`, borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Overall Vulnerability</div>
+                  <div style={{ fontSize: '0.75rem', color: '#94A3B8′ }}>Overall Vulnerability</div>
                   <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.color }}>{result.vulnerability}</div>
                 </div>
                 <div style={{ background: '#EF444422', border: '2px solid #EF4444', borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#94A3B8' }}>AC Risk</div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#FCA5A5' }}>{result.acRisk}</div>
+                  <div style={{ fontSize: '0.75rem', color: '#94A3B8′ }}>AC Risk</div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#FCA5A5′ }}>{result.acRisk}</div>
                 </div>
                 <div style={{ background: '#D9770622', border: '2px solid #D97706', borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Foundation Risk</div>
+                  <div style={{ fontSize: '0.75rem', color: '#94A3B8′ }}>Foundation Risk</div>
                   <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#FCD34D' }}>{result.foundationRisk}</div>
                 </div>
               </div>

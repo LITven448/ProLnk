@@ -23,14 +23,14 @@ export default function DFWStormPrepMay2026() {
 
         <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
           {threats.map(t => (
-            <button key={t.id} onClick={() => setSelected(t.id)} style={{ background: selected === t.id ? '#F5E642' : '#0F2040', color: selected === t.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
+            <button key={t.id} onClick={() => setSelected(t.id)} style={{ background: selected === t.id ? '#F5E642′ : '#0F2040', color: selected === t.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
               {t.label}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 14, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642' }}>{threat.label} Preparation</h2>
+          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642′ }}>{threat.label} Preparation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {threat.preps.map((p, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>

@@ -53,7 +53,7 @@ export default function PartnerComplianceGuide() {
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 16 }}>🎯 Choose Your Recruiting Situation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#E5E7EB', background: selected === s.id ? '#FEFCE8' : '#fff', color: '#0A1628', fontWeight: selected === s.id ? 700 : 500, cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#E5E7EB', background: selected === s.id ? '#FEFCE8' : '#fff', color: '#0A1628', fontWeight: selected === s.id ? 700 : 500, cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{s.label}</button>
             ))}
           </div>
         </div>

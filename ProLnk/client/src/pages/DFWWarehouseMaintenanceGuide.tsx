@@ -43,7 +43,7 @@ export default function DFWWarehouseMaintenanceGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase' }}>🏭 DFW Warehouse Maintenance Guide</div>
-        <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.15, marginBottom: 12 }}>Warehouse Maintenance for <span style={{ color: '#F5E642' }}>DFW Industrial Properties</span></h1>
+        <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.15, marginBottom: 12 }}>Warehouse Maintenance for <span style={{ color: '#F5E642′ }}>DFW Industrial Properties</span></h1>
         <p style={{ color: '#94A3B8', fontSize: 17, marginBottom: 36 }}>DFW is the #2 industrial market in the US. Whether you own or lease, deferred maintenance on warehouse facilities compounds fast — especially with Dallas-area clay soil and extreme summer heat.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginBottom: 40 }}>
@@ -57,22 +57,22 @@ export default function DFWWarehouseMaintenanceGuide() {
           ].map(card => (
             <div key={card.title} style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: '#F5E642' }}>{card.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: '#F5E642′ }}>{card.title}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{card.body}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, border: '1px solid #F5E642', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🔧 Maintenance Budget Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🔧 Maintenance Budget Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Warehouse Square Footage</label>
-              <input type="number" placeholder="e.g. 25000" value={sqft} onChange={e => setSqft(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" placeholder="e.g. 25000″ value={sqft} onChange={e => setSqft(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Building Age (years)</label>
-              <input type="number" placeholder="e.g. 15" value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" placeholder="e.g. 15″ value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>Get Maintenance Plan →</button>

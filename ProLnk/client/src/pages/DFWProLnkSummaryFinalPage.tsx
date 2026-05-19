@@ -86,8 +86,8 @@ export default function DFWProLnkSummaryFinalPage() {
                 key={s.key}
                 onClick={() => setSelected(s.key)}
                 style={{
-                  background: selected === s.key ? '#0A1628' : '#F1F5F9',
-                  color: selected === s.key ? '#F5E642' : '#0A1628',
+                  background: selected === s.key ? '#0A1628′ : '#F1F5F9',
+                  color: selected === s.key ? '#F5E642′ : '#0A1628',
                   border: 'none', borderRadius: 10, padding: '13px 18px',
                   textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15, transition: 'all 0.15s',
                 }}
@@ -108,7 +108,7 @@ export default function DFWProLnkSummaryFinalPage() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', padding: '24px 0', borderTop: '1.5px solid #E2E8F0' }}>
+        <div style={{ textAlign: 'center', padding: '24px 0', borderTop: '1.5px solid #E2E8F0′ }}>
           <div style={{ color: '#94A3B8', fontSize: 13 }}>
             ProLnk · prolnk.io · DFW-first home services marketplace · Charter waitlist open
           </div>

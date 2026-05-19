@@ -23,8 +23,8 @@ export default function DFWMoldPreventionGuide2026() {
           {[['🌧️','DFW Spring RH','70–90% humidity common'],['🏠','Top Threat','Attic + HVAC coils'],['💲','Avg Remediation','$1,500–$15,000']].map(([icon, title, sub]) => (
             <div key={title} style={{ background: '#1a2744', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24 }}>{icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{title}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>{sub}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{title}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -57,7 +57,7 @@ export default function DFWMoldPreventionGuide2026() {
           {[['🧹','DIY OK','Surface mold under 10 sq ft on non-porous surfaces'],['📞','Call Pro','Any mold on drywall, wood, or insulation'],['🚨','Emergency','Musty smell from HVAC vents — potential systemic spread'],['🏥','Health Alert','Respiratory symptoms + visible mold = immediate remediation']].map(([icon, label, desc]) => (
             <div key={label} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <div style={{ fontSize: 20 }}>{icon}</div>
-              <div><div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642' }}>{label}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
+              <div><div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642′ }}>{label}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
             </div>
           ))}
         </div>

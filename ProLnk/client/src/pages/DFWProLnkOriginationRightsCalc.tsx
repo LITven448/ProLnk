@@ -36,11 +36,11 @@ export default function DFWProLnkOriginationRightsCalc() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 14 }}>
             <div>
               <label style={{ color: '#8899AA', fontSize: 13, display: 'block', marginBottom: 6 }}>Homes Registered</label>
-              <input type='number' value={homes} onChange={e => setHomes(e.target.value)} min={1} placeholder='25' style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type='number' value={homes} onChange={e => setHomes(e.target.value)} min={1} placeholder='25′ style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: ’border-box' }} />
             </div>
             <div>
               <label style={{ color: '#8899AA', fontSize: 13, display: 'block', marginBottom: 6 }}>Avg Annual Service Spend / Home ($)</label>
-              <input type='number' value={spend} onChange={e => setSpend(e.target.value)} min={500} placeholder='2800' style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type='number' value={spend} onChange={e => setSpend(e.target.value)} min={500} placeholder='2800′ style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: ’border-box' }} />
             </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>

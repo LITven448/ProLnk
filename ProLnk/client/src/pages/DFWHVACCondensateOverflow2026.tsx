@@ -20,7 +20,7 @@ export default function DFWHVACCondensateOverflow2026() {
           💧 DFW AC Condensate Overflow Prevention 2026
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem', lineHeight: 1.6 }}>
-          DFW humidity drives 2–3x more condensate than northern states. A 3-ton unit can produce 20+ gallons per day in July. Float switches, pan tablets, and clear drain lines aren't optional here — they're essential.
+          DFW humidity drives 2–3x more condensate than northern states. A 3-ton unit can produce 20+ gallons per day in July. Float switches, pan tablets, and clear drain lines aren't optional here — they’re essential.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -45,8 +45,8 @@ export default function DFWHVACCondensateOverflow2026() {
               key={c.id}
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               style={{
-                background: selected === c.id ? '#F5E642' : '#0f2040',
-                color: selected === c.id ? '#0A1628' : '#fff',
+                background: selected === c.id ? '#F5E642′ : '#0f2040',
+                color: selected === c.id ? '#0A1628′ : '#fff',
                 border: '1px solid #1e3a5f',
                 borderRadius: 8,
                 padding: '0.5rem 1rem',
@@ -71,7 +71,7 @@ export default function DFWHVACCondensateOverflow2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🔧 DFW Condensate Maintenance Checklist</div>
           {['Test float switch before each cooling season', 'Add pan tablets every 30 days May–September', 'Flush drain line with bleach solution quarterly', 'Inspect secondary drain pan monthly', 'Confirm exterior drain terminus is clear', 'Document all maintenance in ProLnk Home Vault'].map(item => (
             <div key={item} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.6rem', color: '#94a3b8', fontSize: '0.9rem' }}>
-              <span style={{ color: '#F5E642' }}>✓</span>{item}
+              <span style={{ color: '#F5E642′ }}>✓</span>{item}
             </div>
           ))}
         </div>

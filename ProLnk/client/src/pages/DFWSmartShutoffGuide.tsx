@@ -56,7 +56,7 @@ export default function DFWSmartShutoffGuide() {
             {[['❄️ Freeze Events', 'Uri 2021 caused $200B+ in damage nationally. DFW pipes are not insulated for Arctic blasts.'], ['⛈ Severe Storms', '70+ mph winds, hail, and tornadoes are seasonal realities across DFW.'], ['🏚 Aging Housing', 'Significant DFW housing stock is 30-50+ years old with original plumbing and electrical.'], ['💰 Insurance Impact', 'Smart devices can reduce homeowner insurance premiums 5-15% — ask your insurer.']].map(([icon, desc]) => (
               <div key={icon} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{icon}</div>
-                <div style={{ fontSize: '0.85rem', color: '#9BA3B8' }}>{desc}</div>
+                <div style={{ fontSize: '0.85rem', color: '#9BA3B8′ }}>{desc}</div>
               </div>
             ))}
           </div>
@@ -71,13 +71,13 @@ export default function DFWSmartShutoffGuide() {
           <button onClick={() => setResult(concerns[idx])} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, cursor: 'pointer', fontSize: '1rem' }}>Get Recommendations</button>
           {result && (
             <div style={{ marginTop: '1.5rem' }}>
-              <div style={{ background: '#1E3A5F', borderRadius: 8, padding: '1rem', marginBottom: '1rem', fontSize: '0.9rem', color: '#F5E642' }}>📍 DFW Note: {result.dfwNote}</div>
+              <div style={{ background: '#1E3A5F', borderRadius: 8, padding: '1rem', marginBottom: '1rem', fontSize: '0.9rem', color: '#F5E642′ }}>📍 DFW Note: {result.dfwNote}</div>
               {result.devices.map((d, i) => (
                 <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', marginBottom: '0.75rem' }}>
                   <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '0.5rem' }}>🔌 {d.name}</div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                    <div style={{ background: '#0F2040', borderRadius: 6, padding: '0.5rem', fontSize: '0.8rem' }}><span style={{ color: '#9BA3B8' }}>Cost: </span>{d.cost}</div>
-                    <div style={{ background: '#0F2040', borderRadius: 6, padding: '0.5rem', fontSize: '0.8rem' }}><span style={{ color: '#9BA3B8' }}>Install: </span>{d.complexity}</div>
+                    <div style={{ background: '#0F2040', borderRadius: 6, padding: '0.5rem', fontSize: '0.8rem' }}><span style={{ color: '#9BA3B8′ }}>Cost: </span>{d.cost}</div>
+                    <div style={{ background: '#0F2040', borderRadius: 6, padding: '0.5rem', fontSize: '0.8rem' }}><span style={{ color: '#9BA3B8′ }}>Install: </span>{d.complexity}</div>
                   </div>
                   <div style={{ color: '#9BA3B8', fontSize: '0.85rem' }}>{d.how}</div>
                 </div>

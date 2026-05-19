@@ -97,8 +97,8 @@ export default function DFWHARProgramsGuide() {
             <div key={s.label} style={{ background: 'white', borderRadius: 12, padding: 18, textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 30 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#64748B', marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 20, fontWeight: 800, margin: '4px 0' }}>{s.value}</div>
-              <div style={{ fontSize: 11, color: '#94A3B8' }}>{s.sub}</div>
+              <div style={{ fontSize: 20, fontWeight: 800, margin: '4px 0′ }}>{s.value}</div>
+              <div style={{ fontSize: 11, color: '#94A3B8′ }}>{s.sub}</div>
             </div>
           ))}
         </div>
@@ -137,7 +137,7 @@ export default function DFWHARProgramsGuide() {
                   {qualifying.map(p => (
                     <div key={p.name} style={{ background: '#F0FDF4', borderRadius: 10, padding: 16, marginBottom: 12, borderLeft: '4px solid #22C55E' }}>
                       <div style={{ fontWeight: 700, fontSize: 15 }}>{p.name}</div>
-                      <div style={{ color: '#15803D', fontSize: 14, margin: '6px 0' }}>{p.assistance}</div>
+                      <div style={{ color: '#15803D', fontSize: 14, margin: '6px 0′ }}>{p.assistance}</div>
                       <div style={{ display: 'flex', gap: 16, fontSize: 12, color: '#64748B' }}>
                         <span>Type: {p.type}</span>
                         <span>Contact: {p.contact}</span>

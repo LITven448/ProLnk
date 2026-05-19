@@ -46,7 +46,7 @@ export default function DFWSolarInverterGuide() {
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Solar Inverter Guide</h1>
         </div>
         <p style={{ color: '#9BAEC8', marginBottom: 28 }}>DFW hail makes inverter choice matter more than anywhere else. Here's how to choose right.</p>
-        <div style={{ background: '#1A0820', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '3px solid #F5A642' }}>
+        <div style={{ background: '#1A0820', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '3px solid #F5A642′ }}>
           <span style={{ color: '#F5A642', fontWeight: 700 }}>⛈️ DFW Hail Factor: </span>
           <span style={{ color: '#E8EDF5', fontSize: 14 }}>DFW averages 4–8 significant hail events/year. A string inverter failure kills your entire array. Distributed microinverters mean one damaged panel = one panel offline, rest keep producing.</span>
         </div>
@@ -54,9 +54,9 @@ export default function DFWSolarInverterGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚡ Inverter Type Comparison for DFW</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid #1A3055' }}>
+              <tr style={{ borderBottom: '1px solid #1A3055′ }}>
                 {['', 'String Inverter', 'Power Optimizer', 'Microinverter'].map(h => (
-                  <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642' }}>{h}</th>
+                  <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642′ }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -68,9 +68,9 @@ export default function DFWSolarInverterGuide() {
                 ['Monitoring', 'System only', 'Panel-level', 'Panel-level'],
                 ['Warranty', '10–12 yr', '25 yr optimizer', '25 yr'],
               ].map(row => (
-                <tr key={row[0]} style={{ borderBottom: '1px solid #0A1628' }}>
+                <tr key={row[0]} style={{ borderBottom: '1px solid #0A1628′ }}>
                   {row.map((cell, i) => (
-                    <td key={i} style={{ padding: '9px 10px', color: i === 0 ? '#E8EDF5' : '#9BAEC8', fontWeight: i === 0 ? 600 : 400 }}>{cell}</td>
+                    <td key={i} style={{ padding: '9px 10px', color: i === 0 ? '#E8EDF5′ : '#9BAEC8', fontWeight: i === 0 ? 600 : 400 }}>{cell}</td>
                   ))}
                 </tr>
               ))}
@@ -114,7 +114,7 @@ export default function DFWSolarInverterGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ display: 'grid', gap: 10 }}>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Inverter Type</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginTop: 2 }}>{result.type}</div></div>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Recommended Brand</span><div style={{ color: '#E8EDF5', fontWeight: 600, marginTop: 2 }}>{result.brand}</div></div>

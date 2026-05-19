@@ -42,7 +42,7 @@ export default function DFWHVACFilterSubscriptionGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📅 DFW Filter Change Calendar</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { months: 'May – October', label: 'Peak Season', note: 'Monthly changes recommended', color: '#ef4444' },
+              { months: 'May – October', label: 'Peak Season', note: 'Monthly changes recommended', color: '#ef4444′ },
               { months: 'November – April', label: 'Off Season', note: 'Every 2–3 months is fine', color: '#22c55e' },
             ].map(item => (
               <div key={item.months} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: `4px solid ${item.color}` }}>
@@ -65,7 +65,7 @@ export default function DFWHVACFilterSubscriptionGuide() {
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🔧 {svc.name}</div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>✅ {svc.pros}</div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>⚠️ {svc.cons}</div>
-              <div style={{ fontSize: 13, color: '#F5E642' }}>Best for: {svc.best}</div>
+              <div style={{ fontSize: 13, color: '#F5E642′ }}>Best for: {svc.best}</div>
             </div>
           ))}
         </div>
@@ -76,20 +76,20 @@ export default function DFWHVACFilterSubscriptionGuide() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>HOME SIZE</label>
               {[{ val: 'small', label: 'Under 1,500 sq ft' }, { val: 'medium', label: '1,500–3,000 sq ft' }, { val: 'large', label: 'Over 3,000 sq ft' }].map(opt => (
-                <button key={opt.val} onClick={() => setHomeSize(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${homeSize === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: homeSize === opt.val ? '#F5E642' : 'transparent', color: homeSize === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setHomeSize(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${homeSize === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: homeSize === opt.val ? '#F5E642′ : ’transparent', color: homeSize === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>ALLERGY LEVEL</label>
               {[{ val: 'low', label: 'No allergies' }, { val: 'medium', label: 'Mild allergies / pets' }, { val: 'high', label: 'Severe allergies / asthma' }].map(opt => (
-                <button key={opt.val} onClick={() => setAllergyLevel(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${allergyLevel === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: allergyLevel === opt.val ? '#F5E642' : 'transparent', color: allergyLevel === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setAllergyLevel(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${allergyLevel === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: allergyLevel === opt.val ? '#F5E642′ : ’transparent', color: allergyLevel === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>Get My Recommendation →</button>
 
           {result && (
-            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 12 }}>📦 {result.service}</div>
               <div style={{ color: '#94a3b8', marginBottom: 8 }}>📅 Delivery: {result.freq}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginTop: 16 }}>

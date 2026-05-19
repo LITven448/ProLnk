@@ -19,9 +19,9 @@ const FEASIBILITY_MAP: Record<string, Record<string, string>> = {
 };
 
 const COST_MAP: Record<string, Record<string, string>> = {
-  'single': { 'adequate': '$12,000 – $22,000', 'thin': '$16,000 – $28,000', 'none': '$20,000 – $32,000' },
-  'double': { 'adequate': '$18,000 – $32,000', 'thin': '$24,000 – $40,000', 'none': '$28,000 – $45,000' },
-  'tandem': { 'adequate': '$15,000 – $28,000', 'thin': '$20,000 – $34,000', 'none': '$24,000 – $38,000' },
+  'single': { 'adequate': '$12,000 – $22,000', 'thin': '$16,000 – $28,000', 'none': '$20,000 – $32,000′ },
+  'double': { 'adequate': '$18,000 – $32,000', 'thin': '$24,000 – $40,000', 'none': '$28,000 – $45,000′ },
+  'tandem': { 'adequate': '$15,000 – $28,000', 'thin': '$20,000 – $34,000', 'none': '$24,000 – $38,000′ },
 };
 
 const RESALE_VALUE: Record<string, string> = {
@@ -98,11 +98,11 @@ export default function DFWCarportToGarageGuide() {
           <div style={{ display: 'grid', gap: 16 }}>
             {[
               ['Carport size', carportSize, setCarportSize, [['', 'Select size'], ['single', 'Single (1 car)'], ['double', 'Double (2 car)'], ['tandem', 'Tandem (front to back)']]],
-              ['Existing foundation', foundation, setFoundation, [['', 'Select foundation'], ['adequate', 'Good slab (4"+ thick, good condition)'], ['thin', 'Thin or cracked slab'], ['none', 'No slab / gravel / dirt']]],
+              ['Existing foundation', foundation, setFoundation, [['', 'Select foundation'], ['adequate', 'Good slab (4″+ thick, good condition)'], ['thin', 'Thin or cracked slab'], ['none', 'No slab / gravel / dirt']]],
               ['DFW location', location, setLocation, [['', 'Select area'], ['dallas', 'Dallas urban core'], ['fort-worth', 'Fort Worth'], ['suburban', 'DFW suburban (Plano, Irving, Garland)'], ['premium', 'Premium area (Southlake, Frisco, McKinney)']]],
             ].map(([label, val, setter, opts]: any) => (
               <div key={label}>
-                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>{label}</label>
+                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>{label}</label>
                 <select value={val} onChange={e => setter(e.target.value)}
                   style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                   {opts.map(([v, l]: string[]) => <option key={v} value={v}>{l}</option>)}

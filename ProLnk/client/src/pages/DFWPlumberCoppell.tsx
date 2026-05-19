@@ -96,8 +96,8 @@ export default function DFWPlumberCoppell() {
                 onClick={() => setSelected(svc.id)}
                 style={{
                   padding: '12px 8px',
-                  backgroundColor: selected === svc.id ? '#F5E642' : '#0A1628',
-                  color: selected === svc.id ? '#0A1628' : '#fff',
+                  backgroundColor: selected === svc.id ? '#F5E642′ : '#0A1628',
+                  color: selected === svc.id ? '#0A1628′ : '#fff',
                   border: `1px solid ${selected === svc.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: 8,
                   cursor: 'pointer',
@@ -122,7 +122,7 @@ export default function DFWPlumberCoppell() {
                   ))}
                 </ul>
               </div>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 12, letterSpacing: 1, marginBottom: 12 }}>⭐ PREMIUM TIER</div>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 24, marginBottom: 16 }}>{data.premium}</div>
                 <ul style={{ margin: 0, paddingLeft: 18 }}>
@@ -136,7 +136,7 @@ export default function DFWPlumberCoppell() {
         </div>
 
         <div style={{ backgroundColor: '#111f35', borderRadius: 16, padding: 28, marginBottom: 40, border: '1px solid #1e3a5f' }}>
-          <h3 style={{ marginTop: 0, marginBottom: 16, color: '#F5E642' }}>Why Coppell Homeowners Choose Premium</h3>
+          <h3 style={{ marginTop: 0, marginBottom: 16, color: '#F5E642′ }}>Why Coppell Homeowners Choose Premium</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 16 }}>
             {[
               { icon: '🏠', text: 'Your home\’s value justifies doing it right the first time' },

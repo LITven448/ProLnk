@@ -27,10 +27,10 @@ export default function DFWHVACGroundLoopGuide2026() {
           { icon: '🌊', title: 'Pond Loop', desc: 'Most efficient option. Coils sink to pond bottom. Requires 0.5-1 acre water body within 200 ft of home.' },
           { icon: '🌡️', title: 'DFW Ground Temp', desc: 'Stable 65°F at 10-15 ft depth year-round. DFW clay helps retain thermal mass. Excellent geothermal conditions.' }
         ].map((item, i) => (
-          <div key={i} style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '20px', marginBottom: '16px', borderLeft: '4px solid #F5E642' }}>
+          <div key={i} style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '20px', marginBottom: '16px', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: '24px', marginBottom: '8px' }}>{item.icon}</div>
             <h3 style={{ color: '#F5E642', fontSize: '17px', marginBottom: '6px' }}>{item.title}</h3>
-            <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6' }}>{item.desc}</p>
+            <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6′ }}>{item.desc}</p>
           </div>
         ))}
 
@@ -55,7 +55,7 @@ export default function DFWHVACGroundLoopGuide2026() {
             </select>
           </div>
           <button onClick={assess} style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '12px 28px', borderRadius: '8px', fontWeight: '700', fontSize: '15px', border: 'none', cursor: 'pointer', width: '100%' }}>Check Feasibility</button>
-          {result && <div style={{ marginTop: '16px', padding: '14px', backgroundColor: '#1e3a5f', borderRadius: '8px', color: '#F5E642', fontSize: '14px', lineHeight: '1.6' }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', padding: '14px', backgroundColor: '#1e3a5f', borderRadius: '8px', color: '#F5E642', fontSize: '14px', lineHeight: '1.6′ }}>{result}</div>}
         </div>
 
         <p style={{ textAlign: 'center', color: '#475569', fontSize: '12px', marginTop: '24px' }}>ProLnk — DFW Geothermal Specialists 2026</p>

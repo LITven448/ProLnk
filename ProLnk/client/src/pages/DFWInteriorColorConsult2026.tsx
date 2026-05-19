@@ -30,7 +30,7 @@ export default function DFWInteriorColorConsult2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Room Orientation + Style → Color Direction</h2>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
             <div style={{ flex: 1, minWidth: 200 }}>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Room Faces</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Room Faces</label>
               <select value={orientation} onChange={e => setOrientation(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
                 <option value="south">South</option>
                 <option value="west">West</option>
@@ -39,7 +39,7 @@ export default function DFWInteriorColorConsult2026() {
               </select>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Style Preference</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Style Preference</label>
               <select value={style} onChange={e => setStyle(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
                 <option value="warm">Warm / Earthy</option>
                 <option value="cool">Cool / Modern</option>
@@ -47,7 +47,7 @@ export default function DFWInteriorColorConsult2026() {
               </select>
             </div>
           </div>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ {rec.direction}</div>
             <div style={{ marginBottom: 8 }}><strong>Palette:</strong> {rec.palette}</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>⚠️ {rec.warning}</div>
@@ -55,7 +55,7 @@ export default function DFWInteriorColorConsult2026() {
         </div>
 
         {[
-          { icon: '🌡️', title: 'DFW Light Temperature Reality', body: 'DFW sits at 32° latitude — intense, warm sunlight dominates. Colors that look neutral in a Pacific Northwest showroom can appear orange or yellow in a DFW home. Always test with 12"x12" sample boards for 48 hours before committing to a gallon.' },
+          { icon: '🌡️', title: 'DFW Light Temperature Reality', body: 'DFW sits at 32° latitude — intense, warm sunlight dominates. Colors that look neutral in a Pacific Northwest showroom can appear orange or yellow in a DFW home. Always test with 12″x12″ sample boards for 48 hours before committing to a gallon.' },
           { icon: '🏘️', title: 'What DFW Buyers Want', body: 'Agreeable Gray and Accessible Beige dominate DFW resale listings. Warm gray-taupes photograph well, read neutral, and pair with the tan brick, warm wood floors, and brown granite common in DFW suburban homes built 2000-2020.' },
           { icon: '💡', title: 'Lighting Temperature Matters', body: '2700K warm LED bulbs push yellows — great with warm grays. 3000K bulbs are more neutral. 5000K daylight bulbs will make warm paints look muddy. If updating paint, update bulbs at the same time to get accurate color reads during selection.' },
         ].map((card, i) => (

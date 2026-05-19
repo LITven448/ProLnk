@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const rooms = [
-  { label: '🛋️ Living Room', items: ['65" Samsung QLED TV — SN: QN65Q80CAFXZA','Sony soundbar — model HT-S400','Sectional sofa — Restoration Hardware receipt','Area rug — HomeGoods $800','PS5 console — SN: CFI-1215A01X','Apple TV 4K — SN: C39LXXXXXXXXX'] },
+  { label: '🛋️ Living Room', items: ['65″ Samsung QLED TV — SN: QN65Q80CAFXZA','Sony soundbar — model HT-S400','Sectional sofa — Restoration Hardware receipt','Area rug — HomeGoods $800','PS5 console — SN: CFI-1215A01X','Apple TV 4K — SN: C39LXXXXXXXXX'] },
   { label: '🍳 Kitchen', items: ['KitchenAid refrigerator — model KRFC300ESS','GE range — model JB735SPSS + serial','Bosch dishwasher — model SHPM88Z75N','Vitamix blender — SN: 21837XX','KitchenAid stand mixer — serial tag on bottom','Small appliances: toaster, coffee maker, Instant Pot'] },
-  { label: '🛏️ Master Bedroom', items: ['King mattress + frame — Purple Hybrid Premier 3','Dresser + nightstands — Ashley Furniture receipt','55" LG TV — SN: 305MXBK9X387','Jewelry — itemized list in separate document with appraisals','Laptop / MacBook — SN from About This Mac','Watches — serial numbers + box photos'] },
+  { label: '🛏️ Master Bedroom', items: ['King mattress + frame — Purple Hybrid Premier 3','Dresser + nightstands — Ashley Furniture receipt','55″ LG TV — SN: 305MXBK9X387','Jewelry — itemized list in separate document with appraisals','Laptop / MacBook — SN from About This Mac','Watches — serial numbers + box photos'] },
   { label: '🏠 Garage', items: ['Riding mower — John Deere E150 SN: 1GXE150XXXXX','Toolboxes — Milwaukee, DeWalt tool list','Bicycles — serial under bottom bracket','Generator — Generac 22kW SN from nameplate','Power tools list with model + serial numbers','Storage shelving + contents value estimate'] },
   { label: '💻 Home Office', items: ['Desktop PC — build specs + component list','Dual monitors — serial numbers','Desk + chair — Herman Miller Aeron SN','Printer/scanner — Epson model + serial','External hard drives — serial + data value estimate','Network equipment — router, switch, NAS'] },
 ];
@@ -36,10 +36,10 @@ export default function DFWHomeInventoryGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>☁️ Where to Store Your Inventory</div>
           {['Google Drive or iCloud — video walkthrough + photo folder','USAA Home Inventory App (free, insurance-linked)','State Farm Pocket Agent — built-in inventory tool','🔐 ProLnk Home Health Vault — contractor work + permit history stored automatically','USB drive kept off-site at a relative\’s home or safety deposit box'].map((t,i) => (
-            <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642' }}>✓</span>{t}</div>
+            <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642′ }}>✓</span>{t}</div>
           ))}
         </div>
 
@@ -51,13 +51,13 @@ export default function DFWHomeInventoryGuide2026() {
         </div>
 
         {selected !== null && (
-          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>📋 {rooms[selected].label} Checklist</div>
               <button onClick={handleCopy} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 6, padding: '4px 12px', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem' }}>{copied ? '✓ Copied' : 'Copy'}</button>
             </div>
             {rooms[selected].items.map((item, i) => (
-              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642' }}>□</span>{item}</div>
+              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642′ }}>□</span>{item}</div>
             ))}
           </div>
         )}

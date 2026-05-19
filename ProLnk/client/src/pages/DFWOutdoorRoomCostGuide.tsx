@@ -76,18 +76,18 @@ export default function DFWOutdoorRoomCostGuide() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ fontSize: '1rem', fontWeight: 600, color: '#F5E642', marginBottom: '1rem' }}>📋 Cost Breakdown</h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-            <span style={{ color: '#cbd5e1' }}>{enc.label}</span>
+            <span style={{ color: '#cbd5e1′ }}>{enc.label}</span>
             <span style={{ fontWeight: 600 }}>${encLow.toLocaleString()} – ${encHigh.toLocaleString()}</span>
           </div>
           {kit.low > 0 && (
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-              <span style={{ color: '#cbd5e1' }}>{kit.label}</span>
+              <span style={{ color: '#cbd5e1′ }}>{kit.label}</span>
               <span style={{ fontWeight: 600 }}>${kitLow.toLocaleString()} – ${kitHigh.toLocaleString()}</span>
             </div>
           )}
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0 0', fontWeight: 700, fontSize: '1.1rem' }}>
-            <span style={{ color: '#F5E642' }}>Total Investment</span>
-            <span style={{ color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</span>
+            <span style={{ color: '#F5E642′ }}>Total Investment</span>
+            <span style={{ color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</span>
           </div>
         </div>
 
@@ -95,13 +95,13 @@ export default function DFWOutdoorRoomCostGuide() {
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.25rem' }}>
             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>⏱️</div>
             <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>Cost Per Usable Hour (10 yr)</div>
-            <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#4ade80' }}>${costPerHourLow} – ${costPerHourHigh}</div>
+            <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#4ade80′ }}>${costPerHourLow} – ${costPerHourHigh}</div>
             <div style={{ color: '#64748b', fontSize: '0.78rem', marginTop: '0.3rem' }}>{enc.months} usable months/year</div>
           </div>
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.25rem' }}>
             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📈</div>
             <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>Estimated ROI at Resale</div>
-            <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#F5E642' }}>50–80%</div>
+            <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#F5E642′ }}>50–80%</div>
             <div style={{ color: '#64748b', fontSize: '0.78rem', marginTop: '0.3rem' }}>DFW buyers prioritize outdoor living</div>
           </div>
         </div>

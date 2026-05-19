@@ -28,7 +28,7 @@ export default function DFWApplianceExtendedWarrantyGuide() {
   const verdict = info.rec === 'Always worth it' ? '✅' : info.rec === 'Maybe' ? '⚠️' : '❌';
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#1a2332' }}>
+    <div style={{ background: '#f8fafc', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#1a2332′ }}>
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ fontSize: 13, color: '#64748b', marginBottom: 8 }}>🏠 DFW Home Guide</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>
@@ -36,24 +36,24 @@ export default function DFWApplianceExtendedWarrantyGuide() {
         </h1>
         <p style={{ color: '#475569', fontSize: 16, lineHeight: 1.6, marginBottom: 32 }}>
           DFW's hard water, extreme heat, and humidity cycles stress appliances faster than national averages.
-          Here's what actually makes sense to cover — and what's a waste of money.
+          Here's what actually makes sense to cover — and what’s a waste of money.
         </p>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 28, marginBottom: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🔧 Warranty Calculator</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#374151' }}>Appliance Type</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#374151′ }}>Appliance Type</label>
               <select value={appliance} onChange={e => setAppliance(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e2e8f0', fontSize: 15, background: '#f8fafc' }}>
                 {appliances.map(a => <option key={a}>{a}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#374151' }}>Appliance Age: {age} year{age !== 1 ? 's' : ''}</label>
-              <input type="range" min={1} max={12} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#374151′ }}>Appliance Age: {age} year{age !== 1 ? ’s' : ''}</label>
+              <input type="range" min={1} max={12} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#374151' }}>DFW Water Hardness</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#374151′ }}>DFW Water Hardness</label>
               <select value={hardWater} onChange={e => setHardWater(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e2e8f0', fontSize: 15, background: '#f8fafc' }}>
                 {hardWaterLevels.map(l => <option key={l}>{l}</option>)}
               </select>
@@ -72,12 +72,12 @@ export default function DFWApplianceExtendedWarrantyGuide() {
           <p style={{ color: '#cbd5e1', lineHeight: 1.6, marginBottom: 20 }}>{info.note}</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 10, padding: 16, textAlign: 'center' }}>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>${annualRepairRisk}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>Est. annual repair risk</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>${annualRepairRisk}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>Est. annual repair risk</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 10, padding: 16, textAlign: 'center' }}>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>${warrantyMid}/yr</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>Typical warranty cost</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>${warrantyMid}/yr</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>Typical warranty cost</div>
             </div>
           </div>
         </div>
@@ -87,12 +87,12 @@ export default function DFWApplianceExtendedWarrantyGuide() {
           {[
             { type: 'Square Trade / Allstate', pro: 'Flexible, covers multiple brands, transferable', con: 'Deductibles per claim, slower service' },
             { type: 'Manufacturer Extended', pro: 'OEM parts, authorized techs, faster repair', con: 'Single brand only, expires at ownership change' },
-            { type: 'Retailer (Best Buy, etc.)', pro: 'Easy claims process, instant replacement on smaller items', con: 'Markup heavy, may exclude labor or parts after year 2' },
+            { type: 'Retailer (Best Buy, etc.)', pro: 'Easy claims process, instant replacement on smaller items', con: 'Markup heavy, may exclude labor or parts after year 2′ },
           ].map(w => (
             <div key={w.type} style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: 14, marginBottom: 14 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{w.type}</div>
               <div style={{ fontSize: 13, color: '#16a34a' }}>✓ {w.pro}</div>
-              <div style={{ fontSize: 13, color: '#dc2626' }}>✗ {w.con}</div>
+              <div style={{ fontSize: 13, color: '#dc2626′ }}>✗ {w.con}</div>
             </div>
           ))}
         </div>

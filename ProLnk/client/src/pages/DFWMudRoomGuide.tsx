@@ -24,13 +24,13 @@ const getConfig = (size: string, household: string, sports: string): MudRoomConf
       : 'Compact bench + overhead hooks + small cubbies along single wall',
     storage: [
       isBigFamily ? `${household.split(' ')[0]} individual locker bays (one per person)` : '2–3 cubby bays with hooks above each',
-      hasBigGear ? 'Extra-deep cubbies (18"+ depth) for helmets and pads' : 'Standard 12" cubbies for shoes and bags',
+      hasBigGear ? 'Extra-deep cubbies (18″+ depth) for helmets and pads' : 'Standard 12″ cubbies for shoes and bags',
       'Bench with shoe storage underneath (pull-out or open cubbies)',
       'Upper hooks rated 50 lbs+ for heavy gear bags and coats',
       isLarge ? 'Overhead cabinet row for seasonal storage' : 'Wall-mounted shelf for rarely-used items',
       hasPets ? 'Pet station: built-in pet wash tub or lower hose bib connection' : 'Optional pet hook area',
     ],
-    flooring: '12"×24" or 18"×18" porcelain tile — DFW clay soil tracked in year-round. Tile wipes clean instantly. Grout lines collect dirt; use epoxy grout or large-format tile with minimal grout. NO carpet, NO LVP in mudroom — water and mud will destroy them.',
+    flooring: '12″×24″ or 18″×18″ porcelain tile — DFW clay soil tracked in year-round. Tile wipes clean instantly. Grout lines collect dirt; use epoxy grout or large-format tile with minimal grout. NO carpet, NO LVP in mudroom — water and mud will destroy them.',
     petFeature: hasPets
       ? isLarge
         ? 'Dedicated pet wash station: stainless or composite tub at knee height, handheld sprayer, built-in storage for pet towels and grooming supplies. Cost: $800–$2,500 added to build.'
@@ -77,7 +77,7 @@ export default function DFWMudRoomGuide() {
             { icon: '🏗️', title: 'Built-in Lockers', desc: 'Custom or semi-custom locker bays with hooks, cubbies, and bench — one per family member. Eliminates the pile-of-stuff-by-the-door problem permanently.' },
             { icon: '🪨', title: 'Tile Flooring Only', desc: 'DFW clay soil + Texas weather = constant tracked-in mess. Only porcelain tile makes sense in a mud room. Use large-format tile with epoxy grout.' },
             { icon: '🐕', title: 'Pet Wash Station', desc: 'A knee-height tub with handheld sprayer at the entry handles muddy dogs without dragging them through the house. Growing rapidly in DFW remodels.' },
-            { icon: '⚽', title: 'Gear Storage Depth', desc: 'Standard 12" cubbies do not fit football helmets or catcher gear. Youth sports families need 18"+ deep cubbies for full equipment storage.' },
+            { icon: '⚽', title: 'Gear Storage Depth', desc: 'Standard 12″ cubbies do not fit football helmets or catcher gear. Youth sports families need 18″+ deep cubbies for full equipment storage.' },
             { icon: '🔑', title: 'Bench + Hooks System', desc: 'The single most-used feature. Seated area to remove shoes, hooks within reach for bags and coats at adult and child height.' },
             { icon: '🧺', title: 'Laundry Prep Connection', desc: 'Where possible, connect mud room to laundry room — uniform washing goes directly from entry to machine without touching the rest of the house.' },
           ].map((item, i) => (
@@ -90,7 +90,7 @@ export default function DFWMudRoomGuide() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>
             📐 Mud Room Configuration Planner
           </h2>
 
@@ -105,8 +105,8 @@ export default function DFWMudRoomGuide() {
                 {group.options.map(o => (
                   <button key={o} onClick={() => { group.setter(o); setShowResults(false); }}
                     style={{ padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '13px',
-                      backgroundColor: group.selected === o ? '#F5E642' : '#1E3A5F',
-                      color: group.selected === o ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
+                      backgroundColor: group.selected === o ? '#F5E642′ : '#1E3A5F',
+                      color: group.selected === o ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
                     {o}
                   </button>
                 ))}
@@ -138,19 +138,19 @@ export default function DFWMudRoomGuide() {
               <div style={{ color: '#94A3B8', fontSize: '12px', fontWeight: 700, marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Storage Configuration</div>
               {config.storage.map((s, i) => (
                 <div key={i} style={{ padding: '10px 14px', backgroundColor: '#112240', borderRadius: '8px', marginBottom: '6px', fontSize: '14px', display: 'flex', gap: '10px' }}>
-                  <span style={{ color: '#F5E642' }}>✓</span>
+                  <span style={{ color: '#F5E642′ }}>✓</span>
                   <span>{s}</span>
                 </div>
               ))}
             </div>
 
-            <div style={{ marginBottom: '16px', padding: '16px', backgroundColor: '#F5E64210', borderRadius: '8px', border: '1px solid #F5E64240' }}>
-              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#F5E642' }}>🪨 Flooring Specification</div>
+            <div style={{ marginBottom: '16px', padding: '16px', backgroundColor: '#F5E64210', borderRadius: '8px', border: '1px solid #F5E64240′ }}>
+              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#F5E642′ }}>🪨 Flooring Specification</div>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.5 }}>{config.flooring}</p>
             </div>
 
             <div style={{ padding: '16px', backgroundColor: '#112240', borderRadius: '8px', border: '1px solid #1E3A5F' }}>
-              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#94A3B8' }}>🐕 Pet Integration</div>
+              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#94A3B8′ }}>🐕 Pet Integration</div>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.5 }}>{config.petFeature}</p>
             </div>
           </div>

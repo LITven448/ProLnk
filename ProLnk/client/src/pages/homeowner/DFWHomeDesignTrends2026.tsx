@@ -93,7 +93,7 @@ export default function DFWHomeDesignTrends2026() {
               { item: 'Colored Appliances', note: 'Stay stainless. Any other color limits your buyer pool.' },
             ].map(o => (
               <div key={o.item} style={{ background: '#0f0f13', borderRadius: 8, padding: 16 }}>
-                <div style={{ fontWeight: 700, marginBottom: 4, color: '#f87171' }}>✗ {o.item}</div>
+                <div style={{ fontWeight: 700, marginBottom: 4, color: '#f87171′ }}>✗ {o.item}</div>
                 <div style={{ color: '#9ca3af', fontSize: 13 }}>{o.note}</div>
               </div>
             ))}

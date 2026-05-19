@@ -30,13 +30,13 @@ export default function DFWDimmerSwitchGuide() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>⚠️ The DFW LED Buzzing Problem</div>
           <div style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-            Most DFW homes have switched to LED bulbs, but older dimmers (designed for incandescent) cause LEDs to buzz, flicker, or not dim smoothly. The fix: a <strong style={{ color: '#F5E642' }}>CL-rated dimmer</strong> designed for LED/CFL loads.
+            Most DFW homes have switched to LED bulbs, but older dimmers (designed for incandescent) cause LEDs to buzz, flicker, or not dim smoothly. The fix: a <strong style={{ color: '#F5E642′ }}>CL-rated dimmer</strong> designed for LED/CFL loads.
           </div>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🔌 Neutral Wire Requirement</div>
-          <div style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>Smart dimmers often need a <strong style={{ color: '#cbd5e1' }}>neutral wire</strong> (white wire in switch box). Homes built after 2000 usually have it. Pre-2000 DFW homes often do not.</div>
+          <div style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>Smart dimmers often need a <strong style={{ color: '#cbd5e1′ }}>neutral wire</strong> (white wire in switch box). Homes built after 2000 usually have it. Pre-2000 DFW homes often do not.</div>
           <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '0.75rem', color: '#94a3b8', fontSize: '0.9rem' }}>
             💡 Check: turn off circuit, remove switch, look for a white wire bundle not connected to the switch. That's your neutral.
           </div>
@@ -51,7 +51,7 @@ export default function DFWDimmerSwitchGuide() {
           ].map(({ label, value, setter, options }) => (
             <div key={label} style={{ marginBottom: '1rem' }}>
               <div style={{ color: '#94a3b8', marginBottom: '0.4rem' }}>{label}</div>
-              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155' }}>
+              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155′ }}>
                 <option value="">Select...</option>
                 {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
               </select>
@@ -59,9 +59,9 @@ export default function DFWDimmerSwitchGuide() {
           ))}
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', width: '100%' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: '#001a2e', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: '#001a2e', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>✅ Recommended: {result.dimmer}</div>
-              <div style={{ color: '#cbd5e1', margin: '0.5rem 0' }}>🔌 {result.neutral} &nbsp;|&nbsp; 💰 {result.cost}</div>
+              <div style={{ color: '#cbd5e1', margin: '0.5rem 0′ }}>🔌 {result.neutral} &nbsp;|&nbsp; 💰 {result.cost}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.note}</div>
             </div>
           )}
@@ -69,7 +69,7 @@ export default function DFWDimmerSwitchGuide() {
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📡 Why Lutron Caseta for DFW</div>
-          <div style={{ color: '#94a3b8' }}>Lutron uses its own Clear Connect RF protocol — not Z-Wave or Zigbee. In DFW's dense suburban neighborhoods, Lutron is dramatically more reliable and doesn't compete with neighbor WiFi or smart home interference.</div>
+          <div style={{ color: '#94a3b8′ }}>Lutron uses its own Clear Connect RF protocol — not Z-Wave or Zigbee. In DFW’s dense suburban neighborhoods, Lutron is dramatically more reliable and doesn’t compete with neighbor WiFi or smart home interference.</div>
         </div>
       </div>
     </div>

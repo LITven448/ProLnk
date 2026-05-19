@@ -73,7 +73,7 @@ export default function DFWLawnOverseeding2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Keep your DFW lawn green through winter — Bermuda goes dormant, ryegrass keeps it alive.</p>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>🌡️ Key Timing:</span>
           <span style={{ color: '#94a3b8', fontSize: 14, marginLeft: 8 }}>Overseed when soil temps drop below 70°F — typically mid-October in DFW. Too early = poor germination. Too late = seed won't establish before cold.</span>
         </div>
@@ -85,9 +85,9 @@ export default function DFWLawnOverseeding2026() {
               {lawnTypes.map(t => (
                 <button key={t.id} onClick={() => setLawnType(t.id)}
                   style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, textAlign: 'left',
-                    borderColor: lawnType === t.id ? '#F5E642' : '#1e3a5f',
-                    background: lawnType === t.id ? '#F5E642' : '#0A1628',
-                    color: lawnType === t.id ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
+                    borderColor: lawnType === t.id ? '#F5E642′ : '#1e3a5f',
+                    background: lawnType === t.id ? '#F5E642′ : '#0A1628',
+                    color: lawnType === t.id ? '#0A1628′ : '#94a3b8', fontWeight: 600 }}>
                   {t.icon} {t.label}
                 </button>
               ))}
@@ -99,9 +99,9 @@ export default function DFWLawnOverseeding2026() {
               {goals.map(g => (
                 <button key={g.id} onClick={() => setGoal(g.id)}
                   style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, textAlign: 'left',
-                    borderColor: goal === g.id ? '#F5E642' : '#1e3a5f',
-                    background: goal === g.id ? '#F5E642' : '#0A1628',
-                    color: goal === g.id ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
+                    borderColor: goal === g.id ? '#F5E642′ : '#1e3a5f',
+                    background: goal === g.id ? '#F5E642′ : '#0A1628',
+                    color: goal === g.id ? '#0A1628′ : '#94a3b8', fontWeight: 600 }}>
                   {g.icon} {g.label}
                 </button>
               ))}

@@ -37,7 +37,7 @@ const trees: Record<Problem, TreeNode> = {
 function renderResult(result: string) {
   const isEmergency = result.includes('Emergency');
   const isDIY = result.startsWith('DIY');
-  const color = isEmergency ? '#F87171' : isDIY ? '#4ADE80' : '#F5E642';
+  const color = isEmergency ? '#F87171′ : isDIY ? '#4ADE80' : '#F5E642';
   const label = isEmergency ? '🚨 Emergency Service Needed' : isDIY ? '🔧 DIY Fix' : '📞 Call a Pro';
   return (
     <div style={{ background: '#0F2240', borderRadius: 12, padding: '20px', borderLeft: `4px solid ${color}` }}>
@@ -87,7 +87,7 @@ export default function DFWHomeRepairDecisionTool() {
 
         {problem && current !== null && typeof current !== 'string' && (
           <div>
-            <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Problem: <span style={{ color: '#F5E642' }}>{problem}</span></div>
+            <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Problem: <span style={{ color: '#F5E642′ }}>{problem}</span></div>
             <div style={{ background: '#0F2240', borderRadius: 12, padding: '20px', marginBottom: 20 }}>
               <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 20 }}>❓ {current.q}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -107,7 +107,7 @@ export default function DFWHomeRepairDecisionTool() {
 
         {problem && typeof current === 'string' && (
           <div>
-            <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 16 }}>Problem: <span style={{ color: '#F5E642' }}>{problem}</span></div>
+            <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 16 }}>Problem: <span style={{ color: '#F5E642′ }}>{problem}</span></div>
             {renderResult(current)}
             <button onClick={reset} style={{ marginTop: 20, background: 'transparent', border: '1.5px solid #1E3A5F', color: '#94A3B8', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontSize: 13 }}>← Diagnose another problem</button>
           </div>

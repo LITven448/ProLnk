@@ -70,8 +70,8 @@ export default function ProLnkFAQ2026() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {['homeowner', 'partner'].map(t => (
               <button key={t} onClick={() => { setUserType(userType === t ? null : t); setCatFilter('all'); }} style={{
-                padding: '8px 18px', borderRadius: 8, border: userType === t ? '2px solid #0A1628' : '1px solid #e2e8f0',
-                background: userType === t ? '#0A1628' : '#fff', color: userType === t ? '#F5E642' : '#0f172a',
+                padding: '8px 18px', borderRadius: 8, border: userType === t ? '2px solid #0A1628′ : '1px solid #e2e8f0',
+                background: userType === t ? '#0A1628′ : '#fff', color: userType === t ? '#F5E642' : '#0f172a',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{t === 'homeowner' ? '🏠 Homeowner' : '🤝 Partner'}</button>
             ))}
@@ -82,8 +82,8 @@ export default function ProLnkFAQ2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 28 }}>
           {categories.map(c => (
             <button key={c.key} onClick={() => setCatFilter(c.key)} style={{
-              padding: '7px 16px', borderRadius: 8, border: catFilter === c.key ? '2px solid #0A1628' : '1px solid #e2e8f0',
-              background: catFilter === c.key ? '#0A1628' : '#fff', color: catFilter === c.key ? '#F5E642' : '#0f172a',
+              padding: '7px 16px', borderRadius: 8, border: catFilter === c.key ? '2px solid #0A1628′ : '1px solid #e2e8f0',
+              background: catFilter === c.key ? '#0A1628′ : '#fff', color: catFilter === c.key ? '#F5E642' : '#0f172a',
               cursor: 'pointer', fontWeight: 600, fontSize: 13,
             }}>{c.label}</button>
           ))}

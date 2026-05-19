@@ -32,7 +32,7 @@ export default function DFWHVACNewsBriefing2026() {
             {[['', 'All News'], ['maintenance', '🔧 Maintenance'], ['efficiency', '📊 Efficiency'], ['refrigerant', '🧪 Refrigerant'], ['rebates', '💰 Rebates']].map(([val, label]) => (
               <button key={val} onClick={() => setSituation(val)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  backgroundColor: situation === val ? '#F5E642' : '#1a2d50', color: situation === val ? '#0A1628' : '#94a3b8' }}>
+                  backgroundColor: situation === val ? '#F5E642′ : '#1a2d50', color: situation === val ? '#0A1628' : '#94a3b8' }}>
                 {label}
               </button>
             ))}
@@ -41,7 +41,7 @@ export default function DFWHVACNewsBriefing2026() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {filtered.map((s, i) => (
-            <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 28 }}>{s.emoji}</span>
                 <div>
@@ -53,7 +53,7 @@ export default function DFWHVACNewsBriefing2026() {
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
           <div style={{ fontSize: 32 }}>🌡️</div>
           <p style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Book a Charter HVAC Pro Before Summer Rush</p>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>

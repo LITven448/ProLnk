@@ -25,7 +25,7 @@ export default function DFWSolarTaxCreditTimeline2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>DFW Solar Federal Tax Credit Timeline 2026</h1>
         <p style={{ color: '#94A3B8', fontSize: 15, marginBottom: 28 }}>IRA solar credits run through 2032 at 30% — here is exactly what that means for your DFW install</p>
 
-        <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📅 ITC Credit Schedule (Residential)</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
             {[
@@ -92,8 +92,8 @@ export default function DFWSolarTaxCreditTimeline2026() {
                 <div key={year} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#1E2F4F', borderRadius: 8, padding: '12px 16px' }}>
                   <span style={{ color: '#E8EAF0', fontWeight: 600, fontSize: 14 }}>{year}</span>
                   <span style={{ color: '#94A3B8', fontSize: 14 }}>{pct}% credit</span>
-                  <span style={{ color: pct === 30 ? '#4ADE80' : pct === 0 ? '#F87171' : '#FCD34D', fontWeight: 800, fontSize: 18 }}>
-                    {pct === 0 ? '$0' : '$' + savings.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                  <span style={{ color: pct === 30 ? '#4ADE80′ : pct === 0 ? '#F87171' : '#FCD34D', fontWeight: 800, fontSize: 18 }}>
+                    {pct === 0 ? '$0′ : '$' + savings.toLocaleString(’en-US', { maximumFractionDigits: 0 })}
                   </span>
                 </div>
               ))}

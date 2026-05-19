@@ -45,7 +45,7 @@ export default function DFWFoundationContractorVetting() {
         <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>8 Things to Verify</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 36 }}>
           {vetItems.map((item, i) => (
-            <div key={i} style={{ background: '#111f38', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642' }}>
+            <div key={i} style={{ background: '#111f38', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>✅ {item.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{item.detail}</div>
             </div>
@@ -56,7 +56,7 @@ export default function DFWFoundationContractorVetting() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
           {projectTypes.map((p, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {p.type}
             </button>
           ))}
@@ -79,10 +79,10 @@ export default function DFWFoundationContractorVetting() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, background: '#111f38', borderRadius: 10, padding: 20, borderTop: '2px solid #F5E642' }}>
+        <div style={{ marginTop: 32, background: '#111f38', borderRadius: 10, padding: 20, borderTop: '2px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🚩 DFW Foundation Red Flags</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            No transferable warranty. Quotes without visiting the property. Doesn't mention an engineer. Demands large deposit before work begins. Can't explain what type of piers they use or why. Price seems too low — DFW foundation repair averages $5,000–$20,000+.
+            No transferable warranty. Quotes without visiting the property. Doesn't mention an engineer. Demands large deposit before work begins. Can’t explain what type of piers they use or why. Price seems too low — DFW foundation repair averages $5,000–$20,000+.
           </div>
         </div>
       </div>

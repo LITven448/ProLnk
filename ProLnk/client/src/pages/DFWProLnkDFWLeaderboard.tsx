@@ -45,14 +45,14 @@ export default function DFWProLnkDFWLeaderboard() {
   const [activity, setActivity] = useState('active');
   const result = leaderboardResults[activity];
 
-  const tierColors: Record<string, string> = { Bronze: '#CD7F32', Silver: '#94A3B8', Gold: '#F59E0B', Platinum: '#F5E642' };
+  const tierColors: Record<string, string> = { Bronze: '#CD7F32', Silver: '#94A3B8', Gold: '#F59E0B', Platinum: '#F5E642′ };
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📊</div>
-          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0' }}>DFW Partner Leaderboard</h1>
+          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0′ }}>DFW Partner Leaderboard</h1>
           <p style={{ color: '#94A3B8', marginTop: '0.5rem' }}>How performance ranking works and why it matters for your income</p>
         </div>
 
@@ -70,7 +70,7 @@ export default function DFWProLnkDFWLeaderboard() {
           <h2 style={{ color: '#F5E642', margin: '0 0 1rem' }}>Where Would You Rank?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
             {activityLevels.map(a => (
-              <button key={a.value} onClick={() => setActivity(a.value)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${activity === a.value ? '#F5E642' : '#1E3A5F'}`, backgroundColor: activity === a.value ? '#1E3A5F' : 'transparent', color: activity === a.value ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: '0.85rem' }}>
+              <button key={a.value} onClick={() => setActivity(a.value)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${activity === a.value ? '#F5E642' : '#1E3A5F'}`, backgroundColor: activity === a.value ? '#1E3A5F' : 'transparent', color: activity === a.value ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: '0.85rem' }}>
                 {a.label}
               </button>
             ))}

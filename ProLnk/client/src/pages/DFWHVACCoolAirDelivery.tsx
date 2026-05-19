@@ -56,7 +56,7 @@ export default function DFWHVACCoolAirDelivery() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {deliveryParts.map(part => (
             <button key={part.id} onClick={() => setSelected(selected === part.id ? null : part.id)}
-              style={{ background: selected === part.id ? '#F5E642' : '#0F2140', border: `2px solid ${selected === part.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s', color: selected === part.id ? '#0A1628' : '#E8EDF5' }}>
+              style={{ background: selected === part.id ? '#F5E642′ : '#0F2140', border: `2px solid ${selected === part.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s', color: selected === part.id ? '#0A1628′ : '#E8EDF5' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{part.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>{part.name}</div>
             </button>
@@ -79,7 +79,7 @@ export default function DFWHVACCoolAirDelivery() {
           {complaints.map((c, i) => (
             <div key={i} onClick={() => setActiveComplaint(activeComplaint === i ? null : i)}
               style={{ background: '#0F2140', border: `1px solid ${activeComplaint === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
-              <div style={{ fontWeight: 600, color: activeComplaint === i ? '#F5E642' : '#E8EDF5' }}>"{c.symptom}"</div>
+              <div style={{ fontWeight: 600, color: activeComplaint === i ? '#F5E642′ : '#E8EDF5' }}>"{c.symptom}"</div>
               {activeComplaint === i && (
                 <div style={{ marginTop: '0.75rem', color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.6 }}>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>Likely issue: </span>{deliveryParts.find(p => p.id === c.part)?.name}<br/>

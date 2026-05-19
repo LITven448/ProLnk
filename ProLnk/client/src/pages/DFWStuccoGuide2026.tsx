@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const issues = [
-  { id: 'cracking', label: '🕸️ Surface Cracking', guide: 'Hairline cracks: fill with elastomeric caulk + paint. DFW foundation movement causes most stucco cracking. Monitor for growth — cracks >1/4" need structural eval.' },
+  { id: 'cracking', label: '🕸️ Surface Cracking', guide: 'Hairline cracks: fill with elastomeric caulk + paint. DFW foundation movement causes most stucco cracking. Monitor for growth — cracks >1/4″ need structural eval.' },
   { id: 'water', label: '💧 Water Intrusion', guide: 'Water behind stucco is the #1 failure mode in DFW. Check for soft spots, discoloration, mold. EIFS (synthetic) is especially vulnerable. Full remediation runs $8–$20 per sq ft.' },
   { id: 'eifs', label: '🏗️ EIFS vs Traditional', guide: 'EIFS (Dryvit) = foam + synthetic finish. Traditional = 3-coat cement. EIFS common in 1990s DFW builds — inspect all penetrations yearly. Traditional is more durable in DFW humidity.' },
   { id: 'reside', label: '🔄 Repair vs Reside', guide: 'Localized damage (<20% of wall): repair. Widespread cracking, moisture damage, or failed EIFS: reside. Reside cost $8–$15/sq ft. Fiber cement siding is a popular DFW alternative.' },
@@ -44,16 +44,16 @@ export default function DFWStuccoGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
           {issues.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id === selected ? null : i.id)}
-              style={{ background: selected === i.id ? '#F5E642' : '#162032', color: selected === i.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: '1rem' }}>
+              style={{ background: selected === i.id ? '#F5E642′ : '#162032', color: selected === i.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: '1rem' }}>
               {i.label}
             </button>
           ))}
         </div>
 
         {guide && (
-          <div style={{ background: '#162032', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#162032', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>{guide.label} — Repair Guide</h3>
-            <p style={{ lineHeight: 1.7, color: '#d0dce8' }}>{guide.guide}</p>
+            <p style={{ lineHeight: 1.7, color: '#d0dce8′ }}>{guide.guide}</p>
           </div>
         )}
 

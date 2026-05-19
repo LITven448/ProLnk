@@ -72,14 +72,14 @@ export default function DFWBackyardOfficeGuide() {
           {officePods.map(p => (
             <div key={p.type} style={{ background: '#1e2d45', borderRadius: 8, padding: 14 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <strong style={{ color: '#F5E642' }}>{p.type}</strong>
+                <strong style={{ color: '#F5E642′ }}>{p.type}</strong>
                 <span style={{ color: '#94a3b8', fontSize: 12 }}>{p.sqft} · Install: {p.install}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6, flexWrap: 'wrap', gap: 6 }}>
                 <span style={{ color: '#cbd5e1', fontSize: 13 }}>💰 {p.cost}</span>
                 <span style={{ color: '#94a3b8', fontSize: 12 }}>Permit: {p.permit}</span>
               </div>
-              <p style={{ color: '#64748b', fontSize: 12, margin: '6px 0 0' }}>Climate: {p.climate} · Best: {p.best}</p>
+              <p style={{ color: '#64748b', fontSize: 12, margin: '6px 0 0′ }}>Climate: {p.climate} · Best: {p.best}</p>
             </div>
           ))}
         </div>
@@ -134,8 +134,8 @@ export default function DFWBackyardOfficeGuide() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>💡 DFW Internet Connection</strong>
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>💡 DFW Internet Connection</strong>
           <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 14 }}>
             Run fiber conduit underground from house to office ($400–800 for 100ft).
             AT&T Fiber and Frontier Fiber both serve DFW suburbs — avoid Wi-Fi extenders for video calls.

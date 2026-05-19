@@ -70,12 +70,12 @@ export default function DFWSmartHomeROIGuide() {
         </div>
 
         <div style={{ background: '#111d33', border: '1px solid #1e3a5f', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>
             📊 Calculate Smart Upgrade ROI
           </h2>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>Smart Upgrade</label>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>Smart Upgrade</label>
             <select
               value={selectedUpgrade}
               onChange={e => setSelectedUpgrade(e.target.value)}
@@ -88,17 +88,17 @@ export default function DFWSmartHomeROIGuide() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>Install Cost ($)</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>Install Cost ($)</label>
               <input
                 type="number"
                 value={cost}
                 onChange={e => setCost(e.target.value)}
-                placeholder="e.g. 8000"
+                placeholder="e.g. 8000″
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>Home Price Tier</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>Home Price Tier</label>
               <select
                 value={priceTier}
                 onChange={e => setPriceTier(e.target.value)}
@@ -118,7 +118,7 @@ export default function DFWSmartHomeROIGuide() {
           </button>
 
           {result && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 16 }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 22 }}>${result.buyerPremium.toLocaleString()}</div>

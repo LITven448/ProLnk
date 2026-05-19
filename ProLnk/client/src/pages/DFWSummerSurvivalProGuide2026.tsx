@@ -39,7 +39,7 @@ export default function DFWSummerSurvivalProGuide2026() {
           {trades.map(t => (
             <button key={t} onClick={() => setTrade(t)}
               style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: trade === t ? '#F5E642' : '#1e2d45', color: trade === t ? '#0A1628' : '#94a3b8' }}>
+                background: trade === t ? '#F5E642′ : '#1e2d45', color: trade === t ? '#0A1628' : '#94a3b8' }}>
               {tradeLabels[t]}
             </button>
           ))}
@@ -48,7 +48,7 @@ export default function DFWSummerSurvivalProGuide2026() {
           <div key={si} style={{ background: '#132035', borderRadius: 14, padding: '20px', marginBottom: 16 }}>
             <h3 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 12 }}>{sectionLabels[si]}</h3>
             {items.map((item, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: i < items.length - 1 ? '1px solid #1e2d45' : 'none', color: '#e2e8f0', fontSize: 14 }}>
+              <div key={i} style={{ padding: '8px 0', borderBottom: i < items.length - 1 ? '1px solid #1e2d45′ : ’none', color: '#e2e8f0', fontSize: 14 }}>
                 • {item}
               </div>
             ))}

@@ -27,7 +27,7 @@ const responses = {
   },
 };
 
-const severityColors: Record<string, string> = { HIGH: '#f59e0b', CRITICAL: '#ef4444', MODERATE: '#3b82f6' };
+const severityColors: Record<string, string> = { HIGH: '#f59e0b', CRITICAL: '#ef4444', MODERATE: '#3b82f6′ };
 
 export default function DFWGasLeakGuide() {
   const [location, setLocation] = useState('');
@@ -60,7 +60,7 @@ export default function DFWGasLeakGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Where do you smell gas?</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'inside', label: '🏠 Inside the home' }, { key: 'outside', label: '🌳 Outside / yard / meter' }].map(opt => (
-              <button key={opt.key} onClick={() => setLocation(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: location === opt.key ? '#F5E642' : '#334155', background: location === opt.key ? '#F5E642' : 'transparent', color: location === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={opt.key} onClick={() => setLocation(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: location === opt.key ? '#F5E642′ : '#334155', background: location === opt.key ? '#F5E642' : ’transparent', color: location === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -68,7 +68,7 @@ export default function DFWGasLeakGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>How strong is the odor?</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'faint', label: '🟡 Faint / intermittent' }, { key: 'strong', label: '🔴 Strong / constant' }].map(opt => (
-              <button key={opt.key} onClick={() => setIntensity(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: intensity === opt.key ? '#F5E642' : '#334155', background: intensity === opt.key ? '#F5E642' : 'transparent', color: intensity === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={opt.key} onClick={() => setIntensity(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: intensity === opt.key ? '#F5E642′ : '#334155', background: intensity === opt.key ? '#F5E642' : ’transparent', color: intensity === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -81,7 +81,7 @@ export default function DFWGasLeakGuide() {
         {result && (
           <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', border: `2px solid ${severityColors[result.severity]}` }}>
             <div style={{ background: severityColors[result.severity], color: '#fff', display: 'inline-block', padding: '0.3rem 1rem', borderRadius: '20px', fontWeight: 700, marginBottom: '1rem' }}>{result.severity} RISK</div>
-            <ol style={{ color: '#cbd5e1', lineHeight: 2.1, paddingLeft: '1.2rem', margin: '0 0 1rem 0' }}>
+            <ol style={{ color: '#cbd5e1', lineHeight: 2.1, paddingLeft: '1.2rem', margin: '0 0 1rem 0′ }}>
               {result.steps.map((s, i) => <li key={i}>{s}</li>)}
             </ol>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '0.75rem' }}>

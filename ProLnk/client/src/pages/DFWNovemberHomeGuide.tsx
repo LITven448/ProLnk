@@ -68,7 +68,7 @@ export default function DFWNovemberHomeGuide() {
           Freeze prep month for DFW. Property tax due January 31 — plan payment now. Pipe risk is real: DFW pipes are less insulated than northern climates. One overnight freeze can burst a hose bib or attic line.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628′ }}>
           <strong>🧊 November DFW Winter Prep Decisions</strong>
           <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.8 }}>
             <li>Property tax due Jan 31 — plan payment or installment now</li>
@@ -88,8 +88,8 @@ export default function DFWNovemberHomeGuide() {
                 padding: '8px 16px',
                 borderRadius: 8,
                 border: `2px solid ${selected.includes(f) ? '#F5E642' : '#1E3050'}`,
-                background: selected.includes(f) ? '#F5E642' : '#111F35',
-                color: selected.includes(f) ? '#0A1628' : '#ccc',
+                background: selected.includes(f) ? '#F5E642′ : '#111F35',
+                color: selected.includes(f) ? '#0A1628′ : '#ccc',
                 fontWeight: 600,
                 cursor: 'pointer',
                 fontSize: 13,

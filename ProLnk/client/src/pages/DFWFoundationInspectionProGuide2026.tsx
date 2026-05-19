@@ -79,20 +79,20 @@ export default function DFWFoundationInspectionProGuide2026() {
   const [type, setType] = useState<string>(types[0]);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <span style={{ fontSize: 48 }}>🏗️</span>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>
             DFW Foundation Inspection Pro Guide 2026
           </h1>
-          <p style={{ color: "#94a3b8", fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
+          <p style={{ color: "#94a3b8″, fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
             DFW black clay soil is the most active foundation environment in the US. ProLnk Charter foundation pros follow systematic protocols — every visit, fully documented.
           </p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 16 }}>Select Inspection Type → Documentation Guide</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 16 }}>Select Inspection Type → Documentation Guide</h2>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 24 }}>
             {types.map(t => (
               <button
@@ -103,8 +103,8 @@ export default function DFWFoundationInspectionProGuide2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  background: type === t ? "#F5E642" : "#1a2f55",
-                  color: type === t ? "#0A1628" : "#e2e8f0",
+                  background: type === t ? "#F5E642″ : "#1a2f55",
+                  color: type === t ? "#0A1628″ : "#e2e8f0",
                   fontWeight: 700,
                   fontSize: 13,
                 }}
@@ -113,15 +113,15 @@ export default function DFWFoundationInspectionProGuide2026() {
               </button>
             ))}
           </div>
-          <h3 style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 12 }}>Inspection Steps</h3>
+          <h3 style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 12 }}>Inspection Steps</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
             {inspectionTypes[type].steps.map((item, i) => (
-              <div key={i} style={{ background: "#0A1628", borderRadius: 8, padding: "11px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
+              <div key={i} style={{ background: "#0A1628″, borderRadius: 8, padding: "11px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
                 {item}
               </div>
             ))}
           </div>
-          <h3 style={{ color: "#F5E642", fontSize: 14, marginBottom: 12 }}>Required Documentation</h3>
+          <h3 style={{ color: "#F5E642″, fontSize: 14, marginBottom: 12 }}>Required Documentation</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {inspectionTypes[type].docs.map((doc, i) => (
               <div key={i} style={{ background: "#0a1f0a", borderRadius: 8, padding: "11px 16px", fontSize: 14, color: "#86efac", border: "1px solid #14532d" }}>
@@ -131,9 +131,9 @@ export default function DFWFoundationInspectionProGuide2026() {
           </div>
         </div>
 
-        <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
-          <p style={{ color: "#0A1628", fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>ProLnk Charter Foundation Pros — DFW Founding Slots</p>
-          <p style={{ color: "#1a2f55", fontSize: 14, margin: 0 }}>Join at prolnk.io — waitlist closes at 500 Charter members</p>
+        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "24px", textAlign: "center" }}>
+          <p style={{ color: "#0A1628″, fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>ProLnk Charter Foundation Pros — DFW Founding Slots</p>
+          <p style={{ color: "#1a2f55″, fontSize: 14, margin: 0 }}>Join at prolnk.io — waitlist closes at 500 Charter members</p>
         </div>
       </div>
     </div>

@@ -67,12 +67,12 @@ function buildFeed(
 }
 
 const FEED_ICONS: Record<FeedItem["type"], { icon: ReactNode; bg: string; text: string }> = {
-  lead_sent: { icon: <Send className="w-4 h-4" />, bg: "bg-blue-50", text: "text-blue-600" },
-  lead_accepted: { icon: <CheckCircle className="w-4 h-4" />, bg: "bg-[#F5E642]/10", text: "text-[#0A1628]" },
-  job_closed: { icon: <TrendingUp className="w-4 h-4" />, bg: "bg-green-50", text: "text-green-600" },
-  commission_earned: { icon: <DollarSign className="w-4 h-4" />, bg: "bg-yellow-50", text: "text-yellow-600" },
-  tier_upgrade: { icon: <Star className="w-4 h-4" />, bg: "bg-purple-50", text: "text-purple-600" },
-  new_partner: { icon: <Zap className="w-4 h-4" />, bg: "bg-orange-50", text: "text-orange-600" },
+  lead_sent: { icon: <Send className="w-4 h-4″ />, bg: "bg-blue-50", text: "text-blue-600" },
+  lead_accepted: { icon: <CheckCircle className="w-4 h-4″ />, bg: "bg-[#F5E642]/10", text: "text-[#0A1628]" },
+  job_closed: { icon: <TrendingUp className="w-4 h-4″ />, bg: "bg-green-50", text: "text-green-600" },
+  commission_earned: { icon: <DollarSign className="w-4 h-4″ />, bg: "bg-yellow-50", text: "text-yellow-600" },
+  tier_upgrade: { icon: <Star className="w-4 h-4″ />, bg: "bg-purple-50", text: "text-purple-600" },
+  new_partner: { icon: <Zap className="w-4 h-4″ />, bg: "bg-orange-50", text: "text-orange-600" },
 };
 
 function timeAgo(date: Date): string {
@@ -107,9 +107,9 @@ const LIVE_ACTIVITY_POOL: Omit<LiveActivity, "id" | "timestamp">[] = [
 ];
 
 const LIVE_ICON_CONFIG: Record<LiveActivity["icon"], { icon: ReactNode; bg: string; text: string; color: string }> = {
-  join:  { icon: <Users className="w-3.5 h-3.5" />, bg: "bg-green-500/10", text: "text-green-500", color: "#22c55e" },
-  earn:  { icon: <DollarSign className="w-3.5 h-3.5" />, bg: "bg-amber-500/10", text: "text-amber-500", color: "#f59e0b" },
-  scan:  { icon: <Home className="w-3.5 h-3.5" />, bg: "bg-indigo-500/10", text: "text-indigo-400", color: "#818cf8" },
+  join:  { icon: <Users className="w-3.5 h-3.5″ />, bg: "bg-green-500/10", text: "text-green-500", color: "#22c55e" },
+  earn:  { icon: <DollarSign className="w-3.5 h-3.5″ />, bg: "bg-amber-500/10", text: "text-amber-500", color: "#f59e0b" },
+  scan:  { icon: <Home className="w-3.5 h-3.5″ />, bg: "bg-indigo-500/10", text: "text-indigo-400", color: "#818cf8" },
 };
 
 function LiveBadge() {
@@ -121,7 +121,7 @@ function LiveBadge() {
   return (
     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.25)" }}>
       <span
-        className="w-1.5 h-1.5 rounded-full bg-red-500 transition-opacity duration-300"
+        className="w-1.5 h-1.5 rounded-full bg-red-500 transition-opacity duration-300″
         style={{ opacity: visible ? 1 : 0.3 }}
       />
       <span className="text-[10px] font-bold text-red-400 tracking-wider">LIVE</span>
@@ -151,34 +151,34 @@ function LiveActivityFeed({ networkSize, monthCommissions }: { networkSize: numb
   const todayEarnings = monthCommissions > 0 ? Math.round(monthCommissions * 0.08) : 0;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4″>
       {/* Live summary strip */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-        <div className="rounded-xl px-4 py-3 flex items-center gap-3" style={{ background: "rgba(34,197,94,0.07)", border: "1px solid rgba(34,197,94,0.15)" }}>
-          <Users className="w-4 h-4 text-green-400 flex-shrink-0" />
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2″>
+        <div className="rounded-xl px-4 py-3 flex items-center gap-3″ style={{ background: "rgba(34,197,94,0.07)", border: "1px solid rgba(34,197,94,0.15)" }}>
+          <Users className="w-4 h-4 text-green-400 flex-shrink-0″ />
           <div>
             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Network Size</p>
-            <p className="text-base font-bold text-white">{networkSize} <span className="text-xs font-normal text-gray-500">pros</span></p>
+            <p className="text-base font-bold text-white">{networkSize} <span className="text-xs font-normal text-gray-500″>pros</span></p>
           </div>
         </div>
-        <div className="rounded-xl px-4 py-3 flex items-center gap-3" style={{ background: "rgba(245,158,11,0.07)", border: "1px solid rgba(245,158,11,0.15)" }}>
-          <DollarSign className="w-4 h-4 text-amber-400 flex-shrink-0" />
+        <div className="rounded-xl px-4 py-3 flex items-center gap-3″ style={{ background: "rgba(245,158,11,0.07)", border: "1px solid rgba(245,158,11,0.15)" }}>
+          <DollarSign className="w-4 h-4 text-amber-400 flex-shrink-0″ />
           <div>
             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Network earned today</p>
-            <p className="text-base font-bold text-white">${todayEarnings.toLocaleString()} <span className="text-xs font-normal text-gray-500">overrides</span></p>
+            <p className="text-base font-bold text-white">${todayEarnings.toLocaleString()} <span className="text-xs font-normal text-gray-500″>overrides</span></p>
           </div>
         </div>
-        <div className="rounded-xl px-4 py-3 flex items-center gap-3" style={{ background: "rgba(129,140,248,0.07)", border: "1px solid rgba(129,140,248,0.15)" }}>
-          <Home className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+        <div className="rounded-xl px-4 py-3 flex items-center gap-3″ style={{ background: "rgba(129,140,248,0.07)", border: "1px solid rgba(129,140,248,0.15)" }}>
+          <Home className="w-4 h-4 text-indigo-400 flex-shrink-0″ />
           <div>
             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Homes scanned in area</p>
-            <p className="text-base font-bold text-white">3 <span className="text-xs font-normal text-gray-500">today</span></p>
+            <p className="text-base font-bold text-white">3 <span className="text-xs font-normal text-gray-500″>today</span></p>
           </div>
         </div>
       </div>
 
       {/* Live stream */}
-      <div className="space-y-2">
+      <div className="space-y-2″>
         {items.map((item, i) => {
           const cfg = LIVE_ICON_CONFIG[item.icon];
           const minsAgo = Math.floor((Date.now() - item.timestamp) / 60000);
@@ -196,11 +196,11 @@ function LiveActivityFeed({ networkSize, monthCommissions }: { networkSize: numb
               <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 ${cfg.bg} ${cfg.text}`}>
                 {cfg.icon}
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0″>
                 <p className="text-xs font-medium text-gray-200 leading-snug">{item.text}</p>
-                {item.subtext && <p className="text-[10px] text-gray-500 mt-0.5">{item.subtext}</p>}
+                {item.subtext && <p className="text-[10px] text-gray-500 mt-0.5″>{item.subtext}</p>}
               </div>
-              <span className="text-[10px] text-gray-600 flex-shrink-0 mt-0.5">{label}</span>
+              <span className="text-[10px] text-gray-600 flex-shrink-0 mt-0.5″>{label}</span>
             </div>
           );
         })}
@@ -221,37 +221,37 @@ function NetworkGlanceBar({
   bestPerformerJobs: number;
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3″>
       <div className="bg-white rounded-xl border border-gray-100 px-4 py-3 flex items-center gap-3 shadow-sm">
-        <div className="w-9 h-9 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0">
-          <Users className="w-4 h-4 text-indigo-500" />
+        <div className="w-9 h-9 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0″>
+          <Users className="w-4 h-4 text-indigo-500″ />
         </div>
         <div>
           <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Network Size</p>
-          <p className="text-xl font-bold text-gray-900">{networkSize} <span className="text-sm font-normal text-gray-500">pros</span></p>
+          <p className="text-xl font-bold text-gray-900″>{networkSize} <span className="text-sm font-normal text-gray-500">pros</span></p>
         </div>
       </div>
 
       <div className="bg-white rounded-xl border border-gray-100 px-4 py-3 flex items-center gap-3 shadow-sm">
-        <div className="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0">
-          <DollarSign className="w-4 h-4 text-emerald-500" />
+        <div className="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0″>
+          <DollarSign className="w-4 h-4 text-emerald-500″ />
         </div>
         <div>
           <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">This Month's Network</p>
-          <p className="text-xl font-bold text-gray-900">${monthCommissions.toFixed(0)} <span className="text-sm font-normal text-gray-500">commissions</span></p>
+          <p className="text-xl font-bold text-gray-900″>${monthCommissions.toFixed(0)} <span className="text-sm font-normal text-gray-500">commissions</span></p>
         </div>
       </div>
 
       <div className="bg-white rounded-xl border border-gray-100 px-4 py-3 flex items-center gap-3 shadow-sm">
-        <div className="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
-          <Trophy className="w-4 h-4 text-amber-500" />
+        <div className="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0″>
+          <Trophy className="w-4 h-4 text-amber-500″ />
         </div>
         <div>
           <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Best Performer</p>
           {bestPerformerName ? (
-            <p className="text-sm font-bold text-gray-900 truncate">{bestPerformerName} <span className="text-xs font-normal text-gray-500">· {bestPerformerJobs} jobs</span></p>
+            <p className="text-sm font-bold text-gray-900 truncate">{bestPerformerName} <span className="text-xs font-normal text-gray-500″>· {bestPerformerJobs} jobs</span></p>
           ) : (
-            <p className="text-sm text-gray-400">No data yet</p>
+            <p className="text-sm text-gray-400″>No data yet</p>
           )}
         </div>
       </div>
@@ -301,16 +301,16 @@ export default function NetworkFeed() {
 
   return (
     <PartnerLayout>
-      <div className="space-y-6">
+      <div className="space-y-6″>
         {/* Header */}
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between gap-3″>
+          <div className="flex items-center gap-3″>
             <div className="w-10 h-10 rounded-xl bg-[#F5E642]/10 flex items-center justify-center">
               <Activity className="w-5 h-5 text-[#0A1628]" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Network Activity</h1>
-              <p className="text-sm text-gray-500">Your real-time ProLnk activity -- leads sent, accepted, jobs closed, commissions earned</p>
+              <h1 className="text-2xl font-bold text-gray-900″>Network Activity</h1>
+              <p className="text-sm text-gray-500″>Your real-time ProLnk activity -- leads sent, accepted, jobs closed, commissions earned</p>
             </div>
           </div>
           <LiveBadge />
@@ -319,8 +319,8 @@ export default function NetworkFeed() {
         {/* Live network activity stream */}
         {!isLoading && (
           <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-              <Radio className="w-3 h-3" />
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2″>
+              <Radio className="w-3 h-3″ />
               Live Network Feed
             </p>
             <LiveActivityFeed networkSize={glance.networkSize} monthCommissions={glance.monthCommissions} />
@@ -330,7 +330,7 @@ export default function NetworkFeed() {
         {/* At a Glance summary */}
         {!isLoading && (
           <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Network At a Glance</p>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2″>Your Network At a Glance</p>
             <NetworkGlanceBar
               networkSize={glance.networkSize}
               monthCommissions={glance.monthCommissions}
@@ -342,29 +342,29 @@ export default function NetworkFeed() {
 
         {/* Feed */}
         {isLoading ? (
-          <div className="space-y-3">
+          <div className="space-y-3″>
             {[...Array(6)].map((_, i) => (
               <div key={i} className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 animate-pulse">
-                <div className="w-9 h-9 rounded-xl bg-gray-100 flex-shrink-0" />
-                <div className="flex-1 space-y-2">
-                  <div className="h-4 bg-gray-100 rounded w-2/3" />
-                  <div className="h-3 bg-gray-100 rounded w-1/3" />
+                <div className="w-9 h-9 rounded-xl bg-gray-100 flex-shrink-0″ />
+                <div className="flex-1 space-y-2″>
+                  <div className="h-4 bg-gray-100 rounded w-2/3″ />
+                  <div className="h-3 bg-gray-100 rounded w-1/3″ />
                 </div>
               </div>
             ))}
           </div>
         ) : feed.length === 0 ? (
           <div className="bg-white rounded-xl border border-gray-200 p-16 text-center">
-            <Activity className="w-12 h-12 text-gray-200 mx-auto mb-3" />
+            <Activity className="w-12 h-12 text-gray-200 mx-auto mb-3″ />
             <p className="text-gray-400 text-sm">No activity yet</p>
-            <p className="text-gray-300 text-xs mt-1">Send your first referral or log a job to see activity here</p>
+            <p className="text-gray-300 text-xs mt-1″>Send your first referral or log a job to see activity here</p>
           </div>
         ) : (
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-[22px] top-0 bottom-0 w-0.5 bg-gray-100" />
+            <div className="absolute left-[22px] top-0 bottom-0 w-0.5 bg-gray-100″ />
 
-            <div className="space-y-3">
+            <div className="space-y-3″>
               {feed.map((item) => {
                 const style = FEED_ICONS[item.type];
                 return (
@@ -376,19 +376,19 @@ export default function NetworkFeed() {
 
                     {/* Content */}
                     <div className="flex-1 bg-white rounded-xl border border-gray-100 p-4 hover:border-gray-200 transition-colors">
-                      <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-start justify-between gap-2″>
                         <div>
-                          <p className="text-sm font-medium text-gray-900">{item.message}</p>
+                          <p className="text-sm font-medium text-gray-900″>{item.message}</p>
                           {item.subtext && (
-                            <p className="text-xs text-gray-500 mt-0.5">{item.subtext}</p>
+                            <p className="text-xs text-gray-500 mt-0.5″>{item.subtext}</p>
                           )}
                         </div>
-                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                        <div className="flex items-center gap-1.5 flex-shrink-0″>
                           {item.amount && (
-                            <span className="text-sm font-bold text-green-600">+${item.amount.toFixed(2)}</span>
+                            <span className="text-sm font-bold text-green-600″>+${item.amount.toFixed(2)}</span>
                           )}
-                          <span className="flex items-center gap-1 text-xs text-gray-400">
-                            <Clock className="w-3 h-3" />
+                          <span className="flex items-center gap-1 text-xs text-gray-400″>
+                            <Clock className="w-3 h-3″ />
                             {timeAgo(item.timestamp)}
                           </span>
                         </div>

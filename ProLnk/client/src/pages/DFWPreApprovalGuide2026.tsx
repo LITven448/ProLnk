@@ -46,7 +46,7 @@ export default function DFWPreApprovalGuide2026() {
                 <span style={{ fontWeight: 700 }}>{t.icon} {t.name}</span>
                 <span style={{ background: i===2?'#F5E642':i===1?'#1e40af':'#374151', color: i===2?'#0A1628':'#fff', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 700 }}>{t.strength}</span>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{t.desc}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{t.desc}</p>
             </div>
           ))}
         </div>
@@ -57,14 +57,14 @@ export default function DFWPreApprovalGuide2026() {
             <div key={i} style={{ display:'flex', gap:14, padding:'10px 0', borderBottom:i<4?'1px solid #0A1628':'none', alignItems:'center' }}>
               <span style={{ fontSize:24 }}>{item.icon}</span>
               <div>
-                <div style={{ fontWeight:600, color:'#F5E642' }}>{item.label}</div>
+                <div style={{ fontWeight:600, color:'#F5E642′ }}>{item.label}</div>
                 <div style={{ color:'#94a3b8', fontSize:13 }}>{item.detail}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>🔧 ProLnk Before You Close</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14 }}>Once pre-approved and under contract, ProLnk connects you with vetted home inspectors, HVAC techs, roofers, and general contractors for pre-purchase inspections and immediate post-closing repairs across DFW.</p>
         </div>

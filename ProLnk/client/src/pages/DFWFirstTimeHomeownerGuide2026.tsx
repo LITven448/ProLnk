@@ -48,51 +48,51 @@ export default function DFWFirstTimeHomeownerGuide2026() {
   const guide = ageGuides[age];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif", color: "#E8EAF0" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif", color: "#E8EAF0" }}>
       <div style={{ maxWidth: 700, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🎉</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "8px 0 4px" }}>DFW First-Time Homeowner Guide 2026</h1>
-          <p style={{ color: "#8892A4", fontSize: 15 }}>Select your home's age — get a tailored DFW maintenance budget & checklist.</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "8px 0 4px" }}>DFW First-Time Homeowner Guide 2026</h1>
+          <p style={{ color: "#8892A4″, fontSize: 15 }}>Select your home's age — get a tailored DFW maintenance budget & checklist.</p>
         </div>
 
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, background: "#111E35", borderRadius: 12, padding: 6 }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 24, background: "#111E35″, borderRadius: 12, padding: 6 }}>
           {tabs.map(t => (
-            <button key={t.key} onClick={() => setAge(t.key as "new" | "mid" | "older")} style={{ flex: 1, padding: "10px 0", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 700, fontSize: 14, background: age === t.key ? "#F5E642" : "transparent", color: age === t.key ? "#0A1628" : "#8892A4" }}>
+            <button key={t.key} onClick={() => setAge(t.key as "new" | "mid" | "older")} style={{ flex: 1, padding: "10px 0″, borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 700, fontSize: 14, background: age === t.key ? "#F5E642" : "transparent", color: age === t.key ? "#0A1628" : "#8892A4" }}>
               {t.icon} {t.label}
             </button>
           ))}
         </div>
 
-        <div style={{ background: "#F5E642", borderRadius: 10, padding: "14px 20px", marginBottom: 20, display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ background: "#F5E642″, borderRadius: 10, padding: "14px 20px", marginBottom: 20, display: "flex", alignItems: "center", gap: 12 }}>
           <span style={{ fontSize: 28 }}>💰</span>
           <div>
-            <div style={{ fontSize: 13, color: "#0A1628", fontWeight: 700, textTransform: "uppercase" }}>Annual Maintenance Budget Target</div>
-            <div style={{ fontSize: 20, fontWeight: 800, color: "#0A1628" }}>{guide.budget}</div>
+            <div style={{ fontSize: 13, color: "#0A1628″, fontWeight: 700, textTransform: "uppercase" }}>Annual Maintenance Budget Target</div>
+            <div style={{ fontSize: 20, fontWeight: 800, color: "#0A1628″ }}>{guide.budget}</div>
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 20 }}>
           {guide.items.map((item, i) => (
-            <div key={i} style={{ background: "#111E35", borderRadius: 10, padding: "14px 16px", display: "flex", alignItems: "center", gap: 14, border: "1px solid #1E2D45" }}>
+            <div key={i} style={{ background: "#111E35″, borderRadius: 10, padding: "14px 16px", display: "flex", alignItems: "center", gap: 14, border: "1px solid #1E2D45" }}>
               <span style={{ fontSize: 26 }}>{item.icon}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 15, fontWeight: 600 }}>{item.task}</div>
-                <div style={{ fontSize: 12, color: "#F5E642", fontWeight: 700, marginTop: 2 }}>{item.freq}</div>
+                <div style={{ fontSize: 12, color: "#F5E642″, fontWeight: 700, marginTop: 2 }}>{item.freq}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#0D2040", borderRadius: 10, padding: 16, marginBottom: 20, borderLeft: "4px solid #88AAFF" }}>
-          <span style={{ fontSize: 14, color: "#C8D0E0" }}>💡 {guide.tip}</span>
+        <div style={{ background: "#0D2040″, borderRadius: 10, padding: 16, marginBottom: 20, borderLeft: "4px solid #88AAFF" }}>
+          <span style={{ fontSize: 14, color: "#C8D0E0″ }}>💡 {guide.tip}</span>
         </div>
 
-        <div style={{ background: "#111E35", borderRadius: 12, padding: 20, borderLeft: "4px solid #F5E642" }}>
+        <div style={{ background: "#111E35″, borderRadius: 12, padding: 20, borderLeft: "4px solid #F5E642" }}>
           <div style={{ fontSize: 16, fontWeight: 700 }}>🔧 ProLnk makes finding a trusted DFW contractor effortless — free quotes from vetted pros.</div>
-          <button style={{ marginTop: 12, background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 800, fontSize: 15, cursor: "pointer" }}>Find Contractors →</button>
+          <button style={{ marginTop: 12, background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 800, fontSize: 15, cursor: "pointer" }}>Find Contractors →</button>
         </div>
-        <div style={{ textAlign: "center", marginTop: 20, color: "#4A5568", fontSize: 13 }}>© 2026 ProLnk · DFW Home Services Marketplace</div>
+        <div style={{ textAlign: "center", marginTop: 20, color: "#4A5568″, fontSize: 13 }}>© 2026 ProLnk · DFW Home Services Marketplace</div>
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ export default function DFWFoundationPTCableCount2026() {
           <p style={{ color: '#94a3b8', marginBottom: 16 }}>Enter your home square footage:</p>
           <input
             type="number"
-            placeholder="e.g. 2400"
+            placeholder="e.g. 2400″
             value={sqft}
             onChange={e => setSqft(e.target.value)}
             style={{ width: '100%', padding: '14px', borderRadius: 8, border: '2px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }}
@@ -54,8 +54,8 @@ export default function DFWFoundationPTCableCount2026() {
         {result && (
           <div style={{ background: '#0F3D1F', borderRadius: 16, padding: 28, border: '1px solid #22543d', marginBottom: 24 }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>📊 Estimated PT Cable Profile</h3>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#94a3b8' }}>Cable count: </span><span style={{ color: '#86efac', fontWeight: 700 }}>{result.cables}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#94a3b8' }}>Typical spacing: </span><span style={{ color: '#86efac', fontWeight: 700 }}>{result.spacing}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#94a3b8′ }}>Cable count: </span><span style={{ color: '#86efac', fontWeight: 700 }}>{result.cables}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#94a3b8′ }}>Typical spacing: </span><span style={{ color: '#86efac', fontWeight: 700 }}>{result.spacing}</span></div>
             <p style={{ color: '#4ade80', fontWeight: 600 }}>⚠️ {result.note}</p>
           </div>
         )}

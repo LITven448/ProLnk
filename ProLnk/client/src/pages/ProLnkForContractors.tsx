@@ -30,7 +30,7 @@ export default function ProLnkForContractors() {
           <div style={{ fontSize: 13, color: '#0A1628', fontWeight: 800, letterSpacing: 2, background: '#F5E642', display: 'inline-block', padding: '5px 14px', borderRadius: 6, marginBottom: 20, textTransform: 'uppercase' }}>For Contractors & Tradespeople</div>
           <h1 style={{ fontSize: 52, fontWeight: 900, margin: '0 0 20px', lineHeight: 1.05 }}>
             Get More Jobs.<br />
-            <span style={{ color: '#F5E642' }}>Build Real Income.</span>
+            <span style={{ color: '#F5E642′ }}>Build Real Income.</span>
           </h1>
           <p style={{ fontSize: 19, color: '#c0c8d8', lineHeight: 1.7, marginBottom: 32 }}>
             ProLnk is the only platform that matches you exclusively with homeowners who need exactly your trade — and pays you 5 ways to grow your business.
@@ -49,15 +49,15 @@ export default function ProLnkForContractors() {
           <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 36, border: '1px solid rgba(245,230,66,0.2)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginBottom: 32 }}>
               <div>
-                <label style={{ display: 'block', fontSize: 14, fontWeight: 700, color: '#a0aec0', marginBottom: 10 }}>Jobs Completed Per Month: <span style={{ color: '#F5E642' }}>{jobsPerMonth}</span></label>
+                <label style={{ display: 'block', fontSize: 14, fontWeight: 700, color: '#a0aec0', marginBottom: 10 }}>Jobs Completed Per Month: <span style={{ color: '#F5E642′ }}>{jobsPerMonth}</span></label>
                 <input type="range" min={1} max={40} value={jobsPerMonth} onChange={e => setJobsPerMonth(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642' }} />
+                  style={{ width: '100%', accentColor: '#F5E642′ }} />
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#666', marginTop: 4 }}><span>1</span><span>40</span></div>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: 14, fontWeight: 700, color: '#a0aec0', marginBottom: 10 }}>Average Job Value: <span style={{ color: '#F5E642' }}>${avgJobValue.toLocaleString()}</span></label>
+                <label style={{ display: 'block', fontSize: 14, fontWeight: 700, color: '#a0aec0', marginBottom: 10 }}>Average Job Value: <span style={{ color: '#F5E642′ }}>${avgJobValue.toLocaleString()}</span></label>
                 <input type="range" min={200} max={8000} step={100} value={avgJobValue} onChange={e => setAvgJobValue(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642' }} />
+                  style={{ width: '100%', accentColor: '#F5E642′ }} />
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#666', marginTop: 4 }}><span>$200</span><span>$8,000</span></div>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function ProLnkForContractors() {
                   { label: 'Elite (70%)', value: 0.70 },
                 ].map(t => (
                   <button key={t.value} onClick={() => setTier(t.value)}
-                    style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: tier === t.value ? '#F5E642' : 'rgba(255,255,255,0.2)', background: tier === t.value ? '#F5E642' : 'transparent', color: tier === t.value ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: tier === t.value ? '#F5E642′ : ’rgba(255,255,255,0.2)', background: tier === t.value ? '#F5E642′ : ’transparent', color: tier === t.value ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>
                     {t.label}
                   </button>
                 ))}
@@ -80,15 +80,15 @@ export default function ProLnkForContractors() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, textAlign: 'center' }}>
               <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${Math.round(directEarnings).toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${Math.round(directEarnings).toLocaleString()}</div>
                 <div style={{ fontSize: 13, color: '#a0aec0', marginTop: 4 }}>Direct Match Earnings</div>
               </div>
               <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>+${Math.round(networkBonus).toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>+${Math.round(networkBonus).toLocaleString()}</div>
                 <div style={{ fontSize: 13, color: '#a0aec0', marginTop: 4 }}>Network Bonus (est.)</div>
               </div>
               <div style={{ background: '#F5E642', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628' }}>${Math.round(totalMonthly).toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628′ }}>${Math.round(totalMonthly).toLocaleString()}</div>
                 <div style={{ fontSize: 13, color: '#0A1628', fontWeight: 700, marginTop: 4 }}>Total Monthly Income</div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function ProLnkForContractors() {
               <div key={i} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: '20px 24px', display: 'flex', gap: 20, alignItems: 'flex-start', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <span style={{ fontSize: 32, flexShrink: 0 }}>{d.emoji}</span>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6, color: '#F5E642' }}>{d.label}</div>
+                  <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6, color: '#F5E642′ }}>{d.label}</div>
                   <div style={{ fontSize: 15, color: '#a0aec0', lineHeight: 1.6 }}>{d.desc}</div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function ProLnkForContractors() {
                 <div style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>{'★'.repeat(t.stars)}</div>
                 <p style={{ fontSize: 15, color: '#c0c8d8', lineHeight: 1.7, marginBottom: 16, fontStyle: 'italic' }}>"{t.quote}"</p>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
-                <div style={{ fontSize: 13, color: '#a0aec0' }}>{t.trade}</div>
+                <div style={{ fontSize: 13, color: '#a0aec0′ }}>{t.trade}</div>
               </div>
             ))}
           </div>

@@ -34,19 +34,19 @@ export default function DFWJunkRemovalGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 32 }}>
           {[
             { emoji: '♻️', label: 'Recyclable', note: 'Electronics, appliances, paper', color: '#22C55E' },
-            { emoji: '🎁', label: 'Donatable', note: 'Furniture, clothes, equipment', color: '#3B82F6' },
-            { emoji: '🗑️', label: 'Landfill', note: 'Debris, mattresses, pools', color: '#EF4444' },
-            { emoji: '📅', label: 'Same-Day Available', note: 'Book by 10am in most DFW zones', color: '#F5E642' },
+            { emoji: '🎁', label: 'Donatable', note: 'Furniture, clothes, equipment', color: '#3B82F6′ },
+            { emoji: '🗑️', label: 'Landfill', note: 'Debris, mattresses, pools', color: '#EF4444′ },
+            { emoji: '📅', label: 'Same-Day Available', note: 'Book by 10am in most DFW zones', color: '#F5E642′ },
           ].map(card => (
             <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: `1px solid ${card.color}40` }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.emoji}</div>
               <div style={{ fontWeight: 700, color: card.color, marginBottom: 4 }}>{card.label}</div>
-              <div style={{ fontSize: 13, color: '#9BA3B8' }}>{card.note}</div>
+              <div style={{ fontSize: 13, color: '#9BA3B8′ }}>{card.note}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45′ }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 20, fontWeight: 700, marginBottom: 6 }}>🛠️ Interactive Cost & Disposal Estimator</h2>
           <p style={{ color: '#9BA3B8', fontSize: 14, marginBottom: 20 }}>Select the types of junk you have and your estimated volume.</p>
 
@@ -54,7 +54,7 @@ export default function DFWJunkRemovalGuide() {
             <label style={{ color: '#9BA3B8', fontSize: 13, display: 'block', marginBottom: 10 }}>What type of junk? (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {JUNK_TYPES.map(item => (
-                <button key={item} onClick={() => toggle(item)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, backgroundColor: selected.includes(item) ? '#F5E642' : '#1E2D45', color: selected.includes(item) ? '#0A1628' : '#9BA3B8' }}>
+                <button key={item} onClick={() => toggle(item)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, backgroundColor: selected.includes(item) ? '#F5E642′ : '#1E2D45', color: selected.includes(item) ? '#0A1628' : '#9BA3B8' }}>
                   {item}
                 </button>
               ))}
@@ -72,26 +72,26 @@ export default function DFWJunkRemovalGuide() {
           {(estCost || selected.length > 0) && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
               {estCost && (
-                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
                   <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 4 }}>Estimated Cost</div>
-                  <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>${estCost}</div>
+                  <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>${estCost}</div>
                   <div style={{ fontSize: 12, color: '#9BA3B8', marginTop: 4 }}>DFW average pricing</div>
                 </div>
               )}
               {recycledItems.length > 0 && (
-                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #22C55E40' }}>
+                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #22C55E40′ }}>
                   <div style={{ color: '#22C55E', fontWeight: 700, marginBottom: 8 }}>♻️ Will Be Recycled</div>
                   {recycledItems.map(i => <div key={i} style={{ color: '#CBD2E0', fontSize: 13, marginBottom: 4 }}>• {i}</div>)}
                 </div>
               )}
               {donatedItems.length > 0 && (
-                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #3B82F640' }}>
+                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #3B82F640′ }}>
                   <div style={{ color: '#3B82F6', fontWeight: 700, marginBottom: 8 }}>🎁 Will Be Donated</div>
                   {donatedItems.map(i => <div key={i} style={{ color: '#CBD2E0', fontSize: 13, marginBottom: 4 }}>• {i}</div>)}
                 </div>
               )}
               {landfillItems.length > 0 && (
-                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #EF444440' }}>
+                <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #EF444440′ }}>
                   <div style={{ color: '#EF4444', fontWeight: 700, marginBottom: 8 }}>🗑️ Goes to Landfill</div>
                   {landfillItems.map(i => <div key={i} style={{ color: '#CBD2E0', fontSize: 13, marginBottom: 4 }}>• {i}</div>)}
                 </div>
@@ -101,16 +101,16 @@ export default function DFWJunkRemovalGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
-          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45' }}>
+          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45′ }}>
             <h2 style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📦 DFW Cost by Load Size</h2>
             {Object.entries(COSTS).map(([size, cost]) => (
-              <div key={size} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, paddingBottom: 10, borderBottom: '1px solid #1E2D45' }}>
+              <div key={size} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, paddingBottom: 10, borderBottom: '1px solid #1E2D45′ }}>
                 <span style={{ color: '#CBD2E0', fontSize: 13 }}>{size}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>${cost}</span>
               </div>
             ))}
           </div>
-          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45' }}>
+          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45′ }}>
             <h2 style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📋 Common Use Cases</h2>
             {[['Estate Cleanouts', 'Full-service clearing of a home after a loved one passes'], ['Garage Purge', 'Years of accumulated tools, furniture, boxes'], ['Post-Renovation Debris', 'Drywall, tile, flooring, lumber scraps'], ['Appliance Removal', 'Old fridges, washers, dryers — often includes recycling fee'], ['Hoarder Cleanup', 'Multi-load, phased — requires sensitivity and planning']].map(([title, desc]) => (
               <div key={title} style={{ marginBottom: 14 }}>
@@ -121,7 +121,7 @@ export default function DFWJunkRemovalGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45′ }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>⚡ Same-Day vs. Scheduled Pickup</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>

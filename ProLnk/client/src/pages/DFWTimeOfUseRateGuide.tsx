@@ -48,7 +48,7 @@ export default function DFWTimeOfUseRateGuide() {
             <div style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: 4 }}>3 PM – 7 PM (Summer weekdays)</div>
             <div style={{ color: '#FF6B6B', fontWeight: 700, marginTop: 4 }}>~$0.18/kWh</div>
           </div>
-          <div style={{ background: '#111D35', borderRadius: 10, padding: '1.25rem', border: '1px solid #34D399' }}>
+          <div style={{ background: '#111D35', borderRadius: 10, padding: '1.25rem', border: '1px solid #34D399′ }}>
             <div style={{ fontSize: '1.5rem' }}>🟢</div>
             <div style={{ fontWeight: 700, color: '#34D399', fontSize: '1.1rem' }}>Off-Peak Hours</div>
             <div style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: 4 }}>9 PM – 6 AM (best savings)</div>
@@ -72,7 +72,7 @@ export default function DFWTimeOfUseRateGuide() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginTop: 0 }}>📊 Estimate Savings</h2>
           <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.85rem', marginBottom: 4 }}>Average runs per week (per selected appliance)</label>
-          <input value={runsPerWeek} onChange={e => setRunsPerWeek(e.target.value)} type="number" min="1" max="21"
+          <input value={runsPerWeek} onChange={e => setRunsPerWeek(e.target.value)} type="number" min="1″ max="21"
             style={{ width: 120, padding: '0.6rem', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#E8F0FE', fontSize: '1rem', marginBottom: '1rem' }} />
           <br />
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '0.7rem 1.5rem', fontSize: '1rem', cursor: 'pointer' }}>
@@ -81,7 +81,7 @@ export default function DFWTimeOfUseRateGuide() {
         </div>
 
         {results && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginTop: 0 }}>💰 Savings by Shifting to Off-Peak</h2>
             {results.filter(r => r.monthlySavings > 0).map((r, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1E3A5F' }}>
@@ -96,7 +96,7 @@ export default function DFWTimeOfUseRateGuide() {
         )}
 
         <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#111D35', borderRadius: 10, border: '1px solid #1E3A5F', color: '#94A3B8', fontSize: '0.85rem' }}>
-          🔗 Compare TOU plans at <strong style={{ color: '#F5E642' }}>PowerToChoose.org</strong> — filter by time-of-use plans from Oncor-area providers.
+          🔗 Compare TOU plans at <strong style={{ color: '#F5E642′ }}>PowerToChoose.org</strong> — filter by time-of-use plans from Oncor-area providers.
         </div>
       </div>
     </div>

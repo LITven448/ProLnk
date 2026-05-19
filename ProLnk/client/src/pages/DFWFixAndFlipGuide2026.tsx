@@ -47,9 +47,9 @@ export default function DFWFixAndFlipGuide2026() {
         <div style={{ background: '#111d35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.15rem' }}>📍 Best DFW Flip Neighborhoods</h2>
           {NEIGHBORHOODS.map((n) => (
-            <div key={n.name} style={{ marginBottom: '0.85rem', paddingBottom: '0.85rem', borderBottom: '1px solid #1e2d45' }}>
+            <div key={n.name} style={{ marginBottom: '0.85rem', paddingBottom: '0.85rem', borderBottom: '1px solid #1e2d45′ }}>
               <span style={{ fontWeight: 700, color: '#fff' }}>{n.name}: </span>
-              <span style={{ color: '#a0aec0' }}>{n.note}</span>
+              <span style={{ color: '#a0aec0′ }}>{n.note}</span>
             </div>
           ))}
         </div>
@@ -61,17 +61,17 @@ export default function DFWFixAndFlipGuide2026() {
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.15rem' }}>📊 Flip Profit Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
             {[
-              { label: 'Purchase Price ($)', val: purchase, set: setPurchase, ph: '200000' },
-              { label: 'Renovation Budget ($)', val: reno, set: setReno, ph: '60000' },
-              { label: 'Target ARV ($)', val: arv, set: setArv, ph: '340000' },
+              { label: 'Purchase Price ($)', val: purchase, set: setPurchase, ph: '200000′ },
+              { label: 'Renovation Budget ($)', val: reno, set: setReno, ph: '60000′ },
+              { label: 'Target ARV ($)', val: arv, set: setArv, ph: '340000′ },
             ].map((f) => (
               <div key={f.label}>
-                <label style={{ display: 'block', marginBottom: 4, fontSize: '0.85rem', color: '#a0aec0' }}>{f.label}</label>
+                <label style={{ display: 'block', marginBottom: 4, fontSize: '0.85rem', color: '#a0aec0′ }}>{f.label}</label>
                 <input value={f.val} onChange={(e) => f.set(e.target.value)} placeholder={f.ph} style={{ width: '100%', padding: '0.55rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }} />
               </div>
             ))}
             <div>
-              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.85rem', color: '#a0aec0' }}>Hold Period (months)</label>
+              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.85rem', color: '#a0aec0′ }}>Hold Period (months)</label>
               <select value={months} onChange={(e) => setMonths(e.target.value)} style={{ width: '100%', padding: '0.55rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }}>
                 {['3','4','5','6','8','12'].map((m) => <option key={m} value={m}>{m} months</option>)}
               </select>
@@ -82,7 +82,7 @@ export default function DFWFixAndFlipGuide2026() {
           </button>
           {result && (
             <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8 }}>
-              <div style={{ color: result.profit >= 20000 ? '#4ade80' : result.profit >= 0 ? '#facc15' : '#f87171', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.4rem' }}>
+              <div style={{ color: result.profit >= 20000 ? '#4ade80′ : result.profit >= 0 ? '#facc15' : '#f87171', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.4rem' }}>
                 Net Profit: ${result.profit.toLocaleString('en-US', { maximumFractionDigits: 0 })} ({result.roi.toFixed(1)}% ROI)
               </div>
               <div style={{ color: '#a0aec0', fontSize: '0.9rem' }}>Risk: {result.risk}</div>

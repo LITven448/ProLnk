@@ -40,7 +40,7 @@ export default function DFWHomePhotographyGuide2026() {
           {tiers.map(t => (
             <button key={t.id} onClick={() => setActive(t.id)}
               style={{ padding: '9px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                background: active === t.id ? '#F5E642' : '#1e3a5f', color: active === t.id ? '#0A1628' : '#94a3b8' }}>
+                background: active === t.id ? '#F5E642′ : '#1e3a5f', color: active === t.id ? '#0A1628' : '#94a3b8' }}>
               {t.emoji} {t.label}
             </button>
           ))}
@@ -59,7 +59,7 @@ export default function DFWHomePhotographyGuide2026() {
           </div>
           <h3 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>Photography Checklist — {tier.price}</h3>
           {tier.tips.map((tip, i) => (
-            <div key={i} style={{ fontSize: 14, color: '#cbd5e1', padding: '6px 0', borderBottom: '1px solid #0A1628' }}>✓ {tip}</div>
+            <div key={i} style={{ fontSize: 14, color: '#cbd5e1', padding: '6px 0', borderBottom: '1px solid #0A1628′ }}>✓ {tip}</div>
           ))}
         </div>
 

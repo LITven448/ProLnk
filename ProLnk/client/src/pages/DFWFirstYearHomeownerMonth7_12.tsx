@@ -45,8 +45,8 @@ export default function DFWFirstYearHomeownerMonth7_12() {
               key={f}
               onClick={() => toggle(f)}
               style={{
-                background: features.includes(f) ? '#F5E642' : '#1e2d45',
-                color: features.includes(f) ? '#0A1628' : '#fff',
+                background: features.includes(f) ? '#F5E642′ : '#1e2d45',
+                color: features.includes(f) ? '#0A1628′ : '#fff',
                 border: '1px solid #F5E642',
                 borderRadius: 20,
                 padding: '8px 16px',
@@ -62,12 +62,12 @@ export default function DFWFirstYearHomeownerMonth7_12() {
 
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>Your Months 7–12 Checklist</h2>
         {baseItems.map((item, i) => (
-          <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642' }}>
+          <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642′ }}>
             {item}
           </div>
         ))}
         {features.map(f => (
-          <div key={f} style={{ background: '#162236', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642' }}>
+          <div key={f} style={{ background: '#162236', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642′ }}>
             {featureItems[f]}
           </div>
         ))}

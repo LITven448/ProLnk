@@ -34,14 +34,14 @@ export default function DFWOfferReadinessGuide() {
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>DFW OFFER READINESS GUIDE</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#fff', margin: 0 }}>📝 Before You Submit an Offer</h1>
-          <p style={{ color: '#94a3b8', margin: '8px 0 0' }}>Don't leave money or protection on the table in a fast DFW market.</p>
+          <p style={{ color: '#94a3b8', margin: '8px 0 0′ }}>Don’t leave money or protection on the table in a fast DFW market.</p>
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>📍 Where are you in the process?</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {stages.map(s => (
-              <button key={s} onClick={() => { setStage(s); setChecked([]); }} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: stage === s ? '2px solid #F5E642' : '1px solid #e2e8f0', background: stage === s ? '#0A1628' : '#fff', color: stage === s ? '#F5E642' : '#0A1628', fontWeight: stage === s ? 700 : 400, cursor: 'pointer', fontSize: 15 }}>
+              <button key={s} onClick={() => { setStage(s); setChecked([]); }} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: stage === s ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: stage === s ? '#0A1628' : '#fff', color: stage === s ? '#F5E642' : '#0A1628', fontWeight: stage === s ? 700 : 400, cursor: ’pointer', fontSize: 15 }}>
                 {stage === s ? '✅ ' : '○ '}{s}
               </button>
             ))}
@@ -55,7 +55,7 @@ export default function DFWOfferReadinessGuide() {
                 <div style={{ fontWeight: 700 }}>
                   {stage === 'Ready to submit offer' ? '🔑 Full Readiness Checklist' : '⚡ Critical Items for Your Stage'}
                 </div>
-                <div style={{ background: pct === 100 ? '#dcfce7' : '#fef9c3', color: pct === 100 ? '#16a34a' : '#92400e', fontWeight: 700, fontSize: 14, padding: '4px 12px', borderRadius: 20 }}>
+                <div style={{ background: pct === 100 ? '#dcfce7′ : '#fef9c3', color: pct === 100 ? '#16a34a' : '#92400e', fontWeight: 700, fontSize: 14, padding: '4px 12px', borderRadius: 20 }}>
                   {pct}% Ready
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function DFWOfferReadinessGuide() {
                 <label key={c.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 14, cursor: 'pointer' }}>
                   <input type="checkbox" checked={checked.includes(c.id)} onChange={() => toggle(c.id)} style={{ marginTop: 3, flexShrink: 0 }} />
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 15, fontWeight: checked.includes(c.id) ? 400 : 600, color: checked.includes(c.id) ? '#94a3b8' : '#0A1628', textDecoration: checked.includes(c.id) ? 'line-through' : 'none' }}>
+                    <div style={{ fontSize: 15, fontWeight: checked.includes(c.id) ? 400 : 600, color: checked.includes(c.id) ? '#94a3b8′ : '#0A1628', textDecoration: checked.includes(c.id) ? ’line-through' : 'none' }}>
                       {c.critical && <span style={{ color: '#dc2626', marginRight: 6 }}>★</span>}{c.item}
                     </div>
                     <div style={{ fontSize: 13, color: '#64748b', marginTop: 2 }}>⏱️ Time to complete: {c.time}</div>

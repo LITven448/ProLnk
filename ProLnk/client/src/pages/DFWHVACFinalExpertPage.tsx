@@ -79,7 +79,7 @@ export default function DFWHVACFinalExpertPage() {
   const activeLevel = levels.find(l => l.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF4' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF4′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 52, marginBottom: 12 }}>🏆</div>
@@ -113,7 +113,7 @@ export default function DFWHVACFinalExpertPage() {
               onClick={() => { setSelected(selected === l.id ? null : l.id); setExpandedConcept(null); }}
               style={{
                 background: selected === l.id ? '#1A3A6E' : '#0F2040',
-                border: selected === l.id ? '2px solid #F5E642' : '1px solid #1E3A5F',
+                border: selected === l.id ? '2px solid #F5E642′ : '1px solid #1E3A5F',
                 borderRadius: 10, padding: '16px 20px', cursor: 'pointer',
                 textAlign: 'left', color: '#E8EDF4', fontSize: 16, fontWeight: 700,
                 transition: 'all 0.2s', width: '100%',
@@ -135,8 +135,8 @@ export default function DFWHVACFinalExpertPage() {
                   key={i}
                   onClick={() => setExpandedConcept(expandedConcept === `${activeLevel.id}-${i}` ? null : `${activeLevel.id}-${i}`)}
                   style={{
-                    background: expandedConcept === `${activeLevel.id}-${i}` ? '#0F2A10' : '#0F2040',
-                    border: expandedConcept === `${activeLevel.id}-${i}` ? '2px solid #5FD068' : '1px solid #1E3A5F',
+                    background: expandedConcept === `${activeLevel.id}-${i}` ? '#0F2A10′ : '#0F2040',
+                    border: expandedConcept === `${activeLevel.id}-${i}` ? '2px solid #5FD068′ : '1px solid #1E3A5F',
                     borderRadius: 10, padding: '16px 20px', cursor: 'pointer',
                     textAlign: 'left', color: '#E8EDF4', fontSize: 14, fontWeight: 600,
                     transition: 'all 0.2s', width: '100%',

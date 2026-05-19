@@ -68,7 +68,7 @@ export default function PartnerYear1Projection() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Starting Connections: {connections}</label>
-              <input type="range" min={0} max={100} value={connections} onChange={e => setConnections(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={0} max={100} value={connections} onChange={e => setConnections(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
         </div>
@@ -85,12 +85,12 @@ export default function PartnerYear1Projection() {
               </thead>
               <tbody>
                 {projected.map((m, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #F3F4F6' }}>
-                    <td style={{ padding: '8px 12px', fontWeight: 600, color: '#0A1628' }}>{m.label}</td>
+                  <tr key={i} style={{ borderBottom: '1px solid #F3F4F6′ }}>
+                    <td style={{ padding: '8px 12px', fontWeight: 600, color: '#0A1628′ }}>{m.label}</td>
                     <td style={{ padding: '8px 12px', color: '#6B7280', fontSize: 12 }}>{m.phase}</td>
-                    <td style={{ padding: '8px 12px', color: '#059669' }}>${m.directIncome.toLocaleString()}</td>
-                    <td style={{ padding: '8px 12px', color: '#3B82F6' }}>${m.overrideIncome.toLocaleString()}</td>
-                    <td style={{ padding: '8px 12px', fontWeight: 700, color: '#0A1628' }}>${m.total.toLocaleString()}</td>
+                    <td style={{ padding: '8px 12px', color: '#059669′ }}>${m.directIncome.toLocaleString()}</td>
+                    <td style={{ padding: '8px 12px', color: '#3B82F6′ }}>${m.overrideIncome.toLocaleString()}</td>
+                    <td style={{ padding: '8px 12px', fontWeight: 700, color: '#0A1628′ }}>${m.total.toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,14 +100,14 @@ export default function PartnerYear1Projection() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, color: 'white', textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 8 }}>Projected Year 1 Total</div>
-            <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>${yearTotal.toLocaleString()}</div>
+            <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>${yearTotal.toLocaleString()}</div>
           </div>
           <div style={{ background: 'white', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
             <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>🎯 Key Milestones</div>
             {milestones.map((ms, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #F3F4F6', fontSize: 13 }}>
-                <span style={{ color: '#6B7280' }}>{ms.label}</span>
-                <span style={{ fontWeight: 600, color: '#0A1628' }}>Month {ms.month}</span>
+                <span style={{ color: '#6B7280′ }}>{ms.label}</span>
+                <span style={{ fontWeight: 600, color: '#0A1628′ }}>Month {ms.month}</span>
               </div>
             ))}
           </div>

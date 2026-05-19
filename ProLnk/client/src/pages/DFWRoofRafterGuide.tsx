@@ -38,7 +38,7 @@ export default function DFWRoofRafterGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ background: '#0D1F3C', padding: '48px 24px 36px', borderBottom: '3px solid #F5E642' }}>
+      <div style={{ background: '#0D1F3C', padding: '48px 24px 36px', borderBottom: '3px solid #F5E642′ }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🏗️</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 12px' }}>DFW Roof Rafter & Structural Guide</h1>
@@ -52,11 +52,11 @@ export default function DFWRoofRafterGuide() {
         <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 16px' }}>🌪️ DFW Wind Code Basics</h2>
           <ul style={{ color: '#9BA8C0', lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
-            <li><strong style={{ color: '#E8EAF0' }}>DFW design wind speed:</strong> 115–130 mph depending on county (IRC Table R301.2)</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Truss roofs (90% of post-1985 DFW):</strong> Engineered trusses designed for DFW wind loads from factory</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Stick-frame rafters (older DFW homes):</strong> Field-built — quality varies; common in pre-1975 construction</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Hurricane straps (H2.5/H10):</strong> Required in DFW for all truss-to-wall connections; missing in many pre-2000 homes</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Tornado risk:</strong> North DFW (Collin, Denton counties) has higher tornado frequency — stricter standard recommended</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>DFW design wind speed:</strong> 115–130 mph depending on county (IRC Table R301.2)</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Truss roofs (90% of post-1985 DFW):</strong> Engineered trusses designed for DFW wind loads from factory</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Stick-frame rafters (older DFW homes):</strong> Field-built — quality varies; common in pre-1975 construction</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Hurricane straps (H2.5/H10):</strong> Required in DFW for all truss-to-wall connections; missing in many pre-2000 homes</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Tornado risk:</strong> North DFW (Collin, Denton counties) has higher tornado frequency — stricter standard recommended</li>
           </ul>
         </div>
 
@@ -69,7 +69,7 @@ export default function DFWRoofRafterGuide() {
                   <div style={{ color: '#E8EAF0', fontWeight: 700, fontSize: 14 }}>{c.type}</div>
                   <div style={{ color: '#9BA8C0', fontSize: 12, marginTop: 4 }}>{c.desc}</div>
                 </div>
-                <div style={{ color: c.engineerNeeded ? '#F5A623' : '#7AB8A0', fontWeight: 700, fontSize: 12, minWidth: 100, textAlign: 'right' }}>
+                <div style={{ color: c.engineerNeeded ? '#F5A623′ : '#7AB8A0', fontWeight: 700, fontSize: 12, minWidth: 100, textAlign: ’right' }}>
                   {c.engineerNeeded ? '⚠️ Engineer Req.' : '✅ Contractor OK'}
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function DFWRoofRafterGuide() {
             Get Structural Assessment
           </button>
           {result && (
-            <div style={{ marginTop: 20, background: '#162040', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#162040', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               {result.engineerNeeded && (
                 <div style={{ background: '#F5A623', color: '#0A1628', borderRadius: 6, padding: '6px 12px', fontSize: 13, fontWeight: 700, display: 'inline-block', marginBottom: 10 }}>
                   ⚠️ Structural Engineer Required

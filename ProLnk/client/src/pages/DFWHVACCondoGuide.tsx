@@ -50,12 +50,12 @@ export default function DFWHVACCondoGuide() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏢 Get Your Situation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏢 Get Your Situation</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>CONDO TYPE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {condoTypes.map(c => (
-                <button key={c} onClick={() => setCondoType(c)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: condoType === c ? '#F5E642' : '#1e3a5f', background: condoType === c ? '#F5E642' : 'transparent', color: condoType === c ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{c}</button>
+                <button key={c} onClick={() => setCondoType(c)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: condoType === c ? '#F5E642′ : '#1e3a5f', background: condoType === c ? '#F5E642' : ’transparent', color: condoType === c ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{c}</button>
               ))}
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function DFWHVACCondoGuide() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>YOUR CONCERN</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {concerns.map(c => (
-                <button key={c} onClick={() => setConcern(c)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: concern === c ? '#F5E642' : '#1e3a5f', background: concern === c ? '#F5E642' : 'transparent', color: concern === c ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{c}</button>
+                <button key={c} onClick={() => setConcern(c)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: concern === c ? '#F5E642′ : '#1e3a5f', background: concern === c ? '#F5E642' : ’transparent', color: concern === c ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{c}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Your Situation</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result}</div>
             </div>

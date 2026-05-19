@@ -13,10 +13,10 @@ export default function DFWHVACCoolantFlushGuide2026() {
   ];
 
   const results: Record<string, { verdict: string; detail: string; color: string }> = {
-    burnout: { verdict: 'Flush Required', detail: 'Acid contamination from compressor burnout demands full system flush with neutralizer before new refrigerant charge. Skip this and the replacement compressor dies within months.', color: '#ef4444' },
-    rust: { verdict: 'Flush Strongly Recommended', detail: 'Visible rust or moisture in DFW systems indicates water intrusion. Flush removes particulates and moisture that destroy TXV valves and coils.', color: '#f97316' },
-    oil: { verdict: 'Flush Required', detail: 'Degraded refrigerant oil (dark, thick, burnt smell) must be flushed. Contaminated oil circulates and coats heat transfer surfaces — kills efficiency.', color: '#ef4444' },
-    nitrogen: { verdict: 'Nitrogen Purge, Not Chemical Flush', detail: 'Post-burnout nitrogen purge removes debris and moisture before flush. Dry nitrogen pushed at 150 PSI through system before chemical flush agent introduced.', color: '#3b82f6' },
+    burnout: { verdict: 'Flush Required', detail: 'Acid contamination from compressor burnout demands full system flush with neutralizer before new refrigerant charge. Skip this and the replacement compressor dies within months.', color: '#ef4444′ },
+    rust: { verdict: 'Flush Strongly Recommended', detail: 'Visible rust or moisture in DFW systems indicates water intrusion. Flush removes particulates and moisture that destroy TXV valves and coils.', color: '#f97316′ },
+    oil: { verdict: 'Flush Required', detail: 'Degraded refrigerant oil (dark, thick, burnt smell) must be flushed. Contaminated oil circulates and coats heat transfer surfaces — kills efficiency.', color: '#ef4444′ },
+    nitrogen: { verdict: 'Nitrogen Purge, Not Chemical Flush', detail: 'Post-burnout nitrogen purge removes debris and moisture before flush. Dry nitrogen pushed at 150 PSI through system before chemical flush agent introduced.', color: '#3b82f6′ },
     routine: { verdict: 'Flush Not Needed', detail: 'Routine maintenance does not require flushing. Clean coils, check refrigerant charge, inspect oil sight glass. Reserve flush for contamination events only.', color: '#22c55e' },
   };
 
@@ -53,12 +53,12 @@ export default function DFWHVACCoolantFlushGuide2026() {
           <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>Select your HVAC event type:</p>
           <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1rem' }}>
             {events.map(e => (
-              <button key={e.id} onClick={() => setEventType(e.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: eventType === e.id ? '#F5E642' : '#1e3a5f', background: eventType === e.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: '0.9rem' }}>{e.label}</button>
+              <button key={e.id} onClick={() => setEventType(e.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: eventType === e.id ? '#F5E642′ : '#1e3a5f', background: eventType === e.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: ’left', cursor: 'pointer', fontSize: '0.9rem' }}>{e.label}</button>
             ))}
           </div>
           <button onClick={handleCheck} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}>Check Flush Necessity</button>
           {result && results[result] && (
-            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628' }}>
+            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628′ }}>
               <div style={{ color: results[result].color, fontWeight: 700, marginBottom: '0.4rem' }}>{results[result].verdict}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{results[result].detail}</div>
             </div>

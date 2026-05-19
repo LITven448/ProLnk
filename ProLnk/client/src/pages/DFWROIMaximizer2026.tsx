@@ -29,7 +29,7 @@ export default function DFWROIMaximizer2026() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Your Available Budget: ${fmt(budget)}</div>
           <input type="range" min={1000} max={100000} step={500} value={budget} onChange={e => setBudget(+e.target.value)}
-            style={{ width: '100%', accentColor: '#F5E642' }} />
+            style={{ width: '100%', accentColor: '#F5E642′ }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8899BB', fontSize: 12, marginTop: 4 }}>
             <span>$1K</span><span>$100K</span>
           </div>
@@ -42,9 +42,9 @@ export default function DFWROIMaximizer2026() {
         )}
 
         {affordable.map((p, i) => {
-          const roiColor = p.roi >= 90 ? '#22CC55' : p.roi >= 65 ? '#F5E642' : '#88AACC';
+          const roiColor = p.roi >= 90 ? '#22CC55′ : p.roi >= 65 ? '#F5E642' : '#88AACC';
           return (
-            <div key={p.name} style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 14, borderLeft: i === 0 ? '4px solid #F5E642' : '4px solid #2A3A5A' }}>
+            <div key={p.name} style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 14, borderLeft: i === 0 ? '4px solid #F5E642′ : '4px solid #2A3A5A' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                 <div>
                   <span style={{ fontSize: 20, marginRight: 8 }}>{p.icon}</span>

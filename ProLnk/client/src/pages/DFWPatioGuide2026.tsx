@@ -5,7 +5,7 @@ export default function DFWPatioGuide2026() {
   const [lotSize, setLotSize] = useState('medium');
 
   const getRecommendation = () => {
-    if (budget === 'low' && lotSize === 'small') return { type: 'Concrete Slab Patio', cost: '$8,000–$12,000', note: 'Uncovered, simple, budget-friendly — add a shade sail for ~$500' };
+    if (budget === 'low' && lotSize === 'small') return { type: 'Concrete Slab Patio', cost: '$8,000–$12,000', note: 'Uncovered, simple, budget-friendly — add a shade sail for ~$500′ };
     if (budget === 'low') return { type: 'Stamped Concrete', cost: '$10,000–$18,000', note: 'Great look on a budget — pair with a pergola later' };
     if (budget === 'medium' && lotSize === 'small') return { type: 'Paver Patio + Shade Sail', cost: '$15,000–$22,000', note: 'Pavers hold up to DFW clay soil movement better than concrete' };
     if (budget === 'medium') return { type: 'Attached Covered Patio', cost: '$18,000–$28,000', note: 'Extends outdoor season to 9 months — permit required, check HOA' };
@@ -31,12 +31,12 @@ export default function DFWPatioGuide2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '16px', marginBottom: '24px' }}>
-          <p style={{ margin: 0, color: '#F5E642' }}>⚡ DFW Key Fact: A covered patio extends usable outdoor season from 7 months to 9 months — permit required for permanent structures, HOA approval common.</p>
+          <p style={{ margin: 0, color: '#F5E642′ }}>⚡ DFW Key Fact: A covered patio extends usable outdoor season from 7 months to 9 months — permit required for permanent structures, HOA approval common.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '28px' }}>
           {surfaces.map(s => (
-            <div key={s.name} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050' }}>
+            <div key={s.name} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050′ }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{s.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '6px' }}>{s.name}</div>
               <div style={{ fontSize: '0.8rem', color: '#8899aa', marginBottom: '4px' }}>✅ {s.pros}</div>
@@ -66,7 +66,7 @@ export default function DFWPatioGuide2026() {
               </select>
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '6px' }}>Recommended: {rec.type}</div>
             <div style={{ color: '#8899aa', fontSize: '0.85rem', marginBottom: '4px' }}>Estimated cost: {rec.cost}</div>
             <div style={{ color: '#ccc', fontSize: '0.9rem' }}>{rec.note}</div>

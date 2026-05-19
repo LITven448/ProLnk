@@ -97,8 +97,8 @@ export default function DFWHVACLargeHomeGuide() {
               onClick={() => setSelected(c)}
               style={{
                 padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected.size === c.size ? '#F5E642' : '#1e3a5f'}`,
-                background: selected.size === c.size ? '#F5E642' : '#0d2137',
-                color: selected.size === c.size ? '#0A1628' : '#94a3b8',
+                background: selected.size === c.size ? '#F5E642′ : '#0d2137',
+                color: selected.size === c.size ? '#0A1628′ : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 13,
               }}
             >
@@ -114,8 +114,8 @@ export default function DFWHVACLargeHomeGuide() {
               onClick={() => setView(v)}
               style={{
                 padding: '8px 20px', borderRadius: 6, border: `1px solid ${view === v ? '#F5E642' : '#1e3a5f'}`,
-                background: view === v ? '#F5E642' : 'transparent',
-                color: view === v ? '#0A1628' : '#94a3b8',
+                background: view === v ? '#F5E642′ : ’transparent',
+                color: view === v ? '#0A1628′ : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize',
               }}
             >
@@ -136,10 +136,10 @@ export default function DFWHVACLargeHomeGuide() {
           {view === 'comparison' ? (
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
               {[
-                { label: 'Single System', data: selected.singleSystem, color: '#ef4444' },
+                { label: 'Single System', data: selected.singleSystem, color: '#ef4444′ },
                 { label: 'Dual Systems', data: selected.dualSystem, color: '#f59e0b' },
               ].map(({ label, data, color }) => (
-                <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14, gridColumn: label === 'Single System' ? '1' : '2 / span 2' }}>
+                <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14, gridColumn: label === 'Single System' ? '1′ : '2 / span 2' }}>
                   <p style={{ color, fontWeight: 700, marginBottom: 10, fontSize: 14 }}>{label}</p>
                   <p style={{ color: '#22c55e', fontWeight: 600, fontSize: 12, marginBottom: 4 }}>Pros</p>
                   {data.pros.map((p, i) => <p key={i} style={{ color: '#94a3b8', fontSize: 12, marginBottom: 3 }}>+ {p}</p>)}

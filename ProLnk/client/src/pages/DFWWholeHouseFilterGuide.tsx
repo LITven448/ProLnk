@@ -95,7 +95,7 @@ export default function DFWWholeHouseFilterGuide() {
               {Object.keys(cityHardness).map(c => <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>)}
             </select>
           </div>
-          {city && <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 16, fontSize: 14, color: '#F5E642' }}>💧 {cityInfo}</div>}
+          {city && <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 16, fontSize: 14, color: '#F5E642′ }}>💧 {cityInfo}</div>}
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', marginBottom: 6, fontWeight: 600 }}>Primary Water Concern</label>
             <select value={concern} onChange={e => setConcern(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#E8EAF0', border: '1px solid #1E3A5F', borderRadius: 8 }}>
@@ -115,7 +115,7 @@ export default function DFWWholeHouseFilterGuide() {
           <div style={{ marginBottom: 32 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>✅ Recommended System (install in order)</div>
             {filterSystems.filter(f => results.includes(f.id)).map((f, i) => (
-              <div key={f.id} style={{ background: '#111F3A', borderRadius: 12, padding: 20, marginBottom: 12, border: '1px solid #F5E642' }}>
+              <div key={f.id} style={{ background: '#111F3A', borderRadius: 12, padding: 20, marginBottom: 12, border: '1px solid #F5E642′ }}>
                 <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>Stage {i + 1}</div>
                 <h3 style={{ fontWeight: 700, marginBottom: 8 }}>{f.name}</h3>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 10, fontSize: 13, marginBottom: 8 }}>{f.dfwNote}</div>

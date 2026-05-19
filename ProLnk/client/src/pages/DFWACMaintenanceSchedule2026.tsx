@@ -47,12 +47,12 @@ export default function DFWACMaintenanceSchedule2026() {
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 6 }}>Your AC Age: {acAge} years</label>
             <input type="range" min={1} max={20} value={acAge} onChange={e => setAcAge(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ backgroundColor: freq.color, borderRadius: 8, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 32 }}>{freq.icon}</div>
             <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 4 }}>{freq.label} Service</div>
-            <div style={{ fontSize: 14, color: '#e2e8f0' }}>{freq.note}</div>
+            <div style={{ fontSize: 14, color: '#e2e8f0′ }}>{freq.note}</div>
           </div>
         </div>
 

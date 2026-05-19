@@ -44,9 +44,9 @@ export default function DFWGarbageServiceGuide() {
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1rem', marginTop: 0 }}>🏙️ City-Provided vs Private Service</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Most DFW cities provide <strong style={{ color: '#F5E642' }}>city-managed solid waste</strong> included in your water/utility bill. Some contract with Republic Services or Waste Management. A few outer suburbs require you to hire a private hauler. When you move, always confirm with the city whether service is automatic or requires setup.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Most DFW cities provide <strong style={{ color: '#F5E642′ }}>city-managed solid waste</strong> included in your water/utility bill. Some contract with Republic Services or Waste Management. A few outer suburbs require you to hire a private hauler. When you move, always confirm with the city whether service is automatic or requires setup.</p>
         </div>
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>🔍 Look Up Your City</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             <div>
@@ -82,9 +82,9 @@ export default function DFWGarbageServiceGuide() {
             </div>
           )}
           {wasteInfo && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.4rem' }}>Disposal Guidance</div>
-              <div style={{ color: '#cbd5e1' }}>{wasteInfo}</div>
+              <div style={{ color: '#cbd5e1′ }}>{wasteInfo}</div>
             </div>
           )}
         </div>

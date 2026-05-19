@@ -7,8 +7,8 @@ function getProbability(year: string, color: string) {
   if (color === 'White/Copper (not poly-B)') return { prob: 'Very Low', pct: 5, action: 'You likely do not have poly-B pipes. Schedule a visual inspection to confirm.', insurance: '✅ Standard coverage likely available.' };
   if (year === 'Before 1978') return { prob: 'Very Low', pct: 8, action: 'Poly-B was not yet in use. Inspect for galvanized or copper piping instead.', insurance: '✅ Standard coverage likely available.' };
   if (year === 'After 1995') return { prob: 'Low', pct: 15, action: 'Poly-B was being phased out. Have a plumber confirm pipe material.', insurance: '✅ Standard coverage likely available.' };
-  if ((year === '1978-1985' || year === '1986-1990') && (color === 'Gray' || color === 'Blue')) return { prob: 'Very High', pct: 90, action: '🚨 High probability of poly-B. Get a licensed DFW plumber inspection immediately. Budget $4,000–$15,000 for full repiping.', insurance: '⚠️ Many DFW insurers deny coverage or require repiping before issuing policy.' };
-  if (year === '1991-1995' && (color === 'Gray' || color === 'Blue')) return { prob: 'High', pct: 70, action: '⚠️ Likely poly-B. Schedule inspection within 30 days. DFW chlorinated water accelerates fitting failure.', insurance: '⚠️ Call your insurer — disclosure may be required.' };
+  if ((year === '1978-1985′ || year === '1986-1990') && (color === ’Gray' || color === 'Blue')) return { prob: 'Very High', pct: 90, action: '🚨 High probability of poly-B. Get a licensed DFW plumber inspection immediately. Budget $4,000–$15,000 for full repiping.', insurance: '⚠️ Many DFW insurers deny coverage or require repiping before issuing policy.' };
+  if (year === '1991-1995′ && (color === ’Gray' || color === 'Blue')) return { prob: 'High', pct: 70, action: '⚠️ Likely poly-B. Schedule inspection within 30 days. DFW chlorinated water accelerates fitting failure.', insurance: '⚠️ Call your insurer — disclosure may be required.' };
   return { prob: 'Moderate', pct: 40, action: 'Mixed risk. Have a plumber inspect fittings and supply lines in crawlspace or under sinks.', insurance: '⚠️ Check with your DFW insurer for current poly-B policy.' };
 }
 
@@ -63,7 +63,7 @@ export default function DFWPolybutylenePipeGuide() {
                 <div style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, borderRadius: 8, padding: '4px 14px', fontSize: 14 }}>{result.prob} Risk — ~{result.pct}%</div>
               </div>
               <p style={{ color: '#E8EDF5', fontSize: 14, marginBottom: 10 }}>{result.action}</p>
-              <p style={{ color: '#94A3B8', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Insurance Note:</strong> {result.insurance}</p>
+              <p style={{ color: '#94A3B8', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Insurance Note:</strong> {result.insurance}</p>
             </div>
           )}
         </div>

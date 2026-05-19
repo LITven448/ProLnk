@@ -30,29 +30,29 @@ interface NewJobForm {
 const TODAY_DAY = 3;
 
 const MOCK_JOBS: Job[] = [
-  { id: "j1", address: "2847 Maple Ave", service: "HVAC Tune-up", time: "8:00 AM", homeowner: "Sarah K.", status: "Confirmed", day: 0 },
-  { id: "j2", address: "1023 Oak Dr", service: "Plumbing — Leak", time: "11:00 AM", homeowner: "David M.", status: "Completed", day: 0 },
-  { id: "j3", address: "5519 Cedar Ln", service: "Electrical Inspect.", time: "2:00 PM", homeowner: "James R.", status: "Confirmed", day: 1 },
-  { id: "j4", address: "334 Birch Blvd", service: "Roofing Estimate", time: "9:30 AM", homeowner: "Maria L.", status: "Confirmed", day: 2 },
-  { id: "j5", address: "7721 Elm St", service: "Concrete Sealing", time: "1:00 PM", homeowner: "Chris T.", status: "Pending", day: 2 },
-  { id: "j6", address: "882 Pine Rd", service: "HVAC Emergency", time: "10:00 AM", homeowner: "Lisa B.", status: "Confirmed", day: 3 },
-  { id: "j7", address: "4412 Walnut Ave", service: "Plumbing Repair", time: "2:00 PM", homeowner: "Tom W.", status: "Confirmed", day: 3 },
-  { id: "j8", address: "91 Spruce Ct", service: "Foundation Check", time: "4:00 PM", homeowner: "Nancy P.", status: "Pending", day: 3 },
-  { id: "j9", address: "2201 Aspen Dr", service: "Roof Repair", time: "8:30 AM", homeowner: "Kevin H.", status: "Confirmed", day: 4 },
-  { id: "j10", address: "667 Sycamore Ln", service: "Electrical Repair", time: "2:00 PM", homeowner: "Amy G.", status: "Confirmed", day: 4 },
-  { id: "j11", address: "3304 Poplar St", service: "HVAC Service", time: "11:00 AM", homeowner: "Paul S.", status: "Pending", day: 5 },
-  { id: "j12", address: "8810 Hickory Dr", service: "Concrete Repair", time: "3:30 PM", homeowner: "Diana F.", status: "Confirmed", day: 5 },
-  { id: "j13", address: "120 Magnolia Ave", service: "Plumbing Install", time: "10:00 AM", homeowner: "Steve V.", status: "Confirmed", day: 6 },
+  { id: "j1″, address: "2847 Maple Ave", service: "HVAC Tune-up", time: "8:00 AM", homeowner: "Sarah K.", status: "Confirmed", day: 0 },
+  { id: "j2″, address: "1023 Oak Dr", service: "Plumbing — Leak", time: "11:00 AM", homeowner: "David M.", status: "Completed", day: 0 },
+  { id: "j3″, address: "5519 Cedar Ln", service: "Electrical Inspect.", time: "2:00 PM", homeowner: "James R.", status: "Confirmed", day: 1 },
+  { id: "j4″, address: "334 Birch Blvd", service: "Roofing Estimate", time: "9:30 AM", homeowner: "Maria L.", status: "Confirmed", day: 2 },
+  { id: "j5″, address: "7721 Elm St", service: "Concrete Sealing", time: "1:00 PM", homeowner: "Chris T.", status: "Pending", day: 2 },
+  { id: "j6″, address: "882 Pine Rd", service: "HVAC Emergency", time: "10:00 AM", homeowner: "Lisa B.", status: "Confirmed", day: 3 },
+  { id: "j7″, address: "4412 Walnut Ave", service: "Plumbing Repair", time: "2:00 PM", homeowner: "Tom W.", status: "Confirmed", day: 3 },
+  { id: "j8″, address: "91 Spruce Ct", service: "Foundation Check", time: "4:00 PM", homeowner: "Nancy P.", status: "Pending", day: 3 },
+  { id: "j9″, address: "2201 Aspen Dr", service: "Roof Repair", time: "8:30 AM", homeowner: "Kevin H.", status: "Confirmed", day: 4 },
+  { id: "j10″, address: "667 Sycamore Ln", service: "Electrical Repair", time: "2:00 PM", homeowner: "Amy G.", status: "Confirmed", day: 4 },
+  { id: "j11″, address: "3304 Poplar St", service: "HVAC Service", time: "11:00 AM", homeowner: "Paul S.", status: "Pending", day: 5 },
+  { id: "j12″, address: "8810 Hickory Dr", service: "Concrete Repair", time: "3:30 PM", homeowner: "Diana F.", status: "Confirmed", day: 5 },
+  { id: "j13″, address: "120 Magnolia Ave", service: "Plumbing Install", time: "10:00 AM", homeowner: "Steve V.", status: "Confirmed", day: 6 },
 ];
 
 const STATUS_COLORS: Record<JobStatus, { bg: string; text: string; border: string }> = {
   Confirmed: { bg: "rgba(99, 102, 241, 0.15)", text: "#A5B4FC", border: "rgba(99, 102, 241, 0.3)" },
   Pending: { bg: "rgba(245, 158, 11, 0.15)", text: "#FCD34D", border: "rgba(245, 158, 11, 0.3)" },
-  Completed: { bg: "rgba(16, 185, 129, 0.15)", text: "#6EE7B7", border: "rgba(16, 185, 129, 0.3)" },
+  Completed: { bg: "rgba(16, 185, 129, 0.15)", text: "#6EE7B7″, border: "rgba(16, 185, 129, 0.3)" },
 };
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-const DATES = ["May 11", "May 12", "May 13", "May 14", "May 15", "May 16", "May 17"];
+const DATES = ["May 11″, "May 12", "May 13", "May 14", "May 15", "May 16", "May 17"];
 
 const BLANK_FORM: NewJobForm = {
   address: "", service: "", date: "", time: "", homeowner: "", notes: "",
@@ -94,7 +94,7 @@ export default function JobScheduler() {
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", padding: "24px 20px 48px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, padding: "24px 20px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Header */}
@@ -109,13 +109,13 @@ export default function JobScheduler() {
             </div>
             <div>
               <h1 style={{ fontSize: 24, fontWeight: 700, color: "#F8FAFC", margin: 0 }}>Job Scheduler</h1>
-              <p style={{ fontSize: 14, color: "#94A3B8", margin: 0 }}>Organize your work week</p>
+              <p style={{ fontSize: 14, color: "#94A3B8″, margin: 0 }}>Organize your work week</p>
             </div>
           </div>
           <div style={{ display: "flex", gap: 10 }}>
             <button
               style={{
-                background: "transparent", border: "1px solid #334155",
+                background: "transparent", border: "1px solid #334155″,
                 borderRadius: 10, padding: "9px 16px", cursor: "pointer",
                 fontSize: 13, color: "#60A5FA", display: "flex", alignItems: "center", gap: 6,
               }}
@@ -141,12 +141,12 @@ export default function JobScheduler() {
         {/* Earnings Banner */}
         <div style={{
           background: "linear-gradient(135deg, #1E1B4B, #312E81)",
-          border: "1px solid #3730A3", borderRadius: 14,
+          border: "1px solid #3730A3″, borderRadius: 14,
           padding: "14px 20px", marginBottom: 20,
           display: "flex", justifyContent: "space-between", alignItems: "center",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <Wrench size={16} color="#818CF8" />
+            <Wrench size={16} color="#818CF8″ />
             <span style={{ fontSize: 14, color: "#C7D2FE" }}>
               This week: <strong style={{ color: "#fff" }}>{totalJobs} jobs scheduled</strong>
             </span>
@@ -162,8 +162,8 @@ export default function JobScheduler() {
           borderRadius: 10, padding: "10px 16px", marginBottom: 20,
           display: "flex", alignItems: "center", gap: 8,
         }}>
-          <AlertTriangle size={15} color="#F87171" />
-          <span style={{ fontSize: 13, color: "#FCA5A5" }}>
+          <AlertTriangle size={15} color="#F87171″ />
+          <span style={{ fontSize: 13, color: "#FCA5A5″ }}>
             Warning: 2 jobs overlap on Thursday 2–4pm. Consider rescheduling one to avoid conflicts.
           </span>
         </div>
@@ -175,16 +175,16 @@ export default function JobScheduler() {
             {/* Week nav */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
               <button style={{
-                background: "transparent", border: "1px solid #334155", borderRadius: 8,
-                padding: "6px 12px", cursor: "pointer", color: "#94A3B8",
+                background: "transparent", border: "1px solid #334155″, borderRadius: 8,
+                padding: "6px 12px", cursor: "pointer", color: "#94A3B8″,
                 display: "flex", alignItems: "center", gap: 4, fontSize: 13,
               }}>
                 <ChevronLeft size={14} /> Prev week
               </button>
-              <span style={{ fontSize: 15, fontWeight: 700, color: "#F1F5F9" }}>May 11–17, 2026</span>
+              <span style={{ fontSize: 15, fontWeight: 700, color: "#F1F5F9″ }}>May 11–17, 2026</span>
               <button style={{
-                background: "transparent", border: "1px solid #334155", borderRadius: 8,
-                padding: "6px 12px", cursor: "pointer", color: "#94A3B8",
+                background: "transparent", border: "1px solid #334155″, borderRadius: 8,
+                padding: "6px 12px", cursor: "pointer", color: "#94A3B8″,
                 display: "flex", alignItems: "center", gap: 4, fontSize: 13,
               }}>
                 Next week <ChevronRight size={14} />
@@ -203,25 +203,25 @@ export default function JobScheduler() {
                     key={day}
                     style={{
                       background: isToday ? "rgba(99, 102, 241, 0.07)" : "#1E293B",
-                      border: isToday ? "1px solid #6366F1" : "1px solid #334155",
+                      border: isToday ? "1px solid #6366F1″ : "1px solid #334155",
                       borderRadius: 12, overflow: "hidden", minHeight: 180,
                     }}
                   >
                     {/* Day Header */}
                     <div style={{
                       padding: "10px 10px 8px",
-                      borderBottom: "1px solid " + (isToday ? "rgba(99,102,241,0.3)" : "#293548"),
+                      borderBottom: "1px solid " + (isToday ? "rgba(99,102,241,0.3)" : "#293548″),
                       background: isToday ? "rgba(99, 102, 241, 0.1)" : "transparent",
                     }}>
-                      <div style={{ fontSize: 11, fontWeight: 700, color: isToday ? "#818CF8" : "#64748B" }}>
+                      <div style={{ fontSize: 11, fontWeight: 700, color: isToday ? "#818CF8″ : "#64748B" }}>
                         {day}
                       </div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: isToday ? "#A5B4FC" : "#94A3B8" }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: isToday ? "#A5B4FC" : "#94A3B8″ }}>
                         {DATES[i].split(" ")[1]}
                       </div>
                       {hasConflict && (
                         <div style={{ marginTop: 4 }}>
-                          <AlertTriangle size={11} color="#F87171" />
+                          <AlertTriangle size={11} color="#F87171″ />
                         </div>
                       )}
                     </div>
@@ -241,7 +241,7 @@ export default function JobScheduler() {
                             <div style={{ fontSize: 10, fontWeight: 700, color: sc.text }}>
                               {job.time}
                             </div>
-                            <div style={{ fontSize: 11, color: "#E2E8F0", lineHeight: 1.3, marginTop: 1 }}>
+                            <div style={{ fontSize: 11, color: "#E2E8F0″, lineHeight: 1.3, marginTop: 1 }}>
                               {job.service}
                             </div>
                             <div style={{ fontSize: 10, color: "#64748B", marginTop: 2 }}>
@@ -255,9 +255,9 @@ export default function JobScheduler() {
                         <button
                           onClick={() => setShowModal(true)}
                           style={{
-                            background: "transparent", border: "1px dashed #334155",
-                            borderRadius: 8, padding: "6px 0", cursor: "pointer",
-                            fontSize: 10, color: "#475569", width: "100%",
+                            background: "transparent", border: "1px dashed #334155″,
+                            borderRadius: 8, padding: "6px 0″, cursor: "pointer",
+                            fontSize: 10, color: "#475569″, width: "100%",
                             display: "flex", alignItems: "center", justifyContent: "center", gap: 3,
                           }}
                         >
@@ -274,24 +274,24 @@ export default function JobScheduler() {
           {/* Upcoming Sidebar */}
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             <div style={{
-              background: "#1E293B", border: "1px solid #334155",
+              background: "#1E293B", border: "1px solid #334155″,
               borderRadius: 12, overflow: "hidden",
             }}>
               <div style={{
                 padding: "14px 16px",
-                borderBottom: "1px solid #293548",
+                borderBottom: "1px solid #293548″,
                 display: "flex", alignItems: "center", gap: 8,
               }}>
-                <Clock size={14} color="#6366F1" />
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#F1F5F9" }}>Upcoming Jobs</span>
+                <Clock size={14} color="#6366F1″ />
+                <span style={{ fontSize: 13, fontWeight: 700, color: "#F1F5F9″ }}>Upcoming Jobs</span>
               </div>
-              <div style={{ padding: "8px 0" }}>
+              <div style={{ padding: "8px 0″ }}>
                 {upcomingJobs.map((job, i) => {
                   const sc = STATUS_COLORS[job.status];
                   return (
                     <div key={job.id} style={{
                       padding: "12px 16px",
-                      borderBottom: i < upcomingJobs.length - 1 ? "1px solid #1A2540" : "none",
+                      borderBottom: i < upcomingJobs.length - 1 ? "1px solid #1A2540″ : "none",
                     }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
                         <span style={{
@@ -300,11 +300,11 @@ export default function JobScheduler() {
                         }}>
                           {job.status}
                         </span>
-                        <span style={{ fontSize: 11, color: "#475569" }}>
+                        <span style={{ fontSize: 11, color: "#475569″ }}>
                           {DAYS[job.day]}, {job.time}
                         </span>
                       </div>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: "#E2E8F0", marginBottom: 2 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: "#E2E8F0″, marginBottom: 2 }}>
                         {job.service}
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
@@ -323,7 +323,7 @@ export default function JobScheduler() {
 
             {/* Status Legend */}
             <div style={{
-              background: "#1E293B", border: "1px solid #334155",
+              background: "#1E293B", border: "1px solid #334155″,
               borderRadius: 12, padding: "14px 16px",
             }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#64748B", marginBottom: 10 }}>Status Legend</div>
@@ -352,15 +352,15 @@ export default function JobScheduler() {
             display: "flex", alignItems: "center", justifyContent: "center", padding: 20,
           }}>
             <div style={{
-              background: "#1E293B", border: "1px solid #334155",
+              background: "#1E293B", border: "1px solid #334155″,
               borderRadius: 16, width: "100%", maxWidth: 440,
               boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
             }}>
               <div style={{
                 display: "flex", justifyContent: "space-between", alignItems: "center",
-                padding: "18px 20px", borderBottom: "1px solid #334155",
+                padding: "18px 20px", borderBottom: "1px solid #334155″,
               }}>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "#F1F5F9" }}>Add Job</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: "#F1F5F9″ }}>Add Job</div>
                 <button
                   onClick={() => setShowModal(false)}
                   style={{ background: "none", border: "none", cursor: "pointer", color: "#64748B" }}
@@ -384,8 +384,8 @@ export default function JobScheduler() {
                       onChange={e => setForm(prev => ({ ...prev, [field.key]: e.target.value }))}
                       placeholder={field.placeholder}
                       style={{
-                        width: "100%", background: "#0F172A", border: "1px solid #334155",
-                        borderRadius: 8, padding: "9px 12px", color: "#E2E8F0",
+                        width: "100%", background: "#0F172A", border: "1px solid #334155″,
+                        borderRadius: 8, padding: "9px 12px", color: "#E2E8F0″,
                         fontSize: 13, outline: "none", boxSizing: "border-box",
                         fontFamily: "inherit",
                       }}
@@ -400,8 +400,8 @@ export default function JobScheduler() {
                       value={form.date}
                       onChange={e => setForm(prev => ({ ...prev, date: e.target.value }))}
                       style={{
-                        width: "100%", background: "#0F172A", border: "1px solid #334155",
-                        borderRadius: 8, padding: "9px 12px", color: "#E2E8F0",
+                        width: "100%", background: "#0F172A", border: "1px solid #334155″,
+                        borderRadius: 8, padding: "9px 12px", color: "#E2E8F0″,
                         fontSize: 13, outline: "none", boxSizing: "border-box",
                         fontFamily: "inherit",
                       }}
@@ -414,8 +414,8 @@ export default function JobScheduler() {
                       value={form.time}
                       onChange={e => setForm(prev => ({ ...prev, time: e.target.value }))}
                       style={{
-                        width: "100%", background: "#0F172A", border: "1px solid #334155",
-                        borderRadius: 8, padding: "9px 12px", color: "#E2E8F0",
+                        width: "100%", background: "#0F172A", border: "1px solid #334155″,
+                        borderRadius: 8, padding: "9px 12px", color: "#E2E8F0″,
                         fontSize: 13, outline: "none", boxSizing: "border-box",
                         fontFamily: "inherit",
                       }}
@@ -427,7 +427,7 @@ export default function JobScheduler() {
                   style={{
                     marginTop: 4,
                     background: "linear-gradient(135deg, #4F46E5, #7C3AED)",
-                    border: "none", borderRadius: 10, padding: "12px 0",
+                    border: "none", borderRadius: 10, padding: "12px 0″,
                     cursor: "pointer", fontSize: 14, fontWeight: 700, color: "#fff",
                   }}
                 >

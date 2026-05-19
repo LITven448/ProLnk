@@ -84,8 +84,8 @@ export default function ProLnkTermsOfService() {
           {userTypes.map(u => (
             <button key={u} onClick={() => setSelected(u)} style={{
               padding: '8px 20px', borderRadius: 24, border: '2px solid',
-              borderColor: selected === u ? '#0A1628' : '#CBD5E1',
-              background: selected === u ? '#0A1628' : 'white',
+              borderColor: selected === u ? '#0A1628′ : '#CBD5E1',
+              background: selected === u ? '#0A1628′ : ’white',
               color: selected === u ? 'white' : '#0A1628',
               fontWeight: 700, cursor: 'pointer', textTransform: 'capitalize', fontSize: 14,
             }}>{u}</button>
@@ -98,13 +98,13 @@ export default function ProLnkTermsOfService() {
             {(['rights', 'responsibilities', 'highlights'] as const).map(s => (
               <button key={s} onClick={() => setSection(s)} style={{
                 padding: '6px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                background: section === s ? '#F5E642' : '#F1F5F9', color: '#0A1628',
+                background: section === s ? '#F5E642′ : '#F1F5F9', color: '#0A1628',
               }}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
             ))}
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {t[section].map((item, i) => (
-              <li key={i} style={{ padding: '10px 0', borderBottom: i < t[section].length - 1 ? '1px solid #F1F5F9' : 'none', color: '#1E293B', fontSize: 15 }}>{item}</li>
+              <li key={i} style={{ padding: '10px 0', borderBottom: i < t[section].length - 1 ? '1px solid #F1F5F9′ : ’none', color: '#1E293B', fontSize: 15 }}>{item}</li>
             ))}
           </ul>
         </div>

@@ -24,7 +24,7 @@ export default function DFWHVACPumpsGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px' }}>Condensate Pump Guide — DFW</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28 }}>
-          DFW summers push AC systems to remove 2–5 gallons of moisture per hour. When gravity drainage isn't possible, condensate pumps move that water safely away. Here's what DFW homeowners need to know.
+          DFW summers push AC systems to remove 2–5 gallons of moisture per hour. When gravity drainage isn't possible, condensate pumps move that water safely away. Here’s what DFW homeowners need to know.
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -61,7 +61,7 @@ export default function DFWHVACPumpsGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {situations.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}

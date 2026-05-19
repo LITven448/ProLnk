@@ -46,13 +46,13 @@ export default function DFWConcreteCuringGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2rem' }}>💧</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Concrete Curing Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Concrete Curing Guide</h1>
           <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
-            Concrete doesn't dry — it cures through a chemical reaction that requires moisture. In DFW's 105°F summers, the surface dries out in hours while the core stays weak for weeks. Skip curing and you get concrete that dusts, cracks, and fails in 3-5 years instead of 30+.
+            Concrete doesn't dry — it cures through a chemical reaction that requires moisture. In DFW’s 105°F summers, the surface dries out in hours while the core stays weak for weeks. Skip curing and you get concrete that dusts, cracks, and fails in 3-5 years instead of 30+.
           </p>
         </div>
         <div style={{ backgroundColor: '#7f1d1d', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
-          <strong style={{ color: '#fca5a5' }}>⚠️ DFW Fact:</strong>
+          <strong style={{ color: '#fca5a5′ }}>⚠️ DFW Fact:</strong>
           <span style={{ color: '#fff' }}> Uncured concrete in DFW summer reaches only 60% of its designed strength. That 4000 PSI driveway becomes 2400 PSI. Your truck is rated for 4000.</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -106,7 +106,7 @@ export default function DFWConcreteCuringGuide() {
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>📈 Concrete Strength Over Time in DFW</h3>
           {[['1 day', '16%', 'Forms can be removed'], ['3 days', '40%', 'Light foot traffic only'], ['7 days', '65%', 'Residential vehicle traffic OK'], ['14 days', '90%', 'Most applications ready'], ['28 days', '100%', 'Full design strength — epoxy, heavy loads']].map(([day, pct, note]) => (
             <div key={day} style={{ display: 'grid', gridTemplateColumns: '80px 60px 1fr', gap: '0.5rem', padding: '0.5rem 0', borderBottom: '1px solid #334155', alignItems: 'center' }}>
-              <span style={{ color: '#94a3b8' }}>{day}</span>
+              <span style={{ color: '#94a3b8′ }}>{day}</span>
               <span style={{ color: '#F5E642', fontWeight: 'bold' }}>{pct}</span>
               <span style={{ color: '#fff', fontSize: '0.9rem' }}>{note}</span>
             </div>

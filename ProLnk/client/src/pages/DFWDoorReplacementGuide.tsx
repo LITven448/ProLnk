@@ -56,17 +56,17 @@ export default function DFWDoorReplacementGuide() {
           🚪 Entry Door Replacement Guide — Dallas–Fort Worth
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 36 }}>
-          DFW's intense sun, heat, and occasional severe storms make door material choice critical. The wrong door fades, warps, and leaks within 5 years. Here's how to choose right.
+          DFW's intense sun, heat, and occasional severe storms make door material choice critical. The wrong door fades, warps, and leaks within 5 years. Here’s how to choose right.
         </p>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, fontSize: 18 }}>🌞 DFW Sun Exposure Impact by Facing</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}>
             {EXPOSURES.map(exp => (
-              <div key={exp.id} style={{ background: '#0A1628', borderRadius: 10, padding: 16, border: exposure === exp.id ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer' }}
+              <div key={exp.id} style={{ background: '#0A1628', borderRadius: 10, padding: 16, border: exposure === exp.id ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer' }}
                 onClick={() => setExposure(exp.id)}>
                 <div style={{ fontWeight: 700, color: '#E8EDF4', marginBottom: 6 }}>{exp.label}</div>
-                <div style={{ color: exp.fadeRisk === 'Very High' ? '#EF4444' : exp.fadeRisk === 'High' ? '#F59E0B' : '#22C55E', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>
+                <div style={{ color: exp.fadeRisk === 'Very High' ? '#EF4444′ : exp.fadeRisk === ’High' ? '#F59E0B' : '#22C55E', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>
                   Fade Risk: {exp.fadeRisk}
                 </div>
                 <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.5 }}>{exp.coatNote}</div>
@@ -85,7 +85,7 @@ export default function DFWDoorReplacementGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57' }}>
+                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57′ }}>
                   {['Material', 'R-Value', 'DFW Rating', 'Durability', 'Starting Cost'].map(h => (
                     <th key={h} style={{ textAlign: 'left', paddingBottom: 10, paddingRight: 16 }}>{h}</th>
                   ))}
@@ -99,7 +99,7 @@ export default function DFWDoorReplacementGuide() {
                 ].map(row => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #16213A' }}>
                     {row.map((cell, i) => (
-                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4' : '#94A3B8' }}>{cell}</td>
+                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4′ : '#94A3B8' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}

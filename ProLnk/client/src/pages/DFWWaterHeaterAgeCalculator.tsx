@@ -23,7 +23,7 @@ export default function DFWWaterHeaterAgeCalculator() {
   const cost = COST[type] + (household === 3 ? 400 : 0);
   const monthly = Math.round(cost / Math.max(yearsLeft * 12, 1));
   const urgency = age >= adjLife ? 'urgent' : age >= adjLife - 2 ? 'soon' : 'ok';
-  const urgencyColor = urgency === 'urgent' ? '#d32f2f' : urgency === 'soon' ? '#e65100' : '#1b5e20';
+  const urgencyColor = urgency === 'urgent' ? '#d32f2f' : urgency === 'soon' ? '#e65100′ : '#1b5e20';
 
   const isTankless = type.startsWith('Tankless');
   const recommendation = isTankless
@@ -45,7 +45,7 @@ export default function DFWWaterHeaterAgeCalculator() {
               <label style={{ display: 'block', fontWeight: 700, color: '#aab4cc', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Install Year</label>
               <input type="range" min={2000} max={2025} step={1} value={installYear}
                 onChange={e => setInstallYear(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#F5E642', fontSize: '1.1rem' }}>{installYear} ({age} yrs old)</div>
             </div>
             <div>
@@ -53,7 +53,7 @@ export default function DFWWaterHeaterAgeCalculator() {
               <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem' }}>
                 {[1, 2, 3].map(h => (
                   <button key={h} onClick={() => setHousehold(h)}
-                    style={{ flex: 1, padding: '0.6rem', borderRadius: 8, border: `2px solid ${household === h ? '#F5E642' : '#2a3a5c'}`, background: household === h ? '#1e3a5f' : 'transparent', color: household === h ? '#F5E642' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.8rem' }}>
+                    style={{ flex: 1, padding: '0.6rem', borderRadius: 8, border: `2px solid ${household === h ? '#F5E642' : '#2a3a5c'}`, background: household === h ? '#1e3a5f' : 'transparent', color: household === h ? '#F5E642′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: '0.8rem' }}>
                     {HOUSEHOLD[h]}
                   </button>
                 ))}
@@ -74,7 +74,7 @@ export default function DFWWaterHeaterAgeCalculator() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
               {TYPES.map(t => (
                 <div key={t} onClick={() => setType(t)}
-                  style={{ padding: '0.65rem 0.75rem', borderRadius: 10, cursor: 'pointer', border: `2px solid ${type === t ? '#F5E642' : '#2a3a5c'}`, background: type === t ? '#1e3a5f' : 'transparent', fontWeight: 700, fontSize: '0.85rem', color: type === t ? '#F5E642' : '#fff' }}>
+                  style={{ padding: '0.65rem 0.75rem', borderRadius: 10, cursor: 'pointer', border: `2px solid ${type === t ? '#F5E642' : '#2a3a5c'}`, background: type === t ? '#1e3a5f' : 'transparent', fontWeight: 700, fontSize: '0.85rem', color: type === t ? '#F5E642′ : '#fff' }}>
                   {t}
                 </div>
               ))}
@@ -91,15 +91,15 @@ export default function DFWWaterHeaterAgeCalculator() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>{yearsLeft}</div>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>{yearsLeft}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Years Remaining</div>
           </div>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>${cost.toLocaleString()}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>${cost.toLocaleString()}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Replacement Cost</div>
           </div>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>${monthly}</div>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>${monthly}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Save Monthly</div>
           </div>
         </div>

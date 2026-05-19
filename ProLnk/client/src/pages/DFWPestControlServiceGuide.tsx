@@ -34,7 +34,7 @@ export default function DFWPestControlServiceGuide() {
   const annual = Math.round((HOME_SIZES[hi].base + pestAdd) * cadence.mult);
   const monthly = Math.round(annual / 12);
   const rec = ci === 0 ? 'Quarterly is sufficient for general pest control in most DFW homes.' : 'Monthly programs are worth it when fire ants or mosquitoes are priority concerns.';
-  const btn = (active: boolean) => ({ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642' : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
+  const btn = (active: boolean) => ({ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642′ : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui,sans-serif', padding: '32px 16px' }}>
@@ -77,7 +77,7 @@ export default function DFWPestControlServiceGuide() {
             <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>PRIMARY PEST CONCERNS (add-on programs)</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {PESTS.map((p, i) => (
-                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${pests.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: pests.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5' }}>{p.label} +${p.add}/yr</button>
+                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${pests.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: pests.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5′ }}>{p.label} +${p.add}/yr</button>
               ))}
             </div>
           </div>

@@ -62,9 +62,9 @@ export default function DFWAppealedAssessmentGuide() {
         {result && (
           <div style={{ display: 'grid', gap: '1rem' }}>
             {[
-              { label: '🎯 Strategy', text: result.strategy, color: '#F5E642' },
+              { label: '🎯 Strategy', text: result.strategy, color: '#F5E642′ },
               { label: '📊 How to Present to ARB', text: result.howToPresent, color: '#60a5fa' },
-              { label: '📈 Expected Outcome', text: result.expectedOutcome, color: '#4ade80' },
+              { label: '📈 Expected Outcome', text: result.expectedOutcome, color: '#4ade80′ },
             ].map(section => (
               <div key={section.label} style={{ background: '#0f2040', borderRadius: 10, padding: '1.5rem' }}>
                 <h2 style={{ color: section.color, fontSize: '1rem', marginBottom: '0.75rem' }}>{section.label}</h2>

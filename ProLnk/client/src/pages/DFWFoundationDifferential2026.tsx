@@ -19,7 +19,7 @@ export default function DFWFoundationDifferential2026() {
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
         <div style={{ marginBottom: '0.5rem', color: '#F5E642', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>DFW Foundation Guide 2026</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.2 }}>🏠 DFW Differential Foundation Movement Guide</h1>
-        <p style={{ color: '#9BA3B2', marginBottom: '2rem' }}>In DFW, it's not total movement that matters — it's differential movement. One end of your slab dropping while the other stays is far more damaging than uniform settlement.</p>
+        <p style={{ color: '#9BA3B2', marginBottom: '2rem' }}>In DFW, it's not total movement that matters — it’s differential movement. One end of your slab dropping while the other stays is far more damaging than uniform settlement.</p>
 
         <div style={{ background: '#111E35', border: '1px solid #1E3A5F', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ fontSize: '1.1rem', color: '#F5E642', marginBottom: '1rem' }}>📐 Why Differential Matters More Than Total</h2>

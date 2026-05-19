@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const sheetMetalData: Record<string, Record<string, { tools: string; safety: string; sealant: string }>> = {
   'HVAC boot replacement': {
-    'Straight cut': { tools: 'Aviation snips (straight-cut, green handle), hand seamers, sheet metal screws', safety: 'Cut edges are razor-sharp. Wear leather gloves always. DFW attic work: 140°F+ in summer — schedule early morning, max 90 min sessions.', sealant: 'Mastic duct sealant (not tape alone). DFW heat degrades foil tape — mastic is permanent. Brush on 1/8" coat, embed mesh, second coat.' },
+    'Straight cut': { tools: 'Aviation snips (straight-cut, green handle), hand seamers, sheet metal screws', safety: 'Cut edges are razor-sharp. Wear leather gloves always. DFW attic work: 140°F+ in summer — schedule early morning, max 90 min sessions.', sealant: 'Mastic duct sealant (not tape alone). DFW heat degrades foil tape — mastic is permanent. Brush on 1/8″ coat, embed mesh, second coat.' },
     'Offset cut': { tools: 'Offset aviation snips, sheet metal brake (or bend by hand), sheet metal screws', safety: 'Offset snips prevent knuckle injury on long cuts. Wear safety glasses — metal chips fly. DFW attic: take hydration breaks every 30 min.', sealant: 'Mastic + fiberglass mesh tape at all joints. DFW HVAC systems run 2,000+ hours/year — mastic outlasts any tape product.' },
   },
   'Roof flashing repair': {
@@ -55,7 +55,7 @@ export default function DFWSheetMetalGuide() {
         </div>
 
         <div style={{ background: '#0f2030', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>🎯 DFW Sheet Metal Selector</h2>
+          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>🎯 DFW Sheet Metal Selector</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>Application</label>
@@ -78,10 +78,10 @@ export default function DFWSheetMetalGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
-              <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#F5E642' }}>Tools Needed:</span><br /><span style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{result.tools}</span></div>
-              <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#F5E642' }}>Safety (DFW):</span><br /><span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.safety}</span></div>
-              <div><span style={{ color: '#F5E642' }}>Sealant Recommendation:</span><br /><span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.sealant}</span></div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#F5E642′ }}>Tools Needed:</span><br /><span style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{result.tools}</span></div>
+              <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#F5E642′ }}>Safety (DFW):</span><br /><span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.safety}</span></div>
+              <div><span style={{ color: '#F5E642′ }}>Sealant Recommendation:</span><br /><span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.sealant}</span></div>
             </div>
           )}
         </div>

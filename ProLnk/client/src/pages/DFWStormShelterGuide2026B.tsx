@@ -44,7 +44,7 @@ export default function DFWStormShelterGuide2026B() {
             {options.map(o => (
               <button key={o.property} onClick={() => setProperty(o.property)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  background: property === o.property ? '#F5E642' : '#1e3a5f', color: property === o.property ? '#0A1628' : '#94a3b8' }}>
+                  background: property === o.property ? '#F5E642′ : '#1e3a5f', color: property === o.property ? '#0A1628' : '#94a3b8' }}>
                 {o.emoji} {o.label}
               </button>
             ))}
@@ -57,7 +57,7 @@ export default function DFWStormShelterGuide2026B() {
             {[{ id: 'high', label: 'Above-Ground' }, { id: 'low', label: 'In-Ground' }].map(b => (
               <button key={b.id} onClick={() => setBudget(b.id)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  background: budget === b.id ? '#F5E642' : '#1e3a5f', color: budget === b.id ? '#0A1628' : '#94a3b8' }}>
+                  background: budget === b.id ? '#F5E642′ : '#1e3a5f', color: budget === b.id ? '#0A1628' : '#94a3b8' }}>
                 {b.label}
               </button>
             ))}
@@ -72,11 +72,11 @@ export default function DFWStormShelterGuide2026B() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div>
               <p style={{ color: '#22c55e', fontSize: 13, fontWeight: 700, marginBottom: 6 }}>ADVANTAGES</p>
-              {rec.pros.map((p, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: 13, padding: '3px 0' }}>✓ {p}</div>)}
+              {rec.pros.map((p, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: 13, padding: '3px 0′ }}>✓ {p}</div>)}
             </div>
             <div>
               <p style={{ color: '#f87171', fontSize: 13, fontWeight: 700, marginBottom: 6 }}>CONSIDERATIONS</p>
-              {rec.cons.map((c, i) => <div key={i} style={{ color: '#94a3b8', fontSize: 13, padding: '3px 0' }}>• {c}</div>)}
+              {rec.cons.map((c, i) => <div key={i} style={{ color: '#94a3b8', fontSize: 13, padding: '3px 0′ }}>• {c}</div>)}
             </div>
           </div>
         </div>

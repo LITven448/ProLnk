@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const texasLaw = [
-  { rule: 'HOA must provide 30-day written notice before levying a special assessment', source: 'TX Prop. Code §209.0041' },
+  { rule: 'HOA must provide 30-day written notice before levying a special assessment', source: 'TX Prop. Code §209.0041′ },
   { rule: 'Assessments exceeding 10% of annual budget typically require member vote', source: 'TX Prop. Code §209.0041(f)' },
-  { rule: 'HOA must hold a members meeting if requested by 10% of homeowners', source: 'TX Prop. Code §209.014' },
-  { rule: 'HOA must make financial records available to members on request', source: 'TX Prop. Code §209.005' },
+  { rule: 'HOA must hold a members meeting if requested by 10% of homeowners', source: 'TX Prop. Code §209.014′ },
+  { rule: 'HOA must make financial records available to members on request', source: 'TX Prop. Code §209.005′ },
   { rule: 'Special assessments do NOT have a state-mandated dollar cap — limits are in the CC&Rs', source: 'HOA Specific' },
 ];
 
@@ -43,17 +43,17 @@ export default function DFWSpecialAssessmentGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#1A5FE8', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>PROLNK GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>🏘️ DFW HOA Special Assessment Guide</h1>
-        <p style={{ color: '#5A6B82', fontSize: 16, marginBottom: 32 }}>Special assessments are one-time charges beyond regular HOA dues — and they can run $500 to $30,000+ per unit. Here's how to protect yourself in DFW's HOA-heavy market.</p>
+        <p style={{ color: '#5A6B82', fontSize: 16, marginBottom: 32 }}>Special assessments are one-time charges beyond regular HOA dues — and they can run $500 to $30,000+ per unit. Here's how to protect yourself in DFW’s HOA-heavy market.</p>
 
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>💰 Typical DFW Special Assessment Amounts</h2>
           {typicalAmounts.map(item => (
             <div key={item.type} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #E8EDF5', fontSize: 14 }}>
-              <span style={{ color: '#3A4B62' }}>{item.type}</span>
-              <span style={{ fontWeight: 700, color: '#1A5FE8' }}>{item.range}</span>
+              <span style={{ color: '#3A4B62′ }}>{item.type}</span>
+              <span style={{ fontWeight: 700, color: '#1A5FE8′ }}>{item.range}</span>
             </div>
           ))}
-          <div style={{ marginTop: 12, padding: 12, background: '#FFF9E8', borderRadius: 8, fontSize: 13, color: '#5A4A00' }}>
+          <div style={{ marginTop: 12, padding: 12, background: '#FFF9E8', borderRadius: 8, fontSize: 13, color: '#5A4A00′ }}>
             ⚠️ Amounts vary widely based on community size. Larger communities (200+ units) spread costs over more owners. Smaller communities face much higher per-unit amounts.
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function DFWSpecialAssessmentGuide() {
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>⚖️ What Texas Law Says</h2>
           {texasLaw.map((item, i) => (
-            <div key={i} style={{ padding: '12px 0', borderBottom: '1px solid #E8EDF5' }}>
+            <div key={i} style={{ padding: '12px 0', borderBottom: '1px solid #E8EDF5′ }}>
               <div style={{ fontSize: 14, color: '#1A2537', marginBottom: 4 }}>{item.rule}</div>
               <div style={{ fontSize: 12, color: '#1A5FE8', fontWeight: 600 }}>{item.source}</div>
             </div>
@@ -74,7 +74,7 @@ export default function DFWSpecialAssessmentGuide() {
             {[['buying', '🏠 Buying Into an HOA'], ['member', '📋 Current HOA Member']].map(([val, label]) => (
               <button key={val} onClick={() => setSituation(val)}
                 style={{ flex: 1, padding: '14px 0', borderRadius: 10, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 15,
-                  borderColor: situation === val ? '#1A5FE8' : '#E0E7EF', background: situation === val ? '#EEF3FF' : '#FFF', color: situation === val ? '#1A5FE8' : '#5A6B82' }}>
+                  borderColor: situation === val ? '#1A5FE8′ : '#E0E7EF', background: situation === val ? '#EEF3FF' : '#FFF', color: situation === val ? '#1A5FE8' : '#5A6B82' }}>
                 {label}
               </button>
             ))}
@@ -83,7 +83,7 @@ export default function DFWSpecialAssessmentGuide() {
             {(situation === 'buying' ? buyerChecks : memberChecks).map((item, i) => (
               <li key={i} style={{ padding: '12px 0', borderBottom: '1px solid #E8EDF5', display: 'flex', gap: 12, fontSize: 14 }}>
                 <span style={{ color: '#1A5FE8', flexShrink: 0 }}>▸</span>
-                <span style={{ color: '#3A4B62' }}>{item}</span>
+                <span style={{ color: '#3A4B62′ }}>{item}</span>
               </li>
             ))}
           </ul>

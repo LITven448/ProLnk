@@ -26,7 +26,7 @@ export default function DFWInteriorPrimerGuide2026() {
         <div style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Surface Type → Primer Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>What are you priming?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>What are you priming?</label>
             <select value={surface} onChange={e => setSurface(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
               <option value="drywall">New drywall / fresh mud</option>
               <option value="dark">Dark or bold existing color</option>
@@ -35,7 +35,7 @@ export default function DFWInteriorPrimerGuide2026() {
               <option value="bare">Bare wood trim or millwork</option>
             </select>
           </div>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ {rec.primer}</div>
             <div style={{ marginBottom: 6 }}><strong>Brand:</strong> {rec.brand}</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>💡 {rec.tip}</div>

@@ -42,7 +42,7 @@ export default function TrustyProPrivacyFirst() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <div style={{ fontSize: 64, marginBottom: 20 }}>🔒</div>
           <div style={{ background: '#4F46E5', display: 'inline-block', borderRadius: 8, padding: '6px 16px', fontSize: 13, fontWeight: 600, marginBottom: 16 }}>PRIVACY FIRST</div>
-          <h1 style={{ fontSize: 48, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>Your Home Data<br /><span style={{ color: '#4F46E5' }}>Belongs to You</span></h1>
+          <h1 style={{ fontSize: 48, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>Your Home Data<br /><span style={{ color: '#4F46E5′ }}>Belongs to You</span></h1>
           <p style={{ color: '#94a3b8', fontSize: 18, maxWidth: 560, margin: '0 auto' }}>TrustyPro was designed from the ground up so homeowners — not platforms, not insurers, not anyone else — own and control their property data.</p>
         </div>
 
@@ -68,7 +68,7 @@ export default function TrustyProPrivacyFirst() {
             <thead>
               <tr>
                 {['Category', '✅ Pro Sees', '🔒 Stays Private'].map((h, i) => (
-                  <th key={i} style={{ padding: '12px 16px', textAlign: 'left', background: '#0f1e35', color: i === 1 ? '#4ade80' : i === 2 ? '#FACC15' : '#94a3b8', borderBottom: '1px solid #1e3a5f', fontWeight: 700 }}>{h}</th>
+                  <th key={i} style={{ padding: '12px 16px', textAlign: 'left', background: '#0f1e35', color: i === 1 ? '#4ade80′ : i === 2 ? '#FACC15' : '#94a3b8', borderBottom: '1px solid #1e3a5f', fontWeight: 700 }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -76,8 +76,8 @@ export default function TrustyProPrivacyFirst() {
               {prosVsPrivate.map((row, i) => (
                 <tr key={i} style={{ background: i % 2 === 0 ? '#050d1a' : '#080f1c' }}>
                   <td style={{ padding: '12px 16px', color: '#e2e8f0', fontWeight: 600 }}>{row.category}</td>
-                  <td style={{ padding: '12px 16px', color: '#94a3b8' }}>{row.prosee}</td>
-                  <td style={{ padding: '12px 16px', color: '#94a3b8' }}>{row.staysprivate}</td>
+                  <td style={{ padding: '12px 16px', color: '#94a3b8′ }}>{row.prosee}</td>
+                  <td style={{ padding: '12px 16px', color: '#94a3b8′ }}>{row.staysprivate}</td>
                 </tr>
               ))}
             </tbody>
@@ -103,8 +103,8 @@ export default function TrustyProPrivacyFirst() {
           <div style={{ fontSize: 13, color: '#4F46E5', fontWeight: 700, letterSpacing: 1.5, marginBottom: 16 }}>COMPLIANCE</div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap' }}>
             {['CCPA Compliant', 'GDPR Ready', 'SOC 2 Type II (in progress)', 'No Insurance Data Sharing', 'End-to-End Encrypted'].map((c, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 15, color: '#e2e8f0' }}>
-                <span style={{ color: '#4ade80' }}>✓</span> {c}
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 15, color: '#e2e8f0′ }}>
+                <span style={{ color: '#4ade80′ }}>✓</span> {c}
               </div>
             ))}
           </div>

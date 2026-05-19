@@ -74,7 +74,7 @@ export default function DFWHVACYear15Update() {
           Replacement Is Overdue or Imminent: Year Fifteen
         </h1>
         <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px', lineHeight: 1.6 }}>
-          Fifteen DFW summers means your system has lived a full life. The question isn't if you'll replace — it's whether you do it on your terms or on a 95°F July afternoon.
+          Fifteen DFW summers means your system has lived a full life. The question isn't if you’ll replace — it’s whether you do it on your terms or on a 95°F July afternoon.
         </p>
 
         <div style={{ backgroundColor: '#1a1530', border: '2px solid #ef4444', borderRadius: '12px', padding: '16px', marginBottom: '24px' }}>
@@ -89,7 +89,7 @@ export default function DFWHVACYear15Update() {
           <div style={{ display: 'grid', gap: '10px' }}>
             {situations.map(s => (
               <button key={s.value} onClick={() => setSelected(s.value)}
-                style={{ padding: '14px 18px', borderRadius: '8px', border: `2px solid ${selected === s.value ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === s.value ? '#1a2f50' : 'transparent', color: selected === s.value ? '#F5E642' : '#cbd5e1', cursor: 'pointer', textAlign: 'left', fontSize: '15px', fontWeight: selected === s.value ? 700 : 400 }}>
+                style={{ padding: '14px 18px', borderRadius: '8px', border: `2px solid ${selected === s.value ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === s.value ? '#1a2f50′ : ’transparent', color: selected === s.value ? '#F5E642′ : '#cbd5e1', cursor: ’pointer', textAlign: 'left', fontSize: '15px', fontWeight: selected === s.value ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}
@@ -99,8 +99,8 @@ export default function DFWHVACYear15Update() {
         {plan && (
           <div style={{ backgroundColor: '#0f2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '16px' }}>
-              <span style={{ backgroundColor: plan.urgency === 'CRITICAL' ? '#ef4444' : plan.urgency === 'HIGH' ? '#f59e0b' : '#22c55e', color: '#fff', fontSize: '11px', fontWeight: 800, padding: '3px 8px', borderRadius: '4px' }}>{plan.urgency}</span>
-              <div style={{ fontSize: '18px', fontWeight: 700, color: '#F5E642' }}>⚡ {plan.title}</div>
+              <span style={{ backgroundColor: plan.urgency === 'CRITICAL' ? '#ef4444′ : plan.urgency === ’HIGH' ? '#f59e0b' : '#22c55e', color: '#fff', fontSize: '11px', fontWeight: 800, padding: '3px 8px', borderRadius: '4px' }}>{plan.urgency}</span>
+              <div style={{ fontSize: '18px', fontWeight: 700, color: '#F5E642′ }}>⚡ {plan.title}</div>
             </div>
             <div style={{ display: 'grid', gap: '10px', marginBottom: '16px' }}>
               {plan.steps.map((step, i) => (
@@ -110,11 +110,11 @@ export default function DFWHVACYear15Update() {
                 </div>
               ))}
             </div>
-            <div style={{ backgroundColor: '#2d1515', borderRadius: '8px', padding: '14px', marginBottom: '12px', borderLeft: '4px solid #ef4444' }}>
+            <div style={{ backgroundColor: '#2d1515', borderRadius: '8px', padding: '14px', marginBottom: '12px', borderLeft: '4px solid #ef4444′ }}>
               <div style={{ fontSize: '13px', color: '#ef4444', fontWeight: 600, marginBottom: '4px' }}>⚠️ WARNING</div>
               <div style={{ color: '#fca5a5', fontSize: '14px', lineHeight: 1.5 }}>{plan.warning}</div>
             </div>
-            <div style={{ backgroundColor: '#1a2f50', borderRadius: '8px', padding: '14px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#1a2f50', borderRadius: '8px', padding: '14px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: '13px', color: '#F5E642', fontWeight: 600, marginBottom: '4px' }}>💡 DFW INSIGHT</div>
               <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: 1.5 }}>{plan.insight}</div>
             </div>

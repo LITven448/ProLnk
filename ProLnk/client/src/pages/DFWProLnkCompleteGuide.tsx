@@ -37,7 +37,7 @@ export default function DFWProLnkCompleteGuide() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 14 }}>
           {incomeStreams.map((s, i) => (
             <button key={i} onClick={() => setActiveStream(i)}
-              style={{ background: activeStream === i ? '#F5E642' : '#132035', color: activeStream === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '7px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: activeStream === i ? '#F5E642′ : '#132035', color: activeStream === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '7px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {s.icon} Stream {i + 1}
             </button>
           ))}
@@ -52,7 +52,7 @@ export default function DFWProLnkCompleteGuide() {
           {tiers.map((t, i) => (
             <div key={i} style={{ background: '#132035', borderRadius: 10, padding: 16, display: 'grid', gridTemplateColumns: '1fr auto', gap: 12, alignItems: 'center' }}>
               <div>
-                <div style={{ fontWeight: 800, fontSize: 16, color: i === 0 ? '#F5E642' : '#fff' }}>{t.name} — {t.spots} spots</div>
+                <div style={{ fontWeight: 800, fontSize: 16, color: i === 0 ? '#F5E642′ : '#fff' }}>{t.name} — {t.spots} spots</div>
                 <div style={{ color: '#8FA3BF', fontSize: 13, marginTop: 4 }}>{t.perks}</div>
               </div>
               <div style={{ color: '#4ADE80', fontWeight: 800 }}>{t.price}</div>
@@ -74,7 +74,7 @@ export default function DFWProLnkCompleteGuide() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setActiveSituation(s.id)}
-                style={{ background: activeSituation === s.id ? '#F5E642' : '#0A1628', color: activeSituation === s.id ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: activeSituation === s.id ? '#F5E642′ : '#0A1628', color: activeSituation === s.id ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {s.label}
               </button>
             ))}

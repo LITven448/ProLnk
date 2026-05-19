@@ -71,7 +71,7 @@ export default function DFWHomeValueTrajectory() {
         {submarket && <p style={{ color: '#64748b', fontSize: 12, marginTop: -10, marginBottom: 14 }}>{submarkets[submarket].label} · Median ~{fmt(submarkets[submarket].base)}</p>}
 
         <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Current Estimated Home Value</label>
-        <input value={currentValue} onChange={e => setCurrentValue(e.target.value)} placeholder='e.g. 450000' style={{ width: '100%', padding: '10px 12px', borderRadius: 8, background: '#111f3a', border: '1px solid #1e3a5f', color: '#fff', fontSize: 14, marginBottom: 14, boxSizing: 'border-box' }} />
+        <input value={currentValue} onChange={e => setCurrentValue(e.target.value)} placeholder='e.g. 450000′ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, background: '#111f3a', border: '1px solid #1e3a5f', color: '#fff', fontSize: 14, marginBottom: 14, boxSizing: ’border-box' }} />
 
         <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Planned Improvements (next 2 years)</label>
         <select value={improvement} onChange={e => setImprovement(e.target.value)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, background: '#111f3a', border: '1px solid #1e3a5f', color: '#fff', fontSize: 14, marginBottom: 14 }}>
@@ -85,7 +85,7 @@ export default function DFWHomeValueTrajectory() {
               <p style={{ color: '#94a3b8', fontSize: 13, margin: '0 0 10px' }}>{label as string}</p>
               <div style={{ display: 'flex', gap: 8 }}>
                 {[true, false].map(v => (
-                  <button key={String(v)} onClick={() => setter(v)} style={{ flex: 1, padding: '6px 0', borderRadius: 6, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: val === v ? '#F5E642' : '#1e3a5f', color: val === v ? '#0A1628' : '#94a3b8' }}>
+                  <button key={String(v)} onClick={() => setter(v)} style={{ flex: 1, padding: '6px 0', borderRadius: 6, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: val === v ? '#F5E642′ : '#1e3a5f', color: val === v ? '#0A1628' : '#94a3b8' }}>
                     {v ? 'Yes' : 'No'}
                   </button>
                 ))}
@@ -109,7 +109,7 @@ export default function DFWHomeValueTrajectory() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#94a3b8' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#94a3b8′ }}>
               Confidence: <strong style={{ color: '#22c55e' }}>{result.confidence}</strong> · Based on {submarket} submarket trends + planned improvements.
               Keep your home maintained — deferred maintenance is the #1 value killer in DFW.
             </div>

@@ -48,7 +48,7 @@ export default function DFWChangeOrderGuide() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
               <span style={{ fontSize: '2rem' }}>{result.legitimate ? '✅' : '🚩'}</span>
               <div>
-                <div style={{ color: result.legitimate ? '#4CAF50' : '#FF6B6B', fontWeight: 700, fontSize: '1.1rem' }}>
+                <div style={{ color: result.legitimate ? '#4CAF50′ : '#FF6B6B', fontWeight: 700, fontSize: '1.1rem' }}>
                   {result.legitimate ? 'Likely Legitimate' : 'Likely Manufactured / Contractor Risk'}
                 </div>
                 {amount && <div style={{ color: '#9BA3B4', fontSize: '0.85rem' }}>Change order amount: ${parseFloat(amount).toLocaleString()}</div>}
@@ -74,7 +74,7 @@ export default function DFWChangeOrderGuide() {
             '📷 Photo documentation should accompany all hidden-damage COs',
             '⏸️ Stop work until CO is signed — proceeding without signature waives your rights',
             '🏦 Retain 10% holdback until all COs are resolved and punch list complete',
-          ].map(r => <div key={r} style={{ color: '#9BA3B4', padding: '0.4rem 0', borderBottom: '1px solid #1E2E45' }}>{r}</div>)}
+          ].map(r => <div key={r} style={{ color: '#9BA3B4', padding: '0.4rem 0', borderBottom: '1px solid #1E2E45′ }}>{r}</div>)}
         </div>
       </div>
     </div>

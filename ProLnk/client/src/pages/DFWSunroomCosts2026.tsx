@@ -5,8 +5,8 @@ export default function DFWSunroomCosts2026() {
   const [size, setSize] = useState<'small' | 'medium' | 'large'>('medium');
 
   const costs: Record<string, Record<string, string>> = {
-    three: { small: '$12,000–$18,000', medium: '$18,000–$25,000', large: '$25,000–$35,000' },
-    four: { small: '$28,000–$38,000', medium: '$38,000–$50,000', large: '$50,000–$70,000' },
+    three: { small: '$12,000–$18,000', medium: '$18,000–$25,000', large: '$25,000–$35,000′ },
+    four: { small: '$28,000–$38,000', medium: '$38,000–$50,000', large: '$50,000–$70,000′ },
   };
 
   return (
@@ -30,7 +30,7 @@ export default function DFWSunroomCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Sunroom Type</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['three', 'four'] as const).map(t => (
-                <button key={t} onClick={() => setSunroomType(t)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: sunroomType === t ? '#F5E642' : '#1e2d45', color: sunroomType === t ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                <button key={t} onClick={() => setSunroomType(t)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: sunroomType === t ? '#F5E642′ : '#1e2d45', color: sunroomType === t ? '#0A1628' : '#fff', fontWeight: 600 }}>
                   {t === 'three' ? '3-Season (Screened)' : '4-Season (Climate Control)'}
                 </button>
               ))}
@@ -40,15 +40,15 @@ export default function DFWSunroomCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Size</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['small', 'medium', 'large'] as const).map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: size === s ? '#F5E642' : '#1e2d45', color: size === s ? '#0A1628' : '#fff', fontWeight: 600 }}>
-                  {s === 'small' ? '10×12' : s === 'medium' ? '12×16' : '16×20+'}
+                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: size === s ? '#F5E642′ : '#1e2d45', color: size === s ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                  {s === 'small' ? '10×12′ : s === ’medium' ? '12×16′ : '16×20+'}
                 </button>
               ))}
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Estimated DFW Cost</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{costs[sunroomType][size]}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{costs[sunroomType][size]}</div>
             <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>Foundation + HVAC extension included in 4-season estimate</div>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function DFWSunroomCosts2026() {
             <div key={c.title} style={{ background: '#111e33', borderRadius: 10, padding: 18 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 600, marginBottom: 6 }}>{c.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{c.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{c.desc}</div>
             </div>
           ))}
         </div>

@@ -20,7 +20,7 @@ const AIR_CHANGES_PER_HOUR = 8;
 
 function SoneBar({ sones }: { sones: number }) {
   const pct = (sones / 4) * 100;
-  const color = sones < 1 ? '#22C55E' : sones < 2 ? '#EAB308' : '#EF4444';
+  const color = sones < 1 ? '#22C55E' : sones < 2 ? '#EAB308′ : '#EF4444';
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#64748B', marginBottom: 3 }}>
@@ -46,7 +46,7 @@ export default function DFWBathroomVentilationGuide() {
   const totalMin = selectedFan.costMin + installCostMin;
   const totalMax = selectedFan.costMax + installCostMax;
 
-  const ducting = selectedSize.sqft > 50 ? 'Duct to exterior (not attic) — 4" flex duct minimum' : '3-4" duct to exterior or roof cap';
+  const ducting = selectedSize.sqft > 50 ? 'Duct to exterior (not attic) — 4″ flex duct minimum' : '3-4″ duct to exterior or roof cap';
   const fanFits = true;
 
   return (
@@ -76,7 +76,7 @@ export default function DFWBathroomVentilationGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedSize.label === s.label ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedSize.label === s.label ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedSize.label === s.label ? '#F5E642' : '#94A3B8',
+                    color: selectedSize.label === s.label ? '#F5E642′ : '#94A3B8',
                     cursor: 'pointer',
                     textAlign: 'left',
                     fontSize: 13,
@@ -88,7 +88,7 @@ export default function DFWBathroomVentilationGuide() {
               ))}
             </div>
           </div>
-          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642' }}>
+          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
               <div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Required CFM</div>
@@ -132,7 +132,7 @@ export default function DFWBathroomVentilationGuide() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                   <div>
-                    <span style={{ fontWeight: 700, color: selectedFan.name === f.name ? '#F5E642' : '#E8EDF5', fontSize: 15 }}>{f.name}</span>
+                    <span style={{ fontWeight: 700, color: selectedFan.name === f.name ? '#F5E642′ : '#E8EDF5', fontSize: 15 }}>{f.name}</span>
                     {f.energyStar && <span style={{ marginLeft: 8, background: '#22C55E', color: '#0A1628', fontSize: 10, padding: '2px 6px', borderRadius: 8, fontWeight: 700 }}>ENERGY STAR</span>}
                     {f.smartControl && <span style={{ marginLeft: 6, background: '#3B82F6', color: '#fff', fontSize: 10, padding: '2px 6px', borderRadius: 8, fontWeight: 700 }}>SMART</span>}
                   </div>
@@ -159,7 +159,7 @@ export default function DFWBathroomVentilationGuide() {
         <div style={{ background: '#0F1F35', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #1E3A5F' }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 16 }}>Installation Cost Estimate</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-            <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642' }}>
+            <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 4 }}>Total Installed</div>
               <div style={{ color: '#F5E642', fontSize: 28, fontWeight: 800 }}>${totalMin} - ${totalMax}</div>
               <div style={{ color: '#64748B', fontSize: 12 }}>Fan + electrical + duct</div>
@@ -185,7 +185,7 @@ export default function DFWBathroomVentilationGuide() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🌬️</div>
           <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 8 }}>Get DFW Ventilation Fan Quotes</h3>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Connect with vetted DFW electricians and bathroom contractors through ProLnk — free quotes, no commitment.</p>

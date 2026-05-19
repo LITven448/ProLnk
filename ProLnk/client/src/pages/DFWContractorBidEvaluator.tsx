@@ -92,7 +92,7 @@ export default function DFWContractorBidEvaluator() {
               {CHECK.map(f => (
                 <label key={f} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8, cursor: 'pointer', fontSize: 13 }}>
                   <input type="checkbox" checked={!!bid[f]} onChange={e => update(i, f, e.target.checked)} />
-                  <span style={{ color: bid[f] ? '#F5E642' : '#64748b' }}>{LABELS[f]}</span>
+                  <span style={{ color: bid[f] ? '#F5E642′ : '#64748b' }}>{LABELS[f]}</span>
                 </label>
               ))}
             </div>
@@ -108,7 +108,7 @@ export default function DFWContractorBidEvaluator() {
           <div style={{ background: '#111f38', border: '1px solid #2d4166', borderRadius: 12, padding: 24 }}>
             <h2 style={{ color: '#F5E642', marginTop: 0 }}>🏆 Bid Rankings</h2>
             {ranked.map(({ b, i, score }, rank) => (
-              <div key={i} style={{ marginBottom: 20, padding: 16, background: rank === 0 ? '#1a2f50' : '#0f1c33', borderRadius: 8, border: rank === 0 ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
+              <div key={i} style={{ marginBottom: 20, padding: 16, background: rank === 0 ? '#1a2f50′ : '#0f1c33', borderRadius: 8, border: rank === 0 ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                   <span style={{ fontWeight: 700, fontSize: 16 }}>{rank + 1}. {b.contractor || `Bid #${i + 1}`}</span>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>Score: {score}/100 {b.price ? `• $${parseInt(b.price).toLocaleString()}` : ''}</span>
@@ -120,7 +120,7 @@ export default function DFWContractorBidEvaluator() {
             ))}
           </div>
         )}
-        <div style={{ textAlign: 'center', marginTop: 32, padding: 20, background: '#111f38', borderRadius: 12, border: '1px solid #2d4166' }}>
+        <div style={{ textAlign: 'center', marginTop: 32, padding: 20, background: '#111f38', borderRadius: 12, border: '1px solid #2d4166′ }}>
           <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Want pre-vetted DFW {trade} contractors? ProLnk delivers 3 quotes from verified pros.</div>
           <button style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '10px 28px', borderRadius: 8, border: 'none', cursor: 'pointer' }}>
             🔗 Get ProLnk Quotes

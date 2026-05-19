@@ -16,9 +16,9 @@ export default function DFWCoolRoofGuide2026() {
 
   const btn = (active: boolean) => ({
     padding: '10px 18px', borderRadius: '8px', border: '2px solid',
-    borderColor: active ? '#F5E642' : '#1e3a5f',
-    backgroundColor: active ? '#F5E642' : 'transparent',
-    color: active ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 as const,
+    borderColor: active ? '#F5E642′ : '#1e3a5f',
+    backgroundColor: active ? '#F5E642′ : ’transparent',
+    color: active ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600 as const,
   });
 
   return (
@@ -39,8 +39,8 @@ export default function DFWCoolRoofGuide2026() {
             facts: ['White/aluminum coatings for flat roofs', 'Reflect 80-90% of solar energy', 'Extend membrane life 10+ years', 'Applied over existing EPDM/TPO', '$1.50-3.00/sqft installed DFW average']
           }].map(t => (
             <div key={t.title} style={{ backgroundColor: '#112240', borderRadius: '10px', padding: '20px' }}>
-              <div style={{ fontSize: '1.4rem', marginBottom: '8px', color: '#F5E642' }}>{t.title}</div>
-              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8' }}>
+              <div style={{ fontSize: '1.4rem', marginBottom: '8px', color: '#F5E642′ }}>{t.title}</div>
+              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8′ }}>
                 {t.facts.map(f => <li key={f}>{f}</li>)}
               </ul>
             </div>
@@ -55,7 +55,7 @@ export default function DFWCoolRoofGuide2026() {
             ['Attic Impact', 'Every 10F attic temp reduction = ~3% AC energy savings in DFW summer months'],
             ['HOA Note', 'Some DFW HOAs restrict light-colored roofs — verify before selecting white/tan options'],
           ].map(([k, v]) => (
-            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '10px 0' }}>
+            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '10px 0′ }}>
               <span style={{ color: '#F5E642', fontWeight: 600 }}>{k}: </span>
               <span style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{v}</span>
             </div>
@@ -81,7 +81,7 @@ export default function DFWCoolRoofGuide2026() {
             </div>
           </div>
           <button onClick={calcROI} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', marginBottom: '16px' }}>Calculate ROI</button>
-          {result && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6' }}>{result}</div>}
+          {result && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6′ }}>{result}</div>}
         </div>
       </div>
     </div>

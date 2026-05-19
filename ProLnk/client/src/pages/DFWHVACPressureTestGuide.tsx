@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const homeOptions = [
-  { label: 'Under 1,500 sq ft', tons: 2, normal: '0.10–0.20' },
-  { label: '1,500–2,500 sq ft', tons: 3, normal: '0.10–0.20' },
-  { label: '2,500–3,500 sq ft', tons: 4, normal: '0.10–0.20' },
-  { label: 'Over 3,500 sq ft', tons: 5, normal: '0.10–0.20' },
+  { label: 'Under 1,500 sq ft', tons: 2, normal: '0.10–0.20′ },
+  { label: '1,500–2,500 sq ft', tons: 3, normal: '0.10–0.20′ },
+  { label: '2,500–3,500 sq ft', tons: 4, normal: '0.10–0.20′ },
+  { label: 'Over 3,500 sq ft', tons: 5, normal: '0.10–0.20′ },
 ];
 
 const complaintOptions = [
@@ -23,7 +23,7 @@ export default function DFWHVACPressureTestGuide() {
   const complaint = complaintOptions[complaintIdx];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', letterSpacing: 1, textTransform: 'uppercase' }}>🌡️ DFW HVAC Guide</div>
         <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 12, lineHeight: 1.2 }}>Static Pressure Testing in DFW Homes</h1>
@@ -34,7 +34,7 @@ export default function DFWHVACPressureTestGuide() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📐 What Is Static Pressure?</h2>
           <p style={{ color: '#CBD2E0', lineHeight: 1.7, marginBottom: 12 }}>
-            Think of your duct system like a garden hose. Static pressure measures how hard the air handler has to work to push air through the ducts. Normal total external static pressure (TESP) is <strong style={{ color: '#F5E642' }}>0.10–0.20 in. w.g.</strong> Anything above 0.50 is a crisis.
+            Think of your duct system like a garden hose. Static pressure measures how hard the air handler has to work to push air through the ducts. Normal total external static pressure (TESP) is <strong style={{ color: '#F5E642′ }}>0.10–0.20 in. w.g.</strong> Anything above 0.50 is a crisis.
           </p>
           <p style={{ color: '#CBD2E0', lineHeight: 1.7 }}>
             DFW homes — especially those built 1990–2010 in master-planned suburbs — routinely test at 0.40–0.70+ because builders undersized ductwork to cut costs. In 100°F+ summers this means the system struggles, cycles more, and fails sooner.
@@ -51,7 +51,7 @@ export default function DFWHVACPressureTestGuide() {
               ['Fan speed check', 'Verify blower is set correctly — many DFW systems run at low speed for humidity but too low causes high static readings'],
             ].map(([title, desc]) => (
               <div key={title} style={{ background: '#162035', borderRadius: 8, padding: 14 }}>
-                <div style={{ fontWeight: 700, marginBottom: 4, color: '#E8EAF0' }}>{title}</div>
+                <div style={{ fontWeight: 700, marginBottom: 4, color: '#E8EAF0′ }}>{title}</div>
                 <div style={{ color: '#9BA4B4', fontSize: 14, lineHeight: 1.6 }}>{desc}</div>
               </div>
             ))}
@@ -79,7 +79,7 @@ export default function DFWHVACPressureTestGuide() {
             Analyze My DFW System →
           </button>
           {showResult && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 16 }}>📊 Results for {home.label} DFW Home</div>
               <div style={{ color: '#CBD2E0', marginBottom: 8 }}><strong>Expected tonnage:</strong> {home.tons} tons</div>
               <div style={{ color: '#CBD2E0', marginBottom: 8 }}><strong>Normal TESP range:</strong> {home.normal} in. w.g.</div>

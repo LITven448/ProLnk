@@ -18,7 +18,7 @@ const riskMatrix: Record<string, Record<string, { level: string; color: string; 
   },
   Flat: {
     'North DFW (Frisco/McKinney)': { level: 'MODERATE', color: '#f97316', tips: ['Flat roofs face suction uplift at corners', 'TPO/EPDM with proper fastening handles DFW winds well', 'Inspect perimeter edge metal after every hail event'] },
-    'South DFW (Mansfield/Cedar Hill)': { level: 'MODERATE', color: '#f97316', tips: ['Membrane roof uplift follows perimeter first', 'Use 6" OC fastening within 4ft of edges', 'Standing water accelerates membrane failure — ensure drainage'] },
+    'South DFW (Mansfield/Cedar Hill)': { level: 'MODERATE', color: '#f97316', tips: ['Membrane roof uplift follows perimeter first', 'Use 6″ OC fastening within 4ft of edges', 'Standing water accelerates membrane failure — ensure drainage'] },
     'East DFW (Rockwall/Mesquite)': { level: 'LOW-MOD', color: '#84cc16', tips: ['Flat roofs susceptible to wind-driven rain intrusion', 'Inspect all penetrations (HVAC, vents) after storms', 'Consider coated foam overlay for wind resistance upgrade'] },
     'West DFW (Fort Worth/Weatherford)': { level: 'HIGH', color: '#ef4444', tips: ['Flat roofs in West DFW face severe open-plain wind exposure', 'Edge metal and parapet walls must be secured to structural deck', 'Annual inspection mandatory'] },
   },
@@ -40,7 +40,7 @@ export default function DFWRoofWindUplift2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🌪️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Roof Wind Uplift Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Roof Wind Uplift Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>How DFW winds affect your roof — and what to do about it</p>
         </div>
 
@@ -65,7 +65,7 @@ export default function DFWRoofWindUplift2026() {
           {result && (
             <div style={{ marginTop: '1rem', background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: `4px solid ${result.color}` }}>
               <div style={{ fontWeight: 700, fontSize: '1.2rem', color: result.color, marginBottom: 8 }}>🌪️ {result.level} Wind Uplift Risk</div>
-              <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#cbd5e1' }}>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#cbd5e1′ }}>
                 {result.tips.map(t => <li key={t} style={{ marginBottom: 4, fontSize: '0.9rem' }}>{t}</li>)}
               </ul>
             </div>

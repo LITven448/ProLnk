@@ -75,7 +75,7 @@ export default function DFWTexasTrustGuide() {
           ].map(([title, desc, bg, color], i) => (
             <div key={i} style={{ background: bg, borderRadius: 10, padding: '1rem' }}>
               <div style={{ fontWeight: 700, color, fontSize: 14, marginBottom: 4 }}>{title}</div>
-              <div style={{ fontSize: 12, color: '#475569' }}>{desc}</div>
+              <div style={{ fontSize: 12, color: '#475569′ }}>{desc}</div>
             </div>
           ))}
         </div>
@@ -88,7 +88,7 @@ export default function DFWTexasTrustGuide() {
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
                 background: '#fff', borderRadius: 10, padding: '1.2rem', cursor: 'pointer',
-                border: selected === i ? '2px solid #F5E642' : '2px solid transparent',
+                border: selected === i ? '2px solid #F5E642′ : '2px solid transparent',
                 boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
               }}
             >
@@ -114,7 +114,7 @@ export default function DFWTexasTrustGuide() {
                       <div key={j} style={{ fontSize: 13, color: '#166534', marginBottom: 6, lineHeight: 1.5 }}>{s}</div>
                     ))}
                   </div>
-                  <div style={{ background: '#FFF9E6', borderRadius: 8, padding: '0.8rem', border: '1px solid #F5E642' }}>
+                  <div style={{ background: '#FFF9E6', borderRadius: 8, padding: '0.8rem', border: '1px solid #F5E642′ }}>
                     <div style={{ fontWeight: 700, color: '#92400E', fontSize: 12, marginBottom: 4 }}>TEXAS HOMESTEAD EXEMPTION IMPACT</div>
                     <div style={{ fontSize: 13, color: '#78350F', lineHeight: 1.6 }}>{c.homestead}</div>
                   </div>

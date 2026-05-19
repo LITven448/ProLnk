@@ -27,7 +27,7 @@ export default function DFWHVACSolarReadyGuide() {
 
   const panelSize = homeSize === '4,000+ sqft' ? '400A' : homeSize === '2,500-4,000 sqft' ? '300A' : '200A';
   const urgency = timeline === '0-1 years' ? 'Act Now' : timeline === '1-3 years' ? 'Plan Now' : 'Prepare Now';
-  const urgencyColor = timeline === '0-1 years' ? '#F5E642' : '#a0d4a0';
+  const urgencyColor = timeline === '0-1 years' ? '#F5E642′ : '#a0d4a0';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
@@ -63,7 +63,7 @@ export default function DFWHVACSolarReadyGuide() {
             </div>
           </div>
           <button onClick={() => setShowResults(true)} disabled={!homeSize || !timeline}
-            style={{ background: homeSize && timeline ? '#F5E642' : '#1e3a5f', color: homeSize && timeline ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeSize && timeline ? 'pointer' : 'not-allowed' }}>
+            style={{ background: homeSize && timeline ? '#F5E642′ : '#1e3a5f', color: homeSize && timeline ? '#0A1628' : '#4a6080', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeSize && timeline ? 'pointer' : 'not-allowed' }}>
             Generate My Checklist →
           </button>
         </div>
@@ -78,12 +78,12 @@ export default function DFWHVACSolarReadyGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               {['now', 'later'].map(phase => (
                 <div key={phase} style={{ background: '#0d1f3c', borderRadius: 12, padding: 20 }}>
-                  <div style={{ color: phase === 'now' ? '#F5E642' : '#8899aa', fontWeight: 700, fontSize: 14, marginBottom: 12 }}>
+                  <div style={{ color: phase === 'now' ? '#F5E642′ : '#8899aa', fontWeight: 700, fontSize: 14, marginBottom: 12 }}>
                     {phase === 'now' ? '✅ Do During HVAC Install' : '📋 Prep for Later'}
                   </div>
                   {solarReadyItems[phase as keyof typeof solarReadyItems].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#ccd9e8' }}>
-                      <span style={{ color: phase === 'now' ? '#F5E642' : '#4a6080', flexShrink: 0 }}>•</span>
+                    <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#ccd9e8′ }}>
+                      <span style={{ color: phase === 'now' ? '#F5E642′ : '#4a6080', flexShrink: 0 }}>•</span>
                       {item}
                     </div>
                   ))}

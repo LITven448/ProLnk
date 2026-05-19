@@ -42,7 +42,7 @@ export default function DFWContractorReviewGuide() {
             <div key={p.name} style={{ background: '#0F2040', border: '1px solid #1E3A5F', borderRadius: 10, padding: 16 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{p.name}</div>
               <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 6 }}>Reliability: {p.reliability}%</div>
-              <div style={{ fontSize: 12, color: '#9BA8B8' }}>{p.notes}</div>
+              <div style={{ fontSize: 12, color: '#9BA8B8′ }}>{p.notes}</div>
             </div>
           ))}
         </div>
@@ -88,19 +88,19 @@ export default function DFWContractorReviewGuide() {
           </div>
           {selectedPlatform && (
             <div style={{ marginBottom: 12, padding: 14, background: '#0A1628', borderRadius: 8 }}>
-              <div style={{ fontWeight: 700, marginBottom: 4 }}>{selectedPlatform.name} — Reliability: <span style={{ color: '#F5E642' }}>{selectedPlatform.reliability}%</span></div>
-              <div style={{ fontSize: 14, color: '#9BA8B8' }}>{selectedPlatform.notes}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4 }}>{selectedPlatform.name} — Reliability: <span style={{ color: '#F5E642′ }}>{selectedPlatform.reliability}%</span></div>
+              <div style={{ fontSize: 14, color: '#9BA8B8′ }}>{selectedPlatform.notes}</div>
             </div>
           )}
           {selectedPurpose && (
             <div style={{ padding: 14, background: '#0A1628', borderRadius: 8 }}>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>{selectedPurpose.label}</div>
-              <div style={{ fontSize: 14, color: '#9BA8B8' }}>{selectedPurpose.tips}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>{selectedPurpose.label}</div>
+              <div style={{ fontSize: 14, color: '#9BA8B8′ }}>{selectedPurpose.tips}</div>
             </div>
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
           <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>💡 ProLnk Advantage</div>
           <div style={{ fontSize: 14 }}>Every review on ProLnk is verified — left only after a matched job is completed in DFW. No fake reviews. No cherry-picked testimonials.</div>
         </div>

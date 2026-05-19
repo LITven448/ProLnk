@@ -13,7 +13,7 @@ const locationGuide: Record<string, string> = {
   'underground': 'PVC Conduit (Schedule 80) — underground feeders in DFW require Schedule 80 PVC at 6-inch depth minimum for 120V, 24-inch for 240V.',
   'hvac': 'Liquidtight Flexible Conduit — required for the final connection to HVAC equipment per DFW mechanical code. Minimum 12 inches.',
   'attic': 'Romex (NM-B) — allowed in DFW attics running along joists. If exposed and accessible, EMT is preferred for protection.',
-  'panel': 'EMT Conduit — feeder wires to subpanels require conduit in DFW. Size conduit per wire gauge: 1" EMT for #4 AWG and smaller.',
+  'panel': 'EMT Conduit — feeder wires to subpanels require conduit in DFW. Size conduit per wire gauge: 1″ EMT for #4 AWG and smaller.',
 };
 
 export default function DFWElectricalConduitGuide2026() {
@@ -62,7 +62,7 @@ export default function DFWElectricalConduitGuide2026() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: activeType === ct.id ? 10 : 0 }}>
                 <span style={{ fontSize: 24 }}>{ct.emoji}</span>
                 <span style={{ fontWeight: 600, fontSize: 16 }}>{ct.label}</span>
-                <span style={{ marginLeft: 'auto', color: '#F5E642' }}>{activeType === ct.id ? '▲' : '▼'}</span>
+                <span style={{ marginLeft: 'auto', color: '#F5E642′ }}>{activeType === ct.id ? '▲' : '▼'}</span>
               </div>
               {activeType === ct.id && (
                 <div>
@@ -76,7 +76,7 @@ export default function DFWElectricalConduitGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#1e293b', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>⚠️ DFW municipalities (Dallas, Fort Worth, Plano, Frisco) each adopt local amendments to the NEC. Always verify conduit requirements with your local AHJ before starting work.</p>
         </div>
       </div>

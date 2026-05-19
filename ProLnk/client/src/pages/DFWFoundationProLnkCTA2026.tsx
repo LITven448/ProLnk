@@ -81,7 +81,7 @@ export default function DFWFoundationProLnkCTA2026() {
             ].map(([icon, desc]) => (
               <div key={icon} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 180 }}>{icon}</span>
-                <span style={{ color: '#94a3b8' }}>{desc}</span>
+                <span style={{ color: '#94a3b8′ }}>{desc}</span>
               </div>
             ))}
           </div>
@@ -97,7 +97,7 @@ export default function DFWFoundationProLnkCTA2026() {
                 style={{
                   textAlign: 'left', padding: '12px 16px', borderRadius: 8,
                   border: `2px solid ${selected === c.id ? '#F5E642' : '#1e3a5f'}`,
-                  background: selected === c.id ? '#0A1628' : 'transparent', color: '#cbd5e1', cursor: 'pointer', fontSize: 15,
+                  background: selected === c.id ? '#0A1628′ : ’transparent', color: '#cbd5e1', cursor: 'pointer', fontSize: 15,
                 }}
               >
                 {c.label}
@@ -111,7 +111,7 @@ export default function DFWFoundationProLnkCTA2026() {
             <div style={{ color: colors[match.severity], fontWeight: 800, fontSize: 18, marginBottom: 12 }}>{severityLabel[match.severity]}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {match.steps.map((step, i) => (
-                <div key={i} style={{ display: 'flex', gap: 10, color: '#cbd5e1' }}>
+                <div key={i} style={{ display: 'flex', gap: 10, color: '#cbd5e1′ }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 24 }}>{i + 1}.</span>
                   <span>{step}</span>
                 </div>

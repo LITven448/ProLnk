@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const filterSchedules = [
-  { type: 'MERV 8 (1")', schedule: 'Replace every 30–45 days in DFW summer', note: 'DFW dust and pollen levels are high. Stick to 30 days May–Sep, 45 days Oct–Apr.' },
-  { type: 'MERV 11 (1")', schedule: 'Replace every 45–60 days', note: 'Better filtration, slightly higher static pressure. Good for most DFW homes.' },
-  { type: 'MERV 13 (1")', schedule: 'Replace every 60 days max', note: 'High filtration but restricts airflow on systems not sized for it. Verify compatibility.' },
-  { type: 'MERV 11–13 (4–5" Media)', schedule: 'Replace every 6–12 months', note: 'Best value long-term. Lower airflow restriction. Ideal for new systems.' },
+  { type: 'MERV 8 (1″)', schedule: 'Replace every 30–45 days in DFW summer', note: 'DFW dust and pollen levels are high. Stick to 30 days May–Sep, 45 days Oct–Apr.' },
+  { type: 'MERV 11 (1″)', schedule: 'Replace every 45–60 days', note: 'Better filtration, slightly higher static pressure. Good for most DFW homes.' },
+  { type: 'MERV 13 (1″)', schedule: 'Replace every 60 days max', note: 'High filtration but restricts airflow on systems not sized for it. Verify compatibility.' },
+  { type: 'MERV 11–13 (4–5″ Media)', schedule: 'Replace every 6–12 months', note: 'Best value long-term. Lower airflow restriction. Ideal for new systems.' },
 ];
 
 const months = [
@@ -58,7 +58,7 @@ export default function DFWHVACYearOneGuide() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
           {months.map(m => (
             <button key={m.id} onClick={() => setActiveMonth(m.id)}
-              style={{ background: activeMonth === m.id ? '#F5E642' : '#132035', color: activeMonth === m.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: activeMonth === m.id ? '#F5E642′ : '#132035', color: activeMonth === m.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {m.label}
             </button>
           ))}

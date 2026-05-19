@@ -68,7 +68,7 @@ export default function DFWHotTubGuide() {
           {tubTypes.map(t => (
             <div key={t.type} style={{ background: '#1e2d45', borderRadius: 8, padding: 14 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <strong style={{ color: '#F5E642' }}>{t.type}</strong>
+                <strong style={{ color: '#F5E642′ }}>{t.type}</strong>
                 <span style={{ color: '#94a3b8', fontSize: 12 }}>{t.seats} seats · {t.jets} · {t.electric}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6, flexWrap: 'wrap', gap: 8 }}>
@@ -116,8 +116,8 @@ export default function DFWHotTubGuide() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>💡 DFW Maintenance Note</strong>
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>💡 DFW Maintenance Note</strong>
           <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 14 }}>
             DFW hard water (400+ ppm TDS in many areas) deposits scale quickly on jets and heaters.
             Use a pre-filter on fill hose and test water weekly. Drain and refill every 3–4 months vs the standard 6.

@@ -49,7 +49,7 @@ export default function DFWRenterToHomeownerGuide() {
     if (monthlyIncome >= 5000) score += 30;
     else if (monthlyIncome >= 3500) score += 15;
     const label = score >= 75 ? 'Ready to Buy' : score >= 45 ? 'Almost Ready' : 'Build More Foundation';
-    const color = score >= 75 ? '#16a34a' : score >= 45 ? '#d97706' : '#dc2626';
+    const color = score >= 75 ? '#16a34a' : score >= 45 ? '#d97706′ : '#dc2626';
     const advice = score >= 75
       ? `Strong position for ${targetArea}! On your income, target a max home price of $${Math.round(dtiCapacity * 155).toLocaleString()}. Save $${minSavings.toLocaleString()} (8%) to cover down payment + closing costs.`
       : score >= 45
@@ -87,7 +87,7 @@ export default function DFWRenterToHomeownerGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600 }}>Current monthly rent</label>
-              <input type="text" placeholder="$1,850" value={rent} onChange={e => setRent(e.target.value)}
+              <input type="text" placeholder="$1,850″ value={rent} onChange={e => setRent(e.target.value)}
                 style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -121,7 +121,7 @@ export default function DFWRenterToHomeownerGuide() {
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, margin: '0 0 16px' }}>📅 12-Month Homeownership Plan</h2>
           {monthlyPlan.map(m => (
             <div key={m.month} style={{ display: 'flex', gap: 14, borderBottom: '1px solid #f1f5f9', paddingBottom: 12, marginBottom: 12 }}>

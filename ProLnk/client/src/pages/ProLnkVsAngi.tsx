@@ -93,19 +93,19 @@ export default function ProLnkVsAngi() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24 }}>
               <div style={{ fontWeight: 800, fontSize: 18, color: '#FCA5A5', marginBottom: 16 }}>Angi (10 leads)</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14, color: '#CBD5E1' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14, color: '#CBD5E1′ }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Lead fees (avg $130 each)</span><span style={{ color: '#EF4444', fontWeight: 700 }}>−$1,300</span></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Close rate (50%)</span><span>5 jobs won</span></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Effective cost per closed job</span><span style={{ color: '#EF4444', fontWeight: 700 }}>$260/job</span></div>
-                <div style={{ borderTop: '1px solid #2D3F5A', paddingTop: 10, display: 'flex', justifyContent: 'space-between', fontWeight: 700 }}><span>Monthly lead spend</span><span style={{ color: '#EF4444' }}>$1,300</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94A3B8' }}><span>Passive income</span><span>$0</span></div>
+                <div style={{ borderTop: '1px solid #2D3F5A', paddingTop: 10, display: 'flex', justifyContent: 'space-between', fontWeight: 700 }}><span>Monthly lead spend</span><span style={{ color: '#EF4444′ }}>$1,300</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94A3B8′ }}><span>Passive income</span><span>$0</span></div>
               </div>
             </div>
             <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #FCD34D' }}>
               <div style={{ fontWeight: 800, fontSize: 18, color: '#FCD34D', marginBottom: 16 }}>ProLnk (10 leads)</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14, color: '#CBD5E1' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14, color: '#CBD5E1′ }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Upfront lead cost</span><span style={{ color: '#22C55E', fontWeight: 700 }}>$0</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Monthly subscription</span><span style={{ color: '#94A3B8' }}>$149/mo</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Monthly subscription</span><span style={{ color: '#94A3B8′ }}>$149/mo</span></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Effective cost per lead</span><span style={{ color: '#22C55E', fontWeight: 700 }}>$14.90</span></div>
                 <div style={{ borderTop: '1px solid #2D4A7A', paddingTop: 10, display: 'flex', justifyContent: 'space-between', fontWeight: 700 }}><span>Monthly lead spend</span><span style={{ color: '#22C55E' }}>$149</span></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Network income potential</span><span style={{ color: '#FCD34D', fontWeight: 700 }}>$200–$800+</span></div>
@@ -130,7 +130,7 @@ export default function ProLnkVsAngi() {
               <div key={item.title} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ color: '#EF4444', fontWeight: 900, marginTop: 1 }}>✗</span>
                 <div>
-                  <span style={{ fontWeight: 700, color: '#7C2D12' }}>{item.title}: </span>
+                  <span style={{ fontWeight: 700, color: '#7C2D12′ }}>{item.title}: </span>
                   <span style={{ color: '#92400E', fontSize: 14 }}>{item.desc}</span>
                 </div>
               </div>

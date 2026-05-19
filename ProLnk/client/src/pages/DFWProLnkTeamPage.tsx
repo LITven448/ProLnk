@@ -64,7 +64,7 @@ export default function DFWProLnkTeamPage() {
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {roles.map(r => (
               <button key={r} onClick={() => setSelectedRole(selectedRole === r ? null : r)}
-                style={{ background: selectedRole === r ? '#F5E642' : '#0A1628', color: selectedRole === r ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '12px 20px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selectedRole === r ? '#F5E642′ : '#0A1628', color: selectedRole === r ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '12px 20px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
                 {roleLabels[r]}
               </button>
             ))}
@@ -82,7 +82,7 @@ export default function DFWProLnkTeamPage() {
             </div>
             <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: selectedRole ? 16 : 0 }}>{member.background}</p>
             {selectedRole && (
-              <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
                 <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>How this serves you as a {selectedRole}:</p>
                 <p style={{ color: '#CBD5E1', lineHeight: 1.6, margin: 0, fontSize: 14 }}>{member.serves[selectedRole]}</p>
               </div>

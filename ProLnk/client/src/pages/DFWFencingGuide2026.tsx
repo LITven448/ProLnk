@@ -29,20 +29,20 @@ export default function DFWFencingGuide2026() {
             <div key={i} style={{ background: '#1E2D45', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ color: '#F5E642', fontSize: 13, marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1' }}>{s.val}</div>
+              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1′ }}>{s.val}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>💰 Cost & Longevity Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>💰 Cost & Longevity Estimator</h2>
           <div style={{ marginBottom: 16 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>FENCE TYPE</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {Object.keys(fenceData).map(t => (
                 <button key={t} onClick={() => setFenceType(t)}
                   style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                    background: fenceType === t ? '#F5E642' : '#2d3f5a', color: fenceType === t ? '#0A1628' : '#fff' }}>
+                    background: fenceType === t ? '#F5E642′ : '#2d3f5a', color: fenceType === t ? '#0A1628' : '#fff' }}>
                   {t.charAt(0).toUpperCase() + t.slice(1)}
                 </button>
               ))}
@@ -51,7 +51,7 @@ export default function DFWFencingGuide2026() {
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>LINEAR FEET: {linearFeet}</div>
             <input type="range" min={50} max={500} step={10} value={linearFeet} onChange={e => setLinearFeet(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>

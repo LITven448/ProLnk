@@ -22,7 +22,7 @@ export default function DFWRoomAdditionGuide() {
   const selectedFinish = FINISH_LEVELS.find(f => f.id === finishLevel)!;
   const costLow = Math.round(selectedType.baseCost * selectedFinish.multiplier * sqFt * 0.85);
   const costHigh = Math.round(selectedType.baseCost * selectedFinish.multiplier * sqFt * 1.15);
-  const timelineMonths = sqFt < 300 ? '2–4' : sqFt < 600 ? '3–5' : '4–6';
+  const timelineMonths = sqFt < 300 ? '2–4′ : sqFt < 600 ? '3–5' : '4–6';
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
@@ -75,7 +75,7 @@ export default function DFWRoomAdditionGuide() {
             <p style={{ color: '#A0AABE', marginBottom: 16, fontSize: 14 }}>Permits are required in all DFW municipalities. Typical timeline: 2–6 weeks for approval in cities like Plano, Frisco, McKinney. Dallas and Fort Worth city proper can take 6–10 weeks.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {['Building Permit', 'Foundation Inspection', 'Electrical Permit', 'Plumbing Permit (if applicable)', 'Mechanical/HVAC Permit', 'Energy Code Inspection', 'Final Certificate of Occupancy'].map(p => (
-                <span key={p} style={{ backgroundColor: '#162840', border: '1px solid #2A4870', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#CBD5E0' }}>📄 {p}</span>
+                <span key={p} style={{ backgroundColor: '#162840', border: '1px solid #2A4870', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#CBD5E0′ }}>📄 {p}</span>
               ))}
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function DFWRoomAdditionGuide() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#A0AABE', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>Square Footage: {sqFt} sq ft</label>
-              <input type="range" min={150} max={1200} step={50} value={sqFt} onChange={e => setSqFt(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={150} max={1200} step={50} value={sqFt} onChange={e => setSqFt(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#A0AABE', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>Finish Level</label>
@@ -136,7 +136,7 @@ export default function DFWRoomAdditionGuide() {
           <div style={{ marginTop: 20 }}>
             <div style={{ color: '#A0AABE', fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Required Permits for {selectedType.label}</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {selectedType.permits.map(p => <span key={p} style={{ backgroundColor: '#1A3050', border: '1px solid #F5E642', borderRadius: 20, padding: '5px 12px', fontSize: 12, color: '#F5E642' }}>✓ {p}</span>)}
+              {selectedType.permits.map(p => <span key={p} style={{ backgroundColor: '#1A3050', border: '1px solid #F5E642', borderRadius: 20, padding: '5px 12px', fontSize: 12, color: '#F5E642′ }}>✓ {p}</span>)}
             </div>
           </div>
         </section>

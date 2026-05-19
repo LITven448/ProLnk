@@ -59,10 +59,10 @@ export default function DFWHomeMaintenancePrioritizer() {
               const active = selected.has(item.id);
               return (
                 <button key={item.id} onClick={() => toggle(item.id)}
-                  style={{ background: active ? '#1a2f50' : '#0f1c33', border: active ? '2px solid #F5E642' : '1px solid #2d4166', borderRadius: 8, padding: '12px 14px', color: '#fff', cursor: 'pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
+                  style={{ background: active ? '#1a2f50′ : '#0f1c33', border: active ? '2px solid #F5E642' : '1px solid #2d4166', borderRadius: 8, padding: '12px 14px', color: '#fff', cursor: ’pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 20 }}>{item.emoji}</span>
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: active ? 700 : 400, color: active ? '#F5E642' : '#e2e8f0' }}>{item.label}</div>
+                    <div style={{ fontSize: 13, fontWeight: active ? 700 : 400, color: active ? '#F5E642′ : '#e2e8f0' }}>{item.label}</div>
                     <div style={{ fontSize: 11, color: '#64748b' }}>{item.category}</div>
                   </div>
                 </button>
@@ -71,7 +71,7 @@ export default function DFWHomeMaintenancePrioritizer() {
           </div>
           <div style={{ marginTop: 20, textAlign: 'center' }}>
             <button onClick={() => setPrioritized(true)} disabled={selected.size === 0}
-              style={{ background: selected.size > 0 ? '#F5E642' : '#1e2d4a', color: selected.size > 0 ? '#0A1628' : '#64748b', fontWeight: 700, fontSize: 16, padding: '12px 36px', borderRadius: 8, border: 'none', cursor: selected.size > 0 ? 'pointer' : 'not-allowed' }}>
+              style={{ background: selected.size > 0 ? '#F5E642′ : '#1e2d4a', color: selected.size > 0 ? '#0A1628' : '#64748b', fontWeight: 700, fontSize: 16, padding: '12px 36px', borderRadius: 8, border: ’none', cursor: selected.size > 0 ? 'pointer' : 'not-allowed' }}>
               📊 Prioritize {selected.size > 0 ? `(${selected.size} items)` : 'Items'}
             </button>
           </div>
@@ -92,7 +92,7 @@ export default function DFWHomeMaintenancePrioritizer() {
                   <div style={{ background: '#1e2d4a', borderRadius: 4, height: 8, overflow: 'hidden' }}>
                     <div style={{ width: `${pct}%`, height: '100%', background: color, borderRadius: 4 }} />
                   </div>
-                  <div style={{ display: 'flex', gap: 16, marginTop: 4, fontSize: 11, color: '#94a3b8' }}>
+                  <div style={{ display: 'flex', gap: 16, marginTop: 4, fontSize: 11, color: '#94a3b8′ }}>
                     <span>🦺 Safety: {item.safety}/10</span>
                     <span>💰 Financial: {item.financial}/10</span>
                     <span>🌤️ DFW Urgency: {item.dfwUrgency}/10</span>
@@ -100,12 +100,12 @@ export default function DFWHomeMaintenancePrioritizer() {
                 </div>
               );
             })}
-            <div style={{ marginTop: 16, padding: 14, background: '#0f1c33', borderRadius: 8, fontSize: 13, color: '#94a3b8' }}>
-              <strong style={{ color: '#F5E642' }}>⚡ Start Here:</strong> {ranked[0].emoji} {ranked[0].label} — highest combined risk in DFW climate conditions.
+            <div style={{ marginTop: 16, padding: 14, background: '#0f1c33', borderRadius: 8, fontSize: 13, color: '#94a3b8′ }}>
+              <strong style={{ color: '#F5E642′ }}>⚡ Start Here:</strong> {ranked[0].emoji} {ranked[0].label} — highest combined risk in DFW climate conditions.
             </div>
           </div>
         )}
-        <div style={{ textAlign: 'center', padding: 20, background: '#111f38', borderRadius: 12, border: '1px solid #2d4166' }}>
+        <div style={{ textAlign: 'center', padding: 20, background: '#111f38', borderRadius: 12, border: '1px solid #2d4166′ }}>
           <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Get vetted DFW contractors for your top priority items via ProLnk</div>
           <button style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '10px 28px', borderRadius: 8, border: 'none', cursor: 'pointer' }}>
             🔗 Connect with Pros

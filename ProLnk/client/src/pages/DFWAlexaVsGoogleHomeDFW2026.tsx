@@ -31,12 +31,12 @@ export default function DFWAlexaVsGoogleHomeDFW2026() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0' }}>Alexa vs Google Home for DFW Homes 2026</h1>
-          <p style={{ color: '#94a3b8' }}>Which smart hub wins in North Texas — and for your specific setup?</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0′ }}>Alexa vs Google Home for DFW Homes 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>Which smart hub wins in North Texas — and for your specific setup?</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #FF9900' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #FF9900′ }}>
             <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>🟠 Amazon Alexa</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.8', paddingLeft: '1.2rem' }}>
               <li>10,000+ compatible devices</li>
@@ -46,7 +46,7 @@ export default function DFWAlexaVsGoogleHomeDFW2026() {
               <li>Routines for HVAC on 100°F+ days</li>
             </ul>
           </div>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #4285F4' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #4285F4′ }}>
             <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>🔵 Google Home</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.8', paddingLeft: '1.2rem' }}>
               <li>Best-in-class AI understanding</li>
@@ -64,7 +64,7 @@ export default function DFWAlexaVsGoogleHomeDFW2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.75rem', marginBottom: '1rem' }}>
             {goals.map(g => (
               <button key={g.id} onClick={() => setGoal(g.id)}
-                style={{ padding: '.75rem', borderRadius: '8px', border: goal === g.id ? '2px solid #F5E642' : '2px solid #1e3a5f', backgroundColor: goal === g.id ? '#1a2f4e' : '#0d1f35', color: '#fff', cursor: 'pointer', textAlign: 'left', fontSize: '.9rem' }}>
+                style={{ padding: '.75rem', borderRadius: '8px', border: goal === g.id ? '2px solid #F5E642′ : '2px solid #1e3a5f', backgroundColor: goal === g.id ? '#1a2f4e' : '#0d1f35', color: '#fff', cursor: ’pointer', textAlign: 'left', fontSize: '.9rem' }}>
                 {g.label}
               </button>
             ))}
@@ -77,7 +77,7 @@ export default function DFWAlexaVsGoogleHomeDFW2026() {
 
         <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '.5rem' }}>🌡️ DFW-Specific Tip</h3>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>Both hubs work with Ecobee and Ring — the two most popular devices in DFW. During ERCOT demand response events in summer, Ecobee automatically adjusts. Alexa routines can trigger "Away Mode" cooling schedules to cut bills during peak Texas heat.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.7′ }}>Both hubs work with Ecobee and Ring — the two most popular devices in DFW. During ERCOT demand response events in summer, Ecobee automatically adjusts. Alexa routines can trigger "Away Mode" cooling schedules to cut bills during peak Texas heat.</p>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ export default function PartnerPhotoEquipmentGuide() {
   ];
 
   return (
-    <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#1a2744' }}>
+    <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#1a2744′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
@@ -41,7 +41,7 @@ export default function PartnerPhotoEquipmentGuide() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              style={{ flex: 1, padding: '12px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: activeTab === tab.id ? 700 : 500, background: activeTab === tab.id ? '#1a2744' : 'transparent', color: activeTab === tab.id ? '#fff' : '#64748b', fontSize: 14, transition: 'all 0.2s' }}
+              style={{ flex: 1, padding: '12px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: activeTab === tab.id ? 700 : 500, background: activeTab === tab.id ? '#1a2744′ : ’transparent', color: activeTab === tab.id ? '#fff' : '#64748b', fontSize: 14, transition: 'all 0.2s' }}
             >
               {tab.label}
             </button>
@@ -57,7 +57,7 @@ export default function PartnerPhotoEquipmentGuide() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-                    <div style={{ fontWeight: 700, fontSize: 18, color: '#1a2744' }}>{phone.name}</div>
+                    <div style={{ fontWeight: 700, fontSize: 18, color: '#1a2744′ }}>{phone.name}</div>
                     <div style={{ color: '#64748b', fontSize: 14, fontWeight: 600 }}>{phone.price}</div>
                   </div>
                   <div style={{ display: 'inline-block', background: '#f0f4ff', color: '#3b82f6', fontWeight: 600, fontSize: 13, padding: '3px 10px', borderRadius: 20, marginBottom: 10 }}>{phone.badge}</div>
@@ -71,7 +71,7 @@ export default function PartnerPhotoEquipmentGuide() {
         {activeTab === 'settings' && (
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, overflow: 'hidden' }}>
             {settings.map((s, i) => (
-              <div key={s.setting} style={{ padding: '20px 24px', borderBottom: i < settings.length - 1 ? '1px solid #f1f5f9' : 'none', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+              <div key={s.setting} style={{ padding: '20px 24px', borderBottom: i < settings.length - 1 ? '1px solid #f1f5f9′ : ’none', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <div style={{ minWidth: 160 }}>
                   <div style={{ fontWeight: 700, color: '#1a2744', fontSize: 15 }}>{s.setting}</div>
                   <div style={{ fontWeight: 700, color: '#3b82f6', fontSize: 14, marginTop: 4 }}>{s.value}</div>
@@ -85,19 +85,19 @@ export default function PartnerPhotoEquipmentGuide() {
         {activeTab === 'workflow' && (
           <div style={{ display: 'grid', gap: 16 }}>
             <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, padding: 24 }}>
-              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#1a2744' }}>☁️ Photo Storage</h3>
+              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#1a2744′ }}>☁️ Photo Storage</h3>
               <p style={{ color: '#64748b', lineHeight: 1.7 }}>
                 Use iCloud or Google Photos — not on-device only. ProLnk automatically processes photos as you upload them. Keep auto-backup enabled. Never rely solely on your phone's local storage for job documentation.
               </p>
             </div>
             <div style={{ background: '#fff', border: '2px solid #e8b400', borderRadius: 16, padding: 24 }}>
-              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 12, color: '#1a2744' }}>⏱️ Upload Timing</h3>
+              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 12, color: '#1a2744′ }}>⏱️ Upload Timing</h3>
               <p style={{ color: '#64748b', lineHeight: 1.7 }}>
                 Upload within 2 hours of job completion. Homeowners are most responsive to AI insights immediately after service — the home is fresh in their mind and they're in decision-making mode. Delayed uploads mean delayed engagement.
               </p>
             </div>
             <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, padding: 24 }}>
-              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#1a2744' }}>🧰 Quick Start Kit</h3>
+              <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#1a2744′ }}>🧰 Quick Start Kit</h3>
               <div style={{ display: 'grid', gap: 12 }}>
                 {[
                   { item: 'Phone mount for truck', price: '$20', icon: '🚚', why: 'Hands-free navigation between jobs without damaging your phone' },
@@ -108,7 +108,7 @@ export default function PartnerPhotoEquipmentGuide() {
                     <div style={{ fontSize: 24, flexShrink: 0 }}>{k.icon}</div>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <div style={{ fontWeight: 600, color: '#1a2744' }}>{k.item}</div>
+                        <div style={{ fontWeight: 600, color: '#1a2744′ }}>{k.item}</div>
                         <div style={{ color: '#3b82f6', fontWeight: 700 }}>{k.price}</div>
                       </div>
                       <div style={{ color: '#64748b', fontSize: 14, marginTop: 4 }}>{k.why}</div>

@@ -103,10 +103,10 @@ export default function DFWWineStorageGuide() {
               <label style={{ display: 'block', color: '#a0aebe', marginBottom: '6px', fontSize: '13px' }}>Collection Size</label>
               <select style={selectStyle} value={collectionSize} onChange={e => setCollectionSize(e.target.value)}>
                 <option value="">Select...</option>
-                <option value="20">Under 30 bottles</option>
-                <option value="60">30-100 bottles</option>
-                <option value="150">100-300 bottles</option>
-                <option value="500">300+ bottles (serious collector)</option>
+                <option value="20″>Under 30 bottles</option>
+                <option value="60″>30-100 bottles</option>
+                <option value="150″>100-300 bottles</option>
+                <option value="500″>300+ bottles (serious collector)</option>
               </select>
             </div>
             <div>
@@ -134,12 +134,12 @@ export default function DFWWineStorageGuide() {
             Get Wine Storage Recommendation
           </button>
           {recommendation && (
-            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your Recommendation</h3>
-              <p style={{ margin: '4px 0' }}><strong>Solution:</strong> {recommendation.solution}</p>
-              <p style={{ margin: '4px 0' }}><strong>Temperature Control:</strong> {recommendation.tempControl}</p>
-              <p style={{ margin: '4px 0' }}><strong>Humidity:</strong> {recommendation.humidity}</p>
-              <p style={{ margin: '4px 0' }}><strong>Estimated Cost:</strong> {recommendation.cost}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Solution:</strong> {recommendation.solution}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Temperature Control:</strong> {recommendation.tempControl}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Humidity:</strong> {recommendation.humidity}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Estimated Cost:</strong> {recommendation.cost}</p>
             </div>
           )}
         </div>

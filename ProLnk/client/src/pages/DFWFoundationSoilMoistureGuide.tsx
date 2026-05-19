@@ -32,19 +32,19 @@ export default function DFWFoundationSoilMoistureGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>💧</span>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Foundation Soil Moisture Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Foundation Soil Moisture Guide</h1>
           <p style={{ color: '#9CA3AF', lineHeight: 1.6 }}>
             DFW sits on expansive Blackland Prairie clay. This clay shrinks dramatically when dry and swells when wet — 
             the leading cause of foundation movement in North Texas. The goal is consistency: keep soil at 50–75% of its plastic limit saturation year-round.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔬 The Science</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7 }}>
             DFW clay has a plastic limit of roughly 25% water content and a liquid limit near 65%. Foundation engineers target 
             50–75% of plastic limit saturation — meaning soil should feel damp but not soggy. A $15–30 soil moisture meter 
-            inserted 6–8 inches deep at the drip line gives reliable readings. Target: <strong style={{ color: '#F5E642' }}>40–55% volumetric water content</strong> on most meters.
+            inserted 6–8 inches deep at the drip line gives reliable readings. Target: <strong style={{ color: '#F5E642′ }}>40–55% volumetric water content</strong> on most meters.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function DFWFoundationSoilMoistureGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', textAlign: 'center' }}>
                 <div><div style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 700 }}>{result.gallons} gal</div><div style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>Per Session</div></div>
                 <div><div style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 700 }}>{result.frequency}</div><div style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>Watering Frequency</div></div>
@@ -94,7 +94,7 @@ export default function DFWFoundationSoilMoistureGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             {[
               { icon: '🌡️', tip: 'Check soil after 3 days of 95°F+ heat — may need emergency watering' },
-              { icon: '🌧️', tip: 'After 1"+ rain, skip scheduled watering but check meter in 48 hrs' },
+              { icon: '🌧️', tip: 'After 1″+ rain, skip scheduled watering but check meter in 48 hrs' },
               { icon: '🔧', tip: 'Soaker hoses beat sprinklers — slow deep penetration beats surface wetting' },
               { icon: '📊', tip: 'Keep a log — consistent patterns reveal drainage and soil anomalies' },
             ].map((item, i) => (

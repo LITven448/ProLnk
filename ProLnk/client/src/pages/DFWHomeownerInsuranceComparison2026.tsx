@@ -63,7 +63,7 @@ export default function DFWHomeownerInsuranceComparison2026() {
         </div>
 
         {rec && (
-          <div style={{ background: '#F5E642', borderRadius: 12, padding: 24, marginBottom: 32, color: '#0A1628' }}>
+          <div style={{ background: '#F5E642', borderRadius: 12, padding: 24, marginBottom: 32, color: '#0A1628′ }}>
             <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 4 }}>⭐ RECOMMENDED FOR YOU</div>
             <div style={{ fontSize: 22, fontWeight: 800 }}>{rec.carrier} <span style={{ fontSize: 14 }}>AM Best: {rec.rating}</span></div>
             <div style={{ marginTop: 8, fontSize: 14 }}>{rec.reason}</div>
@@ -77,14 +77,14 @@ export default function DFWHomeownerInsuranceComparison2026() {
               <span style={{ fontSize: 24 }}>{c.icon}</span>
               <div>
                 <div style={{ fontWeight: 700 }}>{c.name}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8' }}>{c.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{c.note}</div>
               </div>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '6px 12px', fontSize: 12, color: '#F5E642' }}>{c.share}</div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '6px 12px', fontSize: 12, color: '#F5E642′ }}>{c.share}</div>
           </div>
         ))}
 
-        <div style={{ marginTop: 32, background: '#1e2d47', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ marginTop: 32, background: '#1e2d47', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>💡 DFW Insurance Tip 2026</div>
           <div style={{ color: '#94a3b8', fontSize: 14 }}>DFW hail and wind claims surged in 2025. Verify your policy includes full roof replacement (not ACV) and foundation coverage before renewal. Texas law allows you to switch carriers at any time.</div>
         </div>

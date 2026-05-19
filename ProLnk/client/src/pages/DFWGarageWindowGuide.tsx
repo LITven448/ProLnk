@@ -77,7 +77,7 @@ export default function DFWGarageWindowGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
             {[
               { icon: '🔲', label: 'Polycarbonate Panel Inserts', cost: '$80–150/panel', note: 'Snap into existing door sections — diffused light, minimal heat gain, no glass breakage risk' },
-              { icon: '🌅', label: 'Tubular Skylight', cost: '$450–850 installed', note: 'Roof-mounted, 10–21" tube channels daylight in — zero heat gain vs standard skylights' },
+              { icon: '🌅', label: 'Tubular Skylight', cost: '$450–850 installed', note: 'Roof-mounted, 10–21″ tube channels daylight in — zero heat gain vs standard skylights' },
               { icon: '🏚️', label: 'Fixed Transom Windows', cost: '$300–600 installed', note: 'Above garage door on wall — natural light at peak, out of sun angle, minimal heat gain' },
             ].map(opt => (
               <div key={opt.label} style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
@@ -125,7 +125,7 @@ export default function DFWGarageWindowGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {[
               { label: 'Total Upgrade Cost', value: `$${totalCost.toLocaleString()}` },
-              { label: 'Est. Peak Temp After', value: `${estimatedTemp}°F`, color: estimatedTemp < 100 ? '#22C55E' : estimatedTemp < 120 ? '#F59E0B' : '#EF4444' },
+              { label: 'Est. Peak Temp After', value: `${estimatedTemp}°F`, color: estimatedTemp < 100 ? '#22C55E' : estimatedTemp < 120 ? '#F59E0B' : '#EF4444′ },
               { label: 'Temperature Reduction', value: `${Math.min(tempReduction, selectedGarage.baseTemp - 72)}°F` },
             ].map(stat => (
               <div key={stat.label} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>

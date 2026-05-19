@@ -61,8 +61,8 @@ export default function DFWFHALoanGuide() {
             <div key={s.label} style={{ background: 'white', borderRadius: 12, padding: 20, textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 32 }}>{s.icon}</div>
               <div style={{ fontSize: 12, color: '#64748B', marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#0A1628', margin: '4px 0' }}>{s.value}</div>
-              <div style={{ fontSize: 11, color: '#94A3B8' }}>{s.sub}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#0A1628', margin: '4px 0′ }}>{s.value}</div>
+              <div style={{ fontSize: 11, color: '#94A3B8′ }}>{s.sub}</div>
             </div>
           ))}
         </div>

@@ -49,7 +49,7 @@ export default function DFWOutdoorLightingDesignGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚡ Low Voltage vs. Line Voltage</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚡ Low Voltage vs. Line Voltage</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Low Voltage (12V)</div>
@@ -63,7 +63,7 @@ export default function DFWOutdoorLightingDesignGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Lighting Plan Builder</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Lighting Plan Builder</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Outdoor Space Type</label>
@@ -87,7 +87,7 @@ export default function DFWOutdoorLightingDesignGuide() {
           </button>
           {showPlan && plan && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Recommended Fixtures: {plan.fixtures}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Estimated Cost: {plan.cost} · Control: {plan.control}</div>
               </div>

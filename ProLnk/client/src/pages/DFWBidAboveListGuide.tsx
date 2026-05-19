@@ -116,7 +116,7 @@ export default function DFWBidAboveListGuide() {
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Competing Offers (if known)</label>
-            <input type='number' value={offers} onChange={e => setOffers(e.target.value)} placeholder='0' min='0' style={{ width: 120, padding: '10px 12px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }} />
+            <input type='number' value={offers} onChange={e => setOffers(e.target.value)} placeholder='0′ min='0' style={{ width: 120, padding: '10px 12px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }} />
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, cursor: 'pointer' }}>Get Strategy</button>
           {result && (

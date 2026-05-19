@@ -105,9 +105,9 @@ export default function DFWGarbageDisposalGuide() {
               <label style={{ display: 'block', color: '#a0aebe', marginBottom: '6px', fontSize: '13px' }}>Household Size</label>
               <select style={selectStyle} value={householdSize} onChange={e => setHouseholdSize(e.target.value)}>
                 <option value="">Select...</option>
-                <option value="2">1-2 people</option>
-                <option value="3">3-4 people</option>
-                <option value="5">5+ people</option>
+                <option value="2″>1-2 people</option>
+                <option value="3″>3-4 people</option>
+                <option value="5″>5+ people</option>
               </select>
             </div>
             <div>
@@ -134,12 +134,12 @@ export default function DFWGarbageDisposalGuide() {
             Get Disposal Recommendation
           </button>
           {recommendation && (
-            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your Recommendation</h3>
-              <p style={{ margin: '4px 0' }}><strong>Model:</strong> {recommendation.model}</p>
-              <p style={{ margin: '4px 0' }}><strong>Horsepower:</strong> {recommendation.hp}</p>
-              <p style={{ margin: '4px 0' }}><strong>Maintenance Schedule:</strong> {recommendation.maintenance}</p>
-              <p style={{ margin: '4px 0' }}><strong>Replacement Cost:</strong> {recommendation.replacementCost}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Model:</strong> {recommendation.model}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Horsepower:</strong> {recommendation.hp}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Maintenance Schedule:</strong> {recommendation.maintenance}</p>
+              <p style={{ margin: '4px 0′ }}><strong>Replacement Cost:</strong> {recommendation.replacementCost}</p>
               {recommendation.hardWaterNote && <p style={{ margin: '8px 0 0', color: '#F5E642', fontSize: '13px' }}>⚠️ {recommendation.hardWaterNote}</p>}
               {recommendation.isSeptic && <p style={{ margin: '8px 0 0', color: '#F5E642', fontSize: '13px' }}>🏠 Septic homes: only use enzyme-assisted disposal models — standard units will damage your tank.</p>}
             </div>

@@ -50,7 +50,7 @@ export default function SummerHVACPrepGuide() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>
+        <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>
           ✅ May Pre-Summer Checklist
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2.5rem' }}>
@@ -94,7 +94,7 @@ export default function SummerHVACPrepGuide() {
               <thead>
                 <tr style={{ borderBottom: '1px solid #1e3a5f' }}>
                   {['Month', 'Action', 'Priority'].map(h => (
-                    <th key={h} style={{ textAlign: 'left', padding: '0.5rem', color: '#94a3b8' }}>{h}</th>
+                    <th key={h} style={{ textAlign: 'left', padding: '0.5rem', color: '#94a3b8′ }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -109,7 +109,7 @@ export default function SummerHVACPrepGuide() {
                 ].map(([month, action, priority]) => (
                   <tr key={month} style={{ borderBottom: '1px solid #1e3a5f' }}>
                     <td style={{ padding: '0.5rem', fontWeight: 600 }}>{month}</td>
-                    <td style={{ padding: '0.5rem', color: '#94a3b8' }}>{action}</td>
+                    <td style={{ padding: '0.5rem', color: '#94a3b8′ }}>{action}</td>
                     <td style={{ padding: '0.5rem' }}>{priority}</td>
                   </tr>
                 ))}
@@ -140,8 +140,8 @@ export default function SummerHVACPrepGuide() {
                     key={s.temp}
                     onClick={() => setSelectedTemp(s.temp)}
                     style={{
-                      background: selectedTemp === s.temp ? '#F5E642' : '#1e3a5f',
-                      color: selectedTemp === s.temp ? '#0A1628' : '#fff',
+                      background: selectedTemp === s.temp ? '#F5E642′ : '#1e3a5f',
+                      color: selectedTemp === s.temp ? '#0A1628′ : '#fff',
                       border: 'none', borderRadius: 8, padding: '0.4rem 0.75rem', cursor: 'pointer', fontWeight: 600,
                     }}
                   >
@@ -152,7 +152,7 @@ export default function SummerHVACPrepGuide() {
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642' }}>${scaledCost}/mo</div>
+            <div style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642′ }}>${scaledCost}/mo</div>
             <div style={{ color: '#94a3b8', fontSize: '0.875rem', marginTop: '0.25rem' }}>{setting.label} — {setting.note}</div>
           </div>
         </div>

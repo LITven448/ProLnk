@@ -82,7 +82,7 @@ export default function TrustyProHighlandVillage() {
         <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', gap: 40, flexWrap: 'wrap' }}>
           {STATS.map(s => (
             <div key={s.label}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#4F46E5' }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#4F46E5′ }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#6B7280', fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}
@@ -95,7 +95,7 @@ export default function TrustyProHighlandVillage() {
         <div style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#1F2937', marginBottom: 12 }}>Why Highland Village Homes Require a Different Level of Pro</h2>
           <p style={{ color: '#4B5563', lineHeight: 1.7, fontSize: 16 }}>
-            Highland Village isn't a cookie-cutter suburb — it's an enclave of custom builds with unique systems, mature landscaping, and lake-adjacent environmental pressures. Every home has its own fingerprint. Pros need to assess, not assume. TrustyPro curates specialists who've worked on custom homes and understand the standards Highland Village homeowners expect.
+            Highland Village isn't a cookie-cutter suburb — it’s an enclave of custom builds with unique systems, mature landscaping, and lake-adjacent environmental pressures. Every home has its own fingerprint. Pros need to assess, not assume. TrustyPro curates specialists who’ve worked on custom homes and understand the standards Highland Village homeowners expect.
           </p>
         </div>
 

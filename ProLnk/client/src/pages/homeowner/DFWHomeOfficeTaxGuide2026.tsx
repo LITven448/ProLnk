@@ -56,10 +56,10 @@ export default function DFWHomeOfficeTaxGuide2026() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f1f5f9', marginBottom: 24 }}>✅ Who Can Deduct (Confirmed 2026)</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             {[
-              { who: 'Self-employed (Schedule C filers)', status: 'YES', detail: 'Full home office deduction available. Both simplified and actual expense methods apply.', color: '#166534', statusColor: '#4ade80' },
-              { who: 'ProLnk Partners', status: 'YES', detail: 'You receive 1099 income — you are self-employed. Home office deduction fully applies.', color: '#166534', statusColor: '#4ade80' },
-              { who: 'Freelancers / 1099 workers', status: 'YES', detail: 'Any income reported on a 1099-NEC qualifies. Keep your workspace exclusive.', color: '#166534', statusColor: '#4ade80' },
-              { who: 'W-2 Employees (remote work)', status: 'PENDING', detail: 'TCJA sunset may restore the deduction. Monitor IRS guidance for 2026 filing.', color: '#854d0e', statusColor: '#fbbf24' },
+              { who: 'Self-employed (Schedule C filers)', status: 'YES', detail: 'Full home office deduction available. Both simplified and actual expense methods apply.', color: '#166534', statusColor: '#4ade80′ },
+              { who: 'ProLnk Partners', status: 'YES', detail: 'You receive 1099 income — you are self-employed. Home office deduction fully applies.', color: '#166534', statusColor: '#4ade80′ },
+              { who: 'Freelancers / 1099 workers', status: 'YES', detail: 'Any income reported on a 1099-NEC qualifies. Keep your workspace exclusive.', color: '#166534', statusColor: '#4ade80′ },
+              { who: 'W-2 Employees (remote work)', status: 'PENDING', detail: 'TCJA sunset may restore the deduction. Monitor IRS guidance for 2026 filing.', color: '#854d0e', statusColor: '#fbbf24′ },
             ].map(q => (
               <div key={q.who} style={{ background: '#1e293b', borderRadius: 10, padding: '18px 24px', display: 'flex', gap: 16, alignItems: 'center', border: '1px solid #334155', flexWrap: 'wrap' }}>
                 <span style={{ background: q.color + '30', color: q.statusColor, fontSize: 12, fontWeight: 800, padding: '3px 12px', borderRadius: 20, whiteSpace: 'nowrap' }}>{q.status}</span>
@@ -73,7 +73,7 @@ export default function DFWHomeOfficeTaxGuide2026() {
         </div>
 
         {/* DFW Amplifiers */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 40, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 40, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#f1f5f9', marginBottom: 20 }}>🏠 DFW-Specific Costs That Amplify Your Deduction</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 20 }}>DFW has some of the highest property taxes and insurance costs in the country — making the home office deduction especially valuable here.</p>
           <div style={{ display: 'grid', gap: 14 }}>
@@ -102,14 +102,14 @@ export default function DFWHomeOfficeTaxGuide2026() {
         </div>
 
         {/* Calculator */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>🧮 Home Office Deduction Calculator</h2>
           <p style={{ color: '#64748b', marginBottom: 28, fontSize: 15 }}>Compare the IRS Simplified Method vs. the Actual Expense Method — find out which saves you more.</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             {[
-              { label: 'Home Total Sqft', val: homeSqft, set: setHomeSqft, placeholder: 'e.g. 2400' },
-              { label: 'Office Sqft (exclusive use only)', val: officeSqft, set: setOfficeSqft, placeholder: 'e.g. 180' },
+              { label: 'Home Total Sqft', val: homeSqft, set: setHomeSqft, placeholder: 'e.g. 2400′ },
+              { label: 'Office Sqft (exclusive use only)', val: officeSqft, set: setOfficeSqft, placeholder: 'e.g. 180′ },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ display: 'block', color: '#cbd5e1', fontWeight: 600, marginBottom: 8, fontSize: 14 }}>{f.label}</label>
@@ -121,10 +121,10 @@ export default function DFWHomeOfficeTaxGuide2026() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
             {[
-              { label: 'Annual Mortgage/Rent ($)', val: annualMortgageOrRent, set: setAnnualMortgageOrRent, placeholder: 'e.g. 24000' },
-              { label: 'Annual Property Tax ($)', val: annualPropTax, set: setAnnualPropTax, placeholder: 'e.g. 10379' },
-              { label: 'Annual Insurance ($)', val: annualInsurance, set: setAnnualInsurance, placeholder: 'e.g. 3240' },
-              { label: 'Annual Utilities ($)', val: annualUtilities, set: setAnnualUtilities, placeholder: 'e.g. 4800' },
+              { label: 'Annual Mortgage/Rent ($)', val: annualMortgageOrRent, set: setAnnualMortgageOrRent, placeholder: 'e.g. 24000′ },
+              { label: 'Annual Property Tax ($)', val: annualPropTax, set: setAnnualPropTax, placeholder: 'e.g. 10379′ },
+              { label: 'Annual Insurance ($)', val: annualInsurance, set: setAnnualInsurance, placeholder: 'e.g. 3240′ },
+              { label: 'Annual Utilities ($)', val: annualUtilities, set: setAnnualUtilities, placeholder: 'e.g. 4800′ },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ display: 'block', color: '#94a3b8', fontWeight: 600, marginBottom: 8, fontSize: 13 }}>{f.label}</label>
@@ -142,17 +142,17 @@ export default function DFWHomeOfficeTaxGuide2026() {
           )}
 
           {showResult && canCalculate && (
-            <div style={{ background: '#0f172a', borderRadius: 12, padding: 28, border: '1px solid #334155' }}>
+            <div style={{ background: '#0f172a', borderRadius: 12, padding: 28, border: '1px solid #334155′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
                 <div style={{ background: betterMethod === 'simplified' ? '#0a2a1a' : '#1e293b', borderRadius: 10, padding: 20, border: `1px solid ${betterMethod === 'simplified' ? '#166534' : '#334155'}` }}>
                   <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>IRS Simplified Method</div>
-                  <div style={{ fontSize: 26, fontWeight: 800, color: betterMethod === 'simplified' ? '#4ade80' : '#94a3b8' }}>${simplifiedDeduction.toLocaleString()}</div>
+                  <div style={{ fontSize: 26, fontWeight: 800, color: betterMethod === 'simplified' ? '#4ade80′ : '#94a3b8' }}>${simplifiedDeduction.toLocaleString()}</div>
                   <div style={{ fontSize: 12, color: '#475569', marginTop: 4 }}>{Math.min(Number(officeSqft), 300)} sqft × $5/sqft</div>
                   {betterMethod === 'simplified' && <div style={{ marginTop: 8, fontSize: 12, color: '#4ade80', fontWeight: 700 }}>✓ BEST FOR YOU</div>}
                 </div>
                 <div style={{ background: betterMethod === 'actual' ? '#0a2a1a' : '#1e293b', borderRadius: 10, padding: 20, border: `1px solid ${betterMethod === 'actual' ? '#166534' : '#334155'}` }}>
                   <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>Actual Expense Method</div>
-                  <div style={{ fontSize: 26, fontWeight: 800, color: betterMethod === 'actual' ? '#4ade80' : '#94a3b8' }}>${Math.round(actualExpenses).toLocaleString()}</div>
+                  <div style={{ fontSize: 26, fontWeight: 800, color: betterMethod === 'actual' ? '#4ade80′ : '#94a3b8' }}>${Math.round(actualExpenses).toLocaleString()}</div>
                   <div style={{ fontSize: 12, color: '#475569', marginTop: 4 }}>{(officePct * 100).toFixed(1)}% of total home costs</div>
                   {betterMethod === 'actual' && <div style={{ marginTop: 8, fontSize: 12, color: '#4ade80', fontWeight: 700 }}>✓ BEST FOR YOU</div>}
                 </div>

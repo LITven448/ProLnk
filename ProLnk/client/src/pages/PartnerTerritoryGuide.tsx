@@ -49,7 +49,7 @@ export default function PartnerTerritoryGuide() {
           Partners with 10+ active ZIPs receive <strong>2.4x more leads</strong> than those with 3 or fewer. Expanding your territory is the fastest lever to grow lead volume without spending more on ads.
         </p>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#0f172a' }}>🗺️ Territory Strategy Principles</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
@@ -67,11 +67,11 @@ export default function PartnerTerritoryGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#0f172a' }}>⚡ DFW Expansion Recommendations by Trade</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {Object.entries(TRADE_RECS).map(([t, desc]) => (
-              <div key={t} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: 14, backgroundColor: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0' }}>
+              <div key={t} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: 14, backgroundColor: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0′ }}>
                 <div style={{ fontWeight: 700, color: '#0369a1', minWidth: 110, textTransform: 'capitalize', fontSize: 14 }}>{t}</div>
                 <div style={{ color: '#475569', fontSize: 14, lineHeight: 1.6 }}>{desc}</div>
               </div>
@@ -79,7 +79,7 @@ export default function PartnerTerritoryGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#0f172a' }}>🧭 Interactive Territory Planner</h2>
           <p style={{ fontSize: 14, color: '#64748b', marginBottom: 20 }}>Select your current ZIPs and your primary trade to see expansion recommendations ranked by demand score.</p>
 
@@ -109,9 +109,9 @@ export default function PartnerTerritoryGuide() {
                     border: '1px solid',
                     fontSize: 13,
                     cursor: 'pointer',
-                    backgroundColor: selectedZips.includes(zip) ? '#0369a1' : '#f0f9ff',
+                    backgroundColor: selectedZips.includes(zip) ? '#0369a1′ : '#f0f9ff',
                     color: selectedZips.includes(zip) ? '#fff' : '#0369a1',
-                    borderColor: selectedZips.includes(zip) ? '#0369a1' : '#bae6fd',
+                    borderColor: selectedZips.includes(zip) ? '#0369a1′ : '#bae6fd',
                     fontWeight: 600,
                   }}
                 >
@@ -138,7 +138,7 @@ export default function PartnerTerritoryGuide() {
                         <div style={{ fontSize: 12, color: '#64748b', textTransform: 'capitalize' }}>Growth: {data.growth}</div>
                       </div>
                       <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: 22, fontWeight: 800, color: data.demandScore > 90 ? '#16a34a' : '#0369a1' }}>{data.demandScore}</div>
+                        <div style={{ fontSize: 22, fontWeight: 800, color: data.demandScore > 90 ? '#16a34a' : '#0369a1′ }}>{data.demandScore}</div>
                         <div style={{ fontSize: 11, color: '#64748b' }}>demand score</div>
                       </div>
                     </div>
@@ -148,7 +148,7 @@ export default function PartnerTerritoryGuide() {
             </div>
           )}
 
-          <div style={{ marginTop: 24, padding: 16, backgroundColor: '#f0fdf4', borderRadius: 8, border: '1px solid #bbf7d0' }}>
+          <div style={{ marginTop: 24, padding: 16, backgroundColor: '#f0fdf4', borderRadius: 8, border: '1px solid #bbf7d0′ }}>
             <div style={{ fontSize: 13, color: '#166534', fontWeight: 600 }}>
               🛠️ To add ZIPs: Go to <strong>Service Area Manager</strong> in your dashboard → Add ZIP → Save coverage
             </div>

@@ -68,7 +68,7 @@ export default function DFWHomeMaintenancePartners2026() {
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>{strategy.title}</div>
               {strategy.steps.map((s) => (
                 <div key={s} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cdd9e5', fontSize: 14 }}>
-                  <span style={{ color: '#F5E642' }}>▸</span>{s}
+                  <span style={{ color: '#F5E642′ }}>▸</span>{s}
                 </div>
               ))}
             </div>
@@ -79,7 +79,7 @@ export default function DFWHomeMaintenancePartners2026() {
           <div style={{ fontWeight: 700, marginBottom: 12 }}>Why Charter Pros on ProLnk?</div>
           {['Charter pros commit to ongoing homeowner relationships, not one-off jobs', 'Annual service agreements available across all trades', 'Priority scheduling for Charter clients during DFW storm season', 'Single platform to manage all your trade relationships and history'].map((tip) => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cdd9e5', fontSize: 14 }}>
-              <span style={{ color: '#F5E642' }}>▸</span>{tip}
+              <span style={{ color: '#F5E642′ }}>▸</span>{tip}
             </div>
           ))}
         </div>

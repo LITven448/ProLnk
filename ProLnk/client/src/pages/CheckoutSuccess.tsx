@@ -4,24 +4,24 @@ import { CheckCircle, Users, Camera, Network, CreditCard, Star, Shield, Trending
 import { trpc } from "@/lib/trpc";
 
 const TIER_CONFIG: Record<string, { label: string; color: string; bg: string; border: string; spotsTotal: number }> = {
-  charter:  { label: "Charter",  color: "#E8A020", bg: "rgba(232,160,32,0.1)",  border: "rgba(232,160,32,0.3)",  spotsTotal: 25   },
-  founding: { label: "Founding", color: "#10B981", bg: "rgba(16,185,129,0.1)",  border: "rgba(16,185,129,0.3)",  spotsTotal: 100  },
-  l3:       { label: "Level 3",  color: "#818CF8", bg: "rgba(129,140,248,0.1)", border: "rgba(129,140,248,0.3)", spotsTotal: 400  },
-  l4:       { label: "Level 4",  color: "#94A3B8", bg: "rgba(148,163,184,0.1)", border: "rgba(148,163,184,0.3)", spotsTotal: 1600 },
+  charter:  { label: "Charter",  color: "#E8A020″, bg: "rgba(232,160,32,0.1)",  border: "rgba(232,160,32,0.3)",  spotsTotal: 25   },
+  founding: { label: "Founding", color: "#10B981″, bg: "rgba(16,185,129,0.1)",  border: "rgba(16,185,129,0.3)",  spotsTotal: 100  },
+  l3:       { label: "Level 3″,  color: "#818CF8", bg: "rgba(129,140,248,0.1)", border: "rgba(129,140,248,0.3)", spotsTotal: 400  },
+  l4:       { label: "Level 4″,  color: "#94A3B8", bg: "rgba(148,163,184,0.1)", border: "rgba(148,163,184,0.3)", spotsTotal: 1600 },
 };
 
 const NEXT_STEPS = [
-  { icon: Users, step: "1", title: "Complete your profile", desc: "Add your trade, service area, and contact info so homeowners can find you.", href: "/dashboard/profile" },
-  { icon: Copy, step: "2", title: "Copy your referral link", desc: "Share with other pros to start building your 4-level override network.", href: "/dashboard/referral" },
-  { icon: Camera, step: "3", title: "Upload your first job photos", desc: "Each tagged photo unlocks AI analysis — turning past work into new leads.", href: "/photo-upload" },
-  { icon: Network, step: "4", title: "Recruit your first pro", desc: "Every pro you bring in earns you overrides at 4 levels deep — forever.", href: "/dashboard/referral-hub" },
+  { icon: Users, step: "1″, title: "Complete your profile", desc: "Add your trade, service area, and contact info so homeowners can find you.", href: "/dashboard/profile" },
+  { icon: Copy, step: "2″, title: "Copy your referral link", desc: "Share with other pros to start building your 4-level override network.", href: "/dashboard/referral" },
+  { icon: Camera, step: "3″, title: "Upload your first job photos", desc: "Each tagged photo unlocks AI analysis — turning past work into new leads.", href: "/photo-upload" },
+  { icon: Network, step: "4″, title: "Recruit your first pro", desc: "Every pro you bring in earns you overrides at 4 levels deep — forever.", href: "/dashboard/referral-hub" },
 ];
 
 function TrialCountdown({ trialStart }: { trialStart: Date }) {
   const trialEnd = new Date(trialStart);
   trialEnd.setDate(trialEnd.getDate() + 90);
 
-  const pad = (n: number) => String(n).padStart(2, "0");
+  const pad = (n: number) => String(n).padStart(2, "0″);
   const fmt = (d: Date) =>
     d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
@@ -40,17 +40,17 @@ function TrialCountdown({ trialStart }: { trialStart: Date }) {
 
   return (
     <div style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.25)", borderRadius: 16, padding: "24px 28px", textAlign: "center", marginBottom: 32 }}>
-      <div style={{ fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#10B981", marginBottom: 8 }}>Your Free Trial</div>
+      <div style={{ fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#10B981″, marginBottom: 8 }}>Your Free Trial</div>
       <div style={{ display: "flex", justifyContent: "center", gap: 32, marginBottom: 12 }}>
         <div>
-          <div style={{ fontSize: 36, fontWeight: 900, color: "#F5F0E8", lineHeight: 1 }}>{daysLeft}</div>
+          <div style={{ fontSize: 36, fontWeight: 900, color: "#F5F0E8″, lineHeight: 1 }}>{daysLeft}</div>
           <div style={{ fontSize: 11, color: "rgba(245,240,232,0.45)", marginTop: 4 }}>days remaining</div>
         </div>
       </div>
       <div style={{ fontSize: 13, color: "rgba(245,240,232,0.55)" }}>
-        Trial started <strong style={{ color: "#F5F0E8" }}>{fmt(trialStart)}</strong>
+        Trial started <strong style={{ color: "#F5F0E8″ }}>{fmt(trialStart)}</strong>
         {" "}—{" "}
-        first charge on <strong style={{ color: "#F5F0E8" }}>{fmt(trialEnd)}</strong>
+        first charge on <strong style={{ color: "#F5F0E8″ }}>{fmt(trialEnd)}</strong>
       </div>
       <div style={{ marginTop: 8, fontSize: 12, color: "rgba(245,240,232,0.35)" }}>
         Cancel any time before {fmt(trialEnd)} and you owe nothing.
@@ -75,7 +75,7 @@ function ReferralCopy({ email }: { email: string }) {
       <div style={{ fontSize: 12, color: "rgba(245,240,232,0.45)", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.08em" }}>Your referral link</div>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
         <div style={{ flex: 1, fontSize: 13, color: "rgba(245,240,232,0.7)", background: "rgba(255,255,255,0.05)", borderRadius: 8, padding: "8px 12px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{link}</div>
-        <button onClick={copy} style={{ background: copied ? "#10B981" : "#E8A020", border: "none", borderRadius: 8, padding: "8px 14px", color: "#0A1628", fontWeight: 700, fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+        <button onClick={copy} style={{ background: copied ? "#10B981″ : "#E8A020", border: "none", borderRadius: 8, padding: "8px 14px", color: "#0A1628", fontWeight: 700, fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
           {copied ? <Check style={{ width: 14, height: 14 }} /> : <Copy style={{ width: 14, height: 14 }} />}
           {copied ? "Copied!" : "Copy"}
         </button>
@@ -131,7 +131,7 @@ export default function CheckoutSuccess() {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>
       {/* Nav */}
       <div style={{ padding: "16px 32px", borderBottom: "1px solid rgba(245,240,232,0.08)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontSize: 20, fontWeight: 700 }}>ProLnk</span>
@@ -142,7 +142,7 @@ export default function CheckoutSuccess() {
         {/* Hero */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(16,185,129,0.12)", border: "2px solid rgba(16,185,129,0.4)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
-            <CheckCircle style={{ width: 36, height: 36, color: "#10B981" }} />
+            <CheckCircle style={{ width: 36, height: 36, color: "#10B981″ }} />
           </div>
 
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: cfg.bg, border: `1px solid ${cfg.border}`, borderRadius: 100, padding: "6px 18px", marginBottom: 20 }}>
@@ -152,7 +152,7 @@ export default function CheckoutSuccess() {
 
           <h1 style={{ fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, lineHeight: 1.08, marginBottom: 16 }}>
             Welcome to the<br />
-            <span style={{ color: "#E8A020" }}>Founding Network.</span>
+            <span style={{ color: "#E8A020″ }}>Founding Network.</span>
           </h1>
           <p style={{ fontSize: 17, color: "rgba(245,240,232,0.6)", lineHeight: 1.6, maxWidth: 540, margin: "0 auto 8px" }}>
             Your {cfg.label} spot is permanently reserved. The $149/mo rate is locked for life — no matter what future partners pay.
@@ -160,7 +160,7 @@ export default function CheckoutSuccess() {
 
           {/* Charter spot reserved badge */}
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(232,160,32,0.08)", border: "1px solid rgba(232,160,32,0.2)", borderRadius: 100, padding: "6px 16px", marginTop: 12 }}>
-            <Shield style={{ width: 13, height: 13, color: "#E8A020" }} />
+            <Shield style={{ width: 13, height: 13, color: "#E8A020″ }} />
             <span style={{ fontSize: 12, color: "rgba(232,160,32,0.9)" }}>Your charter spot is permanently reserved — it cannot be revoked</span>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function CheckoutSuccess() {
             { icon: Network, label: "Referral link ready to share now" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} style={{ display: "flex", gap: 12, alignItems: "center", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, padding: "14px 16px" }}>
-              <Icon style={{ width: 18, height: 18, color: "#E8A020", flexShrink: 0 }} />
+              <Icon style={{ width: 18, height: 18, color: "#E8A020″, flexShrink: 0 }} />
               <span style={{ fontSize: 13, color: "rgba(245,240,232,0.75)", lineHeight: 1.4 }}>{label}</span>
             </div>
           ))}
@@ -193,15 +193,15 @@ export default function CheckoutSuccess() {
                   <div style={{ position: "absolute", left: 18, top: 38, width: 2, bottom: 0, background: "rgba(255,255,255,0.07)" }} />
                 )}
                 <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(232,160,32,0.12)", border: "1px solid rgba(232,160,32,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Icon style={{ width: 16, height: 16, color: "#E8A020" }} />
+                  <Icon style={{ width: 16, height: 16, color: "#E8A020″ }} />
                 </div>
                 <div style={{ flex: 1, paddingTop: 4 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-                    <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#E8A020" }}>Step {step}</span>
+                    <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#E8A020″ }}>Step {step}</span>
                   </div>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{title}</div>
                   <div style={{ fontSize: 13, color: "rgba(245,240,232,0.5)", lineHeight: 1.5, marginBottom: 8 }}>{desc}</div>
-                  <Link href={href} style={{ fontSize: 13, color: "#E8A020", textDecoration: "none", fontWeight: 600 }}>
+                  <Link href={href} style={{ fontSize: 13, color: "#E8A020″, textDecoration: "none", fontWeight: 600 }}>
                     Get started →
                   </Link>
                 </div>
@@ -216,7 +216,7 @@ export default function CheckoutSuccess() {
         {/* CTA */}
         <div style={{ textAlign: "center", marginTop: 48 }}>
           <Link href="/dashboard">
-            <button style={{ background: "#E8A020", color: "#0A1628", border: "none", borderRadius: 100, padding: "16px 48px", fontSize: 16, fontWeight: 700, cursor: "pointer" }}>
+            <button style={{ background: "#E8A020″, color: "#0A1628", border: "none", borderRadius: 100, padding: "16px 48px", fontSize: 16, fontWeight: 700, cursor: "pointer" }}>
               Open Your Dashboard →
             </button>
           </Link>

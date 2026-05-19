@@ -98,7 +98,7 @@ export default function ProLnkVsThumbtack() {
         <div style={{ background: '#fff', borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', marginBottom: 56 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: '#1B2A4A', color: '#fff', padding: '14px 20px', fontWeight: 700, fontSize: 14 }}>
             <div>FEATURE</div>
-            <div style={{ color: '#F5C842' }}>PROLNK</div>
+            <div style={{ color: '#F5C842′ }}>PROLNK</div>
             <div style={{ opacity: 0.6 }}>THUMBTACK</div>
           </div>
           {comparison.map((row, i) => (
@@ -110,9 +110,9 @@ export default function ProLnkVsThumbtack() {
                 borderBottom: '1px solid #EEE', fontSize: 15,
               }}
             >
-              <div style={{ fontWeight: 600, color: '#333' }}>{row.feature}</div>
+              <div style={{ fontWeight: 600, color: '#333′ }}>{row.feature}</div>
               <div style={{ color: '#2A7A3B', fontWeight: 600 }}>{row.prolnk}</div>
-              <div style={{ color: '#888' }}>{row.thumbtack}</div>
+              <div style={{ color: '#888′ }}>{row.thumbtack}</div>
             </div>
           ))}
         </div>

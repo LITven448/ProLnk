@@ -9,7 +9,7 @@ export default function DFWHeatPumpHybridDFW2026() {
   const sizeOptions = ['Under 1500 sq ft', '1500–2500 sq ft', '2500–3500 sq ft', 'Over 3500 sq ft'];
 
   const getGuide = () => {
-    const savings = homeSize === 'Under 1500 sq ft' ? '$600–$900' : homeSize === '1500–2500 sq ft' ? '$900–$1,400' : homeSize === '2500–3500 sq ft' ? '$1,400–$2,000' : '$2,000–$3,000';
+    const savings = homeSize === 'Under 1500 sq ft' ? '$600–$900′ : homeSize === '1500–2500 sq ft' ? '$900–$1,400' : homeSize === '2500–3500 sq ft' ? '$1,400–$2,000' : '$2,000–$3,000';
     if (currentSystem === 'Dual Fuel (Already)') {
       setResult('✅ You already have a hybrid system! Ensure your crossover point is set to 35°F for DFW optimal efficiency.');
     } else {
@@ -22,13 +22,13 @@ export default function DFWHeatPumpHybridDFW2026() {
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🌡️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW Hybrid Heat Pump System Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW Hybrid Heat Pump System Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>Dual-fuel technology optimized for North Texas climate</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           {[{icon:'🔥',label:'Gas Crossover Threshold',val:'35°F',sub:'DFW avg 12 nights/yr below this'},{icon:'💰',label:'Federal Tax Credit',val:'30% ITC',sub:'On heat pump component cost'},{icon:'⚡',label:'Efficiency Range',val:'250–400%',sub:'COP above crossover point'},{icon:'🌡️',label:'Typical DFW Savings',val:'40–55%',sub:'vs gas-only in mild seasons'}].map((s,i) => (
-            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642' }}>
+            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: '2rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.5rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700 }}>{s.val}</div>

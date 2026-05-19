@@ -36,17 +36,17 @@ export default function DFWHVACEnergyAuditCalc() {
       <h1 style={{ color: '#F5E642', fontSize: '1.6rem', marginBottom: '0.25rem' }}>⚡ DFW HVAC Energy Audit Calculator</h1>
       <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>DFW homes spend 50–65% of energy on HVAC. Find where your money is going and rank your best savings opportunities.</p>
       <div style={{ display: 'grid', gap: '1rem', maxWidth: 560 }}>
-        <label style={{ color: '#F5E642' }}>Home Age
+        <label style={{ color: '#F5E642′ }}>Home Age
           <select value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {HOME_AGE.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>HVAC System Age
+        <label style={{ color: '#F5E642′ }}>HVAC System Age
           <select value={sysAge} onChange={e => setSysAge(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {SYSTEM_AGE.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>Home Size (sqft)
+        <label style={{ color: '#F5E642′ }}>Home Size (sqft)
           <select value={sqft} onChange={e => setSqft(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {HOME_SIZE_OPT.map((o, i) => <option key={i} value={i}>{o} sqft</option>)}
           </select>
@@ -68,8 +68,8 @@ export default function DFWHVACEnergyAuditCalc() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>Top Savings Opportunities (ranked by ROI):</div>
           {result.opps.map((o, i) => (
             <div key={i} style={{ background: '#0A1628', borderRadius: 6, padding: '0.6rem 0.8rem', marginBottom: '0.5rem' }}>
-              <div style={{ color: '#e2e8f0' }}>{o.label}</div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '0.3rem', fontSize: '0.85rem', color: '#94a3b8' }}>
+              <div style={{ color: '#e2e8f0′ }}>{o.label}</div>
+              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '0.3rem', fontSize: '0.85rem', color: '#94a3b8′ }}>
                 <span>💰 Save ${o.saving}/yr</span>
                 <span>🔧 Cost ~${o.cost.toLocaleString()}</span>
                 <span>📅 Payback ~{(o.cost / o.saving).toFixed(1)} yrs</span>

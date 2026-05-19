@@ -56,7 +56,7 @@ export default function DFWHVACInverterDFW2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-              style={{ backgroundColor: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
+              style={{ backgroundColor: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
               {s.label}
             </button>
           ))}

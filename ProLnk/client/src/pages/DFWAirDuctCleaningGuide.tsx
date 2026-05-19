@@ -85,7 +85,7 @@ export default function DFWAirDuctCleaningGuide() {
               DFW is heavily targeted by scam duct cleaning operations. They offer $99 whole-house specials, arrive, then claim to find mold, vermin, or dangerous contamination — upselling to $800–$3,000 in unnecessary treatments.
             </p>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#E8EDF5' }}>Red flags:</strong> No NADCA certification, refuse to show before/after photos, quote by phone without seeing the system, pressure you to sign same day, claim UV lights or "antimicrobial coatings" are required.
+              <strong style={{ color: '#E8EDF5′ }}>Red flags:</strong> No NADCA certification, refuse to show before/after photos, quote by phone without seeing the system, pressure you to sign same day, claim UV lights or "antimicrobial coatings" are required.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function DFWAirDuctCleaningGuide() {
               { num: '02', title: 'Vermin Infestation (Rodents or Insects)', desc: 'Confirmed evidence of animals living in ductwork. Check for droppings, nesting material, or entry points near the air handler in your attic.' },
               { num: '03', title: 'Excessive Debris Blocking Airflow', desc: 'Post-construction: drywall dust, insulation particles, or debris from renovations. Registers blowing visible dust particles after major work.' },
             ].map(item => (
-              <div key={item.num} style={{ display: 'flex', gap: 16, background: '#111E33', borderRadius: 10, padding: 18, border: '1px solid #1E3054' }}>
+              <div key={item.num} style={{ display: 'flex', gap: 16, background: '#111E33', borderRadius: 10, padding: 18, border: '1px solid #1E3054′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 20, minWidth: 32 }}>{item.num}</div>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 14, color: '#E8EDF5', marginBottom: 6 }}>{item.title}</div>
@@ -106,10 +106,10 @@ export default function DFWAirDuctCleaningGuide() {
             ))}
           </div>
 
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 20, marginBottom: 40, border: '1px solid #1E3054' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 20, marginBottom: 40, border: '1px solid #1E3054′ }}>
             <h3 style={{ color: '#E8EDF5', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>🔧 Duct Sealing vs. Duct Cleaning</h3>
             <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6, margin: 0 }}>
-              In DFW, leaky ducts in attics (common in homes built 1985–2005) waste 20–30% of conditioned air. Duct sealing with Aeroseal or mastic costs <strong style={{ color: '#E8EDF5' }}>$1,500–$3,500</strong> and dramatically reduces energy bills. This is different from duct cleaning and often more valuable. Ask your HVAC tech about a duct leakage test before pursuing cleaning.
+              In DFW, leaky ducts in attics (common in homes built 1985–2005) waste 20–30% of conditioned air. Duct sealing with Aeroseal or mastic costs <strong style={{ color: '#E8EDF5′ }}>$1,500–$3,500</strong> and dramatically reduces energy bills. This is different from duct cleaning and often more valuable. Ask your HVAC tech about a duct leakage test before pursuing cleaning.
             </p>
           </div>
         </div>
@@ -124,9 +124,9 @@ export default function DFWAirDuctCleaningGuide() {
               {homeAges.map(h => (
                 <button key={h.id} onClick={() => setHomeAge(h.id)} style={{
                   padding: '9px 16px', borderRadius: 20, border: '2px solid',
-                  borderColor: homeAge === h.id ? '#F5E642' : '#1E3054',
-                  background: homeAge === h.id ? '#F5E642' : 'transparent',
-                  color: homeAge === h.id ? '#0A1628' : '#94A3B8',
+                  borderColor: homeAge === h.id ? '#F5E642′ : '#1E3054',
+                  background: homeAge === h.id ? '#F5E642′ : ’transparent',
+                  color: homeAge === h.id ? '#0A1628′ : '#94A3B8',
                   fontWeight: 600, fontSize: 13, cursor: 'pointer'
                 }}>{h.label}</button>
               ))}
@@ -139,9 +139,9 @@ export default function DFWAirDuctCleaningGuide() {
               {renovOptions.map(r => (
                 <button key={r.id} onClick={() => setRenov(r.id)} style={{
                   textAlign: 'left', padding: '9px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: renov === r.id ? '#F5E642' : '#1E3054',
+                  borderColor: renov === r.id ? '#F5E642′ : '#1E3054',
                   background: renov === r.id ? 'rgba(245,230,66,0.1)' : 'transparent',
-                  color: renov === r.id ? '#F5E642' : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: 'pointer'
+                  color: renov === r.id ? '#F5E642′ : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: ’pointer'
                 }}>{r.label}</button>
               ))}
             </div>
@@ -153,9 +153,9 @@ export default function DFWAirDuctCleaningGuide() {
               {allergyOptions.map(a => (
                 <button key={a.id} onClick={() => setAllergy(a.id)} style={{
                   textAlign: 'left', padding: '9px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: allergy === a.id ? '#F5E642' : '#1E3054',
+                  borderColor: allergy === a.id ? '#F5E642′ : '#1E3054',
                   background: allergy === a.id ? 'rgba(245,230,66,0.1)' : 'transparent',
-                  color: allergy === a.id ? '#F5E642' : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: 'pointer'
+                  color: allergy === a.id ? '#F5E642′ : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: ’pointer'
                 }}>{a.label}</button>
               ))}
             </div>
@@ -170,8 +170,8 @@ export default function DFWAirDuctCleaningGuide() {
               <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6, margin: '0 0 12px' }}>{verdict.details}</p>
               {verdict.cost !== 'N/A' && (
                 <div style={{ marginBottom: 12 }}>
-                  <span style={{ fontSize: 12, color: '#94A3B8' }}>Estimated Cost: </span>
-                  <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{verdict.cost}</span>
+                  <span style={{ fontSize: 12, color: '#94A3B8′ }}>Estimated Cost: </span>
+                  <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{verdict.cost}</span>
                 </div>
               )}
               <p style={{ color: '#94A3B8', fontSize: 13, margin: 0, borderTop: '1px solid #1E3054', paddingTop: 12 }}>

@@ -33,7 +33,7 @@ interface PhotoItem {
 function StarRating({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   const [hovered, setHovered] = useState(0);
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2″>
       {[1, 2, 3, 4, 5].map(n => (
         <button
           key={n}
@@ -44,9 +44,9 @@ function StarRating({ value, onChange }: { value: number; onChange: (v: number) 
           className="active:scale-110 transition-transform"
         >
           <Star
-            className="w-9 h-9"
-            fill={(hovered || value) >= n ? "#14B8A6" : "none"}
-            stroke={(hovered || value) >= n ? "#14B8A6" : "#334155"}
+            className="w-9 h-9″
+            fill={(hovered || value) >= n ? "#14B8A6″ : "none"}
+            stroke={(hovered || value) >= n ? "#14B8A6″ : "#334155"}
             strokeWidth={1.5}
           />
         </button>
@@ -61,14 +61,14 @@ function PhotoGrid({ photos, onAdd, onRemove }: {
   onRemove: (i: number) => void;
 }) {
   const labelConfig: Record<PhotoItem["label"], { color: string; bg: string }> = {
-    before: { color: "#94A3B8", bg: "rgba(148,163,184,0.12)" },
-    after:  { color: "#14B8A6", bg: "rgba(20,184,166,0.12)"  },
+    before: { color: "#94A3B8″, bg: "rgba(148,163,184,0.12)" },
+    after:  { color: "#14B8A6″, bg: "rgba(20,184,166,0.12)"  },
     detail: { color: "#A78BFA", bg: "rgba(167,139,250,0.12)" },
   };
 
   return (
     <div>
-      <div className="flex gap-2 mb-3">
+      <div className="flex gap-2 mb-3″>
         {(["before", "after", "detail"] as const).map(lbl => {
           const cnt = photos.filter(p => p.label === lbl).length;
           const cfg = labelConfig[lbl];
@@ -80,8 +80,8 @@ function PhotoGrid({ photos, onAdd, onRemove }: {
               className="flex-1 rounded-xl py-2.5 flex flex-col items-center gap-1 active:scale-95 transition-transform border"
               style={{ background: cfg.bg, borderColor: `${cfg.color}30` }}
             >
-              <div className="flex items-center gap-1">
-                <Camera className="w-3.5 h-3.5" style={{ color: cfg.color }} />
+              <div className="flex items-center gap-1″>
+                <Camera className="w-3.5 h-3.5″ style={{ color: cfg.color }} />
                 {cnt > 0 && (
                   <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full"
                     style={{ background: cfg.bg, color: cfg.color }}>
@@ -95,7 +95,7 @@ function PhotoGrid({ photos, onAdd, onRemove }: {
         })}
       </div>
       {photos.length > 0 ? (
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2″>
           {photos.map((photo, i) => {
             const cfg = labelConfig[photo.label];
             return (
@@ -115,7 +115,7 @@ function PhotoGrid({ photos, onAdd, onRemove }: {
                 <button
                   type="button"
                   onClick={() => onRemove(i)}
-                  className="absolute top-1.5 right-1.5 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity active:scale-90"
+                  className="absolute top-1.5 right-1.5 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity active:scale-90″
                 >
                   <X className="w-3 h-3 text-white" />
                 </button>
@@ -127,7 +127,7 @@ function PhotoGrid({ photos, onAdd, onRemove }: {
             onClick={() => onAdd("detail")}
             className="aspect-square border-2 border-dashed border-slate-700 rounded-2xl flex items-center justify-center active:scale-95 transition-transform"
           >
-            <Plus className="w-5 h-5 text-slate-600" />
+            <Plus className="w-5 h-5 text-slate-600″ />
           </button>
         </div>
       ) : (
@@ -136,9 +136,9 @@ function PhotoGrid({ photos, onAdd, onRemove }: {
           onClick={() => onAdd("before")}
           className="w-full border-2 border-dashed border-slate-700 rounded-2xl p-8 flex flex-col items-center gap-2 active:scale-[0.98] transition-transform"
         >
-          <Camera className="w-10 h-10 text-slate-600" />
-          <span className="text-sm font-bold text-slate-500">Tap to add photos</span>
-          <span className="text-xs text-slate-600">Before, after, and detail shots</span>
+          <Camera className="w-10 h-10 text-slate-600″ />
+          <span className="text-sm font-bold text-slate-500″>Tap to add photos</span>
+          <span className="text-xs text-slate-600″>Before, after, and detail shots</span>
         </button>
       )}
     </div>
@@ -241,43 +241,43 @@ export default function JobDocumentation() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#0A1628] flex flex-col items-center justify-center px-4">
+      <div className="min-h-screen bg-[#0A1628] flex flex-col items-center justify-center px-4″>
         <div className="max-w-sm w-full text-center">
-          <div className="relative inline-flex items-center justify-center mb-6">
+          <div className="relative inline-flex items-center justify-center mb-6″>
             <div className="absolute inset-0 rounded-full bg-teal-400/20 animate-ping"
               style={{ animationDuration: "1.5s" }} />
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center shadow-[0_0_40px_rgba(20,184,166,0.4)]">
               <CheckCircle className="w-12 h-12 text-white" />
             </div>
           </div>
-          <h2 className="text-2xl font-black text-white mb-2">Job Documented!</h2>
-          <div className="flex justify-center gap-1 mb-4">
+          <h2 className="text-2xl font-black text-white mb-2″>Job Documented!</h2>
+          <div className="flex justify-center gap-1 mb-4″>
             {[1,2,3,4,5].map(n => (
-              <Star key={n} className="w-6 h-6"
-                fill={n <= rating ? "#14B8A6" : "#1E293B"}
-                stroke={n <= rating ? "#14B8A6" : "#334155"}
+              <Star key={n} className="w-6 h-6″
+                fill={n <= rating ? "#14B8A6″ : "#1E293B"}
+                stroke={n <= rating ? "#14B8A6″ : "#334155"}
                 strokeWidth={1.5} />
             ))}
           </div>
           {shareToTrustyPro && (
-            <div className="bg-teal-500/10 border border-teal-500/20 rounded-2xl px-4 py-3 mb-4 flex items-center gap-2">
-              <Shield className="w-4 h-4 text-teal-400 flex-shrink-0" />
+            <div className="bg-teal-500/10 border border-teal-500/20 rounded-2xl px-4 py-3 mb-4 flex items-center gap-2″>
+              <Shield className="w-4 h-4 text-teal-400 flex-shrink-0″ />
               <span className="text-teal-300 text-sm font-semibold">Shared to your TrustyPro Portfolio</span>
             </div>
           )}
           {pdfReady && (
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 mb-6 flex items-center gap-3">
-              <FileText className="w-5 h-5 text-teal-400 flex-shrink-0" />
+            <div className="bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 mb-6 flex items-center gap-3″>
+              <FileText className="w-5 h-5 text-teal-400 flex-shrink-0″ />
               <div className="flex-1 text-left">
                 <p className="text-white text-sm font-bold">Report ready</p>
                 <p className="text-slate-500 text-xs">Professional PDF generated</p>
               </div>
-              <button className="text-teal-400 text-xs font-bold flex items-center gap-1 active:scale-95">
-                <Download className="w-3 h-3" /> Download
+              <button className="text-teal-400 text-xs font-bold flex items-center gap-1 active:scale-95″>
+                <Download className="w-3 h-3″ /> Download
               </button>
             </div>
           )}
-          <div className="flex gap-3">
+          <div className="flex gap-3″>
             <Button
               className="flex-1 bg-teal-500 hover:bg-teal-400 text-white h-12 font-bold"
               onClick={() => navigate("/dashboard")}
@@ -286,7 +286,7 @@ export default function JobDocumentation() {
             </Button>
             <Button
               variant="outline"
-              className="flex-1 border-slate-700 text-slate-300 h-12"
+              className="flex-1 border-slate-700 text-slate-300 h-12″
               onClick={() => {
                 setSubmitted(false);
                 setPhotos([]);
@@ -309,32 +309,32 @@ export default function JobDocumentation() {
   return (
     <PartnerLayout>
       <div className="bg-[#0A1628] min-h-screen">
-        <div className="max-w-lg mx-auto px-4 py-6">
+        <div className="max-w-lg mx-auto px-4 py-6″>
 
           {/* Header */}
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-6″>
             <Link href="/dashboard">
-              <Button variant="ghost" size="sm" className="gap-1.5 text-slate-400 hover:text-white px-2">
-                <ArrowLeft className="w-4 h-4" />
+              <Button variant="ghost" size="sm" className="gap-1.5 text-slate-400 hover:text-white px-2″>
+                <ArrowLeft className="w-4 h-4″ />
               </Button>
             </Link>
-            <div className="flex-1">
+            <div className="flex-1″>
               <h1 className="text-white text-xl font-black">Job Documentation</h1>
-              <p className="text-slate-500 text-xs mt-0.5">Document completed work & collect customer sign-off</p>
+              <p className="text-slate-500 text-xs mt-0.5″>Document completed work & collect customer sign-off</p>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5″>
 
             {/* Photo Grid */}
-            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <Camera className="w-4 h-4 text-teal-400" />
+            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700″>
+              <div className="flex items-center justify-between mb-4″>
+                <div className="flex items-center gap-2″>
+                  <Camera className="w-4 h-4 text-teal-400″ />
                   <span className="text-white text-sm font-black">Photos</span>
                   <span className="text-red-400 text-xs">*</span>
                 </div>
-                <span className="text-xs text-slate-500">{photos.length} added</span>
+                <span className="text-xs text-slate-500″>{photos.length} added</span>
               </div>
               <PhotoGrid
                 photos={photos}
@@ -352,15 +352,15 @@ export default function JobDocumentation() {
             </div>
 
             {/* Job Summary */}
-            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700 space-y-4">
-              <div className="flex items-center gap-2 mb-1">
-                <Wrench className="w-4 h-4 text-teal-400" />
+            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700 space-y-4″>
+              <div className="flex items-center gap-2 mb-1″>
+                <Wrench className="w-4 h-4 text-teal-400″ />
                 <span className="text-white text-sm font-black">Job Summary</span>
               </div>
 
               <div>
                 <Label className="text-xs text-slate-500 mb-2 block">Trade *</Label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2″>
                   {TRADE_OPTIONS.map(trade => (
                     <button
                       key={trade}
@@ -368,8 +368,8 @@ export default function JobDocumentation() {
                       onClick={() => setForm(f => ({ ...f, trade }))}
                       className={`px-3 py-1.5 rounded-xl text-xs font-bold active:scale-95 transition-all border ${
                         form.trade === trade
-                          ? "bg-teal-500/20 border-teal-500/40 text-teal-300"
-                          : "bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-600"
+                          ? "bg-teal-500/20 border-teal-500/40 text-teal-300″
+                          : "bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-600″
                       }`}
                     >
                       {trade}
@@ -378,16 +378,16 @@ export default function JobDocumentation() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3″>
                 <div>
                   <Label className="text-xs text-slate-500 mb-1.5 block">
-                    <Clock className="w-3 h-3 inline mr-1" />
+                    <Clock className="w-3 h-3 inline mr-1″ />
                     Duration (hrs)
                   </Label>
                   <Input
                     type="number"
                     inputMode="decimal"
-                    placeholder="1.5"
+                    placeholder="1.5″
                     value={form.duration}
                     onChange={e => setForm(f => ({ ...f, duration: e.target.value }))}
                     className="bg-slate-900 border-slate-700 text-white h-11 text-base"
@@ -395,13 +395,13 @@ export default function JobDocumentation() {
                 </div>
                 <div>
                   <Label className="text-xs text-slate-500 mb-1.5 block">
-                    <DollarSign className="w-3 h-3 inline mr-1" />
+                    <DollarSign className="w-3 h-3 inline mr-1″ />
                     Total Value ($)
                   </Label>
                   <Input
                     type="number"
                     inputMode="decimal"
-                    placeholder="250"
+                    placeholder="250″
                     value={form.totalValue}
                     onChange={e => setForm(f => ({ ...f, totalValue: e.target.value }))}
                     className="bg-slate-900 border-slate-700 text-white h-11 text-base"
@@ -435,13 +435,13 @@ export default function JobDocumentation() {
                     className="bg-slate-900 border-slate-700 text-white h-11 text-base"
                   />
                   {showMaterialSuggestions && filteredSuggestions.length > 0 && (
-                    <div className="absolute top-full mt-1 left-0 right-0 bg-slate-900 border border-slate-700 rounded-xl overflow-hidden z-10">
+                    <div className="absolute top-full mt-1 left-0 right-0 bg-slate-900 border border-slate-700 rounded-xl overflow-hidden z-10″>
                       {filteredSuggestions.slice(0, 4).map(s => (
                         <button
                           key={s}
                           type="button"
                           onClick={() => addMaterial(s)}
-                          className="w-full text-left px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 border-b border-slate-800 last:border-0"
+                          className="w-full text-left px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 border-b border-slate-800 last:border-0″
                         >
                           {s}
                         </button>
@@ -450,12 +450,12 @@ export default function JobDocumentation() {
                   )}
                 </div>
                 {materials.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-2">
+                  <div className="flex flex-wrap gap-1.5 mt-2″>
                     {materials.map(mat => (
-                      <span key={mat} className="flex items-center gap-1 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-300">
+                      <span key={mat} className="flex items-center gap-1 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-300″>
                         {mat}
                         <button type="button" onClick={() => setMaterials(prev => prev.filter(m => m !== mat))}>
-                          <X className="w-2.5 h-2.5 text-slate-500 hover:text-red-400" />
+                          <X className="w-2.5 h-2.5 text-slate-500 hover:text-red-400″ />
                         </button>
                       </span>
                     ))}
@@ -476,25 +476,25 @@ export default function JobDocumentation() {
             </div>
 
             {/* Customer Signature */}
-            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <PenLine className="w-4 h-4 text-teal-400" />
+            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700″>
+              <div className="flex items-center justify-between mb-4″>
+                <div className="flex items-center gap-2″>
+                  <PenLine className="w-4 h-4 text-teal-400″ />
                   <span className="text-white text-sm font-black">Customer Signature</span>
                 </div>
                 {signatureSaved && (
                   <span className="flex items-center gap-1 text-xs text-teal-400 font-bold">
-                    <CheckCircle className="w-3 h-3" /> Saved
+                    <CheckCircle className="w-3 h-3″ /> Saved
                   </span>
                 )}
               </div>
               {signatureSaved ? (
-                <div className="bg-slate-900 rounded-2xl h-28 flex items-center justify-center border border-teal-500/20">
+                <div className="bg-slate-900 rounded-2xl h-28 flex items-center justify-center border border-teal-500/20″>
                   <div className="text-center">
                     <p className="text-teal-400 font-black italic text-xl" style={{ fontFamily: "cursive" }}>
                       {form.customerName || "Customer"}
                     </p>
-                    <p className="text-slate-600 text-xs mt-1">
+                    <p className="text-slate-600 text-xs mt-1″>
                       Signed · {new Date().toLocaleDateString()}
                     </p>
                   </div>
@@ -508,7 +508,7 @@ export default function JobDocumentation() {
                     toast.success("Signature captured");
                   }}
                 >
-                  <PenLine className="w-6 h-6 text-slate-600" />
+                  <PenLine className="w-6 h-6 text-slate-600″ />
                   <p className="text-slate-500 text-sm font-semibold">Tap to capture signature</p>
                   <p className="text-slate-700 text-xs">Customer signs here on your phone</p>
                 </div>
@@ -516,12 +516,12 @@ export default function JobDocumentation() {
             </div>
 
             {/* Homeowner Rating */}
-            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700">
-              <div className="flex items-center gap-2 mb-4">
-                <Star className="w-4 h-4 text-teal-400" />
+            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700″>
+              <div className="flex items-center gap-2 mb-4″>
+                <Star className="w-4 h-4 text-teal-400″ />
                 <span className="text-white text-sm font-black">Customer Rating *</span>
               </div>
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-3″>
                 <StarRating value={rating} onChange={setRating} />
                 {rating > 0 && (
                   <p className="text-teal-400 text-sm font-bold">
@@ -532,15 +532,15 @@ export default function JobDocumentation() {
             </div>
 
             {/* Generate PDF */}
-            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-teal-400" />
+            <div className="bg-slate-800 rounded-3xl p-4 border border-slate-700″>
+              <div className="flex items-center justify-between mb-3″>
+                <div className="flex items-center gap-2″>
+                  <FileText className="w-4 h-4 text-teal-400″ />
                   <span className="text-white text-sm font-black">Professional Report</span>
                 </div>
                 {pdfReady && (
                   <span className="flex items-center gap-1 text-xs text-teal-400 font-bold">
-                    <CheckCircle className="w-3 h-3" /> Ready
+                    <CheckCircle className="w-3 h-3″ /> Ready
                   </span>
                 )}
               </div>
@@ -551,16 +551,16 @@ export default function JobDocumentation() {
                 type="button"
                 onClick={handleGeneratePdf}
                 disabled={generatingPdf || photos.length === 0}
-                className="w-full h-11 font-bold rounded-2xl border border-teal-500/30 text-teal-400"
+                className="w-full h-11 font-bold rounded-2xl border border-teal-500/30 text-teal-400″
                 style={{ background: "rgba(20,184,166,0.08)" }}
                 variant="ghost"
               >
                 {generatingPdf ? (
-                  <><Loader2 className="w-4 h-4 animate-spin mr-2" /> Generating...</>
+                  <><Loader2 className="w-4 h-4 animate-spin mr-2″ /> Generating...</>
                 ) : pdfReady ? (
-                  <><Download className="w-4 h-4 mr-2" /> Download PDF Report</>
+                  <><Download className="w-4 h-4 mr-2″ /> Download PDF Report</>
                 ) : (
-                  <><Sparkles className="w-4 h-4 mr-2" /> Generate Professional Report</>
+                  <><Sparkles className="w-4 h-4 mr-2″ /> Generate Professional Report</>
                 )}
               </Button>
             </div>
@@ -573,24 +573,24 @@ export default function JobDocumentation() {
                 borderColor: shareToTrustyPro ? "rgba(20,184,166,0.30)" : "#1E293B",
               }}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3″>
                 <button
                   type="button"
                   onClick={() => setShareToTrustyPro(v => !v)}
                   className="flex-shrink-0 w-12 h-7 rounded-full flex items-center transition-all"
                   style={{
-                    background: shareToTrustyPro ? "#14B8A6" : "#1E293B",
+                    background: shareToTrustyPro ? "#14B8A6″ : "#1E293B",
                     padding: 3,
                   }}
                 >
                   <div
-                    className="w-5 h-5 rounded-full bg-white shadow transition-transform duration-200"
+                    className="w-5 h-5 rounded-full bg-white shadow transition-transform duration-200″
                     style={{ transform: shareToTrustyPro ? "translateX(20px)" : "translateX(0)" }}
                   />
                 </button>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    <Shield className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                <div className="flex-1 min-w-0″>
+                  <div className="flex items-center gap-1.5″>
+                    <Shield className="w-4 h-4 text-teal-400 flex-shrink-0″ />
                     <span className={`text-sm font-black ${shareToTrustyPro ? "text-white" : "text-slate-400"}`}>
                       Share to TrustyPro Portfolio
                     </span>
@@ -603,16 +603,16 @@ export default function JobDocumentation() {
             </div>
 
             {/* Submit */}
-            <div className="pb-6">
+            <div className="pb-6″>
               <Button
                 type="submit"
                 className="w-full bg-teal-500 hover:bg-teal-400 text-white h-14 text-base font-black rounded-2xl gap-2 shadow-[0_8px_24px_rgba(20,184,166,0.3)] active:scale-[0.98] transition-transform"
                 disabled={!form.trade || photos.length === 0 || rating === 0}
               >
-                <CheckCircle className="w-5 h-5" />
+                <CheckCircle className="w-5 h-5″ />
                 Save Job Documentation
               </Button>
-              <p className="text-center text-xs text-slate-600 mt-2">
+              <p className="text-center text-xs text-slate-600 mt-2″>
                 Trade required · At least 1 photo · Customer rating
               </p>
             </div>

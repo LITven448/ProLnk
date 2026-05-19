@@ -55,7 +55,7 @@ export default function DFWHomeMaintenanceAppsGuide2026() {
           {[{name:'HomeZada',tag:'Manual tracking',score:'3/5'},{name:'Thumbtack',tag:'Ad hoc jobs',score:'2/5'},{name:'Angi',tag:'National, generic',score:'2/5'},{name:'ProLnk',tag:'DFW-native, income',score:'5/5'}].map(a => (
             <div key={a.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
               <div style={{ fontWeight: 700, color: a.name==='ProLnk'?'#F5E642':'#fff' }}>{a.name}</div>
-              <div style={{ fontSize: '.8rem', color: '#94a3b8', margin: '.25rem 0' }}>{a.tag}</div>
+              <div style={{ fontSize: '.8rem', color: '#94a3b8', margin: '.25rem 0′ }}>{a.tag}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{a.score}</div>
             </div>
           ))}
@@ -64,7 +64,7 @@ export default function DFWHomeMaintenanceAppsGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>What do you need from a home app?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {needs.map(n => (
-            <button key={n.id} onClick={() => setSelected(n.id)} style={{ background: selected === n.id ? '#F5E642' : '#1e3a5f', color: selected === n.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+            <button key={n.id} onClick={() => setSelected(n.id)} style={{ background: selected === n.id ? '#F5E642′ : '#1e3a5f', color: selected === n.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{n.label}</div>
               <div style={{ fontSize: '.85rem', opacity: .8, marginTop: '.25rem' }}>{n.desc}</div>
             </button>

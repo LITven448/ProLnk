@@ -169,7 +169,7 @@ export default function DFWSpiderGuide() {
             </select>
           </div>
           {rec && (
-            <div style={{ background: rec.callPro ? '#FF4444' : '#F5E642', borderRadius: 8, padding: 16 }}>
+            <div style={{ background: rec.callPro ? '#FF4444′ : '#F5E642', borderRadius: 8, padding: 16 }}>
               {rec.callPro && (
                 <div style={{ color: '#fff', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>⚠️ CALL A PROFESSIONAL</div>
               )}

@@ -54,20 +54,20 @@ export default function DFWKitchenRemodelTimeline2026() {
         {['small', 'medium', 'large'].map(s => (
           <button key={s} onClick={() => setScope(s)}
             style={{ marginRight: '0.5rem', padding: '0.4rem 1rem', borderRadius: '6px', border: '2px solid #F5E642',
-              background: scope === s ? '#F5E642' : 'transparent', color: scope === s ? '#0A1628' : '#F5E642', cursor: 'pointer', fontWeight: '700' }}>
+              background: scope === s ? '#F5E642′ : ’transparent', color: scope === s ? '#0A1628′ : '#F5E642', cursor: ’pointer', fontWeight: '700′ }}>
             {s.charAt(0).toUpperCase() + s.slice(1)}
           </button>
         ))}
       </div>
 
       <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
-        <span style={{ color: '#F5E642', fontWeight: '700' }}>Estimated Total: </span>
+        <span style={{ color: '#F5E642', fontWeight: '700′ }}>Estimated Total: </span>
         <span style={{ fontSize: '1.2rem' }}>{current.total}</span>
       </div>
 
       {current.phases.map((p, i) => (
         <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '0.75rem', background: '#0d1e38', borderRadius: '8px', padding: '0.75rem 1rem' }}>
-          <div style={{ flex: '1', fontWeight: '600' }}>{p.phase}</div>
+          <div style={{ flex: '1', fontWeight: '600′ }}>{p.phase}</div>
           <div style={{ color: '#F5E642', minWidth: '100px', textAlign: 'right' }}>{p.duration}</div>
           <div style={{ color: '#aaa', flex: '2', textAlign: 'right' }}>{p.notes}</div>
         </div>

@@ -19,7 +19,7 @@ const PLATFORM_DEVICES: Record<string, { hvac: string; water: string; filter: st
   alexa: { hvac: 'Ecobee SmartThermostat (native Alexa)', water: 'Moen Flo (Alexa skill)', filter: 'Filtrete Smart Filter + Alexa reminder', hub: 'Echo Show for dashboard' },
   google: { hvac: 'Nest Thermostat (native Google Home)', water: 'Phyn Plus (Google Home compatible)', filter: 'Google Calendar reminder + Nest air quality', hub: 'Google Home display' },
   apple: { hvac: 'Ecobee (HomeKit native)', water: 'Phyn Plus (HomeKit)', filter: 'Eve Energy + HomeKit automation', hub: 'HomePod mini' },
-  smartthings: { hvac: 'Ecobee + SmartThings integration', water: 'Moen Flo + SmartThings', filter: 'SmartThings + custom automation', hub: 'SmartThings Hub v3' },
+  smartthings: { hvac: 'Ecobee + SmartThings integration', water: 'Moen Flo + SmartThings', filter: 'SmartThings + custom automation', hub: 'SmartThings Hub v3′ },
   none: { hvac: 'Start with Ecobee — works standalone', water: 'Moen Flo — works standalone with app', filter: 'Set phone reminders as baseline', hub: 'Choose platform after first device' },
 };
 
@@ -73,8 +73,8 @@ export default function DFWSmartHomeMaintenanceGuide() {
               {PLATFORMS.map(p => (
                 <button key={p.value} onClick={() => setPlatform(p.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: platform === p.value ? '#F5E642' : '#0A1628',
-                    color: platform === p.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: platform === p.value ? '#F5E642′ : '#0A1628',
+                    color: platform === p.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {p.label}
                 </button>
               ))}
@@ -86,8 +86,8 @@ export default function DFWSmartHomeMaintenanceGuide() {
               {SYSTEM_COUNTS.map(s => (
                 <button key={s.value} onClick={() => setSystemCount(s.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: systemCount === s.value ? '#F5E642' : '#0A1628',
-                    color: systemCount === s.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: systemCount === s.value ? '#F5E642′ : '#0A1628',
+                    color: systemCount === s.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {s.label}
                 </button>
               ))}
@@ -105,9 +105,9 @@ export default function DFWSmartHomeMaintenanceGuide() {
             </div>
           )}
           {timeSaved && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #4CAF50' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #4CAF50′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>Estimated Time Saved Annually</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#4CAF50' }}>{timeSaved} hours/year</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#4CAF50′ }}>{timeSaved} hours/year</div>
               <div style={{ fontSize: 13, color: '#8899AA', marginTop: 4 }}>Through automated reminders, reduced missed maintenance, and streamlined service requests</div>
             </div>
           )}

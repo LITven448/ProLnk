@@ -65,8 +65,8 @@ export default function DFWEVChargerInstallGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 40 }}>
           {[
-            { icon: '🔌', title: 'Level 1 (120V)', detail: '3–5 miles/hr of charge. Uses standard outlet. Best for PHEVs or low-mileage drivers. No install needed.', cost: '$0' },
-            { icon: '⚡', title: 'Level 2 (240V)', detail: '20–30 miles/hr of charge. Requires dedicated 50A circuit. Most common home setup. EVSE unit required.', cost: '$500–$2,500' },
+            { icon: '🔌', title: 'Level 1 (120V)', detail: '3–5 miles/hr of charge. Uses standard outlet. Best for PHEVs or low-mileage drivers. No install needed.', cost: '$0′ },
+            { icon: '⚡', title: 'Level 2 (240V)', detail: '20–30 miles/hr of charge. Requires dedicated 50A circuit. Most common home setup. EVSE unit required.', cost: '$500–$2,500′ },
             { icon: '🚀', title: 'DC Fast (Not Home)', detail: 'DC fast charging is commercial only. Home installations are not feasible — requires 480V 3-phase power.', cost: 'N/A (commercial)' },
           ].map(c => (
             <div key={c.title} style={{ background: '#111E35', borderRadius: 12, padding: 20, border: '1px solid #1E2D4A' }}>
@@ -109,7 +109,7 @@ export default function DFWEVChargerInstallGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 20px' }}>🔧 Get Your Install Estimate</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>

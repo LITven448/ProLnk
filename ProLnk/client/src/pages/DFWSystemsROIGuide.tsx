@@ -28,7 +28,7 @@ export default function DFWSystemsROIGuide() {
     setResult({ valueAdded, roiPct, negotiationImpact: sys.negotiationImpact, urgency, note: sys.note });
   }
 
-  const urgencyColor = (u: string) => u?.startsWith('HIGH') ? '#ef4444' : u?.startsWith('MODERATE') ? '#f59e0b' : '#22c55e';
+  const urgencyColor = (u: string) => u?.startsWith('HIGH') ? '#ef4444′ : u?.startsWith(’MODERATE') ? '#f59e0b' : '#22c55e';
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
@@ -53,7 +53,7 @@ export default function DFWSystemsROIGuide() {
                 </div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>{p.note}</div>
-              <div style={{ background: '#1e0a0a', border: '1px solid #7f1d1d', borderRadius: 6, padding: '6px 12px', fontSize: 12, color: '#fca5a5' }}>
+              <div style={{ background: '#1e0a0a', border: '1px solid #7f1d1d', borderRadius: 6, padding: '6px 12px', fontSize: 12, color: '#fca5a5′ }}>
                 ⚠️ If deferred: {p.negotiationImpact}
               </div>
             </div>
@@ -61,12 +61,12 @@ export default function DFWSystemsROIGuide() {
         </div>
 
         <div style={{ background: '#111d33', border: '1px solid #1e3a5f', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>
             📊 Calculate Systems ROI
           </h2>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>System Type</label>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>System Type</label>
             <select
               value={selectedSystem}
               onChange={e => setSelectedSystem(e.target.value)}
@@ -79,12 +79,12 @@ export default function DFWSystemsROIGuide() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             {[
-              { label: 'Replacement Cost ($)', val: cost, set: setCost, ph: 'e.g. 12000' },
-              { label: 'Home Age (years)', val: homeAge, set: setHomeAge, ph: 'e.g. 22' },
-              { label: 'Months Until Listing', val: monthsToSell, set: setMonthsToSell, ph: 'e.g. 4' },
+              { label: 'Replacement Cost ($)', val: cost, set: setCost, ph: 'e.g. 12000′ },
+              { label: 'Home Age (years)', val: homeAge, set: setHomeAge, ph: 'e.g. 22′ },
+              { label: 'Months Until Listing', val: monthsToSell, set: setMonthsToSell, ph: 'e.g. 4′ },
             ].map(f => (
               <div key={f.label}>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>{f.label}</label>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>{f.label}</label>
                 <input
                   type="number"
                   value={f.val}
@@ -104,7 +104,7 @@ export default function DFWSystemsROIGuide() {
           </button>
 
           {result && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 24 }}>${result.valueAdded.toLocaleString()}</div>

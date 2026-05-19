@@ -82,12 +82,12 @@ export default function DFWTexasOakWiltGuide() {
             <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: `4px solid ${result.color}` }}>
               <p style={{ color: result.color, fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Risk Level: {result.level}</p>
               <p style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}><strong>Treatment:</strong> {result.treatment}</p>
-              <p style={{ color: '#F5E642' }}><strong>Timing:</strong> {result.timing}</p>
+              <p style={{ color: '#F5E642′ }}><strong>Timing:</strong> {result.timing}</p>
             </div>
           )}
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-          <strong style={{ color: '#F5E642' }}>ProLnk Note:</strong> Oak wilt treatment requires a certified arborist. Trenching to break root grafts must be done by a licensed tree care professional. ProLnk connects you with verified DFW arborists.
+          <strong style={{ color: '#F5E642′ }}>ProLnk Note:</strong> Oak wilt treatment requires a certified arborist. Trenching to break root grafts must be done by a licensed tree care professional. ProLnk connects you with verified DFW arborists.
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ export default function DFWHeatWaveGuide() {
   const [showResults, setShowResults] = useState(false);
 
   const riskScore = (homeType === 'old_single' || homeType === 'manufactured' ? 2 : homeType === 'townhome' ? 1 : 0) + (hvacAge === 'old' ? 3 : hvacAge === 'mid' ? 1 : 0);
-  const risk = riskScore >= 4 ? { label: 'HIGH RISK', color: '#ef4444' } : riskScore >= 2 ? { label: 'MODERATE RISK', color: '#f59e0b' } : { label: 'LOWER RISK', color: '#22c55e' };
+  const risk = riskScore >= 4 ? { label: 'HIGH RISK', color: '#ef4444′ } : riskScore >= 2 ? { label: ’MODERATE RISK', color: '#f59e0b' } : { label: 'LOWER RISK', color: '#22c55e' };
 
   const preventionList = [
     'Replace AC filter every 30 days during summer (dirty filter = 15% efficiency loss)',
@@ -50,13 +50,13 @@ export default function DFWHeatWaveGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>🌡️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Heat Wave Home Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: 0 }}>100°F+ Day Protocols for North Texas Homes</p>
       </div>
 
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0′ }}>
         <div style={{ background: '#ef4444', color: '#fff', borderRadius: 10, padding: '14px 20px', marginBottom: 28, fontWeight: 700, fontSize: 15 }}>
           🌡️ DFW FACT: Dallas averages 16 days above 100°F per summer. Heat indexes frequently reach 110°F. Your AC is not optional equipment — it is life safety infrastructure.
         </div>

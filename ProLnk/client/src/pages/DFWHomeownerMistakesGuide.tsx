@@ -4,7 +4,7 @@ const MISTAKES_BY_STAGE: Record<string, { title: string; detail: string; fix: st
   '0-1': [
     { title: 'Skipping foundation watering', detail: 'DFW clay soil shrinks in summer — cracks appear fast.', fix: 'Set a soaker hose on a timer 3-4 feet from foundation, run 30 min/day in summer.' },
     { title: 'Ignoring the first pest inspection', detail: 'Termites and roaches are common in DFW within year one.', fix: 'Schedule a pest inspection at move-in and set up quarterly treatment.' },
-    { title: 'Not changing HVAC filters monthly in summer', detail: 'DFW summers run your AC 24/7 — filters clog in weeks.', fix: 'Buy a 12-pack of 1" filters. Set a phone reminder for the 1st of each month May-Sep.' },
+    { title: 'Not changing HVAC filters monthly in summer', detail: 'DFW summers run your AC 24/7 — filters clog in weeks.', fix: 'Buy a 12-pack of 1″ filters. Set a phone reminder for the 1st of each month May-Sep.' },
   ],
   '1-3': [
     { title: 'Using wrong caulk in wet areas', detail: 'Latex caulk fails in DFW humidity — mold follows fast.', fix: 'Use 100% silicone for showers, tubs, and sink edges. Check annually.' },
@@ -18,7 +18,7 @@ const MISTAKES_BY_STAGE: Record<string, { title: string; detail: string; fix: st
   ],
   '7+': [
     { title: 'Ignoring water heater age', detail: 'DFW hard water destroys water heaters in 8-10 years. Failure means flooding.', fix: 'Check install date on the unit. Replace proactively at year 10. Add a drip pan.' },
-    { title: 'Not re-grading soil away from foundation', detail: 'Years of watering shifts soil — water starts flowing toward house instead of away.', fix: 'Check that soil slopes 6" downward over 10 feet away from foundation.' },
+    { title: 'Not re-grading soil away from foundation', detail: 'Years of watering shifts soil — water starts flowing toward house instead of away.', fix: 'Check that soil slopes 6″ downward over 10 feet away from foundation.' },
     { title: 'Deferred tree trimming near roof', detail: 'DFW storms bring down limbs — overhanging trees are insurance claims waiting to happen.', fix: 'Trim any branch within 10 feet of roof. Budget $300-600/year for large-tree homes.' },
   ],
 };
@@ -45,9 +45,9 @@ export default function DFWHomeownerMistakesGuide() {
           <div style={{ display: 'grid', gap: 12 }}>
             {Object.keys(MISTAKES_BY_STAGE).map(stage => (
               <label key={stage} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: 8, background: years === stage ? '#1e3a5f' : '#162035', border: `2px solid ${years === stage ? '#F5E642' : '#334155'}` }}>
-                <input type="radio" name="years" value={stage} checked={years === stage} onChange={() => setYears(stage)} style={{ accentColor: '#F5E642' }} />
+                <input type="radio" name="years" value={stage} checked={years === stage} onChange={() => setYears(stage)} style={{ accentColor: '#F5E642′ }} />
                 <span style={{ fontWeight: years === stage ? 700 : 400 }}>
-                  {stage === '0-1' ? '🆕 Less than 1 year' : stage === '1-3' ? '🌱 1–3 years' : stage === '3-7' ? '🏡 3–7 years' : '🏆 7+ years'}
+                  {stage === '0-1′ ? '🆕 Less than 1 year' : stage === '1-3' ? '🌱 1–3 years' : stage === '3-7' ? '🏡 3–7 years' : '🏆 7+ years'}
                 </span>
               </label>
             ))}
@@ -61,12 +61,12 @@ export default function DFWHomeownerMistakesGuide() {
         {submitted && (
           <div>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>Most Common Mistakes at Your Stage</h2>
-            <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>Ownership stage: {years === '0-1' ? 'First year' : years === '1-3' ? 'Years 1–3' : years === '3-7' ? 'Years 3–7' : 'Year 7+'}</p>
+            <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>Ownership stage: {years === '0-1′ ? ’First year' : years === '1-3′ ? ’Years 1–3′ : years === '3-7' ? ’Years 3–7′ : ’Year 7+'}</p>
             {mistakes.map((m, i) => (
-              <div key={i} style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', marginBottom: 14, borderLeft: '4px solid #ef4444' }}>
+              <div key={i} style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', marginBottom: 14, borderLeft: '4px solid #ef4444′ }}>
                 <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>🚫 Mistake {i + 1}: {m.title}</div>
                 <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 10 }}>{m.detail}</div>
-                <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: 13, borderLeft: '3px solid #4ade80' }}>
+                <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: 13, borderLeft: '3px solid #4ade80′ }}>
                   <span style={{ color: '#4ade80', fontWeight: 700 }}>✅ How to avoid: </span>{m.fix}
                 </div>
               </div>

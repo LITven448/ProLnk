@@ -4,10 +4,10 @@ const homeSizes = ['1 Bedroom / Condo', '2–3 Bedrooms', '4+ Bedrooms', 'Guest 
 const guestFrequencies = ['Rarely (1–2x/year)', 'Occasionally (3–5x/year)', 'Frequently (6+/year)', 'Extended Stays (weeks)'];
 
 const plans: Record<string, { steps: string[]; cost: string }> = {
-  'Rarely (1–2x/year)': { steps: ['Invest in one quality air mattress + frame for flex use', 'Stock a "guest basket": toiletries, phone chargers, local snacks', 'Brief guests on DFW weather — out-of-state visitors are often shocked by summer heat', 'Add a small fan/white noise machine for guest sleeping comfort'], cost: '$150–$600' },
-  'Occasionally (3–5x/year)': { steps: ['Dedicate one bathroom as the "guest bathroom" with fresh towels stored inside', 'Install a keypad lock so guests can self-check-in', 'Create a simple one-page DFW guide: weather, things to do, driving tips', 'Add blackout curtains in guest room — DFW sun rises early and is intense'], cost: '$400–$1,800' },
-  'Frequently (6+/year)': { steps: ['Upgrade to a proper guest bedroom with quality mattress and bedding', 'Add a mini fridge and coffee station in guest room for independence', 'Install a split HVAC or smart thermostat zone for guest room comfort', 'Stock a welcome basket with DFW must-haves: sunscreen, bug spray, local restaurant list'], cost: '$1,200–$5,000' },
-  'Extended Stays (weeks)': { steps: ['Add a dedicated guest suite with private bath if space allows', 'Provide parking pass or designated driveway space — DFW suburban parking is tricky', 'Install a smart TV with streaming accounts for longer stays', 'Create shared storage space and closet area for extended guest luggage'], cost: '$2,500–$15,000' },
+  'Rarely (1–2x/year)': { steps: ['Invest in one quality air mattress + frame for flex use', 'Stock a "guest basket": toiletries, phone chargers, local snacks', 'Brief guests on DFW weather — out-of-state visitors are often shocked by summer heat', 'Add a small fan/white noise machine for guest sleeping comfort'], cost: '$150–$600′ },
+  'Occasionally (3–5x/year)': { steps: ['Dedicate one bathroom as the "guest bathroom" with fresh towels stored inside', 'Install a keypad lock so guests can self-check-in', 'Create a simple one-page DFW guide: weather, things to do, driving tips', 'Add blackout curtains in guest room — DFW sun rises early and is intense'], cost: '$400–$1,800′ },
+  'Frequently (6+/year)': { steps: ['Upgrade to a proper guest bedroom with quality mattress and bedding', 'Add a mini fridge and coffee station in guest room for independence', 'Install a split HVAC or smart thermostat zone for guest room comfort', 'Stock a welcome basket with DFW must-haves: sunscreen, bug spray, local restaurant list'], cost: '$1,200–$5,000′ },
+  'Extended Stays (weeks)': { steps: ['Add a dedicated guest suite with private bath if space allows', 'Provide parking pass or designated driveway space — DFW suburban parking is tricky', 'Install a smart TV with streaming accounts for longer stays', 'Create shared storage space and closet area for extended guest luggage'], cost: '$2,500–$15,000′ },
 };
 
 export default function DFWHomeForGuests() {
@@ -51,7 +51,7 @@ export default function DFWHomeForGuests() {
               {guestFrequencies.map(f => <option key={f} value={f}>{f}</option>)}
             </select>
           </div>
-          <button onClick={() => setSubmitted(true)} disabled={!homeSize || !frequency} style={{ width: '100%', padding: '12px', backgroundColor: homeSize && frequency ? '#0A1628' : '#E2E8F0', color: homeSize && frequency ? '#F5E642' : '#9AABB8', fontWeight: 700, border: 'none', borderRadius: 8, cursor: homeSize && frequency ? 'pointer' : 'not-allowed', fontSize: 15 }}>
+          <button onClick={() => setSubmitted(true)} disabled={!homeSize || !frequency} style={{ width: '100%', padding: '12px', backgroundColor: homeSize && frequency ? '#0A1628′ : '#E2E8F0', color: homeSize && frequency ? '#F5E642' : '#9AABB8', fontWeight: 700, border: ’none', borderRadius: 8, cursor: homeSize && frequency ? 'pointer' : 'not-allowed', fontSize: 15 }}>
             Generate My Guest Plan
           </button>
         </div>
@@ -66,7 +66,7 @@ export default function DFWHomeForGuests() {
               </div>
             ))}
             <div style={{ marginTop: 16, padding: '12px 16px', backgroundColor: '#F8F9FA', borderRadius: 8, fontSize: 14 }}>
-              <span style={{ color: '#5A6878' }}>Estimated Investment: </span>
+              <span style={{ color: '#5A6878′ }}>Estimated Investment: </span>
               <span style={{ color: '#0A1628', fontWeight: 700 }}>{result.cost}</span>
             </div>
           </div>

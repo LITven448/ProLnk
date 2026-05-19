@@ -31,7 +31,7 @@ const INCOME_STREAMS = [
 
 export default function CheckoutCancel() {
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>
       {/* Nav */}
       <div style={{ padding: "16px 32px", borderBottom: "1px solid rgba(245,240,232,0.08)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontSize: 20, fontWeight: 700 }}>ProLnk</span>
@@ -41,7 +41,7 @@ export default function CheckoutCancel() {
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "60px 24px" }}>
         {/* Hero */}
         <div style={{ textAlign: "center", marginBottom: 52 }}>
-          <div style={{ display: "inline-block", background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 100, padding: "6px 18px", fontSize: 13, fontWeight: 700, color: "#10B981", marginBottom: 20 }}>
+          <div style={{ display: "inline-block", background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 100, padding: "6px 18px", fontSize: 13, fontWeight: 700, color: "#10B981″, marginBottom: 20 }}>
             Your spot is still reserved
           </div>
           <h1 style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>
@@ -49,14 +49,14 @@ export default function CheckoutCancel() {
             <span style={{ color: "rgba(245,240,232,0.5)" }}>Big decisions take a minute.</span>
           </h1>
           <p style={{ fontSize: 17, color: "rgba(245,240,232,0.55)", lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>
-            Your founding network spot hasn't been given away. Come back when you're ready — checkout picks up right where you left off.
+            Your founding network spot hasn't been given away. Come back when you’re ready — checkout picks up right where you left off.
           </p>
         </div>
 
         {/* Resume CTA — primary */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <Link href="/checkout">
-            <button style={{ background: "#E8A020", color: "#0A1628", border: "none", borderRadius: 100, padding: "16px 48px", fontSize: 16, fontWeight: 700, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 10 }}>
+            <button style={{ background: "#E8A020″, color: "#0A1628", border: "none", borderRadius: 100, padding: "16px 48px", fontSize: 16, fontWeight: 700, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 10 }}>
               Resume checkout — start my free trial
               <ChevronRight style={{ width: 18, height: 18 }} />
             </button>
@@ -87,7 +87,7 @@ export default function CheckoutCancel() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
             {INCOME_STREAMS.map(({ icon: Icon, title, desc }) => (
               <div key={title} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 14, padding: "18px 16px" }}>
-                <Icon style={{ width: 18, height: 18, color: "#E8A020", marginBottom: 10 }} />
+                <Icon style={{ width: 18, height: 18, color: "#E8A020″, marginBottom: 10 }} />
                 <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{title}</div>
                 <div style={{ fontSize: 13, color: "rgba(245,240,232,0.5)", lineHeight: 1.5 }}>{desc}</div>
               </div>
@@ -98,11 +98,11 @@ export default function CheckoutCancel() {
         {/* Bottom CTA row */}
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
           <Link href="/checkout">
-            <button style={{ background: "#E8A020", color: "#0A1628", border: "none", borderRadius: 100, padding: "14px 36px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>
+            <button style={{ background: "#E8A020″, color: "#0A1628", border: "none", borderRadius: 100, padding: "14px 36px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>
               Resume checkout →
             </button>
           </Link>
-          <a href="mailto:support@prolnk.io?subject=Founding%20Network%20Question" style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 100, padding: "14px 28px", fontSize: 15, color: "#F5F0E8", textDecoration: "none", fontWeight: 600 }}>
+          <a href="mailto:support@prolnk.io?subject=Founding%20Network%20Question" style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 100, padding: "14px 28px", fontSize: 15, color: "#F5F0E8″, textDecoration: "none", fontWeight: 600 }}>
             <MessageCircle style={{ width: 16, height: 16 }} />
             Have questions? Email us
           </a>

@@ -35,7 +35,7 @@ export default function DFWRooferCertificationGuide() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontWeight: 700, fontSize: 13, letterSpacing: 2 }}>PROLNK CONTRACTOR GUIDES — DFW ROOFING</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 8px', lineHeight: 1.1 }}>DFW Roofer Certification Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: '0 0 12px' }}>Texas has no state roofing license — but the right certifications are the difference between competing on price and winning on value.</p>
-        <div style={{ background: '#1a2e4a', borderRadius: 10, padding: '14px 18px', marginBottom: 40, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#1a2e4a', borderRadius: 10, padding: '14px 18px', marginBottom: 40, border: '1px solid #F5E642′ }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>Texas Law: </span>
           <span style={{ color: '#cbd5e1', fontSize: 14 }}>No state license required, but many cities require registration + insurance. Storm damage contractors must follow HB 2106 disclosure rules.</span>
         </div>
@@ -66,15 +66,15 @@ export default function DFWRooferCertificationGuide() {
                 </div>
                 <p style={{ color: '#94a3b8', fontSize: 13, margin: '0 0 10px' }}>{cert.description}</p>
                 <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-                  <div style={{ fontSize: 13, color: '#4ade80' }}>📈 {cert.revenue}</div>
-                  <div style={{ fontSize: 13, color: '#fbbf24' }}>💵 Cost: {cert.cost}</div>
+                  <div style={{ fontSize: 13, color: '#4ade80′ }}>📈 {cert.revenue}</div>
+                  <div style={{ fontSize: 13, color: '#fbbf24′ }}>💵 Cost: {cert.cost}</div>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642' }}>
+        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🎯 Your Certification Priority List</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Current business stage</label>

@@ -37,13 +37,13 @@ export default function DFWHomeResolutionsGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🏡 Personalize Your Resolutions</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>HOME AGE (years)</label>
-            <input type="number" value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 12" style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 12px', width: '100%', boxSizing: 'border-box' }} />
+            <input type="number" value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 12″ style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 12px', width: '100%', boxSizing: 'border-box' }} />
           </div>
           <div>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>HOME FEATURES</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {features.map(f => (
-                <button key={f} onClick={() => toggle(f)} style={{ backgroundColor: selected.includes(f) ? '#F5E642' : '#0A1628', color: selected.includes(f) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 20, padding: '6px 14px', cursor: 'pointer', fontSize: 13 }}>{f}</button>
+                <button key={f} onClick={() => toggle(f)} style={{ backgroundColor: selected.includes(f) ? '#F5E642′ : '#0A1628', color: selected.includes(f) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 20, padding: '6px 14px', cursor: ’pointer', fontSize: 13 }}>{f}</button>
               ))}
             </div>
           </div>
@@ -52,19 +52,19 @@ export default function DFWHomeResolutionsGuide() {
         <div style={{ marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>✅ Your 2026 Home Resolutions</h2>
           {filtered.map((r, i) => (
-            <div key={r.id} style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
+            <div key={r.id} style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>{i + 1}. {r.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>{r.detail}</div>
             </div>
           ))}
           {selected.includes('Pool') && (
-            <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>🏊 Pool: Schedule Pre-Season Service</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>Book March pool opening service now. DFW pool techs are booked 6–8 weeks out by April. Equipment inspections prevent costly mid-summer failures.</div>
             </div>
           )}
           {selected.includes('Irrigation System') && (
-            <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>💦 Irrigation: Smart Controller Upgrade</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>Rain Bird or Rachio smart controllers save 30–50% on DFW water bills. Qualify for Oncor rebates up to $200.</div>
             </div>

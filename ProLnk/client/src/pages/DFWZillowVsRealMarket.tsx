@@ -71,7 +71,7 @@ export default function DFWZillowVsRealMarket() {
     setResult(getZillowAnalysis(area, homeType));
   }
 
-  const accuracyColor = result ? (result.accuracy.startsWith('Poor') || result.accuracy.startsWith('Very') ? '#ef4444' : result.accuracy.startsWith('Fair') ? '#f59e0b' : '#22c55e') : '#fff';
+  const accuracyColor = result ? (result.accuracy.startsWith('Poor') || result.accuracy.startsWith('Very') ? '#ef4444′ : result.accuracy.startsWith(’Fair') ? '#f59e0b' : '#22c55e') : '#fff';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' }}>
@@ -82,7 +82,7 @@ export default function DFWZillowVsRealMarket() {
 
         <div style={{ background: '#0f1f3a', border: '1px solid #ef4444', borderRadius: 16, padding: 24, marginBottom: 28 }}>
           <div style={{ color: '#ef4444', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Why Texas Is Zillow's Hardest Market</div>
-          <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 12 }}>Texas is a <strong style={{ color: '#e2e8f0' }}>non-disclosure state</strong> — sale prices are not recorded in public records. Zillow's algorithm cannot see what homes actually sold for. Instead, it relies on listing prices, tax assessments, and proprietary models. In DFW — one of the fastest-appreciating markets in the US — this creates systematic errors that can mislead buyers and sellers by tens of thousands of dollars.</p>
+          <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 12 }}>Texas is a <strong style={{ color: '#e2e8f0′ }}>non-disclosure state</strong> — sale prices are not recorded in public records. Zillow’s algorithm cannot see what homes actually sold for. Instead, it relies on listing prices, tax assessments, and proprietary models. In DFW — one of the fastest-appreciating markets in the US — this creates systematic errors that can mislead buyers and sellers by tens of thousands of dollars.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[['Median DFW Error', '4–8%', 'For standard homes'], ['Luxury DFW Error', '8–15%+', 'For $750K+ homes'], ['New Construction', '10–20%+', 'Upgrades not captured']].map(([label, stat, sub]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>

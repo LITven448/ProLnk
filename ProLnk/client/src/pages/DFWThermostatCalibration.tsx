@@ -27,7 +27,7 @@ export default function DFWThermostatCalibration() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>☀️ Why DFW Homes Have This Problem</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>☀️ Why DFW Homes Have This Problem</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>
             DFW has 230+ sunny days per year. Thermostats on south or west-facing walls receive significant radiant heat — even without direct sunlight. A thermostat reading 78°F on such a wall may be measuring the wall temperature, not the room air temperature. Your AC shuts off because the thermostat is satisfied, but the rest of the house is 81°F.
           </p>
@@ -40,22 +40,22 @@ export default function DFWThermostatCalibration() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🌡️ Check Your Thermostat</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Thermostat Type</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Thermostat Type</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {[['smart', '📱 Smart (Nest, Ecobee, etc.)'], ['mechanical', '🔩 Older / Mechanical']].map(([val, label]) => (
                   <button key={val} onClick={() => setThermostatType(val)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${thermostatType === val ? '#F5E642' : '#1E3A5F'}`, background: thermostatType === val ? '#F5E642' : 'transparent', color: thermostatType === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${thermostatType === val ? '#F5E642' : '#1E3A5F'}`, background: thermostatType === val ? '#F5E642′ : ’transparent', color: thermostatType === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {label}
                   </button>
                 ))}
               </div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Thermostat Wall Location</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Thermostat Wall Location</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {[['sunExposed', '☀️ South or West Wall'], ['interior', '🏠 Interior / Hallway Wall']].map(([val, label]) => (
                   <button key={val} onClick={() => setLocation(val)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${location === val ? '#F5E642' : '#1E3A5F'}`, background: location === val ? '#F5E642' : 'transparent', color: location === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${location === val ? '#F5E642' : '#1E3A5F'}`, background: location === val ? '#F5E642′ : ’transparent', color: location === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {label}
                   </button>
                 ))}

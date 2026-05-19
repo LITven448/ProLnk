@@ -63,7 +63,7 @@ export default function DFWContractorDisputeGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {disputes.map(d => (
             <button key={d.id} onClick={() => setSelected(selected === d.id ? null : d.id)}
-              style={{ background: '#0f2340', border: '2px solid', borderColor: selected === d.id ? '#F5E642' : '#1e3a5f', borderRadius: 12, padding: 16, cursor: 'pointer', color: '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
+              style={{ background: '#0f2340', border: '2px solid', borderColor: selected === d.id ? '#F5E642′ : '#1e3a5f', borderRadius: 12, padding: 16, cursor: ’pointer', color: '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ fontSize: 24 }}>{d.icon}</span>
               <span style={{ fontWeight: 700, fontSize: 14 }}>{d.label}</span>
             </button>
@@ -88,7 +88,7 @@ export default function DFWContractorDisputeGuide2026() {
         )}
 
         <div style={{ background: '#0f2340', border: '1px solid #1e3a5f', borderRadius: 16, padding: 20 }}>
-          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642' }}>⭐ ProLnk Rating System</p>
+          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642′ }}>⭐ ProLnk Rating System</p>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>ProLnk's verified rating system surfaces dispute history before you hire. Contractors with unresolved disputes are flagged or removed. All project documentation is in your Health Vault — ready if you ever need it.</p>
         </div>
       </div>

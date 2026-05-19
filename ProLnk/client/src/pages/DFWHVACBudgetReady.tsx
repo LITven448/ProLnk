@@ -22,7 +22,7 @@ export default function DFWHVACBudgetReady() {
   const budgetScore = savingsNum >= recommended ? 100 :
     savingsNum >= 1000 ? 70 :
     savingsNum >= 500 ? 40 : 15;
-  const scoreColor = budgetScore >= 80 ? '#22c55e' : budgetScore >= 50 ? '#F5E642' : '#ef4444';
+  const scoreColor = budgetScore >= 80 ? '#22c55e' : budgetScore >= 50 ? '#F5E642′ : '#ef4444';
   const scoreLabel = budgetScore >= 80 ? '💰 Budget Ready' : budgetScore >= 50 ? '⚠️ Partially Covered' : '🚨 Under-Budgeted — High Risk';
 
   return (
@@ -30,7 +30,7 @@ export default function DFWHVACBudgetReady() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>💰</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0' }}>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0′ }}>
             Is Your HVAC Budget Adequate for DFW?
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
@@ -81,7 +81,7 @@ export default function DFWHVACBudgetReady() {
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
               <div style={{ fontSize: '2.5rem', fontWeight: 900, color: scoreColor }}>{scoreLabel}</div>
               <div style={{ color: '#94a3b8', marginTop: '0.5rem', fontSize: '0.9rem' }}>
-                You have: <strong style={{ color: '#fff' }}>${savingsNum.toLocaleString()}</strong> saved | Recommended minimum: <strong style={{ color: '#F5E642' }}>${recommended.toLocaleString()}</strong>
+                You have: <strong style={{ color: '#fff' }}>${savingsNum.toLocaleString()}</strong> saved | Recommended minimum: <strong style={{ color: '#F5E642′ }}>${recommended.toLocaleString()}</strong>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>

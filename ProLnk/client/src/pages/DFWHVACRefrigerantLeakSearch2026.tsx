@@ -82,7 +82,7 @@ export default function DFWHVACRefrigerantLeakSearch2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🎯 My Leak Symptom</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             {symptoms.map((s) => (
-              <button key={s.id} onClick={() => handleSymptom(s.id)} style={{ backgroundColor: symptom === s.id ? '#F5E642' : '#1a2f50', color: symptom === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => handleSymptom(s.id)} style={{ backgroundColor: symptom === s.id ? '#F5E642′ : '#1a2f50', color: symptom === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s.label}</button>
             ))}
           </div>
           {current && (

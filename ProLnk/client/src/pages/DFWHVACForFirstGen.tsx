@@ -58,7 +58,7 @@ export default function DFWHVACForFirstGen() {
         <div style={{ background: '#111f3a', border: '1.5px solid #34d399', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '1.5rem' }}>
           <p style={{ color: '#34d399', fontWeight: 700, marginBottom: '0.25rem', fontSize: '0.95rem' }}>💬 You're Not Behind</p>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
-            Most homeowners — first-gen or not — don't really understand their HVAC system. The difference is you're asking. That makes you ahead of the curve.
+            Most homeowners — first-gen or not — don't really understand their HVAC system. The difference is you’re asking. That makes you ahead of the curve.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function DFWHVACForFirstGen() {
                 onClick={() => setSelected(selected === i ? null : i)}
                 style={{
                   background: selected === i ? '#1a3a5c' : '#111f3a',
-                  border: selected === i ? '1.5px solid #F5E642' : '1.5px solid #1e3a5f',
+                  border: selected === i ? '1.5px solid #F5E642′ : '1.5px solid #1e3a5f',
                   borderRadius: 10,
                   padding: '0.9rem 1.25rem',
                   cursor: 'pointer',
@@ -83,7 +83,7 @@ export default function DFWHVACForFirstGen() {
                 }}
               >
                 <span style={{ fontWeight: 600, color: '#e2e8f0', fontSize: '0.97rem' }}>🙋 {s.label}</span>
-                <span style={{ color: '#F5E642' }}>{selected === i ? '▲' : '▼'}</span>
+                <span style={{ color: '#F5E642′ }}>{selected === i ? '▲' : '▼'}</span>
               </div>
               {selected === i && (
                 <div style={{ background: '#0d1f38', borderRadius: '0 0 10px 10px', padding: '1rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>

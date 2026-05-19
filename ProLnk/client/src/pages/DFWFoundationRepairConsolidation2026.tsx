@@ -19,9 +19,9 @@ export default function DFWFoundationRepairConsolidation2026() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600' }}>🏗️ DFW FOUNDATION GUIDE 2026</div>
-        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' }}>Post-Repair Foundation Consolidation in DFW</h1>
-        <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>After piers are installed, DFW clay soil goes through a consolidation period. Here's what's normal — and what isn't.</p>
+        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600′ }}>🏗️ DFW FOUNDATION GUIDE 2026</div>
+        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ }}>Post-Repair Foundation Consolidation in DFW</h1>
+        <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>After piers are installed, DFW clay soil goes through a consolidation period. Here's what’s normal — and what isn’t.</p>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>📅 The Consolidation Timeline</h2>
@@ -30,7 +30,7 @@ export default function DFWFoundationRepairConsolidation2026() {
               <span style={{ fontSize: '18px', minWidth: '24px' }}>{icon}</span>
               <div>
                 <div style={{ fontWeight: '700', color: '#F5E642', fontSize: '14px', marginBottom: '4px' }}>{period}</div>
-                <div style={{ color: '#94a3b8', fontSize: '13px', lineHeight: '1.5' }}>{desc}</div>
+                <div style={{ color: '#94a3b8', fontSize: '13px', lineHeight: '1.5′ }}>{desc}</div>
               </div>
             </div>
           ))}
@@ -68,12 +68,12 @@ export default function DFWFoundationRepairConsolidation2026() {
             style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 24px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' }}>
             Get My Monitoring Guidance →
           </button>
-          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7' }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7′ }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '20px' }}>
           <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '8px' }}>🔒 ProLnk Home Health Vault</div>
-          <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6' }}>Store your foundation repair report, pre/post elevation readings, warranty documents, and monitoring photos in ProLnk's Home Health Vault. This data follows the home forever and is transferable to future buyers — often increasing home value at resale.</div>
+          <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6′ }}>Store your foundation repair report, pre/post elevation readings, warranty documents, and monitoring photos in ProLnk’s Home Health Vault. This data follows the home forever and is transferable to future buyers — often increasing home value at resale.</div>
         </div>
       </div>
     </div>

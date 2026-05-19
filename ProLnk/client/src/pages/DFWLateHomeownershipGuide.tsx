@@ -46,7 +46,7 @@ export default function DFWLateHomeownershipGuide() {
             <div key={i} style={{ background: '#fff', border: '1px solid #e0e0e0', borderRadius: 10, padding: 24, display: 'flex', gap: 20 }}>
               <div style={{ fontSize: 32, flexShrink: 0 }}>{c.icon}</div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6, color: '#0A1628' }}>{c.title}</div>
+                <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6, color: '#0A1628′ }}>{c.title}</div>
                 <div style={{ color: '#555', lineHeight: 1.7 }}>{c.detail}</div>
               </div>
             </div>
@@ -76,11 +76,11 @@ export default function DFWLateHomeownershipGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>Years in This Home</label>
-              <input value={yearsOwned} onChange={e => setYearsOwned(e.target.value)} placeholder="e.g. 22" style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={yearsOwned} onChange={e => setYearsOwned(e.target.value)} placeholder="e.g. 22″ style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>Estimated Home Equity ($)</label>
-              <input value={homeEquity} onChange={e => setHomeEquity(e.target.value)} placeholder="e.g. 380000" style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={homeEquity} onChange={e => setHomeEquity(e.target.value)} placeholder="e.g. 380000″ style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>My Life Stage Goal</label>

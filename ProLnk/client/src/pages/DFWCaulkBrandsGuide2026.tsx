@@ -57,38 +57,38 @@ export default function DFWCaulkBrandsGuide2026() {
   const result = scenarios.find(s => s.location === selected);
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", padding: "32px 16px", fontFamily: "sans-serif", color: "#fff" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", padding: "32px 16px", fontFamily: "sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>🔩</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "0 0 8px" }}>DFW Caulk Brand Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 15 }}>Right caulk for every DFW application — hard water, foundation movement, Texas heat</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "0 0 8px" }}>DFW Caulk Brand Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Right caulk for every DFW application — hard water, foundation movement, Texas heat</p>
         </div>
 
         <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: 16, marginBottom: 24, border: "1px solid #1e3a5f" }}>
-          <p style={{ color: "#F5E642", fontWeight: 700, fontSize: 13, margin: "0 0 6px" }}>🏗️ DFW Caulk Challenge</p>
-          <p style={{ color: "#94a3b8", fontSize: 13, margin: 0 }}>DFW homes face three unique challenges: hard water (300+ ppm) that destroys latex caulk, expansive clay soil that shifts foundations, and 100°F summers that crack standard caulk. Never use all-purpose latex caulk for DFW wet areas.</p>
+          <p style={{ color: "#F5E642″, fontWeight: 700, fontSize: 13, margin: "0 0 6px" }}>🏗️ DFW Caulk Challenge</p>
+          <p style={{ color: "#94a3b8″, fontSize: 13, margin: 0 }}>DFW homes face three unique challenges: hard water (300+ ppm) that destroys latex caulk, expansive clay soil that shifts foundations, and 100°F summers that crack standard caulk. Never use all-purpose latex caulk for DFW wet areas.</p>
         </div>
 
-        <h2 style={{ fontSize: 16, color: "#F5E642", marginBottom: 12 }}>Select Location + Challenge</h2>
+        <h2 style={{ fontSize: 16, color: "#F5E642″, marginBottom: 12 }}>Select Location + Challenge</h2>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 24 }}>
           {scenarios.map(s => (
             <button key={s.location} onClick={() => setSelected(s.location)}
-              style={{ backgroundColor: selected === s.location ? "#F5E642" : "#111f3a", color: selected === s.location ? "#0A1628" : "#fff", border: "1px solid #1e3a5f", borderRadius: 10, padding: "12px 14px", cursor: "pointer", fontWeight: 600, fontSize: 12, textAlign: "left" }}>
+              style={{ backgroundColor: selected === s.location ? "#F5E642″ : "#111f3a", color: selected === s.location ? "#0A1628" : "#fff", border: "1px solid #1e3a5f", borderRadius: 10, padding: "12px 14px", cursor: "pointer", fontWeight: 600, fontSize: 12, textAlign: "left" }}>
               {s.icon} {s.location}<br /><span style={{ fontWeight: 400, fontSize: 11, opacity: 0.7 }}>{s.challenge}</span>
             </button>
           ))}
         </div>
 
         {result && (
-          <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: 24, border: "2px solid #F5E642" }}>
-            <div style={{ fontSize: 13, color: "#94a3b8", marginBottom: 4 }}>{result.icon} Best caulk for {result.location}:</div>
-            <div style={{ fontSize: 22, fontWeight: 800, color: "#F5E642", marginBottom: 12 }}>🏆 {result.brand}</div>
-            <p style={{ color: "#cbd5e1", fontSize: 14, marginBottom: 12 }}>{result.why}</p>
-            <div style={{ padding: 12, backgroundColor: "#0A1628", borderRadius: 8, fontSize: 13, color: "#F5E642", marginBottom: 10 }}>
+          <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: 24, border: "2px solid #F5E642″ }}>
+            <div style={{ fontSize: 13, color: "#94a3b8″, marginBottom: 4 }}>{result.icon} Best caulk for {result.location}:</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: "#F5E642″, marginBottom: 12 }}>🏆 {result.brand}</div>
+            <p style={{ color: "#cbd5e1″, fontSize: 14, marginBottom: 12 }}>{result.why}</p>
+            <div style={{ padding: 12, backgroundColor: "#0A1628″, borderRadius: 8, fontSize: 13, color: "#F5E642", marginBottom: 10 }}>
               💡 Pro Tip: {result.tip}
             </div>
-            <div style={{ fontSize: 13, color: "#94a3b8" }}>⏳ Expected lifespan: {result.lifespan}</div>
+            <div style={{ fontSize: 13, color: "#94a3b8″ }}>⏳ Expected lifespan: {result.lifespan}</div>
           </div>
         )}
       </div>

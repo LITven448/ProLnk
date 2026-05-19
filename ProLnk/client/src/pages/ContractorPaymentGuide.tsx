@@ -127,12 +127,12 @@ export default function ContractorPaymentGuide() {
           <p style={{ color: '#CBD5E1', lineHeight: 1.8, marginBottom: 16 }}>
             For deposits and smaller jobs, a credit card adds a layer of chargeback protection that a check or bank transfer doesn't. Many contractors add a 2–3% processing fee — often worth paying for the protection.
           </p>
-          <div style={{ backgroundColor: '#132040', borderRadius: 10, padding: '20px 24px', borderLeft: '4px solid #F5E642' }}>
-            <strong style={{ color: '#F5E642' }}>Use credit cards when:</strong>
+          <div style={{ backgroundColor: '#132040', borderRadius: 10, padding: '20px 24px', borderLeft: '4px solid #F5E642′ }}>
+            <strong style={{ color: '#F5E642′ }}>Use credit cards when:</strong>
             <ul style={{ color: '#CBD5E1', marginTop: 8, paddingLeft: 20, lineHeight: 2 }}>
               <li>Paying deposits on new or unproven contractors</li>
               <li>Work is under $5K and you want chargeback rights</li>
-              <li>The contractor's business address doesn't match their license</li>
+              <li>The contractor's business address doesn’t match their license</li>
             </ul>
           </div>
         </section>
@@ -145,7 +145,7 @@ export default function ContractorPaymentGuide() {
             ['Wire transfer required', 'Wires are irreversible. A contractor demanding wire transfer for a residential job is unusual and risky.'],
             ['No contract, just verbal agreement', 'Verbal contracts are nearly unenforceable. Get everything in writing, always.'],
           ].map(([flag, detail]) => (
-            <div key={flag as string} style={{ backgroundColor: '#1a0a0a', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #3a1515' }}>
+            <div key={flag as string} style={{ backgroundColor: '#1a0a0a', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #3a1515′ }}>
               <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>⚠️ {flag}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{detail}</div>
             </div>
@@ -161,7 +161,7 @@ export default function ContractorPaymentGuide() {
               type="text"
               value={projectCost}
               onChange={e => setProjectCost(e.target.value)}
-              placeholder="e.g. 18000"
+              placeholder="e.g. 18000″
               style={{
                 flex: 1, minWidth: 200, backgroundColor: '#081525', border: '2px solid #1E3A5F',
                 borderRadius: 8, color: '#FFFFFF', padding: '14px 18px', fontSize: 16, outline: 'none',
@@ -184,13 +184,13 @@ export default function ContractorPaymentGuide() {
                 <div key={i} style={{ backgroundColor: '#081525', borderRadius: 10, padding: '16px 20px', marginBottom: 10 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                     <div style={{ color: '#FFFFFF', fontWeight: 700 }}>Payment {i + 1}: {item.label}</div>
-                    <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>{fmt(item.amount)} <span style={{ fontSize: 13, color: '#94A3B8' }}>({item.pct}%)</span></div>
+                    <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>{fmt(item.amount)} <span style={{ fontSize: 13, color: '#94A3B8′ }}>({item.pct}%)</span></div>
                   </div>
                   <div style={{ color: '#64748B', fontSize: 13 }}>💡 {item.note}</div>
                 </div>
               ))}
               <div style={{ marginTop: 16, padding: '14px 18px', backgroundColor: '#132040', borderRadius: 8, color: '#94A3B8', fontSize: 13 }}>
-                🔒 <strong style={{ color: '#F5E642' }}>Remember:</strong> Build the holdback into the contract. Never release the final 10% until the punchlist is fully cleared and you have all lien releases in hand.
+                🔒 <strong style={{ color: '#F5E642′ }}>Remember:</strong> Build the holdback into the contract. Never release the final 10% until the punchlist is fully cleared and you have all lien releases in hand.
               </div>
             </div>
           )}

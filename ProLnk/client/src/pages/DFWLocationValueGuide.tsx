@@ -50,7 +50,7 @@ export default function DFWLocationValueGuide() {
         </p>
 
         <div style={{ background: '#12213A', borderRadius: 14, padding: 32, marginBottom: 28, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>📍 Lot Feature Selector</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>📍 Lot Feature Selector</h2>
           <p style={{ fontSize: 13, color: '#8a9fc0', marginBottom: 20 }}>Select all features that apply to your lot. Positive features add value; negative features discount.</p>
           <div style={{ marginBottom: 20 }}>
             <label style={{ fontSize: 12, fontWeight: 600, color: '#8a9fc0', display: 'block', marginBottom: 6 }}>Base Home Value (DFW Average)</label>
@@ -65,8 +65,8 @@ export default function DFWLocationValueGuide() {
                 <button key={k} onClick={() => toggleFeature(k)}
                   style={{
                     textAlign: 'left', padding: '12px 16px', borderRadius: 10, cursor: 'pointer',
-                    border: isSelected ? '2px solid ' + (isPositive ? '#F5E642' : '#f87171') : '2px solid #1e3a5f',
-                    background: isSelected ? (isPositive ? '#1a2d10' : '#2d1010') : '#0A1628',
+                    border: isSelected ? '2px solid ' + (isPositive ? '#F5E642′ : '#f87171') : '2px solid #1e3a5f',
+                    background: isSelected ? (isPositive ? '#1a2d10′ : '#2d1010') : '#0A1628',
                     color: '#fff', transition: 'all 0.15s',
                   }}>
                   <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{v.label}</div>
@@ -76,7 +76,7 @@ export default function DFWLocationValueGuide() {
             })}
           </div>
           <button onClick={calculate} disabled={selected.length === 0}
-            style={{ background: selected.length > 0 ? '#F5E642' : '#2a4a7f', color: selected.length > 0 ? '#0A1628' : '#8a9fc0', border: 'none', padding: '14px 32px', borderRadius: 8, fontSize: 15, fontWeight: 800, cursor: selected.length > 0 ? 'pointer' : 'default', width: '100%' }}>
+            style={{ background: selected.length > 0 ? '#F5E642′ : '#2a4a7f', color: selected.length > 0 ? '#0A1628' : '#8a9fc0', border: ’none', padding: '14px 32px', borderRadius: 8, fontSize: 15, fontWeight: 800, cursor: selected.length > 0 ? 'pointer' : 'default', width: '100%' }}>
             {selected.length === 0 ? 'Select at least one lot feature' : 'Calculate Location Impact'}
           </button>
 
@@ -84,10 +84,10 @@ export default function DFWLocationValueGuide() {
             <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24 }}>
               <div style={{ textAlign: 'center', marginBottom: 20 }}>
                 <p style={{ fontSize: 13, color: '#8a9fc0', marginBottom: 4 }}>Total Location Adjustment</p>
-                <p style={{ fontSize: 40, fontWeight: 800, color: result.totalDollars >= 0 ? '#6af26a' : '#f87171' }}>
+                <p style={{ fontSize: 40, fontWeight: 800, color: result.totalDollars >= 0 ? '#6af26a' : '#f87171′ }}>
                   {fmt(result.totalDollars)}
                 </p>
-                <p style={{ fontSize: 16, color: '#b0bdd4' }}>{fmtPct(result.totalPct)} vs comparable interior lot</p>
+                <p style={{ fontSize: 16, color: '#b0bdd4′ }}>{fmtPct(result.totalPct)} vs comparable interior lot</p>
               </div>
               <div style={{ borderTop: '1px solid #1e3a5f', paddingTop: 16 }}>
                 {result.breakdown.map((b, i) => (

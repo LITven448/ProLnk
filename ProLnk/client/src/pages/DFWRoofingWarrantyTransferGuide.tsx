@@ -51,23 +51,23 @@ export default function DFWRoofingWarrantyTransferGuide() {
         </p>
 
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Warranty Transfer Checker</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Warranty Transfer Checker</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Manufacturer</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Manufacturer</label>
               <select value={mfr} onChange={e => setMfr(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {manufacturers.map(m => <option key={m}>{m}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Original Installer Certification Level</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Original Installer Certification Level</label>
               <select value={cert} onChange={e => setCert(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {certLevels.map(l => <option key={l}>{l}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Roof Age: {roofAge} year{roofAge !== 1 ? 's' : ''}</label>
-              <input type="range" min={1} max={20} value={roofAge} onChange={e => setRoofAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Roof Age: {roofAge} year{roofAge !== 1 ? ’s' : ''}</label>
+              <input type="range" min={1} max={20} value={roofAge} onChange={e => setRoofAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function DFWRoofingWarrantyTransferGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
             <div style={{ background: 'rgba(0,0,0,0.2)', borderRadius: 10, padding: 14 }}>
               <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Transfer Fee</div>
-              <div style={{ fontWeight: 700, color: '#F5E642' }}>{info.fee}</div>
+              <div style={{ fontWeight: 700, color: '#F5E642′ }}>{info.fee}</div>
             </div>
             <div style={{ background: 'rgba(0,0,0,0.2)', borderRadius: 10, padding: 14 }}>
               <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>What's Covered</div>
@@ -88,7 +88,7 @@ export default function DFWRoofingWarrantyTransferGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, padding: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>⚡ Key Rules for DFW Buyers</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>⚡ Key Rules for DFW Buyers</h2>
           {[
             '📋 Request warranty documents and installation receipt from seller before closing',
             '⏱️ Transfer window typically starts at closing date — act within 30–60 days',

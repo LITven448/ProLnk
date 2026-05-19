@@ -94,11 +94,11 @@ export default function DFWAtticPestGuide() {
           Beyond the structural damage, attic pests that chew electrical wiring are a direct fire hazard.
         </p>
         <div style={{ background: '#162844', borderRadius: 10, padding: '14px 18px', marginBottom: 28 }}>
-          <strong style={{ color: '#F5E642' }}>DFW Pest Overview:</strong>
+          <strong style={{ color: '#F5E642′ }}>DFW Pest Overview:</strong>
           <ul style={{ color: '#8FA3BF', marginTop: 8, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><strong style={{ color: '#E8EDF5' }}>Roof rats:</strong> Most common DFW attic pest — enter through gaps as small as a quarter. Active year-round.</li>
-            <li><strong style={{ color: '#E8EDF5' }}>Squirrels:</strong> Fox squirrels dominate DFW. Most active at dawn and dusk. Peak entry in fall when seeking winter shelter.</li>
-            <li><strong style={{ color: '#E8EDF5' }}>Raccoons:</strong> Common in older DFW neighborhoods with mature tree canopy. Strong enough to open standard roof vents.</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>Roof rats:</strong> Most common DFW attic pest — enter through gaps as small as a quarter. Active year-round.</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>Squirrels:</strong> Fox squirrels dominate DFW. Most active at dawn and dusk. Peak entry in fall when seeking winter shelter.</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>Raccoons:</strong> Common in older DFW neighborhoods with mature tree canopy. Strong enough to open standard roof vents.</li>
           </ul>
         </div>
         <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -110,11 +110,11 @@ export default function DFWAtticPestGuide() {
           </select>
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: `4px solid ${result.color}` }}>
-              <div style={{ marginBottom: 8 }}><strong style={{ color: '#F5E642' }}>Most Likely Pest:</strong> <span style={{ color: '#E8EDF5', fontWeight: 600 }}>{result.pest}</span></div>
+              <div style={{ marginBottom: 8 }}><strong style={{ color: '#F5E642′ }}>Most Likely Pest:</strong> <span style={{ color: '#E8EDF5', fontWeight: 600 }}>{result.pest}</span></div>
               <div style={{ color: result.color, fontWeight: 600, marginBottom: 10 }}>{result.urgency}</div>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642' }}>Exclusion Approach:</strong> <span style={{ color: '#8FA3BF' }}>{result.exclusionApproach}</span></div>
-              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642' }}>Estimated DFW Cost:</strong> <span style={{ color: '#8FA3BF' }}>{result.cost}</span></div>
-              <strong style={{ color: '#F5E642' }}>Important Warnings:</strong>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642′ }}>Exclusion Approach:</strong> <span style={{ color: '#8FA3BF' }}>{result.exclusionApproach}</span></div>
+              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642′ }}>Estimated DFW Cost:</strong> <span style={{ color: '#8FA3BF' }}>{result.cost}</span></div>
+              <strong style={{ color: '#F5E642′ }}>Important Warnings:</strong>
               <ul style={{ paddingLeft: 20, color: '#8FA3BF', lineHeight: 1.8, marginTop: 8 }}>
                 {result.warnings.map((w, i) => <li key={i}>{w}</li>)}
               </ul>
@@ -131,7 +131,7 @@ export default function DFWAtticPestGuide() {
           ].map(item => (
             <div key={item.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-              <div><strong style={{ color: '#E8EDF5' }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
+              <div><strong style={{ color: '#E8EDF5′ }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
             </div>
           ))}
         </div>

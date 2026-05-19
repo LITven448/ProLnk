@@ -49,12 +49,12 @@ export default function DFWHVACGeothermalCalc() {
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ marginBottom: '0.5rem', color: '#F5E642', fontSize: '0.85rem', fontWeight: 700, letterSpacing: 2 }}>DFW HVAC CALCULATOR</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.2 }}>Geothermal HVAC ROI Calculator for DFW</h1>
-        <p style={{ color: '#8A9BB5', marginBottom: '2rem' }}>DFW's 65°F ground temperature is geothermal's ideal operating range. Calculate your savings vs conventional HVAC.</p>
+        <p style={{ color: '#8A9BB5', marginBottom: '2rem' }}>DFW's 65°F ground temperature is geothermal’s ideal operating range. Calculate your savings vs conventional HVAC.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '2rem' }}>
           {[
-            { label: 'DFW Ground Temp', value: `${DFW_GROUND_TEMP}°F`, note: 'Ideal geothermal range', color: '#7ED321' },
-            { label: 'Federal Tax Credit', value: '30%', note: 'IRA through 2032', color: '#F5E642' },
+            { label: 'DFW Ground Temp', value: `${DFW_GROUND_TEMP}°F`, note: 'Ideal geothermal range', color: '#7ED321′ },
+            { label: 'Federal Tax Credit', value: '30%', note: 'IRA through 2032', color: '#F5E642′ },
             { label: 'DFW Clay Soil', value: '+20%', note: 'Drilling cost premium', color: '#E87D4A' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#111D33', border: '1.5px solid #1E2D45', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
@@ -65,22 +65,22 @@ export default function DFWHVACGeothermalCalc() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Step 1: Select Your Home Size</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Step 1: Select Your Home Size</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {homeSizes.map((h, i) => (
             <button key={i} onClick={() => setHomeIdx(i)}
-              style={{ background: homeIdx === i ? '#162035' : '#111D33', border: `1.5px solid ${homeIdx === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem', cursor: 'pointer', color: '#E8EAF0', textAlign: 'left' }}>
+              style={{ background: homeIdx === i ? '#162035′ : '#111D33', border: `1.5px solid ${homeIdx === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem', cursor: ’pointer', color: '#E8EAF0', textAlign: 'left' }}>
               <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{h.label}</div>
               <div style={{ color: '#8A9BB5', fontSize: '0.8rem', marginTop: '0.2rem' }}>{h.tons} tons · {h.btu.toLocaleString()} BTU/hr</div>
             </button>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Step 2: Your Current HVAC</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Step 2: Your Current HVAC</h2>
         <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {currentHVAC.map((h, i) => (
             <button key={i} onClick={() => setHvacIdx(i)}
-              style={{ background: hvacIdx === i ? '#162035' : '#111D33', border: `1.5px solid ${hvacIdx === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: 'pointer', color: '#E8EAF0', textAlign: 'left', fontWeight: 600 }}>
+              style={{ background: hvacIdx === i ? '#162035′ : '#111D33', border: `1.5px solid ${hvacIdx === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: ’pointer', color: '#E8EAF0', textAlign: 'left', fontWeight: 600 }}>
               {h.label}
             </button>
           ))}
@@ -92,8 +92,8 @@ export default function DFWHVACGeothermalCalc() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
               {[
                 { label: 'System Cost (DFW)', value: `$${result.geoCost.toLocaleString()}`, note: 'Before tax credit (incl. clay drilling)' },
-                { label: 'After 30% Tax Credit', value: `$${Math.round(result.afterCredit).toLocaleString()}`, note: 'Your actual net cost', color: '#7ED321' },
-                { label: 'Annual Savings', value: `$${Math.round(result.annualSavings).toLocaleString()}`, note: 'vs your current HVAC', color: '#F5E642' },
+                { label: 'After 30% Tax Credit', value: `$${Math.round(result.afterCredit).toLocaleString()}`, note: 'Your actual net cost', color: '#7ED321′ },
+                { label: 'Annual Savings', value: `$${Math.round(result.annualSavings).toLocaleString()}`, note: 'vs your current HVAC', color: '#F5E642′ },
                 { label: 'Monthly Savings', value: `$${Math.round(result.monthlySavings)}`, note: 'Avg over full year', color: '#4A9EFF' },
               ].map((r, i) => (
                 <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem' }}>
@@ -104,7 +104,7 @@ export default function DFWHVACGeothermalCalc() {
               ))}
             </div>
             <div style={{ background: result.payback < 12 ? '#0D1F0D' : result.payback < 20 ? '#1A1A0D' : '#1F0D0D', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'center' }}>
-              <div style={{ color: result.payback < 12 ? '#7ED321' : result.payback < 20 ? '#F5E642' : '#E87D4A', fontWeight: 800, fontSize: '1.8rem' }}>{result.payback < 50 ? `${Math.round(result.payback)} years` : 'N/A'}</div>
+              <div style={{ color: result.payback < 12 ? '#7ED321′ : result.payback < 20 ? '#F5E642' : '#E87D4A', fontWeight: 800, fontSize: '1.8rem' }}>{result.payback < 50 ? `${Math.round(result.payback)} years` : ’N/A'}</div>
               <div style={{ fontWeight: 700 }}>Payback Period</div>
               <div style={{ color: '#8A9BB5', fontSize: '0.85rem', marginTop: '0.25rem' }}>
                 {result.payback < 10 ? 'Excellent ROI for DFW' : result.payback < 15 ? 'Good ROI — DFW climate helps' : result.payback < 20 ? 'Moderate — consider high-efficiency central instead' : 'Poor ROI — your current system is too efficient to beat'}

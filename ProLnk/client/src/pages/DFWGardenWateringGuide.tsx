@@ -62,7 +62,7 @@ export default function DFWGardenWateringGuide() {
 
         <div style={{ background: '#1a2a4a', borderRadius: '12px', padding: '16px', marginBottom: '24px', border: '1px solid #2d4a6e' }}>
           <div style={{ color: '#60a5fa', fontWeight: 700, marginBottom: '4px' }}>⏰ Morning Watering is Critical in DFW</div>
-          <div style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Water before 10am in DFW. Evening watering leaves foliage wet overnight, dramatically increasing fungal disease risk in DFW's summer humidity. Early morning also reduces evaporation — afternoon temps above 100°F can evaporate 40% of water before it reaches roots.</div>
+          <div style={{ fontSize: '0.9rem', color: '#94a3b8′ }}>Water before 10am in DFW. Evening watering leaves foliage wet overnight, dramatically increasing fungal disease risk in DFW’s summer humidity. Early morning also reduces evaporation — afternoon temps above 100°F can evaporate 40% of water before it reaches roots.</div>
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '20px', marginBottom: '24px', border: '1px solid #2d3f5e' }}>
@@ -70,18 +70,18 @@ export default function DFWGardenWateringGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642' }}>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Plant Type</th>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Summer</th>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Spring/Fall</th>
+                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Plant Type</th>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Summer</th>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Spring/Fall</th>
                 </tr>
               </thead>
               <tbody>
                 {wateringFrequencies.map((w, i) => (
-                  <tr key={w.plantType} style={{ borderBottom: '1px solid #2d3f5e', background: i % 2 === 0 ? 'transparent' : '#0d1f38' }}>
+                  <tr key={w.plantType} style={{ borderBottom: '1px solid #2d3f5e', background: i % 2 === 0 ? 'transparent' : '#0d1f38′ }}>
                     <td style={{ padding: '8px', fontWeight: 600 }}>{w.plantType}</td>
-                    <td style={{ padding: '8px', color: '#fbbf24' }}>{w.summer}</td>
-                    <td style={{ padding: '8px', color: '#94a3b8' }}>{w.spring}</td>
+                    <td style={{ padding: '8px', color: '#fbbf24′ }}>{w.summer}</td>
+                    <td style={{ padding: '8px', color: '#94a3b8′ }}>{w.spring}</td>
                   </tr>
                 ))}
               </tbody>
@@ -95,10 +95,10 @@ export default function DFWGardenWateringGuide() {
             <div key={r.stage} style={{ padding: '12px', borderRadius: '8px', marginBottom: '10px', background: '#0A1628', border: `1px solid ${r.color}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
                 <div style={{ color: r.color, fontWeight: 700 }}>{r.stage}</div>
-                <div style={{ fontSize: '0.85rem', color: '#e2e8f0' }}>{r.frequency}</div>
+                <div style={{ fontSize: '0.85rem', color: '#e2e8f0′ }}>{r.frequency}</div>
               </div>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Days: {r.allowedDays}</div>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Time: {r.time}</div>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>Days: {r.allowedDays}</div>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>Time: {r.time}</div>
               <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px' }}>{r.notes}</div>
             </div>
           ))}
@@ -129,11 +129,11 @@ export default function DFWGardenWateringGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowSchedule(true)} disabled={!gardenType || !restrictionStage} style={{ background: gardenType && restrictionStage ? '#F5E642' : '#2d3f5e', color: gardenType && restrictionStage ? '#0A1628' : '#64748b', border: 'none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: gardenType && restrictionStage ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowSchedule(true)} disabled={!gardenType || !restrictionStage} style={{ background: gardenType && restrictionStage ? '#F5E642′ : '#2d3f5e', color: gardenType && restrictionStage ? '#0A1628' : '#64748b', border: ’none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: gardenType && restrictionStage ? 'pointer' : 'not-allowed' }}>
             Generate Watering Schedule
           </button>
           {showSchedule && freq && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '10px' }}>💧 {gardenType} — Watering Schedule</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                 <div style={{ background: '#1e2d45', borderRadius: '6px', padding: '10px' }}>
@@ -145,7 +145,7 @@ export default function DFWGardenWateringGuide() {
                   <div style={{ color: '#4ade80', fontWeight: 600, fontSize: '0.9rem', marginTop: '4px' }}>{freq.spring}</div>
                 </div>
               </div>
-              <div style={{ marginTop: '12px', fontSize: '0.85rem', color: '#94a3b8' }}>
+              <div style={{ marginTop: '12px', fontSize: '0.85rem', color: '#94a3b8′ }}>
                 🕐 Always water before 10am in DFW. Under {restrictionStage}, check your city's assigned watering days for your address.
               </div>
               <div style={{ marginTop: '8px', fontSize: '0.8rem', color: '#64748b' }}>Drought tip: Add 3-4 inches of mulch to reduce watering frequency 25-30%.</div>

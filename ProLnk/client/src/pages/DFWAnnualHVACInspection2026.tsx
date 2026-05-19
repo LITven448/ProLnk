@@ -71,7 +71,7 @@ export default function DFWAnnualHVACInspection2026() {
   const doneCount = items.filter(i => checked[i]).length;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E2E8F0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E2E8F0′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>❄️</div>
@@ -84,7 +84,7 @@ export default function DFWAnnualHVACInspection2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {systemTypes.map(s => (
               <button key={s} onClick={() => { setSelected(s); setChecked({}); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === s ? '#F5E642' : '#1E3A5F', background: selected === s ? '#F5E642' : 'transparent', color: selected === s ? '#0A1628' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === s ? '#F5E642′ : '#1E3A5F', background: selected === s ? '#F5E642' : ’transparent', color: selected === s ? '#0A1628′ : '#94A3B8', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
                 {s}
               </button>
             ))}
@@ -100,7 +100,7 @@ export default function DFWAnnualHVACInspection2026() {
               </div>
               {items.map(item => (
                 <div key={item} onClick={() => toggleItem(item)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E3A5F', cursor: 'pointer' }}>
-                  <div style={{ width: 22, height: 22, borderRadius: 6, border: '2px solid', borderColor: checked[item] ? '#F5E642' : '#334155', background: checked[item] ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 22, height: 22, borderRadius: 6, border: '2px solid', borderColor: checked[item] ? '#F5E642′ : '#334155', background: checked[item] ? '#F5E642' : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     {checked[item] && <span style={{ color: '#0A1628', fontSize: 13, fontWeight: 900 }}>✓</span>}
                   </div>
                   <span style={{ color: checked[item] ? '#64748B' : '#E2E8F0', fontSize: 14, textDecoration: checked[item] ? 'line-through' : 'none' }}>{item}</span>

@@ -12,7 +12,7 @@ export default function DFWSpackleDrywallGuide() {
     },
     small: {
       summer: { product: 'Lightweight Spackle or DAP DryDex', coats: 2, dryTime: '3–6 hrs per coat', cureTime: '24–48 hrs', tip: 'DryDex turns white when dry — great for humid summers' },
-      mild: { product: 'Lightweight Spackle', coats: 1, dryTime: '1–3 hrs', cureTime: '24 hrs', tip: 'Sand lightly between coats if doing 2' },
+      mild: { product: 'Lightweight Spackle', coats: 1, dryTime: '1–3 hrs', cureTime: '24 hrs', tip: 'Sand lightly between coats if doing 2′ },
     },
     medium: {
       summer: { product: 'All-Purpose Joint Compound', coats: '2–3', dryTime: '8–24 hrs per coat (DFW humidity)', cureTime: '48–72 hrs', tip: 'Use a fan to aid drying — do NOT use heat gun outdoors in DFW summer' },
@@ -38,8 +38,8 @@ export default function DFWSpackleDrywallGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[
-            { name: 'Spackle', icon: '🔩', color: '#3b82f6', uses: ['Nail holes', 'Small dents under 3"', 'Single-coat repairs', 'Quick touch-ups'], avoid: 'Large repairs, texturing, structural damage' },
-            { name: 'Joint Compound', icon: '🧱', color: '#F5E642', uses: ['Patches over 3"', 'Texture matching', 'Taping seams', 'Multi-coat builds'], avoid: 'Tiny nail holes where spackle is overkill' },
+            { name: 'Spackle', icon: '🔩', color: '#3b82f6', uses: ['Nail holes', 'Small dents under 3″', 'Single-coat repairs', 'Quick touch-ups'], avoid: 'Large repairs, texturing, structural damage' },
+            { name: 'Joint Compound', icon: '🧱', color: '#F5E642', uses: ['Patches over 3″', 'Texture matching', 'Taping seams', 'Multi-coat builds'], avoid: 'Tiny nail holes where spackle is overkill' },
           ].map(item => (
             <div key={item.name} style={{ backgroundColor: '#0f1f3d', borderRadius: 12, padding: 20, borderTop: `4px solid ${item.color}` }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
@@ -47,7 +47,7 @@ export default function DFWSpackleDrywallGuide() {
               <div style={{ marginBottom: 12 }}>
                 {item.uses.map(use => <div key={use} style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>✅ {use}</div>)}
               </div>
-              <div style={{ fontSize: 13, color: '#ef4444' }}>⛔ Avoid for: {item.avoid}</div>
+              <div style={{ fontSize: 13, color: '#ef4444′ }}>⛔ Avoid for: {item.avoid}</div>
             </div>
           ))}
         </div>
@@ -75,28 +75,28 @@ export default function DFWSpackleDrywallGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>REPAIR SIZE</label>
-              {[{ val: 'tiny', label: 'Nail hole / under 1"' }, { val: 'small', label: '1"–3" hole or dent' }, { val: 'medium', label: '3"–6" patch' }, { val: 'large', label: 'Over 6" or full panel' }].map(opt => (
-                <button key={opt.val} onClick={() => setRepairSize(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${repairSize === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: repairSize === opt.val ? '#F5E642' : 'transparent', color: repairSize === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+              {[{ val: 'tiny', label: 'Nail hole / under 1″' }, { val: 'small', label: '1″–3″ hole or dent' }, { val: 'medium', label: '3″–6″ patch' }, { val: 'large', label: 'Over 6″ or full panel' }].map(opt => (
+                <button key={opt.val} onClick={() => setRepairSize(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${repairSize === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: repairSize === opt.val ? '#F5E642′ : ’transparent', color: repairSize === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>DFW SEASON</label>
               {[{ val: 'summer', label: 'May – September (humid)' }, { val: 'mild', label: 'October – April (drier)' }].map(opt => (
-                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642' : 'transparent', color: season === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642′ : ’transparent', color: season === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
 
           {result && (
-            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 16 }}>🛒 {result.product}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
                 <div><div style={{ color: '#94a3b8', fontSize: 12 }}>NUMBER OF COATS</div><div style={{ fontWeight: 700, fontSize: 16 }}>{result.coats}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 12 }}>DRY TIME PER COAT</div><div style={{ fontWeight: 700, fontSize: 16 }}>{result.dryTime}</div></div>
               </div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 12 }}>CURE TIME: </span>{result.cureTime}</div>
-              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12, marginTop: 12 }}><span style={{ color: '#F5E642' }}>💡 DFW Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
+              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12, marginTop: 12 }}><span style={{ color: '#F5E642′ }}>💡 DFW Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
             </div>
           )}
         </div>

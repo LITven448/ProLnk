@@ -32,7 +32,7 @@ export default function DFWMetalRoofingGuide2026B() {
           }].map(s => (
             <div key={s.title} style={{ backgroundColor: '#112240', borderRadius: '10px', padding: '20px' }}>
               <div style={{ fontSize: '1.4rem', marginBottom: '8px' }}>{s.icon} {s.title}</div>
-              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8' }}>
+              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8′ }}>
                 {s.facts.map(f => <li key={f}>{f}</li>)}
               </ul>
             </div>
@@ -42,12 +42,12 @@ export default function DFWMetalRoofingGuide2026B() {
         <div style={{ backgroundColor: '#112240', borderRadius: '10px', padding: '20px', marginBottom: '28px' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '12px' }}>🌡️ DFW-Specific Considerations</h2>
           {[
-            ['Thermal Expansion', 'Metal expands ~1" per 100ft at DFW extremes — standing seam handles this; exposed fastener fights it'],
+            ['Thermal Expansion', 'Metal expands ~1″ per 100ft at DFW extremes — standing seam handles this; exposed fastener fights it'],
             ['Material', 'Galvalume (bare) resists DFW humidity better than painted; painted adds curb appeal but needs Kynar 500 coating'],
             ['Installer Cert', 'MBCI, Englert, or manufacturer certification required — ask for proof before signing contract'],
             ['Insurance', 'Most metal roofs qualify for DFW impact/wind discount — verify Class 4 rating with insurer first'],
           ].map(([k,v]) => (
-            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '10px 0' }}>
+            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '10px 0′ }}>
               <span style={{ color: '#F5E642', fontWeight: 600 }}>{k}: </span>
               <span style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{v}</span>
             </div>
@@ -73,7 +73,7 @@ export default function DFWMetalRoofingGuide2026B() {
             </div>
           </div>
           <button onClick={getRecommendation} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', marginBottom: '16px' }}>Get Recommendation →</button>
-          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6' }}>{recommendation}</div>}
+          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6′ }}>{recommendation}</div>}
         </div>
       </div>
     </div>

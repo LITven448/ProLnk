@@ -21,12 +21,12 @@ export default function DFWRoofingProjections2026() {
           🏚️ DFW Roofing Projections & Penetrations Guide 2026
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem', lineHeight: 1.6 }}>
-          Every penetration through a DFW roof is a potential leak point. DFW's hail, UV intensity, and thermal cycling stress flashing systems harder than most climates. Know what's on your roof and how each is protected.
+          Every penetration through a DFW roof is a potential leak point. DFW's hail, UV intensity, and thermal cycling stress flashing systems harder than most climates. Know what’s on your roof and how each is protected.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[
-            { icon: '🔩', label: 'Avg Penetrations Per Home', value: '5–12' },
+            { icon: '🔩', label: 'Avg Penetrations Per Home', value: '5–12′ },
             { icon: '⛈️', label: 'DFW Hail Events/Year', value: '3–5 avg' },
             { icon: '☀️', label: 'Pipe Boot Lifespan DFW', value: '8–12 years' },
             { icon: '📸', label: 'Post-Storm Inspection', value: 'Required' },
@@ -46,8 +46,8 @@ export default function DFWRoofingProjections2026() {
               key={p.id}
               onClick={() => setSelected(selected === p.id ? null : p.id)}
               style={{
-                background: selected === p.id ? '#F5E642' : '#0f2040',
-                color: selected === p.id ? '#0A1628' : '#fff',
+                background: selected === p.id ? '#F5E642′ : '#0f2040',
+                color: selected === p.id ? '#0A1628′ : '#fff',
                 border: '1px solid #1e3a5f',
                 borderRadius: 8,
                 padding: '0.5rem 1rem',
@@ -79,7 +79,7 @@ export default function DFWRoofingProjections2026() {
             'Document all penetration photos in ProLnk Vault post-storm',
           ].map(item => (
             <div key={item} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.6rem', color: '#94a3b8', fontSize: '0.9rem' }}>
-              <span style={{ color: '#F5E642' }}>✓</span>{item}
+              <span style={{ color: '#F5E642′ }}>✓</span>{item}
             </div>
           ))}
         </div>

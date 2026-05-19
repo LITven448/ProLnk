@@ -38,20 +38,20 @@ export default function DFWPaintingGuide2026() {
             <div key={i} style={{ background: '#1E2D45', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ color: '#F5E642', fontSize: 13, marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1' }}>{s.val}</div>
+              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1′ }}>{s.val}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>💰 Cost Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>💰 Cost Estimator</h2>
           <div style={{ marginBottom: 16 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>HOME SIZE</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {[{ k: 'small', label: 'Under 1,500 sqft' }, { k: 'medium', label: '1,500-3,000 sqft' }, { k: 'large', label: '3,000+ sqft' }].map(s => (
                 <button key={s.k} onClick={() => setHomeSize(s.k)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12,
-                    background: homeSize === s.k ? '#F5E642' : '#2d3f5a', color: homeSize === s.k ? '#0A1628' : '#fff' }}>
+                    background: homeSize === s.k ? '#F5E642′ : '#2d3f5a', color: homeSize === s.k ? '#0A1628' : '#fff' }}>
                   {s.label}
                 </button>
               ))}
@@ -63,7 +63,7 @@ export default function DFWPaintingGuide2026() {
               {['good', 'fair', 'poor'].map(c => (
                 <button key={c} onClick={() => setCondition(c)}
                   style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                    background: condition === c ? '#F5E642' : '#2d3f5a', color: condition === c ? '#0A1628' : '#fff' }}>
+                    background: condition === c ? '#F5E642′ : '#2d3f5a', color: condition === c ? '#0A1628' : '#fff' }}>
                   {c.charAt(0).toUpperCase() + c.slice(1)}
                 </button>
               ))}

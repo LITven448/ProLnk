@@ -217,7 +217,7 @@ export default function DFWStagingTimingGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>When you list matters as much as how you stage. DFW has clear seasonal windows — here's exactly how to time your staging, photography, and listing date for maximum results.</p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🗓️ DFW Seasonal Calendar</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -226,14 +226,14 @@ export default function DFWStagingTimingGuide() {
               ['🍂 Fall (Sept–Oct): Second best window. Serious buyers, less competition than spring. Underrated timing.', '#FEF3C7'],
               ['❄️ Winter (Nov–Jan): Avoid if possible. Motivated buyers only. January late-month can catch spring early movers.', '#FEF2F2'],
             ].map(([tip, bg], i) => (
-              <div key={i} style={{ backgroundColor: bg, borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
+              <div key={i} style={{ backgroundColor: bg, borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
                 <p style={{ color: '#374151', fontSize: 13, margin: 0 }}>{tip}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your Timing Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -282,7 +282,7 @@ export default function DFWStagingTimingGuide() {
                 ))}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 14, border: '1px solid #FDE047' }}>
+                <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 14, border: '1px solid #FDE047′ }}>
                   <div style={{ color: '#713F12', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>🔄 When to Re-Stage</div>
                   <div style={{ color: '#374151', fontSize: 12 }}>{result.restageThreshold}</div>
                 </div>

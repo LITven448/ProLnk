@@ -41,7 +41,7 @@ export default function DFWDroughtResistantYardGuide() {
           Texas experiences flash drought — conditions can go from normal to severe in weeks. DFW homeowners who convert to drought-resistant yards save $800–$2,400/year in water costs.
         </p>
 
-        <div style={{ background: '#1A2F4A', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#1A2F4A', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>⚠️ TCEQ Water Restriction Stages</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 10 }}>
             {waterStages.map(s => (
@@ -89,11 +89,11 @@ export default function DFWDroughtResistantYardGuide() {
           <>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
               <div style={{ background: '#0D1F35', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>{plan.waterSavings}</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>{plan.waterSavings}</div>
                 <div style={{ color: '#8899AA', fontSize: 14 }}>water savings vs. current lawn</div>
               </div>
               <div style={{ background: '#0D1F35', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{plan.cost}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{plan.cost}</div>
                 <div style={{ color: '#8899AA', fontSize: 14 }}>estimated conversion cost</div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function DFWDroughtResistantYardGuide() {
             </div>
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 8 }}>🏡 HOA Coordination Tip</h3>
-              <p style={{ color: '#AAB8C2' }}>{plan.hoaNote}</p>
+              <p style={{ color: '#AAB8C2′ }}>{plan.hoaNote}</p>
               <p style={{ color: '#8899AA', marginTop: 12, fontSize: 14 }}>💰 Dallas WaterWise rebate: up to $0.10/sq ft for turf removal. Fort Worth similar program at fortworthtexas.gov/water.</p>
             </div>
           </>

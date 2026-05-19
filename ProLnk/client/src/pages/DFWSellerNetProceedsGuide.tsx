@@ -35,7 +35,7 @@ export default function DFWSellerNetProceedsGuide() {
   return (
     <div style={{ background: '#f8f6f0', minHeight: '100vh', fontFamily: 'Georgia, serif', color: '#1a1a2e' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#888' }}>DFW Seller Guide</div>
+        <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#888′ }}>DFW Seller Guide</div>
         <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 12px', lineHeight: 1.2 }}>
           💰 What Will You Actually Walk Away With?
         </h1>
@@ -62,7 +62,7 @@ export default function DFWSellerNetProceedsGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px' }}>🧮 Net Proceeds Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             {[
-              { label: 'Expected Sale Price', value: salePrice, setter: setSalePrice, placeholder: 'e.g. 475,000' },
+              { label: 'Expected Sale Price', value: salePrice, setter: setSalePrice, placeholder: 'e.g. 475,000′ },
               { label: 'Current Mortgage Balance', value: mortgageBalance, setter: setMortgageBalance, placeholder: 'e.g. 280,000 (enter 0 if paid off)' },
             ].map(f => (
               <div key={f.label}>
@@ -83,11 +83,11 @@ export default function DFWSellerNetProceedsGuide() {
                 onChange={e => setAgentRate(e.target.value)}
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 15 }}
               >
-                <option value="6">6% (traditional split)</option>
-                <option value="5">5% (negotiated)</option>
-                <option value="4">4% (discount)</option>
-                <option value="3">3% (listing agent only, no buyer's agent)</option>
-                <option value="2">2% (flat fee + minimal buyer's agent)</option>
+                <option value="6″>6% (traditional split)</option>
+                <option value="5″>5% (negotiated)</option>
+                <option value="4″>4% (discount)</option>
+                <option value="3″>3% (listing agent only, no buyer's agent)</option>
+                <option value="2″>2% (flat fee + minimal buyer's agent)</option>
               </select>
             </div>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
@@ -110,7 +110,7 @@ export default function DFWSellerNetProceedsGuide() {
 
           {result && (
             <div style={{ marginTop: 24 }}>
-              <div style={{ padding: '20px 24px', background: result.net > 0 ? '#f0f9f0' : '#fff5f5', borderRadius: 10, border: `2px solid ${result.net > 0 ? '#2d8a4e' : '#c0392b'}`, marginBottom: 20, textAlign: 'center' }}>
+              <div style={{ padding: '20px 24px', background: result.net > 0 ? '#f0f9f0′ : '#fff5f5', borderRadius: 10, border: `2px solid ${result.net > 0 ? '#2d8a4e' : '#c0392b'}`, marginBottom: 20, textAlign: ’center' }}>
                 <div style={{ fontSize: 14, color: '#777', marginBottom: 4 }}>Estimated Net Proceeds</div>
                 <div style={{ fontSize: 36, fontWeight: 800, color: result.net > 0 ? '#2d8a4e' : '#c0392b' }}>
                   {fmt(result.net)}
@@ -133,7 +133,7 @@ export default function DFWSellerNetProceedsGuide() {
                 ))}
                 <div style={{ padding: '14px 18px', background: '#1a1a2e', display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>Net Proceeds</span>
-                  <span style={{ fontWeight: 800, fontSize: 18, color: result.net > 0 ? '#6fcf97' : '#eb5757' }}>{fmt(result.net)}</span>
+                  <span style={{ fontWeight: 800, fontSize: 18, color: result.net > 0 ? '#6fcf97′ : '#eb5757' }}>{fmt(result.net)}</span>
                 </div>
               </div>
             </div>

@@ -113,12 +113,12 @@ export default function DFWHomeWrapGuide() {
           ))}
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15, marginBottom: 12 }}>📋 Recommended Approach</div>
               <p style={{ color: '#C0D0E0', fontSize: 14, margin: '0 0 16px' }}>{result.approach}</p>
               {result.methods.map(m => (
                 <div key={m.name} style={{ background: '#112240', borderRadius: 8, padding: 14, marginBottom: 10 }}>
-                  <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>{m.name} — <span style={{ color: '#A0C8A0' }}>{m.cost}</span></div>
+                  <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>{m.name} — <span style={{ color: '#A0C8A0′ }}>{m.cost}</span></div>
                   <div style={{ color: '#C0D0E0', fontSize: 13, marginTop: 4 }}>{m.desc}</div>
                 </div>
               ))}

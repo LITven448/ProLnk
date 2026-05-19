@@ -28,7 +28,7 @@ export default function DFWPropertyTaxBudgetGuide() {
   }
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
           <div style={{ fontSize: 32 }}>🏛️📅</div>
@@ -36,7 +36,7 @@ export default function DFWPropertyTaxBudgetGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>Understand what you owe — and how to fight it every year.</p>
         </div>
 
-        <div style={{ background: '#FEF2F2', borderRadius: 10, padding: 16, marginBottom: 20, borderLeft: '4px solid #DC2626' }}>
+        <div style={{ background: '#FEF2F2', borderRadius: 10, padding: 16, marginBottom: 20, borderLeft: '4px solid #DC2626′ }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>⚠️ Why DFW Homeowners Are Shocked</div>
           <div style={{ fontSize: 13, color: '#7F1D1D', lineHeight: 1.6 }}>
             DFW has some of the highest property tax rates in the US — averaging 2.0–2.3% annually. On a $450,000 home, that's <strong>$9,000–$10,350/year</strong>. 
@@ -50,7 +50,7 @@ export default function DFWPropertyTaxBudgetGuide() {
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Appraised home value ($)
               <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)}
-                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 450000" />
+                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 450000″ />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               County
@@ -77,8 +77,8 @@ export default function DFWPropertyTaxBudgetGuide() {
             <h2 style={{ fontSize: 17, marginBottom: 16 }}>📊 Your Property Tax Breakdown</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div style={{ background: '#F0FDF4', borderRadius: 10, padding: 18, textAlign: 'center' }}>
-                <div style={{ fontSize: 13, color: '#166534' }}>Monthly Escrow Portion</div>
-                <div style={{ fontSize: 30, fontWeight: 800, color: '#166534' }}>${Math.round(result.monthly).toLocaleString()}</div>
+                <div style={{ fontSize: 13, color: '#166534′ }}>Monthly Escrow Portion</div>
+                <div style={{ fontSize: 30, fontWeight: 800, color: '#166534′ }}>${Math.round(result.monthly).toLocaleString()}</div>
               </div>
               <div style={{ background: '#FEF9EC', borderRadius: 10, padding: 18, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#92400E' }}>Annual Tax Bill</div>
@@ -96,7 +96,7 @@ export default function DFWPropertyTaxBudgetGuide() {
                 • Protest deadline: <strong>May 15</strong> each year (or 30 days after notice)
               </div>
             </div>
-            <div style={{ padding: 14, background: '#F8FAFC', borderRadius: 8, fontSize: 13, color: '#475569' }}>
+            <div style={{ padding: 14, background: '#F8FAFC', borderRadius: 8, fontSize: 13, color: '#475569′ }}>
               📅 Taxes due <strong>January 31</strong> (penalty after that). Your lender collects ${Math.round(result.monthly).toLocaleString()}/mo via escrow so you don't face a lump sum.
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function DFWPropertyTaxBudgetGuide() {
           ].map(([date, desc], i) => (
             <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #F1F5F9', fontSize: 13 }}>
               <span style={{ fontWeight: 700, minWidth: 90, color: '#F59E0B' }}>{date}</span>
-              <span style={{ color: '#475569' }}>{desc}</span>
+              <span style={{ color: '#475569′ }}>{desc}</span>
             </div>
           ))}
         </div>

@@ -45,7 +45,7 @@ export default function DFWPaymentScheduleGuide2026() {
         <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
           {(Object.keys(labels) as Array<keyof typeof labels>).map(k => (
             <button key={k} onClick={() => setSize(k as 'small' | 'medium' | 'large')}
-              style={{ flex: 1, padding: '12px', borderRadius: 10, border: '2px solid', borderColor: size === k ? '#F5E642' : '#1e3a5f', background: size === k ? '#F5E642' : '#0f2340', color: size === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>
+              style={{ flex: 1, padding: '12px', borderRadius: 10, border: '2px solid', borderColor: size === k ? '#F5E642′ : '#1e3a5f', background: size === k ? '#F5E642' : '#0f2340', color: size === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>
               {labels[k]}
             </button>
           ))}
@@ -64,7 +64,7 @@ export default function DFWPaymentScheduleGuide2026() {
         </div>
 
         <div style={{ background: '#0f2340', border: '1px solid #1e3a5f', borderRadius: 16, padding: 20, marginTop: 24 }}>
-          <p style={{ margin: 0, color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>🔒 <strong style={{ color: '#F5E642' }}>ProLnk Payment Protection</strong> — All milestone payments are held in escrow and released only when you approve each stage. Your Health Vault documents every payment with photo verification.</p>
+          <p style={{ margin: 0, color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>🔒 <strong style={{ color: '#F5E642′ }}>ProLnk Payment Protection</strong> — All milestone payments are held in escrow and released only when you approve each stage. Your Health Vault documents every payment with photo verification.</p>
         </div>
       </div>
     </div>

@@ -47,23 +47,23 @@ export default function TrustyProForLandlords() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>Select Your Portfolio</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {configs.map(c => (
-              <button key={c.id} onClick={() => setPortfolio(c)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: portfolio.id === c.id ? '#4F46E5' : '#1e3a5f', color: '#fff' }}>
+              <button key={c.id} onClick={() => setPortfolio(c)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: portfolio.id === c.id ? '#4F46E5′ : '#1e3a5f', color: '#fff' }}>
                 {c.emoji} {c.label}
               </button>
             ))}
           </div>
 
           <div style={{ background: '#050d1a', borderRadius: 12, padding: 24, marginBottom: 20 }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#FACC15' }}>How TrustyPro Helps — {portfolio.label}</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#FACC15′ }}>How TrustyPro Helps — {portfolio.label}</h3>
             <p style={{ color: '#e2e8f0', fontSize: 15, lineHeight: 1.7 }}>{portfolio.help}</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #4F46E5' }}>
+            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #4F46E5′ }}>
               <div style={{ color: '#4F46E5', fontWeight: 700, marginBottom: 6, fontSize: 13 }}>💵 COST PER UNIT</div>
               <div style={{ color: '#e2e8f0', fontSize: 15, fontWeight: 600 }}>{portfolio.costPerUnit}</div>
             </div>
-            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #FACC15' }}>
+            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #FACC15′ }}>
               <div style={{ color: '#FACC15', fontWeight: 700, marginBottom: 6, fontSize: 13 }}>⏱️ TIME SAVED</div>
               <div style={{ color: '#e2e8f0', fontSize: 15, fontWeight: 600 }}>{portfolio.timeSaved}</div>
             </div>

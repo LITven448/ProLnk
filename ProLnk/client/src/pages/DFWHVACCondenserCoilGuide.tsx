@@ -46,14 +46,14 @@ export default function DFWHVACCondenserCoilGuide() {
           <ol style={{ color: '#94A3B8', lineHeight: 2, paddingLeft: 20 }}>
             <li>Turn off power at the disconnect box next to the unit</li>
             <li>Remove any debris from top of unit and around base</li>
-            <li>Use garden hose — spray from <strong style={{ color: '#E8EDF5' }}>inside out</strong> to push debris out, not deeper in</li>
+            <li>Use garden hose — spray from <strong style={{ color: '#E8EDF5′ }}>inside out</strong> to push debris out, not deeper in</li>
             <li>Never use a pressure washer — it bends the delicate aluminum fins</li>
             <li>For cottonwood: vacuum fins gently before rinsing, then rinse</li>
             <li>Let dry 15 minutes before restoring power</li>
           </ol>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginTop: 16 }}>
-            <strong style={{ color: '#F5E642' }}>DFW Frequency:</strong>
-            <span style={{ color: '#94A3B8' }}> Minimum once annually (March/April). If cottonwood trees are nearby, inspect monthly April–June.</span>
+            <strong style={{ color: '#F5E642′ }}>DFW Frequency:</strong>
+            <span style={{ color: '#94A3B8′ }}> Minimum once annually (March/April). If cottonwood trees are nearby, inspect monthly April–June.</span>
           </div>
         </div>
 
@@ -76,12 +76,12 @@ export default function DFWHVACCondenserCoilGuide() {
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Cleaning Approach</div>
               <div style={{ marginBottom: 8 }}>{match.solution}</div>
-              <div style={{ color: '#94A3B8', fontSize: 14, marginBottom: 6 }}>Cost: <strong style={{ color: '#F5E642' }}>{match.cost}</strong></div>
+              <div style={{ color: '#94A3B8', fontSize: 14, marginBottom: 6 }}>Cost: <strong style={{ color: '#F5E642′ }}>{match.cost}</strong></div>
               <div style={{ background: '#1E3A5F', borderRadius: 6, padding: 10, fontSize: 14 }}>
-                <strong style={{ color: '#F5E642' }}>Efficiency Impact:</strong> {match.impact}
+                <strong style={{ color: '#F5E642′ }}>Efficiency Impact:</strong> {match.impact}
               </div>
             </div>
           )}

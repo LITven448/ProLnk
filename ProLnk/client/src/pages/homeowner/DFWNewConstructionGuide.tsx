@@ -36,7 +36,7 @@ export default function DFWNewConstructionGuide() {
         <section style={{ marginTop: 48, background: '#0D2144', border: '1px solid #1E3A5F', borderRadius: 16, padding: 28 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#FCD34D', marginBottom: 12 }}>📊 DFW New Construction Reality</h2>
           <p style={{ color: '#A8C4E0', fontSize: 15, margin: '0 0 12px', lineHeight: 1.7 }}>
-            Over <strong style={{ color: '#FFFFFF' }}>70% of new homes in DFW</strong> are in master-planned communities (Frisco, McKinney, Celina, Prosper, Forney, Mansfield, etc.). Builders set the price — there is essentially <strong style={{ color: '#F87171' }}>no negotiation on list price</strong>, but significant room to negotiate on upgrades, lot premiums, closing costs, and incentives.
+            Over <strong style={{ color: '#FFFFFF' }}>70% of new homes in DFW</strong> are in master-planned communities (Frisco, McKinney, Celina, Prosper, Forney, Mansfield, etc.). Builders set the price — there is essentially <strong style={{ color: '#F87171′ }}>no negotiation on list price</strong>, but significant room to negotiate on upgrades, lot premiums, closing costs, and incentives.
           </p>
           <p style={{ color: '#A8C4E0', fontSize: 15, margin: 0, lineHeight: 1.7 }}>
             Top builders active in DFW: D.R. Horton, Lennar, Taylor Morrison, Highland Homes, Toll Brothers, Perry Homes, Meritage Homes, Drees Custom Homes.
@@ -49,7 +49,7 @@ export default function DFWNewConstructionGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ background: '#0D2144' }}>
+                <tr style={{ background: '#0D2144′ }}>
                   {['Factor', '🏗️ New Construction', '🏡 Traditional Resale', '📱 TrustyPro Scanned Resale'].map(h => (
                     <th key={h} style={{ padding: '12px 16px', textAlign: 'left', color: '#60A5FA', fontWeight: 700, borderBottom: '2px solid #1E3A5F' }}>{h}</th>
                   ))}
@@ -65,7 +65,7 @@ export default function DFWNewConstructionGuide() {
                   ['Move-in timeline', '6-14 months', '30-45 days', '30-45 days'],
                   ['Warranty', '1-2-10 builder warranty', 'None', 'TrustyPro scan coverage'],
                 ].map((row, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#0A1628' : '#0D2144' }}>
+                  <tr key={i} style={{ background: i % 2 === 0 ? '#0A1628′ : '#0D2144' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '11px 16px', color: j === 0 ? '#FFFFFF' : '#A8C4E0', borderBottom: '1px solid #1E3A5F', fontWeight: j === 0 ? 600 : 400 }}>{cell}</td>
                     ))}
@@ -106,7 +106,7 @@ export default function DFWNewConstructionGuide() {
               <div key={w.period} style={{ background: '#162A4A', borderRadius: 10, padding: 18, textAlign: 'center' }}>
                 <div style={{ fontSize: 24, fontWeight: 800, color: '#FCD34D', marginBottom: 4 }}>{w.period}</div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#FFFFFF', marginBottom: 8 }}>{w.coverage}</div>
-                <div style={{ fontSize: 13, color: '#8FB0D4' }}>{w.desc}</div>
+                <div style={{ fontSize: 13, color: '#8FB0D4′ }}>{w.desc}</div>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function DFWNewConstructionGuide() {
                   key={key}
                   onClick={() => toggle(key)}
                   style={{
-                    background: checked[key] ? '#0D3321' : '#0D2144',
+                    background: checked[key] ? '#0D3321′ : '#0D2144',
                     border: `1px solid ${checked[key] ? '#22C55E' : '#1E3A5F'}`,
                     borderRadius: 10, padding: '14px 20px',
                     display: 'flex', alignItems: 'center', gap: 14, cursor: 'pointer',
@@ -156,13 +156,13 @@ export default function DFWNewConstructionGuide() {
                   }}>
                     {checked[key] ? '✓' : ''}
                   </div>
-                  <span style={{ fontSize: 14, color: checked[key] ? '#4ADE80' : '#E8EDF5', fontWeight: checked[key] ? 600 : 400 }}>{item}</span>
+                  <span style={{ fontSize: 14, color: checked[key] ? '#4ADE80′ : '#E8EDF5', fontWeight: checked[key] ? 600 : 400 }}>{item}</span>
                 </div>
               );
             })}
           </div>
           <div style={{ marginTop: 16, padding: '12px 20px', background: '#0D2144', borderRadius: 10, border: '1px solid #1E3A5F', fontSize: 14 }}>
-            <span style={{ color: '#8FB0D4' }}>Stage progress: </span>
+            <span style={{ color: '#8FB0D4′ }}>Stage progress: </span>
             <span style={{ color: '#60A5FA', fontWeight: 700 }}>{stageChecked} of {stageItems.length}</span>
           </div>
         </section>

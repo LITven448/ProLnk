@@ -69,7 +69,7 @@ export default function DFWWylieHomeownerGuide2026B() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {communities.map(c => (
               <button key={c} onClick={() => setSelected(c === selected ? null : c)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === c ? '#F5E642' : '#1e2f4a', color: selected === c ? '#0A1628' : '#fff' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === c ? '#F5E642′ : '#1e2f4a', color: selected === c ? '#0A1628' : '#fff' }}>
                 {c}
               </button>
             ))}

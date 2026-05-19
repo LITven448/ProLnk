@@ -40,7 +40,7 @@ export default function DFWElectricBillReductionGuide() {
             DFW Electric Bill Reduction Guide
           </h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>
-            DFW summer electric bills average <strong style={{ color: '#F5E642' }}>$200–$400/month</strong>. Here's how to cut yours.
+            DFW summer electric bills average <strong style={{ color: '#F5E642′ }}>$200–$400/month</strong>. Here’s how to cut yours.
           </p>
         </div>
 
@@ -65,12 +65,12 @@ export default function DFWElectricBillReductionGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.85rem', marginBottom: 4 }}>Current Monthly Bill ($)</label>
-              <input value={monthlyBill} onChange={e => setMonthlyBill(e.target.value)} placeholder="e.g. 280" type="number"
+              <input value={monthlyBill} onChange={e => setMonthlyBill(e.target.value)} placeholder="e.g. 280″ type="number"
                 style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#E8F0FE', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.85rem', marginBottom: 4 }}>Home Size (sq ft)</label>
-              <input value={homeSqFt} onChange={e => setHomeSqFt(e.target.value)} placeholder="e.g. 2200" type="number"
+              <input value={homeSqFt} onChange={e => setHomeSqFt(e.target.value)} placeholder="e.g. 2200″ type="number"
                 style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#E8F0FE', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function DFWElectricBillReductionGuide() {
         </div>
 
         {results && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.2rem', fontWeight: 700, marginTop: 0 }}>💡 Your Savings Breakdown</h2>
             {results.filter(r => r.annualSavings > 0).map((r, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1E3A5F' }}>
@@ -88,15 +88,15 @@ export default function DFWElectricBillReductionGuide() {
                 <span style={{ color: '#F5E642', fontWeight: 600 }}>+${r.annualSavings}/yr</span>
               </div>
             ))}
-            <div style={{ marginTop: '1rem', fontSize: '1.3rem', fontWeight: 700, color: '#F5E642' }}>
+            <div style={{ marginTop: '1rem', fontSize: '1.3rem', fontWeight: 700, color: '#F5E642′ }}>
               🏆 Total Annual Savings Potential: ${totalSavings.toLocaleString()}
             </div>
-            {totalSavings === 0 && <p style={{ color: '#94A3B8' }}>You've already implemented all improvements — great work!</p>}
+            {totalSavings === 0 && <p style={{ color: '#94A3B8′ }}>You’ve already implemented all improvements — great work!</p>}
           </div>
         )}
 
         <div style={{ marginTop: '2rem', padding: '1rem', background: '#111D35', borderRadius: 10, border: '1px solid #1E3A5F', color: '#94A3B8', fontSize: '0.85rem' }}>
-          💡 DFW tip: Choose your electricity provider at <strong style={{ color: '#F5E642' }}>PowerToChoose.org</strong> — deregulated market means you can switch for better rates.
+          💡 DFW tip: Choose your electricity provider at <strong style={{ color: '#F5E642′ }}>PowerToChoose.org</strong> — deregulated market means you can switch for better rates.
         </div>
       </div>
     </div>

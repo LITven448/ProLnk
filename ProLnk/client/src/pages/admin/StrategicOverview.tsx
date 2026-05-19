@@ -38,24 +38,24 @@ function MetricCard({
   icon: React.ElementType; accent?: string; alert?: boolean;
 }) {
   const colors: Record<string, string> = {
-    blue: "text-blue-600 bg-blue-50",
-    green: "text-emerald-600 bg-emerald-50",
-    amber: "text-amber-600 bg-amber-50",
-    red: "text-red-600 bg-red-50",
-    purple: "text-purple-600 bg-purple-50",
-    indigo: "text-indigo-600 bg-indigo-50",
+    blue: "text-blue-600 bg-blue-50″,
+    green: "text-emerald-600 bg-emerald-50″,
+    amber: "text-amber-600 bg-amber-50″,
+    red: "text-red-600 bg-red-50″,
+    purple: "text-purple-600 bg-purple-50″,
+    indigo: "text-indigo-600 bg-indigo-50″,
   };
   const cls = colors[accent] ?? colors.blue;
   return (
-    <Card className={alert ? "border-red-200 bg-red-50/30" : ""}>
-      <CardContent className="p-4">
+    <Card className={alert ? "border-red-200 bg-red-50/30″ : ""}>
+      <CardContent className="p-4″>
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide">{label}</p>
-            <p className="text-2xl font-bold mt-1">{value}</p>
-            {sub && <p className="text-xs text-muted-foreground mt-0.5">{sub}</p>}
+            <p className="text-2xl font-bold mt-1″>{value}</p>
+            {sub && <p className="text-xs text-muted-foreground mt-0.5″>{sub}</p>}
           </div>
-          <div className={`p-2 rounded-lg ${cls}`}><Icon className="w-4 h-4" /></div>
+          <div className={`p-2 rounded-lg ${cls}`}><Icon className="w-4 h-4″ /></div>
         </div>
       </CardContent>
     </Card>
@@ -81,7 +81,7 @@ function DailyOpsTab() {
   const totalActions = actionItems.reduce((a, i) => a + i.count, 0);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6″>
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-xl font-bold">Daily Operations</h2>
@@ -90,17 +90,17 @@ function DailyOpsTab() {
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={() => refetch()}>
-          <RefreshCw className="w-3.5 h-3.5 mr-1.5" />Refresh
+          <RefreshCw className="w-3.5 h-3.5 mr-1.5″ />Refresh
         </Button>
       </div>
 
       {/* System Health */}
       <Card>
-        <CardHeader className="pb-2">
+        <CardHeader className="pb-2″>
           <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">System Health</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-6″>
             {[
               { name: "Database", ok: true },
               { name: "Stripe Webhooks", ok: true },
@@ -108,10 +108,10 @@ function DailyOpsTab() {
               { name: "NWS Storm Watch", ok: true },
               { name: "AI Pipeline", ok: true },
             ].map((s) => (
-              <div key={s.name} className="flex items-center gap-2">
+              <div key={s.name} className="flex items-center gap-2″>
                 <StatusDot ok={s.ok} />
                 <span className="text-sm font-medium">{s.name}</span>
-                <Badge variant={s.ok ? "outline" : "destructive"} className="text-xs py-0">
+                <Badge variant={s.ok ? "outline" : "destructive"} className="text-xs py-0″>
                   {s.ok ? "OK" : "DOWN"}
                 </Badge>
               </div>
@@ -121,41 +121,41 @@ function DailyOpsTab() {
       </Card>
 
       {/* Action Required */}
-      <Card className={totalActions > 0 ? "border-amber-200" : "border-emerald-200"}>
-        <CardHeader className="pb-2">
+      <Card className={totalActions > 0 ? "border-amber-200″ : "border-emerald-200"}>
+        <CardHeader className="pb-2″>
           <div className="flex items-center justify-between">
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Action Required</CardTitle>
             {totalActions === 0 ? (
-              <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200">
-                <CheckCircle className="w-3 h-3 mr-1" />All Clear
+              <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200″>
+                <CheckCircle className="w-3 h-3 mr-1″ />All Clear
               </Badge>
             ) : (
-              <Badge className="bg-amber-100 text-amber-700 border-amber-200">
-                <AlertTriangle className="w-3 h-3 mr-1" />{totalActions} items
+              <Badge className="bg-amber-100 text-amber-700 border-amber-200″>
+                <AlertTriangle className="w-3 h-3 mr-1″ />{totalActions} items
               </Badge>
             )}
           </div>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <div className="space-y-2">{[1,2,3].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
+            <div className="space-y-2″>{[1,2,3].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
           ) : (
             <div className="divide-y">
               {actionItems.map((item) => (
-                <div key={item.label} className="flex items-center justify-between py-2.5">
-                  <div className="flex items-center gap-2.5">
+                <div key={item.label} className="flex items-center justify-between py-2.5″>
+                  <div className="flex items-center gap-2.5″>
                     {item.urgent
-                      ? <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0" />
-                      : <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />}
+                      ? <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0″ />
+                      : <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0″ />}
                     <span className="text-sm">{item.label}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Badge variant={item.count > 0 ? "default" : "outline"} className={item.count > 0 ? "bg-amber-500" : ""}>
+                  <div className="flex items-center gap-2″>
+                    <Badge variant={item.count > 0 ? "default" : "outline"} className={item.count > 0 ? "bg-amber-500″ : ""}>
                       {item.count}
                     </Badge>
                     {item.count > 0 && (
-                      <a href={item.href} className="text-xs text-blue-600 hover:underline flex items-center gap-0.5">
-                        View <ArrowRight className="w-3 h-3" />
+                      <a href={item.href} className="text-xs text-blue-600 hover:underline flex items-center gap-0.5″>
+                        View <ArrowRight className="w-3 h-3″ />
                       </a>
                     )}
                   </div>
@@ -168,8 +168,8 @@ function DailyOpsTab() {
 
       {/* Yesterday's Numbers */}
       <div>
-        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Yesterday's Numbers</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3″>Yesterday's Numbers</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
           <MetricCard label="ProLnk Net" value={snap ? fmt$(snap.yesterday.proLinkNet) : "—"} sub="platform net revenue" icon={DollarSign} accent="green" />
           <MetricCard label="Platform Fees" value={snap ? fmt$(snap.yesterday.platformFeeRevenue) : "—"} sub="gross fees collected" icon={TrendingUp} accent="blue" />
           <MetricCard label="New Signups" value={snap?.yesterday.newSignups ?? "—"} sub="partner applications" icon={Users} accent="purple" />
@@ -185,24 +185,24 @@ function ProLnkTab() {
   const { data, isLoading } = trpc.adminExtras.getProLnkStreamStats.useQuery(undefined, { refetchInterval: 10 * 60 * 1000 });
 
   const TIER_COLORS: Record<string, string> = {
-    scout: "bg-slate-100 text-slate-700",
-    pro: "bg-blue-100 text-blue-700",
-    crew: "bg-purple-100 text-purple-700",
-    company: "bg-amber-100 text-amber-700",
-    enterprise: "bg-emerald-100 text-emerald-700",
+    scout: "bg-slate-100 text-slate-700″,
+    pro: "bg-blue-100 text-blue-700″,
+    crew: "bg-purple-100 text-purple-700″,
+    company: "bg-amber-100 text-amber-700″,
+    enterprise: "bg-emerald-100 text-emerald-700″,
   };
 
   const totalMrr = data?.tiers.reduce((a, t) => a + t.mrr, 0) ?? 0;
   const totalPartners = data?.tiers.reduce((a, t) => a + t.partnerCount, 0) ?? 0;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6″>
       <div>
         <h2 className="text-xl font-bold">ProLnk Partner Network</h2>
         <p className="text-sm text-muted-foreground">Lead marketplace & commission engine</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
         <MetricCard label="Monthly Recurring Revenue" value={isLoading ? "—" : fmt$(totalMrr)} sub="from subscriptions" icon={DollarSign} accent="green" />
         <MetricCard label="Active Partners" value={isLoading ? "—" : fmtN(totalPartners)} sub="approved & active" icon={Users} accent="blue" />
         <MetricCard label="Commission Queue" value={isLoading ? "—" : fmt$(data?.commissionQueue.total ?? 0)} sub={`${data?.commissionQueue.count ?? 0} unpaid`} icon={Clock} accent="amber" alert={(data?.commissionQueue.count ?? 0) > 10} />
@@ -215,20 +215,20 @@ function ProLnkTab() {
 
       {/* MRR by Tier */}
       <Card>
-        <CardHeader className="pb-2">
+        <CardHeader className="pb-2″>
           <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">MRR by Tier</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <div className="space-y-2">{[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
+            <div className="space-y-2″>{[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
           ) : (data?.tiers ?? []).length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-4">No approved partners yet</p>
+            <p className="text-sm text-muted-foreground text-center py-4″>No approved partners yet</p>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {(data?.tiers ?? []).map((t) => (
-                <div key={t.tier} className="flex items-center gap-3">
+                <div key={t.tier} className="flex items-center gap-3″>
                   <Badge className={`w-20 justify-center capitalize ${TIER_COLORS[t.tier] ?? ""}`}>{t.tier}</Badge>
-                  <div className="flex-1 bg-muted rounded-full h-2">
+                  <div className="flex-1 bg-muted rounded-full h-2″>
                     <div className="bg-blue-500 h-2 rounded-full" style={{ width: totalMrr > 0 ? `${(t.mrr / totalMrr) * 100}%` : "0%" }} />
                   </div>
                   <span className="text-sm font-medium w-16 text-right">{fmt$(t.mrr)}/mo</span>
@@ -240,23 +240,23 @@ function ProLnkTab() {
         </CardContent>
       </Card>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4″>
         {/* Lead Funnel */}
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-2″>
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Lead Funnel (30 days)</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {[
-                { label: "Dispatched", value: data?.funnel.dispatched ?? 0, color: "bg-blue-500" },
-                { label: "Accepted", value: data?.funnel.accepted ?? 0, color: "bg-purple-500" },
-                { label: "Completed", value: data?.funnel.completed ?? 0, color: "bg-emerald-500" },
-                { label: "Paid", value: data?.funnel.paid ?? 0, color: "bg-green-600" },
+                { label: "Dispatched", value: data?.funnel.dispatched ?? 0, color: "bg-blue-500″ },
+                { label: "Accepted", value: data?.funnel.accepted ?? 0, color: "bg-purple-500″ },
+                { label: "Completed", value: data?.funnel.completed ?? 0, color: "bg-emerald-500″ },
+                { label: "Paid", value: data?.funnel.paid ?? 0, color: "bg-green-600″ },
               ].map((step) => (
-                <div key={step.label} className="flex items-center gap-3">
+                <div key={step.label} className="flex items-center gap-3″>
                   <span className="text-sm w-20 text-muted-foreground">{step.label}</span>
-                  <div className="flex-1 bg-muted rounded-full h-2">
+                  <div className="flex-1 bg-muted rounded-full h-2″>
                     <div className={`${step.color} h-2 rounded-full`} style={{ width: (data?.funnel.dispatched ?? 0) > 0 ? `${(step.value / (data?.funnel.dispatched ?? 1)) * 100}%` : "0%" }} />
                   </div>
                   <span className="text-sm font-bold w-8 text-right">{step.value}</span>
@@ -268,20 +268,20 @@ function ProLnkTab() {
 
         {/* Partner Health */}
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-2″>
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Partner Health</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {[
-                { label: "Healthy", value: data?.health.healthy ?? 0, color: "text-emerald-600", icon: CheckCircle },
-                { label: "1 Strike", value: data?.health.oneStrike ?? 0, color: "text-amber-600", icon: AlertTriangle },
-                { label: "2 Strikes", value: data?.health.twoStrikes ?? 0, color: "text-orange-600", icon: AlertTriangle },
-                { label: "Suspended", value: data?.health.suspended ?? 0, color: "text-red-600", icon: XCircle },
-                { label: "Pending Review", value: data?.health.pending ?? 0, color: "text-blue-600", icon: Clock },
+                { label: "Healthy", value: data?.health.healthy ?? 0, color: "text-emerald-600″, icon: CheckCircle },
+                { label: "1 Strike", value: data?.health.oneStrike ?? 0, color: "text-amber-600″, icon: AlertTriangle },
+                { label: "2 Strikes", value: data?.health.twoStrikes ?? 0, color: "text-orange-600″, icon: AlertTriangle },
+                { label: "Suspended", value: data?.health.suspended ?? 0, color: "text-red-600″, icon: XCircle },
+                { label: "Pending Review", value: data?.health.pending ?? 0, color: "text-blue-600″, icon: Clock },
               ].map((item) => (
                 <div key={item.label} className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2″>
                     <item.icon className={`w-4 h-4 ${item.color}`} />
                     <span className="text-sm">{item.label}</span>
                   </div>
@@ -295,28 +295,28 @@ function ProLnkTab() {
 
       {/* Top 10 Partners */}
       <Card>
-        <CardHeader className="pb-2">
+        <CardHeader className="pb-2″>
           <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Top 10 Partners by Earnings</CardTitle>
         </CardHeader>
         <CardContent>
           {(data?.topPartners ?? []).length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-4">No partner data yet</p>
+            <p className="text-sm text-muted-foreground text-center py-4″>No partner data yet</p>
           ) : (
             <div className="divide-y">
               {(data?.topPartners ?? []).map((p, i) => (
-                <div key={i} className="flex items-center justify-between py-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-muted-foreground w-5">{i + 1}.</span>
+                <div key={i} className="flex items-center justify-between py-2″>
+                  <div className="flex items-center gap-2″>
+                    <span className="text-xs text-muted-foreground w-5″>{i + 1}.</span>
                     <span className="text-sm font-medium">{p.businessName}</span>
                     <Badge className={`capitalize text-xs ${TIER_COLORS[p.tier] ?? ""}`}>{p.tier}</Badge>
                   </div>
                   <div className="flex items-center gap-4 text-sm">
                     <span className="text-muted-foreground">{p.leadsCount} leads</span>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+                    <div className="flex items-center gap-1″>
+                      <Star className="w-3 h-3 text-amber-400 fill-amber-400″ />
                       <span>{p.rating.toFixed(1)}</span>
                     </div>
-                    <span className="font-bold text-emerald-600">{fmt$(p.totalEarned)}</span>
+                    <span className="font-bold text-emerald-600″>{fmt$(p.totalEarned)}</span>
                   </div>
                 </div>
               ))}
@@ -333,31 +333,31 @@ function TrustyProTab() {
   const { data, isLoading } = trpc.adminExtras.getTrustyProStreamStats.useQuery(undefined, { refetchInterval: 10 * 60 * 1000 });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6″>
       <div>
         <h2 className="text-xl font-bold">TrustyPro Homeowner Platform</h2>
         <p className="text-sm text-muted-foreground">AI diagnostics, home health, storm response</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
         <MetricCard label="Total Homeowners" value={isLoading ? "—" : fmtN(data?.profiles.total ?? 0)} sub={`+${data?.profiles.today ?? 0} today, +${data?.profiles.last7 ?? 0} this week`} icon={Home} accent="blue" />
         <MetricCard label="AI Scans Completed" value={isLoading ? "—" : fmtN(data?.aiScans.completed ?? 0)} sub={`${data?.aiScans.today ?? 0} today`} icon={Activity} accent="purple" />
         <MetricCard label="Quote Requests" value={isLoading ? "—" : fmtN(data?.quotes.total ?? 0)} sub={`${data?.quotes.pending ?? 0} pending`} icon={Wrench} accent="amber" />
         <MetricCard label="Churn Risk" value={isLoading ? "—" : fmtN(data?.churnRisk ?? 0)} sub="inactive 60+ days" icon={TrendingDown} accent="red" alert={(data?.churnRisk ?? 0) > 5} />
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4″>
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-2″>
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">AI Scan Pipeline</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="space-y-3″>
               {[
-                { label: "Total Scans", value: data?.aiScans.total ?? 0, color: "text-slate-600" },
-                { label: "Completed", value: data?.aiScans.completed ?? 0, color: "text-emerald-600" },
-                { label: "Processing", value: data?.aiScans.processing ?? 0, color: "text-blue-600" },
-                { label: "Failed", value: data?.aiScans.failed ?? 0, color: "text-red-600" },
+                { label: "Total Scans", value: data?.aiScans.total ?? 0, color: "text-slate-600″ },
+                { label: "Completed", value: data?.aiScans.completed ?? 0, color: "text-emerald-600″ },
+                { label: "Processing", value: data?.aiScans.processing ?? 0, color: "text-blue-600″ },
+                { label: "Failed", value: data?.aiScans.failed ?? 0, color: "text-red-600″ },
               ].map((item) => (
                 <div key={item.label} className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">{item.label}</span>
@@ -368,7 +368,7 @@ function TrustyProTab() {
                 <div className="pt-2 border-t">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>Success rate</span>
-                    <span className="font-medium text-emerald-600">
+                    <span className="font-medium text-emerald-600″>
                       {Math.round(((data?.aiScans.completed ?? 0) / (data?.aiScans.total ?? 1)) * 100)}%
                     </span>
                   </div>
@@ -379,19 +379,19 @@ function TrustyProTab() {
         </Card>
 
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-2″>
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Quote Request Funnel</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="space-y-3″>
               {[
-                { label: "Submitted", value: data?.quotes.total ?? 0, color: "bg-blue-500" },
-                { label: "Quoted", value: data?.quotes.quoted ?? 0, color: "bg-purple-500" },
-                { label: "Accepted", value: data?.quotes.accepted ?? 0, color: "bg-emerald-500" },
+                { label: "Submitted", value: data?.quotes.total ?? 0, color: "bg-blue-500″ },
+                { label: "Quoted", value: data?.quotes.quoted ?? 0, color: "bg-purple-500″ },
+                { label: "Accepted", value: data?.quotes.accepted ?? 0, color: "bg-emerald-500″ },
               ].map((step) => (
-                <div key={step.label} className="flex items-center gap-3">
+                <div key={step.label} className="flex items-center gap-3″>
                   <span className="text-sm w-20 text-muted-foreground">{step.label}</span>
-                  <div className="flex-1 bg-muted rounded-full h-2">
+                  <div className="flex-1 bg-muted rounded-full h-2″>
                     <div className={`${step.color} h-2 rounded-full`} style={{ width: (data?.quotes.total ?? 0) > 0 ? `${(step.value / (data?.quotes.total ?? 1)) * 100}%` : "0%" }} />
                   </div>
                   <span className="text-sm font-bold w-8 text-right">{step.value}</span>
@@ -403,22 +403,22 @@ function TrustyProTab() {
       </div>
 
       {/* Storm Watch */}
-      <Card className="border-blue-200 bg-blue-50/20">
-        <CardHeader className="pb-2">
-          <div className="flex items-center gap-2">
-            <CloudLightning className="w-4 h-4 text-blue-600" />
+      <Card className="border-blue-200 bg-blue-50/20″>
+        <CardHeader className="pb-2″>
+          <div className="flex items-center gap-2″>
+            <CloudLightning className="w-4 h-4 text-blue-600″ />
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Storm Watch (Last 7 Days)</CardTitle>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4″>
             <div className="text-center">
-              <p className="text-3xl font-bold text-blue-700">{data?.stormWatch.events7d ?? 0}</p>
-              <p className="text-xs text-muted-foreground mt-1">Storm Events Detected</p>
+              <p className="text-3xl font-bold text-blue-700″>{data?.stormWatch.events7d ?? 0}</p>
+              <p className="text-xs text-muted-foreground mt-1″>Storm Events Detected</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-emerald-700">{data?.stormWatch.leads7d ?? 0}</p>
-              <p className="text-xs text-muted-foreground mt-1">Leads Generated</p>
+              <p className="text-3xl font-bold text-emerald-700″>{data?.stormWatch.leads7d ?? 0}</p>
+              <p className="text-xs text-muted-foreground mt-1″>Leads Generated</p>
             </div>
           </div>
         </CardContent>
@@ -432,13 +432,13 @@ function AdvertisersTab() {
   const { data, isLoading } = trpc.adminExtras.getAdvertiserStreamStats.useQuery(undefined, { refetchInterval: 10 * 60 * 1000 });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6″>
       <div>
         <h2 className="text-xl font-bold">Featured Advertisers</h2>
         <p className="text-sm text-muted-foreground">Sponsored placements, banner ads, directory features</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
         <MetricCard label="Active Advertisers" value={isLoading ? "—" : data?.totals.active ?? 0} sub="live placements" icon={BarChart3} accent="blue" />
         <MetricCard label="Advertiser MRR" value={isLoading ? "—" : fmt$(data?.totals.mrr ?? 0)} sub="monthly recurring" icon={DollarSign} accent="green" />
         <MetricCard label="Total Impressions" value={isLoading ? "—" : fmtN(data?.totals.totalImpressions ?? 0)} sub="all time" icon={Eye} accent="purple" />
@@ -446,29 +446,29 @@ function AdvertisersTab() {
       </div>
 
       {((data?.totals.pendingApplications ?? 0) > 0 || (data?.totals.expiringContracts ?? 0) > 0) && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2″>
           {(data?.totals.pendingApplications ?? 0) > 0 && (
-            <Badge className="bg-amber-100 text-amber-700 border-amber-200 text-sm py-1 px-3">
-              <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />{data?.totals.pendingApplications} pending applications
+            <Badge className="bg-amber-100 text-amber-700 border-amber-200 text-sm py-1 px-3″>
+              <AlertTriangle className="w-3.5 h-3.5 mr-1.5″ />{data?.totals.pendingApplications} pending applications
             </Badge>
           )}
           {(data?.totals.expiringContracts ?? 0) > 0 && (
-            <Badge className="bg-red-100 text-red-700 border-red-200 text-sm py-1 px-3">
-              <Clock className="w-3.5 h-3.5 mr-1.5" />{data?.totals.expiringContracts} contracts expiring in 30 days
+            <Badge className="bg-red-100 text-red-700 border-red-200 text-sm py-1 px-3″>
+              <Clock className="w-3.5 h-3.5 mr-1.5″ />{data?.totals.expiringContracts} contracts expiring in 30 days
             </Badge>
           )}
         </div>
       )}
 
       <Card>
-        <CardHeader className="pb-2">
+        <CardHeader className="pb-2″>
           <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Active Advertisers</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <div className="space-y-2">{[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
+            <div className="space-y-2″>{[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
           ) : (data?.advertisers ?? []).length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-6">No advertisers yet</p>
+            <p className="text-sm text-muted-foreground text-center py-6″>No advertisers yet</p>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -485,15 +485,15 @@ function AdvertisersTab() {
                 </thead>
                 <tbody className="divide-y">
                   {(data?.advertisers ?? []).map((a) => (
-                    <tr key={a.id} className="hover:bg-muted/30">
+                    <tr key={a.id} className="hover:bg-muted/30″>
                       <td className="py-2 font-medium">{a.businessName}</td>
                       <td className="py-2 text-right capitalize text-muted-foreground">{a.tier}</td>
-                      <td className="py-2 text-right font-medium text-emerald-600">{fmt$(a.monthlyFee)}</td>
+                      <td className="py-2 text-right font-medium text-emerald-600″>{fmt$(a.monthlyFee)}</td>
                       <td className="py-2 text-right">{fmtN(a.impressions)}</td>
                       <td className="py-2 text-right">{fmtN(a.clicks)}</td>
                       <td className="py-2 text-right">{a.ctr}%</td>
                       <td className="py-2 text-right">
-                        <Badge variant="outline" className={a.status === "active" ? "text-emerald-600 border-emerald-200" : "text-amber-600 border-amber-200"}>
+                        <Badge variant="outline" className={a.status === "active" ? "text-emerald-600 border-emerald-200″ : "text-amber-600 border-amber-200"}>
                           {a.status}
                         </Badge>
                       </td>
@@ -514,13 +514,13 @@ function AffiliateTab() {
   const { data, isLoading } = trpc.adminExtras.getAffiliateStreamStats.useQuery(undefined, { refetchInterval: 10 * 60 * 1000 });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6″>
       <div>
         <h2 className="text-xl font-bold">Affiliate Products</h2>
         <p className="text-sm text-muted-foreground">Amazon affiliate catalog, click tracking, estimated earnings</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
         <MetricCard label="Clicks Today" value={isLoading ? "—" : data?.clicks.today ?? 0} sub="affiliate link clicks" icon={MousePointerClick} accent="blue" />
         <MetricCard label="Clicks (7 days)" value={isLoading ? "—" : fmtN(data?.clicks.last7 ?? 0)} sub="last 7 days" icon={TrendingUp} accent="purple" />
         <MetricCard label="Clicks (30 days)" value={isLoading ? "—" : fmtN(data?.clicks.last30 ?? 0)} sub="last 30 days" icon={BarChart3} accent="indigo" />
@@ -529,27 +529,27 @@ function AffiliateTab() {
 
       {(data?.missingAffiliateUrl ?? 0) > 0 && (
         <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-          <p className="text-sm text-amber-700">
+          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0″ />
+          <p className="text-sm text-amber-700″>
             <strong>{data?.missingAffiliateUrl}</strong> active products are missing affiliate URLs — these clicks won't earn commissions.
           </p>
         </div>
       )}
 
       <Card>
-        <CardHeader className="pb-2">
+        <CardHeader className="pb-2″>
           <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Product Catalog by Category</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <div className="space-y-2">{[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
+            <div className="space-y-2″>{[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-muted animate-pulse rounded" />)}</div>
           ) : (data?.catalog ?? []).length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-6">No products in catalog yet</p>
+            <p className="text-sm text-muted-foreground text-center py-6″>No products in catalog yet</p>
           ) : (
             <div className="divide-y">
               {(data?.catalog ?? []).map((cat) => (
-                <div key={cat.category} className="flex items-center justify-between py-2.5">
-                  <div className="flex items-center gap-2">
+                <div key={cat.category} className="flex items-center justify-between py-2.5″>
+                  <div className="flex items-center gap-2″>
                     <Package className="w-4 h-4 text-muted-foreground" />
                     <span className="text-sm font-medium capitalize">{cat.category}</span>
                   </div>
@@ -558,7 +558,7 @@ function AffiliateTab() {
                     {cat.hasAffiliateUrl < cat.active ? (
                       <Badge className="bg-amber-100 text-amber-700 border-amber-200 text-xs">{cat.active - cat.hasAffiliateUrl} missing URL</Badge>
                     ) : cat.active > 0 ? (
-                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 text-xs"><CheckCircle className="w-3 h-3 mr-1" />All set</Badge>
+                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 text-xs"><CheckCircle className="w-3 h-3 mr-1″ />All set</Badge>
                     ) : null}
                   </div>
                 </div>
@@ -569,21 +569,21 @@ function AffiliateTab() {
       </Card>
 
       <Card>
-        <CardHeader className="pb-2">
+        <CardHeader className="pb-2″>
           <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Top Categories by Clicks (30 days)</CardTitle>
         </CardHeader>
         <CardContent>
           {(data?.topCategories ?? []).length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-6">No click data yet</p>
+            <p className="text-sm text-muted-foreground text-center py-6″>No click data yet</p>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {(data?.topCategories ?? []).map((cat, i) => {
                 const maxClicks = data?.topCategories[0]?.clicks ?? 1;
                 return (
-                  <div key={cat.category} className="flex items-center gap-3">
-                    <span className="text-xs text-muted-foreground w-4">{i + 1}.</span>
+                  <div key={cat.category} className="flex items-center gap-3″>
+                    <span className="text-xs text-muted-foreground w-4″>{i + 1}.</span>
                     <span className="text-sm w-32 capitalize">{cat.category}</span>
-                    <div className="flex-1 bg-muted rounded-full h-2">
+                    <div className="flex-1 bg-muted rounded-full h-2″>
                       <div className="bg-indigo-500 h-2 rounded-full" style={{ width: `${(cat.clicks / maxClicks) * 100}%` }} />
                     </div>
                     <span className="text-sm font-bold w-10 text-right">{cat.clicks}</span>
@@ -624,11 +624,11 @@ export default function StrategicOverview() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
                 activeTab === tab.id
-                  ? "border-blue-600 text-blue-600"
+                  ? "border-blue-600 text-blue-600″
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground"
               }`}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-4 h-4″ />
               {tab.label}
             </button>
           );

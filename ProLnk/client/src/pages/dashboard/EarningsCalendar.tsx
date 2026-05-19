@@ -177,19 +177,19 @@ function Sparkline({ values }: { values: number[] }) {
   return (
     <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} className="overflow-visible">
       <defs>
-        <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
+        <linearGradient id="sparkGrad" x1="0″ y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.35″ />
+          <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0″ />
         </linearGradient>
       </defs>
       <polygon points={area} fill="url(#sparkGrad)" />
-      <polyline points={polyline} fill="none" stroke="#2dd4bf" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+      <polyline points={polyline} fill="none" stroke="#2dd4bf" strokeWidth="2″ strokeLinejoin="round" strokeLinecap="round" />
       {values.map((v, i) => (
         <circle
           key={i}
           cx={(i / (values.length - 1)) * W}
           cy={H - (v / max) * H}
-          r="2.5"
+          r="2.5″
           fill="#2dd4bf"
         />
       ))}
@@ -219,7 +219,7 @@ function HeatCell({
   return (
     <div className="relative aspect-square group">
       <div
-        className="w-full h-full rounded cursor-pointer transition-all duration-150 hover:scale-110"
+        className="w-full h-full rounded cursor-pointer transition-all duration-150 hover:scale-110″
         style={{ background: bg, outline: ring }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -230,12 +230,12 @@ function HeatCell({
           style={{
             background: "#0f172a",
             border: "1px solid rgba(255,255,255,0.12)",
-            color: "#e2e8f0",
+            color: "#e2e8f0″,
             boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
           }}
         >
-          <span className="font-bold text-teal-400">${Math.round(amount).toLocaleString()}</span>
-          <span className="text-slate-400"> · {jobs} job{jobs !== 1 ? "s" : ""}</span>
+          <span className="font-bold text-teal-400″>${Math.round(amount).toLocaleString()}</span>
+          <span className="text-slate-400″> · {jobs} job{jobs !== 1 ? "s" : ""}</span>
         </div>
       )}
       <span
@@ -360,22 +360,22 @@ export default function EarningsCalendar() {
 
   return (
     <div className="min-h-screen bg-[#0A1628]">
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6″>
 
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-white">Earnings Calendar</h1>
-            <p className="text-slate-400 text-sm mt-1">Daily and weekly earnings breakdown.</p>
+            <p className="text-slate-400 text-sm mt-1″>Daily and weekly earnings breakdown.</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2″>
             <button
               onClick={() => setMode("monthly")}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
               style={{
                 background: mode === "monthly" ? "rgba(45,212,191,0.15)" : "rgba(255,255,255,0.04)",
                 border: mode === "monthly" ? "1px solid rgba(45,212,191,0.4)" : BORDER,
-                color: mode === "monthly" ? ACCENT : "#94a3b8",
+                color: mode === "monthly" ? ACCENT : "#94a3b8″,
               }}
             >
               <LayoutGrid size={13} />Monthly
@@ -386,7 +386,7 @@ export default function EarningsCalendar() {
               style={{
                 background: mode === "weekly" ? "rgba(45,212,191,0.15)" : "rgba(255,255,255,0.04)",
                 border: mode === "weekly" ? "1px solid rgba(45,212,191,0.4)" : BORDER,
-                color: mode === "weekly" ? ACCENT : "#94a3b8",
+                color: mode === "weekly" ? ACCENT : "#94a3b8″,
               }}
             >
               <BarChart3 size={13} />Weekly
@@ -400,7 +400,7 @@ export default function EarningsCalendar() {
             onClick={prevMonth}
             className="p-2 rounded-lg hover:bg-white/5 transition-colors"
           >
-            <ChevronLeft size={18} className="text-slate-400" />
+            <ChevronLeft size={18} className="text-slate-400″ />
           </button>
           <span className="text-base font-bold text-white">
             {MONTHS[viewMonth]} {viewYear}
@@ -411,44 +411,44 @@ export default function EarningsCalendar() {
             disabled={isCurrentMonth}
             style={{ opacity: isCurrentMonth ? 0.3 : 1 }}
           >
-            <ChevronRight size={18} className="text-slate-400" />
+            <ChevronRight size={18} className="text-slate-400″ />
           </button>
         </div>
 
         {/* ── NEW: Heatmap ── */}
-        <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
+        <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700″>
+          <div className="flex items-center justify-between mb-4″>
+            <div className="flex items-center gap-2″>
               <Calendar size={14} style={{ color: ACCENT }} />
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Earnings Heat Map</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-400″>Earnings Heat Map</p>
             </div>
-            <div className="flex items-center gap-2 text-[10px] text-slate-500">
-              <span className="flex items-center gap-1">
-                <span className="inline-block w-3 h-3 rounded-sm bg-slate-800" /> None
+            <div className="flex items-center gap-2 text-[10px] text-slate-500″>
+              <span className="flex items-center gap-1″>
+                <span className="inline-block w-3 h-3 rounded-sm bg-slate-800″ /> None
               </span>
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-1″>
                 <span className="inline-block w-3 h-3 rounded-sm" style={{ background: "#134e4a" }} /> $1–500
               </span>
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-1″>
                 <span className="inline-block w-3 h-3 rounded-sm" style={{ background: "#0f766e" }} /> $500–1k
               </span>
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-1″>
                 <span className="inline-block w-3 h-3 rounded-sm" style={{ background: "#2dd4bf" }} /> $1k+
               </span>
             </div>
           </div>
 
           {/* Day labels Mon–Sun */}
-          <div className="grid grid-cols-7 gap-1 mb-1">
+          <div className="grid grid-cols-7 gap-1 mb-1″>
             {DAY_LABELS_LONG.map(d => (
-              <div key={d} className="text-center text-[9px] font-semibold text-slate-600">{d}</div>
+              <div key={d} className="text-center text-[9px] font-semibold text-slate-600″>{d}</div>
             ))}
           </div>
 
           {/* Heatmap weeks */}
-          <div className="space-y-1">
+          <div className="space-y-1″>
             {heatmapWeeks.map((week, wi) => (
-              <div key={wi} className="grid grid-cols-7 gap-1">
+              <div key={wi} className="grid grid-cols-7 gap-1″>
                 {week.map((cell, di) => (
                   <HeatCell
                     key={di}
@@ -463,20 +463,20 @@ export default function EarningsCalendar() {
           </div>
 
           {monthTotal === 0 && !isLoading && (
-            <p className="text-center text-xs text-slate-600 mt-4">No earnings recorded for this month yet.</p>
+            <p className="text-center text-xs text-slate-600 mt-4″>No earnings recorded for this month yet.</p>
           )}
         </div>
 
         {/* ── NEW: Best Day Banner ── */}
         {bestDay && bestDay.avg > 0 && (
           <div
-            className="rounded-2xl px-5 py-4 flex items-center gap-3"
+            className="rounded-2xl px-5 py-4 flex items-center gap-3″
             style={{
               background: "linear-gradient(135deg, rgba(45,212,191,0.12), rgba(45,212,191,0.04))",
               border: "1px solid rgba(45,212,191,0.25)",
             }}
           >
-            <Star size={18} style={{ color: ACCENT }} className="flex-shrink-0" />
+            <Star size={18} style={{ color: ACCENT }} className="flex-shrink-0″ />
             <p className="text-sm text-white">
               Best day this month:{" "}
               <span style={{ color: ACCENT }} className="font-bold">{bestDay.dayName}</span>
@@ -488,13 +488,13 @@ export default function EarningsCalendar() {
 
         {/* ── NEW: Sparkline this week ── */}
         {isCurrentMonth && (
-          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700">
+          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700″>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1″>
                   This Week's Trend
                 </p>
-                <p className="text-xs text-slate-500">Daily earnings — last 7 days</p>
+                <p className="text-xs text-slate-500″>Daily earnings — last 7 days</p>
               </div>
               <Sparkline values={sparklineValues} />
             </div>
@@ -502,9 +502,9 @@ export default function EarningsCalendar() {
         )}
 
         {/* Summary cards */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700">
-            <div className="flex items-center gap-2 mb-2">
+        <div className="grid grid-cols-2 gap-4″>
+          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700″>
+            <div className="flex items-center gap-2 mb-2″>
               <DollarSign size={15} style={{ color: ACCENT }} />
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">
                 {isCurrentMonth ? "This Month" : `${MONTHS_SHORT[viewMonth]} ${viewYear}`}
@@ -517,8 +517,8 @@ export default function EarningsCalendar() {
             )}
           </div>
 
-          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700">
-            <div className="flex items-center gap-2 mb-2">
+          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700″>
+            <div className="flex items-center gap-2 mb-2″>
               <TrendingUp size={15} style={{ color: isCurrentMonth ? "#22c55e" : ACCENT }} />
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">
                 {isCurrentMonth ? "Projected" : "Best Day"}
@@ -528,8 +528,8 @@ export default function EarningsCalendar() {
               <div className="h-7 w-24 rounded-lg bg-white/5 animate-pulse" />
             ) : isCurrentMonth ? (
               <>
-                <p className="text-2xl font-bold text-green-400">${projected.toLocaleString()}</p>
-                <p className="text-[10px] text-slate-600 mt-1">Based on current pace +5%</p>
+                <p className="text-2xl font-bold text-green-400″>${projected.toLocaleString()}</p>
+                <p className="text-[10px] text-slate-600 mt-1″>Based on current pace +5%</p>
               </>
             ) : (
               <>
@@ -540,12 +540,12 @@ export default function EarningsCalendar() {
                       <p className="text-2xl font-bold" style={{ color: ACCENT }}>
                         ${Math.round(best[1].amount).toLocaleString()}
                       </p>
-                      <p className="text-[10px] text-slate-600 mt-1">
+                      <p className="text-[10px] text-slate-600 mt-1″>
                         Day {best[0]} of {MONTHS_SHORT[viewMonth]}
                       </p>
                     </>
                   ) : (
-                    <p className="text-2xl font-bold text-slate-600">—</p>
+                    <p className="text-2xl font-bold text-slate-600″>—</p>
                   );
                 })()}
               </>
@@ -555,17 +555,17 @@ export default function EarningsCalendar() {
 
         {/* Calendar or bar chart */}
         {mode === "monthly" ? (
-          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700″>
+            <div className="flex items-center gap-2 mb-4″>
               <Calendar size={14} style={{ color: ACCENT }} />
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Daily Earnings</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-400″>Daily Earnings</p>
             </div>
-            <div className="grid grid-cols-7 gap-1 mb-1">
+            <div className="grid grid-cols-7 gap-1 mb-1″>
               {DAY_LABELS_ALL.map(d => (
-                <div key={d} className="text-center text-[10px] font-semibold text-slate-600">{d}</div>
+                <div key={d} className="text-center text-[10px] font-semibold text-slate-600″>{d}</div>
               ))}
             </div>
-            <div className="grid grid-cols-7 gap-1">
+            <div className="grid grid-cols-7 gap-1″>
               {Array.from({ length: firstDayOfWeek }).map((_, i) => (
                 <div key={`empty-${i}`} />
               ))}
@@ -578,21 +578,21 @@ export default function EarningsCalendar() {
               })}
             </div>
             {monthTotal === 0 && !isLoading && (
-              <p className="text-center text-xs text-slate-600 mt-4">No earnings recorded for this month yet.</p>
+              <p className="text-center text-xs text-slate-600 mt-4″>No earnings recorded for this month yet.</p>
             )}
           </div>
         ) : (
-          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="rounded-2xl p-5 bg-slate-900 border border-slate-700″>
+            <div className="flex items-center gap-2 mb-4″>
               <BarChart3 size={14} style={{ color: ACCENT }} />
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Weekly Earnings</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-400″>Weekly Earnings</p>
             </div>
             {isLoading ? (
               <div className="h-48 rounded-xl bg-white/5 animate-pulse" />
             ) : (
               <ResponsiveContainer width="100%" height={200}>
                 <BarChart data={weeklyData} barSize={36}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3″ stroke="rgba(255,255,255,0.06)" vertical={false} />
                   <XAxis dataKey="week" tick={{ fill: "#64748b", fontSize: 11 }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: "#64748b", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${v}`} />
                   <Tooltip

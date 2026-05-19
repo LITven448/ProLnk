@@ -19,14 +19,14 @@ export default function DFWRoofingEstimateScope2026() {
   const sel = elements.find(e => e.id === selected);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "24px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>📋</div>
-          <h1 style={{ color: "#F5E642", fontSize: 26, fontWeight: 800, margin: "8px 0 4px" }}>
+          <h1 style={{ color: "#F5E642″, fontSize: 26, fontWeight: 800, margin: "8px 0 4px" }}>
             DFW Roofing Estimate Scope of Work Guide 2026
           </h1>
-          <p style={{ color: "#94A3B8", fontSize: 14 }}>
+          <p style={{ color: "#94A3B8″, fontSize: 14 }}>
             What must be in every DFW roofing estimate and what to verify
           </p>
         </div>
@@ -34,13 +34,13 @@ export default function DFWRoofingEstimateScope2026() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 24 }}>
           {elements.map(e => (
             <button key={e.id} onClick={() => setSelected(e.id === selected ? "" : e.id)}
-              style={{ background: selected === e.id ? "#F5E642" : "#1E293B", color: selected === e.id ? "#0A1628" : "#fff",
-                border: "1px solid " + (e.required ? "#F5E642" : "#475569"), borderRadius: 8, padding: "12px 14px",
+              style={{ background: selected === e.id ? "#F5E642″ : "#1E293B", color: selected === e.id ? "#0A1628" : "#fff",
+                border: "1px solid " + (e.required ? "#F5E642″ : "#475569"), borderRadius: 8, padding: "12px 14px",
                 cursor: "pointer", fontSize: 13, textAlign: "left", display: "flex", alignItems: "center", gap: 8 }}>
               <span>{e.icon}</span>
               <div>
                 <div style={{ fontWeight: 600 }}>{e.label}</div>
-                <div style={{ fontSize: 11, color: selected === e.id ? "#0A1628" : (e.required ? "#F5E642" : "#94A3B8") }}>
+                <div style={{ fontSize: 11, color: selected === e.id ? "#0A1628″ : (e.required ? "#F5E642" : "#94A3B8") }}>
                   {e.required ? "Required" : "Recommended"}
                 </div>
               </div>
@@ -49,20 +49,20 @@ export default function DFWRoofingEstimateScope2026() {
         </div>
 
         {sel && (
-          <div style={{ background: "#1E293B", borderRadius: 12, padding: 20, marginBottom: 24, border: "1px solid #F5E642" }}>
-            <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 12 }}>{sel.icon} {sel.label} — What to Verify</h2>
-            <p style={{ color: "#CBD5E1", fontSize: 14, lineHeight: 1.6 }}>{sel.verify}</p>
+          <div style={{ background: "#1E293B", borderRadius: 12, padding: 20, marginBottom: 24, border: "1px solid #F5E642″ }}>
+            <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 12 }}>{sel.icon} {sel.label} — What to Verify</h2>
+            <p style={{ color: "#CBD5E1″, fontSize: 14, lineHeight: 1.6 }}>{sel.verify}</p>
           </div>
         )}
 
         {!sel && (
           <div style={{ background: "#1E293B", borderRadius: 12, padding: 20, marginBottom: 24, textAlign: "center" }}>
-            <div style={{ color: "#475569", fontSize: 14 }}>Click any estimate element above to see what to verify</div>
+            <div style={{ color: "#475569″, fontSize: 14 }}>Click any estimate element above to see what to verify</div>
           </div>
         )}
 
         <div style={{ background: "#1E293B", borderRadius: 12, padding: 20 }}>
-          <h2 style={{ color: "#EF4444", fontSize: 15, marginBottom: 12 }}>Red Flags in DFW Estimates</h2>
+          <h2 style={{ color: "#EF4444″, fontSize: 15, marginBottom: 12 }}>Red Flags in DFW Estimates</h2>
           {[
             "No permit mentioned — avoid any contractor who suggests skipping permits",
             "Shingle listed as just architectural without brand or product line",
@@ -70,13 +70,13 @@ export default function DFWRoofingEstimateScope2026() {
             "Overlay proposed on unknown existing layer count",
             "Price far below DFW market — often means cutting corners on accessories",
           ].map((r, i) => (
-            <div key={i} style={{ color: "#CBD5E1", fontSize: 13, marginBottom: 6, display: "flex", gap: 8 }}>
-              <span style={{ color: "#EF4444" }}>!</span>{r}
+            <div key={i} style={{ color: "#CBD5E1″, fontSize: 13, marginBottom: 6, display: "flex", gap: 8 }}>
+              <span style={{ color: "#EF4444″ }}>!</span>{r}
             </div>
           ))}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: 24, color: "#475569", fontSize: 12 }}>
+        <div style={{ textAlign: "center", marginTop: 24, color: "#475569″, fontSize: 12 }}>
           ProLnk Roofing Estimate Guide 2026 | Know what every DFW estimate should include
         </div>
       </div>

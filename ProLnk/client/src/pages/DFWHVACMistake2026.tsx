@@ -55,7 +55,7 @@ export default function DFWHVACMistake2026() {
         <p style={{ color: '#8FA3BF', marginBottom: 32, fontSize: 15 }}>What DFW homeowners get wrong with HVAC — and how to avoid costly errors in North Texas heat.</p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {mistakes.map(m => (
-            <button key={m.id} onClick={() => setActive(m.id)} style={{ background: active === m.id ? '#F5E642' : '#132238', color: active === m.id ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 14, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <button key={m.id} onClick={() => setActive(m.id)} style={{ background: active === m.id ? '#F5E642′ : '#132238', color: active === m.id ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 14, display: 'flex', alignItems: 'center', gap: 6 }}>
               {m.icon} {m.title.split(' ').slice(0, 2).join(' ')}
             </button>
           ))}
@@ -65,7 +65,7 @@ export default function DFWHVACMistake2026() {
           <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 8 }}>{selected.title}</h2>
           <div style={{ background: '#1E3A5F', borderRadius: 6, padding: '8px 14px', display: 'inline-block', marginBottom: 16, color: '#F5E642', fontWeight: 700, fontSize: 13 }}>💰 Cost: {selected.cost}</div>
           <p style={{ color: '#C2D3E8', fontSize: 15, lineHeight: 1.7, marginBottom: 20 }}>{selected.detail}</p>
-          <div style={{ background: '#0D1F36', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0D1F36', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>✅ HOW TO AVOID IT</div>
             <p style={{ color: '#C2D3E8', fontSize: 14, margin: 0 }}>{selected.fix}</p>
           </div>

@@ -149,10 +149,10 @@ export default function DFWContractorHireChecklist() {
           return (
             <div key={step.step} style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: `4px solid ${stepDone ? '#F5E642' : '#1a3050'}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-                <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800, color: stepDone ? '#F5E642' : '#cdd9e5' }}>
+                <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800, color: stepDone ? '#F5E642′ : '#cdd9e5' }}>
                   {step.emoji} Step {step.step}: {step.title}
                 </h2>
-                <span style={{ fontSize: 11, color: stepDone ? '#F5E642' : '#8899aa', flexShrink: 0, marginLeft: 8 }}>
+                <span style={{ fontSize: 11, color: stepDone ? '#F5E642′ : '#8899aa', flexShrink: 0, marginLeft: 8 }}>
                   {stepDone ? '✓ Done' : `${stepCount}/${step.tasks.length}`}
                 </span>
               </div>
@@ -169,12 +169,12 @@ export default function DFWContractorHireChecklist() {
                   >
                     <div style={{
                       width: 20, height: 20, borderRadius: 4, border: `2px solid ${checked[key] ? '#F5E642' : '#334466'}`,
-                      background: checked[key] ? '#F5E642' : 'transparent', flexShrink: 0, marginTop: 1,
+                      background: checked[key] ? '#F5E642′ : ’transparent', flexShrink: 0, marginTop: 1,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, color: '#0A1628', fontWeight: 900,
                     }}>
                       {checked[key] ? '✓' : ''}
                     </div>
-                    <span style={{ fontSize: 14, color: checked[key] ? '#556677' : '#cdd9e5', textDecoration: checked[key] ? 'line-through' : 'none', lineHeight: 1.5 }}>
+                    <span style={{ fontSize: 14, color: checked[key] ? '#556677′ : '#cdd9e5', textDecoration: checked[key] ? ’line-through' : 'none', lineHeight: 1.5 }}>
                       {task}
                     </span>
                   </div>
@@ -185,7 +185,7 @@ export default function DFWContractorHireChecklist() {
         })}
 
         {stepsComplete === STEPS.length && (
-          <div style={{ background: '#0f3d2e', borderRadius: 12, padding: 20, textAlign: 'center', border: '2px solid #34d399' }}>
+          <div style={{ background: '#0f3d2e', borderRadius: 12, padding: 20, textAlign: 'center', border: '2px solid #34d399′ }}>
             <div style={{ fontSize: 32, marginBottom: 8 }}>🎉</div>
             <p style={{ color: '#34d399', fontWeight: 800, fontSize: 16, margin: 0 }}>
               You are fully protected. Safe to proceed with this contractor.

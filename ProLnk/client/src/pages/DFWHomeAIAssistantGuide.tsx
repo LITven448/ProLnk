@@ -40,7 +40,7 @@ export default function DFWHomeAIAssistantGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Select your current smart home setup to see what AI can do for your DFW home now vs. coming soon:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {aiFeatures.map(f => (
-              <button key={f.id} onClick={() => setSelected(f.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === f.id ? '#F5E642' : '#1e3a5f', background: selected === f.id ? '#F5E642' : 'transparent', color: selected === f.id ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>{f.label}</button>
+              <button key={f.id} onClick={() => setSelected(f.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === f.id ? '#F5E642′ : '#1e3a5f', background: selected === f.id ? '#F5E642' : ’transparent', color: selected === f.id ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>{f.label}</button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
@@ -50,7 +50,7 @@ export default function DFWHomeAIAssistantGuide() {
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 16 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🚀 Coming Soon</div>
-              {feature.soon.map(item => <div key={item} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 8, borderLeft: '2px solid #F5E642' }}>{item}</div>)}
+              {feature.soon.map(item => <div key={item} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 8, borderLeft: '2px solid #F5E642′ }}>{item}</div>)}
             </div>
           </div>
         </div>

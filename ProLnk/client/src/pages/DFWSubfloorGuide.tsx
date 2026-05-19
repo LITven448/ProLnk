@@ -15,10 +15,10 @@ const projects = [
 
 const matrix: Record<string, Record<string, { verdict: string; action: string; cost: string; first: string }>> = {
   squeak: {
-    hardwood: { verdict: 'Repair Before Installing', action: 'Screw subfloor to joists every 6"", add construction adhesive; squeaks will telegraph through hardwood', cost: '$300–$900 repair + flooring', first: 'Fix squeaks first — hardwood amplifies them' },
-    tile: { verdict: 'Repair Required', action: 'Tile grout cracks if subfloor flexes; screw + add 1/4" cement board overlay', cost: '$500–$1,400', first: 'Subfloor must be rock solid for tile — no flex allowed' },
+    hardwood: { verdict: 'Repair Before Installing', action: 'Screw subfloor to joists every 6″", add construction adhesive; squeaks will telegraph through hardwood', cost: '$300–$900 repair + flooring', first: 'Fix squeaks first — hardwood amplifies them' },
+    tile: { verdict: 'Repair Required', action: 'Tile grout cracks if subfloor flexes; screw + add 1/4″ cement board overlay', cost: '$500–$1,400', first: 'Subfloor must be rock solid for tile — no flex allowed' },
     carpet: { verdict: 'Repair Optional', action: 'Carpet and pad absorb minor squeaks; screw from above if bothersome', cost: '$150–$500', first: 'Carpet can go over minor squeaks; fix major ones first' },
-    repair: { verdict: 'Targeted Repair', action: 'Locate joist, drive 2.5" screws at angle to pull subfloor tight', cost: '$200–$600', first: 'Fix squeak source before moisture makes it worse' },
+    repair: { verdict: 'Targeted Repair', action: 'Locate joist, drive 2.5″ screws at angle to pull subfloor tight', cost: '$200–$600', first: 'Fix squeak source before moisture makes it worse' },
   },
   soft: {
     hardwood: { verdict: 'Replace Section', action: 'Soft = moisture damage; replace affected OSB/plywood panels before installing hardwood', cost: '$600–$2,200', first: 'Find and fix moisture source before replacement' },
@@ -27,8 +27,8 @@ const matrix: Record<string, Record<string, { verdict: string; action: string; c
     repair: { verdict: 'Replace Affected Panels', action: 'Cut out and replace damaged OSB; treat joists below if wet', cost: '$400–$1,500', first: 'Stop the moisture source or it will return' },
   },
   wave: {
-    hardwood: { verdict: 'Level First', action: 'Float with floor leveler compound or sand high spots; waves show through hardwood', cost: '$400–$1,200 + flooring', first: 'Measure flatness with 6ft straightedge — 3/16" tolerance' },
-    tile: { verdict: 'Level Required', action: 'Self-leveling compound over entire area; tile is unforgiving of subfloor variation', cost: '$600–$1,800', first: 'Achieve <1/8" variance per 10ft before tile' },
+    hardwood: { verdict: 'Level First', action: 'Float with floor leveler compound or sand high spots; waves show through hardwood', cost: '$400–$1,200 + flooring', first: 'Measure flatness with 6ft straightedge — 3/16″ tolerance' },
+    tile: { verdict: 'Level Required', action: 'Self-leveling compound over entire area; tile is unforgiving of subfloor variation', cost: '$600–$1,800', first: 'Achieve <1/8″ variance per 10ft before tile' },
     carpet: { verdict: 'Repair Optional', action: 'Carpet hides minor waves; fill major dips with floor patch compound', cost: '$150–$600', first: 'Waves under carpet cause premature wear at peaks' },
     repair: { verdict: 'Sand or Fill', action: 'Sand high spots, fill low spots with patching compound', cost: '$300–$900', first: 'Find cause — likely joist crown or pier settlement' },
   },
@@ -100,9 +100,9 @@ export default function DFWSubfloorGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>
               <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Verdict: </span><span style={{ color: '#4ADE80', fontWeight: 600 }}>{result.verdict}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Action: </span><span style={{ color: '#C5CAD8' }}>{result.action}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>DFW Cost: </span><span style={{ color: '#4ADE80' }}>{result.cost}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Do This First: </span><span style={{ color: '#FACC15' }}>{result.first}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Action: </span><span style={{ color: '#C5CAD8′ }}>{result.action}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>DFW Cost: </span><span style={{ color: '#4ADE80′ }}>{result.cost}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Do This First: </span><span style={{ color: '#FACC15′ }}>{result.first}</span></div>
             </div>
           )}
         </div>

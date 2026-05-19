@@ -15,8 +15,8 @@ const securityPlans: LightingPlan = [
 const aestheticPlans: LightingPlan = [
   { zone: 'Architectural uplights', fixture: 'Well lights or spike uplights (600–1000 lumens)', type: 'Low-voltage wired', note: 'Accent roofline, columns, and dormers. Warm 2700K color temp for DFW brick exteriors' },
   { zone: 'Tree / landscape uplights', fixture: 'Adjustable spike fixtures', type: 'Low-voltage transformer', note: 'Oak and pecan trees are DFW staples — uplighting through canopy creates dramatic effect' },
-  { zone: 'Front bed path lights', fixture: 'Bollard or mushroom fixtures (150–300 lumens)', type: 'Low-voltage', note: 'Install stake depth 8"+ in DFW clay soil — shallow stakes heave in summer heat cycles' },
-  { zone: 'Garage / entry soffit', fixture: 'Recessed downlights (6" canless LED)', type: 'Wired', note: 'Weatherproof (IP65) required for DFW humidity + rain exposure' },
+  { zone: 'Front bed path lights', fixture: 'Bollard or mushroom fixtures (150–300 lumens)', type: 'Low-voltage', note: 'Install stake depth 8″+ in DFW clay soil — shallow stakes heave in summer heat cycles' },
+  { zone: 'Garage / entry soffit', fixture: 'Recessed downlights (6″ canless LED)', type: 'Wired', note: 'Weatherproof (IP65) required for DFW humidity + rain exposure' },
 ];
 
 const entertainPlans: LightingPlan = [
@@ -53,9 +53,9 @@ export default function DFWExteriorLightingGuide() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642' }}>💡 DFW Exterior Guides</div>
+        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642′ }}>💡 DFW Exterior Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>Exterior Home Lighting Guide — DFW</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6' }}>DFW homes spend 6+ months of evenings outdoors. The right lighting system handles security, curb appeal, and entertaining — in a climate that tests every fixture.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6′ }}>DFW homes spend 6+ months of evenings outdoors. The right lighting system handles security, curb appeal, and entertaining — in a climate that tests every fixture.</p>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>🌡️ DFW Climate Challenges for Exterior Lighting</h2>
@@ -64,7 +64,7 @@ export default function DFWExteriorLightingGuide() {
               { issue: 'Extreme heat (110°F+)', impact: 'Cheap fixtures warp, seals fail, LED drivers overheat. Specify fixtures rated to 140°F operating temperature.' },
               { issue: 'Hail (annual risk)', impact: 'Polycarbonate lenses survive hail; glass shatters. Recessed fixtures and soffit-mounted are best protected.' },
               { issue: 'Clay soil movement', impact: 'DFW soil heaves 1–3 inches seasonally — stake fixtures need deep anchoring or they tilt and rotate.' },
-              { issue: 'Lawn mowing clearance', impact: 'Bollard lights under 12" get clipped by mowers on DFW lots with zero-turn mowers. Design clearance into layout.' },
+              { issue: 'Lawn mowing clearance', impact: 'Bollard lights under 12″ get clipped by mowers on DFW lots with zero-turn mowers. Design clearance into layout.' },
               { issue: 'Humidity + UV combo', impact: 'Untreated aluminum corrodes in 2–3 seasons. Specify marine-grade powder coat or stainless hardware.' },
             ].map(item => (
               <div key={item.issue} style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '14px' }}>
@@ -81,7 +81,7 @@ export default function DFWExteriorLightingGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '14px' }}>
               <div style={{ color: '#22C55E', fontWeight: '700', marginBottom: '8px' }}>✅ Solar OK</div>
-              <ul style={{ color: '#CBD5E1', fontSize: '13px', paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
+              <ul style={{ color: '#CBD5E1', fontSize: '13px', paddingLeft: '16px', margin: 0, lineHeight: '1.8′ }}>
                 <li>Path and step lights</li>
                 <li>Garden accent lights</li>
                 <li>Fence post caps</li>
@@ -90,7 +90,7 @@ export default function DFWExteriorLightingGuide() {
             </div>
             <div style={{ backgroundColor: '#7F1D1D', borderRadius: '8px', padding: '14px' }}>
               <div style={{ color: '#FCA5A5', fontWeight: '700', marginBottom: '8px' }}>❌ Wired Required</div>
-              <ul style={{ color: '#FCA5A5', fontSize: '13px', paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
+              <ul style={{ color: '#FCA5A5', fontSize: '13px', paddingLeft: '16px', margin: 0, lineHeight: '1.8′ }}>
                 <li>Security floodlights</li>
                 <li>Patio overhead / ceiling</li>
                 <li>Pool / water features</li>
@@ -126,8 +126,8 @@ export default function DFWExteriorLightingGuide() {
               {result.plan.map((item, i) => (
                 <div key={i} style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '14px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', flexWrap: 'wrap', gap: '6px' }}>
-                    <div style={{ color: '#FFFFFF', fontWeight: '600' }}>{item.zone}</div>
-                    <div style={{ color: '#F5E642', fontSize: '12px', fontWeight: '600' }}>{item.type}</div>
+                    <div style={{ color: '#FFFFFF', fontWeight: '600′ }}>{item.zone}</div>
+                    <div style={{ color: '#F5E642', fontSize: '12px', fontWeight: '600′ }}>{item.type}</div>
                   </div>
                   <div style={{ color: '#22C55E', fontSize: '13px', marginBottom: '4px' }}>{item.fixture}</div>
                   <p style={{ color: '#94A3B8', fontSize: '13px', margin: 0 }}>{item.note}</p>

@@ -34,7 +34,7 @@ export default function DFWSellerDisclosureGuide() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff3cd', borderRadius: 16, padding: 24, marginBottom: 40, border: '1px solid #ffc107' }}>
+        <div style={{ backgroundColor: '#fff3cd', borderRadius: 16, padding: 24, marginBottom: 40, border: '1px solid #ffc107′ }}>
           <h2 style={{ color: '#856404', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>⚠️ The Texas SDN Requirement</h2>
           <p style={{ color: '#533f03', fontSize: 14, lineHeight: 1.7 }}>
             Texas requires sellers of residential property (1–4 units) to complete the <strong>Seller's Disclosure Notice (SDN)</strong> — TREC Form OP-H — before or at signing. Failing to disclose known material defects can result in <strong>rescission of sale, damages, and personal liability</strong>.
@@ -51,12 +51,12 @@ export default function DFWSellerDisclosureGuide() {
             <div key={item.title} style={{ backgroundColor: '#f8f9ff', borderRadius: 12, padding: 20, border: '1px solid #e0e4ff', textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{item.icon}</div>
               <div style={{ fontWeight: 700, color: '#0A1628', fontSize: 15, marginBottom: 4 }}>{item.title}</div>
-              <div style={{ fontSize: 12, color: '#888' }}>{item.desc}</div>
+              <div style={{ fontSize: 12, color: '#888′ }}>{item.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#f0fdf4', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #bbf7d0' }}>
+        <div style={{ backgroundColor: '#f0fdf4', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #bbf7d0′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#166534', marginBottom: 16 }}>📝 "As-Is" Sales Still Require Disclosure</h2>
           <p style={{ color: '#15803d', fontSize: 14, lineHeight: 1.7, marginBottom: 12 }}>
             A common seller misconception: selling "as-is" means you don't have to disclose problems. <strong>This is false in Texas.</strong>
@@ -70,7 +70,7 @@ export default function DFWSellerDisclosureGuide() {
         </div>
 
         <div style={{ backgroundColor: '#0A1628', borderRadius: 16, padding: 32, marginBottom: 32, color: '#fff' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Disclosure Checker</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Disclosure Checker</h2>
           <p style={{ color: '#9aa5b4', marginBottom: 16, fontSize: 14 }}>Select a condition type to find out what to disclose and how.</p>
 
           <select value={condition} onChange={e => setCondition(e.target.value as ConditionType)}
@@ -82,19 +82,19 @@ export default function DFWSellerDisclosureGuide() {
           {result && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ padding: 20, borderRadius: 12, backgroundColor: result.mustDisclose ? '#1a3a1a' : '#1a2a3a', border: `2px solid ${result.mustDisclose ? '#4ade80' : '#818cf8'}` }}>
-                <div style={{ fontSize: 22, fontWeight: 800, color: result.mustDisclose ? '#4ade80' : '#818cf8', marginBottom: 4 }}>
+                <div style={{ fontSize: 22, fontWeight: 800, color: result.mustDisclose ? '#4ade80′ : '#818cf8', marginBottom: 4 }}>
                   {result.mustDisclose ? '⚠️ MUST DISCLOSE' : '✅ DISCLOSURE NOT REQUIRED'}
                 </div>
               </div>
-              <div style={{ padding: 20, borderRadius: 12, backgroundColor: '#1a2a40' }}>
+              <div style={{ padding: 20, borderRadius: 12, backgroundColor: '#1a2a40′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8, fontSize: 14 }}>📋 HOW TO DISCLOSE</div>
                 <p style={{ color: '#ccc', fontSize: 14, lineHeight: 1.6 }}>{result.how}</p>
               </div>
-              <div style={{ padding: 20, borderRadius: 12, backgroundColor: '#1a2a40' }}>
+              <div style={{ padding: 20, borderRadius: 12, backgroundColor: '#1a2a40′ }}>
                 <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 8, fontSize: 14 }}>⚡ BUYER REACTION RISK</div>
                 <p style={{ color: '#ccc', fontSize: 14, lineHeight: 1.6 }}>{result.risk}</p>
               </div>
-              <div style={{ padding: 20, borderRadius: 12, backgroundColor: '#1a2a40', borderLeft: '4px solid #818cf8' }}>
+              <div style={{ padding: 20, borderRadius: 12, backgroundColor: '#1a2a40', borderLeft: '4px solid #818cf8′ }}>
                 <div style={{ color: '#818cf8', fontWeight: 700, marginBottom: 8, fontSize: 14 }}>🏷️ AS-IS SALES NOTE</div>
                 <p style={{ color: '#ccc', fontSize: 14, lineHeight: 1.6 }}>{result.asIsNote}</p>
               </div>

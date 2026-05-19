@@ -27,7 +27,7 @@ export default function DFWDiamondBladeGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>💎 DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Diamond Blade Guide for DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW's mix of concrete slabs, brick facades, and imported tile demands the right diamond blade. Wet vs. dry cutting, blade spec, and RPM ratings all matter — especially in DFW's extreme heat where dry blades overheat fast.
+          DFW's mix of concrete slabs, brick facades, and imported tile demands the right diamond blade. Wet vs. dry cutting, blade spec, and RPM ratings all matter — especially in DFW’s extreme heat where dry blades overheat fast.
         </p>
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -53,7 +53,7 @@ export default function DFWDiamondBladeGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642' }}>💎 Recommended Blade</div>
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642′ }}>💎 Recommended Blade</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               {[
                 ['Blade Type', result.spec],

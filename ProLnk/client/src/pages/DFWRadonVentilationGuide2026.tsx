@@ -20,7 +20,7 @@ export default function DFWRadonVentilationGuide2026() {
   const steps = [
     { icon: '🧪', title: 'Test First', desc: '90-day alpha track test ($15–30) gives most accurate reading — short-term kits available at hardware stores' },
     { icon: '🔩', title: 'Seal Entry Points', desc: 'Caulk foundation cracks, seal sump pit, plug floor drains — reduces radon entry without active system' },
-    { icon: '⚙️', title: 'ASD Installation', desc: 'Licensed contractor installs PVC pipe through slab + inline fan to vent radon to exterior — $800–2,500' },
+    { icon: '⚙️', title: 'ASD Installation', desc: 'Licensed contractor installs PVC pipe through slab + inline fan to vent radon to exterior — $800–2,500′ },
     { icon: '📊', title: 'Post-Test', desc: 'Retest 24–30 hours after system activation to verify effectiveness — reputable contractors guarantee results' },
   ];
 
@@ -48,7 +48,7 @@ export default function DFWRadonVentilationGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {testResults.map(r => (
               <button key={r.id} onClick={() => setResult(r.id === result ? null : r.id)}
-                style={{ background: result === r.id ? '#F5E642' : '#1e3a5f', color: result === r.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: result === r.id ? '#F5E642′ : '#1e3a5f', color: result === r.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {r.label}
               </button>
             ))}
@@ -74,7 +74,7 @@ export default function DFWRadonVentilationGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🏠 DFW Radon Context</h2>
           {['DFW sits on EPA Zone 3 — predicted average indoor radon below 2 pCi/L','Limestone and clay geology reduces radon movement vs granite-rich soils up north','Test during home sale — buyers increasingly request radon test results in DFW','Slab-on-grade construction (common in DFW) can still have elevated radon in specific lots','New construction: radon-resistant features cost $300 upfront vs $1,500+ to retrofit later'].map(item => (
             <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642' }}>→</span>
+              <span style={{ color: '#F5E642′ }}>→</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item}</span>
             </div>
           ))}

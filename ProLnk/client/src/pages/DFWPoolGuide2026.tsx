@@ -22,7 +22,7 @@ export default function DFWPoolGuide2026() {
             { icon: '💰', label: 'DFW Pool Avg Cost', value: '$65K - $90K' },
             { icon: '📅', label: 'Backlog (2026)', value: 'Clearing' },
             { icon: '🏡', label: 'DFW Suburb Ownership', value: '28%' },
-            { icon: '🔧', label: 'Annual Maintenance', value: '~$2,400' },
+            { icon: '🔧', label: 'Annual Maintenance', value: '~$2,400′ },
           ].map((stat) => (
             <div key={stat.label} style={{ background: '#0f2040', borderRadius: 12, padding: '20px', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 24 }}>{stat.icon}</div>
@@ -53,13 +53,13 @@ export default function DFWPoolGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 12 }}>
             {scenarios.map((item, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {item.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#fff', fontSize: 14 }}>{scenarios[selected].result}</div>
             </div>
           )}

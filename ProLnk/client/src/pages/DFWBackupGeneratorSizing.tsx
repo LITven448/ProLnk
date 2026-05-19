@@ -48,7 +48,7 @@ export default function DFWBackupGeneratorSizing() {
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Backup Generator Sizing</h1>
         </div>
         <p style={{ color: '#9BAEC8', marginBottom: 28 }}>Size a generator for your DFW home — AC dominates the load calculation in Texas summer heat.</p>
-        <div style={{ background: '#1A0820', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '3px solid #F5A642' }}>
+        <div style={{ background: '#1A0820', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '3px solid #F5A642′ }}>
           <span style={{ color: '#F5A642', fontWeight: 700 }}>🌡️ DFW Reality: </span>
           <span style={{ color: '#E8EDF5', fontSize: 14 }}>Your AC runs 3,500–5,000 watts continuously in a DFW summer outage. At 105°F, losing power without backup is a health emergency. Size for AC first, everything else second.</span>
         </div>
@@ -56,18 +56,18 @@ export default function DFWBackupGeneratorSizing() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📊 DFW Home Load Reference</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid #1A3055' }}>
+              <tr style={{ borderBottom: '1px solid #1A3055′ }}>
                 {['Appliance', 'Running Load', 'Startup Surge'].map(h => (
-                  <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642' }}>{h}</th>
+                  <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642′ }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {dfwLoads.map(row => (
-                <tr key={row.appliance} style={{ borderBottom: '1px solid #0A1628' }}>
+                <tr key={row.appliance} style={{ borderBottom: '1px solid #0A1628′ }}>
                   <td style={{ padding: '9px 10px', color: '#E8EDF5', fontWeight: 600 }}>{row.appliance}</td>
-                  <td style={{ padding: '9px 10px', color: '#F5A642' }}>{row.running}</td>
-                  <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{row.startup}</td>
+                  <td style={{ padding: '9px 10px', color: '#F5A642′ }}>{row.running}</td>
+                  <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{row.startup}</td>
                 </tr>
               ))}
             </tbody>
@@ -78,7 +78,7 @@ export default function DFWBackupGeneratorSizing() {
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', color: '#9BAEC8', marginBottom: 8, fontSize: 14 }}>Home Size (sq ft)</label>
-              <input type="number" placeholder="e.g. 2800" value={homeSize} onChange={e => setHomeSize(e.target.value)}
+              <input type="number" placeholder="e.g. 2800″ value={homeSize} onChange={e => setHomeSize(e.target.value)}
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1A3055', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function DFWBackupGeneratorSizing() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ display: 'grid', gap: 10 }}>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Recommended Size</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 22, marginTop: 2 }}>{result.size}</div></div>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Recommended Models</span><div style={{ color: '#E8EDF5', fontWeight: 600, marginTop: 2 }}>{result.brand}</div></div>

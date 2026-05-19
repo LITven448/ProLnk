@@ -126,11 +126,11 @@ export default function ProposalBuilder() {
 
     <PartnerLayout>
 
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6″>
       <div className="max-w-4xl mx-auto">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-slate-900">Proposal Builder</h1>
-          <p className="text-slate-500 mt-1">Create professional quotes in minutes</p>
+        <div className="mb-6″>
+          <h1 className="text-3xl font-bold text-slate-900″>Proposal Builder</h1>
+          <p className="text-slate-500 mt-1″>Create professional quotes in minutes</p>
         </div>
 
         {/* Templates */}
@@ -141,13 +141,13 @@ export default function ProposalBuilder() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6″>
           {/* Form */}
-          <div className="lg:col-span-2 space-y-5">
+          <div className="lg:col-span-2 space-y-5″>
             {/* Client Info */}
             <Card>
               <CardHeader><CardTitle className="text-sm">Client Information</CardTitle></CardHeader>
-              <CardContent className="grid grid-cols-2 gap-3">
+              <CardContent className="grid grid-cols-2 gap-3″>
                 <div>
                   <label className="text-xs font-medium text-slate-600 mb-1 block">Client Name</label>
                   <Input value={clientName} onChange={e => setClientName(e.target.value)} placeholder="John Smith" />
@@ -156,9 +156,9 @@ export default function ProposalBuilder() {
                   <label className="text-xs font-medium text-slate-600 mb-1 block">Email</label>
                   <Input value={clientEmail} onChange={e => setClientEmail(e.target.value)} placeholder="john@example.com" />
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2″>
                   <label className="text-xs font-medium text-slate-600 mb-1 block">Job Address</label>
-                  <Input value={jobAddress} onChange={e => setJobAddress(e.target.value)} placeholder="123 Main St, Dallas TX 75201" />
+                  <Input value={jobAddress} onChange={e => setJobAddress(e.target.value)} placeholder="123 Main St, Dallas TX 75201″ />
                 </div>
               </CardContent>
             </Card>
@@ -167,35 +167,35 @@ export default function ProposalBuilder() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-sm">Line Items</CardTitle>
-                <Button size="sm" variant="outline" className="text-xs" onClick={addItem}><Plus className="w-3 h-3 mr-1" /> Add Item</Button>
+                <Button size="sm" variant="outline" className="text-xs" onClick={addItem}><Plus className="w-3 h-3 mr-1″ /> Add Item</Button>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2">
+                <div className="space-y-2″>
                   {/* Header */}
-                  <div className="grid grid-cols-12 gap-2 text-xs font-medium text-slate-500 px-1">
-                    <div className="col-span-5">Description</div>
-                    <div className="col-span-2">Qty</div>
-                    <div className="col-span-2">Unit</div>
-                    <div className="col-span-2">Price</div>
-                    <div className="col-span-1"></div>
+                  <div className="grid grid-cols-12 gap-2 text-xs font-medium text-slate-500 px-1″>
+                    <div className="col-span-5″>Description</div>
+                    <div className="col-span-2″>Qty</div>
+                    <div className="col-span-2″>Unit</div>
+                    <div className="col-span-2″>Price</div>
+                    <div className="col-span-1″></div>
                   </div>
                   {items.map(item => (
                     <div key={item.id} className="grid grid-cols-12 gap-2 items-center">
-                      <div className="col-span-5">
+                      <div className="col-span-5″>
                         <Input value={item.description} onChange={e => updateItem(item.id, "description", e.target.value)} placeholder="Service description" className="text-sm" />
                       </div>
-                      <div className="col-span-2">
+                      <div className="col-span-2″>
                         <Input type="number" value={item.qty} onChange={e => updateItem(item.id, "qty", parseFloat(e.target.value) || 0)} className="text-sm" />
                       </div>
-                      <div className="col-span-2">
+                      <div className="col-span-2″>
                         <Input value={item.unit} onChange={e => updateItem(item.id, "unit", e.target.value)} className="text-sm" />
                       </div>
-                      <div className="col-span-2">
+                      <div className="col-span-2″>
                         <Input type="number" value={item.price} onChange={e => updateItem(item.id, "price", parseFloat(e.target.value) || 0)} className="text-sm" />
                       </div>
                       <div className="col-span-1 flex justify-center">
-                        <button onClick={() => removeItem(item.id)} className="text-red-400 hover:text-red-600">
-                          <Trash2 className="w-4 h-4" />
+                        <button onClick={() => removeItem(item.id)} className="text-red-400 hover:text-red-600″>
+                          <Trash2 className="w-4 h-4″ />
                         </button>
                       </div>
                     </div>
@@ -212,7 +212,7 @@ export default function ProposalBuilder() {
                   value={notes}
                   onChange={e => setNotes(e.target.value)}
                   placeholder="Payment terms, warranty info, special conditions..."
-                  className="w-full h-24 text-sm border rounded-lg p-3 bg-background resize-none focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                  className="w-full h-24 text-sm border rounded-lg p-3 bg-background resize-none focus:outline-none focus:ring-2 focus:ring-indigo-300″
                 />
               </CardContent>
             </Card>
@@ -220,32 +220,32 @@ export default function ProposalBuilder() {
 
           {/* Summary */}
           <div>
-            <Card className="sticky top-6">
-              <CardHeader><CardTitle className="text-sm flex items-center gap-2"><DollarSign className="w-4 h-4" /> Quote Summary</CardTitle></CardHeader>
-              <CardContent className="space-y-3">
-                <div className="space-y-1">
+            <Card className="sticky top-6″>
+              <CardHeader><CardTitle className="text-sm flex items-center gap-2″><DollarSign className="w-4 h-4" /> Quote Summary</CardTitle></CardHeader>
+              <CardContent className="space-y-3″>
+                <div className="space-y-1″>
                   {items.filter(i => i.description).map(item => (
-                    <div key={item.id} className="flex justify-between text-xs text-slate-600">
-                      <span className="truncate flex-1 mr-2">{item.description}</span>
+                    <div key={item.id} className="flex justify-between text-xs text-slate-600″>
+                      <span className="truncate flex-1 mr-2″>{item.description}</span>
                       <span className="font-medium">${(item.qty * item.price).toFixed(2)}</span>
                     </div>
                   ))}
                 </div>
-                <div className="border-t pt-2 space-y-1">
+                <div className="border-t pt-2 space-y-1″>
                   <div className="flex justify-between text-sm"><span>Subtotal</span><span>${subtotal.toFixed(2)}</span></div>
-                  <div className="flex justify-between text-sm text-slate-500"><span>Tax (8.25%)</span><span>${tax.toFixed(2)}</span></div>
-                  <div className="flex justify-between text-base font-bold border-t pt-2"><span>Total</span><span className="text-green-600">${total.toFixed(2)}</span></div>
+                  <div className="flex justify-between text-sm text-slate-500″><span>Tax (8.25%)</span><span>${tax.toFixed(2)}</span></div>
+                  <div className="flex justify-between text-base font-bold border-t pt-2″><span>Total</span><span className="text-green-600">${total.toFixed(2)}</span></div>
                 </div>
 
-                <div className="space-y-2 pt-2">
+                <div className="space-y-2 pt-2″>
                   <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-sm" onClick={sendProposal} disabled={sent || createMutation.isPending}>
-                    {createMutation.isPending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Saving...</> : sent ? <><CheckCircle className="w-4 h-4 mr-2" /> Sent!</> : <><Send className="w-4 h-4 mr-2" /> Send to Client</>}
+                    {createMutation.isPending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Saving...</> : sent ? <><CheckCircle className="w-4 h-4 mr-2″ /> Sent!</> : <><Send className="w-4 h-4 mr-2" /> Send to Client</>}
                   </Button>
                   <Button variant="outline" className="w-full text-sm" onClick={saveProposal} disabled={createMutation.isPending}>
-                    <Save className="w-4 h-4 mr-2" /> Save Draft
+                    <Save className="w-4 h-4 mr-2″ /> Save Draft
                   </Button>
                   <Button variant="outline" className="w-full text-sm" onClick={downloadPDF}>
-                    <Download className="w-4 h-4 mr-2" /> Download PDF
+                    <Download className="w-4 h-4 mr-2″ /> Download PDF
                   </Button>
                 </div>
               </CardContent>

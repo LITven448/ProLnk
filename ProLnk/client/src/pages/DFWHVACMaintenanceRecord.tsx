@@ -41,7 +41,7 @@ export default function DFWHVACMaintenanceRecord() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {completionLevels.map(l => (
             <button key={l.id} onClick={() => setCompletion(l.id === completion ? null : l.id)}
-              style={{ background: completion === l.id ? '#F5E642' : '#0f2240', color: completion === l.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: completion === l.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '0.8rem 1.25rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem' }}>
+              style={{ background: completion === l.id ? '#F5E642′ : '#0f2240', color: completion === l.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: completion === l.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '0.8rem 1.25rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.9rem' }}>
               {l.icon} {l.label}
             </button>
           ))}
@@ -62,7 +62,7 @@ export default function DFWHVACMaintenanceRecord() {
                 style={{ width: '100%', background: 'transparent', border: 'none', color: '#fff', padding: '1rem 1.25rem', cursor: 'pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 700, fontSize: '0.9rem' }}>
                 <span style={{ fontSize: '1.3rem' }}>{r.icon}</span>
                 <span style={{ flex: 1 }}>{r.title}</span>
-                <span style={{ color: '#F5E642' }}>{expanded === r.id ? '▲' : '▼'}</span>
+                <span style={{ color: '#F5E642′ }}>{expanded === r.id ? '▲' : '▼'}</span>
               </button>
               {expanded === r.id && (
                 <div style={{ padding: '0 1.25rem 1.25rem' }}>

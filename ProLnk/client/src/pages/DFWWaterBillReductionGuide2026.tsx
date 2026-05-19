@@ -34,7 +34,7 @@ export default function DFWWaterBillReductionGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>💧</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Water Bill Reduction Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Water Bill Reduction Guide 2026</h1>
           <p style={{ color: '#94A3B8', fontSize: '1.1rem' }}>How to cut your DFW water bill — irrigation is #1, leaks are #2</p>
         </div>
 
@@ -80,7 +80,7 @@ export default function DFWWaterBillReductionGuide2026() {
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', padding: '1.5rem', backgroundColor: '#1E2D45', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: '1.5rem', backgroundColor: '#1E2D45', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: '1.5rem' }}>💧</div>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Get Plumbing and Irrigation Quotes</div>
           <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>ProLnk connects you with licensed DFW plumbers and irrigation pros — free estimates</div>

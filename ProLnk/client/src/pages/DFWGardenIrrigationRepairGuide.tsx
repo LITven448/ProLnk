@@ -106,11 +106,11 @@ export default function DFWGardenIrrigationRepairGuide() {
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Difficulty</div>
-                <div style={{ color: result.difficulty === 'Low' ? '#4ade80' : result.difficulty === 'Medium' ? '#facc15' : '#f87171', fontSize: '1.4rem', fontWeight: 700 }}>{result.difficulty}</div>
+                <div style={{ color: result.difficulty === 'Low' ? '#4ade80′ : result.difficulty === ’Medium' ? '#facc15′ : '#f87171', fontSize: '1.4rem', fontWeight: 700 }}>{result.difficulty}</div>
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Recommendation</div>
-                <div style={{ color: result.callPro ? '#f87171' : '#4ade80', fontSize: '1rem', fontWeight: 700 }}>{result.callPro ? 'Call a Pro' : 'DIY Possible'}</div>
+                <div style={{ color: result.callPro ? '#f87171′ : '#4ade80', fontSize: '1rem', fontWeight: 700 }}>{result.callPro ? ’Call a Pro' : 'DIY Possible'}</div>
               </div>
             </div>
           )}

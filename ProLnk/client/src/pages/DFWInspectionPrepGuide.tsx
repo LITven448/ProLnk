@@ -56,14 +56,14 @@ export default function DFWInspectionPrepGuide() {
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>DFW INSPECTION PREP GUIDE</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#fff', margin: 0 }}>🔍 Prepare for Your Home Inspection</h1>
-          <p style={{ color: '#94a3b8', margin: '8px 0 0' }}>Know what to bring, what to watch for, and how to show up ready.</p>
+          <p style={{ color: '#94a3b8', margin: '8px 0 0′ }}>Know what to bring, what to watch for, and how to show up ready.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>🏠 Home Type</div>
             {homeTypes.map(t => (
-              <button key={t} onClick={() => setHomeType(t)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: homeType === t ? '2px solid #F5E642' : '1px solid #e2e8f0', background: homeType === t ? '#0A1628' : '#F9FAFB', color: homeType === t ? '#F5E642' : '#0A1628', fontWeight: homeType === t ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={t} onClick={() => setHomeType(t)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: homeType === t ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: homeType === t ? '#0A1628' : '#F9FAFB', color: homeType === t ? '#F5E642' : '#0A1628', fontWeight: homeType === t ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
                 {t}
               </button>
             ))}
@@ -71,7 +71,7 @@ export default function DFWInspectionPrepGuide() {
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>📅 Home Age</div>
             {ageRanges.map(a => (
-              <button key={a} onClick={() => setAge(a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: age === a ? '2px solid #F5E642' : '1px solid #e2e8f0', background: age === a ? '#0A1628' : '#F9FAFB', color: age === a ? '#F5E642' : '#0A1628', fontWeight: age === a ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={a} onClick={() => setAge(a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: age === a ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: age === a ? '#0A1628' : '#F9FAFB', color: age === a ? '#F5E642' : '#0A1628', fontWeight: age === a ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
                 {a}
               </button>
             ))}
@@ -81,14 +81,14 @@ export default function DFWInspectionPrepGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>🎒 What to Bring</div>
           {baseBring.map(item => (
-            <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9', color: '#334155' }}>{item}</div>
+            <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9', color: '#334155′ }}>{item}</div>
           ))}
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>✅ Before the Inspection</div>
           {beforeItems.map(item => (
-            <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9', color: '#334155' }}>• {item}</div>
+            <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9', color: '#334155′ }}>• {item}</div>
           ))}
         </div>
 
@@ -98,7 +98,7 @@ export default function DFWInspectionPrepGuide() {
               🔎 Specifically Watch For: {homeType}, {age}
             </div>
             {watchList.map(item => (
-              <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#e2e8f0' }}>⚠️ {item}</div>
+              <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#e2e8f0′ }}>⚠️ {item}</div>
             ))}
           </div>
         )}

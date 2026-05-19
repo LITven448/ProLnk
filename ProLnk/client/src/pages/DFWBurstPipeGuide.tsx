@@ -36,7 +36,7 @@ export default function DFWBurstPipeGuide() {
           <h1 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Burst Pipe Emergency Guide</h1>
         </div>
         <p style={{ color: '#94a3b8', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-          The 2021 winter storm caused millions of burst pipes across DFW. Knowing your shutoff location and acting fast limits damage. Most DFW homes have a main shutoff at the street meter or near the foundation — find yours <strong style={{ color: '#F5E642' }}>before</strong> an emergency.
+          The 2021 winter storm caused millions of burst pipes across DFW. Knowing your shutoff location and acting fast limits damage. Most DFW homes have a main shutoff at the street meter or near the foundation — find yours <strong style={{ color: '#F5E642′ }}>before</strong> an emergency.
         </p>
 
         <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -61,7 +61,7 @@ export default function DFWBurstPipeGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Severity of water flow:</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {['minor', 'moderate', 'severe'].map(s => (
-              <button key={s} onClick={() => setSeverity(s)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: severity === s ? '#F5E642' : '#334155', background: severity === s ? '#F5E642' : 'transparent', color: severity === s ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+              <button key={s} onClick={() => setSeverity(s)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: severity === s ? '#F5E642′ : '#334155', background: severity === s ? '#F5E642' : ’transparent', color: severity === s ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer', textTransform: 'capitalize' }}>
                 {s === 'minor' ? '🟡 Minor drip' : s === 'moderate' ? '🟠 Steady flow' : '🔴 Gushing water'}
               </button>
             ))}
@@ -79,11 +79,11 @@ export default function DFWBurstPipeGuide() {
             </ol>
             <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: '8px' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>💰 Estimated Cost</div>
-              <div style={{ color: '#cbd5e1' }}>{result.cost}</div>
+              <div style={{ color: '#cbd5e1′ }}>{result.cost}</div>
             </div>
             <div style={{ marginTop: '0.75rem', padding: '1rem', background: '#0A1628', borderRadius: '8px' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🏠 Insurance Guidance</div>
-              <div style={{ color: '#cbd5e1' }}>{result.insurance}</div>
+              <div style={{ color: '#cbd5e1′ }}>{result.insurance}</div>
             </div>
           </div>
         )}

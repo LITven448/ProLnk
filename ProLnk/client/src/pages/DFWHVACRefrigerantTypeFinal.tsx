@@ -36,7 +36,7 @@ export default function DFWHVACRefrigerantTypeFinal() {
               <div key={ref} style={{ background: '#0A1628', borderRadius: 8, padding: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <div style={{ minWidth: 160 }}>
                   <div style={{ fontWeight: 600 }}>{ref}</div>
-                  <div style={{ fontSize: 13, color: '#94a3b8' }}>{status}</div>
+                  <div style={{ fontSize: 13, color: '#94a3b8′ }}>{status}</div>
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc}</div>
               </div>
@@ -61,14 +61,14 @@ export default function DFWHVACRefrigerantTypeFinal() {
             </select>
           </div>
           {info && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16 }}>{info.refrigerant}</div>
                 <div style={{ fontSize: 14 }}>{info.urgency}</div>
               </div>
               <div style={{ color: '#94a3b8', marginBottom: 12, lineHeight: 1.6 }}>{info.advice}</div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642' }}>💰 Cost range:</span> <span style={{ color: '#e2e8f0', fontSize: 14 }}>{info.cost}</span></div>
-              <div style={{ background: '#0f2040', borderRadius: 8, padding: 12, fontSize: 14, color: '#94a3b8' }}>💬 <span style={{ color: '#F5E642' }}>What to ask your contractor: </span>{info.question}</div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642′ }}>💰 Cost range:</span> <span style={{ color: '#e2e8f0', fontSize: 14 }}>{info.cost}</span></div>
+              <div style={{ background: '#0f2040', borderRadius: 8, padding: 12, fontSize: 14, color: '#94a3b8′ }}>💬 <span style={{ color: '#F5E642' }}>What to ask your contractor: </span>{info.question}</div>
             </div>
           )}
         </div>

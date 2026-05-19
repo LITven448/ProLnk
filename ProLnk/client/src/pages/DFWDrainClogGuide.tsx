@@ -26,7 +26,7 @@ export default function DFWDrainClogGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW PLUMBING GUIDE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🚰 Drain Clog Guide<br /><span style={{ color: '#F5E642' }}>Dallas-Fort Worth Guide</span></h1>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🚰 Drain Clog Guide<br /><span style={{ color: '#F5E642′ }}>Dallas-Fort Worth Guide</span></h1>
         <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW drain clogs have three unique causes: heavy grease from DFW cooking culture, hard water soap scum bonding with hair in bathrooms, and root intrusion from DFW clay soil shifting into older drain lines. Diagnosis determines the right tool.</p>
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -55,7 +55,7 @@ export default function DFWDrainClogGuide() {
         </div>
 
         {sol && (
-          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🔍 Likely Cause: {sol.cause}</div>
             <p style={{ color: '#cbd5e1', marginBottom: 16 }}>{sol.approach}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 12 }}>

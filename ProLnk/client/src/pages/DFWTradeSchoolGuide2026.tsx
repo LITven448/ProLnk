@@ -63,7 +63,7 @@ export default function DFWTradeSchoolGuide2026() {
           <div style={{ fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 16 }}>🗺️ Find Your DFW School — by Trade Interest</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {trades.map((t, i) => (
-              <button key={i} onClick={() => setSelected(t)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: selected === t ? '#F5E642' : '#1e3a5f', color: selected === t ? '#0A1628' : '#fff' }}>{t}</button>
+              <button key={i} onClick={() => setSelected(t)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: selected === t ? '#F5E642′ : '#1e3a5f', color: selected === t ? '#0A1628' : '#fff' }}>{t}</button>
             ))}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>

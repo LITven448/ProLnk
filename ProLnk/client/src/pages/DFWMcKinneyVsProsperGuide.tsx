@@ -71,7 +71,7 @@ export default function DFWMcKinneyVsProsperGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ background: '#F5E642', color: '#0A1628' }}>
+              <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
                 {['Category', 'McKinney', 'Prosper', 'Edge'].map(h => (
                   <th key={h} style={{ padding: '9px 12px', textAlign: 'left', fontWeight: 700 }}>{h}</th>
                 ))}
@@ -80,8 +80,8 @@ export default function DFWMcKinneyVsProsperGuide() {
             <tbody>
               {compareRows.map((row, i) => (
                 <tr key={row.category} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'transparent', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                  <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{row.category}</td>
-                  <td style={{ padding: '8px 12px', fontWeight: row.edge === 'mckinney' ? 700 : 400, color: row.edge === 'mckinney' ? '#3b82f6' : '#fff' }}>{row.mckinney}</td>
+                  <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{row.category}</td>
+                  <td style={{ padding: '8px 12px', fontWeight: row.edge === 'mckinney' ? 700 : 400, color: row.edge === 'mckinney' ? '#3b82f6′ : '#fff' }}>{row.mckinney}</td>
                   <td style={{ padding: '8px 12px', fontWeight: row.edge === 'prosper' ? 700 : 400, color: row.edge === 'prosper' ? '#f59e0b' : '#fff' }}>{row.prosper}</td>
                   <td style={{ padding: '8px 12px', color: '#F5E642', fontWeight: 600, fontSize: 12 }}>{row.edge === 'mckinney' ? '→ McKinney' : '→ Prosper'}</td>
                 </tr>
@@ -95,7 +95,7 @@ export default function DFWMcKinneyVsProsperGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 13 }}>Budget</label>
-              <input type="range" min={350000} max={900000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={350000} max={900000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</div>
             </div>
             <div>

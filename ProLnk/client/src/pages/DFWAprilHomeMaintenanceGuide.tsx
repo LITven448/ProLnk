@@ -52,10 +52,10 @@ export default function DFWAprilHomeMaintenanceGuide() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⚠️ April DFW Watch Items</h2>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <li style={{ color: '#cbd5e1' }}>🌪️ Peak tornado and hail season for North Texas</li>
-            <li style={{ color: '#cbd5e1' }}>❄️ AC tune-up window — book before May price surge</li>
-            <li style={{ color: '#cbd5e1' }}>🏗️ Foundation soil re-hydrating from winter drought</li>
-            <li style={{ color: '#cbd5e1' }}>🌱 Prime planting window before summer heat arrives</li>
+            <li style={{ color: '#cbd5e1′ }}>🌪️ Peak tornado and hail season for North Texas</li>
+            <li style={{ color: '#cbd5e1′ }}>❄️ AC tune-up window — book before May price surge</li>
+            <li style={{ color: '#cbd5e1′ }}>🏗️ Foundation soil re-hydrating from winter drought</li>
+            <li style={{ color: '#cbd5e1′ }}>🌱 Prime planting window before summer heat arrives</li>
           </ul>
         </div>
 
@@ -64,9 +64,9 @@ export default function DFWAprilHomeMaintenanceGuide() {
           {homeFeatures.map(h => (
             <button key={h.id} onClick={() => setSelected(h.id)}
               style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid',
-                borderColor: selected === h.id ? '#F5E642' : '#1e3a5f',
-                background: selected === h.id ? '#F5E642' : '#112240',
-                color: selected === h.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                borderColor: selected === h.id ? '#F5E642′ : '#1e3a5f',
+                background: selected === h.id ? '#F5E642′ : '#112240',
+                color: selected === h.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
               {h.label}
             </button>
           ))}
@@ -78,14 +78,14 @@ export default function DFWAprilHomeMaintenanceGuide() {
               <div key={i} style={{ background: '#112240', borderRadius: 10, padding: '14px 18px',
                 display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #1e3a5f' }}>
                 <span style={{ fontSize: 24 }}>{item.icon}</span>
-                <span style={{ flex: 1, color: '#e2e8f0' }}>{item.task}</span>
+                <span style={{ flex: 1, color: '#e2e8f0′ }}>{item.task}</span>
                 <span style={{ fontSize: 12, fontWeight: 700, color: urgencyColor[item.urgency] }}>{item.urgency}</span>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ marginTop: 40, padding: 20, background: '#112240', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ marginTop: 40, padding: 20, background: '#112240', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>🏠 ProLnk connects you with vetted DFW pros</p>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>AC tune-ups, hail inspections, foundation assessments — get matched with licensed local contractors today.</p>
         </div>

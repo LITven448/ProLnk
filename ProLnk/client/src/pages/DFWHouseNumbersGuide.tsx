@@ -1,21 +1,21 @@
 import { useState } from 'react';
 
 const citySpecs: Record<string, { size: string; height: string; style: string }> = {
-  Dallas: { size: '4" min characters', height: '3-5 ft from grade', style: 'Contrasting color required' },
-  Plano: { size: '3" min characters', height: '3-6 ft from grade', style: 'Reflective or illuminated required' },
-  Frisco: { size: '4" min characters', height: '4-6 ft from grade', style: 'HOA approval often required' },
-  McKinney: { size: '3.5" min characters', height: '3-5 ft from grade', style: 'Address post or facade mount' },
-  Allen: { size: '3" min characters', height: '3-5 ft from grade', style: 'Visible from street required' },
-  Southlake: { size: '4" min characters', height: '4-6 ft from grade', style: 'Illuminated preferred by HOAs' },
-  Colleyville: { size: '3" min characters', height: '3-5 ft from grade', style: 'Stone or brick surrounds popular' },
-  Flower_Mound: { size: '3" min characters', height: '3-6 ft from grade', style: 'Trail-side addresses need dual posting' },
+  Dallas: { size: '4″ min characters', height: '3-5 ft from grade', style: 'Contrasting color required' },
+  Plano: { size: '3″ min characters', height: '3-6 ft from grade', style: 'Reflective or illuminated required' },
+  Frisco: { size: '4″ min characters', height: '4-6 ft from grade', style: 'HOA approval often required' },
+  McKinney: { size: '3.5″ min characters', height: '3-5 ft from grade', style: 'Address post or facade mount' },
+  Allen: { size: '3″ min characters', height: '3-5 ft from grade', style: 'Visible from street required' },
+  Southlake: { size: '4″ min characters', height: '4-6 ft from grade', style: 'Illuminated preferred by HOAs' },
+  Colleyville: { size: '3″ min characters', height: '3-5 ft from grade', style: 'Stone or brick surrounds popular' },
+  Flower_Mound: { size: '3″ min characters', height: '3-6 ft from grade', style: 'Trail-side addresses need dual posting' },
 };
 
 const homeStyleRec: Record<string, { type: string; mounting: string; cost: string }> = {
-  Traditional: { type: 'Cast aluminum or bronze numbers', mounting: 'Brick mortar or address post', cost: '$50–$200' },
-  Modern: { type: 'Illuminated LED address sign', mounting: 'Flush wall mount or post', cost: '$150–$500' },
-  Ranch: { type: 'Reflective stake numbers + mailbox', mounting: 'Mailbox post or landscape stake', cost: '$30–$120' },
-  Mediterranean: { type: 'Tile or ceramic address plaque', mounting: 'Stone surround or address column', cost: '$100–$400' },
+  Traditional: { type: 'Cast aluminum or bronze numbers', mounting: 'Brick mortar or address post', cost: '$50–$200′ },
+  Modern: { type: 'Illuminated LED address sign', mounting: 'Flush wall mount or post', cost: '$150–$500′ },
+  Ranch: { type: 'Reflective stake numbers + mailbox', mounting: 'Mailbox post or landscape stake', cost: '$30–$120′ },
+  Mediterranean: { type: 'Tile or ceramic address plaque', mounting: 'Stone surround or address column', cost: '$100–$400′ },
 };
 
 export default function DFWHouseNumbersGuide() {
@@ -70,7 +70,7 @@ export default function DFWHouseNumbersGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>✅ Your City + Style Results</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>

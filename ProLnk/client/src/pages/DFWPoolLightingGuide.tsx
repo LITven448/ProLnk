@@ -28,7 +28,7 @@ export default function DFWPoolLightingGuide() {
         <h1 style={{ color: '#F5E642', fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW Pool Lighting Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
           In DFW, peak pool season starts at dusk — it's simply too hot to swim during the afternoon in July and August.
-          That means pool lighting isn't a luxury, it's the difference between a pool that gets used and one that sits dark
+          That means pool lighting isn't a luxury, it’s the difference between a pool that gets used and one that sits dark
           after 7pm. The right system transforms your pool into the centerpiece of your DFW outdoor experience.
         </p>
 
@@ -53,9 +53,9 @@ export default function DFWPoolLightingGuide() {
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>💎 LED vs Fiber Optic Comparison</h2>
           {[
-            { type: 'LED Color-Changing', best: 'Inground pools, spas, water features', brightness: 'Excellent — full pool illumination', energy: 'Very low — 15–40W per fixture', smart: 'Yes — app, voice, and schedule control', cost: '$800–$4,000' },
-            { type: 'Fiber Optic', best: 'Spas, specialty features, ceiling/rock accents', brightness: 'Good — visual drama over brightness', energy: 'Minimal — illuminator box only', smart: 'Color wheel remote or smart illuminator', cost: '$600–$2,500' },
-            { type: 'Halogen (Legacy)', best: 'Replacement of older systems only', brightness: 'Good — single color white', energy: 'High — 300–500W per fixture', smart: 'No smart control available', cost: '$200–$800' },
+            { type: 'LED Color-Changing', best: 'Inground pools, spas, water features', brightness: 'Excellent — full pool illumination', energy: 'Very low — 15–40W per fixture', smart: 'Yes — app, voice, and schedule control', cost: '$800–$4,000′ },
+            { type: 'Fiber Optic', best: 'Spas, specialty features, ceiling/rock accents', brightness: 'Good — visual drama over brightness', energy: 'Minimal — illuminator box only', smart: 'Color wheel remote or smart illuminator', cost: '$600–$2,500′ },
+            { type: 'Halogen (Legacy)', best: 'Replacement of older systems only', brightness: 'Good — single color white', energy: 'High — 300–500W per fixture', smart: 'No smart control available', cost: '$200–$800′ },
           ].map(({ type, best, brightness, energy, smart, cost }) => (
             <div key={type} style={{ borderBottom: '1px solid #1e3a5f', paddingBottom: 16, marginBottom: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
@@ -66,7 +66,7 @@ export default function DFWPoolLightingGuide() {
                 {[['Best For', best], ['Brightness', brightness], ['Energy Use', energy], ['Smart Control', smart]].map(([k, v]) => (
                   <div key={k as string}>
                     <span style={{ color: '#64748b', fontSize: 11, textTransform: 'uppercase' }}>{k}</span>
-                    <p style={{ color: '#cbd5e1', fontSize: 13, margin: '2px 0 0' }}>{v as string}</p>
+                    <p style={{ color: '#cbd5e1', fontSize: 13, margin: '2px 0 0′ }}>{v as string}</p>
                   </div>
                 ))}
               </div>
@@ -84,7 +84,7 @@ export default function DFWPoolLightingGuide() {
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>{label}</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {options.map(([val, text]) => (
-                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642' : '#1e3a5f', background: value === val ? '#F5E642' : 'transparent', color: value === val ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
+                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642′ : '#1e3a5f', background: value === val ? '#F5E642' : ’transparent', color: value === val ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
                 ))}
               </div>
             </div>

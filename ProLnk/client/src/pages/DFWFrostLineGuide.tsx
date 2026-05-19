@@ -65,8 +65,8 @@ export default function DFWFrostLineGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: `4px solid ${result.color}` }}>
               <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '0.75rem' }}>
-                <div><span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Required Depth</span><p style={{ color: '#F5E642', fontWeight: 700, margin: '0.25rem 0 0' }}>{result.depth}</p></div>
-                <div><span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Freeze Risk</span><p style={{ color: result.color, fontWeight: 700, margin: '0.25rem 0 0' }}>{result.risk}</p></div>
+                <div><span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Required Depth</span><p style={{ color: '#F5E642', fontWeight: 700, margin: '0.25rem 0 0′ }}>{result.depth}</p></div>
+                <div><span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Freeze Risk</span><p style={{ color: result.color, fontWeight: 700, margin: '0.25rem 0 0′ }}>{result.risk}</p></div>
               </div>
               <p style={{ color: '#e2e8f0', marginBottom: '0.5rem', lineHeight: 1.6 }}>{result.notes}</p>
               <p style={{ color: '#94a3b8', fontSize: '0.85rem', fontStyle: 'italic' }}>{result.code}</p>
@@ -74,7 +74,7 @@ export default function DFWFrostLineGuide() {
           )}
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-          <strong style={{ color: '#F5E642' }}>ProLnk Note:</strong> Frost line requirements affect permits, inspections, and code compliance. Always pull permits for projects involving underground plumbing or foundations. ProLnk connects you with licensed DFW contractors who know local code.
+          <strong style={{ color: '#F5E642′ }}>ProLnk Note:</strong> Frost line requirements affect permits, inspections, and code compliance. Always pull permits for projects involving underground plumbing or foundations. ProLnk connects you with licensed DFW contractors who know local code.
         </div>
       </div>
     </div>

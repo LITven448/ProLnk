@@ -49,7 +49,7 @@ export default function DFWFoundationAdjacentTree2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🎯 My Tree Situation</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             {situations.map((s) => (
-              <button key={s.id} onClick={() => handleSituation(s.id)} style={{ backgroundColor: situation === s.id ? '#F5E642' : '#1a2f50', color: situation === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => handleSituation(s.id)} style={{ backgroundColor: situation === s.id ? '#F5E642′ : '#1a2f50', color: situation === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s.label}</button>
             ))}
           </div>
           {current && (

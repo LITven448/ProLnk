@@ -8,9 +8,9 @@ const trades = [
     verifyUrl: 'https://www.tdlr.texas.gov/LicenseSearch/',
     avgRate: '$85–$150/hr',
     jobs: [
-      { name: 'AC tune-up', range: '$80–$150' },
-      { name: 'System replacement (3-ton)', range: '$3,800–$6,500' },
-      { name: 'Coil cleaning', range: '$120–$250' },
+      { name: 'AC tune-up', range: '$80–$150′ },
+      { name: 'System replacement (3-ton)', range: '$3,800–$6,500′ },
+      { name: 'Coil cleaning', range: '$120–$250′ },
     ],
   },
   {
@@ -20,9 +20,9 @@ const trades = [
     verifyUrl: 'https://www.tsbpe.texas.gov/licensee-lookup/',
     avgRate: '$95–$175/hr',
     jobs: [
-      { name: 'Water heater replacement', range: '$800–$1,600' },
-      { name: 'Leak detection & repair', range: '$200–$600' },
-      { name: 'Drain clearing', range: '$120–$300' },
+      { name: 'Water heater replacement', range: '$800–$1,600′ },
+      { name: 'Leak detection & repair', range: '$200–$600′ },
+      { name: 'Drain clearing', range: '$120–$300′ },
     ],
   },
   {
@@ -32,8 +32,8 @@ const trades = [
     verifyUrl: 'https://www.tdi.texas.gov/apps/licensing/',
     avgRate: '$350–$600/square',
     jobs: [
-      { name: 'Full replacement (2,000 sq ft)', range: '$8,000–$16,000' },
-      { name: 'Leak repair', range: '$300–$900' },
+      { name: 'Full replacement (2,000 sq ft)', range: '$8,000–$16,000′ },
+      { name: 'Leak repair', range: '$300–$900′ },
       { name: 'Gutter replacement (linear ft)', range: '$6–$14/ft' },
     ],
   },
@@ -44,9 +44,9 @@ const trades = [
     verifyUrl: 'https://www.tdlr.texas.gov/LicenseSearch/',
     avgRate: '$90–$160/hr',
     jobs: [
-      { name: 'Panel upgrade (200A)', range: '$1,800–$3,500' },
-      { name: 'Outlet/switch install', range: '$100–$250' },
-      { name: 'EV charger installation', range: '$400–$1,200' },
+      { name: 'Panel upgrade (200A)', range: '$1,800–$3,500′ },
+      { name: 'Outlet/switch install', range: '$100–$250′ },
+      { name: 'EV charger installation', range: '$400–$1,200′ },
     ],
   },
   {
@@ -56,9 +56,9 @@ const trades = [
     verifyUrl: 'https://pels.texas.gov/lic_search.htm',
     avgRate: '$500–$800/pier',
     jobs: [
-      { name: 'Pier installation (per pier)', range: '$500–$850' },
-      { name: 'Drainage correction', range: '$1,200–$4,000' },
-      { name: 'Crack injection', range: '$400–$800' },
+      { name: 'Pier installation (per pier)', range: '$500–$850′ },
+      { name: 'Drainage correction', range: '$1,200–$4,000′ },
+      { name: 'Crack injection', range: '$400–$800′ },
     ],
   },
   {
@@ -68,9 +68,9 @@ const trades = [
     verifyUrl: 'https://www.bbb.org/us/tx/',
     avgRate: '$45–$85/hr',
     jobs: [
-      { name: 'Interior full house (2,000 sq ft)', range: '$3,000–$6,500' },
-      { name: 'Exterior repaint', range: '$2,500–$5,500' },
-      { name: 'Single room', range: '$350–$900' },
+      { name: 'Interior full house (2,000 sq ft)', range: '$3,000–$6,500′ },
+      { name: 'Exterior repaint', range: '$2,500–$5,500′ },
+      { name: 'Single room', range: '$350–$900′ },
     ],
   },
   {
@@ -80,9 +80,9 @@ const trades = [
     verifyUrl: 'https://www.texasagriculture.gov/regulatory-programs/structural-pest-control/licensing/',
     avgRate: '$75–$125/visit',
     jobs: [
-      { name: 'Annual termite treatment', range: '$800–$2,500' },
+      { name: 'Annual termite treatment', range: '$800–$2,500′ },
       { name: 'Quarterly general pest plan', range: '$100–$180/quarter' },
-      { name: 'Bed bug treatment', range: '$600–$1,800' },
+      { name: 'Bed bug treatment', range: '$600–$1,800′ },
     ],
   },
   {
@@ -92,8 +92,8 @@ const trades = [
     verifyUrl: 'https://www.texasagriculture.gov/regulatory-programs/pesticide-programs/irrigators/',
     avgRate: '$50–$90/hr',
     jobs: [
-      { name: 'Full yard design & install', range: '$5,000–$20,000' },
-      { name: 'Sprinkler system install', range: '$2,500–$5,000' },
+      { name: 'Full yard design & install', range: '$5,000–$20,000′ },
+      { name: 'Sprinkler system install', range: '$2,500–$5,000′ },
       { name: 'Weekly maintenance', range: '$120–$250/visit' },
     ],
   },

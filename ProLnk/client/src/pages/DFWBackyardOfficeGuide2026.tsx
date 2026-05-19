@@ -7,7 +7,7 @@ const paths = [
 ];
 
 const cityPermits = [
-  { city: 'Dallas', max: '400 sqft without lot coverage calc', setback: '5 ft side/rear', note: 'ADU ordinance updated 2024' },
+  { city: 'Dallas', max: '400 sqft without lot coverage calc', setback: '5 ft side/rear', note: 'ADU ordinance updated 2024′ },
   { city: 'Plano', max: '650 sqft', setback: '5 ft rear, 5 ft side', note: 'Permit required over 120 sqft' },
   { city: 'Frisco', max: '500 sqft', setback: '5 ft rear, 3 ft side', note: 'HOA approval may also be required' },
   { city: 'Fort Worth', max: '400 sqft', setback: '5 ft all sides', note: 'Separate electric meter optional' },
@@ -32,7 +32,7 @@ export default function DFWBackyardOfficeGuide2026() {
             {paths.map((p, i) => (
               <button key={p.lot} onClick={() => setLotIdx(i)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12,
-                  background: lotIdx === i ? '#F5E642' : '#1e3a5f', color: lotIdx === i ? '#0A1628' : '#fff', fontWeight: lotIdx === i ? 700 : 400 }}>
+                  background: lotIdx === i ? '#F5E642′ : '#1e3a5f', color: lotIdx === i ? '#0A1628' : '#fff', fontWeight: lotIdx === i ? 700 : 400 }}>
                 {p.lot}
               </button>
             ))}
@@ -58,11 +58,11 @@ export default function DFWBackyardOfficeGuide2026() {
               </thead>
               <tbody>
                 {cityPermits.map(r => (
-                  <tr key={r.city} style={{ borderBottom: '1px solid #0A1628' }}>
+                  <tr key={r.city} style={{ borderBottom: '1px solid #0A1628′ }}>
                     <td style={{ padding: '10px 12px', color: '#fff', fontWeight: 600 }}>{r.city}</td>
-                    <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{r.max}</td>
-                    <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{r.setback}</td>
-                    <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{r.note}</td>
+                    <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{r.max}</td>
+                    <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{r.setback}</td>
+                    <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{r.note}</td>
                   </tr>
                 ))}
               </tbody>

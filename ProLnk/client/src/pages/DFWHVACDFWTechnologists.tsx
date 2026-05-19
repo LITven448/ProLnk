@@ -65,8 +65,8 @@ export default function DFWHVACDFWTechnologists() {
               key={t.id}
               onClick={() => setSelected(selected === t.id ? null : t.id)}
               style={{
-                background: selected === t.id ? '#F5E642' : '#1E2D45',
-                color: selected === t.id ? '#0A1628' : '#E8EDF5',
+                background: selected === t.id ? '#F5E642′ : '#1E2D45',
+                color: selected === t.id ? '#0A1628′ : '#E8EDF5',
                 border: 'none',
                 borderRadius: 10,
                 padding: '16px 20px',
@@ -83,7 +83,7 @@ export default function DFWHVACDFWTechnologists() {
         </div>
 
         {tech && (
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ marginBottom: 12 }}>
               <span style={{ background: '#0A1628', color: '#F5E642', padding: '4px 10px', borderRadius: 6, fontSize: 12, fontWeight: 700 }}>{tech.maturity}</span>
             </div>

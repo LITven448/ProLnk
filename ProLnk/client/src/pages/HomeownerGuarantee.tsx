@@ -77,7 +77,7 @@ export default function HomeownerGuarantee() {
   ];
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827' }}>
+    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 12 }}>
           <span style={{ background: '#dcfce7', color: '#15803d', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
@@ -88,7 +88,7 @@ export default function HomeownerGuarantee() {
           The ProLnk<br />Homeowner Guarantee
         </h1>
         <p style={{ fontSize: 18, color: '#6b7280', marginBottom: 40 }}>
-          We're not just a directory. We're a promise. Here's exactly what we guarantee — and what we don't.
+          We're not just a directory. We’re a promise. Here’s exactly what we guarantee — and what we don’t.
         </p>
 
         <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 12, padding: 28, marginBottom: 32 }}>
@@ -103,7 +103,7 @@ export default function HomeownerGuarantee() {
                   padding: '8px 14px', borderRadius: 20, cursor: 'pointer', fontWeight: 600, fontSize: 13,
                   border: `2px solid ${selected.includes(g.id) ? '#0369a1' : '#e5e7eb'}`,
                   background: selected.includes(g.id) ? '#e0f2fe' : '#fff',
-                  color: selected.includes(g.id) ? '#0369a1' : '#374151',
+                  color: selected.includes(g.id) ? '#0369a1′ : '#374151',
                 }}
               >
                 {g.icon} {g.title.split(' ').slice(0, 3).join(' ')}...

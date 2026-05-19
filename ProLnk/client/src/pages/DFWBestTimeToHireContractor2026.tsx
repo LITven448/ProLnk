@@ -61,8 +61,8 @@ export default function DFWBestTimeToHireContractor2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 28 }}>
           {(Object.keys(projects) as ProjectType[]).map((key) => (
             <button key={key} onClick={() => setProject(key)} style={{
-              background: project === key ? '#F5E642' : '#1e2d45',
-              color: project === key ? '#0A1628' : '#fff',
+              background: project === key ? '#F5E642′ : '#1e2d45',
+              color: project === key ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 8, padding: '14px 12px', cursor: 'pointer', fontWeight: 700, fontSize: 15,
             }}>{projects[key].icon} {projects[key].label}</button>
           ))}

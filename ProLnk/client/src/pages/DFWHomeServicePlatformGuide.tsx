@@ -31,7 +31,7 @@ export default function DFWHomeServicePlatformGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW PLATFORM GUIDE 2026</div>
-        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px' }}>Every Way to Find a Contractor in DFW — <span style={{ color: '#F5E642' }}>Compared</span></h1>
+        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px' }}>Every Way to Find a Contractor in DFW — <span style={{ color: '#F5E642′ }}>Compared</span></h1>
         <p style={{ color: '#8FA3BF', fontSize: 15, lineHeight: 1.7, marginBottom: 36 }}>DFW homeowners have more platform options than ever in 2026. Here's an honest breakdown of each — what they do well, where they fall short, and when to use them.</p>
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 36 }}>
@@ -44,11 +44,11 @@ export default function DFWHomeServicePlatformGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 10 }}>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #22C55E' }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: '#22C55E', marginBottom: 4 }}>PRO</div>
-                  <div style={{ fontSize: 13, color: '#C5D5E8' }}>{p.pro}</div>
+                  <div style={{ fontSize: 13, color: '#C5D5E8′ }}>{p.pro}</div>
                 </div>
-                <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #EF4444' }}>
+                <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #EF4444′ }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: '#EF4444', marginBottom: 4 }}>CON</div>
-                  <div style={{ fontSize: 13, color: '#C5D5E8' }}>{p.con}</div>
+                  <div style={{ fontSize: 13, color: '#C5D5E8′ }}>{p.con}</div>
                 </div>
               </div>
               <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600 }}>Best for: {p.best}</div>
@@ -77,7 +77,7 @@ export default function DFWHomeServicePlatformGuide() {
             </div>
           </div>
           <button onClick={calcRec} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%', marginBottom: 16 }}>Get My Platform Recommendation</button>
-          {rec && <div style={{ padding: 18, background: '#0A1628', borderRadius: 10, borderLeft: '4px solid #F5E642', fontSize: 15, color: '#E8EDF5' }}>📌 {rec}</div>}
+          {rec && <div style={{ padding: 18, background: '#0A1628', borderRadius: 10, borderLeft: '4px solid #F5E642', fontSize: 15, color: '#E8EDF5′ }}>📌 {rec}</div>}
         </div>
       </div>
     </div>

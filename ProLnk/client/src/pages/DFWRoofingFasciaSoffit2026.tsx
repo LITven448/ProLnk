@@ -27,13 +27,13 @@ export default function DFWRoofingFasciaSoffit2026() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
-          <div style={{ background: '#112240', borderRadius: 12, padding: 18, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 18, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', fontSize: 15, margin: '0 0 8px' }}>🪵 Fascia</h3>
             <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
               The board at the eave edge of your roof. Gutters attach to it. In DFW, wood fascia rots from humidity — fiber cement or aluminum replacement lasts 30+ years.
             </p>
           </div>
-          <div style={{ background: '#112240', borderRadius: 12, padding: 18, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 18, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', fontSize: 15, margin: '0 0 8px' }}>🌬️ Soffit</h3>
             <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
               The underside of your roof overhang — has vents that allow attic airflow. Blocked or damaged soffits cause heat buildup that destroys shingles from inside.
@@ -46,7 +46,7 @@ export default function DFWRoofingFasciaSoffit2026() {
           <div style={{ display: 'flex', gap: 10 }}>
             {['Fascia','Soffit','Both'].map(a => (
               <button key={a} onClick={() => setArea(a)}
-                style={{ flex: 1, background: area === a ? '#F5E642' : '#0A1628', color: area === a ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+                style={{ flex: 1, background: area === a ? '#F5E642′ : '#0A1628', color: area === a ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px', fontSize: 13, fontWeight: 700, cursor: ’pointer' }}>
                 {a}
               </button>
             ))}
@@ -74,7 +74,7 @@ export default function DFWRoofingFasciaSoffit2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 8px' }}>{active.emoji} {active.label}</h3>
             <p style={{ color: '#CBD5E1', fontSize: 14, margin: 0 }}>{active.action}</p>
           </div>

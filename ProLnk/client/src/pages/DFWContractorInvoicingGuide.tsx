@@ -52,7 +52,7 @@ export default function DFWContractorInvoicingGuide() {
           )}
         </div>
 
-        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>💡 ProLnk Pro Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>ProLnk leads include homeowner creditworthiness signals. Pros who use milestone invoicing on ProLnk jobs report 94% on-time payment. Set your payment terms in your ProLnk profile so homeowners see them before requesting a quote.</div>
         </div>

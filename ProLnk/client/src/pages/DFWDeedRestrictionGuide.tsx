@@ -67,8 +67,8 @@ export default function DFWDeedRestrictionGuide() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>DFW Deed Restriction Guide</h1>
         <p style={{ color: '#94A3B8', fontSize: 15, marginBottom: 16 }}>Deed restrictions, HOA rules, and zoning are three separate systems — all can block a project independently.</p>
 
-        <div style={{ backgroundColor: '#162033', borderRadius: 10, padding: 16, border: '1px solid #2D3E55', marginBottom: 28, fontSize: 14, color: '#94A3B8' }}>
-          <strong style={{ color: '#F5E642' }}>📌 Key distinction:</strong> Zoning = government law. Deed restrictions = private contract recorded against your property. HOA rules = organization bylaws. You must comply with all three independently.
+        <div style={{ backgroundColor: '#162033', borderRadius: 10, padding: 16, border: '1px solid #2D3E55', marginBottom: 28, fontSize: 14, color: '#94A3B8′ }}>
+          <strong style={{ color: '#F5E642′ }}>📌 Key distinction:</strong> Zoning = government law. Deed restrictions = private contract recorded against your property. HOA rules = organization bylaws. You must comply with all three independently.
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
@@ -105,7 +105,7 @@ export default function DFWDeedRestrictionGuide() {
                 {info.implications.map(i => <li key={i}>{i}</li>)}
               </ul>
             </div>
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55' }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55′ }}>
               <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🔍 How to Verify</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7 }}>{info.verify}</div>
             </div>

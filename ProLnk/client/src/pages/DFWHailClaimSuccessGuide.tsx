@@ -49,7 +49,7 @@ export default function DFWHailClaimSuccessGuide() {
             {scenarios.map((s, i) => (
               <button key={i} onClick={() => setDamageIdx(i)} style={{
                 padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                backgroundColor: damageIdx === i ? '#0A1628' : '#E5E7EB', color: damageIdx === i ? '#F5E642' : '#0A1628',
+                backgroundColor: damageIdx === i ? '#0A1628′ : '#E5E7EB', color: damageIdx === i ? '#F5E642' : '#0A1628',
               }}>
                 {s.damage}
               </button>
@@ -65,7 +65,7 @@ export default function DFWHailClaimSuccessGuide() {
 
           <div style={{ backgroundColor: '#FAFAFA', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4, marginBottom: 16 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>📋 Claim Strategy</div>
-            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151' }}>{s.strategy}</p>
+            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151′ }}>{s.strategy}</p>
           </div>
 
           <p style={{ lineHeight: 1.7, marginBottom: 16 }}><strong>Real Story:</strong> {s.story}</p>
@@ -78,7 +78,7 @@ export default function DFWHailClaimSuccessGuide() {
           <div>
             <div style={{ fontWeight: 700, marginBottom: 8 }}>⚠️ What Could Go Wrong</div>
             {s.risks.map((r, i) => (
-              <div key={i} style={{ padding: '5px 0', borderBottom: '1px solid #F3F4F6', fontSize: 14, color: '#DC2626' }}>⚡ {r}</div>
+              <div key={i} style={{ padding: '5px 0', borderBottom: '1px solid #F3F4F6', fontSize: 14, color: '#DC2626′ }}>⚡ {r}</div>
             ))}
           </div>
         </div>

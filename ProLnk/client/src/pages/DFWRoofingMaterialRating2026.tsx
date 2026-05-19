@@ -37,9 +37,9 @@ export default function DFWRoofingMaterialRating2026() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ background: '#0d2137' }}>
+                <tr style={{ background: '#0d2137′ }}>
                   {['Rating', 'What It Tests', 'DFW Relevance'].map(h => (
-                    <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642' }}>{h}</th>
+                    <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642′ }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -52,8 +52,8 @@ export default function DFWRoofingMaterialRating2026() {
                 ].map(([r, w, d]) => (
                   <tr key={r} style={{ borderBottom: '1px solid #1e3a5f' }}>
                     <td style={{ padding: '8px 12px', color: '#F5E642', fontWeight: 600 }}>{r}</td>
-                    <td style={{ padding: '8px 12px', color: '#e2e8f0' }}>{w}</td>
-                    <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{d}</td>
+                    <td style={{ padding: '8px 12px', color: '#e2e8f0′ }}>{w}</td>
+                    <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{d}</td>
                   </tr>
                 ))}
               </tbody>
@@ -94,7 +94,7 @@ export default function DFWRoofingMaterialRating2026() {
             'Document everything: take photos of shingle labels, keep data sheets for future claims',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642' }}>💵</span>
+              <span style={{ color: '#F5E642′ }}>💵</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>
           ))}

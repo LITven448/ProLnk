@@ -69,7 +69,7 @@ export default function DFWWaiverOfContingencyGuide() {
   const rec = getRecommendation();
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 48 }}>📜</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '12px 0 8px' }}>DFW Waiver of Contingency Guide</h1>
@@ -110,14 +110,14 @@ export default function DFWWaiverOfContingencyGuide() {
               </div>
               <div>
                 <p style={{ fontWeight: 700, fontSize: 13, marginBottom: 8 }}>🔄 Alternatives to Full Waiver</p>
-                {selected.alternatives.map((a, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9' }}>• {a}</div>)}
+                {selected.alternatives.map((a, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9′ }}>• {a}</div>)}
               </div>
             </div>
           </div>
         )}
 
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🎯 Should YOU Waive?</h2>
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Contingency to Evaluate</label>
@@ -137,7 +137,7 @@ export default function DFWWaiverOfContingencyGuide() {
             </div>
           </div>
           {rec && (
-            <div style={{ background: rec.safe ? '#DCFCE7' : '#FEE2E2', border: `2px solid ${rec.safe ? '#16A34A' : '#DC2626'}`, borderRadius: 10, padding: 16 }}>
+            <div style={{ background: rec.safe ? '#DCFCE7′ : '#FEE2E2', border: `2px solid ${rec.safe ? '#16A34A' : '#DC2626'}`, borderRadius: 10, padding: 16 }}>
               <p style={{ margin: '0 0 6px', fontWeight: 700, fontSize: 16 }}>{rec.safe ? '🟡' : '🔴'} {rec.action}</p>
               <p style={{ margin: 0, fontSize: 14 }}>{rec.reason}</p>
             </div>

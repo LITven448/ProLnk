@@ -36,7 +36,7 @@ const ISSUES = [
 const STATS = [
   { label: 'Avg Home Value', value: '$420K' },
   { label: 'Growth Rate', value: 'Top 10 DFW' },
-  { label: 'Home Vintage', value: '2010–2024' },
+  { label: 'Home Vintage', value: '2010–2024′ },
   { label: 'Flood Zones', value: 'Significant' },
 ];
 
@@ -82,7 +82,7 @@ export default function TrustyProLittleElm() {
         <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', gap: 40, flexWrap: 'wrap' }}>
           {STATS.map(s => (
             <div key={s.label}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#4F46E5' }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#4F46E5′ }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#6B7280', fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}

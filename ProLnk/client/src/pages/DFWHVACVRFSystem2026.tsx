@@ -62,7 +62,7 @@ export default function DFWHVACVRFSystem2026() {
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>{t.range}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>{t.rec}</div>
               </div>
-              <span style={{ marginLeft: 12, padding: '4px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700, background: t.vrf ? '#F5E64222' : '#1E3A5F', color: t.vrf ? '#F5E642' : '#94A3B8', whiteSpace: 'nowrap' }}>
+              <span style={{ marginLeft: 12, padding: '4px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700, background: t.vrf ? '#F5E64222′ : '#1E3A5F', color: t.vrf ? '#F5E642' : '#94A3B8', whiteSpace: ’nowrap' }}>
                 {t.vrf ? '✅ VRF' : '⬜ Other'}
               </span>
             </div>
@@ -74,12 +74,12 @@ export default function DFWHVACVRFSystem2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home or Building Size (sq ft)</label>
-              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 6000"
+              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 6000″
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Number of Desired Zones (rooms)</label>
-              <input type="number" value={zones} onChange={e => setZones(e.target.value)} placeholder="e.g. 8"
+              <input type="number" value={zones} onChange={e => setZones(e.target.value)} placeholder="e.g. 8″
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <button onClick={calculate}
@@ -89,16 +89,16 @@ export default function DFWHVACVRFSystem2026() {
           </div>
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20 }}>
-              <div style={{ background: result.tier.vrf ? '#14532D22' : '#1E3A5F', border: `1px solid ${result.tier.vrf ? '#22C55E' : '#475569'}`, borderRadius: 8, padding: 16, marginBottom: 12 }}>
+              <div style={{ background: result.tier.vrf ? '#14532D22′ : '#1E3A5F', border: `1px solid ${result.tier.vrf ? '#22C55E' : '#475569'}`, borderRadius: 8, padding: 16, marginBottom: 12 }}>
                 <div style={{ fontWeight: 700, marginBottom: 6 }}>{result.tier.vrf ? '✅ VRF Recommended' : '⬜ Consider Alternatives'}</div>
                 <div style={{ color: '#94A3B8', fontSize: 14 }}>{result.tier.rec}</div>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
-                <span style={{ color: '#94A3B8' }}>Estimated Installed Cost</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0′ }}>
+                <span style={{ color: '#94A3B8′ }}>Estimated Installed Cost</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.totalEst}</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0' }}>
-                <span style={{ color: '#94A3B8' }}>Configured Zones</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0′ }}>
+                <span style={{ color: '#94A3B8′ }}>Configured Zones</span>
                 <span style={{ color: '#E8EDF5', fontWeight: 600 }}>{result.zoneCount} zones</span>
               </div>
             </div>

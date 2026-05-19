@@ -52,21 +52,21 @@ export default function DFWHVACReplacementTimeline2026() {
         {[{ k: 'central', l: 'Central AC/Gas' }, { k: 'heatpump', l: 'Heat Pump' }, { k: 'ductless', l: 'Mini-Split' }].map(({ k, l }) => (
           <button key={k} onClick={() => setSystem(k)}
             style={{ marginRight: '0.5rem', padding: '0.4rem 1rem', borderRadius: '6px', border: '2px solid #F5E642',
-              background: system === k ? '#F5E642' : 'transparent', color: system === k ? '#0A1628' : '#F5E642', cursor: 'pointer', fontWeight: '700' }}>
+              background: system === k ? '#F5E642′ : ’transparent', color: system === k ? '#0A1628′ : '#F5E642', cursor: ’pointer', fontWeight: '700′ }}>
             {l}
           </button>
         ))}
       </div>
 
       <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '1rem', marginBottom: '0.5rem' }}>
-        <span style={{ color: '#F5E642', fontWeight: '700' }}>Estimated Total: </span>
+        <span style={{ color: '#F5E642', fontWeight: '700′ }}>Estimated Total: </span>
         <span style={{ fontSize: '1.2rem' }}>{current.total}</span>
       </div>
       <p style={{ color: '#aaa', marginBottom: '1.5rem', fontSize: '0.9rem' }}>{current.note}</p>
 
       {current.phases.map((p, i) => (
         <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '0.75rem', background: '#0d1e38', borderRadius: '8px', padding: '0.75rem 1rem' }}>
-          <div style={{ flex: '1', fontWeight: '600' }}>{p.phase}</div>
+          <div style={{ flex: '1', fontWeight: '600′ }}>{p.phase}</div>
           <div style={{ color: '#F5E642', minWidth: '120px', textAlign: 'right' }}>{p.duration}</div>
           <div style={{ color: '#aaa', flex: '2', textAlign: 'right' }}>{p.notes}</div>
         </div>

@@ -13,7 +13,7 @@ const TIERS = [
     subPct: 12,
     networkCascade: [7, 4, 2, 1],
     gradient: BADGE_GRADIENTS.orange,
-    accentColor: "#FBB140",
+    accentColor: "#FBB140″,
     avgEarnings: "$2,100/mo",
     topEarner: "$5,800/mo",
     tierSize: 25,
@@ -33,7 +33,7 @@ const TIERS = [
     tierSize: 100,
   },
   {
-    label: "Level 3",
+    label: "Level 3″,
     slots: 400,
     monthly: "$149/mo",
     locked: false,
@@ -47,7 +47,7 @@ const TIERS = [
     tierSize: 400,
   },
   {
-    label: "Level 4",
+    label: "Level 4″,
     slots: 1600,
     monthly: "$149/mo",
     locked: false,
@@ -147,11 +147,11 @@ export default function CommissionStrategy() {
                     <div style={{ fontSize: 12, color: T.muted }}>{t.slots.toLocaleString()} slots</div>
                   </div>
                   {t.locked ? (
-                    <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#FFF8E6", color: T.amber, padding: "3px 8px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#FFF8E6″, color: T.amber, padding: "3px 8px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>
                       <Lock style={{ width: 10, height: 10 }} /> Locked
                     </div>
                   ) : (
-                    <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#F0FAF0", color: T.green, padding: "3px 8px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#F0FAF0″, color: T.green, padding: "3px 8px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>
                       Open
                     </div>
                   )}

@@ -29,7 +29,7 @@ export default function DFWHVACSeasonLengthGuide() {
 
   const northernEquiv = Math.round((coolHrs + heatHrs) / 900);
   const wearRate = totalHrs > 3000 ? 'Very High' : totalHrs > 2500 ? 'High' : 'Moderate';
-  const wearColor = totalHrs > 3000 ? '#ef4444' : totalHrs > 2500 ? '#f97316' : '#eab308';
+  const wearColor = totalHrs > 3000 ? '#ef4444′ : totalHrs > 2500 ? '#f97316' : '#eab308';
   const lifespan = totalHrs > 3200 ? '10–13 years' : totalHrs > 2600 ? '13–16 years' : '15–18 years';
 
   const coolMonths = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
@@ -42,7 +42,7 @@ export default function DFWHVACSeasonLengthGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8 }}>📅 DFW HVAC TOOLS</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Season Length Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>
-          DFW's cooling season runs 7 months — more than double the national average. Here's what that means for your system.
+          DFW's cooling season runs 7 months — more than double the national average. Here’s what that means for your system.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 24 }}>
@@ -50,10 +50,10 @@ export default function DFWHVACSeasonLengthGuide() {
             <div key={m} style={{ background: '#1a3a5c', borderRadius: 8, padding: '10px', textAlign: 'center', fontSize: 13, fontWeight: 700, color: '#60a5fa' }}>❄️ {m}</div>
           ))}
           {heatMonths.map(m => (
-            <div key={m} style={{ background: '#3a1a1a', borderRadius: 8, padding: '10px', textAlign: 'center', fontSize: 13, fontWeight: 700, color: '#f87171' }}>🔥 {m}</div>
+            <div key={m} style={{ background: '#3a1a1a', borderRadius: 8, padding: '10px', textAlign: 'center', fontSize: 13, fontWeight: 700, color: '#f87171′ }}>🔥 {m}</div>
           ))}
           {shoulderMonths.map(m => (
-            <div key={m} style={{ background: '#2a2a1a', borderRadius: 8, padding: '10px', textAlign: 'center', fontSize: 13, fontWeight: 700, color: '#fbbf24' }}>🌤️ {m}</div>
+            <div key={m} style={{ background: '#2a2a1a', borderRadius: 8, padding: '10px', textAlign: 'center', fontSize: 13, fontWeight: 700, color: '#fbbf24′ }}>🌤️ {m}</div>
           ))}
         </div>
 
@@ -94,7 +94,7 @@ export default function DFWHVACSeasonLengthGuide() {
               ].map(({ label, val, sub }) => (
                 <div key={label} style={{ background: '#1e2d4a', borderRadius: 10, padding: 14 }}>
                   <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                   <div style={{ fontSize: 12, color: '#64748b' }}>{sub}</div>
                 </div>
               ))}
@@ -102,7 +102,7 @@ export default function DFWHVACSeasonLengthGuide() {
             <div style={{ background: '#1a1a2e', borderRadius: 10, padding: 14 }}>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Wear Rate: <span style={{ color: wearColor, fontWeight: 700 }}>{wearRate}</span></div>
               <div style={{ fontSize: 14 }}>
-                Your system runs <strong style={{ color: '#F5E642' }}>{totalHrs.toLocaleString()} hrs/yr</strong> — equivalent to what a northern-state unit runs in {northernEquiv} years. Plan for replacement in {lifespan}.
+                Your system runs <strong style={{ color: '#F5E642′ }}>{totalHrs.toLocaleString()} hrs/yr</strong> — equivalent to what a northern-state unit runs in {northernEquiv} years. Plan for replacement in {lifespan}.
               </div>
             </div>
           </div>

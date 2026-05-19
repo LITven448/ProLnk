@@ -83,7 +83,7 @@ export default function DFWAccentWallGuide() {
 
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {materials.map(m => (
-            <button key={m.id} onClick={() => setMaterial(m.id)} style={{ padding: '10px 20px', borderRadius: 100, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: material === m.id ? '#F5E642' : 'rgba(255,255,255,0.1)', color: material === m.id ? '#0A1628' : '#ccc', transition: 'all 0.2s' }}>
+            <button key={m.id} onClick={() => setMaterial(m.id)} style={{ padding: '10px 20px', borderRadius: 100, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: material === m.id ? '#F5E642′ : ’rgba(255,255,255,0.1)', color: material === m.id ? '#0A1628′ : '#ccc', transition: ’all 0.2s' }}>
               {m.icon} {m.label}
             </button>
           ))}
@@ -116,7 +116,7 @@ export default function DFWAccentWallGuide() {
               <label style={{ fontSize: 12, color: '#9BB0CC', display: 'block', marginBottom: 6 }}>INSTALLATION</label>
               <div style={{ display: 'flex', gap: 8, marginTop: 2 }}>
                 {(['diy', 'pro'] as DiyPro[]).map(d => (
-                  <button key={d} onClick={() => setDiyPro(d)} style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: diyPro === d ? '#F5E642' : 'rgba(255,255,255,0.1)', color: diyPro === d ? '#0A1628' : '#ccc' }}>
+                  <button key={d} onClick={() => setDiyPro(d)} style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: diyPro === d ? '#F5E642′ : ’rgba(255,255,255,0.1)', color: diyPro === d ? '#0A1628′ : '#ccc' }}>
                     {d === 'diy' ? '🔨 DIY' : '👷 Pro'}
                   </button>
                 ))}

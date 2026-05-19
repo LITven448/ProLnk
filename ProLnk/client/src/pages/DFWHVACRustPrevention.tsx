@@ -30,7 +30,7 @@ export default function DFWHVACRustPrevention() {
           <span style={{ fontSize: '2rem' }}>🦺</span>
           <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW HVAC Rust Prevention</h1>
         </div>
-        <p style={{ color: '#94A3B8', marginBottom: '2rem' }}>DFW's humidity doesn't just breed mold — it corrodes your HVAC system from the inside out. Knowing where rust starts and how to stop it early saves thousands.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '2rem' }}>DFW's humidity doesn’t just breed mold — it corrodes your HVAC system from the inside out. Knowing where rust starts and how to stop it early saves thousands.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
@@ -52,7 +52,7 @@ export default function DFWHVACRustPrevention() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.25rem' }}>
             {rustSituations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1E3A5F', background: selected === s.id ? '#1a2f50' : 'transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
+                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1E3A5F', background: selected === s.id ? '#1a2f50' : ’transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
                 {s.label}
               </button>
             ))}
@@ -64,7 +64,7 @@ export default function DFWHVACRustPrevention() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 0.75rem' }}>Assessment: {result.part}</h3>
             <p style={{ fontSize: '0.9rem', color: '#94A3B8', marginBottom: '0.5rem' }}>{urgencyMap[result.id]}</p>
             <p style={{ color: '#E8EEF4', marginBottom: '0.5rem' }}>✅ <strong>Recommended action:</strong> {result.action}</p>

@@ -48,7 +48,7 @@ export default function DFWTownhomeGuide2026() {
             {priorities.map((p) => (
               <button key={p.id} onClick={() => setSelected(p.id)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selected === p.id ? '#F5E642' : '#1e2e4a', color: selected === p.id ? '#0A1628' : '#94a3b8' }}>
+                  background: selected === p.id ? '#F5E642′ : '#1e2e4a', color: selected === p.id ? '#0A1628' : '#94a3b8' }}>
                 {p.label}
               </button>
             ))}
@@ -78,7 +78,7 @@ export default function DFWTownhomeGuide2026() {
               <span style={{ fontSize: 20 }}>{row.icon}</span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{row.title}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8' }}>{row.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{row.note}</div>
               </div>
             </div>
           ))}

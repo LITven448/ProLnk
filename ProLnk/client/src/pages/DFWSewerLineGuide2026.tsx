@@ -40,35 +40,35 @@ export default function DFWSewerLineGuide2026() {
           ].map((c, i) => (
             <div key={i} style={{ background: '#0f2035', borderRadius: '10px', padding: '1.2rem' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642' }}>{c.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642′ }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2035', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📊 Sewer Risk Assessment</h2>
+          <h2 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📊 Sewer Risk Assessment</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.88rem' }}>Home Built Era</label>
             <select value={homeAge} onChange={e => setHomeAge(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: '6px', padding: '0.5rem 1rem', fontSize: '0.95rem' }}>
               <option value="">Select era</option>
-              <option value="1960">Before 1960</option>
-              <option value="1970">1960–1979</option>
-              <option value="1990">1980–1999</option>
-              <option value="2010">2000–2015</option>
-              <option value="2024">2016–Present</option>
+              <option value="1960″>Before 1960</option>
+              <option value="1970″>1960–1979</option>
+              <option value="1990″>1980–1999</option>
+              <option value="2010″>2000–2015</option>
+              <option value="2024″>2016–Present</option>
             </select>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem', marginBottom: '1rem' }}>
             {symptomList.map(s => (
-              <button key={s.id} onClick={() => toggle(s.id)} style={{ padding: '0.7rem 1rem', borderRadius: '8px', border: '2px solid', borderColor: symptoms.includes(s.id) ? '#F5E642' : '#1e3a5f', background: symptoms.includes(s.id) ? '#1a2f4a' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left', fontSize: '0.88rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => toggle(s.id)} style={{ padding: '0.7rem 1rem', borderRadius: '8px', border: '2px solid', borderColor: symptoms.includes(s.id) ? '#F5E642′ : '#1e3a5f', background: symptoms.includes(s.id) ? '#1a2f4a' : '#0A1628', color: '#fff', cursor: ’pointer', textAlign: 'left', fontSize: '0.88rem' }}>{s.label}</button>
             ))}
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Assess My Sewer Risk →</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>{result}</div>}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: '10px', padding: '1.2rem', color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: '10px', padding: '1.2rem', color: '#0A1628′ }}>
           <strong>💡 DFW Pro Tip:</strong> Always get a sewer camera scope before buying a home built before 1990 in DFW. It could save you $10,000+ in surprise repairs.
         </div>
       </div>

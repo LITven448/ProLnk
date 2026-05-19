@@ -78,7 +78,7 @@ export default function DFWIndoorOutdoorUnitGuide() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Know Your System</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Know Your System</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               ['Outdoor Unit (Condenser)', 'Removes heat from your home and dumps it outside. Contains the compressor and condenser coil. In DFW, this unit takes a beating from 100F+ ambient temps.'],
@@ -95,7 +95,7 @@ export default function DFWIndoorOutdoorUnitGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Diagnose Your Symptoms</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Diagnose Your Symptoms</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>What is your system doing?</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value as SymptomKey)}
@@ -125,7 +125,7 @@ export default function DFWIndoorOutdoorUnitGuide() {
               <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>LIKELY CAUSE</div>
               <div style={{ fontSize: 14 }}>{result.likelyCause}</div>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 11, color: '#F5E642', marginBottom: 4 }}>DFW SPECIFIC</div>
               <div style={{ fontSize: 14, lineHeight: 1.6 }}>{result.dfwNote}</div>
             </div>

@@ -33,7 +33,7 @@ export default function PartnerNorthTexasGuide() {
   const seasonal = SEASONAL[trade as keyof typeof SEASONAL] || {};
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628' }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🤠</div>
@@ -51,7 +51,7 @@ export default function PartnerNorthTexasGuide() {
           ].map(stat => (
             <div key={stat.label} style={{ background: '#fff', borderRadius: 16, padding: 24, textAlign: 'center', border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{stat.icon}</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628' }}>{stat.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628′ }}>{stat.value}</div>
               <div style={{ fontSize: 13, color: '#6B7280', marginTop: 4 }}>{stat.label}</div>
             </div>
           ))}
@@ -68,7 +68,7 @@ export default function PartnerNorthTexasGuide() {
             ].map(item => (
               <div key={item.city} style={{ background: '#F9FAFB', borderRadius: 10, padding: 14 }}>
                 <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{item.city}</div>
-                <div style={{ fontSize: 13, color: '#4B5563' }}>{item.why}</div>
+                <div style={{ fontSize: 13, color: '#4B5563′ }}>{item.why}</div>
               </div>
             ))}
           </div>
@@ -108,7 +108,7 @@ export default function PartnerNorthTexasGuide() {
             <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 8 }}>Seasonal Demand — {trade}</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
               {Object.entries(seasonal).map(([season, level]) => (
-                <div key={season} style={{ background: level === 'Peak' ? '#0A1628' : level === 'High' ? '#1E3A5F' : '#F3F4F6',
+                <div key={season} style={{ background: level === 'Peak' ? '#0A1628′ : level === ’High' ? '#1E3A5F' : '#F3F4F6',
                   color: level === 'Peak' || level === 'High' ? '#fff' : '#374151', borderRadius: 8, padding: '10px 0', textAlign: 'center' }}>
                   <div style={{ fontSize: 12, fontWeight: 600 }}>{season}</div>
                   <div style={{ fontSize: 11, marginTop: 2, opacity: 0.8 }}>{level}</div>

@@ -58,9 +58,9 @@ export default function DFWHVACServiceFrequencyGuide2026() {
                 style={{
                   padding: '12px 16px',
                   borderRadius: 8,
-                  border: selectedAge === age ? '2px solid #F5E642' : '2px solid #2d3f5a',
-                  backgroundColor: selectedAge === age ? '#F5E642' : '#0d1f36',
-                  color: selectedAge === age ? '#0A1628' : '#cbd5e1',
+                  border: selectedAge === age ? '2px solid #F5E642′ : '2px solid #2d3f5a',
+                  backgroundColor: selectedAge === age ? '#F5E642′ : '#0d1f36',
+                  color: selectedAge === age ? '#0A1628′ : '#cbd5e1',
                   fontWeight: 700,
                   fontSize: 15,
                   cursor: 'pointer',
@@ -87,7 +87,7 @@ export default function DFWHVACServiceFrequencyGuide2026() {
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8, fontWeight: 600, textTransform: 'uppercase' }}>Included Services</div>
               {rec.services.map((s, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 0', borderBottom: '1px solid #2d3f5a', color: '#e2e8f0', fontSize: 14 }}>
-                  <span style={{ color: '#F5E642' }}>✓</span> {s}
+                  <span style={{ color: '#F5E642′ }}>✓</span> {s}
                 </div>
               ))}
             </div>
@@ -101,8 +101,8 @@ export default function DFWHVACServiceFrequencyGuide2026() {
         <div style={{ backgroundColor: '#1e2d47', borderRadius: 12, padding: 20 }}>
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 12 }}>🌡️ DFW Climate Facts</h3>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            DFW averages <strong style={{ color: '#e2e8f0' }}>100+ days above 90°F</strong> annually, pushing HVAC systems harder than most U.S. cities.
-            Regular maintenance can extend system life by <strong style={{ color: '#F5E642' }}>3-5 years</strong> and reduce energy costs by up to <strong style={{ color: '#F5E642' }}>15%</strong>.
+            DFW averages <strong style={{ color: '#e2e8f0′ }}>100+ days above 90°F</strong> annually, pushing HVAC systems harder than most U.S. cities.
+            Regular maintenance can extend system life by <strong style={{ color: '#F5E642′ }}>3-5 years</strong> and reduce energy costs by up to <strong style={{ color: '#F5E642' }}>15%</strong>.
           </div>
         </div>
       </div>

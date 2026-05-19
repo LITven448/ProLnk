@@ -12,7 +12,7 @@ const baseChecklist = [
 
 const ageAddons: Record<string, { task: string; priority: string; est: string }[]> = {
   new: [
-    { task: '📋 Review builder warranty before it expires', priority: 'medium', est: '$0' },
+    { task: '📋 Review builder warranty before it expires', priority: 'medium', est: '$0′ },
     { task: '🔍 Check grading/drainage around foundation', priority: 'medium', est: '$0 visual' },
   ],
   mid: [
@@ -27,7 +27,7 @@ const ageAddons: Record<string, { task: string; priority: string; est: string }[
   ],
 };
 
-const priorityColor = { high: '#ef4444', medium: '#F5E642' };
+const priorityColor = { high: '#ef4444', medium: '#F5E642′ };
 
 export default function DFWFallPreparationGuide2026() {
   const [age, setAge] = useState<'new' | 'mid' | 'old' | null>(null);
@@ -44,7 +44,7 @@ export default function DFWFallPreparationGuide2026() {
           🍂 DFW Fall Home Preparation Guide 2026
         </div>
         <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>
-          October–November is your window to prep before DFW's cold fronts arrive — sometimes dropping 40°F overnight. Don't get caught unprepared.
+          October–November is your window to prep before DFW's cold fronts arrive — sometimes dropping 40°F overnight. Don’t get caught unprepared.
         </p>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>
           <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>⚠️ The DFW Fall Surprise</div>
@@ -54,7 +54,7 @@ export default function DFWFallPreparationGuide2026() {
           <div style={{ fontWeight: 600, marginBottom: '0.75rem' }}>🏠 How old is your home?</div>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {(['new', 'mid', 'old'] as const).map(a => (
-              <button key={a} onClick={() => { setAge(a); setChecked({}); }} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642' : '#1e3a5f', background: age === a ? '#F5E642' : 'transparent', color: age === a ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={a} onClick={() => { setAge(a); setChecked({}); }} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642′ : '#1e3a5f', background: age === a ? '#F5E642' : ’transparent', color: age === a ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
                 {a === 'new' ? '🆕 Under 10 years' : a === 'mid' ? '🏡 10–25 years' : '🏚️ 25+ years'}
               </button>
             ))}

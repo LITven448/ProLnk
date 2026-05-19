@@ -25,7 +25,7 @@ export default function DFWUtilitiesGuide() {
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 17, margin: 0 }}>Choose providers, compare electric rates, and lower your monthly bills. Texas deregulated electric market means you have real choices.</p>
         </div>
 
-        <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 16, padding: 32, margin: '48px 0' }}>
+        <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 16, padding: 32, margin: '48px 0′ }}>
           <div style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
             <span style={{ fontSize: 28 }}>⚡</span>
             <div>
@@ -61,8 +61,8 @@ export default function DFWUtilitiesGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20, marginBottom: 48 }}>
           {([
-            { icon: '🔥', title: 'Natural Gas', provider: 'Atmos Energy', note: 'Not deregulated. Atmos Energy is the single provider across most of DFW. Bills avg $40–120 per month depending on season and home size.', color: '#ef4444' },
-            { icon: '💧', title: 'Water', provider: 'Varies by City', note: 'Frisco, Plano, Dallas, Fort Worth, and surrounding municipalities all have separate water utilities and billing systems. Contact your city directly after closing.', color: '#3b82f6' },
+            { icon: '🔥', title: 'Natural Gas', provider: 'Atmos Energy', note: 'Not deregulated. Atmos Energy is the single provider across most of DFW. Bills avg $40–120 per month depending on season and home size.', color: '#ef4444′ },
+            { icon: '💧', title: 'Water', provider: 'Varies by City', note: 'Frisco, Plano, Dallas, Fort Worth, and surrounding municipalities all have separate water utilities and billing systems. Contact your city directly after closing.', color: '#3b82f6′ },
             { icon: '♻️', title: 'Waste and Recycling', provider: 'City-Managed', note: 'Typically bundled with water or billed separately by city. Most DFW cities offer single-stream recycling pickup. Some charge extra for bulk item pickup.', color: '#22c55e' },
           ] as { icon: string; title: string; provider: string; note: string; color: string }[]).map((util, i) => (
             <div key={i} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 16, padding: 24 }}>
@@ -89,7 +89,7 @@ export default function DFWUtilitiesGuide() {
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11 }}>Price</div>
-                  <div style={{ fontWeight: 600, fontSize: 14, color: '#4ade80' }}>{isp.price}</div>
+                  <div style={{ fontWeight: 600, fontSize: 14, color: '#4ade80′ }}>{isp.price}</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11 }}>Rating</div>
@@ -112,7 +112,7 @@ export default function DFWUtilitiesGuide() {
             <input
               type="range" min={800} max={5000} step={100} value={homeSqft}
               onChange={(e) => setHomeSqft(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5C842' }}
+              style={{ width: '100%', accentColor: '#F5C842′ }}
             />
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 4 }}>
               <span>800 sq ft</span><span>5,000 sq ft</span>
@@ -129,7 +129,7 @@ export default function DFWUtilitiesGuide() {
               <div key={label} style={{ background: 'rgba(0,0,0,0.3)', borderRadius: 12, padding: 20, textAlign: 'center' }}>
                 <span style={{ fontSize: 24 }}>{icon}</span>
                 <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, margin: '8px 0 4px' }}>{label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5C842' }}>${amount}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5C842′ }}>${amount}</div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11 }}>per month</div>
               </div>
             ))}

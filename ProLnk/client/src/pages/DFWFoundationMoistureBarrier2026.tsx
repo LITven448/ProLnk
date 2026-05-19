@@ -42,13 +42,13 @@ export default function DFWFoundationMoistureBarrier2026() {
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏗️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW Foundation Moisture Barrier Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW Foundation Moisture Barrier Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>Vapor barriers and moisture management for North Texas clay soil</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           {stats.map((s, i) => (
-            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642' }}>
+            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: '2rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.5rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontSize: '1.3rem', fontWeight: 700 }}>{s.val}</div>

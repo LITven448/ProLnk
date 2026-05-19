@@ -65,7 +65,7 @@ export default function DFWHomeOwnerPriorityMatrix2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
             {Object.entries(allNeeds).map(([key, need]) => (
               <button key={key} onClick={() => toggleNeed(key)}
-                style={{ background: selected.includes(key) ? '#F5E642' : '#0A1628', color: selected.includes(key) ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: selected.includes(key) ? '#F5E642′ : '#0A1628', color: selected.includes(key) ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', cursor: ’pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
                 {need.icon} {need.label}
               </button>
             ))}

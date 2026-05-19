@@ -41,7 +41,7 @@ export default function ProLnkHomeHealthVaultAI() {
             <div key={i} style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{f.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6, fontSize: 14 }}>{f.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{f.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{f.desc}</div>
             </div>
           ))}
         </div>
@@ -53,15 +53,15 @@ export default function ProLnkHomeHealthVaultAI() {
             {Object.keys(predictions).map(a => (
               <button key={a} onClick={() => setAge(a)}
                 style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: age === a ? '#F5E642' : '#1e3a5f', color: age === a ? '#0A1628' : '#fff' }}>
+                  background: age === a ? '#F5E642′ : '#1e3a5f', color: age === a ? '#0A1628' : '#fff' }}>
                 {predictions[a].icon} {a}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
             {predictions[age].items.map((item, i) => (
-              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
-                <span style={{ fontSize: 13, color: '#cbd5e1' }}>🔔 {item}</span>
+              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+                <span style={{ fontSize: 13, color: '#cbd5e1′ }}>🔔 {item}</span>
               </div>
             ))}
           </div>

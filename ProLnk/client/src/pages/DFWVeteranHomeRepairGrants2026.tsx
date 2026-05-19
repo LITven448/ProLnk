@@ -8,7 +8,7 @@ export default function DFWVeteranHomeRepairGrants2026() {
   const checkGrants = () => {
     if (!period) { setResult('⚠️ Please select your service period.'); return; }
     const grants: string[] = [];
-    if (disability === '100' || disability === 'severe') {
+    if (disability === '100′ || disability === ’severe') {
       grants.push('🏠 VA SAH Grant (Specially Adapted Housing): Up to $109,986 for permanent home modifications for veterans with severe service-connected disabilities. va.gov/housing-assistance/adaptive-housing-grants');
       grants.push('🏡 VA SHA Grant (Special Home Adaptation): Up to $22,036 for veterans with specific service-connected disabilities. va.gov/housing-assistance/adaptive-housing-grants');
     }
@@ -48,14 +48,14 @@ export default function DFWVeteranHomeRepairGrants2026() {
               <option value="wwii">WWII / Korea (pre-1955)</option>
               <option value="vietnam">Vietnam Era (1955–1975)</option>
               <option value="gulf">Gulf War (1990–present)</option>
-              <option value="post911">Post-9/11 (2001–present)</option>
+              <option value="post911″>Post-9/11 (2001–present)</option>
             </select>
             <select value={disability} onChange={e => setDisability(e.target.value)}
               style={{ flex: 1, padding: '10px 14px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: '#fff', fontSize: 14 }}>
               <option value="none">No Disability Rating</option>
               <option value="partial">Partial Disability (1–99%)</option>
               <option value="severe">Severe Disability (loss of limb/sight)</option>
-              <option value="100">100% Service-Connected</option>
+              <option value="100″>100% Service-Connected</option>
             </select>
           </div>
           <button onClick={checkGrants}

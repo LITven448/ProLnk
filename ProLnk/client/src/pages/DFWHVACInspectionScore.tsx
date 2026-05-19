@@ -62,9 +62,9 @@ export default function DFWHVACInspectionScore() {
               {q.options.map((opt, oi) => (
                 <button key={opt} onClick={() => setAnswers(a => ({ ...a, [q.id]: weights[oi] }))}
                   style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                    borderColor: answers[q.id] === weights[oi] ? '#F5E642' : '#1e3a5f',
+                    borderColor: answers[q.id] === weights[oi] ? '#F5E642′ : '#1e3a5f',
                     background: answers[q.id] === weights[oi] ? 'rgba(245,230,66,0.12)' : 'transparent',
-                    color: answers[q.id] === weights[oi] ? '#F5E642' : '#94a3b8',
+                    color: answers[q.id] === weights[oi] ? '#F5E642′ : '#94a3b8',
                     cursor: 'pointer', fontSize: 13, textAlign: 'left' }}>
                   {opt}
                 </button>
@@ -74,8 +74,8 @@ export default function DFWHVACInspectionScore() {
         ))}
 
         <button onClick={calculate} disabled={!allAnswered}
-          style={{ width: '100%', padding: '16px', background: allAnswered ? '#F5E642' : '#1e3a5f',
-            color: allAnswered ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 12,
+          style={{ width: '100%', padding: '16px', background: allAnswered ? '#F5E642′ : '#1e3a5f',
+            color: allAnswered ? '#0A1628′ : '#4a6080', border: ’none', borderRadius: 12,
             fontWeight: 700, fontSize: 16, cursor: allAnswered ? 'pointer' : 'not-allowed', marginTop: 8 }}>
           {allAnswered ? 'Calculate HVAC Score →' : `Answer ${questions.length - Object.keys(answers).length} more question(s)`}
         </button>
@@ -83,7 +83,7 @@ export default function DFWHVACInspectionScore() {
         {result && (
           <div style={{ marginTop: 24, background: '#0f1f3a', borderRadius: 16, padding: 24 }}>
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
-              <div style={{ fontSize: 72, fontWeight: 800, color: result.score >= 70 ? '#22c55e' : result.score >= 45 ? '#f59e0b' : '#ef4444' }}>
+              <div style={{ fontSize: 72, fontWeight: 800, color: result.score >= 70 ? '#22c55e' : result.score >= 45 ? '#f59e0b' : '#ef4444′ }}>
                 {result.score}
               </div>
               <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>HVAC Health Score</div>
@@ -92,7 +92,7 @@ export default function DFWHVACInspectionScore() {
               </div>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔧 Priority Maintenance Items</div>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔧 Priority Maintenance Items</div>
               {result.items.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cbd5e1', fontSize: 14 }}>
                   <span style={{ color: '#F5E642', flexShrink: 0 }}>{i + 1}.</span>{item}

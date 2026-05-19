@@ -45,8 +45,8 @@ export default function DFWSmartSwitchGuide2026() {
               style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, fontSize: 15 }}
             >
               <option value="">When was your DFW home built?</option>
-              <option value="pre1985">Before 1985 (may not have neutral wire)</option>
-              <option value="post1985">1985 or newer (likely has neutral wire)</option>
+              <option value="pre1985″>Before 1985 (may not have neutral wire)</option>
+              <option value="post1985″>1985 or newer (likely has neutral wire)</option>
             </select>
             <select
               value={switchType}
@@ -82,7 +82,7 @@ export default function DFWSmartSwitchGuide2026() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ fontSize: 22 }}>{s.emoji}</span>
                 <span style={{ fontWeight: 600, fontSize: 15 }}>{s.name}</span>
-                <span style={{ background: s.neutral ? '#166534' : '#7c2d12', color: '#fff', padding: '2px 8px', borderRadius: 20, fontSize: 11 }}>{s.neutral ? 'Needs Neutral' : 'No Neutral OK'}</span>
+                <span style={{ background: s.neutral ? '#166534′ : '#7c2d12', color: '#fff', padding: '2px 8px', borderRadius: 20, fontSize: 11 }}>{s.neutral ? ’Needs Neutral' : 'No Neutral OK'}</span>
                 <span style={{ marginLeft: 'auto', color: '#F5E642', fontWeight: 700, fontSize: 13 }}>{s.price}</span>
               </div>
               {activeSwitch === s.id && (

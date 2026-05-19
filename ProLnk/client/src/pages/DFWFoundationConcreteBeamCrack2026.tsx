@@ -108,8 +108,8 @@ export default function DFWFoundationConcreteBeamCrack2026() {
                 <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>{q.label}</label>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                   {q.options.map(opt => (
-                    <label key={opt} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', padding: '8px 12px', background: answers[q.id] === opt ? '#F5E64211' : '#0A1628', border: `1px solid ${answers[q.id] === opt ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8 }}>
-                      <input type="radio" name={q.id} value={opt} checked={answers[q.id] === opt} onChange={() => setAnswers(a => ({ ...a, [q.id]: opt }))} style={{ accentColor: '#F5E642' }} />
+                    <label key={opt} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', padding: '8px 12px', background: answers[q.id] === opt ? '#F5E64211′ : '#0A1628', border: `1px solid ${answers[q.id] === opt ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8 }}>
+                      <input type="radio" name={q.id} value={opt} checked={answers[q.id] === opt} onChange={() => setAnswers(a => ({ ...a, [q.id]: opt }))} style={{ accentColor: '#F5E642′ }} />
                       <span style={{ fontSize: 14 }}>{opt}</span>
                     </label>
                   ))}

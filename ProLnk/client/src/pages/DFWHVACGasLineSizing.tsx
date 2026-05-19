@@ -19,10 +19,10 @@ const defaultAppliances: Appliance[] = [
 ];
 
 function getLineSize(totalBtu: number): { size: string; adequate: boolean; note: string; upgradeCost: string } {
-  if (totalBtu <= 80000) return { size: '1/2" pipe', adequate: true, note: 'Standard for most DFW homes', upgradeCost: 'N/A' };
-  if (totalBtu <= 150000) return { size: '3/4" pipe', adequate: true, note: 'Common in DFW new construction', upgradeCost: 'N/A' };
-  if (totalBtu <= 300000) return { size: '1" pipe', adequate: true, note: 'Required for high-demand DFW homes', upgradeCost: '$800–$2,000' };
-  return { size: '1-1/4" or larger', adequate: false, note: 'Upgrade likely needed — exceeds most DFW residential lines', upgradeCost: '$1,500–$4,000' };
+  if (totalBtu <= 80000) return { size: '1/2″ pipe', adequate: true, note: 'Standard for most DFW homes', upgradeCost: 'N/A' };
+  if (totalBtu <= 150000) return { size: '3/4″ pipe', adequate: true, note: 'Common in DFW new construction', upgradeCost: 'N/A' };
+  if (totalBtu <= 300000) return { size: '1″ pipe', adequate: true, note: 'Required for high-demand DFW homes', upgradeCost: '$800–$2,000′ };
+  return { size: '1-1/4″ or larger', adequate: false, note: 'Upgrade likely needed — exceeds most DFW residential lines', upgradeCost: '$1,500–$4,000′ };
 }
 
 export default function DFWHVACGasLineSizing() {
@@ -62,11 +62,11 @@ export default function DFWHVACGasLineSizing() {
                   key={i}
                   onClick={() => setFurnaceIdx(furnaceIdx === i ? null : i)}
                   style={{
-                    background: furnaceIdx === i ? '#F5E642' : '#0A1628',
-                    border: '2px solid ' + (furnaceIdx === i ? '#F5E642' : '#1E3A5F'),
+                    background: furnaceIdx === i ? '#F5E642′ : '#0A1628',
+                    border: '2px solid ' + (furnaceIdx === i ? '#F5E642′ : '#1E3A5F'),
                     borderRadius: 8,
                     padding: '12px 16px',
-                    color: furnaceIdx === i ? '#0A1628' : '#E8EDF5',
+                    color: furnaceIdx === i ? '#0A1628′ : '#E8EDF5',
                     fontWeight: furnaceIdx === i ? 800 : 400,
                     cursor: 'pointer',
                     fontSize: 14,
@@ -88,7 +88,7 @@ export default function DFWHVACGasLineSizing() {
                   onClick={() => toggleAppliance(i)}
                   style={{
                     background: a.selected ? '#1A3A6B' : '#0A1628',
-                    border: '2px solid ' + (a.selected ? '#F5E642' : '#1E3A5F'),
+                    border: '2px solid ' + (a.selected ? '#F5E642′ : '#1E3A5F'),
                     borderRadius: 8,
                     padding: '10px 16px',
                     color: '#E8EDF5',
@@ -100,7 +100,7 @@ export default function DFWHVACGasLineSizing() {
                   }}
                 >
                   <span>{a.name}</span>
-                  <span style={{ color: '#94A3B8' }}>{(a.btu / 1000).toFixed(0)}k BTU</span>
+                  <span style={{ color: '#94A3B8′ }}>{(a.btu / 1000).toFixed(0)}k BTU</span>
                 </button>
               ))}
             </div>

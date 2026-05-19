@@ -34,12 +34,12 @@ export default function DFWHorsesPropertyGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>PROLNK GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>🐴 DFW Horse Property Guide</h1>
-        <p style={{ color: '#8A9BB5', fontSize: 16, marginBottom: 32 }}>Parker, Kaufman, and Ellis counties lead DFW's horse property market. Here's how to evaluate what you're buying.</p>
+        <p style={{ color: '#8A9BB5', fontSize: 16, marginBottom: 32 }}>Parker, Kaufman, and Ellis counties lead DFW's horse property market. Here’s how to evaluate what you’re buying.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🗺️ Top DFW Equestrian Counties</h2>
           {counties.map(c => (
-            <div key={c.name} style={{ borderBottom: '1px solid #1E2F4A', padding: '12px 0' }}>
+            <div key={c.name} style={{ borderBottom: '1px solid #1E2F4A', padding: '12px 0′ }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{c.name}</div>
               <div style={{ color: '#8A9BB5', fontSize: 14 }}>{c.traits}</div>
             </div>
@@ -51,7 +51,7 @@ export default function DFWHorsesPropertyGuide() {
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', marginBottom: 8, fontWeight: 600 }}>Acreage Needed: {acreage} acres</label>
             <input type="range" min={2} max={50} value={acreage} onChange={e => setAcreage(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8A9BB5', fontSize: 12 }}>
               <span>2 acres</span><span>50 acres</span>
             </div>
@@ -62,7 +62,7 @@ export default function DFWHorsesPropertyGuide() {
               {['barn', 'arena', 'water', 'loafing shed', 'tack room'].map(f => (
                 <button key={f} onClick={() => toggleFeature(f)}
                   style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                    background: features.includes(f) ? '#F5E642' : '#1E2F4A', color: features.includes(f) ? '#0A1628' : '#8A9BB5' }}>
+                    background: features.includes(f) ? '#F5E642′ : '#1E2F4A', color: features.includes(f) ? '#0A1628' : '#8A9BB5' }}>
                   {f}
                 </button>
               ))}
@@ -83,7 +83,7 @@ export default function DFWHorsesPropertyGuide() {
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {checklist(acreage, features).map((item, i) => (
                 <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1E2F4A', display: 'flex', gap: 10, fontSize: 15 }}>
-                  <span style={{ color: '#F5E642' }}>▸</span>{item}
+                  <span style={{ color: '#F5E642′ }}>▸</span>{item}
                 </li>
               ))}
             </ul>

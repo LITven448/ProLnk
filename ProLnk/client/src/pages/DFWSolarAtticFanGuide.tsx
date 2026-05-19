@@ -24,7 +24,7 @@ export default function DFWSolarAtticFanGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ background: '#0D1F3C', padding: '48px 24px 36px', borderBottom: '3px solid #F5E642' }}>
+      <div style={{ background: '#0D1F3C', padding: '48px 24px 36px', borderBottom: '3px solid #F5E642′ }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>⚡</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 12px' }}>DFW Solar Attic Fan Guide</h1>
@@ -71,12 +71,12 @@ export default function DFWSolarAtticFanGuide() {
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#9BA8C0', fontSize: 13, display: 'block', marginBottom: 6 }}>Attic Square Footage</label>
-              <input type="number" value={atticSqft} onChange={e => setAtticSqft(e.target.value)} placeholder="e.g. 2000"
+              <input type="number" value={atticSqft} onChange={e => setAtticSqft(e.target.value)} placeholder="e.g. 2000″
                 style={{ width: '100%', padding: '10px 14px', background: '#162040', border: '1px solid #2A3F6F', borderRadius: 8, color: '#E8EAF0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#9BA8C0', fontSize: 13, display: 'block', marginBottom: 6 }}>Peak Attic Temperature (°F, estimated or measured)</label>
-              <input type="number" value={peakTemp} onChange={e => setPeakTemp(e.target.value)} placeholder="e.g. 145"
+              <input type="number" value={peakTemp} onChange={e => setPeakTemp(e.target.value)} placeholder="e.g. 145″
                 style={{ width: '100%', padding: '10px 14px', background: '#162040', border: '1px solid #2A3F6F', borderRadius: 8, color: '#E8EAF0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -93,7 +93,7 @@ export default function DFWSolarAtticFanGuide() {
             Size My Solar Fan System
           </button>
           {result && (
-            <div style={{ marginTop: 20, background: '#162040', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#162040', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>
                 Required: {result.cfmNeeded.toLocaleString()} CFM | Panel needed: {result.panelWatts}W | Expected temp drop: {result.tempReduction}°F
               </div>

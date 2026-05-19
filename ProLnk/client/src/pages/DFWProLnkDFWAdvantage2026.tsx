@@ -31,9 +31,9 @@ export default function DFWProLnkDFWAdvantage2026() {
           {dfwStats.map((stat, i) => (
             <div key={i} style={{ background: '#111D35', borderRadius: 10, padding: '1rem', border: '1px solid #1E2D4A', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>{stat.icon}</div>
-              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F5E642' }}>{stat.value}</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F5E642′ }}>{stat.value}</div>
               <div style={{ fontSize: '0.8rem', color: '#E8EAF0', fontWeight: 600 }}>{stat.label}</div>
-              <div style={{ fontSize: '0.75rem', color: '#6B7A99' }}>{stat.note}</div>
+              <div style={{ fontSize: '0.75rem', color: '#6B7A99′ }}>{stat.note}</div>
             </div>
           ))}
         </div>
@@ -43,7 +43,7 @@ export default function DFWProLnkDFWAdvantage2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {stakeholders.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#1A2A45', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '2px solid' + (selected === s.id ? ' #F5E642' : ' #2A3A55'), borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#1A2A45', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '2px solid' + (selected === s.id ? ' #F5E642' : ' #2A3A55'), borderRadius: 8, padding: '0.75rem', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600, textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}

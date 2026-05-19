@@ -64,14 +64,14 @@ export default function DFWPricePerSqFtGuide() {
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home Size (sqft)</label>
-              <input type='number' value={sqft} onChange={e => setSqft(e.target.value)} placeholder='e.g. 2400' style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type='number' value={sqft} onChange={e => setSqft(e.target.value)} placeholder='e.g. 2400′ style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14, boxSizing: ’border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, cursor: 'pointer' }}>Calculate Range</button>
           {result && t && (
             <div style={{ marginTop: 20, padding: 20, background: '#0A1628', borderRadius: 12 }}>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>${result.low.toLocaleString()} to ${result.high.toLocaleString()}</div>
-              <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>Price tier: <span style={{ color: '#F5E642' }}>{t.label}</span></div>
+              <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>Price tier: <span style={{ color: '#F5E642′ }}>{t.label}</span></div>
               <div style={{ color: '#64748b', fontSize: 13 }}>Typical finishes: {t.finishes}</div>
             </div>
           )}

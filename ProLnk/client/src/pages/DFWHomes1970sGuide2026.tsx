@@ -5,11 +5,11 @@ const issues = [
   { id: 'fpepanel', label: '⚡ FPE Stab-Lok Panel', desc: 'Federal Pacific Electric — known fire hazard' },
   { id: 'hvac', label: '❄️ Original HVAC System', desc: '50-year-old equipment, needs replacement' },
   { id: 'windows', label: '🪟 Single Pane Windows', desc: 'Original aluminum frame single glazing' },
-  { id: 'asbestos', label: '⚠️ Pre-1977 Materials', desc: 'Asbestos mostly phased out by 1977' },
+  { id: 'asbestos', label: '⚠️ Pre-1977 Materials', desc: 'Asbestos mostly phased out by 1977′ },
 ];
 
 const repairs: Record<string, { priority: string; cost: string; note: string }> = {
-  polybutylene: { priority: '🔴 Replace Now', cost: '$4,000–$16,000', note: 'PB pipes fail without warning — fittings crack first. Check your pipes: gray plastic, stamped "PB2110". Full repipe to PEX before you have a flood.' },
+  polybutylene: { priority: '🔴 Replace Now', cost: '$4,000–$16,000', note: 'PB pipes fail without warning — fittings crack first. Check your pipes: gray plastic, stamped "PB2110″. Full repipe to PEX before you have a flood.' },
   fpepanel: { priority: '🔴 Replace Immediately', cost: '$2,500–$5,000', note: 'FPE Stab-Lok breakers don’t trip reliably under overload. Many insurers now require replacement. Don’t wait — this is a documented fire hazard.' },
   hvac: { priority: '🔴 Replace', cost: '$7,000–$18,000', note: '1970s HVAC is long past its 15-20 year life. Inefficiency costs $100-200/mo extra in DFW summers. Modern 18+ SEER units cut bills by 40%.' },
   windows: { priority: '🟡 Upgrade When Ready', cost: '$6,000–$15,000', note: '1970s aluminum frames have zero thermal break — major heat loss. Low-E double pane pays back in DFW heat. Reduces UV damage to furnishings too.' },
@@ -24,7 +24,7 @@ export default function DFWHomes1970sGuide2026() {
     setSelected(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 12, padding: '24px', marginBottom: 32 }}>
           <div style={{ fontSize: 36 }}>🧱</div>
@@ -38,7 +38,7 @@ export default function DFWHomes1970sGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {issues.map(i => (
               <div key={i.id} onClick={() => toggle(i.id)}
-                style={{ background: selected.includes(i.id) ? '#1A2E50' : '#0D1E38', border: `2px solid ${selected.includes(i.id) ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 16px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                style={{ background: selected.includes(i.id) ? '#1A2E50′ : '#0D1E38', border: `2px solid ${selected.includes(i.id) ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 16px', cursor: ’pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 15 }}>{i.label}</div>
                   <div style={{ color: '#9EB0CC', fontSize: 13 }}>{i.desc}</div>
@@ -61,7 +61,7 @@ export default function DFWHomes1970sGuide2026() {
             {selected.map(id => {
               const r = repairs[id];
               return (
-                <div key={id} style={{ background: '#0D1E38', borderRadius: 10, padding: 16, marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
+                <div key={id} style={{ background: '#0D1E38', borderRadius: 10, padding: 16, marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                     <span style={{ fontWeight: 700 }}>{issues.find(i => i.id === id)?.label}</span>
                     <span style={{ fontSize: 13 }}>{r.priority}</span>

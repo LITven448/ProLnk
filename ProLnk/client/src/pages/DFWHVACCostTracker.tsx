@@ -45,7 +45,7 @@ export default function DFWHVACCostTracker() {
         <div style={{ background: '#111c35', borderRadius: 12, padding: 18, marginBottom: 16 }}>
           <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>🗓️ System Install Year: <span style={{ color: '#F5E642', fontWeight: 700 }}>{installYear}</span></div>
           <input type="range" min={1995} max={2026} value={installYear} onChange={e => setInstallYear(Number(e.target.value))}
-            style={{ width: '100%', accentColor: '#F5E642' }} />
+            style={{ width: '100%', accentColor: '#F5E642′ }} />
         </div>
 
         <div style={{ background: '#111c35', borderRadius: 16, padding: 20, marginBottom: 16 }}>
@@ -89,7 +89,7 @@ export default function DFWHVACCostTracker() {
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 800, fontSize: 16, marginTop: 12 }}>
-              <span>Total</span><span style={{ color: '#F5E642' }}>${totalCost.toLocaleString()}</span>
+              <span>Total</span><span style={{ color: '#F5E642′ }}>${totalCost.toLocaleString()}</span>
             </div>
           </div>
         )}
@@ -111,12 +111,12 @@ export default function DFWHVACCostTracker() {
               ].map(({ label, val }) => (
                 <div key={label} style={{ background: '#1e2d4a', borderRadius: 10, padding: 14 }}>
                   <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                 </div>
               ))}
             </div>
             <div style={{ background: replacementPencilsOut ? '#1a0a0a' : '#0a1a0a', border: `1px solid ${replacementPencilsOut ? '#ef444433' : '#22c55e33'}`, borderRadius: 10, padding: 14 }}>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: replacementPencilsOut ? '#ef4444' : '#22c55e' }}>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: replacementPencilsOut ? '#ef4444′ : '#22c55e' }}>
                 {replacementPencilsOut ? '🔄 Replacement Pencils Out' : '✅ Keep Running — Not Yet'}
               </div>
               <div style={{ fontSize: 14 }}>

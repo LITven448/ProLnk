@@ -56,7 +56,7 @@ export default function DFWHumidityTestingGuide2026() {
             ].map((item) => (
               <div key={item.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '1.5rem' }}>{item.icon}</span>
-                <div><div style={{ fontWeight: 600, color: '#E8EDF5' }}>{item.title}</div><div style={{ color: '#8899AA', fontSize: '0.9rem' }}>{item.desc}</div></div>
+                <div><div style={{ fontWeight: 600, color: '#E8EDF5′ }}>{item.title}</div><div style={{ color: '#8899AA', fontSize: '0.9rem' }}>{item.desc}</div></div>
               </div>
             ))}
           </div>
@@ -67,16 +67,16 @@ export default function DFWHumidityTestingGuide2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#8899AA', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Your Reading (%)</div>
-              <input type="number" value={reading} onChange={(e) => setReading(e.target.value)} placeholder="e.g. 52" style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5', width: '120px' }} />
+              <input type="number" value={reading} onChange={(e) => setReading(e.target.value)} placeholder="e.g. 52″ style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5', width: '120px' }} />
             </div>
             <div>
               <div style={{ color: '#8899AA', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Season</div>
-              <select value={season} onChange={(e) => setSeason(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5' }}>
+              <select value={season} onChange={(e) => setSeason(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5′ }}>
                 {seasons.map((s) => <option key={s}>{s}</option>)}
               </select>
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#E8EDF5' }}>{advice}</div>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#E8EDF5′ }}>{advice}</div>
         </div>
       </div>
     </div>

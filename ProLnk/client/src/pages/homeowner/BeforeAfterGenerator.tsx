@@ -30,12 +30,12 @@ const PROJECT_ICONS: Record<ProjectType, React.ElementType> = {
 };
 
 const ROI_MAP: Record<ProjectType, { amount: string; pct: string }> = {
-  "Kitchen Remodel":   { amount: "+$24,500", pct: "70%" },
-  "Bathroom Refresh":  { amount: "+$14,200", pct: "64%" },
-  "Exterior Paint":    { amount: "+$8,900",  pct: "77%" },
-  Landscaping:         { amount: "+$11,400", pct: "100%" },
-  Flooring:            { amount: "+$18,500", pct: "75%" },
-  "Roof Replacement":  { amount: "+$22,000", pct: "68%" },
+  "Kitchen Remodel":   { amount: "+$24,500″, pct: "70%" },
+  "Bathroom Refresh":  { amount: "+$14,200″, pct: "64%" },
+  "Exterior Paint":    { amount: "+$8,900″,  pct: "77%" },
+  Landscaping:         { amount: "+$11,400″, pct: "100%" },
+  Flooring:            { amount: "+$18,500″, pct: "75%" },
+  "Roof Replacement":  { amount: "+$22,000″, pct: "68%" },
 };
 
 const PROJECTS: ProjectType[] = [
@@ -107,13 +107,13 @@ export default function BeforeAfterGenerator() {
 
   return (
     <HomeownerLayout>
-      <div className="min-h-screen bg-[#0A1628] px-4 py-8">
-        <div className="max-w-3xl mx-auto space-y-8">
+      <div className="min-h-screen bg-[#0A1628] px-4 py-8″>
+        <div className="max-w-3xl mx-auto space-y-8″>
 
           {/* Header */}
           <div>
             <h1 className="text-2xl font-bold text-white">Before &amp; After Generator</h1>
-            <p className="text-slate-400 mt-1">See how upgrades could transform your home</p>
+            <p className="text-slate-400 mt-1″>See how upgrades could transform your home</p>
           </div>
 
           {/* Upload area */}
@@ -124,10 +124,10 @@ export default function BeforeAfterGenerator() {
             onClick={() => !previewUrl && fileRef.current?.click()}
             className={`relative rounded-xl border-2 border-dashed transition-all cursor-pointer overflow-hidden ${
               isDragOver
-                ? "border-teal-400 bg-teal-500/10"
+                ? "border-teal-400 bg-teal-500/10″
                 : previewUrl
                 ? "border-slate-700 cursor-default"
-                : "border-slate-600 bg-slate-800/40 hover:border-teal-500/50 hover:bg-slate-800/60"
+                : "border-slate-600 bg-slate-800/40 hover:border-teal-500/50 hover:bg-slate-800/60″
             }`}
           >
             {previewUrl ? (
@@ -145,15 +145,15 @@ export default function BeforeAfterGenerator() {
                 </button>
               </div>
             ) : (
-              <div className="py-12 flex flex-col items-center gap-3">
+              <div className="py-12 flex flex-col items-center gap-3″>
                 <div className="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center">
-                  <ImageIcon className="h-7 w-7 text-slate-400" />
+                  <ImageIcon className="h-7 w-7 text-slate-400″ />
                 </div>
                 <div className="text-center">
                   <p className="text-white font-medium">Upload a photo of your room or exterior</p>
-                  <p className="text-slate-500 text-sm mt-1">Drag &amp; drop or click to browse · Max 16 MB</p>
+                  <p className="text-slate-500 text-sm mt-1″>Drag &amp; drop or click to browse · Max 16 MB</p>
                 </div>
-                <Upload className="h-4 w-4 text-teal-400 mt-1" />
+                <Upload className="h-4 w-4 text-teal-400 mt-1″ />
               </div>
             )}
             <input
@@ -167,8 +167,8 @@ export default function BeforeAfterGenerator() {
 
           {/* Project type */}
           <div>
-            <p className="text-xs uppercase tracking-wider text-slate-400 mb-3">Project type</p>
-            <div className="grid grid-cols-3 gap-3">
+            <p className="text-xs uppercase tracking-wider text-slate-400 mb-3″>Project type</p>
+            <div className="grid grid-cols-3 gap-3″>
               {PROJECTS.map((p) => {
                 const Icon = PROJECT_ICONS[p];
                 return (
@@ -177,11 +177,11 @@ export default function BeforeAfterGenerator() {
                     onClick={() => { setProject(p); setGenerated(false); }}
                     className={`flex flex-col items-center gap-2 rounded-xl p-4 border transition-all ${
                       project === p
-                        ? "border-teal-400 bg-teal-500/10 text-teal-300"
-                        : "border-slate-700 bg-slate-800/60 text-slate-400 hover:border-slate-600 hover:text-slate-300"
+                        ? "border-teal-400 bg-teal-500/10 text-teal-300″
+                        : "border-slate-700 bg-slate-800/60 text-slate-400 hover:border-slate-600 hover:text-slate-300″
                     }`}
                   >
-                    <Icon className="h-6 w-6" />
+                    <Icon className="h-6 w-6″ />
                     <span className="text-xs font-medium text-center leading-tight">{p}</span>
                   </button>
                 );
@@ -191,16 +191,16 @@ export default function BeforeAfterGenerator() {
 
           {/* Style preferences */}
           <div>
-            <p className="text-xs uppercase tracking-wider text-slate-400 mb-3">Style preference</p>
-            <div className="flex gap-2">
+            <p className="text-xs uppercase tracking-wider text-slate-400 mb-3″>Style preference</p>
+            <div className="flex gap-2″>
               {STYLES.map((s) => (
                 <button
                   key={s}
                   onClick={() => setStyle(s)}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all ${
                     style === s
-                      ? "bg-teal-500/20 border-teal-400 text-teal-300"
-                      : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-600"
+                      ? "bg-teal-500/20 border-teal-400 text-teal-300″
+                      : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-600″
                   }`}
                 >
                   {s}
@@ -211,12 +211,12 @@ export default function BeforeAfterGenerator() {
 
           {/* Budget slider */}
           <div>
-            <div className="flex justify-between items-center mb-2">
-              <p className="text-xs uppercase tracking-wider text-slate-400">Budget range</p>
+            <div className="flex justify-between items-center mb-2″>
+              <p className="text-xs uppercase tracking-wider text-slate-400″>Budget range</p>
               <span className="text-teal-300 font-semibold text-sm">${budget.toLocaleString()}</span>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-slate-500">$5,000</span>
+            <div className="flex items-center gap-3″>
+              <span className="text-xs text-slate-500″>$5,000</span>
               <input
                 type="range"
                 min={5000}
@@ -224,9 +224,9 @@ export default function BeforeAfterGenerator() {
                 step={500}
                 value={budget}
                 onChange={(e) => setBudget(Number(e.target.value))}
-                className="flex-1 accent-teal-500"
+                className="flex-1 accent-teal-500″
               />
-              <span className="text-xs text-slate-500">$50,000</span>
+              <span className="text-xs text-slate-500″>$50,000</span>
             </div>
           </div>
 
@@ -234,7 +234,7 @@ export default function BeforeAfterGenerator() {
           <Button
             onClick={generate}
             disabled={!project || generating}
-            className="w-full bg-teal-600 hover:bg-teal-500 disabled:opacity-50 text-white text-sm font-semibold h-11"
+            className="w-full bg-teal-600 hover:bg-teal-500 disabled:opacity-50 text-white text-sm font-semibold h-11″
           >
             {generating ? (
               <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Generating Preview…</>
@@ -246,12 +246,12 @@ export default function BeforeAfterGenerator() {
           {/* Before / After result */}
           {generated && (
             <Card className="bg-slate-800/60 border-slate-700 overflow-hidden">
-              <CardContent className="p-0">
+              <CardContent className="p-0″>
                 {/* Slider */}
                 <div
                   ref={sliderRef}
                   className="relative select-none cursor-ew-resize"
-                  style={{ aspectRatio: "16/9" }}
+                  style={{ aspectRatio: "16/9″ }}
                   onMouseMove={handleSlider}
                   onMouseDown={() => setDragging(true)}
                   onMouseUp={() => setDragging(false)}
@@ -262,7 +262,7 @@ export default function BeforeAfterGenerator() {
                   {/* After side (full width underneath) */}
                   <div className="absolute inset-0 bg-[#0A1628] flex items-center justify-center">
                     <div
-                      className="absolute inset-0"
+                      className="absolute inset-0″
                       style={{
                         background:
                           "linear-gradient(135deg, rgba(20,184,166,0.3) 0%, rgba(15,23,42,0.95) 100%)",
@@ -271,12 +271,12 @@ export default function BeforeAfterGenerator() {
                     <img
                       src={displayBefore}
                       alt="After visualization"
-                      className="absolute inset-0 w-full h-full object-cover opacity-60"
+                      className="absolute inset-0 w-full h-full object-cover opacity-60″
                       style={{ filter: "hue-rotate(30deg) saturate(1.4) brightness(1.1)" }}
                     />
-                    <div className="relative z-10 text-center px-8">
+                    <div className="relative z-10 text-center px-8″>
                       <p className="text-teal-300 font-semibold text-sm">AI visualization coming soon</p>
-                      <p className="text-slate-400 text-xs mt-1">
+                      <p className="text-slate-400 text-xs mt-1″>
                         Preview based on: {project} · {style ?? "any style"} · ${budget.toLocaleString()} budget
                       </p>
                     </div>
@@ -307,23 +307,23 @@ export default function BeforeAfterGenerator() {
                     style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
                   >
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center">
-                      <GripVertical className="h-4 w-4 text-slate-600" />
+                      <GripVertical className="h-4 w-4 text-slate-600″ />
                     </div>
                   </div>
                 </div>
 
                 {/* ROI card */}
                 {roi && (
-                  <div className="p-5 border-t border-slate-700">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <TrendingUp className="h-5 w-5 text-teal-400" />
+                  <div className="p-5 border-t border-slate-700″>
+                    <div className="flex items-start gap-3″>
+                      <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0″>
+                        <TrendingUp className="h-5 w-5 text-teal-400″ />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1″>
                         <p className="text-white font-semibold">
-                          Estimated ROI: <span className="text-teal-400">{roi.amount} home value</span>
+                          Estimated ROI: <span className="text-teal-400″>{roi.amount} home value</span>
                         </p>
-                        <p className="text-slate-400 text-sm mt-0.5">
+                        <p className="text-slate-400 text-sm mt-0.5″>
                           {project} typically returns {roi.pct} of project cost at resale. Budget:{" "}
                           ${budget.toLocaleString()}.
                         </p>
@@ -333,7 +333,7 @@ export default function BeforeAfterGenerator() {
                 )}
 
                 {/* CTA */}
-                <div className="p-5 pt-0">
+                <div className="p-5 pt-0″>
                   <Link
                     href={`/trustypro/book?project=${encodeURIComponent(project ?? "")}`}
                   >

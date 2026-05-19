@@ -16,11 +16,11 @@ export default function DFWWindHailDeductibleGuide2026() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13 }}>⛈️ DFW WIND & HAIL DEDUCTIBLE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW Wind & Hail Deductible Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>
-          Texas policies have a <strong style={{ color: '#F5E642' }}>separate wind/hail deductible</strong> — 1-5% of dwelling value. On a $385K home that's $3,850–$19,250 out of pocket.
+          Texas policies have a <strong style={{ color: '#F5E642′ }}>separate wind/hail deductible</strong> — 1-5% of dwelling value. On a $385K home that’s $3,850–$19,250 out of pocket.
         </p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ How Texas Wind/Hail Deductibles Work</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ How Texas Wind/Hail Deductibles Work</h2>
           {[
             { icon: '📄', title: 'Separate from your main deductible', desc: 'Your $2,500 standard deductible does NOT apply to wind/hail claims in Texas' },
             { icon: '📊', title: 'Percentage-based, not flat dollar', desc: '2% of $400K dwelling = $8,000 you pay before insurance kicks in' },
@@ -38,15 +38,15 @@ export default function DFWWindHailDeductibleGuide2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Out-of-Pocket Risk Calculator</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Out-of-Pocket Risk Calculator</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 13, color: '#94a3b8' }}>Home Value: ${homeValue.toLocaleString()}</label>
+            <label style={{ fontSize: 13, color: '#94a3b8′ }}>Home Value: ${homeValue.toLocaleString()}</label>
             <input type="range" min={150000} max={800000} step={5000} value={homeValue}
               onChange={e => setHomeValue(+e.target.value)}
               style={{ width: '100%', accentColor: '#F5E642', marginTop: 6 }} />
           </div>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 13, color: '#94a3b8' }}>Wind/Hail Deductible: {deductiblePct}%</label>
+            <label style={{ fontSize: 13, color: '#94a3b8′ }}>Wind/Hail Deductible: {deductiblePct}%</label>
             <input type="range" min={1} max={5} step={1} value={deductiblePct}
               onChange={e => setDeductiblePct(+e.target.value)}
               style={{ width: '100%', accentColor: '#F5E642', marginTop: 6 }} />
@@ -55,16 +55,16 @@ export default function DFWWindHailDeductibleGuide2026() {
             </div>
           </div>
           <label style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, cursor: 'pointer' }}>
-            <input type="checkbox" checked={hasIRRoof} onChange={e => setHasIRRoof(e.target.checked)} style={{ accentColor: '#F5E642' }} />
+            <input type="checkbox" checked={hasIRRoof} onChange={e => setHasIRRoof(e.target.checked)} style={{ accentColor: '#F5E642′ }} />
             <span style={{ fontSize: 13 }}>Impact-resistant (Class 4) roof installed</span>
           </label>
           <div style={{ background: '#1a2f55', borderRadius: 8, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 15 }}>
-              <span style={{ color: '#94a3b8' }}>Your out-of-pocket risk</span>
+              <span style={{ color: '#94a3b8′ }}>Your out-of-pocket risk</span>
               <span style={{ color: '#ef4444', fontWeight: 800, fontSize: 18 }}>${outOfPocket.toLocaleString()}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 14 }}>
-              <span style={{ color: '#94a3b8' }}>Est. annual premium</span>
+              <span style={{ color: '#94a3b8′ }}>Est. annual premium</span>
               <span style={{ color: '#fff' }}>${adjPremium.toLocaleString()}/yr</span>
             </div>
             {hasIRRoof && <div style={{ color: '#22c55e', fontSize: 13 }}>✅ IR roof saving ~${roofDiscount.toLocaleString()}/yr</div>}
@@ -72,10 +72,10 @@ export default function DFWWindHailDeductibleGuide2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🛡️ Impact-Resistant Roof Discounts</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🛡️ Impact-Resistant Roof Discounts</h2>
           {['Class 4 IR roof can save 20-30% on wind/hail portion of premium','Must be UL 2218 tested — get documentation from contractor','Submit to insurer with roof certificate — discounts applied at renewal','Average $8-12K install cost; ROI in 5-7 years via insurance savings'].map(t => (
             <div key={t} style={{ display: 'flex', gap: 10, marginBottom: 10, fontSize: 13 }}>
-              <span>✅</span><span style={{ color: '#94a3b8' }}>{t}</span>
+              <span>✅</span><span style={{ color: '#94a3b8′ }}>{t}</span>
             </div>
           ))}
         </div>

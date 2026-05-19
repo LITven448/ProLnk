@@ -74,15 +74,15 @@ export default function DFWEquityBuildingGuide() {
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Current Loan Balance ($)</label>
-              <input type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="e.g. 320000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="e.g. 320000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Current Home Value ($) <span style={{ color: '#94A3B8', fontWeight: 400 }}>(optional)</span></label>
-              <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 420000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 420000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Interest Rate (%)</label>
-              <input type="number" value={rate} onChange={e => setRate(e.target.value)} placeholder="e.g. 6.75" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={rate} onChange={e => setRate(e.target.value)} placeholder="e.g. 6.75″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>DFW Submarket</label>
@@ -92,7 +92,7 @@ export default function DFWEquityBuildingGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Extra Monthly Payment ($) <span style={{ color: '#94A3B8', fontWeight: 400 }}>(optional)</span></label>
-              <input type="number" value={extra} onChange={e => setExtra(e.target.value)} placeholder="e.g. 500" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={extra} onChange={e => setExtra(e.target.value)} placeholder="e.g. 500″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={project} style={{ marginTop: 18, background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer', width: '100%' }}>Project My Equity →</button>
@@ -101,9 +101,9 @@ export default function DFWEquityBuildingGuide() {
         {result && (
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {result.map((r: any) => (
-              <div key={r.yr} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', borderTop: '3px solid #F5E642' }}>
+              <div key={r.yr} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', borderTop: '3px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, fontSize: 14, color: '#64748B', marginBottom: 8 }}>Year {r.yr}</div>
-                <div style={{ fontWeight: 800, fontSize: 24, color: '#0A1628' }}>${r.equity.toLocaleString()}</div>
+                <div style={{ fontWeight: 800, fontSize: 24, color: '#0A1628′ }}>${r.equity.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 2 }}>equity</div>
                 <div style={{ marginTop: 10, fontSize: 12, color: '#64748B' }}>Home value: ${r.value.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#64748B' }}>Remaining balance: ${r.balance.toLocaleString()}</div>

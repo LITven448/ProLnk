@@ -72,7 +72,7 @@ export default function DFWCollinCollegeTradeGuide() {
                 type="number"
                 value={budget}
                 onChange={e => setBudget(e.target.value)}
-                placeholder="e.g. 5000"
+                placeholder="e.g. 5000″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, background: '#0A1628', border: '1px solid #1E3A5F', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -84,7 +84,7 @@ export default function DFWCollinCollegeTradeGuide() {
             Get Recommendation →
           </button>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 18, marginBottom: 8 }}>✅ Best Fit: Collin College {result.trade}</div>
               <div style={{ color: '#ccc', fontSize: 15, lineHeight: 1.7 }}>
                 <div>📅 Program length: <strong>{result.months} months</strong></div>

@@ -60,7 +60,7 @@ export default function DFWSiteWorkAndGradingGuide() {
         </div>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>📐 Estimate Site Prep Costs</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>📐 Estimate Site Prep Costs</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>Lot Size</label>
@@ -113,10 +113,10 @@ export default function DFWSiteWorkAndGradingGuide() {
         </div>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 28, border: '1px solid #1e3a5f' }}>
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📋 Pre-Construction Checklist</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📋 Pre-Construction Checklist</h3>
           {CHECKLIST.map(item => (
             <div key={item.item} style={{ display: 'flex', gap: 14, marginBottom: 14, padding: '12px 0', borderBottom: '1px solid #1e3a5f' }}>
-              <div style={{ background: item.required ? '#F5E642' : '#1a2a4a', color: item.required ? '#0A1628' : '#64748b', borderRadius: 6, padding: '3px 8px', fontSize: 11, fontWeight: 700, flexShrink: 0, height: 'fit-content' }}>
+              <div style={{ background: item.required ? '#F5E642′ : '#1a2a4a', color: item.required ? '#0A1628' : '#64748b', borderRadius: 6, padding: '3px 8px', fontSize: 11, fontWeight: 700, flexShrink: 0, height: ’fit-content' }}>
                 {item.required ? 'REQUIRED' : 'SITUATIONAL'}
               </div>
               <div>

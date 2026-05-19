@@ -19,20 +19,20 @@ export default function DFWHVACACOversize2026() {
   const active = concerns.find(c => c.id === selected);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#e2e8f0", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#e2e8f0", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>❄️</div>
-          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", fontWeight: 700, margin: "0.5rem 0" }}>
+          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", fontWeight: 700, margin: "0.5rem 0" }}>
             DFW Oversized AC Problems Guide 2026
           </h1>
-          <p style={{ color: "#94a3b8", maxWidth: 560, margin: "0 auto" }}>
+          <p style={{ color: "#94a3b8″, maxWidth: 560, margin: "0 auto" }}>
             In Dallas-Fort Worth, bigger is NOT better for air conditioning. Learn why oversized systems create the exact problems DFW homeowners complain about most.
           </p>
         </div>
 
-        <div style={{ background: "#112240", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>⚠️ The DFW Oversizing Problem</h2>
+        <div style={{ background: "#112240″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>⚠️ The DFW Oversizing Problem</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: "0.75rem" }}>
             {[
               { icon: "📏", stat: "20–30%", label: "DFW homes oversized by builders on average" },
@@ -40,23 +40,23 @@ export default function DFWHVACACOversize2026() {
               { icon: "🔄", stat: "Short-cycle", label: "Oversized AC shuts off before dehumidifying" },
               { icon: "📋", stat: "Manual J", label: "The only correct way to size a DFW AC system" },
             ].map(s => (
-              <div key={s.stat} style={{ background: "#0A1628", borderRadius: 8, padding: "0.875rem", textAlign: "center" }}>
+              <div key={s.stat} style={{ background: "#0A1628″, borderRadius: 8, padding: "0.875rem", textAlign: "center" }}>
                 <div style={{ fontSize: "1.5rem" }}>{s.icon}</div>
-                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: "1.1rem", margin: "4px 0" }}>{s.stat}</div>
-                <div style={{ color: "#94a3b8", fontSize: "0.8rem" }}>{s.label}</div>
+                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: "1.1rem", margin: "4px 0" }}>{s.stat}</div>
+                <div style={{ color: "#94a3b8″, fontSize: "0.8rem" }}>{s.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: "#112240", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🔎 Select Your Concern</h2>
+        <div style={{ background: "#112240″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🔎 Select Your Concern</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {concerns.map(c => (
               <button
                 key={c.id}
                 onClick={() => setSelected(c.id === selected ? "" : c.id)}
-                style={{ background: selected === c.id ? "#1e3a5f" : "#0A1628", border: `2px solid ${selected === c.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "0.875rem 1rem", cursor: "pointer", color: "#e2e8f0", textAlign: "left", display: "flex", alignItems: "center", gap: "0.75rem", transition: "all 0.2s" }}
+                style={{ background: selected === c.id ? "#1e3a5f" : "#0A1628″, border: `2px solid ${selected === c.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "0.875rem 1rem", cursor: "pointer", color: "#e2e8f0", textAlign: "left", display: "flex", alignItems: "center", gap: "0.75rem", transition: "all 0.2s" }}
               >
                 <span style={{ fontSize: "1.25rem" }}>{c.icon}</span>
                 <span style={{ fontWeight: selected === c.id ? 700 : 400 }}>{c.label}</span>
@@ -66,15 +66,15 @@ export default function DFWHVACACOversize2026() {
         </div>
 
         {active && (
-          <div style={{ background: "#112240", borderRadius: 12, padding: "1.5rem", borderLeft: "4px solid #F5E642", marginBottom: "1.5rem" }}>
-            <h3 style={{ color: "#F5E642", margin: "0 0 0.75rem" }}>{active.icon} {active.label}</h3>
-            <p style={{ color: "#cbd5e1", lineHeight: 1.7, margin: 0 }}>{active.answer}</p>
+          <div style={{ background: "#112240″, borderRadius: 12, padding: "1.5rem", borderLeft: "4px solid #F5E642", marginBottom: "1.5rem" }}>
+            <h3 style={{ color: "#F5E642″, margin: "0 0 0.75rem" }}>{active.icon} {active.label}</h3>
+            <p style={{ color: "#cbd5e1″, lineHeight: 1.7, margin: 0 }}>{active.answer}</p>
           </div>
         )}
 
-        <div style={{ background: "#112240", borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
-          <p style={{ color: "#94a3b8", margin: 0, fontSize: "0.9rem" }}>
-            🏠 Need a Manual J calculation or DFW HVAC sizing consultation? <span style={{ color: "#F5E642" }}>ProLnk connects you with licensed HVAC professionals.</span>
+        <div style={{ background: "#112240″, borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
+          <p style={{ color: "#94a3b8″, margin: 0, fontSize: "0.9rem" }}>
+            🏠 Need a Manual J calculation or DFW HVAC sizing consultation? <span style={{ color: "#F5E642″ }}>ProLnk connects you with licensed HVAC professionals.</span>
           </p>
         </div>
       </div>

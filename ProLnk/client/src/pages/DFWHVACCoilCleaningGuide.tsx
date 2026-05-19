@@ -11,7 +11,7 @@ const styles = {
   label: { display: 'block', color: '#94a3b8', fontSize: '0.85rem', marginBottom: '6px', marginTop: '16px' },
   select: { width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: '8px', color: '#fff', fontSize: '0.95rem' },
   btn: { marginTop: '20px', width: '100%', padding: '14px', backgroundColor: '#F5E642', color: '#0A1628', fontWeight: 800, fontSize: '1rem', border: 'none', borderRadius: '10px', cursor: 'pointer' },
-  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642' },
+  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642′ },
   resultTitle: { color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '12px' },
   row: { display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #1e3a5f', padding: '8px 0', color: '#cbd5e1', fontSize: '0.9rem' },
   badge: { display: 'inline-block', backgroundColor: '#1e3a5f', borderRadius: '6px', padding: '4px 10px', color: '#F5E642', fontSize: '0.8rem', marginRight: '8px', marginBottom: '8px' },
@@ -80,18 +80,18 @@ export default function DFWHVACCoilCleaningGuide() {
           <label style={styles.label}>System age</label>
           <select style={styles.select} value={sysAge} onChange={e => setSysAge(e.target.value)}>
             <option value="">Select age</option>
-            <option value="4">Under 5 years</option>
-            <option value="8">5–10 years</option>
-            <option value="13">10–15 years</option>
-            <option value="18">15+ years</option>
+            <option value="4″>Under 5 years</option>
+            <option value="8″>5–10 years</option>
+            <option value="13″>10–15 years</option>
+            <option value="18″>15+ years</option>
           </select>
           <label style={styles.label}>Last professional coil cleaning</label>
           <select style={styles.select} value={lastClean} onChange={e => setLastClean(e.target.value)}>
             <option value="">Select timeframe</option>
-            <option value="0">Within the last year</option>
-            <option value="1">1–2 years ago</option>
-            <option value="2">2–3 years ago</option>
-            <option value="5">Never / unknown</option>
+            <option value="0″>Within the last year</option>
+            <option value="1″>1–2 years ago</option>
+            <option value="2″>2–3 years ago</option>
+            <option value="5″>Never / unknown</option>
           </select>
           <label style={styles.label}>Current system performance</label>
           <select style={styles.select} value={performance} onChange={e => setPerformance(e.target.value)}>

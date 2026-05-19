@@ -40,20 +40,20 @@ export default function DFWGarageInsulationGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Get Your Insulation Plan</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Get Your Insulation Plan</h2>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>How you use your garage:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>How you use your garage:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {uses.map(u => (
-                <button key={u} onClick={() => setUse(u)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: use === u ? '#F5E642' : '#1e3a5f', color: use === u ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{u}</button>
+                <button key={u} onClick={() => setUse(u)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: use === u ? '#F5E642′ : '#1e3a5f', color: use === u ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{u}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>Garage type:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>Garage type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {types.map(t => (
-                <button key={t} onClick={() => setType(t)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: type === t ? '#F5E642' : '#1e3a5f', color: type === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{t}</button>
+                <button key={t} onClick={() => setType(t)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: type === t ? '#F5E642′ : '#1e3a5f', color: type === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{t}</button>
               ))}
             </div>
           </div>

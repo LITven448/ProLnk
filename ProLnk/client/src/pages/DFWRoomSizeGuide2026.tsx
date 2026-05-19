@@ -29,7 +29,7 @@ export default function DFWRoomSizeGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
             {rooms.map((r) => (
               <button key={r.value} onClick={() => setSelected(r.value)}
-                style={{ background: selected === r.value ? '#F5E642' : '#162035', color: selected === r.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === r.value ? '#F5E642′ : '#162035', color: selected === r.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 10px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {r.label}
               </button>
             ))}
@@ -39,7 +39,7 @@ export default function DFWRoomSizeGuide2026() {
         <div style={{ marginBottom: 24, display: 'flex', gap: 10 }}>
           {[{v:'standard',l:'Standard'},{ v:'luxury',l:'Luxury'},{ v:'trend',l:'DFW Trend'},{ v:'tip',l:'Pro Tip'}].map((btn) => (
             <button key={btn.v} onClick={() => setView(btn.v)}
-              style={{ background: view === btn.v ? '#F5E642' : '#162035', color: view === btn.v ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600 }}>
+              style={{ background: view === btn.v ? '#F5E642′ : '#162035', color: view === btn.v ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontWeight: 600 }}>
               {btn.l}
             </button>
           ))}
@@ -63,7 +63,7 @@ export default function DFWRoomSizeGuide2026() {
             <p style={{ lineHeight: 1.7, color: '#ddd', marginTop: 0 }}>{result[view]}</p>
           </div>
         ) : (
-          <div style={{ background: '#162035', borderRadius: 12, padding: 24, textAlign: 'center', color: '#888' }}>
+          <div style={{ background: '#162035', borderRadius: 12, padding: 24, textAlign: 'center', color: '#888′ }}>
             Select a room type to see DFW size comparisons.
           </div>
         )}

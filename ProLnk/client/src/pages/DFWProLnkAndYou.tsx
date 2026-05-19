@@ -100,7 +100,7 @@ export default function DFWProLnkAndYou() {
         <div style={{ fontSize: 13, color: '#F5E642', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>ProLnk DFW Series</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>⚡ ProLnk & You — Personalized</h1>
         <p style={{ color: '#8899AA', fontSize: 15, marginBottom: 32, lineHeight: 1.6 }}>
-          ProLnk isn't one thing — it's a platform built for every DFW participant in the home services ecosystem. Tell us who you are and where you are, and we'll show you exactly how ProLnk fits into your life.
+          ProLnk isn't one thing — it’s a platform built for every DFW participant in the home services ecosystem. Tell us who you are and where you are, and we’ll show you exactly how ProLnk fits into your life.
         </p>
 
         <div style={{ background: '#0D1F38', border: '1px solid #1E3A5F', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -111,8 +111,8 @@ export default function DFWProLnkAndYou() {
                 key={r.id}
                 onClick={() => { setRole(r.id); setSituation(''); setShowResult(false); }}
                 style={{
-                  background: role === r.id ? '#F5E642' : '#0A1628',
-                  color: role === r.id ? '#0A1628' : '#fff',
+                  background: role === r.id ? '#F5E642′ : '#0A1628',
+                  color: role === r.id ? '#0A1628′ : '#fff',
                   border: `1px solid ${role === r.id ? '#F5E642' : '#1E3A5F'}`,
                   borderRadius: 10,
                   padding: '14px 12px',
@@ -136,8 +136,8 @@ export default function DFWProLnkAndYou() {
                   key={s}
                   onClick={() => { setSituation(s); setShowResult(false); }}
                   style={{
-                    background: situation === s ? '#F5E642' : '#0A1628',
-                    color: situation === s ? '#0A1628' : '#fff',
+                    background: situation === s ? '#F5E642′ : '#0A1628',
+                    color: situation === s ? '#0A1628′ : '#fff',
                     border: `1px solid ${situation === s ? '#F5E642' : '#1E3A5F'}`,
                     borderRadius: 20,
                     padding: '8px 16px',
@@ -162,8 +162,8 @@ export default function DFWProLnkAndYou() {
                   key={l}
                   onClick={() => { setLocation(l); setShowResult(true); }}
                   style={{
-                    background: location === l ? '#F5E642' : '#0A1628',
-                    color: location === l ? '#0A1628' : '#fff',
+                    background: location === l ? '#F5E642′ : '#0A1628',
+                    color: location === l ? '#0A1628′ : '#fff',
                     border: `1px solid ${location === l ? '#F5E642' : '#1E3A5F'}`,
                     borderRadius: 20,
                     padding: '8px 16px',

@@ -36,7 +36,7 @@ export default function DFWBasementWaterproofingGuide2026() {
   const result = spaceType && moistureLevel ? solutions[spaceType]?.[moistureLevel] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
       <div style={{ background: '#0D1E35', borderBottom: '3px solid #F5E642', padding: '32px 24px' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 10 }}>DFW HOME SERVICES GUIDE · 2026</div>
@@ -51,14 +51,14 @@ export default function DFWBasementWaterproofingGuide2026() {
               <div style={{ fontSize: 12, color: '#94A3B8', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>{label}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {opts.map(o => (
-                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642' : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
+                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642′ : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
                 ))}
               </div>
             </div>
           ))}
         </div>
         {result ? (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>RECOMMENDED SOLUTION</div>
             <div style={{ fontSize: 20, fontWeight: 700, color: '#FFFFFF', marginBottom: 12 }}>{result.solution}</div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '14px 18px', marginBottom: 12 }}>
@@ -68,7 +68,7 @@ export default function DFWBasementWaterproofingGuide2026() {
             <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>⚠️ {result.notes}</div>
           </div>
         ) : (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8' }}>Select your space type and moisture level above to get a waterproofing recommendation.</div>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8′ }}>Select your space type and moisture level above to get a waterproofing recommendation.</div>
         )}
         <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           {[{ icon: '🔩', title: 'Sump Pump Basics', text: 'A sump pump sits in a pit at the lowest point and pumps water away. Battery backup is essential — DFW storms knock out power exactly when you need it most.' }, { icon: '🧱', title: 'Interior Drain Tile', text: 'A perforated pipe runs along the interior perimeter, collecting seepage before it hits your floor. Less invasive than exterior excavation.' }, { icon: '🌡️', title: 'Clay Soil Factor', text: 'DFW expansive clay absorbs water and swells, pressing against walls. It then shrinks in drought, creating gaps. Waterproofing must flex with this movement.' }, { icon: '📋', title: 'Permit Requirements', text: 'Most municipalities require permits for sump pump installation and drain tile work. Your contractor should pull permits — if they offer to skip them, walk away.' }].map(({ icon, title, text }) => (

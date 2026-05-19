@@ -50,11 +50,11 @@ export default function DFWHomeRenovationLoanComparison() {
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Renovation Budget ($)</label>
-              <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="e.g. 35000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="e.g. 35000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Home Equity Available ($)</label>
-              <input type="number" value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. 80000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. 80000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Credit Score Range</label>
@@ -79,15 +79,15 @@ export default function DFWHomeRenovationLoanComparison() {
               const total = mp * loan.term;
               const interest = total - amt;
               return (
-                <div key={loan.id} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', borderLeft: i === 0 ? '4px solid #F5E642' : '4px solid #E2E8F0', opacity: loan.available ? 1 : 0.5 }}>
+                <div key={loan.id} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', borderLeft: i === 0 ? '4px solid #F5E642′ : '4px solid #E2E8F0', opacity: loan.available ? 1 : 0.5 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
-                      <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628' }}>{i === 0 ? '🥇 ' : ''}{loan.label}</div>
+                      <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628′ }}>{i === 0 ? '🥇 ' : ''}{loan.label}</div>
                       <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 2 }}>{loan.note}</div>
                       {!loan.available && <div style={{ fontSize: 11, color: '#EF4444', marginTop: 4 }}>⚠️ Requires more equity</div>}
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628' }}>${mp.toFixed(0)}<span style={{ fontSize: 12, fontWeight: 400 }}>/mo</span></div>
+                      <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628′ }}>${mp.toFixed(0)}<span style={{ fontSize: 12, fontWeight: 400 }}>/mo</span></div>
                       <div style={{ fontSize: 12, color: '#64748B' }}>{loan.adjustedRate.toFixed(1)}% · {loan.term}mo</div>
                     </div>
                   </div>

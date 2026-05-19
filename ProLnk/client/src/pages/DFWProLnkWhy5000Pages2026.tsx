@@ -4,7 +4,7 @@ const stakeholders = [
   {
     label: 'I am a DFW homeowner',
     icon: '🏡',
-    story: 'Every page in the ProLnk DFW library was written for you. When your AC fails in July, you search "DFW HVAC emergency Frisco" — and ProLnk is there. When you worry about your foundation after a dry summer, you search "DFW foundation cracking 2026" — and ProLnk answers. 5,200 pages means ProLnk is present for every home services question you have before you ever need to pick up the phone.',
+    story: 'Every page in the ProLnk DFW library was written for you. When your AC fails in July, you search "DFW HVAC emergency Frisco" — and ProLnk is there. When you worry about your foundation after a dry summer, you search "DFW foundation cracking 2026″ — and ProLnk answers. 5,200 pages means ProLnk is present for every home services question you have before you ever need to pick up the phone.',
     outcome: 'DFW homeowners who find ProLnk through content convert to Charter members at 3.2x the rate of paid ad traffic.',
   },
   {
@@ -52,7 +52,7 @@ export default function DFWProLnkWhy5000Pages2026() {
         <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 24, marginBottom: 32 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>The Content Moat Strategy</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7 }}>
-            DFW homeowners search before they hire. They search "best HVAC company Frisco TX" and "foundation repair Allen TX 2026"
+            DFW homeowners search before they hire. They search "best HVAC company Frisco TX" and "foundation repair Allen TX 2026″
             and "how much does a new roof cost in Plano." ProLnk built 5,200+ pages so that every one of those searches
             leads to ProLnk — and every ProLnk page builds the trust that turns searchers into Charter members.
           </p>
@@ -97,7 +97,7 @@ export default function DFWProLnkWhy5000Pages2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 16 }}>{stakeholders[selected].story}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>The impact: </span>
-              <span style={{ color: '#94a3b8' }}>{stakeholders[selected].outcome}</span>
+              <span style={{ color: '#94a3b8′ }}>{stakeholders[selected].outcome}</span>
             </div>
           </div>
         )}

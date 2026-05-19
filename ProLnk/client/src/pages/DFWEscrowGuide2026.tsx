@@ -30,7 +30,7 @@ export default function DFWEscrowGuide2026() {
             ['Title Search', 'Title company researches liens, judgments, and ownership history'],
             ['Typical Close Timeline', '30–45 days from executed contract'],
           ].map(([label, val]) => (
-            <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #1e3054' }}>
+            <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #1e3054′ }}>
               <span style={{ color: '#aac', fontSize: '0.93rem' }}>{label}</span>
               <span style={{ color: '#fff', fontWeight: 600, fontSize: '0.93rem', textAlign: 'right', maxWidth: '55%' }}>{val}</span>
             </div>
@@ -42,13 +42,13 @@ export default function DFWEscrowGuide2026() {
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {stages.map((s, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1.5px solid #F5E642', borderRadius: 8, padding: '0.85rem 1rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.95rem' }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1.5px solid #F5E642', borderRadius: 8, padding: '0.85rem 1rem', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.95rem' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>📋 What Is Happening in Escrow</div>
               <div style={{ color: '#dde', lineHeight: 1.65, fontSize: '0.97rem' }}>{stages[selected].status}</div>
             </div>

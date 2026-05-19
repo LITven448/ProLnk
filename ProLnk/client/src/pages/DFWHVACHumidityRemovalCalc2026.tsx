@@ -73,7 +73,7 @@ export default function DFWHVACHumidityRemovalCalc2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home Size (sq ft)</label>
-              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400"
+              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400″
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -100,7 +100,7 @@ export default function DFWHVACHumidityRemovalCalc2026() {
                   <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>{result.pints} pints/day</div>
                 </div>
               </div>
-              <div style={{ background: '#1E3A5F', borderRadius: 8, padding: 14, color: '#E8EDF5' }}>💡 {result.rec}</div>
+              <div style={{ background: '#1E3A5F', borderRadius: 8, padding: 14, color: '#E8EDF5′ }}>💡 {result.rec}</div>
             </div>
           )}
         </div>

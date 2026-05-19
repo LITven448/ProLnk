@@ -4,7 +4,7 @@ const garlandFacts = [
   { label: 'Homes Built Before 1985', value: '65%' },
   { label: 'Avg Galvanized Pipe Age', value: '45 yrs' },
   { label: 'Pipe Replacement Cost', value: '$4K–$12K' },
-  { label: 'Foundation Shift Events / Yr', value: '2–4' },
+  { label: 'Foundation Shift Events / Yr', value: '2–4′ },
 ];
 
 function estimateReplacement(age: number): { probability: string; cost: string; color: string; notes: string } {
@@ -55,7 +55,7 @@ export default function DFWPlumberGarland() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {garlandFacts.map(s => (
             <div key={s.label} style={{ backgroundColor: '#1E2D45', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
@@ -74,9 +74,9 @@ export default function DFWPlumberGarland() {
               </label>
               <input
                 type="number"
-                min="0"
-                max="100"
-                placeholder="e.g. 45"
+                min="0″
+                max="100″
+                placeholder="e.g. 45″
                 value={pipeAge}
                 onChange={e => { setPipeAge(e.target.value); setResult(null); }}
                 style={{ width: '100%', padding: '12px 14px', backgroundColor: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, fontSize: 15, boxSizing: 'border-box' }}

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const refrigerants = [
-  { type: 'R-22', label: 'R-22 (Freon)', price: '$200–400/lb', note: 'Discontinued — very expensive, stockpile only', color: '#FF4444' },
-  { type: 'R-410A', label: 'R-410A (Puron)', price: '$30–60/lb', note: 'Being phased out — still available but rising', color: '#FF8C00' },
+  { type: 'R-22', label: 'R-22 (Freon)', price: '$200–400/lb', note: 'Discontinued — very expensive, stockpile only', color: '#FF4444′ },
+  { type: 'R-410A', label: 'R-410A (Puron)', price: '$30–60/lb', note: 'Being phased out — still available but rising', color: '#FF8C00′ },
   { type: 'R-32', label: 'R-32', price: '$25–50/lb', note: 'Current standard — good availability', color: '#22C55E' },
   { type: 'R-454B', label: 'R-454B (Puron Advanced)', price: '$25–50/lb', note: 'Current standard — A2L certified techs only', color: '#22C55E' },
 ];
@@ -43,8 +43,8 @@ export default function DFWHVACRefrigerantCost2026() {
           {dfwContext.map(c => (
             <div key={c.label} style={{ background: '#0F2040', borderRadius: 12, padding: 16 }}>
               <div style={{ fontSize: 22 }}>{c.icon}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{c.stat}</div>
-              <div style={{ fontSize: 12, color: '#94A3B8' }}>{c.label}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{c.stat}</div>
+              <div style={{ fontSize: 12, color: '#94A3B8′ }}>{c.label}</div>
             </div>
           ))}
         </div>
@@ -67,7 +67,7 @@ export default function DFWHVACRefrigerantCost2026() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {systemAges.map((a, i) => (
                 <button key={i} onClick={() => setSelectedAge(i)}
-                  style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${selectedAge === i ? '#F5E642' : '#1E3A5F'}`, background: selectedAge === i ? '#F5E642' : 'transparent', color: selectedAge === i ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
+                  style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${selectedAge === i ? '#F5E642' : '#1E3A5F'}`, background: selectedAge === i ? '#F5E642′ : ’transparent', color: selectedAge === i ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: 12, fontWeight: 600 }}>
                   {a.label}
                 </button>
               ))}
@@ -78,7 +78,7 @@ export default function DFWHVACRefrigerantCost2026() {
             <div style={{ fontSize: 32, fontWeight: 800, color: ref.color, marginBottom: 6 }}>{ref.price}</div>
             <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 12 }}>{ref.note}</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ fontSize: 13, color: '#94A3B8' }}>Leak Risk:</span>
+              <span style={{ fontSize: 13, color: '#94A3B8′ }}>Leak Risk:</span>
               <span style={{ fontSize: 13, fontWeight: 700, color: riskColors[age.risk] }}>{age.risk}</span>
             </div>
           </div>

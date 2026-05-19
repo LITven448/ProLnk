@@ -33,10 +33,10 @@ export default function DFWSlabLeakDetection2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, marginBottom: 28 }}>
           {[
-            { icon: '🎙️', title: 'Acoustic Detection', body: 'Electronic listening devices amplify the sound of water escaping a pressurized pipe. Technician moves sensor across slab — peak sound = leak location. Effective for all pressurized lines.', cost: '$250–$500' },
-            { icon: '🌡️', title: 'Thermal Imaging (IR)', body: 'Infrared camera detects temperature differentials on slab surface. Hot water leaks create warm zones visible to camera. Cold lines invisible on IR — pair with acoustic for cold-line leaks.', cost: '$300–$600' },
-            { icon: '🫧', title: 'Helium Tracing', body: 'Helium injected into suspected pipe migrates through soil and exits at breach point. Electronic detector finds helium concentration. Most precise method for stubborn or deep leaks.', cost: '$400–$800' },
-            { icon: '📹', title: 'Video Camera Inspection', body: 'Waterproof snake camera inserted through cleanout visualizes drain line interior. Finds cracks, joint offsets, and root intrusion. Standard for sewer and drain line diagnosis.', cost: '$200–$450' },
+            { icon: '🎙️', title: 'Acoustic Detection', body: 'Electronic listening devices amplify the sound of water escaping a pressurized pipe. Technician moves sensor across slab — peak sound = leak location. Effective for all pressurized lines.', cost: '$250–$500′ },
+            { icon: '🌡️', title: 'Thermal Imaging (IR)', body: 'Infrared camera detects temperature differentials on slab surface. Hot water leaks create warm zones visible to camera. Cold lines invisible on IR — pair with acoustic for cold-line leaks.', cost: '$300–$600′ },
+            { icon: '🫧', title: 'Helium Tracing', body: 'Helium injected into suspected pipe migrates through soil and exits at breach point. Electronic detector finds helium concentration. Most precise method for stubborn or deep leaks.', cost: '$400–$800′ },
+            { icon: '📹', title: 'Video Camera Inspection', body: 'Waterproof snake camera inserted through cleanout visualizes drain line interior. Finds cracks, joint offsets, and root intrusion. Standard for sewer and drain line diagnosis.', cost: '$200–$450′ },
           ].map(c => (
             <div key={c.title} style={{ background: '#112240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
@@ -56,7 +56,7 @@ export default function DFWSlabLeakDetection2026() {
             </select>
           </div>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer', marginBottom: 16 }}>Get Detection Guide</button>
-          {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#E8EAF0', fontSize: 14, lineHeight: 1.7, border: '1px solid #F5E642' }}>{guide}</div>}
+          {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#E8EAF0', fontSize: 14, lineHeight: 1.7, border: '1px solid #F5E642′ }}>{guide}</div>}
         </div>
 
         <p style={{ textAlign: 'center', color: '#475569', fontSize: 13, marginTop: 28 }}>ProLnk — DFW Slab Leak Detection Methods 2026</p>

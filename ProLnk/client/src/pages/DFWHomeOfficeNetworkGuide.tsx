@@ -64,7 +64,7 @@ export default function DFWHomeOfficeNetworkGuide() {
               {[{ v: 'small', l: 'Small (under 1,800 sq ft)' }, { v: 'medium', l: 'Medium (1,800–3,200 sq ft)' }, { v: 'large', l: 'Large (3,200+ sq ft)' }].map((o) => (
                 <button key={o.v} onClick={() => setSqft(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${sqft === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: sqft === o.v ? '#F5E642' : 'transparent', color: sqft === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: sqft === o.v ? '#F5E642′ : ’transparent', color: sqft === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -77,7 +77,7 @@ export default function DFWHomeOfficeNetworkGuide() {
               {[{ v: 'occasional', l: 'Occasional (1–2 days/wk)' }, { v: 'daily', l: 'Daily (full-time remote)' }, { v: 'heavy', l: 'Heavy (video/streaming/multi-monitor)' }].map((o) => (
                 <button key={o.v} onClick={() => setIntensity(o.v as Intensity)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${intensity === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: intensity === o.v ? '#F5E642' : 'transparent', color: intensity === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: intensity === o.v ? '#F5E642′ : ’transparent', color: intensity === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>

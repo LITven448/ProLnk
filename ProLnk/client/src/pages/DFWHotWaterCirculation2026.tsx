@@ -50,10 +50,10 @@ export default function DFWHotWaterCirculation2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, marginBottom: 28 }}>
           {[
-            { icon: '⚡', title: 'On-Demand Pump', body: 'Button or motion-activated — runs pump only when triggered. Uses cold supply as return path. Slightly warm cold water trade-off. Best for smaller homes or budget-conscious upgrades.', cost: '$250–$600' },
-            { icon: '⏱️', title: 'Timer-Based Pump', body: 'Runs recirculation on programmed schedule (mornings, evenings). More energy use than on-demand but consistent hot water availability during peak times. Good for families with predictable schedules.', cost: '$350–$800' },
-            { icon: '🔄', title: 'Dedicated Return Line', body: '3/4-in pipe returns hot water from far fixtures back to heater — eliminates warm cold water issue. Best performance, higher install cost. Standard in luxury DFW homes.', cost: '$800–$2,500' },
-            { icon: '🔥', title: 'Point-of-Use Tankless', body: 'Small electric tankless unit installed at far fixture (master bath). Delivers instant hot water at that location regardless of main heater distance. Supplemental solution for far wings.', cost: '$600–$1,200' },
+            { icon: '⚡', title: 'On-Demand Pump', body: 'Button or motion-activated — runs pump only when triggered. Uses cold supply as return path. Slightly warm cold water trade-off. Best for smaller homes or budget-conscious upgrades.', cost: '$250–$600′ },
+            { icon: '⏱️', title: 'Timer-Based Pump', body: 'Runs recirculation on programmed schedule (mornings, evenings). More energy use than on-demand but consistent hot water availability during peak times. Good for families with predictable schedules.', cost: '$350–$800′ },
+            { icon: '🔄', title: 'Dedicated Return Line', body: '3/4-in pipe returns hot water from far fixtures back to heater — eliminates warm cold water issue. Best performance, higher install cost. Standard in luxury DFW homes.', cost: '$800–$2,500′ },
+            { icon: '🔥', title: 'Point-of-Use Tankless', body: 'Small electric tankless unit installed at far fixture (master bath). Delivers instant hot water at that location regardless of main heater distance. Supplemental solution for far wings.', cost: '$600–$1,200′ },
           ].map(c => (
             <div key={c.title} style={{ background: '#112240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
@@ -81,7 +81,7 @@ export default function DFWHotWaterCirculation2026() {
             </div>
           </div>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer', marginBottom: 16 }}>Get Solution Guide</button>
-          {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#E8EAF0', fontSize: 14, lineHeight: 1.7, border: '1px solid #F5E642' }}>{guide}</div>}
+          {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#E8EAF0', fontSize: 14, lineHeight: 1.7, border: '1px solid #F5E642′ }}>{guide}</div>}
         </div>
 
         <p style={{ textAlign: 'center', color: '#475569', fontSize: 13, marginTop: 28 }}>ProLnk — DFW Hot Water Recirculation Guide 2026</p>

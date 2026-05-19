@@ -98,7 +98,7 @@ export default function DFWHVACSmellGuide() {
 
         <div style={{ background: '#2D1515', border: '1.5px solid #EF4444', borderRadius: 12, padding: 16, marginBottom: 24 }}>
           <div style={{ fontWeight: 700, color: '#EF4444', marginBottom: 6 }}>🚨 Emergency Reminder</div>
-          <p style={{ color: '#94A3B8', fontSize: 13, margin: 0 }}>If you smell rotten eggs / sulfur at any time — do not operate any switches. Leave the home immediately and call 911 + Atmos Energy from outside: <strong style={{ color: '#E8EEF7' }}>1-888-286-6700</strong></p>
+          <p style={{ color: '#94A3B8', fontSize: 13, margin: 0 }}>If you smell rotten eggs / sulfur at any time — do not operate any switches. Leave the home immediately and call 911 + Atmos Energy from outside: <strong style={{ color: '#E8EEF7′ }}>1-888-286-6700</strong></p>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -107,7 +107,7 @@ export default function DFWHVACSmellGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Smell Description</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {SMELLS.map(({ key, label, icon }) => (
-                <button key={key} onClick={() => { setSmell(key); setShowResult(false); }} style={{ padding: '10px 16px', borderRadius: 8, border: '1.5px solid', borderColor: smell === key ? '#F5E642' : '#1E3A5F', background: smell === key ? '#F5E64220' : 'transparent', color: smell === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+                <button key={key} onClick={() => { setSmell(key); setShowResult(false); }} style={{ padding: '10px 16px', borderRadius: 8, border: '1.5px solid', borderColor: smell === key ? '#F5E642′ : '#1E3A5F', background: smell === key ? '#F5E64220' : ’transparent', color: smell === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
                   {icon} {label}
                 </button>
               ))}
@@ -117,11 +117,11 @@ export default function DFWHVACSmellGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Current DFW Conditions</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {CONDITIONS.map(({ key, label }) => (
-                <button key={key} onClick={() => { setCondition(key); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: condition === key ? '#F5E642' : '#1E3A5F', background: condition === key ? '#F5E64220' : 'transparent', color: condition === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
+                <button key={key} onClick={() => { setCondition(key); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: condition === key ? '#F5E642′ : '#1E3A5F', background: condition === key ? '#F5E64220' : ’transparent', color: condition === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowResult(true)} disabled={!smell} style={{ background: smell ? '#F5E642' : '#1E3A5F', color: smell ? '#0A1628' : '#4A6080', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: smell ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShowResult(true)} disabled={!smell} style={{ background: smell ? '#F5E642′ : '#1E3A5F', color: smell ? '#0A1628' : '#4A6080', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: smell ? 'pointer' : 'not-allowed', width: '100%' }}>
             Get My Smell Diagnosis
           </button>
         </div>
@@ -136,8 +136,8 @@ export default function DFWHVACSmellGuide() {
                 <p style={{ color: '#94A3B8', fontSize: 13, margin: 0 }}>{diag.dfwNote}</p>
               </div>
             )}
-            <div style={{ background: diag.emergency ? '#2D1515' : '#111E35', borderRadius: 8, padding: 12, border: diag.emergency ? '1px solid #EF4444' : 'none' }}>
-              <div style={{ fontWeight: 600, marginBottom: 6, fontSize: 14, color: diag.emergency ? '#EF4444' : '#E8EEF7' }}>
+            <div style={{ background: diag.emergency ? '#2D1515′ : '#111E35', borderRadius: 8, padding: 12, border: diag.emergency ? '1px solid #EF4444' : ’none' }}>
+              <div style={{ fontWeight: 600, marginBottom: 6, fontSize: 14, color: diag.emergency ? '#EF4444′ : '#E8EEF7' }}>
                 {diag.emergency ? '🚨 Immediate Action' : '🔧 Recommended Action'}
               </div>
               <p style={{ color: '#94A3B8', fontSize: 13, margin: 0 }}>{diag.immediateAction}</p>

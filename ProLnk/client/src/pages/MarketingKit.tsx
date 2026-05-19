@@ -21,13 +21,13 @@ import { Link } from "wouter";
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const T = {
-  navy:   "#0A1628",
-  teal:   "#00B5B8",
-  lime:   "#A8E063",
+  navy:   "#0A1628″,
+  teal:   "#00B5B8″,
+  lime:   "#A8E063″,
   white:  "#FFFFFF",
-  bg:     "#F0F2F5",
+  bg:     "#F0F2F5″,
   card:   "#FFFFFF",
-  text:   "#344767",
+  text:   "#344767″,
   muted:  "#7B809A",
   border: "#E9ECEF",
 };
@@ -39,7 +39,7 @@ const PRINT_MATERIALS = [
     title: "Door Hanger",
     desc: "4.25\" × 11\" co-branded door hanger with your business name, ProLnk badge, and QR code",
     icon: FileText,
-    color: "#3B82F6",
+    color: "#3B82F6″,
     pages: 1,
     format: "PDF",
     tip: "Leave after every job — 3x more effective than business cards",
@@ -49,7 +49,7 @@ const PRINT_MATERIALS = [
     title: "Yard Sign",
     desc: "18\" × 24\" corrugated plastic yard sign with your logo and ProLnk partner badge",
     icon: Image,
-    color: "#10B981",
+    color: "#10B981″,
     pages: 1,
     format: "PDF",
     tip: "Ask homeowners to display during and after the job",
@@ -59,7 +59,7 @@ const PRINT_MATERIALS = [
     title: "Invoice Footer Insert",
     desc: "Branded footer for your invoices that promotes the ProLnk referral program",
     icon: FileText,
-    color: "#8B5CF6",
+    color: "#8B5CF6″,
     pages: 1,
     format: "PDF",
     tip: "Add to every invoice to generate passive referrals",
@@ -84,7 +84,7 @@ const EMAIL_TEMPLATES = [
     subject: "Thanks for choosing [Your Business] — a gift for you",
     preview: "Hi [Homeowner Name], it was a pleasure serving you today. As a ProLnk partner, I wanted to share something special...",
     useCase: "Send 24 hours after job completion",
-    color: "#3B82F6",
+    color: "#3B82F6″,
   },
   {
     id: "referral_ask",
@@ -92,7 +92,7 @@ const EMAIL_TEMPLATES = [
     subject: "Know someone who needs [Your Service]?",
     preview: "Hi [Name], if you've been happy with our service, we'd love to help your neighbors too. Through ProLnk, you can earn rewards for every referral...",
     useCase: "Send to past customers monthly",
-    color: "#10B981",
+    color: "#10B981″,
   },
   {
     id: "seasonal",
@@ -108,7 +108,7 @@ const EMAIL_TEMPLATES = [
     subject: "Quick favor — would you leave us a review?",
     preview: "Hi [Name], we hope you were thrilled with our recent work. Reviews help us grow and serve more homeowners like you...",
     useCase: "Send 3 days after job completion",
-    color: "#8B5CF6",
+    color: "#8B5CF6″,
   },
 ];
 
@@ -129,14 +129,14 @@ const PLATFORM_POSTS: PlatformPost[] = [
     id: "linkedin_founding",
     platform: "LinkedIn",
     platformIcon: "in",
-    platformColor: "#0A66C2",
+    platformColor: "#0A66C2″,
     characterLimit: 3000,
     title: "Founding Network Announcement",
     post: `Excited to share that I've joined the ProLnk Founding Partner Network — one of only 500 contractors nationwide to secure a founding spot before the platform opens to the public.
 
-ProLnk is an AI-powered home services marketplace that connects verified contractors with pre-qualified homeowners in their local market. As a founding member, I've locked in exclusive rates and commission structures that aren't available after launch.
+ProLnk is an AI-powered home services marketplace that connects verified contractors with pre-qualified homeowners in their local market. As a founding member, I've locked in exclusive rates and commission structures that aren’t available after launch.
 
-If you're a licensed home service contractor — HVAC, plumbing, electrical, roofing, or any other trade — I'd love to connect and share more about the network income opportunity. The referral structure is unlike anything I've seen in this industry.
+If you're a licensed home service contractor — HVAC, plumbing, electrical, roofing, or any other trade — I’d love to connect and share more about the network income opportunity. The referral structure is unlike anything I’ve seen in this industry.
 
 Learn more or apply through my link: [YOUR_REFERRAL_LINK]
 
@@ -147,7 +147,7 @@ Learn more or apply through my link: [YOUR_REFERRAL_LINK]
     id: "linkedin_income",
     platform: "LinkedIn",
     platformIcon: "in",
-    platformColor: "#0A66C2",
+    platformColor: "#0A66C2″,
     characterLimit: 3000,
     title: "Passive Income Story",
     post: `Most contractors I know are trading time for money. I've been doing the same for [X] years.
@@ -170,7 +170,7 @@ If you want to hear more, I'm happy to connect. Link in bio.
     id: "twitter_hook",
     platform: "Twitter/X",
     platformIcon: "𝕏",
-    platformColor: "#000000",
+    platformColor: "#000000″,
     characterLimit: 280,
     title: "Hook — Passive Income",
     post: `Contractors: what if your network paid you while you sleep?
@@ -184,7 +184,7 @@ Joined @ProLnk as a founding partner. 4-level override income. 500 founding spot
     id: "twitter_announcement",
     platform: "Twitter/X",
     platformIcon: "𝕏",
-    platformColor: "#000000",
+    platformColor: "#000000″,
     characterLimit: 280,
     title: "Short Announcement",
     post: `Just locked in my founding partner spot with @ProLnk — an AI-powered marketplace connecting licensed contractors with homeowners.
@@ -198,7 +198,7 @@ Only 500 founding spots. If you're in the trades, you should see this.
     id: "facebook_community",
     platform: "Facebook",
     platformIcon: "f",
-    platformColor: "#1877F2",
+    platformColor: "#1877F2″,
     characterLimit: 63206,
     title: "Community Outreach Post",
     post: `Hey [City] neighbors! 👋
@@ -211,7 +211,7 @@ Here's how it works for homeowners:
 ✅ Get 3 quotes — no cold calls, no strangers at your door
 ✅ Everything is tracked so you have a record of every job done on your home
 
-And for any local contractors following me — there's a founding partner opportunity with income streams I've never seen in the industry before.
+And for any local contractors following me — there's a founding partner opportunity with income streams I’ve never seen in the industry before.
 
 Happy to answer questions in the comments. Or use my link to learn more: [YOUR_REFERRAL_LINK]
 
@@ -222,7 +222,7 @@ Happy to answer questions in the comments. Or use my link to learn more: [YOUR_R
     id: "facebook_story",
     platform: "Facebook",
     platformIcon: "f",
-    platformColor: "#1877F2",
+    platformColor: "#1877F2″,
     characterLimit: 63206,
     title: "My ProLnk Story",
     post: `I want to tell you why I joined ProLnk as a founding partner.
@@ -235,7 +235,7 @@ I joined as one of the 500 founding partners. It cost me [nothing / $149/mo] and
 
 If you're a contractor who wants more predictable income, or a homeowner who wants better vetted professionals — use my link: [YOUR_REFERRAL_LINK]
 
-Real people. Real results. That's why I'm here.`,
+Real people. Real results. That's why I’m here.`,
     tip: "This format (personal story → pain → solution → result → CTA) converts best on Facebook.",
   },
   {
@@ -268,7 +268,7 @@ const STORY_TEMPLATES = [
     blanks: ["years in the trades", "your trade", "city/market", "your biggest pain point", "what changed"],
     template: `I've been a [years in the trades]-year [your trade] contractor in [city/market]. For most of my career, [your biggest pain point].
 
-That's why when I discovered ProLnk, [what changed]. I'm now a founding partner — one of 500 nationwide.
+That's why when I discovered ProLnk, [what changed]. I’m now a founding partner — one of 500 nationwide.
 
 If you want to know more: [YOUR_REFERRAL_LINK]`,
   },
@@ -278,9 +278,9 @@ If you want to know more: [YOUR_REFERRAL_LINK]`,
     blanks: ["what you were doing before", "how many pros you've referred", "estimated monthly override income"],
     template: `Before ProLnk, I was [what you were doing before] to find work.
 
-Now I've referred [how many pros you've referred] contractors into my network. That earns me ~$[estimated monthly override income]/month in override income on top of my direct job commissions.
+Now I've referred [how many pros you’ve referred] contractors into my network. That earns me ~$[estimated monthly override income]/month in override income on top of my direct job commissions.
 
-It's not magic — it's a system. Happy to explain: [YOUR_REFERRAL_LINK]`,
+It's not magic — it’s a system. Happy to explain: [YOUR_REFERRAL_LINK]`,
   },
   {
     id: "homeowner_story",
@@ -302,7 +302,7 @@ const SOCIAL_TEMPLATES = [
     platform: "Instagram / Facebook",
     caption: "Swipe to see the transformation! 🏠✨ Another happy homeowner in [City]. ProLnk partner — trusted, verified, and ready to serve your neighborhood. #HomeServices #ProLnk #[YourCity]",
     icon: Image,
-    color: "#EC4899",
+    color: "#EC4899″,
   },
   {
     id: "5star_review",
@@ -318,7 +318,7 @@ const SOCIAL_TEMPLATES = [
     platform: "Nextdoor / Facebook",
     caption: "Did you know? Through ProLnk, your neighbors can earn rewards when they refer you to trusted home service pros in [City]. Ask me how! 🏡",
     icon: Share2,
-    color: "#3B82F6",
+    color: "#3B82F6″,
   },
   {
     id: "seasonal_tip",
@@ -326,7 +326,7 @@ const SOCIAL_TEMPLATES = [
     platform: "All Platforms",
     caption: "🏠 [Season] Home Tip: [Tip content]. Need help? We're a ProLnk verified partner — tap the link in bio to schedule. #HomeTips #ProLnk",
     icon: Zap,
-    color: "#10B981",
+    color: "#10B981″,
   },
 ];
 
@@ -358,7 +358,7 @@ function generatePrintHTML(item: typeof PRINT_MATERIALS[0], businessName: string
 <div class="header"><div class="logo-badge">P</div><div><div class="biz">${businessName}</div><div class="sub">Proud Member of the ProLnk Partner Network</div></div></div>
 <div class="headline">${item.title}</div>
 <div class="body">${item.desc}<br><br>As a trusted ProLnk partner, I connect homeowners with the right professionals for every home service need. When your neighbors need work done, I make sure they get the best — and I earn a referral for every job that closes.</div>
-<div class="qr-section"><img src="${qrUrl}" width="100" height="100" alt="QR Code" /><div><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Scan to Get a Free Estimate</div><div class="qr-text">Or visit: ${referralLink}</div><div class="qr-text" style="margin-top:4px;">Reference code: ${referralLink.split('/').pop()}</div></div></div>
+<div class="qr-section"><img src="${qrUrl}" width="100″ height="100" alt="QR Code" /><div><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Scan to Get a Free Estimate</div><div class="qr-text">Or visit: ${referralLink}</div><div class="qr-text" style="margin-top:4px;">Reference code: ${referralLink.split('/').pop()}</div></div></div>
 <div class="footer">ProLnk Partner Network · prolnk.com · Powered by AI-driven home intelligence</div>
 </div></body></html>`;
 }
@@ -381,22 +381,22 @@ function PrintCard({ item, referralLink, businessName }: { item: typeof PRINT_MA
   return (
     <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
       {/* Color bar */}
-      <div className="h-1.5" style={{ backgroundColor: item.color }} />
-      <div className="p-5">
-        <div className="flex items-start gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${item.color}15` }}>
-            <Icon className="w-5 h-5" style={{ color: item.color }} />
+      <div className="h-1.5″ style={{ backgroundColor: item.color }} />
+      <div className="p-5″>
+        <div className="flex items-start gap-3 mb-3″>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″ style={{ backgroundColor: `${item.color}15` }}>
+            <Icon className="w-5 h-5″ style={{ color: item.color }} />
           </div>
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-0.5">
+          <div className="flex-1″>
+            <div className="flex items-center gap-2 mb-0.5″>
               <p className="text-sm font-bold" style={{ color: T.text }}>{item.title}</p>
-              <Badge variant="outline" className="text-[10px] px-1.5 py-0">{item.format}</Badge>
+              <Badge variant="outline" className="text-[10px] px-1.5 py-0″>{item.format}</Badge>
             </div>
             <p className="text-xs" style={{ color: T.muted }}>{item.desc}</p>
           </div>
         </div>
         <div className="flex items-start gap-1.5 mb-4 p-2.5 rounded-xl" style={{ backgroundColor: `${item.color}08` }}>
-          <Zap className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: item.color }} />
+          <Zap className="w-3 h-3 mt-0.5 flex-shrink-0″ style={{ color: item.color }} />
           <p className="text-[11px]" style={{ color: item.color }}>{item.tip}</p>
         </div>
         <Button
@@ -404,7 +404,7 @@ function PrintCard({ item, referralLink, businessName }: { item: typeof PRINT_MA
           style={{ backgroundColor: item.color, color: T.white }}
           onClick={handleDownload}
         >
-          <Download className="w-4 h-4" />
+          <Download className="w-4 h-4″ />
           Download Co-Branded Template
         </Button>
       </div>
@@ -417,29 +417,29 @@ function EmailCard({ tpl }: { tpl: typeof EMAIL_TEMPLATES[0] }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
-      <div className="p-4">
-        <div className="flex items-start justify-between gap-3 mb-2">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-0.5">
+      <div className="p-4″>
+        <div className="flex items-start justify-between gap-3 mb-2″>
+          <div className="flex-1″>
+            <div className="flex items-center gap-2 mb-0.5″>
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: tpl.color }} />
               <p className="text-sm font-bold" style={{ color: T.text }}>{tpl.title}</p>
             </div>
             <p className="text-xs" style={{ color: T.muted }}>{tpl.useCase}</p>
           </div>
-          <Badge variant="outline" className="text-[10px] flex-shrink-0">Email</Badge>
+          <Badge variant="outline" className="text-[10px] flex-shrink-0″>Email</Badge>
         </div>
-        <div className="p-3 rounded-xl mb-3" style={{ backgroundColor: T.bg }}>
-          <p className="text-[11px] font-semibold mb-1" style={{ color: T.text }}>Subject: {tpl.subject}</p>
-          <p className="text-[11px] leading-relaxed line-clamp-2" style={{ color: T.muted }}>{tpl.preview}</p>
+        <div className="p-3 rounded-xl mb-3″ style={{ backgroundColor: T.bg }}>
+          <p className="text-[11px] font-semibold mb-1″ style={{ color: T.text }}>Subject: {tpl.subject}</p>
+          <p className="text-[11px] leading-relaxed line-clamp-2″ style={{ color: T.muted }}>{tpl.preview}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2″>
           <Button
             variant="outline"
             size="sm"
             className="flex-1 gap-1.5 text-xs"
             onClick={() => copyToClipboard(`Subject: ${tpl.subject}\n\n${tpl.preview}`, "Email template")}
           >
-            <Copy className="w-3.5 h-3.5" />
+            <Copy className="w-3.5 h-3.5″ />
             Copy Template
           </Button>
           <Button
@@ -448,7 +448,7 @@ function EmailCard({ tpl }: { tpl: typeof EMAIL_TEMPLATES[0] }) {
             style={{ backgroundColor: tpl.color }}
             onClick={() => toast.info("Full template available in your email marketing integration")}
           >
-            <Mail className="w-3.5 h-3.5" />
+            <Mail className="w-3.5 h-3.5″ />
             Use in Email
           </Button>
         </div>
@@ -462,10 +462,10 @@ function SocialCard({ tpl }: { tpl: typeof SOCIAL_TEMPLATES[0] }) {
   const Icon = tpl.icon;
   return (
     <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
-      <div className="p-4">
-        <div className="flex items-center gap-2 mb-2">
+      <div className="p-4″>
+        <div className="flex items-center gap-2 mb-2″>
           <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${tpl.color}15` }}>
-            <Icon className="w-4 h-4" style={{ color: tpl.color }} />
+            <Icon className="w-4 h-4″ style={{ color: tpl.color }} />
           </div>
           <div>
             <p className="text-sm font-bold" style={{ color: T.text }}>{tpl.title}</p>
@@ -481,7 +481,7 @@ function SocialCard({ tpl }: { tpl: typeof SOCIAL_TEMPLATES[0] }) {
           className="w-full gap-1.5 text-xs"
           onClick={() => copyToClipboard(tpl.caption, "Caption")}
         >
-          <Copy className="w-3.5 h-3.5" />
+          <Copy className="w-3.5 h-3.5″ />
           Copy Caption
         </Button>
       </div>
@@ -509,35 +509,35 @@ function PlatformPostCard({ post, referralLink }: { post: PlatformPost; referral
     <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
       {/* Platform header */}
       <div className="flex items-center gap-3 px-4 py-3 border-b" style={{ borderColor: T.border, backgroundColor: `${post.platformColor}08` }}>
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-black flex-shrink-0"
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-black flex-shrink-0″
           style={{ backgroundColor: post.platformColor }}>
           {post.platformIcon}
         </div>
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0″>
           <p className="text-xs font-bold truncate" style={{ color: T.text }}>{post.title}</p>
           <p className="text-[10px]" style={{ color: T.muted }}>{post.platform}</p>
         </div>
-        <div className="text-right flex-shrink-0">
+        <div className="text-right flex-shrink-0″>
           <p className={`text-[10px] font-mono font-bold ${isOver ? "text-red-500" : ""}`} style={!isOver ? { color: T.muted } : {}}>
             {charCount.toLocaleString()}{post.characterLimit < 63206 ? `/${post.characterLimit}` : ""}
           </p>
           {post.characterLimit < 63206 && (
             <div className="w-16 h-1 rounded-full mt-0.5 overflow-hidden" style={{ backgroundColor: T.border }}>
-              <div className="h-full rounded-full transition-all" style={{ width: `${charPct}%`, backgroundColor: isOver ? "#EF4444" : post.platformColor }} />
+              <div className="h-full rounded-full transition-all" style={{ width: `${charPct}%`, backgroundColor: isOver ? "#EF4444″ : post.platformColor }} />
             </div>
           )}
         </div>
       </div>
 
       {/* Post preview */}
-      <div className="px-4 py-3">
+      <div className="px-4 py-3″>
         <div className="p-3 rounded-xl text-xs leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto" style={{ backgroundColor: T.bg, color: T.muted }}>
           {finalPost}
         </div>
 
         {/* Tip */}
         <div className="flex items-start gap-1.5 mt-2.5 mb-3 p-2 rounded-lg" style={{ backgroundColor: `${post.platformColor}08` }}>
-          <Zap className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: post.platformColor }} />
+          <Zap className="w-3 h-3 mt-0.5 flex-shrink-0″ style={{ color: post.platformColor }} />
           <p className="text-[10px] leading-snug" style={{ color: post.platformColor }}>{post.tip}</p>
         </div>
 
@@ -547,7 +547,7 @@ function PlatformPostCard({ post, referralLink }: { post: PlatformPost; referral
           style={{ backgroundColor: post.platformColor }}
           onClick={handleCopy}
         >
-          {copied ? <CheckCircle className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <CheckCircle className="w-3.5 h-3.5″ /> : <Copy className="w-3.5 h-3.5" />}
           {copied ? "Copied!" : `Copy + Post to ${post.platform}`}
         </Button>
       </div>
@@ -578,13 +578,13 @@ function StoryCard({ tpl, referralLink }: { tpl: typeof STORY_TEMPLATES[0]; refe
 
   return (
     <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
-      <div className="px-4 py-3 border-b flex items-center gap-2" style={{ borderColor: T.border, backgroundColor: `${T.teal}08` }}>
-        <Users className="w-4 h-4 flex-shrink-0" style={{ color: T.teal }} />
+      <div className="px-4 py-3 border-b flex items-center gap-2″ style={{ borderColor: T.border, backgroundColor: `${T.teal}08` }}>
+        <Users className="w-4 h-4 flex-shrink-0″ style={{ color: T.teal }} />
         <p className="text-xs font-bold" style={{ color: T.text }}>{tpl.title}</p>
       </div>
-      <div className="p-4">
+      <div className="p-4″>
         {/* Fill in the blanks */}
-        <div className="space-y-2 mb-3">
+        <div className="space-y-2 mb-3″>
           {tpl.blanks.map(blank => (
             <div key={blank}>
               <label className="text-[10px] font-semibold uppercase tracking-wide mb-1 block" style={{ color: T.muted }}>{blank}</label>
@@ -616,7 +616,7 @@ function StoryCard({ tpl, referralLink }: { tpl: typeof STORY_TEMPLATES[0]; refe
           style={{ backgroundColor: T.teal }}
           onClick={handleCopy}
         >
-          {copied ? <CheckCircle className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <CheckCircle className="w-3.5 h-3.5″ /> : <Copy className="w-3.5 h-3.5" />}
           {copied ? "Copied!" : "Copy Filled Story"}
         </Button>
       </div>
@@ -629,9 +629,9 @@ function QRSection({ referralLink }: { referralLink: string }) {
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(referralLink)}&color=00B5B8&bgcolor=FFFFFF`;
 
   return (
-    <div className="bg-white rounded-2xl border p-5" style={{ borderColor: T.border }}>
-      <div className="flex items-center gap-2 mb-4">
-        <QrCode className="w-5 h-5" style={{ color: T.teal }} />
+    <div className="bg-white rounded-2xl border p-5″ style={{ borderColor: T.border }}>
+      <div className="flex items-center gap-2 mb-4″>
+        <QrCode className="w-5 h-5″ style={{ color: T.teal }} />
         <h3 className="text-sm font-bold" style={{ color: T.text }}>Your Referral QR Code</h3>
       </div>
       <div className="flex flex-col sm:flex-row gap-5 items-center">
@@ -644,20 +644,20 @@ function QRSection({ referralLink }: { referralLink: string }) {
           />
         </div>
         {/* Info */}
-        <div className="flex-1">
+        <div className="flex-1″>
           <p className="text-xs mb-3 leading-relaxed" style={{ color: T.muted }}>
             This QR code links directly to your ProLnk referral page. Print it on door hangers, yard signs, business cards, and invoices to generate passive referrals.
           </p>
-          <div className="p-2.5 rounded-xl mb-3 flex items-center gap-2" style={{ backgroundColor: T.bg }}>
+          <div className="p-2.5 rounded-xl mb-3 flex items-center gap-2″ style={{ backgroundColor: T.bg }}>
             <p className="text-xs font-mono flex-1 truncate" style={{ color: T.text }}>{referralLink}</p>
             <button
-              className="flex-shrink-0"
+              className="flex-shrink-0″
               onClick={() => copyToClipboard(referralLink, "Referral link")}
             >
-              <Copy className="w-3.5 h-3.5" style={{ color: T.muted }} />
+              <Copy className="w-3.5 h-3.5″ style={{ color: T.muted }} />
             </button>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2″>
             <Button
               size="sm"
               className="flex-1 gap-1.5 text-xs text-white"
@@ -669,7 +669,7 @@ function QRSection({ referralLink }: { referralLink: string }) {
                 a.click();
               }}
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-3.5 h-3.5″ />
               Download QR
             </Button>
             <Button
@@ -678,7 +678,7 @@ function QRSection({ referralLink }: { referralLink: string }) {
               className="flex-1 gap-1.5 text-xs"
               onClick={() => copyToClipboard(referralLink, "Referral link")}
             >
-              <Copy className="w-3.5 h-3.5" />
+              <Copy className="w-3.5 h-3.5″ />
               Copy Link
             </Button>
           </div>
@@ -702,34 +702,34 @@ export default function MarketingKit() {
 
     <div className="min-h-screen" style={{ background: T.bg }}>
       {/* Header */}
-      <div className="bg-white border-b px-4 py-4 sticky top-0 z-10" style={{ borderColor: T.border }}>
+      <div className="bg-white border-b px-4 py-4 sticky top-0 z-10″ style={{ borderColor: T.border }}>
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-base font-black" style={{ color: T.text }}>Marketing Kit</h1>
             <p className="text-xs" style={{ color: T.muted }}>Co-branded materials to grow your referral network</p>
           </div>
           <Link href="/dashboard">
-            <Button variant="outline" size="sm" className="text-xs gap-1.5">
+            <Button variant="outline" size="sm" className="text-xs gap-1.5″>
               ← Dashboard
             </Button>
           </Link>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-6">
+      <div className="max-w-4xl mx-auto px-4 py-6″>
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6″>
           {[
-            { label: "Print Materials",   value: "4",    icon: FileText,  color: "#3B82F6" },
-            { label: "Email Templates",   value: "4",    icon: Mail,      color: "#10B981" },
-            { label: "Social Templates",  value: "4",    icon: Share2,    color: "#EC4899" },
+            { label: "Print Materials",   value: "4″,    icon: FileText,  color: "#3B82F6" },
+            { label: "Email Templates",   value: "4″,    icon: Mail,      color: "#10B981" },
+            { label: "Social Templates",  value: "4″,    icon: Share2,    color: "#EC4899" },
             { label: "Your Referral Code", value: partnerCode, icon: QrCode, color: T.teal },
           ].map(s => {
             const Icon = s.icon;
             return (
               <div key={s.label} className="bg-white rounded-2xl p-3.5 border" style={{ borderColor: T.border }}>
-                <div className="flex items-center gap-1.5 mb-1">
-                  <Icon className="w-3.5 h-3.5" style={{ color: s.color }} />
+                <div className="flex items-center gap-1.5 mb-1″>
+                  <Icon className="w-3.5 h-3.5″ style={{ color: s.color }} />
                   <p className="text-[10px]" style={{ color: T.muted }}>{s.label}</p>
                 </div>
                 <p className="text-lg font-black" style={{ color: T.text }}>{s.value}</p>
@@ -739,48 +739,48 @@ export default function MarketingKit() {
         </div>
 
         {/* QR Code */}
-        <div className="mb-6">
+        <div className="mb-6″>
           <QRSection referralLink={referralLink} />
         </div>
 
         {/* Tabs */}
         <Tabs defaultValue="print">
-          <TabsList className="mb-5 bg-white border flex-wrap h-auto gap-1 p-1" style={{ borderColor: T.border }}>
-            <TabsTrigger value="print" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
-              <FileText className="w-3.5 h-3.5" /> Print
+          <TabsList className="mb-5 bg-white border flex-wrap h-auto gap-1 p-1″ style={{ borderColor: T.border }}>
+            <TabsTrigger value="print" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600″>
+              <FileText className="w-3.5 h-3.5″ /> Print
             </TabsTrigger>
-            <TabsTrigger value="email" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
-              <Mail className="w-3.5 h-3.5" /> Email
+            <TabsTrigger value="email" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600″>
+              <Mail className="w-3.5 h-3.5″ /> Email
             </TabsTrigger>
-            <TabsTrigger value="platforms" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
-              <Share2 className="w-3.5 h-3.5" /> Platform Posts
+            <TabsTrigger value="platforms" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600″>
+              <Share2 className="w-3.5 h-3.5″ /> Platform Posts
             </TabsTrigger>
-            <TabsTrigger value="stories" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
-              <Users className="w-3.5 h-3.5" /> My Story
+            <TabsTrigger value="stories" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600″>
+              <Users className="w-3.5 h-3.5″ /> My Story
             </TabsTrigger>
-            <TabsTrigger value="social" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
-              <Image className="w-3.5 h-3.5" /> Image Captions
+            <TabsTrigger value="social" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600″>
+              <Image className="w-3.5 h-3.5″ /> Image Captions
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="print">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4″>
               {PRINT_MATERIALS.map(item => (
                 <PrintCard key={item.id} item={item} referralLink={referralLink} businessName={partner?.partner?.businessName ?? user?.name ?? 'Your Business'} />
               ))}
             </div>
             <div className="mt-4 p-4 rounded-2xl border" style={{ borderColor: T.border, background: `${T.teal}08` }}>
-              <div className="flex items-start gap-2">
-                <Megaphone className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: T.teal }} />
+              <div className="flex items-start gap-2″>
+                <Megaphone className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: T.teal }} />
                 <p className="text-xs leading-relaxed" style={{ color: T.muted }}>
-                  <strong style={{ color: T.text }}>Pro Tip:</strong> Partners who use 3+ marketing materials generate 4× more referrals than those who don't. Start with the door hanger — it's the highest-converting single piece.
+                  <strong style={{ color: T.text }}>Pro Tip:</strong> Partners who use 3+ marketing materials generate 4× more referrals than those who don't. Start with the door hanger — it’s the highest-converting single piece.
                 </p>
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="email">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4″>
               {EMAIL_TEMPLATES.map(tpl => (
                 <EmailCard key={tpl.id} tpl={tpl} />
               ))}
@@ -788,13 +788,13 @@ export default function MarketingKit() {
           </TabsContent>
 
           <TabsContent value="platforms">
-            <div className="mb-4 p-3 rounded-2xl border flex items-start gap-2" style={{ borderColor: T.border, background: `${T.teal}08` }}>
-              <Smartphone className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: T.teal }} />
+            <div className="mb-4 p-3 rounded-2xl border flex items-start gap-2″ style={{ borderColor: T.border, background: `${T.teal}08` }}>
+              <Smartphone className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: T.teal }} />
               <p className="text-xs leading-relaxed" style={{ color: T.muted }}>
                 <strong style={{ color: T.text }}>Your referral link is embedded.</strong> Each post is tailored to the platform's tone, length, and audience. Click "Copy + Post" and paste directly into the platform.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4″>
               {PLATFORM_POSTS.map(p => (
                 <PlatformPostCard key={p.id} post={p} referralLink={referralLink} />
               ))}
@@ -802,13 +802,13 @@ export default function MarketingKit() {
           </TabsContent>
 
           <TabsContent value="stories">
-            <div className="mb-4 p-3 rounded-2xl border flex items-start gap-2" style={{ borderColor: T.border, background: `${T.teal}08` }}>
-              <Users className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: T.teal }} />
+            <div className="mb-4 p-3 rounded-2xl border flex items-start gap-2″ style={{ borderColor: T.border, background: `${T.teal}08` }}>
+              <Users className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: T.teal }} />
               <p className="text-xs leading-relaxed" style={{ color: T.muted }}>
                 <strong style={{ color: T.text }}>Fill in the blanks, then copy your personalized story.</strong> Personal stories convert 3–5× better than generic posts. Your referral link is auto-included.
               </p>
             </div>
-            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4″>
               {STORY_TEMPLATES.map(tpl => (
                 <StoryCard key={tpl.id} tpl={tpl} referralLink={referralLink} />
               ))}
@@ -816,14 +816,14 @@ export default function MarketingKit() {
           </TabsContent>
 
           <TabsContent value="social">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4″>
               {SOCIAL_TEMPLATES.map(tpl => (
                 <SocialCard key={tpl.id} tpl={tpl} />
               ))}
             </div>
             <div className="mt-4 p-4 rounded-2xl border" style={{ borderColor: T.border, background: `${T.teal}08` }}>
-              <div className="flex items-start gap-2">
-                <Smartphone className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: T.teal }} />
+              <div className="flex items-start gap-2″>
+                <Smartphone className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: T.teal }} />
                 <p className="text-xs leading-relaxed" style={{ color: T.muted }}>
                   <strong style={{ color: T.text }}>Best Practice:</strong> Post before/after photos within 24 hours of job completion while the homeowner is still excited. Tag your city and use #ProLnk to build local visibility.
                 </p>
@@ -833,16 +833,16 @@ export default function MarketingKit() {
         </Tabs>
 
         {/* Brand guidelines */}
-        <div className="mt-6 bg-white rounded-2xl border p-5" style={{ borderColor: T.border }}>
-          <div className="flex items-center gap-2 mb-4">
-            <Palette className="w-4 h-4" style={{ color: T.teal }} />
+        <div className="mt-6 bg-white rounded-2xl border p-5″ style={{ borderColor: T.border }}>
+          <div className="flex items-center gap-2 mb-4″>
+            <Palette className="w-4 h-4″ style={{ color: T.teal }} />
             <h3 className="text-sm font-bold" style={{ color: T.text }}>Brand Guidelines</h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
             {[
-              { label: "Primary Teal",   hex: "#00B5B8", name: "ProLnk Teal" },
-              { label: "Navy",           hex: "#0A1628", name: "ProLnk Navy" },
-              { label: "Lime Accent",    hex: "#A8E063", name: "ProLnk Lime" },
+              { label: "Primary Teal",   hex: "#00B5B8″, name: "ProLnk Teal" },
+              { label: "Navy",           hex: "#0A1628″, name: "ProLnk Navy" },
+              { label: "Lime Accent",    hex: "#A8E063″, name: "ProLnk Lime" },
               { label: "White",          hex: "#FFFFFF", name: "Background" },
             ].map(c => (
               <button
@@ -857,7 +857,7 @@ export default function MarketingKit() {
               </button>
             ))}
           </div>
-          <p className="text-[11px] mt-3" style={{ color: T.muted }}>
+          <p className="text-[11px] mt-3″ style={{ color: T.muted }}>
             Click any color to copy the hex code. Use these colors on all co-branded materials to maintain consistency with the ProLnk brand.
           </p>
         </div>

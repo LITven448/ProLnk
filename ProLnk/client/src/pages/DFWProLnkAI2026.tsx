@@ -61,13 +61,13 @@ export default function DFWProLnkAI2026() {
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {features.map(f => (
               <button key={f.id} onClick={() => setSelected(f.id)}
-                style={{ background: selected === f.id ? '#F5E642' : '#162236', color: selected === f.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 10, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === f.id ? '#F5E642′ : '#162236', color: selected === f.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 10, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {f.icon} {f.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162236', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162236', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>{result.icon} {result.label}</div>
               <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>{result.detail}</p>
             </div>

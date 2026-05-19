@@ -31,10 +31,10 @@ const BUYERS = [
     id: "insurance",
     name: "Insurance Carriers",
     icon: Shield,
-    color: "#3B82F6",
+    color: "#3B82F6″,
     bg: "#EFF6FF",
     ethicsRating: 5,
-    annualRevPotential: "$35,000",
+    annualRevPotential: "$35,000″,
     status: "Ready",
     statusColor: T.green,
     products: ["Anonymized condition reports ($1/record)", "Individual condition certs -- homeowner-consented ($50/cert)"],
@@ -48,7 +48,7 @@ const BUYERS = [
     color: "#F59E0B",
     bg: "#FFFBEB",
     ethicsRating: 5,
-    annualRevPotential: "$10,000",
+    annualRevPotential: "$10,000″,
     status: "Ready",
     statusColor: T.green,
     products: ["Asset age/condition data ($2/record)", "Warranty enrollment packages -- consented ($100/pkg)"],
@@ -59,10 +59,10 @@ const BUYERS = [
     id: "realestate",
     name: "Real Estate Professionals",
     icon: Home,
-    color: "#10B981",
-    bg: "#ECFDF5",
+    color: "#10B981″,
+    bg: "#ECFDF5″,
     ethicsRating: 3,
-    annualRevPotential: "$70,500",
+    annualRevPotential: "$70,500″,
     status: "Needs Legal Review",
     statusColor: T.amber,
     products: ["Named pre-listing reports -- consented ($35/report)", "ZIP-level market intelligence ($1,000/mo)"],
@@ -73,10 +73,10 @@ const BUYERS = [
     id: "municipal",
     name: "Municipal & Government",
     icon: Building2,
-    color: "#8B5CF6",
+    color: "#8B5CF6″,
     bg: "#F5F3FF",
     ethicsRating: 5,
-    annualRevPotential: "$30,000",
+    annualRevPotential: "$30,000″,
     status: "Ready",
     statusColor: T.green,
     products: ["Aggregated neighborhood condition reports ($10K/yr license)", "Storm damage risk indices"],
@@ -87,10 +87,10 @@ const BUYERS = [
     id: "manufacturers",
     name: "Building Material Manufacturers",
     icon: BarChart3,
-    color: "#EF4444",
-    bg: "#FEF2F2",
+    color: "#EF4444″,
+    bg: "#FEF2F2″,
     ethicsRating: 5,
-    annualRevPotential: "$100,000",
+    annualRevPotential: "$100,000″,
     status: "Ready",
     statusColor: T.green,
     products: ["Asset replacement demand forecasts ($25K/yr per category)", "Supply chain intelligence reports"],
@@ -133,7 +133,7 @@ export default function DataMarketplace() {
   const totalPartners = networkStats?.totalPartners ?? 0;
   // Estimate: ~28% of homeowners consent (industry avg for opt-in data programs)
   const optedIn = Math.round(totalHomeowners * 0.287);
-  const consentRate = totalHomeowners > 0 ? ((optedIn / totalHomeowners) * 100).toFixed(1) : "0.0";
+  const consentRate = totalHomeowners > 0 ? ((optedIn / totalHomeowners) * 100).toFixed(1) : "0.0″;
 
   // Revenue potential scales with actual data volume
   const baseRevPotential = 245500;
@@ -161,7 +161,7 @@ export default function DataMarketplace() {
             </div>
             <div style={{ textAlign: "right" }}>
               <p style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.08em" }}>Year 1 Revenue Potential</p>
-              <p style={{ fontSize: 32, fontWeight: 700, color: "#34D399", fontFamily: MONO }}>{totalRevPotential}</p>
+              <p style={{ fontSize: 32, fontWeight: 700, color: "#34D399″, fontFamily: MONO }}>{totalRevPotential}</p>
               <p style={{ fontSize: 11, color: "rgba(255,255,255,0.4)" }}>DFW market only</p>
             </div>
           </div>
@@ -260,7 +260,7 @@ export default function DataMarketplace() {
                     fontWeight: 600,
                     padding: "3px 10px",
                     borderRadius: 20,
-                    backgroundColor: buyer.statusColor === T.green ? "#D1FAE5" : "#FEF3C7",
+                    backgroundColor: buyer.statusColor === T.green ? "#D1FAE5″ : "#FEF3C7",
                     color: buyer.statusColor,
                   }}>
                     {buyer.status}
@@ -312,11 +312,11 @@ export default function DataMarketplace() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {[
-              { label: "Insurance Carriers", amount: 35000, color: "#3B82F6" },
+              { label: "Insurance Carriers", amount: 35000, color: "#3B82F6″ },
               { label: "Home Warranty Companies", amount: 10000, color: "#F59E0B" },
-              { label: "Real Estate Professionals", amount: 70500, color: "#10B981" },
-              { label: "Municipal & Government", amount: 30000, color: "#8B5CF6" },
-              { label: "Building Material Manufacturers", amount: 100000, color: "#EF4444" },
+              { label: "Real Estate Professionals", amount: 70500, color: "#10B981″ },
+              { label: "Municipal & Government", amount: 30000, color: "#8B5CF6″ },
+              { label: "Building Material Manufacturers", amount: 100000, color: "#EF4444″ },
             ].map(row => (
               <div key={row.label} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ fontSize: 12, color: T.text, width: 240, flexShrink: 0 }}>{row.label}</span>

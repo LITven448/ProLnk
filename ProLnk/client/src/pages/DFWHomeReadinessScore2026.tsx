@@ -8,7 +8,7 @@ const questions = [
   { id: 'air_sealing', text: 'Air sealing completed in last 10 years (attic, crawl, sill plates)', category: 'Energy Efficiency', weight: 5 },
   { id: 'windows_dpane', text: 'All windows are double-pane and seals appear intact (no fogging)', category: 'Energy Efficiency', weight: 4 },
   { id: 'roof_age', text: 'Roof is under 15 years old or was recently inspected post-hail', category: 'Structure & Exterior', weight: 7 },
-  { id: 'foundation_ok', text: 'No visible foundation cracks wider than 1/8" or sticking doors', category: 'Structure & Exterior', weight: 8 },
+  { id: 'foundation_ok', text: 'No visible foundation cracks wider than 1/8″ or sticking doors', category: 'Structure & Exterior', weight: 8 },
   { id: 'gutters_clean', text: 'Gutters cleaned and downspouts extended away from foundation', category: 'Structure & Exterior', weight: 4 },
   { id: 'water_heater', text: 'Water heater is under 10 years old (tank) or 18 years (tankless)', category: 'Plumbing & Water', weight: 5 },
   { id: 'no_leaks', text: 'No known plumbing leaks — under sinks, toilets, and around water heater', category: 'Plumbing & Water', weight: 6 },
@@ -27,10 +27,10 @@ const totalWeight = questions.reduce((s, q) => s + q.weight, 0);
 
 function getGrade(pct: number) {
   if (pct >= 90) return { grade: 'A', label: 'Excellent', color: '#22C55E' };
-  if (pct >= 75) return { grade: 'B', label: 'Good', color: '#84CC16' };
-  if (pct >= 60) return { grade: 'C', label: 'Fair', color: '#F5E642' };
-  if (pct >= 45) return { grade: 'D', label: 'Needs Work', color: '#F97316' };
-  return { grade: 'F', label: 'At Risk', color: '#EF4444' };
+  if (pct >= 75) return { grade: 'B', label: 'Good', color: '#84CC16′ };
+  if (pct >= 60) return { grade: 'C', label: 'Fair', color: '#F5E642′ };
+  if (pct >= 45) return { grade: 'D', label: 'Needs Work', color: '#F97316′ };
+  return { grade: 'F', label: 'At Risk', color: '#EF4444′ };
 }
 
 const categories = [...new Set(questions.map(q => q.category))];
@@ -74,7 +74,7 @@ export default function DFWHomeReadinessScore2026() {
                       onClick={() => setAnswers(prev => ({ ...prev, [q.id]: val }))}
                       style={{ padding: '6px 16px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
                         background: answers[q.id] === val ? (val ? '#22C55E' : '#EF4444') : '#0A1628',
-                        color: answers[q.id] === val ? '#0A1628' : '#64748B' }}>
+                        color: answers[q.id] === val ? '#0A1628′ : '#64748B' }}>
                       {val ? 'Yes' : 'No'}
                     </button>
                   ))}
@@ -85,7 +85,7 @@ export default function DFWHomeReadinessScore2026() {
         ))}
 
         <button onClick={() => setSubmitted(true)} disabled={answered < questions.length}
-          style={{ background: answered >= questions.length ? '#F5E642' : '#1E3A5F', color: answered >= questions.length ? '#0A1628' : '#64748B', border: 'none', borderRadius: 10, padding: '16px', fontWeight: 700, fontSize: 18, cursor: answered >= questions.length ? 'pointer' : 'default', width: '100%', marginBottom: 24 }}>
+          style={{ background: answered >= questions.length ? '#F5E642′ : '#1E3A5F', color: answered >= questions.length ? '#0A1628' : '#64748B', border: ’none', borderRadius: 10, padding: '16px', fontWeight: 700, fontSize: 18, cursor: answered >= questions.length ? 'pointer' : 'default', width: '100%', marginBottom: 24 }}>
           {answered < questions.length ? `Answer all ${questions.length - answered} remaining questions` : 'Get My Score →'}
         </button>
 

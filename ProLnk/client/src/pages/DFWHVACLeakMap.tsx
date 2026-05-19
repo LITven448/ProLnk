@@ -40,50 +40,50 @@ export default function DFWHVACLeakMap() {
   const result = leakType && location ? LEAK_GUIDANCE[leakType]?.[location] : null;
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
+        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Leak Detection Map 💧</h1>
-        <p style={{ color: "#94a3b8", fontSize: 15, marginBottom: 32 }}>
+        <p style={{ color: "#94a3b8″, fontSize: 15, marginBottom: 32 }}>
           Where DFW HVAC leaks most commonly occur — refrigerant, condensate, and air leaks mapped by system location with detection approach and repair cost.
         </p>
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🔍 Leak Detection Guide</h2>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642″, fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🔍 Leak Detection Guide</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Suspected Leak Type</label>
-            <select value={leakType} onChange={e => setLeakType(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Suspected Leak Type</label>
+            <select value={leakType} onChange={e => setLeakType(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select leak type...</option>
               {LEAK_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Leak Location</label>
-            <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Leak Location</label>
+            <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select location...</option>
               {LOCATIONS.map(l => <option key={l} value={l}>{l}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔧 Detection Approach</div>
-              <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 14 }}>{result.approach}</p>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>💰 Estimated Cost</div>
-              <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 14 }}>{result.cost}</p>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🌡️ DFW-Specific Note</div>
-              <p style={{ color: "#e2e8f0", fontSize: 14 }}>{result.dfwNote}</p>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔧 Detection Approach</div>
+              <p style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 14 }}>{result.approach}</p>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>💰 Estimated Cost</div>
+              <p style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 14 }}>{result.cost}</p>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🌡️ DFW-Specific Note</div>
+              <p style={{ color: "#e2e8f0″, fontSize: 14 }}>{result.dfwNote}</p>
             </div>
           )}
         </div>
 
-        <div style={{ background: "#0f2040", borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 12 }}>⚠️ DFW Leak Warning Signs</div>
+        <div style={{ background: "#0f2040″, borderRadius: 10, padding: 20 }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 12 }}>⚠️ DFW Leak Warning Signs</div>
           {["Ice on refrigerant lines or indoor coil", "Water stains on ceiling below air handler", "Musty smell from vents — mold from condensate overflow", "Utility bill spike — refrigerant or air leak", "Rooms not cooling below 78°F on 100°F DFW days"].map(w => (
-            <div key={w} style={{ color: "#94a3b8", fontSize: 13, padding: "6px 0", borderBottom: "1px solid #1e3a5f" }}>{w}</div>
+            <div key={w} style={{ color: "#94a3b8″, fontSize: 13, padding: "6px 0", borderBottom: "1px solid #1e3a5f" }}>{w}</div>
           ))}
         </div>
 
-        <div style={{ marginTop: 32, textAlign: "center", color: "#475569", fontSize: 12 }}>
+        <div style={{ marginTop: 32, textAlign: "center", color: "#475569″, fontSize: 12 }}>
           ProLnk connects DFW homeowners with certified HVAC leak detection pros. © 2026 ProLnk
         </div>
       </div>

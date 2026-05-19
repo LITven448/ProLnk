@@ -10,7 +10,7 @@ const businessTypes = [
 const stats = [
   { icon: '⚡', label: 'EV Charger Permits Filed in DFW (2025)', value: '62,400+' },
   { icon: '🏠', label: 'Homes 30+ Years Old in DFW', value: '1.2M+' },
-  { icon: '🔌', label: 'Avg Panel Upgrade Job Value', value: '$4,200' },
+  { icon: '🔌', label: 'Avg Panel Upgrade Job Value', value: '$4,200′ },
   { icon: '📈', label: 'Annual Electrical Permit Growth DFW', value: '+18%' },
 ];
 
@@ -39,7 +39,7 @@ export default function DFWProLnkElectricalPartnerGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Select Your Business Type</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Select Your Business Type</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {businessTypes.map((b, i) => (
             <div key={i} onClick={() => setSelected(i === selected ? null : i)}

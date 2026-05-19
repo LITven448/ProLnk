@@ -25,7 +25,7 @@ export default function DFWElectricalQuestionsGuide() {
   const toggle = (i: number) => setOpen(open === i ? null : i);
   const check = (i: number) => setChecked(prev => { const n = [...prev]; n[i] = !n[i]; return n; });
   const score = checked.filter(Boolean).length;
-  const level = score >= 12 ? { label: '⚡ Expert', color: '#16a34a' } : score >= 8 ? { label: '👍 Competent', color: '#ca8a04' } : { label: '📚 Learning', color: '#dc2626' };
+  const level = score >= 12 ? { label: '⚡ Expert', color: '#16a34a' } : score >= 8 ? { label: '👍 Competent', color: '#ca8a04′ } : { label: '📚 Learning', color: '#dc2626' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
@@ -48,7 +48,7 @@ export default function DFWElectricalQuestionsGuide() {
           )}
         </div>
         {questions.map((item, i) => (
-          <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642' : '1.5px solid #1e3050' }}>
+          <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642′ : '1.5px solid #1e3050' }}>
             <div style={{ display: 'flex', alignItems: 'center', padding: '14px 16px', cursor: 'pointer', gap: 12 }} onClick={() => toggle(i)}>
               <span onClick={e => { e.stopPropagation(); check(i); }} style={{ fontSize: 20, cursor: 'pointer' }}>{checked[i] ? '✅' : '⬜'}</span>
               <span style={{ flex: 1, fontWeight: 600, fontSize: 15 }}>{i + 1}. {item.q}</span>

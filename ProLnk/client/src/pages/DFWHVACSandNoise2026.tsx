@@ -46,7 +46,7 @@ export default function DFWHVACSandNoise2026() {
               <div key={i}>
                 <button
                   onClick={() => setSelected(selected === i ? null : i)}
-                  style={{ width: '100%', textAlign: 'left', background: selected === i ? '#F5E642' : '#162035', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
+                  style={{ width: '100%', textAlign: 'left', background: selected === i ? '#F5E642′ : '#162035', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
                 >
                   {p.event}
                 </button>

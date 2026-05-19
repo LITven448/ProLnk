@@ -63,21 +63,21 @@ export default function DFWHeatRecoveryVentilatorGuide() {
         </div>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 HRV vs ERV — Find Your DFW Match</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 HRV vs ERV — Find Your DFW Match</h2>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your home's age and tightness:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {ages.map(a => (
-              <button key={a.id} onClick={() => setAge(a.id)} style={{ background: age === a.id ? '#F5E642' : '#1e3a5f', color: age === a.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{a.label}</button>
+              <button key={a.id} onClick={() => setAge(a.id)} style={{ background: age === a.id ? '#F5E642′ : '#1e3a5f', color: age === a.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{a.label}</button>
             ))}
           </div>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your primary DFW climate concern:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {concerns.map(c => (
-              <button key={c.id} onClick={() => setConcern(c.id)} style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{c.label}</button>
+              <button key={c.id} onClick={() => setConcern(c.id)} style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{c.label}</button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Recommendation: {result.unit}</p>
               {result.sizing !== 'N/A' && <p style={{ color: '#e2e8f0', marginBottom: 4 }}>📐 Sizing: <strong>{result.sizing}</strong></p>}
               {result.cost !== 'N/A' && <p style={{ color: '#e2e8f0', marginBottom: 8 }}>💰 DFW installed cost: <strong>{result.cost}</strong></p>}

@@ -63,7 +63,7 @@ export default function DFWRoofInsulationGuide2026() {
           </div>
           <button onClick={getStrategy} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get My Strategy →</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 8 }}>{result.label}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.6 }}>{result.detail}</div>

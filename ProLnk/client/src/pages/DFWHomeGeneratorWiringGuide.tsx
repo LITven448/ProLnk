@@ -24,13 +24,13 @@ const dfwCityPermits: Record<string, string> = {
 
 function getTransferRecommendation(size: string, circuits: string): TransferResult {
   if (size === 'portable' && circuits === 'few') {
-    return { type: 'Manual Transfer Switch (6–10 circuit)', safety: 'Safe — physically disconnects utility', permit: 'Required', cost: '$400 – $900 installed', note: 'Best for portable generators running 6–10 essential circuits. Electrician installs a subpanel with manual switch — you flip circuits to generator manually during outage.', color: '#44BB44' };
+    return { type: 'Manual Transfer Switch (6–10 circuit)', safety: 'Safe — physically disconnects utility', permit: 'Required', cost: '$400 – $900 installed', note: 'Best for portable generators running 6–10 essential circuits. Electrician installs a subpanel with manual switch — you flip circuits to generator manually during outage.', color: '#44BB44′ };
   }
   if (size === 'portable' && circuits === 'many') {
-    return { type: 'Interlock Kit + Main Breaker', safety: 'Safe — utility disconnect enforced by interlock', permit: 'Required — interlock must be listed for your panel', cost: '$200 – $600 installed', note: 'Interlock kit is code-legal in Texas if properly listed for your panel brand. Allows any circuit to run on generator power. Lower cost than full transfer switch but requires careful load management.', color: '#F5E642' };
+    return { type: 'Interlock Kit + Main Breaker', safety: 'Safe — utility disconnect enforced by interlock', permit: 'Required — interlock must be listed for your panel', cost: '$200 – $600 installed', note: 'Interlock kit is code-legal in Texas if properly listed for your panel brand. Allows any circuit to run on generator power. Lower cost than full transfer switch but requires careful load management.', color: '#F5E642′ };
   }
   if (size === 'standby') {
-    return { type: 'Automatic Transfer Switch (ATS)', safety: 'Highest safety — utility locks out automatically', permit: 'Required — also requires gas permit if gas-fueled', cost: '$2,500 – $6,000 installed (transfer switch + wiring)', note: 'Standby generators require ATS for code compliance and practical use. ATS senses utility outage and transfers load within seconds. Whole-home ATS is standard for 20kW+ standby units.', color: '#44BB44' };
+    return { type: 'Automatic Transfer Switch (ATS)', safety: 'Highest safety — utility locks out automatically', permit: 'Required — also requires gas permit if gas-fueled', cost: '$2,500 – $6,000 installed (transfer switch + wiring)', note: 'Standby generators require ATS for code compliance and practical use. ATS senses utility outage and transfers load within seconds. Whole-home ATS is standard for 20kW+ standby units.', color: '#44BB44′ };
   }
   return { type: 'Automatic Transfer Switch recommended', safety: 'Transfer switch is always the safest option', permit: 'Required', cost: '$1,500 – $5,000', note: 'When in doubt, choose a properly installed automatic or manual transfer switch over an interlock kit. Backfeed kills linemen — proper isolation is non-negotiable.', color: '#8899BB' };
 }
@@ -57,14 +57,14 @@ export default function DFWHomeGeneratorWiringGuide() {
           <p style={{ color: '#8899BB', marginTop: 12, fontSize: 16 }}>Transfer switch vs interlock kit, sizing, permits, and installation costs for DFW homeowners</p>
         </div>
 
-        <div style={{ background: '#FF1111', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #FF4444' }}>
+        <div style={{ background: '#FF1111', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #FF4444′ }}>
           <p style={{ color: '#FFFFFF', margin: 0, fontWeight: 700, fontSize: 15 }}>🚨 NEVER plug a generator directly into a wall outlet (backfeed). This kills utility linemen restoring power and is a federal crime. A proper transfer switch is the only safe, legal connection method.</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔄 Transfer Switch vs Interlock Kit</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔒 Transfer Switch</div>
               <ul style={{ color: '#C8D8EE', margin: 0, paddingLeft: 20, lineHeight: 1.8, fontSize: 14 }}>
                 <li>Physically isolates utility from generator</li>
@@ -74,7 +74,7 @@ export default function DFWHomeGeneratorWiringGuide() {
                 <li>Higher cost but cleaner installation</li>
               </ul>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔗 Interlock Kit</div>
               <ul style={{ color: '#C8D8EE', margin: 0, paddingLeft: 20, lineHeight: 1.8, fontSize: 14 }}>
                 <li>Mechanical slide blocks utility + generator breaker from both being on</li>
@@ -87,12 +87,12 @@ export default function DFWHomeGeneratorWiringGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>📏 Sizing the Transfer Switch</h2>
-          <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>Match your transfer switch amperage to your generator's output — not your home's main panel. A 7,500W portable generator outputs ~31A at 240V. A 20kW standby needs a 100A or larger ATS. Essential circuits for DFW outages: HVAC (critical in summer), refrigerator, lights, medical equipment, and garage door.</p>
+          <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>Match your transfer switch amperage to your generator's output — not your home’s main panel. A 7,500W portable generator outputs ~31A at 240V. A 20kW standby needs a 100A or larger ATS. Essential circuits for DFW outages: HVAC (critical in summer), refrigerator, lights, medical equipment, and garage door.</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🧮 Transfer Switch Recommender</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#8899BB', display: 'block', marginBottom: 6 }}>Generator type / size</label>
@@ -119,7 +119,7 @@ export default function DFWHomeGeneratorWiringGuide() {
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 28px', borderRadius: 8, fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get My Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 20, borderRadius: 10, border: `2px solid ${result.color}`, background: '#0A1628' }}>
+            <div style={{ marginTop: 20, padding: 20, borderRadius: 10, border: `2px solid ${result.color}`, background: '#0A1628′ }}>
               <div style={{ color: result.color, fontWeight: 700, fontSize: 18, marginBottom: 8 }}>✅ Recommended: {result.type}</div>
               <div style={{ color: '#C8D8EE', marginBottom: 6 }}>🛡️ Safety: {result.safety}</div>
               <div style={{ color: '#C8D8EE', marginBottom: 6 }}>💰 Cost: {result.cost}</div>

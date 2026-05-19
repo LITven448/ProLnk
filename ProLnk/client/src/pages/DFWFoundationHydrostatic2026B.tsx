@@ -48,7 +48,7 @@ export default function DFWFoundationHydrostatic2026B() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1rem' }}>
             {[['pass', '✅ Test Passed'], ['fail', '🚨 Test Failed'], ['inconclusive', '⚠️ Inconclusive']].map(([val, label]) => (
               <label key={val} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer', background: scenario === val ? '#1E3A5F' : 'transparent', borderRadius: 8, padding: '0.6rem 0.75rem', border: `1px solid ${scenario === val ? '#F5E642' : '#2D4A7A'}` }}>
-                <input type="radio" name="scenario" value={val} checked={scenario === val} onChange={() => { setScenario(val); setGuide(guides[val]); }} style={{ accentColor: '#F5E642' }} />
+                <input type="radio" name="scenario" value={val} checked={scenario === val} onChange={() => { setScenario(val); setGuide(guides[val]); }} style={{ accentColor: '#F5E642′ }} />
                 <span style={{ color: '#E2E8F0', fontWeight: 500 }}>{label}</span>
               </label>
             ))}

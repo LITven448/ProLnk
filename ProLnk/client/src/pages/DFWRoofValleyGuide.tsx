@@ -83,8 +83,8 @@ export default function DFWRoofValleyGuide() {
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: `1px solid ${result.healthColor}` }}>
             <h3 style={{ color: result.healthColor, marginBottom: '1rem' }}>{result.health}</h3>
             <div style={{ display: 'grid', gap: '.75rem' }}>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>MAINTENANCE APPROACH</div><div style={{ color: '#E8EDF5' }}>{result.maintenance}</div></div>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>REPLACEMENT TIMELINE</div><div style={{ color: '#E8EDF5' }}>{result.timeline}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>MAINTENANCE APPROACH</div><div style={{ color: '#E8EDF5′ }}>{result.maintenance}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>REPLACEMENT TIMELINE</div><div style={{ color: '#E8EDF5′ }}>{result.timeline}</div></div>
               <div style={{ color: '#9AAAB8', fontSize: '.9rem', borderTop: '1px solid #1E3A5F', paddingTop: '.75rem' }}>{result.note}</div>
             </div>
           </div>

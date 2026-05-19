@@ -4,7 +4,7 @@ const HOME_SIZES = ['Under 1,500 sqft', '1,500–2,500 sqft', '2,500–4,000 sqf
 const FAMILY_TYPES = ['Single / Couple', 'Family with Kids', 'Multi-generational', 'Work From Home'];
 
 const FEATURES = [
-  { icon: '🌡️', title: 'HVAC Voice Control', desc: 'Critical for DFW — "Alexa, set thermostat to 72" before you arrive home saves $30/month in summer.' },
+  { icon: '🌡️', title: 'HVAC Voice Control', desc: 'Critical for DFW — "Alexa, set thermostat to 72″ before you arrive home saves $30/month in summer.' },
   { icon: '🔔', title: 'Filter Replacement Reminders', desc: 'DFW air quality means filters clog faster. Set monthly reminders tied to your actual HVAC schedule.' },
   { icon: '⚡', title: 'Energy Management', desc: 'Ask "How much energy did I use today?" and get TOU rate alerts during ERCOT peak hours (3–7pm).' },
   { icon: '🛒', title: 'Smart Shopping Lists', desc: 'Add HVAC filters, lawn treatments, and DFW seasonal supplies automatically to your cart.' },
@@ -51,13 +51,13 @@ export default function DFWAIHomeAssistantGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🤖</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW AI Home Assistant Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW AI Home Assistant Guide</h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>How Alexa & Google Home are changing DFW home management</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {FEATURES.map(f => (
-            <div key={f.title} style={{ background: '#0F2240', borderRadius: 10, padding: '1rem', borderTop: '3px solid #F5E642' }}>
+            <div key={f.title} style={{ background: '#0F2240', borderRadius: 10, padding: '1rem', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{f.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.3rem', fontSize: '0.9rem' }}>{f.title}</div>
               <div style={{ color: '#94A3B8', fontSize: '0.82rem' }}>{f.desc}</div>
@@ -72,9 +72,9 @@ export default function DFWAIHomeAssistantGuide() {
             {HOME_SIZES.map(s => (
               <button key={s} onClick={() => setSize(s)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: size === s ? '#F5E642' : '#1E3A5F',
-                background: size === s ? '#F5E642' : 'transparent',
-                color: size === s ? '#0A1628' : '#94A3B8', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
+                borderColor: size === s ? '#F5E642′ : '#1E3A5F',
+                background: size === s ? '#F5E642′ : ’transparent',
+                color: size === s ? '#0A1628′ : '#94A3B8', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{s}</button>
             ))}
           </div>
@@ -83,26 +83,26 @@ export default function DFWAIHomeAssistantGuide() {
             {FAMILY_TYPES.map(f => (
               <button key={f} onClick={() => setFamily(f)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: family === f ? '#F5E642' : '#1E3A5F',
-                background: family === f ? '#F5E642' : 'transparent',
-                color: family === f ? '#0A1628' : '#94A3B8', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
+                borderColor: family === f ? '#F5E642′ : '#1E3A5F',
+                background: family === f ? '#F5E642′ : ’transparent',
+                color: family === f ? '#0A1628′ : '#94A3B8', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{f}</button>
             ))}
           </div>
           <button onClick={() => setShowRecs(true)} disabled={!size || !family} style={{
-            background: size && family ? '#F5E642' : '#1E3A5F', color: '#0A1628',
+            background: size && family ? '#F5E642′ : '#1E3A5F', color: '#0A1628',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700,
             fontSize: '1rem', cursor: size && family ? 'pointer' : 'not-allowed',
           }}>Show My Setup Plan →</button>
         </div>
 
         {showRecs && recs.length > 0 && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your DFW AI Assistant Plan</h3>
             {recs.map((r, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.6rem' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>✓</span>
-                <span style={{ color: '#E2E8F0' }}>{r}</span>
+                <span style={{ color: '#E2E8F0′ }}>{r}</span>
               </div>
             ))}
           </div>

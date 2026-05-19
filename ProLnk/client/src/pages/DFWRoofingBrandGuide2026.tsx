@@ -60,7 +60,7 @@ export default function DFWRoofingBrandGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {Object.keys(priorityGuide).map(p => (
               <button key={p} onClick={() => setPriority(p)}
-                style={{ background: priority === p ? '#F5E642' : '#0A1628', color: priority === p ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: priority === p ? '#F5E642′ : '#0A1628', color: priority === p ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
                 {p}
               </button>
             ))}

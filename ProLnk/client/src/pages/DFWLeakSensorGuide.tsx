@@ -60,7 +60,7 @@ export default function DFWLeakSensorGuide() {
                   <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>{r.reason}</div>
                   <div style={{ color: '#64748B', fontSize: 12 }}>Sensor: {r.sensor} · Insurance credit: {r.insurance}</div>
                 </div>
-                <div style={{ background: r.risk === 'Critical' ? '#DC262625' : r.risk === 'High' ? '#F5E64215' : '#1E3A5F', color: r.risk === 'Critical' ? '#F87171' : r.risk === 'High' ? '#F5E642' : '#94A3B8', fontSize: 11, fontWeight: 600, padding: '4px 10px', borderRadius: 99, whiteSpace: 'nowrap' }}>
+                <div style={{ background: r.risk === 'Critical' ? '#DC262625′ : r.risk === ’High' ? '#F5E64215′ : '#1E3A5F', color: r.risk === ’Critical' ? '#F87171′ : r.risk === ’High' ? '#F5E642′ : '#94A3B8', fontSize: 11, fontWeight: 600, padding: '4px 10px', borderRadius: 99, whiteSpace: ’nowrap' }}>
                   {r.risk}
                 </div>
               </div>
@@ -69,16 +69,16 @@ export default function DFWLeakSensorGuide() {
         </div>
 
         <div style={{ background: '#0D1F35', borderRadius: 12, padding: '28px', border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Build Your Leak Sensor Plan</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Build Your Leak Sensor Plan</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#CBD5E1', fontSize: 13, marginBottom: 6 }}>Home Age (years)</label>
-            <input value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 15" type="number" style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 14, boxSizing: 'border-box' }} />
+            <input value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 15″ type="number" style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 14, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#CBD5E1', fontSize: 13, marginBottom: 10 }}>Select High-Risk Areas in Your Home</label>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {riskAreas.map(r => (
-                <button key={r.area} onClick={() => toggleArea(r.area)} style={{ padding: '10px 14px', borderRadius: 8, border: `2px solid ${selected.includes(r.area) ? '#F5E642' : '#1E3A5F'}`, background: selected.includes(r.area) ? '#F5E64220' : 'transparent', color: selected.includes(r.area) ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 12, textAlign: 'left' }}>
+                <button key={r.area} onClick={() => toggleArea(r.area)} style={{ padding: '10px 14px', borderRadius: 8, border: `2px solid ${selected.includes(r.area) ? '#F5E642' : '#1E3A5F'}`, background: selected.includes(r.area) ? '#F5E64220′ : ’transparent', color: selected.includes(r.area) ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 12, textAlign: 'left' }}>
                   {r.emoji} {r.area}
                 </button>
               ))}

@@ -25,13 +25,13 @@ export default function DFWInsuranceRateReduction2026() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13 }}>💰 DFW RATE REDUCTION</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW Home Insurance Rate Reduction Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>
-          DFW homeowners overpay by an avg <strong style={{ color: '#F5E642' }}>$780/yr</strong> due to missed discounts. Here's how to fix that.
+          DFW homeowners overpay by an avg <strong style={{ color: '#F5E642′ }}>$780/yr</strong> due to missed discounts. Here’s how to fix that.
         </p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Savings Calculator</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Savings Calculator</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ fontSize: 13, color: '#94a3b8' }}>Current Annual Premium: ${basePremium.toLocaleString()}</label>
+            <label style={{ fontSize: 13, color: '#94a3b8′ }}>Current Annual Premium: ${basePremium.toLocaleString()}</label>
             <input type="range" min={1500} max={8000} step={100} value={basePremium}
               onChange={e => setBasePremium(+e.target.value)}
               style={{ width: '100%', accentColor: '#F5E642', marginTop: 6 }} />
@@ -44,7 +44,7 @@ export default function DFWInsuranceRateReduction2026() {
           ].map(f => (
             <label key={f.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, cursor: 'pointer' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <input type="checkbox" checked={f.val} onChange={e => f.set(e.target.checked)} style={{ accentColor: '#F5E642' }} />
+                <input type="checkbox" checked={f.val} onChange={e => f.set(e.target.checked)} style={{ accentColor: '#F5E642′ }} />
                 <span style={{ fontSize: 13 }}>{f.label}</span>
               </div>
               {f.val && <span style={{ color: '#22c55e', fontSize: 13, fontWeight: 700 }}>-${f.saving.toLocaleString()}</span>}
@@ -61,16 +61,16 @@ export default function DFWInsuranceRateReduction2026() {
           </div>
           <div style={{ background: '#1a2f55', borderRadius: 10, padding: 16, marginTop: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
-              <span style={{ color: '#94a3b8' }}>Current premium</span>
+              <span style={{ color: '#94a3b8′ }}>Current premium</span>
               <span>${basePremium.toLocaleString()}/yr</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
-              <span style={{ color: '#94a3b8' }}>Total discount</span>
+              <span style={{ color: '#94a3b8′ }}>Total discount</span>
               <span style={{ color: '#22c55e' }}>{Math.round(totalDiscount * 100)}%</span>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 18, fontWeight: 800, paddingTop: 10, borderTop: '1px solid #2a3f65' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 18, fontWeight: 800, paddingTop: 10, borderTop: '1px solid #2a3f65′ }}>
               <span>New premium</span>
-              <span style={{ color: '#F5E642' }}>${newPremium.toLocaleString()}/yr</span>
+              <span style={{ color: '#F5E642′ }}>${newPremium.toLocaleString()}/yr</span>
             </div>
             {savings > 0 && <div style={{ color: '#22c55e', fontSize: 14, marginTop: 8, textAlign: 'center' }}>You save ${savings.toLocaleString()}/yr 🎉</div>}
           </div>

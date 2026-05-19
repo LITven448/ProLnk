@@ -60,13 +60,13 @@ export default function DFWPoolHeaterGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '3rem' }}>🏊</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0' }}>DFW Pool Heater Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>Gas, heat pump, solar — the right choice for your DFW pool depends on your use pattern and cold snap tolerance.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0′ }}>DFW Pool Heater Guide 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>Gas, heat pump, solar — the right choice for your DFW pool depends on your use pattern and cold snap tolerance.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {heaterTypes.map(h => (
-            <div key={h.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155' }}>
+            <div key={h.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155′ }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '.25rem' }}>{h.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '.95rem' }}>{h.name}</div>
               <div style={{ color: '#22c55e', fontSize: '.75rem', marginBottom: '.25rem' }}>⚡ {h.speed}</div>
@@ -83,7 +83,7 @@ export default function DFWPoolHeaterGuide2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Pool Size:</p>
             <div style={{ display: 'flex', gap: '.5rem' }}>
               {poolSizes.map(p => (
-                <button key={p.id} onClick={() => setPoolSize(p.id)} style={{ flex: 1, background: poolSize === p.id ? '#F5E642' : '#0d2137', color: poolSize === p.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.78rem', fontWeight: poolSize === p.id ? 700 : 400 }}>{p.label}</button>
+                <button key={p.id} onClick={() => setPoolSize(p.id)} style={{ flex: 1, background: poolSize === p.id ? '#F5E642′ : '#0d2137', color: poolSize === p.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.78rem', fontWeight: poolSize === p.id ? 700 : 400 }}>{p.label}</button>
               ))}
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function DFWPoolHeaterGuide2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Use Pattern:</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
               {patterns.map(p => (
-                <button key={p.id} onClick={() => setUsePattern(p.id)} style={{ background: usePattern === p.id ? '#F5E642' : '#0d2137', color: usePattern === p.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.82rem', fontWeight: usePattern === p.id ? 700 : 400 }}>{p.label}</button>
+                <button key={p.id} onClick={() => setUsePattern(p.id)} style={{ background: usePattern === p.id ? '#F5E642′ : '#0d2137', color: usePattern === p.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.82rem', fontWeight: usePattern === p.id ? 700 : 400 }}>{p.label}</button>
               ))}
             </div>
           </div>

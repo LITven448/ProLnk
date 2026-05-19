@@ -58,7 +58,7 @@ export default function DFWProLnkWhyItWorks() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 40 }}>🔗</div>
-          <h1 style={{ color: '#F5E642', fontSize: 30, margin: '8px 0' }}>Why ProLnk Works</h1>
+          <h1 style={{ color: '#F5E642', fontSize: 30, margin: '8px 0′ }}>Why ProLnk Works</h1>
           <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 500, margin: '0 auto' }}>
             Unlike every other platform, ProLnk aligns incentives between homeowners and contractors from the start.
             Select a platform to see the problem — and how ProLnk solves it.
@@ -69,8 +69,8 @@ export default function DFWProLnkWhyItWorks() {
           {PROBLEMS.map(p => (
             <button key={p.id} onClick={() => setActive(active === p.id ? null : p.id)}
               style={{
-                background: active === p.id ? '#F5E642' : '#0f2038',
-                color: active === p.id ? '#0A1628' : '#fff',
+                background: active === p.id ? '#F5E642′ : '#0f2038',
+                color: active === p.id ? '#0A1628′ : '#fff',
                 border: active === p.id ? 'none' : '1px solid #1e3a5f',
                 borderRadius: 12, padding: '14px 10px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'center', transition: 'all 0.2s',
               }}>
@@ -82,11 +82,11 @@ export default function DFWProLnkWhyItWorks() {
 
         {selected && (
           <div style={{ animation: 'fadeIn 0.2s' }}>
-            <div style={{ background: '#1a0a0a', borderRadius: 16, padding: 28, marginBottom: 20, borderLeft: '4px solid #ef4444' }}>
+            <div style={{ background: '#1a0a0a', borderRadius: 16, padding: 28, marginBottom: 20, borderLeft: '4px solid #ef4444′ }}>
               <h2 style={{ color: '#ef4444', marginBottom: 8, fontSize: 20 }}>The Problem with {selected.platform}</h2>
               <p style={{ color: '#fca5a5', fontWeight: 600, fontSize: 16, marginBottom: 12 }}>{selected.problem}</p>
               <p style={{ color: '#cbd5e1', lineHeight: 1.6, marginBottom: 12 }}>{selected.consequence}</p>
-              <div style={{ background: '#2a0a0a', borderRadius: 8, padding: '12px 16px', fontSize: 13, color: '#f97316' }}>
+              <div style={{ background: '#2a0a0a', borderRadius: 8, padding: '12px 16px', fontSize: 13, color: '#f97316′ }}>
                 📊 {selected.proofPoint}
               </div>
             </div>

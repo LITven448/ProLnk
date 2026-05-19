@@ -89,7 +89,7 @@ export default function DFWHomeWarrantyClaimGuide() {
           <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 24 }}>The Claim Process — Step by Step</h2>
           {claimProcess.map((s, i) => (
             <div key={s.step} style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'flex-start' }}>
-              <div style={{ background: s.warning ? '#FFF3E0' : '#0A1628', color: s.warning ? '#E65100' : '#F5E642', borderRadius: 50, width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, flexShrink: 0 }}>{s.step}</div>
+              <div style={{ background: s.warning ? '#FFF3E0′ : '#0A1628', color: s.warning ? '#E65100' : '#F5E642', borderRadius: 50, width: 36, height: 36, display: ’flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, flexShrink: 0 }}>{s.step}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ color: '#0A1628', fontWeight: 700, marginBottom: 4 }}>{s.title}</div>
                 <div style={{ color: '#4A5568', fontSize: 14, lineHeight: 1.7 }}>{s.detail}</div>
@@ -120,13 +120,13 @@ export default function DFWHomeWarrantyClaimGuide() {
               </select>
             </div>
           </div>
-          <button onClick={calculate} disabled={!symptom} style={{ background: symptom ? '#0A1628' : '#CBD5E0', color: symptom ? '#F5E642' : '#718096', border: 'none', borderRadius: 10, padding: '14px 32px', fontWeight: 800, fontSize: 16, cursor: symptom ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 24 }}>Check Coverage & Process →</button>
+          <button onClick={calculate} disabled={!symptom} style={{ background: symptom ? '#0A1628′ : '#CBD5E0', color: symptom ? '#F5E642' : '#718096', border: ’none', borderRadius: 10, padding: '14px 32px', fontWeight: 800, fontSize: 16, cursor: symptom ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 24 }}>Check Coverage & Process →</button>
           {result && (
             <div style={{ background: '#F8F9FA', borderRadius: 12, padding: 24, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
               <div><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Coverage Likelihood</div><div style={{ color: '#0A1628', fontWeight: 800, fontSize: 16 }}>{result.likelihood}</div></div>
               <div><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Expected Wait Time</div><div style={{ color: '#0A1628', fontWeight: 700 }}>{result.wait}</div></div>
-              <div style={{ gridColumn: '1 / -1' }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Process Summary</div><div style={{ color: '#1A2640', fontSize: 14 }}>{result.process}</div></div>
-              <div style={{ gridColumn: '1 / -1', background: '#FFFFFF', borderRadius: 10, padding: 16, borderLeft: '3px solid #0A1628' }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Pro Tip</div><div style={{ color: '#1A2640', fontSize: 14, lineHeight: 1.7 }}>{result.tip}</div></div>
+              <div style={{ gridColumn: '1 / -1′ }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Process Summary</div><div style={{ color: '#1A2640', fontSize: 14 }}>{result.process}</div></div>
+              <div style={{ gridColumn: '1 / -1', background: '#FFFFFF', borderRadius: 10, padding: 16, borderLeft: '3px solid #0A1628′ }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Pro Tip</div><div style={{ color: '#1A2640', fontSize: 14, lineHeight: 1.7 }}>{result.tip}</div></div>
             </div>
           )}
         </div>
@@ -134,7 +134,7 @@ export default function DFWHomeWarrantyClaimGuide() {
         <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, marginBottom: 40, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>How to Escalate a Denied Claim</h2>
           {escalationSteps.map((step, i) => (
-            <div key={i} style={{ display: 'flex', gap: 12, padding: '14px 0', borderBottom: i < escalationSteps.length - 1 ? '1px solid #E2E8F0' : 'none', alignItems: 'flex-start' }}>
+            <div key={i} style={{ display: 'flex', gap: 12, padding: '14px 0', borderBottom: i < escalationSteps.length - 1 ? '1px solid #E2E8F0′ : ’none', alignItems: 'flex-start' }}>
               <div style={{ background: '#0A1628', color: '#F5E642', borderRadius: 50, width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
               <div style={{ color: '#1A2640', fontSize: 15, lineHeight: 1.6 }}>{step}</div>
             </div>

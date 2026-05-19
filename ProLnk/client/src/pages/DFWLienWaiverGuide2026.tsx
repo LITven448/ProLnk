@@ -51,7 +51,7 @@ export default function DFWLienWaiverGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 24 }}>
           {stages.map(s => (
             <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-              style={{ background: '#0f2340', border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', borderRadius: 12, padding: '16px 20px', cursor: 'pointer', color: '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 14 }}>
+              style={{ background: '#0f2340', border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f', borderRadius: 12, padding: '16px 20px', cursor: ’pointer', color: '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 14 }}>
               <span style={{ fontSize: 28 }}>{s.icon}</span>
               <div>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{s.label}</div>
@@ -72,7 +72,7 @@ export default function DFWLienWaiverGuide2026() {
         )}
 
         <div style={{ background: '#0f2340', border: '1px solid #1e3a5f', borderRadius: 16, padding: 20 }}>
-          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642' }}>🔒 ProLnk Lien Protection</p>
+          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642′ }}>🔒 ProLnk Lien Protection</p>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>ProLnk automatically collects lien waivers from contractors and their subcontractors at every payment milestone. All waivers are stored permanently in your Home Health Vault and available if you ever sell your property.</p>
         </div>
       </div>

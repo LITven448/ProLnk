@@ -62,12 +62,12 @@ function ReferHomeownerQuickSend() {
 
   return (
     <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm">
-      <div className="flex items-center gap-2 mb-3">
-        <Phone size={16} className="text-emerald-600" />
-        <p className="text-sm font-semibold text-gray-900">Refer a Homeowner</p>
+      <div className="flex items-center gap-2 mb-3″>
+        <Phone size={16} className="text-emerald-600″ />
+        <p className="text-sm font-semibold text-gray-900″>Refer a Homeowner</p>
       </div>
-      <p className="text-xs text-gray-500 mb-3">Send a quick SMS invite to a homeowner you know. They'll get a link to TrustyPro.</p>
-      <div className="flex gap-2">
+      <p className="text-xs text-gray-500 mb-3″>Send a quick SMS invite to a homeowner you know. They'll get a link to TrustyPro.</p>
+      <div className="flex gap-2″>
         <Input
           placeholder="Name"
           value={name}
@@ -84,7 +84,7 @@ function ReferHomeownerQuickSend() {
           size="sm"
           disabled={!name || phone.replace(/\D/g, "").length < 10 || referMutation.isPending}
           onClick={() => referMutation.mutate({ homeownerName: name, homeownerPhone: phone })}
-          className="gap-1 shrink-0"
+          className="gap-1 shrink-0″
         >
           <Send size={14} /> Send
         </Button>
@@ -132,14 +132,14 @@ export default function ReferralLink() {
       id: "linkedin",
       label: "LinkedIn",
       icon: <Linkedin size={13} />,
-      color: "#0077b5",
+      color: "#0077b5″,
       text: linkedInText + " " + utmLinkedIn,
     },
     {
       id: "twitter",
       label: "X / Twitter",
       icon: <Twitter size={13} />,
-      color: "#000000",
+      color: "#000000″,
       text: twitterText + " " + utmTwitter,
     },
     {
@@ -153,7 +153,7 @@ export default function ReferralLink() {
       id: "email",
       label: "Email",
       icon: <Mail size={13} />,
-      color: "#3b82f6",
+      color: "#3b82f6″,
       text: `Subject: ${emailSubject}\n\n${emailBody}`,
     },
   ];
@@ -191,35 +191,35 @@ export default function ReferralLink() {
 
   return (
     <PartnerLayout>
-      <div className="space-y-6">
+      <div className="space-y-6″>
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3″>
             <div className="w-10 h-10 rounded-xl bg-[#F5E642]/10 flex items-center justify-center">
               <Link2 className="w-5 h-5 text-[#0A1628]" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Referral Hub</h1>
-              <p className="text-sm text-gray-500">Invite home service pros -- earn $25 per approved partner</p>
+              <h1 className="text-2xl font-bold text-gray-900″>Referral Hub</h1>
+              <p className="text-sm text-gray-500″>Invite home service pros -- earn $25 per approved partner</p>
             </div>
           </div>
-          <Badge className="bg-[#0A1628]/10 text-[#0A1628] border-0 gap-1">
+          <Badge className="bg-[#0A1628]/10 text-[#0A1628] border-0 gap-1″>
             <Gift size={12} /> $25 per referral
           </Badge>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-4″>
           {[
-            { label: "Link Clicks", value: stats?.clicks ?? 0, icon: <TrendingUp className="w-4 h-4 text-blue-600" />, bg: "bg-blue-50", color: "text-blue-700" },
-            { label: "Partners Joined", value: stats?.conversions ?? 0, icon: <Users className="w-4 h-4 text-[#0A1628]" />, bg: "bg-[#F5E642]/10", color: "text-[#0A1628]" },
-            { label: "Recruited (DB)", value: partner?.partnersReferred ?? 0, icon: <Users className="w-4 h-4 text-purple-600" />, bg: "bg-purple-50", color: "text-purple-700" },
-            { label: "Bonus Earned", value: `$${stats?.bonusEarned ?? 0}`, icon: <DollarSign className="w-4 h-4 text-green-600" />, bg: "bg-green-50", color: "text-green-700" },
+            { label: "Link Clicks", value: stats?.clicks ?? 0, icon: <TrendingUp className="w-4 h-4 text-blue-600″ />, bg: "bg-blue-50", color: "text-blue-700" },
+            { label: "Partners Joined", value: stats?.conversions ?? 0, icon: <Users className="w-4 h-4 text-[#0A1628]" />, bg: "bg-[#F5E642]/10″, color: "text-[#0A1628]" },
+            { label: "Recruited (DB)", value: partner?.partnersReferred ?? 0, icon: <Users className="w-4 h-4 text-purple-600″ />, bg: "bg-purple-50", color: "text-purple-700" },
+            { label: "Bonus Earned", value: `$${stats?.bonusEarned ?? 0}`, icon: <DollarSign className="w-4 h-4 text-green-600″ />, bg: "bg-green-50", color: "text-green-700" },
           ].map((stat) => (
             <div key={stat.label} className={`${stat.bg} rounded-xl p-4`}>
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-2 mb-1″>
                 {stat.icon}
-                <span className="text-xs text-gray-500">{stat.label}</span>
+                <span className="text-xs text-gray-500″>{stat.label}</span>
               </div>
               <p className={`text-2xl font-bold ${stat.color}`}>{isLoading ? "--" : stat.value}</p>
             </div>
@@ -229,36 +229,36 @@ export default function ReferralLink() {
         {/* Click count banner */}
         {(stats?.clicks ?? 0) > 0 && (
           <div
-            className="flex items-center gap-3 rounded-xl px-5 py-3"
+            className="flex items-center gap-3 rounded-xl px-5 py-3″
             style={{ background: "linear-gradient(90deg,rgba(59,130,246,0.08),rgba(59,130,246,0.03))", border: "1px solid rgba(59,130,246,0.2)" }}
           >
-            <MousePointerClick className="w-4 h-4 text-blue-500 shrink-0" />
-            <p className="text-sm text-gray-700">
-              <span className="font-bold text-blue-700">{(stats?.clicks ?? 0).toLocaleString()} people</span>
+            <MousePointerClick className="w-4 h-4 text-blue-500 shrink-0″ />
+            <p className="text-sm text-gray-700″>
+              <span className="font-bold text-blue-700″>{(stats?.clicks ?? 0).toLocaleString()} people</span>
               {" "}have clicked your referral link so far.
               {(stats?.conversions ?? 0) > 0 && (
-                <> <span className="font-semibold text-green-700">{stats?.conversions} joined.</span></>
+                <> <span className="font-semibold text-green-700″>{stats?.conversions} joined.</span></>
               )}
             </p>
           </div>
         )}
 
         {/* Link card */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
-          <div className="flex items-center justify-between mb-3">
-            <p className="text-sm font-semibold text-gray-900">Your Unique Referral Link</p>
+        <div className="bg-white rounded-xl border border-gray-200 p-5″>
+          <div className="flex items-center justify-between mb-3″>
+            <p className="text-sm font-semibold text-gray-900″>Your Unique Referral Link</p>
             <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full font-mono">{referralCode}</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex-1 bg-gray-50 rounded-xl px-4 py-3 font-mono text-sm text-gray-700 truncate border border-gray-200">
+          <div className="flex items-center gap-2″>
+            <div className="flex-1 bg-gray-50 rounded-xl px-4 py-3 font-mono text-sm text-gray-700 truncate border border-gray-200″>
               {isLoading ? "Loading..." : referralUrl}
             </div>
             <button
               onClick={copyLink}
               className="flex items-center gap-2 px-4 py-3 rounded-xl text-white text-sm font-medium flex-shrink-0 transition-all"
-              style={{ backgroundColor: copied ? "#10b981" : "#0A1628" }}
+              style={{ backgroundColor: copied ? "#10b981″ : "#0A1628" }}
             >
-              {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copied ? <CheckCircle className="w-4 h-4″ /> : <Copy className="w-4 h-4" />}
               {copied ? "Copied!" : "Copy"}
             </button>
           </div>
@@ -267,15 +267,15 @@ export default function ReferralLink() {
         {/* Share tabs */}
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
           {/* Tab bar */}
-          <div className="flex border-b border-gray-100">
+          <div className="flex border-b border-gray-100″>
             {TABS.map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-1 flex items-center justify-center gap-1.5 py-3 text-sm font-medium transition-colors ${
                   activeTab === tab.id
-                    ? "text-[#0A1628] border-b-2 border-[#0A1628] bg-[#F5E642]/10/40"
-                    : "text-gray-500 hover:text-gray-700"
+                    ? "text-[#0A1628] border-b-2 border-[#0A1628] bg-[#F5E642]/10/40″
+                    : "text-gray-500 hover:text-gray-700″
                 }`}
               >
                 {tab.icon} {tab.label}
@@ -283,52 +283,52 @@ export default function ReferralLink() {
             ))}
           </div>
 
-          <div className="p-5">
+          <div className="p-5″>
             {/* Social Media Tab */}
             {activeTab === "social" && (
-              <div className="space-y-3">
-                <p className="text-xs text-gray-500 mb-4">Share on social media to reach your professional network</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="space-y-3″>
+                <p className="text-xs text-gray-500 mb-4″>Share on social media to reach your professional network</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3″>
                   <button
                     onClick={() => shareToLinkedIn(utmLinkedIn, linkedInText)}
                     className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center shrink-0″>
                       <Linkedin className="w-4 h-4 text-white" />
                     </div>
                     <div className="text-left">
-                      <p className="text-sm font-medium text-gray-900 group-hover:text-blue-700">LinkedIn</p>
-                      <p className="text-xs text-gray-400">Professional network</p>
+                      <p className="text-sm font-medium text-gray-900 group-hover:text-blue-700″>LinkedIn</p>
+                      <p className="text-xs text-gray-400″>Professional network</p>
                     </div>
-                    <ExternalLink size={12} className="ml-auto text-gray-300 group-hover:text-blue-400" />
+                    <ExternalLink size={12} className="ml-auto text-gray-300 group-hover:text-blue-400″ />
                   </button>
 
                   <button
                     onClick={() => shareToTwitter(utmTwitter, twitterText)}
                     className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-gray-400 hover:bg-gray-50 transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-black flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-black flex items-center justify-center shrink-0″>
                       <Twitter className="w-4 h-4 text-white" />
                     </div>
                     <div className="text-left">
-                      <p className="text-sm font-medium text-gray-900 group-hover:text-gray-700">X / Twitter</p>
-                      <p className="text-xs text-gray-400">Reach contractors</p>
+                      <p className="text-sm font-medium text-gray-900 group-hover:text-gray-700″>X / Twitter</p>
+                      <p className="text-xs text-gray-400″>Reach contractors</p>
                     </div>
-                    <ExternalLink size={12} className="ml-auto text-gray-300 group-hover:text-gray-400" />
+                    <ExternalLink size={12} className="ml-auto text-gray-300 group-hover:text-gray-400″ />
                   </button>
 
                   <button
                     onClick={() => shareToFacebook(utmFacebook)}
                     className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-blue-500 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-blue-500 flex items-center justify-center shrink-0″>
                       <Facebook className="w-4 h-4 text-white" />
                     </div>
                     <div className="text-left">
-                      <p className="text-sm font-medium text-gray-900 group-hover:text-blue-700">Facebook</p>
-                      <p className="text-xs text-gray-400">Local groups</p>
+                      <p className="text-sm font-medium text-gray-900 group-hover:text-blue-700″>Facebook</p>
+                      <p className="text-xs text-gray-400″>Local groups</p>
                     </div>
-                    <ExternalLink size={12} className="ml-auto text-gray-300 group-hover:text-blue-400" />
+                    <ExternalLink size={12} className="ml-auto text-gray-300 group-hover:text-blue-400″ />
                   </button>
                 </div>
 
@@ -337,7 +337,7 @@ export default function ReferralLink() {
                     onClick={shareNative}
                     className="mt-2 w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 text-sm text-gray-600 hover:bg-gray-50 transition-colors"
                   >
-                    <Share2 className="w-4 h-4" /> More sharing options...
+                    <Share2 className="w-4 h-4″ /> More sharing options...
                   </button>
                 )}
               </div>
@@ -345,43 +345,43 @@ export default function ReferralLink() {
 
             {/* Text / Email Tab */}
             {activeTab === "message" && (
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-4″>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3″>
                   <a
                     href={`sms:?body=${encodeURIComponent(smsMessage)}`}
                     className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-green-500 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-green-500 flex items-center justify-center shrink-0″>
                       <MessageSquare className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 group-hover:text-green-700">Text Message</p>
-                      <p className="text-xs text-gray-400">Opens Messages app</p>
+                      <p className="text-sm font-medium text-gray-900 group-hover:text-green-700″>Text Message</p>
+                      <p className="text-xs text-gray-400″>Opens Messages app</p>
                     </div>
                   </a>
                   <a
                     href={`mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`}
                     className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-blue-500 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-blue-500 flex items-center justify-center shrink-0″>
                       <Mail className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 group-hover:text-blue-700">Email</p>
-                      <p className="text-xs text-gray-400">Opens Mail app</p>
+                      <p className="text-sm font-medium text-gray-900 group-hover:text-blue-700″>Email</p>
+                      <p className="text-xs text-gray-400″>Opens Mail app</p>
                     </div>
                   </a>
                 </div>
 
                 {/* Pre-written message */}
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-xs font-semibold text-gray-700">Pre-Written Message</p>
-                    <button onClick={copyMessage} className="text-xs text-[#0A1628] hover:text-[#0A1628] font-medium flex items-center gap-1">
+                  <div className="flex items-center justify-between mb-2″>
+                    <p className="text-xs font-semibold text-gray-700″>Pre-Written Message</p>
+                    <button onClick={copyMessage} className="text-xs text-[#0A1628] hover:text-[#0A1628] font-medium flex items-center gap-1″>
                       {copiedMsg ? <><CheckCircle size={12} /> Copied!</> : <><Copy size={12} /> Copy</>}
                     </button>
                   </div>
-                  <div className="bg-gray-50 rounded-xl p-4 text-sm text-gray-700 leading-relaxed border border-gray-100">
+                  <div className="bg-gray-50 rounded-xl p-4 text-sm text-gray-700 leading-relaxed border border-gray-100″>
                     {smsMessage}
                   </div>
                 </div>
@@ -390,26 +390,26 @@ export default function ReferralLink() {
 
             {/* QR Code Tab */}
             {activeTab === "qr" && (
-              <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-4″>
                 <p className="text-xs text-gray-500 text-center">Print or display this QR code on your truck, business card, or job site</p>
                 <div className="bg-white border-2 border-gray-100 rounded-2xl p-6 flex flex-col items-center gap-3 shadow-sm">
                   <QRCodeSVG
                     ref={qrRef}
                     value={utmQr}
                     size={180}
-                    fgColor="#0A1628"
+                    fgColor="#0A1628″
                     bgColor="#ffffff"
                     level="H"
                     includeMargin={false}
                   />
                   <p className="text-xs text-gray-400 font-mono">{referralCode}</p>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3″>
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => downloadQR(qrRef, `prolnk-qr-${referralCode}.png`)}
-                    className="gap-1.5"
+                    className="gap-1.5″
                   >
                     <Download size={14} /> Download PNG
                   </Button>
@@ -417,7 +417,7 @@ export default function ReferralLink() {
                     variant="outline"
                     size="sm"
                     onClick={copyLink}
-                    className="gap-1.5"
+                    className="gap-1.5″
                   >
                     {copied ? <><CheckCircle size={14} /> Copied!</> : <><Copy size={14} /> Copy Link</>}
                   </Button>
@@ -436,24 +436,24 @@ export default function ReferralLink() {
             onClick={() => setShowPresets(v => !v)}
             className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2″>
               <Pencil size={15} className="text-[#0A1628]" />
-              <p className="text-sm font-semibold text-gray-900">Customize Your Message</p>
+              <p className="text-sm font-semibold text-gray-900″>Customize Your Message</p>
               <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">4 presets</span>
             </div>
-            {showPresets ? <ChevronUp size={15} className="text-gray-400" /> : <ChevronDown size={15} className="text-gray-400" />}
+            {showPresets ? <ChevronUp size={15} className="text-gray-400″ /> : <ChevronDown size={15} className="text-gray-400" />}
           </button>
 
           {showPresets && (
-            <div className="px-5 pb-5 space-y-3">
-              <p className="text-xs text-gray-500">Copy a channel-specific message with your link already embedded. Paste directly into the platform.</p>
+            <div className="px-5 pb-5 space-y-3″>
+              <p className="text-xs text-gray-500″>Copy a channel-specific message with your link already embedded. Paste directly into the platform.</p>
               {messagePresets.map(preset => (
                 <div key={preset.id} className="rounded-xl border border-gray-100 overflow-hidden">
                   <div
-                    className="flex items-center justify-between px-4 py-2"
+                    className="flex items-center justify-between px-4 py-2″
                     style={{ background: `${preset.color}0d` }}
                   >
-                    <div className="flex items-center gap-2" style={{ color: preset.color }}>
+                    <div className="flex items-center gap-2″ style={{ color: preset.color }}>
                       {preset.icon}
                       <span className="text-xs font-semibold">{preset.label}</span>
                     </div>
@@ -461,15 +461,15 @@ export default function ReferralLink() {
                       onClick={() => copyPreset(preset.id, preset.text)}
                       className="flex items-center gap-1 text-xs font-medium px-3 py-1 rounded-full transition-all"
                       style={{
-                        background: copiedPreset === preset.id ? "#10b98122" : `${preset.color}18`,
-                        color: copiedPreset === preset.id ? "#10b981" : preset.color,
+                        background: copiedPreset === preset.id ? "#10b98122″ : `${preset.color}18`,
+                        color: copiedPreset === preset.id ? "#10b981″ : preset.color,
                       }}
                     >
                       {copiedPreset === preset.id ? <><CheckCircle size={11} /> Copied!</> : <><Copy size={11} /> Copy</>}
                     </button>
                   </div>
-                  <div className="px-4 py-3 bg-gray-50">
-                    <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">{preset.text}</p>
+                  <div className="px-4 py-3 bg-gray-50″>
+                    <p className="text-xs text-gray-600 leading-relaxed line-clamp-3″>{preset.text}</p>
                   </div>
                 </div>
               ))}
@@ -479,21 +479,21 @@ export default function ReferralLink() {
 
         {/* Create a landing page — coming soon */}
         <div
-          className="rounded-xl p-5 flex items-start gap-4"
+          className="rounded-xl p-5 flex items-start gap-4″
           style={{ background: "linear-gradient(135deg,rgba(245,230,66,0.06),rgba(245,230,66,0.02))", border: "1px solid rgba(245,230,66,0.2)" }}
         >
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0″
             style={{ background: "rgba(245,230,66,0.12)" }}
           >
-            <Globe size={18} style={{ color: "#F5E642" }} />
+            <Globe size={18} style={{ color: "#F5E642″ }} />
           </div>
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-1">
-              <p className="text-sm font-semibold text-gray-900">Create a Personal Landing Page</p>
+          <div className="flex-1″>
+            <div className="flex items-center gap-2 mb-1″>
+              <p className="text-sm font-semibold text-gray-900″>Create a Personal Landing Page</p>
               <span
                 className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                style={{ background: "rgba(245,230,66,0.2)", color: "#7a6800" }}
+                style={{ background: "rgba(245,230,66,0.2)", color: "#7a6800″ }}
               >
                 Coming Soon
               </span>
@@ -508,20 +508,20 @@ export default function ReferralLink() {
         <ReferHomeownerQuickSend />
 
         {/* How it works */}
-        <div className="bg-[#F5E642]/10 rounded-xl p-5 border border-teal-100">
-          <div className="flex items-center gap-2 mb-3">
+        <div className="bg-[#F5E642]/10 rounded-xl p-5 border border-teal-100″>
+          <div className="flex items-center gap-2 mb-3″>
             <Sparkles size={16} className="text-[#0A1628]" />
-            <p className="text-sm font-semibold text-teal-800">How Referral Bonuses Work</p>
+            <p className="text-sm font-semibold text-teal-800″>How Referral Bonuses Work</p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2″>
             {[
               "Share your unique link with any home service pro in DFW",
               "They apply using your link -- you get credit for the referral",
               "Once they're approved and log their first job, you earn a $25 bonus",
               "No limit -- refer as many partners as you want",
             ].map((step, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#0A1628] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+              <div key={i} className="flex items-start gap-2″>
+                <span className="w-5 h-5 rounded-full bg-[#0A1628] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5″>
                   {i + 1}
                 </span>
                 <p className="text-xs text-[#0A1628]">{step}</p>

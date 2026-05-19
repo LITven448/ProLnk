@@ -38,10 +38,10 @@ export default function DFWInternetProviderGuide() {
             <div key={p.name} style={{ background: '#0f2040', borderRadius: 10, padding: '1rem', border: '1px solid #1e3a5f' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
                 <span style={{ fontSize: '1.2rem' }}>{p.icon}</span>
-                <strong style={{ color: '#F5E642' }}>{p.name}</strong>
+                <strong style={{ color: '#F5E642′ }}>{p.name}</strong>
                 <span style={{ background: '#1e3a5f', color: '#94a3b8', fontSize: '0.7rem', padding: '0.1rem 0.4rem', borderRadius: 4 }}>{p.tag}</span>
               </div>
-              <p style={{ color: '#cbd5e1', fontSize: '0.9rem', margin: '0.25rem 0' }}>{p.desc}</p>
+              <p style={{ color: '#cbd5e1', fontSize: '0.9rem', margin: '0.25rem 0′ }}>{p.desc}</p>
               <div style={{ color: '#64748b', fontSize: '0.8rem' }}>📍 {p.availability}</div>
             </div>
           ))}
@@ -62,7 +62,7 @@ export default function DFWInternetProviderGuide() {
             ))}
           </div>
         </div>
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>🔍 Get Your Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             <div>
@@ -81,11 +81,11 @@ export default function DFWInternetProviderGuide() {
             </div>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>✅ {rec.provider}</div>
               <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '0.5rem' }}>
-                <div><span style={{ color: '#64748b', fontSize: '0.8rem' }}>Speed</span><br /><strong style={{ color: '#e2e8f0' }}>{rec.speed}</strong></div>
-                <div><span style={{ color: '#64748b', fontSize: '0.8rem' }}>Est. Cost</span><br /><strong style={{ color: '#e2e8f0' }}>{rec.cost}</strong></div>
+                <div><span style={{ color: '#64748b', fontSize: '0.8rem' }}>Speed</span><br /><strong style={{ color: '#e2e8f0′ }}>{rec.speed}</strong></div>
+                <div><span style={{ color: '#64748b', fontSize: '0.8rem' }}>Est. Cost</span><br /><strong style={{ color: '#e2e8f0′ }}>{rec.cost}</strong></div>
               </div>
               <div style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{rec.note}</div>
             </div>

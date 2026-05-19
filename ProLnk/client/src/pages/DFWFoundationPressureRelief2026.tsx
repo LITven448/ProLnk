@@ -26,7 +26,7 @@ export default function DFWFoundationPressureRelief2026() {
           💧 Foundation Hydrostatic Pressure Guide
         </h1>
         <p style={{ color: '#9BAEC8', marginBottom: '28px', lineHeight: 1.6 }}>
-          DFW spring rains dump <strong style={{ color: '#F5E642' }}>5–8 inches in 48 hours</strong> — and DFW's expansive clay soil doesn't drain, it holds. Water pressure against foundation walls is a primary cause of pier & beam damage and slab heave in North Texas.
+          DFW spring rains dump <strong style={{ color: '#F5E642′ }}>5–8 inches in 48 hours</strong> — and DFW’s expansive clay soil doesn’t drain, it holds. Water pressure against foundation walls is a primary cause of pier & beam damage and slab heave in North Texas.
         </p>
 
         {[
@@ -35,14 +35,14 @@ export default function DFWFoundationPressureRelief2026() {
           { icon: '💧', title: 'Weeping Walls — Warning Sign', desc: 'Water seeping through foundation walls (common in older DFW pier & beam homes with brick perimeter) indicates hydrostatic pressure exceeding the wall’s resistance capacity.' },
           { icon: '🔄', title: 'Interior Drainage — Last Resort', desc: 'Interior drainage channels manage water after it enters — they don’t stop hydrostatic pressure. Always exhaust exterior grading and drain options first.' },
         ].map((item) => (
-          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>
+          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>{item.icon} {item.title}</div>
             <div style={{ color: '#9BAEC8', fontSize: '14px' }}>{item.desc}</div>
           </div>
         ))}
 
         <div style={{ backgroundColor: '#111D35', borderRadius: '12px', padding: '24px', marginTop: '28px' }}>
-          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>💧 Water Pressure Symptom → Solution Guide</div>
+          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>💧 Water Pressure Symptom → Solution Guide</div>
           <select
             value={symptom}
             onChange={(e) => { setSymptom(e.target.value); setResult(''); }}

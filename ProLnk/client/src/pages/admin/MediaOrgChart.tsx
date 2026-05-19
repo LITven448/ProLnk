@@ -67,7 +67,7 @@ const ORG: OrgNode = {
       role: "Media Director",
       initials: "MD",
       isAI: true,
-      color: "#f97316",
+      color: "#f97316″,
       reports: [
         { name: "AI Agent", role: "Video Producer", initials: "VP", isAI: true, color: "#fb923c" },
         { name: "AI Agent", role: "Podcast Editor", initials: "PE", isAI: true, color: "#fb923c" },
@@ -79,7 +79,7 @@ const ORG: OrgNode = {
       role: "Ad Sales Lead",
       initials: "AS",
       isAI: true,
-      color: "#3b82f6",
+      color: "#3b82f6″,
       reports: [
         { name: "AI Agent", role: "Advertiser Outreach", initials: "AO", isAI: true, color: "#60a5fa" },
         { name: "TBD", role: "Brand Partnerships", initials: "BP", isAI: false, color: "#60a5fa" },
@@ -91,12 +91,12 @@ const ORG: OrgNode = {
       role: "Content Lead",
       initials: "CL",
       isAI: true,
-      color: "#ec4899",
+      color: "#ec4899″,
       reports: [
-        { name: "AI Agent", role: "Blog Writer", initials: "BW", isAI: true, color: "#f472b6" },
-        { name: "TBD", role: "Graphic Designer", initials: "GD", isAI: false, color: "#f472b6" },
-        { name: "AI Agent", role: "SEO Optimizer", initials: "SO", isAI: true, color: "#f472b6" },
-        { name: "AI Agent", role: "Email Marketer", initials: "EM", isAI: true, color: "#f472b6" },
+        { name: "AI Agent", role: "Blog Writer", initials: "BW", isAI: true, color: "#f472b6″ },
+        { name: "TBD", role: "Graphic Designer", initials: "GD", isAI: false, color: "#f472b6″ },
+        { name: "AI Agent", role: "SEO Optimizer", initials: "SO", isAI: true, color: "#f472b6″ },
+        { name: "AI Agent", role: "Email Marketer", initials: "EM", isAI: true, color: "#f472b6″ },
       ],
     },
   ],
@@ -138,7 +138,7 @@ function AvatarCircle({ initials, color, isAI }: { initials: string; color: stri
             width: 16,
             height: 16,
             borderRadius: "50%",
-            background: "#0d9488",
+            background: "#0d9488″,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -177,8 +177,8 @@ function OrgCard({ node, isRoot = false }: { node: OrgNode; isRoot?: boolean }) 
               alignItems: "center",
               gap: 3,
               marginTop: 4,
-              background: "#0d948820",
-              color: "#0d9488",
+              background: "#0d948820″,
+              color: "#0d9488″,
               fontSize: 10,
               fontWeight: 700,
               fontFamily: FONT,
@@ -251,9 +251,9 @@ export default function MediaOrgChart() {
         {/* Team Stats Row */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 28 }}>
           {[
-            { label: "Total Roles", value: "12", icon: User, gradient: BADGE_GRADIENTS.blue },
-            { label: "AI-Powered", value: "8", icon: Bot, gradient: BADGE_GRADIENTS.cyan },
-            { label: "Human Roles", value: "4", icon: User, gradient: BADGE_GRADIENTS.green },
+            { label: "Total Roles", value: "12″, icon: User, gradient: BADGE_GRADIENTS.blue },
+            { label: "AI-Powered", value: "8″, icon: Bot, gradient: BADGE_GRADIENTS.cyan },
+            { label: "Human Roles", value: "4″, icon: User, gradient: BADGE_GRADIENTS.green },
             { label: "Monthly Payroll", value: "$42K", icon: TrendingUp, gradient: BADGE_GRADIENTS.orange },
           ].map(({ label, value, icon: Icon, gradient }) => (
             <div key={label} style={{ ...CARD, paddingTop: 28, position: "relative" }}>
@@ -311,7 +311,7 @@ export default function MediaOrgChart() {
             <div style={{ ...LABEL, marginBottom: 16 }}>Headcount Growth (6 months)</div>
             <ResponsiveContainer width="100%" height={180}>
               <BarChart data={headcountTrend} barSize={28}>
-                <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
                 <XAxis dataKey="month" tick={axisStyle} axisLine={false} tickLine={false} />
                 <YAxis tick={axisStyle} axisLine={false} tickLine={false} />
                 <Tooltip contentStyle={tooltipStyle} cursor={{ fill: `${T.accent}11` }} />
@@ -365,8 +365,8 @@ export default function MediaOrgChart() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <span
                       style={{
-                        background: pos.type === "Human" ? "#1A73E822" : "#0d948822",
-                        color: pos.type === "Human" ? T.blue : "#0d9488",
+                        background: pos.type === "Human" ? "#1A73E822″ : "#0d948822",
+                        color: pos.type === "Human" ? T.blue : "#0d9488″,
                         fontSize: 11,
                         fontWeight: 700,
                         fontFamily: FONT,

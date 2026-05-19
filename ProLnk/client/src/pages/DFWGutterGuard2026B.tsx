@@ -30,48 +30,48 @@ export default function DFWGutterGuard2026B() {
   const result = tree && history ? (recommendations[tree]?.[history] ?? null) : null;
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>🍂</div>
-          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Gutter Guard Deep Dive 2026 — Part 2</h1>
+          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Gutter Guard Deep Dive 2026 — Part 2</h1>
           <p style={{ color: "#aaa", fontSize: "0.95rem" }}>The honest truth about gutter guards in DFW — find what actually works for your trees</p>
         </div>
 
-        <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>🌳 Select Your DFW Tree Type</h2>
+        <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>🌳 Select Your DFW Tree Type</h2>
           <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
-            {treeTypes.map((t, i) => (<button key={i} onClick={() => setTree(t)} style={{ padding: "0.5rem 0.9rem", borderRadius: 8, border: tree === t ? "2px solid #F5E642" : "2px solid #334", backgroundColor: tree === t ? "#F5E642" : "transparent", color: tree === t ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer", fontSize: "0.82rem" }}>{t}</button>))}
+            {treeTypes.map((t, i) => (<button key={i} onClick={() => setTree(t)} style={{ padding: "0.5rem 0.9rem", borderRadius: 8, border: tree === t ? "2px solid #F5E642″ : "2px solid #334", backgroundColor: tree === t ? "#F5E642" : "transparent", color: tree === t ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer", fontSize: "0.82rem" }}>{t}</button>))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>🪣 Your Gutter History</h2>
+        <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>🪣 Your Gutter History</h2>
           <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
-            {gutterHistories.map((h, i) => (<button key={i} onClick={() => setHistory(h)} style={{ padding: "0.5rem 0.9rem", borderRadius: 8, border: history === h ? "2px solid #F5E642" : "2px solid #334", backgroundColor: history === h ? "#F5E642" : "transparent", color: history === h ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer", fontSize: "0.82rem" }}>{h}</button>))}
+            {gutterHistories.map((h, i) => (<button key={i} onClick={() => setHistory(h)} style={{ padding: "0.5rem 0.9rem", borderRadius: 8, border: history === h ? "2px solid #F5E642″ : "2px solid #334", backgroundColor: history === h ? "#F5E642" : "transparent", color: history === h ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer", fontSize: "0.82rem" }}>{h}</button>))}
           </div>
         </div>
 
         {result && (
-          <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem", borderLeft: "4px solid #F5E642" }}>
-            <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "0.75rem" }}>✅ DFW Recommendation</h2>
-            <div style={{ padding: "0.75rem", borderRadius: 8, backgroundColor: "#0d2040", marginBottom: "0.75rem" }}>
-              <p style={{ color: "#F5E642", fontWeight: 700, margin: "0 0 0.25rem 0" }}>{result.guard}</p>
+          <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem", borderLeft: "4px solid #F5E642" }}>
+            <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "0.75rem" }}>✅ DFW Recommendation</h2>
+            <div style={{ padding: "0.75rem", borderRadius: 8, backgroundColor: "#0d2040″, marginBottom: "0.75rem" }}>
+              <p style={{ color: "#F5E642″, fontWeight: 700, margin: "0 0 0.25rem 0" }}>{result.guard}</p>
               <p style={{ color: "#4aff8c", fontSize: "0.88rem", margin: 0 }}>Rating: {result.rating}</p>
             </div>
-            <div style={{ padding: "0.75rem", borderRadius: 8, backgroundColor: "#2a1010", borderLeft: "3px solid #ff9f4a" }}>
-              <p style={{ color: "#ffcc88", fontSize: "0.88rem", margin: 0 }}>⚠️ {result.warning}</p>
+            <div style={{ padding: "0.75rem", borderRadius: 8, backgroundColor: "#2a1010″, borderLeft: "3px solid #ff9f4a" }}>
+              <p style={{ color: "#ffcc88″, fontSize: "0.88rem", margin: 0 }}>⚠️ {result.warning}</p>
             </div>
           </div>
         )}
 
-        <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>🌸 DFW Pollen Warning</h2>
+        <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>🌸 DFW Pollen Warning</h2>
           <p style={{ color: "#ccc", fontSize: "0.9rem", lineHeight: 1.7 }}>No gutter guard eliminates DFW spring pollen. DFW cedar, oak, and elm pollen seasons (Feb–April) create fine dust that passes through all guard types. Annual spring flush is required regardless of guard type installed.</p>
         </div>
 
-        <div style={{ backgroundColor: "#F5E642", borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
-          <p style={{ color: "#0A1628", fontWeight: 700, margin: 0, fontSize: "1.05rem" }}>🍂 Find DFW Gutter Guard Installers on ProLnk — Compare Free Estimates</p>
+        <div style={{ backgroundColor: "#F5E642″, borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
+          <p style={{ color: "#0A1628″, fontWeight: 700, margin: 0, fontSize: "1.05rem" }}>🍂 Find DFW Gutter Guard Installers on ProLnk — Compare Free Estimates</p>
         </div>
       </div>
     </div>

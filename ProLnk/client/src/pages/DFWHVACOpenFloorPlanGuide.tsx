@@ -10,8 +10,8 @@ const configs = [
       'Cooking heat from open kitchen directly enters living area and recirculates',
       'Low ceiling open plans have better horizontal distribution but still need proper return sizing',
     ],
-    returnAir: 'One large central return typically sufficient; verify it is 16" x 25" minimum for systems under 3 ton',
-    stratification: 'Minimal in single-story; ceiling fans at 72" or higher mitigate any layering',
+    returnAir: 'One large central return typically sufficient; verify it is 16″ x 25″ minimum for systems under 3 ton',
+    stratification: 'Minimal in single-story; ceiling fans at 72″ or higher mitigate any layering',
     ductDesign: 'Supply registers on exterior walls; return centrally located; avoid putting both on same wall',
     solutions: [
       'Ceiling fan in kitchen/living bridge to circulate air ($200–500)',
@@ -105,8 +105,8 @@ export default function DFWHVACOpenFloorPlanGuide() {
               onClick={() => setSelected(c)}
               style={{
                 padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected.size === c.size ? '#F5E642' : '#1e3a5f'}`,
-                background: selected.size === c.size ? '#F5E642' : '#0d2137',
-                color: selected.size === c.size ? '#0A1628' : '#94a3b8',
+                background: selected.size === c.size ? '#F5E642′ : '#0d2137',
+                color: selected.size === c.size ? '#0A1628′ : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 13,
               }}
             >

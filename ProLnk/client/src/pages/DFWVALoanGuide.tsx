@@ -72,8 +72,8 @@ export default function DFWVALoanGuide() {
           <h2 style={{ color: '#1E40AF', margin: '0 0 12px', fontSize: 20 }}>🏠 DFW Military Presence</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
             {dfwBases.map(b => (
-              <div key={b.name} style={{ background: 'white', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642' }}>
-                <div style={{ fontWeight: 700, fontSize: 13, color: '#0A1628' }}>{b.name}</div>
+              <div key={b.name} style={{ background: 'white', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642′ }}>
+                <div style={{ fontWeight: 700, fontSize: 13, color: '#0A1628′ }}>{b.name}</div>
                 <div style={{ color: '#64748B', fontSize: 12, marginTop: 4 }}>{b.city} · {b.branch}</div>
               </div>
             ))}
@@ -124,9 +124,9 @@ export default function DFWVALoanGuide() {
                 { label: 'Monthly Savings', value: `$${Math.round(monthlySavings).toLocaleString()}/mo`, highlight: true },
                 { label: 'Lifetime Savings', value: `$${Math.round(lifetimeSavings).toLocaleString()}`, highlight: true },
               ].map(item => (
-                <div key={item.label} style={{ background: item.highlight ? '#0A1628' : '#F8FAFC', borderRadius: 10, padding: 16, textAlign: 'center' }}>
-                  <div style={{ fontSize: 12, color: item.highlight ? '#F5E642' : '#64748B', marginBottom: 6 }}>{item.label}</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: item.highlight ? '#F5E642' : '#0A1628' }}>{item.value}</div>
+                <div key={item.label} style={{ background: item.highlight ? '#0A1628′ : '#F8FAFC', borderRadius: 10, padding: 16, textAlign: ’center' }}>
+                  <div style={{ fontSize: 12, color: item.highlight ? '#F5E642′ : '#64748B', marginBottom: 6 }}>{item.label}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: item.highlight ? '#F5E642′ : '#0A1628' }}>{item.value}</div>
                 </div>
               ))}
             </div>

@@ -78,8 +78,8 @@ export default function DFWBurglarProofingGuide() {
     setResult({ score, responseTime, upgrades });
   }
 
-  const scoreColor = (s: number) => s >= 70 ? '#4CAF82' : s >= 40 ? '#F5A623' : '#FF6B6B';
-  const layerColor = (l: string) => ({ Deterrence: '#9B59B6', Detection: '#3498DB', Delay: '#F5A623', Response: '#4CAF82' }[l] || '#9BA8BB');
+  const scoreColor = (s: number) => s >= 70 ? '#4CAF82′ : s >= 40 ? '#F5A623' : '#FF6B6B';
+  const layerColor = (l: string) => ({ Deterrence: '#9B59B6', Detection: '#3498DB', Delay: '#F5A623', Response: '#4CAF82′ }[l] || '#9BA8BB');
 
   const measureOptions = [
     { key: 'alarm', label: 'Monitored alarm system' },
@@ -93,7 +93,7 @@ export default function DFWBurglarProofingGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 40 }}>🛡️</div>
-        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0' }}>DFW Complete Burglar-Proofing Guide</h1>
+        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0′ }}>DFW Complete Burglar-Proofing Guide</h1>
         <p style={{ color: '#9BA8BB', marginBottom: '1.5rem' }}>
           Effective security uses four layers: Deterrence (make your home look hard), Detection (know immediately),
           Delay (slow entry to outlast the attempt), and Response (help arrives fast). DFW burglars typically abort
@@ -138,7 +138,7 @@ export default function DFWBurglarProofingGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                 {measureOptions.map(opt => (
                   <div key={opt.key} onClick={() => toggleMeasure(opt.key)}
-                    style={{ padding: '0.5rem 0.75rem', borderRadius: 8, cursor: 'pointer', border: `1px solid ${measures.includes(opt.key) ? '#F5E642' : '#1E3A5F'}`, background: measures.includes(opt.key) ? '#1A2F10' : '#0A1628', color: measures.includes(opt.key) ? '#F5E642' : '#9BA8BB', fontSize: 13 }}>
+                    style={{ padding: '0.5rem 0.75rem', borderRadius: 8, cursor: 'pointer', border: `1px solid ${measures.includes(opt.key) ? '#F5E642' : '#1E3A5F'}`, background: measures.includes(opt.key) ? '#1A2F10′ : '#0A1628', color: measures.includes(opt.key) ? '#F5E642' : '#9BA8BB', fontSize: 13 }}>
                     {measures.includes(opt.key) ? '✅ ' : '⬜ '}{opt.label}
                   </div>
                 ))}
@@ -171,7 +171,7 @@ export default function DFWBurglarProofingGuide() {
                   <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <span style={{ fontSize: 11, background: layerColor(u.layer), color: '#fff', borderRadius: 4, padding: '2px 6px', marginRight: 8 }}>{u.layer}</span>
-                      <span style={{ color: '#E8EDF5' }}>{u.label}</span>
+                      <span style={{ color: '#E8EDF5′ }}>{u.label}</span>
                     </div>
                     <span style={{ color: '#F5E642', fontWeight: 700, whiteSpace: 'nowrap', marginLeft: '1rem' }}>{u.cost}</span>
                   </div>

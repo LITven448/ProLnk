@@ -53,15 +53,15 @@ export default function DFWSewerGasGuide2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>👃</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Sewer Gas Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>Rotten egg smell in your DFW home — causes and what to do</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Sewer Gas Guide 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>Rotten egg smell in your DFW home — causes and what to do</p>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>⚠️ What Is Sewer Gas?</h2>
           <ul style={{ color: '#cbd5e1', lineHeight: 1.8, paddingLeft: '1.2rem' }}>
-            <li><strong style={{ color: '#F5E642' }}>Hydrogen sulfide</strong> — rotten egg odor, toxic in high concentrations</li>
-            <li><strong style={{ color: '#F5E642' }}>Methane</strong> — odorless but combustible, explosion risk</li>
+            <li><strong style={{ color: '#F5E642′ }}>Hydrogen sulfide</strong> — rotten egg odor, toxic in high concentrations</li>
+            <li><strong style={{ color: '#F5E642′ }}>Methane</strong> — odorless but combustible, explosion risk</li>
             <li>DFW clay soil movement cracks sewer laterals — most common entry point in DFW</li>
             <li>Dry P-traps from unused fixtures are the most frequent sewer gas cause in DFW</li>
           </ul>
@@ -72,19 +72,19 @@ export default function DFWSewerGasGuide2026() {
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {locations.map(l => (
               <button key={l.id} onClick={() => setSelected(selected === l.id ? null : l.id)}
-                style={{ background: selected === l.id ? '#F5E642' : '#0f172a', color: selected === l.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem' }}>
+                style={{ background: selected === l.id ? '#F5E642′ : '#0f172a', color: selected === l.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: ’left', cursor: 'pointer', fontSize: '0.95rem' }}>
                 {l.emoji} {l.label}
               </button>
             ))}
           </div>
           {guide && (
-            <div style={{ background: '#0f172a', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0f172a', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Most Likely Cause: {guide.cause}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.75rem', fontStyle: 'italic' }}>🌍 {guide.dfwNote}</div>
               <ol style={{ color: '#cbd5e1', paddingLeft: '1.2rem', lineHeight: 1.8, margin: '0 0 0.75rem' }}>
                 {guide.steps.map((step, i) => <li key={i}>{step}</li>)}
               </ol>
-              <div style={{ color: guide.urgency.startsWith('Critical') ? '#ef4444' : '#F5E642', fontWeight: 600, fontSize: '0.9rem' }}>⚡ Urgency: {guide.urgency}</div>
+              <div style={{ color: guide.urgency.startsWith('Critical') ? '#ef4444′ : '#F5E642', fontWeight: 600, fontSize: '0.9rem' }}>⚡ Urgency: {guide.urgency}</div>
             </div>
           )}
         </div>

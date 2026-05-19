@@ -125,7 +125,7 @@ export default function PartnerLeadershipDevelopmentGuide2() {
   const result = key && guidance[key] ? guidance[key] : null;
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🧠</div>
@@ -141,13 +141,13 @@ export default function PartnerLeadershipDevelopmentGuide2() {
             <div style={{ backgroundColor: '#FEF2F2', borderRadius: 8, padding: 16 }}>
               <p style={{ fontWeight: 700, color: '#DC2626', marginBottom: 8, fontSize: 13 }}>❌ Doing Mindset</p>
               <ul style={{ paddingLeft: 16, margin: 0 }}>
-                {['I will just do it faster myself', 'My partners are not ready yet', 'I need to be on every call', 'If I delegate, quality drops'].map(i => <li key={i} style={{ fontSize: 12, marginBottom: 4, color: '#374151' }}>{i}</li>)}
+                {['I will just do it faster myself', 'My partners are not ready yet', 'I need to be on every call', 'If I delegate, quality drops'].map(i => <li key={i} style={{ fontSize: 12, marginBottom: 4, color: '#374151′ }}>{i}</li>)}
               </ul>
             </div>
             <div style={{ backgroundColor: '#F0FDF4', borderRadius: 8, padding: 16 }}>
               <p style={{ fontWeight: 700, color: '#16A34A', marginBottom: 8, fontSize: 13 }}>✅ Teaching Mindset</p>
               <ul style={{ paddingLeft: 16, margin: 0 }}>
-                {['Slow down now, scale later', 'Ready enough — learn by doing', 'My partners run calls, I coach', 'Imperfect delegation beats no delegation'].map(i => <li key={i} style={{ fontSize: 12, marginBottom: 4, color: '#374151' }}>{i}</li>)}
+                {['Slow down now, scale later', 'Ready enough — learn by doing', 'My partners run calls, I coach', 'Imperfect delegation beats no delegation'].map(i => <li key={i} style={{ fontSize: 12, marginBottom: 4, color: '#374151′ }}>{i}</li>)}
               </ul>
             </div>
           </div>
@@ -157,8 +157,8 @@ export default function PartnerLeadershipDevelopmentGuide2() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📞 Running Team Calls That Actually Work</h2>
           {[['Opening (5 min)', 'Start with wins only — no problems, no complaints. Set the energy.'], ['Main Content (15 min)', 'One topic, one skill, one strategy. Keep it focused.'], ['Recognition (5 min)', 'Call out names. Be specific. People repeat what gets rewarded.'], ['Q&A and Close (5 min)', 'Open floor, then end on a forward-looking call to action.']].map(([phase, desc]) => (
             <div key={phase} style={{ display: 'flex', gap: 12, marginBottom: 12, padding: 12, backgroundColor: '#F9FAFB', borderRadius: 8 }}>
-              <div style={{ minWidth: 120, fontWeight: 700, fontSize: 13, color: '#0369A1' }}>{phase}</div>
-              <div style={{ fontSize: 13, color: '#374151' }}>{desc}</div>
+              <div style={{ minWidth: 120, fontWeight: 700, fontSize: 13, color: '#0369A1′ }}>{phase}</div>
+              <div style={{ fontSize: 13, color: '#374151′ }}>{desc}</div>
             </div>
           ))}
         </div>
@@ -170,7 +170,7 @@ export default function PartnerLeadershipDevelopmentGuide2() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {teamSizes.map(t => (
                 <button key={t.key} onClick={() => setTeamSize(t.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: teamSize === t.key ? '#F5E642' : '#E5E7EB', backgroundColor: teamSize === t.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: teamSize === t.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: teamSize === t.key ? '#F5E642′ : '#E5E7EB', backgroundColor: teamSize === t.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: teamSize === t.key ? 700 : 400 }}>
                   {t.label}
                 </button>
               ))}
@@ -181,7 +181,7 @@ export default function PartnerLeadershipDevelopmentGuide2() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {challenges.map(c => (
                 <button key={c.key} onClick={() => setChallenge(c.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: challenge === c.key ? '#F5E642' : '#E5E7EB', backgroundColor: challenge === c.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: challenge === c.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: challenge === c.key ? '#F5E642′ : '#E5E7EB', backgroundColor: challenge === c.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: challenge === c.key ? 700 : 400 }}>
                   {c.label}
                 </button>
               ))}
@@ -189,14 +189,14 @@ export default function PartnerLeadershipDevelopmentGuide2() {
           </div>
           {result && (
             <div style={{ backgroundColor: '#F0F9FF', borderRadius: 10, padding: 20 }}>
-              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 12, marginBottom: 14, borderLeft: '3px solid #F5E642' }}>
+              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 12, marginBottom: 14, borderLeft: '3px solid #F5E642′ }}>
                 <p style={{ fontSize: 12, fontWeight: 700, color: '#854D0E', marginBottom: 4 }}>TOP PRIORITY</p>
                 <p style={{ fontSize: 14, color: '#0A1628', margin: 0, fontWeight: 600 }}>{result.priority}</p>
               </div>
               <p style={{ fontWeight: 700, color: '#0369A1', marginBottom: 6, fontSize: 13 }}>Recommended Action</p>
               <p style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>{result.action}</p>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>
-                <p style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, margin: '0 0 4px 0' }}>💡 Leadership Insight</p>
+                <p style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, margin: '0 0 4px 0′ }}>💡 Leadership Insight</p>
                 <p style={{ fontSize: 13, color: '#D1D5DB', margin: 0, fontStyle: 'italic' }}>{result.insight}</p>
               </div>
             </div>

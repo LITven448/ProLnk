@@ -75,7 +75,7 @@ export default function DFWToolStorageDFWGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🏠 Tool Storage in DFW Heat</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28, lineHeight: 1.6 }}>DFW garages hit 130–140°F in summer. This destroys batteries, cracks handles, and creates safety hazards.</p>
 
-        <div style={{ background: '#F87171' + '22', border: '1px solid #F87171' + '55', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F87171' }}>
+        <div style={{ background: '#F87171′ + '22', border: '1px solid #F87171' + '55', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F87171' }}>
           🚨 Li-ion batteries and aerosol cans are the #1 DFW storage danger. Both are fire and explosion risks in 130°F+ garages. Always bring inside.
         </div>
 

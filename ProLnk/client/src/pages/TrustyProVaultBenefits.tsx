@@ -89,7 +89,7 @@ export default function TrustyProVaultBenefits() {
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                     <span style={{ fontSize: 11, fontWeight: 700, color: '#059669', background: '#d1fae5', padding: '2px 8px', borderRadius: 20 }}>{b.num}</span>
-                    <span style={{ fontSize: 17, fontWeight: 700, color: '#065f46' }}>{b.title}</span>
+                    <span style={{ fontSize: 17, fontWeight: 700, color: '#065f46′ }}>{b.title}</span>
                   </div>
                   <p style={{ color: '#4b5563', lineHeight: 1.6, margin: 0, fontSize: 14 }}>{b.desc}</p>
                 </div>
@@ -107,7 +107,7 @@ export default function TrustyProVaultBenefits() {
               { icon: '💳', item: 'Financial information', detail: 'No payment data, income data, or financial records are ever stored in the vault.' },
               { icon: '🔑', item: 'Access is your decision', detail: 'Only you control who sees your vault. You share access when you want — for a sale, for a contractor, for an inspector.' },
             ].map(p => (
-              <div key={p.item} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #f1f5f9' }}>
+              <div key={p.item} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #f1f5f9′ }}>
                 <span style={{ fontSize: 22, flexShrink: 0 }}>{p.icon}</span>
                 <div>
                   <div style={{ fontWeight: 600, color: '#1e293b', marginBottom: 2 }}>{p.item}</div>
@@ -128,7 +128,7 @@ export default function TrustyProVaultBenefits() {
                 <label style={{ display: 'block', fontSize: 13, color: '#475569', marginBottom: 6 }}>🏠 Current Home Value ($)</label>
                 <input
                   type="number"
-                  placeholder="e.g. 450000"
+                  placeholder="e.g. 450000″
                   value={homeValue}
                   onChange={e => setHomeValue(e.target.value)}
                   style={{ width: '100%', background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 8, padding: '10px 12px', color: '#1e293b', fontSize: 14, boxSizing: 'border-box' }}
@@ -138,7 +138,7 @@ export default function TrustyProVaultBenefits() {
                 <label style={{ display: 'block', fontSize: 13, color: '#475569', marginBottom: 6 }}>📅 Years of Vault Records</label>
                 <input
                   type="number"
-                  placeholder="e.g. 3"
+                  placeholder="e.g. 3″
                   value={years}
                   onChange={e => setYears(e.target.value)}
                   style={{ width: '100%', background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 8, padding: '10px 12px', color: '#1e293b', fontSize: 14, boxSizing: 'border-box' }}

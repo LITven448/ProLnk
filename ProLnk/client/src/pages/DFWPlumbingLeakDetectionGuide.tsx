@@ -133,8 +133,8 @@ export default function DFWPlumbingLeakDetectionGuide() {
                 {(options as typeof HOME_AGES).map(o => (
                   <button key={o.value} onClick={() => (setter as (v: string) => void)(o.value)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                      background: selected === o.value ? '#F5E642' : '#0A1628',
-                      color: selected === o.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                      background: selected === o.value ? '#F5E642′ : '#0A1628',
+                      color: selected === o.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                     {o.label}
                   </button>
                 ))}
@@ -142,12 +142,12 @@ export default function DFWPlumbingLeakDetectionGuide() {
             </div>
           ))}
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>Recommended: {rec.device}</div>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Cost: {rec.cost}</div>
               <div style={{ fontSize: 13, color: '#8899AA', marginBottom: 6 }}>Placement priority:</div>
               {rec.placement.map(p => <div key={p} style={{ fontSize: 13, color: '#E8EDF5', marginBottom: 4 }}>📍 {p}</div>)}
-              <div style={{ marginTop: 12, fontSize: 13, color: '#8899AA' }}>What this catches: <span style={{ color: '#E8EDF5' }}>{rec.catches}</span></div>
+              <div style={{ marginTop: 12, fontSize: 13, color: '#8899AA' }}>What this catches: <span style={{ color: '#E8EDF5′ }}>{rec.catches}</span></div>
             </div>
           )}
         </div>

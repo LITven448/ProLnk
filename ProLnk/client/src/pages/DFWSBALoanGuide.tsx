@@ -8,9 +8,9 @@ const loanTypes = [
 ];
 
 const dfwResources = [
-  { name: 'SBA Dallas/Fort Worth District Office', addr: '4300 Amon Carter Blvd, Fort Worth, TX 76155', phone: '817-684-5500' },
-  { name: 'DFW SBDC at UTA', addr: '1500 S. Cooper St, Arlington TX 76019', phone: '817-272-5932' },
-  { name: 'Accion Opportunity Fund (DFW)', addr: 'microloans for underserved DFW businesses', phone: '888-215-2373' },
+  { name: 'SBA Dallas/Fort Worth District Office', addr: '4300 Amon Carter Blvd, Fort Worth, TX 76155', phone: '817-684-5500′ },
+  { name: 'DFW SBDC at UTA', addr: '1500 S. Cooper St, Arlington TX 76019', phone: '817-272-5932′ },
+  { name: 'Accion Opportunity Fund (DFW)', addr: 'microloans for underserved DFW businesses', phone: '888-215-2373′ },
 ];
 
 const eligibility = [
@@ -40,7 +40,7 @@ export default function DFWSBALoanGuide() {
     <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628', padding: '2rem' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem 2rem', marginBottom: '2rem' }}>
-          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>🏛️ SBA Loan Guide — DFW</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>🏛️ SBA Loan Guide — DFW</div>
           <div style={{ color: '#CBD5E1', marginTop: 6 }}>Home-Based Business Owners & Commercial Property Financing</div>
         </div>
         <div style={{ background: '#EFF6FF', borderRadius: 10, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #BFDBFE' }}>
@@ -51,7 +51,7 @@ export default function DFWSBALoanGuide() {
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 10 }}>📋 SBA Loan Types</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {loanTypes.map(l => (
-              <div key={l.name} style={{ background: '#fff', borderRadius: 8, padding: '1rem', border: '1px solid #E2E8F0' }}>
+              <div key={l.name} style={{ background: '#fff', borderRadius: 8, padding: '1rem', border: '1px solid #E2E8F0′ }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: 15 }}>{l.name} <span style={{ fontSize: 13, color: '#16A34A', fontWeight: 600 }}>Up to {l.max}</span></div>
@@ -64,7 +64,7 @@ export default function DFWSBALoanGuide() {
             ))}
           </div>
         </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0′ }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14 }}>🔢 SBA Eligibility Assessment</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
@@ -81,31 +81,31 @@ export default function DFWSBALoanGuide() {
               { label: 'Credit Score', value: score, set: setScore, min: 580, max: 850, step: 10 },
             ].map(f => (
               <div key={f.label}>
-                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{f.label}: <span style={{ color: '#6366F1' }}>{f.value.toLocaleString()}</span></div>
+                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{f.label}: <span style={{ color: '#6366F1′ }}>{f.value.toLocaleString()}</span></div>
                 <input type="range" min={f.min} max={f.max} step={f.step} value={f.value} onChange={e => f.set(Number(e.target.value))} style={{ width: '100%' }} />
               </div>
             ))}
           </div>
-          <div style={{ background: result.eligible ? '#F0FDF4' : '#FEF2F2', borderRadius: 8, padding: '1rem', border: `1px solid ${result.eligible ? '#86EFAC' : '#FECACA'}` }}>
-            <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: result.eligible ? '#16A34A' : '#DC2626' }}>
+          <div style={{ background: result.eligible ? '#F0FDF4′ : '#FEF2F2', borderRadius: 8, padding: '1rem', border: `1px solid ${result.eligible ? '#86EFAC' : '#FECACA'}` }}>
+            <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: result.eligible ? '#16A34A' : '#DC2626′ }}>
               {result.eligible ? '✅' : '⚠️'} Recommended: {result.type}
             </div>
-            <div style={{ fontSize: 14, color: '#374151' }}>{result.notes}</div>
+            <div style={{ fontSize: 14, color: '#374151′ }}>{result.notes}</div>
           </div>
         </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0′ }}>
           <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 10 }}>📍 DFW SBA Resources</div>
           {dfwResources.map(r => (
-            <div key={r.name} style={{ marginBottom: 10, paddingBottom: 10, borderBottom: '1px solid #F1F5F9' }}>
+            <div key={r.name} style={{ marginBottom: 10, paddingBottom: 10, borderBottom: '1px solid #F1F5F9′ }}>
               <div style={{ fontWeight: 600, fontSize: 14 }}>🏢 {r.name}</div>
               <div style={{ fontSize: 13, color: '#64748B' }}>{r.addr}</div>
               <div style={{ fontSize: 13, color: '#2563EB' }}>📞 {r.phone}</div>
             </div>
           ))}
         </div>
-        <div style={{ background: '#F8FAFC', borderRadius: 10, padding: '1.25rem', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#F8FAFC', borderRadius: 10, padding: '1.25rem', border: '1px solid #E2E8F0′ }}>
           <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>✅ Basic SBA Eligibility Requirements</div>
-          {eligibility.map(e => <div key={e} style={{ fontSize: 13, marginBottom: 4, color: '#374151' }}>• {e}</div>)}
+          {eligibility.map(e => <div key={e} style={{ fontSize: 13, marginBottom: 4, color: '#374151′ }}>• {e}</div>)}
         </div>
       </div>
     </div>

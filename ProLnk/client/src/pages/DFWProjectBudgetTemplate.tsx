@@ -77,7 +77,7 @@ export default function DFWProjectBudgetTemplate() {
               ['📋 Permits & Fees', result.permits],
               ['🛡️ DFW Contingency (18%)', result.contingency],
             ].map(([label, val]) => (
-              <div key={label as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1E2E45' }}>
+              <div key={label as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1E2E45′ }}>
                 <span style={{ color: '#C8D0DC' }}>{label as string}</span>
                 <span style={{ color: '#F5E642', fontWeight: 600 }}>${(val as number).toLocaleString()}</span>
               </div>
@@ -87,13 +87,13 @@ export default function DFWProjectBudgetTemplate() {
               <span style={{ color: '#F5E642', fontWeight: 800, fontSize: '1.2rem' }}>${result.total.toLocaleString()}</span>
             </div>
             <h3 style={{ color: '#F5E642', marginTop: '1.5rem', marginBottom: '0.75rem' }}>💳 Payment Schedule</h3>
-            {result.paySchedule.map(s => <div key={s} style={{ color: '#9BA3B4', padding: '0.4rem 0', borderBottom: '1px solid #1E2E45' }}>• {s}</div>)}
+            {result.paySchedule.map(s => <div key={s} style={{ color: '#9BA3B4', padding: '0.4rem 0', borderBottom: '1px solid #1E2E45′ }}>• {s}</div>)}
           </div>
         )}
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚠️ Common Budget Overruns in DFW</h2>
-          {OVERRUN_CAUSES.map(c => <div key={c} style={{ color: '#9BA3B4', padding: '0.4rem 0' }}>{c}</div>)}
+          {OVERRUN_CAUSES.map(c => <div key={c} style={{ color: '#9BA3B4', padding: '0.4rem 0′ }}>{c}</div>)}
         </div>
       </div>
     </div>

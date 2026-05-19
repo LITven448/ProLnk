@@ -62,8 +62,8 @@ export default function DFWSumpPumpGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
           {[
-            { icon: '💰', label: 'Sump Pump Installed', val: '$800–$2,000' },
-            { icon: '🔋', label: 'Battery Backup Add-on', val: '$300–$600' },
+            { icon: '💰', label: 'Sump Pump Installed', val: '$800–$2,000′ },
+            { icon: '🔋', label: 'Battery Backup Add-on', val: '$300–$600′ },
             { icon: '🔧', label: 'Annual Maintenance', val: 'Test + clean annually' },
             { icon: '🌧️', label: 'DFW Storm Season', val: 'March – June peak' },
           ].map((s) => (

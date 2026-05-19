@@ -60,7 +60,7 @@ export default function DFWCarbonMonoxideGuide() {
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>NUMBER OF BEDROOMS</label>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                 {[1, 2, 3, 4, 5, 6].map(n => (
-                  <button key={n} onClick={() => { setRooms(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: rooms === n ? '#F5E642' : '#1e3a5f', backgroundColor: rooms === n ? '#F5E642' : 'transparent', color: rooms === n ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer' }}>{n}</button>
+                  <button key={n} onClick={() => { setRooms(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: rooms === n ? '#F5E642′ : '#1e3a5f', backgroundColor: rooms === n ? '#F5E642' : ’transparent', color: rooms === n ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer' }}>{n}</button>
                 ))}
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function DFWCarbonMonoxideGuide() {
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>GAS APPLIANCES (furnace, WH, range, fireplace, dryer)</label>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                 {[1, 2, 3, 4, 5].map(n => (
-                  <button key={n} onClick={() => { setAppliances(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: appliances === n ? '#F5E642' : '#1e3a5f', backgroundColor: appliances === n ? '#F5E642' : 'transparent', color: appliances === n ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer' }}>{n}</button>
+                  <button key={n} onClick={() => { setAppliances(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: appliances === n ? '#F5E642′ : '#1e3a5f', backgroundColor: appliances === n ? '#F5E642' : ’transparent', color: appliances === n ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer' }}>{n}</button>
                 ))}
               </div>
             </div>

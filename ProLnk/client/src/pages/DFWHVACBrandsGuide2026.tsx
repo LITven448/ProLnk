@@ -36,7 +36,7 @@ export default function DFWHVACBrandsGuide2026() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '3px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '3px solid #F5E642′ }}>
         <div style={{ fontSize: 48 }}>🌡️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '12px 0 8px' }}>Best HVAC Brands for DFW 2026</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 620, margin: '0 auto' }}>Top 8 brands rated for DFW's brutal summers. Compare reliability, cost, warranty, and heat performance before you buy.</p>
@@ -55,15 +55,15 @@ export default function DFWHVACBrandsGuide2026() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#64748b' }}>Cost</span>
-                  <span style={{ color: '#cbd5e1' }}>{b.cost}</span>
+                  <span style={{ color: '#cbd5e1′ }}>{b.cost}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#64748b' }}>Warranty</span>
-                  <span style={{ color: '#cbd5e1' }}>{b.warranty}</span>
+                  <span style={{ color: '#cbd5e1′ }}>{b.warranty}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#64748b' }}>Noise</span>
-                  <span style={{ color: '#cbd5e1' }}>{b.noise}</span>
+                  <span style={{ color: '#cbd5e1′ }}>{b.noise}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #1e3a5f', paddingTop: 6, marginTop: 4 }}>
                   <span style={{ color: '#64748b' }}>DFW Score</span>
@@ -82,7 +82,7 @@ export default function DFWHVACBrandsGuide2026() {
             <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, fontWeight: 600 }}>Budget range (installed)?</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {budgets.map((b, i) => (
-                <button key={b} onClick={() => { setSelectedBudget(i); setShowResult(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selectedBudget === i ? '#F5E642' : '#1e3a5f'}`, background: selectedBudget === i ? '#F5E642' : '#0A1628', color: selectedBudget === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{b}</button>
+                <button key={b} onClick={() => { setSelectedBudget(i); setShowResult(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selectedBudget === i ? '#F5E642' : '#1e3a5f'}`, background: selectedBudget === i ? '#F5E642′ : '#0A1628', color: selectedBudget === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{b}</button>
               ))}
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function DFWHVACBrandsGuide2026() {
             <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, fontWeight: 600 }}>What matters most to you?</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {priorities.map((p, i) => (
-                <button key={p} onClick={() => { setSelectedPriority(i); setShowResult(false); }} style={{ padding: '10px 24px', borderRadius: 8, border: `2px solid ${selectedPriority === i ? '#F5E642' : '#1e3a5f'}`, background: selectedPriority === i ? '#F5E642' : '#0A1628', color: selectedPriority === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{p}</button>
+                <button key={p} onClick={() => { setSelectedPriority(i); setShowResult(false); }} style={{ padding: '10px 24px', borderRadius: 8, border: `2px solid ${selectedPriority === i ? '#F5E642' : '#1e3a5f'}`, background: selectedPriority === i ? '#F5E642′ : '#0A1628', color: selectedPriority === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{p}</button>
               ))}
             </div>
           </div>

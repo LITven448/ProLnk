@@ -27,7 +27,7 @@ export default function DFWEVChargingFutureGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>DFW leads Texas in EV adoption — here is how to charge smarter</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>⏰ ERCOT Time-of-Use Savings</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>Oncor TOU rates: charge midnight–6am at $0.06/kWh vs $0.18/kWh peak. F-150 Lightning 131 kWh battery costs $7.86 overnight vs $23.58 peak. Annual savings: $400-600 for average DFW driver. V2H/V2G bidirectional charging arriving 2026-2027 — power your home from your truck during ERCOT emergencies.</p>
         </div>
@@ -50,7 +50,7 @@ export default function DFWEVChargingFutureGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {setups.map(s => (
             <button key={s.label} onClick={() => setSelected(s.label)}
-              style={{ background: selected === s.label ? '#F5E642' : '#1e3a5f', color: selected === s.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === s.label ? '#F5E642′ : '#1e3a5f', color: selected === s.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {s.label}
             </button>
           ))}

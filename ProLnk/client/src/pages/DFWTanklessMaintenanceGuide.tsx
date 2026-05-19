@@ -75,10 +75,10 @@ export default function DFWTanklessMaintenanceGuide() {
         <div style={{ background: '#0D1F3C', borderRadius: 8, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>DFW Descaling Frequency vs National Average</h2>
           {[
-            { label: 'National average recommendation', value: 'Every 3–5 years', color: '#4CAF50' },
-            { label: 'DFW Moderate Areas (Richardson, Allen)', value: 'Every 12–18 months', color: '#FF9800' },
-            { label: 'DFW Hard Water Areas (Dallas, Fort Worth)', value: 'Every 8–12 months', color: '#F44336' },
-            { label: 'DFW Extreme Areas (Irving, Grand Prairie)', value: 'Every 4–6 months', color: '#9C27B0' },
+            { label: 'National average recommendation', value: 'Every 3–5 years', color: '#4CAF50′ },
+            { label: 'DFW Moderate Areas (Richardson, Allen)', value: 'Every 12–18 months', color: '#FF9800′ },
+            { label: 'DFW Hard Water Areas (Dallas, Fort Worth)', value: 'Every 8–12 months', color: '#F44336′ },
+            { label: 'DFW Extreme Areas (Irving, Grand Prairie)', value: 'Every 4–6 months', color: '#9C27B0′ },
           ].map(r => (
             <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', padding: '0.5rem', background: '#0A1628', borderRadius: 4 }}>
               <span style={{ color: '#ccc', fontSize: '0.85rem' }}>{r.label}</span>

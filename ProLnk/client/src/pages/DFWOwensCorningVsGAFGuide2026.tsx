@@ -30,7 +30,7 @@ export default function DFWOwensCorningVsGAFGuide2026() {
           }].map(b => (
             <div key={b.brand} style={{ backgroundColor: '#112240', borderRadius: '10px', padding: '20px' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '8px' }}>{b.icon} {b.brand}</div>
-              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8' }}>
+              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8′ }}>
                 {b.facts.map(f => <li key={f}>{f}</li>)}
               </ul>
             </div>
@@ -46,9 +46,9 @@ export default function DFWOwensCorningVsGAFGuide2026() {
             ['Installed Cost', '$4.50–$6.50/sqft avg', '$4.25–$6.25/sqft avg'],
           ].map(([cat, gaf, oc]) => (
             <div key={cat} style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr 1.2fr', gap: '8px', borderBottom: '1px solid #1e3a5f', padding: '8px 0', fontSize: '0.9rem' }}>
-              <span style={{ color: '#94a3b8' }}>{cat}</span>
+              <span style={{ color: '#94a3b8′ }}>{cat}</span>
               <span style={{ color: '#60a5fa' }}>{gaf}</span>
-              <span style={{ color: '#f97316' }}>{oc}</span>
+              <span style={{ color: '#f97316′ }}>{oc}</span>
             </div>
           ))}
         </div>
@@ -58,11 +58,11 @@ export default function DFWOwensCorningVsGAFGuide2026() {
           <p style={{ color: '#94a3b8', marginBottom: '12px' }}>What matters most to you?</p>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '16px' }}>
             {[{v:'warranty',l:'🛡️ Best Warranty'},{v:'price',l:'💰 Best Price'},{v:'impact',l:'🌧️ Impact Resistance'}].map(o => (
-              <button key={o.v} onClick={() => setPriority(o.v)} style={{ padding: '10px 18px', borderRadius: '8px', border: '2px solid', borderColor: priority===o.v ? '#F5E642' : '#1e3a5f', backgroundColor: priority===o.v ? '#F5E642' : 'transparent', color: priority===o.v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>{o.l}</button>
+              <button key={o.v} onClick={() => setPriority(o.v)} style={{ padding: '10px 18px', borderRadius: '8px', border: '2px solid', borderColor: priority===o.v ? '#F5E642′ : '#1e3a5f', backgroundColor: priority===o.v ? '#F5E642' : ’transparent', color: priority===o.v ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600 }}>{o.l}</button>
             ))}
           </div>
           <button onClick={getRecommendation} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', marginBottom: '16px' }}>Get Recommendation →</button>
-          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6' }}>{recommendation}</div>}
+          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6′ }}>{recommendation}</div>}
         </div>
       </div>
     </div>

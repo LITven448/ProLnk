@@ -38,14 +38,14 @@ export default function DFWProLnkRoofingPartnerGuide() {
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642' }}>🏠 ProLnk Roofing Partner Guide</div>
+          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642′ }}>🏠 ProLnk Roofing Partner Guide</div>
           <div style={{ color: '#94A3B8', marginTop: '.5rem' }}>DFW roofers — hail matches, trust-building, storm chaser differentiation</div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
           {HAIL_FACTS.map(f => (
             <div key={f.label} style={{ background: '#0F2035', borderRadius: 10, padding: '1.25rem', border: '1px solid #EF4444', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#F5E642' }}>{f.stat}</div>
+              <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#F5E642′ }}>{f.stat}</div>
               <div style={{ color: '#94A3B8', fontSize: '.8rem', marginTop: '.25rem' }}>{f.label}</div>
             </div>
           ))}
@@ -56,16 +56,16 @@ export default function DFWProLnkRoofingPartnerGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '.6rem' }}>
             {BIZ_TYPES.map(b => (
               <button key={b.id} onClick={() => setSelected(b.id)}
-                style={{ padding: '.85rem 1rem', borderRadius: 10, border: , background: selected === b.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ padding: '.85rem 1rem', borderRadius: 10, border: , background: selected === b.id ? '#F5E64222′ : '#0A1628', color: '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600 }}>
                 {b.label}
               </button>
             ))}
           </div>
           {biz && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #EF4444' }}>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #EF4444′ }}>
               <div style={{ color: '#EF4444', fontWeight: 700, marginBottom: '.5rem' }}>Your ProLnk Opportunity</div>
-              <div style={{ color: '#CBD5E1' }}>📍 Match Type: <strong style={{ color: '#fff' }}>{biz.opp}</strong></div>
-              <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>💵 Average Job: <strong style={{ color: '#F5E642' }}>{biz.rate}</strong></div>
+              <div style={{ color: '#CBD5E1′ }}>📍 Match Type: <strong style={{ color: '#fff' }}>{biz.opp}</strong></div>
+              <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>💵 Average Job: <strong style={{ color: '#F5E642′ }}>{biz.rate}</strong></div>
               <div style={{ color: '#94A3B8', fontSize: '.85rem', marginTop: '.35rem' }}>⚡ {biz.note}</div>
             </div>
           )}

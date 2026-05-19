@@ -31,13 +31,13 @@ export default function DFWWaterFeatureMaintenanceGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>💧 DFW WATER FEATURE GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Water Feature Maintenance for DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>
-          DFW's heat, hard water, and mosquito pressure make water feature maintenance more demanding than most climates. Here's the DFW-specific schedule and solutions.
+          DFW's heat, hard water, and mosquito pressure make water feature maintenance more demanding than most climates. Here’s the DFW-specific schedule and solutions.
         </p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⚠️ DFW-Specific Challenges</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-            {[['🌞 Summer Heat', 'Evaporation: up to 1" per week. Algae blooms in days. Koi stress above 85°F.'], ['🦟 Mosquitoes', 'Season runs March–November. Treat every 30 days or stock mosquitofish.'], ['💧 Hard Water', 'DFW water leaves heavy scale on pumps, stones, and bowls.'], ['❄️ Winterization', 'DFW rarely freezes hard — most features run year-round. Protect fish in hard freezes only.']].map(([t, d]) => (
+            {[['🌞 Summer Heat', 'Evaporation: up to 1″ per week. Algae blooms in days. Koi stress above 85°F.'], ['🦟 Mosquitoes', 'Season runs March–November. Treat every 30 days or stock mosquitofish.'], ['💧 Hard Water', 'DFW water leaves heavy scale on pumps, stones, and bowls.'], ['❄️ Winterization', 'DFW rarely freezes hard — most features run year-round. Protect fish in hard freezes only.']].map(([t, d]) => (
               <div key={t} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>{t}</div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>{d}</div>
@@ -52,7 +52,7 @@ export default function DFWWaterFeatureMaintenanceGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Your water feature type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {featureTypes.map(f => (
-                <button key={f} onClick={() => setFeature(f)} style={{ background: feature === f ? '#F5E642' : '#1e3a5f', color: feature === f ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{f}</button>
+                <button key={f} onClick={() => setFeature(f)} style={{ background: feature === f ? '#F5E642′ : '#1e3a5f', color: feature === f ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{f}</button>
               ))}
             </div>
           </div>
@@ -74,18 +74,18 @@ export default function DFWWaterFeatureMaintenanceGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🔧 Diagnose a Problem</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {issueTypes.map(i => (
-              <button key={i} onClick={() => setIssue(i)} style={{ background: issue === i ? '#F5E642' : '#1e3a5f', color: issue === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{i}</button>
+              <button key={i} onClick={() => setIssue(i)} style={{ background: issue === i ? '#F5E642′ : '#1e3a5f', color: issue === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{i}</button>
             ))}
           </div>
           <button onClick={() => setShowIssue(true)} disabled={!issue} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', opacity: !issue ? 0.5 : 1 }}>Diagnose</button>
         </div>
 
         {showIssue && issue && issueGuide[issue] && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>⚡ {issue}</div>
-            <div style={{ marginBottom: 8 }}><span style={{ color: '#64748b' }}>Cause:</span> <span style={{ color: '#cbd5e1' }}>{issueGuide[issue].cause}</span></div>
-            <div style={{ marginBottom: 8 }}><span style={{ color: '#64748b' }}>Fix:</span> <span style={{ color: '#cbd5e1' }}>{issueGuide[issue].fix}</span></div>
-            <div><span style={{ color: '#64748b' }}>Products:</span> <span style={{ color: '#F5E642' }}>{issueGuide[issue].product}</span></div>
+            <div style={{ marginBottom: 8 }}><span style={{ color: '#64748b' }}>Cause:</span> <span style={{ color: '#cbd5e1′ }}>{issueGuide[issue].cause}</span></div>
+            <div style={{ marginBottom: 8 }}><span style={{ color: '#64748b' }}>Fix:</span> <span style={{ color: '#cbd5e1′ }}>{issueGuide[issue].fix}</span></div>
+            <div><span style={{ color: '#64748b' }}>Products:</span> <span style={{ color: '#F5E642′ }}>{issueGuide[issue].product}</span></div>
           </div>
         )}
       </div>

@@ -34,7 +34,7 @@ export default function DFWHomeImprovementFinancing2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔨💳</div>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0' }}>DFW Home Improvement Financing 2026</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0′ }}>DFW Home Improvement Financing 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>Personal loan vs HELOC vs home equity loan vs FHA 203k — which makes sense for your project?</p>
         </div>
 
@@ -43,15 +43,15 @@ export default function DFWHomeImprovementFinancing2026() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
               <thead><tr style={{ borderBottom: '1px solid #1e3a5f' }}>
-                {['Option','Rate','Max Amount','Best For'].map(h => <th key={h} style={{ padding: '0.5rem', textAlign: 'left', color: '#94a3b8' }}>{h}</th>)}
+                {['Option','Rate','Max Amount','Best For'].map(h => <th key={h} style={{ padding: '0.5rem', textAlign: 'left', color: '#94a3b8′ }}>{h}</th>)}
               </tr></thead>
               <tbody>
                 {options.map(o => (
-                  <tr key={o.name} style={{ borderBottom: '1px solid #0A1628' }}>
+                  <tr key={o.name} style={{ borderBottom: '1px solid #0A1628′ }}>
                     <td style={{ padding: '0.6rem 0.5rem', color: '#F5E642', fontWeight: 600 }}>{o.name}</td>
-                    <td style={{ padding: '0.6rem 0.5rem', color: '#e2e8f0' }}>{o.rate}</td>
-                    <td style={{ padding: '0.6rem 0.5rem', color: '#e2e8f0' }}>{o.max}</td>
-                    <td style={{ padding: '0.6rem 0.5rem', color: '#94a3b8' }}>{o.best}</td>
+                    <td style={{ padding: '0.6rem 0.5rem', color: '#e2e8f0′ }}>{o.rate}</td>
+                    <td style={{ padding: '0.6rem 0.5rem', color: '#e2e8f0′ }}>{o.max}</td>
+                    <td style={{ padding: '0.6rem 0.5rem', color: '#94a3b8′ }}>{o.best}</td>
                   </tr>
                 ))}
               </tbody>
@@ -71,7 +71,7 @@ export default function DFWHomeImprovementFinancing2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.2rem' }}>🧮 Financing Recommender</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             {[['Project Cost', projectCost, setProjectCost, 'e.g. 35,000'],['Available Home Equity', homeEquity, setHomeEquity, 'e.g. 120,000']].map(([label, val, setter, ph]) => (
@@ -84,12 +84,12 @@ export default function DFWHomeImprovementFinancing2026() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 800, fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Find Best Option</button>
           {result && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1.25rem', border: '1px solid #F5E642' }}>
-              <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642' }}>✅ {result.recommended}</div>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+              <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642′ }}>✅ {result.recommended}</div>
               <div style={{ color: '#cbd5e1', margin: '0.5rem 0', fontSize: '0.9rem' }}>{result.reason}</div>
               <div style={{ display: 'flex', gap: '1.5rem' }}>
-                <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Rate: <strong style={{ color: '#F5E642' }}>{result.estRate}</strong></span>
-                <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Est. Payment: <strong style={{ color: '#F5E642' }}>{result.estPayment}</strong></span>
+                <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Rate: <strong style={{ color: '#F5E642′ }}>{result.estRate}</strong></span>
+                <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Est. Payment: <strong style={{ color: '#F5E642′ }}>{result.estPayment}</strong></span>
               </div>
             </div>
           )}

@@ -53,36 +53,36 @@ export default function DFWHOAFinancialsGuide2026() {
   ];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>📊</div>
-          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW HOA Financial Health Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 15 }}>Evaluate HOA finances before you commit — avoid buying into a financial crisis</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW HOA Financial Health Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Evaluate HOA finances before you commit — avoid buying into a financial crisis</p>
         </div>
 
-        <h2 style={{ color: "#F5E642", marginBottom: 14 }}>Key Financial Metrics</h2>
+        <h2 style={{ color: "#F5E642″, marginBottom: 14 }}>Key Financial Metrics</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10, marginBottom: 28 }}>
           {keyMetrics.map((m, i) => (
-            <div key={i} style={{ background: "#1e2d45", borderRadius: 8, padding: 14 }}>
+            <div key={i} style={{ background: "#1e2d45″, borderRadius: 8, padding: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                 <span style={{ fontSize: 22 }}>{m.icon}</span>
                 <span style={{ fontWeight: 700, fontSize: 13 }}>{m.metric}</span>
               </div>
               <div style={{ fontSize: 12, display: "flex", flexDirection: "column", gap: 3 }}>
-                <span style={{ color: "#4ade80" }}>✅ Healthy: {m.healthy}</span>
-                <span style={{ color: "#fbbf24" }}>⚠️ Caution: {m.caution}</span>
-                <span style={{ color: "#f87171" }}>🚨 Danger: {m.danger}</span>
+                <span style={{ color: "#4ade80″ }}>✅ Healthy: {m.healthy}</span>
+                <span style={{ color: "#fbbf24″ }}>⚠️ Caution: {m.caution}</span>
+                <span style={{ color: "#f87171″ }}>🚨 Danger: {m.danger}</span>
               </div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ color: "#F5E642", marginBottom: 16 }}>HOA Type + Size → Financial Checklist</h2>
+        <h2 style={{ color: "#F5E642″, marginBottom: 16 }}>HOA Type + Size → Financial Checklist</h2>
         <div style={{ display: "flex", gap: 10, marginBottom: 20 }}>
           {hoaTypes.map(h => (
             <button key={h.type} onClick={() => setHoaType(hoaType === h.type ? null : h.type)}
-              style={{ flex: 1, background: hoaType === h.type ? "#F5E642" : "#1e2d45", border: "none", borderRadius: 8, padding: 14, cursor: "pointer", color: hoaType === h.type ? "#0A1628" : "#fff", textAlign: "center" }}>
+              style={{ flex: 1, background: hoaType === h.type ? "#F5E642″ : "#1e2d45", border: "none", borderRadius: 8, padding: 14, cursor: "pointer", color: hoaType === h.type ? "#0A1628" : "#fff", textAlign: "center" }}>
               <div style={{ fontSize: 28 }}>{h.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 12, marginTop: 4 }}>{h.type}</div>
               <div style={{ fontSize: 11, opacity: 0.7 }}>{h.size}</div>
@@ -93,16 +93,16 @@ export default function DFWHOAFinancialsGuide2026() {
         {hoaType && (() => {
           const h = hoaTypes.find(x => x.type === hoaType)!;
           return (
-            <div style={{ background: "#1e2d45", borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
-              <h3 style={{ color: "#F5E642", margin: "0 0 16px" }}>{h.icon} {h.type} Financial Checklist</h3>
+            <div style={{ background: "#1e2d45″, borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
+              <h3 style={{ color: "#F5E642″, margin: "0 0 16px" }}>{h.icon} {h.type} Financial Checklist</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {h.checklist.map((item, i) => (
-                  <div key={i} style={{ background: "#0A1628", borderRadius: 6, padding: 12 }}>
+                  <div key={i} style={{ background: "#0A1628″, borderRadius: 6, padding: 12 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                      <span style={{ color: "#F5E642", fontWeight: 600, fontSize: 13 }}>{item.label}</span>
-                      <span style={{ color: "#4ade80", fontSize: 12 }}>✅ {item.target}</span>
+                      <span style={{ color: "#F5E642″, fontWeight: 600, fontSize: 13 }}>{item.label}</span>
+                      <span style={{ color: "#4ade80″, fontSize: 12 }}>✅ {item.target}</span>
                     </div>
-                    <div style={{ color: "#f87171", fontSize: 12 }}>🚨 {item.flag}</div>
+                    <div style={{ color: "#f87171″, fontSize: 12 }}>🚨 {item.flag}</div>
                   </div>
                 ))}
               </div>
@@ -110,7 +110,7 @@ export default function DFWHOAFinancialsGuide2026() {
           );
         })()}
 
-        <div style={{ background: "#F5E642", borderRadius: 8, padding: "12px 20px", color: "#0A1628" }}>
+        <div style={{ background: "#F5E642″, borderRadius: 8, padding: "12px 20px", color: "#0A1628" }}>
           <strong>Pro Tip:</strong> In Texas, you can request HOA financial records as a prospective buyer through the listing agent. The seller must provide a resale certificate that includes financials, current fees, and any pending special assessments.
         </div>
       </div>

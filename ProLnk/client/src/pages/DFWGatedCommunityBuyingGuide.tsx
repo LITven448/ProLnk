@@ -51,7 +51,7 @@ export default function DFWGatedCommunityBuyingGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
           {gatedFacts.slice(0, 4).map(f => (
-            <div key={f.title} style={{ background: '#fff', borderRadius: 10, padding: 18, border: '1px solid #e2e8f0' }}>
+            <div key={f.title} style={{ background: '#fff', borderRadius: 10, padding: 18, border: '1px solid #e2e8f0′ }}>
               <div style={{ fontSize: 26, marginBottom: 8 }}>{f.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{f.title}</div>
               <div style={{ fontSize: 13, color: '#475569', lineHeight: 1.6 }}>{f.desc}</div>
@@ -78,11 +78,11 @@ export default function DFWGatedCommunityBuyingGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, margin: '0 0 16px' }}>🔍 Gated vs Non-Gated Value Assessment</h2>
           <div style={{ marginBottom: 12 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>Your budget</label>
-            <input type="text" placeholder="e.g. $550,000" value={budget} onChange={e => setBudget(e.target.value)}
+            <input type="text" placeholder="e.g. $550,000″ value={budget} onChange={e => setBudget(e.target.value)}
               style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 14, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 16 }}>

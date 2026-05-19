@@ -104,8 +104,8 @@ export default function DFWProLnkCompetitiveAdvantage() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🏁 Select a Competitor</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {COMPETITORS.map((c) => (
-              <button key={c.key} onClick={() => setSelected(c.key === selected ? null : c.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === c.key ? '#F5E642' : '#0A1628'}`, background: selected === c.key ? '#0A1628' : '#0d1f38', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ color: selected === c.key ? '#F5E642' : '#e2e8f0', fontWeight: selected === c.key ? 700 : 400, fontSize: 14 }}>{c.label}</span>
+              <button key={c.key} onClick={() => setSelected(c.key === selected ? null : c.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === c.key ? '#F5E642' : '#0A1628'}`, background: selected === c.key ? '#0A1628′ : '#0d1f38', cursor: ’pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ color: selected === c.key ? '#F5E642′ : '#e2e8f0', fontWeight: selected === c.key ? 700 : 400, fontSize: 14 }}>{c.label}</span>
                 <span style={{ color: '#64748b', fontSize: 12, background: '#1e2d45', borderRadius: 6, padding: '3px 8px' }}>{c.type}</span>
               </button>
             ))}

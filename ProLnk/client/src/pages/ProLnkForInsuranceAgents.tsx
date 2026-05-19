@@ -29,9 +29,9 @@ export default function ProLnkForInsuranceAgents() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 14, marginBottom: 40 }}>
           {benefits.map((b, i) => (
-            <div key={i} onClick={() => setActiveBenefit(activeBenefit === i ? null : i)} style={{ background: activeBenefit === i ? '#1a2d4a' : '#132040', border: activeBenefit === i ? '1px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 12, padding: 20, cursor: 'pointer', transition: 'all 0.2s' }}>
+            <div key={i} onClick={() => setActiveBenefit(activeBenefit === i ? null : i)} style={{ background: activeBenefit === i ? '#1a2d4a' : '#132040', border: activeBenefit === i ? '1px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 12, padding: 20, cursor: ’pointer', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{b.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: activeBenefit === i ? '#F5E642' : '#fff' }}>{b.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: activeBenefit === i ? '#F5E642′ : '#fff' }}>{b.title}</div>
               {activeBenefit === i && <div style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.6 }}>{b.desc}</div>}
               {activeBenefit !== i && <div style={{ color: '#64748b', fontSize: 13 }}>Tap to learn more →</div>}
             </div>
@@ -43,7 +43,7 @@ export default function ProLnkForInsuranceAgents() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>Select your book of business size:</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
             {bookSizes.map((b, i) => (
-              <button key={i} onClick={() => setBookIdx(i)} style={{ background: bookIdx === i ? '#F5E642' : '#0A1628', color: bookIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={i} onClick={() => setBookIdx(i)} style={{ background: bookIdx === i ? '#F5E642′ : '#0A1628', color: bookIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {b.label}
               </button>
             ))}
@@ -51,7 +51,7 @@ export default function ProLnkForInsuranceAgents() {
           {bookIdx !== null && (
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>Estimated Monthly ProLnk Referral Opportunity</div>
-              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642' }}>{bookSizes[bookIdx].opportunity}</div>
+              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642′ }}>{bookSizes[bookIdx].opportunity}</div>
               <div style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Based on average claim frequency and DFW match fee rates</div>
             </div>
           )}

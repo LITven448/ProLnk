@@ -55,7 +55,7 @@ export default function DFWContractReviewGuide() {
             <label key={el.id} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '0.6rem 0', borderBottom: '1px solid #1E2E45', cursor: 'pointer' }}>
               <input type="checkbox" checked={!!checked[el.id]} onChange={() => toggle(el.id)}
                 style={{ marginTop: 3, accentColor: '#F5E642', width: 16, height: 16 }} />
-              <span style={{ color: checked[el.id] ? '#F5E642' : '#C8D0DC' }}>{el.label}</span>
+              <span style={{ color: checked[el.id] ? '#F5E642′ : '#C8D0DC' }}>{el.label}</span>
               {el.critical && <span style={{ background: '#2A1A1A', color: '#FF6B6B', borderRadius: 4, padding: '0 6px', fontSize: '0.75rem', marginLeft: 'auto', whiteSpace: 'nowrap' }}>CRITICAL</span>}
             </label>
           ))}
@@ -71,17 +71,17 @@ export default function DFWContractReviewGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
                 <div style={{ color: '#9BA3B4', fontSize: '0.85rem' }}>Overall Score</div>
-                <div style={{ color: score >= 80 ? '#4CAF50' : score >= 60 ? '#F5E642' : '#FF6B6B', fontSize: '2rem', fontWeight: 800 }}>{score}%</div>
+                <div style={{ color: score >= 80 ? '#4CAF50′ : score >= 60 ? '#F5E642' : '#FF6B6B', fontSize: '2rem', fontWeight: 800 }}>{score}%</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
                 <div style={{ color: '#9BA3B4', fontSize: '0.85rem' }}>Critical Items</div>
-                <div style={{ color: criticalScore === 100 ? '#4CAF50' : '#FF6B6B', fontSize: '2rem', fontWeight: 800 }}>{criticalScore}%</div>
+                <div style={{ color: criticalScore === 100 ? '#4CAF50′ : '#FF6B6B', fontSize: '2rem', fontWeight: 800 }}>{criticalScore}%</div>
               </div>
             </div>
             {missing.length > 0 && (
               <>
                 <h3 style={{ color: '#FF6B6B', marginBottom: '0.75rem' }}>❌ Missing — Add Before Signing</h3>
-                {missing.map(m => <div key={m.id} style={{ color: '#9BA3B4', padding: '0.35rem 0', borderBottom: '1px solid #1E2E45' }}>• {m.label}</div>)}
+                {missing.map(m => <div key={m.id} style={{ color: '#9BA3B4', padding: '0.35rem 0', borderBottom: '1px solid #1E2E45′ }}>• {m.label}</div>)}
               </>
             )}
           </div>
@@ -89,7 +89,7 @@ export default function DFWContractReviewGuide() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem' }}>
           <h2 style={{ color: '#FF6B6B', marginBottom: '1rem' }}>🚩 DFW Contract Red Flags</h2>
-          {RED_FLAGS.map(r => <div key={r} style={{ color: '#9BA3B4', padding: '0.4rem 0' }}>{r}</div>)}
+          {RED_FLAGS.map(r => <div key={r} style={{ color: '#9BA3B4', padding: '0.4rem 0′ }}>{r}</div>)}
         </div>
       </div>
     </div>

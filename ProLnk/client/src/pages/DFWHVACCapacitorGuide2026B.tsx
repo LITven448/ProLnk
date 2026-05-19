@@ -42,19 +42,19 @@ export default function DFWHVACCapacitorGuide2026B() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Capacitor Deep Dive 2026 (Part 2)</h1>
-          <div style={{ background: '#7f1d1d', border: '1px solid #ef4444', borderRadius: '0.5rem', padding: '0.75rem', marginTop: '1rem', fontSize: '0.9rem', color: '#fca5a5' }}>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Capacitor Deep Dive 2026 (Part 2)</h1>
+          <div style={{ background: '#7f1d1d', border: '1px solid #ef4444', borderRadius: '0.5rem', padding: '0.75rem', marginTop: '1rem', fontSize: '0.9rem', color: '#fca5a5′ }}>
             🔥 DFW attics hit 130°F+ — the #1 reason capacitors fail early in North Texas
           </div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr' , gap: '1rem', marginBottom: '2rem' }}>
           {types.map((t, i) => (
-            <div key={i} style={{ background: '#1e293b', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #334155' }}>
+            <div key={i} style={{ background: '#1e293b', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
                 <span style={{ fontSize: '1.8rem' }}>{t.icon}</span>
                 <div>
-                  <div style={{ fontWeight: '700', color: '#F5E642' }}>{t.name}</div>
+                  <div style={{ fontWeight: '700', color: '#F5E642′ }}>{t.name}</div>
                   <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Est. cost: {t.cost}</div>
                 </div>
               </div>
@@ -64,20 +64,20 @@ export default function DFWHVACCapacitorGuide2026B() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, marginBottom: '1rem' }}>🔍 Symptom → Assessment</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => setSymptom(symptom === s.id ? null : s.id)}
-                style={{ background: symptom === s.id ? '#F5E642' : '#0f172a', color: symptom === s.id ? '#0A1628' : '#e2e8f0',
-                  border: '1px solid' + (symptom === s.id ? ' #F5E642' : ' #475569'), borderRadius: '0.5rem', padding: '0.5rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem' }}>
+                style={{ background: symptom === s.id ? '#F5E642′ : '#0f172a', color: symptom === s.id ? '#0A1628' : '#e2e8f0',
+                  border: '1px solid' + (symptom === s.id ? ' #F5E642′ : ' #475569'), borderRadius: '0.5rem', padding: '0.5rem 0.9rem', cursor: ’pointer', fontSize: '0.85rem' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {sel && (
-            <div style={{ background: '#0f172a', borderRadius: '0.5rem', padding: '1rem', borderLeft: '4px solid' + (sel.urgency === 'high' ? ' #ef4444' : ' #F5E642') }}>
-              <div style={{ color: sel.urgency === 'high' ? '#ef4444' : '#F5E642', fontWeight: '700', marginBottom: '0.5rem' }}>
+            <div style={{ background: '#0f172a', borderRadius: '0.5rem', padding: '1rem', borderLeft: '4px solid' + (sel.urgency === 'high' ? ' #ef4444′ : ' #F5E642') }}>
+              <div style={{ color: sel.urgency === 'high' ? '#ef4444′ : '#F5E642', fontWeight: '700', marginBottom: '0.5rem' }}>
                 {sel.urgency === 'high' ? '🚨 HIGH URGENCY' : '⚠️ MONITOR'}
               </div>
               <div style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{sel.answer}</div>

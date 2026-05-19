@@ -53,7 +53,7 @@ export default function DFWChimneyCrownRepairGuide() {
         <div style={{ background: '#111e35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🏗️ What the Chimney Crown Does</div>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>
-            The chimney crown is the concrete slab that caps the top of your chimney, sloping outward to direct rainwater away from the flue and masonry. Without a sound crown, DFW's heavy spring rains penetrate the flue, rot framing, damage firebox components, and accelerate brick spalling. It is the chimney's first line of defense.
+            The chimney crown is the concrete slab that caps the top of your chimney, sloping outward to direct rainwater away from the flue and masonry. Without a sound crown, DFW's heavy spring rains penetrate the flue, rot framing, damage firebox components, and accelerate brick spalling. It is the chimney’s first line of defense.
           </p>
         </div>
 
@@ -76,10 +76,10 @@ export default function DFWChimneyCrownRepairGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🔧 Repair vs. Rebuild</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {[
-              { label: 'Elastomeric Sealant', when: 'Hairline cracks, crown structurally sound', cost: '$150–$350 DIY or pro', color: '#4ade80' },
-              { label: 'Resurfacing', when: 'Surface spalling but core intact', cost: '$400–$700', color: '#4ade80' },
-              { label: 'Partial Rebuild', when: 'Significant chunks missing, flue exposed', cost: '$800–$1,800', color: '#facc15' },
-              { label: 'Full Rebuild', when: 'Crown failed, active water intrusion', cost: '$1,800–$4,000', color: '#f87171' },
+              { label: 'Elastomeric Sealant', when: 'Hairline cracks, crown structurally sound', cost: '$150–$350 DIY or pro', color: '#4ade80′ },
+              { label: 'Resurfacing', when: 'Surface spalling but core intact', cost: '$400–$700', color: '#4ade80′ },
+              { label: 'Partial Rebuild', when: 'Significant chunks missing, flue exposed', cost: '$800–$1,800', color: '#facc15′ },
+              { label: 'Full Rebuild', when: 'Crown failed, active water intrusion', cost: '$1,800–$4,000', color: '#f87171′ },
             ].map(row => (
               <div key={row.label} style={{ display: 'grid', gridTemplateColumns: '160px 1fr 140px', gap: '1rem', alignItems: 'center', background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem' }}>
                 <span style={{ color: row.color, fontWeight: 600, fontSize: '0.9rem' }}>{row.label}</span>
@@ -118,7 +118,7 @@ export default function DFWChimneyCrownRepairGuide() {
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Urgency</div>
-                <div style={{ color: result.urgency.startsWith('Critical') ? '#f87171' : result.urgency.startsWith('High') ? '#fb923c' : result.urgency.startsWith('Medium') ? '#facc15' : '#4ade80', fontSize: '0.95rem', fontWeight: 700 }}>{result.urgency}</div>
+                <div style={{ color: result.urgency.startsWith('Critical') ? '#f87171′ : result.urgency.startsWith(’High') ? '#fb923c' : result.urgency.startsWith('Medium') ? '#facc15′ : '#4ade80', fontSize: '0.95rem', fontWeight: 700 }}>{result.urgency}</div>
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Est. Cost</div>

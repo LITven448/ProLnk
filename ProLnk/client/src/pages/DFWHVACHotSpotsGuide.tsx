@@ -67,7 +67,7 @@ export default function DFWHVACHotSpotsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {hotSpotTypes.map(s => (
               <button key={s.id} onClick={() => setSpot(s.id)}
-                style={{ background: spot === s.id ? '#F5E642' : '#1A3060', color: spot === s.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: spot === s.id ? 700 : 400, textAlign: 'left' }}>
+                style={{ background: spot === s.id ? '#F5E642′ : '#1A3060', color: spot === s.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: spot === s.id ? 700 : 400, textAlign: 'left' }}>
                 {s.emoji} {s.label}
               </button>
             ))}
@@ -79,7 +79,7 @@ export default function DFWHVACHotSpotsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {homeTypes.map(h => (
               <button key={h.id} onClick={() => setHome(h.id)}
-                style={{ background: home === h.id ? '#F5E642' : '#1A3060', color: home === h.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: home === h.id ? 700 : 400 }}>
+                style={{ background: home === h.id ? '#F5E642′ : '#1A3060', color: home === h.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: home === h.id ? 700 : 400 }}>
                 {h.label}
               </button>
             ))}

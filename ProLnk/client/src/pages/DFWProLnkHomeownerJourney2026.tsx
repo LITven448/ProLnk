@@ -50,7 +50,7 @@ export default function DFWProLnkHomeownerJourney2026() {
         </div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Your Complete DFW Homeowner Journey</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28 }}>
-          ProLnk isn't a transaction platform — it's a home intelligence system that builds permanent value with every service. Here's what your journey looks like over time.
+          ProLnk isn't a transaction platform — it’s a home intelligence system that builds permanent value with every service. Here’s what your journey looks like over time.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
@@ -69,17 +69,17 @@ export default function DFWProLnkHomeownerJourney2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🗺️ Select Your Journey Stage</div>
+          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🗺️ Select Your Journey Stage</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {stages.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left' }}>
                 {s.label} <span style={{ opacity: 0.7, fontWeight: 400, fontSize: 13 }}>— {s.timeline}</span>
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#cbd5e1', marginBottom: 12, lineHeight: 1.6 }}>{result.value}</div>
               {result.outcomes.map(o => (
                 <div key={o} style={{ color: '#94a3b8', marginBottom: 6, fontSize: 14 }}>{o}</div>
@@ -88,9 +88,9 @@ export default function DFWProLnkHomeownerJourney2026() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628′ }}>
           <div style={{ fontWeight: 800, fontSize: 16 }}>🏠 Start Your Journey — Add Your DFW Home to the Vault</div>
-          <div style={{ fontSize: 14, marginTop: 6 }}>Every day your home isn't in ProLnk is a day of maintenance history you'll never get back. Join the waitlist and we'll reach out when your area opens.</div>
+          <div style={{ fontSize: 14, marginTop: 6 }}>Every day your home isn't in ProLnk is a day of maintenance history you’ll never get back. Join the waitlist and we’ll reach out when your area opens.</div>
         </div>
       </div>
     </div>

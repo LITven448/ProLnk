@@ -25,17 +25,17 @@ export default function DFWWalkInShowerGuide2026() {
           {[{ label: 'DFW Avg Cost', value: '$4K–$8K', icon: '💰' }, { label: 'Project Timeline', value: '5–7 Days', icon: '📅' }, { label: 'Permit Required', value: 'Usually No', icon: '📋' }, { label: 'ROI at Resale', value: '~70%', icon: '📈' }].map(s => (
             <div key={s.label} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Step 1: What is your bathroom size?</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Step 1: What is your bathroom size?</h2>
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
           {sizes.map((s, i) => (
             <button key={i} onClick={() => { setSizeIdx(i); setBudgetIdx(null); }}
-              style={{ background: sizeIdx === i ? '#F5E642' : '#132036', color: sizeIdx === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: sizeIdx === i ? '#F5E642′ : '#132036', color: sizeIdx === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {s.label}
             </button>
           ))}
@@ -43,11 +43,11 @@ export default function DFWWalkInShowerGuide2026() {
 
         {sizeIdx !== null && (
           <>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Step 2: Select your budget range</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Step 2: Select your budget range</h2>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               {sizes[sizeIdx].budgets.map((b, i) => (
                 <button key={i} onClick={() => setBudgetIdx(i)}
-                  style={{ background: budgetIdx === i ? '#F5E642' : '#132036', color: budgetIdx === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                  style={{ background: budgetIdx === i ? '#F5E642′ : '#132036', color: budgetIdx === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                   {b.range}
                 </button>
               ))}
@@ -56,10 +56,10 @@ export default function DFWWalkInShowerGuide2026() {
         )}
 
         {sizeIdx !== null && budgetIdx !== null && (
-          <div style={{ background: '#132036', borderRadius: 10, padding: '1.5rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
-            <h3 style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>Your Recommended Scope</h3>
+          <div style={{ background: '#132036', borderRadius: 10, padding: '1.5rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
+            <h3 style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>Your Recommended Scope</h3>
             <p style={{ lineHeight: 1.7 }}>{sizes[sizeIdx].budgets[budgetIdx].scope}</p>
-            <p style={{ color: '#94A3B8', fontSize: 13, marginTop: '0.75rem' }}>ADA grab bar placement: 33–36" from floor on side wall, 36" on back wall. Verify with your contractor.</p>
+            <p style={{ color: '#94A3B8', fontSize: 13, marginTop: '0.75rem' }}>ADA grab bar placement: 33–36" from floor on side wall, 36″ on back wall. Verify with your contractor.</p>
           </div>
         )}
 

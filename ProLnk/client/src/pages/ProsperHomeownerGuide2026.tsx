@@ -42,7 +42,7 @@ export default function ProsperHomeownerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {[{ v: '1', l: '🆕 Under 3 Years' }, { v: '3', l: '🔧 3–6 Years' }, { v: '7', l: '📆 7–10 Years' }, { v: '10', l: '🔁 10+ Years' }].map(opt => (
               <button key={opt.v} onClick={() => setYears(opt.v)}
-                style={{ background: years === opt.v ? '#F5E642' : '#1a2f50', color: years === opt.v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: years === opt.v ? '#F5E642′ : '#1a2f50', color: years === opt.v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {opt.l}
               </button>
             ))}

@@ -55,7 +55,7 @@ function RatingDots({ rating }: { rating: number }) {
   return (
     <span style={{ display: 'inline-flex', gap: 3 }}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: i < rating ? '#F5E642' : '#1E2D45', display: 'inline-block' }} />
+        <span key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: i < rating ? '#F5E642′ : '#1E2D45', display: ’inline-block' }} />
       ))}
     </span>
   );
@@ -103,7 +103,7 @@ export default function DFWShowerRegroutingGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedCondition.label === c.label ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedCondition.label === c.label ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedCondition.label === c.label ? '#F5E642' : '#94A3B8',
+                    color: selectedCondition.label === c.label ? '#F5E642′ : '#94A3B8',
                     cursor: 'pointer',
                     textAlign: 'left',
                     fontSize: 14,
@@ -127,7 +127,7 @@ export default function DFWShowerRegroutingGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedAge.label === a.label ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedAge.label === a.label ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedAge.label === a.label ? '#F5E642' : '#94A3B8',
+                    color: selectedAge.label === a.label ? '#F5E642′ : '#94A3B8',
                     cursor: 'pointer',
                     fontSize: 13,
                     fontWeight: 600,
@@ -140,7 +140,7 @@ export default function DFWShowerRegroutingGuide() {
           </div>
           <div style={{ padding: 20, borderRadius: 12, background: needsRetile ? '#2A0A0A' : '#0A2A1A', border: `1px solid ${needsRetile ? '#EF4444' : '#22C55E'}` }}>
             <div style={{ fontSize: 32, marginBottom: 8 }}>{needsRetile ? '🔴' : isDIY ? '🟢' : '🟡'}</div>
-            <div style={{ fontWeight: 700, fontSize: 20, color: needsRetile ? '#EF4444' : isDIY ? '#22C55E' : '#EAB308', marginBottom: 8 }}>
+            <div style={{ fontWeight: 700, fontSize: 20, color: needsRetile ? '#EF4444′ : isDIY ? '#22C55E' : '#EAB308', marginBottom: 8 }}>
               {needsRetile ? 'Recommend Retiling' : isDIY ? 'DIY-Friendly Regrout' : 'Professional Regrout Recommended'}
             </div>
             <div style={{ color: '#94A3B8', fontSize: 14 }}>
@@ -171,8 +171,8 @@ export default function DFWShowerRegroutingGuide() {
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
-                  <div style={{ fontWeight: 700, color: selectedGrout.name === g.name ? '#F5E642' : '#E8EDF5' }}>{g.name}</div>
-                  <div style={{ fontSize: 12, color: '#94A3B8' }}>${g.costPerSqFt}/sq ft · {g.lifespan}</div>
+                  <div style={{ fontWeight: 700, color: selectedGrout.name === g.name ? '#F5E642′ : '#E8EDF5' }}>{g.name}</div>
+                  <div style={{ fontSize: 12, color: '#94A3B8′ }}>${g.costPerSqFt}/sq ft · {g.lifespan}</div>
                 </div>
                 <div style={{ display: 'flex', gap: 20, marginBottom: 8, fontSize: 12 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
@@ -206,7 +206,7 @@ export default function DFWShowerRegroutingGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedSize.label === s.label ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedSize.label === s.label ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedSize.label === s.label ? '#F5E642' : '#94A3B8',
+                    color: selectedSize.label === s.label ? '#F5E642′ : '#94A3B8',
                     cursor: 'pointer',
                     fontSize: 13,
                     fontWeight: 600,
@@ -237,7 +237,7 @@ export default function DFWShowerRegroutingGuide() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🔧</div>
           <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 8 }}>Get DFW Tile & Grout Quotes</h3>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Connect with vetted DFW tile contractors through ProLnk — free quotes, no commitment.</p>

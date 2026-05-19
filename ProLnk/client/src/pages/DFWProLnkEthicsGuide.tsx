@@ -67,20 +67,20 @@ export default function DFWProLnkEthicsGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>⚖️</div>
-          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0' }}>Partner Ethics & Compliance</h1>
+          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0′ }}>Partner Ethics & Compliance</h1>
           <p style={{ color: '#94A3B8', marginTop: '0.5rem' }}>FTC-compliant language for every situation DFW partners encounter</p>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {situations.map(s => (
-            <button key={s.id} onClick={() => setSelected(s)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === s.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === s.id ? '#1E3A5F' : 'transparent', color: selected.id === s.id ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: '0.85rem' }}>
+            <button key={s.id} onClick={() => setSelected(s)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === s.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === s.id ? '#1E3A5F' : 'transparent', color: selected.id === s.id ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: '0.85rem' }}>
               {s.label}
             </button>
           ))}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-          <div style={{ backgroundColor: '#0F2040', borderRadius: 8, padding: '1.25rem', border: '1px solid #166534' }}>
+          <div style={{ backgroundColor: '#0F2040', borderRadius: 8, padding: '1.25rem', border: '1px solid #166534′ }}>
             <div style={{ color: '#4ADE80', fontWeight: 700, marginBottom: '0.75rem' }}>✅ Compliant Language</div>
             {selected.compliant.map((c, i) => (
               <div key={i} style={{ color: '#CBD5E1', marginBottom: '0.75rem', lineHeight: 1.5, fontSize: '0.88rem', borderLeft: '3px solid #166534', paddingLeft: '0.75rem' }}>{c}</div>

@@ -61,9 +61,9 @@ export default function DFWCashVsFinancedGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
-            { label: 'Cash Offer', score: '95%', detail: 'Acceptance rate when competing', color: '#27ae60' },
-            { label: 'Pre-Underwritten', score: '80%', detail: 'Acceptance rate vs. standard pre-qual', color: '#2980b9' },
-            { label: 'Standard Pre-Qual', score: '55%', detail: 'Acceptance rate in hot DFW pockets', color: '#e67e22' },
+            { label: 'Cash Offer', score: '95%', detail: 'Acceptance rate when competing', color: '#27ae60′ },
+            { label: 'Pre-Underwritten', score: '80%', detail: 'Acceptance rate vs. standard pre-qual', color: '#2980b9′ },
+            { label: 'Standard Pre-Qual', score: '55%', detail: 'Acceptance rate in hot DFW pockets', color: '#e67e22′ },
             { label: 'Low Down FHA', score: '35%', detail: 'Acceptance rate vs cash in hot areas', color: '#e74c3c' },
           ].map((item, i) => (
             <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '10px', padding: '1rem', borderLeft: `4px solid ${item.color}` }}>
@@ -79,11 +79,11 @@ export default function DFWCashVsFinancedGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>Purchase Price ($)</label>
-              <input type='number' value={purchasePrice} onChange={e => setPurchasePrice(e.target.value)} placeholder='e.g. 450000' style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }} />
+              <input type='number' value={purchasePrice} onChange={e => setPurchasePrice(e.target.value)} placeholder='e.g. 450000′ style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: ’border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>Available Cash ($)</label>
-              <input type='number' value={availableCash} onChange={e => setAvailableCash(e.target.value)} placeholder='e.g. 90000' style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }} />
+              <input type='number' value={availableCash} onChange={e => setAvailableCash(e.target.value)} placeholder='e.g. 90000′ style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: ’border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>DFW Market Competitiveness</label>

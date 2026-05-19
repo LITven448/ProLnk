@@ -70,7 +70,7 @@ export default function MultipleContractorProjectGuide() {
                 'Each trade\’s scope is clearly independent',
                 'You\’ve done this project type before',
                 'Saving 15–25% on overhead is material to your budget',
-              ].map(i => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1E2D45' }}>{i}</div>)}
+              ].map(i => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1E2D45′ }}>{i}</div>)}
             </div>
             <div style={{ backgroundColor: '#132040', borderRadius: 12, padding: '24px' }}>
               <h3 style={{ color: '#f87171', fontWeight: 700, marginBottom: 14 }}>❌ Hire a GC When:</h3>
@@ -80,7 +80,7 @@ export default function MultipleContractorProjectGuide() {
                 'Structural or MEP work is involved',
                 'Project requires multiple permits and inspections',
                 'Budget exceeds $75K — coordination risk compounds',
-              ].map(i => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1E2D45' }}>{i}</div>)}
+              ].map(i => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1E2D45′ }}>{i}</div>)}
             </div>
           </div>
         </section>
@@ -137,7 +137,7 @@ export default function MultipleContractorProjectGuide() {
             ['Electrician vs. Low-Voltage', 'Who runs wire for the thermostat? Who installs the panel for the security system? Define both.'],
             ['GC vs. Homeowner-Supplied Materials', 'If you supply fixtures or appliances, define who is responsible if they arrive damaged and who is responsible for installation defects.'],
           ].map(([overlap, detail]) => (
-            <div key={overlap as string} style={{ backgroundColor: '#1a0a0a', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #3a1515' }}>
+            <div key={overlap as string} style={{ backgroundColor: '#1a0a0a', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #3a1515′ }}>
               <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>⚠️ {overlap}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{detail}</div>
             </div>
@@ -150,7 +150,7 @@ export default function MultipleContractorProjectGuide() {
 
           <div style={{ marginBottom: 24 }}>
             {tradeItems.map(t => (
-              <label key={t.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '10px 0', cursor: 'pointer', borderBottom: '1px solid #1E2D45' }}>
+              <label key={t.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '10px 0', cursor: 'pointer', borderBottom: '1px solid #1E2D45′ }}>
                 <input
                   type="checkbox"
                   checked={selectedTrades.includes(t.id)}
@@ -169,8 +169,8 @@ export default function MultipleContractorProjectGuide() {
             onClick={() => setShowSequence(true)}
             disabled={selectedTrades.length === 0}
             style={{
-              backgroundColor: selectedTrades.length > 0 ? '#F5E642' : '#1E2D45',
-              color: selectedTrades.length > 0 ? '#0A1628' : '#475569',
+              backgroundColor: selectedTrades.length > 0 ? '#F5E642′ : '#1E2D45',
+              color: selectedTrades.length > 0 ? '#0A1628′ : '#475569',
               border: 'none', borderRadius: 8, padding: '14px 28px',
               fontWeight: 700, fontSize: 15, cursor: selectedTrades.length > 0 ? 'pointer' : 'not-allowed', marginBottom: 24,
             }}
@@ -181,7 +181,7 @@ export default function MultipleContractorProjectGuide() {
           {showSequence && selected.length > 0 && (
             <div style={{ backgroundColor: '#081525', borderRadius: 12, padding: '24px' }}>
               <div style={{ marginBottom: 20, padding: '14px 18px', borderRadius: 8, backgroundColor: needsGC ? '#1a0a0a' : '#0a1f0a', border: `1px solid ${needsGC ? '#5a1a1a' : '#1a5a1a'}` }}>
-                <div style={{ fontWeight: 700, color: needsGC ? '#f87171' : '#4ade80', fontSize: 16 }}>
+                <div style={{ fontWeight: 700, color: needsGC ? '#f87171′ : '#4ade80', fontSize: 16 }}>
                   {needsGC ? '⚠️ Recommendation: Hire a General Contractor' : '✅ Recommendation: You can self-manage this project'}
                 </div>
                 <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 6 }}>
@@ -193,7 +193,7 @@ export default function MultipleContractorProjectGuide() {
 
               <div style={{ color: '#FFFFFF', fontWeight: 700, marginBottom: 14 }}>Recommended Sequence:</div>
               {sorted.map((t, i) => (
-                <div key={t.id} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #1E2D45' }}>
+                <div key={t.id} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #1E2D45′ }}>
                   <div style={{ color: '#F5E642', fontWeight: 800, minWidth: 28, fontSize: 16 }}>{i + 1}</div>
                   <div>
                     <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{t.label}</div>
@@ -206,7 +206,7 @@ export default function MultipleContractorProjectGuide() {
                 <div style={{ marginTop: 20 }}>
                   <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 10 }}>⚠️ Scheduling Dependencies to Coordinate:</div>
                   {conflicts.map((c, i) => (
-                    <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '8px 0', borderBottom: '1px solid #1E2D45' }}>
+                    <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '8px 0', borderBottom: '1px solid #1E2D45′ }}>
                       🔗 {c} — these trades must be sequenced and cannot overlap
                     </div>
                   ))}

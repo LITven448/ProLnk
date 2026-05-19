@@ -78,7 +78,7 @@ export default function DFWHVACYear10Update() {
           <div style={{ display: 'grid', gap: '10px' }}>
             {situations.map(s => (
               <button key={s.value} onClick={() => setSelected(s.value)}
-                style={{ padding: '14px 18px', borderRadius: '8px', border: `2px solid ${selected === s.value ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === s.value ? '#1a2f50' : 'transparent', color: selected === s.value ? '#F5E642' : '#cbd5e1', cursor: 'pointer', textAlign: 'left', fontSize: '15px', fontWeight: selected === s.value ? 700 : 400 }}>
+                style={{ padding: '14px 18px', borderRadius: '8px', border: `2px solid ${selected === s.value ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === s.value ? '#1a2f50′ : ’transparent', color: selected === s.value ? '#F5E642′ : '#cbd5e1', cursor: ’pointer', textAlign: 'left', fontSize: '15px', fontWeight: selected === s.value ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}
@@ -100,7 +100,7 @@ export default function DFWHVACYear10Update() {
               <div style={{ fontSize: '13px', color: '#f59e0b', fontWeight: 600, marginBottom: '4px' }}>⏱️ TIMELINE</div>
               <div style={{ color: '#94a3b8', fontSize: '14px' }}>{plan.timeline}</div>
             </div>
-            <div style={{ backgroundColor: '#1a2f50', borderRadius: '8px', padding: '14px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#1a2f50', borderRadius: '8px', padding: '14px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: '13px', color: '#F5E642', fontWeight: 600, marginBottom: '4px' }}>💡 DFW INSIGHT</div>
               <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: 1.5 }}>{plan.insight}</div>
             </div>

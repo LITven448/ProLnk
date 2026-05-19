@@ -35,14 +35,14 @@ export default function DFWLowWaterPressureGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>🏆 Top DFW Pressure Causes</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
-              { cause: 'Pressure regulator failure', freq: 'Very Common', cost: '$250-400' },
+              { cause: 'Pressure regulator failure', freq: 'Very Common', cost: '$250-400′ },
               { cause: 'Mineral buildup in aerators', freq: 'Common', cost: '$0 DIY' },
-              { cause: 'Partially closed shutoff valve', freq: 'Common', cost: '$0' },
-              { cause: 'Corroded galvanized pipes', freq: 'Older DFW homes', cost: '$2,000-8,000' },
+              { cause: 'Partially closed shutoff valve', freq: 'Common', cost: '$0′ },
+              { cause: 'Corroded galvanized pipes', freq: 'Older DFW homes', cost: '$2,000-8,000′ },
               { cause: 'Municipal main pressure drop', freq: 'Occasional', cost: '$0 (city issue)' },
             ].map(r => (
               <div key={r.cause} style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: 12, borderBottom: '1px solid #334155', paddingBottom: 10, alignItems: 'center' }}>
-                <span style={{ color: '#e2e8f0' }}>{r.cause}</span>
+                <span style={{ color: '#e2e8f0′ }}>{r.cause}</span>
                 <span style={{ color: '#94a3b8', fontSize: 13 }}>{r.freq}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, textAlign: 'right' }}>{r.cost}</span>
               </div>
@@ -53,9 +53,9 @@ export default function DFWLowWaterPressureGuide2026() {
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Diagnose Your Pressure Problem</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Where is the low pressure?</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Where is the low pressure?</label>
             <select value={location} onChange={e => setLocation(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
               <option value="">Select location...</option>
               <option value="whole-house">🏠 Whole house, all fixtures</option>
               <option value="single-fixture">🚿 Single fixture only</option>
@@ -69,7 +69,7 @@ export default function DFWLowWaterPressureGuide2026() {
             Find the Cause
           </button>
           {diagnosis && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>
               {diagnosis}
             </div>
           )}

@@ -169,10 +169,10 @@ export default function DFWStagingPhotographyPrep() {
         <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 24 }}>
           <div style={{ fontSize: 36 }}>📸</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '8px 0 4px' }}>DFW Photography Prep Guide</h1>
-          <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>95% of DFW buyers view photos before visiting. Great listing photos aren't luck — they're a specific day-before and day-of checklist. Here's exactly what to do.</p>
+          <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>95% of DFW buyers view photos before visiting. Great listing photos aren't luck — they’re a specific day-before and day-of checklist. Here’s exactly what to do.</p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📷 DFW Photography Rules</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -181,15 +181,15 @@ export default function DFWStagingPhotographyPrep() {
               ['Hire a professional — $200–400 investment returns $3,000–8,000 in DFW', '🏆'],
               ['Declutter is an understatement — remove 50% more than you think is right', '📦'],
             ].map(([tip, icon], i) => (
-              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
+              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
                 <span style={{ fontSize: 20 }}>{icon}</span>
-                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0' }}>{tip}</p>
+                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0′ }}>{tip}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your Room Checklist</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#374151', fontSize: 14, fontWeight: 600, display: 'block', marginBottom: 6 }}>Select Room</label>
@@ -220,7 +220,7 @@ export default function DFWStagingPhotographyPrep() {
                 <div style={{ color: '#DC2626', fontWeight: 700, marginBottom: 10 }}>⚠️ What Photographers Most Commonly Ask Sellers to Fix</div>
                 {result.commonFixes.map((fix, i) => <div key={i} style={{ color: '#374151', fontSize: 13, marginBottom: 6 }}>• {fix}</div>)}
               </div>
-              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 14, border: '1px solid #FDE047' }}>
+              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 14, border: '1px solid #FDE047′ }}>
                 <span style={{ color: '#713F12', fontWeight: 700 }}>🤠 DFW Tip: </span>
                 <span style={{ color: '#374151', fontSize: 13 }}>{result.dfwTip}</span>
               </div>

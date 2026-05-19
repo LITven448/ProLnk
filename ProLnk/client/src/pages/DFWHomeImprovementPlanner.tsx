@@ -43,7 +43,7 @@ export default function DFWHomeImprovementPlanner() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {issues.map(i => (
               <button key={i} onClick={() => toggle(selectedIssues, setSelectedIssues, i)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${selectedIssues.includes(i) ? '#F5E642' : '#1E3A5F'}`, background: selectedIssues.includes(i) ? '#F5E642' : 'transparent', color: selectedIssues.includes(i) ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${selectedIssues.includes(i) ? '#F5E642' : '#1E3A5F'}`, background: selectedIssues.includes(i) ? '#F5E642′ : ’transparent', color: selectedIssues.includes(i) ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
                 {i}
               </button>
             ))}
@@ -55,7 +55,7 @@ export default function DFWHomeImprovementPlanner() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {goals.map(g => (
               <button key={g} onClick={() => toggle(selectedGoals, setSelectedGoals, g)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${selectedGoals.includes(g) ? '#F5E642' : '#1E3A5F'}`, background: selectedGoals.includes(g) ? '#F5E642' : 'transparent', color: selectedGoals.includes(g) ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${selectedGoals.includes(g) ? '#F5E642' : '#1E3A5F'}`, background: selectedGoals.includes(g) ? '#F5E642′ : ’transparent', color: selectedGoals.includes(g) ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
                 {g}
               </button>
             ))}
@@ -90,7 +90,7 @@ export default function DFWHomeImprovementPlanner() {
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>📋 Your Prioritized Plan</div>
             {plan.map((item, idx) => (
-              <div key={item.issue} style={{ background: '#0F2240', borderRadius: 10, padding: '16px', marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
+              <div key={item.issue} style={{ background: '#0F2240', borderRadius: 10, padding: '16px', marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                   <span style={{ fontWeight: 700 }}>#{idx + 1} — {item.issue}</span>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>{item.cost}</span>

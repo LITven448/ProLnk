@@ -33,7 +33,7 @@ export default function ProLnkPricingTransparency() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>💰</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: '12px 0 8px' }}>Pricing Transparency Guide</h1>
-          <p style={{ color: '#94a3b8' }}>Fair DFW market rates — no price gouging, no hidden fees</p>
+          <p style={{ color: '#94a3b8′ }}>Fair DFW market rates — no price gouging, no hidden fees</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 40 }}>
@@ -53,7 +53,7 @@ export default function ProLnkPricingTransparency() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 32 }}>
           {services.map(s => (
             <button key={s.id} onClick={() => setService(s.id)}
-              style={{ background: service === s.id ? '#F5E642' : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 10, padding: '14px 16px', color: service === s.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: service === s.id ? '#F5E642′ : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 10, padding: '14px 16px', color: service === s.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {s.label}
             </button>
           ))}

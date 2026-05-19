@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 const causes: Record<string, Record<string, { cause: string; solutions: { label: string; cost: string }[] }>> = {
   hot: {
-    small: { cause: 'Likely duct leakage or undersized supply register near exterior walls', solutions: [{ label: 'Seal duct leaks (DIY mastic)', cost: '$50–$150' }, { label: 'Add booster fan to supply', cost: '$80–$200' }, { label: 'Mini-split supplemental', cost: '$1,800–$3,500' }] },
-    large: { cause: 'Common in DFW large homes — single-zone system can\’t serve all areas equally; west-facing rooms worst', solutions: [{ label: 'Add zoning board + dampers', cost: '$1,500–$3,000' }, { label: 'Mini-split for hot zone', cost: '$2,000–$4,500' }, { label: 'ERV for fresh air balance', cost: '$1,200–$2,500' }] },
+    small: { cause: 'Likely duct leakage or undersized supply register near exterior walls', solutions: [{ label: 'Seal duct leaks (DIY mastic)', cost: '$50–$150′ }, { label: ’Add booster fan to supply', cost: '$80–$200′ }, { label: ’Mini-split supplemental', cost: '$1,800–$3,500′ }] },
+    large: { cause: 'Common in DFW large homes — single-zone system can\’t serve all areas equally; west-facing rooms worst', solutions: [{ label: 'Add zoning board + dampers', cost: '$1,500–$3,000′ }, { label: ’Mini-split for hot zone', cost: '$2,000–$4,500′ }, { label: ’ERV for fresh air balance', cost: '$1,200–$2,500′ }] },
   },
   cold: {
-    small: { cause: 'Oversized supply or damper too open; cold air dumping near return', solutions: [{ label: 'Partially close supply damper', cost: 'DIY free' }, { label: 'Rebalance duct system', cost: '$300–$600' }, { label: 'Install zone damper control', cost: '$800–$1,500' }] },
-    large: { cause: 'Return air starved in other zones causing overcooling in room nearest return', solutions: [{ label: 'Add return air grilles', cost: '$200–$500 each' }, { label: 'Zoning control board', cost: '$1,500–$3,000' }, { label: 'Dual-zone system upgrade', cost: '$4,000–$8,000' }] },
+    small: { cause: 'Oversized supply or damper too open; cold air dumping near return', solutions: [{ label: 'Partially close supply damper', cost: 'DIY free' }, { label: 'Rebalance duct system', cost: '$300–$600′ }, { label: ’Install zone damper control', cost: '$800–$1,500′ }] },
+    large: { cause: 'Return air starved in other zones causing overcooling in room nearest return', solutions: [{ label: 'Add return air grilles', cost: '$200–$500 each' }, { label: 'Zoning control board', cost: '$1,500–$3,000′ }, { label: ’Dual-zone system upgrade', cost: '$4,000–$8,000′ }] },
   },
 };
 
@@ -27,7 +27,7 @@ export default function DFWHVACBalancingGuide() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌡️ Why DFW Makes This Worse</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌡️ Why DFW Makes This Worse</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>
             In mild climates, a slightly unbalanced system is tolerable. In DFW summers hitting 105°F, a room with a 3°F temperature variance becomes an 80°F room when setpoint is 75°F. West-facing master bedrooms and upstairs bonus rooms are the most common problem zones.
           </p>
@@ -40,22 +40,22 @@ export default function DFWHVACBalancingGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🏠 Diagnose Your Situation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Problem Room Is</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Problem Room Is</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {['hot', 'cold'].map(opt => (
                   <button key={opt} onClick={() => setProblem(opt)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${problem === opt ? '#F5E642' : '#1E3A5F'}`, background: problem === opt ? '#F5E642' : 'transparent', color: problem === opt ? '#0A1628' : '#E8EAF0', fontWeight: 700, cursor: 'pointer', textTransform: 'capitalize', fontSize: 15 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${problem === opt ? '#F5E642' : '#1E3A5F'}`, background: problem === opt ? '#F5E642′ : ’transparent', color: problem === opt ? '#0A1628′ : '#E8EAF0', fontWeight: 700, cursor: ’pointer', textTransform: 'capitalize', fontSize: 15 }}>
                     {opt === 'hot' ? '🔥 Too Hot' : '🧊 Too Cold'}
                   </button>
                 ))}
               </div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Home Size</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Home Size</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {[['small', 'Under 2,500 sq ft'], ['large', 'Over 2,500 sq ft']].map(([val, label]) => (
                   <button key={val} onClick={() => setHomeSize(val)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${homeSize === val ? '#F5E642' : '#1E3A5F'}`, background: homeSize === val ? '#F5E642' : 'transparent', color: homeSize === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${homeSize === val ? '#F5E642' : '#1E3A5F'}`, background: homeSize === val ? '#F5E642′ : ’transparent', color: homeSize === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {label}
                   </button>
                 ))}
@@ -83,10 +83,10 @@ export default function DFWHVACBalancingGuide() {
         <div style={{ background: '#111D35', borderRadius: 16, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>⚙️ Long-Term Solutions</h2>
           <ul style={{ color: '#94A3B8', lineHeight: 1.9, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EAF0' }}>Zoning boards</strong> — motorized dampers controlled by room sensors; most effective fix</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Mini-splits</strong> — independent cooling for problem rooms, highest upfront cost, best result</li>
-            <li><strong style={{ color: '#E8EAF0' }}>ERV/HRV units</strong> — improve whole-home air circulation, helps balance temps</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Duct sealing</strong> — often recovers 20–30% of lost capacity before adding equipment</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Zoning boards</strong> — motorized dampers controlled by room sensors; most effective fix</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Mini-splits</strong> — independent cooling for problem rooms, highest upfront cost, best result</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>ERV/HRV units</strong> — improve whole-home air circulation, helps balance temps</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Duct sealing</strong> — often recovers 20–30% of lost capacity before adding equipment</li>
           </ul>
         </div>
 

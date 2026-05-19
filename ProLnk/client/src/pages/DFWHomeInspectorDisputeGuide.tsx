@@ -40,7 +40,7 @@ export default function DFWHomeInspectorDisputeGuide() {
           <p style={{ color: '#CBD5E1', marginTop: 8 }}>TREC-regulated inspectors — know when and how to hold them accountable</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 How Texas Inspector Liability Works</h2>
           {[
             ['TREC Regulates Inspectors', 'All TX home inspectors must be licensed by TREC. File complaints at trec.texas.gov.'],
@@ -50,23 +50,23 @@ export default function DFWHomeInspectorDisputeGuide() {
           ].map(([title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <span style={{ color: '#F5E642', fontSize: 20, flexShrink: 0 }}>✔</span>
-              <div><strong style={{ color: '#0A1628' }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
+              <div><strong style={{ color: '#0A1628′ }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🔍 Liability Assessment Tool</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>Type of Missed Defect</label>
-            <select value={missType} onChange={e => setMissType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
+            <select value={missType} onChange={e => setMissType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
               <option value="">Select defect type...</option>
               {missTypes.map(m => <option key={m} value={m}>{m}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>When Was It Discovered?</label>
-            <select value={discovered} onChange={e => setDiscovered(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
+            <select value={discovered} onChange={e => setDiscovered(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
               <option value="">Select timing...</option>
               {timing.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
@@ -80,7 +80,7 @@ export default function DFWHomeInspectorDisputeGuide() {
             {[['⚖️ Liability Strength', result.liability], ['📋 Dispute Path', result.path], ['🎯 Realistic Outcome', result.realistic]].map(([label, val]) => (
               <div key={label} style={{ background: '#1E293B', borderRadius: 8, padding: '16px 20px', marginBottom: 12 }}>
                 <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>{label}</div>
-                <div style={{ color: '#E2E8F0' }}>{val}</div>
+                <div style={{ color: '#E2E8F0′ }}>{val}</div>
               </div>
             ))}
           </div>

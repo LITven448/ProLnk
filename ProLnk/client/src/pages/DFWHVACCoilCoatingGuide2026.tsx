@@ -36,7 +36,7 @@ export default function DFWHVACCoilCoatingGuide2026() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🛡️ DFW Coating Options</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {coatings.map(c => (
-            <div key={c.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', borderLeft: '4px solid #F5E642' }}>
+            <div key={c.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4 }}>{c.icon} {c.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>💰 {c.cost} &nbsp;|&nbsp; ⏳ Lasts {c.life}</div>
               <div style={{ color: '#cbd5e1', fontSize: 13 }}>✅ Best for: {c.best}</div>
@@ -47,7 +47,7 @@ export default function DFWHVACCoilCoatingGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔍 Coat or Replace? DFW Decision Tool</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Coil Age (years)</label>
-            <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 9"
+            <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 9″
               style={{ background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 6, padding: '10px 14px', width: '100%', fontSize: 15 }} />
           </div>
           <div style={{ marginBottom: 16 }}>
@@ -67,7 +67,7 @@ export default function DFWHVACCoilCoatingGuide2026() {
           {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#F5E642', fontWeight: 600, fontSize: 14, lineHeight: 1.6 }}>{result}</div>}
         </div>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
-          ⚠️ <strong style={{ color: '#F5E642' }}>DFW tip:</strong> Homes near Midlothian cement plant or DFW Airport see 2–3x faster coil corrosion. Inspect coils annually. ProLnk connects you with certified HVAC pros for coating or replacement.
+          ⚠️ <strong style={{ color: '#F5E642′ }}>DFW tip:</strong> Homes near Midlothian cement plant or DFW Airport see 2–3x faster coil corrosion. Inspect coils annually. ProLnk connects you with certified HVAC pros for coating or replacement.
         </div>
       </div>
     </div>

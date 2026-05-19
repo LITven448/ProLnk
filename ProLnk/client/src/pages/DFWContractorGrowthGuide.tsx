@@ -53,7 +53,7 @@ export default function DFWContractorGrowthGuide() {
     <div style={{ backgroundColor: '#f0f4f8', minHeight: '100vh', color: '#0A1628', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#1e40af', fontWeight: 700, fontSize: 13, letterSpacing: 2 }}>PROLNK CONTRACTOR GUIDES — DFW GROWTH</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 8px', lineHeight: 1.1, color: '#0A1628' }}>Growing Your DFW Home Service Business</h1>
+        <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 8px', lineHeight: 1.1, color: '#0A1628′ }}>Growing Your DFW Home Service Business</h1>
         <p style={{ color: '#475569', fontSize: 16, margin: '0 0 40px' }}>5 stages from solo to regional. Know exactly when to hire, when to stop field work, and what ProLnk income looks like at every level.</p>
 
         <section style={{ marginBottom: 40 }}>
@@ -75,11 +75,11 @@ export default function DFWContractorGrowthGuide() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }}>
                   <div style={{ background: '#f8fafc', borderRadius: 8, padding: '10px 12px' }}>
                     <div style={{ color: '#64748b', fontSize: 11, marginBottom: 2 }}>YOU IN THE FIELD</div>
-                    <div style={{ fontWeight: 700, color: '#0A1628' }}>{s.fieldWork}</div>
+                    <div style={{ fontWeight: 700, color: '#0A1628′ }}>{s.fieldWork}</div>
                   </div>
                   <div style={{ background: '#f8fafc', borderRadius: 8, padding: '10px 12px' }}>
                     <div style={{ color: '#64748b', fontSize: 11, marginBottom: 2 }}>OVERHEAD</div>
-                    <div style={{ fontWeight: 700, color: '#0A1628' }}>{s.overhead}</div>
+                    <div style={{ fontWeight: 700, color: '#0A1628′ }}>{s.overhead}</div>
                   </div>
                 </div>
                 <div style={{ marginBottom: 10 }}>
@@ -99,17 +99,17 @@ export default function DFWContractorGrowthGuide() {
           </div>
         </section>
 
-        <section style={{ background: '#0A1628', borderRadius: 14, padding: 28, border: '2px solid #F5E642' }}>
+        <section style={{ background: '#0A1628', borderRadius: 14, padding: 28, border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>📍 Find Your Growth Stage</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Annual revenue (last 12 months, $)</label>
-              <input type="number" value={revenue} onChange={e => setRevenue(e.target.value)} placeholder="e.g. 320000"
+              <input type="number" value={revenue} onChange={e => setRevenue(e.target.value)} placeholder="e.g. 320000″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#131f35', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Current crew size (full-time employees, not including you)</label>
-              <input type="number" value={crew} onChange={e => setCrew(e.target.value)} placeholder="e.g. 2"
+              <input type="number" value={crew} onChange={e => setCrew(e.target.value)} placeholder="e.g. 2″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#131f35', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function DFWContractorGrowthGuide() {
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 6 }}>NEXT MILESTONES</div>
                 {result.milestones.map((m, i) => <div key={i} style={{ color: '#e2e8f0', fontSize: 13, marginBottom: 4 }}>→ {m}</div>)}
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginTop: 12, border: '1px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginTop: 12, border: '1px solid #F5E642′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>💰 Your ProLnk Income Potential</div>
                 <div style={{ color: '#fbbf24', fontSize: 13, marginTop: 4 }}>{result.prolnkIncome}</div>
               </div>

@@ -30,7 +30,7 @@ export default function DFWEmergencyPowerGuide2026() {
         </div>
 
         <div style={{ background: '#200A0A', border: '1px solid #FF4444', borderRadius: 10, padding: '14px 18px', marginBottom: 24, fontSize: 14, lineHeight: 1.6 }}>
-          <strong style={{ color: '#FF4444' }}>⚠️ ERCOT Lesson from Uri 2021:</strong> 4.5M DFW homes lost power for up to 10 days. 
+          <strong style={{ color: '#FF4444′ }}>⚠️ ERCOT Lesson from Uri 2021:</strong> 4.5M DFW homes lost power for up to 10 days. 
           Carbon monoxide from indoor generator use killed 11 Texans. Prepare before the next event, not during.
         </div>
 
@@ -42,7 +42,7 @@ export default function DFWEmergencyPowerGuide2026() {
                 borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'center' }}>
               <div style={{ fontSize: 30 }}>{o.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#E8F4FD', margin: '6px 0 4px' }}>{o.label}</div>
-              <div style={{ fontSize: 12, color: '#F5E642' }}>{o.cost}</div>
+              <div style={{ fontSize: 12, color: '#F5E642′ }}>{o.cost}</div>
             </button>
           ))}
         </div>

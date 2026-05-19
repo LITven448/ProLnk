@@ -8,8 +8,8 @@ const wdoItems = [
 ];
 
 const wdoVsGeneral = [
-  { type: 'WDO Inspection', required: 'Required for VA and FHA loans', covers: 'Wood-destroying organisms only (termites, beetles, fungi)', report: 'Official NPMA-33 form — lender-accepted', cost: '$75–$150' },
-  { type: 'General Pest', required: 'Optional (recommended)', covers: 'All pests including rodents, roaches, ants, mosquitoes', report: 'Inspection report — not lender-accepted', cost: '$100–$200' },
+  { type: 'WDO Inspection', required: 'Required for VA and FHA loans', covers: 'Wood-destroying organisms only (termites, beetles, fungi)', report: 'Official NPMA-33 form — lender-accepted', cost: '$75–$150′ },
+  { type: 'General Pest', required: 'Optional (recommended)', covers: 'All pests including rodents, roaches, ants, mosquitoes', report: 'Inspection report — not lender-accepted', cost: '$100–$200′ },
 ];
 
 const redFlags = [
@@ -56,7 +56,7 @@ export default function DFWPestInspectionWalkthrough() {
         </p>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🪲 What a DFW WDO Inspection Covers</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🪲 What a DFW WDO Inspection Covers</h2>
           <div style={{ display: 'grid', gap: '0.6rem' }}>
             {wdoItems.map((item, i) => (
               <div key={i} style={{ background: '#1e293b', borderRadius: 8, padding: '0.9rem 1.1rem', display: 'flex', gap: '1rem' }}>
@@ -68,15 +68,15 @@ export default function DFWPestInspectionWalkthrough() {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📄 WDO vs General Pest Inspection</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📄 WDO vs General Pest Inspection</h2>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {wdoVsGeneral.map((item, i) => (
               <div key={i} style={{ background: '#1e293b', borderRadius: 10, padding: '1rem 1.25rem' }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>{item.type}</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Required: <span style={{ color: '#cbd5e1' }}>{item.required}</span></div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Cost: <span style={{ color: '#cbd5e1' }}>{item.cost}</span></div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b', gridColumn: '1/-1' }}>Covers: <span style={{ color: '#cbd5e1' }}>{item.covers}</span></div>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Required: <span style={{ color: '#cbd5e1′ }}>{item.required}</span></div>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Cost: <span style={{ color: '#cbd5e1′ }}>{item.cost}</span></div>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', gridColumn: '1/-1′ }}>Covers: <span style={{ color: '#cbd5e1' }}>{item.covers}</span></div>
                 </div>
               </div>
             ))}
@@ -84,7 +84,7 @@ export default function DFWPestInspectionWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Your Inspection Recommendation</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Your Inspection Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Home age (years)</label>
@@ -105,7 +105,7 @@ export default function DFWPestInspectionWalkthrough() {
           ))}
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', fontSize: '0.95rem', marginTop: '0.5rem' }}>Get My Inspection Plan →</button>
           {showResult && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}><strong>Risk level:</strong> {riskLevel} — {dfwZones.find(z => z.zone === zone)?.risk}</div>
               <div style={{ marginBottom: '0.5rem' }}><strong>Schedule:</strong> {urgency}</div>
               <div style={{ marginBottom: '0.25rem' }}><strong>Recommend:</strong></div>
@@ -115,8 +115,8 @@ export default function DFWPestInspectionWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#ef4444' }}>🚩 Red Flags in a Pest Report</h2>
-          {redFlags.map((item, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #ef4444' }}>{item}</div>)}
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#ef4444′ }}>🚩 Red Flags in a Pest Report</h2>
+          {redFlags.map((item, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #ef4444′ }}>{item}</div>)}
         </div>
       </div>
     </div>

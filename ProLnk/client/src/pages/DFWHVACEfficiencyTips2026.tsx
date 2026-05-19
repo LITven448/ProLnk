@@ -29,7 +29,7 @@ export default function DFWHVACEfficiencyTips2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>❄️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW HVAC Efficiency Tips 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW HVAC Efficiency Tips 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>10 ways to cut your cooling bill in the Dallas-Fort Worth summer. Tested for Texas conditions.</p>
         </div>
 
@@ -38,7 +38,7 @@ export default function DFWHVACEfficiencyTips2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {homeTypes.map(h => (
               <button key={h.type} onClick={() => setSelected(h.type === selected ? null : h.type)}
-                style={{ background: selected === h.type ? '#F5E642' : '#1e3a5f', color: selected === h.type ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1.2rem', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === h.type ? '#F5E642′ : '#1e3a5f', color: selected === h.type ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 1.2rem', cursor: 'pointer', fontWeight: 600 }}>
                 {h.type}
               </button>
             ))}

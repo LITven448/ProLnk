@@ -94,37 +94,37 @@ export default function DFWNoHOAGuide2026() {
   ];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🏘️</div>
-          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW No HOA Neighborhood Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 15 }}>Maximum freedom — but know what governs your neighborhood when there's no HOA</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW No HOA Neighborhood Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Maximum freedom — but know what governs your neighborhood when there's no HOA</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginBottom: 28 }}>
-          <div style={{ background: "#1e2d45", borderRadius: 8, padding: 14, textAlign: "center" }}>
+          <div style={{ background: "#1e2d45″, borderRadius: 8, padding: 14, textAlign: "center" }}>
             <div style={{ fontSize: 28 }}>✅</div>
-            <div style={{ color: "#4ade80", fontWeight: 700, marginTop: 6 }}>Freedom</div>
-            <div style={{ color: "#94a3b8", fontSize: 12 }}>No approval needed for modifications</div>
+            <div style={{ color: "#4ade80″, fontWeight: 700, marginTop: 6 }}>Freedom</div>
+            <div style={{ color: "#94a3b8″, fontSize: 12 }}>No approval needed for modifications</div>
           </div>
-          <div style={{ background: "#1e2d45", borderRadius: 8, padding: 14, textAlign: "center" }}>
+          <div style={{ background: "#1e2d45″, borderRadius: 8, padding: 14, textAlign: "center" }}>
             <div style={{ fontSize: 28 }}>⚖️</div>
-            <div style={{ color: "#F5E642", fontWeight: 700, marginTop: 6 }}>City Code</div>
-            <div style={{ color: "#94a3b8", fontSize: 12 }}>Replaces HOA rules — slower enforcement</div>
+            <div style={{ color: "#F5E642″, fontWeight: 700, marginTop: 6 }}>City Code</div>
+            <div style={{ color: "#94a3b8″, fontSize: 12 }}>Replaces HOA rules — slower enforcement</div>
           </div>
-          <div style={{ background: "#1e2d45", borderRadius: 8, padding: 14, textAlign: "center" }}>
+          <div style={{ background: "#1e2d45″, borderRadius: 8, padding: 14, textAlign: "center" }}>
             <div style={{ fontSize: 28 }}>💸</div>
-            <div style={{ color: "#4ade80", fontWeight: 700, marginTop: 6 }}>No HOA Fees</div>
-            <div style={{ color: "#94a3b8", fontSize: 12 }}>Savings of $100–$500/month vs. HOA</div>
+            <div style={{ color: "#4ade80″, fontWeight: 700, marginTop: 6 }}>No HOA Fees</div>
+            <div style={{ color: "#94a3b8″, fontSize: 12 }}>Savings of $100–$500/month vs. HOA</div>
           </div>
         </div>
 
-        <h2 style={{ color: "#F5E642", marginBottom: 16 }}>Your Concern → Research Guide</h2>
+        <h2 style={{ color: "#F5E642″, marginBottom: 16 }}>Your Concern → Research Guide</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginBottom: 24 }}>
           {concerns.map(c => (
             <button key={c.type} onClick={() => setConcern(concern === c.type ? null : c.type)}
-              style={{ background: concern === c.type ? "#F5E642" : "#1e2d45", border: "none", borderRadius: 8, padding: 14, cursor: "pointer", color: concern === c.type ? "#0A1628" : "#fff", textAlign: "center" }}>
+              style={{ background: concern === c.type ? "#F5E642″ : "#1e2d45", border: "none", borderRadius: 8, padding: 14, cursor: "pointer", color: concern === c.type ? "#0A1628" : "#fff", textAlign: "center" }}>
               <div style={{ fontSize: 26 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 12, marginTop: 6 }}>{c.type}</div>
             </button>
@@ -134,24 +134,24 @@ export default function DFWNoHOAGuide2026() {
         {concern && (() => {
           const c = concerns.find(x => x.type === concern)!;
           return (
-            <div style={{ background: "#1e2d45", borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
-              <h3 style={{ color: "#F5E642", margin: "0 0 12px" }}>{c.icon} {c.type} in No-HOA Areas</h3>
+            <div style={{ background: "#1e2d45″, borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
+              <h3 style={{ color: "#F5E642″, margin: "0 0 12px" }}>{c.icon} {c.type} in No-HOA Areas</h3>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
-                {c.guidance.map((g, i) => <li key={i} style={{ color: "#cbd5e1", marginBottom: 7 }}>{g}</li>)}
+                {c.guidance.map((g, i) => <li key={i} style={{ color: "#cbd5e1″, marginBottom: 7 }}>{g}</li>)}
               </ul>
             </div>
           );
         })()}
 
-        <h2 style={{ color: "#F5E642", marginBottom: 14 }}>DFW Areas with No-HOA Inventory</h2>
+        <h2 style={{ color: "#F5E642″, marginBottom: 14 }}>DFW Areas with No-HOA Inventory</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {dallasAreas.map((a, i) => (
-            <div key={i} style={{ background: "#1e2d45", borderRadius: 8, padding: "12px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div key={i} style={{ background: "#1e2d45″, borderRadius: 8, padding: "12px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
                 <div style={{ color: "#fff", fontWeight: 600 }}>{a.area}</div>
-                <div style={{ color: "#94a3b8", fontSize: 12 }}>{a.type}</div>
+                <div style={{ color: "#94a3b8″, fontSize: 12 }}>{a.type}</div>
               </div>
-              <div style={{ color: "#F5E642", fontSize: 12, textAlign: "right", maxWidth: 160 }}>{a.note}</div>
+              <div style={{ color: "#F5E642″, fontSize: 12, textAlign: "right", maxWidth: 160 }}>{a.note}</div>
             </div>
           ))}
         </div>

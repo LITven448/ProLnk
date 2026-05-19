@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const URGENCY = {
   week: { label: 'Do This Week', color: '#FF6B6B' },
-  month: { label: 'Do This Month', color: '#F5E642' },
-  year: { label: 'Do This Year', color: '#4FC3F7' },
+  month: { label: 'Do This Month', color: '#F5E642′ },
+  year: { label: 'Do This Year', color: '#4FC3F7′ },
 };
 
 const ALL_ITEMS = [
@@ -55,14 +55,14 @@ export default function DFWHomeownerChecklistApp() {
         <p style={{ color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Your Home</p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 12 }}>
           {['new','old'].map(a => (
-            <button key={a} onClick={() => setHomeAge(a)} style={{ padding: '6px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: homeAge === a ? '#F5E642' : '#1C2E45', color: homeAge === a ? '#0A1628' : '#fff', fontWeight: 600 }}>
-              {a === 'new' ? 'Built after 2000' : 'Built before 2000'}
+            <button key={a} onClick={() => setHomeAge(a)} style={{ padding: '6px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: homeAge === a ? '#F5E642′ : '#1C2E45', color: homeAge === a ? '#0A1628' : '#fff', fontWeight: 600 }}>
+              {a === 'new' ? 'Built after 2000′ : ’Built before 2000'}
             </button>
           ))}
         </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {['pool','garage','fireplace','fence','sprinklers','softener'].map(f => (
-            <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '5px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', background: features.includes(f) ? '#F5E642' : '#1C2E45', color: features.includes(f) ? '#0A1628' : '#aaa', fontSize: '0.85rem' }}>
+            <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '5px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', background: features.includes(f) ? '#F5E642′ : '#1C2E45', color: features.includes(f) ? '#0A1628' : '#aaa', fontSize: '0.85rem' }}>
               {f}
             </button>
           ))}

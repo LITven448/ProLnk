@@ -39,7 +39,7 @@ export default function DFWOvenMaintenanceDFW2026() {
             ['🌡️', 'Oven Thermometer', 'DFW gas ovens drift 25-50F — buy a $10 oven thermometer and check calibration twice per year. Baking problems often trace here.'],
             ['⚡', 'ERCOT Surge Awareness', 'DFW grid (ERCOT) voltage fluctuations are real. Use surge protector on electric ranges with digital controls to prevent board failures.'],
           ] as [string, string, string][]).map(([icon, title, desc]) => (
-            <div key={title} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
+            <div key={title} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc}</div>
@@ -67,7 +67,7 @@ export default function DFWOvenMaintenanceDFW2026() {
           {guide && <div style={{ background: '#1a3a5c', borderRadius: 8, padding: 16, color: '#e2e8f0', lineHeight: 1.6 }}>{guide}</div>}
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🏠 Need a DFW Appliance Pro?</div>
           <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10 }}>ProLnk connects you with vetted DFW oven and range technicians — gas certified and familiar with ERCOT-related electrical issues.</div>
           <a href="/" style={{ color: '#F5E642', fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>Get Free Quotes →</a>

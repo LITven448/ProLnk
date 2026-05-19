@@ -76,17 +76,17 @@ export default function DFWHeatIndexGuide() {
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.8rem', display: 'block', marginBottom: 6 }}>Temperature (°F): {temp}</label>
               <input type="range" min={60} max={110} value={temp} onChange={e => setTemp(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.8rem', display: 'block', marginBottom: 6 }}>Humidity (%): {humid}</label>
               <input type="range" min={20} max={90} value={humid} onChange={e => setHumid(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
           <div style={{ background: '#1a2f55', borderRadius: 10, padding: '1.25rem' }}>
-            <div style={{ fontSize: '3rem', fontWeight: 800, color: '#F5E642' }}>{hi}°F <span style={{ fontSize: '1.1rem', color: '#fff' }}>feels like</span></div>
-            <div style={{ fontSize: '1.2rem', fontWeight: 700, margin: '0.5rem 0' }}>{impact.label}</div>
+            <div style={{ fontSize: '3rem', fontWeight: 800, color: '#F5E642′ }}>{hi}°F <span style={{ fontSize: '1.1rem', color: '#fff' }}>feels like</span></div>
+            <div style={{ fontSize: '1.2rem', fontWeight: 700, margin: '0.5rem 0′ }}>{impact.label}</div>
             <div style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: 8 }}>🏠 Home Impact: {impact.home}</div>
             <div style={{ color: '#F5E642', fontSize: '0.9rem' }}>💡 {impact.rec}</div>
           </div>
@@ -98,7 +98,7 @@ export default function DFWHeatIndexGuide() {
             {months.map((m, i) => {
               const hi2 = heatIndex(avgTemps[i], avgHumids[i]);
               return (
-                <div key={m} style={{ background: '#1a2f55', borderRadius: 8, padding: '0.6rem', textAlign: 'center', border: i === month ? '2px solid #F5E642' : '2px solid transparent' }}>
+                <div key={m} style={{ background: '#1a2f55', borderRadius: 8, padding: '0.6rem', textAlign: 'center', border: i === month ? '2px solid #F5E642′ : '2px solid transparent' }}>
                   <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>{m}</div>
                   <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '1.1rem' }}>{hi2}°</div>
                 </div>

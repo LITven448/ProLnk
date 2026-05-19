@@ -13,10 +13,10 @@ export default function DFWFoundationBellBottom2026() {
   ];
 
   const results: Record<string, { verdict: string; detail: string; color: string }> = {
-    settlement: { verdict: 'Bell-Bottom Often Preferred', detail: 'For DFW settlement, bell-bottom piers reach stable load-bearing clay below the active zone. 24-inch bell diameter distributes weight across bedrock. Requires engineer stamp for permit.', color: '#F5E642' },
-    heave: { verdict: 'Bell-Bottom NOT Recommended', detail: 'Soil heave lifts piers — bell-bottom piers can be pushed out of position. Modern helical or steel push piers with grade beams better handle DFW expansive clay heave.', color: '#ef4444' },
-    crack: { verdict: 'Engineer Assessment First', detail: 'Cracking alone does not determine pier type. A structural engineer must assess crack pattern, width, and direction to recommend bell-bottom vs modern pier system.', color: '#f97316' },
-    historic: { verdict: 'Bell-Bottom Likely Installed', detail: 'Pre-1980 DFW homes almost certainly have bell-bottom piers if previously repaired. Match the existing system or consult engineer about hybrid approach.', color: '#3b82f6' },
+    settlement: { verdict: 'Bell-Bottom Often Preferred', detail: 'For DFW settlement, bell-bottom piers reach stable load-bearing clay below the active zone. 24-inch bell diameter distributes weight across bedrock. Requires engineer stamp for permit.', color: '#F5E642′ },
+    heave: { verdict: 'Bell-Bottom NOT Recommended', detail: 'Soil heave lifts piers — bell-bottom piers can be pushed out of position. Modern helical or steel push piers with grade beams better handle DFW expansive clay heave.', color: '#ef4444′ },
+    crack: { verdict: 'Engineer Assessment First', detail: 'Cracking alone does not determine pier type. A structural engineer must assess crack pattern, width, and direction to recommend bell-bottom vs modern pier system.', color: '#f97316′ },
+    historic: { verdict: 'Bell-Bottom Likely Installed', detail: 'Pre-1980 DFW homes almost certainly have bell-bottom piers if previously repaired. Match the existing system or consult engineer about hybrid approach.', color: '#3b82f6′ },
     modern: { verdict: 'Modern Pier System Preferred', detail: 'Post-1990 DFW construction typically uses steel push piers or helical piers — faster installation, no concrete cure time, easier permit inspection. Bell-bottom still valid with engineer oversight.', color: '#22c55e' },
   };
 
@@ -53,12 +53,12 @@ export default function DFWFoundationBellBottom2026() {
           <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>Select your repair situation:</p>
           <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1rem' }}>
             {repairTypes.map(r => (
-              <button key={r.id} onClick={() => setRepairType(r.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: repairType === r.id ? '#F5E642' : '#1e3a5f', background: repairType === r.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: '0.9rem' }}>{r.label}</button>
+              <button key={r.id} onClick={() => setRepairType(r.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: repairType === r.id ? '#F5E642′ : '#1e3a5f', background: repairType === r.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: ’left', cursor: 'pointer', fontSize: '0.9rem' }}>{r.label}</button>
             ))}
           </div>
           <button onClick={handleCheck} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}>Get Recommendation</button>
           {result && results[result] && (
-            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628' }}>
+            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628′ }}>
               <div style={{ color: results[result].color, fontWeight: 700, marginBottom: '0.4rem' }}>{results[result].verdict}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{results[result].detail}</div>
             </div>

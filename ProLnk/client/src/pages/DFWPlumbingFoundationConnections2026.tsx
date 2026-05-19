@@ -29,7 +29,7 @@ export default function DFWPlumbingFoundationConnections2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW Plumbing and Foundation Connection Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>How DFW plumbing and foundation systems are connected — and why both need assessment together.</p>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🏗️ DFW Slab-on-Grade: Every Pipe Runs Through the Foundation</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
             95% of DFW homes are slab-on-grade construction. All water supply and drain lines are embedded in or run beneath the concrete slab. Any plumbing failure at or below the slab directly affects the soil condition that supports your foundation.
@@ -53,12 +53,12 @@ export default function DFWPlumbingFoundationConnections2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Connected System Guide</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Connected System Guide</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16, fontSize: 14 }}>What is your concern?</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => { setConcern(c.id); setResult(''); }}
-                style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {c.label}
               </button>
             ))}
@@ -68,7 +68,7 @@ export default function DFWPlumbingFoundationConnections2026() {
             Show Connected System Guide →
           </button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#fff', lineHeight: 1.6 }}>{result}</p>
             </div>
           )}

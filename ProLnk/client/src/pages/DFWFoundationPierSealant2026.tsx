@@ -29,7 +29,7 @@ export default function DFWFoundationPierSealant2026() {
     if (exposure === 'Brackets at grade line — partially exposed') {
       tips.push('⚠️ Grade-line exposure is highest risk position in DFW — rain splash, irrigation, and clay expansion all focus here');
       tips.push('🔧 Polyurethane caulk perimeter seal + elastomeric coating on exposed metal — two-product approach required');
-      tips.push('💧 Extend downspouts 6 feet past bracket locations — DFW storm events dump 2-4" per hour at peak');
+      tips.push('💧 Extend downspouts 6 feet past bracket locations — DFW storm events dump 2-4″ per hour at peak');
     }
     if (exposure === 'Brackets above grade — fully visible') {
       tips.push('📋 Above-grade exposure: sealing is optional but rust prevention is required — DFW humidity causes bracket corrosion');

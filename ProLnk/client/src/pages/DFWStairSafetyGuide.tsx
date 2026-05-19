@@ -16,12 +16,12 @@ export default function DFWStairSafetyGuide() {
   function calculate() {
     const issues: { label: string; fix: string; cost: string }[] = [];
 
-    if (railingHeight < 34) issues.push({ label: `Handrail too low: ${railingHeight}" (must be 34–38")`, fix: 'Adjust or replace railing bracket heights', cost: '$150–400' });
-    if (railingHeight > 38) issues.push({ label: `Handrail too high: ${railingHeight}" (must be 34–38")`, fix: 'Lower railing brackets to correct height', cost: '$150–300' });
-    if (stairWidth > 44 && stairType === 'interior') issues.push({ label: `Stair is ${stairWidth}" wide — handrails required on BOTH sides (>44")`, fix: 'Install second handrail on open side', cost: '$400–900' });
-    if (balusterSpacing > 4) issues.push({ label: `Baluster spacing: ${balusterSpacing}" — must be 4" max (4-inch sphere rule)`, fix: 'Add intermediate balusters or replace railing system', cost: '$600–2,000' });
-    if (!hasLighting) issues.push({ label: 'No stair lighting — IRC requires illumination at top and bottom', fix: 'Install switched lighting at both stair ends', cost: '$200–600' });
-    if (stairType === 'loft' && balusterSpacing > 4) issues.push({ label: 'Open loft/balcony railing is a common DFW code failure', fix: 'Replace or infill balcony guards to 4" max spacing', cost: '$800–3,000' });
+    if (railingHeight < 34) issues.push({ label: `Handrail too low: ${railingHeight}" (must be 34–38")`, fix: 'Adjust or replace railing bracket heights', cost: '$150–400′ });
+    if (railingHeight > 38) issues.push({ label: `Handrail too high: ${railingHeight}" (must be 34–38")`, fix: 'Lower railing brackets to correct height', cost: '$150–300′ });
+    if (stairWidth > 44 && stairType === 'interior') issues.push({ label: `Stair is ${stairWidth}" wide — handrails required on BOTH sides (>44")`, fix: 'Install second handrail on open side', cost: '$400–900′ });
+    if (balusterSpacing > 4) issues.push({ label: `Baluster spacing: ${balusterSpacing}" — must be 4" max (4-inch sphere rule)`, fix: 'Add intermediate balusters or replace railing system', cost: '$600–2,000′ });
+    if (!hasLighting) issues.push({ label: 'No stair lighting — IRC requires illumination at top and bottom', fix: 'Install switched lighting at both stair ends', cost: '$200–600′ });
+    if (stairType === 'loft' && balusterSpacing > 4) issues.push({ label: 'Open loft/balcony railing is a common DFW code failure', fix: 'Replace or infill balcony guards to 4″ max spacing', cost: '$800–3,000′ });
 
     const totalLow = issues.reduce((acc, i) => acc + parseInt(i.cost.replace(/[^0-9]/g, '').slice(0, 3) || '0'), 0);
     const totalHigh = issues.reduce((acc, i) => {
@@ -35,7 +35,7 @@ export default function DFWStairSafetyGuide() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🪜 DFW HOME SAFETY GUIDES</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🪜 DFW HOME SAFETY GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>Stair Safety Guide</h1>
         <p style={{ color: '#9AA3B2', marginBottom: '2rem' }}>Stair and railing failures are one of the most common DFW home inspection findings — especially in open-concept homes with loft railings. Check your compliance before selling or renovating.</p>
 
@@ -101,7 +101,7 @@ export default function DFWStairSafetyGuide() {
 
         {result && (
           <div style={{ background: result.compliant ? '#0D2B1A' : '#2B1A0D', border: `1px solid ${result.compliant ? '#2ECC71' : '#E67E22'}`, borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.compliant ? '#2ECC71' : '#E67E22', marginBottom: '0.75rem' }}>
+            <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.compliant ? '#2ECC71′ : '#E67E22', marginBottom: '0.75rem' }}>
               {result.compliant ? '✅ Stairs appear code compliant' : `⚠️ ${result.issues.length} issue(s) found`}
             </div>
             {result.issues.map((issue, i) => (

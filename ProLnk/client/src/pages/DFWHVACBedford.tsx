@@ -75,8 +75,8 @@ export default function DFWHVACBedford() {
                   onClick={() => { setBudget(b); }}
                   style={{
                     padding: '12px 24px',
-                    backgroundColor: budget === b ? '#F5E642' : '#0A1628',
-                    color: budget === b ? '#0A1628' : '#fff',
+                    backgroundColor: budget === b ? '#F5E642′ : '#0A1628',
+                    color: budget === b ? '#0A1628′ : '#fff',
                     border: `1px solid ${budget === b ? '#F5E642' : '#1e3a5f'}`,
                     borderRadius: 8,
                     cursor: 'pointer',
@@ -99,8 +99,8 @@ export default function DFWHVACBedford() {
                   onClick={() => { setSize(s); }}
                   style={{
                     padding: '12px 24px',
-                    backgroundColor: size === s ? '#F5E642' : '#0A1628',
-                    color: size === s ? '#0A1628' : '#fff',
+                    backgroundColor: size === s ? '#F5E642′ : '#0A1628',
+                    color: size === s ? '#0A1628′ : '#fff',
                     border: `1px solid ${size === s ? '#F5E642' : '#1e3a5f'}`,
                     borderRadius: 8,
                     cursor: 'pointer',
@@ -115,7 +115,7 @@ export default function DFWHVACBedford() {
           </div>
 
           {rec && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 16 }}>✅ Recommended: {rec.system}</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12, marginBottom: 20 }}>
                 <div style={{ backgroundColor: '#111f35', borderRadius: 8, padding: 14 }}>

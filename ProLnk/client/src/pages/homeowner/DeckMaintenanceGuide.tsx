@@ -61,7 +61,7 @@ export default function DeckMaintenanceGuide() {
         </div>
 
         {/* DFW Challenge Card */}
-        <div style={{ background: '#1e293b', borderRadius: 14, padding: 28, marginBottom: 40, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 14, padding: 28, marginBottom: 40, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#f1f5f9', marginBottom: 16 }}>🌡️ Why DFW Is Harder on Decks Than Anywhere Else</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             {[
@@ -73,11 +73,11 @@ export default function DeckMaintenanceGuide() {
               <div key={c.label} style={{ background: '#0f172a', borderRadius: 10, padding: '16px 20px', textAlign: 'center' }}>
                 <div style={{ fontSize: 28, marginBottom: 6 }}>{c.icon}</div>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>{c.label}</div>
-                <div style={{ fontWeight: 700, color: '#f1f5f9' }}>{c.val}</div>
+                <div style={{ fontWeight: 700, color: '#f1f5f9′ }}>{c.val}</div>
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 20, background: '#172033', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #3b82f6' }}>
+          <div style={{ marginTop: 20, background: '#172033', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #3b82f6′ }}>
             <p style={{ margin: 0, color: '#93c5fd', fontSize: 15 }}>
               <strong>DFW Pro Tip:</strong> Pressure washing alone removes the protective finish on wood decks. Always apply an oil-based penetrating sealer within 48 hours of washing.
             </p>
@@ -105,12 +105,12 @@ export default function DeckMaintenanceGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f1f5f9', marginBottom: 24 }}>🔍 Common DFW Deck Problems</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             {[
-              { name: 'Ledger Board Rot', severity: 'CRITICAL', desc: 'Where the deck attaches to your house. Check annually. Repair cost: $500–$2,000. If ignored: deck collapse risk.', color: '#ef4444' },
-              { name: 'Board Splitting', severity: 'MODERATE', desc: 'Extreme heat/cold cycles crack wood fibers. Replace split boards before structural issues develop.', color: '#f97316' },
+              { name: 'Ledger Board Rot', severity: 'CRITICAL', desc: 'Where the deck attaches to your house. Check annually. Repair cost: $500–$2,000. If ignored: deck collapse risk.', color: '#ef4444′ },
+              { name: 'Board Splitting', severity: 'MODERATE', desc: 'Extreme heat/cold cycles crack wood fibers. Replace split boards before structural issues develop.', color: '#f97316′ },
               { name: 'Post Rot at Ground', severity: 'HIGH', desc: 'Base of deck posts at grade level. If the wood feels soft when you press it — replace that post immediately.', color: '#f59e0b' },
-              { name: 'Hail Damage', severity: 'POST-STORM', desc: 'Composite boards can crack from large hail impacts. Inspect after every significant hail event.', color: '#3b82f6' },
+              { name: 'Hail Damage', severity: 'POST-STORM', desc: 'Composite boards can crack from large hail impacts. Inspect after every significant hail event.', color: '#3b82f6′ },
             ].map(p => (
-              <div key={p.name} style={{ background: '#1e293b', borderRadius: 10, padding: '20px 24px', display: 'flex', gap: 16, alignItems: 'flex-start', border: '1px solid #334155' }}>
+              <div key={p.name} style={{ background: '#1e293b', borderRadius: 10, padding: '20px 24px', display: 'flex', gap: 16, alignItems: 'flex-start', border: '1px solid #334155′ }}>
                 <span style={{ background: p.color + '20', color: p.color, fontSize: 11, fontWeight: 800, padding: '3px 10px', borderRadius: 20, whiteSpace: 'nowrap', marginTop: 2 }}>{p.severity}</span>
                 <div>
                   <div style={{ fontWeight: 700, color: '#f1f5f9', marginBottom: 4 }}>{p.name}</div>
@@ -122,7 +122,7 @@ export default function DeckMaintenanceGuide() {
         </div>
 
         {/* Planner */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>📅 3-Year Maintenance Planner</h2>
           <p style={{ color: '#64748b', marginBottom: 28, fontSize: 15 }}>Enter your deck details to generate a personalized maintenance schedule with cost estimates.</p>
 
@@ -132,7 +132,7 @@ export default function DeckMaintenanceGuide() {
               <div style={{ display: 'flex', gap: 12 }}>
                 {['wood', 'composite'].map(t => (
                   <button key={t} onClick={() => { setDeckType(t as DeckType); setShowPlan(false); }}
-                    style={{ flex: 1, padding: '12px', borderRadius: 8, border: `1px solid ${deckType === t ? '#3b82f6' : '#334155'}`, background: deckType === t ? '#1d4ed8' : '#0f172a', color: deckType === t ? '#fff' : '#94a3b8', fontWeight: 600, cursor: 'pointer', fontSize: 15, textTransform: 'capitalize' }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 8, border: `1px solid ${deckType === t ? '#3b82f6' : '#334155'}`, background: deckType === t ? '#1d4ed8′ : '#0f172a', color: deckType === t ? '#fff' : '#94a3b8', fontWeight: 600, cursor: ’pointer', fontSize: 15, textTransform: 'capitalize' }}>
                     {t === 'wood' ? '🪵 Wood' : '🏗️ Composite'}
                   </button>
                 ))}
@@ -140,14 +140,14 @@ export default function DeckMaintenanceGuide() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Deck Age (years)</label>
-              <input type="number" min="0" max="50" value={deckAge} onChange={e => { setDeckAge(e.target.value); setShowPlan(false); }}
-                placeholder="e.g. 7"
+              <input type="number" min="0″ max="50" value={deckAge} onChange={e => { setDeckAge(e.target.value); setShowPlan(false); }}
+                placeholder="e.g. 7″
                 style={{ width: '100%', background: '#0f172a', border: '1px solid #334155', borderRadius: 8, padding: '12px 16px', color: '#f1f5f9', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Last Maintenance (year)</label>
-              <input type="number" min="2015" max="2026" value={lastMaintenance} onChange={e => { setLastMaintenance(e.target.value); setShowPlan(false); }}
-                placeholder="e.g. 2023"
+              <input type="number" min="2015″ max="2026" value={lastMaintenance} onChange={e => { setLastMaintenance(e.target.value); setShowPlan(false); }}
+                placeholder="e.g. 2023″
                 style={{ width: '100%', background: '#0f172a', border: '1px solid #334155', borderRadius: 8, padding: '12px 16px', color: '#f1f5f9', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function DeckMaintenanceGuide() {
                 Your plan — {deckType} deck, {deckAge} years old, last maintained {lastMaintenance}
               </div>
               {deckSchedules[deckType].map((yr, yi) => (
-                <div key={yi} style={{ marginBottom: 16, background: '#0f172a', borderRadius: 12, overflow: 'hidden', border: '1px solid #334155' }}>
+                <div key={yi} style={{ marginBottom: 16, background: '#0f172a', borderRadius: 12, overflow: 'hidden', border: '1px solid #334155′ }}>
                   <div style={{ background: '#1d4ed8', padding: '10px 20px', fontWeight: 700, color: '#fff' }}>{yr.age}</div>
                   {yr.tasks.map((t, ti) => (
                     <div key={ti} style={{ padding: '14px 20px', borderTop: ti > 0 ? '1px solid #1e293b' : 'none', display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>

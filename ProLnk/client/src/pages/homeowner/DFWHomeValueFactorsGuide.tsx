@@ -54,7 +54,7 @@ export default function DFWHomeValueFactorsGuide() {
               <div style={{ minWidth: 44, height: 44, borderRadius: '50%', background: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 18, color: '#fff' }}>{d.num}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 4 }}>
-                  <span style={{ fontWeight: 700, fontSize: 17, color: '#f1f5f9' }}>{d.title}</span>
+                  <span style={{ fontWeight: 700, fontSize: 17, color: '#f1f5f9′ }}>{d.title}</span>
                   <span style={{ background: '#3b82f620', color: '#60a5fa', fontSize: 13, fontWeight: 700, padding: '2px 10px', borderRadius: 20 }}>{d.pct}</span>
                 </div>
                 <p style={{ color: '#94a3b8', margin: 0, fontSize: 15 }}>{d.detail}</p>
@@ -102,7 +102,7 @@ export default function DFWHomeValueFactorsGuide() {
         </div>
 
         {/* Interactive Estimator */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>🧮 Interactive Value Estimator</h2>
           <p style={{ color: '#64748b', marginBottom: 28, fontSize: 15 }}>Select your home's condition on 6 factors to see your estimated value position vs. DFW market average.</p>
           
@@ -119,7 +119,7 @@ export default function DFWHomeValueFactorsGuide() {
                         key={idx}
                         onClick={() => { setSelections(s => ({ ...s, [f.id]: score })); setShowResult(false); }}
                         style={{
-                          background: selected ? '#1d4ed8' : '#0f172a',
+                          background: selected ? '#1d4ed8′ : '#0f172a',
                           border: `1px solid ${selected ? '#3b82f6' : '#334155'}`,
                           borderRadius: 8, padding: '12px 16px', cursor: 'pointer', color: selected ? '#fff' : '#94a3b8',
                           textAlign: 'left', fontSize: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -127,7 +127,7 @@ export default function DFWHomeValueFactorsGuide() {
                         }}
                       >
                         <span>{opt}</span>
-                        <span style={{ fontWeight: 700, color: score > 0 ? '#4ade80' : score < 0 ? '#f87171' : '#64748b', minWidth: 44, textAlign: 'right' }}>
+                        <span style={{ fontWeight: 700, color: score > 0 ? '#4ade80′ : score < 0 ? '#f87171' : '#64748b', minWidth: 44, textAlign: ’right' }}>
                           {score > 0 ? `+${score}%` : score === 0 ? '±0%' : `${score}%`}
                         </span>
                       </button>

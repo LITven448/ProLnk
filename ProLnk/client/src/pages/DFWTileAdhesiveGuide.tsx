@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const adhesiveMatrix = [
-  { size: 'Small (under 12")', location: 'Interior Dry', adhesive: 'Mastic (Type 1)', coverage: '40–50 sq ft/gal', backButter: false, note: 'Mastic is fine for dry interior small tile.' },
-  { size: 'Small (under 12")', location: 'Interior Wet', adhesive: 'Modified Thinset', coverage: '40–50 sq ft/bag', backButter: false, note: 'Never use mastic in showers — DFW humidity causes mastic failure.' },
-  { size: 'Medium (12"–18")', location: 'Interior Dry', adhesive: 'Modified Thinset', coverage: '40–50 sq ft/bag', backButter: true, note: 'Back-butter for full coverage on medium tile.' },
-  { size: 'Medium (12"–18")', location: 'Interior Wet', adhesive: 'Modified Thinset', coverage: '40–50 sq ft/bag', backButter: true, note: 'Back-butter mandatory in wet areas.' },
-  { size: 'Large Format (18"+)', location: 'Interior Dry', adhesive: 'Medium-Bed Mortar', coverage: '30–40 sq ft/bag', backButter: true, note: 'DFW homes require medium-bed for large format — prevents hollow spots from subfloor flex.' },
-  { size: 'Large Format (18"+)', location: 'Interior Wet', adhesive: 'Medium-Bed Mortar', coverage: '30–40 sq ft/bag', backButter: true, note: 'Medium-bed + back-butter mandatory. DFW clay subfloor movement requires full coverage.' },
+  { size: 'Small (under 12″)', location: 'Interior Dry', adhesive: 'Mastic (Type 1)', coverage: '40–50 sq ft/gal', backButter: false, note: 'Mastic is fine for dry interior small tile.' },
+  { size: 'Small (under 12″)', location: 'Interior Wet', adhesive: 'Modified Thinset', coverage: '40–50 sq ft/bag', backButter: false, note: 'Never use mastic in showers — DFW humidity causes mastic failure.' },
+  { size: 'Medium (12″–18″)', location: 'Interior Dry', adhesive: 'Modified Thinset', coverage: '40–50 sq ft/bag', backButter: true, note: 'Back-butter for full coverage on medium tile.' },
+  { size: 'Medium (12″–18″)', location: 'Interior Wet', adhesive: 'Modified Thinset', coverage: '40–50 sq ft/bag', backButter: true, note: 'Back-butter mandatory in wet areas.' },
+  { size: 'Large Format (18″+)', location: 'Interior Dry', adhesive: 'Medium-Bed Mortar', coverage: '30–40 sq ft/bag', backButter: true, note: 'DFW homes require medium-bed for large format — prevents hollow spots from subfloor flex.' },
+  { size: 'Large Format (18″+)', location: 'Interior Wet', adhesive: 'Medium-Bed Mortar', coverage: '30–40 sq ft/bag', backButter: true, note: 'Medium-bed + back-butter mandatory. DFW clay subfloor movement requires full coverage.' },
   { size: 'Any', location: 'Exterior DFW', adhesive: 'Epoxy Adhesive', coverage: '20–30 sq ft/unit', backButter: true, note: 'DFW exterior: epoxy only. Thinset and mastic fail under 100°F+ patio heat cycling.' },
 ];
 
@@ -36,7 +36,7 @@ export default function DFWTileAdhesiveGuide() {
             <select value={size} onChange={e => setSize(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15 }}>
               <option value=''>Select tile size...</option>
               <option>Small (under 12")</option>
-              <option>Medium (12"–18")</option>
+              <option>Medium (12"–18″)</option>
               <option>Large Format (18"+)</option>
               <option>Any</option>
             </select>
@@ -55,7 +55,7 @@ export default function DFWTileAdhesiveGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642' }}>🪟 Adhesive Recommendation</div>
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642′ }}>🪟 Adhesive Recommendation</div>
             {result.backButter && <div style={{ background: '#b45309', color: '#fff', borderRadius: 6, padding: '8px 14px', marginBottom: 12, fontWeight: 700 }}>⚠️ Back-Buttering Required — apply thin coat of thinset to tile back before setting</div>}
             <div style={{ display: 'grid', gap: 12 }}>
               {[

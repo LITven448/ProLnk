@@ -124,8 +124,8 @@ export default function DFWHOMEGrantsGuide() {
             <div key={s.label} style={{ background: 'white', borderRadius: 12, padding: 18, textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#64748B', marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, margin: '4px 0' }}>{s.value}</div>
-              <div style={{ fontSize: 11, color: '#94A3B8' }}>{s.sub}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, margin: '4px 0′ }}>{s.value}</div>
+              <div style={{ fontSize: 11, color: '#94A3B8′ }}>{s.sub}</div>
             </div>
           ))}
         </div>
@@ -140,9 +140,9 @@ export default function DFWHOMEGrantsGuide() {
                 onClick={() => toggleType(opt.value)}
                 style={{
                   padding: '10px 18px', borderRadius: 24, border: '2px solid',
-                  borderColor: ownerType.includes(opt.value) ? '#0A1628' : '#E2E8F0',
-                  background: ownerType.includes(opt.value) ? '#0A1628' : 'white',
-                  color: ownerType.includes(opt.value) ? '#F5E642' : '#475569',
+                  borderColor: ownerType.includes(opt.value) ? '#0A1628′ : '#E2E8F0',
+                  background: ownerType.includes(opt.value) ? '#0A1628′ : ’white',
+                  color: ownerType.includes(opt.value) ? '#F5E642′ : '#475569',
                   fontWeight: 600, fontSize: 14, cursor: 'pointer',
                 }}
               >
@@ -160,7 +160,7 @@ export default function DFWHOMEGrantsGuide() {
                 <span style={{ color: '#64748B', fontSize: 14 }}>Combined max value: <strong>${totalPotential.toLocaleString()}</strong></span>
               </div>
               {qualifying.map(g => (
-                <div key={g.name} style={{ background: '#F8FAFC', borderRadius: 10, padding: 18, marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
+                <div key={g.name} style={{ background: '#F8FAFC', borderRadius: 10, padding: 18, marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                     <div style={{ fontWeight: 700, fontSize: 15 }}>{g.name}</div>
                     <div style={{ background: '#0A1628', color: '#F5E642', borderRadius: 6, padding: '4px 10px', fontSize: 13, fontWeight: 700 }}>Up to ${g.maxAmt.toLocaleString()}</div>

@@ -46,10 +46,10 @@ export default function DFWPoolChemistryDFW2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[
-            { label: 'Calcium Hardness (ppm)', val: calcium, set: setCalcium, placeholder: 'e.g. 350' },
-            { label: 'Total Alkalinity (ppm)', val: alkalinity, set: setAlkalinity, placeholder: 'e.g. 100' },
-            { label: 'pH Level', val: ph, set: setPh, placeholder: 'e.g. 7.5' },
-            { label: 'CYA / Stabilizer (ppm)', val: cya, set: setCya, placeholder: 'e.g. 50' },
+            { label: 'Calcium Hardness (ppm)', val: calcium, set: setCalcium, placeholder: 'e.g. 350′ },
+            { label: 'Total Alkalinity (ppm)', val: alkalinity, set: setAlkalinity, placeholder: 'e.g. 100′ },
+            { label: 'pH Level', val: ph, set: setPh, placeholder: 'e.g. 7.5′ },
+            { label: 'CYA / Stabilizer (ppm)', val: cya, set: setCya, placeholder: 'e.g. 50′ },
           ].map(({ label, val, set, placeholder }) => (
             <div key={label}>
               <label style={{ display: 'block', color: '#F5E642', marginBottom: 4, fontSize: 14 }}>{label}</label>

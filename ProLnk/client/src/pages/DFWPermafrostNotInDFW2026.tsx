@@ -44,11 +44,11 @@ export default function DFWPermafrostNotInDFW2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 16 }}>🔍 DFW Freeze Guidance by Application</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {guidance.map(g => (
-              <button key={g.app} onClick={() => setSelected(g.app)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === g.app ? '#F5E642' : '#162842', color: selected === g.app ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{g.icon} {g.app}</button>
+              <button key={g.app} onClick={() => setSelected(g.app)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === g.app ? '#F5E642′ : '#162842', color: selected === g.app ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{g.icon} {g.app}</button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>{result.headline}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result.detail}</div>
             </div>

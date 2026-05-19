@@ -32,12 +32,12 @@ export default function DFWOutdoorFaucetGuide() {
         <p style={{ color: '#8B9CC8', marginBottom: 32, fontSize: 16 }}>Anti-siphon backflow prevention is required by DFW cities. Know your shutoff location before the next DFW freeze.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ DFW Outdoor Faucet Code</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ DFW Outdoor Faucet Code</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['🛡️ Anti-Siphon Required', 'All DFW cities require backflow prevention on garden hose connections'],['❄️ Freeze Risk', 'DFW gets 1–3 hard freezes per year — know your shutoff location NOW'],['🔧 Frost-Free Best Practice', 'DFW doesn\’t require frost-free but Valentine\’s Day 2021 proved they help'],['🏗️ Permit Required', 'New outdoor faucet installation typically requires DFW city permit']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 13, color: '#8B9CC8' }}>{val}</div>
+                <div style={{ fontSize: 13, color: '#8B9CC8′ }}>{val}</div>
               </div>
             ))}
           </div>
@@ -80,7 +80,7 @@ export default function DFWOutdoorFaucetGuide() {
         )}
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 DFW Pro Tips</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Pro Tips</h2>
           {['Find and label your outdoor faucet shutoffs NOW — before the next DFW freeze','Disconnect all hoses before DFW freeze events — trapped water bursts pipes','Anti-siphon caps fail over time — replace every 5–7 years or when dripping','After Uri (2021), DFW inspectors now strictly enforce backflow prevention code'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span>

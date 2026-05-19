@@ -51,7 +51,7 @@ export default function DFWHomeExteriorCostGuide() {
           <div>
             <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>Number of Windows: {windowCount}</label>
             <input type="range" min={4} max={30} value={windowCount} onChange={e => setWindowCount(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export default function DFWHomeExteriorCostGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem' }}>
             {Object.entries(components).map(([key, c]) => (
               <button key={key} onClick={() => toggleItem(key)}
-                style={{ background: selectedScope.includes(key) ? '#F5E642' : '#1e2d45', color: selectedScope.includes(key) ? '#0A1628' : '#94a3b8', border: '1px solid #2d3f5e', borderRadius: 8, padding: '0.5rem 0.75rem', fontSize: '0.8rem', cursor: 'pointer', fontWeight: selectedScope.includes(key) ? 700 : 400 }}>
+                style={{ background: selectedScope.includes(key) ? '#F5E642′ : '#1e2d45', color: selectedScope.includes(key) ? '#0A1628' : '#94a3b8', border: '1px solid #2d3f5e', borderRadius: 8, padding: '0.5rem 0.75rem', fontSize: '0.8rem', cursor: ’pointer', fontWeight: selectedScope.includes(key) ? 700 : 400 }}>
                 {c.label}
               </button>
             ))}
@@ -69,17 +69,17 @@ export default function DFWHomeExteriorCostGuide() {
 
         {lineItems.length > 0 && (
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>📋 Cost + ROI Breakdown</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>📋 Cost + ROI Breakdown</h2>
             {lineItems.map((item) => (
               <div key={item.label} style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e', alignItems: 'center' }}>
-                <span style={{ color: '#cbd5e1' }}>{item.label}</span>
+                <span style={{ color: '#cbd5e1′ }}>{item.label}</span>
                 <span style={{ color: '#fff', fontWeight: 600 }}>${item.low.toLocaleString()} – ${item.high.toLocaleString()}</span>
                 <span style={{ background: '#0f2035', color: '#4ade80', borderRadius: 6, padding: '0.2rem 0.5rem', fontSize: '0.78rem', fontWeight: 600 }}>ROI {item.roi}</span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0 0', fontWeight: 700, fontSize: '1.1rem' }}>
-              <span style={{ color: '#F5E642' }}>Total</span>
-              <span style={{ color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</span>
+              <span style={{ color: '#F5E642′ }}>Total</span>
+              <span style={{ color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</span>
             </div>
           </div>
         )}

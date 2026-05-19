@@ -85,12 +85,12 @@ export default function DFWDrivewayParkingIncomeGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🅿️</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>DFW Driveway & Parking Income Guide</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>DFW Driveway & Parking Income Guide</h1>
           <p style={{ margin: 0, opacity: 0.8, lineHeight: 1.6 }}>DFW homeowners near stadiums, airports, and downtown earn $80–$320/month per space with zero effort. Apps like SpotHero and Neighbor.com handle everything.</p>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏟️ DFW Venues That Drive Parking Demand</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏟️ DFW Venues That Drive Parking Demand</h2>
           <div style={{ display: 'grid', gap: 8 }}>
             {[
               { venue: 'Globe Life Field', team: 'Texas Rangers', events: '81+ home games/yr' },
@@ -111,7 +111,7 @@ export default function DFWDrivewayParkingIncomeGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>💰 Income Calculator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>💰 Income Calculator</h2>
           <div style={{ display: 'grid', gap: 14, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>My Address Is...</label>
@@ -122,7 +122,7 @@ export default function DFWDrivewayParkingIncomeGuide() {
             </div>
             <div>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>Parking Spaces Available</label>
-              <input type="number" min={1} max={10} value={spaces} onChange={e => setSpaces(e.target.value)} placeholder="e.g. 2" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1.5px solid rgba(255,255,255,0.2)', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" min={1} max={10} value={spaces} onChange={e => setSpaces(e.target.value)} placeholder="e.g. 2″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1.5px solid rgba(255,255,255,0.2)', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 16, cursor: 'pointer', width: '100%' }}>Calculate Parking Income</button>
@@ -137,7 +137,7 @@ export default function DFWDrivewayParkingIncomeGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📱 Best Apps for DFW Parking Income</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📱 Best Apps for DFW Parking Income</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {APPS.map(a => (
               <div key={a.name} style={{ padding: '12px 14px', background: 'rgba(255,255,255,0.05)', borderRadius: 8 }}>

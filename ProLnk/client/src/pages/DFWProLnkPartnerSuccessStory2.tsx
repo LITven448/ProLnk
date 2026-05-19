@@ -65,7 +65,7 @@ export default function DFWProLnkPartnerSuccessStory2() {
           {stories.map((s, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
               padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12,
-              backgroundColor: selected === i ? '#0A1628' : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
+              backgroundColor: selected === i ? '#0A1628′ : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
             }}>
               {s.background}
             </button>
@@ -78,14 +78,14 @@ export default function DFWProLnkPartnerSuccessStory2() {
           <div style={{ backgroundColor: '#F5E642', display: 'inline-block', padding: '2px 10px', borderRadius: 4, fontSize: 12, fontWeight: 700, marginBottom: 20 }}>
             {s.joined}
           </div>
-          <p style={{ lineHeight: 1.8, marginBottom: 20, color: '#374151' }}>{s.summary}</p>
+          <p style={{ lineHeight: 1.8, marginBottom: 20, color: '#374151′ }}>{s.summary}</p>
           <div style={{ backgroundColor: '#F3F4F6', borderRadius: 8, padding: 16, marginBottom: 16 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>📈 Income Timeline</div>
-            <div style={{ fontFamily: 'monospace', fontSize: 14, color: '#059669' }}>{s.incomeTimeline}</div>
+            <div style={{ fontFamily: 'monospace', fontSize: 14, color: '#059669′ }}>{s.incomeTimeline}</div>
           </div>
           <div style={{ backgroundColor: '#FAFAFA', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>🚀 How They Got Started</div>
-            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151' }}>{s.howStarted}</p>
+            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151′ }}>{s.howStarted}</p>
           </div>
         </div>
 

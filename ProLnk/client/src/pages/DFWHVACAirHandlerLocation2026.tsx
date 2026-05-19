@@ -16,7 +16,7 @@ export default function DFWHVACAirHandlerLocation2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>❄️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0' }}>DFW Air Handler Location Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0′ }}>DFW Air Handler Location Guide 2026</h1>
           <p style={{ color: '#94a3b8', margin: 0 }}>Where your air handler lives determines maintenance, efficiency, and risk in DFW's climate</p>
         </div>
 
@@ -42,7 +42,7 @@ export default function DFWHVACAirHandlerLocation2026() {
                 {loc.cons.map((c, i) => <div key={i} style={{ color: '#94a3b8', marginBottom: '0.3rem', fontSize: '0.9rem' }}>• {c}</div>)}
               </div>
             </div>
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>🔧 DFW Pro Tip</div>
               <div style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{loc.tip}</div>
             </div>

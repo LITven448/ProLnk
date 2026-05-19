@@ -11,7 +11,7 @@ const CONCERNS = [
 
 const TIMELINE = [
   { day: 'Day 1-3', event: 'Title commitment ordered by title company after contract execution' },
-  { day: 'Day 5-7', event: 'Preliminary title commitment issued — review Schedules A, B-1, B-2' },
+  { day: 'Day 5-7', event: 'Preliminary title commitment issued — review Schedules A, B-1, B-2′ },
   { day: 'Day 7-14', event: 'Curative work begins: paying off liens, getting releases, fixing title defects' },
   { day: 'Day 14-25', event: 'Survey received and reviewed (if ordered)' },
   { day: 'Day 25-30', event: 'Final title commitment issued — all B-1 requirements cleared' },
@@ -44,7 +44,7 @@ export default function DFWTitleCommitmentGuide() {
           {['concerns','timeline'].map(tab=>(
             <button key={tab} onClick={()=>{setActiveTab(tab);setSelected(null);}}
               style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                background: activeTab===tab ? '#F5E642' : '#fff', color: activeTab===tab ? '#0A1628' : '#64748B' }}>
+                background: activeTab===tab ? '#F5E642′ : '#fff', color: activeTab===tab ? '#0A1628' : '#64748B' }}>
               {tab==='concerns' ? '❓ Common Concerns' : '📅 Timeline'}
             </button>
           ))}
@@ -55,7 +55,7 @@ export default function DFWTitleCommitmentGuide() {
             {CONCERNS.map((c,i)=>(
               <div key={i} onClick={()=>setSelected(selected===i?null:i)}
                 style={{ background: '#fff', borderRadius: 10, padding: '1.2rem', cursor: 'pointer',
-                  border: selected===i ? '2px solid #F5E642' : '2px solid transparent', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+                  border: selected===i ? '2px solid #F5E642′ : '2px solid transparent', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div style={{ fontWeight: 600, color: '#0A1628', flex: 1 }}>{c.concern}</div>
                   <div style={{ background: c.schedule==='Schedule B-2'?'#FEF2F2':c.schedule==='Schedule A'?'#F0FDF4':'#FFF9E6',
@@ -90,7 +90,7 @@ export default function DFWTitleCommitmentGuide() {
         )}
 
         <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.2rem', marginTop: 24, textAlign: 'center' }}>
-          <div style={{ color: '#94A3B8', fontSize: 13 }}>🛡️ Always purchase Owner's Title Insurance in addition to the Lender's policy. It's a one-time premium that protects you forever.</div>
+          <div style={{ color: '#94A3B8', fontSize: 13 }}>🛡️ Always purchase Owner's Title Insurance in addition to the Lender’s policy. It’s a one-time premium that protects you forever.</div>
         </div>
       </div>
     </div>

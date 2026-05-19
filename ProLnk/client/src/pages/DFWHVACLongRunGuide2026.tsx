@@ -66,7 +66,7 @@ export default function DFWHVACLongRunGuide2026() {
               style={{ width: '100%', padding: '10px', background: '#1a2f4a', border: '1px solid #1e3a5a', borderRadius: 8, color: '#fff' }}>
               <option value="">Select temperature...</option>
               <option value="100plus">100°F or above</option>
-              <option value="under100">Below 100°F</option>
+              <option value="under100″>Below 100°F</option>
             </select>
           </div>
           <button onClick={assess}

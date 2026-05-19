@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const symptoms = [
-  { id: 'vibration', label: 'Unusual vibration or shaking from air handler', diagnosis: 'Imbalanced blower wheel from debris accumulation — common in DFW due to dust and cottonwood buildup', recommendation: 'Clean blower wheel first. If vibration persists after cleaning, wheel may need replacement', cost: 'Cleaning: $150–$300 | Replacement: $300–$600' },
+  { id: 'vibration', label: 'Unusual vibration or shaking from air handler', diagnosis: 'Imbalanced blower wheel from debris accumulation — common in DFW due to dust and cottonwood buildup', recommendation: 'Clean blower wheel first. If vibration persists after cleaning, wheel may need replacement', cost: 'Cleaning: $150–$300 | Replacement: $300–$600′ },
   { id: 'noise', label: 'Rattling, scraping, or grinding noise', diagnosis: 'Debris inside blower housing or failing blower wheel bearings — debris enters through return air grilles', recommendation: 'Immediate inspection needed — debris can damage motor if left. Clean housing and wheel', cost: '$150–$350 service call + parts if needed' },
   { id: 'weak', label: 'Reduced airflow despite clean filter', diagnosis: 'Blower wheel caked with dust and pollen reducing blade efficiency — very common in DFW', recommendation: 'Blower wheel cleaning restores airflow. DFW homes typically need cleaning every 3–5 years', cost: 'Cleaning: $150–$300 — most effective first step' },
   { id: 'none', label: 'No symptoms — checking blower health', diagnosis: 'Proactive check is smart in DFW — dusty air and high run hours accelerate wheel buildup', recommendation: 'Inspect blower wheel annually. Clean if any visible buildup on blades', cost: '$100–$200 for inspection + cleaning if needed' },
@@ -80,11 +80,11 @@ export default function DFWHVACBlowerWheelGuide() {
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Diagnosis</div>
               <div style={{ marginBottom: 10 }}>{match.diagnosis}</div>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#E8EDF5' }}>Recommendation:</strong> <span style={{ color: '#94A3B8' }}>{match.recommendation}</span></div>
-              <div style={{ color: '#94A3B8', fontSize: 14 }}>Cost: <strong style={{ color: '#F5E642' }}>{match.cost}</strong></div>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#E8EDF5′ }}>Recommendation:</strong> <span style={{ color: '#94A3B8' }}>{match.recommendation}</span></div>
+              <div style={{ color: '#94A3B8', fontSize: 14 }}>Cost: <strong style={{ color: '#F5E642′ }}>{match.cost}</strong></div>
             </div>
           )}
         </div>

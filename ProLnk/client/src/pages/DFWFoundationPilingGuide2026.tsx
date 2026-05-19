@@ -81,9 +81,9 @@ export default function DFWFoundationPilingGuide2026() {
             {situations.map(s => (
               <button key={s.id} onClick={() => toggle(s.id)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  borderColor: selected.includes(s.id) ? '#F5E642' : '#1e3a5f',
-                  background: selected.includes(s.id) ? '#F5E642' : '#0A1628',
-                  color: selected.includes(s.id) ? '#0A1628' : '#94a3b8' }}>
+                  borderColor: selected.includes(s.id) ? '#F5E642′ : '#1e3a5f',
+                  background: selected.includes(s.id) ? '#F5E642′ : '#0A1628',
+                  color: selected.includes(s.id) ? '#0A1628′ : '#94a3b8' }}>
                 {s.icon} {s.label}
               </button>
             ))}
@@ -94,7 +94,7 @@ export default function DFWFoundationPilingGuide2026() {
           {recommended.map(p => (
             <div key={p.id} onClick={() => setActiveCard(activeCard === p.id ? null : p.id)}
               style={{ background: '#0f2040', borderRadius: 12, padding: 20, cursor: 'pointer', border: '2px solid',
-                borderColor: activeCard === p.id ? '#F5E642' : '#1e3a5f' }}>
+                borderColor: activeCard === p.id ? '#F5E642′ : '#1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <span style={{ fontSize: 24, marginRight: 10 }}>{p.icon}</span>
@@ -102,7 +102,7 @@ export default function DFWFoundationPilingGuide2026() {
                 </div>
                 <span style={{ color: '#4ade80', fontWeight: 700, fontSize: 14 }}>{p.avgCost}</span>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{p.bestFor} — Depth: {p.depth}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{p.bestFor} — Depth: {p.depth}</p>
               {activeCard === p.id && (
                 <div style={{ marginTop: 14, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                   <div>

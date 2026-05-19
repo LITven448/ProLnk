@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const auditSteps: Record<string, { steps: string[]; findings: string[]; savings: string }> = {
   pre1980: {
-    steps: ['Check attic insulation depth (target R-38 for DFW)', 'Inspect all door weatherstripping — gaps wider than 1/8" need replacement', 'Look for knob-and-tube or aluminum wiring in panel', 'Use incense stick near outlets on exterior walls to detect air leaks', 'Check crawl space for vapor barrier and insulation'],
+    steps: ['Check attic insulation depth (target R-38 for DFW)', 'Inspect all door weatherstripping — gaps wider than 1/8″ need replacement', 'Look for knob-and-tube or aluminum wiring in panel', 'Use incense stick near outlets on exterior walls to detect air leaks', 'Check crawl space for vapor barrier and insulation'],
     findings: ['Likely R-11 or less in attic — upgrade priority 1', 'Single-pane windows account for 30% of heat loss', 'No wall insulation standard in pre-1980 DFW homes', 'Ductwork likely uninsulated or R-4 — upgrade to R-8'],
     savings: '$400-900/yr potential savings after full audit improvements',
   },
@@ -26,7 +26,7 @@ export default function DFWEnergyAuditDIYGuide() {
   function runAudit() {
     const b = parseInt(bill);
     if (!age) return;
-    const tier = age === 'pre1980' ? 'pre1980' : age === '1980-2000' ? '1980-2000' : 'post2000';
+    const tier = age === 'pre1980′ ? ’pre1980′ : age === '1980-2000' ? '1980-2000' : ’post2000';
     setResult(auditSteps[tier]);
   }
 
@@ -50,9 +50,9 @@ export default function DFWEnergyAuditDIYGuide() {
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16 }}
               >
                 <option value="">Select era...</option>
-                <option value="pre1980">Before 1980</option>
-                <option value="1980-2000">1980–2000</option>
-                <option value="post2000">After 2000</option>
+                <option value="pre1980″>Before 1980</option>
+                <option value="1980-2000″>1980–2000</option>
+                <option value="post2000″>After 2000</option>
               </select>
             </div>
             <div>
@@ -61,7 +61,7 @@ export default function DFWEnergyAuditDIYGuide() {
                 type="number"
                 value={bill}
                 onChange={e => setBill(e.target.value)}
-                placeholder="e.g. 280"
+                placeholder="e.g. 280″
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, boxSizing: 'border-box' }}
               />
             </div>
@@ -90,10 +90,10 @@ export default function DFWEnergyAuditDIYGuide() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#0F3460', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0F3460', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
               <div style={{ fontSize: 13, color: '#64748B', marginBottom: 4 }}>Expected Annual Savings Potential</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>{result.savings}</div>
-              <p style={{ color: '#94A3B8', fontSize: 13, margin: '8px 0 0' }}>Document everything with photos. If your bill is above $250/mo in summer, a pro audit ($300-500) pays back in year one.</p>
+              <p style={{ color: '#94A3B8', fontSize: 13, margin: '8px 0 0′ }}>Document everything with photos. If your bill is above $250/mo in summer, a pro audit ($300-500) pays back in year one.</p>
             </div>
           </>
         )}

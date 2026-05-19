@@ -34,7 +34,7 @@ export default function CoppellHomeownerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {decades.map(d => (
               <button key={d.id} onClick={() => setSelected(d.id === selected ? null : d.id)}
-                style={{ backgroundColor: selected === d.id ? '#F5E642' : '#112240', color: selected === d.id ? '#0A1628' : '#E8E8E8', border: 'none', borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+                style={{ backgroundColor: selected === d.id ? '#F5E642′ : '#112240', color: selected === d.id ? '#0A1628' : '#E8E8E8', border: ’none', borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
                 {d.label}
               </button>
             ))}
@@ -46,7 +46,7 @@ export default function CoppellHomeownerGuide2026() {
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>🔧 {decade.label} Maintenance Priorities</h3>
             {decade.tips.map(t => (
               <div key={t} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10 }}>
-                <span style={{ color: '#F5E642' }}>▸</span>
+                <span style={{ color: '#F5E642′ }}>▸</span>
                 <span style={{ fontSize: 14, lineHeight: 1.5 }}>{t}</span>
               </div>
             ))}

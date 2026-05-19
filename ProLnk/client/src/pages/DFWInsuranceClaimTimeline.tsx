@@ -140,8 +140,8 @@ export default function DFWInsuranceClaimTimeline() {
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
               <div><div style={{ color: '#8BA3C7', fontSize: 13, marginBottom: 4 }}>Expected Timeline</div><div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>{result.timeline}</div></div>
               <div><div style={{ color: '#8BA3C7', fontSize: 13, marginBottom: 4 }}>Priority Level</div><div style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 15 }}>{result.priority}</div></div>
-              <div style={{ gridColumn: '1 / -1' }}><div style={{ color: '#8BA3C7', fontSize: 13, marginBottom: 4 }}>Pro Tip for Your Situation</div><div style={{ color: '#FFFFFF', fontSize: 15 }}>{result.tip}</div></div>
-              <div style={{ gridColumn: '1 / -1' }}><div style={{ color: '#8BA3C7', fontSize: 13, marginBottom: 4 }}>Public Adjuster?</div><div style={{ color: '#FFFFFF', fontSize: 14 }}>{result.paRec}</div></div>
+              <div style={{ gridColumn: '1 / -1′ }}><div style={{ color: '#8BA3C7', fontSize: 13, marginBottom: 4 }}>Pro Tip for Your Situation</div><div style={{ color: '#FFFFFF', fontSize: 15 }}>{result.tip}</div></div>
+              <div style={{ gridColumn: '1 / -1′ }}><div style={{ color: '#8BA3C7', fontSize: 13, marginBottom: 4 }}>Public Adjuster?</div><div style={{ color: '#FFFFFF', fontSize: 14 }}>{result.paRec}</div></div>
             </div>
           )}
         </div>

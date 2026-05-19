@@ -30,7 +30,7 @@ export default function DFWFoundationInsurance2026() {
             { label: '🛡️ Company Warranties', desc: 'Reputable foundation companies offer lifetime transferable warranties. This is your real "insurance" for DFW foundations.' },
           ].map((c) => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 8, padding: 20, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{c.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{c.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{c.desc}</div>
             </div>
           ))}

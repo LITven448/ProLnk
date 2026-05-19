@@ -54,14 +54,14 @@ export default function HomeWarrantyGuide() {
               <div style={{ fontSize: 24, marginBottom: 8 }}>🛡️</div>
               <div style={{ fontWeight: 700, color: '#64B5F6', marginBottom: 12 }}>Home Warranty</div>
               <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7 }}>
-                Covers <strong style={{ color: '#E8EDF5' }}>mechanical breakdown</strong> of appliances and systems — HVAC failure, water heater dying, dishwasher giving out.
+                Covers <strong style={{ color: '#E8EDF5′ }}>mechanical breakdown</strong> of appliances and systems — HVAC failure, water heater dying, dishwasher giving out.
               </p>
             </div>
             <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>🏠</div>
               <div style={{ fontWeight: 700, color: '#64B5F6', marginBottom: 12 }}>Homeowners Insurance</div>
               <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7 }}>
-                Covers <strong style={{ color: '#E8EDF5' }}>sudden/accidental damage</strong> — fire, storm, theft, burst pipe.
+                Covers <strong style={{ color: '#E8EDF5′ }}>sudden/accidental damage</strong> — fire, storm, theft, burst pipe.
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function HomeWarrantyGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', marginBottom: 16 }}>The Honest Truth</h2>
           <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 24 }}>
             <p style={{ color: '#CBD5E1', lineHeight: 1.8, margin: 0 }}>
-              Most DFW homeowners with <strong style={{ color: '#4ADE80' }}>newer homes (under 8 years)</strong> do not need a warranty. Self-insure by putting the premium in savings.<br /><br />
+              Most DFW homeowners with <strong style={{ color: '#4ADE80′ }}>newer homes (under 8 years)</strong> do not need a warranty. Self-insure by putting the premium in savings.<br /><br />
               Older homes <strong style={{ color: '#F59E0B' }}>(10+ years)</strong> may genuinely benefit. A single HVAC compressor replacement runs $2,500–4,500. At $600/year in premiums, one big repair breaks even.
             </p>
           </div>
@@ -121,12 +121,12 @@ export default function HomeWarrantyGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div>
                 <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Home Age (years)</label>
-                <input type="number" min="0" max="100" value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 12"
+                <input type="number" min="0″ max="100" value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 12"
                   style={{ width: '100%', background: '#0A1628', border: '1px solid #2D4A6B', borderRadius: 8, padding: '10px 14px', color: '#FFFFFF', fontSize: 15, boxSizing: 'border-box' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>HVAC Age (years)</label>
-                <input type="number" min="0" max="50" value={hvacAge} onChange={e => setHvacAge(e.target.value)} placeholder="e.g. 9"
+                <input type="number" min="0″ max="50" value={hvacAge} onChange={e => setHvacAge(e.target.value)} placeholder="e.g. 9"
                   style={{ width: '100%', background: '#0A1628', border: '1px solid #2D4A6B', borderRadius: 8, padding: '10px 14px', color: '#FFFFFF', fontSize: 15, boxSizing: 'border-box' }} />
               </div>
             </div>

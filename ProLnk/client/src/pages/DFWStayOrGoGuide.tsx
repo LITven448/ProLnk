@@ -30,7 +30,7 @@ export default function DFWStayOrGoGuide() {
     if (score >= 3) {
       setResult({ verdict: '🏠 Stay & Renovate', detail: `With $${Math.round(eq / 1000)}K in equity and a ${t} neighborhood, your DFW home is a strong asset. Renovation costs of ~$${Math.round(rn / 1000)}K are manageable and protect your equity position. Selling now means paying 6–8% in transaction costs plus moving.`, color: '#22c55e' });
     } else if (score <= 0) {
-      setResult({ verdict: '🔑 Time to Go', detail: `A ${t} neighborhood combined with $${Math.round(rn / 1000)}K in deferred maintenance signals diminishing returns. With $${Math.round(eq / 1000)}K in equity available for a down payment, you can move up in DFW's market before conditions shift further.`, color: '#F5E642' });
+      setResult({ verdict: '🔑 Time to Go', detail: `A ${t} neighborhood combined with $${Math.round(rn / 1000)}K in deferred maintenance signals diminishing returns. With $${Math.round(eq / 1000)}K in equity available for a down payment, you can move up in DFW's market before conditions shift further.`, color: '#F5E642′ });
     } else {
       setResult({ verdict: '⚖️ It Depends', detail: `Your situation is genuinely balanced. The deciding factor: how long do you plan to stay? If 5+ years, renovate and ride the equity. If you're likely to move in 1–3 years, selling now avoids wasted renovation spend in DFW's transaction-cost-heavy market.`, color: '#60a5fa' });
     }
@@ -69,7 +69,7 @@ export default function DFWStayOrGoGuide() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 20, color: '#888', fontSize: 14, lineHeight: 1.7 }}>These factors don't change the math, but they're part of the decision. Give them a number if you can: "Is staying worth $30K in extra renovation spend?" That's a fair question.</div>
+          <div style={{ marginTop: 20, color: '#888', fontSize: 14, lineHeight: 1.7 }}>These factors don't change the math, but they’re part of the decision. Give them a number if you can: "Is staying worth $30K in extra renovation spend?" That’s a fair question.</div>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '2px solid #F5E642', borderRadius: 12, padding: 32 }}>
@@ -78,11 +78,11 @@ export default function DFWStayOrGoGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#aaa', display: 'block', marginBottom: 6 }}>Available Home Equity ($)</label>
-              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. 180000" style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
+              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. 180000″ style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#aaa', display: 'block', marginBottom: 6 }}>Deferred Renovation Need ($)</label>
-              <input value={renovationNeed} onChange={e => setRenovationNeed(e.target.value)} placeholder="e.g. 75000" style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
+              <input value={renovationNeed} onChange={e => setRenovationNeed(e.target.value)} placeholder="e.g. 75000″ style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#aaa', display: 'block', marginBottom: 6 }}>Neighborhood Trajectory</label>

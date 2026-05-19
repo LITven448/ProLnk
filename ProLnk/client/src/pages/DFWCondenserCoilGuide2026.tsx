@@ -29,8 +29,8 @@ export default function DFWCondenserCoilGuide2026() {
             { icon: '🌪️', title: 'DFW Dust Storms', body: 'DFW dust storms deposit fine clay particles deep into condenser fins. Unlike cottonwood, clay does not rinse easily dry. Wet application of foaming coil cleaner is the only effective solution. One major dust storm can drop system efficiency 15-20%.' },
             { icon: '🛠️', title: 'Fin Bending & Replacement', body: 'Fins bent more than 45 degrees restrict airflow significantly. Fin combs straighten most. If corrosion has eaten through fin walls, replacement is the only option. Aluminum fins corrode faster than copper — check your system type. Protective coatings on new coils are worth the upcharge in DFW.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642' }}>
-              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</span></div>
+            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</span></div>
               <p style={{ color: '#B0B8CC', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
@@ -41,13 +41,13 @@ export default function DFWCondenserCoilGuide2026() {
           <p style={{ color: '#9BA3B4', fontSize: 14, marginBottom: 16 }}>Select your condenser condition for cleaning vs service guidance:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
             {conditions.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
               <p style={{ color: '#E8EAF0', fontSize: 14, margin: 0, lineHeight: 1.7 }}>{result.diagnosis}</p>
             </div>
           )}

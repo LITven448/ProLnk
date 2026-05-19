@@ -23,15 +23,15 @@ export default function DFWFoundationBeamShear2026() {
         <h1 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '8px', lineHeight: 1.2 }}>Foundation Beam Shear Failure Guide</h1>
         <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>Shear failure in DFW foundation beams is more dangerous than flexural failure — it can be sudden and structural. DFW's expansive clay soil creates the differential loads that drive shear. Learn to recognize it.</p>
 
-        <div style={{ backgroundColor: '#FC8181', borderRadius: '12px', padding: '20px', marginBottom: '28px', border: '2px solid #FEB2B2' }}>
-          <div style={{ fontWeight: 800, fontSize: '17px', marginBottom: '8px', color: '#0A1628' }}>⚠️ Shear vs Flexural: The Critical Difference</div>
+        <div style={{ backgroundColor: '#FC8181', borderRadius: '12px', padding: '20px', marginBottom: '28px', border: '2px solid #FEB2B2′ }}>
+          <div style={{ fontWeight: 800, fontSize: '17px', marginBottom: '8px', color: '#0A1628′ }}>⚠️ Shear vs Flexural: The Critical Difference</div>
           <div style={{ color: '#0A1628', fontSize: '14px', lineHeight: 1.6 }}>Flexural failure (vertical cracks from bending) gives warning signs over months. Shear failure (horizontal or diagonal cracks from shear forces) can progress to structural collapse more rapidly. A horizontal crack through a beam mid-span or at its end is a structural emergency — call a licensed engineer before further investigation.</div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
-          {[{ icon: '↔️', label: 'Shear Failure', cracks: 'Horizontal through beam', danger: 'EMERGENCY', color: '#FC8181' },
-            { icon: '↕️', label: 'Flexural Failure', cracks: 'Vertical — beam bending', danger: 'MONITOR', color: '#68D391' },
-            { icon: '↗️', label: 'Combined Stress', cracks: 'Diagonal 45° at beam end', danger: 'URGENT', color: '#F6AD55' },
+          {[{ icon: '↔️', label: 'Shear Failure', cracks: 'Horizontal through beam', danger: 'EMERGENCY', color: '#FC8181′ },
+            { icon: '↕️', label: 'Flexural Failure', cracks: 'Vertical — beam bending', danger: 'MONITOR', color: '#68D391′ },
+            { icon: '↗️', label: 'Combined Stress', cracks: 'Diagonal 45° at beam end', danger: 'URGENT', color: '#F6AD55′ },
             { icon: '📉', label: 'Settlement', cracks: 'Stepped or stair-step pattern', danger: 'EVALUATE', color: '#63B3ED' }
           ].map(item => (
             <div key={item.icon} style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '10px', padding: '20px' }}>
@@ -44,7 +44,7 @@ export default function DFWFoundationBeamShear2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '28px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>🔍 Get My Shear Failure Assessment</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>🔍 Get My Shear Failure Assessment</h2>
           <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>Describe the Beam Crack</label>
             <select value={crackDesc} onChange={e => setCrackDesc(e.target.value)} style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px' }}>
@@ -61,7 +61,7 @@ export default function DFWFoundationBeamShear2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
-          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>🔧 DFW Shear Repair Options</h3>
+          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>🔧 DFW Shear Repair Options</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {[{ method: 'Carbon Fiber Straps', use: 'Stabilize shear cracks without excavation', note: 'Most common DFW shear repair — applied to beam face' },
               { method: 'Epoxy Injection', use: 'Restore structural continuity of cracked beam', note: 'Works for moderate shear cracks not involving full beam failure' },
@@ -69,7 +69,7 @@ export default function DFWFoundationBeamShear2026() {
               { method: 'Pier Addition', use: 'Reduce beam span to lower shear forces', note: 'Addresses root cause if settlement created concentrated load' }
             ].map(item => (
               <div key={item.method} style={{ padding: '14px', backgroundColor: '#0A1628', borderRadius: '8px' }}>
-                <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px', color: '#F5E642' }}>{item.method}</div>
+                <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px', color: '#F5E642′ }}>{item.method}</div>
                 <div style={{ fontSize: '13px', marginBottom: '4px' }}>{item.use}</div>
                 <div style={{ color: '#8899AA', fontSize: '12px' }}>{item.note}</div>
               </div>

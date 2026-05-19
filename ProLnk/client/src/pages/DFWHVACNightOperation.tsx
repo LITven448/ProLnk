@@ -41,7 +41,7 @@ export default function DFWHVACNightOperation() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>
             🌡️ DFW Night Strategy Calculator
           </h2>
           <div style={{ marginBottom: 20 }}>
@@ -66,16 +66,16 @@ export default function DFWHVACNightOperation() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642' }}>{optimalTemp}°F</div>
+              <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642′ }}>{optimalTemp}°F</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Optimal Night Setpoint</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 42, fontWeight: 900, color: '#4ade80' }}>{estimatedSavings}%</div>
+              <div style={{ fontSize: 42, fontWeight: 900, color: '#4ade80′ }}>{estimatedSavings}%</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Est. Overnight Savings</div>
             </div>
           </div>
           <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 10, padding: 16, fontSize: 14, color: '#CBD5E1', lineHeight: 1.6 }}>
-            ℹ️ Avg DFW night: <strong style={{ color: '#F5E642' }}>{data.avgNight}°F</strong> — {data.note}
+            ℹ️ Avg DFW night: <strong style={{ color: '#F5E642′ }}>{data.avgNight}°F</strong> — {data.note}
           </div>
         </div>
 

@@ -56,12 +56,12 @@ export default function DFWHomeownerRightsGuide2026() {
   const info = disputes[selected];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>⚖️</div>
-          <h1 style={{ color: "#F5E642", fontSize: "2rem", marginBottom: ".5rem" }}>DFW Homeowner Rights Guide 2026</h1>
-          <p style={{ color: "#94a3b8" }}>Texas homeowner rights — lien law, HOA disputes, contractor issues, and insurance claims</p>
+          <h1 style={{ color: "#F5E642″, fontSize: "2rem", marginBottom: ".5rem" }}>DFW Homeowner Rights Guide 2026</h1>
+          <p style={{ color: "#94a3b8″ }}>Texas homeowner rights — lien law, HOA disputes, contractor issues, and insurance claims</p>
         </div>
 
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
@@ -69,38 +69,38 @@ export default function DFWHomeownerRightsGuide2026() {
             <button
               key={i}
               onClick={() => setSelected(i)}
-              style={{ padding: ".6rem 1.1rem", borderRadius: 8, border: "none", cursor: "pointer", background: selected === i ? "#F5E642" : "#0f2040", color: selected === i ? "#0A1628" : "#94a3b8", fontWeight: 600 }}
+              style={{ padding: ".6rem 1.1rem", borderRadius: 8, border: "none", cursor: "pointer", background: selected === i ? "#F5E642″ : "#0f2040", color: selected === i ? "#0A1628" : "#94a3b8", fontWeight: 600 }}
             >
               {d.icon} {d.type}
             </button>
           ))}
         </div>
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", borderLeft: "4px solid #F5E642", marginBottom: "1.5rem" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: "1.1rem", marginBottom: "1rem" }}>{info.icon} Your Rights: {info.type}</div>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", borderLeft: "4px solid #F5E642", marginBottom: "1.5rem" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: "1.1rem", marginBottom: "1rem" }}>{info.icon} Your Rights: {info.type}</div>
           {info.rights.map((r, i) => (
-            <div key={i} style={{ display: "flex", gap: "1rem", marginTop: ".75rem", color: "#94a3b8", lineHeight: 1.5 }}>
-              <span style={{ color: "#F5E642", minWidth: "1.25rem" }}>•</span>
+            <div key={i} style={{ display: "flex", gap: "1rem", marginTop: ".75rem", color: "#94a3b8″, lineHeight: 1.5 }}>
+              <span style={{ color: "#F5E642″, minWidth: "1.25rem" }}>•</span>
               <span>{r}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#0f1f38", border: "1px solid #F5E642", borderRadius: 12, padding: "1.25rem" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: ".5rem" }}>✅ Recommended Action</div>
-          <div style={{ color: "#94a3b8", lineHeight: 1.6 }}>{info.action}</div>
+        <div style={{ background: "#0f1f38″, border: "1px solid #F5E642", borderRadius: 12, padding: "1.25rem" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: ".5rem" }}>✅ Recommended Action</div>
+          <div style={{ color: "#94a3b8″, lineHeight: 1.6 }}>{info.action}</div>
         </div>
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.25rem", marginTop: "1.5rem" }}>
-          <h3 style={{ color: "#F5E642", marginBottom: ".75rem" }}>📞 Texas Homeowner Resources</h3>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.25rem", marginTop: "1.5rem" }}>
+          <h3 style={{ color: "#F5E642″, marginBottom: ".75rem" }}>📞 Texas Homeowner Resources</h3>
           {[
             { label: "TDLR — HVAC, electrical, mold, HOA complaints", url: "tdlr.texas.gov" },
             { label: "TSBPE — plumbing license board", url: "tsbpe.texas.gov" },
             { label: "Texas Dept of Insurance", url: "tdi.texas.gov" },
             { label: "Texas Attorney General Consumer Protection", url: "texasattorneygeneral.gov" },
           ].map(r => (
-            <div key={r.label} style={{ display: "flex", gap: ".75rem", marginTop: ".6rem", color: "#94a3b8" }}>
-              <span style={{ color: "#F5E642" }}>→</span>
+            <div key={r.label} style={{ display: "flex", gap: ".75rem", marginTop: ".6rem", color: "#94a3b8″ }}>
+              <span style={{ color: "#F5E642″ }}>→</span>
               <span>{r.label}: <span style={{ color: "#60a5fa" }}>{r.url}</span></span>
             </div>
           ))}

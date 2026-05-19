@@ -97,24 +97,24 @@ export default function HomeAssistant() {
       <div className="min-h-screen bg-[#0A1628] flex flex-col">
 
         {/* Header */}
-        <div className="bg-slate-900 border-b border-slate-700 px-6 py-4 flex items-center gap-3">
+        <div className="bg-slate-900 border-b border-slate-700 px-6 py-4 flex items-center gap-3″>
           <Link href="/my-home" className="text-slate-500 hover:text-slate-300 transition-colors">
-            <Home className="w-5 h-5" />
+            <Home className="w-5 h-5″ />
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2″>
             <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
-              <Bot className="w-4 h-4 text-slate-900" />
+              <Bot className="w-4 h-4 text-slate-900″ />
             </div>
             <div>
               <div className="font-semibold text-white text-sm">TrustyPro Home Assistant</div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1″>
                 <span className="w-2 h-2 bg-teal-400 rounded-full" />
-                <span className="text-xs text-slate-400">Online</span>
+                <span className="text-xs text-slate-400″>Online</span>
               </div>
             </div>
           </div>
           <Badge className="ml-auto bg-teal-400/10 text-teal-400 border border-teal-400/30 text-xs">
-            <Sparkles className="w-3 h-3 mr-1" /> AI-Powered
+            <Sparkles className="w-3 h-3 mr-1″ /> AI-Powered
           </Badge>
         </div>
 
@@ -124,10 +124,10 @@ export default function HomeAssistant() {
           {messages.map((msg, i) => (
             <div key={i} className={`flex gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                msg.role === "assistant" ? "bg-teal-500" : "bg-violet-600"
+                msg.role === "assistant" ? "bg-teal-500″ : "bg-violet-600"
               }`}>
                 {msg.role === "assistant"
-                  ? <Bot className="w-4 h-4 text-slate-900" />
+                  ? <Bot className="w-4 h-4 text-slate-900″ />
                   : <User className="w-4 h-4 text-white" />}
               </div>
               <div className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed ${
@@ -142,15 +142,15 @@ export default function HomeAssistant() {
 
           {/* Pro Action card — after a substantive assistant reply */}
           {showProAction && !isLoading && (
-            <div className="ml-11">
-              <div className="bg-slate-800/60 border border-teal-400/20 rounded-xl p-3 flex items-center justify-between gap-3">
-                <div className="min-w-0">
-                  <div className="text-teal-400 text-xs font-semibold mb-0.5">Need a Pro?</div>
+            <div className="ml-11″>
+              <div className="bg-slate-800/60 border border-teal-400/20 rounded-xl p-3 flex items-center justify-between gap-3″>
+                <div className="min-w-0″>
+                  <div className="text-teal-400 text-xs font-semibold mb-0.5″>Need a Pro?</div>
                   <div className="text-slate-400 text-xs">Get a free quote from vetted TrustyPro partners in DFW.</div>
                 </div>
                 <Link href="/trustypro/book">
-                  <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-slate-900 text-xs font-semibold flex-shrink-0">
-                    Book <ArrowRight className="w-3 h-3 ml-1" />
+                  <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-slate-900 text-xs font-semibold flex-shrink-0″>
+                    Book <ArrowRight className="w-3 h-3 ml-1″ />
                   </Button>
                 </Link>
               </div>
@@ -159,9 +159,9 @@ export default function HomeAssistant() {
 
           {/* Typing indicator */}
           {isLoading && (
-            <div className="flex gap-3">
-              <div className="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center flex-shrink-0">
-                <Bot className="w-4 h-4 text-slate-900" />
+            <div className="flex gap-3″>
+              <div className="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center flex-shrink-0″>
+                <Bot className="w-4 h-4 text-slate-900″ />
               </div>
               <div className="bg-slate-800 border border-slate-700 p-3 rounded-2xl rounded-tl-sm">
                 <div className="flex gap-1 items-center">
@@ -175,9 +175,9 @@ export default function HomeAssistant() {
 
           {/* Suggested questions (only at start) */}
           {messages.length === 1 && (
-            <div className="space-y-2">
+            <div className="space-y-2″>
               <p className="text-xs text-slate-500 text-center">Try asking:</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2″>
                 {SUGGESTED_QUESTIONS.map(q => (
                   <button
                     key={q}
@@ -195,28 +195,28 @@ export default function HomeAssistant() {
         </div>
 
         {/* Input area */}
-        <div className="bg-slate-900 border-t border-slate-700 p-4">
+        <div className="bg-slate-900 border-t border-slate-700 p-4″>
           {/* Quick Topics */}
-          <div className="max-w-3xl mx-auto mb-3 flex flex-wrap gap-2">
+          <div className="max-w-3xl mx-auto mb-3 flex flex-wrap gap-2″>
             {QUICK_TOPICS.map(topic => (
               <button
                 key={topic.label}
                 onClick={() => sendMessage(topic.question)}
                 disabled={isLoading}
-                className="text-xs px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:border-teal-400/60 hover:text-teal-300 transition-colors disabled:opacity-40"
+                className="text-xs px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:border-teal-400/60 hover:text-teal-300 transition-colors disabled:opacity-40″
               >
                 {topic.label}
               </button>
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto flex gap-2">
+          <div className="max-w-3xl mx-auto flex gap-2″>
             <Input
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === "Enter" && sendMessage()}
               placeholder="Ask about your home..."
-              className="flex-1 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-teal-400"
+              className="flex-1 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-teal-400″
               disabled={isLoading}
             />
             <Button
@@ -224,10 +224,10 @@ export default function HomeAssistant() {
               disabled={!input.trim() || isLoading}
               className="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4″ />
             </Button>
           </div>
-          <p className="text-xs text-slate-600 text-center mt-2">
+          <p className="text-xs text-slate-600 text-center mt-2″>
             AI advice is general guidance. Always consult a licensed professional for safety-critical issues.
           </p>
         </div>

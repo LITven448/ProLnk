@@ -60,7 +60,7 @@ export default function ProLnkCommunicationGuide() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>💬</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: '12px 0 8px' }}>Communication Standards</h1>
-          <p style={{ color: '#94a3b8' }}>How pros and homeowners communicate on ProLnk — safely and on the record</p>
+          <p style={{ color: '#94a3b8′ }}>How pros and homeowners communicate on ProLnk — safely and on the record</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 40 }}>
@@ -80,7 +80,7 @@ export default function ProLnkCommunicationGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 32 }}>
           {scenarios.map(s => (
             <button key={s.id} onClick={() => setScenario(s.id)}
-              style={{ background: scenario === s.id ? '#F5E642' : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 10, padding: '14px 14px', color: scenario === s.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
+              style={{ background: scenario === s.id ? '#F5E642′ : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 10, padding: '14px 14px', color: scenario === s.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
               {s.label}
             </button>
           ))}
@@ -105,7 +105,7 @@ export default function ProLnkCommunicationGuide() {
               </div>
             )}
             {selected.warning && (
-              <div style={{ background: '#2e1a0d', borderRadius: 8, padding: '10px 14px', marginTop: 12, fontSize: 13, color: '#fbbf24' }}>
+              <div style={{ background: '#2e1a0d', borderRadius: 8, padding: '10px 14px', marginTop: 12, fontSize: 13, color: '#fbbf24′ }}>
                 {selected.warning}
               </div>
             )}

@@ -43,21 +43,21 @@ export default function DFWSolarPanelElectricalGuide2026() {
             {systems.map(s => (
               <button key={s.id} onClick={() => setSize(s.id === size ? '' : s.id)}
                 style={{ padding: '14px', borderRadius: '8px', border: '2px solid', cursor: 'pointer', fontSize: '14px', fontWeight: '600', transition: 'all 0.2s',
-                  borderColor: size === s.id ? '#F5E642' : '#1e3a5f', backgroundColor: size === s.id ? '#1a2e4a' : '#0d1f35', color: size === s.id ? '#F5E642' : '#cbd5e1' }}>
+                  borderColor: size === s.id ? '#F5E642′ : '#1e3a5f', backgroundColor: size === s.id ? '#1a2e4a' : '#0d1f35', color: size === s.id ? '#F5E642' : '#cbd5e1' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {selected && (
-            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 10px', fontSize: '18px' }}>{selected.label} — Electrical Scope</h3>
-              <p style={{ color: '#94a3b8', margin: '0 0 14px', lineHeight: '1.6' }}>{selected.scope}</p>
+              <p style={{ color: '#94a3b8', margin: '0 0 14px', lineHeight: '1.6′ }}>{selected.scope}</p>
               <ul style={{ margin: '0 0 14px', paddingLeft: '20px' }}>
-                {selected.items.map((item, i) => <li key={i} style={{ color: '#cbd5e1', marginBottom: '6px', lineHeight: '1.5' }}>{item}</li>)}
+                {selected.items.map((item, i) => <li key={i} style={{ color: '#cbd5e1', marginBottom: '6px', lineHeight: '1.5′ }}>{item}</li>)}
               </ul>
               <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                <span style={{ color: '#4ade80', fontWeight: '700' }}>💰 Electrical Cost: {selected.cost}</span>
-                <span style={{ color: '#60a5fa', fontWeight: '700' }}>⏱ {selected.days}</span>
+                <span style={{ color: '#4ade80', fontWeight: '700′ }}>💰 Electrical Cost: {selected.cost}</span>
+                <span style={{ color: '#60a5fa', fontWeight: '700′ }}>⏱ {selected.days}</span>
               </div>
             </div>
           )}

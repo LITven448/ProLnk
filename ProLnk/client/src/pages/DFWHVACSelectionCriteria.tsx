@@ -49,7 +49,7 @@ export default function DFWHVACSelectionCriteria() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {priorities.map(p => (
               <button key={p} onClick={() => setPriority(p)}
-                style={{ background: priority === p ? '#F5E642' : '#0A1628', color: priority === p ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 14px', cursor: 'pointer', fontSize: 13, fontWeight: priority === p ? 700 : 400 }}>
+                style={{ background: priority === p ? '#F5E642′ : '#0A1628', color: priority === p ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 14px', cursor: ’pointer', fontSize: 13, fontWeight: priority === p ? 700 : 400 }}>
                 {p}
               </button>
             ))}
@@ -63,7 +63,7 @@ export default function DFWHVACSelectionCriteria() {
             const isSelected = selected.includes(c.id);
             return (
               <div key={c.id} onClick={() => toggle(c.id)}
-                style={{ background: isSelected ? '#1E3A5F' : '#132035', border: isRecommended ? '2px solid #F5E642' : '2px solid transparent', borderRadius: 12, padding: 16, cursor: 'pointer', transition: 'all 0.15s' }}>
+                style={{ background: isSelected ? '#1E3A5F' : '#132035', border: isRecommended ? '2px solid #F5E642′ : '2px solid transparent', borderRadius: 12, padding: 16, cursor: ’pointer', transition: 'all 0.15s' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                   <span style={{ fontSize: 20 }}>{c.icon}</span>
                   <span style={{ fontWeight: 700, fontSize: 16 }}>{i + 1}. {c.label}</span>

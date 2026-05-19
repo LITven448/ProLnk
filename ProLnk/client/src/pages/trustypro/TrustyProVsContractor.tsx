@@ -51,7 +51,7 @@ const situations = [
 export default function TrustyProVsContractor() {
   const [selected, setSelected] = useState(0);
   const s = situations[selected];
-  const verdictColor = s.verdict === 'use-trustypro' ? '#4F46E5' : s.verdict === 'use-contractor' ? '#22c55e' : '#FACC15';
+  const verdictColor = s.verdict === 'use-trustypro' ? '#4F46E5′ : s.verdict === ’use-contractor' ? '#22c55e' : '#FACC15';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#050d1a', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '48px 24px' }}>
@@ -66,7 +66,7 @@ export default function TrustyProVsContractor() {
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '32px' }}>
           {situations.map((sit, i) => (
             <button key={i} onClick={() => setSelected(i)}
-              style={{ padding: '10px 14px', borderRadius: '10px', border: `2px solid ${selected === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selected === i ? '#4F46E5' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+              style={{ padding: '10px 14px', borderRadius: '10px', border: `2px solid ${selected === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selected === i ? '#4F46E5′ : '#0d1f35', color: '#fff', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600 }}>
               {sit.icon} {sit.label}
             </button>
           ))}
@@ -80,7 +80,7 @@ export default function TrustyProVsContractor() {
           </div>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '24px' }}>{s.reasoning}</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-            <div style={{ backgroundColor: '#4F46E522', borderRadius: '12px', padding: '20px', border: '1px solid #4F46E5' }}>
+            <div style={{ backgroundColor: '#4F46E522', borderRadius: '12px', padding: '20px', border: '1px solid #4F46E5′ }}>
               <div style={{ color: '#818cf8', fontWeight: 700, fontSize: '0.85rem', marginBottom: '8px' }}>🔵 TRUSTYPRO</div>
               <p style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: 1.6, margin: 0 }}>{s.trustypro}</p>
             </div>
@@ -90,7 +90,7 @@ export default function TrustyProVsContractor() {
             </div>
           </div>
         </div>
-        <div style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', border: '1px solid #1e2d45' }}>
+        <div style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', border: '1px solid #1e2d45′ }}>
           <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
             TrustyPro is an AI-powered scan tool, not a licensed inspection service. Use it to inform decisions, not replace licensed professionals for active repairs.
           </p>

@@ -101,15 +101,15 @@ export default function DFWHomeOwnerFinalReferenceCard() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px', justifyContent: 'center' }}>
           {months.map(m => (
             <button key={m} onClick={() => setActiveMonth(m)}
-              style={{ background: activeMonth === m ? '#F5E642' : '#1e293b', color: activeMonth === m ? '#0A1628' : '#cbd5e1',
+              style={{ background: activeMonth === m ? '#F5E642′ : '#1e293b', color: activeMonth === m ? '#0A1628' : '#cbd5e1',
                 border: '1px solid #334155', borderRadius: '6px', padding: '6px 12px', fontSize: '12px', cursor: 'pointer', fontWeight: activeMonth === m ? 700 : 400 }}>
               {m}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: '12px', padding: '20px', marginBottom: '20px', border: '1px solid #334155' }}>
-          <h2 style={{ color: '#F5E642', fontSize: '18px', fontWeight: 700, margin: '0 0 16px 0' }}>{activeMonth} — Priority Actions for {homeType}</h2>
+        <div style={{ background: '#1e293b', borderRadius: '12px', padding: '20px', marginBottom: '20px', border: '1px solid #334155′ }}>
+          <h2 style={{ color: '#F5E642', fontSize: '18px', fontWeight: 700, margin: '0 0 16px 0′ }}>{activeMonth} — Priority Actions for {homeType}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {actions.map((a, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '12px', background: '#0f172a', borderRadius: '8px',

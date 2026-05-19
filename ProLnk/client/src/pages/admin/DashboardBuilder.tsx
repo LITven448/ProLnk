@@ -28,16 +28,16 @@ interface WidgetDef {
 }
 
 const WIDGET_LIBRARY: WidgetDef[] = [
-  { id: "metric", name: "MetricCard", icon: TrendingUp, color: "#3b82f6", preview: "KPI" },
-  { id: "bar", name: "BarChart", icon: BarChart2, color: "#f97316", preview: "Bars" },
-  { id: "donut", name: "DonutChart", icon: PieChart, color: "#ec4899", preview: "Donut" },
-  { id: "table", name: "DataTable", icon: Table2, color: "#8b5cf6", preview: "Table" },
-  { id: "feed", name: "ActivityFeed", icon: Activity, color: "#10b981", preview: "Feed" },
-  { id: "map", name: "MapView", icon: Map, color: "#0d9488", preview: "Map" },
+  { id: "metric", name: "MetricCard", icon: TrendingUp, color: "#3b82f6″, preview: "KPI" },
+  { id: "bar", name: "BarChart", icon: BarChart2, color: "#f97316″, preview: "Bars" },
+  { id: "donut", name: "DonutChart", icon: PieChart, color: "#ec4899″, preview: "Donut" },
+  { id: "table", name: "DataTable", icon: Table2, color: "#8b5cf6″, preview: "Table" },
+  { id: "feed", name: "ActivityFeed", icon: Activity, color: "#10b981″, preview: "Feed" },
+  { id: "map", name: "MapView", icon: Map, color: "#0d9488″, preview: "Map" },
   { id: "leaderboard", name: "Leaderboard", icon: Trophy, color: T.amber, preview: "Rank" },
-  { id: "heatmap", name: "HeatMap", icon: Flame, color: "#ef4444", preview: "Heat" },
-  { id: "funnel", name: "Funnel", icon: Filter, color: "#6366f1", preview: "Funnel" },
-  { id: "sparkline", name: "Sparkline", icon: TrendingUp, color: "#14b8a6", preview: "Spark" },
+  { id: "heatmap", name: "HeatMap", icon: Flame, color: "#ef4444″, preview: "Heat" },
+  { id: "funnel", name: "Funnel", icon: Filter, color: "#6366f1″, preview: "Funnel" },
+  { id: "sparkline", name: "Sparkline", icon: TrendingUp, color: "#14b8a6″, preview: "Spark" },
   { id: "status", name: "StatusGrid", icon: Grid, color: "#64748b", preview: "Grid" },
   { id: "progress", name: "ProgressBars", icon: AlignLeft, color: "#f59e0b", preview: "Bars" },
 ];
@@ -51,10 +51,10 @@ interface PlacedWidget {
 }
 
 const INITIAL_WIDGETS: PlacedWidget[] = [
-  { instanceId: "w1", widgetId: "metric", title: "Total Revenue", col: 0, row: 0 },
-  { instanceId: "w2", widgetId: "bar", title: "Monthly Signups", col: 1, row: 0 },
-  { instanceId: "w3", widgetId: "donut", title: "Revenue Split", col: 2, row: 0 },
-  { instanceId: "w4", widgetId: "feed", title: "Recent Activity", col: 0, row: 1 },
+  { instanceId: "w1″, widgetId: "metric", title: "Total Revenue", col: 0, row: 0 },
+  { instanceId: "w2″, widgetId: "bar", title: "Monthly Signups", col: 1, row: 0 },
+  { instanceId: "w3″, widgetId: "donut", title: "Revenue Split", col: 2, row: 0 },
+  { instanceId: "w4″, widgetId: "feed", title: "Recent Activity", col: 0, row: 1 },
 ];
 
 const TEMPLATES = [
@@ -172,7 +172,7 @@ function CanvasWidget({
           width: 20,
           height: 20,
           borderRadius: "50%",
-          background: "#ef444422",
+          background: "#ef444422″,
           border: "none",
           cursor: "pointer",
           display: "flex",
@@ -180,7 +180,7 @@ function CanvasWidget({
           justifyContent: "center",
         }}
       >
-        <X style={{ width: 10, height: 10, color: "#ef4444" }} />
+        <X style={{ width: 10, height: 10, color: "#ef4444″ }} />
       </button>
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <div
@@ -216,7 +216,7 @@ function CanvasWidget({
 
 export default function DashboardBuilder() {
   const [widgets, setWidgets] = useState<PlacedWidget[]>(INITIAL_WIDGETS);
-  const [selectedInstance, setSelectedInstance] = useState<string | null>("w1");
+  const [selectedInstance, setSelectedInstance] = useState<string | null>("w1″);
   const [dashName, setDashName] = useState("My Dashboard");
   const [saved, setSaved] = useState(false);
 
@@ -275,7 +275,7 @@ export default function DashboardBuilder() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <LayoutDashboard style={{ width: 22, height: 22, color: "#0d9488" }} />
+            <LayoutDashboard style={{ width: 22, height: 22, color: "#0d9488″ }} />
             <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 22, color: T.text, margin: 0 }}>
               Dashboard Builder
             </h1>
@@ -351,7 +351,7 @@ export default function DashboardBuilder() {
                   gap: 12,
                   transition: "border-color 0.15s",
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#3b82f6"; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#3b82f6″; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = T.border; }}
               >
                 <div
@@ -582,7 +582,7 @@ export default function DashboardBuilder() {
                 <div>
                   <div style={{ ...LABEL, marginBottom: 6 }}>Accent Color</div>
                   <div style={{ display: "flex", gap: 8 }}>
-                    {["#3b82f6", "#10b981", T.amber, "#ec4899", "#8b5cf6", "#ef4444"].map((c) => (
+                    {["#3b82f6″, "#10b981", T.amber, "#ec4899", "#8b5cf6", "#ef4444"].map((c) => (
                       <div
                         key={c}
                         style={{
@@ -591,7 +591,7 @@ export default function DashboardBuilder() {
                           borderRadius: "50%",
                           background: c,
                           cursor: "pointer",
-                          border: selectedDef.color === c ? "2px solid #000" : "2px solid transparent",
+                          border: selectedDef.color === c ? "2px solid #000″ : "2px solid transparent",
                         }}
                       />
                     ))}
@@ -658,7 +658,7 @@ export default function DashboardBuilder() {
               <div
                 style={{
                   textAlign: "center",
-                  padding: "40px 0",
+                  padding: "40px 0″,
                   color: T.muted,
                   fontFamily: FONT,
                   fontSize: 12,

@@ -23,18 +23,18 @@ export default function DFWIndoorAirQuality2026() {
 
         <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
           {concerns.map(c => (
-            <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642' : '#0F2040', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
+            <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642′ : '#0F2040', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
               {c.label}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 14, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642' }}>{item.label} Solutions</h2>
+          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642′ }}>{item.label} Solutions</h2>
           {item.solutions.map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, lineHeight: 1 }}>→</span>
-              <span style={{ fontSize: 15, color: '#e2e8f0' }}>{s}</span>
+              <span style={{ fontSize: 15, color: '#e2e8f0′ }}>{s}</span>
             </div>
           ))}
         </div>
@@ -44,7 +44,7 @@ export default function DFWIndoorAirQuality2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
             {[['Jan–Feb', 'Cedar 🔴'],['Mar–Apr', 'Oak 🔴'],['May–Jun', 'Grass 🟡'],['Jul–Aug', 'Mold 🟡'],['Sep–Oct', 'Ragweed 🟠'],['Nov–Dec', 'Low 🟢']].map(([m, t]) => (
               <div key={m} style={{ background: '#0a1628', borderRadius: 8, padding: '0.5rem 0.8rem', fontSize: 13 }}>
-                <div style={{ color: '#94a3b8' }}>{m}</div>
+                <div style={{ color: '#94a3b8′ }}>{m}</div>
                 <div style={{ fontWeight: 700 }}>{t}</div>
               </div>
             ))}

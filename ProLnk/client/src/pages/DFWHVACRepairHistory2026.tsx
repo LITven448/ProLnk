@@ -55,12 +55,12 @@ export default function DFWHVACRepairHistory2026() {
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🔧 My Documentation Situation</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {SITUATIONS.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#cbd5e1', fontWeight: selected === s.id ? 700 : 400, cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#cbd5e1', fontWeight: selected === s.id ? 700 : 400, cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
             <div style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>{current.guide}</div>
           </div>
         </div>

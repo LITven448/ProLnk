@@ -13,17 +13,17 @@ export default function DFWRoofingJulyGuide2026() {
   const match = concerns.find(c => c.id === selected);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ marginBottom: "0.5rem", fontSize: "0.85rem", color: "#F5E642", letterSpacing: 2, textTransform: "uppercase" }}>DFW Roofing Guide 2026</div>
+        <div style={{ marginBottom: "0.5rem", fontSize: "0.85rem", color: "#F5E642″, letterSpacing: 2, textTransform: "uppercase" }}>DFW Roofing Guide 2026</div>
         <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "0.5rem" }}>🏗️ DFW July Roofing Guide 2026</h1>
-        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.6 }}>
-          July is DFW's hottest month — and your roof's most demanding season. Hail season winds down but isn't over, surface temps hit 160–180°F, and UV degradation accelerates. Here's what to watch and how to inspect safely.
+        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.6 }}>
+          July is DFW's hottest month — and your roof’s most demanding season. Hail season winds down but isn’t over, surface temps hit 160–180°F, and UV degradation accelerates. Here’s what to watch and how to inspect safely.
         </p>
 
-        <div style={{ background: "#111d35", borderRadius: 10, padding: "1.25rem", marginBottom: "2rem", borderLeft: "4px solid #ef4444" }}>
-          <div style={{ fontWeight: 700, color: "#ef4444", marginBottom: "0.5rem" }}>⚠️ Safety Rule: No Roof Walking 10am–5pm</div>
-          <p style={{ color: "#94a3b8", lineHeight: 1.65, margin: 0 }}>DFW roof surface temps reach 160–180°F in July afternoon. Severe burn risk + heat exhaustion. Always inspect from the ground with binoculars, or schedule a roofer for early morning (before 9am) only.</p>
+        <div style={{ background: "#111d35″, borderRadius: 10, padding: "1.25rem", marginBottom: "2rem", borderLeft: "4px solid #ef4444" }}>
+          <div style={{ fontWeight: 700, color: "#ef4444″, marginBottom: "0.5rem" }}>⚠️ Safety Rule: No Roof Walking 10am–5pm</div>
+          <p style={{ color: "#94a3b8″, lineHeight: 1.65, margin: 0 }}>DFW roof surface temps reach 160–180°F in July afternoon. Severe burn risk + heat exhaustion. Always inspect from the ground with binoculars, or schedule a roofer for early morning (before 9am) only.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.75rem", marginBottom: "2rem" }}>
@@ -32,28 +32,28 @@ export default function DFWRoofingJulyGuide2026() {
             { icon: "🏠", label: "Roof Surface", val: "Up to 180°F" },
             { icon: "⛈️", label: "Hail Risk", val: "Winding Down" },
           ].map(card => (
-            <div key={card.label} style={{ background: "#111d35", borderRadius: 10, padding: "0.875rem", textAlign: "center" }}>
+            <div key={card.label} style={{ background: "#111d35″, borderRadius: 10, padding: "0.875rem", textAlign: "center" }}>
               <div style={{ fontSize: "1.5rem", marginBottom: "0.25rem" }}>{card.icon}</div>
-              <div style={{ color: "#94a3b8", fontSize: "0.75rem", marginBottom: "0.25rem" }}>{card.label}</div>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: "0.9rem" }}>{card.val}</div>
+              <div style={{ color: "#94a3b8″, fontSize: "0.75rem", marginBottom: "0.25rem" }}>{card.label}</div>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: "0.9rem" }}>{card.val}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642", marginBottom: "1rem" }}>🔍 What's Your July Roofing Concern?</h2>
+        <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642″, marginBottom: "1rem" }}>🔍 What's Your July Roofing Concern?</h2>
         <div style={{ display: "grid", gap: "0.5rem", marginBottom: "1.25rem" }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-              style={{ background: selected === c.id ? "#1e3a5f" : "#111d35", border: `2px solid ${selected === c.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "0.85rem 1rem", color: "#fff", textAlign: "left", cursor: "pointer", fontSize: "0.95rem", transition: "all 0.15s" }}>
+              style={{ background: selected === c.id ? "#1e3a5f" : "#111d35″, border: `2px solid ${selected === c.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "0.85rem 1rem", color: "#fff", textAlign: "left", cursor: "pointer", fontSize: "0.95rem", transition: "all 0.15s" }}>
               {c.label}
             </button>
           ))}
         </div>
 
         {match && (
-          <div style={{ background: "#1e3a5f", border: "2px solid #F5E642", borderRadius: 10, padding: "1.25rem" }}>
-            <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: "0.5rem" }}>🔧 Guide</div>
-            <p style={{ color: "#e2e8f0", lineHeight: 1.65, margin: 0 }}>{match.result}</p>
+          <div style={{ background: "#1e3a5f", border: "2px solid #F5E642″, borderRadius: 10, padding: "1.25rem" }}>
+            <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: "0.5rem" }}>🔧 Guide</div>
+            <p style={{ color: "#e2e8f0″, lineHeight: 1.65, margin: 0 }}>{match.result}</p>
           </div>
         )}
       </div>

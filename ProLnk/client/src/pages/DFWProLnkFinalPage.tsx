@@ -54,7 +54,7 @@ export default function DFWProLnkFinalPage() {
         <div style={{ background: '#132040', borderRadius: 16, padding: 32, marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📝 The Closing Thought</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.8, fontSize: 16 }}>
-            You've read through everything ProLnk has built for DFW homeowners. Every guide, every framework, every piece of knowledge in this library exists because we believe an informed homeowner is a protected homeowner. The problem we're solving — opaque pricing, unvetted contractors, no accountability — is real. It costs DFW families billions of dollars every year. ProLnk exists to end that. Not eventually. Now.
+            You've read through everything ProLnk has built for DFW homeowners. Every guide, every framework, every piece of knowledge in this library exists because we believe an informed homeowner is a protected homeowner. The problem we’re solving — opaque pricing, unvetted contractors, no accountability — is real. It costs DFW families billions of dollars every year. ProLnk exists to end that. Not eventually. Now.
           </p>
         </div>
 
@@ -76,13 +76,13 @@ export default function DFWProLnkFinalPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
             {situations.map((s, i) => (
               <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {s.emoji} {s.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: 20, fontSize: 15 }}>{situations[selected].nextStep}</p>
               <button style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>
                 {situations[selected].cta} →

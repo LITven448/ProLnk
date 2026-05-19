@@ -58,14 +58,14 @@ export default function DFWWellnessHomeGuide2026() {
             {plans.map(p => (
               <button key={p.priority} onClick={() => setPriority(priority === p.priority ? '' : p.priority)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                  background: priority === p.priority ? '#F5E642' : '#1C2D4A', color: priority === p.priority ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                  background: priority === p.priority ? '#F5E642′ : '#1C2D4A', color: priority === p.priority ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                 {p.label}
               </button>
             ))}
           </div>
         </div>
         {plan && (
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #F5E642' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 14 }}>🏠 {plan.label} Improvement Plan</div>
             {plan.steps.map(s => (
               <div key={s} style={{ color: '#CBD1DC', fontSize: 14, marginBottom: 10 }}>{s}</div>

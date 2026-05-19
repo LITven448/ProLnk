@@ -64,12 +64,12 @@ export default function DFWTradeVehicleGuide() {
           <h2 style={{ margin: '0 0 16px', fontSize: 18 }}>🎯 Get Your Vehicle Recommendation</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(tradeVehicles).map(([k, val]) => (
-              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642' : '#1e3a5f', background: trade === k ? '#F5E642' : 'transparent', color: trade === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{val.label}</button>
+              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642′ : '#1e3a5f', background: trade === k ? '#F5E642' : ’transparent', color: trade === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{val.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {Object.entries(areas).map(([k, val]) => (
-              <button key={k} onClick={() => setArea(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: area === k ? '#F5E642' : '#1e3a5f', background: area === k ? '#F5E642' : 'transparent', color: area === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{val.label}</button>
+              <button key={k} onClick={() => setArea(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: area === k ? '#F5E642′ : '#1e3a5f', background: area === k ? '#F5E642' : ’transparent', color: area === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{val.label}</button>
             ))}
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function DFWTradeVehicleGuide() {
             {monthlyFuel !== null && (
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24 }}>
                 <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>ESTIMATED FUEL COST</div>
-                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>${monthlyFuel.toLocaleString()}<span style={{ fontSize: 16, color: '#64748b' }}>/mo</span></div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>${monthlyFuel.toLocaleString()}<span style={{ fontSize: 16, color: '#64748b' }}>/mo</span></div>
                 <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 13 }}>Based on ~{Math.round(v.avgMiles * (a?.fuelMult || 1))} miles/day avg in DFW at $3.80/gal</p>
               </div>
             )}
@@ -108,7 +108,7 @@ export default function DFWTradeVehicleGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, padding: 24, background: 'linear-gradient(135deg, #1a2f5a, #0F1F3D)', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ marginTop: 32, padding: 24, background: 'linear-gradient(135deg, #1a2f5a, #0F1F3D)', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 8px' }}>🏆 ProLnk Vehicle Standard</h3>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14, lineHeight: 1.6 }}>ProLnk DFW homeowners rate professionalism heavily. A clean, clearly labeled vehicle is a signal of legitimacy and quality. Top-rated pros in our network almost all have professional vehicle branding — it's not optional if you want to win.</p>
         </div>

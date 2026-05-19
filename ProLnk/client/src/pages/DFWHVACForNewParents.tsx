@@ -53,14 +53,14 @@ export default function DFWHVACForNewParents() {
           <span style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>DFW HVAC Guide</span>
           <h1 style={{ fontSize: 36, fontWeight: 800, margin: '12px 0 8px', lineHeight: 1.2 }}>HVAC for New DFW Parents 👶</h1>
           <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.7 }}>
-            When it's 105°F outside and your nursery is 78°F, that's a medical concern — not just discomfort. DFW summers demand that your HVAC system protects your newborn around the clock.
+            When it's 105°F outside and your nursery is 78°F, that’s a medical concern — not just discomfort. DFW summers demand that your HVAC system protects your newborn around the clock.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 12px' }}>🌡️ The DFW Nursery Temperature Rule</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            Safe nursery range: <strong style={{ color: '#F5E642' }}>68–72°F</strong>. In DFW, your AC runs 14–18 hours/day in summer just to maintain this. An aging unit or clogged filter puts your baby at risk — not just discomfort, but SIDS risk increases significantly with overheating.
+            Safe nursery range: <strong style={{ color: '#F5E642′ }}>68–72°F</strong>. In DFW, your AC runs 14–18 hours/day in summer just to maintain this. An aging unit or clogged filter puts your baby at risk — not just discomfort, but SIDS risk increases significantly with overheating.
           </p>
         </div>
 

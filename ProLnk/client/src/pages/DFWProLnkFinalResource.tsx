@@ -66,7 +66,7 @@ export default function DFWProLnkFinalResource() {
         <p style={{ color: '#94a3b8', marginBottom: 12, fontSize: 16 }}>The complete one-page summary of what ProLnk offers DFW homeowners, pros, and partners.</p>
 
         <div style={{ background: '#111d35', borderRadius: 12, padding: 16, marginBottom: 32, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-          {[{ label: 'Waitlist Status', value: 'OPEN', color: '#22c55e' }, { label: 'Charter Spots', value: '25 / 500', color: '#F5E642' }, { label: 'DFW Launch', value: 'LIVE', color: '#22c55e' }, { label: 'Homes in Vault', value: '50M+', color: '#F5E642' }].map(s => (
+          {[{ label: 'Waitlist Status', value: 'OPEN', color: '#22c55e' }, { label: 'Charter Spots', value: '25 / 500', color: '#F5E642′ }, { label: ’DFW Launch', value: 'LIVE', color: '#22c55e' }, { label: 'Homes in Vault', value: '50M+', color: '#F5E642′ }].map(s => (
             <div key={s.label} style={{ textAlign: 'center', flex: 1, minWidth: 100 }}>
               <div style={{ color: s.color, fontSize: 22, fontWeight: 800 }}>{s.value}</div>
               <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>{s.label}</div>
@@ -83,7 +83,7 @@ export default function DFWProLnkFinalResource() {
             { icon: '🌐', title: 'Network Income System', body: 'Patented-pending 5-level network income creates lock-in no competitor can replicate. Charter pros earn 25% more than post-launch members. Waitlist closes at 500 applications + 5,000 homes.' },
             { icon: '📊', title: 'Seed Round Ready', body: 'ProLnk is raising a seed round to fund growth beyond the DFW beta. Investor materials available. Unit economics validated. Team in place. Launch complete. Talk to us.' },
           ].map(c => (
-            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
+            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>{c.body}</div>
@@ -96,7 +96,7 @@ export default function DFWProLnkFinalResource() {
           <p style={{ color: '#94a3b8', marginBottom: 20, fontSize: 14 }}>Who are you? Get your personalized ProLnk summary:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {roles.map(r => (
-              <button key={r.id} onClick={() => { setSelected(r.id); setJoined(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === r.id ? '#F5E642' : '#1e3a5f'}`, background: selected === r.id ? '#F5E642' : 'transparent', color: selected === r.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{r.label}</button>
+              <button key={r.id} onClick={() => { setSelected(r.id); setJoined(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === r.id ? '#F5E642' : '#1e3a5f'}`, background: selected === r.id ? '#F5E642′ : ’transparent', color: selected === r.id ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>{r.label}</button>
             ))}
           </div>
           {selected && (
@@ -124,7 +124,7 @@ export default function DFWProLnkFinalResource() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 32, color: '#475569', fontSize: 12 }}>
-          ProLnk · Dallas-Fort Worth · 2026 · <span style={{ color: '#F5E642' }}>prolnk.io</span>
+          ProLnk · Dallas-Fort Worth · 2026 · <span style={{ color: '#F5E642′ }}>prolnk.io</span>
         </div>
       </div>
     </div>

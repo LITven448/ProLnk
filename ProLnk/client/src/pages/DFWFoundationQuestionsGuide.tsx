@@ -10,11 +10,11 @@ const questions = [
   { q: 'Do you have large trees within 20 feet of your foundation?', a: 'Oak, elm, and pecan trees — common in DFW — have aggressive root systems that extract massive amounts of moisture from clay soil, causing differential settlement. Trees within 20 feet should be monitored; within 10 feet may require root barriers or removal.' },
   { q: 'Do you know what post-tension cables are and where they run?', a: 'Post-tension slabs have high-tension steel cables embedded in a grid pattern. Cutting one (during plumbing work, a core sample, or landscaping) releases enormous force and is irreparable. Before any concrete drilling, a post-tension cable map is mandatory.' },
   { q: 'Is your plumbing slab-penetrating, and has it been tested?', a: 'In DFW slab homes, water and sewer lines pass through or under the slab. Slab leaks are common and cause both foundation damage and mold. A hydrostatic pressure test ($300–$500) checks your plumbing system for leaks without opening the slab.' },
-  { q: 'Do you have a French drain or other drainage system?', a: 'French drains, surface drains, and channel drains are common in DFW to manage our heavy rainfall (38" average annual). Know where yours drain to, when they were last cleaned, and whether they\’re functioning — clogged drains defeat their entire purpose.' },
+  { q: 'Do you have a French drain or other drainage system?', a: 'French drains, surface drains, and channel drains are common in DFW to manage our heavy rainfall (38″ average annual). Know where yours drain to, when they were last cleaned, and whether they\’re functioning — clogged drains defeat their entire purpose.' },
   { q: 'What is the Plasticity Index (PI) of your soil?', a: 'DFW soils typically have a PI of 30–60, indicating highly expansive clay. This is published data available from county soil surveys (NRCS Web Soil Survey). Higher PI = greater seasonal movement = greater foundation maintenance requirement.' },
   { q: 'Do you have a crawl space, and is it ventilated and dry?', a: 'Pier and beam homes have crawl spaces that must stay dry and ventilated to prevent wood rot and mold. Check for standing water, musty odors, deteriorating vapor barriers, and adequate cross-ventilation through foundation vents. Seal all plumbing penetrations.' },
-  { q: 'Are your gutters functioning and properly sized?', a: 'Oversized rainfall from DFW storms (3"+ per hour events) overwhelms undersized gutters, dumping water directly against the foundation. 6-inch gutters outperform standard 5-inch gutters significantly. Clean gutters 2–4 times per year, especially after spring oak pollen season.' },
-  { q: 'Do you know the difference between cosmetic and structural cracks?', a: 'Hairline cracks under 1/8" wide and horizontal are usually cosmetic. Stair-step cracks in brick, diagonal cracks wider than 1/4", or any crack with vertical or horizontal displacement (one side higher than the other) are structural and require professional evaluation.' },
+  { q: 'Are your gutters functioning and properly sized?', a: 'Oversized rainfall from DFW storms (3″+ per hour events) overwhelms undersized gutters, dumping water directly against the foundation. 6-inch gutters outperform standard 5-inch gutters significantly. Clean gutters 2–4 times per year, especially after spring oak pollen season.' },
+  { q: 'Do you know the difference between cosmetic and structural cracks?', a: 'Hairline cracks under 1/8″ wide and horizontal are usually cosmetic. Stair-step cracks in brick, diagonal cracks wider than 1/4″, or any crack with vertical or horizontal displacement (one side higher than the other) are structural and require professional evaluation.' },
   { q: 'Do you have a foundation warranty from a previous repair?', a: 'Most DFW foundation repair companies offer lifetime warranties on pier installations, but these warranties are company-specific and often non-transferable. Understand what your warranty covers: re-leveling, additional piers, or just the piers already installed.' },
 ];
 
@@ -41,15 +41,15 @@ export default function DFWFoundationQuestionsGuide() {
           </div>
         </div>
         {risk.msg && score > 0 && (
-          <div style={{ background: '#2a1515', border: `1px solid ${risk.color}`, borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 14, color: '#fca5a5' }}>
+          <div style={{ background: '#2a1515', border: `1px solid ${risk.color}`, borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 14, color: '#fca5a5′ }}>
             ⚠️ {risk.msg}
           </div>
         )}
-        <div style={{ background: '#12243a', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 13, color: '#7da5cc', borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#12243a', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 13, color: '#7da5cc', borderLeft: '3px solid #F5E642′ }}>
           💡 DFW Fact: The Dallas-Fort Worth area sits on some of the most expansive clay soils in the United States. Annual soil moisture swings can move foundations up to 4 inches vertically. This makes foundation knowledge non-optional for DFW homeowners.
         </div>
         {questions.map((item, i) => (
-          <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642' : '1.5px solid #1e3050' }}>
+          <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642′ : '1.5px solid #1e3050' }}>
             <div style={{ display: 'flex', alignItems: 'center', padding: '14px 16px', cursor: 'pointer', gap: 12 }} onClick={() => toggle(i)}>
               <span onClick={e => { e.stopPropagation(); check(i); }} style={{ fontSize: 20, cursor: 'pointer' }}>{checked[i] ? '✅' : '⬜'}</span>
               <span style={{ flex: 1, fontWeight: 600, fontSize: 15 }}>{i + 1}. {item.q}</span>

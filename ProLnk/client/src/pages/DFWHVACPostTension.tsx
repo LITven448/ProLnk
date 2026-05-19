@@ -133,16 +133,16 @@ export default function DFWHVACPostTension() {
         <p style={{ color: '#94A3B8', marginBottom: 24, lineHeight: 1.6 }}>
           Over 90% of DFW homes built after 1985 have post-tension slabs. Cutting or drilling a post-tension cable causes catastrophic structural damage costing $8,000-$25,000 to repair. Every HVAC project must account for your slab type before any slab penetration.
         </p>
-        <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Warning: The Non-Negotiable Rule</div>
-          <div style={{ color: '#CBD5E1' }}>NEVER drill or cut a post-tension slab without a GPR (Ground Penetrating Radar) scan. A $150-300 scan prevents a five-figure disaster.</div>
+          <div style={{ color: '#CBD5E1′ }}>NEVER drill or cut a post-tension slab without a GPR (Ground Penetrating Radar) scan. A $150-300 scan prevents a five-figure disaster.</div>
         </div>
         <div style={{ display: 'grid', gap: 16, marginBottom: 24 }}>
           <div>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Your Slab Type</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {slabTypes.map(s => (
-                <button key={s} onClick={() => setSlab(s)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: slab === s ? '#F5E642' : '#1E3A5F', background: slab === s ? '#F5E642' : '#0D2137', color: slab === s ? '#0A1628' : '#E8F4FD', fontWeight: slab === s ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{s}</button>
+                <button key={s} onClick={() => setSlab(s)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: slab === s ? '#F5E642′ : '#1E3A5F', background: slab === s ? '#F5E642' : '#0D2137', color: slab === s ? '#0A1628' : '#E8F4FD', fontWeight: slab === s ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function DFWHVACPostTension() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Project Type</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {projectTypes.map(p => (
-                <button key={p} onClick={() => setProject(p)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: project === p ? '#F5E642' : '#1E3A5F', background: project === p ? '#F5E642' : '#0D2137', color: project === p ? '#0A1628' : '#E8F4FD', fontWeight: project === p ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{p}</button>
+                <button key={p} onClick={() => setProject(p)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: project === p ? '#F5E642′ : '#1E3A5F', background: project === p ? '#F5E642' : '#0D2137', color: project === p ? '#0A1628' : '#E8F4FD', fontWeight: project === p ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{p}</button>
               ))}
             </div>
           </div>
@@ -159,11 +159,11 @@ export default function DFWHVACPostTension() {
           <div style={{ display: 'grid', gap: 16 }}>
             <div style={{ background: '#0D2A1A', border: '1px solid #22543D', borderRadius: 12, padding: 20 }}>
               <div style={{ fontWeight: 700, color: '#4ADE80', marginBottom: 10 }}>Safe Approaches</div>
-              {result.safe.map((s, i) => <div key={i} style={{ color: '#BBF7D0', marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #4ADE80' }}>{s}</div>)}
+              {result.safe.map((s, i) => <div key={i} style={{ color: '#BBF7D0', marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #4ADE80′ }}>{s}</div>)}
             </div>
             <div style={{ background: '#2D1010', border: '1px solid #7F1D1D', borderRadius: 12, padding: 20 }}>
               <div style={{ fontWeight: 700, color: '#F87171', marginBottom: 10 }}>Dangerous — Never Do</div>
-              {result.dangerous.map((d, i) => <div key={i} style={{ color: '#FECACA', marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F87171' }}>{d}</div>)}
+              {result.dangerous.map((d, i) => <div key={i} style={{ color: '#FECACA', marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F87171′ }}>{d}</div>)}
             </div>
             <div style={{ background: '#1E3A5F', border: '1px solid #2563EB', borderRadius: 12, padding: 20 }}>
               <div style={{ fontWeight: 700, color: '#93C5FD', marginBottom: 8 }}>DFW Notes</div>

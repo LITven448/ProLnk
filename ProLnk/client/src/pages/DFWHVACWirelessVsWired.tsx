@@ -43,7 +43,7 @@ export default function DFWHVACWirelessVsWired() {
             </thead>
             <tbody>
               {comparison.map((row, i) => (
-                <tr key={row.aspect} style={{ background: i % 2 === 0 ? '#0A1628' : '#0f2035' }}>
+                <tr key={row.aspect} style={{ background: i % 2 === 0 ? '#0A1628′ : '#0f2035' }}>
                   <td style={{ padding: '12px 16px', color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>{row.aspect}</td>
                   <td style={{ padding: '12px 16px', color: '#cbd5e1', fontSize: 13 }}>{row.wireless}</td>
                   <td style={{ padding: '12px 16px', color: '#cbd5e1', fontSize: 13 }}>{row.wired}</td>
@@ -64,7 +64,7 @@ export default function DFWHVACWirelessVsWired() {
           </div>
           <button onClick={evaluate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '14px 32px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 16 }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 20, marginBottom: 8 }}>✅ Go {result.rec}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 12 }}>{result.reason}</div>
               <div style={{ color: '#60a5fa', fontSize: 13 }}>ProLnk connects you with DFW HVAC techs who specialize in {result.rec.toLowerCase()} control installation.</div>

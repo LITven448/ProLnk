@@ -74,8 +74,8 @@ export default function DFWHVACFinalProjectPlan() {
               key={i}
               onClick={() => setActiveStage(i)}
               style={{
-                background: activeStage === i ? '#0A1628' : '#E2E8F0',
-                color: activeStage === i ? '#F5E642' : '#334155',
+                background: activeStage === i ? '#0A1628′ : '#E2E8F0',
+                color: activeStage === i ? '#F5E642′ : '#334155',
                 border: 'none',
                 borderRadius: 8,
                 padding: '10px 18px',
@@ -110,7 +110,7 @@ export default function DFWHVACFinalProjectPlan() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#EFF6FF', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #0A1628' }}>
+          <div style={{ background: '#EFF6FF', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #0A1628′ }}>
             <div style={{ color: '#0A1628', fontWeight: 700, fontSize: 13, marginBottom: 4 }}>WHAT'S NEXT</div>
             <div style={{ color: '#1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{stages[activeStage].next}</div>
           </div>

@@ -22,7 +22,7 @@ export default function DFWFoundationInjectionGrouting2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 32 }}>
           {[
             { icon: '🫧', label: 'Foam Cure Time', value: '15 min' },
-            { icon: '⚖️', label: 'Foam Weight', value: '2 lbs/ft³' },
+            { icon: '⚖️', label: 'Foam Weight', value: '2 lbs/ft³′ },
             { icon: '💧', label: 'Root Cause', value: 'Drainage' },
           ].map(s => (
             <div key={s.label} style={{ backgroundColor: '#0F2040', borderRadius: 12, padding: '16px 12px', textAlign: 'center' }}>
@@ -43,7 +43,7 @@ export default function DFWFoundationInjectionGrouting2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {scenarios.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#1A2F50', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#1A2F50', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}

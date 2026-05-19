@@ -76,12 +76,12 @@ export default function DFWFoundationCostPerPier() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#8A9BB5', fontSize: 13, marginBottom: 6 }}>Number of Piers Quoted</label>
-              <input value={count} onChange={e => setCount(e.target.value)} placeholder="e.g. 12" style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={count} onChange={e => setCount(e.target.value)} placeholder="e.g. 12″ style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%' }}>Assess Quote</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4 }}>Expected range: ${result.low.toLocaleString()}–${result.high.toLocaleString()}</div>
               <div style={{ color: '#F5E642', fontSize: 14, marginBottom: 8 }}>DFW market average: ${result.avg.toLocaleString()}</div>
               <div style={{ color: '#8A9BB5', fontSize: 13, lineHeight: 1.6 }}>
@@ -92,7 +92,7 @@ export default function DFWFoundationCostPerPier() {
         </div>
 
         <div style={{ background: '#111F3A', borderRadius: 8, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#FF4444' }}>🚩 DFW Foundation Quote Red Flags</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#FF4444′ }}>🚩 DFW Foundation Quote Red Flags</div>
           <ul style={{ margin: 0, paddingLeft: 20 }}>
             {redFlags.map((f, i) => <li key={i} style={{ color: '#8A9BB5', fontSize: 14, lineHeight: 1.9 }}>{f}</li>)}
           </ul>

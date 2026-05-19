@@ -66,7 +66,7 @@ export default function DFWHomeNetworkInfrastructure() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!homeSize || !connections} style={{ backgroundColor: homeSize && connections ? '#F5E642' : '#1E3A5F', color: homeSize && connections ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: homeSize && connections ? 'pointer' : 'default' }}>
+          <button onClick={() => setShowResults(true)} disabled={!homeSize || !connections} style={{ backgroundColor: homeSize && connections ? '#F5E642′ : '#1E3A5F', color: homeSize && connections ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: homeSize && connections ? 'pointer' : 'default' }}>
             Generate Network Plan →
           </button>
         </div>
@@ -75,9 +75,9 @@ export default function DFWHomeNetworkInfrastructure() {
           <div style={{ display: 'grid', gap: 16 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
               {[
-                { label: 'Access Points Needed', value: `${plan.apCount} APs`, color: '#F5E642' },
-                { label: 'Estimated Cost', value: plan.estimatedCost, color: '#10B981' },
-                { label: 'Install Time', value: plan.installTime, color: '#8B5CF6' },
+                { label: 'Access Points Needed', value: `${plan.apCount} APs`, color: '#F5E642′ },
+                { label: 'Estimated Cost', value: plan.estimatedCost, color: '#10B981′ },
+                { label: 'Install Time', value: plan.installTime, color: '#8B5CF6′ },
               ].map(stat => (
                 <div key={stat.label} style={{ backgroundColor: '#112240', borderRadius: 10, padding: 20, textAlign: 'center' }}>
                   <div style={{ color: stat.color, fontSize: 20, fontWeight: 800 }}>{stat.value}</div>

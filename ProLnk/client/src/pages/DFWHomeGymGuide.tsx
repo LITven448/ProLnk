@@ -29,7 +29,7 @@ function estimateCost(space: string, equipment: string[]): { low: number; high: 
     high += 1400;
   }
   if (equipment.length >= 4) {
-    upgrades.push('Commercial-grade rubber flooring (3/4" minimum)');
+    upgrades.push('Commercial-grade rubber flooring (3/4″ minimum)');
     upgrades.push('Wall-to-wall mirror installation');
   }
   upgrades.push('Exhaust fan or ventilation system');
@@ -53,7 +53,7 @@ export default function DFWHomeGymGuide() {
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642′ }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🏋️</div>
           <h1 style={{ fontSize: 38, fontWeight: 800, color: '#F5E642', margin: '0 0 12px' }}>DFW Home Gym Installation Guide</h1>
@@ -64,7 +64,7 @@ export default function DFWHomeGymGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, margin: '40px 0' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, margin: '40px 0′ }}>
           {[
             { icon: '🌡️', title: 'DFW Climate Reality', body: 'Garages routinely hit 120°F in July. Without a dedicated mini-split, equipment degrades and workouts become dangerous. Budget $3,500–$5,500 for climate control in garage conversions.' },
             { icon: '🔌', title: 'Electrical Planning', body: 'Treadmills, ellipticals, and cable machines require 220V dedicated circuits. Plan your electrical before flooring goes in — rough-in cost is $800–$1,400 per circuit.' },
@@ -97,7 +97,7 @@ export default function DFWHomeGymGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>🧮 Cost Estimator</h2>
           <p style={{ color: '#A8B8D0', fontSize: 14, margin: '0 0 24px' }}>Select your space type and equipment to get a DFW-adjusted estimate</p>
 
@@ -106,7 +106,7 @@ export default function DFWHomeGymGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {spaceTypes.map(s => (
                 <button key={s} onClick={() => { setSelectedSpace(s); setShowEstimate(false); }}
-                  style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${selectedSpace === s ? '#F5E642' : '#1E3A5F'}`, background: selectedSpace === s ? '#F5E642' : '#0D1B33', color: selectedSpace === s ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                  style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${selectedSpace === s ? '#F5E642' : '#1E3A5F'}`, background: selectedSpace === s ? '#F5E642′ : '#0D1B33', color: selectedSpace === s ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                   {s}
                 </button>
               ))}
@@ -118,7 +118,7 @@ export default function DFWHomeGymGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {equipmentOptions.map(item => (
                 <button key={item} onClick={() => { toggleEquipment(item); setShowEstimate(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${selectedEquipment.includes(item) ? '#F5E642' : '#1E3A5F'}`, background: selectedEquipment.includes(item) ? '#F5E642' : '#0D1B33', color: selectedEquipment.includes(item) ? '#0A1628' : '#E8EDF5', fontWeight: 500, cursor: 'pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${selectedEquipment.includes(item) ? '#F5E642' : '#1E3A5F'}`, background: selectedEquipment.includes(item) ? '#F5E642′ : '#0D1B33', color: selectedEquipment.includes(item) ? '#0A1628' : '#E8EDF5', fontWeight: 500, cursor: ’pointer', fontSize: 13 }}>
                   {item}
                 </button>
               ))}
@@ -131,7 +131,7 @@ export default function DFWHomeGymGuide() {
           </button>
 
           {showEstimate && estimate && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 20 }}>Estimated Investment</h3>
               <p style={{ fontSize: 32, fontWeight: 800, color: '#E8EDF5', margin: '0 0 16px' }}>
                 ${estimate.low.toLocaleString()} – ${estimate.high.toLocaleString()}

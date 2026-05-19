@@ -68,13 +68,13 @@ export default function ProLnkProScalingGuide() {
             DAILY PROLNK MATCHES: <span style={{ color: phase.color, fontWeight: 700 }}>{dailyMatches} matches/day</span>
           </label>
           <input type="range" min={0} max={12} value={dailyMatches}
-            onChange={e => setDailyMatches(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
+            onChange={e => setDailyMatches(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12 }}>
             {milestones.map((m, i) => (
               <div key={i} style={{ textAlign: 'center', flex: 1 }}>
                 <div style={{ width: 12, height: 12, borderRadius: '50%',
-                  background: m.filled ? '#F5E642' : '#2A3E5A', margin: '0 auto 4px' }} />
-                <div style={{ color: m.filled ? '#F5E642' : '#8899AA', fontSize: 10 }}>{m.label}</div>
+                  background: m.filled ? '#F5E642′ : '#2A3E5A', margin: '0 auto 4px' }} />
+                <div style={{ color: m.filled ? '#F5E642′ : '#8899AA', fontSize: 10 }}>{m.label}</div>
               </div>
             ))}
           </div>
@@ -105,7 +105,7 @@ export default function ProLnkProScalingGuide() {
           </div>
           <div style={{ background: '#0F2040', borderRadius: 10, padding: 16, textAlign: 'center' }}>
             <div style={{ color: '#8899AA', fontSize: 11, marginBottom: 4 }}>LEFT ON TABLE (SOLO CAP)</div>
-            <div style={{ color: leftOnTable > 0 ? '#FF6644' : '#44BB44', fontSize: 22, fontWeight: 700 }}>
+            <div style={{ color: leftOnTable > 0 ? '#FF6644′ : '#44BB44', fontSize: 22, fontWeight: 700 }}>
               {leftOnTable > 0 ? `$${leftOnTable.toLocaleString()}` : 'none'}
             </div>
             <div style={{ color: '#8899AA', fontSize: 10 }}>solo cap: ~3 matches/day</div>

@@ -46,7 +46,7 @@ export default function DFWBuyingInDFW2026Summary() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
             {stages.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#111D35', color: selected === s.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#111D35', color: selected === s.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
@@ -64,7 +64,7 @@ export default function DFWBuyingInDFW2026Summary() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: 40, padding: 24, background: '#111D35', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', marginTop: 40, padding: 24, background: '#111D35', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Join ProLnk before you close — your first repairs are coming</div>
           <div style={{ color: '#8A9BB5', fontSize: 14 }}>Connect with vetted Charter pros for HVAC, plumbing, and foundation from day one</div>
         </div>

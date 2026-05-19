@@ -44,8 +44,8 @@ export default function DFWFoundationCarbonFiber2026B() {
                 key={c.id}
                 onClick={() => setSelected(c.id)}
                 style={{
-                  backgroundColor: selected === c.id ? '#F5E642' : '#0A1628',
-                  color: selected === c.id ? '#0A1628' : '#fff',
+                  backgroundColor: selected === c.id ? '#F5E642′ : '#0A1628',
+                  color: selected === c.id ? '#0A1628′ : '#fff',
                   border: '1px solid #334155',
                   borderRadius: '8px',
                   padding: '0.75rem 1rem',
@@ -62,7 +62,7 @@ export default function DFWFoundationCarbonFiber2026B() {
               <div style={{ display: 'inline-block', backgroundColor: match.applicable ? '#15803d' : '#dc2626', color: '#fff', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700', marginBottom: '0.8rem' }}>
                 Carbon Fiber: {match.applicable ? 'Applicable' : 'Not Recommended'}
               </div>
-              <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642' }}>
+              <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
                 <p style={{ margin: 0, lineHeight: '1.6', fontSize: '0.95rem' }}>{match.guide}</p>
               </div>
             </div>

@@ -37,7 +37,7 @@ export default function DFWLeverHandleGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '4px 12px', borderRadius: 4, fontSize: 12, fontWeight: 700 }}>DFW ACCESSIBILITY</span>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642' }}>🔧 Lever Handle & Accessible Hardware Guide — DFW</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642′ }}>🔧 Lever Handle & Accessible Hardware Guide — DFW</h1>
           <p style={{ color: '#8A9BB5', lineHeight: 1.6 }}>Round knobs require grip strength and twisting — lever handles don't. A full hardware upgrade across a typical DFW home costs $800–$3,500 and has immediate impact on daily independence.</p>
         </div>
 
@@ -48,7 +48,7 @@ export default function DFWLeverHandleGuide() {
               <span style={{ fontSize: 24 }}>{h.icon}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ fontWeight: 700, color: '#E8EDF5' }}>{h.name}</span>
+                  <span style={{ fontWeight: 700, color: '#E8EDF5′ }}>{h.name}</span>
                   <span style={{ color: '#F5E642', fontWeight: 600, fontSize: 13 }}>${h.base} {h.unit}</span>
                 </div>
                 <div style={{ color: '#8A9BB5', fontSize: 13, marginTop: 2 }}>{h.note}</div>
@@ -63,7 +63,7 @@ export default function DFWLeverHandleGuide() {
             <label style={{ fontSize: 12, color: '#8A9BB5', display: 'block', marginBottom: 6 }}>Rooms to Update (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {allRooms.map(r => (
-                <button key={r} onClick={() => toggleRoom(r)} style={{ padding: '4px 12px', borderRadius: 20, fontSize: 13, cursor: 'pointer', background: rooms.includes(r) ? '#F5E642' : '#0A1628', color: rooms.includes(r) ? '#0A1628' : '#8A9BB5', border: '1px solid ' + (rooms.includes(r) ? '#F5E642' : '#1E3A5F'), fontWeight: rooms.includes(r) ? 700 : 400 }}>{r}</button>
+                <button key={r} onClick={() => toggleRoom(r)} style={{ padding: '4px 12px', borderRadius: 20, fontSize: 13, cursor: 'pointer', background: rooms.includes(r) ? '#F5E642′ : '#0A1628', color: rooms.includes(r) ? '#0A1628' : '#8A9BB5', border: '1px solid ' + (rooms.includes(r) ? '#F5E642' : '#1E3A5F'), fontWeight: rooms.includes(r) ? 700 : 400 }}>{r}</button>
               ))}
             </div>
           </div>
@@ -83,17 +83,17 @@ export default function DFWLeverHandleGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>📋 Your Upgrade List</h3>
             {result.items.map(i => (
               <div key={i.name} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.4rem 0', borderBottom: '1px solid #1E3A5F' }}>
-                <span style={{ fontSize: 13, color: '#E8EDF5' }}>{i.icon} {i.name} × {i.qty}</span>
+                <span style={{ fontSize: 13, color: '#E8EDF5′ }}>{i.icon} {i.name} × {i.qty}</span>
                 <span style={{ color: '#F5E642', fontWeight: 600 }}>${i.total.toLocaleString()}</span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0 0.25rem', fontWeight: 800, fontSize: 15 }}>
               <span>Total Estimated Cost</span>
-              <span style={{ color: result.withinBudget ? '#4ADE80' : '#F87171' }}>${result.totalCost.toLocaleString()}</span>
+              <span style={{ color: result.withinBudget ? '#4ADE80′ : '#F87171' }}>${result.totalCost.toLocaleString()}</span>
             </div>
             <div style={{ color: '#8A9BB5', fontSize: 13 }}>{result.note}</div>
           </div>

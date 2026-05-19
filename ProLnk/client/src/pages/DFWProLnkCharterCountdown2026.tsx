@@ -19,7 +19,7 @@ export default function DFWProLnkCharterCountdown2026() {
         </div>
 
         <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 28, textAlign: 'center' }}>
-          <div style={{ fontSize: 64, fontWeight: 900, color: '#F5E642' }}>{spotsRemaining}</div>
+          <div style={{ fontSize: 64, fontWeight: 900, color: '#F5E642′ }}>{spotsRemaining}</div>
           <div style={{ color: '#CBD5E1', fontSize: 18, marginTop: 8 }}>Charter spots remaining</div>
           <div style={{ background: '#1E3A5F', borderRadius: 8, height: 12, margin: '20px 0 8px' }}>
             <div style={{ background: '#F5E642', height: 12, borderRadius: 8, width: `${((500 - spotsRemaining) / 500) * 100}%` }} />
@@ -36,9 +36,9 @@ export default function DFWProLnkCharterCountdown2026() {
           ] as const).map(([val, label]) => (
             <button key={val} onClick={() => setStage(val)} style={{
               flex: 1, padding: '14px', borderRadius: 10, border: '2px solid',
-              borderColor: stage === val ? '#F5E642' : '#1E3A5F',
-              background: stage === val ? '#F5E642' : '#0D1F3C',
-              color: stage === val ? '#0A1628' : '#fff',
+              borderColor: stage === val ? '#F5E642′ : '#1E3A5F',
+              background: stage === val ? '#F5E642′ : '#0D1F3C',
+              color: stage === val ? '#0A1628′ : '#fff',
               cursor: 'pointer', fontWeight: 700, fontSize: 14
             }}>{label}</button>
           ))}
@@ -64,7 +64,7 @@ export default function DFWProLnkCharterCountdown2026() {
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1E3A5F' }}>
                 <span style={{ color: '#9BAECF' }}>{label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{ch}</span>
-                <span style={{ color: '#CBD5E1' }}>{fo}</span>
+                <span style={{ color: '#CBD5E1′ }}>{fo}</span>
               </div>
             ))}
             <p style={{ color: '#9BAECF', marginTop: 16, fontSize: 13 }}>Charter saves $600/yr and gives better lead access. Founding opens automatically when Charter fills.</p>
@@ -75,7 +75,7 @@ export default function DFWProLnkCharterCountdown2026() {
           <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24 }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>❓ Still deciding? Consider this.</h3>
             <p style={{ color: '#CBD5E1', marginBottom: 12 }}>General tier has no charter benefits, no locked pricing, and no priority access. DFW pros who wait for general tier will compete against Charter pros who got there first.</p>
-            <p style={{ color: '#CBD5E1' }}>With only {spotsRemaining} Charter spots left — the cost of waiting is real.</p>
+            <p style={{ color: '#CBD5E1′ }}>With only {spotsRemaining} Charter spots left — the cost of waiting is real.</p>
           </div>
         )}
       </div>

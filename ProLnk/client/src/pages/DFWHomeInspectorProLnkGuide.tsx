@@ -53,7 +53,7 @@ export default function DFWHomeInspectorProLnkGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {whyInspectors.map((w) => (
-            <div key={w.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642' }}>
+            <div key={w.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{w.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{w.title}</div>
               <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>{w.desc}</div>
@@ -67,17 +67,17 @@ export default function DFWHomeInspectorProLnkGuide() {
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Monthly Inspections</label>
               <input type="range" min={5} max={60} value={monthlyInspections} onChange={(e) => setMonthlyInspections(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{monthlyInspections}/mo</div>
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Avg Issues Found Per Inspection</label>
               <input type="range" min={3} max={20} value={avgIssues} onChange={(e) => setAvgIssues(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{avgIssues} issues</div>
             </div>
           </div>
-          <div style={{ background: '#fefce8', borderRadius: 10, padding: 14, marginBottom: 20, fontSize: 13, color: '#713f12' }}>
+          <div style={{ background: '#fefce8', borderRadius: 10, padding: 14, marginBottom: 20, fontSize: 13, color: '#713f12′ }}>
             📌 Assuming 40% buyer conversion + 60% of issues addressed via ProLnk — {convertedBuyers} buyers, {issuesAddressed} jobs/year
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
@@ -88,8 +88,8 @@ export default function DFWHomeInspectorProLnkGuide() {
             ].map((item) => (
               <div key={item.label} style={{ background: '#f8f9fb', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8' }}>{item.sub}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{item.sub}</div>
               </div>
             ))}
           </div>

@@ -72,17 +72,17 @@ export default function DFWConcreteSealantGuide2026() {
             {conditions.map(c => (
               <button key={c.id} onClick={() => setCondition(c.id)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  borderColor: condition === c.id ? '#F5E642' : '#1e3a5f',
-                  background: condition === c.id ? '#F5E642' : '#0A1628',
-                  color: condition === c.id ? '#0A1628' : '#94a3b8' }}>
+                  borderColor: condition === c.id ? '#F5E642′ : '#1e3a5f',
+                  background: condition === c.id ? '#F5E642′ : '#0A1628',
+                  color: condition === c.id ? '#0A1628′ : '#94a3b8' }}>
                 {c.icon} {c.label}
               </button>
             ))}
           </div>
           {shouldReplace && (
-            <div style={{ marginTop: 14, background: '#1e1428', borderRadius: 8, padding: 14, borderLeft: '4px solid #f87171' }}>
+            <div style={{ marginTop: 14, background: '#1e1428', borderRadius: 8, padding: 14, borderLeft: '4px solid #f87171′ }}>
               <span style={{ color: '#f87171', fontWeight: 700 }}>⚠️ Recommendation: Replace, Don't Seal</span>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '6px 0 0' }}>When damage exceeds 30%, sealing is a band-aid. DFW contractors typically recommend full removal and repour.</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '6px 0 0′ }}>When damage exceeds 30%, sealing is a band-aid. DFW contractors typically recommend full removal and repour.</p>
             </div>
           )}
         </div>
@@ -91,7 +91,7 @@ export default function DFWConcreteSealantGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginBottom: 24 }}>
           {surfaces.map(s => (
             <button key={s.id} onClick={() => setActiveSurface(activeSurface === s.id ? null : s.id)}
-              style={{ background: activeSurface === s.id ? '#1a3a6a' : '#0f2040', border: '2px solid', borderColor: activeSurface === s.id ? '#F5E642' : '#1e3a5f',
+              style={{ background: activeSurface === s.id ? '#1a3a6a' : '#0f2040', border: '2px solid', borderColor: activeSurface === s.id ? '#F5E642′ : '#1e3a5f',
                 borderRadius: 12, padding: 16, cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 6 }}>{s.label}</div>

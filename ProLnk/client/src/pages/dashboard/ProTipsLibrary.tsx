@@ -73,7 +73,7 @@ const TIPS_DATA: Omit<Tip, "saved">[] = [
     body: "Adding a filter change to every HVAC service visit raises average ticket from $89 to $127. It takes 3 minutes and almost every homeowner says yes.",
     category: "Tools & Equipment",
     icon: DollarSign,
-    stat: "+$38",
+    stat: "+$38″,
     statLabel: "avg ticket",
   },
   {
@@ -117,37 +117,37 @@ export default function ProTipsLibrary() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A1628] text-white p-6 space-y-8">
+    <div className="min-h-screen bg-[#0A1628] text-white p-6 space-y-8″>
       {/* Header */}
       <div>
-        <div className="flex items-center gap-2 mb-1">
-          <Lightbulb className="text-yellow-400" size={22} />
+        <div className="flex items-center gap-2 mb-1″>
+          <Lightbulb className="text-yellow-400″ size={22} />
           <h1 className="text-2xl font-bold">Pro Tips Library</h1>
         </div>
         <p className="text-slate-400 text-sm">Learn from the best in DFW</p>
       </div>
 
       {/* Featured tip */}
-      <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/10 border border-yellow-500/30 rounded-xl p-6 space-y-4">
-        <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
-            <Star className="text-yellow-400" size={20} />
+      <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/10 border border-yellow-500/30 rounded-xl p-6 space-y-4″>
+        <div className="flex items-start gap-3″>
+          <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0″>
+            <Star className="text-yellow-400″ size={20} />
           </div>
           <div>
-            <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-xs mb-2">Featured Tip</Badge>
+            <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-xs mb-2″>Featured Tip</Badge>
             <h2 className="text-lg font-bold text-yellow-100 leading-snug">
               The 4-Minute Rule: Partners who respond to leads within 4 minutes win 3.7x more jobs. Here&apos;s how to make it automatic.
             </h2>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3″>
           {[
             { step: 1, text: "Turn on push notifications in your ProLnk app settings" },
             { step: 2, text: "Set your phone to Never Silent during business hours (7am–7pm)" },
             { step: 3, text: "Pre-write 3 opening templates so you can reply in seconds, not minutes" },
           ].map(({ step, text }) => (
-            <div key={step} className="flex items-start gap-3 bg-white/5 rounded-lg p-3">
-              <div className="w-6 h-6 rounded-full bg-yellow-500 text-black text-xs font-bold flex items-center justify-center flex-shrink-0">
+            <div key={step} className="flex items-start gap-3 bg-white/5 rounded-lg p-3″>
+              <div className="w-6 h-6 rounded-full bg-yellow-500 text-black text-xs font-bold flex items-center justify-center flex-shrink-0″>
                 {step}
               </div>
               <p className="text-slate-300 text-sm">{text}</p>
@@ -157,7 +157,7 @@ export default function ProTipsLibrary() {
       </div>
 
       {/* Category tabs */}
-      <div className="flex gap-2 overflow-x-auto pb-1">
+      <div className="flex gap-2 overflow-x-auto pb-1″>
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
@@ -174,32 +174,32 @@ export default function ProTipsLibrary() {
       </div>
 
       {/* Tip cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4″>
         {filtered.map((tip) => {
           const Icon = tip.icon;
           return (
             <div key={tip.id} className="bg-[#111C30] border border-white/10 rounded-xl p-5 flex flex-col gap-3 hover:border-blue-500/40 transition-colors">
               <div className="flex items-start justify-between">
                 <div className="w-10 h-10 rounded-lg bg-blue-500/15 flex items-center justify-center">
-                  <Icon className="text-blue-400" size={18} />
+                  <Icon className="text-blue-400″ size={18} />
                 </div>
                 <button
                   onClick={() => toggleSave(tip.id)}
                   className={`p-1.5 rounded-lg transition-colors ${
-                    tip.saved ? "text-yellow-400 bg-yellow-400/10" : "text-slate-500 hover:text-slate-300"
+                    tip.saved ? "text-yellow-400 bg-yellow-400/10″ : "text-slate-500 hover:text-slate-300"
                   }`}
                 >
                   <Bookmark size={16} fill={tip.saved ? "currentColor" : "none"} />
                 </button>
               </div>
               <div>
-                <Badge variant="outline" className="text-xs text-slate-400 border-slate-600 mb-2">
+                <Badge variant="outline" className="text-xs text-slate-400 border-slate-600 mb-2″>
                   {tip.category}
                 </Badge>
                 <h3 className="font-semibold text-white text-sm leading-snug">{tip.title}</h3>
               </div>
-              <p className="text-slate-400 text-xs leading-relaxed flex-1">{tip.body}</p>
-              <div className="flex items-baseline gap-1 pt-1 border-t border-white/5">
+              <p className="text-slate-400 text-xs leading-relaxed flex-1″>{tip.body}</p>
+              <div className="flex items-baseline gap-1 pt-1 border-t border-white/5″>
                 <span className="text-blue-400 font-bold text-lg">{tip.stat}</span>
                 <span className="text-slate-500 text-xs">{tip.statLabel}</span>
               </div>
@@ -210,9 +210,9 @@ export default function ProTipsLibrary() {
 
       {/* Weekly tip subscribe */}
       <div className="bg-[#111C30] border border-white/10 rounded-xl p-6 flex flex-col md:flex-row items-center gap-4 justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3″>
           <div className="w-10 h-10 rounded-lg bg-green-500/15 flex items-center justify-center">
-            <Bell className="text-green-400" size={20} />
+            <Bell className="text-green-400″ size={20} />
           </div>
           <div>
             <p className="font-semibold text-white">Weekly Tip</p>
@@ -227,7 +227,7 @@ export default function ProTipsLibrary() {
         ) : (
           <Button
             onClick={() => setSubscribed(true)}
-            className="bg-green-600 hover:bg-green-500 text-white text-sm px-6"
+            className="bg-green-600 hover:bg-green-500 text-white text-sm px-6″
           >
             Subscribe
           </Button>

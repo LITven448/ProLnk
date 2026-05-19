@@ -54,7 +54,7 @@ export default function DFWFoundationProofingGuide2026() {
         <div style={{ background: '#132035', borderRadius: 10, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🏗️ DFW Foundation Key Facts</div>
           {['DFW black clay soil shrinks 30% in drought — most expansive in North America','Consistent watering matters more than quantity — wet-dry cycles cause damage','Soaker hose 18 inches from foundation = ideal delivery method','Foundation repair averages $15,000-$30,000 in DFW — prevention is $300-500/yr','Sticking doors and windows are the first sign of foundation movement'].map((f,i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
           ))}
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function DFWPoolAutomationGuide2026() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>📱</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Pool Automation Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Pool Automation Guide 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             Smart pool systems let you control every piece of equipment from your phone. In DFW, automation also
             means scheduling around ERCOT rates and enabling freeze protection automatically.
@@ -56,7 +56,7 @@ export default function DFWPoolAutomationGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {setups.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#2d4a7a', background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#2d4a7a', background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600 }}>
                 {s.label}
               </button>
             ))}
@@ -66,7 +66,7 @@ export default function DFWPoolAutomationGuide2026() {
               {path.map(p => <li key={p} style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}>{p}</li>)}
             </ol>
           )}
-          {!selected && <p style={{ color: '#94a3b8' }}>Select your current setup above to see your DFW automation upgrade path.</p>}
+          {!selected && <p style={{ color: '#94a3b8′ }}>Select your current setup above to see your DFW automation upgrade path.</p>}
         </div>
       </div>
     </div>

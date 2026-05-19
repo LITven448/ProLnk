@@ -66,7 +66,7 @@ export default function DFWRoofInspectionCost() {
           </select>
           <button onClick={recommend} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Recommended: {result.rec}</div>
               <div style={{ color: '#8A9BB5', fontSize: 14, lineHeight: 1.6 }}>{result.why}</div>
             </div>

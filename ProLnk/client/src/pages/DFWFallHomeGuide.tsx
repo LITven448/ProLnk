@@ -31,13 +31,13 @@ export default function DFWFallHomeGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>🍂</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Fall Home Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: 0 }}>September – November Preparation Checklist</p>
       </div>
 
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0′ }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 10, padding: '14px 20px', marginBottom: 28, fontWeight: 700, fontSize: 15 }}>
           📍 DFW FACT: First cold front typically arrives late October. DFW "winter" lasts 6-10 weeks — but freezes can be severe. Prep HVAC and pipes before Halloween.
         </div>
@@ -48,7 +48,7 @@ export default function DFWFallHomeGuide() {
           { month: 'October', tasks: ['Test heat mode — switch HVAC by Oct 15', 'Apply lawn winterizer before Bermuda goes dormant', 'Seal exterior gaps: doors, windows, foundation cracks'] },
           { month: 'November', tasks: ['Clean gutters AFTER live oak or deciduous leaf drop', 'Blow out irrigation system before first freeze warning', 'Stock emergency supplies (generator, pipe insulation, blankets)'] },
         ].map(({ month, tasks: t }) => (
-          <div key={month} style={{ background: '#111f35', borderRadius: 10, padding: '16px 20px', marginBottom: 16, borderLeft: '3px solid #F5E642' }}>
+          <div key={month} style={{ background: '#111f35', borderRadius: 10, padding: '16px 20px', marginBottom: 16, borderLeft: '3px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>{month}</div>
             {t.map((task, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 4 }}>• {task}</div>)}
           </div>
@@ -57,7 +57,7 @@ export default function DFWFallHomeGuide() {
         <h2 style={{ color: '#F5E642', fontSize: 20, margin: '32px 0 16px' }}>🌳 DFW Live Oak Reality Check</h2>
         <div style={{ background: '#111f35', borderRadius: 10, padding: '18px 20px', marginBottom: 32 }}>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>
-            Unlike northern deciduous trees, <strong style={{ color: '#F5E642' }}>DFW live oaks hold their leaves all winter and drop in February–March</strong> as new growth pushes them off. If you have live oaks, your gutter cleaning schedule is different — January or February may be the right timing, not November. However, dead branches and limbs from summer heat stress should still be trimmed before storm season.
+            Unlike northern deciduous trees, <strong style={{ color: '#F5E642′ }}>DFW live oaks hold their leaves all winter and drop in February–March</strong> as new growth pushes them off. If you have live oaks, your gutter cleaning schedule is different — January or February may be the right timing, not November. However, dead branches and limbs from summer heat stress should still be trimmed before storm season.
           </p>
         </div>
 
@@ -88,10 +88,10 @@ export default function DFWFallHomeGuide() {
         </button>
 
         {showResults && (
-          <div style={{ background: '#111f35', borderRadius: 12, padding: '24px', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111f35', borderRadius: 12, padding: '24px', border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', fontSize: 18, margin: '0 0 16px' }}>Your Fall Prep Checklist</h3>
             {tasks.length === 0 ? (
-              <p style={{ color: '#94a3b8' }}>Select home features above to generate your list.</p>
+              <p style={{ color: '#94a3b8′ }}>Select home features above to generate your list.</p>
             ) : (
               <>
                 {tasks.map((t, i) => (
@@ -102,7 +102,7 @@ export default function DFWFallHomeGuide() {
                 ))}
                 <div style={{ marginTop: 16, paddingTop: 16, borderTop: '2px solid #F5E642', display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: 16 }}>
                   <span>Estimated Total</span>
-                  <span style={{ color: '#F5E642' }}>${totalCost.toLocaleString()}</span>
+                  <span style={{ color: '#F5E642′ }}>${totalCost.toLocaleString()}</span>
                 </div>
               </>
             )}

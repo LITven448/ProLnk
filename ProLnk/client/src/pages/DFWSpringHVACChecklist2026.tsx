@@ -52,10 +52,10 @@ export default function DFWSpringHVACChecklist2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⚠️ Spring HVAC Facts for DFW</h2>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <li style={{ color: '#cbd5e1' }}>🌡️ DFW hits 90°F+ by late May — AC must be ready</li>
-            <li style={{ color: '#cbd5e1' }}>❄️ Refrigerant work requires EPA 608 license — never DIY</li>
-            <li style={{ color: '#cbd5e1' }}>📅 HVAC techs fully booked by June — book April or May</li>
-            <li style={{ color: '#cbd5e1' }}>💧 Clogged condensate drain causes water damage fast</li>
+            <li style={{ color: '#cbd5e1′ }}>🌡️ DFW hits 90°F+ by late May — AC must be ready</li>
+            <li style={{ color: '#cbd5e1′ }}>❄️ Refrigerant work requires EPA 608 license — never DIY</li>
+            <li style={{ color: '#cbd5e1′ }}>📅 HVAC techs fully booked by June — book April or May</li>
+            <li style={{ color: '#cbd5e1′ }}>💧 Clogged condensate drain causes water damage fast</li>
           </ul>
         </div>
 
@@ -64,9 +64,9 @@ export default function DFWSpringHVACChecklist2026() {
           {ages.map(a => (
             <button key={a.id} onClick={() => setSelected(a.id)}
               style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid',
-                borderColor: selected === a.id ? '#F5E642' : '#1e3a5f',
-                background: selected === a.id ? '#F5E642' : '#112240',
-                color: selected === a.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                borderColor: selected === a.id ? '#F5E642′ : '#1e3a5f',
+                background: selected === a.id ? '#F5E642′ : '#112240',
+                color: selected === a.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
               {a.label}
             </button>
           ))}
@@ -79,7 +79,7 @@ export default function DFWSpringHVACChecklist2026() {
                 display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #1e3a5f' }}>
                 <span style={{ fontSize: 24 }}>{item.icon}</span>
                 <div style={{ flex: 1 }}>
-                  <span style={{ color: '#e2e8f0' }}>{item.task}</span>
+                  <span style={{ color: '#e2e8f0′ }}>{item.task}</span>
                   {item.note && <span style={{ display: 'block', fontSize: 11, color: '#ef4444', marginTop: 2 }}>⛔ {item.note}</span>}
                 </div>
                 <span style={{ fontSize: 12, fontWeight: 700, color: urgencyColor[item.urgency] }}>{item.urgency}</span>
@@ -88,7 +88,7 @@ export default function DFWSpringHVACChecklist2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 40, padding: 20, background: '#112240', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ marginTop: 40, padding: 20, background: '#112240', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>🏠 ProLnk connects you with vetted DFW HVAC pros</p>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Licensed AC technicians for tune-ups, refrigerant service, and full system replacements across the Metroplex.</p>
         </div>

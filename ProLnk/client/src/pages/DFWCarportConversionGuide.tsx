@@ -95,7 +95,7 @@ export default function DFWCarportConversionGuide() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {opts.map(o => (
                     <button key={o} onClick={() => { set(o); setShowPlan(false); }}
-                      style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: `1px solid ${val === o ? '#F5E642' : '#2a3a55'}`, background: val === o ? '#F5E642' : 'transparent', color: val === o ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.82rem', fontWeight: val === o ? 700 : 400 }}>
+                      style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: `1px solid ${val === o ? '#F5E642' : '#2a3a55'}`, background: val === o ? '#F5E642′ : ’transparent', color: val === o ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.82rem', fontWeight: val === o ? 700 : 400 }}>
                       {o}
                     </button>
                   ))}
@@ -104,13 +104,13 @@ export default function DFWCarportConversionGuide() {
             ))}
           </div>
           <button onClick={() => setShowPlan(true)} disabled={!canGenerate}
-            style={{ marginTop: '1.5rem', padding: '0.75rem 2rem', background: canGenerate ? '#F5E642' : '#2a3a55', color: canGenerate ? '#0A1628' : '#64748b', borderRadius: 8, border: 'none', fontWeight: 800, cursor: canGenerate ? 'pointer' : 'not-allowed', fontSize: '1rem' }}>
+            style={{ marginTop: '1.5rem', padding: '0.75rem 2rem', background: canGenerate ? '#F5E642′ : '#2a3a55', color: canGenerate ? '#0A1628' : '#64748b', borderRadius: 8, border: ’none', fontWeight: 800, cursor: canGenerate ? 'pointer' : 'not-allowed', fontSize: '1rem' }}>
             Generate My Conversion Plan →
           </button>
         </div>
 
         {showPlan && carportSize && intendedUse && hoa && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>📋 Your Carport Conversion Plan</h3>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               <div style={{ background: '#0A1628', padding: '1rem', borderRadius: 8 }}>
@@ -121,13 +121,13 @@ export default function DFWCarportConversionGuide() {
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>Estimated Cost</div>
                 <div style={{ fontSize: '1.2rem', fontWeight: 800 }}>{COST_BY_USE[carportSize]?.[intendedUse] ?? 'Custom quote needed'}</div>
               </div>
-              <div style={{ background: hoa === 'HOA — unknown' ? '#2a1a0a' : '#0A1628', padding: '1rem', borderRadius: 8, border: hoa === 'HOA — unknown' ? '1px solid #f97316' : 'none' }}>
-                <div style={{ color: hoa === 'HOA — unknown' ? '#f97316' : '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>🏘️ HOA Note</div>
-                <div style={{ color: '#94a3b8' }}>{HOA_NOTES[hoa]}</div>
+              <div style={{ background: hoa === 'HOA — unknown' ? '#2a1a0a' : '#0A1628', padding: '1rem', borderRadius: 8, border: hoa === 'HOA — unknown' ? '1px solid #f97316′ : ’none' }}>
+                <div style={{ color: hoa === 'HOA — unknown' ? '#f97316′ : '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>🏘️ HOA Note</div>
+                <div style={{ color: '#94a3b8′ }}>{HOA_NOTES[hoa]}</div>
               </div>
               <div style={{ background: '#0A1628', padding: '1rem', borderRadius: 8 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>DFW Resale Value Add</div>
-                <div style={{ color: '#94a3b8' }}>Garage-to-carport conversions typically add $15K–$30K in appraised value in DFW. Detached garages add less than attached. Highest impact in suburbs like Garland, Mesquite, Irving where carport homes sell at discount.</div>
+                <div style={{ color: '#94a3b8′ }}>Garage-to-carport conversions typically add $15K–$30K in appraised value in DFW. Detached garages add less than attached. Highest impact in suburbs like Garland, Mesquite, Irving where carport homes sell at discount.</div>
               </div>
             </div>
           </div>

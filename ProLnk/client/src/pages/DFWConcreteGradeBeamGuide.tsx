@@ -76,7 +76,7 @@ export default function DFWConcreteGradeBeamGuide() {
             {observations.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '0.7rem 2rem', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}>Analyze Foundation</button>
-          {result && <div style={{ marginTop: '1rem', background: '#162035', borderRadius: 8, padding: '1rem', color: '#CBD5E8', lineHeight: 1.7, borderLeft: '3px solid #F5E642' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#162035', borderRadius: 8, padding: '1rem', color: '#CBD5E8', lineHeight: 1.7, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
         </div>
 
         <p style={{ color: '#6B7FA3', fontSize: '0.8rem', textAlign: 'center' }}>

@@ -59,7 +59,7 @@ export default function DFWEnergyAuditDIYGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔍</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW DIY Energy Audit Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW DIY Energy Audit Guide 2026</h1>
           <p style={{ color: '#94A3B8', fontSize: '1.1rem' }}>Audit your DFW home yourself — 4 areas, 17 checks, takes 90 minutes</p>
         </div>
 
@@ -85,7 +85,7 @@ export default function DFWEnergyAuditDIYGuide2026() {
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {Object.entries(auditAreas).map(([key, area]) => (
               <button key={key} onClick={() => setSelectedFeature(key)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: 'none', cursor: 'pointer', backgroundColor: selectedFeature === key ? '#F5E642' : '#0A1628', color: selectedFeature === key ? '#0A1628' : '#E8EDF5', fontWeight: selectedFeature === key ? 700 : 400, fontSize: '0.9rem' }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: 'none', cursor: 'pointer', backgroundColor: selectedFeature === key ? '#F5E642′ : '#0A1628', color: selectedFeature === key ? '#0A1628' : '#E8EDF5', fontWeight: selectedFeature === key ? 700 : 400, fontSize: '0.9rem' }}>
                 {area.label}
               </button>
             ))}
@@ -96,7 +96,7 @@ export default function DFWEnergyAuditDIYGuide2026() {
               style={{ display: 'flex', gap: '1rem', padding: '1rem', backgroundColor: '#0A1628', borderRadius: 8, marginBottom: '0.75rem', cursor: 'pointer', borderLeft: `3px solid ${checkedItems[id] ? '#00CC66' : '#2A3F5F'}` }}>
               <div style={{ fontSize: '1.2rem', flexShrink: 0 }}>{checkedItems[id] ? '✅' : '⬜'}</div>
               <div>
-                <div style={{ fontWeight: 600, marginBottom: 4, textDecoration: checkedItems[id] ? 'line-through' : 'none', color: checkedItems[id] ? '#94A3B8' : '#E8EDF5' }}>{task}</div>
+                <div style={{ fontWeight: 600, marginBottom: 4, textDecoration: checkedItems[id] ? 'line-through' : 'none', color: checkedItems[id] ? '#94A3B8′ : '#E8EDF5' }}>{task}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>{detail}</div>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function DFWEnergyAuditDIYGuide2026() {
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', padding: '1.5rem', backgroundColor: '#1E2D45', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: '1.5rem', backgroundColor: '#1E2D45', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: '1.5rem' }}>🔧</div>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Found Issues? Get Pro Quotes</div>
           <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>ProLnk connects DFW homeowners with verified contractors for any home service — free estimates</div>

@@ -51,7 +51,7 @@ export default function DFWHomeValueMay2026() {
               <div key={u.name}
                 onClick={() => canAfford && toggle(u.name)}
                 style={{
-                  background: isSelected ? '#1a2f52' : '#111c35',
+                  background: isSelected ? '#1a2f52′ : '#111c35',
                   border: `1px solid ${isSelected ? '#F5E642' : canAfford ? '#1e3a5f' : '#0d1f3a'}`,
                   borderRadius: 10, padding: 16, cursor: canAfford ? 'pointer' : 'not-allowed',
                   opacity: canAfford ? 1 : 0.4, transition: 'all 0.2s'
@@ -76,7 +76,7 @@ export default function DFWHomeValueMay2026() {
         <div style={{ background: '#111c35', borderRadius: 12, padding: 20 }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>🏆 Why DFW Upgrades Pay Off</div>
           {['DFW market favors move-in-ready homes — renovated homes sell 23 days faster', 'HVAC upgrades are #1 ask from DFW buyers due to Texas heat', 'Foundation issues are deal-breakers — repair before listing'].map(tip => (
-            <div key={tip} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '3px solid #F5E642' }}>{tip}</div>
+            <div key={tip} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '3px solid #F5E642′ }}>{tip}</div>
           ))}
         </div>
       </div>

@@ -92,7 +92,7 @@ export default function FencePermitGuide() {
                 <select
                   value={selectedCity}
                   onChange={e => setSelectedCity(e.target.value)}
-                  style={{ width: '100%', padding: '12px', border: '1px solid #374151', borderRadius: '8px', fontSize: '15px', color: '#ffffff', background: '#1f2937' }}
+                  style={{ width: '100%', padding: '12px', border: '1px solid #374151', borderRadius: '8px', fontSize: '15px', color: '#ffffff', background: '#1f2937′ }}
                 >
                   <option value="">Select a city...</option>
                   {cities.map(c => <option key={c} value={c}>{c}</option>)}
@@ -103,7 +103,7 @@ export default function FencePermitGuide() {
                 <select
                   value={selectedHeight}
                   onChange={e => setSelectedHeight(e.target.value)}
-                  style={{ width: '100%', padding: '12px', border: '1px solid #374151', borderRadius: '8px', fontSize: '15px', color: '#ffffff', background: '#1f2937' }}
+                  style={{ width: '100%', padding: '12px', border: '1px solid #374151', borderRadius: '8px', fontSize: '15px', color: '#ffffff', background: '#1f2937′ }}
                 >
                   <option value="">Select height...</option>
                   {heights.map(h => <option key={h} value={h}>{h}</option>)}
@@ -118,14 +118,14 @@ export default function FencePermitGuide() {
             </button>
 
             {permitInfo && (
-              <div style={{ marginTop: '28px', background: permitInfo.required ? '#052e16' : '#0c1a0c', border: `1px solid ${permitInfo.required ? '#166534' : '#14532d'}`, borderRadius: '10px', padding: '24px' }}>
+              <div style={{ marginTop: '28px', background: permitInfo.required ? '#052e16′ : '#0c1a0c', border: `1px solid ${permitInfo.required ? '#166534' : '#14532d'}`, borderRadius: '10px', padding: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <span style={{ fontSize: '28px' }}>{permitInfo.required ? '📋' : '✅'}</span>
                   <div>
-                    <h3 style={{ fontSize: '20px', fontWeight: 700, color: permitInfo.required ? '#fbbf24' : '#4ade80', marginBottom: '2px' }}>
+                    <h3 style={{ fontSize: '20px', fontWeight: 700, color: permitInfo.required ? '#fbbf24′ : '#4ade80', marginBottom: '2px' }}>
                       {permitInfo.required ? 'Permit REQUIRED' : 'No Permit Needed'}
                     </h3>
-                    <p style={{ fontSize: '13px', color: '#6b7280' }}>{selectedCity} — {selectedHeight}</p>
+                    <p style={{ fontSize: '13px', color: '#6b7280′ }}>{selectedCity} — {selectedHeight}</p>
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px', marginBottom: '16px' }}>
@@ -135,11 +135,11 @@ export default function FencePermitGuide() {
                   </div>
                   <div style={{ background: '#0a3d1f', borderRadius: '8px', padding: '12px' }}>
                     <div style={{ fontSize: '11px', color: '#6b7280', textTransform: 'uppercase', marginBottom: '4px' }}>Permit Cost</div>
-                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#4ade80' }}>{permitInfo.cost}</div>
+                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#4ade80′ }}>{permitInfo.cost}</div>
                   </div>
                   <div style={{ background: '#0a3d1f', borderRadius: '8px', padding: '12px' }}>
                     <div style={{ fontSize: '11px', color: '#6b7280', textTransform: 'uppercase', marginBottom: '4px' }}>Online Application</div>
-                    <div style={{ fontSize: '15px', fontWeight: 700, color: permitInfo.onlineApp ? '#4ade80' : '#f87171' }}>{permitInfo.onlineApp ? 'Available' : 'In-person only'}</div>
+                    <div style={{ fontSize: '15px', fontWeight: 700, color: permitInfo.onlineApp ? '#4ade80′ : '#f87171' }}>{permitInfo.onlineApp ? ’Available' : 'In-person only'}</div>
                   </div>
                 </div>
                 <p style={{ fontSize: '14px', color: '#86efac', lineHeight: 1.6 }}>{permitInfo.notes}</p>
@@ -165,7 +165,7 @@ export default function FencePermitGuide() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {section.items.map((item, j) => (
                     <li key={j} style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '6px', paddingLeft: '16px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#4ade80' }}>›</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#4ade80′ }}>›</span>
                       {item}
                     </li>
                   ))}
@@ -207,7 +207,7 @@ export default function FencePermitGuide() {
                 <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>{mat.name}</h3>
                 <div style={{ marginBottom: '8px' }}>
                   <div style={{ fontSize: '11px', color: '#6b7280', textTransform: 'uppercase', marginBottom: '2px' }}>Permit</div>
-                  <p style={{ fontSize: '13px', color: '#fbbf24' }}>{mat.permitNote}</p>
+                  <p style={{ fontSize: '13px', color: '#fbbf24′ }}>{mat.permitNote}</p>
                 </div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#6b7280', textTransform: 'uppercase', marginBottom: '2px' }}>HOA</div>

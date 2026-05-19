@@ -23,7 +23,7 @@ export default function DFWAirSealingGuide2026B() {
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '12px' }}>⚡ Why Air Sealing Matters in DFW</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.6' }}>DFW summers hit 100°F+ for weeks at a time. A leaky home forces your AC to work 30-40% harder. Air sealing is the single highest-ROI upgrade before adding insulation — DOE studies show 20-30% energy savings in DFW climate zones.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.6′ }}>DFW summers hit 100°F+ for weeks at a time. A leaky home forces your AC to work 30-40% harder. Air sealing is the single highest-ROI upgrade before adding insulation — DOE studies show 20-30% energy savings in DFW climate zones.</p>
         </div>
 
         <h2 style={{ color: '#F5E642', fontSize: '20px', marginBottom: '16px' }}>🎯 Select a Location to See ROI</h2>
@@ -32,10 +32,10 @@ export default function DFWAirSealingGuide2026B() {
             <button
               key={loc.id}
               onClick={() => setSelected(loc.id)}
-              style={{ backgroundColor: selected === loc.id ? '#1e3a5f' : '#0f2540', border: selected === loc.id ? '2px solid #F5E642' : '2px solid #1e3a5f', borderRadius: '10px', padding: '14px 18px', color: '#ffffff', cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'all 0.2s' }}
+              style={{ backgroundColor: selected === loc.id ? '#1e3a5f' : '#0f2540', border: selected === loc.id ? '2px solid #F5E642′ : '2px solid #1e3a5f', borderRadius: '10px', padding: '14px 18px', color: '#ffffff', cursor: ’pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'all 0.2s' }}
             >
               <span style={{ fontWeight: 600, fontSize: '15px' }}>{loc.label}</span>
-              <span style={{ backgroundColor: loc.priority <= 2 ? '#F5E642' : loc.priority === 3 ? '#f97316' : '#64748b', color: loc.priority <= 2 ? '#0A1628' : '#fff', borderRadius: '6px', padding: '2px 10px', fontSize: '13px', fontWeight: 700 }}>Priority #{loc.priority}</span>
+              <span style={{ backgroundColor: loc.priority <= 2 ? '#F5E642′ : loc.priority === 3 ? '#f97316' : '#64748b', color: loc.priority <= 2 ? '#0A1628' : '#fff', borderRadius: '6px', padding: '2px 10px', fontSize: '13px', fontWeight: 700 }}>Priority #{loc.priority}</span>
             </button>
           ))}
         </div>
@@ -57,7 +57,7 @@ export default function DFWAirSealingGuide2026B() {
                 <div style={{ color: '#f97316', fontSize: '18px', fontWeight: 700 }}>{selected_loc.cost}</div>
               </div>
             </div>
-            <p style={{ color: '#cbd5e1', lineHeight: '1.6' }}>{selected_loc.notes}</p>
+            <p style={{ color: '#cbd5e1', lineHeight: '1.6′ }}>{selected_loc.notes}</p>
           </div>
         )}
 

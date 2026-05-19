@@ -67,11 +67,11 @@ const materials = [
 ];
 
 const getUvRisk = (uv: number) => {
-  if (uv < 3) return { label: '🟢 Low', color: '#00e400' };
-  if (uv < 6) return { label: '🟡 Moderate', color: '#ffff00' };
-  if (uv < 8) return { label: '🟠 High', color: '#ff7e00' };
-  if (uv < 11) return { label: '🔴 Very High', color: '#ff0000' };
-  return { label: '🟣 Extreme', color: '#8f3f97' };
+  if (uv < 3) return { label: '🟢 Low', color: '#00e400′ };
+  if (uv < 6) return { label: '🟡 Moderate', color: '#ffff00′ };
+  if (uv < 8) return { label: '🟠 High', color: '#ff7e00′ };
+  if (uv < 11) return { label: '🔴 Very High', color: '#ff0000′ };
+  return { label: '🟣 Extreme', color: '#8f3f97′ };
 };
 
 export default function DFWUVIndexGuide() {
@@ -124,7 +124,7 @@ export default function DFWUVIndexGuide() {
           <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
             {materials.map((m, i) => (
               <button key={m.name} onClick={() => setMatIdx(i)}
-                style={{ padding: '0.4rem 0.8rem', borderRadius: 20, border: i === matIdx ? '2px solid #F5E642' : '2px solid #2d4a7a', background: i === matIdx ? '#F5E642' : 'transparent', color: i === matIdx ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.78rem' }}>
+                style={{ padding: '0.4rem 0.8rem', borderRadius: 20, border: i === matIdx ? '2px solid #F5E642′ : '2px solid #2d4a7a', background: i === matIdx ? '#F5E642' : ’transparent', color: i === matIdx ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: '0.78rem' }}>
                 {m.icon} {m.name}
               </button>
             ))}
@@ -133,11 +133,11 @@ export default function DFWUVIndexGuide() {
             <div style={{ fontWeight: 800, fontSize: '1.2rem', marginBottom: '0.25rem' }}>{mat.icon} {mat.name}</div>
             <div style={{ color: '#ff7e00', fontSize: '0.85rem', marginBottom: '1rem' }}>⚡ {mat.degradeRate}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem', marginBottom: '1rem' }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.65rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.65rem', borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ color: '#F5E642', fontSize: '0.7rem', fontWeight: 700, marginBottom: 3 }}>DFW LIFESPAN</div>
                 <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{mat.dfwLife}</div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.65rem', borderLeft: '3px solid #475569' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.65rem', borderLeft: '3px solid #475569′ }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.7rem', fontWeight: 700, marginBottom: 3 }}>NORTHERN MARKET</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{mat.northernLife}</div>
               </div>
@@ -163,7 +163,7 @@ export default function DFWUVIndexGuide() {
               <div key={r.month} style={{ background: '#1a2f55', borderRadius: 8, padding: '0.65rem', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '1.2rem' }}>{r.icon}</span>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#F5E642' }}>{r.month}</div>
+                  <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#F5E642′ }}>{r.month}</div>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{r.task}</div>
                 </div>
               </div>

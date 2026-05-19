@@ -47,17 +47,17 @@ export default function DFWStairLiftGuide2026() {
           {[{ label: 'Straight Lift Cost', value: '$3K–$5K', icon: '📐' }, { label: 'Curved Lift Cost', value: '$10K–$15K', icon: '🔄' }, { label: 'Install Time', value: '1 Day', icon: '⚡' }, { label: 'Rental Available', value: 'Yes', icon: '🔑' }].map(s => (
             <div key={s.label} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>What type of staircase do you have?</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>What type of staircase do you have?</h2>
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
           {stairTypes.map((s, i) => (
             <button key={i} onClick={() => { setTypeIdx(i); setOptionIdx(null); }}
-              style={{ background: typeIdx === i ? '#F5E642' : '#132036', color: typeIdx === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.65rem 1.1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: typeIdx === i ? '#F5E642′ : '#132036', color: typeIdx === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.65rem 1.1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {s.icon} {s.type}
             </button>
           ))}
@@ -65,12 +65,12 @@ export default function DFWStairLiftGuide2026() {
 
         {typeIdx !== null && (
           <div style={{ marginBottom: '1.5rem' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Select an option:</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Select an option:</h2>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               {stairTypes[typeIdx].options.map((o, i) => (
                 <button key={i} onClick={() => setOptionIdx(i)}
-                  style={{ background: optionIdx === i ? '#1a3a60' : '#132036', color: '#fff', border: optionIdx === i ? '2px solid #F5E642' : '2px solid transparent', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
-                  <div style={{ fontWeight: 700 }}>{o.label} — <span style={{ color: '#F5E642' }}>{o.cost}</span></div>
+                  style={{ background: optionIdx === i ? '#1a3a60′ : '#132036', color: '#fff', border: optionIdx === i ? '2px solid #F5E642' : '2px solid transparent', borderRadius: 10, padding: '1rem', cursor: ’pointer', textAlign: 'left' }}>
+                  <div style={{ fontWeight: 700 }}>{o.label} — <span style={{ color: '#F5E642′ }}>{o.cost}</span></div>
                   {optionIdx === i && <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 6, lineHeight: 1.6 }}>{o.detail}</div>}
                 </button>
               ))}

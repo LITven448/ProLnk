@@ -63,15 +63,15 @@ export default function KellerTexasProGuide2026() {
         </div>
         <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 32 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, textAlign: 'center' }}>
-            <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>45K+</div><div style={{ color: '#94A3B8', fontSize: 13 }}>Keller Households</div></div>
-            <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>$135K</div><div style={{ color: '#94A3B8', fontSize: 13 }}>Median HH Income</div></div>
-            <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>94%</div><div style={{ color: '#94A3B8', fontSize: 13 }}>Homeownership Rate</div></div>
+            <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>45K+</div><div style={{ color: '#94A3B8', fontSize: 13 }}>Keller Households</div></div>
+            <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>$135K</div><div style={{ color: '#94A3B8', fontSize: 13 }}>Median HH Income</div></div>
+            <div><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>94%</div><div style={{ color: '#94A3B8', fontSize: 13 }}>Homeownership Rate</div></div>
           </div>
         </div>
         <h2 style={{ color: '#F5E642', marginBottom: 16 }}>Select Your Trade</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 32 }}>
           {trades.map(t => (
-            <button key={t.id} onClick={() => setSelectedTrade(t.id)} style={{ background: selectedTrade === t.id ? t.color : '#0D1F3C', border: `2px solid ${t.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedTrade === t.id ? '#0A1628' : '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+            <button key={t.id} onClick={() => setSelectedTrade(t.id)} style={{ background: selectedTrade === t.id ? t.color : '#0D1F3C', border: `2px solid ${t.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedTrade === t.id ? '#0A1628′ : '#fff', textAlign: ’left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{t.label}</div>
               <div style={{ fontSize: 13, opacity: 0.85 }}>{t.desc}</div>
             </button>

@@ -67,8 +67,8 @@ export default function DFWFiberInternetGuide() {
             ].map((opt) => (
               <button key={opt.value} onClick={() => setLocation(opt.value)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${location === opt.value ? '#F5E642' : '#1E2D4A'}`,
-                  backgroundColor: location === opt.value ? '#F5E642' : 'transparent',
-                  color: location === opt.value ? '#0A1628' : '#9BA3B8', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                  backgroundColor: location === opt.value ? '#F5E642′ : ’transparent',
+                  color: location === opt.value ? '#0A1628′ : '#9BA3B8', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {opt.label}
               </button>
             ))}
@@ -102,7 +102,7 @@ export default function DFWFiberInternetGuide() {
               <div style={{ fontWeight: 700, color: '#FFFFFF', minWidth: 140 }}>{row.type}</div>
               <div style={{ color: '#9BA3B8', fontSize: 13 }}>⚡ {row.speed}</div>
               <div style={{ color: '#9BA3B8', fontSize: 13 }}>📶 {row.latency}</div>
-              <div style={{ color: row.symmetrical === 'Yes' ? '#4ADE80' : '#F87171', fontSize: 13 }}>⬆️ Sym: {row.symmetrical}</div>
+              <div style={{ color: row.symmetrical === 'Yes' ? '#4ADE80′ : '#F87171', fontSize: 13 }}>⬆️ Sym: {row.symmetrical}</div>
               <div style={{ color: '#9BA3B8', fontSize: 13, maxWidth: 200 }}>{row.notes}</div>
             </div>
           ))}

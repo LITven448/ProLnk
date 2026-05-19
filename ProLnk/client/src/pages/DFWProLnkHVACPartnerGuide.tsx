@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const TIERS = [
-  { id: 'solo', label: '🔧 Solo Tech (1 person)', leads: '8-15/mo', income: '$4,200-$7,800' },
-  { id: 'small', label: '🏢 Small Shop (2-5 techs)', leads: '20-40/mo', income: '$10,500-$21,000' },
-  { id: 'medium', label: '🏭 Mid-Size (6-20 techs)', leads: '50-100/mo', income: '$26,250-$52,500' },
+  { id: 'solo', label: '🔧 Solo Tech (1 person)', leads: '8-15/mo', income: '$4,200-$7,800′ },
+  { id: 'small', label: '🏢 Small Shop (2-5 techs)', leads: '20-40/mo', income: '$10,500-$21,000′ },
+  { id: 'medium', label: '🏭 Mid-Size (6-20 techs)', leads: '50-100/mo', income: '$26,250-$52,500′ },
   { id: 'large', label: '🏗️ Large Company (20+ techs)', leads: '100-200+/mo', income: '$52,500-$105,000+' },
 ];
 
@@ -31,7 +31,7 @@ export default function DFWProLnkHVACPartnerGuide() {
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642' }}>❄️ ProLnk HVAC Partner Guide</div>
+          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642′ }}>❄️ ProLnk HVAC Partner Guide</div>
           <div style={{ color: '#94A3B8', marginTop: '.5rem' }}>DFW HVAC contractors — quality leads, recurring relationships, 5 income streams</div>
         </div>
 
@@ -40,16 +40,16 @@ export default function DFWProLnkHVACPartnerGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '.75rem' }}>
             {TIERS.map(t => (
               <button key={t.id} onClick={() => setSelectedTier(t.id)}
-                style={{ padding: '.85rem', borderRadius: 10, border: , background: selectedTier === t.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '.85rem', borderRadius: 10, border: , background: selectedTier === t.id ? '#F5E64222′ : '#0A1628', color: '#fff', cursor: ’pointer', textAlign: 'left' }}>
                 <div style={{ fontWeight: 700, fontSize: '.9rem' }}>{t.label}</div>
               </button>
             ))}
           </div>
           {tier && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '.5rem' }}>Your ProLnk Opportunity</div>
-              <div style={{ color: '#CBD5E1' }}>📊 Expected Leads: <strong style={{ color: '#fff' }}>{tier.leads}</strong></div>
-              <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>💵 Income Potential: <strong style={{ color: '#F5E642' }}>{tier.income}/mo</strong></div>
+              <div style={{ color: '#CBD5E1′ }}>📊 Expected Leads: <strong style={{ color: '#fff' }}>{tier.leads}</strong></div>
+              <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>💵 Income Potential: <strong style={{ color: '#F5E642′ }}>{tier.income}/mo</strong></div>
               <div style={{ color: '#94A3B8', fontSize: '.8rem', marginTop: '.5rem' }}>Based on 30% match conversion rate at average DFW HVAC job value of $875</div>
             </div>
           )}

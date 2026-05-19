@@ -65,7 +65,7 @@ export default function PartnerProspectingScriptGuide() {
         <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, padding: 32, marginTop: 40 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', margin: '0 0 14px' }}>🧠 The Right Mindset</h2>
           <p style={{ color: '#475569', lineHeight: 1.7, margin: 0, fontSize: 16 }}>
-            <strong>Recruiting isn't selling.</strong> You're inviting people to see something that helps them.
+            <strong>Recruiting isn't selling.</strong> You’re inviting people to see something that helps them.
             Lead with curiosity, not pitch. The moment it feels like a sales call, they tune out.
             One mention, one follow-up — then let it go.
           </p>
@@ -83,7 +83,7 @@ export default function PartnerProspectingScriptGuide() {
                 onClick={() => setSelected(s.id)}
                 style={{
                   background: selected === s.id ? '#0f172a' : '#f1f5f9',
-                  color: selected === s.id ? '#f1f5f9' : '#334155',
+                  color: selected === s.id ? '#f1f5f9′ : '#334155',
                   border: 'none',
                   borderRadius: 10,
                   padding: '14px 20px',
@@ -120,7 +120,7 @@ export default function PartnerProspectingScriptGuide() {
               { bad: 'Don’t quote specific dollar amounts without context', reason: '"I made $4,200 last month" without context sounds unrealistic.' },
               { bad: 'Don’t push after one "no"', reason: 'One mention, one follow-up. Then let it go. Pressure destroys trust.' },
             ].map(item => (
-              <div key={item.bad} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', borderLeft: '3px solid #ef4444' }}>
+              <div key={item.bad} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', borderLeft: '3px solid #ef4444′ }}>
                 <div style={{ color: '#991b1b', fontWeight: 700, marginBottom: 4 }}>✗ {item.bad}</div>
                 <div style={{ color: '#64748b', fontSize: 14 }}>{item.reason}</div>
               </div>
@@ -137,7 +137,7 @@ export default function PartnerProspectingScriptGuide() {
             </p>
           </div>
           <p style={{ color: '#94a3b8', fontSize: 13, marginTop: 12 }}>
-            One follow-up. If they're interested, they'll respond. If not, move on. Your time is valuable.
+            One follow-up. If they're interested, they’ll respond. If not, move on. Your time is valuable.
           </p>
         </div>
 

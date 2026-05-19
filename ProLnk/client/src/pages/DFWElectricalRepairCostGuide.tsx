@@ -7,7 +7,7 @@ const SERVICES: Record<string, { label: string; lowSm: number; highSm: number; l
   rewire: { label: 'Whole-Home Rewire', lowSm: 8000, highSm: 12000, lowLg: 14000, highLg: 20000, permitRequired: true, permitCost: '$300–$600', emergency: 1.0, description: 'Aluminum wiring (common in 1965–1973 DFW homes) poses fire risk — rewire is required' },
   ev_charger: { label: 'EV Charger Installation (Level 2)', lowSm: 400, highSm: 800, lowLg: 600, highLg: 1200, permitRequired: true, permitCost: '$75–$175', emergency: 1.2, description: 'Includes dedicated 240V circuit; price varies by panel distance' },
   ceiling_fan: { label: 'Ceiling Fan / Light Fixture', lowSm: 100, highSm: 200, lowLg: 100, highLg: 250, permitRequired: false, permitCost: 'N/A', emergency: 1.5, description: 'Standard replacement; more if box needs upgrade for fan weight' },
-  smoke: { label: 'Smoke / CO Detector Wiring', lowSm: 150, highSm: 400, lowLg: 200, highLg: 500, permitRequired: false, permitCost: 'N/A', emergency: 1.4, description: 'Hardwired interconnected detectors required in all DFW new builds since 2015' },
+  smoke: { label: 'Smoke / CO Detector Wiring', lowSm: 150, highSm: 400, lowLg: 200, highLg: 500, permitRequired: false, permitCost: 'N/A', emergency: 1.4, description: 'Hardwired interconnected detectors required in all DFW new builds since 2015′ },
 };
 
 const DFW_CITIES: Record<string, string> = {
@@ -37,9 +37,9 @@ export default function DFWElectricalRepairCostGuide() {
   const pill = (label: string, val: string, current: string, set: (v: string) => void) => (
     <button key={val} onClick={() => set(val)} style={{
       padding: '8px 16px', borderRadius: 20, border: '2px solid',
-      borderColor: current === val ? '#F5E642' : '#2A3A5C',
-      background: current === val ? '#F5E642' : 'transparent',
-      color: current === val ? '#0A1628' : '#CBD5E1',
+      borderColor: current === val ? '#F5E642′ : '#2A3A5C',
+      background: current === val ? '#F5E642′ : ’transparent',
+      color: current === val ? '#0A1628′ : '#CBD5E1',
       cursor: 'pointer', fontWeight: 600, fontSize: 13, margin: '4px 6px 4px 0'
     }}>{label}</button>
   );
@@ -50,7 +50,7 @@ export default function DFWElectricalRepairCostGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME SERVICES GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F1F5F9', margin: '0 0 8px' }}>DFW Electrical Repair Cost Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.7 }}>
-          From outlet swaps to full panel upgrades, electrical costs in DFW depend on your home size, city permit fees, and whether it's an emergency. <strong style={{ color: '#F5E642' }}>Never skip the permit</strong> — unpermitted electrical work can void homeowner's insurance.
+          From outlet swaps to full panel upgrades, electrical costs in DFW depend on your home size, city permit fees, and whether it's an emergency. <strong style={{ color: '#F5E642' }}>Never skip the permit</strong> — unpermitted electrical work can void homeowner’s insurance.
         </p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
@@ -60,9 +60,9 @@ export default function DFWElectricalRepairCostGuide() {
               {Object.entries(SERVICES).map(([key, s]) => (
                 <button key={key} onClick={() => setServiceType(key)} style={{
                   padding: '12px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: serviceType === key ? '#F5E642' : '#2A3A5C',
-                  background: serviceType === key ? '#1a1500' : '#0A1628',
-                  color: serviceType === key ? '#F5E642' : '#CBD5E1',
+                  borderColor: serviceType === key ? '#F5E642′ : '#2A3A5C',
+                  background: serviceType === key ? '#1a1500′ : '#0A1628',
+                  color: serviceType === key ? '#F5E642′ : '#CBD5E1',
                   cursor: 'pointer', textAlign: 'left',
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center'
                 }}>
@@ -96,7 +96,7 @@ export default function DFWElectricalRepairCostGuide() {
             <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 16 }}>{result.service.description}</p>
             {result.service.permitRequired && (
               <div style={{ background: '#1a1500', borderRadius: 8, padding: 14, border: '1px solid #F5E642', marginBottom: 16 }}>
-                <strong style={{ color: '#F5E642' }}>📋 Permit Required:</strong>
+                <strong style={{ color: '#F5E642′ }}>📋 Permit Required:</strong>
                 <span style={{ color: '#CBD5E1', fontSize: 14 }}> {result.service.permitCost} in most DFW cities. Ensure your electrician pulls the permit — not you — so they're liable for passing inspection.</span>
               </div>
             )}

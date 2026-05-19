@@ -78,7 +78,7 @@ export default function DFWFoundationNewConstruction2026() {
           </div>
         </div>
 
-        <div style={{ background: '#2d1515', borderRadius: 12, padding: 16, marginBottom: 20, border: '1px solid #ef4444' }}>
+        <div style={{ background: '#2d1515', borderRadius: 12, padding: 16, marginBottom: 20, border: '1px solid #ef4444′ }}>
           <div style={{ color: '#ef4444', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>⚠️ DFW-SPECIFIC WARNING</div>
           <p style={{ color: '#cbd5e1', fontSize: 13, margin: 0, lineHeight: 1.6 }}>{current.warning}</p>
         </div>

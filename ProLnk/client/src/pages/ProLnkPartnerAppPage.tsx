@@ -66,8 +66,8 @@ export default function ProLnkPartnerAppPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {incomeProfiles.map((p, i) => (
               <button key={i} onClick={() => setSelected(i)} style={{
-                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '1px solid #1e3a5f',
-                background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
+                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '1px solid #1e3a5f',
+                background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{p.level}</button>
             ))}
@@ -83,7 +83,7 @@ export default function ProLnkPartnerAppPage() {
                 </div>
               </div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.8, marginBottom: 12 }}>{incomeProfiles[selected].insight}</div>
-              <div style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 8, padding: 14, fontSize: 13, color: '#94a3b8' }}>{incomeProfiles[selected].tip}</div>
+              <div style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 8, padding: 14, fontSize: 13, color: '#94a3b8′ }}>{incomeProfiles[selected].tip}</div>
             </div>
           )}
         </div>

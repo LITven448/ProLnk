@@ -19,13 +19,13 @@ export default function DFWHomeApplianceLifeExpectancy2026() {
     const ageNum = parseInt(age);
     if (!a || isNaN(ageNum)) return;
     if (ageNum < a.min * 0.6) {
-      setResult({ status: 'Good Shape', action: 'Perform routine maintenance. Schedule annual inspection to maximize lifespan.', color: '#22cc66' });
+      setResult({ status: 'Good Shape', action: 'Perform routine maintenance. Schedule annual inspection to maximize lifespan.', color: '#22cc66′ });
     } else if (ageNum < a.min) {
-      setResult({ status: 'Mid-Life', action: `Budget for replacement in ${a.min - ageNum}-${a.max - ageNum} years. ${a.note}`, color: '#F5E642' });
+      setResult({ status: 'Mid-Life', action: `Budget for replacement in ${a.min - ageNum}-${a.max - ageNum} years. ${a.note}`, color: '#F5E642′ });
     } else if (ageNum <= a.max) {
-      setResult({ status: 'End of Life Zone', action: `Start replacement planning now. Average lifespan: ${a.min}-${a.max} yrs. ${a.note}`, color: '#ff8800' });
+      setResult({ status: 'End of Life Zone', action: `Start replacement planning now. Average lifespan: ${a.min}-${a.max} yrs. ${a.note}`, color: '#ff8800′ });
     } else {
-      setResult({ status: 'Overdue for Replacement', action: `Past expected lifespan. Risk of failure increases rapidly. ${a.note}`, color: '#ff4444' });
+      setResult({ status: 'Overdue for Replacement', action: `Past expected lifespan. Risk of failure increases rapidly. ${a.note}`, color: '#ff4444′ });
     }
   };
 

@@ -64,7 +64,7 @@ export default function DFWOpenFloorPlanGuide() {
           Open Floor Plan Guide for DFW Homes
         </h1>
         <p style={{ fontSize: 17, color: '#9BB0CC', lineHeight: 1.7, marginBottom: 40, maxWidth: 680 }}>
-          DFW's entertaining culture and indoor-outdoor lifestyle make open floor plans the #1 requested remodel. Here's what it actually takes to open up your home — structurally, legally, and financially.
+          DFW's entertaining culture and indoor-outdoor lifestyle make open floor plans the #1 requested remodel. Here’s what it actually takes to open up your home — structurally, legally, and financially.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
@@ -98,8 +98,8 @@ export default function DFWOpenFloorPlanGuide() {
                   cursor: 'pointer',
                   fontWeight: 700,
                   fontSize: 14,
-                  background: selected === l.id ? '#F5E642' : 'rgba(255,255,255,0.1)',
-                  color: selected === l.id ? '#0A1628' : '#ccc',
+                  background: selected === l.id ? '#F5E642′ : ’rgba(255,255,255,0.1)',
+                  color: selected === l.id ? '#0A1628′ : '#ccc',
                   transition: 'all 0.2s',
                 }}
               >
@@ -133,7 +133,7 @@ export default function DFWOpenFloorPlanGuide() {
           </div>
         </div>
 
-        <div style={{ padding: '20px 24px', background: 'rgba(255,255,255,0.05)', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ padding: '20px 24px', background: 'rgba(255,255,255,0.05)', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🏢 Kitchen Island as Divider</div>
           <p style={{ fontSize: 14, color: '#9BB0CC', margin: 0, lineHeight: 1.6 }}>
             The most DFW-popular alternative to fully opening walls: extend the kitchen island 8–12 feet to visually separate spaces without structural changes. Adds seating, storage, and definition — for $6,000–$14,000 vs a $25,000 structural open.

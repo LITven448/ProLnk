@@ -152,7 +152,7 @@ export default function PartnerCommunityBuilding() {
   const plan = key && plans[key] ? plans[key] : null;
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🤝</div>
@@ -206,7 +206,7 @@ export default function PartnerCommunityBuilding() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {teamSizes.map(t => (
                 <button key={t.key} onClick={() => setTeamSize(t.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: teamSize === t.key ? '#F5E642' : '#E5E7EB', backgroundColor: teamSize === t.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: teamSize === t.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: teamSize === t.key ? '#F5E642′ : '#E5E7EB', backgroundColor: teamSize === t.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: teamSize === t.key ? 700 : 400 }}>
                   {t.label}
                 </button>
               ))}
@@ -217,7 +217,7 @@ export default function PartnerCommunityBuilding() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {cultureGoals.map(g => (
                 <button key={g.key} onClick={() => setCultureGoal(g.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: cultureGoal === g.key ? '#F5E642' : '#E5E7EB', backgroundColor: cultureGoal === g.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: cultureGoal === g.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: cultureGoal === g.key ? '#F5E642′ : '#E5E7EB', backgroundColor: cultureGoal === g.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: cultureGoal === g.key ? 700 : 400 }}>
                   {g.label}
                 </button>
               ))}
@@ -240,12 +240,12 @@ export default function PartnerCommunityBuilding() {
                 <p style={{ fontWeight: 700, fontSize: 13, color: '#0A1628', marginBottom: 8 }}>🛠️ Tools Needed</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                   {plan.tools.map(tool => (
-                    <span key={tool} style={{ padding: '4px 10px', backgroundColor: '#F3F4F6', borderRadius: 20, fontSize: 12, color: '#374151' }}>{tool}</span>
+                    <span key={tool} style={{ padding: '4px 10px', backgroundColor: '#F3F4F6', borderRadius: 20, fontSize: 12, color: '#374151′ }}>{tool}</span>
                   ))}
                 </div>
               </div>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>
-                <p style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, margin: '0 0 4px 0' }}>⏱️ Time Investment</p>
+                <p style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, margin: '0 0 4px 0′ }}>⏱️ Time Investment</p>
                 <p style={{ fontSize: 13, color: '#D1D5DB', margin: 0 }}>{plan.timeEstimate}</p>
               </div>
             </div>

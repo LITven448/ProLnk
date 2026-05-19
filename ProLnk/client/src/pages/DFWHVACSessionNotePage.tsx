@@ -46,7 +46,7 @@ export default function DFWHVACSessionNotePage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.25rem' }}>
             {audiences.map(a => (
               <button key={a.id} onClick={() => setSelected(a.id)}
-                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === a.id ? '#F5E642' : '#1E3A5F', background: selected === a.id ? '#1a2f50' : 'transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
+                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === a.id ? '#F5E642′ : '#1E3A5F', background: selected === a.id ? '#1a2f50' : ’transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
                 {a.label}
               </button>
             ))}
@@ -58,7 +58,7 @@ export default function DFWHVACSessionNotePage() {
         </div>
 
         {note && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.75rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.75rem', borderLeft: '4px solid #F5E642′ }}>
             <p style={{ fontSize: '1rem', lineHeight: 1.85, color: '#E8EEF4', margin: '0 0 1.25rem' }}>{note}</p>
             <div style={{ borderTop: '1px solid #1E3A5F', paddingTop: '1.25rem' }}>
               <p style={{ color: '#F5E642', fontWeight: 700, margin: '0 0 0.25rem' }}>— The ProLnk Team</p>

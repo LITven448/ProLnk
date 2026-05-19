@@ -60,7 +60,7 @@ export default function DFWHVACDFWFuture2026() {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginBottom: 36 }}>
           {futures.map(f => (
-            <button key={f.id} onClick={() => setSelected(f.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === f.id ? '#F5E642' : '#1E3A5F', backgroundColor: selected === f.id ? '#F5E642' : '#0F2340', color: selected === f.id ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>{f.label}</button>
+            <button key={f.id} onClick={() => setSelected(f.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === f.id ? '#F5E642′ : '#1E3A5F', backgroundColor: selected === f.id ? '#F5E642' : '#0F2340', color: selected === f.id ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>{f.label}</button>
           ))}
         </div>
 
@@ -70,7 +70,7 @@ export default function DFWHVACDFWFuture2026() {
             <span style={{ backgroundColor: '#1E3A5F', color: '#94A3B8', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 20, whiteSpace: 'nowrap' }}>📅 {active.timeline}</span>
           </div>
           <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>{active.description}</p>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: '20px 24px', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: '20px 24px', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', marginBottom: 8 }}>What to Do Now</div>
             <p style={{ color: '#E2E8F0', margin: 0, fontSize: 15, lineHeight: 1.6 }}>{active.doNow}</p>
           </div>
@@ -86,7 +86,7 @@ export default function DFWHVACDFWFuture2026() {
           ))}
         </div>
 
-        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 10 }}>Be Ready for the Future of DFW HVAC</div>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Join ProLnk now — free for homeowners. Get early access to AI matching, Vault integration, and vetted pros.</p>
           <a href="https://prolnk.io" style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '14px 32px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 16 }}>Join ProLnk — It's Free</a>

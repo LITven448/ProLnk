@@ -32,13 +32,13 @@ export default function DFWHowLongToSaveForDown2026() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>Monthly Savings Amount</label>
               <input type="range" min={200} max={5000} step={100} value={monthlySavings} onChange={e => setMonthlySavings(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>${monthlySavings.toLocaleString()}/mo</div>
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>DFW Target Price</label>
               <input type="range" min={200000} max={700000} step={10000} value={pricePoint} onChange={e => setPricePoint(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>${(pricePoint / 1000).toFixed(0)}K</div>
             </div>
           </div>

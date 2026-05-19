@@ -27,7 +27,7 @@ export default function DFWCoolingDegreeGuide() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚡ What Is a Cooling Degree Day?</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚡ What Is a Cooling Degree Day?</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>
             A CDD measures how much and for how long outdoor temperatures exceed 65°F. One CDD = one day where the average temp is 66°F. When DFW hits 95°F for a week, that's 30 CDDs — meaning your AC works nearly 3× harder than a home in Portland experiencing the same week.
           </p>
@@ -40,7 +40,7 @@ export default function DFWCoolingDegreeGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏠 Estimate Your Annual Cooling Cost</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Home Size</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Home Size</label>
               <select value={homeSize} onChange={e => setHomeSize(e.target.value)}
                 style={{ background: '#0A1628', color: '#E8EAF0', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', fontSize: 15, width: '100%' }}>
                 <option value="small">Small (&lt;1,500 sq ft)</option>
@@ -49,17 +49,17 @@ export default function DFWCoolingDegreeGuide() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>DFW CDDs This Year: <strong style={{ color: '#F5E642' }}>{cdds}</strong></label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>DFW CDDs This Year: <strong style={{ color: '#F5E642' }}>{cdds}</strong></label>
               <input type="range" min={2600} max={3400} step={50} value={cdds} onChange={e => setCdds(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#64748B', marginTop: 4 }}>
                 <span>Cool year (2,600)</span><span>Hot year (3,400)</span>
               </div>
             </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #F5E642' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${annualCost}</div>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #F5E642′ }}>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${annualCost}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Your DFW Annual Cooling Cost</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #1E3A5F' }}>

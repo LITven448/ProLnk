@@ -14,8 +14,8 @@ const GROUND_COVERS = [
 ];
 
 const AGE_GROUPS = [
-  { label: 'Toddlers (2–4)', equipment: 'Low slide, sensory panels, spring riders, sandbox — max 24" deck height' },
-  { label: 'Preschool (3–5)', equipment: 'Slides up to 36", small climbing wall, playhouse, swings with bucket seats' },
+  { label: 'Toddlers (2–4)', equipment: 'Low slide, sensory panels, spring riders, sandbox — max 24″ deck height' },
+  { label: 'Preschool (3–5)', equipment: 'Slides up to 36″, small climbing wall, playhouse, swings with bucket seats' },
   { label: 'Elementary (5–12)', equipment: 'Full slide, rope ladder, monkey bars, 2-3 swings, rockwall, overhead bars' },
   { label: 'Mixed Ages (2–12)', equipment: 'Multi-deck structure with graduated challenges — separate toddler bay recommended' },
 ];
@@ -69,7 +69,7 @@ export default function DFWPlaygroundInstallGuide() {
                 <span style={{ fontWeight: 700 }}>{e.label}</span>
                 <span style={{ color: '#F5E642', fontSize: 13 }}>${e.costLow.toLocaleString()}–${e.costHigh.toLocaleString()}</span>
               </div>
-              <div style={{ color: e.id === 'metal' ? '#fca5a5' : '#94a3b8', fontSize: 13 }}>{e.note}</div>
+              <div style={{ color: e.id === 'metal' ? '#fca5a5′ : '#94a3b8', fontSize: 13 }}>{e.note}</div>
             </div>
           ))}
         </div>
@@ -98,14 +98,14 @@ export default function DFWPlaygroundInstallGuide() {
             ))}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-            <input type="checkbox" id="shade" checked={hasShade} onChange={e => setHasShade(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+            <input type="checkbox" id="shade" checked={hasShade} onChange={e => setHasShade(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
             <label htmlFor="shade" style={{ color: '#cbd5e1', cursor: 'pointer' }}>I already have adequate shade coverage over this area</label>
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 800, cursor: 'pointer', width: '100%', fontSize: 16 }}>
             Build My Cost Estimate
           </button>
           {showResult && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642′ }}>
               <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642', marginBottom: 8 }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>{equipment.label} structure + {groundCover.label} ({yardSqft} sqft){!hasShade ? ' + shade sail/pergola (~$2,800)' : ''}.</div>
               {metalWarning && <div style={{ color: '#ef4444', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🚨 Metal structure without shade — DO NOT install until shade is in place. Burn risk is severe.</div>}
@@ -120,12 +120,12 @@ export default function DFWPlaygroundInstallGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {[
               'Shade covers all play surfaces before first use',
-              'Ground cover is 12" deep under slides and swings',
+              'Ground cover is 12″ deep under slides and swings',
               'No equipment within 6 ft of fences or walls',
               'All hardware is stainless or galvanized (humidity)',
               'Check surface temps before letting kids play',
               'Annual inspection — DFW freeze/thaw loosens hardware',
-              'Anchor posts 24"+ deep in DFW clay soil',
+              'Anchor posts 24″+ deep in DFW clay soil',
               'Permit check: most cities require if over 200 sqft',
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', background: '#0A1628', borderRadius: 8, padding: 10 }}>

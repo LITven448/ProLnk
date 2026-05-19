@@ -72,7 +72,7 @@ export default function DFWHVACStormDamage() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>🌪️ Select Storm Type</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.75rem' }}>
             {stormTypes.map((s, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642' : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'center', transition: 'all 0.2s' }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642′ : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'center', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: '1.5rem' }}>{s.icon}</div>
                 <div style={{ marginTop: '0.25rem' }}>{s.name}</div>
               </button>
@@ -80,7 +80,7 @@ export default function DFWHVACStormDamage() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '2rem' }}>{storm.icon}</span>
             <h2 style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700 }}>{storm.name}</h2>
@@ -102,7 +102,7 @@ export default function DFWHVACStormDamage() {
 
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ backgroundColor: '#1A2E4A', border: '1px solid #F5E642', borderRadius: '8px', padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
-              <span style={{ color: '#94A3B8' }}>Recommended action: </span>
+              <span style={{ color: '#94A3B8′ }}>Recommended action: </span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{storm.repairVsInsurance}</span>
             </div>
           </div>

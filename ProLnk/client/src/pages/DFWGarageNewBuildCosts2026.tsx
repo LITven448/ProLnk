@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 export default function DFWGarageNewBuildCosts2026() {
-  const [garageType, setGarageType] = useState<'detached2' | 'detached3' | 'carport'>('detached2');
+  const [garageType, setGarageType] = useState<'detached2′ | ’detached3′ | ’carport'>('detached2');
   const [foundation, setFoundation] = useState<'slab' | 'pier'>('slab');
 
   const costs: Record<string, Record<string, string>> = {
-    detached2: { slab: '$40,000–$55,000', pier: '$45,000–$62,000' },
-    detached3: { slab: '$55,000–$75,000', pier: '$60,000–$82,000' },
-    carport: { slab: '$8,000–$15,000', pier: '$10,000–$18,000' },
+    detached2: { slab: '$40,000–$55,000', pier: '$45,000–$62,000′ },
+    detached3: { slab: '$55,000–$75,000', pier: '$60,000–$82,000′ },
+    carport: { slab: '$8,000–$15,000', pier: '$10,000–$18,000′ },
   };
 
   return (
@@ -23,8 +23,8 @@ export default function DFWGarageNewBuildCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Structure Type</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {(['detached2', 'detached3', 'carport'] as const).map(g => (
-                <button key={g} onClick={() => setGarageType(g)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: garageType === g ? '#F5E642' : '#1e2d45', color: garageType === g ? '#0A1628' : '#fff', fontWeight: 600 }}>
-                  {g === 'detached2' ? 'Detached 2-Car' : g === 'detached3' ? 'Detached 3-Car' : 'Carport Only'}
+                <button key={g} onClick={() => setGarageType(g)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: garageType === g ? '#F5E642′ : '#1e2d45', color: garageType === g ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                  {g === 'detached2′ ? ’Detached 2-Car' : g === 'detached3′ ? ’Detached 3-Car' : 'Carport Only'}
                 </button>
               ))}
             </div>
@@ -33,7 +33,7 @@ export default function DFWGarageNewBuildCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Foundation Type (DFW clay matters)</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['slab', 'pier'] as const).map(f => (
-                <button key={f} onClick={() => setFoundation(f)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: foundation === f ? '#F5E642' : '#1e2d45', color: foundation === f ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                <button key={f} onClick={() => setFoundation(f)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: foundation === f ? '#F5E642′ : '#1e2d45', color: foundation === f ? '#0A1628' : '#fff', fontWeight: 600 }}>
                   {f === 'slab' ? 'Concrete Slab' : 'Pier & Beam'}
                 </button>
               ))}
@@ -41,7 +41,7 @@ export default function DFWGarageNewBuildCosts2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Estimated DFW Cost</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{costs[garageType][foundation]}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{costs[garageType][foundation]}</div>
             <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>Includes electrical rough-in. Finishing interior adds cost.</div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function DFWGarageNewBuildCosts2026() {
             <div key={c.title} style={{ background: '#111e33', borderRadius: 10, padding: 18 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 600, marginBottom: 6 }}>{c.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{c.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{c.desc}</div>
             </div>
           ))}
         </div>

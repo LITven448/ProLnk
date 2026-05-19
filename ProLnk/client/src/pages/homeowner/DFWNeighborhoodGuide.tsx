@@ -80,20 +80,20 @@ export default function DFWNeighborhoodGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 48 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
             <thead>
-              <tr style={{ background: '#0F2033' }}>
+              <tr style={{ background: '#0F2033′ }}>
                 <th style={{ padding: '14px 16px', textAlign: 'left', fontSize: 13, color: '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Suburb</th>
-                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'homeValue' ? '#3B82F6' : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Avg Home Value</th>
-                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'school' ? '#3B82F6' : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>School Rating</th>
-                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'commute' ? '#3B82F6' : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Commute (min)</th>
-                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'tax' ? '#3B82F6' : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Tax Rate</th>
-                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'maintenance' ? '#3B82F6' : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Maintenance</th>
+                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'homeValue' ? '#3B82F6′ : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Avg Home Value</th>
+                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'school' ? '#3B82F6′ : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>School Rating</th>
+                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'commute' ? '#3B82F6′ : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Commute (min)</th>
+                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'tax' ? '#3B82F6′ : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Tax Rate</th>
+                <th style={{ padding: '14px 16px', textAlign: 'right', fontSize: 13, color: sortBy === 'maintenance' ? '#3B82F6′ : '#64748B', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>Maintenance</th>
               </tr>
             </thead>
             <tbody>
               {sorted.map((suburb, i) => (
                 <tr
                   key={suburb.name}
-                  style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? '#0F2033' : '#0A1628' }}
+                  style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? '#0F2033′ : '#0A1628' }}
                 >
                   <td style={{ padding: '14px 16px', fontWeight: 700, color: '#F8FAFC', fontSize: 15 }}>{suburb.name}</td>
                   <td style={{ padding: '14px 16px', textAlign: 'right', color: '#94A3B8', fontWeight: 600 }}>

@@ -109,8 +109,8 @@ export default function DFWProActionPlanToday2026() {
               ].map(o => (
                 <button key={o.v} onClick={() => setTrade(o.v)}
                   style={{ padding: '14px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: trade === o.v ? '#F5E642' : '#1e3a5f',
-                    backgroundColor: trade === o.v ? '#F5E64220' : '#0d1f3c',
+                    borderColor: trade === o.v ? '#F5E642′ : '#1e3a5f',
+                    backgroundColor: trade === o.v ? '#F5E64220′ : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -127,8 +127,8 @@ export default function DFWProActionPlanToday2026() {
               ].map(o => (
                 <button key={o.v} onClick={() => setExperience(o.v)}
                   style={{ flex: 1, padding: '14px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: experience === o.v ? '#F5E642' : '#1e3a5f',
-                    backgroundColor: experience === o.v ? '#F5E64220' : '#0d1f3c',
+                    borderColor: experience === o.v ? '#F5E642′ : '#1e3a5f',
+                    backgroundColor: experience === o.v ? '#F5E64220′ : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -138,7 +138,7 @@ export default function DFWProActionPlanToday2026() {
         </div>
 
         {steps && (
-          <div style={{ backgroundColor: '#0d1f3c', borderRadius: 12, padding: 24, border: '1px solid #F5E64240' }}>
+          <div style={{ backgroundColor: '#0d1f3c', borderRadius: 12, padding: 24, border: '1px solid #F5E64240′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>⚡ Your Priority Action List</h2>
             {steps.map((step, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, padding: '12px 0', borderBottom: i < steps.length - 1 ? '1px solid #1e3a5f' : 'none' }}>
@@ -149,7 +149,7 @@ export default function DFWProActionPlanToday2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 24, textAlign: 'center', border: '1px solid #F5E64240' }}>
+        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 24, textAlign: 'center', border: '1px solid #F5E64240′ }}>
           <div style={{ fontSize: 32 }}>🚀</div>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, margin: '8px 0 4px' }}>500 Charter Slots — Filling Fast</p>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>$149/mo locked for life. Highest lead priority. Maximum network income potential.</p>

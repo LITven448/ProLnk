@@ -49,9 +49,9 @@ export default function DFWRoofingLifecycleCost2026() {
               key={key}
               onClick={() => setBudget(key)}
               style={{
-                backgroundColor: budget === key ? '#F5E642' : '#1e293b',
-                color: budget === key ? '#0A1628' : '#fff',
-                border: '2px solid' + (budget === key ? ' #F5E642' : ' #334155'),
+                backgroundColor: budget === key ? '#F5E642′ : '#1e293b',
+                color: budget === key ? '#0A1628′ : '#fff',
+                border: '2px solid' + (budget === key ? ' #F5E642′ : ' #334155'),
                 borderRadius: '10px',
                 padding: '1.2rem 0.8rem',
                 cursor: 'pointer',
@@ -71,18 +71,18 @@ export default function DFWRoofingLifecycleCost2026() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: '0.3rem' }}>UPFRONT COST</div>
-                <div style={{ fontSize: '1.1rem', fontWeight: '700' }}>{result.upfront}</div>
+                <div style={{ fontSize: '1.1rem', fontWeight: '700′ }}>{result.upfront}</div>
               </div>
               <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: '0.3rem' }}>DFW LIFESPAN</div>
-                <div style={{ fontSize: '1.1rem', fontWeight: '700' }}>{result.lifespan}</div>
+                <div style={{ fontSize: '1.1rem', fontWeight: '700′ }}>{result.lifespan}</div>
               </div>
             </div>
             <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', marginBottom: '1rem' }}>
               <div style={{ color: '#F5E642', fontSize: '0.8rem', marginBottom: '0.3rem' }}>50-YEAR TOTAL COST</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: '700' }}>{result.total50}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: '700′ }}>{result.total50}</div>
             </div>
-            <p style={{ margin: 0, lineHeight: '1.6', fontSize: '0.9rem', color: '#cbd5e1' }}>{result.notes}</p>
+            <p style={{ margin: 0, lineHeight: '1.6', fontSize: '0.9rem', color: '#cbd5e1′ }}>{result.notes}</p>
           </div>
         )}
 

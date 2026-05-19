@@ -54,7 +54,7 @@ export default function HomeValuationComparison() {
           <div style={{ fontSize: 24, marginBottom: 8 }}>⚠️</div>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#93c5fd', marginTop: 0, marginBottom: 8 }}>Why This Matters in DFW</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: '0 0 12px' }}>
-            Your Zillow estimate and your appraisal could differ by <strong style={{ color: '#f1f5f9' }}>$30,000–$80,000</strong> in DFW.
+            Your Zillow estimate and your appraisal could differ by <strong style={{ color: '#f1f5f9′ }}>$30,000–$80,000</strong> in DFW.
             The right tool depends entirely on your purpose.
           </p>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0, fontSize: 14 }}>
@@ -77,9 +77,9 @@ export default function HomeValuationComparison() {
                   <span style={{ fontSize: 13, color: '#60a5fa', background: '#1e3a5f', padding: '3px 10px', borderRadius: 20, flexShrink: 0, marginLeft: 8 }}>{tool.cost}</span>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13 }}>
-                  <div><span style={{ color: '#64748b' }}>Accuracy: </span><span style={{ color: '#94a3b8' }}>{tool.accuracy}</span></div>
-                  <div><span style={{ color: '#64748b' }}>Notes: </span><span style={{ color: '#94a3b8' }}>{tool.error}</span></div>
-                  <div style={{ gridColumn: 'span 2' }}><span style={{ color: '#64748b' }}>Best for: </span><span style={{ color: '#e2e8f0' }}>{tool.use}</span></div>
+                  <div><span style={{ color: '#64748b' }}>Accuracy: </span><span style={{ color: '#94a3b8′ }}>{tool.accuracy}</span></div>
+                  <div><span style={{ color: '#64748b' }}>Notes: </span><span style={{ color: '#94a3b8′ }}>{tool.error}</span></div>
+                  <div style={{ gridColumn: 'span 2′ }}><span style={{ color: '#64748b' }}>Best for: </span><span style={{ color: '#e2e8f0' }}>{tool.use}</span></div>
                 </div>
               </div>
             ))}
@@ -93,7 +93,7 @@ export default function HomeValuationComparison() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 8, marginBottom: 24 }}>
             {purposes.map(p => (
               <button key={p.id} onClick={() => setSelectedPurpose(p.id === selectedPurpose ? null : p.id)}
-                style={{ padding: '12px 14px', borderRadius: 8, border: '2px solid', borderColor: selectedPurpose === p.id ? '#3b82f6' : '#2d3748', background: selectedPurpose === p.id ? '#1e3a5f' : '#0f1117', color: selectedPurpose === p.id ? '#93c5fd' : '#94a3b8', cursor: 'pointer', fontSize: 14, fontWeight: 600, textAlign: 'left' }}>
+                style={{ padding: '12px 14px', borderRadius: 8, border: '2px solid', borderColor: selectedPurpose === p.id ? '#3b82f6′ : '#2d3748', background: selectedPurpose === p.id ? '#1e3a5f' : '#0f1117', color: selectedPurpose === p.id ? '#93c5fd' : '#94a3b8', cursor: ’pointer', fontSize: 14, fontWeight: 600, textAlign: 'left' }}>
                 {p.label}
               </button>
             ))}

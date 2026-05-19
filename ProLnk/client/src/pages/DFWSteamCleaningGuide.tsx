@@ -41,14 +41,14 @@ export default function DFWSteamCleaningGuide() {
             { label: '🛋️ Upholstery', desc: 'DFW spring pollen embeds in upholstery — professional low-moisture cleaning protects fabric integrity.' },
             { label: '🛏️ Mattress', desc: 'DFW allergy season = dust mite and pollen accumulation. Annual mattress extraction makes a measurable difference.' },
           ].map(c => (
-            <div key={c.label} style={{ background: '#111E35', borderRadius: 10, padding: '1.25rem', border: '1px solid #1E3050' }}>
+            <div key={c.label} style={{ background: '#111E35', borderRadius: 10, padding: '1.25rem', border: '1px solid #1E3050′ }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.label}</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', lineHeight: 1.5 }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1rem' }}>🔬 Professional vs Rental: The DFW Case</h2>
           <div style={{ display: 'grid', gap: '1rem' }}>
             {[{ title: 'Water Temperature', body: 'Professional truck-mounted machines reach 200–250°F. Rental machines: 120–150°F. Temperature is the primary variable that kills dust mites and breaks down DFW clay-soil dirt.' },
@@ -63,7 +63,7 @@ export default function DFWSteamCleaningGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem' }}>🔍 Service Frequency Recommender</h2>
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.25rem' }}>
             {[['Home Size', HOME_SIZES, size, setSize], ['Surfaces to Clean', SURFACES, surfaces, setSurfaces], ['Allergy Sensitivity', ALLERGY_LEVELS, allergy, setAllergy]].map(([label, opts, val, setter]: any) => (
@@ -77,7 +77,7 @@ export default function DFWSteamCleaningGuide() {
             ))}
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ Recommended Frequency: {rec.frequency}</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', marginBottom: 4 }}>Estimated Cost: {rec.cost}</div>
               <div style={{ color: '#F5E642', fontSize: '0.9rem', marginBottom: 8 }}>Service Mode: {rec.mode}</div>
@@ -86,7 +86,7 @@ export default function DFWSteamCleaningGuide() {
           )}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>📋 Hiring a DFW Cleaning Company</h2>
           {['Look for IICRC certification — Institute of Inspection, Cleaning and Restoration Certification',
             'Confirm truck-mounted equipment (not portable machines) for carpet and tile extraction',

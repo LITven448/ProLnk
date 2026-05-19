@@ -62,7 +62,7 @@ export default function DFWHVACHeatPumpBalance2026() {
         <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>❄️ DFW Balance Point Basics</div>
           <p style={{ color: '#cbd5e1', margin: 0 }}>
-            DFW balance points typically fall between <strong style={{ color: '#F5E642' }}>30–40°F</strong>. Most winters you'll hit this temperature 10–15 nights. Dual fuel systems handle it automatically — pure heat pumps rely on backup resistance heat.
+            DFW balance points typically fall between <strong style={{ color: '#F5E642′ }}>30–40°F</strong>. Most winters you’ll hit this temperature 10–15 nights. Dual fuel systems handle it automatically — pure heat pumps rely on backup resistance heat.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function DFWHVACHeatPumpBalance2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)}
-              style={{ background: selected === s.id ? '#F5E642' : '#1e293b', color: selected === s.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === s.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+              style={{ background: selected === s.id ? '#F5E642′ : '#1e293b', color: selected === s.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === s.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: ’pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{s.label}</div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>{s.desc}</div>
             </button>
@@ -78,12 +78,12 @@ export default function DFWHVACHeatPumpBalance2026() {
         </div>
 
         {selected && guideMap[selected] && (
-          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>{guideMap[selected].title}</h3>
             <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
               {guideMap[selected].points.map((p, i) => (
                 <li key={i} style={{ padding: '0.5rem 0', borderBottom: '1px solid #334155', color: '#cbd5e1', display: 'flex', gap: '0.5rem' }}>
-                  <span style={{ color: '#F5E642' }}>✓</span>{p}
+                  <span style={{ color: '#F5E642′ }}>✓</span>{p}
                 </li>
               ))}
             </ul>

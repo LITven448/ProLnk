@@ -17,7 +17,7 @@ export default function DFWHVACCoolSeasonGuide2026() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1 }}>DFW HOME SERVICES · 2026 GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6 }}>❄️ DFW HVAC Cooling Season Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.7 }}>
-          DFW runs AC from <strong style={{ color: '#F5E642' }}>March through November</strong> — roughly 9 months per year.
+          DFW runs AC from <strong style={{ color: '#F5E642′ }}>March through November</strong> — roughly 9 months per year.
           That's 2–3× more run hours than northern US markets, which is why DFW systems wear out faster and need more frequent maintenance.
         </p>
 
@@ -31,7 +31,7 @@ export default function DFWHVACCoolSeasonGuide2026() {
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 2 }}>{s.label}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
             </div>
           ))}
         </div>
@@ -44,8 +44,8 @@ export default function DFWHVACCoolSeasonGuide2026() {
               <div style={{ fontWeight: 600 }}>{h.label}</div>
               {selected === i && (
                 <div style={{ marginTop: 10, color: '#94a3b8', lineHeight: 1.7, fontSize: 14 }}>
-                  <div>📊 <strong style={{ color: '#F5E642' }}>CDDs:</strong> {h.cdds.toLocaleString()} per year</div>
-                  <div>⏱️ <strong style={{ color: '#F5E642' }}>Est. run hours:</strong> {h.hours.toLocaleString()} per year</div>
+                  <div>📊 <strong style={{ color: '#F5E642′ }}>CDDs:</strong> {h.cdds.toLocaleString()} per year</div>
+                  <div>⏱️ <strong style={{ color: '#F5E642′ }}>Est. run hours:</strong> {h.hours.toLocaleString()} per year</div>
                   <div style={{ marginTop: 6 }}>💡 {h.note}</div>
                 </div>
               )}
@@ -53,7 +53,7 @@ export default function DFWHVACCoolSeasonGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>📅 DFW Maintenance Schedule</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.8 }}>
             <div>🔧 <strong style={{ color: '#fff' }}>February:</strong> Pre-season tune-up before March heat arrives</div>

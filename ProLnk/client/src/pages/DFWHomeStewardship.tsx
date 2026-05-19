@@ -61,8 +61,8 @@ export default function DFWHomeStewardship() {
               key={p.id}
               onClick={() => setSelected(p.id)}
               style={{
-                backgroundColor: selected === p.id ? '#0A1628' : '#e2e8f0',
-                color: selected === p.id ? '#F5E642' : '#0A1628',
+                backgroundColor: selected === p.id ? '#0A1628′ : '#e2e8f0',
+                color: selected === p.id ? '#F5E642′ : '#0A1628',
                 border: 'none',
                 borderRadius: 10,
                 padding: '14px 10px',

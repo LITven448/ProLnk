@@ -23,7 +23,7 @@ export default function DFWHVACHeatPumpFuture() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {[
-            { icon: '🏗️', stat: '40%', label: 'of new DFW builds offered all-electric in 2025' },
+            { icon: '🏗️', stat: '40%', label: 'of new DFW builds offered all-electric in 2025′ },
             { icon: '⚡', stat: '30%', label: 'federal tax credit on heat pump installation' },
             { icon: '📈', stat: '3–7%', label: 'resale premium for all-electric DFW homes' },
             { icon: '🌡️', stat: '5°F', label: 'min temp where 2026 heat pumps stay efficient' },
@@ -40,14 +40,14 @@ export default function DFWHVACHeatPumpFuture() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>🏠 What's Your DFW Situation?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
             {situations.map(s => (
-              <button key={s.key} onClick={() => setSelected(s.key)} style={{ background: selected === s.key ? '#F5E642' : '#1a3a5c', color: selected === s.key ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s.label}</button>
+              <button key={s.key} onClick={() => setSelected(s.key)} style={{ background: selected === s.key ? '#F5E642′ : '#1a3a5c', color: selected === s.key ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s.label}</button>
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>📊 {match.impact}</div>
               <div style={{ color: '#e2e8f0', marginBottom: '0.75rem', lineHeight: 1.6 }}>{match.detail}</div>
-              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>✅ Action: <span style={{ color: '#F5E642' }}>{match.action}</span></div>
+              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>✅ Action: <span style={{ color: '#F5E642′ }}>{match.action}</span></div>
             </div>
           )}
         </div>

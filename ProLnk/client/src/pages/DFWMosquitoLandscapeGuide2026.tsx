@@ -29,17 +29,17 @@ export default function DFWMosquitoLandscapeGuide2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '16px', marginBottom: '24px' }}>
-          <p style={{ margin: 0, color: '#F5E642' }}>⚡ DFW Key Fact: Eliminating standing water is 10x more effective than any plant. Empty saucers, bird baths, and gutters every 7 days — mosquitoes breed in as little as 1 inch of water.</p>
+          <p style={{ margin: 0, color: '#F5E642′ }}>⚡ DFW Key Fact: Eliminating standing water is 10x more effective than any plant. Empty saucers, bird baths, and gutters every 7 days — mosquitoes breed in as little as 1 inch of water.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '28px' }}>
           {plants.map(p => (
-            <div key={p.name} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050' }}>
+            <div key={p.name} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050′ }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{p.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '6px' }}>{p.name}</div>
               <div style={{ fontSize: '0.8rem', color: '#8899aa', marginBottom: '4px' }}>🌡️ {p.hardiness}</div>
               <div style={{ fontSize: '0.8rem', color: '#8899aa', marginBottom: '4px' }}>💧 {p.water}</div>
-              <div style={{ fontSize: '0.8rem', color: '#F5E642' }}>📍 {p.note}</div>
+              <div style={{ fontSize: '0.8rem', color: '#F5E642′ }}>📍 {p.note}</div>
             </div>
           ))}
         </div>
@@ -55,7 +55,7 @@ export default function DFWMosquitoLandscapeGuide2026() {
               <option value="small">Small yard or patio only</option>
             </select>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '6px' }}>{plan.plan}</div>
             <div style={{ color: '#8899aa', fontSize: '0.85rem', marginBottom: '4px' }}>🌿 Plants: {plan.plants}</div>
             <div style={{ color: '#ccc', fontSize: '0.9rem' }}>{plan.note}</div>

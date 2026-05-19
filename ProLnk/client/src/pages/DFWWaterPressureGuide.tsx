@@ -43,7 +43,7 @@ export default function DFWWaterPressureGuide() {
   }
 
   const psi = parseInt(psiReading);
-  const psiStatus = !psiReading ? null : psi < 40 ? { label: 'Too Low', color: '#3b82f6' } : psi > 80 ? { label: 'Too High', color: '#ef4444' } : { label: 'Normal Range', color: '#22c55e' };
+  const psiStatus = !psiReading ? null : psi < 40 ? { label: 'Too Low', color: '#3b82f6′ } : psi > 80 ? { label: ’Too High', color: '#ef4444′ } : { label: ’Normal Range', color: '#22c55e' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -67,7 +67,7 @@ export default function DFWWaterPressureGuide() {
               placeholder="Enter PSI reading"
               style={{ flex: 1, padding: '0.75rem', borderRadius: '8px', background: '#0A1628', border: '1px solid #334155', color: '#fff', fontSize: '1rem' }}
             />
-            <span style={{ color: '#94a3b8' }}>PSI</span>
+            <span style={{ color: '#94a3b8′ }}>PSI</span>
           </div>
           {psiStatus && (
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '0.75rem 1rem', border: `2px solid ${psiStatus.color}`, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -83,7 +83,7 @@ export default function DFWWaterPressureGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Pressure symptom:</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'high', label: '💥 Pressure too high' }, { key: 'low', label: '🌧️ Pressure too low' }].map(opt => (
-              <button key={opt.key} onClick={() => setSymptom(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: symptom === opt.key ? '#F5E642' : '#334155', background: symptom === opt.key ? '#F5E642' : 'transparent', color: symptom === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={opt.key} onClick={() => setSymptom(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: symptom === opt.key ? '#F5E642′ : '#334155', background: symptom === opt.key ? '#F5E642' : ’transparent', color: symptom === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -91,7 +91,7 @@ export default function DFWWaterPressureGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Where is it happening?</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'whole', label: '🏠 Whole house' }, { key: 'single', label: '🚿 Single fixture' }].map(opt => (
-              <button key={opt.key} onClick={() => setLocation(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: location === opt.key ? '#F5E642' : '#334155', background: location === opt.key ? '#F5E642' : 'transparent', color: location === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={opt.key} onClick={() => setLocation(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: location === opt.key ? '#F5E642′ : '#334155', background: location === opt.key ? '#F5E642' : ’transparent', color: location === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -103,14 +103,14 @@ export default function DFWWaterPressureGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <div style={{ background: result.diy ? '#064e3b' : '#1e3a5f', borderRadius: '8px', padding: '0.6rem 1rem', display: 'inline-block', marginBottom: '1rem', color: result.diy ? '#6ee7b7' : '#93c5fd', fontWeight: 700 }}>
+            <div style={{ background: result.diy ? '#064e3b' : '#1e3a5f', borderRadius: '8px', padding: '0.6rem 1rem', display: 'inline-block', marginBottom: '1rem', color: result.diy ? '#6ee7b7′ : '#93c5fd', fontWeight: 700 }}>
               {result.diy ? '✅ DIY Fix Available' : '🔧 Plumber Recommended'}
             </div>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🔎 Likely Cause</div>
-              <div style={{ color: '#cbd5e1' }}>{result.cause}</div>
+              <div style={{ color: '#cbd5e1′ }}>{result.cause}</div>
             </div>
-            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0' }}>
+            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0′ }}>
               {result.steps.map((s, i) => <li key={i}>{s}</li>)}
             </ol>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>

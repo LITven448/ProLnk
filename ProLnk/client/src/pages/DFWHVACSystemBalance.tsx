@@ -4,7 +4,7 @@ const balanceConcepts = [
   { id: 'pressure', icon: '⚖️', name: 'Air Pressure Balance', desc: 'Each room should be at neutral pressure — air enters and leaves at equal rates.', dfwNote: 'In DFW’s sealed homes, pressure imbalance worsens summer infiltration of hot humid air through wall cracks.' },
   { id: 'airflow', icon: '💨', name: 'Airflow Distribution', desc: 'Each room receives CFM airflow proportional to its size and heat load.', dfwNote: 'DFW west-facing rooms gain 40% more solar heat load — they need proportionally more supply airflow than north rooms.' },
   { id: 'zoning', icon: '🗺️', name: 'Zone Balance', desc: 'Multi-zone systems must balance damper positions to prevent over-conditioning one area.', dfwNote: 'Single-zone DFW systems almost always over-cool common areas while upstairs bedrooms stay hot in July-August.' },
-  { id: 'static', icon: '📊', name: 'Static Pressure', desc: 'Total external static pressure (TESP) must stay within equipment rating or airflow degrades.', dfwNote: 'High-efficiency filters in DFW homes often push TESP above 0.5" WC — killing system capacity when it’s needed most.' },
+  { id: 'static', icon: '📊', name: 'Static Pressure', desc: 'Total external static pressure (TESP) must stay within equipment rating or airflow degrades.', dfwNote: 'High-efficiency filters in DFW homes often push TESP above 0.5″ WC — killing system capacity when it’s needed most.' },
 ];
 
 const symptoms = [
@@ -63,7 +63,7 @@ export default function DFWHVACSystemBalance() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {balanceConcepts.map(b => (
             <button key={b.id} onClick={() => setActiveConcept(activeConcept === b.id ? null : b.id)}
-              style={{ background: activeConcept === b.id ? '#F5E642' : '#0F2140', border: `2px solid ${activeConcept === b.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: 'pointer', textAlign: 'left', color: activeConcept === b.id ? '#0A1628' : '#E8EDF5' }}>
+              style={{ background: activeConcept === b.id ? '#F5E642′ : '#0F2140', border: `2px solid ${activeConcept === b.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: ’pointer', textAlign: 'left', color: activeConcept === b.id ? '#0A1628′ : '#E8EDF5' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{b.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{b.name}</div>
             </button>
@@ -86,13 +86,13 @@ export default function DFWHVACSystemBalance() {
           {symptoms.map((s, i) => (
             <div key={i} onClick={() => setActiveSymptom(activeSymptom === i ? null : i)}
               style={{ background: '#0F2140', border: `1px solid ${activeSymptom === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
-              <div style={{ fontWeight: 600, color: activeSymptom === i ? '#F5E642' : '#E8EDF5' }}>"{s.symptom}"</div>
+              <div style={{ fontWeight: 600, color: activeSymptom === i ? '#F5E642′ : '#E8EDF5' }}>"{s.symptom}"</div>
               {activeSymptom === i && (
                 <div style={{ marginTop: '0.75rem', fontSize: '0.9rem', lineHeight: 1.6 }}>
                   <div style={{ color: '#CBD5E1', marginBottom: '0.75rem' }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Diagnosis: </span>{s.diagnosis}</div>
                   <div style={{ marginBottom: '0.5rem', color: '#F5E642', fontWeight: 700 }}>Solutions:</div>
                   {s.solutions.map((sol, j) => <div key={j} style={{ color: '#94A3B8', paddingLeft: '1rem', marginBottom: '0.25rem' }}>• {sol}</div>)}
-                  <div style={{ marginTop: '0.75rem', color: '#F5E642', fontWeight: 600 }}>Estimated Cost: <span style={{ color: '#E8EDF5' }}>{s.cost}</span></div>
+                  <div style={{ marginTop: '0.75rem', color: '#F5E642', fontWeight: 600 }}>Estimated Cost: <span style={{ color: '#E8EDF5′ }}>{s.cost}</span></div>
                 </div>
               )}
             </div>

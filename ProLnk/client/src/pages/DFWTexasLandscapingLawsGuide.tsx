@@ -4,20 +4,20 @@ type LandscapePlan = 'Food Garden' | 'Native Plants / Xeriscaping' | 'Tree Remov
 type DFWCity = 'Dallas' | 'Fort Worth' | 'Plano' | 'Frisco' | 'Arlington' | 'McKinney' | 'Denton' | 'Irving';
 
 const cityRules: Record<DFWCity, { treePermit: string; waterCollect: string; hoaOverride: string; note: string }> = {
-  Dallas: { treePermit: 'Required for trees >8" diameter or protected species', waterCollect: 'Legal up to 2 first-flush barrels (no permit)', hoaOverride: 'TX HB 1572 overrides HOA bans on drought-tolerant plants', note: 'Dallas Tree Preservation Ordinance: violations up to $2,000/tree' },
+  Dallas: { treePermit: 'Required for trees >8″ diameter or protected species', waterCollect: 'Legal up to 2 first-flush barrels (no permit)', hoaOverride: 'TX HB 1572 overrides HOA bans on drought-tolerant plants', note: 'Dallas Tree Preservation Ordinance: violations up to $2,000/tree' },
   'Fort Worth': { treePermit: 'Required for any Heritage Tree removal', waterCollect: 'Legal — no permit, no limit per TX Water Code', hoaOverride: 'TX law protects drought-tolerant and native plantings from HOA bans', note: 'Heritage Trees: post oak, live oak, pecan — cannot remove without city approval' },
-  Plano: { treePermit: 'Any tree >6" diameter in development zones', waterCollect: 'Permitted — no limit, must be covered containers', hoaOverride: 'TX Right to Garden applies — HOA cannot ban vegetable gardens', note: 'Plano Urban Forest Master Plan — strict canopy preservation' },
-  Frisco: { treePermit: 'Required for trees >8" in front yard', waterCollect: 'Legal — encourage with rebate through NTMWD', hoaOverride: 'HOA may regulate aesthetics but cannot prohibit food gardens', note: 'Fast-growing city — check latest ordinance at friscotexas.gov' },
-  Arlington: { treePermit: 'Protected trees include all >12" diameter', waterCollect: 'Legal, no permit, covered containers required', hoaOverride: 'TX law applies — food gardens and native plants protected', note: 'Arlington Tree City USA — canopy replacement required for large removals' },
+  Plano: { treePermit: 'Any tree >6″ diameter in development zones', waterCollect: 'Permitted — no limit, must be covered containers', hoaOverride: 'TX Right to Garden applies — HOA cannot ban vegetable gardens', note: 'Plano Urban Forest Master Plan — strict canopy preservation' },
+  Frisco: { treePermit: 'Required for trees >8″ in front yard', waterCollect: 'Legal — encourage with rebate through NTMWD', hoaOverride: 'HOA may regulate aesthetics but cannot prohibit food gardens', note: 'Fast-growing city — check latest ordinance at friscotexas.gov' },
+  Arlington: { treePermit: 'Protected trees include all >12″ diameter', waterCollect: 'Legal, no permit, covered containers required', hoaOverride: 'TX law applies — food gardens and native plants protected', note: 'Arlington Tree City USA — canopy replacement required for large removals' },
   McKinney: { treePermit: 'Heritage Trees protected — permit required', waterCollect: 'Legal, no permit needed per TX water law', hoaOverride: 'TX HB 1572 limits HOA restrictions on native/drought-tolerant plants', note: 'McKinney Tree Mitigation: replacement ratio 2:1 for protected trees' },
-  Denton: { treePermit: 'Trees >6" in right-of-way require permit', waterCollect: 'Strongly encouraged — no permit, no limit', hoaOverride: 'TX Right to Garden Act covers food and native plants', note: 'Denton is progressive on sustainability — fewer restrictions than most DFW cities' },
-  Irving: { treePermit: 'Significant trees: >8" require permit', waterCollect: 'Legal per state law, containers must be covered', hoaOverride: 'HOA rules subject to TX state landscaping laws', note: 'Irving has historic tree ordinance covering specific protected species' },
+  Denton: { treePermit: 'Trees >6″ in right-of-way require permit', waterCollect: 'Strongly encouraged — no permit, no limit', hoaOverride: 'TX Right to Garden Act covers food and native plants', note: 'Denton is progressive on sustainability — fewer restrictions than most DFW cities' },
+  Irving: { treePermit: 'Significant trees: >8″ require permit', waterCollect: 'Legal per state law, containers must be covered', hoaOverride: 'HOA rules subject to TX state landscaping laws', note: 'Irving has historic tree ordinance covering specific protected species' },
 };
 
 const legalStatus: Record<LandscapePlan, { status: string; color: string; detail: string; hoaRisk: string }> = {
   'Food Garden': { status: 'PROTECTED BY TX LAW', color: '#22C55E', detail: 'Texas Right to Garden (SB 198, 2021) — HOAs cannot prohibit edible gardens. Must meet basic aesthetic standards.', hoaRisk: 'Low — TX law overrides HOA bans. Document and cite SB 198 if challenged.' },
   'Native Plants / Xeriscaping': { status: 'PROTECTED BY TX LAW', color: '#22C55E', detail: 'TX HB 1572 prohibits HOA bans on drought-tolerant and native plants effective 2021. City water departments encourage xeriscape.', hoaRisk: 'Low — state protected. HOA may regulate layout/design but not prohibit natives.' },
-  'Tree Removal': { status: 'PERMIT REQUIRED', color: '#FF8C00', detail: 'Most DFW cities require permits for trees over 6–12" diameter. Heritage/protected tree removal may require replacement plantings.', hoaRisk: 'Medium — HOA plus city approval often both required.' },
+  'Tree Removal': { status: 'PERMIT REQUIRED', color: '#FF8C00', detail: 'Most DFW cities require permits for trees over 6–12″ diameter. Heritage/protected tree removal may require replacement plantings.', hoaRisk: 'Medium — HOA plus city approval often both required.' },
   'Rainwater Collection': { status: 'LEGAL STATEWIDE', color: '#22C55E', detail: 'Texas Water Code Sec. 26.0011: rainwater harvesting is legal statewide. No permit required. Containers must be covered to prevent mosquito breeding.', hoaRisk: 'Low — HOAs cannot legally prohibit per TX water law. Ground-level cisterns may need aesthetic screening.' },
   'Gravel / Hardscape': { status: 'CHECK CITY', color: '#F5E642', detail: 'Impervious cover limits vary by city. Dallas limits front yard hardscape to 30%. Stormwater runoff rules apply. DFW-wide: gravel counts toward impervious surface.', hoaRisk: 'High — HOAs frequently regulate hardscape materials, colors, and coverage percentages.' },
   'Lawn Alternative': { status: 'GENERALLY LEGAL', color: '#22C55E', detail: 'Ground covers like clover, buffalo grass, or mulch are legal alternatives. TX Right to Garden and HB 1572 protect most alternatives. Some cities require maintenance standards.', hoaRisk: 'Medium — depends on HOA rules. "Maintained appearance" standard often applies.' },
@@ -95,9 +95,9 @@ export default function DFWTexasLandscapingLawsGuide() {
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>🏛️ {city}-Specific Rules</h3>
               <div style={{ display: 'grid', gap: 10 }}>
-                <div style={{ color: '#AAB8C2' }}>🌳 <strong>Tree Permits:</strong> {cityRule.treePermit}</div>
-                <div style={{ color: '#AAB8C2' }}>💧 <strong>Water Collection:</strong> {cityRule.waterCollect}</div>
-                <div style={{ color: '#AAB8C2' }}>🏡 <strong>HOA Override:</strong> {cityRule.hoaOverride}</div>
+                <div style={{ color: '#AAB8C2′ }}>🌳 <strong>Tree Permits:</strong> {cityRule.treePermit}</div>
+                <div style={{ color: '#AAB8C2′ }}>💧 <strong>Water Collection:</strong> {cityRule.waterCollect}</div>
+                <div style={{ color: '#AAB8C2′ }}>🏡 <strong>HOA Override:</strong> {cityRule.hoaOverride}</div>
                 <div style={{ color: '#8899AA', fontSize: 13, marginTop: 4, padding: '10px 12px', background: '#0A1628', borderRadius: 8 }}>📌 {cityRule.note}</div>
               </div>
             </div>

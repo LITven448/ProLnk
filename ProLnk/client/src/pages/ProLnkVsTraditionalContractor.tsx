@@ -54,8 +54,8 @@ export default function ProLnkVsTraditionalContractor() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 48 }}>
-          <div style={{ background: '#0d1f3c', borderRadius: 16, padding: 28, border: '2px solid #F5E642' }}>
-            <div style={{ fontSize: 22, marginBottom: 12, fontWeight: 800, color: '#F5E642' }}>✅ Using ProLnk</div>
+          <div style={{ background: '#0d1f3c', borderRadius: 16, padding: 28, border: '2px solid #F5E642′ }}>
+            <div style={{ fontSize: 22, marginBottom: 12, fontWeight: 800, color: '#F5E642′ }}>✅ Using ProLnk</div>
             {[
               'Partner license verified before match',
               'Insurance certificate confirmed',
@@ -67,12 +67,12 @@ export default function ProLnkVsTraditionalContractor() {
               'Re-match protection if partner fails',
             ].map((item) => (
               <div key={item} style={{ fontSize: 14, color: '#ccc', marginBottom: 8, display: 'flex', gap: 8 }}>
-                <span style={{ color: '#F5E642' }}>•</span> {item}
+                <span style={{ color: '#F5E642′ }}>•</span> {item}
               </div>
             ))}
           </div>
-          <div style={{ background: '#0d1f3c', borderRadius: 16, padding: 28, border: '2px solid #444' }}>
-            <div style={{ fontSize: 22, marginBottom: 12, fontWeight: 800, color: '#888' }}>⚠️ Calling Directly</div>
+          <div style={{ background: '#0d1f3c', borderRadius: 16, padding: 28, border: '2px solid #444′ }}>
+            <div style={{ fontSize: 22, marginBottom: 12, fontWeight: 800, color: '#888′ }}>⚠️ Calling Directly</div>
             {[
               'License status unknown — you must verify',
               'Insurance must be requested manually',
@@ -84,19 +84,19 @@ export default function ProLnkVsTraditionalContractor() {
               'No guarantee of response or follow-through',
             ].map((item) => (
               <div key={item} style={{ fontSize: 14, color: '#888', marginBottom: 8, display: 'flex', gap: 8 }}>
-                <span style={{ color: '#555' }}>•</span> {item}
+                <span style={{ color: '#555′ }}>•</span> {item}
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#0d1f3c', borderRadius: 16, padding: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>📋 Your Project Type</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>📋 Your Project Type</h2>
           <p style={{ color: '#888', fontSize: 15, marginBottom: 20 }}>See how ProLnk compares to calling contractors directly — for your specific job.</p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {projects.map((p, i) => (
-              <button key={p.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '2px solid #1e3a5f', background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#ccc', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
+              <button key={p.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '2px solid #1e3a5f', background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#ccc', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
                 {p.icon} {p.label}
               </button>
             ))}
@@ -104,16 +104,16 @@ export default function ProLnkVsTraditionalContractor() {
 
           {selected !== null && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <div style={{ background: '#0A1628', borderRadius: 12, padding: 18, border: '1px solid #F5E642' }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#F5E642' }}>✅ ProLnk Experience</div>
+              <div style={{ background: '#0A1628', borderRadius: 12, padding: 18, border: '1px solid #F5E642′ }}>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#F5E642′ }}>✅ ProLnk Experience</div>
                 <div style={{ color: '#ccc', fontSize: 14, lineHeight: 1.6 }}>{projects[selected].prolnk}</div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 12, padding: 18, border: '1px solid #444' }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#888' }}>⚠️ Traditional Experience</div>
+              <div style={{ background: '#0A1628', borderRadius: 12, padding: 18, border: '1px solid #444′ }}>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#888′ }}>⚠️ Traditional Experience</div>
                 <div style={{ color: '#888', fontSize: 14, lineHeight: 1.6 }}>{projects[selected].traditional}</div>
               </div>
               <div style={{ background: '#112240', borderRadius: 12, padding: 18 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#64b5f6' }}>💡 Specific Benefits for This Project</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#64b5f6′ }}>💡 Specific Benefits for This Project</div>
                 <div style={{ color: '#aaa', fontSize: 14, lineHeight: 1.6 }}>{projects[selected].benefits}</div>
               </div>
             </div>

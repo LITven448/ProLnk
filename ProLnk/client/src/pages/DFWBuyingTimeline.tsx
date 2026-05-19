@@ -97,7 +97,7 @@ export default function DFWBuyingTimeline() {
   };
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DFW BUYER EDUCATION</div>
@@ -105,7 +105,7 @@ export default function DFWBuyingTimeline() {
           <p style={{ color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>From "thinking about it" to moved in — a complete 9-month DFW buying roadmap. Enter your target move-in date to get personalized deadlines.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 28, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 28, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>📅 Get Your Personalized Timeline</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 16 }}>Enter when you want to be moved in — we'll work backward to give you deadlines for each phase.</p>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end' }}>
@@ -139,7 +139,7 @@ export default function DFWBuyingTimeline() {
                     </div>
                   ))}
                 </div>
-                <div style={{ background: '#f0f9ff', borderRadius: 8, padding: '10px 14px', border: '1px solid #bae6fd', fontSize: 13, color: '#0369a1' }}>
+                <div style={{ background: '#f0f9ff', borderRadius: 8, padding: '10px 14px', border: '1px solid #bae6fd', fontSize: 13, color: '#0369a1′ }}>
                   💡 {phase.tip}
                 </div>
               </div>

@@ -43,12 +43,12 @@ export default function DFWProLnkGreenPartner() {
               onClick={() => setSelected(g.id)}
               style={{
                 background: selected === g.id ? 'rgba(245,230,66,0.12)' : 'rgba(255,255,255,0.05)',
-                border: selected === g.id ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)',
+                border: selected === g.id ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 10, padding: '1rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '1rem',
               }}
             >
               <span style={{ fontSize: 28 }}>{g.icon}</span>
-              <span style={{ fontWeight: selected === g.id ? 700 : 500, color: selected === g.id ? '#F5E642' : '#fff' }}>{g.label}</span>
+              <span style={{ fontWeight: selected === g.id ? 700 : 500, color: selected === g.id ? '#F5E642′ : '#fff' }}>{g.label}</span>
             </div>
           ))}
         </div>
@@ -60,7 +60,7 @@ export default function DFWProLnkGreenPartner() {
               <div style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: 6 }}>Contractor types ProLnk matches for this goal:</div>
               <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 {goal.contractors.map(c => (
-                  <span key={c} style={{ background: 'rgba(245,230,66,0.12)', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 8, padding: '0.3rem 0.7rem', fontSize: '0.82rem', color: '#F5E642' }}>{c}</span>
+                  <span key={c} style={{ background: 'rgba(245,230,66,0.12)', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 8, padding: '0.3rem 0.7rem', fontSize: '0.82rem', color: '#F5E642′ }}>{c}</span>
                 ))}
               </div>
             </div>

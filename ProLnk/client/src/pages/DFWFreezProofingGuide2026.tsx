@@ -54,7 +54,7 @@ export default function DFWFreezProofingGuide2026() {
         <div style={{ background: '#132035', borderRadius: 10, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🧊 DFW Freeze Key Facts</div>
           {['Uri caused $195B in damage — 65% of DFW homes were unprepared','Pier & beam pipes freeze in under 4 hours at 20°F — insulate first','Freeze-protection thermostats cost $150-300 and prevent $20K+ pipe repairs','Smart shutoff sensors let you cut water remotely if pipes burst','Gas shutoff wrench costs $12 — keep one accessible at the meter'].map((f,i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
           ))}
         </div>
       </div>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const repairSizes = [
-  { label: 'Nail/screw hole', size: 'Under 1"', diy: true, diyCost: '$5–$15', proCost: '$75–$150', time: '1 hour' },
-  { label: 'Small hole', size: '1"–3"', diy: true, diyCost: '$10–$30', proCost: '$100–$200', time: '2–3 hours' },
-  { label: 'Medium hole', size: '3"–6"', diy: true, diyCost: '$20–$50', proCost: '$150–$350', time: '4–6 hours' },
-  { label: 'Large hole', size: '6"–12"', diy: false, diyCost: '$40–$80', proCost: '$250–$600', time: '1 day' },
+  { label: 'Nail/screw hole', size: 'Under 1″', diy: true, diyCost: '$5–$15', proCost: '$75–$150', time: '1 hour' },
+  { label: 'Small hole', size: '1″–3″', diy: true, diyCost: '$10–$30', proCost: '$100–$200', time: '2–3 hours' },
+  { label: 'Medium hole', size: '3″–6″', diy: true, diyCost: '$20–$50', proCost: '$150–$350', time: '4–6 hours' },
+  { label: 'Large hole', size: '6″–12″', diy: false, diyCost: '$40–$80', proCost: '$250–$600', time: '1 day' },
   { label: 'Full wall section', size: '1–4 ft', diy: false, diyCost: '$80–$200', proCost: '$400–$900', time: '1–2 days' },
   { label: 'Full wall replacement', size: '4+ ft', diy: false, diyCost: '$150–$400', proCost: '$700–$2,000', time: '2–4 days' },
 ];
@@ -33,7 +33,7 @@ export default function DFWDrywallRepairGuide() {
           Dallas–Fort Worth 2026 pricing for drywall repair — small holes to full wall replacement, DFW humidity effects, texture matching, and DIY vs pro guidance.
         </p>
 
-        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontSize: 20, marginBottom: 4 }}>💧 DFW Humidity &amp; Drywall</div>
           <p style={{ color: '#C8D4E8', margin: 0, lineHeight: 1.6 }}>
             DFW's humidity swings — from 20% in winter to 80%+ in summer — cause drywall to expand and contract. This creates nail pops, hairline cracks at corners, and tape seam bubbling. These are cosmetic issues, not structural, and are extremely common in DFW homes regardless of age. Joint compound should be applied in thin coats and allowed to fully dry before sanding, especially in humid summer months.
@@ -58,13 +58,13 @@ export default function DFWDrywallRepairGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div style={{ backgroundColor: match.diy ? '#0A2B1A' : '#2B0A0A', borderRadius: 10, padding: 20, borderLeft: `4px solid ${match.diy ? '#22C55E' : '#EF4444'}` }}>
                 <div style={{ fontSize: 13, color: '#A0ADBF', marginBottom: 4 }}>DIY RECOMMENDATION</div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: match.diy ? '#22C55E' : '#EF4444' }}>{match.diy ? '✅ DIY Feasible' : '⛔ Hire a Pro'}</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: match.diy ? '#22C55E' : '#EF4444′ }}>{match.diy ? '✅ DIY Feasible' : '⛔ Hire a Pro'}</div>
                 <div style={{ color: '#C8D4E8', fontSize: 13, marginTop: 6 }}>DIY materials: {match.diyCost}</div>
                 <div style={{ color: '#A0ADBF', fontSize: 12, marginTop: 4 }}>Time: {match.time}</div>
               </div>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20 }}>
                 <div style={{ fontSize: 13, color: '#A0ADBF', marginBottom: 4 }}>PRO COST IN DFW</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{match.proCost}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{match.proCost}</div>
                 <div style={{ color: '#C8D4E8', fontSize: 13, marginTop: 6 }}>Includes patch, texture match, prime, paint-ready finish</div>
               </div>
             </div>
@@ -75,19 +75,19 @@ export default function DFWDrywallRepairGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ backgroundColor: '#1A2E50' }}>
+              <tr style={{ backgroundColor: '#1A2E50′ }}>
                 {['Damage Type', 'Size', 'DIY Material Cost', 'Pro Cost (DFW)', 'Completion Time'].map((h) => (
-                  <th key={h} style={{ padding: '12px 14px', textAlign: 'left', color: '#F5E642' }}>{h}</th>
+                  <th key={h} style={{ padding: '12px 14px', textAlign: 'left', color: '#F5E642′ }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {repairSizes.map((row, i) => (
-                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38' : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
+                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38′ : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
                   <td style={{ padding: '11px 14px', color: '#FFFFFF', fontWeight: 600 }}>{row.label}</td>
-                  <td style={{ padding: '11px 14px', color: '#C8D4E8' }}>{row.size}</td>
-                  <td style={{ padding: '11px 14px', color: '#C8D4E8' }}>{row.diyCost}</td>
-                  <td style={{ padding: '11px 14px', color: '#F5E642' }}>{row.proCost}</td>
+                  <td style={{ padding: '11px 14px', color: '#C8D4E8′ }}>{row.size}</td>
+                  <td style={{ padding: '11px 14px', color: '#C8D4E8′ }}>{row.diyCost}</td>
+                  <td style={{ padding: '11px 14px', color: '#F5E642′ }}>{row.proCost}</td>
                   <td style={{ padding: '11px 14px', color: '#A0ADBF' }}>{row.time}</td>
                 </tr>
               ))}

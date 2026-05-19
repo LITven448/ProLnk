@@ -53,7 +53,7 @@ export default function DFWRoofingFinalReferenceCard() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
           {sections.map(sec => (
-            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155' }}>
+            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', gap: '8px' }}>
                 <span style={{ fontSize: '20px' }}>{sec.emoji}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '14px' }}>{sec.title}</span>

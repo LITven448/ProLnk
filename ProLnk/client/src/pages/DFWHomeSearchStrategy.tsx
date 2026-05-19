@@ -67,8 +67,8 @@ export default function DFWHomeSearchStrategy() {
         <div style={{ background: '#1A2B3C', color: '#F8F6F1', borderRadius: 6, padding: 24 }}>
           <h3 style={{ margin: '0 0 16px', fontSize: 16 }}>🔑 Universal DFW Search Rules</h3>
           {['Search 10% above your true budget max — leaves negotiation room','New listing alerts beat price-reduction alerts in hot submarkets','Always verify the school district directly — boundaries shift annually','A house sitting 21+ days almost always has a reason — ask before offering'].map(rule => (
-            <div key={rule} style={{ display: 'flex', gap: 12, marginBottom: 10, fontSize: 14, color: '#CBD5E0' }}>
-              <span style={{ color: '#F5E642' }}>→</span><span>{rule}</span>
+            <div key={rule} style={{ display: 'flex', gap: 12, marginBottom: 10, fontSize: 14, color: '#CBD5E0′ }}>
+              <span style={{ color: '#F5E642′ }}>→</span><span>{rule}</span>
             </div>
           ))}
         </div>

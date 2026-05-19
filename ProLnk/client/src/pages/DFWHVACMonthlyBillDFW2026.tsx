@@ -54,7 +54,7 @@ export default function DFWHVACMonthlyBillDFW2026() {
             style={{ width: '100%', marginBottom: 16 }} />
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: 14, backgroundColor: hasMerv13 ? '#1a2d50' : '#0d1c33', borderRadius: 8, border: hasMerv13 ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: 14, backgroundColor: hasMerv13 ? '#1a2d50′ : '#0d1c33', borderRadius: 8, border: hasMerv13 ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
               <input type='checkbox' checked={hasMerv13} onChange={e => setHasMerv13(e.target.checked)} />
               <span>
                 <strong>MERV-13 Filter</strong>
@@ -62,7 +62,7 @@ export default function DFWHVACMonthlyBillDFW2026() {
               </span>
             </label>
 
-            <label style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: 14, backgroundColor: hasVariableSpeed ? '#1a2d50' : '#0d1c33', borderRadius: 8, border: hasVariableSpeed ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: 14, backgroundColor: hasVariableSpeed ? '#1a2d50′ : '#0d1c33', borderRadius: 8, border: hasVariableSpeed ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
               <input type='checkbox' checked={hasVariableSpeed} onChange={e => setHasVariableSpeed(e.target.checked)} />
               <span>
                 <strong>Variable Speed System</strong>
@@ -72,10 +72,10 @@ export default function DFWHVACMonthlyBillDFW2026() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
           <div style={{ fontSize: 36 }}>💡</div>
           <p style={{ color: '#94a3b8', marginBottom: 4 }}>Estimated New Monthly Bill</p>
-          <p style={{ fontSize: 42, fontWeight: 700, color: '#F5E642', margin: '4px 0' }}>${Math.round(newBill)}</p>
+          <p style={{ fontSize: 42, fontWeight: 700, color: '#F5E642', margin: '4px 0′ }}>${Math.round(newBill)}</p>
           <p style={{ color: '#4ade80', fontSize: 18 }}>Save ${Math.round(totalSavings)}/mo · ${Math.round(annualSavings)}/yr</p>
           <div style={{ marginTop: 20 }}>
             <a href='https://prolnk.io' style={{ display: 'inline-block', backgroundColor: '#F5E642', color: '#0A1628', padding: '12px 28px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>

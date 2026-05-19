@@ -76,8 +76,8 @@ export default function DFWJobRelocationHomeGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {timelines.map(t => (
             <button key={t.id} onClick={() => setSelected(t.id)} style={{
-              background: selected === t.id ? '#F5E642' : '#1e3a5f',
-              color: selected === t.id ? '#0A1628' : '#fff',
+              background: selected === t.id ? '#F5E642′ : '#1e3a5f',
+              color: selected === t.id ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 10, padding: '14px 16px',
               cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left'
             }}>{t.label}</button>
@@ -92,7 +92,7 @@ export default function DFWJobRelocationHomeGuide2026() {
             </ul>
             <div style={{ marginTop: 20, background: '#162944', borderRadius: 8, padding: 14 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 DFW Tip: </span>
-              <span style={{ color: '#94a3b8' }}>{guides[selected].tip}</span>
+              <span style={{ color: '#94a3b8′ }}>{guides[selected].tip}</span>
             </div>
           </div>
         )}

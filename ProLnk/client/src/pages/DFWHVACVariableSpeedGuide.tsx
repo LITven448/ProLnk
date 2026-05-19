@@ -51,7 +51,7 @@ const comparison = [
   { label: 'Noise', single: 'Noticeable', variable: 'Very quiet' },
   { label: 'Energy use', single: 'Baseline', variable: '20–30% less' },
   { label: 'DFW summer performance', single: 'Adequate', variable: 'Optimal' },
-  { label: 'Cost premium', single: '$0', variable: '+$800–$1,500' },
+  { label: 'Cost premium', single: '$0', variable: '+$800–$1,500′ },
 ];
 
 export default function DFWHVACVariableSpeedGuide() {
@@ -73,7 +73,7 @@ export default function DFWHVACVariableSpeedGuide() {
           {(['problems', 'compare'] as const).map(t => (
             <button key={t} onClick={() => setTab(t)}
               style={{ padding: '0.5rem 1.25rem', borderRadius: 20, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem',
-                background: tab === t ? '#F5E642' : '#111D33', color: tab === t ? '#0A1628' : '#8A9BB5' }}>
+                background: tab === t ? '#F5E642′ : '#111D33', color: tab === t ? '#0A1628' : '#8A9BB5' }}>
               {t === 'problems' ? '🔍 My DFW Problem' : '📊 Side-by-Side'}
             </button>
           ))}
@@ -83,17 +83,17 @@ export default function DFWHVACVariableSpeedGuide() {
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {problems.map((p, i) => (
               <div key={i} onClick={() => setSelected(selected === i ? null : i)}
-                style={{ background: selected === i ? '#162035' : '#111D33', border: `1.5px solid ${selected === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
+                style={{ background: selected === i ? '#162035′ : '#111D33', border: `1.5px solid ${selected === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: ’pointer' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <span style={{ fontSize: '1.5rem' }}>{p.icon}</span>
                     <span style={{ fontWeight: 700 }}>{p.issue}</span>
                   </div>
-                  <span style={{ color: '#F5E642' }}>{selected === i ? '▲' : '▼'}</span>
+                  <span style={{ color: '#F5E642′ }}>{selected === i ? '▲' : '▼'}</span>
                 </div>
                 {selected === i && (
                   <div style={{ marginTop: '0.75rem', borderTop: '1px solid #1E2D45', paddingTop: '0.75rem' }}>
-                    <p style={{ marginBottom: '0.75rem', color: '#E8EAF0' }}>{p.benefit}</p>
+                    <p style={{ marginBottom: '0.75rem', color: '#E8EAF0′ }}>{p.benefit}</p>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                       <div style={{ background: '#0A1628', borderRadius: 6, padding: '0.5rem 0.75rem' }}>
                         <div style={{ color: '#8A9BB5', fontSize: '0.75rem' }}>COST PREMIUM</div>
@@ -112,13 +112,13 @@ export default function DFWHVACVariableSpeedGuide() {
         )}
 
         {tab === 'compare' && (
-          <div style={{ background: '#111D33', borderRadius: 10, overflow: 'hidden', border: '1.5px solid #1E2D45' }}>
+          <div style={{ background: '#111D33', borderRadius: 10, overflow: 'hidden', border: '1.5px solid #1E2D45′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', background: '#162035', padding: '0.75rem 1rem', fontWeight: 700, color: '#F5E642', fontSize: '0.85rem' }}>
               <span>Feature</span><span>Single Speed</span><span>Variable Speed</span>
             </div>
             {comparison.map((row, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', padding: '0.75rem 1rem', borderTop: '1px solid #1E2D45', background: i % 2 === 0 ? '#111D33' : '#0D1928' }}>
-                <span style={{ color: '#8A9BB5' }}>{row.label}</span>
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', padding: '0.75rem 1rem', borderTop: '1px solid #1E2D45', background: i % 2 === 0 ? '#111D33′ : '#0D1928' }}>
+                <span style={{ color: '#8A9BB5′ }}>{row.label}</span>
                 <span>{row.single}</span>
                 <span style={{ color: '#F5E642', fontWeight: 600 }}>{row.variable}</span>
               </div>

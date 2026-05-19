@@ -103,10 +103,10 @@ export default function DFWHVACForBudgetOwner() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 12px' }}>⚖️ Repair vs. Replace: The DFW Decision Framework</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: '0 0 12px' }}>
-            Use the <strong style={{ color: '#F5E642' }}>5,000 Rule</strong>: multiply your system age (years) by the repair cost ($). If the result exceeds $5,000 — replace instead of repair.
+            Use the <strong style={{ color: '#F5E642′ }}>5,000 Rule</strong>: multiply your system age (years) by the repair cost ($). If the result exceeds $5,000 — replace instead of repair.
           </p>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>Example: 12-year-old system × $450 repair = $5,400. That crosses the threshold — lean toward replacement.</p>
         </div>

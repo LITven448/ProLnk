@@ -53,7 +53,7 @@ export default function DFWHVACSeasonalGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!quarter || !location} style={{ backgroundColor: quarter && location ? '#F5E642' : '#1E3A5F', color: quarter && location ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: quarter && location ? 'pointer' : 'default' }}>
+          <button onClick={() => setShowResults(true)} disabled={!quarter || !location} style={{ backgroundColor: quarter && location ? '#F5E642′ : '#1E3A5F', color: quarter && location ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: quarter && location ? 'pointer' : 'default' }}>
             Get My HVAC Tasks →
           </button>
         </div>

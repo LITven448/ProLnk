@@ -29,7 +29,7 @@ export default function DFWSmokeMeterGuide2026() {
         </div>
 
         <div style={{ background: '#1A2840', borderRadius: 10, padding: '14px 18px', marginBottom: 24, fontSize: 14 }}>
-          <strong style={{ color: '#F5E642' }}>DFW Battery Tip:</strong> Lithium 10-year batteries outperform alkaline in DFW attic heat. 
+          <strong style={{ color: '#F5E642′ }}>DFW Battery Tip:</strong> Lithium 10-year batteries outperform alkaline in DFW attic heat. 
           Alkaline batteries fail prematurely in 140°F+ attic temperatures. Always choose sealed lithium-battery units.
         </div>
 
@@ -42,7 +42,7 @@ export default function DFWSmokeMeterGuide2026() {
               <div style={{ fontSize: 30 }}>{d.icon}</div>
               <div style={{ fontWeight: 700, color: '#E8F4FD', margin: '6px 0 4px' }}>{d.label}</div>
               <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Best For: {d.best}</div>
-              <div style={{ fontSize: 12, color: '#8BA5C4' }}>{d.dfwNote}</div>
+              <div style={{ fontSize: 12, color: '#8BA5C4′ }}>{d.dfwNote}</div>
             </button>
           ))}
         </div>

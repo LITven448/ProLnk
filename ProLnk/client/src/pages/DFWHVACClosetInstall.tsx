@@ -136,7 +136,7 @@ export default function DFWHVACClosetInstall() {
           <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Your Closet HVAC Situation</label>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {closetSituations.map(s => (
-              <button key={s} onClick={() => setSituation(s)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: situation === s ? '#F5E642' : '#1E3A5F', background: situation === s ? '#F5E642' : '#0D2137', color: situation === s ? '#0A1628' : '#E8F4FD', fontWeight: situation === s ? 700 : 400, cursor: 'pointer', fontSize: 14, textAlign: 'left' }}>{s}</button>
+              <button key={s} onClick={() => setSituation(s)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: situation === s ? '#F5E642′ : '#1E3A5F', background: situation === s ? '#F5E642' : '#0D2137', color: situation === s ? '#0A1628' : '#E8F4FD', fontWeight: situation === s ? 700 : 400, cursor: ’pointer', fontSize: 14, textAlign: 'left' }}>{s}</button>
             ))}
           </div>
         </div>

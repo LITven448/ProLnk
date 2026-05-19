@@ -21,7 +21,7 @@ export default function DFWDuctworkGuide2026() {
         <div style={{ background: '#0f2444', borderRadius: 10, padding: 20, border: '1px solid #1e3a5f', marginBottom: 24 }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 18 }}>⚠️ The DFW Attic Problem</div>
           <div style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>
-            DFW attics reach <strong style={{ color: '#F5E642' }}>130-145°F</strong> in summer. Most homes run ductwork through these attics. Even small leaks dump expensive conditioned air into a superheated space — forcing your AC to run 20-30% longer.
+            DFW attics reach <strong style={{ color: '#F5E642′ }}>130-145°F</strong> in summer. Most homes run ductwork through these attics. Even small leaks dump expensive conditioned air into a superheated space — forcing your AC to run 20-30% longer.
           </div>
         </div>
 
@@ -42,9 +42,9 @@ export default function DFWDuctworkGuide2026() {
 
         <div style={{ background: '#0f2444', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🔍 Ductwork Risk Assessment</h2>
-          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home age: <strong style={{ color: '#F5E642' }}>{homeAge} years</strong></label>
+          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home age: <strong style={{ color: '#F5E642' }}>{homeAge} years</strong></label>
           <input type="range" min={1} max={50} value={homeAge} onChange={(e) => setHomeAge(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642' }} />
+            style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642′ }} />
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Assess My Ductwork Risk
           </button>

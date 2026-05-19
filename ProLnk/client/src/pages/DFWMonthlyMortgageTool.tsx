@@ -60,10 +60,10 @@ export default function DFWMonthlyMortgageTool() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 24 }}>
           {[
-            { label: 'Purchase Price ($)', value: purchasePrice, set: setPurchasePrice, placeholder: '475,000' },
-            { label: 'Down Payment ($)', value: downPayment, set: setDownPayment, placeholder: '95,000' },
-            { label: 'Interest Rate (%)', value: rate, set: setRate, placeholder: '6.75' },
-            { label: 'Monthly HOA ($)', value: hoa, set: setHoa, placeholder: '150' },
+            { label: 'Purchase Price ($)', value: purchasePrice, set: setPurchasePrice, placeholder: '475,000′ },
+            { label: 'Down Payment ($)', value: downPayment, set: setDownPayment, placeholder: '95,000′ },
+            { label: 'Interest Rate (%)', value: rate, set: setRate, placeholder: '6.75′ },
+            { label: 'Monthly HOA ($)', value: hoa, set: setHoa, placeholder: '150′ },
           ].map(({ label, value, set, placeholder }) => (
             <div key={label} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>{label}</label>
@@ -97,7 +97,7 @@ export default function DFWMonthlyMortgageTool() {
               { label: '🏘️ HOA Dues', value: fmt(results.hoaAmount) },
               { label: '🔧 Maintenance Reserve (DFW adjusted)', value: fmt(results.maintenanceReserve) },
             ].map(({ label, value }) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #F3F4F6' }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #F3F4F6′ }}>
                 <span style={{ fontSize: 14 }}>{label}</span>
                 <span style={{ fontWeight: 600 }}>{value}</span>
               </div>

@@ -25,7 +25,7 @@ export default function DFWDallasWhiteRockGuide2026() {
           maintenance requires a different approach than newer suburbs.
         </p>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>📍 Area Snapshot</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>
             ZIP codes 75218, 75214 · White Rock Lake park access · Lakewood adjacent ·
@@ -34,7 +34,7 @@ export default function DFWDallasWhiteRockGuide2026() {
           </div>
         </div>
 
-        <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>
+        <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>
           Select your home era for a tailored maintenance guide:
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
@@ -43,9 +43,9 @@ export default function DFWDallasWhiteRockGuide2026() {
               key={e.id}
               onClick={() => setSelected(e.id === selected ? null : e.id)}
               style={{
-                background: selected === e.id ? '#F5E642' : '#0f2040',
-                color: selected === e.id ? '#0A1628' : '#fff',
-                border: '1px solid ' + (selected === e.id ? '#F5E642' : '#1e3a5f'),
+                background: selected === e.id ? '#F5E642′ : '#0f2040',
+                color: selected === e.id ? '#0A1628′ : '#fff',
+                border: '1px solid ' + (selected === e.id ? '#F5E642′ : '#1e3a5f'),
                 borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left',
                 fontWeight: 600, cursor: 'pointer', fontSize: '0.95rem',
               }}
@@ -57,7 +57,7 @@ export default function DFWDallasWhiteRockGuide2026() {
 
         {active && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>
+            <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>
               {active.label} — 2026 Priorities
             </div>
             <ul style={{ margin: 0, paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

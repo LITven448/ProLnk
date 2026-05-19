@@ -14,46 +14,46 @@ export default function DFWNewConstructionGuide2026() {
   const selected = stages.find(s => s.id === active)!;
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif", color: "#E8EAF0" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif", color: "#E8EAF0" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🏡</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "8px 0 4px" }}>DFW New Construction Guide 2026</h1>
-          <p style={{ color: "#8892A4", fontSize: 15 }}>Select your build stage — know exactly what to inspect and what to ask.</p>
-          <div style={{ display: "inline-flex", gap: 8, background: "#111E35", borderRadius: 8, padding: "6px 12px", marginTop: 12 }}>
-            <span style={{ fontSize: 13, color: "#F5E642", fontWeight: 700 }}>⚠️ Builder warranty: 1yr workmanship · 2yr mechanical · 10yr structural</span>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "8px 0 4px" }}>DFW New Construction Guide 2026</h1>
+          <p style={{ color: "#8892A4″, fontSize: 15 }}>Select your build stage — know exactly what to inspect and what to ask.</p>
+          <div style={{ display: "inline-flex", gap: 8, background: "#111E35″, borderRadius: 8, padding: "6px 12px", marginTop: 12 }}>
+            <span style={{ fontSize: 13, color: "#F5E642″, fontWeight: 700 }}>⚠️ Builder warranty: 1yr workmanship · 2yr mechanical · 10yr structural</span>
           </div>
         </div>
 
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 24 }}>
           {stages.map(s => (
-            <button key={s.id} onClick={() => setActive(s.id)} style={{ padding: "8px 14px", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 700, fontSize: 13, background: active === s.id ? "#F5E642" : "#111E35", color: active === s.id ? "#0A1628" : "#8892A4", transition: "all 0.15s" }}>
+            <button key={s.id} onClick={() => setActive(s.id)} style={{ padding: "8px 14px", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 700, fontSize: 13, background: active === s.id ? "#F5E642″ : "#111E35", color: active === s.id ? "#0A1628" : "#8892A4", transition: "all 0.15s" }}>
               {s.icon} {s.label}
             </button>
           ))}
         </div>
 
-        <div style={{ background: "#111E35", borderRadius: 12, padding: 24, marginBottom: 16 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 800, color: "#F5E642", margin: "0 0 16px" }}>{selected.icon} {selected.label}</h2>
+        <div style={{ background: "#111E35″, borderRadius: 12, padding: 24, marginBottom: 16 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 800, color: "#F5E642″, margin: "0 0 16px" }}>{selected.icon} {selected.label}</h2>
           <div style={{ marginBottom: 20 }}>
-            <div style={{ fontSize: 13, color: "#8892A4", fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>🔍 What to Inspect</div>
+            <div style={{ fontSize: 13, color: "#8892A4″, fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>🔍 What to Inspect</div>
             <ul style={{ margin: 0, paddingLeft: 20 }}>
               {selected.inspect.map((item, i) => <li key={i} style={{ marginBottom: 8, lineHeight: 1.5, fontSize: 14 }}>{item}</li>)}
             </ul>
           </div>
-          <div style={{ background: "#0A1628", borderRadius: 10, padding: 16 }}>
-            <div style={{ fontSize: 13, color: "#F5E642", fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>❓ Questions to Ask Your Builder</div>
+          <div style={{ background: "#0A1628″, borderRadius: 10, padding: 16 }}>
+            <div style={{ fontSize: 13, color: "#F5E642″, fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>❓ Questions to Ask Your Builder</div>
             <ul style={{ margin: 0, paddingLeft: 20 }}>
-              {selected.ask.map((q, i) => <li key={i} style={{ marginBottom: 8, lineHeight: 1.5, fontSize: 14, color: "#C8D0E0" }}>{q}</li>)}
+              {selected.ask.map((q, i) => <li key={i} style={{ marginBottom: 8, lineHeight: 1.5, fontSize: 14, color: "#C8D0E0″ }}>{q}</li>)}
             </ul>
           </div>
         </div>
 
-        <div style={{ background: "#111E35", borderRadius: 12, padding: 20, borderLeft: "4px solid #F5E642" }}>
+        <div style={{ background: "#111E35″, borderRadius: 12, padding: 20, borderLeft: "4px solid #F5E642" }}>
           <div style={{ fontSize: 16, fontWeight: 700 }}>🔧 Need an independent inspector or contractor? ProLnk has vetted DFW professionals at every stage.</div>
-          <button style={{ marginTop: 12, background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 800, fontSize: 15, cursor: "pointer" }}>Find DFW Inspectors →</button>
+          <button style={{ marginTop: 12, background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 800, fontSize: 15, cursor: "pointer" }}>Find DFW Inspectors →</button>
         </div>
-        <div style={{ textAlign: "center", marginTop: 20, color: "#4A5568", fontSize: 13 }}>© 2026 ProLnk · DFW Home Services Marketplace</div>
+        <div style={{ textAlign: "center", marginTop: 20, color: "#4A5568″, fontSize: 13 }}>© 2026 ProLnk · DFW Home Services Marketplace</div>
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ const items = [
 ];
 
 const sevColors = { watch: '#FEF3C7', serious: '#FEE2E2', critical: '#EDE9FE' };
-const sevText = { watch: '#92400E', serious: '#991B1B', critical: '#5B21B6' };
+const sevText = { watch: '#92400E', serious: '#991B1B', critical: '#5B21B6′ };
 const sevLabel = { watch: 'Monitor Closely', serious: 'Serious — Negotiate Hard', critical: 'Critical — Consider Walking' };
 
 export default function DFWPropertyDisclosureGuide() {
@@ -68,13 +68,13 @@ export default function DFWPropertyDisclosureGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📋 Texas Seller's Disclosure Guide</div>
-          <p style={{ fontSize: '1.05rem', color: '#374151' }}>
-            Texas sellers must complete the Seller's Disclosure Notice (TAR 1406). It covers material defects they are <em>aware of</em> — not everything that could be wrong. Knowing what's required, what isn't, and how to verify each item protects your investment.
+          <p style={{ fontSize: '1.05rem', color: '#374151′ }}>
+            Texas sellers must complete the Seller's Disclosure Notice (TAR 1406). It covers material defects they are <em>aware of</em> — not everything that could be wrong. Knowing what’s required, what isn’t, and how to verify each item protects your investment.
           </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div style={{ backgroundColor: '#F0FDF4', borderRadius: 12, padding: '1.25rem', border: '1px solid #BBF7D0' }}>
+          <div style={{ backgroundColor: '#F0FDF4', borderRadius: 12, padding: '1.25rem', border: '1px solid #BBF7D0′ }}>
             <div style={{ fontWeight: 700, color: '#166534', marginBottom: '0.75rem' }}>✅ Must Disclose</div>
             <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.9rem', lineHeight: 1.9 }}>
               <li>Flooding, drainage, or water damage</li>
@@ -105,7 +105,7 @@ export default function DFWPropertyDisclosureGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: info ? '1.5rem' : 0 }}>
             {items.map(({ key, label }) => (
               <button key={key} onClick={() => setSelected(selected === key ? null : key)}
-                style={{ padding: '0.6rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === key ? '#F5E642' : '#E5E7EB', backgroundColor: selected === key ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: selected === key ? 700 : 400, cursor: 'pointer', fontSize: '0.88rem' }}>
+                style={{ padding: '0.6rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === key ? '#F5E642′ : '#E5E7EB', backgroundColor: selected === key ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: selected === key ? 700 : 400, cursor: ’pointer', fontSize: '0.88rem' }}>
                 {label}
               </button>
             ))}
@@ -133,7 +133,7 @@ export default function DFWPropertyDisclosureGuide() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047' }}>
+        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.5rem' }}>⚡ Critical: Disclosure ≠ Full Protection</div>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.95rem', lineHeight: 1.8 }}>
             <li>Sellers must disclose what they <strong>know</strong> — they can legitimately not know about hidden defects</li>

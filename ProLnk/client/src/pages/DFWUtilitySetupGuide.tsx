@@ -124,10 +124,10 @@ export default function DFWUtilitySetupGuide() {
                 return (
                   <div key={id} onClick={() => toggleCheck(id)}
                     style={{ display: 'flex', gap: 14, alignItems: 'flex-start', padding: '12px 14px', borderRadius: 10, marginBottom: 8, cursor: 'pointer',
-                      background: done ? '#052e16' : task.urgent ? '#2a1c0a' : '#0A1628',
+                      background: done ? '#052e16′ : task.urgent ? '#2a1c0a' : '#0A1628',
                       border: `1px solid ${done ? '#4ade8040' : task.urgent ? '#F5E64230' : '#1A2E4A'}` }}>
                     <div style={{ fontSize: 20, marginTop: 1 }}>{done ? '✅' : task.urgent ? '🔴' : '⬜'}</div>
-                    <div style={{ color: done ? '#4ade80' : '#CBD5E1', fontSize: 14, lineHeight: 1.6, textDecoration: done ? 'line-through' : 'none', opacity: done ? 0.7 : 1 }}>{task.text}</div>
+                    <div style={{ color: done ? '#4ade80′ : '#CBD5E1', fontSize: 14, lineHeight: 1.6, textDecoration: done ? ’line-through' : 'none', opacity: done ? 0.7 : 1 }}>{task.text}</div>
                   </div>
                 );
               })}
@@ -139,7 +139,7 @@ export default function DFWUtilitySetupGuide() {
           <h3 style={{ color: '#FFFFFF', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🌐 Internet in {selectedCity}</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {(cityInternetOptions[selectedCity] || []).map(provider => (
-              <span key={provider} style={{ background: '#1A2E4A', border: '1px solid #2A3F5F', borderRadius: 8, padding: '8px 16px', fontSize: 14, color: '#CBD5E1' }}>{provider}</span>
+              <span key={provider} style={{ background: '#1A2E4A', border: '1px solid #2A3F5F', borderRadius: 8, padding: '8px 16px', fontSize: 14, color: '#CBD5E1′ }}>{provider}</span>
             ))}
           </div>
           <p style={{ color: '#8A9BB5', fontSize: 13, marginTop: 16 }}>⚠️ Always check availability at your specific address — fiber coverage varies block by block in DFW.</p>

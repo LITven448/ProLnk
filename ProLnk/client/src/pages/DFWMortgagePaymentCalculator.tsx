@@ -56,7 +56,7 @@ export default function DFWMortgagePaymentCalculator() {
             {Object.keys(countyTaxRates).map(c => (
               <button key={c} onClick={() => setCounty(c)} style={{
                 padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                background: county === c ? '#0A1628' : '#f1f5f9', color: county === c ? '#F5E642' : '#475569',
+                background: county === c ? '#0A1628′ : '#f1f5f9', color: county === c ? '#F5E642' : '#475569',
               }}>{c} ({countyTaxRates[c]}%)</button>
             ))}
           </div>
@@ -75,7 +75,7 @@ export default function DFWMortgagePaymentCalculator() {
               <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', background: '#0A1628', borderRadius: 8, padding: '8px 12px', marginBottom: 8 }}>
                 {prefix}{typeof value === 'number' && value % 1 !== 0 ? value.toFixed(1) : value}{suffix}
               </div>
-              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           ))}
         </div>
@@ -108,8 +108,8 @@ export default function DFWMortgagePaymentCalculator() {
           ].map(({ label, val, sub }) => (
             <div key={label} style={{ background: '#fff', borderRadius: 12, padding: 16, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 6 }}>{label}</div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628' }}>{val}</div>
-              <div style={{ fontSize: 11, color: '#94a3b8' }}>{sub}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628′ }}>{val}</div>
+              <div style={{ fontSize: 11, color: '#94a3b8′ }}>{sub}</div>
             </div>
           ))}
         </div>

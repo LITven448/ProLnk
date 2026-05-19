@@ -54,7 +54,7 @@ export default function DFWProsperVsCelinaGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { name: 'Prosper', emoji: '🏘️', price: '$580K', desc: 'Established master-planned community with Prosper ISD, closer to Frisco and employment centers. More suburban feel, higher price.', color: '#3b82f6' },
+            { name: 'Prosper', emoji: '🏘️', price: '$580K', desc: 'Established master-planned community with Prosper ISD, closer to Frisco and employment centers. More suburban feel, higher price.', color: '#3b82f6′ },
             { name: 'Celina', emoji: '🌅', price: '$380K', desc: 'Texas\’ fastest-growing city. Still rural pockets, massive lots available, Celina ISD growing fast. Best value play in outer DFW.', color: '#22c55e' },
           ].map(city => (
             <div key={city.name} style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${city.color}40`, borderRadius: 16, padding: 24 }}>
@@ -69,7 +69,7 @@ export default function DFWProsperVsCelinaGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 40 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ background: '#F5E642', color: '#0A1628' }}>
+              <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
                 {['Category', 'Prosper', 'Celina', 'Edge'].map(h => (
                   <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontWeight: 700 }}>{h}</th>
                 ))}
@@ -78,7 +78,7 @@ export default function DFWProsperVsCelinaGuide() {
             <tbody>
               {compareData.map((row, i) => (
                 <tr key={row.label} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'transparent', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                  <td style={{ padding: '9px 14px', color: '#94a3b8' }}>{row.label}</td>
+                  <td style={{ padding: '9px 14px', color: '#94a3b8′ }}>{row.label}</td>
                   <td style={{ padding: '9px 14px', fontWeight: row.winner === 'prosper' ? 700 : 400, color: row.winner === 'prosper' ? '#22c55e' : '#fff' }}>{row.prosper}</td>
                   <td style={{ padding: '9px 14px', fontWeight: row.winner === 'celina' ? 700 : 400, color: row.winner === 'celina' ? '#22c55e' : '#fff' }}>{row.celina}</td>
                   <td style={{ padding: '9px 14px', color: row.winner === 'tie' ? '#64748b' : '#F5E642', fontWeight: 600 }}>{row.winner === 'tie' ? 'Tie' : row.winner === 'prosper' ? '→ Prosper' : '→ Celina'}</td>
@@ -93,7 +93,7 @@ export default function DFWProsperVsCelinaGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 13 }}>Budget</label>
-              <input type="range" min={300000} max={900000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={300000} max={900000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</div>
             </div>
             <div>

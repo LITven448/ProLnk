@@ -4,7 +4,7 @@ const purposes: Record<string, { checklist: string[]; settings: string; storage:
   insurance: {
     checklist: ['📐 All 4 exterior corners from 45° angle','🏠 Roof from ground (wide + close on shingles)','⚡ Breaker panel open + labeled','💧 Water shutoff valve location','🔥 Furnace/AC unit + serial number plate','🪟 Every window interior + exterior','🛋️ Each room: 4-wall panoramic sweep','📦 All appliances + serial number close-ups'],
     settings: '☀️ Shoot in overcast or open shade — DFW midday sun creates blown highlights. Use HDR mode on iPhone, or shoot RAW. Avoid flash indoors — open all blinds instead.',
-    storage: '☁️ Insurance: Google Photos "Insurance 2026" album + external drive copy. Share album link with insurer. Print index page annually.'
+    storage: '☁️ Insurance: Google Photos "Insurance 2026″ album + external drive copy. Share album link with insurer. Print index page annually.'
   },
   selling: {
     checklist: ['🌅 Exterior: Golden hour (7–8 AM or 6–7 PM in DFW summer)','🏊 Pool/patio: mid-morning when water sparkles','🍳 Kitchen: clear counters, shoot from corner','🛁 Bathrooms: towels staged, lid closed, shoot from door','🛏️ Bedrooms: shoot from doorway at chest height','📏 Great room: wide-angle from highest corner','🌳 Front yard: show mature trees if any','🚗 Garage: clean, door down, show storage'],
@@ -14,7 +14,7 @@ const purposes: Record<string, { checklist: string[]; settings: string; storage:
   contractor: {
     checklist: ['🔍 Problem area: 3 distances — wide context, medium, close detail','📏 Always include measuring tape in close-up shots','🔦 Damage: use flashlight to reveal depth','💧 Water damage: photograph wet AND after drying','📊 Ceiling leaks: shoot toward light source to show stain extent','🔩 Mechanical issues: video better than photo — narrate while filming','🏷️ Model/serial plates: straight-on, good light, no glare','📍 Location reference: always one shot showing where in home'],
     settings: '📱 Contractor photos: use standard camera (no filters). Grid lines on to keep level. Lock exposure by tapping and holding on the damage area. Turn on location tagging.',
-    storage: '📂 Contractor: one iCloud album per project named "Plumber-May2026". Share album link — easier than texting 20 photos. Keep until warranty expires.'
+    storage: '📂 Contractor: one iCloud album per project named "Plumber-May2026″. Share album link — easier than texting 20 photos. Keep until warranty expires.'
   },
   inventory: {
     checklist: ['🏷️ Every appliance serial number plate','⚡ Electrical panel map (photograph + diagram)','🔧 Shutoff valves: water main, gas, irrigation','🪟 Window/door brand labels (usually on frame edge)','🔌 Smart home hub + network closet','🌡️ HVAC unit(s) — inside and outside','🌿 Sprinkler controller zone map','🔑 Lockbox code + spare key locations (encrypted note)'],
@@ -50,7 +50,7 @@ export default function DFWPhotoGuideHome() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>What are you photographing for?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {purposeList.map(p => (
-              <button key={p.key} onClick={() => setPurpose(p.key)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600, borderColor: purpose === p.key ? '#1D4ED8' : '#E2E8F0', background: purpose === p.key ? '#EFF6FF' : '#FFFFFF', color: purpose === p.key ? '#1D4ED8' : '#64748B' }}>{p.label}</button>
+              <button key={p.key} onClick={() => setPurpose(p.key)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600, borderColor: purpose === p.key ? '#1D4ED8′ : '#E2E8F0', background: purpose === p.key ? '#EFF6FF' : '#FFFFFF', color: purpose === p.key ? '#1D4ED8' : '#64748B' }}>{p.label}</button>
             ))}
           </div>
         </div>

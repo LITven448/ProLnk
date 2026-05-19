@@ -31,7 +31,7 @@ export default function DFWSmartSmokeDetector2026() {
         </div>
 
         <div style={{ background: '#1A2840', borderRadius: 10, padding: '14px 18px', marginBottom: 24, fontSize: 14, lineHeight: 1.6 }}>
-          <strong style={{ color: '#F5E642' }}>DFW Kitchen Alert:</strong> High-heat Texas cooking (cast iron, outdoor-style indoor grills) causes frequent false alarms.
+          <strong style={{ color: '#F5E642′ }}>DFW Kitchen Alert:</strong> High-heat Texas cooking (cast iron, outdoor-style indoor grills) causes frequent false alarms.
           Choose photoelectric or dual-sensor smart detectors with a hush-from-app feature. Reduces alarm fatigue that leads to disabled detectors.
         </div>
 
@@ -43,7 +43,7 @@ export default function DFWSmartSmokeDetector2026() {
                 borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontSize: 28 }}>{d.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#E8F4FD', margin: '6px 0 4px' }}>{d.label}</div>
-              <div style={{ fontSize: 12, color: '#F5E642' }}>{d.price}</div>
+              <div style={{ fontSize: 12, color: '#F5E642′ }}>{d.price}</div>
               <div style={{ fontSize: 11, color: '#8BA5C4', marginTop: 4 }}>{d.ecosystem}</div>
             </button>
           ))}
@@ -53,13 +53,13 @@ export default function DFWSmartSmokeDetector2026() {
           <div style={{ background: '#0F2040', borderRadius: 12, padding: 22, border: '2px solid #F5E642', marginBottom: 24 }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 14px' }}>{det.icon} {det.label}</h3>
             <div style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
-              <div style={{ background: det.selfTest ? '#0A2010' : '#200A0A', borderRadius: 8, padding: '8px 12px', flex: 1, textAlign: 'center' }}>
+              <div style={{ background: det.selfTest ? '#0A2010′ : '#200A0A', borderRadius: 8, padding: '8px 12px', flex: 1, textAlign: ’center' }}>
                 <div style={{ fontSize: 18 }}>{det.selfTest ? '✅' : '❌'}</div>
-                <div style={{ fontSize: 12, color: '#8BA5C4' }}>Self-Test</div>
+                <div style={{ fontSize: 12, color: '#8BA5C4′ }}>Self-Test</div>
               </div>
-              <div style={{ background: det.phoneAlert ? '#0A2010' : '#200A0A', borderRadius: 8, padding: '8px 12px', flex: 1, textAlign: 'center' }}>
+              <div style={{ background: det.phoneAlert ? '#0A2010′ : '#200A0A', borderRadius: 8, padding: '8px 12px', flex: 1, textAlign: ’center' }}>
                 <div style={{ fontSize: 18 }}>{det.phoneAlert ? '✅' : '❌'}</div>
-                <div style={{ fontSize: 12, color: '#8BA5C4' }}>Phone Alert</div>
+                <div style={{ fontSize: 12, color: '#8BA5C4′ }}>Phone Alert</div>
               </div>
             </div>
             <div style={{ marginBottom: 12 }}>

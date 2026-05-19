@@ -30,12 +30,12 @@ export default function DFWCompostingGuide2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '16px', marginBottom: '24px' }}>
-          <p style={{ margin: 0, color: '#F5E642' }}>⚡ DFW Key Fact: DFW summer heat (95–105°F) supercharges hot composting — what takes 6 months in Minnesota takes 6–8 weeks in a DFW summer. Use it to your advantage.</p>
+          <p style={{ margin: 0, color: '#F5E642′ }}>⚡ DFW Key Fact: DFW summer heat (95–105°F) supercharges hot composting — what takes 6 months in Minnesota takes 6–8 weeks in a DFW summer. Use it to your advantage.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '28px' }}>
           {tips.map(t => (
-            <div key={t.title} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050' }}>
+            <div key={t.title} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050′ }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{t.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '6px' }}>{t.title}</div>
               <div style={{ fontSize: '0.85rem', color: '#ccc' }}>{t.desc}</div>
@@ -55,7 +55,7 @@ export default function DFWCompostingGuide2026() {
               <option value="small">Small yard / no outdoor space</option>
             </select>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '6px' }}>Recommended: {method.method}</div>
             <div style={{ color: '#8899aa', fontSize: '0.85rem', marginBottom: '8px' }}>⏱️ Timeline: {method.timeline}</div>
             <div style={{ color: '#ccc', fontSize: '0.9rem' }}>{method.note}</div>

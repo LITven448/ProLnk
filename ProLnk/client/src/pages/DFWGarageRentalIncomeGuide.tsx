@@ -70,12 +70,12 @@ export default function DFWGarageRentalIncomeGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🚗</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>DFW Garage Rental Income Guide</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>DFW Garage Rental Income Guide</h1>
           <p style={{ margin: 0, opacity: 0.8, lineHeight: 1.6 }}>DFW has some of the highest storage demand in the country. A 2-car garage can generate $200–$380/month depending on location and use type — with zero marketing effort on Neighbor.com.</p>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📦 Why DFW Storage Demand is So High</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📦 Why DFW Storage Demand is So High</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, margin: 0, opacity: 0.9 }}>
             <li>DFW population grew 1.2M+ in last decade — many renters have no storage</li>
             <li>Public storage vacancy in DFW under 6% — lowest in Texas</li>
@@ -86,7 +86,7 @@ export default function DFWGarageRentalIncomeGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>💰 Income Calculator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>💰 Income Calculator</h2>
           <div style={{ display: 'grid', gap: 14, marginBottom: 20 }}>
             {[
               { label: 'DFW Suburb', val: suburb, set: setSuburb, opts: SUBURBS },
@@ -113,7 +113,7 @@ export default function DFWGarageRentalIncomeGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📱 Platforms to List Your Garage</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📱 Platforms to List Your Garage</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {PLATFORMS.map(p => (
               <div key={p.name} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 14px', background: 'rgba(255,255,255,0.05)', borderRadius: 8 }}>

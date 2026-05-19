@@ -69,9 +69,9 @@ export default function DFWRepairCostTracker() {
                   onChange={e => handleChange(key, e.target.value)}
                   style={{ background: '#1a2f4e', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '8px 10px', width: '100%', fontSize: 15, boxSizing: 'border-box' }}
                 />
-                <div style={{ marginTop: 8, fontSize: 13, color: '#94a3b8' }}>DFW median: <span style={{ color: '#F5E642' }}>${dfwMedian.toLocaleString()}</span></div>
+                <div style={{ marginTop: 8, fontSize: 13, color: '#94a3b8′ }}>DFW median: <span style={{ color: '#F5E642' }}>${dfwMedian.toLocaleString()}</span></div>
                 {submitted && spent > 0 && (
-                  <div style={{ marginTop: 4, fontSize: 13, color: delta > 0 ? '#f87171' : '#34d399', fontWeight: 600 }}>
+                  <div style={{ marginTop: 4, fontSize: 13, color: delta > 0 ? '#f87171′ : '#34d399', fontWeight: 600 }}>
                     {delta > 0 ? `⬆ $${Math.abs(delta).toLocaleString()} over` : `⬇ $${Math.abs(delta).toLocaleString()} under`}
                   </div>
                 )}
@@ -88,7 +88,7 @@ export default function DFWRepairCostTracker() {
         </button>
 
         {submitted && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 16px' }}>📊 Your Summary</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div>
@@ -97,11 +97,11 @@ export default function DFWRepairCostTracker() {
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>DFW Average ({homeAge} yr home)</div>
-                <div style={{ fontSize: 28, fontWeight: 700, color: '#F5E642' }}>${Math.round(totalDFWAvg).toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 700, color: '#F5E642′ }}>${Math.round(totalDFWAvg).toLocaleString()}</div>
               </div>
             </div>
-            <div style={{ marginTop: 16, padding: 12, background: totalSpent > totalDFWAvg ? '#2d1515' : '#0d2d1a', borderRadius: 8 }}>
-              <span style={{ fontWeight: 700, color: totalSpent > totalDFWAvg ? '#f87171' : '#34d399' }}>
+            <div style={{ marginTop: 16, padding: 12, background: totalSpent > totalDFWAvg ? '#2d1515′ : '#0d2d1a', borderRadius: 8 }}>
+              <span style={{ fontWeight: 700, color: totalSpent > totalDFWAvg ? '#f87171′ : '#34d399' }}>
                 {totalSpent > totalDFWAvg
                   ? `⚠️ You're spending $${Math.round(totalSpent - totalDFWAvg).toLocaleString()} above DFW average`
                   : `✅ You're $${Math.round(totalDFWAvg - totalSpent).toLocaleString()} under DFW average`}

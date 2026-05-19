@@ -107,7 +107,7 @@ export default function DFWFlooringMaterialsCompared() {
         <div style={{ background: '#1a1020', borderRadius: 12, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{ fontSize: 24 }}>💧</span>
           <div>
-            <div style={{ fontWeight: 600, color: '#F5E642' }}>DFW Humidity Reality</div>
+            <div style={{ fontWeight: 600, color: '#F5E642′ }}>DFW Humidity Reality</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>DFW swings from 20% humidity in February to 80%+ in June. Many flooring materials that work elsewhere fail in North Texas homes without perfect HVAC control.</div>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function DFWFlooringMaterialsCompared() {
         <div style={{ display: 'grid', gap: 12 }}>
           {(filtered.length > 0 ? filtered : materials).map(m => (
             <div key={m.id} onClick={() => setSelected(selected === m.id ? null : m.id)}
-              style={{ background: selected === m.id ? '#0f2040' : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: 'pointer' }}>
+              style={{ background: selected === m.id ? '#0f2040′ : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: ’pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 24 }}>{m.emoji}</span>

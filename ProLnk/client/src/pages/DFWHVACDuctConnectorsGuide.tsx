@@ -35,11 +35,11 @@ export default function DFWHVACDuctConnectorsGuide() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.2 }}>Duct Connectors & Fittings Guide</h1>
         <p style={{ color: '#9AA5B8', marginBottom: '2rem', fontSize: '1rem' }}>Why DFW extreme heat destroys duct connections — and the only fix that lasts.</p>
 
-        <div style={{ background: '#F5E64220', border: '1px solid #F5E64280', borderRadius: '10px', padding: '1rem 1.25rem', marginBottom: '2rem', fontSize: '0.9rem', color: '#F5E642' }}>
+        <div style={{ background: '#F5E64220', border: '1px solid #F5E64280', borderRadius: '10px', padding: '1rem 1.25rem', marginBottom: '2rem', fontSize: '0.9rem', color: '#F5E642′ }}>
           ⚠️ {dfwWarning}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📚 Duct Connection Types in DFW Homes</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📚 Duct Connection Types in DFW Homes</h2>
         <div style={{ display: 'grid', gap: '1rem', marginBottom: '2.5rem' }}>
           {ductTypes.map(d => (
             <div key={d.id} style={{ background: '#0F2040', borderRadius: '10px', padding: '1.25rem', border: '1px solid #1E3A5F' }}>
@@ -50,13 +50,13 @@ export default function DFWHVACDuctConnectorsGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔧 Diagnose Your DFW Duct Issue</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔧 Diagnose Your DFW Duct Issue</h2>
         <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '2rem' }}>
           <div style={{ marginBottom: '1.25rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.5rem' }}>Connection Type</label>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {[['flex','Flex Connection'],['rigid','Rigid to Flex'],['plenum','Plenum Joint']].map(([v,l]) => (
-                <button key={v} onClick={() => setSelectedDuct(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: selectedDuct === v ? '2px solid #F5E642' : '1px solid #1E3A5F', background: selectedDuct === v ? '#F5E64220' : '#0A1628', color: selectedDuct === v ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.9rem' }}>{l}</button>
+                <button key={v} onClick={() => setSelectedDuct(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: selectedDuct === v ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: selectedDuct === v ? '#F5E64220' : '#0A1628', color: selectedDuct === v ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.9rem' }}>{l}</button>
               ))}
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function DFWHVACDuctConnectorsGuide() {
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.5rem' }}>Issue Severity</label>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {[['minor','Minor (small gap, some tape peeling)'],['major','Major (separated, visible gap, air leaking)']].map(([v,l]) => (
-                <button key={v} onClick={() => setSeverity(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: severity === v ? '2px solid #F5E642' : '1px solid #1E3A5F', background: severity === v ? '#F5E64220' : '#0A1628', color: severity === v ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.9rem' }}>{l}</button>
+                <button key={v} onClick={() => setSeverity(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: severity === v ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: severity === v ? '#F5E64220' : '#0A1628', color: severity === v ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.9rem' }}>{l}</button>
               ))}
             </div>
           </div>
@@ -72,12 +72,12 @@ export default function DFWHVACDuctConnectorsGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended Repair</div>
-            <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#9AA5B8' }}>Method: </span><span style={{ fontWeight: 600 }}>{result.method}</span></div>
-            <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#9AA5B8' }}>Materials: </span>{result.materials.map((m, i) => <span key={i} style={{ background: '#1E3A5F', borderRadius: '6px', padding: '0.25rem 0.6rem', marginLeft: '0.4rem', fontSize: '0.85rem' }}>{m}</span>)}</div>
-            <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#9AA5B8' }}>Estimated Cost: </span><span style={{ color: '#F5E642', fontWeight: 700 }}>{result.cost}</span></div>
-            <div><span style={{ color: '#9AA5B8' }}>Urgency: </span><span style={{ color: '#FF6B6B', fontWeight: 600 }}>{result.urgency}</span></div>
+            <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#9AA5B8′ }}>Method: </span><span style={{ fontWeight: 600 }}>{result.method}</span></div>
+            <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#9AA5B8′ }}>Materials: </span>{result.materials.map((m, i) => <span key={i} style={{ background: '#1E3A5F', borderRadius: '6px', padding: '0.25rem 0.6rem', marginLeft: '0.4rem', fontSize: '0.85rem' }}>{m}</span>)}</div>
+            <div style={{ marginBottom: '0.75rem' }}><span style={{ color: '#9AA5B8′ }}>Estimated Cost: </span><span style={{ color: '#F5E642', fontWeight: 700 }}>{result.cost}</span></div>
+            <div><span style={{ color: '#9AA5B8′ }}>Urgency: </span><span style={{ color: '#FF6B6B', fontWeight: 600 }}>{result.urgency}</span></div>
           </div>
         )}
 

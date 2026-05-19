@@ -42,8 +42,8 @@ export default function DFWFoundationGradeBeam2026() {
               <div style={{ flex: 1 }}>
                 <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px', marginBottom: '6px' }}>{b.name}</div>
                 <div style={{ display: 'flex', gap: '16px', marginBottom: '8px' }}>
-                  <span style={{ color: '#94A3B8', fontSize: '13px' }}>Depth: <strong style={{ color: '#E8EAF0' }}>{b.depth}</strong></span>
-                  <span style={{ color: '#94A3B8', fontSize: '13px' }}>Width: <strong style={{ color: '#E8EAF0' }}>{b.width}</strong></span>
+                  <span style={{ color: '#94A3B8', fontSize: '13px' }}>Depth: <strong style={{ color: '#E8EAF0′ }}>{b.depth}</strong></span>
+                  <span style={{ color: '#94A3B8', fontSize: '13px' }}>Width: <strong style={{ color: '#E8EAF0′ }}>{b.width}</strong></span>
                 </div>
                 <div style={{ color: '#64748B', fontSize: '13px' }}>{b.role}</div>
               </div>
@@ -56,7 +56,7 @@ export default function DFWFoundationGradeBeam2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
             {workTypes.map(w => (
               <button key={w.key} onClick={() => { setWorkType(w.key); setAwareness(awarenesses[w.key]); }}
-                style={{ background: workType === w.key ? '#F5E642' : '#1E3A5F', color: workType === w.key ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600' }}>
+                style={{ background: workType === w.key ? '#F5E642′ : '#1E3A5F', color: workType === w.key ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600′ }}>
                 {w.label}
               </button>
             ))}

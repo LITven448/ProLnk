@@ -39,7 +39,7 @@ export default function DFWLaundryRoomGuide2026() {
             {[{ id: 'garage', label: '🚗 Laundry in Garage' }, { id: 'none', label: '❌ No Laundry Room' }, { id: 'upgrade', label: '🔧 Upgrade Existing' }].map((opt) => (
               <button key={opt.id} onClick={() => setSetup(opt.id)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: setup === opt.id ? '#F5E642' : '#0f172a', color: setup === opt.id ? '#0A1628' : '#fff' }}>
+                  background: setup === opt.id ? '#F5E642′ : '#0f172a', color: setup === opt.id ? '#0A1628' : '#fff' }}>
                 {opt.label}
               </button>
             ))}
@@ -50,9 +50,9 @@ export default function DFWLaundryRoomGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 4 }}>{guide.title}</h2>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 12 }}>{guide.cost}</div>
           {guide.steps.map((step) => (
-            <div key={step} style={{ fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642', color: '#cbd5e1' }}>✅ {step}</div>
+            <div key={step} style={{ fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642', color: '#cbd5e1′ }}>✅ {step}</div>
           ))}
-          <div style={{ marginTop: 16, background: '#0f172a', borderRadius: 8, padding: 12, fontSize: 13, color: '#94a3b8' }}>💡 {guide.note}</div>
+          <div style={{ marginTop: 16, background: '#0f172a', borderRadius: 8, padding: 12, fontSize: 13, color: '#94a3b8′ }}>💡 {guide.note}</div>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 20 }}>
@@ -64,7 +64,7 @@ export default function DFWLaundryRoomGuide2026() {
                 <div style={{ fontSize: 20 }}>{d.icon}</div>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{d.label}</div>
                 <div style={{ fontSize: 12, color: '#4ade80', marginBottom: 4 }}>✅ {d.pros}</div>
-                <div style={{ fontSize: 12, color: '#f87171' }}>⚠️ {d.cons}</div>
+                <div style={{ fontSize: 12, color: '#f87171′ }}>⚠️ {d.cons}</div>
               </div>
             ))}
           </div>

@@ -47,7 +47,7 @@ export default function DFWFoundationMythsGuide() {
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
           <div style={{ fontSize: 40 }}>🏗️</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: '12px 0 8px' }}>DFW Foundation Myths — Debunked</h1>
-          <p style={{ color: '#94A3B8', fontSize: 15 }}>DFW clay soil makes foundation topics unavoidable. Here's what's true and what's fear-mongering.</p>
+          <p style={{ color: '#94A3B8', fontSize: 15 }}>DFW clay soil makes foundation topics unavoidable. Here's what’s true and what’s fear-mongering.</p>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -56,7 +56,7 @@ export default function DFWFoundationMythsGuide() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#0F2040' : '#111D33',
+                background: selected === i ? '#0F2040′ : '#111D33',
                 border: `1px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`,
                 borderRadius: 12,
                 padding: '18px 20px',

@@ -55,12 +55,12 @@ export default function DFWAirLeakageGuide() {
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>A blower door test depressurizes your home and measures air changes per hour (ACH). DFW code requires new homes to achieve ≤3 ACH50. Most pre-2010 DFW homes test at 8–15 ACH50.</p>
           {[
             { label: 'Cost of blower door test', value: '$200 – $400 in DFW' },
-            { label: 'DFW new construction requirement', value: '≤3.0 ACH50' },
-            { label: 'Typical pre-2000 DFW home', value: '10–18 ACH50' },
+            { label: 'DFW new construction requirement', value: '≤3.0 ACH50′ },
+            { label: 'Typical pre-2000 DFW home', value: '10–18 ACH50′ },
             { label: 'After professional air sealing', value: '3–6 ACH50 typical improvement' },
           ].map(item => (
             <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1a3a5c' }}>
-              <span style={{ color: '#94a3b8' }}>{item.label}</span>
+              <span style={{ color: '#94a3b8′ }}>{item.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 700, textAlign: 'right', maxWidth: '55%' }}>{item.value}</span>
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function DFWAirLeakageGuide() {
           ].map(item => (
             <div key={item.step} style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
               <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#F5E642', color: '#0A1628', fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.step}</div>
-              <div><div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 4 }}>{item.title}</div><div style={{ fontSize: 14, color: '#94a3b8' }}>{item.desc}</div></div>
+              <div><div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 4 }}>{item.title}</div><div style={{ fontSize: 14, color: '#94a3b8′ }}>{item.desc}</div></div>
             </div>
           ))}
         </div>
@@ -86,18 +86,18 @@ export default function DFWAirLeakageGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Home Age (years)</label>
-              <input value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 35" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 35″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Monthly Utility Bill ($)</label>
-              <input value={monthlyBill} onChange={e => setMonthlyBill(e.target.value)} placeholder="e.g. 250" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={monthlyBill} onChange={e => setMonthlyBill(e.target.value)} placeholder="e.g. 250″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer' }}>Estimate My DFW Air Leakage →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Estimated Leakage: {result.leakage}</div>
-              <div style={{ color: '#94a3b8', marginBottom: 8, fontSize: 14 }}>Potential monthly savings after sealing: <strong style={{ color: '#F5E642' }}>${result.savings}/mo</strong></div>
+              <div style={{ color: '#94a3b8', marginBottom: 8, fontSize: 14 }}>Potential monthly savings after sealing: <strong style={{ color: '#F5E642′ }}>${result.savings}/mo</strong></div>
               <div style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: 6 }}>Top DFW air sealing priorities:</div>
               {result.priority.map(p => <div key={p} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>• {p}</div>)}
             </div>

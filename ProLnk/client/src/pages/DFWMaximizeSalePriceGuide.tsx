@@ -54,7 +54,7 @@ export default function DFWMaximizeSalePriceGuide() {
             {(Object.keys(defaultFeatures) as FeatureKey[]).map(k => {
               const labels: Record<FeatureKey, string> = { threeCarGarage: '🚗 3-Car Garage', masterSuite: '🛏️ Master Suite', openKitchen: '🍳 Open Kitchen', gameRoom: '🎮 Game Room', pool: '🏊 Pool', updated: '✨ Recently Updated' };
               return (
-                <button key={k} onClick={() => toggle(k)} style={{ padding: '10px 18px', borderRadius: 24, border: `2px solid ${features[k] ? '#F5E642' : '#2a3a54'}`, background: features[k] ? '#F5E642' : 'transparent', color: features[k] ? '#0A1628' : '#aaa', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+                <button key={k} onClick={() => toggle(k)} style={{ padding: '10px 18px', borderRadius: 24, border: `2px solid ${features[k] ? '#F5E642' : '#2a3a54'}`, background: features[k] ? '#F5E642′ : ’transparent', color: features[k] ? '#0A1628′ : '#aaa', fontWeight: 700, fontSize: 14, cursor: ’pointer' }}>
                   {labels[k]}
                 </button>
               );
@@ -62,20 +62,20 @@ export default function DFWMaximizeSalePriceGuide() {
           </div>
           <div>
             <label style={{ fontSize: 14, fontWeight: 600, color: '#aaa', display: 'block', marginBottom: 10 }}>💵 Your improvement budget: ${budget.toLocaleString()}</label>
-            <input type="range" min={2000} max={50000} step={1000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <input type="range" min={2000} max={50000} step={1000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
         </div>
 
         <div style={{ background: '#132036', borderRadius: 16, padding: 32, marginBottom: 28 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>📈 Improvements Ranked by ROI (highest first)</h2>
           {sorted.map((imp, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: i < sorted.length - 1 ? '1px solid #1e3050' : 'none', flexWrap: 'wrap', gap: 8 }}>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: i < sorted.length - 1 ? '1px solid #1e3050′ : ’none', flexWrap: 'wrap', gap: 8 }}>
               <div>
                 <div style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>{imp.name}</div>
                 <div style={{ fontSize: 13, color: '#888', marginTop: 2 }}>Cost: {imp.cost}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: 15, fontWeight: 800, color: '#4ade80' }}>{imp.gain}</div>
+                <div style={{ fontSize: 15, fontWeight: 800, color: '#4ade80′ }}>{imp.gain}</div>
                 <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 600 }}>~{imp.roi}% ROI</div>
               </div>
             </div>
@@ -85,10 +85,10 @@ export default function DFWMaximizeSalePriceGuide() {
         <div style={{ background: '#132036', borderRadius: 16, padding: 32 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>🎯 DFW Buyer Hot Buttons</h2>
           {dfwBuyerHotButtons.map((b, i) => (
-            <div key={i} style={{ padding: '14px 0', borderBottom: i < dfwBuyerHotButtons.length - 1 ? '1px solid #1e3050' : 'none' }}>
+            <div key={i} style={{ padding: '14px 0', borderBottom: i < dfwBuyerHotButtons.length - 1 ? '1px solid #1e3050′ : ’none' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
                 <span style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>{b.feature}</span>
-                <span style={{ fontWeight: 700, fontSize: 14, color: '#4ade80' }}>{b.impact}</span>
+                <span style={{ fontWeight: 700, fontSize: 14, color: '#4ade80′ }}>{b.impact}</span>
               </div>
               <div style={{ fontSize: 14, color: '#888', marginTop: 4 }}>{b.note}</div>
             </div>

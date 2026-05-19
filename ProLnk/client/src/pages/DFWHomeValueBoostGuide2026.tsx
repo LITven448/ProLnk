@@ -34,12 +34,12 @@ export default function DFWHomeValueBoostGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🛠️ Budget → Priority Ranker</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ fontSize: 14, color: '#94a3b8', display: 'block', marginBottom: 8 }}>
-              Your Budget: <strong style={{ color: '#F5E642' }}>${budget.toLocaleString()}</strong>
+              Your Budget: <strong style={{ color: '#F5E642′ }}>${budget.toLocaleString()}</strong>
             </label>
             <input
               type="range" min={1000} max={30000} step={500} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }}
+              style={{ width: '100%', accentColor: '#F5E642′ }}
             />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#64748b', marginTop: 4 }}>
               <span>$1K</span><span>$30K</span>
@@ -57,7 +57,7 @@ export default function DFWHomeValueBoostGuide2026() {
                       <span style={{ fontWeight: 700, fontSize: 14 }}>{item.name}</span>
                       <span style={{ color: '#F5E642', fontWeight: 800, fontSize: 13 }}>#{i + 1} Priority</span>
                     </div>
-                    <div style={{ display: 'flex', gap: 16, fontSize: 12, color: '#94a3b8' }}>
+                    <div style={{ display: 'flex', gap: 16, fontSize: 12, color: '#94a3b8′ }}>
                       <span>Cost: ${item.cost.toLocaleString()}</span>
                       <span style={{ color: '#22c55e' }}>ROI: {item.roi}%</span>
                       <span>Return: +${item.return.toLocaleString()}</span>

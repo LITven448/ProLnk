@@ -57,7 +57,7 @@ export default function DFWHomeBuyingMythsGuide() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#0F2040' : '#111D33',
+                background: selected === i ? '#0F2040′ : '#111D33',
                 border: `1px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`,
                 borderRadius: 12,
                 padding: '18px 20px',

@@ -81,7 +81,7 @@ export default function ProLnkTierComparisonPage() {
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 13, color: '#F5E642', letterSpacing: 3 }}>TIER COMPARISON</div>
-          <h1 style={{ fontSize: 34, fontWeight: 800, margin: '8px 0' }}>Charter vs Founding vs L3 vs L4</h1>
+          <h1 style={{ fontSize: 34, fontWeight: 800, margin: '8px 0′ }}>Charter vs Founding vs L3 vs L4</h1>
           <p style={{ color: '#8899aa' }}>Side-by-side breakdown of every tier. Click any tier for the full picture.</p>
         </div>
 

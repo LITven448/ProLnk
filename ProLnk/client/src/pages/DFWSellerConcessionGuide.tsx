@@ -23,7 +23,7 @@ export default function DFWSellerConcessionGuide() {
     } else if (requestType === 'rate-buydown') {
       strategy = 'Rate buydowns are extremely popular in 2024–2026 DFW due to elevated interest rates. A 2-1 buydown ($6,000–$10,000) can reduce buyer\’s monthly payment by $300–400/month for first two years — very compelling. Often more effective than a price cut at the same cost.';
       comparison = [
-        { option: '2-1 Temporary Buydown', cost: '$6,000–$10,000', pros: 'Lowers buyer\’s payment yr 1–2, very marketable', cons: 'Rate returns to full rate in year 3' },
+        { option: '2-1 Temporary Buydown', cost: '$6,000–$10,000', pros: 'Lowers buyer\’s payment yr 1–2, very marketable', cons: 'Rate returns to full rate in year 3′ },
         { option: 'Permanent Rate Buydown (1pt)', cost: '~$5,000/point', pros: 'Permanent payment reduction', cons: 'More expensive, less buyer preference' },
         { option: 'Equivalent Price Reduction', cost: 'Same dollar amount', pros: 'Simpler', cons: 'Lower comp value, less buyer impact on monthly payment' },
       ];
@@ -49,12 +49,12 @@ export default function DFWSellerConcessionGuide() {
   return (
     <div style={{ background: '#f5f5f0', minHeight: '100vh', fontFamily: 'Georgia, serif', color: '#1a1a2e' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#888' }}>DFW Seller Guide</div>
+        <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#888′ }}>DFW Seller Guide</div>
         <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 12px', lineHeight: 1.2 }}>
           🤝 Seller Concessions in DFW
         </h1>
         <p style={{ fontSize: 17, color: '#555', marginBottom: 40, lineHeight: 1.7 }}>
-          Concessions aren't weakness — they're strategy. The right concession closes deals faster and often costs less than a price reduction. Here's how to think about each type in the current DFW market.
+          Concessions aren't weakness — they’re strategy. The right concession closes deals faster and often costs less than a price reduction. Here’s how to think about each type in the current DFW market.
         </p>
 
         <div style={{ display: 'grid', gap: 20, marginBottom: 40 }}>

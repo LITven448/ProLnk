@@ -89,8 +89,8 @@ export default function DFWSmokeDamageGuide() {
                 {options.map(o => (
                   <button key={o} onClick={() => setter(o)}
                     style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: '1.5px solid', cursor: 'pointer', fontSize: '0.85rem',
-                      borderColor: value === o ? '#F5E642' : '#1e3a5f', background: value === o ? '#F5E642' : '#111c30',
-                      color: value === o ? '#0A1628' : '#cbd5e1', fontWeight: value === o ? 700 : 400 }}>
+                      borderColor: value === o ? '#F5E642′ : '#1e3a5f', background: value === o ? '#F5E642' : '#111c30',
+                      color: value === o ? '#0A1628′ : '#cbd5e1', fontWeight: value === o ? 700 : 400 }}>
                     {o}
                   </button>
                 ))}
@@ -100,7 +100,7 @@ export default function DFWSmokeDamageGuide() {
         </div>
 
         <button onClick={handleAnalyze} disabled={!damageType}
-          style={{ background: damageType ? '#F5E642' : '#1e3a5f', color: damageType ? '#0A1628' : '#475569',
+          style={{ background: damageType ? '#F5E642′ : '#1e3a5f', color: damageType ? '#0A1628' : '#475569',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 800, fontSize: '1rem', cursor: damageType ? 'pointer' : 'default', marginBottom: '2rem' }}>
           Get Assessment Guide →
         </button>
@@ -122,11 +122,11 @@ export default function DFWSmokeDamageGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>💰 DFW COST RANGE</div>
-                <div style={{ fontWeight: 700, color: '#F5E642' }}>{result.cost}</div>
+                <div style={{ fontWeight: 700, color: '#F5E642′ }}>{result.cost}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>🌡️ DFW-SPECIFIC NOTE</div>
-                <div style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>{result.dfwNote}</div>
+                <div style={{ fontSize: '0.85rem', color: '#cbd5e1′ }}>{result.dfwNote}</div>
               </div>
             </div>
           </div>

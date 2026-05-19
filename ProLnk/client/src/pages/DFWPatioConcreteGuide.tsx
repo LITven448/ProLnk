@@ -38,14 +38,14 @@ export default function DFWPatioConcreteGuide() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW OUTDOOR LIVING GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, margin: '0 0 8px' }}>☀️ Patio Concrete Guide — DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
-          DFW's extreme heat requires specific concrete decisions that northern climate guides don't cover. Color choice, expansion joint placement, and shade integration are critical for usable outdoor space that lasts.
+          DFW's extreme heat requires specific concrete decisions that northern climate guides don’t cover. Color choice, expansion joint placement, and shade integration are critical for usable outdoor space that lasts.
         </p>
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 24 }}>
           {[
             { icon: '🌡️', title: 'DFW Heat: Color is Critical', desc: 'Standard gray concrete in DFW summer reaches 140–160°F — dangerous for pets and bare feet. Light buff, cream, or white finishes reflect more heat. Stamped concrete with dark release agents is a comfort mistake in DFW.' },
             { icon: '📐', title: 'Expansion Joints Are Non-Negotiable', desc: 'DFW summer temps swing 70°F+ from night to day. Without expansion joints every 8–10 feet, concrete slabs crack within 2–3 seasons. DFW contractors who skip joints are cutting corners dangerously.' },
-            { icon: '📉', title: 'Slope Away from Foundation', desc: 'All DFW patios must slope minimum 1/8" per foot away from the house. DFW clay soil doesn’t drain well — water pooling against foundation causes movement and structural damage over time.' },
+            { icon: '📉', title: 'Slope Away from Foundation', desc: 'All DFW patios must slope minimum 1/8″ per foot away from the house. DFW clay soil doesn’t drain well — water pooling against foundation causes movement and structural damage over time.' },
             { icon: '🌿', title: 'Shade Structure Integration', desc: 'Plan shade structure footings during concrete pour — retrofitting posts into cured concrete is expensive. DFW outdoor spaces without shade lose half their usability June–September.' },
             { icon: '🏗️', title: 'Standard vs Stamped vs Aggregate', desc: 'Standard: most durable, lowest cost, best for full-sun. Stamped: beautiful but requires resealing every 2 years in DFW UV. Exposed aggregate: good texture, moderate heat retention, excellent durability.' },
           ].map(item => (
@@ -60,11 +60,11 @@ export default function DFWPatioConcreteGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Patio Cost Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Patio Cost Estimator</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Patio Size (sq ft)</label>
-              <input type="number" value={size} onChange={e => setSize(e.target.value)} placeholder="e.g. 400" style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #2d4a7a', borderRadius: 8, color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={size} onChange={e => setSize(e.target.value)} placeholder="e.g. 400″ style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #2d4a7a', borderRadius: 8, color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Finish Type</label>
@@ -87,7 +87,7 @@ export default function DFWPatioConcreteGuide() {
               <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>${result.low.toLocaleString()} – ${result.high.toLocaleString()}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 12 }}>Estimated installation cost for {result.sqft} sq ft</div>
               <div style={{ background: '#112240', borderRadius: 8, padding: 14, marginBottom: 12 }}>
-                <div style={{ fontWeight: 600, marginBottom: 4, color: '#F5E642' }}>⚠️ DFW Heat Advisory</div>
+                <div style={{ fontWeight: 600, marginBottom: 4, color: '#F5E642′ }}>⚠️ DFW Heat Advisory</div>
                 <div style={{ color: '#94a3b8', fontSize: 14 }}>{result.heatNote}</div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>Recommended expansion joints: <strong style={{ color: '#fff' }}>{result.joints}</strong> joints minimum for this patio size</div>

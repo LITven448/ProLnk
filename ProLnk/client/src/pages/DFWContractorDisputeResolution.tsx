@@ -47,7 +47,7 @@ export default function DFWContractorDisputeResolution() {
           <p style={{ color: '#CBD5E1', marginTop: 8 }}>Know your rights under the Texas Residential Construction Liability Act</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Your Legal Framework</h2>
           {[
             ['Texas RCLA (Ch. 27)', 'Requires 60-day written notice before suing a contractor — skipping this voids your claim.'],
@@ -57,23 +57,23 @@ export default function DFWContractorDisputeResolution() {
           ].map(([title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <span style={{ color: '#F5E642', fontSize: 20, flexShrink: 0 }}>✔</span>
-              <div><strong style={{ color: '#0A1628' }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
+              <div><strong style={{ color: '#0A1628′ }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🔍 Find Your Resolution Path</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>Dispute Type</label>
-            <select value={disputeType} onChange={e => setDisputeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
+            <select value={disputeType} onChange={e => setDisputeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
               <option value="">Select dispute type...</option>
               {disputeTypes.map(d => <option key={d.id} value={d.id}>{d.label}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>Disputed Amount ($)</label>
-            <input type="text" value={amount} onChange={e => setAmount(e.target.value)} placeholder="e.g. 5000" style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628', boxSizing: 'border-box' }} />
+            <input type="text" value={amount} onChange={e => setAmount(e.target.value)} placeholder="e.g. 5000″ style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628', boxSizing: 'border-box' }} />
           </div>
           <button onClick={handleSubmit} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Resolution Path →</button>
         </div>
@@ -89,7 +89,7 @@ export default function DFWContractorDisputeResolution() {
               {result.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
                   <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: '#E2E8F0' }}>{step}</span>
+                  <span style={{ color: '#E2E8F0′ }}>{step}</span>
                 </div>
               ))}
             </div>

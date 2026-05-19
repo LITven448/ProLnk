@@ -126,7 +126,7 @@ export default function PhotoUploadBestPractices() {
         <div style={{ background: '#1B2A4A', color: '#fff', borderRadius: 12, padding: '20px 28px', marginBottom: 40, display: 'flex', alignItems: 'center', gap: 16 }}>
           <span style={{ fontSize: 28 }}>⏱️</span>
           <div>
-            <strong>Pro tip:</strong> Photos uploaded within 2 hours of job completion have a <strong style={{ color: '#F5C842' }}>23% higher AI detection rate</strong> — upload while on site.
+            <strong>Pro tip:</strong> Photos uploaded within 2 hours of job completion have a <strong style={{ color: '#F5C842′ }}>23% higher AI detection rate</strong> — upload while on site.
           </div>
         </div>
 

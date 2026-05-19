@@ -71,7 +71,7 @@ export default function DFWSpackleApplicationGuide() {
               'DFW humidity 70%+: add 30-40% to all drying times listed on packages',
               'AC vents nearby: direct airflow dries edges faster than centers — patch seams open',
             ].map(f => (
-              <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5E642' }}>
+              <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5E642′ }}>
                 {f}
               </div>
             ))}
@@ -108,14 +108,14 @@ export default function DFWSpackleApplicationGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{result.coats}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{result.coats}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Coats Needed</div>
               </div>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#F5E642' }}>⏱️ Dry Time</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#F5E642′ }}>⏱️ Dry Time</div>
                 <div style={{ color: '#CBD5E1', fontSize: 13, marginTop: 4 }}>{result.dryTime}</div>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function DFWSpackleApplicationGuide() {
                 <span style={{ color: '#CBD5E1', fontSize: 14 }}>{s}</span>
               </div>
             ))}
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, marginTop: 16, borderLeft: '3px solid #F5A623' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, marginTop: 16, borderLeft: '3px solid #F5A623′ }}>
               <div style={{ color: '#F5A623', fontSize: 13, fontWeight: 700, marginBottom: 4 }}>🖌️ Primer Note for DFW</div>
               <div style={{ color: '#CBD5E1', fontSize: 13 }}>{result.primer}</div>
             </div>

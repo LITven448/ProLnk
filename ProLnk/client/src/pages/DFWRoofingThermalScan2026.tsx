@@ -49,7 +49,7 @@ export default function DFWRoofingThermalScan2026() {
           <p style={{ color: '#94a3b8', marginBottom: 16 }}>What’s your DFW roofing situation?</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {concerns.map(c => (
-              <button key={c.value} onClick={() => { setConcern(c.value); setResult(c.value); }} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${concern === c.value ? '#F5E642' : '#1e3a5f'}`, background: concern === c.value ? '#F5E642' : '#0A1628', color: concern === c.value ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>{c.label}</button>
+              <button key={c.value} onClick={() => { setConcern(c.value); setResult(c.value); }} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${concern === c.value ? '#F5E642' : '#1e3a5f'}`, background: concern === c.value ? '#F5E642′ : '#0A1628', color: concern === c.value ? '#0A1628' : '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600 }}>{c.label}</button>
             ))}
           </div>
         </div>
@@ -59,8 +59,8 @@ export default function DFWRoofingThermalScan2026() {
             <h3 style={{ color: outcomes[result].color, marginTop: 0, fontSize: 20 }}>📊 {outcomes[result].verdict}</h3>
             <p style={{ color: '#e2e8f0', marginBottom: 12 }}>{outcomes[result].reason}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
-              <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8' }}>Best DFW timing: </span><span style={{ color: '#F5E642', fontWeight: 700 }}>{outcomes[result].timing}</span></div>
-              <div><span style={{ color: '#94a3b8' }}>Typical cost: </span><span style={{ color: '#4ade80', fontWeight: 700 }}>{outcomes[result].cost}</span></div>
+              <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8′ }}>Best DFW timing: </span><span style={{ color: '#F5E642', fontWeight: 700 }}>{outcomes[result].timing}</span></div>
+              <div><span style={{ color: '#94a3b8′ }}>Typical cost: </span><span style={{ color: '#4ade80', fontWeight: 700 }}>{outcomes[result].cost}</span></div>
             </div>
             <p style={{ color: '#64748b', fontSize: 13 }}>ProLnk connects you with DFW roofers who carry certified thermal imaging cameras and provide full reports for insurance claims.</p>
           </div>

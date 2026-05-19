@@ -73,14 +73,14 @@ export default function DFWServiceSetupChecklist() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {checklist.map((task, i) => (
-                <div key={task.id} onClick={() => toggle(task.id)} style={{ background: checked[task.id] ? '#f0fdf4' : '#fff', borderRadius: 10, padding: '1rem 1.25rem', border: `1px solid ${checked[task.id] ? '#86efac' : '#e2e8f0'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
+                <div key={task.id} onClick={() => toggle(task.id)} style={{ background: checked[task.id] ? '#f0fdf4′ : '#fff', borderRadius: 10, padding: '1rem 1.25rem', border: `1px solid ${checked[task.id] ? '#86efac' : '#e2e8f0'}`, cursor: ’pointer', transition: 'all 0.15s' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                     <div style={{ fontSize: '1.5rem', minWidth: 32, textAlign: 'center' }}>{checked[task.id] ? '✅' : task.icon}</div>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
                         <span style={{ background: '#0A1628', color: '#F5E642', fontSize: '0.7rem', fontWeight: 700, width: 20, height: 20, borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>{i + 1}</span>
-                        <strong style={{ color: checked[task.id] ? '#16a34a' : '#0A1628' }}>{task.name}</strong>
-                        <span style={{ background: checked[task.id] ? '#dcfce7' : '#f1f5f9', color: checked[task.id] ? '#16a34a' : '#64748b', fontSize: '0.75rem', padding: '0.1rem 0.5rem', borderRadius: 4 }}>{task.timing}</span>
+                        <strong style={{ color: checked[task.id] ? '#16a34a' : '#0A1628′ }}>{task.name}</strong>
+                        <span style={{ background: checked[task.id] ? '#dcfce7′ : '#f1f5f9', color: checked[task.id] ? '#16a34a' : '#64748b', fontSize: '0.75rem', padding: '0.1rem 0.5rem', borderRadius: 4 }}>{task.timing}</span>
                       </div>
                       <p style={{ color: '#475569', fontSize: '0.85rem', margin: '0 0 0.5rem', lineHeight: 1.6 }}>{task.timingDetail}</p>
                       <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -96,7 +96,7 @@ export default function DFWServiceSetupChecklist() {
           </>
         )}
         {!checklist.length && (
-          <div style={{ background: '#fff', borderRadius: 12, padding: '3rem', textAlign: 'center', border: '1px solid #e2e8f0', color: '#94a3b8' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: '3rem', textAlign: 'center', border: '1px solid #e2e8f0', color: '#94a3b8′ }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📋</div>
             <p>Select your city and move-in date above to generate your personalized utility setup timeline.</p>
           </div>

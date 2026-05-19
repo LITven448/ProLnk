@@ -5,7 +5,7 @@ export default function DFWHVACZoneDamperGuide2026() {
   const [result, setResult] = useState('');
 
   const dampers = [
-    { name: 'Motorized Round Dampers', icon: '⭕', detail: 'Most common in DFW flex-duct systems. 6", 8", 10" sizes. 24V actuator. Opens/closes per zone thermostat call.' },
+    { name: 'Motorized Round Dampers', icon: '⭕', detail: 'Most common in DFW flex-duct systems. 6″, 8″, 10″ sizes. 24V actuator. Opens/closes per zone thermostat call.' },
     { name: 'Motorized Rectangular Dampers', icon: '▬', detail: 'Used in metal duct trunk lines. Higher airflow capacity. Required when multiple zones share large supply trunks.' },
     { name: 'Bypass Damper', icon: '🔄', detail: 'CRITICAL: Without bypass, closing zone dampers increases duct pressure, damaging air handler and causing noise. Bypass relieves pressure to return air.' },
   ];
@@ -18,7 +18,7 @@ export default function DFWHVACZoneDamperGuide2026() {
 
   const guides: Record<string, string> = {
     hot_room: '🔥 HOT ROOM: Usually a damper that is partially closed, stuck, or sized too small. Check damper blade position (should be fully open when zone calls). Verify zone controller is sending 24V signal. If room is on south/west side of DFW home, may need dedicated zone with dedicated damper, not shared with cooler north rooms.',
-    noise: '💨 DUCT NOISE/WHISTLING: Classic bypass damper problem. When 1–2 zones close, pressure builds and rushes through open zones — causing whistle. Solution: install or resize bypass damper. Set bypass to crack open at 0.5" WC static pressure. Do NOT ignore — sustained high static destroys blower motor.',
+    noise: '💨 DUCT NOISE/WHISTLING: Classic bypass damper problem. When 1–2 zones close, pressure builds and rushes through open zones — causing whistle. Solution: install or resize bypass damper. Set bypass to crack open at 0.5″ WC static pressure. Do NOT ignore — sustained high static destroys blower motor.',
     uneven: '🌡️ UNEVEN TEMPS: Zoning works only if Manual J load calculation was done room-by-room. DFW homes often have incorrect zone boundaries (master bedroom in wrong zone). Recommended: get HVAC tech to re-map zones using infrared camera during peak heat. May need zone boundary redesign.',
     new: '🆕 NEW INSTALLATION: DFW standard 2-story homes: 2 zones minimum (upstairs/downstairs). Bigger homes: 3–4 zones. NEVER zone a system without bypass damper. Use Honeywell HZ432 for straightforward installs. Requires compatible variable-speed or two-speed air handler for best results.',
   };
@@ -41,7 +41,7 @@ export default function DFWHVACZoneDamperGuide2026() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔧 Damper Types</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 28 }}>
           {dampers.map(d => (
-            <div key={d.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #F5E642' }}>
+            <div key={d.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{d.icon} {d.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>{d.detail}</div>
             </div>
@@ -81,7 +81,7 @@ export default function DFWHVACZoneDamperGuide2026() {
           {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#F5E642', fontWeight: 600, fontSize: 13, lineHeight: 1.7 }}>{result}</div>}
         </div>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
-          ⚠️ <strong style={{ color: '#F5E642' }}>Never zone without bypass:</strong> Closed zone dampers increase static pressure — sustained over 1.0" WC destroys blower motor ($400–$800 repair). Always include bypass in any zoning project.
+          ⚠️ <strong style={{ color: '#F5E642′ }}>Never zone without bypass:</strong> Closed zone dampers increase static pressure — sustained over 1.0″ WC destroys blower motor ($400–$800 repair). Always include bypass in any zoning project.
         </div>
       </div>
     </div>

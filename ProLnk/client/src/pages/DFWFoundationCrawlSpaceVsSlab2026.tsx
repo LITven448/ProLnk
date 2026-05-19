@@ -60,7 +60,7 @@ export default function DFWFoundationCrawlSpaceVsSlab2026() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               <div>
                 <div style={{ color: '#4CAF50', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>✅ Advantages</div>
-                {guide.pros.map((p, i) => <div key={i} style={{ color: '#CBD2DC', fontSize: '0.85rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #4CAF50' }}>{p}</div>)}
+                {guide.pros.map((p, i) => <div key={i} style={{ color: '#CBD2DC', fontSize: '0.85rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #4CAF50′ }}>{p}</div>)}
               </div>
               <div>
                 <div style={{ color: '#FF6B6B', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>⚠️ Considerations</div>

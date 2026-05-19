@@ -83,7 +83,7 @@ export default function DFWSmartHVACGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))', gap: '0.75rem', marginBottom: '2rem' }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-              style={{ background: selected === c.id ? '#F5E642' : '#0f2240', color: selected === c.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === c.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '1rem 0.75rem', cursor: 'pointer', textAlign: 'left', fontWeight: 700, fontSize: '0.85rem' }}>
+              style={{ background: selected === c.id ? '#F5E642′ : '#0f2240', color: selected === c.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === c.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '1rem 0.75rem', cursor: ’pointer', textAlign: 'left', fontWeight: 700, fontSize: '0.85rem' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{c.icon}</div>
               {c.label}
             </button>

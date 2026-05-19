@@ -103,7 +103,7 @@ export default function DFWHVACTaxPlanningGuide() {
         <p style={{ color: '#94a3b8', marginBottom: 12 }}>
           The IRA 25C credit gives DFW homeowners up to $2,000 back on qualifying HVAC upgrades. But timing and situation matter.
         </p>
-        <div style={{ background: '#0f2040', borderRadius: 10, padding: '10px 16px', marginBottom: 32, fontSize: 13, color: '#94a3b8', borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 10, padding: '10px 16px', marginBottom: 32, fontSize: 13, color: '#94a3b8', borderLeft: '3px solid #F5E642′ }}>
           💡 This is general tax information, not professional tax advice. Consult a CPA for your specific situation.
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
@@ -114,7 +114,7 @@ export default function DFWHVACTaxPlanningGuide() {
               style={{
                 background: '#0f2040',
                 border: '2px solid',
-                borderColor: selected === s.id ? '#F5E642' : '#1e3a5f',
+                borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f',
                 borderRadius: 12,
                 padding: '14px 18px',
                 cursor: 'pointer',

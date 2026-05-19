@@ -12,18 +12,18 @@ const rooms = [
 const recommendations: Record<string, { arrangement: string; flow: string; keep: string[]; remove: string[] }> = {
   living_large: {
     arrangement: 'Float furniture away from walls — DFW buyers expect conversation zones. Two sofas facing with a coffee table, anchored by a 9x12 rug. TV on one wall, fireplace or art on opposite.',
-    flow: 'Maintain 36" walkways on all sides. Create clear sightline to kitchen and outdoor patio — DFW buyers envision entertaining flow.',
+    flow: 'Maintain 36″ walkways on all sides. Create clear sightline to kitchen and outdoor patio — DFW buyers envision entertaining flow.',
     keep: ['Large sectional or sofa pair', 'Oversized coffee table', 'Statement art or TV wall', 'Warm area rug (9x12 minimum)'],
     remove: ['Multiple small accent chairs blocking flow', 'Extra side tables cluttering space', 'Entertainment center if TV mounts better', 'Anything blocking patio door sightline'],
   },
   living_med: {
     arrangement: 'Single sofa + loveseat or two chairs in L-shape facing TV. Keep furniture scaled to room. Avoid oversized sectionals — they overwhelm and signal small space to DFW buyers.',
-    flow: 'Clear 30" minimum walkways. Mirror on one wall to open up space. Light curtains to ceiling for height illusion.',
+    flow: 'Clear 30″ minimum walkways. Mirror on one wall to open up space. Light curtains to ceiling for height illusion.',
     keep: ['One sofa, one chair or loveseat', 'Appropriately sized coffee table', 'Vertical art or mirrors', 'Light-colored rug to open space'],
     remove: ['Oversized sectional', 'Extra accent furniture', 'Heavy drapes at window height', 'Bulky entertainment center'],
   },
   dining_formal: {
-    arrangement: 'Center table in room with 36" clearance on all sides. Round tables show better in DFW smaller dining rooms. Rectangular for larger. Chandelier centered over table.',
+    arrangement: 'Center table in room with 36″ clearance on all sides. Round tables show better in DFW smaller dining rooms. Rectangular for larger. Chandelier centered over table.',
     flow: 'DFW buyers often convert formal dining to home office — stage it clearly as dining OR clearly as office, not ambiguous. Pick one story.',
     keep: ['Dining table and 4–6 chairs', 'Chandelier or statement light', 'Buffet or sideboard if room allows', 'Simple centerpiece'],
     remove: ['Extra china cabinet if tight on space', 'Leaf extensions making table too large', 'Bar cart blocking sideboard wall', 'Anything making room purpose unclear'],
@@ -35,7 +35,7 @@ const recommendations: Record<string, { arrangement: string; flow: string; keep:
     remove: ['Stacks of paper or boxes', 'Gaming setup if positioning as office', 'Second monitor if makes space feel cramped', 'Personal photos covering walls'],
   },
   primary: {
-    arrangement: 'King bed centered on longest wall with nightstands both sides. 36" on each side minimum. Dresser or armoire if closet is small. Seating area if room allows — DFW buyers love a sitting area.',
+    arrangement: 'King bed centered on longest wall with nightstands both sides. 36″ on each side minimum. Dresser or armoire if closet is small. Seating area if room allows — DFW buyers love a sitting area.',
     flow: 'Clear path from door to bathroom and closet. Ensure walk-in closet door swings freely and is organized for showing.',
     keep: ['King or queen bed with quality headboard', 'Matching nightstands', 'Dresser if needed', 'One accent chair if space allows'],
     remove: ['Exercise equipment', 'Work desk (defeats primary bedroom purpose)', 'Excess decorative pillows covering bed', 'Oversized armoire blocking natural light'],
@@ -65,13 +65,13 @@ export default function DFWRoomLayoutGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 40 }}>
           {[
             { icon: '📐', title: 'Scale to Room', note: 'DFW buyers spot oversized furniture — it signals cramped space even in large rooms' },
-            { icon: '🚶', title: '36" Walkways', note: 'Clear traffic paths through open floor plans are non-negotiable for DFW lifestyle' },
+            { icon: '🚶', title: '36″ Walkways', note: 'Clear traffic paths through open floor plans are non-negotiable for DFW lifestyle' },
             { icon: '🎯', title: 'Purpose Clarity', note: 'Each room should tell one clear story — dining or office, not both' },
             { icon: '🌿', title: 'Visible Floor', note: 'More floor visible = larger feel; DFW buyers are conditioned by model home staging' },
           ].map(tip => (
             <div key={tip.title} style={{ background: '#0F2040', borderRadius: 10, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 24, marginBottom: 10 }}>{tip.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{tip.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{tip.title}</div>
               <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.5 }}>{tip.note}</div>
             </div>
           ))}
@@ -82,14 +82,14 @@ export default function DFWRoomLayoutGuide() {
           <p style={{ color: '#8B9DC3', marginBottom: 16, fontSize: 14 }}>Select a room to get DFW-specific layout recommendations:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10, marginBottom: 24 }}>
             {rooms.map(r => (
-              <button key={r.id} onClick={() => setSelected(r.id)} style={{ background: selected === r.id ? '#F5E642' : '#0A1628', color: selected === r.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === r.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
+              <button key={r.id} onClick={() => setSelected(r.id)} style={{ background: selected === r.id ? '#F5E642′ : '#0A1628', color: selected === r.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === r.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
                 {r.label}
               </button>
             ))}
           </div>
           {rec && room && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642' }}>
-              <h3 style={{ fontWeight: 800, fontSize: 20, marginBottom: 20, color: '#F5E642' }}>{room.label}</h3>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642′ }}>
+              <h3 style={{ fontWeight: 800, fontSize: 20, marginBottom: 20, color: '#F5E642′ }}>{room.label}</h3>
               <div style={{ marginBottom: 20 }}>
                 <div style={{ fontWeight: 700, marginBottom: 8, color: '#E8EAF0', fontSize: 15 }}>📐 Furniture Arrangement</div>
                 <p style={{ color: '#8B9DC3', fontSize: 14, lineHeight: 1.7 }}>{rec.arrangement}</p>

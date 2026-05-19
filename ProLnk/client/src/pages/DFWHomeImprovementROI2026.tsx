@@ -31,7 +31,7 @@ export default function DFWHomeImprovementROI2026() {
     setSorted([...projects].sort((a, b) => key === 'costLow' ? a[key] - b[key] : b[key] - a[key]));
   };
 
-  const roiColor = (roi: number) => roi >= 100 ? '#059669' : roi >= 80 ? '#10B981' : roi >= 65 ? '#F59E0B' : '#EF4444';
+  const roiColor = (roi: number) => roi >= 100 ? '#059669′ : roi >= 80 ? '#10B981' : roi >= 65 ? '#F59E0B' : '#EF4444';
 
   return (
     <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
@@ -84,7 +84,7 @@ export default function DFWHomeImprovementROI2026() {
                 <tbody>
                   {sorted.map((p, i) => (
                     <tr key={p.name} style={{ background: i % 2 === 0 ? '#FFFFFF' : '#F8FAFC' }}>
-                      <td style={{ padding: '14px 20px', fontWeight: 600, color: '#111827', borderBottom: '1px solid #F1F5F9' }}>
+                      <td style={{ padding: '14px 20px', fontWeight: 600, color: '#111827', borderBottom: '1px solid #F1F5F9′ }}>
                         {p.name}
                         {p.essential && <span style={{ marginLeft: 8, fontSize: 11, background: '#FEF3C7', color: '#92400E', padding: '2px 6px', borderRadius: 4, fontWeight: 700 }}>Essential for Sale</span>}
                       </td>
@@ -94,10 +94,10 @@ export default function DFWHomeImprovementROI2026() {
                       <td style={{ padding: '14px 20px', color: '#374151', borderBottom: '1px solid #F1F5F9', whiteSpace: 'nowrap' }}>
                         ${p.valueLow.toLocaleString()} – ${p.valueHigh.toLocaleString()}
                       </td>
-                      <td style={{ padding: '14px 20px', borderBottom: '1px solid #F1F5F9' }}>
+                      <td style={{ padding: '14px 20px', borderBottom: '1px solid #F1F5F9′ }}>
                         <span style={{ fontWeight: 800, fontSize: 16, color: roiColor(p.roi) }}>{p.roi}%</span>
                       </td>
-                      <td style={{ padding: '14px 20px', borderBottom: '1px solid #F1F5F9' }}>
+                      <td style={{ padding: '14px 20px', borderBottom: '1px solid #F1F5F9′ }}>
                         <div style={{ width: 80, height: 8, background: '#E5E7EB', borderRadius: 4, overflow: 'hidden' }}>
                           <div style={{ width: `${Math.min(p.roi, 120) / 120 * 100}%`, height: '100%', background: roiColor(p.roi), borderRadius: 4 }} />
                         </div>

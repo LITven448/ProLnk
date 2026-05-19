@@ -63,7 +63,7 @@ export default function DFWGarageValueGuide() {
             { icon: '🖌️', title: 'Epoxy Floors Signal Quality', desc: 'Epoxy flooring costs $1,500–$3,500 but photographs beautifully and signals a meticulous owner. Disproportionate ROI in staging.' },
             { icon: '📦', title: 'Tandem vs Side-by-Side', desc: 'Tandem garages (one car behind the other) are functional but often discounted by buyers. Side-by-side is the strong preference in DFW.' },
           ].map(c => (
-            <div key={c.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e8e3d9' }}>
+            <div key={c.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e8e3d9′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{c.title}</div>
               <div style={{ fontSize: 13, color: '#666', lineHeight: 1.6 }}>{c.desc}</div>
@@ -71,7 +71,7 @@ export default function DFWGarageValueGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 14, padding: 32, marginBottom: 28, border: '1px solid #e8e3d9' }}>
+        <div style={{ background: '#fff', borderRadius: 14, padding: 32, marginBottom: 28, border: '1px solid #e8e3d9′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#8B5E3C' }}>🏠 Garage Value Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>

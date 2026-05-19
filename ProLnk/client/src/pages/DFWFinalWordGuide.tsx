@@ -30,19 +30,19 @@ export default function DFWFinalWordGuide() {
           <p style={{ color: '#94a3b8', fontSize: 16 }}>Everything you need to know — from a platform built for DFW homeowners</p>
         </div>
         <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 28, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>How long have you been a DFW homeowner?</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>How long have you been a DFW homeowner?</div>
           <div style={{ display: 'grid', gap: 10 }}>
             {stages.map(s => (
               <button key={s.label} onClick={() => setStage(s.label)}
-                style={{ padding: '12px 16px', background: stage === s.label ? '#F5E642' : '#0A1628', color: stage === s.label ? '#0A1628' : '#cbd5e1', border: '1.5px solid #1e3a5f', borderRadius: 10, fontWeight: 600, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '12px 16px', background: stage === s.label ? '#F5E642′ : '#0A1628', color: stage === s.label ? '#0A1628' : '#cbd5e1', border: '1.5px solid #1e3a5f', borderRadius: 10, fontWeight: 600, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
           </div>
         </div>
         {selected && (
-          <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 28, border: '2px solid #F5E642' }}>
-            <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#F5E642' }}>Your Personalized Final Advice</div>
+          <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 28, border: '2px solid #F5E642′ }}>
+            <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#F5E642′ }}>Your Personalized Final Advice</div>
             {selected.advice.map((a, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', fontSize: 15 }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{i + 1}.</span> {a}
@@ -51,7 +51,7 @@ export default function DFWFinalWordGuide() {
           </div>
         )}
         <div style={{ background: '#111d30', borderRadius: 16, padding: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>📚 DFW Homeownership Facts</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>📚 DFW Homeownership Facts</div>
           {dfwFacts.map((f, i) => (
             <div key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#94a3b8', fontSize: 14 }}>{f}</div>
           ))}

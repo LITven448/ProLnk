@@ -29,7 +29,7 @@ const labels: Record<string, string> = {
 };
 
 function Stars({ n }: { n: number }) {
-  return <span style={{ color: '#F5E642' }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
+  return <span style={{ color: '#F5E642′ }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
 }
 
 export default function DFWInsulationBrandsCompared() {
@@ -55,9 +55,9 @@ export default function DFWInsulationBrandsCompared() {
                 {(['vented', 'unvented', 'cathedral'] as AtticType[]).map(a => (
                   <button key={a} onClick={() => setAtticType(a)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: atticType === a ? '#F5E642' : '#1e3a5f',
-                      background: atticType === a ? '#F5E642' : 'transparent',
-                      color: atticType === a ? '#0A1628' : '#94a3b8' }}>
+                      borderColor: atticType === a ? '#F5E642′ : '#1e3a5f',
+                      background: atticType === a ? '#F5E642′ : ’transparent',
+                      color: atticType === a ? '#0A1628′ : '#94a3b8' }}>
                     {a.charAt(0).toUpperCase() + a.slice(1)}
                   </button>
                 ))}
@@ -69,9 +69,9 @@ export default function DFWInsulationBrandsCompared() {
                 {(['heat', 'sound', 'moisture'] as PrimaryConcern[]).map(c => (
                   <button key={c} onClick={() => setConcern(c)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: concern === c ? '#F5E642' : '#1e3a5f',
-                      background: concern === c ? '#F5E642' : 'transparent',
-                      color: concern === c ? '#0A1628' : '#94a3b8' }}>
+                      borderColor: concern === c ? '#F5E642′ : '#1e3a5f',
+                      background: concern === c ? '#F5E642′ : ’transparent',
+                      color: concern === c ? '#0A1628′ : '#94a3b8' }}>
                     {c.charAt(0).toUpperCase() + c.slice(1)}
                   </button>
                 ))}
@@ -81,20 +81,20 @@ export default function DFWInsulationBrandsCompared() {
           <div style={{ padding: '14px 18px', background: '#1a3a6e', borderRadius: 10, borderLeft: '4px solid #F5E642', marginBottom: 10 }}>
             <p style={{ margin: 0, color: '#F5E642', fontWeight: 700 }}>🏆 Best material for your DFW attic: {pick}</p>
           </div>
-          <p style={{ color: '#64748b', fontSize: 13, margin: '8px 0 0' }}>{atticNote[atticType]}</p>
+          <p style={{ color: '#64748b', fontSize: 13, margin: '8px 0 0′ }}>{atticNote[atticType]}</p>
         </div>
 
         <div style={{ display: 'grid', gap: 16 }}>
           {brands.map(b => (
             <div key={b.name} onClick={() => setExpanded(expanded === b.name ? null : b.name)}
               style={{ background: '#0f2040', borderRadius: 12, padding: 20, cursor: 'pointer',
-                border: b.name === pick ? '2px solid #F5E642' : '2px solid #1e3a5f' }}>
+                border: b.name === pick ? '2px solid #F5E642′ : '2px solid #1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   {b.name === pick && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 20 }}>TOP PICK</span>}
                   <span style={{ fontWeight: 700, fontSize: 16 }}>{b.name}</span>
                 </div>
-                <span style={{ color: '#94a3b8' }}>{expanded === b.name ? '▲' : '▼'}</span>
+                <span style={{ color: '#94a3b8′ }}>{expanded === b.name ? '▲' : '▼'}</span>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 14 }}>
                 {Object.keys(labels).map(k => (
@@ -114,7 +114,7 @@ export default function DFWInsulationBrandsCompared() {
         </div>
 
         <div style={{ marginTop: 28, textAlign: 'center', color: '#475569', fontSize: 13 }}>
-          Get matched with top DFW insulation contractors — <span style={{ color: '#F5E642' }}>prolnk.io</span>
+          Get matched with top DFW insulation contractors — <span style={{ color: '#F5E642′ }}>prolnk.io</span>
         </div>
       </div>
     </div>

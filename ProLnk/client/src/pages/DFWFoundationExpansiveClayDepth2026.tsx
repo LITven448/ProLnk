@@ -41,7 +41,7 @@ export default function DFWFoundationExpansiveClayDepth2026() {
             <div key={p.range} style={{ background: '#0F2240', border: `1px solid ${p.color}40`, borderRadius: '12px', padding: '14px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                 <span style={{ color: p.color, fontWeight: '800', fontSize: '14px' }}>{p.range}</span>
-                <span style={{ background: `${p.color}20`, color: p.color, borderRadius: '6px', padding: '2px 8px', fontSize: '12px', fontWeight: '700' }}>{p.risk}</span>
+                <span style={{ background: `${p.color}20`, color: p.color, borderRadius: '6px', padding: '2px 8px', fontSize: '12px', fontWeight: '700′ }}>{p.risk}</span>
               </div>
               <div style={{ color: '#94A3B8', fontSize: '13px' }}>{p.desc}</div>
             </div>
@@ -53,7 +53,7 @@ export default function DFWFoundationExpansiveClayDepth2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
             {locations.map(l => (
               <button key={l.key} onClick={() => { setLocation(l.key); setClayInfo(clayData[l.key]); }}
-                style={{ background: location === l.key ? '#F5E642' : '#1E3A5F', color: location === l.key ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600' }}>
+                style={{ background: location === l.key ? '#F5E642′ : '#1E3A5F', color: location === l.key ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600′ }}>
                 {l.label}
               </button>
             ))}
@@ -76,7 +76,7 @@ export default function DFWFoundationExpansiveClayDepth2026() {
             ].map((item, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '20px', flexShrink: 0 }}>{item.icon}</span>
-                <p style={{ color: '#94A3B8', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>{item.fact}</p>
+                <p style={{ color: '#94A3B8', fontSize: '14px', margin: 0, lineHeight: '1.5′ }}>{item.fact}</p>
               </div>
             ))}
           </div>

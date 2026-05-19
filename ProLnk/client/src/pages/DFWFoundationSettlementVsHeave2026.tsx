@@ -26,7 +26,7 @@ export default function DFWFoundationSettlementVsHeave2026() {
     { icon: '↔️', type: 'Differential', direction: 'Uneven movement', cause: 'Localized moisture/soil variation', visual: 'One area vs another', danger: 'Critical' },
   ];
 
-  const dangerColors: Record<string, string> = { Medium: '#EAB308', High: '#F97316', Critical: '#EF4444' };
+  const dangerColors: Record<string, string> = { Medium: '#EAB308', High: '#F97316', Critical: '#EF4444′ };
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
@@ -44,7 +44,7 @@ export default function DFWFoundationSettlementVsHeave2026() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
                   <span style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px' }}>{m.type}</span>
-                  <span style={{ background: `${dangerColors[m.danger]}20`, color: dangerColors[m.danger], borderRadius: '6px', padding: '2px 8px', fontSize: '12px', fontWeight: '700' }}>{m.danger}</span>
+                  <span style={{ background: `${dangerColors[m.danger]}20`, color: dangerColors[m.danger], borderRadius: '6px', padding: '2px 8px', fontSize: '12px', fontWeight: '700′ }}>{m.danger}</span>
                 </div>
                 <div style={{ color: '#94A3B8', fontSize: '13px', marginBottom: '4px' }}>Direction: {m.direction}</div>
                 <div style={{ color: '#94A3B8', fontSize: '13px', marginBottom: '4px' }}>Cause: {m.cause}</div>
@@ -60,7 +60,7 @@ export default function DFWFoundationSettlementVsHeave2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
             {patterns.map(p => (
               <button key={p.key} onClick={() => { setPattern(p.key); setAssessment(assessments[p.key]); }}
-                style={{ background: pattern === p.key ? '#F5E642' : '#1E3A5F', color: pattern === p.key ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600' }}>
+                style={{ background: pattern === p.key ? '#F5E642′ : '#1E3A5F', color: pattern === p.key ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600′ }}>
                 {p.label}
               </button>
             ))}

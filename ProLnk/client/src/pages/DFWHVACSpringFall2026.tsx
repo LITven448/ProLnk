@@ -35,14 +35,14 @@ export default function DFWHVACSpringFall2026() {
           <div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642', marginBottom: 16 }}>📅 Select Your DFW Month</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10, marginBottom: 20 }}>
             {months.map(m => (
-              <button key={m.id} onClick={() => setMonth(m.id)} style={{ background: month === m.id ? '#F5E642' : '#162840', color: month === m.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '14px 8px', cursor: 'pointer', fontWeight: month === m.id ? 700 : 400, fontSize: 14, textAlign: 'center' }}>
+              <button key={m.id} onClick={() => setMonth(m.id)} style={{ background: month === m.id ? '#F5E642′ : '#162840', color: month === m.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '14px 8px', cursor: ’pointer', fontWeight: month === m.id ? 700 : 400, fontSize: 14, textAlign: 'center' }}>
                 <div style={{ fontSize: 22, marginBottom: 4 }}>{m.icon}</div>
                 {m.label}
               </button>
             ))}
           </div>
           {matchMonth && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>{matchMonth.icon} {matchMonth.label} HVAC Strategy</div>
               <div style={{ color: '#C8D8E8', fontSize: 15, lineHeight: 1.7 }}>{matchMonth.advice}</div>
             </div>
@@ -53,19 +53,19 @@ export default function DFWHVACSpringFall2026() {
           <div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642', marginBottom: 16 }}>❓ Your Shoulder Season Question</div>
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSituation(s.id)} style={{ background: situation === s.id ? '#F5E642' : '#162840', color: situation === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: situation === s.id ? 700 : 400, fontSize: 15 }}>
+              <button key={s.id} onClick={() => setSituation(s.id)} style={{ background: situation === s.id ? '#F5E642′ : '#162840', color: situation === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: situation === s.id ? 700 : 400, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {matchSit && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#C8D8E8', fontSize: 15, lineHeight: 1.7 }}>{matchSit.strategy}</div>
             </div>
           )}
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🔗 ProLnk: DFW HVAC tune-ups before peak season</div>
           <div style={{ color: '#8FA3BF', fontSize: 14 }}>Schedule spring AC tune-ups and fall furnace checks with vetted DFW pros before the seasonal rush. ProLnk homeowner signup is open now.</div>
         </div>

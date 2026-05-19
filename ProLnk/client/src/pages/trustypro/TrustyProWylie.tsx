@@ -1,26 +1,26 @@
 import { Link } from "wouter";
 
-const INDIGO = "#4F46E5";
+const INDIGO = "#4F46E5″;
 const AMBER  = "#F59E0B";
 const LIGHT  = "#F8FAFC";
 
 const stats = [
-  { label: "Population Growth Since 2010", value: "108%" },
+  { label: "Population Growth Since 2010″, value: "108%" },
   { label: "Avg Home Age (Est. Areas)", value: "~12 yrs" },
   { label: "Lake Lavon Humidity Days/yr", value: "190+" },
   { label: "Homes Built 2015–Present", value: "62%" },
 ];
 
 const steps = [
-  { n: "01", title: "Describe Your Home", body: "Tell us your home's age, construction era, and the issue you're facing — new build warranty gap or older deferred maintenance." },
-  { n: "02", title: "Get Matched Instantly", body: "Our AI matches you with Wylie-area pros who know Lake Lavon humidity patterns, builder warranties, and clay-soil drainage." },
-  { n: "03", title: "Approve & Relax", body: "Review quotes, pick your pro, and track the job from start to finish — all inside TrustyPro." },
+  { n: "01″, title: "Describe Your Home", body: "Tell us your home's age, construction era, and the issue you’re facing — new build warranty gap or older deferred maintenance." },
+  { n: "02″, title: "Get Matched Instantly", body: "Our AI matches you with Wylie-area pros who know Lake Lavon humidity patterns, builder warranties, and clay-soil drainage." },
+  { n: "03″, title: "Approve & Relax", body: "Review quotes, pick your pro, and track the job from start to finish — all inside TrustyPro." },
 ];
 
 const pros = [
-  { name: "Marcus T.", trade: "HVAC & Moisture Control", rating: "4.9", jobs: 214, note: "Specializes in post-construction humidity remediation near Lavon." },
-  { name: "Sierra R.", trade: "Roofing & Waterproofing", rating: "4.8", jobs: 178, note: "Expert in Wylie's newer rooflines and builder-grade flashing issues." },
-  { name: "Devon K.", trade: "Foundation & Drainage", rating: "4.9", jobs: 143, note: "Handles clay-soil movement and drainage in established 1990s neighborhoods." },
+  { name: "Marcus T.", trade: "HVAC & Moisture Control", rating: "4.9″, jobs: 214, note: "Specializes in post-construction humidity remediation near Lavon." },
+  { name: "Sierra R.", trade: "Roofing & Waterproofing", rating: "4.8″, jobs: 178, note: "Expert in Wylie's newer rooflines and builder-grade flashing issues." },
+  { name: "Devon K.", trade: "Foundation & Drainage", rating: "4.9″, jobs: 143, note: "Handles clay-soil movement and drainage in established 1990s neighborhoods." },
 ];
 
 const testimonials = [
@@ -66,10 +66,10 @@ export default function TrustyProWylie() {
       </section>
 
       {/* Stats Bar */}
-      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0" }}>
+      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0″ }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", padding: "0 24px" }}>
           {stats.map(s => (
-            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0" }}>
+            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0″ }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: INDIGO }}>{s.value}</div>
               <div style={{ fontSize: 12, color: "#64748B", marginTop: 4, lineHeight: 1.4 }}>{s.label}</div>
             </div>
@@ -85,7 +85,7 @@ export default function TrustyProWylie() {
             <div key={s.n} style={{ background: "#fff", borderRadius: 16, padding: 32, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
               <div style={{ fontSize: 40, fontWeight: 900, color: INDIGO, opacity: 0.15, lineHeight: 1 }}>{s.n}</div>
               <h3 style={{ fontSize: 18, fontWeight: 700, margin: "8px 0 10px" }}>{s.title}</h3>
-              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{s.body}</p>
+              <p style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7, margin: 0 }}>{s.body}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function TrustyProWylie() {
                   <span style={{ fontSize: 13, fontWeight: 600, color: AMBER }}>★ {p.rating}</span>
                   <span style={{ fontSize: 13, color: "#64748B" }}>{p.jobs} jobs</span>
                 </div>
-                <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.6, margin: 0 }}>{p.note}</p>
+                <p style={{ fontSize: 13, color: "#475569″, lineHeight: 1.6, margin: 0 }}>{p.note}</p>
               </div>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function TrustyProWylie() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
             {testimonials.map(t => (
               <div key={t.name} style={{ background: "#fff", borderRadius: 16, padding: 28, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", borderTop: `4px solid ${INDIGO}` }}>
-                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155" }}>"{t.quote}"</p>
+                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155″ }}>"{t.quote}"</p>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
                 <div style={{ fontSize: 12, color: "#64748B" }}>{t.area}</div>
               </div>
@@ -141,7 +141,7 @@ export default function TrustyProWylie() {
             {faqs.map(f => (
               <div key={f.q} style={{ borderLeft: `4px solid ${INDIGO}`, paddingLeft: 20 }}>
                 <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{f.q}</div>
-                <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{f.a}</div>
+                <div style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7 }}>{f.a}</div>
               </div>
             ))}
           </div>

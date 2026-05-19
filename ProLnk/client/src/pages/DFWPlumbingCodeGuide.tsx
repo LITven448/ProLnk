@@ -10,11 +10,11 @@ const cityData: Record<string, { backflow: string; permit: string; inspector: st
 };
 
 const projectTypes = [
-  { id: 'repipe', label: 'Re-pipe (PEX/Copper)', notes: 'PEX-A and PEX-B both allowed in DFW under updated IPC adoption. Copper still code-compliant. PEX support every 32" horizontal, every 48" vertical.' },
+  { id: 'repipe', label: 'Re-pipe (PEX/Copper)', notes: 'PEX-A and PEX-B both allowed in DFW under updated IPC adoption. Copper still code-compliant. PEX support every 32″ horizontal, every 48″ vertical.' },
   { id: 'waterheater', label: 'Water Heater Replacement', notes: 'TCEQ requires licensed plumber for gas water heater. TPR valve required, drain pan for elevated installs. Must match BTU/efficiency of replaced unit or meet current minimums.' },
   { id: 'sewer', label: 'Sewer Line Work', notes: 'Any sewer line replacement or repair over 5 feet requires permit. Two cleanouts required: one near structure, one near property line. Camera inspection often required post-repair.' },
   { id: 'backflow', label: 'Backflow Preventer Install', notes: 'Required on all irrigation tie-ins and commercial connections. Annual testing by a licensed backflow tester required in most DFW cities. RP assembly preferred over double-check for higher-hazard.' },
-  { id: 'fixture', label: 'Fixture Addition', notes: 'Adding a new fixture (toilet, sink, shower) requires a permit in most DFW cities. Must verify existing drain has adequate slope (1/4" per foot) and venting meets IPC.' },
+  { id: 'fixture', label: 'Fixture Addition', notes: 'Adding a new fixture (toilet, sink, shower) requires a permit in most DFW cities. Must verify existing drain has adequate slope (1/4″ per foot) and venting meets IPC.' },
 ];
 
 export default function DFWPlumbingCodeGuide() {

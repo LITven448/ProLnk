@@ -58,7 +58,7 @@ export default function DFWSmartPanelGuide() {
               </div>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
                 {[['EV Management', p.evManagement], ['Solar Optimized', p.solarOptimized], ['ERCOT Integration', p.ercot]].map(([label, active]) => (
-                  <div key={label as string} style={{ background: active ? '#16A34A20' : '#1E3A5F', color: active ? '#4ADE80' : '#475569', fontSize: 12, padding: '3px 10px', borderRadius: 99, fontWeight: 600 }}>
+                  <div key={label as string} style={{ background: active ? '#16A34A20′ : '#1E3A5F', color: active ? '#4ADE80' : '#475569', fontSize: 12, padding: '3px 10px', borderRadius: 99, fontWeight: 600 }}>
                     {active ? '✅' : '❌'} {label}
                   </div>
                 ))}
@@ -69,7 +69,7 @@ export default function DFWSmartPanelGuide() {
         </div>
 
         <div style={{ background: '#0D1F35', borderRadius: 12, padding: '28px', border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Calculate Your Smart Panel ROI</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Calculate Your Smart Panel ROI</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <input type="checkbox" checked={hasEV} onChange={e => setHasEV(e.target.checked)} id="ev" style={{ width: 18, height: 18, cursor: 'pointer' }} />
@@ -82,7 +82,7 @@ export default function DFWSmartPanelGuide() {
           </div>
           <div style={{ display: 'flex', gap: 10, marginBottom: 20, flexWrap: 'wrap' }}>
             {[['small', 'Under 2,000 sq ft'], ['medium', '2,000–3,500 sq ft'], ['large', '3,500+ sq ft']].map(([v, l]) => (
-              <button key={v} onClick={() => setHomeSize(v)} style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${homeSize === v ? '#F5E642' : '#1E3A5F'}`, background: homeSize === v ? '#F5E64220' : 'transparent', color: homeSize === v ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setHomeSize(v)} style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${homeSize === v ? '#F5E642' : '#1E3A5F'}`, background: homeSize === v ? '#F5E64220′ : ’transparent', color: homeSize === v ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}

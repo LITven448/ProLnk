@@ -24,8 +24,8 @@ export default function DFWGalvanizedPlumbingGuide2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔧</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Galvanized Steel Plumbing Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>1950s–1970s DFW homes — what galvanized pipes mean for your water supply</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Galvanized Steel Plumbing Guide 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>1950s–1970s DFW homes — what galvanized pipes mean for your water supply</p>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -34,7 +34,7 @@ export default function DFWGalvanizedPlumbingGuide2026() {
             <li>Zinc coating wears off from inside — bare steel then rusts into your water supply</li>
             <li>DFW hard water (high mineral content) accelerates scale buildup inside galvanized pipe</li>
             <li>Scale reduces interior diameter by up to 90% in heavily corroded runs</li>
-            <li>Pressure loss is slow and gradual — many homeowners don't notice until it's severe</li>
+            <li>Pressure loss is slow and gradual — many homeowners don't notice until it’s severe</li>
           </ul>
         </div>
 
@@ -44,15 +44,15 @@ export default function DFWGalvanizedPlumbingGuide2026() {
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#0f172a', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem' }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#0f172a', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: ’left', cursor: 'pointer', fontSize: '0.95rem' }}>
                 {s.emoji} {s.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ marginTop: '1rem', background: '#0f172a', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', background: '#0f172a', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Risk Level: {match.risk}</div>
-              <div style={{ color: '#cbd5e1' }}>{match.note}</div>
+              <div style={{ color: '#cbd5e1′ }}>{match.note}</div>
             </div>
           )}
         </div>

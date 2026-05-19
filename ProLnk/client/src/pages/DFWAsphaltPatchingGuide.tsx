@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const CRACK_SIZES = ['Hairline (<1/4")', 'Small (1/4" - 1/2")', 'Medium (1/2" - 1")', 'Large (>1")'];
+const CRACK_SIZES = ['Hairline (<1/4″)', 'Small (1/4″ - 1/2″)', 'Medium (1/2″ - 1″)', 'Large (>1″)'];
 const SEASONS = ['Spring (Mar-May)', 'Summer (Jun-Aug)', 'Fall (Sep-Nov)', 'Winter (Dec-Feb)'];
 const AREAS = ['Small (<200 sqft)', 'Medium (200-500 sqft)', 'Large (>500 sqft)'];
 
@@ -15,7 +15,7 @@ function getRepairRecommendation(crack: string, season: string, area: string) {
       method: 'Wait or Early Morning Only',
       note: 'DFW summer heat (100°F+) makes asphalt pliable — sealants won\’t cure properly. Work before 8am or wait for fall.',
       material: isLarge ? 'Hot mix patch + professional crew' : 'Rubberized crack filler',
-      cost: bigArea ? '$800–$2,400' : '$150–$600',
+      cost: bigArea ? '$800–$2,400′ : '$150–$600',
     };
   }
   if (isLarge || isMedium) {
@@ -23,7 +23,7 @@ function getRepairRecommendation(crack: string, season: string, area: string) {
       method: season.includes('Winter') ? 'Cold Patch (temporary)' : 'Hot Patch or Professional',
       note: 'Large cracks need full-depth patching. DFW clay soil shifts cause deep cracking — address base if needed.',
       material: 'Cold patch mix or hire asphalt contractor',
-      cost: bigArea ? '$600–$2,000' : '$200–$800',
+      cost: bigArea ? '$600–$2,000′ : '$200–$800',
     };
   }
   return {
@@ -72,7 +72,7 @@ export default function DFWAsphaltPatchingGuide() {
             </div>
           ))}
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{result.method}</div>
               <div style={{ color: '#9BA3B8', fontSize: 14, marginBottom: 12 }}>{result.note}</div>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>

@@ -69,10 +69,10 @@ export default function DFWRealEstateMarket2026() {
               </thead>
               <tbody>
                 {cityData.map((row, i) => (
-                  <tr key={row.city} style={{ borderBottom: '1px solid #f0f0f0', background: i % 2 === 0 ? '#fff' : '#fafaf9' }}>
+                  <tr key={row.city} style={{ borderBottom: '1px solid #f0f0f0', background: i % 2 === 0 ? '#fff' : '#fafaf9′ }}>
                     <td style={{ padding: '13px 16px', fontWeight: 600, color: '#1a1a2e' }}>{row.city}</td>
-                    <td style={{ padding: '13px 16px', textAlign: 'right', color: '#333' }}>{row.medianPrice}</td>
-                    <td style={{ padding: '13px 16px', textAlign: 'right', color: '#333' }}>{row.avgDOM} days</td>
+                    <td style={{ padding: '13px 16px', textAlign: 'right', color: '#333′ }}>{row.medianPrice}</td>
+                    <td style={{ padding: '13px 16px', textAlign: 'right', color: '#333′ }}>{row.avgDOM} days</td>
                     <td style={{ padding: '13px 16px', textAlign: 'right', color: '#16a34a', fontWeight: 600 }}>{row.priceChangeYoY}</td>
                   </tr>
                 ))}
@@ -96,7 +96,7 @@ export default function DFWRealEstateMarket2026() {
                   fontWeight: 700,
                   fontSize: 15,
                   background: activeTab === tab ? '#1a1a2e' : '#e5e5e5',
-                  color: activeTab === tab ? '#F5C518' : '#555',
+                  color: activeTab === tab ? '#F5C518′ : '#555',
                   transition: 'all 0.15s',
                 }}
               >

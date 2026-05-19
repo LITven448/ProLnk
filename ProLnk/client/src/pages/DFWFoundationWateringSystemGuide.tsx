@@ -5,7 +5,7 @@ const wateringMethods = ['No watering system', 'Manual hose only', 'Sprinkler sy
 
 function getRecommendation(sqft: string, method: string) {
   const soakerFeet = sqft === 'Under 1,500 sq ft' ? '150–200 ft' : sqft === '1,500–2,500 sq ft' ? '200–300 ft' : sqft === '2,500–3,500 sq ft' ? '300–400 ft' : '400–550 ft';
-  const cost = sqft === 'Under 1,500 sq ft' ? '$300–$600' : sqft === '1,500–2,500 sq ft' ? '$500–$900' : sqft === '2,500–3,500 sq ft' ? '$800–$1,400' : '$1,200–$2,000';
+  const cost = sqft === 'Under 1,500 sq ft' ? '$300–$600′ : sqft === '1,500–2,500 sq ft' ? '$500–$900' : sqft === '2,500–3,500 sq ft' ? '$800–$1,400' : '$1,200–$2,000';
   const timer = method === 'Sprinkler system only' ? '3x per week, 30–45 min, early AM' : '5x per week, 20–30 min, early AM';
   return { soakerFeet, cost, timer };
 }
@@ -87,7 +87,7 @@ export default function DFWFoundationWateringSystemGuide() {
                 { label: '💰 Install Cost Est.', value: result.cost },
                 { label: '⏰ Timer Schedule', value: result.timer },
               ].map(({ label, value }) => (
-                <div key={label} style={{ padding: 14, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642' }}>
+                <div key={label} style={{ padding: 14, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642′ }}>
                   <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 6 }}>{label}</div>
                   <div style={{ fontSize: 13, fontWeight: 600 }}>{value}</div>
                 </div>
@@ -97,9 +97,9 @@ export default function DFWFoundationWateringSystemGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚡ DFW Watering Facts</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚡ DFW Watering Facts</div>
           {['DFW clay can lose 3–5 inches of moisture in summer — equivalent to moving soil', 'Dallas Water Utilities recommends watering 2–3x/week in summer for foundations', 'Foundation watering can add 10+ years to slab stability at minimal cost', 'Smart timers with rain sensors prevent over-watering and washout'].map(f => (
-            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1' }}>• {f}</div>
+            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1′ }}>• {f}</div>
           ))}
         </div>
       </div>

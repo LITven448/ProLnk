@@ -75,10 +75,10 @@ export default function DFWHVACShutdownGuide() {
   const checklist = systemType && timing ? checklists[systemType][timing] : null;
 
   const priorityStyle = (p: string) => ({
-    critical: { dot: '🔴', color: '#FCA5A5' },
+    critical: { dot: '🔴', color: '#FCA5A5′ },
     important: { dot: '🟡', color: '#FDE68A' },
     optional: { dot: '🔵', color: '#93C5FD' },
-  }[p] || { dot: '⚪', color: '#CBD5E1' });
+  }[p] || { dot: '⚪', color: '#CBD5E1′ });
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
@@ -96,7 +96,7 @@ export default function DFWHVACShutdownGuide() {
               {(Object.entries(systemInfo) as [SystemType, typeof systemInfo[SystemType]][]).map(([id, info]) => (
                 <button key={id} onClick={() => setSystemType(systemType === id ? null : id)}
                   style={{ background: systemType === id ? '#1E3A5F' : '#0F2237', border: `2px solid ${systemType === id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '12px 14px', cursor: 'pointer', textAlign: 'left' }}>
-                  <div style={{ color: systemType === id ? '#F5E642' : '#CBD5E1', fontSize: 13, fontWeight: 700 }}>{info.label}</div>
+                  <div style={{ color: systemType === id ? '#F5E642′ : '#CBD5E1', fontSize: 13, fontWeight: 700 }}>{info.label}</div>
                   <div style={{ color: '#64748B', fontSize: 11, marginTop: 2 }}>{info.desc}</div>
                 </button>
               ))}
@@ -108,7 +108,7 @@ export default function DFWHVACShutdownGuide() {
               {(Object.entries(timingInfo) as [Timing, typeof timingInfo[Timing]][]).map(([id, info]) => (
                 <button key={id} onClick={() => setTiming(timing === id ? null : id)}
                   style={{ background: timing === id ? '#1E3A5F' : '#0F2237', border: `2px solid ${timing === id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '12px 14px', cursor: 'pointer', textAlign: 'left' }}>
-                  <div style={{ color: timing === id ? '#F5E642' : '#CBD5E1', fontSize: 13, fontWeight: 700 }}>{info.label}</div>
+                  <div style={{ color: timing === id ? '#F5E642′ : '#CBD5E1', fontSize: 13, fontWeight: 700 }}>{info.label}</div>
                   <div style={{ color: '#64748B', fontSize: 11, marginTop: 2 }}>{info.desc}</div>
                 </button>
               ))}

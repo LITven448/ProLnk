@@ -50,7 +50,7 @@ export default function DFWRetainingWallGuide2026() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Wall Height</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {['Under 2 ft', '2–4 ft', '4–6 ft', '6 ft+'].map(h => (
-                <button key={h} onClick={() => setHeight(h)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: height === h ? '#F5E642' : '#162842', color: height === h ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{h}</button>
+                <button key={h} onClick={() => setHeight(h)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: height === h ? '#F5E642′ : '#162842', color: height === h ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{h}</button>
               ))}
             </div>
           </div>
@@ -58,12 +58,12 @@ export default function DFWRetainingWallGuide2026() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Primary Use</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {['Garden Bed', 'Slope Control'].map(u => (
-                <button key={u} onClick={() => setUse(u)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: use === u ? '#F5E642' : '#162842', color: use === u ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{u}</button>
+                <button key={u} onClick={() => setUse(u)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: use === u ? '#F5E642′ : '#162842', color: use === u ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{u}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 8 }}>{result.material}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.6 }}>{result.note}</div>

@@ -79,7 +79,7 @@ export default function DFWContractorBrandingGuide() {
           )}
         </div>
 
-        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>💡 ProLnk Pro Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>Your ProLnk profile IS your brand hub. Add your logo, service photos, certifications, and reviews. Homeowners browsing ProLnk decide in under 30 seconds. A complete profile with 5+ photos wins 2.7x more jobs than an incomplete one.</div>
         </div>

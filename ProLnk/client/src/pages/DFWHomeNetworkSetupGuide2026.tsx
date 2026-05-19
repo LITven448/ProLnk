@@ -5,7 +5,7 @@ export default function DFWHomeNetworkSetupGuide2026() {
   const [deviceCount, setDeviceCount] = useState('under20');
 
   const getConfig = () => {
-    if (homeSize === 'over2500' && deviceCount === 'over40') {
+    if (homeSize === 'over2500′ && deviceCount === ’over40') {
       return { router: 'Tri-band mesh system (3+ nodes)', backhaul: 'Wired backhaul via ethernet', iot: 'Dedicated 2.4GHz IoT VLAN', tip: 'Run CAT6 between nodes for best performance' };
     } else if (homeSize === 'over2500') {
       return { router: 'Dual-band mesh system (2 nodes)', backhaul: 'Wired or wireless backhaul', iot: 'Separate IoT SSID', tip: 'Place nodes 30-40ft apart for full coverage' };
@@ -18,7 +18,7 @@ export default function DFWHomeNetworkSetupGuide2026() {
   const config = getConfig();
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>📡</div>
@@ -47,16 +47,16 @@ export default function DFWHomeNetworkSetupGuide2026() {
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home Size</label>
               <select value={homeSize} onChange={e => setHomeSize(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#e2e8f0', fontSize: 14 }}>
-                <option value="under2500">Under 2,500 sqft</option>
-                <option value="over2500">Over 2,500 sqft</option>
+                <option value="under2500″>Under 2,500 sqft</option>
+                <option value="over2500″>Over 2,500 sqft</option>
               </select>
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Connected Devices</label>
               <select value={deviceCount} onChange={e => setDeviceCount(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#e2e8f0', fontSize: 14 }}>
-                <option value="under20">Under 20 devices</option>
-                <option value="20to40">20–40 devices</option>
-                <option value="over40">40+ devices</option>
+                <option value="under20″>Under 20 devices</option>
+                <option value="20to40″>20–40 devices</option>
+                <option value="over40″>40+ devices</option>
               </select>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function DFWHomeNetworkSetupGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW network pro to install your mesh system or run ethernet? <span style={{ color: '#F5E642' }}>ProLnk connects you with vetted local techs.</span></p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW network pro to install your mesh system or run ethernet? <span style={{ color: '#F5E642′ }}>ProLnk connects you with vetted local techs.</span></p>
         </div>
       </div>
     </div>

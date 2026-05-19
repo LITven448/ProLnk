@@ -23,7 +23,7 @@ export default function DFWElectricianProGuide2026() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>⚡ DFW Electrician Pro Guide 2026</h1>
         <p style={{ color: '#a0aec0', fontSize: 16, marginBottom: 32 }}>
           DFW is electrifying fast — EV chargers, aging panel upgrades, and solar tie-ins are fueling a multi-year boom.
-          Charter tier locks you in at <strong style={{ color: '#F5E642' }}>$149/mo forever</strong> while leads are claimed by zip code.
+          Charter tier locks you in at <strong style={{ color: '#F5E642′ }}>$149/mo forever</strong> while leads are claimed by zip code.
         </p>
 
         <div style={{ background: '#111d30', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -45,11 +45,11 @@ export default function DFWElectricianProGuide2026() {
 
         <div style={{ background: '#111d30', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>💡 Specialty → Earnings Calculator</div>
-          <label style={{ fontSize: 14, color: '#a0aec0' }}>Your Primary Specialty</label>
+          <label style={{ fontSize: 14, color: '#a0aec0′ }}>Your Primary Specialty</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 10, marginBottom: 16 }}>
             {specialties.map((s, i) => (
               <button key={s.label} onClick={() => setSpecialtyIdx(i)}
-                style={{ background: i === specialtyIdx ? '#F5E642' : '#1a2d45', color: i === specialtyIdx ? '#0A1628' : '#fff',
+                style={{ background: i === specialtyIdx ? '#F5E642′ : '#1a2d45', color: i === specialtyIdx ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {s.label}
               </button>
@@ -57,19 +57,19 @@ export default function DFWElectricianProGuide2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0' }}>Avg DFW job value</span>
+              <span style={{ color: '#a0aec0′ }}>Avg DFW job value</span>
               <span style={{ fontWeight: 700 }}>${specialty.avgJob.toLocaleString()}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0' }}>Market demand</span>
+              <span style={{ color: '#a0aec0′ }}>Market demand</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{specialty.demand}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0' }}>Est. monthly ProLnk earnings</span>
-              <span style={{ fontWeight: 700, color: '#F5E642' }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
+              <span style={{ color: '#a0aec0′ }}>Est. monthly ProLnk earnings</span>
+              <span style={{ fontWeight: 700, color: '#F5E642′ }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#a0aec0' }}>Annual ProLnk earnings</span>
+              <span style={{ color: '#a0aec0′ }}>Annual ProLnk earnings</span>
               <span style={{ fontWeight: 800, color: '#F5E642', fontSize: 20 }}>${annual.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
           </div>

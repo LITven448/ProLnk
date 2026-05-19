@@ -73,8 +73,8 @@ export default function DFWHomeStainRemovalGuide() {
                 {options.map(o => (
                   <button key={o} onClick={() => setter(o)}
                     style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: '1.5px solid', cursor: 'pointer', fontSize: '0.85rem',
-                      borderColor: value === o ? '#F5E642' : '#1e3a5f', background: value === o ? '#F5E642' : '#111c30',
-                      color: value === o ? '#0A1628' : '#cbd5e1', fontWeight: value === o ? 700 : 400 }}>
+                      borderColor: value === o ? '#F5E642′ : '#1e3a5f', background: value === o ? '#F5E642' : '#111c30',
+                      color: value === o ? '#0A1628′ : '#cbd5e1', fontWeight: value === o ? 700 : 400 }}>
                     {o}
                   </button>
                 ))}
@@ -84,7 +84,7 @@ export default function DFWHomeStainRemovalGuide() {
         </div>
 
         <button onClick={handleAnalyze} disabled={!stain}
-          style={{ background: stain ? '#F5E642' : '#1e3a5f', color: stain ? '#0A1628' : '#475569',
+          style={{ background: stain ? '#F5E642′ : '#1e3a5f', color: stain ? '#0A1628' : '#475569',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 800, fontSize: '1rem', cursor: stain ? 'pointer' : 'default', marginBottom: '2rem' }}>
           Get Removal Method →
         </button>
@@ -93,7 +93,7 @@ export default function DFWHomeStainRemovalGuide() {
           <div style={{ background: '#111c30', borderRadius: 12, padding: '1.5rem', border: '1px solid #1e3a5f', display: 'grid', gap: '1rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '1.1rem' }}>✅ Removal Method</div>
-              <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{result.difficulty}</div>
+              <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>{result.difficulty}</div>
             </div>
             {[
               { label: '🧽 REMOVAL METHOD', value: result.method },
@@ -108,7 +108,7 @@ export default function DFWHomeStainRemovalGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: '2.5rem', padding: '1.25rem', background: '#111c30', borderRadius: 10, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ marginTop: '2.5rem', padding: '1.25rem', background: '#111c30', borderRadius: 10, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>💡 DFW Stain Pro Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
             DFW summer heat sets stains faster — especially on concrete and painted surfaces. Treat stains within 24 hours.

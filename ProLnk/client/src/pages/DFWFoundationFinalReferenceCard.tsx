@@ -4,8 +4,8 @@ const homeTypes = ['1950s Slab', '1970s Pier & Beam', '1990s Two-Story', '2000s+
 
 const baseData = {
   watering: ['DFW expansive clay: water foundation perimeter year-round', 'Drought (May–Sept): water 3x/week, 20–30 min per zone', 'Use soaker hose 6–12 inches from foundation, not sprinklers'],
-  crackAssessment: ['Hairline cracks (<1/8"): normal, monitor quarterly', 'Horizontal cracks: structural concern — call engineer immediately', 'Stair-step cracks in brick: foundation movement — get evaluation'],
-  drainage: ['Grade slopes away from foundation: 6" drop in first 10 feet', 'Downspouts must extend 6+ feet from foundation', 'French drain if water pools within 10 feet of home'],
+  crackAssessment: ['Hairline cracks (<1/8″): normal, monitor quarterly', 'Horizontal cracks: structural concern — call engineer immediately', 'Stair-step cracks in brick: foundation movement — get evaluation'],
+  drainage: ['Grade slopes away from foundation: 6″ drop in first 10 feet', 'Downspouts must extend 6+ feet from foundation', 'French drain if water pools within 10 feet of home'],
   warranty: ['Transferable warranty: confirm in writing before purchase', 'Most structural warranties: 10 years, some limited to 2', 'Foundation repair warranty: demand transferable, no time limit'],
   vetting: ['Use Texas-licensed structural engineers for evaluation', 'Get 3 bids — pricing varies wildly in DFW', 'Confirm warranty is transferable and fully written'],
   signals: ['Doors sticking or gaps at frame corners', 'Cracks appearing at window corners or above doorways', 'Sloping floors — use a marble test in multiple rooms'],
@@ -53,7 +53,7 @@ export default function DFWFoundationFinalReferenceCard() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
           {sections.map(sec => (
-            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155' }}>
+            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', gap: '8px' }}>
                 <span style={{ fontSize: '20px' }}>{sec.emoji}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '14px' }}>{sec.title}</span>

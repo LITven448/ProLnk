@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const fanData = {
-  small: { size: '1000-1500 CFM', model: '24" belt-drive', cost: '$400-600', noise: 'Low (42-48 dB)', savings: '$180-240/yr' },
-  medium: { size: '2000-3000 CFM', model: '30" belt-drive', cost: '$600-900', noise: 'Moderate (50-56 dB)', savings: '$280-380/yr' },
-  large: { size: '4000-5500 CFM', model: '36" direct-drive', cost: '$900-1400', noise: 'Notable (58-64 dB)', savings: '$420-560/yr' },
-  xlarge: { size: '6000+ CFM', model: '42" belt-drive', cost: '$1400-2200', noise: 'Significant (64-70 dB)', savings: '$580-780/yr' },
+  small: { size: '1000-1500 CFM', model: '24″ belt-drive', cost: '$400-600', noise: 'Low (42-48 dB)', savings: '$180-240/yr' },
+  medium: { size: '2000-3000 CFM', model: '30″ belt-drive', cost: '$600-900', noise: 'Moderate (50-56 dB)', savings: '$280-380/yr' },
+  large: { size: '4000-5500 CFM', model: '36″ direct-drive', cost: '$900-1400', noise: 'Notable (58-64 dB)', savings: '$420-560/yr' },
+  xlarge: { size: '6000+ CFM', model: '42″ belt-drive', cost: '$1400-2200', noise: 'Significant (64-70 dB)', savings: '$580-780/yr' },
 };
 
 const shoulderMonths = ['March', 'April', 'May', 'October', 'November'];
@@ -40,7 +40,7 @@ export default function DFWWholeHomeFanGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⏰ DFW Shoulder Season Windows</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {shoulderMonths.map(m => (
-              <span key={m} style={{ background: '#1E3A5F', padding: '6px 14px', borderRadius: 20, fontSize: 14, color: '#CBD5E1' }}>{m}</span>
+              <span key={m} style={{ background: '#1E3A5F', padding: '6px 14px', borderRadius: 20, fontSize: 14, color: '#CBD5E1′ }}>{m}</span>
             ))}
           </div>
           <p style={{ color: '#64748B', fontSize: 13, marginTop: 12 }}>Effective when outside temp drops below 78°F — typically after 9 PM in shoulder months. Open windows 4–6 inches, crack attic vents.</p>
@@ -55,7 +55,7 @@ export default function DFWWholeHomeFanGuide() {
                 type="number"
                 value={sqft}
                 onChange={e => setSqft(e.target.value)}
-                placeholder="e.g. 2200"
+                placeholder="e.g. 2200″
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, boxSizing: 'border-box' }}
               />
             </div>
@@ -76,7 +76,7 @@ export default function DFWWholeHomeFanGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F3460', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0F3460', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>✅ Your Recommendation</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
@@ -106,7 +106,7 @@ export default function DFWWholeHomeFanGuide() {
             ['Timing', 'Install in March before shoulder season hits — contractors book up fast in spring'],
           ].map(([title, desc]) => (
             <div key={title} style={{ borderLeft: '3px solid #F5E642', paddingLeft: 14, marginBottom: 14 }}>
-              <div style={{ fontWeight: 600, color: '#E8EDF5' }}>{title}</div>
+              <div style={{ fontWeight: 600, color: '#E8EDF5′ }}>{title}</div>
               <div style={{ color: '#94A3B8', fontSize: 14 }}>{desc}</div>
             </div>
           ))}

@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 const SCORE_TIERS = [
   { min: 760, max: 850, label: 'Excellent', rate: 6.25, color: '#22c55e' },
-  { min: 740, max: 759, label: 'Very Good', rate: 6.50, color: '#84cc16' },
-  { min: 720, max: 739, label: 'Good', rate: 6.75, color: '#a3e635' },
-  { min: 700, max: 719, label: 'Fair-Good', rate: 7.00, color: '#eab308' },
-  { min: 680, max: 699, label: 'Fair', rate: 7.40, color: '#f97316' },
-  { min: 660, max: 679, label: 'Below Average', rate: 7.90, color: '#ef4444' },
-  { min: 620, max: 659, label: 'Poor', rate: 8.50, color: '#dc2626' },
+  { min: 740, max: 759, label: 'Very Good', rate: 6.50, color: '#84cc16′ },
+  { min: 720, max: 739, label: 'Good', rate: 6.75, color: '#a3e635′ },
+  { min: 700, max: 719, label: 'Fair-Good', rate: 7.00, color: '#eab308′ },
+  { min: 680, max: 699, label: 'Fair', rate: 7.40, color: '#f97316′ },
+  { min: 660, max: 679, label: 'Below Average', rate: 7.90, color: '#ef4444′ },
+  { min: 620, max: 659, label: 'Poor', rate: 8.50, color: '#dc2626′ },
 ];
 
 function monthlyPayment(principal: number, annualRate: number, years = 30) {
@@ -44,7 +44,7 @@ export default function DFWMortgageRateImprovementGuide() {
   const pmi = ltv > 80 ? Math.round(loanAmount * 0.008 / 12) : 0;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '2rem', marginBottom: '2rem', color: '#fff' }}>
           <div style={{ fontSize: 30, marginBottom: 8 }}>📉 DFW Mortgage Rate Improvement Guide</div>
@@ -54,7 +54,7 @@ export default function DFWMortgageRateImprovementGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <h2 style={{ marginTop: 0 }}>🎯 Your Loan Profile</h2>
           <label style={{ fontWeight: 600 }}>Credit Score: <span style={{ color: tier.color, background: '#0A1628', padding: '2px 10px', borderRadius: 6 }}>{creditScore} — {tier.label}</span></label>
-          <input type="range" min={620} max={850} value={creditScore} onChange={e => setCreditScore(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642' }} />
+          <input type="range" min={620} max={850} value={creditScore} onChange={e => setCreditScore(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642′ }} />
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 12 }}>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14 }}>Loan Amount ($)</label>
@@ -62,7 +62,7 @@ export default function DFWMortgageRateImprovementGuide() {
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14 }}>Down Payment %: {downPct}%</label>
-              <input type="range" min={3} max={30} value={downPct} onChange={e => setDownPct(+e.target.value)} style={{ width: '100%', margin: '0.75rem 0', accentColor: '#F5E642' }} />
+              <input type="range" min={3} max={30} value={downPct} onChange={e => setDownPct(+e.target.value)} style={{ width: '100%', margin: '0.75rem 0', accentColor: '#F5E642′ }} />
             </div>
           </div>
           {pmi > 0 && <div style={{ background: '#fef3c7', borderRadius: 8, padding: '0.75rem', fontSize: 14, color: '#92400e' }}>⚠️ PMI applies at {downPct}% down (~${pmi}/mo). Reach 20% down to eliminate it.</div>}
@@ -74,8 +74,8 @@ export default function DFWMortgageRateImprovementGuide() {
             <div key={i} style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               padding: '0.6rem 0.75rem', borderRadius: 8, marginBottom: 6,
-              background: t.label === tier.label ? '#fefce8' : '#f8fafc',
-              border: t.label === tier.label ? '2px solid #F5E642' : '1px solid #e2e8f0'
+              background: t.label === tier.label ? '#fefce8′ : '#f8fafc',
+              border: t.label === tier.label ? '2px solid #F5E642′ : '1px solid #e2e8f0'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <div style={{ width: 10, height: 10, borderRadius: '50%', background: t.color }} />
@@ -90,7 +90,7 @@ export default function DFWMortgageRateImprovementGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <h2 style={{ marginTop: 0 }}>⚡ Buying Points Analysis</h2>
           <label style={{ fontWeight: 600 }}>Points to Buy: <span style={{ color: '#F5E642', background: '#0A1628', padding: '2px 10px', borderRadius: 6 }}>{pointsBuy}</span></label>
-          <input type="range" min={0} max={4} step={0.5} value={pointsBuy} onChange={e => setPointsBuy(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642' }} />
+          <input type="range" min={0} max={4} step={0.5} value={pointsBuy} onChange={e => setPointsBuy(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642′ }} />
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             <div style={{ background: '#f8fafc', borderRadius: 8, padding: '0.75rem' }}>
               <div style={{ fontSize: 12, color: '#64748b' }}>1 Point Upfront Cost</div>
@@ -112,10 +112,10 @@ export default function DFWMortgageRateImprovementGuide() {
         </div>
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-          <h2 style={{ marginTop: 0, color: '#F5E642' }}>💰 Cost of Your Current Score</h2>
+          <h2 style={{ marginTop: 0, color: '#F5E642′ }}>💰 Cost of Your Current Score</h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-            <div><div style={{ fontSize: 36, fontWeight: 800 }}>{baseRate.toFixed(2)}%</div><div style={{ color: '#94a3b8' }}>Your rate</div></div>
-            <div style={{ textAlign: 'right' }}><div style={{ fontSize: 28, fontWeight: 700, color: '#F5E642' }}>${Math.round(currentPayment).toLocaleString()}/mo</div><div style={{ color: '#94a3b8' }}>Monthly payment</div></div>
+            <div><div style={{ fontSize: 36, fontWeight: 800 }}>{baseRate.toFixed(2)}%</div><div style={{ color: '#94a3b8′ }}>Your rate</div></div>
+            <div style={{ textAlign: 'right' }}><div style={{ fontSize: 28, fontWeight: 700, color: '#F5E642′ }}>${Math.round(currentPayment).toLocaleString()}/mo</div><div style={{ color: '#94a3b8' }}>Monthly payment</div></div>
           </div>
           {nextTier && nextTier !== tier && (
             <div style={{ background: '#1e293b', borderRadius: 8, padding: '1rem' }}>

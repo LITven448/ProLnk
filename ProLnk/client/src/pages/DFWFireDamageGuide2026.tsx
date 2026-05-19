@@ -23,28 +23,28 @@ export default function DFWFireDamageGuide2026() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🔥</div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#F5E642", marginBottom: 8 }}>DFW Fire Damage Recovery Guide 2026</h1>
-          <p style={{ color: "#94A3B8", fontSize: 15 }}>Smoke damage is always worse than it looks — claim it all</p>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#F5E642″, marginBottom: 8 }}>DFW Fire Damage Recovery Guide 2026</h1>
+          <p style={{ color: "#94A3B8″, fontSize: 15 }}>Smoke damage is always worse than it looks — claim it all</p>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
           {[["🚒", "Safety first — get fire dept clearance before re-entering"], ["📸", "Document BEFORE any cleanup or board-up work"], ["📞", "Call insurer same day — Texas law starts their clock"], ["🏨", "ALE (hotel + meals) starts immediately — use it"], ["📝", "Contents claim is SEPARATE from structure — file both"]].map(([icon, text], i) => (
             <div key={i} style={{ backgroundColor: "#1E293B", borderRadius: 8, padding: "12px 16px", display: "flex", gap: 12, alignItems: "center" }}>
               <span style={{ fontSize: 20 }}>{icon}</span>
-              <span style={{ color: "#E2E8F0", fontSize: 14 }}>{text}</span>
+              <span style={{ color: "#E2E8F0″, fontSize: 14 }}>{text}</span>
             </div>
           ))}
         </div>
 
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 12 }}>What is your damage extent?</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642″, marginBottom: 12 }}>What is your damage extent?</h2>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             {[["minor", "🔥 Minor / Smoke"], ["partial", "🏚️ Partial Loss"], ["total", "💥 Total Loss"]].map(([key, label]) => (
-              <button key={key} onClick={() => setDamageExtent(damageExtent === key ? null : key)} style={{ padding: "10px 18px", borderRadius: 8, border: "2px solid", borderColor: damageExtent === key ? "#F5E642" : "#334155", backgroundColor: damageExtent === key ? "#F5E64220" : "transparent", color: damageExtent === key ? "#F5E642" : "#94A3B8", cursor: "pointer", fontWeight: 600, fontSize: 13 }}>{label}</button>
+              <button key={key} onClick={() => setDamageExtent(damageExtent === key ? null : key)} style={{ padding: "10px 18px", borderRadius: 8, border: "2px solid", borderColor: damageExtent === key ? "#F5E642″ : "#334155", backgroundColor: damageExtent === key ? "#F5E64220" : "transparent", color: damageExtent === key ? "#F5E642" : "#94A3B8", cursor: "pointer", fontWeight: 600, fontSize: 13 }}>{label}</button>
             ))}
           </div>
         </div>
@@ -52,24 +52,24 @@ export default function DFWFireDamageGuide2026() {
         {damageExtent && fireData[damageExtent] && (
           <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 24 }}>
             <div style={{ backgroundColor: "#1E293B", borderRadius: 12, padding: 20 }}>
-              <p style={{ color: "#F5E642", fontWeight: 600, fontSize: 14, margin: "0 0 16px" }}>{fireData[damageExtent].scope}</p>
-              <h3 style={{ fontSize: 14, fontWeight: 700, color: "#F5E642", marginBottom: 10 }}>Recovery Timeline</h3>
+              <p style={{ color: "#F5E642″, fontWeight: 600, fontSize: 14, margin: "0 0 16px" }}>{fireData[damageExtent].scope}</p>
+              <h3 style={{ fontSize: 14, fontWeight: 700, color: "#F5E642″, marginBottom: 10 }}>Recovery Timeline</h3>
               {fireData[damageExtent].timeline.map((t, i) => (
-                <div key={i} style={{ color: "#E2E8F0", fontSize: 13, padding: "6px 0", borderBottom: i < fireData[damageExtent].timeline.length - 1 ? "1px solid #334155" : "none" }}>{t}</div>
+                <div key={i} style={{ color: "#E2E8F0″, fontSize: 13, padding: "6px 0", borderBottom: i < fireData[damageExtent].timeline.length - 1 ? "1px solid #334155" : "none" }}>{t}</div>
               ))}
             </div>
             <div style={{ backgroundColor: "#1E293B", borderRadius: 12, padding: 20 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 700, color: "#F5E642", marginBottom: 10 }}>Action Steps</h3>
+              <h3 style={{ fontSize: 14, fontWeight: 700, color: "#F5E642″, marginBottom: 10 }}>Action Steps</h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
-                {fireData[damageExtent].actions.map((a, i) => <li key={i} style={{ color: "#E2E8F0", fontSize: 13 }}>{a}</li>)}
+                {fireData[damageExtent].actions.map((a, i) => <li key={i} style={{ color: "#E2E8F0″, fontSize: 13 }}>{a}</li>)}
               </ul>
             </div>
           </div>
         )}
 
         <div style={{ backgroundColor: "#1E293B", borderRadius: 12, padding: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 8 }}>🔗 ProLnk: Licensed DFW Fire Restoration Contractors</h2>
-          <p style={{ color: "#94A3B8", fontSize: 14, margin: 0 }}>IICRC fire/smoke certified pros, board-up to rebuild — matched to your zip code.</p>
+          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642″, marginBottom: 8 }}>🔗 ProLnk: Licensed DFW Fire Restoration Contractors</h2>
+          <p style={{ color: "#94A3B8″, fontSize: 14, margin: 0 }}>IICRC fire/smoke certified pros, board-up to rebuild — matched to your zip code.</p>
         </div>
       </div>
     </div>

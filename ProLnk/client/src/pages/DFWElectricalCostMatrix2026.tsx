@@ -10,16 +10,16 @@ const services = [
 ];
 
 const tagColors: Record<string, { color: string; bg: string }> = {
-  Minor: { color: '#22C55E', bg: '#052e16' },
-  Safety: { color: '#F5E642', bg: '#1a1a00' },
-  Major: { color: '#FF8C00', bg: '#1a0a00' },
+  Minor: { color: '#22C55E', bg: '#052e16′ },
+  Safety: { color: '#F5E642', bg: '#1a1a00′ },
+  Major: { color: '#FF8C00', bg: '#1a0a00′ },
 };
 
 const warnings = [
   { icon: '⚠️', label: 'Aluminum wiring (1965–1973 DFW homes) is a fire hazard — get it inspected' },
   { icon: '🔥', label: 'Federal Pacific panels (Stab-Lok) fail to trip — replace immediately' },
   { icon: '📋', label: 'All DFW electrical work requires a permit — insist on it from your contractor' },
-  { icon: '🏷️', label: 'Oncor utility work is separate from electrician cost — factor in $200–500' },
+  { icon: '🏷️', label: 'Oncor utility work is separate from electrician cost — factor in $200–500′ },
 ];
 
 export default function DFWElectricalCostMatrix2026() {
@@ -40,7 +40,7 @@ export default function DFWElectricalCostMatrix2026() {
           {[['🏠', '40%', 'DFW homes with undersized panels'],['🚗', '3×', 'EV adoption growth in DFW (2023–2025)'],['📋', '$85–150', 'Electrical permit cost in DFW cities'],['⚡', '200A', 'Minimum recommended for new DFW homes']].map(([icon, val, label]) => (
             <div key={label as string} style={{ background: '#0F2040', borderRadius: 10, padding: 14, textAlign: 'center' }}>
               <div style={{ fontSize: 20 }}>{icon}</div>
-              <div style={{ fontWeight: 800, fontSize: 18, color: '#F5E642' }}>{val}</div>
+              <div style={{ fontWeight: 800, fontSize: 18, color: '#F5E642′ }}>{val}</div>
               <div style={{ fontSize: 10, color: '#94A3B8', marginTop: 4 }}>{label}</div>
             </div>
           ))}
@@ -51,7 +51,7 @@ export default function DFWElectricalCostMatrix2026() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {tags.map(t => (
               <button key={t} onClick={() => setFilter(t)}
-                style={{ padding: '7px 14px', borderRadius: 8, border: `2px solid ${filter === t ? '#F5E642' : '#1E3A5F'}`, background: filter === t ? '#F5E642' : 'transparent', color: filter === t ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
+                style={{ padding: '7px 14px', borderRadius: 8, border: `2px solid ${filter === t ? '#F5E642' : '#1E3A5F'}`, background: filter === t ? '#F5E642′ : ’transparent', color: filter === t ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: 12, fontWeight: 600 }}>
                 {t}
               </button>
             ))}

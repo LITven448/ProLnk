@@ -33,7 +33,7 @@ const repairAdvice: Record<string, Record<string, { action: string; urgency: str
   },
   'EPDM (Rubber)': {
     Excellent: { action: 'Inspect lap seams annually — EPDM seams are the most common failure point.', urgency: 'Low', cost: '-400 inspection' },
-    Good: { action: 'Re-lap any lifting seams. Apply white coating if not already present to reduce DFW heat gain.', urgency: 'Medium', cost: '-2,500' },
+    Good: { action: 'Re-lap any lifting seams. Apply white coating if not already present to reduce DFW heat gain.', urgency: 'Medium', cost: '-2,500′ },
     Fair: { action: 'Assess seam integrity across entire roof. EPDM tears can be patched but extensive damage requires overlay or replacement.', urgency: 'High', cost: ',000-8,000 repair or overlay' },
     Poor: { action: 'Replace EPDM membrane. Extensive cracking, ponding damage, or seam failure throughout.', urgency: 'Immediate', cost: ',000-30,000 replacement' },
   },
@@ -56,12 +56,12 @@ export default function DFWFlatRoofGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '13px' }}>🏠 ProLnk DFW Roofing Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#F5E642', marginBottom: '8px' }}>Flat Roof Guide — Dallas/Fort Worth</h1>
-        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6' }}>
+        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6′ }}>
           Flat and low-slope roofs are common on DFW commercial properties and some modern residential builds. DFW-specific challenges include intense UV degradation, rapid ponding after heavy rain events, and extreme summer heat exceeding 100°F.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
-          {[{ label: '☀️ DFW UV Index', val: 'High — accelerates all membranes' }, { label: '🌧️ Ponding Risk', val: 'Critical — 5"+ rain events common' }, { label: '🌡️ Summer Temps', val: '100-110°F surface temps on black roofs' }, { label: '🏢 Common Uses', val: 'Commercial + modern residential' }].map(({ label, val }) => (
-            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
+          {[{ label: '☀️ DFW UV Index', val: 'High — accelerates all membranes' }, { label: '🌧️ Ponding Risk', val: 'Critical — 5″+ rain events common' }, { label: '🌡️ Summer Temps', val: '100-110°F surface temps on black roofs' }, { label: '🏢 Common Uses', val: 'Commercial + modern residential' }].map(({ label, val }) => (
+            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
               <div style={{ color: '#F5E642', fontSize: '13px', marginBottom: '4px' }}>{label}</div>
               <div style={{ fontWeight: 600, fontSize: '14px' }}>{val}</div>
             </div>
@@ -88,24 +88,24 @@ export default function DFWFlatRoofGuide() {
           {info && (
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47', marginBottom: '12px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                <div><span style={{ color: '#F5E642' }}>Lifespan: </span>{info.lifespan}</div>
-                <div><span style={{ color: '#F5E642' }}>Cost: </span>{info.cost}</div>
-                <div style={{ gridColumn: '1/-1' }}><span style={{ color: '#F5E642' }}>DFW Note: </span>{info.dfwNote}</div>
-                <div style={{ gridColumn: '1/-1' }}><span style={{ color: '#F5E642' }}>UV Impact: </span>{info.uvNote}</div>
+                <div><span style={{ color: '#F5E642′ }}>Lifespan: </span>{info.lifespan}</div>
+                <div><span style={{ color: '#F5E642′ }}>Cost: </span>{info.cost}</div>
+                <div style={{ gridColumn: '1/-1′ }}><span style={{ color: '#F5E642' }}>DFW Note: </span>{info.dfwNote}</div>
+                <div style={{ gridColumn: '1/-1′ }}><span style={{ color: '#F5E642' }}>UV Impact: </span>{info.uvNote}</div>
               </div>
             </div>
           )}
           {repair && (
-            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '16px', border: '1px solid #F5E642' }}>
-              <div style={{ marginBottom: '8px' }}><span style={{ color: repair.urgency === 'Immediate' ? '#EF4444' : '#F5E642', fontWeight: 600 }}>Urgency: {repair.urgency} </span></div>
-              <div style={{ marginBottom: '8px' }}><span style={{ color: '#F5E642' }}>Action: </span>{repair.action}</div>
-              <div><span style={{ color: '#F5E642' }}>Cost: </span>{repair.cost}</div>
+            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '16px', border: '1px solid #F5E642′ }}>
+              <div style={{ marginBottom: '8px' }}><span style={{ color: repair.urgency === 'Immediate' ? '#EF4444′ : '#F5E642', fontWeight: 600 }}>Urgency: {repair.urgency} </span></div>
+              <div style={{ marginBottom: '8px' }}><span style={{ color: '#F5E642′ }}>Action: </span>{repair.action}</div>
+              <div><span style={{ color: '#F5E642′ }}>Cost: </span>{repair.cost}</div>
             </div>
           )}
         </div>
-        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
+        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '8px' }}>⚠️ Ponding Water Warning</div>
-          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>DFW receives 35-40" of rain annually, often in heavy storm bursts. Ponding water standing more than 48 hours accelerates flat roof degradation dramatically. Ensure all drains are clear before storm season. Add additional drains if any area consistently ponds.</p>
+          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6′ }}>DFW receives 35-40″ of rain annually, often in heavy storm bursts. Ponding water standing more than 48 hours accelerates flat roof degradation dramatically. Ensure all drains are clear before storm season. Add additional drains if any area consistently ponds.</p>
         </div>
       </div>
     </div>

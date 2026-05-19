@@ -45,7 +45,7 @@ export default function TrustyProAddison() {
   }
 
   return (
-    <div style={{ background: LIGHT_BG, minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#111827' }}>
+    <div style={{ background: LIGHT_BG, minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#111827′ }}>
       {/* Nav */}
       <nav style={{ background: '#fff', borderBottom: '1px solid #E5E7EB', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <span style={{ fontWeight: 800, fontSize: 20, color: INDIGO }}>TrustyPro</span>
@@ -84,13 +84,13 @@ export default function TrustyProAddison() {
       <section style={{ maxWidth: 900, margin: '0 auto', padding: '64px 24px' }}>
         <h2 style={{ fontSize: 28, fontWeight: 800, textAlign: 'center', marginBottom: 12 }}>The Residential Reality Behind the Restaurant Lights</h2>
         <p style={{ textAlign: 'center', color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600, margin: '0 auto 48px' }}>
-          Living next to Dallas's restaurant row comes with perks — and maintenance blind spots most contractors don't account for.
+          Living next to Dallas's restaurant row comes with perks — and maintenance blind spots most contractors don’t account for.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: 24 }}>
           {issues.map(item => (
             <div key={item.title} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 28 }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{item.icon}</div>
-              <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#111827' }}>{item.title}</h3>
+              <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#111827′ }}>{item.title}</h3>
               <p style={{ color: '#4B5563', lineHeight: 1.65, fontSize: 15, margin: 0 }}>{item.body}</p>
             </div>
           ))}
@@ -102,7 +102,7 @@ export default function TrustyProAddison() {
         <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 20 }}>Pros Who Know Urban DFW</h2>
           <p style={{ color: '#4B5563', fontSize: 16, lineHeight: 1.7, marginBottom: 40 }}>
-            TrustyPro's Addison network includes HVAC technicians trained on commercial-adjacent contamination, plumbers experienced with older cast-iron stacks, and foundation specialists who understand urban drainage patterns. Every contractor is licensed, verified, and briefed on Addison's unique environment.
+            TrustyPro's Addison network includes HVAC technicians trained on commercial-adjacent contamination, plumbers experienced with older cast-iron stacks, and foundation specialists who understand urban drainage patterns. Every contractor is licensed, verified, and briefed on Addison’s unique environment.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, textAlign: 'left' }}>
             {['Urban moisture specialists', 'Older electrical panel experts', 'Commercial-adjacent HVAC', 'Urban drainage engineers', 'Condo & SFH experience', 'Same-day availability'].map(f => (
@@ -120,7 +120,7 @@ export default function TrustyProAddison() {
         <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 32 }}>Get matched with a pro who actually understands urban DFW's residential challenges.</p>
         {submitted ? (
           <div style={{ background: '#D1FAE5', color: '#065F46', padding: '16px 32px', borderRadius: 12, display: 'inline-block', fontWeight: 600 }}>
-            ✓ You're on the list! We'll be in touch soon.
+            ✓ You're on the list! We’ll be in touch soon.
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 12, maxWidth: 480, margin: '0 auto', flexWrap: 'wrap', justifyContent: 'center' }}>

@@ -84,17 +84,17 @@ export default function DFWOutdoorFireplaceGuide() {
             ))}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-            <input type="checkbox" id="hoa" checked={hasHOA} onChange={e => setHasHOA(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+            <input type="checkbox" id="hoa" checked={hasHOA} onChange={e => setHasHOA(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
             <label htmlFor="hoa" style={{ color: '#cbd5e1', cursor: 'pointer' }}>My property is in an HOA</label>
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 800, cursor: 'pointer', width: '100%', fontSize: 16 }}>
             Get My Recommendation
           </button>
           {showResult && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642′ }}>
               <div style={{ fontWeight: 800, fontSize: 18, color: '#F5E642', marginBottom: 8 }}>Total Project Cost: ${costLow.toLocaleString()} – ${costHigh.toLocaleString()}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8 }}>{structure.label} with {fuel.label} — ~${fuel.monthly}/mo operating cost</div>
-              <div style={{ color: woodBurnBanRisk ? '#fbbf24' : '#22c55e', fontSize: 14 }}>{woodBurnBanRisk ? '⚠️ Wood-burning: susceptible to county burn bans in DFW. Consider adding a gas backup.' : '✅ Gas/propane: burn ban exempt — use year-round.'}</div>
+              <div style={{ color: woodBurnBanRisk ? '#fbbf24′ : '#22c55e', fontSize: 14 }}>{woodBurnBanRisk ? '⚠️ Wood-burning: susceptible to county burn bans in DFW. Consider adding a gas backup.' : '✅ Gas/propane: burn ban exempt — use year-round.'}</div>
               {permitRequired && <div style={{ color: '#f97316', fontSize: 14, marginTop: 8 }}>📋 Permit required for this project — contact your city building department.</div>}
               {hasHOA && <div style={{ color: '#fbbf24', fontSize: 14, marginTop: 8 }}>🏠 HOA approval required before starting. Many DFW HOAs prohibit open flames.</div>}
               <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 8 }}>Space clearance: {clearance}</div>

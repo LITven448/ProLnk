@@ -58,9 +58,9 @@ export default function DFWSmartGardenGuide() {
 
         <div style={{ display: 'grid', gap: 10, marginBottom: 40 }}>
           {features.map(f => (
-            <div key={f.id} onClick={() => toggle(f.id)} style={{ background: selected.includes(f.id) ? '#F5E64210' : '#0D1F35', borderRadius: 8, padding: '16px 20px', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#1E3A5F'}`, cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <div key={f.id} onClick={() => toggle(f.id)} style={{ background: selected.includes(f.id) ? '#F5E64210′ : '#0D1F35', borderRadius: 8, padding: '16px 20px', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#1E3A5F'}`, cursor: ’pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div>
-                <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4, color: selected.includes(f.id) ? '#F5E642' : '#E8EDF5' }}>{f.label}</div>
+                <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4, color: selected.includes(f.id) ? '#F5E642′ : '#E8EDF5' }}>{f.label}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>{f.desc}</div>
               </div>
               <div style={{ fontSize: 20, marginLeft: 12 }}>{selected.includes(f.id) ? '✅' : '⬜'}</div>
@@ -69,7 +69,7 @@ export default function DFWSmartGardenGuide() {
         </div>
 
         <div style={{ background: '#0D1F35', borderRadius: 12, padding: '28px', border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Get Your Smart Outdoor Package</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Get Your Smart Outdoor Package</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#CBD5E1', fontSize: 13, marginBottom: 6 }}>Your DFW Suburb (optional — for HOA notes)</label>
             <select value={suburb} onChange={e => setSuburb(e.target.value)} style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 14 }}>

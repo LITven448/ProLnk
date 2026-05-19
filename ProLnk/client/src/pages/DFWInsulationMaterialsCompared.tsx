@@ -89,7 +89,7 @@ export default function DFWInsulationMaterialsCompared() {
         <div style={{ background: '#1a1020', borderRadius: 12, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{ fontSize: 24 }}>🏠</span>
           <div>
-            <div style={{ fontWeight: 600, color: '#F5E642' }}>DFW Insulation Context</div>
+            <div style={{ fontWeight: 600, color: '#F5E642′ }}>DFW Insulation Context</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>Texas Energy Code requires R-38 minimum in attics. DFW's extreme heat makes the right insulation material a major factor in your energy bills.</div>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function DFWInsulationMaterialsCompared() {
         <div style={{ display: 'grid', gap: 12 }}>
           {(filtered.length > 0 ? filtered : materials).map(m => (
             <div key={m.id} onClick={() => setSelected(selected === m.id ? null : m.id)}
-              style={{ background: selected === m.id ? '#0f2040' : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: 'pointer' }}>
+              style={{ background: selected === m.id ? '#0f2040′ : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: ’pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 24 }}>{m.emoji}</span>
@@ -149,7 +149,7 @@ export default function DFWInsulationMaterialsCompared() {
                     <div style={{ color: '#94a3b8', fontSize: 13 }}>{m.rValue} · ${m.costPerSqFt}/sq ft</div>
                   </div>
                 </div>
-                <div style={{ background: m.diyFriendly ? '#0f3020' : '#2a1010', borderRadius: 8, padding: '4px 10px', fontSize: 12, color: m.diyFriendly ? '#4ade80' : '#f87171' }}>
+                <div style={{ background: m.diyFriendly ? '#0f3020′ : '#2a1010', borderRadius: 8, padding: '4px 10px', fontSize: 12, color: m.diyFriendly ? '#4ade80' : '#f87171' }}>
                   {m.diyFriendly ? '🔧 DIY OK' : '👷 Pro Install'}
                 </div>
               </div>

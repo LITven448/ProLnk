@@ -7,13 +7,13 @@ const marketData: Record<string, Record<string, { conditions: string; strategy: 
   'Plano': {
     'Planning Ahead (60+ days)': { conditions: '🟢 Favorable — Pre-season availability is high. Contractors competing for business.', strategy: 'Lock in a spring tune-up contract now. Request multi-year pricing to lock rates before summer surge.', wait: '2–5 days', priceRange: '$89–$129 tune-up' },
     'Soon (30-60 days)': { conditions: '🟡 Moderate — Demand beginning to climb as temps rise. Good contractors booking up fast.', strategy: 'Book within the week. Ask for a maintenance agreement to jump the queue later.', wait: '5–10 days', priceRange: '$99–$149 tune-up' },
-    'Urgent (1-2 weeks)': { conditions: '🟠 Tight — Peak season. Quality contractors booked 2–3 weeks out.', strategy: 'Expand search radius to adjacent suburbs. Be ready to schedule at off-peak hours.', wait: '10–18 days', priceRange: '$149–$249' },
+    'Urgent (1-2 weeks)': { conditions: '🟠 Tight — Peak season. Quality contractors booked 2–3 weeks out.', strategy: 'Expand search radius to adjacent suburbs. Be ready to schedule at off-peak hours.', wait: '10–18 days', priceRange: '$149–$249′ },
     'Emergency (Now)': { conditions: '🔴 Critical — Emergency pricing active. Wait times unpredictable.', strategy: 'Use ProLnk to broadcast to all available Plano-area contractors simultaneously. Emergency dispatch adds 40–80%.', wait: 'Same day (variable)', priceRange: '$250–$600+' },
   },
   'Frisco': {
     'Planning Ahead (60+ days)': { conditions: '🟢 Favorable — Fast-growing area, more new contractors entering market.', strategy: 'Vet and lock in a preferred contractor before demand spikes. Ask about new-construction specialist availability.', wait: '2–4 days', priceRange: '$89–$129 tune-up' },
-    'Soon (30-60 days)': { conditions: '🟡 Moderate — New builds competing for same pool of HVAC techs.', strategy: 'Book early. Frisco new construction absorbs significant tech capacity April–June.', wait: '5–12 days', priceRange: '$99–$159' },
-    'Urgent (1-2 weeks)': { conditions: '🟠 Tight — High demand from rapid population growth strains local capacity.', strategy: 'Be flexible on scheduling. Accept early morning slots to get faster service.', wait: '12–20 days', priceRange: '$149–$249' },
+    'Soon (30-60 days)': { conditions: '🟡 Moderate — New builds competing for same pool of HVAC techs.', strategy: 'Book early. Frisco new construction absorbs significant tech capacity April–June.', wait: '5–12 days', priceRange: '$99–$159′ },
+    'Urgent (1-2 weeks)': { conditions: '🟠 Tight — High demand from rapid population growth strains local capacity.', strategy: 'Be flexible on scheduling. Accept early morning slots to get faster service.', wait: '12–20 days', priceRange: '$149–$249′ },
     'Emergency (Now)': { conditions: '🔴 Critical — Emergency only. Costs elevated significantly.', strategy: 'Broadcast via ProLnk across Frisco and Prosper. Many Frisco techs work both areas.', wait: '2–6 hours', priceRange: '$300–$700+' },
   },
 };
@@ -22,7 +22,7 @@ const fallback = (urgency: string) => ({
   conditions: urgency === 'Emergency (Now)' ? '🔴 Critical — Emergency pricing active. Limited availability.' : urgency === 'Urgent (1-2 weeks)' ? '🟠 Tight — Peak season demand elevated.' : urgency === 'Soon (30-60 days)' ? '🟡 Moderate — Booking up, act soon.' : '🟢 Favorable — Good availability and pricing.',
   strategy: urgency === 'Emergency (Now)' ? 'Use ProLnk emergency broadcast. Prepare for 40–80% emergency premium.' : urgency === 'Urgent (1-2 weeks)' ? 'Book immediately. Be flexible on time slots.' : urgency === 'Soon (30-60 days)' ? 'Secure your appointment this week to get preferred times.' : 'Lock in a contractor now and negotiate multi-year maintenance pricing.',
   wait: urgency === 'Emergency (Now)' ? '2–8 hours' : urgency === 'Urgent (1-2 weeks)' ? '10–18 days' : urgency === 'Soon (30-60 days)' ? '5–12 days' : '2–5 days',
-  priceRange: urgency === 'Emergency (Now)' ? '$250–$600+' : urgency === 'Urgent (1-2 weeks)' ? '$149–$249' : '$99–$159',
+  priceRange: urgency === 'Emergency (Now)' ? '$250–$600+' : urgency === 'Urgent (1-2 weeks)' ? '$149–$249′ : '$99–$159',
 });
 
 export default function DFWHVACMarketGuide() {
@@ -67,13 +67,13 @@ export default function DFWHVACMarketGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ marginBottom: 12, fontWeight: 600 }}>Market Conditions</div>
-              <div style={{ marginBottom: 12, color: '#e2e8f0' }}>{result.conditions}</div>
+              <div style={{ marginBottom: 12, color: '#e2e8f0′ }}>{result.conditions}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Recommended Strategy: </span>{result.strategy}</div>
               <div style={{ display: 'flex', gap: 24, marginTop: 12 }}>
-                <div><span style={{ color: '#94a3b8', fontSize: 13 }}>Est. Wait Time</span><div style={{ fontWeight: 700, color: '#F5E642' }}>{result.wait}</div></div>
-                <div><span style={{ color: '#94a3b8', fontSize: 13 }}>Price Range</span><div style={{ fontWeight: 700, color: '#F5E642' }}>{result.priceRange}</div></div>
+                <div><span style={{ color: '#94a3b8', fontSize: 13 }}>Est. Wait Time</span><div style={{ fontWeight: 700, color: '#F5E642′ }}>{result.wait}</div></div>
+                <div><span style={{ color: '#94a3b8', fontSize: 13 }}>Price Range</span><div style={{ fontWeight: 700, color: '#F5E642′ }}>{result.priceRange}</div></div>
               </div>
             </div>
           )}

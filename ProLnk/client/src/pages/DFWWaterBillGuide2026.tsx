@@ -30,7 +30,7 @@ export default function DFWWaterBillGuide2026() {
             { icon: '📊', label: 'Pricing Model', value: 'Tiered rates' },
             { icon: '💡', label: 'Smart Irrigation Savings', value: 'Up to 30%' },
           ].map((s, i) => (
-            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155' }}>
+            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{s.value}</div>
@@ -38,7 +38,7 @@ export default function DFWWaterBillGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🔍 How to Audit Your Water Use</h2>
           {[
             { step: '1', action: 'Check meter at night', detail: 'No usage = no leak; any movement = active leak' },
@@ -46,14 +46,14 @@ export default function DFWWaterBillGuide2026() {
             { step: '3', action: 'Inspect heads monthly', detail: 'Broken heads waste 3–10 gal/min while running' },
             { step: '4', action: 'Upgrade to smart controller', detail: 'Weather-based scheduling saves 30% on average' },
           ].map((r, i) => (
-            <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: i < 3 ? '1px solid #334155' : 'none' }}>
+            <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: i < 3 ? '1px solid #334155′ : ’none' }}>
               <div style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{r.step}</div>
               <div><div style={{ fontWeight: 600 }}>{r.action}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>{r.detail}</div></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🧮 Usage Assessment</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
             <input value={household} onChange={e => setHousehold(e.target.value)} placeholder="Household size (people)" style={{ flex: 1, minWidth: 160, padding: '10px', borderRadius: 8, border: '1px solid #475569', background: '#0f172a', color: '#fff' }} />

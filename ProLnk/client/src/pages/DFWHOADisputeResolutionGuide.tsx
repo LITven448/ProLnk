@@ -60,7 +60,7 @@ export default function DFWHOADisputeResolutionGuide() {
           <p style={{ color: '#CBD5E1', marginTop: 8 }}>Texas Property Code Chapter 209 gives homeowners real rights against HOAs</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Texas HOA Law Basics</h2>
           {[
             ['Hearing Required (§209.007)', 'HOA must give you a hearing before imposing fines — not optional.'],
@@ -70,16 +70,16 @@ export default function DFWHOADisputeResolutionGuide() {
           ].map(([title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <span style={{ color: '#F5E642', fontSize: 20, flexShrink: 0 }}>✔</span>
-              <div><strong style={{ color: '#0A1628' }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
+              <div><strong style={{ color: '#0A1628′ }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🔍 Find Your Resolution Path</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>What Is Your Dispute?</label>
-            <select value={disputeType} onChange={e => setDisputeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
+            <select value={disputeType} onChange={e => setDisputeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
               <option value="">Select dispute type...</option>
               {disputeOptions.map(d => <option key={d} value={d}>{d}</option>)}
             </select>
@@ -92,19 +92,19 @@ export default function DFWHOADisputeResolutionGuide() {
             <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📍 Your Rights & Path</h2>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '16px 20px', marginBottom: 16 }}>
               <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>⚖️ YOUR LEGAL RIGHTS</div>
-              <div style={{ color: '#E2E8F0' }}>{result.rights}</div>
+              <div style={{ color: '#E2E8F0′ }}>{result.rights}</div>
             </div>
             <div style={{ marginBottom: 16 }}>
               {result.process.map((step, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
                   <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: '#E2E8F0' }}>{step}</span>
+                  <span style={{ color: '#E2E8F0′ }}>{step}</span>
                 </div>
               ))}
             </div>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '16px 20px' }}>
               <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>🚨 ESCALATION PATH</div>
-              <div style={{ color: '#E2E8F0' }}>{result.escalation}</div>
+              <div style={{ color: '#E2E8F0′ }}>{result.escalation}</div>
             </div>
           </div>
         )}

@@ -53,7 +53,7 @@ export default function DFWHVACIonizationGuide() {
               { label: '⚠️ Contested', items: ['Virus inactivation in real-world settings', 'Long-term effectiveness claims from manufacturers', 'Performance without sufficient air circulation'] },
             ].map(col => (
               <div key={col.label}>
-                <div style={{ color: col.label.startsWith('✅') ? '#4ADE80' : '#FBBF24', fontWeight: 700, marginBottom: '0.5rem' }}>{col.label}</div>
+                <div style={{ color: col.label.startsWith('✅') ? '#4ADE80′ : '#FBBF24', fontWeight: 700, marginBottom: '0.5rem' }}>{col.label}</div>
                 <ul style={{ color: '#9BA8BB', paddingLeft: '1.25rem', lineHeight: 1.9, fontSize: '0.9rem' }}>
                   {col.items.map(i => <li key={i}>{i}</li>)}
                 </ul>
@@ -90,7 +90,7 @@ export default function DFWHVACIonizationGuide() {
             Evaluate Ionization for My Need
           </button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}>⚡ <strong>Potential Benefit:</strong> {result.benefit}</div>
               <div style={{ marginBottom: '0.5rem' }}>⚠️ <strong>Limitations:</strong> {result.limitations}</div>
               <div style={{ marginBottom: '0.5rem' }}>💰 <strong>Cost:</strong> {result.cost}</div>
@@ -101,7 +101,7 @@ export default function DFWHVACIonizationGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
           <p style={{ color: '#9BA8BB', fontSize: '0.9rem', margin: 0 }}>
-            🏠 <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> Demand third-party test data from any ionization vendor — manufacturer marketing claims are not a substitute for independent lab results.
+            🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> Demand third-party test data from any ionization vendor — manufacturer marketing claims are not a substitute for independent lab results.
           </p>
         </div>
       </div>

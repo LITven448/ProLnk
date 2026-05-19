@@ -17,11 +17,11 @@ const stages = [
       'Professional photography + 3D Matterport tour ($400–$800)',
     ],
     costs: [
-      { item: 'Pre-listing inspection', range: '$350–$500' },
-      { item: 'Minor repairs (avg)', range: '$1,200–$4,500' },
-      { item: 'Deep clean', range: '$300–$600' },
-      { item: 'Staging consultation', range: '$500–$1,500' },
-      { item: 'Photography + tour', range: '$400–$800' },
+      { item: 'Pre-listing inspection', range: '$350–$500′ },
+      { item: 'Minor repairs (avg)', range: '$1,200–$4,500′ },
+      { item: 'Deep clean', range: '$300–$600′ },
+      { item: 'Staging consultation', range: '$500–$1,500′ },
+      { item: 'Photography + tour', range: '$400–$800′ },
     ],
     tip: 'Homes that are pre-inspected sell 11% faster and with fewer post-offer renegotiations.',
   },
@@ -43,7 +43,7 @@ const stages = [
     costs: [
       { item: 'Listing agent commission', range: '2.5–3% of sale price' },
       { item: 'Buyer agent commission', range: '2.5–3% of sale price' },
-      { item: 'Open house prep/refreshments', range: '$100–$300' },
+      { item: 'Open house prep/refreshments', range: '$100–$300′ },
     ],
     tip: 'Homes priced within 2% of market value receive 3x more showings in the first 7 days.',
   },
@@ -64,9 +64,9 @@ const stages = [
     ],
     costs: [
       { item: 'Seller closing costs', range: '1–3% of sale price' },
-      { item: 'Repair credits (negotiated)', range: '$500–$5,000' },
-      { item: 'Title/HOA transfer fees', range: '$300–$800' },
-      { item: 'Home warranty (optional)', range: '$400–$700' },
+      { item: 'Repair credits (negotiated)', range: '$500–$5,000′ },
+      { item: 'Title/HOA transfer fees', range: '$300–$800′ },
+      { item: 'Home warranty (optional)', range: '$400–$700′ },
     ],
     tip: 'Average DFW close takes 32 days from executed contract. Plan your move-out accordingly.',
   },
@@ -116,29 +116,29 @@ export default function DFWHomeSaleTimeline() {
 
   return (
     <div className="min-h-screen" style={{ background: '#FAFAF9', fontFamily: 'system-ui, sans-serif' }}>
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-12″>
 
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-10″>
           <div className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
             DFW Real Estate Guide
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#1E3A5F' }}>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3″ style={{ color: '#1E3A5F' }}>
             DFW Home Sale Timeline
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600″>
             From Decision to Close in 60–90 Days — What to Do, When, and How Much It Costs
           </p>
-          <div className="flex flex-wrap gap-4 mt-4">
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100">
+          <div className="flex flex-wrap gap-4 mt-4″>
+            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100″>
               <span className="text-xs text-gray-500 block">Avg Days on Market</span>
               <span className="font-bold text-lg" style={{ color: '#1E3A5F' }}>28 Days</span>
             </div>
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100″>
               <span className="text-xs text-gray-500 block">Avg Sale / List Price</span>
               <span className="font-bold text-lg" style={{ color: '#1E3A5F' }}>98%</span>
             </div>
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100″>
               <span className="text-xs text-gray-500 block">Fastest Markets</span>
               <span className="font-bold text-lg" style={{ color: '#1E3A5F' }}>Frisco & Plano</span>
             </div>
@@ -146,12 +146,12 @@ export default function DFWHomeSaleTimeline() {
         </div>
 
         {/* Stage Selector */}
-        <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
+        <div className="flex gap-3 mb-8 overflow-x-auto pb-2″>
           {stages.map((s) => (
             <button
               key={s.id}
               onClick={() => setActiveStage(s.id)}
-              className="flex-shrink-0 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+              className="flex-shrink-0 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-200″
               style={{
                 background: activeStage === s.id ? s.color : '#fff',
                 color: activeStage === s.id ? '#fff' : '#374151',
@@ -159,15 +159,15 @@ export default function DFWHomeSaleTimeline() {
                 boxShadow: activeStage === s.id ? '0 4px 12px rgba(0,0,0,0.15)' : 'none',
               }}
             >
-              <div className="text-xs font-normal opacity-80">{s.label}</div>
+              <div className="text-xs font-normal opacity-80″>{s.label}</div>
               <div>{s.title}</div>
             </button>
           ))}
         </div>
 
         {/* Stage Detail */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
-          <div className="flex items-center gap-3 mb-5">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8″>
+          <div className="flex items-center gap-3 mb-5″>
             <div
               className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
               style={{ background: stage.color }}
@@ -176,18 +176,18 @@ export default function DFWHomeSaleTimeline() {
             </div>
             <div>
               <h2 className="text-xl font-bold" style={{ color: '#1E3A5F' }}>{stage.title}</h2>
-              <p className="text-sm text-gray-500">{stage.subtitle}</p>
+              <p className="text-sm text-gray-500″>{stage.subtitle}</p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6″>
             <div>
-              <h3 className="font-semibold text-gray-700 mb-3">Key Tasks</h3>
-              <ul className="space-y-2">
+              <h3 className="font-semibold text-gray-700 mb-3″>Key Tasks</h3>
+              <ul className="space-y-2″>
                 {stage.tasks.map((task, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600″>
                     <span
-                      className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs mt-0.5"
+                      className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs mt-0.5″
                       style={{ background: stage.color }}
                     >
                       ✓
@@ -199,11 +199,11 @@ export default function DFWHomeSaleTimeline() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-700 mb-3">Typical Costs</h3>
-              <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700 mb-3″>Typical Costs</h3>
+              <div className="space-y-2″>
                 {stage.costs.map((c, i) => (
                   <div key={i} className="flex justify-between text-sm">
-                    <span className="text-gray-600">{c.item}</span>
+                    <span className="text-gray-600″>{c.item}</span>
                     <span className="font-medium" style={{ color: '#1E3A5F' }}>{c.range}</span>
                   </div>
                 ))}
@@ -220,33 +220,33 @@ export default function DFWHomeSaleTimeline() {
         </div>
 
         {/* Deal Killers */}
-        <div className="mb-8">
-          <h2 className="text-xl font-bold mb-4" style={{ color: '#1E3A5F' }}>
+        <div className="mb-8″>
+          <h2 className="text-xl font-bold mb-4″ style={{ color: '#1E3A5F' }}>
             What Kills DFW Deals — 5 Common Deal-Breakers
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-3″>
             {dealKillers.map((d, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 flex gap-4">
+              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 flex gap-4″>
                 <div
-                  className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold mt-0.5"
-                  style={{ background: d.risk === 'High' ? '#DC2626' : '#D97706' }}
+                  className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold mt-0.5″
+                  style={{ background: d.risk === 'High' ? '#DC2626′ : '#D97706' }}
                 >
                   !
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-semibold text-gray-800">{d.issue}</span>
+                  <div className="flex items-center gap-2 mb-1″>
+                    <span className="font-semibold text-gray-800″>{d.issue}</span>
                     <span
                       className="text-xs px-2 py-0.5 rounded-full font-medium"
                       style={{
-                        background: d.risk === 'High' ? '#FEE2E2' : '#FEF3C7',
-                        color: d.risk === 'High' ? '#DC2626' : '#D97706',
+                        background: d.risk === 'High' ? '#FEE2E2′ : '#FEF3C7',
+                        color: d.risk === 'High' ? '#DC2626′ : '#D97706',
                       }}
                     >
                       {d.risk} Risk
                     </span>
                   </div>
-                  <p className="text-sm text-gray-600">{d.detail}</p>
+                  <p className="text-sm text-gray-600″>{d.detail}</p>
                 </div>
               </div>
             ))}
@@ -254,18 +254,18 @@ export default function DFWHomeSaleTimeline() {
         </div>
 
         {/* Pre-Listing Checklist */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
-          <h2 className="text-xl font-bold mb-4" style={{ color: '#1E3A5F' }}>
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8″>
+          <h2 className="text-xl font-bold mb-4″ style={{ color: '#1E3A5F' }}>
             Pre-Listing Contractor Checklist (7 Items)
           </h2>
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-gray-500 mb-4″>
             Complete these before your photographer arrives. Every unchecked item is a negotiating lever for buyers.
           </p>
-          <div className="space-y-3">
+          <div className="space-y-3″>
             {preListingChecklist.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 text-sm text-gray-700">
+              <div key={i} className="flex items-center gap-3 text-sm text-gray-700″>
                 <div
-                  className="w-6 h-6 rounded border-2 flex-shrink-0"
+                  className="w-6 h-6 rounded border-2 flex-shrink-0″
                   style={{ borderColor: '#1E3A5F' }}
                 />
                 <span>{item}</span>
@@ -279,7 +279,7 @@ export default function DFWHomeSaleTimeline() {
           className="rounded-2xl p-6 text-white text-center"
           style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #2D5F8A 100%)' }}
         >
-          <h3 className="text-xl font-bold mb-2">Ready to Prep Your Home for Market?</h3>
+          <h3 className="text-xl font-bold mb-2″>Ready to Prep Your Home for Market?</h3>
           <p className="text-blue-200 mb-4 text-sm">
             Get quotes from vetted DFW contractors for every item on your pre-listing checklist.
             Most pros respond within 2 hours.

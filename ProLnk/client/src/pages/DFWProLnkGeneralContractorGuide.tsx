@@ -33,7 +33,7 @@ const businessTypes = [
 
 const stats = [
   { icon: '🏗️', label: 'DFW Renovation Market Size', value: '$4.2B/yr' },
-  { icon: '💰', label: 'Avg DFW Remodel Project Value', value: '$67,000' },
+  { icon: '💰', label: 'Avg DFW Remodel Project Value', value: '$67,000′ },
   { icon: '📜', label: 'Origination Rights — Permanent Revenue', value: '1.5%/job' },
   { icon: '🤝', label: 'Sub Referral Override Rate', value: 'Up to 4 levels' },
 ];
@@ -63,7 +63,7 @@ export default function DFWProLnkGeneralContractorGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Select Your GC Business Type</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Select Your GC Business Type</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {businessTypes.map((b, i) => (
             <div key={i} onClick={() => setSelected(i === selected ? null : i)}

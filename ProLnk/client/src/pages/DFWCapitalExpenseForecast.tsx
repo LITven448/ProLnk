@@ -57,28 +57,28 @@ export default function DFWCapitalExpenseForecast() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📊</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Capital Expense Forecast</h1>
-          <p style={{ color: '#94a3b8' }}>10-year forecast of major home expenses — know what's coming and save for it</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Capital Expense Forecast</h1>
+          <p style={{ color: '#94a3b8′ }}>10-year forecast of major home expenses — know what’s coming and save for it</p>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', color: '#F5E642', marginBottom: 6, fontWeight: 600 }}>🏠 Home Age (years)</label>
-              <input type="number" min={0} max={60} placeholder="e.g. 12" value={homeAge} onChange={e => setHomeAge(e.target.value)}
+              <input type="number" min={0} max={60} placeholder="e.g. 12″ value={homeAge} onChange={e => setHomeAge(e.target.value)}
                 style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#F5E642', marginBottom: 6, fontWeight: 600 }}>❄️ Number of HVAC Units</label>
               <select value={hvacCount} onChange={e => setHvacCount(e.target.value)}
                 style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '1rem' }}>
-                {['1','2','3'].map(n => <option key={n} value={n}>{n} Unit{n !== '1' ? 's' : ''}</option>)}
+                {['1','2','3'].map(n => <option key={n} value={n}>{n} Unit{n !== '1′ ? ’s' : ''}</option>)}
               </select>
             </div>
           </div>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer', color: '#e2e8f0' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer', color: '#e2e8f0′ }}>
             <input type="checkbox" checked={hasPool} onChange={e => setHasPool(e.target.checked)}
-              style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+              style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
             🏊 Include Pool Maintenance
           </label>
         </div>
@@ -102,7 +102,7 @@ export default function DFWCapitalExpenseForecast() {
               </div>
             ) : (
               <div>
-                <h2 style={{ color: '#F5E642' }}>📅 Year-by-Year Forecast</h2>
+                <h2 style={{ color: '#F5E642′ }}>📅 Year-by-Year Forecast</h2>
                 {years.map(yr => (
                   <div key={yr} style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1rem' }}>
                     <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8, fontSize: '1.1rem' }}>
@@ -110,7 +110,7 @@ export default function DFWCapitalExpenseForecast() {
                     </div>
                     {byYear[yr].map((e, i) => (
                       <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f' }}>
-                        <span style={{ color: '#e2e8f0' }}>{e.icon} {e.name}</span>
+                        <span style={{ color: '#e2e8f0′ }}>{e.icon} {e.name}</span>
                         <span style={{ color: '#F5E642', fontWeight: 600 }}>{fmt(e.cost)}</span>
                       </div>
                     ))}

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const FILTER_TYPES = [
-  { label: 'Basic Fiberglass (MERV 1-4)', value: 'basic', cost: '$1-5' },
-  { label: 'Pleated (MERV 8-11)', value: 'pleated', cost: '$8-20' },
-  { label: 'High-Efficiency (MERV 13-16)', value: 'high', cost: '$20-50' },
+  { label: 'Basic Fiberglass (MERV 1-4)', value: 'basic', cost: '$1-5′ },
+  { label: 'Pleated (MERV 8-11)', value: 'pleated', cost: '$8-20′ },
+  { label: 'High-Efficiency (MERV 13-16)', value: 'high', cost: '$20-50′ },
 ];
 
 const SEASONS = [

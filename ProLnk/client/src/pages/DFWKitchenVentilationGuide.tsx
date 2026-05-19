@@ -19,7 +19,7 @@ const MAKEUP_AIR_THRESHOLD = 400;
 
 function CfmBar({ value, max }: { value: number; max: number }) {
   const pct = Math.min(100, (value / max) * 100);
-  const color = pct > 80 ? '#EF4444' : pct > 60 ? '#EAB308' : '#22C55E';
+  const color = pct > 80 ? '#EF4444′ : pct > 60 ? '#EAB308' : '#22C55E';
   return (
     <div style={{ height: 8, background: '#1E3A5F', borderRadius: 4, overflow: 'hidden', marginTop: 4 }}>
       <div style={{ height: '100%', width: `${pct}%`, background: color, borderRadius: 4, transition: 'width 0.3s' }} />
@@ -74,14 +74,14 @@ export default function DFWKitchenVentilationGuide() {
                   }}
                 >
                   <div style={{ fontSize: 24, marginBottom: 4 }}>{c.icon}</div>
-                  <div style={{ fontWeight: 600, color: selectedCooktop.name === c.name ? '#F5E642' : '#E8EDF5', fontSize: 12 }}>{c.name}</div>
+                  <div style={{ fontWeight: 600, color: selectedCooktop.name === c.name ? '#F5E642′ : '#E8EDF5', fontSize: 12 }}>{c.name}</div>
                   <div style={{ color: '#94A3B8', fontSize: 11 }}>{c.btu.toLocaleString()} BTU</div>
                 </button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 24 }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', color: '#CBD5E1' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', color: '#CBD5E1′ }}>
               <input
                 type="checkbox"
                 checked={isOpen}
@@ -91,7 +91,7 @@ export default function DFWKitchenVentilationGuide() {
               Open-concept kitchen (add 100 CFM for greater air volume)
             </label>
           </div>
-          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642' }}>
+          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Required CFM</div>
@@ -101,7 +101,7 @@ export default function DFWKitchenVentilationGuide() {
               </div>
               <div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Make-Up Air Required?</div>
-                <div style={{ color: needsMakeupAir ? '#EF4444' : '#22C55E', fontSize: 20, fontWeight: 800, marginTop: 4 }}>
+                <div style={{ color: needsMakeupAir ? '#EF4444′ : '#22C55E', fontSize: 20, fontWeight: 800, marginTop: 4 }}>
                   {needsMakeupAir ? 'Yes — Required' : 'Not Required'}
                 </div>
                 <div style={{ color: '#94A3B8', fontSize: 12, marginTop: 4 }}>
@@ -136,12 +136,12 @@ export default function DFWKitchenVentilationGuide() {
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
-                      <div style={{ fontWeight: 700, color: selectedHood.name === h.name ? '#F5E642' : '#E8EDF5', marginBottom: 4 }}>
+                      <div style={{ fontWeight: 700, color: selectedHood.name === h.name ? '#F5E642′ : '#E8EDF5', marginBottom: 4 }}>
                         {h.name}
                         {!fits && <span style={{ marginLeft: 8, color: '#EF4444', fontSize: 12 }}>Underpowered for your setup</span>}
                         {fits && selectedHood.name === h.name && <span style={{ marginLeft: 8, color: '#22C55E', fontSize: 12 }}>Fits your needs</span>}
                       </div>
-                      <div style={{ fontSize: 12, color: '#94A3B8' }}>{h.cfm[0]}-{h.cfm[1]} CFM · {h.installation} install</div>
+                      <div style={{ fontSize: 12, color: '#94A3B8′ }}>{h.cfm[0]}-{h.cfm[1]} CFM · {h.installation} install</div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ color: '#F5E642', fontWeight: 700 }}>${h.costMin.toLocaleString()}-${h.costMax.toLocaleString()}</div>
@@ -167,25 +167,25 @@ export default function DFWKitchenVentilationGuide() {
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>Install Complexity</div>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 4 }}>
                 {[1, 2, 3].map((i) => (
-                  <div key={i} style={{ width: 20, height: 20, borderRadius: 4, background: i <= complexity ? '#F5E642' : '#1E2D45' }} />
+                  <div key={i} style={{ width: 20, height: 20, borderRadius: 4, background: i <= complexity ? '#F5E642′ : '#1E2D45' }} />
                 ))}
               </div>
               <div style={{ color: '#64748B', fontSize: 12, marginTop: 4 }}>{selectedHood.installation}</div>
             </div>
             <div style={{ padding: 16, background: '#0A1628', borderRadius: 12, border: '1px solid #1E3A5F', textAlign: 'center' }}>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>Make-Up Air</div>
-              <div style={{ color: needsMakeupAir ? '#EF4444' : '#22C55E', fontSize: 24, fontWeight: 800 }}>
+              <div style={{ color: needsMakeupAir ? '#EF4444′ : '#22C55E', fontSize: 24, fontWeight: 800 }}>
                 {needsMakeupAir ? `+$${makeupAirCost}` : 'N/A'}
               </div>
             </div>
           </div>
-          <div style={{ marginTop: 16, padding: 14, background: '#1A2A0A', borderRadius: 10, border: '1px solid #EAB308' }}>
+          <div style={{ marginTop: 16, padding: 14, background: '#1A2A0A', borderRadius: 10, border: '1px solid #EAB308′ }}>
             <div style={{ color: '#EAB308', fontWeight: 700, fontSize: 13 }}>DFW Slab Home Duct Routing Note</div>
             <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>Most DFW homes are on slab foundations. Routing ductwork to exterior requires going through cabinets or attic — add $300-600 for complex duct runs. Island hoods are most challenging.</div>
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>💨</div>
           <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 8 }}>Get DFW Ventilation Quotes</h3>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Connect with DFW kitchen contractors through ProLnk — free quotes from vetted pros.</p>

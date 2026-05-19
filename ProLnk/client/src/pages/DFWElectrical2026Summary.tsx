@@ -35,7 +35,7 @@ export default function DFWElectrical2026Summary() {
             { icon: '⚡', title: 'Surge Protection', body: 'DFW storms cause frequent surges. Whole-home SPD at panel ($400–$800 installed) protects all devices. Point-of-use protectors add second layer. Insurance may require for home warranty coverage.' },
             { icon: '📅', title: 'When to Call an Electrician', body: 'Breakers tripping repeatedly, flickering lights, burning smell, outlets not working, planning EV/pool/solar, home 30+ years old, buying or selling a home. Always use TX-licensed electricians.' },
           ].map(c => (
-            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
+            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>{c.body}</div>
@@ -48,7 +48,7 @@ export default function DFWElectrical2026Summary() {
           <p style={{ color: '#94a3b8', marginBottom: 20, fontSize: 14 }}>Select your home's vintage:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {eras.map(e => (
-              <button key={e.id} onClick={() => setSelected(e.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === e.id ? '#F5E642' : '#1e3a5f'}`, background: selected === e.id ? '#F5E642' : 'transparent', color: selected === e.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{e.label}</button>
+              <button key={e.id} onClick={() => setSelected(e.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === e.id ? '#F5E642' : '#1e3a5f'}`, background: selected === e.id ? '#F5E642′ : ’transparent', color: selected === e.id ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>{e.label}</button>
             ))}
           </div>
           {selected && (

@@ -4,7 +4,7 @@ const windowTypes = [
   { type: 'Double-Hung', emoji: '🪟', strip: 'Pile weatherstrip (sides) + compression (top/bottom)', freq: 'Every 2-3 years DFW', cost: '$15-35/window' },
   { type: 'Casement', emoji: '🔲', strip: 'Compression bulb (all 4 sides)', freq: 'Every 3-4 years DFW', cost: '$20-45/window' },
   { type: 'Sliding', emoji: '↔️', strip: 'Pile/fin seal (vertical tracks)', freq: 'Every 2 years DFW', cost: '$12-28/window' },
-  { type: 'Fixed / Picture', emoji: '🖼️', strip: 'None needed — check frame caulk only', freq: 'N/A', cost: '$0' },
+  { type: 'Fixed / Picture', emoji: '🖼️', strip: 'None needed — check frame caulk only', freq: 'N/A', cost: '$0′ },
 ];
 
 const windowStyles = ['Double-Hung', 'Casement', 'Sliding', 'Fixed / Picture'];
@@ -86,7 +86,7 @@ export default function DFWWindowWeatherstripping() {
             <button onClick={reset} style={{ background: 'transparent', color: '#94A3B8', border: '1px solid #334155', borderRadius: 8, padding: '12px 20px', cursor: 'pointer', fontSize: 15 }}>Reset</button>
           </div>
           {rec && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, marginBottom: 12 }}>{rec.emoji} {rec.type} Windows</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
                 {[['Strip Type', rec.strip], ['DFW Frequency', rec.freq], ['Cost', rec.cost], ['Urgency', rec.urgency]].map(([k, v]) => (

@@ -37,7 +37,7 @@ export default function DFWEmergencyFundCalculator() {
   }
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
           <div style={{ fontSize: 32 }}>🏠💰</div>
@@ -51,23 +51,23 @@ export default function DFWEmergencyFundCalculator() {
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Monthly household expenses ($)
               <input type="number" value={monthlyExpenses} onChange={e => setMonthlyExpenses(e.target.value)}
-                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 5500" />
+                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 5500″ />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Home age (years)
               <input type="number" value={homeAge} onChange={e => setHomeAge(e.target.value)}
-                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 18" />
+                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 18″ />
             </label>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
                 HVAC age (years)
                 <input type="number" value={hvacAge} onChange={e => setHvacAge(e.target.value)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 8" />
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 8″ />
               </label>
               <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
                 Roof age (years)
                 <input type="number" value={roofAge} onChange={e => setRoofAge(e.target.value)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 12" />
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 12″ />
               </label>
             </div>
             <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, cursor: 'pointer' }}>
@@ -87,7 +87,7 @@ export default function DFWEmergencyFundCalculator() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div style={{ background: '#F0FDF4', borderRadius: 10, padding: 18, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#166534', marginBottom: 4 }}>Minimum Target</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#166534' }}>${result.min.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#166534′ }}>${result.min.toLocaleString()}</div>
               </div>
               <div style={{ background: '#FEF9EC', borderRadius: 10, padding: 18, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#92400E', marginBottom: 4 }}>Recommended Max</div>
@@ -100,7 +100,7 @@ export default function DFWEmergencyFundCalculator() {
                 {result.topRisks.map((r, i) => <div key={i} style={{ fontSize: 13, color: '#7F1D1D', marginBottom: 4 }}>• {r}</div>)}
               </div>
             )}
-            <div style={{ marginTop: 16, padding: 14, background: '#F8FAFC', borderRadius: 8, fontSize: 13, color: '#475569' }}>
+            <div style={{ marginTop: 16, padding: 14, background: '#F8FAFC', borderRadius: 8, fontSize: 13, color: '#475569′ }}>
               💡 Build it by saving ${Math.round(result.min / 24).toLocaleString()}/mo for 24 months in a high-yield savings account separate from your regular savings.
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const solutions = [
-  { room: 'kitchen', sun: 'south', label: 'South Kitchen', sol: 'Tubular skylight over prep island', detail: 'Solatube 10" DS brings 95% efficiency natural light — no structural change required.' },
+  { room: 'kitchen', sun: 'south', label: 'South Kitchen', sol: 'Tubular skylight over prep island', detail: 'Solatube 10″ DS brings 95% efficiency natural light — no structural change required.' },
   { room: 'kitchen', sun: 'north', label: 'North Kitchen', sol: 'Light shelf + pale yellow paint', detail: 'Light shelves above windows bounce light deep into the room; pale yellow (LRV 80+) amplifies.' },
   { room: 'bedroom', sun: 'east', label: 'East Bedroom', sol: 'Sheer cellular shades', detail: 'Diffuse morning DFW sun — filter glare while keeping luminosity for wake-up light.' },
   { room: 'bedroom', sun: 'west', label: 'West Bedroom', sol: 'Solar film + blackout layer', detail: 'DFW west exposure = intense afternoon heat; 3M Prestige solar film cuts 99% UV, add blackout for sleep.' },
@@ -41,7 +41,7 @@ export default function DFWNaturalLightGuide2026() {
               {['kitchen','bedroom','living','office'].map(r => (
                 <button key={r} onClick={() => setRoom(room === r ? '' : r)}
                   style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                    background: room === r ? '#F5E642' : '#1C2D4A', color: room === r ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                    background: room === r ? '#F5E642′ : '#1C2D4A', color: room === r ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                   {r.charAt(0).toUpperCase() + r.slice(1)}
                 </button>
               ))}
@@ -51,7 +51,7 @@ export default function DFWNaturalLightGuide2026() {
               {['north','south','east','west'].map(d => (
                 <button key={d} onClick={() => setSun(sun === d ? '' : d)}
                   style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                    background: sun === d ? '#F5E642' : '#1C2D4A', color: sun === d ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                    background: sun === d ? '#F5E642′ : '#1C2D4A', color: sun === d ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                   {d.charAt(0).toUpperCase() + d.slice(1)}
                 </button>
               ))}

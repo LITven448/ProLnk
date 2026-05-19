@@ -97,7 +97,7 @@ export default function DFWSunroomConversionGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>🧮 Conversion Estimator</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>Current sunroom type</label>
+              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>Current sunroom type</label>
               <select value={sunroomType} onChange={e => setSunroomType(e.target.value)}
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="">Select type</option>
@@ -107,7 +107,7 @@ export default function DFWSunroomConversionGuide() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>Climate control needed</label>
+              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>Climate control needed</label>
               <select value={hvacNeed} onChange={e => setHvacNeed(e.target.value)}
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="">Select need</option>

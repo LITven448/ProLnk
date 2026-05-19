@@ -101,11 +101,11 @@ export default function DFWCommunityPoolGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>📊 Pool Cost Breakdown</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem', color: '#94a3b8', fontSize: '0.9rem' }}>
-              <div><span style={{ color: '#F5E642' }}>Annual HOA Pool Cost:</span><br />{result.annualCost}</div>
-              <div><span style={{ color: '#F5E642' }}>Your Estimated Share:</span><br />{result.perHome}</div>
+              <div><span style={{ color: '#F5E642′ }}>Annual HOA Pool Cost:</span><br />{result.annualCost}</div>
+              <div><span style={{ color: '#F5E642′ }}>Your Estimated Share:</span><br />{result.perHome}</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>

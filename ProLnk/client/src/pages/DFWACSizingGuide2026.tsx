@@ -40,7 +40,7 @@ export default function DFWACSizingGuide2026() {
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 6 }}>Home Size: {sqft.toLocaleString()} sq ft</label>
             <input type="range" min={800} max={5000} step={100} value={sqft} onChange={e => setSqft(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Attic Insulation Level</label>
@@ -48,7 +48,7 @@ export default function DFWACSizingGuide2026() {
               {['poor', 'average', 'good'].map(level => (
                 <button key={level} onClick={() => setInsulation(level)}
                   style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize',
-                    backgroundColor: insulation === level ? '#F5E642' : '#0A1628', color: insulation === level ? '#0A1628' : '#fff' }}>
+                    backgroundColor: insulation === level ? '#F5E642′ : '#0A1628', color: insulation === level ? '#0A1628' : '#fff' }}>
                   {level === 'poor' ? '⬇️ Poor (<R-19)' : level === 'average' ? '➡️ Average (R-25)' : '⬆️ Good (R-38+)'}
                 </button>
               ))}
@@ -56,7 +56,7 @@ export default function DFWACSizingGuide2026() {
           </div>
           <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 4 }}>Recommended AC Size for DFW</div>
-            <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642' }}>{tons} Tons</div>
+            <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642′ }}>{tons} Tons</div>
             <div style={{ fontSize: 14, color: '#94a3b8', marginTop: 4 }}>Always confirm with a licensed Manual J calculation</div>
           </div>
         </div>

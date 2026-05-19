@@ -55,7 +55,7 @@ export default function DFWMaintainedVsNeglectedGuide() {
           <label style={{ color: '#F5E642', fontWeight: 600, display: 'block', marginBottom: 8 }}>Current Home Value</label>
           <input
             type="number"
-            placeholder="$380,000"
+            placeholder="$380,000″
             value={homeValue}
             onChange={e => setHomeValue(e.target.value)}
             style={{ background: '#1a2f4e', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px 16px', width: '100%', fontSize: 16, boxSizing: 'border-box' }}
@@ -71,7 +71,7 @@ export default function DFWMaintainedVsNeglectedGuide() {
               <div style={{ color: '#f87171', fontWeight: 700, fontSize: 13, textAlign: 'center' }}>⚠️ Neglected</div>
             </div>
             {OUTCOME_ROWS.map((row, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 8, padding: '8px 0', borderBottom: '1px solid #0d1e38' }}>
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 8, padding: '8px 0', borderBottom: '1px solid #0d1e38′ }}>
                 <div style={{ color: '#cbd5e1', fontSize: 14 }}>{row.label}</div>
                 <div style={{ color: '#34d399', fontSize: 13, textAlign: 'center' }}>{row.maintained}</div>
                 <div style={{ color: '#f87171', fontSize: 13, textAlign: 'center' }}>{row.neglected}</div>
@@ -83,7 +83,7 @@ export default function DFWMaintainedVsNeglectedGuide() {
         <button
           onClick={() => setCalculated(true)}
           disabled={!homeValue}
-          style={{ background: homeValue ? '#F5E642' : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: 16, border: 'none', borderRadius: 10, padding: '14px 32px', width: '100%', cursor: homeValue ? 'pointer' : 'not-allowed', marginBottom: 24 }}
+          style={{ background: homeValue ? '#F5E642′ : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: 16, border: ’none', borderRadius: 10, padding: '14px 32px', width: '100%', cursor: homeValue ? 'pointer' : 'not-allowed', marginBottom: 24 }}
         >
           Project 10-Year Outcomes for My Home
         </button>
@@ -98,12 +98,12 @@ export default function DFWMaintainedVsNeglectedGuide() {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                     <div style={{ background: '#0d2d1a', borderRadius: 8, padding: 12 }}>
                       <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>✅ Maintained Value</div>
-                      <div style={{ fontSize: 20, fontWeight: 700, color: '#34d399' }}>${Math.round(snap.maintainedValue).toLocaleString()}</div>
+                      <div style={{ fontSize: 20, fontWeight: 700, color: '#34d399′ }}>${Math.round(snap.maintainedValue).toLocaleString()}</div>
                       <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>Spent: ${snap.maintainedSpent.toLocaleString()}</div>
                     </div>
                     <div style={{ background: '#2d1515', borderRadius: 8, padding: 12 }}>
                       <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>⚠️ Neglected Value</div>
-                      <div style={{ fontSize: 20, fontWeight: 700, color: '#f87171' }}>${Math.round(snap.neglectedValue).toLocaleString()}</div>
+                      <div style={{ fontSize: 20, fontWeight: 700, color: '#f87171′ }}>${Math.round(snap.neglectedValue).toLocaleString()}</div>
                       <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>Deferred: ${Math.round(snap.deferredCost).toLocaleString()}</div>
                     </div>
                   </div>

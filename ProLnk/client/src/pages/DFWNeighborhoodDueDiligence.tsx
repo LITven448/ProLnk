@@ -93,8 +93,8 @@ export default function DFWNeighborhoodDueDiligence() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🗺️ DFW Neighborhood Due Diligence</div>
-          <p style={{ fontSize: '1.05rem', color: '#374151' }}>
-            In DFW, the neighborhood changes as fast as the home. The region adds 100,000+ residents per year, new highways are constantly planned, and school districts redraw boundaries regularly. Here's how to research what you're really buying into.
+          <p style={{ fontSize: '1.05rem', color: '#374151′ }}>
+            In DFW, the neighborhood changes as fast as the home. The region adds 100,000+ residents per year, new highways are constantly planned, and school districts redraw boundaries regularly. Here's how to research what you’re really buying into.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function DFWNeighborhoodDueDiligence() {
             ].map(([time, purpose], i) => (
               <div key={i} style={{ backgroundColor: '#F9FAFB', borderRadius: 8, padding: '0.75rem', border: '1px solid #E5E7EB' }}>
                 <div style={{ fontWeight: 700, fontSize: '0.85rem', marginBottom: '0.25rem' }}>🕐 {time}</div>
-                <div style={{ fontSize: '0.85rem', color: '#6B7280' }}>{purpose}</div>
+                <div style={{ fontSize: '0.85rem', color: '#6B7280′ }}>{purpose}</div>
               </div>
             ))}
           </div>
@@ -122,7 +122,7 @@ export default function DFWNeighborhoodDueDiligence() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: info ? '1.5rem' : 0 }}>
             {concernTypes.map(({ key, label }) => (
               <button key={key} onClick={() => setSelected(selected === key ? null : key)}
-                style={{ padding: '0.6rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === key ? '#F5E642' : '#E5E7EB', backgroundColor: selected === key ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: selected === key ? 700 : 400, cursor: 'pointer', fontSize: '0.88rem' }}>
+                style={{ padding: '0.6rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === key ? '#F5E642′ : '#E5E7EB', backgroundColor: selected === key ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: selected === key ? 700 : 400, cursor: ’pointer', fontSize: '0.88rem' }}>
                 {label}
               </button>
             ))}
@@ -147,10 +147,10 @@ export default function DFWNeighborhoodDueDiligence() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047' }}>
+        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.5rem' }}>⚡ DFW Growth Context</div>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.95rem', lineHeight: 1.8 }}>
-            <li>DFW adds ~300 new residents per day — what's "the edge of town" today won't be in 5 years</li>
+            <li>DFW adds ~300 new residents per day — what's "the edge of town" today won’t be in 5 years</li>
             <li>NCTCOG's MTP (Metropolitan Transportation Plan) shows 20-year highway expansion — check it before buying near any undeveloped corridor</li>
             <li>Master-planned communities (Frisco, Allen, Celina) change faster than established neighborhoods — know what's coming before you buy</li>
             <li>Nextdoor is extremely active in DFW — join and read 6 months of history before making an offer</li>

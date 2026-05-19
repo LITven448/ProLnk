@@ -21,7 +21,7 @@ export default function TrustyProPartnerAlignment() {
   return (
     <div style={{ background: '#f9fafb', color: '#111827', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280' }}>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280′ }}>
           🤝 ProLnk Partner + Homeowner Alignment
         </div>
         <h1 style={{ fontSize: 'clamp(24px, 5vw, 40px)', fontWeight: 700, color: '#111827', lineHeight: 1.2, marginBottom: 16 }}>
@@ -39,7 +39,7 @@ export default function TrustyProPartnerAlignment() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ background: '#f3f4f6' }}>
+                <tr style={{ background: '#f3f4f6′ }}>
                   <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, color: '#374151', border: '1px solid #e5e7eb' }}>Platform</th>
                   <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, color: '#374151', border: '1px solid #e5e7eb' }}>Homeowner Problem</th>
                   <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, color: '#374151', border: '1px solid #e5e7eb' }}>Partner Problem</th>
@@ -48,12 +48,12 @@ export default function TrustyProPartnerAlignment() {
               </thead>
               <tbody>
                 {platforms.map((p, i) => (
-                  <tr key={p.name} style={{ background: p.icon === '✅' ? '#f0fdf4' : (i % 2 === 0 ? '#fff' : '#fafafa') }}>
-                    <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', fontWeight: 700, color: p.icon === '✅' ? '#166534' : '#111827' }}>
+                  <tr key={p.name} style={{ background: p.icon === '✅' ? '#f0fdf4′ : (i % 2 === 0 ? '#fff' : '#fafafa') }}>
+                    <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', fontWeight: 700, color: p.icon === '✅' ? '#166534′ : '#111827' }}>
                       {p.icon} {p.name}
                     </td>
-                    <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', color: p.icon === '✅' ? '#166534' : '#6b7280' }}>{p.homeownerProblem}</td>
-                    <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', color: p.icon === '✅' ? '#166534' : '#6b7280' }}>{p.partnerProblem}</td>
+                    <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', color: p.icon === '✅' ? '#166534′ : '#6b7280' }}>{p.homeownerProblem}</td>
+                    <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', color: p.icon === '✅' ? '#166534′ : '#6b7280' }}>{p.partnerProblem}</td>
                     <td style={{ padding: '12px 16px', border: '1px solid #e5e7eb', color: p.icon === '✅' ? '#16a34a' : '#9ca3af', fontWeight: p.icon === '✅' ? 700 : 400 }}>{p.model}</td>
                   </tr>
                 ))}
@@ -81,7 +81,7 @@ export default function TrustyProPartnerAlignment() {
                     alignItems: 'center',
                     gap: 16,
                     background: activeStep === step.step ? '#eff6ff' : '#fff',
-                    border: activeStep === step.step ? '2px solid #3b82f6' : '1px solid #e5e7eb',
+                    border: activeStep === step.step ? '2px solid #3b82f6′ : '1px solid #e5e7eb',
                     borderRadius: 12,
                     padding: '16px 20px',
                     cursor: 'pointer',

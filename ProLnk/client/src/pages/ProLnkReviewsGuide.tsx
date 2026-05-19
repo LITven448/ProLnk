@@ -42,8 +42,8 @@ export default function ProLnkReviewsGuide() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {scenarios.map(s => (
               <button key={s.label} onClick={() => setScenario(s.label)} style={{
-                background: scenario === s.label ? '#F5E642' : '#1A2F4A',
-                color: scenario === s.label ? '#0A1628' : '#fff',
+                background: scenario === s.label ? '#F5E642′ : '#1A2F4A',
+                color: scenario === s.label ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13
               }}>{s.label}</button>
             ))}

@@ -19,7 +19,7 @@ const systems: Record<GarageSize, Record<GarageUse, { system: string; why: strin
   '3car': {
     cars: { system: 'Ceiling Storage Grid + Gladiator Columns', why: 'DFW 3-car garages often store RV gear, ATVs — overhead grid maximizes floor space.', heatNote: 'Grid in center bay safe from wall heat; corner vent fans recommended for summer.', difficulty: 'Hard (8–10 hrs)', costEstimate: '$900–$1,600', panels: '3 ceiling grids + 6 vertical columns' },
     workshop: { system: 'Full Wall Control Steel + French Cleat Workwall', why: 'Pro-level workshop build for DFW trades; handles 3-car footprint efficiently.', heatNote: 'Steel + wood only. Mini-split in workshop bay is common DFW upgrade ($1,500 installed).', difficulty: 'Hard (10–14 hrs)', costEstimate: '$1,000–$2,500', panels: '8 panels + full cleat wall' },
-    storage: { system: 'Rubbermaid Heavy Duty Ceiling + Proslat Walls', why: 'Maximizes a DFW 3-car — ceiling for seasonal, walls for daily access.', heatNote: 'Ceiling units need 24" clearance from garage door tracks; metal brackets for DFW heat.', difficulty: 'Hard (8–12 hrs)', costEstimate: '$1,200–$2,000', panels: '4 ceiling + 12 wall panels' },
+    storage: { system: 'Rubbermaid Heavy Duty Ceiling + Proslat Walls', why: 'Maximizes a DFW 3-car — ceiling for seasonal, walls for daily access.', heatNote: 'Ceiling units need 24″ clearance from garage door tracks; metal brackets for DFW heat.', difficulty: 'Hard (8–12 hrs)', costEstimate: '$1,200–$2,000', panels: '4 ceiling + 12 wall panels' },
     mixed: { system: 'Custom Zone Design: 1 bay workshop, 1 bay storage, 1 bay flex', why: 'Most DFW 3-car owners get best value dividing by function rather than buying one system.', heatNote: 'Dedicated mini-split for workshop bay; passive ventilation for storage bay.', difficulty: 'Hard (12–16 hrs or hire out)', costEstimate: '$2,000–$4,000', panels: 'Zone-specific selection' },
   },
 };
@@ -40,17 +40,17 @@ export default function DFWGarageStorageSystemGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 16, marginBottom: 24, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#F5E642' }}>🌡️ South/west walls: 115–130°F</div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#C8D0E0' }}>❄️ North/east walls: Safe for plastic</div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#C8D0E0' }}>🔩 Steel always beats plastic here</div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#C8D0E0' }}>☁️ Ceiling is coolest storage zone</div>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#F5E642′ }}>🌡️ South/west walls: 115–130°F</div>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#C8D0E0′ }}>❄️ North/east walls: Safe for plastic</div>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#C8D0E0′ }}>🔩 Steel always beats plastic here</div>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#C8D0E0′ }}>☁️ Ceiling is coolest storage zone</div>
         </div>
 
         <div style={{ marginBottom: 20 }}>
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>1️⃣ GARAGE SIZE</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
             {[['1car', '🚗 1-Car', '~240 sq ft'], ['2car', '🚗🚗 2-Car', '~480 sq ft'], ['3car', '🚗🚗🚗 3-Car', '~720 sq ft']] .map(([k, label, sf]) => (
-              <button key={k} onClick={() => setSize(k as GarageSize)} style={{ background: size === k ? '#F5E642' : '#111E35', color: size === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (size === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}<br /><span style={{ fontWeight: 400, fontSize: 11 }}>{sf}</span></button>
+              <button key={k} onClick={() => setSize(k as GarageSize)} style={{ background: size === k ? '#F5E642′ : '#111E35', color: size === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (size === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '10px 12px', cursor: ’pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}<br /><span style={{ fontWeight: 400, fontSize: 11 }}>{sf}</span></button>
             ))}
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function DFWGarageStorageSystemGuide() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>2️⃣ PRIMARY USE</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {[['cars', '🚗 Park Cars'], ['workshop', '🔨 Workshop'], ['storage', '📦 Storage'], ['mixed', '🔀 Mixed Use']] .map(([k, label]) => (
-              <button key={k} onClick={() => setUse(k as GarageUse)} style={{ background: use === k ? '#F5E642' : '#111E35', color: use === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (use === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>{label}</button>
+              <button key={k} onClick={() => setUse(k as GarageUse)} style={{ background: use === k ? '#F5E642′ : '#111E35', color: use === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (use === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontWeight: 700, fontSize: 13 }}>{label}</button>
             ))}
           </div>
         </div>

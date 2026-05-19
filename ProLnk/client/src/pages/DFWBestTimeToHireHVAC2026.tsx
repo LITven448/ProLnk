@@ -46,8 +46,8 @@ export default function DFWBestTimeToHireHVAC2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 28 }}>
           {months.map((m, i) => (
             <button key={m.name} onClick={() => setSelected(i)} style={{
-              background: selected === i ? '#F5E642' : '#1e2d45',
-              color: selected === i ? '#0A1628' : '#fff',
+              background: selected === i ? '#F5E642′ : '#1e2d45',
+              color: selected === i ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 8, padding: '10px 4px', cursor: 'pointer', fontWeight: 600, fontSize: 14,
             }}>{m.name}</button>
           ))}

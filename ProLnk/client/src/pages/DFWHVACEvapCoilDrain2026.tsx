@@ -74,7 +74,7 @@ export default function DFWHVACEvapCoilDrain2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 8, padding: '1rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 8, padding: '1rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>⚡ DFW Rule of Thumb</div>
           <div style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>DFW HVAC units run more hours per year than almost any US market. Flush your condensate line every 30 days during cooling season — a $5 bottle of bleach prevents thousands in water damage.</div>
         </div>

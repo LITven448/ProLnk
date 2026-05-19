@@ -79,7 +79,7 @@ export default function DFWCellinaHomeownerGuide2026B() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {years.map(y => (
               <button key={y} onClick={() => setSelected(y === selected ? null : y)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === y ? '#F5E642' : '#1e2f4a', color: selected === y ? '#0A1628' : '#fff' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === y ? '#F5E642′ : '#1e2f4a', color: selected === y ? '#0A1628' : '#fff' }}>
                 {y}
               </button>
             ))}

@@ -53,7 +53,7 @@ export default function HomeEquityGuide() {
   const fmt = (v: number) => '$' + v.toLocaleString(undefined, { maximumFractionDigits: 0 });
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2a45 100%)', borderBottom: '2px solid #F5E642', padding: '48px 24px 36px' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>🏠 DFW Homeowner Guide</div>
@@ -64,7 +64,7 @@ export default function HomeEquityGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 880, margin: '0 auto', padding: '40px 24px 0' }}>
+      <div style={{ maxWidth: 880, margin: '0 auto', padding: '40px 24px 0′ }}>
         <div style={{ background: '#0f1e35', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 36 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 10px' }}>📈 DFW Home Values (2025)</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: '0 0 14px' }}>
@@ -72,7 +72,7 @@ export default function HomeEquityGuide() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
             {[
-              { label: 'DFW Avg Home Value', value: '$380,000' },
+              { label: 'DFW Avg Home Value', value: '$380,000′ },
               { label: 'Avg 5-yr Appreciation', value: '+36%' },
               { label: 'Max LTV for Borrowing', value: '85%' },
             ].map(s => (
@@ -99,7 +99,7 @@ export default function HomeEquityGuide() {
                 ].map(row => (
                   <div key={row.label} style={{ marginBottom: 6 }}>
                     <span style={{ color: '#64748b', fontWeight: 600 }}>{row.label}: </span>
-                    <span style={{ color: '#94a3b8' }}>{row.val}</span>
+                    <span style={{ color: '#94a3b8′ }}>{row.val}</span>
                   </div>
                 ))}
               </div>
@@ -133,7 +133,7 @@ export default function HomeEquityGuide() {
                 type="number"
                 value={homeValue}
                 onChange={e => setHomeValue(e.target.value)}
-                placeholder="e.g. 380000"
+                placeholder="e.g. 380000″
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E2D45', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -143,7 +143,7 @@ export default function HomeEquityGuide() {
                 type="number"
                 value={mortgage}
                 onChange={e => setMortgage(e.target.value)}
-                placeholder="e.g. 220000"
+                placeholder="e.g. 220000″
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E2D45', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>

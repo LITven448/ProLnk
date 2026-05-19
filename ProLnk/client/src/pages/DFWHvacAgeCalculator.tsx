@@ -19,7 +19,7 @@ export default function DFWHvacAgeCalculator() {
   const cost = SYSTEM_COST[systemType] + Math.round(sqft * 0.5);
   const monthlySave = Math.round(cost / Math.max(yearsLeft * 12, 1));
   const urgency = age >= lifespan ? 'urgent' : age >= lifespan - 2 ? 'soon' : 'planning';
-  const urgencyColor = urgency === 'urgent' ? '#d32f2f' : urgency === 'soon' ? '#f57c00' : '#2e7d32';
+  const urgencyColor = urgency === 'urgent' ? '#d32f2f' : urgency === 'soon' ? '#f57c00′ : '#2e7d32';
   const urgencyLabel = urgency === 'urgent' ? '🚨 Replace Now' : urgency === 'soon' ? '⚠️ Plan Soon' : '✅ Still Good';
 
   return (
@@ -37,14 +37,14 @@ export default function DFWHvacAgeCalculator() {
               <label style={{ display: 'block', fontWeight: 700, color: '#aab4cc', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Install Year</label>
               <input type="range" min={1995} max={2025} step={1} value={installYear}
                 onChange={e => setInstallYear(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#F5E642', fontSize: '1.1rem' }}>{installYear} ({age} yrs old)</div>
             </div>
             <div>
               <label style={{ display: 'block', fontWeight: 700, color: '#aab4cc', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Home Size (sq ft)</label>
               <input type="range" min={800} max={6000} step={100} value={sqft}
                 onChange={e => setSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#F5E642', fontSize: '1.1rem' }}>{sqft.toLocaleString()} sq ft</div>
             </div>
           </div>
@@ -73,15 +73,15 @@ export default function DFWHvacAgeCalculator() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>{yearsLeft}</div>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>{yearsLeft}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Years Remaining</div>
           </div>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>${cost.toLocaleString()}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>${cost.toLocaleString()}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Est. Replacement Cost</div>
           </div>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>${monthlySave}</div>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>${monthlySave}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Save Monthly Now</div>
           </div>
         </div>

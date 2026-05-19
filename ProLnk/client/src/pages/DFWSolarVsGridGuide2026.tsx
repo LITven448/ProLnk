@@ -56,7 +56,7 @@ export default function DFWSolarVsGridGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13 }}>Current monthly electric bill ($)</label>
-              <input value={bill} onChange={e => setBill(e.target.value)} placeholder="e.g. 200"
+              <input value={bill} onChange={e => setBill(e.target.value)} placeholder="e.g. 200″
                 style={{ display: 'block', width: '100%', marginTop: 4, background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -71,7 +71,7 @@ export default function DFWSolarVsGridGuide2026() {
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13 }}>Years you plan to stay in home</label>
-              <input value={years} onChange={e => setYears(e.target.value)} placeholder="e.g. 12"
+              <input value={years} onChange={e => setYears(e.target.value)} placeholder="e.g. 12″
                 style={{ display: 'block', width: '100%', marginTop: 4, background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>

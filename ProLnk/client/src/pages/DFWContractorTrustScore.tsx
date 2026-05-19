@@ -34,12 +34,12 @@ export default function DFWContractorTrustScore() {
 
         <div style={{ display: 'flex', gap: 24, alignItems: 'center', marginBottom: 32, background: '#111d30', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ textAlign: 'center', minWidth: 100 }}>
-            <div style={{ fontSize: 52, fontWeight: 900, color: score >= 80 ? '#22c55e' : score >= 60 ? '#F5E642' : score >= 40 ? '#f97316' : '#ef4444', lineHeight: 1 }}>{score}</div>
+            <div style={{ fontSize: 52, fontWeight: 900, color: score >= 80 ? '#22c55e' : score >= 60 ? '#F5E642′ : score >= 40 ? '#f97316' : '#ef4444', lineHeight: 1 }}>{score}</div>
             <div style={{ color: '#64748b', fontSize: 13, marginTop: 4 }}>/ 100 pts</div>
           </div>
           <div style={{ flex: 1 }}>
             <div style={{ height: 12, background: '#1e3a5f', borderRadius: 6, overflow: 'hidden', marginBottom: 12 }}>
-              <div style={{ height: '100%', width: `${score}%`, background: score >= 80 ? '#22c55e' : score >= 60 ? '#F5E642' : score >= 40 ? '#f97316' : '#ef4444', transition: 'width 0.4s, background 0.4s' }} />
+              <div style={{ height: '100%', width: `${score}%`, background: score >= 80 ? '#22c55e' : score >= 60 ? '#F5E642′ : score >= 40 ? '#f97316' : '#ef4444', transition: ’width 0.4s, background 0.4s' }} />
             </div>
             {hasAny && (
               <div>
@@ -65,7 +65,7 @@ export default function DFWContractorTrustScore() {
         </div>
 
         <div style={{ marginTop: 24, background: '#111d30', borderRadius: 10, padding: '1rem', color: '#64748b', fontSize: 13 }}>
-          💡 <strong style={{ color: '#F5E642' }}>ProLnk tip:</strong> All TrustyPro-verified contractors have license, insurance, and permit history pre-confirmed. Skip the research — get verified pros through ProLnk.
+          💡 <strong style={{ color: '#F5E642′ }}>ProLnk tip:</strong> All TrustyPro-verified contractors have license, insurance, and permit history pre-confirmed. Skip the research — get verified pros through ProLnk.
         </div>
       </div>
     </div>

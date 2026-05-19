@@ -38,10 +38,10 @@ export default function ProLnkHailSeasonCampaign2026() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#F5E642' : '#111f35',
-                color: selected === i ? '#0A1628' : '#ffffff',
+                background: selected === i ? '#F5E642′ : '#111f35',
+                color: selected === i ? '#0A1628′ : '#ffffff',
                 border: '1px solid',
-                borderColor: selected === i ? '#F5E642' : '#1e3050',
+                borderColor: selected === i ? '#F5E642′ : '#1e3050',
                 borderRadius: '10px',
                 padding: '16px 20px',
                 fontSize: '15px',
@@ -53,7 +53,7 @@ export default function ProLnkHailSeasonCampaign2026() {
             >
               {d.damage}
               {selected === i && (
-                <p style={{ marginTop: '10px', fontWeight: '400', fontSize: '14px', lineHeight: 1.6, color: '#0A1628' }}>
+                <p style={{ marginTop: '10px', fontWeight: '400', fontSize: '14px', lineHeight: 1.6, color: '#0A1628′ }}>
                   {d.response}
                 </p>
               )}
@@ -68,14 +68,14 @@ export default function ProLnkHailSeasonCampaign2026() {
           🚫 Why ProLnk vs. a Storm Chaser? {chasersVisible ? '▲' : '▼'}
         </button>
         {chasersVisible && (
-          <div style={{ background: '#111f35', borderRadius: '10px', padding: '20px', marginBottom: '24px', border: '1px solid #1e3050' }}>
+          <div style={{ background: '#111f35', borderRadius: '10px', padding: '20px', marginBottom: '24px', border: '1px solid #1e3050′ }}>
             <p style={{ color: '#a0b4cc', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
               Storm chasers arrive after disasters, use pressure sales, and disappear before warranty work. ProLnk Charter pros are DFW-local, license-verified, and available year-round. If something goes wrong, they're still here.
             </p>
           </div>
         )}
 
-        <div style={{ background: '#111f35', borderRadius: '14px', padding: '28px', textAlign: 'center', border: '1px solid #1e3050' }}>
+        <div style={{ background: '#111f35', borderRadius: '14px', padding: '28px', textAlign: 'center', border: '1px solid #1e3050′ }}>
           <h3 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', margin: '0 0 8px' }}>Get a Verified Local Roofer Now</h3>
           <p style={{ color: '#7a90a8', fontSize: '14px', margin: '0 0 20px' }}>Join ProLnk — matched to a Charter pro in your DFW zip within 2 hours.</p>
           <a href="/homeowner-signup" style={{ display: 'inline-block', background: '#F5E642', color: '#0A1628', fontWeight: '700', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontSize: '16px' }}>

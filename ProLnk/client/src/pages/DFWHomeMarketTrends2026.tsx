@@ -52,7 +52,7 @@ export default function DFWHomeMarketTrends2026() {
           DFW Real Estate Trends 2026
         </h1>
         <p style={{ fontSize: 18, color: '#B0C4DE', maxWidth: 600, margin: '0 auto' }}>
-          What's driving the market — and what it means if you're buying, selling, or maintaining a home in Dallas-Fort Worth.
+          What's driving the market — and what it means if you’re buying, selling, or maintaining a home in Dallas-Fort Worth.
         </p>
       </div>
 
@@ -94,7 +94,7 @@ export default function DFWHomeMarketTrends2026() {
         </div>
 
         {/* Forecast */}
-        <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 12, padding: '28px 32px', margin: '48px 0' }}>
+        <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 12, padding: '28px 32px', margin: '48px 0′ }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#2563EB', letterSpacing: 1, textTransform: 'uppercase', marginBottom: 12 }}>2026 Forecast</div>
           <p style={{ fontSize: 16, color: '#1E40AF', lineHeight: 1.7, margin: 0 }}>
             DFW will remain a <strong>seller's market in premium suburbs</strong> (Frisco, Plano, McKinney) and shift toward balance in older inner suburbs. North corridor cities will outperform all others on appreciation through at least 2027. Aging inner-ring suburbs will see sustained contractor demand — smart homeowners are locking in service relationships now.

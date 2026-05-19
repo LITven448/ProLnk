@@ -86,7 +86,7 @@ export default function DFWPoolHeatPumpGuide() {
           {heatingOptions.map(o => (
             <div key={o.type} style={{ background: '#1e2d45', borderRadius: 8, padding: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
-                <strong style={{ color: '#F5E642' }}>{o.type}</strong>
+                <strong style={{ color: '#F5E642′ }}>{o.type}</strong>
                 <span style={{ color: '#94a3b8', fontSize: 13 }}>
                   {o.upfront} upfront · {o.monthly}/mo · Payback: {o.payback}
                 </span>
@@ -139,8 +139,8 @@ export default function DFWPoolHeatPumpGuide() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>💡 DFW Combo Strategy</strong>
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>💡 DFW Combo Strategy</strong>
           <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 14 }}>
             Many DFW homeowners pair solar heating (handles 70°F+ days) with a small heat pump (handles 55–70°F evenings).
             Combined cost runs $4,500–8,000 installed but dramatically extends your season at low operating cost.

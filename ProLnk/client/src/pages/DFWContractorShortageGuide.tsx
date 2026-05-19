@@ -33,7 +33,7 @@ export default function DFWContractorShortageGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW HOME SERVICES</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 16, lineHeight: 1.2 }}>DFW Contractor Shortage Guide 2026</h1>
         <p style={{ color: '#94a3b8', fontSize: 17, marginBottom: 40, lineHeight: 1.7 }}>
-          DFW added 130,000 residents in 2025 alone — but the skilled trades workforce grew only 12%. The result: wait times that can derail renovation plans and leave critical systems unrepaired. Here's what's driving the gap and how to navigate it.
+          DFW added 130,000 residents in 2025 alone — but the skilled trades workforce grew only 12%. The result: wait times that can derail renovation plans and leave critical systems unrepaired. Here's what’s driving the gap and how to navigate it.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 48 }}>

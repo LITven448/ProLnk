@@ -25,7 +25,7 @@ export default function DentonHomeownerGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {neighborhoods.map((n, i) => (
               <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1a2f50', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1a2f50', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
                 {n.icon} {n.type}
               </button>
             ))}

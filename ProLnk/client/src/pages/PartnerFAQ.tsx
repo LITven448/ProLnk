@@ -24,7 +24,7 @@ const CATEGORIES: Category[] = [
     id: "getting-started",
     label: "Getting Started",
     icon: Rocket,
-    color: "text-blue-400",
+    color: "text-blue-400″,
     faqs: [
       {
         q: "How do I get my first lead?",
@@ -48,7 +48,7 @@ const CATEGORIES: Category[] = [
     id: "commission",
     label: "Commission & Payments",
     icon: DollarSign,
-    color: "text-teal-400",
+    color: "text-teal-400″,
     faqs: [
       {
         q: "How does the 72% commission work for Founding Members?",
@@ -76,7 +76,7 @@ const CATEGORIES: Category[] = [
     id: "network-income",
     label: "Network Income",
     icon: Network,
-    color: "text-purple-400",
+    color: "text-purple-400″,
     faqs: [
       {
         q: "What is the 4-level network income?",
@@ -100,7 +100,7 @@ const CATEGORIES: Category[] = [
     id: "fsm",
     label: "FSM Integration",
     icon: Wrench,
-    color: "text-orange-400",
+    color: "text-orange-400″,
     faqs: [
       {
         q: "Can I integrate my Jobber or HCP account?",
@@ -124,7 +124,7 @@ const CATEGORIES: Category[] = [
     id: "trustypro",
     label: "TrustyPro",
     icon: Star,
-    color: "text-yellow-400",
+    color: "text-yellow-400″,
     faqs: [
       {
         q: "What is the difference between ProLnk and TrustyPro?",
@@ -144,7 +144,7 @@ const CATEGORIES: Category[] = [
     id: "objections",
     label: "Common Objections",
     icon: ShieldAlert,
-    color: "text-rose-400",
+    color: "text-rose-400″,
     faqs: [
       {
         q: "I tried Angi and it didn't work. Why would ProLnk be different?",
@@ -168,7 +168,7 @@ const CATEGORIES: Category[] = [
     id: "partner-qa",
     label: "Real Partner Q&A",
     icon: Users,
-    color: "text-teal-400",
+    color: "text-teal-400″,
     faqs: [
       {
         q: "\"I'm a licensed plumber in Frisco but I also do some HVAC work. Can I list both trades?\" — James O., Irving TX",
@@ -221,19 +221,19 @@ export default function PartnerFAQ() {
 
       <div className="min-h-screen bg-[#0A1628] text-white">
         {/* Hero */}
-        <div className="bg-slate-900 border-b border-slate-800">
+        <div className="bg-slate-900 border-b border-slate-800″>
           <div className="max-w-4xl mx-auto px-6 py-12 text-center">
-            <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-1.5 mb-4">
-              <HelpCircle className="w-4 h-4 text-teal-400" />
+            <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-1.5 mb-4″>
+              <HelpCircle className="w-4 h-4 text-teal-400″ />
               <span className="text-sm text-teal-300 font-medium">Partner Help Center</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Frequently Asked Questions</h1>
-            <p className="text-slate-400 text-lg mb-6">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3″>Frequently Asked Questions</h1>
+            <p className="text-slate-400 text-lg mb-6″>
               {totalFAQs} answers covering everything you need to know about ProLnk.
             </p>
 
             <div className="relative max-w-md mx-auto">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500″ />
               <input
                 type="text"
                 placeholder="Search questions..."
@@ -245,15 +245,15 @@ export default function PartnerFAQ() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-10">
+        <div className="max-w-4xl mx-auto px-6 py-10″>
           {/* Category filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-8″>
             <button
               onClick={() => setActiveCategory("all")}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === "all"
                   ? "bg-teal-600 text-white"
-                  : "bg-slate-800 text-slate-400 hover:text-white border border-slate-700"
+                  : "bg-slate-800 text-slate-400 hover:text-white border border-slate-700″
               }`}
             >
               All Topics
@@ -267,10 +267,10 @@ export default function PartnerFAQ() {
                   className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     activeCategory === cat.id
                       ? "bg-teal-600 text-white"
-                      : "bg-slate-800 text-slate-400 hover:text-white border border-slate-700"
+                      : "bg-slate-800 text-slate-400 hover:text-white border border-slate-700″
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className="w-3.5 h-3.5″ />
                   {cat.label}
                 </button>
               );
@@ -278,28 +278,28 @@ export default function PartnerFAQ() {
           </div>
 
           {filteredCategories.length === 0 && (
-            <div className="text-center py-16">
-              <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-slate-400">No results found</h3>
-              <p className="text-sm text-slate-500 mt-1">Try a different search term or browse all categories.</p>
+            <div className="text-center py-16″>
+              <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-3″ />
+              <h3 className="text-lg font-semibold text-slate-400″>No results found</h3>
+              <p className="text-sm text-slate-500 mt-1″>Try a different search term or browse all categories.</p>
               <button onClick={() => setSearch("")} className="mt-4 text-sm text-teal-400 hover:underline">
                 Clear search
               </button>
             </div>
           )}
 
-          <div className="space-y-10">
+          <div className="space-y-10″>
             {filteredCategories.map((cat) => {
               const Icon = cat.icon;
               return (
                 <div key={cat.id}>
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-4″>
                     <Icon className={`w-5 h-5 ${cat.color}`} />
                     <h2 className="text-lg font-bold text-white">{cat.label}</h2>
-                    <span className="text-xs text-slate-500 ml-1">{cat.faqs.length} questions</span>
+                    <span className="text-xs text-slate-500 ml-1″>{cat.faqs.length} questions</span>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-2″>
                     {cat.faqs.map((faq, idx) => {
                       const key = `${cat.id}-${idx}`;
                       const isOpen = openItems.has(key);
@@ -308,8 +308,8 @@ export default function PartnerFAQ() {
                           key={key}
                           className={`rounded-xl border transition-all ${
                             isOpen
-                              ? "bg-slate-800/80 border-teal-500/30"
-                              : "bg-slate-800/40 border-slate-700/60 hover:border-slate-600"
+                              ? "bg-slate-800/80 border-teal-500/30″
+                              : "bg-slate-800/40 border-slate-700/60 hover:border-slate-600″
                           }`}
                         >
                           <button
@@ -320,14 +320,14 @@ export default function PartnerFAQ() {
                               {faq.q}
                             </span>
                             {isOpen ? (
-                              <ChevronUp className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5" />
+                              <ChevronUp className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5″ />
                             ) : (
-                              <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" />
+                              <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5″ />
                             )}
                           </button>
                           {isOpen && (
-                            <div className="px-5 pb-5">
-                              <div className="border-t border-slate-700 pt-4">
+                            <div className="px-5 pb-5″>
+                              <div className="border-t border-slate-700 pt-4″>
                                 <p className="text-sm text-slate-300 leading-relaxed">{faq.a}</p>
                               </div>
                             </div>
@@ -343,9 +343,9 @@ export default function PartnerFAQ() {
 
           {/* Support CTA */}
           <div className="mt-14 bg-gradient-to-br from-teal-900/40 to-slate-800/60 border border-teal-700/30 rounded-2xl p-8 text-center">
-            <MessageCircle className="w-10 h-10 text-teal-400 mx-auto mb-3" />
-            <h3 className="text-xl font-bold text-white mb-2">Still have questions?</h3>
-            <p className="text-slate-400 text-sm mb-5">
+            <MessageCircle className="w-10 h-10 text-teal-400 mx-auto mb-3″ />
+            <h3 className="text-xl font-bold text-white mb-2″>Still have questions?</h3>
+            <p className="text-slate-400 text-sm mb-5″>
               Our partner support team is available Monday–Friday, 8am–6pm CT.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -353,7 +353,7 @@ export default function PartnerFAQ() {
                 href="mailto:support@prolnk.io"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl text-sm transition-colors"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4″ />
                 Chat with Support
               </a>
               <Link href="/partner-resources">

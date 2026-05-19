@@ -64,7 +64,7 @@ export default function DFWProLnkFinalMorning() {
           <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628', marginBottom: 16 }}>Who are you this morning?</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 20 }}>
             {personas.map(p => (
-              <button key={p.id} onClick={() => setPersona(p.id)} style={{ background: persona === p.id ? '#0A1628' : '#F8F9FA', color: persona === p.id ? '#F5E642' : '#0A1628', border: persona === p.id ? '2px solid #0A1628' : '2px solid #E8EDF5', borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: persona === p.id ? 700 : 500, fontSize: 14, textAlign: 'center', transition: 'all 0.15s' }}>
+              <button key={p.id} onClick={() => setPersona(p.id)} style={{ background: persona === p.id ? '#0A1628′ : '#F8F9FA', color: persona === p.id ? '#F5E642' : '#0A1628', border: persona === p.id ? '2px solid #0A1628' : '2px solid #E8EDF5', borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: persona === p.id ? 700 : 500, fontSize: 14, textAlign: 'center', transition: 'all 0.15s' }}>
                 <div style={{ fontSize: 24, marginBottom: 4 }}>{p.icon}</div>
                 {p.label}
               </button>

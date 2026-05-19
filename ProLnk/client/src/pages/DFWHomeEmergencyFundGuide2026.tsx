@@ -39,11 +39,11 @@ export default function DFWHomeEmergencyFundGuide2026() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 28, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Your Emergency Fund Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Your Emergency Fund Calculator</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Home Age (years): <strong style={{ color: '#fff' }}>{homeAge}</strong></span>
-              <input type="range" min={0} max={50} value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Home Age (years): <strong style={{ color: '#fff' }}>{homeAge}</strong></span>
+              <input type="range" min={0} max={50} value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
             </label>
             {[
               { label: '🏊 Has Pool', val: hasPool, set: setHasPool },

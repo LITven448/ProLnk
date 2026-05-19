@@ -17,8 +17,8 @@ function ConfidenceBar({ value }: { value: number }) {
   const pct = Math.round(value * 100);
   const color = pct >= 80 ? FOS.teal : pct >= 60 ? FOS.lime : FOS.amber;
   return (
-    <div className="flex items-center gap-2">
-      <span className="text-[10px] w-20 shrink-0" style={{ color: FOS.faint }}>AI Confidence</span>
+    <div className="flex items-center gap-2″>
+      <span className="text-[10px] w-20 shrink-0″ style={{ color: FOS.faint }}>AI Confidence</span>
       <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: FOS.ghost }}>
         <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, background: color }} />
       </div>
@@ -64,7 +64,7 @@ export default function FieldAIFeed() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3" style={{ background: FOS.bg }}>
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3″ style={{ background: FOS.bg }}>
         <Loader2 className="w-7 h-7 animate-spin" style={{ color: FOS.teal }} />
         <p className="text-sm" style={{ color: FOS.muted }}>Loading AI feed...</p>
       </div>
@@ -75,10 +75,10 @@ export default function FieldAIFeed() {
     <div className="flex flex-col pb-4 min-h-full" style={{ background: FOS.bg }}>
 
       {/* -- Header -- */}
-      <div className="px-5 pt-6 pb-4">
-        <div className="flex items-start justify-between mb-4">
+      <div className="px-5 pt-6 pb-4″>
+        <div className="flex items-start justify-between mb-4″>
           <div>
-            <p className="text-[10px] uppercase tracking-widest mb-1" style={{ color: FOS.muted }}>AI Engine</p>
+            <p className="text-[10px] uppercase tracking-widest mb-1″ style={{ color: FOS.muted }}>AI Engine</p>
             <h2 className="text-white text-2xl font-black">Lead Feed</h2>
           </div>
           {/* Pipeline pill */}
@@ -92,7 +92,7 @@ export default function FieldAIFeed() {
         </div>
 
         {/* Stats row */}
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2 mb-4″>
           {[
             { label: "New",      value: pendingCount,                                         color: FOS.lime  },
             { label: "Total",    value: all.length,                                            color: FOS.teal  },
@@ -129,14 +129,14 @@ export default function FieldAIFeed() {
       </div>
 
       {/* -- Cards -- */}
-      <div className="px-5 flex flex-col gap-3">
+      <div className="px-5 flex flex-col gap-3″>
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
             <div
               className="w-16 h-16 rounded-3xl flex items-center justify-center"
               style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
             >
-              <Sparkles className="w-7 h-7" style={{ color: FOS.faint }} />
+              <Sparkles className="w-7 h-7″ style={{ color: FOS.faint }} />
             </div>
             <div>
               <p className="font-semibold text-sm" style={{ color: FOS.muted }}>No leads yet</p>
@@ -165,19 +165,19 @@ export default function FieldAIFeed() {
             return (
               <div
                 key={opp.id}
-                className="rounded-2xl p-4 flex flex-col gap-3"
+                className="rounded-2xl p-4 flex flex-col gap-3″
                 style={{ background: s.bg, border: `1px solid ${s.bdr}` }}
               >
                 {/* Top row */}
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-start gap-3 flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-3″>
+                  <div className="flex items-start gap-3 flex-1 min-w-0″>
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5″
                       style={{ background: `${s.dot}18` }}
                     >
-                      <Zap className="w-4 h-4" style={{ color: s.dot }} />
+                      <Zap className="w-4 h-4″ style={{ color: s.dot }} />
                     </div>
-                    <div className="min-w-0">
+                    <div className="min-w-0″>
                       <p className="text-white font-bold text-sm leading-tight truncate">
                         {opp.opportunityType ?? "Home Service Opportunity"}
                       </p>
@@ -186,7 +186,7 @@ export default function FieldAIFeed() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1.5 shrink-0">
+                  <div className="flex items-center gap-1.5 shrink-0″>
                     <span
                       className="w-1.5 h-1.5 rounded-full"
                       style={{ background: s.dot, boxShadow: isPending ? `0 0 5px ${s.dot}` : "none" }}
@@ -205,10 +205,10 @@ export default function FieldAIFeed() {
 
                 {/* Bottom row */}
                 <div
-                  className="flex items-center justify-between pt-2"
+                  className="flex items-center justify-between pt-2″
                   style={{ borderTop: `1px solid ${FOS.border}` }}
                 >
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex items-baseline gap-1″>
                     <span className="text-white font-black text-xl" style={{ color: FOS.lime }}>${commission.toFixed(0)}</span>
                     <span className="text-[10px]" style={{ color: FOS.faint }}>est. commission</span>
                   </div>
@@ -226,19 +226,19 @@ export default function FieldAIFeed() {
                     >
                       {isAccepting
                         ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        : <><CheckCircle className="w-3.5 h-3.5" /> Accept</>}
+                        : <><CheckCircle className="w-3.5 h-3.5″ /> Accept</>}
                     </button>
                   )}
 
                   {status === "accepted" && (
                     <div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: FOS.green }}>
-                      <CheckCircle className="w-4 h-4" />Accepted
+                      <CheckCircle className="w-4 h-4″ />Accepted
                     </div>
                   )}
 
                   {status === "completed" && (
                     <div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: FOS.muted }}>
-                      <TrendingUp className="w-4 h-4" />Completed
+                      <TrendingUp className="w-4 h-4″ />Completed
                     </div>
                   )}
                 </div>
@@ -249,7 +249,7 @@ export default function FieldAIFeed() {
                     className="pt-2 flex items-center gap-1.5 text-[10px]"
                     style={{ borderTop: `1px solid ${FOS.border}`, color: FOS.amber }}
                   >
-                    <Clock className="w-3 h-3" />
+                    <Clock className="w-3 h-3″ />
                     Expires {new Date(opp.leadExpiresAt).toLocaleDateString()}
                   </div>
                 )}

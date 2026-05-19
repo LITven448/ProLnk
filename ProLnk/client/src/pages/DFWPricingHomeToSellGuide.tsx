@@ -25,11 +25,11 @@ export default function DFWPricingHomeToSellGuide() {
       rec = 'Price 1–2% below comparable sales to trigger multiple-offer scenario. DFW buyers are data-savvy — they will know if you’re priced right.';
       outcomes.push({ label: 'Aggressive (below market)', price: price * 0.98, note: 'Highest chance of multiple offers, closes in 7–14 days' });
       outcomes.push({ label: 'At market', price: price, note: 'Solid demand, likely 1–2 offers in first week' });
-      outcomes.push({ label: 'Slightly over', price: price * 1.02, note: 'Risk of sitting — reduce expected by week 3' });
+      outcomes.push({ label: 'Slightly over', price: price * 1.02, note: 'Risk of sitting — reduce expected by week 3′ });
     } else if (timeline === 'flexible' && strategy === 'max-price') {
       rec = 'Price at or just above comparables. You have time to test the market, but cap your experiment at 3 weeks before adjusting.';
       outcomes.push({ label: 'At market', price: price, note: 'Proven clearing price — reliable baseline' });
-      outcomes.push({ label: '2% above market', price: price * 1.02, note: 'Acceptable test — plan a reduction at day 21' });
+      outcomes.push({ label: '2% above market', price: price * 1.02, note: 'Acceptable test — plan a reduction at day 21′ });
       outcomes.push({ label: '4% above market', price: price * 1.04, note: 'High risk — stigma likely, net result often lower' });
     } else {
       rec = 'Price within 1% of the most recent comparable sales in your ZIP. DFW buyers have strong comp data — overpricing by even 3% can add 30+ days on market.';
@@ -41,7 +41,7 @@ export default function DFWPricingHomeToSellGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: "'Inter', system-ui, sans-serif", color: '#e8e8e8' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: "'Inter', system-ui, sans-serif", color: '#e8e8e8′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#F5E642', fontWeight: 600 }}>DFW Seller Guide</div>
         <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 12px', lineHeight: 1.2, color: '#fff' }}>
@@ -67,7 +67,7 @@ export default function DFWPricingHomeToSellGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, padding: '32px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px', color: '#F5E642' }}>🔢 Pricing Strategy Simulator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px', color: '#F5E642′ }}>🔢 Pricing Strategy Simulator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 14, fontWeight: 600, display: 'block', marginBottom: 6, color: '#ccc' }}>Your Target List Price</label>
@@ -75,7 +75,7 @@ export default function DFWPricingHomeToSellGuide() {
                 type="text"
                 value={listPrice}
                 onChange={e => setListPrice(e.target.value)}
-                placeholder="e.g. 525,000"
+                placeholder="e.g. 525,000″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid rgba(255,255,255,0.15)', fontSize: 15, background: 'rgba(255,255,255,0.08)', color: '#fff', boxSizing: 'border-box' }}
               />
             </div>
@@ -124,9 +124,9 @@ export default function DFWPricingHomeToSellGuide() {
                   <div key={i} style={{ padding: '16px 20px', background: 'rgba(255,255,255,0.04)', borderRadius: 10, border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                       <span style={{ fontWeight: 600, color: '#fff' }}>{o.label}</span>
-                      <span style={{ fontWeight: 700, color: '#F5E642' }}>${o.price.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                      <span style={{ fontWeight: 700, color: '#F5E642′ }}>${o.price.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                     </div>
-                    <div style={{ fontSize: 13, color: '#777' }}>{o.note}</div>
+                    <div style={{ fontSize: 13, color: '#777′ }}>{o.note}</div>
                   </div>
                 ))}
               </div>
@@ -150,7 +150,7 @@ export default function DFWPricingHomeToSellGuide() {
                   <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 12px', fontSize: 14, fontWeight: 600, color: '#fff' }}>{row.days}</td>
                     <td style={{ padding: '10px 12px', fontSize: 13, color: '#aaa' }}>{row.perception}</td>
-                    <td style={{ padding: '10px 12px', fontSize: 13, color: i < 2 ? '#6fcf97' : i < 3 ? '#f2c94c' : '#eb5757' }}>{row.offerStrength}</td>
+                    <td style={{ padding: '10px 12px', fontSize: 13, color: i < 2 ? '#6fcf97′ : i < 3 ? '#f2c94c' : '#eb5757' }}>{row.offerStrength}</td>
                   </tr>
                 ))}
               </tbody>

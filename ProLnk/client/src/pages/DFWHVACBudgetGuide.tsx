@@ -77,7 +77,7 @@ export default function DFWHVACBudgetGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>💵</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Budget Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Budget Guide</h1>
           <p style={{ color: '#9BB0CC', margin: 0 }}>What does your DFW HVAC budget actually get you?</p>
         </div>
 
@@ -88,9 +88,9 @@ export default function DFWHVACBudgetGuide() {
               onClick={() => setSelected(t.id)}
               style={{
                 padding: '0.6rem 1.4rem', borderRadius: 8, border: '2px solid',
-                borderColor: selected === t.id ? '#F5E642' : '#1E3A5F',
-                background: selected === t.id ? '#F5E642' : '#112240',
-                color: selected === t.id ? '#0A1628' : '#fff',
+                borderColor: selected === t.id ? '#F5E642′ : '#1E3A5F',
+                background: selected === t.id ? '#F5E642′ : '#112240',
+                color: selected === t.id ? '#0A1628′ : '#fff',
                 fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
               }}
             >{t.emoji} {t.label}<br /><span style={{ fontSize: '0.75rem', fontWeight: 400 }}>{t.range}</span></button>
@@ -103,7 +103,7 @@ export default function DFWHVACBudgetGuide() {
               <h2 style={{ color: '#F5E642', marginTop: 0 }}>{tier.emoji} {tier.label} — {tier.range}</h2>
               <p style={{ color: '#9BB0CC', margin: 0 }}>{tier.tagline}</p>
             </div>
-            <div style={{ background: tier.adequate ? '#0F4C2A' : '#4C1F0F', borderRadius: 8, padding: '0.4rem 0.8rem', fontSize: '0.85rem', fontWeight: 700, color: tier.adequate ? '#4ADE80' : '#FB923C', whiteSpace: 'nowrap' }}>
+            <div style={{ background: tier.adequate ? '#0F4C2A' : '#4C1F0F', borderRadius: 8, padding: '0.4rem 0.8rem', fontSize: '0.85rem', fontWeight: 700, color: tier.adequate ? '#4ADE80′ : '#FB923C', whiteSpace: ’nowrap' }}>
               {tier.adequate ? '✅ DFW Adequate' : '⚠️ Budget Risk'}
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function DFWHVACBudgetGuide() {
 
         <div style={{ background: '#0A1628', border: '2px solid #F5E642', borderRadius: 10, padding: '1.25rem' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>🎯 DFW Verdict</h3>
-          <p style={{ margin: 0, lineHeight: 1.7, color: '#CBD5E1' }}>{tier.verdict}</p>
+          <p style={{ margin: 0, lineHeight: 1.7, color: '#CBD5E1′ }}>{tier.verdict}</p>
         </div>
       </div>
     </div>

@@ -9,8 +9,8 @@ const badRenovations = [
   { label: 'Highly Customized Finishes', risk: 'HIGH', reason: 'Pool table rooms, themed bedrooms, bold colors narrow buyer pool significantly', threshold: 25000 },
 ];
 
-const riskColors: Record<string, string> = { CRITICAL: '#ef4444', HIGH: '#f59e0b', MODERATE: '#eab308' };
-const riskBg: Record<string, string> = { CRITICAL: '#1c0a0a', HIGH: '#1c1205', MODERATE: '#1c1a05' };
+const riskColors: Record<string, string> = { CRITICAL: '#ef4444', HIGH: '#f59e0b', MODERATE: '#eab308′ };
+const riskBg: Record<string, string> = { CRITICAL: '#1c0a0a', HIGH: '#1c1205', MODERATE: '#1c1a05′ };
 
 export default function DFWWhatNotToRenovate() {
   const [selectedRenovation, setSelectedRenovation] = useState('');
@@ -39,7 +39,7 @@ export default function DFWWhatNotToRenovate() {
     setResult({ riskScore, riskLevel, recommendation, reason: ren.reason });
   }
 
-  const riskScoreColor = (score: number) => score >= 85 ? '#ef4444' : score >= 65 ? '#f59e0b' : '#eab308';
+  const riskScoreColor = (score: number) => score >= 85 ? '#ef4444′ : score >= 65 ? '#f59e0b' : '#eab308';
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
@@ -69,12 +69,12 @@ export default function DFWWhatNotToRenovate() {
         </div>
 
         <div style={{ background: '#111d33', border: '1px solid #1e3a5f', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>
             📊 Check Your Over-Improvement Risk
           </h2>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>Planned Renovation</label>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>Planned Renovation</label>
             <select
               value={selectedRenovation}
               onChange={e => setSelectedRenovation(e.target.value)}
@@ -87,22 +87,22 @@ export default function DFWWhatNotToRenovate() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>Planned Spend ($)</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>Planned Spend ($)</label>
               <input
                 type="number"
                 value={cost}
                 onChange={e => setCost(e.target.value)}
-                placeholder="e.g. 45000"
+                placeholder="e.g. 45000″
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>Neighborhood Avg Home Price ($)</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>Neighborhood Avg Home Price ($)</label>
               <input
                 type="number"
                 value={neighborhoodPrice}
                 onChange={e => setNeighborhoodPrice(e.target.value)}
-                placeholder="e.g. 420000"
+                placeholder="e.g. 420000″
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>

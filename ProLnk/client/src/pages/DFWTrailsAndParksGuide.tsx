@@ -72,7 +72,7 @@ export default function DFWTrailsAndParksGuide() {
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '1rem' }}>🔍 Find Neighborhoods by Lifestyle</div>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {lifestyles.map(l => (
-              <button key={l} onClick={() => setLifestyle(l)} style={{ padding: '0.5rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: lifestyle === l ? '#F5E642' : '#1e3a5f', background: lifestyle === l ? '#F5E642' : 'transparent', color: lifestyle === l ? '#0A1628' : '#94a3b8', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={l} onClick={() => setLifestyle(l)} style={{ padding: '0.5rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: lifestyle === l ? '#F5E642′ : '#1e3a5f', background: lifestyle === l ? '#F5E642' : ’transparent', color: lifestyle === l ? '#0A1628′ : '#94a3b8', fontWeight: 600, cursor: ’pointer' }}>
                 {l === 'Runner' ? '🏃' : l === 'Cyclist' ? '🚴' : l === 'Family' ? '👨‍👩‍👧' : l === 'Dog Owner' ? '🐕' : '🌲'} {l}
               </button>
             ))}
@@ -100,7 +100,7 @@ export default function DFWTrailsAndParksGuide() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.75rem' }}>🔎 How to Research Trail Adjacency Before Buying</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.8 }}>
-            Use <strong style={{ color: '#F5E642' }}>AllTrails</strong> or <strong style={{ color: '#F5E642' }}>TrailLink</strong> satellite view to confirm trail location • Check city GIS portal for planned trail extensions • Visit in person — app maps lag real conditions by 1–2 years • Verify maintenance responsibility (city vs HOA) • Ask listing agent about any planned development that could disrupt trail access
+            Use <strong style={{ color: '#F5E642′ }}>AllTrails</strong> or <strong style={{ color: '#F5E642' }}>TrailLink</strong> satellite view to confirm trail location • Check city GIS portal for planned trail extensions • Visit in person — app maps lag real conditions by 1–2 years • Verify maintenance responsibility (city vs HOA) • Ask listing agent about any planned development that could disrupt trail access
           </div>
         </div>
       </div>

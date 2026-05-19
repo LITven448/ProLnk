@@ -84,7 +84,7 @@ export default function DFWRoofingClaimDFWFinal2026() {
           <p style={{ color: '#F5E642', fontSize: '13px', fontWeight: '700', margin: '0 0 8px' }}>
             FINAL GUIDE 2026 — DEFINITIVE DFW RESOURCE
           </p>
-          <p style={{ color: '#94a3b8', fontSize: '15px', margin: '0' }}>
+          <p style={{ color: '#94a3b8', fontSize: '15px', margin: '0′ }}>
             DFW gets more hail claims than nearly any US metro. Know your rights, protect your payout, and avoid storm chasers.
           </p>
         </div>
@@ -99,8 +99,8 @@ export default function DFWRoofingClaimDFWFinal2026() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642' : '#1e3a5f',
-                  color: selected === s.id ? '#0A1628' : '#e2e8f0',
+                  background: selected === s.id ? '#F5E642′ : '#1e3a5f',
+                  color: selected === s.id ? '#0A1628′ : '#e2e8f0',
                   border: 'none', borderRadius: '8px', padding: '14px 16px',
                   textAlign: 'left', cursor: 'pointer', fontSize: '14px', fontWeight: '600'
                 }}
@@ -118,13 +118,13 @@ export default function DFWRoofingClaimDFWFinal2026() {
               {active.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <span style={{ color: '#F5E642', fontWeight: '800', minWidth: '20px' }}>{i + 1}.</span>
-                  <span style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.5' }}>{step}</span>
+                  <span style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.5′ }}>{step}</span>
                 </div>
               ))}
             </div>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px' }}>
               <div style={{ color: '#F5E642', fontSize: '12px', fontWeight: '700', marginBottom: '8px' }}>⚡ ACTION</div>
-              <p style={{ color: '#e2e8f0', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>{active.action}</p>
+              <p style={{ color: '#e2e8f0', fontSize: '14px', lineHeight: '1.6', margin: '0′ }}>{active.action}</p>
             </div>
           </div>
         )}

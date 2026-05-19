@@ -100,7 +100,7 @@ export default function DFWHVACGrapevine() {
                 style={{ width: '100%', padding: '12px 16px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 15 }}
               >
                 <option value="">Select age...</option>
-                <option value="pre-1970">Pre-1970</option>
+                <option value="pre-1970″>Pre-1970</option>
                 <option value="1990s-2000s">1990s – 2000s</option>
                 <option value="varies">Varies (commercial)</option>
                 <option value="2010+">2010+</option>
@@ -111,7 +111,7 @@ export default function DFWHVACGrapevine() {
           <button
             onClick={handleCheck}
             disabled={!selectedType || !selectedAge}
-            style={{ backgroundColor: selectedType && selectedAge ? '#F5E642' : '#2a3a50', color: '#0A1628', fontWeight: 800, fontSize: 16, padding: '14px 32px', border: 'none', borderRadius: 8, cursor: selectedType && selectedAge ? 'pointer' : 'not-allowed' }}
+            style={{ backgroundColor: selectedType && selectedAge ? '#F5E642′ : '#2a3a50', color: '#0A1628', fontWeight: 800, fontSize: 16, padding: '14px 32px', border: ’none', borderRadius: 8, cursor: selectedType && selectedAge ? 'pointer' : 'not-allowed' }}
           >
             Show Common Issues →
           </button>
@@ -140,10 +140,10 @@ export default function DFWHVACGrapevine() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 40 }}>
           {[
-            { icon: '🌡️', label: 'AC Repair & Tune-Up', price: 'From $149' },
-            { icon: '💨', label: 'New System Install', price: 'From $3,800' },
+            { icon: '🌡️', label: 'AC Repair & Tune-Up', price: 'From $149′ },
+            { icon: '💨', label: 'New System Install', price: 'From $3,800′ },
             { icon: '🏢', label: 'Commercial HVAC', price: 'Custom quote' },
-            { icon: '🔍', label: 'Duct Inspection', price: 'From $225' },
+            { icon: '🔍', label: 'Duct Inspection', price: 'From $225′ },
           ].map((svc) => (
             <div key={svc.label} style={{ backgroundColor: '#111f35', border: '1px solid #1e3a5f', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{svc.icon}</div>

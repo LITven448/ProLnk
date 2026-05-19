@@ -38,7 +38,7 @@ export default function DFWCondoMaintenanceGuide2026() {
             {hoaTypes.map((h) => (
               <button key={h.id} onClick={() => setSelected(h.id)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selected === h.id ? '#F5E642' : '#1e2e4a', color: selected === h.id ? '#0A1628' : '#94a3b8' }}>
+                  background: selected === h.id ? '#F5E642′ : '#1e2e4a', color: selected === h.id ? '#0A1628' : '#94a3b8' }}>
                 {h.label}
               </button>
             ))}
@@ -48,7 +48,7 @@ export default function DFWCondoMaintenanceGuide2026() {
               <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>🏗️ HOA Maintains</div>
               {active.owns.map((item) => (
                 <div key={item} style={{ display: 'flex', gap: 6, marginBottom: 6, fontSize: 12 }}>
-                  <span style={{ color: '#22c55e' }}>●</span><span style={{ color: '#cbd5e1' }}>{item}</span>
+                  <span style={{ color: '#22c55e' }}>●</span><span style={{ color: '#cbd5e1′ }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -56,7 +56,7 @@ export default function DFWCondoMaintenanceGuide2026() {
               <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>👤 Owner Maintains</div>
               {active.yours.map((item) => (
                 <div key={item} style={{ display: 'flex', gap: 6, marginBottom: 6, fontSize: 12 }}>
-                  <span style={{ color: '#f59e0b' }}>●</span><span style={{ color: '#cbd5e1' }}>{item}</span>
+                  <span style={{ color: '#f59e0b' }}>●</span><span style={{ color: '#cbd5e1′ }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -74,7 +74,7 @@ export default function DFWCondoMaintenanceGuide2026() {
               <span style={{ fontSize: 22 }}>{row.icon}</span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{row.title}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8' }}>{row.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{row.note}</div>
               </div>
             </div>
           ))}

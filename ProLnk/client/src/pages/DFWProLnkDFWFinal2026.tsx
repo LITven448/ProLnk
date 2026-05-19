@@ -80,7 +80,7 @@ export default function DFWProLnkDFWFinal2026() {
           <p style={{ color: '#F5E642', fontSize: '13px', fontWeight: '700', margin: '0 0 8px' }}>
             FINAL GUIDE 2026 — DEFINITIVE DFW RESOURCE
           </p>
-          <p style={{ color: '#94a3b8', fontSize: '15px', margin: '0' }}>
+          <p style={{ color: '#94a3b8', fontSize: '15px', margin: '0′ }}>
             The most comprehensive home services platform in DFW history — for homeowners, pros, investors, and realtors.
           </p>
         </div>
@@ -95,8 +95,8 @@ export default function DFWProLnkDFWFinal2026() {
                 key={r.id}
                 onClick={() => setSelected(r.id)}
                 style={{
-                  background: selected === r.id ? '#F5E642' : '#1e3a5f',
-                  color: selected === r.id ? '#0A1628' : '#e2e8f0',
+                  background: selected === r.id ? '#F5E642′ : '#1e3a5f',
+                  color: selected === r.id ? '#0A1628′ : '#e2e8f0',
                   border: 'none', borderRadius: '8px', padding: '14px 16px',
                   textAlign: 'left', cursor: 'pointer', fontSize: '14px', fontWeight: '600'
                 }}
@@ -113,8 +113,8 @@ export default function DFWProLnkDFWFinal2026() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
               {active.points.map((pt, i) => (
                 <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <span style={{ color: '#F5E642' }}>✓</span>
-                  <span style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.5' }}>{pt}</span>
+                  <span style={{ color: '#F5E642′ }}>✓</span>
+                  <span style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.5′ }}>{pt}</span>
                 </div>
               ))}
             </div>
@@ -130,7 +130,7 @@ export default function DFWProLnkDFWFinal2026() {
 
         <div style={{ textAlign: 'center', background: '#112240', borderRadius: '12px', padding: '24px' }}>
           <p style={{ color: '#94a3b8', fontSize: '13px', margin: '0 0 8px' }}>Waitlist closes at 500 Charter pros + 5,000 homes</p>
-          <p style={{ color: '#F5E642', fontSize: '14px', fontWeight: '700', margin: '0' }}>prolnk.io — Join the DFW platform built to last</p>
+          <p style={{ color: '#F5E642', fontSize: '14px', fontWeight: '700', margin: '0′ }}>prolnk.io — Join the DFW platform built to last</p>
         </div>
       </div>
     </div>

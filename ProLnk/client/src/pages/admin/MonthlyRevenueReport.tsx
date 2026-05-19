@@ -10,8 +10,8 @@ import {
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
 
-const CURRENT_MONTH = "May 2026";
-const PRIOR_MONTH   = "Apr 2026";
+const CURRENT_MONTH = "May 2026″;
+const PRIOR_MONTH   = "Apr 2026″;
 
 interface MonthRow {
   month: string;
@@ -23,11 +23,11 @@ interface MonthRow {
 }
 
 const MOM_DATA: MonthRow[] = [
-  { month: "Jan 2026", mrr: 14900,  gtv: 48200,  netRevenue: 13496,  networkPayouts: 5904,  newPros: 10 },
-  { month: "Feb 2026", mrr: 23800,  gtv: 72100,  netRevenue: 20188,  networkPayouts: 8652,  newPros: 16 },
-  { month: "Mar 2026", mrr: 43300,  gtv: 118400, netRevenue: 33152,  networkPayouts: 14208, newPros: 29 },
-  { month: "Apr 2026", mrr: 74000,  gtv: 196300, netRevenue: 54964,  networkPayouts: 23556, newPros: 50 },
-  { month: "May 2026", mrr: 118700, gtv: 298100, netRevenue: 83468,  networkPayouts: 35772, newPros: 83 },
+  { month: "Jan 2026″, mrr: 14900,  gtv: 48200,  netRevenue: 13496,  networkPayouts: 5904,  newPros: 10 },
+  { month: "Feb 2026″, mrr: 23800,  gtv: 72100,  netRevenue: 20188,  networkPayouts: 8652,  newPros: 16 },
+  { month: "Mar 2026″, mrr: 43300,  gtv: 118400, netRevenue: 33152,  networkPayouts: 14208, newPros: 29 },
+  { month: "Apr 2026″, mrr: 74000,  gtv: 196300, netRevenue: 54964,  networkPayouts: 23556, newPros: 50 },
+  { month: "May 2026″, mrr: 118700, gtv: 298100, netRevenue: 83468,  networkPayouts: 35772, newPros: 83 },
 ];
 
 interface TopPro {
@@ -89,16 +89,16 @@ interface KpiCardProps {
 function KpiCard({ label, value, change, icon: Icon, accentColor }: KpiCardProps) {
   const positive = change >= 0;
   return (
-    <div className="bg-slate-800 rounded-xl p-5 flex flex-col gap-3 border border-slate-700">
+    <div className="bg-slate-800 rounded-xl p-5 flex flex-col gap-3 border border-slate-700″>
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{label}</span>
-        <div className={`w-9 h-9 rounded-lg flex items-center justify-center`} style={{ background: accentColor + "22" }}>
-          <Icon className="w-4 h-4" style={{ color: accentColor }} />
+        <span className="text-xs font-semibold uppercase tracking-widest text-slate-400″>{label}</span>
+        <div className={`w-9 h-9 rounded-lg flex items-center justify-center`} style={{ background: accentColor + "22″ }}>
+          <Icon className="w-4 h-4″ style={{ color: accentColor }} />
         </div>
       </div>
       <div className="text-2xl font-bold text-white">{value}</div>
       <div className={`flex items-center gap-1 text-xs font-semibold ${positive ? "text-emerald-400" : "text-red-400"}`}>
-        {positive ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
+        {positive ? <ArrowUpRight className="w-3 h-3″ /> : <ArrowDownRight className="w-3 h-3" />}
         {positive ? "+" : ""}{change}% vs {PRIOR_MONTH}
       </div>
     </div>
@@ -120,13 +120,13 @@ export default function MonthlyRevenueReport() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8″>
 
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <DollarSign className="w-6 h-6 text-teal-400" />
+            <h1 className="text-2xl font-bold text-white flex items-center gap-2″>
+              <DollarSign className="w-6 h-6 text-teal-400″ />
               Monthly Revenue Report
             </h1>
             <p className="text-slate-400 mt-1 text-sm">{CURRENT_MONTH} — P&amp;L summary, top earners, and trade volume</p>
@@ -134,26 +134,26 @@ export default function MonthlyRevenueReport() {
           <button
             onClick={handleExport}
             disabled={exportLoading}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white text-sm font-semibold transition-colors disabled:opacity-60"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white text-sm font-semibold transition-colors disabled:opacity-60″
           >
-            <Download className="w-4 h-4" />
+            <Download className="w-4 h-4″ />
             {exportLoading ? "Generating…" : "Export PDF"}
           </button>
         </div>
 
         {/* KPI row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
           <KpiCard label="MRR (Subscriptions)" value={fmt(curr.mrr)}       change={pct(curr.mrr,         prev.mrr)}         icon={DollarSign} accentColor="#2dd4bf" />
-          <KpiCard label="GTV (Job Pool)"       value={fmt(curr.gtv)}       change={pct(curr.gtv,         prev.gtv)}         icon={BarChart2}  accentColor="#818cf8" />
-          <KpiCard label="Net Revenue (28%)"    value={fmt(curr.netRevenue)} change={pct(curr.netRevenue, prev.netRevenue)}  icon={TrendingUp} accentColor="#34d399" />
+          <KpiCard label="GTV (Job Pool)"       value={fmt(curr.gtv)}       change={pct(curr.gtv,         prev.gtv)}         icon={BarChart2}  accentColor="#818cf8″ />
+          <KpiCard label="Net Revenue (28%)"    value={fmt(curr.netRevenue)} change={pct(curr.netRevenue, prev.netRevenue)}  icon={TrendingUp} accentColor="#34d399″ />
           <KpiCard label="Network Payouts"       value={fmt(curr.networkPayouts)} change={pct(curr.networkPayouts, prev.networkPayouts)} icon={Users} accentColor="#f59e0b" />
         </div>
 
         {/* MoM Comparison Table */}
         <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-teal-400" />
+          <div className="px-6 py-4 border-b border-slate-700″>
+            <h2 className="text-white font-semibold text-base flex items-center gap-2″>
+              <TrendingUp className="w-4 h-4 text-teal-400″ />
               Month-over-Month Comparison
             </h2>
           </div>
@@ -161,12 +161,12 @@ export default function MonthlyRevenueReport() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-700 text-slate-400 text-xs uppercase tracking-wider">
-                  <th className="text-left px-6 py-3">Month</th>
-                  <th className="text-right px-4 py-3">MRR</th>
-                  <th className="text-right px-4 py-3">GTV</th>
-                  <th className="text-right px-4 py-3">Net Revenue</th>
-                  <th className="text-right px-4 py-3">Payouts</th>
-                  <th className="text-right px-6 py-3">New Pros</th>
+                  <th className="text-left px-6 py-3″>Month</th>
+                  <th className="text-right px-4 py-3″>MRR</th>
+                  <th className="text-right px-4 py-3″>GTV</th>
+                  <th className="text-right px-4 py-3″>Net Revenue</th>
+                  <th className="text-right px-4 py-3″>Payouts</th>
+                  <th className="text-right px-6 py-3″>New Pros</th>
                 </tr>
               </thead>
               <tbody>
@@ -183,11 +183,11 @@ export default function MonthlyRevenueReport() {
                           <span className="ml-2 text-xs px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-400 font-semibold">Current</span>
                         )}
                       </td>
-                      <td className="px-4 py-3 text-right text-slate-300">{fmt(row.mrr)}</td>
-                      <td className="px-4 py-3 text-right text-slate-300">{fmt(row.gtv)}</td>
+                      <td className="px-4 py-3 text-right text-slate-300″>{fmt(row.mrr)}</td>
+                      <td className="px-4 py-3 text-right text-slate-300″>{fmt(row.gtv)}</td>
                       <td className="px-4 py-3 text-right text-emerald-400 font-semibold">{fmt(row.netRevenue)}</td>
-                      <td className="px-4 py-3 text-right text-amber-400">{fmt(row.networkPayouts)}</td>
-                      <td className="px-6 py-3 text-right text-slate-300">+{row.newPros}</td>
+                      <td className="px-4 py-3 text-right text-amber-400″>{fmt(row.networkPayouts)}</td>
+                      <td className="px-6 py-3 text-right text-slate-300″>+{row.newPros}</td>
                     </tr>
                   );
                 })}
@@ -196,27 +196,27 @@ export default function MonthlyRevenueReport() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6″>
 
           {/* Top 10 Pros */}
           <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <Star className="w-4 h-4 text-amber-400" />
+            <div className="px-6 py-4 border-b border-slate-700″>
+              <h2 className="text-white font-semibold text-base flex items-center gap-2″>
+                <Star className="w-4 h-4 text-amber-400″ />
                 Top 10 Earning Pros — {CURRENT_MONTH}
               </h2>
             </div>
-            <div className="divide-y divide-slate-700/50">
+            <div className="divide-y divide-slate-700/50″>
               {TOP_PROS.map((pro) => (
                 <div key={pro.rank} className="flex items-center gap-4 px-6 py-3 hover:bg-slate-700/30 transition-colors">
                   <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${pro.rank <= 3 ? "bg-amber-500/20 text-amber-400" : "bg-slate-700 text-slate-400"}`}>
                     {pro.rank}
                   </span>
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0″>
                     <div className="text-sm font-medium text-white truncate">{pro.name}</div>
-                    <div className="text-xs text-slate-400">{pro.trade} · {pro.jobs} jobs</div>
+                    <div className="text-xs text-slate-400″>{pro.trade} · {pro.jobs} jobs</div>
                   </div>
-                  <span className="text-sm font-bold text-emerald-400">{fmt(pro.earnings)}</span>
+                  <span className="text-sm font-bold text-emerald-400″>{fmt(pro.earnings)}</span>
                 </div>
               ))}
             </div>
@@ -224,20 +224,20 @@ export default function MonthlyRevenueReport() {
 
           {/* Top 5 Trades */}
           <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <Wrench className="w-4 h-4 text-teal-400" />
+            <div className="px-6 py-4 border-b border-slate-700″>
+              <h2 className="text-white font-semibold text-base flex items-center gap-2″>
+                <Wrench className="w-4 h-4 text-teal-400″ />
                 Top 5 Trades by Volume — {CURRENT_MONTH}
               </h2>
             </div>
-            <div className="p-6 space-y-5">
+            <div className="p-6 space-y-5″>
               {TOP_TRADES.map((t) => (
-                <div key={t.trade} className="space-y-1.5">
+                <div key={t.trade} className="space-y-1.5″>
                   <div className="flex items-center justify-between text-sm">
                     <span className="font-medium text-white">{t.trade}</span>
-                    <div className="flex items-center gap-4">
-                      <span className="text-slate-400">{t.jobs} jobs</span>
-                      <span className="font-bold text-teal-400">{fmt(t.volume)}</span>
+                    <div className="flex items-center gap-4″>
+                      <span className="text-slate-400″>{t.jobs} jobs</span>
+                      <span className="font-bold text-teal-400″>{fmt(t.volume)}</span>
                     </div>
                   </div>
                   <div className="h-2 rounded-full bg-slate-700 overflow-hidden">
@@ -246,22 +246,22 @@ export default function MonthlyRevenueReport() {
                       style={{ width: `${t.share}%` }}
                     />
                   </div>
-                  <div className="text-xs text-slate-500">{t.share}% of total volume</div>
+                  <div className="text-xs text-slate-500″>{t.share}% of total volume</div>
                 </div>
               ))}
             </div>
 
             {/* ProLnk Margin breakdown */}
-            <div className="mx-6 mb-6 p-4 rounded-lg bg-slate-700/50 border border-slate-600 text-sm space-y-2">
-              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Revenue Split — {CURRENT_MONTH}</div>
+            <div className="mx-6 mb-6 p-4 rounded-lg bg-slate-700/50 border border-slate-600 text-sm space-y-2″>
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3″>Revenue Split — {CURRENT_MONTH}</div>
               {[
-                { label: "Job Pool (GTV)",         value: fmt(curr.gtv),            color: "text-slate-300" },
-                { label: "ProLnk Net (28%)",        value: fmt(curr.netRevenue),     color: "text-emerald-400" },
-                { label: "Network Payouts (12%)",   value: fmt(curr.networkPayouts), color: "text-amber-400" },
-                { label: "Pros Keep (60%)",         value: fmt(Math.round(curr.gtv * 0.60)), color: "text-blue-400" },
+                { label: "Job Pool (GTV)",         value: fmt(curr.gtv),            color: "text-slate-300″ },
+                { label: "ProLnk Net (28%)",        value: fmt(curr.netRevenue),     color: "text-emerald-400″ },
+                { label: "Network Payouts (12%)",   value: fmt(curr.networkPayouts), color: "text-amber-400″ },
+                { label: "Pros Keep (60%)",         value: fmt(Math.round(curr.gtv * 0.60)), color: "text-blue-400″ },
               ].map((r) => (
                 <div key={r.label} className="flex justify-between">
-                  <span className="text-slate-400">{r.label}</span>
+                  <span className="text-slate-400″>{r.label}</span>
                   <span className={`font-semibold ${r.color}`}>{r.value}</span>
                 </div>
               ))}

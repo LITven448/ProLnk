@@ -41,7 +41,7 @@ export default function DFWHVACSessionWrapUp() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏆</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0' }}>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0′ }}>
             Wrapping Up This Extraordinary Session
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
@@ -83,14 +83,14 @@ export default function DFWHVACSessionWrapUp() {
             🔍 Get the Answer
           </button>
           {submitted && answer && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📖 From 3,300 Pages of DFW HVAC Knowledge:</div>
               <div style={{ color: '#e2e8f0', fontSize: '0.9rem', lineHeight: 1.6 }}>{answer}</div>
             </div>
           )}
         </div>
 
-        <div style={{ background: 'linear-gradient(135deg, #F5E642 0%, #f59e0b 100%)', borderRadius: 12, padding: '1.5rem', textAlign: 'center', color: '#0A1628' }}>
+        <div style={{ background: 'linear-gradient(135deg, #F5E642 0%, #f59e0b 100%)', borderRadius: 12, padding: '1.5rem', textAlign: 'center', color: '#0A1628′ }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔗</div>
           <div style={{ fontWeight: 900, fontSize: '1.2rem', marginBottom: '0.5rem' }}>Ready to Connect with a Verified DFW HVAC Pro?</div>
           <div style={{ fontSize: '0.9rem', marginBottom: '1rem', opacity: 0.8 }}>

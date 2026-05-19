@@ -27,7 +27,7 @@ export default function DFWLandscapingSeasonGuide2026() {
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 24 }}>
           {months.map((m, i) => (
-            <button key={i} onClick={() => setSelected(i)} style={{ padding: '6px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', fontWeight: 600, fontSize: 13 }}>{m.name}</button>
+            <button key={i} onClick={() => setSelected(i)} style={{ padding: '6px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', fontWeight: 600, fontSize: 13 }}>{m.name}</button>
           ))}
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 20 }}>
@@ -38,7 +38,7 @@ export default function DFWLandscapingSeasonGuide2026() {
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 12 }}>🌱 DFW Grass Quick Reference</h3>
           {['Bermuda — dominant grass, thrives in DFW heat, goes dormant November–March','St. Augustine — shade tolerant, more water-hungry, watch for brown patch','Zoysia — drought tolerant once established, slow to green up in spring','Annual Ryegrass — overseeded Oct for winter color, dies in May heat'].map((g, i) => (
             <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642' }}>🌾</span>
+              <span style={{ color: '#F5E642′ }}>🌾</span>
               <span style={{ color: '#94a3b8', fontSize: 14 }}>{g}</span>
             </div>
           ))}

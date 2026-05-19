@@ -24,11 +24,11 @@ export default function DFWHVACCoolingHistory() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>🌡️ What Are You Curious About?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
             {interests.map(i => (
-              <button key={i.key} onClick={() => setSelected(i.key)} style={{ background: selected === i.key ? '#F5E642' : '#1a3a5c', color: selected === i.key ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{i.label}</button>
+              <button key={i.key} onClick={() => setSelected(i.key)} style={{ background: selected === i.key ? '#F5E642′ : '#1a3a5c', color: selected === i.key ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{i.label}</button>
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#e2e8f0', marginBottom: '0.75rem', lineHeight: 1.6 }}>{match.context}</div>
               <div style={{ color: '#F5E642', fontSize: '0.9rem', fontWeight: 600 }}>🏠 Today's Impact: <span style={{ color: '#94a3b8', fontWeight: 400 }}>{match.today}</span></div>
             </div>
@@ -53,7 +53,7 @@ export default function DFWHVACCoolingHistory() {
 
         <div style={{ marginTop: '2.5rem', background: '#0F2040', borderRadius: 12, padding: '1.5rem', textAlign: 'center' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🔧 Ready for Modern Cooling?</div>
-          <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.95rem' }}>ProLnk connects DFW homeowners with HVAC pros who understand your home's history and today's best solutions.</p>
+          <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.95rem' }}>ProLnk connects DFW homeowners with HVAC pros who understand your home's history and today’s best solutions.</p>
           <button style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Get Free Quotes →</button>
         </div>
       </div>

@@ -93,12 +93,12 @@ export default function DFWHVACSystemComparisonFinal() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🏡 Your DFW Situation → Best System</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s.label}</button>
             ))}
           </div>
           {recommended && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
-              <strong style={{ color: '#F5E642' }}>Recommended: </strong>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+              <strong style={{ color: '#F5E642′ }}>Recommended: </strong>
               <span style={{ color: '#fff' }}>{systems.find(s => s.id === recommended)?.name} — {systems.find(s => s.id === recommended)?.pros[0]}</span>
             </div>
           )}
@@ -106,9 +106,9 @@ export default function DFWHVACSystemComparisonFinal() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
           {systems.map(sys => (
-            <div key={sys.id} onClick={() => setActiveSystem(activeSystem === sys.id ? null : sys.id)} style={{ background: recommended === sys.id ? '#1a3a20' : '#111f3a', border: `2px solid ${recommended === sys.id ? '#F5E642' : activeSystem === sys.id ? '#3b82f6' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: 'pointer', transition: 'all 0.2s' }}>
+            <div key={sys.id} onClick={() => setActiveSystem(activeSystem === sys.id ? null : sys.id)} style={{ background: recommended === sys.id ? '#1a3a20′ : '#111f3a', border: `2px solid ${recommended === sys.id ? '#F5E642' : activeSystem === sys.id ? '#3b82f6' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: ’pointer', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{sys.icon}</div>
-              <h3 style={{ color: recommended === sys.id ? '#F5E642' : '#fff', fontSize: 15, margin: '0 0 8px' }}>{sys.name}</h3>
+              <h3 style={{ color: recommended === sys.id ? '#F5E642′ : '#fff', fontSize: 15, margin: '0 0 8px' }}>{sys.name}</h3>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 12 }}>DFW Score: <span style={{ color: '#F5E642', fontWeight: 700 }}>{sys.dfwScore}/100</span></div>
               <div style={{ fontSize: 12, color: '#94a3b8', lineHeight: 1.8 }}>
                 <div>💰 {sys.purchase}</div>
@@ -118,7 +118,7 @@ export default function DFWHVACSystemComparisonFinal() {
               {activeSystem === sys.id && (
                 <div style={{ marginTop: 12 }}>
                   <div style={{ fontSize: 12, color: '#4ade80', marginBottom: 4 }}>✅ {sys.pros.join(' • ')}</div>
-                  <div style={{ fontSize: 12, color: '#f87171' }}>⚠️ {sys.cons.join(' • ')}</div>
+                  <div style={{ fontSize: 12, color: '#f87171′ }}>⚠️ {sys.cons.join(' • ')}</div>
                 </div>
               )}
             </div>

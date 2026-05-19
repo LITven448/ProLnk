@@ -50,7 +50,7 @@ export default function DFWRainwaterHarvestingGuide() {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1a3a1a,#0f2a0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1a3a1a,#0f2a0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0′ }}>
           <h2 style={{ color: '#4ADE80', fontSize: 20, fontWeight: 700, margin: '0 0 8px' }}>✅ Texas SB 769: Rainwater Harvesting Is Legal & Encouraged</h2>
           <p style={{ color: '#86EFAC', margin: 0 }}>Texas not only allows rainwater harvesting — state law requires that HOAs and deed restrictions cannot prohibit it. Some Texas cities offer rebates of $50–$500 for rain barrel and cistern installations.</p>
         </div>
@@ -85,7 +85,7 @@ export default function DFWRainwaterHarvestingGuide() {
             <div key={u.label} style={{ background: '#1E2D45', borderRadius: 12, padding: '14px 16px', border: `1px solid ${u.potable ? '#7C3AED' : '#2A3F5C'}`, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{u.icon}</div>
               <div style={{ color: '#E8EDF5', fontWeight: 600, fontSize: 14, margin: '6px 0 4px' }}>{u.label}</div>
-              <div style={{ fontSize: 12, color: u.potable ? '#A78BFA' : '#4ADE80' }}>{u.potable ? '🧪 Requires filtration' : '✅ Non-potable OK'}</div>
+              <div style={{ fontSize: 12, color: u.potable ? '#A78BFA' : '#4ADE80′ }}>{u.potable ? '🧪 Requires filtration' : '✅ Non-potable OK'}</div>
             </div>
           ))}
         </div>
@@ -94,7 +94,7 @@ export default function DFWRainwaterHarvestingGuide() {
         <p style={{ color: '#94A3B8', marginBottom: 20 }}>Estimate how much rainwater your DFW roof can capture annually.</p>
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 28, border: '1px solid #2A3F5C', maxWidth: 520 }}>
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Roof Collection Area (sq ft)</label>
-          <input type="number" value={roofSqFt} onChange={e => setRoofSqFt(e.target.value)} placeholder="e.g. 2000"
+          <input type="number" value={roofSqFt} onChange={e => setRoofSqFt(e.target.value)} placeholder="e.g. 2000″
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Target Annual Rainfall (inches) — DFW avg is 37</label>
           <input type="number" value={rainfallTarget} onChange={e => setRainfallTarget(e.target.value)}

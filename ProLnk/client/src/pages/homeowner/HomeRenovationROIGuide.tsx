@@ -32,7 +32,7 @@ export default function HomeRenovationROIGuide() {
           <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
             Best Home Renovations for DFW ROI — 2026
           </h1>
-          <p style={{ color: '#94a3b8' }}>Select renovations below to calculate your total investment and estimated value added</p>
+          <p style={{ color: '#94a3b8′ }}>Select renovations below to calculate your total investment and estimated value added</p>
         </div>
 
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 12, padding: '1rem 1.5rem', marginBottom: '2rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -67,7 +67,7 @@ export default function HomeRenovationROIGuide() {
               <div style={{ textAlign: 'right', minWidth: 60 }}>
                 <div style={{
                   fontSize: '1.25rem', fontWeight: 700,
-                  color: r.roi >= 80 ? '#22c55e' : r.roi >= 65 ? '#F5E642' : '#f59e0b',
+                  color: r.roi >= 80 ? '#22c55e' : r.roi >= 65 ? '#F5E642′ : '#f59e0b',
                 }}>{r.roi}%</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.7rem' }}>ROI</div>
               </div>
@@ -82,7 +82,7 @@ export default function HomeRenovationROIGuide() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#ef4444' }}>${totalCost.toLocaleString()}</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#ef4444′ }}>${totalCost.toLocaleString()}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.25rem' }}>Total Investment</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
@@ -90,7 +90,7 @@ export default function HomeRenovationROIGuide() {
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.25rem' }}>Est. Value Added</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642' }}>{blendedROI}%</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642′ }}>{blendedROI}%</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.25rem' }}>Blended ROI</div>
               </div>
             </div>

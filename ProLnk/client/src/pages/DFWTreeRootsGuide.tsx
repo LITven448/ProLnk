@@ -51,7 +51,7 @@ export default function DFWTreeRootsGuide() {
             {[['🧱 Expansive Clay Soil', 'DFW sits on some of the most expansive clay soil in the US. Clay shrinks in drought and expands in rain — tree roots accelerate this cycle.'], ['☀️ Drought Cycles', 'Severe droughts (2011, 2022-23) cause clay to shrink dramatically. Roots near your foundation make this worse.'], ['🌳 Live Oak Problem', 'Live oaks are beautiful and beloved in DFW — and the single most common cause of tree-related foundation damage in the region.'], ['💸 Foundation Cost', 'Foundation repair in DFW averages $8K-$25K. Prevention via root management is far cheaper.']].map(([icon, desc]) => (
               <div key={icon} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>{icon}</div>
-                <div style={{ fontSize: '0.82rem', color: '#9BA3B8' }}>{desc}</div>
+                <div style={{ fontSize: '0.82rem', color: '#9BA3B8′ }}>{desc}</div>
               </div>
             ))}
           </div>
@@ -68,7 +68,7 @@ export default function DFWTreeRootsGuide() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#9BA3B8', marginBottom: '0.4rem', fontSize: '0.85rem' }}>Distance from foundation (feet)</label>
-              <input type="number" value={distance} onChange={e => setDistance(e.target.value)} placeholder="e.g. 12" style={{ width: '100%', padding: '0.7rem', background: '#0A1628', color: '#E8EAF0', border: '1px solid #1E3A5F', borderRadius: 8, boxSizing: 'border-box' }} />
+              <input type="number" value={distance} onChange={e => setDistance(e.target.value)} placeholder="e.g. 12″ style={{ width: '100%', padding: '0.7rem', background: '#0A1628', color: '#E8EAF0', border: '1px solid #1E3A5F', borderRadius: 8, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, cursor: 'pointer', fontSize: '1rem' }}>Assess Risk</button>

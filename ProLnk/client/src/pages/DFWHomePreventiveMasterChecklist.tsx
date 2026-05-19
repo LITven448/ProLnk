@@ -135,9 +135,9 @@ export default function DFWHomePreventiveMasterChecklist() {
 
         <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '14px 20px', flex: 1 }}>
-            <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>{totalPct}%</div>
-            <div style={{ fontSize: 12, color: '#8B9BB4' }}>Annual completion</div>
-            <div style={{ fontSize: 12, color: '#8B9BB4' }}>{totalDone}/{allTasks.length} tasks</div>
+            <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>{totalPct}%</div>
+            <div style={{ fontSize: 12, color: '#8B9BB4′ }}>Annual completion</div>
+            <div style={{ fontSize: 12, color: '#8B9BB4′ }}>{totalDone}/{allTasks.length} tasks</div>
           </div>
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '14px 20px', flex: 2 }}>
             <div style={{ fontSize: 12, color: '#8B9BB4', marginBottom: 6 }}>Systems legend</div>
@@ -159,9 +159,9 @@ export default function DFWHomePreventiveMasterChecklist() {
             return (
               <button key={m} onClick={() => setSelectedMonth(m)} style={{
                 padding: '6px 12px', borderRadius: 8, border: '1px solid',
-                borderColor: selectedMonth === m ? '#F5E642' : '#1A2E4A',
-                background: selectedMonth === m ? '#F5E642' : '#0F2040',
-                color: selectedMonth === m ? '#0A1628' : '#8B9BB4',
+                borderColor: selectedMonth === m ? '#F5E642′ : '#1A2E4A',
+                background: selectedMonth === m ? '#F5E642′ : '#0F2040',
+                color: selectedMonth === m ? '#0A1628′ : '#8B9BB4',
                 cursor: 'pointer', fontSize: 12, fontWeight: selectedMonth === m ? 700 : 400,
               }}>
                 {m.slice(0, 3)} {mPct > 0 ? `${mPct}%` : ''}
@@ -173,7 +173,7 @@ export default function DFWHomePreventiveMasterChecklist() {
         <div style={{ marginBottom: 12 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, margin: 0, color: '#FFFFFF' }}>{selectedMonth}</h2>
-            <span style={{ fontSize: 13, color: '#8B9BB4' }}>{monthDone}/{monthTasks.length} done</span>
+            <span style={{ fontSize: 13, color: '#8B9BB4′ }}>{monthDone}/{monthTasks.length} done</span>
           </div>
         </div>
 
@@ -185,11 +185,11 @@ export default function DFWHomePreventiveMasterChecklist() {
               <div key={i} onClick={() => toggle(key)} style={{
                 display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 20px',
                 borderBottom: i < monthTasks.length - 1 ? '1px solid #1A2E4A' : 'none',
-                cursor: 'pointer', background: isDone ? '#0A1E38' : 'transparent',
+                cursor: 'pointer', background: isDone ? '#0A1E38′ : ’transparent',
               }}>
                 <div style={{
                   width: 22, height: 22, borderRadius: 6, border: `2px solid ${isDone ? '#F5E642' : '#2A3F5F'}`,
-                  background: isDone ? '#F5E642' : 'transparent', flexShrink: 0, marginTop: 2,
+                  background: isDone ? '#F5E642′ : ’transparent', flexShrink: 0, marginTop: 2,
                   display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13,
                 }}>
                   {isDone ? '✓' : ''}
@@ -199,7 +199,7 @@ export default function DFWHomePreventiveMasterChecklist() {
                     background: SYSTEM_COLORS[item.system] + '33', color: SYSTEM_COLORS[item.system], border: `1px solid ${SYSTEM_COLORS[item.system]}55` }}>
                     {SYSTEM_LABELS[item.system]}
                   </span>
-                  <div style={{ fontSize: 15, color: isDone ? '#6B7B99' : '#E8EAF0', textDecoration: isDone ? 'line-through' : 'none' }}>
+                  <div style={{ fontSize: 15, color: isDone ? '#6B7B99′ : '#E8EAF0', textDecoration: isDone ? ’line-through' : 'none' }}>
                     {item.icon} {item.task}
                   </div>
                 </div>
@@ -208,8 +208,8 @@ export default function DFWHomePreventiveMasterChecklist() {
           })}
         </div>
 
-        <div style={{ marginTop: 16, padding: '12px 16px', background: '#0F2040', borderRadius: 10, borderLeft: '3px solid #F5E642' }}>
-          <span style={{ fontSize: 13, color: '#8B9BB4' }}>💡 DFW Tip: April through August is the highest-risk window for all 5 systems — hail hits roofs, heat strains HVAC, clay shrinks foundations, and electrical panels peak-load. Front-load your maintenance before summer arrives.</span>
+        <div style={{ marginTop: 16, padding: '12px 16px', background: '#0F2040', borderRadius: 10, borderLeft: '3px solid #F5E642′ }}>
+          <span style={{ fontSize: 13, color: '#8B9BB4′ }}>💡 DFW Tip: April through August is the highest-risk window for all 5 systems — hail hits roofs, heat strains HVAC, clay shrinks foundations, and electrical panels peak-load. Front-load your maintenance before summer arrives.</span>
         </div>
       </div>
     </div>

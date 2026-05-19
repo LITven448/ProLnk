@@ -68,13 +68,13 @@ export default function DFWNaturalStoneGuide() {
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Stone Type</div>
             {STONE_TYPES.map(s => (
-              <button key={s} onClick={() => setStone(s)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: stone === s ? '#F5E642' : '#0D1E3A', color: stone === s ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: stone === s ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: stone === s ? 700 : 400, transition: 'all 0.2s' }}>{s}</button>
+              <button key={s} onClick={() => setStone(s)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: stone === s ? '#F5E642′ : '#0D1E3A', color: stone === s ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: stone === s ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: stone === s ? 700 : 400, transition: 'all 0.2s' }}>{s}</button>
             ))}
           </div>
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>DFW Application</div>
             {DFW_APPLICATIONS.map(a => (
-              <button key={a} onClick={() => setApp(a)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: app === a ? '#F5E642' : '#0D1E3A', color: app === a ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: app === a ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: app === a ? 700 : 400, transition: 'all 0.2s' }}>{a}</button>
+              <button key={a} onClick={() => setApp(a)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: app === a ? '#F5E642′ : '#0D1E3A', color: app === a ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: app === a ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: app === a ? 700 : 400, transition: 'all 0.2s' }}>{a}</button>
             ))}
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function DFWNaturalStoneGuide() {
         <div style={{ background: '#0D1E3A', borderRadius: 12, padding: '1.25rem', border: '1px solid #1C2E4A' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>💧 DFW Hard Water and Natural Stone</div>
           {['DFW water is 16-20 grains hardness -- among the hardest in Texas. This attacks all calcite-based stones (travertine, limestone, marble).', 'Granite and quartzite are non-calcite -- they resist DFW hard water etching completely.', 'All natural stone in DFW needs penetrating impregnating sealer -- topical sealers peel in DFW humidity.', 'Sealing only prevents absorption -- it does not prevent surface etching on soft stones from DFW acid contact.', 'DFW acid rain (pH 5.0-5.5) is particularly damaging to limestone and marble outdoor applications.'].map((tip, i) => (
-            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642' }}>{tip}</div>
+            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642′ }}>{tip}</div>
           ))}
         </div>
       </div>

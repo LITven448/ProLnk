@@ -34,10 +34,10 @@ export default function DFWFoundationWaterBalance2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
           {[
-            { icon: '🌧️', label: 'Wet = Heave Risk', color: '#3b82f6' },
-            { icon: '🏜️', label: 'Dry = Settlement Risk', color: '#f97316' },
+            { icon: '🌧️', label: 'Wet = Heave Risk', color: '#3b82f6′ },
+            { icon: '🏜️', label: 'Dry = Settlement Risk', color: '#f97316′ },
             { icon: '💧', label: 'Target: Damp Sponge', color: '#22c55e' },
-            { icon: '📏', label: 'Test Depth: 6 Inches', color: '#F5E642' },
+            { icon: '📏', label: 'Test Depth: 6 Inches', color: '#F5E642′ },
           ].map(s => (
             <div key={s.label} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px', textAlign: 'center' }}>
               <div style={{ fontSize: 24 }}>{s.icon}</div>
@@ -46,11 +46,11 @@ export default function DFWFoundationWaterBalance2026() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>🔍 Current Soil Condition → Action Guide</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>🔍 Current Soil Condition → Action Guide</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
           {conditions.map(c => (
             <button key={c.id} onClick={() => handleSelect(c.id)}
-              style={{ background: condition === c.id ? '#F5E642' : '#1e2d45', color: condition === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: condition === c.id ? '#F5E642′ : '#1e2d45', color: condition === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {c.label}
             </button>
           ))}
@@ -60,7 +60,7 @@ export default function DFWFoundationWaterBalance2026() {
             {result}
           </div>
         )}
-        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8' }}>
+        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8′ }}>
           💡 ProLnk connects DFW homeowners with licensed foundation specialists who understand DFW clay soil.
         </div>
       </div>

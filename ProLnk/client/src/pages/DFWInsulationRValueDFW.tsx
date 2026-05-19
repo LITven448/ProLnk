@@ -31,7 +31,7 @@ export default function DFWInsulationRValueDFW() {
           ].map(row => (
             <div key={row.zone} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '12px 0', borderBottom: '1px solid #1a3a5c' }}>
               <div>
-                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{row.zone}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{row.zone}</div>
                 <div style={{ fontSize: 13, color: '#64748b', marginTop: 2 }}>{row.note}</div>
               </div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, minWidth: 90, textAlign: 'right' }}>{row.req}</div>
@@ -43,13 +43,13 @@ export default function DFWInsulationRValueDFW() {
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🌡️ Why DFW R-Values Matter More in Summer</h2>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>DFW attics reach 140–160°F in July. The temperature delta between your attic and living space is 80°F+. Every R-value point reduces heat flow — and in DFW, the payback period for attic upgrades is 3–5 years vs. 7–10 years in colder climates.</p>
           {[
-            { label: 'R-11 attic (old home)', monthly: '$240', annual: '$2,880' },
-            { label: 'R-30 attic', monthly: '$185', annual: '$2,220' },
-            { label: 'R-38 attic (code)', monthly: '$165', annual: '$1,980' },
-            { label: 'R-49 attic (best practice)', monthly: '$148', annual: '$1,776' },
+            { label: 'R-11 attic (old home)', monthly: '$240', annual: '$2,880′ },
+            { label: 'R-30 attic', monthly: '$185', annual: '$2,220′ },
+            { label: 'R-38 attic (code)', monthly: '$165', annual: '$1,980′ },
+            { label: 'R-49 attic (best practice)', monthly: '$148', annual: '$1,776′ },
           ].map(row => (
             <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1a3a5c' }}>
-              <span style={{ color: '#cbd5e1' }}>{row.label}</span>
+              <span style={{ color: '#cbd5e1′ }}>{row.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{row.monthly}/mo</span>
             </div>
           ))}
@@ -61,19 +61,19 @@ export default function DFWInsulationRValueDFW() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Home Area (sq ft)</label>
-              <input value={homeArea} onChange={e => setHomeArea(e.target.value)} placeholder="2000" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={homeArea} onChange={e => setHomeArea(e.target.value)} placeholder="2000″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Current Attic R-Value</label>
-              <input value={currentRValue} onChange={e => setCurrentRValue(e.target.value)} placeholder="11" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={currentRValue} onChange={e => setCurrentRValue(e.target.value)} placeholder="11″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer' }}>Check DFW Compliance →</button>
           {result && (
             <div style={{ marginTop: 20, padding: 16, background: result.compliant ? '#0d2d1a' : '#2d1a0d', borderRadius: 8, borderLeft: `4px solid ${result.compliant ? '#22c55e' : '#F5E642'}` }}>
               <div style={{ fontWeight: 700, color: result.compliant ? '#22c55e' : '#F5E642', marginBottom: 8 }}>{result.compliant ? '✅ DFW Code Compliant' : '⚠️ Below DFW Code Minimum'}</div>
-              {!result.compliant && <div style={{ color: '#cbd5e1' }}>You need R-{result.atticGap} more insulation to reach DFW code. Estimated annual savings after upgrade: <strong style={{ color: '#F5E642' }}>${result.savings}</strong>/yr.</div>}
-              {result.compliant && <div style={{ color: '#cbd5e1' }}>Your attic meets DFW Zone 3A requirements. Consider upgrading to R-49 for maximum DFW summer savings.</div>}
+              {!result.compliant && <div style={{ color: '#cbd5e1′ }}>You need R-{result.atticGap} more insulation to reach DFW code. Estimated annual savings after upgrade: <strong style={{ color: '#F5E642' }}>${result.savings}</strong>/yr.</div>}
+              {result.compliant && <div style={{ color: '#cbd5e1′ }}>Your attic meets DFW Zone 3A requirements. Consider upgrading to R-49 for maximum DFW summer savings.</div>}
             </div>
           )}
         </div>

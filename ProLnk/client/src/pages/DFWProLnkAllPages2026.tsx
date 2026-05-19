@@ -127,7 +127,7 @@ export default function DFWProLnkAllPages2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🔗📚</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>ProLnk Complete Page Index 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>ProLnk Complete Page Index 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>4,000+ pages of DFW homeowner resources. Find what you need fast.</p>
         </div>
 
@@ -144,15 +144,15 @@ export default function DFWProLnkAllPages2026() {
             const isHighlighted = cat.name === highlightedCategory;
             const isOpen = activeCategory === cat.name;
             return (
-              <div key={cat.name} style={{ background: '#132040', borderRadius: 10, overflow: 'hidden', border: isHighlighted ? '2px solid #F5E642' : '2px solid transparent' }}>
+              <div key={cat.name} style={{ background: '#132040', borderRadius: 10, overflow: 'hidden', border: isHighlighted ? '2px solid #F5E642′ : '2px solid transparent' }}>
                 <button onClick={() => setActiveCategory(isOpen ? null : cat.name)} style={{ width: '100%', background: 'transparent', border: 'none', color: '#fff', padding: '1rem 1.25rem', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '1rem' }}>
                   <span>{cat.emoji} <strong>{cat.name}</strong> <span style={{ color: '#475569', fontSize: '0.82rem' }}>({cat.pages.length} pages)</span></span>
-                  <span style={{ color: '#F5E642' }}>{isOpen ? '▲' : '▼'}</span>
+                  <span style={{ color: '#F5E642′ }}>{isOpen ? '▲' : '▼'}</span>
                 </button>
                 {isOpen && (
                   <div style={{ padding: '0 1.25rem 1rem' }}>
                     {cat.pages.map((p, i) => (
-                      <div key={i} style={{ padding: '0.35rem 0', borderTop: '1px solid #1e3a5f', fontSize: '0.88rem', color: '#94a3b8' }}>→ {p}</div>
+                      <div key={i} style={{ padding: '0.35rem 0', borderTop: '1px solid #1e3a5f', fontSize: '0.88rem', color: '#94a3b8′ }}>→ {p}</div>
                     ))}
                   </div>
                 )}
@@ -162,7 +162,7 @@ export default function DFWProLnkAllPages2026() {
         </div>
 
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.25rem', textAlign: 'center', marginTop: '1.5rem' }}>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>🔗 <strong style={{ color: '#F5E642' }}>ProLnk</strong> — Free quotes from verified DFW pros + Home Health Vault for every service. <span style={{ color: '#F5E642' }}>prolnk.io</span></p>
+          <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>🔗 <strong style={{ color: '#F5E642′ }}>ProLnk</strong> — Free quotes from verified DFW pros + Home Health Vault for every service. <span style={{ color: '#F5E642' }}>prolnk.io</span></p>
         </div>
       </div>
     </div>

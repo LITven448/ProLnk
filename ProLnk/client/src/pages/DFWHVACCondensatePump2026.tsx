@@ -43,7 +43,7 @@ export default function DFWHVACCondensatePump2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSituation(s.id)}
-                style={{ background: situation === s.id ? '#F5E642' : '#1A2F4A', color: situation === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: situation === s.id ? '#F5E642′ : '#1A2F4A', color: situation === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
@@ -55,7 +55,7 @@ export default function DFWHVACCondensatePump2026() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2139', borderRadius: 12, padding: 28, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2139', borderRadius: 12, padding: 28, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>💡 Your Guide</h3>
             <p style={{ lineHeight: 1.7, fontSize: 15 }}>{result}</p>
           </div>
@@ -63,7 +63,7 @@ export default function DFWHVACCondensatePump2026() {
 
         <div style={{ background: '#0F2139', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🔑 DFW Condensate Facts</h3>
-          <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14, color: '#94A3B8' }}>
+          <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14, color: '#94A3B8′ }}>
             <li>DFW units run 6–8 months/year — condensate volume is high</li>
             <li>Float switch on pump = backup protection from overflow</li>
             <li>Annual test: pour water in pan, confirm pump activates</li>

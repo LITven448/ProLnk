@@ -81,7 +81,7 @@ export default function DFWGreaseTrapGuide() {
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               {[
                 { label: 'GREASE TRAP REQUIREMENT', val: result.requirement },
                 { label: 'EXEMPTIONS', val: result.exemption },
@@ -98,7 +98,7 @@ export default function DFWGreaseTrapGuide() {
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 12, padding: 20 }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 8 }}>💡 PRO TIP</div>
-          <div style={{ color: '#A0AABB', fontSize: 14, lineHeight: 1.6 }}>DFW cities enforce FOG (fats, oils, grease) ordinances through their water utilities. If you're starting a home food business, call your city's Environmental Health or Development Services department before installing any equipment.</div>
+          <div style={{ color: '#A0AABB', fontSize: 14, lineHeight: 1.6 }}>DFW cities enforce FOG (fats, oils, grease) ordinances through their water utilities. If you're starting a home food business, call your city’s Environmental Health or Development Services department before installing any equipment.</div>
         </div>
       </div>
     </div>

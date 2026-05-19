@@ -9,10 +9,10 @@ function getSeverity(age: string, symptom: string): Severity {
   const ageScore = homeAges.indexOf(age);
   const symptomScore = symptoms.indexOf(symptom);
   const total = ageScore + symptomScore;
-  if (total >= 7) return { level: 'CRITICAL', action: 'Structural engineer assessment required before any repair. Multiple failure points likely. Do not delay.', range: '$15,000–$40,000+', color: '#FF4444' };
-  if (total >= 5) return { level: 'HIGH', action: 'Foundation contractor inspection within 2 weeks. Pier installation likely. Get 3 quotes.', range: '$8,000–$18,000', color: '#FF8C00' };
-  if (total >= 3) return { level: 'MODERATE', action: 'Schedule a professional evaluation. May be minor settling or early-stage movement. Document with photos.', range: '$3,500–$9,000', color: '#F5E642' };
-  return { level: 'MONITOR', action: 'Minor cracking or sticking can be normal seasonal movement in DFW clay soil. Monitor for 90 days and measure crack width monthly.', range: '$0–$2,500', color: '#44FF88' };
+  if (total >= 7) return { level: 'CRITICAL', action: 'Structural engineer assessment required before any repair. Multiple failure points likely. Do not delay.', range: '$15,000–$40,000+', color: '#FF4444′ };
+  if (total >= 5) return { level: 'HIGH', action: 'Foundation contractor inspection within 2 weeks. Pier installation likely. Get 3 quotes.', range: '$8,000–$18,000', color: '#FF8C00′ };
+  if (total >= 3) return { level: 'MODERATE', action: 'Schedule a professional evaluation. May be minor settling or early-stage movement. Document with photos.', range: '$3,500–$9,000', color: '#F5E642′ };
+  return { level: 'MONITOR', action: 'Minor cracking or sticking can be normal seasonal movement in DFW clay soil. Monitor for 90 days and measure crack width monthly.', range: '$0–$2,500', color: '#44FF88′ };
 }
 
 export default function DFWFoundationRepairMansfield() {
@@ -29,7 +29,7 @@ export default function DFWFoundationRepairMansfield() {
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.2, marginBottom: 12 }}>
           Mansfield TX Foundation Repair<br />
-          <span style={{ color: '#F5E642' }}>South Tarrant Specialists</span>
+          <span style={{ color: '#F5E642′ }}>South Tarrant Specialists</span>
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, maxWidth: 680, lineHeight: 1.7, marginBottom: 40 }}>
           Mansfield sits on some of the most expansive clay soil in the DFW metroplex. The shrink-swell cycle from wet winters to scorching summers creates movement that stresses even well-built foundations. Homes along Highway 287 and in older Mansfield neighborhoods built in the 1980s–2000s are particularly vulnerable. Our vetted foundation contractors provide honest assessments — no fear-based selling.
@@ -44,14 +44,14 @@ export default function DFWFoundationRepairMansfield() {
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.emoji}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{card.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{card.label}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{card.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#132040', borderRadius: 16, padding: 32, border: '1px solid #F5E642', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>
             🔎 Foundation Severity Calculator
           </h2>
           <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 24 }}>
@@ -91,9 +91,9 @@ export default function DFWFoundationRepairMansfield() {
         <div style={{ background: '#132040', borderRadius: 16, padding: 28, marginBottom: 40, border: '1px solid #1E3A5F' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Mansfield Foundation Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
-            {[{ num: '60%', label: 'DFW Homes Affected by Soil Movement' }, { num: '4"', label: 'Max Clay Swell in Tarrant County' }, { num: '3', label: 'Competing Quotes Guaranteed' }, { num: '$0', label: 'Cost to Get Matched' }].map(s => (
+            {[{ num: '60%', label: 'DFW Homes Affected by Soil Movement' }, { num: '4″', label: 'Max Clay Swell in Tarrant County' }, { num: '3', label: 'Competing Quotes Guaranteed' }, { num: '$0', label: 'Cost to Get Matched' }].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 30, fontWeight: 800, color: '#F5E642' }}>{s.num}</div>
+                <div style={{ fontSize: 30, fontWeight: 800, color: '#F5E642′ }}>{s.num}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}

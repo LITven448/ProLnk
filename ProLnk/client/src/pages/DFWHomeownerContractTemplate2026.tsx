@@ -13,20 +13,20 @@ export default function DFWHomeownerContractTemplate2026() {
   const info = projects.find(p => p.type === selected);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 820, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: "0.85rem", marginBottom: "0.5rem" }}>
+        <div style={{ color: "#F5E642″, fontSize: "0.85rem", marginBottom: "0.5rem" }}>
           📄 DFW Contract Template Guide 2026
         </div>
         <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "0.5rem" }}>
           DFW Home Improvement Contract Template Guide
         </h1>
-        <p style={{ color: "#94a3b8", marginBottom: "2rem" }}>
+        <p style={{ color: "#94a3b8″, marginBottom: "2rem" }}>
           Every DFW home improvement contract must include these elements to protect you legally and ensure contractors deliver exactly what was promised.
         </p>
 
         <div style={{ background: "#1e293b", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>📋 Mandatory Contract Elements</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>📋 Mandatory Contract Elements</h2>
           {[
             "Contractor full legal name, license number, insurance policy number and expiration",
             "Exact scope of work — what is included AND what is explicitly excluded",
@@ -38,21 +38,21 @@ export default function DFWHomeownerContractTemplate2026() {
             "Dispute resolution — arbitration or litigation clause",
             "Project timeline with start date and substantial completion date",
           ].map((item, i) => (
-            <div key={i} style={{ color: "#cbd5e1", padding: "0.4rem 0", borderBottom: "1px solid #0f172a", display: "flex", gap: "0.5rem" }}>
-              <span style={{ color: "#F5E642" }}>#{i + 1}</span> {item}
+            <div key={i} style={{ color: "#cbd5e1″, padding: "0.4rem 0", borderBottom: "1px solid #0f172a", display: "flex", gap: "0.5rem" }}>
+              <span style={{ color: "#F5E642″ }}>#{i + 1}</span> {item}
             </div>
           ))}
         </div>
 
         <div style={{ background: "#1e293b", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "0.75rem" }}>📁 Contract Template by Project Type</h2>
-          <p style={{ color: "#94a3b8", marginBottom: "1rem" }}>Select your project type:</p>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "0.75rem" }}>📁 Contract Template by Project Type</h2>
+          <p style={{ color: "#94a3b8″, marginBottom: "1rem" }}>Select your project type:</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1rem" }}>
             {projects.map(p => (
               <button key={p.type} onClick={() => setSelected(p.type)} style={{
-                background: selected === p.type ? "#F5E642" : "#0f172a",
-                color: selected === p.type ? "#0A1628" : "#fff",
-                border: "1px solid #334155", borderRadius: 8, padding: "0.5rem 1rem", cursor: "pointer", fontWeight: 600
+                background: selected === p.type ? "#F5E642″ : "#0f172a",
+                color: selected === p.type ? "#0A1628″ : "#fff",
+                border: "1px solid #334155″, borderRadius: 8, padding: "0.5rem 1rem", cursor: "pointer", fontWeight: 600
               }}>{p.type}</button>
             ))}
           </div>
@@ -61,9 +61,9 @@ export default function DFWHomeownerContractTemplate2026() {
               {info.clauses.map((clause, i) => {
                 const [label, detail] = clause.split(": ");
                 return (
-                  <div key={i} style={{ padding: "0.5rem 0", borderBottom: "1px solid #1e293b" }}>
-                    <span style={{ color: "#F5E642", fontWeight: 700 }}>{label}: </span>
-                    <span style={{ color: "#cbd5e1" }}>{detail}</span>
+                  <div key={i} style={{ padding: "0.5rem 0″, borderBottom: "1px solid #1e293b" }}>
+                    <span style={{ color: "#F5E642″, fontWeight: 700 }}>{label}: </span>
+                    <span style={{ color: "#cbd5e1″ }}>{detail}</span>
                   </div>
                 );
               })}
@@ -72,10 +72,10 @@ export default function DFWHomeownerContractTemplate2026() {
         </div>
 
         <div style={{ background: "#1e293b", borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "0.75rem" }}>⚠️ Never Sign a Contract That Lacks These</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "0.75rem" }}>⚠️ Never Sign a Contract That Lacks These</h2>
           {["No license or insurance info listed", "Vague scope like \"kitchen remodel\" with no details", "Lump sum payment upfront before any work", "No change order process defined", "No warranty language", "No lien waiver requirement"].map((item, i) => (
-            <div key={i} style={{ color: "#cbd5e1", padding: "0.4rem 0", borderBottom: "1px solid #0f172a", display: "flex", gap: "0.5rem" }}>
-              <span style={{ color: "#ef4444" }}>✗</span> {item}
+            <div key={i} style={{ color: "#cbd5e1″, padding: "0.4rem 0", borderBottom: "1px solid #0f172a", display: "flex", gap: "0.5rem" }}>
+              <span style={{ color: "#ef4444″ }}>✗</span> {item}
             </div>
           ))}
         </div>

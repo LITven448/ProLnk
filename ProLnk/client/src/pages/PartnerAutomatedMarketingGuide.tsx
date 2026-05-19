@@ -101,13 +101,13 @@ export default function PartnerAutomatedMarketingGuide() {
           <span style={{ color: '#7c3aed', fontWeight: 600, fontSize: 14 }}>For ProLnk Partners</span>
         </div>
 
-        <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, marginBottom: 16, color: '#111827' }}>
+        <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, marginBottom: 16, color: '#111827′ }}>
           Automated Marketing for ProLnk Partners
           <span style={{ display: 'block', color: '#7c3aed', fontSize: 28 }}>Set It and Forget It</span>
         </h1>
 
         <div style={{ background: '#fef9c3', border: '1px solid #fde047', borderRadius: 12, padding: 20, marginBottom: 20 }}>
-          <strong>The busy pro problem:</strong> Most contractors don't have time to market. ProLnk's AI generates leads automatically — but you still need a presence to capture demand that comes directly to you. Here's how to automate it in <strong>2 hours/month</strong> once set up.
+          <strong>The busy pro problem:</strong> Most contractors don't have time to market. ProLnk’s AI generates leads automatically — but you still need a presence to capture demand that comes directly to you. Here’s how to automate it in <strong>2 hours/month</strong> once set up.
         </div>
 
         <p style={{ color: '#4b5563', fontSize: 16, lineHeight: 1.7, marginBottom: 50 }}>
@@ -136,7 +136,7 @@ export default function PartnerAutomatedMarketingGuide() {
                   <span style={{ color: '#9ca3af', fontSize: 20 }}>{open ? '▲' : '▼'}</span>
                 </div>
                 {open && (
-                  <div style={{ padding: '0 28px 28px', borderTop: '1px solid #f3f4f6' }}>
+                  <div style={{ padding: '0 28px 28px', borderTop: '1px solid #f3f4f6′ }}>
                     <div style={{ paddingTop: 20, marginBottom: 16 }}>
                       {a.steps.map((s, i) => (
                         <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 10 }}>
@@ -166,15 +166,15 @@ export default function PartnerAutomatedMarketingGuide() {
               return (
                 <label
                   key={item.id}
-                  style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', background: on ? '#f0fdf4' : '#f9fafb', border: '1px solid ' + (on ? '#86efac' : '#e5e7eb'), borderRadius: 8, padding: '12px 16px' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', background: on ? '#f0fdf4′ : '#f9fafb', border: '1px solid ' + (on ? '#86efac' : '#e5e7eb'), borderRadius: 8, padding: '12px 16px' }}
                 >
                   <input type="checkbox" checked={on} onChange={() => toggle(item.id)} style={{ width: 18, height: 18, accentColor: '#7c3aed' }} />
-                  <span style={{ color: on ? '#166534' : '#374151', fontWeight: on ? 600 : 400 }}>{item.label}</span>
+                  <span style={{ color: on ? '#166534′ : '#374151', fontWeight: on ? 600 : 400 }}>{item.label}</span>
                 </label>
               );
             })}
           </div>
-          <div style={{ background: missingLeads > 0 ? '#fef9c3' : '#f0fdf4', border: '1px solid ' + (missingLeads > 0 ? '#fde047' : '#86efac'), borderRadius: 10, padding: 20, textAlign: 'center' }}>
+          <div style={{ background: missingLeads > 0 ? '#fef9c3′ : '#f0fdf4', border: '1px solid ' + (missingLeads > 0 ? '#fde047' : '#86efac'), borderRadius: 10, padding: 20, textAlign: ’center' }}>
             {missingLeads > 0 ? (
               <>
                 <div style={{ fontSize: 32, fontWeight: 800, color: '#92400e' }}>~{missingLeads} leads/month</div>
@@ -182,7 +182,7 @@ export default function PartnerAutomatedMarketingGuide() {
               </>
             ) : (
               <>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#166534' }}>✅ Fully automated!</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#166534′ }}>✅ Fully automated!</div>
                 <div style={{ color: '#166534', marginTop: 4 }}>You're capturing demand on all channels. Nice work.</div>
               </>
             )}
@@ -193,7 +193,7 @@ export default function PartnerAutomatedMarketingGuide() {
         <div style={{ background: 'linear-gradient(135deg, #7c3aed, #a78bfa)', borderRadius: 16, padding: 40, textAlign: 'center', color: '#fff' }}>
           <div style={{ fontSize: 32, marginBottom: 16 }}>🚀</div>
           <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>Join ProLnk and Get the AI Lead Engine</h3>
-          <p style={{ color: '#ede9fe', marginBottom: 28 }}>Pair these 4 automations with ProLnk's AI lead matching and you'll have a full marketing system running on autopilot.</p>
+          <p style={{ color: '#ede9fe', marginBottom: 28 }}>Pair these 4 automations with ProLnk's AI lead matching and you’ll have a full marketing system running on autopilot.</p>
           <a href="/apply" style={{ display: 'inline-block', background: '#fff', color: '#7c3aed', fontWeight: 700, padding: '14px 36px', borderRadius: 8, textDecoration: 'none', fontSize: 16 }}>
             Apply as a Pro →
           </a>

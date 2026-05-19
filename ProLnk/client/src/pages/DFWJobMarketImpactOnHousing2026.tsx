@@ -26,7 +26,7 @@ export default function DFWJobMarketImpactOnHousing2026() {
             { label: 'Jobs Added 2025–2026', value: '89K', icon: '💼' },
             { label: 'Unemployment Rate', value: '3.1%', icon: '📊' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
+            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', margin: '8px 0 4px' }}>{s.value}</div>
               <div style={{ color: '#8899BB', fontSize: 13 }}>{s.label}</div>
@@ -34,21 +34,21 @@ export default function DFWJobMarketImpactOnHousing2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060' }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📍 Key Employer Campuses</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {employers.map(e => (
               <button key={e.name} onClick={() => setSelected(e.name)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                  background: selected === e.name ? '#F5E642' : '#1E3060',
-                  color: selected === e.name ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 13 }}>
+                  background: selected === e.name ? '#F5E642′ : '#1E3060',
+                  color: selected === e.name ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 13 }}>
                 {e.emoji} {e.name}
               </button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 28, marginBottom: 8 }}>{emp.emoji}</div>
           <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 4 }}>{emp.name}</h2>
           <div style={{ color: '#8899BB', marginBottom: 20 }}>📍 {emp.city} campus — {emp.jobs.toLocaleString()} employees</div>

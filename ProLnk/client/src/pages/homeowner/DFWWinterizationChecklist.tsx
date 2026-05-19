@@ -77,7 +77,7 @@ export default function DFWWinterizationChecklist() {
   const circumference = 2 * Math.PI * 54;
   const offset = circumference - (score / 100) * circumference;
 
-  const statusColor = score >= 80 ? '#4ade80' : score >= 50 ? '#facc15' : '#f87171';
+  const statusColor = score >= 80 ? '#4ade80′ : score >= 50 ? '#facc15' : '#f87171';
   const statusLabel = score >= 80 ? 'Well Prepared' : score >= 50 ? 'Partially Ready' : 'At Risk';
 
   const displayItems = activeCategory
@@ -99,18 +99,18 @@ export default function DFWWinterizationChecklist() {
         </p>
 
         {/* Freeze history */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 32, borderLeft: '4px solid #3b82f6' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 32, borderLeft: '4px solid #3b82f6′ }}>
           <div style={{ fontWeight: 700, color: '#93c5fd', marginBottom: 8 }}>🌨️ DFW Freeze History</div>
           <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.7 }}>
-            <strong style={{ color: '#f1f5f9' }}>February 2021 (Uri):</strong> 11 days below freezing. 246 deaths. Billions in property damage.{' '}
-            <strong style={{ color: '#f1f5f9' }}>February 2023:</strong> Major ice storm.{' '}
-            <strong>The pattern:</strong> DFW gets one severe freeze event every 2–3 years on average. It's not if — it's when.
+            <strong style={{ color: '#f1f5f9′ }}>February 2021 (Uri):</strong> 11 days below freezing. 246 deaths. Billions in property damage.{' '}
+            <strong style={{ color: '#f1f5f9′ }}>February 2023:</strong> Major ice storm.{' '}
+            <strong>The pattern:</strong> DFW gets one severe freeze event every 2–3 years on average. It's not if — it’s when.
           </p>
         </div>
 
         {/* Progress ring + score */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 32, background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 32 }}>
-          <svg width={120} height={120} viewBox="0 0 120 120">
+          <svg width={120} height={120} viewBox="0 0 120 120″>
             <circle cx={60} cy={60} r={54} fill="none" stroke="#1e293b" strokeWidth={10} />
             <circle cx={60} cy={60} r={54} fill="none" stroke="#1e3a5f" strokeWidth={10} />
             <circle
@@ -140,7 +140,7 @@ export default function DFWWinterizationChecklist() {
           <button
             onClick={() => setActiveCategory(null)}
             style={{
-              background: !activeCategory ? '#6366f1' : '#1e293b',
+              background: !activeCategory ? '#6366f1′ : '#1e293b',
               color: !activeCategory ? '#fff' : '#94a3b8',
               border: 'none', borderRadius: 99, padding: '8px 18px',
               cursor: 'pointer', fontSize: 14, fontWeight: 600,
@@ -155,7 +155,7 @@ export default function DFWWinterizationChecklist() {
                 key={cat.name}
                 onClick={() => setActiveCategory(active ? null : cat.name)}
                 style={{
-                  background: active ? '#312e81' : '#1e293b',
+                  background: active ? '#312e81′ : '#1e293b',
                   color: active ? '#e0e7ff' : '#94a3b8',
                   border: `1px solid ${active ? '#6366f1' : 'transparent'}`,
                   borderRadius: 99, padding: '8px 18px',
@@ -185,7 +185,7 @@ export default function DFWWinterizationChecklist() {
               >
                 <div style={{
                   width: 22, height: 22, borderRadius: 6, flexShrink: 0, marginTop: 1,
-                  background: done ? '#4ade80' : 'transparent',
+                  background: done ? '#4ade80′ : ’transparent',
                   border: `2px solid ${done ? '#4ade80' : '#334155'}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 13, color: '#0f172a', fontWeight: 700,

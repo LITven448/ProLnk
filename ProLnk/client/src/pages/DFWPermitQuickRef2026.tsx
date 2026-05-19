@@ -27,14 +27,14 @@ export default function DFWPermitQuickRef2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
           {projects.map((p, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642' : '2px solid #1e3a5f', borderRadius: '10px', padding: '14px', cursor: 'pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642′ : '2px solid #1e3a5f', borderRadius: '10px', padding: '14px', cursor: ’pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <span style={{ fontSize: '22px' }}>{p.icon}</span>
               <div>
                 <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '13px' }}>{p.type}</div>
                 <div style={{ marginTop: '4px' }}>
-                  {p.required === true && <span style={{ backgroundColor: '#dc2626', color: 'white', fontSize: '10px', padding: '2px 6px', borderRadius: '4px', fontWeight: '700' }}>ALWAYS REQUIRED</span>}
-                  {p.required === false && <span style={{ backgroundColor: '#16a34a', color: 'white', fontSize: '10px', padding: '2px 6px', borderRadius: '4px', fontWeight: '700' }}>NOT REQUIRED</span>}
-                  {p.required === null && <span style={{ backgroundColor: '#d97706', color: 'white', fontSize: '10px', padding: '2px 6px', borderRadius: '4px', fontWeight: '700' }}>DEPENDS</span>}
+                  {p.required === true && <span style={{ backgroundColor: '#dc2626', color: 'white', fontSize: '10px', padding: '2px 6px', borderRadius: '4px', fontWeight: '700′ }}>ALWAYS REQUIRED</span>}
+                  {p.required === false && <span style={{ backgroundColor: '#16a34a', color: 'white', fontSize: '10px', padding: '2px 6px', borderRadius: '4px', fontWeight: '700′ }}>NOT REQUIRED</span>}
+                  {p.required === null && <span style={{ backgroundColor: '#d97706', color: 'white', fontSize: '10px', padding: '2px 6px', borderRadius: '4px', fontWeight: '700′ }}>DEPENDS</span>}
                 </div>
               </div>
             </button>
@@ -51,7 +51,7 @@ export default function DFWPermitQuickRef2026() {
               <div style={{ color: '#F5E642', fontSize: '11px', fontWeight: '700', marginBottom: '4px' }}>📍 DFW COVERAGE</div>
               <div style={{ color: '#94a3b8', fontSize: '13px' }}>{projects[selected].cities}</div>
             </div>
-            <div style={{ marginTop: '16px', padding: '12px', backgroundColor: '#0A1628', borderRadius: '8px', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '16px', padding: '12px', backgroundColor: '#0A1628', borderRadius: '8px', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontSize: '11px', fontWeight: '700', marginBottom: '4px' }}>💡 PRO TIP</div>
               <div style={{ color: '#94a3b8', fontSize: '12px' }}>Always confirm with your specific city building department — permits must be pulled by a licensed contractor in most DFW cities.</div>
             </div>

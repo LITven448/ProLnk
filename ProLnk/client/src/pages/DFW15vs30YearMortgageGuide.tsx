@@ -60,7 +60,7 @@ export default function DFW15vs30YearMortgageGuide() {
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Home Price ($) <span style={{ color: '#94A3B8', fontWeight: 400 }}>DFW median: $410,000</span></label>
-              <input type="number" value={price} onChange={e => setPrice(e.target.value)} placeholder="410000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={price} onChange={e => setPrice(e.target.value)} placeholder="410000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Down Payment ($)</label>
@@ -84,12 +84,12 @@ export default function DFW15vs30YearMortgageGuide() {
           <div style={{ display: 'grid', gap: 14 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               {[
-                { label: '30-Year Payment', value: `$${Math.round(result.mp30).toLocaleString()}/mo`, sub: `$${Math.round(result.interest30).toLocaleString()} total interest`, color: '#3B82F6' },
-                { label: '15-Year Payment', value: `$${Math.round(result.mp15).toLocaleString()}/mo`, sub: `$${Math.round(result.interest15).toLocaleString()} total interest`, color: '#F5E642' },
+                { label: '30-Year Payment', value: `$${Math.round(result.mp30).toLocaleString()}/mo`, sub: `$${Math.round(result.interest30).toLocaleString()} total interest`, color: '#3B82F6′ },
+                { label: '15-Year Payment', value: `$${Math.round(result.mp15).toLocaleString()}/mo`, sub: `$${Math.round(result.interest15).toLocaleString()} total interest`, color: '#F5E642′ },
               ].map(c => (
                 <div key={c.label} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', borderTop: `3px solid ${c.color}` }}>
                   <div style={{ fontSize: 12, color: '#64748B', fontWeight: 600, marginBottom: 6 }}>{c.label}</div>
-                  <div style={{ fontWeight: 800, fontSize: 22, color: '#0A1628' }}>{c.value}</div>
+                  <div style={{ fontWeight: 800, fontSize: 22, color: '#0A1628′ }}>{c.value}</div>
                   <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{c.sub}</div>
                 </div>
               ))}

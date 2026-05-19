@@ -55,7 +55,7 @@ export default function DFWStuccoInspectionGuide() {
               <div key={c.crack} style={{ background: '#111E35', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '0.85rem', display: 'grid', gridTemplateColumns: '200px 1fr auto', gap: '0.75rem', alignItems: 'center' }}>
                 <div style={{ color: '#E8EDF5', fontWeight: 600, fontSize: '0.85rem' }}>{c.crack}</div>
                 <div style={{ color: '#8899AA', fontSize: '0.8rem' }}>{c.action}</div>
-                <span style={{ background: c.urgency === 'High' ? '#4A1520' : c.urgency === 'Medium' ? '#2A2A10' : '#0F2A1F', color: c.urgency === 'High' ? '#FF6B6B' : c.urgency === 'Medium' ? '#F5E642' : '#4CAF50', fontSize: '0.7rem', fontWeight: 700, padding: '0.2rem 0.6rem', borderRadius: '4px', whiteSpace: 'nowrap' }}>{c.urgency}</span>
+                <span style={{ background: c.urgency === 'High' ? '#4A1520′ : c.urgency === ’Medium' ? '#2A2A10′ : '#0F2A1F', color: c.urgency === ’High' ? '#FF6B6B' : c.urgency === 'Medium' ? '#F5E642′ : '#4CAF50', fontSize: '0.7rem', fontWeight: 700, padding: '0.2rem 0.6rem', borderRadius: '4px', whiteSpace: ’nowrap' }}>{c.urgency}</span>
               </div>
             ))}
           </div>

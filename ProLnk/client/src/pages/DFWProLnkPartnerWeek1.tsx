@@ -100,9 +100,9 @@ export default function DFWProLnkPartnerWeek1() {
             {networkOptions.map(n => (
               <button key={n} onClick={() => setNetwork(n)}
                 style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: network === n ? '#F5E642' : '#1e3a5f',
+                  borderColor: network === n ? '#F5E642′ : '#1e3a5f',
                   background: network === n ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: network === n ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 14 }}>
+                  color: network === n ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 14 }}>
                 {n}
               </button>
             ))}
@@ -115,9 +115,9 @@ export default function DFWProLnkPartnerWeek1() {
             {locationOptions.map(l => (
               <button key={l} onClick={() => setLocation(l)}
                 style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: location === l ? '#F5E642' : '#1e3a5f',
+                  borderColor: location === l ? '#F5E642′ : '#1e3a5f',
                   background: location === l ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: location === l ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 13 }}>
+                  color: location === l ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 13 }}>
                 {l}
               </button>
             ))}
@@ -125,8 +125,8 @@ export default function DFWProLnkPartnerWeek1() {
         </div>
 
         <button onClick={() => setGenerated(true)} disabled={!ready}
-          style={{ width: '100%', padding: '16px', background: ready ? '#F5E642' : '#1e3a5f',
-            color: ready ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 12,
+          style={{ width: '100%', padding: '16px', background: ready ? '#F5E642′ : '#1e3a5f',
+            color: ready ? '#0A1628′ : '#4a6080', border: ’none', borderRadius: 12,
             fontWeight: 700, fontSize: 16, cursor: ready ? 'pointer' : 'not-allowed' }}>
           {ready ? 'Build My Week 1 Plan →' : 'Select network size and location to continue'}
         </button>
@@ -135,16 +135,16 @@ export default function DFWProLnkPartnerWeek1() {
           <div style={{ marginTop: 24 }}>
             <div style={{ background: '#0f1f3a', borderRadius: 12, padding: '16px 20px', marginBottom: 16 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📍 {location} Strategy</div>
-              <div style={{ fontSize: 14, color: '#cbd5e1' }}>{locationTips[location] || locationTips['Other DFW suburb']}</div>
+              <div style={{ fontSize: 14, color: '#cbd5e1′ }}>{locationTips[location] || locationTips[’Other DFW suburb']}</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
               <div style={{ background: '#0f1f3a', borderRadius: 12, padding: '16px 20px', textAlign: 'center' }}>
-                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{targets.referrals}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>Referrals to submit this week</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{targets.referrals}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>Referrals to submit this week</div>
               </div>
               <div style={{ background: '#0f1f3a', borderRadius: 12, padding: '16px 20px', textAlign: 'center' }}>
-                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{targets.conversations}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>Conversations to have this week</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{targets.conversations}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>Conversations to have this week</div>
               </div>
             </div>
             {dayPlans.map((d, i) => (
@@ -156,7 +156,7 @@ export default function DFWProLnkPartnerWeek1() {
                   </div>
                 </div>
                 {d.tasks.map((t, j) => (
-                  <div key={j} style={{ display: 'flex', gap: 10, marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>
+                  <div key={j} style={{ display: 'flex', gap: 10, marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>
                     <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span>{t}
                   </div>
                 ))}

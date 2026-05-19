@@ -76,7 +76,7 @@ export default function DFWFoundationCodeViolations2026() {
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {violations.map(v => (
             <button key={v.id} onClick={() => setSelected(selected === v.id ? null : v.id)}
-              style={{ background: selected === v.id ? '#1a2f50' : '#0F1F38', border: selected === v.id ? '2px solid #F5E642' : '2px solid #1E3A5F', borderRadius: 10, padding: '16px 20px', textAlign: 'left', cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', gap: 14 }}>
+              style={{ background: selected === v.id ? '#1a2f50′ : '#0F1F38', border: selected === v.id ? '2px solid #F5E642' : '2px solid #1E3A5F', borderRadius: 10, padding: '16px 20px', textAlign: ’left', cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', gap: 14 }}>
               <span style={{ fontSize: 28 }}>{v.icon}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 600, fontSize: 15 }}>{v.title}</div>

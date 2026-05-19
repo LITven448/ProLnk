@@ -46,8 +46,8 @@ export default function ProLnkGettingStartedHomeowner() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {Object.keys(urgencyMap).map(u => (
               <button key={u} onClick={() => setUrgency(u)} style={{
-                background: urgency === u ? '#F5E642' : '#1A2F4A',
-                color: urgency === u ? '#0A1628' : '#fff',
+                background: urgency === u ? '#F5E642′ : '#1A2F4A',
+                color: urgency === u ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14
               }}>{u}</button>
             ))}

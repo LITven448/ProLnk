@@ -76,7 +76,7 @@ export default function DFWPressureWasherSafetyGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
                 <div><span style={{ color: '#64748b', fontSize: '0.8rem' }}>RECOMMENDED PSI</span><br /><span style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700 }}>{result.psi}</span></div>
                 <div><span style={{ color: '#64748b', fontSize: '0.8rem' }}>NOZZLE TIP</span><br /><span style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700 }}>{result.tip}</span></div>

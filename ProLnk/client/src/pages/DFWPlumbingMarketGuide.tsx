@@ -56,7 +56,7 @@ export default function DFWPlumbingMarketGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🔧 DFW Plumbing Market</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>February 2021's Winter Storm Uri was a turning point for DFW plumbing. Thousands of homes burst simultaneously, many out-of-state plumbers flooded in, and a significant number of local plumbers retired or relocated after the chaos. The market has been restructuring ever since.</p>
 
-        <div style={{ backgroundColor: '#1a2f4e', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1a2f4e', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🌨️ The Uri Effect — Why DFW Plumbing Supply Is Still Tight</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>Winter Storm Uri in February 2021 caused an estimated $200B+ in damages across Texas. In DFW alone, hundreds of thousands of pipes burst in days. The subsequent demand surge burned out many veteran plumbers. Emergency pricing, physical exhaustion, and liability fears accelerated retirements. New licensing pipeline takes 4+ years. Supply gap remains in 2026.</div>
         </div>
@@ -89,13 +89,13 @@ export default function DFWPlumbingMarketGuide() {
               </select>
             </div>
           </div>
-          {suburbNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#F5E642' }}>{suburbNote}</div>}
+          {suburbNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#F5E642′ }}>{suburbNote}</div>}
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Market: </span>{result.conditions}</div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Strategy: </span><span style={{ color: '#e2e8f0' }}>{result.strategy}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Typical Cost: </span><span style={{ color: '#e2e8f0' }}>{result.priceRange}</span></div>
-              <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8' }}>📌 Uri Context: {result.uriNote}</div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Strategy: </span><span style={{ color: '#e2e8f0′ }}>{result.strategy}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Typical Cost: </span><span style={{ color: '#e2e8f0′ }}>{result.priceRange}</span></div>
+              <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8′ }}>📌 Uri Context: {result.uriNote}</div>
             </div>
           )}
         </div>

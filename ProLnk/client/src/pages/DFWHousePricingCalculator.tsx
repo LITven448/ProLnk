@@ -73,7 +73,7 @@ export default function DFWHousePricingCalculator() {
             {[['Comp 1 ($)', comp1, setComp1], ['Comp 2 ($)', comp2, setComp2], ['Comp 3 ($)', comp3, setComp3]].map(([label, val, setter]) => (
               <div key={label}>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#444', marginBottom: 4 }}>{label}</label>
-                <input value={val} onChange={e => setter(e.target.value)} placeholder='e.g. 425000' style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 14, boxSizing: 'border-box' }} />
+                <input value={val} onChange={e => setter(e.target.value)} placeholder='e.g. 425000′ style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 14, boxSizing: ’border-box' }} />
               </div>
             ))}
           </div>
@@ -96,7 +96,7 @@ export default function DFWHousePricingCalculator() {
         </button>
         {result && (
           <div style={{ background: '#1a3a5c', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-            <h3 style={{ margin: '0 0 1rem', color: '#F5E642' }}>💰 Suggested Listing Price Range</h3>
+            <h3 style={{ margin: '0 0 1rem', color: '#F5E642′ }}>💰 Suggested Listing Price Range</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               {[['Conservative', fmt(result.low), '#acd'], ['Sweet Spot', fmt(result.mid), '#F5E642'], ['Aggressive', fmt(result.high), '#f9a']].map(([label, val, color]) => (
                 <div key={label} style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
@@ -106,7 +106,7 @@ export default function DFWHousePricingCalculator() {
               ))}
             </div>
             <div style={{ background: 'rgba(245,230,66,0.15)', borderRadius: 8, padding: '0.75rem', fontSize: 14 }}>
-              ⏱️ Expected days on market at sweet spot price: <strong style={{ color: '#F5E642' }}>{result.days} days</strong> in current {market} market
+              ⏱️ Expected days on market at sweet spot price: <strong style={{ color: '#F5E642′ }}>{result.days} days</strong> in current {market} market
             </div>
           </div>
         )}

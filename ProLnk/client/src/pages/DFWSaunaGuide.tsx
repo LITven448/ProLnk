@@ -29,7 +29,7 @@ export default function DFWSaunaGuide() {
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642′ }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🧖</div>
           <h1 style={{ fontSize: 38, fontWeight: 800, color: '#F5E642', margin: '0 0 12px' }}>DFW Home Sauna Installation Guide</h1>
@@ -40,7 +40,7 @@ export default function DFWSaunaGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, margin: '40px 0' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, margin: '40px 0′ }}>
           {[
             { icon: '🌞', title: 'Outdoor in DFW Heat?', body: 'Counterintuitively popular. Contrast therapy (sauna → cold plunge → cool outdoor air) works year-round in DFW. A barrel sauna outside with a cold plunge tub is the #1 wellness trend among DFW homeowners.' },
             { icon: '⚡', title: 'Electrical Requirements', body: 'Traditional saunas need 30–60A at 240V. Infrared units often run on 20A 240V. Budget $800–$1,600 for a dedicated circuit with disconnect. Always hire a licensed Texas electrician.' },
@@ -96,7 +96,7 @@ export default function DFWSaunaGuide() {
                 ].map(row => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #1E3A5F' }}>
                     {row.map((cell, i) => (
-                      <td key={i} style={{ padding: '10px 12px', color: i === 0 ? '#E8EDF5' : '#A8B8D0' }}>{cell}</td>
+                      <td key={i} style={{ padding: '10px 12px', color: i === 0 ? '#E8EDF5′ : '#A8B8D0' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -105,7 +105,7 @@ export default function DFWSaunaGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>🧮 Sauna Cost Estimator</h2>
           <p style={{ color: '#A8B8D0', fontSize: 14, margin: '0 0 24px' }}>Get a personalized estimate with electrical needs and permit requirements</p>
 
@@ -119,7 +119,7 @@ export default function DFWSaunaGuide() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
                 {options.map((opt: string) => (
                   <button key={opt} onClick={() => { (setter as (v: string) => void)(opt); setShowEstimate(false); }}
-                    style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${value === opt ? '#F5E642' : '#1E3A5F'}`, background: value === opt ? '#F5E642' : '#0D1B33', color: value === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${value === opt ? '#F5E642' : '#1E3A5F'}`, background: value === opt ? '#F5E642′ : '#0D1B33', color: value === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {opt}
                   </button>
                 ))}
@@ -133,12 +133,12 @@ export default function DFWSaunaGuide() {
           </button>
 
           {showEstimate && estimate && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 20 }}>Estimate for {size} {type} ({location})</h3>
               <p style={{ fontSize: 32, fontWeight: 800, color: '#E8EDF5', margin: '0 0 16px' }}>${estimate.low.toLocaleString()} – ${estimate.high.toLocaleString()}</p>
               <div style={{ display: 'grid', gap: 10 }}>
-                <p style={{ margin: 0, color: '#A8B8D0', fontSize: 14 }}>⚡ <strong style={{ color: '#E8EDF5' }}>Electrical Requirement:</strong> {estimate.electrical}</p>
-                <p style={{ margin: 0, color: '#A8B8D0', fontSize: 14 }}>📋 <strong style={{ color: '#E8EDF5' }}>Permit Required:</strong> {estimate.permitRequired ? 'Yes — check with your city and HOA before purchasing' : 'Usually no permit for portable infrared units, but verify locally'}</p>
+                <p style={{ margin: 0, color: '#A8B8D0', fontSize: 14 }}>⚡ <strong style={{ color: '#E8EDF5′ }}>Electrical Requirement:</strong> {estimate.electrical}</p>
+                <p style={{ margin: 0, color: '#A8B8D0', fontSize: 14 }}>📋 <strong style={{ color: '#E8EDF5′ }}>Permit Required:</strong> {estimate.permitRequired ? ’Yes — check with your city and HOA before purchasing' : 'Usually no permit for portable infrared units, but verify locally'}</p>
               </div>
             </div>
           )}

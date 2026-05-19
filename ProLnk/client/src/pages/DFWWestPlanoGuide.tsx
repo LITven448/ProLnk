@@ -46,7 +46,7 @@ export default function DFWWestPlanoGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🗓️ Home Era</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeEras.map(e => (
-              <button key={e.value} onClick={() => setEra(e.value)} style={{ background: era === e.value ? '#F5E642' : '#1E2D45', color: era === e.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{e.label}</button>
+              <button key={e.value} onClick={() => setEra(e.value)} style={{ background: era === e.value ? '#F5E642′ : '#1E2D45', color: era === e.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{e.label}</button>
             ))}
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function DFWWestPlanoGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>💰 Home Value Tier</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {valueTiers.map(t => (
-              <button key={t.value} onClick={() => setTier(t.value)} style={{ background: tier === t.value ? '#F5E642' : '#1E2D45', color: tier === t.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{t.label}</button>
+              <button key={t.value} onClick={() => setTier(t.value)} style={{ background: tier === t.value ? '#F5E642′ : '#1E2D45', color: tier === t.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{t.label}</button>
             ))}
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function DFWWestPlanoGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🔧 Maintenance Priorities</div>
-              {result.priorities.map((p, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F5E642' }}>{p}</div>)}
+              {result.priorities.map((p, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F5E642′ }}>{p}</div>)}
             </div>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🤝 Service Expectations</div>

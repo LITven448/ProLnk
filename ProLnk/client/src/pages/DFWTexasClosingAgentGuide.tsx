@@ -131,7 +131,7 @@ export default function DFWTexasClosingAgentGuide() {
           <div style={{ display: 'grid', gap: 12 }}>
             {transactionTypes.map(t => (
               <button key={t.value} onClick={() => setSelected(t.value)}
-                style={{ padding: '14px 18px', borderRadius: 8, border: selected === t.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: selected === t.value ? '#e8f0fb' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === t.value ? 600 : 400, color: '#333' }}>
+                style={{ padding: '14px 18px', borderRadius: 8, border: selected === t.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: selected === t.value ? '#e8f0fb' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === t.value ? 600 : 400, color: '#333′ }}>
                 {t.label}
               </button>
             ))}

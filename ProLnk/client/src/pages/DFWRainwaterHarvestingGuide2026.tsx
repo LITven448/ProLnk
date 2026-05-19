@@ -30,7 +30,7 @@ export default function DFWRainwaterHarvestingGuide2026() {
             { icon: '🛢️', label: 'Rain Barrel Cost', value: '$80–$200 each' },
             { icon: '🏗️', label: 'Cistern Cost', value: '$1,500–$5,000+' },
           ].map((s, i) => (
-            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155' }}>
+            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{s.value}</div>
@@ -38,23 +38,23 @@ export default function DFWRainwaterHarvestingGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🛢️ Rain Barrel vs Cistern</h2>
           {[
             { feature: 'Capacity', barrel: '50–100 gallons', cistern: '500–5,000 gallons' },
-            { feature: 'Cost', barrel: '$80–$200', cistern: '$1,500–$5,000' },
+            { feature: 'Cost', barrel: '$80–$200', cistern: '$1,500–$5,000′ },
             { feature: 'Install', barrel: 'DIY-friendly', cistern: 'Professional' },
             { feature: 'Best for', barrel: 'Small gardens', cistern: 'Full irrigation' },
           ].map((r, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, padding: '10px 0', borderBottom: i < 3 ? '1px solid #334155' : 'none', fontSize: 14 }}>
-              <div style={{ color: '#94a3b8' }}>{r.feature}</div>
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, padding: '10px 0', borderBottom: i < 3 ? '1px solid #334155′ : ’none', fontSize: 14 }}>
+              <div style={{ color: '#94a3b8′ }}>{r.feature}</div>
               <div style={{ color: '#fff' }}>🛢️ {r.barrel}</div>
-              <div style={{ color: '#F5E642' }}>🏗️ {r.cistern}</div>
+              <div style={{ color: '#F5E642′ }}>🏗️ {r.cistern}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🧮 Collection Potential Calculator</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
             <input value={roofSize} onChange={e => setRoofSize(e.target.value)} placeholder="Roof area (sq ft)" style={{ flex: 1, minWidth: 180, padding: '10px', borderRadius: 8, border: '1px solid #475569', background: '#0f172a', color: '#fff' }} />

@@ -70,7 +70,7 @@ export default function DFWFullBathAdditionGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>🧮 Feasibility & Cost Estimator</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>Current home configuration</label>
+              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>Current home configuration</label>
               <select value={homeCfg} onChange={e => setHomeCfg(e.target.value)}
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="">Select beds/baths</option>
@@ -81,7 +81,7 @@ export default function DFWFullBathAdditionGuide() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>Proposed addition location</label>
+              <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>Proposed addition location</label>
               <select value={location} onChange={e => setLocation(e.target.value)}
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="">Select location type</option>

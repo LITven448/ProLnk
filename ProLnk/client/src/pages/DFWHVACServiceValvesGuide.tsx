@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const situations = [
-  { label: 'AC not cooling — refrigerant may be low', check: 'Check Schrader valves for refrigerant oil staining around valve core. Oil = leak confirmed.', cost: '$20–50 valve core replacement + refrigerant recharge $150–400' },
+  { label: 'AC not cooling — refrigerant may be low', check: 'Check Schrader valves for refrigerant oil staining around valve core. Oil = leak confirmed.', cost: '$20–50 valve core replacement + refrigerant recharge $150–400′ },
   { label: 'Tech just added refrigerant — need to verify hold', check: 'After recharge, soap-bubble test all service ports. DFW heat cycles stress valve cores.', cost: 'Free if done during service call. Ask tech to include.' },
   { label: 'Annual tune-up before DFW summer', check: 'Every DFW tune-up should include valve core torque check and leak dye inspection at ports.', cost: 'Included in good tune-up ($80–150 typical)' },
   { label: 'Just bought a DFW home — evaluating HVAC', check: 'Inspect both service valves on condenser. Look for corrosion, missing caps, oil residue. Red flags.', cost: 'Inspector or HVAC tech: $75–150 for full system check' },
@@ -44,7 +44,7 @@ export default function DFWHVACServiceValvesGuide() {
             <div>• UV exposure on exposed condenser service ports degrades rubber seals</div>
             <div>• Repeated connection/disconnection by techs wears valve core threads</div>
             <div>• Missing valve caps (common on DFW systems) allow UV and debris damage</div>
-            <div style={{ marginTop: 8, color: '#F5E642' }}>⚠️ Missing cap = $400+ refrigerant loss risk over 2 seasons</div>
+            <div style={{ marginTop: 8, color: '#F5E642′ }}>⚠️ Missing cap = $400+ refrigerant loss risk over 2 seasons</div>
           </div>
         </div>
 
@@ -53,13 +53,13 @@ export default function DFWHVACServiceValvesGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {situations.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#1A2030', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#1A2030', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>What to Check</div>
               <div style={{ color: '#CBD5E1', fontSize: 14, marginBottom: 8 }}>{result.check}</div>
               <div style={{ color: '#F5E642', fontSize: 13 }}>💰 {result.cost}</div>

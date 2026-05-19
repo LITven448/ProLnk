@@ -29,7 +29,7 @@ export default function DFWPropertyTaxGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏛️📋</div>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0' }}>DFW Property Tax Guide 2026</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0′ }}>DFW Property Tax Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>Texas has no income tax — but property taxes avg 2.1%, nearly double the national average of 1.1%.</p>
         </div>
 
@@ -38,8 +38,8 @@ export default function DFWPropertyTaxGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0.75rem', marginTop: '1rem' }}>
             {[['Dallas','2.09%'],['Tarrant','2.15%'],['Collin','1.78%'],['Denton','1.92%']].map(([c, r]) => (
               <div key={c} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642' }}>{r}</div>
-                <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{c} County</div>
+                <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642′ }}>{r}</div>
+                <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>{c} County</div>
               </div>
             ))}
           </div>
@@ -60,14 +60,14 @@ export default function DFWPropertyTaxGuide2026() {
         <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.2rem' }}>🏠 Exemptions Available</h2>
           <ul style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem' }}>
-            <li><strong style={{ color: '#F5E642' }}>Homestead Exemption:</strong> $100K off appraised value for school taxes (since 2023)</li>
-            <li><strong style={{ color: '#F5E642' }}>Over-65 Exemption:</strong> Additional $10K off + frozen school district tax ceiling</li>
-            <li><strong style={{ color: '#F5E642' }}>Disabled Veterans:</strong> Up to 100% exemption depending on disability rating</li>
-            <li><strong style={{ color: '#F5E642' }}>10% Appraisal Cap:</strong> Homestead values cannot rise more than 10%/year</li>
+            <li><strong style={{ color: '#F5E642′ }}>Homestead Exemption:</strong> $100K off appraised value for school taxes (since 2023)</li>
+            <li><strong style={{ color: '#F5E642′ }}>Over-65 Exemption:</strong> Additional $10K off + frozen school district tax ceiling</li>
+            <li><strong style={{ color: '#F5E642′ }}>Disabled Veterans:</strong> Up to 100% exemption depending on disability rating</li>
+            <li><strong style={{ color: '#F5E642′ }}>10% Appraisal Cap:</strong> Homestead values cannot rise more than 10%/year</li>
           </ul>
         </div>
 
-        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.2rem' }}>🧮 Tax Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
@@ -85,7 +85,7 @@ export default function DFWPropertyTaxGuide2026() {
           </div>
           <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '1rem' }}>
             {[['Homestead Exemption', hasHomestead, setHasHomestead],['Over-65 Exemption', isOver65, setIsOver65]].map(([label, val, setter]) => (
-              <label key={label as string} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: '#cbd5e1' }}>
+              <label key={label as string} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: '#cbd5e1′ }}>
                 <input type='checkbox' checked={val as boolean} onChange={e => (setter as (v: boolean) => void)(e.target.checked)} style={{ width: 16, height: 16 }} />
                 {label as string}
               </label>
@@ -97,8 +97,8 @@ export default function DFWPropertyTaxGuide2026() {
               {[['Without Exemptions', fmt(result.tax), '📌'],['Exemption Savings', fmt(result.savings), '✅'],['After Exemptions', fmt(result.afterExemption), '🎯']].map(([label, val, icon]) => (
                 <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
                   <div style={{ fontSize: '1.4rem' }}>{icon}</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642' }}>{val}</div>
-                  <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{label}</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+                  <div style={{ fontSize: '0.75rem', color: '#94a3b8′ }}>{label}</div>
                 </div>
               ))}
             </div>

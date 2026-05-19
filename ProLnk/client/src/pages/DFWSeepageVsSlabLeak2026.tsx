@@ -50,7 +50,7 @@ export default function DFWSeepageVsSlabLeak2026() {
           {options.map(o => (
             <label key={o.id} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10, cursor: 'pointer' }}>
               <input type="checkbox" checked={symptoms.includes(o.id)} onChange={() => toggle(o.id)} style={{ width: 18, height: 18 }} />
-              <span style={{ color: '#CBD5E1' }}>{o.label}</span>
+              <span style={{ color: '#CBD5E1′ }}>{o.label}</span>
             </label>
           ))}
           <button onClick={assess} style={{ marginTop: 12, background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: 'pointer' }}>
@@ -61,7 +61,7 @@ export default function DFWSeepageVsSlabLeak2026() {
 
         <div style={{ marginTop: 32, padding: '20px', background: '#132035', borderRadius: 12, textAlign: 'center' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Get a DFW plumber or foundation specialist today</div>
-          <div style={{ color: '#94A3B8' }}>ProLnk matches you with vetted local pros — free quotes in minutes.</div>
+          <div style={{ color: '#94A3B8′ }}>ProLnk matches you with vetted local pros — free quotes in minutes.</div>
         </div>
       </div>
     </div>

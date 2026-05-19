@@ -42,7 +42,7 @@ export default function DFWFriezeLineGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1rem' }}>
             {issues.map(i => (
               <button key={i.id} onClick={() => setSelected(i.id === selected ? null : i.id)}
-                style={{ background: selected === i.id ? '#F5E642' : '#1e3a5f', color: selected === i.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
+                style={{ background: selected === i.id ? '#F5E642′ : '#1e3a5f', color: selected === i.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
                 {i.label}
               </button>
             ))}

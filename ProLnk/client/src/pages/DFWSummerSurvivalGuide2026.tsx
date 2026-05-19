@@ -66,7 +66,7 @@ export default function DFWSummerSurvivalGuide2026() {
           <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>🏊 Do you have a pool?</div>
           <div style={{ display: 'flex', gap: '0.75rem' }}>
             {[true, false].map(v => (
-              <button key={String(v)} onClick={() => setHasPool(v)} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: hasPool === v ? '#F5E642' : '#1e3a5f', background: hasPool === v ? '#F5E642' : 'transparent', color: hasPool === v ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={String(v)} onClick={() => setHasPool(v)} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: hasPool === v ? '#F5E642′ : '#1e3a5f', background: hasPool === v ? '#F5E642' : ’transparent', color: hasPool === v ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
                 {v ? '✅ Yes' : '❌ No'}
               </button>
             ))}
@@ -76,7 +76,7 @@ export default function DFWSummerSurvivalGuide2026() {
           <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>☀️ Do you have solar panels?</div>
           <div style={{ display: 'flex', gap: '0.75rem' }}>
             {[true, false].map(v => (
-              <button key={String(v)} onClick={() => setHasSolar(v)} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: hasSolar === v ? '#F5E642' : '#1e3a5f', background: hasSolar === v ? '#F5E642' : 'transparent', color: hasSolar === v ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={String(v)} onClick={() => setHasSolar(v)} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: hasSolar === v ? '#F5E642′ : '#1e3a5f', background: hasSolar === v ? '#F5E642' : ’transparent', color: hasSolar === v ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
                 {v ? '✅ Yes' : '❌ No'}
               </button>
             ))}

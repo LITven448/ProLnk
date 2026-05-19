@@ -92,7 +92,7 @@ export default function FirstTimeBuyerMistakesGuide() {
 
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0′ }}>
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 36, marginBottom: 16 }}>🏠</div>
           <h1 style={{ fontSize: 'clamp(26px,4vw,42px)', fontWeight: 800, color: '#f1f5f9', margin: '0 0 16px', lineHeight: 1.15 }}>
@@ -122,7 +122,7 @@ export default function FirstTimeBuyerMistakesGuide() {
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
                   <div style={{
                     width: 28, height: 28, borderRadius: 6,
-                    background: isChecked ? '#ef4444' : '#0f172a',
+                    background: isChecked ? '#ef4444′ : '#0f172a',
                     border: `2px solid ${isChecked ? '#ef4444' : '#475569'}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexShrink: 0, marginTop: 2, fontSize: 16, color: '#fff',
@@ -132,7 +132,7 @@ export default function FirstTimeBuyerMistakesGuide() {
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                       <span style={{ fontSize: 13, color: '#64748b', fontWeight: 700 }}>#{m.id}</span>
-                      <span style={{ fontWeight: 700, fontSize: 16, color: '#f1f5f9' }}>{m.title}</span>
+                      <span style={{ fontWeight: 700, fontSize: 16, color: '#f1f5f9′ }}>{m.title}</span>
                     </div>
                     <p style={{ color: '#94a3b8', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{m.detail}</p>
                   </div>
@@ -158,7 +158,7 @@ export default function FirstTimeBuyerMistakesGuide() {
         )}
 
         {showResults && checked.size > 0 && (
-          <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 48, border: '1px solid #334155' }}>
+          <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 48, border: '1px solid #334155′ }}>
             <h2 style={{ color: '#f1f5f9', fontSize: 20, fontWeight: 800, margin: '0 0 24px' }}>
               📋 Your Personalized Recovery Plan
             </h2>
@@ -175,7 +175,7 @@ export default function FirstTimeBuyerMistakesGuide() {
               {checked.has(10) && (
                 <div style={{ background: '#0f172a', borderRadius: 10, padding: 16, marginTop: 12 }}>
                   <span style={{ color: '#3b82f6', fontWeight: 700 }}>TrustyPro Tip: </span>
-                  <span style={{ color: '#94a3b8' }}>Mistake #10 is the one most buyers can't undo. Once your option period expires, you own whatever the inspector missed. Join the waitlist before your next purchase.</span>
+                  <span style={{ color: '#94a3b8′ }}>Mistake #10 is the one most buyers can’t undo. Once your option period expires, you own whatever the inspector missed. Join the waitlist before your next purchase.</span>
                 </div>
               )}
             </div>

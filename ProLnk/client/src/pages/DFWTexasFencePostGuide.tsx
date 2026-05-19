@@ -11,10 +11,10 @@ const recs: Record<string, Record<string, { post: string; depth: string; cost: s
     Severe: { post: '6x6 Cedar w/ helical anchor', depth: '42 inches', cost: '$30-45/post' },
   },
   'Chain Link': {
-    Light: { post: '2" steel pipe', depth: '36 inches', cost: '$10-14/post' },
-    Moderate: { post: '2" steel w/ concrete', depth: '38 inches', cost: '$14-20/post' },
-    Heavy: { post: '2.5" steel w/ concrete', depth: '40 inches', cost: '$20-28/post' },
-    Severe: { post: '2.5" steel w/ helical', depth: '42 inches', cost: '$35-50/post' },
+    Light: { post: '2″ steel pipe', depth: '36 inches', cost: '$10-14/post' },
+    Moderate: { post: '2″ steel w/ concrete', depth: '38 inches', cost: '$14-20/post' },
+    Heavy: { post: '2.5″ steel w/ concrete', depth: '40 inches', cost: '$20-28/post' },
+    Severe: { post: '2.5″ steel w/ helical', depth: '42 inches', cost: '$35-50/post' },
   },
   'Ornamental Iron': {
     Light: { post: 'Standard steel', depth: '36 inches', cost: '$15-22/post' },

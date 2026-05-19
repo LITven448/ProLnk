@@ -90,23 +90,23 @@ export default function DFWTopContractorQuestions() {
           {(Object.keys(tradeData) as Trade[]).map(t => (
             <button key={t} onClick={() => { setTrade(t); setRevealed({}); }} style={{
               padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-              background: trade === t ? '#F5E642' : '#111f3a', color: trade === t ? '#0A1628' : '#94a3b8',
+              background: trade === t ? '#F5E642′ : '#111f3a', color: trade === t ? '#0A1628' : '#94a3b8',
             }}>{t}</button>
           ))}
         </div>
 
         {data && (
           <>
-            <div style={{ background: '#111f3a', borderRadius: 8, padding: '10px 16px', marginBottom: 20, fontSize: 13, color: '#F5E642' }}>
+            <div style={{ background: '#111f3a', borderRadius: 8, padding: '10px 16px', marginBottom: 20, fontSize: 13, color: '#F5E642′ }}>
               📋 License to verify: <strong>{data.license}</strong>
             </div>
             {data.questions.map((item, i) => (
               <div key={i} style={{ background: '#111f3a', borderRadius: 10, padding: '14px 16px', marginBottom: 10 }}>
                 <p style={{ margin: '0 0 8px', fontSize: 14, fontWeight: 600 }}>
-                  <span style={{ color: '#F5E642' }}>{i + 1}.</span> {item.q}
+                  <span style={{ color: '#F5E642′ }}>{i + 1}.</span> {item.q}
                 </p>
                 <button onClick={() => setRevealed(r => ({ ...r, [i]: !r[i] }))}
-                  style={{ padding: '5px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontSize: 12, background: '#1e3a5f', color: '#94a3b8' }}>
+                  style={{ padding: '5px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontSize: 12, background: '#1e3a5f', color: '#94a3b8′ }}>
                   {revealed[i] ? '▲ Hide answer' : '▼ What a good answer sounds like'}
                 </button>
                 {revealed[i] && (

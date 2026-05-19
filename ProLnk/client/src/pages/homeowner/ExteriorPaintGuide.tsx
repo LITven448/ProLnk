@@ -24,7 +24,7 @@ export default function ExteriorPaintGuide() {
   const calculate = () => {
     const area = parseInt(sqft) || 0;
     if (!area) return;
-    const storyMult = stories === '2' ? 1.35 : stories === '3+' ? 1.6 : 1;
+    const storyMult = stories === '2′ ? 1.35 : stories === '3+' ? 1.6 : 1;
     const prepMult = prep === 'minimal' ? 0.85 : prep === 'standard' ? 1 : 1.3;
     const base = area * 2.5;
     const low = Math.round(base * storyMult * prepMult * 0.85 / 50) * 50;
@@ -51,7 +51,7 @@ export default function ExteriorPaintGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ background: '#1e2d45' }}>
+                <tr style={{ background: '#1e2d45′ }}>
                   {['Brand', 'Type', 'Heat Rating', 'UV Resistance', 'Price/Gal', 'Best For'].map(h => (
                     <th key={h} style={{ padding: '0.75rem 0.8rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #2d3f58', fontSize: '0.85rem' }}>{h}</th>
                   ))}
@@ -59,7 +59,7 @@ export default function ExteriorPaintGuide() {
               </thead>
               <tbody>
                 {paints.map((p, i) => (
-                  <tr key={p.brand} style={{ background: i % 2 === 0 ? '#111f36' : '#0A1628' }}>
+                  <tr key={p.brand} style={{ background: i % 2 === 0 ? '#111f36′ : '#0A1628' }}>
                     <td style={{ padding: '0.75rem 0.8rem', color: '#fff', fontWeight: 600, fontSize: '0.85rem' }}>{p.brand}</td>
                     <td style={{ padding: '0.75rem 0.8rem', color: '#cbd5e1', fontSize: '0.8rem' }}>{p.type}</td>
                     <td style={{ padding: '0.75rem 0.8rem', fontSize: '0.85rem' }}>{p.heatRating}</td>
@@ -137,15 +137,15 @@ export default function ExteriorPaintGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
               <div>
                 <label style={{ color: '#cbd5e1', display: 'block', marginBottom: '0.4rem', fontSize: '0.9rem' }}>Home size (sq ft):</label>
-                <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2000"
+                <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2000″
                   style={{ background: '#0A1628', border: '1px solid #2d3f58', borderRadius: '6px', padding: '0.5rem', color: '#fff', width: '100%' }} />
               </div>
               <div>
                 <label style={{ color: '#cbd5e1', display: 'block', marginBottom: '0.4rem', fontSize: '0.9rem' }}>Stories:</label>
                 <select value={stories} onChange={e => setStories(e.target.value)}
                   style={{ background: '#0A1628', border: '1px solid #2d3f58', borderRadius: '6px', padding: '0.5rem', color: '#fff', width: '100%' }}>
-                  <option value="1">1 story</option>
-                  <option value="2">2 stories</option>
+                  <option value="1″>1 story</option>
+                  <option value="2″>2 stories</option>
                   <option value="3+">3+ stories</option>
                 </select>
               </div>

@@ -67,7 +67,7 @@ export default function DFWHVACSystemTypesSummary() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>❄️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW HVAC System Types</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW HVAC System Types</h1>
           <p style={{ color: '#8899AA', fontSize: '1rem' }}>Final comparison of all system options for the Dallas-Fort Worth climate</p>
         </div>
 
@@ -75,11 +75,11 @@ export default function DFWHVACSystemTypesSummary() {
           {systems.map(s => (
             <div key={s.id} style={{ background: recommended === s.id ? '#1a2f1a' : '#0D1F35', border: `2px solid ${recommended === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem' }}>
               <div style={{ fontSize: '1.8rem' }}>{s.icon}</div>
-              <h3 style={{ color: recommended === s.id ? '#F5E642' : '#fff', margin: '0.5rem 0 0.25rem' }}>{s.name}</h3>
+              <h3 style={{ color: recommended === s.id ? '#F5E642′ : '#fff', margin: '0.5rem 0 0.25rem' }}>{s.name}</h3>
               {recommended === s.id && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: '0.7rem', fontWeight: 700, padding: '2px 8px', borderRadius: 20 }}>RECOMMENDED</span>}
               <p style={{ color: '#F5E642', fontSize: '0.85rem', margin: '0.5rem 0 0.25rem' }}>{s.cost}</p>
               <p style={{ color: '#8899AA', fontSize: '0.8rem', margin: 0 }}>SEER2: {s.seer2}</p>
-              <p style={{ color: '#AAB8C2', fontSize: '0.8rem', margin: '0.5rem 0' }}>{s.notes}</p>
+              <p style={{ color: '#AAB8C2', fontSize: '0.8rem', margin: '0.5rem 0′ }}>{s.notes}</p>
             </div>
           ))}
         </div>
@@ -106,9 +106,9 @@ export default function DFWHVACSystemTypesSummary() {
             </div>
           </div>
           {recommended && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#F5E642', fontWeight: 700, margin: 0 }}>Recommended: {systems.find(s => s.id === recommended)?.name}</p>
-              <p style={{ color: '#AAB8C2', fontSize: '0.85rem', margin: '0.25rem 0 0' }}>{systems.find(s => s.id === recommended)?.bestFor}</p>
+              <p style={{ color: '#AAB8C2', fontSize: '0.85rem', margin: '0.25rem 0 0′ }}>{systems.find(s => s.id === recommended)?.bestFor}</p>
             </div>
           )}
         </div>

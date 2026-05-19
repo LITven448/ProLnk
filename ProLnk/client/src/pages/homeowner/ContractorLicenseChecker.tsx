@@ -61,15 +61,15 @@ export default function ContractorLicenseChecker() {
 
   return (
     <HomeownerLayout>
-      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-12">
+      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-12″>
         <div className="max-w-4xl mx-auto">
 
-          <div className="mb-10">
-            <h1 className="text-4xl font-bold text-white mb-2">Contractor License Checker</h1>
+          <div className="mb-10″>
+            <h1 className="text-4xl font-bold text-white mb-2″>Contractor License Checker</h1>
             <p className="text-[#64B5F6] text-lg">Verify before you sign</p>
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-10">
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-10″>
             <p className="text-gray-300 text-base leading-relaxed">
               In Texas,{' '}
               <span className="text-[#EF4444] font-semibold">73% of home improvement fraud</span>{' '}
@@ -78,16 +78,16 @@ export default function ContractorLicenseChecker() {
             </p>
           </div>
 
-          <h2 className="text-2xl font-semibold text-white mb-6">Texas License Types by Trade</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+          <h2 className="text-2xl font-semibold text-white mb-6″>Texas License Types by Trade</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12″>
             {licenseTypes.map(lt => (
               <div
                 key={lt.trade}
-                className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-5"
+                className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-5″
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-3″>
                   <div
-                    className="w-2 h-10 rounded-full flex-shrink-0"
+                    className="w-2 h-10 rounded-full flex-shrink-0″
                     style={{ backgroundColor: lt.color }}
                   />
                   <div>
@@ -100,9 +100,9 @@ export default function ContractorLicenseChecker() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-400 text-sm mb-3">{lt.detail}</p>
+                <p className="text-gray-400 text-sm mb-3″>{lt.detail}</p>
                 <div className="flex items-center gap-2 text-sm">
-                  <span className="text-gray-500">Verify at:</span>
+                  <span className="text-gray-500″>Verify at:</span>
                   {lt.verifyUrl ? (
                     <a
                       href={lt.verifyUrl}
@@ -120,13 +120,13 @@ export default function ContractorLicenseChecker() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-semibold text-white mb-4">Red Flag Checklist</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4″>Red Flag Checklist</h2>
           <p className="text-gray-400 mb-6 text-sm">
             Check any red flags you noticed. If you check 2 or more, walk away.
           </p>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-6">
-            <div className="space-y-4">
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-6″>
+            <div className="space-y-4″>
               {redFlags.map((flag, i) => (
                 <label
                   key={i}
@@ -141,8 +141,8 @@ export default function ContractorLicenseChecker() {
                     }`}
                   >
                     {checked[i] && (
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24″ stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12″ />
                       </svg>
                     )}
                   </div>
@@ -154,7 +154,7 @@ export default function ContractorLicenseChecker() {
             </div>
 
             {flagCount >= 2 && (
-              <div className="mt-6 bg-[#EF4444]/10 border border-[#EF4444]/30 rounded-xl p-4">
+              <div className="mt-6 bg-[#EF4444]/10 border border-[#EF4444]/30 rounded-xl p-4″>
                 <p className="text-[#EF4444] font-semibold text-sm">
                   ⚠ {flagCount} red flags detected — we strongly recommend finding a different contractor.
                 </p>
@@ -162,7 +162,7 @@ export default function ContractorLicenseChecker() {
             )}
 
             {flagCount === 0 && (
-              <div className="mt-6 bg-[#10B981]/10 border border-[#10B981]/30 rounded-xl p-4">
+              <div className="mt-6 bg-[#10B981]/10 border border-[#10B981]/30 rounded-xl p-4″>
                 <p className="text-[#10B981] font-semibold text-sm">
                   No red flags checked — good sign. Still verify their license before signing anything.
                 </p>
@@ -171,10 +171,10 @@ export default function ContractorLicenseChecker() {
           </div>
 
           <div className="bg-gradient-to-r from-[#0D1F3C] to-[#1E3A5F] border border-[#2D6A4F] rounded-2xl p-8 text-center">
-            <div className="text-[#10B981] text-sm font-semibold uppercase tracking-widest mb-3">
+            <div className="text-[#10B981] text-sm font-semibold uppercase tracking-widest mb-3″>
               Skip the verification hassle
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">
+            <h3 className="text-2xl font-bold text-white mb-3″>
               All TrustyPro Partners Are Pre-Verified
             </h3>
             <p className="text-gray-400 mb-6 max-w-lg mx-auto text-sm">

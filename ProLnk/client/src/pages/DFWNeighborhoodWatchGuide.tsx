@@ -91,9 +91,9 @@ export default function DFWNeighborhoodWatchGuide() {
               <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
                 <h3 style={{ color: '#F5E642', marginBottom: 12 }}>🚔 {suburb} Police Resources</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                  <div style={{ color: '#AAB8C2' }}>📞 <strong>Contact:</strong> {resource.phone}</div>
-                  <div style={{ color: '#AAB8C2' }}>🌐 <strong>Site:</strong> {resource.tip}</div>
-                  <div style={{ color: '#AAB8C2', gridColumn: '1 / -1' }}>🤝 <strong>Program:</strong> {resource.program}</div>
+                  <div style={{ color: '#AAB8C2′ }}>📞 <strong>Contact:</strong> {resource.phone}</div>
+                  <div style={{ color: '#AAB8C2′ }}>🌐 <strong>Site:</strong> {resource.tip}</div>
+                  <div style={{ color: '#AAB8C2', gridColumn: '1 / -1′ }}>🤝 <strong>Program:</strong> {resource.program}</div>
                 </div>
               </div>
             )}
@@ -102,17 +102,17 @@ export default function DFWNeighborhoodWatchGuide() {
               {guide.steps.map((s, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1E3A5F' }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 24 }}>0{i + 1}</span>
-                  <span style={{ color: '#AAB8C2' }}>{s}</span>
+                  <span style={{ color: '#AAB8C2′ }}>{s}</span>
                 </div>
               ))}
             </div>
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>📱 Technology Tools</h3>
-              {guide.tech.map(t => <div key={t} style={{ color: '#AAB8C2', padding: '6px 0' }}>✅ {t}</div>)}
+              {guide.tech.map(t => <div key={t} style={{ color: '#AAB8C2', padding: '6px 0′ }}>✅ {t}</div>)}
             </div>
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 8 }}>🚶 Patrol Level</h3>
-              <p style={{ color: '#AAB8C2' }}>{guide.patrol}</p>
+              <p style={{ color: '#AAB8C2′ }}>{guide.patrol}</p>
             </div>
           </>
         )}

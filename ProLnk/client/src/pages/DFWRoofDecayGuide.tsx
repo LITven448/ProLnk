@@ -19,7 +19,7 @@ function getDecayAssessment(condition: string, age: string) {
   if (condition === 'Visible dark staining / mold on underside') {
     return {
       likelihood: old ? 'HIGH' : 'MODERATE',
-      color: old ? '#FF4444' : '#FF8C00',
+      color: old ? '#FF4444′ : '#FF8C00',
       detail: 'Dark staining from the attic side means moisture has been cycling through the deck. In DFW, this is often from AC duct leaks, bathroom exhaust venting into attic, or ice dam events during rare freezes.',
       request: 'Fix the moisture source first. Then have contractor assess deck integrity before re-roofing. Staining alone ≠ replacement — probing determines actual integrity.',
       cost: 'Moisture source repair: $200–$2,000 depending on cause. Deck replacement if needed: same as above.',
@@ -31,7 +31,7 @@ function getDecayAssessment(condition: string, age: string) {
       color: '#FF8C00',
       detail: 'Partial deck replacement is normal and cost-effective in DFW re-roofing. Contractors typically discover failures once old shingles are removed.',
       request: 'Request itemized breakdown: how many sheets, exact location, why each is being replaced. Get photos before new shingles go on.',
-      cost: '7/16" OSB: ~$35–$55/sheet installed. Plywood: $50–$80/sheet installed. Average re-roof adds $500–$2,500 in deck repairs.',
+      cost: '7/16″ OSB: ~$35–$55/sheet installed. Plywood: $50–$80/sheet installed. Average re-roof adds $500–$2,500 in deck repairs.',
     };
   }
   if (condition === 'Sheathing edges crumbling at eaves') {
@@ -45,7 +45,7 @@ function getDecayAssessment(condition: string, age: string) {
   }
   return {
     likelihood: old ? 'MODERATE' : mid ? 'LOW–MODERATE' : 'LOW',
-    color: old ? '#F5E642' : '#00CC66',
+    color: old ? '#F5E642′ : '#00CC66',
     detail: old
       ? 'At 15–20+ years, DFW roof decks — especially OSB — are nearing end of expected life. Even without visible issues, ask your roofer to assess deck integrity during your next inspection.'
       : 'No visible deck issues. DFW\’s climate is harsh but quality OSB lasts 20–30 years with proper ventilation and dry conditions.',
@@ -82,7 +82,7 @@ export default function DFWRoofDecayGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>🔍 Deck Decay Assessment</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#8899BB', fontSize: 13, marginBottom: 8 }}>Deck condition observed</label>

@@ -63,11 +63,11 @@ export default function DFWOzoneAlertGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>🔍 What To Do On Ozone Alert Days</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {ozoneGuide.map(g => (
-              <button key={g.activity} onClick={() => setActivity(g.activity)} style={{ padding: '7px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: activity === g.activity ? '#F5E642' : '#162842', color: activity === g.activity ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{g.icon} {g.activity}</button>
+              <button key={g.activity} onClick={() => setActivity(g.activity)} style={{ padding: '7px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: activity === g.activity ? '#F5E642′ : '#162842', color: activity === g.activity ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{g.icon} {g.activity}</button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result.guidance}</div>
             </div>
@@ -75,7 +75,7 @@ export default function DFWOzoneAlertGuide2026() {
         </div>
 
         <div style={{ background: '#0F2137', borderRadius: 12, padding: 20 }}>
-          <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6, margin: 0 }}>Sign up for NCTCOG DFW Ozone alerts at <span style={{ color: '#F5E642' }}>airnow.gov</span>. ProLnk's Home Health Vault tracks your HVAC filter replacement dates — clean filters are critical on high-ozone days.</p>
+          <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6, margin: 0 }}>Sign up for NCTCOG DFW Ozone alerts at <span style={{ color: '#F5E642′ }}>airnow.gov</span>. ProLnk’s Home Health Vault tracks your HVAC filter replacement dates — clean filters are critical on high-ozone days.</p>
         </div>
       </div>
     </div>

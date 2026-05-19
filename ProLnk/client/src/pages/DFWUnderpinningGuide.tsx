@@ -61,7 +61,7 @@ export default function DFWUnderpinningGuide() {
                 { label: '💰 Cost Per Pier', value: p.cost },
               ].map(({ label, value }) => (
                 <div key={label} style={{ marginBottom: 8 }}>
-                  <div style={{ fontSize: 12, color: '#94a3b8' }}>{label}</div>
+                  <div style={{ fontSize: 12, color: '#94a3b8′ }}>{label}</div>
                   <div style={{ fontSize: 13 }}>{value}</div>
                 </div>
               ))}
@@ -100,7 +100,7 @@ export default function DFWUnderpinningGuide() {
                 { label: '🛡️ Typical Warranty', value: result.warranty },
                 { label: '⏱️ Install Time', value: '1–3 days typical' },
               ].map(({ label, value }) => (
-                <div key={label} style={{ padding: 12, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642' }}>
+                <div key={label} style={{ padding: 12, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642′ }}>
                   <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 4 }}>{label}</div>
                   <div style={{ fontSize: 13, fontWeight: 600 }}>{value}</div>
                 </div>
@@ -110,9 +110,9 @@ export default function DFWUnderpinningGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📍 DFW Underpinning Facts</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📍 DFW Underpinning Facts</div>
           {['DFW clay requires piers to reach stable Austin Chalk limestone — typically 20–30 ft', 'Always get 3 quotes; pricing varies significantly by company and access conditions', 'Warranty transferability is valuable — ask specifically when selling your home', 'City permits required in most DFW municipalities for foundation repair'].map(f => (
-            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1' }}>• {f}</div>
+            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1′ }}>• {f}</div>
           ))}
         </div>
       </div>

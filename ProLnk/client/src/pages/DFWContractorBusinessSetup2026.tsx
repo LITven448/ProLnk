@@ -64,19 +64,19 @@ export default function DFWContractorBusinessSetup2026() {
   const toggleCheck = (key: string) => setChecked(prev => ({ ...prev, [key]: !prev[key] }));
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0A1628", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#0A1628″, color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🏢</div>
-          <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#F5E642", marginBottom: "0.5rem" }}>DFW Contractor Business Setup Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>LLC filing, banking, bookkeeping, and getting your first ProLnk leads</p>
+          <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#F5E642″, marginBottom: "0.5rem" }}>DFW Contractor Business Setup Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>LLC filing, banking, bookkeeping, and getting your first ProLnk leads</p>
         </div>
 
-        <div style={{ backgroundColor: "#0F2040", borderRadius: "12px", padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642", marginBottom: "1rem" }}>📍 Where is your business right now?</h2>
+        <div style={{ backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642″, marginBottom: "1rem" }}>📍 Where is your business right now?</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.75rem" }}>
             {stages.map(s => (
-              <button key={s.id} onClick={() => setStage(s.id)} style={{ backgroundColor: stage === s.id ? "#F5E642" : "#162035", color: stage === s.id ? "#0A1628" : "#fff", border: "2px solid", borderColor: stage === s.id ? "#F5E642" : "#1e3a5f", borderRadius: "8px", padding: "0.75rem", fontWeight: 600, cursor: "pointer", textAlign: "left", fontSize: "0.9rem" }}>
+              <button key={s.id} onClick={() => setStage(s.id)} style={{ backgroundColor: stage === s.id ? "#F5E642″ : "#162035", color: stage === s.id ? "#0A1628" : "#fff", border: "2px solid", borderColor: stage === s.id ? "#F5E642" : "#1e3a5f", borderRadius: "8px", padding: "0.75rem", fontWeight: 600, cursor: "pointer", textAlign: "left", fontSize: "0.9rem" }}>
                 {s.label}
               </button>
             ))}
@@ -84,25 +84,25 @@ export default function DFWContractorBusinessSetup2026() {
         </div>
 
         {selected && (
-          <div style={{ backgroundColor: "#0F2040", borderRadius: "12px", padding: "1.5rem", border: "2px solid #F5E642" }}>
-            <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642", marginBottom: "1.25rem" }}>✅ {selected.title} — Setup Checklist</h2>
+          <div style={{ backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1.5rem", border: "2px solid #F5E642" }}>
+            <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642″, marginBottom: "1.25rem" }}>✅ {selected.title} — Setup Checklist</h2>
             {selected.items.map((item, i) => {
               const key = `${selected.id}-${i}`;
               return (
                 <div key={key} onClick={() => toggleCheck(key)} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.75rem", alignItems: "flex-start", cursor: "pointer" }}>
-                  <div style={{ width: "22px", height: "22px", borderRadius: "4px", border: "2px solid", borderColor: checked[key] ? "#F5E642" : "#1e3a5f", backgroundColor: checked[key] ? "#F5E642" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
-                    {checked[key] && <span style={{ color: "#0A1628", fontWeight: 900, fontSize: "14px" }}>✓</span>}
+                  <div style={{ width: "22px", height: "22px", borderRadius: "4px", border: "2px solid", borderColor: checked[key] ? "#F5E642″ : "#1e3a5f", backgroundColor: checked[key] ? "#F5E642" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
+                    {checked[key] && <span style={{ color: "#0A1628″, fontWeight: 900, fontSize: "14px" }}>✓</span>}
                   </div>
-                  <span style={{ color: checked[key] ? "#64748b" : "#cbd5e1", fontSize: "0.9rem", lineHeight: 1.5, textDecoration: checked[key] ? "line-through" : "none" }}>{item.task}</span>
+                  <span style={{ color: checked[key] ? "#64748b" : "#cbd5e1″, fontSize: "0.9rem", lineHeight: 1.5, textDecoration: checked[key] ? "line-through" : "none" }}>{item.task}</span>
                 </div>
               );
             })}
           </div>
         )}
 
-        <div style={{ marginTop: "2rem", backgroundColor: "#0F2040", borderRadius: "12px", padding: "1.25rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
-          <p style={{ color: "#94a3b8", marginBottom: "0.5rem", fontSize: "0.9rem" }}>Business set up? Start getting DFW leads on day one</p>
-          <p style={{ color: "#F5E642", fontWeight: 700, fontSize: "1rem" }}>🏢 Join ProLnk — Your first DFW lead could come within 24 hours of verification</p>
+        <div style={{ marginTop: "2rem", backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1.25rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
+          <p style={{ color: "#94a3b8″, marginBottom: "0.5rem", fontSize: "0.9rem" }}>Business set up? Start getting DFW leads on day one</p>
+          <p style={{ color: "#F5E642″, fontWeight: 700, fontSize: "1rem" }}>🏢 Join ProLnk — Your first DFW lead could come within 24 hours of verification</p>
         </div>
       </div>
     </div>

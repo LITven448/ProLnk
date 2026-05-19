@@ -33,7 +33,7 @@ export default function DFWFoundationEarlyWarning2026() {
           </p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 8px' }}>📅 Monthly Monitoring Habits</h2>
           <ul style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.8, margin: 0, paddingLeft: 18 }}>
             <li>Walk perimeter after heavy rain — look for new soil separation</li>
@@ -72,7 +72,7 @@ export default function DFWFoundationEarlyWarning2026() {
             <p style={{ color: '#CBD5E1', fontSize: 14, margin: 0 }}>{active.note}</p>
             <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 8, padding: 12 }}>
               <p style={{ color: '#94A3B8', fontSize: 12, margin: 0 }}>
-                💡 Early intervention (catching this sign now) typically saves <strong style={{ color: '#F5E642' }}>$5,000–$18,000</strong> vs waiting for structural failure.
+                💡 Early intervention (catching this sign now) typically saves <strong style={{ color: '#F5E642′ }}>$5,000–$18,000</strong> vs waiting for structural failure.
               </p>
             </div>
           </div>

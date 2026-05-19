@@ -38,22 +38,22 @@ const PORTFOLIO_RANGES = [
 
 const BENEFITS = [
   {
-    icon: <Building2 className="w-5 h-5 text-blue-400" />,
+    icon: <Building2 className="w-5 h-5 text-blue-400″ />,
     title: "Commercial-Grade Network",
     desc: "Connect with GCs, property managers, and facility directors — not homeowners",
   },
   {
-    icon: <DollarSign className="w-5 h-5 text-emerald-400" />,
+    icon: <DollarSign className="w-5 h-5 text-emerald-400″ />,
     title: "Higher Job Values",
     desc: "Commercial jobs average $50K–$500K. Commission rates scale with job size.",
   },
   {
-    icon: <Shield className="w-5 h-5 text-purple-400" />,
+    icon: <Shield className="w-5 h-5 text-purple-400″ />,
     title: "Verified Commercial Roster",
     desc: "Every contractor is vetted for commercial licensing, bonding, and insurance",
   },
   {
-    icon: <TrendingUp className="w-5 h-5 text-amber-400" />,
+    icon: <TrendingUp className="w-5 h-5 text-amber-400″ />,
     title: "Pipeline Intelligence",
     desc: "AI-driven project pipeline alerts — know about commercial jobs before they're bid",
   },
@@ -61,7 +61,7 @@ const BENEFITS = [
 
 const FEATURE_SECTIONS = [
   {
-    icon: <Building2 className="w-6 h-6 text-blue-400" />,
+    icon: <Building2 className="w-6 h-6 text-blue-400″ />,
     title: "Commercial Network",
     desc: "Access a vetted roster of contractors built specifically for $50K+ commercial engagements. Every partner carries commercial licensing, bonding, and general liability — no residential-only operators.",
     bullets: [
@@ -71,7 +71,7 @@ const FEATURE_SECTIONS = [
     ],
   },
   {
-    icon: <Zap className="w-6 h-6 text-amber-400" />,
+    icon: <Zap className="w-6 h-6 text-amber-400″ />,
     title: "Pipeline Intelligence",
     desc: "AI-powered alerts surface commercial job opportunities before they hit public bid boards. Know about upcoming projects when they're still in planning — before the competition.",
     bullets: [
@@ -81,7 +81,7 @@ const FEATURE_SECTIONS = [
     ],
   },
   {
-    icon: <BarChart3 className="w-6 h-6 text-emerald-400" />,
+    icon: <BarChart3 className="w-6 h-6 text-emerald-400″ />,
     title: "Property Portfolio Management",
     desc: "Track maintenance history, upcoming service dates, and vendor performance across every property in your portfolio. One dashboard for all your assets.",
     bullets: [
@@ -129,25 +129,25 @@ export default function ProLnkExchangeCommercial() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
-        <div className="max-w-md w-full text-center space-y-6">
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4″>
+        <div className="max-w-md w-full text-center space-y-6″>
           <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto">
-            <CheckCircle className="w-10 h-10 text-emerald-400" />
+            <CheckCircle className="w-10 h-10 text-emerald-400″ />
           </div>
           <h2 className="text-2xl font-bold text-white">You're on the List</h2>
-          <p className="text-gray-400">
+          <p className="text-gray-400″>
             We're building the ProLnk Exchange commercial network carefully — vetting every contractor
             before launch. We'll contact you at <strong className="text-white">{form.contactEmail}</strong> when
             your spot is ready.
           </p>
-          <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 text-left space-y-2">
+          <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 text-left space-y-2″>
             <p className="text-xs text-gray-500 uppercase tracking-wide font-semibold">What happens next</p>
             {[
               "We review your application and verify your commercial credentials",
               "You receive an invite link with your contractor profile setup",
               "You're matched with commercial jobs in your service area",
             ].map((step, i) => (
-              <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+              <div key={i} className="flex items-start gap-2 text-sm text-gray-300″>
                 <span className="w-5 h-5 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">{i + 1}</span>
                 {step}
               </div>
@@ -159,27 +159,27 @@ export default function ProLnkExchangeCommercial() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-gray-950″>
       {/* Hero */}
       <div className="bg-gradient-to-br from-blue-950 via-gray-950 to-gray-950 px-4 py-16 text-center">
-        <Badge className="bg-blue-900/50 text-blue-300 border-blue-700 mb-4">Commercial — Separate from Residential</Badge>
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <Badge className="bg-blue-900/50 text-blue-300 border-blue-700 mb-4″>Commercial — Separate from Residential</Badge>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4″>
           ProLnk Exchange<br />
-          <span className="text-blue-400">Commercial Network</span>
+          <span className="text-blue-400″>Commercial Network</span>
         </h1>
         <p className="text-gray-400 max-w-xl mx-auto text-lg">
           The referral network for commercial contractors — GCs, property managers, and facility directors
           connecting on high-value commercial projects.
         </p>
-        <div className="flex items-center justify-center gap-6 mt-6 text-sm text-gray-500">
-          <span className="flex items-center gap-1"><Users className="w-4 h-4" /> Commercial Only</span>
-          <span className="flex items-center gap-1"><DollarSign className="w-4 h-4" /> $50K+ avg job</span>
-          <span className="flex items-center gap-1"><Shield className="w-4 h-4" /> Vetted Contractors</span>
+        <div className="flex items-center justify-center gap-6 mt-6 text-sm text-gray-500″>
+          <span className="flex items-center gap-1″><Users className="w-4 h-4" /> Commercial Only</span>
+          <span className="flex items-center gap-1″><DollarSign className="w-4 h-4" /> $50K+ avg job</span>
+          <span className="flex items-center gap-1″><Shield className="w-4 h-4" /> Vetted Contractors</span>
         </div>
       </div>
 
       {/* Social Proof Numbers */}
-      <div className="border-y border-gray-800 py-8">
+      <div className="border-y border-gray-800 py-8″>
         <div className="max-w-3xl mx-auto px-4 grid grid-cols-3 gap-6 text-center">
           {[
             { value: "$50K+", label: "avg commercial job" },
@@ -188,26 +188,26 @@ export default function ProLnkExchangeCommercial() {
           ].map((s) => (
             <div key={s.label}>
               <p className="text-2xl font-bold text-white">{s.value}</p>
-              <p className="text-xs text-gray-500 mt-1">{s.label}</p>
+              <p className="text-xs text-gray-500 mt-1″>{s.label}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Feature Sections */}
-      <div className="max-w-4xl mx-auto px-4 py-16 space-y-16">
+      <div className="max-w-4xl mx-auto px-4 py-16 space-y-16″>
         {FEATURE_SECTIONS.map((section, i) => (
           <div key={i} className={`flex flex-col md:flex-row gap-8 items-start ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-            <div className="flex-1">
-              <div className="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center mb-4">
+            <div className="flex-1″>
+              <div className="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center mb-4″>
                 {section.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{section.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">{section.desc}</p>
-              <ul className="space-y-2">
+              <h3 className="text-xl font-bold text-white mb-3″>{section.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4″>{section.desc}</p>
+              <ul className="space-y-2″>
                 {section.bullets.map((b, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <li key={j} className="flex items-start gap-2 text-sm text-gray-300″>
+                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5″ />
                     {b}
                   </li>
                 ))}
@@ -223,17 +223,17 @@ export default function ProLnkExchangeCommercial() {
       </div>
 
       {/* Benefits */}
-      <div className="max-w-5xl mx-auto px-4 pb-12">
-        <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-600 mb-6">Why Commercial Operators Choose ProLnk</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+      <div className="max-w-5xl mx-auto px-4 pb-12″>
+        <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-600 mb-6″>Why Commercial Operators Choose ProLnk</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12″>
           {BENEFITS.map((b, i) => (
-            <div key={i} className="bg-gray-900 border border-gray-700 rounded-xl p-5 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+            <div key={i} className="bg-gray-900 border border-gray-700 rounded-xl p-5 flex items-start gap-4″>
+              <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0″>
                 {b.icon}
               </div>
               <div>
-                <p className="font-semibold text-white text-sm mb-1">{b.title}</p>
-                <p className="text-xs text-gray-400">{b.desc}</p>
+                <p className="font-semibold text-white text-sm mb-1″>{b.title}</p>
+                <p className="text-xs text-gray-400″>{b.desc}</p>
               </div>
             </div>
           ))}
@@ -241,17 +241,17 @@ export default function ProLnkExchangeCommercial() {
 
         {/* Waitlist Form */}
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">Join the Commercial Waitlist</h2>
+          <div className="text-center mb-8″>
+            <h2 className="text-2xl font-bold text-white mb-2″>Join the Commercial Waitlist</h2>
             <p className="text-gray-400 text-sm">
               We're accepting applications now. Spots are limited — commercial network launches Q3 2026.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-gray-900 border border-gray-700 rounded-2xl p-6 space-y-5">
+          <form onSubmit={handleSubmit} className="bg-gray-900 border border-gray-700 rounded-2xl p-6 space-y-5″>
             {/* Business Info */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4″>
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Business Name *</Label>
                 <Input
                   value={form.businessName}
@@ -261,7 +261,7 @@ export default function ProLnkExchangeCommercial() {
                   required
                 />
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Contact Name *</Label>
                 <Input
                   value={form.contactName}
@@ -273,8 +273,8 @@ export default function ProLnkExchangeCommercial() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4″>
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Business Email *</Label>
                 <Input
                   type="email"
@@ -285,22 +285,22 @@ export default function ProLnkExchangeCommercial() {
                   required
                 />
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Phone</Label>
                 <Input
                   type="tel"
                   value={form.contactPhone}
                   onChange={(e) => setForm(f => ({ ...f, contactPhone: e.target.value }))}
-                  placeholder="(214) 555-0100"
+                  placeholder="(214) 555-0100″
                   className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
             </div>
 
             {/* Business Type */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5″>
               <Label className="text-gray-300 text-sm">Primary Trade / Business Type *</Label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2″>
                 {BUSINESS_TYPES.map((type) => (
                   <button
                     key={type}
@@ -308,8 +308,8 @@ export default function ProLnkExchangeCommercial() {
                     onClick={() => setForm(f => ({ ...f, businessType: type }))}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
                       form.businessType === type
-                        ? "bg-blue-600 text-white border-blue-500"
-                        : "bg-gray-800 text-gray-400 border-gray-700 hover:border-blue-500"
+                        ? "bg-blue-600 text-white border-blue-500″
+                        : "bg-gray-800 text-gray-400 border-gray-700 hover:border-blue-500″
                     }`}
                   >
                     {type}
@@ -319,9 +319,9 @@ export default function ProLnkExchangeCommercial() {
             </div>
 
             {/* Portfolio Size */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5″>
               <Label className="text-gray-300 text-sm">Annual Revenue / Portfolio Size *</Label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2″>
                 {PORTFOLIO_RANGES.map((range) => (
                   <button
                     key={range}
@@ -329,8 +329,8 @@ export default function ProLnkExchangeCommercial() {
                     onClick={() => setForm(f => ({ ...f, portfolioSize: range }))}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
                       form.portfolioSize === range
-                        ? "bg-emerald-600 text-white border-emerald-500"
-                        : "bg-gray-800 text-gray-400 border-gray-700 hover:border-emerald-500"
+                        ? "bg-emerald-600 text-white border-emerald-500″
+                        : "bg-gray-800 text-gray-400 border-gray-700 hover:border-emerald-500″
                     }`}
                   >
                     {range}
@@ -340,8 +340,8 @@ export default function ProLnkExchangeCommercial() {
             </div>
 
             {/* Service Area & Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4″>
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Service Area (Cities / Metro)</Label>
                 <Input
                   value={form.serviceArea}
@@ -350,19 +350,19 @@ export default function ProLnkExchangeCommercial() {
                   className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Years in Business</Label>
                 <Input
                   value={form.yearsInBusiness}
                   onChange={(e) => setForm(f => ({ ...f, yearsInBusiness: e.target.value }))}
-                  placeholder="e.g. 12"
+                  placeholder="e.g. 12″
                   className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4″>
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Current Software Used</Label>
                 <Input
                   value={form.currentSoftware}
@@ -371,18 +371,18 @@ export default function ProLnkExchangeCommercial() {
                   className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5″>
                 <Label className="text-gray-300 text-sm">Established Jobs / Month</Label>
                 <Input
                   value={form.establishedJobsPerMonth}
                   onChange={(e) => setForm(f => ({ ...f, establishedJobsPerMonth: e.target.value }))}
-                  placeholder="e.g. 8"
+                  placeholder="e.g. 8″
                   className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
             </div>
 
-            <div className="space-y-1.5">
+            <div className="space-y-1.5″>
               <Label className="text-gray-300 text-sm">Anything else we should know?</Label>
               <Textarea
                 value={form.notes}
@@ -396,10 +396,10 @@ export default function ProLnkExchangeCommercial() {
             <Button
               type="submit"
               disabled={submitWaitlist.isPending}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 flex items-center justify-center gap-2"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 flex items-center justify-center gap-2″
             >
               {submitWaitlist.isPending ? "Submitting..." : (
-                <>Join Commercial Waitlist <ArrowRight className="w-4 h-4" /></>
+                <>Join Commercial Waitlist <ArrowRight className="w-4 h-4″ /></>
               )}
             </Button>
 

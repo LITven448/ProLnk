@@ -107,7 +107,7 @@ export default function DFWHomeResourceFinal() {
           </div>
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem' }}>{need}</span>
                 <span style={{ background: '#1e2d47', color: '#F5E642', padding: '0.25rem 0.75rem', borderRadius: 99, fontSize: '0.8rem' }}>{result.count}</span>
@@ -116,12 +116,12 @@ export default function DFWHomeResourceFinal() {
                 <div style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: '0.5rem' }}>TOP TOOLS IN THIS CATEGORY</div>
                 {result.tools.map((t, i) => (
                   <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', color: '#e2e8f0', fontSize: '0.9rem', marginBottom: '0.35rem' }}>
-                    <span style={{ color: '#F5E642' }}>→</span> {t}
+                    <span style={{ color: '#F5E642′ }}>→</span> {t}
                   </div>
                 ))}
               </div>
               <div style={{ borderTop: '1px solid #1e2d47', paddingTop: '0.75rem' }}>
-                <span style={{ color: '#F5E642' }}>⭐ </span>
+                <span style={{ color: '#F5E642′ }}>⭐ </span>
                 <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.highlight}</span>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function DFWHomeResourceFinal() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             {(Object.entries(RESOURCES) as [NeedType, typeof RESOURCES[NeedType]][]).map(([k, v]) => (
               <div key={k} onClick={() => setNeed(k)}
-                style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', border: need === k ? '1px solid #F5E642' : '1px solid transparent' }}>
+                style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', border: need === k ? '1px solid #F5E642′ : '1px solid transparent' }}>
                 <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{k}</div>
                 <div style={{ color: '#64748b', fontSize: '0.8rem' }}>{v.count}</div>
               </div>

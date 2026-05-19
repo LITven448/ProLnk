@@ -59,7 +59,7 @@ export default function DFWCostOfOwnershipGuide() {
   const year10OwnerNet = year10OwnerCost - year10Equity;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '48px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36 }}>🏠</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '12px 0 8px' }}>
@@ -71,9 +71,9 @@ export default function DFWCostOfOwnershipGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px' }}>
-        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
           <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>💡 Hidden Costs First-Timers Miss</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13, color: '#475569' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13, color: '#475569′ }}>
             {['🔧 HVAC service contracts ($200–400/yr)','🌊 Water heater replacement ($800–1,500)','🐜 Pest control ($400–600/yr in DFW)','🌳 Lawn & landscaping ($150–300/mo)','🏊 Pool maintenance ($150–250/mo if applicable)','🔒 Security system ($30–80/mo)','📦 Moving costs ($1,500–5,000)','🔑 Closing costs ($8,000–15,000 upfront)'].map(item => (
               <div key={item} style={{ background: '#fffbeb', padding: '6px 10px', borderRadius: 6 }}>{item}</div>
             ))}
@@ -135,13 +135,13 @@ export default function DFWCostOfOwnershipGuide() {
               ...hiddenCostsList,
             ].map((row, i) => (
               <div key={i} style={{ padding: '10px 16px', display: 'grid', gridTemplateColumns: '1fr auto', fontSize: 14, borderTop: '1px solid #f1f5f9', background: i % 2 === 0 ? '#fff' : '#F9FAFB' }}>
-                <span style={{ color: '#475569' }}>{row.label}</span>
+                <span style={{ color: '#475569′ }}>{row.label}</span>
                 <span style={{ fontWeight: 600 }}>{formatCurrency(row.amount)}/mo</span>
               </div>
             ))}
             <div style={{ padding: '12px 16px', display: 'grid', gridTemplateColumns: '1fr auto', fontSize: 15, fontWeight: 700, borderTop: '2px solid #0A1628', background: '#f8fafc' }}>
               <span>Total Monthly (all-in)</span>
-              <span style={{ color: '#0A1628' }}>{formatCurrency(totalOwningWithOpportunity)}/mo</span>
+              <span style={{ color: '#0A1628′ }}>{formatCurrency(totalOwningWithOpportunity)}/mo</span>
             </div>
           </div>
         </div>

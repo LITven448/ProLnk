@@ -50,7 +50,7 @@ export default function PipeReplacementGuide() {
   const info = !isNaN(yr) && yr >= 1900 && yr <= 2026 ? getPipeInfo(yr) : null;
 
   return (
-    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#f1f5f9' }}>
+    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#f1f5f9′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
@@ -77,20 +77,20 @@ export default function PipeReplacementGuide() {
             <div key={row.era} style={{ display: 'flex', gap: 16, padding: '16px 0', borderBottom: '1px solid #334155', alignItems: 'flex-start' }}>
               <div style={{ minWidth: 110, fontWeight: 700, color: '#cbd5e0', fontSize: 14 }}>{row.era}</div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 4 }}>Supply: <span style={{ color: '#e2e8f0' }}>{row.supply}</span> · Drain: <span style={{ color: '#e2e8f0' }}>{row.drain}</span></div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{row.note}</div>
+                <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 4 }}>Supply: <span style={{ color: '#e2e8f0′ }}>{row.supply}</span> · Drain: <span style={{ color: '#e2e8f0' }}>{row.drain}</span></div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{row.note}</div>
               </div>
               <div style={{ color: row.color, fontWeight: 700, fontSize: 13, minWidth: 110, textAlign: 'right' }}>{row.status}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #f97316' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #f97316′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, color: '#fb923c' }}>
             💧 Hard Water Warning for DFW Homes
           </h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-            DFW's water supply runs 300–500 PPM hardness — among the highest in Texas. This accelerates galvanized pipe corrosion significantly. Homes with galvanized supply lines may see full failure 5–10 years earlier than national averages suggest. If your home was built before 1975 and hasn't been repiped, treat it as urgent.
+            DFW's water supply runs 300–500 PPM hardness — among the highest in Texas. This accelerates galvanized pipe corrosion significantly. Homes with galvanized supply lines may see full failure 5–10 years earlier than national averages suggest. If your home was built before 1975 and hasn’t been repiped, treat it as urgent.
           </p>
         </div>
 
@@ -119,19 +119,19 @@ export default function PipeReplacementGuide() {
             💰 Repipe Cost Guide — DFW Averages
           </h2>
           {[
-            { type: 'Partial repipe (1–2 runs)', low: '$2,000', high: '$8,000' },
-            { type: 'Full supply repipe (typical DFW home)', low: '$7,000', high: '$15,000' },
-            { type: 'Drain line replacement', low: '$3,000', high: '$10,000' },
-            { type: 'Full repipe (supply + drain)', low: '$12,000', high: '$25,000' },
+            { type: 'Partial repipe (1–2 runs)', low: '$2,000', high: '$8,000′ },
+            { type: 'Full supply repipe (typical DFW home)', low: '$7,000', high: '$15,000′ },
+            { type: 'Drain line replacement', low: '$3,000', high: '$10,000′ },
+            { type: 'Full repipe (supply + drain)', low: '$12,000', high: '$25,000′ },
           ].map(c => (
-            <div key={c.type} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid #334155' }}>
+            <div key={c.type} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid #334155′ }}>
               <div style={{ color: '#cbd5e0', fontSize: 15 }}>{c.type}</div>
               <div style={{ fontWeight: 700, color: '#60a5fa', fontSize: 15 }}>{c.low} – {c.high}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #3b82f6' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #3b82f6′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, color: '#60a5fa' }}>
             🤖 TrustyPro Advantage
           </h2>
@@ -150,7 +150,7 @@ export default function PipeReplacementGuide() {
               type="number"
               value={yearBuilt}
               onChange={e => setYearBuilt(e.target.value)}
-              placeholder="e.g. 1978"
+              placeholder="e.g. 1978″
               style={{ flex: 1, padding: '14px 18px', borderRadius: 10, border: '2px solid #334155', background: '#0f172a', color: '#f1f5f9', fontSize: 18 }}
             />
           </div>

@@ -24,10 +24,10 @@ export default function ProLnkAllFiveStreams() {
   const total = s1 + s2 + s3 + s4 + s5;
 
   const streams = [
-    { label: 'Stream 1: Direct Commission', emoji: '💰', value: s1, color: '#F5E642' },
-    { label: 'Stream 2: Network Override', emoji: '🌐', value: s2, color: '#3B82F6' },
-    { label: 'Stream 3: Subscription Override', emoji: '🔄', value: s3, color: '#8B5CF6' },
-    { label: 'Stream 4: Homeowner Override', emoji: '🏠', value: s4, color: '#10B981' },
+    { label: 'Stream 1: Direct Commission', emoji: '💰', value: s1, color: '#F5E642′ },
+    { label: 'Stream 2: Network Override', emoji: '🌐', value: s2, color: '#3B82F6′ },
+    { label: 'Stream 3: Subscription Override', emoji: '🔄', value: s3, color: '#8B5CF6′ },
+    { label: 'Stream 4: Homeowner Override', emoji: '🏠', value: s4, color: '#10B981′ },
     { label: 'Stream 5: Origination Rights', emoji: '🏛️', value: s5, color: '#F59E0B' },
   ];
 
@@ -44,7 +44,7 @@ export default function ProLnkAllFiveStreams() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>Matches/Month: {matches}</label>
             <input type="range" min={0} max={40} value={matches} onChange={e => setMatches(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642', marginBottom: 12 }} />
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>Commission Rate: {matchRate}%</label>
-            <input type="range" min={12} max={70} value={matchRate} onChange={e => setMatchRate(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <input type="range" min={12} max={70} value={matchRate} onChange={e => setMatchRate(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
 
           <div style={{ background: '#111B2E', borderRadius: 12, padding: 20 }}>
@@ -55,7 +55,7 @@ export default function ProLnkAllFiveStreams() {
               {[['L1',l1Pros,setL1Pros],['L2',l2Pros,setL2Pros],['L3',l3Pros,setL3Pros],['L4',l4Pros,setL4Pros]].map(([lbl,val,set]:any) => (
                 <div key={lbl}>
                   <label style={{ display: 'block', color: '#94A3B8', fontSize: 11, marginBottom: 2 }}>{lbl}: {val}</label>
-                  <input type="range" min={0} max={300} value={val} onChange={e => set(+e.target.value)} style={{ width: '100%', accentColor: '#3B82F6' }} />
+                  <input type="range" min={0} max={300} value={val} onChange={e => set(+e.target.value)} style={{ width: '100%', accentColor: '#3B82F6′ }} />
                 </div>
               ))}
             </div>
@@ -66,7 +66,7 @@ export default function ProLnkAllFiveStreams() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>HOs Sourced/Month: {hoMonth}</label>
             <input type="range" min={0} max={100} value={hoMonth} onChange={e => setHoMonth(+e.target.value)} style={{ width: '100%', accentColor: '#10B981', marginBottom: 12 }} />
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>Fee Per HO: ${hoFee}</label>
-            <input type="range" min={25} max={100} step={5} value={hoFee} onChange={e => setHoFee(+e.target.value)} style={{ width: '100%', accentColor: '#10B981' }} />
+            <input type="range" min={25} max={100} step={5} value={hoFee} onChange={e => setHoFee(+e.target.value)} style={{ width: '100%', accentColor: '#10B981′ }} />
           </div>
 
           <div style={{ background: '#111B2E', borderRadius: 12, padding: 20 }}>
@@ -87,7 +87,7 @@ export default function ProLnkAllFiveStreams() {
           ))}
           <div style={{ borderTop: '2px solid #F5E642', marginTop: 8, paddingTop: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontWeight: 800, fontSize: 20 }}>Total Monthly Income</span>
-            <span style={{ fontWeight: 900, fontSize: 32, color: '#F5E642' }}>${total.toFixed(0)}</span>
+            <span style={{ fontWeight: 900, fontSize: 32, color: '#F5E642′ }}>${total.toFixed(0)}</span>
           </div>
           <div style={{ textAlign: 'center', marginTop: 12, color: '#64748B', fontSize: 13 }}>
             Annual: ${(total * 12).toFixed(0)} · 5-Year: ${(total * 60).toFixed(0)}

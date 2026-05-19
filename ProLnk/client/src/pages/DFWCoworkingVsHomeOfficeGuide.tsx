@@ -41,7 +41,7 @@ export default function DFWCoworkingVsHomeOfficeGuide() {
               {[['Setup Cost', '$3,000–8,000 (desk, chair, monitor, lighting)'],['Monthly Cost', '$0 ongoing'],['Meeting Rooms', 'None — use coffee shops or client\’s office'],['Tax Benefit', 'Home office deduction ($1,500 simplified or actual costs)']].map(([k, v]) => (
                 <div key={k as string} style={{ marginBottom: 10 }}>
                   <div style={{ fontSize: 11, color: '#94A3B8', fontWeight: 600 }}>{k as string}</div>
-                  <div style={{ fontSize: 14, color: '#334155' }}>{v as string}</div>
+                  <div style={{ fontSize: 14, color: '#334155′ }}>{v as string}</div>
                 </div>
               ))}
             </div>
@@ -54,7 +54,7 @@ export default function DFWCoworkingVsHomeOfficeGuide() {
               {[['Setup Cost', '$0 — fully furnished'],['Monthly Cost', '$200–500/mo in DFW'],['Meeting Rooms', 'Included (some limit hours)'],['Tax Benefit', '100% deductible as business expense']].map(([k, v]) => (
                 <div key={k as string} style={{ marginBottom: 10 }}>
                   <div style={{ fontSize: 11, color: '#94A3B8', fontWeight: 600 }}>{k as string}</div>
-                  <div style={{ fontSize: 14, color: '#334155' }}>{v as string}</div>
+                  <div style={{ fontSize: 14, color: '#334155′ }}>{v as string}</div>
                 </div>
               ))}
             </div>
@@ -95,11 +95,11 @@ export default function DFWCoworkingVsHomeOfficeGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div style={{ background: '#fff', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', fontWeight: 600, marginBottom: 4 }}>MONTHLY COST</div>
-                <div style={{ fontWeight: 700, color: '#1D4ED8' }}>{rec.monthlyCost}</div>
+                <div style={{ fontWeight: 700, color: '#1D4ED8′ }}>{rec.monthlyCost}</div>
               </div>
               <div style={{ background: '#fff', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', fontWeight: 600, marginBottom: 4 }}>TAX IMPLICATION</div>
-                <div style={{ fontSize: 13, color: '#334155' }}>{rec.taxNote}</div>
+                <div style={{ fontSize: 13, color: '#334155′ }}>{rec.taxNote}</div>
               </div>
             </div>
           </div>

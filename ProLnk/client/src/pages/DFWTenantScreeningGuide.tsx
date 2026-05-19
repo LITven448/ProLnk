@@ -56,13 +56,13 @@ export default function DFWTenantScreeningGuide() {
       </div>
 
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, margin: '32px 0', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, margin: '32px 0', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#1A2B3C', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>⚖️ Texas Fair Housing Laws</h2>
           <p style={{ color: '#4A5568', lineHeight: 1.7 }}>The Fair Housing Act (federal) and Texas Fair Housing Act prohibit discrimination based on 7 protected classes. Dallas City Code adds <strong>source of income</strong> as a protected class, meaning you generally cannot refuse Section 8 voucher holders in Dallas proper. All screening criteria must be applied <strong>consistently</strong> to every applicant to avoid disparate impact claims.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, margin: '0 0 24px' }}>
-          <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+          <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
             <h2 style={{ color: '#10B981', fontSize: 18, fontWeight: 700, marginBottom: 14 }}>✅ You CAN Ask/Verify</h2>
             {canAsk.map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
@@ -71,7 +71,7 @@ export default function DFWTenantScreeningGuide() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+          <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
             <h2 style={{ color: '#EF4444', fontSize: 18, fontWeight: 700, marginBottom: 14 }}>🚫 You CANNOT Ask About</h2>
             {cannotAsk.map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
@@ -91,27 +91,27 @@ export default function DFWTenantScreeningGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             <div style={{ background: '#EFF6FF', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #BFDBFE' }}>
               <div style={{ color: '#3B82F6', fontSize: 13, fontWeight: 600 }}>Income Requirement</div>
-              <div style={{ color: '#1E40AF', fontSize: 30, fontWeight: 800, margin: '8px 0' }}>${incomeRequired.toLocaleString()}/mo</div>
+              <div style={{ color: '#1E40AF', fontSize: 30, fontWeight: 800, margin: '8px 0′ }}>${incomeRequired.toLocaleString()}/mo</div>
               <div style={{ color: '#6B7280', fontSize: 12 }}>3x monthly rent (gross)</div>
             </div>
-            <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #BBF7D0' }}>
+            <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #BBF7D0′ }}>
               <div style={{ color: '#10B981', fontSize: 13, fontWeight: 600 }}>Min Credit Score (DFW)</div>
-              <div style={{ color: '#065F46', fontSize: 30, fontWeight: 800, margin: '8px 0' }}>{creditBenchmark}+</div>
+              <div style={{ color: '#065F46', fontSize: 30, fontWeight: 800, margin: '8px 0′ }}>{creditBenchmark}+</div>
               <div style={{ color: '#6B7280', fontSize: 12 }}>Recommended benchmark</div>
             </div>
             <div style={{ background: '#FEF9C3', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #FDE68A' }}>
               <div style={{ color: '#92400E', fontSize: 13, fontWeight: 600 }}>Max Security Deposit (TX)</div>
-              <div style={{ color: '#78350F', fontSize: 30, fontWeight: 800, margin: '8px 0' }}>${depositMax.toLocaleString()}</div>
+              <div style={{ color: '#78350F', fontSize: 30, fontWeight: 800, margin: '8px 0′ }}>${depositMax.toLocaleString()}</div>
               <div style={{ color: '#6B7280', fontSize: 12 }}>No statutory limit, but 1x–2x typical</div>
             </div>
           </div>
         </div>
 
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#1A2B3C', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>📋 Verification Checklist</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {verifyChecklist.map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, background: '#F8FAFC', borderRadius: 8, padding: '10px 14px', border: '1px solid #E2E8F0' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, background: '#F8FAFC', borderRadius: 8, padding: '10px 14px', border: '1px solid #E2E8F0′ }}>
                 <span style={{ background: categoryColors[item.category] || '#6B7280', color: '#fff', fontSize: 10, fontWeight: 700, borderRadius: 4, padding: '2px 6px', flexShrink: 0 }}>{item.category}</span>
                 <span style={{ color: '#374151', fontSize: 14 }}>{item.item}</span>
               </div>

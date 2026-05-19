@@ -2,18 +2,18 @@ import { useState } from 'react';
 
 const CATEGORIES = [
   { key: 'structural', label: 'Structural', weight: 0.25, icon: '🏗️', color: '#f59e0b' },
-  { key: 'mechanical', label: 'Mechanical', weight: 0.25, icon: '⚙️', color: '#38bdf8' },
-  { key: 'envelope', label: 'Envelope', weight: 0.20, icon: '🏠', color: '#818cf8' },
-  { key: 'site', label: 'Site', weight: 0.15, icon: '🌳', color: '#4ade80' },
-  { key: 'interior', label: 'Interior', weight: 0.10, icon: '🛋️', color: '#fb7185' },
-  { key: 'documentation', label: 'Documentation', weight: 0.05, icon: '📄', color: '#94a3b8' },
+  { key: 'mechanical', label: 'Mechanical', weight: 0.25, icon: '⚙️', color: '#38bdf8′ },
+  { key: 'envelope', label: 'Envelope', weight: 0.20, icon: '🏠', color: '#818cf8′ },
+  { key: 'site', label: 'Site', weight: 0.15, icon: '🌳', color: '#4ade80′ },
+  { key: 'interior', label: 'Interior', weight: 0.10, icon: '🛋️', color: '#fb7185′ },
+  { key: 'documentation', label: 'Documentation', weight: 0.05, icon: '📄', color: '#94a3b8′ },
 ];
 
 function getScoreLabel(score: number) {
   if (score >= 90) return { label: 'Excellent', color: '#4ade80', bg: '#14532d' };
-  if (score >= 75) return { label: 'Good', color: '#a3e635', bg: '#1a2e05' };
-  if (score >= 60) return { label: 'Fair', color: '#fbbf24', bg: '#422006' };
-  if (score >= 40) return { label: 'Poor', color: '#f97316', bg: '#431407' };
+  if (score >= 75) return { label: 'Good', color: '#a3e635', bg: '#1a2e05′ };
+  if (score >= 60) return { label: 'Fair', color: '#fbbf24', bg: '#422006′ };
+  if (score >= 40) return { label: 'Poor', color: '#f97316', bg: '#431407′ };
   return { label: 'Critical', color: '#ef4444', bg: '#450a0a' };
 }
 
@@ -112,8 +112,8 @@ export default function TrustyProHealthScoreExplainer() {
         <div style={{ background: 'linear-gradient(135deg, #1e1b4b, #1e293b)', border: '1px solid #818cf8', borderRadius: 16, padding: 28, marginTop: 32 }}>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: '#818cf8', margin: '0 0 12px' }}>💡 What Score Changes Mean</h3>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            A <strong style={{ color: '#ef4444' }}>10-point drop</strong> between scans is worth investigating — something changed.
-            A <strong style={{ color: '#4ade80' }}>5-point improvement</strong> after a service call confirms the issue was actually resolved.
+            A <strong style={{ color: '#ef4444′ }}>10-point drop</strong> between scans is worth investigating — something changed.
+            A <strong style={{ color: '#4ade80′ }}>5-point improvement</strong> after a service call confirms the issue was actually resolved.
           </p>
         </div>
 

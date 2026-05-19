@@ -30,14 +30,14 @@ export default function DFWEarthquakeInsuranceDFW2026() {
           </div>
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
-          <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.6 }}>⚠️ <strong style={{ color: '#F5E642' }}>Important:</strong> High-risk corridors include Azle, Reno, Cleburne, and Irving — areas closest to historic injection well activity. Check your city\'s USGS seismic history before deciding.</p>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
+          <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.6 }}>⚠️ <strong style={{ color: '#F5E642′ }}>Important:</strong> High-risk corridors include Azle, Reno, Cleburne, and Irving — areas closest to historic injection well activity. Check your city\'s USGS seismic history before deciding.</p>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Select your concern level:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Select your concern level:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {concernLevels.map(c => (
-            <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)} style={{ background: selected === c.id ? '#F5E642' : '#112240', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>{c.label}</button>
+            <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)} style={{ background: selected === c.id ? '#F5E642′ : '#112240', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>{c.label}</button>
           ))}
         </div>
 
@@ -47,12 +47,12 @@ export default function DFWEarthquakeInsuranceDFW2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1rem' }}>{active.desc}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 Action: </span>
-              <span style={{ color: '#94a3b8' }}>{active.action}</span>
+              <span style={{ color: '#94a3b8′ }}>{active.action}</span>
             </div>
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>🔧 Foundation Issues After a Quake?</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>ProLnk connects DFW homeowners with licensed foundation specialists and structural engineers. Only vetted, insured professionals — never unqualified storm chasers.</p>
         </div>

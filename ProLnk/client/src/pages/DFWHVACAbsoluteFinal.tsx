@@ -58,7 +58,7 @@ const FINAL_MESSAGES: Record<string, FinalMessage> = {
 const LIBRARY_STATS = [
   ["3,200+", "DFW HVAC Resource Pages"],
   ["50+", "DFW Suburbs Covered"],
-  ["12", "HVAC System Types Documented"],
+  ["12″, "HVAC System Types Documented"],
   ["100+", "Failure Modes Mapped"],
 ];
 
@@ -68,11 +68,11 @@ export default function DFWHVACAbsoluteFinal() {
   const result = journey ? FINAL_MESSAGES[journey] : null;
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE · THE FINAL PAGE</div>
+        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE · THE FINAL PAGE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Absolute Final 🏁</h1>
-        <p style={{ color: "#94a3b8", fontSize: 15, marginBottom: 8 }}>
+        <p style={{ color: "#94a3b8″, fontSize: 15, marginBottom: 8 }}>
           The very last page in ProLnk's 3,200+ page DFW HVAC resource library.
         </p>
         <p style={{ color: "#64748b", fontSize: 14, marginBottom: 32 }}>
@@ -81,44 +81,44 @@ export default function DFWHVACAbsoluteFinal() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 28 }}>
           {LIBRARY_STATS.map(([num, label]) => (
-            <div key={label} style={{ background: "#0f2040", borderRadius: 10, padding: 16, textAlign: "center" }}>
-              <div style={{ color: "#F5E642", fontSize: 24, fontWeight: 800, marginBottom: 4 }}>{num}</div>
-              <div style={{ color: "#94a3b8", fontSize: 12 }}>{label}</div>
+            <div key={label} style={{ background: "#0f2040″, borderRadius: 10, padding: 16, textAlign: "center" }}>
+              <div style={{ color: "#F5E642″, fontSize: 24, fontWeight: 800, marginBottom: 4 }}>{num}</div>
+              <div style={{ color: "#94a3b8″, fontSize: 12 }}>{label}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Your Absolute Final Message from ProLnk</h2>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642″, fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Your Absolute Final Message from ProLnk</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Your Journey with This Library</label>
-            <select value={journey} onChange={e => setJourney(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Your Journey with This Library</label>
+            <select value={journey} onChange={e => setJourney(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Tell us about your journey...</option>
               {JOURNEY_OPTIONS.map(j => <option key={j} value={j}>{j}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: 24, borderLeft: "4px solid #F5E642" }}>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🏆 Honoring Your Journey</div>
-              <p style={{ color: "#e2e8f0", fontSize: 15, marginBottom: 20, lineHeight: 1.7 }}>{result.honor}</p>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🤝 ProLnk's Promise to You</div>
-              <p style={{ color: "#e2e8f0", fontSize: 15, marginBottom: 20, lineHeight: 1.7 }}>{result.promise}</p>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 8 }}>➡️ What Comes Next</div>
-              <p style={{ color: "#e2e8f0", fontSize: 15, marginBottom: 20, lineHeight: 1.7 }}>{result.next}</p>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 24, borderLeft: "4px solid #F5E642" }}>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🏆 Honoring Your Journey</div>
+              <p style={{ color: "#e2e8f0″, fontSize: 15, marginBottom: 20, lineHeight: 1.7 }}>{result.honor}</p>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🤝 ProLnk's Promise to You</div>
+              <p style={{ color: "#e2e8f0″, fontSize: 15, marginBottom: 20, lineHeight: 1.7 }}>{result.promise}</p>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 8 }}>➡️ What Comes Next</div>
+              <p style={{ color: "#e2e8f0″, fontSize: 15, marginBottom: 20, lineHeight: 1.7 }}>{result.next}</p>
               <div style={{ borderTop: "1px solid #1e3a5f", paddingTop: 20, marginTop: 4 }}>
-                <p style={{ color: "#F5E642", fontSize: 15, fontWeight: 600, lineHeight: 1.7, fontStyle: "italic" }}>{result.closing}</p>
+                <p style={{ color: "#F5E642″, fontSize: 15, fontWeight: 600, lineHeight: 1.7, fontStyle: "italic" }}>{result.closing}</p>
               </div>
             </div>
           )}
         </div>
 
-        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, textAlign: "center" }}>
+        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, textAlign: "center" }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🌟</div>
-          <div style={{ color: "#F5E642", fontWeight: 800, fontSize: 18, marginBottom: 8 }}>ProLnk — Built for DFW Homeowners</div>
-          <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 800, fontSize: 18, marginBottom: 8 }}>ProLnk — Built for DFW Homeowners</div>
+          <p style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>
             3,200+ pages. 50+ suburbs. One mission: every DFW homeowner deserves to understand their home and connect with the pros who can protect it.
           </p>
-          <div style={{ marginTop: 20, color: "#475569", fontSize: 12 }}>
+          <div style={{ marginTop: 20, color: "#475569″, fontSize: 12 }}>
             This is page 3,200+. The library continues growing. © 2026 ProLnk — All rights reserved.
           </div>
         </div>

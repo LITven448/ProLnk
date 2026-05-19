@@ -80,7 +80,7 @@ export default function DFWRentalDisputeGuide2026() {
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
             <span>🏛️</span>
-            <span style={{ fontSize: 14, color: '#E8EAF0' }}>DFW tenants file disputes in Justice of the Peace Court. Filing fees ~$46. No attorney required for small claims under $20,000.</span>
+            <span style={{ fontSize: 14, color: '#E8EAF0′ }}>DFW tenants file disputes in Justice of the Peace Court. Filing fees ~$46. No attorney required for small claims under $20,000.</span>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ export default function DFWRentalDisputeGuide2026() {
               {guide.rights.map(r => (
                 <div key={r} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>✅</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{r}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{r}</span>
                 </div>
               ))}
             </div>
@@ -108,7 +108,7 @@ export default function DFWRentalDisputeGuide2026() {
               {guide.steps.map(s => (
                 <div key={s} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
                   <span>➡️</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{s}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{s}</span>
                 </div>
               ))}
             </div>

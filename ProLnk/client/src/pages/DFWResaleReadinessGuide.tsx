@@ -25,12 +25,12 @@ export default function DFWResaleReadinessGuide() {
         <div style={{ fontSize: 36, marginBottom: 8 }}>🏡</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>DFW Resale Readiness Guide</h1>
         <p style={{ color: '#9AABB8', fontSize: 15, marginBottom: 32, lineHeight: 1.6 }}>
-          You don't have to be selling now to think about resale. Deferred maintenance compounds fast in DFW's clay soil and extreme weather cycles. Know where you stand before the market forces your hand.
+          You don't have to be selling now to think about resale. Deferred maintenance compounds fast in DFW’s clay soil and extreme weather cycles. Know where you stand before the market forces your hand.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[{ label: '🏗️ Foundation Risk', value: 'DFW\’s expansive clay soil is the #1 resale killer. Buyers always hire structural inspectors.' }, { label: '🌨️ Hail History', value: 'DFW averages 5+ hail events/year. Buyers check roof age and insurance history.' }, { label: '💧 Water Damage', value: 'Staining, mold, or efflorescence are red flags in DFW\’s humid summers.' }, { label: '🔧 HVAC Age', value: 'HVAC systems over 10 years old are heavily negotiated — DFW heat demands reliable AC.' }].map(card => (
-            <div key={card.label} style={{ backgroundColor: '#0F2137', borderRadius: 10, padding: 16, border: '1px solid #1C3352' }}>
+            <div key={card.label} style={{ backgroundColor: '#0F2137', borderRadius: 10, padding: 16, border: '1px solid #1C3352′ }}>
               <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 6 }}>{card.label}</div>
               <div style={{ fontSize: 13, color: '#9AABB8', lineHeight: 1.5 }}>{card.value}</div>
             </div>
@@ -60,20 +60,20 @@ export default function DFWResaleReadinessGuide() {
               {submarkets.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
-          <button onClick={() => setSubmitted(true)} disabled={!homeAge || !condition || !submarket} style={{ width: '100%', padding: '12px', backgroundColor: homeAge && condition && submarket ? '#F5E642' : '#1C3352', color: homeAge && condition && submarket ? '#0A1628' : '#4A6278', fontWeight: 700, border: 'none', borderRadius: 8, cursor: homeAge && condition && submarket ? 'pointer' : 'not-allowed', fontSize: 15 }}>
+          <button onClick={() => setSubmitted(true)} disabled={!homeAge || !condition || !submarket} style={{ width: '100%', padding: '12px', backgroundColor: homeAge && condition && submarket ? '#F5E642′ : '#1C3352', color: homeAge && condition && submarket ? '#0A1628' : '#4A6278', fontWeight: 700, border: ’none', borderRadius: 8, cursor: homeAge && condition && submarket ? 'pointer' : 'not-allowed', fontSize: 15 }}>
             Get My Readiness Score
           </button>
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0F2137', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0F2137', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 20 }}>
               <div style={{ width: 64, height: 64, borderRadius: '50%', backgroundColor: result.score >= 75 ? '#22C55E' : result.score >= 50 ? '#F59E0B' : '#EF4444', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', flexShrink: 0 }}>
                 <div style={{ fontSize: 20, fontWeight: 800, color: '#FFFFFF' }}>{result.score}</div>
                 <div style={{ fontSize: 10, color: '#FFFFFF', opacity: 0.8 }}>/ 100</div>
               </div>
               <div>
-                <div style={{ fontSize: 17, fontWeight: 700, color: '#F5E642' }}>Resale Readiness Score</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: '#F5E642′ }}>Resale Readiness Score</div>
                 <div style={{ fontSize: 13, color: '#9AABB8', marginTop: 4 }}>{submarket} · {homeAge} · {condition}</div>
               </div>
             </div>

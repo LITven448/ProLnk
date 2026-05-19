@@ -23,7 +23,7 @@ export default function DFWPopulationGrowthGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '0.6rem', marginBottom: '2rem' }}>
           {positions.map(p => (
-            <button key={p.id} onClick={() => setActive(p.id)} style={{ background: active === p.id ? '#F5E642' : '#0F2340', color: active === p.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === p.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.8rem 0.3rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.8rem' }}>
+            <button key={p.id} onClick={() => setActive(p.id)} style={{ background: active === p.id ? '#F5E642′ : '#0F2340', color: active === p.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === p.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.8rem 0.3rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.8rem' }}>
               <div style={{ fontSize: '1.4rem' }}>{p.icon}</div>
               <div>{p.label}</div>
             </button>
@@ -45,7 +45,7 @@ export default function DFWPopulationGrowthGuide2026() {
           {[['📍','#1 Growth Metro','US by absolute population gain'],['🏗️','42K permits','New homes permitted in DFW 2025'],['⚡','30% shortage','Contractor capacity gap vs. demand']].map(([icon,val,label],i)=>(
             <div key={i} style={{ background: '#0F2340', borderRadius: 10, padding: '1rem', textAlign: 'center', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: '1.5rem' }}>{icon}</div>
-              <div style={{ fontWeight: 700, color: '#F5E642' }}>{val}</div>
+              <div style={{ fontWeight: 700, color: '#F5E642′ }}>{val}</div>
               <div style={{ fontSize: '0.75rem', color: '#8899AA' }}>{label}</div>
             </div>
           ))}

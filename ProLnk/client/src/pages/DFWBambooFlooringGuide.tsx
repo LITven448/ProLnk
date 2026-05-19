@@ -79,7 +79,7 @@ export default function DFWBambooFlooringGuide() {
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', color: '#aac', marginBottom: '0.4rem', fontSize: '0.9rem' }}>Room Type</label>
             <select value={room} onChange={e => setRoom(e.target.value)}
-              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334' }}>
+              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334′ }}>
               <option value=''>Select room...</option>
               {roomTypes.map(r => <option key={r} value={r}>{r}</option>)}
             </select>
@@ -87,7 +87,7 @@ export default function DFWBambooFlooringGuide() {
           <div>
             <label style={{ display: 'block', color: '#aac', marginBottom: '0.4rem', fontSize: '0.9rem' }}>DFW HVAC Situation</label>
             <select value={hvac} onChange={e => setHvac(e.target.value)}
-              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334' }}>
+              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334′ }}>
               <option value=''>Select HVAC situation...</option>
               {hvacOptions.map(h => <option key={h} value={h}>{h}</option>)}
             </select>
@@ -101,7 +101,7 @@ export default function DFWBambooFlooringGuide() {
               <div style={{ fontSize: '1.05rem', fontWeight: 700 }}>{result.suitability}</div>
               <div><span style={{ color: '#aac' }}>Recommended Type: </span><strong>{result.species}</strong></div>
               <div><span style={{ color: '#aac' }}>DFW Care Requirements: </span><span>{result.care}</span></div>
-              <div><span style={{ color: '#aac' }}>Cost Comparison: </span><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+              <div><span style={{ color: '#aac' }}>Cost Comparison: </span><strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', color: '#cce', fontSize: '0.9rem' }}>
                 💡 {result.note}
               </div>

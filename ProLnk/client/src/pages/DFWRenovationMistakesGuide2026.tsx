@@ -49,14 +49,14 @@ export default function DFWRenovationMistakesGuide2026() {
   ];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#E8EDF5", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#E8EDF5", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🚫</div>
-          <h1 style={{ fontSize: "1.8rem", fontWeight: 700, color: "#F5E642", margin: 0 }}>
+          <h1 style={{ fontSize: "1.8rem", fontWeight: 700, color: "#F5E642″, margin: 0 }}>
             Top DFW Renovation Mistakes 2026
           </h1>
-          <p style={{ color: "#8B9AB5", marginTop: "0.5rem" }}>
+          <p style={{ color: "#8B9AB5″, marginTop: "0.5rem" }}>
             Click a mistake to see how to avoid it — and how much it could cost you
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function DFWRenovationMistakesGuide2026() {
               key={m.id}
               onClick={() => setSelected(selected === m.id ? null : m.id)}
               style={{
-                background: selected === m.id ? "#1A2E4A" : "#0F1E35",
+                background: selected === m.id ? "#1A2E4A" : "#0F1E35″,
                 border: `1px solid ${selected === m.id ? "#F5E642" : "#1E3050"}`,
                 borderRadius: 10,
                 padding: "1rem 1.25rem",
@@ -80,10 +80,10 @@ export default function DFWRenovationMistakesGuide2026() {
                   <span style={{ fontSize: "1.5rem" }}>{m.icon}</span>
                   <span style={{ fontWeight: 600, fontSize: "1rem" }}>{m.title}</span>
                 </div>
-                <span style={{ color: "#F5E642", fontWeight: 700, fontSize: "0.9rem" }}>{m.cost}</span>
+                <span style={{ color: "#F5E642″, fontWeight: 700, fontSize: "0.9rem" }}>{m.cost}</span>
               </div>
               {selected === m.id && (
-                <p style={{ marginTop: "0.75rem", color: "#B0C0D8", lineHeight: 1.6, fontSize: "0.95rem" }}>
+                <p style={{ marginTop: "0.75rem", color: "#B0C0D8″, lineHeight: 1.6, fontSize: "0.95rem" }}>
                   {m.detail}
                 </p>
               )}
@@ -91,9 +91,9 @@ export default function DFWRenovationMistakesGuide2026() {
           ))}
         </div>
 
-        <div style={{ marginTop: "2rem", background: "#0F1E35", borderRadius: 10, padding: "1.25rem", border: "1px solid #1E3050", textAlign: "center" }}>
-          <p style={{ color: "#8B9AB5", margin: 0, fontSize: "0.9rem" }}>
-            🔗 <span style={{ color: "#F5E642", fontWeight: 600 }}>ProLnk</span> connects you to licensed, verified DFW contractors — with real reviews and competitive quotes.
+        <div style={{ marginTop: "2rem", background: "#0F1E35″, borderRadius: 10, padding: "1.25rem", border: "1px solid #1E3050", textAlign: "center" }}>
+          <p style={{ color: "#8B9AB5″, margin: 0, fontSize: "0.9rem" }}>
+            🔗 <span style={{ color: "#F5E642″, fontWeight: 600 }}>ProLnk</span> connects you to licensed, verified DFW contractors — with real reviews and competitive quotes.
           </p>
         </div>
       </div>

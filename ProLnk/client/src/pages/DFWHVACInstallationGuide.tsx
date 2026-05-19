@@ -75,7 +75,7 @@ export default function DFWHVACInstallationGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '2rem' }}>
           {steps.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-              style={{ background: selected === s.id ? '#F5E642' : '#0f2240', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '0.9rem 0.75rem', cursor: 'pointer', textAlign: 'left', fontWeight: 700, fontSize: '0.85rem' }}>
+              style={{ background: selected === s.id ? '#F5E642′ : '#0f2240', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '0.9rem 0.75rem', cursor: ’pointer', textAlign: 'left', fontWeight: 700, fontSize: '0.85rem' }}>
               <div style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>{s.icon}</div>
               {s.label}
             </button>
@@ -83,10 +83,10 @@ export default function DFWHVACInstallationGuide() {
         </div>
         {active && (
           <div style={{ background: '#0f2240', border: '1px solid #1e3a5f', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem', color: '#F5E642' }}>{active.icon} {active.label}</h2>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem', color: '#F5E642′ }}>{active.icon} {active.label}</h2>
             <div style={{ marginBottom: '1.25rem' }}>
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 700, letterSpacing: 1, marginBottom: '0.4rem' }}>WHAT HAPPENS</div>
-              <p style={{ lineHeight: 1.7, color: '#e2e8f0' }}>{active.what}</p>
+              <p style={{ lineHeight: 1.7, color: '#e2e8f0′ }}>{active.what}</p>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <div style={{ color: '#F5E642', fontSize: '0.75rem', fontWeight: 700, letterSpacing: 1, marginBottom: '0.4rem' }}>WHAT TO VERIFY</div>

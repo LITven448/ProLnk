@@ -66,7 +66,7 @@ export default function DFWRefrigeratorRepairGuide() {
           <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7 }}>Garage fridges in DFW regularly operate in 100–120°F ambient heat. Compressors run nearly nonstop June–September, dramatically cutting lifespan. A garage fridge that would last 15 years in Minnesota may fail in 8 in Frisco or McKinney. If yours is in a temperature-controlled kitchen, add 2–3 years to typical life estimates.</p>
         </div>
 
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#F1F5F9' }}>⚠️ Common Failures & DFW-Specific Costs</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#F1F5F9′ }}>⚠️ Common Failures & DFW-Specific Costs</h2>
         <div style={{ overflowX: 'auto', marginBottom: 32 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
@@ -78,7 +78,7 @@ export default function DFWRefrigeratorRepairGuide() {
             </thead>
             <tbody>
               {FAILURE_DATA.map((row, i) => (
-                <tr key={row.part} style={{ backgroundColor: i % 2 === 0 ? '#0A1628' : '#0D1E3A' }}>
+                <tr key={row.part} style={{ backgroundColor: i % 2 === 0 ? '#0A1628′ : '#0D1E3A' }}>
                   <td style={{ padding: '11px 16px', fontWeight: 600, color: '#E2E8F0', borderBottom: '1px solid #1E3A5F' }}>{row.part}</td>
                   <td style={{ padding: '11px 16px', color: '#F5E642', borderBottom: '1px solid #1E3A5F', whiteSpace: 'nowrap' }}>{row.cost}</td>
                   <td style={{ padding: '11px 16px', color: '#94A3B8', borderBottom: '1px solid #1E3A5F', fontSize: 13 }}>{row.note}</td>
@@ -93,11 +93,11 @@ export default function DFWRefrigeratorRepairGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Fridge Age (years)</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 9" style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#F1F5F9', fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 9″ style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#F1F5F9', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Repair Quote ($)</label>
-              <input type="number" value={repairQuote} onChange={e => setRepairQuote(e.target.value)} placeholder="e.g. 450" style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#F1F5F9', fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" value={repairQuote} onChange={e => setRepairQuote(e.target.value)} placeholder="e.g. 450″ style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#F1F5F9', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Fridge Size</label>
@@ -108,7 +108,7 @@ export default function DFWRefrigeratorRepairGuide() {
           </div>
           <button onClick={evaluate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.decision}</div>
               <p style={{ color: '#CBD5E1', margin: '0 0 10px', lineHeight: 1.7 }}>{result.reason}</p>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>New replacement range for your size: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.newRange}</span> (installed)</div>

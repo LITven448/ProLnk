@@ -98,12 +98,12 @@ export default function DFWHVACCompleteKnowledge() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>Everything you need to know about DFW HVAC — organized by where you are in your HVAC journey. Select your situation and get your complete reference.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📍 Where Are You in Your HVAC Journey?</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📍 Where Are You in Your HVAC Journey?</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {stages.map(s => (
               <button key={s} onClick={() => setStage(s)}
                 style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left',
-                  background: stage === s ? '#F5E642' : '#162035', color: stage === s ? '#0A1628' : '#e2e8f0', fontWeight: stage === s ? 700 : 500, fontSize: 14 }}>
+                  background: stage === s ? '#F5E642′ : '#162035', color: stage === s ? '#0A1628' : '#e2e8f0', fontWeight: stage === s ? 700 : 500, fontSize: 14 }}>
                 {s}
               </button>
             ))}
@@ -111,17 +111,17 @@ export default function DFWHVACCompleteKnowledge() {
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 20, color: '#F5E642' }}>{ref.title}</div>
+          <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 20, color: '#F5E642′ }}>{ref.title}</div>
           {ref.sections.map((section, i) => (
             <div key={i} style={{ background: '#162035', borderRadius: 10, padding: 20, marginBottom: 12 }}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#e2e8f0' }}>{section.heading}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#e2e8f0′ }}>{section.heading}</div>
               <div style={{ color: '#94a3b8', lineHeight: 1.75, fontSize: 14 }}>{section.content}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📚 Full DFW HVAC Guide Series</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📚 Full DFW HVAC Guide Series</div>
           {[
             'In-Home Comfort Standards — ASHRAE targets for DFW',
             'DFW Weather Records & HVAC Impact — extremes explained',
@@ -129,7 +129,7 @@ export default function DFWHVACCompleteKnowledge() {
             'Future Climate & HVAC Decisions — planning for 2030+',
             'Carbon Footprint Guide — reduce your HVAC emissions',
           ].map((title, i) => (
-            <div key={i} style={{ background: '#162035', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 13, color: '#94a3b8' }}>
+            <div key={i} style={{ background: '#162035', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 13, color: '#94a3b8′ }}>
               📄 {title}
             </div>
           ))}

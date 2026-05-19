@@ -24,12 +24,12 @@ function EarningsRing({ earned, goal = 500 }: { earned: number; goal?: number })
   const circ = 2 * Math.PI * r;
   const dash = circ * pct;
   return (
-    <div className="relative w-28 h-28 flex-shrink-0">
-      <svg width="112" height="112" viewBox="0 0 112 112" className="-rotate-90">
-        <circle cx="56" cy="56" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="8" />
+    <div className="relative w-28 h-28 flex-shrink-0″>
+      <svg width="112″ height="112" viewBox="0 0 112 112" className="-rotate-90">
+        <circle cx="56″ cy="56" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="8" />
         <circle
-          cx="56" cy="56" r={r} fill="none"
-          stroke={FOS.lime} strokeWidth="8" strokeLinecap="round"
+          cx="56″ cy="56" r={r} fill="none"
+          stroke={FOS.lime} strokeWidth="8″ strokeLinecap="round"
           strokeDasharray={`${dash} ${circ}`}
           style={{ transition: "stroke-dasharray 1s ease", filter: `drop-shadow(0 0 6px ${FOS.limeGlow})` }}
         />
@@ -46,8 +46,8 @@ function EarningsRing({ earned, goal = 500 }: { earned: number; goal?: number })
 /* -- Mini Stat -------------------------------------------------------------- */
 function MiniStat({ icon: Icon, value, label, color, bg }: { icon: any; value: string | number; label: string; color: string; bg: string }) {
   return (
-    <div className="flex-1 rounded-2xl px-3 py-3 flex flex-col gap-1.5" style={{ background: bg, border: `1px solid ${color}20` }}>
-      <Icon className="w-4 h-4" style={{ color }} />
+    <div className="flex-1 rounded-2xl px-3 py-3 flex flex-col gap-1.5″ style={{ background: bg, border: `1px solid ${color}20` }}>
+      <Icon className="w-4 h-4″ style={{ color }} />
       <span className="text-white text-lg font-black leading-none">{value}</span>
       <span className="text-[10px] leading-tight" style={{ color: FOS.muted }}>{label}</span>
     </div>
@@ -56,12 +56,12 @@ function MiniStat({ icon: Icon, value, label, color, bg }: { icon: any; value: s
 
 /* -- Dark map styles -------------------------------------------------------- */
 const DARK_MAP_STYLES: google.maps.MapTypeStyle[] = [
-  { elementType: "geometry",           stylers: [{ color: "#0D1525" }] },
-  { elementType: "labels.text.fill",   stylers: [{ color: "#4B5563" }] },
+  { elementType: "geometry",           stylers: [{ color: "#0D1525″ }] },
+  { elementType: "labels.text.fill",   stylers: [{ color: "#4B5563″ }] },
   { elementType: "labels.text.stroke", stylers: [{ color: "#070D1A" }] },
-  { featureType: "road",               elementType: "geometry", stylers: [{ color: "#1A2840" }] },
+  { featureType: "road",               elementType: "geometry", stylers: [{ color: "#1A2840″ }] },
   { featureType: "road.arterial",      elementType: "geometry", stylers: [{ color: "#1E3A5F" }] },
-  { featureType: "water",              elementType: "geometry", stylers: [{ color: "#040A14" }] },
+  { featureType: "water",              elementType: "geometry", stylers: [{ color: "#040A14″ }] },
   { featureType: "poi",                stylers: [{ visibility: "off" }] },
   { featureType: "transit",            stylers: [{ visibility: "off" }] },
 ];
@@ -174,8 +174,8 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
       const iw = new google.maps.InfoWindow({
         content: `<div style="padding:8px;min-width:140px;font-family:Inter,sans-serif">
           <p style="font-weight:700;margin:0 0 3px;font-size:13px">${opp.opportunityType ?? "Opportunity"}</p>
-          <p style="font-size:11px;color:#666;margin:0">${opp.opportunityCategory ?? ""}</p>
-          <p style="font-size:12px;color:${FOS.teal};font-weight:700;margin:4px 0 0">
+          <p style="font-size:11px;color:#666;margin:0″>${opp.opportunityCategory ?? ""}</p>
+          <p style="font-size:12px;color:${FOS.teal};font-weight:700;margin:4px 0 0″>
             $${Number(opp.referralCommissionAmount ?? 0).toFixed(0)} commission
           </p></div>`,
       });
@@ -187,12 +187,12 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
     <div className="flex flex-col pb-4 min-h-full" style={{ background: FOS.bg }}>
 
       {/* -- Header -- */}
-      <div className="px-5 pt-6 pb-4">
+      <div className="px-5 pt-6 pb-4″>
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs tracking-wide" style={{ color: FOS.muted }}>{greeting}</p>
-            <h1 className="text-white text-2xl font-black leading-tight mt-0.5">{partnerName}</h1>
-            <div className="flex items-center gap-2 mt-1">
+            <h1 className="text-white text-2xl font-black leading-tight mt-0.5″>{partnerName}</h1>
+            <div className="flex items-center gap-2 mt-1″>
               <span
                 className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
                 style={{ background: FOS.tealDim, color: FOS.teal }}
@@ -203,13 +203,13 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
           </div>
           {streak >= 3 && (
             <div
-              className="flex items-center gap-1.5 rounded-xl px-3 py-2"
+              className="flex items-center gap-1.5 rounded-xl px-3 py-2″
               style={{ background: "rgba(245,158,11,0.10)", border: "1px solid rgba(245,158,11,0.20)" }}
             >
-              <Flame className="w-4 h-4" style={{ color: "#F59E0B" }} />
+              <Flame className="w-4 h-4″ style={{ color: "#F59E0B" }} />
               <div>
                 <p className="text-xs font-black leading-none" style={{ color: "#F59E0B" }}>{streak}</p>
-                <p className="text-[9px] leading-none mt-0.5" style={{ color: "rgba(245,158,11,0.5)" }}>day streak</p>
+                <p className="text-[9px] leading-none mt-0.5″ style={{ color: "rgba(245,158,11,0.5)" }}>day streak</p>
               </div>
             </div>
           )}
@@ -217,18 +217,18 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
       </div>
 
       {/* -- Earnings + Stats -- */}
-      <div className="px-5 mb-5">
+      <div className="px-5 mb-5″>
         <div
-          className="rounded-3xl p-4 flex items-center gap-4"
+          className="rounded-3xl p-4 flex items-center gap-4″
           style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
         >
           <EarningsRing earned={monthEarned} goal={500} />
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="flex gap-2">
+          <div className="flex-1 flex flex-col gap-2″>
+            <div className="flex gap-2″>
               <MiniStat icon={Camera}       value={photosToday}        label="Photos today" color={FOS.teal} bg={FOS.tealDim} />
               <MiniStat icon={CheckCircle} value={jobsToday}          label="Jobs logged"  color={FOS.green} bg="rgba(16,185,129,0.10)" />
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2″>
               <MiniStat icon={Zap}          value={pendingOpps.length} label="AI leads"     color={FOS.lime} bg={FOS.limeDim} />
               <MiniStat icon={TrendingUp}   value={tier}               label="Tier"         color="#A78BFA" bg="rgba(167,139,250,0.10)" />
             </div>
@@ -237,17 +237,17 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
       </div>
 
       {/* -- Opportunity Map -- */}
-      <div className="px-5 mb-5">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <Navigation className="w-4 h-4" style={{ color: FOS.teal }} />
+      <div className="px-5 mb-5″>
+        <div className="flex items-center justify-between mb-3″>
+          <div className="flex items-center gap-2″>
+            <Navigation className="w-4 h-4″ style={{ color: FOS.teal }} />
             <span className="text-white text-sm font-bold">Opportunity Map</span>
           </div>
           <div className="flex items-center gap-3 text-[10px]">
-            <span className="flex items-center gap-1" style={{ color: FOS.faint }}>
+            <span className="flex items-center gap-1″ style={{ color: FOS.faint }}>
               <span className="w-2 h-2 rounded-full inline-block" style={{ background: FOS.teal }} />You
             </span>
-            <span className="flex items-center gap-1" style={{ color: FOS.faint }}>
+            <span className="flex items-center gap-1″ style={{ color: FOS.faint }}>
               <span className="w-2 h-2 rounded-full inline-block" style={{ background: FOS.lime }} />Lead
             </span>
           </div>
@@ -269,19 +269,19 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
             className="mt-2.5 w-full flex items-center justify-between rounded-xl px-4 py-2.5 active:scale-95 transition-transform"
             style={{ background: FOS.tealDim, border: `1px solid ${FOS.teal}30` }}
           >
-            <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4" style={{ color: FOS.teal }} />
+            <div className="flex items-center gap-2″>
+              <Zap className="w-4 h-4″ style={{ color: FOS.teal }} />
               <span className="text-sm font-semibold" style={{ color: FOS.teal }}>{pendingOpps.length} AI leads in your area</span>
             </div>
-            <ArrowUpRight className="w-4 h-4" style={{ color: FOS.teal }} />
+            <ArrowUpRight className="w-4 h-4″ style={{ color: FOS.teal }} />
           </button>
         )}
       </div>
 
       {/* -- Quick Actions -- */}
-      <div className="px-5 mb-5">
-        <p className="text-[10px] uppercase tracking-widest font-semibold mb-3" style={{ color: FOS.muted }}>Quick Actions</p>
-        <div className="grid grid-cols-2 gap-3">
+      <div className="px-5 mb-5″>
+        <p className="text-[10px] uppercase tracking-widest font-semibold mb-3″ style={{ color: FOS.muted }}>Quick Actions</p>
+        <div className="grid grid-cols-2 gap-3″>
           {/* Log Job -- primary CTA */}
           <button
             onClick={() => onNavigate("job")}
@@ -294,7 +294,7 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
             <Camera className="w-6 h-6 text-white" />
             <div>
               <p className="text-white font-black text-sm leading-tight">Log a Job</p>
-              <p className="text-white/60 text-[10px] mt-0.5">GPS + Photos + AI</p>
+              <p className="text-white/60 text-[10px] mt-0.5″>GPS + Photos + AI</p>
             </div>
           </button>
 
@@ -312,10 +312,10 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
                 {pendingOpps.length > 9 ? "9+" : pendingOpps.length}
               </span>
             )}
-            <Sparkles className="w-6 h-6" style={{ color: FOS.lime }} />
+            <Sparkles className="w-6 h-6″ style={{ color: FOS.lime }} />
             <div>
               <p className="text-white font-black text-sm leading-tight">AI Leads</p>
-              <p className="text-[10px] mt-0.5" style={{ color: FOS.muted }}>{pendingOpps.length} waiting</p>
+              <p className="text-[10px] mt-0.5″ style={{ color: FOS.muted }}>{pendingOpps.length} waiting</p>
             </div>
           </button>
 
@@ -325,10 +325,10 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
             className="rounded-2xl p-4 flex flex-col gap-2 active:scale-95 transition-transform"
             style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
           >
-            <MapPin className="w-6 h-6" style={{ color: "#A78BFA" }} />
+            <MapPin className="w-6 h-6″ style={{ color: "#A78BFA" }} />
             <div>
               <p className="text-white font-black text-sm leading-tight">Homes</p>
-              <p className="text-[10px] mt-0.5" style={{ color: FOS.muted }}>Homes you've visited</p>
+              <p className="text-[10px] mt-0.5″ style={{ color: FOS.muted }}>Homes you've visited</p>
             </div>
           </button>
 
@@ -338,10 +338,10 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
             className="rounded-2xl p-4 flex flex-col gap-2 active:scale-95 transition-transform"
             style={{ background: FOS.limeDim, border: `1px solid ${FOS.lime}25` }}
           >
-            <DollarSign className="w-6 h-6" style={{ color: FOS.lime }} />
+            <DollarSign className="w-6 h-6″ style={{ color: FOS.lime }} />
             <div>
               <p className="text-white font-black text-sm leading-tight">Earnings</p>
-              <p className="text-[10px] mt-0.5" style={{ color: FOS.lime }}>${monthEarned.toFixed(0)} this month</p>
+              <p className="text-[10px] mt-0.5″ style={{ color: FOS.lime }}>${monthEarned.toFixed(0)} this month</p>
             </div>
           </button>
         </div>
@@ -349,7 +349,7 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
         <button
           onClick={handleGpsCheckIn}
           disabled={checkInState === "loading"}
-          className="mt-3 w-full rounded-2xl px-4 py-3 flex items-center gap-3 active:scale-[0.98] transition-transform disabled:opacity-60"
+          className="mt-3 w-full rounded-2xl px-4 py-3 flex items-center gap-3 active:scale-[0.98] transition-transform disabled:opacity-60″
           style={{
             background: checkInState === "done"    ? "rgba(16,185,129,0.12)" :
                         checkInState === "error"   ? "rgba(239,68,68,0.10)" :
@@ -364,15 +364,15 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
           {checkInState === "loading" ? (
             <Loader2 className="w-5 h-5 animate-spin" style={{ color: FOS.teal }} />
           ) : checkInState === "done" ? (
-            <CheckCircle className="w-5 h-5" style={{ color: FOS.green }} />
+            <CheckCircle className="w-5 h-5″ style={{ color: FOS.green }} />
           ) : checkInState === "error" ? (
-            <MapPin className="w-5 h-5" style={{ color: "#EF4444" }} />
+            <MapPin className="w-5 h-5″ style={{ color: "#EF4444" }} />
           ) : (
-            <MapPin className="w-5 h-5" style={{ color: FOS.teal }} />
+            <MapPin className="w-5 h-5″ style={{ color: FOS.teal }} />
           )}
           <div className="flex-1 text-left">
             <p className="text-sm font-bold" style={{
-              color: checkInState === "done" ? FOS.green : checkInState === "error" ? "#EF4444" : "white"
+              color: checkInState === "done" ? FOS.green : checkInState === "error" ? "#EF4444″ : "white"
             }}>
               {checkInState === "loading" ? "Locating..." :
                checkInState === "done"    ? "Checked In" :
@@ -394,8 +394,8 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
       </div>
 
       {/* -- Today's Activity -- */}
-      <div className="px-5 mb-5">
-        <p className="text-[10px] uppercase tracking-widest font-semibold mb-3" style={{ color: FOS.muted }}>Today</p>
+      <div className="px-5 mb-5″>
+        <p className="text-[10px] uppercase tracking-widest font-semibold mb-3″ style={{ color: FOS.muted }}>Today</p>
         <div className="rounded-2xl overflow-hidden" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
           {[
             { icon: CheckCircle, color: FOS.green, label: "Jobs Logged",      value: jobsToday },
@@ -404,11 +404,11 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
           ].map(({ icon: Icon, color, label, value }, idx) => (
             <div
               key={label}
-              className="flex items-center justify-between px-4 py-3"
+              className="flex items-center justify-between px-4 py-3″
               style={{ borderTop: idx > 0 ? `1px solid ${FOS.border}` : "none" }}
             >
-              <div className="flex items-center gap-3">
-                <Icon className="w-4 h-4" style={{ color }} />
+              <div className="flex items-center gap-3″>
+                <Icon className="w-4 h-4″ style={{ color }} />
                 <span className="text-sm" style={{ color: FOS.muted }}>{label}</span>
               </div>
               <span className="text-white font-bold text-sm">{value}</span>
@@ -419,26 +419,26 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
 
       {/* -- Top Referral Opportunities -- */}
       {pendingOpps.length > 0 && (
-        <div className="px-5 mb-5">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-5 mb-5″>
+          <div className="flex items-center justify-between mb-3″>
             <p className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: FOS.muted }}>Top Opportunities</p>
             <button onClick={() => onNavigate("feed")} className="text-[10px] font-bold" style={{ color: FOS.teal }}>See All →</button>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2″>
             {pendingOpps.slice(0, 3).map((opp: any, i: number) => (
               <div
                 key={opp.id ?? i}
-                className="rounded-2xl px-4 py-3 flex items-center gap-3"
+                className="rounded-2xl px-4 py-3 flex items-center gap-3″
                 style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
               >
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: FOS.limeDim }}>
-                  <Sparkles className="w-4 h-4" style={{ color: FOS.lime }} />
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0″ style={{ background: FOS.limeDim }}>
+                  <Sparkles className="w-4 h-4″ style={{ color: FOS.lime }} />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0″>
                   <p className="text-white text-xs font-bold truncate">{opp.opportunityType ?? "AI Opportunity"}</p>
                   <p className="text-[10px] truncate" style={{ color: FOS.muted }}>{opp.opportunityCategory ?? ""}</p>
                 </div>
-                <div className="text-right flex-shrink-0">
+                <div className="text-right flex-shrink-0″>
                   <p className="text-xs font-black" style={{ color: FOS.lime }}>
                     ${Number(opp.referralCommissionAmount ?? 0).toFixed(0)}
                   </p>
@@ -451,21 +451,21 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
       )}
 
       {/* -- Leaderboard Teaser -- */}
-      <div className="px-5">
+      <div className="px-5″>
         <button
           className="w-full rounded-2xl px-4 py-3.5 flex items-center justify-between active:scale-95 transition-transform"
           style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3″>
             <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: FOS.limeDim }}>
-              <Trophy className="w-4 h-4" style={{ color: FOS.lime }} />
+              <Trophy className="w-4 h-4″ style={{ color: FOS.lime }} />
             </div>
             <div className="text-left">
               <p className="text-white text-sm font-bold">DFW Leaderboard</p>
               <p className="text-xs" style={{ color: FOS.muted }}>Log more jobs to climb the ranks</p>
             </div>
           </div>
-          <ChevronRight className="w-4 h-4" style={{ color: FOS.faint }} />
+          <ChevronRight className="w-4 h-4″ style={{ color: FOS.faint }} />
         </button>
       </div>
     </div>

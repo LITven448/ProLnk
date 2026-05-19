@@ -82,13 +82,13 @@ export default function TrustyProForFlippers() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>Select Your Investor Type</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {investorTypes.map(t => (
-              <button key={t.id} onClick={() => setSelected(t)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: selected.id === t.id ? '#4F46E5' : '#1e3a5f', color: '#fff' }}>
+              <button key={t.id} onClick={() => setSelected(t)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: selected.id === t.id ? '#4F46E5′ : '#1e3a5f', color: '#fff' }}>
                 {t.emoji} {t.label}
               </button>
             ))}
           </div>
 
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#FACC15' }}>TrustyPro Workflow — {selected.label}</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#FACC15′ }}>TrustyPro Workflow — {selected.label}</h3>
           <ol style={{ paddingLeft: 20, marginBottom: 24 }}>
             {selected.workflow.map(step => (
               <li key={step} style={{ color: '#e2e8f0', fontSize: 15, marginBottom: 10, lineHeight: 1.6 }}>{step}</li>
@@ -96,11 +96,11 @@ export default function TrustyProForFlippers() {
           </ol>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #4F46E5' }}>
+            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #4F46E5′ }}>
               <div style={{ color: '#4F46E5', fontWeight: 700, marginBottom: 6 }}>⏱️ Time Saved</div>
               <div style={{ color: '#e2e8f0', fontSize: 14 }}>{selected.timeSaved}</div>
             </div>
-            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #FACC15' }}>
+            <div style={{ background: '#050d1a', borderRadius: 10, padding: 18, borderLeft: '4px solid #FACC15′ }}>
               <div style={{ color: '#FACC15', fontWeight: 700, marginBottom: 6 }}>💰 Cost Justification</div>
               <div style={{ color: '#e2e8f0', fontSize: 14 }}>{selected.costJustification}</div>
             </div>

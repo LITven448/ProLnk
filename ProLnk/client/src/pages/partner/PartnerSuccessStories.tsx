@@ -20,7 +20,7 @@ const stories = [
     after: 7200,
     months: 10,
     partners: 22,
-    tip: 'Church network was my gold mine. I hosted a free "Home Maintenance 101" talk and signed up 6 partners in one evening.',
+    tip: 'Church network was my gold mine. I hosted a free "Home Maintenance 101″ talk and signed up 6 partners in one evening.',
     emoji: '🔧',
   },
   {
@@ -80,7 +80,7 @@ export default function PartnerSuccessStories() {
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🏆</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#0A1628', margin: 0 }}>Partner Success Stories</h1>
-          <p style={{ color: '#64748B', fontSize: 16, marginTop: 12, maxWidth: 560, margin: '12px auto 0' }}>
+          <p style={{ color: '#64748B', fontSize: 16, marginTop: 12, maxWidth: 560, margin: '12px auto 0′ }}>
             Real partners. Real results. On average, ProLnk partners earn{' '}
             <span style={{ color: '#0A1628', fontWeight: 700 }}>${avg.toLocaleString()}/mo</span> by month 6.
           </p>
@@ -97,7 +97,7 @@ export default function PartnerSuccessStories() {
                 style={{
                   background: '#fff',
                   borderRadius: 16,
-                  border: isOpen ? '2px solid #F5E642' : '2px solid transparent',
+                  border: isOpen ? '2px solid #F5E642′ : '2px solid transparent',
                   boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
                   padding: 24,
                   cursor: 'pointer',
@@ -119,7 +119,7 @@ export default function PartnerSuccessStories() {
                   </div>
                   <div style={{ flex: 1, background: '#F5E642', borderRadius: 10, padding: '10px 14px' }}>
                     <div style={{ fontSize: 11, color: '#0A1628', fontWeight: 600, marginBottom: 2 }}>AFTER</div>
-                    <div style={{ fontSize: 18, fontWeight: 700, color: '#0A1628' }}>${s.after.toLocaleString()}/mo</div>
+                    <div style={{ fontSize: 18, fontWeight: 700, color: '#0A1628′ }}>${s.after.toLocaleString()}/mo</div>
                   </div>
                 </div>
 
@@ -142,7 +142,7 @@ export default function PartnerSuccessStories() {
                   </div>
                 )}
 
-                <div style={{ textAlign: 'right', marginTop: 12, fontSize: 12, color: '#94A3B8' }}>
+                <div style={{ textAlign: 'right', marginTop: 12, fontSize: 12, color: '#94A3B8′ }}>
                   {isOpen ? 'Click to collapse ▲' : 'Click to read tip ▼'}
                 </div>
               </div>

@@ -20,19 +20,19 @@ export default function DFWSummerCoolingCostGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>10 proven strategies to cut your DFW cooling bill — without replacing your system</p>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>🌡️ The DFW Summer Reality</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>
-            DFW averages <strong style={{ color: '#F5E642' }}>107 days above 90°F</strong> with a record-breaking 2024 summer hitting 100°F for 42 consecutive days. Average DFW homeowner pays <strong style={{ color: '#F5E642' }}>$280-400/month</strong> in electricity June–September. Most of these costs are avoidable with behavior + low-cost upgrades — no new HVAC required.
+            DFW averages <strong style={{ color: '#F5E642′ }}>107 days above 90°F</strong> with a record-breaking 2024 summer hitting 100°F for 42 consecutive days. Average DFW homeowner pays <strong style={{ color: '#F5E642' }}>$280-400/month</strong> in electricity June–September. Most of these costs are avoidable with behavior + low-cost upgrades — no new HVAC required.
           </p>
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>🔧 The Top 3 Highest-ROI Upgrades</h2>
           <ul style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.8, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#F5E642' }}>Duct sealing</strong> — $400-800, saves $300-600/year in DFW</li>
-            <li><strong style={{ color: '#F5E642' }}>Attic insulation upgrade</strong> — $1,200-2,500, saves $400-700/year</li>
-            <li><strong style={{ color: '#F5E642' }}>Smart thermostat</strong> — $150-300, saves $150-200/year on average</li>
+            <li><strong style={{ color: '#F5E642′ }}>Duct sealing</strong> — $400-800, saves $300-600/year in DFW</li>
+            <li><strong style={{ color: '#F5E642′ }}>Attic insulation upgrade</strong> — $1,200-2,500, saves $400-700/year</li>
+            <li><strong style={{ color: '#F5E642′ }}>Smart thermostat</strong> — $150-300, saves $150-200/year on average</li>
           </ul>
         </div>
 
@@ -41,13 +41,13 @@ export default function DFWSummerCoolingCostGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {homeTypes.map((h, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {h.icon} {h.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>{homeTypes[selected].icon} {homeTypes[selected].label} — Top Savings Actions</h3>
               <ul style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.8, paddingLeft: 18 }}>
                 {homeTypes[selected].tips.map((t, i) => <li key={i}>{t}</li>)}

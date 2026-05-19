@@ -62,7 +62,7 @@ export default function DFWDishwasherGuide() {
           <p style={{ color: '#CBD5E1', margin: '0 0 10px', lineHeight: 1.7, fontSize: 14 }}>DFW municipal water runs 15–25 grains per gallon (GPG) of hardness — the EPA considers anything above 7 GPG "hard." Calcium and magnesium minerals coat spray arms, clog filter screens, etch glassware, and calcify heating elements. Dishwashers without a water softener in DFW typically last 7–9 years vs. the 12–15 year national average.</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {['Run dishwasher on hottest cycle monthly with 2 cups white vinegar', 'Use Finish Quantum with Powerball for hard water', 'Clean filter screen every 30 days', 'Use rinse aid — mandatory in DFW, not optional'].map(tip => (
-              <span key={tip} style={{ backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 12px', fontSize: 12, color: '#94A3B8' }}>✓ {tip}</span>
+              <span key={tip} style={{ backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 12px', fontSize: 12, color: '#94A3B8′ }}>✓ {tip}</span>
             ))}
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function DFWDishwasherGuide() {
             </thead>
             <tbody>
               {PROBLEMS.map((row, i) => (
-                <tr key={row.label} style={{ backgroundColor: i % 2 === 0 ? '#0A1628' : '#0D1E3A' }}>
+                <tr key={row.label} style={{ backgroundColor: i % 2 === 0 ? '#0A1628′ : '#0D1E3A' }}>
                   <td style={{ padding: '10px 14px', color: '#E2E8F0', borderBottom: '1px solid #1E3A5F' }}>{row.label}</td>
                   <td style={{ padding: '10px 14px', color: '#F5E642', borderBottom: '1px solid #1E3A5F', whiteSpace: 'nowrap' }}>{row.repair}</td>
                   <td style={{ padding: '10px 14px', color: '#94A3B8', borderBottom: '1px solid #1E3A5F', fontSize: 12 }}>{row.cause}</td>
@@ -115,7 +115,7 @@ export default function DFWDishwasherGuide() {
           </div>
           <button onClick={evaluate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.verdict}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 10 }}>Repair estimate: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.repairCost}</span></div>
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 14 }}>{result.detail}</p>

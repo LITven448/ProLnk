@@ -12,13 +12,13 @@ export default function DFWSellerConcessions2026() {
         { concession: 'Repair credit', typical: 'Inspection findings', notes: 'Avoid doing repairs yourself' },
       ],
       medium: [
-        { concession: 'Closing cost assist', typical: '2-3% of price', notes: 'Most common in DFW 2026' },
-        { concession: 'Rate buydown (1/0)', typical: '1% of loan', notes: 'Reduces buyer payment yr 1' },
+        { concession: 'Closing cost assist', typical: '2-3% of price', notes: 'Most common in DFW 2026′ },
+        { concession: 'Rate buydown (1/0)', typical: '1% of loan', notes: 'Reduces buyer payment yr 1′ },
         { concession: 'Home warranty', typical: '$600-900', notes: 'Standard expectation now' },
       ],
       high: [
         { concession: 'Closing cost assist', typical: '3% of price', notes: 'Full buyer closing costs' },
-        { concession: '2/1 Rate buydown', typical: '2-3% of loan', notes: '2% below rate yr1, 1% yr2' },
+        { concession: '2/1 Rate buydown', typical: '2-3% of loan', notes: '2% below rate yr1, 1% yr2′ },
         { concession: 'Repair credits', typical: 'All inspection items', notes: 'Credit vs. doing repairs' },
         { concession: 'Home warranty', typical: '$900', notes: 'Extended coverage' },
       ],
@@ -64,15 +64,15 @@ export default function DFWSellerConcessions2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🤝</div>
-          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Seller Concessions Guide 2026</h1>
+          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Seller Concessions Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>What DFW sellers are giving up — and how to negotiate strategically</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[
             { icon: '💸', label: 'Closing Cost Assist', val: '2-3% common' },
-            { icon: '📉', label: 'Rate Buydown', val: '1/0 or 2/1' },
-            { icon: '🛡', label: 'Home Warranty', val: '$600-900' },
+            { icon: '📉', label: 'Rate Buydown', val: '1/0 or 2/1′ },
+            { icon: '🛡', label: 'Home Warranty', val: '$600-900′ },
           ].map((s) => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 12, padding: '1rem', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem' }}>{s.icon}</div>
@@ -89,7 +89,7 @@ export default function DFWSellerConcessions2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Market Condition</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 {['hot', 'balanced', 'soft'].map((m) => (
-                  <button key={m} onClick={() => setMarket(m)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: market === m ? '#F5E642' : '#1e3a5f', color: market === m ? '#0A1628' : '#fff' }}>{m.charAt(0).toUpperCase() + m.slice(1)}</button>
+                  <button key={m} onClick={() => setMarket(m)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: market === m ? '#F5E642′ : '#1e3a5f', color: market === m ? '#0A1628' : '#fff' }}>{m.charAt(0).toUpperCase() + m.slice(1)}</button>
                 ))}
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function DFWSellerConcessions2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Your Leverage</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 {['low', 'medium', 'high'].map((l) => (
-                  <button key={l} onClick={() => setLeverage(l)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: leverage === l ? '#F5E642' : '#1e3a5f', color: leverage === l ? '#0A1628' : '#fff' }}>{l.charAt(0).toUpperCase() + l.slice(1)}</button>
+                  <button key={l} onClick={() => setLeverage(l)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: leverage === l ? '#F5E642′ : '#1e3a5f', color: leverage === l ? '#0A1628' : '#fff' }}>{l.charAt(0).toUpperCase() + l.slice(1)}</button>
                 ))}
               </div>
             </div>

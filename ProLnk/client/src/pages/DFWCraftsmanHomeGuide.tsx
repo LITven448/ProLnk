@@ -12,12 +12,12 @@ const styles: Record<string, React.CSSProperties> = {
   card: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '18px', border: '1px solid #1E2D4A' },
   cardIcon: { fontSize: '28px', marginBottom: '10px' },
   cardTitle: { fontSize: '15px', fontWeight: 700, color: '#E8EDF5', marginBottom: '6px' },
-  cardText: { fontSize: '13px', color: '#94A3B8', lineHeight: '1.6' },
+  cardText: { fontSize: '13px', color: '#94A3B8', lineHeight: '1.6′ },
   label: { display: 'block', fontSize: '14px', fontWeight: 600, color: '#94A3B8', marginBottom: '8px' },
   select: { width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid #1E2D4A', backgroundColor: '#0A1628', color: '#E8EDF5', fontSize: '14px', marginBottom: '20px' },
-  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', border: '1px solid #F5E642' },
+  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', border: '1px solid #F5E642′ },
   resultTitle: { fontSize: '17px', fontWeight: 700, color: '#F5E642', marginBottom: '12px' },
-  bullet: { fontSize: '14px', color: '#94A3B8', marginBottom: '8px', paddingLeft: '16px', borderLeft: '2px solid #F5E642' },
+  bullet: { fontSize: '14px', color: '#94A3B8', marginBottom: '8px', paddingLeft: '16px', borderLeft: '2px solid #F5E642′ },
 };
 
 const decadePriorities: Record<string, { maintenance: string[]; tradeoffs: string[] }> = {
@@ -65,7 +65,7 @@ export default function DFWCraftsmanHomeGuide() {
           <div style={styles.sectionTitle}>🔧 Era-Specific Maintenance Planner</div>
           <label style={styles.label}>Home Construction Decade</label>
           <select style={styles.select} value={decade} onChange={e => setDecade(e.target.value)}>
-            <option value="pre-1910">Pre-1910</option>
+            <option value="pre-1910″>Pre-1910</option>
             <option value="1910s-1930s">1910s – 1930s</option>
             <option value="1940s-1950s">1940s – 1950s</option>
             <option value="1950s-1960s">1950s – 1960s</option>

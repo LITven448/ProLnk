@@ -33,7 +33,7 @@ export default function DFWPlanotexasHomeownerGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
           {planoAreas.map(a => (
             <button key={a.id} onClick={() => setSelected(a.id === selected ? null : a.id)}
-              style={{ background: selected === a.id ? '#F5E642' : '#111f35', color: selected === a.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === a.id ? '#F5E642′ : '#111f35', color: selected === a.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {a.label}
             </button>
           ))}

@@ -27,38 +27,38 @@ interface Task {
 }
 
 const PRIORITY_STYLE: Record<Priority, { bg: string; color: string; border: string }> = {
-  Critical: { bg: "#FFF0F0", color: "#EA0606", border: "#EA060630" },
-  High:     { bg: "#FFF4ED", color: "#f97316", border: "#f9731630" },
-  Med:      { bg: "#FFF8E6", color: "#FBB140", border: "#FBB14030" },
-  Low:      { bg: "#F0FAF0", color: "#82D616", border: "#82D61630" },
+  Critical: { bg: "#FFF0F0″, color: "#EA0606", border: "#EA060630" },
+  High:     { bg: "#FFF4ED", color: "#f97316″, border: "#f9731630" },
+  Med:      { bg: "#FFF8E6″, color: "#FBB140", border: "#FBB14030" },
+  Low:      { bg: "#F0FAF0″, color: "#82D616", border: "#82D61630" },
 };
 
 const CAT_STYLE: Record<Category, { bg: string; color: string }> = {
   Marketing: { bg: "#F3EEFF", color: "#7928CA" },
-  Ops:       { bg: "#E8F9FC", color: "#17C1E8" },
-  Tech:      { bg: "#E8F0FD", color: "#1A73E8" },
-  Finance:   { bg: "#FFF8E6", color: "#FBB140" },
-  Legal:     { bg: "#FFF0F0", color: "#EA0606" },
+  Ops:       { bg: "#E8F9FC", color: "#17C1E8″ },
+  Tech:      { bg: "#E8F0FD", color: "#1A73E8″ },
+  Finance:   { bg: "#FFF8E6″, color: "#FBB140" },
+  Legal:     { bg: "#FFF0F0″, color: "#EA0606" },
 };
 
-const ASSIGNEE_COLORS = ["#17C1E8","#82D616","#7928CA","#FBB140","#EA0606","#1A73E8","#f97316"];
+const ASSIGNEE_COLORS = ["#17C1E8″,"#82D616","#7928CA","#FBB140","#EA0606","#1A73E8","#f97316"];
 
 const INIT_TASKS: Task[] = [
   { id: 1,  title: "Review 3 pending insurance claims",            priority: "Critical", assignee: "Andrew F.",    initials: "AF", dueDate: "Today",   category: "Legal",     status: "todo",       automated: false },
   { id: 2,  title: "Process 2 disputed commissions",               priority: "Critical", assignee: "Sara Lee",     initials: "SL", dueDate: "Today",   category: "Finance",   status: "todo",       automated: false },
-  { id: 3,  title: "Deploy Referral Hub v2 to production",         priority: "High",     assignee: "Dev Team",     initials: "DT", dueDate: "May 15",  category: "Tech",      status: "todo",       automated: false },
-  { id: 4,  title: "Draft Q2 email campaign sequence",             priority: "High",     assignee: "Mia Chen",     initials: "MC", dueDate: "May 15",  category: "Marketing", status: "todo",       automated: false },
-  { id: 5,  title: "Review onboarding drop-off metrics",           priority: "High",     assignee: "Jake Torres",  initials: "JT", dueDate: "May 16",  category: "Ops",       status: "todo",       automated: true  },
-  { id: 6,  title: "Send NPS surveys to active partners",          priority: "High",     assignee: "NPS Agent",    initials: "NA", dueDate: "May 16",  category: "Ops",       status: "todo",       automated: true  },
-  { id: 7,  title: "Update commission rate documentation",          priority: "Med",      assignee: "Sara Lee",     initials: "SL", dueDate: "May 18",  category: "Finance",   status: "todo",       automated: false },
-  { id: 8,  title: "A/B test landing page CTA variant",            priority: "Med",      assignee: "Mia Chen",     initials: "MC", dueDate: "May 20",  category: "Marketing", status: "todo",       automated: true  },
-  { id: 9,  title: "Reconcile April commission ledger",            priority: "Med",      assignee: "Finance Agent",initials: "FA", dueDate: "May 19",  category: "Finance",   status: "inprogress", automated: true  },
-  { id: 10, title: "Fix mobile nav overflow bug on iOS",           priority: "High",     assignee: "Dev Team",     initials: "DT", dueDate: "May 15",  category: "Tech",      status: "inprogress", automated: false },
-  { id: 11, title: "Build partner leaderboard widget",             priority: "Med",      assignee: "Dev Team",     initials: "DT", dueDate: "May 21",  category: "Tech",      status: "inprogress", automated: false },
-  { id: 12, title: "Partner activation push notification blast",   priority: "Low",      assignee: "SMS Agent",    initials: "SA", dueDate: "May 22",  category: "Marketing", status: "todo",       automated: true  },
-  { id: 13, title: "Weekly SEO audit report",                      priority: "Low",      assignee: "SEO Agent",    initials: "SE", dueDate: "May 19",  category: "Marketing", status: "inprogress", automated: true  },
-  { id: 14, title: "Launch founding partner promo blast",          priority: "High",     assignee: "Mia Chen",     initials: "MC", dueDate: "May 10",  category: "Marketing", status: "done",       automated: false },
-  { id: 15, title: "Migrate staging DB to TiDB Cloud",             priority: "High",     assignee: "Dev Team",     initials: "DT", dueDate: "May 9",   category: "Tech",      status: "done",       automated: false },
+  { id: 3,  title: "Deploy Referral Hub v2 to production",         priority: "High",     assignee: "Dev Team",     initials: "DT", dueDate: "May 15″,  category: "Tech",      status: "todo",       automated: false },
+  { id: 4,  title: "Draft Q2 email campaign sequence",             priority: "High",     assignee: "Mia Chen",     initials: "MC", dueDate: "May 15″,  category: "Marketing", status: "todo",       automated: false },
+  { id: 5,  title: "Review onboarding drop-off metrics",           priority: "High",     assignee: "Jake Torres",  initials: "JT", dueDate: "May 16″,  category: "Ops",       status: "todo",       automated: true  },
+  { id: 6,  title: "Send NPS surveys to active partners",          priority: "High",     assignee: "NPS Agent",    initials: "NA", dueDate: "May 16″,  category: "Ops",       status: "todo",       automated: true  },
+  { id: 7,  title: "Update commission rate documentation",          priority: "Med",      assignee: "Sara Lee",     initials: "SL", dueDate: "May 18″,  category: "Finance",   status: "todo",       automated: false },
+  { id: 8,  title: "A/B test landing page CTA variant",            priority: "Med",      assignee: "Mia Chen",     initials: "MC", dueDate: "May 20″,  category: "Marketing", status: "todo",       automated: true  },
+  { id: 9,  title: "Reconcile April commission ledger",            priority: "Med",      assignee: "Finance Agent",initials: "FA", dueDate: "May 19″,  category: "Finance",   status: "inprogress", automated: true  },
+  { id: 10, title: "Fix mobile nav overflow bug on iOS",           priority: "High",     assignee: "Dev Team",     initials: "DT", dueDate: "May 15″,  category: "Tech",      status: "inprogress", automated: false },
+  { id: 11, title: "Build partner leaderboard widget",             priority: "Med",      assignee: "Dev Team",     initials: "DT", dueDate: "May 21″,  category: "Tech",      status: "inprogress", automated: false },
+  { id: 12, title: "Partner activation push notification blast",   priority: "Low",      assignee: "SMS Agent",    initials: "SA", dueDate: "May 22″,  category: "Marketing", status: "todo",       automated: true  },
+  { id: 13, title: "Weekly SEO audit report",                      priority: "Low",      assignee: "SEO Agent",    initials: "SE", dueDate: "May 19″,  category: "Marketing", status: "inprogress", automated: true  },
+  { id: 14, title: "Launch founding partner promo blast",          priority: "High",     assignee: "Mia Chen",     initials: "MC", dueDate: "May 10″,  category: "Marketing", status: "done",       automated: false },
+  { id: 15, title: "Migrate staging DB to TiDB Cloud",             priority: "High",     assignee: "Dev Team",     initials: "DT", dueDate: "May 9″,   category: "Tech",      status: "done",       automated: false },
 ];
 
 const COLUMNS: { key: Status; label: string; icon: React.ElementType; accent: string }[] = [
@@ -153,7 +153,7 @@ export default function TaskManager() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 24 }}>
           {[
-            { label: "Critical", value: counts.critical, color: "#EA0606", gradient: BADGE_GRADIENTS.red,    icon: AlertTriangle },
+            { label: "Critical", value: counts.critical, color: "#EA0606″, gradient: BADGE_GRADIENTS.red,    icon: AlertTriangle },
             { label: "High",     value: counts.high,     color: T.orange,  gradient: BADGE_GRADIENTS.orange, icon: AlertTriangle },
             { label: "Medium",   value: counts.medium,   color: T.amber,   gradient: BADGE_GRADIENTS.cyan,   icon: Clock },
             { label: "Low",      value: counts.low,      color: T.green,   gradient: BADGE_GRADIENTS.green,  icon: CheckSquare },
@@ -200,16 +200,16 @@ export default function TaskManager() {
         </div>
 
         {counts.critical > 0 && (
-          <div style={{ ...CARD, padding: "14px 20px", border: "1.5px solid #EA060640", background: "#FFF5F5", marginBottom: 20 }}>
+          <div style={{ ...CARD, padding: "14px 20px", border: "1.5px solid #EA060640″, background: "#FFF5F5", marginBottom: 20 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-              <AlertTriangle style={{ width: 16, height: 16, color: "#EA0606" }} />
-              <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 14, color: "#EA0606" }}>Critical Tasks — Action Required</span>
+              <AlertTriangle style={{ width: 16, height: 16, color: "#EA0606″ }} />
+              <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 14, color: "#EA0606″ }}>Critical Tasks — Action Required</span>
             </div>
             {tasks.filter(t => t.priority === "Critical" && t.status !== "done").map(t => (
-              <div key={t.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", borderRadius: 8, background: "#FFF0F0", border: "1px solid #EA060620", marginBottom: 6 }}>
+              <div key={t.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", borderRadius: 8, background: "#FFF0F0″, border: "1px solid #EA060620", marginBottom: 6 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <AlertTriangle style={{ width: 14, height: 14, color: "#EA0606" }} />
-                  <span style={{ fontFamily: FONT, fontWeight: 600, fontSize: 13, color: "#EA0606" }}>{t.title}</span>
+                  <AlertTriangle style={{ width: 14, height: 14, color: "#EA0606″ }} />
+                  <span style={{ fontFamily: FONT, fontWeight: 600, fontSize: 13, color: "#EA0606″ }}>{t.title}</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ fontSize: 11, color: T.muted }}>{t.dueDate}</span>
@@ -257,12 +257,12 @@ export default function TaskManager() {
                       ...CARD,
                       padding: 16,
                       opacity: col.key === "done" ? 0.75 : 1,
-                      border: task.priority === "Critical" && col.key !== "done" ? "1.5px solid #EA060630" : CARD.border,
-                      background: task.priority === "Critical" && col.key !== "done" ? "#FFF8F8" : T.surface,
+                      border: task.priority === "Critical" && col.key !== "done" ? "1.5px solid #EA060630″ : CARD.border,
+                      background: task.priority === "Critical" && col.key !== "done" ? "#FFF8F8″ : T.surface,
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: task.priority === "Critical" && col.key !== "done" ? "#EA0606" : T.text, lineHeight: 1.4, flex: 1, textDecoration: col.key === "done" ? "line-through" : "none" }}>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: task.priority === "Critical" && col.key !== "done" ? "#EA0606″ : T.text, lineHeight: 1.4, flex: 1, textDecoration: col.key === "done" ? "line-through" : "none" }}>
                         {task.title}
                       </span>
                       <span style={{
@@ -293,12 +293,12 @@ export default function TaskManager() {
                       <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
                         <button
                           onClick={() => completeTask(task.id)}
-                          style={{ flex: 1, padding: "5px 0", borderRadius: 8, border: `1px solid ${T.green}40`, background: `${T.green}10`, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4, fontSize: 11, fontWeight: 600, color: T.green, fontFamily: FONT }}
+                          style={{ flex: 1, padding: "5px 0″, borderRadius: 8, border: `1px solid ${T.green}40`, background: `${T.green}10`, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4, fontSize: 11, fontWeight: 600, color: T.green, fontFamily: FONT }}
                         >
                           <CheckCircle style={{ width: 12, height: 12 }} /> Complete
                         </button>
                         <Link href="/admin/agents">
-                          <button style={{ flex: 1, padding: "5px 0", borderRadius: 8, border: `1px solid ${T.border}`, background: T.bg, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4, fontSize: 11, fontWeight: 600, color: T.muted, fontFamily: FONT }}>
+                          <button style={{ flex: 1, padding: "5px 0″, borderRadius: 8, border: `1px solid ${T.border}`, background: T.bg, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4, fontSize: 11, fontWeight: 600, color: T.muted, fontFamily: FONT }}>
                             <Bot style={{ width: 12, height: 12 }} /> Assign Agent
                           </button>
                         </Link>
@@ -332,7 +332,7 @@ export default function TaskManager() {
                 style={{ width: "100%", marginBottom: 16, background: T.surface, border: `1px solid ${T.border}`, borderRadius: 10, fontSize: 13, color: T.text }}
               />
               <div style={{ display: "flex", gap: 10 }}>
-                <button onClick={() => setShowForm(false)} style={{ flex: 1, padding: "10px 0", borderRadius: 10, border: `1px solid ${T.border}`, background: "transparent", color: T.muted, fontFamily: FONT, fontWeight: 700, cursor: "pointer" }}>Cancel</button>
+                <button onClick={() => setShowForm(false)} style={{ flex: 1, padding: "10px 0″, borderRadius: 10, border: `1px solid ${T.border}`, background: "transparent", color: T.muted, fontFamily: FONT, fontWeight: 700, cursor: "pointer" }}>Cancel</button>
                 <Button onClick={addTask} style={{ flex: 1, background: BADGE_GRADIENTS.blue, color: "#fff", border: "none", borderRadius: 10, fontFamily: FONT, fontWeight: 700 }}>Add Task</Button>
               </div>
             </div>

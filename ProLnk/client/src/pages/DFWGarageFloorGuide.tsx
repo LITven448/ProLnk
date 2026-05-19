@@ -62,7 +62,7 @@ export default function DFWGarageFloorGuide() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🏠 DFW Garage Floor Guide</h1>
-        <p style={{ color: '#94A3B8', marginBottom: 32 }}>DFW's heat, humidity, and clay soil create unique challenges for garage floors. Choose wrong and you'll be peeling it up in 2 years.</p>
+        <p style={{ color: '#94A3B8', marginBottom: 32 }}>DFW's heat, humidity, and clay soil create unique challenges for garage floors. Choose wrong and you’ll be peeling it up in 2 years.</p>
 
         <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Floor System Finder</h2>
         <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32 }}>
@@ -91,7 +91,7 @@ export default function DFWGarageFloorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Recommended for You</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.name}</h3>
             <p style={{ color: '#94A3B8', marginBottom: 12 }}>{result.description}</p>

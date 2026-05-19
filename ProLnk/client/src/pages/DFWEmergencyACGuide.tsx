@@ -118,7 +118,7 @@ export default function DFWEmergencyACGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>What Is Your AC Doing?</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>What Is Your AC Doing?</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Select your situation</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value as SymptomKey)}
@@ -158,7 +158,7 @@ export default function DFWEmergencyACGuide() {
 
             <div style={{ background: '#0F2040', borderRadius: 12, padding: 24 }}>
               <h3 style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>What to Tell the Tech</h3>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, fontSize: 14, lineHeight: 1.6, fontStyle: 'italic', color: '#94A3B8' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, fontSize: 14, lineHeight: 1.6, fontStyle: 'italic', color: '#94A3B8′ }}>
                 "{result.techScript}"
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function DFWEmergencyACGuide() {
         )}
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginTop: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>DFW Cooling Centers</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>DFW Cooling Centers</h2>
           <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 12 }}>During heat advisories, Dallas County and Tarrant County open free cooling centers.</p>
           <div style={{ display: 'grid', gap: 8 }}>
             {[
@@ -182,7 +182,7 @@ export default function DFWEmergencyACGuide() {
             ].map(([area, locations]) => (
               <div key={area as string} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontWeight: 700, fontSize: 13, color: '#F5E642', marginBottom: 2 }}>{area as string}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8' }}>{locations as string}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{locations as string}</div>
               </div>
             ))}
           </div>

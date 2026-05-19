@@ -165,7 +165,7 @@ export default function ProLnkPartnerIncomeFAQ() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             <button
               onClick={() => setActiveCategory(null)}
-              style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: !activeCategory ? '#F5E642' : 'rgba(255,255,255,0.2)', background: !activeCategory ? '#F5E642' : 'transparent', color: !activeCategory ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}
+              style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: !activeCategory ? '#F5E642′ : ’rgba(255,255,255,0.2)', background: !activeCategory ? '#F5E642′ : ’transparent', color: !activeCategory ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}
             >
               All Topics
             </button>
@@ -173,7 +173,7 @@ export default function ProLnkPartnerIncomeFAQ() {
               <button
                 key={cat.category}
                 onClick={() => setActiveCategory(activeCategory === cat.category ? null : cat.category)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: activeCategory === cat.category ? '#F5E642' : 'rgba(255,255,255,0.2)', background: activeCategory === cat.category ? '#F5E642' : 'transparent', color: activeCategory === cat.category ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: activeCategory === cat.category ? '#F5E642′ : ’rgba(255,255,255,0.2)', background: activeCategory === cat.category ? '#F5E642′ : ’transparent', color: activeCategory === cat.category ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}
               >
                 {cat.emoji} {cat.category.split(' ').slice(1).join(' ')}
               </button>
@@ -198,7 +198,7 @@ export default function ProLnkPartnerIncomeFAQ() {
                       style={{ width: '100%', textAlign: 'left', padding: '18px 22px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16 }}
                     >
                       <span style={{ fontSize: 15, fontWeight: 600, color: '#fff', lineHeight: 1.5 }}>{faq.q}</span>
-                      <span style={{ fontSize: 20, color: isOpen ? '#F5E642' : '#555', flexShrink: 0, fontWeight: 700, width: 24, textAlign: 'center' }}>
+                      <span style={{ fontSize: 20, color: isOpen ? '#F5E642′ : '#555', flexShrink: 0, fontWeight: 700, width: 24, textAlign: ’center' }}>
                         {isOpen ? '−' : '+'}
                       </span>
                     </button>

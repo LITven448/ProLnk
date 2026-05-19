@@ -76,15 +76,15 @@ export default function DFWSchoolBoundaryCheckGuide() {
             <div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontWeight: 700, marginBottom: 8 }}>📋 Verification Steps</div>
-                {match.steps.map((step, i) => <div key={i} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f0f0f0', color: '#333' }}>{i + 1}. {step}</div>)}
+                {match.steps.map((step, i) => <div key={i} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f0f0f0', color: '#333′ }}>{i + 1}. {step}</div>)}
               </div>
-              <div style={{ background: match.risk.startsWith('HIGH') ? '#fef2f2' : '#fffbeb', borderRadius: 8, padding: 14, marginBottom: 16 }}>
-                <div style={{ fontWeight: 700, marginBottom: 4, color: match.risk.startsWith('HIGH') ? '#dc2626' : '#d97706' }}>⚠️ Boundary Change Risk</div>
-                <div style={{ fontSize: 13, color: '#555' }}>{match.risk}</div>
+              <div style={{ background: match.risk.startsWith('HIGH') ? '#fef2f2′ : '#fffbeb', borderRadius: 8, padding: 14, marginBottom: 16 }}>
+                <div style={{ fontWeight: 700, marginBottom: 4, color: match.risk.startsWith('HIGH') ? '#dc2626′ : '#d97706' }}>⚠️ Boundary Change Risk</div>
+                <div style={{ fontSize: 13, color: '#555′ }}>{match.risk}</div>
               </div>
               <div>
                 <div style={{ fontWeight: 700, marginBottom: 8 }}>🏫 Backup Private School Options</div>
-                {match.private.map((p, i) => <div key={i} style={{ fontSize: 13, padding: '5px 0', color: '#555' }}>• {p}</div>)}
+                {match.private.map((p, i) => <div key={i} style={{ fontSize: 13, padding: '5px 0', color: '#555′ }}>• {p}</div>)}
               </div>
             </div>
           )}

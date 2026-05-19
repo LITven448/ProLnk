@@ -52,7 +52,7 @@ export default function DFWPoolFenceGuide() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🏊 DFW HOME SAFETY GUIDES</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🏊 DFW HOME SAFETY GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>Pool Fence Requirements</h1>
         <p style={{ color: '#9AA3B2', marginBottom: '2rem' }}>Texas HB 1921 requires a 4-foot barrier around all residential pools. Some DFW cities require 5 feet. Here's what you need to know.</p>
 
@@ -106,13 +106,13 @@ export default function DFWPoolFenceGuide() {
 
         {result && (
           <div style={{ background: result.compliant ? '#0D2B1A' : '#2B1A0D', border: `1px solid ${result.compliant ? '#2ECC71' : '#E67E22'}`, borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.compliant ? '#2ECC71' : '#E67E22', marginBottom: '0.5rem' }}>
+            <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.compliant ? '#2ECC71′ : '#E67E22', marginBottom: '0.5rem' }}>
               {result.compliant ? '✅ Plan looks compliant' : '⚠️ Action required'}
             </div>
             <div style={{ color: '#C8D0DC', lineHeight: 1.8 }}>
-              <div>Required barrier height in {city}: <strong style={{ color: '#F5E642' }}>{result.required} feet</strong></div>
-              <div>Estimated fence needed: <strong style={{ color: '#F5E642' }}>{result.fenceNeeded} linear feet</strong></div>
-              <div>Cost estimate: <strong style={{ color: '#F5E642' }}>${result.cost[0].toLocaleString()} – ${result.cost[1].toLocaleString()}</strong></div>
+              <div>Required barrier height in {city}: <strong style={{ color: '#F5E642′ }}>{result.required} feet</strong></div>
+              <div>Estimated fence needed: <strong style={{ color: '#F5E642′ }}>{result.fenceNeeded} linear feet</strong></div>
+              <div>Cost estimate: <strong style={{ color: '#F5E642′ }}>${result.cost[0].toLocaleString()} – ${result.cost[1].toLocaleString()}</strong></div>
               {result.issues.map((issue, i) => <div key={i} style={{ color: '#E67E22', marginTop: 4 }}>• {issue}</div>)}
             </div>
           </div>

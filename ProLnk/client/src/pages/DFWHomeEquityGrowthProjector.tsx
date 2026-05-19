@@ -54,11 +54,11 @@ export default function DFWHomeEquityGrowthProjector() {
         <div style={{ background: '#fff', borderRadius: 10, padding: '1.4rem', marginBottom: '1.2rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
           <label style={{ fontWeight: 600 }}>Purchase Price: {fmt(price)}</label>
           <input type="range" min={200000} max={1200000} step={5000} value={price} onChange={e => setPrice(Number(e.target.value))}
-            style={{ width: '100%', margin: '6px 0 14px', accentColor: '#0A1628' }} />
+            style={{ width: '100%', margin: '6px 0 14px', accentColor: '#0A1628′ }} />
 
           <label style={{ fontWeight: 600 }}>Down Payment: {downPct}% ({fmt(down)})</label>
           <input type="range" min={3} max={30} value={downPct} onChange={e => setDownPct(Number(e.target.value))}
-            style={{ width: '100%', margin: '6px 0 14px', accentColor: '#0A1628' }} />
+            style={{ width: '100%', margin: '6px 0 14px', accentColor: '#0A1628′ }} />
 
           <label style={{ fontWeight: 600 }}>DFW Submarket</label>
           <select value={submarket} onChange={e => setSubmarket(e.target.value)}
@@ -68,7 +68,7 @@ export default function DFWHomeEquityGrowthProjector() {
 
           <label style={{ fontWeight: 600 }}>Extra Monthly Principal: ${extraPmt.toLocaleString()}</label>
           <input type="range" min={0} max={2000} step={50} value={extraPmt} onChange={e => setExtraPmt(Number(e.target.value))}
-            style={{ width: '100%', margin: '6px 0 4px', accentColor: '#0A1628' }} />
+            style={{ width: '100%', margin: '6px 0 4px', accentColor: '#0A1628′ }} />
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -78,8 +78,8 @@ export default function DFWHomeEquityGrowthProjector() {
               <div style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 6 }}>{fmt(m.equity)}</div>
               <div style={{ fontSize: '0.8rem', color: '#aaa' }}>Home value: {fmt(m.value)}</div>
               <div style={{ marginTop: 8, display: 'flex', gap: 12 }}>
-                <div><div style={{ fontSize: '0.75rem', color: '#aaa' }}>Paydown</div><div style={{ fontWeight: 600, color: '#6ee7b7' }}>{fmt(m.paydown)}</div></div>
-                <div><div style={{ fontSize: '0.75rem', color: '#aaa' }}>Appreciation</div><div style={{ fontWeight: 600, color: '#F5E642' }}>{fmt(m.appreciation)}</div></div>
+                <div><div style={{ fontSize: '0.75rem', color: '#aaa' }}>Paydown</div><div style={{ fontWeight: 600, color: '#6ee7b7′ }}>{fmt(m.paydown)}</div></div>
+                <div><div style={{ fontSize: '0.75rem', color: '#aaa' }}>Appreciation</div><div style={{ fontWeight: 600, color: '#F5E642′ }}>{fmt(m.appreciation)}</div></div>
               </div>
             </div>
           ))}

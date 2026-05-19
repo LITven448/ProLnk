@@ -13,7 +13,7 @@ export default function DFWCarbonMonoxide2Guide2026() {
   const [tab, setTab] = useState<'detect' | 'prevent'>('detect');
 
   const src = coSources.find(s => s.id === selected);
-  const riskColor = (r: string) => r === 'Critical' ? '#FF4444' : r === 'High' ? '#FF8800' : r === 'Medium' ? '#F5E642' : '#44BB44';
+  const riskColor = (r: string) => r === 'Critical' ? '#FF4444′ : r === ’High' ? '#FF8800′ : r === ’Medium' ? '#F5E642′ : '#44BB44';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8F4FD', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
@@ -43,12 +43,12 @@ export default function DFWCarbonMonoxide2Guide2026() {
         </div>
 
         {src && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <div style={{ display: 'flex', gap: 12, marginBottom: 18 }}>
               {(['detect', 'prevent'] as const).map(t => (
                 <button key={t} onClick={() => setTab(t)}
                   style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                    background: tab === t ? '#F5E642' : '#1E3A5F', color: tab === t ? '#0A1628' : '#E8F4FD' }}>
+                    background: tab === t ? '#F5E642′ : '#1E3A5F', color: tab === t ? '#0A1628' : '#E8F4FD' }}>
                   {t === 'detect' ? '🔍 Detection' : '🛡️ Prevention'}
                 </button>
               ))}
@@ -61,7 +61,7 @@ export default function DFWCarbonMonoxide2Guide2026() {
 
         <div style={{ textAlign: 'center', marginTop: 32, padding: '16px', background: '#0F2040', borderRadius: 10, border: '1px solid #1E3A5F' }}>
           <div style={{ fontSize: 22 }}>⚠️</div>
-          <p style={{ color: '#8BA5C4', fontSize: 13, margin: '8px 0 0' }}>CO is odorless and colorless. Install detectors on every level. Test monthly. Replace every 5–7 years.</p>
+          <p style={{ color: '#8BA5C4', fontSize: 13, margin: '8px 0 0′ }}>CO is odorless and colorless. Install detectors on every level. Test monthly. Replace every 5–7 years.</p>
         </div>
       </div>
     </div>

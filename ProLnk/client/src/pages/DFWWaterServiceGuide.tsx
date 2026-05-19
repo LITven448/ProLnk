@@ -20,7 +20,7 @@ const waterData: Record<string, CityWaterInfo> = {
   default: { provider: 'Contact your city utility billing department', phone: 'Search "[your city] water utility"', setupProcess: 'Typically requires ID, deposit (varies $50–200), 1–2 business day lead time. Set up before closing or move-in day.', hardness: '~150–220 mg/L typical for DFW', hardnessLevel: 'Hard', notes: 'DFW water is generally hard due to limestone geology. Expect scale buildup on faucets, showerheads, and in appliances. Water softener or filter recommended.' },
 };
 
-const hardnessColors: Record<string, string> = { 'Soft': '#22c55e', 'Moderate': '#eab308', 'Hard': '#f97316', 'Very Hard': '#ef4444' };
+const hardnessColors: Record<string, string> = { 'Soft': '#22c55e', 'Moderate': '#eab308', 'Hard': '#f97316', 'Very Hard': '#ef4444′ };
 
 function getCityData(city: string): CityWaterInfo {
   return waterData[city] || { ...waterData.default, provider: `${city} Water Utility` };
@@ -40,19 +40,19 @@ export default function DFWWaterServiceGuide() {
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1rem', marginTop: 0 }}>🏗️ How DFW Water Works</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Most DFW suburbs get water from the <strong style={{ color: '#F5E642' }}>North Texas Municipal Water District (NTMWD)</strong> or the <strong style={{ color: '#F5E642' }}>Trinity River Authority</strong>, then re-deliver it through their city utility system. You set up service with your city — not NTMWD directly. Water bills typically combine water + sewer usage.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Most DFW suburbs get water from the <strong style={{ color: '#F5E642′ }}>North Texas Municipal Water District (NTMWD)</strong> or the <strong style={{ color: '#F5E642' }}>Trinity River Authority</strong>, then re-deliver it through their city utility system. You set up service with your city — not NTMWD directly. Water bills typically combine water + sewer usage.</p>
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1rem', marginTop: 0 }}>⚗️ DFW Water Hardness — What You Need to Know</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: '0 0 0.75rem' }}>DFW sits on limestone — <strong style={{ color: '#ef4444' }}>water is hard across the entire metro</strong>. Hard water is safe to drink but causes:</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: '0 0 0.75rem' }}>DFW sits on limestone — <strong style={{ color: '#ef4444′ }}>water is hard across the entire metro</strong>. Hard water is safe to drink but causes:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             {['White scale on faucets & showerheads','Reduced dishwasher/appliance lifespan','Soap lather issues & dry skin','Water heater efficiency loss'].map(item => (
               <div key={item} style={{ background: '#0A1628', borderRadius: 6, padding: '0.4rem 0.75rem', color: '#94a3b8', fontSize: '0.9rem' }}>⚠️ {item}</div>
             ))}
           </div>
-          <p style={{ color: '#cbd5e1', fontSize: '0.9rem', margin: '0.75rem 0 0' }}>💡 A whole-home water softener ($800–1,500 installed) pays for itself in appliance protection in most DFW homes.</p>
+          <p style={{ color: '#cbd5e1', fontSize: '0.9rem', margin: '0.75rem 0 0′ }}>💡 A whole-home water softener ($800–1,500 installed) pays for itself in appliance protection in most DFW homes.</p>
         </div>
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>🔍 Look Up Your City's Water Info</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ color: '#94a3b8', fontSize: '0.8rem', display: 'block', marginBottom: '0.25rem' }}>Your DFW City</label>

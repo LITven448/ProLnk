@@ -14,9 +14,9 @@ export default function DFWFoundationQualityScore2026() {
     (dfwReferences ? 1 : 0) + (noAOB ? 1 : 0) + (soilReport ? 1 : 0);
 
   const rating = score >= 8 ? { label: 'Elite', color: '#22c55e' }
-    : score >= 6 ? { label: 'Qualified', color: '#F5E642' }
-    : score >= 4 ? { label: 'Marginal', color: '#f97316' }
-    : { label: 'Avoid', color: '#ef4444' };
+    : score >= 6 ? { label: 'Qualified', color: '#F5E642′ }
+    : score >= 4 ? { label: 'Marginal', color: '#f97316′ }
+    : { label: 'Avoid', color: '#ef4444′ };
 
   const checks = [
     { label: '👷 Licensed Engineer Oversight on Major Work', value: engineerOversight, set: setEngineerOversight, pts: 3 },
@@ -29,7 +29,7 @@ export default function DFWFoundationQualityScore2026() {
   ];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h1 style={{ color: '#F5E642', fontSize: '1.6rem', fontWeight: 700, marginBottom: '0.5rem' }}>
@@ -40,9 +40,9 @@ export default function DFWFoundationQualityScore2026() {
 
         <div style={{ background: '#111e36', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
           {checks.map((c, i) => (
-            <label key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.6rem 0', borderBottom: i < checks.length - 1 ? '1px solid #1e2d47' : 'none', cursor: 'pointer' }}>
+            <label key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.6rem 0', borderBottom: i < checks.length - 1 ? '1px solid #1e2d47′ : ’none', cursor: 'pointer' }}>
               <input type="checkbox" checked={c.value} onChange={e => c.set(e.target.checked)}
-                style={{ width: '18px', height: '18px', accentColor: '#F5E642' }} />
+                style={{ width: '18px', height: '18px', accentColor: '#F5E642′ }} />
               <span style={{ flex: 1, fontSize: '0.9rem' }}>{c.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 600, fontSize: '0.85rem' }}>+{c.pts} pts</span>
             </label>

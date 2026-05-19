@@ -48,55 +48,55 @@ export default function DFWKidSafeHomeGuide2026() {
   const group = ageGroups[selected];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#E8EAF0", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#E8EAF0", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>👶</div>
-          <h1 style={{ color: "#F5E642", fontSize: 28, fontWeight: 700, margin: "0 0 8px" }}>
+          <h1 style={{ color: "#F5E642″, fontSize: 28, fontWeight: 700, margin: "0 0 8px" }}>
             DFW Kid-Safe Home Guide 2026
           </h1>
-          <p style={{ color: "#94A3B8", fontSize: 15 }}>
+          <p style={{ color: "#94A3B8″, fontSize: 15 }}>
             Texas-specific childproofing priorities — pool laws, GFCI requirements, and more.
           </p>
         </div>
 
-        <div style={{ background: "#0F2140", borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 17, fontWeight: 700, margin: "0 0 16px" }}>🎯 Select Your Child's Age Group</h2>
+        <div style={{ background: "#0F2140″, borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642″, fontSize: 17, fontWeight: 700, margin: "0 0 16px" }}>🎯 Select Your Child's Age Group</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 8, marginBottom: 20 }}>
             {ageGroups.map((g, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? "#F5E642" : "#0A1628", color: selected === i ? "#0A1628" : "#E8EAF0", border: `2px solid ${selected === i ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "10px 6px", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>
+                style={{ background: selected === i ? "#F5E642″ : "#0A1628", color: selected === i ? "#0A1628" : "#E8EAF0", border: `2px solid ${selected === i ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "10px 6px", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>
                 {g.age}
               </button>
             ))}
           </div>
           <div style={{ display: "grid", gap: 10 }}>
             {group.items.map((item, i) => (
-              <div key={i} style={{ background: "#0A1628", borderRadius: 8, padding: 14, display: "flex", gap: 12, alignItems: "flex-start" }}>
+              <div key={i} style={{ background: "#0A1628″, borderRadius: 8, padding: 14, display: "flex", gap: 12, alignItems: "flex-start" }}>
                 <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-                <span style={{ fontSize: 14, color: "#CBD5E1" }}>{item.text}</span>
+                <span style={{ fontSize: 14, color: "#CBD5E1″ }}>{item.text}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: "#0F2140", borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 17, fontWeight: 700, margin: "0 0 16px" }}>🏊 Texas Pool Fence Law (Critical)</h2>
+        <div style={{ background: "#0F2140″, borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642″, fontSize: 17, fontWeight: 700, margin: "0 0 16px" }}>🏊 Texas Pool Fence Law (Critical)</h2>
           <div style={{ display: "grid", gap: 8 }}>
             {[["Minimum fence height", "4 feet on all sides"], ["Gate requirement", "Self-latching, self-closing, opens outward away from pool"], ["Climb resistance", "No footholds within 45\" of latch"], ["Door alarms", "Required on house doors opening directly to pool area"], ["Fine for violation", "Up to $500/day in many DFW municipalities"]].map(([k, v]) => (
-              <div key={k as string} style={{ background: "#0A1628", borderRadius: 8, padding: 12, display: "flex", justifyContent: "space-between" }}>
-                <span style={{ color: "#94A3B8", fontSize: 14 }}>{k}</span>
-                <span style={{ color: "#F5E642", fontWeight: 600, fontSize: 14 }}>{v}</span>
+              <div key={k as string} style={{ background: "#0A1628″, borderRadius: 8, padding: 12, display: "flex", justifyContent: "space-between" }}>
+                <span style={{ color: "#94A3B8″, fontSize: 14 }}>{k}</span>
+                <span style={{ color: "#F5E642″, fontWeight: 600, fontSize: 14 }}>{v}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: "#F5E642", borderRadius: 12, padding: 20, textAlign: "center" }}>
+        <div style={{ background: "#F5E642″, borderRadius: 12, padding: 20, textAlign: "center" }}>
           <div style={{ fontSize: 28, marginBottom: 8 }}>🔧</div>
-          <h3 style={{ color: "#0A1628", fontWeight: 700, margin: "0 0 8px" }}>Get Childproofing Pros</h3>
+          <h3 style={{ color: "#0A1628″, fontWeight: 700, margin: "0 0 8px" }}>Get Childproofing Pros</h3>
           <p style={{ color: "#1a2a4a", fontSize: 14, margin: "0 0 12px" }}>ProLnk connects DFW families with licensed electricians, pool fencing, and home safety pros.</p>
-          <button style={{ background: "#0A1628", color: "#F5E642", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, cursor: "pointer", fontSize: 15 }}>
+          <button style={{ background: "#0A1628″, color: "#F5E642", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, cursor: "pointer", fontSize: 15 }}>
             Get Free Quotes →
           </button>
         </div>

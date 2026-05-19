@@ -30,7 +30,7 @@ export default function DFWProLnkJuneUpdate2026() {
             <div key={s.label} style={{ background: '#111f38', borderRadius: 10, padding: '16px 20px' }}>
               <div style={{ fontSize: 22 }}>{s.icon}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{s.label}</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642' }}>{s.val}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>{s.val}</div>
             </div>
           ))}
         </div>
@@ -42,8 +42,8 @@ export default function DFWProLnkJuneUpdate2026() {
               key={r.id}
               onClick={() => setSelected(selected === r.id ? null : r.id)}
               style={{
-                background: selected === r.id ? '#F5E642' : '#111f38',
-                color: selected === r.id ? '#0A1628' : '#fff',
+                background: selected === r.id ? '#F5E642′ : '#111f38',
+                color: selected === r.id ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px',
                 textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15,
               }}
@@ -60,7 +60,7 @@ export default function DFWProLnkJuneUpdate2026() {
           </div>
         )}
 
-        <div style={{ background: '#111f38', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#111f38', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>⏳ CHARTER WAITLIST CLOSES AT 500 PROS + 5,000 HOMES</div>
           <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>
             Once the Charter tier closes, founding rates are locked permanently. Join now at prolnk.io to secure your position before the DFW launch.

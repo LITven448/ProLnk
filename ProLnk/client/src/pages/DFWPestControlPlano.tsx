@@ -3,8 +3,8 @@ import { useState } from 'react';
 const planoStats = [
   { label: 'Termite Activity (DFW)', value: 'High Zone' },
   { label: 'Mosquito Season Length', value: '7+ months' },
-  { label: 'Fire Ant Colonies / Acre', value: 'Up to 300' },
-  { label: 'Avg Annual Pest Control', value: '$400–$900' },
+  { label: 'Fire Ant Colonies / Acre', value: 'Up to 300′ },
+  { label: 'Avg Annual Pest Control', value: '$400–$900′ },
 ];
 
 type PestKey = 'mosquitoes' | 'termites' | 'fireAnts' | 'roaches' | 'rodents' | 'spiders' | 'bedbugs' | 'wasps';
@@ -129,7 +129,7 @@ export default function DFWPestControlPlano() {
             water, fire ants thrive in maintained turf, and termites are active year-round in DFW's climate.
           </p>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
-            Unlike rural areas, Plano's density means pests move easily between properties — a neighbor's
+            Unlike rural areas, Plano's density means pests move easily between properties — a neighbor’s
             untreated yard becomes your problem. Local pest specialists understand Plano's specific pest
             pressure by neighborhood, season, and property type.
           </p>
@@ -138,7 +138,7 @@ export default function DFWPestControlPlano() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {planoStats.map(s => (
             <div key={s.label} style={{ backgroundColor: '#1E2D45', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
@@ -157,7 +157,7 @@ export default function DFWPestControlPlano() {
                 onClick={() => toggle(p.key)}
                 style={{
                   padding: '14px 10px',
-                  backgroundColor: selectedPests.has(p.key) ? '#1a2535' : '#0A1628',
+                  backgroundColor: selectedPests.has(p.key) ? '#1a2535′ : '#0A1628',
                   border: `2px solid ${selectedPests.has(p.key) ? '#F5E642' : '#334155'}`,
                   borderRadius: 10,
                   cursor: 'pointer',
@@ -165,7 +165,7 @@ export default function DFWPestControlPlano() {
                 }}
               >
                 <div style={{ fontSize: 28, marginBottom: 6 }}>{p.icon}</div>
-                <div style={{ color: selectedPests.has(p.key) ? '#F5E642' : '#CBD5E1', fontSize: 13, fontWeight: selectedPests.has(p.key) ? 700 : 400 }}>
+                <div style={{ color: selectedPests.has(p.key) ? '#F5E642′ : '#CBD5E1', fontSize: 13, fontWeight: selectedPests.has(p.key) ? 700 : 400 }}>
                   {p.label}
                 </div>
               </div>
@@ -175,8 +175,8 @@ export default function DFWPestControlPlano() {
           <button
             onClick={() => selectedList.length > 0 && setShowResults(true)}
             style={{
-              backgroundColor: selectedList.length > 0 ? '#F5E642' : '#334155',
-              color: selectedList.length > 0 ? '#0A1628' : '#64748B',
+              backgroundColor: selectedList.length > 0 ? '#F5E642′ : '#334155',
+              color: selectedList.length > 0 ? '#0A1628′ : '#64748B',
               fontWeight: 700,
               fontSize: 16,
               padding: '14px 28px',

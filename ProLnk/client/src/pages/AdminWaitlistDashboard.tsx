@@ -30,15 +30,15 @@ function extractCharterCode(adminNotes?: string): string | null {
 
 const TIER_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
   charter:  { label: "Charter",  color: "#7C3AED", bg: "#EDE9FE" },
-  founding: { label: "Founding", color: "#1D4ED8", bg: "#DBEAFE" },
-  l3:       { label: "L3",       color: "#0369A1", bg: "#E0F2FE" },
-  l4:       { label: "L4",       color: "#047857", bg: "#D1FAE5" },
+  founding: { label: "Founding", color: "#1D4ED8″, bg: "#DBEAFE" },
+  l3:       { label: "L3″,       color: "#0369A1", bg: "#E0F2FE" },
+  l4:       { label: "L4″,       color: "#047857", bg: "#D1FAE5" },
 };
 
 function TierBadge({ tier }: { tier?: string }) {
   if (!tier) return <span className="text-slate-400 text-xs">—</span>;
   const key = tier.toLowerCase().replace(/\s+/g, "");
-  const cfg = TIER_CONFIG[key] ?? { label: tier, color: "#6B7280", bg: "#F3F4F6" };
+  const cfg = TIER_CONFIG[key] ?? { label: tier, color: "#6B7280″, bg: "#F3F4F6" };
   return (
     <span
       style={{ color: cfg.color, backgroundColor: cfg.bg }}
@@ -65,7 +65,7 @@ export default function AdminWaitlistDashboard() {
   if (!user || user.role !== "admin") {
     return (
       <div className="flex items-center justify-center h-screen">
-        <p className="text-red-600">Access denied. Admin access required.</p>
+        <p className="text-red-600″>Access denied. Admin access required.</p>
       </div>
     );
   }
@@ -108,7 +108,7 @@ export default function AdminWaitlistDashboard() {
   const avgReferrals =
     proSignups.length > 0
       ? (proSignups.reduce((sum, s) => sum + (s.referralCount ?? 0), 0) / proSignups.length).toFixed(1)
-      : "0.0";
+      : "0.0″;
   const approved = allSignups.filter((s) => s.status === "approved").length;
   const conversionRate =
     allSignups.length > 0 ? Math.round((approved / allSignups.length) * 100) : 0;
@@ -209,69 +209,69 @@ export default function AdminWaitlistDashboard() {
   const isLoading = proLoading || homeLoading;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8″>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">Waitlist Dashboard</h1>
-          <p className="text-slate-600">Manage and analyze all waitlist signups</p>
+        <div className="mb-8″>
+          <h1 className="text-4xl font-bold text-slate-900 mb-2″>Waitlist Dashboard</h1>
+          <p className="text-slate-600″>Manage and analyze all waitlist signups</p>
         </div>
 
         {/* Stats Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8″>
           <Card>
-            <CardHeader className="pb-2 pt-4 px-5">
-              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2">
-                <Users className="w-4 h-4" /> Total Signups
+            <CardHeader className="pb-2 pt-4 px-5″>
+              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2″>
+                <Users className="w-4 h-4″ /> Total Signups
               </CardTitle>
             </CardHeader>
-            <CardContent className="px-5 pb-4">
-              <p className="text-3xl font-bold text-slate-900">{allSignups.length}</p>
+            <CardContent className="px-5 pb-4″>
+              <p className="text-3xl font-bold text-slate-900″>{allSignups.length}</p>
             </CardContent>
           </Card>
 
           <Card>
-            <CardHeader className="pb-2 pt-4 px-5">
-              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2">
-                <TrendingUp className="w-4 h-4" /> This Week
+            <CardHeader className="pb-2 pt-4 px-5″>
+              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2″>
+                <TrendingUp className="w-4 h-4″ /> This Week
               </CardTitle>
             </CardHeader>
-            <CardContent className="px-5 pb-4">
-              <p className="text-3xl font-bold text-blue-600">{thisWeekCount}</p>
+            <CardContent className="px-5 pb-4″>
+              <p className="text-3xl font-bold text-blue-600″>{thisWeekCount}</p>
             </CardContent>
           </Card>
 
           <Card>
-            <CardHeader className="pb-2 pt-4 px-5">
-              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2">
-                <Mail className="w-4 h-4" /> Avg Referrals / Pro
+            <CardHeader className="pb-2 pt-4 px-5″>
+              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2″>
+                <Mail className="w-4 h-4″ /> Avg Referrals / Pro
               </CardTitle>
             </CardHeader>
-            <CardContent className="px-5 pb-4">
-              <p className="text-3xl font-bold text-violet-600">{avgReferrals}</p>
+            <CardContent className="px-5 pb-4″>
+              <p className="text-3xl font-bold text-violet-600″>{avgReferrals}</p>
             </CardContent>
           </Card>
 
           <Card>
-            <CardHeader className="pb-2 pt-4 px-5">
-              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2">
-                <UserCheck className="w-4 h-4" /> Conversion Rate
+            <CardHeader className="pb-2 pt-4 px-5″>
+              <CardTitle className="text-xs font-semibold uppercase tracking-wide text-slate-500 flex items-center gap-2″>
+                <UserCheck className="w-4 h-4″ /> Conversion Rate
               </CardTitle>
             </CardHeader>
-            <CardContent className="px-5 pb-4">
-              <p className="text-3xl font-bold text-green-600">{conversionRate}%</p>
+            <CardContent className="px-5 pb-4″>
+              <p className="text-3xl font-bold text-green-600″>{conversionRate}%</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Charter Filter Tab */}
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2 mb-4″>
           <button
             onClick={() => setCharterOnly(false)}
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
               !charterOnly
                 ? "bg-slate-900 text-white"
-                : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+                : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50″
             }`}
           >
             All Members
@@ -281,7 +281,7 @@ export default function AdminWaitlistDashboard() {
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-2 ${
               charterOnly
                 ? "bg-amber-500 text-white"
-                : "bg-white text-amber-700 border border-amber-300 hover:bg-amber-50"
+                : "bg-white text-amber-700 border border-amber-300 hover:bg-amber-50″
             }`}
           >
             <span>🏆</span>
@@ -295,23 +295,23 @@ export default function AdminWaitlistDashboard() {
         </div>
 
         {/* Controls */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6″>
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 w-5 h-5 text-slate-400" />
+              <Search className="absolute left-3 top-3 w-5 h-5 text-slate-400″ />
               <input
                 type="text"
                 placeholder="Search name, email, trade, zip..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500″
               />
             </div>
 
             <select
               value={sourceFilter}
               onChange={(e) => setSourceFilter(e.target.value)}
-              className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500″
             >
               <option value="all">All Sources</option>
               <option value="pro_waitlist">Pro Waitlist</option>
@@ -322,20 +322,20 @@ export default function AdminWaitlistDashboard() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500″
             >
               <option value="newest">Newest First</option>
               <option value="oldest">Oldest First</option>
               <option value="position">Position</option>
             </select>
 
-            <Button onClick={exportAll} variant="outline" size="sm" className="flex gap-2">
-              <Download className="w-4 h-4" />
+            <Button onClick={exportAll} variant="outline" size="sm" className="flex gap-2″>
+              <Download className="w-4 h-4″ />
               Export CSV
             </Button>
           </div>
 
-          <div className="text-sm text-slate-600 mt-2">
+          <div className="text-sm text-slate-600 mt-2″>
             Showing {sorted.length} of {allSignups.length} signups
           </div>
         </div>
@@ -343,15 +343,15 @@ export default function AdminWaitlistDashboard() {
         {/* Bulk Action Bar */}
         {selected.size > 0 && (
           <div className="bg-blue-50 border border-blue-200 rounded-lg px-5 py-3 mb-4 flex items-center gap-4 flex-wrap">
-            <span className="text-sm font-semibold text-blue-800">{selected.size} selected</span>
-            <Button size="sm" onClick={handleApproveSelected} className="bg-green-600 hover:bg-green-700 text-white flex gap-1.5">
-              <UserCheck className="w-4 h-4" /> Approve Selected
+            <span className="text-sm font-semibold text-blue-800″>{selected.size} selected</span>
+            <Button size="sm" onClick={handleApproveSelected} className="bg-green-600 hover:bg-green-700 text-white flex gap-1.5″>
+              <UserCheck className="w-4 h-4″ /> Approve Selected
             </Button>
-            <Button size="sm" onClick={handleSendInvite} variant="outline" className="border-blue-300 text-blue-700 flex gap-1.5">
-              <Send className="w-4 h-4" /> Send Invite Email
+            <Button size="sm" onClick={handleSendInvite} variant="outline" className="border-blue-300 text-blue-700 flex gap-1.5″>
+              <Send className="w-4 h-4″ /> Send Invite Email
             </Button>
-            <Button size="sm" onClick={handleExportSelected} variant="outline" className="flex gap-1.5">
-              <Download className="w-4 h-4" /> Export Selected
+            <Button size="sm" onClick={handleExportSelected} variant="outline" className="flex gap-1.5″>
+              <Download className="w-4 h-4″ /> Export Selected
             </Button>
             <button
               onClick={() => setSelected(new Set())}
@@ -364,15 +364,15 @@ export default function AdminWaitlistDashboard() {
 
         {/* Toast */}
         {bulkActionMsg && (
-          <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white text-sm font-medium px-5 py-3 rounded-xl shadow-lg flex items-center gap-2">
-            <UserCheck className="w-4 h-4 text-green-400" />
+          <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white text-sm font-medium px-5 py-3 rounded-xl shadow-lg flex items-center gap-2″>
+            <UserCheck className="w-4 h-4 text-green-400″ />
             {bulkActionMsg}
           </div>
         )}
 
         {/* Table */}
         <Card>
-          <CardContent className="p-0">
+          <CardContent className="p-0″>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-slate-50 border-b">
@@ -380,20 +380,20 @@ export default function AdminWaitlistDashboard() {
                     <th className="px-4 py-3 text-left">
                       <button onClick={toggleAll} className="flex items-center">
                         {allSelected
-                          ? <CheckSquare className="w-4 h-4 text-blue-600" />
-                          : <Square className="w-4 h-4 text-slate-400" />}
+                          ? <CheckSquare className="w-4 h-4 text-blue-600″ />
+                          : <Square className="w-4 h-4 text-slate-400″ />}
                       </button>
                     </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">#</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Name</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Email</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Trade</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Zip</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Source</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Tier</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Position</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Referrals</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">Date Joined</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>#</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Name</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Email</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Trade</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Zip</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Source</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Tier</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Position</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Referrals</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900″>Date Joined</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -418,18 +418,18 @@ export default function AdminWaitlistDashboard() {
                           key={key}
                           className={`border-b hover:bg-slate-50 transition-colors ${isChecked ? "bg-blue-50" : ""}`}
                         >
-                          <td className="px-4 py-4">
+                          <td className="px-4 py-4″>
                             <button onClick={() => toggleOne(key)} className="flex items-center">
                               {isChecked
-                                ? <CheckSquare className="w-4 h-4 text-blue-600" />
-                                : <Square className="w-4 h-4 text-slate-400" />}
+                                ? <CheckSquare className="w-4 h-4 text-blue-600″ />
+                                : <Square className="w-4 h-4 text-slate-400″ />}
                             </button>
                           </td>
-                          <td className="px-6 py-4 text-sm font-mono text-slate-500">
+                          <td className="px-6 py-4 text-sm font-mono text-slate-500″>
                             #{signup.position || "—"}
                           </td>
-                          <td className="px-6 py-4 text-sm font-medium text-slate-900">
-                            <span className="flex items-center gap-2">
+                          <td className="px-6 py-4 text-sm font-medium text-slate-900″>
+                            <span className="flex items-center gap-2″>
                               {signup.firstName} {signup.lastName}
                               {(() => {
                                 const code = extractCharterCode(signup.adminNotes);
@@ -437,7 +437,7 @@ export default function AdminWaitlistDashboard() {
                                   <span
                                     title={`Charter invite: ${code}`}
                                     className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-bold"
-                                    style={{ backgroundColor: "#FEF3C7", color: "#92400E", border: "1px solid #F59E0B" }}
+                                    style={{ backgroundColor: "#FEF3C7″, color: "#92400E", border: "1px solid #F59E0B" }}
                                   >
                                     🏆 {code}
                                   </span>
@@ -445,9 +445,9 @@ export default function AdminWaitlistDashboard() {
                               })()}
                             </span>
                           </td>
-                          <td className="px-6 py-4 text-sm text-slate-600">{signup.email}</td>
-                          <td className="px-6 py-4 text-sm text-slate-600">{signup.trade || "—"}</td>
-                          <td className="px-6 py-4 text-sm text-slate-600">{signup.zip || "—"}</td>
+                          <td className="px-6 py-4 text-sm text-slate-600″>{signup.email}</td>
+                          <td className="px-6 py-4 text-sm text-slate-600″>{signup.trade || "—"}</td>
+                          <td className="px-6 py-4 text-sm text-slate-600″>{signup.zip || "—"}</td>
                           <td className="px-6 py-4 text-sm">
                             <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">
                               {signup.source === "pro_waitlist" ? "Pro" : "TrustyPro"}
@@ -456,7 +456,7 @@ export default function AdminWaitlistDashboard() {
                           <td className="px-6 py-4 text-sm">
                             <TierBadge tier={signup.tier} />
                           </td>
-                          <td className="px-6 py-4 text-sm font-semibold text-slate-700">
+                          <td className="px-6 py-4 text-sm font-semibold text-slate-700″>
                             #{signup.position}
                           </td>
                           <td className="px-6 py-4 text-sm text-center">
@@ -465,10 +465,10 @@ export default function AdminWaitlistDashboard() {
                                 {signup.referralCount}
                               </span>
                             ) : (
-                              <span className="text-slate-400">0</span>
+                              <span className="text-slate-400″>0</span>
                             )}
                           </td>
-                          <td className="px-6 py-4 text-sm text-slate-600">
+                          <td className="px-6 py-4 text-sm text-slate-600″>
                             {new Date(signup.createdAt).toLocaleDateString()}
                           </td>
                         </tr>

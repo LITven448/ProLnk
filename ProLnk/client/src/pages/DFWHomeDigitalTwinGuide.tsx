@@ -41,7 +41,7 @@ export default function DFWHomeDigitalTwinGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Select a home system to see what a digital twin captures and how it helps in real DFW scenarios:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {scenarios.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', background: selected === s.id ? '#F5E642' : 'transparent', color: selected === s.id ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f', background: selected === s.id ? '#F5E642' : ’transparent', color: selected === s.id ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{s.label}</button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>

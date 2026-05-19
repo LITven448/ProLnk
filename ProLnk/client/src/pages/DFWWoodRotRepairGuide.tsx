@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const rotLocations = ['Fascia Boards', 'Window Sills', 'Door Frames', 'Deck Posts'];
-const extents = ['Superficial (Surface Only)', 'Moderate (< 1" Deep)', 'Severe (Structural Softness)', 'Complete Failure'];
+const extents = ['Superficial (Surface Only)', 'Moderate (< 1″ Deep)', 'Severe (Structural Softness)', 'Complete Failure'];
 
 function getPlan(location: string, extent: string) {
   const materials: Record<string, string> = {
@@ -12,7 +12,7 @@ function getPlan(location: string, extent: string) {
   };
   const approach: Record<string, string> = {
     'Superficial (Surface Only)': 'Epoxy Filler + Sand + Prime + Paint',
-    'Moderate (< 1" Deep)': 'Epoxy Consolidant + Filler Rebuild',
+    'Moderate (< 1″ Deep)': 'Epoxy Consolidant + Filler Rebuild',
     'Severe (Structural Softness)': 'Full Section or Board Replacement',
     'Complete Failure': 'Full Replacement — Structural Safety Issue',
   };
@@ -24,7 +24,7 @@ function getPlan(location: string, extent: string) {
   };
   const extentMultiplier: Record<string, number> = {
     'Superficial (Surface Only)': 0.4,
-    'Moderate (< 1" Deep)': 0.75,
+    'Moderate (< 1″ Deep)': 0.75,
     'Severe (Structural Softness)': 1.2,
     'Complete Failure': 2.0,
   };
@@ -39,7 +39,7 @@ function getPlan(location: string, extent: string) {
     approach: approach[extent],
     cost: Math.round(baseCosts[location] * extentMultiplier[extent]),
     prevention: prevention[location],
-    diy: extent === 'Superficial (Surface Only)' || (extent === 'Moderate (< 1" Deep)' && location !== 'Deck Posts'),
+    diy: extent === 'Superficial (Surface Only)' || (extent === 'Moderate (< 1″ Deep)' && location !== 'Deck Posts'),
   };
 }
 
@@ -81,7 +81,7 @@ export default function DFWWoodRotRepairGuide() {
               <ul style={{ color: '#94a3b8', fontSize: '0.875rem', paddingLeft: '1.25rem', lineHeight: 1.9 }}>
                 <li>Rot is surface-level or under 1" deep</li>
                 <li>Surrounding wood is still structurally firm</li>
-                <li>Area is less than 6" × 6"</li>
+                <li>Area is less than 6" × 6″</li>
                 <li>Component is non-load-bearing</li>
               </ul>
             </div>
@@ -130,12 +130,12 @@ export default function DFWWoodRotRepairGuide() {
                 </div>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>DIY?</div>
-                  <div style={{ color: result.diy ? '#4ade80' : '#f87171', fontSize: '1rem', fontWeight: 700 }}>{result.diy ? 'Possible' : 'Hire Pro'}</div>
+                  <div style={{ color: result.diy ? '#4ade80′ : '#f87171', fontSize: '1rem', fontWeight: 700 }}>{result.diy ? ’Possible' : 'Hire Pro'}</div>
                 </div>
               </div>
               <div style={{ borderTop: '1px solid #1e3a5f', paddingTop: '0.75rem', fontSize: '0.85rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 4 }}>🛡️ Best Material: {result.material}</div>
-                <div style={{ color: '#94a3b8' }}>💡 Prevention: {result.prevention}</div>
+                <div style={{ color: '#94a3b8′ }}>💡 Prevention: {result.prevention}</div>
               </div>
             </div>
           )}

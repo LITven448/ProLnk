@@ -55,7 +55,7 @@ export default function DFWRoofMaintenanceFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {roofAges.map((a) => (
               <button key={a} onClick={() => setAge(a)}
-                style={{ padding: '11px 16px', borderRadius: 8, border: age === a ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: age === a ? '#F5E642' : '#0d1f36', color: age === a ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '11px 16px', borderRadius: 8, border: age === a ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: age === a ? '#F5E642' : '#0d1f36', color: age === a ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
                 {a}
               </button>
             ))}
@@ -67,7 +67,7 @@ export default function DFWRoofMaintenanceFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {hailOptions.map((h) => (
               <button key={h} onClick={() => setHail(h)}
-                style={{ padding: '11px 16px', borderRadius: 8, border: hail === h ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: hail === h ? '#F5E642' : '#0d1f36', color: hail === h ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '11px 16px', borderRadius: 8, border: hail === h ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: hail === h ? '#F5E642' : '#0d1f36', color: hail === h ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
                 {h}
               </button>
             ))}
@@ -80,7 +80,7 @@ export default function DFWRoofMaintenanceFrequency2026() {
             <div style={{ color: '#64748b', fontSize: 13, marginBottom: 16 }}>{rec.urgency}</div>
             {rec.details.map((d, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, padding: '7px 0', borderBottom: '1px solid #2d3f5a', color: '#e2e8f0', fontSize: 14 }}>
-                <span style={{ color: '#F5E642' }}>✓</span> {d}
+                <span style={{ color: '#F5E642′ }}>✓</span> {d}
               </div>
             ))}
           </div>
@@ -89,8 +89,8 @@ export default function DFWRoofMaintenanceFrequency2026() {
         <div style={{ backgroundColor: '#1e2d47', borderRadius: 12, padding: 20 }}>
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 10 }}>🌩️ DFW Hail Season Reminder</h3>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            Peak hail season in DFW runs <strong style={{ color: '#e2e8f0' }}>March through June</strong>. Always schedule a professional inspection within
-            <strong style={{ color: '#F5E642' }}> 30 days of any hail event</strong>, regardless of your roof age — insurance claims have strict timelines.
+            Peak hail season in DFW runs <strong style={{ color: '#e2e8f0′ }}>March through June</strong>. Always schedule a professional inspection within
+            <strong style={{ color: '#F5E642′ }}> 30 days of any hail event</strong>, regardless of your roof age — insurance claims have strict timelines.
           </div>
         </div>
       </div>

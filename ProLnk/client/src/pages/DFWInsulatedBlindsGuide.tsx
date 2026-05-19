@@ -22,7 +22,7 @@ export default function DFWInsulatedBlindsGuide() {
     const isLarge = size.includes('Large');
     if (isWest) {
       const base = coveringTypes[1];
-      setRec({ ...base, coverage: isLarge ? 'Extend 6-12" beyond window each side' : base.coverage, tip: 'Layer blackout curtains over cellular shades for DFW west walls — combined R-value of R-5+' });
+      setRec({ ...base, coverage: isLarge ? 'Extend 6-12″ beyond window each side' : base.coverage, tip: 'Layer blackout curtains over cellular shades for DFW west walls — combined R-value of R-5+' });
     } else if (isSouth) {
       const base = coveringTypes[2];
       setRec({ ...base, tip: 'Thermal drapes on south-facing DFW windows can replace 25% of AC run-time on peak summer days' });
@@ -76,7 +76,7 @@ export default function DFWInsulatedBlindsGuide() {
             <button onClick={reset} style={{ background: 'transparent', color: '#94A3B8', border: '1px solid #334155', borderRadius: 8, padding: '12px 20px', cursor: 'pointer', fontSize: 15 }}>Reset</button>
           </div>
           {rec && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, marginBottom: 12 }}>{rec.emoji} Recommended: {rec.type}</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12, marginBottom: 12 }}>
                 {[['R-Value', rec.rValue], ['Coverage', rec.coverage], ['Cost Range', rec.cost], ['DFW Savings', rec.savings]].map(([k, v]) => (

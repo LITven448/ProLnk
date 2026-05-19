@@ -45,7 +45,7 @@ export default function DFWCopperPipeAging2026() {
           <h2 style={{ color: '#F5E642', marginBottom: 16 }}>🔍 Copper Pipe Assessment Tool</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94A3B8', display: 'block', marginBottom: 6 }}>Approximate pipe age (years):</label>
-            <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 25" style={{ width: '100%', padding: '12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+            <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 25″ style={{ width: '100%', padding: '12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94A3B8', display: 'block', marginBottom: 6 }}>Primary symptom:</label>

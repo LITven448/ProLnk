@@ -57,7 +57,7 @@ export default function PartnerRecruitmentScript() {
   const script = SCRIPTS[prospectType]?.[context] || SCRIPTS['Licensed Contractor']['In Person'];
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628' }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🎯</div>
@@ -90,7 +90,7 @@ export default function PartnerRecruitmentScript() {
             {[
               { label: '🪝 HOOK', content: script.hook, bg: '#FEF9C3', border: '#FDE68A' },
               { label: '💬 BODY', content: script.body, bg: '#EFF6FF', border: '#BFDBFE' },
-              { label: '✅ CLOSE', content: script.close, bg: '#F0FDF4', border: '#BBF7D0' },
+              { label: '✅ CLOSE', content: script.close, bg: '#F0FDF4', border: '#BBF7D0′ },
             ].map(section => (
               <div key={section.label} style={{ background: section.bg, border: `1px solid ${section.border}`,
                 borderRadius: 12, padding: 16 }}>

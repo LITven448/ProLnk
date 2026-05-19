@@ -7,8 +7,8 @@ const FOUNDATION_MAP: Record<string, string> = {
 };
 
 const COST_MAP: Record<string, Record<string, string>> = {
-  'small': { 'under-150k': '$80,000 – $110,000', '150k-250k': '$90,000 – $130,000', 'over-250k': '$110,000 – $160,000' },
-  'medium': { 'under-150k': '$110,000 – $150,000', '150k-250k': '$130,000 – $180,000', 'over-250k': '$150,000 – $220,000' },
+  'small': { 'under-150k': '$80,000 – $110,000', '150k-250k': '$90,000 – $130,000', 'over-250k': '$110,000 – $160,000′ },
+  'medium': { 'under-150k': '$110,000 – $150,000', '150k-250k': '$130,000 – $180,000', 'over-250k': '$150,000 – $220,000′ },
   'large': { 'under-150k': '$150,000 – $200,000', '150k-250k': '$180,000 – $250,000', 'over-250k': '$200,000 – $300,000+' },
 };
 
@@ -83,7 +83,7 @@ export default function DFWMasterSuiteAdditionGuide() {
               ['DFW city / area', city, setCity, [['', 'Select city'], ['dallas', 'Dallas'], ['fort-worth', 'Fort Worth'], ['plano', 'Plano'], ['frisco', 'Frisco'], ['mckinney', 'McKinney'], ['arlington', 'Arlington']]],
             ].map(([label, val, setter, opts]: any) => (
               <div key={label}>
-                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>{label}</label>
+                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>{label}</label>
                 <select value={val} onChange={e => setter(e.target.value)}
                   style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                   {opts.map(([v, l]: string[]) => <option key={v} value={v}>{l}</option>)}

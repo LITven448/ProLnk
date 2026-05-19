@@ -139,7 +139,7 @@ export default function DFWSteelRoofGuide() {
           ))}
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 14 }}>🏗️ {result.system}</div>
               {[
                 { label: '🔩 Metal Type', value: result.metal },

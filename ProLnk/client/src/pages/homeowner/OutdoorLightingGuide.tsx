@@ -48,7 +48,7 @@ export default function OutdoorLightingGuide() {
   return (
     <div style={{ background: '#0a0a0a', color: '#e5e7eb', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280' }}>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280′ }}>
           💡 ProLnk Homeowner Resource
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 5vw, 42px)', fontWeight: 700, color: '#f9fafb', lineHeight: 1.2, marginBottom: 16 }}>
@@ -117,7 +117,7 @@ export default function OutdoorLightingGuide() {
               { icon: '🌙', title: 'Dark Sky Compliance', body: 'Frisco and several DFW cities have light pollution ordinances. Use full-cutoff fixtures that direct light downward only. Required for new construction permits in some areas.' },
               { icon: '🦟', title: 'Mosquito Deterrence', body: 'Warm yellow/amber LEDs (2700K) attract significantly fewer mosquitoes than cool white bulbs (4000K+). A real quality-of-life consideration for DFW summer evenings.' },
             ].map(item => (
-              <div key={item.title} style={{ background: '#1f2937', borderRadius: 12, padding: 24, border: '1px solid #374151' }}>
+              <div key={item.title} style={{ background: '#1f2937', borderRadius: 12, padding: 24, border: '1px solid #374151′ }}>
                 <div style={{ fontSize: 28, marginBottom: 12 }}>{item.icon}</div>
                 <div style={{ fontWeight: 700, color: '#f3f4f6', marginBottom: 8 }}>{item.title}</div>
                 <div style={{ fontSize: 14, color: '#9ca3af', lineHeight: 1.6 }}>{item.body}</div>
@@ -141,7 +141,7 @@ export default function OutdoorLightingGuide() {
                 onClick={() => toggle(opt.id)}
                 style={{
                   background: selected.includes(opt.id) ? '#1e3a5f' : '#111827',
-                  border: selected.includes(opt.id) ? '2px solid #3b82f6' : '2px solid #1f2937',
+                  border: selected.includes(opt.id) ? '2px solid #3b82f6′ : '2px solid #1f2937',
                   borderRadius: 10,
                   padding: '14px 20px',
                   color: selected.includes(opt.id) ? '#93c5fd' : '#d1d5db',

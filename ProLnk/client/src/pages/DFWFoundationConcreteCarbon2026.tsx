@@ -8,7 +8,7 @@ const ages = [
   { id: 'cracked-any', label: 'Any age with surface cracks', risk: 'elevated', guide: 'Cracks accelerate carbonation — CO2 penetrates along crack planes. Seal cracks immediately. DFW rain carries carbonic acid that deepens crack-related carbonation.' },
 ];
 
-const riskColor = { low: '#22c55e', moderate: '#f59e0b', elevated: '#ef4444', high: '#dc2626' };
+const riskColor = { low: '#22c55e', moderate: '#f59e0b', elevated: '#ef4444', high: '#dc2626′ };
 
 export default function DFWFoundationConcreteCarbon2026() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -39,18 +39,18 @@ export default function DFWFoundationConcreteCarbon2026() {
           {facts.map(f => (
             <div key={f.title} style={{ background: '#1e2d45', borderRadius: 8, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{f.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>{f.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>{f.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5 }}>{f.body}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: 10, padding: 24, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Foundation Age → Carbonation Risk Guide</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Foundation Age → Carbonation Risk Guide</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {ages.map(a => (
               <button key={a.id} onClick={() => setSelected(a.id)}
-                style={{ background: selected === a.id ? '#F5E642' : '#0A1628', color: selected === a.id ? '#0A1628' : '#fff', border: '1px solid #2d3f5a', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === a.id ? '#F5E642′ : '#0A1628', color: selected === a.id ? '#0A1628' : '#fff', border: '1px solid #2d3f5a', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600 }}>
                 {a.label}
               </button>
             ))}
@@ -65,8 +65,8 @@ export default function DFWFoundationConcreteCarbon2026() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, fontSize: 13, color: '#94a3b8' }}>
-          <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> DFW has thousands of 40-60 year old slab foundations. Carbonation-related rebar corrosion is an underdiagnosed cause of foundation cracking. Foundation pros who mention carbonation testing stand out from competition.
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, fontSize: 13, color: '#94a3b8′ }}>
+          <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> DFW has thousands of 40-60 year old slab foundations. Carbonation-related rebar corrosion is an underdiagnosed cause of foundation cracking. Foundation pros who mention carbonation testing stand out from competition.
         </div>
       </div>
     </div>

@@ -99,7 +99,7 @@ export default function DFWHOABoardGuide() {
           <button onClick={generate} style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer', width: '100%' }}>Generate Checklist →</button>
           {checklist.length > 0 && (
             <div style={{ marginTop: 20, background: '#fff', borderRadius: 8, padding: 20 }}>
-              {checklist.map((item, i) => <div key={i} style={{ color: '#0A1628', fontSize: 14, padding: '6px 0', borderBottom: i < checklist.length - 1 ? '1px solid #E2E8F0' : 'none' }}>{item}</div>)}
+              {checklist.map((item, i) => <div key={i} style={{ color: '#0A1628', fontSize: 14, padding: '6px 0', borderBottom: i < checklist.length - 1 ? '1px solid #E2E8F0′ : ’none' }}>{item}</div>)}
             </div>
           )}
         </div>

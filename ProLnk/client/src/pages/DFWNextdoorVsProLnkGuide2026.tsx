@@ -42,7 +42,7 @@ export default function DFWNextdoorVsProLnkGuide2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>🏘️</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>ProLnk vs Nextdoor for Home Services — DFW 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>ProLnk vs Nextdoor for Home Services — DFW 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 580, margin: '0 auto' }}>
             Neighborhood recommendations feel safe. But are they? See what&apos;s actually being checked.
           </p>
@@ -52,7 +52,7 @@ export default function DFWNextdoorVsProLnkGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {concerns.map((c) => (
               <button key={c.id} onClick={() => setSelected(c.id)}
-                style={{ background: selected === c.id ? '#F5E642' : '#1e293b', color: selected === c.id ? '#0A1628' : '#f1f5f9', border: selected === c.id ? 'none' : '1px solid #334155', borderRadius: 10, padding: '0.8rem 1rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.85rem' }}>
+                style={{ background: selected === c.id ? '#F5E642′ : '#1e293b', color: selected === c.id ? '#0A1628' : '#f1f5f9', border: selected === c.id ? ’none' : '1px solid #334155', borderRadius: 10, padding: '0.8rem 1rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.85rem' }}>
                 {c.label}
               </button>
             ))}
@@ -72,7 +72,7 @@ export default function DFWNextdoorVsProLnkGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[['🔍', '100%', 'License Verified'], ['🛡️', '100%', 'Insurance on File'], ['📋', '5-Star', 'Verified Review System']].map(([icon, val, label]) => (
-            <div key={String(label)} style={{ background: '#1e293b', borderRadius: 10, padding: '1.2rem', textAlign: 'center', border: '1px solid #334155' }}>
+            <div key={String(label)} style={{ background: '#1e293b', borderRadius: 10, padding: '1.2rem', textAlign: 'center', border: '1px solid #334155′ }}>
               <div style={{ fontSize: '1.8rem' }}>{icon}</div>
               <div style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700 }}>{val}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{label}</div>

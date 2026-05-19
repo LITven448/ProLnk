@@ -45,7 +45,7 @@ export default function DFWRoofingInsurancePayoutCalc2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 4 }}>Dwelling Coverage Limit ($)</label>
-              <input value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 350000"
+              <input value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 350000″
                 style={{ width: '100%', backgroundColor: '#1A2F50', border: '1px solid #2A3F60', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -57,7 +57,7 @@ export default function DFWRoofingInsurancePayoutCalc2026() {
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 4 }}>Estimated Damage Value ($)</label>
-              <input value={damage} onChange={e => setDamage(e.target.value)} placeholder="e.g. 18000"
+              <input value={damage} onChange={e => setDamage(e.target.value)} placeholder="e.g. 18000″
                 style={{ width: '100%', backgroundColor: '#1A2F50', border: '1px solid #2A3F60', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>

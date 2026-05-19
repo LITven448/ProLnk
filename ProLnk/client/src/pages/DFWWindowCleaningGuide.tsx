@@ -33,7 +33,7 @@ export default function DFWWindowCleaningGuide() {
             Window Cleaning Guide for DFW
           </h1>
           <p style={{ color: '#94A3B8', fontSize: 16, margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
-            DFW homeowners face a unique combination of cedar pollen (Jan–March), heavy dust from construction and wind, and hard water mineral deposits. Professional window cleaning here isn't a luxury — it's bi-monthly maintenance.
+            DFW homeowners face a unique combination of cedar pollen (Jan–March), heavy dust from construction and wind, and hard water mineral deposits. Professional window cleaning here isn't a luxury — it’s bi-monthly maintenance.
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function DFWWindowCleaningGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ marginTop: 48 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🌬️ Why DFW Windows Get Dirty Fast</h2>
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
               {[
                 { icon: '🌿', title: 'Cedar Pollen', desc: 'Jan–March: DFW cedar "fever" season coats everything in yellow-green pollen that etches glass over time.' },
@@ -49,7 +49,7 @@ export default function DFWWindowCleaningGuide() {
                 { icon: '💧', title: 'Hard Water', desc: 'DFW municipal water is hard (200–350 ppm). Sprinkler overspray leaves white calcium spots that require acid washing to remove.' },
                 { icon: '💨', title: 'Southerly Winds', desc: 'DFW\’s prevailing southerly winds carry fine dirt and clay particles that bond to glass during humid summer conditions.' },
               ].map(item => (
-                <div key={item.title} style={{ padding: 14, background: '#0A1628', borderRadius: 8, border: '1px solid #1E3054' }}>
+                <div key={item.title} style={{ padding: 14, background: '#0A1628', borderRadius: 8, border: '1px solid #1E3054′ }}>
                   <div style={{ fontSize: 22, marginBottom: 8 }}>{item.icon}</div>
                   <div style={{ fontWeight: 700, fontSize: 13, color: '#E8EDF5', marginBottom: 6 }}>{item.title}</div>
                   <div style={{ color: '#94A3B8', fontSize: 12, lineHeight: 1.5 }}>{item.desc}</div>
@@ -59,12 +59,12 @@ export default function DFWWindowCleaningGuide() {
           </div>
 
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🪜 Safety & High Window Considerations</h2>
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054′ }}>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: '0 0 12px' }}>
               Two-story and three-story homes require ladders, water-fed poles, or lift equipment. DIY cleaning of high windows is a leading cause of home accident falls. Professional services carry general liability and workers comp insurance — critical protection when hiring for elevated work.
             </p>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#F5E642' }}>What's included in professional service:</strong> Interior + exterior glass, screen removal and rinse, track wipe-down, hard water pre-treatment (if needed), and sill wiping. Confirm all four are included before booking.
+              <strong style={{ color: '#F5E642′ }}>What’s included in professional service:</strong> Interior + exterior glass, screen removal and rinse, track wipe-down, hard water pre-treatment (if needed), and sill wiping. Confirm all four are included before booking.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function DFWWindowCleaningGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6, fontWeight: 600 }}>Number of Windows</label>
-              <input type="number" placeholder="e.g. 18" value={windowCount} onChange={e => setWindowCount(e.target.value)}
+              <input type="number" placeholder="e.g. 18″ value={windowCount} onChange={e => setWindowCount(e.target.value)}
                 style={{ background: '#0A1628', border: '1px solid #1E3054', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 15, width: '100%', boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -102,9 +102,9 @@ export default function DFWWindowCleaningGuide() {
               <select value={stories} onChange={e => setStories(e.target.value)}
                 style={{ background: '#0A1628', border: '1px solid #1E3054', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 15, width: '100%' }}>
                 <option value="">Select</option>
-                <option value="1">1 Story</option>
-                <option value="2">2 Stories</option>
-                <option value="3">3+ Stories</option>
+                <option value="1″>1 Story</option>
+                <option value="2″>2 Stories</option>
+                <option value="3″>3+ Stories</option>
               </select>
             </div>
           </div>
@@ -115,9 +115,9 @@ export default function DFWWindowCleaningGuide() {
               {['yes', 'no', 'unsure'].map(v => (
                 <button key={v} onClick={() => setHardWater(v)} style={{
                   padding: '9px 20px', borderRadius: 20, border: '2px solid',
-                  borderColor: hardWater === v ? '#F5E642' : '#1E3054',
-                  background: hardWater === v ? '#F5E642' : 'transparent',
-                  color: hardWater === v ? '#0A1628' : '#94A3B8',
+                  borderColor: hardWater === v ? '#F5E642′ : '#1E3054',
+                  background: hardWater === v ? '#F5E642′ : ’transparent',
+                  color: hardWater === v ? '#0A1628′ : '#94A3B8',
                   fontWeight: 600, fontSize: 13, cursor: 'pointer', textTransform: 'capitalize'
                 }}>{v}</button>
               ))}
@@ -125,11 +125,11 @@ export default function DFWWindowCleaningGuide() {
           </div>
 
           {count > 0 && stories && hardWater && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3054' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3054′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 16, marginBottom: 14 }}>
                 <div>
                   <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Estimated Cost (per visit)</div>
-                  <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>${lowEst}–${highEst}</div>
+                  <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>${lowEst}–${highEst}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Recommended Frequency</div>

@@ -45,19 +45,19 @@ export default function DFWHVACDFWClimateSummary() {
             { label: 'Winter Design Temp', value: '25°F', sub: 'Heating load basis' },
           ].map(s => (
             <div key={s.label} style={{ background: '#0F2240', borderRadius: 10, padding: 16, border: '1px solid #1E3A5F', textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 11, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📅 Month-by-Month Climate Breakdown</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📅 Month-by-Month Climate Breakdown</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {climateData.map(m => (
               <div key={m.month} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <div style={{ minWidth: 32, fontWeight: 700, color: '#F5E642', fontSize: 13 }}>{m.month}</div>
-                <div style={{ flex: 1, fontSize: 13, color: '#CBD5E1' }}>{m.desc}</div>
+                <div style={{ flex: 1, fontSize: 13, color: '#CBD5E1′ }}>{m.desc}</div>
                 <div style={{ minWidth: 100, fontSize: 11, color: '#64748B', textAlign: 'right' }}>
                   {m.cdd > 0 ?  : ''}{m.hdd > 0 ?  : ''}
                 </div>
@@ -67,7 +67,7 @@ export default function DFWHVACDFWClimateSummary() {
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 What Does This Mean for My DFW Home?</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🏠 What Does This Mean for My DFW Home?</h2>
           <select
             value={vintage}
             onChange={e => setVintage(e.target.value)}
@@ -78,7 +78,7 @@ export default function DFWHVACDFWClimateSummary() {
           </select>
           {vintage && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#CBD5E1', fontSize: 14, lineHeight: 1.6 }}>
-              <strong style={{ color: '#F5E642' }}>{vintage} in DFW:</strong><br />{vintageMap[vintage]}
+              <strong style={{ color: '#F5E642′ }}>{vintage} in DFW:</strong><br />{vintageMap[vintage]}
             </div>
           )}
         </div>

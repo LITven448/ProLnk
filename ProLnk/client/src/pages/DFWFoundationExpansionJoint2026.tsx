@@ -31,12 +31,12 @@ export default function DFWFoundationExpansionJoint2026() {
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 2 }}>{s.label}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>⚠️ Why DFW Joints Are Often Missing</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.8 }}>
             <div>💸 Contractors skip them to reduce labor time by 15–20%</div>

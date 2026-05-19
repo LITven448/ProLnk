@@ -69,7 +69,7 @@ export default function DFWHomeInsuranceClaimsGuide() {
             const done = checkedSteps.includes(i);
             const open = activeStep === i;
             return (
-              <div key={i} style={{ background: done ? '#14532d22' : '#1c1a28', border: '1px solid ' + (done ? '#34d39944' : '#2e2b3d'), borderRadius: 12, overflow: 'hidden', transition: 'all 0.15s' }}>
+              <div key={i} style={{ background: done ? '#14532d22′ : '#1c1a28', border: '1px solid ' + (done ? '#34d39944' : '#2e2b3d'), borderRadius: 12, overflow: ’hidden', transition: 'all 0.15s' }}>
                 <div style={{ padding: '18px 24px', display: 'flex', gap: 16, alignItems: 'center', cursor: 'pointer' }} onClick={() => setActiveStep(open ? null : i)}>
                   <input
                     type="checkbox"
@@ -77,10 +77,10 @@ export default function DFWHomeInsuranceClaimsGuide() {
                     onChange={(e) => { e.stopPropagation(); toggleCheck(i); }}
                     style={{ width: 18, height: 18, accentColor: '#34d399', flexShrink: 0 }}
                   />
-                  <div style={{ flexShrink: 0, background: done ? '#34d39922' : '#a78bfa22', color: done ? '#34d399' : '#a78bfa', fontWeight: 700, fontSize: 11, padding: '4px 8px', borderRadius: 6 }}>{step.day}</div>
+                  <div style={{ flexShrink: 0, background: done ? '#34d39922′ : '#a78bfa22', color: done ? '#34d399' : '#a78bfa', fontWeight: 700, fontSize: 11, padding: '4px 8px', borderRadius: 6 }}>{step.day}</div>
                   <span style={{ fontSize: 20 }}>{step.icon}</span>
-                  <span style={{ fontWeight: 700, flex: 1, color: done ? '#34d399' : '#f0ede8' }}>{step.title}</span>
-                  <span style={{ color: '#6b7280' }}>{open ? '▲' : '▼'}</span>
+                  <span style={{ fontWeight: 700, flex: 1, color: done ? '#34d399′ : '#f0ede8' }}>{step.title}</span>
+                  <span style={{ color: '#6b7280′ }}>{open ? '▲' : '▼'}</span>
                 </div>
                 {open && (
                   <div style={{ padding: '0 24px 20px', color: '#d1d5db', lineHeight: 1.7, borderTop: '1px solid #2e2b3d', paddingTop: 16 }}>

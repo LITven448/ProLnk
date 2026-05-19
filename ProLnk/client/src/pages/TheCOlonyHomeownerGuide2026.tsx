@@ -41,7 +41,7 @@ export default function TheCOlonyHomeownerGuide2026() {
           <div style={{ display: 'flex', gap: 10 }}>
             {['1980s', '1990s', '2000s'].map(d => (
               <button key={d} onClick={() => setDecade(d)}
-                style={{ flex: 1, background: decade === d ? '#F5E642' : '#1a2f50', color: decade === d ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ flex: 1, background: decade === d ? '#F5E642′ : '#1a2f50', color: decade === d ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {d}
               </button>
             ))}
@@ -64,7 +64,7 @@ export default function TheCOlonyHomeownerGuide2026() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 16, marginBottom: 24 }}>
           <h3 style={{ color: '#F5E642', fontSize: 14, marginBottom: 12 }}>🌊 Lake Lewisville Humidity — Year-Round Watch List</h3>
           {['Exterior paint check every spring — peeling accelerates near water', 'HVAC coil cleaning annually — salt humidity causes corrosion', 'Crawl space vapor barrier if applicable — moisture intrusion risk', 'Dock/pier inspection if lakefront — bi-annual minimum'].map((item, i) => (
-            <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{item}</div>
+            <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{item}</div>
           ))}
         </div>
 

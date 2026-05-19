@@ -9,21 +9,21 @@ import {
   Calendar, MapPin, AlertCircle,
 } from "lucide-react";
 
-const TEAL = "#00B5B8";
+const TEAL = "#00B5B8″;
 const GREEN = "#22C55E";
 const AMBER = "#F59E0B";
-const RED = "#EF4444";
-const BLUE = "#3B82F6";
-const DIM = "#8B91A8";
+const RED = "#EF4444″;
+const BLUE = "#3B82F6″;
+const DIM = "#8B91A8″;
 const BORDER = "#1E2A3A";
 const CARD = "#0F1D2E";
-const BG = "#0A1628";
+const BG = "#0A1628″;
 
 const WIN_RATE_DATA = [
   { band: "< 2 min", winRate: 91, color: GREEN },
   { band: "2–5 min", winRate: 78, color: TEAL },
   { band: "5–10 min", winRate: 54, color: AMBER },
-  { band: "10–30 min", winRate: 31, color: "#F97316" },
+  { band: "10–30 min", winRate: 31, color: "#F97316″ },
   { band: "30+ min", winRate: 12, color: RED },
 ];
 
@@ -72,10 +72,10 @@ const INSIGHTS: Insight[] = [
   {
     id: "message",
     icon: MessageSquare,
-    iconColor: "#A855F7",
+    iconColor: "#A855F7″,
     text: "Bids with a personalized first message win significantly more",
     metric: "41% more wins",
-    metricColor: "#A855F7",
+    metricColor: "#A855F7″,
   },
 ];
 
@@ -169,7 +169,7 @@ export default function LeadOptimizer() {
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={WIN_RATE_DATA} barCategoryGap="30%">
-              <CartesianGrid strokeDasharray="3 3" stroke={BORDER} vertical={false} />
+              <CartesianGrid strokeDasharray="3 3″ stroke={BORDER} vertical={false} />
               <XAxis
                 dataKey="band"
                 tick={{ fill: DIM, fontSize: 12 }}
@@ -322,15 +322,15 @@ export default function LeadOptimizer() {
           borderRadius: 16, padding: "20px 24px",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-            <Zap size={16} color="#A855F7" />
+            <Zap size={16} color="#A855F7″ />
             <span style={{ fontWeight: 700, fontSize: 16, color: "#F0F2FF" }}>Practice Scenario</span>
             <span style={{
-              fontSize: 11, fontWeight: 600, color: "#A855F7",
-              background: "#A855F722", padding: "2px 8px", borderRadius: 20,
+              fontSize: 11, fontWeight: 600, color: "#A855F7″,
+              background: "#A855F722″, padding: "2px 8px", borderRadius: 20,
             }}>Simulation</span>
           </div>
           <div style={{
-            background: "#0A1628", border: `1px solid ${BORDER}`,
+            background: "#0A1628″, border: `1px solid ${BORDER}`,
             borderRadius: 12, padding: "16px 18px", marginBottom: 16,
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
@@ -392,7 +392,7 @@ export default function LeadOptimizer() {
               <textarea
                 placeholder="Write your response to this homeowner... (Tip: personalize it!)"
                 style={{
-                  width: "100%", background: "#0A1628", border: `1px solid ${BORDER}`,
+                  width: "100%", background: "#0A1628″, border: `1px solid ${BORDER}`,
                   borderRadius: 10, padding: "12px 14px", color: "#F0F2FF", fontSize: 14,
                   resize: "vertical", minHeight: 100, outline: "none", boxSizing: "border-box",
                   fontFamily: "inherit",

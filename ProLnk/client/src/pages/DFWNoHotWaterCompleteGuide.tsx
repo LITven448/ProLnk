@@ -16,19 +16,19 @@ const electricSteps = [
 
 const diagMap: Record<string, Record<string, { action: string; diyOrPro: string; cost: string }>> = {
   gas: {
-    no-hot: { action: 'Check pilot → relight per instructions → if fails call plumber', diyOrPro: 'DIY pilot relight; plumber if thermocouple or gas valve', cost: '$0–$350' },
-    lukewarm: { action: 'Check thermostat setting → flush sediment → inspect lower burner', diyOrPro: 'DIY flush; plumber for thermostat/burner', cost: '$0–$200' },
-    runs-out-fast: { action: 'Tank too small for demand OR heavy sediment buildup reducing capacity', diyOrPro: 'DIY flush; consider upgrade', cost: '$0–$1,800' },
+    no-hot: { action: 'Check pilot → relight per instructions → if fails call plumber', diyOrPro: 'DIY pilot relight; plumber if thermocouple or gas valve', cost: '$0–$350′ },
+    lukewarm: { action: 'Check thermostat setting → flush sediment → inspect lower burner', diyOrPro: 'DIY flush; plumber for thermostat/burner', cost: '$0–$200′ },
+    runs-out-fast: { action: 'Tank too small for demand OR heavy sediment buildup reducing capacity', diyOrPro: 'DIY flush; consider upgrade', cost: '$0–$1,800′ },
   },
   electric: {
-    no-hot: { action: 'Reset breaker → press high-limit reset → call plumber if still no heat', diyOrPro: 'DIY breaker/reset; plumber for elements', cost: '$0–$300' },
-    lukewarm: { action: 'Upper element most likely failed — lower element handles volume, upper handles recovery', diyOrPro: 'Plumber recommended — involves draining tank', cost: '$100–$300' },
-    runs-out-fast: { action: 'Lower heating element failed OR thermostat set too low', diyOrPro: 'Plumber for element; DIY thermostat adjustment', cost: '$0–$250' },
+    no-hot: { action: 'Reset breaker → press high-limit reset → call plumber if still no heat', diyOrPro: 'DIY breaker/reset; plumber for elements', cost: '$0–$300′ },
+    lukewarm: { action: 'Upper element most likely failed — lower element handles volume, upper handles recovery', diyOrPro: 'Plumber recommended — involves draining tank', cost: '$100–$300′ },
+    runs-out-fast: { action: 'Lower heating element failed OR thermostat set too low', diyOrPro: 'Plumber for element; DIY thermostat adjustment', cost: '$0–$250′ },
   },
   tankless: {
-    no-hot: { action: 'Check error code on display → verify gas/electric supply → clean inlet filter', diyOrPro: 'DIY filter clean; tech for error codes', cost: '$0–$400' },
-    lukewarm: { action: 'Flow rate exceeds unit capacity OR scale buildup on heat exchanger', diyOrPro: 'DIY: reduce simultaneous demand; tech: descale', cost: '$100–$500' },
-    runs-out-fast: { action: 'Tankless units do not run out — if flow drops, scale buildup likely', diyOrPro: 'Annual descaling service', cost: '$150–$300' },
+    no-hot: { action: 'Check error code on display → verify gas/electric supply → clean inlet filter', diyOrPro: 'DIY filter clean; tech for error codes', cost: '$0–$400′ },
+    lukewarm: { action: 'Flow rate exceeds unit capacity OR scale buildup on heat exchanger', diyOrPro: 'DIY: reduce simultaneous demand; tech: descale', cost: '$100–$500′ },
+    runs-out-fast: { action: 'Tankless units do not run out — if flow drops, scale buildup likely', diyOrPro: 'Annual descaling service', cost: '$150–$300′ },
   },
 };
 
@@ -44,14 +44,14 @@ export default function DFWNoHotWaterCompleteGuide() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🚿 No Hot Water — Complete DFW Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28 }}>DFW hard water accelerates water heater failure. This guide covers gas, electric, and tankless systems with DFW-specific context.</p>
 
-        <div style={{ background: '#132035', borderRadius: 8, padding: 16, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#132035', borderRadius: 8, padding: 16, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>🪨 DFW Hard Water Warning</div>
           <div style={{ color: '#94a3b8', fontSize: 13 }}>DFW municipal water averages 15–25 grains per gallon hardness. Sediment buildup cuts tank life from 12 years to 7–8 years. Annual flushing is strongly recommended.</div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
           <div style={{ background: '#132035', borderRadius: 10, padding: 16 }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⛽ Gas Tank Steps</h2>
+            <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⛽ Gas Tank Steps</h2>
             {gasSteps.map(s => (
               <div key={s.id} style={{ marginBottom: 10, paddingBottom: 10, borderBottom: '1px solid #1e3a5f' }}>
                 <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 3 }}>{s.emoji} {s.label}</div>
@@ -60,7 +60,7 @@ export default function DFWNoHotWaterCompleteGuide() {
             ))}
           </div>
           <div style={{ background: '#132035', borderRadius: 10, padding: 16 }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚡ Electric Tank Steps</h2>
+            <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚡ Electric Tank Steps</h2>
             {electricSteps.map(s => (
               <div key={s.id} style={{ marginBottom: 10, paddingBottom: 10, borderBottom: '1px solid #1e3a5f' }}>
                 <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 3 }}>{s.emoji} {s.label}</div>
@@ -71,9 +71,9 @@ export default function DFWNoHotWaterCompleteGuide() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 10, padding: 22, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Diagnosis Tool</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Diagnosis Tool</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Water heater type?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Water heater type?</label>
             <select value={heaterType} onChange={e => setHeaterType(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select type...</option>
               <option value="gas">Gas Tank</option>
@@ -82,7 +82,7 @@ export default function DFWNoHotWaterCompleteGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>What is happening?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>What is happening?</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select symptom...</option>
               <option value="no-hot">No hot water at all</option>
@@ -91,7 +91,7 @@ export default function DFWNoHotWaterCompleteGuide() {
             </select>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Action: </span>{result.action}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>DIY vs Plumber: </span>{result.diyOrPro}</div>
               <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Est. Cost: </span>{result.cost}</div>

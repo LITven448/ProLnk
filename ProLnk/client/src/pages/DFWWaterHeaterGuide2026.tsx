@@ -47,7 +47,7 @@ export default function DFWWaterHeaterGuide2026() {
             <div>
               <label style={{ color: '#a0aec0', fontSize: '0.85rem' }}>Heater Age (years)</label>
               <br />
-              <input value={age} onChange={(e) => setAge(e.target.value)} type="number" min="0" max="30"
+              <input value={age} onChange={(e) => setAge(e.target.value)} type="number" min="0″ max="30"
                 style={{ background: '#0A1628', border: '1px solid #F5E642', color: '#fff', padding: '0.5rem', borderRadius: 6, width: 120, marginTop: 4 }} />
             </div>
             <div>
@@ -71,7 +71,7 @@ export default function DFWWaterHeaterGuide2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>📋 DFW-Specific Tips</h2>
           {['Annual anode rod inspection is critical — DFW water destroys rods in 2-3 yrs vs 6 nationally','Tankless payback period in DFW: 6-8 years vs 10-12 nationally due to high gas/electric rates','Heat pump water heaters qualify for 30% federal ITC (up to $2,000) through 2032','Flush tank every 12 months to clear mineral sediment — DFW builds up 3x faster'].map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#a0aec0', fontSize: '0.9rem' }}>
-              <span style={{ color: '#F5E642' }}>→</span>{t}
+              <span style={{ color: '#F5E642′ }}>→</span>{t}
             </div>
           ))}
         </div>

@@ -67,7 +67,7 @@ export default function PartnerAveragePartnerStats() {
               <div style={{ fontSize: 20, marginBottom: 6 }}>{t.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, color: t.color, marginBottom: 12 }}>{t.label}</div>
               <div style={{ fontSize: 26, fontWeight: 800, color: t.color, marginBottom: 12 }}>{t.annualIncome}</div>
-              <div style={{ fontSize: 12, color: i === 0 ? '#94A3B8' : '#6B7280' }}>per year</div>
+              <div style={{ fontSize: 12, color: i === 0 ? '#94A3B8′ : '#6B7280' }}>per year</div>
               <div style={{ marginTop: 16, borderTop: `1px solid ${i === 0 ? '#1E3A5F' : '#E5E7EB'}`, paddingTop: 12 }}>
                 {[
                   { k: 'Monthly Matches', v: t.monthlyMatches },
@@ -75,12 +75,12 @@ export default function PartnerAveragePartnerStats() {
                   { k: 'Homes Added Y1', v: t.homesAdded },
                 ].map((item, j) => (
                   <div key={j} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 12 }}>
-                    <span style={{ color: i === 0 ? '#94A3B8' : '#9CA3AF' }}>{item.k}</span>
+                    <span style={{ color: i === 0 ? '#94A3B8′ : '#9CA3AF' }}>{item.k}</span>
                     <span style={{ fontWeight: 700, color: t.color }}>{item.v}</span>
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: 12, padding: '8px 10px', background: i === 0 ? '#1E3A5F' : '#F3F4F6', borderRadius: 8, fontSize: 11, color: i === 0 ? '#CBD5E1' : '#6B7280', fontStyle: 'italic' }}>
+              <div style={{ marginTop: 12, padding: '8px 10px', background: i === 0 ? '#1E3A5F' : '#F3F4F6', borderRadius: 8, fontSize: 11, color: i === 0 ? '#CBD5E1′ : '#6B7280', fontStyle: ’italic' }}>
                 "{t.key90Days}"
               </div>
             </div>
@@ -92,18 +92,18 @@ export default function PartnerAveragePartnerStats() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Activity Level (1-5): {activityLevel}</label>
-              <input type="range" min={1} max={5} value={activityLevel} onChange={e => setActivityLevel(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={1} max={5} value={activityLevel} onChange={e => setActivityLevel(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#9CA3AF', marginTop: 2 }}>
                 <span>Passive</span><span>Very Active</span>
               </div>
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Existing Network: {networkSize}</label>
-              <input type="range" min={0} max={50} value={networkSize} onChange={e => setNetworkSize(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={0} max={50} value={networkSize} onChange={e => setNetworkSize(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Years in Trade: {tradeYears}</label>
-              <input type="range" min={0} max={30} value={tradeYears} onChange={e => setTradeYears(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={0} max={30} value={tradeYears} onChange={e => setTradeYears(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -121,10 +121,10 @@ export default function PartnerAveragePartnerStats() {
         <div style={{ background: 'white', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #E5E7EB' }}>
           <div style={{ fontWeight: 700, fontSize: 16, color: '#0A1628', marginBottom: 14 }}>⬆️ Actions to Move Up a Tier</div>
           {improvements.map((imp, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #F3F4F6' }}>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #F3F4F6′ }}>
               <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
                 <span style={{ fontSize: 18 }}>{'💡'}</span>
-                <span style={{ fontSize: 13, color: '#374151' }}>{imp.action}</span>
+                <span style={{ fontSize: 13, color: '#374151′ }}>{imp.action}</span>
               </div>
               <span style={{ fontSize: 13, fontWeight: 700, color: '#059669', whiteSpace: 'nowrap', marginLeft: 12 }}>{imp.impact}</span>
             </div>

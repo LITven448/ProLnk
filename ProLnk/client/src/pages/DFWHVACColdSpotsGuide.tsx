@@ -67,7 +67,7 @@ export default function DFWHVACColdSpotsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {coldSpotTypes.map(s => (
               <button key={s.id} onClick={() => setSpot(s.id)}
-                style={{ background: spot === s.id ? '#F5E642' : '#1A3060', color: spot === s.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: spot === s.id ? 700 : 400, textAlign: 'left' }}>
+                style={{ background: spot === s.id ? '#F5E642′ : '#1A3060', color: spot === s.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: spot === s.id ? 700 : 400, textAlign: 'left' }}>
                 {s.emoji} {s.label}
               </button>
             ))}
@@ -79,7 +79,7 @@ export default function DFWHVACColdSpotsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {systemTypes.map(s => (
               <button key={s.id} onClick={() => setSystem(s.id)}
-                style={{ background: system === s.id ? '#F5E642' : '#1A3060', color: system === s.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: system === s.id ? 700 : 400 }}>
+                style={{ background: system === s.id ? '#F5E642′ : '#1A3060', color: system === s.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: system === s.id ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}
@@ -92,13 +92,13 @@ export default function DFWHVACColdSpotsGuide() {
             <p style={{ color: '#CBD5E1', marginBottom: 20, lineHeight: 1.6 }}>{result.cause}</p>
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🔧 Fixes</h2>
             {result.fix.map((f, i) => (
-              <div key={i} style={{ background: '#1A3060', borderRadius: 8, padding: 14, marginBottom: 8, color: '#E2E8F0' }}>
+              <div key={i} style={{ background: '#1A3060', borderRadius: 8, padding: 14, marginBottom: 8, color: '#E2E8F0′ }}>
                 {i + 1}. {f}
               </div>
             ))}
-            <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, marginTop: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, marginTop: 16, borderLeft: '4px solid #F5E642′ }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 DFW Pro Tip: </span>
-              <span style={{ color: '#CBD5E1' }}>{result.note}</span>
+              <span style={{ color: '#CBD5E1′ }}>{result.note}</span>
             </div>
           </div>
         )}

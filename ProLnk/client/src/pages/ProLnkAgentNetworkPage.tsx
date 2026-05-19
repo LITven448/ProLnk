@@ -56,8 +56,8 @@ export default function ProLnkAgentNetworkPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 32 }}>
           {[['47', 'Active AI Agents'], ['24/7', 'Autonomous Ops'], ['80%', 'Work Automated'], ['0', 'Human Delays']].map(([v, l], i) => (
             <div key={i} style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{v}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>{l}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{v}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{l}</div>
             </div>
           ))}
         </div>
@@ -68,16 +68,16 @@ export default function ProLnkAgentNetworkPage() {
             {Object.keys(categories).map(c => (
               <button key={c} onClick={() => setCat(c)}
                 style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: cat === c ? '#F5E642' : '#1e3a5f', color: cat === c ? '#0A1628' : '#fff' }}>
+                  background: cat === c ? '#F5E642′ : '#1e3a5f', color: cat === c ? '#0A1628' : '#fff' }}>
                 {categories[c].icon} {c}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
             {categories[cat].agents.map((a, i) => (
-              <div key={i} style={{ background: '#162033', borderRadius: 12, padding: 18, borderLeft: '3px solid #F5E642' }}>
+              <div key={i} style={{ background: '#162033', borderRadius: 12, padding: 18, borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6, fontSize: 14 }}>🤖 {a.name}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{a.desc}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{a.desc}</div>
               </div>
             ))}
           </div>

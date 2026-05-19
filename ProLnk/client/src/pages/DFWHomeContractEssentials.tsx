@@ -153,9 +153,9 @@ export default function DFWHomeContractEssentials() {
         {result && (
           <div style={{ display: 'grid', gap: '1rem' }}>
             {[
-              { label: '✅ Contract Must Include', items: result.essentials, color: '#F5E642' },
-              { label: '🚩 Red Flags — Do Not Sign', items: result.redFlags, color: '#f87171' },
-              { label: '➕ Add Before Signing', items: result.addBefore, color: '#4ade80' },
+              { label: '✅ Contract Must Include', items: result.essentials, color: '#F5E642′ },
+              { label: '🚩 Red Flags — Do Not Sign', items: result.redFlags, color: '#f87171′ },
+              { label: '➕ Add Before Signing', items: result.addBefore, color: '#4ade80′ },
             ].map(section => (
               <div key={section.label} style={{ background: '#0f2040', borderRadius: 10, padding: '1.5rem' }}>
                 <h2 style={{ color: section.color, fontSize: '1rem', marginBottom: '0.75rem' }}>{section.label}</h2>

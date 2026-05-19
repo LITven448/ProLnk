@@ -22,7 +22,7 @@ export default function DFWHVACMonitoring2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 24 }}>
           {[
-            { icon: '💸', label: 'HVAC replacement cost', value: '$7K–$12K', sub: 'DFW avg 2026' },
+            { icon: '💸', label: 'HVAC replacement cost', value: '$7K–$12K', sub: 'DFW avg 2026′ },
             { icon: '🌡️', label: 'DFW summer peak', value: '108–112°F', sub: 'Grid stress period' },
             { icon: '📉', label: 'Efficiency decline signal', value: '>15% drop', sub: 'Refrigerant or filter issue' },
           ].map(s => (
@@ -50,8 +50,8 @@ export default function DFWHVACMonitoring2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏡 How old is your HVAC system?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {hvacAges.map((h, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
-                {h.label} — <span style={{ color: selected === i ? '#0A1628' : h.color }}>{h.risk} Risk</span>
+              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                {h.label} — <span style={{ color: selected === i ? '#0A1628′ : h.color }}>{h.risk} Risk</span>
               </button>
             ))}
           </div>
@@ -60,7 +60,7 @@ export default function DFWHVACMonitoring2026() {
               <div style={{ color: rec.color, fontWeight: 700, marginBottom: 6 }}>Risk: {rec.risk} — Sensor ROI in ~{rec.roiYears} year{rec.roiYears > 1 ? 's' : ''}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Action: {rec.rec}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Sensors: {rec.sensors}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>💡 {rec.note}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>💡 {rec.note}</div>
             </div>
           )}
         </div>

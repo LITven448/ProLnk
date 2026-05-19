@@ -40,7 +40,7 @@ const scenarios = [
 ];
 
 const linesetFacts = [
-  { label: 'Standard residential lineset size', value: '3/8" liquid, 3/4" or 7/8" suction' },
+  { label: 'Standard residential lineset size', value: '3/8″ liquid, 3/4″ or 7/8″ suction' },
   { label: 'Typical DFW home lineset run', value: '25–40 feet' },
   { label: 'Lineset copper lifespan', value: '30–50 years' },
   { label: 'Insulation lifespan in DFW UV', value: '7–12 years outdoors' },
@@ -52,7 +52,7 @@ export default function DFWHVACLinesetGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🔩 DFW HVAC Guide</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🔩 DFW HVAC Guide</div>
         <h1 style={{ fontSize: '1.9rem', fontWeight: 800, marginBottom: '0.5rem', color: '#FFFFFF' }}>
           HVAC Lineset Guide for DFW
         </h1>
@@ -77,7 +77,7 @@ export default function DFWHVACLinesetGuide() {
               onClick={() => setSelected(s)}
               style={{
                 background: selected === s ? '#1E3A5F' : '#111E35',
-                border: selected === s ? '1.5px solid #F5E642' : '1.5px solid #1A2540',
+                border: selected === s ? '1.5px solid #F5E642′ : '1.5px solid #1A2540',
                 borderRadius: 10, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', color: '#E8EAF0',
               }}
             >
@@ -90,10 +90,10 @@ export default function DFWHVACLinesetGuide() {
         </div>
 
         {selected && (
-          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642' }}>
+          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642′ }}>
             <div style={{
               display: 'inline-block', padding: '0.35rem 1rem', borderRadius: 20, fontWeight: 800, marginBottom: '1rem', fontSize: '0.9rem',
-              background: selected.decision === 'Replace' ? '#7C2D12' : selected.decision === 'Reuse' ? '#14532D' : '#92400E',
+              background: selected.decision === 'Replace' ? '#7C2D12′ : selected.decision === ’Reuse' ? '#14532D' : '#92400E',
               color: '#FFFFFF',
             }}>
               {selected.decision === 'Replace' ? '⛔ Decision: Replace' : selected.decision === 'Reuse' ? '✅ Decision: Reuse' : '⚠️ Decision: Evaluate'}
@@ -111,14 +111,14 @@ export default function DFWHVACLinesetGuide() {
                 <div style={{ color: '#9CA3B0', fontSize: '0.75rem', marginBottom: '0.25rem' }}>RISK IF IGNORED</div>
                 <div style={{ color: '#C8D0DC', fontSize: '0.9rem' }}>{selected.risk}</div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642', fontSize: '0.85rem', color: '#9CA3B0' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642', fontSize: '0.85rem', color: '#9CA3B0′ }}>
                 🌆 {selected.dfwNote}
               </div>
             </div>
           </div>
         )}
 
-        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0' }}>
+        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0′ }}>
           💡 Pro Tip: Always ask your contractor to show you the existing lineset condition before they make the reuse vs replace call. Get it in writing in the quote.
         </div>
       </div>

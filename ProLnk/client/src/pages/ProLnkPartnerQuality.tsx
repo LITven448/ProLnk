@@ -34,19 +34,19 @@ export default function ProLnkPartnerQuality() {
           ].map((item) => (
             <div key={item.title} style={{ background: '#fff', borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, color: '#0A1628' }}>{item.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, color: '#0A1628′ }}>{item.title}</div>
               <div style={{ color: '#555', fontSize: 14, lineHeight: 1.6 }}>{item.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628' }}>🔎 Address Your Specific Concern</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628′ }}>🔎 Address Your Specific Concern</h2>
           <p style={{ color: '#555', fontSize: 15, marginBottom: 20 }}>Select a concern to see exactly how ProLnk addresses it — and how you can verify it yourself.</p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {concerns.map((c, i) => (
-              <button key={c.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
+              <button key={c.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
                 {c.icon} {c.label}
               </button>
             ))}
@@ -55,11 +55,11 @@ export default function ProLnkPartnerQuality() {
           {selected !== null && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ background: '#f0fff4', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#27ae60' }}>✅ What ProLnk Does</div>
+                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#27ae60′ }}>✅ What ProLnk Does</div>
                 <div style={{ color: '#333', fontSize: 15, lineHeight: 1.6 }}>{concerns[selected].prolnk}</div>
               </div>
               <div style={{ background: '#fff8e1', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#e67e22' }}>🔧 What You Can Verify Yourself</div>
+                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#e67e22′ }}>🔧 What You Can Verify Yourself</div>
                 <div style={{ color: '#333', fontSize: 15, lineHeight: 1.6 }}>{concerns[selected].diy}</div>
               </div>
             </div>

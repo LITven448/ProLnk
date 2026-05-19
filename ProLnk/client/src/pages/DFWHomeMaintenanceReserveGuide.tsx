@@ -50,7 +50,7 @@ export default function DFWHomeMaintenanceReserveGuide() {
   });
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '48px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36 }}>🔧</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '12px 0 8px' }}>
@@ -63,9 +63,9 @@ export default function DFWHomeMaintenanceReserveGuide() {
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 32 }}>
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
             <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>💾 Sinking Fund vs General Savings</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 13, color: '#475569' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 13, color: '#475569′ }}>
               <div style={{ background: '#dcfce7', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontWeight: 700, color: '#166534', marginBottom: 4 }}>✅ Sinking Fund</div>
                 Dedicated HYSA for home expenses. Set monthly auto-transfer. Don't touch for other goals. Earns 4–5% APY.
@@ -76,9 +76,9 @@ export default function DFWHomeMaintenanceReserveGuide() {
               </div>
             </div>
           </div>
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
             <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📐 How Much to Save</h3>
-            <div style={{ fontSize: 14, color: '#475569' }}>
+            <div style={{ fontSize: 14, color: '#475569′ }}>
               <p style={{ marginBottom: 8 }}><strong>1% Rule:</strong> Save 1% of home value per year. Minimum baseline.</p>
               <p style={{ marginBottom: 8 }}><strong>1.5% Rule:</strong> Better for DFW given foundation, HVAC, and hail risk.</p>
               <p style={{ marginBottom: 0 }}><strong>2% Rule:</strong> For homes over 15 years old or with a pool.</p>
@@ -109,7 +109,7 @@ export default function DFWHomeMaintenanceReserveGuide() {
               <label style={{ fontSize: 12, fontWeight: 600, color: '#475569', display: 'block', marginBottom: 4 }}>Pool?</label>
               <button
                 onClick={() => setHasPool(!hasPool)}
-                style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: 8, fontSize: 15, cursor: 'pointer', background: hasPool ? '#0A1628' : '#fff', color: hasPool ? '#F5E642' : '#0A1628', fontWeight: 700 }}
+                style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: 8, fontSize: 15, cursor: 'pointer', background: hasPool ? '#0A1628′ : '#fff', color: hasPool ? '#F5E642' : '#0A1628', fontWeight: 700 }}
               >
                 {hasPool ? '🏊 Yes, Pool' : '❌ No Pool'}
               </button>

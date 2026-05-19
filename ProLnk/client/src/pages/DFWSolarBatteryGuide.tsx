@@ -51,10 +51,10 @@ export default function DFWSolarBatteryGuide() {
         <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>DFW Average System: 7-12kW</h2>
         <div style={{ background: '#111E35', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F', marginBottom: 16 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
-            {[{ label: 'Small DFW Home', size: '7-8kW', panels: '20-24', cost: '$19,600-$27,200' }, { label: 'Average DFW Home', size: '10kW', panels: '27-30', cost: '$28,000-$34,000' }, { label: 'Large DFW Home', size: '12kW', panels: '32-36', cost: '$33,600-$40,800' }].map(s => (
+            {[{ label: 'Small DFW Home', size: '7-8kW', panels: '20-24', cost: '$19,600-$27,200′ }, { label: ’Average DFW Home', size: '10kW', panels: '27-30', cost: '$28,000-$34,000′ }, { label: ’Large DFW Home', size: '12kW', panels: '32-36', cost: '$33,600-$40,800′ }].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
                 <div style={{ color: '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{s.label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{s.size}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{s.size}</div>
                 <div style={{ color: '#C8D5E8', fontSize: 13 }}>{s.panels} panels</div>
                 <div style={{ color: '#8A9BBE', fontSize: 12, marginTop: 4 }}>{s.cost} before ITC</div>
               </div>
@@ -94,7 +94,7 @@ export default function DFWSolarBatteryGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#8A9BBE', fontSize: 13, marginBottom: 6 }}>Monthly Electric Bill ($)</label>
-              <input value={monthlyBill} onChange={e => setMonthlyBill(e.target.value)} placeholder="e.g. 220" style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={monthlyBill} onChange={e => setMonthlyBill(e.target.value)} placeholder="e.g. 220″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#8A9BBE', fontSize: 13, marginBottom: 6 }}>Roof Size</label>
@@ -115,7 +115,7 @@ export default function DFWSolarBatteryGuide() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer' }}>Get My Solar Recommendation</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', marginBottom: 12 }}>{result.system} | {result.panels}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div><div style={{ color: '#8A9BBE', fontSize: 12 }}>System Cost (before 30% ITC)</div><div style={{ color: '#E8EDF5', fontWeight: 700 }}>{result.cost}</div></div>

@@ -78,7 +78,7 @@ export default function DFWOpenHouseGuide() {
           {scentsAndStaging.map((s, i) => (
             <div key={i} style={{ padding: '12px 0', borderBottom: i < scentsAndStaging.length - 1 ? '1px solid #f0f0ee' : 'none' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 3 }}>{s.tip}</div>
-              <div style={{ fontSize: 14, color: '#666' }}>{s.note}</div>
+              <div style={{ fontSize: 14, color: '#666′ }}>{s.note}</div>
             </div>
           ))}
         </div>
@@ -94,7 +94,7 @@ export default function DFWOpenHouseGuide() {
 
         <div style={{ textAlign: 'center', padding: 28, background: '#0A1628', borderRadius: 16 }}>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, margin: 0 }}>Ready to run a DFW open house that converts?</p>
-          <p style={{ color: '#aaa', fontSize: 14, margin: '8px 0 0' }}>Connect with experienced DFW listing agents who know how to drive traffic.</p>
+          <p style={{ color: '#aaa', fontSize: 14, margin: '8px 0 0′ }}>Connect with experienced DFW listing agents who know how to drive traffic.</p>
         </div>
       </div>
     </div>

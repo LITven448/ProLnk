@@ -31,7 +31,7 @@ export default function DFWFurnaceNotHeatingGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
@@ -42,7 +42,7 @@ export default function DFWFurnaceNotHeatingGuide2026() {
               {active.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
                   <span style={{ color: '#F5E642', fontWeight: 800, minWidth: 24 }}>{i + 1}.</span>
-                  <span style={{ color: '#cdd9e5' }}>{step}</span>
+                  <span style={{ color: '#cdd9e5′ }}>{step}</span>
                 </div>
               ))}
             </div>
@@ -52,7 +52,7 @@ export default function DFWFurnaceNotHeatingGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>🛡️ Annual DFW Furnace Prep</h2>
           {['Replace filter before October each year', 'Test furnace in September — before cold hits', 'Schedule tune-up in fall (cheaper than emergency calls)', 'Know your furnace model and error code chart'].map((item, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#cdd9e5' }}>✅ {item}</div>
+            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#cdd9e5′ }}>✅ {item}</div>
           ))}
           <div style={{ marginTop: 20, background: '#F5E642', borderRadius: 8, padding: 16, textAlign: 'center' }}>
             <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 16 }}>ProLnk gets a tech to you same day — even during cold snaps.</div>

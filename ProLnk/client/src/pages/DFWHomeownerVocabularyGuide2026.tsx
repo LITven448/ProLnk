@@ -4,7 +4,7 @@ const tradeCategories = [
   {
     trade: "🌬️ HVAC",
     terms: [
-      { word: "SEER2", def: "Seasonal Energy Efficiency Ratio 2 — the new 2023 efficiency rating standard for AC units. Higher = more efficient. DFW minimum is 15.2 SEER2." },
+      { word: "SEER2″, def: "Seasonal Energy Efficiency Ratio 2 — the new 2023 efficiency rating standard for AC units. Higher = more efficient. DFW minimum is 15.2 SEER2." },
       { word: "Ton", def: "Unit of AC cooling capacity. 1 ton = 12,000 BTU/hr. Most DFW homes need 3–5 tons depending on sq footage." },
       { word: "BTU", def: "British Thermal Unit — measures heat energy. Used to size both heating and cooling equipment." },
       { word: "MERV", def: "Minimum Efficiency Reporting Value — air filter rating scale 1–16. Higher = finer filtration. MERV 8–11 typical for residential." },
@@ -60,40 +60,40 @@ export default function DFWHomeownerVocabularyGuide2026() {
   const active = tradeCategories[activeIndex];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 40, marginBottom: 8 }}>📖</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "0 0 8px" }}>DFW Homeowner Vocabulary Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 15, margin: 0 }}>Terms every DFW homeowner must know before calling a contractor</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "0 0 8px" }}>DFW Homeowner Vocabulary Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 15, margin: 0 }}>Terms every DFW homeowner must know before calling a contractor</p>
         </div>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 28, justifyContent: "center" }}>
           {tradeCategories.map((cat, i) => (
             <button key={i} onClick={() => { setActiveIndex(i); setActiveTerm(null); }}
               style={{ padding: "8px 18px", borderRadius: 20, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 14,
-                background: activeIndex === i ? "#F5E642" : "#1e2d45", color: activeIndex === i ? "#0A1628" : "#cbd5e1" }}>
+                background: activeIndex === i ? "#F5E642″ : "#1e2d45", color: activeIndex === i ? "#0A1628" : "#cbd5e1" }}>
               {cat.trade}
             </button>
           ))}
         </div>
 
-        <div style={{ background: "#111e35", borderRadius: 14, padding: 24, border: "1px solid #1e3a5f" }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F5E642", marginTop: 0, marginBottom: 18 }}>{active.trade} Key Terms</h2>
+        <div style={{ background: "#111e35″, borderRadius: 14, padding: 24, border: "1px solid #1e3a5f" }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F5E642″, marginTop: 0, marginBottom: 18 }}>{active.trade} Key Terms</h2>
           {active.terms.map((term, i) => (
             <div key={i} onClick={() => setActiveTerm(activeTerm === i ? null : i)}
-              style={{ background: activeTerm === i ? "#1a2d48" : "#0d1b2e", border: `1px solid ${activeTerm === i ? "#F5E642" : "#1e3a5f"}`,
+              style={{ background: activeTerm === i ? "#1a2d48″ : "#0d1b2e", border: `1px solid ${activeTerm === i ? "#F5E642" : "#1e3a5f"}`,
                 borderRadius: 10, padding: "14px 18px", marginBottom: 10, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontWeight: 700, color: activeTerm === i ? "#F5E642" : "#e2e8f0", fontSize: 16 }}>{term.word}</span>
-                <span style={{ color: "#F5E642", fontSize: 18 }}>{activeTerm === i ? "▲" : "▼"}</span>
+                <span style={{ fontWeight: 700, color: activeTerm === i ? "#F5E642″ : "#e2e8f0", fontSize: 16 }}>{term.word}</span>
+                <span style={{ color: "#F5E642″, fontSize: 18 }}>{activeTerm === i ? "▲" : "▼"}</span>
               </div>
-              {activeTerm === i && <p style={{ color: "#94a3b8", fontSize: 14, margin: "10px 0 0", lineHeight: 1.6 }}>{term.def}</p>}
+              {activeTerm === i && <p style={{ color: "#94a3b8″, fontSize: 14, margin: "10px 0 0", lineHeight: 1.6 }}>{term.def}</p>}
             </div>
           ))}
         </div>
 
-        <p style={{ textAlign: "center", color: "#475569", fontSize: 13, marginTop: 28 }}>© 2026 ProLnk · DFW Home Services Platform</p>
+        <p style={{ textAlign: "center", color: "#475569″, fontSize: 13, marginTop: 28 }}>© 2026 ProLnk · DFW Home Services Platform</p>
       </div>
     </div>
   );

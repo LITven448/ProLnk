@@ -53,7 +53,7 @@ export default function DFWMudRoomGuide2026() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 17 }}>🏠 {result.design}</span>
                 <span style={{ color: '#22c55e', fontWeight: 700 }}>{result.cost}</span>

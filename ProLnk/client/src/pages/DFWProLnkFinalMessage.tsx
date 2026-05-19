@@ -51,7 +51,7 @@ export default function DFWProLnkFinalMessage() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>
             💬 How Did You Find ProLnk?
           </h2>
           <div style={{ marginBottom: 24 }}>

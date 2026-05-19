@@ -50,7 +50,7 @@ export default function TrustyProHurst() {
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', background: '#f9fafb', color: '#111827', minHeight: '100vh' }}>
       <nav style={{ background: '#fff', borderBottom: '1px solid #e5e7eb', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 60 }}>
-        <span style={{ fontWeight: 800, fontSize: 20, color: '#4F46E5' }}>TrustyPro</span>
+        <span style={{ fontWeight: 800, fontSize: 20, color: '#4F46E5′ }}>TrustyPro</span>
         <a href="/waitlist/homeowner" style={{ background: '#F59E0B', color: '#fff', padding: '8px 20px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>Join Waitlist</a>
       </nav>
 
@@ -70,7 +70,7 @@ export default function TrustyProHurst() {
       <div style={{ background: '#fff', borderBottom: '1px solid #e5e7eb', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 0 }}>
         {stats.map((s, i) => (
           <div key={i} style={{ padding: '20px 36px', textAlign: 'center', borderRight: i < stats.length - 1 ? '1px solid #e5e7eb' : 'none' }}>
-            <div style={{ fontSize: 26, fontWeight: 900, color: '#4F46E5' }}>{s.value}</div>
+            <div style={{ fontSize: 26, fontWeight: 900, color: '#4F46E5′ }}>{s.value}</div>
             <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>{s.label}</div>
           </div>
         ))}
@@ -102,7 +102,7 @@ export default function TrustyProHurst() {
                 </div>
                 <div style={{ fontWeight: 700, fontSize: 17 }}>{p.name}</div>
                 <div style={{ color: '#6b7280', fontSize: 14, marginBottom: 12 }}>{p.trade}</div>
-                <div style={{ display: 'flex', gap: 16, marginBottom: 14, fontSize: 13, color: '#374151' }}>
+                <div style={{ display: 'flex', gap: 16, marginBottom: 14, fontSize: 13, color: '#374151′ }}>
                   <span>{p.years} yrs exp</span>
                   <span>{p.jobs} jobs</span>
                 </div>

@@ -52,7 +52,7 @@ export default function DFWConcreteBlockGuide() {
             <div key={a.app} style={{ background: '#111E35', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '1rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.9rem' }}>{a.app}</div>
-                <span style={{ background: a.risk === 'High' ? '#4A1520' : a.risk === 'Medium' ? '#2A2A10' : '#0F2A1F', color: a.risk === 'High' ? '#FF6B6B' : a.risk === 'Medium' ? '#F5E642' : '#4CAF50', fontSize: '0.7rem', fontWeight: 700, padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{a.risk} Risk</span>
+                <span style={{ background: a.risk === 'High' ? '#4A1520′ : a.risk === ’Medium' ? '#2A2A10′ : '#0F2A1F', color: a.risk === ’High' ? '#FF6B6B' : a.risk === 'Medium' ? '#F5E642′ : '#4CAF50', fontSize: '0.7rem', fontWeight: 700, padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{a.risk} Risk</span>
               </div>
               <div style={{ color: '#8899AA', fontSize: '0.8rem', lineHeight: 1.5 }}>{a.note}</div>
             </div>

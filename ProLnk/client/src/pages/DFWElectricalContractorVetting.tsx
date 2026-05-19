@@ -45,7 +45,7 @@ export default function DFWElectricalContractorVetting() {
         <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>8 Things to Verify</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 36 }}>
           {vetItems.map((item, i) => (
-            <div key={i} style={{ background: '#111f38', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642' }}>
+            <div key={i} style={{ background: '#111f38', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>✅ {item.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{item.detail}</div>
             </div>
@@ -56,7 +56,7 @@ export default function DFWElectricalContractorVetting() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
           {projectTypes.map((p, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {p.type}
             </button>
           ))}
@@ -79,10 +79,10 @@ export default function DFWElectricalContractorVetting() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, background: '#111f38', borderRadius: 10, padding: 20, borderTop: '2px solid #F5E642' }}>
+        <div style={{ marginTop: 32, background: '#111f38', borderRadius: 10, padding: 20, borderTop: '2px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🚩 DFW Electrical Red Flags</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            Can't provide TDLR license number on request. Won't pull permits. Quotes panel work without a load calculation. Uses aluminum wiring on branch circuits. No written scope before work begins. Requests full payment upfront.
+            Can't provide TDLR license number on request. Won’t pull permits. Quotes panel work without a load calculation. Uses aluminum wiring on branch circuits. No written scope before work begins. Requests full payment upfront.
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export default function DFWElectricalContractorVetting() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>💰 DFW Market Rates (2026)</div>
           <div style={{ display: 'grid', gap: 6 }}>
             {[['Service call / diagnostic', '$75–$125'], ['Outlet or switch install', '$100–$250'], ['Panel upgrade (100→200A)', '$1,800–$3,500'], ['EV charger install (Level 2)', '$400–$900'], ['Whole-home rewire', '$8,000–$20,000+']].map(([label, rate]) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: '#cbd5e1' }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: '#cbd5e1′ }}>
                 <span>{label}</span><span style={{ color: '#F5E642', fontWeight: 600 }}>{rate}</span>
               </div>
             ))}

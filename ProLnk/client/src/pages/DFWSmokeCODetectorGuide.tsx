@@ -41,7 +41,7 @@ export default function DFWSmokeCODetectorGuide() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🔥 DFW HOME SAFETY GUIDES</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🔥 DFW HOME SAFETY GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>Smoke & CO Detector Guide</h1>
         <p style={{ color: '#9AA3B2', marginBottom: '2rem' }}>Texas law requires smoke detectors in every sleeping area. CO detectors are required near gas appliances and sleeping areas. Get your home's custom placement plan below.</p>
 
@@ -91,11 +91,11 @@ export default function DFWSmokeCODetectorGuide() {
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>📍 Your Placement Plan</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>🔴 {result.smokeCount}</div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>🔴 {result.smokeCount}</div>
                 <div style={{ color: '#9AA3B2', fontSize: '0.85rem' }}>Smoke Detectors</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>💨 {result.coCount}</div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>💨 {result.coCount}</div>
                 <div style={{ color: '#9AA3B2', fontSize: '0.85rem' }}>CO Detectors</div>
               </div>
             </div>

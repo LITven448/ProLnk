@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const comparison = [
-  { category: 'Upfront Cost', sauna: '$3,000–15,000', hotTub: '$4,000–18,000' },
+  { category: 'Upfront Cost', sauna: '$3,000–15,000', hotTub: '$4,000–18,000′ },
   { category: 'Monthly Operating', sauna: '$15–40 (electric)', hotTub: '$50–100 (electric + chemicals)' },
   { category: 'DFW Best Months', sauna: 'Year-round (contrast therapy)', hotTub: 'October – March peak' },
   { category: 'Maintenance', sauna: 'Very low (wipe down only)', hotTub: 'Weekly chemical balancing' },
@@ -65,7 +65,7 @@ export default function DFWSaunaVsHotTubDFW() {
         <div style={{ overflowX: 'auto', marginBottom: 28 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ background: '#1e2d45' }}>
+              <tr style={{ background: '#1e2d45′ }}>
                 <th style={{ padding: '10px 14px', textAlign: 'left', color: '#94a3b8', fontWeight: 600 }}>Category</th>
                 <th style={{ padding: '10px 14px', textAlign: 'left', color: '#F5E642', fontWeight: 600 }}>🔥 Sauna</th>
                 <th style={{ padding: '10px 14px', textAlign: 'left', color: '#60a5fa', fontWeight: 600 }}>🛁 Hot Tub</th>
@@ -73,10 +73,10 @@ export default function DFWSaunaVsHotTubDFW() {
             </thead>
             <tbody>
               {comparison.map((row, i) => (
-                <tr key={row.category} style={{ background: i % 2 === 0 ? '#111c2d' : '#0A1628' }}>
-                  <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{row.category}</td>
-                  <td style={{ padding: '10px 14px', color: '#cbd5e1' }}>{row.sauna}</td>
-                  <td style={{ padding: '10px 14px', color: '#cbd5e1' }}>{row.hotTub}</td>
+                <tr key={row.category} style={{ background: i % 2 === 0 ? '#111c2d' : '#0A1628′ }}>
+                  <td style={{ padding: '10px 14px', color: '#94a3b8′ }}>{row.category}</td>
+                  <td style={{ padding: '10px 14px', color: '#cbd5e1′ }}>{row.sauna}</td>
+                  <td style={{ padding: '10px 14px', color: '#cbd5e1′ }}>{row.hotTub}</td>
                 </tr>
               ))}
             </tbody>
@@ -119,8 +119,8 @@ export default function DFWSaunaVsHotTubDFW() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>💡 Can't Decide? Do Both</strong>
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>💡 Can’t Decide? Do Both</strong>
           <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 14 }}>
             A 4-person infrared sauna ($5,000) + 4-person plug-and-play hot tub ($4,000) runs $9,000 total —
             less than one luxury hot tub — and covers every DFW season, health goal, and use case.

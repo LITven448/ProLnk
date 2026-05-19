@@ -68,8 +68,8 @@ export default function DFWPropertyTaxExemptionCalc() {
           ].map(item => (
             <label key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', cursor: 'pointer' }}>
               <input type='checkbox' checked={item.val} onChange={e => item.set(e.target.checked)}
-                style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
-              <span style={{ color: '#cbd5e1' }}>{item.label}</span>
+                style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+              <span style={{ color: '#cbd5e1′ }}>{item.label}</span>
             </label>
           ))}
           {veteran && (
@@ -77,7 +77,7 @@ export default function DFWPropertyTaxExemptionCalc() {
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>VA Disability Rating (%)</label>
               <select value={vetPercent} onChange={e => setVetPercent(e.target.value)}
                 style={{ padding: '0.75rem', borderRadius: 6, background: '#1a2f50', color: '#fff', border: '1px solid #2a4070', fontSize: '1rem' }}>
-                {['0','10','20','30','40','50','60','70','80','90','100'].map(p => <option key={p} value={p}>{p}% {p === '100' ? '(Full exemption)' : ''}</option>)}
+                {['0','10','20','30','40','50','60','70','80','90','100'].map(p => <option key={p} value={p}>{p}% {p === '100′ ? '(Full exemption)' : ''}</option>)}
               </select>
             </div>
           )}

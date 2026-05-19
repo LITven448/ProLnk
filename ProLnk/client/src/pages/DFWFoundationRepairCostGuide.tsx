@@ -26,9 +26,9 @@ export default function DFWFoundationRepairCostGuide() {
   const pill = (label: string, val: string, current: string, set: (v: string) => void) => (
     <button key={val} onClick={() => set(val)} style={{
       padding: '8px 16px', borderRadius: 20, border: '2px solid',
-      borderColor: current === val ? '#F5E642' : '#2A3A5C',
-      background: current === val ? '#F5E642' : 'transparent',
-      color: current === val ? '#0A1628' : '#CBD5E1',
+      borderColor: current === val ? '#F5E642′ : '#2A3A5C',
+      background: current === val ? '#F5E642′ : ’transparent',
+      color: current === val ? '#0A1628′ : '#CBD5E1',
       cursor: 'pointer', fontWeight: 600, fontSize: 13, margin: '4px 6px 4px 0'
     }}>{label}</button>
   );
@@ -39,13 +39,13 @@ export default function DFWFoundationRepairCostGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME SERVICES GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F1F5F9', margin: '0 0 8px' }}>Foundation Repair Cost Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW sits on some of the most <strong style={{ color: '#F5E642' }}>expansive clay soil in the US</strong> — called Blackland Prairie clay. It swells when wet and shrinks when dry, making foundation movement a near-universal issue. Here's what repair actually costs.
+          DFW sits on some of the most <strong style={{ color: '#F5E642′ }}>expansive clay soil in the US</strong> — called Blackland Prairie clay. It swells when wet and shrinks when dry, making foundation movement a near-universal issue. Here’s what repair actually costs.
         </p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 700, color: '#F1F5F9', marginBottom: 8 }}>Home Square Footage</label>
-            <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2200"
+            <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2200″
               style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '2px solid #2A3A5C', background: '#0A1628', color: '#F1F5F9', fontSize: 16, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
@@ -71,8 +71,8 @@ export default function DFWFoundationRepairCostGuide() {
               <div style={{ fontWeight: 700, color: '#F1F5F9', marginBottom: 4 }}>Warranty: {result.pierInfo.warranty}</div>
               <div style={{ color: '#94A3B8', fontSize: 14 }}>{result.pierInfo.note}</div>
             </div>
-            <div style={{ padding: 16, background: '#1a1500', borderRadius: 8, border: '1px solid #F5E642' }}>
-              <strong style={{ color: '#F5E642' }}>⚠️ Get at least 3 quotes.</strong>
+            <div style={{ padding: 16, background: '#1a1500', borderRadius: 8, border: '1px solid #F5E642′ }}>
+              <strong style={{ color: '#F5E642′ }}>⚠️ Get at least 3 quotes.</strong>
               <span style={{ color: '#CBD5E1', fontSize: 14 }}> Foundation repair pricing in DFW varies 40–60% between companies. The number of piers recommended varies too — more isn't always better.</span>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function DFWFoundationRepairCostGuide() {
             <div key={key} style={{ padding: '16px 0', borderBottom: '1px solid #2A3A5C' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <div style={{ fontWeight: 700, color: '#F1F5F9', textTransform: 'capitalize' }}>{key === '3tab' ? '3-Tab' : key} Pier</div>
-                <div style={{ fontWeight: 800, color: '#F5E642' }}>${p.low.toLocaleString()}–${p.high.toLocaleString()}/pier</div>
+                <div style={{ fontWeight: 800, color: '#F5E642′ }}>${p.low.toLocaleString()}–${p.high.toLocaleString()}/pier</div>
               </div>
               <div style={{ color: '#64748B', fontSize: 13, marginBottom: 4 }}>{p.note}</div>
               <div style={{ fontSize: 13, color: '#22C55E' }}>Warranty: {p.warranty}</div>

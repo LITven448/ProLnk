@@ -14,7 +14,7 @@ export default function DFWHVACWarrantyVoid2026() {
   const [selected, setSelected] = useState<string | null>(null);
   const situation = situations.find(s => s.id === selected);
 
-  const riskColor = (r: string) => r === 'HIGH' ? '#ef4444' : r === 'MEDIUM' ? '#f59e0b' : '#22c55e';
+  const riskColor = (r: string) => r === 'HIGH' ? '#ef4444′ : r === ’MEDIUM' ? '#f59e0b' : '#22c55e';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -24,7 +24,7 @@ export default function DFWHVACWarrantyVoid2026() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW HVAC warranties are worth $3,000-$8,000 in coverage. Know what voids them before it costs you.</p>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>🔍 Select Your Situation</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>🔍 Select Your Situation</div>
           <div style={{ display: 'grid', gap: 10 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 16px', borderRadius: 10, border: `2px solid ${selected === s.id ? '#F5E642' : 'transparent'}`, background: selected === s.id ? '#1e3a5f' : '#0A1628', cursor: 'pointer', textAlign: 'left', width: '100%' }}>
@@ -50,15 +50,15 @@ export default function DFWHVACWarrantyVoid2026() {
         )}
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642' }}>📋 How to Protect Your Warranty</div>
+          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642′ }}>📋 How to Protect Your Warranty</div>
           {['Always use a licensed HVAC contractor for any work', 'Register your system at manufacturer website within 60 days', 'Keep ALL service records in your Home Health Vault', 'Use only OEM-recommended refrigerant type', 'Schedule annual tune-ups every spring in DFW'].map(t => (
             <div key={t} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642' }}>✓</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{t}</span>
+              <span style={{ color: '#F5E642′ }}>✓</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{t}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628′ }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🛡️ Store Your Warranty Docs in Home Health Vault</div>
           <div style={{ fontSize: 13 }}>ProLnk's Home Health Vault stores your HVAC registration, service records, and warranty info permanently.</div>
         </div>

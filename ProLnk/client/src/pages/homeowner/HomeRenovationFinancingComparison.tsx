@@ -76,7 +76,7 @@ export default function HomeRenovationFinancingComparison() {
 
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
-      <div style={{ maxWidth: 920, margin: '0 auto', padding: '60px 24px 0' }}>
+      <div style={{ maxWidth: 920, margin: '0 auto', padding: '60px 24px 0′ }}>
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 36, marginBottom: 16 }}>🔧</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 800, color: '#f1f5f9', margin: '0 0 16px', lineHeight: 1.15 }}>
@@ -93,7 +93,7 @@ export default function HomeRenovationFinancingComparison() {
               key={o.id}
               onClick={() => setSelected(o.id)}
               style={{
-                background: selected === o.id ? '#1d4ed8' : '#1e293b',
+                background: selected === o.id ? '#1d4ed8′ : '#1e293b',
                 border: `2px solid ${selected === o.id ? '#3b82f6' : '#334155'}`,
                 borderRadius: 12, padding: '18px 14px', cursor: 'pointer',
                 textAlign: 'center', color: '#f1f5f9', transition: 'all 0.2s',
@@ -106,7 +106,7 @@ export default function HomeRenovationFinancingComparison() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 36, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 36, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#f1f5f9', fontSize: 18, fontWeight: 800, margin: '0 0 8px' }}>
             {opt.icon} {opt.label}
           </h2>
@@ -123,7 +123,7 @@ export default function HomeRenovationFinancingComparison() {
           </div>
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 48, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 48, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#f1f5f9', fontSize: 18, fontWeight: 800, margin: '0 0 24px' }}>💡 Interactive Cost Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 28 }}>
             <div>
@@ -153,8 +153,8 @@ export default function HomeRenovationFinancingComparison() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {[
-              { label: 'Monthly Payment', value: `$${monthly.toFixed(0)}`, color: '#3b82f6' },
-              { label: 'Total Interest', value: `$${totalInterest.toFixed(0)}`, color: '#ef4444' },
+              { label: 'Monthly Payment', value: `$${monthly.toFixed(0)}`, color: '#3b82f6′ },
+              { label: 'Total Interest', value: `$${totalInterest.toFixed(0)}`, color: '#ef4444′ },
               { label: 'Total Cost', value: `$${totalPaid.toFixed(0)}`, color: '#22c55e' },
             ].map(s => (
               <div key={s.label} style={{ background: '#0f172a', borderRadius: 12, padding: '20px 16px', textAlign: 'center' }}>
@@ -165,7 +165,7 @@ export default function HomeRenovationFinancingComparison() {
           </div>
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 48, border: '2px solid #dc2626' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 48, border: '2px solid #dc2626′ }}>
           <h3 style={{ color: '#ef4444', fontWeight: 800, fontSize: 16, margin: '0 0 10px' }}>⚠️ What to Avoid</h3>
           <p style={{ color: '#94a3b8', fontSize: 15, margin: 0, lineHeight: 1.7 }}>
             Never finance a roof or HVAC repair on a credit card unless you can pay it in 30 days. 

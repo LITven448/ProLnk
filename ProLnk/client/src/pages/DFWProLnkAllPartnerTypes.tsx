@@ -37,7 +37,7 @@ export default function DFWProLnkAllPartnerTypes() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 40 }}>
           {trades.map((t, i) => (
             <div key={i} onClick={() => setSelected(i === selected ? null : i)}
-              style={{ background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#0A1628', border: `2px solid ${selected === i ? '#F5E642' : '#D1DCF0'}`, borderRadius: 12, padding: '18px 16px', cursor: 'pointer', transition: 'all 0.2s', textAlign: 'center' }}>
+              style={{ background: selected === i ? '#0A1628′ : '#fff', color: selected === i ? '#F5E642' : '#0A1628', border: `2px solid ${selected === i ? '#F5E642' : '#D1DCF0'}`, borderRadius: 12, padding: '18px 16px', cursor: ’pointer', transition: 'all 0.2s', textAlign: 'center' }}>
               <div style={{ fontSize: 30, marginBottom: 8 }}>{t.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15 }}>{t.name}</div>
               <div style={{ fontSize: 12, color: selected === i ? '#A8BADA' : '#7A8FA8', marginTop: 4 }}>{t.market}</div>
@@ -46,7 +46,7 @@ export default function DFWProLnkAllPartnerTypes() {
         </div>
 
         {selected !== null && (
-          <div style={{ background: '#0A1628', color: '#E8EDF5', borderRadius: 14, padding: '28px 32px', marginBottom: 36, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', color: '#E8EDF5', borderRadius: 14, padding: '28px 32px', marginBottom: 36, border: '2px solid #F5E642′ }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
               <span style={{ fontSize: 32 }}>{trades[selected].icon}</span>
               <div>
@@ -62,7 +62,7 @@ export default function DFWProLnkAllPartnerTypes() {
           </div>
         )}
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#0A1628' }}>5 Income Streams — All Partner Types</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#0A1628′ }}>5 Income Streams — All Partner Types</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 36 }}>
           {incomeStreams.map((s, i) => (
             <div key={i} style={{ background: '#fff', border: '1px solid #D1DCF0', borderRadius: 10, padding: '16px 20px', display: 'flex', alignItems: 'flex-start', gap: 16 }}>

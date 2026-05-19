@@ -17,7 +17,7 @@ export default function DFWPlumbingPressureTest2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>💧</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Plumbing System Pressure Test Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Plumbing System Pressure Test Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>When and how to pressure test plumbing in North Texas homes</p>
         </div>
 
@@ -27,14 +27,14 @@ export default function DFWPlumbingPressureTest2026() {
             {tests.map(t => (
               <button key={t.id} onClick={() => setSelected(t.id)}
                 style={{ padding: '0.5rem 1rem', borderRadius: 8, cursor: 'pointer', fontWeight: 600,
-                  background: selected === t.id ? '#F5E642' : '#1e3a5f',
-                  color: selected === t.id ? '#0A1628' : '#fff',
+                  background: selected === t.id ? '#F5E642′ : '#1e3a5f',
+                  color: selected === t.id ? '#0A1628′ : '#fff',
                   border: 'none', fontSize: '0.85rem' }}>
                 {t.icon} {t.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: 6 }}>{active.icon} {active.method}</div>
             <div style={{ display: 'flex', gap: '1rem', marginBottom: 8 }}>
               <span style={{ background: '#0f2040', padding: '0.3rem 0.8rem', borderRadius: 6, color: '#F5E642', fontSize: '0.9rem' }}>📊 {active.psi}</span>

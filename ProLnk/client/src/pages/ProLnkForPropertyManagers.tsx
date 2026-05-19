@@ -36,8 +36,8 @@ export default function ProLnkForPropertyManagers() {
               style={{
                 flex: 1,
                 padding: '14px 0',
-                background: tab === key ? '#0F2137' : '#fff',
-                color: tab === key ? '#FACC15' : '#475569',
+                background: tab === key ? '#0F2137′ : '#fff',
+                color: tab === key ? '#FACC15′ : '#475569',
                 fontWeight: 700,
                 fontSize: 14,
                 border: 'none',
@@ -52,7 +52,7 @@ export default function ProLnkForPropertyManagers() {
         {tab === 'problem' && (
           <div>
             <div style={{ background: '#FFF7ED', border: '1.5px solid #FED7AA', borderRadius: 12, padding: '24px 28px', marginBottom: 24 }}>
-              <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 12, color: '#9A3412' }}>The Maintenance Problem</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 12, color: '#9A3412′ }}>The Maintenance Problem</h2>
               <p style={{ color: '#7C2D12', lineHeight: 1.75 }}>
                 For property managers handling 10+ units, reliable contractors are the hardest operational problem. Every call for a leaky faucet is 2 hours of coordination — calling 3 contractors, waiting for call-backs, managing no-shows, and defending costs to owners.
               </p>

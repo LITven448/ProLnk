@@ -44,7 +44,7 @@ export default function DFWMicrowaveGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 28 }}>
           {types.map(t => (
-            <div key={t.name} style={{ background: '#13223a', borderRadius: 10, padding: '16px 12px', borderTop: '3px solid #F5E642' }}>
+            <div key={t.name} style={{ background: '#13223a', borderRadius: 10, padding: '16px 12px', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 26 }}>{t.icon}</div>
               <div style={{ fontWeight: 700, margin: '8px 0 4px', fontSize: 13 }}>{t.name}</div>
               <div style={{ color: '#a0b0c8', fontSize: 11 }}>{t.note}</div>
@@ -69,7 +69,7 @@ export default function DFWMicrowaveGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
             {['Over-the-Range', 'Built-In', 'Countertop'].map(s => (
               <button key={s} onClick={() => { setMType(s); setSelected([]); setResult(''); }}
-                style={{ background: mType === s ? '#F5E642' : '#0A1628', color: mType === s ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: 'pointer' }}>{s}</button>
+                style={{ background: mType === s ? '#F5E642′ : '#0A1628', color: mType === s ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: ’pointer' }}>{s}</button>
             ))}
           </div>
           {mType && <>
@@ -77,7 +77,7 @@ export default function DFWMicrowaveGuide2026() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
               {symptoms.map(s => (
                 <button key={s} onClick={() => toggle(s)}
-                  style={{ background: selected.includes(s) ? '#F5E642' : '#0A1628', color: selected.includes(s) ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: 'pointer' }}>{s}</button>
+                  style={{ background: selected.includes(s) ? '#F5E642′ : '#0A1628', color: selected.includes(s) ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: ’pointer' }}>{s}</button>
               ))}
             </div>
           </>}

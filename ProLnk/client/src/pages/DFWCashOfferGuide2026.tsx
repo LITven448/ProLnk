@@ -52,13 +52,13 @@ export default function DFWCashOfferGuide2026() {
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {buyerProfiles.map((b, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1.5px solid #F5E642', borderRadius: 8, padding: '0.85rem 1rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.95rem' }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1.5px solid #F5E642', borderRadius: 8, padding: '0.85rem 1rem', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.95rem' }}>
                 {b.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>💡 Your Cash Strategy</div>
               <div style={{ color: '#dde', lineHeight: 1.65, fontSize: '0.97rem' }}>{buyerProfiles[selected].guide}</div>
             </div>

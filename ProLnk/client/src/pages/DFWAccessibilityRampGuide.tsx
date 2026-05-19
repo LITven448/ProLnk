@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const doorHeightOptions = [
-  { label: '1 step (~7")', inches: 7 },
-  { label: '2 steps (~14")', inches: 14 },
-  { label: '3 steps (~21")', inches: 21 },
-  { label: '4 steps (~28")', inches: 28 },
-  { label: '5 steps (~35")', inches: 35 },
+  { label: '1 step (~7″)', inches: 7 },
+  { label: '2 steps (~14″)', inches: 14 },
+  { label: '3 steps (~21″)', inches: 21 },
+  { label: '4 steps (~28″)', inches: 28 },
+  { label: '5 steps (~35″)', inches: 35 },
   { label: 'Custom height', inches: 0 },
 ];
 
@@ -57,7 +57,7 @@ export default function DFWAccessibilityRampGuide() {
             For every 1 inch of rise (door height above ground), you need 12 inches (1 foot) of ramp length. This is the ADA minimum — do not go steeper.
           </p>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-            {[{ label: '7" rise', ramp: "7 ft" }, { label: '14" rise', ramp: "14 ft" }, { label: '21" rise', ramp: "21 ft" }, { label: '28" rise', ramp: "28 ft" }].map((ex) => (
+            {[{ label: '7″ rise', ramp: "7 ft" }, { label: '14″ rise', ramp: "14 ft" }, { label: '21″ rise', ramp: "21 ft" }, { label: '28″ rise', ramp: "28 ft" }].map((ex) => (
               <div key={ex.label} style={{ textAlign: 'center' }}>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>{ex.ramp}</div>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>{ex.label}</div>
@@ -74,7 +74,7 @@ export default function DFWAccessibilityRampGuide() {
                 <div style={{ fontWeight: 700, marginBottom: 8 }}>{m.name}</div>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>{m.pricePerFt}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>✅ {m.pros.join(' · ')}</div>
-                <div style={{ fontSize: 12, color: '#ef4444' }}>⚠️ {m.cons.join(' · ')}</div>
+                <div style={{ fontSize: 12, color: '#ef4444′ }}>⚠️ {m.cons.join(' · ')}</div>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function DFWAccessibilityRampGuide() {
                   <div style={{ color: '#94a3b8', fontSize: 12 }}>Estimated Cost</div>
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, textAlign: 'center' }}>
-                  <div style={{ color: requiresPermit ? '#f97316' : '#22c55e', fontWeight: 800, fontSize: 16 }}>{requiresPermit ? '⚠️ Permit Required' : '✅ Likely No Permit'}</div>
+                  <div style={{ color: requiresPermit ? '#f97316′ : '#22c55e', fontWeight: 800, fontSize: 16 }}>{requiresPermit ? '⚠️ Permit Required' : '✅ Likely No Permit'}</div>
                   <div style={{ color: '#94a3b8', fontSize: 12 }}>DFW Permit Status</div>
                 </div>
               </div>

@@ -44,12 +44,12 @@ export default function DFWFlatRoofGuide2026() {
         <div style={{ backgroundColor: '#112240', borderRadius: '10px', padding: '20px', marginBottom: '28px' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '12px' }}>⚠️ DFW Flat Roof Critical Factors</h2>
           {[
-            ['Drainage', 'DFW gets 3-5" rain events — flat roofs must have interior drains or scuppers sized for heavy flow, not just gutters'],
+            ['Drainage', 'DFW gets 3-5″ rain events — flat roofs must have interior drains or scuppers sized for heavy flow, not just gutters'],
             ['Ponding Water', 'Standing water 48hrs+ voids most warranties — DFW soils expand/contract, creating low spots over time'],
             ['UV Exposure', 'DFW flat roofs see intense direct UV — TPO white membranes outperform black EPDM by 15-20 years in DFW climate'],
             ['Maintenance', 'Flat roofs need annual inspection in DFW — check seams, drains, and flashings after every major hail event'],
           ].map(([k,v]) => (
-            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '10px 0' }}>
+            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '10px 0′ }}>
               <span style={{ color: '#F5E642', fontWeight: 600 }}>{k}: </span>
               <span style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{v}</span>
             </div>
@@ -65,7 +65,7 @@ export default function DFWFlatRoofGuide2026() {
             ))}
           </div>
           <button onClick={getRecommendation} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', marginBottom: '16px' }}>Get Recommendation →</button>
-          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6' }}>{recommendation}</div>}
+          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6′ }}>{recommendation}</div>}
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function DFWHomeBuyerGuide() {
             DFW Home Buyer's Guide — What Every New Dallas-Fort Worth Homeowner Needs to Know
           </h1>
           <p style={{ fontSize: 18, color: '#4A5568', lineHeight: 1.7, margin: 0 }}>
-            Buying a home in the Dallas-Fort Worth metroplex is one of the biggest financial decisions you'll make. This guide covers the market realities, the first-year essentials, and the costs most new buyers don't see coming.
+            Buying a home in the Dallas-Fort Worth metroplex is one of the biggest financial decisions you'll make. This guide covers the market realities, the first-year essentials, and the costs most new buyers don’t see coming.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export default function DFWHomeBuyerGuide() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 28 }}>
             {[
-              { label: 'Median Home Price', value: '$380,000', note: 'Up 12% since 2022' },
+              { label: 'Median Home Price', value: '$380,000', note: 'Up 12% since 2022′ },
               { label: 'Property Tax Rate', value: '2.1–2.5%', note: 'One of highest in US' },
               { label: 'State Income Tax', value: '0%', note: 'Offsets property tax burden' },
               { label: 'Homestead Exemption', value: '$100K', note: 'On school district taxes' },
@@ -36,13 +36,13 @@ export default function DFWHomeBuyerGuide() {
               <div key={stat.label} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: 10, padding: '20px 18px' }}>
                 <div style={{ fontSize: 13, color: '#718096', fontWeight: 600, marginBottom: 6 }}>{stat.label}</div>
                 <div style={{ fontSize: 26, fontWeight: 800, color: '#0A1628', marginBottom: 4 }}>{stat.value}</div>
-                <div style={{ fontSize: 12, color: '#A0AEC0' }}>{stat.note}</div>
+                <div style={{ fontSize: 12, color: '#A0AEC0′ }}>{stat.note}</div>
               </div>
             ))}
           </div>
           <div style={{ background: '#EBF4FF', border: '1px solid #BEE3F8', borderRadius: 10, padding: '18px 20px' }}>
-            <strong style={{ color: '#0A1628' }}>The tax trade-off:</strong>{' '}
-            <span style={{ color: '#2D3748' }}>Texas has no state income tax, which attracts buyers from high-tax states. However, property taxes of 2.1–2.5% annually mean a $380K home costs $7,980–$9,500/year in property taxes alone — before insurance, HOA, or maintenance.</span>
+            <strong style={{ color: '#0A1628′ }}>The tax trade-off:</strong>{' '}
+            <span style={{ color: '#2D3748′ }}>Texas has no state income tax, which attracts buyers from high-tax states. However, property taxes of 2.1–2.5% annually mean a $380K home costs $7,980–$9,500/year in property taxes alone — before insurance, HOA, or maintenance.</span>
           </div>
         </section>
 
@@ -131,7 +131,7 @@ export default function DFWHomeBuyerGuide() {
           <div style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: 10, overflow: 'hidden' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ background: '#0A1628' }}>
+                <tr style={{ background: '#0A1628′ }}>
                   <th style={{ textAlign: 'left', padding: '14px 20px', color: '#fff', fontWeight: 600, fontSize: 14 }}>Item</th>
                   <th style={{ textAlign: 'left', padding: '14px 20px', color: '#fff', fontWeight: 600, fontSize: 14 }}>Annual Cost</th>
                   <th style={{ textAlign: 'left', padding: '14px 20px', color: '#fff', fontWeight: 600, fontSize: 14 }}>Why DFW</th>
@@ -144,7 +144,7 @@ export default function DFWHomeBuyerGuide() {
                   { item: 'HVAC filter replacement', cost: '$60–120/year', why: 'Systems run ~10 months/year; more cycles = more filter changes needed' },
                   { item: 'Lawn care / irrigation', cost: '$600–1,200/year', why: 'Clay soil + extreme summer heat + water restrictions require active lawn management' },
                 ].map((row, i) => (
-                  <tr key={row.item} style={{ background: i % 2 === 0 ? '#FAFAF9' : '#fff', borderBottom: '1px solid #E2E8F0' }}>
+                  <tr key={row.item} style={{ background: i % 2 === 0 ? '#FAFAF9′ : '#fff', borderBottom: '1px solid #E2E8F0' }}>
                     <td style={{ padding: '14px 20px', fontWeight: 600, color: '#0A1628', fontSize: 14 }}>{row.item}</td>
                     <td style={{ padding: '14px 20px', color: '#2D7D46', fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>{row.cost}</td>
                     <td style={{ padding: '14px 20px', color: '#4A5568', fontSize: 13 }}>{row.why}</td>
@@ -154,7 +154,7 @@ export default function DFWHomeBuyerGuide() {
             </table>
           </div>
           <div style={{ background: '#FFFBEB', border: '1px solid #F6E05E', borderRadius: 10, padding: '16px 20px', marginTop: 16 }}>
-            <strong style={{ color: '#744210' }}>Total first-year budget add-on: $1,260–$2,320/year</strong>
+            <strong style={{ color: '#744210′ }}>Total first-year budget add-on: $1,260–$2,320/year</strong>
             <span style={{ color: '#92400E' }}> — above standard maintenance. Plan for this before you close.</span>
           </div>
         </section>

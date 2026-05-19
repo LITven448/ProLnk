@@ -60,7 +60,7 @@ export default function DFWHVACCompressorTypeFinal() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>🏠 DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>HVAC Compressor Types for DFW: Single, Two-Stage & Variable Speed</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW's extreme heat and humidity make compressor choice more important than almost anywhere. Here's how each type performs in your conditions.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW's extreme heat and humidity make compressor choice more important than almost anywhere. Here’s how each type performs in your conditions.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Compressor Types Compared for DFW</h2>
@@ -73,7 +73,7 @@ export default function DFWHVACCompressorTypeFinal() {
               <div key={type} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                   <div style={{ fontWeight: 600 }}>{type}</div>
-                  <div style={{ fontSize: 13, color: '#F5E642' }}>{cost}</div>
+                  <div style={{ fontSize: 13, color: '#F5E642′ }}>{cost}</div>
                 </div>
                 <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>{rating}</div>
                 <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc}</div>
@@ -99,16 +99,16 @@ export default function DFWHVACCompressorTypeFinal() {
             </select>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 4 }}>✅ {rec.type}</div>
               <div style={{ color: '#64748b', fontSize: 13, marginBottom: 10 }}>Examples: {rec.brands}</div>
               <div style={{ color: '#94a3b8', marginBottom: 12, lineHeight: 1.6 }}>{rec.reason}</div>
               <div style={{ background: '#0f2040', borderRadius: 8, padding: 12, marginBottom: 10 }}>
-                <span style={{ color: '#F5E642' }}>🌡️ DFW Benefit: </span><span style={{ color: '#e2e8f0', fontSize: 14 }}>{rec.dfwBenefit}</span>
+                <span style={{ color: '#F5E642′ }}>🌡️ DFW Benefit: </span><span style={{ color: '#e2e8f0', fontSize: 14 }}>{rec.dfwBenefit}</span>
               </div>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: 14 }}>
-                <div><span style={{ color: '#F5E642' }}>💰 Premium: </span><span style={{ color: '#e2e8f0' }}>{rec.costPremium}</span></div>
-                <div><span style={{ color: '#F5E642' }}>⏱️ Payback: </span><span style={{ color: '#e2e8f0' }}>{rec.payback}</span></div>
+                <div><span style={{ color: '#F5E642′ }}>💰 Premium: </span><span style={{ color: '#e2e8f0' }}>{rec.costPremium}</span></div>
+                <div><span style={{ color: '#F5E642′ }}>⏱️ Payback: </span><span style={{ color: '#e2e8f0' }}>{rec.payback}</span></div>
               </div>
             </div>
           )}

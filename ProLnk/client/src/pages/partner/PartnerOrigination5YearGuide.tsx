@@ -38,14 +38,14 @@ export default function PartnerOrigination5YearGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Homes Added Per Year: {homesPerYear}</label>
-              <input type="range" min={1} max={100} value={homesPerYear} onChange={e => setHomesPerYear(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={1} max={100} value={homesPerYear} onChange={e => setHomesPerYear(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#9CA3AF', marginTop: 2 }}>
                 <span>1 home</span><span>100 homes</span>
               </div>
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Avg Jobs Per Home/Year: {avgJobsPerHome}</label>
-              <input type="range" min={1} max={6} step={0.5} value={avgJobsPerHome} onChange={e => setAvgJobsPerHome(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={1} max={6} step={0.5} value={avgJobsPerHome} onChange={e => setAvgJobsPerHome(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#9CA3AF', marginTop: 2 }}>
                 <span>1x</span><span>6x</span>
               </div>
@@ -74,15 +74,15 @@ export default function PartnerOrigination5YearGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center', color: 'white' }}>
             <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 6 }}>5-Year Cumulative</div>
-            <div style={{ fontSize: 30, fontWeight: 800, color: '#F5E642' }}>${totalIncome.toLocaleString()}</div>
+            <div style={{ fontSize: 30, fontWeight: 800, color: '#F5E642′ }}>${totalIncome.toLocaleString()}</div>
           </div>
           <div style={{ background: 'white', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #E5E7EB' }}>
             <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 6 }}>Year 5 Annual Run Rate</div>
-            <div style={{ fontSize: 30, fontWeight: 800, color: '#059669' }}>${years[4].income.toLocaleString()}</div>
+            <div style={{ fontSize: 30, fontWeight: 800, color: '#059669′ }}>${years[4].income.toLocaleString()}</div>
           </div>
           <div style={{ background: 'white', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #E5E7EB' }}>
             <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 6 }}>Total Homes in Vault</div>
-            <div style={{ fontSize: 30, fontWeight: 800, color: '#3B82F6' }}>{homesPerYear * 5}</div>
+            <div style={{ fontSize: 30, fontWeight: 800, color: '#3B82F6′ }}>{homesPerYear * 5}</div>
           </div>
         </div>
 

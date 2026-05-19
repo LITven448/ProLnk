@@ -45,14 +45,14 @@ export default function DFWWindowFrameMaterialGuide() {
           <div style={{ background: '#111D35', borderRadius: 12, padding: 20, minWidth: 600 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>📊 DFW Frame Material Comparison</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr', gap: 1, background: '#0A1628', borderRadius: 8, overflow: 'hidden' }}>
-              {['Material', 'DFW Rating', 'Lifespan', 'Cost', 'Thermal Expansion'].map(h => <div key={h} style={{ background: '#1E3A5F', padding: '10px 12px', fontSize: 11, fontWeight: 700, color: '#9BA3B5' }}>{h}</div>)}
+              {['Material', 'DFW Rating', 'Lifespan', 'Cost', 'Thermal Expansion'].map(h => <div key={h} style={{ background: '#1E3A5F', padding: '10px 12px', fontSize: 11, fontWeight: 700, color: '#9BA3B5′ }}>{h}</div>)}
               {frames.map(f => [f.name, f.rating, f.lifespan, f.cost, f.expansion].map((cell, i) => <div key={`${f.name}-${i}`} style={{ background: '#111D35', padding: '10px 12px', fontSize: 12 }}>{cell}</div>))}
             </div>
           </div>
         </div>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 DFW Frame Recommendation Engine</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 DFW Frame Recommendation Engine</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'DFW EXPOSURE', value: exposure, setter: setExposure, opts: exposures },
@@ -69,11 +69,11 @@ export default function DFWWindowFrameMaterialGuide() {
             ))}
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
-              <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>{rec.frame}</div>
-              <p style={{ fontSize: 14, marginBottom: 16, color: '#E8EAF0' }}>{rec.reason}</p>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>{rec.frame}</div>
+              <p style={{ fontSize: 14, marginBottom: 16, color: '#E8EAF0′ }}>{rec.reason}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>COST PREMIUM VS VINYL</div><div style={{ fontSize: 14, color: '#F5E642' }}>{rec.costPremium}</div></div>
+                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>COST PREMIUM VS VINYL</div><div style={{ fontSize: 14, color: '#F5E642′ }}>{rec.costPremium}</div></div>
                 <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>EXPECTED LIFESPAN IN DFW</div><div style={{ fontSize: 14 }}>{rec.lifespan}</div></div>
               </div>
             </div>

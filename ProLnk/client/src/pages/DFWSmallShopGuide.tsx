@@ -51,14 +51,14 @@ export default function DFWSmallShopGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, margin: '40px 0' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, margin: '40px 0′ }}>
           {[
             { icon: '⚡', title: '220V Required', desc: 'Most shop equipment runs on 240V. Plan your panel from day one.' },
             { icon: '🌡️', title: 'DFW Heat Critical', desc: 'Summers hit 105°F. Mini-split AC is essential, not optional.' },
             { icon: '💨', title: 'Ventilation Code', desc: 'Dust and fumes require dedicated exhaust per DFW building code.' },
             { icon: '📋', title: 'Permit Always Required', desc: 'Detached structures over 200 sq ft require a permit in all DFW cities.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{card.icon}</div>
               <h3 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>{card.title}</h3>
               <p style={{ color: '#94A3B8', margin: 0, fontSize: 14, lineHeight: 1.5 }}>{card.desc}</p>
@@ -72,11 +72,11 @@ export default function DFWSmallShopGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
               <h4 style={{ color: '#F5E642', margin: '0 0 10px' }}>Detached Shop</h4>
-              {['Full control over layout', 'Better sound isolation', 'Requires setback compliance', 'Higher upfront cost', 'No loss of garage parking'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0' }}>{'✓ ' + i}</div>)}
+              {['Full control over layout', 'Better sound isolation', 'Requires setback compliance', 'Higher upfront cost', 'No loss of garage parking'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0′ }}>{'✓ ' + i}</div>)}
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
               <h4 style={{ color: '#F5E642', margin: '0 0 10px' }}>Garage Conversion</h4>
-              {['Lower cost ($15K–$30K)', 'Existing electrical to upgrade', 'Climate control easier', 'Loses parking space', 'HOA may restrict use'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0' }}>{'✓ ' + i}</div>)}
+              {['Lower cost ($15K–$30K)', 'Existing electrical to upgrade', 'Climate control easier', 'Loses parking space', 'HOA may restrict use'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0′ }}>{'✓ ' + i}</div>)}
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function DFWSmallShopGuide() {
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Square Footage: {sqft} sq ft</label>
-              <input type="range" min={200} max={1200} step={50} value={sqft} onChange={e => { setSqft(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={200} max={1200} step={50} value={sqft} onChange={e => { setSqft(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
           <button onClick={() => setShowResults(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Calculate Estimate →</button>

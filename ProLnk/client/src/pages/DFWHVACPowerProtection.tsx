@@ -36,8 +36,8 @@ export default function DFWHVACPowerProtection() {
             ].map(stat => (
               <div key={stat.label} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem' }}>
                 <div style={{ fontSize: '1.25rem' }}>{stat.icon}</div>
-                <div style={{ fontSize: '0.75rem', color: '#94A3B8' }}>{stat.label}</div>
-                <div style={{ fontWeight: 700, color: '#F5E642' }}>{stat.value}</div>
+                <div style={{ fontSize: '0.75rem', color: '#94A3B8′ }}>{stat.label}</div>
+                <div style={{ fontWeight: 700, color: '#F5E642′ }}>{stat.value}</div>
               </div>
             ))}
           </div>
@@ -49,7 +49,7 @@ export default function DFWHVACPowerProtection() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.25rem' }}>
             {powerEvents.map(e => (
               <button key={e.id} onClick={() => setSelected(e.id)}
-                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642' : '#1E3A5F', background: selected === e.id ? '#1a2f50' : 'transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
+                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642′ : '#1E3A5F', background: selected === e.id ? '#1a2f50' : ’transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
                 {e.label}
               </button>
             ))}
@@ -61,7 +61,7 @@ export default function DFWHVACPowerProtection() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
               <h3 style={{ color: '#F5E642', margin: 0 }}>Protection Plan</h3>
               <span style={{ background: result.urgency === 'Critical' ? '#7F1D1D' : result.urgency === 'High' ? '#78350F' : '#1E3A5F', color: '#F5E642', padding: '0.25rem 0.75rem', borderRadius: 20, fontSize: '0.8rem', fontWeight: 600 }}>{result.urgency}</span>

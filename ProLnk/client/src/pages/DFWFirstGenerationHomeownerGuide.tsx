@@ -59,7 +59,7 @@ export default function DFWFirstGenerationHomeownerGuide() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🌱</div>
-          <h1 style={{ fontSize: '2.2rem', color: '#0A1628', margin: '0.5rem 0' }}>DFW First-Generation Homeowner Guide</h1>
+          <h1 style={{ fontSize: '2.2rem', color: '#0A1628', margin: '0.5rem 0′ }}>DFW First-Generation Homeowner Guide</h1>
           <p style={{ color: '#5A7090', fontSize: '1.05rem' }}>Buying a home when your family has no homeownership tradition — resources, programs, and what your parents couldn't tell you</p>
         </div>
 
@@ -70,7 +70,7 @@ export default function DFWFirstGenerationHomeownerGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {situations.map(s => (
-            <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#0A1628' : '#FFFFFF', color: selected === s.id ? '#F5E642' : '#1A2B3C', border: `2px solid ${selected === s.id ? '#0A1628' : '#E0E8F0'}`, borderRadius: 12, padding: '1.2rem', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
+            <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#0A1628′ : '#FFFFFF', color: selected === s.id ? '#F5E642' : '#1A2B3C', border: `2px solid ${selected === s.id ? '#0A1628' : '#E0E8F0'}`, borderRadius: 12, padding: '1.2rem', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: '2rem' }}>{s.icon}</div>
               <div style={{ fontWeight: 600, marginTop: 6, fontSize: '0.95rem' }}>{s.label}</div>
             </button>
@@ -82,12 +82,12 @@ export default function DFWFirstGenerationHomeownerGuide() {
             <div style={{ background: '#FFFFFF', border: '1px solid #E0E8F0', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ color: '#1D4ED8', fontWeight: 600, marginBottom: '1.2rem', fontSize: '1rem' }}>💬 {result.headline}</div>
               {result.programs.map(p => (
-                <div key={p.name} style={{ background: '#F8F9FA', borderRadius: 10, padding: '1rem', marginBottom: '0.8rem', borderLeft: '4px solid #0A1628' }}>
+                <div key={p.name} style={{ background: '#F8F9FA', borderRadius: 10, padding: '1rem', marginBottom: '0.8rem', borderLeft: '4px solid #0A1628′ }}>
                   <div style={{ color: '#0A1628', fontWeight: 700, marginBottom: 4 }}>📋 {p.name}</div>
                   <div style={{ color: '#5A7090', fontSize: '0.88rem', marginBottom: 4 }}>{p.what}</div>
                   <div style={{ display: 'flex', gap: '2rem', fontSize: '0.85rem' }}>
-                    <span><strong style={{ color: '#059669' }}>💵 {p.amount}</strong></span>
-                    <span style={{ color: '#5A7090' }}>📌 {p.how}</span>
+                    <span><strong style={{ color: '#059669′ }}>💵 {p.amount}</strong></span>
+                    <span style={{ color: '#5A7090′ }}>📌 {p.how}</span>
                   </div>
                 </div>
               ))}

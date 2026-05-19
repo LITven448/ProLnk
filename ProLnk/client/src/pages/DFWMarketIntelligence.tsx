@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const marketSegments = [
   { label: 'HVAC', value: 680, pct: 28, color: '#1E3A5F' },
-  { label: 'Roofing', value: 520, pct: 22, color: '#2D5016' },
+  { label: 'Roofing', value: 520, pct: 22, color: '#2D5016′ },
   { label: 'Plumbing', value: 340, pct: 14, color: '#7B4F2E' },
-  { label: 'Electrical', value: 280, pct: 12, color: '#8B4513' },
+  { label: 'Electrical', value: 280, pct: 12, color: '#8B4513′ },
   { label: 'Foundation', value: 240, pct: 10, color: '#4A0E4E' },
-  { label: 'Other', value: 340, pct: 14, color: '#555' }
+  { label: 'Other', value: 340, pct: 14, color: '#555′ }
 ];
 
 const trends = [

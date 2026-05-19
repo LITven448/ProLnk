@@ -32,7 +32,7 @@ export default function DFWNetWorthHomeGuide() {
   const principalPaydown = loanAmount - remainingBalance;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '48px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36 }}>📈</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '12px 0 8px' }}>
@@ -52,16 +52,16 @@ export default function DFWNetWorthHomeGuide() {
           ].map(card => (
             <div key={card.label} style={{ background: '#fff', borderRadius: 12, padding: 20, border: '1px solid #e2e8f0', textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{card.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{card.value}</div>
               <div style={{ fontSize: 12, fontWeight: 600, color: '#0A1628', margin: '4px 0 2px' }}>{card.label}</div>
-              <div style={{ fontSize: 11, color: '#94a3b8' }}>{card.sub}</div>
+              <div style={{ fontSize: 11, color: '#94a3b8′ }}>{card.sub}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0', marginBottom: 32 }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>💡 Two Ways Equity Builds</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, fontSize: 14, color: '#475569' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, fontSize: 14, color: '#475569′ }}>
             <div style={{ background: '#F9FAFB', borderRadius: 8, padding: 16 }}>
               <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>📉 Principal Paydown</div>
               Each mortgage payment reduces what you owe. In year 1, only ~15% goes to principal; by year 10 it flips toward 60%+. Over 30 years you eliminate the entire debt.
@@ -75,7 +75,7 @@ export default function DFWNetWorthHomeGuide() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0', marginBottom: 32 }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>⚖️ When to Leverage Equity vs Let It Grow</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, fontSize: 14, color: '#475569' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, fontSize: 14, color: '#475569′ }}>
             <div style={{ background: '#fef3c7', borderRadius: 8, padding: 16 }}>
               <div style={{ fontWeight: 700, color: '#92400e', marginBottom: 6 }}>✅ Good Time to Leverage</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
@@ -124,7 +124,7 @@ export default function DFWNetWorthHomeGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, color: '#fff' }}>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 12, fontWeight: 600 }}>🏡 HOME EQUITY PATH</div>
-              <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Current Est. Value</span><br /><span style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{formatCurrency(currentValue)}</span></div>
+              <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Current Est. Value</span><br /><span style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{formatCurrency(currentValue)}</span></div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Current Equity</span><br /><span style={{ fontSize: 20, fontWeight: 700 }}>{formatCurrency(currentEquity)}</span></div>
               <div style={{ fontSize: 12, color: '#64748b', borderTop: '1px solid #1e293b', paddingTop: 12 }}>
                 <div>Appreciation gain: {formatCurrency(appreciationGain)}</div>
@@ -134,7 +134,7 @@ export default function DFWNetWorthHomeGuide() {
             </div>
             <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, color: '#fff' }}>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 12, fontWeight: 600 }}>📊 INVESTED ALTERNATIVE</div>
-              <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Portfolio Value</span><br /><span style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{formatCurrency(altPortfolio)}</span></div>
+              <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Portfolio Value</span><br /><span style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{formatCurrency(altPortfolio)}</span></div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Investment Gain</span><br /><span style={{ fontSize: 20, fontWeight: 700 }}>{formatCurrency(altGain)}</span></div>
               <div style={{ fontSize: 12, color: '#64748b', borderTop: '1px solid #334155', paddingTop: 12 }}>
                 <div>Starting investment: {formatCurrency(downPayment)}</div>
@@ -143,7 +143,7 @@ export default function DFWNetWorthHomeGuide() {
               </div>
             </div>
           </div>
-          <div style={{ background: equityGain > altGain ? '#dcfce7' : '#fce7f3', borderRadius: 8, padding: 12, marginTop: 16, fontSize: 14, textAlign: 'center' }}>
+          <div style={{ background: equityGain > altGain ? '#dcfce7′ : '#fce7f3', borderRadius: 8, padding: 12, marginTop: 16, fontSize: 14, textAlign: ’center' }}>
             {equityGain > altGain
               ? `🏡 Home equity outperforms by ${formatCurrency(equityGain - altGain)} over ${yearsOwned} years`
               : `📊 Investing outperforms by ${formatCurrency(altGain - equityGain)} over ${yearsOwned} years`}

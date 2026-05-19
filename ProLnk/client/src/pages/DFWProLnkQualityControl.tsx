@@ -44,13 +44,13 @@ export default function DFWProLnkQualityControl() {
           {filtered.map((m, i) => (
             <div key={m.concern} onClick={() => setSelected(selected === i ? null : i)} style={{
               background: selected === i ? '#0f2a4a' : '#0d1f36',
-              border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f',
+              border: '1px solid', borderColor: selected === i ? '#F5E642′ : '#1e3a5f',
               borderRadius: 10, padding: '16px 20px', cursor: 'pointer', transition: 'all 0.2s'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <span style={{ fontSize: 24 }}>{m.emoji}</span>
                 <div>
-                  <div style={{ fontWeight: 700, color: selected === i ? '#F5E642' : '#e2e8f0', fontSize: 15 }}>{m.title}</div>
+                  <div style={{ fontWeight: 700, color: selected === i ? '#F5E642′ : '#e2e8f0', fontSize: 15 }}>{m.title}</div>
                   <div style={{ color: '#64748b', fontSize: 13 }}>Concern: {m.concern}</div>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function DFWProLnkQualityControl() {
         <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, textAlign: 'center' }}>
           {[['4.6 avg', 'Partner rating'], ['98%', 'License verified'], ['under 2%', 'No-show rate']].map(([val, label]) => (
             <div key={label} style={{ background: '#0d1f36', borderRadius: 10, padding: '20px 12px', border: '1px solid #1e3a5f' }}>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
               <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>{label}</div>
             </div>
           ))}

@@ -19,53 +19,53 @@ export default function LancasterHomeownerGuide2026B() {
   const current = decades.find(d => d.decade === selected);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "2.5rem" }}>🏡</div>
-          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", margin: "0.5rem 0" }}>Lancaster TX Homeowner Deep Dive 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: "0.95rem" }}>Part 2 — Affordable South Dallas: Plumbing, Foundation & Security Guide</p>
+          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", margin: "0.5rem 0" }}>Lancaster TX Homeowner Deep Dive 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: "0.95rem" }}>Part 2 — Affordable South Dallas: Plumbing, Foundation & Security Guide</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {alerts.map(a => (
-            <div key={a.title} style={{ background: "#111e35", borderRadius: 10, padding: "1rem", border: "1px solid #1e3a5f" }}>
+            <div key={a.title} style={{ background: "#111e35″, borderRadius: 10, padding: "1rem", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: "1.5rem" }}>{a.icon}</div>
-              <div style={{ color: "#F5E642", fontWeight: 700, marginTop: 4 }}>{a.title}</div>
-              <div style={{ color: "#94a3b8", fontSize: "0.85rem", marginTop: 4 }}>{a.desc}</div>
+              <div style={{ color: "#F5E642″, fontWeight: 700, marginTop: 4 }}>{a.title}</div>
+              <div style={{ color: "#94a3b8″, fontSize: "0.85rem", marginTop: 4 }}>{a.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#111e35", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginTop: 0 }}>🏠 Select Your Home's Decade</h2>
+        <div style={{ background: "#111e35″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginTop: 0 }}>🏠 Select Your Home's Decade</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "1rem" }}>
             {decades.map(d => (
               <button key={d.decade} onClick={() => setSelected(d.decade)}
-                style={{ background: selected === d.decade ? "#F5E642" : "#1e3a5f", color: selected === d.decade ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "0.5rem 1rem", cursor: "pointer", fontWeight: 600, fontSize: "0.9rem" }}>
+                style={{ background: selected === d.decade ? "#F5E642″ : "#1e3a5f", color: selected === d.decade ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "0.5rem 1rem", cursor: "pointer", fontWeight: 600, fontSize: "0.9rem" }}>
                 {d.label}
               </button>
             ))}
           </div>
           {current && (
             <div>
-              <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.5rem" }}>Lancaster Repair Guide — {current.label}</div>
+              <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.5rem" }}>Lancaster Repair Guide — {current.label}</div>
               {current.tips.map((tip, i) => (
-                <div key={i} style={{ color: "#cbd5e1", fontSize: "0.9rem", padding: "0.4rem 0", borderBottom: "1px solid #1e3a5f" }}>✅ {tip}</div>
+                <div key={i} style={{ color: "#cbd5e1″, fontSize: "0.9rem", padding: "0.4rem 0", borderBottom: "1px solid #1e3a5f" }}>✅ {tip}</div>
               ))}
             </div>
           )}
-          {!current && <div style={{ color: "#475569", fontSize: "0.9rem" }}>Select your home's build decade to see Lancaster-specific repair priorities.</div>}
+          {!current && <div style={{ color: "#475569″, fontSize: "0.9rem" }}>Select your home's build decade to see Lancaster-specific repair priorities.</div>}
         </div>
 
-        <div style={{ background: "#111e35", borderRadius: 12, padding: "1.5rem", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginTop: 0 }}>📋 Lancaster Annual Checklist</h2>
+        <div style={{ background: "#111e35″, borderRadius: 12, padding: "1.5rem", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginTop: 0 }}>📋 Lancaster Annual Checklist</h2>
           {["Install or upgrade monitored security system", "Annual foundation inspection by licensed PE", "Plumbing camera inspection every 5 years in pre-1990 homes", "Roof inspection after every major hail event (south Dallas hail corridor)"].map((item, i) => (
-            <div key={i} style={{ color: "#cbd5e1", fontSize: "0.88rem", padding: "0.4rem 0", borderBottom: i < 3 ? "1px solid #1e3a5f" : "none" }}>{item}</div>
+            <div key={i} style={{ color: "#cbd5e1″, fontSize: "0.88rem", padding: "0.4rem 0", borderBottom: i < 3 ? "1px solid #1e3a5f" : "none" }}>{item}</div>
           ))}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569", fontSize: "0.8rem" }}>
+        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569″, fontSize: "0.8rem" }}>
           ProLnk connects Lancaster homeowners with verified local pros • prolnk.io
         </div>
       </div>

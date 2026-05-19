@@ -50,7 +50,7 @@ export default function DFWCustomHomeBuildGuide() {
         </p>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🎯 Find Your Path</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🎯 Find Your Path</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>Total Budget</label>
@@ -98,7 +98,7 @@ export default function DFWCustomHomeBuildGuide() {
         </div>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 28, marginBottom: 24, border: '1px solid #1e3a5f' }}>
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏦 Construction Loan Process</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏦 Construction Loan Process</h3>
           {LOAN_STEPS.map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
               <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
@@ -111,7 +111,7 @@ export default function DFWCustomHomeBuildGuide() {
         </div>
 
         <div style={{ background: '#1a0d0d', borderRadius: 16, padding: 24, border: '1px solid #4a1e1e' }}>
-          <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#ef4444' }}>🚩 Builder Vetting Red Flags</h3>
+          <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#ef4444′ }}>🚩 Builder Vetting Red Flags</h3>
           {['Unlicensed contractor (verify at TDLR.texas.gov)', 'Cannot provide 3+ references from last 2 years', 'Asks for more than 10% upfront before any work', 'No written draw schedule or payment milestones', 'Vague contract language around change order pricing', 'Cannot show proof of liability insurance and workers comp'].map(flag => (
             <div key={flag} style={{ color: '#fca5a5', fontSize: 14, marginBottom: 8 }}>⚠️ {flag}</div>
           ))}

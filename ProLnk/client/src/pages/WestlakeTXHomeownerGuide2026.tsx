@@ -64,7 +64,7 @@ export default function WestlakeTXHomeownerGuide2026() {
         <h2 style={{ color: '#F5E642', marginBottom: 16 }}>Select Your Estate Size</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 32 }}>
           {sizes.map(s => (
-            <button key={s.id} onClick={() => setSelectedSize(s.id)} style={{ background: selectedSize === s.id ? s.color : '#0D1F3C', border: `2px solid ${s.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedSize === s.id ? '#0A1628' : '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+            <button key={s.id} onClick={() => setSelectedSize(s.id)} style={{ background: selectedSize === s.id ? s.color : '#0D1F3C', border: `2px solid ${s.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedSize === s.id ? '#0A1628′ : '#fff', textAlign: ’left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{s.label}</div>
               <div style={{ fontSize: 13, opacity: 0.85 }}>{s.desc}</div>
             </button>

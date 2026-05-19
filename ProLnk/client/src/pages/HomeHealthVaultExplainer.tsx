@@ -15,12 +15,12 @@ export default function HomeHealthVaultExplainer() {
   ];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏦</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", marginBottom: 12 }}>Home Health Vault</h1>
-          <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.6, maxWidth: 600, margin: "0 auto" }}>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, marginBottom: 12 }}>Home Health Vault</h1>
+          <p style={{ fontSize: 18, color: "#94a3b8″, lineHeight: 1.6, maxWidth: 600, margin: "0 auto" }}>
             A secure, permanent digital record of everything about your home — systems, appliances, repairs, warranties, and safety data — tied forever to your property address.
           </p>
         </div>
@@ -34,33 +34,33 @@ export default function HomeHealthVaultExplainer() {
           ].map((item) => (
             <div key={item.title} style={{ background: "#0f1f3d", borderRadius: 12, padding: 20, border: "1px solid #1e3a6e" }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
-              <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: 6 }}>{item.title}</div>
-              <div style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.5 }}>{item.desc}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 6 }}>{item.title}</div>
+              <div style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.5 }}>{item.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 16, padding: 28, border: "1px solid #1e3a6e" }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: "#F5E642", marginBottom: 6 }}>What Gets Stored?</h2>
-          <p style={{ color: "#94a3b8", fontSize: 14, marginBottom: 20 }}>Tap a home system to see exactly what the Vault tracks:</p>
+          <h2 style={{ fontSize: 20, fontWeight: 700, color: "#F5E642″, marginBottom: 6 }}>What Gets Stored?</h2>
+          <p style={{ color: "#94a3b8″, fontSize: 14, marginBottom: 20 }}>Tap a home system to see exactly what the Vault tracks:</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 20 }}>
             {features.map((f) => (
               <button key={f.type} onClick={() => setSelected(selected === f.type ? null : f.type)}
-                style={{ background: selected === f.type ? "#F5E642" : "#1e3a6e", color: selected === f.type ? "#0A1628" : "#fff", border: "none", borderRadius: 20, padding: "8px 16px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === f.type ? "#F5E642″ : "#1e3a6e", color: selected === f.type ? "#0A1628" : "#fff", border: "none", borderRadius: 20, padding: "8px 16px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                 {f.type}
               </button>
             ))}
           </div>
           {selected && (
-            <div style={{ background: "#0A1628", borderRadius: 10, padding: 16, border: "1px solid #F5E642" }}>
-              <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: 8 }}>{selected} — Vault Records:</div>
-              <div style={{ color: "#e2e8f0", lineHeight: 1.7 }}>{features.find((f) => f.type === selected)?.stored}</div>
+            <div style={{ background: "#0A1628″, borderRadius: 10, padding: 16, border: "1px solid #F5E642" }}>
+              <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 8 }}>{selected} — Vault Records:</div>
+              <div style={{ color: "#e2e8f0″, lineHeight: 1.7 }}>{features.find((f) => f.type === selected)?.stored}</div>
             </div>
           )}
         </div>
 
         <div style={{ textAlign: "center", marginTop: 36 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 16 }}>🔗 Powered by ProLnk — every service call auto-logged to your Vault</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 16 }}>🔗 Powered by ProLnk — every service call auto-logged to your Vault</div>
         </div>
       </div>
     </div>

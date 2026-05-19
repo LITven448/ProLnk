@@ -105,7 +105,7 @@ export default function DFWCommuteResearchGuide() {
               </div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>⚠️ Traffic warnings:</div>
-                {route.warnings.map((w, i) => <div key={i} style={{ color: '#334155', marginBottom: 8, paddingLeft: 16, borderLeft: '3px solid #F5E642' }}>{w}</div>)}
+                {route.warnings.map((w, i) => <div key={i} style={{ color: '#334155', marginBottom: 8, paddingLeft: 16, borderLeft: '3px solid #F5E642′ }}>{w}</div>)}
               </div>
               <div style={{ backgroundColor: '#F0FDF4', borderRadius: 10, padding: 16, marginBottom: 16 }}>
                 <p style={{ color: '#166534', margin: 0 }}>🚆 <strong>DART / rail options:</strong> {route.dartNote}</p>

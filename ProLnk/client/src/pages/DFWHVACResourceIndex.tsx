@@ -27,7 +27,7 @@ export default function DFWHVACResourceIndex() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Alphabetical Index — Top Topics</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
             {['AC Emergencies', 'Air Filtration', 'Annual Maintenance', 'Brand Comparisons', 'City Guides (A–Z)', 'Climate Zone Maps', 'Contractor Verification', 'Cost Benchmarks', 'Emergency Protocols', 'Filter Selection', 'Financing Options', 'Heat Pump Guides', 'Indoor Air Quality', 'Installation Standards', 'Licensing (TACLB)', 'Mini-Split Systems', 'Permit Requirements', 'Pricing Transparency', 'Refrigerant Types', 'SEER2 Explained', 'Seasonal Schedules', 'System Lifespan', 'Thermostat Setup', 'Ductwork Inspection'].map((item, i) => (
-              <div key={i} style={{ background: '#1e3a5f', borderRadius: 8, padding: '8px 14px', fontSize: 13, color: '#cbd5e1' }}>
+              <div key={i} style={{ background: '#1e3a5f', borderRadius: 8, padding: '8px 14px', fontSize: 13, color: '#cbd5e1′ }}>
                 {item}
               </div>
             ))}
@@ -38,17 +38,17 @@ export default function DFWHVACResourceIndex() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>Find Resources by Need</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 24 }}>
             {needs.map(n => (
-              <button key={n.id} onClick={() => setSelected(n.id)} style={{ background: selected === n.id ? '#F5E642' : '#1e3a5f', color: selected === n.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '13px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
+              <button key={n.id} onClick={() => setSelected(n.id)} style={{ background: selected === n.id ? '#F5E642′ : '#1e3a5f', color: selected === n.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '13px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
                 {n.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>Relevant Resources:</div>
               {result.resources.map((r, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                  <span style={{ color: '#F5E642' }}>→</span>
+                  <span style={{ color: '#F5E642′ }}>→</span>
                   <span style={{ color: '#e2e8f0', fontSize: 14 }}>{r}</span>
                 </div>
               ))}
@@ -58,7 +58,7 @@ export default function DFWHVACResourceIndex() {
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '24px 32px', textAlign: 'center' }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628', marginBottom: 8 }}>3,200+ Pages. One Platform.</div>
-          <div style={{ fontSize: 14, color: '#0A1628' }}>ProLnk is DFW's most complete HVAC knowledge base — and the only one connected to vetted, verified pros.</div>
+          <div style={{ fontSize: 14, color: '#0A1628′ }}>ProLnk is DFW’s most complete HVAC knowledge base — and the only one connected to vetted, verified pros.</div>
         </div>
       </div>
     </div>

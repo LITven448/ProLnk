@@ -68,11 +68,11 @@ export default function DFWHomeAllSystemsScore() {
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{cat.icon} {cat.label}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 12 }}>{cat.hint}</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <input type="number" min={0} max={100} placeholder="0-100"
+                <input type="number" min={0} max={100} placeholder="0-100″
                   value={scores[cat.id] ?? ''}
                   onChange={e => setScores(s => ({ ...s, [cat.id]: parseInt(e.target.value) || 0 }))}
                   style={{ width: 70, padding: '8px 10px', borderRadius: 8, border: '2px solid',
-                    borderColor: scores[cat.id] !== undefined ? '#F5E642' : '#1e3a5f',
+                    borderColor: scores[cat.id] !== undefined ? '#F5E642′ : '#1e3a5f',
                     background: '#0A1628', color: 'white', fontSize: 16, fontWeight: 700, textAlign: 'center' }} />
                 <span style={{ fontSize: 13, color: scores[cat.id] !== undefined ? getGrade(scores[cat.id]).color : '#64748b', fontWeight: 700 }}>
                   {scores[cat.id] !== undefined ? `Grade ${getGrade(scores[cat.id]).grade}` : '--'}
@@ -83,8 +83,8 @@ export default function DFWHomeAllSystemsScore() {
         </div>
 
         <button onClick={calculate} disabled={!allEntered}
-          style={{ width: '100%', padding: '16px', background: allEntered ? '#F5E642' : '#1e3a5f',
-            color: allEntered ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 12,
+          style={{ width: '100%', padding: '16px', background: allEntered ? '#F5E642′ : '#1e3a5f',
+            color: allEntered ? '#0A1628′ : '#4a6080', border: ’none', borderRadius: 12,
             fontWeight: 700, fontSize: 16, cursor: allEntered ? 'pointer' : 'not-allowed' }}>
           {allEntered ? 'Generate Home Report →' : `Enter all 6 scores to continue`}
         </button>
@@ -99,16 +99,16 @@ export default function DFWHomeAllSystemsScore() {
               </div>
             </div>
             <div style={{ marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔧 Top 3 Priority Fixes</div>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔧 Top 3 Priority Fixes</div>
               {result.fixes.map((f, i) => (
-                <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#cbd5e1' }}>
+                <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#cbd5e1′ }}>
                   {f}
                 </div>
               ))}
             </div>
             <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 10, padding: '14px 16px' }}>
               <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>💰 Estimated Cost to Reach Grade A</div>
-              <div style={{ fontSize: 14, color: '#cbd5e1' }}>{result.cost}</div>
+              <div style={{ fontSize: 14, color: '#cbd5e1′ }}>{result.cost}</div>
             </div>
           </div>
         )}

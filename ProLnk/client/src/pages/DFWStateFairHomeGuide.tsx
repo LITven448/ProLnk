@@ -36,7 +36,7 @@ export default function DFWStateFairHomeGuide() {
             <div key={s.id}>
               <button
                 onClick={() => setActive(active === s.id ? null : s.id)}
-                style={{ width: '100%', textAlign: 'left', background: active === s.id ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === s.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}
+                style={{ width: '100%', textAlign: 'left', background: active === s.id ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === s.id ? '#F5E642′ : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: ’pointer' }}
               >
                 {s.label}
               </button>
@@ -58,7 +58,7 @@ export default function DFWStateFairHomeGuide() {
               <button
                 key={p}
                 onClick={() => setProximity(p)}
-                style={{ flex: 1, minWidth: 140, padding: '10px 0', background: proximity === p ? '#F5E642' : '#1E3A5F', color: proximity === p ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}
+                style={{ flex: 1, minWidth: 140, padding: '10px 0', background: proximity === p ? '#F5E642′ : '#1E3A5F', color: proximity === p ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}
               >
                 {p === 'close' ? 'Under 3 miles' : p === 'mid' ? '3-10 miles' : '10+ miles'}
               </button>

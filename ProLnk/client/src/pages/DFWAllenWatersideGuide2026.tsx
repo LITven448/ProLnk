@@ -29,7 +29,7 @@ export default function DFWAllenWatersideGuide2026() {
         <div style={{ background: '#0d1f38', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ fontSize: 16, color: '#F5E642', marginBottom: 14 }}>📍 Area Snapshot</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[{ icon: '🏗️', label: 'Build Era', val: '2005–2020' }, { icon: '💧', label: 'Water Feature', val: 'Lake Lavon' }, { icon: '📈', label: 'Lake Premium', val: '12–18%' }, { icon: '📋', label: 'HOA', val: 'Amenity-Managed' }].map(s => (
+            {[{ icon: '🏗️', label: 'Build Era', val: '2005–2020′ }, { icon: '💧', label: ’Water Feature', val: 'Lake Lavon' }, { icon: '📈', label: 'Lake Premium', val: '12–18%' }, { icon: '📋', label: 'HOA', val: 'Amenity-Managed' }].map(s => (
               <div key={s.label} style={{ background: '#162236', borderRadius: 8, padding: '12px 16px' }}>
                 <div style={{ fontSize: 20 }}>{s.icon}</div>
                 <div style={{ fontSize: 11, color: '#8899aa', marginTop: 4 }}>{s.label}</div>
@@ -44,7 +44,7 @@ export default function DFWAllenWatersideGuide2026() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {communityTypes.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-                style={{ background: selected === c.id ? '#F5E642' : '#162236', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === c.id ? '#F5E642′ : '#162236', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {c.label}
               </button>
             ))}
@@ -54,7 +54,7 @@ export default function DFWAllenWatersideGuide2026() {
               <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 14 }}>{active.label} — Lakeside Owner Guide</h3>
               {active.tips.map((t, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-                  <span style={{ color: '#F5E642' }}>✓</span>
+                  <span style={{ color: '#F5E642′ }}>✓</span>
                   <span style={{ color: '#ccd6e0', fontSize: 14 }}>{t}</span>
                 </div>
               ))}
@@ -66,7 +66,7 @@ export default function DFWAllenWatersideGuide2026() {
           <h2 style={{ fontSize: 16, color: '#F5E642', marginBottom: 14 }}>🏞️ Allen Waterside Key Facts</h2>
           {allenFacts.map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642' }}>→</span>
+              <span style={{ color: '#F5E642′ }}>→</span>
               <span style={{ color: '#ccd6e0', fontSize: 14 }}>{f}</span>
             </div>
           ))}

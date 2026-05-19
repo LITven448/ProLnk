@@ -103,7 +103,7 @@ export default function PartnerFAQ() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              style={{ backgroundColor: '#fff', borderRadius: 12, border: open === i ? '1.5px solid #F5E642' : '1px solid #E2E8F0', overflow: 'hidden' }}
+              style={{ backgroundColor: '#fff', borderRadius: 12, border: open === i ? '1.5px solid #F5E642′ : '1px solid #E2E8F0', overflow: ’hidden' }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}

@@ -67,7 +67,7 @@ export default function DFWHVACForSeniors() {
                 onClick={() => setSelected(selected === i ? null : i)}
                 style={{
                   background: selected === i ? '#1a3a5c' : '#111f3a',
-                  border: selected === i ? '1.5px solid #F5E642' : '1.5px solid #1e3a5f',
+                  border: selected === i ? '1.5px solid #F5E642′ : '1.5px solid #1e3a5f',
                   borderRadius: 10,
                   padding: '0.9rem 1.25rem',
                   cursor: 'pointer',
@@ -77,7 +77,7 @@ export default function DFWHVACForSeniors() {
                 }}
               >
                 <span style={{ fontWeight: 600, color: '#e2e8f0', fontSize: '0.97rem' }}>🏡 {s.label}</span>
-                <span style={{ color: '#F5E642' }}>{selected === i ? '▲' : '▼'}</span>
+                <span style={{ color: '#F5E642′ }}>{selected === i ? '▲' : '▼'}</span>
               </div>
               {selected === i && (
                 <div style={{ background: '#0d1f38', borderRadius: '0 0 10px 10px', padding: '1rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -92,7 +92,7 @@ export default function DFWHVACForSeniors() {
                   <div style={{ background: '#0f2a4a', borderRadius: 8, padding: '0.75rem 1rem' }}>
                     <p style={{ color: '#34d399', fontWeight: 700, marginBottom: '0.4rem' }}>✅ Safety Checklist:</p>
                     {s.checklist.map((c, j) => (
-                      <p key={j} style={{ color: '#94a3b8', fontSize: '0.9rem', margin: '0.15rem 0' }}>{c}</p>
+                      <p key={j} style={{ color: '#94a3b8', fontSize: '0.9rem', margin: '0.15rem 0′ }}>{c}</p>
                     ))}
                   </div>
                 </div>

@@ -61,18 +61,18 @@ interface Territory {
 }
 
 const TERRITORIES: Territory[] = [
-  { id: 1, name: "DFW North",           zipRange: "75001–75030", zips: ["75001","75002","75010","75013","75019","75023","75024","75025"], franchise: "Smith Home Services",   status: "Active",    monthlyRevenue: 18400, partnerCount: 12, monthlyLeads: 94,  color: "#3b82f6" },
-  { id: 2, name: "DFW Central",         zipRange: "75201–75250", zips: ["75201","75204","75206","75214","75218","75228"],                 franchise: "ProFix Dallas",        status: "Active",    monthlyRevenue: 24100, partnerCount: 18, monthlyLeads: 131, color: "#10b981" },
-  { id: 3, name: "DFW South",           zipRange: "75040–75070", zips: ["75041","75043","75048","75051","75060","75062","75063"],         franchise: "Reliable Pro Group",   status: "Active",    monthlyRevenue: 16700, partnerCount: 11, monthlyLeads: 82,  color: "#f59e0b" },
-  { id: 4, name: "Fort Worth East",      zipRange: "76001–76030", zips: ["76001","76002","76010","76011","76012"],                         franchise: "TrustHome FW",         status: "Active",    monthlyRevenue: 12300, partnerCount: 8,  monthlyLeads: 67,  color: "#ec4899" },
-  { id: 5, name: "Fort Worth West",      zipRange: "76100–76140", zips: ["76102","76107","76109","76116","76119","76120"],                 franchise: "ProLnk FW West",       status: "Active",    monthlyRevenue: 9800,  partnerCount: 6,  monthlyLeads: 51,  color: "#8b5cf6" },
-  { id: 6, name: "Garland / Mesquite",   zipRange: "75040–75150", zips: ["75040","75041","75042","75043","75150"],                        franchise: "Smith Home Services",   status: "Active",    monthlyRevenue: 11200, partnerCount: 7,  monthlyLeads: 58,  color: "#06b6d4" },
-  { id: 7, name: "Irving / Grand Prairie",zipRange: "75060–75062",zips: ["75060","75061","75062"],                                        franchise: "ProFix Dallas",        status: "Active",    monthlyRevenue: 9900,  partnerCount: 6,  monthlyLeads: 48,  color: "#f97316" },
-  { id: 8, name: "Denton / Lewisville",  zipRange: "76201–76210", zips: ["76201","76205","76207","76208","76210"],                        franchise: "Reliable Pro Group",   status: "Active",    monthlyRevenue: 7100,  partnerCount: 4,  monthlyLeads: 36,  color: "#a855f7" },
-  { id: 9, name: "Plano / Allen",        zipRange: "75070–75095", zips: [],                                                               franchise: "—",                    status: "Available", monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#6b7280" },
-  { id: 10,name: "Frisco / McKinney",    zipRange: "75033–75069", zips: [],                                                               franchise: "—",                    status: "Available", monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#6b7280" },
-  { id: 11,name: "Rockwall / Rowlett",   zipRange: "75032–75089", zips: [],                                                               franchise: "—",                    status: "Available", monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#6b7280" },
-  { id: 12,name: "Arlington / Mansfield",zipRange: "76001–76063", zips: [],                                                               franchise: "Premier Home Alliance", status: "Reserved",  monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#f97316" },
+  { id: 1, name: "DFW North",           zipRange: "75001–75030″, zips: ["75001","75002","75010","75013","75019","75023","75024","75025"], franchise: "Smith Home Services",   status: "Active",    monthlyRevenue: 18400, partnerCount: 12, monthlyLeads: 94,  color: "#3b82f6" },
+  { id: 2, name: "DFW Central",         zipRange: "75201–75250″, zips: ["75201","75204","75206","75214","75218","75228"],                 franchise: "ProFix Dallas",        status: "Active",    monthlyRevenue: 24100, partnerCount: 18, monthlyLeads: 131, color: "#10b981" },
+  { id: 3, name: "DFW South",           zipRange: "75040–75070″, zips: ["75041","75043","75048","75051","75060","75062","75063"],         franchise: "Reliable Pro Group",   status: "Active",    monthlyRevenue: 16700, partnerCount: 11, monthlyLeads: 82,  color: "#f59e0b" },
+  { id: 4, name: "Fort Worth East",      zipRange: "76001–76030″, zips: ["76001","76002","76010","76011","76012"],                         franchise: "TrustHome FW",         status: "Active",    monthlyRevenue: 12300, partnerCount: 8,  monthlyLeads: 67,  color: "#ec4899" },
+  { id: 5, name: "Fort Worth West",      zipRange: "76100–76140″, zips: ["76102","76107","76109","76116","76119","76120"],                 franchise: "ProLnk FW West",       status: "Active",    monthlyRevenue: 9800,  partnerCount: 6,  monthlyLeads: 51,  color: "#8b5cf6" },
+  { id: 6, name: "Garland / Mesquite",   zipRange: "75040–75150″, zips: ["75040","75041","75042","75043","75150"],                        franchise: "Smith Home Services",   status: "Active",    monthlyRevenue: 11200, partnerCount: 7,  monthlyLeads: 58,  color: "#06b6d4" },
+  { id: 7, name: "Irving / Grand Prairie",zipRange: "75060–75062″,zips: ["75060","75061","75062"],                                        franchise: "ProFix Dallas",        status: "Active",    monthlyRevenue: 9900,  partnerCount: 6,  monthlyLeads: 48,  color: "#f97316" },
+  { id: 8, name: "Denton / Lewisville",  zipRange: "76201–76210″, zips: ["76201","76205","76207","76208","76210"],                        franchise: "Reliable Pro Group",   status: "Active",    monthlyRevenue: 7100,  partnerCount: 4,  monthlyLeads: 36,  color: "#a855f7" },
+  { id: 9, name: "Plano / Allen",        zipRange: "75070–75095″, zips: [],                                                               franchise: "—",                    status: "Available", monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#6b7280" },
+  { id: 10,name: "Frisco / McKinney",    zipRange: "75033–75069″, zips: [],                                                               franchise: "—",                    status: "Available", monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#6b7280" },
+  { id: 11,name: "Rockwall / Rowlett",   zipRange: "75032–75089″, zips: [],                                                               franchise: "—",                    status: "Available", monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#6b7280" },
+  { id: 12,name: "Arlington / Mansfield",zipRange: "76001–76063″, zips: [],                                                               franchise: "Premier Home Alliance", status: "Reserved",  monthlyRevenue: 0,     partnerCount: 0,  monthlyLeads: 0,   color: "#f97316" },
 ];
 
 const revenueData = TERRITORIES.filter(t => t.monthlyRevenue > 0).map(t => ({
@@ -122,7 +122,7 @@ export default function FranchiseTerritories() {
             { label: "Active Territories",  value: String(active),                           icon: Activity,     gradient: BADGE_GRADIENTS.green  },
             { label: "Covered ZIPs",        value: String(coveredZips),                      icon: Grid,         gradient: BADGE_GRADIENTS.blue   },
             { label: "Revenue / Territory", value: `$${avgRevenue.toLocaleString()}/mo`,     icon: DollarSign,   gradient: BADGE_GRADIENTS.orange },
-            { label: "Uncovered ZIPs",      value: "253",                                    icon: AlertCircle,  gradient: BADGE_GRADIENTS.cyan   },
+            { label: "Uncovered ZIPs",      value: "253″,                                    icon: AlertCircle,  gradient: BADGE_GRADIENTS.cyan   },
           ].map(({ label, value, icon: Icon, gradient }) => (
             <div key={label} style={{ ...CARD, paddingTop: 28, position: "relative" }}>
               <div style={{
@@ -142,7 +142,7 @@ export default function FranchiseTerritories() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 20, marginBottom: 20 }}>
           <div style={{ ...CARD, padding: 0, overflow: "hidden" }}>
-            <div style={{ ...LABEL, padding: "14px 20px 0" }}>DFW Metro Map</div>
+            <div style={{ ...LABEL, padding: "14px 20px 0″ }}>DFW Metro Map</div>
             <div style={{
               margin: 16, borderRadius: 10, overflow: "hidden", background: "#1a1a2e", height: 300,
               position: "relative", display: "grid",
@@ -167,7 +167,7 @@ export default function FranchiseTerritories() {
                   }}>{t.status}</div>
                 </div>
               ))}
-              <div style={{ position: "absolute", bottom: 8, right: 12, fontFamily: FONT, fontSize: 9, color: "#666" }}>Click to select</div>
+              <div style={{ position: "absolute", bottom: 8, right: 12, fontFamily: FONT, fontSize: 9, color: "#666″ }}>Click to select</div>
             </div>
           </div>
 
@@ -175,7 +175,7 @@ export default function FranchiseTerritories() {
             <div style={{ ...LABEL, marginBottom: 16 }}>Monthly Revenue by Territory</div>
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={revenueData} barSize={28}>
-                <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
                 <XAxis dataKey="name" tick={axisStyle} axisLine={false} tickLine={false} />
                 <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={v => `$${(v/1000).toFixed(0)}K`} />
                 <Tooltip contentStyle={tooltipStyle} cursor={{ fill: `${T.accent}11` }} formatter={(v: number) => [`$${v.toLocaleString()}`, "Revenue"]} />
@@ -255,7 +255,7 @@ export default function FranchiseTerritories() {
                 { label: "Partner Count",   value: String(selected.partnerCount || "—"),                              chip: false },
                 { label: "Monthly Leads",   value: String(selected.monthlyLeads || "—"),                              chip: false },
               ].map(({ label, value, chip }) => (
-                <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: `1px solid ${T.border}` }}>
+                <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0″, borderBottom: `1px solid ${T.border}` }}>
                   <div style={{ fontFamily: FONT, fontSize: 12, color: T.muted }}>{label}</div>
                   {chip
                     ? <span style={{ background: statusBg[value as string], color: statusColor[value as string], fontSize: 11, fontWeight: 700, borderRadius: 6, padding: "2px 8px", fontFamily: FONT }}>{value}</span>
@@ -288,7 +288,7 @@ export default function FranchiseTerritories() {
               </div>
               {[
                 { label: "Territory Name", key: "name", placeholder: "e.g. McKinney North" },
-                { label: "ZIP Range",      key: "zipRange", placeholder: "e.g. 75070–75080" },
+                { label: "ZIP Range",      key: "zipRange", placeholder: "e.g. 75070–75080″ },
               ].map(field => (
                 <div key={field.key} style={{ marginBottom: 16 }}>
                   <label style={{ ...LABEL, display: "block", marginBottom: 6 }}>{field.label}</label>
@@ -319,8 +319,8 @@ export default function FranchiseTerritories() {
                 </select>
               </div>
               <div style={{ display: "flex", gap: 10 }}>
-                <button onClick={() => setShowCreate(false)} style={{ flex: 1, padding: "10px 0", borderRadius: 10, border: `1px solid ${T.border}`, background: "transparent", color: T.muted, fontFamily: FONT, fontWeight: 700, cursor: "pointer" }}>Cancel</button>
-                <button onClick={() => setShowCreate(false)} style={{ flex: 1, padding: "10px 0", borderRadius: 10, border: "none", background: BADGE_GRADIENTS.blue, color: "#fff", fontFamily: FONT, fontWeight: 700, cursor: "pointer" }}>Create Territory</button>
+                <button onClick={() => setShowCreate(false)} style={{ flex: 1, padding: "10px 0″, borderRadius: 10, border: `1px solid ${T.border}`, background: "transparent", color: T.muted, fontFamily: FONT, fontWeight: 700, cursor: "pointer" }}>Cancel</button>
+                <button onClick={() => setShowCreate(false)} style={{ flex: 1, padding: "10px 0″, borderRadius: 10, border: "none", background: BADGE_GRADIENTS.blue, color: "#fff", fontFamily: FONT, fontWeight: 700, cursor: "pointer" }}>Create Territory</button>
               </div>
             </div>
           </div>

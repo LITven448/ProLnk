@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const tiers = [
-  { name: 'Starter', matches: '0–9', partners: '0–4', income: '$0–$800/mo', color: '#6B7280' },
-  { name: 'Builder', matches: '10–49', partners: '5–19', income: '$800–$3,200/mo', color: '#3B82F6' },
-  { name: 'Connector', matches: '50–99', partners: '20–49', income: '$3,200–$8,000/mo', color: '#8B5CF6' },
-  { name: 'Champion', matches: '100+', partners: '50+', income: '$8,000–$25,000+/mo', color: '#F5E642' },
+  { name: 'Starter', matches: '0–9', partners: '0–4', income: '$0–$800/mo', color: '#6B7280′ },
+  { name: 'Builder', matches: '10–49', partners: '5–19', income: '$800–$3,200/mo', color: '#3B82F6′ },
+  { name: 'Connector', matches: '50–99', partners: '20–49', income: '$3,200–$8,000/mo', color: '#8B5CF6′ },
+  { name: 'Champion', matches: '100+', partners: '50+', income: '$8,000–$25,000+/mo', color: '#F5E642′ },
 ];
 
 const paths: Record<string, { timeline: string; steps: string[]; championIncome: string }> = {

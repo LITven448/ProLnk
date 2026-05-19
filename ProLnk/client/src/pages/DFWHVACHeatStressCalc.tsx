@@ -28,7 +28,7 @@ export default function DFWHVACHeatStressCalc() {
   const stressLevel =
     duty < 50 ? 'Low' : duty < 70 ? 'Moderate' : duty < 85 ? 'High' : 'Critical';
   const stressColor =
-    duty < 50 ? '#22c55e' : duty < 70 ? '#eab308' : duty < 85 ? '#f97316' : '#ef4444';
+    duty < 50 ? '#22c55e' : duty < 70 ? '#eab308′ : duty < 85 ? '#f97316' : '#ef4444';
 
   const tons = Math.ceil(sqft / 500);
   const symptoms =
@@ -69,7 +69,7 @@ export default function DFWHVACHeatStressCalc() {
               <input
                 type="range" min={min} max={max} step={step} value={val}
                 onChange={e => set(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }}
+                style={{ width: '100%', accentColor: '#F5E642′ }}
               />
               <div style={{ textAlign: 'right', fontWeight: 700, color: '#F5E642', fontSize: 20 }}>{val}{label.includes('sq') ? ' sq ft' : label.includes('%') ? '%' : '°F'}</div>
             </div>
@@ -87,18 +87,18 @@ export default function DFWHVACHeatStressCalc() {
           <div style={{ background: '#111c35', borderRadius: 16, padding: 24 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
               <div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>Heat Index</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>Heat Index</div>
                 <div style={{ fontSize: 36, fontWeight: 800 }}>{hi}°F</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>Stress Level</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>Stress Level</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: stressColor }}>{stressLevel}</div>
               </div>
             </div>
 
             <div style={{ marginBottom: 20 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                <span style={{ fontSize: 13, color: '#94a3b8' }}>HVAC Duty Cycle</span>
+                <span style={{ fontSize: 13, color: '#94a3b8′ }}>HVAC Duty Cycle</span>
                 <span style={{ fontWeight: 700, color: stressColor }}>{duty}%</span>
               </div>
               <div style={{ background: '#1e2d4a', borderRadius: 99, height: 12 }}>
@@ -119,7 +119,7 @@ export default function DFWHVACHeatStressCalc() {
             </div>
 
             <div style={{ marginTop: 16, fontSize: 13, color: '#64748b', textAlign: 'center' }}>
-              Estimated system size for {sqft} sq ft DFW home: <strong style={{ color: '#F5E642' }}>{tons} ton{tons > 1 ? 's' : ''}</strong>
+              Estimated system size for {sqft} sq ft DFW home: <strong style={{ color: '#F5E642′ }}>{tons} ton{tons > 1 ? ’s' : ''}</strong>
             </div>
           </div>
         )}

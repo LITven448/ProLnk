@@ -22,7 +22,7 @@ function getAssessment(obs: string, age: string) {
       who: 'Licensed framing contractor or structural engineer',
     };
   }
-  if (obs === 'Wavy sheathing' && (age === 'Pre-1960' || age === '1960–1979')) {
+  if (obs === 'Wavy sheathing' && (age === 'Pre-1960′ || age === '1960–1979')) {
     return {
       level: 'MODERATE',
       color: '#F5E642',
@@ -43,7 +43,7 @@ function getAssessment(obs: string, age: string) {
   return {
     level: 'LOW',
     color: '#00CC66',
-    assessment: 'No visible structural concerns. DFW standard rafter spans (16" or 24" OC) are typically engineered for local wind loads.',
+    assessment: 'No visible structural concerns. DFW standard rafter spans (16″ or 24″ OC) are typically engineered for local wind loads.',
     urgency: 'Continue routine annual inspection.',
     who: 'Annual roofing inspection by licensed contractor',
   };
@@ -66,7 +66,7 @@ export default function DFWRafterSpanGuide() {
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '💨', title: 'DFW Wind Load Reality', body: 'North Texas sits in a high-wind zone. Rafter spans are engineered to handle 90–115 mph gusts. Spans exceeding 20 ft without intermediate support are red flags in older builds.' },
-            { icon: '📐', title: 'Standard Span Limits', body: 'Typical DFW residential rafters: 2×6 at 16" OC spans ~13 ft max; 2×8 at 16" OC spans ~17 ft max. Anything exceeding span tables without engineering = risk.' },
+            { icon: '📐', title: 'Standard Span Limits', body: 'Typical DFW residential rafters: 2×6 at 16″ OC spans ~13 ft max; 2×8 at 16″ OC spans ~17 ft max. Anything exceeding span tables without engineering = risk.' },
             { icon: '⚠️', title: 'Sagging ≠ Always Structural', body: 'A wavy roofline often means sheathing delamination or board sheathing movement — not rafter failure. But a sagging ridgeline almost always means structural compromise.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#0F2040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
@@ -77,7 +77,7 @@ export default function DFWRafterSpanGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>🔍 Structural Assessment Tool</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#8899BB', fontSize: 13, marginBottom: 8 }}>What do you observe from outside?</label>

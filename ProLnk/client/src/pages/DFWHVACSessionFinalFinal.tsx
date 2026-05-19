@@ -55,7 +55,7 @@ export default function DFWHVACSessionFinalFinal() {
             The Final Page
           </h1>
           <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.7, maxWidth: 560, margin: '0 auto' }}>
-            You've reached the end of ProLnk's DFW HVAC Knowledge Session — the most comprehensive HVAC resource
+            You've reached the end of ProLnk’s DFW HVAC Knowledge Session — the most comprehensive HVAC resource
             ever assembled for North Texas homeowners, professionals, and anyone who cares about home systems.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function DFWHVACSessionFinalFinal() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {roles.map(r => (
             <button key={r.id} onClick={() => setSelected(r.id)}
-              style={{ background: selected === r.id ? '#F5E642' : '#112240', color: selected === r.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === r.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '14px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 16 }}>
+              style={{ background: selected === r.id ? '#F5E642′ : '#112240', color: selected === r.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === r.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '14px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 16 }}>
               {r.label}
             </button>
           ))}

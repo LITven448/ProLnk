@@ -14,10 +14,10 @@ import { SERVICE_CATEGORIES, TIER_LABELS } from "../data/serviceCategories";
 
 // --- Constants ----------------------------------------------------------------
 const URGENCY_OPTIONS = [
-  { value: "flexible", label: "Flexible", description: "No rush, planning ahead", color: "#818cf8" },
+  { value: "flexible", label: "Flexible", description: "No rush, planning ahead", color: "#818cf8″ },
   { value: "within_2_weeks", label: "Within 2 Weeks", description: "Need it soon", color: "#F59E0B" },
   { value: "asap", label: "ASAP", description: "Within a few days", color: "#fb923c" },
-  { value: "emergency", label: "Emergency", description: "Urgent / immediate", color: "#f87171" },
+  { value: "emergency", label: "Emergency", description: "Urgent / immediate", color: "#f87171″ },
 ];
 
 const BUDGET_PRESETS = [
@@ -28,14 +28,14 @@ const BUDGET_PRESETS = [
 ];
 
 const POPULAR_CATEGORIES = [
-  { id: "hvac", name: "HVAC", icon: Wind, color: "#38bdf8" },
+  { id: "hvac", name: "HVAC", icon: Wind, color: "#38bdf8″ },
   { id: "plumbing", name: "Plumbing", icon: Droplets, color: "#60a5fa" },
-  { id: "electrical", name: "Electrical", icon: Plug, color: "#fbbf24" },
+  { id: "electrical", name: "Electrical", icon: Plug, color: "#fbbf24″ },
   { id: "roofing", name: "Roofing", icon: Home, color: "#a78bfa" },
-  { id: "painting", name: "Painting", icon: Paintbrush, color: "#f472b6" },
-  { id: "flooring", name: "Flooring", icon: Package, color: "#34d399" },
-  { id: "landscaping", name: "Landscaping", icon: Leaf, color: "#4ade80" },
-  { id: "general", name: "General", icon: Wrench, color: "#94a3b8" },
+  { id: "painting", name: "Painting", icon: Paintbrush, color: "#f472b6″ },
+  { id: "flooring", name: "Flooring", icon: Package, color: "#34d399″ },
+  { id: "landscaping", name: "Landscaping", icon: Leaf, color: "#4ade80″ },
+  { id: "general", name: "General", icon: Wrench, color: "#94a3b8″ },
 ];
 
 const GROUPED_CATEGORIES = ([1, 2, 3, 4, 5] as const).map((tier) => ({
@@ -112,24 +112,24 @@ const labelStyle: React.CSSProperties = {
 // --- Progress Bar -------------------------------------------------------------
 function ProgressBar({ step, total }: { step: number; total: number }) {
   return (
-    <div className="flex items-center gap-0">
+    <div className="flex items-center gap-0″>
       {STEPS.map((s, i) => (
-        <div key={s.id} className="flex items-center flex-1">
-          <div className="flex flex-col items-center flex-1">
+        <div key={s.id} className="flex items-center flex-1″>
+          <div className="flex flex-col items-center flex-1″>
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
                 step > s.id
                   ? "bg-teal-400 border-teal-400 text-[#0A1628]"
                   : step === s.id
-                  ? "bg-teal-500/20 border-teal-400 text-teal-300"
-                  : "bg-white/5 border-white/15 text-white/30"
+                  ? "bg-teal-500/20 border-teal-400 text-teal-300″
+                  : "bg-white/5 border-white/15 text-white/30″
               }`}
             >
-              {step > s.id ? <Check className="w-4 h-4" /> : s.id}
+              {step > s.id ? <Check className="w-4 h-4″ /> : s.id}
             </div>
             <span
               className={`text-xs mt-1 font-medium hidden sm:block ${
-                step >= s.id ? "text-teal-400" : "text-white/25"
+                step >= s.id ? "text-teal-400″ : "text-white/25"
               }`}
             >
               {s.shortLabel}
@@ -157,9 +157,9 @@ function BudgetSlider({
   const pct = ((value - min) / (max - min)) * 100;
   return (
     <div>
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-2″>
         <label style={labelStyle}>{label}</label>
-        <span className="text-sm font-bold text-teal-400">{formatBudget(value)}</span>
+        <span className="text-sm font-bold text-teal-400″>{formatBudget(value)}</span>
       </div>
       <div className="relative h-5 flex items-center">
         <div className="absolute inset-x-0 h-1.5 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
@@ -171,7 +171,7 @@ function BudgetSlider({
           step={min < 5000 ? 500 : 5000}
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="absolute inset-x-0 w-full opacity-0 cursor-pointer h-5"
+          className="absolute inset-x-0 w-full opacity-0 cursor-pointer h-5″
           style={{ zIndex: 2 }}
         />
         <div
@@ -199,18 +199,18 @@ function PhotoUploadArea({ photos, onAdd, onRemove }: {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4″>
       {/* Tip banner */}
       <div className="flex items-start gap-3 rounded-xl px-4 py-3 border" style={{ backgroundColor: "rgba(45,212,191,0.07)", borderColor: "rgba(45,212,191,0.2)" }}>
-        <Camera className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5" />
+        <Camera className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5″ />
         <div>
-          <p className="text-sm font-semibold text-teal-300">Photos get 3× more bids</p>
-          <p className="text-xs text-white/40 mt-0.5">Show the job site, any existing damage, or the scope area. Up to 5 photos.</p>
+          <p className="text-sm font-semibold text-teal-300″>Photos get 3× more bids</p>
+          <p className="text-xs text-white/40 mt-0.5″>Show the job site, any existing damage, or the scope area. Up to 5 photos.</p>
         </div>
       </div>
 
       {photos.length > 0 && (
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3″>
           {photos.map((file, idx) => (
             <div key={idx} className="relative group">
               <img
@@ -223,9 +223,9 @@ function PhotoUploadArea({ photos, onAdd, onRemove }: {
                 type="button"
                 onClick={() => onRemove(idx)}
                 className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ backgroundColor: "#ef4444", color: "#fff" }}
+                style={{ backgroundColor: "#ef4444″, color: "#fff" }}
               >
-                <X className="w-3 h-3" />
+                <X className="w-3 h-3″ />
               </button>
               <div className="absolute bottom-1 right-1 bg-black/60 rounded text-xs px-1 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">
                 {idx + 1}
@@ -248,13 +248,13 @@ function PhotoUploadArea({ photos, onAdd, onRemove }: {
           }}
         >
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-            <Upload className="w-5 h-5" style={{ color: dragging ? "#2dd4bf" : "rgba(255,255,255,0.3)" }} />
+            <Upload className="w-5 h-5″ style={{ color: dragging ? "#2dd4bf" : "rgba(255,255,255,0.3)" }} />
           </div>
           <div className="text-center">
             <p className="text-sm font-semibold" style={{ color: dragging ? "#2dd4bf" : "rgba(255,255,255,0.5)" }}>
               {dragging ? "Drop photos here" : "Click or drag photos here"}
             </p>
-            <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.25)" }}>
+            <p className="text-xs mt-1″ style={{ color: "rgba(255,255,255,0.25)" }}>
               {photos.length}/5 photos · JPG, PNG, WEBP
             </p>
           </div>
@@ -299,9 +299,9 @@ function JobPreviewCard({ form, categoryName, photos }: {
 
   return (
     <div>
-      <div className="flex items-center gap-2 mb-3">
-        <Eye className="w-4 h-4 text-teal-400" />
-        <span className="text-xs font-semibold uppercase tracking-wider text-teal-400">Live Preview</span>
+      <div className="flex items-center gap-2 mb-3″>
+        <Eye className="w-4 h-4 text-teal-400″ />
+        <span className="text-xs font-semibold uppercase tracking-wider text-teal-400″>Live Preview</span>
         <span className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>— how it will appear</span>
       </div>
 
@@ -314,9 +314,9 @@ function JobPreviewCard({ form, categoryName, photos }: {
         }}
       >
         {isEmpty ? (
-          <div className="text-center py-8">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              <Briefcase className="w-5 h-5" style={{ color: "rgba(255,255,255,0.25)" }} />
+          <div className="text-center py-8″>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3″ style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+              <Briefcase className="w-5 h-5″ style={{ color: "rgba(255,255,255,0.25)" }} />
             </div>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>
               Fill in the form to see your listing preview
@@ -324,13 +324,13 @@ function JobPreviewCard({ form, categoryName, photos }: {
           </div>
         ) : (
           <>
-            <div className="flex flex-wrap items-center gap-2 mb-2">
+            <div className="flex flex-wrap items-center gap-2 mb-2″>
               {urgencyOption && (
                 <span
                   className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
                   style={{ backgroundColor: `${urgencyOption.color}20`, color: urgencyOption.color }}
                 >
-                  {form.urgency === "emergency" && <Zap className="w-3 h-3" />}
+                  {form.urgency === "emergency" && <Zap className="w-3 h-3″ />}
                   {urgencyOption.label}
                 </span>
               )}
@@ -341,40 +341,40 @@ function JobPreviewCard({ form, categoryName, photos }: {
               )}
             </div>
 
-            <h3 className="text-white font-bold text-sm leading-tight mb-3">
+            <h3 className="text-white font-bold text-sm leading-tight mb-3″>
               {form.title || <span style={{ color: "rgba(255,255,255,0.3)" }}>Your job title here</span>}
             </h3>
 
             {form.description && (
-              <p className="text-xs leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p className="text-xs leading-relaxed mb-3″ style={{ color: "rgba(255,255,255,0.5)" }}>
                 {form.description.length > 140 ? form.description.slice(0, 140) + "…" : form.description}
               </p>
             )}
 
             {photos.length > 0 && (
               <div className="flex items-center gap-1.5 mb-3 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                <Image className="w-3.5 h-3.5" />
+                <Image className="w-3.5 h-3.5″ />
                 {photos.length} photo{photos.length !== 1 ? "s" : ""} attached
               </div>
             )}
 
             <div className="grid grid-cols-2 gap-2 text-xs">
-              <div className="flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.45)" }}>
-                <MapPin className="w-3 h-3 flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+              <div className="flex items-center gap-1.5″ style={{ color: "rgba(255,255,255,0.45)" }}>
+                <MapPin className="w-3 h-3 flex-shrink-0″ style={{ color: "rgba(255,255,255,0.3)" }} />
                 {locationLabel}
               </div>
-              <div className="flex items-center gap-1.5">
-                <DollarSign className="w-3 h-3 flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+              <div className="flex items-center gap-1.5″>
+                <DollarSign className="w-3 h-3 flex-shrink-0″ style={{ color: "rgba(255,255,255,0.3)" }} />
                 <span className="font-semibold text-white">{budgetLabel}</span>
               </div>
               {form.bidDeadline && (
-                <div className="flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.45)" }}>
-                  <Clock className="w-3 h-3 flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
-                  Bid by {new Date(form.bidDeadline + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                <div className="flex items-center gap-1.5″ style={{ color: "rgba(255,255,255,0.45)" }}>
+                  <Clock className="w-3 h-3 flex-shrink-0″ style={{ color: "rgba(255,255,255,0.3)" }} />
+                  Bid by {new Date(form.bidDeadline + "T12:00:00″).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                 </div>
               )}
-              <div className="flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.45)" }}>
-                <Users className="w-3 h-3 flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+              <div className="flex items-center gap-1.5″ style={{ color: "rgba(255,255,255,0.45)" }}>
+                <Users className="w-3 h-3 flex-shrink-0″ style={{ color: "rgba(255,255,255,0.3)" }} />
                 0 applicants
               </div>
             </div>
@@ -473,13 +473,13 @@ export default function ExchangePostJob() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0A1628", fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#0A1628″, fontFamily: "'Inter', system-ui, sans-serif" }}>
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10 max-w-6xl mx-auto">
         <Link href="/">
           <span className="text-white font-bold text-lg tracking-tight cursor-pointer">ProLnk</span>
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4″>
           <Link href="/exchange/jobs">
             <span className="text-sm cursor-pointer text-white/40 hover:text-white transition-colors">Browse Jobs</span>
           </Link>
@@ -490,18 +490,18 @@ export default function ExchangePostJob() {
       </nav>
 
       {/* Banner */}
-      <div className="text-center py-2.5 text-xs font-semibold tracking-wider" style={{ backgroundColor: "#2dd4bf", color: "#0A1628" }}>
+      <div className="text-center py-2.5 text-xs font-semibold tracking-wider" style={{ backgroundColor: "#2dd4bf", color: "#0A1628″ }}>
         FOUNDING MEMBERS POST FREE &nbsp;·&nbsp; BIDDING OPENS Q3 2026 &nbsp;·&nbsp; SUBMIT YOUR JOB EARLY
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 pt-10 pb-20">
+      <div className="max-w-5xl mx-auto px-6 pt-10 pb-20″>
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8″>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 border" style={{ backgroundColor: "rgba(45,212,191,0.1)", color: "#2dd4bf", borderColor: "rgba(45,212,191,0.3)" }}>
-            <Building2 className="w-3.5 h-3.5" />
+            <Building2 className="w-3.5 h-3.5″ />
             Post a Job
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Post a Job Free</h1>
+          <h1 className="text-3xl font-bold text-white mb-2″>Post a Job Free</h1>
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
             Founding members post free, forever. Verified pros will submit competitive bids when Exchange launches Q3 2026.
           </p>
@@ -509,17 +509,17 @@ export default function ExchangePostJob() {
 
         {submitted ? (
           <div className="rounded-2xl p-10 border text-center" style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(45,212,191,0.3)" }}>
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: "rgba(45,212,191,0.12)" }}>
-              <CheckCircle className="w-8 h-8 text-teal-400" />
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4″ style={{ backgroundColor: "rgba(45,212,191,0.12)" }}>
+              <CheckCircle className="w-8 h-8 text-teal-400″ />
             </div>
-            <h2 className="text-white font-bold text-2xl mb-2">Job Submitted!</h2>
-            <p className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <h2 className="text-white font-bold text-2xl mb-2″>Job Submitted!</h2>
+            <p className="text-sm mb-2″ style={{ color: "rgba(255,255,255,0.5)" }}>
               Your job posting is live. When bidding opens in Q3 2026, we'll notify you and pros will submit bids directly.
             </p>
             {instantEstimate && (
-              <div className="inline-block rounded-xl px-5 py-3 border mb-6" style={{ backgroundColor: "rgba(45,212,191,0.07)", borderColor: "rgba(45,212,191,0.2)" }}>
-                <p className="text-xs text-teal-400/70 mb-1">Estimated Budget Range</p>
-                <p className="text-lg font-bold text-teal-300">
+              <div className="inline-block rounded-xl px-5 py-3 border mb-6″ style={{ backgroundColor: "rgba(45,212,191,0.07)", borderColor: "rgba(45,212,191,0.2)" }}>
+                <p className="text-xs text-teal-400/70 mb-1″>Estimated Budget Range</p>
+                <p className="text-lg font-bold text-teal-300″>
                   {formatBudget(instantEstimate.low)} – {formatBudget(instantEstimate.high)}
                 </p>
               </div>
@@ -540,9 +540,9 @@ export default function ExchangePostJob() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             {/* Form — 3/5 */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3″>
               {/* Progress bar */}
-              <div className="mb-8">
+              <div className="mb-8″>
                 <ProgressBar step={step} total={STEPS.length} />
               </div>
 
@@ -551,17 +551,17 @@ export default function ExchangePostJob() {
                 style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}
               >
                 {/* Step title */}
-                <div className="mb-6">
-                  <p className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Step {step} of {STEPS.length}</p>
+                <div className="mb-6″>
+                  <p className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1″>Step {step} of {STEPS.length}</p>
                   <h2 className="text-xl font-bold text-white">{STEPS[step - 1].label}</h2>
                 </div>
 
                 {/* --- Step 1: Category --- */}
                 {step === 1 && (
-                  <div className="space-y-5">
+                  <div className="space-y-5″>
                     <div>
                       <label style={labelStyle}>Popular Categories</label>
-                      <div className="grid grid-cols-4 gap-2">
+                      <div className="grid grid-cols-4 gap-2″>
                         {POPULAR_CATEGORIES.map(({ id, name, icon: Icon, color }) => (
                           <button
                             key={id}
@@ -573,7 +573,7 @@ export default function ExchangePostJob() {
                               backgroundColor: form.tradeCategory === id ? `${color}15` : "rgba(255,255,255,0.03)",
                             }}
                           >
-                            <Icon className="w-5 h-5" style={{ color: form.tradeCategory === id ? color : "rgba(255,255,255,0.35)" }} />
+                            <Icon className="w-5 h-5″ style={{ color: form.tradeCategory === id ? color : "rgba(255,255,255,0.35)" }} />
                             <span className="text-xs font-semibold" style={{ color: form.tradeCategory === id ? color : "rgba(255,255,255,0.5)" }}>
                               {name}
                             </span>
@@ -612,7 +612,7 @@ export default function ExchangePostJob() {
                         <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: "rgba(255,255,255,0.4)" }} />
                       </div>
                       {selectedCategory && (
-                        <p className="text-xs mt-1.5" style={{ color: "rgba(255,255,255,0.35)" }}>
+                        <p className="text-xs mt-1.5″ style={{ color: "rgba(255,255,255,0.35)" }}>
                           {selectedCategory.description}
                         </p>
                       )}
@@ -620,12 +620,12 @@ export default function ExchangePostJob() {
 
                     {form.tradeCategory && (
                       <div className="flex items-center gap-3 rounded-xl px-4 py-3 border" style={{ backgroundColor: "rgba(45,212,191,0.07)", borderColor: "rgba(45,212,191,0.2)" }}>
-                        <Check className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-teal-400 flex-shrink-0″ />
                         <div>
-                          <p className="text-sm font-semibold text-teal-300">
+                          <p className="text-sm font-semibold text-teal-300″>
                             {selectedCategory?.name ?? POPULAR_CATEGORIES.find((c) => c.id === form.tradeCategory)?.name ?? form.tradeCategory} selected
                           </p>
-                          <p className="text-xs text-white/40">You can change this anytime from step 1</p>
+                          <p className="text-xs text-white/40″>You can change this anytime from step 1</p>
                         </div>
                       </div>
                     )}
@@ -634,7 +634,7 @@ export default function ExchangePostJob() {
 
                 {/* --- Step 2: Job Details --- */}
                 {step === 2 && (
-                  <div className="space-y-5">
+                  <div className="space-y-5″>
                     <div>
                       <label style={labelStyle}>Job Title</label>
                       <input
@@ -649,7 +649,7 @@ export default function ExchangePostJob() {
 
                     <div>
                       <label style={labelStyle}>Urgency</label>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-2 gap-2″>
                         {URGENCY_OPTIONS.map((opt) => (
                           <button
                             key={opt.value}
@@ -680,10 +680,10 @@ export default function ExchangePostJob() {
                         style={{ ...inputStyle, resize: "vertical" }}
                       />
                       {form.description.length > 50 && instantEstimate && (
-                        <div className="mt-2 flex items-center gap-2 text-xs rounded-lg px-3 py-2" style={{ backgroundColor: "rgba(45,212,191,0.07)", color: "rgba(45,212,191,0.8)" }}>
-                          <Zap className="w-3 h-3 flex-shrink-0" />
+                        <div className="mt-2 flex items-center gap-2 text-xs rounded-lg px-3 py-2″ style={{ backgroundColor: "rgba(45,212,191,0.07)", color: "rgba(45,212,191,0.8)" }}>
+                          <Zap className="w-3 h-3 flex-shrink-0″ />
                           <span>
-                            AI estimate for this scope: <strong className="text-teal-300">{formatBudget(instantEstimate.low)} – {formatBudget(instantEstimate.high)}</strong>
+                            AI estimate for this scope: <strong className="text-teal-300″>{formatBudget(instantEstimate.low)} – {formatBudget(instantEstimate.high)}</strong>
                           </span>
                         </div>
                       )}
@@ -691,8 +691,8 @@ export default function ExchangePostJob() {
 
                     <div>
                       <label style={labelStyle}>Location</label>
-                      <div className="grid grid-cols-3 gap-3">
-                        <input type="text" placeholder="City" value={form.city} onChange={(e) => set("city", e.target.value)} style={{ ...inputStyle, gridColumn: "span 1" }} />
+                      <div className="grid grid-cols-3 gap-3″>
+                        <input type="text" placeholder="City" value={form.city} onChange={(e) => set("city", e.target.value)} style={{ ...inputStyle, gridColumn: "span 1″ }} />
                         <input type="text" placeholder="State" value={form.state} onChange={(e) => set("state", e.target.value)} maxLength={2} style={inputStyle} />
                         <input type="text" placeholder="ZIP" value={form.zip} onChange={(e) => set("zip", e.target.value)} maxLength={5} style={inputStyle} />
                       </div>
@@ -702,11 +702,11 @@ export default function ExchangePostJob() {
 
                 {/* --- Step 3: Budget & Timeline --- */}
                 {step === 3 && (
-                  <div className="space-y-5">
+                  <div className="space-y-5″>
                     {/* Budget presets */}
                     <div>
                       <label style={labelStyle}>Budget Preset</label>
-                      <div className="grid grid-cols-4 gap-2">
+                      <div className="grid grid-cols-4 gap-2″>
                         {BUDGET_PRESETS.map((preset) => {
                           const active = form.budgetMin === preset.min && form.budgetMax === preset.max;
                           return (
@@ -730,9 +730,9 @@ export default function ExchangePostJob() {
 
                     {/* Fine-tune sliders */}
                     <div className="space-y-4 p-4 rounded-xl border" style={{ borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.03)" }}>
-                      <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center justify-between mb-1″>
                         <label style={{ ...labelStyle, marginBottom: 0 }}>Fine-Tune Range</label>
-                        <span className="text-xs font-bold text-teal-400">{formatBudget(form.budgetMin)} – {formatBudget(form.budgetMax)}</span>
+                        <span className="text-xs font-bold text-teal-400″>{formatBudget(form.budgetMin)} – {formatBudget(form.budgetMax)}</span>
                       </div>
                       <BudgetSlider label="Minimum" min={0} max={500000} value={form.budgetMin} onChange={(v) => set("budgetMin", Math.min(v, form.budgetMax - 1000))} />
                       <BudgetSlider label="Maximum" min={0} max={500000} value={form.budgetMax} onChange={(v) => set("budgetMax", Math.max(v, form.budgetMin + 1000))} />
@@ -741,10 +741,10 @@ export default function ExchangePostJob() {
                     {/* AI estimate comparison */}
                     {instantEstimate && (
                       <div className="flex items-start gap-3 rounded-xl px-4 py-3 border" style={{ backgroundColor: "rgba(45,212,191,0.05)", borderColor: "rgba(45,212,191,0.15)" }}>
-                        <TrendingUp className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5" />
+                        <TrendingUp className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5″ />
                         <div>
-                          <p className="text-xs font-semibold text-teal-300 mb-0.5">AI Market Estimate</p>
-                          <p className="text-xs text-white/50">
+                          <p className="text-xs font-semibold text-teal-300 mb-0.5″>AI Market Estimate</p>
+                          <p className="text-xs text-white/50″>
                             Based on your category and description, typical bids run{" "}
                             <span className="text-teal-300 font-semibold">
                               {formatBudget(instantEstimate.low)} – {formatBudget(instantEstimate.high)}
@@ -756,7 +756,7 @@ export default function ExchangePostJob() {
                     )}
 
                     {/* Dates */}
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4″>
                       <div>
                         <label style={labelStyle}>Desired Start Date</label>
                         <input type="date" value={form.startDate} onChange={(e) => set("startDate", e.target.value)} style={{ ...inputStyle, colorScheme: "dark" }} />
@@ -791,12 +791,12 @@ export default function ExchangePostJob() {
                         type="checkbox"
                         checked={form.notifyWhenLive}
                         onChange={(e) => set("notifyWhenLive", e.target.checked)}
-                        className="mt-0.5"
+                        className="mt-0.5″
                         style={{ accentColor: "#2dd4bf" }}
                       />
                       <div>
                         <p className="text-sm font-semibold text-white">Notify me when bidding goes live</p>
-                        <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+                        <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.4)" }}>
                           We'll email you when Exchange launches Q3 2026 so you start receiving bids immediately.
                         </p>
                       </div>
@@ -806,7 +806,7 @@ export default function ExchangePostJob() {
 
                 {/* --- Step 4: Photos --- */}
                 {step === 4 && (
-                  <div className="space-y-5">
+                  <div className="space-y-5″>
                     <PhotoUploadArea
                       photos={photos}
                       onAdd={(files) => setPhotos((prev) => [...prev, ...files].slice(0, 5))}
@@ -814,8 +814,8 @@ export default function ExchangePostJob() {
                     />
 
                     {/* Summary */}
-                    <div className="rounded-xl p-4 border space-y-2" style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}>
-                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-3">Posting Summary</p>
+                    <div className="rounded-xl p-4 border space-y-2″ style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}>
+                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-3″>Posting Summary</p>
                       {[
                         { label: "Category", value: selectedCategory?.name ?? form.tradeCategory },
                         { label: "Title", value: form.title },
@@ -825,7 +825,7 @@ export default function ExchangePostJob() {
                         { label: "Contact", value: form.contactEmail },
                       ].map(({ label, value }) => (
                         <div key={label} className="flex items-start gap-2 text-sm">
-                          <span className="text-white/30 w-20 flex-shrink-0">{label}</span>
+                          <span className="text-white/30 w-20 flex-shrink-0″>{label}</span>
                           <span className="text-white/70 font-medium">{value}</span>
                         </div>
                       ))}
@@ -836,13 +836,13 @@ export default function ExchangePostJob() {
                 {/* Validation error */}
                 {validationError && (
                   <div className="mt-4 flex items-center gap-2 rounded-xl px-4 py-3 bg-red-500/10 border border-red-500/25 text-red-400 text-sm">
-                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    <AlertCircle className="w-4 h-4 flex-shrink-0″ />
                     {validationError}
                   </div>
                 )}
 
                 {/* Navigation */}
-                <div className="flex gap-3 mt-6">
+                <div className="flex gap-3 mt-6″>
                   {step > 1 && (
                     <button
                       type="button"
@@ -850,34 +850,34 @@ export default function ExchangePostJob() {
                       className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold border transition-colors"
                       style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.5)" }}
                     >
-                      <ArrowLeft className="w-4 h-4" /> Back
+                      <ArrowLeft className="w-4 h-4″ /> Back
                     </button>
                   )}
                   {step < 4 ? (
                     <button
                       type="button"
                       onClick={goNext}
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90"
+                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90″
                       style={{ backgroundColor: "#2dd4bf" }}
                     >
-                      Continue <ArrowRight className="w-4 h-4" />
+                      Continue <ArrowRight className="w-4 h-4″ />
                     </button>
                   ) : (
-                    <form onSubmit={handleSubmit} className="flex-1">
+                    <form onSubmit={handleSubmit} className="flex-1″>
                       <button
                         type="submit"
                         disabled={postJobMutation.isPending}
-                        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60"
+                        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60″
                         style={{ backgroundColor: "#2dd4bf" }}
                       >
-                        {postJobMutation.isPending ? "Submitting…" : <>Post Job Free <ArrowRight className="w-4 h-4" /></>}
+                        {postJobMutation.isPending ? "Submitting…" : <>Post Job Free <ArrowRight className="w-4 h-4″ /></>}
                       </button>
                     </form>
                   )}
                 </div>
 
                 {step === 4 && (
-                  <p className="text-xs text-center mt-3" style={{ color: "rgba(255,255,255,0.25)" }}>
+                  <p className="text-xs text-center mt-3″ style={{ color: "rgba(255,255,255,0.25)" }}>
                     Founding members post free, forever — bidding opens Q3 2026.
                   </p>
                 )}
@@ -885,7 +885,7 @@ export default function ExchangePostJob() {
             </div>
 
             {/* Right panel — 2/5 */}
-            <div className="lg:col-span-2 lg:sticky lg:top-8 space-y-5">
+            <div className="lg:col-span-2 lg:sticky lg:top-8 space-y-5″>
               <JobPreviewCard
                 form={form}
                 categoryName={selectedCategory?.name ?? POPULAR_CATEGORIES.find((c) => c.id === form.tradeCategory)?.name ?? ""}
@@ -894,11 +894,11 @@ export default function ExchangePostJob() {
 
               {/* Tips */}
               <div className="rounded-xl p-4 border" style={{ backgroundColor: "rgba(45,212,191,0.04)", borderColor: "rgba(45,212,191,0.15)" }}>
-                <div className="flex items-center gap-2 mb-3">
-                  <Star className="w-3.5 h-3.5 text-teal-400" />
+                <div className="flex items-center gap-2 mb-3″>
+                  <Star className="w-3.5 h-3.5 text-teal-400″ />
                   <span className="text-xs font-semibold text-teal-400 uppercase tracking-wider">Tips for More Bids</span>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-2″>
                   {[
                     "Add photos to get 3× more bids",
                     "Include sq footage or unit count",
@@ -907,7 +907,7 @@ export default function ExchangePostJob() {
                     "Note if weekend work is OK",
                   ].map((tip) => (
                     <li key={tip} className="flex items-start gap-2 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-                      <span className="text-teal-500 mt-0.5">·</span>
+                      <span className="text-teal-500 mt-0.5″>·</span>
                       {tip}
                     </li>
                   ))}
@@ -916,15 +916,15 @@ export default function ExchangePostJob() {
 
               {/* Step guide */}
               <div className="rounded-xl p-4 border" style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}>
-                <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-3">What Happens Next</p>
+                <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-3″>What Happens Next</p>
                 {[
                   "Your job is posted to Exchange immediately",
-                  "Verified pros see it when bidding opens Q3",
+                  "Verified pros see it when bidding opens Q3″,
                   "You review bids and choose your sub",
                   "ProLnk handles escrow & payout",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 mb-2">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5" style={{ backgroundColor: "rgba(45,212,191,0.15)", color: "#2dd4bf" }}>
+                  <div key={i} className="flex items-start gap-3 mb-2″>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5″ style={{ backgroundColor: "rgba(45,212,191,0.15)", color: "#2dd4bf" }}>
                       {i + 1}
                     </div>
                     <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>{item}</p>

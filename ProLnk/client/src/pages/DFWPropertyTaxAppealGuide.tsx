@@ -40,7 +40,7 @@ export default function DFWPropertyTaxAppealGuide() {
   const worthFiling = estimatedReduction > 5000;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', color: '#fff', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>⚖️</div>
         <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700 }}>DFW Property Tax Appeal Guide 2026</h1>
@@ -51,10 +51,10 @@ export default function DFWPropertyTaxAppealGuide() {
 
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '20px 24px', marginBottom: 24 }}>
-          <h2 style={{ margin: '0 0 12px', fontSize: 18, color: '#0A1628' }}>⏰ Key Deadlines & Facts</h2>
+          <h2 style={{ margin: '0 0 12px', fontSize: 18, color: '#0A1628′ }}>⏰ Key Deadlines & Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 12 }}>
             {[
-              { label: 'Protest Deadline', value: 'May 15, 2026' },
+              { label: 'Protest Deadline', value: 'May 15, 2026′ },
               { label: 'Success Rate', value: '~40%' },
               { label: 'DFW Avg Tax Rate', value: '2.1–2.3%' },
               { label: 'Filing Fee', value: 'Free' },
@@ -65,7 +65,7 @@ export default function DFWPropertyTaxAppealGuide() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 12, background: '#fff', borderRadius: 8, padding: '10px 14px', fontSize: 14, color: '#0A1628' }}>
+          <div style={{ marginTop: 12, background: '#fff', borderRadius: 8, padding: '10px 14px', fontSize: 14, color: '#0A1628′ }}>
             <strong>Why DFW taxes are high:</strong> Texas has no state income tax — property taxes fund schools, roads, and local government. DFW effective rates of 2.1–2.3% are among the highest in the US.
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function DFWPropertyTaxAppealGuide() {
               </div>
               <input type="range" min={100000} max={2000000} step={5000} value={appraisedValue}
                 onChange={e => setAppraisedValue(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div style={{ background: '#F8FAFC', borderRadius: 10, padding: '16px' }}>
               <div style={{ fontWeight: 600, marginBottom: 12, fontSize: 14 }}>Enter 3 Comparable Home Sales (comps)</div>
@@ -108,7 +108,7 @@ export default function DFWPropertyTaxAppealGuide() {
             </div>
           </div>
 
-          <div style={{ background: worthFiling ? '#F0FDF4' : '#FFF7ED', borderRadius: 10, padding: '20px', marginTop: 20, border: `2px solid ${worthFiling ? '#22C55E' : '#F97316'}` }}>
+          <div style={{ background: worthFiling ? '#F0FDF4′ : '#FFF7ED', borderRadius: 10, padding: '20px', marginTop: 20, border: `2px solid ${worthFiling ? '#22C55E' : '#F97316'}` }}>
             <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 14 }}>
               {worthFiling ? '✅ Worth Filing — Here\’s Your Case' : '⚠️ Borderline — Review the Numbers'}
             </div>
@@ -118,7 +118,7 @@ export default function DFWPropertyTaxAppealGuide() {
               { label: `Estimated Annual Tax Savings (${COUNTY_RATES[county]}%)`, value: `$${annualSavings.toFixed(0)}/yr = $${(annualSavings / 12).toFixed(0)}/mo` },
             ].map(row => (
               <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 0', borderBottom: '1px solid #E2E8F0', fontSize: 14 }}>
-                <span style={{ color: '#475569' }}>{row.label}</span>
+                <span style={{ color: '#475569′ }}>{row.label}</span>
                 <span style={{ fontWeight: 700 }}>{row.value}</span>
               </div>
             ))}
@@ -147,7 +147,7 @@ export default function DFWPropertyTaxAppealGuide() {
             </div>
           ))}
           <div style={{ background: '#F5E642', borderRadius: 8, padding: '12px 16px', marginTop: 8, fontSize: 14 }}>
-            <strong>Pro tip:</strong> File even if you're unsure. You can always withdraw. The protest costs nothing, and you can't get a reduction without filing.
+            <strong>Pro tip:</strong> File even if you're unsure. You can always withdraw. The protest costs nothing, and you can’t get a reduction without filing.
           </div>
         </div>
 

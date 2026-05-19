@@ -97,7 +97,7 @@ export default function DFW4000PagesWelcome() {
               <button
                 key={r.id}
                 onClick={() => setSelected(r.id)}
-                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === r.id ? '#F5E642' : '#1a2d4a', color: selected === r.id ? '#0A1628' : '#ccc', fontWeight: selected === r.id ? 700 : 400 }}
+                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === r.id ? '#F5E642′ : '#1a2d4a', color: selected === r.id ? '#0A1628' : '#ccc', fontWeight: selected === r.id ? 700 : 400 }}
               >
                 {r.label}
               </button>
@@ -111,7 +111,7 @@ export default function DFW4000PagesWelcome() {
           ))}
         </div>
 
-        <div style={{ background: '#1a2d00', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #3a5a00' }}>
+        <div style={{ background: '#1a2d00', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #3a5a00′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🔗 Free Access for ProLnk Members</h2>
           <p style={{ color: '#ccddaa', fontSize: 14, lineHeight: 1.6 }}>All 4,000+ guides are free for ProLnk members. Sign up to get personalized recommendations based on your home address, age, and service history. ProLnk matches you with verified local pros when guides lead to action.</p>
         </div>

@@ -21,7 +21,7 @@ export default function DFWHomeBarGuide() {
     const c = BAR_CONFIGS[config];
     setResult({
       config: c.label,
-      plumbing: c.plumbing ? 'Yes — requires licensed plumber, DFW permit typically $200–$400' : 'No plumbing needed — plug-and-play setup',
+      plumbing: c.plumbing ? 'Yes — requires licensed plumber, DFW permit typically $200–$400′ : ’No plumbing needed — plug-and-play setup',
       fridge: c.fridge,
       counter: c.counter,
       cost: c.cost,
@@ -41,7 +41,7 @@ export default function DFWHomeBarGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🍷 Bar Types at a Glance</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {Object.entries(BAR_CONFIGS).map(([k, v]) => (
-              <div key={k} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div key={k} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ color: '#fff', fontWeight: 700 }}>{v.label}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: '0.25rem' }}>{v.cost} · {v.plumbing ? '💧 Plumbing required' : '🔌 No plumbing'}</div>
                 <div style={{ color: '#CBD5E1', fontSize: '0.875rem', marginTop: '0.25rem' }}>Fridge: {v.fridge} · Counter: {v.counter}</div>
@@ -74,7 +74,7 @@ export default function DFWHomeBarGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Bar Space (sq ft)</div>
-              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 60" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 60″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Entertainment Style</div>
@@ -87,17 +87,17 @@ export default function DFWHomeBarGuide() {
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Budget ($)</div>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 12000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 12000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>{result.config}</div>
-              <div style={{ color: '#CBD5E1' }}>Plumbing: {result.plumbing}</div>
+              <div style={{ color: '#CBD5E1′ }}>Plumbing: {result.plumbing}</div>
               <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Refrigeration: {result.fridge}</div>
               <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Counter: {result.counter}</div>
-              <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Estimated Cost: <strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+              <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Estimated Cost: <strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.85rem' }}>📋 Permits: {result.permit}</div>
             </div>
           )}

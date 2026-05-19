@@ -28,7 +28,7 @@ export default function DFWIrrigationControllerDFW2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16, marginBottom: 24 }}>
           {controllers.map(c => (
-            <div key={c.name} style={{ background: '#0F2040', borderRadius: 12, padding: 20, borderTop: c.dfwFit === 'Best for DFW' ? '3px solid #F5E642' : '3px solid #1E3A5F' }}>
+            <div key={c.name} style={{ background: '#0F2040', borderRadius: 12, padding: 20, borderTop: c.dfwFit === 'Best for DFW' ? '3px solid #F5E642′ : '3px solid #1E3A5F' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div>
                   <div style={{ fontSize: 22 }}>{c.icon}</div>
@@ -40,7 +40,7 @@ export default function DFWIrrigationControllerDFW2026() {
                 </div>
               </div>
               <div style={{ background: c.dfwFit === 'Best for DFW' ? '#1A2F4A' : '#162035', borderRadius: 6, padding: '4px 10px', display: 'inline-block', marginBottom: 10 }}>
-                <span style={{ color: c.dfwFit === 'Best for DFW' ? '#F5E642' : '#94A3B8', fontSize: 12, fontWeight: 700 }}>{c.dfwFit}</span>
+                <span style={{ color: c.dfwFit === 'Best for DFW' ? '#F5E642′ : '#94A3B8', fontSize: 12, fontWeight: 700 }}>{c.dfwFit}</span>
               </div>
               {c.highlights.map((h, i) => <div key={i} style={{ color: '#94A3B8', fontSize: 12, marginBottom: 3 }}>• {h}</div>)}
             </div>
@@ -55,7 +55,7 @@ export default function DFWIrrigationControllerDFW2026() {
             {Object.keys(upgradeGuide).map(k => <option key={k}>{k}</option>)}
           </select>
           {current && (
-            <div style={{ background: '#162035', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800, marginBottom: 8 }}>💡 DFW Upgrade Advice</div>
               <div style={{ color: '#E8EAF6', fontSize: 14 }}>{upgradeGuide[current]}</div>
             </div>

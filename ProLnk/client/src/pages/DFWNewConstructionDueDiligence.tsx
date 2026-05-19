@@ -97,7 +97,7 @@ export default function DFWNewConstructionDueDiligence() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏗️ DFW New Construction Due Diligence</div>
-          <p style={{ fontSize: '1.05rem', color: '#374151' }}>
+          <p style={{ fontSize: '1.05rem', color: '#374151′ }}>
             New construction in DFW is different from resale. Builders use their own contracts, push their own lenders, and control the process. This guide puts you back in control — from vetting the builder to closing day.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function DFWNewConstructionDueDiligence() {
               <div key={i} style={{ backgroundColor: '#F9FAFB', borderRadius: 8, padding: '0.75rem', border: '1px solid #E5E7EB', textAlign: 'center' }}>
                 <div style={{ fontWeight: 700, fontSize: '0.85rem', marginBottom: '0.25rem' }}>{tier}</div>
                 <div style={{ fontSize: '0.82rem', color: '#374151', marginBottom: '0.25rem' }}>{builders}</div>
-                <div style={{ fontSize: '0.78rem', color: '#6B7280' }}>{note}</div>
+                <div style={{ fontSize: '0.78rem', color: '#6B7280′ }}>{note}</div>
               </div>
             ))}
           </div>
@@ -132,7 +132,7 @@ export default function DFWNewConstructionDueDiligence() {
           <div style={{ display: 'flex', gap: '1rem', marginBottom: info ? '1.5rem' : 0 }}>
             {phaseOptions.map(({ key, label }) => (
               <button key={key} onClick={() => setSelected(selected === key ? null : key)}
-                style={{ padding: '0.7rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: selected === key ? '#F5E642' : '#E5E7EB', backgroundColor: selected === key ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: selected === key ? 700 : 400, cursor: 'pointer', fontSize: '0.9rem', flex: 1 }}>
+                style={{ padding: '0.7rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: selected === key ? '#F5E642′ : '#E5E7EB', backgroundColor: selected === key ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: selected === key ? 700 : 400, cursor: ’pointer', fontSize: '0.9rem', flex: 1 }}>
                 {label}
               </button>
             ))}
@@ -161,7 +161,7 @@ export default function DFWNewConstructionDueDiligence() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047' }}>
+        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.5rem' }}>⚡ Non-Negotiable Rules for DFW New Construction</div>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.95rem', lineHeight: 1.8 }}>
             <li>Always hire your own independent inspector for frame stage — after drywall, defects are hidden forever</li>

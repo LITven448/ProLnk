@@ -15,7 +15,7 @@ const months = [
   { month: "December", freq: "1x/week if dry", duration: "10-15 min/zone", icon: "❄️", note: "Skip before freezes. Resume once temps rise above 35°F for the day.", urgency: "low" },
 ];
 
-const urgencyColor: Record<string, string> = { low: "#22c55e", medium: "#f59e0b", high: "#f97316", critical: "#ef4444" };
+const urgencyColor: Record<string, string> = { low: "#22c55e", medium: "#f59e0b", high: "#f97316″, critical: "#ef4444" };
 
 export default function DFWFoundationWateringSchedule2026() {
   const currentMonth = new Date().getMonth();
@@ -25,17 +25,17 @@ export default function DFWFoundationWateringSchedule2026() {
   const uc = urgencyColor[m.urgency];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642", letterSpacing: 2, textTransform: "uppercase" }}>🏠 DFW Foundation Guide 2026</div>
+        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642″, letterSpacing: 2, textTransform: "uppercase" }}>🏠 DFW Foundation Guide 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Foundation Watering Schedule by Month</h1>
-        <p style={{ color: "#94a3b8", marginBottom: 32 }}>DFW expansive clay shrinks when dry and swells when wet. Consistent moisture around your foundation prevents 70% of preventable foundation damage. Calibrated for DFW climate.</p>
+        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>DFW expansive clay shrinks when dry and swells when wet. Consistent moisture around your foundation prevents 70% of preventable foundation damage. Calibrated for DFW climate.</p>
 
-        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 16 }}>📅 Select Month</h2>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642″, marginBottom: 16 }}>📅 Select Month</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 24 }}>
           {months.map((mo, i) => (
             <button key={i} onClick={() => setSelectedMonth(i)}
-              style={{ background: selectedMonth === i ? "#F5E642" : "#0f1f3a", color: selectedMonth === i ? "#0A1628" : "#fff",
+              style={{ background: selectedMonth === i ? "#F5E642″ : "#0f1f3a", color: selectedMonth === i ? "#0A1628" : "#fff",
                 border: `2px solid ${selectedMonth === i ? "#F5E642" : urgencyColor[mo.urgency]}`,
                 borderRadius: 8, padding: "8px 4px", cursor: "pointer", fontSize: 11, fontWeight: 700, textAlign: "center" }}>
               {mo.icon}<br />{mo.month.slice(0,3)}
@@ -49,24 +49,24 @@ export default function DFWFoundationWateringSchedule2026() {
               <div style={{ fontSize: 32 }}>{m.icon}</div>
               <div style={{ fontSize: 22, fontWeight: 800, marginTop: 4 }}>{m.month}</div>
             </div>
-            <span style={{ background: uc, color: "#0A1628", padding: "4px 10px", borderRadius: 20, fontSize: 11, fontWeight: 800, textTransform: "uppercase" }}>{m.urgency} priority</span>
+            <span style={{ background: uc, color: "#0A1628″, padding: "4px 10px", borderRadius: 20, fontSize: 11, fontWeight: 800, textTransform: "uppercase" }}>{m.urgency} priority</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: 12 }}>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 12 }}>
               <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", marginBottom: 4 }}>Frequency</div>
-              <div style={{ fontWeight: 700, color: "#F5E642" }}>{m.freq}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642″ }}>{m.freq}</div>
             </div>
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: 12 }}>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 12 }}>
               <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", marginBottom: 4 }}>Duration</div>
-              <div style={{ fontWeight: 700, color: "#F5E642" }}>{m.duration}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642″ }}>{m.duration}</div>
             </div>
           </div>
-          <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.7 }}>{m.note}</div>
+          <div style={{ fontSize: 14, color: "#cbd5e1″, lineHeight: 1.7 }}>{m.note}</div>
         </div>
 
         <div style={{ background: "#0f1f3a", borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: 10 }}>💡 DFW Pro Tips</div>
-          <ul style={{ margin: 0, paddingLeft: 20, color: "#94a3b8", fontSize: 14, lineHeight: 1.9 }}>
+          <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 10 }}>💡 DFW Pro Tips</div>
+          <ul style={{ margin: 0, paddingLeft: 20, color: "#94a3b8″, fontSize: 14, lineHeight: 1.9 }}>
             <li>Place soaker hose 6–18 inches from foundation edge, not against it</li>
             <li>Water at dawn to minimize evaporation in DFW summer heat</li>
             <li>Soil probe test: insert screwdriver 6 inches — should meet moderate resistance</li>

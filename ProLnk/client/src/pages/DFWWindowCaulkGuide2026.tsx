@@ -23,23 +23,23 @@ export default function DFWWindowCaulkGuide2026() {
         <div style={{ background: '#1e2d1a', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #16a34a' }}>
           <h3 style={{ color: '#4ade80', margin: '0 0 8px', fontSize: 14 }}>🔑 Caulk vs. Weatherstripping — Know the Difference</h3>
           <p style={{ color: '#94a3b8', margin: 0, fontSize: 13 }}>
-            <strong style={{ color: '#e2e8f0' }}>Caulk</strong> fills gaps between stationary surfaces (frame and wall). 
-            <strong style={{ color: '#e2e8f0' }}> Weatherstripping</strong> seals moving parts (where sash meets frame). DFW homes need both — check both annually.
+            <strong style={{ color: '#e2e8f0′ }}>Caulk</strong> fills gaps between stationary surfaces (frame and wall). 
+            <strong style={{ color: '#e2e8f0′ }}> Weatherstripping</strong> seals moving parts (where sash meets frame). DFW homes need both — check both annually.
           </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {windowTypes.map(w => (
             <button key={w.id} onClick={() => setSelected(w.id)}
-              style={{ background: selected === w.id ? '#F5E642' : '#1e293b', color: selected === w.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === w.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === w.id ? '#F5E642′ : '#1e293b', color: selected === w.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === w.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {w.label}
-              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === w.id ? '#0A1628' : '#94a3b8' }}>Reapply: {w.frequency.split('—')[0].trim()}</div>
+              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === w.id ? '#0A1628′ : '#94a3b8' }}>Reapply: {w.frequency.split('—')[0].trim()}</div>
             </button>
           ))}
         </div>
 
         {win && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155' }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 16px' }}>{win.label}</h2>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ background: '#0f172a', borderRadius: 8, padding: 14 }}>
@@ -54,7 +54,7 @@ export default function DFWWindowCaulkGuide2026() {
                 <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 4 }}>🔄 DFW Replacement Frequency</div>
                 <div style={{ color: '#e2e8f0', fontSize: 14 }}>{win.frequency}</div>
               </div>
-              <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 14, border: '1px solid #3b82f6' }}>
+              <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 14, border: '1px solid #3b82f6′ }}>
                 <div style={{ color: '#93c5fd', fontSize: 13, fontWeight: 700, marginBottom: 4 }}>💡 Pro Tip</div>
                 <div style={{ color: '#e2e8f0', fontSize: 14 }}>{win.notes}</div>
               </div>
@@ -63,7 +63,7 @@ export default function DFWWindowCaulkGuide2026() {
         )}
 
         {!win && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
             <div style={{ fontSize: 36, marginBottom: 8 }}>👆</div>
             <p>Select your window type above for product and timing recommendations.</p>
           </div>

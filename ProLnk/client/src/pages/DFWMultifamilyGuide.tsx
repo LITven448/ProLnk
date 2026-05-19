@@ -26,7 +26,7 @@ export default function DFWMultifamilyGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642' }}>🏢 DFW REAL ESTATE INVESTOR SERIES</div>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642′ }}>🏢 DFW REAL ESTATE INVESTOR SERIES</div>
         <h1 style={{ fontSize: 38, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>
           DFW Multifamily Investing Guide
         </h1>
@@ -35,9 +35,9 @@ export default function DFWMultifamilyGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🏗️ Small vs Large Multifamily</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🏗️ Small vs Large Multifamily</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderTop: '3px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 12 }}>🏘️ Small (2-4 Units)</div>
               <ul style={{ color: '#C4D0E3', fontSize: 14, lineHeight: 2, margin: 0, paddingLeft: 18 }}>
                 <li>Residential financing (conventional, FHA)</li>
@@ -47,7 +47,7 @@ export default function DFWMultifamilyGuide() {
                 <li>Valued like residential (comparables)</li>
               </ul>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderTop: '3px solid #8A9BB5' }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderTop: '3px solid #8A9BB5′ }}>
               <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 12 }}>🏢 Large (5+ Units)</div>
               <ul style={{ color: '#C4D0E3', fontSize: 14, lineHeight: 2, margin: 0, paddingLeft: 18 }}>
                 <li>Commercial financing (25%+ down)</li>
@@ -61,7 +61,7 @@ export default function DFWMultifamilyGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 DFW Multifamily Market Overview</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 DFW Multifamily Market Overview</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             {[
               { metric: 'Cap Rate (small)', value: '4.5–6.5%' },
@@ -73,14 +73,14 @@ export default function DFWMultifamilyGuide() {
             ].map((item, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 13, color: '#8A9BB5' }}>{item.metric}</div>
+                <div style={{ fontSize: 13, color: '#8A9BB5′ }}>{item.metric}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏷️ Section 8 in DFW</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏷️ Section 8 in DFW</h2>
           <p style={{ color: '#C4D0E3', lineHeight: 1.7, marginBottom: 16 }}>
             DFW has one of the largest HUD Section 8 voucher programs in Texas. Landlords who accept vouchers often receive 
             10–15% above-market rents paid directly by the housing authority, with guaranteed monthly payments. Vacancy is 
@@ -93,27 +93,27 @@ export default function DFWMultifamilyGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🧮 Multifamily Return Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🧮 Multifamily Return Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Unit Count</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Unit Count</label>
               <input type="range" min={2} max={20} step={1} value={unitCount}
                 onChange={e => setUnitCount(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{unitCount} units {unitCount >= 5 ? '(commercial loan)' : '(residential loan)'}</div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Purchase Price ($)</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Purchase Price ($)</label>
               <input type="range" min={200000} max={3000000} step={25000} value={purchasePrice}
                 onChange={e => setPurchasePrice(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${purchasePrice.toLocaleString()}</div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Rent Per Unit ($/mo)</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Rent Per Unit ($/mo)</label>
               <input type="range" min={700} max={2500} step={50} value={rentPerUnit}
                 onChange={e => setRentPerUnit(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${rentPerUnit.toLocaleString()}/mo</div>
             </div>
           </div>
@@ -128,9 +128,9 @@ export default function DFWMultifamilyGuide() {
               { label: 'Property Mgmt Cost (8%)', value: `$${Math.round(pmCost).toLocaleString()}/yr` },
               { label: 'Price Per Unit', value: `$${Math.round(purchasePrice / unitCount).toLocaleString()}` },
             ].map((item, i) => (
-              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642' : 'none' }}>
-                <div style={{ fontSize: 18, fontWeight: 800, color: item.highlight ? '#F5E642' : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{item.label}</div>
+              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642′ : ’none' }}>
+                <div style={{ fontSize: 18, fontWeight: 800, color: item.highlight ? '#F5E642′ : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{item.label}</div>
               </div>
             ))}
           </div>

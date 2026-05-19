@@ -76,12 +76,12 @@ export default function DFWGarlandDeepDive2026() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 2, textTransform: 'uppercase' }}>DFW Deep Dive 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🏡 Garland, TX</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, fontSize: 15 }}>
-          DFW's most underrated city — diverse, affordable, and packed with renovation opportunity. 1960s–1990s homes dominate. Select your home's decade for a targeted ownership guide.
+          DFW's most underrated city — diverse, affordable, and packed with renovation opportunity. 1960s–1990s homes dominate. Select your home’s decade for a targeted ownership guide.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {HOME_DECADES.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id)}
-              style={{ background: selected === d.id ? '#F5E642' : '#0f2035', color: selected === d.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === d.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '14px 10px', fontWeight: 600, fontSize: 14, cursor: 'pointer', textAlign: 'left' }}>
+              style={{ background: selected === d.id ? '#F5E642′ : '#0f2035', color: selected === d.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === d.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '14px 10px', fontWeight: 600, fontSize: 14, cursor: ’pointer', textAlign: 'left' }}>
               {d.label}
             </button>
           ))}

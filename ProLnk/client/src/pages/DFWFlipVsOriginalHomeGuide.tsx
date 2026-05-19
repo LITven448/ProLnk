@@ -41,8 +41,8 @@ export default function DFWFlipVsOriginalHomeGuide() {
           <h1 style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>DFW Flipped Home Guide</h1>
           <p style={{ color: '#94A3B8', fontSize: 15 }}>Spot a cosmetic flip, know what to inspect, and ask the right questions before you commit.</p>
           <div style={{ background: '#1E3A5F', borderLeft: '4px solid #F5E642', padding: '12px 16px', borderRadius: 6, marginTop: 20, textAlign: 'left' }}>
-            <strong style={{ color: '#F5E642' }}>🏘️ DFW Flip Market:</strong>
-            <span style={{ color: '#CBD5E1', fontSize: 14 }}> DFW is one of the most active flip markets in the US. Many flips are done well — but cosmetic-only flips that hide deferred maintenance are common. The goal isn't to avoid flips, it's to know what you're buying.</span>
+            <strong style={{ color: '#F5E642′ }}>🏘️ DFW Flip Market:</strong>
+            <span style={{ color: '#CBD5E1', fontSize: 14 }}> DFW is one of the most active flip markets in the US. Many flips are done well — but cosmetic-only flips that hide deferred maintenance are common. The goal isn't to avoid flips, it’s to know what you’re buying.</span>
           </div>
         </div>
 
@@ -71,7 +71,7 @@ export default function DFWFlipVsOriginalHomeGuide() {
                 {result.focus.map((f, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'flex-start' }}>
                     <span style={{ color: result.color, minWidth: 16 }}>→</span>
-                    <span style={{ fontSize: 12, color: '#CBD5E1' }}>{f}</span>
+                    <span style={{ fontSize: 12, color: '#CBD5E1′ }}>{f}</span>
                   </div>
                 ))}
               </div>
@@ -80,7 +80,7 @@ export default function DFWFlipVsOriginalHomeGuide() {
                 {result.questions.map((q, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'flex-start' }}>
                     <span style={{ color: '#94A3B8', minWidth: 16 }}>Q:</span>
-                    <span style={{ fontSize: 12, color: '#CBD5E1' }}>{q}</span>
+                    <span style={{ fontSize: 12, color: '#CBD5E1′ }}>{q}</span>
                   </div>
                 ))}
               </div>
@@ -89,7 +89,7 @@ export default function DFWFlipVsOriginalHomeGuide() {
         )}
 
         {selected.length === 0 && (
-          <div style={{ textAlign: 'center', padding: 48, color: '#475569' }}>
+          <div style={{ textAlign: 'center', padding: 48, color: '#475569′ }}>
             <div style={{ fontSize: 40, marginBottom: 12 }}>🔍</div>
             <p>Select indicators you observe in the home to get your flip assessment.</p>
           </div>

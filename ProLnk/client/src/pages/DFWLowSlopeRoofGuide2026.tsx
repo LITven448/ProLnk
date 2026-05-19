@@ -18,7 +18,7 @@ export default function DFWLowSlopeRoofGuide2026() {
     setResult(match || null);
   };
 
-  const priorityColor = (p: string) => p === 'URGENT' ? '#ef4444' : p === 'High' ? '#f97316' : '#22c55e';
+  const priorityColor = (p: string) => p === 'URGENT' ? '#ef4444′ : p === ’High' ? '#f97316′ : '#22c55e';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -56,7 +56,7 @@ export default function DFWLowSlopeRoofGuide2026() {
           </div>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get Guide →</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
                 <span style={{ background: priorityColor(result.priority), color: '#fff', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700 }}>{result.priority}</span>

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const tasks = [
-  { id: 'tracks', label: 'Track Alignment', icon: '🛤️', freq: 'Every 6 months', detail: 'DFW heat expands metal tracks. Check for gaps or bends. Adjust vertical tracks so door has 1/4" clearance.' },
+  { id: 'tracks', label: 'Track Alignment', icon: '🛤️', freq: 'Every 6 months', detail: 'DFW heat expands metal tracks. Check for gaps or bends. Adjust vertical tracks so door has 1/4″ clearance.' },
   { id: 'springs', label: 'Spring Lubrication', icon: '🔧', freq: 'Monthly', detail: 'DFW humidity corrodes springs fast. Use white lithium grease on torsion springs. Never oil cables.' },
   { id: 'balance', label: 'Balance Test', icon: '⚖️', freq: 'Every 3 months', detail: 'Disconnect opener. Lift door to 4ft. Should stay in place. If it drops or rises, springs need adjustment.' },
   { id: 'photoeye', label: 'Photo Eye Cleaning', icon: '👁️', freq: 'Monthly', detail: 'DFW dust and spider webs block sensors constantly. Wipe with dry cloth. Align so LED is solid green.' },
   { id: 'weatherstrip', label: 'Weather Stripping', icon: '🌧️', freq: 'Annually', detail: 'DFW storms and heat crack rubber fast. Check bottom seal and side seals. Replace when light shows through.' },
-  { id: 'opener', label: 'Opener Chain/Belt', icon: '⚙️', freq: 'Annually', detail: 'Lubricate chain with garage door lube. Belt drives need no lube. Check tension — should have 1/2" of play.' },
+  { id: 'opener', label: 'Opener Chain/Belt', icon: '⚙️', freq: 'Annually', detail: 'Lubricate chain with garage door lube. Belt drives need no lube. Check tension — should have 1/2″ of play.' },
 ];
 
 const symptoms = [
@@ -47,11 +47,11 @@ export default function DFWGarageDoorMaintenanceGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Diagnose Your Problem</h2>
-          <div style={{ fontSize: 13, marginBottom: 12, color: '#94a3b8' }}>What is your garage door doing?</div>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Diagnose Your Problem</h2>
+          <div style={{ fontSize: 13, marginBottom: 12, color: '#94a3b8′ }}>What is your garage door doing?</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {symptoms.map(s => (
-              <button key={s} onClick={() => setSym(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: sym === s ? '#F5E642' : '#1e3a5f', color: sym === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>{s}</button>
+              <button key={s} onClick={() => setSym(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: sym === s ? '#F5E642′ : '#1e3a5f', color: sym === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 14, textAlign: ’left' }}>{s}</button>
             ))}
           </div>
           {sym && (

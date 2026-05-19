@@ -45,8 +45,8 @@ export default function DFWFoundationPerimeterVsInterior2026() {
               key={l.id}
               onClick={() => setSelected(selected === l.id ? null : l.id)}
               style={{
-                background: selected === l.id ? '#F5E642' : '#0f2040',
-                color: selected === l.id ? '#0A1628' : '#fff',
+                background: selected === l.id ? '#F5E642′ : '#0f2040',
+                color: selected === l.id ? '#0A1628′ : '#fff',
                 border: '1px solid #1e3a5f',
                 borderRadius: 8,
                 padding: '0.5rem 1rem',
@@ -78,7 +78,7 @@ export default function DFWFoundationPerimeterVsInterior2026() {
             'Interior tunneling disrupts living — plan 1–2 week displacement',
           ].map(item => (
             <div key={item} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.6rem', color: '#94a3b8', fontSize: '0.9rem' }}>
-              <span style={{ color: '#F5E642' }}>✓</span>{item}
+              <span style={{ color: '#F5E642′ }}>✓</span>{item}
             </div>
           ))}
         </div>

@@ -76,7 +76,7 @@ export default function DFWHomeAffordabilityCalculator() {
               <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', background: '#0A1628', borderRadius: 8, padding: '8px 12px', marginBottom: 8 }}>
                 {prefix}{typeof value === 'number' && value % 1 !== 0 ? value.toFixed(1) : value.toLocaleString()}{suffix}
               </div>
-              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           ))}
         </div>
@@ -114,11 +114,11 @@ export default function DFWHomeAffordabilityCalculator() {
           <div style={{ fontSize: 13, color: '#7f1d1d', lineHeight: 1.6 }}>
             <div>Annual DFW property taxes on {fmt(maxHome)}: <strong>{fmt(taxImpact)}</strong></div>
             <div>National avg property taxes (1.07%): <strong>{fmt(nationalTaxAmt)}</strong></div>
-            <div style={{ marginTop: 8, fontWeight: 600 }}>You're paying {fmt(dfwTaxPenalty)}/yr MORE than the national avg — that's equivalent to {fmt(dfwTaxPenalty / 12)}/mo in buying power redirected to taxes.</div>
+            <div style={{ marginTop: 8, fontWeight: 600 }}>You're paying {fmt(dfwTaxPenalty)}/yr MORE than the national avg — that’s equivalent to {fmt(dfwTaxPenalty / 12)}/mo in buying power redirected to taxes.</div>
           </div>
         </div>
 
-        <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 12, padding: 16, fontSize: 13, color: '#166534' }}>
+        <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 12, padding: 16, fontSize: 13, color: '#166534′ }}>
           💡 <strong>Income needed to buy comfortably:</strong> To buy a {fmt(conservativeHome)} home in DFW with no other debts, you'd need at least {fmt((conservativeHome * (loanFactor + monthlyTaxFactor + monthlyInsuranceFactor) * (1 - (downPayment / conservativeHome))) / 0.28)} gross monthly income.
         </div>
       </div>

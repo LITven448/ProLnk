@@ -46,7 +46,7 @@ export default function DFWLVPFlooringGuide() {
           {[
             { icon: '💧', title: 'Why LVP Dominates DFW', body: '100% waterproof — unmatched for DFW homes with slab foundations prone to moisture. No acclimation needed. Dimensional stability handles 20-80% humidity swings without gapping or buckling. Perfect for allergy-prone Texans.' },
             { icon: '📏', title: 'Wear Layer Thickness Guide', body: '6 mil: bedrooms only. 8 mil: medium residential. 12 mil: living rooms, kitchens. 20 mil: heavy residential or rental property. 28+ mil: commercial. Most DFW homeowners need 12 mil minimum for main living areas.' },
-            { icon: '🔗', title: 'Click vs Glue vs Loose Lay', body: 'Click/float: fastest install, easy DIY, great for most DFW rooms. Glue-down: best on uneven slabs over 3/16" variation, most stable. Loose lay: no adhesive, fastest removal, works on very flat DFW slabs.' },
+            { icon: '🔗', title: 'Click vs Glue vs Loose Lay', body: 'Click/float: fastest install, easy DIY, great for most DFW rooms. Glue-down: best on uneven slabs over 3/16″ variation, most stable. Loose lay: no adhesive, fastest removal, works on very flat DFW slabs.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#111D35', borderRadius: 12, padding: 24, border: '1px solid #1E2D4A' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>
@@ -65,7 +65,7 @@ export default function DFWLVPFlooringGuide() {
               <input
                 type="range" min={100} max={4000} step={50} value={sqft}
                 onChange={e => setSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }}
+                style={{ width: '100%', accentColor: '#F5E642′ }}
               />
               <div style={{ color: '#FFFFFF', fontWeight: 700, marginTop: 4 }}>{sqft.toLocaleString()} sqft</div>
             </div>
@@ -100,10 +100,10 @@ export default function DFWLVPFlooringGuide() {
               { label: 'Install Cost', value: `$${(sqft * INSTALL_COST).toLocaleString()}`, sub: `$${INSTALL_COST}/sqft labor` },
               { label: 'Total Estimate', value: `$${Math.round(minTotal).toLocaleString()} – $${Math.round(maxTotal).toLocaleString()}`, sub: 'full project', highlight: true },
             ].map(stat => (
-              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642' : '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
-                <div style={{ color: stat.highlight ? '#0A1628' : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
-                <div style={{ color: stat.highlight ? '#0A1628' : '#FFFFFF', fontSize: 16, fontWeight: 800 }}>{stat.value}</div>
-                <div style={{ color: stat.highlight ? '#0A162880' : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
+              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642′ : '#0A1628', borderRadius: 10, padding: 16, textAlign: ’center' }}>
+                <div style={{ color: stat.highlight ? '#0A1628′ : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
+                <div style={{ color: stat.highlight ? '#0A1628′ : '#FFFFFF', fontSize: 16, fontWeight: 800 }}>{stat.value}</div>
+                <div style={{ color: stat.highlight ? '#0A162880′ : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
               </div>
             ))}
           </div>

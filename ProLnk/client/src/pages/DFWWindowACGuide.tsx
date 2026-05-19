@@ -76,7 +76,7 @@ export default function DFWWindowACGuide() {
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#aaa', fontSize: '0.9rem' }}>Room Size (sq ft)</label>
-              <input type="number" value={roomSqft} onChange={e => setRoomSqft(e.target.value)} placeholder="e.g. 400"
+              <input type="number" value={roomSqft} onChange={e => setRoomSqft(e.target.value)} placeholder="e.g. 400″
                 style={{ width: '100%', marginTop: 6, padding: '0.6rem', borderRadius: 6, border: '1px solid #334', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>

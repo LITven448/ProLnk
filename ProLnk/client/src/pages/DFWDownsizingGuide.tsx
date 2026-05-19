@@ -95,7 +95,7 @@ export default function DFWDownsizingGuide() {
                 { category: 'Sentimental Items', options: 'Document and photograph everything before dispersing. Consider family distribution event before the move.' },
                 { category: 'Tools & Workshop', options: 'Estate sale or Facebook Marketplace. Dallas Tool Library accepts donations for community use.' },
               ].map(row => (
-                <div key={row.category} style={{ padding: '12px 0', borderBottom: '1px solid #F1F5F9' }}>
+                <div key={row.category} style={{ padding: '12px 0', borderBottom: '1px solid #F1F5F9′ }}>
                   <div style={{ fontWeight: 700, color: '#1A1A2E', fontSize: 14, marginBottom: 4 }}>{row.category}</div>
                   <div style={{ color: '#64748B', fontSize: 13 }}>{row.options}</div>
                 </div>
@@ -171,7 +171,7 @@ export default function DFWDownsizingGuide() {
                   { label: 'Remaining Mortgage Balance', value: currentMortgage, setter: setCurrentMortgage, min: 0, max: 2000000, step: 10000, format: (v: number) => `$${v.toLocaleString()}` },
                   { label: 'Target Home Price', value: targetValue, setter: setTargetValue, min: 150000, max: 2000000, step: 25000, format: (v: number) => `$${v.toLocaleString()}` },
                 ].map(field => (
-                  <div key={field.label} style={{ gridColumn: field.label.includes('Target') ? '1 / -1' : undefined }}>
+                  <div key={field.label} style={{ gridColumn: field.label.includes('Target') ? '1 / -1′ : undefined }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                       <label style={{ color: '#64748B', fontSize: 13 }}>{field.label}</label>
                       <span style={{ color: '#2D4A6B', fontWeight: 700 }}>{field.format(field.value)}</span>
@@ -198,9 +198,9 @@ export default function DFWDownsizingGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 24 }}>
               {[
                 { label: 'Home Equity', value: `$${Math.max(0, equity).toLocaleString()}`, note: 'Current value minus mortgage', color: '#2D4A6B' },
-                { label: 'Capital Gains Exclusion', value: `$${exclusion.toLocaleString()}`, note: filingStatus === 'married' ? '$500K married filing jointly' : '$250K single', color: '#059669' },
-                { label: 'Est. Capital Gains Tax', value: estimatedTax > 0 ? `$${estimatedTax.toLocaleString()}` : '$0', note: estimatedTax > 0 ? 'At 15% long-term rate' : 'Within exclusion — no tax owed', color: estimatedTax > 0 ? '#DC2626' : '#059669' },
-                { label: 'Equity Freed After Move', value: `${equityFreed >= 0 ? '+' : ''}$${Math.abs(Math.round(equityFreed)).toLocaleString()}`, note: 'Net proceeds minus new home purchase', color: equityFreed >= 0 ? '#059669' : '#DC2626' },
+                { label: 'Capital Gains Exclusion', value: `$${exclusion.toLocaleString()}`, note: filingStatus === 'married' ? '$500K married filing jointly' : '$250K single', color: '#059669′ },
+                { label: 'Est. Capital Gains Tax', value: estimatedTax > 0 ? `$${estimatedTax.toLocaleString()}` : '$0', note: estimatedTax > 0 ? 'At 15% long-term rate' : 'Within exclusion — no tax owed', color: estimatedTax > 0 ? '#DC2626′ : '#059669' },
+                { label: 'Equity Freed After Move', value: `${equityFreed >= 0 ? '+' : ''}$${Math.abs(Math.round(equityFreed)).toLocaleString()}`, note: 'Net proceeds minus new home purchase', color: equityFreed >= 0 ? '#059669′ : '#DC2626' },
               ].map(metric => (
                 <div key={metric.label} style={{ background: '#fff', borderRadius: 12, padding: 24, textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
                   <div style={{ fontSize: 28, fontWeight: 800, color: metric.color, fontFamily: 'system-ui, sans-serif' }}>{metric.value}</div>

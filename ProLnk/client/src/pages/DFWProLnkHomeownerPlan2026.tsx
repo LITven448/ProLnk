@@ -37,7 +37,7 @@ const yearPlans: Record<string, { title: string; icon: string; steps: { step: st
 };
 
 const usageStats = [
-  { label: 'Average DFW Service Jobs Per Year', value: '4-6' },
+  { label: 'Average DFW Service Jobs Per Year', value: '4-6′ },
   { label: 'Average Savings With Charter Pros vs Yelp/Angi', value: '$340/yr' },
   { label: 'Vault ROI at Home Sale (avg)', value: '$1,200+' },
   { label: 'Time to Set Up ProLnk Profile', value: '10 min' },
@@ -73,7 +73,7 @@ export default function DFWProLnkHomeownerPlan2026() {
               <button
                 key={k}
                 onClick={() => setSelectedYear(k)}
-                style={{ flex: 1, padding: '12px 0', background: selectedYear === k ? '#F5E642' : '#0d1f35', color: selectedYear === k ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: 'pointer', fontWeight: 700, fontSize: 15 }}
+                style={{ flex: 1, padding: '12px 0', background: selectedYear === k ? '#F5E642′ : '#0d1f35', color: selectedYear === k ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: ’pointer', fontWeight: 700, fontSize: 15 }}
               >
                 {l}
               </button>

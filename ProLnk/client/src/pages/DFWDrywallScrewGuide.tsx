@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 const screwData: Record<string, Record<string, { type: string; length: string; technique: string }>> = {
   '1/2': {
-    'Single layer to wood stud': { type: 'Coarse thread #6', length: '1-1/4"', technique: 'Drive until dimpled — paper intact. DFW humidity causes wood movement; check for pops after first summer.' },
-    'Single layer to metal stud': { type: 'Fine thread #6', length: '1"', technique: 'Fine thread bites metal without stripping. Set flush-to-dimpled only.' },
-    'Double layer': { type: 'Coarse thread #6', length: '1-5/8"', technique: 'Must penetrate base layer. DFW AC cycling causes expansion — expect minor pops year 1.' },
+    'Single layer to wood stud': { type: 'Coarse thread #6', length: '1-1/4″', technique: 'Drive until dimpled — paper intact. DFW humidity causes wood movement; check for pops after first summer.' },
+    'Single layer to metal stud': { type: 'Fine thread #6', length: '1″', technique: 'Fine thread bites metal without stripping. Set flush-to-dimpled only.' },
+    'Double layer': { type: 'Coarse thread #6', length: '1-5/8″', technique: 'Must penetrate base layer. DFW AC cycling causes expansion — expect minor pops year 1.' },
   },
   '5/8': {
-    'Single layer to wood stud': { type: 'Coarse thread #6', length: '1-5/8"', technique: 'Standard for ceilings and fire-rated walls. Dimple carefully — 5/8 paper tears easier.' },
-    'Single layer to metal stud': { type: 'Fine thread #6', length: '1-1/4"', technique: 'Fine thread required for metal. DFW commercial builds use 5/8 + metal almost exclusively.' },
-    'Double layer': { type: 'Coarse thread #6', length: '2"', technique: 'Two full layers — screw must reach stud. Check torque: DFW humidity swells wood, don\’t over-drive.' },
+    'Single layer to wood stud': { type: 'Coarse thread #6', length: '1-5/8″', technique: 'Standard for ceilings and fire-rated walls. Dimple carefully — 5/8 paper tears easier.' },
+    'Single layer to metal stud': { type: 'Fine thread #6', length: '1-1/4″', technique: 'Fine thread required for metal. DFW commercial builds use 5/8 + metal almost exclusively.' },
+    'Double layer': { type: 'Coarse thread #6', length: '2″', technique: 'Two full layers — screw must reach stud. Check torque: DFW humidity swells wood, don\’t over-drive.' },
   },
 };
 
@@ -56,15 +56,15 @@ export default function DFWDrywallScrewGuide() {
         </div>
 
         <div style={{ background: '#0f2030', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>🎯 DFW Screw Selector</h2>
+          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>🎯 DFW Screw Selector</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>Drywall Thickness</label>
               <select value={thickness} onChange={e => setThickness(e.target.value)}
                 style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '0.6rem' }}>
                 <option value="">Select thickness</option>
-                <option value="1/2">1/2" (standard)</option>
-                <option value="5/8">5/8" (fire-rated / ceiling)</option>
+                <option value="1/2″>1/2″ (standard)</option>
+                <option value="5/8″>5/8″ (fire-rated / ceiling)</option>
               </select>
             </div>
             <div>
@@ -79,10 +79,10 @@ export default function DFWDrywallScrewGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Screw Type:</span> <span style={{ color: '#fff' }}>{result.type}</span></div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Length:</span> <span style={{ color: '#fff' }}>{result.length}</span></div>
-              <div><span style={{ color: '#F5E642' }}>DFW Technique:</span> <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.technique}</span></div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Screw Type:</span> <span style={{ color: '#fff' }}>{result.type}</span></div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Length:</span> <span style={{ color: '#fff' }}>{result.length}</span></div>
+              <div><span style={{ color: '#F5E642′ }}>DFW Technique:</span> <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.technique}</span></div>
             </div>
           )}
         </div>
@@ -91,7 +91,7 @@ export default function DFWDrywallScrewGuide() {
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>📋 Setting Technique</div>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>
             Use a dimpler bit. Drive until the screw head creates a slight dimple in the drywall surface — the paper must stay intact. 
-            Breaking the paper removes 60% of holding strength. Space screws 12" on ceilings, 16" on walls. 
+            Breaking the paper removes 60% of holding strength. Space screws 12" on ceilings, 16″ on walls. 
             DFW pros: pre-drive a test screw to dial in your drill clutch before a full sheet.
           </p>
         </div>

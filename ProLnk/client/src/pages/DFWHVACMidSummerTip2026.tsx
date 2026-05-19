@@ -30,7 +30,7 @@ export default function DFWHVACMidSummerTip2026() {
             <div key={s.label} style={{ background: '#111f38', borderRadius: 10, padding: '16px 20px' }}>
               <div style={{ fontSize: 22 }}>{s.icon}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{s.label}</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642' }}>{s.val}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>{s.val}</div>
             </div>
           ))}
         </div>
@@ -42,8 +42,8 @@ export default function DFWHVACMidSummerTip2026() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642' : '#111f38',
-                color: selected === s.id ? '#0A1628' : '#fff',
+                background: selected === s.id ? '#F5E642′ : '#111f38',
+                color: selected === s.id ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px',
                 textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15,
               }}
@@ -60,7 +60,7 @@ export default function DFWHVACMidSummerTip2026() {
           </div>
         )}
 
-        <div style={{ background: '#111f38', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#111f38', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>📞 EMERGENCY HVAC — PROLNK CHARTER</div>
           <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>
             If your system fails during a heat event, Charter Pros are dispatched within 4 hours. 95°F+ indoor temps are a health emergency — don\'t wait. Request service at prolnk.io.

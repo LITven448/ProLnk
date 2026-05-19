@@ -10,7 +10,7 @@ const months = [
 export default function DFWHVACSpringFinalWindow2026() {
   const [selected, setSelected] = useState<string | null>(null);
   const active = months.find(m => m.id === selected);
-  const urgencyColor: Record<string, string> = { low: '#22C55E', medium: '#F59E0B', high: '#F5E642', critical: '#EF4444' };
+  const urgencyColor: Record<string, string> = { low: '#22C55E', medium: '#F59E0B', high: '#F5E642', critical: '#EF4444′ };
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '40px 24px' }}>
@@ -42,8 +42,8 @@ export default function DFWHVACSpringFinalWindow2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {months.map(m => (
               <button key={m.id} onClick={() => setSelected(m.id)} style={{
-                background: selected === m.id ? '#F5E642' : '#111D2E',
-                color: selected === m.id ? '#0A1628' : '#fff',
+                background: selected === m.id ? '#F5E642′ : '#111D2E',
+                color: selected === m.id ? '#0A1628′ : '#fff',
                 border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{m.label}</button>
@@ -67,7 +67,7 @@ export default function DFWHVACSpringFinalWindow2026() {
               '💧 Check condensate drain line — clogs cause water damage in peak season',
               '🌡 Test thermostat at 95°F setting before you need it',
             ].map(item => (
-              <div key={item} style={{ fontSize: 14, color: '#CBD5E1' }}>{item}</div>
+              <div key={item} style={{ fontSize: 14, color: '#CBD5E1′ }}>{item}</div>
             ))}
           </div>
         </div>

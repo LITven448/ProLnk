@@ -47,7 +47,7 @@ export default function DFWPlumbingPermitInspection2026() {
             {Object.keys(cityData).map(c => (
               <button key={c} onClick={() => setCity(c)}
                 style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: city === c ? '#F5E642' : '#1e2d45', color: city === c ? '#0A1628' : '#94a3b8' }}>
+                  background: city === c ? '#F5E642′ : '#1e2d45', color: city === c ? '#0A1628' : '#94a3b8' }}>
                 {c}
               </button>
             ))}
@@ -60,7 +60,7 @@ export default function DFWPlumbingPermitInspection2026() {
             {workTypes.map(w => (
               <button key={w} onClick={() => setWork(w)}
                 style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: work === w ? '#F5E642' : '#1e2d45', color: work === w ? '#0A1628' : '#94a3b8' }}>
+                  background: work === w ? '#F5E642′ : '#1e2d45', color: work === w ? '#0A1628' : '#94a3b8' }}>
                 {w}
               </button>
             ))}
@@ -69,14 +69,14 @@ export default function DFWPlumbingPermitInspection2026() {
 
         {info && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <div style={{ background: '#1e2d45', borderRadius: 12, padding: '16px 20px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#1e2d45', borderRadius: 12, padding: '16px 20px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800 }}>✅ Permit Required — Typical Cost: {info.cost}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 6 }}>{info.note}</div>
             </div>
             <div style={{ background: '#1e2d45', borderRadius: 12, padding: '16px 20px' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🔍 What Inspector Checks</div>
               {info.checks.map((c, i) => (
-                <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>✓ {c}</div>
+                <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>✓ {c}</div>
               ))}
             </div>
           </div>

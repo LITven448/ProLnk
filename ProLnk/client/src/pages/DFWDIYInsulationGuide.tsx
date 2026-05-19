@@ -42,8 +42,8 @@ export default function DFWDIYInsulationGuide() {
   const est = ready ? getEstimate(insType, currentR, areaIdx) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>{'house'}</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 10px' }}>DFW DIY Attic Insulation Guide</h1>
@@ -111,7 +111,7 @@ export default function DFWDIYInsulationGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Insulation Type</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {INSULATION_TYPES.map(t => (
-                <button key={t} onClick={() => setInsType(t)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: insType === t ? '#F5E642' : '#334155', background: insType === t ? '#F5E64215' : 'transparent', color: insType === t ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={t} onClick={() => setInsType(t)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: insType === t ? '#F5E642′ : '#334155', background: insType === t ? '#F5E64215' : ’transparent', color: insType === t ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
                   {t}
                 </button>
               ))}
@@ -122,7 +122,7 @@ export default function DFWDIYInsulationGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Current R-Value</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {R_VALUES.map(r => (
-                <button key={r} onClick={() => setCurrentR(r)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: currentR === r ? '#F5E642' : '#334155', background: currentR === r ? '#F5E64215' : 'transparent', color: currentR === r ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={r} onClick={() => setCurrentR(r)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: currentR === r ? '#F5E642′ : '#334155', background: currentR === r ? '#F5E64215' : ’transparent', color: currentR === r ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
                   {r}
                 </button>
               ))}
@@ -133,7 +133,7 @@ export default function DFWDIYInsulationGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Attic Square Footage</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {AREAS.map((a, i) => (
-                <button key={a.label} onClick={() => setAreaIdx(i)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: areaIdx === i ? '#F5E642' : '#334155', background: areaIdx === i ? '#F5E64215' : 'transparent', color: areaIdx === i ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={a.label} onClick={() => setAreaIdx(i)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: areaIdx === i ? '#F5E642′ : '#334155', background: areaIdx === i ? '#F5E64215' : ’transparent', color: areaIdx === i ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
                   {a.label}
                 </button>
               ))}
@@ -145,7 +145,7 @@ export default function DFWDIYInsulationGuide() {
           </button>
 
           {showResults && est && (
-            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid ' + (est.callPro ? '#f87171' : '#4ade80') }}>
+            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid ' + (est.callPro ? '#f87171′ : '#4ade80') }}>
               {est.callPro ? (
                 <div style={{ color: '#f87171', fontWeight: 800, fontSize: 18, marginBottom: 12 }}>Spray foam requires a licensed contractor in DFW -- do not DIY</div>
               ) : (
@@ -158,15 +158,15 @@ export default function DFWDIYInsulationGuide() {
                     ].map(([label, val]) => (
                       <div key={label} style={{ background: '#112240', borderRadius: 8, padding: 12, textAlign: 'center' }}>
                         <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                        <div style={{ fontSize: 16, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                        <div style={{ fontSize: 16, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                       </div>
                     ))}
                   </div>
                   {est.bags > 0 && <div style={{ color: '#cbd5e1', marginBottom: 8 }}>Blown-in bags needed: <span style={{ color: '#F5E642', fontWeight: 700 }}>{est.bags} bags</span></div>}
                   {est.rebateEligible && (
-                    <div style={{ padding: 14, background: '#112240', borderRadius: 8, borderLeft: '3px solid #4ade80' }}>
+                    <div style={{ padding: 14, background: '#112240', borderRadius: 8, borderLeft: '3px solid #4ade80′ }}>
                       <div style={{ color: '#4ade80', fontWeight: 700, marginBottom: 4 }}>Oncor Rebate Eligible!</div>
-                      <div style={{ color: '#cbd5e1', fontSize: 14 }}>Estimated rebate: <strong style={{ color: '#F5E642' }}>${est.rebateAmount}</strong> -- submit receipts at oncor.com/rebates within 90 days</div>
+                      <div style={{ color: '#cbd5e1', fontSize: 14 }}>Estimated rebate: <strong style={{ color: '#F5E642′ }}>${est.rebateAmount}</strong> -- submit receipts at oncor.com/rebates within 90 days</div>
                     </div>
                   )}
                 </>

@@ -21,26 +21,26 @@ export default function DFWHVACEvapCoolerGuide2026() {
   const getEffectiveness = (h: number) => {
     if (h < 40) return { label: "Good", color: "#22c55e" };
     if (h < 55) return { label: "Marginal", color: "#f59e0b" };
-    return { label: "Ineffective", color: "#ef4444" };
+    return { label: "Ineffective", color: "#ef4444″ };
   };
 
   const eff = getEffectiveness(humidity);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642", letterSpacing: 2, textTransform: "uppercase" }}>💧 DFW HVAC Guide 2026</div>
+        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642″, letterSpacing: 2, textTransform: "uppercase" }}>💧 DFW HVAC Guide 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Evaporative Cooler Effectiveness in DFW</h1>
-        <p style={{ color: "#94a3b8", marginBottom: 32 }}>Swamp coolers rely on low humidity. DFW summers average 60–80% — making them largely ineffective June through August.</p>
+        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>Swamp coolers rely on low humidity. DFW summers average 60–80% — making them largely ineffective June through August.</p>
 
-        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 16 }}>🌡️ Humidity → Effectiveness Calculator</h2>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642″, marginBottom: 16 }}>🌡️ Humidity → Effectiveness Calculator</h2>
         <div style={{ background: "#0f1f3a", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <label style={{ fontSize: 14, color: "#94a3b8" }}>Current Humidity: <strong style={{ color: "#fff" }}>{humidity}%</strong></label>
+          <label style={{ fontSize: 14, color: "#94a3b8″ }}>Current Humidity: <strong style={{ color: "#fff" }}>{humidity}%</strong></label>
           <input type="range" min={20} max={90} value={humidity} onChange={e => setHumidity(Number(e.target.value))}
-            style={{ width: "100%", margin: "12px 0", accentColor: "#F5E642" }} />
+            style={{ width: "100%", margin: "12px 0″, accentColor: "#F5E642" }} />
           <div style={{ padding: "12px 16px", borderRadius: 8, background: "#1e3a5f", borderLeft: `4px solid ${eff.color}` }}>
             <span style={{ color: eff.color, fontWeight: 700, fontSize: 18 }}>{eff.label}</span>
-            <span style={{ color: "#94a3b8", marginLeft: 12, fontSize: 14 }}>
+            <span style={{ color: "#94a3b8″, marginLeft: 12, fontSize: 14 }}>
               {humidity < 40 ? "Evaporative cooling works well — dry enough to evaporate effectively." :
                humidity < 55 ? "Marginal performance — some cooling but comfort is limited." :
                "Evap cooler adds humidity without meaningful cooling. Use refrigerant AC."}
@@ -48,7 +48,7 @@ export default function DFWHVACEvapCoolerGuide2026() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 16 }}>📅 DFW Season Performance</h2>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642″, marginBottom: 16 }}>📅 DFW Season Performance</h2>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 32 }}>
           {seasons.map((s, i) => (
             <div key={i} onClick={() => setSelectedSeason(selectedSeason === i ? null : i)}
@@ -56,19 +56,19 @@ export default function DFWHVACEvapCoolerGuide2026() {
                 border: `1px solid ${selectedSeason === i ? "#F5E642" : "#1e3a5f"}` }}>
               <div style={{ fontSize: 22 }}>{s.icon}</div>
               <div style={{ fontWeight: 700, marginTop: 4 }}>{s.label}</div>
-              <div style={{ fontSize: 12, color: "#94a3b8" }}>Humidity: {s.humidity}</div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: s.effectiveness === "Poor" ? "#ef4444" : s.effectiveness === "Moderate" ? "#f59e0b" : "#94a3b8", marginTop: 4 }}>{s.effectiveness}</div>
-              {selectedSeason === i && <div style={{ marginTop: 8, fontSize: 13, color: "#cbd5e1" }}>{s.note}</div>}
+              <div style={{ fontSize: 12, color: "#94a3b8″ }}>Humidity: {s.humidity}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: s.effectiveness === "Poor" ? "#ef4444″ : s.effectiveness === "Moderate" ? "#f59e0b" : "#94a3b8", marginTop: 4 }}>{s.effectiveness}</div>
+              {selectedSeason === i && <div style={{ marginTop: 8, fontSize: 13, color: "#cbd5e1″ }}>{s.note}</div>}
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 16 }}>✅ Better Alternatives for DFW</h2>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642″, marginBottom: 16 }}>✅ Better Alternatives for DFW</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {alternatives.map((a, i) => (
             <div key={i} style={{ background: "#0f1f3a", borderRadius: 10, padding: "14px 18px", display: "flex", alignItems: "center", gap: 14 }}>
               <span style={{ fontSize: 24 }}>{a.icon}</span>
-              <div><div style={{ fontWeight: 700 }}>{a.name}</div><div style={{ fontSize: 13, color: "#94a3b8" }}>{a.why}</div></div>
+              <div><div style={{ fontWeight: 700 }}>{a.name}</div><div style={{ fontSize: 13, color: "#94a3b8″ }}>{a.why}</div></div>
             </div>
           ))}
         </div>

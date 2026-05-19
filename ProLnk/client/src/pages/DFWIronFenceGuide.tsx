@@ -60,7 +60,7 @@ export default function DFWIronFenceGuide() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Linear Feet</label>
               <input type="range" min={20} max={300} value={linearFeet} onChange={e => setLinearFeet(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <span style={{ color: '#F5E642', fontSize: 15, fontWeight: 700 }}>{linearFeet} ft</span>
             </div>
             <div>
@@ -95,7 +95,7 @@ export default function DFWIronFenceGuide() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 14, marginTop: 16, textAlign: 'center', border: '1px solid #1E3A5F' }}>
             <span style={{ color: '#94A3B8', fontSize: 14 }}>
-              With <strong style={{ color: '#F5E642' }}>{c.label}</strong>, plan for touch-up painting in <strong style={{ color: '#F5E642' }}>{c.durabilityYrs} years</strong> — cost est. <strong style={{ color: '#F5E642' }}>${touchupCost.toLocaleString()}</strong>
+              With <strong style={{ color: '#F5E642′ }}>{c.label}</strong>, plan for touch-up painting in <strong style={{ color: '#F5E642' }}>{c.durabilityYrs} years</strong> — cost est. <strong style={{ color: '#F5E642' }}>${touchupCost.toLocaleString()}</strong>
             </span>
           </div>
         </div>

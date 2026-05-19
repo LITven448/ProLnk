@@ -24,7 +24,7 @@ export default function DFWHVACSummerReady() {
   const score = Math.round((checked.length / checklist.length) * 100);
   const missing = checklist.filter(item => !checked.includes(item.id));
 
-  const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642' : '#ef4444';
+  const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642′ : '#ef4444';
   const scoreLabel = score >= 80 ? '🌬️ Summer Ready' : score >= 50 ? '⚠️ Partially Ready' : '🔥 Not Ready';
 
   return (
@@ -32,7 +32,7 @@ export default function DFWHVACSummerReady() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>☀️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0' }}>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0′ }}>
             Is Your DFW HVAC Summer Ready?
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>

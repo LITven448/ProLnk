@@ -49,7 +49,7 @@ export default function DFWProLnkReadinessCheck2026() {
                 style={{ background: '#0f2040', border: '2px solid #F5E642', borderRadius: 16, padding: '24px 32px', cursor: 'pointer', textAlign: 'center', color: '#fff', flex: '1 1 200px' }}>
                 <div style={{ fontSize: 36, marginBottom: 8 }}>{r.label.split(' ')[0]}</div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: '#F5E642', marginBottom: 4 }}>{r.label.substring(2)}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{r.desc}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{r.desc}</div>
               </button>
             ))}
           </div>
@@ -75,7 +75,7 @@ export default function DFWProLnkReadinessCheck2026() {
               </div>
             ))}
             <button onClick={() => setSubmitted(true)} disabled={answered < 5}
-              style={{ width: '100%', background: answered < 5 ? '#334155' : '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '14px 0', fontWeight: 700, fontSize: 16, cursor: answered < 5 ? 'not-allowed' : 'pointer', marginTop: 8 }}>
+              style={{ width: '100%', background: answered < 5 ? '#334155′ : '#F5E642', color: '#0A1628', border: ’none', borderRadius: 10, padding: '14px 0', fontWeight: 700, fontSize: 16, cursor: answered < 5 ? 'not-allowed' : 'pointer', marginTop: 8 }}>
               {answered < 5 ? `Answer all 5 questions (${answered}/5)` : 'Check My Readiness →'}
             </button>
           </>

@@ -114,7 +114,7 @@ export default function DFWOutdoorSpacesGuide() {
                   padding: '10px 20px',
                   borderRadius: 8,
                   border: `2px solid ${budget === opt.label ? '#F59E0B' : '#1E3A5F'}`,
-                  background: budget === opt.label ? '#F59E0B20' : '#0F2033',
+                  background: budget === opt.label ? '#F59E0B20′ : '#0F2033',
                   color: budget === opt.label ? '#F59E0B' : '#94A3B8',
                   fontWeight: 600,
                   fontSize: 14,
@@ -149,7 +149,7 @@ export default function DFWOutdoorSpacesGuide() {
                     <span style={{ fontSize: 13, background: '#F59E0B20', color: '#F59E0B', borderRadius: 4, padding: '2px 8px', fontWeight: 600 }}>{project.roi}</span>
                   </div>
                   <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: 18, fontWeight: 700, color: '#3B82F6' }}>{project.cost}</span>
+                    <span style={{ fontSize: 18, fontWeight: 700, color: '#3B82F6′ }}>{project.cost}</span>
                     <span style={{ fontSize: 14, color: '#22C55E' }}>✓ {project.useRate} use rate in DFW</span>
                   </div>
                 </div>

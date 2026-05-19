@@ -96,7 +96,7 @@ export default function DFWPoolOpeningGuide2026() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowChecklist(true)} disabled={!poolType || !poolSize} style={{ background: poolType && poolSize ? '#F5E642' : '#334155', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: poolType && poolSize ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowChecklist(true)} disabled={!poolType || !poolSize} style={{ background: poolType && poolSize ? '#F5E642′ : '#334155', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: 8, padding: '12px 28px', cursor: poolType && poolSize ? 'pointer' : 'not-allowed' }}>
             Generate My Opening Plan →
           </button>
         </div>

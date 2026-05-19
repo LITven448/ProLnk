@@ -62,7 +62,7 @@ export default function DFWContractorBusinessGuide() {
                   <div style={{ fontSize: 12 }}><span style={{ color: '#64748b' }}>Tax: </span><span>{s.tax}</span></div>
                 </div>
                 <div style={{ fontSize: 13, color: '#4ade80', marginBottom: 4 }}>✅ {s.best}</div>
-                <div style={{ fontSize: 13, color: '#f87171' }}>⚠️ {s.risk}</div>
+                <div style={{ fontSize: 13, color: '#f87171′ }}>⚠️ {s.risk}</div>
               </div>
             ))}
           </div>
@@ -73,8 +73,8 @@ export default function DFWContractorBusinessGuide() {
           <div style={{ background: '#131f35', borderRadius: 10, overflow: 'hidden', border: '1px solid #1e3a5f' }}>
             {firstYearCosts.map((item, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 18px', borderBottom: i < firstYearCosts.length - 1 ? '1px solid #1e2d4a' : 'none' }}>
-                <span style={{ fontSize: 14, color: '#e2e8f0' }}>{item.item}</span>
-                <span style={{ fontWeight: 600, fontSize: 14, color: '#F5E642' }}>${item.cost.toLocaleString()}</span>
+                <span style={{ fontSize: 14, color: '#e2e8f0′ }}>{item.item}</span>
+                <span style={{ fontWeight: 600, fontSize: 14, color: '#F5E642′ }}>${item.cost.toLocaleString()}</span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 18px', background: '#0f1e35', fontWeight: 700 }}>
@@ -84,7 +84,7 @@ export default function DFWContractorBusinessGuide() {
           </div>
         </section>
 
-        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642' }}>
+        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🎯 Business Structure Recommender</h2>
           <div style={{ display: 'grid', gap: 14, marginBottom: 20 }}>
             <div>
@@ -97,12 +97,12 @@ export default function DFWContractorBusinessGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Years of trade experience</label>
-              <input type="number" value={experience} onChange={e => setExperience(e.target.value)} placeholder="e.g. 5"
+              <input type="number" value={experience} onChange={e => setExperience(e.target.value)} placeholder="e.g. 5″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Startup budget ($)</label>
-              <input type="number" value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 15000"
+              <input type="number" value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 15000″
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>

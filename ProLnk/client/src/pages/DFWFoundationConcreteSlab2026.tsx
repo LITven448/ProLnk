@@ -9,8 +9,8 @@ export default function DFWFoundationConcreteSlab2026() {
       label: '🔍 Cracks in My Slab',
       title: 'Understanding DFW Slab Cracks',
       steps: [
-        '📏 Hairline cracks (<1/16") — normal shrinkage, monitor annually',
-        '📏 Structural cracks (>1/4") — may indicate clay movement, evaluate',
+        '📏 Hairline cracks (<1/16″) — normal shrinkage, monitor annually',
+        '📏 Structural cracks (>1/4″) — may indicate clay movement, evaluate',
         '🔍 Horizontal cracks — rare in slabs, inspect post-tension cables',
         '🔍 Stair-step cracks at perimeter — classic DFW clay shrink/swell',
         '⚠️ Cracks with vertical displacement — foundation engineer required',
@@ -61,7 +61,7 @@ export default function DFWFoundationConcreteSlab2026() {
   const selected_item = concerns.find(c => c.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🏗️</div>
@@ -79,7 +79,7 @@ export default function DFWFoundationConcreteSlab2026() {
             DFW sits on highly expansive clay — slabs must be engineered to handle movement. A properly built DFW slab includes compacted fill, vapor barrier, steel reinforcement, and high-strength concrete.
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            {[['📐 4-6" thick', 'Interior slab thickness'], ['⚡ Post-tension', 'Cables or rebar steel'], ['💧 Vapor barrier', '6-mil poly below slab'], ['🏗️ Turndown beams', 'Perimeter depth 12-18"']].map(([label, desc]) => (
+            {[['📐 4-6″ thick', 'Interior slab thickness'], ['⚡ Post-tension', 'Cables or rebar steel'], ['💧 Vapor barrier', '6-mil poly below slab'], ['🏗️ Turndown beams', 'Perimeter depth 12-18″']].map(([label, desc]) => (
               <div key={label} style={{ background: '#1A2E4A', borderRadius: 8, padding: '10px 14px', flex: '1 1 150px' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>{label}</div>
                 <div style={{ color: '#8899BB', fontSize: 12, marginTop: 4 }}>{desc}</div>
@@ -92,7 +92,7 @@ export default function DFWFoundationConcreteSlab2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)}
-              style={{ background: selected === c.id ? '#F5E642' : '#0F1E35', color: selected === c.id ? '#0A1628' : '#E8EDF5', border: '1px solid', borderColor: selected === c.id ? '#F5E642' : '#1A2E4A', borderRadius: 10, padding: '12px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
+              style={{ background: selected === c.id ? '#F5E642′ : '#0F1E35', color: selected === c.id ? '#0A1628' : '#E8EDF5', border: '1px solid', borderColor: selected === c.id ? '#F5E642' : '#1A2E4A', borderRadius: 10, padding: '12px 14px', fontSize: 13, fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
               {c.label}
             </button>
           ))}

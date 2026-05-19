@@ -90,17 +90,17 @@ export default function ProRecruitingGuide() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: "#FAFAF9", color: "#0A1628" }}>
+    <div className="min-h-screen" style={{ background: "#FAFAF9″, color: "#0A1628" }}>
       {/* Header */}
-      <div style={{ background: "#0A1628" }} className="px-6 py-4">
+      <div style={{ background: "#0A1628″ }} className="px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link href="/">
             <span className="text-white font-black text-xl tracking-tight cursor-pointer">
-              Pro<span style={{ color: "#F5E642" }}>Lnk</span>
+              Pro<span style={{ color: "#F5E642″ }}>Lnk</span>
             </span>
           </Link>
           <Link href="/apply">
-            <span className="text-xs font-semibold px-4 py-2 rounded-full cursor-pointer" style={{ background: "#F5E642", color: "#0A1628" }}>
+            <span className="text-xs font-semibold px-4 py-2 rounded-full cursor-pointer" style={{ background: "#F5E642″, color: "#0A1628" }}>
               Apply Now
             </span>
           </Link>
@@ -108,10 +108,10 @@ export default function ProRecruitingGuide() {
       </div>
 
       {/* Hero */}
-      <div style={{ background: "#0A1628" }} className="px-6 pt-12 pb-16">
+      <div style={{ background: "#0A1628″ }} className="px-6 pt-12 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold mb-6" style={{ background: "rgba(245,230,66,0.15)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.3)" }}>
-            <DollarSign className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold mb-6″ style={{ background: "rgba(245,230,66,0.15)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.3)" }}>
+            <DollarSign className="w-4 h-4″ />
             Stream 2: Network Override Income
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
@@ -124,51 +124,51 @@ export default function ProRecruitingGuide() {
       </div>
 
       {/* Why Recruit */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="rounded-2xl p-6 mb-10" style={{ background: "white", border: "1px solid #E5E7EB", boxShadow: "0 1px 3px rgba(0,0,0,0.08)" }}>
-          <h2 className="text-xl font-black mb-5" style={{ color: "#0A1628" }}>Why Recruiting Matters</h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+      <div className="max-w-4xl mx-auto px-6 py-12″>
+        <div className="rounded-2xl p-6 mb-10″ style={{ background: "white", border: "1px solid #E5E7EB", boxShadow: "0 1px 3px rgba(0,0,0,0.08)" }}>
+          <h2 className="text-xl font-black mb-5″ style={{ color: "#0A1628" }}>Why Recruiting Matters</h2>
+          <div className="grid sm:grid-cols-3 gap-4″>
             {[
               { label: "L1 Override (Your Recruits)", value: "7%", detail: "Of every job they close, forever" },
               { label: "L2 Override (Their Recruits)", value: "4%", detail: "You earn from their recruits too" },
               { label: "Subscription Override", value: "12%", detail: "Of their $149/mo, recurring" },
             ].map((item, i) => (
               <div key={i} className="rounded-xl p-5 text-center" style={{ background: "#F9FAFB", border: "1px solid #E5E7EB" }}>
-                <div className="text-3xl font-black mb-1" style={{ color: "#14B8A6" }}>{item.value}</div>
-                <div className="font-bold text-sm mb-1" style={{ color: "#0A1628" }}>{item.label}</div>
-                <div className="text-xs" style={{ color: "#6B7280" }}>{item.detail}</div>
+                <div className="text-3xl font-black mb-1″ style={{ color: "#14B8A6" }}>{item.value}</div>
+                <div className="font-bold text-sm mb-1″ style={{ color: "#0A1628" }}>{item.label}</div>
+                <div className="text-xs" style={{ color: "#6B7280″ }}>{item.detail}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Partner Profiles */}
-        <h2 className="text-2xl font-black mb-6" style={{ color: "#0A1628" }}>5 Ideal Recruiting Targets</h2>
-        <div className="space-y-3 mb-12">
+        <h2 className="text-2xl font-black mb-6″ style={{ color: "#0A1628" }}>5 Ideal Recruiting Targets</h2>
+        <div className="space-y-3 mb-12″>
           {PARTNER_PROFILES.map((profile, i) => {
             const Icon = profile.icon;
             return (
               <div key={i} className="rounded-2xl overflow-hidden" style={{ background: "white", border: "1px solid #E5E7EB" }}>
                 <button onClick={() => setOpenProfile(openProfile === i ? null : i)} className="w-full flex items-center justify-between px-6 py-5 text-left">
-                  <div className="flex items-center gap-4">
-                    <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(20,184,166,0.1)" }}>
-                      <Icon className="w-5 h-5" style={{ color: "#14B8A6" }} />
+                  <div className="flex items-center gap-4″>
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0″ style={{ background: "rgba(20,184,166,0.1)" }}>
+                      <Icon className="w-5 h-5″ style={{ color: "#14B8A6" }} />
                     </div>
                     <div>
-                      <div className="font-bold text-sm" style={{ color: "#0A1628" }}>{profile.type}</div>
-                      <div className="text-xs mt-0.5" style={{ color: "#6B7280" }}>{profile.tagline}</div>
+                      <div className="font-bold text-sm" style={{ color: "#0A1628″ }}>{profile.type}</div>
+                      <div className="text-xs mt-0.5″ style={{ color: "#6B7280" }}>{profile.tagline}</div>
                     </div>
                   </div>
-                  {openProfile === i ? <ChevronUp className="w-5 h-5 shrink-0" style={{ color: "#9CA3AF" }} /> : <ChevronDown className="w-5 h-5 shrink-0" style={{ color: "#9CA3AF" }} />}
+                  {openProfile === i ? <ChevronUp className="w-5 h-5 shrink-0″ style={{ color: "#9CA3AF" }} /> : <ChevronDown className="w-5 h-5 shrink-0" style={{ color: "#9CA3AF" }} />}
                 </button>
                 {openProfile === i && (
-                  <div className="px-6 pb-6 border-t" style={{ borderColor: "#F3F4F6" }}>
-                    <p className="text-sm leading-relaxed mt-5 mb-4" style={{ color: "#4B5563" }}>{profile.description}</p>
-                    <div className="rounded-xl p-4 mb-4" style={{ background: "#F0FDF4", border: "1px solid #D1FAE5" }}>
-                      <div className="text-xs font-bold mb-2" style={{ color: "#059669" }}>Script to Use:</div>
-                      <p className="text-sm italic leading-relaxed" style={{ color: "#374151" }}>"{profile.script}"</p>
+                  <div className="px-6 pb-6 border-t" style={{ borderColor: "#F3F4F6″ }}>
+                    <p className="text-sm leading-relaxed mt-5 mb-4″ style={{ color: "#4B5563" }}>{profile.description}</p>
+                    <div className="rounded-xl p-4 mb-4″ style={{ background: "#F0FDF4", border: "1px solid #D1FAE5" }}>
+                      <div className="text-xs font-bold mb-2″ style={{ color: "#059669" }}>Script to Use:</div>
+                      <p className="text-sm italic leading-relaxed" style={{ color: "#374151″ }}>"{profile.script}"</p>
                     </div>
-                    <div className="text-xs" style={{ color: "#6B7280" }}>
+                    <div className="text-xs" style={{ color: "#6B7280″ }}>
                       <span className="font-semibold">Where to find them: </span>{profile.where}
                     </div>
                   </div>
@@ -179,23 +179,23 @@ export default function ProRecruitingGuide() {
         </div>
 
         {/* 3 Recruiting Approaches */}
-        <h2 className="text-2xl font-black mb-6" style={{ color: "#0A1628" }}>3 Recruiting Approaches with Scripts</h2>
-        <div className="space-y-3 mb-12">
+        <h2 className="text-2xl font-black mb-6″ style={{ color: "#0A1628" }}>3 Recruiting Approaches with Scripts</h2>
+        <div className="space-y-3 mb-12″>
           {APPROACHES.map((approach, i) => (
             <div key={i} className="rounded-2xl overflow-hidden" style={{ background: "white", border: "1px solid #E5E7EB" }}>
               <button onClick={() => setOpenApproach(openApproach === i ? null : i)} className="w-full flex items-center justify-between px-6 py-5 text-left">
-                <div className="flex items-center gap-3">
-                  <MessageSquare className="w-5 h-5" style={{ color: "#14B8A6" }} />
-                  <span className="font-bold text-sm" style={{ color: "#0A1628" }}>{approach.title}</span>
+                <div className="flex items-center gap-3″>
+                  <MessageSquare className="w-5 h-5″ style={{ color: "#14B8A6" }} />
+                  <span className="font-bold text-sm" style={{ color: "#0A1628″ }}>{approach.title}</span>
                 </div>
-                {openApproach === i ? <ChevronUp className="w-5 h-5" style={{ color: "#9CA3AF" }} /> : <ChevronDown className="w-5 h-5" style={{ color: "#9CA3AF" }} />}
+                {openApproach === i ? <ChevronUp className="w-5 h-5″ style={{ color: "#9CA3AF" }} /> : <ChevronDown className="w-5 h-5" style={{ color: "#9CA3AF" }} />}
               </button>
               {openApproach === i && (
-                <div className="px-6 pb-6 border-t" style={{ borderColor: "#F3F4F6" }}>
-                  <div className="rounded-xl p-4 mt-5 mb-3" style={{ background: "#EFF6FF", border: "1px solid #BFDBFE" }}>
+                <div className="px-6 pb-6 border-t" style={{ borderColor: "#F3F4F6″ }}>
+                  <div className="rounded-xl p-4 mt-5 mb-3″ style={{ background: "#EFF6FF", border: "1px solid #BFDBFE" }}>
                     <p className="text-sm leading-relaxed" style={{ color: "#1E40AF" }}>{approach.template}</p>
                   </div>
-                  <p className="text-xs" style={{ color: "#6B7280" }}><span className="font-semibold">Best when: </span>{approach.when}</p>
+                  <p className="text-xs" style={{ color: "#6B7280″ }}><span className="font-semibold">Best when: </span>{approach.when}</p>
                 </div>
               )}
             </div>
@@ -203,35 +203,35 @@ export default function ProRecruitingGuide() {
         </div>
 
         {/* Compounding Effect */}
-        <div className="rounded-2xl p-8" style={{ background: "#0A1628", color: "white" }}>
-          <h2 className="text-2xl font-black mb-2">The Compounding Effect</h2>
-          <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
+        <div className="rounded-2xl p-8″ style={{ background: "#0A1628", color: "white" }}>
+          <h2 className="text-2xl font-black mb-2″>The Compounding Effect</h2>
+          <p className="text-sm mb-8″ style={{ color: "rgba(255,255,255,0.5)" }}>
             Illustrative example — what 3 tiers of recruiting looks like at modest averages
           </p>
-          <div className="space-y-4 mb-8">
-            <div className="rounded-xl p-5" style={{ background: "rgba(245,230,66,0.1)", border: "1px solid rgba(245,230,66,0.3)" }}>
-              <div className="flex justify-between items-center mb-2">
+          <div className="space-y-4 mb-8″>
+            <div className="rounded-xl p-5″ style={{ background: "rgba(245,230,66,0.1)", border: "1px solid rgba(245,230,66,0.3)" }}>
+              <div className="flex justify-between items-center mb-2″>
                 <span className="font-bold">You (L0)</span>
-                <span className="font-black text-lg" style={{ color: "#F5E642" }}>$5,000/mo own jobs</span>
+                <span className="font-black text-lg" style={{ color: "#F5E642″ }}>$5,000/mo own jobs</span>
               </div>
               <div className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Your direct commission from jobs you close</div>
             </div>
-            <div className="rounded-xl p-5" style={{ background: "rgba(20,184,166,0.1)", border: "1px solid rgba(20,184,166,0.3)" }}>
-              <div className="flex justify-between items-center mb-2">
+            <div className="rounded-xl p-5″ style={{ background: "rgba(20,184,166,0.1)", border: "1px solid rgba(20,184,166,0.3)" }}>
+              <div className="flex justify-between items-center mb-2″>
                 <span className="font-bold">L1 — 10 direct recruits @ $3,000/mo avg</span>
-                <span className="font-black text-lg" style={{ color: "#14B8A6" }}>${l1Income.toLocaleString()}/mo</span>
+                <span className="font-black text-lg" style={{ color: "#14B8A6″ }}>${l1Income.toLocaleString()}/mo</span>
               </div>
               <div className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>7% × $3,000 × 10 recruits</div>
             </div>
-            <div className="rounded-xl p-5" style={{ background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.3)" }}>
-              <div className="flex justify-between items-center mb-2">
+            <div className="rounded-xl p-5″ style={{ background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.3)" }}>
+              <div className="flex justify-between items-center mb-2″>
                 <span className="font-bold">L2 — 50 recruits (each L1 recruits 5) @ $2,500/mo avg</span>
                 <span className="font-black text-lg" style={{ color: "#60A5FA" }}>${l2Income.toLocaleString()}/mo</span>
               </div>
               <div className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>4% × $2,500 × 50 recruits</div>
             </div>
-            <div className="rounded-xl p-5" style={{ background: "rgba(168,85,247,0.1)", border: "1px solid rgba(168,85,247,0.3)" }}>
-              <div className="flex justify-between items-center mb-2">
+            <div className="rounded-xl p-5″ style={{ background: "rgba(168,85,247,0.1)", border: "1px solid rgba(168,85,247,0.3)" }}>
+              <div className="flex justify-between items-center mb-2″>
                 <span className="font-bold">L3 — 250 recruits (each L2 recruits 5) @ $2,000/mo avg</span>
                 <span className="font-black text-lg" style={{ color: "#C084FC" }}>${l3Income.toLocaleString()}/mo</span>
               </div>
@@ -241,9 +241,9 @@ export default function ProRecruitingGuide() {
           <div className="flex items-center justify-between p-5 rounded-xl" style={{ background: "rgba(245,230,66,0.15)", border: "1px solid rgba(245,230,66,0.4)" }}>
             <div>
               <div className="font-black text-xl">Total Monthly Income</div>
-              <div className="text-sm mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>Your jobs + 3 levels of network passive</div>
+              <div className="text-sm mt-0.5″ style={{ color: "rgba(255,255,255,0.5)" }}>Your jobs + 3 levels of network passive</div>
             </div>
-            <div className="font-black text-3xl" style={{ color: "#F5E642" }}>
+            <div className="font-black text-3xl" style={{ color: "#F5E642″ }}>
               ${(5000 + totalPassive).toLocaleString()}/mo
             </div>
           </div>
@@ -252,22 +252,22 @@ export default function ProRecruitingGuide() {
         {/* CTA */}
         <div className="mt-10 text-center">
           <Link href="/apply">
-            <span className="inline-flex items-center gap-2 font-bold px-10 py-5 rounded-2xl cursor-pointer text-lg" style={{ background: "#14B8A6", color: "white" }}>
-              Apply to Join ProLnk <ArrowRight className="w-5 h-5" />
+            <span className="inline-flex items-center gap-2 font-bold px-10 py-5 rounded-2xl cursor-pointer text-lg" style={{ background: "#14B8A6″, color: "white" }}>
+              Apply to Join ProLnk <ArrowRight className="w-5 h-5″ />
             </span>
           </Link>
-          <p className="mt-3 text-sm" style={{ color: "#6B7280" }}>90-day free trial · No credit card required · Lock your founding rate</p>
+          <p className="mt-3 text-sm" style={{ color: "#6B7280″ }}>90-day free trial · No credit card required · Lock your founding rate</p>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="px-6 py-8 border-t mt-4" style={{ borderColor: "#E5E7EB" }}>
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <footer className="px-6 py-8 border-t mt-4″ style={{ borderColor: "#E5E7EB" }}>
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3″>
           <Link href="/">
-            <span className="font-black text-lg cursor-pointer" style={{ color: "#0A1628" }}>Pro<span style={{ color: "#F5E642" }}>Lnk</span></span>
+            <span className="font-black text-lg cursor-pointer" style={{ color: "#0A1628″ }}>Pro<span style={{ color: "#F5E642" }}>Lnk</span></span>
           </Link>
           <p className="text-xs" style={{ color: "#9CA3AF" }}>© 2026 ProLnk. All rights reserved.</p>
-          <div className="flex gap-4 text-xs" style={{ color: "#6B7280" }}>
+          <div className="flex gap-4 text-xs" style={{ color: "#6B7280″ }}>
             <Link href="/"><span className="cursor-pointer hover:underline">Home</span></Link>
             <Link href="/apply"><span className="cursor-pointer hover:underline">Apply</span></Link>
             <Link href="/pricing"><span className="cursor-pointer hover:underline">Pricing</span></Link>

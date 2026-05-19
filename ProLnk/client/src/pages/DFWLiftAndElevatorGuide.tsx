@@ -11,7 +11,7 @@ function getRecommendation(floors: string, usage: string, budget: string) {
   const b = parseInt(budget) || 30000;
   if (f <= 2 && b < 20000) return { rec: 'Platform Lift / LULA', cost: '$8,000–$20,000', req: 'No structural hoistway needed. 110V outlet, 5\’x5\’ footprint minimum.', maint: '$300–$600/year' };
   if (b < 35000 || usage === 'Occasional') return { rec: 'Pneumatic Vacuum Elevator', cost: '$20,000–$35,000', req: 'No pit or machine room. Self-supporting cylinder. 110–220V power.', maint: '$400–$800/year' };
-  return { rec: 'Traditional Hydraulic Elevator', cost: '$30,000–$55,000', req: 'Structural hoistway, machine room, 3"–4" pit. 220V dedicated circuit.', maint: '$600–$1,200/year' };
+  return { rec: 'Traditional Hydraulic Elevator', cost: '$30,000–$55,000', req: 'Structural hoistway, machine room, 3″–4″ pit. 220V dedicated circuit.', maint: '$600–$1,200/year' };
 }
 
 export default function DFWLiftAndElevatorGuide() {
@@ -25,7 +25,7 @@ export default function DFWLiftAndElevatorGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '4px 12px', borderRadius: 4, fontSize: 12, fontWeight: 700 }}>DFW ACCESSIBILITY</span>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642' }}>🛗 Residential Lift & Elevator Guide — DFW</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642′ }}>🛗 Residential Lift & Elevator Guide — DFW</h1>
           <p style={{ color: '#8A9BB5', lineHeight: 1.6 }}>DFW's larger homes and aging population make residential elevators more common than the national average. Choose the right system for your floors, usage, and budget.</p>
         </div>
 
@@ -38,7 +38,7 @@ export default function DFWLiftAndElevatorGuide() {
           ].map(c => (
             <div key={c.label} style={{ background: '#0F2035', borderRadius: 8, padding: '1rem', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 13, color: '#8A9BB5', marginBottom: 4 }}>{c.label}</div>
-              <div style={{ fontWeight: 600, color: '#E8EDF5' }}>{c.val}</div>
+              <div style={{ fontWeight: 600, color: '#E8EDF5′ }}>{c.val}</div>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function DFWLiftAndElevatorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended: {result.rec}</h3>
             {[['Estimated Cost', result.cost], ['Installation Requirements', result.req], ['Annual Maintenance', result.maint]].map(([k, v]) => (
               <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1E3A5F' }}>

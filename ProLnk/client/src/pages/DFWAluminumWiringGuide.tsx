@@ -42,13 +42,13 @@ export default function DFWAluminumWiringGuide() {
           <p style={{ color: '#8899BB', marginTop: 12, fontSize: 16 }}>1965–1973 DFW homes — what aluminum branch circuits mean for safety and insurance</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>📅 The Aluminum Wiring Window</h2>
-          <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>During 1965–1973, copper prices surged and builders switched to aluminum for branch circuit wiring (outlets, switches, lighting). Homes built in this era across <strong style={{ color: '#F5E642' }}>Garland, Irving, Mesquite, Plano, and North Dallas suburbs</strong> often have aluminum wiring throughout.</p>
+          <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>During 1965–1973, copper prices surged and builders switched to aluminum for branch circuit wiring (outlets, switches, lighting). Homes built in this era across <strong style={{ color: '#F5E642′ }}>Garland, Irving, Mesquite, Plano, and North Dallas suburbs</strong> often have aluminum wiring throughout.</p>
           <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>Aluminum expands and contracts more than copper with heat cycling. Over decades this causes connections to loosen, arc, and overheat — a known fire risk. The CPSC has documented aluminum-wired homes as 55× more likely to have a fire hazard connection.</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔍 How to Identify Aluminum Wiring</h2>
           <ul style={{ color: '#C8D8EE', lineHeight: 2 }}>
             <li>Check the main panel — aluminum service entrance wires are normal; look for silver branch circuit wires</li>
@@ -59,20 +59,20 @@ export default function DFWAluminumWiringGuide() {
           </ul>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🏦 Insurance Disclosure Requirement</h2>
           <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>Texas homeowner insurance applications ask about wiring type. Failing to disclose aluminum wiring can void your coverage. Many DFW insurers require proof of remediation (pigtailing certificate or full rewire permit) to write or renew a policy on aluminum-wired homes.</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🧮 Remediation Options Estimator</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#8899BB', display: 'block', marginBottom: 6 }}>Home construction vintage</label>
             <select value={vintage} onChange={e => setVintage(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, background: '#0A1628', border: '1px solid #2A4070', color: '#E8EDF5', fontSize: 15 }}>
               <option value="">Select...</option>
-              <option value="pre-1965">Before 1965</option>
-              <option value="1965-1973">1965 – 1973</option>
-              <option value="post-1973">After 1973</option>
+              <option value="pre-1965″>Before 1965</option>
+              <option value="1965-1973″>1965 – 1973</option>
+              <option value="post-1973″>After 1973</option>
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>

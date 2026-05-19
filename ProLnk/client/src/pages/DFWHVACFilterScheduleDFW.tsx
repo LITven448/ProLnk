@@ -41,17 +41,17 @@ export default function DFWHVACFilterScheduleDFW() {
           <div>
             <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '6px' }}>DFW SEASON</div>
             <div style={{ display: 'flex', gap: '8px' }}>
-              <button onClick={() => setSeason('may_oct')} style={{ padding: '8px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: season === 'may_oct' ? '#F5E642' : '#1E2D45', color: season === 'may_oct' ? '#0A1628' : '#E8EDF5' }}>☀️ May–Oct</button>
-              <button onClick={() => setSeason('nov_apr')} style={{ padding: '8px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: season === 'nov_apr' ? '#F5E642' : '#1E2D45', color: season === 'nov_apr' ? '#0A1628' : '#E8EDF5' }}>❄️ Nov–Apr</button>
+              <button onClick={() => setSeason('may_oct')} style={{ padding: '8px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: season === 'may_oct' ? '#F5E642′ : '#1E2D45', color: season === ’may_oct' ? '#0A1628′ : '#E8EDF5' }}>☀️ May–Oct</button>
+              <button onClick={() => setSeason('nov_apr')} style={{ padding: '8px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: season === 'nov_apr' ? '#F5E642′ : '#1E2D45', color: season === ’nov_apr' ? '#0A1628′ : '#E8EDF5' }}>❄️ Nov–Apr</button>
             </div>
           </div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px', marginBottom: '20px' }}>
           {(Object.keys(featureOverrides) as HomeFeature[]).map(f => (
-            <button key={f} onClick={() => setFeature(f)} style={{ padding: '12px', borderRadius: '10px', border: feature === f ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
+            <button key={f} onClick={() => setFeature(f)} style={{ padding: '12px', borderRadius: '10px', border: feature === f ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
               <div style={{ fontSize: '18px', marginBottom: '4px' }}>{featureOverrides[f].emoji}</div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: feature === f ? '#F5E642' : '#E8EDF5' }}>{featureOverrides[f].label}</div>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: feature === f ? '#F5E642′ : '#E8EDF5' }}>{featureOverrides[f].label}</div>
             </button>
           ))}
         </div>
@@ -59,20 +59,20 @@ export default function DFWHVACFilterScheduleDFW() {
         <div style={{ backgroundColor: '#1E2D45', borderRadius: '12px', padding: '20px', marginBottom: '16px' }}>
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>BASE INTERVAL FOR THIS SEASON</div>
           <div style={{ fontSize: '24px', fontWeight: 700, color: '#F5E642', marginBottom: '6px' }}>{base.interval}</div>
-          <div style={{ fontSize: '13px', color: '#94A3B8' }}>{base.reason}</div>
+          <div style={{ fontSize: '13px', color: '#94A3B8′ }}>{base.reason}</div>
         </div>
 
         {feature !== 'standard' && (
           <div style={{ backgroundColor: '#0D2137', border: '1px solid #F59E0B', borderRadius: '10px', padding: '16px', marginBottom: '16px' }}>
             <div style={{ fontSize: '12px', color: '#F59E0B', fontWeight: 700, marginBottom: '6px' }}>⚠️ ADJUSTMENT FOR YOUR HOME</div>
-            <div style={{ fontSize: '14px', color: '#E8EDF5' }}>{override.adjustment}</div>
+            <div style={{ fontSize: '14px', color: '#E8EDF5′ }}>{override.adjustment}</div>
           </div>
         )}
 
         <div style={{ backgroundColor: '#1E2D45', borderRadius: '12px', padding: '20px' }}>
           <div style={{ fontSize: '13px', fontWeight: 700, color: '#F5E642', marginBottom: '12px' }}>📱 Reminder Setup Tips</div>
           {reminderTips.map((tip, i) => (
-            <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', fontSize: '13px', color: '#CBD5E1' }}>
+            <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', fontSize: '13px', color: '#CBD5E1′ }}>
               <span style={{ color: '#F5E642', flexShrink: 0 }}>{i + 1}.</span><span>{tip}</span>
             </div>
           ))}

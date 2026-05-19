@@ -36,7 +36,7 @@ export default function InsuranceForContractors() {
   const costs = trade ? COST_RANGES[trade] : null;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827' }}>
+    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 12 }}>
           <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
@@ -101,7 +101,7 @@ export default function InsuranceForContractors() {
                 ].map(item => (
                   <div key={item.label} style={{ background: '#fff', border: '1px solid #d1fae5', borderRadius: 8, padding: 14 }}>
                     <div style={{ fontSize: 13, color: '#6b7280', marginBottom: 4 }}>{item.label}</div>
-                    <div style={{ fontSize: 18, fontWeight: 700, color: '#111827' }}>{item.value}</div>
+                    <div style={{ fontSize: 18, fontWeight: 700, color: '#111827′ }}>{item.value}</div>
                     {item.required && (
                       <div style={{ fontSize: 11, color: '#dc2626', fontWeight: 600, marginTop: 4 }}>REQUIRED by ProLnk</div>
                     )}
@@ -109,7 +109,7 @@ export default function InsuranceForContractors() {
                 ))}
               </div>
               {state && (
-                <p style={{ marginTop: 14, fontSize: 13, color: '#6b7280' }}>
+                <p style={{ marginTop: 14, fontSize: 13, color: '#6b7280′ }}>
                   Note: Rates in {state.toUpperCase()} may vary. Workers comp rates depend on payroll volume.
                 </p>
               )}
@@ -137,7 +137,7 @@ export default function InsuranceForContractors() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🏆 Recommended Providers</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {PROVIDERS.map((p, i) => (
-              <div key={p.name} style={{ display: 'flex', alignItems: 'flex-start', gap: 16, padding: 16, background: '#f9fafb', borderRadius: 10, border: '1px solid #f3f4f6' }}>
+              <div key={p.name} style={{ display: 'flex', alignItems: 'flex-start', gap: 16, padding: 16, background: '#f9fafb', borderRadius: 10, border: '1px solid #f3f4f6′ }}>
                 <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#0369a1', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, flexShrink: 0 }}>
                   {i + 1}
                 </div>
@@ -157,7 +157,7 @@ export default function InsuranceForContractors() {
         <div style={{ background: '#fef3c7', border: '1px solid #fcd34d', borderRadius: 12, padding: 24 }}>
           <h3 style={{ fontWeight: 700, fontSize: 16, margin: '0 0 8px' }}>⚠️ Why ProLnk Requires Insurance</h3>
           <p style={{ fontSize: 14, color: '#78350f', margin: 0, lineHeight: 1.7 }}>
-            We guarantee homeowners that every pro they're matched with is vetted and insured. If a pro isn't covered and something goes wrong, the homeowner is left exposed. ProLnk's reputation — and your ability to earn — depends on every partner being properly insured. Proof of insurance is required before your first match is delivered.
+            We guarantee homeowners that every pro they're matched with is vetted and insured. If a pro isn’t covered and something goes wrong, the homeowner is left exposed. ProLnk’s reputation — and your ability to earn — depends on every partner being properly insured. Proof of insurance is required before your first match is delivered.
           </p>
         </div>
       </div>

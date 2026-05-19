@@ -64,13 +64,13 @@ export default function DFWFireplaceGasRiskGuide() {
           <label style={{ fontWeight: 600, display: 'block', marginBottom: 8 }}>Fireplace Type</label>
           <div style={{ display: 'grid', gap: 10, marginBottom: 16 }}>
             {fireplaceTypes.map(f => (
-              <button key={f.key} onClick={() => setFpType(f.key)} style={{ background: fpType === f.key ? '#F5E642' : '#0A1628', color: fpType === f.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontSize: 14, textAlign: 'left', fontWeight: fpType === f.key ? 700 : 400 }}>{f.label}</button>
+              <button key={f.key} onClick={() => setFpType(f.key)} style={{ background: fpType === f.key ? '#F5E642′ : '#0A1628', color: fpType === f.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontSize: 14, textAlign: 'left', fontWeight: fpType === f.key ? 700 : 400 }}>{f.label}</button>
             ))}
           </div>
           <label style={{ fontWeight: 600, display: 'block', marginBottom: 8 }}>Usage Frequency</label>
           <div style={{ display: 'grid', gap: 10 }}>
             {usageOptions.map(u => (
-              <button key={u.key} onClick={() => setUsage(u.key)} style={{ background: usage === u.key ? '#F5E642' : '#0A1628', color: usage === u.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontSize: 14, textAlign: 'left', fontWeight: usage === u.key ? 700 : 400 }}>{u.label}</button>
+              <button key={u.key} onClick={() => setUsage(u.key)} style={{ background: usage === u.key ? '#F5E642′ : '#0A1628', color: usage === u.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontSize: 14, textAlign: 'left', fontWeight: usage === u.key ? 700 : 400 }}>{u.label}</button>
             ))}
           </div>
         </div>
@@ -81,9 +81,9 @@ export default function DFWFireplaceGasRiskGuide() {
               <div style={{ fontWeight: 700, color: res.riskColor }}>{res.risk}</div>
             </div>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>✅ Before-Use Safety Checklist</h3>
-            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{res.checklist.map((c, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5' }}>{c}</li>)}</ul>
+            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{res.checklist.map((c, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5′ }}>{c}</li>)}</ul>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>🔧 Annual Maintenance</h3>
-            <ul style={{ paddingLeft: 20 }}>{res.maintenance.map((m, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5' }}>{m}</li>)}</ul>
+            <ul style={{ paddingLeft: 20 }}>{res.maintenance.map((m, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5′ }}>{m}</li>)}</ul>
           </div>
         )}
       </div>

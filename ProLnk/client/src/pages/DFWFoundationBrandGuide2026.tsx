@@ -66,7 +66,7 @@ export default function DFWFoundationBrandGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {Object.keys(selectionGuide).map(n => (
               <button key={n} onClick={() => setNeed(n)}
-                style={{ background: need === n ? '#F5E642' : '#0A1628', color: need === n ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
+                style={{ background: need === n ? '#F5E642′ : '#0A1628', color: need === n ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: ’pointer', fontSize: 12, fontWeight: 600 }}>
                 {n}
               </button>
             ))}

@@ -37,21 +37,21 @@ export default function DFWCircuitBreakerGuide() {
           <p style={{ color: '#8899BB', marginTop: 12, fontSize: 16 }}>Tripping breakers, dangerous panel brands, and when to upgrade — for DFW homeowners</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>☀️ Why DFW Summer Kills Circuits</h2>
-          <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>DFW summers push central AC units to run near-continuously from June through September. AC compressors draw 15–50 amps each. Older homes with 100-amp service and original wiring weren't designed for modern HVAC loads — add a mini-split, EV charger, or pool pump and you've got a chronic overload problem.</p>
+          <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>DFW summers push central AC units to run near-continuously from June through September. AC compressors draw 15–50 amps each. Older homes with 100-amp service and original wiring weren't designed for modern HVAC loads — add a mini-split, EV charger, or pool pump and you’ve got a chronic overload problem.</p>
           <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>Tripping breakers are a symptom, not a problem in themselves — unless your breaker is a brand known to not trip reliably.</p>
         </div>
 
-        <div style={{ background: '#FF1111', borderRadius: 12, padding: 24, marginBottom: 24, border: '2px solid #FF4444' }}>
+        <div style={{ background: '#FF1111', borderRadius: 12, padding: 24, marginBottom: 24, border: '2px solid #FF4444′ }}>
           <h2 style={{ color: '#FFFFFF', marginTop: 0, fontSize: 20 }}>🚨 Dangerous Breaker Brands in DFW Homes</h2>
           <p style={{ color: '#FFEEEE', lineHeight: 1.7, margin: 0 }}><strong>Federal Pacific Electric (Stab-Lok)</strong> and <strong>Zinsco / GTE-Sylvania</strong> panels are documented fire hazards still present in tens of thousands of DFW homes built 1960–1985. If you have either, replacement is urgent — not optional.</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>📊 Add Circuits vs Upgrade Panel</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>➕ Add Circuits When:</div>
               <ul style={{ color: '#C8D8EE', margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
                 <li>Safe panel with open slots</li>
@@ -60,7 +60,7 @@ export default function DFWCircuitBreakerGuide() {
                 <li>EV charger needed</li>
               </ul>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #2A4070′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔄 Upgrade Panel When:</div>
               <ul style={{ color: '#C8D8EE', margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
                 <li>FPE/Zinsco/Pushmatic brand</li>
@@ -72,15 +72,15 @@ export default function DFWCircuitBreakerGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🧮 Safety Assessment & Cost Estimator</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#8899BB', display: 'block', marginBottom: 6 }}>Home construction vintage</label>
             <select value={vintage} onChange={e => setVintage(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, background: '#0A1628', border: '1px solid #2A4070', color: '#E8EDF5', fontSize: 15 }}>
               <option value="">Select...</option>
-              <option value="pre-1960">Before 1960</option>
-              <option value="1960-1985">1960 – 1985</option>
-              <option value="post-1985">After 1985</option>
+              <option value="pre-1960″>Before 1960</option>
+              <option value="1960-1985″>1960 – 1985</option>
+              <option value="post-1985″>After 1985</option>
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
@@ -93,12 +93,12 @@ export default function DFWCircuitBreakerGuide() {
               <option value="cutler">Cutler-Hammer / Eaton</option>
               <option value="square-d">Square D / Homeline / QO</option>
               <option value="siemens">Siemens / Murray</option>
-              <option value="unknown">Don't know / Can't read label</option>
+              <option value="unknown">Don't know / Can’t read label</option>
             </select>
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 28px', borderRadius: 8, fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Assess My Panel →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 20, borderRadius: 10, border: `2px solid ${result.color}`, background: '#0A1628' }}>
+            <div style={{ marginTop: 20, padding: 20, borderRadius: 10, border: `2px solid ${result.color}`, background: '#0A1628′ }}>
               <div style={{ color: result.color, fontWeight: 700, fontSize: 18, marginBottom: 8 }}>🛡️ {result.safety}</div>
               <div style={{ color: '#F5E642', marginBottom: 6 }}>⏰ Urgency: {result.urgency}</div>
               <div style={{ color: '#C8D8EE', marginBottom: 10 }}>💰 Est. Cost: {result.cost}</div>

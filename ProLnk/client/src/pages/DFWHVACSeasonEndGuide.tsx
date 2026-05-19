@@ -63,7 +63,7 @@ export default function DFWHVACSeasonEndGuide() {
           <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 12 }}>Which transition are you preparing for?</div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {(['cooling', 'heating'] as const).map(s => (
-              <button key={s} onClick={() => setSelected(s)} style={{ padding: '10px 20px', borderRadius: 8, border: `2px solid ${selected === s ? '#F5E642' : '#1e3a5f'}`, background: selected === s ? '#F5E642' : 'transparent', color: selected === s ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
+              <button key={s} onClick={() => setSelected(s)} style={{ padding: '10px 20px', borderRadius: 8, border: `2px solid ${selected === s ? '#F5E642' : '#1e3a5f'}`, background: selected === s ? '#F5E642′ : ’transparent', color: selected === s ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600 }}>
                 {s === 'cooling' ? '❄️ End of Cooling (October)' : '🔥 End of Heating (March)'}
               </button>
             ))}
@@ -75,7 +75,7 @@ export default function DFWHVACSeasonEndGuide() {
             <div style={{ background: '#0f2236', borderRadius: 12, padding: 24, marginBottom: 20 }}>
               <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>✅ {data.label} Checklist</h2>
               {data.checklist.map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#cbd5e1' }}>
+                <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#cbd5e1′ }}>
                   <span style={{ color: '#F5E642', flexShrink: 0 }}>☐</span>
                   <span>{item}</span>
                 </div>
@@ -84,7 +84,7 @@ export default function DFWHVACSeasonEndGuide() {
             <div style={{ background: '#0f2236', borderRadius: 12, padding: 24 }}>
               <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>🔜 Prepare for Next Season</h2>
               {data.nextSeason.map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#cbd5e1' }}>
+                <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#cbd5e1′ }}>
                   <span style={{ color: '#38bdf8', flexShrink: 0 }}>→</span>
                   <span>{item}</span>
                 </div>
@@ -94,7 +94,7 @@ export default function DFWHVACSeasonEndGuide() {
         )}
 
         {!data && (
-          <div style={{ background: '#0f2236', borderRadius: 12, padding: 32, textAlign: 'center', color: '#94a3b8' }}>
+          <div style={{ background: '#0f2236', borderRadius: 12, padding: 32, textAlign: 'center', color: '#94a3b8′ }}>
             Select a transition above to see your checklist
           </div>
         )}

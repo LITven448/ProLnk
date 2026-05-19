@@ -43,10 +43,10 @@ export default function DFWOutdoorPlumbingGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>🏡 DFW OUTDOOR PLUMBING</div>
-          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Outdoor Plumbing Guide<br /><span style={{ color: '#F5E642' }}>for DFW Homeowners</span></h1>
+          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Outdoor Plumbing Guide<br /><span style={{ color: '#F5E642′ }}>for DFW Homeowners</span></h1>
           <p style={{ fontSize: 16, color: '#8BA3C7', maxWidth: 620, margin: 0 }}>From irrigation systems to outdoor kitchens and pool fill lines — DFW municipalities have specific permit requirements for all outdoor plumbing. Here's what you need to know before you dig.</p>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function DFWOutdoorPlumbingGuide() {
             <p style={{ color: '#C0D0E8', lineHeight: 1.7, margin: '0 0 12px' }}>Any irrigation system connected to the city water supply must have a backflow preventer to protect the public water system from contamination. Dallas Water Utilities, Fort Worth Water Department, and most DFW cities enforce this — failure to install or test annually can result in water service termination.</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               {[['Device cost + install', '$250–600'], ['Annual test required', 'Yes — every year'], ['Test cost', '$50–100'], ['Penalty for non-compliance', 'Water shutoff or fine']].map(([k, v]) => (
-                <div key={k} style={{ fontSize: 13 }}><span style={{ color: '#8BA3C7' }}>{k}: </span><span style={{ color: '#E8EDF5', fontWeight: 700 }}>{v}</span></div>
+                <div key={k} style={{ fontSize: 13 }}><span style={{ color: '#8BA3C7′ }}>{k}: </span><span style={{ color: '#E8EDF5', fontWeight: 700 }}>{v}</span></div>
               ))}
             </div>
           </div>
@@ -70,10 +70,10 @@ export default function DFWOutdoorPlumbingGuide() {
           <p style={{ color: '#C0D0E8', lineHeight: 1.7, marginBottom: 14 }}>Winter Storm Uri (February 2021) froze and burst outdoor plumbing across DFW, causing an estimated $47 billion in damage statewide. Outdoor irrigation lines, hose bibs, and pool fill lines are especially vulnerable. Annual blow-out winterization ($75–200) is the single best investment DFW homeowners can make for outdoor plumbing.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {[
-              { icon: '🌬️', step: 'Blow-out service', when: 'Before first freeze (Nov)', cost: '$75–200' },
+              { icon: '🌬️', step: 'Blow-out service', when: 'Before first freeze (Nov)', cost: '$75–200′ },
               { icon: '🔧', step: 'Insulate hose bibs', when: 'Oct–Nov', cost: '$5–15 DIY' },
               { icon: '🚰', step: 'Drain irrigation system', when: 'Before each freeze warning', cost: 'Free if winterized' },
-              { icon: '⚙️', step: 'Install freeze sensor', when: 'One time', cost: '$80–150' },
+              { icon: '⚙️', step: 'Install freeze sensor', when: 'One time', cost: '$80–150′ },
             ].map(item => (
               <div key={item.step} style={{ background: '#112240', border: '1px solid #1E3A5F', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 26 }}>{item.icon}</div>
@@ -90,7 +90,7 @@ export default function DFWOutdoorPlumbingGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ background: '#F5E642', color: '#0A1628' }}>
+                <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
                   {['City', 'When Permit Required', 'Permit Fee Range', 'Notes'].map(h => (
                     <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 800 }}>{h}</th>
                   ))}
@@ -98,7 +98,7 @@ export default function DFWOutdoorPlumbingGuide() {
               </thead>
               <tbody>
                 {Object.entries(PERMIT_CITIES).map(([cityName, info], i) => (
-                  <tr key={cityName} style={{ background: i % 2 === 0 ? '#0E1E35' : '#112240' }}>
+                  <tr key={cityName} style={{ background: i % 2 === 0 ? '#0E1E35′ : '#112240' }}>
                     <td style={{ padding: '10px 12px', color: '#F5E642', borderBottom: '1px solid #1E3A5F', fontWeight: 700 }}>{cityName}</td>
                     <td style={{ padding: '10px 12px', color: '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{info.threshold}</td>
                     <td style={{ padding: '10px 12px', color: '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{info.fee}</td>
@@ -128,7 +128,7 @@ export default function DFWOutdoorPlumbingGuide() {
                 <div>
                   <div style={{ color: '#E8EDF5', fontWeight: 700, marginBottom: 3 }}>{f.label}</div>
                   <div style={{ display: 'flex', gap: 10, marginBottom: 4 }}>
-                    <span style={{ fontSize: 12, color: f.permit ? '#FF8800' : '#4ECDC4' }}>{f.permit ? '📋 Permit required' : '✅ Usually no permit'}</span>
+                    <span style={{ fontSize: 12, color: f.permit ? '#FF8800′ : '#4ECDC4' }}>{f.permit ? '📋 Permit required' : '✅ Usually no permit'}</span>
                     <span style={{ fontSize: 12, color: '#F5E642', fontWeight: 700 }}>{f.cost}</span>
                   </div>
                   <div style={{ color: '#8BA3C7', fontSize: 13, lineHeight: 1.5 }}>{f.desc}</div>
@@ -137,7 +137,7 @@ export default function DFWOutdoorPlumbingGuide() {
             ))}
           </div>
 
-          <button onClick={() => setShowResult(true)} disabled={selected.size === 0} style={{ background: selected.size > 0 ? '#F5E642' : '#1E3A5F', color: '#0A1628', border: 'none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: selected.size > 0 ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 20 }}>
+          <button onClick={() => setShowResult(true)} disabled={selected.size === 0} style={{ background: selected.size > 0 ? '#F5E642′ : '#1E3A5F', color: '#0A1628', border: ’none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: selected.size > 0 ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 20 }}>
             View Permit Requirements + Cost Estimate
           </button>
 
@@ -146,19 +146,19 @@ export default function DFWOutdoorPlumbingGuide() {
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
                   <div>
-                    <div style={{ fontSize: 12, color: '#8BA3C7' }}>ESTIMATED TOTAL COST</div>
-                    <div style={{ fontSize: 28, fontWeight: 900, color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
+                    <div style={{ fontSize: 12, color: '#8BA3C7′ }}>ESTIMATED TOTAL COST</div>
+                    <div style={{ fontSize: 28, fontWeight: 900, color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: 12, color: '#8BA3C7' }}>PERMIT NEEDED?</div>
-                    <div style={{ fontSize: 18, fontWeight: 800, color: needsPermit ? '#FF8800' : '#4ECDC4' }}>{needsPermit ? '⚠️ YES' : '✅ Not Required'}</div>
+                    <div style={{ fontSize: 12, color: '#8BA3C7′ }}>PERMIT NEEDED?</div>
+                    <div style={{ fontSize: 18, fontWeight: 800, color: needsPermit ? '#FF8800′ : '#4ECDC4' }}>{needsPermit ? '⚠️ YES' : '✅ Not Required'}</div>
                   </div>
                 </div>
                 {needsPermit && cityInfo && (
                   <div style={{ background: '#112240', borderRadius: 8, padding: '12px 16px', fontSize: 13 }}>
                     <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>{city} Permit Info</div>
                     <div style={{ color: '#C0D0E8', marginBottom: 3 }}>Fee: {cityInfo.fee}</div>
-                    <div style={{ color: '#8BA3C7' }}>{cityInfo.notes}</div>
+                    <div style={{ color: '#8BA3C7′ }}>{cityInfo.notes}</div>
                   </div>
                 )}
               </div>

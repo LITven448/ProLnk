@@ -40,7 +40,7 @@ export default function DFWWindowSealGuide() {
               <div style={{ fontSize: 12, color: '#94A3B8', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>{label}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {opts.map(o => (
-                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642' : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 13, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
+                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642′ : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 13, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
                 ))}
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function DFWWindowSealGuide() {
             </div>
           </div>
         ) : (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8' }}>Select window age and observed issues to get your seal inspection checklist and repair cost estimate.</div>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8′ }}>Select window age and observed issues to get your seal inspection checklist and repair cost estimate.</div>
         )}
         {windowCount && (
           <div style={{ background: '#1A2D4A', borderRadius: 10, padding: '16px 20px', marginTop: 16 }}>

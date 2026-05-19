@@ -44,15 +44,15 @@ export default function DFWRoofShingleColorGuide() {
         </p>
 
         <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '.5rem' }}>☀️ Heat Absorption in DFW</div>
             <p style={{ color: '#9AAAB8', margin: 0, fontSize: '.95rem' }}>Dark shingles (black, dark charcoal) can reach surface temps of 150-170°F on DFW summer days, raising attic temps 20-30°F and increasing AC runtime. Light colors reflect more UV and keep attic temps cooler — critical for homes without spray foam insulation.</p>
           </div>
-          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #3B82F6' }}>
+          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #3B82F6′ }}>
             <div style={{ fontWeight: 600, color: '#3B82F6', marginBottom: '.5rem' }}>🏘️ HOA Color Restrictions</div>
             <p style={{ color: '#9AAAB8', margin: 0, fontSize: '.95rem' }}>DFW HOAs — especially in Frisco, Allen, Prosper, and Southlake — commonly maintain an approved color list. Reds, blues, greens, and stark whites are frequently rejected. Grays, tans, and weathered earth tones pass most committees.</p>
           </div>
-          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #10B981' }}>
+          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #10B981′ }}>
             <div style={{ fontWeight: 600, color: '#10B981', marginBottom: '.5rem' }}>💰 Insurance Color Discounts</div>
             <p style={{ color: '#9AAAB8', margin: 0, fontSize: '.95rem' }}>Some DFW carriers offer 3-7% premium discounts for Class 4 impact-resistant shingles in lighter colors. Call your carrier before ordering — color can be a qualifying factor in combination with impact rating.</p>
           </div>
@@ -85,11 +85,11 @@ export default function DFWRoofShingleColorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>Your DFW Color Recommendation</h3>
-            <div style={{ marginBottom: '.75rem' }}><span style={{ color: '#9AAAB8' }}>Recommended Color: </span><strong style={{ color: '#E8EDF5' }}>{result.color}</strong></div>
-            <div style={{ marginBottom: '.75rem' }}><span style={{ color: '#9AAAB8' }}>Resale Neutrality Score: </span><strong style={{ color: '#10B981' }}>{result.resale}/100</strong></div>
-            <div style={{ marginBottom: '.75rem' }}><span style={{ color: '#9AAAB8' }}>DFW Energy Impact: </span><span style={{ color: '#E8EDF5' }}>{result.energyImpact}</span></div>
+            <div style={{ marginBottom: '.75rem' }}><span style={{ color: '#9AAAB8′ }}>Recommended Color: </span><strong style={{ color: '#E8EDF5' }}>{result.color}</strong></div>
+            <div style={{ marginBottom: '.75rem' }}><span style={{ color: '#9AAAB8′ }}>Resale Neutrality Score: </span><strong style={{ color: '#10B981' }}>{result.resale}/100</strong></div>
+            <div style={{ marginBottom: '.75rem' }}><span style={{ color: '#9AAAB8′ }}>DFW Energy Impact: </span><span style={{ color: '#E8EDF5' }}>{result.energyImpact}</span></div>
             <div style={{ color: '#E8EDF5', marginTop: '.5rem' }}>{result.hoaNote}</div>
           </div>
         )}

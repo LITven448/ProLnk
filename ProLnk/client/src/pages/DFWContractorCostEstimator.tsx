@@ -55,33 +55,33 @@ export default function DFWContractorCostEstimator() {
         <h1 style={{ color: '#F5E642', fontSize: '1.8rem', marginBottom: 4 }}>DFW Contractor Cost Estimator</h1>
         <p style={{ color: '#aaa', marginBottom: '2rem' }}>Estimate project costs across DFW submarkets for 10 major trade categories.</p>
 
-        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642' }}>Project Type</label>
+        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642′ }}>Project Type</label>
         <select value={project} onChange={e => setProject(e.target.value)}
           style={{ width: '100%', padding: '0.6rem', background: '#1a2a44', color: '#fff', border: '1px solid #2a3a54', borderRadius: 6, marginBottom: '1.2rem' }}>
           {Object.keys(PROJECT_TYPES).map(p => <option key={p}>{p}</option>)}
         </select>
 
-        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642' }}>DFW Submarket</label>
+        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642′ }}>DFW Submarket</label>
         <select value={area} onChange={e => setArea(e.target.value)}
           style={{ width: '100%', padding: '0.6rem', background: '#1a2a44', color: '#fff', border: '1px solid #2a3a54', borderRadius: 6, marginBottom: '1.2rem' }}>
           {Object.keys(AREA_MULTIPLIERS).map(a => <option key={a}>{a}</option>)}
         </select>
 
-        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642' }}>Home Size</label>
+        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642′ }}>Home Size</label>
         <select value={size} onChange={e => setSize(e.target.value)}
           style={{ width: '100%', padding: '0.6rem', background: '#1a2a44', color: '#fff', border: '1px solid #2a3a54', borderRadius: 6, marginBottom: '1.2rem' }}>
           {Object.keys(SIZE_MULTIPLIERS).map(s => <option key={s}>{s}</option>)}
         </select>
 
-        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642' }}>Project Scope: {scope}%</label>
+        <label style={{ display: 'block', marginBottom: 6, color: '#F5E642′ }}>Project Scope: {scope}%</label>
         <input type="range" min={10} max={100} value={scope} onChange={e => setScope(Number(e.target.value))}
-          style={{ width: '100%', marginBottom: '2rem', accentColor: '#F5E642' }} />
+          style={{ width: '100%', marginBottom: '2rem', accentColor: '#F5E642′ }} />
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
           {[{ label: '📉 Low', val: low, bg: '#0d2a1a' }, { label: '📊 Mid', val: mid, bg: '#1a2a0d' }, { label: '📈 High', val: high, bg: '#2a1a0d' }].map(({ label, val, bg }) => (
             <div key={label} style={{ background: bg, border: '1px solid #2a3a54', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: '1rem', marginBottom: 6 }}>{label}</div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F5E642' }}>{fmt(val)}</div>
+              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F5E642′ }}>{fmt(val)}</div>
             </div>
           ))}
         </div>

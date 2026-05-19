@@ -37,7 +37,7 @@ export default function DFWRoofSlopeGuide2026() {
                 <span style={{ fontSize: 32 }}>{p.icon}</span>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                    <h3 style={{ margin: 0, color: '#F5E642' }}>{p.range}</h3>
+                    <h3 style={{ margin: 0, color: '#F5E642′ }}>{p.range}</h3>
                     <span style={{ fontSize: 12, background: p.color, color: '#0A1628', padding: '2px 10px', borderRadius: 20, fontWeight: 700 }}>{p.label}</span>
                   </div>
                   <p style={{ margin: '4px 0 0', color: '#94a3b8', fontSize: 13 }}>{p.note}</p>
@@ -46,12 +46,12 @@ export default function DFWRoofSlopeGuide2026() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, marginBottom: 10 }}>
                 {[['🏗️ Material', p.material], ['⛈️ DFW Hail Risk', p.hail], ['💰 Cost Impact', p.cost], ['🌊 Drainage', p.drainage]].map(([label, val]) => (
                   <div key={String(label)} style={{ background: '#0A1628', padding: '8px 10px', borderRadius: 8 }}>
-                    <p style={{ margin: 0, fontSize: 10, color: '#94a3b8' }}>{label}</p>
-                    <p style={{ margin: '2px 0 0', fontSize: 12, color: '#cbd5e1' }}>{val}</p>
+                    <p style={{ margin: 0, fontSize: 10, color: '#94a3b8′ }}>{label}</p>
+                    <p style={{ margin: '2px 0 0', fontSize: 12, color: '#cbd5e1′ }}>{val}</p>
                   </div>
                 ))}
               </div>
-              {!p.shingles && <div style={{ padding: '8px 12px', background: '#ef444422', borderRadius: 8, borderLeft: '3px solid #ef4444' }}><p style={{ margin: 0, color: '#ef4444', fontSize: 13, fontWeight: 600 }}>⚠️ Standard shingles NOT allowed at this pitch — specialty system required</p></div>}
+              {!p.shingles && <div style={{ padding: '8px 12px', background: '#ef444422', borderRadius: 8, borderLeft: '3px solid #ef4444′ }}><p style={{ margin: 0, color: '#ef4444', fontSize: 13, fontWeight: 600 }}>⚠️ Standard shingles NOT allowed at this pitch — specialty system required</p></div>}
             </div>
           ))}
         </div>
@@ -61,7 +61,7 @@ export default function DFWRoofSlopeGuide2026() {
           <div style={{ display: 'flex', gap: 12, marginBottom: 16, alignItems: 'flex-end' }}>
             <div style={{ flex: 1 }}>
               <label style={{ color: '#94a3b8', fontSize: 14 }}>Rise (X in X:12 pitch)</label>
-              <input type="number" value={rise} onChange={e => { setRise(e.target.value); setShowResult(false); }} placeholder="e.g. 6" min="1" max="24" style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
+              <input type="number" value={rise} onChange={e => { setRise(e.target.value); setShowResult(false); }} placeholder="e.g. 6″ min="1" max="24" style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
             </div>
             <div style={{ padding: '10px 16px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#94a3b8', fontSize: 14, whiteSpace: 'nowrap' }}>:12 run</div>
           </div>
@@ -77,7 +77,7 @@ export default function DFWRoofSlopeGuide2026() {
               <p style={{ margin: 0, color: '#cbd5e1', fontSize: 14 }}>{matched.note}</p>
             </div>
           )}
-          {showResult && !matched && <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8 }}><p style={{ margin: 0, color: '#ef4444' }}>Please enter a rise value between 1 and 24.</p></div>}
+          {showResult && !matched && <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8 }}><p style={{ margin: 0, color: '#ef4444′ }}>Please enter a rise value between 1 and 24.</p></div>}
         </div>
       </div>
     </div>

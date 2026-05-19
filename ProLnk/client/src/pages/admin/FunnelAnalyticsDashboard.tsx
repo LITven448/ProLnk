@@ -9,20 +9,20 @@ import {
 } from "lucide-react";
 
 const D = {
-  bg: "#0D0F14",
+  bg: "#0D0F14″,
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8",
-  dim: "#555B72",
+  muted: "#8B91A8″,
+  dim: "#555B72″,
   cyan: "#00D4FF",
-  green: "#00E676",
-  amber: "#FFB300",
-  red: "#FF4444",
-  purple: "#A855F7",
-  teal: "#14B8A6",
-  blue: "#3B82F6",
+  green: "#00E676″,
+  amber: "#FFB300″,
+  red: "#FF4444″,
+  purple: "#A855F7″,
+  teal: "#14B8A6″,
+  blue: "#3B82F6″,
 };
 
 const FUNNEL_STAGES = [
@@ -31,7 +31,7 @@ const FUNNEL_STAGES = [
   { label: "Waitlist",      count: 1247,  prev: 2840,  convRate: 43.9,   color: D.cyan },
   { label: "Applied",       count: 412,   prev: 1247,  convRate: 33.0,   color: D.teal },
   { label: "Approved",      count: 287,   prev: 412,   convRate: 69.7,   color: D.green },
-  { label: "Onboarded",     count: 198,   prev: 287,   convRate: 69.0,   color: "#84CC16" },
+  { label: "Onboarded",     count: 198,   prev: 287,   convRate: 69.0,   color: "#84CC16″ },
   { label: "First Job",     count: 167,   prev: 198,   convRate: 84.3,   color: D.amber },
   { label: "Active 90d",    count: 147,   prev: 167,   convRate: 88.0,   color: D.green },
 ];
@@ -94,21 +94,21 @@ const AB_TESTS = [
     test: "CTA Button: 'Join Waitlist' vs 'Start Earning'",
     winner: "'Start Earning'",
     lift: "+18.3% CTR",
-    deployed: "Feb 2026",
+    deployed: "Feb 2026″,
     color: D.green,
   },
   {
     test: "Email subject: name personalization",
     winner: "Personalized subject lines",
     lift: "+11.4% open rate",
-    deployed: "Mar 2026",
+    deployed: "Mar 2026″,
     color: D.cyan,
   },
   {
     test: "Application flow: single page vs multi-step",
     winner: "Multi-step with progress bar",
     lift: "+9.1% completion",
-    deployed: "Apr 2026",
+    deployed: "Apr 2026″,
     color: D.purple,
   },
 ];
@@ -126,7 +126,7 @@ export default function FunnelAnalyticsDashboard() {
         {/* Header */}
         <div style={{ marginBottom: 28 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-            <div style={{ width: 36, height: 36, borderRadius: 10, background: D.cyan + "22", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 36, height: 36, borderRadius: 10, background: D.cyan + "22″, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <BarChart2 style={{ width: 18, height: 18, color: D.cyan }} />
             </div>
             <div>
@@ -161,7 +161,7 @@ export default function FunnelAnalyticsDashboard() {
                         transition: "width 0.4s ease",
                         minWidth: 60,
                       }}>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: "#000" }}>{stage.count.toLocaleString()}</span>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: "#000″ }}>{stage.count.toLocaleString()}</span>
                       </div>
                     </div>
                     {stage.convRate !== null && (
@@ -194,7 +194,7 @@ export default function FunnelAnalyticsDashboard() {
             </div>
             <ResponsiveContainer width="100%" height={200}>
               <LineChart data={COHORT_DATA} margin={{ top: 4, right: 8, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={D.border} />
+                <CartesianGrid strokeDasharray="3 3″ stroke={D.border} />
                 <XAxis dataKey="stage" tick={{ fill: D.muted, fontSize: 10 }} />
                 <YAxis tick={{ fill: D.muted, fontSize: 10 }} unit="%" />
                 <Tooltip
@@ -202,14 +202,14 @@ export default function FunnelAnalyticsDashboard() {
                   labelStyle={{ color: D.text }}
                   itemStyle={{ color: D.muted }}
                 />
-                <Line type="monotone" dataKey="jan" stroke={D.cyan} strokeWidth={2} dot={false} name="Jan '26" />
-                <Line type="monotone" dataKey="feb" stroke={D.purple} strokeWidth={2} dot={false} name="Feb '26" />
-                <Line type="monotone" dataKey="mar" stroke={D.green} strokeWidth={2} dot={false} name="Mar '26" />
-                <Line type="monotone" dataKey="apr" stroke={D.amber} strokeWidth={2} dot={false} name="Apr '26" />
+                <Line type="monotone" dataKey="jan" stroke={D.cyan} strokeWidth={2} dot={false} name="Jan '26″ />
+                <Line type="monotone" dataKey="feb" stroke={D.purple} strokeWidth={2} dot={false} name="Feb '26″ />
+                <Line type="monotone" dataKey="mar" stroke={D.green} strokeWidth={2} dot={false} name="Mar '26″ />
+                <Line type="monotone" dataKey="apr" stroke={D.amber} strokeWidth={2} dot={false} name="Apr '26″ />
               </LineChart>
             </ResponsiveContainer>
             <div style={{ display: "flex", gap: 12, marginTop: 10, flexWrap: "wrap" }}>
-              {[["Jan '26", D.cyan], ["Feb '26", D.purple], ["Mar '26", D.green], ["Apr '26", D.amber]].map(([label, color]) => (
+              {[["Jan '26″, D.cyan], ["Feb '26″, D.purple], ["Mar '26", D.green], ["Apr '26″, D.amber]].map(([label, color]) => (
                 <div key={label as string} style={{ display: "flex", alignItems: "center", gap: 5 }}>
                   <div style={{ width: 10, height: 2, borderRadius: 2, background: color as string }} />
                   <span style={{ fontSize: 11, color: D.muted }}>{label}</span>
@@ -272,7 +272,7 @@ export default function FunnelAnalyticsDashboard() {
                 key={d.from}
                 onClick={() => setActiveDropoff(activeDropoff === i ? null : i)}
                 style={{
-                  background: activeDropoff === i ? D.red + "10" : D.surface,
+                  background: activeDropoff === i ? D.red + "10″ : D.surface,
                   border: `1px solid ${activeDropoff === i ? D.red + "44" : D.border}`,
                   borderRadius: 12,
                   padding: "14px 16px",
@@ -283,7 +283,7 @@ export default function FunnelAnalyticsDashboard() {
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <span style={{ fontSize: 13, fontWeight: 600, color: D.text }}>{d.from}</span>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: D.red + "22", color: D.red }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: D.red + "22″, color: D.red }}>
                       -{d.dropPct}% drop
                     </span>
                   </div>
@@ -291,11 +291,11 @@ export default function FunnelAnalyticsDashboard() {
                 </div>
                 {activeDropoff === i && (
                   <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                    <div style={{ background: D.red + "12", borderRadius: 8, padding: "10px 12px" }}>
+                    <div style={{ background: D.red + "12″, borderRadius: 8, padding: "10px 12px" }}>
                       <p style={{ fontSize: 10, color: D.red, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 4px", fontWeight: 700 }}>Root Cause</p>
                       <p style={{ fontSize: 12, color: D.muted, margin: 0 }}>{d.reason}</p>
                     </div>
-                    <div style={{ background: D.green + "12", borderRadius: 8, padding: "10px 12px" }}>
+                    <div style={{ background: D.green + "12″, borderRadius: 8, padding: "10px 12px" }}>
                       <p style={{ fontSize: 10, color: D.green, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 4px", fontWeight: 700 }}>Action Taken</p>
                       <p style={{ fontSize: 12, color: D.muted, margin: 0 }}>{d.action}</p>
                     </div>
@@ -318,13 +318,13 @@ export default function FunnelAnalyticsDashboard() {
               <div style={{ fontSize: 13, color: D.muted }}>avg days: application → first active job</div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <div style={{ background: D.green + "18", borderRadius: 10, padding: "12px", textAlign: "center" }}>
+              <div style={{ background: D.green + "18″, borderRadius: 10, padding: "12px", textAlign: "center" }}>
                 <p style={{ fontSize: 22, fontWeight: 800, color: D.green, margin: 0 }}>1</p>
-                <p style={{ fontSize: 11, color: D.muted, margin: "4px 0 0" }}>Best case (days)</p>
+                <p style={{ fontSize: 11, color: D.muted, margin: "4px 0 0″ }}>Best case (days)</p>
               </div>
-              <div style={{ background: D.red + "18", borderRadius: 10, padding: "12px", textAlign: "center" }}>
+              <div style={{ background: D.red + "18″, borderRadius: 10, padding: "12px", textAlign: "center" }}>
                 <p style={{ fontSize: 22, fontWeight: 800, color: D.red, margin: 0 }}>47</p>
-                <p style={{ fontSize: 11, color: D.muted, margin: "4px 0 0" }}>Worst case (days)</p>
+                <p style={{ fontSize: 11, color: D.muted, margin: "4px 0 0″ }}>Worst case (days)</p>
               </div>
             </div>
           </div>
@@ -345,7 +345,7 @@ export default function FunnelAnalyticsDashboard() {
                       fontWeight: 800,
                       color: test.color,
                       whiteSpace: "nowrap",
-                      background: test.color + "22",
+                      background: test.color + "22″,
                       padding: "2px 8px",
                       borderRadius: 20,
                     }}>{test.lift}</span>

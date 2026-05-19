@@ -44,9 +44,9 @@ export default function DFWRecentlyDivorcedHomeGuide() {
           Texas is a community property state. That changes everything about how your home equity is divided. Here's how to think through your options clearly — without the emotional fog.
         </p>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔑 Texas Community Property Basics</h2>
-          <ul style={{ lineHeight: 2, paddingLeft: 20, color: '#333' }}>
+          <ul style={{ lineHeight: 2, paddingLeft: 20, color: '#333′ }}>
             <li>Home acquired during marriage = community property, split 50/50 by default</li>
             <li>Home owned before marriage may be separate property — document it</li>
             <li>Refinancing removes ex-spouse from mortgage liability (deed of trust separate from title)</li>
@@ -55,7 +55,7 @@ export default function DFWRecentlyDivorcedHomeGuide() {
           </ul>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>📊 Find Your Best Option</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>Estimated home equity ($)</label>
@@ -63,7 +63,7 @@ export default function DFWRecentlyDivorcedHomeGuide() {
               type="number"
               value={equity}
               onChange={e => setEquity(e.target.value)}
-              placeholder="e.g. 180000"
+              placeholder="e.g. 180000″
               style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }}
             />
           </div>
@@ -91,7 +91,7 @@ export default function DFWRecentlyDivorcedHomeGuide() {
                 <span style={{ lineHeight: 1.5 }}>{r}</span>
               </div>
             ))}
-            <div style={{ marginTop: 20, padding: 16, background: 'rgba(245,230,66,0.1)', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: 'rgba(245,230,66,0.1)', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>💰 Tax Implications</div>
               <div style={{ fontSize: 14, lineHeight: 1.6, color: '#ddd' }}>{result.tax}</div>
             </div>
@@ -102,7 +102,7 @@ export default function DFWRecentlyDivorcedHomeGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e0ddd5' }}>
+        <div style={{ marginTop: 32, background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e0ddd5′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🛠️ Getting the Home Ready to Sell Fast</h2>
           <p style={{ color: '#555', lineHeight: 1.7 }}>DFW buyers move fast. Focus on: fresh neutral paint, HVAC service record in hand, any foundation disclosure ready, and a pre-listing inspection. ProLnk can connect you with vetted contractors for pre-sale repairs — no upselling, no pressure.</p>
         </div>

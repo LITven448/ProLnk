@@ -53,13 +53,13 @@ export default function DFWHVACCoilCleaningGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1rem' }}>
             {options.map(o => (
               <button key={o.id} onClick={() => setSelection(o.id)}
-                style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: '8px', border: selection === o.id ? '2px solid #F5E642' : '1px solid #1e3a5f', backgroundColor: selection === o.id ? '#1a3060' : '#0A1628', color: '#fff', cursor: 'pointer', fontSize: '0.9rem' }}>
+                style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: '8px', border: selection === o.id ? '2px solid #F5E642′ : '1px solid #1e3a5f', backgroundColor: selection === o.id ? '#1a3060' : '#0A1628', color: '#fff', cursor: ’pointer', fontSize: '0.9rem' }}>
                 {o.label}
               </button>
             ))}
           </div>
           <button onClick={handleCheck} disabled={!selection}
-            style={{ backgroundColor: selection ? '#F5E642' : '#2a3a50', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', cursor: selection ? 'pointer' : 'not-allowed', fontSize: '0.95rem', width: '100%' }}>
+            style={{ backgroundColor: selection ? '#F5E642′ : '#2a3a50', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: '8px', padding: '0.75rem 1.5rem', cursor: selection ? 'pointer' : 'not-allowed', fontSize: '0.95rem', width: '100%' }}>
             Get Cleaning Guidance →
           </button>
           {result && (

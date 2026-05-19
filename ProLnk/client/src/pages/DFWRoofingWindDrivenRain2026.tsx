@@ -11,7 +11,7 @@ const guides: Record<string, { title: string; detail: string; tips: string[] }> 
   leaks: {
     title: 'Wind-Driven Rain Likely Found an Entry Point',
     detail: 'DFW severe storms can drive rain at near-horizontal angles. Standard shingle installation assumes gravity-fed rain. If your roof leaked during a storm but not during gentle rain, wind-driven penetration is the likely cause.',
-    tips: ['Check drip edge at eaves — missing or improperly lapped drip edge is a top DFW entry point', 'Inspect step flashing at all wall-to-roof junctions', 'Verify ice and water shield extends 24" past the interior wall line at all eaves', 'Look for lifted shingle tabs after any 60+ mph DFW event'],
+    tips: ['Check drip edge at eaves — missing or improperly lapped drip edge is a top DFW entry point', 'Inspect step flashing at all wall-to-roof junctions', 'Verify ice and water shield extends 24″ past the interior wall line at all eaves', 'Look for lifted shingle tabs after any 60+ mph DFW event'],
   },
   newroof: {
     title: 'Install Maximum Wind-Driven Rain Protection Now',
@@ -26,7 +26,7 @@ const guides: Record<string, { title: string; detail: string; tips: string[] }> 
   valley: {
     title: 'Open Valleys Are High-Risk in DFW Storms',
     detail: 'Valley intersections concentrate water flow. During DFW high-intensity rain events (2-3 inches per hour is common), valleys can be overwhelmed — especially if flashing is undersized or corroded.',
-    tips: ['W-metal valley flashing minimum 24" wide for DFW rain intensity', 'Ice and water shield under all valley flashing', 'Closed-cut or woven valleys fail more often in DFW — open metal valley performs best', 'Check valley flashing for rust or uplift after hail events'],
+    tips: ['W-metal valley flashing minimum 24″ wide for DFW rain intensity', 'Ice and water shield under all valley flashing', 'Closed-cut or woven valleys fail more often in DFW — open metal valley performs best', 'Check valley flashing for rust or uplift after hail events'],
   },
   default: {
     title: 'Select Your DFW Storm Concern',
@@ -63,7 +63,7 @@ export default function DFWRoofingWindDrivenRain2026() {
         <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⛈️ Your DFW Storm Concern</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {concerns.map(c => (
-            <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642' : '#1a2f4e', color: selected === c.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === c.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
+            <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642′ : '#1a2f4e', color: selected === c.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === c.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
               <span style={{ marginRight: 8 }}>{c.icon}</span>{c.label}
             </button>
           ))}

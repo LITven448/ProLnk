@@ -29,7 +29,7 @@ const stations: Record<string, { brand: string; model: string; cost: string; pla
     brand: 'Ecowitt',
     model: 'GW2000 + Soil Moisture Sensors',
     cost: '$120-180 + $25/sensor',
-    placement: 'Add WH51 soil moisture sensors ($25 each) at 6" depth around foundation perimeter — at least 4 corners. Base station indoors. Soil sensor probes placed in clay soil at each corner.',
+    placement: 'Add WH51 soil moisture sensors ($25 each) at 6″ depth around foundation perimeter — at least 4 corners. Base station indoors. Soil sensor probes placed in clay soil at each corner.',
     dfwNote: 'DFW clay shrinks dramatically below 20% volumetric moisture. Set alerts at 25% to trigger soaker hose before critical foundation movement occurs. One sensor per corner = early warning system.',
     wuNote: 'Ecowitt supports Weather Underground via API. Soil data private but weather data shares to WU. Excellent value for DFW foundation-focused homeowners.',
   },
@@ -38,7 +38,7 @@ const stations: Record<string, { brand: string; model: string; cost: string; pla
     model: 'WS-1965 or Ecowitt HP10',
     cost: '$90-140',
     placement: 'Mount near irrigation controller for short cable run. Prioritize accurate rainfall sensor placement — open sky, away from sprinklers and tree drip lines. 6+ ft height.',
-    dfwNote: 'DFW clay holds water 3-4 days after 1" rain. Configure irrigation pause: skip 3 days after 0.5" rain, skip 5 days after 1"+ rain. In summer, supplement only — never irrigate when soil reads moist.',
+    dfwNote: 'DFW clay holds water 3-4 days after 1″ rain. Configure irrigation pause: skip 3 days after 0.5″ rain, skip 5 days after 1″+ rain. In summer, supplement only — never irrigate when soil reads moist.',
     wuNote: 'Compatible with Rachio and Orbit B-hyve via IFTTT or direct API. When your WU station reports rain, irrigation skips automatically — a true set-and-forget DFW setup.',
   },
   hobbyist: {
@@ -69,13 +69,13 @@ export default function DFWWeatherStationGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               ['Urban Heat Islands', 'Downtown Dallas/Fort Worth can be 12°F hotter than outer suburbs on calm nights'],
-              ['Storm Cell Variability', 'DFW storm cells are narrow — 3" of rain in Southlake, 0" in Keller same hour'],
+              ['Storm Cell Variability', 'DFW storm cells are narrow — 3″ of rain in Southlake, 0″ in Keller same hour'],
               ['Foundation Decisions', 'Soil moisture, not NWS forecast, determines when to run foundation soaker hose'],
               ['Irrigation ROI', 'WU-integrated systems save 30-40% on water bills by using your actual rainfall data'],
             ].map(([title, desc]) => (
               <div key={title} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{title}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{desc}</div>
               </div>
             ))}
           </div>
@@ -85,14 +85,14 @@ export default function DFWWeatherStationGuide() {
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24 }}>
           {interests.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id)}
-              style={{ background: selected === i.id ? '#F5E642' : '#0f2240', color: selected === i.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 14 }}>
+              style={{ background: selected === i.id ? '#F5E642′ : '#0f2240', color: selected === i.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 700, fontSize: 14 }}>
               {i.label}
             </button>
           ))}
         </div>
 
         {rec && (
-          <div style={{ background: '#0f2240', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0f2240', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{rec.brand} — {rec.model}</div>
             <div style={{ fontSize: 16, color: '#94a3b8', marginBottom: 16 }}>Estimated cost: {rec.cost}</div>
             {[

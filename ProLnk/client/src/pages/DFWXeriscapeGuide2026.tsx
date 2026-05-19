@@ -60,7 +60,7 @@ export default function DFWXeriscapeGuide2026() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Water Goal</label>
               <select value={waterGoal} onChange={e => setWaterGoal(e.target.value)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', fontSize: 14 }}>
-                <option value="stage3">Comply with Stage 3</option>
+                <option value="stage3″>Comply with Stage 3</option>
                 <option value="minimal">Minimal Watering</option>
                 <option value="drought">Full Drought-Proof</option>
               </select>

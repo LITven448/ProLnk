@@ -26,10 +26,10 @@ const sections = [
 type OilResult = { condition: string; service: string; color: string };
 
 function assessOil(age: number, usage: string): OilResult {
-  if (age >= 10 && usage === 'heavy') return { condition: 'High Risk — Oil likely degraded', service: 'Full oil change + acid flush + refrigerant recharge recommended', color: '#EF4444' };
+  if (age >= 10 && usage === 'heavy') return { condition: 'High Risk — Oil likely degraded', service: 'Full oil change + acid flush + refrigerant recharge recommended', color: '#EF4444′ };
   if (age >= 7 || usage === 'heavy') return { condition: 'Moderate Risk — Oil aging', service: 'Oil sample analysis + acid test at next tune-up', color: '#F59E0B' };
-  if (age >= 4) return { condition: 'Monitor — Within normal range', service: 'Annual tune-up with oil inspection sufficient', color: '#3B82F6' };
-  return { condition: 'Low Risk — Oil likely fresh', service: 'Standard seasonal maintenance; no oil service needed yet', color: '#10B981' };
+  if (age >= 4) return { condition: 'Monitor — Within normal range', service: 'Annual tune-up with oil inspection sufficient', color: '#3B82F6′ };
+  return { condition: 'Low Risk — Oil likely fresh', service: 'Standard seasonal maintenance; no oil service needed yet', color: '#10B981′ };
 }
 
 export default function DFWHVACCompressorOilGuide() {
@@ -46,18 +46,18 @@ export default function DFWHVACCompressorOilGuide() {
           <p style={{ color: '#94A3B8', fontSize: 15 }}>Why extreme DFW run hours make oil condition critical for compressor survival</p>
         </div>
         {sections.map((s) => (
-          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{s.emoji}</div>
             <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 600, margin: '0 0 8px' }}>{s.title}</h2>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{s.body}</p>
           </div>
         ))}
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 20px' }}>🔍 Oil Condition Assessment Tool</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>System Age: {age} years</label>
-              <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>DFW Usage Pattern</label>

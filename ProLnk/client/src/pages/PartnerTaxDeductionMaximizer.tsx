@@ -69,7 +69,7 @@ export default function PartnerTaxDeductionMaximizer() {
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, overflow: 'hidden', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ background: '#1565c0' }}>
+                <tr style={{ background: '#1565c0′ }}>
                   <th style={{ padding: '12px 16px', textAlign: 'left', color: '#fff', fontSize: 13 }}>Deduction</th>
                   <th style={{ padding: '12px 16px', textAlign: 'left', color: '#fff', fontSize: 13 }}>Example Value</th>
                   <th style={{ padding: '12px 16px', textAlign: 'left', color: '#fff', fontSize: 13 }}>Notes</th>
@@ -141,7 +141,7 @@ export default function PartnerTaxDeductionMaximizer() {
                   <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 6 }}>{f.note}</div>
                   <input
                     type="number"
-                    placeholder={f.unit === 'dollars' ? '$0' : `0 ${f.unit}`}
+                    placeholder={f.unit === 'dollars' ? '$0′ : `0 ${f.unit}`}
                     value={inputs[f.key] || ''}
                     onChange={e => setInputs(prev => ({ ...prev, [f.key]: e.target.value }))}
                     style={{ width: '100%', background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 8, padding: '10px 12px', color: '#1e293b', fontSize: 14, boxSizing: 'border-box' }}
@@ -160,7 +160,7 @@ export default function PartnerTaxDeductionMaximizer() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
                   <div style={{ background: '#f0f9ff', border: '2px solid #0284c7', borderRadius: 10, padding: 20, textAlign: 'center' }}>
                     <div style={{ fontSize: 13, color: '#0369a1', marginBottom: 4 }}>Total Deductions</div>
-                    <div style={{ fontSize: 32, fontWeight: 800, color: '#0284c7' }}>${result.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
+                    <div style={{ fontSize: 32, fontWeight: 800, color: '#0284c7′ }}>${result.total.toLocaleString(’en-US', { maximumFractionDigits: 0 })}</div>
                   </div>
                   <div style={{ background: '#f0fdf4', border: '2px solid #16a34a', borderRadius: 10, padding: 20, textAlign: 'center' }}>
                     <div style={{ fontSize: 13, color: '#15803d', marginBottom: 4 }}>Estimated Tax Savings</div>
@@ -169,11 +169,11 @@ export default function PartnerTaxDeductionMaximizer() {
                 </div>
                 {result.lines.map(l => (
                   <div key={l.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f1f5f9', fontSize: 14 }}>
-                    <span style={{ color: '#475569' }}>{l.label}</span>
+                    <span style={{ color: '#475569′ }}>{l.label}</span>
                     <span style={{ color: '#059669', fontWeight: 600 }}>${l.amount.toLocaleString('en-US', { maximumFractionDigits: 0 })}</span>
                   </div>
                 ))}
-                <div style={{ marginTop: 12, fontSize: 11, color: '#94a3b8' }}>* Savings estimate assumes 28% combined federal + state effective rate. Actual results vary. Consult a licensed CPA.</div>
+                <div style={{ marginTop: 12, fontSize: 11, color: '#94a3b8′ }}>* Savings estimate assumes 28% combined federal + state effective rate. Actual results vary. Consult a licensed CPA.</div>
               </div>
             )}
           </div>

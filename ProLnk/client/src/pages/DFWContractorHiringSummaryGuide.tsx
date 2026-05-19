@@ -67,7 +67,7 @@ export default function DFWContractorHiringSummaryGuide() {
           {TOP_10.map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', padding: '0.6rem 0', borderBottom: i < TOP_10.length - 1 ? '1px solid #1e3a5f' : 'none' }}>
               <span style={{ fontSize: 20 }}>{item.icon}</span>
-              <span style={{ fontSize: '0.875rem', lineHeight: 1.5, color: '#cbd5e0' }}>{item.tip}</span>
+              <span style={{ fontSize: '0.875rem', lineHeight: 1.5, color: '#cbd5e0′ }}>{item.tip}</span>
             </div>
           ))}
         </div>
@@ -77,7 +77,7 @@ export default function DFWContractorHiringSummaryGuide() {
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
             {[['hvac', '❄️ HVAC'], ['plumbing', '🚿 Plumbing'], ['roofing', '🏠 Roofing'], ['foundation', '🏗️ Foundation'], ['electrical', '⚡ Electrical']].map(([val, label]) => (
               <button key={val} onClick={() => setTrade(val)}
-                style={{ padding: '0.45rem 0.9rem', borderRadius: 8, border: '2px solid', borderColor: trade === val ? '#F5E642' : '#1e3a5f', background: trade === val ? '#F5E642' : 'transparent', color: trade === val ? '#0A1628' : '#e2e8f0', fontWeight: 700, cursor: 'pointer', fontSize: '0.8rem' }}>
+                style={{ padding: '0.45rem 0.9rem', borderRadius: 8, border: '2px solid', borderColor: trade === val ? '#F5E642′ : '#1e3a5f', background: trade === val ? '#F5E642' : ’transparent', color: trade === val ? '#0A1628′ : '#e2e8f0', fontWeight: 700, cursor: ’pointer', fontSize: '0.8rem' }}>
                 {label}
               </button>
             ))}
@@ -86,7 +86,7 @@ export default function DFWContractorHiringSummaryGuide() {
             <div style={{ background: '#0d1f3c', borderRadius: 12, padding: '1.25rem' }}>
               {(TRADE_CHECKLISTS[trade] || []).map((tip, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.5rem 0', fontSize: '0.875rem', borderBottom: i < TRADE_CHECKLISTS[trade].length - 1 ? '1px solid #1e3a5f' : 'none' }}>
-                  <span>✅</span><span style={{ color: '#e2e8f0' }}>{tip}</span>
+                  <span>✅</span><span style={{ color: '#e2e8f0′ }}>{tip}</span>
                 </div>
               ))}
             </div>

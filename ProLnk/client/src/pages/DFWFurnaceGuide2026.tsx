@@ -21,7 +21,7 @@ export default function DFWFurnaceGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔥</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Gas Furnace Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Gas Furnace Guide 2026</h1>
           <p style={{ color: '#a0aec0', fontSize: '1rem' }}>Dallas-Fort Worth homeowners: what you need to know before this heating season</p>
         </div>
 
@@ -40,12 +40,12 @@ export default function DFWFurnaceGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔧 Furnace Assessment Tool</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#a0aec0', fontSize: '0.875rem' }}>Furnace Age (years)</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12"
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12″
                 style={{ display: 'block', width: '100%', marginTop: 4, padding: '0.5rem', borderRadius: 6, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff' }} />
             </div>
             <div>

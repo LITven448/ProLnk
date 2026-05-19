@@ -32,13 +32,13 @@ export default function DFWCPVCPipeGuide() {
     const exposed = condition === 'exposed';
 
     if (old && brittle) {
-      setResult({ status: 'Critical', action: '🚨 Replace immediately — failure risk is high', timeline: 'Within 30 days', color: '#ef4444' });
+      setResult({ status: 'Critical', action: '🚨 Replace immediately — failure risk is high', timeline: 'Within 30 days', color: '#ef4444′ });
     } else if (old && exposed) {
-      setResult({ status: 'High Risk', action: '⚠️ Replace UV-exposed sections now, full repipe plan 12 months', timeline: '6–12 months', color: '#f97316' });
+      setResult({ status: 'High Risk', action: '⚠️ Replace UV-exposed sections now, full repipe plan 12 months', timeline: '6–12 months', color: '#f97316′ });
     } else if (mid && brittle) {
-      setResult({ status: 'Elevated', action: '📅 Inspect all joints; replace brittle sections', timeline: '3–6 months', color: '#eab308' });
+      setResult({ status: 'Elevated', action: '📅 Inspect all joints; replace brittle sections', timeline: '3–6 months', color: '#eab308′ });
     } else if (old) {
-      setResult({ status: 'Moderate', action: '🔍 Annual inspection; replace if any cracking noted', timeline: '1–3 years', color: '#eab308' });
+      setResult({ status: 'Moderate', action: '🔍 Annual inspection; replace if any cracking noted', timeline: '1–3 years', color: '#eab308′ });
     } else {
       setResult({ status: 'Low', action: '✅ Monitor annually; avoid UV exposure', timeline: 'No immediate action', color: '#22c55e' });
     }
@@ -77,9 +77,9 @@ export default function DFWCPVCPipeGuide() {
         <label style={styles.label}>CPVC System Age</label>
         <select style={styles.select} value={age} onChange={e => setAge(e.target.value)}>
           <option value="">Select age...</option>
-          <option value="under15">Under 15 years</option>
-          <option value="15_25">15–25 years</option>
-          <option value="over25">Over 25 years</option>
+          <option value="under15″>Under 15 years</option>
+          <option value="15_25″>15–25 years</option>
+          <option value="over25″>Over 25 years</option>
         </select>
         <label style={styles.label}>Current DFW Condition Observed</label>
         <select style={styles.select} value={condition} onChange={e => setCondition(e.target.value)}>
@@ -94,8 +94,8 @@ export default function DFWCPVCPipeGuide() {
           <div style={styles.result}>
             <div style={styles.resultTitle}>CPVC Assessment</div>
             <span style={{ ...styles.badge, backgroundColor: result.color + '22', color: result.color, border: `1px solid ${result.color}` }}>{result.status}</span>
-            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642' }}>Action:</strong> {result.action}</p>
-            <p style={{ color: '#cbd5e1' }}><strong style={{ color: '#F5E642' }}>Timeline:</strong> {result.timeline}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642′ }}>Action:</strong> {result.action}</p>
+            <p style={{ color: '#cbd5e1′ }}><strong style={{ color: '#F5E642' }}>Timeline:</strong> {result.timeline}</p>
           </div>
         )}
       </div>

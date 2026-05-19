@@ -78,19 +78,19 @@ export default function DFWOutdoorCookingCode() {
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>📏 {city} Clearance Requirement</div>
-                <div style={{ color: '#E8EDF5' }}>{cityInfo.clearance}</div>
+                <div style={{ color: '#E8EDF5′ }}>{cityInfo.clearance}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🔥 Burn Ban Info</div>
-                <div style={{ color: '#E8EDF5' }}>{cityInfo.burnBan}</div>
+                <div style={{ color: '#E8EDF5′ }}>{cityInfo.burnBan}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🏘️ HOA Considerations</div>
-                <div style={{ color: '#E8EDF5' }}>{cityInfo.hoaNote}</div>
+                <div style={{ color: '#E8EDF5′ }}>{cityInfo.hoaNote}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🏕️ Open Fire Status</div>
-                <div style={{ color: '#E8EDF5' }}>{cityInfo.openFire}</div>
+                <div style={{ color: '#E8EDF5′ }}>{cityInfo.openFire}</div>
               </div>
             </div>
           )}

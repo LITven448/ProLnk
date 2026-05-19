@@ -43,15 +43,15 @@ export default function ProLnkServiceAreaGuide() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {homeBases.map(h => (
               <button key={h.city} onClick={() => setBase(h.city)} style={{
-                background: base === h.city ? '#F5E642' : '#1A2F4A',
-                color: base === h.city ? '#0A1628' : '#fff',
+                background: base === h.city ? '#F5E642′ : '#1A2F4A',
+                color: base === h.city ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13
               }}>{h.city}</button>
             ))}
           </div>
           {base && (
             <div style={{ background: '#1A2F4A', borderRadius: 8, padding: 16, color: '#B0C4D8', fontSize: 14, lineHeight: 1.7 }}>
-              🚗 Max travel: <strong style={{ color: '#F5E642' }}>{homeBases.find(h => h.city === base)?.travel}</strong> — {homeBases.find(h => h.city === base)?.rec}
+              🚗 Max travel: <strong style={{ color: '#F5E642′ }}>{homeBases.find(h => h.city === base)?.travel}</strong> — {homeBases.find(h => h.city === base)?.rec}
             </div>
           )}
         </div>

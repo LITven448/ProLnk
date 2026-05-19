@@ -79,9 +79,9 @@ export default function DFWWholehouseFilter2026() {
                 padding: '0.5rem 1rem',
                 borderRadius: '999px',
                 border: '2px solid',
-                borderColor: selected === c.id ? '#F5E642' : '#1e3a5f',
-                background: selected === c.id ? '#F5E642' : '#0d1f3c',
-                color: selected === c.id ? '#0A1628' : '#94a3b8',
+                borderColor: selected === c.id ? '#F5E642′ : '#1e3a5f',
+                background: selected === c.id ? '#F5E642′ : '#0d1f3c',
+                color: selected === c.id ? '#0A1628′ : '#94a3b8',
                 fontWeight: 700,
                 cursor: 'pointer',
                 fontSize: '0.85rem',
@@ -104,7 +104,7 @@ export default function DFWWholehouseFilter2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: '10px', padding: '1rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: '10px', padding: '1rem', border: '1px solid #F5E642′ }}>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: '0.9rem' }}>💡 {current.note}</p>
         </div>
 

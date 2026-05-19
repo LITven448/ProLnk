@@ -29,9 +29,9 @@ const weights = [
 function grade(score: number) {
   if (score <= 12) return { letter: 'A', label: 'Excellent', color: '#22C55E' };
   if (score <= 30) return { letter: 'B', label: 'Good', color: '#86EFAC' };
-  if (score <= 55) return { letter: 'C', label: 'Fair — Schedule Service', color: '#F5E642' };
-  if (score <= 85) return { letter: 'D', label: 'Poor — Act Soon', color: '#F97316' };
-  return { letter: 'F', label: 'Failing — Immediate Action', color: '#EF4444' };
+  if (score <= 55) return { letter: 'C', label: 'Fair — Schedule Service', color: '#F5E642′ };
+  if (score <= 85) return { letter: 'D', label: 'Poor — Act Soon', color: '#F97316′ };
+  return { letter: 'F', label: 'Failing — Immediate Action', color: '#EF4444′ };
 }
 
 export default function DFWPlumbingInspectionScore() {
@@ -60,7 +60,7 @@ export default function DFWPlumbingInspectionScore() {
     if (priorities.length === 0) priorities.push('✅ No critical issues — maintain current schedule');
 
     dfwRisks.push(answers[12] >= 2 ? '💎 Hard Water: Significant mineral buildup detected — accelerating fixture and appliance wear' : '💎 Hard Water: DFW water averages 250–400 ppm hardness. Monitor annually.');
-    dfwRisks.push(answers[11] >= 1 ? '🏗️ Clay Soil: Slab movement history noted — inspect foundation plumbing every 3 years' : '🏗️ Clay Soil: DFW Blackland Prairie clay expands 4–6" seasonally — slab plumbing at moderate risk');
+    dfwRisks.push(answers[11] >= 1 ? '🏗️ Clay Soil: Slab movement history noted — inspect foundation plumbing every 3 years' : '🏗️ Clay Soil: DFW Blackland Prairie clay expands 4–6″ seasonally — slab plumbing at moderate risk');
 
     setResult({ score, grade: g, priorities, dfwRisks });
   }
@@ -78,7 +78,7 @@ export default function DFWPlumbingInspectionScore() {
               <div style={{ fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.95rem' }}>{qi + 1}. {item.q}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                 {item.opts.map((opt, ai) => (
-                  <button key={ai} onClick={() => setAnswer(qi, ai)} style={{ background: answers[qi] === ai ? '#F5E642' : '#1A3050', color: answers[qi] === ai ? '#0A1628' : '#E8F0FE', border: '1px solid #2A4060', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.82rem', textAlign: 'left', fontWeight: answers[qi] === ai ? 700 : 400 }}>
+                  <button key={ai} onClick={() => setAnswer(qi, ai)} style={{ background: answers[qi] === ai ? '#F5E642′ : '#1A3050', color: answers[qi] === ai ? '#0A1628' : '#E8F0FE', border: '1px solid #2A4060', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: ’pointer', fontSize: '0.82rem', textAlign: 'left', fontWeight: answers[qi] === ai ? 700 : 400 }}>
                     {opt}
                   </button>
                 ))}

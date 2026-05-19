@@ -32,7 +32,7 @@ export default function DFWHouseCleaningGuide() {
   const perVisit = Math.round(base + addons);
   const monthly = Math.round(perVisit * f.mult);
   const tier = fi <= 1 ? 'Standard Clean' : fi === 2 ? 'Maintenance Clean' : 'Deep / One-Time Clean';
-  const btn = (active: boolean) => ({ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642' : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
+  const btn = (active: boolean) => ({ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642′ : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
   const card = { background: '#0F1E35', borderRadius: 12, padding: '20px 24px', marginBottom: 16 };
 
   return (
@@ -72,7 +72,7 @@ export default function DFWHouseCleaningGuide() {
             <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>ADD-ONS</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {ADDONS.map((a, i) => (
-                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${sel.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: sel.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5' }}>{a.label} +${a.cost}</button>
+                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${sel.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: sel.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5′ }}>{a.label} +${a.cost}</button>
               ))}
             </div>
           </div>

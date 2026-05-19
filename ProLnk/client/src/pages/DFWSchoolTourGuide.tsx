@@ -71,47 +71,47 @@ export default function DFWSchoolTourGuide() {
   const data = AGE_PRIORITIES[ageGroup];
 
   return (
-    <div style={{ background: "#f9f6f0", minHeight: "100vh", fontFamily: "Georgia, serif", color: "#1a1a1a", padding: "40px 20px" }}>
+    <div style={{ background: "#f9f6f0″, minHeight: "100vh", fontFamily: "Georgia, serif", color: "#1a1a1a", padding: "40px 20px" }}>
       <div style={{ maxWidth: 820, margin: "0 auto" }}>
-        <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>🎓 DFW BUYER GUIDE</div>
-        <h1 style={{ fontSize: 38, fontWeight: 800, color: "#0A1628", marginBottom: 6 }}>DFW School Tour Guide</h1>
-        <p style={{ color: "#555", fontSize: 16, marginBottom: 36 }}>Even without kids, school ratings shape your home's future value. Know how to evaluate them.</p>
+        <div style={{ fontSize: 13, color: "#888″, marginBottom: 8 }}>🎓 DFW BUYER GUIDE</div>
+        <h1 style={{ fontSize: 38, fontWeight: 800, color: "#0A1628″, marginBottom: 6 }}>DFW School Tour Guide</h1>
+        <p style={{ color: "#555″, fontSize: 16, marginBottom: 36 }}>Even without kids, school ratings shape your home's future value. Know how to evaluate them.</p>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0A1628", marginBottom: 14 }}>📌 Why School Ratings Matter</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0A1628″, marginBottom: 14 }}>📌 Why School Ratings Matter</h2>
         {WHY_MATTERS.map((w, i) => (
           <div key={i} style={{ background: "#fff", border: "1px solid #ddd", borderRadius: 8, padding: "12px 16px", marginBottom: 10, fontSize: 14 }}>✅ {w}</div>
         ))}
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0A1628", marginTop: 32, marginBottom: 14 }}>📊 DFW Rating Sources — They Don't Agree</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0A1628″, marginTop: 32, marginBottom: 14 }}>📊 DFW Rating Sources — They Don't Agree</h2>
         {RATING_SOURCES.map((s, i) => (
           <div key={i} style={{ background: "#fff", border: "1px solid #ddd", borderRadius: 10, padding: "18px 20px", marginBottom: 14 }}>
-            <div style={{ fontWeight: 700, fontSize: 16, color: "#0A1628", marginBottom: 4 }}>📎 {s.name}</div>
-            <div style={{ fontSize: 13, color: "#888", marginBottom: 6 }}>🌐 {s.url}</div>
-            <div style={{ fontSize: 14, color: "#444" }}>{s.what}</div>
+            <div style={{ fontWeight: 700, fontSize: 16, color: "#0A1628″, marginBottom: 4 }}>📎 {s.name}</div>
+            <div style={{ fontSize: 13, color: "#888″, marginBottom: 6 }}>🌐 {s.url}</div>
+            <div style={{ fontSize: 14, color: "#444″ }}>{s.what}</div>
           </div>
         ))}
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0A1628", marginTop: 32, marginBottom: 14 }}>🏫 Campus Visit Checklist</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0A1628″, marginTop: 32, marginBottom: 14 }}>🏫 Campus Visit Checklist</h2>
         {TOUR_CHECKLIST.map((item, i) => (
           <div key={i} style={{ background: "#fff", border: "1px solid #ddd", borderRadius: 8, padding: "12px 16px", marginBottom: 10, fontSize: 14 }}>🔍 {item}</div>
         ))}
 
         <div style={{ background: "#fff", border: "1px solid #ddd", borderRadius: 12, padding: 24, marginTop: 32 }}>
-          <div style={{ fontWeight: 700, fontSize: 20, color: "#0A1628", marginBottom: 18 }}>🎯 Criteria by Child Age</div>
+          <div style={{ fontWeight: 700, fontSize: 20, color: "#0A1628″, marginBottom: 18 }}>🎯 Criteria by Child Age</div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontWeight: 600, fontSize: 14 }}>Child Age Group / Priority</label>
             <select value={ageGroup} onChange={e => { setAgeGroup(e.target.value); setShowing(false); }} style={{ display: "block", width: "100%", marginTop: 6, padding: "10px 12px", borderRadius: 8, border: "1px solid #ccc", fontSize: 14 }}>
               {Object.keys(AGE_PRIORITIES).map(k => <option key={k}>{k}</option>)}
             </select>
           </div>
-          <button onClick={() => setShowing(true)} style={{ background: "#0A1628", color: "#F5E642", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer" }}>Get Criteria</button>
+          <button onClick={() => setShowing(true)} style={{ background: "#0A1628″, color: "#F5E642", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer" }}>Get Criteria</button>
           {showing && data && (
             <div style={{ marginTop: 22 }}>
-              <div style={{ fontWeight: 700, color: "#0A1628", marginBottom: 10 }}>What to Evaluate</div>
-              {data.criteria.map((c, i) => <div key={i} style={{ fontSize: 14, color: "#444", marginBottom: 10, paddingLeft: 14, borderLeft: "3px solid #0A1628" }}>• {c}</div>)}
-              <div style={{ fontWeight: 700, color: "#0A1628", marginTop: 18, marginBottom: 10 }}>Top DFW Districts for This Priority</div>
+              <div style={{ fontWeight: 700, color: "#0A1628″, marginBottom: 10 }}>What to Evaluate</div>
+              {data.criteria.map((c, i) => <div key={i} style={{ fontSize: 14, color: "#444″, marginBottom: 10, paddingLeft: 14, borderLeft: "3px solid #0A1628" }}>• {c}</div>)}
+              <div style={{ fontWeight: 700, color: "#0A1628″, marginTop: 18, marginBottom: 10 }}>Top DFW Districts for This Priority</div>
               {data.districts.map((d, i) => (
-                <div key={i} style={{ display: "inline-block", background: "#0A1628", color: "#F5E642", borderRadius: 6, padding: "4px 14px", marginRight: 8, marginBottom: 8, fontSize: 13, fontWeight: 700 }}>{d}</div>
+                <div key={i} style={{ display: "inline-block", background: "#0A1628″, color: "#F5E642", borderRadius: 6, padding: "4px 14px", marginRight: 8, marginBottom: 8, fontSize: 13, fontWeight: 700 }}>{d}</div>
               ))}
             </div>
           )}

@@ -32,7 +32,7 @@ export default function DFWHomeSecuritySystemCompare2026() {
         </div>
 
         <div style={{ background: '#1A2840', borderRadius: 10, padding: '14px 18px', marginBottom: 24, fontSize: 14, lineHeight: 1.6 }}>
-          <strong style={{ color: '#F5E642' }}>DFW Context:</strong> DFW burglary rates vary significantly by suburb. 
+          <strong style={{ color: '#F5E642′ }}>DFW Context:</strong> DFW burglary rates vary significantly by suburb. 
           Plano and Frisco rank among safest; parts of Dallas/Garland have higher rates. Ring Neighbors community coverage is strong across most DFW suburbs.
         </div>
 
@@ -44,7 +44,7 @@ export default function DFWHomeSecuritySystemCompare2026() {
                 borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'center' }}>
               <div style={{ fontSize: 30 }}>{s.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, color: '#E8F4FD', margin: '6px 0 4px' }}>{s.label}</div>
-              <div style={{ fontSize: 12, color: '#F5E642' }}>{s.monitoring}</div>
+              <div style={{ fontSize: 12, color: '#F5E642′ }}>{s.monitoring}</div>
               <div style={{ fontSize: 11, color: '#8BA5C4', marginTop: 4 }}>{s.contract}</div>
             </button>
           ))}
@@ -77,7 +77,7 @@ export default function DFWHomeSecuritySystemCompare2026() {
             </div>
             <div style={{ background: '#1A2840', borderRadius: 8, padding: 12 }}>
               <div style={{ color: '#8BA5C4', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>BEST FOR</div>
-              <div style={{ fontSize: 14, color: '#F5E642' }}>{sys.bestFor}</div>
+              <div style={{ fontSize: 14, color: '#F5E642′ }}>{sys.bestFor}</div>
             </div>
           </div>
         )}

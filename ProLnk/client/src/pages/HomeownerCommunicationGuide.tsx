@@ -161,7 +161,7 @@ export default function HomeownerCommunicationGuide() {
                 borderRadius: 8,
                 border: activeSection === s.id ? '2px solid #1E3A5F' : '2px solid #E5E5E0',
                 background: activeSection === s.id ? '#1E3A5F' : '#fff',
-                color: activeSection === s.id ? '#FFC107' : '#666',
+                color: activeSection === s.id ? '#FFC107′ : '#666',
                 fontFamily: 'sans-serif',
                 fontWeight: 700,
                 fontSize: 13,

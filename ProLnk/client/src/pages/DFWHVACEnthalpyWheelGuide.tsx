@@ -93,7 +93,7 @@ export default function DFWHVACEnthalpyWheelGuide() {
             Get DFW Energy Recovery Recommendation
           </button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}>🔄 <strong>Recommendation:</strong> {result.recommendation}</div>
               <div style={{ marginBottom: '0.5rem' }}>📐 <strong>Sizing Approach:</strong> {result.sizing}</div>
               <div style={{ marginBottom: '0.5rem' }}>⚡ <strong>DFW Benefit:</strong> {result.benefit}</div>
@@ -104,7 +104,7 @@ export default function DFWHVACEnthalpyWheelGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
           <p style={{ color: '#9BA8BB', fontSize: '0.9rem', margin: 0 }}>
-            🏠 <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> Enthalpy wheel systems require quarterly cleaning in DFW — coil contamination and wheel fouling significantly reduce effectiveness. Budget for PM contracts.
+            🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> Enthalpy wheel systems require quarterly cleaning in DFW — coil contamination and wheel fouling significantly reduce effectiveness. Budget for PM contracts.
           </p>
         </div>
       </div>

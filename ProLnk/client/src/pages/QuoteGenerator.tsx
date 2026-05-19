@@ -103,18 +103,18 @@ export default function QuoteGenerator() {
 
     <PartnerLayout>
 
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6″>
       <div className="max-w-3xl mx-auto">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-slate-900">Instant Quote Generator</h1>
-          <p className="text-slate-500 mt-1">Generate professional estimates in seconds — no spreadsheets needed</p>
+        <div className="mb-6″>
+          <h1 className="text-3xl font-bold text-slate-900″>Instant Quote Generator</h1>
+          <p className="text-slate-500 mt-1″>Generate professional estimates in seconds — no spreadsheets needed</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
           {/* Input Panel */}
           <Card>
-            <CardHeader><CardTitle className="text-base flex items-center gap-2"><Calculator className="w-4 h-4" /> Job Details</CardTitle></CardHeader>
-            <CardContent className="space-y-4">
+            <CardHeader><CardTitle className="text-base flex items-center gap-2″><Calculator className="w-4 h-4" /> Job Details</CardTitle></CardHeader>
+            <CardContent className="space-y-4″>
               <div>
                 <label className="text-xs font-medium text-slate-600 mb-1 block">Service Type</label>
                 <Select value={service} onValueChange={setService}>
@@ -130,7 +130,7 @@ export default function QuoteGenerator() {
                   <label className="text-xs font-medium text-slate-600 mb-1 block">
                     Size ({SERVICES[service].unit === "per sq ft" ? "sq ft" : SERVICES[service].unit === "per linear ft" ? "linear feet" : "squares"})
                   </label>
-                  <Input type="number" placeholder="e.g. 2000" value={sqft} onChange={e => setSqft(e.target.value)} />
+                  <Input type="number" placeholder="e.g. 2000″ value={sqft} onChange={e => setSqft(e.target.value)} />
                 </div>
               )}
 
@@ -158,71 +158,71 @@ export default function QuoteGenerator() {
                 </Select>
               </div>
 
-              <Button onClick={generateQuote} className="w-full bg-indigo-600 hover:bg-indigo-700">
-                <Calculator className="w-4 h-4 mr-2" /> Generate Quote
+              <Button onClick={generateQuote} className="w-full bg-indigo-600 hover:bg-indigo-700″>
+                <Calculator className="w-4 h-4 mr-2″ /> Generate Quote
               </Button>
             </CardContent>
           </Card>
 
           {/* Quote Output */}
-          <div className="space-y-4">
+          <div className="space-y-4″>
             {quote ? (
               <>
-                <Card className="border-indigo-200">
-                  <CardHeader><CardTitle className="text-base flex items-center gap-2"><DollarSign className="w-4 h-4 text-indigo-600" /> Quote Range</CardTitle></CardHeader>
+                <Card className="border-indigo-200″>
+                  <CardHeader><CardTitle className="text-base flex items-center gap-2″><DollarSign className="w-4 h-4 text-indigo-600" /> Quote Range</CardTitle></CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-3 gap-3 mb-4">
+                    <div className="grid grid-cols-3 gap-3 mb-4″>
                       <div className="text-center p-3 bg-slate-50 rounded-xl">
-                        <div className="text-xs text-slate-400 mb-1">Low</div>
-                        <div className="text-xl font-bold text-slate-600">${quote.low.toLocaleString()}</div>
+                        <div className="text-xs text-slate-400 mb-1″>Low</div>
+                        <div className="text-xl font-bold text-slate-600″>${quote.low.toLocaleString()}</div>
                       </div>
-                      <div className="text-center p-3 bg-indigo-50 rounded-xl border-2 border-indigo-200">
+                      <div className="text-center p-3 bg-indigo-50 rounded-xl border-2 border-indigo-200″>
                         <div className="text-xs text-indigo-500 mb-1 font-medium">Estimate</div>
-                        <div className="text-xl font-bold text-indigo-700">${quote.mid.toLocaleString()}</div>
+                        <div className="text-xl font-bold text-indigo-700″>${quote.mid.toLocaleString()}</div>
                       </div>
                       <div className="text-center p-3 bg-slate-50 rounded-xl">
-                        <div className="text-xs text-slate-400 mb-1">High</div>
-                        <div className="text-xl font-bold text-slate-600">${quote.high.toLocaleString()}</div>
+                        <div className="text-xs text-slate-400 mb-1″>High</div>
+                        <div className="text-xl font-bold text-slate-600″>${quote.high.toLocaleString()}</div>
                       </div>
                     </div>
 
                     {service && (
-                      <div className="text-xs text-slate-500 mb-3">
-                        <div className="font-medium text-slate-700 mb-1">Factors included:</div>
+                      <div className="text-xs text-slate-500 mb-3″>
+                        <div className="font-medium text-slate-700 mb-1″>Factors included:</div>
                         {SERVICES[service].factors.map(f => (
-                          <div key={f} className="flex items-center gap-1">
+                          <div key={f} className="flex items-center gap-1″>
                             <span className="w-1 h-1 bg-indigo-400 rounded-full inline-block" /> {f}
                           </div>
                         ))}
                       </div>
                     )}
 
-                    <div className="flex gap-2">
+                    <div className="flex gap-2″>
                       <Button size="sm" variant="outline" onClick={copyQuote} className="flex-1 text-xs">
-                        <Copy className="w-3 h-3 mr-1" /> Copy
+                        <Copy className="w-3 h-3 mr-1″ /> Copy
                       </Button>
                       <Button size="sm" variant="outline" className="flex-1 text-xs" onClick={exportPDF}>
-                        <FileText className="w-3 h-3 mr-1" /> Export PDF
+                        <FileText className="w-3 h-3 mr-1″ /> Export PDF
                       </Button>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card>
-                  <CardHeader><CardTitle className="text-base text-sm flex items-center gap-2"><Send className="w-4 h-4" /> Send to Client</CardTitle></CardHeader>
-                  <CardContent className="space-y-3">
+                  <CardHeader><CardTitle className="text-base text-sm flex items-center gap-2″><Send className="w-4 h-4" /> Send to Client</CardTitle></CardHeader>
+                  <CardContent className="space-y-3″>
                     <Input placeholder="Client name" value={clientName} onChange={e => setClientName(e.target.value)} />
                     <Input placeholder="Client email" type="email" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
                     <Button onClick={sendQuote} className="w-full bg-green-600 hover:bg-green-700 text-sm" disabled={createQuoteMutation.isPending || sendQuoteMutation.isPending}>
-                      {(createQuoteMutation.isPending || sendQuoteMutation.isPending) ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : <><Send className="w-4 h-4 mr-2" /> Send Quote by Email</>}
+                      {(createQuoteMutation.isPending || sendQuoteMutation.isPending) ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : <><Send className="w-4 h-4 mr-2″ /> Send Quote by Email</>}
                     </Button>
                   </CardContent>
                 </Card>
               </>
             ) : (
-              <div className="flex items-center justify-center h-full min-h-48 bg-white rounded-xl border-2 border-dashed border-slate-200">
-                <div className="text-center text-slate-400">
-                  <Calculator className="w-10 h-10 mx-auto mb-2 opacity-30" />
+              <div className="flex items-center justify-center h-full min-h-48 bg-white rounded-xl border-2 border-dashed border-slate-200″>
+                <div className="text-center text-slate-400″>
+                  <Calculator className="w-10 h-10 mx-auto mb-2 opacity-30″ />
                   <p className="text-sm">Fill in job details and click Generate Quote</p>
                 </div>
               </div>

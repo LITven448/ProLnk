@@ -80,7 +80,7 @@ export default function DFWTitleSearchGuide2026() {
   const g = guides[activeConcern];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>📋</div>
@@ -90,7 +90,7 @@ export default function DFWTitleSearchGuide2026() {
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32, justifyContent: 'center' }}>
           {concerns.map(c => (
-            <button key={c} onClick={() => setActiveConcern(c)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeConcern === c ? '#F5E642' : '#1E2D45', color: activeConcern === c ? '#0A1628' : '#94A3B8', transition: 'all 0.2s' }}>{c}</button>
+            <button key={c} onClick={() => setActiveConcern(c)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeConcern === c ? '#F5E642′ : '#1E2D45', color: activeConcern === c ? '#0A1628' : '#94A3B8', transition: ’all 0.2s' }}>{c}</button>
           ))}
         </div>
 
@@ -104,17 +104,17 @@ export default function DFWTitleSearchGuide2026() {
             <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
               {g.howToFind.map((item, i) => (
                 <li key={i} style={{ fontSize: 14, color: '#CBD5E1', paddingLeft: 20, position: 'relative', lineHeight: 1.5 }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>›</span>{item}
+                  <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>›</span>{item}
                 </li>
               ))}
             </ul>
           </div>
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, border: '1px solid #DC2626' }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, border: '1px solid #DC2626′ }}>
             <h3 style={{ color: '#EF4444', fontSize: 17, fontWeight: 700, margin: '0 0 14px' }}>🚩 Red Flags</h3>
             <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
               {g.redFlags.map((item, i) => (
                 <li key={i} style={{ fontSize: 14, color: '#FCA5A5', paddingLeft: 20, position: 'relative', lineHeight: 1.5 }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#EF4444' }}>›</span>{item}
+                  <span style={{ position: 'absolute', left: 0, color: '#EF4444′ }}>›</span>{item}
                 </li>
               ))}
             </ul>

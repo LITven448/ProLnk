@@ -50,7 +50,7 @@ export default function ProLnkGuaranteeExplainer() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>🛡️</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: '12px 0 8px' }}>ProLnk Service Guarantee</h1>
-          <p style={{ color: '#94a3b8' }}>We back every job. Here's exactly what is and is not covered.</p>
+          <p style={{ color: '#94a3b8′ }}>We back every job. Here’s exactly what is and is not covered.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 40 }}>
@@ -70,7 +70,7 @@ export default function ProLnkGuaranteeExplainer() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center', marginBottom: 32 }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setConcern(c.id)}
-              style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 10, padding: '12px 20px', color: concern === c.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 10, padding: '12px 20px', color: concern === c.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
               {c.label}
             </button>
           ))}

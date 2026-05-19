@@ -55,7 +55,7 @@ export default function DFWProLnkIncomeStatement() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShown(true)} disabled={!tier || !activity} style={{ background: tier && activity ? '#F5E642' : '#1E3A5F', color: tier && activity ? '#0A1628' : '#445566', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: tier && activity ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShown(true)} disabled={!tier || !activity} style={{ background: tier && activity ? '#F5E642′ : '#1E3A5F', color: tier && activity ? '#0A1628' : '#445566', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: tier && activity ? 'pointer' : 'not-allowed', width: '100%' }}>
             Generate 12-Month Income Statement →
           </button>
         </div>
@@ -78,7 +78,7 @@ export default function DFWProLnkIncomeStatement() {
             <div style={{ background: '#0D1F38', borderRadius: 12, overflow: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
                 <thead>
-                  <tr style={{ background: '#0A1628' }}>
+                  <tr style={{ background: '#0A1628′ }}>
                     {['Mo', 'Direct', 'L1 Override', 'Sub Override', 'Origination', 'Gross', 'Sub Cost', 'Net'].map(h => (
                       <th key={h} style={{ padding: '10px 12px', textAlign: 'right', color: '#F5E642', fontWeight: 700, whiteSpace: 'nowrap' }}>{h}</th>
                     ))}
@@ -86,7 +86,7 @@ export default function DFWProLnkIncomeStatement() {
                 </thead>
                 <tbody>
                   {rows.map((r, i) => (
-                    <tr key={i} style={{ borderTop: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#081422' }}>
+                    <tr key={i} style={{ borderTop: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#081422′ }}>
                       <td style={{ padding: '8px 12px', textAlign: 'right', color: '#8899AA' }}>{r.month}</td>
                       <td style={{ padding: '8px 12px', textAlign: 'right', color: '#fff' }}>${r.direct.toLocaleString()}</td>
                       <td style={{ padding: '8px 12px', textAlign: 'right', color: '#fff' }}>${r.l1Override.toLocaleString()}</td>
@@ -97,7 +97,7 @@ export default function DFWProLnkIncomeStatement() {
                       <td style={{ padding: '8px 12px', textAlign: 'right', color: '#F5E642', fontWeight: 700 }}>${r.net.toLocaleString()}</td>
                     </tr>
                   ))}
-                  <tr style={{ borderTop: '2px solid #F5E642', background: '#0A1628' }}>
+                  <tr style={{ borderTop: '2px solid #F5E642', background: '#0A1628′ }}>
                     <td style={{ padding: '10px 12px', color: '#F5E642', fontWeight: 700 }}>Total</td>
                     <td colSpan={4} style={{ padding: '10px 12px' }}></td>
                     <td style={{ padding: '10px 12px', textAlign: 'right', color: '#F5E642', fontWeight: 800 }}>${totalGross.toLocaleString()}</td>

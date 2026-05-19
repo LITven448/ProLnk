@@ -71,7 +71,7 @@ export default function DFWSmartHomeROI2026() {
 
         <div style={{ background: '#132140', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.1rem' }}>📊 DFW ROI Calculator</div>
-          <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>Select smart upgrade</label>
+          <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>Select smart upgrade</label>
           <select
             value={selected}
             onChange={e => { setSelected(e.target.value); setResult(null); }}

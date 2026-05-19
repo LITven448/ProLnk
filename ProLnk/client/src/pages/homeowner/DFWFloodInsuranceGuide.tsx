@@ -48,7 +48,7 @@ export default function DFWFloodInsuranceGuide() {
           <div style={{ fontSize: 28, marginBottom: 12 }}>🌊</div>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F8FAFC', marginBottom: 12 }}>DFW Has a Serious Flood Problem</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>
-            Dallas-Fort Worth contains more than <strong style={{ color: '#E2E8F0' }}>700 miles of creek and river corridors</strong>. Flash flooding kills more people in Texas than any other weather event — more than tornadoes, more than hurricanes.
+            Dallas-Fort Worth contains more than <strong style={{ color: '#E2E8F0′ }}>700 miles of creek and river corridors</strong>. Flash flooding kills more people in Texas than any other weather event — more than tornadoes, more than hurricanes.
           </p>
           <p style={{ color: '#94A3B8', lineHeight: 1.7 }}>
             The 2015 Memorial Day floods and 2019 spring flooding events together caused over <strong style={{ color: '#F59E0B' }}>$2 billion in property damage</strong> across DFW. Tropical systems from the Gulf occasionally penetrate this far inland, dumping catastrophic rainfall on already-saturated ground.
@@ -118,7 +118,7 @@ export default function DFWFloodInsuranceGuide() {
         <div style={{ background: '#132038', border: '1px solid #1E3A5F', borderRadius: 12, padding: 28, marginBottom: 48 }}>
           <h3 style={{ fontSize: 20, fontWeight: 700, color: '#F8FAFC', marginBottom: 16 }}>🗺️ How to Check Your Flood Zone</h3>
           <ol style={{ color: '#94A3B8', lineHeight: 2, paddingLeft: 20 }}>
-            <li>Visit <strong style={{ color: '#3B82F6' }}>msc.fema.gov</strong> — FEMA Flood Map Service Center</li>
+            <li>Visit <strong style={{ color: '#3B82F6′ }}>msc.fema.gov</strong> — FEMA Flood Map Service Center</li>
             <li>Enter your property address</li>
             <li>View your FIRM (Flood Insurance Rate Map) panel</li>
             <li>Identify your zone designation (AE, X, AH, AO, etc.)</li>

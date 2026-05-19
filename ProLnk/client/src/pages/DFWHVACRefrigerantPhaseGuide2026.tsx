@@ -5,9 +5,9 @@ export default function DFWHVACRefrigerantPhaseGuide2026() {
   const [result, setResult] = useState<string | null>(null);
 
   const vintageOptions = [
-    { label: 'Pre-2010 (R-22 system)', value: 'pre2010' },
-    { label: '2010–2022 (R-410A system)', value: '2010_2022' },
-    { label: '2023–2024 (R-410A system, newer)', value: '2023_2024' },
+    { label: 'Pre-2010 (R-22 system)', value: 'pre2010′ },
+    { label: '2010–2022 (R-410A system)', value: '2010_2022′ },
+    { label: '2023–2024 (R-410A system, newer)', value: '2023_2024′ },
     { label: '2025+ (new system)', value: '2025plus' },
   ];
 

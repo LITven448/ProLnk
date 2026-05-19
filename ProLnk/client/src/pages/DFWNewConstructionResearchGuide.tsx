@@ -20,7 +20,7 @@ const checklistItems = [
     'Search for builder UCC filings or mechanics liens on their active DFW projects via county clerk records',
     'Check if builder is publicly traded — review earnings reports for warning signs (layoffs, cost-cutting language)',
     'Ask sales agent: "How many homes has this builder delivered in this community so far?" — healthy builders move at consistent pace',
-    'Google "[Builder name] DFW delays 2024 2025" — buyer forums reveal financial problems before press does',
+    'Google "[Builder name] DFW delays 2024 2025″ — buyer forums reveal financial problems before press does',
   ]},
   { category: 'MUD Tax Districts', emoji: '🏛️', items: [
     'Ask the sales agent for the MUD (Municipal Utility District) tax rate — some DFW MUDs add $3,000–8,000/year to your tax bill',
@@ -93,7 +93,7 @@ export default function DFWNewConstructionResearchGuide() {
                 <h3 style={{ color: '#0A1628', fontWeight: 700, marginBottom: 16 }}>{section.emoji} {section.category}</h3>
                 {section.items.map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 14, alignItems: 'flex-start' }}>
-                    <span style={{ minWidth: 24, height: 24, borderRadius: 6, backgroundColor: '#F5E642', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, color: '#0A1628' }}>{i + 1}</span>
+                    <span style={{ minWidth: 24, height: 24, borderRadius: 6, backgroundColor: '#F5E642', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, color: '#0A1628′ }}>{i + 1}</span>
                     <p style={{ color: '#334155', margin: 0, lineHeight: 1.6 }}>{item}</p>
                   </div>
                 ))}
@@ -102,7 +102,7 @@ export default function DFWNewConstructionResearchGuide() {
             <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <h3 style={{ color: '#0A1628', fontWeight: 700, marginBottom: 16 }}>💬 Questions to ask the sales agent</h3>
               {salesAgentQuestions.map((q, i) => (
-                <div key={i} style={{ padding: '12px 0', borderBottom: '1px solid #F1F5F9', color: '#334155' }}>❓ {q}</div>
+                <div key={i} style={{ padding: '12px 0', borderBottom: '1px solid #F1F5F9', color: '#334155′ }}>❓ {q}</div>
               ))}
             </div>
           </div>

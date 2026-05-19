@@ -26,14 +26,14 @@ export default function DFWRoofDeckGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '28px' }}>
           {[{
             title: 'OSB (Oriented Strand Board)', icon: '🟫',
-            facts: ['Dominates new DFW construction (2000+)', 'Lower cost than plywood', 'Swells when exposed to moisture', 'Must be replaced if waterlogged', 'Code minimum: 7/16" for most DFW pitches']
+            facts: ['Dominates new DFW construction (2000+)', 'Lower cost than plywood', 'Swells when exposed to moisture', 'Must be replaced if waterlogged', 'Code minimum: 7/16″ for most DFW pitches']
           }, {
             title: 'Plywood', icon: '🟡',
             facts: ['Pre-2000 DFW standard', 'Better moisture tolerance', 'Holds nails/staples longer', 'More expensive to source today', 'Preferred by premium roofers']
           }].map(d => (
             <div key={d.title} style={{ backgroundColor: '#112240', borderRadius: '10px', padding: '20px' }}>
               <div style={{ fontSize: '1.3rem', marginBottom: '8px' }}>{d.icon} {d.title}</div>
-              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8' }}>
+              <ul style={{ paddingLeft: '18px', color: '#cbd5e1', lineHeight: '1.8′ }}>
                 {d.facts.map(f => <li key={f}>{f}</li>)}
               </ul>
             </div>
@@ -51,7 +51,7 @@ export default function DFWRoofDeckGuide2026() {
             ['When to Add', 'Full replacement only — not retrofit over existing deck'],
             ['Warranty', 'Huber 30-year limited on sheathing + tape system'],
           ].map(([k,v]) => (
-            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '8px 0' }}>
+            <div key={k} style={{ borderBottom: '1px solid #1e3a5f', padding: '8px 0′ }}>
               <span style={{ color: '#F5E642', fontWeight: 600 }}>{k}: </span>
               <span style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{v}</span>
             </div>
@@ -77,7 +77,7 @@ export default function DFWRoofDeckGuide2026() {
             </div>
           </div>
           <button onClick={getAssessment} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', marginBottom: '16px' }}>Get Deck Assessment →</button>
-          {assessment && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6' }}>{assessment}</div>}
+          {assessment && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6′ }}>{assessment}</div>}
         </div>
       </div>
     </div>

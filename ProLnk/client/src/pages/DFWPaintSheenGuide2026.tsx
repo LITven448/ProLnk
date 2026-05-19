@@ -27,7 +27,7 @@ export default function DFWPaintSheenGuide2026() {
         <div style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Room Type → Sheen Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Select Room</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Select Room</label>
             <select value={room} onChange={e => setRoom(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
               <option value="ceiling">Ceiling</option>
               <option value="living">Living Room</option>
@@ -37,9 +37,9 @@ export default function DFWPaintSheenGuide2026() {
               <option value="trim">Trim / Doors / Millwork</option>
             </select>
           </div>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ Use {rec.sheen}</div>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>{rec.why}</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>{rec.why}</div>
             <div><strong>Brands:</strong> {rec.brands}</div>
           </div>
         </div>

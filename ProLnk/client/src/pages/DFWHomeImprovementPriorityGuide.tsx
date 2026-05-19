@@ -107,7 +107,7 @@ export default function DFWHomeImprovementPriorityGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: '1rem' }}>
             {ISSUES.map(issue => (
               <button key={issue} onClick={() => toggle(issue)}
-                style={{ background: selectedIssues.includes(issue) ? '#F5E642' : 'rgba(255,255,255,0.07)', color: selectedIssues.includes(issue) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '6px 12px', fontSize: 13, cursor: 'pointer' }}>
+                style={{ background: selectedIssues.includes(issue) ? '#F5E642′ : ’rgba(255,255,255,0.07)', color: selectedIssues.includes(issue) ? '#0A1628′ : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '6px 12px', fontSize: 13, cursor: ’pointer' }}>
                 {issue}
               </button>
             ))}

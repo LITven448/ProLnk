@@ -9,24 +9,24 @@ const NAV = [
 ];
 
 const COLORS = {
-  bg: "#0A1628",
-  card: "#152035",
-  border: "#1E2E45",
+  bg: "#0A1628″,
+  card: "#152035″,
+  border: "#1E2E45″,
   text: "#F0F4FF",
-  muted: "#7A8BA8",
-  yellow: "#F5E642",
-  green: "#10B981",
+  muted: "#7A8BA8″,
+  yellow: "#F5E642″,
+  green: "#10B981″,
 };
 
 const BARS = [120, 200, 165, 310, 280, 190, 420];
 const DAYS = ["M", "T", "W", "T", "F", "S", "S"];
 
 const STREAMS = [
-  { label: "Job Commissions", amount: "$840", pct: 67, color: "#F5E642" },
-  { label: "Network L1 Overrides", amount: "$247", pct: 50, color: "#F5E642CC" },
-  { label: "Network L2 Overrides", amount: "$89", pct: 28, color: "#F5E64288" },
-  { label: "Subscription Overrides", amount: "$71", pct: 22, color: "#F5E64260" },
-  { label: "Origination Rights", amount: "$0", pct: 0, color: "#1E2E45", muted: true },
+  { label: "Job Commissions", amount: "$840″, pct: 67, color: "#F5E642" },
+  { label: "Network L1 Overrides", amount: "$247″, pct: 50, color: "#F5E642CC" },
+  { label: "Network L2 Overrides", amount: "$89″, pct: 28, color: "#F5E64288" },
+  { label: "Subscription Overrides", amount: "$71″, pct: 22, color: "#F5E64260" },
+  { label: "Origination Rights", amount: "$0″, pct: 0, color: "#1E2E45", muted: true },
 ];
 
 export default function EarningsScreen() {
@@ -44,7 +44,7 @@ export default function EarningsScreen() {
       </div>
 
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 20px 0" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 20px 0″ }}>
         <div style={{ fontSize: 20, fontWeight: 700 }}>Earnings</div>
         {/* Period selector */}
         <div style={{ display: "flex", background: COLORS.card, borderRadius: 10, padding: 3, border: `1px solid ${COLORS.border}`, gap: 2 }}>
@@ -66,14 +66,14 @@ export default function EarningsScreen() {
         {/* SVG Bar Chart */}
         <div style={{ background: COLORS.card, borderRadius: 16, padding: "16px 14px 12px", border: `1px solid ${COLORS.border}`, marginBottom: 14 }}>
           <div style={{ fontSize: 11, color: COLORS.muted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>Daily Earnings</div>
-          <svg width="100%" height="80" viewBox="0 0 330 80" style={{ display: "block" }}>
+          <svg width="100%" height="80″ viewBox="0 0 330 80" style={{ display: "block" }}>
             {BARS.map((v, i) => {
               const barH = Math.round((v / maxBar) * 60);
               const x = i * 47 + 6;
               const isToday = i === 6;
               return (
                 <g key={i}>
-                  <rect x={x} y={70 - barH} width={34} height={barH} rx={6} fill={isToday ? COLORS.yellow : "#F5E64233"} />
+                  <rect x={x} y={70 - barH} width={34} height={barH} rx={6} fill={isToday ? COLORS.yellow : "#F5E64233″} />
                   <text x={x + 17} y={78} textAnchor="middle" fontSize={10} fill={isToday ? COLORS.yellow : COLORS.muted}>{DAYS[i]}</text>
                 </g>
               );

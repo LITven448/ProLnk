@@ -64,21 +64,21 @@ export default function MaintenanceCostTracker() {
 
   const diff = total - DFW_AVG;
   const diffLabel = diff > 0 ? `$${Math.abs(diff).toLocaleString()} above` : `$${Math.abs(diff).toLocaleString()} below`;
-  const diffColor = diff > 200 ? '#EF4444' : diff < -200 ? '#F59E0B' : '#10B981';
+  const diffColor = diff > 200 ? '#EF4444′ : diff < -200 ? '#F59E0B' : '#10B981';
 
   return (
     <HomeownerLayout>
-      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-12">
+      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-12″>
         <div className="max-w-4xl mx-auto">
 
-          <div className="mb-10">
-            <h1 className="text-4xl font-bold text-white mb-2">Maintenance Cost Tracker</h1>
+          <div className="mb-10″>
+            <h1 className="text-4xl font-bold text-white mb-2″>Maintenance Cost Tracker</h1>
             <p className="text-[#64B5F6] text-lg">Know exactly what your home costs to maintain</p>
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8">
-            <label className="block text-sm text-gray-400 mb-2">Estimated Home Value</label>
-            <div className="flex items-center gap-3">
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8″>
+            <label className="block text-sm text-gray-400 mb-2″>Estimated Home Value</label>
+            <div className="flex items-center gap-3″>
               <span className="text-gray-400 text-xl">$</span>
               <input
                 type="number"
@@ -92,67 +92,67 @@ export default function MaintenanceCostTracker() {
             </div>
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8">
-            <h2 className="text-xl font-semibold text-white mb-5">Annual Maintenance by Category</h2>
-            <div className="space-y-4">
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8″>
+            <h2 className="text-xl font-semibold text-white mb-5″>Annual Maintenance by Category</h2>
+            <div className="space-y-4″>
               {lineItems.map(li => (
-                <div key={li.key} className="flex items-center justify-between gap-4">
-                  <span className="text-gray-300 text-sm flex-1">{li.label}</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500">$</span>
+                <div key={li.key} className="flex items-center justify-between gap-4″>
+                  <span className="text-gray-300 text-sm flex-1″>{li.label}</span>
+                  <div className="flex items-center gap-2″>
+                    <span className="text-gray-500″>$</span>
                     <input
                       type="number"
                       value={costs[li.key]}
                       onChange={e => updateCost(li.key, e.target.value)}
                       className="bg-[#0A1628] border border-[#2D4A6B] rounded-lg px-3 py-1.5 text-white text-sm w-28 text-right focus:outline-none focus:border-[#64B5F6]"
                     />
-                    <span className="text-gray-500 text-sm w-6">/yr</span>
+                    <span className="text-gray-500 text-sm w-6″>/yr</span>
                   </div>
                 </div>
               ))}
 
-              <div className="border-t border-[#1E3A5F] pt-4 flex items-center justify-between gap-4">
+              <div className="border-t border-[#1E3A5F] pt-4 flex items-center justify-between gap-4″>
                 <div>
                   <span className="text-gray-300 text-sm">Misc Repairs (5% of home value)</span>
-                  <span className="block text-xs text-gray-500">Auto-calculated from home value above</span>
+                  <span className="block text-xs text-gray-500″>Auto-calculated from home value above</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">$</span>
+                <div className="flex items-center gap-2″>
+                  <span className="text-gray-500″>$</span>
                   <div className="bg-[#1E3A5F] rounded-lg px-3 py-1.5 text-white text-sm w-28 text-right">
                     {miscRule.toLocaleString()}
                   </div>
-                  <span className="text-gray-500 text-sm w-6">/yr</span>
+                  <span className="text-gray-500 text-sm w-6″>/yr</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8″>
             <div className="bg-[#0D1F3C] border border-[#64B5F6]/30 rounded-2xl p-6 text-center">
-              <div className="text-[#64B5F6] text-sm uppercase tracking-widest mb-2">Your Total</div>
+              <div className="text-[#64B5F6] text-sm uppercase tracking-widest mb-2″>Your Total</div>
               <div className="text-3xl font-bold text-white">{fmt(total)}</div>
-              <div className="text-gray-500 text-xs mt-1">per year</div>
+              <div className="text-gray-500 text-xs mt-1″>per year</div>
             </div>
             <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 text-center">
-              <div className="text-gray-400 text-sm uppercase tracking-widest mb-2">1% Rule Budget</div>
+              <div className="text-gray-400 text-sm uppercase tracking-widest mb-2″>1% Rule Budget</div>
               <div className="text-3xl font-bold text-white">{fmt(onePercent)}</div>
-              <div className="text-gray-500 text-xs mt-1">recommended</div>
+              <div className="text-gray-500 text-xs mt-1″>recommended</div>
             </div>
             <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 text-center">
-              <div className="text-gray-400 text-sm uppercase tracking-widest mb-2">DFW Average</div>
+              <div className="text-gray-400 text-sm uppercase tracking-widest mb-2″>DFW Average</div>
               <div className="text-3xl font-bold text-white">{fmt(DFW_AVG)}</div>
-              <div className="text-xs mt-1" style={{ color: diffColor }}>
+              <div className="text-xs mt-1″ style={{ color: diffColor }}>
                 You are {diffLabel} avg
               </div>
             </div>
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8">
-            <h2 className="text-xl font-semibold text-white mb-6">5-Year Projection</h2>
-            <div className="flex items-end gap-4 h-40">
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8″>
+            <h2 className="text-xl font-semibold text-white mb-6″>5-Year Projection</h2>
+            <div className="flex items-end gap-4 h-40″>
               {fiveYearData.map((d, i) => (
-                <div key={d.year} className="flex-1 flex flex-col items-center gap-2">
-                  <span className="text-xs text-gray-400">{fmt(d.value)}</span>
+                <div key={d.year} className="flex-1 flex flex-col items-center gap-2″>
+                  <span className="text-xs text-gray-400″>{fmt(d.value)}</span>
                   <div
                     className="w-full rounded-t-lg transition-all"
                     style={{
@@ -160,15 +160,15 @@ export default function MaintenanceCostTracker() {
                       backgroundColor: BAR_COLORS[i],
                     }}
                   />
-                  <span className="text-xs text-gray-500">{d.year}</span>
+                  <span className="text-xs text-gray-500″>{d.year}</span>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-500 mt-4">Assumes 3% annual cost increase.</p>
+            <p className="text-xs text-gray-500 mt-4″>Assumes 3% annual cost increase.</p>
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8">
-            <h2 className="text-lg font-semibold text-white mb-3">Save a Note</h2>
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-8″>
+            <h2 className="text-lg font-semibold text-white mb-3″>Save a Note</h2>
             <textarea
               value={note}
               onChange={e => setNote(e.target.value)}
@@ -184,7 +184,7 @@ export default function MaintenanceCostTracker() {
           </div>
 
           <div className="bg-gradient-to-r from-[#0D1F3C] to-[#1E3A5F] border border-[#2D6A4F] rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Schedule This Year's Maintenance</h3>
+            <h3 className="text-2xl font-bold text-white mb-3″>Schedule This Year's Maintenance</h3>
             <p className="text-gray-400 mb-6 text-sm max-w-lg mx-auto">
               Connect with verified pros for every item on your list. TrustyPro handles scheduling,
               reminders, and price transparency — so nothing falls through the cracks.

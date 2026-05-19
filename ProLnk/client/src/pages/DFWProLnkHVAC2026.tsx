@@ -66,13 +66,13 @@ export default function DFWProLnkHVAC2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 28 }}>
           {[
-            { l: 'DFW HVAC Pros', v: '340+', desc: 'Vetted and active in 2026' },
+            { l: 'DFW HVAC Pros', v: '340+', desc: 'Vetted and active in 2026′ },
             { l: 'Resource Pages', v: '3,200+', desc: 'DFW-specific HVAC guides' },
             { l: 'Coverage Area', v: '11 Counties', desc: 'Greater DFW metro' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#1e293b', borderRadius: 10, padding: 16, border: '1px solid #334155', textAlign: 'center' }}>
               <div style={{ color: '#F5E642', fontSize: 24, fontWeight: 800 }}>{s.v}</div>
-              <div style={{ color: '#fff', fontSize: 12, fontWeight: 600, margin: '4px 0' }}>{s.l}</div>
+              <div style={{ color: '#fff', fontSize: 12, fontWeight: 600, margin: '4px 0′ }}>{s.l}</div>
               <div style={{ color: '#64748b', fontSize: 11 }}>{s.desc}</div>
             </div>
           ))}
@@ -83,7 +83,7 @@ export default function DFWProLnkHVAC2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 10 }}>
             {needs.map((n, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: ’pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
                 {n.emoji} {n.need}
               </button>
             ))}
@@ -94,7 +94,7 @@ export default function DFWProLnkHVAC2026() {
           <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 24 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{item.emoji} {item.need}</div>
-              <div style={{ background: item.available.includes('Available') ? '#14532d' : '#1e3a5f', borderRadius: 6, padding: '4px 10px', color: item.available.includes('Available') ? '#4ade80' : '#93c5fd', fontSize: 12, fontWeight: 700 }}>{item.available}</div>
+              <div style={{ background: item.available.includes('Available') ? '#14532d' : '#1e3a5f', borderRadius: 6, padding: '4px 10px', color: item.available.includes('Available') ? '#4ade80′ : '#93c5fd', fontSize: 12, fontWeight: 700 }}>{item.available}</div>
             </div>
             <p style={{ color: '#cbd5e1', fontSize: 14, margin: '0 0 12px', lineHeight: 1.6 }}>{item.solution}</p>
             <div style={{ background: '#0f172a', borderRadius: 8, padding: '10px 14px', marginBottom: 12, color: '#94a3b8', fontSize: 13, lineHeight: 1.5 }}>{item.detail}</div>
@@ -107,7 +107,7 @@ export default function DFWProLnkHVAC2026() {
           </div>
         )}
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Start with ProLnk for Your DFW HVAC Need</div>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: '0 0 12px', lineHeight: 1.6 }}>
             ProLnk is the only DFW platform built specifically for home service matching with transparent pricing, vetted pros, and a 3,200+ page resource library built for DFW conditions.

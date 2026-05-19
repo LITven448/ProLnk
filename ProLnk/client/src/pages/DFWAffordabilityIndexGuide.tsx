@@ -18,9 +18,9 @@ const submarkets = [
 
 function scoreLabel(score: number) {
   if (score >= 85) return { label: 'Highly Affordable', color: '#22c55e' };
-  if (score >= 70) return { label: 'Moderately Affordable', color: '#F5E642' };
-  if (score >= 55) return { label: 'Stretching', color: '#f97316' };
-  return { label: 'Significant Stretch', color: '#ef4444' };
+  if (score >= 70) return { label: 'Moderately Affordable', color: '#F5E642′ };
+  if (score >= 55) return { label: 'Stretching', color: '#f97316′ };
+  return { label: 'Significant Stretch', color: '#ef4444′ };
 }
 
 export default function DFWAffordabilityIndexGuide() {
@@ -77,7 +77,7 @@ export default function DFWAffordabilityIndexGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 12, display: 'block', marginBottom: 6 }}>HOUSEHOLD INCOME ($/YEAR)</label>
-              <input type='number' value={income} onChange={(e) => setIncome(e.target.value)} placeholder='e.g. 110000' style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type='number' value={income} onChange={(e) => setIncome(e.target.value)} placeholder='e.g. 110000′ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', padding: '10px 12px', fontSize: 14, boxSizing: ’border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 12, display: 'block', marginBottom: 6 }}>TARGET DFW AREA</label>

@@ -59,7 +59,7 @@ export default function DFWProLnkHistoryPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
             {aspects.map((a, i) => (
               <button key={i} onClick={() => setSelected(selected === a.label ? null : a.label)}
-                style={{ background: selected === a.label ? '#F5E642' : '#0A1628', color: selected === a.label ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: selected === a.label ? '#F5E642′ : '#0A1628', color: selected === a.label ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {a.emoji} {a.label}
               </button>
             ))}

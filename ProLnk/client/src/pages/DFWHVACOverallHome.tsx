@@ -85,9 +85,9 @@ export default function DFWHVACOverallHome() {
               {group.items.map((item, i) => (
                 <button key={i} onClick={() => group.set(i)}
                   style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', textAlign: 'left',
-                    borderColor: group.idx === i ? '#F5E642' : '#1e3a5f',
-                    background: group.idx === i ? '#F5E64222' : 'transparent',
-                    color: group.idx === i ? '#F5E642' : '#94a3b8', fontSize: 13 }}>
+                    borderColor: group.idx === i ? '#F5E642′ : '#1e3a5f',
+                    background: group.idx === i ? '#F5E64222′ : ’transparent',
+                    color: group.idx === i ? '#F5E642′ : '#94a3b8', fontSize: 13 }}>
                   {item.label}
                 </button>
               ))}

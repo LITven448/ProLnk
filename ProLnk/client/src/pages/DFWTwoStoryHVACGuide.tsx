@@ -42,7 +42,7 @@ export default function DFWTwoStoryHVACGuide() {
           In DFW two-story homes, upstairs temperatures routinely run 5-15 degrees hotter than downstairs during summer. Here is why and how to fix it.
         </p>
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Why It Happens in DFW</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Why It Happens in DFW</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               ['Attic Heat Bomb', 'DFW attics reach 140-160F in summer. Heat radiates through the ceiling into upper rooms.'],
@@ -58,15 +58,15 @@ export default function DFWTwoStoryHVACGuide() {
           </div>
         </div>
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Get Your Solution</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Get Your Solution</h2>
           <div style={{ display: 'grid', gap: 12, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>How much hotter is upstairs vs downstairs?</label>
               <select value={upstairsDelta} onChange={e => setUpstairsDelta(e.target.value)}
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15 }}>
                 <option value="">Select temperature difference</option>
-                <option value="1-4">1-4 degrees warmer</option>
-                <option value="5-9">5-9 degrees warmer</option>
+                <option value="1-4″>1-4 degrees warmer</option>
+                <option value="5-9″>5-9 degrees warmer</option>
                 <option value="10+">10 degrees or more</option>
               </select>
             </div>

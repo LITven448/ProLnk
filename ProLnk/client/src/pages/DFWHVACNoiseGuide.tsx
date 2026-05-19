@@ -88,7 +88,7 @@ export default function DFWHVACNoiseGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Noise Type</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {NOISES.map(({ key, label, icon }) => (
-                <button key={key} onClick={() => { setNoise(key); setShowResult(false); }} style={{ padding: '10px 16px', borderRadius: 8, border: '1.5px solid', borderColor: noise === key ? '#F5E642' : '#1E3A5F', background: noise === key ? '#F5E64220' : 'transparent', color: noise === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+                <button key={key} onClick={() => { setNoise(key); setShowResult(false); }} style={{ padding: '10px 16px', borderRadius: 8, border: '1.5px solid', borderColor: noise === key ? '#F5E642′ : '#1E3A5F', background: noise === key ? '#F5E64220' : ’transparent', color: noise === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
                   {icon} {label}
                 </button>
               ))}
@@ -98,11 +98,11 @@ export default function DFWHVACNoiseGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>When Does It Occur?</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {TIMINGS.map(({ key, label }) => (
-                <button key={key} onClick={() => { setTiming(key); setShowResult(false); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1.5px solid', borderColor: timing === key ? '#F5E642' : '#1E3A5F', background: timing === key ? '#F5E64220' : 'transparent', color: timing === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
+                <button key={key} onClick={() => { setTiming(key); setShowResult(false); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1.5px solid', borderColor: timing === key ? '#F5E642′ : '#1E3A5F', background: timing === key ? '#F5E64220' : ’transparent', color: timing === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowResult(true)} disabled={!noise || !timing} style={{ background: noise && timing ? '#F5E642' : '#1E3A5F', color: noise && timing ? '#0A1628' : '#4A6080', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: noise && timing ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShowResult(true)} disabled={!noise || !timing} style={{ background: noise && timing ? '#F5E642′ : '#1E3A5F', color: noise && timing ? '#0A1628' : '#4A6080', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: noise && timing ? 'pointer' : 'not-allowed', width: '100%' }}>
             Diagnose My HVAC Noise
           </button>
         </div>

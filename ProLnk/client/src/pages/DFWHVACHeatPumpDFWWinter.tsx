@@ -13,7 +13,7 @@ const pumpTypes = [
   { id: 'dual', label: 'Dual-Fuel (+ Gas Backup)' },
 ];
 
-type TempKey = 't35' | 't25' | 't15' | 't10';
+type TempKey = 't35′ | ’t25′ | ’t15′ | ’t10';
 type PumpKey = 'standard' | 'cold' | 'dual';
 
 const results: Record<TempKey, Record<PumpKey, { cop: string; auxActivation: string; costVsGas: string; note: string }>> = {
@@ -54,7 +54,7 @@ export default function DFWHVACHeatPumpDFWWinter() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, marginBottom: 24 }}>
-          {[{ label: '🌡️ DFW Winter Avg Low', value: '35–45°F', sub: 'Nov–Feb typical' }, { label: '❄️ Rare DFW Freeze', value: 'Below 20°F', sub: '<10 days/year avg' }, { label: '💚 Efficient Down To', value: '25°F (std) / 5°F (cold-climate)', sub: 'Before COP drops below 2.0' }].map(s => (
+          {[{ label: '🌡️ DFW Winter Avg Low', value: '35–45°F', sub: 'Nov–Feb typical' }, { label: '❄️ Rare DFW Freeze', value: 'Below 20°F', sub: '<10 days/year avg' }, { label: '💚 Efficient Down To', value: '25°F (std) / 5°F (cold-climate)', sub: 'Before COP drops below 2.0′ }].map(s => (
             <div key={s.label} style={{ background: '#111f3a', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 12 }}>{s.label}</div>
               <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642', margin: '6px 0 2px' }}>{s.value}</div>
@@ -69,7 +69,7 @@ export default function DFWHVACHeatPumpDFWWinter() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>DFW Winter Temperature:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {winterTemps.map(t => (
-                <button key={t.id} onClick={() => setTemp(t.id as TempKey)} style={{ background: temp === t.id ? '#F5E642' : '#1e3a5f', color: temp === t.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{t.label}</button>
+                <button key={t.id} onClick={() => setTemp(t.id as TempKey)} style={{ background: temp === t.id ? '#F5E642′ : '#1e3a5f', color: temp === t.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{t.label}</button>
               ))}
             </div>
           </div>
@@ -77,16 +77,16 @@ export default function DFWHVACHeatPumpDFWWinter() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Heat Pump Type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {pumpTypes.map(p => (
-                <button key={p.id} onClick={() => setPump(p.id as PumpKey)} style={{ background: pump === p.id ? '#F5E642' : '#1e3a5f', color: pump === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{p.label}</button>
+                <button key={p.id} onClick={() => setPump(p.id as PumpKey)} style={{ background: pump === p.id ? '#F5E642′ : '#1e3a5f', color: pump === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{p.label}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 14 }}>
                 {[{ label: 'COP (Efficiency)', value: result.cop }, { label: 'Aux Heat', value: result.auxActivation }, { label: 'Cost vs Gas', value: result.costVsGas }].map(m => (
                   <div key={m.label} style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 15, fontWeight: 800, color: '#F5E642' }}>{m.value}</div>
+                    <div style={{ fontSize: 15, fontWeight: 800, color: '#F5E642′ }}>{m.value}</div>
                     <div style={{ fontSize: 11, color: '#64748b' }}>{m.label}</div>
                   </div>
                 ))}

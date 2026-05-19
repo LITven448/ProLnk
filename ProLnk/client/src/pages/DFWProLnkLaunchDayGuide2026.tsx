@@ -91,7 +91,7 @@ export default function DFWProLnkLaunchDayGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {STAKEHOLDERS.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)}
-              style={{ background: selected === s.id ? '#F5E642' : '#0f2035', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '14px 10px', fontWeight: 600, fontSize: 14, cursor: 'pointer', textAlign: 'left' }}>
+              style={{ background: selected === s.id ? '#F5E642′ : '#0f2035', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '14px 10px', fontWeight: 600, fontSize: 14, cursor: ’pointer', textAlign: 'left' }}>
               {s.label}
             </button>
           ))}

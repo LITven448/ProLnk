@@ -39,10 +39,10 @@ export default function DFWHomeHygrothermalGuide2026() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔍 Hygrothermal Problem Finder</h2>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔍 Hygrothermal Problem Finder</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
           {concerns.map(c => (
-            <button key={c.label} onClick={() => handleSelect(c)} style={{ background: concern === c.label ? '#F5E642' : '#1e2d4a', color: concern === c.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{c.label}</button>
+            <button key={c.label} onClick={() => handleSelect(c)} style={{ background: concern === c.label ? '#F5E642′ : '#1e2d4a', color: concern === c.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{c.label}</button>
           ))}
         </div>
         {solution && (

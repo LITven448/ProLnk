@@ -21,8 +21,8 @@ export default function DFWFlooringTrends2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🪵</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Flooring Trends 2026</h1>
-          <p style={{ color: '#94a3b8' }}>What's going on DFW floors right now</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Flooring Trends 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>What’s going on DFW floors right now</p>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -37,8 +37,8 @@ export default function DFWFlooringTrends2026() {
             <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '0.9rem' }}>
               <span style={{ fontSize: '1.4rem' }}>{icon}</span>
               <div>
-                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{title}</div>
-                <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{sub}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{title}</div>
+                <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>{sub}</div>
               </div>
             </div>
           ))}
@@ -49,13 +49,13 @@ export default function DFWFlooringTrends2026() {
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Room Type</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {rooms.map(r => <button key={r} onClick={() => setRoom(r)} style={{ background: room === r ? '#F5E642' : '#1a3050', color: room === r ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>{r}</button>)}
+              {rooms.map(r => <button key={r} onClick={() => setRoom(r)} style={{ background: room === r ? '#F5E642′ : '#1a3050', color: room === r ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>{r}</button>)}
             </div>
           </div>
           <div style={{ marginBottom: '1.25rem' }}>
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Budget per Sq Ft (installed)</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {budgets.map(b => <button key={b} onClick={() => setBudget(b)} style={{ background: budget === b ? '#F5E642' : '#1a3050', color: budget === b ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>{b}</button>)}
+              {budgets.map(b => <button key={b} onClick={() => setBudget(b)} style={{ background: budget === b ? '#F5E642′ : '#1a3050', color: budget === b ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>{b}</button>)}
             </div>
           </div>
           {rec && <div style={{ background: '#1a3050', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642', color: '#cbd5e1', fontSize: '0.92rem' }}>✅ {rec}</div>}

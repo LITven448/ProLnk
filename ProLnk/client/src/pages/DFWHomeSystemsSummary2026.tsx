@@ -74,7 +74,7 @@ export default function DFWHomeSystemsSummary2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {vintages.map(v => (
               <button key={v} onClick={() => setVintage(v)}
-                style={{ background: vintage === v ? '#F5E642' : '#1a2f4a', color: vintage === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 700, fontSize: 14 }}>
+                style={{ background: vintage === v ? '#F5E642′ : '#1a2f4a', color: vintage === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 700, fontSize: 14 }}>
                 {v}
               </button>
             ))}
@@ -84,13 +84,13 @@ export default function DFWHomeSystemsSummary2026() {
         {systems.map(sys => {
           const risk = getRisk(sys.key);
           return (
-            <div key={sys.key} style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: risk ? `4px solid ${risk.color}` : '4px solid #2a4060' }}>
+            <div key={sys.key} style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: risk ? `4px solid ${risk.color}` : '4px solid #2a4060′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
                 <h3 style={{ fontSize: 20, fontWeight: 800, margin: 0 }}>{sys.label}</h3>
                 {risk && (
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ fontWeight: 700, color: risk.color }}>{risk.level}</div>
-                    <div style={{ fontSize: 12, color: '#94a3b8' }}>{risk.label}</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>{risk.label}</div>
                   </div>
                 )}
               </div>
@@ -101,7 +101,7 @@ export default function DFWHomeSystemsSummary2026() {
         })}
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginTop: 8 }}>
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📋 DFW Homeowner Checklist 2026</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📋 DFW Homeowner Checklist 2026</h3>
           {[
             '✅ HVAC: Service annually before May. Replace filters monthly May–October.',
             '✅ Plumbing: Know where your main shutoff is. Inspect under sinks annually.',

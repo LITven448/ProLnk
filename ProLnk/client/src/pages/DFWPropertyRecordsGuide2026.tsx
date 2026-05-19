@@ -26,7 +26,7 @@ export default function DFWPropertyRecordsGuide2026() {
   const [activeCounty, setActiveCounty] = useState('Dallas (DCAD)');
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🗂️</div>
@@ -36,7 +36,7 @@ export default function DFWPropertyRecordsGuide2026() {
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32, justifyContent: 'center' }}>
           {counties.map(c => (
-            <button key={c} onClick={() => setActiveCounty(c)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeCounty === c ? '#F5E642' : '#1E2D45', color: activeCounty === c ? '#0A1628' : '#94A3B8', transition: 'all 0.2s' }}>{c}</button>
+            <button key={c} onClick={() => setActiveCounty(c)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeCounty === c ? '#F5E642′ : '#1E2D45', color: activeCounty === c ? '#0A1628' : '#94A3B8', transition: ’all 0.2s' }}>{c}</button>
           ))}
         </div>
 
@@ -50,7 +50,7 @@ export default function DFWPropertyRecordsGuide2026() {
               <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
                 {g.steps.map((s, j) => (
                   <li key={j} style={{ fontSize: 14, color: '#CBD5E1', paddingLeft: 20, position: 'relative', lineHeight: 1.5 }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>›</span>{s}
+                    <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>›</span>{s}
                   </li>
                 ))}
               </ul>
@@ -60,7 +60,7 @@ export default function DFWPropertyRecordsGuide2026() {
 
         <div style={{ marginTop: 24, background: '#1E2D45', borderRadius: 10, padding: 20, border: '1px solid #2D3F5A' }}>
           <p style={{ margin: 0, fontSize: 13, color: '#64748B', lineHeight: 1.6 }}>
-            ⚖️ <strong style={{ color: '#94A3B8' }}>PACER tip:</strong> Search federal bankruptcy court at pacer.gov for any liens that survived foreclosure or are tied to the seller's estate. /bin/zsh.10/page — worth it on any property over K.
+            ⚖️ <strong style={{ color: '#94A3B8′ }}>PACER tip:</strong> Search federal bankruptcy court at pacer.gov for any liens that survived foreclosure or are tied to the seller’s estate. /bin/zsh.10/page — worth it on any property over K.
           </p>
         </div>
       </div>

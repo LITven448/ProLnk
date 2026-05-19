@@ -73,7 +73,7 @@ export default function DFWHomeEquityCalculator() {
               <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', background: '#0A1628', borderRadius: 8, padding: '8px 12px', marginBottom: 8 }}>
                 {prefix}{typeof value === 'number' && value % 1 !== 0 ? value.toFixed(1) : value.toLocaleString()}{suffix}
               </div>
-              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           ))}
         </div>
@@ -112,7 +112,7 @@ export default function DFWHomeEquityCalculator() {
             {(['renovation', 'investment', 'debt'] as const).map(use => (
               <button key={use} onClick={() => setEquityUse(use)} style={{
                 flex: 1, padding: '10px 8px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 600,
-                background: equityUse === use ? '#0A1628' : '#f1f5f9', color: equityUse === use ? '#F5E642' : '#475569',
+                background: equityUse === use ? '#0A1628′ : '#f1f5f9', color: equityUse === use ? '#F5E642' : '#475569',
               }}>{useDetails[use].label}</button>
             ))}
           </div>
@@ -120,11 +120,11 @@ export default function DFWHomeEquityCalculator() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, textAlign: 'center' }}>
               <div>
                 <div style={{ fontSize: 11, color: '#64748b' }}>Max Available</div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628' }}>{fmt(maxBorrow)}</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628′ }}>{fmt(maxBorrow)}</div>
               </div>
               <div>
                 <div style={{ fontSize: 11, color: '#64748b' }}>Est. Monthly Payment</div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: '#dc2626' }}>${useDetails[equityUse].monthly}/mo</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: '#dc2626′ }}>${useDetails[equityUse].monthly}/mo</div>
               </div>
               <div>
                 <div style={{ fontSize: 11, color: '#64748b' }}>{useDetails[equityUse].returnLabel}</div>
@@ -134,7 +134,7 @@ export default function DFWHomeEquityCalculator() {
           </div>
         </div>
 
-        <div style={{ background: '#fefce8', border: '1px solid #fde047', borderRadius: 12, padding: 16, fontSize: 13, color: '#713f12' }}>
+        <div style={{ background: '#fefce8', border: '1px solid #fde047', borderRadius: 12, padding: 16, fontSize: 13, color: '#713f12′ }}>
           🏙️ <strong>DFW Equity Insight:</strong> DFW has appreciated ~4.5%/yr on average. On a {fmt(purchasePrice)} home, that's {fmt(purchasePrice * 0.045)}/year in passive equity gain — your biggest wealth-building lever beyond paying down principal.
         </div>
       </div>

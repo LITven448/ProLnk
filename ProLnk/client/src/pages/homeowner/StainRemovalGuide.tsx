@@ -118,15 +118,15 @@ export default function StainRemovalGuide() {
   const match = getBestMatch();
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
       {/* Hero */}
       <div style={{ background: "linear-gradient(135deg, #0A1628 0%, #0f2a4a 100%)", padding: "72px 24px 56px", textAlign: "center" }}>
         <div style={{ fontSize: "14px", color: "#60a5fa", fontWeight: 600, letterSpacing: "2px", marginBottom: "14px" }}>DFW HOMEOWNER RESOURCE</div>
         <h1 style={{ fontSize: "clamp(26px, 4.5vw, 44px)", fontWeight: 800, margin: "0 0 18px", lineHeight: 1.15 }}>
           DFW Stain & Damage Guide — Identify and Fix Common Home Surface Problems
         </h1>
-        <p style={{ fontSize: "17px", color: "#94a3b8", maxWidth: "620px", margin: "0 auto" }}>
-          DFW's hard water, humid summers, and clay soil create predictable stain patterns. Know what you're looking at before you call a pro — or panic.
+        <p style={{ fontSize: "17px", color: "#94a3b8″, maxWidth: "620px", margin: "0 auto" }}>
+          DFW's hard water, humid summers, and clay soil create predictable stain patterns. Know what you’re looking at before you call a pro — or panic.
         </p>
       </div>
 
@@ -135,7 +135,7 @@ export default function StainRemovalGuide() {
         <h2 style={{ fontSize: "26px", fontWeight: 700, marginBottom: "32px" }}>Stain Encyclopedia</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           {categories.map((cat) => (
-            <div key={cat.id} style={{ background: "#111d35", borderRadius: "12px", border: "1px solid #1e3a5f", overflow: "hidden" }}>
+            <div key={cat.id} style={{ background: "#111d35″, borderRadius: "12px", border: "1px solid #1e3a5f", overflow: "hidden" }}>
               <button
                 onClick={() => setSelectedCategory(selectedCategory === cat.id ? null : cat.id)}
                 style={{ width: "100%", background: "none", border: "none", padding: "24px 28px", display: "flex", alignItems: "center", gap: "16px", cursor: "pointer", textAlign: "left", color: "#fff" }}>
@@ -152,21 +152,21 @@ export default function StainRemovalGuide() {
                     <div style={{ fontSize: "12px", color: "#60a5fa", fontWeight: 700, letterSpacing: "1px", marginBottom: "8px" }}>WHAT YOU'RE SEEING</div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                       {cat.characteristics.map((c) => (
-                        <span key={c} style={{ background: "#0d1f38", border: "1px solid #1e3a5f", borderRadius: "6px", padding: "4px 10px", fontSize: "13px", color: "#94a3b8" }}>{c}</span>
+                        <span key={c} style={{ background: "#0d1f38″, border: "1px solid #1e3a5f", borderRadius: "6px", padding: "4px 10px", fontSize: "13px", color: "#94a3b8" }}>{c}</span>
                       ))}
                     </div>
                   </div>
                   <div style={{ marginBottom: "16px" }}>
                     <div style={{ fontSize: "12px", color: "#60a5fa", fontWeight: 700, letterSpacing: "1px", marginBottom: "8px" }}>DIAGNOSIS</div>
-                    <p style={{ color: "#cbd5e1", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{cat.diagnosis}</p>
+                    <p style={{ color: "#cbd5e1″, fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{cat.diagnosis}</p>
                   </div>
                   <div style={{ marginBottom: "16px" }}>
                     <div style={{ fontSize: "12px", color: "#60a5fa", fontWeight: 700, letterSpacing: "1px", marginBottom: "8px" }}>WHAT TO DO</div>
-                    <p style={{ color: "#cbd5e1", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{cat.action}</p>
+                    <p style={{ color: "#cbd5e1″, fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{cat.action}</p>
                   </div>
-                  <div style={{ background: "#0d1f38", borderRadius: "8px", padding: "12px 16px", borderLeft: "3px solid #f59e0b" }}>
+                  <div style={{ background: "#0d1f38″, borderRadius: "8px", padding: "12px 16px", borderLeft: "3px solid #f59e0b" }}>
                     <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "13px" }}>URGENCY: </span>
-                    <span style={{ color: "#94a3b8", fontSize: "13px" }}>{cat.urgency}</span>
+                    <span style={{ color: "#94a3b8″, fontSize: "13px" }}>{cat.urgency}</span>
                   </div>
                 </div>
               )}
@@ -176,10 +176,10 @@ export default function StainRemovalGuide() {
       </div>
 
       {/* Interactive Identifier */}
-      <div style={{ background: "#0d1f38", padding: "56px 24px" }}>
+      <div style={{ background: "#0d1f38″, padding: "56px 24px" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "26px", fontWeight: 700, marginBottom: "8px" }}>🔍 Stain Identifier Tool</h2>
-          <p style={{ color: "#94a3b8", fontSize: "14px", marginBottom: "32px" }}>Select every characteristic that matches what you're seeing. We'll identify the likely cause.</p>
+          <p style={{ color: "#94a3b8″, fontSize: "14px", marginBottom: "32px" }}>Select every characteristic that matches what you're seeing. We'll identify the likely cause.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             {Object.entries(stainCharacteristics).map(([catId, chars]) => {
               const cat = categories.find((c) => c.id === catId);
@@ -191,7 +191,7 @@ export default function StainRemovalGuide() {
                       const active = selectedChars.includes(char);
                       return (
                         <button key={char} onClick={() => toggleChar(char)}
-                          style={{ padding: "8px 14px", borderRadius: "8px", border: `1px solid ${active ? "#60a5fa" : "#1e3a5f"}`, background: active ? "#1e3a5f" : "transparent", color: active ? "#fff" : "#94a3b8", fontSize: "13px", cursor: "pointer" }}>
+                          style={{ padding: "8px 14px", borderRadius: "8px", border: `1px solid ${active ? "#60a5fa" : "#1e3a5f"}`, background: active ? "#1e3a5f" : "transparent", color: active ? "#fff" : "#94a3b8″, fontSize: "13px", cursor: "pointer" }}>
                           {active ? "✓ " : ""}{char}
                         </button>
                       );
@@ -202,17 +202,17 @@ export default function StainRemovalGuide() {
             })}
           </div>
           {match && (
-            <div style={{ marginTop: "32px", background: "#111d35", borderRadius: "12px", padding: "24px", border: "1px solid #1e3a5f" }}>
+            <div style={{ marginTop: "32px", background: "#111d35″, borderRadius: "12px", padding: "24px", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: "20px", marginBottom: "8px" }}>{match.icon} Most Likely: <strong>{match.label}</strong></div>
-              <p style={{ color: "#94a3b8", fontSize: "14px", lineHeight: 1.6, marginBottom: "12px" }}>{match.diagnosis.split(".")[0]}.</p>
-              <div style={{ background: "#0d1f38", borderRadius: "8px", padding: "12px 16px", borderLeft: "3px solid #f59e0b" }}>
+              <p style={{ color: "#94a3b8″, fontSize: "14px", lineHeight: 1.6, marginBottom: "12px" }}>{match.diagnosis.split(".")[0]}.</p>
+              <div style={{ background: "#0d1f38″, borderRadius: "8px", padding: "12px 16px", borderLeft: "3px solid #f59e0b" }}>
                 <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "13px" }}>URGENCY: </span>
-                <span style={{ color: "#94a3b8", fontSize: "13px" }}>{match.urgency}</span>
+                <span style={{ color: "#94a3b8″, fontSize: "13px" }}>{match.urgency}</span>
               </div>
             </div>
           )}
           {selectedChars.length > 0 && !match && (
-            <div style={{ marginTop: "24px", color: "#94a3b8", fontSize: "14px" }}>Select more characteristics to narrow the diagnosis.</div>
+            <div style={{ marginTop: "24px", color: "#94a3b8″, fontSize: "14px" }}>Select more characteristics to narrow the diagnosis.</div>
           )}
         </div>
       </div>
@@ -220,8 +220,8 @@ export default function StainRemovalGuide() {
       {/* CTA */}
       <div style={{ textAlign: "center", padding: "72px 24px" }}>
         <h2 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "14px" }}>Not Sure What You're Looking At?</h2>
-        <p style={{ color: "#94a3b8", fontSize: "16px", marginBottom: "28px" }}>Get a professional assessment from a vetted DFW pro — most inspections are free or low-cost.</p>
-        <a href="/trustypro/book" style={{ background: "#60a5fa", color: "#0A1628", padding: "16px 40px", borderRadius: "8px", fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
+        <p style={{ color: "#94a3b8″, fontSize: "16px", marginBottom: "28px" }}>Get a professional assessment from a vetted DFW pro — most inspections are free or low-cost.</p>
+        <a href="/trustypro/book" style={{ background: "#60a5fa", color: "#0A1628″, padding: "16px 40px", borderRadius: "8px", fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
           Get a Professional Assessment ↗
         </a>
       </div>

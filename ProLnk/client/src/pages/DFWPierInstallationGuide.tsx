@@ -22,14 +22,14 @@ export default function DFWPierInstallationGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>🔩</span>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Foundation Pier Installation Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Foundation Pier Installation Guide</h1>
           <p style={{ color: '#9CA3AF', lineHeight: 1.6 }}>
             Pier installation is the most common foundation repair in DFW. Knowing what to expect before, during, and after 
             the job helps you stay calm, make informed decisions, and protect your investment long-term.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🏗️ What Happens on Installation Day</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
             {[
@@ -69,13 +69,13 @@ export default function DFWPierInstallationGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
                 <div><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>INSTALL DURATION</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.2rem' }}>{result.days} day{result.days > 1 ? 's' : ''}</div></div>
                 <div><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>RE-EVALUATION</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem' }}>{result.reeval}</div></div>
-                <div style={{ gridColumn: '1 / -1' }}><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>NOISE LEVEL</span><div style={{ color: '#E8EAF0', lineHeight: 1.5, marginTop: 4 }}>{result.noise}</div></div>
-                <div style={{ gridColumn: '1 / -1' }}><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>DISRUPTION</span><div style={{ color: '#E8EAF0', lineHeight: 1.5, marginTop: 4 }}>{result.disruption}</div></div>
-                <div style={{ gridColumn: '1 / -1' }}><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>POST-INSTALL CARE</span><div style={{ color: '#E8EAF0', lineHeight: 1.5, marginTop: 4 }}>{result.care}</div></div>
+                <div style={{ gridColumn: '1 / -1′ }}><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>NOISE LEVEL</span><div style={{ color: '#E8EAF0', lineHeight: 1.5, marginTop: 4 }}>{result.noise}</div></div>
+                <div style={{ gridColumn: '1 / -1′ }}><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>DISRUPTION</span><div style={{ color: '#E8EAF0', lineHeight: 1.5, marginTop: 4 }}>{result.disruption}</div></div>
+                <div style={{ gridColumn: '1 / -1′ }}><span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>POST-INSTALL CARE</span><div style={{ color: '#E8EAF0', lineHeight: 1.5, marginTop: 4 }}>{result.care}</div></div>
               </div>
             </div>
           )}

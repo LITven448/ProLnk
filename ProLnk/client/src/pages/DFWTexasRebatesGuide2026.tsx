@@ -20,13 +20,13 @@ export default function DFWTexasRebatesGuide2026() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e2e8f0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🇺🇸 Federal IRA Credits · Texas 2026</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🇺🇸 Federal IRA Credits · Texas 2026</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>Texas State Rebates for Home Improvements 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Federal Inflation Reduction Act credits still active for DFW homeowners. Select an improvement to calculate your credit.</p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {improvements.map(i => (
-            <button key={i.id} onClick={() => setSelected(i.id)} style={{ padding: '0.5rem 1rem', borderRadius: '999px', border: 'none', cursor: 'pointer', backgroundColor: selected === i.id ? '#F5E642' : '#1e3a5f', color: selected === i.id ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{i.label}</button>
+            <button key={i.id} onClick={() => setSelected(i.id)} style={{ padding: '0.5rem 1rem', borderRadius: '999px', border: 'none', cursor: 'pointer', backgroundColor: selected === i.id ? '#F5E642′ : '#1e3a5f', color: selected === i.id ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{i.label}</button>
           ))}
         </div>
 
@@ -37,8 +37,8 @@ export default function DFWTexasRebatesGuide2026() {
           </div>
           <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>ℹ️ {item.note}</div>
           <div style={{ backgroundColor: '#0A1628', borderRadius: '10px', padding: '1rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Estimated Federal Tax Credit</div>
-            <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642' }}>${credit.toLocaleString('en-US', { minimumFractionDigits: 0 })}</div>
+            <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>Estimated Federal Tax Credit</div>
+            <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642′ }}>${credit.toLocaleString(’en-US', { minimumFractionDigits: 0 })}</div>
             <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Claimed on IRS Form 5695 · Not a refund, reduces tax owed</div>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function DFWTexasRebatesGuide2026() {
           {improvements.map(i => (
             <div key={i.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.4rem 0', borderBottom: '1px solid #1e3a5f', fontSize: '0.9rem' }}>
               <span>{i.label}</span>
-              <span style={{ color: '#F5E642' }}>{i.cap > 0 ? `Up to $${i.cap.toLocaleString()}` : '30% — no cap'}</span>
+              <span style={{ color: '#F5E642′ }}>{i.cap > 0 ? `Up to $${i.cap.toLocaleString()}` : '30% — no cap'}</span>
             </div>
           ))}
           <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#64748b' }}>Credits reset annually. Consult a tax professional for eligibility confirmation.</div>

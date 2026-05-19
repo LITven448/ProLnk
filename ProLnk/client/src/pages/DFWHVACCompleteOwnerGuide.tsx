@@ -80,7 +80,7 @@ export default function DFWHVACCompleteOwnerGuide() {
           {stages.map(s => (
             <button key={s.id} onClick={() => setStage(stage === s.id ? null : s.id)}
               style={{ background: stage === s.id ? '#1E3A5F' : '#0F2237', border: `2px solid ${stage === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
-              <div style={{ color: stage === s.id ? '#F5E642' : '#CBD5E1', fontSize: 15, fontWeight: 700, marginBottom: 4 }}>{s.label}</div>
+              <div style={{ color: stage === s.id ? '#F5E642′ : '#CBD5E1', fontSize: 15, fontWeight: 700, marginBottom: 4 }}>{s.label}</div>
               <div style={{ color: '#64748B', fontSize: 12 }}>{s.subtitle}</div>
             </button>
           ))}

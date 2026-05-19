@@ -58,16 +58,16 @@ export default function DFWRoofBootReplacementCost() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#8A9BB5', fontSize: 13, marginBottom: 6 }}>Home Size (sq ft)</label>
-              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2200" style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2200″ style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#8A9BB5', fontSize: 13, marginBottom: 6 }}>Roof Age (years)</label>
-              <input value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12" style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12″ style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%' }}>Calculate Boot Estimate</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Estimated {result.count} boots · \${result.low.toLocaleString()}–\${result.high.toLocaleString()} total</div>
               <div style={{ color: '#8A9BB5', fontSize: 14 }}>{result.strategy}</div>
             </div>

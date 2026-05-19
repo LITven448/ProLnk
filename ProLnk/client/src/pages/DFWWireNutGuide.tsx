@@ -44,7 +44,7 @@ const connectorTypes = [
 ];
 
 const wireOptions = [
-  { label: '2× #14 copper (same gauge)', connector: 'Wire Nut (Yellow/Tan)', technique: 'Overlap 1/2", twist clockwise until snug, slight tug test to verify.' },
+  { label: '2× #14 copper (same gauge)', connector: 'Wire Nut (Yellow/Tan)', technique: 'Overlap 1/2″, twist clockwise until snug, slight tug test to verify.' },
   { label: '3× #14 copper (same gauge)', connector: 'Wire Nut (Red)', technique: 'Hold all 3 parallel, twist simultaneously, verify none pull free.' },
   { label: '2× #12 copper (same gauge)', connector: 'Wire Nut (Red) or Wago 221-412', technique: 'Red wire nuts; or Wago lever-nut for vibration-prone DFW A/C circuits.' },
   { label: '#14 + #12 mixed gauges', connector: 'Wire Nut (Red) or Wago 221-412', technique: 'Hold parallel, secure tightly — mixed gauge joints need firm seating. Inspect quarterly in DFW heat.' },
@@ -61,9 +61,9 @@ export default function DFWWireNutGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642' }}>🔌 DFW ELECTRICAL GUIDE</div>
+        <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642′ }}>🔌 DFW ELECTRICAL GUIDE</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '8px', color: '#FFFFFF' }}>Wire Connector Guide for DFW Electricians</h1>
-        <p style={{ color: '#9BA3B5', fontSize: '15px', marginBottom: '32px', lineHeight: '1.6' }}>
+        <p style={{ color: '#9BA3B5', fontSize: '15px', marginBottom: '32px', lineHeight: '1.6′ }}>
           Wire nuts still dominate DFW electrical work — but Wago lever-nuts are taking over in A/C and fan circuits where DFW vibration loosens traditional connections. Know which to use.
         </p>
 
@@ -77,8 +77,8 @@ export default function DFWWireNutGuide() {
               </div>
               <div style={{ fontSize: '12px', color: '#6B7A94', marginBottom: '8px' }}>Brands: {c.brands}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginBottom: '8px' }}>
-                <div style={{ fontSize: '13px', color: '#4CAF50' }}>✅ {c.pros}</div>
-                <div style={{ fontSize: '13px', color: c.name.includes('Backstab') ? '#FF6B6B' : '#FF9F43' }}>⚠️ {c.cons}</div>
+                <div style={{ fontSize: '13px', color: '#4CAF50′ }}>✅ {c.pros}</div>
+                <div style={{ fontSize: '13px', color: c.name.includes('Backstab') ? '#FF6B6B' : '#FF9F43′ }}>⚠️ {c.cons}</div>
               </div>
               <div style={{ fontSize: '13px', color: '#F5E642', background: '#0D1F35', padding: '8px 12px', borderRadius: '6px' }}>
                 🌡️ DFW: {c.dfwNote}
@@ -100,14 +100,14 @@ export default function DFWWireNutGuide() {
           {result && (
             <div style={{ background: '#0D1F35', borderRadius: '8px', padding: '16px' }}>
               <div style={{ fontWeight: '700', color: '#F5E642', fontSize: '16px', marginBottom: '8px' }}>Use: {result.connector}</div>
-              <div style={{ fontSize: '14px', color: '#C8D0DC', lineHeight: '1.6' }}>🔧 Technique: {result.technique}</div>
+              <div style={{ fontSize: '14px', color: '#C8D0DC', lineHeight: '1.6′ }}>🔧 Technique: {result.technique}</div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#1A1200', border: '1px solid #F5E642', borderRadius: '10px', padding: '16px' }}>
           <div style={{ fontWeight: '600', color: '#F5E642', marginBottom: '6px' }}>⚠️ DFW Safety Note</div>
-          <div style={{ fontSize: '13px', color: '#C8D0DC', lineHeight: '1.6' }}>
+          <div style={{ fontSize: '13px', color: '#C8D0DC', lineHeight: '1.6′ }}>
             Never use backstab (push-in) connections on outlet terminals in DFW — the heat cycling in DFW summers causes these to fail silently. Always use screw terminals with properly sized wire loops. Tug-test every wire nut before closing a box.
           </div>
         </div>

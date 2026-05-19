@@ -65,7 +65,7 @@ function RateRow({ rate, onSave }: { rate: IndustryRate; onSave: () => void }) {
 
   return (
     <tr className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-      <td className="py-3 px-4">
+      <td className="py-3 px-4″>
         <span className="font-medium text-gray-900 text-sm">{rate.industryName}</span>
         {rate.notes && (
           <p className="text-xs text-gray-400 mt-0.5 truncate max-w-[200px]">{rate.notes}</p>
@@ -79,7 +79,7 @@ function RateRow({ rate, onSave }: { rate: IndustryRate; onSave: () => void }) {
               onChange={(e) => setPlatformFee(e.target.value)}
               className="w-16 h-7 text-xs text-center"
             />
-            <span className="text-xs text-gray-500">%</span>
+            <span className="text-xs text-gray-500″>%</span>
           </div>
         ) : (
           <span className={`text-sm font-semibold ${platformPct >= 12 ? "text-[#0A1628]" : platformPct >= 9 ? "text-blue-600" : "text-gray-600"}`}>
@@ -95,10 +95,10 @@ function RateRow({ rate, onSave }: { rate: IndustryRate; onSave: () => void }) {
               onChange={(e) => setReferralFee(e.target.value)}
               className="w-16 h-7 text-xs text-center"
             />
-            <span className="text-xs text-gray-500">%</span>
+            <span className="text-xs text-gray-500″>%</span>
           </div>
         ) : (
-          <span className="text-sm font-semibold text-amber-600">{referralPct.toFixed(1)}%</span>
+          <span className="text-sm font-semibold text-amber-600″>{referralPct.toFixed(1)}%</span>
         )}
       </td>
       <td className="py-3 px-4 text-center">
@@ -106,7 +106,7 @@ function RateRow({ rate, onSave }: { rate: IndustryRate; onSave: () => void }) {
           {proLinkNet.toFixed(1)}%
         </span>
       </td>
-      <td className="py-3 px-4">
+      <td className="py-3 px-4″>
         {editing ? (
           <Input
             value={notes}
@@ -115,14 +115,14 @@ function RateRow({ rate, onSave }: { rate: IndustryRate; onSave: () => void }) {
             className="h-7 text-xs"
           />
         ) : (
-          <span className="text-xs text-gray-400">{rate.notes ?? "--"}</span>
+          <span className="text-xs text-gray-400″>{rate.notes ?? "--"}</span>
         )}
       </td>
       <td className="py-3 px-4 text-right">
         {editing ? (
           <div className="flex items-center gap-1 justify-end">
-            <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={() => setEditing(false)}>
-              <X className="w-3.5 h-3.5 text-gray-400" />
+            <Button size="sm" variant="ghost" className="h-7 w-7 p-0″ onClick={() => setEditing(false)}>
+              <X className="w-3.5 h-3.5 text-gray-400″ />
             </Button>
             <Button
               size="sm"
@@ -131,11 +131,11 @@ function RateRow({ rate, onSave }: { rate: IndustryRate; onSave: () => void }) {
               disabled={upsertMutation.isPending}
               onClick={handleSave}
             >
-              {upsertMutation.isPending ? <Loader2 className="w-3 h-3 animate-spin" /> : <Save className="w-3 h-3" />}
+              {upsertMutation.isPending ? <Loader2 className="w-3 h-3 animate-spin" /> : <Save className="w-3 h-3″ />}
             </Button>
           </div>
         ) : (
-          <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={() => setEditing(true)}>
+          <Button size="sm" variant="ghost" className="h-7 w-7 p-0″ onClick={() => setEditing(true)}>
             <Edit2 className="w-3.5 h-3.5 text-gray-400 hover:text-[#0A1628]" />
           </Button>
         )}
@@ -148,8 +148,8 @@ export default function AdminCommissionRates() {
   const { user, loading: authLoading } = useAuth();
   const [showAddForm, setShowAddForm] = useState(false);
   const [newIndustry, setNewIndustry] = useState("");
-  const [newPlatformFee, setNewPlatformFee] = useState("12");
-  const [newReferralFee, setNewReferralFee] = useState("5");
+  const [newPlatformFee, setNewPlatformFee] = useState("12″);
+  const [newReferralFee, setNewReferralFee] = useState("5″);
   const [newNotes, setNewNotes] = useState("");
 
   const { data: rates, isLoading, refetch } = trpc.admin.getIndustryRates.useQuery();
@@ -159,8 +159,8 @@ export default function AdminCommissionRates() {
       toast.success(`Rates added for ${newIndustry}`);
       setShowAddForm(false);
       setNewIndustry("");
-      setNewPlatformFee("12");
-      setNewReferralFee("5");
+      setNewPlatformFee("12″);
+      setNewReferralFee("5″);
       setNewNotes("");
       refetch();
     },
@@ -177,8 +177,8 @@ export default function AdminCommissionRates() {
 
   if (!user || user.role !== "admin") {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4">
-        <h2 className="text-2xl font-heading text-gray-900">Admin Access Required</h2>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4″>
+        <h2 className="text-2xl font-heading text-gray-900″>Admin Access Required</h2>
         <p className="text-gray-500 text-sm">You need admin privileges to view this page.</p>
         <Button onClick={() => { window.location.href = getLoginUrl(); }}>Sign In</Button>
       </div>
@@ -194,11 +194,11 @@ export default function AdminCommissionRates() {
 
   return (
     <AdminLayout title="Commission Rates" subtitle="Manage platform fee and referral commission rates by industry">
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50″>
       {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-3">
+        <div className="container flex items-center justify-between h-16″>
+          <div className="flex items-center gap-3″>
             <span className="font-heading text-gray-900 tracking-wide">COMMISSION RATES</span>
           </div>
           <Button
@@ -207,47 +207,47 @@ export default function AdminCommissionRates() {
             style={{ backgroundColor: "var(--teal)" }}
             onClick={() => setShowAddForm(true)}
           >
-            <Plus className="w-4 h-4" /> Add Industry
+            <Plus className="w-4 h-4″ /> Add Industry
           </Button>
         </div>
       </header>
 
-      <div className="container py-8">
+      <div className="container py-8″>
         {/* Summary cards */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-3 gap-4 mb-8″>
           <Card className="border-0 shadow-sm">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2 mb-1">
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2 mb-1″>
                 <Percent className="w-4 h-4 text-[#0A1628]" />
                 <span className="text-xs text-gray-500 font-medium">Avg Platform Fee</span>
               </div>
-              <p className="text-2xl font-heading text-gray-900">{avgPlatformFee.toFixed(1)}%</p>
+              <p className="text-2xl font-heading text-gray-900″>{avgPlatformFee.toFixed(1)}%</p>
             </CardContent>
           </Card>
           <Card className="border-0 shadow-sm">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2 mb-1">
-                <DollarSign className="w-4 h-4 text-green-600" />
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2 mb-1″>
+                <DollarSign className="w-4 h-4 text-green-600″ />
                 <span className="text-xs text-gray-500 font-medium">Avg ProLnk Net</span>
               </div>
-              <p className="text-2xl font-heading text-gray-900">{avgNetRate.toFixed(1)}%</p>
+              <p className="text-2xl font-heading text-gray-900″>{avgNetRate.toFixed(1)}%</p>
             </CardContent>
           </Card>
           <Card className="border-0 shadow-sm">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2 mb-1">
-                <Info className="w-4 h-4 text-blue-600" />
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2 mb-1″>
+                <Info className="w-4 h-4 text-blue-600″ />
                 <span className="text-xs text-gray-500 font-medium">Industries Configured</span>
               </div>
-              <p className="text-2xl font-heading text-gray-900">{rates?.length ?? 0}</p>
+              <p className="text-2xl font-heading text-gray-900″>{rates?.length ?? 0}</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Info banner */}
-        <div className="bg-[#F5E642]/10 border border-[#0A1628]/20 rounded-xl p-4 mb-6 flex items-start gap-3">
-          <Info className="w-4 h-4 text-[#0A1628] mt-0.5 flex-shrink-0" />
-          <div className="text-sm text-teal-800">
+        <div className="bg-[#F5E642]/10 border border-[#0A1628]/20 rounded-xl p-4 mb-6 flex items-start gap-3″>
+          <Info className="w-4 h-4 text-[#0A1628] mt-0.5 flex-shrink-0″ />
+          <div className="text-sm text-teal-800″>
             <strong>How rates work:</strong> When a partner closes a referred job, ProLnk collects the Platform Fee from the receiving partner. The Referral Commission is paid out to the partner who generated the lead. ProLnk Net = Platform Fee  Referral Commission.
             <br />
             <span className="text-[#0A1628] text-xs mt-1 block">
@@ -258,12 +258,12 @@ export default function AdminCommissionRates() {
 
         {/* Add form */}
         {showAddForm && (
-          <Card className="border-[#0A1628]/20 shadow-sm mb-6">
-            <CardHeader className="pb-3">
+          <Card className="border-[#0A1628]/20 shadow-sm mb-6″>
+            <CardHeader className="pb-3″>
               <CardTitle className="text-base font-heading tracking-wide">ADD NEW INDUSTRY RATE</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4″>
                 <div>
                   <Label className="text-xs font-medium text-gray-700 mb-1 block">Industry Name</Label>
                   <Input
@@ -271,7 +271,7 @@ export default function AdminCommissionRates() {
                     placeholder="e.g., Lawn Care"
                     value={newIndustry}
                     onChange={(e) => setNewIndustry(e.target.value)}
-                    className="h-9"
+                    className="h-9″
                   />
                   <datalist id="industry-presets">
                     {INDUSTRY_PRESETS.map(p => <option key={p} value={p} />)}
@@ -281,24 +281,24 @@ export default function AdminCommissionRates() {
                   <Label className="text-xs font-medium text-gray-700 mb-1 block">Platform Fee (%)</Label>
                   <Input
                     type="number"
-                    min="0"
-                    max="30"
-                    step="0.5"
+                    min="0″
+                    max="30″
+                    step="0.5″
                     value={newPlatformFee}
                     onChange={(e) => setNewPlatformFee(e.target.value)}
-                    className="h-9"
+                    className="h-9″
                   />
                 </div>
                 <div>
                   <Label className="text-xs font-medium text-gray-700 mb-1 block">Referral Commission (%)</Label>
                   <Input
                     type="number"
-                    min="0"
-                    max="15"
-                    step="0.5"
+                    min="0″
+                    max="15″
+                    step="0.5″
                     value={newReferralFee}
                     onChange={(e) => setNewReferralFee(e.target.value)}
-                    className="h-9"
+                    className="h-9″
                   />
                 </div>
                 <div>
@@ -307,22 +307,22 @@ export default function AdminCommissionRates() {
                     placeholder="Brief note..."
                     value={newNotes}
                     onChange={(e) => setNewNotes(e.target.value)}
-                    className="h-9"
+                    className="h-9″
                   />
                 </div>
               </div>
               {newPlatformFee && newReferralFee && (
                 <div className="mt-3 p-3 bg-gray-50 rounded-lg text-sm">
-                  <span className="text-gray-600">ProLnk Net: </span>
-                  <span className="font-bold text-green-600">
+                  <span className="text-gray-600″>ProLnk Net: </span>
+                  <span className="font-bold text-green-600″>
                     {(parseFloat(newPlatformFee) - parseFloat(newReferralFee)).toFixed(1)}%
                   </span>
-                  <span className="text-gray-400 text-xs ml-2">
+                  <span className="text-gray-400 text-xs ml-2″>
                     (on a $1,000 job = ${((parseFloat(newPlatformFee) - parseFloat(newReferralFee)) * 10).toFixed(0)} net to ProLnk)
                   </span>
                 </div>
               )}
-              <div className="flex gap-2 mt-4">
+              <div className="flex gap-2 mt-4″>
                 <Button
                   className="text-white font-heading"
                   style={{ backgroundColor: "var(--teal)" }}
@@ -334,7 +334,7 @@ export default function AdminCommissionRates() {
                     notes: newNotes || undefined,
                   })}
                 >
-                  {addMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />}
+                  {addMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4″ />}
                   Add Industry
                 </Button>
                 <Button variant="outline" onClick={() => setShowAddForm(false)}>Cancel</Button>
@@ -348,7 +348,7 @@ export default function AdminCommissionRates() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-gray-50 border-b border-gray-100">
+                <tr className="bg-gray-50 border-b border-gray-100″>
                   <th className="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Industry</th>
                   <th className="py-3 px-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">Platform Fee</th>
                   <th className="py-3 px-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">Referral Commission</th>
@@ -360,9 +360,9 @@ export default function AdminCommissionRates() {
               <tbody>
                 {isLoading ? (
                   Array.from({ length: 8 }).map((_, i) => (
-                    <tr key={i} className="border-b border-gray-50">
+                    <tr key={i} className="border-b border-gray-50″>
                       {Array.from({ length: 6 }).map((_, j) => (
-                        <td key={j} className="py-3 px-4">
+                        <td key={j} className="py-3 px-4″>
                           <div className="h-4 bg-gray-100 rounded animate-pulse" />
                         </td>
                       ))}

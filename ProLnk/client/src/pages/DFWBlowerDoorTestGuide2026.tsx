@@ -25,10 +25,10 @@ export default function DFWBlowerDoorTestGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, margin: '0 0 12px' }}>📊 Test Basics</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { label: 'Test Cost', value: '$300–$500' },
+              { label: 'Test Cost', value: '$300–$500′ },
               { label: 'Who Performs', value: 'RESNET Rater' },
-              { label: 'Typical DFW ACH50', value: '5–12 ACH50' },
-              { label: 'Target ACH50', value: '< 3 ACH50' },
+              { label: 'Typical DFW ACH50', value: '5–12 ACH50′ },
+              { label: 'Target ACH50', value: '< 3 ACH50′ },
             ].map(item => (
               <div key={item.label} style={{ background: '#1a2f4a', borderRadius: 8, padding: '10px 14px' }}>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>{item.label}</div>
@@ -43,13 +43,13 @@ export default function DFWBlowerDoorTestGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {ages.map(a => (
               <button key={a.id} onClick={() => setSelected(a.id === selected ? null : a.id)}
-                style={{ background: selected === a.id ? '#F5E642' : '#1a2f4a', color: selected === a.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === a.id ? '#F5E642′ : '#1a2f4a', color: selected === a.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {a.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Air Sealing Opportunity: {match.score} | Potential Savings: {match.savings}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 8 }}>{match.issues}</div>
               <div style={{ color: '#F5E642', fontSize: 13 }}>💰 Air Sealing Cost: {match.cost}</div>

@@ -5,7 +5,7 @@ const tileTypes = [
   { name: 'Ceramic', costInstalled: '$5–$14/sqft', durability: 'Good', slipRating: 'Medium', dfwNote: 'Budget-friendly, wide variety, softer than porcelain — avoid high-traffic DFW entries', bestFor: 'Walls, backsplashes, low-traffic floors' },
   { name: 'Natural Stone (Travertine)', costInstalled: '$15–$35/sqft', durability: 'Good', slipRating: 'Medium', dfwNote: 'Beautiful but porous — must seal annually in DFW humidity; popular in Southlake luxury homes', bestFor: 'Master baths, accents, low-traffic areas' },
   { name: 'Natural Stone (Slate)', costInstalled: '$12–$28/sqft', durability: 'Excellent', slipRating: 'High', dfwNote: 'Handles DFW outdoor use well; irregular surface hides dust between cleanings', bestFor: 'Outdoor patios, entryways' },
-  { name: 'Large Format (24"x24"+)', costInstalled: '$12–$25/sqft', durability: 'Excellent', slipRating: 'High', dfwNote: 'Trendy in DFW new builds — requires flat substrate; slab movement can crack tiles', bestFor: 'Open-plan living areas, master baths' },
+  { name: 'Large Format (24″x24″+)', costInstalled: '$12–$25/sqft', durability: 'Excellent', slipRating: 'High', dfwNote: 'Trendy in DFW new builds — requires flat substrate; slab movement can crack tiles', bestFor: 'Open-plan living areas, master baths' },
   { name: 'Mosaic / Glass Tile', costInstalled: '$15–$40/sqft', durability: 'Moderate', slipRating: 'Low', dfwNote: 'Labor-intensive; popular DFW shower accent walls and backsplashes', bestFor: 'Accents, backsplashes, shower niches' },
 ];
 
@@ -19,7 +19,7 @@ const tileBaseRates: Record<string, number> = {
   'Ceramic': 9,
   'Natural Stone (Travertine)': 24,
   'Natural Stone (Slate)': 19,
-  'Large Format (24"x24"+)': 18,
+  'Large Format (24″x24″+)': 18,
   'Mosaic / Glass Tile': 27,
 };
 
@@ -47,10 +47,10 @@ export default function DFWTileInstallationGuide() {
           Dallas–Fort Worth 2026 pricing for floor, wall, and shower tile — porcelain vs ceramic vs natural stone, DFW slab movement considerations, grout types, and interactive cost estimator.
         </p>
 
-        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontSize: 20, marginBottom: 4 }}>⚠️ DFW Slab Movement &amp; Large Format Tile</div>
           <p style={{ color: '#C8D4E8', margin: 0, lineHeight: 1.6 }}>
-            DFW's expansive clay soil causes concrete slab foundations to move seasonally. Large format tiles (18"x18" and bigger) are especially vulnerable — minor flex cracks grout lines and can crack the tile itself. A professional installer in DFW should use an uncoupling membrane (like Schluter DITRA) for any large format installation to allow independent movement between slab and tile.
+            DFW's expansive clay soil causes concrete slab foundations to move seasonally. Large format tiles (18″x18″ and bigger) are especially vulnerable — minor flex cracks grout lines and can crack the tile itself. A professional installer in DFW should use an uncoupling membrane (like Schluter DITRA) for any large format installation to allow independent movement between slab and tile.
           </p>
         </div>
 
@@ -58,18 +58,18 @@ export default function DFWTileInstallationGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ backgroundColor: '#1A2E50' }}>
+              <tr style={{ backgroundColor: '#1A2E50′ }}>
                 {['Tile Type', 'Installed Cost', 'Durability', 'Best For', 'DFW Note'].map((h) => (
-                  <th key={h} style={{ padding: '11px 14px', textAlign: 'left', color: '#F5E642' }}>{h}</th>
+                  <th key={h} style={{ padding: '11px 14px', textAlign: 'left', color: '#F5E642′ }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {tileTypes.map((t, i) => (
-                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38' : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
+                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38′ : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
                   <td style={{ padding: '10px 14px', color: '#FFFFFF', fontWeight: 600 }}>{t.name}</td>
-                  <td style={{ padding: '10px 14px', color: '#F5E642' }}>{t.costInstalled}</td>
-                  <td style={{ padding: '10px 14px', color: '#C8D4E8' }}>{t.durability}</td>
+                  <td style={{ padding: '10px 14px', color: '#F5E642′ }}>{t.costInstalled}</td>
+                  <td style={{ padding: '10px 14px', color: '#C8D4E8′ }}>{t.durability}</td>
                   <td style={{ padding: '10px 14px', color: '#C8D4E8', fontSize: 12 }}>{t.bestFor}</td>
                   <td style={{ padding: '10px 14px', color: '#A0ADBF', fontSize: 12 }}>{t.dfwNote}</td>
                 </tr>
@@ -111,8 +111,8 @@ export default function DFWTileInstallationGuide() {
                   onClick={() => setComplexity(c)}
                   style={{
                     padding: '8px 16px', borderRadius: 8, fontSize: 13, cursor: 'pointer',
-                    backgroundColor: complexity === c ? '#F5E642' : '#0A1628',
-                    color: complexity === c ? '#0A1628' : '#C8D4E8',
+                    backgroundColor: complexity === c ? '#F5E642′ : '#0A1628',
+                    color: complexity === c ? '#0A1628′ : '#C8D4E8',
                     border: `2px solid ${complexity === c ? '#F5E642' : '#2A3E5C'}`,
                     fontWeight: complexity === c ? 700 : 400,
                   }}
@@ -125,15 +125,15 @@ export default function DFWTileInstallationGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#A0ADBF', marginBottom: 4 }}>INSTALLATION TOTAL</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#A0ADBF', marginBottom: 4 }}>ADD: WASTE ALLOWANCE (12%)</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#C8D4E8' }}>+${wasteAddon.toLocaleString()}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#C8D4E8′ }}>+${wasteAddon.toLocaleString()}</div>
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#A0ADBF', marginBottom: 4 }}>EFFECTIVE RATE/SQ FT</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#C8D4E8' }}>${Math.round(adjRate * 0.85)} – ${Math.round(adjRate * 1.2)}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#C8D4E8′ }}>${Math.round(adjRate * 0.85)} – ${Math.round(adjRate * 1.2)}</div>
             </div>
           </div>
         </div>
@@ -141,8 +141,8 @@ export default function DFWTileInstallationGuide() {
         <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 16 }}>🔲 Grout Selection for DFW</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, marginBottom: 36 }}>
           {[
-            { type: 'Sanded Grout', joint: 'Joints > 1/8"', note: 'Standard floor tile. Strong in DFW heat.', maintain: 'Seal annually' },
-            { type: 'Unsanded Grout', joint: 'Joints < 1/8"', note: 'Wall tile, polished stone. Flexible.', maintain: 'Seal every 2 years' },
+            { type: 'Sanded Grout', joint: 'Joints > 1/8″', note: 'Standard floor tile. Strong in DFW heat.', maintain: 'Seal annually' },
+            { type: 'Unsanded Grout', joint: 'Joints < 1/8″', note: 'Wall tile, polished stone. Flexible.', maintain: 'Seal every 2 years' },
             { type: 'Epoxy Grout', joint: 'Any', note: 'Best for DFW showers — fully waterproof, stain-proof, no sealing needed.', maintain: 'No sealing required' },
             { type: 'Fusion Pro (single-component)', joint: 'Any', note: 'Popular with DFW pros — easy cleanup, commercial durability.', maintain: 'No sealing required' },
           ].map((g, i) => (

@@ -56,8 +56,8 @@ export default function DFWHailStormKit() {
     cursor: 'pointer',
     fontWeight: 700 as const,
     fontSize: 13,
-    background: activeTab === tab ? '#F5E642' : '#1e3a5f',
-    color: activeTab === tab ? '#0A1628' : '#94a3b8',
+    background: activeTab === tab ? '#F5E642′ : '#1e3a5f',
+    color: activeTab === tab ? '#0A1628′ : '#94a3b8',
   });
 
   const activeList = activeTab === 'pre' ? preStormChecklist : activeTab === 'during' ? duringStormActions : postStormDocs;
@@ -76,7 +76,7 @@ export default function DFWHailStormKit() {
           per year. Proper preparation before season saves thousands in damage and speeds up claims.
         </p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <strong>📌 DFW Fact:</strong> A single 2024 hailstorm caused $3.5B in insured losses across North Texas — most of it avoidable or easier to claim with good documentation.
         </div>
 
@@ -109,7 +109,7 @@ export default function DFWHailStormKit() {
 
         {showKit && extraItems.length > 0 && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⭐ Your Home-Specific Additions</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⭐ Your Home-Specific Additions</h2>
             {extraItems.map((item, i) => (
               <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14 }}>{item}</div>
             ))}

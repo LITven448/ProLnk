@@ -16,7 +16,7 @@ const PROJECTS = [
 
 const SPEEDS: Record<string, { label: string; color: string }> = {
   fast: { label: 'Fast', color: '#2A7A4B' },
-  medium: { label: 'Moderate', color: '#E67E22' },
+  medium: { label: 'Moderate', color: '#E67E22′ },
   slow: { label: 'Slow', color: '#C0392B' },
 };
 
@@ -39,7 +39,7 @@ export default function DFWPermitTimelineByCity() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {CITIES.map(c => (
                 <button key={c.id} onClick={() => setCityId(c.id)}
-                  style={{ background: c.id === cityId ? '#F5E642' : '#1C2E4A', color: c.id === cityId ? '#0A1628' : '#E8EDF5',
+                  style={{ background: c.id === cityId ? '#F5E642′ : '#1C2E4A', color: c.id === cityId ? '#0A1628' : '#E8EDF5',
                     border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
                   {c.name}
                 </button>
@@ -51,7 +51,7 @@ export default function DFWPermitTimelineByCity() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {PROJECTS.map(p => (
                 <button key={p} onClick={() => setProject(p)}
-                  style={{ background: p === project ? '#F5E642' : '#1C2E4A', color: p === project ? '#0A1628' : '#E8EDF5',
+                  style={{ background: p === project ? '#F5E642′ : '#1C2E4A', color: p === project ? '#0A1628' : '#E8EDF5',
                     border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12, textAlign: 'left' }}>
                   {p}
                 </button>
@@ -69,15 +69,15 @@ export default function DFWPermitTimelineByCity() {
             {[['Expected Timeline', city.timeline], ['Online Portal', city.portal], ['Inspection Scheduling', city.inspections]].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#8899B0', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontWeight: 700, fontSize: 13, color: '#F5E642' }}>{val}</div>
+                <div style={{ fontWeight: 700, fontSize: 13, color: '#F5E642′ }}>{val}</div>
               </div>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10, fontSize: 13 }}>Tips to Speed Up Approval</div>
             {city.tips.map((tip, i) => (
-              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#E8EDF5' }}>
-                <span style={{ color: '#F5E642' }}>+</span> {tip}
+              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#E8EDF5′ }}>
+                <span style={{ color: '#F5E642′ }}>+</span> {tip}
               </div>
             ))}
           </div>

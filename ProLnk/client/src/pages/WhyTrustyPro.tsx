@@ -147,7 +147,7 @@ export default function WhyTrustyPro() {
               onClick={() => setActiveTab(tab as 'comparison' | 'advantages' | 'vault')}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, transition: 'all 0.2s',
-                background: activeTab === tab ? '#0A1628' : 'transparent', color: activeTab === tab ? '#fff' : '#555',
+                background: activeTab === tab ? '#0A1628′ : ’transparent', color: activeTab === tab ? '#fff' : '#555',
               }}
             >{label}</button>
           ))}
@@ -158,7 +158,7 @@ export default function WhyTrustyPro() {
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', background: '#fff', border: '1px solid #e5e5e3', borderRadius: 16, overflow: 'hidden' }}>
                 <thead>
-                  <tr style={{ background: '#0A1628' }}>
+                  <tr style={{ background: '#0A1628′ }}>
                     <th style={{ padding: '16px 20px', textAlign: 'left', color: '#fff', fontSize: 14, fontWeight: 600 }}>Platform</th>
                     {Object.values(featureLabels).map(label => (
                       <th key={label} style={{ padding: '16px 12px', textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: 12, fontWeight: 600, minWidth: 90 }}>{label}</th>
@@ -167,12 +167,12 @@ export default function WhyTrustyPro() {
                 </thead>
                 <tbody>
                   {competitors.map((comp, i) => (
-                    <tr key={i} style={{ background: comp.highlight ? 'rgba(245,200,66,0.06)' : i % 2 === 0 ? '#fff' : '#fafaf9', borderTop: '1px solid #e5e5e3' }}>
+                    <tr key={i} style={{ background: comp.highlight ? 'rgba(245,200,66,0.06)' : i % 2 === 0 ? '#fff' : '#fafaf9', borderTop: '1px solid #e5e5e3′ }}>
                       <td style={{ padding: '16px 20px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                           <span style={{ fontSize: 20 }}>{comp.logo}</span>
                           <div>
-                            <div style={{ fontWeight: comp.highlight ? 800 : 600, color: comp.highlight ? '#0A1628' : '#333', fontSize: 15 }}>{comp.name}</div>
+                            <div style={{ fontWeight: comp.highlight ? 800 : 600, color: comp.highlight ? '#0A1628′ : '#333', fontSize: 15 }}>{comp.name}</div>
                             <div style={{ color: '#888', fontSize: 11, marginTop: 2, maxWidth: 180 }}>{comp.note}</div>
                           </div>
                         </div>
@@ -180,7 +180,7 @@ export default function WhyTrustyPro() {
                       {Object.entries(comp.features).map(([key, val]) => (
                         <td key={key} style={{ padding: '16px 12px', textAlign: 'center' }}>
                           {key === 'leadSelling' ? (
-                            <span style={{ color: val ? '#dc2626' : '#16a34a', fontSize: 18 }}>{val ? 'x' : 'check'}</span>
+                            <span style={{ color: val ? '#dc2626′ : '#16a34a', fontSize: 18 }}>{val ? ’x' : 'check'}</span>
                           ) : (
                             <span style={{ color: val ? '#16a34a' : '#ccc', fontSize: 18 }}>{val ? 'check' : '-'}</span>
                           )}
@@ -200,7 +200,7 @@ export default function WhyTrustyPro() {
               <div key={i} style={{ background: '#fff', border: '1px solid #e5e5e3', borderRadius: 16, padding: 32, display: 'flex', gap: 20 }}>
                 <span style={{ fontSize: 36, flexShrink: 0 }}>{adv.icon}</span>
                 <div>
-                  <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 12px', color: '#0A1628' }}>{adv.title}</h3>
+                  <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 12px', color: '#0A1628′ }}>{adv.title}</h3>
                   <p style={{ color: '#555', fontSize: 15, lineHeight: 1.8, margin: 0 }}>{adv.body}</p>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function WhyTrustyPro() {
           <div>
             <div style={{ background: '#fff', border: '1px solid #e5e5e3', borderRadius: 20, padding: 48, textAlign: 'center', marginBottom: 32 }}>
               <div style={{ fontSize: 48 }}>🏛️</div>
-              <h2 style={{ fontSize: 28, fontWeight: 800, margin: '20px 0 16px', color: '#0A1628' }}>Your Home History Travels With the Property</h2>
+              <h2 style={{ fontSize: 28, fontWeight: 800, margin: '20px 0 16px', color: '#0A1628′ }}>Your Home History Travels With the Property</h2>
               <p style={{ color: '#555', fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: '0 auto 32px' }}>
                 When you sell, your Home Health Vault record transfers to the new owner. Every inspection, repair, upgrade, and service call becomes part of the property documented history — a real auditable asset that increases buyer confidence and your home perceived value.
               </p>
@@ -224,7 +224,7 @@ export default function WhyTrustyPro() {
                 ].map(([icon, title, body], i) => (
                   <div key={i} style={{ background: '#FAFAF9', borderRadius: 12, padding: 24 }}>
                     <span style={{ fontSize: 28 }}>{icon}</span>
-                    <h4 style={{ fontSize: 15, fontWeight: 700, margin: '12px 0 8px', color: '#0A1628' }}>{title}</h4>
+                    <h4 style={{ fontSize: 15, fontWeight: 700, margin: '12px 0 8px', color: '#0A1628′ }}>{title}</h4>
                     <p style={{ color: '#666', fontSize: 13, lineHeight: 1.7, margin: 0 }}>{body}</p>
                   </div>
                 ))}

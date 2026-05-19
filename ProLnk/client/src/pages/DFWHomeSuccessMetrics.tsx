@@ -42,7 +42,7 @@ export default function DFWHomeSuccessMetrics() {
 
   const avgScore = scores.length > 0 ? Math.round(scores.reduce((s, i) => s + i.score, 0) / scores.length) : 0;
   const grade = avgScore >= 85 ? 'A' : avgScore >= 70 ? 'B' : avgScore >= 55 ? 'C' : avgScore >= 40 ? 'D' : 'F';
-  const gradeColor = avgScore >= 85 ? '#22c55e' : avgScore >= 70 ? '#F5E642' : avgScore >= 55 ? '#f59e0b' : '#ef4444';
+  const gradeColor = avgScore >= 85 ? '#22c55e' : avgScore >= 70 ? '#F5E642′ : avgScore >= 55 ? '#f59e0b' : '#ef4444';
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 16px' }}>
@@ -55,12 +55,12 @@ export default function DFWHomeSuccessMetrics() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📥 Enter Your Home Stats</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { label: 'HOME VALUE ($)', val: homeValue, set: setHomeValue, ph: '425000' },
-              { label: 'ANNUAL MAINT SPEND ($)', val: annualMaint, set: setAnnualMaint, ph: '5200' },
-              { label: 'HVAC AGE (years)', val: hvacAge, set: setHvacAge, ph: '8' },
-              { label: 'ROOF AGE (years)', val: roofAge, set: setRoofAge, ph: '11' },
-              { label: 'WATER HEATER AGE (years)', val: hwAge, set: setHwAge, ph: '7' },
-              { label: 'INSURANCE CLAIMS (5yr)', val: claims, set: setClaims, ph: '0' },
+              { label: 'HOME VALUE ($)', val: homeValue, set: setHomeValue, ph: '425000′ },
+              { label: 'ANNUAL MAINT SPEND ($)', val: annualMaint, set: setAnnualMaint, ph: '5200′ },
+              { label: 'HVAC AGE (years)', val: hvacAge, set: setHvacAge, ph: '8′ },
+              { label: 'ROOF AGE (years)', val: roofAge, set: setRoofAge, ph: '11′ },
+              { label: 'WATER HEATER AGE (years)', val: hwAge, set: setHwAge, ph: '7′ },
+              { label: 'INSURANCE CLAIMS (5yr)', val: claims, set: setClaims, ph: '0′ },
             ].map(({ label, val, set, ph }) => (
               <div key={label}>
                 <label style={{ color: '#94a3b8', fontSize: 12, display: 'block', marginBottom: 4 }}>{label}</label>
@@ -81,10 +81,10 @@ export default function DFWHomeSuccessMetrics() {
               <div key={item.label} style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 12 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                   <div style={{ fontWeight: 600 }}>{item.label}</div>
-                  <div style={{ color: item.score >= 80 ? '#22c55e' : item.score >= 60 ? '#F5E642' : '#ef4444', fontWeight: 700 }}>{item.score}/100</div>
+                  <div style={{ color: item.score >= 80 ? '#22c55e' : item.score >= 60 ? '#F5E642′ : '#ef4444', fontWeight: 700 }}>{item.score}/100</div>
                 </div>
                 <div style={{ backgroundColor: '#0A1628', borderRadius: 4, height: 6, marginBottom: 8 }}>
-                  <div style={{ backgroundColor: item.score >= 80 ? '#22c55e' : item.score >= 60 ? '#F5E642' : '#ef4444', height: 6, borderRadius: 4, width: `${item.score}%` }} />
+                  <div style={{ backgroundColor: item.score >= 80 ? '#22c55e' : item.score >= 60 ? '#F5E642′ : '#ef4444', height: 6, borderRadius: 4, width: `${item.score}%` }} />
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>{item.detail}</div>
               </div>

@@ -98,7 +98,7 @@ export default function DFWInventoryGuide() {
             <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontSize: 22, fontWeight: 800, marginBottom: 4 }}>{result.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>{result.months} months of supply · {getMarketLabel(result.months)}</div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '16px 0' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '16px 0′ }}>
                 <div style={{ background: '#0F2137', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                   <div style={{ color: '#F5E642', fontSize: 18, fontWeight: 800 }}>{result.buyers} days</div>
                   <div style={{ color: '#94a3b8', fontSize: 11 }}>Avg Days on Market</div>

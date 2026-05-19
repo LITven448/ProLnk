@@ -46,7 +46,7 @@ export default function DFWLeakingRoofGuide() {
         <p style={{ color: '#94a3b8', marginBottom: 28 }}>DFW severe thunderstorms can breach a roof in minutes. First steps matter for safety and insurance — follow this guide immediately.</p>
 
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚡ Immediate Steps</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚡ Immediate Steps</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {emergencySteps.map(s => (
               <div key={s.label} style={{ background: '#132035', borderRadius: 8, padding: '12px 14px' }}>
@@ -58,7 +58,7 @@ export default function DFWLeakingRoofGuide() {
         </div>
 
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📍 Common DFW Leak Locations</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📍 Common DFW Leak Locations</h2>
           <div style={{ display: 'grid', gap: 8 }}>
             {leakZones.map(z => (
               <div key={z.id} style={{ background: '#132035', borderRadius: 8, padding: '12px 16px', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
@@ -73,9 +73,9 @@ export default function DFWLeakingRoofGuide() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 10, padding: 22, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Action Planner</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Action Planner</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Where is the leak?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Where is the leak?</label>
             <select value={leakZone} onChange={e => setLeakZone(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select location...</option>
               <option value="valley">Roof valley (between slopes)</option>
@@ -84,7 +84,7 @@ export default function DFWLeakingRoofGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Current weather situation?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Current weather situation?</label>
             <select value={weather} onChange={e => setWeather(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select situation...</option>
               <option value="active-storm">Storm is actively happening now</option>
@@ -93,7 +93,7 @@ export default function DFWLeakingRoofGuide() {
             </select>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Immediate Action: </span>{result.action}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Insurance: </span>{result.insurance}</div>
               <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Who to Call: </span>{result.callWho}</div>

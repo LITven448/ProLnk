@@ -37,7 +37,7 @@ export default function DFWTermiteGuide() {
           <div style={{ fontSize: 40, marginBottom: 12 }}>🐛</div>
           <h1 style={{ fontSize: 32, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>DFW Termite Risk & Treatment Guide</h1>
           <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6 }}>
-            North Texas sits in a <strong style={{ color: '#F5E642' }}>very heavy termite pressure zone</strong>. Two species dominate: Eastern Subterranean (most common) and Formosan (more aggressive, harder to eliminate). DFW's clay soil and hot humid summers create ideal conditions year-round.
+            North Texas sits in a <strong style={{ color: '#F5E642′ }}>very heavy termite pressure zone</strong>. Two species dominate: Eastern Subterranean (most common) and Formosan (more aggressive, harder to eliminate). DFW’s clay soil and hot humid summers create ideal conditions year-round.
           </p>
         </div>
 
@@ -63,13 +63,13 @@ export default function DFWTermiteGuide() {
         <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 600, color: '#F5E642', marginBottom: 16 }}>🔬 Treatment Options in DFW</h2>
           {[
-            { name: 'Liquid Barrier (Termidor)', best: 'Best for active infestations', desc: 'Chemical trenched around perimeter. Termites carry it back to colony. Effective within 90 days. Lasts 10+ years. Most common DFW choice.', cost: '$800–$1,500' },
+            { name: 'Liquid Barrier (Termidor)', best: 'Best for active infestations', desc: 'Chemical trenched around perimeter. Termites carry it back to colony. Effective within 90 days. Lasts 10+ years. Most common DFW choice.', cost: '$800–$1,500′ },
             { name: 'Bait Station System (Sentricon)', best: 'Best for prevention + monitoring', desc: 'Stations installed every 10–12 feet around perimeter. Slow-kill bait eliminates colony. Annual monitoring required. Preferred for environmentally sensitive sites.', cost: '$400–$700 install + $200–$400/year' },
-            { name: 'Tent Fumigation', best: 'Rarely needed in DFW', desc: 'Effective for drywood termites (rare here). Not effective against subterranean species dominant in DFW. Only consider if drywood confirmed by inspection.', cost: '$2,000–$4,000' },
+            { name: 'Tent Fumigation', best: 'Rarely needed in DFW', desc: 'Effective for drywood termites (rare here). Not effective against subterranean species dominant in DFW. Only consider if drywood confirmed by inspection.', cost: '$2,000–$4,000′ },
           ].map(t => (
             <div key={t.name} style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
-                <span style={{ fontWeight: 600, color: '#e2e8f0' }}>{t.name}</span>
+                <span style={{ fontWeight: 600, color: '#e2e8f0′ }}>{t.name}</span>
                 <span style={{ color: '#F5E642', fontSize: 14 }}>{t.cost}</span>
               </div>
               <div style={{ color: '#22c55e', fontSize: 13, marginBottom: 6 }}>{t.best}</div>
@@ -81,7 +81,7 @@ export default function DFWTermiteGuide() {
         <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 600, color: '#F5E642', marginBottom: 8 }}>📅 Annual Inspections</h2>
           <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            Texas requires a termite inspection for most real estate transactions (Wood Destroying Insect Report). Even without buying/selling, annual inspections catch infestations before structural damage occurs. DFW inspections typically cost <strong style={{ color: '#e2e8f0' }}>$75–$150</strong>. Many companies offer free inspections when under a treatment contract.
+            Texas requires a termite inspection for most real estate transactions (Wood Destroying Insect Report). Even without buying/selling, annual inspections catch infestations before structural damage occurs. DFW inspections typically cost <strong style={{ color: '#e2e8f0′ }}>$75–$150</strong>. Many companies offer free inspections when under a treatment contract.
           </p>
         </div>
 
@@ -91,8 +91,8 @@ export default function DFWTermiteGuide() {
           {riskFactors.map(f => (
             <label key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', cursor: 'pointer', borderBottom: '1px solid #1a2d4a' }}>
               <input type="checkbox" checked={selected.includes(f.id)} onChange={() => toggle(f.id)}
-                style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
-              <span style={{ color: '#cbd5e1' }}>{f.label}</span>
+                style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+              <span style={{ color: '#cbd5e1′ }}>{f.label}</span>
             </label>
           ))}
           <button onClick={() => setShowPlan(true)}

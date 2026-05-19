@@ -43,10 +43,10 @@ export default function DFWWaterLeakDetection2026() {
           ].map(d => (
             <div key={d.name} style={{ borderBottom: '1px solid #1e3a5f', paddingBottom: 10, marginBottom: 10 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ fontWeight: 700, color: '#cbd5e1' }}>{d.name}</span>
+                <span style={{ fontWeight: 700, color: '#cbd5e1′ }}>{d.name}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{d.price}</span>
               </div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{d.rating} · {d.note}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{d.rating} · {d.note}</div>
             </div>
           ))}
         </div>
@@ -55,8 +55,8 @@ export default function DFWWaterLeakDetection2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏡 How old is your DFW home?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeAges.map((h, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
-                {h.label} — <span style={{ color: selected === i ? '#0A1628' : h.color }}>{h.risk} Risk</span>
+              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                {h.label} — <span style={{ color: selected === i ? '#0A1628′ : h.color }}>{h.risk} Risk</span>
               </button>
             ))}
           </div>
@@ -64,7 +64,7 @@ export default function DFWWaterLeakDetection2026() {
             <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: `4px solid ${rec.color}` }}>
               <div style={{ color: rec.color, fontWeight: 700, marginBottom: 6 }}>Risk Level: {rec.risk}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Recommended: {rec.sensor}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>💡 {rec.note}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>💡 {rec.note}</div>
             </div>
           )}
         </div>

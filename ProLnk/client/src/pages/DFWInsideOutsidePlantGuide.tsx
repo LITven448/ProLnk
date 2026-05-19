@@ -13,7 +13,7 @@ const plantData = {
     { name: 'Texas Sage', toxic: false, drought: true, heat: true, note: 'Native DFW plant — thrives in heat, nearly zero water once established' },
     { name: 'Knockout Rose', toxic: false, drought: false, heat: true, note: 'DFW favorite — blooms spring through fall, needs weekly water in summer' },
     { name: 'Lantana', toxic: true, drought: true, heat: true, note: 'Extreme heat tolerance — thrives in DFW 105°F+ but toxic to pets' },
-    { name: 'Crepe Myrtle', toxic: false, drought: true, heat: true, note: 'Iconic DFW tree/shrub — drought tolerant after Year 2' },
+    { name: 'Crepe Myrtle', toxic: false, drought: true, heat: true, note: 'Iconic DFW tree/shrub — drought tolerant after Year 2′ },
     { name: 'Salvia', toxic: false, drought: true, heat: true, note: 'Pollinator magnet, handles DFW clay soil and heat well' },
     { name: 'Oleander', toxic: true, drought: true, heat: true, note: 'WARNING: Highly toxic to pets and children — avoid if pets outdoors' },
   ],

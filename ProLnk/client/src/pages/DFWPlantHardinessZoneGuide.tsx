@@ -103,13 +103,13 @@ export default function DFWPlantHardinessZoneGuide() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
                 {plantInfo.plants.map(p => <span key={p} style={{ background: '#1e3a5f', color: '#e2e8f0', padding: '0.25rem 0.75rem', borderRadius: 20, fontSize: '0.9rem' }}>{p}</span>)}
               </div>
-              <p style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}><strong style={{ color: '#94a3b8' }}>Timing:</strong> {plantInfo.timing}</p>
+              <p style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}><strong style={{ color: '#94a3b8′ }}>Timing:</strong> {plantInfo.timing}</p>
               <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>{plantInfo.notes}</p>
             </div>
           )}
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-          <strong style={{ color: '#F5E642' }}>ProLnk Note:</strong> Large tree planting, irrigation system installation, and landscape grading all require licensed contractors in DFW. ProLnk connects you with verified landscape professionals who know DFW's unique soil and climate conditions.
+          <strong style={{ color: '#F5E642′ }}>ProLnk Note:</strong> Large tree planting, irrigation system installation, and landscape grading all require licensed contractors in DFW. ProLnk connects you with verified landscape professionals who know DFW’s unique soil and climate conditions.
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const issues = [
 export default function DFWFoundationEarthwork2026() {
   const [selected, setSelected] = useState<number | null>(null);
 
-  const urgencyColor = (u: string) => u === 'Critical' ? '#f87171' : u === 'High' ? '#fb923c' : u === 'Medium' ? '#facc15' : '#94a3b8';
+  const urgencyColor = (u: string) => u === 'Critical' ? '#f87171′ : u === ’High' ? '#fb923c' : u === 'Medium' ? '#facc15′ : '#94a3b8';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 16px' }}>

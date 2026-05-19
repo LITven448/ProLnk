@@ -79,8 +79,8 @@ export default function ProLnkCommunityGuide() {
           {situations.map(s => (
             <button key={s} onClick={() => setSelected(s)} style={{
               padding: '8px 18px', borderRadius: 24, border: '2px solid',
-              borderColor: selected === s ? '#0A1628' : '#CBD5E1',
-              background: selected === s ? '#0A1628' : 'white',
+              borderColor: selected === s ? '#0A1628′ : '#CBD5E1',
+              background: selected === s ? '#0A1628′ : ’white',
               color: selected === s ? 'white' : '#0A1628',
               fontWeight: 700, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize',
             }}>{s}</button>
@@ -93,9 +93,9 @@ export default function ProLnkCommunityGuide() {
             <h2 style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', margin: 0 }}>{g.title}</h2>
           </div>
           <p style={{ color: '#64748B', fontSize: 14, marginBottom: 16, fontStyle: 'italic' }}>"{g.guideline}"</p>
-          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0' }}>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0′ }}>
             {g.what.map((w, i) => (
-              <li key={i} style={{ padding: '9px 0', borderBottom: i < g.what.length - 1 ? '1px solid #F1F5F9' : 'none', color: '#1E293B', fontSize: 14 }}>{w}</li>
+              <li key={i} style={{ padding: '9px 0', borderBottom: i < g.what.length - 1 ? '1px solid #F1F5F9′ : ’none', color: '#1E293B', fontSize: 14 }}>{w}</li>
             ))}
           </ul>
           <div style={{ background: '#FEF3C7', borderRadius: 10, padding: '12px 16px', borderLeft: '4px solid #F59E0B' }}>

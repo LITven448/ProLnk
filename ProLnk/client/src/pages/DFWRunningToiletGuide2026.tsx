@@ -47,9 +47,9 @@ export default function DFWRunningToiletGuide2026() {
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Diagnose Your Running Toilet</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Toilet Symptom</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Toilet Symptom</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
               <option value="">Select symptom...</option>
               <option value="constant-run">🔴 Constantly running water sound</option>
               <option value="intermittent">👻 Random flushing by itself (ghost flush)</option>
@@ -62,7 +62,7 @@ export default function DFWRunningToiletGuide2026() {
             Get My Fix
           </button>
           {fix && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>
               {fix}
             </div>
           )}
@@ -72,14 +72,14 @@ export default function DFWRunningToiletGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>🛠️ Repair vs. Replace Costs</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
-              { item: 'Flapper valve (DIY)', cost: '$10-15' },
-              { item: 'Fill valve (DIY)', cost: '$20-30' },
-              { item: 'Fill valve (plumber)', cost: '$100-180' },
-              { item: 'Full rebuild kit (DIY)', cost: '$25-40' },
-              { item: 'New toilet installed', cost: '$350-650' },
+              { item: 'Flapper valve (DIY)', cost: '$10-15′ },
+              { item: 'Fill valve (DIY)', cost: '$20-30′ },
+              { item: 'Fill valve (plumber)', cost: '$100-180′ },
+              { item: 'Full rebuild kit (DIY)', cost: '$25-40′ },
+              { item: 'New toilet installed', cost: '$350-650′ },
             ].map(r => (
               <div key={r.item} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: 8 }}>
-                <span style={{ color: '#cbd5e1' }}>{r.item}</span>
+                <span style={{ color: '#cbd5e1′ }}>{r.item}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{r.cost}</span>
               </div>
             ))}

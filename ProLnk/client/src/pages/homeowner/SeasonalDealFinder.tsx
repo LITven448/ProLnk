@@ -92,11 +92,11 @@ export default function SeasonalDealFinder() {
 
   return (
     <HomeownerLayout>
-      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-12">
+      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-12″>
         <div className="max-w-5xl mx-auto">
 
-          <div className="mb-10">
-            <h1 className="text-4xl font-bold text-white mb-2">Seasonal Deal Finder</h1>
+          <div className="mb-10″>
+            <h1 className="text-4xl font-bold text-white mb-2″>Seasonal Deal Finder</h1>
             <p className="text-[#64B5F6] text-lg">Save $2,000+ by booking at the right time</p>
           </div>
 
@@ -104,11 +104,11 @@ export default function SeasonalDealFinder() {
             className="rounded-2xl p-6 mb-10 border"
             style={{
               background: currentHvac === 'bad' ? '#EF4444'/10 : '#10B981'/10,
-              borderColor: currentHvac === 'bad' ? '#EF4444' : '#10B981',
+              borderColor: currentHvac === 'bad' ? '#EF4444′ : '#10B981',
               backgroundColor: currentHvac === 'bad' ? 'rgba(239,68,68,0.1)' : 'rgba(16,185,129,0.1)',
             }}
           >
-            <div className="text-sm uppercase tracking-widest text-gray-400 mb-2">
+            <div className="text-sm uppercase tracking-widest text-gray-400 mb-2″>
               Current Month — {MONTHS[CURRENT_MONTH]}
             </div>
             <p className="text-white font-medium text-base">
@@ -120,10 +120,10 @@ export default function SeasonalDealFinder() {
             </p>
           </div>
 
-          <h2 className="text-2xl font-semibold text-white mb-2">12-Month Pricing Calendar</h2>
-          <div className="flex gap-4 text-xs text-gray-400 mb-5">
+          <h2 className="text-2xl font-semibold text-white mb-2″>12-Month Pricing Calendar</h2>
+          <div className="flex gap-4 text-xs text-gray-400 mb-5″>
             {Object.entries(tierStyle).map(([k, v]) => (
-              <span key={k} className="flex items-center gap-1">
+              <span key={k} className="flex items-center gap-1″>
                 <span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: v.bg }} />
                 {v.label} pricing
               </span>
@@ -134,12 +134,12 @@ export default function SeasonalDealFinder() {
             <table className="w-full min-w-[700px]">
               <thead>
                 <tr>
-                  <th className="text-left text-xs text-gray-500 font-normal pb-3 pr-4 w-40">Trade</th>
+                  <th className="text-left text-xs text-gray-500 font-normal pb-3 pr-4 w-40″>Trade</th>
                   {MONTHS.map((m, i) => (
                     <th
                       key={m}
                       className="text-center text-xs pb-3 font-normal"
-                      style={{ color: i === CURRENT_MONTH ? '#64B5F6' : '#6B7280' }}
+                      style={{ color: i === CURRENT_MONTH ? '#64B5F6′ : '#6B7280' }}
                     >
                       {i === CURRENT_MONTH ? <strong>{m}</strong> : m}
                     </th>
@@ -148,8 +148,8 @@ export default function SeasonalDealFinder() {
               </thead>
               <tbody>
                 {tradeSeasons.map(ts => (
-                  <tr key={ts.trade} className="border-t border-[#1E3A5F]/50">
-                    <td className="text-sm text-gray-300 py-2 pr-4">{ts.trade}</td>
+                  <tr key={ts.trade} className="border-t border-[#1E3A5F]/50″>
+                    <td className="text-sm text-gray-300 py-2 pr-4″>{ts.trade}</td>
                     {ts.grid.map((tier, i) => (
                       <td key={i} className="py-2 text-center">
                         <div
@@ -170,28 +170,28 @@ export default function SeasonalDealFinder() {
             </table>
           </div>
 
-          <h2 className="text-2xl font-semibold text-white mb-6">Best Months to Book by Trade</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          <h2 className="text-2xl font-semibold text-white mb-6″>Best Months to Book by Trade</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10″>
             {tradeSeasons.map(ts => (
-              <div key={ts.trade} className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-4">
-                <div className="font-semibold text-white mb-2">{ts.trade}</div>
+              <div key={ts.trade} className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-4″>
+                <div className="font-semibold text-white mb-2″>{ts.trade}</div>
                 <div className="flex gap-4 text-sm">
                   <div>
                     <span className="text-[#10B981] font-medium">Best: </span>
-                    <span className="text-gray-300">{ts.best}</span>
+                    <span className="text-gray-300″>{ts.best}</span>
                   </div>
                   <div>
                     <span className="text-[#EF4444] font-medium">Avoid: </span>
-                    <span className="text-gray-300">{ts.worst}</span>
+                    <span className="text-gray-300″>{ts.worst}</span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#2D6A4F] rounded-2xl p-6 mb-8">
-            <h2 className="text-xl font-semibold text-white mb-2">Group Buying</h2>
-            <p className="text-gray-400 text-sm mb-4">
+          <div className="bg-[#0D1F3C] border border-[#2D6A4F] rounded-2xl p-6 mb-8″>
+            <h2 className="text-xl font-semibold text-white mb-2″>Group Buying</h2>
+            <p className="text-gray-400 text-sm mb-4″>
               When <strong className="text-white">5+ neighbors</strong> book the same service, TrustyPro
               negotiates group pricing — average{' '}
               <span className="text-[#10B981] font-semibold">15–25% discount</span> for everyone.
@@ -205,13 +205,13 @@ export default function SeasonalDealFinder() {
             </a>
           </div>
 
-          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-10">
-            <h2 className="text-xl font-semibold text-white mb-4">Set a Price Alert</h2>
-            <p className="text-gray-400 text-sm mb-5">
+          <div className="bg-[#0D1F3C] border border-[#1E3A5F] rounded-2xl p-6 mb-10″>
+            <h2 className="text-xl font-semibold text-white mb-4″>Set a Price Alert</h2>
+            <p className="text-gray-400 text-sm mb-5″>
               Tell us what you want and your target price — we'll notify you when pros are offering
               those rates in your area.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4″>
               <select
                 value={alertTrade}
                 onChange={e => setAlertTrade(e.target.value)}
@@ -222,8 +222,8 @@ export default function SeasonalDealFinder() {
                   <option key={ts.trade} value={ts.trade}>{ts.trade}</option>
                 ))}
               </select>
-              <div className="flex items-center gap-2">
-                <span className="text-gray-400">$</span>
+              <div className="flex items-center gap-2″>
+                <span className="text-gray-400″>$</span>
                 <input
                   type="number"
                   placeholder="Target price"
@@ -240,12 +240,12 @@ export default function SeasonalDealFinder() {
               </button>
             </div>
             {alerts.length > 0 && (
-              <div className="space-y-2">
+              <div className="space-y-2″>
                 {alerts.map((a, i) => (
                   <div key={i} className="flex items-center gap-3 bg-[#0A1628] rounded-lg px-4 py-2 text-sm">
                     <span className="text-[#10B981]">✓</span>
-                    <span className="text-gray-300">{a.trade}</span>
-                    <span className="text-gray-500">—</span>
+                    <span className="text-gray-300″>{a.trade}</span>
+                    <span className="text-gray-500″>—</span>
                     <span className="text-white font-medium">${Number(a.price).toLocaleString()} target</span>
                   </div>
                 ))}
@@ -254,7 +254,7 @@ export default function SeasonalDealFinder() {
           </div>
 
           <div className="bg-gradient-to-r from-[#0D1F3C] to-[#1E3A5F] border border-[#2D4A6B] rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Find Deals in Your ZIP</h3>
+            <h3 className="text-2xl font-bold text-white mb-3″>Find Deals in Your ZIP</h3>
             <p className="text-gray-400 mb-6 text-sm max-w-lg mx-auto">
               Enter your ZIP code and we'll surface the best-priced verified pros in your area
               right now — no haggling, no surprises.

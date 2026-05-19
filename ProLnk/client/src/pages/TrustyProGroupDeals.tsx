@@ -46,10 +46,10 @@ export default function TrustyProGroupDeals() {
               <div key={i} onClick={() => setActiveStep(activeStep === i ? null : i)}
                 style={{ background: activeStep === i ? '#eff6ff' : '#f8fafc', borderRadius: 10, padding: '16px 20px', cursor: 'pointer', border: `2px solid ${activeStep === i ? '#3b82f6' : 'transparent'}`, transition: 'all 0.2s' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: activeStep === i ? '#3b82f6' : '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0, transition: 'background 0.2s' }}>{step.emoji}</div>
+                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: activeStep === i ? '#3b82f6′ : '#e2e8f0', display: ’flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0, transition: 'background 0.2s' }}>{step.emoji}</div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, color: '#0f172a', display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span style={{ fontSize: 12, background: activeStep === i ? '#3b82f6' : '#94a3b8', color: '#fff', padding: '2px 8px', borderRadius: 12 }}>Step {i + 1}</span>
+                      <span style={{ fontSize: 12, background: activeStep === i ? '#3b82f6′ : '#94a3b8', color: '#fff', padding: '2px 8px', borderRadius: 12 }}>Step {i + 1}</span>
                       {step.title}
                     </div>
                     {activeStep === i && <div style={{ fontSize: 14, color: '#475569', marginTop: 8, lineHeight: 1.6 }}>{step.desc}</div>}

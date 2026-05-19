@@ -62,7 +62,7 @@ export default function DFWFirstYearHomeownerMonth2_3() {
           <div>
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>Your Months 2–3 Checklist</h2>
             {checklists[season].map((item, i) => (
-              <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642' }}>
+              <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642′ }}>
                 {item}
               </div>
             ))}

@@ -53,11 +53,11 @@ export default function DFWRemoteWorkerHomeGuide() {
           💻 Optimize Your Home for Remote Work
         </h1>
         <p style={{ fontSize: 16, color: '#aab4c8', marginBottom: 32, lineHeight: 1.6 }}>
-          DFW homes weren't designed for 40-hour remote work weeks. Here's the specific setup that makes the difference between struggling through another Zoom call and doing your best work every day.
+          DFW homes weren't designed for 40-hour remote work weeks. Here’s the specific setup that makes the difference between struggling through another Zoom call and doing your best work every day.
         </p>
 
-        <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '3px solid #F5E642' }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📡 DFW Internet Reality</h2>
+        <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '3px solid #F5E642′ }}>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📡 DFW Internet Reality</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, fontSize: 14, color: '#ddd' }}>
             <li><strong>AT&T Fiber</strong> — symmetrical speeds, most reliable for WFH in DFW, check availability first</li>
             <li><strong>Spectrum</strong> — solid backup, asymmetric upload speeds, fine for most workers</li>
@@ -69,7 +69,7 @@ export default function DFWRemoteWorkerHomeGuide() {
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🏠 Your Setup</h2>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8' }}>Home layout</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8′ }}>Home layout</label>
             {[{ v: 'dedicated', l: '🚪 I have a dedicated room for work' }, { v: 'shared', l: '🛋️ I work in a shared or open space' }].map(opt => (
               <label key={opt.v} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, cursor: 'pointer' }}>
                 <input type="radio" name="layout" value={opt.v} checked={layout === opt.v} onChange={() => setLayout(opt.v)} />
@@ -78,7 +78,7 @@ export default function DFWRemoteWorkerHomeGuide() {
             ))}
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8' }}>Work type</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8′ }}>Work type</label>
             {[{ v: 'video', l: '📹 Heavy video calls and client-facing work' }, { v: 'deep', l: '🧠 Deep focus, async, minimal calls' }, { v: 'mixed', l: '⚖️ Mix of both' }].map(opt => (
               <label key={opt.v} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, cursor: 'pointer' }}>
                 <input type="radio" name="workType" value={opt.v} checked={workType === opt.v} onChange={() => setWorkType(opt.v)} />

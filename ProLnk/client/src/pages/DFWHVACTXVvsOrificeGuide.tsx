@@ -55,14 +55,14 @@ export default function DFWHVACTXVvsOrificeGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {scenarios.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#1A2030', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
-              <div style={{ fontWeight: 700, marginBottom: 6 }}>Recommendation: <span style={{ color: '#F5E642' }}>{result.rec}</span></div>
+            <div style={{ background: '#1A2030', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ fontWeight: 700, marginBottom: 6 }}>Recommendation: <span style={{ color: '#F5E642′ }}>{result.rec}</span></div>
               <div style={{ color: '#CBD5E1', fontSize: 14 }}>{result.reason}</div>
             </div>
           )}
@@ -76,7 +76,7 @@ export default function DFWHVACTXVvsOrificeGuide() {
             <div>3. Install external equalizer line to suction</div>
             <div>4. Evacuate to 500 microns</div>
             <div>5. Recharge to DFW summer subcooling target (10–12°F)</div>
-            <div style={{ marginTop: 8, color: '#F5E642' }}>Total DFW cost: $350–$650 typical</div>
+            <div style={{ marginTop: 8, color: '#F5E642′ }}>Total DFW cost: $350–$650 typical</div>
           </div>
         </div>
       </div>

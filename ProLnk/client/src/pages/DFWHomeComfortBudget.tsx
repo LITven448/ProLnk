@@ -59,7 +59,7 @@ export default function DFWHomeComfortBudget() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>Home type</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {homeTypes.map(h => (
-              <button key={h} onClick={() => setHomeType(h)} style={{ background: homeType === h ? '#F5E642' : '#111d30', color: homeType === h ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1.25rem', cursor: 'pointer', fontWeight: 600 }}>{h}</button>
+              <button key={h} onClick={() => setHomeType(h)} style={{ background: homeType === h ? '#F5E642′ : '#111d30', color: homeType === h ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1.25rem', cursor: ’pointer', fontWeight: 600 }}>{h}</button>
             ))}
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function DFWHomeComfortBudget() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>Comfort priority</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {priorities.map(p => (
-              <button key={p} onClick={() => setPriority(p)} style={{ background: priority === p ? '#F5E642' : '#111d30', color: priority === p ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1.25rem', cursor: 'pointer', fontWeight: 600 }}>{p}</button>
+              <button key={p} onClick={() => setPriority(p)} style={{ background: priority === p ? '#F5E642′ : '#111d30', color: priority === p ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1.25rem', cursor: ’pointer', fontWeight: 600 }}>{p}</button>
             ))}
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function DFWHomeComfortBudget() {
         {items.length > 0 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {items.map((item, i) => (
-              <div key={i} style={{ background: '#111d30', borderRadius: 10, padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: 14, borderLeft: '4px solid #F5E642' }}>
+              <div key={i} style={{ background: '#111d30', borderRadius: 10, padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: 14, borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, fontSize: 13, width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>#{i + 1}</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700 }}>{item.label}</div>
@@ -98,7 +98,7 @@ export default function DFWHomeComfortBudget() {
 
         {items.length > 0 && (
           <div style={{ marginTop: 24, background: '#111d30', borderRadius: 10, padding: '1rem', color: '#64748b', fontSize: 13 }}>
-            💡 <strong style={{ color: '#F5E642' }}>ProLnk tip:</strong> Get 3 quotes from TrustyPro-verified DFW HVAC and insulation specialists before committing to any comfort upgrade.
+            💡 <strong style={{ color: '#F5E642′ }}>ProLnk tip:</strong> Get 3 quotes from TrustyPro-verified DFW HVAC and insulation specialists before committing to any comfort upgrade.
           </div>
         )}
       </div>

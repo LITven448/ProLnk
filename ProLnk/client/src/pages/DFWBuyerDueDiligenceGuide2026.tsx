@@ -29,7 +29,7 @@ export default function DFWBuyerDueDiligenceGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Texas 10-day option period is everything — use every day of it</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 10px' }}>⏱️ The Texas Option Period</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>Standard 7–10 days. Pay a non-refundable option fee ($100–500) for the unrestricted right to cancel. This is your entire inspection window — don't waste a single day scheduling.</p>
         </div>
@@ -40,9 +40,9 @@ export default function DFWBuyerDueDiligenceGuide2026() {
             {Object.keys(propertyTypes).map(type => (
               <button key={type} onClick={() => setSelectedType(type)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  borderColor: selectedType === type ? '#F5E642' : '#334155',
-                  background: selectedType === type ? '#F5E642' : 'transparent',
-                  color: selectedType === type ? '#0A1628' : '#94a3b8', fontWeight: selectedType === type ? 700 : 400 }}>
+                  borderColor: selectedType === type ? '#F5E642′ : '#334155',
+                  background: selectedType === type ? '#F5E642′ : ’transparent',
+                  color: selectedType === type ? '#0A1628′ : '#94a3b8', fontWeight: selectedType === type ? 700 : 400 }}>
                 {type}
               </button>
             ))}

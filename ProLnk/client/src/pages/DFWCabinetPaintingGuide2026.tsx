@@ -30,21 +30,21 @@ export default function DFWCabinetPaintingGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Cabinet Condition + Timeline → Approach</h2>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
             <div style={{ flex: 1, minWidth: 200 }}>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Cabinet Condition</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Cabinet Condition</label>
               <select value={condition} onChange={e => setCondition(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
                 <option value="good">Good — solid, just dated color</option>
                 <option value="rough">Rough — peeling, dents, damage</option>
               </select>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Timeline</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Timeline</label>
               <select value={timeline} onChange={e => setTimeline(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
                 <option value="weekend">DIY this weekend</option>
                 <option value="pro">Hire a professional</option>
               </select>
             </div>
           </div>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ {rec.approach}</div>
             <div style={{ marginBottom: 6 }}><strong>Steps:</strong> {rec.steps}</div>
             <div style={{ marginBottom: 6 }}><strong>Paint:</strong> {rec.paint}</div>
@@ -55,7 +55,7 @@ export default function DFWCabinetPaintingGuide2026() {
         {[
           { icon: '🧼', title: 'Prep Is Everything', body: 'DFW kitchens accumulate grease faster in humid summers. Degrease with TSP substitute or Krud Kutter before any sanding. Skip degreasing and the paint will peel within 6 months. Sand with 150 grit after degreasing, then 220 before topcoat.' },
           { icon: '🌡️', title: 'DFW Humidity and Cure Time', body: 'SW Emerald Urethane reaches handling hardness in 24-48 hours in DFW summer heat. Full cure takes 7 days. Do not rehang doors or place items on shelves early — you’ll leave permanent impressions. DFW heat accelerates cure vs Northern states.' },
-          { icon: '🎯', title: 'Spray vs Brush — DFW Reality', body: 'Professional spray delivers a factory finish — no brush marks. HVLP sprayers are rented at Home Depot for ~$60/day. Setup and masking takes 3-4 hours. For DIY brush jobs, foam rollers on flat surfaces + a 2" angled brush in corners gives the next-best result.' },
+          { icon: '🎯', title: 'Spray vs Brush — DFW Reality', body: 'Professional spray delivers a factory finish — no brush marks. HVLP sprayers are rented at Home Depot for ~$60/day. Setup and masking takes 3-4 hours. For DIY brush jobs, foam rollers on flat surfaces + a 2″ angled brush in corners gives the next-best result.' },
         ].map((card, i) => (
           <div key={i} style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 20, marginBottom: 16 }}>
             <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>{card.icon} {card.title}</div>

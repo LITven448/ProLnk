@@ -12,7 +12,7 @@ export default function DFWRoofReplacementTimeline2026() {
         { phase: '💰 Claim Approval', duration: '1–2 weeks', notes: 'Supplement negotiations common in DFW' },
         { phase: '👷 Contractor Selection', duration: '1–2 weeks', notes: 'Get 3 bids; verify DFW license + insurance' },
         { phase: '📋 Permit', duration: '1–3 days', notes: 'Most DFW cities: same-day to 3-day turnaround' },
-        { phase: '🏠 Installation', duration: '1–2 days', notes: '2,500 sf roof: 1 day crew of 6' },
+        { phase: '🏠 Installation', duration: '1–2 days', notes: '2,500 sf roof: 1 day crew of 6′ },
         { phase: '🔎 Inspection', duration: '3–7 days', notes: 'City inspection required for permit closure' },
       ],
     },
@@ -50,20 +50,20 @@ export default function DFWRoofReplacementTimeline2026() {
         {[{ k: 'insurance', l: 'Insurance Claim' }, { k: 'cash', l: 'Cash/Finance' }, { k: 'premium', l: 'Metal/Tile' }].map(({ k, l }) => (
           <button key={k} onClick={() => setScenario(k)}
             style={{ marginRight: '0.5rem', padding: '0.4rem 1rem', borderRadius: '6px', border: '2px solid #F5E642',
-              background: scenario === k ? '#F5E642' : 'transparent', color: scenario === k ? '#0A1628' : '#F5E642', cursor: 'pointer', fontWeight: '700' }}>
+              background: scenario === k ? '#F5E642′ : ’transparent', color: scenario === k ? '#0A1628′ : '#F5E642', cursor: ’pointer', fontWeight: '700′ }}>
             {l}
           </button>
         ))}
       </div>
 
       <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
-        <span style={{ color: '#F5E642', fontWeight: '700' }}>Estimated Total: </span>
+        <span style={{ color: '#F5E642', fontWeight: '700′ }}>Estimated Total: </span>
         <span style={{ fontSize: '1.2rem' }}>{current.total}</span>
       </div>
 
       {current.phases.map((p, i) => (
         <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '0.75rem', background: '#0d1e38', borderRadius: '8px', padding: '0.75rem 1rem' }}>
-          <div style={{ flex: '1', fontWeight: '600' }}>{p.phase}</div>
+          <div style={{ flex: '1', fontWeight: '600′ }}>{p.phase}</div>
           <div style={{ color: '#F5E642', minWidth: '120px', textAlign: 'right' }}>{p.duration}</div>
           <div style={{ color: '#aaa', flex: '2', textAlign: 'right' }}>{p.notes}</div>
         </div>

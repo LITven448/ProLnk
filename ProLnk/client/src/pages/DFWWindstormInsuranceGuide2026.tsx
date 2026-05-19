@@ -30,10 +30,10 @@ export default function DFWWindstormInsuranceGuide2026() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Select a windstorm concern for guidance:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Select a windstorm concern for guidance:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {windConcerns.map(w => (
-            <button key={w.id} onClick={() => setSelected(selected === w.id ? null : w.id)} style={{ background: selected === w.id ? '#F5E642' : '#112240', color: selected === w.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>{w.label}</button>
+            <button key={w.id} onClick={() => setSelected(selected === w.id ? null : w.id)} style={{ background: selected === w.id ? '#F5E642′ : '#112240', color: selected === w.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>{w.label}</button>
           ))}
         </div>
 
@@ -43,12 +43,12 @@ export default function DFWWindstormInsuranceGuide2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1rem' }}>{active.desc}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 Action: </span>
-              <span style={{ color: '#94a3b8' }}>{active.tip}</span>
+              <span style={{ color: '#94a3b8′ }}>{active.tip}</span>
             </div>
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>🔧 Get a ProLnk-Vetted Roofer</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>Class 4 impact-resistant roofing can save DFW homeowners thousands annually. ProLnk connects you only with licensed, insured roofing pros — no storm chasers, no door-knockers.</p>
         </div>

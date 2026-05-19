@@ -45,7 +45,7 @@ export default function PartnerCharteredBenefitsGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 14, marginBottom: 28 }}>
           {charterPerks.map((p, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: 18, boxShadow: '0 1px 4px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642' }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: 18, boxShadow: '0 1px 4px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{p.emoji}</div>
               <h3 style={{ color: '#0A1628', fontSize: 14, fontWeight: 700, marginBottom: 6 }}>{p.title}</h3>
               <p style={{ color: '#64748B', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{p.desc}</p>
@@ -58,7 +58,7 @@ export default function PartnerCharteredBenefitsGuide() {
             <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, margin: 0 }}>📊 Charter vs. What Comes After</h2>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', marginRight: 8 }}>Compare Charter with:</label>
-              <select value={compareWith} onChange={e => setCompareWith(e.target.value)} style={{ padding: '8px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 13, color: '#0A1628' }}>
+              <select value={compareWith} onChange={e => setCompareWith(e.target.value)} style={{ padding: '8px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 13, color: '#0A1628′ }}>
                 {COMPARE_OPTIONS.map(o => <option key={o}>{o}</option>)}
               </select>
             </div>
@@ -68,9 +68,9 @@ export default function PartnerCharteredBenefitsGuide() {
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
-                  <th style={{ textAlign: 'left', padding: '10px 14px', background: '#F8FAFC', color: '#64748B', fontSize: 12, fontWeight: 600, borderRadius: '8px 0 0 0' }}>Benefit</th>
+                  <th style={{ textAlign: 'left', padding: '10px 14px', background: '#F8FAFC', color: '#64748B', fontSize: 12, fontWeight: 600, borderRadius: '8px 0 0 0′ }}>Benefit</th>
                   <th style={{ textAlign: 'center', padding: '10px 14px', background: '#0A1628', color: '#F5E642', fontSize: 12, fontWeight: 700 }}>🏅 Charter</th>
-                  <th style={{ textAlign: 'center', padding: '10px 14px', background: '#F8FAFC', color: '#64748B', fontSize: 12, fontWeight: 600, borderRadius: '0 8px 0 0' }}>{compareWith}</th>
+                  <th style={{ textAlign: 'center', padding: '10px 14px', background: '#F8FAFC', color: '#64748B', fontSize: 12, fontWeight: 600, borderRadius: '0 8px 0 0′ }}>{compareWith}</th>
                 </tr>
               </thead>
               <tbody>

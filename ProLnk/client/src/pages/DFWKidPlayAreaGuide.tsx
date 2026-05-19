@@ -40,15 +40,15 @@ export default function DFWKidPlayAreaGuide() {
           ⚠️ DFW Heat Warning: Artificial turf in full sun can exceed 150°F. Children can burn in seconds. Always require shade structures over turf.
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌡️ Surface Material Comparison</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌡️ Surface Material Comparison</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 36 }}>
           {surfaceMaterials.map(m => (
-            <div key={m.name} style={{ background: '#1e293b', borderRadius: 10, padding: '14px 18px', border: '1px solid #334155' }}>
+            <div key={m.name} style={{ background: '#1e293b', borderRadius: 10, padding: '14px 18px', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <span style={{ fontWeight: 700 }}>{m.name}</span>
-                <span style={{ color: m.tempRating === 'Coolest' || m.tempRating === 'Cool' ? '#4ade80' : m.tempRating === 'Hottest' ? '#f87171' : '#fbbf24', fontWeight: 600, fontSize: 13 }}>{m.tempRating} in Sun</span>
+                <span style={{ color: m.tempRating === 'Coolest' || m.tempRating === 'Cool' ? '#4ade80′ : m.tempRating === ’Hottest' ? '#f87171′ : '#fbbf24', fontWeight: 600, fontSize: 13 }}>{m.tempRating} in Sun</span>
               </div>
-              <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8' }}>
+              <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8′ }}>
                 <span>💰 {m.cost}</span>
                 <span>{m.notes}</span>
               </div>
@@ -56,15 +56,15 @@ export default function DFWKidPlayAreaGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Play Area Planner</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Play Area Planner</h2>
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', marginBottom: 24 }}>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Children's Ages (comma separated)</label>
-            <input value={ages} onChange={e => setAges(e.target.value)} placeholder="e.g. 4, 7, 10" style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Children’s Ages (comma separated)</label>
+            <input value={ages} onChange={e => setAges(e.target.value)} placeholder="e.g. 4, 7, 10″ style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Yard Size</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Yard Size</label>
               <select value={yardSize} onChange={e => setYardSize(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="small">Small (&lt;1,500 sqft)</option>
                 <option value="medium">Medium (1,500-3,000 sqft)</option>
@@ -72,7 +72,7 @@ export default function DFWKidPlayAreaGuide() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Sun Exposure</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Sun Exposure</label>
               <select value={sunExposure} onChange={e => setSunExposure(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="full">Full Sun (6+ hrs)</option>
                 <option value="partial">Partial (3-6 hrs)</option>
@@ -86,7 +86,7 @@ export default function DFWKidPlayAreaGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', border: '1px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16, fontWeight: 700 }}>✅ Your DFW Play Area Recommendation</h3>
             <div style={{ marginBottom: 12 }}><strong>Surface:</strong> {result.surface}</div>
             <div style={{ marginBottom: 12 }}><strong>☂️ Shade Solution:</strong> {result.shade}</div>

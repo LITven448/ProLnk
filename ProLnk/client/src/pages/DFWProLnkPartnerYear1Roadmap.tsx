@@ -62,7 +62,7 @@ export default function DFWProLnkPartnerYear1Roadmap() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShown(true)} disabled={!trade || !size} style={{ background: trade && size ? '#F5E642' : '#1E3A5F', color: trade && size ? '#0A1628' : '#445566', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: trade && size ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShown(true)} disabled={!trade || !size} style={{ background: trade && size ? '#F5E642′ : '#1E3A5F', color: trade && size ? '#0A1628' : '#445566', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: trade && size ? 'pointer' : 'not-allowed', width: '100%' }}>
             Generate Year 1 Projection →
           </button>
         </div>
@@ -81,7 +81,7 @@ export default function DFWProLnkPartnerYear1Roadmap() {
             <div style={{ background: '#0D1F38', borderRadius: 12, overflow: 'hidden' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                 <thead>
-                  <tr style={{ background: '#0A1628' }}>
+                  <tr style={{ background: '#0A1628′ }}>
                     {['Month', 'Direct Match', 'Overrides', 'Origination', 'Total'].map(h => (
                       <th key={h} style={{ padding: '12px 14px', textAlign: 'right', color: '#F5E642', fontWeight: 700, '&:first-child': { textAlign: 'left' } }}>{h}</th>
                     ))}
@@ -89,8 +89,8 @@ export default function DFWProLnkPartnerYear1Roadmap() {
                 </thead>
                 <tbody>
                   {rows.map((r, i) => (
-                    <tr key={i} style={{ borderTop: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#081422' }}>
-                      <td style={{ padding: '10px 14px', color: '#C8D8E8' }}>{r.label}</td>
+                    <tr key={i} style={{ borderTop: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#081422′ }}>
+                      <td style={{ padding: '10px 14px', color: '#C8D8E8′ }}>{r.label}</td>
                       <td style={{ padding: '10px 14px', textAlign: 'right', color: '#fff' }}>${r.directMatch.toLocaleString()}</td>
                       <td style={{ padding: '10px 14px', textAlign: 'right', color: '#fff' }}>${r.overrides.toLocaleString()}</td>
                       <td style={{ padding: '10px 14px', textAlign: 'right', color: '#fff' }}>${r.origination.toLocaleString()}</td>

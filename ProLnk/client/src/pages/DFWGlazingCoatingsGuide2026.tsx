@@ -40,7 +40,7 @@ export default function DFWGlazingCoatingsGuide2026() {
         <div style={{ overflowX: 'auto', marginBottom: 28 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ background: '#1e2d45' }}>
+              <tr style={{ background: '#1e2d45′ }}>
                 {['Type', 'UV Block', 'Heat Block', 'Cost'].map(h => (
                   <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: '#F5E642', fontWeight: 700 }}>{h}</th>
                 ))}
@@ -48,11 +48,11 @@ export default function DFWGlazingCoatingsGuide2026() {
             </thead>
             <tbody>
               {glazingTypes.map((g, i) => (
-                <tr key={g.name} style={{ background: i % 2 === 0 ? '#0f1f35' : '#1e2d45' }}>
+                <tr key={g.name} style={{ background: i % 2 === 0 ? '#0f1f35′ : '#1e2d45' }}>
                   <td style={{ padding: '10px 14px' }}>{g.icon} {g.name}</td>
-                  <td style={{ padding: '10px 14px', color: '#4ade80' }}>{g.uvBlock}</td>
-                  <td style={{ padding: '10px 14px', color: '#f97316' }}>{g.heatBlock}</td>
-                  <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{g.cost}</td>
+                  <td style={{ padding: '10px 14px', color: '#4ade80′ }}>{g.uvBlock}</td>
+                  <td style={{ padding: '10px 14px', color: '#f97316′ }}>{g.heatBlock}</td>
+                  <td style={{ padding: '10px 14px', color: '#94a3b8′ }}>{g.cost}</td>
                 </tr>
               ))}
             </tbody>
@@ -65,7 +65,7 @@ export default function DFWGlazingCoatingsGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>What is your window problem?</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {problems.map(p => (
-                <button key={p} onClick={() => setProblem(p)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: problem === p ? '#F5E642' : '#0A1628', color: problem === p ? '#0A1628' : '#fff', fontSize: 13, textAlign: 'left' }}>{p}</button>
+                <button key={p} onClick={() => setProblem(p)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: problem === p ? '#F5E642′ : '#0A1628', color: problem === p ? '#0A1628' : '#fff', fontSize: 13, textAlign: ’left' }}>{p}</button>
               ))}
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function DFWGlazingCoatingsGuide2026() {
           {solution && <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 8, padding: 14, fontSize: 13, lineHeight: 1.6 }}>{solution}</div>}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 14, fontSize: 12, color: '#94a3b8' }}>
+        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 14, fontSize: 12, color: '#94a3b8′ }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 DFW Pro Tip: </span>
           Triple-pane windows have a 30+ year payback period in DFW climate — the milder winters do not justify the cost. Double-pane Low-E is the sweet spot. For existing windows, 3M Prestige film is the highest ROI upgrade you can make.
         </div>

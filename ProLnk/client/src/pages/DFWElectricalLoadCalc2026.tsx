@@ -40,7 +40,7 @@ export default function DFWElectricalLoadCalc2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>⚡ Current Panel Size</div>
           <div style={{ display: 'flex', gap: 8, marginBottom: 4 }}>
             {[100, 150, 200, 400].map(p => (
-              <button key={p} onClick={() => setPanelSize(p)} style={{ background: panelSize === p ? '#F5E642' : '#1A2F50', color: panelSize === p ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 700 }}>{p}A</button>
+              <button key={p} onClick={() => setPanelSize(p)} style={{ background: panelSize === p ? '#F5E642′ : '#1A2F50', color: panelSize === p ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 700 }}>{p}A</button>
             ))}
           </div>
           <div style={{ color: '#9BA3AF', fontSize: 12, marginTop: 6 }}>Most DFW homes built after 1990 have 200A. Pre-1980 often have 100-150A.</div>
@@ -50,16 +50,16 @@ export default function DFWElectricalLoadCalc2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🏠 Select Your High-Draw Appliances</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {features.map(f => (
-              <button key={f.id} onClick={() => toggle(f.id)} style={{ background: selected.includes(f.id) ? '#1A3A20' : '#1A2F50', border: selected.includes(f.id) ? '1px solid #4ADE80' : '1px solid #2A3F60', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', textAlign: 'left' }}>
-                <div style={{ color: selected.includes(f.id) ? '#4ADE80' : '#E8EAF0', fontWeight: 600, fontSize: 13 }}>{selected.includes(f.id) ? '✓ ' : ''}{f.label}</div>
+              <button key={f.id} onClick={() => toggle(f.id)} style={{ background: selected.includes(f.id) ? '#1A3A20′ : '#1A2F50', border: selected.includes(f.id) ? '1px solid #4ADE80' : '1px solid #2A3F60', borderRadius: 8, padding: '10px 12px', cursor: ’pointer', textAlign: 'left' }}>
+                <div style={{ color: selected.includes(f.id) ? '#4ADE80′ : '#E8EAF0', fontWeight: 600, fontSize: 13 }}>{selected.includes(f.id) ? '✓ ' : ''}{f.label}</div>
                 <div style={{ color: '#9BA3AF', fontSize: 12 }}>{(f.watts / 1000).toFixed(1)} kW</div>
               </button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: adequate ? '#0F2A15' : '#2A0F0F', borderRadius: 12, padding: 24, borderLeft: `4px solid ${adequate ? '#4ADE80' : '#EF4444'}`, marginBottom: 24 }}>
-          <div style={{ color: adequate ? '#4ADE80' : '#EF4444', fontWeight: 800, fontSize: 20, marginBottom: 12 }}>{adequate ? '✅ Panel Likely Adequate' : '⚠️ Panel Upgrade Recommended'}</div>
+        <div style={{ background: adequate ? '#0F2A15′ : '#2A0F0F', borderRadius: 12, padding: 24, borderLeft: `4px solid ${adequate ? '#4ADE80' : '#EF4444'}`, marginBottom: 24 }}>
+          <div style={{ color: adequate ? '#4ADE80′ : '#EF4444', fontWeight: 800, fontSize: 20, marginBottom: 12 }}>{adequate ? '✅ Panel Likely Adequate' : '⚠️ Panel Upgrade Recommended'}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
               <div style={{ color: '#9BA3AF', fontSize: 12 }}>Total Installed</div>
@@ -71,7 +71,7 @@ export default function DFWElectricalLoadCalc2026() {
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
               <div style={{ color: '#9BA3AF', fontSize: 12 }}>Panel Headroom</div>
-              <div style={{ color: adequate ? '#4ADE80' : '#EF4444', fontWeight: 800, fontSize: 18 }}>{adequate ? '+' : ''}{Math.round(headroom / 240)}A</div>
+              <div style={{ color: adequate ? '#4ADE80′ : '#EF4444', fontWeight: 800, fontSize: 18 }}>{adequate ? '+' : ''}{Math.round(headroom / 240)}A</div>
             </div>
           </div>
           {!adequate && <div style={{ color: '#CBD5E1', fontSize: 14, marginTop: 12 }}>Your demand load exceeds 80% of panel capacity. A 400A upgrade or load management system is recommended.</div>}
@@ -81,7 +81,7 @@ export default function DFWElectricalLoadCalc2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📋 DFW Electrical Load Facts</div>
           {['NEC 220 demand factor calculation: 70% of total connected load for first 10kW', '200A panel at 80% capacity = 38,400W usable — enough for most DFW homes', 'EV Level 2 charger is the #1 reason DFW homeowners need panel upgrades in 2026', 'DFW electricians: panel upgrade cost $2,500-6,000 depending on scope', 'Charter ProLnk electricians provide free load calculations with any panel quote'].map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642' }}>✓</span>
+              <span style={{ color: '#F5E642′ }}>✓</span>
               <span style={{ color: '#CBD5E1', fontSize: 14 }}>{f}</span>
             </div>
           ))}

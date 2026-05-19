@@ -22,7 +22,7 @@ export default function DFWElectricalCostGuide() {
     <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#1B2B4B' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
 
-        <div style={{ marginBottom: 8, fontSize: 14, color: '#718096' }}>ProLnk Cost Guide · Dallas-Fort Worth · Updated May 2026</div>
+        <div style={{ marginBottom: 8, fontSize: 14, color: '#718096′ }}>ProLnk Cost Guide · Dallas-Fort Worth · Updated May 2026</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, lineHeight: 1.15, margin: '0 0 20px' }}>
           DFW Electrical Cost Guide 2026 —<br />Panel Upgrades, Wiring, and EV Chargers
         </h1>
@@ -33,7 +33,7 @@ export default function DFWElectricalCostGuide() {
         {/* Licensing Banner */}
         <div style={{ background: '#EBF4FF', border: '1.5px solid #3182CE', borderRadius: 10, padding: '18px 24px', marginBottom: 40 }}>
           <div style={{ fontWeight: 700, fontSize: 15, color: '#1A365D', marginBottom: 4 }}>Texas Licensing Requirement</div>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: '#2C5282' }}>
+          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: '#2C5282′ }}>
             TDLR (Texas Department of Licensing and Regulation) requires a license for all electrical work except minor repairs. <strong>Always ask for the license number before any work begins.</strong> Unlicensed work voids your homeowner's insurance and creates liability issues when you sell.
           </p>
         </div>
@@ -53,8 +53,8 @@ export default function DFWElectricalCostGuide() {
             ['Smoke detector installation', '$75 – $150'],
             ['Smoke / CO combo detector', '$150 – $250'],
           ].map(([service, price], i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: i % 2 === 0 ? '#fff' : '#F7F9FC', borderBottom: i < 9 ? '1px solid #E2E8F0' : 'none' }}>
-              <span style={{ fontSize: 15, color: '#2D3748' }}>{service}</span>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: i % 2 === 0 ? '#fff' : '#F7F9FC', borderBottom: i < 9 ? '1px solid #E2E8F0′ : ’none' }}>
+              <span style={{ fontSize: 15, color: '#2D3748′ }}>{service}</span>
               <span style={{ fontSize: 15, fontWeight: 700, color: '#1B2B4B', whiteSpace: 'nowrap' }}>{price}</span>
             </div>
           ))}
@@ -63,7 +63,7 @@ export default function DFWElectricalCostGuide() {
         {/* EV Charger Callout */}
         <div style={{ background: '#F0FFF4', border: '1.5px solid #38A169', borderRadius: 10, padding: '20px 24px', marginBottom: 40 }}>
           <div style={{ fontWeight: 700, fontSize: 16, color: '#22543D', marginBottom: 8 }}>EV Charger Demand Surge in DFW</div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65, color: '#276749' }}>
+          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65, color: '#276749′ }}>
             DFW EV registrations are up <strong>340% since 2022</strong>. Wait times for Level 2 charger installation now run <strong>2–4 weeks</strong> with most licensed electricians. If you're buying an EV, book your charger installation before or at the same time as the vehicle purchase — not after delivery.
           </p>
           <div style={{ marginTop: 16, display: 'flex', gap: 20, flexWrap: 'wrap' }}>

@@ -40,7 +40,7 @@ export default function DFWTreePlantingGuide() {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1a2d1a,#0f2010)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1a2d1a,#0f2010)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0′ }}>
           <h2 style={{ color: '#4ADE80', fontSize: 20, fontWeight: 700, margin: '0 0 8px' }}>🌡️ Shade Trees Reduce Cooling 20–30% in DFW</h2>
           <p style={{ color: '#86EFAC', margin: 0 }}>Strategic tree placement is one of the highest-ROI home improvements in DFW. A $400 cedar elm planted on the west side provides $200+/year in cooling savings for the next 50 years. Keep large trees 20+ feet from your foundation — DFW clay soil shrinks and swells, and roots exploit foundation cracks.</p>
         </div>
@@ -67,8 +67,8 @@ export default function DFWTreePlantingGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 10, fontSize: 13 }}>
                 <div><span style={{ color: '#64748B' }}>Shade:</span> {t.shade}</div>
                 <div><span style={{ color: '#64748B' }}>Drought:</span> {t.drought}</div>
-                <div><span style={{ color: '#64748B' }}>Foundation safe:</span> <span style={{ color: '#F87171' }}>{t.foundation}</span></div>
-                <div><span style={{ color: '#64748B' }}>DFW soil:</span> <span style={{ color: '#4ADE80' }}>{t.soil.split(' ')[0]}</span></div>
+                <div><span style={{ color: '#64748B' }}>Foundation safe:</span> <span style={{ color: '#F87171′ }}>{t.foundation}</span></div>
+                <div><span style={{ color: '#64748B' }}>DFW soil:</span> <span style={{ color: '#4ADE80′ }}>{t.soil.split(' ')[0]}</span></div>
               </div>
               <p style={{ color: '#94A3B8', fontSize: 12, margin: 0, fontStyle: 'italic' }}>{t.note}</p>
             </div>
@@ -87,7 +87,7 @@ export default function DFWTreePlantingGuide() {
             <option value="west-facing">Front faces West</option>
           </select>
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Lot Size (sq ft)</label>
-          <input type="number" value={lotSize} onChange={e => setLotSize(e.target.value)} placeholder="e.g. 8500"
+          <input type="number" value={lotSize} onChange={e => setLotSize(e.target.value)} placeholder="e.g. 8500″
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: 'pointer', width: '100%' }}>
             Get My Tree Planting Plan

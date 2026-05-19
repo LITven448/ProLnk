@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const CRACK_TYPES = [
-  { id: 'hairline', label: 'Hairline Cracks (< 1/16")', base: 5, patch: true },
-  { id: 'medium', label: 'Medium Cracks (1/16"–1/4")', base: 10, patch: true },
+  { id: 'hairline', label: 'Hairline Cracks (< 1/16″)', base: 5, patch: true },
+  { id: 'medium', label: 'Medium Cracks (1/16″–1/4″)', base: 10, patch: true },
   { id: 'wide', label: 'Wide Cracks / Delamination', base: 18, patch: false },
   { id: 'moisture', label: 'Moisture Intrusion / Bubbling', base: 22, patch: false },
   { id: 'eifs_fail', label: 'EIFS System Failure', base: 28, patch: false },
@@ -44,7 +44,7 @@ export default function DFWStuccoRepairGuide() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW EXTERIOR GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, margin: '0 0 8px' }}>🏠 Stucco Repair Guide — DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
-          Stucco is standard on DFW new construction built after 2000. DFW's extreme heat accelerates stucco failure faster than northern climates, and moisture intrusion behind stucco is the region's leading exterior repair issue.
+          Stucco is standard on DFW new construction built after 2000. DFW's extreme heat accelerates stucco failure faster than northern climates, and moisture intrusion behind stucco is the region’s leading exterior repair issue.
         </p>
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 24 }}>
@@ -65,7 +65,7 @@ export default function DFWStuccoRepairGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Repair Cost Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Repair Cost Estimator</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Crack / Damage Type</label>

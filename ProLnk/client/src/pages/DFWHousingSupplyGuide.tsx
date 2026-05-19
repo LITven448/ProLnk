@@ -42,10 +42,10 @@ export default function DFWHousingSupplyGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
-            { icon: '🏠', label: 'Active Listings (Metro)', value: '22,400', sub: 'As of May 2026' },
+            { icon: '🏠', label: 'Active Listings (Metro)', value: '22,400', sub: 'As of May 2026′ },
             { icon: '📅', label: 'Months of Supply', value: '2.1 months', sub: 'Below 3 = seller\’s market' },
             { icon: '🏗️', label: 'New Permits Issued', value: '48,200/yr', sub: '2025 DFW building permits' },
-            { icon: '💰', label: 'Median Home Price', value: '$394,000', sub: 'DFW metro, May 2026' },
+            { icon: '💰', label: 'Median Home Price', value: '$394,000', sub: 'DFW metro, May 2026′ },
           ].map(card => (
             <div key={card.label} style={{ backgroundColor: '#111f3a', borderRadius: 12, padding: '20px 18px', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
@@ -110,7 +110,7 @@ export default function DFWHousingSupplyGuide() {
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ color: '#64748b', fontSize: 13, marginBottom: 4 }}>Months of Supply</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{result.months}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{result.months}</div>
                 </div>
               </div>
               <div style={{ backgroundColor: '#0d1b30', borderRadius: 10, padding: '16px' }}>

@@ -43,17 +43,17 @@ export default function DFWProMorningCheckin2026() {
           ))}
         </div>
         <div style={{ background: '#0f1f38', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Get your trade-specific morning brief</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Get your trade-specific morning brief</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {trades.map(([v, l]) => (
-              <button key={v} onClick={() => setTrade(v)} style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid #1e3a5f', background: trade === v ? '#F5E642' : '#0A1628', color: trade === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setTrade(v)} style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid #1e3a5f', background: trade === v ? '#F5E642′ : '#0A1628', color: trade === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}
           </div>
           {trade && guides[trade] && (
-            <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, border: '1px solid #F5E642' }}>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>{guides[trade].headline}</div>
+            <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, border: '1px solid #F5E642′ }}>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>{guides[trade].headline}</div>
               <ul style={{ margin: 0, paddingLeft: 18, color: '#cbd5e1', lineHeight: 2 }}>
                 {guides[trade].actions.map((a, i) => <li key={i}>{a}</li>)}
               </ul>

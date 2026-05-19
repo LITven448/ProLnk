@@ -77,7 +77,7 @@ export default function DFWEpoxyWoodFillerGuide() {
               'Working time for epoxy: 5-8 min in DFW summer vs 15 min inside',
               'Always fix moisture source — rot returns if you don\’t',
             ].map(f => (
-              <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5A623' }}>
+              <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5A623′ }}>
                 ⚠️ {f}
               </div>
             ))}
@@ -114,10 +114,10 @@ export default function DFWEpoxyWoodFillerGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 16 }}>
               <div style={{ color: '#F5A623', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>RECOMMENDED PRODUCT</div>
-              <div style={{ fontSize: 17, fontWeight: 700, color: '#E8EDF5' }}>🛒 {result.recommendation}</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: '#E8EDF5′ }}>🛒 {result.recommendation}</div>
               <div style={{ color: '#F5E642', fontSize: 13, marginTop: 6 }}>💰 {result.cost}</div>
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12 }}>
@@ -130,7 +130,7 @@ export default function DFWEpoxyWoodFillerGuide() {
                 <div key={b} style={{ color: '#E8EDF5', fontSize: 13, marginBottom: 4 }}>• {b}</div>
               ))}
             </div>
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5A623' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5A623′ }}>
               <div style={{ color: '#F5A623', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>☀️ DFW UV / Paint Note</div>
               <div style={{ color: '#CBD5E1', fontSize: 13 }}>{result.uvNote}</div>
             </div>

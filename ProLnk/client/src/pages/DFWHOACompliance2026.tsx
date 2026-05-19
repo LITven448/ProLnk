@@ -11,7 +11,7 @@ const violations = [
   },
   {
     type: 'Visible AC Unit', icon: '❄️', window: 'Year-round enforcement',
-    steps: ['Install HOA-approved screening fence or lattice', 'Ensure screen allows minimum 18" clearance for airflow', 'Use natural materials — wood or composite, not chain link', 'Submit screen plan to HOA for pre-approval', 'Professional installation recommended for permit compliance']
+    steps: ['Install HOA-approved screening fence or lattice', 'Ensure screen allows minimum 18″ clearance for airflow', 'Use natural materials — wood or composite, not chain link', 'Submit screen plan to HOA for pre-approval', 'Professional installation recommended for permit compliance']
   },
   {
     type: 'Fence Damage', icon: '🪵', window: 'Spring/Fall inspections',
@@ -45,7 +45,7 @@ export default function DFWHOACompliance2026() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
             {violations.map(v => (
               <button key={v.type} onClick={() => setActive(v)}
-                style={{ background: active.type === v.type ? '#F5E642' : '#1a2f52', color: active.type === v.type ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: active.type === v.type ? '#F5E642′ : '#1a2f52', color: active.type === v.type ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {v.icon} {v.type}
               </button>
             ))}

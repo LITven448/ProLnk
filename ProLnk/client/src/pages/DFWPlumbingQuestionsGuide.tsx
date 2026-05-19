@@ -37,8 +37,8 @@ export default function DFWPlumbingQuestionsGuide() {
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '8px 0 4px' }}>DFW Plumbing Knowledge Guide</h1>
           <p style={{ color: '#8899aa', fontSize: 15 }}>15 plumbing questions every DFW homeowner should know cold</p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 14 }}>
-            <button onClick={() => setQuizMode(false)} style={{ background: !quizMode ? '#F5E642' : '#1a2a40', color: !quizMode ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '8px 18px', fontWeight: 700, cursor: 'pointer' }}>📖 Learn</button>
-            <button onClick={() => setQuizMode(true)} style={{ background: quizMode ? '#F5E642' : '#1a2a40', color: quizMode ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '8px 18px', fontWeight: 700, cursor: 'pointer' }}>🧪 Self-Quiz</button>
+            <button onClick={() => setQuizMode(false)} style={{ background: !quizMode ? '#F5E642′ : '#1a2a40', color: !quizMode ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '8px 18px', fontWeight: 700, cursor: 'pointer' }}>📖 Learn</button>
+            <button onClick={() => setQuizMode(true)} style={{ background: quizMode ? '#F5E642′ : '#1a2a40', color: quizMode ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '8px 18px', fontWeight: 700, cursor: 'pointer' }}>🧪 Self-Quiz</button>
           </div>
         </div>
         {!quizMode ? (
@@ -47,7 +47,7 @@ export default function DFWPlumbingQuestionsGuide() {
               <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{score}</span><span style={{ color: '#8899aa', fontSize: 14 }}> / {questions.length} known</span>
             </div>
             {questions.map((item, i) => (
-              <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642' : '1.5px solid #1e3050' }}>
+              <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642′ : '1.5px solid #1e3050' }}>
                 <div style={{ display: 'flex', alignItems: 'center', padding: '14px 16px', cursor: 'pointer', gap: 12 }} onClick={() => toggle(i)}>
                   <span onClick={e => { e.stopPropagation(); check(i); }} style={{ fontSize: 20, cursor: 'pointer' }}>{checked[i] ? '✅' : '⬜'}</span>
                   <span style={{ flex: 1, fontWeight: 600, fontSize: 15 }}>{i + 1}. {item.q}</span>

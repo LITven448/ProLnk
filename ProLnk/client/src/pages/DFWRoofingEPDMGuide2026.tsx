@@ -13,10 +13,10 @@ export default function DFWRoofingEPDMGuide2026() {
   ];
 
   const results: Record<string, { verdict: string; detail: string; color: string }> = {
-    flat_new: { verdict: 'TPO Preferred Over EPDM for New DFW Roofs', detail: 'For new DFW flat roofs, white TPO outperforms black EPDM — 80% solar reflectance vs EPDM 6% means dramatically lower surface temps. EPDM only makes sense if budget is the primary driver.', color: '#f97316' },
-    flat_replace: { verdict: 'Consider Upgrading to TPO', detail: 'If replacing existing EPDM on a DFW flat roof, upgrade to white TPO. Energy savings from reflectivity typically offset cost difference in 3-5 years. Existing substrate can often be mechanically attached without tear-off.', color: '#F5E642' },
-    hail: { verdict: 'EPDM Seams Are Hail Vulnerable', detail: 'DFW hail is the primary cause of EPDM seam failures. Seam tape (vs heat-welded TPO seams) is vulnerable to hail impact. After DFW hail event, inspect all EPDM seams — especially perimeter and penetrations.', color: '#ef4444' },
-    energy: { verdict: 'EPDM Is NOT the Right Choice', detail: 'Black EPDM absorbs 94% of solar radiation — surface temps hit 160-180°F in DFW summer. This adds 10-15% to cooling load. White EPDM coating ($1-2/sqft) available but must be reapplied every 5-7 years.', color: '#ef4444' },
+    flat_new: { verdict: 'TPO Preferred Over EPDM for New DFW Roofs', detail: 'For new DFW flat roofs, white TPO outperforms black EPDM — 80% solar reflectance vs EPDM 6% means dramatically lower surface temps. EPDM only makes sense if budget is the primary driver.', color: '#f97316′ },
+    flat_replace: { verdict: 'Consider Upgrading to TPO', detail: 'If replacing existing EPDM on a DFW flat roof, upgrade to white TPO. Energy savings from reflectivity typically offset cost difference in 3-5 years. Existing substrate can often be mechanically attached without tear-off.', color: '#F5E642′ },
+    hail: { verdict: 'EPDM Seams Are Hail Vulnerable', detail: 'DFW hail is the primary cause of EPDM seam failures. Seam tape (vs heat-welded TPO seams) is vulnerable to hail impact. After DFW hail event, inspect all EPDM seams — especially perimeter and penetrations.', color: '#ef4444′ },
+    energy: { verdict: 'EPDM Is NOT the Right Choice', detail: 'Black EPDM absorbs 94% of solar radiation — surface temps hit 160-180°F in DFW summer. This adds 10-15% to cooling load. White EPDM coating ($1-2/sqft) available but must be reapplied every 5-7 years.', color: '#ef4444′ },
     budget: { verdict: 'EPDM Wins on First Cost', detail: 'EPDM costs $4-7/sqft installed vs TPO $6-10/sqft in DFW market. For budget-constrained projects, EPDM is acceptable — specify 60-mil thickness and use fully adhered (not seam tape) installation to maximize lifespan.', color: '#22c55e' },
   };
 
@@ -54,12 +54,12 @@ export default function DFWRoofingEPDMGuide2026() {
           <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>Select your flat roof situation:</p>
           <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1rem' }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSituation(s.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: situation === s.id ? '#F5E642' : '#1e3a5f', background: situation === s.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: '0.9rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSituation(s.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: situation === s.id ? '#F5E642′ : '#1e3a5f', background: situation === s.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: ’left', cursor: 'pointer', fontSize: '0.9rem' }}>{s.label}</button>
             ))}
           </div>
           <button onClick={handleCheck} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}>Get Recommendation</button>
           {result && results[result] && (
-            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628' }}>
+            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628′ }}>
               <div style={{ color: results[result].color, fontWeight: 700, marginBottom: '0.4rem' }}>{results[result].verdict}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{results[result].detail}</div>
             </div>

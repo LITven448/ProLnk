@@ -13,7 +13,7 @@ const recommendations: Record<string, Record<string, { floor: string; cost: stri
   'Transitional': {
     'Under $5/sq ft': { floor: 'Natural LVP — Light Honey Oak Look', cost: '$3–$5/sq ft material', note: 'Top seller in Frisco, Allen, McKinney suburbs.' },
     '$5–$10/sq ft': { floor: 'Engineered Hardwood — Wire Brushed Oak', cost: '$7–$10/sq ft material', note: 'Hides scratches, very popular in DFW new builds.' },
-    '$10–$18/sq ft': { floor: 'European Oak Hardwood', cost: '$12–$16/sq ft material', note: 'Long planks (5"+ wide), warm natural tone. Top DFW resale value.' },
+    '$10–$18/sq ft': { floor: 'European Oak Hardwood', cost: '$12–$16/sq ft material', note: 'Long planks (5″+ wide), warm natural tone. Top DFW resale value.' },
     '$18+/sq ft': { floor: 'Custom Stained White Oak', cost: '$20–$35/sq ft installed', note: 'Designer grade. Custom stain matching to cabinetry very popular.' },
   },
   'Farmhouse/Rustic': {
@@ -32,7 +32,7 @@ const recommendations: Record<string, Record<string, { floor: string; cost: stri
     'Under $5/sq ft': { floor: 'White/Gray LVP — Wide Plank', cost: '$3–$5/sq ft material', note: 'Light and airy. Washes out dark DFW interiors beautifully.' },
     '$5–$10/sq ft': { floor: 'White Oak — Natural or Whitewash', cost: '$6–$9/sq ft material', note: 'Bright, open feel. Works with all light paint palettes.' },
     '$10–$18/sq ft': { floor: 'Cerused White Oak', cost: '$12–$16/sq ft material', note: 'White grain fill creates coastal-contemporary look. Trending.' },
-    '$18+/sq ft': { floor: 'Italian Porcelain Tile — Stone Look', cost: '$18–$30/sq ft installed', note: 'Ultimate coastal. Large format 24"x48" slabs — stunning.' },
+    '$18+/sq ft': { floor: 'Italian Porcelain Tile — Stone Look', cost: '$18–$30/sq ft installed', note: 'Ultimate coastal. Large format 24″x48″ slabs — stunning.' },
   },
 };
 
@@ -56,14 +56,14 @@ export default function DFWFlooringTrendsGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
           <div style={{ background: '#0f2847', borderRadius: 12, padding: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#4ade80' }}>✅ What's In (2026)</h2>
-            {['White oak wide plank hardwood', 'Natural LVP — light honey tones', 'Polished concrete in modern homes', 'Terracotta tile accents in entryways', 'Large format porcelain (24"x48")', 'Wire-brushed & hand-scraped textures'].map(item => (
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#4ade80′ }}>✅ What’s In (2026)</h2>
+            {['White oak wide plank hardwood', 'Natural LVP — light honey tones', 'Polished concrete in modern homes', 'Terracotta tile accents in entryways', 'Large format porcelain (24″x48″)', 'Wire-brushed & hand-scraped textures'].map(item => (
               <div key={item} style={{ fontSize: 14, color: '#cbd5e1', padding: '6px 0', borderBottom: '1px solid #1e3a5f' }}>{item}</div>
             ))}
           </div>
           <div style={{ background: '#0f2847', borderRadius: 12, padding: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#f87171' }}>❌ What's Out</h2>
-            {['Dark espresso stain hardwood', 'Gray laminate flooring', 'Wall-to-wall carpet in main areas', 'Small 12"x12" tile in main spaces', 'Narrow strip hardwood (2.25")', 'Honey-gold oak (90s toned)'].map(item => (
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#f87171′ }}>❌ What’s Out</h2>
+            {['Dark espresso stain hardwood', 'Gray laminate flooring', 'Wall-to-wall carpet in main areas', 'Small 12″x12″ tile in main spaces', 'Narrow strip hardwood (2.25″)', 'Honey-gold oak (90s toned)'].map(item => (
               <div key={item} style={{ fontSize: 14, color: '#94a3b8', padding: '6px 0', borderBottom: '1px solid #1e3a5f' }}>{item}</div>
             ))}
           </div>
@@ -78,14 +78,14 @@ export default function DFWFlooringTrendsGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🎯 Get My Flooring Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Design Style</label>
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Design Style</label>
               <select value={style} onChange={e => setStyle(e.target.value)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: '#fff', fontSize: 15 }}>
                 <option value=''>Select your style...</option>
                 {styles.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Material Budget (per sq ft)</label>
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Material Budget (per sq ft)</label>
               <select value={budget} onChange={e => setBudget(e.target.value)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: '#fff', fontSize: 15 }}>
                 <option value=''>Select budget range...</option>
                 {budgets.map(b => <option key={b} value={b}>{b}</option>)}
@@ -94,9 +94,9 @@ export default function DFWFlooringTrendsGuide() {
           </div>
           <button onClick={getRecommendation} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 800, cursor: 'pointer' }}>Get Recommendation</button>
           {rec && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 8, padding: 20, borderLeft: '4px solid #F5E642' }}>
-              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 8, color: '#F5E642' }}>{rec.floor}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#4ade80' }}>{rec.cost}</div>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 8, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 8, color: '#F5E642′ }}>{rec.floor}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: '#4ade80′ }}>{rec.cost}</div>
               <div style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{rec.note}</div>
             </div>
           )}

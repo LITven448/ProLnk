@@ -8,7 +8,7 @@ export default function DFWBuildVsBuyGuide2026() {
   const canWait = timeline >= 12;
 
   const recommendation = canAffordNew && canWait ? 'BUILD' : !canAffordNew ? 'BUY_RESALE' : 'DEPENDS';
-  const recColor = recommendation === 'BUILD' ? '#34D399' : recommendation === 'BUY_RESALE' ? '#60A5FA' : '#F5E642';
+  const recColor = recommendation === 'BUILD' ? '#34D399′ : recommendation === ’BUY_RESALE' ? '#60A5FA' : '#F5E642';
 
   const newBuilds = [
     { city: 'Celina / Prosper', range: '$420–600K', timeline: '14–18 mo', note: 'Fastest growing' },
@@ -30,13 +30,13 @@ export default function DFWBuildVsBuyGuide2026() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>Your Budget</label>
               <input type="range" min={250000} max={750000} step={10000} value={budget} onChange={e => setBudget(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>${(budget / 1000).toFixed(0)}K</div>
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>How Soon You Need to Move</label>
               <input type="range" min={1} max={24} step={1} value={timeline} onChange={e => setTimeline(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>{timeline} months</div>
             </div>
           </div>
@@ -67,8 +67,8 @@ export default function DFWBuildVsBuyGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           {[
-            { title: '✅ New Build Pros', items: ['Everything brand new — roof, HVAC, plumbing', 'Builder warranty (1-2-10 year)', 'Energy efficient construction', 'Customize finishes and layout', 'No bidding wars'], color: '#34D399' },
-            { title: '⚠️ New Build Cons', items: ['12–18 month wait minimum', '$400K+ floor in DFW market', 'Rising costs + delays are common', 'HOA restrictions in new developments', 'No established trees/landscaping'], color: '#F87171' },
+            { title: '✅ New Build Pros', items: ['Everything brand new — roof, HVAC, plumbing', 'Builder warranty (1-2-10 year)', 'Energy efficient construction', 'Customize finishes and layout', 'No bidding wars'], color: '#34D399′ },
+            { title: '⚠️ New Build Cons', items: ['12–18 month wait minimum', '$400K+ floor in DFW market', 'Rising costs + delays are common', 'HOA restrictions in new developments', 'No established trees/landscaping'], color: '#F87171′ },
           ].map(({ title, items, color }) => (
             <div key={title} style={{ background: '#1E293B', borderRadius: 12, padding: 20 }}>
               <h3 style={{ color, fontSize: 15, fontWeight: 700, marginBottom: 12 }}>{title}</h3>

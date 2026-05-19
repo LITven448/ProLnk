@@ -41,7 +41,7 @@ export default function DFWPlumberBalchSprings() {
       </div>
 
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '32px 24px' }}>
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🏘️ Balch Springs Plumbing Reality</h2>
           <div style={{ display: 'grid', gap: '12px' }}>
             {[
@@ -60,7 +60,7 @@ export default function DFWPlumberBalchSprings() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🔍 Symptom + Home Age Diagnosis Tool</h2>
           <div style={{ display: 'grid', gap: '16px', marginBottom: '16px' }}>
             <div>
@@ -71,9 +71,9 @@ export default function DFWPlumberBalchSprings() {
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #2A4080', borderRadius: '8px', padding: '10px 12px', color: '#E8EDF5', fontSize: '14px' }}
               >
                 <option value="">Select era...</option>
-                <option value="pre1970">Before 1970 — likely galvanized throughout</option>
-                <option value="1970to1990">1970–1990 — mixed pipe era</option>
-                <option value="post1990">After 1990 — modern materials</option>
+                <option value="pre1970″>Before 1970 — likely galvanized throughout</option>
+                <option value="1970to1990″>1970–1990 — mixed pipe era</option>
+                <option value="post1990″>After 1990 — modern materials</option>
               </select>
             </div>
             <div>
@@ -94,15 +94,15 @@ export default function DFWPlumberBalchSprings() {
           <button
             onClick={diagnose}
             disabled={!homeAge || !symptom}
-            style={{ width: '100%', background: homeAge && symptom ? '#F5E642' : '#2A4080', color: homeAge && symptom ? '#0A1628' : '#4A6080', border: 'none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeAge && symptom ? 'pointer' : 'not-allowed' }}
+            style={{ width: '100%', background: homeAge && symptom ? '#F5E642′ : '#2A4080', color: homeAge && symptom ? '#0A1628' : '#4A6080', border: ’none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeAge && symptom ? 'pointer' : 'not-allowed' }}
           >
             Diagnose My Plumbing Issue
           </button>
           {result && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
               <div style={{ fontWeight: '800', fontSize: '16px', color: '#F5E642', marginBottom: '6px' }}>Likely Issue: {result.issue}</div>
               <div style={{ color: '#E8EDF5', fontSize: '13px', marginBottom: '10px' }}>{result.approach}</div>
-              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#A8B8D0', fontSize: '12px', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#A8B8D0', fontSize: '12px', borderLeft: '3px solid #F5E642′ }}>
                 💵 Typical Cost: {result.estimate}
               </div>
             </div>

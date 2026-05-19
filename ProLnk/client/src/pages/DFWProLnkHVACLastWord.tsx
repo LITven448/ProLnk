@@ -35,7 +35,7 @@ export default function DFWProLnkHVACLastWord() {
         <p style={{ color: '#94a3b8', marginBottom: '0.75rem' }}>DFW homeowners deserve better HVAC service. ProLnk is delivering it.</p>
         <div style={{ background: '#0f1f35', borderRadius: 10, padding: '1rem', marginBottom: '2rem', border: '1px solid #1e3a5f' }}>
           <p style={{ color: '#e2e8f0', fontSize: 15, lineHeight: 1.6, margin: 0 }}>
-            The promise is simple: <strong style={{ color: '#F5E642' }}>vetted techs, fair prices, no games.</strong> Tell us who you are — we will tell you exactly what ProLnk means for you.
+            The promise is simple: <strong style={{ color: '#F5E642′ }}>vetted techs, fair prices, no games.</strong> Tell us who you are — we will tell you exactly what ProLnk means for you.
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
@@ -65,7 +65,7 @@ export default function DFWProLnkHVACLastWord() {
             <p style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: 15, margin: 0 }}>{selected.message}</p>
           </div>
         )}
-        <div style={{ background: 'linear-gradient(135deg, #1a2e4a, #0f1f35)', borderRadius: 14, padding: '2rem', textAlign: 'center', border: '2px solid #F5E642' }}>
+        <div style={{ background: 'linear-gradient(135deg, #1a2e4a, #0f1f35)', borderRadius: 14, padding: '2rem', textAlign: 'center', border: '2px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🔗</div>
           <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 22, marginBottom: 10 }}>Join the ProLnk Waitlist</div>
           <div style={{ color: '#94a3b8', fontSize: 15, lineHeight: 1.6, marginBottom: 20 }}>

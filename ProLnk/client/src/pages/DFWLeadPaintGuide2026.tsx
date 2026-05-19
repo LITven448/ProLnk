@@ -26,8 +26,8 @@ export default function DFWLeadPaintGuide2026() {
           {[['📅','1978 Cutoff','Lead paint banned for residential use'],['🏘️','DFW At-Risk','Garland, Irving, Oak Cliff, E Dallas'],['💲','Test Cost','$25–$200 (DIY kit to certified inspector)']].map(([icon, title, sub]) => (
             <div key={title} style={{ background: '#1a2744', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24 }}>{icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{title}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>{sub}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{title}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -49,7 +49,7 @@ export default function DFWLeadPaintGuide2026() {
           </select>
           {result && (
             <div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{result.label}</div>
               </div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Requirements:</div>
@@ -63,7 +63,7 @@ export default function DFWLeadPaintGuide2026() {
           {[['🧪','DIY Swab Kit ($25–50)','Quick surface test; not EPA-certified for compliance'],['🔍','XRF Testing ($200–400)','Certified inspector; results immediate; no damage'],['📋','Paint Chip Lab ($30–100)','Send sample to lab; results in 3–5 days; most thorough']].map(([icon, title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <div style={{ fontSize: 20 }}>{icon}</div>
-              <div><div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642' }}>{title}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
+              <div><div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642′ }}>{title}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
             </div>
           ))}
         </div>

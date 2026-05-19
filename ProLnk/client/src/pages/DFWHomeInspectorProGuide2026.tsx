@@ -23,8 +23,8 @@ export default function DFWHomeInspectorProGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '📋', label: 'TX License Required', value: 'TREC' },
-            { icon: '💵', label: 'DFW Avg Inspection', value: '$450' },
-            { icon: '📅', label: 'Inspections / Week', value: '5–7' },
+            { icon: '💵', label: 'DFW Avg Inspection', value: '$450′ },
+            { icon: '📅', label: 'Inspections / Week', value: '5–7′ },
             { icon: '💰', label: 'Annual Potential', value: '$130K+' },
           ].map((s) => (
             <div key={s.label} style={{ backgroundColor: '#0f1f3d', borderRadius: 12, padding: '18px 20px' }}>
@@ -42,7 +42,7 @@ export default function DFWHomeInspectorProGuide2026() {
               <span style={{ color: '#94a3b8', fontSize: 13 }}>Inspections per week</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{volume}</span>
             </div>
-            <input type="range" min={1} max={12} value={volume} onChange={(e) => setVolume(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <input type="range" min={1} max={12} value={volume} onChange={(e) => setVolume(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 4 }}>
               <span style={{ color: '#475569', fontSize: 11 }}>1/wk</span>
               <span style={{ color: '#475569', fontSize: 11 }}>12/wk</span>

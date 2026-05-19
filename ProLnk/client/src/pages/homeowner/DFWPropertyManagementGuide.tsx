@@ -111,7 +111,7 @@ export default function DFWPropertyManagementGuide() {
         <section style={{ marginBottom: 56 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f8fafc', marginBottom: 24 }}>🔍 How to Find a Good PM in DFW</h2>
           <div style={{ background: '#1a0f1a', border: '1px solid #2a1a2a', borderRadius: 12, padding: 28 }}>
-            <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7, marginTop: 0 }}>Start with local NARPM (National Association of Residential Property Managers) members — they've committed to a code of ethics and continuing education. Read Google reviews carefully, focusing on landlord reviews (not tenant reviews). Always interview at least 3 companies before deciding. Ask each: What's your current vacancy rate? How many properties do your managers handle? How do you communicate with owners?</p>
+            <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7, marginTop: 0 }}>Start with local NARPM (National Association of Residential Property Managers) members — they've committed to a code of ethics and continuing education. Read Google reviews carefully, focusing on landlord reviews (not tenant reviews). Always interview at least 3 companies before deciding. Ask each: What’s your current vacancy rate? How many properties do your managers handle? How do you communicate with owners?</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginTop: 20 }}>
               {[
                 { label: 'Find', value: 'narpm.org', sub: 'Search DFW members' },
@@ -143,9 +143,9 @@ export default function DFWPropertyManagementGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 28 }}>Enter your numbers to see the true financial comparison — including the cost of your time.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 20 }}>
             {[
-              { label: 'Number of Properties', value: numProperties, setter: setNumProperties, placeholder: 'e.g. 3' },
-              { label: 'Monthly Rent per Unit ($)', value: monthlyRent, setter: setMonthlyRent, placeholder: 'e.g. 2000' },
-              { label: 'Your Hourly Rate ($)', value: hourlyRate, setter: setHourlyRate, placeholder: 'e.g. 75' },
+              { label: 'Number of Properties', value: numProperties, setter: setNumProperties, placeholder: 'e.g. 3′ },
+              { label: 'Monthly Rent per Unit ($)', value: monthlyRent, setter: setMonthlyRent, placeholder: 'e.g. 2000′ },
+              { label: 'Your Hourly Rate ($)', value: hourlyRate, setter: setHourlyRate, placeholder: 'e.g. 75′ },
             ].map(field => (
               <div key={field.label}>
                 <label style={{ display: 'block', color: '#94a3b8', fontSize: 12, marginBottom: 6, textTransform: 'uppercase', letterSpacing: 0.5 }}>{field.label}</label>

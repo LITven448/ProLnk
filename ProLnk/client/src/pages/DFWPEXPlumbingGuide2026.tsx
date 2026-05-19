@@ -50,7 +50,7 @@ export default function DFWPEXPlumbingGuide2026() {
           {situations.map(s => (
             <label key={s.id} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10, cursor: 'pointer' }}>
               <input type="radio" name="situation" value={s.id} checked={situation === s.id} onChange={() => setSituation(s.id)} style={{ width: 18, height: 18 }} />
-              <span style={{ color: '#CBD5E1' }}>{s.label}</span>
+              <span style={{ color: '#CBD5E1′ }}>{s.label}</span>
             </label>
           ))}
           <button onClick={assess} style={{ marginTop: 12, background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: 'pointer' }}>

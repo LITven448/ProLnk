@@ -45,7 +45,7 @@ export default function DFWHVACCOPRating2026() {
             <option value="premium">Cold-Climate / Variable Speed</option>
           </select>
           <div style={{ background: '#122040', borderRadius: 8, padding: 16, textAlign: 'center' }}>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>COP {cop.toFixed(1)}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>COP {cop.toFixed(1)}</div>
             <div style={{ fontSize: 14, marginTop: 4 }}>{efficiency} Efficiency at {temp}°F</div>
           </div>
         </div>

@@ -42,7 +42,7 @@ export default function DFWHVACFinalCallToAction() {
                 <span style={{ fontSize: '22px', flexShrink: 0 }}>{cta.emoji}</span>
                 <div>
                   <div style={{ fontSize: '16px', fontWeight: '700', color: '#fff', marginBottom: '3px' }}>{cta.label}</div>
-                  <div style={{ fontSize: '13px', color: '#94a3b8' }}>{cta.desc}</div>
+                  <div style={{ fontSize: '13px', color: '#94a3b8′ }}>{cta.desc}</div>
                 </div>
               </div>
             ))}
@@ -60,8 +60,8 @@ export default function DFWHVACFinalCallToAction() {
                 key={b.id}
                 onClick={() => setSelected(b.id)}
                 style={{
-                  backgroundColor: selected === b.id ? '#F5E642' : '#0f2040',
-                  color: selected === b.id ? '#0A1628' : '#fff',
+                  backgroundColor: selected === b.id ? '#F5E642′ : '#0f2040',
+                  color: selected === b.id ? '#0A1628′ : '#fff',
                   border: `2px solid ${selected === b.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: '12px',
                   padding: '16px',

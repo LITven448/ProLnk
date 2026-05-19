@@ -36,7 +36,7 @@ export default function DFWCeilingHeightGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {heights.map((h) => (
               <button key={h.value} onClick={() => setSelectedHeight(h.value)}
-                style={{ background: selectedHeight === h.value ? '#F5E642' : '#162035', color: selectedHeight === h.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left' }}>
+                style={{ background: selectedHeight === h.value ? '#F5E642′ : '#162035', color: selectedHeight === h.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontWeight: 600, textAlign: 'left' }}>
                 {h.label}
               </button>
             ))}
@@ -48,7 +48,7 @@ export default function DFWCeilingHeightGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {concerns.map((c) => (
               <button key={c.value} onClick={() => setSelectedConcern(c.value)}
-                style={{ background: selectedConcern === c.value ? '#F5E642' : '#162035', color: selectedConcern === c.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selectedConcern === c.value ? '#F5E642′ : '#162035', color: selectedConcern === c.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 600 }}>
                 {c.icon} {c.label}
               </button>
             ))}
@@ -63,7 +63,7 @@ export default function DFWCeilingHeightGuide2026() {
         )}
 
         {!result && (
-          <div style={{ background: '#162035', borderRadius: 12, padding: 24, textAlign: 'center', color: '#888' }}>
+          <div style={{ background: '#162035', borderRadius: 12, padding: 24, textAlign: 'center', color: '#888′ }}>
             Select a ceiling height above to see DFW-specific guidance.
           </div>
         )}

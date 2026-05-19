@@ -81,7 +81,7 @@ export default function DFWCentralHumidifierGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Primary Winter Problem</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {PROBLEMS.map(({ key, label }) => (
-                <button key={key} onClick={() => { setProblem(key); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: problem === key ? '#F5E642' : '#1E3A5F', background: problem === key ? '#F5E64220' : 'transparent', color: problem === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
+                <button key={key} onClick={() => { setProblem(key); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: problem === key ? '#F5E642′ : '#1E3A5F', background: problem === key ? '#F5E64220' : ’transparent', color: problem === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
               ))}
             </div>
           </div>
@@ -89,11 +89,11 @@ export default function DFWCentralHumidifierGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Home Size</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {HOME_SIZES.map(s => (
-                <button key={s} onClick={() => { setHomeSize(s); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: homeSize === s ? '#F5E642' : '#1E3A5F', background: homeSize === s ? '#F5E64220' : 'transparent', color: homeSize === s ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{s}</button>
+                <button key={s} onClick={() => { setHomeSize(s); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: homeSize === s ? '#F5E642′ : '#1E3A5F', background: homeSize === s ? '#F5E64220' : ’transparent', color: homeSize === s ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{s}</button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowResult(true)} disabled={!problem || !homeSize} style={{ background: problem && homeSize ? '#F5E642' : '#1E3A5F', color: problem && homeSize ? '#0A1628' : '#4A6080', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: problem && homeSize ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShowResult(true)} disabled={!problem || !homeSize} style={{ background: problem && homeSize ? '#F5E642′ : '#1E3A5F', color: problem && homeSize ? '#0A1628' : '#4A6080', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: problem && homeSize ? 'pointer' : 'not-allowed', width: '100%' }}>
             Get My Recommendation
           </button>
         </div>
@@ -124,7 +124,7 @@ export default function DFWCentralHumidifierGuide() {
           {[['Winter target','35–45% RH','The sweet spot for comfort and home health'],['Too low (below 30%)','Dry air problems begin — skin, wood, static'],['Too high (above 55%)','Risk of condensation on windows, potential mold']].map(arr => (
             <div key={arr[0]} style={{ display: 'flex', gap: 12, marginBottom: 8, fontSize: 13 }}>
               <span style={{ color: '#F5E642', fontWeight: 600, minWidth: 160 }}>{arr[0]}</span>
-              <span style={{ color: '#94A3B8' }}>{arr[1]}{arr[2] ? ` — ${arr[2]}` : ''}</span>
+              <span style={{ color: '#94A3B8′ }}>{arr[1]}{arr[2] ? ` — ${arr[2]}` : ''}</span>
             </div>
           ))}
         </div>

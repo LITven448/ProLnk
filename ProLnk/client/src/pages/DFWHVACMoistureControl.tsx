@@ -26,7 +26,7 @@ export default function DFWHVACMoistureControl() {
           <span style={{ fontSize: '2rem' }}>💧</span>
           <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW HVAC Moisture Control</h1>
         </div>
-        <p style={{ color: '#94A3B8', marginBottom: '2rem' }}>Your HVAC does two jobs: cool the air (sensible heat) and remove moisture (latent heat). In DFW's summer humidity, the moisture removal job is just as important as the cooling. Here's how it works and what goes wrong.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '2rem' }}>Your HVAC does two jobs: cool the air (sensible heat) and remove moisture (latent heat). In DFW's summer humidity, the moisture removal job is just as important as the cooling. Here’s how it works and what goes wrong.</p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🔬 How HVAC Manages Moisture</h2>
@@ -54,7 +54,7 @@ export default function DFWHVACMoistureControl() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.25rem' }}>
             {moistureSymptoms.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1E3A5F', background: selected === s.id ? '#1a2f50' : 'transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
+                style={{ padding: '0.75rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1E3A5F', background: selected === s.id ? '#1a2f50' : ’transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
                 {s.label}
               </button>
             ))}
@@ -66,7 +66,7 @@ export default function DFWHVACMoistureControl() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
               <h3 style={{ color: '#F5E642', margin: 0 }}>Moisture Assessment</h3>
               <span style={{ background: severityColor[result.severity], color: '#FEF3C7', padding: '0.25rem 0.75rem', borderRadius: 20, fontSize: '0.8rem', fontWeight: 600 }}>{result.severity} Priority</span>

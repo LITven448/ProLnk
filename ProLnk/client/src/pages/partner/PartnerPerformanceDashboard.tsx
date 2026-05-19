@@ -16,7 +16,7 @@ export default function PartnerPerformanceDashboard() {
     val >= green ? 'on-track' : val >= yellow ? 'needs-attention' : 'critical';
 
   const statusColor = (status: string) =>
-    status === 'on-track' ? '#16A34A' : status === 'needs-attention' ? '#D97706' : '#DC2626';
+    status === 'on-track' ? '#16A34A' : status === 'needs-attention' ? '#D97706′ : '#DC2626';
 
   const statusLabel = (status: string) =>
     status === 'on-track' ? '✅ On Track' : status === 'needs-attention' ? '⚠️ Needs Attention' : '🔴 Critical';
@@ -49,14 +49,14 @@ export default function PartnerPerformanceDashboard() {
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 20 }}>📝 Enter This Week's Numbers</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              { label: 'Conversations Had', val: convos, setter: setConvos, placeholder: 'e.g. 8' },
-              { label: 'New Partner Sign-Ups', val: signups, setter: setSignups, placeholder: 'e.g. 2' },
-              { label: 'Active Match Referrals', val: matches, setter: setMatches, placeholder: 'e.g. 4' },
-              { label: 'Partners Fully Activated', val: activations, setter: setActivations, placeholder: 'e.g. 1' },
+              { label: 'Conversations Had', val: convos, setter: setConvos, placeholder: 'e.g. 8′ },
+              { label: 'New Partner Sign-Ups', val: signups, setter: setSignups, placeholder: 'e.g. 2′ },
+              { label: 'Active Match Referrals', val: matches, setter: setMatches, placeholder: 'e.g. 4′ },
+              { label: 'Partners Fully Activated', val: activations, setter: setActivations, placeholder: 'e.g. 1′ },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>{f.label}</label>
-                <input type="number" min="0" value={f.val} onChange={e => { f.setter(e.target.value); setSubmitted(false); }} placeholder={f.placeholder} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #D1D5DB', fontSize: 15, boxSizing: 'border-box', outline: 'none' }} />
+                <input type="number" min="0″ value={f.val} onChange={e => { f.setter(e.target.value); setSubmitted(false); }} placeholder={f.placeholder} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #D1D5DB', fontSize: 15, boxSizing: 'border-box', outline: 'none' }} />
               </div>
             ))}
           </div>
@@ -71,7 +71,7 @@ export default function PartnerPerformanceDashboard() {
                 return (
                   <div key={m2.label} style={{ background: '#fff', borderRadius: 12, padding: '18px 20px', border: `2px solid ${statusColor(s2)}` }}>
                     <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 4 }}>{m2.label}</div>
-                    <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628' }}>{m2.value}{m2.unit}</div>
+                    <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628′ }}>{m2.value}{m2.unit}</div>
                     <div style={{ fontSize: 13, fontWeight: 600, color: statusColor(s2), marginTop: 6 }}>{statusLabel(s2)}</div>
                   </div>
                 );
@@ -81,8 +81,8 @@ export default function PartnerPerformanceDashboard() {
             <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E5E7EB' }}>
               <h3 style={{ color: '#0A1628', fontSize: 15, fontWeight: 700, marginTop: 0 }}>📈 Conversion Rates</h3>
               <div style={{ display: 'flex', gap: 24 }}>
-                <div><div style={{ fontSize: 12, color: '#6B7280' }}>Convo → Sign-Up</div><div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{conversionRate}%</div></div>
-                <div><div style={{ fontSize: 12, color: '#6B7280' }}>Sign-Up → Activated</div><div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{activationRate}%</div></div>
+                <div><div style={{ fontSize: 12, color: '#6B7280′ }}>Convo → Sign-Up</div><div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{conversionRate}%</div></div>
+                <div><div style={{ fontSize: 12, color: '#6B7280′ }}>Sign-Up → Activated</div><div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{activationRate}%</div></div>
               </div>
             </div>
 

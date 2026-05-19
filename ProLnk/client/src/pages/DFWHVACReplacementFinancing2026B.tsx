@@ -63,7 +63,7 @@ export default function DFWHVACReplacementFinancing2026B() {
               <p style={{ color: '#F5E642', fontSize: 13, margin: '0 0 6px', fontWeight: 700 }}>Recommended order for your profile:</p>
               {ranked.map((id, i) => {
                 const opt = OPTIONS.find(o => o.id === id);
-                return opt ? <p key={id} style={{ color: '#CBD5E1', fontSize: 13, margin: '2px 0' }}>{i + 1}. {opt.emoji} {opt.name}</p> : null;
+                return opt ? <p key={id} style={{ color: '#CBD5E1', fontSize: 13, margin: '2px 0′ }}>{i + 1}. {opt.emoji} {opt.name}</p> : null;
               })}
             </div>
           )}
@@ -82,7 +82,7 @@ export default function DFWHVACReplacementFinancing2026B() {
         </div>
 
         {active && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 12px' }}>{active.emoji} {active.name}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               {[{label: 'Loan Range', val: active.range},{label: 'APR', val: active.apr},{label: 'Term', val: active.term},{label: 'Best For', val: active.best}].map(r => (

@@ -39,30 +39,30 @@ export default function OnboardingFunnel() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6" style={{ backgroundColor: D.bg, minHeight: "100vh" }}>
+      <div className="p-6 space-y-6″ style={{ backgroundColor: D.bg, minHeight: "100vh" }}>
         <div>
           <h1 className="text-2xl font-black" style={{ color: D.text }}>Onboarding Funnel</h1>
-          <p className="text-sm mt-1" style={{ color: D.muted }}>Partner application-to-active conversion analytics</p>
+          <p className="text-sm mt-1″ style={{ color: D.muted }}>Partner application-to-active conversion analytics</p>
         </div>
 
         {/* Conversion rate cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <MetricCard label="Overall Conversion" value="5.2%" sub="Visited → Active" trend={8} color={D.green} icon={<TrendingDown className="w-4 h-4" />} />
-          <MetricCard label="Apply → Approve"    value="69.7%" sub="287 of 412"       trend={3} color={D.cyan}  icon={<Users className="w-4 h-4" />} />
-          <MetricCard label="Approve → Onboard"  value="69.0%" sub="198 of 287"       trend={-2} color={D.amber} icon={<Clock className="w-4 h-4" />} />
-          <MetricCard label="Onboard → Active"   value="74.2%" sub="147 of 198"       trend={5} color={D.purple} icon={<Zap className="w-4 h-4" />} />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
+          <MetricCard label="Overall Conversion" value="5.2%" sub="Visited → Active" trend={8} color={D.green} icon={<TrendingDown className="w-4 h-4″ />} />
+          <MetricCard label="Apply → Approve"    value="69.7%" sub="287 of 412″       trend={3} color={D.cyan}  icon={<Users className="w-4 h-4" />} />
+          <MetricCard label="Approve → Onboard"  value="69.0%" sub="198 of 287″       trend={-2} color={D.amber} icon={<Clock className="w-4 h-4" />} />
+          <MetricCard label="Onboard → Active"   value="74.2%" sub="147 of 198″       trend={5} color={D.purple} icon={<Zap className="w-4 h-4" />} />
         </div>
 
         {/* Funnel visualization */}
         <DCard>
           <SectionHeader title="Funnel Stages" subtitle="Count and drop-off at each stage" />
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3″>
             {FUNNEL_STAGES.map((stage, i) => {
               const widthPct = (stage.count / maxCount) * 100;
               const dropPct = i === 0 ? null : (((FUNNEL_STAGES[i - 1].count - stage.count) / FUNNEL_STAGES[i - 1].count) * 100).toFixed(1);
               return (
-                <div key={stage.label} className="flex items-center gap-4">
-                  <div className="w-20 text-right text-xs font-semibold flex-shrink-0" style={{ color: D.muted }}>{stage.label}</div>
+                <div key={stage.label} className="flex items-center gap-4″>
+                  <div className="w-20 text-right text-xs font-semibold flex-shrink-0″ style={{ color: D.muted }}>{stage.label}</div>
                   <div className="flex-1 relative h-9 rounded-lg overflow-hidden" style={{ backgroundColor: D.border }}>
                     <div
                       className="h-full rounded-lg flex items-center justify-end pr-3 transition-all"
@@ -80,7 +80,7 @@ export default function OnboardingFunnel() {
           </div>
         </DCard>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
           {/* Drop-off analysis */}
           <DCard>
             <SectionHeader title="Drop-off Analysis" subtitle="Where partners fall out and why" />
@@ -119,16 +119,16 @@ export default function OnboardingFunnel() {
         {/* Stuck applications */}
         <DCard>
           <SectionHeader title="Stuck Applications" subtitle="Partners stalled >7 days — needs nudge" />
-          <div className="space-y-2">
+          <div className="space-y-2″>
             {STUCK.map((app, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between rounded-xl px-4 py-3"
+                className="flex items-center justify-between rounded-xl px-4 py-3″
                 style={{ backgroundColor: D.surface, border: `1px solid ${D.border}` }}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3″>
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0″
                     style={{ backgroundColor: `${D.amber}20`, color: D.amber }}
                   >
                     {app.name.charAt(0)}
@@ -138,7 +138,7 @@ export default function OnboardingFunnel() {
                     <p className="text-xs" style={{ color: D.muted }}>{app.email}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4″>
                   <div className="text-center">
                     <p className="text-xs" style={{ color: D.muted }}>Stage</p>
                     <p className="text-sm font-semibold" style={{ color: D.cyan }}>{app.stage}</p>

@@ -39,7 +39,7 @@ export default function DFWHVACYearRound2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 8, marginBottom: 28 }}>
           {monthList.map(m => (
-            <button key={m.id} onClick={() => setSelected(m.id)} style={{ background: selected === m.id ? '#F5E642' : '#0F2140', color: selected === m.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 4px', cursor: 'pointer', fontWeight: selected === m.id ? 800 : 400, fontSize: 14, textAlign: 'center' }}>
+            <button key={m.id} onClick={() => setSelected(m.id)} style={{ background: selected === m.id ? '#F5E642′ : '#0F2140', color: selected === m.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 4px', cursor: ’pointer', fontWeight: selected === m.id ? 800 : 400, fontSize: 14, textAlign: 'center' }}>
               {m.label}
             </button>
           ))}
@@ -51,15 +51,15 @@ export default function DFWHVACYearRound2026() {
               <div style={{ color: '#8FA3BF', fontSize: 13, fontWeight: 700, marginBottom: 4, textTransform: 'uppercase', letterSpacing: 1 }}>DFW Temperature</div>
               <div style={{ color: '#E8EDF5', fontSize: 16 }}>{data.temp}</div>
             </div>
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>✅ What To Do</div>
               <div style={{ color: '#C8D8E8', fontSize: 15, lineHeight: 1.7 }}>{data.action}</div>
             </div>
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F0A500' }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F0A500′ }}>
               <div style={{ color: '#F0A500', fontSize: 13, fontWeight: 700, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>👀 What To Watch</div>
               <div style={{ color: '#C8D8E8', fontSize: 15, lineHeight: 1.7 }}>{data.watch}</div>
             </div>
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #E05555' }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #E05555′ }}>
               <div style={{ color: '#E05555', fontSize: 13, fontWeight: 700, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>🚫 What To Avoid</div>
               <div style={{ color: '#C8D8E8', fontSize: 15, lineHeight: 1.7 }}>{data.avoid}</div>
             </div>
@@ -70,7 +70,7 @@ export default function DFWHVACYearRound2026() {
           </div>
         )}
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🔗 ProLnk: Year-Round DFW HVAC Support</div>
           <div style={{ color: '#8FA3BF', fontSize: 14 }}>Connect with vetted North Texas HVAC pros for any month's maintenance needs — tune-ups, repairs, and system upgrades from background-checked contractors.</div>
         </div>

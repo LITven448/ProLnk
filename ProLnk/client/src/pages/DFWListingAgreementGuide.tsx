@@ -59,7 +59,7 @@ export default function DFWListingAgreementGuide() {
   const advice = situation ? termAdvice[situation] : null;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 24px', marginBottom: 28 }}>
           <div style={{ fontSize: 28 }}>📋</div>
@@ -67,7 +67,7 @@ export default function DFWListingAgreementGuide() {
           <p style={{ color: '#CBD5E1', margin: 0 }}>What's in a listing contract, what you can negotiate, and what must be included to protect your interests.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📄 What's in a DFW Listing Contract</h2>
           {standardTerms.map(([term, desc]) => (
             <div key={term} style={{ background: '#F8FAFC', borderRadius: 8, padding: '10px 14px', marginBottom: 8 }}>
@@ -77,7 +77,7 @@ export default function DFWListingAgreementGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>🎯 Your Situation → What to Negotiate</h2>
           <p style={{ fontSize: 13, color: '#64748B', marginBottom: 10 }}>Select your situation for specific listing agreement guidance.</p>
           <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: '100%', padding: '9px 12px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628', marginBottom: 14 }}>
@@ -92,18 +92,18 @@ export default function DFWListingAgreementGuide() {
               </div>
               <div style={{ background: '#FFF1F2', border: '1px solid #FECDD3', borderRadius: 8, padding: 14, marginBottom: 12 }}>
                 <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: '#BE123C' }}>🚩 Red Flags</div>
-                {advice.redFlags.map(r => <div key={r} style={{ fontSize: 13, marginBottom: 4, color: '#9F1239' }}>✕ {r}</div>)}
+                {advice.redFlags.map(r => <div key={r} style={{ fontSize: 13, marginBottom: 4, color: '#9F1239′ }}>✕ {r}</div>)}
               </div>
               <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: '#15803D' }}>📌 Must Include in Contract</div>
-                {advice.include.map(i => <div key={i} style={{ fontSize: 13, marginBottom: 4, color: '#166534' }}>• {i}</div>)}
+                {advice.include.map(i => <div key={i} style={{ fontSize: 13, marginBottom: 4, color: '#166534′ }}>• {i}</div>)}
               </div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#0A1628', borderRadius: 10, padding: 18, color: '#CBD5E1', fontSize: 13 }}>
-          <span style={{ color: '#F5E642', fontWeight: 700 }}>DFW Commission Reality:</span> In competitive DFW markets, some agents will negotiate commission — especially if you're buying your next home through them, if the home is priced above $600K, or if it's a fast-moving submarket where their time investment is lower.
+          <span style={{ color: '#F5E642', fontWeight: 700 }}>DFW Commission Reality:</span> In competitive DFW markets, some agents will negotiate commission — especially if you're buying your next home through them, if the home is priced above $600K, or if it’s a fast-moving submarket where their time investment is lower.
         </div>
       </div>
     </div>

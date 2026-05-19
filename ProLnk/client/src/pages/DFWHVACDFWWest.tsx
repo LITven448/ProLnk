@@ -51,7 +51,7 @@ export default function DFWHVACDFWWest() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🏠 DFW HVAC Guide — West Suburbs</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🏠 DFW HVAC Guide — West Suburbs</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>West DFW HVAC Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem', lineHeight: 1.6 }}>
           Fort Worth, Weatherford, Granbury, and surrounding areas have different utility providers and longer
@@ -75,7 +75,7 @@ export default function DFWHVACDFWWest() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>
           🗺️ Select Your Suburb
         </h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '2rem' }}>
@@ -87,8 +87,8 @@ export default function DFWHVACDFWWest() {
                 padding: '0.6rem 1.2rem',
                 borderRadius: 8,
                 border: `2px solid ${selected === s.name ? '#F5E642' : '#1e3a5f'}`,
-                background: selected === s.name ? '#F5E642' : '#0F2040',
-                color: selected === s.name ? '#0A1628' : '#fff',
+                background: selected === s.name ? '#F5E642′ : '#0F2040',
+                color: selected === s.name ? '#0A1628′ : '#fff',
                 cursor: 'pointer',
                 fontWeight: 600,
                 fontSize: '0.9rem',
@@ -111,11 +111,11 @@ export default function DFWHVACDFWWest() {
               ].map((item) => (
                 <div key={item.label} style={{ background: '#1a2f50', borderRadius: 8, padding: '0.85rem' }}>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>{item.label}</div>
-                  <div style={{ fontWeight: 700, color: '#F5E642' }}>{item.value}</div>
+                  <div style={{ fontWeight: 700, color: '#F5E642′ }}>{item.value}</div>
                 </div>
               ))}
             </div>
-            <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', color: '#cbd5e1' }}>
+            <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', color: '#cbd5e1′ }}>
               💡 {profile.notes}
             </div>
           </div>

@@ -80,9 +80,9 @@ export default function DFWHVACPoolInteraction() {
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>YOUR POOL TYPE</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
             {(Object.keys(poolTypes) as PoolType[]).map(p => (
-              <button key={p} onClick={() => setPoolType(p)} style={{ padding: '12px', borderRadius: '10px', border: poolType === p ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
+              <button key={p} onClick={() => setPoolType(p)} style={{ padding: '12px', borderRadius: '10px', border: poolType === p ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
                 <div style={{ fontSize: '18px', marginBottom: '4px' }}>{poolTypes[p].emoji}</div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: poolType === p ? '#F5E642' : '#E8EDF5' }}>{poolTypes[p].label}</div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: poolType === p ? '#F5E642′ : '#E8EDF5' }}>{poolTypes[p].label}</div>
               </button>
             ))}
           </div>
@@ -92,9 +92,9 @@ export default function DFWHVACPoolInteraction() {
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>YOUR HOME SETUP</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
             {(Object.keys(homeSetups) as HomeSetup[]).map(h => (
-              <button key={h} onClick={() => setHomeSetup(h)} style={{ padding: '12px', borderRadius: '10px', border: homeSetup === h ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
+              <button key={h} onClick={() => setHomeSetup(h)} style={{ padding: '12px', borderRadius: '10px', border: homeSetup === h ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
                 <div style={{ fontSize: '18px', marginBottom: '4px' }}>{homeSetups[h].emoji}</div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: homeSetup === h ? '#F5E642' : '#E8EDF5' }}>{homeSetups[h].label}</div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: homeSetup === h ? '#F5E642′ : '#E8EDF5' }}>{homeSetups[h].label}</div>
               </button>
             ))}
           </div>

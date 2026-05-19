@@ -7,31 +7,31 @@ const projectTypes = [
   { label: 'Run Electrical / Plumbing', value: 'elec' },
 ];
 const vintages = [
-  { label: 'Pre-1960 DFW Home', value: 'pre60' },
-  { label: '1960–1990 DFW Home', value: '60to90' },
-  { label: '1990–Present DFW Home', value: 'post90' },
+  { label: 'Pre-1960 DFW Home', value: 'pre60′ },
+  { label: '1960–1990 DFW Home', value: '60to90′ },
+  { label: '1990–Present DFW Home', value: 'post90′ },
 ];
 
 const data: Record<string, Record<string, { spacing: string; findMethod: string; weightLimit: string; notes: string }>> = {
   tv: {
-    pre60: { spacing: 'Likely 16" OC but verify — older DFW homes often had irregular spacing', findMethod: 'Stud finder unreliable on plaster walls — use strong rare-earth magnet to find nails, then measure 16" from corner (typically 15.5" to center from corner, then every 16")', weightLimit: '100–200 lbs on 2×4 stud with proper lag bolt into stud', notes: 'Pre-1960 walls may be plaster over wood lath — different fastener technique required' },
-    '60to90': { spacing: '16" OC standard in DFW 1960–1990 construction', findMethod: 'Stud finder works on drywall. Start at corner: first stud typically 15.5" to center, then 16" increments', weightLimit: '150–250 lbs with 2.5" lag screws into stud center', notes: 'Verify stud with two passes of stud finder — some DFW builders used 24" spacing on non-load-bearing walls' },
-    post90: { spacing: '16" OC exterior; may be 24" OC on interior non-bearing walls', findMethod: 'Electronic stud finder (AC detection mode finds wires too — important before drilling). Corner method: 15.5" first, then 16" or 24"', weightLimit: '200–300 lbs with proper 3" lag screws centered in stud', notes: 'DFW production builders often mixed spacing — always verify with physical knock + finder' },
+    pre60: { spacing: 'Likely 16″ OC but verify — older DFW homes often had irregular spacing', findMethod: 'Stud finder unreliable on plaster walls — use strong rare-earth magnet to find nails, then measure 16″ from corner (typically 15.5″ to center from corner, then every 16″)', weightLimit: '100–200 lbs on 2×4 stud with proper lag bolt into stud', notes: 'Pre-1960 walls may be plaster over wood lath — different fastener technique required' },
+    '60to90': { spacing: '16″ OC standard in DFW 1960–1990 construction', findMethod: 'Stud finder works on drywall. Start at corner: first stud typically 15.5″ to center, then 16″ increments', weightLimit: '150–250 lbs with 2.5″ lag screws into stud center', notes: 'Verify stud with two passes of stud finder — some DFW builders used 24″ spacing on non-load-bearing walls' },
+    post90: { spacing: '16″ OC exterior; may be 24″ OC on interior non-bearing walls', findMethod: 'Electronic stud finder (AC detection mode finds wires too — important before drilling). Corner method: 15.5″ first, then 16″ or 24″', weightLimit: '200–300 lbs with proper 3″ lag screws centered in stud', notes: 'DFW production builders often mixed spacing — always verify with physical knock + finder' },
   },
   shelf: {
-    pre60: { spacing: '16" OC typical; plaster walls complicate finding', findMethod: 'Magnet method: drag rare-earth magnet along wall to find nail heads in lath. Mark, then measure outward 16"', weightLimit: '75 lbs per shelf bracket into stud; use 2 studs minimum', notes: 'Plaster over lath is 1" thick — use 3" screws minimum to reach stud' },
-    '60to90': { spacing: '16" OC standard', findMethod: 'Stud finder + verify by probing with finish nail. Look for electrical outlets — one side typically has stud within 1"', weightLimit: '150 lbs per pair of brackets into 2 studs', notes: 'DFW older homes: check for asbestos texture before drilling into walls pre-1978' },
-    post90: { spacing: '16" or 24" OC depending on wall type', findMethod: 'Electronic stud finder with deep scan setting. Verify with thin probe before final pilot hole', weightLimit: '200 lbs per pair into 2 studs with proper wall anchors at non-stud locations', notes: 'Cabinet installs: always hit 2 studs minimum regardless of weight' },
+    pre60: { spacing: '16″ OC typical; plaster walls complicate finding', findMethod: 'Magnet method: drag rare-earth magnet along wall to find nail heads in lath. Mark, then measure outward 16″', weightLimit: '75 lbs per shelf bracket into stud; use 2 studs minimum', notes: 'Plaster over lath is 1″ thick — use 3″ screws minimum to reach stud' },
+    '60to90': { spacing: '16″ OC standard', findMethod: 'Stud finder + verify by probing with finish nail. Look for electrical outlets — one side typically has stud within 1″', weightLimit: '150 lbs per pair of brackets into 2 studs', notes: 'DFW older homes: check for asbestos texture before drilling into walls pre-1978′ },
+    post90: { spacing: '16″ or 24″ OC depending on wall type', findMethod: 'Electronic stud finder with deep scan setting. Verify with thin probe before final pilot hole', weightLimit: '200 lbs per pair into 2 studs with proper wall anchors at non-stud locations', notes: 'Cabinet installs: always hit 2 studs minimum regardless of weight' },
   },
   open: {
-    pre60: { spacing: 'Highly variable — some DFW homes had 12" OC for plaster support', findMethod: 'Open wall reveals actual layout. Before opening: probe with coat hanger through outlet to confirm spacing', weightLimit: 'N/A — full structural assessment required before opening any wall', notes: '🔴 Pre-1960 DFW walls often load-bearing even when they appear partition — always consult engineer' },
-    '60to90': { spacing: '16" OC standard; confirm before cutting', findMethod: 'Use outlet box as reference — studs on each side. Map full wall before any cutting', weightLimit: 'N/A — engineer review for any DFW wall removal', notes: 'DFW homes from this era may have added walls for room conversions — original load path unclear' },
-    post90: { spacing: '16" OC (exterior/bearing) or 24" OC (interior partition)', findMethod: 'Digital stud finder full-wall scan + drawings from original builder if available', weightLimit: 'N/A — engineer required for load-bearing; contractor for partition', notes: 'DFW production homes: interior walls rarely load-bearing BUT verify with joist direction above' },
+    pre60: { spacing: 'Highly variable — some DFW homes had 12″ OC for plaster support', findMethod: 'Open wall reveals actual layout. Before opening: probe with coat hanger through outlet to confirm spacing', weightLimit: 'N/A — full structural assessment required before opening any wall', notes: '🔴 Pre-1960 DFW walls often load-bearing even when they appear partition — always consult engineer' },
+    '60to90': { spacing: '16″ OC standard; confirm before cutting', findMethod: 'Use outlet box as reference — studs on each side. Map full wall before any cutting', weightLimit: 'N/A — engineer review for any DFW wall removal', notes: 'DFW homes from this era may have added walls for room conversions — original load path unclear' },
+    post90: { spacing: '16″ OC (exterior/bearing) or 24″ OC (interior partition)', findMethod: 'Digital stud finder full-wall scan + drawings from original builder if available', weightLimit: 'N/A — engineer required for load-bearing; contractor for partition', notes: 'DFW production homes: interior walls rarely load-bearing BUT verify with joist direction above' },
   },
   elec: {
-    pre60: { spacing: '12–16" OC; knob-and-tube wiring era', findMethod: 'Turn off power. Probe from outlet box side. Plaster walls require careful drilling to avoid wiring', weightLimit: 'N/A', notes: '🔴 Pre-1960 DFW homes may have original knob-and-tube wiring — do not DIY electrical; licensed electrician required' },
-    '60to90': { spacing: '16" OC standard', findMethod: 'Electronic finder with AC detection. Mark all live circuit paths before drilling', weightLimit: 'N/A', notes: 'DFW homes 1960–1978 may have aluminum wiring — requires licensed electrician to modify' },
-    post90: { spacing: '16–24" OC with wiring run through drilled holes in stud center', findMethod: 'AC detection stud finder mandatory. Wires run 1.25" from face — avoid drilling deep without checking', weightLimit: 'N/A', notes: 'Permit required for most DFW electrical work. Always pull permit for new circuits.' },
+    pre60: { spacing: '12–16″ OC; knob-and-tube wiring era', findMethod: 'Turn off power. Probe from outlet box side. Plaster walls require careful drilling to avoid wiring', weightLimit: 'N/A', notes: '🔴 Pre-1960 DFW homes may have original knob-and-tube wiring — do not DIY electrical; licensed electrician required' },
+    '60to90': { spacing: '16″ OC standard', findMethod: 'Electronic finder with AC detection. Mark all live circuit paths before drilling', weightLimit: 'N/A', notes: 'DFW homes 1960–1978 may have aluminum wiring — requires licensed electrician to modify' },
+    post90: { spacing: '16–24″ OC with wiring run through drilled holes in stud center', findMethod: 'AC detection stud finder mandatory. Wires run 1.25″ from face — avoid drilling deep without checking', weightLimit: 'N/A', notes: 'Permit required for most DFW electrical work. Always pull permit for new circuits.' },
   },
 };
 
@@ -51,8 +51,8 @@ export default function DFWWallStudGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>📏 Stud Spacing Basics for DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { label: '16" On Center (OC)', desc: 'Standard for load-bearing and most exterior walls. 15.5" from corner to first stud center, then every 16".' },
-              { label: '24" On Center (OC)', desc: 'Common on non-load-bearing interior walls in post-1990 DFW production homes to save lumber.' },
+              { label: '16″ On Center (OC)', desc: 'Standard for load-bearing and most exterior walls. 15.5″ from corner to first stud center, then every 16″.' },
+              { label: '24″ On Center (OC)', desc: 'Common on non-load-bearing interior walls in post-1990 DFW production homes to save lumber.' },
               { label: 'Irregular Spacing', desc: 'Common around windows, doors, corners, and in pre-1960 DFW homes where plaster required extra nailing surface.' },
               { label: 'Double Studs', desc: 'Found at door/window rough openings and partition wall intersections — always more structural here.' },
             ].map(s => (
@@ -67,10 +67,10 @@ export default function DFWWallStudGuide() {
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>🧲 How to Find Studs in DFW Homes</h2>
           <ul style={{ color: '#C5CAD8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EAF0' }}>Stud finder (electronic):</strong> Works on drywall; unreliable on plaster — use magnet method for older DFW homes</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Rare-earth magnet:</strong> Drags along wall to find nail/screw heads; works through plaster, tile, even wallpaper</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Corner measurement:</strong> First stud is usually 15.5" from corner center; measure every 16" or 24" after</li>
-            <li><strong style={{ color: '#E8EAF0' }}>Outlet trick:</strong> Electrical boxes mount to studs — usually a stud within 1" of each side</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Stud finder (electronic):</strong> Works on drywall; unreliable on plaster — use magnet method for older DFW homes</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Rare-earth magnet:</strong> Drags along wall to find nail/screw heads; works through plaster, tile, even wallpaper</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Corner measurement:</strong> First stud is usually 15.5″ from corner center; measure every 16″ or 24″ after</li>
+            <li><strong style={{ color: '#E8EAF0′ }}>Outlet trick:</strong> Electrical boxes mount to studs — usually a stud within 1″ of each side</li>
           </ul>
         </section>
 
@@ -92,10 +92,10 @@ export default function DFWWallStudGuide() {
           </div>
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Stud Spacing: </span><span style={{ color: '#C5CAD8' }}>{result.spacing}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>How to Find: </span><span style={{ color: '#C5CAD8' }}>{result.findMethod}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Weight Limit: </span><span style={{ color: '#4ADE80' }}>{result.weightLimit}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>DFW Notes: </span><span style={{ color: '#FACC15' }}>{result.notes}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Stud Spacing: </span><span style={{ color: '#C5CAD8′ }}>{result.spacing}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>How to Find: </span><span style={{ color: '#C5CAD8′ }}>{result.findMethod}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Weight Limit: </span><span style={{ color: '#4ADE80′ }}>{result.weightLimit}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>DFW Notes: </span><span style={{ color: '#FACC15′ }}>{result.notes}</span></div>
             </div>
           )}
         </div>

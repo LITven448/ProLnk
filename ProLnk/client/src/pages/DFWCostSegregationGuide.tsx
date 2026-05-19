@@ -58,20 +58,20 @@ export default function DFWCostSegregationGuide() {
         </div>
         {COMPONENT_DATA.sections.map((s) => (
           <div key={s.heading} style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', marginBottom: '1.25rem', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}>
-            <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.6rem', color: '#0A1628' }}>{s.heading}</h2>
-            <p style={{ lineHeight: 1.7, color: '#444' }}>{s.body}</p>
+            <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.6rem', color: '#0A1628′ }}>{s.heading}</h2>
+            <p style={{ lineHeight: 1.7, color: '#444′ }}>{s.body}</p>
           </div>
         ))}
         <div style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '1rem', color: '#0A1628' }}>📊 Year-1 Tax Savings Estimator</h2>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '1rem', color: '#0A1628′ }}>📊 Year-1 Tax Savings Estimator</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', marginBottom: 4, fontWeight: 600, fontSize: '0.9rem' }}>Property Value ($)</label>
-              <input value={propertyValue} onChange={(e) => setPropertyValue(e.target.value)} placeholder="e.g. 750000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #ddd', fontSize: '1rem', boxSizing: 'border-box' }} />
+              <input value={propertyValue} onChange={(e) => setPropertyValue(e.target.value)} placeholder="e.g. 750000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #ddd', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', marginBottom: 4, fontWeight: 600, fontSize: '0.9rem' }}>Renovation Cost ($)</label>
-              <input value={renovationCost} onChange={(e) => setRenovationCost(e.target.value)} placeholder="e.g. 100000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #ddd', fontSize: '1rem', boxSizing: 'border-box' }} />
+              <input value={renovationCost} onChange={(e) => setRenovationCost(e.target.value)} placeholder="e.g. 100000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #ddd', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>

@@ -48,7 +48,7 @@ export default function DFWACBrandWarrantyGuide2026() {
               {['trane', 'lennox', 'carrier', 'york'].map(b => (
                 <button key={b} onClick={() => setBrand(b)}
                   style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize',
-                    backgroundColor: brand === b ? '#F5E642' : '#0A1628', color: brand === b ? '#0A1628' : '#fff' }}>
+                    backgroundColor: brand === b ? '#F5E642′ : '#0A1628', color: brand === b ? '#0A1628' : '#fff' }}>
                   {b.charAt(0).toUpperCase() + b.slice(1)}
                 </button>
               ))}
@@ -57,11 +57,11 @@ export default function DFWACBrandWarrantyGuide2026() {
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 6 }}>System Age: {age} years</label>
             <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
             <input type="checkbox" id="reg" checked={registered} onChange={e => setRegistered(e.target.checked)}
-              style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+              style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
             <label htmlFor="reg" style={{ color: '#94a3b8', cursor: 'pointer' }}>Unit was registered within 90 days of install</label>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

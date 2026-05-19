@@ -16,7 +16,7 @@ export default function ProLnkVsCompetitors2026() {
   const directCost = monthlyJobs * 120 * 12;
 
   const platforms = [
-    { name: 'ProLnk', cost: prolnkFee * 12, net: prolnkNet, note: '$149/mo flat + network income', bg: '#F5E642', fg: '#0A1628' },
+    { name: 'ProLnk', cost: prolnkFee * 12, net: prolnkNet, note: '$149/mo flat + network income', bg: '#F5E642', fg: '#0A1628′ },
     { name: 'Angi / HomeAdvisor', cost: angiCost, net: annualRevenue - angiCost, note: '$85/lead avg, no exclusivity', bg: '#111d2e', fg: '#fff' },
     { name: 'Thumbtack', cost: thumbCost, net: annualRevenue - thumbCost, note: '$55/lead avg, shared leads', bg: '#111d2e', fg: '#fff' },
     { name: 'Direct Marketing', cost: directCost, net: annualRevenue - directCost, note: '$120/lead avg estimate', bg: '#111d2e', fg: '#fff' },
@@ -56,7 +56,7 @@ export default function ProLnkVsCompetitors2026() {
               <div style={{ color: p.fg, opacity: 0.8, fontSize: 13 }}>Annual spend</div>
               <div style={{ fontWeight: 700, fontSize: 22, color: p.fg }}>${p.cost.toLocaleString()}</div>
               <div style={{ color: p.fg, opacity: 0.8, fontSize: 13, marginTop: 8 }}>Net after lead costs</div>
-              <div style={{ fontWeight: 800, fontSize: 26, color: p.net > 0 ? (p.name === 'ProLnk' ? '#0A1628' : '#4ade80') : '#ef4444' }}>
+              <div style={{ fontWeight: 800, fontSize: 26, color: p.net > 0 ? (p.name === 'ProLnk' ? '#0A1628′ : '#4ade80') : '#ef4444' }}>
                 ${p.net.toLocaleString()}
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function ProLnkVsCompetitors2026() {
         </div>
 
         <div style={{ background: '#111d2e', borderRadius: 10, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: '#F5E642' }}>ProLnk Only: Network Income</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: '#F5E642′ }}>ProLnk Only: Network Income</div>
           <div style={{ color: '#94a3b8', fontSize: 14 }}>
             No other platform pays you to grow the network. Charter members earn 7% job overrides + 12% subscription overrides on every pro they recruit — for life. Angi, Thumbtack, and direct marketing give you zero for referrals.
           </div>

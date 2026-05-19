@@ -50,7 +50,7 @@ export default function DFWProsperhomeownerGuide2026B() {
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>Prosper's premium market — $600K+ median, large homes, active HOA, and nearly all built 2015–2026. Your maintenance scope depends on both size and age.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 28 }}>
-          {[{ icon: '💰', label: 'Median Home Price', val: '$600K+ (2026)' }, { icon: '📐', label: 'Avg Home Size', val: '3,200 sqft' }, { icon: '🏘️', label: 'HOA Saturation', val: '~90% of neighborhoods' }, { icon: '🏗️', label: 'Build Vintage', val: '95% built 2015–2026' }].map(c => (
+          {[{ icon: '💰', label: 'Median Home Price', val: '$600K+ (2026)' }, { icon: '📐', label: 'Avg Home Size', val: '3,200 sqft' }, { icon: '🏘️', label: 'HOA Saturation', val: '~90% of neighborhoods' }, { icon: '🏗️', label: 'Build Vintage', val: '95% built 2015–2026′ }].map(c => (
             <div key={c.label} style={{ background: '#111e35', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22 }}>{c.icon}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{c.label}</div>
@@ -66,7 +66,7 @@ export default function DFWProsperhomeownerGuide2026B() {
             <div style={{ display: 'flex', gap: 8 }}>
               {sizes.map(s => (
                 <button key={s} onClick={() => setSize(s === size ? null : s)}
-                  style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: size === s ? '#F5E642' : '#1e2f4a', color: size === s ? '#0A1628' : '#fff' }}>
+                  style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: size === s ? '#F5E642′ : '#1e2f4a', color: size === s ? '#0A1628' : '#fff' }}>
                   {s}
                 </button>
               ))}
@@ -77,7 +77,7 @@ export default function DFWProsperhomeownerGuide2026B() {
             <div style={{ display: 'flex', gap: 8 }}>
               {ages.map(a => (
                 <button key={a} onClick={() => setAge(a === age ? null : a)}
-                  style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: age === a ? '#F5E642' : '#1e2f4a', color: age === a ? '#0A1628' : '#fff' }}>
+                  style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: age === a ? '#F5E642′ : '#1e2f4a', color: age === a ? '#0A1628' : '#fff' }}>
                   {a}
                 </button>
               ))}

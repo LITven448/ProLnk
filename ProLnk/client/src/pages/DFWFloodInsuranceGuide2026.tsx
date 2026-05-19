@@ -6,7 +6,7 @@ export default function DFWFloodInsuranceGuide2026() {
   const [floodZone, setFloodZone] = useState('x');
 
   const riskLevel = floodZone === 'ae' ? 'HIGH' : floodZone === 'a' ? 'MODERATE-HIGH' : nearWater ? 'MODERATE' : 'LOW-MODERATE';
-  const riskColor = riskLevel === 'HIGH' ? '#ef4444' : riskLevel === 'MODERATE-HIGH' ? '#f97316' : '#22c55e';
+  const riskColor = riskLevel === 'HIGH' ? '#ef4444′ : riskLevel === ’MODERATE-HIGH' ? '#f97316′ : '#22c55e';
   const nfipCost = floodZone === 'ae' ? '$900-2,400/yr' : floodZone === 'a' ? '$600-1,400/yr' : '$300-700/yr';
   const privateCost = floodZone === 'ae' ? '$700-1,800/yr' : floodZone === 'a' ? '$450-1,100/yr' : '$200-500/yr';
 
@@ -23,7 +23,7 @@ export default function DFWFloodInsuranceGuide2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🗺️ DFW Flood Risk Areas</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🗺️ DFW Flood Risk Areas</h2>
           {[
             { icon: '🔴', area: 'Trinity River Corridor', risk: 'High — AE zone, flood mandatory', areas: 'Downtown Dallas, Irving, Grand Prairie' },
             { icon: '🟠', area: 'Elm Fork / Lewisville Lake', risk: 'Moderate-High', areas: 'Carrollton, Farmers Branch, Lewisville' },
@@ -41,7 +41,7 @@ export default function DFWFloodInsuranceGuide2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Flood Insurance Need Assessment</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Flood Insurance Need Assessment</h2>
           <div style={{ marginBottom: 14 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>Location Type</label>
             <select value={locationType} onChange={e => setLocationType(e.target.value)}
@@ -61,7 +61,7 @@ export default function DFWFloodInsuranceGuide2026() {
             </select>
           </div>
           <label style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, cursor: 'pointer' }}>
-            <input type="checkbox" checked={nearWater} onChange={e => setNearWater(e.target.checked)} style={{ accentColor: '#F5E642' }} />
+            <input type="checkbox" checked={nearWater} onChange={e => setNearWater(e.target.checked)} style={{ accentColor: '#F5E642′ }} />
             <span style={{ fontSize: 13 }}>Within 1 mile of creek, river, or lake</span>
           </label>
           <div style={{ background: '#1a2f55', borderRadius: 10, padding: 16 }}>
@@ -70,11 +70,11 @@ export default function DFWFloodInsuranceGuide2026() {
               <span style={{ color: riskColor, fontWeight: 800, fontSize: 16 }}>{riskLevel}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 13 }}>
-              <span style={{ color: '#94a3b8' }}>NFIP (federal) cost</span>
+              <span style={{ color: '#94a3b8′ }}>NFIP (federal) cost</span>
               <span>{nfipCost}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 13 }}>
-              <span style={{ color: '#94a3b8' }}>Private flood insurance</span>
+              <span style={{ color: '#94a3b8′ }}>Private flood insurance</span>
               <span style={{ color: '#22c55e' }}>{privateCost}</span>
             </div>
             <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 10 }}>

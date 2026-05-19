@@ -79,7 +79,7 @@ export default function DFWWindowFilmGuide() {
             <button onClick={reset} style={{ background: 'transparent', color: '#94A3B8', border: '1px solid #334155', borderRadius: 8, padding: '12px 20px', cursor: 'pointer', fontSize: 15 }}>Reset</button>
           </div>
           {rec && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, marginBottom: 12 }}>✅ Recommended: {rec.name}</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12 }}>
                 {[['Brand', rec.brand], ['Visible Light', rec.vlt], ['Heat Rejection', rec.rejection], ['Warranty', rec.warranty], ['Cost', rec.cost]].map(([k, v]) => (
@@ -98,8 +98,8 @@ export default function DFWWindowFilmGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📊 Brand Comparison</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
-              <thead><tr>{['Film', 'Brand', 'Visible Light', 'Heat Rejection', 'Warranty', 'Cost/sqft'].map(h => <th key={h} style={{ color: '#F5E642', textAlign: 'left', padding: '8px 12px', borderBottom: '1px solid #334155' }}>{h}</th>)}</tr></thead>
-              <tbody>{films.map((f, i) => <tr key={i} style={{ borderBottom: '1px solid #1E293B' }}>{[f.name, f.brand, f.vlt, f.rejection, f.warranty, f.cost].map((v, j) => <td key={j} style={{ padding: '10px 12px', color: j === 0 ? '#E2E8F0' : '#94A3B8' }}>{v}</td>)}</tr>)}</tbody>
+              <thead><tr>{['Film', 'Brand', 'Visible Light', 'Heat Rejection', 'Warranty', 'Cost/sqft'].map(h => <th key={h} style={{ color: '#F5E642', textAlign: 'left', padding: '8px 12px', borderBottom: '1px solid #334155′ }}>{h}</th>)}</tr></thead>
+              <tbody>{films.map((f, i) => <tr key={i} style={{ borderBottom: '1px solid #1E293B' }}>{[f.name, f.brand, f.vlt, f.rejection, f.warranty, f.cost].map((v, j) => <td key={j} style={{ padding: '10px 12px', color: j === 0 ? '#E2E8F0′ : '#94A3B8' }}>{v}</td>)}</tr>)}</tbody>
             </table>
           </div>
         </div>

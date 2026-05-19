@@ -29,13 +29,13 @@ export default function DFWHVACPlenumGuide2026() {
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🌀</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW HVAC Plenum Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW HVAC Plenum Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>Supply and return plenum diagnostics for North Texas homes</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           {[{icon:'📤',label:'Supply Plenum',val:'Distributes',sub:'Conditioned air from air handler to ducts'},{icon:'📥',label:'Return Plenum',val:'Collects',sub:'Air from rooms back to air handler'},{icon:'⚠️',label:'Avg Leakage Rate',val:'20–30%',sub:'Typical unrepaired DFW home'},{icon:'🔧',label:'Repair Cost',val:'$300–$900',sub:'Mastic sealing by licensed HVAC tech'}].map((s,i) => (
-            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642' }}>
+            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: '2rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.5rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700 }}>{s.val}</div>

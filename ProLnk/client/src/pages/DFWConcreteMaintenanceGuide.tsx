@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const concreteTypes = ['Driveway', 'Patio', 'Sidewalk', 'Pool Deck', 'Garage Floor'];
-const conditionOptions = ['Good — no cracks', 'Minor cracks (hairline)', 'Moderate cracks (1/4"+)', 'Heaving or shifting', 'Spalling or pitting'];
+const conditionOptions = ['Good — no cracks', 'Minor cracks (hairline)', 'Moderate cracks (1/4″+)', 'Heaving or shifting', 'Spalling or pitting'];
 
 export default function DFWConcreteMaintenanceGuide() {
   const [concreteType, setConcreteType] = useState('');
@@ -55,7 +55,7 @@ export default function DFWConcreteMaintenanceGuide() {
             { icon: '🌊', title: 'Drainage = Foundation Protection', body: 'Water pooling against concrete accelerates clay movement and damages foundations. Extend downspouts 6+ feet from slabs. Grade soil away from concrete at 1 inch drop per foot for 6 feet. This alone prevents 70% of DFW slab cracking.' },
             { icon: '🛢️', title: 'Degreasing Oil Stains', body: 'DFW driveways accumulate motor oil rapidly. Apply commercial degreaser, scrub with stiff brush, rinse thoroughly before sealing. Sealing over oil traps moisture and causes sealer failure within months.' },
             { icon: '🔒', title: 'Sealing Frequency in DFW', body: 'Penetrating silane/siloxane sealers protect DFW concrete from UV and moisture. Reapply every 3–5 years (vs 5–7 in northern climates). UV breaks down polymer sealers faster in North Texas. Never seal wet concrete — wait 72 hrs after rain.' },
-            { icon: '⏰', title: 'Crack Repair Timing', body: 'Seal hairline cracks immediately with flexible polyurethane caulk — DFW weather cycles open them fast. Cracks wider than 1/4" often indicate soil movement requiring drainage correction before sealing. Ignore cracks and you\’ll replace the slab.' },
+            { icon: '⏰', title: 'Crack Repair Timing', body: 'Seal hairline cracks immediately with flexible polyurethane caulk — DFW weather cycles open them fast. Cracks wider than 1/4″ often indicate soil movement requiring drainage correction before sealing. Ignore cracks and you\’ll replace the slab.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#111F3A', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{card.icon}</div>
@@ -66,7 +66,7 @@ export default function DFWConcreteMaintenanceGuide() {
         </div>
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 16, padding: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Concrete Maintenance Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Concrete Maintenance Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'Concrete Type', value: concreteType, onChange: setConcreteType, options: concreteTypes, isSelect: true },
@@ -94,7 +94,7 @@ export default function DFWConcreteMaintenanceGuide() {
               {[{ label: '📋 Maintenance Plan', value: result.plan }, { label: '🔧 Repair vs Seal', value: result.decision }, { label: '💰 Cost Estimate', value: result.cost }].map(r => (
                 <div key={r.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
-                  <div style={{ fontSize: 14, color: '#E2E8F0' }}>{r.value}</div>
+                  <div style={{ fontSize: 14, color: '#E2E8F0′ }}>{r.value}</div>
                 </div>
               ))}
             </div>

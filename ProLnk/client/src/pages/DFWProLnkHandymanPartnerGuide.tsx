@@ -34,7 +34,7 @@ const businessTypes = [
 const stats = [
   { icon: '🔧', label: 'DFW Small Repair Market (Under $2K)', value: '$620M/yr' },
   { icon: '🏠', label: 'Avg Jobs Passed by Large Contractors', value: '68%' },
-  { icon: '📋', label: 'Move-In Punch List Avg Value', value: '$1,100' },
+  { icon: '📋', label: 'Move-In Punch List Avg Value', value: '$1,100′ },
   { icon: '🔄', label: 'Rental Units in DFW', value: '890,000+' },
 ];
 
@@ -63,7 +63,7 @@ export default function DFWProLnkHandymanPartnerGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Select Your Handyman Business Type</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Select Your Handyman Business Type</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {businessTypes.map((b, i) => (
             <div key={i} onClick={() => setSelected(i === selected ? null : i)}

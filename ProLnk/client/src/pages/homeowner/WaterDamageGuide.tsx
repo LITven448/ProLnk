@@ -82,19 +82,19 @@ const SOURCES: AccordionItem[] = [
 ];
 
 const CHECKLIST: CheckItem[] = [
-  { id: "1", label: "Inspect water heater annually (flush sediment, check anode rod)" },
-  { id: "2", label: "Check washing machine hoses every 3 years — replace if cracked" },
-  { id: "3", label: "Know your water shutoff location and test it annually" },
-  { id: "4", label: "Install water leak detectors under sinks and near water heater" },
-  { id: "5", label: "Clean AC condensate drain line each spring" },
-  { id: "6", label: "Inspect roof flashing around chimneys and skylights annually" },
-  { id: "7", label: "Check dishwasher and fridge water line connections annually" },
-  { id: "8", label: "Maintain proper grading — soil should slope away from foundation" },
+  { id: "1″, label: "Inspect water heater annually (flush sediment, check anode rod)" },
+  { id: "2″, label: "Check washing machine hoses every 3 years — replace if cracked" },
+  { id: "3″, label: "Know your water shutoff location and test it annually" },
+  { id: "4″, label: "Install water leak detectors under sinks and near water heater" },
+  { id: "5″, label: "Clean AC condensate drain line each spring" },
+  { id: "6″, label: "Inspect roof flashing around chimneys and skylights annually" },
+  { id: "7″, label: "Check dishwasher and fridge water line connections annually" },
+  { id: "8″, label: "Maintain proper grading — soil should slope away from foundation" },
 ];
 
 const PROS: Pro[] = [
-  { name: "Marcus W.", company: "Rapid Restoration DFW", rating: 4.9, responseTime: "< 45 min", phone: "(972) 555-0182" },
-  { name: "ServiceMaster", company: "ServiceMaster Restore Frisco", rating: 4.8, responseTime: "< 60 min", phone: "(972) 555-0241" },
+  { name: "Marcus W.", company: "Rapid Restoration DFW", rating: 4.9, responseTime: "< 45 min", phone: "(972) 555-0182″ },
+  { name: "ServiceMaster", company: "ServiceMaster Restore Frisco", rating: 4.8, responseTime: "< 60 min", phone: "(972) 555-0241″ },
 ];
 
 export default function WaterDamageGuide() {
@@ -139,11 +139,11 @@ export default function WaterDamageGuide() {
         <div style={{
           background: "linear-gradient(135deg, #7F1D1D, #991B1B)",
           borderRadius: 16, padding: "20px 24px", marginBottom: 20,
-          border: "1px solid #DC2626",
+          border: "1px solid #DC2626″,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-            <AlertTriangle size={22} color="#FCA5A5" />
-            <span style={{ fontSize: 18, fontWeight: 700, color: "#FEF2F2" }}>
+            <AlertTriangle size={22} color="#FCA5A5″ />
+            <span style={{ fontSize: 18, fontWeight: 700, color: "#FEF2F2″ }}>
               Active water damage? Do this NOW:
             </span>
           </div>
@@ -156,15 +156,15 @@ export default function WaterDamageGuide() {
           ].map((step, i) => (
             <div key={i} style={{
               display: "flex", alignItems: "flex-start", gap: 12,
-              padding: "8px 0",
+              padding: "8px 0″,
               borderBottom: i < 4 ? "1px solid rgba(255,255,255,0.1)" : "none",
             }}>
               <div style={{
                 minWidth: 26, height: 26, borderRadius: "50%",
-                background: "#DC2626", display: "flex", alignItems: "center",
+                background: "#DC2626″, display: "flex", alignItems: "center",
                 justifyContent: "center", fontSize: 13, fontWeight: 700, color: "#fff",
               }}>{i + 1}</div>
-              <span style={{ fontSize: 15, color: "#FEF2F2", lineHeight: 1.5 }}>{step}</span>
+              <span style={{ fontSize: 15, color: "#FEF2F2″, lineHeight: 1.5 }}>{step}</span>
             </div>
           ))}
         </div>
@@ -174,7 +174,7 @@ export default function WaterDamageGuide() {
           <CardContent style={{ padding: "16px 20px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
               <Clock size={18} color="#EA580C" />
-              <span style={{ fontWeight: 700, color: "#9A3412", fontSize: 15 }}>Time is money — literally</span>
+              <span style={{ fontWeight: 700, color: "#9A3412″, fontSize: 15 }}>Time is money — literally</span>
             </div>
             {[
               { label: "Water damage left for 24 hrs", impact: "Costs 3× more to remediate" },
@@ -183,13 +183,13 @@ export default function WaterDamageGuide() {
             ].map((row, i) => (
               <div key={i} style={{
                 display: "flex", justifyContent: "space-between", alignItems: "center",
-                padding: "8px 0",
+                padding: "8px 0″,
                 borderBottom: i < 2 ? "1px solid #FED7AA" : "none",
               }}>
-                <span style={{ fontSize: 14, color: "#7C2D12" }}>{row.label}</span>
+                <span style={{ fontSize: 14, color: "#7C2D12″ }}>{row.label}</span>
                 <span style={{
                   fontSize: 13, fontWeight: 600, color: "#EA580C",
-                  background: "#FFEDD5", padding: "2px 8px", borderRadius: 20,
+                  background: "#FFEDD5″, padding: "2px 8px", borderRadius: 20,
                 }}>{row.impact}</span>
               </div>
             ))}
@@ -213,9 +213,9 @@ export default function WaterDamageGuide() {
                 onClick={() => setKnowsShutoff(true)}
                 style={{
                   padding: "8px 20px", borderRadius: 8, border: "2px solid",
-                  borderColor: knowsShutoff === true ? "#16A34A" : "#E2E8F0",
-                  background: knowsShutoff === true ? "#DCFCE7" : "#F8FAFC",
-                  color: knowsShutoff === true ? "#15803D" : "#475569",
+                  borderColor: knowsShutoff === true ? "#16A34A" : "#E2E8F0″,
+                  background: knowsShutoff === true ? "#DCFCE7″ : "#F8FAFC",
+                  color: knowsShutoff === true ? "#15803D" : "#475569″,
                   fontWeight: 600, cursor: "pointer", fontSize: 14,
                   display: "flex", alignItems: "center", gap: 6,
                 }}
@@ -227,14 +227,14 @@ export default function WaterDamageGuide() {
                 onClick={() => setKnowsShutoff(false)}
                 style={{
                   padding: "8px 20px", borderRadius: 8, border: "2px solid",
-                  borderColor: knowsShutoff === false ? "#DC2626" : "#E2E8F0",
-                  background: knowsShutoff === false ? "#FEF2F2" : "#F8FAFC",
-                  color: knowsShutoff === false ? "#991B1B" : "#475569",
+                  borderColor: knowsShutoff === false ? "#DC2626″ : "#E2E8F0",
+                  background: knowsShutoff === false ? "#FEF2F2″ : "#F8FAFC",
+                  color: knowsShutoff === false ? "#991B1B" : "#475569″,
                   fontWeight: 600, cursor: "pointer", fontSize: 14,
                   display: "flex", alignItems: "center", gap: 6,
                 }}
               >
-                {knowsShutoff === false && <AlertTriangle size={15} color="#DC2626" />}
+                {knowsShutoff === false && <AlertTriangle size={15} color="#DC2626″ />}
                 Not sure
               </button>
             </div>
@@ -246,13 +246,13 @@ export default function WaterDamageGuide() {
                 <p style={{ fontWeight: 600, color: "#1E40AF", marginBottom: 8, fontSize: 14 }}>
                   Finding your shutoff in DFW homes:
                 </p>
-                <ul style={{ margin: 0, paddingLeft: 18, color: "#1D4ED8", fontSize: 13, lineHeight: 1.8 }}>
+                <ul style={{ margin: 0, paddingLeft: 18, color: "#1D4ED8″, fontSize: 13, lineHeight: 1.8 }}>
                   <li>Outside near the front of the house, usually in a ground-level box in the lawn</li>
                   <li>Inside utility closet, garage wall, or near the water heater</li>
                   <li>Under the kitchen sink (sub-shutoff, not main)</li>
                   <li>In the garage on the wall shared with the street side</li>
                 </ul>
-                <p style={{ fontSize: 13, color: "#3B82F6", marginTop: 8, marginBottom: 0 }}>
+                <p style={{ fontSize: 13, color: "#3B82F6″, marginTop: 8, marginBottom: 0 }}>
                   Tip: Tag it with a bright piece of tape and show every household member where it is.
                 </p>
               </div>
@@ -276,7 +276,7 @@ export default function WaterDamageGuide() {
             const open = expanded === src.id;
             return (
               <Card key={src.id} style={{
-                border: open ? "1px solid #3B82F6" : "1px solid #E2E8F0",
+                border: open ? "1px solid #3B82F6″ : "1px solid #E2E8F0",
                 overflow: "hidden",
               }}>
                 <button
@@ -296,23 +296,23 @@ export default function WaterDamageGuide() {
                 {open && (
                   <div style={{ padding: "0 20px 18px", borderTop: "1px solid #EFF6FF" }}>
                     <div style={{ marginBottom: 10 }}>
-                      <span style={{ fontSize: 12, fontWeight: 700, color: "#6366F1", textTransform: "uppercase", letterSpacing: 0.5 }}>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: "#6366F1″, textTransform: "uppercase", letterSpacing: 0.5 }}>
                         How to spot it
                       </span>
-                      <p style={{ fontSize: 14, color: "#334155", marginTop: 4, marginBottom: 0 }}>{src.spotIt}</p>
+                      <p style={{ fontSize: 14, color: "#334155″, marginTop: 4, marginBottom: 0 }}>{src.spotIt}</p>
                     </div>
                     <div style={{ marginBottom: 10 }}>
                       <span style={{ fontSize: 12, fontWeight: 700, color: "#16A34A", textTransform: "uppercase", letterSpacing: 0.5 }}>
                         Immediate action
                       </span>
-                      <p style={{ fontSize: 14, color: "#334155", marginTop: 4, marginBottom: 0 }}>{src.action}</p>
+                      <p style={{ fontSize: 14, color: "#334155″, marginTop: 4, marginBottom: 0 }}>{src.action}</p>
                     </div>
                     <div style={{
                       background: "#FFF7ED", border: "1px solid #FED7AA",
                       borderRadius: 8, padding: "8px 12px", display: "flex", gap: 6, alignItems: "flex-start",
                     }}>
                       <span style={{ fontSize: 12, fontWeight: 700, color: "#EA580C" }}>Typical cost:</span>
-                      <span style={{ fontSize: 12, color: "#7C2D12" }}>{src.cost}</span>
+                      <span style={{ fontSize: 12, color: "#7C2D12″ }}>{src.cost}</span>
                     </div>
                   </div>
                 )}
@@ -326,7 +326,7 @@ export default function WaterDamageGuide() {
           Prevention checklist
         </h2>
         <Card style={{ marginBottom: 24 }}>
-          <CardContent style={{ padding: "8px 0" }}>
+          <CardContent style={{ padding: "8px 0″ }}>
             {CHECKLIST.map((item, i) => {
               const done = checked.has(item.id);
               return (
@@ -336,14 +336,14 @@ export default function WaterDamageGuide() {
                   style={{
                     display: "flex", alignItems: "flex-start", gap: 12,
                     padding: "12px 20px", cursor: "pointer",
-                    borderBottom: i < CHECKLIST.length - 1 ? "1px solid #F1F5F9" : "none",
-                    background: done ? "#F0FDF4" : "transparent",
+                    borderBottom: i < CHECKLIST.length - 1 ? "1px solid #F1F5F9″ : "none",
+                    background: done ? "#F0FDF4″ : "transparent",
                     transition: "background 0.2s",
                   }}
                 >
                   <div style={{
                     minWidth: 22, height: 22, borderRadius: 6,
-                    border: done ? "none" : "2px solid #CBD5E1",
+                    border: done ? "none" : "2px solid #CBD5E1″,
                     background: done ? "#16A34A" : "transparent",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginTop: 1,
@@ -351,7 +351,7 @@ export default function WaterDamageGuide() {
                     {done && <CheckCircle size={14} color="#fff" />}
                   </div>
                   <span style={{
-                    fontSize: 14, color: done ? "#15803D" : "#334155",
+                    fontSize: 14, color: done ? "#15803D" : "#334155″,
                     textDecoration: done ? "line-through" : "none",
                     lineHeight: 1.5,
                   }}>{item.label}</span>
@@ -367,7 +367,7 @@ export default function WaterDamageGuide() {
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 24 }}>
           {PROS.map((pro) => (
-            <Card key={pro.company} style={{ border: "1px solid #E2E8F0" }}>
+            <Card key={pro.company} style={{ border: "1px solid #E2E8F0″ }}>
               <CardContent style={{ padding: "16px 20px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                   <div>
@@ -375,7 +375,7 @@ export default function WaterDamageGuide() {
                       <span style={{ fontWeight: 700, fontSize: 15, color: "#0F172A" }}>{pro.company}</span>
                       <span style={{
                         fontSize: 11, fontWeight: 700, color: "#16A34A",
-                        background: "#DCFCE7", padding: "2px 8px", borderRadius: 20,
+                        background: "#DCFCE7″, padding: "2px 8px", borderRadius: 20,
                       }}>Available now</span>
                     </div>
                     <div style={{ display: "flex", gap: 16, fontSize: 13, color: "#64748B" }}>
@@ -384,7 +384,7 @@ export default function WaterDamageGuide() {
                     </div>
                   </div>
                   <a href={`tel:${pro.phone}`}>
-                    <Button size="sm" style={{ background: "#DC2626", borderColor: "#DC2626", color: "#fff" }}>
+                    <Button size="sm" style={{ background: "#DC2626″, borderColor: "#DC2626", color: "#fff" }}>
                       <Phone size={14} style={{ marginRight: 6 }} />
                       Call Now
                     </Button>
@@ -401,10 +401,10 @@ export default function WaterDamageGuide() {
           borderRadius: 12, padding: "16px 20px",
           display: "flex", alignItems: "flex-start", gap: 12,
         }}>
-          <Camera size={20} color="#0284C7" style={{ minWidth: 20, marginTop: 2 }} />
+          <Camera size={20} color="#0284C7″ style={{ minWidth: 20, marginTop: 2 }} />
           <div>
-            <p style={{ fontWeight: 700, color: "#075985", fontSize: 15, marginBottom: 4 }}>Insurance tip</p>
-            <p style={{ fontSize: 14, color: "#0369A1", margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontWeight: 700, color: "#075985″, fontSize: 15, marginBottom: 4 }}>Insurance tip</p>
+            <p style={{ fontSize: 14, color: "#0369A1″, margin: 0, lineHeight: 1.6 }}>
               Most homeowner policies cover sudden and accidental water damage.
               Document everything — photos, video, timestamps — <strong>before cleanup begins</strong>.
               Call your insurance agent within 24 hours of discovery.

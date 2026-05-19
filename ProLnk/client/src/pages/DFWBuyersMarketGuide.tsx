@@ -66,7 +66,7 @@ export default function DFWBuyersMarketGuide() {
           DFW Buyer's Market Guide
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 32, lineHeight: 1.6 }}>
-          A true buyer's market in DFW — over 6 months of inventory — is rare in growth corridors but does appear in specific submarkets. Here's how to recognize it and win when you find it.
+          A true buyer's market in DFW — over 6 months of inventory — is rare in growth corridors but does appear in specific submarkets. Here’s how to recognize it and win when you find it.
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
@@ -82,7 +82,7 @@ export default function DFWBuyersMarketGuide() {
                 <div style={{ fontSize: 22, marginBottom: 8 }}>{icon}</div>
                 <div style={{ fontSize: 12, color: '#64748B', marginBottom: 4 }}>{label}</div>
                 <div style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 4 }}>{value}</div>
-                <div style={{ fontSize: 12, color: '#94A3B8' }}>{note}</div>
+                <div style={{ fontSize: 12, color: '#94A3B8′ }}>{note}</div>
               </div>
             ))}
           </div>
@@ -111,7 +111,7 @@ export default function DFWBuyersMarketGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
               {isRarelyBuyerMarket && (
-                <div style={{ background: '#1E3A5F', borderRadius: 8, padding: 12, marginBottom: 16, fontSize: 13, color: '#F5E642' }}>
+                <div style={{ background: '#1E3A5F', borderRadius: 8, padding: 12, marginBottom: 16, fontSize: 13, color: '#F5E642′ }}>
                   ⚠️ This is not a buyer's market — adapt your approach accordingly.
                 </div>
               )}
@@ -122,8 +122,8 @@ export default function DFWBuyersMarketGuide() {
                   <li key={c} style={{ fontSize: 14, color: '#94A3B8', marginBottom: 6 }}>{c}</li>
                 ))}
               </ul>
-              <div style={{ marginTop: 16, padding: 12, background: '#0F2040', borderRadius: 8, fontSize: 13, color: '#94A3B8' }}>
-                🔍 <strong style={{ color: '#E8EDF5' }}>Inspection Leverage:</strong> {result.leverage}
+              <div style={{ marginTop: 16, padding: 12, background: '#0F2040', borderRadius: 8, fontSize: 13, color: '#94A3B8′ }}>
+                🔍 <strong style={{ color: '#E8EDF5′ }}>Inspection Leverage:</strong> {result.leverage}
               </div>
             </div>
           )}
@@ -133,8 +133,8 @@ export default function DFWBuyersMarketGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📍 Where Buyer's Markets Appear in DFW</h2>
           <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.7 }}>
             DFW metro-wide is almost never a true buyer's market. However, pockets emerge: <strong style={{ color: '#E8EDF5' }}>Denton County exurbs</strong> during rate spikes,
-            <strong style={{ color: '#E8EDF5' }}> Kaufman County</strong> and far-eastern suburbs when builders flood with new inventory, and
-            <strong style={{ color: '#E8EDF5' }}> some master-planned communities</strong> in Celina and Prosper during oversupply phases (2023-2024 was an example).
+            <strong style={{ color: '#E8EDF5′ }}> Kaufman County</strong> and far-eastern suburbs when builders flood with new inventory, and
+            <strong style={{ color: '#E8EDF5′ }}> some master-planned communities</strong> in Celina and Prosper during oversupply phases (2023-2024 was an example).
             Watch months-of-supply at the zip code level — not just metro averages — to find your true leverage moment.
           </p>
         </div>

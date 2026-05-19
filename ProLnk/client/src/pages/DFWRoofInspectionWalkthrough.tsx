@@ -47,7 +47,7 @@ export default function DFWRoofInspectionWalkthrough() {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔍 What a Proper DFW Inspection Covers</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔍 What a Proper DFW Inspection Covers</h2>
           <div style={{ display: 'grid', gap: '0.6rem' }}>
             {inspectionItems.map((item, i) => (
               <div key={i} style={{ background: '#1e293b', borderRadius: 8, padding: '0.9rem 1.1rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -59,7 +59,7 @@ export default function DFWRoofInspectionWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Your Inspection Urgency</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Your Inspection Urgency</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Roof age (years)</label>
@@ -76,7 +76,7 @@ export default function DFWRoofInspectionWalkthrough() {
           </label>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', fontSize: '0.95rem' }}>Get My Inspection Plan →</button>
           {showResult && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}><strong>Urgency:</strong> {urgency}</div>
               <div style={{ marginBottom: '0.5rem' }}><strong>Inspection type:</strong> {inspectionType}</div>
               <div style={{ marginBottom: '0.5rem' }}><strong>Access method:</strong> {method}</div>
@@ -86,8 +86,8 @@ export default function DFWRoofInspectionWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📋 What to Require in the Report</h2>
-          {reportItems.map((item, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #F5E642' }}>{item}</div>)}
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📋 What to Require in the Report</h2>
+          {reportItems.map((item, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #F5E642′ }}>{item}</div>)}
         </div>
       </div>
     </div>

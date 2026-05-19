@@ -47,7 +47,7 @@ export default function DFWHVACInsuranceCover2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {damageTypes.map(d => (
               <button key={d.id} onClick={() => { setDamageType(d.id); setResult(null); }}
-                style={{ background: damageType === d.id ? '#F5E642' : '#1A2F4A', color: damageType === d.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: damageType === d.id ? '#F5E642′ : '#1A2F4A', color: damageType === d.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
                 {d.label}
               </button>
             ))}
@@ -59,7 +59,7 @@ export default function DFWHVACInsuranceCover2026() {
         </div>
 
         {result && (
-          <div style={{ background: isCovered ? '#0A2010' : '#2D0A0A', borderRadius: 12, padding: 28, marginBottom: 28, borderLeft: `4px solid ${isCovered ? '#22C55E' : '#FF4444'}` }}>
+          <div style={{ background: isCovered ? '#0A2010′ : '#2D0A0A', borderRadius: 12, padding: 28, marginBottom: 28, borderLeft: `4px solid ${isCovered ? '#22C55E' : '#FF4444'}` }}>
             <h3 style={{ color: isCovered ? '#22C55E' : '#FF6B6B', marginBottom: 12 }}>{result.covered}</h3>
             <p style={{ lineHeight: 1.7, fontSize: 15 }}>{result.detail}</p>
           </div>

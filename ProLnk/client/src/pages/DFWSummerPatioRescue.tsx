@@ -31,8 +31,8 @@ export default function DFWSummerPatioRescue() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🌡️</div>
           <h1 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#F5E642', margin: '0 0 12px' }}>DFW Summer Patio Rescue</h1>
@@ -48,7 +48,7 @@ export default function DFWSummerPatioRescue() {
                 <div style={{ fontSize: '28px', marginBottom: '10px' }}>{s.icon}</div>
                 <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '4px' }}>{s.fix}</div>
                 <div style={{ fontSize: '0.78rem', color: '#64748b', marginBottom: '8px' }}>Solves: {s.problem}</div>
-                <div style={{ fontSize: '0.83rem', color: '#94a3b8' }}>{s.detail}</div>
+                <div style={{ fontSize: '0.83rem', color: '#94a3b8′ }}>{s.detail}</div>
               </div>
             ))}
           </div>
@@ -62,7 +62,7 @@ export default function DFWSummerPatioRescue() {
             </div>
           ))}
         </div>
-        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '24px' }}>🔧 Get Your Patio Rescue Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
@@ -82,11 +82,11 @@ export default function DFWSummerPatioRescue() {
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '10px', padding: '12px 28px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Get My Patio Rescue Plan</button>
           {plan && (
-            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642' }}>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🎯 Priority upgrade: </span><span style={{ color: '#94a3b8' }}>{plan.priority}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>💰 Estimated cost: </span><span style={{ color: '#94a3b8' }}>{plan.cost}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🪨 Surface tip: </span><span style={{ color: '#94a3b8' }}>{plan.tip}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: '600' }}>💡 Lighting: </span><span style={{ color: '#94a3b8' }}>{plan.lighting}</span></div>
+            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642′ }}>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🎯 Priority upgrade: </span><span style={{ color: '#94a3b8' }}>{plan.priority}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>💰 Estimated cost: </span><span style={{ color: '#94a3b8' }}>{plan.cost}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🪨 Surface tip: </span><span style={{ color: '#94a3b8' }}>{plan.tip}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: '600′ }}>💡 Lighting: </span><span style={{ color: '#94a3b8' }}>{plan.lighting}</span></div>
             </div>
           )}
         </div>

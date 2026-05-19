@@ -28,7 +28,7 @@ export default function DFWPoolServiceProGuide2026() {
             { icon: '🪪', label: 'TX License (CPO)', value: 'Required' },
             { icon: '🌊', label: 'DFW Pools', value: '650K+' },
             { icon: '💧', label: 'Weekly Service', value: '$150/mo' },
-            { icon: '🔧', label: 'Equipment Repair', value: '$400–900' },
+            { icon: '🔧', label: 'Equipment Repair', value: '$400–900′ },
           ].map((s) => (
             <div key={s.label} style={{ backgroundColor: '#0f1f3d', borderRadius: 12, padding: '18px 20px' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
@@ -50,7 +50,7 @@ export default function DFWPoolServiceProGuide2026() {
                 <span style={{ color: '#94a3b8', fontSize: 13 }}>{item.label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{item.value} {item.unit}</span>
               </div>
-              <input type="range" min={item.min} max={item.max} value={item.value} onChange={(e) => item.setter(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={item.min} max={item.max} value={item.value} onChange={(e) => item.setter(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           ))}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }}>

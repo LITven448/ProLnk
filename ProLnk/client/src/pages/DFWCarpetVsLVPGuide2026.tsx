@@ -50,7 +50,7 @@ export default function DFWCarpetVsLVPGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
             {rooms.map((r, i) => (
               <button key={i} onClick={() => setRoom(r.label)}
-                style={{ backgroundColor: room === r.label ? '#F5E642' : '#0f2040', color: room === r.label ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: room === r.label ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '14px 10px', cursor: 'pointer', textAlign: 'center', transition: 'all 0.2s' }}>
+                style={{ backgroundColor: room === r.label ? '#F5E642′ : '#0f2040', color: room === r.label ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: room === r.label ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '14px 10px', cursor: ’pointer', textAlign: 'center', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: '22px', marginBottom: '4px' }}>{r.icon}</div>
                 <div style={{ fontWeight: '600', fontSize: '12px' }}>{r.label}</div>
               </button>
@@ -63,7 +63,7 @@ export default function DFWCarpetVsLVPGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
             {lifestyles.map((l, i) => (
               <button key={i} onClick={() => setLifestyle(l.label)}
-                style={{ backgroundColor: lifestyle === l.label ? '#F5E642' : '#0f2040', color: lifestyle === l.label ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: lifestyle === l.label ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '14px 10px', cursor: 'pointer', textAlign: 'center', transition: 'all 0.2s' }}>
+                style={{ backgroundColor: lifestyle === l.label ? '#F5E642′ : '#0f2040', color: lifestyle === l.label ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: lifestyle === l.label ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '14px 10px', cursor: ’pointer', textAlign: 'center', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: '22px', marginBottom: '4px' }}>{l.icon}</div>
                 <div style={{ fontWeight: '600', fontSize: '12px' }}>{l.label}</div>
               </button>

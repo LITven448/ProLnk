@@ -85,8 +85,8 @@ export default function DFWRooferGrandPrairie() {
                 onClick={() => setLevel(lvl)}
                 style={{
                   padding: '20px 12px',
-                  backgroundColor: level === lvl ? '#F5E642' : '#0A1628',
-                  color: level === lvl ? '#0A1628' : '#fff',
+                  backgroundColor: level === lvl ? '#F5E642′ : '#0A1628',
+                  color: level === lvl ? '#0A1628′ : '#fff',
                   border: `2px solid ${level === lvl ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: 12,
                   cursor: 'pointer',
@@ -106,7 +106,7 @@ export default function DFWRooferGrandPrairie() {
             <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ color: '#a0aec0', fontSize: 13, marginBottom: 4 }}>DAMAGE DESCRIPTION</div>
-                <div style={{ color: '#e2e8f0' }}>{data.description}</div>
+                <div style={{ color: '#e2e8f0′ }}>{data.description}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
                 <div style={{ backgroundColor: '#111f35', borderRadius: 8, padding: 16 }}>
@@ -120,7 +120,7 @@ export default function DFWRooferGrandPrairie() {
               </div>
               <div style={{ backgroundColor: '#1a2f1a', border: '1px solid #2d5a2d', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontWeight: 700, marginBottom: 8, color: '#86efac' }}>{data.verdictIcon} Our Recommendation: {data.recommendation}</div>
-                <div style={{ color: '#a0aec0' }}>{data.verdict}</div>
+                <div style={{ color: '#a0aec0′ }}>{data.verdict}</div>
               </div>
             </div>
           )}

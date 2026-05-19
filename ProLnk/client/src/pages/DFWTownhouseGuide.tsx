@@ -62,17 +62,17 @@ export default function DFWTownhouseGuide() {
             <thead>
               <tr style={{ background: '#f8fafc' }}>
                 {['Feature', 'Townhome 🏘️', 'Apartment 🏢', 'Single-Family 🏡'].map(h => (
-                  <th key={h} style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>{h}</th>
+                  <th key={h} style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0′ }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {comparisons.map(r => (
-                <tr key={r.feature} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                <tr key={r.feature} style={{ borderBottom: '1px solid #f1f5f9′ }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.feature}</td>
                   <td style={{ padding: '10px 12px', color: '#16a34a' }}>{r.townhome}</td>
-                  <td style={{ padding: '10px 12px', color: '#475569' }}>{r.apartment}</td>
-                  <td style={{ padding: '10px 12px', color: '#475569' }}>{r.sfHome}</td>
+                  <td style={{ padding: '10px 12px', color: '#475569′ }}>{r.apartment}</td>
+                  <td style={{ padding: '10px 12px', color: '#475569′ }}>{r.sfHome}</td>
                 </tr>
               ))}
             </tbody>
@@ -89,7 +89,7 @@ export default function DFWTownhouseGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, margin: '0 0 16px' }}>🧭 Townhome Feasibility Check</h2>
           <div style={{ marginBottom: 12 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>Your top priority</label>
@@ -104,7 +104,7 @@ export default function DFWTownhouseGuide() {
           </div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>Your budget</label>
-            <input type="text" placeholder="e.g. $380,000" value={budget} onChange={e => setBudget(e.target.value)}
+            <input type="text" placeholder="e.g. $380,000″ value={budget} onChange={e => setBudget(e.target.value)}
               style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 14, boxSizing: 'border-box' }} />
           </div>
           <button onClick={assess}

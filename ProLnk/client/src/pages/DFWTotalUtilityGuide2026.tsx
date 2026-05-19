@@ -29,7 +29,7 @@ export default function DFWTotalUtilityGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Total Utility Cost Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Total Utility Cost Guide 2026</h1>
           <p style={{ color: '#94A3B8', fontSize: '1.1rem' }}>What DFW homeowners pay total — avg $442/mo across all utilities</p>
         </div>
 
@@ -53,11 +53,11 @@ export default function DFWTotalUtilityGuide2026() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
                 <input type="checkbox" checked={hasPool} onChange={e => setHasPool(e.target.checked)} style={{ width: 16, height: 16 }} />
-                <span style={{ color: '#94A3B8' }}>Has Pool (+$40/mo water)</span>
+                <span style={{ color: '#94A3B8′ }}>Has Pool (+$40/mo water)</span>
               </label>
               <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
                 <input type="checkbox" checked={hasEV} onChange={e => setHasEV(e.target.checked)} style={{ width: 16, height: 16 }} />
-                <span style={{ color: '#94A3B8' }}>Has EV (+$45/mo electric)</span>
+                <span style={{ color: '#94A3B8′ }}>Has EV (+$45/mo electric)</span>
               </label>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function DFWTotalUtilityGuide2026() {
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', padding: '1.5rem', backgroundColor: '#1E2D45', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: '1.5rem', backgroundColor: '#1E2D45', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: '1.5rem' }}>🏠</div>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Reduce Your Utilities — Get Free Quotes</div>
           <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>ProLnk connects you with DFW pros for HVAC, plumbing, insulation, and more</div>

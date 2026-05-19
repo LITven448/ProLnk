@@ -16,7 +16,7 @@ export default function DFWNestVsEcobeeGuide2026() {
   }
 
   const btnStyle = (active: boolean) => ({
-    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642' : '2px solid #1e3a5f',
+    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642′ : '2px solid #1e3a5f',
     backgroundColor: active ? '#1a2f4e' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '.9rem'
   });
 
@@ -25,12 +25,12 @@ export default function DFWNestVsEcobeeGuide2026() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🌡️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0' }}>Nest vs Ecobee for DFW 2026</h1>
-          <p style={{ color: '#94a3b8' }}>The two best smart thermostats — which is right for your DFW home?</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0′ }}>Nest vs Ecobee for DFW 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>The two best smart thermostats — which is right for your DFW home?</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #4285F4' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #4285F4′ }}>
             <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>🔵 Google Nest</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.8', paddingLeft: '1.2rem' }}>
               <li>Sleek, minimal design</li>
@@ -40,7 +40,7 @@ export default function DFWNestVsEcobeeGuide2026() {
               <li>Works with most DFW HVAC systems</li>
             </ul>
           </div>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #00BFA5' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #00BFA5′ }}>
             <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>🟢 Ecobee SmartThermostat</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.8', paddingLeft: '1.2rem' }}>
               <li>Room SmartSensors included</li>
@@ -72,12 +72,12 @@ export default function DFWNestVsEcobeeGuide2026() {
           <button onClick={recommend} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '.75rem 2rem', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
             Find My Thermostat →
           </button>
-          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642′ }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '.5rem' }}>⚡ DFW ERCOT Tip</h3>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>Oncor and TXU offer rebates up to $100 for Ecobee installation. Ecobee participates in ERCOT demand response — your thermostat pre-cools your DFW home before peak hours, saving money without sacrificing comfort during Texas summers.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.7′ }}>Oncor and TXU offer rebates up to $100 for Ecobee installation. Ecobee participates in ERCOT demand response — your thermostat pre-cools your DFW home before peak hours, saving money without sacrificing comfort during Texas summers.</p>
         </div>
       </div>
     </div>

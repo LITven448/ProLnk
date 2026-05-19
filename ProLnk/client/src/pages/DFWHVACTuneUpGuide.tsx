@@ -61,8 +61,8 @@ export default function DFWHVACTuneUpGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {(['spring', 'fall'] as const).map(s => (
-            <div key={s} onClick={() => setSeason(s)} style={{ background: season === s ? '#F5E64220' : '#1e293b', border: `1px solid ${season === s ? '#F5E642' : '#334155'}`, borderRadius: 10, padding: '1rem', cursor: 'pointer' }}>
-              <div style={{ fontWeight: 700, color: season === s ? '#F5E642' : '#94a3b8', marginBottom: '0.75rem', textTransform: 'capitalize' }}>{s === 'spring' ? '🌸 Spring (AC Prep)' : '🍂 Fall (Heat Prep)'}</div>
+            <div key={s} onClick={() => setSeason(s)} style={{ background: season === s ? '#F5E64220′ : '#1e293b', border: `1px solid ${season === s ? '#F5E642' : '#334155'}`, borderRadius: 10, padding: '1rem', cursor: ’pointer' }}>
+              <div style={{ fontWeight: 700, color: season === s ? '#F5E642′ : '#94a3b8', marginBottom: '0.75rem', textTransform: ’capitalize' }}>{s === 'spring' ? '🌸 Spring (AC Prep)' : '🍂 Fall (Heat Prep)'}</div>
               {checks[s].slice(0, 4).map((c, i) => <div key={i} style={{ fontSize: '0.8rem', color: '#cbd5e1', marginBottom: '0.3rem' }}>{c}</div>)}
               <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.5rem' }}>+{checks[s].length - 4} more checks</div>
             </div>
@@ -70,7 +70,7 @@ export default function DFWHVACTuneUpGuide() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Your Tune-Up Schedule</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Your Tune-Up Schedule</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Number of HVAC units</label>
@@ -83,18 +83,18 @@ export default function DFWHVACTuneUpGuide() {
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', fontSize: '0.95rem' }}>Get My Schedule →</button>
           {showResult && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}><strong>Urgency:</strong> {urgency}</div>
               <div style={{ marginBottom: '0.5rem' }}><strong>Frequency:</strong> {frequency}</div>
               <div style={{ marginBottom: '0.5rem' }}><strong>DFW market cost:</strong> ${costLow}–${costHigh} per visit ({unitCount} unit{unitCount > 1 ? 's' : ''})</div>
-              <div><strong>Next step:</strong> {season === 'spring' ? 'Book spring AC tune-up before April 15' : 'Book fall heat tune-up before November 1'}</div>
+              <div><strong>Next step:</strong> {season === 'spring' ? 'Book spring AC tune-up before April 15′ : ’Book fall heat tune-up before November 1'}</div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🚩 When to Say No to the Upsell</h2>
-          {upsellWarnings.map((w, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #ef4444' }}>{w}</div>)}
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🚩 When to Say No to the Upsell</h2>
+          {upsellWarnings.map((w, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #ef4444′ }}>{w}</div>)}
         </div>
       </div>
     </div>

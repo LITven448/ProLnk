@@ -34,7 +34,7 @@ export default function DFWIBuyerGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>⚡</div>
-          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW iBuyer Guide 2026</h1>
+          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW iBuyer Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Opendoor, Offerpad, and cash buyers — when it makes sense and when it doesn't</p>
         </div>
 
@@ -60,7 +60,7 @@ export default function DFWIBuyerGuide2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Your Situation</div>
               <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                 {['relocation', 'estate', 'divorce', 'upgrade', 'distressed'].map((s) => (
-                  <button key={s} onClick={() => setSituation(s)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.78rem', background: situation === s ? '#F5E642' : '#1e3a5f', color: situation === s ? '#0A1628' : '#fff' }}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
+                  <button key={s} onClick={() => setSituation(s)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.78rem', background: situation === s ? '#F5E642′ : '#1e3a5f', color: situation === s ? '#0A1628' : '#fff' }}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
                 ))}
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function DFWIBuyerGuide2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Timeline</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 {[{ key: 'fast', label: 'Need Speed' }, { key: 'flexible', label: 'Flexible' }].map((t) => (
-                  <button key={t.key} onClick={() => setTimeline(t.key)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: timeline === t.key ? '#F5E642' : '#1e3a5f', color: timeline === t.key ? '#0A1628' : '#fff' }}>{t.label}</button>
+                  <button key={t.key} onClick={() => setTimeline(t.key)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: timeline === t.key ? '#F5E642′ : '#1e3a5f', color: timeline === t.key ? '#0A1628' : '#fff' }}>{t.label}</button>
                 ))}
               </div>
             </div>

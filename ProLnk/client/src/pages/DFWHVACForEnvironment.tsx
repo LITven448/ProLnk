@@ -94,7 +94,7 @@ export default function DFWHVACForEnvironment() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 12px' }}>♻️ DFW Climate = Heat Pump Advantage</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
             Heat pumps are 3x more efficient than gas furnaces because they move heat rather than create it. DFW's mild winters make heat pumps exceptionally effective here — your backup heat strips rarely engage. <strong style={{ color: '#F5E642' }}>Heat pump + solar panels = near-zero carbon HVAC.</strong>

@@ -50,7 +50,7 @@ export default function DFWHVACMaintScheduleNew2026() {
           {ages.map((a, i) => (
             <button key={i} onClick={() => setSelected(i)}
               style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: selected === i ? '#F5E642' : '#1e2d45', color: selected === i ? '#0A1628' : '#94a3b8' }}>
+                background: selected === i ? '#F5E642′ : '#1e2d45', color: selected === i ? '#0A1628' : '#94a3b8' }}>
               {a}
             </button>
           ))}
@@ -58,7 +58,7 @@ export default function DFWHVACMaintScheduleNew2026() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           {tasks.map((t, i) => (
-            <div key={i} style={{ background: '#1e2d45', borderRadius: 12, padding: '18px 20px', borderLeft: '4px solid #F5E642' }}>
+            <div key={i} style={{ background: '#1e2d45', borderRadius: 12, padding: '18px 20px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4 }}>{t.task}</div>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>⏱ {t.freq}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>💡 {t.note}</div>

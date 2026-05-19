@@ -30,7 +30,7 @@ export default function DFWProLnkMayNumbers2026() {
             { val: '130+', label: 'Database tables' },
           ].map(m => (
             <div key={m.val} style={{ background: '#112240', borderRadius: 10, padding: 18, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{m.val}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{m.val}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>{m.label}</div>
             </div>
           ))}
@@ -43,8 +43,8 @@ export default function DFWProLnkMayNumbers2026() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642' : '#112240',
-                color: selected === s.id ? '#0A1628' : '#fff',
+                background: selected === s.id ? '#F5E642′ : '#112240',
+                color: selected === s.id ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 600,
               }}
@@ -55,7 +55,7 @@ export default function DFWProLnkMayNumbers2026() {
         </div>
 
         {match && (
-          <div style={{ background: '#112240', borderRadius: 10, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 10, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>Key May 2026 Numbers for You</h3>
             <ul style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 2.2, paddingLeft: 20 }}>
               {match.metrics.map((m, i) => <li key={i}>{m}</li>)}

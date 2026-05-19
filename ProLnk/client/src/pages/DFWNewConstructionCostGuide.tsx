@@ -55,7 +55,7 @@ export default function DFWNewConstructionCostGuide() {
         </div>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>&#x1F4D0; Estimate Your Build</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>&#x1F4D0; Estimate Your Build</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 16 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>Square Footage</label>
@@ -93,7 +93,7 @@ export default function DFWNewConstructionCostGuide() {
         </div>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 28, border: '1px solid #1e3a5f' }}>
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>&#x26A0;&#xFE0F; Hidden Cost Breakdown</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>&#x26A0;&#xFE0F; Hidden Cost Breakdown</h3>
           {[
             { label: 'Impact Fees', val: fmt(loc.impactFee), note: 'City/county development charges' },
             { label: 'Utility Connections', val: fmt(loc.utilityExtra), note: 'Higher cost in outer DFW counties' },

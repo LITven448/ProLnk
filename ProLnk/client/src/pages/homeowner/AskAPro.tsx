@@ -197,22 +197,22 @@ export default function AskAPro() {
 
   return (
     <HomeownerLayout>
-      <div className="min-h-screen bg-[#0A1628] px-4 py-8">
-        <div className="max-w-4xl mx-auto space-y-8">
+      <div className="min-h-screen bg-[#0A1628] px-4 py-8″>
+        <div className="max-w-4xl mx-auto space-y-8″>
 
           {/* Header */}
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <MessageCircleQuestion className="h-6 w-6 text-teal-400" />
+            <div className="flex items-center gap-2 mb-1″>
+              <MessageCircleQuestion className="h-6 w-6 text-teal-400″ />
               <h1 className="text-2xl font-bold text-white">Ask a Pro</h1>
             </div>
-            <p className="text-slate-400">Get expert answers from vetted local pros — free</p>
+            <p className="text-slate-400″>Get expert answers from vetted local pros — free</p>
           </div>
 
           {/* Category selector */}
           <div>
-            <p className="text-xs uppercase tracking-wider text-slate-400 mb-3">Select a trade category</p>
-            <div className="flex flex-wrap gap-2">
+            <p className="text-xs uppercase tracking-wider text-slate-400 mb-3″>Select a trade category</p>
+            <div className="flex flex-wrap gap-2″>
               {TRADES.map((trade) => {
                 const Icon = TRADE_ICONS[trade];
                 const active = selectedTrade === trade;
@@ -222,11 +222,11 @@ export default function AskAPro() {
                     onClick={() => { setSelectedTrade(trade); setSubmitted(false); }}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${
                       active
-                        ? "bg-teal-500/20 border-teal-400 text-teal-300"
-                        : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-300"
+                        ? "bg-teal-500/20 border-teal-400 text-teal-300″
+                        : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-300″
                     }`}
                   >
-                    <Icon className="h-3.5 w-3.5" />
+                    <Icon className="h-3.5 w-3.5″ />
                     {trade}
                   </button>
                 );
@@ -236,14 +236,14 @@ export default function AskAPro() {
 
           {/* Sample questions */}
           {selectedTrade && !submitted && (
-            <div className="bg-slate-800/40 border border-slate-700 rounded-xl p-4">
-              <p className="text-xs uppercase tracking-wider text-slate-500 mb-3">Common questions for {selectedTrade}</p>
-              <div className="flex flex-col gap-2">
+            <div className="bg-slate-800/40 border border-slate-700 rounded-xl p-4″>
+              <p className="text-xs uppercase tracking-wider text-slate-500 mb-3″>Common questions for {selectedTrade}</p>
+              <div className="flex flex-col gap-2″>
                 {SAMPLE_QUESTIONS[selectedTrade].map((q, i) => (
                   <button
                     key={i}
                     onClick={() => setQuestion(q)}
-                    className="text-left text-sm text-slate-300 hover:text-teal-300 transition-colors px-2 py-1 rounded hover:bg-slate-700/50"
+                    className="text-left text-sm text-slate-300 hover:text-teal-300 transition-colors px-2 py-1 rounded hover:bg-slate-700/50″
                   >
                     → {q}
                   </button>
@@ -254,11 +254,11 @@ export default function AskAPro() {
 
           {/* Question input */}
           {!submitted ? (
-            <Card className="bg-slate-800/60 border-slate-700">
-              <CardHeader className="pb-3">
+            <Card className="bg-slate-800/60 border-slate-700″>
+              <CardHeader className="pb-3″>
                 <CardTitle className="text-white text-base">Your Question</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4″>
                 <div>
                   <Textarea
                     rows={4}
@@ -272,13 +272,13 @@ export default function AskAPro() {
                 </div>
 
                 {/* Photo attachment */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3″>
                   <button
                     type="button"
                     onClick={() => fileRef.current?.click()}
                     className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-teal-400 transition-colors"
                   >
-                    <Paperclip className="h-4 w-4" />
+                    <Paperclip className="h-4 w-4″ />
                     Attach a photo (optional)
                   </button>
                   <input ref={fileRef} type="file" accept="image/*" className="hidden" />
@@ -294,7 +294,7 @@ export default function AskAPro() {
                       className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform ${publicPost ? "translate-x-5" : "translate-x-0.5"}`}
                     />
                   </div>
-                  <span className="text-sm text-slate-400">
+                  <span className="text-sm text-slate-400″>
                     Share my question with the community to get multiple answers
                   </span>
                 </label>
@@ -307,19 +307,19 @@ export default function AskAPro() {
                   {loading ? (
                     <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Sending…</>
                   ) : (
-                    <><Send className="h-4 w-4 mr-2" /> Ask a Pro</>
+                    <><Send className="h-4 w-4 mr-2″ /> Ask a Pro</>
                   )}
                 </Button>
               </CardContent>
             </Card>
           ) : (
-            <Card className="bg-slate-800/60 border-teal-700/50">
+            <Card className="bg-slate-800/60 border-teal-700/50″>
               <CardContent className="pt-8 pb-8 text-center">
-                <div className="w-14 h-14 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheck className="h-7 w-7 text-teal-400" />
+                <div className="w-14 h-14 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4″>
+                  <ShieldCheck className="h-7 w-7 text-teal-400″ />
                 </div>
-                <h2 className="text-white text-xl font-semibold mb-2">Answer coming soon</h2>
-                <p className="text-slate-400 text-sm max-w-sm mx-auto mb-6">
+                <h2 className="text-white text-xl font-semibold mb-2″>Answer coming soon</h2>
+                <p className="text-slate-400 text-sm max-w-sm mx-auto mb-6″>
                   We'll email you within 24 hours when a vetted pro responds. Your question{" "}
                   {publicPost ? "has been posted to the community" : "is private and only visible to pros"}.
                 </p>
@@ -336,45 +336,45 @@ export default function AskAPro() {
 
           {/* Answer feed */}
           <div>
-            <h2 className="text-white font-semibold text-lg mb-4">Recent Pro Answers</h2>
-            <div className="space-y-4">
+            <h2 className="text-white font-semibold text-lg mb-4″>Recent Pro Answers</h2>
+            <div className="space-y-4″>
               {MOCK_ANSWERS.map((a) => {
                 const Icon = TRADE_ICONS[a.proTrade];
                 return (
-                  <Card key={a.id} className="bg-slate-800/60 border-slate-700">
-                    <CardContent className="pt-5 pb-5 space-y-3">
+                  <Card key={a.id} className="bg-slate-800/60 border-slate-700″>
+                    <CardContent className="pt-5 pb-5 space-y-3″>
                       {/* Pro info */}
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-sm flex-shrink-0">
+                      <div className="flex items-start justify-between gap-3″>
+                        <div className="flex items-center gap-3″>
+                          <div className="w-9 h-9 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-sm flex-shrink-0″>
                             {a.proName[0]}
                           </div>
                           <div>
-                            <div className="flex items-center gap-1.5">
+                            <div className="flex items-center gap-1.5″>
                               <span className="text-white font-medium text-sm">{a.proName}</span>
                               {a.verified && (
-                                <Badge className="bg-teal-500/20 text-teal-400 border-0 text-xs px-1.5 py-0">
-                                  <ShieldCheck className="h-2.5 w-2.5 mr-0.5" />Verified
+                                <Badge className="bg-teal-500/20 text-teal-400 border-0 text-xs px-1.5 py-0″>
+                                  <ShieldCheck className="h-2.5 w-2.5 mr-0.5″ />Verified
                                 </Badge>
                               )}
                             </div>
-                            <div className="flex items-center gap-1 text-xs text-slate-500">
-                              <Icon className="h-3 w-3" />
+                            <div className="flex items-center gap-1 text-xs text-slate-500″>
+                              <Icon className="h-3 w-3″ />
                               <span>{a.proTrade}</span>
-                              <span className="mx-1">·</span>
-                              <Star className="h-2.5 w-2.5 text-yellow-400 fill-yellow-400" />
+                              <span className="mx-1″>·</span>
+                              <Star className="h-2.5 w-2.5 text-yellow-400 fill-yellow-400″ />
                               <span>{a.rating}</span>
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-slate-500">
-                          <Clock className="h-3 w-3" />
+                        <div className="flex items-center gap-1 text-xs text-slate-500″>
+                          <Clock className="h-3 w-3″ />
                           {a.timeAgo}
                         </div>
                       </div>
 
                       {/* Question */}
-                      <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-3">
+                      <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-3″>
                         {a.question}
                       </p>
 
@@ -382,24 +382,24 @@ export default function AskAPro() {
                       <p className="text-slate-200 text-sm leading-relaxed">{a.answer}</p>
 
                       {/* Footer */}
-                      <div className="flex items-center justify-between pt-1">
-                        <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-between pt-1″>
+                        <div className="flex items-center gap-3″>
                           <button
                             onClick={() => vote(a.id, "helpful")}
                             className={`flex items-center gap-1 text-xs transition-colors ${
-                              votes[a.id] === "helpful" ? "text-teal-400" : "text-slate-500 hover:text-slate-300"
+                              votes[a.id] === "helpful" ? "text-teal-400″ : "text-slate-500 hover:text-slate-300"
                             }`}
                           >
-                            <ThumbsUp className="h-3.5 w-3.5" />
+                            <ThumbsUp className="h-3.5 w-3.5″ />
                             {a.helpful + (votes[a.id] === "helpful" ? 1 : 0)}
                           </button>
                           <button
                             onClick={() => vote(a.id, "not")}
                             className={`flex items-center gap-1 text-xs transition-colors ${
-                              votes[a.id] === "not" ? "text-red-400" : "text-slate-500 hover:text-slate-300"
+                              votes[a.id] === "not" ? "text-red-400″ : "text-slate-500 hover:text-slate-300"
                             }`}
                           >
-                            <ThumbsDown className="h-3.5 w-3.5" />
+                            <ThumbsDown className="h-3.5 w-3.5″ />
                             {a.notHelpful + (votes[a.id] === "not" ? 1 : 0)}
                           </button>
                         </div>

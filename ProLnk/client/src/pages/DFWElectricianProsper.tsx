@@ -56,8 +56,8 @@ export default function DFWElectricianProsper() {
       {/* City Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, padding: '40px 24px', maxWidth: 900, margin: '0 auto' }}>
         {[
-          { icon: '📈', label: 'Growth Rate', value: '+500% since 2010' },
-          { icon: '🏠', label: 'Median Home Value', value: '$680,000' },
+          { icon: '📈', label: 'Growth Rate', value: '+500% since 2010′ },
+          { icon: '🏠', label: 'Median Home Value', value: '$680,000′ },
           { icon: '🚗', label: 'EV Ownership Rate', value: '1 in 7 households' },
           { icon: '⚡', label: 'Electrician Hourly Rate', value: '$95–$185/hr' },
         ].map(s => (
@@ -121,7 +121,7 @@ export default function DFWElectricianProsper() {
             >
               <div style={{
                 width: 20, height: 20, borderRadius: 4, border: '2px solid #F5E642',
-                background: checked[item.id] ? '#F5E642' : 'transparent',
+                background: checked[item.id] ? '#F5E642′ : ’transparent',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexShrink: 0, marginTop: 1,
               }}>
@@ -154,7 +154,7 @@ export default function DFWElectricianProsper() {
           ].map(c => (
             <div key={c.title} style={{ background: '#112244', borderRadius: 10, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642' }}>{c.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642′ }}>{c.title}</div>
               <div style={{ fontSize: 14, color: '#aac', lineHeight: 1.6 }}>{c.desc}</div>
             </div>
           ))}
@@ -177,8 +177,8 @@ export default function DFWElectricianProsper() {
         </a>
       </div>
 
-      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556' }}>
-        © 2026 ProLnk · Serving Prosper, TX and all of DFW · <a href="/privacy" style={{ color: '#556' }}>Privacy</a>
+      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556′ }}>
+        © 2026 ProLnk · Serving Prosper, TX and all of DFW · <a href="/privacy" style={{ color: '#556′ }}>Privacy</a>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const timelines = ['ASAP (within 30 days)', '1-3 months', '3-6 months', '6+ mont
 
 function getStrategy(type: string, market: string, timeline: string) {
   const isHot = ['Frisco/McKinney','Plano/Allen'].includes(market);
-  const dom = isHot ? '4-7' : '10-18';
+  const dom = isHot ? '4-7′ : '10-18';
   const timing = timeline === 'ASAP (within 30 days)' ? 'List Thursday for weekend showings — maximize first-weekend foot traffic.' : 'Plan for Thursday listing day regardless of month; spring (Mar-May) adds 8-12% premium.';
   const photo = type === 'Condo' ? 'Wide-angle interior shots + rooftop/amenity photos — exterior matters less.' : 'Golden hour exterior shot (6-7pm in spring) is non-negotiable. Aerial drone for lots over 0.2 acres.';
   const price = isHot ? 'Price just below psychological round numbers (,900 vs K). In hot submarkets, slight underpricing triggers bidding war — net 2-4% more.' : 'Price at fair market value. Overpricing by even 3% in this submarket adds 30+ days on market and flags the listing.';
@@ -21,7 +21,7 @@ export default function DFWListingStrategies2026() {
   const result = homeType && submarket && timeline ? getStrategy(homeType, submarket, timeline) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'Georgia, serif', padding: '0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'Georgia, serif', padding: '0′ }}>
       <div style={{ maxWidth: 820, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ borderBottom: '3px solid #F5E642', paddingBottom: 24, marginBottom: 40 }}>
           <p style={{ color: '#F5E642', letterSpacing: 3, fontSize: 11, textTransform: 'uppercase', margin: '0 0 12px' }}>DFW Real Estate Guide • 2026</p>

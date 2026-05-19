@@ -73,11 +73,11 @@ export default function DFWBuyerBrokerageGuide2026() {
               </div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontWeight: 700, marginBottom: 8 }}>📋 What to Include in Your Agreement</div>
-                {match.agreement.map((item, i) => <div key={i} style={{ fontSize: 14, padding: '6px 0', borderBottom: '1px solid #f0f0f0', color: '#333' }}>✔️ {item}</div>)}
+                {match.agreement.map((item, i) => <div key={i} style={{ fontSize: 14, padding: '6px 0', borderBottom: '1px solid #f0f0f0', color: '#333′ }}>✔️ {item}</div>)}
               </div>
               <div>
-                <div style={{ fontWeight: 700, marginBottom: 8, color: '#dc2626' }}>🚩 Red Flags to Watch For</div>
-                {match.flags.map((flag, i) => <div key={i} style={{ fontSize: 14, padding: '6px 0', borderBottom: '1px solid #f0f0f0', color: '#555' }}>⚠️ {flag}</div>)}
+                <div style={{ fontWeight: 700, marginBottom: 8, color: '#dc2626′ }}>🚩 Red Flags to Watch For</div>
+                {match.flags.map((flag, i) => <div key={i} style={{ fontSize: 14, padding: '6px 0', borderBottom: '1px solid #f0f0f0', color: '#555′ }}>⚠️ {flag}</div>)}
               </div>
             </div>
           )}

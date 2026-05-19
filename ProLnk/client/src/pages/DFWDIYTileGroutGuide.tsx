@@ -35,8 +35,8 @@ export default function DFWDIYTileGroutGuide() {
   const rec = ready && area ? getRecommendation(location, condition, area.sqft) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🔲</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 10px' }}>DFW DIY Tile Grout Repair Guide</h1>
@@ -70,8 +70,8 @@ export default function DFWDIYTileGroutGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               ['Epoxy Grout', 'Showers, wet rooms', 'Stain-proof, DFW hard water won\’t etch it, no sealing needed — harder to apply'],
-              ['Sanded Cement', 'Floor joints > 1/8"', 'Strong under foot traffic, seal every 1–2 years in DFW'],
-              ['Unsanded Cement', 'Wall tiles, joints < 1/8"', 'Smooth finish, scratches glass tiles — must seal in DFW'],
+              ['Sanded Cement', 'Floor joints > 1/8″', 'Strong under foot traffic, seal every 1–2 years in DFW'],
+              ['Unsanded Cement', 'Wall tiles, joints < 1/8″', 'Smooth finish, scratches glass tiles — must seal in DFW'],
               ['Premixed Latex', 'Backsplashes only', 'Easy application, never use in wet areas — not DFW humidity rated'],
             ].map(([type, use, note]) => (
               <div key={type} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
@@ -107,7 +107,7 @@ export default function DFWDIYTileGroutGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Location</div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {LOCATIONS.map(l => (
-                <button key={l} onClick={() => setLocation(l)} style={{ padding: '8px 18px', borderRadius: 20, border: '2px solid', borderColor: location === l ? '#F5E642' : '#334155', background: location === l ? '#F5E642' : 'transparent', color: location === l ? '#0A1628' : '#94a3b8', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                <button key={l} onClick={() => setLocation(l)} style={{ padding: '8px 18px', borderRadius: 20, border: '2px solid', borderColor: location === l ? '#F5E642′ : '#334155', background: location === l ? '#F5E642' : ’transparent', color: location === l ? '#0A1628′ : '#94a3b8', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                   {l}
                 </button>
               ))}
@@ -118,7 +118,7 @@ export default function DFWDIYTileGroutGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Grout Condition</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {CONDITIONS.map(c => (
-                <button key={c} onClick={() => setCondition(c)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: condition === c ? '#F5E642' : '#334155', background: condition === c ? '#F5E64215' : 'transparent', color: condition === c ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={c} onClick={() => setCondition(c)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: condition === c ? '#F5E642′ : '#334155', background: condition === c ? '#F5E64215' : ’transparent', color: condition === c ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
                   {c}
                 </button>
               ))}
@@ -129,7 +129,7 @@ export default function DFWDIYTileGroutGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Tile Area</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {AREAS.map((a, i) => (
-                <button key={a.label} onClick={() => setAreaIdx(i)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: areaIdx === i ? '#F5E642' : '#334155', background: areaIdx === i ? '#F5E64215' : 'transparent', color: areaIdx === i ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={a.label} onClick={() => setAreaIdx(i)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: areaIdx === i ? '#F5E642′ : '#334155', background: areaIdx === i ? '#F5E64215' : ’transparent', color: areaIdx === i ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
                   {a.label}
                 </button>
               ))}
@@ -141,19 +141,19 @@ export default function DFWDIYTileGroutGuide() {
           </button>
 
           {showResults && rec && (
-            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid ' + (rec.diyVsPro === 'pro' ? '#f87171' : rec.diyVsPro === 'borderline' ? '#fb923c' : '#4ade80') }}>
-              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 16, color: rec.diyVsPro === 'pro' ? '#f87171' : rec.diyVsPro === 'borderline' ? '#fb923c' : '#4ade80' }}>
+            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid ' + (rec.diyVsPro === 'pro' ? '#f87171′ : rec.diyVsPro === ’borderline' ? '#fb923c' : '#4ade80') }}>
+              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 16, color: rec.diyVsPro === 'pro' ? '#f87171′ : rec.diyVsPro === ’borderline' ? '#fb923c' : '#4ade80′ }}>
                 {rec.diyVsPro === 'pro' ? '📞 Recommend calling a pro — moisture damage or large area' : rec.diyVsPro === 'borderline' ? '⚠️ Borderline — confident DIYers can handle, but pro may save time' : '✅ Good DIY project — you can handle this'}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 16 }}>
                 {[['🕐 Time', `${rec.hours} hrs`], ['💰 Cost', `~$${rec.cost}`], ['🧱 Grout bags', `${rec.bags}`]].map(([label, val]) => (
                   <div key={label} style={{ background: '#112240', borderRadius: 8, padding: 12, textAlign: 'center' }}>
                     <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                    <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                    <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                   </div>
                 ))}
               </div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Grout Type: </span><span style={{ color: '#cbd5e1' }}>{rec.groutType}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Grout Type: </span><span style={{ color: '#cbd5e1′ }}>{rec.groutType}</span></div>
               <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Sealer: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{rec.sealer}</span></div>
             </div>
           )}

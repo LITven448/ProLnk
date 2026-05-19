@@ -76,8 +76,8 @@ export default function DFWInheritedHomeGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)} style={{
-              background: selected === s.id ? '#F5E642' : '#1e3a5f',
-              color: selected === s.id ? '#0A1628' : '#fff',
+              background: selected === s.id ? '#F5E642′ : '#1e3a5f',
+              color: selected === s.id ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 10, padding: '14px 16px',
               cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left'
             }}>{s.label}</button>
@@ -92,7 +92,7 @@ export default function DFWInheritedHomeGuide2026() {
             </ul>
             <div style={{ marginTop: 20, background: '#162944', borderRadius: 8, padding: 14 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 TX Tip: </span>
-              <span style={{ color: '#94a3b8' }}>{guides[selected].tip}</span>
+              <span style={{ color: '#94a3b8′ }}>{guides[selected].tip}</span>
             </div>
           </div>
         )}

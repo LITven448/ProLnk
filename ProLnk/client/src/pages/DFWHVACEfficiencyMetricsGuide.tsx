@@ -62,11 +62,11 @@ export default function DFWHVACEfficiencyMetricsGuide() {
           🌡️ DFW Bottom Line: <span style={{ fontWeight: 400 }}>EER is the most important metric for DFW. It measures efficiency at exactly 95°F — the temperature DFW holds for weeks at a time. SEER2 is a national average that undersells DFW's real summer costs.</span>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>The 4 Metrics Explained</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>The 4 Metrics Explained</h2>
         <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '2rem' }}>
           {metrics.map((m, i) => (
             <div key={m.name} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#162035' : '#111D33', border: `1.5px solid ${selected === i ? m.color : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer', transition: 'all 0.2s' }}>
+              style={{ background: selected === i ? '#162035′ : '#111D33', border: `1.5px solid ${selected === i ? m.color : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: ’pointer', transition: 'all 0.2s' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <span style={{ fontWeight: 800, fontSize: '1.1rem', color: m.color }}>{m.name}</span>
@@ -88,11 +88,11 @@ export default function DFWHVACEfficiencyMetricsGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔍 My Concern → Which Metric?</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔍 My Concern → Which Metric?</h2>
         <div style={{ display: 'grid', gap: '0.5rem' }}>
           {concerns.map((c, i) => (
             <div key={i} onClick={() => setConcern(concern === i ? null : i)}
-              style={{ background: concern === i ? '#162035' : '#111D33', border: `1.5px solid ${concern === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: 'pointer' }}>
+              style={{ background: concern === i ? '#162035′ : '#111D33', border: `1.5px solid ${concern === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: ’pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontWeight: 600 }}>{c.label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 800, fontSize: '0.9rem' }}>{c.metric}</span>

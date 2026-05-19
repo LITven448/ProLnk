@@ -35,12 +35,12 @@ export default function ProLnkMatchAlgorithmExplainer() {
   };
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🧠</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", marginBottom: 12 }}>The ProLnk Match Algorithm</h1>
-          <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.6, maxWidth: 600, margin: "0 auto" }}>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, marginBottom: 12 }}>The ProLnk Match Algorithm</h1>
+          <p style={{ fontSize: 18, color: "#94a3b8″, lineHeight: 1.6, maxWidth: 600, margin: "0 auto" }}>
             Not random. Not paid placement. ProLnk matches on 5 factors in real time — proximity, specialty, availability, performance, and tier.
           </p>
         </div>
@@ -56,32 +56,32 @@ export default function ProLnkMatchAlgorithmExplainer() {
           ].map((item) => (
             <div key={item.label} style={{ background: "#0f1f3d", borderRadius: 12, padding: 16, textAlign: "center", border: "1px solid #1e3a6e" }}>
               <div style={{ fontSize: 26, marginBottom: 6 }}>{item.icon}</div>
-              <div style={{ fontWeight: 700, color: "#F5E642", fontSize: 14, marginBottom: 4 }}>{item.label}</div>
-              <div style={{ color: "#94a3b8", fontSize: 12, lineHeight: 1.5 }}>{item.desc}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642″, fontSize: 14, marginBottom: 4 }}>{item.label}</div>
+              <div style={{ color: "#94a3b8″, fontSize: 12, lineHeight: 1.5 }}>{item.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 16, padding: 28, border: "1px solid #1e3a6e" }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: "#F5E642", marginBottom: 6 }}>How Your Job Gets Matched</h2>
-          <p style={{ color: "#94a3b8", fontSize: 14, marginBottom: 20 }}>Select a job type to see the step-by-step match logic:</p>
+          <h2 style={{ fontSize: 20, fontWeight: 700, color: "#F5E642″, marginBottom: 6 }}>How Your Job Gets Matched</h2>
+          <p style={{ color: "#94a3b8″, fontSize: 14, marginBottom: 20 }}>Select a job type to see the step-by-step match logic:</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 20 }}>
             {Object.keys(jobs).map((j) => (
               <button key={j} onClick={() => setJobType(jobType === j ? null : j)}
-                style={{ background: jobType === j ? "#F5E642" : "#1e3a6e", color: jobType === j ? "#0A1628" : "#fff", border: "none", borderRadius: 20, padding: "8px 16px", cursor: "pointer", fontWeight: 600, fontSize: 13 }}>
+                style={{ background: jobType === j ? "#F5E642″ : "#1e3a6e", color: jobType === j ? "#0A1628" : "#fff", border: "none", borderRadius: 20, padding: "8px 16px", cursor: "pointer", fontWeight: 600, fontSize: 13 }}>
                 {j}
               </button>
             ))}
           </div>
           {jobType && (
-            <div style={{ background: "#0A1628", borderRadius: 10, padding: 16, border: "1px solid #F5E642" }}>
-              <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: 14 }}>{jobType} — Match Steps:</div>
+            <div style={{ background: "#0A1628″, borderRadius: 10, padding: 16, border: "1px solid #F5E642" }}>
+              <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 14 }}>{jobType} — Match Steps:</div>
               {jobs[jobType].map((step, i) => (
                 <div key={i} style={{ display: "flex", gap: 12, marginBottom: 14, alignItems: "flex-start" }}>
-                  <div style={{ background: "#F5E642", color: "#0A1628", borderRadius: "50%", width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
+                  <div style={{ background: "#F5E642″, color: "#0A1628", borderRadius: "50%", width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
                   <div>
-                    <div style={{ fontWeight: 700, color: "#e2e8f0", marginBottom: 2 }}>{step.factor}</div>
-                    <div style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.5 }}>{step.detail}</div>
+                    <div style={{ fontWeight: 700, color: "#e2e8f0″, marginBottom: 2 }}>{step.factor}</div>
+                    <div style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.5 }}>{step.detail}</div>
                   </div>
                 </div>
               ))}

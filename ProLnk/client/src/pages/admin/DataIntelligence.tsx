@@ -15,21 +15,21 @@ import {
 } from "lucide-react";
 
 const MILESTONE_LABELS: Record<string, { label: string; color: string }> = {
-  building: { label: "Building", color: "bg-slate-500" },
-  early_moat: { label: "Early Moat", color: "bg-blue-500" },
-  strong_moat: { label: "Strong Moat", color: "bg-purple-500" },
-  acquisition_asset: { label: "Acquisition Asset", color: "bg-emerald-500" },
+  building: { label: "Building", color: "bg-slate-500″ },
+  early_moat: { label: "Early Moat", color: "bg-blue-500″ },
+  strong_moat: { label: "Strong Moat", color: "bg-purple-500″ },
+  acquisition_asset: { label: "Acquisition Asset", color: "bg-emerald-500″ },
 };
 
 const ASSET_ICONS = [Home, Users, Brain, Activity, Network, Map, Target];
 const ASSET_COLORS = [
-  "from-blue-500/20 to-blue-600/10 border-blue-500/30",
-  "from-purple-500/20 to-purple-600/10 border-purple-500/30",
-  "from-emerald-500/20 to-emerald-600/10 border-emerald-500/30",
-  "from-amber-500/20 to-amber-600/10 border-amber-500/30",
-  "from-rose-500/20 to-rose-600/10 border-rose-500/30",
-  "from-cyan-500/20 to-cyan-600/10 border-cyan-500/30",
-  "from-indigo-500/20 to-indigo-600/10 border-indigo-500/30",
+  "from-blue-500/20 to-blue-600/10 border-blue-500/30″,
+  "from-purple-500/20 to-purple-600/10 border-purple-500/30″,
+  "from-emerald-500/20 to-emerald-600/10 border-emerald-500/30″,
+  "from-amber-500/20 to-amber-600/10 border-amber-500/30″,
+  "from-rose-500/20 to-rose-600/10 border-rose-500/30″,
+  "from-cyan-500/20 to-cyan-600/10 border-cyan-500/30″,
+  "from-indigo-500/20 to-indigo-600/10 border-indigo-500/30″,
 ];
 
 function formatCurrency(n: number) {
@@ -49,19 +49,19 @@ function MilestoneProgress({ records, milestones }: { records: number; milestone
   const maxTarget = Math.max(...targets.map(t => t.target));
   const pct = Math.min(100, (records / maxTarget) * 100);
   return (
-    <div className="space-y-1">
+    <div className="space-y-1″>
       <div className="flex justify-between text-xs text-muted-foreground">
         <span>{formatNumber(records)} records</span>
         <span>Target: {formatNumber(maxTarget)}</span>
       </div>
-      <Progress value={pct} className="h-2" />
-      <div className="flex gap-1 flex-wrap mt-1">
+      <Progress value={pct} className="h-2″ />
+      <div className="flex gap-1 flex-wrap mt-1″>
         {targets.map(t => (
           <span
             key={t.key}
             className={`text-xs px-1.5 py-0.5 rounded-full border ${
               t.reached
-                ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-400"
+                ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-400″
                 : "bg-slate-500/10 border-slate-500/20 text-muted-foreground"
             }`}
           >
@@ -87,9 +87,9 @@ export default function DataIntelligence() {
   if (isLoading) {
     return (
       <AdminLayout>
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-4″>
         <div className="h-8 w-64 bg-muted animate-pulse rounded" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4″>
           {[...Array(6)].map((_, i) => (
             <div key={i} className="h-40 bg-muted animate-pulse rounded-xl" />
           ))}
@@ -103,31 +103,31 @@ export default function DataIntelligence() {
 
   return (
     <AdminLayout>
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6″>
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold flex items-center gap-2">
-            <Database className="w-6 h-6 text-emerald-400" />
+          <h1 className="text-2xl font-bold flex items-center gap-2″>
+            <Database className="w-6 h-6 text-emerald-400″ />
             Data Intelligence
           </h1>
-          <p className="text-muted-foreground mt-1">
+          <p className="text-muted-foreground mt-1″>
             Proprietary data assets that build acquisition value. Every record compounds your moat.
           </p>
         </div>
         <div className="text-right">
-          <div className="text-3xl font-bold text-emerald-400">{formatCurrency(totalValue)}</div>
+          <div className="text-3xl font-bold text-emerald-400″>{formatCurrency(totalValue)}</div>
           <div className="text-xs text-muted-foreground">Estimated Data Asset Value</div>
         </div>
       </div>
 
       {/* Acquisition Value Banner */}
       <Card className="border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 to-transparent">
-        <CardContent className="pt-4 pb-4">
-          <div className="flex items-center gap-3">
-            <Shield className="w-8 h-8 text-emerald-400 shrink-0" />
+        <CardContent className="pt-4 pb-4″>
+          <div className="flex items-center gap-3″>
+            <Shield className="w-8 h-8 text-emerald-400 shrink-0″ />
             <div>
-              <p className="font-semibold text-emerald-300">Your Data Moat Is Being Built</p>
+              <p className="font-semibold text-emerald-300″>Your Data Moat Is Being Built</p>
               <p className="text-sm text-muted-foreground">
                 These 7 datasets are proprietary -- no competitor can replicate them without your network and time.
                 At 500 partners and $3M ARR, this data portfolio justifies a <strong className="text-white">15-25x ARR acquisition multiple</strong> from ServiceTitan or Jobber.
@@ -138,16 +138,16 @@ export default function DataIntelligence() {
       </Card>
 
       {/* 7 Asset Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4″>
         {summary?.assets.map((asset, i) => {
           const Icon = ASSET_ICONS[i] ?? Database;
           const colorClass = ASSET_COLORS[i] ?? ASSET_COLORS[0];
           const milestone = MILESTONE_LABELS[asset.milestone] ?? MILESTONE_LABELS.building;
           return (
             <Card key={asset.id} className={`border bg-gradient-to-br ${colorClass}`}>
-              <CardHeader className="pb-2">
+              <CardHeader className="pb-2″>
                 <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2″>
                     <Icon className="w-5 h-5 text-muted-foreground" />
                     <CardTitle className="text-sm font-semibold">{asset.name}</CardTitle>
                   </div>
@@ -157,49 +157,49 @@ export default function DataIntelligence() {
                 </div>
                 <CardDescription className="text-xs">{asset.description}</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-3″>
                 <div className="flex justify-between items-center">
                   <span className="text-2xl font-bold">{formatNumber(asset.records)}</span>
-                  <span className="text-sm font-semibold text-emerald-400">{formatCurrency(asset.estimatedValue)}</span>
+                  <span className="text-sm font-semibold text-emerald-400″>{formatCurrency(asset.estimatedValue)}</span>
                 </div>
                 {asset.id === 1 && propertyStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Detections: {formatNumber(propertyStats.profilesWithDetections)} - Conversions: {formatNumber(propertyStats.profilesWithConversions)}</div>
                     <div>Total Revenue: {formatCurrency(propertyStats.totalRevenue)}</div>
                   </div>
                 )}
                 {asset.id === 2 && partnerStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Avg Health Score: {partnerStats.avgHealthScore.toFixed(0)}/100</div>
                     <div>High Churn Risk: {partnerStats.highChurnRiskCount} partners</div>
                   </div>
                 )}
                 {asset.id === 3 && aiStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Validated: {formatNumber(aiStats.validatedRecords)} - Avg Confidence: {(aiStats.avgConfidenceScore * 100).toFixed(0)}%</div>
                     <div>Approved for Training: {formatNumber(aiStats.approvedForTraining)}</div>
                   </div>
                 )}
                 {asset.id === 4 && funnelStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Overall Conversion: {(funnelStats.overallConversionRate * 100).toFixed(1)}%</div>
                     <div>Stages Tracked: {funnelStats.funnel.length}</div>
                   </div>
                 )}
                 {asset.id === 5 && graphStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Network Value: {formatCurrency(graphStats.totalNetworkValue)}</div>
                     <div>Avg Strength: {graphStats.avgRelationshipStrength.toFixed(0)}/100</div>
                   </div>
                 )}
                 {asset.id === 6 && geoStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Zips Covered: {geoStats.totalZipsCovered}</div>
                     <div>High Gap Zips: {geoStats.highGapZipCount}</div>
                   </div>
                 )}
                 {asset.id === 7 && signalStats && (
-                  <div className="text-xs text-muted-foreground space-y-0.5">
+                  <div className="text-xs text-muted-foreground space-y-0.5″>
                     <div>Acceptance Rate: {(signalStats.overallAcceptanceRate * 100).toFixed(1)}%</div>
                     <div>Avg Discount Accepted: {signalStats.avgAcceptedDiscountPct.toFixed(1)}%</div>
                   </div>
@@ -220,11 +220,11 @@ export default function DataIntelligence() {
         </TabsList>
 
         {/* Funnel Tab */}
-        <TabsContent value="funnel" className="mt-4">
+        <TabsContent value="funnel" className="mt-4″>
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Activity className="w-4 h-4" />
+              <CardTitle className="flex items-center gap-2″>
+                <Activity className="w-4 h-4″ />
                 Conversion Funnel -- End-to-End
               </CardTitle>
               <CardDescription>
@@ -233,16 +233,16 @@ export default function DataIntelligence() {
             </CardHeader>
             <CardContent>
               {funnelStats ? (
-                <div className="space-y-2">
+                <div className="space-y-2″>
                   {funnelStats.funnel.map((stage, i) => (
-                    <div key={stage.stage} className="flex items-center gap-3">
-                      <div className="w-32 text-xs text-muted-foreground capitalize shrink-0">
+                    <div key={stage.stage} className="flex items-center gap-3″>
+                      <div className="w-32 text-xs text-muted-foreground capitalize shrink-0″>
                         {stage.stage.replace(/_/g, " ")}
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1″>
                         <Progress
                           value={funnelStats.funnel[0].count > 0 ? (stage.count / funnelStats.funnel[0].count) * 100 : 0}
-                          className="h-3"
+                          className="h-3″
                         />
                       </div>
                       <div className="w-16 text-right text-sm font-medium">{formatNumber(stage.count)}</div>
@@ -253,10 +253,10 @@ export default function DataIntelligence() {
                       )}
                     </div>
                   ))}
-                  <div className="pt-3 border-t mt-3">
+                  <div className="pt-3 border-t mt-3″>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Overall Conversion (Detected  Accepted)</span>
-                      <span className="font-bold text-emerald-400">
+                      <span className="font-bold text-emerald-400″>
                         {(funnelStats.overallConversionRate * 100).toFixed(1)}%
                       </span>
                     </div>
@@ -270,33 +270,33 @@ export default function DataIntelligence() {
         </TabsContent>
 
         {/* Partner Scores Tab */}
-        <TabsContent value="partners" className="mt-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <TabsContent value="partners" className="mt-4″>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4″>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base">
-                  <Award className="w-4 h-4" />
+                  <Award className="w-4 h-4″ />
                   Partner Health Leaderboard
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 {leaderboard && leaderboard.length > 0 ? (
-                  <div className="space-y-3">
+                  <div className="space-y-3″>
                     {leaderboard.map((entry, i) => (
-                      <div key={entry.score.id} className="flex items-center gap-3">
+                      <div key={entry.score.id} className="flex items-center gap-3″>
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                           i === 0 ? "bg-amber-500 text-black" : i === 1 ? "bg-slate-400 text-black" : i === 2 ? "bg-amber-700 text-white" : "bg-muted text-muted-foreground"
                         }`}>
                           {i + 1}
                         </div>
-                        <div className="flex-1 min-w-0">
+                        <div className="flex-1 min-w-0″>
                           <div className="text-sm font-medium truncate">{entry.partner?.businessName ?? "Unknown"}</div>
                           <div className="text-xs text-muted-foreground">{entry.partner?.businessType}</div>
                         </div>
                         <div className="text-right">
                           <div className={`text-sm font-bold ${
-                            (entry.score.healthScore ?? 0) >= 70 ? "text-emerald-400" :
-                            (entry.score.healthScore ?? 0) >= 40 ? "text-amber-400" : "text-rose-400"
+                            (entry.score.healthScore ?? 0) >= 70 ? "text-emerald-400″ :
+                            (entry.score.healthScore ?? 0) >= 40 ? "text-amber-400″ : "text-rose-400"
                           }`}>
                             {entry.score.healthScore ?? 0}/100
                           </div>
@@ -313,26 +313,26 @@ export default function DataIntelligence() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base">
-                  <BarChart3 className="w-4 h-4" />
+                  <BarChart3 className="w-4 h-4″ />
                   Network Health Summary
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4″>
                 {partnerStats ? (
                   <>
                     <div>
-                      <div className="flex justify-between text-sm mb-1">
+                      <div className="flex justify-between text-sm mb-1″>
                         <span className="text-muted-foreground">Avg Health Score</span>
                         <span className="font-medium">{partnerStats.avgHealthScore.toFixed(0)}/100</span>
                       </div>
-                      <Progress value={partnerStats.avgHealthScore} className="h-2" />
+                      <Progress value={partnerStats.avgHealthScore} className="h-2″ />
                     </div>
                     <div>
-                      <div className="flex justify-between text-sm mb-1">
+                      <div className="flex justify-between text-sm mb-1″>
                         <span className="text-muted-foreground">Avg Close Rate</span>
                         <span className="font-medium">{(partnerStats.avgCloseRate * 100).toFixed(1)}%</span>
                       </div>
-                      <Progress value={partnerStats.avgCloseRate * 100} className="h-2" />
+                      <Progress value={partnerStats.avgCloseRate * 100} className="h-2″ />
                     </div>
                     <div className="flex justify-between text-sm pt-2 border-t">
                       <span className="text-muted-foreground">High Churn Risk Partners</span>
@@ -342,7 +342,7 @@ export default function DataIntelligence() {
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Total Commissions Tracked</span>
-                      <span className="font-bold text-emerald-400">{formatCurrency(partnerStats.totalCommissionsTracked)}</span>
+                      <span className="font-bold text-emerald-400″>{formatCurrency(partnerStats.totalCommissionsTracked)}</span>
                     </div>
                   </>
                 ) : (
@@ -354,11 +354,11 @@ export default function DataIntelligence() {
         </TabsContent>
 
         {/* Acceptance Signals Tab */}
-        <TabsContent value="signals" className="mt-4">
+        <TabsContent value="signals" className="mt-4″>
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Target className="w-4 h-4" />
+              <CardTitle className="flex items-center gap-2″>
+                <Target className="w-4 h-4″ />
                 Homeowner Acceptance Signals
               </CardTitle>
               <CardDescription>
@@ -367,10 +367,10 @@ export default function DataIntelligence() {
             </CardHeader>
             <CardContent>
               {signalStats && signalStats.totalSignals > 0 ? (
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="space-y-4″>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-emerald-400">{(signalStats.overallAcceptanceRate * 100).toFixed(1)}%</div>
+                      <div className="text-2xl font-bold text-emerald-400″>{(signalStats.overallAcceptanceRate * 100).toFixed(1)}%</div>
                       <div className="text-xs text-muted-foreground">Acceptance Rate</div>
                     </div>
                     <div className="text-center">
@@ -388,15 +388,15 @@ export default function DataIntelligence() {
                   </div>
                   {signalStats.byTrade.length > 0 && (
                     <div>
-                      <p className="text-sm font-medium mb-2">Acceptance by Trade</p>
-                      <div className="space-y-2">
+                      <p className="text-sm font-medium mb-2″>Acceptance by Trade</p>
+                      <div className="space-y-2″>
                         {signalStats.byTrade.map((t) => (
-                          <div key={t.trade} className="flex items-center gap-3">
+                          <div key={t.trade} className="flex items-center gap-3″>
                             <div className="w-32 text-xs text-muted-foreground truncate">{t.trade}</div>
-                            <div className="flex-1">
+                            <div className="flex-1″>
                               <Progress
                                 value={t.total > 0 ? (Number(t.accepted) / t.total) * 100 : 0}
-                                className="h-2"
+                                className="h-2″
                               />
                             </div>
                             <div className="text-xs w-12 text-right">
@@ -416,11 +416,11 @@ export default function DataIntelligence() {
         </TabsContent>
 
         {/* Referral Graph Tab */}
-        <TabsContent value="graph" className="mt-4">
+        <TabsContent value="graph" className="mt-4″>
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Network className="w-4 h-4" />
+              <CardTitle className="flex items-center gap-2″>
+                <Network className="w-4 h-4″ />
                 Referral Graph -- Partner-to-Partner Network
               </CardTitle>
               <CardDescription>
@@ -429,14 +429,14 @@ export default function DataIntelligence() {
             </CardHeader>
             <CardContent>
               {graphStats && graphStats.totalRelationships > 0 ? (
-                <div className="space-y-4">
+                <div className="space-y-4″>
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                       <div className="text-2xl font-bold">{formatNumber(graphStats.totalRelationships)}</div>
                       <div className="text-xs text-muted-foreground">Partner Relationships</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-emerald-400">{formatCurrency(graphStats.totalNetworkValue)}</div>
+                      <div className="text-2xl font-bold text-emerald-400″>{formatCurrency(graphStats.totalNetworkValue)}</div>
                       <div className="text-xs text-muted-foreground">Total Network Value</div>
                     </div>
                     <div>
@@ -446,8 +446,8 @@ export default function DataIntelligence() {
                   </div>
                   {graphStats.topTradePairs.length > 0 && (
                     <div>
-                      <p className="text-sm font-medium mb-2">Top Trade Pairs by Value</p>
-                      <div className="space-y-2">
+                      <p className="text-sm font-medium mb-2″>Top Trade Pairs by Value</p>
+                      <div className="space-y-2″>
                         {graphStats.topTradePairs.map((pair, i) => (
                           <div key={i} className="flex items-center justify-between text-sm">
                             <span className="text-muted-foreground">
@@ -474,8 +474,8 @@ export default function DataIntelligence() {
       {/* Milestone Roadmap */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="w-4 h-4" />
+          <CardTitle className="flex items-center gap-2″>
+            <TrendingUp className="w-4 h-4″ />
             Acquisition Value Milestones
           </CardTitle>
           <CardDescription>
@@ -483,7 +483,7 @@ export default function DataIntelligence() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6″>
             {[
               { label: "Proof of Concept", target: "100 partners + 1K training images", value: "$500K-$2M", reached: (summary?.assets[2]?.records ?? 0) >= 1000 },
               { label: "Early Moat", target: "250 partners + 10K images + 6mo NRR data", value: "$5M-$15M", reached: (summary?.assets[2]?.records ?? 0) >= 10000 },
@@ -491,12 +491,12 @@ export default function DataIntelligence() {
               { label: "Acquisition Asset", target: "1K partners + 100K images + 2 patents + $3M ARR", value: "$96M-$200M", reached: (summary?.assets[2]?.records ?? 0) >= 100000 },
             ].map((milestone) => (
               <div key={milestone.label} className={`flex items-start gap-3 p-3 rounded-lg border ${
-                milestone.reached ? "border-emerald-500/40 bg-emerald-500/10" : "border-border bg-muted/20"
+                milestone.reached ? "border-emerald-500/40 bg-emerald-500/10″ : "border-border bg-muted/20"
               }`}>
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
                   milestone.reached ? "bg-emerald-500 text-black" : "bg-muted text-muted-foreground"
                 }`}>
-                  {milestone.reached ? <Zap className="w-4 h-4" /> : <div className="w-2 h-2 rounded-full bg-current" />}
+                  {milestone.reached ? <Zap className="w-4 h-4″ /> : <div className="w-2 h-2 rounded-full bg-current" />}
                 </div>
                 <div>
                   <div className="font-semibold text-sm">{milestone.label}</div>
@@ -514,8 +514,8 @@ export default function DataIntelligence() {
       {/* Data Retention Policy */}
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Shield className="w-4 h-4" />
+        <CardTitle className="flex items-center gap-2″>
+          <Shield className="w-4 h-4″ />
           Data Retention Policy
         </CardTitle>
         <CardDescription>
@@ -523,7 +523,7 @@ export default function DataIntelligence() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
+        <div className="space-y-4″>
           {[
             { label: "Job Photos (non-AI-labeled)", retention: "90 days", autoDelete: true, description: "Raw photos not yet labeled for AI training are purged after 90 days to reduce storage costs." },
             { label: "AI-Labeled Training Images", retention: "Indefinite", autoDelete: false, description: "Photos approved for AI training are retained permanently as a core data asset." },
@@ -532,26 +532,26 @@ export default function DataIntelligence() {
             { label: "Activity Logs", retention: "12 months", autoDelete: true, description: "System event logs are rolled after 12 months. Audit logs are retained separately." },
             { label: "Homeowner Data Export Requests", retention: "30 days", autoDelete: true, description: "Export files are available for 30 days after generation, then auto-deleted." },
           ].map((policy) => (
-            <div key={policy.label} className="flex items-start justify-between gap-4 p-4 rounded-xl border border-border bg-muted/10">
-              <div className="flex-1">
-                <div className="flex items-center gap-2">
+            <div key={policy.label} className="flex items-start justify-between gap-4 p-4 rounded-xl border border-border bg-muted/10″>
+              <div className="flex-1″>
+                <div className="flex items-center gap-2″>
                   <span className="font-semibold text-sm">{policy.label}</span>
                   <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                    policy.autoDelete ? "bg-amber-500/20 text-amber-600" : "bg-emerald-500/20 text-emerald-600"
+                    policy.autoDelete ? "bg-amber-500/20 text-amber-600″ : "bg-emerald-500/20 text-emerald-600"
                   }`}>
                     {policy.retention}
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground mt-1">{policy.description}</p>
+                <p className="text-xs text-muted-foreground mt-1″>{policy.description}</p>
               </div>
-              <div className="flex items-center gap-2 shrink-0">
+              <div className="flex items-center gap-2 shrink-0″>
                 {policy.autoDelete ? (
-                  <span className="flex items-center gap-1 text-xs text-amber-600">
-                    <Trash2 className="w-3.5 h-3.5" /> Auto-delete
+                  <span className="flex items-center gap-1 text-xs text-amber-600″>
+                    <Trash2 className="w-3.5 h-3.5″ /> Auto-delete
                   </span>
                 ) : (
-                  <span className="flex items-center gap-1 text-xs text-emerald-600">
-                    <CheckCircle className="w-3.5 h-3.5" /> Permanent
+                  <span className="flex items-center gap-1 text-xs text-emerald-600″>
+                    <CheckCircle className="w-3.5 h-3.5″ /> Permanent
                   </span>
                 )}
               </div>
@@ -587,8 +587,8 @@ function DataExportQueue() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Download className="w-4 h-4" />
+        <CardTitle className="flex items-center gap-2″>
+          <Download className="w-4 h-4″ />
           Pending Data Export Requests
         </CardTitle>
         <CardDescription>
@@ -597,36 +597,36 @@ function DataExportQueue() {
       </CardHeader>
       <CardContent>
         {requests.length === 0 ? (
-          <div className="text-center py-8">
-            <CheckCircle className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
-            <p className="text-sm font-semibold text-gray-700">No pending export requests</p>
-            <p className="text-xs text-muted-foreground mt-1">All homeowner data export requests have been fulfilled.</p>
+          <div className="text-center py-8″>
+            <CheckCircle className="w-10 h-10 text-emerald-500 mx-auto mb-2″ />
+            <p className="text-sm font-semibold text-gray-700″>No pending export requests</p>
+            <p className="text-xs text-muted-foreground mt-1″>All homeowner data export requests have been fulfilled.</p>
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-3″>
             {requests.map((req: any) => (
-              <div key={req.id} className="flex items-center justify-between gap-4 p-4 rounded-xl border border-border bg-muted/10">
-                <div className="flex items-center gap-3">
+              <div key={req.id} className="flex items-center justify-between gap-4 p-4 rounded-xl border border-border bg-muted/10″>
+                <div className="flex items-center gap-3″>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                    req.status === 'pending' ? 'bg-amber-100' : req.status === 'processing' ? 'bg-blue-100' : 'bg-emerald-100'
+                    req.status === 'pending' ? 'bg-amber-100′ : req.status === ’processing' ? 'bg-blue-100′ : ’bg-emerald-100'
                   }`}>
-                    {req.status === 'pending' ? <Clock className="w-4 h-4 text-amber-600" /> :
-                     req.status === 'processing' ? <Activity className="w-4 h-4 text-blue-600" /> :
-                     <CheckCircle className="w-4 h-4 text-emerald-600" />}
+                    {req.status === 'pending' ? <Clock className="w-4 h-4 text-amber-600″ /> :
+                     req.status === 'processing' ? <Activity className="w-4 h-4 text-blue-600″ /> :
+                     <CheckCircle className="w-4 h-4 text-emerald-600″ />}
                   </div>
                   <div>
                     <p className="text-sm font-semibold">{req.homeownerEmail || `Homeowner #${req.homeownerId}`}</p>
                     <p className="text-xs text-muted-foreground">Requested {new Date(req.requestedAt).toLocaleDateString()} · {req.status}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2″>
                   {req.status === 'pending' && (
                     <Button
                       size="sm"
                       onClick={() => processExportMutation.mutate({ requestId: req.id })}
                       disabled={processExportMutation.isPending}
                     >
-                      <Download className="w-3.5 h-3.5 mr-1.5" />
+                      <Download className="w-3.5 h-3.5 mr-1.5″ />
                       Process
                     </Button>
                   )}

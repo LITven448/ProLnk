@@ -39,7 +39,7 @@ export default function DFWHVACIceMachine2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>📋 DFW Ice Maker Facts</h2>
           {['DFW water hardness averages 150–300 ppm — one of the highest in Texas','Under-counter ice makers growing fast in DFW luxury homes (Plano, Southlake, Frisco)','Rubber boots and gaskets degrade faster in DFW UV heat — inspect annually','All ice makers require a dedicated water filter to protect evaporator plates in DFW','Commercial units need NSF certification per Dallas County Health regulations'].map((f, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642' }}>✓</span>{f}</div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642′ }}>✓</span>{f}</div>
           ))}
         </div>
 
@@ -60,7 +60,7 @@ export default function DFWHVACIceMachine2026() {
             <option value="maintenance">Routine Maintenance</option>
           </select>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '11px 24px', cursor: 'pointer', fontSize: 15 }}>Get Guide 🧊</button>
-          {guide && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642' }}>{guide}</div>}
+          {guide && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642′ }}>{guide}</div>}
         </div>
 
         <div style={{ textAlign: 'center', color: '#4a6080', fontSize: 12, marginTop: 24 }}>ProLnk DFW Home Intelligence · Ice Machine Guide 2026</div>

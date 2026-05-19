@@ -43,15 +43,15 @@ export default function DFWCircuitBreakerSizeGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+          <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>{selected}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div style={{ background: '#162035', borderRadius: 8, padding: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{result.amps}A</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{result.amps}A</div>
                 <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>Required Breaker</div>
               </div>
               <div style={{ background: '#162035', borderRadius: 8, padding: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{result.wire}</div>
+                <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{result.wire}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>Minimum Wire Gauge</div>
               </div>
             </div>
@@ -59,14 +59,14 @@ export default function DFWCircuitBreakerSizeGuide() {
               <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>💡 Why this size?</div>
               <p style={{ color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>{result.why}</p>
             </div>
-            <div style={{ background: '#1a0a0a', borderRadius: 8, padding: 16, borderLeft: '3px solid #EF4444' }}>
+            <div style={{ background: '#1a0a0a', borderRadius: 8, padding: 16, borderLeft: '3px solid #EF4444′ }}>
               <div style={{ color: '#EF4444', fontSize: 13, marginBottom: 4 }}>⚠️ If undersized in DFW heat:</div>
               <p style={{ color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>{result.undersized}</p>
             </div>
           </div>
         )}
 
-        <div style={{ marginTop: 32, background: '#0F1F3D', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
+        <div style={{ marginTop: 32, background: '#0F1F3D', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔑 DFW Key Rules</div>
           <ul style={{ color: '#94A3B8', lineHeight: 1.8, margin: 0, paddingLeft: 20 }}>
             <li>All DFW AC units and EV chargers require dedicated circuits — no sharing.</li>

@@ -47,19 +47,19 @@ export default function DFWEstateSaleGuide() {
             { emoji: '💰', label: 'Typical Gross Sale', value: '60–80%', note: 'Of estimated contents value' },
             { emoji: '📦', label: 'Leftovers', value: 'Buyout or Donation', note: 'Most companies offer both' },
           ].map(card => (
-            <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45' }}>
+            <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.emoji}</div>
               <div style={{ fontWeight: 700, color: '#FFFFFF', marginBottom: 4 }}>{card.label}</div>
               <div style={{ fontSize: 20, color: '#F5E642', fontWeight: 800, marginBottom: 4 }}>{card.value}</div>
-              <div style={{ fontSize: 13, color: '#9BA3B8' }}>{card.note}</div>
+              <div style={{ fontSize: 13, color: '#9BA3B8′ }}>{card.note}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45′ }}>
           <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
             {(['estimate', 'compare'] as const).map(tab => (
-              <button key={tab} onClick={() => setView(tab)} style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, backgroundColor: view === tab ? '#F5E642' : '#1E2D45', color: view === tab ? '#0A1628' : '#9BA3B8' }}>
+              <button key={tab} onClick={() => setView(tab)} style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, backgroundColor: view === tab ? '#F5E642′ : '#1E2D45', color: view === tab ? '#0A1628' : '#9BA3B8' }}>
                 {tab === 'estimate' ? '💰 Net Proceeds Estimator' : '⚖️ Company vs. DIY'}
               </button>
             ))}
@@ -84,17 +84,17 @@ export default function DFWEstateSaleGuide() {
 
           {view === 'estimate' && saleRevenue && companyNet && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55' }}>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55′ }}>
                 <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 4 }}>Gross Sale Revenue</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#FFFFFF' }}>${saleRevenue.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#9BA3B8', marginTop: 4 }}>~65% of contents value</div>
               </div>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
                 <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 4 }}>Your Net (After Commission)</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${companyNet.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${companyNet.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#9BA3B8', marginTop: 4 }}>After 35% company fee</div>
               </div>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55' }}>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55′ }}>
                 <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 4 }}>Company Earns</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#FFFFFF' }}>${(saleRevenue - companyNet).toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#9BA3B8', marginTop: 4 }}>For organizing + running sale</div>
@@ -104,14 +104,14 @@ export default function DFWEstateSaleGuide() {
 
           {view === 'compare' && rawValue && companyNet && diyNet && (
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏢 Hire a Company</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#FFFFFF', marginBottom: 12 }}>${companyNet.toLocaleString()}</div>
                 {['Professional pricing + marketing', 'Handles all setup and cleanup', 'Draws serious buyers', 'No effort from you', '3–4 week timeline'].map(p => (
                   <div key={p} style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 6 }}>✓ {p}</div>
                 ))}
               </div>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55' }}>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55′ }}>
                 <div style={{ fontWeight: 700, color: '#FFFFFF', fontSize: 16, marginBottom: 12 }}>🧑 DIY Garage Sale</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#9BA3B8', marginBottom: 12 }}>${diyNet.toLocaleString()}</div>
                 {['No commission — keep everything', '20–30 hours of your labor', 'Requires Facebook/Nextdoor marketing', 'Lower prices — buyers expect deals', 'Must handle leftovers yourself'].map(p => (
@@ -122,7 +122,7 @@ export default function DFWEstateSaleGuide() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, border: '1px solid #1E2D45′ }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🏆 What Sells Well in DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
             {SELLS_WELL.map(item => (

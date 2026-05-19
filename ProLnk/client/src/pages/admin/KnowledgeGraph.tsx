@@ -120,17 +120,17 @@ const EDGES: GEdge[] = [
 
 const TYPE_COLOR: Record<NodeType, string> = {
   holding:     "#00D4FF",
-  business:    "#3b82f6",
+  business:    "#3b82f6″,
   agent:       "#22c55e",
   integration: "#f59e0b",
-  revenue:     "#f97316",
+  revenue:     "#f97316″,
 };
 
 const STATUS_COLOR: Record<NodeStatus, string> = {
   active:   "#22c55e",
-  "in-dev": "#eab308",
+  "in-dev": "#eab308″,
   planned:  "#64748b",
-  error:    "#ef4444",
+  error:    "#ef4444″,
 };
 
 const TYPE_RADIUS: Record<NodeType, number> = {
@@ -376,7 +376,7 @@ export default function KnowledgeGraph() {
         // Glow
         if (isSelected || isHovered) {
           const grd = ctx.createRadialGradient(node.x, node.y, r, node.x, node.y, r * 2.5);
-          grd.addColorStop(0, color + "40");
+          grd.addColorStop(0, color + "40″);
           grd.addColorStop(1, "transparent");
           ctx.fillStyle = grd;
           ctx.beginPath();
@@ -397,8 +397,8 @@ export default function KnowledgeGraph() {
 
         // Background fill
         const bgGrd = ctx.createRadialGradient(node.x - r * 0.3, node.y - r * 0.3, 0, node.x, node.y, r);
-        bgGrd.addColorStop(0, color + "30");
-        bgGrd.addColorStop(1, color + "10");
+        bgGrd.addColorStop(0, color + "30″);
+        bgGrd.addColorStop(1, color + "10″);
         ctx.fillStyle = bgGrd;
         ctx.beginPath();
         ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
@@ -442,7 +442,7 @@ export default function KnowledgeGraph() {
 
         if (node.sublabel) {
           ctx.font = "8px system-ui";
-          ctx.fillStyle = color + "80";
+          ctx.fillStyle = color + "80″;
           ctx.fillText(node.sublabel, node.x, labelY + 13);
         }
 
@@ -553,36 +553,36 @@ export default function KnowledgeGraph() {
     <AdminLayout>
       <div className="flex flex-col h-[calc(100vh-64px)] bg-[#0a0f1a] overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-2.5 border-b border-white/10 bg-[#0d1420] shrink-0">
+        <div className="flex items-center justify-between px-5 py-2.5 border-b border-white/10 bg-[#0d1420] shrink-0″>
           <div>
-            <h1 className="text-base font-bold text-white flex items-center gap-2">
+            <h1 className="text-base font-bold text-white flex items-center gap-2″>
               <Network className="w-4 h-4 text-[#00D4FF]" />
               Journy Works — Knowledge Graph
             </h1>
-            <p className="text-[11px] text-white/40 mt-0.5">ProLnk · TrustyPro · Agents · Integrations · Revenue</p>
+            <p className="text-[11px] text-white/40 mt-0.5″>ProLnk · TrustyPro · Agents · Integrations · Revenue</p>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-3 mr-3 text-[11px] text-white/50">
-              <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500 inline-block" />{stats.active} Active</span>
-              <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-yellow-500 inline-block" />{stats.inDev} In Dev</span>
-              <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-slate-500 inline-block" />{stats.planned} Planned</span>
-              <span className="flex items-center gap-1 text-[#22c55e]"><Bot className="w-3 h-3" />{stats.agents} Agents</span>
+          <div className="flex items-center gap-2″>
+            <div className="flex items-center gap-3 mr-3 text-[11px] text-white/50″>
+              <span className="flex items-center gap-1″><span className="w-2 h-2 rounded-full bg-green-500 inline-block" />{stats.active} Active</span>
+              <span className="flex items-center gap-1″><span className="w-2 h-2 rounded-full bg-yellow-500 inline-block" />{stats.inDev} In Dev</span>
+              <span className="flex items-center gap-1″><span className="w-2 h-2 rounded-full bg-slate-500 inline-block" />{stats.planned} Planned</span>
+              <span className="flex items-center gap-1 text-[#22c55e]"><Bot className="w-3 h-3″ />{stats.agents} Agents</span>
             </div>
-            <Button size="sm" variant="outline" onClick={() => setZoom(z => Math.min(4, z + 0.2))} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 w-7 p-0"><ZoomIn className="w-3.5 h-3.5" /></Button>
-            <Button size="sm" variant="outline" onClick={() => setZoom(z => Math.max(0.25, z - 0.2))} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 w-7 p-0"><ZoomOut className="w-3.5 h-3.5" /></Button>
-            <Button size="sm" variant="outline" onClick={resetView} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 w-7 p-0"><Maximize2 className="w-3.5 h-3.5" /></Button>
-            <Button size="sm" variant="outline" onClick={rerun} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 px-2 text-xs gap-1"><RefreshCw className="w-3 h-3" />Re-run</Button>
+            <Button size="sm" variant="outline" onClick={() => setZoom(z => Math.min(4, z + 0.2))} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 w-7 p-0″><ZoomIn className="w-3.5 h-3.5" /></Button>
+            <Button size="sm" variant="outline" onClick={() => setZoom(z => Math.max(0.25, z - 0.2))} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 w-7 p-0″><ZoomOut className="w-3.5 h-3.5" /></Button>
+            <Button size="sm" variant="outline" onClick={resetView} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 w-7 p-0″><Maximize2 className="w-3.5 h-3.5" /></Button>
+            <Button size="sm" variant="outline" onClick={rerun} className="border-white/20 text-white/70 bg-transparent hover:bg-white/10 h-7 px-2 text-xs gap-1″><RefreshCw className="w-3 h-3" />Re-run</Button>
           </div>
         </div>
 
         {/* Filter bar */}
-        <div className="flex items-center gap-2 px-5 py-2 border-b border-white/10 bg-[#0d1420] shrink-0">
+        <div className="flex items-center gap-2 px-5 py-2 border-b border-white/10 bg-[#0d1420] shrink-0″>
           {(["all", "agent", "integration", "revenue"] as const).map(f => (
             <button key={f} onClick={() => setFilter(f)} className={`px-3 py-1 rounded-full text-[11px] font-medium transition-all ${filter === f ? "bg-[#00D4FF] text-[#0a0f1a]" : "bg-white/5 text-white/50 hover:bg-white/10"}`}>
               {f === "all" ? "All" : f.charAt(0).toUpperCase() + f.slice(1) + "s"}
             </button>
           ))}
-          <span className="text-[10px] text-white/25 ml-2">Scroll to zoom · Drag canvas to pan · Drag nodes to reposition · Click for details</span>
+          <span className="text-[10px] text-white/25 ml-2″>Scroll to zoom · Drag canvas to pan · Drag nodes to reposition · Click for details</span>
         </div>
 
         {/* Canvas + Detail panel */}
@@ -592,7 +592,7 @@ export default function KnowledgeGraph() {
               ref={canvasRef}
               width={dims.w}
               height={dims.h}
-              className="absolute inset-0"
+              className="absolute inset-0″
               onMouseMove={handleMouseMove}
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
@@ -604,15 +604,15 @@ export default function KnowledgeGraph() {
             {/* Legend overlay */}
             <div className="absolute bottom-4 left-4 bg-[#0d1420]/90 backdrop-blur border border-white/10 rounded-xl p-3 space-y-1.5 pointer-events-none">
               {(Object.entries(TYPE_COLOR) as [NodeType, string][]).map(([type, color]) => (
-                <div key={type} className="flex items-center gap-2 text-[10px] text-white/55">
-                  <span className="w-3 h-3 rounded-full border-2 inline-block shrink-0" style={{ borderColor: color, backgroundColor: color + "20" }} />
+                <div key={type} className="flex items-center gap-2 text-[10px] text-white/55″>
+                  <span className="w-3 h-3 rounded-full border-2 inline-block shrink-0″ style={{ borderColor: color, backgroundColor: color + "20" }} />
                   {type === "holding" ? "Holding Co" : type.charAt(0).toUpperCase() + type.slice(1)}
                 </div>
               ))}
-              <div className="border-t border-white/10 pt-1.5 mt-1 space-y-1">
+              <div className="border-t border-white/10 pt-1.5 mt-1 space-y-1″>
                 {(Object.entries(STATUS_COLOR) as [NodeStatus, string][]).map(([s, c]) => (
-                  <div key={s} className="flex items-center gap-2 text-[10px] text-white/45">
-                    <span className="w-2 h-2 rounded-full inline-block shrink-0" style={{ backgroundColor: c }} />
+                  <div key={s} className="flex items-center gap-2 text-[10px] text-white/45″>
+                    <span className="w-2 h-2 rounded-full inline-block shrink-0″ style={{ backgroundColor: c }} />
                     {s === "in-dev" ? "In Dev" : s.charAt(0).toUpperCase() + s.slice(1)}
                   </div>
                 ))}
@@ -622,39 +622,39 @@ export default function KnowledgeGraph() {
 
           {/* Detail panel */}
           {selected && (
-            <div className="w-72 border-l border-white/10 bg-[#0d1420] p-4 overflow-y-auto shrink-0">
-              <div className="flex items-start justify-between mb-3">
+            <div className="w-72 border-l border-white/10 bg-[#0d1420] p-4 overflow-y-auto shrink-0″>
+              <div className="flex items-start justify-between mb-3″>
                 <div>
-                  <div className="text-sm font-bold mb-1" style={{ color: TYPE_COLOR[selected.type] }}>{selected.label}</div>
-                  {selected.sublabel && <div className="text-[10px] text-white/40 mb-1.5">{selected.sublabel}</div>}
-                  <div className="flex items-center gap-2">
-                    <Badge className="text-[10px] px-2 py-0.5 border-0" style={{ backgroundColor: TYPE_COLOR[selected.type] + "20", color: TYPE_COLOR[selected.type] }}>
+                  <div className="text-sm font-bold mb-1″ style={{ color: TYPE_COLOR[selected.type] }}>{selected.label}</div>
+                  {selected.sublabel && <div className="text-[10px] text-white/40 mb-1.5″>{selected.sublabel}</div>}
+                  <div className="flex items-center gap-2″>
+                    <Badge className="text-[10px] px-2 py-0.5 border-0″ style={{ backgroundColor: TYPE_COLOR[selected.type] + "20", color: TYPE_COLOR[selected.type] }}>
                       {selected.type}
                     </Badge>
                     <div className="flex items-center gap-1 text-[10px] font-medium" style={{ color: STATUS_COLOR[selected.status] }}>
-                      {selected.status === "active" && <CheckCircle className="w-3 h-3" />}
-                      {selected.status === "in-dev" && <Zap className="w-3 h-3" />}
-                      {selected.status === "planned" && <Clock className="w-3 h-3" />}
-                      {selected.status === "error" && <AlertTriangle className="w-3 h-3" />}
+                      {selected.status === "active" && <CheckCircle className="w-3 h-3″ />}
+                      {selected.status === "in-dev" && <Zap className="w-3 h-3″ />}
+                      {selected.status === "planned" && <Clock className="w-3 h-3″ />}
+                      {selected.status === "error" && <AlertTriangle className="w-3 h-3″ />}
                       {selected.status === "in-dev" ? "In Dev" : selected.status.charAt(0).toUpperCase() + selected.status.slice(1)}
                     </div>
                   </div>
                 </div>
-                <button onClick={() => setSelected(null)} className="text-white/30 hover:text-white/70 text-xl leading-none mt-0.5">×</button>
+                <button onClick={() => setSelected(null)} className="text-white/30 hover:text-white/70 text-xl leading-none mt-0.5″>×</button>
               </div>
 
-              <p className="text-[11px] text-white/60 leading-relaxed mb-4">{selected.description}</p>
+              <p className="text-[11px] text-white/60 leading-relaxed mb-4″>{selected.description}</p>
 
               {selectedConnections.length > 0 && (
                 <>
-                  <div className="text-[10px] font-semibold text-white/35 uppercase tracking-wider mb-2">Connections ({selectedConnections.length})</div>
-                  <div className="space-y-1.5">
+                  <div className="text-[10px] font-semibold text-white/35 uppercase tracking-wider mb-2″>Connections ({selectedConnections.length})</div>
+                  <div className="space-y-1.5″>
                     {selectedConnections.map((c, i) => {
                       const other = c.other!;
                       return (
                         <div key={i} className="flex items-center gap-2 text-[11px] text-white/50 cursor-pointer hover:text-white/80 transition-colors" onClick={() => setSelected(other as GNode)}>
                           <span className="text-white/25 font-mono">{c.dir}</span>
-                          <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: TYPE_COLOR[(other as GNode).type] }} />
+                          <span className="w-2 h-2 rounded-full shrink-0″ style={{ backgroundColor: TYPE_COLOR[(other as GNode).type] }} />
                           <span>{other.label}</span>
                           {c.label && <span className="text-white/25 italic text-[10px]">({c.label})</span>}
                         </div>
@@ -665,8 +665,8 @@ export default function KnowledgeGraph() {
               )}
 
               {selected.parent && (
-                <div className="mt-4 pt-3 border-t border-white/10">
-                  <div className="text-[10px] font-semibold text-white/35 uppercase tracking-wider mb-1.5">Parent Entity</div>
+                <div className="mt-4 pt-3 border-t border-white/10″>
+                  <div className="text-[10px] font-semibold text-white/35 uppercase tracking-wider mb-1.5″>Parent Entity</div>
                   <div className="text-[11px] cursor-pointer hover:opacity-80 transition-opacity" style={{ color: TYPE_COLOR["business"] }} onClick={() => setSelected(RAW_NODES.find(n => n.id === selected.parent) as GNode ?? null)}>
                     {RAW_NODES.find(n => n.id === selected.parent)?.label}
                   </div>

@@ -3,42 +3,42 @@ import { useState } from 'react';
 const maintenanceCategories = [
   { category: 'Pool & Spa', icon: '🏊', annualCost: '$6,000–$14,000', items: [
     { service: 'Weekly pool service', freq: '52x/yr', cost: '$150–$250/mo' },
-    { service: 'Annual acid wash', freq: '1x/yr', cost: '$400–$800' },
-    { service: 'Filter replacement', freq: 'As needed', cost: '$300–$600' },
-    { service: 'Heater inspection', freq: '2x/yr', cost: '$150–$300' },
-    { service: 'Spa jet service', freq: '1x/yr', cost: '$200–$400' },
+    { service: 'Annual acid wash', freq: '1x/yr', cost: '$400–$800′ },
+    { service: 'Filter replacement', freq: 'As needed', cost: '$300–$600′ },
+    { service: 'Heater inspection', freq: '2x/yr', cost: '$150–$300′ },
+    { service: 'Spa jet service', freq: '1x/yr', cost: '$200–$400′ },
   ]},
   { category: 'HVAC (Multi-Zone)', icon: '❄️', annualCost: '$3,000–$8,000', items: [
     { service: 'Quarterly filter change + tune-up', freq: '4x/yr', cost: '$200–$400/visit' },
-    { service: 'Duct cleaning', freq: '2–3 years', cost: '$800–$2,000' },
-    { service: 'Zone controller calibration', freq: '1x/yr', cost: '$300–$600' },
-    { service: 'Refrigerant check', freq: '1x/yr', cost: '$150–$300' },
+    { service: 'Duct cleaning', freq: '2–3 years', cost: '$800–$2,000′ },
+    { service: 'Zone controller calibration', freq: '1x/yr', cost: '$300–$600′ },
+    { service: 'Refrigerant check', freq: '1x/yr', cost: '$150–$300′ },
     { service: 'Emergency service contract', freq: 'Annual', cost: '$400–$800/yr' },
   ]},
   { category: 'Landscape & Grounds', icon: '🌿', annualCost: '$8,000–$30,000', items: [
     { service: 'Weekly lawn care', freq: '52x/yr', cost: '$250–$800/mo' },
-    { service: 'Seasonal plantings', freq: '2x/yr', cost: '$1,500–$5,000' },
-    { service: 'Irrigation system service', freq: '2x/yr', cost: '$300–$600' },
-    { service: 'Tree trimming', freq: '1–2x/yr', cost: '$1,000–$4,000' },
-    { service: 'Landscape lighting', freq: 'Annual inspection', cost: '$300–$600' },
+    { service: 'Seasonal plantings', freq: '2x/yr', cost: '$1,500–$5,000′ },
+    { service: 'Irrigation system service', freq: '2x/yr', cost: '$300–$600′ },
+    { service: 'Tree trimming', freq: '1–2x/yr', cost: '$1,000–$4,000′ },
+    { service: 'Landscape lighting', freq: 'Annual inspection', cost: '$300–$600′ },
   ]},
   { category: 'Home Theater', icon: '🎬', annualCost: '$1,500–$5,000', items: [
-    { service: 'Projector bulb replacement', freq: 'Every 2,000 hrs', cost: '$400–$1,200' },
-    { service: 'AV system calibration', freq: '1x/yr', cost: '$400–$800' },
-    { service: 'Screen cleaning and inspection', freq: '2x/yr', cost: '$150–$300' },
-    { service: 'Seating mechanism service', freq: '1x/yr', cost: '$200–$500' },
+    { service: 'Projector bulb replacement', freq: 'Every 2,000 hrs', cost: '$400–$1,200′ },
+    { service: 'AV system calibration', freq: '1x/yr', cost: '$400–$800′ },
+    { service: 'Screen cleaning and inspection', freq: '2x/yr', cost: '$150–$300′ },
+    { service: 'Seating mechanism service', freq: '1x/yr', cost: '$200–$500′ },
   ]},
   { category: 'Wine Cellar', icon: '🍷', annualCost: '$800–$3,000', items: [
-    { service: 'Cooling unit service', freq: '2x/yr', cost: '$200–$500' },
+    { service: 'Cooling unit service', freq: '2x/yr', cost: '$200–$500′ },
     { service: 'Humidity monitoring', freq: 'Monthly', cost: '$0 (smart system)' },
-    { service: 'Rack inspection', freq: '1x/yr', cost: '$150–$300' },
+    { service: 'Rack inspection', freq: '1x/yr', cost: '$150–$300′ },
     { service: 'Temperature log review', freq: 'Quarterly', cost: '$0 (included)' },
   ]},
   { category: 'Whole-Home Generator', icon: '⚡', annualCost: '$1,500–$4,000', items: [
     { service: 'Quarterly exercise test + inspection', freq: '4x/yr', cost: '$200–$400/visit' },
-    { service: 'Annual oil + filter change', freq: '1x/yr', cost: '$300–$600' },
-    { service: 'Transfer switch test', freq: '2x/yr', cost: '$150–$300' },
-    { service: 'Load bank test', freq: '1x/yr', cost: '$400–$800' },
+    { service: 'Annual oil + filter change', freq: '1x/yr', cost: '$300–$600′ },
+    { service: 'Transfer switch test', freq: '2x/yr', cost: '$150–$300′ },
+    { service: 'Load bank test', freq: '1x/yr', cost: '$400–$800′ },
   ]},
 ];
 
@@ -113,7 +113,7 @@ export default function DFWLuxuryHomeGuide() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeTab === tab ? '#F5E642' : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
+                background: activeTab === tab ? '#F5E642′ : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
               }}
             >
               {tab === 'overview' ? '🏛️ Standards' : tab === 'systems' ? '🔧 Custom Systems' : tab === 'smart' ? '📱 Smart Home' : tab === 'security' ? '🔒 Security Tiers' : '🧮 Budget Estimator'}
@@ -125,7 +125,7 @@ export default function DFWLuxuryHomeGuide() {
           <div>
             <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28, marginBottom: 24 }}>
               <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>🏛️ Luxury Home Maintenance Standards</h3>
-              <p style={{ color: '#94A3B8', marginBottom: 20 }}>A $1M+ DFW home is not a larger version of a standard home — it's a different category of asset with different service expectations. Here's what best-in-class looks like:</p>
+              <p style={{ color: '#94A3B8', marginBottom: 20 }}>A $1M+ DFW home is not a larger version of a standard home — it's a different category of asset with different service expectations. Here’s what best-in-class looks like:</p>
               {[
                 { standard: 'Preventive Maintenance Calendar', detail: 'Annual schedule with 52 weekly, 12 monthly, 4 quarterly, and 2 annual touchpoints. Every system tracked by age, service date, and remaining life.' },
                 { standard: 'Trusted Vendor Network (Not Yelp)', detail: 'Top DFW luxury contractors are not on Yelp. They run by referral. A good estate manager or luxury-focused property manager has these relationships.' },
@@ -181,8 +181,8 @@ export default function DFWLuxuryHomeGuide() {
                     <tbody>
                       {cat.items.map(item => (
                         <tr key={item.service} style={{ borderBottom: '1px solid #1A2E4A' }}>
-                          <td style={{ padding: '10px 12px', color: '#CBD5E1' }}>{item.service}</td>
-                          <td style={{ padding: '10px 12px', color: '#94A3B8' }}>{item.freq}</td>
+                          <td style={{ padding: '10px 12px', color: '#CBD5E1′ }}>{item.service}</td>
+                          <td style={{ padding: '10px 12px', color: '#94A3B8′ }}>{item.freq}</td>
                           <td style={{ padding: '10px 12px', color: '#F5E642', fontWeight: 600 }}>{item.cost}</td>
                         </tr>
                       ))}
@@ -270,7 +270,7 @@ export default function DFWLuxuryHomeGuide() {
                     </div>
                     <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
                       onChange={e => field.setter(Number(e.target.value))}
-                      style={{ width: '100%', accentColor: '#F5E642' }} />
+                      style={{ width: '100%', accentColor: '#F5E642′ }} />
                   </div>
                 ))}
               </div>
@@ -288,8 +288,8 @@ export default function DFWLuxuryHomeGuide() {
                       onClick={() => toggle.setter(!toggle.value)}
                       style={{
                         padding: '10px 18px', borderRadius: 8, border: `2px solid ${toggle.value ? '#F5E642' : '#2D4A6B'}`,
-                        background: toggle.value ? '#F5E642' : 'transparent',
-                        color: toggle.value ? '#0A1628' : '#CBD5E1',
+                        background: toggle.value ? '#F5E642′ : ’transparent',
+                        color: toggle.value ? '#0A1628′ : '#CBD5E1',
                         cursor: 'pointer', fontWeight: toggle.value ? 700 : 400, fontSize: 14,
                       }}
                     >
@@ -300,9 +300,9 @@ export default function DFWLuxuryHomeGuide() {
               </div>
             </div>
 
-            <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28, textAlign: 'center', marginBottom: 24, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28, textAlign: 'center', marginBottom: 24, border: '2px solid #F5E642′ }}>
               <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 8 }}>Estimated Annual Maintenance Budget</div>
-              <div style={{ fontSize: 56, fontWeight: 900, color: '#F5E642' }}>${totalAnnual.toLocaleString()}</div>
+              <div style={{ fontSize: 56, fontWeight: 900, color: '#F5E642′ }}>${totalAnnual.toLocaleString()}</div>
               <div style={{ fontSize: 20, color: '#CBD5E1', marginTop: 4 }}>${totalMonthly.toLocaleString()}/month</div>
             </div>
 
@@ -318,7 +318,7 @@ export default function DFWLuxuryHomeGuide() {
                 generatorYN ? { label: 'Generator program', cost: generatorCost } : null,
               ].filter(Boolean).map(row => row && (
                 <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1A2E4A', fontSize: 14 }}>
-                  <span style={{ color: '#94A3B8' }}>{row.label}</span>
+                  <span style={{ color: '#94A3B8′ }}>{row.label}</span>
                   <span style={{ color: '#fff', fontWeight: 600 }}>${row.cost.toLocaleString()}/yr</span>
                 </div>
               ))}

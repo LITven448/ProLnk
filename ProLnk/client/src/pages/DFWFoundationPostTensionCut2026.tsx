@@ -62,7 +62,7 @@ const scenarios = [
   },
 ];
 
-const colors: Record<string,string> = { EMERGENCY: '#f87171', HIGH: '#fbbf24', INFO: '#60a5fa', LOW: '#4ade80' };
+const colors: Record<string,string> = { EMERGENCY: '#f87171', HIGH: '#fbbf24', INFO: '#60a5fa', LOW: '#4ade80′ };
 
 export default function DFWFoundationPostTensionCut2026() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -73,11 +73,11 @@ export default function DFWFoundationPostTensionCut2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0' }}>DFW Post-Tension Cable Cut Emergency Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0′ }}>DFW Post-Tension Cable Cut Emergency Guide 2026</h1>
           <p style={{ color: '#94a3b8', margin: 0 }}>A cut PT cable is a structural emergency — DFW contractors must know this protocol</p>
         </div>
 
-        <div style={{ background: '#1a0505', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #f87171' }}>
+        <div style={{ background: '#1a0505', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #f87171′ }}>
           <div style={{ color: '#f87171', fontWeight: 700 }}>🚨 Critical: PT Cables Are Under 33,000–60,000 lbs of Force</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', marginTop: '0.5rem' }}>A severed tendon can retract violently. Never attempt to grab, pull, or manually repair a cut PT cable. This is a structural engineering matter only.</div>
         </div>
@@ -101,7 +101,7 @@ export default function DFWFoundationPostTensionCut2026() {
             <div style={{ marginBottom: '1rem' }}>
               {sc.steps.map((step, i) => <div key={i} style={{ color: '#cbd5e1', padding: '0.4rem 0', borderBottom: '1px solid #1e3a5f', fontSize: '0.9rem' }}>{i + 1}. {step}</div>)}
             </div>
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', marginBottom: '0.8rem', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', marginBottom: '0.8rem', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>📋 DFW Context</div>
               <div style={{ color: '#cbd5e1', fontSize: '0.85rem' }}>{sc.note}</div>
             </div>

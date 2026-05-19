@@ -11,14 +11,14 @@ import {
   XCircle, Calendar, Building2, User, X,
 } from "lucide-react";
 
-const TEAL = "#0EA5E9";
+const TEAL = "#0EA5E9″;
 const GREEN = "#22C55E";
 const AMBER = "#F59E0B";
-const RED = "#EF4444";
-const DIM = "#8B91A8";
+const RED = "#EF4444″;
+const DIM = "#8B91A8″;
 const BORDER = "#1E2A3A";
 const CARD_BG = "#0F1D2E";
-const BG = "#0A1628";
+const BG = "#0A1628″;
 
 type PermitStatus = "Issued" | "Under Review" | "Final Inspection Needed" | "Closed";
 
@@ -35,33 +35,33 @@ interface ActivePermit {
 
 const activePermits: ActivePermit[] = [
   {
-    id: "p1",
+    id: "p1″,
     type: "HVAC Replacement",
-    number: "FRS-2026-04821",
+    number: "FRS-2026-04821″,
     issuedBy: "City of Frisco",
-    issueDate: "Apr 3, 2026",
-    expirationDate: "Oct 3, 2026",
+    issueDate: "Apr 3, 2026″,
+    expirationDate: "Oct 3, 2026″,
     status: "Final Inspection Needed",
     pro: "AirPro HVAC — Mike Castillo",
   },
   {
-    id: "p2",
+    id: "p2″,
     type: "Electrical Panel Upgrade",
-    number: "PLN-2026-01134",
+    number: "PLN-2026-01134″,
     issuedBy: "City of Plano",
-    issueDate: "May 1, 2026",
-    expirationDate: "Nov 1, 2026",
+    issueDate: "May 1, 2026″,
+    expirationDate: "Nov 1, 2026″,
     status: "Under Review",
     pro: "Texas Elite Electric — Jason Webb",
   },
 ];
 
 const pastPermits = [
-  { type: "Roof Replacement", year: 2024, cost: "$350", inspector: "B. Nguyen", result: "Passed" },
-  { type: "Water Heater", year: 2023, cost: "$75", inspector: "C. Torres", result: "Passed" },
-  { type: "Bathroom Addition", year: 2022, cost: "$600", inspector: "D. Marsh", result: "Passed" },
-  { type: "Garage Door", year: 2021, cost: "$125", inspector: "A. Singh", result: "Passed" },
-  { type: "Fence", year: 2020, cost: "$90", inspector: "R. Patel", result: "Failed" },
+  { type: "Roof Replacement", year: 2024, cost: "$350″, inspector: "B. Nguyen", result: "Passed" },
+  { type: "Water Heater", year: 2023, cost: "$75″, inspector: "C. Torres", result: "Passed" },
+  { type: "Bathroom Addition", year: 2022, cost: "$600″, inspector: "D. Marsh", result: "Passed" },
+  { type: "Garage Door", year: 2021, cost: "$125″, inspector: "A. Singh", result: "Passed" },
+  { type: "Fence", year: 2020, cost: "$90″, inspector: "R. Patel", result: "Failed" },
 ];
 
 const permitCategories = [
@@ -76,13 +76,13 @@ const permitCategories = [
 function statusConfig(status: PermitStatus) {
   switch (status) {
     case "Issued":
-      return { color: GREEN, bg: "#22C55E18", border: "#22C55E44", icon: <CheckCircle size={13} /> };
+      return { color: GREEN, bg: "#22C55E18″, border: "#22C55E44", icon: <CheckCircle size={13} /> };
     case "Under Review":
-      return { color: AMBER, bg: "#F59E0B18", border: "#F59E0B44", icon: <Clock size={13} /> };
+      return { color: AMBER, bg: "#F59E0B18″, border: "#F59E0B44", icon: <Clock size={13} /> };
     case "Final Inspection Needed":
-      return { color: "#F97316", bg: "#F9731618", border: "#F9731644", icon: <AlertCircle size={13} /> };
+      return { color: "#F97316″, bg: "#F9731618", border: "#F9731644", icon: <AlertCircle size={13} /> };
     case "Closed":
-      return { color: DIM, bg: "#8B91A818", border: "#8B91A844", icon: <XCircle size={13} /> };
+      return { color: DIM, bg: "#8B91A818″, border: "#8B91A844", icon: <XCircle size={13} /> };
   }
 }
 
@@ -123,7 +123,7 @@ function AddPermitForm({ onClose }: { onClose: () => void }) {
             <Input
               id={f.id}
               placeholder={f.label}
-              style={{ backgroundColor: "#0A1628", border: `1px solid ${BORDER}`, color: "#F0F2FF", fontSize: 13 }}
+              style={{ backgroundColor: "#0A1628″, border: `1px solid ${BORDER}`, color: "#F0F2FF", fontSize: 13 }}
             />
           </div>
         ))}
@@ -193,8 +193,8 @@ export default function PermitTracker() {
                   </div>
                   {permit.status === "Final Inspection Needed" && (
                     <button style={{
-                      backgroundColor: "#F9731618", border: "1px solid #F9731644",
-                      borderRadius: 8, padding: "7px 14px", color: "#F97316",
+                      backgroundColor: "#F9731618″, border: "1px solid #F9731644",
+                      borderRadius: 8, padding: "7px 14px", color: "#F97316″,
                       fontSize: 13, fontWeight: 600, cursor: "pointer",
                     }}>
                       Request Final Inspection
@@ -209,7 +209,7 @@ export default function PermitTracker() {
                     { icon: <Calendar size={13} />, label: "Expires", value: permit.expirationDate },
                     { icon: <User size={13} />, label: "Pro", value: permit.pro ?? "—" },
                   ].map(item => (
-                    <div key={item.label} style={{ backgroundColor: "#0A1628", borderRadius: 8, padding: "10px 12px" }}>
+                    <div key={item.label} style={{ backgroundColor: "#0A1628″, borderRadius: 8, padding: "10px 12px" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 4, color: DIM, fontSize: 11, marginBottom: 4 }}>
                         {item.icon}
                         <span style={{ textTransform: "uppercase", letterSpacing: 0.5 }}>{item.label}</span>
@@ -229,7 +229,7 @@ export default function PermitTracker() {
             Permit History
           </div>
           <div style={{ borderRadius: 8, overflow: "hidden", border: `1px solid ${BORDER}` }}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 80px 80px 140px 80px", backgroundColor: "#0A1628", padding: "10px 14px", borderBottom: `1px solid ${BORDER}` }}>
+            <div style={{ display: "grid", gridTemplateColumns: "2fr 80px 80px 140px 80px", backgroundColor: "#0A1628″, padding: "10px 14px", borderBottom: `1px solid ${BORDER}` }}>
               {["Type", "Year", "Cost", "Inspector", "Result"].map(h => (
                 <div key={h} style={{ color: DIM, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: 0.7 }}>{h}</div>
               ))}
@@ -287,7 +287,7 @@ export default function PermitTracker() {
                   </div>
                 </button>
                 {openAccordion === i && (
-                  <div style={{ padding: "10px 14px 14px", borderTop: `1px solid ${BORDER}`, backgroundColor: "#0A1628" }}>
+                  <div style={{ padding: "10px 14px 14px", borderTop: `1px solid ${BORDER}`, backgroundColor: "#0A1628″ }}>
                     <p style={{ color: DIM, fontSize: 13, lineHeight: 1.6, margin: 0 }}>
                       {cat.required === true &&
                         `A permit is required for ${cat.label.toLowerCase()} in most Texas cities. Contact your local building department before work begins. Unpermitted work may need to be torn out or could affect your home sale.`}

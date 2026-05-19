@@ -86,7 +86,7 @@ export default function DFWRealEstatePhotographyGuide() {
             <label style={{ fontSize: 12, color: '#64748B', display: 'block', marginBottom: 8, fontWeight: 600 }}>HOME TYPE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {['Condo / Townhome', 'Single Family Home', 'Luxury Home ($500K+)', 'New Construction'].map(t => (
-                <button key={t} onClick={() => setHomeType(t)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: homeType === t ? '#F5E642' : '#0A1628', color: homeType === t ? '#0A1628' : '#94A3B8', fontWeight: 600, fontSize: 13 }}>{t}</button>
+                <button key={t} onClick={() => setHomeType(t)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: homeType === t ? '#F5E642′ : '#0A1628', color: homeType === t ? '#0A1628' : '#94A3B8', fontWeight: 600, fontSize: 13 }}>{t}</button>
               ))}
             </div>
           </div>
@@ -94,12 +94,12 @@ export default function DFWRealEstatePhotographyGuide() {
             <label style={{ fontSize: 12, color: '#64748B', display: 'block', marginBottom: 8, fontWeight: 600 }}>DESIRED SERVICES (select all)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {['Photos', 'Drone', 'Virtual Tour', 'Floor Plan', 'Twilight'].map(s => (
-                <button key={s} onClick={() => toggleService(s)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: services.includes(s) ? '#F5E642' : '#0A1628', color: services.includes(s) ? '#0A1628' : '#94A3B8', fontWeight: 600, fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => toggleService(s)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: services.includes(s) ? '#F5E642′ : '#0A1628', color: services.includes(s) ? '#0A1628' : '#94A3B8', fontWeight: 600, fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
           {recs.length > 0 ? recs.map(r => (
-            <div key={r.name} style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginBottom: 10, borderLeft: '3px solid #F5E642' }}>
+            <div key={r.name} style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginBottom: 10, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 16 }}>{r.name}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{r.price}</div>
               <div style={{ color: '#64748B', fontSize: 13, marginTop: 4 }}>Turnaround: {r.turnaround}</div>

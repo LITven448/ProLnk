@@ -29,7 +29,7 @@ export default function DFWRoofingCharterProAdvantage2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW Charter Roofing Pro Advantage Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW roofing market is $1.0B/yr. Hail season. Charter pros get there first — no per-lead fees.</p>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>⛈️ DFW Hail Season = Predictable Demand</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
             April through June, DFW averages 8-12 significant hail events. Each event generates 500-2,000 homeowner insurance claims. Angi and HomeAdvisor charge $50-75/lead during this period. ProLnk Charter pros pay zero per-lead fees.
@@ -45,19 +45,19 @@ export default function DFWRoofingCharterProAdvantage2026() {
           ].map(c => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>{c.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>{c.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#112240', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏠 Your Charter Roofing Advantage</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏠 Your Charter Roofing Advantage</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16, fontSize: 14 }}>Select your roofing situation:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => { setSituation(s.id); setResult(''); }}
-                style={{ background: situation === s.id ? '#F5E642' : '#1e3a5f', color: situation === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: situation === s.id ? '#F5E642′ : '#1e3a5f', color: situation === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {s.label}
               </button>
             ))}
@@ -67,7 +67,7 @@ export default function DFWRoofingCharterProAdvantage2026() {
             Show My Charter Advantage →
           </button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#fff', lineHeight: 1.6 }}>{result}</p>
             </div>
           )}

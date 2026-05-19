@@ -34,7 +34,7 @@ export default function DFWWasherDryerGuide2026() {
         <p style={{ color: '#a0b0c8', marginBottom: 28 }}>Gas dryers dominate DFW. Dryer vent cleaning is a critical fire-safety task.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
-          <div style={{ background: '#13223a', borderRadius: 12, padding: 18, borderTop: '3px solid #F5E642' }}>
+          <div style={{ background: '#13223a', borderRadius: 12, padding: 18, borderTop: '3px solid #F5E642′ }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>🔥</div>
             <div style={{ fontWeight: 700, marginBottom: 6 }}>Gas vs Electric Dryer</div>
             <ul style={{ color: '#a0b0c8', fontSize: 12, paddingLeft: 16, lineHeight: 1.8 }}>
@@ -44,7 +44,7 @@ export default function DFWWasherDryerGuide2026() {
               <li>Gas line work requires licensed TX plumber</li>
             </ul>
           </div>
-          <div style={{ background: '#13223a', borderRadius: 12, padding: 18, borderTop: '3px solid #F5E642' }}>
+          <div style={{ background: '#13223a', borderRadius: 12, padding: 18, borderTop: '3px solid #F5E642′ }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>⚠️</div>
             <div style={{ fontWeight: 700, marginBottom: 6 }}>Dryer Vent Fire Risk</div>
             <ul style={{ color: '#a0b0c8', fontSize: 12, paddingLeft: 16, lineHeight: 1.8 }}>
@@ -80,14 +80,14 @@ export default function DFWWasherDryerGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
             {setups.map(s => (
               <button key={s} onClick={() => setSetup(s)}
-                style={{ background: setup === s ? '#F5E642' : '#0A1628', color: setup === s ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: 'pointer' }}>{s}</button>
+                style={{ background: setup === s ? '#F5E642′ : '#0A1628', color: setup === s ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: ’pointer' }}>{s}</button>
             ))}
           </div>
           <div style={{ fontSize: 13, color: '#a0b0c8', marginBottom: 8 }}>Symptoms (select all)</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {SYMS.map(s => (
               <button key={s} onClick={() => toggle(s)}
-                style={{ background: symptoms.includes(s) ? '#F5E642' : '#0A1628', color: symptoms.includes(s) ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: 'pointer' }}>{s}</button>
+                style={{ background: symptoms.includes(s) ? '#F5E642′ : '#0A1628', color: symptoms.includes(s) ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: ’pointer' }}>{s}</button>
             ))}
           </div>
           <button onClick={guide} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '12px 24px', cursor: 'pointer', fontSize: 15 }}>Get My Guide</button>

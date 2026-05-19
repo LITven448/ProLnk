@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const cities = [
-  { city: 'Dallas', situation: 'New system install', type: 'Wireless Rain Sensor', compliance: 'Required by Dallas Water Utilities for all new irrigation permits', cost: '$35–$90', brand: 'Hunter Mini-Clik, Irritrol RS-1000' },
-  { city: 'Fort Worth', situation: 'New system install', type: 'Wireless Rain Sensor', compliance: 'Required for all new Fort Worth Water permits since 2012', cost: '$35–$90', brand: 'Rain Bird WR2' },
+  { city: 'Dallas', situation: 'New system install', type: 'Wireless Rain Sensor', compliance: 'Required by Dallas Water Utilities for all new irrigation permits', cost: '$35–$90', brand: 'Hunter Mini-Clik, Irritrol RS-1000′ },
+  { city: 'Fort Worth', situation: 'New system install', type: 'Wireless Rain Sensor', compliance: 'Required for all new Fort Worth Water permits since 2012', cost: '$35–$90', brand: 'Rain Bird WR2′ },
   { city: 'Plano', situation: 'Existing system upgrade', type: 'Wired Rain Sensor', compliance: 'Plano mandates sensors on all systems — retrofit required', cost: '$20–$55', brand: 'Toro TWRS, Hunter Mini-Clik' },
   { city: 'Frisco', situation: 'Smart controller upgrade', type: 'Smart Weather Skip (built-in)', compliance: 'Frisco accepts smart controller ET-based skipping in lieu of hardware sensor', cost: '$0 (software feature)', brand: 'Rachio 3, Hunter HC' },
-  { city: 'McKinney', situation: 'New system install', type: 'Wireless Rain Sensor', compliance: 'Required — McKinney Water Conservation ordinance Section 14.3', cost: '$35–$90', brand: 'Orbit 57860' },
+  { city: 'McKinney', situation: 'New system install', type: 'Wireless Rain Sensor', compliance: 'Required — McKinney Water Conservation ordinance Section 14.3', cost: '$35–$90', brand: 'Orbit 57860′ },
   { city: 'Arlington', situation: 'Existing system no sensor', type: 'Wired or Wireless', compliance: 'Strongly recommended — Arlington Sustainable Water Program rebates available', cost: '$20–$90', brand: 'Any TX A&M certified sensor' },
 ];
 
@@ -22,7 +22,7 @@ export default function DFWRaindropSensorGuide() {
           <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             DFW Rain Sensor Guide for Irrigation
           </h1>
-          <p style={{ color: '#94a3b8' }}>
+          <p style={{ color: '#94a3b8′ }}>
             DFW cities require rain sensors on new irrigation systems. They prevent watering during and after rain events, saving 7,000+ gallons per year.
           </p>
         </div>
@@ -35,8 +35,8 @@ export default function DFWRaindropSensorGuide() {
                 key={city}
                 onClick={() => setSelCity(city === selCity ? null : city)}
                 style={{
-                  background: selCity === city ? '#F5E642' : '#1e3a5f',
-                  color: selCity === city ? '#0A1628' : '#fff',
+                  background: selCity === city ? '#F5E642′ : '#1e3a5f',
+                  color: selCity === city ? '#0A1628′ : '#fff',
                   border: 'none', borderRadius: 8, padding: '0.75rem',
                   cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', transition: 'all 0.2s'
                 }}
@@ -48,7 +48,7 @@ export default function DFWRaindropSensorGuide() {
         </div>
 
         {selCity && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             {(() => {
               const result = cities.find(c => c.city === selCity);
               if (!result) return null;

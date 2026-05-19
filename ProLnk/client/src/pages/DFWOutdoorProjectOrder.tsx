@@ -64,7 +64,7 @@ export default function DFWOutdoorProjectOrder() {
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>🏊 The Pool Rule: Always First or Never</h2>
-          <div style={{ background: '#2a1a0a', borderRadius: 8, padding: 16, borderLeft: '4px solid #fbbf24' }}>
+          <div style={{ background: '#2a1a0a', borderRadius: 8, padding: 16, borderLeft: '4px solid #fbbf24′ }}>
             <p style={{ color: '#fbbf24', fontWeight: 700, margin: '0 0 8px' }}>If you want a pool — ever — build it first.</p>
             <p style={{ color: '#94a3b8', margin: '0 0 8px', fontSize: 14 }}>Pool excavation requires a large crane and excavator that will drive across your entire backyard, destroying any finished hardscape, landscaping, or structures in their path. Pool equipment pads require concrete poured against the pool shell.</p>
             <p style={{ color: '#94a3b8', margin: 0, fontSize: 14 }}>Homeowners who install a patio first and then add a pool typically pay $8,000–$25,000 in demo and rebuild costs. If a pool is in your 5-year plan — build it in Year 1.</p>
@@ -82,7 +82,7 @@ export default function DFWOutdoorProjectOrder() {
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>{label}</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {options.map(([val, text]) => (
-                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642' : '#1e3a5f', background: value === val ? '#F5E642' : 'transparent', color: value === val ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
+                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642′ : '#1e3a5f', background: value === val ? '#F5E642' : ’transparent', color: value === val ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
                 ))}
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function DFWOutdoorProjectOrder() {
                   <div>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 4 }}>
                       <span style={{ color: '#fff', fontWeight: 700 }}>{p.label}</span>
-                      <span style={{ fontSize: 11, padding: '2px 8px', borderRadius: 4, background: p.disruptionLevel === 'Extreme' ? '#ef4444' : p.disruptionLevel === 'High' ? '#f97316' : p.disruptionLevel === 'Medium' ? '#fbbf24' : '#22c55e', color: '#0A1628', fontWeight: 700 }}>{p.disruptionLevel} Disruption</span>
+                      <span style={{ fontSize: 11, padding: '2px 8px', borderRadius: 4, background: p.disruptionLevel === 'Extreme' ? '#ef4444′ : p.disruptionLevel === ’High' ? '#f97316′ : p.disruptionLevel === ’Medium' ? '#fbbf24′ : '#22c55e', color: '#0A1628', fontWeight: 700 }}>{p.disruptionLevel} Disruption</span>
                     </div>
                     <p style={{ color: '#94a3b8', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{p.rationale}</p>
                   </div>

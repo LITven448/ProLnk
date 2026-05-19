@@ -47,7 +47,7 @@ export default function DFWBudgetingForHome() {
   ];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DFW BUYER EDUCATION</div>
@@ -55,14 +55,14 @@ export default function DFWBudgetingForHome() {
           <p style={{ color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>DFW property taxes alone add $650–$800/month to your payment. Know the true cost before you commit.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>🧮 Calculate True Monthly Cost</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 20 }}>Enter your details to see the complete cost breakdown and what income you need.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
-              { label: 'Target Home Price ($)', val: targetPrice, set: setTargetPrice, ph: '390000' },
-              { label: 'Current Savings ($)', val: currentSavings, set: setCurrentSavings, ph: '30000' },
-              { label: 'Gross Monthly Income ($)', val: monthlyIncome, set: setMonthlyIncome, ph: '9000' },
+              { label: 'Target Home Price ($)', val: targetPrice, set: setTargetPrice, ph: '390000′ },
+              { label: 'Current Savings ($)', val: currentSavings, set: setCurrentSavings, ph: '30000′ },
+              { label: 'Gross Monthly Income ($)', val: monthlyIncome, set: setMonthlyIncome, ph: '9000′ },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>{f.label}</label>
@@ -76,14 +76,14 @@ export default function DFWBudgetingForHome() {
             <div style={{ marginTop: 24 }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }}>
                 {[
-                  { label: 'Total Monthly Cost', value: `$${result.total.toLocaleString()}`, sub: 'All-in ownership cost', color: '#0A1628' },
-                  { label: 'Income Needed', value: `$${result.incomeNeeded.toLocaleString()}/mo`, sub: 'Gross to stay under 28% DTI', color: result.inc >= result.incomeNeeded ? '#16a34a' : '#dc2626' },
-                  { label: 'Savings Needed to Close', value: `$${result.needed.toLocaleString()}`, sub: `5% down + closing costs`, color: result.sav >= result.needed ? '#16a34a' : '#b45309' },
+                  { label: 'Total Monthly Cost', value: `$${result.total.toLocaleString()}`, sub: 'All-in ownership cost', color: '#0A1628′ },
+                  { label: 'Income Needed', value: `$${result.incomeNeeded.toLocaleString()}/mo`, sub: 'Gross to stay under 28% DTI', color: result.inc >= result.incomeNeeded ? '#16a34a' : '#dc2626′ },
+                  { label: 'Savings Needed to Close', value: `$${result.needed.toLocaleString()}`, sub: `5% down + closing costs`, color: result.sav >= result.needed ? '#16a34a' : '#b45309′ },
                 ].map(card => (
                   <div key={card.label} style={{ background: '#f8fafc', borderRadius: 10, padding: 16, border: '1px solid #e2e8f0', textAlign: 'center' }}>
                     <div style={{ fontSize: 11, color: '#64748b', marginBottom: 4 }}>{card.label}</div>
                     <div style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.value}</div>
-                    <div style={{ fontSize: 11, color: '#94a3b8' }}>{card.sub}</div>
+                    <div style={{ fontSize: 11, color: '#94a3b8′ }}>{card.sub}</div>
                   </div>
                 ))}
               </div>
@@ -93,14 +93,14 @@ export default function DFWBudgetingForHome() {
                   <div>
                     <span style={{ fontSize: 14 }}>{item.label}</span>
                     {item.highlight && <span style={{ marginLeft: 8, fontSize: 11, background: '#fef9c3', color: '#92400e', borderRadius: 4, padding: '2px 6px' }}>DFW specific</span>}
-                    <div style={{ fontSize: 12, color: '#94a3b8' }}>{item.note}</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>{item.note}</div>
                   </div>
                   <span style={{ fontSize: 15, fontWeight: 700 }}>${item.amount.toLocaleString()}/mo</span>
                 </div>
               ))}
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 0', borderTop: '2px solid #0A1628', marginTop: 4 }}>
                 <span style={{ fontSize: 16, fontWeight: 800 }}>Total Monthly Cost</span>
-                <span style={{ fontSize: 18, fontWeight: 800, color: '#0A1628' }}>${result.total.toLocaleString()}/mo</span>
+                <span style={{ fontSize: 18, fontWeight: 800, color: '#0A1628′ }}>${result.total.toLocaleString()}/mo</span>
               </div>
               {result.savingsGap > 0 && (
                 <div style={{ background: '#fef9c3', borderRadius: 8, padding: 16, marginTop: 12, border: '1px solid #fde68a' }}>
@@ -112,11 +112,11 @@ export default function DFWBudgetingForHome() {
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📅 12-Month Preparation Plan</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {prepSteps.map(step => (
-              <div key={step.month} style={{ display: 'flex', gap: 16, padding: 16, background: '#f8fafc', borderRadius: 10, border: '1px solid #e2e8f0' }}>
+              <div key={step.month} style={{ display: 'flex', gap: 16, padding: 16, background: '#f8fafc', borderRadius: 10, border: '1px solid #e2e8f0′ }}>
                 <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '6px 10px', fontWeight: 800, fontSize: 13, whiteSpace: 'nowrap', height: 'fit-content' }}>Mo {step.month}</div>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{step.title}</div>

@@ -39,7 +39,7 @@ export default function DFWAffordableNeighborhoodsGuide() {
           ].map((stat, i) => (
             <div key={i} style={{ background: '#111f3d', borderRadius: 12, padding: '1.25rem', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>{stat.label}</p>
-              <p style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700, margin: '0.25rem 0' }}>{stat.value}</p>
+              <p style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700, margin: '0.25rem 0′ }}>{stat.value}</p>
               <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{stat.sub}</p>
             </div>
           ))}
@@ -50,17 +50,17 @@ export default function DFWAffordableNeighborhoodsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div>
               <h4 style={{ color: '#4ade80', marginBottom: '0.5rem', fontSize: '0.95rem' }}>✅ What You Keep</h4>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Texas school districts still rated B or better</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Safe, family-friendly neighborhoods</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• More sq footage for your dollar</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Above-average appreciation potential</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Texas school districts still rated B or better</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Safe, family-friendly neighborhoods</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• More sq footage for your dollar</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Above-average appreciation potential</p>
             </div>
             <div>
               <h4 style={{ color: '#f87171', marginBottom: '0.5rem', fontSize: '0.95rem' }}>❌ What You Trade Off</h4>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Longer commutes (25–45 min to core)</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Fewer walkable restaurants / retail</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Older housing stock in some areas</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0' }}>• Less name-brand suburb cachet</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Longer commutes (25–45 min to core)</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Fewer walkable restaurants / retail</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Older housing stock in some areas</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem', margin: '0.25rem 0′ }}>• Less name-brand suburb cachet</p>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function DFWAffordableNeighborhoodsGuide() {
         </div>
 
         {matches.length > 0 && (
-          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>🏆 Your Top Affordable Neighborhoods</h3>
             {matches.map((n, i) => (
               <div key={n.name} style={{ borderBottom: i < matches.length - 1 ? '1px solid #1e3a5f' : 'none', paddingBottom: '0.75rem', marginBottom: '0.75rem' }}>

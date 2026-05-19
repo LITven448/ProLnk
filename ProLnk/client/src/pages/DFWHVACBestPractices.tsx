@@ -38,18 +38,18 @@ export default function DFWHVACBestPractices() {
   const done = filtered.filter(p => checked[p.id]).length;
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 40 }}>🏠</div>
-          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW HVAC Best Practices</h1>
-          <p style={{ color: "#94a3b8", margin: 0 }}>15 proven practices for North Texas homeowners</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW HVAC Best Practices</h1>
+          <p style={{ color: "#94a3b8″, margin: 0 }}>15 proven practices for North Texas homeowners</p>
         </div>
 
         <div style={{ background: "#1e293b", borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <label style={{ color: "#F5E642", fontWeight: 700, display: "block", marginBottom: 10 }}>Your home type → personalized checklist</label>
+          <label style={{ color: "#F5E642″, fontWeight: 700, display: "block", marginBottom: 10 }}>Your home type → personalized checklist</label>
           <select value={homeType} onChange={e => setHomeType(e.target.value)}
-            style={{ width: "100%", padding: "10px 14px", background: "#0A1628", color: "#fff", border: "1px solid #334155", borderRadius: 8, fontSize: 15 }}>
+            style={{ width: "100%", padding: "10px 14px", background: "#0A1628″, color: "#fff", border: "1px solid #334155", borderRadius: 8, fontSize: 15 }}>
             <option value="">All homes (show all 15)</option>
             {homeTypes.map(h => <option key={h} value={h}>{h}</option>)}
           </select>
@@ -66,13 +66,13 @@ export default function DFWHVACBestPractices() {
           if (!group.length) return null;
           return (
             <div key={freq} style={{ marginBottom: 24 }}>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>⏰ {freq}</div>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>⏰ {freq}</div>
               {group.map(p => (
-                <div key={p.id} onClick={() => toggle(p.id)} style={{ background: checked[p.id] ? "#1a2e1a" : "#1e293b", border: checked[p.id] ? "1px solid #22c55e" : "1px solid #334155", borderRadius: 10, padding: 14, marginBottom: 8, cursor: "pointer", display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div key={p.id} onClick={() => toggle(p.id)} style={{ background: checked[p.id] ? "#1a2e1a" : "#1e293b", border: checked[p.id] ? "1px solid #22c55e" : "1px solid #334155″, borderRadius: 10, padding: 14, marginBottom: 8, cursor: "pointer", display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <span style={{ fontSize: 20, marginTop: 2 }}>{checked[p.id] ? "✅" : "⬜"}</span>
                   <div>
                     <div style={{ fontWeight: 700, marginBottom: 4 }}>{p.label}</div>
-                    <div style={{ color: "#94a3b8", fontSize: 14 }}>{p.detail}</div>
+                    <div style={{ color: "#94a3b8″, fontSize: 14 }}>{p.detail}</div>
                   </div>
                 </div>
               ))}
@@ -81,9 +81,9 @@ export default function DFWHVACBestPractices() {
         })}
 
         <div style={{ textAlign: "center", marginTop: 32, padding: 20, background: "#1e293b", borderRadius: 12 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 8 }}>🔧 Need a DFW HVAC pro?</div>
-          <p style={{ color: "#94a3b8", fontSize: 14, margin: "0 0 16px" }}>ProLnk connects you with vetted North Texas HVAC technicians.</p>
-          <button style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, fontSize: 15, cursor: "pointer" }}>Join ProLnk Waitlist</button>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 8 }}>🔧 Need a DFW HVAC pro?</div>
+          <p style={{ color: "#94a3b8″, fontSize: 14, margin: "0 0 16px" }}>ProLnk connects you with vetted North Texas HVAC technicians.</p>
+          <button style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, fontSize: 15, cursor: "pointer" }}>Join ProLnk Waitlist</button>
         </div>
       </div>
     </div>

@@ -113,11 +113,11 @@ export default function DFWVirtualStagingGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>Physical staging costs $2,000–5,000. Virtual staging costs $50–300. DFW buyers respond well to both — here's how to choose for your situation.</p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📊 Virtual vs Physical: DFW Comparison</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['Virtual: $50–300 total', 'Physical: $2,000–5,000+', '#EFF6FF'], ['Virtual: 24–48hr turnaround', 'Physical: 1–2 weeks scheduling', '#F0FDF4'], ['Virtual: photos only (disclose)', 'Physical: in-person + photos', '#FEFCE8'], ['Both increase sale price in DFW — situation determines which wins', '', '#F8FAFC']].map(([a, b, bg], i) => (
-              <div key={i} style={{ backgroundColor: bg, borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
+              <div key={i} style={{ backgroundColor: bg, borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
                 <div style={{ color: '#374151', fontSize: 13, fontWeight: 600 }}>{a}</div>
                 {b && <div style={{ color: '#64748B', fontSize: 12, marginTop: 4 }}>{b}</div>}
               </div>
@@ -125,7 +125,7 @@ export default function DFWVirtualStagingGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -162,7 +162,7 @@ export default function DFWVirtualStagingGuide() {
               <div style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 16 }}>
                 <div style={{ color: '#0A1628', fontWeight: 700, marginBottom: 10 }}>🏢 Recommended Services for DFW</div>
                 {result.services.map((s, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10, paddingBottom: 10, borderBottom: i < result.services.length - 1 ? '1px solid #E2E8F0' : 'none' }}>
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10, paddingBottom: 10, borderBottom: i < result.services.length - 1 ? '1px solid #E2E8F0′ : ’none' }}>
                     <div>
                       <div style={{ color: '#0A1628', fontWeight: 600, fontSize: 13 }}>{s.name}</div>
                       <div style={{ color: '#64748B', fontSize: 12 }}>{s.dfwRating}</div>

@@ -25,7 +25,7 @@ export default function DFWSachseTXDeepDive2026() {
           in 2000s–2020s. Clay soil and rapid build pace create specific maintenance priorities.
         </p>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>📍 Area Snapshot</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>
             ZIP code 75048 · Straddles Collin and Dallas counties · Population grew 400%+ 2000–2026 ·
@@ -34,8 +34,8 @@ export default function DFWSachseTXDeepDive2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #ef4444' }}>
-          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#ef4444' }}>⚠️ Sachse Clay Soil Alert</div>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #ef4444′ }}>
+          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#ef4444′ }}>⚠️ Sachse Clay Soil Alert</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
             Sachse sits on some of the most expansive clay in DFW. Seasonal swelling and shrinkage
             causes more foundation movement here than most DFW cities. Drip irrigation on a timer
@@ -43,7 +43,7 @@ export default function DFWSachseTXDeepDive2026() {
           </div>
         </div>
 
-        <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>
+        <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>
           Select your home age for a tailored guide:
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
@@ -52,9 +52,9 @@ export default function DFWSachseTXDeepDive2026() {
               key={h.id}
               onClick={() => setSelected(h.id === selected ? null : h.id)}
               style={{
-                background: selected === h.id ? '#F5E642' : '#0f2040',
-                color: selected === h.id ? '#0A1628' : '#fff',
-                border: '1px solid ' + (selected === h.id ? '#F5E642' : '#1e3a5f'),
+                background: selected === h.id ? '#F5E642′ : '#0f2040',
+                color: selected === h.id ? '#0A1628′ : '#fff',
+                border: '1px solid ' + (selected === h.id ? '#F5E642′ : '#1e3a5f'),
                 borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left',
                 fontWeight: 600, cursor: 'pointer', fontSize: '0.95rem',
               }}
@@ -66,7 +66,7 @@ export default function DFWSachseTXDeepDive2026() {
 
         {active && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>
+            <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>
               {active.label} — 2026 Priorities
             </div>
             <ul style={{ margin: 0, paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

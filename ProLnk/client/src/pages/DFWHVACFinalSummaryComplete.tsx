@@ -43,13 +43,13 @@ export default function DFWHVACFinalSummaryComplete() {
           <p style={{ color: '#94a3b8', marginBottom: 24 }}>Select your situation for a personalized summary:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 14, color: '#e2e8f0', lineHeight: 1.7 }}>{result.summary}</div>
             </div>
           )}
@@ -57,7 +57,7 @@ export default function DFWHVACFinalSummaryComplete() {
 
         <div style={{ textAlign: 'center', background: '#F5E642', borderRadius: 12, padding: '24px 32px' }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628', marginBottom: 8 }}>Ready to Act?</div>
-          <div style={{ fontSize: 15, color: '#0A1628' }}>Join ProLnk's waitlist — DFW homeowners get priority access</div>
+          <div style={{ fontSize: 15, color: '#0A1628′ }}>Join ProLnk’s waitlist — DFW homeowners get priority access</div>
         </div>
       </div>
     </div>

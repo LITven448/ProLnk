@@ -41,19 +41,19 @@ export default function DFWHomeWealthGuide2026() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Your DFW Wealth Building Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Your DFW Wealth Building Calculator</h2>
           <div style={{ display: 'grid', gap: 20 }}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Year Purchased: <strong style={{ color: '#fff' }}>{purchaseYear}</strong></span>
-              <input type="range" min={2010} max={2025} value={purchaseYear} onChange={e => setPurchaseYear(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Year Purchased: <strong style={{ color: '#fff' }}>{purchaseYear}</strong></span>
+              <input type="range" min={2010} max={2025} value={purchaseYear} onChange={e => setPurchaseYear(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Purchase Price: <strong style={{ color: '#fff' }}>${purchasePrice.toLocaleString()}</strong></span>
-              <input type="range" min={100000} max={1200000} step={10000} value={purchasePrice} onChange={e => setPurchasePrice(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Purchase Price: <strong style={{ color: '#fff' }}>${purchasePrice.toLocaleString()}</strong></span>
+              <input type="range" min={100000} max={1200000} step={10000} value={purchasePrice} onChange={e => setPurchasePrice(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Down Payment: <strong style={{ color: '#fff' }}>${downPayment.toLocaleString()}</strong></span>
-              <input type="range" min={10000} max={purchasePrice} step={5000} value={downPayment} onChange={e => setDownPayment(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Down Payment: <strong style={{ color: '#fff' }}>${downPayment.toLocaleString()}</strong></span>
+              <input type="range" min={10000} max={purchasePrice} step={5000} value={downPayment} onChange={e => setDownPayment(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
             </label>
           </div>
 
@@ -66,7 +66,7 @@ export default function DFWHomeWealthGuide2026() {
             ].map((item) => (
               <div key={item.label} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 10, padding: '16px 14px' }}>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>{item.val}</div>
+                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>{item.val}</div>
               </div>
             ))}
           </div>

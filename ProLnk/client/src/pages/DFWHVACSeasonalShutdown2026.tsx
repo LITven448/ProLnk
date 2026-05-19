@@ -52,7 +52,7 @@ export default function DFWHVACSeasonalShutdown2026() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 20, color: '#F5E642' }}>{transition.icon} {transition.title}</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 20, color: '#F5E642′ }}>{transition.icon} {transition.title}</div>
           <div style={{ display: 'grid', gap: 16 }}>
             {transition.steps.map((s, i) => (
               <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -79,7 +79,7 @@ export default function DFWHVACSeasonalShutdown2026() {
           ))}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628′ }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🔧 Book Seasonal Tune-Ups Before the Rush</div>
           <div style={{ fontSize: 13 }}>ProLnk connects you with DFW HVAC pros for spring and fall maintenance — before every company is booked solid.</div>
         </div>

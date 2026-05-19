@@ -48,7 +48,7 @@ export default function DFWFoundationFastFix2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => { setSymptom(s.id); setResult(''); }}
-                style={{ background: symptom === s.id ? '#F5E642' : '#1A2F4A', color: symptom === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: symptom === s.id ? '#F5E642′ : '#1A2F4A', color: symptom === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}

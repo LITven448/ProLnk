@@ -83,7 +83,7 @@ export default function DFWProLnkValueProposition() {
             <div style={{ display: 'flex', gap: 10 }}>
               {(Object.keys(LABELS) as StakeholderType[]).map(s => (
                 <button key={s} onClick={() => handleStakeholderChange(s)}
-                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: `2px solid ${stakeholder === s ? '#F5E642' : '#1e3a5f'}`, background: stakeholder === s ? '#1a2f50' : '#0A1628', color: stakeholder === s ? '#F5E642' : '#94a3b8', fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>
+                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: `2px solid ${stakeholder === s ? '#F5E642' : '#1e3a5f'}`, background: stakeholder === s ? '#1a2f50′ : '#0A1628', color: stakeholder === s ? '#F5E642' : '#94a3b8', fontWeight: 700, fontSize: 12, cursor: ’pointer' }}>
                   {LABELS[s]}
                 </button>
               ))}
@@ -98,12 +98,12 @@ export default function DFWProLnkValueProposition() {
             </select>
           </label>
           <button onClick={showSolution} disabled={!painPoint}
-            style={{ width: '100%', padding: '13px 0', background: painPoint ? '#F5E642' : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: 16, border: 'none', borderRadius: 8, cursor: painPoint ? 'pointer' : 'default' }}>
+            style={{ width: '100%', padding: '13px 0', background: painPoint ? '#F5E642′ : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: 16, border: ’none', borderRadius: 8, cursor: painPoint ? 'pointer' : 'default' }}>
             Show ProLnk Solution
           </button>
         </div>
         {solution && (
-          <div style={{ background: '#0f2039', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2039', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 16 }}>✅ ProLnk's Answer</h3>
             <p style={{ color: '#fff', fontSize: 15, lineHeight: 1.6 }}>{solution}</p>
           </div>

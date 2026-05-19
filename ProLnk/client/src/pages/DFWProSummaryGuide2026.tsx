@@ -46,7 +46,7 @@ export default function DFWProSummaryGuide2026() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
             {tradeTypes.map(t => (
               <button key={t.id} onClick={() => setSelected(t.id === selected ? null : t.id)}
-                style={{ background: selected === t.id ? '#F5E642' : '#111D35', color: selected === t.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === t.id ? '#F5E642′ : '#111D35', color: selected === t.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
                 {t.label}
               </button>
             ))}
@@ -64,7 +64,7 @@ export default function DFWProSummaryGuide2026() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: 40, padding: 24, background: '#111D35', borderRadius: 12, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', marginTop: 40, padding: 24, background: '#111D35', borderRadius: 12, border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Charter closes at 500 pros — spots are limited</div>
           <div style={{ color: '#8A9BB5', fontSize: 14 }}>Lock in $149/mo forever and earn 5 income streams starting day one</div>
         </div>

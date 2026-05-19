@@ -16,7 +16,7 @@ function getGravelRecommendation(size: string, location: string, usage: string) 
       note: 'Most DFW HOAs prohibit loose gravel — stabilized decomposed granite compacts firm and may be allowed. Verify CC&Rs first.',
       quantity: size.includes('Short') ? '3–5 tons' : size.includes('Medium') ? '8–15 tons' : '18–30 tons',
       annual: '$200–$600 (replenishment + dust control)',
-      cost: size.includes('Short') ? '$400–$900' : size.includes('Medium') ? '$1,200–$2,800' : '$3,000–$6,500',
+      cost: size.includes('Short') ? '$400–$900′ : size.includes(’Medium') ? '$1,200–$2,800′ : '$3,000–$6,500',
     };
   }
   if (isRural && isHeavy) {
@@ -25,16 +25,16 @@ function getGravelRecommendation(size: string, location: string, usage: string) 
       note: 'DFW-area caliche is cost-effective base material. Cap with crushed limestone for drainage and durability under heavy loads.',
       quantity: size.includes('Long') ? '25–50 tons' : '10–25 tons',
       annual: '$300–$800 (after heavy rain, DFW runoff displaces gravel)',
-      cost: size.includes('Long') ? '$4,000–$9,000' : '$1,500–$4,000',
+      cost: size.includes('Long') ? '$4,000–$9,000′ : '$1,500–$4,000',
     };
   }
   if (isLong) {
     return {
-      type: 'Crushed Granite (3/4" minus)',
+      type: 'Crushed Granite (3/4″ minus)',
       note: 'Most popular DFW exurb driveway gravel. Compacts well, drains easily, resists DFW spring rains better than pea gravel.',
       quantity: size.includes('Medium') ? '8–14 tons' : '20–35 tons',
       annual: '$250–$700 (DFW summer rains wash edges — plan regrading)',
-      cost: size.includes('Medium') ? '$1,000–$2,500' : '$2,800–$6,000',
+      cost: size.includes('Medium') ? '$1,000–$2,500′ : '$2,800–$6,000',
     };
   }
   return {
@@ -84,14 +84,14 @@ export default function DFWGravelDrivewayGuide() {
             </div>
           ))}
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{result.type}</div>
               <div style={{ color: '#9BA3B8', fontSize: 14, marginBottom: 12 }}>{result.note}</div>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 {[['QUANTITY NEEDED', result.quantity], ['INSTALL COST', result.cost], ['ANNUAL UPKEEP', result.annual]].map(([label, val]) => (
                   <div key={label} style={{ background: '#111E35', borderRadius: 8, padding: '10px 16px' }}>
                     <div style={{ color: '#9BA3B8', fontSize: 11 }}>{label}</div>
-                    <div style={{ color: label === 'INSTALL COST' ? '#F5E642' : '#E8EAF0', fontSize: 14, fontWeight: label === 'INSTALL COST' ? 700 : 400 }}>{val}</div>
+                    <div style={{ color: label === 'INSTALL COST' ? '#F5E642′ : '#E8EAF0', fontSize: 14, fontWeight: label === ’INSTALL COST' ? 700 : 400 }}>{val}</div>
                   </div>
                 ))}
               </div>

@@ -90,7 +90,7 @@ export default function DFWPropertyTaxReceiptGuide() {
           🏛️ DFW Property Tax Receipt Guide
         </div>
         <p style={{ color: '#94A3B8', marginBottom: '1.5rem' }}>
-          Your DFW property tax notice feels like one big number — but it's actually 4-7 separate taxing entities each billing you. Understanding each helps you know what you can challenge and what you can't.
+          Your DFW property tax notice feels like one big number — but it's actually 4-7 separate taxing entities each billing you. Understanding each helps you know what you can challenge and what you can’t.
         </p>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '1.2rem', marginBottom: '1.2rem' }}>
           <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '0.8rem' }}>📋 How DFW Property Tax Works</div>

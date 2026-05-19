@@ -63,13 +63,13 @@ export default function DFWProLnkFuturePlanning() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🔭</div>
-          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0' }}>DFW Future Planning Guide</h1>
+          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0′ }}>DFW Future Planning Guide</h1>
           <p style={{ color: '#94A3B8', marginTop: '0.5rem' }}>How to plan your ProLnk income for long-term goals in the DFW market</p>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {situations.map(s => (
-            <button key={s.id} onClick={() => setSelected(s)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === s.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === s.id ? '#1E3A5F' : 'transparent', color: selected.id === s.id ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: '0.85rem' }}>
+            <button key={s.id} onClick={() => setSelected(s)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === s.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === s.id ? '#1E3A5F' : 'transparent', color: selected.id === s.id ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: '0.85rem' }}>
               {s.label}
             </button>
           ))}

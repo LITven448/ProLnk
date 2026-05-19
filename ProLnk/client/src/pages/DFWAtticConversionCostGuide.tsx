@@ -39,7 +39,7 @@ export default function DFWAtticConversionCostGuide() {
         <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Attic Conversion Cost Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Dallas-Fort Worth · 2026 Contractor Pricing</p>
 
-        <div style={{ background: '#7c2d12', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', border: '1px solid #dc2626' }}>
+        <div style={{ background: '#7c2d12', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', border: '1px solid #dc2626′ }}>
           <div style={{ fontWeight: 700, color: '#fca5a5', marginBottom: '0.5rem' }}>⚠️ Critical DFW Attic Warning</div>
           <p style={{ color: '#fecaca', fontSize: '0.9rem', margin: 0 }}>Converting your attic into living space removes DFW's #1 heat shield. With average summer highs of 100°F+, an unconverted attic buffers your home from extreme heat. Any bedroom conversion requires proper rafter/knee-wall insulation or HVAC bills will spike significantly.</p>
         </div>

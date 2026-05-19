@@ -9,20 +9,20 @@ import {
 } from "recharts";
 
 const D = {
-  bg: "#0D0F14",
+  bg: "#0D0F14″,
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8",
-  dim: "#555B72",
+  muted: "#8B91A8″,
+  dim: "#555B72″,
   cyan: "#00D4FF",
-  green: "#00E676",
-  amber: "#FFB300",
-  red: "#FF4444",
-  blue: "#3B82F6",
-  purple: "#A855F7",
-  teal: "#14B8A6",
+  green: "#00E676″,
+  amber: "#FFB300″,
+  red: "#FF4444″,
+  blue: "#3B82F6″,
+  purple: "#A855F7″,
+  teal: "#14B8A6″,
 };
 
 interface FunnelStage {
@@ -38,7 +38,7 @@ const FUNNEL: FunnelStage[] = [
   { label: "Approved", count: 287, drop: -30.3, cr: "69.7%", color: D.cyan },
   { label: "Profile Complete", count: 198, drop: -31.0, cr: "69.0%", color: D.teal },
   { label: "First Lead Accepted", count: 167, drop: -15.7, cr: "84.3%", color: D.green },
-  { label: "First Job Done", count: 147, drop: -11.9, cr: "88.1%", color: "#00E676" },
+  { label: "First Job Done", count: 147, drop: -11.9, cr: "88.1%", color: "#00E676″ },
 ];
 
 interface OnboardingTask {
@@ -114,10 +114,10 @@ export default function OnboardingReadiness() {
       <div style={{ minHeight: "100vh", backgroundColor: D.bg, padding: "32px 24px", fontFamily: "'Inter', system-ui, sans-serif" }}>
 
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-1">
+        <div className="mb-8″>
+          <div className="flex items-center gap-3 mb-1″>
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${D.cyan}20` }}>
-              <CheckCircle className="w-5 h-5" style={{ color: D.cyan }} />
+              <CheckCircle className="w-5 h-5″ style={{ color: D.cyan }} />
             </div>
             <div>
               <h1 className="text-2xl font-black" style={{ color: D.text }}>Onboarding Readiness</h1>
@@ -127,10 +127,10 @@ export default function OnboardingReadiness() {
         </div>
 
         {/* KPI row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8″>
           {[
-            { label: "Total Applicants", value: "412", color: D.blue, icon: Users },
-            { label: "Fully Onboarded", value: "147", color: D.green, icon: CheckCircle },
+            { label: "Total Applicants", value: "412″, color: D.blue, icon: Users },
+            { label: "Fully Onboarded", value: "147″, color: D.green, icon: CheckCircle },
             { label: "End-to-End CR", value: `${overallCR}%`, color: D.cyan, icon: TrendingDown },
             { label: "Avg Days to First Job", value: "6.4d", color: D.amber, icon: Clock },
           ].map(kpi => {
@@ -138,11 +138,11 @@ export default function OnboardingReadiness() {
             return (
               <div
                 key={kpi.label}
-                className="rounded-2xl p-4"
+                className="rounded-2xl p-4″
                 style={{ background: `linear-gradient(135deg, ${kpi.color}08, ${kpi.color}18)`, border: `1px solid ${kpi.color}30` }}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <Icon className="w-4 h-4" style={{ color: kpi.color }} />
+                <div className="flex items-center gap-2 mb-2″>
+                  <Icon className="w-4 h-4″ style={{ color: kpi.color }} />
                   <span className="text-xs" style={{ color: D.muted }}>{kpi.label}</span>
                 </div>
                 <p className="text-2xl font-black" style={{ color: kpi.color }}>{kpi.value}</p>
@@ -151,28 +151,28 @@ export default function OnboardingReadiness() {
           })}
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6″>
 
           {/* Left 2 cols */}
-          <div className="xl:col-span-2 space-y-6">
+          <div className="xl:col-span-2 space-y-6″>
 
             {/* Funnel */}
             <div className="rounded-2xl overflow-hidden" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-              <div className="px-5 py-3" style={{ borderBottom: `1px solid ${D.border}`, background: D.surface }}>
+              <div className="px-5 py-3″ style={{ borderBottom: `1px solid ${D.border}`, background: D.surface }}>
                 <span className="text-xs font-bold uppercase tracking-widest" style={{ color: D.muted }}>Activation Funnel</span>
               </div>
-              <div className="p-5 space-y-3">
+              <div className="p-5 space-y-3″>
                 {FUNNEL.map((stage, i) => {
                   const maxW = FUNNEL[0].count;
                   const pct = (stage.count / maxW) * 100;
                   return (
                     <div key={stage.label}>
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="flex items-center gap-2">
+                      <div className="flex items-center justify-between mb-1″>
+                        <div className="flex items-center gap-2″>
                           <span className="text-xs font-bold" style={{ color: D.dim }}>{i + 1}</span>
                           <span className="text-sm font-semibold" style={{ color: D.text }}>{stage.label}</span>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3″>
                           {stage.drop !== null && (
                             <span className="text-xs font-bold" style={{ color: D.red }}>{stage.drop}%</span>
                           )}
@@ -195,9 +195,9 @@ export default function OnboardingReadiness() {
             </div>
 
             {/* Time to First Job Chart */}
-            <div className="rounded-2xl p-5" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-              <h2 className="text-sm font-bold mb-1" style={{ color: D.text }}>Time to First Job</h2>
-              <p className="text-xs mb-4" style={{ color: D.muted }}>Days from signup to first completed job — peak at 3–5 days</p>
+            <div className="rounded-2xl p-5″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
+              <h2 className="text-sm font-bold mb-1″ style={{ color: D.text }}>Time to First Job</h2>
+              <p className="text-xs mb-4″ style={{ color: D.muted }}>Days from signup to first completed job — peak at 3–5 days</p>
               <ResponsiveContainer width="100%" height={160}>
                 <BarChart data={TIME_TO_FIRST_JOB} barSize={28}>
                   <XAxis dataKey="day" tick={{ fill: D.muted, fontSize: 11 }} axisLine={false} tickLine={false} />
@@ -217,17 +217,17 @@ export default function OnboardingReadiness() {
 
             {/* Stuck Partners */}
             <div className="rounded-2xl overflow-hidden" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-              <div className="px-5 py-3 flex items-center gap-2" style={{ borderBottom: `1px solid ${D.border}`, background: D.surface }}>
-                <AlertTriangle className="w-4 h-4" style={{ color: D.amber }} />
+              <div className="px-5 py-3 flex items-center gap-2″ style={{ borderBottom: `1px solid ${D.border}`, background: D.surface }}>
+                <AlertTriangle className="w-4 h-4″ style={{ color: D.amber }} />
                 <span className="text-xs font-bold uppercase tracking-widest" style={{ color: D.muted }}>Stuck Partners (&gt;7 days)</span>
               </div>
               <div className="divide-y" style={{ borderColor: D.border }}>
                 {STUCK_PARTNERS.map(partner => (
-                  <div key={partner.name} className="flex items-center gap-3 px-5 py-3.5">
+                  <div key={partner.name} className="flex items-center gap-3 px-5 py-3.5″>
                     <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ background: `${D.amber}20`, color: D.amber }}>
                       {partner.name.split(" ").map(n => n[0]).join("")}
                     </div>
-                    <div className="flex-1 min-w-0">
+                    <div className="flex-1 min-w-0″>
                       <p className="text-sm font-semibold" style={{ color: D.text }}>{partner.name}</p>
                       <p className="text-xs" style={{ color: D.muted }}>Stuck at: {partner.stage} — missing <span style={{ color: D.amber }}>{partner.missing}</span></p>
                     </div>
@@ -243,7 +243,7 @@ export default function OnboardingReadiness() {
                         opacity: nudged.has(partner.name) ? 0.7 : 1,
                       }}
                     >
-                      <Bell className="w-3 h-3" />
+                      <Bell className="w-3 h-3″ />
                       {nudged.has(partner.name) ? "Sent" : "Nudge"}
                     </button>
                   </div>
@@ -252,13 +252,13 @@ export default function OnboardingReadiness() {
             </div>
 
             {/* Automation + Benchmark row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-2xl p-4" style={{ background: `${D.blue}10`, border: `1px solid ${D.blue}30` }}>
-                <div className="flex items-center gap-2 mb-2">
-                  <Zap className="w-4 h-4" style={{ color: D.blue }} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4″>
+              <div className="rounded-2xl p-4″ style={{ background: `${D.blue}10`, border: `1px solid ${D.blue}30` }}>
+                <div className="flex items-center gap-2 mb-2″>
+                  <Zap className="w-4 h-4″ style={{ color: D.blue }} />
                   <p className="text-sm font-bold" style={{ color: D.blue }}>Automation Status</p>
                 </div>
-                <p className="text-xs mb-2" style={{ color: D.muted }}>
+                <p className="text-xs mb-2″ style={{ color: D.muted }}>
                   Auto-email sent when partner hasn't uploaded docs after 3 days
                 </p>
                 <div className="flex items-center justify-between">
@@ -270,33 +270,33 @@ export default function OnboardingReadiness() {
                 </div>
               </div>
 
-              <div className="rounded-2xl p-4" style={{ background: `${D.green}10`, border: `1px solid ${D.green}30` }}>
-                <div className="flex items-center gap-2 mb-2">
-                  <Award className="w-4 h-4" style={{ color: D.green }} />
+              <div className="rounded-2xl p-4″ style={{ background: `${D.green}10`, border: `1px solid ${D.green}30` }}>
+                <div className="flex items-center gap-2 mb-2″>
+                  <Award className="w-4 h-4″ style={{ color: D.green }} />
                   <p className="text-sm font-bold" style={{ color: D.green }}>Benchmark</p>
                 </div>
                 <p className="text-xs" style={{ color: D.muted }}>
                   Partners who complete all 8 onboarding tasks earn
                 </p>
-                <p className="text-2xl font-black mt-1" style={{ color: D.green }}>4.1×</p>
+                <p className="text-2xl font-black mt-1″ style={{ color: D.green }}>4.1×</p>
                 <p className="text-xs" style={{ color: D.muted }}>more in first 90 days</p>
               </div>
             </div>
           </div>
 
           {/* Right sidebar — task completion rates */}
-          <div className="space-y-5">
+          <div className="space-y-5″>
             <div className="rounded-2xl overflow-hidden" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-              <div className="px-5 py-3" style={{ borderBottom: `1px solid ${D.border}`, background: D.surface }}>
+              <div className="px-5 py-3″ style={{ borderBottom: `1px solid ${D.border}`, background: D.surface }}>
                 <span className="text-xs font-bold uppercase tracking-widest" style={{ color: D.muted }}>Onboarding Task Completion</span>
               </div>
-              <div className="p-4 space-y-4">
+              <div className="p-4 space-y-4″>
                 {ONBOARDING_TASKS.map(t => {
                   const color = taskColor(t.rate);
                   return (
                     <div key={t.task}>
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="flex items-center gap-1.5">
+                      <div className="flex items-center justify-between mb-1″>
+                        <div className="flex items-center gap-1.5″>
                           <span className="text-xs font-semibold" style={{ color: D.text }}>{t.task}</span>
                           {t.critical && (
                             <span className="text-xs px-1.5 py-0.5 rounded font-bold" style={{ background: `${D.red}20`, color: D.red, fontSize: 10 }}>
@@ -319,9 +319,9 @@ export default function OnboardingReadiness() {
             </div>
 
             {/* Quick actions */}
-            <div className="rounded-2xl p-4" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-              <h2 className="text-sm font-bold mb-3" style={{ color: D.text }}>Quick Actions</h2>
-              <div className="space-y-2">
+            <div className="rounded-2xl p-4″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
+              <h2 className="text-sm font-bold mb-3″ style={{ color: D.text }}>Quick Actions</h2>
+              <div className="space-y-2″>
                 {[
                   { label: "Email all stuck partners", color: D.amber },
                   { label: "Export onboarding CSV", color: D.cyan },
@@ -329,11 +329,11 @@ export default function OnboardingReadiness() {
                 ].map(action => (
                   <button
                     key={action.label}
-                    className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition-all hover:opacity-80"
+                    className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition-all hover:opacity-80″
                     style={{ background: `${action.color}15`, border: `1px solid ${action.color}30` }}
                   >
                     <span className="text-xs font-semibold" style={{ color: action.color }}>{action.label}</span>
-                    <ChevronRight className="w-3.5 h-3.5" style={{ color: action.color }} />
+                    <ChevronRight className="w-3.5 h-3.5″ style={{ color: action.color }} />
                   </button>
                 ))}
               </div>

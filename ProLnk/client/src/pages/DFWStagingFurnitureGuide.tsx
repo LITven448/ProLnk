@@ -4,7 +4,7 @@ const recommendations: Record<string, Record<string, { remove: string[]; keep: s
   living: {
     small: {
       remove: ['Extra accent chairs', 'Oversized sectional', 'Large coffee table', 'Extra side tables', 'Floor plants blocking windows'],
-      keep: ['One sofa (max 84")', 'Single coffee table', 'One accent chair', 'Slim TV stand'],
+      keep: ['One sofa (max 84″)', 'Single coffee table', 'One accent chair', 'Slim TV stand'],
       add: ['Large mirror to expand space', 'Single statement rug (5x8)', 'Two matching lamps'],
     },
     medium: {
@@ -69,7 +69,7 @@ export default function DFWStagingFurnitureGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>DFW buyers want to visualize space — most sellers have too much furniture. Here's exactly what to move, keep, and add.</p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏠 DFW Market Reality</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -78,15 +78,15 @@ export default function DFWStagingFurnitureGuide() {
               ['Removing 30-40% of furniture is standard — not optional — for competitive listings', '📦'],
               ['Open floor plans dominate DFW — furniture groupings define the space', '🗺️'],
             ].map(([tip, icon], i) => (
-              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
+              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
                 <span style={{ fontSize: 20 }}>{icon}</span>
-                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0' }}>{tip}</p>
+                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0′ }}>{tip}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your Staging Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>

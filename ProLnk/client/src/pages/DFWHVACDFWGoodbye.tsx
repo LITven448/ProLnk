@@ -54,8 +54,8 @@ export default function DFWHVACDFWGoodbye() {
                 key={i}
                 onClick={() => choose(i)}
                 style={{
-                  background: selected === i ? '#F5E642' : '#1e3a5f',
-                  color: selected === i ? '#0A1628' : '#fff',
+                  background: selected === i ? '#F5E642′ : '#1e3a5f',
+                  color: selected === i ? '#0A1628′ : '#fff',
                   border: 'none', borderRadius: 12, padding: '16px 20px',
                   cursor: 'pointer', fontSize: 16, fontWeight: 600,
                   transition: 'all 0.2s',

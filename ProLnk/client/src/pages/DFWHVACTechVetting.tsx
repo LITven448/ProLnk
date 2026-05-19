@@ -126,7 +126,7 @@ export default function DFWHVACTechVetting() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔍 Select Your Project Type</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {projectTypes.map(pt => (
-            <button key={pt} onClick={() => { setProjectType(pt); setShowVetting(false); }} style={{ textAlign: 'left', padding: '12px 18px', borderRadius: 10, border: '1px solid', borderColor: projectType === pt ? '#F5E642' : '#1E3A5F', background: projectType === pt ? '#1A2A10' : '#111D35', color: projectType === pt ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: 'pointer' }}>
+            <button key={pt} onClick={() => { setProjectType(pt); setShowVetting(false); }} style={{ textAlign: 'left', padding: '12px 18px', borderRadius: 10, border: '1px solid', borderColor: projectType === pt ? '#F5E642′ : '#1E3A5F', background: projectType === pt ? '#1A2A10' : '#111D35', color: projectType === pt ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: ’pointer' }}>
               {projectType === pt ? '● ' : '○ '}{pt}
             </button>
           ))}
@@ -139,7 +139,7 @@ export default function DFWHVACTechVetting() {
         )}
 
         {showVetting && rates && (
-          <div style={{ background: '#0F1E38', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F1E38', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, fontSize: 16, color: '#F5E642', marginBottom: 16 }}>💰 Fair DFW Market Rates — {projectType}</div>
             <div style={{ display: 'grid', gap: 10 }}>
               {[
@@ -176,15 +176,15 @@ export default function DFWHVACTechVetting() {
                     <div style={{ marginTop: 16, display: 'grid', gap: 10 }}>
                       <div style={{ background: '#0A2010', borderRadius: 8, padding: '12px 14px' }}>
                         <div style={{ fontSize: 12, color: '#22C55E', fontWeight: 700, marginBottom: 4 }}>✅ GOOD ANSWER</div>
-                        <div style={{ fontSize: 14, color: '#CBD5E1' }}>{vc.good}</div>
+                        <div style={{ fontSize: 14, color: '#CBD5E1′ }}>{vc.good}</div>
                       </div>
                       <div style={{ background: '#1A1010', borderRadius: 8, padding: '12px 14px' }}>
                         <div style={{ fontSize: 12, color: '#EF4444', fontWeight: 700, marginBottom: 4 }}>❌ BAD ANSWER (RED FLAG)</div>
-                        <div style={{ fontSize: 14, color: '#CBD5E1' }}>{vc.bad}</div>
+                        <div style={{ fontSize: 14, color: '#CBD5E1′ }}>{vc.bad}</div>
                       </div>
                       <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 14px' }}>
                         <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>🌡️ DFW CONTEXT</div>
-                        <div style={{ fontSize: 14, color: '#94A3B8' }}>{vc.dfwMarket}</div>
+                        <div style={{ fontSize: 14, color: '#94A3B8′ }}>{vc.dfwMarket}</div>
                       </div>
                     </div>
                   </div>
@@ -194,7 +194,7 @@ export default function DFWHVACTechVetting() {
           </>
         )}
 
-        <div style={{ marginTop: 32, padding: '20px 24px', background: '#0F1E38', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ marginTop: 32, padding: '20px 24px', background: '#0F1E38', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>🔗 Quick Verification Links</div>
           <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.8 }}>
             • TDLR License Check: tdlr.texas.gov/LicenseSearch<br />

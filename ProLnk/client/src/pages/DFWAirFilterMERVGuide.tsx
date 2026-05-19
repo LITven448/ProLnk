@@ -27,7 +27,7 @@ export default function DFWAirFilterMERVGuide() {
         <p style={{ color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>🌿 DFW HVAC GUIDE</p>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Air Filter MERV Rating Guide — Dallas-Fort Worth</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW has a unique combo: Cedar Fever winters, spring pollen storms, constant construction dust, and an AC that runs 9 months a year. Choosing the right MERV rating isn't just about air quality — it's about not destroying your system.
+          DFW has a unique combo: Cedar Fever winters, spring pollen storms, constant construction dust, and an AC that runs 9 months a year. Choosing the right MERV rating isn't just about air quality — it’s about not destroying your system.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 28 }}>
@@ -45,28 +45,28 @@ export default function DFWAirFilterMERVGuide() {
         </div>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚡ When Higher MERV Backfires</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚡ When Higher MERV Backfires</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
             In older DFW homes (pre-2000), duct systems were designed for low-restriction filters. A MERV 13 can reduce airflow by 30–50%, causing the evaporator coil to freeze, the blower to overwork, and energy bills to spike. If you see ice on your indoor unit after switching to a high-MERV filter — that's why.
           </p>
         </div>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Find Your DFW MERV Match</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Find Your DFW MERV Match</h2>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your DFW allergy situation:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {allergyLevels.map(a => (
-              <button key={a} onClick={() => setAllergy(a)} style={{ background: allergy === a ? '#F5E642' : '#1e3a5f', color: allergy === a ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{a}</button>
+              <button key={a} onClick={() => setAllergy(a)} style={{ background: allergy === a ? '#F5E642′ : '#1e3a5f', color: allergy === a ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{a}</button>
             ))}
           </div>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your system age / home ductwork:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {systemAges.map(s => (
-              <button key={s} onClick={() => setAge(s)} style={{ background: age === s ? '#F5E642' : '#1e3a5f', color: age === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{s}</button>
+              <button key={s} onClick={() => setAge(s)} style={{ background: age === s ? '#F5E642′ : '#1e3a5f', color: age === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{s}</button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Recommended: {result.merv}</p>
               <p style={{ color: '#e2e8f0', marginBottom: 4 }}>🔄 Change frequency: <strong>{result.freq}</strong></p>
               <p style={{ color: '#e2e8f0', marginBottom: 8 }}>💰 Annual DFW cost: <strong>{result.cost}</strong></p>

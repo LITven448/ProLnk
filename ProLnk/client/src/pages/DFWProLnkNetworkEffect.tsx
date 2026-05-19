@@ -64,7 +64,7 @@ export default function DFWProLnkNetworkEffect() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📊 Platform Size Simulator</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
             {PLATFORM_SIZES.map((s, i) => (
-              <button key={i} onClick={() => setSizeIdx(i)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: sizeIdx === i ? '#F5E642' : '#0A1628', color: sizeIdx === i ? '#0A1628' : '#94a3b8' }}>
+              <button key={i} onClick={() => setSizeIdx(i)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: sizeIdx === i ? '#F5E642′ : '#0A1628', color: sizeIdx === i ? '#0A1628' : '#94a3b8' }}>
                 {s.label}
               </button>
             ))}

@@ -24,7 +24,7 @@ export default function DFWWelderGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
       <div style={{ background: 'linear-gradient(135deg,#0A1628 60%,#122040)', padding: '48px 24px 32px', textAlign: 'center' }}>
         <div style={{ fontSize: 48 }}>🔩</div>
         <h1 style={{ color: '#F5E642', fontSize: 32, fontWeight: 800, margin: '12px 0 8px' }}>DFW Welder & Metal Fab Guide</h1>
@@ -86,7 +86,7 @@ export default function DFWWelderGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, textAlign: 'center' }}>
                 <div><div style={{ color: '#94a3b8', fontSize: 12 }}>Est. Cost</div><div style={{ color: '#F5E642', fontSize: 20, fontWeight: 800 }}>{result.cost}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 12 }}>Lead Time</div><div style={{ color: '#e2e8f0', fontSize: 18, fontWeight: 700 }}>{result.lead}</div></div>
-                <div><div style={{ color: '#94a3b8', fontSize: 12 }}>Permit Req.</div><div style={{ fontSize: 18, fontWeight: 700, color: result.permit ? '#ef4444' : '#22c55e' }}>{result.permit ? '⚠️ Yes' : '✅ No'}</div></div>
+                <div><div style={{ color: '#94a3b8', fontSize: 12 }}>Permit Req.</div><div style={{ fontSize: 18, fontWeight: 700, color: result.permit ? '#ef4444′ : '#22c55e' }}>{result.permit ? '⚠️ Yes' : '✅ No'}</div></div>
               </div>
             </div>
           )}

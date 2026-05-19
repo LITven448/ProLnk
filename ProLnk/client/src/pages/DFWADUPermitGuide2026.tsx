@@ -27,7 +27,7 @@ export default function DFWADUPermitGuide2026() {
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 14 }}>🏘️ WHAT IS AN ADU?</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {['Detached backyard cottage','Garage apartment conversion','Attached in-law suite','Basement apartment','Above-garage unit','Manufactured / modular ADU'].map(r => (
-              <div key={r} style={{ background: '#1a2f50', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#cbd5e1' }}>🏡 {r}</div>
+              <div key={r} style={{ background: '#1a2f50', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#cbd5e1′ }}>🏡 {r}</div>
             ))}
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function DFWADUPermitGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(110px, 1fr))', gap: 8 }}>
             {cities.map(c => (
               <button key={c.name} onClick={() => setSelected(c.name)}
-                style={{ background: selected === c.name ? '#F5E642' : '#1a2f50', color: selected === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === c.name ? '#F5E642′ : '#1a2f50', color: selected === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {c.name}
               </button>
             ))}
@@ -45,14 +45,14 @@ export default function DFWADUPermitGuide2026() {
         </div>
 
         {city && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: city.allowed ? '2px solid #4ade80' : '2px solid #f87171' }}>
-            <h2 style={{ color: city.allowed ? '#4ade80' : '#f87171', fontSize: 20, fontWeight: 800, marginBottom: 16 }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: city.allowed ? '2px solid #4ade80′ : '2px solid #f87171' }}>
+            <h2 style={{ color: city.allowed ? '#4ade80′ : '#f87171', fontSize: 20, fontWeight: 800, marginBottom: 16 }}>
               {city.allowed ? '✅' : '❌'} {city.name} — ADU Feasibility
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ background: '#1a2f50', borderRadius: 8, padding: 14 }}>
                 <p style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>ADU STATUS</p>
-                <p style={{ color: city.allowed ? '#4ade80' : '#f87171', fontWeight: 700 }}>{city.allowed ? '✅ Generally Permitted' : '❌ Restricted / Not Permitted'}</p>
+                <p style={{ color: city.allowed ? '#4ade80′ : '#f87171', fontWeight: 700 }}>{city.allowed ? '✅ Generally Permitted' : '❌ Restricted / Not Permitted'}</p>
               </div>
               <div style={{ background: '#1a2f50', borderRadius: 8, padding: 14 }}>
                 <p style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>KEY RESTRICTIONS</p>

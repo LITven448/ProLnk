@@ -55,7 +55,7 @@ export default function DFWFloodLightCameraGuide2026() {
           ].map(r => (
             <div key={r.label} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f' }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 2 }}>✅ {r.label}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>{r.detail}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{r.detail}</div>
             </div>
           ))}
         </div>
@@ -66,9 +66,9 @@ export default function DFWFloodLightCameraGuide2026() {
             {[{v:'small',l:'Under 2,000 sqft'},{v:'medium',l:'2,000–4,000 sqft'},{v:'large',l:'4,000+ sqft'}].map(o => (
               <button key={o.v} onClick={() => setPropertySize(o.v)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  backgroundColor: propertySize === o.v ? '#F5E642' : '#0A1628',
-                  color: propertySize === o.v ? '#0A1628' : '#fff',
-                  borderColor: '#F5E642' }}>
+                  backgroundColor: propertySize === o.v ? '#F5E642′ : '#0A1628',
+                  color: propertySize === o.v ? '#0A1628′ : '#fff',
+                  borderColor: '#F5E642′ }}>
                 {o.l}
               </button>
             ))}

@@ -5,42 +5,42 @@ type DrillResult = { drillType: string; bitType: string; anchor: string; cost: s
 const drillMap: Record<string, DrillResult> = {
   'brick-picture': {
     drillType: 'Hammer Drill (corded or 20V brushless cordless)',
-    bitType: '3/16" Carbide-Tipped Masonry Bit',
+    bitType: '3/16″ Carbide-Tipped Masonry Bit',
     anchor: 'Plastic Conical Anchor with #8 screw',
     cost: 'Drill rental $25-40/day | Bit $4-8 | Anchors $5 for 20pk',
     tips: ['DFW brick is hard fired clay — don\’t use standard drill bits (they dull in seconds)', 'Drill perpendicular to mortar joint if possible — easier than brick face', 'Use water or compressed air to clear dust every 30 seconds', 'Stop if you feel the bit walking — re-center with smaller pilot hole', 'DFW summer: drill before 10am — bit overheats faster in hot weather'],
   },
   'brick-heavy': {
-    drillType: 'Rotary Hammer (SDS-Plus, 1" class minimum)',
-    bitType: '1/2" SDS-Plus Carbide Bit',
-    anchor: 'Sleeve Anchor or Wedge Anchor (3/8" x 2-1/2")',
+    drillType: 'Rotary Hammer (SDS-Plus, 1″ class minimum)',
+    bitType: '1/2″ SDS-Plus Carbide Bit',
+    anchor: 'Sleeve Anchor or Wedge Anchor (3/8″ x 2-1/2″)',
     cost: 'Rental $45-65/day | Bit $15-25 | Anchors $3-6 each',
     tips: ['TV mounts, shelving over 50lbs, pergola attachments — rotary hammer only', 'DFW brick varies by era: pre-1960 is softer; post-1980 is harder fired clay', 'Drill into brick face not mortar for heavy anchors — mortar crumbles under load', 'Blow out hole with compressed air before setting anchor', 'Torque anchors to spec — over-torquing cracks DFW brick'],
   },
   'concrete-picture': {
     drillType: 'Hammer Drill with Concrete Setting',
-    bitType: '1/4" Carbide Masonry Bit',
-    anchor: 'Tapcon 1/4" x 1-3/4" Concrete Screw',
+    bitType: '1/4″ Carbide Masonry Bit',
+    anchor: 'Tapcon 1/4″ x 1-3/4″ Concrete Screw',
     cost: 'Drill rental $25-40/day | Tapcons $10 for 8pk',
-    tips: ['Tapcons are the DFW standard for concrete — no separate anchor needed', 'Drill 1/4" deeper than screw length to avoid bottoming out', 'DFW slab concrete is typically 3000-4000 PSI — standard carbide bits work fine', 'Vacuum hole before screwing — concrete dust prevents proper engagement', 'Crack appears? Stop — could be post-tension slab (common in DFW after 1985)'],
+    tips: ['Tapcons are the DFW standard for concrete — no separate anchor needed', 'Drill 1/4″ deeper than screw length to avoid bottoming out', 'DFW slab concrete is typically 3000-4000 PSI — standard carbide bits work fine', 'Vacuum hole before screwing — concrete dust prevents proper engagement', 'Crack appears? Stop — could be post-tension slab (common in DFW after 1985)'],
   },
   'concrete-heavy': {
-    drillType: 'Rotary Hammer (SDS-Plus, 1" class)',
-    bitType: '5/8" SDS-Plus Diamond-Tipped Bit (for post-tension slabs)',
-    anchor: 'Drop-In Anchor or Wedge Anchor 1/2" x 3-1/2"',
+    drillType: 'Rotary Hammer (SDS-Plus, 1″ class)',
+    bitType: '5/8″ SDS-Plus Diamond-Tipped Bit (for post-tension slabs)',
+    anchor: 'Drop-In Anchor or Wedge Anchor 1/2″ x 3-1/2″',
     cost: 'Rental $45-65/day | Diamond bit $35-60 | Anchors $4-8 each',
     tips: ['⚠️ DFW has extensive post-tension concrete slabs — ALWAYS scan before drilling', 'Call 811 (utility locate) AND rent a post-tension scanner before any deep hole in DFW', 'Post-tension cables run under slabs — hitting one is catastrophic and expensive', 'For carport posts, equipment anchors, heavy mounts: hire a pro or rent SDS hammer', 'Set anchors flush then test load before hanging anything heavy'],
   },
   'block-picture': {
     drillType: 'Hammer Drill',
-    bitType: '3/16" Carbide Masonry Bit',
+    bitType: '3/16″ Carbide Masonry Bit',
     anchor: 'Toggle Bolt or Hollow Wall Anchor',
     cost: 'Same as standard hammer drill | Toggle bolts $6-12 for 4pk',
     tips: ['DFW CMU block is hollow — standard anchors fall through', 'Toggle bolts or snap toggles work best in the hollow cells', 'Drill into the solid webs (edges) if possible for heavier items', 'Block mortar joints are softer than brick — avoid mortar for any real load', 'Pre-1970 DFW block can be brittle — go slow, low speed'],
   },
   'block-heavy': {
     drillType: 'Rotary Hammer (SDS-Plus)',
-    bitType: '1/2" SDS Carbide Bit',
+    bitType: '1/2″ SDS Carbide Bit',
     anchor: 'Epoxy Anchor System (Simpson SET-XP or Hilti HIT-HY 200)',
     cost: 'Epoxy kit $35-60 | Threaded rod $5-15 | Rental $45-65/day',
     tips: ['Heavy loads into CMU block require epoxy injection anchors — wedge anchors pull through hollow block', 'Drill into solid section of block or fill hollow cell with non-shrink grout first', 'DFW humidity: wait 24hrs min for epoxy cure before loading (72hrs if below 60°F)', 'Carport beams, steel posts, heavy gates — always use epoxy system in DFW block', 'Load test before final installation: 2x design load for 5 minutes'],
@@ -103,7 +103,7 @@ export default function DFWMasonryDrillGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ color: '#F5A623', fontSize: 11, fontWeight: 700, marginBottom: 6 }}>🔧 DRILL TYPE</div>

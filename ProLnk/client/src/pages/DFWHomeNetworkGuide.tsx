@@ -45,7 +45,7 @@ export default function DFWHomeNetworkGuide() {
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏠 Why DFW Homes Struggle with WiFi</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏠 Why DFW Homes Struggle with WiFi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
               { icon: '🧱', title: 'Brick Exterior Walls', desc: 'Standard in DFW construction — blocks 2.4GHz signals by 6-12dB' },
@@ -56,61 +56,61 @@ export default function DFWHomeNetworkGuide() {
               <div key={item.title} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>{item.title}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8' }}>{item.desc}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{item.desc}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Top Mesh WiFi Systems for DFW</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Top Mesh WiFi Systems for DFW</h2>
           {MESH_SYSTEMS.map(sys => (
             <div key={sys.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #1E3A5F' }}>
               <div>
                 <div style={{ fontWeight: 600 }}>{sys.name}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8' }}>{sys.coverage.toLocaleString()} sq ft · {sys.ideal}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{sys.coverage.toLocaleString()} sq ft · {sys.ideal}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>${sys.price}</div>
-                <div style={{ fontSize: 12, color: '#94A3B8' }}>{sys.nodes} node{sys.nodes > 1 ? 's' : ''}</div>
+                <div style={{ fontSize: 12, color: '#94A3B8′ }}>{sys.nodes} node{sys.nodes > 1 ? ’s' : ''}</div>
               </div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌐 DFW Gigabit ISPs</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌐 DFW Gigabit ISPs</h2>
           {ISP_OPTIONS.map(isp => (
             <div key={isp.name} style={{ padding: '12px 0', borderBottom: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ fontWeight: 600 }}>{isp.name}</span>
-                <span style={{ background: isp.type === 'Fiber' ? '#F5E642' : '#1E3A5F', color: isp.type === 'Fiber' ? '#0A1628' : '#94A3B8', padding: '2px 8px', borderRadius: 4, fontSize: 12, fontWeight: 600 }}>{isp.type}</span>
+                <span style={{ background: isp.type === 'Fiber' ? '#F5E642′ : '#1E3A5F', color: isp.type === ’Fiber' ? '#0A1628′ : '#94A3B8', padding: '2px 8px', borderRadius: 4, fontSize: 12, fontWeight: 600 }}>{isp.type}</span>
               </div>
-              <div style={{ fontSize: 13, color: '#94A3B8' }}>{isp.speeds} · {isp.price}</div>
+              <div style={{ fontSize: 13, color: '#94A3B8′ }}>{isp.speeds} · {isp.price}</div>
               <div style={{ fontSize: 13, color: '#64748B', marginTop: 4 }}>{isp.note}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 Get Your Network Recommendation</h2>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 Get Your Network Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20, marginBottom: 24 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 8 }}>Home Size (sq ft)</label>
-              <input type="range" min="800" max="8000" step="100" value={sqft} onChange={e => { setSqft(+e.target.value); setShowResult(false); }}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min="800″ max="8000" step="100" value={sqft} onChange={e => { setSqft(+e.target.value); setShowResult(false); }}
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{sqft.toLocaleString()} sq ft</div>
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 8 }}>Stories</label>
-              <input type="range" min="1" max="3" step="1" value={stories} onChange={e => { setStories(+e.target.value); setShowResult(false); }}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min="1″ max="3" step="1" value={stories} onChange={e => { setStories(+e.target.value); setShowResult(false); }}
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{stories} {stories === 1 ? 'story' : 'stories'}</div>
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 8 }}>Connected Devices</label>
-              <input type="range" min="5" max="75" step="5" value={devices} onChange={e => { setDevices(+e.target.value); setShowResult(false); }}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min="5″ max="75" step="5" value={devices} onChange={e => { setDevices(+e.target.value); setShowResult(false); }}
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{devices} devices</div>
             </div>
           </div>
@@ -120,12 +120,12 @@ export default function DFWHomeNetworkGuide() {
           </button>
           {showResult && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 12, color: '#F5E642' }}>✅ Recommended: {rec.system.name}</div>
+              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 12, color: '#F5E642′ }}>✅ Recommended: {rec.system.name}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div><div style={{ fontSize: 12, color: '#64748B' }}>MESH NODES NEEDED</div><div style={{ fontWeight: 600, fontSize: 16 }}>{rec.nodes} nodes</div></div>
-                <div><div style={{ fontSize: 12, color: '#64748B' }}>SYSTEM COST</div><div style={{ fontWeight: 600, fontSize: 16, color: '#F5E642' }}>${rec.system.price}</div></div>
-                <div style={{ gridColumn: '1/-1' }}><div style={{ fontSize: 12, color: '#64748B' }}>WIRING SUGGESTION</div><div style={{ fontWeight: 500, fontSize: 14, marginTop: 4 }}>{rec.wiring}</div></div>
-                <div style={{ gridColumn: '1/-1' }}><div style={{ fontSize: 12, color: '#64748B' }}>ISP SPEED RECOMMENDATION</div><div style={{ fontWeight: 500, fontSize: 14, marginTop: 4 }}>{rec.isp}</div></div>
+                <div><div style={{ fontSize: 12, color: '#64748B' }}>SYSTEM COST</div><div style={{ fontWeight: 600, fontSize: 16, color: '#F5E642′ }}>${rec.system.price}</div></div>
+                <div style={{ gridColumn: '1/-1′ }}><div style={{ fontSize: 12, color: '#64748B' }}>WIRING SUGGESTION</div><div style={{ fontWeight: 500, fontSize: 14, marginTop: 4 }}>{rec.wiring}</div></div>
+                <div style={{ gridColumn: '1/-1′ }}><div style={{ fontSize: 12, color: '#64748B' }}>ISP SPEED RECOMMENDATION</div><div style={{ fontWeight: 500, fontSize: 14, marginTop: 4 }}>{rec.isp}</div></div>
               </div>
             </div>
           )}

@@ -39,7 +39,7 @@ export default function DFWGroundLevelHVACGuide2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>🏠 DFW HVAC Installation Location Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, fontSize: 15 }}>Where your HVAC lives matters enormously in DFW heat — attic installs lose 20-30% efficiency vs conditioned space.</p>
 
-        <div style={{ background: '#1e2d4a', borderRadius: 8, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1e2d4a', borderRadius: 8, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>📊 DFW HVAC Location Breakdown</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8, fontSize: 13 }}>
             {['Attic: 65%', 'Closet: 20%', 'Garage: 10%', 'Package: 5%'].map(s => (
@@ -48,10 +48,10 @@ export default function DFWGroundLevelHVACGuide2026() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔍 Select Your Installation Type</h2>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔍 Select Your Installation Type</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
           {Object.keys(types).map(t => (
-            <button key={t} onClick={() => handleSelect(t)} style={{ background: installType === t ? '#F5E642' : '#1e2d4a', color: installType === t ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{t}</button>
+            <button key={t} onClick={() => handleSelect(t)} style={{ background: installType === t ? '#F5E642′ : '#1e2d4a', color: installType === t ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{t}</button>
           ))}
         </div>
         {info && (

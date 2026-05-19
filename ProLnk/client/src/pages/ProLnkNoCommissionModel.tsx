@@ -50,12 +50,12 @@ export default function ProLnkNoCommissionModel() {
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, color: '#aaa' }}>Jobs you want per month: <strong style={{ color: '#fff' }}>{monthlyJobs}</strong></label>
             <input type='range' min={1} max={30} value={monthlyJobs} onChange={e => setMonthlyJobs(Number(e.target.value))}
-              style={{ width: '100%', marginTop: 8, accentColor: '#F5E642' }} />
+              style={{ width: '100%', marginTop: 8, accentColor: '#F5E642′ }} />
           </div>
           <div>
             <label style={{ fontSize: 13, color: '#aaa' }}>Leads needed per job won: <strong style={{ color: '#fff' }}>{leadsPerJob}</strong></label>
             <input type='range' min={1} max={10} value={leadsPerJob} onChange={e => setLeadsPerJob(Number(e.target.value))}
-              style={{ width: '100%', marginTop: 8, accentColor: '#F5E642' }} />
+              style={{ width: '100%', marginTop: 8, accentColor: '#F5E642′ }} />
           </div>
           <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8 }}>
             <div style={{ fontSize: 13, color: '#aaa' }}>Total leads needed: <strong style={{ color: '#fff' }}>{totalLeads}/mo</strong></div>
@@ -71,7 +71,7 @@ export default function ProLnkNoCommissionModel() {
           ].map((item, i) => (
             <div key={i} style={{ background: item.highlight ? '#0f2d0f' : '#0d1f3c', border: `1px solid ${item.highlight ? '#F5E642' : '#1e3a5f'}`, borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 13, color: '#aaa', marginBottom: 4 }}>{item.label}</div>
-              <div style={{ fontSize: 26, fontWeight: 700, color: item.highlight ? '#F5E642' : '#f44336' }}>${item.amount.toLocaleString()}</div>
+              <div style={{ fontSize: 26, fontWeight: 700, color: item.highlight ? '#F5E642′ : '#f44336' }}>${item.amount.toLocaleString()}</div>
               <div style={{ fontSize: 11, color: '#666', marginTop: 4 }}>{item.sub}</div>
             </div>
           ))}

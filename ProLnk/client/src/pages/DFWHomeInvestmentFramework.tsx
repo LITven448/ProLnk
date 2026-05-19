@@ -72,7 +72,7 @@ export default function DFWHomeInvestmentFramework() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Your homeowner stage</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {stages.map(s => (
-              <button key={s} onClick={() => setStage(s)} style={{ background: stage === s ? '#F5E642' : '#111d30', color: stage === s ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600 }}>{s}</button>
+              <button key={s} onClick={() => setStage(s)} style={{ background: stage === s ? '#F5E642′ : '#111d30', color: stage === s ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: 600 }}>{s}</button>
             ))}
           </div>
         </div>
@@ -81,17 +81,17 @@ export default function DFWHomeInvestmentFramework() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Primary goal</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {goals.map(g => (
-              <button key={g} onClick={() => setGoal(g)} style={{ background: goal === g ? '#F5E642' : '#111d30', color: goal === g ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600 }}>{g}</button>
+              <button key={g} onClick={() => setGoal(g)} style={{ background: goal === g ? '#F5E642′ : '#111d30', color: goal === g ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: 600 }}>{g}</button>
             ))}
           </div>
         </div>
 
         {stageRecs.length > 0 && (
-          <div style={{ background: '#111d30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#111d30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>📋 Your Framework: {stage} + {goal}</div>
             {stageRecs.map((r, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, color: '#94a3b8', fontSize: 14 }}>
-                <span style={{ color: '#F5E642' }}>→</span> {r}
+                <span style={{ color: '#F5E642′ }}>→</span> {r}
               </div>
             ))}
             <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #1e3a5f', color: '#64748b', fontSize: 12 }}>Category: <span style={{ color: categories.find(c => c.key === activeCat)?.color }}>{categories.find(c => c.key === activeCat)?.label}</span></div>

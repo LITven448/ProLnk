@@ -15,9 +15,9 @@ export default function DFWRoofingTPOGuide2026() {
   const results: Record<string, { verdict: string; detail: string; color: string }> = {
     flat_new: { verdict: 'TPO Strongly Recommended', detail: 'For DFW new flat roof, specify 60-mil TPO (not 45-mil). White TPO reflects UV radiation, reducing cooling load 10-15%. Heat-welded seams withstand DFW thermal expansion cycles.', color: '#22c55e' },
     flat_replace: { verdict: 'TPO Excellent Choice', detail: 'Replacing EPDM or BUR with white TPO improves energy performance immediately. Verify existing deck can support new membrane. Expect 10-20 year lifespan with DFW UV exposure.', color: '#22c55e' },
-    leak: { verdict: 'TPO with Full Adhered System', detail: 'For chronic DFW leaks, specify fully adhered (not mechanically attached) TPO. Full adhesion eliminates billowing and seam stress. Fleece-back TPO adds puncture resistance.', color: '#F5E642' },
-    energy: { verdict: 'White TPO Directly Addresses This', detail: 'DFW black roofs can hit 180°F surface temp. White TPO stays 50-70°F cooler — directly reduces AC load and extends HVAC life. ROI typically 3-5 years through energy savings.', color: '#3b82f6' },
-    leed: { verdict: 'TPO Qualifies for LEED Points', detail: 'White TPO qualifies for LEED v4 SS Credit: Heat Island Reduction. Must meet SRI (Solar Reflectance Index) minimum 78 for low-slope roofs. Get manufacturer SRI documentation.', color: '#a855f7' },
+    leak: { verdict: 'TPO with Full Adhered System', detail: 'For chronic DFW leaks, specify fully adhered (not mechanically attached) TPO. Full adhesion eliminates billowing and seam stress. Fleece-back TPO adds puncture resistance.', color: '#F5E642′ },
+    energy: { verdict: 'White TPO Directly Addresses This', detail: 'DFW black roofs can hit 180°F surface temp. White TPO stays 50-70°F cooler — directly reduces AC load and extends HVAC life. ROI typically 3-5 years through energy savings.', color: '#3b82f6′ },
+    leed: { verdict: 'TPO Qualifies for LEED Points', detail: 'White TPO qualifies for LEED v4 SS Credit: Heat Island Reduction. Must meet SRI (Solar Reflectance Index) minimum 78 for low-slope roofs. Get manufacturer SRI documentation.', color: '#a855f7′ },
   };
 
   const handleCheck = () => {
@@ -53,12 +53,12 @@ export default function DFWRoofingTPOGuide2026() {
           <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>Select your flat roof situation:</p>
           <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1rem' }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSituation(s.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: situation === s.id ? '#F5E642' : '#1e3a5f', background: situation === s.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: '0.9rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSituation(s.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: situation === s.id ? '#F5E642′ : '#1e3a5f', background: situation === s.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: ’left', cursor: 'pointer', fontSize: '0.9rem' }}>{s.label}</button>
             ))}
           </div>
           <button onClick={handleCheck} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}>Check TPO Feasibility</button>
           {result && results[result] && (
-            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628' }}>
+            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628′ }}>
               <div style={{ color: results[result].color, fontWeight: 700, marginBottom: '0.4rem' }}>{results[result].verdict}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{results[result].detail}</div>
             </div>

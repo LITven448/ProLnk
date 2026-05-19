@@ -31,12 +31,12 @@ const pcmData: Record<string, Record<string, { suitability: string; apps: string
 };
 
 const suitabilityColor: Record<string, { bg: string; text: string }> = {
-  'Excellent': { bg: '#065F46', text: '#6EE7B7' },
-  'Good': { bg: '#1E3A5F', text: '#F5E642' },
+  'Excellent': { bg: '#065F46', text: '#6EE7B7′ },
+  'Good': { bg: '#1E3A5F', text: '#F5E642′ },
   'Moderate': { bg: '#374151', text: '#D1D5DB' },
   'Low-Moderate': { bg: '#374151', text: '#D1D5DB' },
-  'Limited': { bg: '#4B1515', text: '#FCA5A5' },
-  'Low': { bg: '#4B1515', text: '#FCA5A5' },
+  'Limited': { bg: '#4B1515', text: '#FCA5A5′ },
+  'Low': { bg: '#4B1515', text: '#FCA5A5′ },
 };
 
 export default function DFWPhaseChangeMaterialGuide() {
@@ -48,7 +48,7 @@ export default function DFWPhaseChangeMaterialGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8' }}>🏠 DFW Building Science</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8′ }}>🏠 DFW Building Science</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
           Phase Change Materials for DFW Homes
         </h1>
@@ -61,8 +61,8 @@ export default function DFWPhaseChangeMaterialGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
             {homeTypes.map(opt => (
               <button key={opt.value} onClick={() => setHomeType(opt.value)} style={{
-                background: homeType === opt.value ? '#F5E642' : '#1E3A5F',
-                color: homeType === opt.value ? '#0A1628' : '#E2E8F0',
+                background: homeType === opt.value ? '#F5E642′ : '#1E3A5F',
+                color: homeType === opt.value ? '#0A1628′ : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -71,8 +71,8 @@ export default function DFWPhaseChangeMaterialGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem' }}>
             {sunExposures.map(opt => (
               <button key={opt.value} onClick={() => setSunExposure(opt.value)} style={{
-                background: sunExposure === opt.value ? '#F5E642' : '#1E3A5F',
-                color: sunExposure === opt.value ? '#0A1628' : '#E2E8F0',
+                background: sunExposure === opt.value ? '#F5E642′ : '#1E3A5F',
+                color: sunExposure === opt.value ? '#0A1628′ : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -102,12 +102,12 @@ export default function DFWPhaseChangeMaterialGuide() {
           <h3 style={{ color: '#F5E642', fontSize: '0.95rem', marginBottom: '0.75rem' }}>✅ Best PCM Applications</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {data.apps.map((a, i) => (
-              <div key={i} style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#E2E8F0' }}>🧊 {a}</div>
+              <div key={i} style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#E2E8F0′ }}>🧊 {a}</div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>🌡️ DFW PCM Temperature Target</div>
           <div style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>Choose PCM products rated to melt at 73-76F -- the ideal DFW indoor setpoint. Products melting at 68F are wasted in summer; products at 80F do not activate during occupancy. BioPCM and Micronal are common brands available in DFW through specialty distributors.</div>
         </div>

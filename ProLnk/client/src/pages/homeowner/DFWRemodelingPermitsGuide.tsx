@@ -31,9 +31,9 @@ export default function DFWRemodelingPermitsGuide() {
   const project = PROJECTS.find(p => p.id === selected);
 
   function statusColor(s: string) {
-    if (s === 'Required') return { bg: '#450a0a', color: '#fca5a5' };
+    if (s === 'Required') return { bg: '#450a0a', color: '#fca5a5′ };
     if (s === 'Not Required') return { bg: '#0f2d1a', color: '#86efac' };
-    return { bg: '#422006', color: '#fdba74' };
+    return { bg: '#422006', color: '#fdba74′ };
   }
 
   return (
@@ -60,7 +60,7 @@ export default function DFWRemodelingPermitsGuide() {
 
         {/* Requires permit */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#f87171' }}>🔴 Typically Requires a Permit</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#f87171′ }}>🔴 Typically Requires a Permit</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 10 }}>
             {[
               'Structural changes (removing/adding walls)',
@@ -81,7 +81,7 @@ export default function DFWRemodelingPermitsGuide() {
 
         {/* No permit needed */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#4ade80' }}>🟢 Usually No Permit Required</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#4ade80′ }}>🟢 Usually No Permit Required</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 10 }}>
             {[
               'Paint, flooring, countertops, light fixtures',
@@ -99,7 +99,7 @@ export default function DFWRemodelingPermitsGuide() {
 
         {/* Permit offices */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9' }}>🏛️ DFW City Permit Offices</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9′ }}>🏛️ DFW City Permit Offices</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
             {[
               { city: 'Dallas', url: 'dallaspermit.org' },
@@ -117,7 +117,7 @@ export default function DFWRemodelingPermitsGuide() {
 
         {/* Cost of unpermitted */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 40 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#f87171' }}>💸 Cost of Skipping a Permit</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#f87171′ }}>💸 Cost of Skipping a Permit</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               'May require demolition for after-the-fact inspection access',
@@ -136,7 +136,7 @@ export default function DFWRemodelingPermitsGuide() {
 
         {/* Interactive checker */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 8px', color: '#f1f5f9' }}>🔍 Permit Checker</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 8px', color: '#f1f5f9′ }}>🔍 Permit Checker</h2>
           <p style={{ color: '#64748b', margin: '0 0 24px', fontSize: 15 }}>Select your project to see permit requirements by city.</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 8, marginBottom: 28 }}>
@@ -145,7 +145,7 @@ export default function DFWRemodelingPermitsGuide() {
                 key={p.id}
                 onClick={() => setSelected(p.id === selected ? null : p.id)}
                 style={{
-                  background: selected === p.id ? '#312e81' : '#0f172a',
+                  background: selected === p.id ? '#312e81′ : '#0f172a',
                   border: `1px solid ${selected === p.id ? '#6366f1' : '#1e293b'}`,
                   borderRadius: 8, padding: '10px 14px', cursor: 'pointer',
                   color: selected === p.id ? '#e0e7ff' : '#94a3b8',

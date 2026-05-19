@@ -32,9 +32,9 @@ export default function DFWProLnkMatchDemo2026() {
           {services.map(s => (
             <button key={s} onClick={() => { setService(s); setStep(0); }} style={{
               padding: '10px 16px', borderRadius: 10, border: '2px solid',
-              borderColor: service === s ? '#F5E642' : '#1E3A5F',
-              background: service === s ? '#F5E642' : '#0D1F3C',
-              color: service === s ? '#0A1628' : '#fff',
+              borderColor: service === s ? '#F5E642′ : '#1E3A5F',
+              background: service === s ? '#F5E642′ : '#0D1F3C',
+              color: service === s ? '#0A1628′ : '#fff',
               cursor: 'pointer', fontWeight: 700, fontSize: 14
             }}>{s}</button>
           ))}
@@ -47,7 +47,7 @@ export default function DFWProLnkMatchDemo2026() {
                 <h3 style={{ color: '#F5E642', margin: 0 }}>Step {step + 1} of {steps.length}</h3>
                 <div style={{ display: 'flex', gap: 6 }}>
                   {steps.map((_, i) => (
-                    <div key={i} onClick={() => setStep(i)} style={{ width: 10, height: 10, borderRadius: '50%', background: i === step ? '#F5E642' : '#1E3A5F', cursor: 'pointer' }} />
+                    <div key={i} onClick={() => setStep(i)} style={{ width: 10, height: 10, borderRadius: '50%', background: i === step ? '#F5E642′ : '#1E3A5F', cursor: ’pointer' }} />
                   ))}
                 </div>
               </div>

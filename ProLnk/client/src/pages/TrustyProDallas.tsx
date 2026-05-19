@@ -8,7 +8,7 @@
 
 import React, { useState } from "react";
 
-const INDIGO = "#4F46E5";
+const INDIGO = "#4F46E5″;
 const AMBER = "#F59E0B";
 
 const pros = [
@@ -34,10 +34,10 @@ export default function TrustyProDallas() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", color: "#1F2937", backgroundColor: "#F9FAFB", minHeight: "100vh" }}>
+    <div style={{ fontFamily: "system-ui, sans-serif", color: "#1F2937″, backgroundColor: "#F9FAFB", minHeight: "100vh" }}>
       {/* Hero */}
       <div style={{ backgroundColor: "#1E1B4B", color: "white", padding: "80px 24px 64px", textAlign: "center" }}>
-        <div style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", borderRadius: "9999px", padding: "4px 16px", fontSize: "13px", fontWeight: 700, marginBottom: "20px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+        <div style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937″, borderRadius: "9999px", padding: "4px 16px", fontSize: "13px", fontWeight: 700, marginBottom: "20px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
           Dallas, TX — AI Home Intelligence
         </div>
         <h1 style={{ fontSize: "clamp(28px, 5vw, 52px)", fontWeight: 800, lineHeight: 1.1, maxWidth: "800px", margin: "0 auto 20px" }}>
@@ -47,7 +47,7 @@ export default function TrustyProDallas() {
           The average Dallas home is 28 years old and sitting on some of the most expansive clay soil in the country.
           Our AI scans your home's history and flags issues before they become emergencies.
         </p>
-        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none", boxShadow: "0 4px 20px rgba(245,158,11,0.4)" }}>
+        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937″, fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none", boxShadow: "0 4px 20px rgba(245,158,11,0.4)" }}>
           Get My Free Health Score →
         </a>
       </div>
@@ -74,14 +74,14 @@ export default function TrustyProDallas() {
         <h2 style={{ fontSize: "32px", fontWeight: 800, textAlign: "center", marginBottom: "48px" }}>How It Works</h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "32px", justifyContent: "center" }}>
           {[
-            { step: "1", title: "Enter Your Address", desc: "We pull public records, permit history, and neighborhood data for your Dallas home automatically." },
-            { step: "2", title: "AI Generates Your Score", desc: "Our model analyzes 40+ risk factors including soil type, home age, water quality, and local claims data." },
-            { step: "3", title: "Get Matched to Vetted Pros", desc: "If issues are found, you see local pros with real ratings, transparent pricing, and fast response times." },
+            { step: "1″, title: "Enter Your Address", desc: "We pull public records, permit history, and neighborhood data for your Dallas home automatically." },
+            { step: "2″, title: "AI Generates Your Score", desc: "Our model analyzes 40+ risk factors including soil type, home age, water quality, and local claims data." },
+            { step: "3″, title: "Get Matched to Vetted Pros", desc: "If issues are found, you see local pros with real ratings, transparent pricing, and fast response times." },
           ].map((step) => (
             <div key={step.step} style={{ flex: "1 1 240px", maxWidth: "280px", textAlign: "center" }}>
               <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: INDIGO, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px", fontWeight: 800, margin: "0 auto 16px" }}>{step.step}</div>
               <h3 style={{ fontSize: "18px", fontWeight: 700, marginBottom: "8px" }}>{step.title}</h3>
-              <p style={{ fontSize: "15px", color: "#6B7280", lineHeight: 1.6 }}>{step.desc}</p>
+              <p style={{ fontSize: "15px", color: "#6B7280″, lineHeight: 1.6 }}>{step.desc}</p>
             </div>
           ))}
         </div>
@@ -91,16 +91,16 @@ export default function TrustyProDallas() {
       <div style={{ backgroundColor: "white", padding: "72px 24px" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "32px", fontWeight: 800, textAlign: "center", marginBottom: "8px" }}>Top-Rated Dallas Pros</h2>
-          <p style={{ textAlign: "center", color: "#6B7280", marginBottom: "48px" }}>Vetted, background-checked, and rated by real Dallas homeowners</p>
+          <p style={{ textAlign: "center", color: "#6B7280″, marginBottom: "48px" }}>Vetted, background-checked, and rated by real Dallas homeowners</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
             {pros.map((p) => (
               <div key={p.name} style={{ flex: "1 1 240px", maxWidth: "280px", border: "1px solid #E5E7EB", borderRadius: "16px", padding: "28px 24px", backgroundColor: "#FAFAFA" }}>
                 <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: INDIGO, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "18px", marginBottom: "16px" }}>{p.img}</div>
                 <div style={{ fontWeight: 700, fontSize: "17px" }}>{p.name}</div>
-                <div style={{ color: "#6B7280", fontSize: "14px", marginBottom: "12px" }}>{p.trade}</div>
+                <div style={{ color: "#6B7280″, fontSize: "14px", marginBottom: "12px" }}>{p.trade}</div>
                 <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <span style={{ backgroundColor: "#EEF2FF", color: INDIGO, borderRadius: "8px", padding: "4px 10px", fontSize: "13px", fontWeight: 600 }}>★ {p.rating} ({p.reviews})</span>
-                  <span style={{ backgroundColor: "#FEF3C7", color: "#92400E", borderRadius: "8px", padding: "4px 10px", fontSize: "13px", fontWeight: 600 }}>{p.response}</span>
+                  <span style={{ backgroundColor: "#FEF3C7″, color: "#92400E", borderRadius: "8px", padding: "4px 10px", fontSize: "13px", fontWeight: 600 }}>{p.response}</span>
                 </div>
               </div>
             ))}
@@ -114,9 +114,9 @@ export default function TrustyProDallas() {
         <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
           {testimonials.map((t) => (
             <div key={t.name} style={{ flex: "1 1 260px", maxWidth: "290px", backgroundColor: "white", border: "1px solid #E5E7EB", borderRadius: "16px", padding: "28px 24px" }}>
-              <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#374151", marginBottom: "20px", fontStyle: "italic" }}>"{t.text}"</p>
+              <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#374151″, marginBottom: "20px", fontStyle: "italic" }}>"{t.text}"</p>
               <div style={{ fontWeight: 700, fontSize: "14px" }}>{t.name}</div>
-              <div style={{ color: "#6B7280", fontSize: "13px" }}>{t.city}</div>
+              <div style={{ color: "#6B7280″, fontSize: "13px" }}>{t.city}</div>
             </div>
           ))}
         </div>
@@ -128,11 +128,11 @@ export default function TrustyProDallas() {
           <h2 style={{ fontSize: "32px", fontWeight: 800, textAlign: "center", marginBottom: "48px" }}>Frequently Asked Questions</h2>
           {faqs.map((faq, i) => (
             <div key={i} style={{ borderBottom: "1px solid #E5E7EB", paddingBottom: "20px", marginBottom: "20px" }}>
-              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, color: "#111827", padding: "4px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, color: "#111827″, padding: "4px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 {faq.q}
                 <span style={{ color: INDIGO, fontSize: "20px", marginLeft: "12px" }}>{openFaq === i ? "−" : "+"}</span>
               </button>
-              {openFaq === i && <p style={{ marginTop: "12px", fontSize: "15px", color: "#6B7280", lineHeight: 1.7 }}>{faq.a}</p>}
+              {openFaq === i && <p style={{ marginTop: "12px", fontSize: "15px", color: "#6B7280″, lineHeight: 1.7 }}>{faq.a}</p>}
             </div>
           ))}
         </div>
@@ -142,7 +142,7 @@ export default function TrustyProDallas() {
       <div style={{ backgroundColor: "#1E1B4B", color: "white", padding: "80px 24px", textAlign: "center" }}>
         <h2 style={{ fontSize: "36px", fontWeight: 800, marginBottom: "16px" }}>Your Dallas Home Deserves a Checkup</h2>
         <p style={{ fontSize: "18px", opacity: 0.8, maxWidth: "500px", margin: "0 auto 36px" }}>Free AI health score. No sales pressure. Real pros if you need them.</p>
-        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none" }}>
+        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937″, fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none" }}>
           Join the Waitlist — It's Free →
         </a>
       </div>

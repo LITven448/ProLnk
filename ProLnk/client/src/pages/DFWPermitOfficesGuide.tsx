@@ -126,13 +126,13 @@ export default function DFWPermitOfficesGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16, marginBottom: 20 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>🪪 PERMIT REQUIRED</div>
-              <div style={{ fontSize: 20, fontWeight: 800, color: project.required ? '#f87171' : '#4ade80' }}>
+              <div style={{ fontSize: 20, fontWeight: 800, color: project.required ? '#f87171′ : '#4ade80' }}>
                 {project.required ? 'YES' : 'NO'}
               </div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>💵 TYPICAL COST</div>
-              <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{project.typicalCost}</div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{project.typicalCost}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>⏱️ CITY WAIT TIME</div>
@@ -140,7 +140,7 @@ export default function DFWPermitOfficesGuide() {
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>🔍 INSPECTION NEEDED</div>
-              <div style={{ fontSize: 18, fontWeight: 800, color: project.requiresInspection ? '#facc15' : '#4ade80' }}>
+              <div style={{ fontSize: 18, fontWeight: 800, color: project.requiresInspection ? '#facc15′ : '#4ade80' }}>
                 {project.requiresInspection ? 'YES' : 'NO'}
               </div>
             </div>

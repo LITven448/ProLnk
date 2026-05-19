@@ -51,7 +51,7 @@ export default function DFWInsuranceAgentProLnkGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {reasons.map((r) => (
-            <div key={r.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642' }}>
+            <div key={r.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{r.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{r.title}</div>
               <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>{r.desc}</div>
@@ -65,17 +65,17 @@ export default function DFWInsuranceAgentProLnkGuide() {
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Home Policies in Your Book</label>
               <input type="range" min={50} max={2000} step={50} value={policies} onChange={(e) => setPolicies(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{policies.toLocaleString()} policies</div>
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Avg Annual Premium</label>
               <input type="range" min={1200} max={8000} step={200} value={avgPremium} onChange={(e) => setAvgPremium(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>${avgPremium.toLocaleString()}</div>
             </div>
           </div>
-          <div style={{ background: '#f0fdf4', borderRadius: 10, padding: 14, marginBottom: 20, fontSize: 13, color: '#166534' }}>
+          <div style={{ background: '#f0fdf4', borderRadius: 10, padding: 14, marginBottom: 20, fontSize: 13, color: '#166534′ }}>
             📌 Estimate assumes ~35% enrollment rate of your book. Enrolled homes: <strong>{enrolledHomes}</strong>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 14 }}>
@@ -87,8 +87,8 @@ export default function DFWInsuranceAgentProLnkGuide() {
             ].map((item) => (
               <div key={item.label} style={{ background: '#f8f9fb', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
-                <div style={{ fontSize: 11, color: '#94a3b8' }}>{item.sub}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8′ }}>{item.sub}</div>
               </div>
             ))}
           </div>

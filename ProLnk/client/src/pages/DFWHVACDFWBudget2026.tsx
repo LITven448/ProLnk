@@ -48,13 +48,13 @@ export default function DFWHVACDFWBudget2026() {
           <div style={{ backgroundColor: '#0F2340', borderRadius: 12, padding: 24 }}>
             <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', marginBottom: 14 }}>🏠 Home Size</div>
             {homeTypes.map(h => (
-              <button key={h} onClick={() => setHomeType(h)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: '2px solid', borderColor: homeType === h ? '#F5E642' : '#1E3A5F', backgroundColor: homeType === h ? '#F5E642' : '#0A1628', color: homeType === h ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>{h}</button>
+              <button key={h} onClick={() => setHomeType(h)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: '2px solid', borderColor: homeType === h ? '#F5E642′ : '#1E3A5F', backgroundColor: homeType === h ? '#F5E642' : '#0A1628', color: homeType === h ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>{h}</button>
             ))}
           </div>
           <div style={{ backgroundColor: '#0F2340', borderRadius: 12, padding: 24 }}>
             <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', marginBottom: 14 }}>⏰ System Age</div>
             {systemAges.map(a => (
-              <button key={a} onClick={() => setAge(a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642' : '#1E3A5F', backgroundColor: age === a ? '#F5E642' : '#0A1628', color: age === a ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>{a}</button>
+              <button key={a} onClick={() => setAge(a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642′ : '#1E3A5F', backgroundColor: age === a ? '#F5E642' : '#0A1628', color: age === a ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>{a}</button>
             ))}
           </div>
         </div>
@@ -66,14 +66,14 @@ export default function DFWHVACDFWBudget2026() {
             <div style={{ color: '#94A3B8', marginBottom: 24 }}>Estimated annual HVAC spend for {homeType} home with {age} system</div>
             {rec.notes.map((n, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
-                <span style={{ color: '#F5E642' }}>→</span>
+                <span style={{ color: '#F5E642′ }}>→</span>
                 <span style={{ color: '#CBD5E1', fontSize: 15 }}>{n}</span>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 10 }}>Get a Real Quote Before You Budget</div>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>ProLnk matches you with vetted DFW HVAC pros for transparent, competitive pricing.</p>
           <a href="https://prolnk.io" style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '14px 32px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 16 }}>Get My Free Quote Match</a>

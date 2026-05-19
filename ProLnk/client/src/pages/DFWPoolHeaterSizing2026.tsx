@@ -35,19 +35,19 @@ export default function DFWPoolHeaterSizing2026() {
           DFW pool season runs March–November. Gas heaters heat fast but cost more to run. Heat pumps are efficient but slower — ideal for maintaining temp. BTU formula: pool volume × temp rise × 12.
         </p>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Pool Size</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Pool Size</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12, marginBottom: 24 }}>
           {poolSizes.map(p => (
-            <button key={p.id} onClick={() => setPoolSize(p.id)} style={{ background: poolSize === p.id ? '#F5E642' : '#1e2d45', color: poolSize === p.id ? '#0A1628' : '#fff', border: '2px solid' + (poolSize === p.id ? ' #F5E642' : ' #2d3f5a'), borderRadius: 10, padding: '14px', fontSize: 14, fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
+            <button key={p.id} onClick={() => setPoolSize(p.id)} style={{ background: poolSize === p.id ? '#F5E642′ : '#1e2d45', color: poolSize === p.id ? '#0A1628' : '#fff', border: '2px solid' + (poolSize === p.id ? ' #F5E642' : ' #2d3f5a'), borderRadius: 10, padding: '14px', fontSize: 14, fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
               {p.label}
             </button>
           ))}
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Temperature Goal</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Temperature Goal</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 28 }}>
           {tempGoals.map(t => (
-            <button key={t.id} onClick={() => setTempGoal(t.id)} style={{ background: tempGoal === t.id ? '#F5E642' : '#1e2d45', color: tempGoal === t.id ? '#0A1628' : '#fff', border: '2px solid' + (tempGoal === t.id ? ' #F5E642' : ' #2d3f5a'), borderRadius: 10, padding: '14px', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+            <button key={t.id} onClick={() => setTempGoal(t.id)} style={{ background: tempGoal === t.id ? '#F5E642′ : '#1e2d45', color: tempGoal === t.id ? '#0A1628' : '#fff', border: '2px solid' + (tempGoal === t.id ? ' #F5E642' : ' #2d3f5a'), borderRadius: 10, padding: '14px', fontSize: 14, fontWeight: 600, cursor: ’pointer' }}>
               {t.label}
             </button>
           ))}

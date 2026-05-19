@@ -25,7 +25,7 @@ const guideMap: Record<string, { title: string; points: string[]; pitch: string 
     pitch: '4:12',
     title: '4:12 Pitch — Most Common DFW Home',
     points: [
-      '4:12 is the most common DFW residential roof pitch (rises 4" per 12" of run)',
+      '4:12 is the most common DFW residential roof pitch (rises 4″ per 12″ of run)',
       'All standard asphalt shingles approved: GAF HDZ, Owens Corning Duration, etc.',
       'Good drainage for DFW storms — water sheds fast enough to avoid pooling',
       'Walkable by experienced DFW roofers without harness on dry days',
@@ -79,7 +79,7 @@ export default function DFWRoofingDFWPitchStandard2026() {
         <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📏 How to Measure Your DFW Pitch</div>
           <p style={{ color: '#cbd5e1', margin: 0 }}>
-            Place a level on your roof slope. Measure 12 inches horizontally. At the 12-inch mark, measure vertically up to the underside of the level. That vertical number is your pitch (e.g., <strong style={{ color: '#F5E642' }}>4 inches = 4:12 pitch</strong>).
+            Place a level on your roof slope. Measure 12 inches horizontally. At the 12-inch mark, measure vertically up to the underside of the level. That vertical number is your pitch (e.g., <strong style={{ color: '#F5E642′ }}>4 inches = 4:12 pitch</strong>).
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function DFWRoofingDFWPitchStandard2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {roofDescriptions.map(r => (
             <button key={r.id} onClick={() => setSelected(r.id)}
-              style={{ background: selected === r.id ? '#F5E642' : '#1e293b', color: selected === r.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === r.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+              style={{ background: selected === r.id ? '#F5E642′ : '#1e293b', color: selected === r.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === r.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: ’pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{r.label}</div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>{r.desc}</div>
             </button>
@@ -95,7 +95,7 @@ export default function DFWRoofingDFWPitchStandard2026() {
         </div>
 
         {selected && guideMap[selected] && (
-          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ background: '#0A1628', borderRadius: 6, padding: '0.5rem 1rem', display: 'inline-block', marginBottom: '1rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Likely Pitch: {guideMap[selected].pitch}</span>
             </div>
@@ -103,7 +103,7 @@ export default function DFWRoofingDFWPitchStandard2026() {
             <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
               {guideMap[selected].points.map((p, i) => (
                 <li key={i} style={{ padding: '0.5rem 0', borderBottom: '1px solid #334155', color: '#cbd5e1', display: 'flex', gap: '0.5rem' }}>
-                  <span style={{ color: '#F5E642' }}>✓</span>{p}
+                  <span style={{ color: '#F5E642′ }}>✓</span>{p}
                 </li>
               ))}
             </ul>

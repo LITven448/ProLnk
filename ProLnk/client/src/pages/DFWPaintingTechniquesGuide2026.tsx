@@ -37,40 +37,40 @@ export default function DFWPaintingTechniquesGuide2026() {
   const guide = GUIDES[room][cond];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
+        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🎨 DFW Interior Painting Guide 2026</h1>
-        <p style={{ color: "#94a3b8", marginBottom: 32 }}>Select your room and current wall condition for the right approach.</p>
+        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>Select your room and current wall condition for the right approach.</p>
 
         <div style={{ marginBottom: 20 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 10, fontSize: 14 }}>ROOM TYPE</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 10, fontSize: 14 }}>ROOM TYPE</div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {(Object.keys(GUIDES) as RoomType[]).map((r) => (
-              <button key={r} onClick={() => setRoom(r)} style={{ padding: "8px 14px", borderRadius: 8, border: "2px solid", borderColor: room === r ? "#F5E642" : "#1e3a5f", background: room === r ? "#F5E642" : "transparent", color: room === r ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>{r}</button>
+              <button key={r} onClick={() => setRoom(r)} style={{ padding: "8px 14px", borderRadius: 8, border: "2px solid", borderColor: room === r ? "#F5E642″ : "#1e3a5f", background: room === r ? "#F5E642" : "transparent", color: room === r ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>{r}</button>
             ))}
           </div>
         </div>
 
         <div style={{ marginBottom: 28 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 10, fontSize: 14 }}>WALL CONDITION</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 10, fontSize: 14 }}>WALL CONDITION</div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {(Object.keys(GUIDES[room]) as Condition[]).map((c) => (
-              <button key={c} onClick={() => setCond(c)} style={{ padding: "8px 14px", borderRadius: 8, border: "2px solid", borderColor: cond === c ? "#F5E642" : "#1e3a5f", background: cond === c ? "#F5E642" : "transparent", color: cond === c ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer", fontSize: 12 }}>{c}</button>
+              <button key={c} onClick={() => setCond(c)} style={{ padding: "8px 14px", borderRadius: 8, border: "2px solid", borderColor: cond === c ? "#F5E642″ : "#1e3a5f", background: cond === c ? "#F5E642" : "transparent", color: cond === c ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer", fontSize: 12 }}>{c}</button>
             ))}
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {[["🧹 SURFACE PREP", guide.prep], ["🎨 COATS REQUIRED", guide.coats], ["🖌️ ROLLER NAP", guide.roller]].map(([label, val]) => (
-            <div key={label} style={{ background: "#0f2035", borderRadius: 10, padding: 18, border: "1px solid #1e3a5f" }}>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 6 }}>{label}</div>
-              <div style={{ color: "#e2e8f0", fontSize: 14 }}>{val}</div>
+            <div key={label} style={{ background: "#0f2035″, borderRadius: 10, padding: 18, border: "1px solid #1e3a5f" }}>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 6 }}>{label}</div>
+              <div style={{ color: "#e2e8f0″, fontSize: 14 }}>{val}</div>
             </div>
           ))}
-          <div style={{ background: "#162d4a", borderRadius: 10, padding: 18, border: "1px solid #F5E642" }}>
-            <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 6 }}>DFW PRO TIP</div>
-            <div style={{ color: "#fef9c3", fontSize: 14, lineHeight: 1.6 }}>💡 {guide.tip}</div>
+          <div style={{ background: "#162d4a", borderRadius: 10, padding: 18, border: "1px solid #F5E642″ }}>
+            <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 6 }}>DFW PRO TIP</div>
+            <div style={{ color: "#fef9c3″, fontSize: 14, lineHeight: 1.6 }}>💡 {guide.tip}</div>
           </div>
         </div>
 

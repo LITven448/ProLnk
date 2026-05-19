@@ -44,7 +44,7 @@ export default function DFWFlowerMoundLakeshoreGuide2026() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {homeTypes.map(h => (
               <button key={h.id} onClick={() => setSelected(h.id === selected ? null : h.id)}
-                style={{ background: selected === h.id ? '#F5E642' : '#162236', color: selected === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === h.id ? '#F5E642′ : '#162236', color: selected === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {h.label}
               </button>
             ))}
@@ -54,7 +54,7 @@ export default function DFWFlowerMoundLakeshoreGuide2026() {
               <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 14 }}>{active.label} — Maintenance Guide</h3>
               {active.tips.map((t, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-                  <span style={{ color: '#F5E642' }}>✓</span>
+                  <span style={{ color: '#F5E642′ }}>✓</span>
                   <span style={{ color: '#ccd6e0', fontSize: 14 }}>{t}</span>
                 </div>
               ))}
@@ -66,7 +66,7 @@ export default function DFWFlowerMoundLakeshoreGuide2026() {
           <h2 style={{ fontSize: 16, color: '#F5E642', marginBottom: 14 }}>🏞️ Flower Mound Lakeshore Key Facts</h2>
           {flowerMoundFacts.map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642' }}>→</span>
+              <span style={{ color: '#F5E642′ }}>→</span>
               <span style={{ color: '#ccd6e0', fontSize: 14 }}>{f}</span>
             </div>
           ))}

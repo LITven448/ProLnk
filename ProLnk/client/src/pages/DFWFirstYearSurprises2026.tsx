@@ -27,8 +27,8 @@ export default function DFWFirstYearSurprises2026() {
               key={s.id}
               onClick={() => setSelected(s.id === selected ? '' : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642' : '#1e2d45',
-                color: selected === s.id ? '#0A1628' : '#fff',
+                background: selected === s.id ? '#F5E642′ : '#1e2d45',
+                color: selected === s.id ? '#0A1628′ : '#fff',
                 border: '1px solid #F5E642',
                 borderRadius: 10,
                 padding: '10px 16px',
@@ -43,7 +43,7 @@ export default function DFWFirstYearSurprises2026() {
         </div>
 
         {activeItem && (
-          <div style={{ background: '#1e2d45', borderRadius: 12, padding: '24px', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1e2d45', borderRadius: 12, padding: '24px', borderLeft: '4px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>{activeItem.heading}</h2>
             <p style={{ color: '#cbd5e1', lineHeight: 1.8, fontSize: 15, margin: 0 }}>{activeItem.body}</p>
           </div>

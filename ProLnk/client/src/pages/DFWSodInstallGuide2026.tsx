@@ -39,7 +39,7 @@ export default function DFWSodInstallGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[['🌑 Bare Soil', 'bare'], ['🌿 Patchy Lawn', 'patchy'], ['🔄 Full Renovation', 'renovation']].map(([label, val]) => (
-            <button key={val} onClick={() => setLawnCondition(val)} style={{ padding: '14px', border: lawnCondition === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: lawnCondition === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', textAlign: 'left' }}>{label}</button>
+            <button key={val} onClick={() => setLawnCondition(val)} style={{ padding: '14px', border: lawnCondition === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: lawnCondition === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', textAlign: 'left' }}>{label}</button>
           ))}
         </div>
 
@@ -47,7 +47,7 @@ export default function DFWSodInstallGuide2026() {
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Select installation timing:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['🌸 Spring (Mar–May)', 'spring'], ['☀️ Summer (Jun–Aug)', 'summer'], ['🍂 Fall (Sep–Nov)', 'fall'], ['❄️ Winter (Dec–Feb)', 'winter']].map(([label, val]) => (
-              <button key={val} onClick={() => setTiming(val)} style={{ padding: '12px', border: timing === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: timing === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer' }}>{label}</button>
+              <button key={val} onClick={() => setTiming(val)} style={{ padding: '12px', border: timing === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: timing === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer' }}>{label}</button>
             ))}
           </div>
         </div>

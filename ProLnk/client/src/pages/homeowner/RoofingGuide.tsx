@@ -27,12 +27,12 @@ interface CostRow {
 }
 
 const CHECKLIST: CheckItem[] = [
-  { id: "1", label: "Visible from ground: Missing or curled shingles", status: "ok" },
-  { id: "2", label: "Gutters: Granule accumulation after rain", status: "warn" },
-  { id: "3", label: "Metal flashing: No gaps or rust around chimney and vents", status: "ok" },
-  { id: "4", label: "Chimney: Flashing intact, no gaps at base", status: "ok" },
-  { id: "5", label: "Attic: No daylight visible through decking", status: "ok" },
-  { id: "6", label: "Interior: No water stains or rings on ceiling", status: "ok" },
+  { id: "1″, label: "Visible from ground: Missing or curled shingles", status: "ok" },
+  { id: "2″, label: "Gutters: Granule accumulation after rain", status: "warn" },
+  { id: "3″, label: "Metal flashing: No gaps or rust around chimney and vents", status: "ok" },
+  { id: "4″, label: "Chimney: Flashing intact, no gaps at base", status: "ok" },
+  { id: "5″, label: "Attic: No daylight visible through decking", status: "ok" },
+  { id: "6″, label: "Interior: No water stains or rings on ceiling", status: "ok" },
 ];
 
 const INSURANCE_TIPS: InsuranceTip[] = [
@@ -59,21 +59,21 @@ const INSURANCE_TIPS: InsuranceTip[] = [
 ];
 
 const COSTS: CostRow[] = [
-  { service: "Professional inspection", low: "$150", high: "$350" },
-  { service: "Minor repair (flashing, few shingles)", low: "$300", high: "$1,500" },
-  { service: "Full replacement (2,400 sqft home)", low: "$8,000", high: "$18,000" },
-  { service: "Insurance deductible (typical DFW)", low: "$1,000", high: "$3,000" },
+  { service: "Professional inspection", low: "$150″, high: "$350" },
+  { service: "Minor repair (flashing, few shingles)", low: "$300″, high: "$1,500" },
+  { service: "Full replacement (2,400 sqft home)", low: "$8,000″, high: "$18,000" },
+  { service: "Insurance deductible (typical DFW)", low: "$1,000″, high: "$3,000" },
 ];
 
 const STATUS_CONFIG = {
-  ok: { color: "#16A34A", bg: "#DCFCE7", label: "OK", Icon: CheckCircle },
-  warn: { color: "#D97706", bg: "#FEF3C7", label: "Review", Icon: AlertTriangle },
-  pending: { color: "#6366F1", bg: "#EEF2FF", label: "Pending", Icon: Clock },
+  ok: { color: "#16A34A", bg: "#DCFCE7″, label: "OK", Icon: CheckCircle },
+  warn: { color: "#D97706″, bg: "#FEF3C7", label: "Review", Icon: AlertTriangle },
+  pending: { color: "#6366F1″, bg: "#EEF2FF", label: "Pending", Icon: Clock },
 };
 
 export default function RoofingGuide() {
   const [expanded, setExpanded] = useState<string | null>(null);
-  const [checked, setChecked] = useState<Set<string>>(new Set(["1", "3", "4", "5", "6"]));
+  const [checked, setChecked] = useState<Set<string>>(new Set(["1″, "3", "4", "5", "6"]));
 
   function toggleExpand(id: string) {
     setExpanded(prev => prev === id ? null : id);
@@ -103,7 +103,7 @@ export default function RoofingGuide() {
             </div>
             <div>
               <h1 style={{ fontSize: 24, fontWeight: 700, color: "#F8FAFC", margin: 0 }}>Roofing Guide</h1>
-              <p style={{ fontSize: 14, color: "#94A3B8", margin: 0 }}>Protect your home from Texas weather</p>
+              <p style={{ fontSize: 14, color: "#94A3B8″, margin: 0 }}>Protect your home from Texas weather</p>
             </div>
           </div>
         </div>
@@ -134,8 +134,8 @@ export default function RoofingGuide() {
                 ["Next inspection", "After next storm event"],
               ].map(([label, value]) => (
                 <div key={label}>
-                  <span style={{ fontSize: 12, color: "#94A3B8" }}>{label}</span>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: "#E2E8F0" }}>{value}</div>
+                  <span style={{ fontSize: 12, color: "#94A3B8″ }}>{label}</span>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: "#E2E8F0″ }}>{value}</div>
                 </div>
               ))}
             </div>
@@ -144,18 +144,18 @@ export default function RoofingGuide() {
 
         {/* Hail Damage Guide */}
         <div style={{ marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9", marginBottom: 12 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9″, marginBottom: 12 }}>
             How to spot hail damage
           </h2>
-          <Card style={{ background: "#1E293B", border: "1px solid #334155", overflow: "hidden" }}>
+          <Card style={{ background: "#1E293B", border: "1px solid #334155″, overflow: "hidden" }}>
             {/* Photo placeholder */}
             <div style={{
               height: 140, background: "linear-gradient(135deg, #1E3A2F, #166534)",
               display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-              gap: 8, borderBottom: "1px solid #334155",
+              gap: 8, borderBottom: "1px solid #334155″,
             }}>
-              <Camera size={32} color="#4ADE80" style={{ opacity: 0.6 }} />
-              <span style={{ fontSize: 13, color: "#6EE7B7", opacity: 0.7 }}>Hail damage photo reference</span>
+              <Camera size={32} color="#4ADE80″ style={{ opacity: 0.6 }} />
+              <span style={{ fontSize: 13, color: "#6EE7B7″, opacity: 0.7 }}>Hail damage photo reference</span>
             </div>
             <CardContent style={{ padding: "20px 24px" }}>
               <div style={{
@@ -170,9 +170,9 @@ export default function RoofingGuide() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {[
-                  { icon: "●", color: "#F87171", label: "Circular dents on shingles", detail: "Look for dark, rounded impact marks on shingle surfaces — bruising visible on asphalt granules." },
+                  { icon: "●", color: "#F87171″, label: "Circular dents on shingles", detail: "Look for dark, rounded impact marks on shingle surfaces — bruising visible on asphalt granules." },
                   { icon: "●", color: "#FB923C", label: "Granule loss (check gutters)", detail: "After a storm, gutters full of dark granules mean shingles are shedding protective coating." },
-                  { icon: "●", color: "#FBBF24", label: "Dented metal vents and flashing", detail: "Soft metals around vents, gutters, and flashing dent easily — these are the clearest signs of significant hail." },
+                  { icon: "●", color: "#FBBF24″, label: "Dented metal vents and flashing", detail: "Soft metals around vents, gutters, and flashing dent easily — these are the clearest signs of significant hail." },
                   { icon: "●", color: "#A78BFA", label: "Bruised soft metals (valleys)", detail: "Check valley metal and around skylights. Hail leaves textured dimples on aluminum and copper." },
                 ].map((item, i) => (
                   <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
@@ -181,8 +181,8 @@ export default function RoofingGuide() {
                       background: item.color, marginTop: 6, minWidth: 8,
                     }} />
                     <div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: "#E2E8F0", marginBottom: 2 }}>{item.label}</div>
-                      <div style={{ fontSize: 13, color: "#94A3B8", lineHeight: 1.5 }}>{item.detail}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: "#E2E8F0″, marginBottom: 2 }}>{item.label}</div>
+                      <div style={{ fontSize: 13, color: "#94A3B8″, lineHeight: 1.5 }}>{item.detail}</div>
                     </div>
                   </div>
                 ))}
@@ -193,11 +193,11 @@ export default function RoofingGuide() {
 
         {/* Inspection Checklist */}
         <div style={{ marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9", marginBottom: 12 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9″, marginBottom: 12 }}>
             Inspection checklist
           </h2>
-          <Card style={{ background: "#1E293B", border: "1px solid #334155" }}>
-            <CardContent style={{ padding: "8px 0" }}>
+          <Card style={{ background: "#1E293B", border: "1px solid #334155″ }}>
+            <CardContent style={{ padding: "8px 0″ }}>
               {CHECKLIST.map((item, i) => {
                 const done = checked.has(item.id);
                 const cfg = STATUS_CONFIG[item.status];
@@ -208,21 +208,21 @@ export default function RoofingGuide() {
                     style={{
                       display: "flex", alignItems: "center", gap: 12,
                       padding: "13px 20px", cursor: "pointer",
-                      borderBottom: i < CHECKLIST.length - 1 ? "1px solid #293548" : "none",
+                      borderBottom: i < CHECKLIST.length - 1 ? "1px solid #293548″ : "none",
                       background: done ? "rgba(20, 83, 45, 0.2)" : "transparent",
                       transition: "background 0.2s",
                     }}
                   >
                     <div style={{
                       minWidth: 22, height: 22, borderRadius: 6,
-                      border: done ? "none" : "2px solid #475569",
+                      border: done ? "none" : "2px solid #475569″,
                       background: done ? "#16A34A" : "transparent",
                       display: "flex", alignItems: "center", justifyContent: "center",
                     }}>
                       {done && <CheckCircle size={14} color="#fff" />}
                     </div>
                     <span style={{
-                      flex: 1, fontSize: 14, color: done ? "#86EFAC" : "#CBD5E1",
+                      flex: 1, fontSize: 14, color: done ? "#86EFAC" : "#CBD5E1″,
                       textDecoration: done ? "line-through" : "none",
                       lineHeight: 1.5,
                     }}>{item.label}</span>
@@ -242,23 +242,23 @@ export default function RoofingGuide() {
 
         {/* Cost Guide */}
         <div style={{ marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9", marginBottom: 12 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9″, marginBottom: 12 }}>
             Cost guide (DFW, 2025)
           </h2>
-          <Card style={{ background: "#1E293B", border: "1px solid #334155" }}>
-            <CardContent style={{ padding: "8px 0" }}>
+          <Card style={{ background: "#1E293B", border: "1px solid #334155″ }}>
+            <CardContent style={{ padding: "8px 0″ }}>
               {COSTS.map((row, i) => (
                 <div key={row.service} style={{
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                   padding: "13px 20px",
-                  borderBottom: i < COSTS.length - 1 ? "1px solid #293548" : "none",
+                  borderBottom: i < COSTS.length - 1 ? "1px solid #293548″ : "none",
                 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <DollarSign size={15} color="#64748B" />
-                    <span style={{ fontSize: 14, color: "#CBD5E1" }}>{row.service}</span>
+                    <span style={{ fontSize: 14, color: "#CBD5E1″ }}>{row.service}</span>
                   </div>
                   <span style={{
-                    fontSize: 14, fontWeight: 700, color: "#34D399",
+                    fontSize: 14, fontWeight: 700, color: "#34D399″,
                     background: "rgba(52, 211, 153, 0.1)", padding: "3px 10px", borderRadius: 20,
                   }}>{row.low} – {row.high}</span>
                 </div>
@@ -269,7 +269,7 @@ export default function RoofingGuide() {
 
         {/* Insurance Claim Tips */}
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9", marginBottom: 12 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9″, marginBottom: 12 }}>
             Insurance claim tips
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -279,7 +279,7 @@ export default function RoofingGuide() {
               return (
                 <Card key={i} style={{
                   background: "#1E293B",
-                  border: open ? "1px solid #0D9488" : "1px solid #334155",
+                  border: open ? "1px solid #0D9488″ : "1px solid #334155",
                   overflow: "hidden",
                 }}>
                   <button
@@ -298,7 +298,7 @@ export default function RoofingGuide() {
                       }}>
                         <TipIcon size={16} color="#2DD4BF" />
                       </div>
-                      <span style={{ fontWeight: 600, fontSize: 14, color: "#E2E8F0", textAlign: "left" }}>
+                      <span style={{ fontWeight: 600, fontSize: 14, color: "#E2E8F0″, textAlign: "left" }}>
                         {tip.title}
                       </span>
                     </div>
@@ -306,7 +306,7 @@ export default function RoofingGuide() {
                   </button>
                   {open && (
                     <div style={{ padding: "0 20px 16px", borderTop: "1px solid #0F172A" }}>
-                      <p style={{ fontSize: 14, color: "#94A3B8", margin: 0, lineHeight: 1.6 }}>
+                      <p style={{ fontSize: 14, color: "#94A3B8″, margin: 0, lineHeight: 1.6 }}>
                         {tip.detail}
                       </p>
                     </div>
@@ -335,7 +335,7 @@ export default function RoofingGuide() {
             <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 4 }}>
               Ready for a professional inspection?
             </div>
-            <div style={{ fontSize: 14, color: "#CCFBF1" }}>
+            <div style={{ fontSize: 14, color: "#CCFBF1″ }}>
               TrustyPro-verified roofers in DFW, rated 4.7★ average
             </div>
           </div>
@@ -345,7 +345,7 @@ export default function RoofingGuide() {
               fontWeight: 700, padding: "10px 28px", borderRadius: 10,
               fontSize: 15, border: "none",
             }}>
-              <Star size={16} style={{ marginRight: 8, color: "#0D9488" }} />
+              <Star size={16} style={{ marginRight: 8, color: "#0D9488″ }} />
               Schedule Roof Inspection
             </Button>
           </a>

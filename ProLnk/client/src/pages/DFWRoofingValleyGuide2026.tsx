@@ -12,13 +12,13 @@ export default function DFWRoofingValleyGuide2026() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: 13, marginBottom: 8 }}>DFW ROOFING GUIDE 2026</div>
+        <div style={{ color: "#F5E642″, fontSize: 13, marginBottom: 8 }}>DFW ROOFING GUIDE 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Roof Valley Guide</h1>
-        <p style={{ color: "#94a3b8", marginBottom: 28 }}>The most common DFW leak location — understanding roof valleys, valley types, and when yours needs repair.</p>
+        <p style={{ color: "#94a3b8″, marginBottom: 28 }}>The most common DFW leak location — understanding roof valleys, valley types, and when yours needs repair.</p>
 
-        <div style={{ background: "#F5E642", color: "#0A1628", borderRadius: 10, padding: "16px 20px", marginBottom: 24, fontWeight: 700 }}>
+        <div style={{ background: "#F5E642″, color: "#0A1628", borderRadius: 10, padding: "16px 20px", marginBottom: 24, fontWeight: 700 }}>
           ⛈️ Roof valleys channel ALL water from two roof planes — DFW storms test them hard every spring.
         </div>
 
@@ -32,9 +32,9 @@ export default function DFWRoofingValleyGuide2026() {
             <div key={v.type} style={{ background: "#1e293b", borderRadius: 8, padding: 16 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                 <div style={{ fontWeight: 700, fontSize: 16 }}>{v.icon} {v.type}</div>
-                <div style={{ color: v.rec === "Recommended" ? "#22c55e" : v.rec === "Not Recommended" ? "#ef4444" : "#f59e0b", fontSize: 13, fontWeight: 700 }}>{v.rec}</div>
+                <div style={{ color: v.rec === "Recommended" ? "#22c55e" : v.rec === "Not Recommended" ? "#ef4444″ : "#f59e0b", fontSize: 13, fontWeight: 700 }}>{v.rec}</div>
               </div>
-              <div style={{ color: "#94a3b8", fontSize: 14 }}>{v.desc}</div>
+              <div style={{ color: "#94a3b8″, fontSize: 14 }}>{v.desc}</div>
             </div>
           ))}
         </div>
@@ -51,7 +51,7 @@ export default function DFWRoofingValleyGuide2026() {
               <span style={{ fontSize: 20 }}>{item.icon}</span>
               <div>
                 <div style={{ fontWeight: 600 }}>{item.label}</div>
-                <div style={{ color: "#94a3b8", fontSize: 13 }}>{item.val}</div>
+                <div style={{ color: "#94a3b8″, fontSize: 13 }}>{item.val}</div>
               </div>
             </div>
           ))}
@@ -60,23 +60,23 @@ export default function DFWRoofingValleyGuide2026() {
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔍 Select Valley Type + Issue</h2>
         <div style={{ display: "grid", gap: 10, marginBottom: 20 }}>
           {valleyIssues.map((v, i) => (
-            <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? "#F5E642" : "#1e293b", color: selected === i ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "12px 16px", textAlign: "left", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+            <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? "#F5E642″ : "#1e293b", color: selected === i ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "12px 16px", textAlign: "left", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
               {v.type} — {v.issue}
             </button>
           ))}
         </div>
 
         {selected !== null && (
-          <div style={{ background: "#1e293b", borderRadius: 10, padding: 20, borderLeft: "4px solid #F5E642", marginBottom: 24 }}>
+          <div style={{ background: "#1e293b", borderRadius: 10, padding: 20, borderLeft: "4px solid #F5E642″, marginBottom: 24 }}>
             <div style={{ fontWeight: 700, marginBottom: 8 }}>Repair Approach</div>
-            <div style={{ color: "#94a3b8", fontSize: 14 }}>{valleyIssues[selected].repair}</div>
+            <div style={{ color: "#94a3b8″, fontSize: 14 }}>{valleyIssues[selected].repair}</div>
           </div>
         )}
 
         <div style={{ background: "#1e293b", borderRadius: 10, padding: 20 }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>🏠 Get a Free DFW Roof Inspection</div>
-          <div style={{ color: "#94a3b8", fontSize: 14, marginBottom: 12 }}>ProLnk connects you with DFW roofing contractors who inspect valleys first — the most commonly missed leak source.</div>
-          <button style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, cursor: "pointer", fontSize: 15 }}>Get My Free Inspection →</button>
+          <div style={{ color: "#94a3b8″, fontSize: 14, marginBottom: 12 }}>ProLnk connects you with DFW roofing contractors who inspect valleys first — the most commonly missed leak source.</div>
+          <button style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, cursor: "pointer", fontSize: 15 }}>Get My Free Inspection →</button>
         </div>
       </div>
     </div>

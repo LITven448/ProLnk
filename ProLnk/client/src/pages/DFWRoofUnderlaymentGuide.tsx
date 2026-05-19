@@ -40,13 +40,13 @@ export default function DFWRoofUnderlaymentGuide() {
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642', letterSpacing: '0.08em', textTransform: 'uppercase' }}>🏠 DFW Roofing Guide</div>
-        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25' }}>Roof Underlayment Guide for DFW</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25′ }}>Roof Underlayment Guide for DFW</h1>
+        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6′ }}>
           Underlayment is the critical secondary water barrier between your shingles and the roof deck. In DFW, extreme heat and sudden heavy storms make underlayment selection more important than in most U.S. markets. Synthetic underlayment dramatically outperforms traditional felt in DFW conditions.
         </p>
 
         <div style={{ backgroundColor: '#111E35', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642' }}>⚙️ Get Your DFW Underlayment Specification</h2>
+          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642′ }}>⚙️ Get Your DFW Underlayment Specification</h2>
           <div style={{ display: 'grid', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '13px', color: '#94A3B8', marginBottom: '6px' }}>Roof Project Type</label>
@@ -66,7 +66,7 @@ export default function DFWRoofUnderlaymentGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642′ }}>
             <div style={{ fontSize: '13px', color: '#F5E642', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>✅ Recommended Specification</div>
             <div style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>{result.product}</div>
             <p style={{ color: '#94A3B8', lineHeight: '1.6', fontSize: '14px' }}>{result.reason}</p>

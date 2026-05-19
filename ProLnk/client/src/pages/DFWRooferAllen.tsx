@@ -56,7 +56,7 @@ export default function DFWRooferAllen() {
         {[
           { icon: '🌩️', label: '2024 Hail Events', value: '7 major storms (Apr–Jun)' },
           { icon: '💰', label: 'Avg Claim Value', value: '$11,200 per home' },
-          { icon: '🔨', label: 'Roof Replacement', value: '$8,000 – $16,000' },
+          { icon: '🔨', label: 'Roof Replacement', value: '$8,000 – $16,000′ },
           { icon: '📋', label: 'Claim Approval Rate', value: '~78% with proper docs' },
         ].map(s => (
           <div key={s.label} style={{ background: '#112244', borderRadius: 10, padding: '20px 16px', textAlign: 'center' }}>
@@ -124,7 +124,7 @@ export default function DFWRooferAllen() {
             <div key={c.step} style={{ background: '#112244', borderRadius: 10, padding: '20px', position: 'relative' }}>
               <div style={{ position: 'absolute', top: -10, left: 16, background: '#F5E642', color: '#0A1628', fontWeight: 900, borderRadius: 20, width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>{c.step}</div>
               <div style={{ fontSize: 28, marginBottom: 8, marginTop: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642' }}>{c.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642′ }}>{c.title}</div>
               <div style={{ fontSize: 14, color: '#aac', lineHeight: 1.6 }}>{c.desc}</div>
             </div>
           ))}
@@ -147,8 +147,8 @@ export default function DFWRooferAllen() {
         </a>
       </div>
 
-      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556' }}>
-        © 2026 ProLnk · Serving Allen, TX and all of DFW · <a href="/privacy" style={{ color: '#556' }}>Privacy</a>
+      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556′ }}>
+        © 2026 ProLnk · Serving Allen, TX and all of DFW · <a href="/privacy" style={{ color: '#556′ }}>Privacy</a>
       </div>
     </div>
   );

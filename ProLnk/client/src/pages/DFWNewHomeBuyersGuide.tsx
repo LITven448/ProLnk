@@ -107,7 +107,7 @@ export default function DFWNewHomeBuyersGuide() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeTab === tab ? '#F5E642' : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
+                background: activeTab === tab ? '#F5E642′ : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
               }}
             >
               {tab === 'compare' ? '⚖️ Compare' : tab === 'quiz' ? '📋 Quiz' : tab === 'builders' ? '🏗️ Builders' : '🗺️ Neighborhoods'}
@@ -118,7 +118,7 @@ export default function DFWNewHomeBuyersGuide() {
         {activeTab === 'compare' && (
           <div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-              <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28, border: '2px solid #F5E642' }}>
+              <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28, border: '2px solid #F5E642′ }}>
                 <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 20 }}>🏗️ New Construction</h2>
                 <div style={{ marginBottom: 20 }}>
                   <h3 style={{ color: '#34D399', fontSize: 15, marginBottom: 10 }}>✅ Pros</h3>
@@ -192,8 +192,8 @@ export default function DFWNewHomeBuyersGuide() {
                     ].map(([factor, nc, resale]) => (
                       <tr key={factor} style={{ borderBottom: '1px solid #1A2E4A' }}>
                         <td style={{ padding: '12px 16px', color: '#F5E642', fontWeight: 600 }}>{factor}</td>
-                        <td style={{ padding: '12px 16px', color: '#CBD5E1' }}>{nc}</td>
-                        <td style={{ padding: '12px 16px', color: '#CBD5E1' }}>{resale}</td>
+                        <td style={{ padding: '12px 16px', color: '#CBD5E1′ }}>{nc}</td>
+                        <td style={{ padding: '12px 16px', color: '#CBD5E1′ }}>{resale}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -218,8 +218,8 @@ export default function DFWNewHomeBuyersGuide() {
                         onClick={() => handleAnswer(q.id, q.weights[oi])}
                         style={{
                           padding: '10px 14px', borderRadius: 8, border: `2px solid ${answers[q.id] === q.weights[oi] ? '#F5E642' : '#2D4A6B'}`,
-                          background: answers[q.id] === q.weights[oi] ? '#F5E642' : 'transparent',
-                          color: answers[q.id] === q.weights[oi] ? '#0A1628' : '#CBD5E1',
+                          background: answers[q.id] === q.weights[oi] ? '#F5E642′ : ’transparent',
+                          color: answers[q.id] === q.weights[oi] ? '#0A1628′ : '#CBD5E1',
                           cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: answers[q.id] === q.weights[oi] ? 700 : 400,
                         }}
                       >
@@ -234,7 +234,7 @@ export default function DFWNewHomeBuyersGuide() {
                 disabled={!allAnswered}
                 style={{
                   width: '100%', padding: '16px', borderRadius: 10, border: 'none', cursor: allAnswered ? 'pointer' : 'not-allowed',
-                  background: allAnswered ? '#F5E642' : '#2D4A6B', color: allAnswered ? '#0A1628' : '#64748B',
+                  background: allAnswered ? '#F5E642′ : '#2D4A6B', color: allAnswered ? '#0A1628' : '#64748B',
                   fontWeight: 700, fontSize: 16,
                 }}
               >
@@ -261,7 +261,7 @@ export default function DFWNewHomeBuyersGuide() {
               <p style={{ color: '#94A3B8', marginBottom: 24 }}>Know who you're buying from before you visit a model home.</p>
               <div style={{ display: 'grid', gap: 16 }}>
                 {builders.map(b => (
-                  <div key={b.name} style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+                  <div key={b.name} style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8, flexWrap: 'wrap', gap: 8 }}>
                       <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>{b.name}</div>
                       <div style={{ background: '#1E3A5F', padding: '4px 12px', borderRadius: 20, fontSize: 12, color: '#F5E642', fontWeight: 600 }}>{b.segment}</div>
@@ -290,7 +290,7 @@ export default function DFWNewHomeBuyersGuide() {
                 <div key={n.name} style={{ background: '#1E3A5F', borderRadius: 10, padding: 20 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, flexWrap: 'wrap', gap: 8 }}>
                     <div style={{ fontSize: 17, fontWeight: 700, color: '#fff' }}>{n.name}</div>
-                    <div style={{ background: n.type === 'Resale' ? '#1A4A3A' : '#1A2E6A', padding: '4px 12px', borderRadius: 20, fontSize: 12, color: n.type === 'Resale' ? '#34D399' : '#60A5FA', fontWeight: 600 }}>
+                    <div style={{ background: n.type === 'Resale' ? '#1A4A3A' : '#1A2E6A', padding: '4px 12px', borderRadius: 20, fontSize: 12, color: n.type === 'Resale' ? '#34D399′ : '#60A5FA', fontWeight: 600 }}>
                       {n.type === 'Resale' ? '🏡 Resale' : '🏗️ New Construction'}
                     </div>
                   </div>

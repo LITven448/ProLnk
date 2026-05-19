@@ -31,7 +31,7 @@ export default function DFWHomeDepreciationGuide() {
     const marketAdj = marketType === 'urban' ? -5 : marketType === 'suburban' ? 0 : 5;
     const score = Math.min(100, rawScore + marketAdj);
     const level = score >= 50 ? 'High' : score >= 25 ? 'Moderate' : 'Low';
-    const color = score >= 50 ? '#DC2626' : score >= 25 ? '#D97706' : '#16A34A';
+    const color = score >= 50 ? '#DC2626′ : score >= 25 ? '#D97706' : '#16A34A';
     setResult({ score, level, color });
   }
 
@@ -53,9 +53,9 @@ export default function DFWHomeDepreciationGuide() {
               { icon: '📉', title: 'Neighborhood Decline', desc: 'Rising vacancy, absentee ownership, and commercial blight pull all comps down.' },
               { icon: '🏭', title: 'Economic Shifts', desc: '2008 showed how employer exits create ghost-town streets — even in DFW pockets.' },
             ].map(c => (
-              <div key={c.title} style={{ display: 'flex', gap: 10, padding: '10px 0', borderBottom: '1px solid #F1F5F9' }}>
+              <div key={c.title} style={{ display: 'flex', gap: 10, padding: '10px 0', borderBottom: '1px solid #F1F5F9′ }}>
                 <span style={{ fontSize: 20 }}>{c.icon}</span>
-                <div><div style={{ fontWeight: 600, fontSize: 13, color: '#0A1628' }}>{c.title}</div><div style={{ fontSize: 12, color: '#64748B', marginTop: 2 }}>{c.desc}</div></div>
+                <div><div style={{ fontWeight: 600, fontSize: 13, color: '#0A1628′ }}>{c.title}</div><div style={{ fontSize: 12, color: '#64748B', marginTop: 2 }}>{c.desc}</div></div>
               </div>
             ))}
           </div>
@@ -77,7 +77,7 @@ export default function DFWHomeDepreciationGuide() {
               <label key={label} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: 12, borderRadius: 8, border: `2px solid ${selected.includes(label) ? '#F5E642' : '#E2E8F0'}`, cursor: 'pointer', background: selected.includes(label) ? '#FFFBEB' : '#fff' }}>
                 <input type="checkbox" checked={selected.includes(label)} onChange={() => toggleFactor(label)} style={{ marginTop: 2 }} />
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: 13, color: '#0A1628' }}>{label} <span style={{ color: '#94A3B8', fontWeight: 400 }}>({weight} pts)</span></div>
+                  <div style={{ fontWeight: 600, fontSize: 13, color: '#0A1628′ }}>{label} <span style={{ color: '#94A3B8', fontWeight: 400 }}>({weight} pts)</span></div>
                   <div style={{ fontSize: 11, color: '#64748B', marginTop: 2 }}>{desc}</div>
                 </div>
               </label>
@@ -103,7 +103,7 @@ export default function DFWHomeDepreciationGuide() {
                 {PROTECTIONS.map(p => (
                   <div key={p.title} style={{ display: 'flex', gap: 10 }}>
                     <span style={{ fontSize: 20 }}>{p.icon}</span>
-                    <div><div style={{ fontWeight: 600, fontSize: 13, color: '#0A1628' }}>{p.title}</div><div style={{ fontSize: 12, color: '#64748B', marginTop: 2 }}>{p.desc}</div></div>
+                    <div><div style={{ fontWeight: 600, fontSize: 13, color: '#0A1628′ }}>{p.title}</div><div style={{ fontSize: 12, color: '#64748B', marginTop: 2 }}>{p.desc}</div></div>
                   </div>
                 ))}
               </div>

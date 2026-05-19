@@ -58,11 +58,11 @@ export default function DFWTurfMaintenanceGuide2026() {
               {['Grass', 'Mow Height', 'Frequency', 'Active Season'].map(h => <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>)}
             </tr></thead>
             <tbody>{mowingData.map((r, i) => (
-              <tr key={r.grass} style={{ background: i % 2 === 0 ? '#0d1f3c' : '#0A1628' }}>
+              <tr key={r.grass} style={{ background: i % 2 === 0 ? '#0d1f3c' : '#0A1628′ }}>
                 <td style={{ padding: '8px 12px', fontWeight: 700 }}>{r.grass}</td>
-                <td style={{ padding: '8px 12px', color: '#F5E642' }}>{r.height}</td>
-                <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{r.freq}</td>
-                <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{r.season}</td>
+                <td style={{ padding: '8px 12px', color: '#F5E642′ }}>{r.height}</td>
+                <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{r.freq}</td>
+                <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{r.season}</td>
               </tr>
             ))}</tbody>
           </table>
@@ -71,7 +71,7 @@ export default function DFWTurfMaintenanceGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>Get your monthly DFW turf schedule:</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }}>
           {[['🟡 Bermuda', 'bermuda'], ['🟣 St. Augustine', 'staugustine'], ['🟢 Zoysia', 'zoysia']].map(([label, val]) => (
-            <button key={val} onClick={() => setGrassType(val)} style={{ padding: '16px 12px', border: grassType === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: grassType === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontWeight: 700 }}>{label}</button>
+            <button key={val} onClick={() => setGrassType(val)} style={{ padding: '16px 12px', border: grassType === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: grassType === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontWeight: 700 }}>{label}</button>
           ))}
         </div>
 

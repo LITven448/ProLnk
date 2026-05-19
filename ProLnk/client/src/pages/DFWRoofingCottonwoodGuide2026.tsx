@@ -26,7 +26,7 @@ export default function DFWRoofingCottonwoodGuide2026() {
           🌨️ Cottonwood Season Roof Guide
         </h1>
         <p style={{ color: '#9BAEC8', marginBottom: '28px', lineHeight: 1.6 }}>
-          Every May, DFW looks like a <strong style={{ color: '#F5E642' }}>snowstorm in Texas</strong>. Cottonwood seeds blanket roofs, clog AC condensers, and fill gutters in days. This is a uniquely DFW maintenance window.
+          Every May, DFW looks like a <strong style={{ color: '#F5E642′ }}>snowstorm in Texas</strong>. Cottonwood seeds blanket roofs, clog AC condensers, and fill gutters in days. This is a uniquely DFW maintenance window.
         </p>
 
         {[
@@ -35,14 +35,14 @@ export default function DFWRoofingCottonwoodGuide2026() {
           { icon: '🍂', title: 'Gutter Fill Speed', desc: 'Unlike leaves, cottonwood seeds are light and fluffy but compress into a dense mat when wet. A single DFW May rain event can fully clog previously clean gutters.' },
           { icon: '🏠', title: 'Home Entry Points', desc: 'Unsealed attic vents, soffit gaps, and open whole-house fan openings allow seeds inside. Once in the attic, seeds become fire fuel and moisture traps.' },
         ].map((item) => (
-          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>
+          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>{item.icon} {item.title}</div>
             <div style={{ color: '#9BAEC8', fontSize: '14px' }}>{item.desc}</div>
           </div>
         ))}
 
         <div style={{ backgroundColor: '#111D35', borderRadius: '12px', padding: '24px', marginTop: '28px' }}>
-          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>🌨️ Cottonwood Impact → Maintenance Guide</div>
+          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>🌨️ Cottonwood Impact → Maintenance Guide</div>
           <select
             value={impact}
             onChange={(e) => { setImpact(e.target.value); setResult(''); }}

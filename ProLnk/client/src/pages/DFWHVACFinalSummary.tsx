@@ -107,7 +107,7 @@ export default function DFWHVACFinalSummary() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '2rem' }}>
           {vintages.map(v => (
             <button key={v.id} onClick={() => setVintage(v.id === vintage ? null : v.id)}
-              style={{ background: vintage === v.id ? '#F5E642' : '#0f2240', color: vintage === v.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: vintage === v.id ? '#F5E642' : '#1e3a5f', borderRadius: 8, padding: '0.65rem 1rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem' }}>
+              style={{ background: vintage === v.id ? '#F5E642′ : '#0f2240', color: vintage === v.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: vintage === v.id ? '#F5E642' : '#1e3a5f', borderRadius: 8, padding: '0.65rem 1rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.85rem' }}>
               {v.icon} {v.label}
             </button>
           ))}
@@ -127,7 +127,7 @@ export default function DFWHVACFinalSummary() {
           </div>
         )}
 
-        <div style={{ background: '#0f2240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f2240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
           <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '0.75rem' }}>🏠 Ready to Take Action? ProLnk Connects You.</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
             ProLnk matches DFW homeowners with HVAC contractors who are TACL-licensed, EPA 608 certified, permit-pulling, and rated by your neighbors. Get 3 quotes and compare — for free, with no obligation.

@@ -48,7 +48,7 @@ export default function DFWNewParentHomeGuide() {
           Your home wasn't built for a baby. These are the specific changes DFW parents need to make — with costs, urgency levels, and the DFW-specific risks most guides miss.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, marginBottom: 24, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, marginBottom: 24, color: '#0A1628′ }}>
           <h2 style={{ fontSize: 17, fontWeight: 800, marginBottom: 8 }}>⚠️ DFW-Specific Risks</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, fontSize: 14 }}>
             <li><strong>AC failure in summer</strong> — heat index 110°F+ is life-threatening to infants</li>
@@ -61,22 +61,22 @@ export default function DFWNewParentHomeGuide() {
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🏠 Tell Us About Your Home</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, color: '#aab4c8' }}>Home built (year)</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, color: '#aab4c8′ }}>Home built (year)</label>
             <input
               type="number"
               value={homeAge}
               onChange={e => setHomeAge(e.target.value)}
-              placeholder="e.g. 1995"
+              placeholder="e.g. 1995″
               style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', fontSize: 15, background: 'rgba(255,255,255,0.08)', color: '#fff', boxSizing: 'border-box' }}
             />
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, color: '#aab4c8' }}>Baby's age (months, 0 = not born yet)</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, color: '#aab4c8′ }}>Baby’s age (months, 0 = not born yet)</label>
             <input
               type="number"
               value={babyAge}
               onChange={e => setBabyAge(e.target.value)}
-              placeholder="e.g. 3"
+              placeholder="e.g. 3″
               style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', fontSize: 15, background: 'rgba(255,255,255,0.08)', color: '#fff', boxSizing: 'border-box' }}
             />
           </div>
@@ -94,13 +94,13 @@ export default function DFWNewParentHomeGuide() {
                 <div key={i} style={{ padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 600, marginBottom: 4, lineHeight: 1.4 }}>{item.task}</div>
-                    <div style={{ fontSize: 13, color: '#aab4c8' }}>{item.cost}</div>
+                    <div style={{ fontSize: 13, color: '#aab4c8′ }}>{item.cost}</div>
                   </div>
                   <div style={{ fontSize: 12, whiteSpace: 'nowrap', paddingTop: 2 }}>{item.urgency}</div>
                 </div>
               ))}
             </div>
-            <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
+            <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
               <h3 style={{ fontWeight: 800, marginBottom: 8 }}>🌡️ DFW-Specific Note</h3>
               <p style={{ lineHeight: 1.7, fontSize: 14 }}>{result.dfwNote}</p>
             </div>
@@ -109,7 +109,7 @@ export default function DFWNewParentHomeGuide() {
 
         <div style={{ marginTop: 24, background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🛡️ ProLnk for New Parents</h2>
-          <p style={{ color: '#aab4c8', lineHeight: 1.7, fontSize: 14 }}>Every contractor in ProLnk is background-checked and license-verified. When you need an HVAC tune-up, lead test, or outlet installation, you're not rolling the dice on Craigslist — you're getting someone vetted before they walk through your door.</p>
+          <p style={{ color: '#aab4c8', lineHeight: 1.7, fontSize: 14 }}>Every contractor in ProLnk is background-checked and license-verified. When you need an HVAC tune-up, lead test, or outlet installation, you're not rolling the dice on Craigslist — you’re getting someone vetted before they walk through your door.</p>
         </div>
       </div>
     </div>

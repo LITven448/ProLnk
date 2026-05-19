@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function DFWHomeEnergyScore2026() {
   const [homeAge, setHomeAge] = useState('');
 
-  type AgeKey = 'pre1980' | '1980s' | '1990s' | '2000s' | '2010s' | '2020plus';
+  type AgeKey = 'pre1980′ | '1980s' | '1990s' | '2000s' | '2010s' | '2020plus';
 
   const ageData: Record<AgeKey, { score: number; grade: string; color: string; issues: string[]; upgrades: string[]; savings: string }> = {
     pre1980: {
@@ -85,7 +85,7 @@ export default function DFWHomeEnergyScore2026() {
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '14px' }}>🏠 Select Your Home's Build Era</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
             {([['pre1980','Pre-1980'],['1980s','1980s'],['1990s','1990s'],['2000s','2000s'],['2010s','2010s'],['2020plus','2020+']] as [AgeKey, string][]).map(([key, label]) => (
-              <button key={key} onClick={() => setHomeAge(key)} style={{ backgroundColor: homeAge === key ? '#F5E642' : '#0A1628', color: homeAge === key ? '#0A1628' : '#fff', border: '2px solid ' + (homeAge === key ? '#F5E642' : '#1e3a5f'), borderRadius: '8px', padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: '15px' }}>{label}</button>
+              <button key={key} onClick={() => setHomeAge(key)} style={{ backgroundColor: homeAge === key ? '#F5E642′ : '#0A1628', color: homeAge === key ? '#0A1628' : '#fff', border: '2px solid ' + (homeAge === key ? '#F5E642' : '#1e3a5f'), borderRadius: '8px', padding: '12px', cursor: ’pointer', fontWeight: 600, fontSize: '15px' }}>{label}</button>
             ))}
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function DFWHomeEnergyScore2026() {
         )}
 
         <div style={{ backgroundColor: '#0f2540', borderRadius: '10px', padding: '18px', border: '1px solid #1e3a5f' }}>
-          <p style={{ color: '#94a3b8', fontSize: '13px', textAlign: 'center', lineHeight: '1.7' }}>Get officially scored: Find a DOE-certified Home Energy Score assessor at homeenergyscore.doe.gov — cost $150-300 in DFW. Buyers pay up to $10,000 more for homes with documented energy scores in DFW market.</p>
+          <p style={{ color: '#94a3b8', fontSize: '13px', textAlign: 'center', lineHeight: '1.7′ }}>Get officially scored: Find a DOE-certified Home Energy Score assessor at homeenergyscore.doe.gov — cost $150-300 in DFW. Buyers pay up to $10,000 more for homes with documented energy scores in DFW market.</p>
         </div>
       </div>
     </div>

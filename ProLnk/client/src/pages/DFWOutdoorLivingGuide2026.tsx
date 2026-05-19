@@ -40,7 +40,7 @@ export default function DFWOutdoorLivingGuide2026() {
             'Outdoor kitchens reduce summer indoor cooking heat, lowering AC costs.',
             'DFW luxury market expects outdoor living. Missing it costs more in resale than build cost.',
           ].map((note) => (
-            <div key={note} style={{ color: '#fff', fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: '3px solid #F5E642' }}>{note}</div>
+            <div key={note} style={{ color: '#fff', fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: '3px solid #F5E642′ }}>{note}</div>
           ))}
         </div>
 
@@ -49,13 +49,13 @@ export default function DFWOutdoorLivingGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 12 }}>
             {projects.map((item, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600 }}>
                 {item.type} — {item.cost}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{projects[selected].type}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>ROI: {projects[selected].roi} · Permit: {projects[selected].permit}</div>
               <div style={{ color: '#fff', fontSize: 14 }}>{projects[selected].note}</div>

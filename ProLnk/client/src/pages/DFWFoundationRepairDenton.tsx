@@ -8,7 +8,7 @@ function getInspectionPlan(era: string, foundation: string) {
   const isPierBeam = foundation === 'Pier & Beam';
   const isPostTension = foundation === 'Post-Tension Slab';
   const urgency = eraIdx === 0 && isPierBeam ? 'IMMEDIATE' : eraIdx <= 1 ? 'HIGH' : 'MODERATE';
-  const urgencyColor = urgency === 'IMMEDIATE' ? '#ff4444' : urgency === 'HIGH' ? '#F5E642' : '#44cc44';
+  const urgencyColor = urgency === 'IMMEDIATE' ? '#ff4444′ : urgency === ’HIGH' ? '#F5E642′ : '#44cc44';
 
   const issues: string[] = [];
   if (isPierBeam && eraIdx === 0) {
@@ -29,7 +29,7 @@ function getInspectionPlan(era: string, foundation: string) {
     issues.push('🟢 Ensure perimeter watering system in place');
   }
 
-  const costRange = eraIdx === 0 && isPierBeam ? '$5,000–$30,000+' : eraIdx <= 1 ? '$3,000–$15,000' : '$800–$5,000';
+  const costRange = eraIdx === 0 && isPierBeam ? '$5,000–$30,000+' : eraIdx <= 1 ? '$3,000–$15,000′ : '$800–$5,000';
   return { urgency, urgencyColor, issues, costRange };
 }
 
@@ -61,7 +61,7 @@ export default function DFWFoundationRepairDenton() {
           ].map(s => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ color: '#aaa', fontSize: 12, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -141,14 +141,14 @@ export default function DFWFoundationRepairDenton() {
             {['✅ Pier & beam repair & replacement', '✅ Steel pier & pressed concrete pier install',
               '✅ Post-tension slab consulting', '✅ Drainage correction & French drains',
               '✅ Denton County permit-ready work', '✅ Free foundation inspection'].map(s => (
-              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0' }}>{s}</div>
+              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0′ }}>{s}</div>
             ))}
           </div>
         </div>
 
         <div style={{ textAlign: 'center', background: '#F5E642', borderRadius: 12, padding: 32 }}>
           <div style={{ fontSize: 28 }}>📞</div>
-          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0' }}>Get a Free Foundation Inspection in Denton</h2>
+          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0′ }}>Get a Free Foundation Inspection in Denton</h2>
           <p style={{ color: '#333', marginBottom: 16 }}>Pier & beam specialists, historic home experience, transferable warranty</p>
           <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Request Free Inspection →

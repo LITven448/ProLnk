@@ -33,43 +33,43 @@ export default function ProLnkFAQNetworkIncome() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>💸</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", marginBottom: 8 }}>Network Income FAQ</h1>
-          <p style={{ color: "#94A3B8", fontSize: 16 }}>How ProLnk's 5-stream income system actually works</p>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, marginBottom: 8 }}>Network Income FAQ</h1>
+          <p style={{ color: "#94A3B8″, fontSize: 16 }}>How ProLnk's 5-stream income system actually works</p>
         </div>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 32, justifyContent: "center" }}>
           {categories.map((cat) => (
             <button key={cat} onClick={() => { setActiveCategory(cat); setOpenIndex(null); }}
               style={{ padding: "8px 18px", borderRadius: 20, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13,
-                background: activeCategory === cat ? "#F5E642" : "#1E2D45", color: activeCategory === cat ? "#0A1628" : "#94A3B8" }}>
+                background: activeCategory === cat ? "#F5E642″ : "#1E2D45", color: activeCategory === cat ? "#0A1628" : "#94A3B8" }}>
               {cat}
             </button>
           ))}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {(faqs[activeCategory] || []).map((item, i) => (
-            <div key={i} style={{ background: "#1E2D45", borderRadius: 12, overflow: "hidden" }}>
+            <div key={i} style={{ background: "#1E2D45″, borderRadius: 12, overflow: "hidden" }}>
               <button onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 style={{ width: "100%", padding: "18px 20px", background: "none", border: "none", cursor: "pointer",
                   display: "flex", justifyContent: "space-between", alignItems: "center", color: "#fff", fontSize: 15, fontWeight: 600 }}>
                 <span style={{ textAlign: "left" }}>💡 {item.q}</span>
-                <span style={{ color: "#F5E642", fontSize: 20 }}>{openIndex === i ? "▲" : "▼"}</span>
+                <span style={{ color: "#F5E642″, fontSize: 20 }}>{openIndex === i ? "▲" : "▼"}</span>
               </button>
               {openIndex === i && (
-                <div style={{ padding: "0 20px 18px", color: "#94A3B8", fontSize: 14, lineHeight: 1.7, borderTop: "1px solid #2D3F5A" }}>
+                <div style={{ padding: "0 20px 18px", color: "#94A3B8″, fontSize: 14, lineHeight: 1.7, borderTop: "1px solid #2D3F5A" }}>
                   {item.a}
                 </div>
               )}
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 48, background: "#1E2D45", borderRadius: 16, padding: 28 }}>
-          <p style={{ color: "#F5E642", fontWeight: 700, fontSize: 16, marginBottom: 16 }}>📊 5 Income Streams at a Glance</p>
+        <div style={{ marginTop: 48, background: "#1E2D45″, borderRadius: 16, padding: 28 }}>
+          <p style={{ color: "#F5E642″, fontWeight: 700, fontSize: 16, marginBottom: 16 }}>📊 5 Income Streams at a Glance</p>
           {["Stream 1: Direct Commission — 72% of job match fee", "Stream 2: Pro Job Override — 7/4/2/1% (4 levels)", "Stream 3: Subscription Override — 12/6/3/1.5% (4 levels)", "Stream 4: Homeowner Override — per qualified lead you source", "Stream 5: Origination Rights — 1.5% of home revenue, permanent"].map((s, i) => (
-            <div key={i} style={{ color: "#94A3B8", fontSize: 13, padding: "6px 0", borderBottom: "1px solid #2D3F5A" }}>✅ {s}</div>
+            <div key={i} style={{ color: "#94A3B8″, fontSize: 13, padding: "6px 0", borderBottom: "1px solid #2D3F5A" }}>✅ {s}</div>
           ))}
         </div>
       </div>

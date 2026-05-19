@@ -62,11 +62,11 @@ export default function DFWWaterBillGuide() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         {/* Context */}
-        <div style={{ background: '#0c1a2e', border: '1px solid #1e3a5f', borderRadius: 16, padding: 28, margin: '40px 0' }}>
+        <div style={{ background: '#0c1a2e', border: '1px solid #1e3a5f', borderRadius: 16, padding: 28, margin: '40px 0′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#7dd3fc', margin: '0 0 12px' }}>🌵 DFW Water Context</h2>
           <p style={{ color: '#ccc', lineHeight: 1.8, margin: 0 }}>
             DFW residents pay some of the <strong style={{ color: '#fff' }}>highest water rates in Texas</strong> due to infrastructure investment and drought response.
-            Average DFW household: <strong style={{ color: '#fbbf24' }}>$100–180/month in summer</strong>.
+            Average DFW household: <strong style={{ color: '#fbbf24′ }}>$100–180/month in summer</strong>.
           </p>
         </div>
 
@@ -90,9 +90,9 @@ export default function DFWWaterBillGuide() {
           {CITIES.map((c, i) => (
             <div key={c.city} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 3fr', padding: '14px 20px', borderTop: i > 0 ? '1px solid #1e3a5f' : 'none' }}>
               <div style={{ fontWeight: 600, color: '#fff' }}>{c.city}</div>
-              <div style={{ color: '#4ade80' }}>${c.low}/gal</div>
-              <div style={{ color: '#fbbf24' }}>${c.high}/gal</div>
-              <div style={{ fontSize: 13, color: '#888' }}>{c.note}</div>
+              <div style={{ color: '#4ade80′ }}>${c.low}/gal</div>
+              <div style={{ color: '#fbbf24′ }}>${c.high}/gal</div>
+              <div style={{ fontSize: 13, color: '#888′ }}>{c.note}</div>
             </div>
           ))}
         </div>
@@ -104,7 +104,7 @@ export default function DFWWaterBillGuide() {
             <div key={c.item} style={{ background: '#0c1a2e', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <div style={{ minWidth: 140 }}>
                 <div style={{ fontSize: 11, color: '#7dd3fc', marginBottom: 2 }}>INVESTMENT</div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#fbbf24' }}>{c.invest}</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#fbbf24′ }}>{c.invest}</div>
                 <div style={{ fontSize: 11, color: '#aaa', marginTop: 4 }}>Saves {c.saving}</div>
               </div>
               <div style={{ flex: 1, minWidth: 200 }}>
@@ -116,7 +116,7 @@ export default function DFWWaterBillGuide() {
         </div>
 
         {/* Savings Calculator */}
-        <div style={{ background: '#0c2a1a', border: '2px solid #065f46', borderRadius: 16, padding: 32, margin: '40px 0' }}>
+        <div style={{ background: '#0c2a1a', border: '2px solid #065f46', borderRadius: 16, padding: 32, margin: '40px 0′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#fff', margin: '0 0 8px' }}>💰 Water Savings Calculator</h2>
           <p style={{ color: '#aaa', margin: '0 0 24px', fontSize: 14 }}>Identify your biggest water reduction opportunities with estimated annual savings.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
@@ -126,7 +126,7 @@ export default function DFWWaterBillGuide() {
                 type="number"
                 value={bill}
                 onChange={e => setBill(e.target.value)}
-                placeholder="e.g. 140"
+                placeholder="e.g. 140″
                 style={{ width: '100%', background: '#0f0f0f', border: '1px solid #333', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -136,7 +136,7 @@ export default function DFWWaterBillGuide() {
                 type="number"
                 value={sqft}
                 onChange={e => setSqft(e.target.value)}
-                placeholder="e.g. 2400"
+                placeholder="e.g. 2400″
                 style={{ width: '100%', background: '#0f0f0f', border: '1px solid #333', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -157,7 +157,7 @@ export default function DFWWaterBillGuide() {
           {results && (
             <div style={{ marginTop: 24 }}>
               {results.length === 0 ? (
-                <div style={{ color: '#4ade80' }}>Your usage looks efficient! Consider a professional audit for additional savings.</div>
+                <div style={{ color: '#4ade80′ }}>Your usage looks efficient! Consider a professional audit for additional savings.</div>
               ) : (
                 <>
                   <div style={{ fontWeight: 700, color: '#4ade80', marginBottom: 12 }}>
@@ -167,7 +167,7 @@ export default function DFWWaterBillGuide() {
                     {results.map(r => (
                       <div key={r.item} style={{ background: '#0f1a0f', border: '1px solid #1a3a1a', borderRadius: 10, padding: '14px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontSize: 14, color: '#ccc' }}>{r.item}</span>
-                        <span style={{ fontWeight: 700, color: '#4ade80' }}>${r.annual.toLocaleString()}/yr</span>
+                        <span style={{ fontWeight: 700, color: '#4ade80′ }}>${r.annual.toLocaleString()}/yr</span>
                       </div>
                     ))}
                   </div>

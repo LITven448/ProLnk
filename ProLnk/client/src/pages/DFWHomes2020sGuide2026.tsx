@@ -21,12 +21,12 @@ export default function DFWHomes2020sGuide2026() {
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32 }}>Newest DFW builds — active warranties, foundation actively settling, HOA at peak enforcement. ProLnk is your ideal partner for documenting everything from day one.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>📅 How Many Years Since Purchase?</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>📅 How Many Years Since Purchase?</h2>
           <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 20 }}>Select years owned (1–6) to see your 2020s new home guide.</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {[1, 2, 3, 4, 5, 6].map(n => (
               <button key={n} onClick={() => setYears(n)}
-                style={{ padding: '12px 20px', borderRadius: 8, border: `2px solid ${years === n ? '#F5E642' : '#1e3a5f'}`, background: years === n ? '#F5E642' : '#0A1628', color: years === n ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
+                style={{ padding: '12px 20px', borderRadius: 8, border: `2px solid ${years === n ? '#F5E642' : '#1e3a5f'}`, background: years === n ? '#F5E642′ : '#0A1628', color: years === n ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 15 }}>
                 {n} yr{n > 1 ? 's' : ''}
               </button>
             ))}
@@ -56,7 +56,7 @@ export default function DFWHomes2020sGuide2026() {
             {[['Insulation', 'R-49 attic (2021 IECC)'], ['Plumbing', 'PEX-A manifold system'], ['Electrical', '200A+ arc-fault protected'], ['HVAC', '15 SEER2 minimum (2023)'], ['Foundation', 'Post-tension on engineered fill'], ['Smart Home', 'Z-Wave + WiFi pre-wired']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontSize: 11, color: '#64748b', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#e2e8f0' }}>{val}</div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#e2e8f0′ }}>{val}</div>
               </div>
             ))}
           </div>

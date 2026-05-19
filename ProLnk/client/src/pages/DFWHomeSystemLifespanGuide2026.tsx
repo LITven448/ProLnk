@@ -17,27 +17,27 @@ export default function DFWHomeSystemLifespanGuide2026() {
   const [homeAge, setHomeAge] = useState(15);
 
   const getStatus = (low: number, high: number) => {
-    if (homeAge >= high) return { label: "Replace Soon", color: "#ef4444" };
-    if (homeAge >= low * 0.75) return { label: "Monitor Closely", color: "#f97316" };
-    if (homeAge >= low * 0.5) return { label: "Mid-Life", color: "#F5E642" };
+    if (homeAge >= high) return { label: "Replace Soon", color: "#ef4444″ };
+    if (homeAge >= low * 0.75) return { label: "Monitor Closely", color: "#f97316″ };
+    if (homeAge >= low * 0.5) return { label: "Mid-Life", color: "#F5E642″ };
     return { label: "Good Shape", color: "#22c55e" };
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏡</div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#F5E642", marginBottom: 8 }}>DFW Home System Lifespan Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 15 }}>Know what to expect from every major system in your DFW home</p>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#F5E642″, marginBottom: 8 }}>DFW Home System Lifespan Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Know what to expect from every major system in your DFW home</p>
         </div>
 
-        <div style={{ background: "#111d35", borderRadius: 12, padding: 24, marginBottom: 28, border: "1px solid #1e3a5f" }}>
-          <label style={{ display: "block", color: "#F5E642", fontWeight: 600, marginBottom: 12 }}>
+        <div style={{ background: "#111d35″, borderRadius: 12, padding: 24, marginBottom: 28, border: "1px solid #1e3a5f" }}>
+          <label style={{ display: "block", color: "#F5E642″, fontWeight: 600, marginBottom: 12 }}>
             🗓️ My Home Age: <span style={{ color: "#fff" }}>{homeAge} years</span>
           </label>
           <input type="range" min={1} max={60} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))}
-            style={{ width: "100%", accentColor: "#F5E642" }} />
+            style={{ width: "100%", accentColor: "#F5E642″ }} />
           <div style={{ display: "flex", justifyContent: "space-between", color: "#64748b", fontSize: 12, marginTop: 4 }}>
             <span>1 yr</span><span>30 yrs</span><span>60 yrs</span>
           </div>
@@ -47,13 +47,13 @@ export default function DFWHomeSystemLifespanGuide2026() {
           {systems.map(s => {
             const status = getStatus(s.low, s.high);
             return (
-              <div key={s.name} style={{ background: "#111d35", borderRadius: 10, padding: "16px 20px", border: `1px solid ${status.color}33`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
+              <div key={s.name} style={{ background: "#111d35″, borderRadius: 10, padding: "16px 20px", border: `1px solid ${status.color}33`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 16 }}>{s.icon} {s.name}</div>
                   <div style={{ color: "#64748b", fontSize: 13, marginTop: 2 }}>{s.note}</div>
-                  <div style={{ color: "#94a3b8", fontSize: 13, marginTop: 2 }}>Expected life: {s.low}–{s.high} yrs in DFW</div>
+                  <div style={{ color: "#94a3b8″, fontSize: 13, marginTop: 2 }}>Expected life: {s.low}–{s.high} yrs in DFW</div>
                 </div>
-                <div style={{ background: status.color + "22", border: `1px solid ${status.color}`, borderRadius: 8, padding: "6px 14px", color: status.color, fontWeight: 700, fontSize: 14, whiteSpace: "nowrap" }}>
+                <div style={{ background: status.color + "22″, border: `1px solid ${status.color}`, borderRadius: 8, padding: "6px 14px", color: status.color, fontWeight: 700, fontSize: 14, whiteSpace: "nowrap" }}>
                   {status.label}
                 </div>
               </div>
@@ -61,9 +61,9 @@ export default function DFWHomeSystemLifespanGuide2026() {
           })}
         </div>
 
-        <div style={{ marginTop: 28, background: "#111d35", borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 8 }}>📋 DFW Climate Factors</div>
-          <ul style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+        <div style={{ marginTop: 28, background: "#111d35″, borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 8 }}>📋 DFW Climate Factors</div>
+          <ul style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
             <li>Extreme heat (100°F+) stresses HVAC compressors and roof shingles</li>
             <li>Hard water (300–500 ppm) corrodes water heaters and plumbing faster</li>
             <li>Hail season (March–May) impacts roofs regardless of age</li>

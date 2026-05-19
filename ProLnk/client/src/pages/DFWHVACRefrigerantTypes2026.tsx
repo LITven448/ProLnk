@@ -48,13 +48,13 @@ export default function DFWHVACRefrigerantTypes2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginTop: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔧 Get Your Refrigerant Guide</h2>
           <label style={{ color: '#a0aec0', fontSize: 14 }}>System Age (years)</label>
-          <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12" style={{ display: 'block', width: '100%', marginTop: 6, marginBottom: 16, padding: '10px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15 }} />
+          <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12″ style={{ display: 'block', width: '100%', marginTop: 6, marginBottom: 16, padding: '10px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15 }} />
           <label style={{ color: '#a0aec0', fontSize: 14 }}>Refrigerant Type</label>
           <select value={refrigerant} onChange={e => setRefrigerant(e.target.value)} style={{ display: 'block', width: '100%', marginTop: 6, marginBottom: 20, padding: '10px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15 }}>
             <option value="">Select refrigerant...</option>
-            <option value="r22">R-22 (Freon)</option>
+            <option value="r22″>R-22 (Freon)</option>
             <option value="r410a">R-410A (Puron)</option>
-            <option value="r32">R-32</option>
+            <option value="r32″>R-32</option>
             <option value="r454b">R-454B (Puron Advance)</option>
           </select>
           {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: '16px', color: '#e2e8f0', fontSize: 15, lineHeight: 1.6 }}>{guide}</div>}

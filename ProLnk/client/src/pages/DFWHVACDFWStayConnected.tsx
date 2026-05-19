@@ -67,8 +67,8 @@ export default function DFWHVACDFWStayConnected() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#F5E642' : '#1e3a5f',
-                color: selected === i ? '#0A1628' : '#fff',
+                background: selected === i ? '#F5E642′ : '#1e3a5f',
+                color: selected === i ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 12, padding: '20px 16px',
                 cursor: 'pointer', fontSize: 15, fontWeight: 600,
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,

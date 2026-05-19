@@ -47,23 +47,23 @@ export default function DFWGFCIAFCIGuide2026() {
             {rooms.map(r => (
               <button key={r.id} onClick={() => setRoom(r.id === room ? '' : r.id)}
                 style={{ padding: '12px', borderRadius: '8px', border: '2px solid', cursor: 'pointer', fontSize: '13px', fontWeight: '600', transition: 'all 0.2s',
-                  borderColor: room === r.id ? '#F5E642' : '#1e3a5f', backgroundColor: room === r.id ? '#1a2e4a' : '#0d1f35', color: room === r.id ? '#F5E642' : '#cbd5e1' }}>
+                  borderColor: room === r.id ? '#F5E642′ : '#1e3a5f', backgroundColor: room === r.id ? '#1a2e4a' : '#0d1f35', color: room === r.id ? '#F5E642' : '#cbd5e1' }}>
                 {r.label}
               </button>
             ))}
           </div>
           {selected && (
-            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 12px', fontSize: '18px' }}>{selected.label} Requirements</h3>
               <div style={{ display: 'flex', gap: '16px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                <span style={{ padding: '6px 14px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.gfci ? '#14532d' : '#1e1e2e', color: selected.gfci ? '#4ade80' : '#64748b' }}>
+                <span style={{ padding: '6px 14px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.gfci ? '#14532d' : '#1e1e2e', color: selected.gfci ? '#4ade80′ : '#64748b' }}>
                   {selected.gfci ? '✅ GFCI Required' : '❌ GFCI Not Required'}
                 </span>
                 <span style={{ padding: '6px 14px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.afci ? '#1e3a5f' : '#1e1e2e', color: selected.afci ? '#60a5fa' : '#64748b' }}>
                   {selected.afci ? '✅ AFCI Required' : '❌ AFCI Not Required'}
                 </span>
               </div>
-              <p style={{ color: '#cbd5e1', margin: 0, lineHeight: '1.6' }}>{selected.note}</p>
+              <p style={{ color: '#cbd5e1', margin: 0, lineHeight: '1.6′ }}>{selected.note}</p>
             </div>
           )}
         </div>

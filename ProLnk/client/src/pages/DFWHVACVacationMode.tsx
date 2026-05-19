@@ -55,7 +55,7 @@ export default function DFWHVACVacationMode() {
           <div style={{ display: 'grid', gap: 10 }}>
             {tripLengths.map(t => (
               <button key={t.id} onClick={() => setTrip(t.id)}
-                style={{ background: trip === t.id ? '#F5E642' : '#1A2D4A', color: trip === t.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: trip === t.id ? '#F5E642′ : '#1A2D4A', color: trip === t.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {t.label}
               </button>
             ))}
@@ -67,7 +67,7 @@ export default function DFWHVACVacationMode() {
           <div style={{ display: 'grid', gap: 10 }}>
             {dfwSeasons.map(s => (
               <button key={s.id} onClick={() => setSeason(s.id)}
-                style={{ background: season === s.id ? '#F5E642' : '#1A2D4A', color: season === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: season === s.id ? '#F5E642′ : '#1A2D4A', color: season === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {s.label}
                 <span style={{ display: 'block', fontWeight: 400, fontSize: 12, marginTop: 2, opacity: 0.8 }}>Temps: {s.minTemp}°-{s.maxTemp}°F · Risk: {s.risk} · Vacation max: {s.vacationMax}°F</span>
               </button>

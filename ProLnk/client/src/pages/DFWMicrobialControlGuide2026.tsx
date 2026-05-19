@@ -75,8 +75,8 @@ export default function DFWMicrobialControlGuide2026() {
               {[{ v: 'central', l: '🏠 Central AC/Heat' }, { v: 'minisplit', l: '❄️ Mini-Split' }].map(o => (
                 <button key={o.v} onClick={() => setHvacType(o.v)}
                   style={{ flex: 1, padding: '12px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: hvacType === o.v ? '#F5E642' : '#1e3a5f',
-                    backgroundColor: hvacType === o.v ? '#F5E64220' : '#0d1f3c',
+                    borderColor: hvacType === o.v ? '#F5E642′ : '#1e3a5f',
+                    backgroundColor: hvacType === o.v ? '#F5E64220′ : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -91,8 +91,8 @@ export default function DFWMicrobialControlGuide2026() {
               {[{ v: 'mold', l: '🍄 Mold' }, { v: 'bacteria', l: '🦠 Bacteria' }, { v: 'odor', l: '👃 Odors' }].map(o => (
                 <button key={o.v} onClick={() => setConcern(o.v)}
                   style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: concern === o.v ? '#F5E642' : '#1e3a5f',
-                    backgroundColor: concern === o.v ? '#F5E64220' : '#0d1f3c',
+                    borderColor: concern === o.v ? '#F5E642′ : '#1e3a5f',
+                    backgroundColor: concern === o.v ? '#F5E64220′ : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -112,7 +112,7 @@ export default function DFWMicrobialControlGuide2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #F5E64240' }}>
+        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #F5E64240′ }}>
           <div style={{ fontSize: 24 }}>🔗</div>
           <p style={{ color: '#F5E642', fontWeight: 600, margin: '8px 0 4px' }}>ProLnk — DFW's HVAC Microbial Specialists</p>
           <p style={{ color: '#94a3b8', fontSize: 13 }}>Connect with certified DFW pros for UV-C installation, coil cleaning, and air quality testing.</p>

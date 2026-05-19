@@ -28,9 +28,9 @@ const TASK_MAP: Record<string, { task: string; cost: string; checkEvery: string 
     { task: 'Hose down patio to clear pollen and June bug debris', cost: '$0', checkEvery: 'Every 2 weeks' },
   ],
   'Lawn and irrigation': [
-    { task: 'Water Bermuda 1" per week — split into 2–3 deep sessions', cost: '$0 (water bill increase)', checkEvery: 'Weekly' },
+    { task: 'Water Bermuda 1″ per week — split into 2–3 deep sessions', cost: '$0 (water bill increase)', checkEvery: 'Weekly' },
     { task: 'Check irrigation heads for clogs from summer dust', cost: '$0–$80', checkEvery: 'Every 2 weeks' },
-    { task: 'Mow at 2–3" — no shorter or DFW heat will scorch roots', cost: '$50–$120', checkEvery: 'Weekly' },
+    { task: 'Mow at 2–3″ — no shorter or DFW heat will scorch roots', cost: '$50–$120', checkEvery: 'Weekly' },
   ],
   'Lightning rod / surge protection': [
     { task: 'Verify whole-home surge protector is installed at panel', cost: '$200–$400 install', checkEvery: 'Once' },
@@ -71,7 +71,7 @@ export default function DFWJuneHomeGuide() {
           Full summer mode. DFW power demand peaks. AC runs 10–14 hrs/day. Storm season brings lightning surges. Check critical systems every 2 weeks.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628′ }}>
           <strong>⚡ June DFW Check-Ins Every 2 Weeks</strong>
           <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.8 }}>
             <li>AC filter — monthly rotation starts now</li>
@@ -91,8 +91,8 @@ export default function DFWJuneHomeGuide() {
                 padding: '8px 16px',
                 borderRadius: 8,
                 border: `2px solid ${selected.includes(f) ? '#F5E642' : '#1E3050'}`,
-                background: selected.includes(f) ? '#F5E642' : '#111F35',
-                color: selected.includes(f) ? '#0A1628' : '#ccc',
+                background: selected.includes(f) ? '#F5E642′ : '#111F35',
+                color: selected.includes(f) ? '#0A1628′ : '#ccc',
                 fontWeight: 600,
                 cursor: 'pointer',
                 fontSize: 13,

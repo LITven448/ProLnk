@@ -20,67 +20,67 @@ const situations = [
   { label: "New Installation Check", icon: "✅",
     loss: "None if done right", freq: "First 90 days post-install",
     desc: "The first 90 days after DFW solar installation are critical. Commissioning issues — incorrect string sizing, shading miscalculation, or communication errors — often dont show up until the first full summer. Verify your system is producing at the modeled output before manufacturer warranties pass.",
-    steps: ["Request production monitoring login from installer day 1","Compare daily kWh to installation proposal (weather-adjusted within 15%","Inspect all roof penetrations after first rain — look for interior ceiling staining","Verify utility net metering agreement is active — check your first bill","Register all equipment warranties directly with manufacturers (not just installer)"] },
+    steps: ["Request production monitoring login from installer day 1″,"Compare daily kWh to installation proposal (weather-adjusted within 15%","Inspect all roof penetrations after first rain — look for interior ceiling staining","Verify utility net metering agreement is active — check your first bill","Register all equipment warranties directly with manufacturers (not just installer)"] },
 ];
 
 export default function DFWSolarPanelMaintenanceDFW2026() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#e2e8f0", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#e2e8f0", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>☀️</div>
-          <h1 style={{ fontSize: "1.9rem", fontWeight: 800, color: "#F5E642", marginBottom: "0.5rem" }}>DFW Solar Panel Maintenance Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>Keeping your solar system producing at full capacity in Dallas-Fort Worth</p>
+          <h1 style={{ fontSize: "1.9rem", fontWeight: 800, color: "#F5E642″, marginBottom: "0.5rem" }}>DFW Solar Panel Maintenance Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>Keeping your solar system producing at full capacity in Dallas-Fort Worth</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {[["☀️","DFW Solar Hours","5.2-5.8 peak/day"],["🌧️","Pollen Impact","10-25% loss"],["⛈️","Hail Risk","High — Class 4 required"]].map(([icon,label,val],i)=>(
-            <div key={i} style={{ background: "#0f2040", borderRadius: 10, padding: "1.2rem", textAlign: "center", border: "1px solid #1e3a5f" }}>
+            <div key={i} style={{ background: "#0f2040″, borderRadius: 10, padding: "1.2rem", textAlign: "center", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: "1.8rem" }}>{icon}</div>
-              <div style={{ color: "#94a3b8", fontSize: "0.8rem", marginTop: "0.3rem" }}>{label}</div>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: "0.95rem" }}>{val}</div>
+              <div style={{ color: "#94a3b8″, fontSize: "0.8rem", marginTop: "0.3rem" }}>{label}</div>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: "0.95rem" }}>{val}</div>
             </div>
           ))}
         </div>
 
-        <p style={{ color: "#94a3b8", marginBottom: "0.75rem", fontSize: "0.9rem" }}>Select your solar situation for a step-by-step maintenance guide:</p>
+        <p style={{ color: "#94a3b8″, marginBottom: "0.75rem", fontSize: "0.9rem" }}>Select your solar situation for a step-by-step maintenance guide:</p>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.5rem" }}>
           {situations.map((s, i) => (
             <button key={i} onClick={() => setSelected(i)}
-              style={{ padding: "0.75rem 1rem", borderRadius: 8, border: selected === i ? "2px solid #F5E642" : "1px solid #1e3a5f",
-                background: selected === i ? "#1a2f50" : "#0f2040", color: selected === i ? "#F5E642" : "#94a3b8",
+              style={{ padding: "0.75rem 1rem", borderRadius: 8, border: selected === i ? "2px solid #F5E642″ : "1px solid #1e3a5f",
+                background: selected === i ? "#1a2f50″ : "#0f2040", color: selected === i ? "#F5E642" : "#94a3b8",
                 cursor: "pointer", fontSize: "0.9rem", fontWeight: 600, textAlign: "left", display: "flex", alignItems: "center", gap: "0.75rem" }}>
               <span>{s.icon}</span><span>{s.label}</span>
-              <span style={{ marginLeft: "auto", color: "#94a3b8", fontSize: "0.78rem" }}>{s.loss}</span>
+              <span style={{ marginLeft: "auto", color: "#94a3b8″, fontSize: "0.78rem" }}>{s.loss}</span>
             </button>
           ))}
         </div>
 
         {(() => { const s = situations[selected]; return (
-          <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", border: "2px solid #F5E642", marginBottom: "2rem" }}>
-            <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#F5E642", marginBottom: "0.5rem" }}>{s.icon} {s.label}</h2>
+          <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", border: "2px solid #F5E642", marginBottom: "2rem" }}>
+            <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#F5E642″, marginBottom: "0.5rem" }}>{s.icon} {s.label}</h2>
             <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", flexWrap: "wrap" }}>
-              <span style={{ background: "#0A1628", border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.2rem 0.7rem", color: "#94a3b8", fontSize: "0.8rem" }}>Output impact: {s.loss}</span>
-              <span style={{ background: "#0A1628", border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.2rem 0.7rem", color: "#94a3b8", fontSize: "0.8rem" }}>Frequency: {s.freq}</span>
+              <span style={{ background: "#0A1628″, border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.2rem 0.7rem", color: "#94a3b8", fontSize: "0.8rem" }}>Output impact: {s.loss}</span>
+              <span style={{ background: "#0A1628″, border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.2rem 0.7rem", color: "#94a3b8", fontSize: "0.8rem" }}>Frequency: {s.freq}</span>
             </div>
-            <p style={{ color: "#cbd5e1", lineHeight: 1.7, marginBottom: "1.25rem" }}>{s.desc}</p>
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: "1rem", border: "1px solid #22c55e" }}>
+            <p style={{ color: "#cbd5e1″, lineHeight: 1.7, marginBottom: "1.25rem" }}>{s.desc}</p>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: "1rem", border: "1px solid #22c55e" }}>
               <div style={{ color: "#22c55e", fontWeight: 700, marginBottom: "0.75rem", fontSize: "0.9rem" }}>✅ Step-by-Step Action Plan</div>
               {s.steps.map((step,i)=>(
                 <div key={i} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.5rem" }}>
-                  <span style={{ color: "#F5E642", fontWeight: 700, minWidth: 20, fontSize: "0.9rem" }}>{i+1}.</span>
-                  <span style={{ color: "#cbd5e1", fontSize: "0.88rem", lineHeight: 1.5 }}>{step}</span>
+                  <span style={{ color: "#F5E642″, fontWeight: 700, minWidth: 20, fontSize: "0.9rem" }}>{i+1}.</span>
+                  <span style={{ color: "#cbd5e1″, fontSize: "0.88rem", lineHeight: 1.5 }}>{step}</span>
                 </div>
               ))}
             </div>
           </div>
         ); })()}
 
-        <div style={{ textAlign: "center", padding: "1rem", background: "#0f2040", borderRadius: 10, border: "1px solid #1e3a5f" }}>
-          <span style={{ color: "#94a3b8", fontSize: "0.85rem" }}>Need a DFW solar pro for cleaning, inspection, or repairs? </span>
-          <span style={{ color: "#F5E642", fontWeight: 700 }}>ProLnk connects DFW solar homeowners with vetted maintenance pros. 🔗</span>
+        <div style={{ textAlign: "center", padding: "1rem", background: "#0f2040″, borderRadius: 10, border: "1px solid #1e3a5f" }}>
+          <span style={{ color: "#94a3b8″, fontSize: "0.85rem" }}>Need a DFW solar pro for cleaning, inspection, or repairs? </span>
+          <span style={{ color: "#F5E642″, fontWeight: 700 }}>ProLnk connects DFW solar homeowners with vetted maintenance pros. 🔗</span>
         </div>
       </div>
     </div>

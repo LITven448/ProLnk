@@ -97,11 +97,11 @@ export default function EnergyAuditGuide() {
             <h3 style={{ color: '#fbbf24', marginTop: 0 }}>💰 DFW Audit Cost</h3>
             <div style={{ marginBottom: 8 }}>
               <span style={{ color: '#e2e8f0', fontWeight: 700 }}>Standard: </span>
-              <span style={{ color: '#94a3b8' }}>$200–400</span>
+              <span style={{ color: '#94a3b8′ }}>$200–400</span>
             </div>
             <div>
               <span style={{ color: '#e2e8f0', fontWeight: 700 }}>Comprehensive (with blower door): </span>
-              <span style={{ color: '#94a3b8' }}>$400–700</span>
+              <span style={{ color: '#94a3b8′ }}>$400–700</span>
             </div>
           </div>
           <div style={{ background: '#0f172a', border: '1px solid #1e293b', borderRadius: 10, padding: 20 }}>
@@ -150,7 +150,7 @@ export default function EnergyAuditGuide() {
 
         {/* Interactive Worksheet */}
         <div style={{ background: '#0f172a', border: '1px solid #10b981', borderRadius: 12, padding: 28, marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 6, color: '#34d399' }}>⚡ Interactive Energy Audit Worksheet</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 6, color: '#34d399′ }}>⚡ Interactive Energy Audit Worksheet</h2>
           <p style={{ color: '#64748b', marginBottom: 24 }}>Answer 8 questions to estimate your energy waste score and get your first recommended actions.</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 24 }}>
             {auditItems.map((item) => (
@@ -159,15 +159,15 @@ export default function EnergyAuditGuide() {
                 <div style={{ display: 'flex', gap: 8 }}>
                   <button onClick={() => toggle(item.id, true)} style={{
                     padding: '6px 16px', borderRadius: 6, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                    borderColor: answers[item.id] === true ? '#f87171' : '#1e293b',
+                    borderColor: answers[item.id] === true ? '#f87171′ : '#1e293b',
                     background: answers[item.id] === true ? '#2d1a1a' : '#0a0a0f',
-                    color: answers[item.id] === true ? '#f87171' : '#64748b',
+                    color: answers[item.id] === true ? '#f87171′ : '#64748b',
                   }}>Yes</button>
                   <button onClick={() => toggle(item.id, false)} style={{
                     padding: '6px 16px', borderRadius: 6, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                    borderColor: answers[item.id] === false ? '#34d399' : '#1e293b',
+                    borderColor: answers[item.id] === false ? '#34d399′ : '#1e293b',
                     background: answers[item.id] === false ? '#0d2a1e' : '#0a0a0f',
-                    color: answers[item.id] === false ? '#34d399' : '#64748b',
+                    color: answers[item.id] === false ? '#34d399′ : '#64748b',
                   }}>No</button>
                 </div>
               </div>

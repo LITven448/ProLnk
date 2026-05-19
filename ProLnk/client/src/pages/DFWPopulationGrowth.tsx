@@ -8,11 +8,11 @@ interface GrowthZip {
 }
 
 const growthZips: GrowthZip[] = [
-  { city: 'Prosper', zip: '75078', newResidents: '18,400', homeBuilds: '4,200' },
-  { city: 'Celina', zip: '75009', newResidents: '14,700', homeBuilds: '3,800' },
-  { city: 'Anna', zip: '75409', newResidents: '11,200', homeBuilds: '2,900' },
-  { city: 'McKinney', zip: '75071', newResidents: '22,600', homeBuilds: '5,100' },
-  { city: 'Forney', zip: '75126', newResidents: '9,800', homeBuilds: '2,400' },
+  { city: 'Prosper', zip: '75078', newResidents: '18,400', homeBuilds: '4,200′ },
+  { city: 'Celina', zip: '75009', newResidents: '14,700', homeBuilds: '3,800′ },
+  { city: 'Anna', zip: '75409', newResidents: '11,200', homeBuilds: '2,900′ },
+  { city: 'McKinney', zip: '75071', newResidents: '22,600', homeBuilds: '5,100′ },
+  { city: 'Forney', zip: '75126', newResidents: '9,800', homeBuilds: '2,400′ },
 ];
 
 export default function DFWPopulationGrowth() {
@@ -46,7 +46,7 @@ export default function DFWPopulationGrowth() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
             { value: '8.1M', label: 'Metro population', sub: 'Larger than 37 US states' },
-            { value: '200K+', label: 'New residents per year', sub: 'Every year since 2020' },
+            { value: '200K+', label: 'New residents per year', sub: 'Every year since 2020′ },
             { value: '#1', label: 'Growth rank', sub: '3 consecutive years' },
             { value: '40%', label: 'More services bought', sub: 'By first-year homeowners' },
           ].map((s) => (
@@ -72,11 +72,11 @@ export default function DFWPopulationGrowth() {
                   <div style={{ fontWeight: 700, fontSize: 17, color: '#1a1a2e' }}>{z.city} <span style={{ fontWeight: 400, color: '#888', fontSize: 14 }}>({z.zip})</span></div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: 13, color: '#888' }}>New residents</div>
+                  <div style={{ fontSize: 13, color: '#888′ }}>New residents</div>
                   <div style={{ fontWeight: 700, color: '#1a1a2e' }}>{z.newResidents}</div>
                 </div>
                 <div style={{ textAlign: 'right', minWidth: 80 }}>
-                  <div style={{ fontSize: 13, color: '#888' }}>New homes</div>
+                  <div style={{ fontSize: 13, color: '#888′ }}>New homes</div>
                   <div style={{ fontWeight: 700, color: '#16a34a' }}>{z.homeBuilds}</div>
                 </div>
               </div>

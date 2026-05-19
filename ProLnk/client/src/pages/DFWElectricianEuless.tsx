@@ -57,8 +57,8 @@ export default function DFWElectricianEuless() {
                 onClick={() => setSelected(p.id)}
                 style={{
                   padding: '14px 12px',
-                  backgroundColor: selected === p.id ? '#F5E642' : '#0A1628',
-                  color: selected === p.id ? '#0A1628' : '#fff',
+                  backgroundColor: selected === p.id ? '#F5E642′ : '#0A1628',
+                  color: selected === p.id ? '#0A1628′ : '#fff',
                   border: `1px solid ${selected === p.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: 8,
                   cursor: 'pointer',

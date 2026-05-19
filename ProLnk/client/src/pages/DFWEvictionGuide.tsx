@@ -1,20 +1,20 @@
 import { useState } from 'react';
 
 const grounds = [
-  { reason: 'Non-payment of Rent', notice: '3-Day Notice to Vacate', filingFee: '$46–92', timeline: '21–35 days total', cost: '$500–900' },
-  { reason: 'Lease Violation', notice: '3-Day Notice to Vacate', filingFee: '$46–92', timeline: '25–40 days total', cost: '$600–1,200' },
-  { reason: 'End of Lease / Holdover', notice: '30-Day Notice to Vacate', filingFee: '$46–92', timeline: '45–65 days total', cost: '$700–1,500' },
-  { reason: 'Illegal Activity', notice: 'Immediate / 3-Day', filingFee: '$46–92', timeline: '20–30 days total', cost: '$800–2,500' },
-  { reason: 'Property Damage', notice: '3-Day Notice to Vacate', filingFee: '$46–92', timeline: '25–40 days total', cost: '$600–2,000' },
+  { reason: 'Non-payment of Rent', notice: '3-Day Notice to Vacate', filingFee: '$46–92', timeline: '21–35 days total', cost: '$500–900′ },
+  { reason: 'Lease Violation', notice: '3-Day Notice to Vacate', filingFee: '$46–92', timeline: '25–40 days total', cost: '$600–1,200′ },
+  { reason: 'End of Lease / Holdover', notice: '30-Day Notice to Vacate', filingFee: '$46–92', timeline: '45–65 days total', cost: '$700–1,500′ },
+  { reason: 'Illegal Activity', notice: 'Immediate / 3-Day', filingFee: '$46–92', timeline: '20–30 days total', cost: '$800–2,500′ },
+  { reason: 'Property Damage', notice: '3-Day Notice to Vacate', filingFee: '$46–92', timeline: '25–40 days total', cost: '$600–2,000′ },
 ];
 
 const steps = [
-  { step: 1, title: 'Serve Proper Notice', detail: 'Deliver written notice (hand-deliver, post on door, or certified mail). Keep proof of service.', days: 'Day 1–3' },
-  { step: 2, title: 'Wait Notice Period', detail: 'Wait the full notice period. Do NOT accept partial rent if evicting for non-payment — it resets the clock.', days: 'Day 4–33' },
-  { step: 3, title: 'File at Justice Court', detail: 'File a Petition for Eviction at your local Justice of the Peace Court in DFW. Bring lease, notices, and documentation.', days: 'Day 3–10' },
-  { step: 4, title: 'Serve the Citation', detail: 'Court clerk or constable serves citation to tenant. Hearing scheduled within 10–21 days of filing.', days: 'Day 10–20' },
-  { step: 5, title: 'Attend Hearing', detail: 'Present your case. Bring lease, payment records, photos, communication logs. Judge rules same day typically.', days: 'Day 20–30' },
-  { step: 6, title: 'Writ of Possession', detail: 'If you win, wait 5 days (tenant appeal period), then file for Writ of Possession. Constable executes the lockout.', days: 'Day 31–42' },
+  { step: 1, title: 'Serve Proper Notice', detail: 'Deliver written notice (hand-deliver, post on door, or certified mail). Keep proof of service.', days: 'Day 1–3′ },
+  { step: 2, title: 'Wait Notice Period', detail: 'Wait the full notice period. Do NOT accept partial rent if evicting for non-payment — it resets the clock.', days: 'Day 4–33′ },
+  { step: 3, title: 'File at Justice Court', detail: 'File a Petition for Eviction at your local Justice of the Peace Court in DFW. Bring lease, notices, and documentation.', days: 'Day 3–10′ },
+  { step: 4, title: 'Serve the Citation', detail: 'Court clerk or constable serves citation to tenant. Hearing scheduled within 10–21 days of filing.', days: 'Day 10–20′ },
+  { step: 5, title: 'Attend Hearing', detail: 'Present your case. Bring lease, payment records, photos, communication logs. Judge rules same day typically.', days: 'Day 20–30′ },
+  { step: 6, title: 'Writ of Possession', detail: 'If you win, wait 5 days (tenant appeal period), then file for Writ of Possession. Constable executes the lockout.', days: 'Day 31–42′ },
 ];
 
 const preventionTips = [
@@ -79,10 +79,10 @@ export default function DFWEvictionGuide() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 20 }}>
             {[
-              { label: 'Required Notice', value: selectedGround.notice, color: '#3B82F6' },
-              { label: 'Total Timeline', value: selectedGround.timeline, color: '#8B5CF6' },
+              { label: 'Required Notice', value: selectedGround.notice, color: '#3B82F6′ },
+              { label: 'Total Timeline', value: selectedGround.timeline, color: '#8B5CF6′ },
               { label: 'Court Filing Fee', value: `$${costs.courtFee}–$92`, color: '#F59E0B' },
-              { label: 'Total Estimated Cost', value: `$${totalCost.toLocaleString()}`, color: '#EF4444' },
+              { label: 'Total Estimated Cost', value: `$${totalCost.toLocaleString()}`, color: '#EF4444′ },
             ].map(({ label, value, color }) => (
               <div key={label} style={{ background: '#F8FAFC', borderRadius: 10, padding: 16, border: `1px solid ${color}30` }}>
                 <div style={{ color: '#6B7280', fontSize: 13 }}>{label}</div>
@@ -97,7 +97,7 @@ export default function DFWEvictionGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, margin: '0 0 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, margin: '0 0 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#1A2B3C', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>📋 Texas Eviction Step-by-Step</h2>
           {steps.map((s) => (
             <div key={s.step} style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
@@ -113,7 +113,7 @@ export default function DFWEvictionGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, margin: '0 0 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, margin: '0 0 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#1A2B3C', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>📊 Eviction Grounds Quick Reference</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -139,7 +139,7 @@ export default function DFWEvictionGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#1A2B3C', fontSize: 22, fontWeight: 700, marginBottom: 16 }}>🛡️ How to Prevent Evictions</h2>
           {preventionTips.map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>

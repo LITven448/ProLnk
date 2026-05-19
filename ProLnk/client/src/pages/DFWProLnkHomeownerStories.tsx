@@ -17,7 +17,7 @@ const stories = [
   },
   {
     scenario: 'Roof damage after hail',
-    headline: '"Compared 3 roofers after hail and saved $4,000"',
+    headline: '"Compared 3 roofers after hail and saved $4,000″',
     homeowner: 'Sandra L., Allen',
     detail: 'After a big April hailstorm I had 6 door-knockers in 3 days. I ignored them and used ProLnk instead. Got bids from 3 licensed local roofers — all verified. The range was $13,200 to $17,400 for the same scope. I went with the middle bid from a company with 200+ reviews. Saved $4,000 over the highest quote.',
     how: 'ProLnk connects you to vetted local roofers only — no out-of-state storm chasers. All contractors carry current liability insurance and state licensing.',
@@ -55,7 +55,7 @@ export default function DFWProLnkHomeownerStories() {
           {stories.map((s, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
               padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12,
-              backgroundColor: selected === i ? '#0A1628' : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
+              backgroundColor: selected === i ? '#0A1628′ : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
             }}>
               {s.scenario}
             </button>
@@ -65,10 +65,10 @@ export default function DFWProLnkHomeownerStories() {
         <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, boxShadow: '0 1px 4px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <div style={{ fontStyle: 'italic', fontSize: 20, fontWeight: 700, marginBottom: 6 }}>{s.headline}</div>
           <div style={{ color: '#6B7280', fontSize: 13, marginBottom: 20 }}>— {s.homeowner}</div>
-          <p style={{ lineHeight: 1.8, marginBottom: 20, color: '#374151' }}>{s.detail}</p>
+          <p style={{ lineHeight: 1.8, marginBottom: 20, color: '#374151′ }}>{s.detail}</p>
           <div style={{ backgroundColor: '#F9FAFB', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>⚙️ How ProLnk Handled It</div>
-            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151' }}>{s.how}</p>
+            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151′ }}>{s.how}</p>
           </div>
         </div>
 

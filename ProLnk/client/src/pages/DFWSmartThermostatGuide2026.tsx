@@ -49,8 +49,8 @@ export default function DFWSmartThermostatGuide2026() {
               <div key={b.brand} style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}>
                 <div style={{ fontSize: 20, marginBottom: 4 }}>{b.brand}</div>
                 <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700 }}>{b.model}</div>
-                <div style={{ fontSize: 18, fontWeight: 800, margin: '6px 0' }}>{b.price}</div>
-                <div style={{ fontSize: 11, color: '#94a3b8' }}>{b.best}</div>
+                <div style={{ fontSize: 18, fontWeight: 800, margin: '6px 0′ }}>{b.price}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8′ }}>{b.best}</div>
               </div>
             ))}
           </div>
@@ -59,12 +59,12 @@ export default function DFWSmartThermostatGuide2026() {
         <div style={{ background: '#0f2444', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🔍 Smart Thermostat Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home size: <strong style={{ color: '#F5E642' }}>{sqft.toLocaleString()} sq ft</strong></label>
-            <input type="range" min={800} max={6000} step={100} value={sqft} onChange={(e) => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home size: <strong style={{ color: '#F5E642' }}>{sqft.toLocaleString()} sq ft</strong></label>
+            <input type="range" min={800} max={6000} step={100} value={sqft} onChange={(e) => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Number of floors/zones: <strong style={{ color: '#F5E642' }}>{zones}</strong></label>
-            <input type="range" min={1} max={4} value={zones} onChange={(e) => setZones(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Number of floors/zones: <strong style={{ color: '#F5E642' }}>{zones}</strong></label>
+            <input type="range" min={1} max={4} value={zones} onChange={(e) => setZones(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <button onClick={recommend} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Get My Recommendation

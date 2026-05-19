@@ -26,34 +26,34 @@ export default function DFWLocationPremiumGuide2026() {
   const premium = estimatePremium();
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>📍</div>
-          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Location Premium Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>How location drives home values across the Dallas–Fort Worth metro</p>
+          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Location Premium Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>How location drives home values across the Dallas–Fort Worth metro</p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🏡 Your Home Base Value</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🏡 Your Home Base Value</h2>
           <input
             type="range" min={200000} max={1200000} step={25000} value={homeValue}
             onChange={e => setHomeValue(Number(e.target.value))}
-            style={{ width: "100%", accentColor: "#F5E642" }}
+            style={{ width: "100%", accentColor: "#F5E642″ }}
           />
-          <p style={{ color: "#F5E642", fontSize: "1.4rem", fontWeight: "bold", margin: "0.5rem 0 0" }}>
+          <p style={{ color: "#F5E642″, fontSize: "1.4rem", fontWeight: "bold", margin: "0.5rem 0 0" }}>
             ${homeValue.toLocaleString()}
           </p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🗺️ Select a Location Factor</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🗺️ Select a Location Factor</h2>
           <div style={{ display: "grid", gap: "0.75rem" }}>
             {locationFactors.map((f, i) => (
               <button key={i} onClick={() => setSelected(i)}
                 style={{
-                  background: selected === i ? "#F5E642" : "#162035",
-                  color: selected === i ? "#0A1628" : "#fff",
+                  background: selected === i ? "#F5E642″ : "#162035",
+                  color: selected === i ? "#0A1628″ : "#fff",
                   border: "1px solid #1e3a5f", borderRadius: 8, padding: "0.75rem 1rem",
                   textAlign: "left", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center"
                 }}>
@@ -67,16 +67,16 @@ export default function DFWLocationPremiumGuide2026() {
         {factor && premium !== null && (
           <div style={{ background: "#0f2d1a", border: "1px solid #22c55e", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
             <h3 style={{ color: "#22c55e", margin: "0 0 0.5rem" }}>📊 Estimated Location Premium</h3>
-            <p style={{ fontSize: "2rem", color: "#F5E642", fontWeight: "bold", margin: "0.25rem 0" }}>
+            <p style={{ fontSize: "2rem", color: "#F5E642″, fontWeight: "bold", margin: "0.25rem 0" }}>
               +${premium.toLocaleString()}
             </p>
-            <p style={{ color: "#94a3b8" }}>{factor.emoji} {factor.name} — {factor.pct} premium on a ${homeValue.toLocaleString()} home</p>
+            <p style={{ color: "#94a3b8″ }}>{factor.emoji} {factor.name} — {factor.pct} premium on a ${homeValue.toLocaleString()} home</p>
           </div>
         )}
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>📌 Key DFW Location Insights</h2>
-          <ul style={{ color: "#94a3b8", paddingLeft: "1.25rem", lineHeight: "1.8" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>📌 Key DFW Location Insights</h2>
+          <ul style={{ color: "#94a3b8″, paddingLeft: "1.25rem", lineHeight: "1.8" }}>
             <li>Frisco ISD homes command $50–$100K more than Dallas ISD equivalents</li>
             <li>Richardson/Plano employer corridor adds 15% to nearby residential values</li>
             <li>Lake-access properties in Lewisville/Grapevine see consistent 20% lifts</li>
@@ -85,7 +85,7 @@ export default function DFWLocationPremiumGuide2026() {
           </ul>
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569", fontSize: "0.8rem" }}>
+        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569″, fontSize: "0.8rem" }}>
           🏠 ProLnk Home Health Vault — DFW Location Intelligence 2026
         </div>
       </div>

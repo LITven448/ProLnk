@@ -26,7 +26,7 @@ export default function DFWFirstTimeHomeBuyerGuide2026() {
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>🎯 Eligibility Check</h2>
-          <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Household Income: <strong style={{ color: '#F5E642' }}>${income.toLocaleString()}/yr</strong></label>
+          <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Household Income: <strong style={{ color: '#F5E642′ }}>${income.toLocaleString()}/yr</strong></label>
           <input type="range" min={30000} max={150000} step={5000} value={income} onChange={e => setIncome(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642', marginBottom: 20 }} />
           <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Profession</label>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
@@ -40,14 +40,14 @@ export default function DFWFirstTimeHomeBuyerGuide2026() {
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>✅ Programs You Qualify For ({eligible.length})</h2>
-          {eligible.length === 0 && <p style={{ color: '#ef4444' }}>No programs match current income level. Adjust income or check federal programs.</p>}
+          {eligible.length === 0 && <p style={{ color: '#ef4444′ }}>No programs match current income level. Adjust income or check federal programs.</p>}
           {eligible.map(p => (
             <div key={p.id} style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginBottom: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: 18 }}>{p.icon} <strong>{p.name}</strong></span>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '4px 10px', fontSize: 13, fontWeight: 700 }}>{p.dpa}</span>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{p.desc}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{p.desc}</p>
             </div>
           ))}
         </div>
@@ -56,10 +56,10 @@ export default function DFWFirstTimeHomeBuyerGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>📊 Quick Comparison</h2>
           {[{n:'My First Texas Home',min:'620',dpa:'5%',max:'$110K'},{n:'Homes for Texas Heroes',min:'620',dpa:'5%',max:'$110K'},{n:'TSAHC Home Sweet Texas',min:'620',dpa:'3-5%',max:'$97K'},{n:'TX MCC',min:'620',dpa:'Tax credit',max:'$110K'}].map((r,i) => (
             <div key={i} style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', gap:8, padding:'10px 0', borderBottom:i<3?'1px solid #0A1628':'none', fontSize:13 }}>
-              <span style={{ color:'#cbd5e1' }}>{r.n}</span>
-              <span style={{ color:'#94a3b8' }}>Min {r.min}</span>
-              <span style={{ color:'#F5E642' }}>{r.dpa}</span>
-              <span style={{ color:'#94a3b8' }}>&lt;{r.max}</span>
+              <span style={{ color:'#cbd5e1′ }}>{r.n}</span>
+              <span style={{ color:'#94a3b8′ }}>Min {r.min}</span>
+              <span style={{ color:'#F5E642′ }}>{r.dpa}</span>
+              <span style={{ color:'#94a3b8′ }}>&lt;{r.max}</span>
             </div>
           ))}
         </div>

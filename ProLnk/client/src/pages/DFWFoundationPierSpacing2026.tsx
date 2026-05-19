@@ -22,7 +22,7 @@ export default function DFWFoundationPierSpacing2026() {
           🏗️ Foundation Pier Spacing Guide
         </h1>
         <p style={{ color: '#9BAEC8', marginBottom: '28px', lineHeight: 1.6 }}>
-          The most common DFW foundation repair complaint: <strong style={{ color: '#F5E642' }}>too few piers placed too far apart</strong>. Standard spacing is 7–10 ft, but load paths and soil conditions dictate actual placement.
+          The most common DFW foundation repair complaint: <strong style={{ color: '#F5E642′ }}>too few piers placed too far apart</strong>. Standard spacing is 7–10 ft, but load paths and soil conditions dictate actual placement.
         </p>
 
         {[
@@ -31,14 +31,14 @@ export default function DFWFoundationPierSpacing2026() {
           { icon: '🧱', title: 'Load-Bearing Wall Locations', desc: 'Center beam, kitchen/bath walls, and staircase support walls require piers beneath them regardless of spacing formula.' },
           { icon: '👷', title: 'Engineer-Supervised vs. Company-Only', desc: 'Engineer-supervised layouts cost $400–$800 extra but produce a stamped plan. Company-only layouts vary widely — get 3 quotes and compare pier counts.' },
         ].map((item) => (
-          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>
+          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>{item.icon} {item.title}</div>
             <div style={{ color: '#9BAEC8', fontSize: '14px' }}>{item.desc}</div>
           </div>
         ))}
 
         <div style={{ backgroundColor: '#111D35', borderRadius: '12px', padding: '24px', marginTop: '28px' }}>
-          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>📏 Foundation Size → Pier Count Estimator</div>
+          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>📏 Foundation Size → Pier Count Estimator</div>
           <input
             type="number"
             placeholder="Enter home square footage..."
@@ -59,7 +59,7 @@ export default function DFWFoundationPierSpacing2026() {
           )}
         </div>
 
-        <div style={{ marginTop: '28px', backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', borderTop: '2px solid #F5E642' }}>
+        <div style={{ marginTop: '28px', backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', borderTop: '2px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: '6px' }}>⚠️ DFW Red Flag Alert</div>
           <div style={{ color: '#9BAEC8', fontSize: '14px' }}>If a DFW contractor proposes fewer than 1 pier per 100 sq ft of home footprint, demand a written justification. Underpiering is the leading cause of warranty callbacks in North Texas.</div>
         </div>

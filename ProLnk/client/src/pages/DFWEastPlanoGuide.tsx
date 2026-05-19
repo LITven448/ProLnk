@@ -200,8 +200,8 @@ export default function DFWEastPlanoGuide() {
         <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 8 }}>East Plano</h1>
         <h2 style={{ fontSize: 18, fontWeight: 400, color: '#a0b0c8', marginBottom: 24 }}>1980s–1990s Suburb Maintenance Guide</h2>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
-          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8' }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8′ }}>
             East Plano's established neighborhoods were built from <strong style={{ color: '#F5E642' }}>1978–2000</strong>, making most homes 25–45 years old. These homes have three urgent risks: <strong>polybutylene pipes</strong> (1978–1995), aging HVAC systems on R-22 refrigerant, and 30-year roofs reaching end of life. The good news: these are all fixable — if you act before they fail. Select your build era and known issues to get your priority repair list.
           </p>
         </div>
@@ -210,7 +210,7 @@ export default function DFWEastPlanoGuide() {
           <label style={{ display: 'block', marginBottom: 10, color: '#F5E642', fontWeight: 600, fontSize: 14 }}>📅 Home Build Era</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {buildYears.map(y => (
-              <button key={y} onClick={() => setBuildYear(y)} style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${buildYear === y ? '#F5E642' : '#1e3a5f'}`, backgroundColor: buildYear === y ? '#1a2e4a' : '#0f2040', color: buildYear === y ? '#F5E642' : '#c8d8e8', fontWeight: buildYear === y ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>
+              <button key={y} onClick={() => setBuildYear(y)} style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${buildYear === y ? '#F5E642' : '#1e3a5f'}`, backgroundColor: buildYear === y ? '#1a2e4a' : '#0f2040', color: buildYear === y ? '#F5E642′ : '#c8d8e8', fontWeight: buildYear === y ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>
                 {y}
               </button>
             ))}
@@ -221,7 +221,7 @@ export default function DFWEastPlanoGuide() {
           <label style={{ display: 'block', marginBottom: 10, color: '#F5E642', fontWeight: 600, fontSize: 14 }}>⚠️ Known Issues (select all that apply)</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {issueOptions.map(issue => (
-              <button key={issue} onClick={() => toggleIssue(issue)} style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${knownIssues.includes(issue) ? '#F5E642' : '#1e3a5f'}`, backgroundColor: knownIssues.includes(issue) ? '#1a2e4a' : '#0f2040', color: knownIssues.includes(issue) ? '#F5E642' : '#c8d8e8', cursor: 'pointer', fontSize: 13, fontWeight: knownIssues.includes(issue) ? 600 : 400 }}>
+              <button key={issue} onClick={() => toggleIssue(issue)} style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${knownIssues.includes(issue) ? '#F5E642' : '#1e3a5f'}`, backgroundColor: knownIssues.includes(issue) ? '#1a2e4a' : '#0f2040', color: knownIssues.includes(issue) ? '#F5E642′ : '#c8d8e8', cursor: ’pointer', fontSize: 13, fontWeight: knownIssues.includes(issue) ? 600 : 400 }}>
                 {issue}
               </button>
             ))}
@@ -241,7 +241,7 @@ export default function DFWEastPlanoGuide() {
                 <div key={i} style={{ backgroundColor: '#162840', borderRadius: 8, padding: 14, marginBottom: 10 }}>
                   <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>{r.label}</div>
                   <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 4 }}>{r.main}</div>
-                  <div style={{ fontSize: 13, color: '#a0b0c8' }}>→ {r.sub}</div>
+                  <div style={{ fontSize: 13, color: '#a0b0c8′ }}>→ {r.sub}</div>
                 </div>
               ))}
             </div>
@@ -257,7 +257,7 @@ export default function DFWEastPlanoGuide() {
                   <div style={{ fontSize: 13 }}>{item.urgency}</div>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                  <div style={{ fontSize: 13, color: '#a0b0c8' }}>💡 {item.note}</div>
+                  <div style={{ fontSize: 13, color: '#a0b0c8′ }}>💡 {item.note}</div>
                   <div style={{ color: '#F5E642', fontWeight: 600, fontSize: 13, whiteSpace: 'nowrap' }}>{item.cost}</div>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function DFWEastPlanoGuide() {
                 <div key={i} style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '12px 16px', marginBottom: 10 }}>
                   <div style={{ fontWeight: 600, marginBottom: 4 }}>{item.project}</div>
                   <div style={{ color: '#ff6b6b', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>Deferred cost: {item.deferredCost}</div>
-                  <div style={{ fontSize: 13, color: '#a0b0c8' }}>⏰ {item.urgency}</div>
+                  <div style={{ fontSize: 13, color: '#a0b0c8′ }}>⏰ {item.urgency}</div>
                 </div>
               ))}
             </div>

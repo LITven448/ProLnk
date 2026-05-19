@@ -53,7 +53,7 @@ export default function DFWHVACWorkFromHomeGuide2026() {
             {setups.map((s, i) => (
               <button key={s.label} onClick={() => setIdx(i)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12,
-                  background: idx === i ? '#F5E642' : '#1e3a5f', color: idx === i ? '#0A1628' : '#fff', fontWeight: idx === i ? 700 : 400 }}>
+                  background: idx === i ? '#F5E642′ : '#1e3a5f', color: idx === i ? '#0A1628' : '#fff', fontWeight: idx === i ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}

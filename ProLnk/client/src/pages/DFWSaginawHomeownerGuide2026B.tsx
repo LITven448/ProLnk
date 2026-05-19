@@ -69,7 +69,7 @@ export default function DFWSaginawHomeownerGuide2026B() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {vintages.map(v => (
               <button key={v} onClick={() => setSelected(v === selected ? null : v)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === v ? '#F5E642' : '#1e2f4a', color: selected === v ? '#0A1628' : '#fff' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === v ? '#F5E642′ : '#1e2f4a', color: selected === v ? '#0A1628' : '#fff' }}>
                 {v}
               </button>
             ))}

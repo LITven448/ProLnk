@@ -64,7 +64,7 @@ const STAGES: PipelineStage[] = [
     name: "Notification",
     shortName: "Notify",
     icon: Bell,
-    color: "#FBB140",
+    color: "#FBB140″,
     queueDepth: 8,
     processed: 998,
     avgLatencyMs: 210,
@@ -76,7 +76,7 @@ const STAGES: PipelineStage[] = [
     name: "Delivery",
     shortName: "Delivery",
     icon: Send,
-    color: "#82D616",
+    color: "#82D616″,
     queueDepth: 3,
     processed: 990,
     avgLatencyMs: 145,
@@ -131,8 +131,8 @@ const ERROR_TYPES: PipelineError[] = [
   { type: "SMS_DELIVERY_FAIL",   stage: "Notification", count: 6,  lastOccurred: "42m ago",   autoRetry: true,  severity: "med"  },
   { type: "DUPLICATE_LEAD",      stage: "Inbound",      count: 5,  lastOccurred: "1h ago",    autoRetry: false, severity: "low"  },
   { type: "INVALID_ADDRESS",     stage: "Inbound",      count: 4,  lastOccurred: "1.5h ago",  autoRetry: false, severity: "low"  },
-  { type: "SCORE_API_429",       stage: "AI Scoring",   count: 3,  lastOccurred: "2h ago",    autoRetry: true,  severity: "high" },
-  { type: "DELIVERY_WEBHOOK_500",stage: "Delivery",     count: 2,  lastOccurred: "3h ago",    autoRetry: true,  severity: "med"  },
+  { type: "SCORE_API_429″,       stage: "AI Scoring",   count: 3,  lastOccurred: "2h ago",    autoRetry: true,  severity: "high" },
+  { type: "DELIVERY_WEBHOOK_500″,stage: "Delivery",     count: 2,  lastOccurred: "3h ago",    autoRetry: true,  severity: "med"  },
   { type: "MATCH_RADIUS_EMPTY",  stage: "Matching",     count: 2,  lastOccurred: "4h ago",    autoRetry: false, severity: "low"  },
 ];
 
@@ -159,7 +159,7 @@ function stageIdx(stage: string) {
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function QueuePill({ depth }: { depth: number }) {
-  const color = depth >= 80 ? "#EA0606" : depth >= 40 ? "#FBB140" : "#82D616";
+  const color = depth >= 80 ? "#EA0606″ : depth >= 40 ? "#FBB140" : "#82D616";
   return (
     <span
       className="px-2 py-0.5 rounded-full text-[10px] font-bold"
@@ -172,9 +172,9 @@ function QueuePill({ depth }: { depth: number }) {
 
 function SeverityBadge({ sev }: { sev: PipelineError["severity"] }) {
   const map = {
-    high: { bg: "#EA060618", border: "#EA060640", color: "#EA0606", label: "HIGH" },
-    med:  { bg: "#FBB14018", border: "#FBB14040", color: "#FBB140", label: "MED" },
-    low:  { bg: "#82D61618", border: "#82D61640", color: "#82D616", label: "LOW" },
+    high: { bg: "#EA060618″, border: "#EA060640", color: "#EA0606", label: "HIGH" },
+    med:  { bg: "#FBB14018″, border: "#FBB14040", color: "#FBB140", label: "MED" },
+    low:  { bg: "#82D61618″, border: "#82D61640", color: "#82D616", label: "LOW" },
   };
   const s = map[sev];
   return (
@@ -199,20 +199,20 @@ export default function AIPipelineMonitor() {
 
   return (
     <AdminLayout title="AI Pipeline Monitor" subtitle="Inbound → Scoring → Matching → Notification → Delivery">
-      <div className="p-6 space-y-6">
+      <div className="p-6 space-y-6″>
 
         {/* ── Bottleneck Alerts ───────────────────────────────────────────────── */}
         {bottlenecks.map(stage => (
           <div
             key={stage.id}
             className="flex items-start gap-3 px-4 py-3 rounded-xl"
-            style={{ background: "#FBB14010", border: "1px solid #FBB14050" }}
+            style={{ background: "#FBB14010″, border: "1px solid #FBB14050" }}
           >
-            <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: "#FBB140" }} />
-            <div className="flex-1">
+            <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5″ style={{ color: "#FBB140" }} />
+            <div className="flex-1″>
               <p className="text-sm font-bold text-white">Bottleneck Detected — {stage.name} Stage</p>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Queue depth is <strong style={{ color: "#FBB140" }}>{stage.queueDepth} items</strong> — above threshold of 50. Avg latency elevated to <strong style={{ color: "#FBB140" }}>{stage.avgLatencyMs}ms</strong>. Consider scaling the scoring tier or checking the AI rate limit.
+              <p className="text-xs text-muted-foreground mt-0.5″>
+                Queue depth is <strong style={{ color: "#FBB140″ }}>{stage.queueDepth} items</strong> — above threshold of 50. Avg latency elevated to <strong style={{ color: "#FBB140" }}>{stage.avgLatencyMs}ms</strong>. Consider scaling the scoring tier or checking the AI rate limit.
               </p>
             </div>
             <QueuePill depth={stage.queueDepth} />
@@ -220,23 +220,23 @@ export default function AIPipelineMonitor() {
         ))}
 
         {/* ── KPI Strip ────────────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3″>
           {[
             { label: "Leads Today",      value: totalToday,           sub: "+12% vs yesterday", icon: Inbox,     color: "#00D4FF" },
-            { label: "Delivered",         value: totalDelivered,       sub: `${conversionPct}% conversion`, icon: Send,      color: "#82D616" },
-            { label: "Errors (24h)",      value: totalErrors,          sub: `${((totalErrors/totalToday)*100).toFixed(1)}% error rate`, icon: AlertTriangle, color: "#EA0606" },
+            { label: "Delivered",         value: totalDelivered,       sub: `${conversionPct}% conversion`, icon: Send,      color: "#82D616″ },
+            { label: "Errors (24h)",      value: totalErrors,          sub: `${((totalErrors/totalToday)*100).toFixed(1)}% error rate`, icon: AlertTriangle, color: "#EA0606″ },
             { label: "Avg Latency",       value: "1.4s",               sub: "End-to-end",        icon: Clock,     color: "#7928CA" },
-            { label: "Pipeline Health",   value: "97.8%",              sub: "Uptime last 30d",   icon: Activity,  color: "#FBB140" },
+            { label: "Pipeline Health",   value: "97.8%",              sub: "Uptime last 30d",   icon: Activity,  color: "#FBB140″ },
           ].map((stat, i) => (
-            <div key={i} className="rounded-xl p-4" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
+            <div key={i} className="rounded-xl p-4″ style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">{stat.label}</p>
                   <p className="text-xl font-bold mt-0.5 text-white">{stat.value}</p>
-                  <p className="text-[10px] mt-0.5" style={{ color: stat.color }}>{stat.sub}</p>
+                  <p className="text-[10px] mt-0.5″ style={{ color: stat.color }}>{stat.sub}</p>
                 </div>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${stat.color}18` }}>
-                  <stat.icon className="w-4 h-4" style={{ color: stat.color }} />
+                  <stat.icon className="w-4 h-4″ style={{ color: stat.color }} />
                 </div>
               </div>
             </div>
@@ -244,80 +244,80 @@ export default function AIPipelineMonitor() {
         </div>
 
         {/* ── Pipeline Stage Visualization ─────────────────────────────────────── */}
-        <div className="rounded-2xl p-5" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
-          <div className="flex items-center justify-between mb-5">
+        <div className="rounded-2xl p-5″ style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
+          <div className="flex items-center justify-between mb-5″>
             <div>
               <h2 className="font-bold text-sm text-white">5-Stage Pipeline</h2>
               <p className="text-xs text-muted-foreground">Live queue depths and per-stage metrics</p>
             </div>
             <span
               className="text-xs px-3 py-1.5 rounded-full font-medium"
-              style={{ background: bottlenecks.length ? "#FBB14020" : "#82D61620", color: bottlenecks.length ? "#FBB140" : "#82D616", border: `1px solid ${bottlenecks.length ? "#FBB14050" : "#82D61650"}` }}
+              style={{ background: bottlenecks.length ? "#FBB14020″ : "#82D61620", color: bottlenecks.length ? "#FBB140" : "#82D616", border: `1px solid ${bottlenecks.length ? "#FBB14050" : "#82D61650"}` }}
             >
               {bottlenecks.length ? `${bottlenecks.length} Bottleneck` : "All Stages Clear"}
             </span>
           </div>
 
-          <div className="flex items-stretch gap-0 overflow-x-auto pb-2">
+          <div className="flex items-stretch gap-0 overflow-x-auto pb-2″>
             {STAGES.map((stage, i) => {
               const StageIcon = stage.icon;
               return (
-                <div key={stage.id} className="flex items-stretch flex-shrink-0">
+                <div key={stage.id} className="flex items-stretch flex-shrink-0″>
                   <div
                     className="w-52 rounded-xl p-4 flex flex-col"
                     style={{
-                      background: stage.bottleneck ? "#FBB14008" : "#0A1628",
+                      background: stage.bottleneck ? "#FBB14008″ : "#0A1628",
                       border: `1px solid ${stage.bottleneck ? "#FBB14050" : "#ffffff12"}`,
                     }}
                   >
                     {/* Header */}
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-between mb-3″>
+                      <div className="flex items-center gap-2″>
                         <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ backgroundColor: stage.color }}>
                           {i + 1}
                         </div>
                         <span className="text-xs font-bold text-white">{stage.shortName}</span>
                       </div>
-                      {stage.bottleneck && <AlertTriangle className="w-3.5 h-3.5" style={{ color: "#FBB140" }} />}
+                      {stage.bottleneck && <AlertTriangle className="w-3.5 h-3.5″ style={{ color: "#FBB140" }} />}
                     </div>
                     {/* Icon */}
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: `${stage.color}18` }}>
-                      <StageIcon className="w-5 h-5" style={{ color: stage.color }} />
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3″ style={{ background: `${stage.color}18` }}>
+                      <StageIcon className="w-5 h-5″ style={{ color: stage.color }} />
                     </div>
                     {/* Queue depth */}
                     <QueuePill depth={stage.queueDepth} />
                     {/* Metrics */}
-                    <div className="space-y-2 mt-3 pt-3" style={{ borderTop: "1px solid #ffffff10" }}>
+                    <div className="space-y-2 mt-3 pt-3″ style={{ borderTop: "1px solid #ffffff10" }}>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-muted-foreground">Processed</span>
                         <span className="font-bold text-white font-mono">{stage.processed.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-muted-foreground">Avg Latency</span>
-                        <span className="font-bold font-mono" style={{ color: stage.avgLatencyMs > 500 ? "#FBB140" : "#82D616" }}>
+                        <span className="font-bold font-mono" style={{ color: stage.avgLatencyMs > 500 ? "#FBB140″ : "#82D616" }}>
                           {stage.avgLatencyMs}ms
                         </span>
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-muted-foreground">Error Rate</span>
-                        <span className="font-bold font-mono" style={{ color: stage.errorRate > 2 ? "#EA0606" : stage.errorRate > 1 ? "#FBB140" : "#82D616" }}>
+                        <span className="font-bold font-mono" style={{ color: stage.errorRate > 2 ? "#EA0606″ : stage.errorRate > 1 ? "#FBB140" : "#82D616" }}>
                           {stage.errorRate}%
                         </span>
                       </div>
                       {/* Error rate bar */}
-                      <div className="h-1 rounded-full overflow-hidden" style={{ background: "#ffffff10" }}>
+                      <div className="h-1 rounded-full overflow-hidden" style={{ background: "#ffffff10″ }}>
                         <div
                           className="h-full rounded-full"
                           style={{
                             width: `${Math.min(stage.errorRate * 20, 100)}%`,
-                            backgroundColor: stage.errorRate > 2 ? "#EA0606" : stage.errorRate > 1 ? "#FBB140" : "#82D616",
+                            backgroundColor: stage.errorRate > 2 ? "#EA0606″ : stage.errorRate > 1 ? "#FBB140" : "#82D616",
                           }}
                         />
                       </div>
                     </div>
                   </div>
                   {i < STAGES.length - 1 && (
-                    <div className="flex items-center px-1.5 flex-shrink-0">
+                    <div className="flex items-center px-1.5 flex-shrink-0″>
                       <ArrowRight className="w-4 h-4 text-muted-foreground" />
                     </div>
                   )}
@@ -328,19 +328,19 @@ export default function AIPipelineMonitor() {
         </div>
 
         {/* ── 24h Throughput Chart (pure CSS bars) + Recent Runs ───────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5″>
           {/* Chart */}
-          <div className="lg:col-span-2 rounded-2xl p-5" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
-            <div className="flex items-center justify-between mb-4">
+          <div className="lg:col-span-2 rounded-2xl p-5″ style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
+            <div className="flex items-center justify-between mb-4″>
               <div>
                 <h2 className="font-bold text-sm text-white">24h Throughput</h2>
                 <p className="text-xs text-muted-foreground">Leads processed vs. errors per hour</p>
               </div>
               <BarChart2 className="w-4 h-4 text-muted-foreground" />
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5″>
               {HOURLY_DATA.map((d, i) => (
-                <div key={i} className="flex items-center gap-2">
+                <div key={i} className="flex items-center gap-2″>
                   <span className="text-[9px] w-7 text-right flex-shrink-0 font-mono text-muted-foreground">{d.hour}</span>
                   {/* Volume bar */}
                   <div className="flex-1 h-3 relative">
@@ -352,35 +352,35 @@ export default function AIPipelineMonitor() {
                     {d.err > 0 && (
                       <div
                         className="absolute inset-y-0 left-0 rounded-sm"
-                        style={{ width: `${(d.err / maxVol) * 100}%`, backgroundColor: "#EA060670" }}
+                        style={{ width: `${(d.err / maxVol) * 100}%`, backgroundColor: "#EA060670″ }}
                       />
                     )}
                   </div>
                   <span className="text-[9px] w-7 text-right font-bold font-mono text-white">{d.vol}</span>
-                  <span className="text-[9px] w-4 text-right font-mono" style={{ color: d.err ? "#EA0606" : "#5a7a94" }}>{d.err || ""}</span>
+                  <span className="text-[9px] w-4 text-right font-mono" style={{ color: d.err ? "#EA0606″ : "#5a7a94" }}>{d.err || ""}</span>
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-4 mt-3 pt-3" style={{ borderTop: "1px solid #ffffff10" }}>
+            <div className="flex items-center gap-4 mt-3 pt-3″ style={{ borderTop: "1px solid #ffffff10" }}>
               <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-                <span className="w-2 h-2 rounded-sm" style={{ background: "#00D4FF40" }} /> Volume
+                <span className="w-2 h-2 rounded-sm" style={{ background: "#00D4FF40″ }} /> Volume
               </span>
               <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-                <span className="w-2 h-2 rounded-sm bg-red-500/70" /> Errors
+                <span className="w-2 h-2 rounded-sm bg-red-500/70″ /> Errors
               </span>
             </div>
           </div>
 
           {/* Recent runs */}
-          <div className="lg:col-span-3 rounded-2xl overflow-hidden" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
-            <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: "1px solid #ffffff10" }}>
+          <div className="lg:col-span-3 rounded-2xl overflow-hidden" style={{ background: "#0D1F38″, border: "1px solid #ffffff12" }}>
+            <div className="flex items-center justify-between px-5 py-4″ style={{ borderBottom: "1px solid #ffffff10" }}>
               <div>
                 <h2 className="font-bold text-sm text-white">Recent Pipeline Runs</h2>
                 <p className="text-xs text-muted-foreground">Live lead processing status</p>
               </div>
               <Layers className="w-4 h-4 text-muted-foreground" />
             </div>
-            <div className="divide-y" style={{ borderColor: "#ffffff08" }}>
+            <div className="divide-y" style={{ borderColor: "#ffffff08″ }}>
               {RECENT_RUNS.map(run => {
                 const currentIdx = stageIdx(run.stage);
                 const isExpanded = expandedRun === run.id;
@@ -391,26 +391,26 @@ export default function AIPipelineMonitor() {
                       onClick={() => setExpandedRun(isExpanded ? null : run.id)}
                     >
                       {/* Status */}
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0″>
                         {run.status === "completed"
-                          ? <CheckCircle className="w-4 h-4" style={{ color: "#82D616" }} />
+                          ? <CheckCircle className="w-4 h-4″ style={{ color: "#82D616" }} />
                           : run.status === "running"
                           ? <div className="w-4 h-4 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: "#00D4FF transparent #00D4FF #00D4FF" }} />
-                          : <AlertTriangle className="w-4 h-4 text-red-500" />}
+                          : <AlertTriangle className="w-4 h-4 text-red-500″ />}
                       </div>
                       {/* Info */}
-                      <div className="flex-1 min-w-0">
+                      <div className="flex-1 min-w-0″>
                         <div className="flex items-center gap-1.5 flex-wrap">
                           <span className="text-xs font-bold font-mono text-white">#{run.id}</span>
                           <span className="text-xs text-muted-foreground">{run.source}</span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: "#7928CA20", color: "#7928CA" }}>{run.trade}</span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: "#7928CA20″, color: "#7928CA" }}>{run.trade}</span>
                         </div>
                         {run.matched && (
-                          <p className="text-[10px] mt-0.5" style={{ color: "#5a7a94" }}>→ {run.matched}</p>
+                          <p className="text-[10px] mt-0.5″ style={{ color: "#5a7a94" }}>→ {run.matched}</p>
                         )}
                       </div>
                       {/* Stage progress */}
-                      <div className="flex items-center gap-0.5 flex-shrink-0">
+                      <div className="flex items-center gap-0.5 flex-shrink-0″>
                         {STAGES.map((stage, i) => (
                           <div
                             key={stage.id}
@@ -418,16 +418,16 @@ export default function AIPipelineMonitor() {
                             style={{
                               backgroundColor: i < currentIdx ? stage.color
                                 : i === currentIdx && run.status === "running" ? `${stage.color}60`
-                                : i === currentIdx && run.status === "failed" ? "#EA0606"
-                                : "#ffffff12",
+                                : i === currentIdx && run.status === "failed" ? "#EA0606″
+                                : "#ffffff12″,
                             }}
                           />
                         ))}
                       </div>
                       {/* Score + time */}
-                      <div className="flex items-center gap-2 flex-shrink-0">
+                      <div className="flex items-center gap-2 flex-shrink-0″>
                         {run.score > 0 && (
-                          <span className="text-[10px] font-bold font-mono" style={{ color: run.score > 0.85 ? "#82D616" : "#FBB140" }}>
+                          <span className="text-[10px] font-bold font-mono" style={{ color: run.score > 0.85 ? "#82D616″ : "#FBB140" }}>
                             {(run.score * 100).toFixed(0)}%
                           </span>
                         )}
@@ -437,36 +437,36 @@ export default function AIPipelineMonitor() {
                       <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform ${isExpanded ? "rotate-180" : ""}`} />
                     </div>
                     {isExpanded && (
-                      <div className="px-5 pb-4 pt-1">
-                        <div className="flex items-center gap-1.5 flex-wrap mb-2">
+                      <div className="px-5 pb-4 pt-1″>
+                        <div className="flex items-center gap-1.5 flex-wrap mb-2″>
                           {STAGES.map((stage, i) => {
                             const StageIcon = stage.icon;
                             const passed  = i < currentIdx;
                             const current = i === currentIdx;
                             const failed  = current && run.status === "failed";
                             return (
-                              <div key={stage.id} className="flex items-center gap-1">
+                              <div key={stage.id} className="flex items-center gap-1″>
                                 <div
                                   className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg"
                                   style={{
-                                    background: passed ? `${stage.color}18` : failed ? "#EA060610" : current ? `${stage.color}08` : "#0A1628",
+                                    background: passed ? `${stage.color}18` : failed ? "#EA060610″ : current ? `${stage.color}08` : "#0A1628",
                                     border: `1px solid ${passed ? `${stage.color}40` : failed ? "#EA060640" : "#ffffff10"}`,
                                   }}
                                 >
                                   {passed ? (
-                                    <CheckCircle className="w-3 h-3" style={{ color: stage.color }} />
+                                    <CheckCircle className="w-3 h-3″ style={{ color: stage.color }} />
                                   ) : failed ? (
-                                    <AlertTriangle className="w-3 h-3 text-red-500" />
+                                    <AlertTriangle className="w-3 h-3 text-red-500″ />
                                   ) : current && run.status === "running" ? (
                                     <div className="w-3 h-3 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: `${stage.color} transparent ${stage.color} ${stage.color}` }} />
                                   ) : (
-                                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#ffffff15" }} />
+                                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#ffffff15″ }} />
                                   )}
-                                  <span className="text-[10px] font-medium" style={{ color: passed ? stage.color : failed ? "#EA0606" : "#5a7a94" }}>
+                                  <span className="text-[10px] font-medium" style={{ color: passed ? stage.color : failed ? "#EA0606″ : "#5a7a94" }}>
                                     {stage.shortName}
                                   </span>
                                 </div>
-                                {i < STAGES.length - 1 && <ArrowRight className="w-3 h-3 text-muted-foreground/40" />}
+                                {i < STAGES.length - 1 && <ArrowRight className="w-3 h-3 text-muted-foreground/40″ />}
                               </div>
                             );
                           })}
@@ -474,7 +474,7 @@ export default function AIPipelineMonitor() {
                         <div className="flex items-center gap-4 text-xs text-muted-foreground">
                           <span>Source: <strong className="text-white">{run.source}</strong></span>
                           <span>Trade: <strong className="text-white">{run.trade}</strong></span>
-                          {run.score > 0 && <span>Score: <strong style={{ color: "#82D616" }}>{(run.score * 100).toFixed(1)}%</strong></span>}
+                          {run.score > 0 && <span>Score: <strong style={{ color: "#82D616″ }}>{(run.score * 100).toFixed(1)}%</strong></span>}
                           <span>Time: <strong className="text-white font-mono">{run.ms}ms</strong></span>
                         </div>
                       </div>
@@ -487,18 +487,18 @@ export default function AIPipelineMonitor() {
         </div>
 
         {/* ── Error Breakdown Table ─────────────────────────────────────────────── */}
-        <div className="rounded-2xl overflow-hidden" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
-          <div className="flex items-center gap-2 px-5 py-4" style={{ borderBottom: "1px solid #ffffff10" }}>
-            <Filter className="w-4 h-4" style={{ color: "#EA0606" }} />
+        <div className="rounded-2xl overflow-hidden" style={{ background: "#0D1F38″, border: "1px solid #ffffff12" }}>
+          <div className="flex items-center gap-2 px-5 py-4″ style={{ borderBottom: "1px solid #ffffff10" }}>
+            <Filter className="w-4 h-4″ style={{ color: "#EA0606" }} />
             <h2 className="font-bold text-sm text-white">Error Breakdown</h2>
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#EA060618", color: "#EA0606" }}>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#EA060618″, color: "#EA0606" }}>
               {ERROR_TYPES.reduce((s, e) => s + e.count, 0)} total
             </span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr style={{ borderBottom: "1px solid #ffffff08" }}>
+                <tr style={{ borderBottom: "1px solid #ffffff08″ }}>
                   {["Error Type","Stage","Count","Last Occurred","Auto-Retry","Severity"].map(h => (
                     <th key={h} className="text-left py-2.5 px-4 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                       {h}
@@ -511,25 +511,25 @@ export default function AIPipelineMonitor() {
                   <tr
                     key={i}
                     className="hover:bg-white/[0.02] transition-colors cursor-pointer"
-                    style={{ borderBottom: "1px solid #ffffff06" }}
+                    style={{ borderBottom: "1px solid #ffffff06″ }}
                     onClick={() => setExpandedErr(expandedErr === err.type ? null : err.type)}
                   >
-                    <td className="py-2.5 px-4">
-                      <code className="font-mono text-[11px]" style={{ color: "#EA0606" }}>{err.type}</code>
+                    <td className="py-2.5 px-4″>
+                      <code className="font-mono text-[11px]" style={{ color: "#EA0606″ }}>{err.type}</code>
                     </td>
-                    <td className="py-2.5 px-4">
+                    <td className="py-2.5 px-4″>
                       <span className="font-medium text-muted-foreground">{err.stage}</span>
                     </td>
-                    <td className="py-2.5 px-4">
+                    <td className="py-2.5 px-4″>
                       <span className="font-bold font-mono text-white">{err.count}</span>
                     </td>
                     <td className="py-2.5 px-4 text-muted-foreground">{err.lastOccurred}</td>
-                    <td className="py-2.5 px-4">
+                    <td className="py-2.5 px-4″>
                       {err.autoRetry
-                        ? <span className="flex items-center gap-1 text-[10px]" style={{ color: "#82D616" }}><RotateCcw className="w-3 h-3" /> Yes</span>
+                        ? <span className="flex items-center gap-1 text-[10px]" style={{ color: "#82D616″ }}><RotateCcw className="w-3 h-3" /> Yes</span>
                         : <span className="text-[10px] text-muted-foreground">No</span>}
                     </td>
-                    <td className="py-2.5 px-4">
+                    <td className="py-2.5 px-4″>
                       <SeverityBadge sev={err.severity} />
                     </td>
                   </tr>
@@ -540,15 +540,15 @@ export default function AIPipelineMonitor() {
         </div>
 
         {/* ── Stage Performance Table ──────────────────────────────────────────── */}
-        <div className="rounded-2xl overflow-hidden" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
-          <div className="flex items-center gap-2 px-5 py-4" style={{ borderBottom: "1px solid #ffffff10" }}>
-            <Eye className="w-4 h-4" style={{ color: "#00D4FF" }} />
+        <div className="rounded-2xl overflow-hidden" style={{ background: "#0D1F38″, border: "1px solid #ffffff12" }}>
+          <div className="flex items-center gap-2 px-5 py-4″ style={{ borderBottom: "1px solid #ffffff10" }}>
+            <Eye className="w-4 h-4″ style={{ color: "#00D4FF" }} />
             <h2 className="font-bold text-sm text-white">Stage Performance</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr style={{ borderBottom: "1px solid #ffffff08" }}>
+                <tr style={{ borderBottom: "1px solid #ffffff08″ }}>
                   {["Stage","Processed","Queue Depth","Avg Latency","P95 Latency","Error Rate","Status"].map(h => (
                     <th key={h} className="text-left py-2.5 px-4 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{h}</th>
                   ))}
@@ -558,30 +558,30 @@ export default function AIPipelineMonitor() {
                 {STAGES.map((stage) => {
                   const StageIcon = stage.icon;
                   return (
-                    <tr key={stage.id} style={{ borderBottom: "1px solid #ffffff06" }} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="py-2.5 px-4">
-                        <div className="flex items-center gap-2">
+                    <tr key={stage.id} style={{ borderBottom: "1px solid #ffffff06″ }} className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-2.5 px-4″>
+                        <div className="flex items-center gap-2″>
                           <div className="w-5 h-5 rounded flex items-center justify-center" style={{ background: `${stage.color}18` }}>
-                            <StageIcon className="w-3 h-3" style={{ color: stage.color }} />
+                            <StageIcon className="w-3 h-3″ style={{ color: stage.color }} />
                           </div>
                           <span className="font-semibold" style={{ color: stage.color }}>{stage.name}</span>
                         </div>
                       </td>
                       <td className="py-2.5 px-4 font-bold font-mono text-white">{stage.processed.toLocaleString()}</td>
-                      <td className="py-2.5 px-4">
+                      <td className="py-2.5 px-4″>
                         <QueuePill depth={stage.queueDepth} />
                       </td>
-                      <td className="py-2.5 px-4 font-mono" style={{ color: stage.avgLatencyMs > 500 ? "#FBB140" : "#82D616" }}>
+                      <td className="py-2.5 px-4 font-mono" style={{ color: stage.avgLatencyMs > 500 ? "#FBB140″ : "#82D616" }}>
                         {stage.avgLatencyMs}ms
                       </td>
                       <td className="py-2.5 px-4 font-mono text-muted-foreground">{Math.round(stage.avgLatencyMs * 1.9)}ms</td>
-                      <td className="py-2.5 px-4 font-bold font-mono" style={{ color: stage.errorRate > 2 ? "#EA0606" : stage.errorRate > 1 ? "#FBB140" : "#82D616" }}>
+                      <td className="py-2.5 px-4 font-bold font-mono" style={{ color: stage.errorRate > 2 ? "#EA0606″ : stage.errorRate > 1 ? "#FBB140" : "#82D616" }}>
                         {stage.errorRate}%
                       </td>
-                      <td className="py-2.5 px-4">
+                      <td className="py-2.5 px-4″>
                         {stage.bottleneck
-                          ? <span className="flex items-center gap-1 text-[10px]" style={{ color: "#FBB140" }}><AlertTriangle className="w-3 h-3" /> Bottleneck</span>
-                          : <span className="flex items-center gap-1 text-[10px]" style={{ color: "#82D616" }}><CheckCircle className="w-3 h-3" /> Healthy</span>}
+                          ? <span className="flex items-center gap-1 text-[10px]" style={{ color: "#FBB140″ }}><AlertTriangle className="w-3 h-3" /> Bottleneck</span>
+                          : <span className="flex items-center gap-1 text-[10px]" style={{ color: "#82D616″ }}><CheckCircle className="w-3 h-3" /> Healthy</span>}
                       </td>
                     </tr>
                   );

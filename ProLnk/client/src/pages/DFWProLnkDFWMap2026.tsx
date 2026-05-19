@@ -27,12 +27,12 @@ export default function DFWProLnkDFWMap2026() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', marginBottom: '16px', textAlign: 'center', padding: '12px', background: '#1e2d4a', borderRadius: '12px' }}>
-          <div><div style={{ fontSize: '24px', fontWeight: '800', color: '#F5E642' }}>7</div><div style={{ color: '#94a3b8', fontSize: '12px' }}>DFW Counties</div></div>
-          <div><div style={{ fontSize: '24px', fontWeight: '800', color: '#F5E642' }}>50+</div><div style={{ color: '#94a3b8', fontSize: '12px' }}>Cities Served</div></div>
-          <div><div style={{ fontSize: '24px', fontWeight: '800', color: '#F5E642' }}>500</div><div style={{ color: '#94a3b8', fontSize: '12px' }}>Charter Pro Limit</div></div>
+          <div><div style={{ fontSize: '24px', fontWeight: '800', color: '#F5E642′ }}>7</div><div style={{ color: '#94a3b8', fontSize: '12px' }}>DFW Counties</div></div>
+          <div><div style={{ fontSize: '24px', fontWeight: '800', color: '#F5E642′ }}>50+</div><div style={{ color: '#94a3b8', fontSize: '12px' }}>Cities Served</div></div>
+          <div><div style={{ fontSize: '24px', fontWeight: '800', color: '#F5E642′ }}>500</div><div style={{ color: '#94a3b8', fontSize: '12px' }}>Charter Pro Limit</div></div>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#F5E642', marginBottom: '16px', fontWeight: '600' }}>
+        <p style={{ textAlign: 'center', color: '#F5E642', marginBottom: '16px', fontWeight: '600′ }}>
           Select your DFW location:
         </p>
 
@@ -42,9 +42,9 @@ export default function DFWProLnkDFWMap2026() {
               key={l.id}
               onClick={() => setSelected(selected === l.id ? null : l.id)}
               style={{
-                background: selected === l.id ? '#F5E642' : '#1e2d4a',
-                color: selected === l.id ? '#0A1628' : '#fff',
-                border: '2px solid' + (selected === l.id ? ' #F5E642' : ' #334155'),
+                background: selected === l.id ? '#F5E642′ : '#1e2d4a',
+                color: selected === l.id ? '#0A1628′ : '#fff',
+                border: '2px solid' + (selected === l.id ? ' #F5E642′ : ' #334155'),
                 borderRadius: '12px', padding: '14px 8px', cursor: 'pointer',
                 fontSize: '12px', fontWeight: '700', textAlign: 'center'
               }}
@@ -56,14 +56,14 @@ export default function DFWProLnkDFWMap2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#1e2d4a', borderRadius: '16px', padding: '28px', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e2d4a', borderRadius: '16px', padding: '28px', border: '2px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: '20px', marginBottom: '4px' }}>{active.icon} {active.label}</h2>
             <p style={{ color: '#94a3b8', marginBottom: '16px', fontSize: '13px' }}>{active.county}</p>
             <div style={{ display: 'grid', gap: '10px' }}>
-              <div><span style={{ fontWeight: '700' }}>Coverage Status: </span>{active.status}</div>
-              <div><span style={{ fontWeight: '700', color: '#94a3b8' }}>Trades Available: </span>{active.pros}</div>
-              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #F5E642' }}>
-                <span style={{ color: '#F5E642', fontWeight: '700' }}>📍 </span>{active.note}
+              <div><span style={{ fontWeight: '700′ }}>Coverage Status: </span>{active.status}</div>
+              <div><span style={{ fontWeight: '700', color: '#94a3b8′ }}>Trades Available: </span>{active.pros}</div>
+              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #F5E642′ }}>
+                <span style={{ color: '#F5E642', fontWeight: '700′ }}>📍 </span>{active.note}
               </div>
             </div>
             <div style={{ marginTop: '20px', textAlign: 'center' }}>

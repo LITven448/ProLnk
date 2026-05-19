@@ -29,8 +29,8 @@ export default function DFWHVACElectricalGuide2026() {
             { icon: '🖥️', title: 'Control Board ($400-800)', body: 'The brain of modern HVAC systems. Controls timing, safety lockouts, diagnostics, and variable-speed functions. Expensive to replace but rarely fails before 10-12 years. Before replacing a control board, pull diagnostic fault codes — most boards display codes via LED blinks that identify the root cause. Do not replace board until fault codes are interpreted.' },
             { icon: '🔧', title: 'Transformer & Start Relay ($150-300)', body: 'The 24V transformer powers your thermostat and control board. Failure causes complete system shutdown with no thermostat response. Start relay (in some systems) gives compressor an extra electrical kick on startup. If your system trips the breaker repeatedly at startup, a hard start kit (additional capacitor + relay, $75-150) often resolves it without compressor replacement.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642' }}>
-              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</span></div>
+            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</span></div>
               <p style={{ color: '#B0B8CC', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
@@ -41,13 +41,13 @@ export default function DFWHVACElectricalGuide2026() {
           <p style={{ color: '#9BA3B4', fontSize: 14, marginBottom: 16 }}>Select your symptom to identify the likely electrical component:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
             {symptoms.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
               <p style={{ color: '#E8EAF0', fontSize: 14, margin: 0, lineHeight: 1.7 }}>{result.diagnosis}</p>
             </div>
           )}

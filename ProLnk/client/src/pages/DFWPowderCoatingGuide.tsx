@@ -36,17 +36,17 @@ export default function DFWPowderCoatingGuide() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642' }}>🔩 DFW Exterior Guides</div>
+        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642′ }}>🔩 DFW Exterior Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>Powder Coating Guide — DFW Iron & Metal</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6' }}>DFW humidity and 100°F+ summers destroy standard paint in 2–3 years. Powder coating lasts 10–15 years and costs less long-term.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6′ }}>DFW humidity and 100°F+ summers destroy standard paint in 2–3 years. Powder coating lasts 10–15 years and costs less long-term.</p>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>☀️ Why DFW Conditions Demand Powder Coating</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             {[
-              { label: 'Standard Paint Lifespan (DFW)', value: '2–3 years', color: '#EF4444' },
+              { label: 'Standard Paint Lifespan (DFW)', value: '2–3 years', color: '#EF4444′ },
               { label: 'Powder Coat Lifespan (DFW)', value: '10–15 years', color: '#22C55E' },
-              { label: 'Repaint Cost Every 3 Years', value: '$600–$2,000', color: '#EF4444' },
+              { label: 'Repaint Cost Every 3 Years', value: '$600–$2,000', color: '#EF4444′ },
               { label: 'Powder Coat (one-time)', value: '$400–$2,200', color: '#22C55E' },
             ].map(item => (
               <div key={item.label} style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '16px' }}>
@@ -88,7 +88,7 @@ export default function DFWPowderCoatingGuide() {
         {result && (
           <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
             <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '12px' }}>✅ Recommendation: {result.verdict}</h2>
-            <p style={{ color: '#CBD5E1', marginBottom: '16px', lineHeight: '1.7' }}>{result.reason}</p>
+            <p style={{ color: '#CBD5E1', marginBottom: '16px', lineHeight: '1.7′ }}>{result.reason}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               <div style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '16px' }}>
                 <div style={{ color: '#94A3B8', fontSize: '12px', marginBottom: '4px' }}>Estimated Cost</div>

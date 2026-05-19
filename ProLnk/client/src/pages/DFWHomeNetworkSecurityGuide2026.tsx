@@ -45,7 +45,7 @@ export default function DFWHomeNetworkSecurityGuide2026() {
                 <span style={{ fontSize: 11, padding: '2px 8px', borderRadius: 99,
                   backgroundColor: d.risk === 'High' ? '#7f1d1d' : d.risk === 'Medium' ? '#78350f' : '#14532d' }}>{d.risk} Risk</span>
               </div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>💡 {d.tip}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>💡 {d.tip}</div>
             </div>
           ))}
         </div>
@@ -53,10 +53,10 @@ export default function DFWHomeNetworkSecurityGuide2026() {
         <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🎯 Your Network Checklist</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>How many smart devices in your home? <strong style={{ color: '#F5E642' }}>{deviceCount}</strong></label>
+            <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>How many smart devices in your home? <strong style={{ color: '#F5E642′ }}>{deviceCount}</strong></label>
             <input type="range" min={0} max={30} value={deviceCount} onChange={e => setDeviceCount(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#94a3b8' }}>
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#94a3b8′ }}>
               <span>0 devices</span><span>15 devices</span><span>30 devices</span>
             </div>
           </div>

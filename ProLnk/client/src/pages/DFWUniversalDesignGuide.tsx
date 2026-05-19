@@ -25,7 +25,7 @@ const upgradeMap: AgeMap = {
       { upgrade: 'Curbless shower suite', cost: '$5,000–12,000', roiBoost: '+$10,000–20,000', difficulty: 'High', desc: 'Premium master bath renovation with zero-threshold shower.' },
       { upgrade: 'Smart home full integration', cost: '$3,000–8,000', roiBoost: '+$5,000–12,000', difficulty: 'Medium', desc: 'Full lighting, HVAC, security, and voice control integration.' },
       { upgrade: 'First-floor flex room (office→bedroom)', cost: '$2,000–5,000', roiBoost: '+$8,000–15,000', difficulty: 'Medium', desc: 'Closet + egress window addition converts office to legal bedroom.' },
-      { upgrade: 'Wide hallways + doorway upgrade', cost: '$3,000–8,000', roiBoost: '+$4,000–10,000', difficulty: 'High', desc: '36" doorways and 42" hallways support aging in place and wheelchair access.' },
+      { upgrade: 'Wide hallways + doorway upgrade', cost: '$3,000–8,000', roiBoost: '+$4,000–10,000', difficulty: 'High', desc: '36″ doorways and 42″ hallways support aging in place and wheelchair access.' },
     ],
     '$40,000+': [
       { upgrade: 'Full ADA-ready master suite', cost: '$15,000–35,000', roiBoost: '+$20,000–45,000', difficulty: 'High', desc: 'Roll-in shower, grab bars, wide doorways, and smart home integration.' },
@@ -45,7 +45,7 @@ const upgradeMap: AgeMap = {
       { upgrade: 'Walk-in shower conversion', cost: '$3,000–8,000', roiBoost: '+$6,000–14,000', difficulty: 'High', desc: 'Homes from this era often have garden tubs — converting to walk-in shower has strong ROI.' },
       { upgrade: 'Smart home upgrade', cost: '$1,500–4,000', roiBoost: '+$3,000–7,000', difficulty: 'Medium', desc: 'Retrofit smart home with lighting, thermostat, security.' },
       { upgrade: 'First-floor bedroom addition', cost: '$3,000–8,000', roiBoost: '+$5,000–12,000', difficulty: 'High', desc: 'Convert flex room or office with closet and proper egress.' },
-      { upgrade: 'Wider doorway (master suite)', cost: '$800–2,000', roiBoost: '+$1,500–3,000', difficulty: 'Medium', desc: 'Widen to 36" — improves accessibility and perceived spaciousness.' },
+      { upgrade: 'Wider doorway (master suite)', cost: '$800–2,000', roiBoost: '+$1,500–3,000', difficulty: 'Medium', desc: 'Widen to 36″ — improves accessibility and perceived spaciousness.' },
     ],
     '$15,000–$40,000': [
       { upgrade: 'Master bath full renovation (UD)', cost: '$8,000–20,000', roiBoost: '+$12,000–25,000', difficulty: 'High', desc: 'Zero-threshold shower, grab bars, comfort toilet, wide doorway — full universal design.' },
@@ -65,7 +65,7 @@ const upgradeMap: AgeMap = {
     ],
     '$5,000–$15,000': [
       { upgrade: 'Walk-in shower conversion', cost: '$3,500–9,000', roiBoost: '+$7,000–16,000', difficulty: 'High', desc: 'Most homes from this era have tub-only bathrooms — high ROI conversion.' },
-      { upgrade: 'Widen key doorways (2–3 doors)', cost: '$1,500–4,000', roiBoost: '+$2,000–5,000', difficulty: 'High', desc: 'Older homes have 28–30" doors — widening to 36" is significant structural upgrade.' },
+      { upgrade: 'Widen key doorways (2–3 doors)', cost: '$1,500–4,000', roiBoost: '+$2,000–5,000', difficulty: 'High', desc: 'Older homes have 28–30″ doors — widening to 36″ is significant structural upgrade.' },
       { upgrade: 'HVAC smart thermostat + zoning', cost: '$1,000–3,500', roiBoost: '+$2,000–5,000', difficulty: 'Medium', desc: 'Older HVAC systems benefit most from smart control — DFW energy savings.' },
     ],
     '$15,000–$40,000': [
@@ -98,7 +98,7 @@ const upgradeMap: AgeMap = {
   },
 };
 
-const diffColors: Record<string, string> = { Low: '#22c55e', Medium: '#f97316', High: '#ef4444' };
+const diffColors: Record<string, string> = { Low: '#22c55e', Medium: '#f97316', High: '#ef4444′ };
 
 export default function DFWUniversalDesignGuide() {
   const [homeAge, setHomeAge] = useState('');
@@ -123,11 +123,11 @@ export default function DFWUniversalDesignGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             {[
               { icon: '🚪', t: 'Zero-Step Entry', d: 'No threshold between outside and inside — wheelchair, stroller, and grocery cart accessible' },
-              { icon: '🛋️', t: 'Open Floor Plans', d: 'Wide circulation paths (42"+ hallways) for walkers, wheelchairs, and aging mobility' },
+              { icon: '🛋️', t: 'Open Floor Plans', d: 'Wide circulation paths (42″+ hallways) for walkers, wheelchairs, and aging mobility' },
               { icon: '🔧', t: 'Lever Handles', d: 'All doors — lever handles instead of knobs, operable with closed fist or elbow' },
               { icon: '💡', t: 'Rocker Switches', d: 'Wide rocker light switches — operable without fine motor control' },
               { icon: '🚿', t: 'Curbless Showers', d: 'Zero-threshold entry — universally safer and preferred by all ages' },
-              { icon: '📐', t: '36" Doorways', d: 'Minimum for wheelchair access — also feels more spacious to all buyers' },
+              { icon: '📐', t: '36″ Doorways', d: 'Minimum for wheelchair access — also feels more spacious to all buyers' },
             ].map((p) => (
               <div key={p.t} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 22, marginBottom: 6 }}>{p.icon}</div>
@@ -190,7 +190,7 @@ export default function DFWUniversalDesignGuide() {
                   </div>
                   <div style={{ display: 'flex', gap: 16, marginBottom: 8, flexWrap: 'wrap' }}>
                     <span style={{ color: '#94a3b8', fontSize: 13 }}>Cost: <strong style={{ color: '#fff' }}>{u.cost}</strong></span>
-                    <span style={{ color: '#94a3b8', fontSize: 13 }}>Resale boost: <strong style={{ color: '#F5E642' }}>{u.roiBoost}</strong></span>
+                    <span style={{ color: '#94a3b8', fontSize: 13 }}>Resale boost: <strong style={{ color: '#F5E642′ }}>{u.roiBoost}</strong></span>
                   </div>
                   <div style={{ color: '#94a3b8', fontSize: 13 }}>{u.desc}</div>
                 </div>

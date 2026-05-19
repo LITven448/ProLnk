@@ -55,7 +55,7 @@ function downloadCsv(data: any[], filename: string) {
 }
 
 export default function TaxEstimator() {
-  const [grossIncome, setGrossIncome] = useState("48000");
+  const [grossIncome, setGrossIncome] = useState("48000″);
   const [deductionValues, setDeductionValues] = useState<Record<string, string>>({});
   const [filingStatus, setFilingStatus] = useState<"single" | "married">("single");
 
@@ -64,7 +64,7 @@ export default function TaxEstimator() {
   const gross = parseFloat(grossIncome) || 0;
 
   const totalDeductions = DEDUCTIONS.reduce((sum, d) => {
-    const val = parseFloat(deductionValues[d.key] || "0") || 0;
+    const val = parseFloat(deductionValues[d.key] || "0″) || 0;
     return sum + val * d.multiplier;
   }, 0);
 
@@ -84,29 +84,29 @@ export default function TaxEstimator() {
 
     <PartnerLayout>
 
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6″>
       <div className="max-w-3xl mx-auto">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-slate-900">Tax Estimator</h1>
-          <p className="text-slate-500 mt-1">Estimate your self-employment tax and quarterly payments</p>
-          <div className="mt-2 p-2 bg-amber-50 border border-amber-200 rounded-lg flex items-center gap-2 text-xs text-amber-700">
-            <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+        <div className="mb-6″>
+          <h1 className="text-3xl font-bold text-slate-900″>Tax Estimator</h1>
+          <p className="text-slate-500 mt-1″>Estimate your self-employment tax and quarterly payments</p>
+          <div className="mt-2 p-2 bg-amber-50 border border-amber-200 rounded-lg flex items-center gap-2 text-xs text-amber-700″>
+            <AlertCircle className="w-3.5 h-3.5 flex-shrink-0″ />
             This is an estimate only. Consult a tax professional for filing.
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
           {/* Inputs */}
-          <div className="space-y-4">
+          <div className="space-y-4″>
             {/* Gross Income */}
             <Card>
               <CardHeader><CardTitle className="text-sm">Annual Gross Income</CardTitle></CardHeader>
               <CardContent>
                 <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400″ />
                   <Input type="number" value={grossIncome} onChange={e => setGrossIncome(e.target.value)} className="pl-8 text-lg font-bold" />
                 </div>
-                <div className="flex gap-2 mt-2">
+                <div className="flex gap-2 mt-2″>
                   {["single", "married"].map(s => (
                     <button
                       key={s}
@@ -122,13 +122,13 @@ export default function TaxEstimator() {
 
             {/* Deductions */}
             <Card>
-              <CardHeader><CardTitle className="text-sm flex items-center gap-2"><TrendingDown className="w-4 h-4 text-green-500" /> Business Deductions</CardTitle></CardHeader>
-              <CardContent className="space-y-3">
+              <CardHeader><CardTitle className="text-sm flex items-center gap-2″><TrendingDown className="w-4 h-4 text-green-500" /> Business Deductions</CardTitle></CardHeader>
+              <CardContent className="space-y-3″>
                 {DEDUCTIONS.map(d => (
                   <div key={d.key}>
                     <label className="text-xs font-medium text-slate-600 mb-1 block">{d.label}</label>
                     <div className="relative">
-                      <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+                      <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400″ />
                       <Input
                         type="number"
                         placeholder={d.placeholder}
@@ -138,7 +138,7 @@ export default function TaxEstimator() {
                       />
                     </div>
                     {deductionValues[d.key] && (
-                      <div className="text-xs text-green-600 mt-0.5">
+                      <div className="text-xs text-green-600 mt-0.5″>
                         Deduction: ${(parseFloat(deductionValues[d.key]) * d.multiplier).toFixed(0)}
                       </div>
                     )}
@@ -150,38 +150,38 @@ export default function TaxEstimator() {
 
           {/* Results */}
           <div>
-            <Card className="sticky top-6">
-              <CardHeader><CardTitle className="text-sm flex items-center gap-2"><Calculator className="w-4 h-4" /> Tax Summary</CardTitle></CardHeader>
-              <CardContent className="space-y-3">
+            <Card className="sticky top-6″>
+              <CardHeader><CardTitle className="text-sm flex items-center gap-2″><Calculator className="w-4 h-4" /> Tax Summary</CardTitle></CardHeader>
+              <CardContent className="space-y-3″>
                 <div className="space-y-1.5 text-sm">
-                  <div className="flex justify-between"><span className="text-slate-500">Gross Income</span><span className="font-medium">${gross.toLocaleString()}</span></div>
-                  <div className="flex justify-between text-green-600"><span>Business Deductions</span><span>-${totalDeductions.toFixed(0)}</span></div>
-                  <div className="flex justify-between text-green-600"><span>SE Tax Deduction</span><span>-${seDeduction.toFixed(0)}</span></div>
-                  <div className="flex justify-between text-green-600"><span>QBI Deduction (20%)</span><span>-${qbiDeduction.toFixed(0)}</span></div>
-                  <div className="flex justify-between text-green-600"><span>Standard Deduction</span><span>-${standardDeduction.toLocaleString()}</span></div>
-                  <div className="flex justify-between font-semibold border-t pt-1.5"><span>Taxable Income</span><span>${taxableIncome.toLocaleString()}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-500″>Gross Income</span><span className="font-medium">${gross.toLocaleString()}</span></div>
+                  <div className="flex justify-between text-green-600″><span>Business Deductions</span><span>-${totalDeductions.toFixed(0)}</span></div>
+                  <div className="flex justify-between text-green-600″><span>SE Tax Deduction</span><span>-${seDeduction.toFixed(0)}</span></div>
+                  <div className="flex justify-between text-green-600″><span>QBI Deduction (20%)</span><span>-${qbiDeduction.toFixed(0)}</span></div>
+                  <div className="flex justify-between text-green-600″><span>Standard Deduction</span><span>-${standardDeduction.toLocaleString()}</span></div>
+                  <div className="flex justify-between font-semibold border-t pt-1.5″><span>Taxable Income</span><span>${taxableIncome.toLocaleString()}</span></div>
                 </div>
 
-                <div className="space-y-1.5 text-sm border-t pt-2">
-                  <div className="flex justify-between"><span className="text-slate-500">Federal Income Tax</span><span className="text-red-500">-${federalTax.toFixed(0)}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-500">Self-Employment Tax</span><span className="text-red-500">-${seTax.toFixed(0)}</span></div>
-                  <div className="flex justify-between font-bold text-base border-t pt-1.5"><span>Total Tax Owed</span><span className="text-red-600">-${totalTax.toFixed(0)}</span></div>
+                <div className="space-y-1.5 text-sm border-t pt-2″>
+                  <div className="flex justify-between"><span className="text-slate-500″>Federal Income Tax</span><span className="text-red-500">-${federalTax.toFixed(0)}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-500″>Self-Employment Tax</span><span className="text-red-500">-${seTax.toFixed(0)}</span></div>
+                  <div className="flex justify-between font-bold text-base border-t pt-1.5″><span>Total Tax Owed</span><span className="text-red-600">-${totalTax.toFixed(0)}</span></div>
                 </div>
 
-                <div className="bg-indigo-50 rounded-xl p-3 space-y-2">
+                <div className="bg-indigo-50 rounded-xl p-3 space-y-2″>
                   <div className="flex justify-between text-sm font-semibold">
                     <span>Effective Rate</span>
-                    <span className="text-indigo-700">{effectiveRate.toFixed(1)}%</span>
+                    <span className="text-indigo-700″>{effectiveRate.toFixed(1)}%</span>
                   </div>
                   <div className="flex justify-between text-sm font-semibold">
                     <span>Quarterly Payment</span>
-                    <span className="text-indigo-700">${quarterlyPayment.toFixed(0)}</span>
+                    <span className="text-indigo-700″>${quarterlyPayment.toFixed(0)}</span>
                   </div>
-                  <div className="text-xs text-indigo-600">Due: Apr 15 · Jun 16 · Sep 15 · Jan 15</div>
+                  <div className="text-xs text-indigo-600″>Due: Apr 15 · Jun 16 · Sep 15 · Jan 15</div>
                 </div>
 
-                <div className="bg-green-50 rounded-xl p-3 text-xs text-green-700">
-                  <div className="font-semibold mb-1">💡 Tax Tip</div>
+                <div className="bg-green-50 rounded-xl p-3 text-xs text-green-700″>
+                  <div className="font-semibold mb-1″>💡 Tax Tip</div>
                   You saved <strong>${(totalDeductions + qbiDeduction).toFixed(0)}</strong> through deductions. Keep receipts for all business expenses.
                 </div>
 
@@ -201,15 +201,15 @@ export default function TaxEstimator() {
                   <tr class="highlight"><td>Effective Rate</td><td>${effectiveRate.toFixed(1)}%</td></tr>
                   <tr><td>Quarterly Payment (est.)</td><td>$${quarterlyPayment.toFixed(0)}</td></tr>
                   </tbody></table>
-                  <p style="font-size:11px;color:#94a3b8">⚠️ This is an estimate only. Consult a tax professional for filing.</p>
+                  <p style="font-size:11px;color:#94a3b8″>⚠️ This is an estimate only. Consult a tax professional for filing.</p>
                   <div class="footer">Generated by ProLnk Partner Platform &bull; ${new Date().toLocaleDateString()}</div>
                   </body></html>`;
                   const w = window.open('', '_blank');
                   if (w) { w.document.write(printContent); w.document.close(); w.print(); }
                 }}>
-                  <FileText className="w-4 h-4 mr-2" /> Download Summary
+                  <FileText className="w-4 h-4 mr-2″ /> Download Summary
                 </Button>
-                <Button variant="outline" className="w-full mt-2" onClick={() => {
+                <Button variant="outline" className="w-full mt-2″ onClick={() => {
                   const year = new Date().getFullYear();
                   const exportData = commissions.map((c: any) => ({
                     Date: c.paidAt ? new Date(c.paidAt).toLocaleDateString() : "",
@@ -220,7 +220,7 @@ export default function TaxEstimator() {
                   }));
                   downloadCsv(exportData, `prolnk-1099-earnings-${year}.csv`);
                 }}>
-                  <Download className="w-4 h-4 mr-2" /> Export 1099 CSV
+                  <Download className="w-4 h-4 mr-2″ /> Export 1099 CSV
                 </Button>
               </CardContent>
             </Card>

@@ -7,13 +7,13 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 
-type Phase = "week1" | "month1" | "month3" | "year1";
+type Phase = "week1″ | "month1" | "month3" | "year1";
 
 const PHASES: { id: Phase; label: string; subtitle: string; color: string; accent: string }[] = [
-  { id: "week1", label: "Week 1", subtitle: "Get Activated", color: "#22c55e", accent: "rgba(34,197,94,0.12)" },
-  { id: "month1", label: "Month 1", subtitle: "Build Momentum", color: "#3b82f6", accent: "rgba(59,130,246,0.12)" },
-  { id: "month3", label: "Month 3", subtitle: "Grow Your Network", color: "#a855f7", accent: "rgba(168,85,247,0.12)" },
-  { id: "year1", label: "Year 1", subtitle: "Passive Income", color: "#f59e0b", accent: "rgba(245,158,11,0.12)" },
+  { id: "week1″, label: "Week 1", subtitle: "Get Activated", color: "#22c55e", accent: "rgba(34,197,94,0.12)" },
+  { id: "month1″, label: "Month 1", subtitle: "Build Momentum", color: "#3b82f6", accent: "rgba(59,130,246,0.12)" },
+  { id: "month3″, label: "Month 3", subtitle: "Grow Your Network", color: "#a855f7", accent: "rgba(168,85,247,0.12)" },
+  { id: "year1″, label: "Year 1", subtitle: "Passive Income", color: "#f59e0b", accent: "rgba(245,158,11,0.12)" },
 ];
 
 interface Milestone {
@@ -180,21 +180,21 @@ const MILESTONES: Record<Phase, Milestone[]> = {
 
 const INCOME_STREAMS = [
   { label: "Direct Commissions", desc: "From matched jobs you close", rates: ["Standard: 12%", "Tier 2: 20%", "Tier 3: 35%", "Tier 4: 50%", "Tier 5: 70%"], color: "#22c55e" },
-  { label: "Subscription Overrides", desc: "Monthly recurring on every recruit's $149", rates: ["Standard: 7%", "Charter: 12%", "Founding: 12%"], color: "#3b82f6" },
-  { label: "Job Overrides (4-Level)", desc: "% of jobs completed by your network", rates: ["L1: 1%", "L2: 0.5%", "L3: 0.25%", "L4: 0.1%"], color: "#a855f7" },
+  { label: "Subscription Overrides", desc: "Monthly recurring on every recruit's $149″, rates: ["Standard: 7%", "Charter: 12%", "Founding: 12%"], color: "#3b82f6" },
+  { label: "Job Overrides (4-Level)", desc: "% of jobs completed by your network", rates: ["L1: 1%", "L2: 0.5%", "L3: 0.25%", "L4: 0.1%"], color: "#a855f7″ },
   { label: "Homeowner Origination", desc: "Per-lead fee on homeowners you source", rates: ["$25–$100 per qualified homeowner"], color: "#f59e0b" },
-  { label: "Home Origination Rights", desc: "Permanent share of platform fees on vaulted homes", rates: ["1.5% of all future platform fees per home", "Permanent once logged"], color: "#ec4899" },
+  { label: "Home Origination Rights", desc: "Permanent share of platform fees on vaulted homes", rates: ["1.5% of all future platform fees per home", "Permanent once logged"], color: "#ec4899″ },
 ];
 
 const FIRST_30_STEPS = [
-  { day: "Day 1", action: "Complete profile to 100%", impact: "3× match rate", color: "#22c55e" },
-  { day: "Day 2", action: "Enable push notifications", impact: "15-min response = 60% conversion", color: "#22c55e" },
-  { day: "Day 3", action: "Send referral link to 3 contacts", impact: "$53.64/mo passive if all activate", color: "#3b82f6" },
-  { day: "Day 4", action: "Accept your first lead", impact: "Starts your job counter toward Tier 2", color: "#3b82f6" },
-  { day: "Day 7", action: "Log first home to vault", impact: "Permanent 1.5% origination right", color: "#a855f7" },
-  { day: "Day 10", action: "Request 3 homeowner reviews", impact: "+15% match volume per 0.5 stars", color: "#a855f7" },
-  { day: "Day 20", action: "Post referral link to Facebook group", impact: "Avg 1–2 signups per post", color: "#f59e0b" },
-  { day: "Day 30", action: "Track: jobs logged, recruits, homes vaulted", impact: "Sets your Month 2 baseline", color: "#f59e0b" },
+  { day: "Day 1″, action: "Complete profile to 100%", impact: "3× match rate", color: "#22c55e" },
+  { day: "Day 2″, action: "Enable push notifications", impact: "15-min response = 60% conversion", color: "#22c55e" },
+  { day: "Day 3″, action: "Send referral link to 3 contacts", impact: "$53.64/mo passive if all activate", color: "#3b82f6" },
+  { day: "Day 4″, action: "Accept your first lead", impact: "Starts your job counter toward Tier 2", color: "#3b82f6" },
+  { day: "Day 7″, action: "Log first home to vault", impact: "Permanent 1.5% origination right", color: "#a855f7" },
+  { day: "Day 10″, action: "Request 3 homeowner reviews", impact: "+15% match volume per 0.5 stars", color: "#a855f7" },
+  { day: "Day 20″, action: "Post referral link to Facebook group", impact: "Avg 1–2 signups per post", color: "#f59e0b" },
+  { day: "Day 30″, action: "Track: jobs logged, recruits, homes vaulted", impact: "Sets your Month 2 baseline", color: "#f59e0b" },
 ];
 
 function IncomeCalculator() {
@@ -215,7 +215,7 @@ function IncomeCalculator() {
   const total = directIncome + subOverride + l1Override + l2Override + origIncome;
 
   return (
-    <div style={{ background: "#1a1d27", borderRadius: 16, border: "1px solid #1e2330", padding: 28 }}>
+    <div style={{ background: "#1a1d27″, borderRadius: 16, border: "1px solid #1e2330", padding: 28 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
         <BarChart3 size={18} color="#22c55e" />
         <h3 style={{ margin: 0, fontSize: 17, fontWeight: 700, color: "#fff" }}>Your Pace Income Projection</h3>
@@ -234,10 +234,10 @@ function IncomeCalculator() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px,1fr))", gap: 12, marginBottom: 20 }}>
         <ResultCard label="Direct commissions" value={`$${Math.round(directIncome).toLocaleString()}`} color="#22c55e" />
-        <ResultCard label="Subscription overrides" value={`$${Math.round(subOverride).toLocaleString()}`} color="#3b82f6" />
-        <ResultCard label="L1 job overrides" value={`$${Math.round(l1Override).toLocaleString()}`} color="#a855f7" />
-        <ResultCard label="L2 job overrides" value={`$${Math.round(l2Override).toLocaleString()}`} color="#8b5cf6" />
-        <ResultCard label="Origination rights" value={`$${Math.round(origIncome).toLocaleString()}`} color="#ec4899" />
+        <ResultCard label="Subscription overrides" value={`$${Math.round(subOverride).toLocaleString()}`} color="#3b82f6″ />
+        <ResultCard label="L1 job overrides" value={`$${Math.round(l1Override).toLocaleString()}`} color="#a855f7″ />
+        <ResultCard label="L2 job overrides" value={`$${Math.round(l2Override).toLocaleString()}`} color="#8b5cf6″ />
+        <ResultCard label="Origination rights" value={`$${Math.round(origIncome).toLocaleString()}`} color="#ec4899″ />
       </div>
 
       <div style={{
@@ -247,16 +247,16 @@ function IncomeCalculator() {
         display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
       }}>
         <div>
-          <div style={{ color: "#6b7280", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>Projected Monthly Total</div>
+          <div style={{ color: "#6b7280″, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>Projected Monthly Total</div>
           <div style={{ fontSize: 36, fontWeight: 800, color: "#22c55e" }}>${Math.round(total).toLocaleString()}</div>
-          <div style={{ color: "#4b5563", fontSize: 11, marginTop: 2 }}>${Math.round(total * 12).toLocaleString()}/yr</div>
+          <div style={{ color: "#4b5563″, fontSize: 11, marginTop: 2 }}>${Math.round(total * 12).toLocaleString()}/yr</div>
         </div>
         <div style={{ textAlign: "right" }}>
-          <div style={{ color: "#6b7280", fontSize: 12, marginBottom: 4 }}>Passive income (overrides + orig)</div>
-          <div style={{ fontSize: 22, fontWeight: 700, color: "#3b82f6" }}>
+          <div style={{ color: "#6b7280″, fontSize: 12, marginBottom: 4 }}>Passive income (overrides + orig)</div>
+          <div style={{ fontSize: 22, fontWeight: 700, color: "#3b82f6″ }}>
             ${Math.round(subOverride + l1Override + l2Override + origIncome).toLocaleString()}/mo
           </div>
-          <div style={{ color: "#4b5563", fontSize: 11 }}>while you sleep</div>
+          <div style={{ color: "#4b5563″, fontSize: 11 }}>while you sleep</div>
         </div>
       </div>
     </div>
@@ -282,10 +282,10 @@ function Slider({ label, value, min, max, step = 1, onChange, display }: {
 
 function ResultCard({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div style={{ background: "#141720", borderRadius: 10, border: "1px solid #1e2330", padding: "14px 16px" }}>
-      <div style={{ color: "#6b7280", fontSize: 11, marginBottom: 6 }}>{label}</div>
+    <div style={{ background: "#141720″, borderRadius: 10, border: "1px solid #1e2330", padding: "14px 16px" }}>
+      <div style={{ color: "#6b7280″, fontSize: 11, marginBottom: 6 }}>{label}</div>
       <div style={{ fontSize: 20, fontWeight: 800, color }}>{value}</div>
-      <div style={{ color: "#374151", fontSize: 10, marginTop: 2 }}>per month</div>
+      <div style={{ color: "#374151″, fontSize: 10, marginTop: 2 }}>per month</div>
     </div>
   );
 }
@@ -293,7 +293,7 @@ function ResultCard({ label, value, color }: { label: string; value: string; col
 function MilestoneCard({ milestone, color, accent }: { milestone: Milestone; color: string; accent: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background: "#1a1d27", border: `1px solid ${color}30`, borderRadius: 14, overflow: "hidden" }}>
+    <div style={{ background: "#1a1d27″, border: `1px solid ${color}30`, borderRadius: 14, overflow: "hidden" }}>
       <button
         onClick={() => setOpen(o => !o)}
         style={{
@@ -305,7 +305,7 @@ function MilestoneCard({ milestone, color, accent }: { milestone: Milestone; col
         <div style={{ width: 10, height: 10, borderRadius: "50%", background: color, marginTop: 5, flexShrink: 0 }} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 4 }}>{milestone.action}</div>
-          <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 6 }}>{milestone.outcome}</div>
+          <div style={{ fontSize: 12, color: "#6b7280″, marginBottom: 6 }}>{milestone.outcome}</div>
           <span style={{
             display: "inline-block", fontSize: 12, fontWeight: 700,
             color, background: `${color}18`, borderRadius: 6, padding: "2px 10px",
@@ -313,7 +313,7 @@ function MilestoneCard({ milestone, color, accent }: { milestone: Milestone; col
             {milestone.incomeIncrease}
           </span>
         </div>
-        <div style={{ color: "#4b5563", flexShrink: 0, marginTop: 2 }}>
+        <div style={{ color: "#4b5563″, flexShrink: 0, marginTop: 2 }}>
           {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </div>
       </button>
@@ -321,7 +321,7 @@ function MilestoneCard({ milestone, color, accent }: { milestone: Milestone; col
       {open && (
         <div style={{ padding: "0 20px 18px 44px", borderTop: `1px solid ${color}20` }}>
           <div style={{ paddingTop: 14 }}>
-            <div style={{ color: "#6b7280", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>Action Steps</div>
+            <div style={{ color: "#6b7280″, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>Action Steps</div>
             {milestone.steps.map((step, i) => (
               <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8 }}>
                 <div style={{
@@ -351,25 +351,25 @@ function NetworkMultiplier() {
   const total = subOverride + jobOverride + l2Override;
 
   return (
-    <div style={{ background: "#1a1d27", borderRadius: 16, border: "1px solid rgba(168,85,247,0.3)", padding: 28 }}>
+    <div style={{ background: "#1a1d27″, borderRadius: 16, border: "1px solid rgba(168,85,247,0.3)", padding: 28 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-        <Network size={18} color="#a855f7" />
+        <Network size={18} color="#a855f7″ />
         <h3 style={{ margin: 0, fontSize: 17, fontWeight: 700, color: "#fff" }}>Network Multiplier</h3>
       </div>
-      <p style={{ color: "#6b7280", fontSize: 13, marginBottom: 24 }}>
+      <p style={{ color: "#6b7280″, fontSize: 13, marginBottom: 24 }}>
         See exactly how adding recruits changes your passive income — independent of your own job volume.
       </p>
 
       <div style={{ marginBottom: 24 }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
           <span style={{ color: "#9ca3af", fontSize: 13 }}>Active L1 recruits</span>
-          <span style={{ color: "#a855f7", fontSize: 14, fontWeight: 800 }}>{recruits}</span>
+          <span style={{ color: "#a855f7″, fontSize: 14, fontWeight: 800 }}>{recruits}</span>
         </div>
         <input type="range" min={1} max={100} value={recruits} onChange={e => setRecruits(Number(e.target.value))}
-          style={{ width: "100%", accentColor: "#a855f7" }} />
+          style={{ width: "100%", accentColor: "#a855f7″ }} />
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4 }}>
-          <span style={{ color: "#374151", fontSize: 11 }}>1 recruit</span>
-          <span style={{ color: "#374151", fontSize: 11 }}>100 recruits</span>
+          <span style={{ color: "#374151″, fontSize: 11 }}>1 recruit</span>
+          <span style={{ color: "#374151″, fontSize: 11 }}>100 recruits</span>
         </div>
       </div>
 
@@ -378,23 +378,23 @@ function NetworkMultiplier() {
         <div style={{ textAlign: "center", flexShrink: 0 }}>
           <div style={{
             width: 44, height: 44, borderRadius: "50%",
-            background: "rgba(168,85,247,0.2)", border: "2px solid #a855f7",
+            background: "rgba(168,85,247,0.2)", border: "2px solid #a855f7″,
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: 18, margin: "0 auto 4px",
           }}>You</div>
-          <div style={{ fontSize: 10, color: "#6b7280" }}>You</div>
+          <div style={{ fontSize: 10, color: "#6b7280″ }}>You</div>
         </div>
-        <div style={{ color: "#374151", fontSize: 18 }}>→</div>
+        <div style={{ color: "#374151″, fontSize: 18 }}>→</div>
         <div style={{ textAlign: "center", flexShrink: 0 }}>
           <div style={{
             width: 44, height: 44, borderRadius: "50%",
-            background: "rgba(59,130,246,0.15)", border: "2px solid #3b82f6",
+            background: "rgba(59,130,246,0.15)", border: "2px solid #3b82f6″,
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 13, fontWeight: 800, color: "#3b82f6", margin: "0 auto 4px",
+            fontSize: 13, fontWeight: 800, color: "#3b82f6″, margin: "0 auto 4px",
           }}>{recruits}</div>
-          <div style={{ fontSize: 10, color: "#6b7280" }}>L1</div>
+          <div style={{ fontSize: 10, color: "#6b7280″ }}>L1</div>
         </div>
-        <div style={{ color: "#374151", fontSize: 18 }}>→</div>
+        <div style={{ color: "#374151″, fontSize: 18 }}>→</div>
         <div style={{ textAlign: "center", flexShrink: 0 }}>
           <div style={{
             width: 44, height: 44, borderRadius: "50%",
@@ -402,20 +402,20 @@ function NetworkMultiplier() {
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: 13, fontWeight: 800, color: "#22c55e", margin: "0 auto 4px",
           }}>{l2Est}</div>
-          <div style={{ fontSize: 10, color: "#6b7280" }}>L2 est.</div>
+          <div style={{ fontSize: 10, color: "#6b7280″ }}>L2 est.</div>
         </div>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px,1fr))", gap: 12, marginBottom: 20 }}>
         {[
-          { label: "Subscription overrides", value: `$${Math.round(subOverride).toLocaleString()}`, color: "#3b82f6", note: `${recruits} × $149 × 7%` },
-          { label: "L1 job overrides", value: `$${Math.round(jobOverride).toLocaleString()}`, color: "#a855f7", note: `${recruits} × 4 jobs × $800 × 1%` },
+          { label: "Subscription overrides", value: `$${Math.round(subOverride).toLocaleString()}`, color: "#3b82f6″, note: `${recruits} × $149 × 7%` },
+          { label: "L1 job overrides", value: `$${Math.round(jobOverride).toLocaleString()}`, color: "#a855f7″, note: `${recruits} × 4 jobs × $800 × 1%` },
           { label: "L2 job overrides", value: `$${Math.round(l2Override).toLocaleString()}`, color: "#22c55e", note: `${l2Est} × 3 jobs × $800 × 0.5%` },
         ].map(s => (
-          <div key={s.label} style={{ background: "#141720", borderRadius: 10, border: "1px solid #1e2330", padding: "14px 16px" }}>
-            <div style={{ color: "#6b7280", fontSize: 11, marginBottom: 6 }}>{s.label}</div>
+          <div key={s.label} style={{ background: "#141720″, borderRadius: 10, border: "1px solid #1e2330", padding: "14px 16px" }}>
+            <div style={{ color: "#6b7280″, fontSize: 11, marginBottom: 6 }}>{s.label}</div>
             <div style={{ fontSize: 20, fontWeight: 800, color: s.color }}>{s.value}/mo</div>
-            <div style={{ color: "#374151", fontSize: 10, marginTop: 4 }}>{s.note}</div>
+            <div style={{ color: "#374151″, fontSize: 10, marginTop: 4 }}>{s.note}</div>
           </div>
         ))}
       </div>
@@ -425,15 +425,15 @@ function NetworkMultiplier() {
         borderRadius: 12, padding: "16px 20px", textAlign: "center",
       }}>
         <div style={{ color: "#9ca3af", fontSize: 12, marginBottom: 4 }}>Total passive income from {recruits} recruits</div>
-        <div style={{ fontSize: 34, fontWeight: 800, color: "#a855f7" }}>${Math.round(total).toLocaleString()}/mo</div>
-        <div style={{ color: "#6b7280", fontSize: 12, marginTop: 4 }}>not counting your own direct job income</div>
+        <div style={{ fontSize: 34, fontWeight: 800, color: "#a855f7″ }}>${Math.round(total).toLocaleString()}/mo</div>
+        <div style={{ color: "#6b7280″, fontSize: 12, marginTop: 4 }}>not counting your own direct job income</div>
       </div>
     </div>
   );
 }
 
 export default function MaximizeEarnings() {
-  const [activePhase, setActivePhase] = useState<Phase>("week1");
+  const [activePhase, setActivePhase] = useState<Phase>("week1″);
 
   const phase = PHASES.find(p => p.id === activePhase)!;
   const milestones = MILESTONES[activePhase];
@@ -448,12 +448,12 @@ export default function MaximizeEarnings() {
         />
       </Helmet>
 
-      <div style={{ minHeight: "100vh", background: "#0f1117", color: "#e5e7eb", fontFamily: "sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: "#0f1117″, color: "#e5e7eb", fontFamily: "sans-serif" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "32px 20px 64px" }}>
 
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <Link href="/resources" style={{ color: "#6b7280", fontSize: 13, textDecoration: "none" }}>Resources</Link>
-            <span style={{ color: "#374151" }}>›</span>
+            <Link href="/resources" style={{ color: "#6b7280″, fontSize: 13, textDecoration: "none" }}>Resources</Link>
+            <span style={{ color: "#374151″ }}>›</span>
             <span style={{ color: "#e5e7eb", fontSize: 13 }}>Earnings Playbook</span>
           </div>
 
@@ -482,7 +482,7 @@ export default function MaximizeEarnings() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))", gap: 12 }}>
               {FIRST_30_STEPS.map((step, i) => (
                 <div key={i} style={{
-                  background: "#1a1d27", borderRadius: 12, border: `1px solid ${step.color}25`,
+                  background: "#1a1d27″, borderRadius: 12, border: `1px solid ${step.color}25`,
                   padding: "16px 18px", display: "flex", gap: 14, alignItems: "flex-start",
                 }}>
                   <div style={{
@@ -511,9 +511,9 @@ export default function MaximizeEarnings() {
                 style={{
                   padding: "10px 20px",
                   borderRadius: 10,
-                  border: activePhase === p.id ? `1px solid ${p.color}` : "1px solid #1e2330",
-                  background: activePhase === p.id ? p.accent : "#1a1d27",
-                  color: activePhase === p.id ? p.color : "#6b7280",
+                  border: activePhase === p.id ? `1px solid ${p.color}` : "1px solid #1e2330″,
+                  background: activePhase === p.id ? p.accent : "#1a1d27″,
+                  color: activePhase === p.id ? p.color : "#6b7280″,
                   fontWeight: 700, fontSize: 14, cursor: "pointer", transition: "all 0.15s",
                   display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2,
                 }}
@@ -534,11 +534,11 @@ export default function MaximizeEarnings() {
             <Calendar size={18} color={phase.color} />
             <div>
               <div style={{ fontSize: 16, fontWeight: 700, color: phase.color }}>{phase.label}: {phase.subtitle}</div>
-              <div style={{ fontSize: 12, color: "#6b7280", marginTop: 2 }}>
-                {activePhase === "week1" && "3 milestones — complete all within your first 7 days to maximize early momentum"}
-                {activePhase === "month1" && "3 milestones — hit these to lock in Tier 2 rates and your first passive income stream"}
-                {activePhase === "month3" && "3 milestones — L2 network and origination rights compound your passive income"}
-                {activePhase === "year1" && "3 milestones — full network, passive income projection, and lifetime rate lock"}
+              <div style={{ fontSize: 12, color: "#6b7280″, marginTop: 2 }}>
+                {activePhase === "week1″ && "3 milestones — complete all within your first 7 days to maximize early momentum"}
+                {activePhase === "month1″ && "3 milestones — hit these to lock in Tier 2 rates and your first passive income stream"}
+                {activePhase === "month3″ && "3 milestones — L2 network and origination rights compound your passive income"}
+                {activePhase === "year1″ && "3 milestones — full network, passive income projection, and lifetime rate lock"}
               </div>
             </div>
           </div>
@@ -560,12 +560,12 @@ export default function MaximizeEarnings() {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))", gap: 12 }}>
               {INCOME_STREAMS.map((s, i) => (
-                <div key={i} style={{ background: "#1a1d27", borderRadius: 12, border: "1px solid #1e2330", padding: 18 }}>
+                <div key={i} style={{ background: "#1a1d27″, borderRadius: 12, border: "1px solid #1e2330", padding: 18 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", background: s.color }} />
                     <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>{s.label}</div>
                   </div>
-                  <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 10 }}>{s.desc}</div>
+                  <div style={{ fontSize: 12, color: "#6b7280″, marginBottom: 10 }}>{s.desc}</div>
                   {s.rates.map((r, ri) => (
                     <div key={ri} style={{ fontSize: 12, color: s.color, fontWeight: 600, marginBottom: 3 }}>• {r}</div>
                   ))}
@@ -584,16 +584,16 @@ export default function MaximizeEarnings() {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px,1fr))", gap: 12 }}>
               {[
-                { icon: Clock, color: "#ef4444", title: "Respond in 15 minutes", body: "Leads contacted within 15 min convert at 60% vs 17% after 1 hour. Enable push notifications now." },
-                { icon: Camera, color: "#3b82f6", title: "10+ work photos = 3× matches", body: "Pros with a full photo gallery get 3× more lead routes. Spend 20 minutes adding past project photos today." },
-                { icon: Users, color: "#a855f7", title: "One recruit text today", body: "The recruiting message that converts: tell a colleague you're getting leads from it and it's $149/mo flat. Honest peer tone wins." },
+                { icon: Clock, color: "#ef4444″, title: "Respond in 15 minutes", body: "Leads contacted within 15 min convert at 60% vs 17% after 1 hour. Enable push notifications now." },
+                { icon: Camera, color: "#3b82f6″, title: "10+ work photos = 3× matches", body: "Pros with a full photo gallery get 3× more lead routes. Spend 20 minutes adding past project photos today." },
+                { icon: Users, color: "#a855f7″, title: "One recruit text today", body: "The recruiting message that converts: tell a colleague you're getting leads from it and it’s $149/mo flat. Honest peer tone wins." },
                 { icon: Star, color: "#f59e0b", title: "Text for reviews immediately", body: "Send a review request within 24 hours. Every 0.5 stars higher = 15% more matches. This compounds." },
                 { icon: Home, color: "#22c55e", title: "Log every home address", body: "45 seconds after each job. Every home logged = permanent origination rights forever. Don't skip this." },
-                { icon: TrendingUp, color: "#ec4899", title: "Advance tier before month-end", body: "If you're 2–3 recruits from a tier upgrade, sprint to close it before the 28th. Locks in higher rates all next month." },
+                { icon: TrendingUp, color: "#ec4899″, title: "Advance tier before month-end", body: "If you're 2–3 recruits from a tier upgrade, sprint to close it before the 28th. Locks in higher rates all next month." },
               ].map((tip, i) => {
                 const Icon = tip.icon;
                 return (
-                  <div key={i} style={{ background: "#1a1d27", borderRadius: 12, border: "1px solid #1e2330", padding: 18, display: "flex", gap: 14 }}>
+                  <div key={i} style={{ background: "#1a1d27″, borderRadius: 12, border: "1px solid #1e2330", padding: 18, display: "flex", gap: 14 }}>
                     <div style={{
                       width: 36, height: 36, borderRadius: 10, flexShrink: 0,
                       background: `${tip.color}15`, display: "flex", alignItems: "center", justifyContent: "center",
@@ -602,7 +602,7 @@ export default function MaximizeEarnings() {
                     </div>
                     <div>
                       <div style={{ fontSize: 13, fontWeight: 700, color: "#fff", marginBottom: 4 }}>{tip.title}</div>
-                      <div style={{ fontSize: 12, color: "#6b7280", lineHeight: 1.55 }}>{tip.body}</div>
+                      <div style={{ fontSize: 12, color: "#6b7280″, lineHeight: 1.55 }}>{tip.body}</div>
                     </div>
                   </div>
                 );
@@ -636,7 +636,7 @@ export default function MaximizeEarnings() {
               <Link href="/resources/academy">
                 <button style={{
                   background: "transparent", color: "#9ca3af",
-                  border: "1px solid #374151", borderRadius: 10,
+                  border: "1px solid #374151″, borderRadius: 10,
                   padding: "13px 28px", fontSize: 14, fontWeight: 600, cursor: "pointer",
                 }}>
                   Go to ProLnk Academy

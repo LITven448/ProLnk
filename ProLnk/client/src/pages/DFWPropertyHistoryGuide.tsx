@@ -78,8 +78,8 @@ export default function DFWPropertyHistoryGuide() {
             {concernTypes.map(c => (
               <button key={c.key} onClick={() => setSelected(c.key)}
                 style={{ textAlign: 'left', padding: '14px 20px', borderRadius: 10, border: '2px solid', cursor: 'pointer',
-                  borderColor: selected === c.key ? '#F5E642' : '#E2E8F0',
-                  backgroundColor: selected === c.key ? '#FEFCE8' : '#F9FAFB',
+                  borderColor: selected === c.key ? '#F5E642′ : '#E2E8F0',
+                  backgroundColor: selected === c.key ? '#FEFCE8′ : '#F9FAFB',
                   color: '#0A1628', fontWeight: 600, fontSize: 15 }}>
                 {c.label}
               </button>
@@ -92,10 +92,10 @@ export default function DFWPropertyHistoryGuide() {
             <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <h3 style={{ color: '#0A1628', fontWeight: 700, marginBottom: 16 }}>Where to research in DFW:</h3>
               {match.resources.map((r, i) => (
-                <div key={i} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #F1F5F9' }}>
+                <div key={i} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #F1F5F9′ }}>
                   <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{r.name}</div>
                   <div style={{ fontSize: 13, color: '#64748B', marginBottom: 6 }}>🔗 {r.url}</div>
-                  <div style={{ color: '#334155' }}>{r.what}</div>
+                  <div style={{ color: '#334155′ }}>{r.what}</div>
                 </div>
               ))}
             </div>

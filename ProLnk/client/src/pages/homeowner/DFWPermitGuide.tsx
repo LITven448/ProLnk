@@ -78,8 +78,8 @@ export default function DFWPermitGuide() {
               {projectTypes.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
             </select>
             {result && (
-              <div style={{ borderRadius: '8px', padding: '1rem', background: result.permit ? '#1f2937' : '#052e16', border: `1px solid ${result.permit ? '#F5E642' : '#22c55e'}` }}>
-                <div style={{ fontSize: '1.4rem', fontWeight: 700, color: result.permit ? '#F5E642' : '#22c55e', marginBottom: '0.4rem' }}>
+              <div style={{ borderRadius: '8px', padding: '1rem', background: result.permit ? '#1f2937′ : '#052e16', border: `1px solid ${result.permit ? '#F5E642' : '#22c55e'}` }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 700, color: result.permit ? '#F5E642′ : '#22c55e', marginBottom: '0.4rem' }}>
                   {result.permit ? '📋 PERMIT REQUIRED' : '✅ NO PERMIT NEEDED'}
                 </div>
                 <div style={{ color: '#cbd5e1', fontSize: '0.95rem' }}>{result.note}</div>
@@ -93,17 +93,17 @@ export default function DFWPermitGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ background: '#1e2d45' }}>
+                <tr style={{ background: '#1e2d45′ }}>
                   {['City', 'Typical Wait', 'Permit Cost Range', 'Portal'].map(h => (
-                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #2d3f58' }}>{h}</th>
+                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #2d3f58′ }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {cities.map((c, i) => (
-                  <tr key={c.city} style={{ background: i % 2 === 0 ? '#111f36' : '#0A1628' }}>
+                  <tr key={c.city} style={{ background: i % 2 === 0 ? '#111f36′ : '#0A1628' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#fff', fontWeight: 600 }}>{c.city}</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>{c.wait}</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1′ }}>{c.wait}</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#F5E642', fontWeight: 600 }}>{c.cost}</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#60a5fa', fontSize: '0.9rem' }}>{c.portal}</td>
                   </tr>

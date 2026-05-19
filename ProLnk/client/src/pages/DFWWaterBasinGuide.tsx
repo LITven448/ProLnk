@@ -57,11 +57,11 @@ export default function DFWWaterBasinGuide() {
               </div>
               <div style={{ background: '#0F2040', borderRadius: 8, padding: '0.75rem', marginBottom: '0.75rem' }}>
                 <div style={{ color: '#F5E642', fontSize: '0.8rem', marginBottom: '0.4rem' }}>🏞 Water Sources</div>
-                {result.source.map(s => <div key={s} style={{ fontSize: '0.85rem', color: '#9BA3B8', padding: '0.2rem 0' }}>• {s}</div>)}
+                {result.source.map(s => <div key={s} style={{ fontSize: '0.85rem', color: '#9BA3B8', padding: '0.2rem 0′ }}>• {s}</div>)}
               </div>
               <div style={{ background: '#0F2040', borderRadius: 8, padding: '0.75rem' }}>
                 <div style={{ color: '#F5E642', fontSize: '0.8rem', marginBottom: '0.4rem' }}>⚗️ Treatment Methods</div>
-                <div style={{ fontSize: '0.85rem', color: '#9BA3B8' }}>{result.treatment}</div>
+                <div style={{ fontSize: '0.85rem', color: '#9BA3B8′ }}>{result.treatment}</div>
               </div>
             </div>
           )}

@@ -63,7 +63,7 @@ export default function DFWCapRateGuide() {
           <div style={{ background: '#f0f4ff', borderRadius: 10, padding: 18, marginBottom: 16, fontSize: 16, textAlign: 'center' }}>
             <strong>Cap Rate = Net Operating Income (NOI) ÷ Property Value × 100</strong>
           </div>
-          <p style={{ lineHeight: 1.8, color: '#333', margin: 0 }}>Cap rate tells you the unlevered return — what you'd earn if you paid all cash. It's the universal comparison tool for income properties. A 6% cap means for every $100K invested, you earn $6K/year in NOI before financing costs. Lower cap rates reflect lower perceived risk (premium locations, strong demand). Higher cap rates indicate higher risk or distress — but more cash flow today.</p>
+          <p style={{ lineHeight: 1.8, color: '#333', margin: 0 }}>Cap rate tells you the unlevered return — what you'd earn if you paid all cash. It’s the universal comparison tool for income properties. A 6% cap means for every $100K invested, you earn $6K/year in NOI before financing costs. Lower cap rates reflect lower perceived risk (premium locations, strong demand). Higher cap rates indicate higher risk or distress — but more cash flow today.</p>
         </section>
 
         <section style={{ marginBottom: 28 }}>
@@ -80,10 +80,10 @@ export default function DFWCapRateGuide() {
               </thead>
               <tbody>
                 {SUBMARKETS.map((s, i) => (
-                  <tr key={s.name} style={{ background: i % 2 === 0 ? '#f9f9f9' : '#fff', borderBottom: '1px solid #eee' }}>
+                  <tr key={s.name} style={{ background: i % 2 === 0 ? '#f9f9f9′ : '#fff', borderBottom: '1px solid #eee' }}>
                     <td style={{ padding: '11px 16px', fontWeight: 600 }}>{s.name}</td>
-                    <td style={{ padding: '11px 16px', textAlign: 'center', color: s.sfr >= 6.5 ? '#2a7a2a' : s.sfr <= 4.8 ? '#c00' : '#333', fontWeight: 700 }}>{s.sfr}%</td>
-                    <td style={{ padding: '11px 16px', textAlign: 'center', color: '#555' }}>{s.small_multi}%</td>
+                    <td style={{ padding: '11px 16px', textAlign: 'center', color: s.sfr >= 6.5 ? '#2a7a2a' : s.sfr <= 4.8 ? '#c00′ : '#333', fontWeight: 700 }}>{s.sfr}%</td>
+                    <td style={{ padding: '11px 16px', textAlign: 'center', color: '#555′ }}>{s.small_multi}%</td>
                     <td style={{ padding: '11px 16px', textAlign: 'center', fontWeight: 700 }}>{s.avg}%</td>
                   </tr>
                 ))}
@@ -99,7 +99,7 @@ export default function DFWCapRateGuide() {
             {RATE_SCENARIOS.map(s => (
               <div key={s.rate} style={{ background: '#f8f9fa', border: '1px solid #e0e0e0', borderRadius: 10, padding: 16 }}>
                 <div style={{ fontWeight: 800, fontSize: 18, color: '#0066cc', marginBottom: 6 }}>{s.rate}% mortgage</div>
-                <div style={{ fontWeight: 700, marginBottom: 6, color: '#333' }}>Target cap: {s.target}</div>
+                <div style={{ fontWeight: 700, marginBottom: 6, color: '#333′ }}>Target cap: {s.target}</div>
                 <div style={{ fontSize: 13, color: '#555', lineHeight: 1.5 }}>{s.note}</div>
               </div>
             ))}
@@ -108,7 +108,7 @@ export default function DFWCapRateGuide() {
 
         <section style={{ background: '#fff8e1', border: '1px solid #f5c542', borderRadius: 12, padding: 22, marginBottom: 28 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>⚠️ When Cap Rate Doesn't Matter</h2>
-          <div style={{ lineHeight: 1.8, color: '#333' }}>
+          <div style={{ lineHeight: 1.8, color: '#333′ }}>
             <p style={{ marginTop: 0 }}>Cap rate is irrelevant for <strong>value-add deals</strong> where current rents are below market. A distressed duplex with a 4% cap rate at current rents may have a 7.5% cap at stabilized market rents — but current cap rate would make it look like a bad deal. Always underwrite to <em>stabilized NOI</em> for value-add acquisitions in DFW gentrification neighborhoods like Oak Cliff, East Dallas, and South Fort Worth.</p>
           </div>
         </section>
@@ -118,19 +118,19 @@ export default function DFWCapRateGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 14 }}>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Purchase Price</label>
-              <input value={price} onChange={e => setPrice(e.target.value)} placeholder="e.g. 380000" style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={price} onChange={e => setPrice(e.target.value)} placeholder="e.g. 380000″ style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Annual NOI ($)</label>
-              <input value={noi} onChange={e => setNoi(e.target.value)} placeholder="e.g. 22000" style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={noi} onChange={e => setNoi(e.target.value)} placeholder="e.g. 22000″ style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Down Payment %</label>
               <select value={downPct} onChange={e => setDownPct(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15 }}>
-                <option value="20">20%</option>
-                <option value="25">25%</option>
-                <option value="30">30%</option>
-                <option value="100">100% (All Cash)</option>
+                <option value="20″>20%</option>
+                <option value="25″>25%</option>
+                <option value="30″>30%</option>
+                <option value="100″>100% (All Cash)</option>
               </select>
             </div>
             <div>
@@ -146,11 +146,11 @@ export default function DFWCapRateGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 14 }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: 13, color: '#555', marginBottom: 4 }}>Cap Rate</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: result.capRate >= 5.5 ? '#2a7a2a' : '#c00' }}>{result.capRate}%</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: result.capRate >= 5.5 ? '#2a7a2a' : '#c00′ }}>{result.capRate}%</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: 13, color: '#555', marginBottom: 4 }}>Cash-on-Cash Return</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: result.coc > 0 ? '#0066cc' : '#c00' }}>{result.coc}%</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: result.coc > 0 ? '#0066cc' : '#c00′ }}>{result.coc}%</div>
                 </div>
               </div>
               <div style={{ background: '#fff', borderRadius: 8, padding: 14, fontSize: 14, color: '#333', fontStyle: 'italic' }}>{result.comparison}</div>

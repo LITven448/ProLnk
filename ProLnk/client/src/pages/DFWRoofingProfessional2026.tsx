@@ -66,7 +66,7 @@ export default function DFWRoofingProfessional2026() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: 8, padding: 16, marginBottom: 16 }}>
-          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#F5E642' }}>⚠️ Storm chasers in DFW</div>
+          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#F5E642′ }}>⚠️ Storm chasers in DFW</div>
           <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}>After every major hail event, out-of-state storm chaser crews flood DFW. They often deliver substandard work and leave the state before warranty issues appear. Always verify a contractor has a permanent Texas business address and an active Texas contractor license before signing anything.</div>
         </div>
 

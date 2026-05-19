@@ -20,7 +20,7 @@ const carePlans: Record<string, CareResult> = {
   '16+ piers (major repair)-Winter (Dec–Feb)': { wateringSchedule: '2x per week minimum, 30–50 gal. No neglect during dry stretches.', firstMonth: 'Winter major repair is lower risk but spring transition is high risk.', months2to6: 'Aggressive spring preparation. Surveyor at month 6 (likely June/July).', monitoring: ['Bimonthly all winter', 'Daily monitoring from March–May'], callBack: 'Spring transition — highest failure risk for winter major repairs' },
   'Full slab lift-Spring (Mar–May)': { wateringSchedule: 'Daily, 80–120 gal. Professional irrigation system required.', firstMonth: 'Full slab lift is the most intensive repair possible. Follow contractor post-care document exactly.', months2to6: 'Structural engineer re-evaluation at months 3, 6, and 12. Document obsessively.', monitoring: ['Professional survey months 3, 6, 12', 'Weekly interior inspection', 'Keep contractor on speed dial'], callBack: 'Immediately on any change — you have a full warranty, use it aggressively' },
   'Full slab lift-Summer (Jun–Aug)': { wateringSchedule: 'Daily, 100+ gal. Hire irrigation professional to set up and monitor.', firstMonth: 'Highest risk scenario. Consider delaying non-urgent full lifts until fall.', months2to6: 'Intensive monitoring protocol. PE surveys at months 3, 6, 12.', monitoring: ['PE survey every 3 months year one', 'Daily soil moisture readings', 'Full photo documentation'], callBack: 'Any change at all — call immediately' },
-  'Full slab lift-Fall (Sep–Nov)': { wateringSchedule: 'Daily first 60 days, then 3x/week.', firstMonth: 'Best season for full lift. Lower immediate risk.', months2to6: 'Spring transition critical. PE survey at month 6.', monitoring: ['PE survey months 6 and 12', 'Spring daily monitoring'], callBack: 'Spring changes or anything new at month 6' },
+  'Full slab lift-Fall (Sep–Nov)': { wateringSchedule: 'Daily first 60 days, then 3x/week.', firstMonth: 'Best season for full lift. Lower immediate risk.', months2to6: 'Spring transition critical. PE survey at month 6.', monitoring: ['PE survey months 6 and 12', 'Spring daily monitoring'], callBack: 'Spring changes or anything new at month 6′ },
   'Full slab lift-Winter (Dec–Feb)': { wateringSchedule: '3x/week, 50–70 gal. Spring ramp-up to daily.', firstMonth: 'Lower immediate risk. Prepare aggressively for spring.', months2to6: 'Spring transition is high risk. PE survey at month 6.', monitoring: ['Monthly all winter', 'Daily April–June'], callBack: 'Spring transition — highest failure risk period' },
 };
 
@@ -35,14 +35,14 @@ export default function DFWPostFoundationCare() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>🏠</span>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Post-Foundation Repair Care Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Post-Foundation Repair Care Guide</h1>
           <p style={{ color: '#9CA3AF', lineHeight: 1.6 }}>
             Foundation repair doesn't end when the crew leaves. In DFW, the first 6 months after pier installation are critical. 
             What you do — and don't do — determines whether the repair lasts or fails prematurely.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>📋 Your Post-Repair Care Plan</h2>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             <div style={{ flex: 1, minWidth: 200 }}>
@@ -68,7 +68,7 @@ export default function DFWPostFoundationCare() {
               <div><div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>📅 First 30 Days</div><div style={{ color: '#CBD5E1', lineHeight: 1.6 }}>{result.firstMonth}</div></div>
               <div><div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>📅 Months 2–6</div><div style={{ color: '#CBD5E1', lineHeight: 1.6 }}>{result.months2to6}</div></div>
               <div><div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>👁️ Monitoring Checklist</div>{result.monitoring.map((item, i) => <div key={i} style={{ color: '#CBD5E1', fontSize: '0.9rem', marginBottom: 3 }}>☐ {item}</div>)}</div>
-              <div style={{ backgroundColor: '#1E1A2E', borderRadius: 8, padding: '0.8rem', borderLeft: '3px solid #EF4444' }}><div style={{ color: '#EF4444', fontWeight: 700, marginBottom: 4 }}>🚨 Call Your Contractor When:</div><div style={{ color: '#CBD5E1' }}>{result.callBack}</div></div>
+              <div style={{ backgroundColor: '#1E1A2E', borderRadius: 8, padding: '0.8rem', borderLeft: '3px solid #EF4444′ }}><div style={{ color: '#EF4444', fontWeight: 700, marginBottom: 4 }}>🚨 Call Your Contractor When:</div><div style={{ color: '#CBD5E1' }}>{result.callBack}</div></div>
             </div>
           )}
         </div>

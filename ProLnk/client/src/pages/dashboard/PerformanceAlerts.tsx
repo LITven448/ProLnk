@@ -18,14 +18,14 @@ const PRO_TIPS = [
     detail:
       "Pros who respond within 2 hours win 3× more jobs. Set a phone notification so you never miss a new lead.",
     icon: Clock,
-    color: "#3b82f6",
+    color: "#3b82f6″,
   },
   {
     title: "Accept more jobs to climb tiers",
     detail:
       "Tier upgrades are gated by completed jobs. Accepting even one extra job per week adds 52 jobs annually — enough to jump tiers.",
     icon: Award,
-    color: "#F5E642",
+    color: "#F5E642″,
   },
   {
     title: "Document every job for origination rights",
@@ -38,8 +38,8 @@ const PRO_TIPS = [
 
 const TIER_JOB_THRESHOLDS = [
   { label: "Founding", jobs: 0 },
-  { label: "Level 3", jobs: 100 },
-  { label: "Level 2", jobs: 300 },
+  { label: "Level 3″, jobs: 100 },
+  { label: "Level 2″, jobs: 300 },
   { label: "Charter", jobs: 700 },
 ];
 
@@ -64,20 +64,20 @@ function trendIcon(value: number, target: number, lowerIsBetter = false) {
   if (good) return <TrendingUp size={14} style={{ color: "#22c55e" }} />;
   if (Math.abs(value - target) / target < 0.15)
     return <Minus size={14} style={{ color: "#f59e0b" }} />;
-  return <TrendingDown size={14} style={{ color: "#ef4444" }} />;
+  return <TrendingDown size={14} style={{ color: "#ef4444″ }} />;
 }
 
 function statusColor(good: boolean, borderline: boolean) {
   if (good) return "#22c55e";
   if (borderline) return "#f59e0b";
-  return "#ef4444";
+  return "#ef4444″;
 }
 
 const SEVERITY_PALETTE: Record<AlertSeverity, { bg: string; border: string; icon: string; badge: string }> = {
   red: {
     bg: "rgba(239,68,68,0.07)",
     border: "rgba(239,68,68,0.25)",
-    icon: "#ef4444",
+    icon: "#ef4444″,
     badge: "rgba(239,68,68,0.15)",
   },
   amber: {
@@ -111,12 +111,12 @@ function AlertCard({ alert }: { alert: PerformanceAlert }) {
       style={{ background: p.bg, border: `1px solid ${p.border}` }}
     >
       <div
-        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5″
         style={{ background: p.badge }}
       >
         <Icon size={17} style={{ color: p.icon }} />
       </div>
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0″>
         <div className="flex items-center gap-2 mb-1 flex-wrap">
           <p className="text-sm font-bold text-white">{alert.title}</p>
           <span
@@ -130,7 +130,7 @@ function AlertCard({ alert }: { alert: PerformanceAlert }) {
         {alert.actionLabel && alert.actionHref && (
           <Link href={alert.actionHref}>
             <span
-              className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
+              className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90″
               style={{ background: p.badge, color: p.icon, border: `1px solid ${p.border}` }}
             >
               <ArrowRight size={12} />
@@ -166,17 +166,17 @@ function MetricRow({
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
     >
       <div
-        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
         style={{ background: `${color}18` }}
       >
         <Icon size={17} style={{ color }} />
       </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">{label}</p>
-        <p className="text-sm font-bold text-white mt-0.5">{value}</p>
+      <div className="flex-1 min-w-0″>
+        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400″>{label}</p>
+        <p className="text-sm font-bold text-white mt-0.5″>{value}</p>
         <p className="text-xs text-gray-500 mt-0.5 leading-snug">{detail}</p>
       </div>
-      <div className="flex-shrink-0">{trend}</div>
+      <div className="flex-shrink-0″>{trend}</div>
     </div>
   );
 }
@@ -196,35 +196,35 @@ function WeeklySummary({
 }) {
   const stats = [
     { label: "Jobs This Week", value: jobs.toString(), icon: Briefcase, color: "#22c55e" },
-    { label: "New Recruits", value: recruits.toString(), icon: Users, color: "#3b82f6" },
-    { label: "Est. Commissions", value: `$${commissionEst.toFixed(0)}`, icon: Zap, color: "#F5E642" },
+    { label: "New Recruits", value: recruits.toString(), icon: Users, color: "#3b82f6″ },
+    { label: "Est. Commissions", value: `$${commissionEst.toFixed(0)}`, icon: Zap, color: "#F5E642″ },
     { label: "Tier Progress", value: `${tierProgress}%`, icon: Trophy, color: "#f59e0b" },
   ];
   return (
     <div
-      className="rounded-2xl p-5"
+      className="rounded-2xl p-5″
       style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-center gap-2.5 mb-4">
+      <div className="flex items-center gap-2.5 mb-4″>
         <div
           className="w-8 h-8 rounded-xl flex items-center justify-center"
           style={{ background: "rgba(245,230,66,0.12)" }}
         >
-          <TrendingUp size={16} style={{ color: "#F5E642" }} />
+          <TrendingUp size={16} style={{ color: "#F5E642″ }} />
         </div>
         <div>
           <p className="text-sm font-bold text-white">Weekly Performance</p>
-          <p className="text-xs text-gray-500">This week at a glance</p>
+          <p className="text-xs text-gray-500″>This week at a glance</p>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3″>
         {stats.map(({ label, value, icon: Icon, color }) => (
           <div
             key={label}
-            className="rounded-xl p-3.5"
+            className="rounded-xl p-3.5″
             style={{ background: `${color}0d`, border: `1px solid ${color}22` }}
           >
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1″>
               <Icon size={13} style={{ color }} />
               <p className="text-[11px] font-semibold uppercase tracking-wider" style={{ color }}>{label}</p>
             </div>
@@ -256,7 +256,7 @@ export default function PerformanceAlerts() {
   const currentTierIdx =
     status?.tier === "charter" ? 3
     : status?.tier === "founding" ? 1
-    : status?.tier === "level3" ? 2
+    : status?.tier === "level3″ ? 2
     : 0;
   const nextTierEntry = TIER_JOB_THRESHOLDS[currentTierIdx + 1];
   const jobsToNextTier = nextTierEntry
@@ -306,21 +306,21 @@ export default function PerformanceAlerts() {
   const urgentCount = ALERTS.filter(a => a.severity === "red").length;
 
   return (
-    <div className="min-h-screen" style={{ background: "#0A1628" }}>
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+    <div className="min-h-screen" style={{ background: "#0A1628″ }}>
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6″>
 
         {/* Header */}
-        <div className="flex items-center justify-between flex-wrap gap-3">
+        <div className="flex items-center justify-between flex-wrap gap-3″>
           <div>
             <h1 className="text-2xl font-bold text-white">Performance Alerts</h1>
-            <p className="text-gray-400 text-sm mt-1">
+            <p className="text-gray-400 text-sm mt-1″>
               Your key metrics and what to act on this month.
             </p>
           </div>
           {urgentCount > 0 && (
             <div
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold"
-              style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.3)" }}
+              style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444″, border: "1px solid rgba(239,68,68,0.3)" }}
             >
               <AlertTriangle size={12} />
               {urgentCount} urgent {urgentCount === 1 ? "alert" : "alerts"}
@@ -331,13 +331,13 @@ export default function PerformanceAlerts() {
         {/* Alert banner — only if anything is off-target */}
         {(!responseGood || !acceptGood) && (
           <div
-            className="rounded-2xl px-4 py-3.5 flex items-start gap-3"
+            className="rounded-2xl px-4 py-3.5 flex items-start gap-3″
             style={{
               background: "rgba(239,68,68,0.08)",
               border: "1px solid rgba(239,68,68,0.25)",
             }}
           >
-            <AlertTriangle size={18} style={{ color: "#ef4444" }} className="flex-shrink-0 mt-0.5" />
+            <AlertTriangle size={18} style={{ color: "#ef4444″ }} className="flex-shrink-0 mt-0.5" />
             <p className="text-sm text-red-300 leading-snug">
               One or more metrics are below target. Review the details below and take action this week.
             </p>
@@ -346,10 +346,10 @@ export default function PerformanceAlerts() {
 
         {/* Active Alerts */}
         <div
-          className="rounded-2xl p-5 space-y-3"
+          className="rounded-2xl p-5 space-y-3″
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Active Alerts</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3″>Active Alerts</p>
           {ALERTS.map((alert) => (
             <AlertCard key={alert.id} alert={alert} />
           ))}
@@ -365,10 +365,10 @@ export default function PerformanceAlerts() {
 
         {/* Metrics */}
         <div
-          className="rounded-2xl p-5 space-y-3"
+          className="rounded-2xl p-5 space-y-3″
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">This Month</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1″>This Month</p>
 
           <MetricRow
             label="Avg Lead Response Time"
@@ -406,7 +406,7 @@ export default function PerformanceAlerts() {
             color={jobsUp || jobsThisMonth > 0 ? "#22c55e" : "#f59e0b"}
             trend={
               jobsLastMonth === 0 ? (
-                <Minus size={14} style={{ color: "#6b7280" }} />
+                <Minus size={14} style={{ color: "#6b7280″ }} />
               ) : (
                 trendIcon(jobsThisMonth, jobsLastMonth)
               )
@@ -423,8 +423,8 @@ export default function PerformanceAlerts() {
               }
               detail={`Reach ${nextTierEntry.jobs} completed jobs to unlock higher commission rates`}
               icon={Award}
-              color="#F5E642"
-              trend={<ChevronRight size={14} style={{ color: "#F5E642" }} />}
+              color="#F5E642″
+              trend={<ChevronRight size={14} style={{ color: "#F5E642″ }} />}
             />
           )}
 
@@ -442,31 +442,31 @@ export default function PerformanceAlerts() {
 
         {/* Pro Tips */}
         <div
-          className="rounded-2xl p-5"
+          className="rounded-2xl p-5″
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
           <button
             type="button"
             onClick={() => setTipsExpanded((p) => !p)}
-            className="w-full flex items-center justify-between mb-1"
+            className="w-full flex items-center justify-between mb-1″
           >
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5″>
               <div
                 className="w-8 h-8 rounded-xl flex items-center justify-center"
                 style={{ background: "rgba(245,230,66,0.12)" }}
               >
-                <Lightbulb size={16} style={{ color: "#F5E642" }} />
+                <Lightbulb size={16} style={{ color: "#F5E642″ }} />
               </div>
               <p className="text-sm font-bold text-white">Pro Tips</p>
             </div>
-            <span className="text-xs text-gray-500">{tipsExpanded ? "hide" : "show"}</span>
+            <span className="text-xs text-gray-500″>{tipsExpanded ? "hide" : "show"}</span>
           </button>
           <p className="text-xs text-gray-500 mb-4 pl-[2.625rem]">
             Three actions to improve your numbers this week.
           </p>
 
           {tipsExpanded && (
-            <div className="space-y-3">
+            <div className="space-y-3″>
               {PRO_TIPS.map(({ title, detail, icon: Icon, color }) => (
                 <div
                   key={title}
@@ -474,7 +474,7 @@ export default function PerformanceAlerts() {
                   style={{ background: `${color}0d`, border: `1px solid ${color}22` }}
                 >
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5″
                     style={{ background: `${color}18` }}
                   >
                     <Icon size={15} style={{ color }} />
@@ -490,11 +490,11 @@ export default function PerformanceAlerts() {
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col sm:flex-row gap-3″>
           <Link href="/job-log">
             <span
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
-              style={{ background: "#F5E642", color: "#0A1628" }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all hover:opacity-90″
+              style={{ background: "#F5E642″, color: "#0A1628" }}
             >
               <Briefcase size={15} />
               Log a Job

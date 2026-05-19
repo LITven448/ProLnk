@@ -20,10 +20,10 @@ export default function DFWContractorPortfolioGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>How to vet a contractor's past work before hiring in DFW</p>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>📞 The Reference Call Most Homeowners Skip</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>
-            Only <strong style={{ color: '#F5E642' }}>23% of homeowners</strong> actually call contractor references. Those who do catch problems before hire 4x more often than those who just read online reviews. In DFW's fast-moving market, contractors who can't provide references or whose references don't answer are red flags — not normal.
+            Only <strong style={{ color: '#F5E642′ }}>23% of homeowners</strong> actually call contractor references. Those who do catch problems before hire 4x more often than those who just read online reviews. In DFW’s fast-moving market, contractors who can’t provide references or whose references don’t answer are red flags — not normal.
           </p>
         </div>
 
@@ -42,13 +42,13 @@ export default function DFWContractorPortfolioGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {projectTypes.map((p, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {p.icon} {p.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>{projectTypes[selected].icon} {projectTypes[selected].label} Vetting Checklist</h3>
               <ul style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.8, paddingLeft: 18 }}>
                 {projectTypes[selected].guide.map((g, i) => <li key={i}>{g}</li>)}

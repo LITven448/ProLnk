@@ -7,7 +7,7 @@ const roomData = {
     feasibility: 'High',
     note: 'Best ROI for radiant in DFW. Small area = low operating cost. Heated floors in master bath add resale value.',
     sqft: 80,
-    installCost: { electric: '$800–$1,600', hydronic: '$4,000–$7,000' },
+    installCost: { electric: '$800–$1,600', hydronic: '$4,000–$7,000′ },
     opCost: { electric: '$8–$18/mo', hydronic: '$12–$25/mo' },
   },
   sunroom: {
@@ -16,7 +16,7 @@ const roomData = {
     feasibility: 'Medium',
     note: 'DFW sunrooms get cold in winter. Electric radiant provides comfort without full HVAC ducts. ROI is moderate.',
     sqft: 200,
-    installCost: { electric: '$2,000–$4,000', hydronic: '$8,000–$15,000' },
+    installCost: { electric: '$2,000–$4,000', hydronic: '$8,000–$15,000′ },
     opCost: { electric: '$20–$45/mo', hydronic: '$30–$60/mo' },
   },
   garage: {
@@ -25,7 +25,7 @@ const roomData = {
     feasibility: 'Medium',
     note: 'Hydronic makes sense for large workshops in DFW. Electric costs get high in 3-car garages. Short DFW season limits full ROI.',
     sqft: 600,
-    installCost: { electric: '$6,000–$12,000', hydronic: '$15,000–$28,000' },
+    installCost: { electric: '$6,000–$12,000', hydronic: '$15,000–$28,000′ },
     opCost: { electric: '$60–$120/mo', hydronic: '$45–$90/mo' },
   },
   whole_home: {
@@ -34,7 +34,7 @@ const roomData = {
     feasibility: 'Low',
     note: 'Not recommended for DFW. Only ~60 heating days/year means ROI payback is 40+ years. Consider if building new construction and future-proofing.',
     sqft: 2500,
-    installCost: { electric: '$25,000–$50,000', hydronic: '$30,000–$65,000' },
+    installCost: { electric: '$25,000–$50,000', hydronic: '$30,000–$65,000′ },
     opCost: { electric: '$250–$500/mo', hydronic: '$150–$300/mo' },
   },
 };
@@ -125,7 +125,7 @@ export default function DFWRadiantFloorHeatingGuide() {
             <p style={{ color: '#94A3B8', margin: '0 0 20px', fontSize: 14, lineHeight: 1.6 }}>{result.note}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               {(['electric', 'hydronic'] as const).map(s => (
-                <div key={s} style={{ background: '#0A1628', borderRadius: 10, padding: 16, border: s === system ? '2px solid #F5E642' : '2px solid transparent' }}>
+                <div key={s} style={{ background: '#0A1628', borderRadius: 10, padding: 16, border: s === system ? '2px solid #F5E642′ : '2px solid transparent' }}>
                   <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 6 }}>{s === 'electric' ? '⚡ ELECTRIC' : '💧 HYDRONIC'}{s === result.recommended ? ' ⭐ RECOMMENDED' : ''}</div>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>Install: {result.installCost[s]}</div>
                   <div style={{ color: '#F5E642', fontSize: 13 }}>Operating: {result.opCost[s]}</div>

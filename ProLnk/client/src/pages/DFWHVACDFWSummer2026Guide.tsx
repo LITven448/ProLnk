@@ -79,8 +79,8 @@ export default function DFWHVACDFWSummer2026Guide() {
               key={p.age === 'any' ? 'large' : p.age}
               onClick={() => setSelected(p.age === 'any' ? 'large' : p.age)}
               style={{
-                background: selected === (p.age === 'any' ? 'large' : p.age) ? '#F5E642' : '#1E3A5F',
-                color: selected === (p.age === 'any' ? 'large' : p.age) ? '#0A1628' : '#fff',
+                background: selected === (p.age === 'any' ? 'large' : p.age) ? '#F5E642′ : '#1E3A5F',
+                color: selected === (p.age === 'any' ? 'large' : p.age) ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px', textAlign: 'left',
                 cursor: 'pointer', fontSize: 14, fontWeight: 600,
               }}

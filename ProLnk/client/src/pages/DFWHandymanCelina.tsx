@@ -96,7 +96,7 @@ export default function DFWHandymanCelina() {
           <input
             type="range" min={1} max={15} value={taskCount}
             onChange={e => setTaskCount(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 24, accentColor: '#F5E642' }}
+            style={{ width: '100%', marginBottom: 24, accentColor: '#F5E642′ }}
           />
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -129,7 +129,7 @@ export default function DFWHandymanCelina() {
             >
               <div style={{
                 width: 20, height: 20, borderRadius: 4, border: '2px solid #F5E642',
-                background: punchList[item.id] ? '#F5E642' : 'transparent',
+                background: punchList[item.id] ? '#F5E642′ : ’transparent',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexShrink: 0, marginTop: 1,
               }}>
@@ -162,7 +162,7 @@ export default function DFWHandymanCelina() {
           ].map(c => (
             <div key={c.title} style={{ background: '#112244', borderRadius: 10, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642' }}>{c.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642′ }}>{c.title}</div>
               <div style={{ fontSize: 14, color: '#aac', lineHeight: 1.6 }}>{c.desc}</div>
             </div>
           ))}
@@ -185,8 +185,8 @@ export default function DFWHandymanCelina() {
         </a>
       </div>
 
-      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556' }}>
-        © 2026 ProLnk · Serving Celina, TX and all of DFW · <a href="/privacy" style={{ color: '#556' }}>Privacy</a>
+      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556′ }}>
+        © 2026 ProLnk · Serving Celina, TX and all of DFW · <a href="/privacy" style={{ color: '#556′ }}>Privacy</a>
       </div>
     </div>
   );

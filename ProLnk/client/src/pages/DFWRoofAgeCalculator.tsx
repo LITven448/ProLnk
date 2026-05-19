@@ -23,7 +23,7 @@ export default function DFWRoofAgeCalculator() {
   const yearsLeft = Math.max(0, adjLife - age);
   const monthly = Math.round(mat.cost / Math.max(yearsLeft * 12, 1));
   const urgency = age >= adjLife ? 'urgent' : age >= adjLife - 3 ? 'soon' : 'ok';
-  const urgencyColor = urgency === 'urgent' ? '#d32f2f' : urgency === 'soon' ? '#e65100' : '#1b5e20';
+  const urgencyColor = urgency === 'urgent' ? '#d32f2f' : urgency === 'soon' ? '#e65100′ : '#1b5e20';
   const urgencyEmoji = urgency === 'urgent' ? '🚨' : urgency === 'soon' ? '⚠️' : '✅';
 
   const bestMonths = ['April', 'May', 'September', 'October'];
@@ -43,7 +43,7 @@ export default function DFWRoofAgeCalculator() {
               <label style={{ display: 'block', fontWeight: 700, color: '#aab4cc', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Roof Install Year</label>
               <input type="range" min={1985} max={2025} step={1} value={installYear}
                 onChange={e => setInstallYear(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#F5E642', fontSize: '1.1rem' }}>{installYear} ({age} yrs old)</div>
             </div>
             <div>
@@ -60,7 +60,7 @@ export default function DFWRoofAgeCalculator() {
               {Object.keys(MATERIALS).map(m => (
                 <div key={m} onClick={() => setMaterial(m)}
                   style={{ padding: '0.75rem', borderRadius: 10, cursor: 'pointer', border: `2px solid ${material === m ? '#F5E642' : '#2a3a5c'}`, background: material === m ? '#1e3a5f' : 'transparent' }}>
-                  <div style={{ fontWeight: 700, fontSize: '0.85rem', color: material === m ? '#F5E642' : '#fff' }}>{m}</div>
+                  <div style={{ fontWeight: 700, fontSize: '0.85rem', color: material === m ? '#F5E642′ : '#fff' }}>{m}</div>
                   <div style={{ fontSize: '0.72rem', color: '#7a8faa', marginTop: '0.15rem' }}>{MATERIALS[m].label}</div>
                 </div>
               ))}
@@ -75,15 +75,15 @@ export default function DFWRoofAgeCalculator() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>{yearsLeft}</div>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>{yearsLeft}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Years Remaining</div>
           </div>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>${mat.cost.toLocaleString()}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>${mat.cost.toLocaleString()}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Replacement Est.</div>
           </div>
           <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>${monthly}</div>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>${monthly}</div>
             <div style={{ fontSize: '0.8rem', color: '#8899bb' }}>Save Monthly</div>
           </div>
         </div>

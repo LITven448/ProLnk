@@ -30,7 +30,7 @@ export default function DFWHomeForFuture() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[{ label: '⚡ EV Infrastructure', value: 'DFW EV registrations doubled in 2024. A 50A outlet today costs $800. In 5 years, it\’s table stakes.' }, { label: '☀️ Solar Opportunity', value: 'DFW gets 225+ sunny days/year. A 10kW system generates $1,800–$2,400 in annual savings.' }, { label: '🔋 Grid Risk', value: 'ERCOT failed in Feb 2021 and again in 2023. Home battery backup is now an ROI conversation.' }, { label: '🏠 Aging in Place', value: 'DFW boomers are staying put — wider doors, first-floor masters, and walk-in showers are smart now.' }].map(card => (
-            <div key={card.label} style={{ backgroundColor: '#0F2137', borderRadius: 10, padding: 16, border: '1px solid #1C3352' }}>
+            <div key={card.label} style={{ backgroundColor: '#0F2137', borderRadius: 10, padding: 16, border: '1px solid #1C3352′ }}>
               <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 6 }}>{card.label}</div>
               <div style={{ fontSize: 13, color: '#9AABB8', lineHeight: 1.5 }}>{card.value}</div>
             </div>
@@ -60,13 +60,13 @@ export default function DFWHomeForFuture() {
               {timelines.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
           </div>
-          <button onClick={() => setSubmitted(true)} disabled={!homeAge || !budget || !timeline} style={{ width: '100%', padding: '12px', backgroundColor: homeAge && budget && timeline ? '#F5E642' : '#1C3352', color: homeAge && budget && timeline ? '#0A1628' : '#4A6278', fontWeight: 700, border: 'none', borderRadius: 8, cursor: homeAge && budget && timeline ? 'pointer' : 'not-allowed', fontSize: 15 }}>
+          <button onClick={() => setSubmitted(true)} disabled={!homeAge || !budget || !timeline} style={{ width: '100%', padding: '12px', backgroundColor: homeAge && budget && timeline ? '#F5E642′ : '#1C3352', color: homeAge && budget && timeline ? '#0A1628' : '#4A6278', fontWeight: 700, border: ’none', borderRadius: 8, cursor: homeAge && budget && timeline ? 'pointer' : 'not-allowed', fontSize: 15 }}>
             Generate My Future-Proofing Plan
           </button>
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0F2137', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0F2137', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
             <h3 style={{ fontSize: 17, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>✅ Your Future-Proofing Priority List ({budget} · {timeline})</h3>
             {result.items.map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 12 }}>
@@ -75,7 +75,7 @@ export default function DFWHomeForFuture() {
               </div>
             ))}
             <div style={{ marginTop: 16, padding: '12px 16px', backgroundColor: '#0A1628', borderRadius: 8, fontSize: 13, color: '#9AABB8', lineHeight: 1.5 }}>
-              📈 <strong style={{ color: '#F5E642' }}>ROI Context:</strong> {result.roi}
+              📈 <strong style={{ color: '#F5E642′ }}>ROI Context:</strong> {result.roi}
             </div>
           </div>
         )}

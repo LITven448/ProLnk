@@ -4,7 +4,7 @@ const COMMUNITY_TYPES = ['Master-planned community (Frisco/Allen/McKinney)', 'Es
 
 const violations: Record<string, { topViolations: string[]; prevention: string[]; fineRange: string; proTip: string }> = {
   'Master-planned community (Frisco/Allen/McKinney)': {
-    topViolations: ['Bermuda grass over 4" (DFW bermuda grows 1" per week in summer — must mow weekly June–Aug)', 'Trash cans visible from street after 8pm collection day', 'Holiday decorations up past Jan 15 or before Nov 1', 'Unapproved exterior paint colors (strict palettes in MPCs)', 'Basketball hoops in driveway (many MPCs prohibit permanently)'],
+    topViolations: ['Bermuda grass over 4″ (DFW bermuda grows 1″ per week in summer — must mow weekly June–Aug)', 'Trash cans visible from street after 8pm collection day', 'Holiday decorations up past Jan 15 or before Nov 1', 'Unapproved exterior paint colors (strict palettes in MPCs)', 'Basketball hoops in driveway (many MPCs prohibit permanently)'],
     prevention: ['Set weekly mow reminder every Monday June–August — bermuda will violate within 10 days without it', 'Move trash cans same day as pickup', 'Use HOA portal app — most large MPCs (Collin Creek, Star Trail, etc.) have violation photo alerts', 'Submit exterior modification request BEFORE any change — approval takes 2–4 weeks', 'Request the full violation history for your street — patterns emerge'],
     fineRange: '$50–$250 first offense, escalating to $1,000+ with daily fines in some Frisco MPCs',
     proTip: 'Frisco and McKinney MPCs have the most aggressive enforcement in DFW. Hire a lawn service with a guaranteed weekly schedule June–August — the risk of a $200 fine exceeds the $40/mow cost.'
@@ -35,7 +35,7 @@ const violations: Record<string, { topViolations: string[]; prevention: string[]
   },
   'Entry-level community (Arlington/Mesquite/Garland)': {
     topViolations: ['Vehicle on blocks or inoperable vehicle in driveway', 'Tall grass and weeds (DFW city code overlaps with HOA rules here — double enforcement risk)', 'Outdoor storage (furniture, lumber, equipment) visible from street', 'Broken window screens or damaged facia visible from street', 'Excessive signage (political signs, multiple for-sale signs, window signs)'],
-    prevention: ['Remove any inoperable vehicle within 30 days — city code + HOA can both cite simultaneously', 'Mow every 10 days minimum in DFW summer — city code triggers at 12" in most municipalities', 'Use a storage shed for outdoor items — shed must also be HOA-approved (submit request first)', 'Repair screens and facia before spring — HOA inspection frequency often increases March–May', 'Know sign rules: DFW HOAs generally allow one political sign, one for-sale sign only'],
+    prevention: ['Remove any inoperable vehicle within 30 days — city code + HOA can both cite simultaneously', 'Mow every 10 days minimum in DFW summer — city code triggers at 12″ in most municipalities', 'Use a storage shed for outdoor items — shed must also be HOA-approved (submit request first)', 'Repair screens and facia before spring — HOA inspection frequency often increases March–May', 'Know sign rules: DFW HOAs generally allow one political sign, one for-sale sign only'],
     fineRange: '$25–$100 first offense in most entry-level DFW HOAs. City code fines can stack on top.',
     proTip: 'Entry-level DFW communities often have city code enforcement and HOA enforcement running independently. A tall grass violation can generate two separate fines. Address issues within 7 days of notice.'
   },
@@ -111,7 +111,7 @@ export default function DFWHOAFinePreventionGuide() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <div style={{ background: '#f8fafc', borderRadius: 8, padding: '1rem', border: '1px solid #e2e8f0' }}>
+              <div style={{ background: '#f8fafc', borderRadius: 8, padding: '1rem', border: '1px solid #e2e8f0′ }}>
                 <div style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: '0.25rem' }}>💰 TYPICAL FINE RANGE</div>
                 <div style={{ fontWeight: 700, color: '#0f172a', fontSize: '0.9rem' }}>{result.fineRange}</div>
               </div>

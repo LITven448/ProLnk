@@ -18,7 +18,7 @@ export default function DFWBatteryStorageGuide() {
     const afterCredit = cost * 0.7;
     const annualSavings = hasSolar ? cost * 0.12 : cost * 0.06;
     const payback = afterCredit / annualSavings;
-    const brand = priority === 'whole' ? 'Tesla Powerwall 3' : hasSolar ? 'Enphase IQ Battery' : 'LG CHEM RESU';
+    const brand = priority === 'whole' ? 'Tesla Powerwall 3′ : hasSolar ? ’Enphase IQ Battery' : 'LG CHEM RESU';
     setResult({ kWh, units, cost, afterCredit, payback, brand });
   }
 
@@ -27,7 +27,7 @@ export default function DFWBatteryStorageGuide() {
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: '13px', marginBottom: '8px' }}>🔋 DFW ENERGY GUIDES</div>
         <h1 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '8px', lineHeight: 1.3 }}>Home Battery Storage for DFW Homes</h1>
-        <p style={{ color: '#A0AEC0', fontSize: '15px', marginBottom: '28px' }}>After Winter Storm Uri in 2021, DFW homeowners lost power for days. Battery storage is no longer a luxury — it's grid insurance. Here's what you need to know.</p>
+        <p style={{ color: '#A0AEC0', fontSize: '15px', marginBottom: '28px' }}>After Winter Storm Uri in 2021, DFW homeowners lost power for days. Battery storage is no longer a luxury — it's grid insurance. Here’s what you need to know.</p>
 
         <div style={s}>
           <h2 style={{ fontSize: '17px', fontWeight: 700, color: '#F5E642', marginBottom: '12px' }}>⚡ DFW Grid Outage Reality Check</h2>
@@ -51,7 +51,7 @@ export default function DFWBatteryStorageGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #2D4A70' }}>
+                <tr style={{ borderBottom: '1px solid #2D4A70′ }}>
                   {['', 'Tesla Powerwall 3', 'Enphase IQ', 'LG CHEM RESU'].map(h => (
                     <th key={h} style={{ color: '#A0AEC0', padding: '8px 12px', textAlign: 'left', fontWeight: 600 }}>{h}</th>
                   ))}
@@ -66,9 +66,9 @@ export default function DFWBatteryStorageGuide() {
                   ['Best DFW use', 'Whole-home backup', 'Solar+storage', 'Outage backup'],
                   ['Warranty', '10 yrs / 70%', '15 yrs / 70%', '10 yrs / 60%'],
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1A2F50', background: i % 2 === 0 ? 'transparent' : '#0F1E35' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #1A2F50', background: i % 2 === 0 ? 'transparent' : '#0F1E35′ }}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{ padding: '10px 12px', color: j === 0 ? '#A0AEC0' : '#CBD5E0' }}>{cell}</td>
+                      <td key={j} style={{ padding: '10px 12px', color: j === 0 ? '#A0AEC0′ : '#CBD5E0' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -105,7 +105,7 @@ export default function DFWBatteryStorageGuide() {
           </div>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px', cursor: 'pointer' }}>
             <input type="checkbox" checked={hasSolar} onChange={e => setHasSolar(e.target.checked)}
-              style={{ width: '16px', height: '16px', accentColor: '#F5E642' }} />
+              style={{ width: '16px', height: '16px', accentColor: '#F5E642′ }} />
             <span style={{ color: '#CBD5E0', fontSize: '14px' }}>☀️ I have (or plan to add) solar panels</span>
           </label>
           <button onClick={calculate}
@@ -125,9 +125,9 @@ export default function DFWBatteryStorageGuide() {
                   { label: 'Est. Payback Period', val: `${result.payback.toFixed(1)} years` },
                   { label: 'Solar Benefit', val: hasSolar ? 'High — self-consume solar' : 'Moderate — outage backup' },
                 ].map(r => (
-                  <div key={r.label} style={{ background: '#0F1E35', borderRadius: '8px', padding: '12px', border: (r as any).highlight ? '1px solid #F5E642' : 'none' }}>
+                  <div key={r.label} style={{ background: '#0F1E35', borderRadius: '8px', padding: '12px', border: (r as any).highlight ? '1px solid #F5E642′ : ’none' }}>
                     <div style={{ color: '#718096', fontSize: '11px', marginBottom: '4px' }}>{r.label}</div>
-                    <div style={{ color: (r as any).highlight ? '#F5E642' : '#FFF', fontWeight: 700, fontSize: '16px' }}>{r.val}</div>
+                    <div style={{ color: (r as any).highlight ? '#F5E642′ : '#FFF', fontWeight: 700, fontSize: '16px' }}>{r.val}</div>
                   </div>
                 ))}
               </div>

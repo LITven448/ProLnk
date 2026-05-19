@@ -9,16 +9,16 @@ const NAV = [
 ];
 
 const COLORS = {
-  bg: "#0A1628",
-  card: "#152035",
-  border: "#1E2E45",
+  bg: "#0A1628″,
+  card: "#152035″,
+  border: "#1E2E45″,
   text: "#F0F4FF",
-  muted: "#7A8BA8",
-  yellow: "#F5E642",
-  green: "#10B981",
-  red: "#EF4444",
+  muted: "#7A8BA8″,
+  yellow: "#F5E642″,
+  green: "#10B981″,
+  red: "#EF4444″,
   amber: "#F59E0B",
-  blue: "#3B82F6",
+  blue: "#3B82F6″,
 };
 
 export default function HomeScreen() {
@@ -61,10 +61,10 @@ export default function HomeScreen() {
       {/* Stat grid */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, padding: "0 16px 16px" }}>
         {[
-          { label: "Active Leads", value: "3", color: COLORS.yellow },
-          { label: "Jobs This Month", value: "8", color: COLORS.green },
-          { label: "Network Recruits", value: "12", color: COLORS.yellow },
-          { label: "Month Earnings", value: "$1,247", color: COLORS.green, large: true },
+          { label: "Active Leads", value: "3″, color: COLORS.yellow },
+          { label: "Jobs This Month", value: "8″, color: COLORS.green },
+          { label: "Network Recruits", value: "12″, color: COLORS.yellow },
+          { label: "Month Earnings", value: "$1,247″, color: COLORS.green, large: true },
         ].map((s) => (
           <div key={s.label} style={{ background: COLORS.card, borderRadius: 14, padding: "14px 16px", border: `1px solid ${COLORS.border}` }}>
             <div style={{ fontSize: 11, color: COLORS.muted, marginBottom: 4 }}>{s.label}</div>

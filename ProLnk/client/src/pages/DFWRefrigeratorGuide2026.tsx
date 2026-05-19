@@ -34,7 +34,7 @@ export default function DFWRefrigeratorGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 28 }}>
           {types.map(t => (
-            <div key={t.name} style={{ background: '#13223a', borderRadius: 10, padding: '16px 12px', borderTop: '3px solid #F5E642' }}>
+            <div key={t.name} style={{ background: '#13223a', borderRadius: 10, padding: '16px 12px', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 28 }}>{t.icon}</div>
               <div style={{ fontWeight: 700, margin: '8px 0 4px' }}>{t.name}</div>
               <div style={{ color: '#a0b0c8', fontSize: 12 }}>{t.note}</div>
@@ -54,14 +54,14 @@ export default function DFWRefrigeratorGuide2026() {
 
         <div style={{ background: '#13223a', borderRadius: 12, padding: 20, marginBottom: 8 }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 14 }}>🔧 Repair vs Replace Calculator</div>
-          <label style={{ fontSize: 13, color: '#a0b0c8' }}>Fridge age (years)</label>
-          <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 11"
+          <label style={{ fontSize: 13, color: '#a0b0c8′ }}>Fridge age (years)</label>
+          <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 11″
             style={{ display: 'block', width: '100%', background: '#0A1628', border: '1px solid #2a3a54', borderRadius: 8, color: '#fff', padding: '10px 12px', marginTop: 6, marginBottom: 14, fontSize: 14, boxSizing: 'border-box' }} />
           <div style={{ fontSize: 13, color: '#a0b0c8', marginBottom: 8 }}>Current symptoms (select all that apply)</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {SYMPTOMS.map(s => (
               <button key={s} onClick={() => toggle(s)}
-                style={{ background: selected.includes(s) ? '#F5E642' : '#0A1628', color: selected.includes(s) ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: 'pointer' }}>{s}</button>
+                style={{ background: selected.includes(s) ? '#F5E642′ : '#0A1628', color: selected.includes(s) ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: ’pointer' }}>{s}</button>
             ))}
           </div>
           <button onClick={decide} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '12px 24px', cursor: 'pointer', fontSize: 15 }}>Get My Recommendation</button>

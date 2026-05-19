@@ -71,10 +71,10 @@ export default function DFWRoofingCostGuide2026() {
               </thead>
               <tbody>
                 {priceTable.map((row, i) => (
-                  <tr key={row.item} style={{ background: i % 2 === 0 ? '#111E33' : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
+                  <tr key={row.item} style={{ background: i % 2 === 0 ? '#111E33′ : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
                     <td style={{ padding: '14px 16px', color: '#E8EDF5', fontWeight: 500 }}>{row.item}</td>
-                    <td style={{ padding: '14px 16px', textAlign: 'right', color: '#4ADE80' }}>{row.low ? `$${row.low.toLocaleString()}` : '—'}</td>
-                    <td style={{ padding: '14px 16px', textAlign: 'right', color: '#4ADE80' }}>{row.high ? `$${row.high.toLocaleString()}` : '—'}</td>
+                    <td style={{ padding: '14px 16px', textAlign: 'right', color: '#4ADE80′ }}>{row.low ? `$${row.low.toLocaleString()}` : '—'}</td>
+                    <td style={{ padding: '14px 16px', textAlign: 'right', color: '#4ADE80′ }}>{row.high ? `$${row.high.toLocaleString()}` : '—'}</td>
                     <td style={{ padding: '14px 16px', color: '#94A3B8', fontSize: 13 }}>{row.note || '—'}</td>
                   </tr>
                 ))}
@@ -85,7 +85,7 @@ export default function DFWRoofingCostGuide2026() {
 
         {/* Storm surge note */}
         <section style={{ marginBottom: 48 }}>
-          <div style={{ background: '#2D1515', borderRadius: 12, padding: 24, borderLeft: '4px solid #EF4444' }}>
+          <div style={{ background: '#2D1515', borderRadius: 12, padding: 24, borderLeft: '4px solid #EF4444′ }}>
             <div style={{ fontWeight: 700, color: '#FCA5A5', marginBottom: 8 }}>⚡ Storm Surge Pricing</div>
             <p style={{ color: '#FCA5A5', margin: 0, lineHeight: 1.7 }}>
               After a major hail event, DFW roofing prices spike <strong>20–40%</strong> and wait times extend <strong>4–8 weeks</strong> as out-of-state storm chasers flood the market. Book a verified local contractor before you need one.

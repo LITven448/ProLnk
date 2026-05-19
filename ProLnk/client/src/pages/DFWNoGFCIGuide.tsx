@@ -51,7 +51,7 @@ export default function DFWNoGFCIGuide() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🔍 Find Hidden GFCI Outlets</div>
           <div style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-            One GFCI can protect multiple downstream outlets. Check: <strong style={{ color: '#cbd5e1' }}>garage, master bath, outdoor, kitchen</strong> — these are common upstream sources. Press TEST on each to find the chain.
+            One GFCI can protect multiple downstream outlets. Check: <strong style={{ color: '#cbd5e1′ }}>garage, master bath, outdoor, kitchen</strong> — these are common upstream sources. Press TEST on each to find the chain.
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export default function DFWNoGFCIGuide() {
           ].map(({ label, value, setter, options }) => (
             <div key={label} style={{ marginBottom: '1rem' }}>
               <div style={{ color: '#94a3b8', marginBottom: '0.4rem' }}>{label}</div>
-              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155' }}>
+              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155′ }}>
                 <option value="">Select...</option>
                 {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
               </select>
@@ -71,9 +71,9 @@ export default function DFWNoGFCIGuide() {
           ))}
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', width: '100%' }}>Get My Answer</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: result.replace ? '#1a1a00' : '#001a0f', borderLeft: `4px solid ${result.replace ? '#F5E642' : '#4ade80'}` }}>
-              <div style={{ fontWeight: 700, color: result.replace ? '#F5E642' : '#4ade80' }}>{result.replace ? '🔧 Replacement Needed' : '🔄 Try Reset First'}</div>
-              <div style={{ color: '#cbd5e1', margin: '0.5rem 0' }}>{result.reset}</div>
+            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: result.replace ? '#1a1a00′ : '#001a0f', borderLeft: `4px solid ${result.replace ? '#F5E642' : '#4ade80'}` }}>
+              <div style={{ fontWeight: 700, color: result.replace ? '#F5E642′ : '#4ade80' }}>{result.replace ? '🔧 Replacement Needed' : '🔄 Try Reset First'}</div>
+              <div style={{ color: '#cbd5e1', margin: '0.5rem 0′ }}>{result.reset}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>💰 Typical cost: {result.cost}</div>
             </div>
           )}
@@ -81,7 +81,7 @@ export default function DFWNoGFCIGuide() {
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📅 DFW Tip: Test Quarterly</div>
-          <div style={{ color: '#94a3b8' }}>Press the TEST button on every GFCI outlet every 3 months. If the RESET button doesn't pop out, the outlet has failed silently and needs immediate replacement.</div>
+          <div style={{ color: '#94a3b8′ }}>Press the TEST button on every GFCI outlet every 3 months. If the RESET button doesn’t pop out, the outlet has failed silently and needs immediate replacement.</div>
         </div>
       </div>
     </div>

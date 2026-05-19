@@ -79,13 +79,13 @@ export default function DFWProLnkResourceCelebration() {
           {STATS.map(s => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 12, padding: '20px', textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 4 }}>{s.emoji}</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 28, borderTop: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 28, borderTop: '4px solid #F5E642′ }}>
           <p style={{ color: '#e2e8f0', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
             What took 18 months to build cannot be replicated overnight. Every page deepens the Home Health Vault data layer, drives organic homeowner discovery, and educates the DFW market on what trustworthy home services actually look like. This library is both a user resource and a competitive moat.
           </p>
@@ -97,7 +97,7 @@ export default function DFWProLnkResourceCelebration() {
             {(Object.keys(labels) as UseType[]).map(u => (
               <button key={u} onClick={() => setUseType(u)}
                 style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: useType === u ? '#F5E642' : '#1e3a5f', color: useType === u ? '#0A1628' : '#94a3b8' }}>
+                  background: useType === u ? '#F5E642′ : '#1e3a5f', color: useType === u ? '#0A1628' : '#94a3b8' }}>
                 {labels[u]}
               </button>
             ))}

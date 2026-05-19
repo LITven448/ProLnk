@@ -33,7 +33,7 @@ ${template}`);
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📋🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Home Maintenance Log 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Home Maintenance Log 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Every service call deserves a proper record. Use this template — or let ProLnk Vault do it automatically.</p>
         </div>
 
@@ -41,7 +41,7 @@ ${template}`);
           <label style={{ color: '#F5E642', fontSize: '0.95rem', fontWeight: 700, display: 'block', marginBottom: '0.75rem' }}>📂 Select Service Type</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {serviceTypes.map(s => (
-              <button key={s} onClick={() => setService(s)} style={{ background: service === s ? '#F5E642' : '#0A1628', color: service === s ? '#0A1628' : '#cbd5e1', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.4rem 0.75rem', fontSize: '0.85rem', cursor: 'pointer', fontWeight: service === s ? 700 : 400 }}>{s}</button>
+              <button key={s} onClick={() => setService(s)} style={{ background: service === s ? '#F5E642′ : '#0A1628', color: service === s ? '#0A1628' : '#cbd5e1', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.4rem 0.75rem', fontSize: '0.85rem', cursor: ’pointer', fontWeight: service === s ? 700 : 400 }}>{s}</button>
             ))}
           </div>
         </div>
@@ -49,7 +49,7 @@ ${template}`);
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1rem', margin: 0 }}>📝 Log Entry Template: {service}</h2>
-            <button onClick={handleCopy} style={{ background: copied ? '#4ade80' : '#1e3a5f', color: '#fff', border: 'none', borderRadius: 6, padding: '0.4rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem' }}>{copied ? '✅ Copied!' : '📋 Copy'}</button>
+            <button onClick={handleCopy} style={{ background: copied ? '#4ade80′ : '#1e3a5f', color: '#fff', border: ’none', borderRadius: 6, padding: '0.4rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem' }}>{copied ? '✅ Copied!' : '📋 Copy'}</button>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
             {fields.map((f, i) => (

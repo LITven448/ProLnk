@@ -167,23 +167,23 @@ export default function PartnerAgreement() {
 
       <div className="min-h-screen bg-[#0A1628] text-white">
         {/* Header */}
-        <div className="bg-slate-900 border-b border-slate-800 sticky top-0 z-10">
+        <div className="bg-slate-900 border-b border-slate-800 sticky top-0 z-10″>
           <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-teal-400" />
+            <div className="flex items-center gap-3″>
+              <Shield className="w-6 h-6 text-teal-400″ />
               <div>
                 <h1 className="font-bold text-white text-lg">ProLnk Partner Services Agreement</h1>
                 <p className="text-slate-400 text-xs">Version 3.0 — Effective May 2026</p>
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2″>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => window.print()}
-                className="gap-2 border-slate-700 text-slate-300 hover:bg-slate-800"
+                className="gap-2 border-slate-700 text-slate-300 hover:bg-slate-800″
               >
-                <Printer className="w-4 h-4" />
+                <Printer className="w-4 h-4″ />
                 Print
               </Button>
               <Button
@@ -191,34 +191,34 @@ export default function PartnerAgreement() {
                 onClick={() => alert("PDF download coming soon.")}
                 className="gap-2 bg-teal-600 hover:bg-teal-700 text-white"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4″ />
                 Download PDF
               </Button>
             </div>
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="max-w-4xl mx-auto px-6 py-8″>
           {/* Preamble */}
-          <Card className="bg-slate-800/50 border-slate-700 mb-6">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <FileText className="w-8 h-8 text-teal-400 flex-shrink-0 mt-1" />
+          <Card className="bg-slate-800/50 border-slate-700 mb-6″>
+            <CardContent className="p-6″>
+              <div className="flex items-start gap-4″>
+                <FileText className="w-8 h-8 text-teal-400 flex-shrink-0 mt-1″ />
                 <div>
-                  <h2 className="text-lg font-bold text-white mb-2">ProLnk Partner Services Agreement</h2>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                  <h2 className="text-lg font-bold text-white mb-2″>ProLnk Partner Services Agreement</h2>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3″>
                     This agreement governs your participation in the ProLnk partner network, including commission
                     rates, network income rules, origination rights, and conduct requirements. Please read all
                     sections before accepting.
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/30">
-                      <CheckCircle className="w-3 h-3 mr-1" />
+                  <div className="flex flex-wrap gap-2″>
+                    <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/30″>
+                      <CheckCircle className="w-3 h-3 mr-1″ />
                       Legally Binding
                     </Badge>
-                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Texas Law</Badge>
-                    <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">AAA Arbitration</Badge>
-                    <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Version 3.0</Badge>
+                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30″>Texas Law</Badge>
+                    <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30″>AAA Arbitration</Badge>
+                    <Badge className="bg-green-500/20 text-green-300 border-green-500/30″>Version 3.0</Badge>
                   </div>
                 </div>
               </div>
@@ -226,82 +226,82 @@ export default function PartnerAgreement() {
           </Card>
 
           {/* Commission Quick-Reference */}
-          <Card className="bg-slate-800/50 border-slate-700 mb-6">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <DollarSign className="w-5 h-5 text-teal-400" />
+          <Card className="bg-slate-800/50 border-slate-700 mb-6″>
+            <CardContent className="p-6″>
+              <div className="flex items-center gap-2 mb-4″>
+                <DollarSign className="w-5 h-5 text-teal-400″ />
                 <h3 className="font-bold text-white">Founding Member Commission Quick Reference</h3>
               </div>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <div className="bg-slate-900/60 rounded-lg p-4">
-                  <div className="text-xs text-slate-400 mb-1">Keep Rate</div>
-                  <div className="text-2xl font-bold text-teal-400">72%</div>
-                  <div className="text-xs text-slate-400 mt-1">of all job fees, locked for life</div>
+              <div className="grid sm:grid-cols-3 gap-4″>
+                <div className="bg-slate-900/60 rounded-lg p-4″>
+                  <div className="text-xs text-slate-400 mb-1″>Keep Rate</div>
+                  <div className="text-2xl font-bold text-teal-400″>72%</div>
+                  <div className="text-xs text-slate-400 mt-1″>of all job fees, locked for life</div>
                 </div>
-                <div className="bg-slate-900/60 rounded-lg p-4">
-                  <div className="text-xs text-slate-400 mb-1">Subscription</div>
-                  <div className="text-2xl font-bold text-white">$149<span className="text-sm font-normal text-slate-400">/mo</span></div>
-                  <div className="text-xs text-slate-400 mt-1">price locked, never increases</div>
+                <div className="bg-slate-900/60 rounded-lg p-4″>
+                  <div className="text-xs text-slate-400 mb-1″>Subscription</div>
+                  <div className="text-2xl font-bold text-white">$149<span className="text-sm font-normal text-slate-400″>/mo</span></div>
+                  <div className="text-xs text-slate-400 mt-1″>price locked, never increases</div>
                 </div>
-                <div className="bg-slate-900/60 rounded-lg p-4">
-                  <div className="text-xs text-slate-400 mb-1">Network Levels</div>
+                <div className="bg-slate-900/60 rounded-lg p-4″>
+                  <div className="text-xs text-slate-400 mb-1″>Network Levels</div>
                   <div className="text-2xl font-bold text-white">4</div>
-                  <div className="text-xs text-slate-400 mt-1">levels deep, 7/4/2/1% job overrides</div>
+                  <div className="text-xs text-slate-400 mt-1″>levels deep, 7/4/2/1% job overrides</div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Network Income Quick-Reference */}
-          <Card className="bg-slate-800/50 border-slate-700 mb-6">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Network className="w-5 h-5 text-teal-400" />
+          <Card className="bg-slate-800/50 border-slate-700 mb-6″>
+            <CardContent className="p-6″>
+              <div className="flex items-center gap-2 mb-4″>
+                <Network className="w-5 h-5 text-teal-400″ />
                 <h3 className="font-bold text-white">Network Income Override Rates</h3>
               </div>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4″>
                 <div>
-                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Job Overrides</div>
-                  <div className="space-y-2">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2″>Job Overrides</div>
+                  <div className="space-y-2″>
                     {[
                       { level: "Level 1 (direct recruits)", rate: "7%" },
-                      { level: "Level 2", rate: "4%" },
-                      { level: "Level 3", rate: "2%" },
-                      { level: "Level 4", rate: "1%" },
+                      { level: "Level 2″, rate: "4%" },
+                      { level: "Level 3″, rate: "2%" },
+                      { level: "Level 4″, rate: "1%" },
                     ].map((r) => (
-                      <div key={r.level} className="flex items-center justify-between bg-slate-900/60 rounded px-3 py-2">
-                        <span className="text-sm text-slate-300">{r.level}</span>
-                        <span className="text-sm font-bold text-teal-400">{r.rate}</span>
+                      <div key={r.level} className="flex items-center justify-between bg-slate-900/60 rounded px-3 py-2″>
+                        <span className="text-sm text-slate-300″>{r.level}</span>
+                        <span className="text-sm font-bold text-teal-400″>{r.rate}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Subscription Overrides</div>
-                  <div className="space-y-2">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2″>Subscription Overrides</div>
+                  <div className="space-y-2″>
                     {[
                       { level: "Level 1 (direct recruits)", rate: "12%" },
-                      { level: "Level 2", rate: "6%" },
-                      { level: "Level 3", rate: "3%" },
-                      { level: "Level 4", rate: "1.5%" },
+                      { level: "Level 2″, rate: "6%" },
+                      { level: "Level 3″, rate: "3%" },
+                      { level: "Level 4″, rate: "1.5%" },
                     ].map((r) => (
-                      <div key={r.level} className="flex items-center justify-between bg-slate-900/60 rounded px-3 py-2">
-                        <span className="text-sm text-slate-300">{r.level}</span>
-                        <span className="text-sm font-bold text-teal-400">{r.rate}</span>
+                      <div key={r.level} className="flex items-center justify-between bg-slate-900/60 rounded px-3 py-2″>
+                        <span className="text-sm text-slate-300″>{r.level}</span>
+                        <span className="text-sm font-bold text-teal-400″>{r.rate}</span>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
-              <div className="mt-3 flex items-center justify-between bg-teal-900/30 border border-teal-700/30 rounded px-3 py-2">
-                <span className="text-sm text-teal-200">Origination Rights (Home Health Vault)</span>
-                <span className="text-sm font-bold text-teal-400">1.5% permanent</span>
+              <div className="mt-3 flex items-center justify-between bg-teal-900/30 border border-teal-700/30 rounded px-3 py-2″>
+                <span className="text-sm text-teal-200″>Origination Rights (Home Health Vault)</span>
+                <span className="text-sm font-bold text-teal-400″>1.5% permanent</span>
               </div>
             </CardContent>
           </Card>
 
           {/* Sections */}
-          <div className="space-y-3">
+          <div className="space-y-3″>
             {SECTIONS.map((section) => {
               const isOpen = expanded === section.id;
               return (
@@ -312,18 +312,18 @@ export default function PartnerAgreement() {
                   >
                     <span className="font-semibold text-white">{section.title}</span>
                     {isOpen ? (
-                      <ChevronDown className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                      <ChevronDown className="w-4 h-4 text-slate-400 flex-shrink-0″ />
                     ) : (
-                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0″ />
                     )}
                   </button>
                   {isOpen && (
-                    <CardContent className="px-6 pb-6 pt-0">
-                      <div className="border-t border-slate-700 pt-4">
+                    <CardContent className="px-6 pb-6 pt-0″>
+                      <div className="border-t border-slate-700 pt-4″>
                         {section.content.split("\n\n").map((para, i) => (
                           <p
                             key={i}
-                            className="text-slate-300 text-sm leading-relaxed mb-3"
+                            className="text-slate-300 text-sm leading-relaxed mb-3″
                             dangerouslySetInnerHTML={{
                               __html: para
                                 .replace(/\*\*(.+?)\*\*/g, '<strong class="text-white">$1</strong>')
@@ -340,14 +340,14 @@ export default function PartnerAgreement() {
           </div>
 
           {/* Legal Disclaimers */}
-          <Card className="bg-amber-900/20 border-amber-700/40 mt-6">
-            <CardContent className="p-5">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                <div className="text-sm text-amber-200 leading-relaxed space-y-2">
-                  <p><strong className="text-amber-100">Income Disclaimer:</strong> ProLnk makes no guarantee of earnings. Network Income depends on the job volume and subscriptions of Partners you recruit. Past performance of other Partners is not indicative of your results.</p>
-                  <p><strong className="text-amber-100">Not a Franchise:</strong> This Agreement does not create a franchise, employment, or agency relationship. Partner is an independent contractor solely responsible for their own taxes, insurance, and licensing.</p>
-                  <p><strong className="text-amber-100">Patent Pending:</strong> ProLnk's Network Income System and Lead Matching Algorithm are protected by pending U.S. patent application. Reverse engineering or imitation is prohibited.</p>
+          <Card className="bg-amber-900/20 border-amber-700/40 mt-6″>
+            <CardContent className="p-5″>
+              <div className="flex items-start gap-3″>
+                <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5″ />
+                <div className="text-sm text-amber-200 leading-relaxed space-y-2″>
+                  <p><strong className="text-amber-100″>Income Disclaimer:</strong> ProLnk makes no guarantee of earnings. Network Income depends on the job volume and subscriptions of Partners you recruit. Past performance of other Partners is not indicative of your results.</p>
+                  <p><strong className="text-amber-100″>Not a Franchise:</strong> This Agreement does not create a franchise, employment, or agency relationship. Partner is an independent contractor solely responsible for their own taxes, insurance, and licensing.</p>
+                  <p><strong className="text-amber-100″>Patent Pending:</strong> ProLnk's Network Income System and Lead Matching Algorithm are protected by pending U.S. patent application. Reverse engineering or imitation is prohibited.</p>
                 </div>
               </div>
             </CardContent>
@@ -355,60 +355,60 @@ export default function PartnerAgreement() {
 
           {/* Acceptance Block */}
           {!signed ? (
-            <Card className="bg-slate-800/50 border-slate-700 mt-6">
-              <CardContent className="p-6">
-                <h3 className="font-bold text-white mb-4">Electronic Acceptance</h3>
-                <p className="text-slate-300 text-sm mb-5">
+            <Card className="bg-slate-800/50 border-slate-700 mt-6″>
+              <CardContent className="p-6″>
+                <h3 className="font-bold text-white mb-4″>Electronic Acceptance</h3>
+                <p className="text-slate-300 text-sm mb-5″>
                   By checking the box below and clicking "I Accept This Agreement," you acknowledge that you have read,
                   understood, and agree to be bound by this Partner Services Agreement, including all commission terms,
                   network income rules, and conduct requirements. This electronic acceptance constitutes a legally binding
                   signature under the Electronic Signatures in Global and National Commerce Act (E-SIGN Act).
                 </p>
 
-                <label className="flex items-start gap-3 cursor-pointer group mb-5">
+                <label className="flex items-start gap-3 cursor-pointer group mb-5″>
                   <div
                     onClick={() => setAccepted((v) => !v)}
                     className={`w-5 h-5 flex-shrink-0 rounded border-2 mt-0.5 flex items-center justify-center transition-all ${
-                      accepted ? "bg-teal-500 border-teal-500" : "border-slate-500 group-hover:border-teal-400"
+                      accepted ? "bg-teal-500 border-teal-500″ : "border-slate-500 group-hover:border-teal-400"
                     }`}
                   >
                     {accepted && <CheckCircle className="w-3 h-3 text-white" />}
                   </div>
-                  <span className="text-sm text-slate-300">
+                  <span className="text-sm text-slate-300″>
                     I have read and agree to the ProLnk Partner Services Agreement, including the commission structure,
                     network income rules, origination rights, conduct standards, and dispute resolution terms.
                   </span>
                 </label>
 
-                <div className="grid grid-cols-2 gap-6 mb-5">
-                  <div className="border border-slate-600 rounded p-4">
-                    <div className="text-slate-500 text-xs mb-2">ProLnk Inc.</div>
+                <div className="grid grid-cols-2 gap-6 mb-5″>
+                  <div className="border border-slate-600 rounded p-4″>
+                    <div className="text-slate-500 text-xs mb-2″>ProLnk Inc.</div>
                     <div className="text-white font-semibold">Andrew Frakes</div>
                     <div className="text-slate-400 text-sm">Founder & CEO</div>
-                    <div className="text-slate-500 text-xs mt-2">Dallas, Texas</div>
+                    <div className="text-slate-500 text-xs mt-2″>Dallas, Texas</div>
                   </div>
-                  <div className="border border-slate-600 rounded p-4">
-                    <div className="text-slate-500 text-xs mb-2">Partner</div>
+                  <div className="border border-slate-600 rounded p-4″>
+                    <div className="text-slate-500 text-xs mb-2″>Partner</div>
                     <div className="text-slate-400 text-sm italic">Your electronic signature will be recorded upon acceptance.</div>
-                    <div className="text-slate-500 text-xs mt-2">Date and IP recorded at submission</div>
+                    <div className="text-slate-500 text-xs mt-2″>Date and IP recorded at submission</div>
                   </div>
                 </div>
 
                 <Button
                   onClick={handleAccept}
                   disabled={!accepted}
-                  className="w-full bg-teal-600 hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3"
+                  className="w-full bg-teal-600 hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3″
                 >
-                  <CheckCircle className="w-4 h-4 mr-2" />
+                  <CheckCircle className="w-4 h-4 mr-2″ />
                   I Accept This Agreement
                 </Button>
               </CardContent>
             </Card>
           ) : (
-            <Card className="bg-teal-900/30 border-teal-700/50 mt-6">
+            <Card className="bg-teal-900/30 border-teal-700/50 mt-6″>
               <CardContent className="p-6 text-center">
-                <CheckCircle className="w-12 h-12 text-teal-400 mx-auto mb-3" />
-                <h3 className="text-lg font-bold text-white mb-2">Agreement Accepted</h3>
+                <CheckCircle className="w-12 h-12 text-teal-400 mx-auto mb-3″ />
+                <h3 className="text-lg font-bold text-white mb-2″>Agreement Accepted</h3>
                 <p className="text-slate-300 text-sm">
                   Your electronic signature has been recorded. A confirmation copy will be sent to your registered email address.
                 </p>
@@ -416,7 +416,7 @@ export default function PartnerAgreement() {
             </Card>
           )}
 
-          <p className="text-slate-600 text-xs text-center mt-6">
+          <p className="text-slate-600 text-xs text-center mt-6″>
             © 2026 ProLnk Inc. | Dallas, TX | legal@prolnk.io
           </p>
         </div>

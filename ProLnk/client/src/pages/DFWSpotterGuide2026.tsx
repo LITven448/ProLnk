@@ -21,7 +21,7 @@ export default function DFWSpotterGuide2026() {
           {areas.map(a => (
             <button key={a.id} onClick={() => setSelected(a.id)}
               style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: selected === a.id ? '#F5E642' : '#1e2d45', color: selected === a.id ? '#0A1628' : '#94a3b8' }}>
+                background: selected === a.id ? '#F5E642′ : '#1e2d45', color: selected === a.id ? '#0A1628' : '#94a3b8' }}>
               {a.label}
             </button>
           ))}
@@ -29,13 +29,13 @@ export default function DFWSpotterGuide2026() {
         <div style={{ background: '#132035', borderRadius: 16, padding: '24px', marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>{area.label} — Monthly Checklist</h2>
           {area.items.map((item, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderBottom: i < area.items.length - 1 ? '1px solid #1e2d45' : 'none' }}>
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderBottom: i < area.items.length - 1 ? '1px solid #1e2d45′ : ’none' }}>
               <span style={{ fontSize: 20 }}>☐</span>
               <span style={{ color: '#e2e8f0', fontSize: 15 }}>{item}</span>
             </div>
           ))}
         </div>
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', color: '#0A1628′ }}>
           <strong>🛠️ Found an issue?</strong> ProLnk connects you with vetted DFW pros in 24 hours — no guesswork on who to call.
         </div>
       </div>

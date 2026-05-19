@@ -48,25 +48,25 @@ export default function DFWHVACDFWRecord() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 28 }}>
           {[
-            { label: 'Hottest', value: '113°F', sub: 'Aug 1980' },
-            { label: 'Coldest', value: '-2°F', sub: 'Feb 2021' },
-            { label: '100°F+ Streak', value: '42 days', sub: 'Summer 2011' },
+            { label: 'Hottest', value: '113°F', sub: 'Aug 1980′ },
+            { label: 'Coldest', value: '-2°F', sub: 'Feb 2021′ },
+            { label: '100°F+ Streak', value: '42 days', sub: 'Summer 2011′ },
           ].map(s => (
             <div key={s.label} style={{ background: '#0f2040', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 700 }}>{s.label}</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 11, color: '#64748b' }}>{s.sub}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚡ Select a DFW Extreme Weather Event</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚡ Select a DFW Extreme Weather Event</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {events.map(e => (
               <button key={e} onClick={() => setSelected(e)}
                 style={{ padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer',
-                  background: selected === e ? '#F5E642' : '#162035', color: selected === e ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                  background: selected === e ? '#F5E642′ : '#162035', color: selected === e ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                 {e}
               </button>
             ))}
@@ -82,7 +82,7 @@ export default function DFWHVACDFWRecord() {
             <div style={{ color: '#e2e8f0', lineHeight: 1.7 }}>{data.hvacEffect}</div>
           </div>
 
-          <div style={{ background: '#1a2a4a', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1a2a4a', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 8, fontWeight: 700 }}>WHAT TO DO</div>
             <div style={{ color: '#e2e8f0', lineHeight: 1.7 }}>{data.action}</div>
           </div>

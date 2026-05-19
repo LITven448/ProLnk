@@ -49,15 +49,15 @@ export default function DFWFoundationWarrantyTransfer() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!company || !repairType} style={{ backgroundColor: company && repairType ? '#F5E642' : '#1E3A5F', color: company && repairType ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: company && repairType ? 'pointer' : 'default' }}>
+          <button onClick={() => setShowResults(true)} disabled={!company || !repairType} style={{ backgroundColor: company && repairType ? '#F5E642′ : '#1E3A5F', color: company && repairType ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: company && repairType ? 'pointer' : 'default' }}>
             Get Transfer Process →
           </button>
         </div>
 
         {showResults && info && (
           <div style={{ display: 'grid', gap: 16 }}>
-            <div style={{ backgroundColor: info.transferable ? '#0D2918' : '#2D0A0A', border: `1px solid ${info.transferable ? '#10B981' : '#EF4444'}`, borderRadius: 12, padding: 20 }}>
-              <div style={{ color: info.transferable ? '#10B981' : '#EF4444', fontSize: 18, fontWeight: 700 }}>
+            <div style={{ backgroundColor: info.transferable ? '#0D2918′ : '#2D0A0A', border: `1px solid ${info.transferable ? '#10B981' : '#EF4444'}`, borderRadius: 12, padding: 20 }}>
+              <div style={{ color: info.transferable ? '#10B981′ : '#EF4444', fontSize: 18, fontWeight: 700 }}>
                 {info.transferable ? '✅ Warranty Is Transferable' : '❌ Warranty May Not Be Transferable'}
               </div>
               <div style={{ color: '#CBD5E1', marginTop: 8 }}>Transfer Cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>{info.cost}</span></div>
@@ -73,11 +73,11 @@ export default function DFWFoundationWarrantyTransfer() {
             <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20 }}>
               <h3 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 12 }}>🗂️ Transfer Process Steps</h3>
               <ol style={{ padding: '0 0 0 20px', margin: 0 }}>
-                {info.process.map((step, i) => <li key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '5px 0' }}>{step}</li>)}
+                {info.process.map((step, i) => <li key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '5px 0′ }}>{step}</li>)}
               </ol>
             </div>
 
-            <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontSize: 14, fontWeight: 700, marginBottom: 4 }}>💡 Pro Tip</div>
               <div style={{ color: '#CBD5E1', fontSize: 14 }}>{info.tip}</div>
             </div>

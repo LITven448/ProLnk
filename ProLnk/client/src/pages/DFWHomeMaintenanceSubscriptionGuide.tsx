@@ -32,7 +32,7 @@ export default function DFWHomeMaintenanceSubscriptionGuide() {
   const payAsYouGo = Math.round((sysTotal + 400) * factor);
   const subModel = Math.round(payAsYouGo * 0.72);
   const savings = payAsYouGo - subModel;
-  const btn = (active: boolean) => ({ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642' : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
+  const btn = (active: boolean) => ({ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642′ : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui,sans-serif', padding: '32px 16px' }}>
@@ -74,7 +74,7 @@ export default function DFWHomeMaintenanceSubscriptionGuide() {
             <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>HOME SYSTEMS (select all that apply)</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {SYSTEMS.map((s, i) => (
-                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${sys.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: sys.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5' }}>{s.label}</button>
+                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${sys.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: sys.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5′ }}>{s.label}</button>
               ))}
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function DFWHomeMaintenanceSubscriptionGuide() {
               <div style={{ color: '#E8EDF5', fontWeight: 800, fontSize: 24 }}>${payAsYouGo.toLocaleString()}/yr</div>
               <div style={{ color: '#94A3B8', fontSize: 12, marginTop: 6 }}>Reactive, no priority scheduling</div>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>Subscription Model (est. annual)</div>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 24 }}>${subModel.toLocaleString()}/yr</div>
               <div style={{ color: '#4ADE80', fontSize: 12, marginTop: 6 }}>Save ~${savings.toLocaleString()} + priority access</div>

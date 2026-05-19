@@ -58,13 +58,13 @@ export default function DFWHomeownerReadinessScore() {
           </div>
         ))}
         <button onClick={() => setSubmitted(true)} disabled={answered < allQs.length}
-          style={{ width: '100%', padding: '16px', background: answered === allQs.length ? '#F5E642' : '#1e3a5f', color: answered === allQs.length ? '#0A1628' : '#64748b', border: 'none', borderRadius: 12, fontWeight: 800, fontSize: 18, cursor: answered === allQs.length ? 'pointer' : 'not-allowed', marginBottom: 28 }}>
+          style={{ width: '100%', padding: '16px', background: answered === allQs.length ? '#F5E642′ : '#1e3a5f', color: answered === allQs.length ? '#0A1628' : '#64748b', border: ’none', borderRadius: 12, fontWeight: 800, fontSize: 18, cursor: answered === allQs.length ? 'pointer' : 'not-allowed', marginBottom: 28 }}>
           {answered < allQs.length ? `Answer all ${allQs.length} questions (${answered}/${allQs.length})` : 'Calculate My Score →'}
         </button>
         {submitted && (
           <div style={{ background: '#111d30', borderRadius: 20, padding: 32, border: '2px solid #F5E642', textAlign: 'center' }}>
-            <div style={{ fontSize: 72, fontWeight: 900, color: '#F5E642' }}>{score}</div>
-            <div style={{ fontSize: 20, marginBottom: 24, color: '#cbd5e1' }}>/ 100 Readiness Score</div>
+            <div style={{ fontSize: 72, fontWeight: 900, color: '#F5E642′ }}>{score}</div>
+            <div style={{ fontSize: 20, marginBottom: 24, color: '#cbd5e1′ }}>/ 100 Readiness Score</div>
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12 }}>🎯 Top 3 Gaps to Fill:</div>
               {gaps.map((g, i) => (

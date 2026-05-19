@@ -63,7 +63,7 @@ export default function DFWConcretePaintingGuide() {
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', color: '#aac', marginBottom: '0.4rem', fontSize: '0.9rem' }}>Concrete Surface Type</label>
             <select value={concreteType} onChange={e => setConcreteType(e.target.value)}
-              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334' }}>
+              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334′ }}>
               <option value=''>Select surface...</option>
               {concreteTypes.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
@@ -71,7 +71,7 @@ export default function DFWConcretePaintingGuide() {
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', color: '#aac', marginBottom: '0.4rem', fontSize: '0.9rem' }}>DFW Sun Exposure</label>
             <select value={sunExposure} onChange={e => setSunExposure(e.target.value)}
-              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334' }}>
+              style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334′ }}>
               <option value=''>Select exposure...</option>
               {sunExposures.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
@@ -84,7 +84,7 @@ export default function DFWConcretePaintingGuide() {
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               <div><span style={{ color: '#aac' }}>Coating: </span><strong>{result.coating}</strong></div>
               <div><span style={{ color: '#aac' }}>Prep Steps: </span><strong>{result.prep}</strong></div>
-              <div><span style={{ color: '#aac' }}>Estimated Cost: </span><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+              <div><span style={{ color: '#aac' }}>Estimated Cost: </span><strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', color: '#cce', fontSize: '0.9rem' }}>
                 💡 {result.note}
               </div>

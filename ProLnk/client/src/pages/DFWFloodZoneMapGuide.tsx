@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-type FloodZone = 'AE' | 'AO' | 'X500' | 'X' | 'VE';
+type FloodZone = 'AE' | 'AO' | 'X500′ | ’X' | 'VE';
 
 const floodZoneData: Record<FloodZone, {
   label: string;
@@ -131,7 +131,7 @@ export default function DFWFloodZoneMapGuide() {
             </div>
             <div style={{ background: zone.insuranceRequired ? '#3b0a0a' : '#052e16', borderRadius: 10, padding: '10px 18px', textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 4, fontWeight: 700 }}>INSURANCE REQUIRED</div>
-              <div style={{ fontSize: 18, fontWeight: 800, color: zone.insuranceRequired ? '#f87171' : '#4ade80' }}>
+              <div style={{ fontSize: 18, fontWeight: 800, color: zone.insuranceRequired ? '#f87171′ : '#4ade80' }}>
                 {zone.insuranceRequired ? 'YES' : 'NO'}
               </div>
             </div>

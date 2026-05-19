@@ -72,7 +72,7 @@ export default function DFWDeclutterBeforeSaleGuide() {
             <div key={i} style={{ background: '#fff', borderRadius: 14, padding: 24, boxShadow: '0 2px 10px rgba(0,0,0,0.06)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
                 <span style={{ background: '#0A1628', color: '#F5E642', fontWeight: 800, width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13 }}>{r.priority}</span>
-                <span style={{ fontWeight: 700, fontSize: 16, color: '#0A1628' }}>{r.room}</span>
+                <span style={{ fontWeight: 700, fontSize: 16, color: '#0A1628′ }}>{r.room}</span>
               </div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {r.tasks.map((t, j) => <li key={j} style={{ fontSize: 14, color: '#444', marginBottom: 5 }}>{t}</li>)}
@@ -86,14 +86,14 @@ export default function DFWDeclutterBeforeSaleGuide() {
           {storageTips.map((s, i) => (
             <div key={i} style={{ padding: '14px 0', borderBottom: i < storageTips.length - 1 ? '1px solid #f0f0ee' : 'none' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{s.tip}</div>
-              <div style={{ fontSize: 14, color: '#666' }}>{s.detail}</div>
+              <div style={{ fontSize: 14, color: '#666′ }}>{s.detail}</div>
             </div>
           ))}
         </div>
 
         <div style={{ textAlign: 'center', padding: 28, background: '#0A1628', borderRadius: 16 }}>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, margin: 0 }}>Need a professional stager or organizer?</p>
-          <p style={{ color: '#aaa', fontSize: 14, margin: '8px 0 0' }}>Connect with DFW home prep pros who can help you get market-ready faster.</p>
+          <p style={{ color: '#aaa', fontSize: 14, margin: '8px 0 0′ }}>Connect with DFW home prep pros who can help you get market-ready faster.</p>
         </div>
       </div>
     </div>

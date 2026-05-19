@@ -45,7 +45,7 @@ export default function DFWWalkingDistanceGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🚶 DFW Walkability Rankings</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🚶 DFW Walkability Rankings</h2>
           {NEIGHBORHOODS.map((n) => (
             <div key={n.name} style={{ borderBottom: '1px solid #1E2F4A', paddingBottom: 16, marginBottom: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
@@ -56,20 +56,20 @@ export default function DFWWalkingDistanceGuide() {
                 🚌 Transit: {n.transit} &nbsp;|&nbsp; 🚲 Bike: {n.bikeScore}/100
               </div>
               <div style={{ fontSize: 13, color: '#4ADE80', marginBottom: 4 }}>💰 {n.priceRange} — {n.premium}</div>
-              <div style={{ fontSize: 12, color: '#6B7FA0' }}>{n.highlights}</div>
+              <div style={{ fontSize: 12, color: '#6B7FA0′ }}>{n.highlights}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>💡 Walkability & Home Value in DFW</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>💡 Walkability & Home Value in DFW</h2>
           <p style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 0 }}>
             Walkable DFW neighborhoods command an 8–25% price premium over comparable suburban homes. The premium is highest in Uptown Dallas and Legacy West — both of which saw values grow faster than DFW average during 2020–2024. As DFW grows (adding ~100K people/year), walkable urban nodes are becoming increasingly valuable. If you can afford the entry price, walkable DFW neighborhoods historically outperform in appreciation.
           </p>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Find Your Best DFW Neighborhood</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Find Your Best DFW Neighborhood</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#8A9BC0', display: 'block', marginBottom: 6 }}>Most Important Lifestyle Priority</label>
@@ -93,12 +93,12 @@ export default function DFWWalkingDistanceGuide() {
           </div>
           {results && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642' }}>🏆 Top 3 DFW Neighborhoods for You</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642′ }}>🏆 Top 3 DFW Neighborhoods for You</div>
               {results.map((n, i) => (
                 <div key={n.name} style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginBottom: 10, borderLeft: `4px solid ${i === 0 ? '#F5E642' : '#1E2F4A'}` }}>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>#{i + 1} {n.name} — Walk Score {n.walkScore}</div>
                   <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>💰 {n.priceRange} ({n.premium})</div>
-                  <div style={{ fontSize: 12, color: '#6B7FA0' }}>{n.highlights}</div>
+                  <div style={{ fontSize: 12, color: '#6B7FA0′ }}>{n.highlights}</div>
                 </div>
               ))}
             </div>

@@ -5,21 +5,21 @@ export default function DFWHomeSellingGuide2026() {
 
   const priorities: Record<string, { item: string; impact: string; cost: string }[]> = {
     excellent: [
-      { item: 'Professional photography', impact: 'More showings', cost: '$300-500' },
-      { item: 'Deep clean + deodorize', impact: 'Better first impressions', cost: '$200-400' },
-      { item: 'Curb appeal touch-up', impact: 'Online click-through', cost: '$500-1,000' },
+      { item: 'Professional photography', impact: 'More showings', cost: '$300-500′ },
+      { item: 'Deep clean + deodorize', impact: 'Better first impressions', cost: '$200-400′ },
+      { item: 'Curb appeal touch-up', impact: 'Online click-through', cost: '$500-1,000′ },
     ],
     good: [
-      { item: 'Fresh neutral paint', impact: '+$8K avg return', cost: '$2,500' },
-      { item: 'HVAC service', impact: 'Prevents inspection flags', cost: '$150' },
-      { item: 'Landscaping refresh', impact: 'First impression', cost: '$800-1,500' },
+      { item: 'Fresh neutral paint', impact: '+$8K avg return', cost: '$2,500′ },
+      { item: 'HVAC service', impact: 'Prevents inspection flags', cost: '$150′ },
+      { item: 'Landscaping refresh', impact: 'First impression', cost: '$800-1,500′ },
       { item: 'Home Health Vault docs', impact: 'Commands 2-4% premium', cost: 'Free with ProLnk' },
     ],
     fair: [
-      { item: 'Foundation inspection', impact: 'Prevent deal killers', cost: '$300' },
-      { item: 'Roof certification', impact: 'Buyer confidence', cost: '$150' },
-      { item: 'HVAC replacement eval', impact: 'Negotiation power', cost: '$100' },
-      { item: 'Full repaint interior', impact: 'Modern neutral appeal', cost: '$4,000' },
+      { item: 'Foundation inspection', impact: 'Prevent deal killers', cost: '$300′ },
+      { item: 'Roof certification', impact: 'Buyer confidence', cost: '$150′ },
+      { item: 'HVAC replacement eval', impact: 'Negotiation power', cost: '$100′ },
+      { item: 'Full repaint interior', impact: 'Modern neutral appeal', cost: '$4,000′ },
       { item: 'Home Health Vault docs', impact: 'Disclose, command trust', cost: 'Free with ProLnk' },
     ],
   };
@@ -29,7 +29,7 @@ export default function DFWHomeSellingGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏠</div>
-          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Home Selling Guide 2026</h1>
+          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Home Selling Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Your playbook for selling in the Dallas-Fort Worth market</p>
         </div>
 
@@ -54,7 +54,7 @@ export default function DFWHomeSellingGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>Select your home condition:</p>
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
             {['excellent', 'good', 'fair'].map((c) => (
-              <button key={c} onClick={() => setCondition(c)} style={{ padding: '0.4rem 1rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', background: condition === c ? '#F5E642' : '#1e3a5f', color: condition === c ? '#0A1628' : '#fff' }}>
+              <button key={c} onClick={() => setCondition(c)} style={{ padding: '0.4rem 1rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', background: condition === c ? '#F5E642′ : '#1e3a5f', color: condition === c ? '#0A1628' : '#fff' }}>
                 {c.charAt(0).toUpperCase() + c.slice(1)}
               </button>
             ))}

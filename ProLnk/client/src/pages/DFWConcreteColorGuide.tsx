@@ -62,13 +62,13 @@ export default function DFWConcreteColorGuide() {
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Concrete Application</div>
             {APPLICATIONS.map(a => (
-              <button key={a} onClick={() => setApp(a)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: app === a ? '#F5E642' : '#0D1E3A', color: app === a ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: app === a ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: app === a ? 700 : 400, transition: 'all 0.2s' }}>{a}</button>
+              <button key={a} onClick={() => setApp(a)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: app === a ? '#F5E642′ : '#0D1E3A', color: app === a ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: app === a ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: app === a ? 700 : 400, transition: 'all 0.2s' }}>{a}</button>
             ))}
           </div>
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>DFW Condition Priority</div>
             {CONDITIONS.map(c => (
-              <button key={c} onClick={() => setCond(c)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: cond === c ? '#F5E642' : '#0D1E3A', color: cond === c ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: cond === c ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: cond === c ? 700 : 400, transition: 'all 0.2s' }}>{c}</button>
+              <button key={c} onClick={() => setCond(c)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: cond === c ? '#F5E642′ : '#0D1E3A', color: cond === c ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: cond === c ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: cond === c ? 700 : 400, transition: 'all 0.2s' }}>{c}</button>
             ))}
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function DFWConcreteColorGuide() {
         <div style={{ background: '#0D1E3A', borderRadius: 12, padding: '1.25rem', border: '1px solid #1C2E4A' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>☀️ DFW Concrete Color Facts</div>
           {['DFW gets 240+ sunny days per year -- UV degradation is the #1 color killer.', 'Dark concrete surfaces in DFW reach 150-160 degrees F in summer -- light tones are safer and last longer.', 'Acid stain creates a permanent chemical bond with concrete -- it cannot peel or flake like surface coatings.', 'Integral color must match throughout the full slab depth -- chips show the same color underneath.', 'All exterior DFW concrete needs UV-stable sealer reapplied every 2-4 years regardless of color method.'].map((tip, i) => (
-            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642' }}>{tip}</div>
+            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642′ }}>{tip}</div>
           ))}
         </div>
       </div>

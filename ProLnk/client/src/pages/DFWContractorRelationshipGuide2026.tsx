@@ -67,8 +67,8 @@ export default function DFWContractorRelationshipGuide2026() {
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>💡 What DFW Pros Want From You</p>
           {['Clear scope before the job starts', 'Payment within 24 hours of completion', 'Honest and specific reviews', 'Reasonable access and scheduling windows', 'Repeat business over one-time urgency calls'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: '.75rem', marginBottom: '.5rem' }}>
-              <span style={{ color: '#F5E642' }}>✓</span>
-              <span style={{ color: '#cbd5e1' }}>{item}</span>
+              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#cbd5e1′ }}>{item}</span>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default function DFWContractorRelationshipGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>Where are you in your contractor relationship?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {stages.map(s => (
-            <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+            <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{s.label}</div>
               <div style={{ fontSize: '.85rem', opacity: .8, marginTop: '.25rem' }}>{s.desc}</div>
             </button>
@@ -88,8 +88,8 @@ export default function DFWContractorRelationshipGuide2026() {
             <h2 style={{ color: '#F5E642', marginTop: 0 }}>{guide.title}</h2>
             {guide.tips.map((tip, i) => (
               <div key={i} style={{ display: 'flex', gap: '.75rem', marginBottom: '.75rem', alignItems: 'flex-start' }}>
-                <span style={{ color: '#F5E642' }}>✓</span>
-                <span style={{ color: '#cbd5e1' }}>{tip}</span>
+                <span style={{ color: '#F5E642′ }}>✓</span>
+                <span style={{ color: '#cbd5e1′ }}>{tip}</span>
               </div>
             ))}
           </div>

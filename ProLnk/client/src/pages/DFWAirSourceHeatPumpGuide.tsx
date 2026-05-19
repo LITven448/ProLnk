@@ -12,9 +12,9 @@ const heatPumpData: Record<string, Record<string, { feasibility: string; systemT
     'Over 3,000 sqft': { feasibility: 'High', systemType: 'Dual Fuel Hybrid — may need 2-zone', cost: '$14,000–$22,000', annualSavings: '$700–$1,200', payback: '14–20 yrs', rebates: '25C Tax Credit 30% + Oncor rebate' },
   },
   'Electric resistance': {
-    'Under 1,200 sqft': { feasibility: 'Excellent — top priority', systemType: 'All-Electric Heat Pump', cost: '$5,000–$8,500', annualSavings: '$600–$900', payback: '7–10 yrs', rebates: 'Oncor $200, 25C 30%, Inflation Reduction Act HEAR rebate up to $8,000' },
+    'Under 1,200 sqft': { feasibility: 'Excellent — top priority', systemType: 'All-Electric Heat Pump', cost: '$5,000–$8,500', annualSavings: '$600–$900', payback: '7–10 yrs', rebates: 'Oncor $200, 25C 30%, Inflation Reduction Act HEAR rebate up to $8,000′ },
     '1,200–2,000 sqft': { feasibility: 'Excellent', systemType: 'All-Electric Heat Pump', cost: '$6,500–$10,500', annualSavings: '$800–$1,200', payback: '7–10 yrs', rebates: 'IRA HEAR rebate up to $8,000 + 25C 30%' },
-    '2,000–3,000 sqft': { feasibility: 'Excellent', systemType: 'All-Electric Heat Pump', cost: '$9,000–$14,500', annualSavings: '$1,000–$1,600', payback: '8–11 yrs', rebates: 'IRA HEAR up to $8,000 + 25C up to $2,000' },
+    '2,000–3,000 sqft': { feasibility: 'Excellent', systemType: 'All-Electric Heat Pump', cost: '$9,000–$14,500', annualSavings: '$1,000–$1,600', payback: '8–11 yrs', rebates: 'IRA HEAR up to $8,000 + 25C up to $2,000′ },
     'Over 3,000 sqft': { feasibility: 'Excellent', systemType: 'All-Electric Heat Pump (2 units likely)', cost: '$14,000–$22,000', annualSavings: '$1,300–$2,000', payback: '9–13 yrs', rebates: 'IRA + 25C on each system' },
   },
   'Propane': {
@@ -32,7 +32,7 @@ const heatPumpData: Record<string, Record<string, { feasibility: string; systemT
   'Old heat pump (10+ yrs)': {
     'Under 1,200 sqft': { feasibility: 'High — straightforward swap', systemType: 'New High-SEER2 Heat Pump', cost: '$4,500–$7,500', annualSavings: '$200–$400', payback: '12–20 yrs', rebates: '25C 30% (up to $2,000)' },
     '1,200–2,000 sqft': { feasibility: 'High', systemType: 'New High-SEER2 Heat Pump', cost: '$6,000–$10,000', annualSavings: '$300–$600', payback: '13–20 yrs', rebates: '25C 30% + Oncor rebate' },
-    '2,000–3,000 sqft': { feasibility: 'High', systemType: 'New High-SEER2 Heat Pump', cost: '$8,500–$13,500', annualSavings: '$400–$800', payback: '14–20 yrs', rebates: '25C 30% up to $2,000' },
+    '2,000–3,000 sqft': { feasibility: 'High', systemType: 'New High-SEER2 Heat Pump', cost: '$8,500–$13,500', annualSavings: '$400–$800', payback: '14–20 yrs', rebates: '25C 30% up to $2,000′ },
     'Over 3,000 sqft': { feasibility: 'High', systemType: 'New High-SEER2 Heat Pump (2 units)', cost: '$13,000–$20,000', annualSavings: '$500–$1,000', payback: '15–22 yrs', rebates: '25C 30% per unit' },
   },
 };

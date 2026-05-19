@@ -56,7 +56,7 @@ export default function DFWHVACNewHomeGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14 }}>What new DFW homes get — and how to make sure yours performs in Texas heat</p>
         </div>
 
-        <div style={{ background: '#111d33', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #f97316' }}>
+        <div style={{ background: '#111d33', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #f97316′ }}>
           <div style={{ color: '#f97316', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>⚠️ DFW Builder-Grade Reality</div>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0, lineHeight: 1.6 }}>
             Most DFW production builders install minimum-code HVAC systems (SEER2 14.3 minimum). 
@@ -86,7 +86,7 @@ export default function DFWHVACNewHomeGuide2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2d1a', borderRadius: 12, padding: 16, border: '1px solid #4ade80' }}>
+        <div style={{ background: '#0f2d1a', borderRadius: 12, padding: 16, border: '1px solid #4ade80′ }}>
           <div style={{ color: '#4ade80', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>💡 PRO TIP FOR THIS STAGE</div>
           <p style={{ color: '#cbd5e1', fontSize: 13, margin: 0, lineHeight: 1.6 }}>{current.upgrade}</p>
         </div>

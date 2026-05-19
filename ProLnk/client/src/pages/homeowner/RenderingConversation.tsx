@@ -171,12 +171,12 @@ ${Object.keys(collectedPrefs).length > 0 ? `Already collected: ${JSON.stringify(
   return (
     <HomeownerLayout>
       <div className="max-w-2xl mx-auto">
-        <div className="mb-6">
-          <h1 className="text-2xl font-black text-gray-900 flex items-center gap-2">
-            <Sparkles className="w-6 h-6 text-indigo-600" />
+        <div className="mb-6″>
+          <h1 className="text-2xl font-black text-gray-900 flex items-center gap-2″>
+            <Sparkles className="w-6 h-6 text-indigo-600″ />
             AI Design Studio
           </h1>
-          <p className="text-gray-500 text-sm mt-1">Upload a photo, describe your vision, get a photorealistic rendering</p>
+          <p className="text-gray-500 text-sm mt-1″>Upload a photo, describe your vision, get a photorealistic rendering</p>
         </div>
 
         {/* Photo upload */}
@@ -193,21 +193,21 @@ ${Object.keys(collectedPrefs).length > 0 ? `Already collected: ${JSON.stringify(
               onChange={e => e.target.files?.[0] && handlePhotoUpload(e.target.files[0])}
             />
             {uploading ? (
-              <><Loader2 className="w-10 h-10 text-indigo-400 animate-spin mx-auto mb-3" /><p className="text-indigo-600">Uploading...</p></>
+              <><Loader2 className="w-10 h-10 text-indigo-400 animate-spin mx-auto mb-3″ /><p className="text-indigo-600">Uploading...</p></>
             ) : (
-              <><Camera className="w-10 h-10 text-indigo-300 mx-auto mb-3" />
-              <p className="text-gray-700 font-semibold mb-1">Upload a room photo</p>
+              <><Camera className="w-10 h-10 text-indigo-300 mx-auto mb-3″ />
+              <p className="text-gray-700 font-semibold mb-1″>Upload a room photo</p>
               <p className="text-gray-400 text-sm">Interior or exterior — any room you want to transform</p></>
             )}
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-4″>
             {/* Photo preview */}
             <div className="relative">
-              <img src={photoUrl} alt="Your space" className="w-full rounded-xl object-cover max-h-48" />
+              <img src={photoUrl} alt="Your space" className="w-full rounded-xl object-cover max-h-48″ />
               <button
                 onClick={() => { setPhotoUrl(null); setMessages([]); setGeneratedUrl(null); setReadyToRender(false); }}
-                className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-lg hover:bg-black/70"
+                className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-lg hover:bg-black/70″
               >
                 Change photo
               </button>
@@ -215,13 +215,13 @@ ${Object.keys(collectedPrefs).length > 0 ? `Already collected: ${JSON.stringify(
 
             {/* Generated rendering */}
             {generatedUrl && (
-              <div className="space-y-2">
-                <div className="text-indigo-600 font-semibold text-sm flex items-center gap-2">
-                  <Sparkles className="w-4 h-4" /> Your AI Rendering
+              <div className="space-y-2″>
+                <div className="text-indigo-600 font-semibold text-sm flex items-center gap-2″>
+                  <Sparkles className="w-4 h-4″ /> Your AI Rendering
                 </div>
                 <img src={generatedUrl} alt="AI rendering" className="w-full rounded-xl object-cover" />
-                <Button variant="outline" className="w-full gap-2" onClick={() => { setGeneratedUrl(null); setReadyToRender(false); setMessages([]); }}>
-                  <RefreshCw className="w-4 h-4" /> Start Over with New Preferences
+                <Button variant="outline" className="w-full gap-2″ onClick={() => { setGeneratedUrl(null); setReadyToRender(false); setMessages([]); }}>
+                  <RefreshCw className="w-4 h-4″ /> Start Over with New Preferences
                 </Button>
               </div>
             )}
@@ -229,7 +229,7 @@ ${Object.keys(collectedPrefs).length > 0 ? `Already collected: ${JSON.stringify(
             {/* Chat */}
             {!generatedUrl && (
               <>
-                <div className="bg-gray-50 rounded-xl p-4 h-64 overflow-y-auto space-y-3">
+                <div className="bg-gray-50 rounded-xl p-4 h-64 overflow-y-auto space-y-3″>
                   {messages.map((m, i) => (
                     <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                       <div className={`max-w-xs px-3 py-2 rounded-2xl text-sm ${
@@ -246,7 +246,7 @@ ${Object.keys(collectedPrefs).length > 0 ? `Already collected: ${JSON.stringify(
 
                 {readyToRender ? (
                   <Button
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black text-lg h-12 gap-2"
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black text-lg h-12 gap-2″
                     onClick={() => {
                       setGenerating(true);
                       // TODO: Wire to generateMockup with propertyId
@@ -255,19 +255,19 @@ ${Object.keys(collectedPrefs).length > 0 ? `Already collected: ${JSON.stringify(
                     }}
                     disabled={generating}
                   >
-                    {generating ? <><Loader2 className="w-5 h-5 animate-spin" />Generating your rendering...</> : <><Sparkles className="w-5 h-5" />Generate My Rendering</>}
+                    {generating ? <><Loader2 className="w-5 h-5 animate-spin" />Generating your rendering...</> : <><Sparkles className="w-5 h-5″ />Generate My Rendering</>}
                   </Button>
                 ) : (
-                  <div className="flex gap-2">
+                  <div className="flex gap-2″>
                     <Input
                       placeholder="Describe your vision or answer the AI's question..."
                       value={input}
                       onChange={e => setInput(e.target.value)}
                       onKeyDown={e => e.key === "Enter" && !e.shiftKey && sendMessage()}
-                      className="flex-1"
+                      className="flex-1″
                     />
                     <Button onClick={sendMessage} disabled={!input.trim() || chatMutation.isPending} className="bg-indigo-600 hover:bg-indigo-700 text-white">
-                      {chatMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                      {chatMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4″ />}
                     </Button>
                   </div>
                 )}

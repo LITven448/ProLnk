@@ -84,7 +84,7 @@ export default function DFWEventSpaceGuide() {
               { label: '🔊 Sound System', value: result.sound },
               { label: '📋 Permit Requirements', value: result.permit },
             ].map(item => (
-              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050' }}>
+              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ color: '#CCD6E0', lineHeight: 1.6 }}>{item.value}</div>
               </div>

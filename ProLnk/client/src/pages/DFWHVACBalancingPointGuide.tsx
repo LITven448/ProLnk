@@ -33,7 +33,7 @@ function calcBalance(insulation: string, windows: string, homeAge: number): Bala
   if (windows === 'modern') base -= 2;
   if (homeAge > 1990) base -= 2;
   base = Math.max(20, Math.min(45, base));
-  const color = base > 38 ? '#EF4444' : base > 33 ? '#F59E0B' : '#10B981';
+  const color = base > 38 ? '#EF4444′ : base > 33 ? '#F59E0B' : '#10B981';
   const auxExpected = base <= 30 ? 'Aux heat expected fewer than 5 days/year in DFW' : base <= 38 ? 'Aux heat expected 8–15 days/year in DFW' : 'Aux heat may run 20+ days/year — consider system tuning';
   const assessment = base > 38 ? 'High balance point — heat pump efficiency loss. Review insulation and duct sealing.' : base <= 30 ? 'Excellent — heat pump handles nearly all DFW winters alone.' : 'Normal DFW balance point range. System performing as expected.';
   return { point: base, assessment, auxExpected, color };
@@ -54,13 +54,13 @@ export default function DFWHVACBalancingPointGuide() {
           <p style={{ color: '#94A3B8', fontSize: 15 }}>The temperature that determines when auxiliary heat kicks in — and why DFW homeowners rarely need to worry</p>
         </div>
         {sections.map((s) => (
-          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{s.emoji}</div>
             <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 600, margin: '0 0 8px' }}>{s.title}</h2>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{s.body}</p>
           </div>
         ))}
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 20px' }}>🏠 Balance Point Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -81,7 +81,7 @@ export default function DFWHVACBalancingPointGuide() {
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Year Built: {homeAge}</label>
-              <input type="range" min={1960} max={2024} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={1960} max={2024} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: `4px solid ${result.color}` }}>

@@ -65,8 +65,8 @@ export default function DFWProLnkFutureState() {
               key={p.id}
               onClick={() => setSelected(p.id)}
               style={{
-                backgroundColor: selected === p.id ? '#F5E642' : '#1e2d45',
-                color: selected === p.id ? '#0A1628' : '#fff',
+                backgroundColor: selected === p.id ? '#F5E642′ : '#1e2d45',
+                color: selected === p.id ? '#0A1628′ : '#fff',
                 border: 'none',
                 borderRadius: 10,
                 padding: '14px 10px',

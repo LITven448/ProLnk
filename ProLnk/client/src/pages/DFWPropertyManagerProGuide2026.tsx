@@ -33,7 +33,7 @@ export default function DFWPropertyManagerProGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 16 }}>📊 Portfolio Size → ProLnk Value Estimate</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {portfolioOptions.map((p, i) => (
-              <button key={p.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
+              <button key={p.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
                 {p.label}
               </button>
             ))}

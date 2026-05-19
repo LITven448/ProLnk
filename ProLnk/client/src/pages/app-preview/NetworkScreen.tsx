@@ -9,21 +9,21 @@ const NAV = [
 ];
 
 const COLORS = {
-  bg: "#0A1628",
-  card: "#152035",
-  border: "#1E2E45",
+  bg: "#0A1628″,
+  card: "#152035″,
+  border: "#1E2E45″,
   text: "#F0F4FF",
-  muted: "#7A8BA8",
-  yellow: "#F5E642",
-  green: "#10B981",
+  muted: "#7A8BA8″,
+  yellow: "#F5E642″,
+  green: "#10B981″,
 };
 
 function OrgCard({ name, trade, jobs, size = "sm" }: { name: string; trade: string; jobs: number; size?: "sm" | "md" }) {
   return (
-    <div style={{ background: "#0A1628", border: `1px solid #1E2E45`, borderRadius: 10, padding: size === "md" ? "10px 12px" : "8px 10px", textAlign: "center", minWidth: size === "md" ? 90 : 76 }}>
+    <div style={{ background: "#0A1628″, border: `1px solid #1E2E45`, borderRadius: 10, padding: size === "md" ? "10px 12px" : "8px 10px", textAlign: "center", minWidth: size === "md" ? 90 : 76 }}>
       <div style={{ fontSize: size === "md" ? 12 : 11, fontWeight: 700, color: "#F0F4FF" }}>{name}</div>
-      <div style={{ fontSize: 10, color: "#7A8BA8", marginTop: 1 }}>{trade}</div>
-      <div style={{ fontSize: 10, color: "#10B981", marginTop: 2 }}>{jobs} jobs</div>
+      <div style={{ fontSize: 10, color: "#7A8BA8″, marginTop: 1 }}>{trade}</div>
+      <div style={{ fontSize: 10, color: "#10B981″, marginTop: 2 }}>{jobs} jobs</div>
     </div>
   );
 }
@@ -57,8 +57,8 @@ export default function NetworkScreen() {
         {/* 3 stat cards */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 16 }}>
           {[
-            { label: "Total Network", value: "23" },
-            { label: "Direct Recruits", value: "8" },
+            { label: "Total Network", value: "23″ },
+            { label: "Direct Recruits", value: "8″ },
             { label: "Passive Income", value: "$247/mo", green: true },
           ].map((c) => (
             <div key={c.label} style={{ background: COLORS.card, borderRadius: 12, padding: "12px 10px", border: `1px solid ${COLORS.border}`, textAlign: "center" }}>
@@ -127,16 +127,16 @@ export default function NetworkScreen() {
 
         {/* Earnings by level table */}
         <div style={{ background: COLORS.card, borderRadius: 16, border: `1px solid ${COLORS.border}`, marginBottom: 14, overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "#0A162888", padding: "10px 16px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "#0A162888″, padding: "10px 16px" }}>
             {["Level", "Recruits", "This Month"].map((h) => (
               <div key={h} style={{ fontSize: 11, color: COLORS.muted, fontWeight: 600 }}>{h}</div>
             ))}
           </div>
           {[
-            { level: "L1 Direct", recruits: "8", month: "$174" },
-            { level: "L2", recruits: "11", month: "$73" },
-            { level: "L3–L4", recruits: "4", month: "$0" },
-            { level: "Total", recruits: "23", month: "$247", total: true },
+            { level: "L1 Direct", recruits: "8″, month: "$174" },
+            { level: "L2″, recruits: "11", month: "$73" },
+            { level: "L3–L4″, recruits: "4", month: "$0" },
+            { level: "Total", recruits: "23″, month: "$247", total: true },
           ].map((row) => (
             <div key={row.level} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", padding: "10px 16px", borderTop: `1px solid ${COLORS.border}`, background: row.total ? `${COLORS.yellow}0A` : "transparent" }}>
               <div style={{ fontSize: 13, fontWeight: row.total ? 700 : 400, color: row.total ? COLORS.yellow : COLORS.text }}>{row.level}</div>

@@ -64,7 +64,7 @@ export default function PartnerDFWMasterPlan() {
   const tradeBoost = trade ? tradeBoosts[trade] : null;
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🗺️</div>
@@ -93,7 +93,7 @@ export default function PartnerDFWMasterPlan() {
           <p style={{ fontSize: 14, color: '#4B5563', marginBottom: 12, lineHeight: 1.6 }}>
             DFW realtors close 8,000+ transactions per month. Each closing is a homeowner who needs contractors immediately.
           </p>
-          <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
             <p style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>The Realtor Pitch</p>
             <p style={{ fontSize: 13, color: '#374151', fontStyle: 'italic' }}>
               "I help your buyers get connected with vetted contractors immediately after closing. You look like a hero, they get help fast, and I earn origination rights. Want to refer your next 5 buyers as a trial?"
@@ -109,7 +109,7 @@ export default function PartnerDFWMasterPlan() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {corridors.map(c => (
                 <button key={c.key} onClick={() => setCorridor(c.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: corridor === c.key ? '#F5E642' : '#E5E7EB', backgroundColor: corridor === c.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: corridor === c.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: corridor === c.key ? '#F5E642′ : '#E5E7EB', backgroundColor: corridor === c.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: corridor === c.key ? 700 : 400 }}>
                   {c.label}
                 </button>
               ))}
@@ -120,7 +120,7 @@ export default function PartnerDFWMasterPlan() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {tradeSpecialties.map(t => (
                 <button key={t.key} onClick={() => setTrade(t.key)}
-                  style={{ padding: '8px 14px', borderRadius: 20, border: '2px solid', borderColor: trade === t.key ? '#F5E642' : '#E5E7EB', backgroundColor: trade === t.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', fontSize: 13, color: '#0A1628', fontWeight: trade === t.key ? 700 : 400 }}>
+                  style={{ padding: '8px 14px', borderRadius: 20, border: '2px solid', borderColor: trade === t.key ? '#F5E642′ : '#E5E7EB', backgroundColor: trade === t.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', fontSize: 13, color: '#0A1628', fontWeight: trade === t.key ? 700 : 400 }}>
                   {t.label}
                 </button>
               ))}
@@ -131,8 +131,8 @@ export default function PartnerDFWMasterPlan() {
               <p style={{ fontWeight: 700, color: '#0369A1', marginBottom: 6 }}>Territory Profile</p>
               <p style={{ fontSize: 14, color: '#0A1628', marginBottom: 16 }}>{data.profile}</p>
               {tradeBoost && (
-                <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 12, marginBottom: 16, borderLeft: '3px solid #F5E642' }}>
-                  <p style={{ fontSize: 13, fontWeight: 700, margin: '0 0 4px 0' }}>Trade Advantage</p>
+                <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 12, marginBottom: 16, borderLeft: '3px solid #F5E642′ }}>
+                  <p style={{ fontSize: 13, fontWeight: 700, margin: '0 0 4px 0′ }}>Trade Advantage</p>
                   <p style={{ fontSize: 13, color: '#374151', margin: 0 }}>{tradeBoost}</p>
                 </div>
               )}
@@ -145,7 +145,7 @@ export default function PartnerDFWMasterPlan() {
                 {data.realtorTargets.map(r => <li key={r} style={{ fontSize: 13, marginBottom: 4 }}>{r}</li>)}
               </ul>
               <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>
-                <p style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, margin: '0 0 4px 0' }}>📈 12-Month Network Projection</p>
+                <p style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, margin: '0 0 4px 0′ }}>📈 12-Month Network Projection</p>
                 <p style={{ fontSize: 13, color: '#D1D5DB', margin: 0 }}>{data.networkProjection}</p>
               </div>
             </div>

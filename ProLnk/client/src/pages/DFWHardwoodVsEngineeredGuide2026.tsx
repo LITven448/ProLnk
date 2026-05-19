@@ -30,7 +30,7 @@ export default function DFWHardwoodVsEngineeredGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '3rem' }}>🌲</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0' }}>DFW Hardwood vs Engineered Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0′ }}>DFW Hardwood vs Engineered Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>North Texas humidity swings make this decision critical — get it right the first time.</p>
         </div>
 
@@ -47,7 +47,7 @@ export default function DFWHardwoodVsEngineeredGuide2026() {
               <li>❌ $6–$14/sq ft installed</li>
             </ul>
           </div>
-          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>🏗️</div>
             <h2 style={{ color: '#F5E642', fontSize: '1.2rem', marginBottom: '.75rem' }}>Engineered Hardwood</h2>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#cbd5e1', fontSize: '.9rem' }}>
@@ -65,7 +65,7 @@ export default function DFWHardwoodVsEngineeredGuide2026() {
           <h3 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>🏡 What best describes your situation?</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '.75rem' }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => handleSelect(s.id)} style={{ background: situation === s.id ? '#F5E642' : '#0d2137', color: situation === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.75rem 1rem', cursor: 'pointer', textAlign: 'left', fontSize: '.95rem', fontWeight: situation === s.id ? 700 : 400 }}>
+              <button key={s.id} onClick={() => handleSelect(s.id)} style={{ background: situation === s.id ? '#F5E642′ : '#0d2137', color: situation === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.75rem 1rem', cursor: ’pointer', textAlign: 'left', fontSize: '.95rem', fontWeight: situation === s.id ? 700 : 400 }}>
                 {s.label}
               </button>
             ))}

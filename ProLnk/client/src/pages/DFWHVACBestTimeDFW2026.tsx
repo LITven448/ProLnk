@@ -25,7 +25,7 @@ export default function DFWHVACBestTimeDFW2026() {
           </p>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#F5E642', marginBottom: '24px', fontWeight: '600' }}>
+        <p style={{ textAlign: 'center', color: '#F5E642', marginBottom: '24px', fontWeight: '600′ }}>
           What do you need? Select to see the best time:
         </p>
 
@@ -35,9 +35,9 @@ export default function DFWHVACBestTimeDFW2026() {
               key={n.id}
               onClick={() => setSelected(selected === n.id ? null : n.id)}
               style={{
-                background: selected === n.id ? '#F5E642' : '#1e2d4a',
-                color: selected === n.id ? '#0A1628' : '#fff',
-                border: '2px solid' + (selected === n.id ? ' #F5E642' : ' #334155'),
+                background: selected === n.id ? '#F5E642′ : '#1e2d4a',
+                color: selected === n.id ? '#0A1628′ : '#fff',
+                border: '2px solid' + (selected === n.id ? ' #F5E642′ : ' #334155'),
                 borderRadius: '12px', padding: '16px 8px', cursor: 'pointer',
                 fontSize: '13px', fontWeight: '700', textAlign: 'center'
               }}
@@ -49,14 +49,14 @@ export default function DFWHVACBestTimeDFW2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#1e2d4a', borderRadius: '16px', padding: '28px', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e2d4a', borderRadius: '16px', padding: '28px', border: '2px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: '20px', marginBottom: '16px' }}>{active.icon} {active.label}</h2>
             <div style={{ display: 'grid', gap: '12px' }}>
-              <div><span style={{ color: '#22c55e', fontWeight: '700' }}>✅ Best Time: </span>{active.best}</div>
-              <div><span style={{ color: '#94a3b8', fontWeight: '700' }}>Why: </span>{active.reason}</div>
-              <div><span style={{ color: '#ef4444', fontWeight: '700' }}>⚠️ Avoid: </span>{active.avoid}</div>
-              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #F5E642' }}>
-                <span style={{ color: '#F5E642', fontWeight: '700' }}>💡 DFW Tip: </span>{active.tip}
+              <div><span style={{ color: '#22c55e', fontWeight: '700′ }}>✅ Best Time: </span>{active.best}</div>
+              <div><span style={{ color: '#94a3b8', fontWeight: '700′ }}>Why: </span>{active.reason}</div>
+              <div><span style={{ color: '#ef4444', fontWeight: '700′ }}>⚠️ Avoid: </span>{active.avoid}</div>
+              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #F5E642′ }}>
+                <span style={{ color: '#F5E642', fontWeight: '700′ }}>💡 DFW Tip: </span>{active.tip}
               </div>
             </div>
             <div style={{ marginTop: '20px', textAlign: 'center' }}>

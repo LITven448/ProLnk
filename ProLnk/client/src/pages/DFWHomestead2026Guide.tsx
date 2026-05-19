@@ -33,7 +33,7 @@ const profiles: Record<Situation, { label: string; protections: string[]; howToC
       'DFW-specific: Tarrant and Dallas CAD offer additional optional exemptions — varies by city',
     ],
     howToClaim: [
-      'File Form 50-114 with "Over 65" checkbox — same form as standard homestead',
+      'File Form 50-114 with "Over 65″ checkbox — same form as standard homestead',
       'File in the year you turn 65 or the following year',
       'School tax freeze is automatic once exemption is filed',
       'Contact your specific DFW city — many offer additional senior exemptions beyond state law',
@@ -130,7 +130,7 @@ export default function DFWHomestead2026Guide() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>🏠 WHAT IS YOUR SITUATION?</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {([['primary', '🏠 Primary Homeowner'], ['senior', '👴 Homeowner 65+'], ['disabled', '♿ Disabled Homeowner'], ['veteran', '🎖️ Veteran'], ['investor', '💼 Investment Property']] as [Situation, string][]).map(([k, label]) => (
-              <button key={k} onClick={() => { setSituation(k); setActiveTab('protections'); }} style={{ background: situation === k ? '#F5E642' : '#111E35', color: situation === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (situation === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 14px', cursor: 'pointer', fontWeight: 700, fontSize: 13, textAlign: 'left' }}>{label}</button>
+              <button key={k} onClick={() => { setSituation(k); setActiveTab('protections'); }} style={{ background: situation === k ? '#F5E642′ : '#111E35', color: situation === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (situation === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 14px', cursor: ’pointer', fontWeight: 700, fontSize: 13, textAlign: 'left' }}>{label}</button>
             ))}
           </div>
         </div>
@@ -140,13 +140,13 @@ export default function DFWHomestead2026Guide() {
             <div style={{ color: '#F5E642', fontSize: 16, fontWeight: 800, marginBottom: 16 }}>{profile.label}</div>
             <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
               {[['protections', '🛡️ Protections'], ['claim', '📋 How to Claim'], ['scope', '🔍 What\’s Covered']] .map(([k, label]) => (
-                <button key={k} onClick={() => setActiveTab(k as 'protections' | 'claim' | 'scope')} style={{ background: activeTab === k ? '#F5E642' : '#111E35', color: activeTab === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (activeTab === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 700, fontSize: 12 }}>{label}</button>
+                <button key={k} onClick={() => setActiveTab(k as 'protections' | 'claim' | 'scope')} style={{ background: activeTab === k ? '#F5E642′ : '#111E35', color: activeTab === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (activeTab === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontWeight: 700, fontSize: 12 }}>{label}</button>
               ))}
             </div>
             {activeTab === 'protections' && (
               <div style={{ display: 'grid', gap: 8 }}>
                 {profile.protections.map((p, i) => <div key={i} style={{ background: '#111E35', borderRadius: 8, padding: 14, fontSize: 13, color: '#C8D0E0', lineHeight: 1.6 }}>• {p}</div>)}
-                <div style={{ background: '#111E35', borderRadius: 8, padding: 12, fontSize: 12, color: '#9BA3B8' }}>⏰ Deadline: {profile.deadline}</div>
+                <div style={{ background: '#111E35', borderRadius: 8, padding: 12, fontSize: 12, color: '#9BA3B8′ }}>⏰ Deadline: {profile.deadline}</div>
               </div>
             )}
             {activeTab === 'claim' && (

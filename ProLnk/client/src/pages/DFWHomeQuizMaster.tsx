@@ -101,7 +101,7 @@ export default function DFWHomeQuizMaster() {
             <div style={{ fontSize: 16, fontWeight: 600, color: '#CBD5E1', marginBottom: 16 }}>Choose a category (or take the full quiz):</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
               {categories.map(c => (
-                <button key={c} onClick={() => setSelectedCategory(c)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: selectedCategory === c ? '#F5E642' : '#1E3A5F', color: selectedCategory === c ? '#0A1628' : '#fff' }}>{c}</button>
+                <button key={c} onClick={() => setSelectedCategory(c)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: selectedCategory === c ? '#F5E642′ : '#1E3A5F', color: selectedCategory === c ? '#0A1628' : '#fff' }}>{c}</button>
               ))}
             </div>
             <div style={{ color: '#64748B', fontSize: 14, marginBottom: 20 }}>
@@ -151,7 +151,7 @@ export default function DFWHomeQuizMaster() {
           <div style={{ background: '#0D2137', borderRadius: 16, padding: 28 }}>
             <div style={{ textAlign: 'center', marginBottom: 28 }}>
               <div style={{ fontSize: 56, marginBottom: 8 }}>{score >= quizQuestions.length * 0.8 ? '🏆' : score >= quizQuestions.length * 0.6 ? '👍' : '📚'}</div>
-              <div style={{ fontSize: 36, fontWeight: 900, color: '#F5E642' }}>{score} / {quizQuestions.length}</div>
+              <div style={{ fontSize: 36, fontWeight: 900, color: '#F5E642′ }}>{score} / {quizQuestions.length}</div>
               <div style={{ color: '#94A3B8', fontSize: 16, marginTop: 4 }}>
                 {score >= quizQuestions.length * 0.8 ? 'DFW Homeowner Expert!' : score >= quizQuestions.length * 0.6 ? 'Solid Knowledge — Keep Learning' : 'Good Start — Review Weak Areas'}
               </div>
@@ -160,7 +160,7 @@ export default function DFWHomeQuizMaster() {
               {Object.entries(catScores).map(([cat, { correct, total }]) => (
                 <div key={cat} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0A1628', borderRadius: 8, padding: '12px 16px' }}>
                   <span style={{ color: '#CBD5E1', fontSize: 15 }}>{cat}</span>
-                  <span style={{ color: correct / total >= 0.75 ? '#10B981' : '#F59E0B', fontWeight: 700 }}>{correct}/{total}</span>
+                  <span style={{ color: correct / total >= 0.75 ? '#10B981′ : '#F59E0B', fontWeight: 700 }}>{correct}/{total}</span>
                 </div>
               ))}
             </div>

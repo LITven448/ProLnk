@@ -28,7 +28,7 @@ export default function DFWDroughtTolerantGuide2026() {
             { icon: '🪨', label: 'Ground Cover', value: 'Decomp granite' },
             { icon: '🌸', label: 'Best Mulch Depth', value: '3–4 inches' },
           ].map((s, i) => (
-            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155' }}>
+            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{s.value}</div>
@@ -36,7 +36,7 @@ export default function DFWDroughtTolerantGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🌿 Best Drought-Tolerant Plants for DFW</h2>
           {[
             { name: 'Texas Sage (Leucophyllum)', water: 'Very low', note: 'Purple blooms after rain — thrives in DFW heat' },
@@ -45,14 +45,14 @@ export default function DFWDroughtTolerantGuide2026() {
             { name: 'Agave', water: 'Minimal', note: 'Bold focal point, survives DFW freezes if mulched' },
             { name: 'Mexican Feathergrass', water: 'Low', note: 'Elegant movement, golden summer color' },
           ].map((p, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: i < 4 ? '1px solid #334155' : 'none' }}>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: i < 4 ? '1px solid #334155′ : ’none' }}>
               <div><div style={{ fontWeight: 600 }}>{p.name}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>{p.note}</div></div>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600, whiteSpace: 'nowrap', paddingLeft: 8 }}>{p.water}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🧮 Conversion Plan Estimator</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
             <input value={yardArea} onChange={e => setYardArea(e.target.value)} placeholder="Yard area (sq ft)" style={{ flex: 1, minWidth: 160, padding: '10px', borderRadius: 8, border: '1px solid #475569', background: '#0f172a', color: '#fff' }} />

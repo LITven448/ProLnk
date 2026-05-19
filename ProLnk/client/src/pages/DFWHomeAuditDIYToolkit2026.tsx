@@ -45,7 +45,7 @@ export default function DFWHomeAuditDIYToolkit2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Affordable tools DFW homeowners can use to audit their own home before calling a pro</p>
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14 }}>
             🏠 DFW-specific tip: Slab foundations, extreme summer heat, high humidity, and hard water create unique home risks. These tool kits are designed for North Texas conditions.
           </p>
@@ -55,10 +55,10 @@ export default function DFWHomeAuditDIYToolkit2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {goals.map(g => (
             <button key={g.id} onClick={() => setGoal(g.id === goal ? null : g.id)}
-              style={{ background: goal === g.id ? '#F5E642' : '#1e2d45', border: '2px solid',
-                borderColor: goal === g.id ? '#F5E642' : '#2d3f5a', borderRadius: 10,
+              style={{ background: goal === g.id ? '#F5E642′ : '#1e2d45', border: '2px solid',
+                borderColor: goal === g.id ? '#F5E642′ : '#2d3f5a', borderRadius: 10,
                 padding: 20, cursor: 'pointer', textAlign: 'center',
-                color: goal === g.id ? '#0A1628' : '#fff' }}>
+                color: goal === g.id ? '#0A1628′ : '#fff' }}>
               <div style={{ fontSize: 32 }}>{g.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 14, marginTop: 8 }}>{g.label}</div>
             </button>
@@ -67,7 +67,7 @@ export default function DFWHomeAuditDIYToolkit2026() {
 
         {selected && goalItem && (
           <div style={{ marginBottom: 32 }}>
-            <h3 style={{ color: '#F5E642' }}>{goalItem.icon} Recommended Kit: {goalItem.label}</h3>
+            <h3 style={{ color: '#F5E642′ }}>{goalItem.icon} Recommended Kit: {goalItem.label}</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {selected.map(t => (
                 <div key={t.tool} style={{ background: '#1e2d45', borderRadius: 10, padding: 18, display: 'flex', gap: 16, alignItems: 'flex-start' }}>

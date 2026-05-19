@@ -17,8 +17,8 @@ export default function DFWShowerPressureGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW PLUMBING GUIDE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🚿 Shower Pressure & Temperature<br /><span style={{ color: '#F5E642' }}>Dallas-Fort Worth Guide</span></h1>
-        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW hard water is the #1 cause of shower pressure decline — calcium deposits block shower heads and corrode pressure balance valve cartridges. Most DFW shower problems are <strong style={{ color: '#F5E642' }}>DIY-fixable for under $50</strong> if caught early.</p>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🚿 Shower Pressure & Temperature<br /><span style={{ color: '#F5E642′ }}>Dallas-Fort Worth Guide</span></h1>
+        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW hard water is the #1 cause of shower pressure decline — calcium deposits block shower heads and corrode pressure balance valve cartridges. Most DFW shower problems are <strong style={{ color: '#F5E642′ }}>DIY-fixable for under $50</strong> if caught early.</p>
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>🧂 DFW HARD WATER IMPACT ON SHOWERS</div>
@@ -43,7 +43,7 @@ export default function DFWShowerPressureGuide() {
         </div>
 
         {fix && (
-          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 6 }}>🔍 {fix.cause}</div>
             <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16, fontStyle: 'italic' }}>{fix.dfwNote}</p>
             <div style={{ marginBottom: 16 }}>

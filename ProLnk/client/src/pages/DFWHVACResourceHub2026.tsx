@@ -64,7 +64,7 @@ export default function DFWHVACResourceHub2026() {
               onClick={() => setActive(c.id)}
               style={{
                 padding: '10px 20px', borderRadius: 24, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: active === c.id ? '#F5E642' : '#1e3a5f', color: active === c.id ? '#0A1628' : '#94a3b8',
+                background: active === c.id ? '#F5E642′ : '#1e3a5f', color: active === c.id ? '#0A1628' : '#94a3b8',
                 transition: 'all 0.2s',
               }}
             >
@@ -88,7 +88,7 @@ export default function DFWHVACResourceHub2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>🏆</div>
           <h2 style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>Find a Trusted DFW HVAC Pro</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16 }}>ProLnk connects you with vetted HVAC professionals across Dallas-Fort Worth.</p>

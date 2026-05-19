@@ -75,7 +75,7 @@ export default function DFWDuctLeakageTesting() {
         </div>
 
         {result && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ marginBottom: 12 }}><strong>Leakage Likelihood:</strong> {result.likelihood}</div>
             <div style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}><strong>Recommendation:</strong> {result.recommendation}</div>
             <div style={{ color: '#4ade80', fontWeight: 600 }}>📈 {result.savings}</div>

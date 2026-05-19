@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
 const SYMPTOMS = [
-  { id: 'humming', label: 'Humming but not spinning', emoji: '🔊', diagnosis: 'Capacitor failure (90% likely). Test capacitor first — $15 part, $80–$140 installed. Do NOT replace motor yet.', cost: '$80–$140' },
-  { id: 'slow-start', label: 'Fan starts slow / struggles', emoji: '🐢', diagnosis: 'Weak capacitor or worn motor bearings. Start with capacitor replacement — if still slow after, motor needs replacement.', cost: '$80–$400' },
-  { id: 'no-spin', label: 'Not spinning at all (no hum)', emoji: '⛔', diagnosis: 'Contactor or control board issue — fan motor receives no signal. Check capacitor and contactor before replacing motor.', cost: '$100–$300' },
-  { id: 'overheat', label: 'Motor hot to touch, shuts off', emoji: '🔥', diagnosis: 'DFW ambient temps (105°F+) cause thermal overload. Ensure airflow clear, clean coils. ECM motor upgrade handles heat better.', cost: '$250–$600' },
-  { id: 'noise', label: 'Grinding / rattling noise', emoji: '⚙️', diagnosis: 'Fan blade hitting housing or worn motor bearings. Check blade alignment first. Motor replacement likely needed.', cost: '$200–$400' },
-  { id: 'intermittent', label: 'Works sometimes, not others', emoji: '🎲', diagnosis: 'Thermal overload protector tripping. Clean coils, check refrigerant charge. Capacitor or wiring issue if persists.', cost: '$80–$350' },
+  { id: 'humming', label: 'Humming but not spinning', emoji: '🔊', diagnosis: 'Capacitor failure (90% likely). Test capacitor first — $15 part, $80–$140 installed. Do NOT replace motor yet.', cost: '$80–$140′ },
+  { id: 'slow-start', label: 'Fan starts slow / struggles', emoji: '🐢', diagnosis: 'Weak capacitor or worn motor bearings. Start with capacitor replacement — if still slow after, motor needs replacement.', cost: '$80–$400′ },
+  { id: 'no-spin', label: 'Not spinning at all (no hum)', emoji: '⛔', diagnosis: 'Contactor or control board issue — fan motor receives no signal. Check capacitor and contactor before replacing motor.', cost: '$100–$300′ },
+  { id: 'overheat', label: 'Motor hot to touch, shuts off', emoji: '🔥', diagnosis: 'DFW ambient temps (105°F+) cause thermal overload. Ensure airflow clear, clean coils. ECM motor upgrade handles heat better.', cost: '$250–$600′ },
+  { id: 'noise', label: 'Grinding / rattling noise', emoji: '⚙️', diagnosis: 'Fan blade hitting housing or worn motor bearings. Check blade alignment first. Motor replacement likely needed.', cost: '$200–$400′ },
+  { id: 'intermittent', label: 'Works sometimes, not others', emoji: '🎲', diagnosis: 'Thermal overload protector tripping. Clean coils, check refrigerant charge. Capacitor or wiring issue if persists.', cost: '$80–$350′ },
 ];
 
 const MOTOR_TYPES = [
-  { type: 'Single Speed', emoji: '1️⃣', note: 'On/off only. Common in older units. Least efficient — runs at full power regardless of load.', cost: '$150–$250' },
-  { type: 'Dual Speed', emoji: '2️⃣', note: 'High and low speed. Better efficiency at low load. Step up from single speed.', cost: '$180–$320' },
-  { type: 'ECM (Variable Speed)', emoji: '♾️', note: 'Electronically commutated — self-regulates speed for conditions. Best for DFW heat, most efficient, longest life.', cost: '$350–$600' },
+  { type: 'Single Speed', emoji: '1️⃣', note: 'On/off only. Common in older units. Least efficient — runs at full power regardless of load.', cost: '$150–$250′ },
+  { type: 'Dual Speed', emoji: '2️⃣', note: 'High and low speed. Better efficiency at low load. Step up from single speed.', cost: '$180–$320′ },
+  { type: 'ECM (Variable Speed)', emoji: '♾️', note: 'Electronically commutated — self-regulates speed for conditions. Best for DFW heat, most efficient, longest life.', cost: '$350–$600′ },
 ];
 
 export default function DFWHVACCondenserFanMotor2026() {
@@ -30,7 +30,7 @@ export default function DFWHVACCondenserFanMotor2026() {
           <p style={{ color: '#94A3B8', fontSize: 15 }}>Fan motor diagnosis, motor types, and DFW-specific failure patterns</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 18, marginBottom: 24, borderLeft: '4px solid #FF8800' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 18, marginBottom: 24, borderLeft: '4px solid #FF8800′ }}>
           <h2 style={{ color: '#FF8800', fontSize: 15, margin: '0 0 8px' }}>⚠️ Capacitor First — Common Misdiagnosis</h2>
           <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
             DFW techs commonly quote a full motor replacement when the capacitor is the actual failure. A $15–$40 capacitor part causes 60% of fan motor symptoms. Always test and replace capacitor first before a $200–$400 motor swap.
@@ -64,7 +64,7 @@ export default function DFWHVACCondenserFanMotor2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 8px' }}>{active.emoji} {active.label}</h3>
             <p style={{ color: '#CBD5E1', fontSize: 14, margin: '0 0 10px' }}>{active.diagnosis}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 10 }}>

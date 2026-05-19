@@ -47,7 +47,7 @@ export default function DFWPlumberMansfield() {
           ].map(s => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ color: '#aaa', fontSize: 12, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -72,7 +72,7 @@ export default function DFWPlumberMansfield() {
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 32, marginBottom: 40 }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 20 }}>🔍 Plumbing Issue Diagnoser</h2>
-          <p style={{ color: '#aaa', marginBottom: 20 }}>Select your home's age and the pressure issue you're experiencing to get a likely cause and cost range.</p>
+          <p style={{ color: '#aaa', marginBottom: 20 }}>Select your home's age and the pressure issue you’re experiencing to get a likely cause and cost range.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#F5E642', display: 'block', marginBottom: 8, fontSize: 14 }}>Home Built</label>
@@ -123,14 +123,14 @@ export default function DFWPlumberMansfield() {
             {['✅ Whole-home repiping (PEX/copper)', '✅ Water heater replacement & tankless install',
               '✅ Slab leak detection & repair', '✅ Drain cleaning & hydro-jetting',
               '✅ Tarrant County permit-ready', '✅ 24/7 emergency plumbing'].map(s => (
-              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0' }}>{s}</div>
+              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0′ }}>{s}</div>
             ))}
           </div>
         </div>
 
         <div style={{ textAlign: 'center', background: '#F5E642', borderRadius: 12, padding: 32 }}>
           <div style={{ fontSize: 28 }}>📞</div>
-          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0' }}>Get a Free Plumbing Quote in Mansfield</h2>
+          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0′ }}>Get a Free Plumbing Quote in Mansfield</h2>
           <p style={{ color: '#333', marginBottom: 16 }}>Licensed local plumbers, upfront pricing, same-day service available</p>
           <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Request Free Quote →

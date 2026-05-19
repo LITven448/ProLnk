@@ -69,8 +69,8 @@ export default function DFWComfortProblemDiagnosis() {
                 key={p.id}
                 onClick={() => setSelected(p.id)}
                 style={{
-                  background: selected === p.id ? '#F5E642' : '#0A1628',
-                  color: selected === p.id ? '#0A1628' : '#CBD5E1',
+                  background: selected === p.id ? '#F5E642′ : '#0A1628',
+                  color: selected === p.id ? '#0A1628′ : '#CBD5E1',
                   border: `2px solid ${selected === p.id ? '#F5E642' : '#1E3A5F'}`,
                   borderRadius: 10,
                   padding: '14px 16px',
@@ -103,12 +103,12 @@ export default function DFWComfortProblemDiagnosis() {
                 <div style={{ color: '#E8EDF5', fontWeight: 600, fontSize: 15 }}>{result.urgency}</div>
               </div>
             </div>
-            <div style={{ background: '#0F3460', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0F3460', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>📞 What to Say When You Call</h3>
               <div style={{ background: '#112240', borderRadius: 8, padding: 16, fontStyle: 'italic', color: '#CBD5E1', lineHeight: 1.6, fontSize: 14 }}>
                 "{result.script}"
               </div>
-              <p style={{ color: '#64748B', fontSize: 12, margin: '12px 0 0' }}>Using specific technical language gets you a better tech and prevents unnecessary upsells.</p>
+              <p style={{ color: '#64748B', fontSize: 12, margin: '12px 0 0′ }}>Using specific technical language gets you a better tech and prevents unnecessary upsells.</p>
             </div>
           </>
         )}

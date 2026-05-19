@@ -51,7 +51,7 @@ export default function DFWMaintenanceCostPlanner() {
         <div style={{ background: '#fff', borderRadius: 10, padding: '1.2rem', marginBottom: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
           <label style={{ display: 'block', marginBottom: 6, fontWeight: 600 }}>Home Value: ${homeValue.toLocaleString()}</label>
           <input type="range" min={150000} max={900000} step={10000} value={homeValue} onChange={e => setHomeValue(Number(e.target.value))}
-            style={{ width: '100%', accentColor: '#0A1628' }} />
+            style={{ width: '100%', accentColor: '#0A1628′ }} />
 
           <label style={{ display: 'block', marginTop: '1rem', marginBottom: 6, fontWeight: 600 }}>Home Age</label>
           <select value={homeAge} onChange={e => setHomeAge(e.target.value)}
@@ -63,7 +63,7 @@ export default function DFWMaintenanceCostPlanner() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {Object.keys(FEATURE_COSTS).map(f => (
               <button key={f} onClick={() => toggleFeature(f)}
-                style={{ padding: '6px 14px', borderRadius: 20, border: '1px solid #0A1628', background: features[f] ? '#0A1628' : '#fff', color: features[f] ? '#F5E642' : '#0A1628', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ padding: '6px 14px', borderRadius: 20, border: '1px solid #0A1628', background: features[f] ? '#0A1628′ : '#fff', color: features[f] ? '#F5E642' : '#0A1628', cursor: ’pointer', fontWeight: 600 }}>
                 {f}
               </button>
             ))}
@@ -73,10 +73,10 @@ export default function DFWMaintenanceCostPlanner() {
         {yearlyData.map(row => (
           <div key={row.year} style={{ background: '#fff', borderRadius: 8, padding: '1rem', marginBottom: 8, boxShadow: '0 1px 4px rgba(0,0,0,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-              <div style={{ fontWeight: 700, color: '#0A1628' }}>{row.label}</div>
-              <div style={{ fontSize: '0.8rem', color: '#777' }}>{row.items.join(' · ')}</div>
+              <div style={{ fontWeight: 700, color: '#0A1628′ }}>{row.label}</div>
+              <div style={{ fontSize: '0.8rem', color: '#777′ }}>{row.items.join(' · ')}</div>
             </div>
-            <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#0A1628' }}>${row.cost.toLocaleString()}</div>
+            <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#0A1628′ }}>${row.cost.toLocaleString()}</div>
           </div>
         ))}
 

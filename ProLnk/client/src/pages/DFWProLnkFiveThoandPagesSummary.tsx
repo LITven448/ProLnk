@@ -62,7 +62,7 @@ export default function DFWProLnkFiveThoandPagesSummary() {
               onClick={() => setSelected(r.id)}
               style={{
                 background: selected === r.id ? '#1a3a5c' : '#0f2037',
-                border: selected === r.id ? '2px solid #F5E642' : '2px solid #1e3a5f',
+                border: selected === r.id ? '2px solid #F5E642′ : '2px solid #1e3a5f',
                 borderRadius: 8, padding: '12px 16px', color: '#fff',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15,
               }}

@@ -23,8 +23,8 @@ const decisions: Decision[] = [
     label: "Which SEER2 Level?",
     icon: "⚡",
     options: [
-      { label: "Budget-focused", recommendation: "14–15 SEER2", reasoning: "Texas minimum is 14 SEER2. Meets code, lower upfront cost, but higher long-term electricity.", dfwNote: "DFW tip: Running 8–10 months/year means SEER matters more here than anywhere in the US." },
-      { label: "Balanced value", recommendation: "16–18 SEER2", reasoning: "Sweet spot. Pays back premium in 4–6 years via DFW electricity savings. Most recommended.", dfwNote: "DFW tip: 16 SEER2 single-speed saves ~$200/yr over 14 SEER2. Variable speed adds comfort." },
+      { label: "Budget-focused", recommendation: "14–15 SEER2″, reasoning: "Texas minimum is 14 SEER2. Meets code, lower upfront cost, but higher long-term electricity.", dfwNote: "DFW tip: Running 8–10 months/year means SEER matters more here than anywhere in the US." },
+      { label: "Balanced value", recommendation: "16–18 SEER2″, reasoning: "Sweet spot. Pays back premium in 4–6 years via DFW electricity savings. Most recommended.", dfwNote: "DFW tip: 16 SEER2 single-speed saves ~$200/yr over 14 SEER2. Variable speed adds comfort." },
       { label: "Maximum efficiency", recommendation: "20+ SEER2 Variable", reasoning: "Best long-term ROI if staying 10+ years. Variable speed = whisper quiet, perfect humidity control.", dfwNote: "DFW tip: Variable speed is worth it in DFW for humidity control alone — even ignoring electricity." },
     ],
   },
@@ -68,18 +68,18 @@ export default function DFWHVACDecisionMaker() {
   const rec = dec && choice !== null ? dec.options[choice] : null;
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 40 }}>🧭</div>
-          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW HVAC Decision Maker</h1>
-          <p style={{ color: "#94a3b8", margin: 0 }}>DFW-specific guidance on the 5 decisions that matter most</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW HVAC Decision Maker</h1>
+          <p style={{ color: "#94a3b8″, margin: 0 }}>DFW-specific guidance on the 5 decisions that matter most</p>
         </div>
 
         <div style={{ display: "grid", gap: 10, marginBottom: 28 }}>
           {decisions.map(d => (
             <button key={d.id} onClick={() => { setActive(d.id === active ? null : d.id); setChoice(null); }}
-              style={{ background: active === d.id ? "#1e3a5f" : "#1e293b", border: active === d.id ? "1px solid #F5E642" : "1px solid #334155", borderRadius: 10, padding: "14px 18px", cursor: "pointer", textAlign: "left", color: "#fff", display: "flex", gap: 12, alignItems: "center" }}>
+              style={{ background: active === d.id ? "#1e3a5f" : "#1e293b", border: active === d.id ? "1px solid #F5E642″ : "1px solid #334155", borderRadius: 10, padding: "14px 18px", cursor: "pointer", textAlign: "left", color: "#fff", display: "flex", gap: 12, alignItems: "center" }}>
               <span style={{ fontSize: 22 }}>{d.icon}</span>
               <span style={{ fontWeight: 700, fontSize: 16 }}>{d.label}</span>
               <span style={{ marginLeft: "auto", fontSize: 18 }}>{active === d.id ? "🔼" : "🔽"}</span>
@@ -88,24 +88,24 @@ export default function DFWHVACDecisionMaker() {
         </div>
 
         {dec && (
-          <div style={{ background: "#1e293b", border: "1px solid #334155", borderRadius: 12, padding: 22, marginBottom: 28 }}>
-            <div style={{ color: "#94a3b8", fontWeight: 600, marginBottom: 14 }}>Your situation:</div>
+          <div style={{ background: "#1e293b", border: "1px solid #334155″, borderRadius: 12, padding: 22, marginBottom: 28 }}>
+            <div style={{ color: "#94a3b8″, fontWeight: 600, marginBottom: 14 }}>Your situation:</div>
             <div style={{ display: "grid", gap: 8, marginBottom: 20 }}>
               {dec.options.map((opt, i) => (
                 <button key={i} onClick={() => setChoice(i)}
-                  style={{ background: choice === i ? "#1e3a5f" : "#0A1628", border: choice === i ? "1px solid #F5E642" : "1px solid #334155", borderRadius: 8, padding: "11px 16px", cursor: "pointer", color: "#fff", textAlign: "left", fontWeight: 500 }}>
+                  style={{ background: choice === i ? "#1e3a5f" : "#0A1628″, border: choice === i ? "1px solid #F5E642" : "1px solid #334155", borderRadius: 8, padding: "11px 16px", cursor: "pointer", color: "#fff", textAlign: "left", fontWeight: 500 }}>
                   {choice === i ? "✅" : "⬜"} {opt.label}
                 </button>
               ))}
             </div>
 
             {rec && (
-              <div style={{ borderTop: "1px solid #334155", paddingTop: 18 }}>
-                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 20, marginBottom: 10 }}>→ {rec.recommendation}</div>
-                <p style={{ color: "#cbd5e1", lineHeight: 1.6, marginBottom: 12 }}>{rec.reasoning}</p>
-                <div style={{ background: "#0A1628", borderRadius: 8, padding: "10px 14px", borderLeft: "3px solid #F5E642" }}>
-                  <span style={{ color: "#F5E642", fontWeight: 700 }}>🤠 DFW-specific: </span>
-                  <span style={{ color: "#cbd5e1" }}>{rec.dfwNote}</span>
+              <div style={{ borderTop: "1px solid #334155″, paddingTop: 18 }}>
+                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 20, marginBottom: 10 }}>→ {rec.recommendation}</div>
+                <p style={{ color: "#cbd5e1″, lineHeight: 1.6, marginBottom: 12 }}>{rec.reasoning}</p>
+                <div style={{ background: "#0A1628″, borderRadius: 8, padding: "10px 14px", borderLeft: "3px solid #F5E642" }}>
+                  <span style={{ color: "#F5E642″, fontWeight: 700 }}>🤠 DFW-specific: </span>
+                  <span style={{ color: "#cbd5e1″ }}>{rec.dfwNote}</span>
                 </div>
               </div>
             )}
@@ -113,9 +113,9 @@ export default function DFWHVACDecisionMaker() {
         )}
 
         <div style={{ textAlign: "center", padding: 20, background: "#1e293b", borderRadius: 12 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 8 }}>🔧 Get a DFW HVAC pro opinion</div>
-          <p style={{ color: "#94a3b8", fontSize: 14, margin: "0 0 16px" }}>ProLnk connects you with vetted North Texas HVAC technicians for free quotes.</p>
-          <button style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, fontSize: 15, cursor: "pointer" }}>Join ProLnk Waitlist</button>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 8 }}>🔧 Get a DFW HVAC pro opinion</div>
+          <p style={{ color: "#94a3b8″, fontSize: 14, margin: "0 0 16px" }}>ProLnk connects you with vetted North Texas HVAC technicians for free quotes.</p>
+          <button style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, fontSize: 15, cursor: "pointer" }}>Join ProLnk Waitlist</button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-type Budget = 'under150' | '150to400' | '400plus';
+type Budget = 'under150′ | '150to400' | '400plus';
 
 const tiers: Record<Budget, { label: string; items: { rank: number; device: string; why: string; dfwRoi: string; product: string; price: string; setup: string[] }[] }> = {
   under150: {
@@ -47,7 +47,7 @@ export default function DFWSmartHomeStarters() {
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🏠 WHY DFW IS DIFFERENT</div>
           <div style={{ display: 'grid', gap: 8 }}>
             {['🌡️ HVAC runs 8–9 months/yr — smart thermostat ROI is massive here', '💧 Slab foundations shift constantly — leaks are your #1 risk', '📦 DFW porch piracy is among highest in US — doorbell cameras are essential'].map(i => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 10, fontSize: 13, color: '#C8D0E0' }}>{i}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 10, fontSize: 13, color: '#C8D0E0′ }}>{i}</div>
             ))}
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function DFWSmartHomeStarters() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>⚡ SELECT YOUR STARTING BUDGET</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
             {[['under150', '💰 Under $150', 'Starter'], ['150to400', '💎 $150–$400', 'Foundation'], ['400plus', '👑 $400+', 'Full Start']] .map(([k, label, sub]) => (
-              <button key={k} onClick={() => { setBudget(k as Budget); setExpanded(null); }} style={{ background: budget === k ? '#F5E642' : '#111E35', color: budget === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (budget === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}<br /><span style={{ fontWeight: 400, fontSize: 11 }}>{sub}</span></button>
+              <button key={k} onClick={() => { setBudget(k as Budget); setExpanded(null); }} style={{ background: budget === k ? '#F5E642′ : '#111E35', color: budget === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (budget === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 10px', cursor: ’pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}<br /><span style={{ fontWeight: 400, fontSize: 11 }}>{sub}</span></button>
             ))}
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function DFWSmartHomeStarters() {
             <div style={{ color: '#F5E642', fontSize: 14, fontWeight: 700, marginBottom: 16 }}>✅ {tier.label}</div>
             <div style={{ display: 'grid', gap: 12 }}>
               {tier.items.map((item) => (
-                <div key={item.rank} style={{ background: '#111E35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45' }}>
+                <div key={item.rank} style={{ background: '#111E35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45′ }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                     <div style={{ fontSize: 16, fontWeight: 800 }}>#{item.rank} {item.device}</div>
                     <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>{item.price}</div>
@@ -79,7 +79,7 @@ export default function DFWSmartHomeStarters() {
                   </button>
                   {expanded === item.rank && (
                     <div style={{ marginTop: 12, background: '#0A1628', borderRadius: 8, padding: 12 }}>
-                      {item.setup.map((step, i) => <div key={i} style={{ fontSize: 12, color: '#C8D0E0', padding: '4px 0', borderBottom: i < item.setup.length - 1 ? '1px solid #1E2D45' : 'none' }}>{i + 1}. {step}</div>)}
+                      {item.setup.map((step, i) => <div key={i} style={{ fontSize: 12, color: '#C8D0E0', padding: '4px 0', borderBottom: i < item.setup.length - 1 ? '1px solid #1E2D45′ : ’none' }}>{i + 1}. {step}</div>)}
                     </div>
                   )}
                 </div>

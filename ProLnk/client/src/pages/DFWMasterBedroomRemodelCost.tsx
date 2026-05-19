@@ -66,16 +66,16 @@ export default function DFWMasterBedroomRemodelCost() {
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>📋 Itemized Estimate</h2>
+          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>📋 Itemized Estimate</h2>
           {lineItems.map((item) => (
             <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-              <span style={{ color: '#cbd5e1' }}>{item.label}</span>
+              <span style={{ color: '#cbd5e1′ }}>{item.label}</span>
               <span style={{ color: '#fff', fontWeight: 600 }}>${item.low.toLocaleString()} – ${item.high.toLocaleString()}</span>
             </div>
           ))}
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0 0', fontWeight: 700, fontSize: '1.1rem' }}>
-            <span style={{ color: '#F5E642' }}>Total (Contractor)</span>
-            <span style={{ color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</span>
+            <span style={{ color: '#F5E642′ }}>Total (Contractor)</span>
+            <span style={{ color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</span>
           </div>
         </div>
 
@@ -83,7 +83,7 @@ export default function DFWMasterBedroomRemodelCost() {
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.25rem' }}>
             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🔨</div>
             <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>DIY Savings Estimate</div>
-            <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#4ade80' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#4ade80′ }}>
               ${Math.round(totalLow * diyDiscount).toLocaleString()} – ${Math.round(totalHigh * diyDiscount).toLocaleString()} saved
             </div>
             <div style={{ color: '#64748b', fontSize: '0.8rem', marginTop: '0.4rem' }}>~35% labor reduction doing it yourself</div>
@@ -91,7 +91,7 @@ export default function DFWMasterBedroomRemodelCost() {
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.25rem' }}>
             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📈</div>
             <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>Typical ROI at Resale</div>
-            <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#F5E642' }}>60–75%</div>
+            <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#F5E642′ }}>60–75%</div>
             <div style={{ color: '#64748b', fontSize: '0.8rem', marginTop: '0.4rem' }}>DFW buyer expectation: updated master</div>
           </div>
         </div>

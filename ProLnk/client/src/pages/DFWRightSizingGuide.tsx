@@ -81,7 +81,7 @@ export default function DFWRightSizingGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>Current Home Size (sq ft)</label>
-              <input value={currentSqft} onChange={e => setCurrentSqft(e.target.value)} placeholder="e.g. 2800" style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={currentSqft} onChange={e => setCurrentSqft(e.target.value)} placeholder="e.g. 2800″ style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>Life Situation</label>
@@ -92,7 +92,7 @@ export default function DFWRightSizingGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>Move Budget ($)</label>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 500000" style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 500000″ style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 28px', borderRadius: 6, fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>Get My Recommendation</button>

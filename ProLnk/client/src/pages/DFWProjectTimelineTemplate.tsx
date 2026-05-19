@@ -72,7 +72,7 @@ export default function DFWProjectTimelineTemplate() {
             <div style={{ color: '#9BA3B4', fontSize: '0.85rem', marginBottom: '1rem' }}>📞 {result.proj.lead}</div>
             <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>🏁 Key Milestones</h3>
             {result.proj.milestones.map((m, i) => (
-              <div key={m} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.4rem 0', borderBottom: '1px solid #1E2E45' }}>
+              <div key={m} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.4rem 0', borderBottom: '1px solid #1E2E45′ }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 24 }}>{i + 1}.</span>
                 <span style={{ color: '#C8D0DC' }}>{m}</span>
               </div>
@@ -82,7 +82,7 @@ export default function DFWProjectTimelineTemplate() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🌤️ DFW Weather Considerations</h2>
-          {WEATHER_NOTES.map(n => <div key={n} style={{ color: '#9BA3B4', padding: '0.4rem 0' }}>{n}</div>)}
+          {WEATHER_NOTES.map(n => <div key={n} style={{ color: '#9BA3B4', padding: '0.4rem 0′ }}>{n}</div>)}
         </div>
       </div>
     </div>

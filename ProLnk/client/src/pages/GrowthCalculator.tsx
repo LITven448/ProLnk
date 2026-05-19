@@ -7,9 +7,9 @@ import {
 } from "lucide-react";
 
 const TIERS = [
-  { id: "t1", label: "Tier 1", subLabel: "New Partner", keep: 0.40, color: "#94a3b8", bg: "rgba(148,163,184,0.12)" },
-  { id: "t2", label: "Tier 2", subLabel: "10+ Matches", keep: 0.55, color: "#2dd4bf", bg: "rgba(45,212,191,0.12)" },
-  { id: "t3", label: "Tier 3", subLabel: "50+ Matches", keep: 0.65, color: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
+  { id: "t1″, label: "Tier 1", subLabel: "New Partner", keep: 0.40, color: "#94a3b8", bg: "rgba(148,163,184,0.12)" },
+  { id: "t2″, label: "Tier 2", subLabel: "10+ Matches", keep: 0.55, color: "#2dd4bf", bg: "rgba(45,212,191,0.12)" },
+  { id: "t3″, label: "Tier 3", subLabel: "50+ Matches", keep: 0.65, color: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
   { id: "founding", label: "Founding", subLabel: "Locked Rate", keep: 0.72, color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
 ];
 
@@ -43,7 +43,7 @@ function SliderInput({
   const pct = ((value - min) / (max - min)) * 100;
   return (
     <div>
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-2″>
         <label className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>{label}</label>
         <input
           type="number"
@@ -66,7 +66,7 @@ function SliderInput({
         <input
           type="range" min={min} max={max} step={step} value={value}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="absolute inset-x-0 w-full opacity-0 cursor-pointer h-5"
+          className="absolute inset-x-0 w-full opacity-0 cursor-pointer h-5″
           style={{ zIndex: 2 }}
         />
         <div
@@ -74,7 +74,7 @@ function SliderInput({
           style={{ left: `calc(${pct}% - 8px)`, zIndex: 1, borderColor: color }}
         />
       </div>
-      <div className="flex justify-between text-xs mt-1" style={{ color: "rgba(255,255,255,0.2)" }}>
+      <div className="flex justify-between text-xs mt-1″ style={{ color: "rgba(255,255,255,0.2)" }}>
         <span>{format(min)}</span>
         <span>{format(max)}</span>
       </div>
@@ -87,13 +87,13 @@ function AnimatedBar({ label, value, maxValue, color, isHighlight }: {
 }) {
   const pct = Math.max((value / maxValue) * 100, 2);
   return (
-    <div className="flex-1 flex flex-col items-center gap-2">
+    <div className="flex-1 flex flex-col items-center gap-2″>
       <div className="text-xs font-bold" style={{ color: isHighlight ? color : "rgba(255,255,255,0.4)" }}>
         {value >= 1000 ? `$${(value / 1000).toFixed(1)}K` : `$${value}`}
       </div>
       <div className="w-full flex items-end" style={{ height: "80px" }}>
         <div
-          className="w-full rounded-t-lg transition-all duration-500"
+          className="w-full rounded-t-lg transition-all duration-500″
           style={{
             height: `${pct}%`,
             backgroundColor: color,
@@ -114,9 +114,9 @@ function StatCard({ label, value, sub, color = "#2dd4bf" }: {
 }) {
   return (
     <div className="rounded-2xl p-4 border" style={{ backgroundColor: `${color}0d`, borderColor: `${color}25` }}>
-      <p className="text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: `${color}90` }}>{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-wider mb-1.5″ style={{ color: `${color}90` }}>{label}</p>
       <p className="text-xl font-bold leading-none" style={{ color }}>{value}</p>
-      {sub && <p className="text-xs mt-1.5" style={{ color: "rgba(255,255,255,0.3)" }}>{sub}</p>}
+      {sub && <p className="text-xs mt-1.5″ style={{ color: "rgba(255,255,255,0.3)" }}>{sub}</p>}
     </div>
   );
 }
@@ -135,8 +135,8 @@ function MonthTimeline({ jobs, jobValue, refs, tier }: { jobs: number; jobValue:
 
   return (
     <div className="rounded-2xl p-6 border" style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.1)" }}>
-      <div className="flex items-center gap-2 mb-5">
-        <Calendar className="w-4 h-4" style={{ color: "#2dd4bf" }} />
+      <div className="flex items-center gap-2 mb-5″>
+        <Calendar className="w-4 h-4″ style={{ color: "#2dd4bf" }} />
         <p className="text-sm font-bold" style={{ color: "rgba(255,255,255,0.7)" }}>Month 1–12 Income Projection</p>
       </div>
       <div style={{ display: "flex", gap: 6, alignItems: "flex-end", height: 100 }}>
@@ -149,7 +149,7 @@ function MonthTimeline({ jobs, jobValue, refs, tier }: { jobs: number; jobValue:
               </div>
               <div style={{
                 width: "100%", background: `linear-gradient(to top, #2dd4bf, #3b82f6)`,
-                borderRadius: "4px 4px 0 0", height: `${h}%`,
+                borderRadius: "4px 4px 0 0″, height: `${h}%`,
                 opacity: 0.7 + (m.mo / 12) * 0.3,
               }} />
               <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)" }}>M{m.mo}</div>
@@ -196,7 +196,7 @@ function ScenarioPanel({ jobs, jobValue, tier }: { jobs: number; jobValue: numbe
 
   return (
     <div className="rounded-2xl p-6 border" style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.1)" }}>
-      <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-4">Scenario Toggle</p>
+      <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-4″>Scenario Toggle</p>
       <div className="flex gap-2 mb-6 flex-wrap">
         {panels.map(p => {
           const PIcon = p.icon;
@@ -211,25 +211,25 @@ function ScenarioPanel({ jobs, jobValue, tier }: { jobs: number; jobValue: numbe
                 color: scenario === p.id ? p.color : "rgba(255,255,255,0.4)",
               }}
             >
-              <PIcon className="w-3.5 h-3.5" /> {p.label}
+              <PIcon className="w-3.5 h-3.5″ /> {p.label}
             </button>
           );
         })}
       </div>
 
       <div className="rounded-xl p-5 border" style={{ backgroundColor: `${active.color}0d`, borderColor: `${active.color}30` }}>
-        <div className="flex items-center gap-3 mb-3">
-          <Icon className="w-5 h-5" style={{ color: active.color }} />
+        <div className="flex items-center gap-3 mb-3″>
+          <Icon className="w-5 h-5″ style={{ color: active.color }} />
           <span className="text-sm font-semibold" style={{ color: active.color }}>{active.label}</span>
         </div>
-        <p className="text-xs mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>{active.desc}</p>
-        <div className="flex items-end gap-2">
+        <p className="text-xs mb-4″ style={{ color: "rgba(255,255,255,0.4)" }}>{active.desc}</p>
+        <div className="flex items-end gap-2″>
           <span className="text-4xl font-bold text-white">{fmt(active.value)}</span>
-          <span className="text-sm pb-1" style={{ color: "rgba(255,255,255,0.3)" }}>/mo</span>
+          <span className="text-sm pb-1″ style={{ color: "rgba(255,255,255,0.3)" }}>/mo</span>
         </div>
         {scenario !== "solo" && (
           <div className="mt-3 flex items-center gap-2 text-xs font-bold" style={{ color: active.color }}>
-            <TrendingUp className="w-3.5 h-3.5" />
+            <TrendingUp className="w-3.5 h-3.5″ />
             +{fmt(active.value - soloTotal)} vs solo ({Math.round(((active.value - soloTotal) / soloTotal) * 100)}% more)
           </div>
         )}
@@ -266,14 +266,14 @@ export default function GrowthCalculator() {
   const maxBar = Math.max(calc.total, calc.gross * 0.5, 1);
 
   const bars = [
-    { label: "Angi / HomeAdvisor", value: Math.round(calc.gross * 0.22), color: "#ef4444" },
-    { label: "Thumbtack", value: Math.round(calc.gross * 0.28), color: "#f97316" },
+    { label: "Angi / HomeAdvisor", value: Math.round(calc.gross * 0.22), color: "#ef4444″ },
+    { label: "Thumbtack", value: Math.round(calc.gross * 0.28), color: "#f97316″ },
     { label: "ProLnk Own", value: Math.round(calc.own), color: "#2dd4bf" },
     { label: "ProLnk Total", value: Math.round(calc.total), color: "#2dd4bf", isHighlight: true },
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0A1628", fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#0A1628″, fontFamily: "'Inter', system-ui, sans-serif" }}>
       <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10 max-w-6xl mx-auto">
         <Link href="/"><span className="text-white font-bold text-lg tracking-tight cursor-pointer">ProLnk</span></Link>
         <Link href="/pro-waitlist">
@@ -283,16 +283,16 @@ export default function GrowthCalculator() {
         </Link>
       </nav>
 
-      <div className="max-w-5xl mx-auto px-6 pt-12 pb-20">
-        <div className="text-center mb-12">
+      <div className="max-w-5xl mx-auto px-6 pt-12 pb-20″>
+        <div className="text-center mb-12″>
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border"
             style={{ backgroundColor: "rgba(45,212,191,0.1)", color: "#2dd4bf", borderColor: "rgba(45,212,191,0.3)" }}
           >
-            <Calculator className="w-3.5 h-3.5" />
+            <Calculator className="w-3.5 h-3.5″ />
             Income Calculator
           </div>
-          <h1 className="text-4xl font-bold text-white mb-3">
+          <h1 className="text-4xl font-bold text-white mb-3″>
             How Much Will You <span style={{ color: "#2dd4bf" }}>Actually Earn?</span>
           </h1>
           <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -301,7 +301,7 @@ export default function GrowthCalculator() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-2xl p-6 border space-y-6" style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}>
+          <div className="rounded-2xl p-6 border space-y-6″ style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}>
             <p className="text-xs font-bold text-white/40 uppercase tracking-wider">Your Numbers</p>
 
             <SliderInput
@@ -337,8 +337,8 @@ export default function GrowthCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold mb-3" style={{ color: "rgba(255,255,255,0.6)" }}>Tier Selection</label>
-              <div className="grid grid-cols-2 gap-2">
+              <label className="block text-sm font-semibold mb-3″ style={{ color: "rgba(255,255,255,0.6)" }}>Tier Selection</label>
+              <div className="grid grid-cols-2 gap-2″>
                 {TIERS.map((t) => (
                   <button
                     key={t.id}
@@ -361,7 +361,7 @@ export default function GrowthCalculator() {
             </div>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-5″>
             <div
               className="rounded-2xl p-6 border relative overflow-hidden"
               style={{ background: "linear-gradient(135deg, rgba(45,212,191,0.12) 0%, rgba(45,212,191,0.04) 100%)", borderColor: "rgba(45,212,191,0.3)" }}
@@ -370,37 +370,37 @@ export default function GrowthCalculator() {
                 className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-10 pointer-events-none"
                 style={{ background: "radial-gradient(circle, #2dd4bf, transparent)", transform: "translate(40%,-40%)" }}
               />
-              <p className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Monthly Commission</p>
-              <p className="text-5xl font-bold text-white mb-1 transition-all duration-300">{fmt(calc.total)}</p>
+              <p className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1″>Monthly Commission</p>
+              <p className="text-5xl font-bold text-white mb-1 transition-all duration-300″>{fmt(calc.total)}</p>
               <p className="text-sm" style={{ color: "rgba(45,212,191,0.7)" }}>{fmt(calc.annual)} / year</p>
               {calc.uplift > 0 && (
                 <div
                   className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold"
                   style={{ backgroundColor: "rgba(45,212,191,0.15)", color: "#2dd4bf" }}
                 >
-                  <TrendingUp className="w-3.5 h-3.5" />
+                  <TrendingUp className="w-3.5 h-3.5″ />
                   {fmt(calc.uplift)} / mo more than alternatives
                 </div>
               )}
             </div>
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3″>
               <StatCard label="Own Jobs" value={fmt(calc.own)} sub={`${Math.round(tier.keep * 100)}% keep`} color="#2dd4bf" />
               <StatCard label="Net Override" value={fmt(calc.netOverride)} sub="from team jobs" color="#f59e0b" />
               <StatCard label="Sub Override" value={fmt(calc.subOverride)} sub="from referrals" color="#a78bfa" />
             </div>
 
             <div className="rounded-2xl p-5 border" style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)" }}>
-              <div className="flex items-center gap-2 mb-5">
-                <Briefcase className="w-4 h-4" style={{ color: "rgba(255,255,255,0.3)" }} />
+              <div className="flex items-center gap-2 mb-5″>
+                <Briefcase className="w-4 h-4″ style={{ color: "rgba(255,255,255,0.3)" }} />
                 <p className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.5)" }}>Monthly Keep: ProLnk vs. Alternatives</p>
               </div>
-              <div className="flex items-end gap-3" style={{ height: "128px" }}>
+              <div className="flex items-end gap-3″ style={{ height: "128px" }}>
                 {bars.map((b) => (
                   <AnimatedBar key={b.label} {...b} maxValue={maxBar} />
                 ))}
               </div>
-              <p className="text-xs text-center mt-3" style={{ color: "rgba(255,255,255,0.2)" }}>
+              <p className="text-xs text-center mt-3″ style={{ color: "rgba(255,255,255,0.2)" }}>
                 Based on published platform rates. Results vary by market and activity.
               </p>
             </div>
@@ -411,28 +411,28 @@ export default function GrowthCalculator() {
                 className="w-full flex items-center justify-between px-5 py-4 text-sm font-semibold transition-colors"
                 style={{ backgroundColor: "rgba(255,255,255,0.03)", color: "rgba(255,255,255,0.5)" }}
               >
-                <span className="flex items-center gap-2">
-                  <Info className="w-4 h-4" />
+                <span className="flex items-center gap-2″>
+                  <Info className="w-4 h-4″ />
                   Detailed Breakdown
                 </span>
-                {showBreakdown ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                {showBreakdown ? <ChevronUp className="w-4 h-4″ /> : <ChevronDown className="w-4 h-4" />}
               </button>
               {showBreakdown && (
-                <div className="px-5 pb-5 pt-2 space-y-2" style={{ backgroundColor: "rgba(255,255,255,0.02)" }}>
+                <div className="px-5 pb-5 pt-2 space-y-2″ style={{ backgroundColor: "rgba(255,255,255,0.02)" }}>
                   {[
                     { label: "Gross job revenue", value: fmtS(calc.gross), note: `${jobs} jobs × ${fmtS(jobValue)}` },
                     { label: `Commission (${Math.round(tier.keep * 100)}% — ${tier.label})`, value: fmtS(calc.own), color: "#2dd4bf" },
                     { label: `Network override (${refs} refs × 7% per job)`, value: fmtS(calc.netOverride), color: "#f59e0b" },
                     { label: `Subscription override (12% × $149/mo)`, value: fmtS(calc.subOverride), color: "#a78bfa" },
-                    { label: "Without ProLnk (avg competitor ~28%)", value: fmtS(calc.competitor), color: "#ef4444" },
+                    { label: "Without ProLnk (avg competitor ~28%)", value: fmtS(calc.competitor), color: "#ef4444″ },
                     { label: "Monthly uplift", value: `+${fmtS(calc.uplift)} (+${calc.upliftPct}%)`, color: "#2dd4bf" },
                   ].map(({ label, value, note, color }) => (
-                    <div key={label} className="flex items-start justify-between gap-4 py-2 border-b last:border-0" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+                    <div key={label} className="flex items-start justify-between gap-4 py-2 border-b last:border-0″ style={{ borderColor: "rgba(255,255,255,0.05)" }}>
                       <div>
                         <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{label}</p>
-                        {note && <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.22)" }}>{note}</p>}
+                        {note && <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.22)" }}>{note}</p>}
                       </div>
-                      <span className="text-sm font-bold flex-shrink-0" style={{ color: color ?? "rgba(255,255,255,0.8)" }}>{value}</span>
+                      <span className="text-sm font-bold flex-shrink-0″ style={{ color: color ?? "rgba(255,255,255,0.8)" }}>{value}</span>
                     </div>
                   ))}
                 </div>
@@ -442,17 +442,17 @@ export default function GrowthCalculator() {
         </div>
 
         {/* ── MONTH 1-12 TIMELINE ── */}
-        <div className="mt-10">
+        <div className="mt-10″>
           <MonthTimeline jobs={jobs} jobValue={jobValue} refs={refs} tier={tier} />
         </div>
 
         {/* ── SCENARIO TOGGLE ── */}
-        <div className="mt-6">
+        <div className="mt-6″>
           <ScenarioPanel jobs={jobs} jobValue={jobValue} tier={tier} />
         </div>
 
-        <div className="mt-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-center mb-6" style={{ color: "rgba(255,255,255,0.3)" }}>
+        <div className="mt-10″>
+          <p className="text-xs font-bold uppercase tracking-widest text-center mb-6″ style={{ color: "rgba(255,255,255,0.3)" }}>
             Tier Comparison
           </p>
           <div
@@ -502,39 +502,39 @@ export default function GrowthCalculator() {
         </div>
 
         <div className="mt-8 rounded-2xl p-5 border text-center" style={{ backgroundColor: "rgba(245,158,11,0.07)", borderColor: "rgba(245,158,11,0.2)" }}>
-          <p className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">Annual Projection</p>
-          <p className="text-4xl font-bold text-white mb-1 transition-all duration-300">{fmt(calc.annual)}</p>
-          <p className="text-xs mb-5" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <p className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1″>Annual Projection</p>
+          <p className="text-4xl font-bold text-white mb-1 transition-all duration-300″>{fmt(calc.annual)}</p>
+          <p className="text-xs mb-5″ style={{ color: "rgba(255,255,255,0.3)" }}>
             vs. {fmt(calc.competitor * 12)}/yr on other platforms
           </p>
           <Link href="/pro-waitlist">
             <button
-              className="flex items-center justify-center gap-2 mx-auto px-8 py-3.5 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90"
+              className="flex items-center justify-center gap-2 mx-auto px-8 py-3.5 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90″
               style={{ backgroundColor: "#2dd4bf" }}
             >
-              Join Now to Lock This Rate <ArrowRight className="w-4 h-4" />
+              Join Now to Lock This Rate <ArrowRight className="w-4 h-4″ />
             </button>
           </Link>
-          <p className="text-xs mt-3" style={{ color: "rgba(255,255,255,0.25)" }}>
+          <p className="text-xs mt-3″ style={{ color: "rgba(255,255,255,0.25)" }}>
             Founding member spots limited · $149/mo locked forever
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-3 text-center mt-6">
+        <div className="grid grid-cols-3 gap-3 text-center mt-6″>
           {[
             { icon: Star, label: "Founding Rate", sub: "Locked forever" },
             { icon: Award, label: "No contracts", sub: "Cancel anytime" },
             { icon: Users, label: "5 income streams", sub: "Built to scale" },
           ].map(({ icon: Icon, label, sub }) => (
             <div key={label} className="rounded-xl p-3 border" style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}>
-              <Icon className="w-4 h-4 mx-auto mb-1.5" style={{ color: "rgba(255,255,255,0.3)" }} />
+              <Icon className="w-4 h-4 mx-auto mb-1.5″ style={{ color: "rgba(255,255,255,0.3)" }} />
               <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.55)" }}>{label}</p>
               <p className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>{sub}</p>
             </div>
           ))}
         </div>
 
-        <p className="text-xs text-center mt-12" style={{ color: "rgba(255,255,255,0.2)" }}>
+        <p className="text-xs text-center mt-12″ style={{ color: "rgba(255,255,255,0.2)" }}>
           Projections are estimates based on published rates. Actual earnings depend on your market, job type, and activity level.
         </p>
       </div>

@@ -95,20 +95,20 @@ export default function DFWClosingCostGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#f0fdf4', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #bbf7d0' }}>
+        <div style={{ backgroundColor: '#f0fdf4', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #bbf7d0′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#166534', marginBottom: 12 }}>🤝 TX Title Policy: A Negotiating Chip</h2>
           <p style={{ color: '#15803d', fontSize: 14, lineHeight: 1.7 }}>
-            In Texas, the Owner's Title Policy is negotiable — unlike many states where it's customary for sellers to pay. In DFW's competitive market, buyers sometimes agree to pay it to make their offer more attractive to sellers. It's worth <strong>~0.5–0.6% of the sale price</strong>, so on a $450K home, that's $2,250–$2,700.
+            In Texas, the Owner's Title Policy is negotiable — unlike many states where it’s customary for sellers to pay. In DFW’s competitive market, buyers sometimes agree to pay it to make their offer more attractive to sellers. It’s worth <strong>~0.5–0.6% of the sale price</strong>, so on a $450K home, that’s $2,250–$2,700.
           </p>
         </div>
 
         <div style={{ backgroundColor: '#0A1628', borderRadius: 16, padding: 32, marginBottom: 32, color: '#fff' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Net Proceeds & Cash-to-Close Estimator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Net Proceeds & Cash-to-Close Estimator</h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#ccc', fontSize: 14 }}>Sale Price ($)</label>
-              <input type="number" placeholder="e.g. 450000" value={salePrice} onChange={e => { setSalePrice(e.target.value); setShowResult(false); }}
+              <input type="number" placeholder="e.g. 450000″ value={salePrice} onChange={e => { setSalePrice(e.target.value); setShowResult(false); }}
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, backgroundColor: '#1a2a40', color: '#fff', border: '1px solid #2a3a50', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-end' }}>
@@ -137,13 +137,13 @@ export default function DFWClosingCostGuide() {
                   { label: 'Tax Proration (est.)', value: `-${fmt(r.taxProration)}`, highlight: false },
                   { label: 'Other Costs', value: `-${fmt(r.otherSeller)}`, highlight: false },
                 ].map(row => (
-                  <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #2a3a50' }}>
-                    <span style={{ fontSize: 13, color: '#9aa5b4' }}>{row.label}</span>
+                  <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #2a3a50′ }}>
+                    <span style={{ fontSize: 13, color: '#9aa5b4′ }}>{row.label}</span>
                     <span style={{ fontSize: 13, color: '#fff', fontWeight: 600 }}>{row.value}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
-                  <span style={{ fontWeight: 700, color: '#4ade80' }}>Estimated Net</span>
+                  <span style={{ fontWeight: 700, color: '#4ade80′ }}>Estimated Net</span>
                   <span style={{ fontWeight: 800, color: '#4ade80', fontSize: 18 }}>{fmt(r.sellerNet)}</span>
                 </div>
               </div>
@@ -156,13 +156,13 @@ export default function DFWClosingCostGuide() {
                   { label: 'Prepaids & Escrow', value: fmt(r.prepaids) },
                   { label: 'Other Fees', value: fmt(r.buyerOther) },
                 ].map(row => (
-                  <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #2a3a50' }}>
-                    <span style={{ fontSize: 13, color: '#9aa5b4' }}>{row.label}</span>
+                  <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #2a3a50′ }}>
+                    <span style={{ fontSize: 13, color: '#9aa5b4′ }}>{row.label}</span>
                     <span style={{ fontSize: 13, color: '#fff', fontWeight: 600 }}>{row.value}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
-                  <span style={{ fontWeight: 700, color: '#818cf8' }}>Total Cash Needed</span>
+                  <span style={{ fontWeight: 700, color: '#818cf8′ }}>Total Cash Needed</span>
                   <span style={{ fontWeight: 800, color: '#818cf8', fontSize: 18 }}>{fmt(r.totalBuyerCosts)}</span>
                 </div>
               </div>

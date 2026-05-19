@@ -27,7 +27,7 @@ export default function DFWAIHomeAssistantGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Which AI assistant is right for your DFW home?</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>🌡️ AI Predicts HVAC Needs in DFW</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>Dallas summers push HVAC systems hard. Google Nest AI now tracks outdoor temps, usage patterns, and filter age — alerting you before breakdowns during 105°F stretches. Claude AI can interpret error codes and recommend local DFW HVAC pros instantly.</p>
         </div>
@@ -49,7 +49,7 @@ export default function DFWAIHomeAssistantGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {priorities.map(p => (
             <button key={p.label} onClick={() => setSelected(p.label)}
-              style={{ background: selected === p.label ? '#F5E642' : '#1e3a5f', color: selected === p.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === p.label ? '#F5E642′ : '#1e3a5f', color: selected === p.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {p.label}
             </button>
           ))}

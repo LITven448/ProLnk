@@ -21,10 +21,10 @@ const LEVEL_NAMES: Record<number, string> = {
 };
 
 const LEVEL_COLORS: Record<number, string> = {
-  1: "bg-amber-100 text-amber-800",
-  2: "bg-blue-100 text-blue-800",
-  3: "bg-purple-100 text-purple-800",
-  4: "bg-gray-100 text-gray-700",
+  1: "bg-amber-100 text-amber-800″,
+  2: "bg-blue-100 text-blue-800″,
+  3: "bg-purple-100 text-purple-800″,
+  4: "bg-gray-100 text-gray-700″,
 };
 
 const PAYOUT_TYPE_LABELS: Record<string, string> = {
@@ -48,23 +48,23 @@ function MonthlyOverrideChart({ monthlyTotal }: { monthlyTotal: number }) {
   const maxVal = Math.max(...baseValues, 1);
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4">
-        <TrendingUp className="w-4 h-4 text-green-500" /> Override Income — Last 6 Months
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4″>
+        <TrendingUp className="w-4 h-4 text-green-500″ /> Override Income — Last 6 Months
       </h3>
-      <div className="flex items-end gap-2 h-28">
+      <div className="flex items-end gap-2 h-28″>
         {MOCK_MONTHS.map((month, i) => {
           const val = baseValues[i];
           const heightPct = (val / maxVal) * 100;
           const isCurrent = i === MOCK_MONTHS.length - 1;
           return (
-            <div key={month} className="flex-1 flex flex-col items-center gap-1">
+            <div key={month} className="flex-1 flex flex-col items-center gap-1″>
               <span className="text-[10px] text-gray-500 font-medium">
                 ${val >= 1000 ? `${(val / 1000).toFixed(1)}k` : val}
               </span>
               <div className="w-full flex items-end" style={{ height: 72 }}>
                 <div
-                  className="w-full rounded-t-md transition-all duration-500"
+                  className="w-full rounded-t-md transition-all duration-500″
                   style={{
                     height: `${Math.max(heightPct, 4)}%`,
                     background: isCurrent
@@ -101,54 +101,54 @@ function NetworkTreePreview({
   const top3 = directReferralList.slice(0, 3);
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3″>
         <Users className="w-4 h-4 text-[#0A1628]" /> Your Network Tree
-        <span className="ml-auto text-xs font-medium text-gray-400">{totalDownline} total</span>
+        <span className="ml-auto text-xs font-medium text-gray-400″>{totalDownline} total</span>
       </h3>
 
       {top3.length === 0 ? (
-        <div className="text-center py-6">
-          <Users className="w-8 h-8 text-gray-200 mx-auto mb-2" />
-          <p className="text-sm text-gray-400">No L1 recruits yet.</p>
-          <p className="text-xs text-gray-300 mt-1">Share your link to grow your network.</p>
+        <div className="text-center py-6″>
+          <Users className="w-8 h-8 text-gray-200 mx-auto mb-2″ />
+          <p className="text-sm text-gray-400″>No L1 recruits yet.</p>
+          <p className="text-xs text-gray-300 mt-1″>Share your link to grow your network.</p>
         </div>
       ) : (
-        <div className="space-y-2">
+        <div className="space-y-2″>
           {top3.map((pro) => {
             const isActive = pro.jobsThisMonth > 0;
             return (
               <div
                 key={pro.referralCode}
-                className="flex items-center gap-3 p-2.5 rounded-xl bg-gray-50 border border-gray-100"
+                className="flex items-center gap-3 p-2.5 rounded-xl bg-gray-50 border border-gray-100″
               >
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold text-white"
-                  style={{ background: isActive ? "#0A1628" : "#d1d5db" }}
+                  style={{ background: isActive ? "#0A1628″ : "#d1d5db" }}
                 >
                   {pro.businessName.charAt(0).toUpperCase()}
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0″>
                   <p className="text-sm font-medium text-gray-900 truncate">{pro.businessName}</p>
-                  <p className="text-xs text-gray-400">{pro.trade}</p>
+                  <p className="text-xs text-gray-400″>{pro.trade}</p>
                 </div>
-                <div className="text-right flex-shrink-0">
-                  <div className="flex items-center gap-1">
+                <div className="text-right flex-shrink-0″>
+                  <div className="flex items-center gap-1″>
                     <Activity
-                      className="w-3 h-3"
+                      className="w-3 h-3″
                       style={{ color: isActive ? "#22c55e" : "#d1d5db" }}
                     />
-                    <span className="text-xs font-semibold text-gray-700">
+                    <span className="text-xs font-semibold text-gray-700″>
                       {pro.jobsThisMonth} job{pro.jobsThisMonth !== 1 ? "s" : ""}
                     </span>
                   </div>
-                  <p className="text-[10px] text-gray-400">this month</p>
+                  <p className="text-[10px] text-gray-400″>this month</p>
                 </div>
               </div>
             );
           })}
           {directReferralList.length > 3 && (
-            <p className="text-xs text-gray-400 text-center pt-1">
+            <p className="text-xs text-gray-400 text-center pt-1″>
               + {directReferralList.length - 3} more direct recruits
             </p>
           )}
@@ -179,43 +179,43 @@ function MomentumScore({
   );
 
   const label = score >= 80 ? "Blazing" : score >= 60 ? "Strong" : score >= 40 ? "Building" : score >= 20 ? "Early" : "Starting";
-  const color = score >= 80 ? "#22c55e" : score >= 60 ? "#3b82f6" : score >= 40 ? "#f59e0b" : "#6b7280";
+  const color = score >= 80 ? "#22c55e" : score >= 60 ? "#3b82f6″ : score >= 40 ? "#f59e0b" : "#6b7280";
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4">
-        <Zap className="w-4 h-4 text-yellow-500" /> Your Network Momentum
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4″>
+        <Zap className="w-4 h-4 text-yellow-500″ /> Your Network Momentum
       </h3>
-      <div className="flex items-center gap-4">
-        <div className="relative w-20 h-20 flex-shrink-0">
-          <svg viewBox="0 0 36 36" className="w-20 h-20 -rotate-90">
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f3f4f6" strokeWidth="3" />
+      <div className="flex items-center gap-4″>
+        <div className="relative w-20 h-20 flex-shrink-0″>
+          <svg viewBox="0 0 36 36″ className="w-20 h-20 -rotate-90">
+            <circle cx="18″ cy="18" r="15.9" fill="none" stroke="#f3f4f6" strokeWidth="3" />
             <circle
-              cx="18" cy="18" r="15.9"
+              cx="18″ cy="18" r="15.9"
               fill="none"
               stroke={color}
-              strokeWidth="3"
+              strokeWidth="3″
               strokeDasharray={`${score} ${100 - score}`}
               strokeLinecap="round"
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-lg font-bold text-gray-900">{score}</span>
+            <span className="text-lg font-bold text-gray-900″>{score}</span>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1″>
           <p className="text-base font-bold" style={{ color }}>{label}</p>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-gray-500 mt-1″>
             Score is a composite of new recruits, downline size, and monthly override volume.
           </p>
-          <div className="mt-2 space-y-1">
+          <div className="mt-2 space-y-1″>
             <div className="flex justify-between text-xs">
-              <span className="text-gray-500">Direct recruits</span>
-              <span className="font-semibold text-gray-800">{directReferrals}</span>
+              <span className="text-gray-500″>Direct recruits</span>
+              <span className="font-semibold text-gray-800″>{directReferrals}</span>
             </div>
             <div className="flex justify-between text-xs">
-              <span className="text-gray-500">Total downline</span>
-              <span className="font-semibold text-gray-800">{totalDownline}</span>
+              <span className="text-gray-500″>Total downline</span>
+              <span className="font-semibold text-gray-800″>{totalDownline}</span>
             </div>
           </div>
         </div>
@@ -242,53 +242,53 @@ function PathToPassive({
   const alreadyThere = gap <= 0;
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4">
-        <Target className="w-4 h-4 text-purple-500" /> Fastest Path to $1K/mo Passive
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4″>
+        <Target className="w-4 h-4 text-purple-500″ /> Fastest Path to $1K/mo Passive
       </h3>
 
       {alreadyThere ? (
-        <div className="text-center py-4">
-          <p className="text-2xl font-bold text-green-600">🎉 You're there!</p>
-          <p className="text-sm text-gray-500 mt-1">Your network already generates $1K+/mo.</p>
+        <div className="text-center py-4″>
+          <p className="text-2xl font-bold text-green-600″>🎉 You're there!</p>
+          <p className="text-sm text-gray-500 mt-1″>Your network already generates $1K+/mo.</p>
         </div>
       ) : (
         <>
-          <div className="mb-3">
-            <div className="flex justify-between text-xs text-gray-500 mb-1.5">
+          <div className="mb-3″>
+            <div className="flex justify-between text-xs text-gray-500 mb-1.5″>
               <span>Current: ${Math.round(monthlyTotal)}/mo</span>
               <span>Goal: $1,000/mo</span>
             </div>
             <div className="h-2.5 rounded-full bg-gray-100 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-purple-400 to-purple-600"
+                className="h-full rounded-full bg-gradient-to-r from-purple-400 to-purple-600″
                 style={{ width: `${Math.min(100, (monthlyTotal / target) * 100)}%` }}
               />
             </div>
           </div>
 
-          <div className="space-y-2 mb-3">
+          <div className="space-y-2 mb-3″>
             <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
               <div>
-                <p className="text-xs font-medium text-gray-700">Income gap to close</p>
-                <p className="text-xs text-gray-400">Monthly passive target remaining</p>
+                <p className="text-xs font-medium text-gray-700″>Income gap to close</p>
+                <p className="text-xs text-gray-400″>Monthly passive target remaining</p>
               </div>
-              <p className="text-sm font-bold text-red-500">${Math.round(gap)}/mo</p>
+              <p className="text-sm font-bold text-red-500″>${Math.round(gap)}/mo</p>
             </div>
             <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
               <div>
-                <p className="text-xs font-medium text-gray-700">Value per new recruit</p>
-                <p className="text-xs text-gray-400">Sub override + avg job override (L1)</p>
+                <p className="text-xs font-medium text-gray-700″>Value per new recruit</p>
+                <p className="text-xs text-gray-400″>Sub override + avg job override (L1)</p>
               </div>
-              <p className="text-sm font-bold text-green-600">${Math.round(incomePerRecruit)}/mo</p>
+              <p className="text-sm font-bold text-green-600″>${Math.round(incomePerRecruit)}/mo</p>
             </div>
           </div>
 
           <div className="flex items-center justify-between py-3 px-3 bg-[#0A1628] rounded-xl">
             <p className="text-sm font-semibold text-white">Recruits needed</p>
-            <p className="text-xl font-bold text-purple-400">
+            <p className="text-xl font-bold text-purple-400″>
               {recruitsNeeded}
-              <span className="text-xs font-normal text-purple-300"> more L1 pros</span>
+              <span className="text-xs font-normal text-purple-300″> more L1 pros</span>
             </p>
           </div>
           <p className="text-xs text-gray-400 mt-2 text-center">
@@ -310,14 +310,14 @@ function LiveIncomeSimulator() {
   const total = subOverride + jobOverride;
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4">
-        <Calculator className="w-4 h-4 text-teal-500" /> Income Simulator
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4″>
+        <Calculator className="w-4 h-4 text-teal-500″ /> Income Simulator
       </h3>
 
-      <div className="mb-4">
-        <div className="flex items-center justify-between mb-1.5">
-          <label className="text-xs font-medium text-gray-600">Direct Recruits</label>
+      <div className="mb-4″>
+        <div className="flex items-center justify-between mb-1.5″>
+          <label className="text-xs font-medium text-gray-600″>Direct Recruits</label>
           <span className="text-sm font-bold text-[#0A1628]">{recruits} pros</span>
         </div>
         <input
@@ -326,34 +326,34 @@ function LiveIncomeSimulator() {
           max={20}
           value={recruits}
           onChange={(e) => setRecruits(Number(e.target.value))}
-          className="w-full accent-teal-500"
+          className="w-full accent-teal-500″
         />
-        <div className="flex justify-between text-xs text-gray-400 mt-0.5">
+        <div className="flex justify-between text-xs text-gray-400 mt-0.5″>
           <span>1</span>
           <span>20</span>
         </div>
       </div>
 
-      <div className="space-y-2 mb-4">
+      <div className="space-y-2 mb-4″>
         <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
           <div>
-            <p className="text-xs font-medium text-gray-700">Subscription Overrides</p>
-            <p className="text-xs text-gray-400">$149 × 12% × {recruits} recruits</p>
+            <p className="text-xs font-medium text-gray-700″>Subscription Overrides</p>
+            <p className="text-xs text-gray-400″>$149 × 12% × {recruits} recruits</p>
           </div>
-          <p className="text-sm font-bold text-green-600">${subOverride.toFixed(0)}<span className="text-xs font-normal text-gray-400">/mo</span></p>
+          <p className="text-sm font-bold text-green-600″>${subOverride.toFixed(0)}<span className="text-xs font-normal text-gray-400">/mo</span></p>
         </div>
         <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
           <div>
-            <p className="text-xs font-medium text-gray-700">Job Overrides</p>
-            <p className="text-xs text-gray-400">3 jobs/mo × $500 avg × 7% × {recruits} recruits</p>
+            <p className="text-xs font-medium text-gray-700″>Job Overrides</p>
+            <p className="text-xs text-gray-400″>3 jobs/mo × $500 avg × 7% × {recruits} recruits</p>
           </div>
-          <p className="text-sm font-bold text-green-600">${jobOverride.toFixed(0)}<span className="text-xs font-normal text-gray-400">/mo</span></p>
+          <p className="text-sm font-bold text-green-600″>${jobOverride.toFixed(0)}<span className="text-xs font-normal text-gray-400">/mo</span></p>
         </div>
       </div>
 
       <div className="flex items-center justify-between py-3 px-3 bg-[#0A1628] rounded-xl">
         <p className="text-sm font-semibold text-white">Estimated Passive Income</p>
-        <p className="text-xl font-bold text-teal-400">${total.toFixed(0)}<span className="text-xs font-normal text-teal-300">/mo</span></p>
+        <p className="text-xl font-bold text-teal-400″>${total.toFixed(0)}<span className="text-xs font-normal text-teal-300">/mo</span></p>
       </div>
       <p className="text-xs text-gray-400 mt-2 text-center">Estimates based on platform averages. Actual results vary.</p>
     </div>
@@ -374,7 +374,7 @@ export default function NetworkIncomeHub() {
 
   useEffect(() => {
     if (data?.referralLink) {
-      QRCode.toDataURL(data.referralLink, { width: 240, margin: 2, color: { dark: "#0A1628" } })
+      QRCode.toDataURL(data.referralLink, { width: 240, margin: 2, color: { dark: "#0A1628″ } })
         .then(setQrDataUrl)
         .catch(() => {});
     }
@@ -386,11 +386,11 @@ export default function NetworkIncomeHub() {
     return (
       <PartnerLayout>
         <div className="max-w-lg mx-auto p-8 text-center">
-          <div className="w-16 h-16 rounded-full bg-[#0A1628]/10 flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 rounded-full bg-[#0A1628]/10 flex items-center justify-center mx-auto mb-4″>
             <Share2 className="w-8 h-8 text-[#0A1628]" />
           </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Join the Network</h2>
-          <p className="text-sm text-gray-500 mb-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-2″>Join the Network</h2>
+          <p className="text-sm text-gray-500 mb-6″>
             Enroll in the ProLnk partner network to get your referral link, QR code, and start earning network income.
           </p>
           <Button
@@ -410,13 +410,13 @@ export default function NetworkIncomeHub() {
 
   return (
     <PartnerLayout>
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
+      <div className="p-4 max-w-2xl mx-auto space-y-4″>
 
         {/* Level badge */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 flex items-center justify-between">
           <div>
             <p className="text-xs text-gray-500 font-medium">Your Network Level</p>
-            <p className="text-xl font-bold text-gray-900 mt-0.5">{LEVEL_NAMES[data.networkLevel] ?? "Standard Pro"}</p>
+            <p className="text-xl font-bold text-gray-900 mt-0.5″>{LEVEL_NAMES[data.networkLevel] ?? "Standard Pro"}</p>
           </div>
           <span className={`text-xs font-bold px-3 py-1.5 rounded-full ${LEVEL_COLORS[data.networkLevel] ?? "bg-gray-100 text-gray-700"}`}>
             L{data.networkLevel}
@@ -425,16 +425,16 @@ export default function NetworkIncomeHub() {
 
         {/* Agreement banner */}
         {!data.agreementSignedAt && (
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
-            <Clock className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-amber-800">Sign your partner agreement</p>
-              <p className="text-xs text-amber-700 mt-0.5">Required to receive payouts. Review and sign your {LEVEL_NAMES[data.networkLevel]} agreement.</p>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3″>
+            <Clock className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5″ />
+            <div className="flex-1″>
+              <p className="text-sm font-semibold text-amber-800″>Sign your partner agreement</p>
+              <p className="text-xs text-amber-700 mt-0.5″>Required to receive payouts. Review and sign your {LEVEL_NAMES[data.networkLevel]} agreement.</p>
             </div>
             <Button
               size="sm"
-              className="bg-amber-600 hover:bg-amber-700 text-white flex-shrink-0"
-              onClick={() => signAgreement.mutate({ version: "2026-v1" })}
+              className="bg-amber-600 hover:bg-amber-700 text-white flex-shrink-0″
+              onClick={() => signAgreement.mutate({ version: "2026-v1″ })}
               disabled={signAgreement.isPending}
             >
               Sign Now
@@ -443,26 +443,26 @@ export default function NetworkIncomeHub() {
         )}
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
-            <p className="text-xs text-gray-500">This Month</p>
-            <p className="text-2xl font-bold text-green-600 mt-1">${data.monthlyTotal.toFixed(2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">Network income</p>
+        <div className="grid grid-cols-2 gap-3″>
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4″>
+            <p className="text-xs text-gray-500″>This Month</p>
+            <p className="text-2xl font-bold text-green-600 mt-1″>${data.monthlyTotal.toFixed(2)}</p>
+            <p className="text-xs text-gray-400 mt-0.5″>Network income</p>
           </div>
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
-            <p className="text-xs text-gray-500">Pending Payout</p>
-            <p className="text-2xl font-bold text-blue-600 mt-1">${data.pendingPayoutAmount.toFixed(2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">Disbursed monthly</p>
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4″>
+            <p className="text-xs text-gray-500″>Pending Payout</p>
+            <p className="text-2xl font-bold text-blue-600 mt-1″>${data.pendingPayoutAmount.toFixed(2)}</p>
+            <p className="text-xs text-gray-400 mt-0.5″>Disbursed monthly</p>
           </div>
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
-            <p className="text-xs text-gray-500">Direct Referrals</p>
-            <p className="text-2xl font-bold text-purple-600 mt-1">{data.directReferrals}</p>
-            <p className="text-xs text-gray-400 mt-0.5">Pros you recruited</p>
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4″>
+            <p className="text-xs text-gray-500″>Direct Referrals</p>
+            <p className="text-2xl font-bold text-purple-600 mt-1″>{data.directReferrals}</p>
+            <p className="text-xs text-gray-400 mt-0.5″>Pros you recruited</p>
           </div>
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
-            <p className="text-xs text-gray-500">Total Downline</p>
-            <p className="text-2xl font-bold text-[#0A1628] mt-1">{data.totalDownline}</p>
-            <p className="text-xs text-gray-400 mt-0.5">All levels</p>
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4″>
+            <p className="text-xs text-gray-500″>Total Downline</p>
+            <p className="text-2xl font-bold text-[#0A1628] mt-1″>{data.totalDownline}</p>
+            <p className="text-xs text-gray-400 mt-0.5″>All levels</p>
           </div>
         </div>
 
@@ -492,54 +492,54 @@ export default function NetworkIncomeHub() {
         <LiveIncomeSimulator />
 
         {/* Referral link */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-          <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3">
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+          <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3″>
             <Link2 className="w-4 h-4 text-[#0A1628]" /> Your Referral Link
           </h3>
-          <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-2 border border-gray-200">
+          <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-2 border border-gray-200″>
             <p className="text-xs text-gray-600 truncate flex-1 font-mono">{data.referralLink}</p>
-            <button onClick={copyLink} className="text-gray-400 hover:text-[#0A1628] transition-colors flex-shrink-0">
-              <Copy className="w-4 h-4" />
+            <button onClick={copyLink} className="text-gray-400 hover:text-[#0A1628] transition-colors flex-shrink-0″>
+              <Copy className="w-4 h-4″ />
             </button>
           </div>
-          <p className="text-xs text-gray-400 mt-2">Share this link — anyone who joins through it is attributed to you permanently.</p>
+          <p className="text-xs text-gray-400 mt-2″>Share this link — anyone who joins through it is attributed to you permanently.</p>
         </div>
 
         {/* QR Code */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-          <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3">
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+          <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3″>
             <QrCode className="w-4 h-4 text-[#0A1628]" /> Your QR Code
           </h3>
           {qrDataUrl ? (
-            <div className="flex flex-col items-center gap-3">
-              <img src={qrDataUrl} alt="Your referral QR code" className="w-48 h-48 rounded-xl border border-gray-100" />
+            <div className="flex flex-col items-center gap-3″>
+              <img src={qrDataUrl} alt="Your referral QR code" className="w-48 h-48 rounded-xl border border-gray-100″ />
               <a
                 href={qrDataUrl}
                 download="prolnk-qr-code.png"
                 className="flex items-center gap-2 text-xs font-semibold text-[#0A1628] hover:underline"
               >
-                <Download className="w-3.5 h-3.5" /> Download QR Code
+                <Download className="w-3.5 h-3.5″ /> Download QR Code
               </a>
               <p className="text-xs text-gray-400 text-center">Print on business cards, flyers, and door hangers.</p>
             </div>
           ) : (
-            <div className="flex items-center justify-center h-40 text-gray-300">
-              <QrCode className="w-10 h-10" />
+            <div className="flex items-center justify-center h-40 text-gray-300″>
+              <QrCode className="w-10 h-10″ />
             </div>
           )}
         </div>
 
         {/* Income breakdown by type */}
         {Object.keys(data.incomeByType).length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-            <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3">
-              <DollarSign className="w-4 h-4 text-green-500" /> This Month by Income Type
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+            <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3″>
+              <DollarSign className="w-4 h-4 text-green-500″ /> This Month by Income Type
             </h3>
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {Object.entries(data.incomeByType).map(([type, amount]) => (
-                <div key={type} className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
-                  <span className="text-sm text-gray-600">{PAYOUT_TYPE_LABELS[type] ?? type}</span>
-                  <span className="text-sm font-semibold text-green-600">${(amount as number).toFixed(2)}</span>
+                <div key={type} className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0″>
+                  <span className="text-sm text-gray-600″>{PAYOUT_TYPE_LABELS[type] ?? type}</span>
+                  <span className="text-sm font-semibold text-green-600″>${(amount as number).toFixed(2)}</span>
                 </div>
               ))}
             </div>
@@ -548,30 +548,30 @@ export default function NetworkIncomeHub() {
 
         {/* Full downline tree (collapsible) */}
         {data.directReferralList.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
             <button
-              className="w-full flex items-center justify-between text-sm font-semibold text-gray-800"
+              className="w-full flex items-center justify-between text-sm font-semibold text-gray-800″
               onClick={() => setShowTree(!showTree)}
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-2″>
                 <Users className="w-4 h-4 text-[#0A1628]" />
                 Full Network ({data.totalDownline} pros)
               </span>
-              {showTree ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+              {showTree ? <ChevronUp className="w-4 h-4 text-gray-400″ /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
             </button>
             {showTree && (
-              <div className="mt-3 space-y-2">
+              <div className="mt-3 space-y-2″>
                 {data.directReferralList.map((pro) => (
-                  <div key={pro.referralCode} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
+                  <div key={pro.referralCode} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0″>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">{pro.businessName}</p>
-                      <p className="text-xs text-gray-400">{pro.trade}</p>
+                      <p className="text-sm font-medium text-gray-900″>{pro.businessName}</p>
+                      <p className="text-xs text-gray-400″>{pro.trade}</p>
                     </div>
                     <div className="text-right">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${LEVEL_COLORS[pro.level] ?? "bg-gray-100 text-gray-700"}`}>
                         {LEVEL_NAMES[pro.level]}
                       </span>
-                      <p className="text-xs text-gray-400 mt-0.5">{pro.jobsThisMonth} jobs this month</p>
+                      <p className="text-xs text-gray-400 mt-0.5″>{pro.jobsThisMonth} jobs this month</p>
                     </div>
                   </div>
                 ))}
@@ -582,23 +582,23 @@ export default function NetworkIncomeHub() {
 
         {/* Payout history */}
         {payoutHistory && payoutHistory.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-            <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3">
-              <Award className="w-4 h-4 text-green-500" /> Payout History
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4″>
+            <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-3″>
+              <Award className="w-4 h-4 text-green-500″ /> Payout History
             </h3>
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {payoutHistory.map((p) => (
-                <div key={p.id} className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
+                <div key={p.id} className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0″>
                   <div>
-                    <p className="text-sm text-gray-700">{PAYOUT_TYPE_LABELS[p.payoutType] ?? p.payoutType}</p>
-                    <p className="text-xs text-gray-400">{p.payoutMonth}</p>
+                    <p className="text-sm text-gray-700″>{PAYOUT_TYPE_LABELS[p.payoutType] ?? p.payoutType}</p>
+                    <p className="text-xs text-gray-400″>{p.payoutMonth}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-semibold text-green-600">${p.amount.toFixed(2)}</p>
+                    <p className="text-sm font-semibold text-green-600″>${p.amount.toFixed(2)}</p>
                     <span className={`text-xs px-1.5 py-0.5 rounded font-medium ${
-                      p.status === "paid" ? "bg-green-100 text-green-700" :
-                      p.status === "approved" ? "bg-blue-100 text-blue-700" :
-                      "bg-yellow-100 text-yellow-700"
+                      p.status === "paid" ? "bg-green-100 text-green-700″ :
+                      p.status === "approved" ? "bg-blue-100 text-blue-700″ :
+                      "bg-yellow-100 text-yellow-700″
                     }`}>
                       {p.status}
                     </span>

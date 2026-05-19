@@ -47,7 +47,7 @@ export default function DFWHVACCostPerTon() {
     <div style={{ background: '#F8F9FA', minHeight: '100vh', color: '#1A2B3C', fontFamily: 'sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#0A1628', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
-        <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, color: '#0A1628' }}>HVAC Cost Per Ton in DFW</h1>
+        <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, color: '#0A1628′ }}>HVAC Cost Per Ton in DFW</h1>
         <p style={{ color: '#5A6B7D', marginBottom: 32 }}>
           DFW's brutal summers demand oversized, high-efficiency AC systems. Understanding cost per ton helps you decode contractor quotes and avoid overpaying on a replacement that could run $5,000–$15,000.
         </p>
@@ -59,7 +59,7 @@ export default function DFWHVACCostPerTon() {
         <h2 style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>What You Are Paying For — Cost Tiers</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 32 }}>
           {tiers.map(t => (
-            <div key={t.label} style={{ background: '#FFFFFF', borderRadius: 8, padding: '14px 18px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8, borderLeft: '3px solid #F5E642' }}>
+            <div key={t.label} style={{ background: '#FFFFFF', borderRadius: 8, padding: '14px 18px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8, borderLeft: '3px solid #F5E642′ }}>
               <div>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{t.label}</div>
                 <div style={{ color: '#5A6B7D', fontSize: 13 }}>{t.note}</div>
@@ -74,7 +74,7 @@ export default function DFWHVACCostPerTon() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#5A6B7D', fontSize: 13, marginBottom: 6 }}>Home Size (sq ft)</label>
-              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400" style={{ width: '100%', padding: '10px 14px', background: '#F8F9FA', border: '1px solid #D0D7DE', borderRadius: 6, color: '#1A2B3C', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400″ style={{ width: '100%', padding: '10px 14px', background: '#F8F9FA', border: '1px solid #D0D7DE', borderRadius: 6, color: '#1A2B3C', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#5A6B7D', fontSize: 13, marginBottom: 6 }}>Quote Tier</label>
@@ -86,8 +86,8 @@ export default function DFWHVACCostPerTon() {
           </div>
           <button onClick={calculate} style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%' }}>Calculate Expected Cost</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#F0F4FF', borderRadius: 8, borderLeft: '3px solid #0A1628' }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#0A1628' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#F0F4FF', borderRadius: 8, borderLeft: '3px solid #0A1628′ }}>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#0A1628′ }}>
                 {result.sizeLabel} system — ${result.low.toLocaleString()}–${result.high.toLocaleString()}
               </div>
               <div style={{ color: '#5A6B7D', fontSize: 14, lineHeight: 1.6 }}>
@@ -98,7 +98,7 @@ export default function DFWHVACCostPerTon() {
         </div>
 
         <div style={{ background: '#FFFFFF', borderRadius: 8, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#CC3300' }}>🚩 DFW HVAC Quote Red Flags</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#CC3300′ }}>🚩 DFW HVAC Quote Red Flags</div>
           <ul style={{ margin: 0, paddingLeft: 20 }}>
             {redFlags.map((f, i) => <li key={i} style={{ color: '#5A6B7D', fontSize: 14, lineHeight: 1.9 }}>{f}</li>)}
           </ul>

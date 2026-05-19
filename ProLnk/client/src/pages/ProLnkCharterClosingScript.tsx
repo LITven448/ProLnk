@@ -50,7 +50,7 @@ export default function ProLnkCharterClosingScript() {
         <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 16, marginBottom: 20,
           border: '2px solid #FF4444', textAlign: 'center' }}>
           <div style={{ color: '#FF4444', fontWeight: 700, fontSize: 14 }}>CHARTER TIER CLOSING SOON</div>
-          <div style={{ color: '#fff', fontSize: 22, fontWeight: 700, margin: '4px 0' }}>~127 spots remaining</div>
+          <div style={{ color: '#fff', fontSize: 22, fontWeight: 700, margin: '4px 0′ }}>~127 spots remaining</div>
           <div style={{ color: '#8899AA', fontSize: 12 }}>Closes permanently at 500 total Charter applications · DFW-wide</div>
         </div>
 
@@ -69,13 +69,13 @@ export default function ProLnkCharterClosingScript() {
           </div>
         </div>
 
-        <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 24, marginBottom: 16, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 24, marginBottom: 16, border: '2px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 10 }}>YOUR RESPONSE</div>
           <p style={{ color: '#fff', fontSize: 14, lineHeight: 1.7, margin: '0 0 16px' }}>{current.response}</p>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px' }}>
             <div style={{ color: '#8899AA', fontSize: 11, marginBottom: 6 }}>THE NUMBERS</div>
             {current.proof.split('\n').map((line, i) => (
-              <div key={i} style={{ color: line.startsWith('→') || line.includes('zero wasted') ? '#F5E642' : '#ccc',
+              <div key={i} style={{ color: line.startsWith('→') || line.includes('zero wasted') ? '#F5E642′ : '#ccc',
                 fontSize: 12, lineHeight: 1.6 }}>{line}</div>
             ))}
           </div>

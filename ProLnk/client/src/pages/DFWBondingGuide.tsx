@@ -82,7 +82,7 @@ export default function DFWBondingGuide() {
             ].map(([t, d]) => (
               <div key={t} style={{ background: '#1A3050', borderRadius: 8, padding: '0.75rem', fontSize: '0.88rem' }}>
                 <div style={{ fontWeight: 700, marginBottom: '0.3rem' }}>{t}</div>
-                <div style={{ color: '#94A3B8' }}>{d}</div>
+                <div style={{ color: '#94A3B8′ }}>{d}</div>
               </div>
             ))}
           </div>
@@ -105,9 +105,9 @@ export default function DFWBondingGuide() {
           {result && (
             <div style={{ marginTop: '1.25rem', background: '#1A3050', borderRadius: 10, padding: '1.25rem' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem' }}>{result.what}</div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>What It Prevents: </span>{result.prevents}</div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>What's Required: </span>{result.required}</div>
-              <div><span style={{ color: '#F5E642' }}>Estimated Cost: </span>{result.cost}</div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>What It Prevents: </span>{result.prevents}</div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>What’s Required: </span>{result.required}</div>
+              <div><span style={{ color: '#F5E642′ }}>Estimated Cost: </span>{result.cost}</div>
             </div>
           )}
         </div>

@@ -69,10 +69,10 @@ export default function DFWNewDevelopmentGuide() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px', flexWrap: 'wrap', gap: '8px' }}>
                     <div style={{ fontSize: '15px', fontWeight: '700', color: '#1E293B' }}>{item.incentive}</div>
                     <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ fontSize: '12px', fontWeight: '600', color: item.negotiable ? '#16A34A' : '#DC2626', background: item.negotiable ? '#DCFCE7' : '#FEE2E2', padding: '2px 8px', borderRadius: '10px' }}>
+                      <span style={{ fontSize: '12px', fontWeight: '600', color: item.negotiable ? '#16A34A' : '#DC2626', background: item.negotiable ? '#DCFCE7′ : '#FEE2E2', padding: '2px 8px', borderRadius: '10px' }}>
                         {item.negotiable ? 'Negotiable' : 'Builder Fixed'}
                       </span>
-                      <span style={{ fontSize: '13px', color: '#64748B', fontWeight: '600' }}>{item.typical}</span>
+                      <span style={{ fontSize: '13px', color: '#64748B', fontWeight: '600′ }}>{item.typical}</span>
                     </div>
                   </div>
                   <div style={{ fontSize: '13px', color: '#64748B' }}>{item.notes}</div>
@@ -93,7 +93,7 @@ export default function DFWNewDevelopmentGuide() {
                 <div style={{ background: '#1E3A5F', color: '#F5E642', padding: '6px 10px', borderRadius: '8px', fontSize: '13px', fontWeight: '800', textAlign: 'center' }}>{w.year}</div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#94A3B8', marginBottom: '4px' }}>COVERS</div>
-                  <div style={{ fontSize: '13px', color: '#374151', fontWeight: '600' }}>{w.covers}</div>
+                  <div style={{ fontSize: '13px', color: '#374151', fontWeight: '600′ }}>{w.covers}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#94A3B8', marginBottom: '4px' }}>EXAMPLES</div>
@@ -115,7 +115,7 @@ export default function DFWNewDevelopmentGuide() {
               <div key={i} style={{ background: '#FFFFFF', borderRadius: '12px', padding: '24px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', borderLeft: `4px solid ${p.risk === 'High' ? '#EF4444' : p.risk === 'Medium' ? '#F59E0B' : '#22C55E'}` }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                   <div style={{ fontSize: '16px', fontWeight: '700', color: '#1E293B' }}>{p.phase}</div>
-                  <span style={{ fontSize: '12px', fontWeight: '700', padding: '3px 12px', borderRadius: '12px', background: p.risk === 'High' ? '#FEE2E2' : p.risk === 'Medium' ? '#FEF3C7' : '#DCFCE7', color: p.risk === 'High' ? '#DC2626' : p.risk === 'Medium' ? '#D97706' : '#16A34A' }}>
+                  <span style={{ fontSize: '12px', fontWeight: '700', padding: '3px 12px', borderRadius: '12px', background: p.risk === 'High' ? '#FEE2E2′ : p.risk === ’Medium' ? '#FEF3C7′ : '#DCFCE7', color: p.risk === ’High' ? '#DC2626′ : p.risk === ’Medium' ? '#D97706′ : '#16A34A' }}>
                     {p.risk} Risk
                   </span>
                 </div>
@@ -138,26 +138,26 @@ export default function DFWNewDevelopmentGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#1E3A5F', marginBottom: '8px' }}>🧮 True Monthly Cost Calculator</h2>
           <p style={{ fontSize: '14px', color: '#64748B', marginBottom: '24px' }}>MUD district taxes in outer DFW suburbs can add $200-500/month. Calculate your real cost.</p>
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151′ }}>
             Home Price: <strong style={{ color: '#1E3A5F' }}>${basePrice.toLocaleString()}</strong>
           </label>
           <input type="range" min={300000} max={1200000} step={10000} value={basePrice} onChange={e => setBasePrice(Number(e.target.value))}
             style={{ width: '100%', marginBottom: '20px', accentColor: '#1E3A5F' }} />
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151′ }}>
             MUD District Tax Rate: <strong style={{ color: '#1E3A5F' }}>{mudRate}%</strong> of assessed value
           </label>
           <input type="range" min={0} max={2} step={0.1} value={mudRate} onChange={e => setMudRate(Number(e.target.value))}
             style={{ width: '100%', marginBottom: '20px', accentColor: '#1E3A5F' }} />
 
-          <label style={{ display: 'block', marginBottom: '10px', fontSize: '14px', color: '#374151' }}>Development Phase:</label>
+          <label style={{ display: 'block', marginBottom: '10px', fontSize: '14px', color: '#374151′ }}>Development Phase:</label>
           <div style={{ display: 'flex', gap: '10px', marginBottom: '24px', flexWrap: 'wrap' }}>
             {[{ v: 1, l: 'Phase 1 (First lots)' }, { v: 2, l: 'Phase 2-3 (Mid)' }, { v: 3, l: 'Phase 4+ (Late)' }].map(opt => (
               <button key={opt.v} onClick={() => setPhase(opt.v)}
                 style={{ padding: '8px 16px', borderRadius: '8px', border: '2px solid', fontSize: '13px', cursor: 'pointer',
                   background: phase === opt.v ? '#1E3A5F' : 'transparent',
-                  color: phase === opt.v ? '#F5E642' : '#94A3B8',
-                  borderColor: phase === opt.v ? '#1E3A5F' : '#E2E8F0' }}>
+                  color: phase === opt.v ? '#F5E642′ : '#94A3B8',
+                  borderColor: phase === opt.v ? '#1E3A5F' : '#E2E8F0′ }}>
                 {opt.l}
               </button>
             ))}
@@ -169,9 +169,9 @@ export default function DFWNewDevelopmentGuide() {
           </button>
 
           {result && (
-            <div style={{ marginTop: '24px', padding: '20px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
+            <div style={{ marginTop: '24px', padding: '20px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0′ }}>
               <div style={{ fontSize: '32px', fontWeight: '800', color: '#1E3A5F', marginBottom: '8px' }}>~${result.monthly.toLocaleString()}/month</div>
-              <div style={{ fontSize: '14px', color: '#DC2626', marginBottom: '8px', fontWeight: '600' }}>
+              <div style={{ fontSize: '14px', color: '#DC2626', marginBottom: '8px', fontWeight: '600′ }}>
                 MUD tax contributing: ${result.mudMonthly.toLocaleString()}/mo
               </div>
               <div style={{ fontSize: '13px', color: '#64748B', borderTop: '1px solid #E2E8F0', paddingTop: '12px' }}>

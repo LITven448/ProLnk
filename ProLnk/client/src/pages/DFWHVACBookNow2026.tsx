@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const urgencyLevels = [
-  { id: 'emergency', label: '🚨 Emergency — No AC / No Heat', color: '#ef4444' },
-  { id: 'urgent', label: '⚠️ Urgent — System Running Poorly', color: '#f97316' },
-  { id: 'soon', label: '🟡 Soon — Want a Tune-Up or Inspection', color: '#eab308' },
-  { id: 'planning', label: '🔵 Planning — Thinking About Replacement', color: '#3b82f6' },
+  { id: 'emergency', label: '🚨 Emergency — No AC / No Heat', color: '#ef4444′ },
+  { id: 'urgent', label: '⚠️ Urgent — System Running Poorly', color: '#f97316′ },
+  { id: 'soon', label: '🟡 Soon — Want a Tune-Up or Inspection', color: '#eab308′ },
+  { id: 'planning', label: '🔵 Planning — Thinking About Replacement', color: '#3b82f6′ },
 ];
 
 const processes: Record<string, { headline: string; steps: { icon: string; title: string; detail: string }[]; eta: string }> = {
@@ -70,8 +70,8 @@ export default function DFWHVACBookNow2026() {
         <div style={{ display: 'grid', gap: 12, marginBottom: 28 }}>
           {urgencyLevels.map(u => (
             <button key={u.id} onClick={() => setSelected(u.id)}
-              style={{ background: selected === u.id ? '#F5E642' : '#132039', color: selected === u.id ? '#0A1628' : '#fff',
-                border: '2px solid ' + (selected === u.id ? '#F5E642' : '#1e3a5f'), borderRadius: 10,
+              style={{ background: selected === u.id ? '#F5E642′ : '#132039', color: selected === u.id ? '#0A1628' : '#fff',
+                border: '2px solid ' + (selected === u.id ? '#F5E642′ : '#1e3a5f'), borderRadius: 10,
                 padding: '14px 18px', textAlign: 'left', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}>
               {u.label}
             </button>

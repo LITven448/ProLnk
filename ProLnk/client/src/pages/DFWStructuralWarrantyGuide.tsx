@@ -30,25 +30,25 @@ export default function DFWStructuralWarrantyGuide() {
           DFW's expansive clay soil causes more foundation movement than almost anywhere in the U.S. When buying a home with prior foundation work, the warranty quality is as important as the repair itself.
         </p>
 
-        <div style={{ background: 'rgba(239,68,68,0.1)', border: '1.5px solid rgba(239,68,68,0.3)', borderRadius: 12, padding: 16, marginBottom: 24, fontSize: 14, color: '#fca5a5' }}>
+        <div style={{ background: 'rgba(239,68,68,0.1)', border: '1.5px solid rgba(239,68,68,0.3)', borderRadius: 12, padding: 16, marginBottom: 24, fontSize: 14, color: '#fca5a5′ }}>
           ⚠️ <strong>DFW Reality:</strong> Over 60% of DFW homes are built on expansive clay. Foundation repair is common — the warranty quality is what separates a smart buy from a money pit.
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Warranty Assessment Tool</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Warranty Assessment Tool</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Warranty Type</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Warranty Type</label>
               <select value={type} onChange={e => setType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {warrantyTypes.map(t => <option key={t}>{t}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Years Remaining on Warranty: {years}</label>
-              <input type="range" min={0} max={30} value={years} onChange={e => setYears(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Years Remaining on Warranty: {years}</label>
+              <input type="range" min={0} max={30} value={years} onChange={e => setYears(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Scope of Original Repair</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Scope of Original Repair</label>
               <select value={scope} onChange={e => setScope(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {scopeOptions.map(s => <option key={s}>{s}</option>)}
               </select>
@@ -70,7 +70,7 @@ export default function DFWStructuralWarrantyGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 14, padding: 22 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>📋 Warranty Tier Quick Reference</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>📋 Warranty Tier Quick Reference</h2>
           {[
             { tier: 'Lifetime Transferable', rating: '🟢 Gold Standard', detail: 'Best DFW companies: Olshan, HD Foundations, Foundation Recovery' },
             { tier: '10–25 Year Transferable', rating: '🟢 Excellent', detail: 'Verify company still in business; get transfer docs at closing' },

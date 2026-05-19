@@ -18,9 +18,9 @@ function getMaterialRecommendation(application: string, exposure: string) {
     return {
       recommendation: 'OSB IS STANDARD — PLYWOOD IS PREMIUM',
       color: '#F5E642',
-      detail: 'OSB 7/16" is the DFW standard for roof decking and meets code. It performs well when dry. However, DFW\’s humidity and heat mean that in any re-roof, plywood decking adds longevity and resistance to humidity-driven swelling.',
+      detail: 'OSB 7/16″ is the DFW standard for roof decking and meets code. It performs well when dry. However, DFW\’s humidity and heat mean that in any re-roof, plywood decking adds longevity and resistance to humidity-driven swelling.',
       dfwNote: 'OSB swells at edges when exposed during re-roofing. If your roofer removes old shingles during a rainy DFW spring day, OSB decking can swell measurably before new shingles go on.',
-      cost: 'OSB 7/16": $1.20–$1.80/sq ft installed. Plywood 15/32": $1.80–$2.60/sq ft installed. Upgrade cost on 2,000 sq ft roof: ~$1,200–$1,600.',
+      cost: 'OSB 7/16″: $1.20–$1.80/sq ft installed. Plywood 15/32″: $1.80–$2.60/sq ft installed. Upgrade cost on 2,000 sq ft roof: ~$1,200–$1,600.',
       winner: 'Plywood (if budget allows)',
     };
   }
@@ -30,7 +30,7 @@ function getMaterialRecommendation(application: string, exposure: string) {
       color: '#00CC66',
       detail: 'DFW\’s expansive clay soils cause foundation movement that stresses subfloor connections repeatedly. Plywood\’s cross-laminated structure handles repeated loading better than OSB, which can develop fastener pull-through and edge swelling over time.',
       dfwNote: 'After a plumbing leak — common in DFW\’s aging cast-iron supply lines — OSB subfloor can delaminate significantly faster than plywood. Plywood allows more time to dry and recover.',
-      cost: 'OSB 23/32": $1.40–$1.90/sq ft installed. Plywood 3/4" T&G: $2.00–$2.80/sq ft installed.',
+      cost: 'OSB 23/32″: $1.40–$1.90/sq ft installed. Plywood 3/4″ T&G: $2.00–$2.80/sq ft installed.',
       winner: 'Plywood (clear winner for DFW)',
     };
   }
@@ -40,7 +40,7 @@ function getMaterialRecommendation(application: string, exposure: string) {
       color: '#F5E642',
       detail: 'OSB wall sheathing meets DFW wind zone requirements when properly nailed. Plywood provides slightly better racking resistance and moisture recovery — relevant in DFW wind events where sheathing may be exposed before re-siding.',
       dfwNote: 'For homes in particularly exposed locations (hilltops, open fields near Frisco/McKinney/Prosper), plywood sheathing is a worthwhile upgrade.',
-      cost: 'OSB 7/16": ~$0.90–$1.40/sq ft. Plywood 15/32": ~$1.40–$2.00/sq ft. Premium per 2,000 sq ft home: $1,000–$1,200.',
+      cost: 'OSB 7/16″: ~$0.90–$1.40/sq ft. Plywood 15/32″: ~$1.40–$2.00/sq ft. Premium per 2,000 sq ft home: $1,000–$1,200.',
       winner: 'Plywood (for DFW wind zone exposure)',
     };
   }
@@ -82,7 +82,7 @@ export default function DFWOSBvsPlywoodGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>🔍 Material Recommendation Tool</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#8899BB', fontSize: 13, marginBottom: 8 }}>DFW application</label>

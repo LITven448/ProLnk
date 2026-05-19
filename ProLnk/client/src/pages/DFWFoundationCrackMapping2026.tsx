@@ -21,7 +21,7 @@ export default function DFWFoundationCrackMapping2026() {
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>🏠 DFW Foundation Guide 2026</div>
         <h1 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '8px', lineHeight: 1.2 }}>Foundation Crack Mapping Guide</h1>
-        <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>A crack map is your foundation's health record. DFW's expansive clay soil means cracks change seasonally — documenting them over time tells you if movement is normal or structural.</p>
+        <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>A crack map is your foundation's health record. DFW’s expansive clay soil means cracks change seasonally — documenting them over time tells you if movement is normal or structural.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', marginBottom: '32px' }}>
           {[{ icon: '📷', label: 'Photo', desc: 'Date-stamped photo of each crack with ruler' },
@@ -40,7 +40,7 @@ export default function DFWFoundationCrackMapping2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>🗺️ Get My Mapping Methodology</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>🗺️ Get My Mapping Methodology</h2>
           <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>My Crack Situation</label>
             <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px' }}>
@@ -57,13 +57,13 @@ export default function DFWFoundationCrackMapping2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
-          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>📊 Crack Width Reference — DFW Context</h3>
+          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>📊 Crack Width Reference — DFW Context</h3>
           {[{ width: 'Hairline (<1/16 in)', status: 'Monitor', color: '#48BB78', note: 'Common in DFW — seasonal clay movement. Document and watch.' },
             { width: '1/16 – 1/4 in', status: 'Evaluate', color: '#ECC94B', note: 'Get a structural engineer assessment if widening or accompanied by door/window sticking.' },
             { width: '1/4 – 1/2 in', status: 'Urgent', color: '#F6AD55', note: 'Significant movement. Engineer visit within 2 weeks. Do not delay.' },
             { width: '>1/2 in', status: 'Emergency', color: '#FC8181', note: 'Structural emergency. Call engineer immediately. May need emergency shoring.' }
           ].map(row => (
-            <div key={row.width} style={{ display: 'flex', gap: '16px', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #1a3050' }}>
+            <div key={row.width} style={{ display: 'flex', gap: '16px', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #1a3050′ }}>
               <div style={{ width: '120px', fontWeight: 700, fontSize: '13px', flexShrink: 0 }}>{row.width}</div>
               <div style={{ backgroundColor: row.color, color: '#0A1628', borderRadius: '6px', padding: '3px 10px', fontSize: '12px', fontWeight: 700, flexShrink: 0 }}>{row.status}</div>
               <div style={{ color: '#8899AA', fontSize: '13px' }}>{row.note}</div>

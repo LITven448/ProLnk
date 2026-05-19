@@ -39,7 +39,7 @@ const severityLevels = [
   }
 ];
 
-const urgencyColor: Record<string, string> = { low: "#22C55E", medium: "#F59E0B", high: "#EF4444", critical: "#DC2626" };
+const urgencyColor: Record<string, string> = { low: "#22C55E", medium: "#F59E0B", high: "#EF4444″, critical: "#DC2626" };
 
 export default function DFWRoofGranuleTest2026() {
   const [gutterLevel, setGutterLevel] = useState("");
@@ -66,16 +66,16 @@ export default function DFWRoofGranuleTest2026() {
   }
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#E8EAF0", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#E8EAF0", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642", fontWeight: 700, letterSpacing: 1 }}>DFW ROOF GUIDE 2026</div>
+        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642″, fontWeight: 700, letterSpacing: 1 }}>DFW ROOF GUIDE 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, color: "#FFFFFF", marginBottom: 8 }}>🏠 Shingle Granule Loss Test</h1>
-        <p style={{ color: "#9BA3B8", marginBottom: 28, lineHeight: 1.6 }}>
+        <p style={{ color: "#9BA3B8″, marginBottom: 28, lineHeight: 1.6 }}>
           DFW hail seasons accelerate shingle granule loss — the #1 indicator your roof needs replacement. Here's how to test yours.
         </p>
 
-        <div style={{ background: "#111E33", borderRadius: 12, padding: 20, marginBottom: 20, border: "1px solid #1E2D4A" }}>
-          <h2 style={{ fontSize: 16, color: "#F5E642", marginBottom: 12 }}>🌧️ How to Check After Rain</h2>
+        <div style={{ background: "#111E33″, borderRadius: 12, padding: 20, marginBottom: 20, border: "1px solid #1E2D4A" }}>
+          <h2 style={{ fontSize: 16, color: "#F5E642″, marginBottom: 12 }}>🌧️ How to Check After Rain</h2>
           <ul style={{ color: "#C8CEDF", lineHeight: 2, paddingLeft: 20 }}>
             <li>Wait 24 hours after a rain event, then check gutters</li>
             <li>Granules look like coarse sand in gray, black, or brown</li>
@@ -85,12 +85,12 @@ export default function DFWRoofGranuleTest2026() {
           </ul>
         </div>
 
-        <div style={{ background: "#111E33", borderRadius: 12, padding: 20, marginBottom: 20, border: "1px solid #1E2D4A" }}>
-          <h2 style={{ fontSize: 16, color: "#F5E642", marginBottom: 16 }}>🔍 Granule Loss Assessment</h2>
+        <div style={{ background: "#111E33″, borderRadius: 12, padding: 20, marginBottom: 20, border: "1px solid #1E2D4A" }}>
+          <h2 style={{ fontSize: 16, color: "#F5E642″, marginBottom: 16 }}>🔍 Granule Loss Assessment</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: "block", color: "#9BA3B8", fontSize: 13, marginBottom: 6 }}>Granules in gutters after rain?</label>
+            <label style={{ display: "block", color: "#9BA3B8″, fontSize: 13, marginBottom: 6 }}>Granules in gutters after rain?</label>
             <select value={gutterLevel} onChange={e => setGutterLevel(e.target.value)}
-              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", border: "1px solid #2A3A5A", color: "#E8EAF0", fontSize: 14 }}>
+              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, border: "1px solid #2A3A5A", color: "#E8EAF0", fontSize: 14 }}>
               <option value="">Select...</option>
               <option value="none">None visible</option>
               <option value="handful">Small handful</option>
@@ -99,9 +99,9 @@ export default function DFWRoofGranuleTest2026() {
             </select>
           </div>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: "block", color: "#9BA3B8", fontSize: 13, marginBottom: 6 }}>Bald/bare spots on shingles?</label>
+            <label style={{ display: "block", color: "#9BA3B8″, fontSize: 13, marginBottom: 6 }}>Bald/bare spots on shingles?</label>
             <select value={baldSpots} onChange={e => setBaldSpots(e.target.value)}
-              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", border: "1px solid #2A3A5A", color: "#E8EAF0", fontSize: 14 }}>
+              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, border: "1px solid #2A3A5A", color: "#E8EAF0", fontSize: 14 }}>
               <option value="">Select...</option>
               <option value="none">None visible</option>
               <option value="minor">Minor color variation</option>
@@ -110,9 +110,9 @@ export default function DFWRoofGranuleTest2026() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: "block", color: "#9BA3B8", fontSize: 13, marginBottom: 6 }}>Recent hail history in your zip?</label>
+            <label style={{ display: "block", color: "#9BA3B8″, fontSize: 13, marginBottom: 6 }}>Recent hail history in your zip?</label>
             <select value={hailHistory} onChange={e => setHailHistory(e.target.value)}
-              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", border: "1px solid #2A3A5A", color: "#E8EAF0", fontSize: 14 }}>
+              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, border: "1px solid #2A3A5A", color: "#E8EAF0", fontSize: 14 }}>
               <option value="">Select...</option>
               <option value="none">No hail in 3+ years</option>
               <option value="minor">1-2 minor events</option>
@@ -121,7 +121,7 @@ export default function DFWRoofGranuleTest2026() {
             </select>
           </div>
           <button onClick={assess}
-            style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%" }}>
+            style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%" }}>
             Assess My Roof
           </button>
         </div>
@@ -130,17 +130,17 @@ export default function DFWRoofGranuleTest2026() {
           <div style={{ background: "#0D1F3C", borderRadius: 12, padding: 20, border: `2px solid ${urgencyColor[result.urgency]}` }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
               <h3 style={{ color: "#FFFFFF", margin: 0 }}>Granule Loss: {result.level}</h3>
-              <span style={{ background: urgencyColor[result.urgency], color: "#0A1628", borderRadius: 6, padding: "4px 12px", fontWeight: 700, fontSize: 13 }}>
+              <span style={{ background: urgencyColor[result.urgency], color: "#0A1628″, borderRadius: 6, padding: "4px 12px", fontWeight: 700, fontSize: 13 }}>
                 {result.urgency.toUpperCase()}
               </span>
             </div>
-            <div style={{ color: "#F5E642", fontWeight: 600, marginBottom: 10 }}>📋 {result.action}</div>
-            <div style={{ color: "#9BA3B8", fontSize: 13 }}>⏱️ {result.timeline}</div>
+            <div style={{ color: "#F5E642″, fontWeight: 600, marginBottom: 10 }}>📋 {result.action}</div>
+            <div style={{ color: "#9BA3B8″, fontSize: 13 }}>⏱️ {result.timeline}</div>
           </div>
         )}
 
-        <div style={{ marginTop: 24, padding: 16, background: "#111E33", borderRadius: 10, border: "1px solid #1E2D4A", color: "#9BA3B8", fontSize: 13, lineHeight: 1.7 }}>
-          <strong style={{ color: "#F5E642" }}>ProLnk DFW:</strong> Get 3 verified roofing bids within 24 hours. All ProLnk roofers carry insurance and provide written inspection reports.
+        <div style={{ marginTop: 24, padding: 16, background: "#111E33″, borderRadius: 10, border: "1px solid #1E2D4A", color: "#9BA3B8", fontSize: 13, lineHeight: 1.7 }}>
+          <strong style={{ color: "#F5E642″ }}>ProLnk DFW:</strong> Get 3 verified roofing bids within 24 hours. All ProLnk roofers carry insurance and provide written inspection reports.
         </div>
       </div>
     </div>

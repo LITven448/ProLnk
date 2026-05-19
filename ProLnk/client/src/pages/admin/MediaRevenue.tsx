@@ -9,9 +9,9 @@ import {
 import { DollarSign, Megaphone, TrendingUp, Percent, Plus } from "lucide-react";
 
 const METRIC_CARDS = [
-  { label: "Monthly Ad Revenue",  value: "$8,400",  delta: "+12%",  color: T.green,  gradient: BADGE_GRADIENTS.green,  icon: DollarSign },
-  { label: "Active Advertisers",  value: "12",      delta: "+3",    color: T.blue,   gradient: BADGE_GRADIENTS.blue,   icon: Megaphone },
-  { label: "Avg CPM",             value: "$4.20",   delta: "+$0.30",color: T.accent, gradient: BADGE_GRADIENTS.cyan,   icon: TrendingUp },
+  { label: "Monthly Ad Revenue",  value: "$8,400″,  delta: "+12%",  color: T.green,  gradient: BADGE_GRADIENTS.green,  icon: DollarSign },
+  { label: "Active Advertisers",  value: "12″,      delta: "+3",    color: T.blue,   gradient: BADGE_GRADIENTS.blue,   icon: Megaphone },
+  { label: "Avg CPM",             value: "$4.20″,   delta: "+$0.30",color: T.accent, gradient: BADGE_GRADIENTS.cyan,   icon: TrendingUp },
   { label: "Fill Rate",           value: "78%",     delta: "+5%",   color: T.amber,  gradient: BADGE_GRADIENTS.orange, icon: Percent },
 ];
 
@@ -32,22 +32,22 @@ const MONTHLY_REVENUE = [
 ];
 
 const ADVERTISERS = [
-  { name: "HomeShield Pro",     type: "Banner Ad",       spend: "$1,200", impressions: "284K", ctr: "2.1%",  status: "Active" },
-  { name: "QuickLoan Co.",      type: "Featured Listing",spend: "$950",   impressions: "226K", ctr: "3.4%",  status: "Active" },
-  { name: "BuildRight Tools",  type: "Sponsored Content",spend: "$800",   impressions: "190K", ctr: "1.8%",  status: "Active" },
-  { name: "EnergyAudit Inc.",  type: "Newsletter",       spend: "$600",   impressions: "75K",  ctr: "4.2%",  status: "Active" },
-  { name: "SafeLock Security", type: "Banner Ad",        spend: "$750",   impressions: "178K", ctr: "2.7%",  status: "Active" },
-  { name: "GreenHVAC Supply",  type: "Featured Listing", spend: "$680",   impressions: "162K", ctr: "2.9%",  status: "Active" },
-  { name: "PoolCare Direct",   type: "Banner Ad",        spend: "$540",   impressions: "128K", ctr: "1.5%",  status: "Paused" },
-  { name: "RoofMaster LLC",    type: "Sponsored Content",spend: "$480",   impressions: "114K", ctr: "2.2%",  status: "Active" },
+  { name: "HomeShield Pro",     type: "Banner Ad",       spend: "$1,200″, impressions: "284K", ctr: "2.1%",  status: "Active" },
+  { name: "QuickLoan Co.",      type: "Featured Listing",spend: "$950″,   impressions: "226K", ctr: "3.4%",  status: "Active" },
+  { name: "BuildRight Tools",  type: "Sponsored Content",spend: "$800″,   impressions: "190K", ctr: "1.8%",  status: "Active" },
+  { name: "EnergyAudit Inc.",  type: "Newsletter",       spend: "$600″,   impressions: "75K",  ctr: "4.2%",  status: "Active" },
+  { name: "SafeLock Security", type: "Banner Ad",        spend: "$750″,   impressions: "178K", ctr: "2.7%",  status: "Active" },
+  { name: "GreenHVAC Supply",  type: "Featured Listing", spend: "$680″,   impressions: "162K", ctr: "2.9%",  status: "Active" },
+  { name: "PoolCare Direct",   type: "Banner Ad",        spend: "$540″,   impressions: "128K", ctr: "1.5%",  status: "Paused" },
+  { name: "RoofMaster LLC",    type: "Sponsored Content",spend: "$480″,   impressions: "114K", ctr: "2.2%",  status: "Active" },
 ];
 
 const PLACEMENTS = [
-  { placement: "Homepage Hero",    impressions: "98K",  clicks: "2,058",  revenue: "$2,450" },
-  { placement: "Sidebar (All)",    impressions: "186K", clicks: "2,790",  revenue: "$1,860" },
-  { placement: "Email Newsletter", impressions: "75K",  clicks: "3,150",  revenue: "$1,875" },
-  { placement: "SMS Alerts",       impressions: "42K",  clicks: "2,310",  revenue: "$1,260" },
-  { placement: "Partner Directory",impressions: "62K",  clicks: "1,240",  revenue: "$930" },
+  { placement: "Homepage Hero",    impressions: "98K",  clicks: "2,058″,  revenue: "$2,450" },
+  { placement: "Sidebar (All)",    impressions: "186K", clicks: "2,790″,  revenue: "$1,860" },
+  { placement: "Email Newsletter", impressions: "75K",  clicks: "3,150″,  revenue: "$1,875" },
+  { placement: "SMS Alerts",       impressions: "42K",  clicks: "2,310″,  revenue: "$1,260" },
+  { placement: "Partner Directory",impressions: "62K",  clicks: "1,240″,  revenue: "$930" },
 ];
 
 const CARD: React.CSSProperties = {
@@ -59,8 +59,8 @@ const CARD: React.CSSProperties = {
 };
 
 const STATUS_STYLE: Record<string, { bg: string; color: string }> = {
-  Active: { bg: "#F0FAF0", color: T.green },
-  Paused: { bg: "#FFF8E6", color: T.amber },
+  Active: { bg: "#F0FAF0″, color: T.green },
+  Paused: { bg: "#FFF8E6″, color: T.amber },
 };
 
 export default function MediaRevenue() {
@@ -100,7 +100,7 @@ export default function MediaRevenue() {
                     <div style={{ width: 44, height: 44, borderRadius: 12, background: m.gradient, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <Icon style={{ color: "#fff", width: 20, height: 20 }} />
                     </div>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: T.green, background: "#F0FAF0", padding: "3px 8px", borderRadius: 20 }}>{m.delta}</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: T.green, background: "#F0FAF0″, padding: "3px 8px", borderRadius: 20 }}>{m.delta}</span>
                   </div>
                   <div style={{ fontSize: 28, fontWeight: 800, color: T.text }}>{m.value}</div>
                   <div style={{ fontSize: 12, color: T.muted, marginTop: 2 }}>{m.label}</div>
@@ -117,7 +117,7 @@ export default function MediaRevenue() {
             <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 20 }}>Monthly Revenue (6-Month Trend)</div>
             <ResponsiveContainer width="100%" height={220}>
               <BarChart data={MONTHLY_REVENUE} margin={{ top: 0, right: 4, bottom: 0, left: -10 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
                 <XAxis dataKey="month" tick={{ fontSize: 12, fill: T.muted }} />
                 <YAxis tick={{ fontSize: 11, fill: T.muted }} tickFormatter={v => `$${(v/1000).toFixed(1)}K`} />
                 <Tooltip

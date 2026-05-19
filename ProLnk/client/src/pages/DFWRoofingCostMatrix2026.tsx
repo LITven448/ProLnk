@@ -30,7 +30,7 @@ export default function DFWRoofingCostMatrix2026() {
           {stats.map(s => (
             <div key={s.label} style={{ background: '#0F2040', borderRadius: 12, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 22 }}>{s.icon}</div>
-              <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>{s.val}</div>
+              <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>{s.val}</div>
               <div style={{ fontSize: 11, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}

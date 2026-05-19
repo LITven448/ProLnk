@@ -41,7 +41,7 @@ export default function DFWNeighborhoodWatchGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
           {types.map(t => (
             <button key={t.id} onClick={() => setSelected(t.id)}
-              style={{ background: selected === t.id ? '#F5E642' : '#111e35', color: selected === t.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: selected === t.id ? '#F5E642′ : '#111e35', color: selected === t.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
               {t.icon} {t.label}
             </button>
           ))}

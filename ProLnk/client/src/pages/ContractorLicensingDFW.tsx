@@ -110,14 +110,14 @@ export default function ContractorLicensingDFW() {
   const info = selectedTrade ? TRADE_DETAILS[selectedTrade] : null;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0f172a', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
+    <div style={{ minHeight: '100vh', background: '#0f172a', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 12 }}>
           <span style={{ background: '#1e3a5f', color: '#60a5fa', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
             📋 Texas Licensing Guide
           </span>
         </div>
-        <h1 style={{ fontSize: 40, fontWeight: 800, margin: '12px 0 8px', lineHeight: 1.2, color: '#f1f5f9' }}>
+        <h1 style={{ fontSize: 40, fontWeight: 800, margin: '12px 0 8px', lineHeight: 1.2, color: '#f1f5f9′ }}>
           DFW Contractor Licensing<br />Requirements
         </h1>
         <p style={{ fontSize: 18, color: '#94a3b8', marginBottom: 40 }}>
@@ -125,11 +125,11 @@ export default function ContractorLicensingDFW() {
         </p>
 
         <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 12, padding: 32, marginBottom: 32 }}>
-          <label style={{ display: 'block', fontWeight: 600, marginBottom: 10, fontSize: 15, color: '#cbd5e1' }}>🔍 Select Your Trade</label>
+          <label style={{ display: 'block', fontWeight: 600, marginBottom: 10, fontSize: 15, color: '#cbd5e1′ }}>🔍 Select Your Trade</label>
           <select
             value={selectedTrade}
             onChange={e => setSelectedTrade(e.target.value)}
-            style={{ width: '100%', maxWidth: 400, padding: '12px 14px', background: '#0f172a', border: '1px solid #475569', borderRadius: 8, fontSize: 16, color: '#e2e8f0' }}
+            style={{ width: '100%', maxWidth: 400, padding: '12px 14px', background: '#0f172a', border: '1px solid #475569', borderRadius: 8, fontSize: 16, color: '#e2e8f0′ }}
           >
             <option value="">Choose a trade...</option>
             {TRADES.map(t => <option key={t} value={t}>{t}</option>)}
@@ -153,7 +153,7 @@ export default function ContractorLicensingDFW() {
               </div>
 
               <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-                <span style={{ background: info.examRequired ? '#7f1d1d' : '#14532d', color: info.examRequired ? '#fca5a5' : '#86efac', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
+                <span style={{ background: info.examRequired ? '#7f1d1d' : '#14532d', color: info.examRequired ? '#fca5a5′ : '#86efac', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
                   {info.examRequired ? '📝 Exam Required' : '✅ No Exam Required'}
                 </span>
               </div>
@@ -166,7 +166,7 @@ export default function ContractorLicensingDFW() {
               <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 10, padding: 18, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
                 <div>
                   <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>Licensing Board</div>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: '#e2e8f0' }}>{info.board}</div>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: '#e2e8f0′ }}>{info.board}</div>
                 </div>
                 <a href={info.boardUrl} target="_blank" rel="noopener noreferrer"
                   style={{ background: '#2563eb', color: '#fff', padding: '10px 20px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>
@@ -178,11 +178,11 @@ export default function ContractorLicensingDFW() {
         </div>
 
         <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#f1f5f9' }}>⚡ Quick Reference: State vs City</h2>
+          <h2 style={{ fontWeight: 700, fontSize: 18, marginBottom: 16, color: '#f1f5f9′ }}>⚡ Quick Reference: State vs City</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #334155' }}>
+                <tr style={{ borderBottom: '1px solid #334155′ }}>
                   {['Trade', 'State License', 'Board', 'City Permit Needed?'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: '#64748b', fontWeight: 600, whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
@@ -199,7 +199,7 @@ export default function ContractorLicensingDFW() {
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #1e293b', background: i % 2 === 0 ? '#0f172a' : 'transparent' }}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{ padding: '10px 14px', color: '#cbd5e1' }}>{cell}</td>
+                      <td key={j} style={{ padding: '10px 14px', color: '#cbd5e1′ }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -209,7 +209,7 @@ export default function ContractorLicensingDFW() {
         </div>
 
         <div style={{ background: '#1e3a5f', border: '1px solid #1e40af', borderRadius: 12, padding: 24 }}>
-          <h3 style={{ fontWeight: 700, fontSize: 16, margin: '0 0 8px', color: '#f1f5f9' }}>💡 ProLnk & Licensing</h3>
+          <h3 style={{ fontWeight: 700, fontSize: 16, margin: '0 0 8px', color: '#f1f5f9′ }}>💡 ProLnk & Licensing</h3>
           <p style={{ fontSize: 14, color: '#93c5fd', margin: 0, lineHeight: 1.7 }}>
             ProLnk verifies your license before activating your account. Operating without a required license is illegal and will result in immediate removal from the platform. Unlicensed pros also expose homeowners to legal liability and void their homeowner's insurance on related claims.
           </p>

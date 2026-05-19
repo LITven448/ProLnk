@@ -8,7 +8,7 @@ const planting = {
   'spring-medium': { beds: '2 beds', plants: ['Tomatoes', 'Squash', 'Cucumbers', 'Peppers', 'Beans'], water: '3x/week', note: 'Use shade cloth in May to extend season' },
   'spring-large': { beds: '3–5 beds', plants: ['Full veggie garden + herbs', 'Okra for summer relay', 'Sweet potatoes for fall dig'], water: '3–4x/week', note: 'Succession plant every 2 weeks Mar–Apr' },
   'summer-small': { beds: '1 bed', plants: ['Okra', 'Sweet potatoes', 'Southern peas (Black-eyed)', 'Purslane'], water: 'Daily', note: 'Only xeric veggies survive DFW summer — most gardeners skip it' },
-  'summer-medium': { beds: '1–2 beds', plants: ['Okra', 'Sweet potatoes', 'Amaranth', 'Armenian cucumber'], water: 'Daily', note: 'Mulch 4" deep. Water early AM only.' },
+  'summer-medium': { beds: '1–2 beds', plants: ['Okra', 'Sweet potatoes', 'Amaranth', 'Armenian cucumber'], water: 'Daily', note: 'Mulch 4″ deep. Water early AM only.' },
   'summer-large': { beds: '2–3 beds max', plants: ['Heat-tolerant only: Okra, Sweet Potato, Cowpeas, Malabar spinach'], water: 'Daily', note: 'Summer is prep season — add compost and rest beds for fall planting' },
 };
 
@@ -47,7 +47,7 @@ export default function DFWRaisedGardenBedGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📅 DFW Planting Calendar</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📅 DFW Planting Calendar</h2>
           {[
             { season: 'Fall (Oct–Dec)', icon: '🍂', desc: 'PRIMARY season. Leafy greens, brassicas, root veg. Plant by Nov 15.' },
             { season: 'Spring (Mar–May)', icon: '🌱', desc: 'SECONDARY season. Tomatoes, peppers, squash. Plant after Mar 15 frost date.' },
@@ -62,7 +62,7 @@ export default function DFWRaisedGardenBedGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Garden Planner</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Garden Planner</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Available Space</label>
@@ -86,7 +86,7 @@ export default function DFWRaisedGardenBedGuide() {
           </button>
           {showPlan && plan && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Recommended: {plan.beds}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Watering: {plan.water}</div>
               </div>

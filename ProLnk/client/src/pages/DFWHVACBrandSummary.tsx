@@ -91,7 +91,7 @@ export default function DFWHVACBrandSummary() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏆</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW HVAC Brand Rankings</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW HVAC Brand Rankings</h1>
           <p style={{ color: '#8899AA', fontSize: '1rem' }}>Final rankings for the Dallas-Fort Worth climate — sort by what matters most</p>
         </div>
 
@@ -99,7 +99,7 @@ export default function DFWHVACBrandSummary() {
           <label style={{ color: '#8899AA', fontSize: '0.85rem', display: 'block', marginBottom: 8 }}>Sort by Priority</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {priorities.map(p => (
-              <button key={p} onClick={() => setPriority(p)} style={{ padding: '0.4rem 1rem', borderRadius: 20, border: '2px solid', borderColor: priority === p ? '#F5E642' : '#1E3A5F', background: priority === p ? '#F5E642' : 'transparent', color: priority === p ? '#0A1628' : '#fff', fontWeight: priority === p ? 700 : 400, cursor: 'pointer', fontSize: '0.85rem' }}>
+              <button key={p} onClick={() => setPriority(p)} style={{ padding: '0.4rem 1rem', borderRadius: 20, border: '2px solid', borderColor: priority === p ? '#F5E642′ : '#1E3A5F', background: priority === p ? '#F5E642' : ’transparent', color: priority === p ? '#0A1628′ : '#fff', fontWeight: priority === p ? 700 : 400, cursor: ’pointer', fontSize: '0.85rem' }}>
                 {p}
               </button>
             ))}
@@ -114,11 +114,11 @@ export default function DFWHVACBrandSummary() {
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  <h3 style={{ color: idx === 0 ? '#F5E642' : '#fff', margin: 0, fontSize: '1.1rem' }}>{brand.icon} {brand.name}</h3>
+                  <h3 style={{ color: idx === 0 ? '#F5E642′ : '#fff', margin: 0, fontSize: '1.1rem' }}>{brand.icon} {brand.name}</h3>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>{brand.price}</span>
                   <span style={{ color: '#8899AA', fontSize: '0.8rem' }}>{brand.warrantyYears}</span>
                 </div>
-                <p style={{ color: '#AAB8C2', fontSize: '0.85rem', margin: '0.4rem 0 0' }}>{brand.dfwNotes}</p>
+                <p style={{ color: '#AAB8C2', fontSize: '0.85rem', margin: '0.4rem 0 0′ }}>{brand.dfwNotes}</p>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 {'⭐'.repeat(brand.dfwHeat)}

@@ -40,7 +40,7 @@ export default function DFWWoodFenceGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginTop: 36 }}>
           {[
             { icon: '🌡️', title: 'DFW Climate Reality', body: 'DFW summers hit 100°F+ regularly. Cedar naturally resists warping and cracking better than untreated pine in this heat. Redwood is premium but harder to source locally.' },
-            { icon: '🧱', title: 'Clay Soil Warning', body: 'DFW clay soil expands and contracts with moisture. Wood posts must be set in concrete footings 24–30" deep — never just compacted dirt or posts will lean within 2 years.' },
+            { icon: '🧱', title: 'Clay Soil Warning', body: 'DFW clay soil expands and contracts with moisture. Wood posts must be set in concrete footings 24–30″ deep — never just compacted dirt or posts will lean within 2 years.' },
             { icon: '🎨', title: 'Stain vs Paint', body: 'Always stain in DFW, never paint. DFW UV breaks down paint quickly, causing peeling. Penetrating stain flexes with wood movement and lasts 3–5 years per coat.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0D1F3C', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
@@ -57,7 +57,7 @@ export default function DFWWoodFenceGuide() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Linear Feet</label>
               <input type="range" min={50} max={500} value={linearFeet} onChange={e => setLinearFeet(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <span style={{ color: '#F5E642', fontSize: 15, fontWeight: 700 }}>{linearFeet} ft</span>
             </div>
             <div>

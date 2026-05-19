@@ -49,7 +49,7 @@ export default function GeneratorGuide() {
         </h1>
 
         <p style={{ color: '#9ca3af', fontSize: 18, lineHeight: 1.7, marginBottom: 60 }}>
-          Winter Storm Uri (February 2021) killed 246 Texans and left millions without heat for days. Since Uri, generator sales in DFW have increased <strong style={{ color: '#f0ede8' }}>400%</strong>. If you don't have a plan, you're gambling with your family's safety.
+          Winter Storm Uri (February 2021) killed 246 Texans and left millions without heat for days. Since Uri, generator sales in DFW have increased <strong style={{ color: '#f0ede8′ }}>400%</strong>. If you don’t have a plan, you’re gambling with your family’s safety.
         </p>
 
         {/* Generator Types */}
@@ -157,7 +157,7 @@ export default function GeneratorGuide() {
                   key={a.name}
                   onClick={() => toggle(a.name)}
                   style={{
-                    background: on ? '#a78bfa22' : '#0f0f13',
+                    background: on ? '#a78bfa22′ : '#0f0f13',
                     border: `1px solid ${on ? '#a78bfa' : '#2e2b3d'}`,
                     borderRadius: 8,
                     padding: '12px 16px',
@@ -165,18 +165,18 @@ export default function GeneratorGuide() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    color: on ? '#f0ede8' : '#9ca3af',
+                    color: on ? '#f0ede8′ : '#9ca3af',
                     transition: 'all 0.15s',
                   }}
                 >
                   <span style={{ fontSize: 14 }}>{a.name}</span>
-                  <span style={{ fontSize: 12, color: on ? '#a78bfa' : '#6b7280' }}>{a.watts.toLocaleString()}W</span>
+                  <span style={{ fontSize: 12, color: on ? '#a78bfa' : '#6b7280′ }}>{a.watts.toLocaleString()}W</span>
                 </button>
               );
             })}
           </div>
           {selected.length > 0 && (
-            <div style={{ background: '#0f0f13', borderRadius: 12, padding: 24, border: '1px solid #a78bfa33' }}>
+            <div style={{ background: '#0f0f13', borderRadius: 12, padding: 24, border: '1px solid #a78bfa33′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8 }}>
                 <span style={{ color: '#9ca3af' }}>Total load estimate:</span>
                 <span style={{ fontSize: 24, fontWeight: 800, color: '#a78bfa' }}>{totalWatts.toLocaleString()} Watts</span>

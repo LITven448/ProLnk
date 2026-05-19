@@ -3,10 +3,10 @@ import { useState } from 'react';
 const showerRecs = [
   { yard: 'pool', privacy: 'low', budget: 'low', type: 'Cold-only post-mounted shower', plumbing: 'Single cold line tapped from hose bib — no permit required in most DFW cities', permit: 'Typically no permit needed for cold-only with hose bib connection', cost: '$200–$800 DIY' },
   { yard: 'pool', privacy: 'high', budget: 'mid', type: 'Hot/cold outdoor shower with cedar privacy screen', plumbing: 'Extend hot and cold lines from nearest interior bathroom — requires licensed plumber', permit: 'Plumbing permit required in most DFW cities. Call your city first.', cost: '$2,500–$6,000 installed' },
-  { yard: 'pool', privacy: 'high', budget: 'high', type: 'Full outdoor shower room with masonry walls + hot/cold', plumbing: 'Dedicated hot/cold lines, floor drain to sewer or gravel bed per city code', permit: 'Full permit required — plumbing + possibly building permit for structure', cost: '$8,000–$20,000' },
-  { yard: 'no_pool', privacy: 'low', budget: 'low', type: 'Garden rinse station / cold shower at back gate', plumbing: 'Garden hose connection — no plumbing permit needed', permit: 'No permit required', cost: '$100–$400' },
-  { yard: 'no_pool', privacy: 'high', budget: 'mid', type: 'Hot/cold shower in corner of yard with lattice privacy', plumbing: 'Extend lines from house — licensed plumber required', permit: 'Plumbing permit required. Check if HOA approval needed.', cost: '$3,000–$7,000' },
-  { yard: 'spa', privacy: 'high', budget: 'high', type: 'Spa-adjacent shower room with heated floor + rainfall head', plumbing: 'Tied into spa equipment pad — coordinate with pool builder', permit: 'Full permits required — plumbing, possibly structural', cost: '$10,000–$25,000' },
+  { yard: 'pool', privacy: 'high', budget: 'high', type: 'Full outdoor shower room with masonry walls + hot/cold', plumbing: 'Dedicated hot/cold lines, floor drain to sewer or gravel bed per city code', permit: 'Full permit required — plumbing + possibly building permit for structure', cost: '$8,000–$20,000′ },
+  { yard: 'no_pool', privacy: 'low', budget: 'low', type: 'Garden rinse station / cold shower at back gate', plumbing: 'Garden hose connection — no plumbing permit needed', permit: 'No permit required', cost: '$100–$400′ },
+  { yard: 'no_pool', privacy: 'high', budget: 'mid', type: 'Hot/cold shower in corner of yard with lattice privacy', plumbing: 'Extend lines from house — licensed plumber required', permit: 'Plumbing permit required. Check if HOA approval needed.', cost: '$3,000–$7,000′ },
+  { yard: 'spa', privacy: 'high', budget: 'high', type: 'Spa-adjacent shower room with heated floor + rainfall head', plumbing: 'Tied into spa equipment pad — coordinate with pool builder', permit: 'Full permits required — plumbing, possibly structural', cost: '$10,000–$25,000′ },
 ];
 
 export default function DFWOutdoorShowerGuide() {
@@ -79,7 +79,7 @@ export default function DFWOutdoorShowerGuide() {
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>{label}</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {options.map(([val, text]) => (
-                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642' : '#1e3a5f', background: value === val ? '#F5E642' : 'transparent', color: value === val ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
+                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642′ : '#1e3a5f', background: value === val ? '#F5E642' : ’transparent', color: value === val ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
                 ))}
               </div>
             </div>

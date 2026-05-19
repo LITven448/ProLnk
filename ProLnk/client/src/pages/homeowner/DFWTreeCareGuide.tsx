@@ -61,8 +61,8 @@ export default function DFWTreeCareGuide() {
                   width: 22,
                   height: 22,
                   borderRadius: 5,
-                  border: checked[risk.id] ? '2px solid #FACC15' : '2px solid #2A3A52',
-                  background: checked[risk.id] ? '#FACC15' : 'transparent',
+                  border: checked[risk.id] ? '2px solid #FACC15′ : '2px solid #2A3A52',
+                  background: checked[risk.id] ? '#FACC15′ : ’transparent',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -103,14 +103,14 @@ export default function DFWTreeCareGuide() {
         <div style={{ background: '#132038', borderRadius: 12, padding: '24px 28px', marginBottom: 40 }}>
           <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16 }}>💰 DFW Cost Guide</h2>
           {[
-            { service: 'Tree Trimming', range: '$150 – $500' },
-            { service: 'Tree Removal (standard)', range: '$300 – $1,200' },
+            { service: 'Tree Trimming', range: '$150 – $500′ },
+            { service: 'Tree Removal (standard)', range: '$300 – $1,200′ },
             { service: 'Emergency Storm Removal', range: '$500 – $2,000+' },
-            { service: 'Stump Grinding', range: '$75 – $200' },
-            { service: 'Disease Treatment (oak wilt)', range: '$200 – $800' },
+            { service: 'Stump Grinding', range: '$75 – $200′ },
+            { service: 'Disease Treatment (oak wilt)', range: '$200 – $800′ },
           ].map(({ service, range }) => (
-            <div key={service} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1E3050' }}>
-              <span style={{ color: '#CBD5E1' }}>{service}</span>
+            <div key={service} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1E3050′ }}>
+              <span style={{ color: '#CBD5E1′ }}>{service}</span>
               <span style={{ color: '#FACC15', fontWeight: 700 }}>{range}</span>
             </div>
           ))}

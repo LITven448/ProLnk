@@ -48,9 +48,9 @@ export default function DFWHVACDFWConservative() {
           </p>
         </div>
 
-        <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', marginBottom: 32, borderLeft: '4px solid #4ADE80' }}>
+        <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', marginBottom: 32, borderLeft: '4px solid #4ADE80′ }}>
           <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>
-            <strong style={{ color: '#4ADE80' }}>Conservative is smart.</strong> In DFW, a properly installed proven system outperforms a poorly installed innovative one every time. Reliability is the first performance metric.
+            <strong style={{ color: '#4ADE80′ }}>Conservative is smart.</strong> In DFW, a properly installed proven system outperforms a poorly installed innovative one every time. Reliability is the first performance metric.
           </p>
         </div>
 
@@ -60,8 +60,8 @@ export default function DFWHVACDFWConservative() {
               key={p.id}
               onClick={() => setSelected(selected === p.id ? null : p.id)}
               style={{
-                background: selected === p.id ? '#F5E642' : '#1E2D45',
-                color: selected === p.id ? '#0A1628' : '#E8EDF5',
+                background: selected === p.id ? '#F5E642′ : '#1E2D45',
+                color: selected === p.id ? '#0A1628′ : '#E8EDF5',
                 border: 'none',
                 borderRadius: 10,
                 padding: '16px 20px',
@@ -78,7 +78,7 @@ export default function DFWHVACDFWConservative() {
         </div>
 
         {pref && (
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ marginBottom: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>🛡️ SAFE DFW HVAC CHOICE</div>
               <p style={{ color: '#CBD5E1', lineHeight: 1.7 }}>{pref.safeChoice}</p>

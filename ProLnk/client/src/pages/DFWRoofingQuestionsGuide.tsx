@@ -3,8 +3,8 @@ import { useState } from 'react';
 const questions = [
   { q: 'How old is your roof?', a: 'DFW asphalt shingles last 20–25 years under normal conditions, but DFW hail and UV intensity can shorten this to 15–18 years. Find install date in your home disclosure, permit records, or HOA paperwork. A roof over 15 years warrants annual inspection.' },
   { q: 'What shingle type and impact-resistance class do you have?', a: 'Class 4 impact-resistant shingles are the gold standard for DFW hail zones and typically earn a 20–30% insurance discount. Look for the UL 2218 Class 4 rating. Standard 3-tab shingles offer minimal hail protection.' },
-  { q: 'When did you last have a professional roof inspection?', a: 'DFW roofers recommend post-hail inspections after any storm with 1"+ hailstones. Annual inspections cost $150–$300. Many DFW insurers require documented inspections for continued coverage on older roofs.' },
-  { q: 'Have you had hail damage in the last 5 years?', a: 'DFW is one of the most hail-active regions in North America. Even minor hail (3/4" to 1") damages shingle granules and voids manufacturer warranties. If you haven\’t had an inspection since the last storm, schedule one now.' },
+  { q: 'When did you last have a professional roof inspection?', a: 'DFW roofers recommend post-hail inspections after any storm with 1″+ hailstones. Annual inspections cost $150–$300. Many DFW insurers require documented inspections for continued coverage on older roofs.' },
+  { q: 'Have you had hail damage in the last 5 years?', a: 'DFW is one of the most hail-active regions in North America. Even minor hail (3/4″ to 1″) damages shingle granules and voids manufacturer warranties. If you haven\’t had an inspection since the last storm, schedule one now.' },
   { q: 'Is your attic properly ventilated?', a: 'Inadequate attic ventilation in DFW causes shingle blistering, premature aging, ice damming in rare freezes, and voids most warranties. You need 1 sq ft of ventilation per 150 sq ft of attic space, balanced between soffits and ridge.' },
   { q: 'What is your homeowner insurance deductible for wind/hail?', a: 'Most DFW insurers now use percentage deductibles (1–2% of home value) for wind/hail rather than flat deductibles. On a $400K home, that\’s $4K–$8K out of pocket. Know this before any storm season.' },
   { q: 'Do you know how to identify granule loss?', a: 'Asphalt shingle granules protect against UV and impact. Check your gutters — granules look like coarse sand. Heavy granule loss indicates aging or hail damage. A handful of granules per downspout cleaning per year is normal; cups of granules are not.' },
@@ -25,7 +25,7 @@ export default function DFWRoofingQuestionsGuide() {
   const toggle = (i: number) => setOpen(open === i ? null : i);
   const check = (i: number) => setChecked(prev => { const n = [...prev]; n[i] = !n[i]; return n; });
   const score = checked.filter(Boolean).length;
-  const riskLevel = score >= 12 ? { label: '🏆 Well-Prepared', color: '#16a34a' } : score >= 8 ? { label: '⚠️ Moderate Risk', color: '#ca8a04' } : { label: '🚨 High Risk', color: '#dc2626' };
+  const riskLevel = score >= 12 ? { label: '🏆 Well-Prepared', color: '#16a34a' } : score >= 8 ? { label: '⚠️ Moderate Risk', color: '#ca8a04′ } : { label: '🚨 High Risk', color: '#dc2626' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
@@ -41,12 +41,12 @@ export default function DFWRoofingQuestionsGuide() {
           </div>
         </div>
         {score < 8 && score > 0 && (
-          <div style={{ background: '#2a1515', border: '1px solid #dc2626', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 14, color: '#fca5a5' }}>
+          <div style={{ background: '#2a1515', border: '1px solid #dc2626', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 14, color: '#fca5a5′ }}>
             ⚠️ DFW hail season runs April–June. Homeowners who can't answer 8+ of these questions are at higher financial risk after a storm event.
           </div>
         )}
         {questions.map((item, i) => (
-          <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642' : '1.5px solid #1e3050' }}>
+          <div key={i} style={{ background: '#111f35', borderRadius: 10, marginBottom: 10, border: checked[i] ? '1.5px solid #F5E642′ : '1.5px solid #1e3050' }}>
             <div style={{ display: 'flex', alignItems: 'center', padding: '14px 16px', cursor: 'pointer', gap: 12 }} onClick={() => toggle(i)}>
               <span onClick={e => { e.stopPropagation(); check(i); }} style={{ fontSize: 20, cursor: 'pointer' }}>{checked[i] ? '✅' : '⬜'}</span>
               <span style={{ flex: 1, fontWeight: 600, fontSize: 15 }}>{i + 1}. {item.q}</span>

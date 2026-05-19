@@ -43,14 +43,14 @@ export default function DFWClosingDayGuide() {
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>DFW CLOSING DAY GUIDE</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#fff', margin: 0 }}>🔑 Your Closing Day in DFW</h1>
-          <p style={{ color: '#94a3b8', margin: '8px 0 0' }}>Everything you need to walk out with your keys and zero surprises.</p>
+          <p style={{ color: '#94a3b8', margin: '8px 0 0′ }}>Everything you need to walk out with your keys and zero surprises.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>💳 Loan Type</div>
             {loanTypes.map(t => (
-              <button key={t} onClick={() => setLoanType(t)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: loanType === t ? '2px solid #F5E642' : '1px solid #e2e8f0', background: loanType === t ? '#0A1628' : '#F9FAFB', color: loanType === t ? '#F5E642' : '#0A1628', fontWeight: loanType === t ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={t} onClick={() => setLoanType(t)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: loanType === t ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: loanType === t ? '#0A1628' : '#F9FAFB', color: loanType === t ? '#F5E642' : '#0A1628', fontWeight: loanType === t ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
                 {t}
               </button>
             ))}
@@ -58,7 +58,7 @@ export default function DFWClosingDayGuide() {
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>📍 DFW County</div>
             {counties.map(c => (
-              <button key={c} onClick={() => setCounty(c)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: county === c ? '2px solid #F5E642' : '1px solid #e2e8f0', background: county === c ? '#0A1628' : '#F9FAFB', color: county === c ? '#F5E642' : '#0A1628', fontWeight: county === c ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={c} onClick={() => setCounty(c)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: county === c ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: county === c ? '#0A1628' : '#F9FAFB', color: county === c ? '#F5E642' : '#0A1628', fontWeight: county === c ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
                 {c}
               </button>
             ))}
@@ -68,13 +68,13 @@ export default function DFWClosingDayGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>🎒 What to Bring — Everyone</div>
           {bringAlways.map(item => (
-            <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9' }}>{item}</div>
+            <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9′ }}>{item}</div>
           ))}
           {loanType && loanExtras[loanType] && (
             <>
-              <div style={{ fontWeight: 700, margin: '16px 0 8px', color: '#0A1628' }}>📋 Additional for {loanType}</div>
+              <div style={{ fontWeight: 700, margin: '16px 0 8px', color: '#0A1628′ }}>📋 Additional for {loanType}</div>
               {loanExtras[loanType].map(item => (
-                <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9', color: '#334155' }}>📎 {item}</div>
+                <div key={item} style={{ fontSize: 14, padding: '8px 0', borderBottom: '1px solid #f1f5f9', color: '#334155′ }}>📎 {item}</div>
               ))}
             </>
           )}

@@ -33,7 +33,7 @@ export default function DFWBurglaryPreventionGuide2026() {
               <span style={{ fontSize: 14 }}>{n.type}</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ width: 100, backgroundColor: '#1e3a5f', borderRadius: 4, height: 8 }}>
-                  <div style={{ width: `${(n.rate / 45) * 100}%`, backgroundColor: n.crime === 'High' ? '#ef4444' : n.crime === 'Medium' ? '#f59e0b' : '#22c55e', height: 8, borderRadius: 4 }} />
+                  <div style={{ width: `${(n.rate / 45) * 100}%`, backgroundColor: n.crime === 'High' ? '#ef4444′ : n.crime === ’Medium' ? '#f59e0b' : '#22c55e', height: 8, borderRadius: 4 }} />
                 </div>
                 <span style={{ fontSize: 13, color: '#94a3b8', width: 32 }}>{n.rate}</span>
                 <span style={{ fontSize: 11, padding: '2px 8px', borderRadius: 99, backgroundColor: n.crime === 'High' ? '#7f1d1d' : n.crime === 'Medium' ? '#78350f' : '#14532d' }}>{n.crime}</span>
@@ -51,7 +51,7 @@ export default function DFWBurglaryPreventionGuide2026() {
 
         <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 4 }}>🔩 Strike Plate Upgrade — $30, Huge ROI</h2>
-          <p style={{ color: '#94a3b8', fontSize: 13 }}>Standard strike plates use 3/4" screws into door frame. A 3" screw upgrade into the stud prevents 60% of kick-in attempts. Most burglaries happen in under 60 seconds — make your door the hard target.</p>
+          <p style={{ color: '#94a3b8', fontSize: 13 }}>Standard strike plates use 3/4" screws into door frame. A 3″ screw upgrade into the stud prevents 60% of kick-in attempts. Most burglaries happen in under 60 seconds — make your door the hard target.</p>
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20, marginBottom: 24 }}>

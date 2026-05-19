@@ -76,9 +76,9 @@ export default function HomeownerReferral() {
 
   return (
     <HomeownerLayout>
-      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6″>
         {/* Header */}
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-2″>
           <div className="w-14 h-14 rounded-2xl bg-[#00B5B8]/10 flex items-center justify-center mx-auto">
             <Gift className="w-7 h-7 text-[#00B5B8]" />
           </div>
@@ -96,32 +96,32 @@ export default function HomeownerReferral() {
             <div>
               <p className="text-xs text-white/60 font-medium uppercase tracking-wide">Your Referral Credits</p>
               {creditLoading ? (
-                <div className="h-9 w-24 bg-white/10 rounded animate-pulse mt-1" />
+                <div className="h-9 w-24 bg-white/10 rounded animate-pulse mt-1″ />
               ) : (
-                <p className="text-3xl font-black mt-1">${creditBalance.toFixed(2)}</p>
+                <p className="text-3xl font-black mt-1″>${creditBalance.toFixed(2)}</p>
               )}
-              <p className="text-xs text-white/60 mt-1">{referralCount} successful referral{referralCount !== 1 ? "s" : ""}</p>
+              <p className="text-xs text-white/60 mt-1″>{referralCount} successful referral{referralCount !== 1 ? "s" : ""}</p>
             </div>
-            <div className="text-right space-y-2">
+            <div className="text-right space-y-2″>
               <div>
-                <p className="text-xs text-white/60">Pending</p>
+                <p className="text-xs text-white/60″>Pending</p>
                 <p className="text-xl font-bold text-[#F5E642]">{pendingCount} invite{pendingCount !== 1 ? "s" : ""}</p>
               </div>
               {creditBalance >= 25 && (
                 <Button
                   size="sm"
                   onClick={() => setRedeemOpen(true)}
-                  className="bg-[#00B5B8] hover:bg-[#009fa2] text-white text-xs gap-1.5 h-8"
+                  className="bg-[#00B5B8] hover:bg-[#009fa2] text-white text-xs gap-1.5 h-8″
                 >
-                  <Wallet className="w-3.5 h-3.5" />
+                  <Wallet className="w-3.5 h-3.5″ />
                   Redeem Credit
                 </Button>
               )}
             </div>
           </div>
           {/* Progress to next reward */}
-          <div className="mt-4 pt-4 border-t border-white/10">
-            <div className="flex justify-between text-xs text-white/60 mb-1.5">
+          <div className="mt-4 pt-4 border-t border-white/10″>
+            <div className="flex justify-between text-xs text-white/60 mb-1.5″>
               <span>Next reward milestone</span>
               <span>{Math.min(referralCount % 5, 5)}/5 referrals</span>
             </div>
@@ -131,22 +131,22 @@ export default function HomeownerReferral() {
                 style={{ width: `${Math.min((referralCount % 5) / 5, 1) * 100}%` }}
               />
             </div>
-            <p className="text-xs text-white/40 mt-1.5">
+            <p className="text-xs text-white/40 mt-1.5″>
               {5 - (referralCount % 5)} more to unlock a <span className="text-[#F5E642] font-semibold">$50 bonus credit</span>
             </p>
           </div>
         </div>
 
         {/* How it works */}
-        <div className="bg-card border rounded-xl p-5 space-y-4">
-          <p className="text-sm font-semibold text-foreground flex items-center gap-2">
+        <div className="bg-card border rounded-xl p-5 space-y-4″>
+          <p className="text-sm font-semibold text-foreground flex items-center gap-2″>
             <Sparkles className="w-4 h-4 text-[#00B5B8]" />
             How it works
           </p>
-          <div className="space-y-3">
+          <div className="space-y-3″>
             {REFERRAL_STEPS.map((step, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#00B5B8]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div key={i} className="flex items-start gap-3″>
+                <div className="w-8 h-8 rounded-lg bg-[#00B5B8]/10 flex items-center justify-center flex-shrink-0 mt-0.5″>
                   <step.icon className="w-4 h-4 text-[#00B5B8]" />
                 </div>
                 <div>
@@ -159,28 +159,28 @@ export default function HomeownerReferral() {
         </div>
 
         {/* Share link */}
-        <div className="bg-card border rounded-xl p-5 space-y-3">
-          <p className="text-sm font-semibold text-foreground flex items-center gap-2">
+        <div className="bg-card border rounded-xl p-5 space-y-3″>
+          <p className="text-sm font-semibold text-foreground flex items-center gap-2″>
             <QrCode className="w-4 h-4 text-[#00B5B8]" />
             Your Referral Link
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-2″>
             <Input
               readOnly
               value={referralUrl}
-              className="text-xs font-mono bg-muted/50 flex-1"
+              className="text-xs font-mono bg-muted/50 flex-1″
             />
             <Button
               variant="outline"
               size="sm"
               onClick={handleCopy}
-              className="flex-shrink-0 gap-1.5"
+              className="flex-shrink-0 gap-1.5″
             >
-              {copied ? <CheckCircle className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+              {copied ? <CheckCircle className="w-4 h-4 text-green-500″ /> : <Copy className="w-4 h-4" />}
               {copied ? "Copied!" : "Copy"}
             </Button>
           </div>
-          <div className="flex gap-2 pt-1">
+          <div className="flex gap-2 pt-1″>
             <Button
               variant="outline"
               size="sm"
@@ -193,19 +193,19 @@ export default function HomeownerReferral() {
                 }
               }}
             >
-              <Share2 className="w-3.5 h-3.5" />
+              <Share2 className="w-3.5 h-3.5″ />
               Share via App
             </Button>
           </div>
         </div>
 
         {/* Send by email */}
-        <div className="bg-card border rounded-xl p-5 space-y-3">
-          <p className="text-sm font-semibold text-foreground flex items-center gap-2">
+        <div className="bg-card border rounded-xl p-5 space-y-3″>
+          <p className="text-sm font-semibold text-foreground flex items-center gap-2″>
             <Mail className="w-4 h-4 text-[#00B5B8]" />
             Invite by Email
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-2″>
             <Input
               placeholder="Neighbor's name (optional)"
               value={nameInput}
@@ -213,7 +213,7 @@ export default function HomeownerReferral() {
               className="flex-1 text-sm"
             />
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2″>
             <Input
               type="email"
               placeholder="neighbor@example.com"
@@ -228,19 +228,19 @@ export default function HomeownerReferral() {
               disabled={submitReferral.isPending}
               className="flex-shrink-0 gap-1.5 bg-[#0A1628] hover:bg-[#0d2040] text-white"
             >
-              {submitReferral.isPending ? "Sending..." : <><ArrowRight className="w-4 h-4" /> Send</>}
+              {submitReferral.isPending ? "Sending..." : <><ArrowRight className="w-4 h-4″ /> Send</>}
             </Button>
           </div>
         </div>
 
         {/* Referral history */}
         {referrals.length > 0 && (
-          <div className="bg-card border rounded-xl p-5 space-y-3">
+          <div className="bg-card border rounded-xl p-5 space-y-3″>
             <p className="text-sm font-semibold text-foreground">Your Referrals</p>
-            <div className="space-y-2">
+            <div className="space-y-2″>
               {referrals.map((r: any, i: number) => (
-                <div key={i} className="flex items-center justify-between py-2 border-b border-border last:border-0">
-                  <div className="flex items-center gap-2.5">
+                <div key={i} className="flex items-center justify-between py-2 border-b border-border last:border-0″>
+                  <div className="flex items-center gap-2.5″>
                     <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center text-xs font-bold text-foreground">
                       {(r.refereeName ?? r.refereeEmail ?? "?")[0].toUpperCase()}
                     </div>
@@ -253,17 +253,17 @@ export default function HomeownerReferral() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2″>
                     {r.status === "completed" ? (
                       <>
-                        <span className="text-sm font-bold text-green-500">+${CREDIT_PER_REFERRAL}</span>
-                        <Badge variant="outline" className="text-[10px] text-green-600 border-green-200 bg-green-50">
-                          <CheckCircle className="w-2.5 h-2.5 mr-1" /> Earned
+                        <span className="text-sm font-bold text-green-500″>+${CREDIT_PER_REFERRAL}</span>
+                        <Badge variant="outline" className="text-[10px] text-green-600 border-green-200 bg-green-50″>
+                          <CheckCircle className="w-2.5 h-2.5 mr-1″ /> Earned
                         </Badge>
                       </>
                     ) : (
-                      <Badge variant="outline" className="text-[10px] text-yellow-600 border-yellow-200 bg-yellow-50">
-                        <Clock className="w-2.5 h-2.5 mr-1" /> Pending
+                      <Badge variant="outline" className="text-[10px] text-yellow-600 border-yellow-200 bg-yellow-50″>
+                        <Clock className="w-2.5 h-2.5 mr-1″ /> Pending
                       </Badge>
                     )}
                   </div>
@@ -275,7 +275,7 @@ export default function HomeownerReferral() {
 
         {referrals.length === 0 && (
           <div className="text-center py-8 text-muted-foreground text-sm">
-            <Users className="w-8 h-8 mx-auto mb-2 opacity-30" />
+            <Users className="w-8 h-8 mx-auto mb-2 opacity-30″ />
             No referrals yet — share your link to get started!
           </div>
         )}
@@ -289,7 +289,7 @@ export default function HomeownerReferral() {
       <Dialog open={redeemOpen} onOpenChange={setRedeemOpen}>
         <DialogContent className="max-w-sm">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
+            <DialogTitle className="flex items-center gap-2″>
               <Wallet className="w-5 h-5 text-[#00B5B8]" />
               Redeem Service Credit
             </DialogTitle>
@@ -297,14 +297,14 @@ export default function HomeownerReferral() {
               Apply your referral credits toward your next service booking.
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4 pt-2">
+          <div className="space-y-4 pt-2″>
             <div className="bg-muted/50 rounded-lg p-4 text-center">
               <p className="text-xs text-muted-foreground">Available Balance</p>
-              <p className="text-3xl font-black text-foreground mt-1">${creditBalance.toFixed(2)}</p>
+              <p className="text-3xl font-black text-foreground mt-1″>${creditBalance.toFixed(2)}</p>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2″>
               <label className="text-sm font-medium text-foreground">Amount to Redeem</label>
-              <div className="flex gap-2">
+              <div className="flex gap-2″>
                 {[25, 50, 100].filter(a => a <= creditBalance).map(a => (
                   <button
                     key={a}
@@ -329,7 +329,7 @@ export default function HomeownerReferral() {
               />
             </div>
             <Button
-              className="w-full bg-[#0A1628] hover:bg-[#0d2040] text-white gap-2"
+              className="w-full bg-[#0A1628] hover:bg-[#0d2040] text-white gap-2″
               disabled={redeemCredit.isPending || redeemAmount < 1 || redeemAmount > creditBalance}
               onClick={() => redeemCredit.mutate({ amount: redeemAmount })}
             >

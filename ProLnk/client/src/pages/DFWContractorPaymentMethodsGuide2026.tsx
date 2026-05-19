@@ -46,12 +46,12 @@ export default function DFWContractorPaymentMethodsGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 32 }}>
           {[
-            { icon: '✅', label: 'Check', risk: 'Safe', color: '#22cc66' },
-            { icon: '💳', label: 'Credit Card', risk: 'Safe', color: '#22cc66' },
-            { icon: '⚠️', label: 'Zelle', risk: 'Caution', color: '#ff8800' },
-            { icon: '🚩', label: 'Cash', risk: 'Red Flag', color: '#ff4444' },
-            { icon: '🛑', label: 'Wire', risk: 'Never', color: '#ff0000' },
-            { icon: '🔒', label: 'ProLnk', risk: 'Safest', color: '#F5E642' },
+            { icon: '✅', label: 'Check', risk: 'Safe', color: '#22cc66′ },
+            { icon: '💳', label: 'Credit Card', risk: 'Safe', color: '#22cc66′ },
+            { icon: '⚠️', label: 'Zelle', risk: 'Caution', color: '#ff8800′ },
+            { icon: '🚩', label: 'Cash', risk: 'Red Flag', color: '#ff4444′ },
+            { icon: '🛑', label: 'Wire', risk: 'Never', color: '#ff0000′ },
+            { icon: '🔒', label: 'ProLnk', risk: 'Safest', color: '#F5E642′ },
           ].map((m) => (
             <div key={m.label} style={{ background: '#132240', borderRadius: 10, padding: '16px', textAlign: 'center' }}>
               <div style={{ fontSize: 26, marginBottom: 6 }}>{m.icon}</div>
@@ -86,7 +86,7 @@ export default function DFWContractorPaymentMethodsGuide2026() {
           <div style={{ fontWeight: 700, marginBottom: 12 }}>Universal Payment Rules for DFW</div>
           {['Always get a written contract before paying any deposit', 'Never pay more than 10-30% upfront for any project', 'Pay remaining balance only after work passes your inspection', 'Retain 5-10% until 30-day warranty period clears'].map((tip) => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cdd9e5', fontSize: 14 }}>
-              <span style={{ color: '#F5E642' }}>▸</span>{tip}
+              <span style={{ color: '#F5E642′ }}>▸</span>{tip}
             </div>
           ))}
         </div>

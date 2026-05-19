@@ -54,7 +54,7 @@ export default function DFWHVACTonnageDFW2026() {
         <div style={{ background: '#0f1e35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📐 DFW Quick Reference Table</h2>
           {zones.map(z => (
-            <div key={z.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1' }}>
+            <div key={z.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1′ }}>
               <span>{z.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{z.min}–{z.max} tons</span>
             </div>

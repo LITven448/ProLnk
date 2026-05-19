@@ -62,7 +62,7 @@ export default function DFWProLnkMembersOnly2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔑 8 Charter-Exclusive Benefits</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {charterBenefits.map(({ icon, title, detail }) => (
-              <div key={title} style={{ background: '#0d1f35', borderRadius: 10, padding: 16, borderTop: '3px solid #F5E642' }}>
+              <div key={title} style={{ background: '#0d1f35', borderRadius: 10, padding: 16, borderTop: '3px solid #F5E642′ }}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6, fontSize: 15 }}>{title}</div>
                 <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>{detail}</div>
@@ -78,7 +78,7 @@ export default function DFWProLnkMembersOnly2026() {
               <button
                 key={k}
                 onClick={() => setProType(k)}
-                style={{ padding: '10px 18px', background: proType === k ? '#F5E642' : '#0d1f35', color: proType === k ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }}
+                style={{ padding: '10px 18px', background: proType === k ? '#F5E642′ : '#0d1f35', color: proType === k ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: ’pointer', fontWeight: 600 }}
               >
                 {l}
               </button>

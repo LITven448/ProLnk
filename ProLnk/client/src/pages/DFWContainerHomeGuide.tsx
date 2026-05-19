@@ -6,7 +6,7 @@ type DFWZone = 'dallas_urban' | 'dfw_suburb' | 'dfw_exurb' | 'dfw_rural';
 
 const zoneInfo: Record<DFWZone, { label: string; feasibility: string; permit: string; notes: string; color: string }> = {
   dallas_urban: { label: 'Dallas / Urban Core', feasibility: 'Possible — Artistic Districts Friendly', permit: 'Full residential permit + engineering stamp required', notes: 'Deep Ellum, Bishop Arts areas more permissive. HOAs and historic districts may block.', color: '#F59E0B' },
-  dfw_suburb: { label: 'DFW Suburbs', feasibility: 'Difficult — Check Zoning First', permit: 'Many suburbs have no container home precedent', notes: 'Plano, Frisco, Allen typically restrict non-traditional structures. Verify before buying.', color: '#EF4444' },
+  dfw_suburb: { label: 'DFW Suburbs', feasibility: 'Difficult — Check Zoning First', permit: 'Many suburbs have no container home precedent', notes: 'Plano, Frisco, Allen typically restrict non-traditional structures. Verify before buying.', color: '#EF4444′ },
   dfw_exurb: { label: 'DFW Exurbs', feasibility: 'Good — Growing Acceptance', permit: 'County or small city permit; engineering stamp needed', notes: 'Weatherford, Waxahachie, Decatur see increasing container home builds.', color: '#22C55E' },
   dfw_rural: { label: 'Rural / Unincorporated', feasibility: 'Best Option', permit: 'County permit only; most lenient rules', notes: 'Unincorporated Parker, Ellis, Wise counties — minimal restrictions.', color: '#22C55E' },
 };
@@ -23,7 +23,7 @@ const containerCosts = {
   engineering: () => 4500,
 };
 
-const heatWarning = '⚠️ DFW summers hit 105°F+. Bare steel containers reach 140°F+ interior. Closed-cell spray foam insulation (minimum 3") on all surfaces is not optional — it\’s a survival requirement.';
+const heatWarning = '⚠️ DFW summers hit 105°F+. Bare steel containers reach 140°F+ interior. Closed-cell spray foam insulation (minimum 3″) on all surfaces is not optional — it\’s a survival requirement.';
 
 export default function DFWContainerHomeGuide() {
   const [containerCount, setContainerCount] = useState<ContainerCount>(2);
@@ -50,7 +50,7 @@ export default function DFWContainerHomeGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: '#7F1D1D', border: '1px solid #EF4444', borderRadius: 12, padding: '18px 24px', margin: '32px 0' }}>
+        <div style={{ background: '#7F1D1D', border: '1px solid #EF4444', borderRadius: 12, padding: '18px 24px', margin: '32px 0′ }}>
           <p style={{ color: '#FCA5A5', margin: 0, fontSize: 14, lineHeight: 1.6 }}>{heatWarning}</p>
         </div>
 
@@ -61,7 +61,7 @@ export default function DFWContainerHomeGuide() {
             { icon: '📋', title: 'Engineering Stamp', desc: 'Most DFW cities require a PE-stamped structural plan for container structures.' },
             { icon: '🎨', title: 'Artistic Trend', desc: 'Deep Ellum and Bishop Arts in Dallas lead DFW\’s container architecture scene.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>
+            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 15 }}>{card.title}</h3>
               <p style={{ color: '#94A3B8', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{card.desc}</p>
@@ -73,7 +73,7 @@ export default function DFWContainerHomeGuide() {
           <h2 style={{ color: '#F5E642', margin: '0 0 16px' }}>🌡️ Beating the DFW Heat in a Container</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
             {[
-              { step: '1', title: 'Spray Foam', desc: 'Closed-cell foam on all interior walls, ceiling, floor. 3" minimum. This is the single most important build decision.' },
+              { step: '1', title: 'Spray Foam', desc: 'Closed-cell foam on all interior walls, ceiling, floor. 3″ minimum. This is the single most important build decision.' },
               { step: '2', title: 'Reflective Roof', desc: 'White or cool-roof coating on exterior reduces solar heat gain by 40%. Metal roof panel over top is ideal.' },
               { step: '3', title: 'Mini-Split HVAC', desc: 'Ductless mini-splits sized for each container. 1.5 ton per 40ft container minimum in DFW climate zone.' },
               { step: '4', title: 'Shade Structure', desc: 'Carport or pergola over container cuts radiant heat dramatically. Often cheaper than extra HVAC capacity.' },

@@ -64,7 +64,7 @@ export default function DFWHOADocumentReviewGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏘️ DFW HOA Document Review Guide</div>
-          <p style={{ fontSize: '1.05rem', color: '#374151' }}>
+          <p style={{ fontSize: '1.05rem', color: '#374151′ }}>
             In DFW, HOAs govern thousands of communities. Before closing, request and review these 6 document types. Texas law (§207.003) requires HOAs to provide resale certificates — use that as your baseline, then dig deeper.
           </p>
         </div>
@@ -90,8 +90,8 @@ export default function DFWHOADocumentReviewGuide() {
                   padding: '0.6rem 1rem',
                   borderRadius: 8,
                   border: '2px solid',
-                  borderColor: selected === key ? '#F5E642' : '#E5E7EB',
-                  backgroundColor: selected === key ? '#F5E642' : '#fff',
+                  borderColor: selected === key ? '#F5E642′ : '#E5E7EB',
+                  backgroundColor: selected === key ? '#F5E642′ : '#fff',
                   color: '#0A1628',
                   fontWeight: selected === key ? 700 : 400,
                   cursor: 'pointer',
@@ -105,10 +105,10 @@ export default function DFWHOADocumentReviewGuide() {
 
           {info && (
             <div>
-              <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '1rem', color: '#0A1628' }}>{info.what}</div>
+              <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '1rem', color: '#0A1628′ }}>{info.what}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ backgroundColor: '#F0FDF4', borderRadius: 8, padding: '1rem' }}>
-                  <div style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#166534' }}>✅ What to Look For</div>
+                  <div style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#166534′ }}>✅ What to Look For</div>
                   <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.9rem', lineHeight: 1.8 }}>
                     {info.lookFor.map((item, i) => <li key={i}>{item}</li>)}
                   </ul>
@@ -121,7 +121,7 @@ export default function DFWHOADocumentReviewGuide() {
                 </div>
               </div>
               <div style={{ backgroundColor: '#EFF6FF', borderRadius: 8, padding: '1rem' }}>
-                <div style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#1D4ED8' }}>❓ Questions to Ask</div>
+                <div style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#1D4ED8′ }}>❓ Questions to Ask</div>
                 <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.9rem', lineHeight: 1.8 }}>
                   {info.questions.map((q, i) => <li key={i}>{q}</li>)}
                 </ul>
@@ -130,7 +130,7 @@ export default function DFWHOADocumentReviewGuide() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047' }}>
+        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.5rem' }}>⚡ DFW HOA Watch-Outs</div>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.95rem', lineHeight: 1.8 }}>
             <li>Frisco, Allen, McKinney HOAs can have very strict exterior rules — read every page</li>

@@ -22,7 +22,7 @@ export default function DFWPlumbingCostGuide() {
     <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#1B2B4B' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
 
-        <div style={{ marginBottom: 8, fontSize: 14, color: '#718096' }}>ProLnk Cost Guide · Dallas-Fort Worth · Updated May 2026</div>
+        <div style={{ marginBottom: 8, fontSize: 14, color: '#718096′ }}>ProLnk Cost Guide · Dallas-Fort Worth · Updated May 2026</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, lineHeight: 1.15, margin: '0 0 20px' }}>
           DFW Plumbing Cost Guide 2026 —<br />Water Heaters, Leaks, and Hard Water
         </h1>
@@ -39,7 +39,7 @@ export default function DFWPlumbingCostGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ background: '#FED7D7' }}>
+                <tr style={{ background: '#FED7D7′ }}>
                   {['System', 'National Avg Life', 'DFW Avg Life', 'Why'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: '#742A2A', fontWeight: 700 }}>{h}</th>
                   ))}
@@ -47,11 +47,11 @@ export default function DFWPlumbingCostGuide() {
               </thead>
               <tbody>
                 {HARD_WATER_IMPACT.map((row, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#FFF5F5' }}>
+                  <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#FFF5F5′ }}>
                     <td style={{ padding: '10px 14px', color: '#2D3748', fontWeight: 600 }}>{row.system}</td>
-                    <td style={{ padding: '10px 14px', color: '#4A5568' }}>{row.national}</td>
+                    <td style={{ padding: '10px 14px', color: '#4A5568′ }}>{row.national}</td>
                     <td style={{ padding: '10px 14px', color: '#C53030', fontWeight: 700 }}>{row.dfw}</td>
-                    <td style={{ padding: '10px 14px', color: '#718096' }}>{row.note}</td>
+                    <td style={{ padding: '10px 14px', color: '#718096′ }}>{row.note}</td>
                   </tr>
                 ))}
               </tbody>
@@ -75,8 +75,8 @@ export default function DFWPlumbingCostGuide() {
             ['Slab leak repair', '$1,500 – $5,000+'],
             ['Full home repipe', '$5,000 – $15,000'],
           ].map(([service, price], i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: i % 2 === 0 ? '#fff' : '#F7F9FC', borderBottom: i < 10 ? '1px solid #E2E8F0' : 'none' }}>
-              <span style={{ fontSize: 15, color: '#2D3748' }}>{service}</span>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: i % 2 === 0 ? '#fff' : '#F7F9FC', borderBottom: i < 10 ? '1px solid #E2E8F0′ : ’none' }}>
+              <span style={{ fontSize: 15, color: '#2D3748′ }}>{service}</span>
               <span style={{ fontSize: 15, fontWeight: 700, color: '#1B2B4B', whiteSpace: 'nowrap' }}>{price}</span>
             </div>
           ))}
@@ -86,7 +86,7 @@ export default function DFWPlumbingCostGuide() {
         <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 16px' }}>Water Softener Cost Estimator</h2>
         <div style={{ background: '#fff', border: '2px solid #E8D87A', borderRadius: 12, padding: 28, marginBottom: 40 }}>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#4A5568' }}>HOME SIZE</label>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#4A5568′ }}>HOME SIZE</label>
             <select value={softenerSize} onChange={e => setSoftenerSize(e.target.value)}
               style={{ padding: '10px 16px', borderRadius: 8, border: '1.5px solid #CBD5E0', fontSize: 15, background: '#fff', color: '#1B2B4B', cursor: 'pointer' }}>
               <option value="small">Small (under 1,500 sq ft, 1–2 people)</option>
@@ -106,7 +106,7 @@ export default function DFWPlumbingCostGuide() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 16, fontSize: 13, color: '#718096' }}>
+          <div style={{ marginTop: 16, fontSize: 13, color: '#718096′ }}>
             ROI: A softener typically extends water heater life by 3–5 years in DFW — saving $500–$1,200 on early replacement.
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function DFWPlumbingCostGuide() {
         {/* Freeze Damage Warning */}
         <div style={{ background: '#EBF4FF', border: '1.5px solid #3182CE', borderRadius: 10, padding: '20px 24px', marginBottom: 40 }}>
           <div style={{ fontWeight: 700, fontSize: 16, color: '#1A365D', marginBottom: 8 }}>Texas Freeze Warning — Annual Pipe Inspection</div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65, color: '#2C5282' }}>
+          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65, color: '#2C5282′ }}>
             Burst pipes from freezing cost <strong>$500–$1,500 in repairs</strong> — but the resulting water damage can reach <strong>$10,000+</strong>. A licensed plumber can inspect and insulate exposed pipes for <strong>~$150</strong> before winter. It's the highest-ROI plumbing investment you can make in DFW.
           </p>
           <div style={{ marginTop: 14, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
@@ -139,7 +139,7 @@ export default function DFWPlumbingCostGuide() {
             <div key={i} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: 10, padding: 18 }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{opt.method}</div>
               <div style={{ fontSize: 18, fontWeight: 800, color: '#1B2B4B', marginBottom: 6 }}>{opt.cost}</div>
-              <div style={{ fontSize: 13, color: '#718096' }}>{opt.note}</div>
+              <div style={{ fontSize: 13, color: '#718096′ }}>{opt.note}</div>
             </div>
           ))}
         </div>

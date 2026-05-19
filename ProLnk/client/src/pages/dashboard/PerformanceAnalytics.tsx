@@ -9,14 +9,14 @@ import {
   ChevronUp, Award,
 } from "lucide-react";
 
-const TEAL = "#00B5B8";
+const TEAL = "#00B5B8″;
 const GREEN = "#22C55E";
 const AMBER = "#F59E0B";
-const RED = "#EF4444";
-const DIM = "#8B91A8";
+const RED = "#EF4444″;
+const DIM = "#8B91A8″;
 const BORDER = "#1E2A3A";
 const CARD = "#0F1D2E";
-const BG = "#0A1628";
+const BG = "#0A1628″;
 
 const benchmarks = [
   {
@@ -66,9 +66,9 @@ const benchmarks = [
   },
   {
     label: "Commission per job",
-    you: "$312",
-    avg: "$248",
-    top: "$487",
+    you: "$312″,
+    avg: "$248″,
+    top: "$487″,
     youNum: 312,
     avgNum: 248,
     topNum: 487,
@@ -79,20 +79,20 @@ const benchmarks = [
 ];
 
 const responseData = [
-  { day: "May 1", you: 6.2, target: 5 },
-  { day: "May 2", you: 5.1, target: 5 },
-  { day: "May 3", you: 7.8, target: 5 },
-  { day: "May 4", you: 4.9, target: 5 },
-  { day: "May 5", you: 3.8, target: 5 },
-  { day: "May 6", you: 4.2, target: 5 },
-  { day: "May 7", you: 3.5, target: 5 },
-  { day: "May 8", you: 6.1, target: 5 },
-  { day: "May 9", you: 4.7, target: 5 },
-  { day: "May 10", you: 3.9, target: 5 },
-  { day: "May 11", you: 4.2, target: 5 },
-  { day: "May 12", you: 3.1, target: 5 },
-  { day: "May 13", you: 2.9, target: 5 },
-  { day: "May 14", you: 4.2, target: 5 },
+  { day: "May 1″, you: 6.2, target: 5 },
+  { day: "May 2″, you: 5.1, target: 5 },
+  { day: "May 3″, you: 7.8, target: 5 },
+  { day: "May 4″, you: 4.9, target: 5 },
+  { day: "May 5″, you: 3.8, target: 5 },
+  { day: "May 6″, you: 4.2, target: 5 },
+  { day: "May 7″, you: 3.5, target: 5 },
+  { day: "May 8″, you: 6.1, target: 5 },
+  { day: "May 9″, you: 4.7, target: 5 },
+  { day: "May 10″, you: 3.9, target: 5 },
+  { day: "May 11″, you: 4.2, target: 5 },
+  { day: "May 12″, you: 3.1, target: 5 },
+  { day: "May 13″, you: 2.9, target: 5 },
+  { day: "May 14″, you: 4.2, target: 5 },
 ];
 
 const tips = [
@@ -112,7 +112,7 @@ const tips = [
   },
   {
     icon: <MessageSquare size={20} />,
-    color: "#A855F7",
+    color: "#A855F7″,
     title: "Ask for reviews after every job",
     body: "Pros who request reviews actively get 4x more — and earn 18% higher rates.",
     action: "Send review request",
@@ -124,7 +124,7 @@ function ScoreRing({ score }: { score: number }) {
   const circ = 2 * Math.PI * r;
   const filled = (score / 100) * circ;
   return (
-    <svg width={130} height={130} viewBox="0 0 130 130">
+    <svg width={130} height={130} viewBox="0 0 130 130″>
       <circle cx={65} cy={65} r={r} fill="none" stroke={BORDER} strokeWidth={10} />
       <circle
         cx={65} cy={65} r={r}
@@ -185,7 +185,7 @@ export default function PerformanceAnalytics() {
               <div style={{ color: "#F0F2FF", fontSize: 24, fontWeight: 700, marginBottom: 4 }}>
                 84 / 100
               </div>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 4, backgroundColor: "#22C55E18", border: "1px solid #22C55E44", borderRadius: 20, padding: "3px 10px" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 4, backgroundColor: "#22C55E18″, border: "1px solid #22C55E44", borderRadius: 20, padding: "3px 10px" }}>
                 <ChevronUp size={12} color={GREEN} />
                 <span style={{ color: GREEN, fontSize: 12, fontWeight: 600 }}>Above Average</span>
               </div>
@@ -217,7 +217,7 @@ export default function PerformanceAnalytics() {
               <div style={{ color: DIM, fontSize: 12, marginBottom: 4 }}>Single-day record</div>
               <div style={{ color: AMBER, fontSize: 32, fontWeight: 700 }}>$847</div>
             </div>
-            <div style={{ backgroundColor: "#1A2540", borderRadius: 8, padding: 12, marginBottom: 16 }}>
+            <div style={{ backgroundColor: "#1A2540″, borderRadius: 8, padding: 12, marginBottom: 16 }}>
               <div style={{ color: DIM, fontSize: 12, marginBottom: 2 }}>Today's pace</div>
               <div style={{ color: "#F0F2FF", fontSize: 20, fontWeight: 700 }}>$490</div>
               <div style={{ marginTop: 8, height: 6, backgroundColor: BORDER, borderRadius: 4, overflow: "hidden" }}>
@@ -230,7 +230,7 @@ export default function PerformanceAnalytics() {
                 { label: "2 more jobs", detail: "~$180 avg" },
                 { label: "Premium job", detail: "~$357+ needed" },
               ].map(opt => (
-                <div key={opt.label} style={{ flex: 1, backgroundColor: "#0A1628", borderRadius: 8, border: `1px solid ${BORDER}`, padding: "8px 10px" }}>
+                <div key={opt.label} style={{ flex: 1, backgroundColor: "#0A1628″, borderRadius: 8, border: `1px solid ${BORDER}`, padding: "8px 10px" }}>
                   <div style={{ color: TEAL, fontSize: 12, fontWeight: 600 }}>{opt.label}</div>
                   <div style={{ color: DIM, fontSize: 11 }}>{opt.detail}</div>
                 </div>
@@ -249,7 +249,7 @@ export default function PerformanceAnalytics() {
                 padding: "7px 18px",
                 borderRadius: 8,
                 border: `1px solid ${activeTab === tab ? TEAL : BORDER}`,
-                backgroundColor: activeTab === tab ? "#00B5B818" : "transparent",
+                backgroundColor: activeTab === tab ? "#00B5B818″ : "transparent",
                 color: activeTab === tab ? TEAL : DIM,
                 fontSize: 13,
                 fontWeight: 600,
@@ -292,7 +292,7 @@ export default function PerformanceAnalytics() {
                     <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: color }} />
                   </div>
                   <div style={{ color: DIM, fontSize: 14 }}>{row.avg}</div>
-                  <div style={{ color: "#A855F7", fontSize: 14, fontWeight: 600 }}>{row.top}</div>
+                  <div style={{ color: "#A855F7″, fontSize: 14, fontWeight: 600 }}>{row.top}</div>
                 </div>
               );
             })}
@@ -311,7 +311,7 @@ export default function PerformanceAnalytics() {
             </div>
             <ResponsiveContainer width="100%" height={240}>
               <LineChart data={responseData} margin={{ top: 8, right: 16, left: -16, bottom: 0 }}>
-                <CartesianGrid stroke={BORDER} strokeDasharray="3 3" />
+                <CartesianGrid stroke={BORDER} strokeDasharray="3 3″ />
                 <XAxis dataKey="day" tick={{ fill: DIM, fontSize: 11 }} tickLine={false} axisLine={false} />
                 <YAxis tick={{ fill: DIM, fontSize: 11 }} tickLine={false} axisLine={false} unit=" min" />
                 <Tooltip
@@ -320,7 +320,7 @@ export default function PerformanceAnalytics() {
                   itemStyle={{ fontSize: 12 }}
                   formatter={(v: number) => [`${v} min`]}
                 />
-                <ReferenceLine y={5} stroke={AMBER} strokeDasharray="6 3" label={{ value: "5-min target", fill: AMBER, fontSize: 11 }} />
+                <ReferenceLine y={5} stroke={AMBER} strokeDasharray="6 3″ label={{ value: "5-min target", fill: AMBER, fontSize: 11 }} />
                 <Line type="monotone" dataKey="you" stroke={TEAL} strokeWidth={2.5} dot={{ r: 3, fill: TEAL }} name="Your response" />
               </LineChart>
             </ResponsiveContainer>
@@ -328,7 +328,7 @@ export default function PerformanceAnalytics() {
         )}
 
         {/* Trend analysis */}
-        <div style={{ backgroundColor: "#00B5B810", border: `1px solid #00B5B830`, borderRadius: 12, padding: "14px 20px", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ backgroundColor: "#00B5B810″, border: `1px solid #00B5B830`, borderRadius: 12, padding: "14px 20px", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
           <TrendingUp size={20} color={TEAL} />
           <div>
             <span style={{ color: "#F0F2FF", fontSize: 14, fontWeight: 600 }}>Trending up this month — </span>

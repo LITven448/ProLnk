@@ -41,7 +41,7 @@ export default function DFWPlumbingCleanoutGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🏠 Your Home Type</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {homeTypes.map(t => (
-              <button key={t} onClick={() => setHomeType(t)} style={{ background: homeType === t ? '#F5E642' : '#1A2F50', color: homeType === t ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{t}</button>
+              <button key={t} onClick={() => setHomeType(t)} style={{ background: homeType === t ? '#F5E642′ : '#1A2F50', color: homeType === t ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{t}</button>
             ))}
           </div>
           <div style={{ background: '#1A2F50', borderRadius: 8, padding: 14 }}>
@@ -54,14 +54,14 @@ export default function DFWPlumbingCleanoutGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🔧 Your Plumbing Concern</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
             {concerns.map(c => (
-              <button key={c.id} onClick={() => setConcern(c)} style={{ background: concern.id === c.id ? '#F5E642' : '#1A2F50', color: concern.id === c.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{c.label}</button>
+              <button key={c.id} onClick={() => setConcern(c)} style={{ background: concern.id === c.id ? '#F5E642′ : '#1A2F50', color: concern.id === c.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{c.label}</button>
             ))}
           </div>
           <div style={{ marginBottom: 12 }}>
             <div style={{ color: '#9BA3AF', fontSize: 13, marginBottom: 8 }}>Recommended Access Points</div>
             {info.locations.map((loc, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 6 }}>
-                <span style={{ color: '#F5E642' }}>📍</span>
+                <span style={{ color: '#F5E642′ }}>📍</span>
                 <span style={{ color: '#CBD5E1', fontSize: 14 }}>{loc}</span>
               </div>
             ))}
@@ -69,14 +69,14 @@ export default function DFWPlumbingCleanoutGuide2026() {
           <div style={{ background: '#1A2F50', borderRadius: 8, padding: 12, marginBottom: 12 }}>
             <div style={{ color: '#CBD5E1', fontSize: 14 }}>{info.tip}</div>
           </div>
-          <div style={{ color: info.urgency.includes('Emergency') ? '#EF4444' : '#F5E642', fontWeight: 700, fontSize: 14 }}>⏱️ {info.urgency}</div>
+          <div style={{ color: info.urgency.includes('Emergency') ? '#EF4444′ : '#F5E642', fontWeight: 700, fontSize: 14 }}>⏱️ {info.urgency}</div>
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🗺️ Cleanout Types in DFW Homes</div>
           {['Main sewer cleanout: round cap in yard, usually PVC or cast iron, near foundation perimeter', 'Secondary cleanout: often near laundry room, hall bath, or utility area inside home', 'Roof stack cap: at top of vent pipe — used for camera and clearing when main is buried', 'Floor cleanout: in garage or utility room — common in pre-1980 DFW homes', 'Charter ProLnk plumbers locate, mark, and document all cleanouts during first service visit'].map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642' }}>✓</span>
+              <span style={{ color: '#F5E642′ }}>✓</span>
               <span style={{ color: '#CBD5E1', fontSize: 14 }}>{f}</span>
             </div>
           ))}

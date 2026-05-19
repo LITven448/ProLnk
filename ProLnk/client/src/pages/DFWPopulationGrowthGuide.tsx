@@ -35,7 +35,7 @@ export default function DFWPopulationGrowthGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW MARKET INTELLIGENCE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>DFW Population Growth Guide</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW adds 100,000+ residents per year. Here's where they're going — and what it means for home values.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW adds 100,000+ residents per year. Here's where they’re going — and what it means for home values.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 40 }}>
           {[['New Residents/Year', '107,000+'], ['Top Growth City', 'Frisco/Celina'], ['DFW Metro Population', '8.1M+']].map(([label, val]) => (

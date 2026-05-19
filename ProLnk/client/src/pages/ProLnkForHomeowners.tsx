@@ -29,7 +29,7 @@ export default function ProLnkForHomeowners() {
         <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>What service do you need?</h2>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>
           {services.map((s, i) => (
-            <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#132040', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+            <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#132040', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
               {s.icon} {s.type}
             </button>
           ))}

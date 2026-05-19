@@ -63,7 +63,7 @@ export default function DFWHomeBasedFoodBusinessGuide() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642', fontWeight: 600, letterSpacing: 2 }}>TEXAS COTTAGE FOOD LAW GUIDE</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, color: '#fff' }}>Sell Food from Your DFW Home</h1>
-        <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 40, lineHeight: 1.7 }}>Texas Cottage Food Law lets you sell certain foods from your home kitchen without a commercial license. Here's exactly what's allowed.</p>
+        <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 40, lineHeight: 1.7 }}>Texas Cottage Food Law lets you sell certain foods from your home kitchen without a commercial license. Here's exactly what’s allowed.</p>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 28, marginBottom: 40 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📜 Texas Cottage Food Law — Key Facts</h2>
@@ -97,7 +97,7 @@ export default function DFWHomeBasedFoodBusinessGuide() {
             <label style={{ fontSize: 12, color: '#64748B', display: 'block', marginBottom: 8, fontWeight: 600 }}>WHAT DO YOU WANT TO SELL?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {products.map(p => (
-                <button key={p} onClick={() => setProduct(p)} style={{ padding: '10px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: product === p ? '#F5E642' : '#0A1628', color: product === p ? '#0A1628' : '#94A3B8', fontWeight: 600, fontSize: 13 }}>{p}</button>
+                <button key={p} onClick={() => setProduct(p)} style={{ padding: '10px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: product === p ? '#F5E642′ : '#0A1628', color: product === p ? '#0A1628' : '#94A3B8', fontWeight: 600, fontSize: 13 }}>{p}</button>
               ))}
             </div>
           </div>

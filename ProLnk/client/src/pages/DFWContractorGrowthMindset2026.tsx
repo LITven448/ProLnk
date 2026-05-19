@@ -72,7 +72,7 @@ export default function DFWContractorGrowthMindset2026() {
           {stages.map(st => (
             <button key={st.id} onClick={() => setStage(st.id)}
               style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: stage === st.id ? '#F5E642' : '#1e2d45', color: stage === st.id ? '#0A1628' : '#94a3b8' }}>
+                background: stage === st.id ? '#F5E642′ : '#1e2d45', color: stage === st.id ? '#0A1628' : '#94a3b8' }}>
               {st.label}
             </button>
           ))}
@@ -85,7 +85,7 @@ export default function DFWContractorGrowthMindset2026() {
           <p style={{ color: '#cbd5e1', marginBottom: 20, lineHeight: 1.6 }}>{s.description}</p>
           <h3 style={{ color: '#F5E642', fontSize: 14, fontWeight: 700, marginBottom: 12 }}>⚡ Level-Up Moves</h3>
           {s.moves.map((m, i) => (
-            <div key={i} style={{ padding: '10px 0', borderBottom: i < s.moves.length - 1 ? '1px solid #1e2d45' : 'none', color: '#e2e8f0', fontSize: 14 }}>
+            <div key={i} style={{ padding: '10px 0', borderBottom: i < s.moves.length - 1 ? '1px solid #1e2d45′ : ’none', color: '#e2e8f0', fontSize: 14 }}>
               → {m}
             </div>
           ))}
@@ -94,7 +94,7 @@ export default function DFWContractorGrowthMindset2026() {
             <span style={{ color: '#F5E642', fontWeight: 600, fontSize: 13 }}>{s.nextStage}</span>
           </div>
         </div>
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', color: '#0A1628′ }}>
           <strong>💰 ProLnk 5-stream income compounds at every stage.</strong> The sooner you join, the bigger the override network you build.
         </div>
       </div>

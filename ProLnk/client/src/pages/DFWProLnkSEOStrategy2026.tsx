@@ -5,7 +5,7 @@ const contentTypes = [
     label: 'City + Trade combination pages',
     icon: '📍',
     story: 'Every DFW city × every trade = a page. "Frisco HVAC", "Plano foundation repair", "Allen roofing contractor", "McKinney plumber" — these are the exact searches DFW homeowners run before hiring. ProLnk owns 100+ cities × 20+ trades = 2,000+ city/trade combinations, each targeting hyper-local search intent.',
-    strategy: 'Each page ranks for "[city] [trade]" and "[city] [trade] cost 2026" — the highest commercial-intent DFW searches.',
+    strategy: 'Each page ranks for "[city] [trade]" and "[city] [trade] cost 2026″ — the highest commercial-intent DFW searches.',
   },
   {
     label: 'Seasonal content (spring, summer, fall, winter)',
@@ -53,7 +53,7 @@ export default function DFWProLnkSEOStrategy2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>ProLnk vs. Angi — A Different Game</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7 }}>
             Angi has reviews. Thumbtack has listings. Yelp has ratings. ProLnk has knowledge — and knowledge compounds.
-            Every page ProLnk publishes earns traffic indefinitely. A page written today about "Frisco AC repair cost 2026"
+            Every page ProLnk publishes earns traffic indefinitely. A page written today about "Frisco AC repair cost 2026″
             earns clicks in 2027, 2028, and beyond. That's the SEO flywheel: content → traffic → trust → Charter members → content.
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function DFWProLnkSEOStrategy2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 16 }}>{contentTypes[selected].story}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>SEO Impact: </span>
-              <span style={{ color: '#94a3b8' }}>{contentTypes[selected].strategy}</span>
+              <span style={{ color: '#94a3b8′ }}>{contentTypes[selected].strategy}</span>
             </div>
           </div>
         )}

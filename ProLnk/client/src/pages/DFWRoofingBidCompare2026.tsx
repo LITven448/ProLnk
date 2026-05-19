@@ -24,7 +24,7 @@ export default function DFWRoofingBidCompare2026() {
         <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>DFW roofing bids that look the same often are not. Shingle line, underlayment, certification level, and tear-off vs overlay can account for thousands in legitimate price difference — or hide inferior work.</p>
 
         <div style={{ backgroundColor: '#0D1F38', border: '2px solid #F5E642', borderRadius: '12px', padding: '24px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>⚡ 5 Non-Negotiables for Any DFW Roof Bid</h2>
+          <h2 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>⚡ 5 Non-Negotiables for Any DFW Roof Bid</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {['Same shingle brand AND product line (not just brand)', 'Same underlayment spec (synthetic vs felt changes cost and performance)', 'Tear-off included — not overlay on existing layers', 'All pipe boots and boots replaced (DFW heat degrades rubber fast)', 'Manufacturer certification tier specified (affects warranty length)'].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -36,7 +36,7 @@ export default function DFWRoofingBidCompare2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '28px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>🔍 Get My Comparison Checklist</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>🔍 Get My Comparison Checklist</h2>
           <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>Bid Discrepancy Type</label>
             <select value={discrepancy} onChange={e => setDiscrepancy(e.target.value)} style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px' }}>
@@ -53,13 +53,13 @@ export default function DFWRoofingBidCompare2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
-          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>📊 DFW Typical Roofing Cost Ranges 2026</h3>
+          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>📊 DFW Typical Roofing Cost Ranges 2026</h3>
           {[{ type: 'Repair (minor, <10 sq ft)', range: ' – ', note: 'Single missing shingles, small leak source' },
             { type: 'Partial replacement (10-30 sq ft)', range: ' – ,500', note: 'Storm damage section, one slope' },
             { type: 'Full replacement (2,000 sq ft home)', range: ',000 – ,000', note: '30-year shingle, synthetic underlayment, full tear-off' },
             { type: 'Premium replacement (Class 4 impact)', range: ',000 – ,000', note: 'Insurance premium discount often justifies cost' }
           ].map(row => (
-            <div key={row.type} style={{ padding: '12px 0', borderBottom: '1px solid #1a3050' }}>
+            <div key={row.type} style={{ padding: '12px 0', borderBottom: '1px solid #1a3050′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                 <span style={{ fontSize: '14px', fontWeight: 600 }}>{row.type}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '15px' }}>{row.range}</span>

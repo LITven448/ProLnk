@@ -19,9 +19,9 @@ const scopeDetails: Record<string, { features: string[]; hardWater: string; layo
 };
 
 const costMap: Record<string, Record<string, string>> = {
-  small: { basic: '$3,000–$5,500', mid: '$6,000–$10,000', full: '$12,000–$20,000' },
-  medium: { basic: '$4,500–$7,500', mid: '$8,000–$14,000', full: '$16,000–$28,000' },
-  large: { basic: '$6,000–$10,000', mid: '$11,000–$18,000', full: '$22,000–$40,000' },
+  small: { basic: '$3,000–$5,500', mid: '$6,000–$10,000', full: '$12,000–$20,000′ },
+  medium: { basic: '$4,500–$7,500', mid: '$8,000–$14,000', full: '$16,000–$28,000′ },
+  large: { basic: '$6,000–$10,000', mid: '$11,000–$18,000', full: '$22,000–$40,000′ },
 };
 
 export default function DFWLaundryRoomRenovationGuide() {
@@ -49,11 +49,11 @@ export default function DFWLaundryRoomRenovationGuide() {
           <h2 style={{ color: '#F5E642', marginBottom: 16 }}>💧 DFW Hard Water Reality Check</h2>
           <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', marginBottom: 16 }}>
             <p style={{ color: '#CBD5E0', fontSize: 14, margin: 0 }}>
-              DFW tap water averages <strong style={{ color: '#F5E642' }}>17–25 grains per gallon</strong> hardness — among the highest in Texas. Without a water softener, front-loading washers fail in 4–6 years. Every laundry renovation should include softener planning.
+              DFW tap water averages <strong style={{ color: '#F5E642′ }}>17–25 grains per gallon</strong> hardness — among the highest in Texas. Without a water softener, front-loading washers fail in 4–6 years. Every laundry renovation should include softener planning.
             </p>
           </div>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {['Front-loaders need vibration pads on DFW concrete slab floors','Gas dryer hookup adds $300–$600 but cuts utility bills vs electric','DFW humidity (summer 70%+) requires proper exhaust ventilation','Folding stations at 36" height — standard DFW builder preference'].map(tip => (
+            {['Front-loaders need vibration pads on DFW concrete slab floors','Gas dryer hookup adds $300–$600 but cuts utility bills vs electric','DFW humidity (summer 70%+) requires proper exhaust ventilation','Folding stations at 36″ height — standard DFW builder preference'].map(tip => (
               <li key={tip} style={{ display: 'flex', gap: 10 }}>
                 <span style={{ color: '#F5E642', flexShrink: 0 }}>✓</span>
                 <span style={{ color: '#CBD5E0', fontSize: 14 }}>{tip}</span>
@@ -70,7 +70,7 @@ export default function DFWLaundryRoomRenovationGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['small','📦 Small (under 60 sq ft)'],['medium','🏠 Medium (60–100 sq ft)'],['large','🏢 Large (100+ sq ft)']].map(([key, label]) => (
                 <button key={key} onClick={() => setRoomSize(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roomSize === key ? '#F5E642' : '#1E3A5F', backgroundColor: roomSize === key ? '#F5E6421A' : 'transparent', color: roomSize === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roomSize === key ? '#F5E642′ : '#1E3A5F', backgroundColor: roomSize === key ? '#F5E6421A' : ’transparent', color: roomSize === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -82,7 +82,7 @@ export default function DFWLaundryRoomRenovationGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['basic','🔨 Basic Refresh'],['mid','🏗️ Mid Renovation'],['full','👑 Full Laundry Suite']].map(([key, label]) => (
                 <button key={key} onClick={() => setScope(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: scope === key ? '#F5E642' : '#1E3A5F', backgroundColor: scope === key ? '#F5E6421A' : 'transparent', color: scope === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: scope === key ? '#F5E642′ : '#1E3A5F', backgroundColor: scope === key ? '#F5E6421A' : ’transparent', color: scope === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -96,13 +96,13 @@ export default function DFWLaundryRoomRenovationGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🧺 Your DFW Laundry Room Plan</h3>
             <div style={{ marginBottom: 14 }}>
               <div style={{ color: '#9AA5B4', fontSize: 12, marginBottom: 6 }}>🔨 Included Features</div>
               {result.features.map(f => (
                 <div key={f} style={{ display: 'flex', gap: 8, marginBottom: 4 }}>
-                  <span style={{ color: '#F5E642' }}>→</span>
+                  <span style={{ color: '#F5E642′ }}>→</span>
                   <span style={{ color: '#E8E8E8', fontSize: 14 }}>{f}</span>
                 </div>
               ))}

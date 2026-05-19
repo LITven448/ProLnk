@@ -51,9 +51,9 @@ export default function ProLnkVsHomeAdvisor2026() {
             { label: 'ProLnk Match Resale', value: '0x', sub: 'exclusive single match', warn: false },
             { label: 'BBB Rating (Angi 2025)', value: '1.1 / 5', sub: 'consumer complaint volume', warn: true },
           ].map((s) => (
-            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px 24px', border: s.warn ? '1px solid #4a1010' : '1px solid #1e3a1e' }}>
+            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px 24px', border: s.warn ? '1px solid #4a1010′ : '1px solid #1e3a1e' }}>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 6 }}>{s.label}</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: s.warn ? '#f87171' : '#4ade80' }}>{s.value}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: s.warn ? '#f87171′ : '#4ade80' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{s.sub}</div>
             </div>
           ))}
@@ -67,13 +67,13 @@ export default function ProLnkVsHomeAdvisor2026() {
                 key={p.id}
                 onClick={() => setActive(p)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: active.id === p.id ? '#F5E642' : '#1e2d45', color: active.id === p.id ? '#0A1628' : '#94a3b8' }}>
+                  background: active.id === p.id ? '#F5E642′ : '#1e2d45', color: active.id === p.id ? '#0A1628' : '#94a3b8' }}>
                 {p.label}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <div style={{ background: '#1a0a0a', borderRadius: 10, padding: 20, border: '1px solid #4a1010' }}>
+            <div style={{ background: '#1a0a0a', borderRadius: 10, padding: 20, border: '1px solid #4a1010′ }}>
               <div style={{ fontSize: 12, color: '#f87171', marginBottom: 10, fontWeight: 700 }}>🔴 HOMEADVISOR / ANGI</div>
               <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.6 }}>{active.homeadvisor}</p>
             </div>

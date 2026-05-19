@@ -12,7 +12,7 @@ const recommendations: MobilityConfig = {
     'Small (under 40 sq ft)': [
       { mod: 'Grab bars (toilet + shower)', cost: '$300–600', priority: 'Recommended' },
       { mod: 'Non-slip bath mat + flooring treatment', cost: '$150–400', priority: 'Recommended' },
-      { mod: 'Comfort-height toilet (17–19")', cost: '$200–500', priority: 'Optional' },
+      { mod: 'Comfort-height toilet (17–19″)', cost: '$200–500', priority: 'Optional' },
       { mod: 'Motion-sensor night lighting', cost: '$80–200', priority: 'Recommended' },
     ],
     'Medium (40–70 sq ft)': [
@@ -68,7 +68,7 @@ const recommendations: MobilityConfig = {
       { mod: 'Pocket door (space saving)', cost: '$800–2,000', priority: 'Essential' },
     ],
     'Medium (40–70 sq ft)': [
-      { mod: 'Curbless walk-in shower (36"×36" min)', cost: '$4,000–8,000', priority: 'Essential' },
+      { mod: 'Curbless walk-in shower (36″×36″ min)', cost: '$4,000–8,000', priority: 'Essential' },
       { mod: 'Grab bars full set', cost: '$600–1,200', priority: 'Essential' },
       { mod: 'Outswing or pocket door', cost: '$600–2,000', priority: 'Recommended' },
       { mod: 'Comfort-height toilet + grab bar', cost: '$400–800', priority: 'Essential' },
@@ -80,7 +80,7 @@ const recommendations: MobilityConfig = {
       { mod: 'Non-slip floor + motion lights', cost: '$700–2,000', priority: 'Essential' },
     ],
     'Extra large (100+ sq ft)': [
-      { mod: 'Roll-in shower (60"×30" min)', cost: '$6,000–14,000', priority: 'Essential' },
+      { mod: 'Roll-in shower (60″×30″ min)', cost: '$6,000–14,000', priority: 'Essential' },
       { mod: 'Full ADA grab bar system', cost: '$800–1,800', priority: 'Essential' },
       { mod: 'ADA-height toilet + bidet', cost: '$600–1,800', priority: 'Recommended' },
       { mod: 'Non-slip heated tile', cost: '$2,000–6,000', priority: 'Optional' },
@@ -89,13 +89,13 @@ const recommendations: MobilityConfig = {
   'Uses wheelchair': {
     'Small (under 40 sq ft)': [
       { mod: 'Full bathroom remodel required', cost: '$20,000–40,000', priority: 'Essential' },
-      { mod: 'Roll-in shower (60"×36" ADA)', cost: '$6,000–14,000', priority: 'Essential' },
-      { mod: '36" doorway + offset hinges', cost: '$500–1,500', priority: 'Essential' },
+      { mod: 'Roll-in shower (60″×36″ ADA)', cost: '$6,000–14,000', priority: 'Essential' },
+      { mod: '36″ doorway + offset hinges', cost: '$500–1,500', priority: 'Essential' },
       { mod: 'ADA toilet + grab bars', cost: '$800–2,000', priority: 'Essential' },
     ],
     'Medium (40–70 sq ft)': [
       { mod: 'Roll-in shower (ADA compliant)', cost: '$6,000–14,000', priority: 'Essential' },
-      { mod: '36" doorway widening', cost: '$500–1,500', priority: 'Essential' },
+      { mod: '36″ doorway widening', cost: '$500–1,500', priority: 'Essential' },
       { mod: 'ADA toilet + grab bars', cost: '$800–2,000', priority: 'Essential' },
       { mod: 'Knee clearance under vanity', cost: '$1,000–3,000', priority: 'Recommended' },
     ],
@@ -182,12 +182,12 @@ export default function DFWSeniorBathroomGuide() {
           <h2 style={{ color: '#1e3a5f', fontSize: 18, marginBottom: 16 }}>📏 Grab Bar Placement Guide</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {[
-              { loc: 'Toilet Side Wall', spec: '42" horizontal, 33–36" from floor' },
-              { loc: 'Toilet Rear Wall', spec: '36" horizontal, 33–36" from floor' },
-              { loc: 'Shower Entry', spec: 'Vertical bar, 18" from opening' },
-              { loc: 'Shower Side Wall', spec: '48" angled 45°, grab height 33–36"' },
-              { loc: 'Bathtub Side', spec: '24" horizontal near faucet' },
-              { loc: 'Bathtub Rear', spec: '24–36" horizontal near head end' },
+              { loc: 'Toilet Side Wall', spec: '42″ horizontal, 33–36″ from floor' },
+              { loc: 'Toilet Rear Wall', spec: '36″ horizontal, 33–36″ from floor' },
+              { loc: 'Shower Entry', spec: 'Vertical bar, 18″ from opening' },
+              { loc: 'Shower Side Wall', spec: '48″ angled 45°, grab height 33–36″' },
+              { loc: 'Bathtub Side', spec: '24″ horizontal near faucet' },
+              { loc: 'Bathtub Rear', spec: '24–36″ horizontal near head end' },
             ].map((g) => (
               <div key={g.loc} style={{ background: '#f1f5f9', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 4 }}>{g.loc}</div>

@@ -70,15 +70,15 @@ export default function DFWRelocationPackageGuide() {
           <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#1e3a5f' }}>🧮 Relocation Package Value Calculator</h2>
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#374151' }}>Package Type</label>
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#374151′ }}>Package Type</label>
               <select value={pkgType} onChange={e => setPkgType(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '1rem' }}>
                 <option value="">Select...</option>
                 {Object.keys(packageTypes).map(k => <option key={k} value={k}>{k}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#374151' }}>Current Home Value ($)</label>
-              <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0" />
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#374151′ }}>Current Home Value ($)</label>
+              <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0″ />
             </div>
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#1e3a5f', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Calculate Package Value</button>

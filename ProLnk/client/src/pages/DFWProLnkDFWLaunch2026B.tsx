@@ -19,14 +19,14 @@ export default function DFWProLnkDFWLaunch2026B() {
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>What Launch Day Looks Like in DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.6 }}>
-          Part 2 of the DFW launch guide. Launch day isn't a moment — it's a sequence. DFW is the template market. Every system, workflow, and metric we set here gets replicated for Houston.
+          Part 2 of the DFW launch guide. Launch day isn't a moment — it’s a sequence. DFW is the template market. Every system, workflow, and metric we set here gets replicated for Houston.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 28 }}>
           {[
             { icon: '⚡', label: '4-hour match SLA' },
             { icon: '🔒', label: 'Charter rate locked' },
-            { icon: '🏠', label: 'Vault goes live Day 1' },
+            { icon: '🏠', label: 'Vault goes live Day 1′ },
           ].map(m => (
             <div key={m.label} style={{ background: '#112240', borderRadius: 10, padding: '16px 12px', textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{m.icon}</div>
@@ -42,8 +42,8 @@ export default function DFWProLnkDFWLaunch2026B() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642' : '#112240',
-                color: selected === s.id ? '#0A1628' : '#fff',
+                background: selected === s.id ? '#F5E642′ : '#112240',
+                color: selected === s.id ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 600,
               }}
@@ -54,7 +54,7 @@ export default function DFWProLnkDFWLaunch2026B() {
         </div>
 
         {match && (
-          <div style={{ background: '#112240', borderRadius: 10, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 10, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>Your Launch Day Experience</h3>
             <ul style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 2.2, paddingLeft: 20 }}>
               {match.expectations.map((e, i) => <li key={i}>{e}</li>)}

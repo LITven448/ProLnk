@@ -12,7 +12,7 @@ const stats = [
   { label: 'Total DFW homeowner pages', value: '5,000+' },
   { label: 'Foundation-specific pages', value: '200+' },
   { label: 'Cities covered', value: '100+' },
-  { label: 'Pier types documented', value: '8' },
+  { label: 'Pier types documented', value: '8′ },
 ];
 
 export default function DFWFoundation5000Milestone2026() {
@@ -58,7 +58,7 @@ export default function DFWFoundation5000Milestone2026() {
               onClick={() => setSelected(l.id)}
               style={{
                 background: selected === l.id ? '#1a3a5c' : '#0f2037',
-                border: selected === l.id ? '2px solid #F5E642' : '2px solid #1e3a5f',
+                border: selected === l.id ? '2px solid #F5E642′ : '2px solid #1e3a5f',
                 borderRadius: 8, padding: '12px 16px', color: '#fff',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15,
               }}

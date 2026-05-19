@@ -125,8 +125,8 @@ export default function DFWHighlandParkGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Highland Park TX</h1>
         <h2 style={{ fontSize: 20, fontWeight: 400, color: '#a0b0c8', marginBottom: 24 }}>Luxury Home Maintenance Guide</h2>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
-          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8' }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8′ }}>
             Highland Park is one of Texas's most prestigious enclaves — homes range from 1920s estates to contemporary builds, all meticulously maintained. Contractors who work here charge a <strong style={{ color: '#F5E642' }}>30–120% premium</strong> over standard DFW rates. Expectations for finishes, discretion, and project management are uniquely high. Select your home size and budget to see what premium service looks like in HP.
           </p>
         </div>
@@ -155,10 +155,10 @@ export default function DFWHighlandParkGuide() {
               <div key={i} style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '16px 18px', marginBottom: 12 }}>
                 <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{r.service}</div>
                 <div style={{ color: '#F5E642', fontWeight: 600, fontSize: 14, marginBottom: 4 }}>{r.multiplier}</div>
-                <div style={{ fontSize: 13, color: '#a0b0c8' }}>💡 {r.note}</div>
+                <div style={{ fontSize: 13, color: '#a0b0c8′ }}>💡 {r.note}</div>
               </div>
             ))}
-            <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: 16, marginTop: 8, fontSize: 13, color: '#a0b0c8' }}>
+            <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: 16, marginTop: 8, fontSize: 13, color: '#a0b0c8′ }}>
               ⚠️ Highland Park contractors are often booked 2–4 months out. Plan ahead and get on preferred contractor lists early.
             </div>
           </div>

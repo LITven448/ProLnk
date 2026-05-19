@@ -41,20 +41,20 @@ export default function DFWGarageCoolGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Find Your Cooling Solution</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Find Your Cooling Solution</h2>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>How you use your garage:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>How you use your garage:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {uses.map(u => (
-                <button key={u} onClick={() => setUse(u)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: use === u ? '#F5E642' : '#1e3a5f', color: use === u ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{u}</button>
+                <button key={u} onClick={() => setUse(u)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: use === u ? '#F5E642′ : '#1e3a5f', color: use === u ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{u}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>Budget:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>Budget:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {budgets.map(b => (
-                <button key={b} onClick={() => setBud(b)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: bud === b ? '#F5E642' : '#1e3a5f', color: bud === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{b}</button>
+                <button key={b} onClick={() => setBud(b)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: bud === b ? '#F5E642′ : '#1e3a5f', color: bud === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{b}</button>
               ))}
             </div>
           </div>

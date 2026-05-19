@@ -66,14 +66,14 @@ export default function DFWHVACAirflowProblemsGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {symptoms.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {s.symptom}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#1A2030', borderRadius: 8, padding: 20, borderLeft: '4px solid #F5E642' }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#F5E642' }}>Likely Cause: {result.cause}</div>
+            <div style={{ background: '#1A2030', borderRadius: 8, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#F5E642′ }}>Likely Cause: {result.cause}</div>
               <div style={{ color: '#CBD5E1', fontSize: 14, marginBottom: 12, lineHeight: 1.6 }}>{result.detail}</div>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>Fix</div>
               <div style={{ color: '#CBD5E1', fontSize: 14, marginBottom: 10 }}>{result.fix}</div>

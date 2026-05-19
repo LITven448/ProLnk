@@ -31,7 +31,7 @@ export default function DFWProLnkPlumbingPartnerGuide() {
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642' }}>🔧 ProLnk Plumbing Partner Guide</div>
+          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642′ }}>🔧 ProLnk Plumbing Partner Guide</div>
           <div style={{ color: '#94A3B8', marginTop: '.5rem' }}>DFW plumbers — emergency matches, seasonal surges, 5 income streams</div>
         </div>
 
@@ -40,16 +40,16 @@ export default function DFWProLnkPlumbingPartnerGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '.6rem' }}>
             {BIZ_TYPES.map(b => (
               <button key={b.id} onClick={() => setSelected(b.id)}
-                style={{ padding: '.85rem 1rem', borderRadius: 10, border: , background: selected === b.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ padding: '.85rem 1rem', borderRadius: 10, border: , background: selected === b.id ? '#F5E64222′ : '#0A1628', color: '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600 }}>
                 {b.label}
               </button>
             ))}
           </div>
           {biz && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #10B981' }}>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #10B981′ }}>
               <div style={{ color: '#10B981', fontWeight: 700, marginBottom: '.5rem' }}>Your ProLnk Match Opportunity</div>
-              <div style={{ color: '#CBD5E1' }}>📍 Match Type: <strong style={{ color: '#fff' }}>{biz.matchType}</strong></div>
-              <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>💵 Typical Rate: <strong style={{ color: '#F5E642' }}>{biz.rate}</strong></div>
+              <div style={{ color: '#CBD5E1′ }}>📍 Match Type: <strong style={{ color: '#fff' }}>{biz.matchType}</strong></div>
+              <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>💵 Typical Rate: <strong style={{ color: '#F5E642′ }}>{biz.rate}</strong></div>
               <div style={{ color: '#CBD5E1', marginTop: '.25rem' }}>📈 Demand Pattern: <strong style={{ color: '#fff' }}>{biz.demand}</strong></div>
             </div>
           )}

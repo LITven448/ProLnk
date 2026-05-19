@@ -35,7 +35,7 @@ export default function DFWInsulationTypesGuide2026() {
           ].map((c) => (
             <div key={c.name} style={{ background: '#0f2040', borderRadius: 10, padding: '1rem', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: '1.3rem' }}>{c.icon}</div>
-              <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.85rem', margin: '0.3rem 0' }}>{c.name}</div>
+              <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.85rem', margin: '0.3rem 0′ }}>{c.name}</div>
               <div style={{ color: '#4ade80', fontSize: '0.75rem' }}>{c.r}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Best: {c.best}</div>
               <div style={{ color: '#64748b', fontSize: '0.75rem' }}>{c.cost}</div>

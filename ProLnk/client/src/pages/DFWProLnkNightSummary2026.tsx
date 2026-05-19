@@ -39,8 +39,8 @@ export default function DFWProLnkNightSummary2026() {
   const milestones = [
     { label: 'Start of Sprint', pages: 3328, note: 'May 15 evening' },
     { label: 'After Night 1', pages: 4242, note: '+914 pages overnight' },
-    { label: 'After Golf + Afternoon', pages: 5150, note: '+908 pages, May 16' },
-    { label: 'End of Sprint', pages: 5400, note: '+250 pages, May 16–17' },
+    { label: 'After Golf + Afternoon', pages: 5150, note: '+908 pages, May 16′ },
+    { label: 'End of Sprint', pages: 5400, note: '+250 pages, May 16–17′ },
   ];
 
   return (
@@ -63,7 +63,7 @@ export default function DFWProLnkNightSummary2026() {
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>{m.pages.toLocaleString()}</div>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0 0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0 0′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700 }}>Total New Pages</div>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 24 }}>+2,072</div>
           </div>
@@ -73,7 +73,7 @@ export default function DFWProLnkNightSummary2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
           {stakeholders.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-              style={{ backgroundColor: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
+              style={{ backgroundColor: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
               {s.label}
             </button>
           ))}

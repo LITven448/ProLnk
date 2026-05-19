@@ -62,7 +62,7 @@ export default function DFWLandlordOperatingGuide() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>1️⃣ PROPERTY TYPE</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
             {[['sfr', '🏠 Single Family'], ['duplex', '🏘️ Duplex'], ['smallmulti', '🏢 3–5 Units']] .map(([k, label]) => (
-              <button key={k} onClick={() => setPropType(k as PropertyType)} style={{ background: propType === k ? '#F5E642' : '#111E35', color: propType === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (propType === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}</button>
+              <button key={k} onClick={() => setPropType(k as PropertyType)} style={{ background: propType === k ? '#F5E642′ : '#111E35', color: propType === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (propType === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 10px', cursor: ’pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}</button>
             ))}
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function DFWLandlordOperatingGuide() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>2️⃣ HOW MANY UNITS DO YOU OWN?</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
             {[['one', '1 Unit'], ['two', '2 Units'], ['threefive', '3–5 Units']] .map(([k, label]) => (
-              <button key={k} onClick={() => setUnits(k as UnitCount)} style={{ background: units === k ? '#F5E642' : '#111E35', color: units === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (units === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}</button>
+              <button key={k} onClick={() => setUnits(k as UnitCount)} style={{ background: units === k ? '#F5E642′ : '#111E35', color: units === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (units === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 10px', cursor: ’pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}</button>
             ))}
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function DFWLandlordOperatingGuide() {
           <div style={{ display: 'grid', gap: 16 }}>
             <div style={{ background: '#111E35', border: '2px solid #F5E642', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 8 }}>⏱️ OPERATING TIME</div>
-              <div style={{ color: '#C8D0E0' }}>{result.monthlyOps}</div>
+              <div style={{ color: '#C8D0E0′ }}>{result.monthlyOps}</div>
             </div>
             <div style={{ background: '#111E35', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 10 }}>⚖️ LEGAL REQUIREMENTS</div>

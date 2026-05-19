@@ -9,11 +9,11 @@ import {
 } from "lucide-react";
 
 const RISK_DISTRIBUTION = [
-  { band: "0–20%", count: 48, color: "#00E676" },
-  { band: "21–40%", count: 34, color: "#84CC16" },
-  { band: "41–60%", count: 22, color: "#FFB300" },
-  { band: "61–80%", count: 18, color: "#F97316" },
-  { band: "81–100%", count: 12, color: "#FF4444" },
+  { band: "0–20%", count: 48, color: "#00E676″ },
+  { band: "21–40%", count: 34, color: "#84CC16″ },
+  { band: "41–60%", count: 22, color: "#FFB300″ },
+  { band: "61–80%", count: 18, color: "#F97316″ },
+  { band: "81–100%", count: 12, color: "#FF4444″ },
 ];
 
 interface HighRiskPartner {
@@ -30,7 +30,7 @@ const HIGH_RISK: HighRiskPartner[] = [
     name: "Marcus Webb",
     score: 94,
     signals: ["No login 21 days", "0 jobs this month", "Support ticket open"],
-    predictedDate: "May 28, 2026",
+    predictedDate: "May 28, 2026″,
     suggestion: "Send personal outreach from account manager",
     revenue: 2880,
   },
@@ -38,7 +38,7 @@ const HIGH_RISK: HighRiskPartner[] = [
     name: "Sandra Kowalski",
     score: 87,
     signals: ["Login once in 30 days", "1 job this month (avg: 6)", "Responded to 2/8 leads"],
-    predictedDate: "Jun 3, 2026",
+    predictedDate: "Jun 3, 2026″,
     suggestion: "Offer free month with performance coaching call",
     revenue: 1788,
   },
@@ -46,7 +46,7 @@ const HIGH_RISK: HighRiskPartner[] = [
     name: "Derek Fontaine",
     score: 78,
     signals: ["No jobs last 2 weeks", "Opened cancel page twice", "Support ticket: billing"],
-    predictedDate: "Jun 10, 2026",
+    predictedDate: "Jun 10, 2026″,
     suggestion: "Escalate billing issue and offer rate review",
     revenue: 2388,
   },
@@ -54,7 +54,7 @@ const HIGH_RISK: HighRiskPartner[] = [
     name: "Tia Nguyen",
     score: 72,
     signals: ["Response rate dropped to 12%", "Declined 5 leads in row", "No profile update in 60 days"],
-    predictedDate: "Jun 14, 2026",
+    predictedDate: "Jun 14, 2026″,
     suggestion: "Automated win-back email sequence + demo refresh",
     revenue: 1788,
   },
@@ -62,7 +62,7 @@ const HIGH_RISK: HighRiskPartner[] = [
     name: "Carl Simmons",
     score: 61,
     signals: ["Jobs down 60% MoM", "Last login 14 days ago", "No reviews in 45 days"],
-    predictedDate: "Jun 21, 2026",
+    predictedDate: "Jun 21, 2026″,
     suggestion: "Check-in call + share lead quality report",
     revenue: 1788,
   },
@@ -82,21 +82,21 @@ const SAVES = [
     action: "Personal call from account manager + free month",
     result: "Renewed for 6 months",
     revenue: "$1,194 retained",
-    date: "May 2, 2026",
+    date: "May 2, 2026″,
   },
   {
     name: "Priya N.",
     action: "Billing dispute resolved + 20% discount applied",
     result: "Upgraded to annual plan",
     revenue: "$1,788 retained",
-    date: "Apr 18, 2026",
+    date: "Apr 18, 2026″,
   },
   {
     name: "James O.",
     action: "Lead quality coaching call + profile rewrite",
     result: "Response rate improved to 68%",
     revenue: "$2,388 retained",
-    date: "Apr 9, 2026",
+    date: "Apr 9, 2026″,
   },
 ];
 
@@ -129,10 +129,10 @@ export default function ChurnPredictionDashboard() {
               <div style={{
                 width: 44, height: 44, borderRadius: 12,
                 background: "linear-gradient(135deg, #FF444422, #FF444444)",
-                border: "1px solid #FF444430",
+                border: "1px solid #FF444430″,
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <TrendingDown size={22} color="#FF4444" />
+                <TrendingDown size={22} color="#FF4444″ />
               </div>
               <div>
                 <h1 style={{ fontSize: 22, fontWeight: 800, color: D.text, margin: 0 }}>Churn Prediction</h1>
@@ -145,30 +145,30 @@ export default function ChurnPredictionDashboard() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 32 }}>
             <MetricCard
               label="High Churn Risk"
-              value="12"
+              value="12″
               sub="Partners — action needed"
-              color="#FF4444"
+              color="#FF4444″
               icon={<AlertTriangle size={16} />}
             />
             <MetricCard
               label="Medium Risk"
-              value="28"
+              value="28″
               sub="Partners — monitor closely"
-              color="#FFB300"
+              color="#FFB300″
               icon={<Users size={16} />}
             />
             <MetricCard
               label="Saved This Month"
-              value="4"
+              value="4″
               sub="Interventions that worked"
-              color="#00E676"
+              color="#00E676″
               icon={<CheckCircle size={16} />}
             />
             <MetricCard
               label="Revenue at Risk"
-              value="$18,400"
+              value="$18,400″
               sub="Annual — if all high-risk churn"
-              color="#A855F7"
+              color="#A855F7″
               icon={<DollarSign size={16} />}
             />
           </div>
@@ -223,7 +223,7 @@ export default function ChurnPredictionDashboard() {
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {HIGH_RISK.map(partner => {
                 const open = expanded === partner.name;
-                const scoreColor = partner.score >= 80 ? "#FF4444" : partner.score >= 60 ? "#F97316" : "#FFB300";
+                const scoreColor = partner.score >= 80 ? "#FF4444″ : partner.score >= 60 ? "#F97316" : "#FFB300";
                 return (
                   <div
                     key={partner.name}
@@ -270,8 +270,8 @@ export default function ChurnPredictionDashboard() {
                           <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 8 }}>
                             {partner.signals.map((sig, i) => (
                               <span key={i} style={{
-                                fontSize: 12, color: "#FF4444", background: "#FF444415",
-                                border: "1px solid #FF444430", borderRadius: 20, padding: "3px 10px",
+                                fontSize: 12, color: "#FF4444″, background: "#FF444415",
+                                border: "1px solid #FF444430″, borderRadius: 20, padding: "3px 10px",
                               }}>
                                 {sig}
                               </span>
@@ -279,32 +279,32 @@ export default function ChurnPredictionDashboard() {
                           </div>
                         </div>
                         <div style={{
-                          background: "#00E67610", border: "1px solid #00E67630",
+                          background: "#00E67610″, border: "1px solid #00E67630",
                           borderRadius: 10, padding: "12px 16px",
                           display: "flex", alignItems: "flex-start", gap: 10,
                         }}>
-                          <CheckCircle size={16} color="#00E676" style={{ marginTop: 1 }} />
+                          <CheckCircle size={16} color="#00E676″ style={{ marginTop: 1 }} />
                           <div>
-                            <p style={{ fontSize: 11, fontWeight: 700, color: "#00E676", textTransform: "uppercase", letterSpacing: 0.6, margin: 0 }}>
+                            <p style={{ fontSize: 11, fontWeight: 700, color: "#00E676″, textTransform: "uppercase", letterSpacing: 0.6, margin: 0 }}>
                               Recommended Intervention
                             </p>
-                            <p style={{ fontSize: 13, color: D.text, margin: "4px 0 0" }}>{partner.suggestion}</p>
+                            <p style={{ fontSize: 13, color: D.text, margin: "4px 0 0″ }}>{partner.suggestion}</p>
                           </div>
                         </div>
                         <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
                           <button style={{
                             display: "flex", alignItems: "center", gap: 6,
                             padding: "8px 16px", borderRadius: 8,
-                            background: "#3B82F620", border: "1px solid #3B82F640",
-                            color: "#3B82F6", fontSize: 13, fontWeight: 600, cursor: "pointer",
+                            background: "#3B82F620″, border: "1px solid #3B82F640",
+                            color: "#3B82F6″, fontSize: 13, fontWeight: 600, cursor: "pointer",
                           }}>
                             <Mail size={14} /> Send Email
                           </button>
                           <button style={{
                             display: "flex", alignItems: "center", gap: 6,
                             padding: "8px 16px", borderRadius: 8,
-                            background: "#00E67615", border: "1px solid #00E67630",
-                            color: "#00E676", fontSize: 13, fontWeight: 600, cursor: "pointer",
+                            background: "#00E67615″, border: "1px solid #00E67630",
+                            color: "#00E676″, fontSize: 13, fontWeight: 600, cursor: "pointer",
                           }}>
                             <Phone size={14} /> Log Call
                           </button>
@@ -335,11 +335,11 @@ export default function ChurnPredictionDashboard() {
                 }}>
                   <div style={{
                     width: 36, height: 36, borderRadius: "50%",
-                    background: "#00E67618", border: "1px solid #00E67630",
+                    background: "#00E67618″, border: "1px solid #00E67630",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0,
                   }}>
-                    <CheckCircle size={18} color="#00E676" />
+                    <CheckCircle size={18} color="#00E676″ />
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
@@ -351,13 +351,13 @@ export default function ChurnPredictionDashboard() {
                     <p style={{ fontSize: 13, color: D.muted, margin: 0, marginBottom: 4 }}>{s.action}</p>
                     <div style={{ display: "flex", gap: 12 }}>
                       <span style={{
-                        fontSize: 12, fontWeight: 600, color: "#00E676",
-                        background: "#00E67615", border: "1px solid #00E67630",
+                        fontSize: 12, fontWeight: 600, color: "#00E676″,
+                        background: "#00E67615″, border: "1px solid #00E67630",
                         borderRadius: 20, padding: "2px 10px",
                       }}>{s.result}</span>
                       <span style={{
-                        fontSize: 12, fontWeight: 600, color: "#A855F7",
-                        background: "#A855F715", border: "1px solid #A855F730",
+                        fontSize: 12, fontWeight: 600, color: "#A855F7″,
+                        background: "#A855F715″, border: "1px solid #A855F730",
                         borderRadius: 20, padding: "2px 10px",
                       }}>{s.revenue}</span>
                     </div>
@@ -370,15 +370,15 @@ export default function ChurnPredictionDashboard() {
           {/* Predicted impact */}
           <div style={{
             background: "linear-gradient(135deg, #A855F718, #3B82F618)",
-            border: "1px solid #A855F730",
+            border: "1px solid #A855F730″,
             borderRadius: 16, padding: "20px 24px",
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-              <DollarSign size={20} color="#A855F7" />
+              <DollarSign size={20} color="#A855F7″ />
               <span style={{ fontSize: 16, fontWeight: 700, color: D.text }}>Predicted Impact</span>
             </div>
             <p style={{ fontSize: 15, color: D.text, margin: 0, lineHeight: 1.6 }}>
-              Saving <strong style={{ color: "#00E676" }}>50% of high-risk partners</strong> = <strong style={{ color: "#A855F7" }}>$9,200/yr retained revenue</strong>.
+              Saving <strong style={{ color: "#00E676″ }}>50% of high-risk partners</strong> = <strong style={{ color: "#A855F7" }}>$9,200/yr retained revenue</strong>.
               {" "}At current intervention success rate of 67%, proactive outreach to all 12 high-risk partners
               {" "}could recover <strong style={{ color: "#00D4FF" }}>${Math.round(totalRevAtRisk * 0.67 * 0.5).toLocaleString()}/yr</strong>.
             </p>

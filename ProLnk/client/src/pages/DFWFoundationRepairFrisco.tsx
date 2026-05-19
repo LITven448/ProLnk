@@ -24,19 +24,19 @@ function estimateSeverity(score: number, foundationType: string): { label: strin
   if (base <= 4) return {
     label: 'Minor Settlement',
     color: '#8BC34A',
-    cost: foundationType === 'pier' ? '$800–$2,500' : '$1,500–$4,000',
+    cost: foundationType === 'pier' ? '$800–$2,500′ : '$1,500–$4,000',
     description: 'Early-stage movement. Drainage improvements and monitoring may be sufficient. Get a foundation engineer assessment.',
   };
   if (base <= 9) return {
     label: 'Moderate Settlement',
     color: '#F5E642',
-    cost: foundationType === 'pier' ? '$3,000–$8,000' : '$5,000–$12,000',
+    cost: foundationType === 'pier' ? '$3,000–$8,000′ : '$5,000–$12,000',
     description: 'Visible structural movement underway. Professional repair recommended within 3–6 months before worsening.',
   };
   if (base <= 15) return {
     label: 'Significant Settlement',
     color: '#FF6B35',
-    cost: foundationType === 'pier' ? '$8,000–$15,000' : '$10,000–$20,000',
+    cost: foundationType === 'pier' ? '$8,000–$15,000′ : '$10,000–$20,000',
     description: 'Multiple serious symptoms. Foundation engineer evaluation needed this month. Repair costs increase with delay.',
   };
   return {
@@ -106,7 +106,7 @@ export default function DFWFoundationRepairFrisco() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {friscoStats.map(s => (
             <div key={s.label} style={{ backgroundColor: '#1E2D45', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
@@ -127,8 +127,8 @@ export default function DFWFoundationRepairFrisco() {
                   onClick={() => { setFoundationType(type); setSubmitted(false); }}
                   style={{
                     padding: '10px 20px',
-                    backgroundColor: foundationType === type ? '#F5E642' : '#0A1628',
-                    color: foundationType === type ? '#0A1628' : '#CBD5E1',
+                    backgroundColor: foundationType === type ? '#F5E642′ : '#0A1628',
+                    color: foundationType === type ? '#0A1628′ : '#CBD5E1',
                     border: '1px solid #334155',
                     borderRadius: 8,
                     cursor: 'pointer',
@@ -162,7 +162,7 @@ export default function DFWFoundationRepairFrisco() {
                   width: 22,
                   height: 22,
                   borderRadius: 4,
-                  backgroundColor: selected[s.id] ? '#FF6B35' : 'transparent',
+                  backgroundColor: selected[s.id] ? '#FF6B35′ : ’transparent',
                   border: `2px solid ${selected[s.id] ? '#FF6B35' : '#334155'}`,
                   display: 'flex',
                   alignItems: 'center',
@@ -181,8 +181,8 @@ export default function DFWFoundationRepairFrisco() {
           <button
             onClick={() => foundationType && setSubmitted(true)}
             style={{
-              backgroundColor: foundationType ? '#F5E642' : '#334155',
-              color: foundationType ? '#0A1628' : '#64748B',
+              backgroundColor: foundationType ? '#F5E642′ : '#334155',
+              color: foundationType ? '#0A1628′ : '#64748B',
               fontWeight: 700,
               fontSize: 16,
               padding: '14px 28px',

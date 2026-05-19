@@ -89,9 +89,9 @@ export default function DFWPropertyTaxProtestSimulator() {
         </button>
         {result && (
           <div style={{ background: '#1a3a5c', borderRadius: 12, padding: '1.5rem', color: '#fff', marginBottom: '1rem' }}>
-            <h3 style={{ margin: '0 0 1rem', color: '#F5E642' }}>📊 Protest Simulation Results</h3>
+            <h3 style={{ margin: '0 0 1rem', color: '#F5E642′ }}>📊 Protest Simulation Results</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-              {[['Success Likelihood', , result.likelihood >= 65 ? '#4ade80' : result.likelihood >= 45 ? '#F5E642' : '#f87171'], ['Likely Reduction', , '#acd'], ['Annual Tax Savings', , '#4ade80']].map(([label, val, color]) => (
+              {[['Success Likelihood', , result.likelihood >= 65 ? '#4ade80′ : result.likelihood >= 45 ? '#F5E642' : '#f87171'], [’Likely Reduction', , '#acd'], ['Annual Tax Savings', , '#4ade80']].map(([label, val, color]) => (
                 <div key={label} style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
                   <div style={{ fontSize: 11, opacity: 0.7, marginBottom: 4 }}>{label}</div>
                   <div style={{ fontSize: 20, fontWeight: 700, color }}>{val}</div>
@@ -99,7 +99,7 @@ export default function DFWPropertyTaxProtestSimulator() {
               ))}
             </div>
             <div style={{ background: 'rgba(245,230,66,0.12)', borderRadius: 8, padding: '0.75rem', fontSize: 13 }}>
-              📌 Appraised value is <strong style={{ color: '#F5E642' }}>{result.gapPct}%</strong> above your market estimate — {parseFloat(result.gapPct) >= 10 ? 'strong basis for protest' : parseFloat(result.gapPct) >= 5 ? 'reasonable basis for protest' : 'modest gap, build strong comp evidence'}
+              📌 Appraised value is <strong style={{ color: '#F5E642′ }}>{result.gapPct}%</strong> above your market estimate — {parseFloat(result.gapPct) >= 10 ? ’strong basis for protest' : parseFloat(result.gapPct) >= 5 ? 'reasonable basis for protest' : 'modest gap, build strong comp evidence'}
             </div>
           </div>
         )}

@@ -206,7 +206,7 @@ export default function PartnerProfileEditor() {
   if (isLoading) {
     return (
       <PartnerLayout>
-        <div className="flex items-center justify-center py-24">
+        <div className="flex items-center justify-center py-24″>
           <Loader2 className="w-8 h-8 animate-spin text-[#0A1628]" />
         </div>
       </PartnerLayout>
@@ -218,11 +218,11 @@ export default function PartnerProfileEditor() {
     return (
       <PartnerLayout>
         <div className="flex flex-col items-center justify-center py-24 text-center">
-          <Building2 className="w-12 h-12 text-gray-200 mb-4" />
-          <h2 className="text-xl font-heading text-gray-900 mb-2">No Partner Profile</h2>
-          <p className="text-gray-500 mb-4">Apply to join the ProLnk network first.</p>
+          <Building2 className="w-12 h-12 text-gray-200 mb-4″ />
+          <h2 className="text-xl font-heading text-gray-900 mb-2″>No Partner Profile</h2>
+          <p className="text-gray-500 mb-4″>Apply to join the ProLnk network first.</p>
           <Link href="/apply">
-            <Button className="text-white" style={{ backgroundColor: "#0A1628" }}>Apply Now</Button>
+            <Button className="text-white" style={{ backgroundColor: "#0A1628″ }}>Apply Now</Button>
           </Link>
         </div>
       </PartnerLayout>
@@ -230,9 +230,9 @@ export default function PartnerProfileEditor() {
   }
 
   const tierColors: Record<string, string> = {
-    bronze: "#CD7F32", silver: "#9CA3AF", gold: "#F59E0B", platinum: "#8B5CF6"
+    bronze: "#CD7F32″, silver: "#9CA3AF", gold: "#F59E0B", platinum: "#8B5CF6"
   };
-  const tierColor = tierColors[partner.tier ?? "bronze"] ?? "#CD7F32";
+  const tierColor = tierColors[partner.tier ?? "bronze"] ?? "#CD7F32″;
 
   const completionChecks = [
     { label: "Business name", done: !!partner.businessName },
@@ -254,25 +254,25 @@ export default function PartnerProfileEditor() {
     <PartnerLayout>
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-2xl font-heading text-gray-900">Edit Profile</h1>
+        <div className="mb-8″>
+          <h1 className="text-2xl font-heading text-gray-900″>Edit Profile</h1>
           <p className="text-gray-500 mt-1 text-sm">Update your business information visible to the ProLnk network</p>
         </div>
 
         {/* Profile Completion Progress */}
         {completionPct < 100 && (
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200 p-4 mb-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-semibold text-blue-900">Profile Completion</span>
-              <span className="text-sm font-bold text-blue-700">{completionPct}%</span>
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200 p-4 mb-6″>
+            <div className="flex items-center justify-between mb-2″>
+              <span className="text-sm font-semibold text-blue-900″>Profile Completion</span>
+              <span className="text-sm font-bold text-blue-700″>{completionPct}%</span>
             </div>
-            <div className="w-full bg-blue-100 rounded-full h-2.5 mb-3">
-              <div className="h-2.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-500"
+            <div className="w-full bg-blue-100 rounded-full h-2.5 mb-3″>
+              <div className="h-2.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-500″
                 style={{ width: `${completionPct}%` }} />
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5″>
               {incomplete.map(item => (
-                <span key={item.label} className="text-xs px-2 py-0.5 bg-white/70 rounded-md text-blue-700 border border-blue-200">
+                <span key={item.label} className="text-xs px-2 py-0.5 bg-white/70 rounded-md text-blue-700 border border-blue-200″>
                   {item.label}
                 </span>
               ))}
@@ -281,23 +281,23 @@ export default function PartnerProfileEditor() {
         )}
 
         {/* Profile summary card */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0"
-              style={{ backgroundColor: tierColor + "20", color: tierColor }}>
+        <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6″>
+          <div className="flex items-center gap-4″>
+            <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0″
+              style={{ backgroundColor: tierColor + "20″, color: tierColor }}>
               {partner.businessName?.charAt(0)?.toUpperCase() ?? "P"}
             </div>
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0″>
               <h2 className="font-heading text-gray-900 text-lg">{partner.businessName}</h2>
-              <p className="text-sm text-gray-500">{partner.businessType}  {partner.serviceArea}</p>
+              <p className="text-sm text-gray-500″>{partner.businessType}  {partner.serviceArea}</p>
             </div>
-            <div className="flex flex-col items-end gap-1">
+            <div className="flex flex-col items-end gap-1″>
               <span className="text-xs font-semibold px-2.5 py-1 rounded-full capitalize"
-                style={{ backgroundColor: tierColor + "15", color: tierColor }}>
+                style={{ backgroundColor: tierColor + "15″, color: tierColor }}>
                 {partner.tier ?? "bronze"} tier
               </span>
-              <div className="flex items-center gap-1 text-xs text-gray-400">
-                <Star className="w-3 h-3" />
+              <div className="flex items-center gap-1 text-xs text-gray-400″>
+                <Star className="w-3 h-3″ />
                 <span>{partner.referralCount ?? 0} referrals</span>
               </div>
             </div>
@@ -305,36 +305,36 @@ export default function PartnerProfileEditor() {
         </div>
 
         {/* Founding Network Status */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6">
-          <div className="flex items-center gap-2 mb-4">
+        <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6″>
+          <div className="flex items-center gap-2 mb-4″>
             <Network className="w-4 h-4 text-[#0A1628]" />
-            <h3 className="text-sm font-bold text-gray-900">Founding Network Status</h3>
+            <h3 className="text-sm font-bold text-gray-900″>Founding Network Status</h3>
           </div>
-          <div className="grid grid-cols-3 gap-3 mb-4">
+          <div className="grid grid-cols-3 gap-3 mb-4″>
             <div className="rounded-lg bg-gray-50 border border-gray-100 p-3 text-center">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Tier</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1″>Tier</p>
               <p className="text-base font-black capitalize" style={{ color: tierColor }}>{partner.tier ?? "bronze"}</p>
             </div>
             <div className="rounded-lg bg-gray-50 border border-gray-100 p-3 text-center">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Position</p>
-              <p className="text-base font-black text-gray-900">#{partner.id}</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1″>Position</p>
+              <p className="text-base font-black text-gray-900″>#{partner.id}</p>
             </div>
             <div className="rounded-lg bg-gray-50 border border-gray-100 p-3 text-center">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Trial Status</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1″>Trial Status</p>
               {(partner as any).trialEndsAt ? (
                 <div className="flex flex-col items-center">
-                  <div className="flex items-center gap-1">
-                    <CalendarClock className="w-3 h-3 text-amber-500" />
-                    <p className="text-xs font-semibold text-amber-600">Active</p>
+                  <div className="flex items-center gap-1″>
+                    <CalendarClock className="w-3 h-3 text-amber-500″ />
+                    <p className="text-xs font-semibold text-amber-600″>Active</p>
                   </div>
-                  <p className="text-[10px] text-gray-400">
+                  <p className="text-[10px] text-gray-400″>
                     until {new Date((partner as any).trialEndsAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                   </p>
                 </div>
               ) : (
-                <div className="flex items-center justify-center gap-1">
-                  <BadgeCheck className="w-3 h-3 text-green-500" />
-                  <p className="text-xs font-semibold text-green-600">Live</p>
+                <div className="flex items-center justify-center gap-1″>
+                  <BadgeCheck className="w-3 h-3 text-green-500″ />
+                  <p className="text-xs font-semibold text-green-600″>Live</p>
                 </div>
               )}
             </div>
@@ -342,10 +342,10 @@ export default function PartnerProfileEditor() {
 
           {/* Referral Code */}
           {(partner as any).referralCode && (
-            <div className="rounded-lg bg-[#0A1628]/4 border border-[#0A1628]/10 p-3">
-              <div className="flex items-center justify-between gap-3">
-                <div className="min-w-0">
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-0.5">Your Referral Code</p>
+            <div className="rounded-lg bg-[#0A1628]/4 border border-[#0A1628]/10 p-3″>
+              <div className="flex items-center justify-between gap-3″>
+                <div className="min-w-0″>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-0.5″>Your Referral Code</p>
                   <p className="text-sm font-mono font-bold text-[#0A1628] tracking-widest">
                     {(partner as any).referralCode}
                   </p>
@@ -356,12 +356,12 @@ export default function PartnerProfileEditor() {
                     navigator.clipboard.writeText((partner as any).referralCode);
                     toast.success("Referral code copied!");
                   }}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0A1628]/20 text-xs font-semibold text-[#0A1628] hover:bg-[#0A1628]/5 transition-colors flex-shrink-0"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0A1628]/20 text-xs font-semibold text-[#0A1628] hover:bg-[#0A1628]/5 transition-colors flex-shrink-0″
                 >
-                  <Copy className="w-3 h-3" /> Copy
+                  <Copy className="w-3 h-3″ /> Copy
                 </button>
               </div>
-              <p className="text-[10px] text-gray-400 mt-2">
+              <p className="text-[10px] text-gray-400 mt-2″>
                 Share this code when recruiting partners — you earn 12% of their $149/mo subscription.
               </p>
             </div>
@@ -369,11 +369,11 @@ export default function PartnerProfileEditor() {
         </div>
 
         {/* Edit form */}
-        <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100">
+        <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100″>
           {/* Business Name */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-              <Building2 className="w-4 h-4 text-gray-400" /> Business Name
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2″>
+              <Building2 className="w-4 h-4 text-gray-400″ /> Business Name
             </label>
             <Input
               value={form.businessName}
@@ -384,9 +384,9 @@ export default function PartnerProfileEditor() {
           </div>
 
           {/* Service Area */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-              <MapPin className="w-4 h-4 text-gray-400" /> Service Area
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2″>
+              <MapPin className="w-4 h-4 text-gray-400″ /> Service Area
             </label>
             <Input
               value={form.serviceArea}
@@ -394,7 +394,7 @@ export default function PartnerProfileEditor() {
               placeholder="e.g. Dallas, TX -- DFW Metroplex"
               className="text-sm"
             />
-            <p className="text-xs text-gray-400 mt-1.5">This is shown to other partners and homeowners when matching leads.</p>
+            <p className="text-xs text-gray-400 mt-1.5″>This is shown to other partners and homeowners when matching leads.</p>
             {serviceAreaMapUrl && (
               <div className="mt-3 rounded-xl overflow-hidden border border-gray-200 relative">
                 <img
@@ -407,7 +407,7 @@ export default function PartnerProfileEditor() {
                 {serviceAreaCity && (
                   <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm rounded-lg px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
                     <MapPin className="w-3 h-3 text-[#1B4FD8]" />
-                    <span className="text-xs font-semibold text-gray-700">You cover {serviceAreaCity}</span>
+                    <span className="text-xs font-semibold text-gray-700″>You cover {serviceAreaCity}</span>
                   </div>
                 )}
               </div>
@@ -415,23 +415,23 @@ export default function PartnerProfileEditor() {
           </div>
 
           {/* Phone */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-              <Phone className="w-4 h-4 text-gray-400" /> Contact Phone
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2″>
+              <Phone className="w-4 h-4 text-gray-400″ /> Contact Phone
             </label>
             <Input
               value={form.contactPhone}
               onChange={(e) => handleChange("contactPhone", e.target.value)}
-              placeholder="(214) 555-0100"
+              placeholder="(214) 555-0100″
               type="tel"
               className="text-sm"
             />
           </div>
 
           {/* Website */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-              <Globe className="w-4 h-4 text-gray-400" /> Website
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2″>
+              <Globe className="w-4 h-4 text-gray-400″ /> Website
             </label>
             <Input
               value={form.website}
@@ -443,9 +443,9 @@ export default function PartnerProfileEditor() {
           </div>
 
           {/* Google Review URL */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-              <Star className="w-4 h-4 text-yellow-400" /> Google Review Link
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2″>
+              <Star className="w-4 h-4 text-yellow-400″ /> Google Review Link
             </label>
             <Input
               value={form.googleReviewUrl}
@@ -454,13 +454,13 @@ export default function PartnerProfileEditor() {
               type="url"
               className="text-sm"
             />
-            <p className="text-xs text-gray-400 mt-1">Paste your Google Business review link. When homeowners leave 4-5 star ratings, they'll be prompted to also leave a Google review.</p>
+            <p className="text-xs text-gray-400 mt-1″>Paste your Google Business review link. When homeowners leave 4-5 star ratings, they'll be prompted to also leave a Google review.</p>
           </div>
 
           {/* Description */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-              <FileText className="w-4 h-4 text-gray-400" /> Business Description
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2″>
+              <FileText className="w-4 h-4 text-gray-400″ /> Business Description
             </label>
             <Textarea
               value={form.description}
@@ -473,34 +473,34 @@ export default function PartnerProfileEditor() {
           </div>
 
           {/* COI Upload */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1″>
               <Shield className="w-4 h-4 text-[#00B5B8]" /> Certificate of Insurance (COI)
             </label>
-            <p className="text-xs text-gray-400 mb-3">
+            <p className="text-xs text-gray-400 mb-3″>
               Upload your current COI to earn the Verified badge and unlock higher-tier leads.
               Accepted formats: PDF, JPG, PNG (max 10MB).
             </p>
 
             {/* Current COI status */}
             {(partner as any).coiUrl && (
-              <div className="flex items-center gap-2 mb-3 p-2.5 rounded-lg bg-gray-50 border border-gray-200">
-                <FileText className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-gray-700">COI on file</p>
+              <div className="flex items-center gap-2 mb-3 p-2.5 rounded-lg bg-gray-50 border border-gray-200″>
+                <FileText className="w-4 h-4 text-gray-400 flex-shrink-0″ />
+                <div className="flex-1 min-w-0″>
+                  <p className="text-xs font-medium text-gray-700″>COI on file</p>
                   {(partner as any).coiExpiresAt && (
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-400″>
                       Expires: {new Date((partner as any).coiExpiresAt).toLocaleDateString()}
                     </p>
                   )}
                 </div>
                 {(partner as any).coiVerifiedAt ? (
-                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#D1FAE5", color: "#059669" }}>
-                    <CheckCircle className="w-3 h-3" /> Verified
+                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#D1FAE5″, color: "#059669" }}>
+                    <CheckCircle className="w-3 h-3″ /> Verified
                   </span>
                 ) : (
-                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#FEF3C7", color: "#D97706" }}>
-                    <AlertTriangle className="w-3 h-3" /> Pending Review
+                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#FEF3C7″, color: "#D97706" }}>
+                    <AlertTriangle className="w-3 h-3″ /> Pending Review
                   </span>
                 )}
                 <a href={(partner as any).coiUrl} target="_blank" rel="noopener noreferrer">
@@ -510,7 +510,7 @@ export default function PartnerProfileEditor() {
             )}
 
             {/* Expiry date input */}
-            <div className="mb-2">
+            <div className="mb-2″>
               <label className="text-xs text-gray-500 mb-1 block">COI Expiration Date</label>
               <input
                 type="date"
@@ -539,29 +539,29 @@ export default function PartnerProfileEditor() {
               disabled={coiUploading}
               onClick={() => coiInputRef.current?.click()}
               className="gap-2 text-xs"
-              style={{ borderColor: "#00B5B8", color: "#00B5B8" }}
+              style={{ borderColor: "#00B5B8″, color: "#00B5B8" }}
             >
               {coiUploading ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
               ) : (
-                <Upload className="w-3.5 h-3.5" />
+                <Upload className="w-3.5 h-3.5″ />
               )}
               {coiUploading ? "Uploading..." : "Upload COI Document"}
             </Button>
           </div>
 
           {/* Profile Photo Upload */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
-              <Camera className="w-4 h-4 text-gray-400" /> Profile Photo
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1″>
+              <Camera className="w-4 h-4 text-gray-400″ /> Profile Photo
             </label>
-            <p className="text-xs text-gray-400 mb-3">Upload a professional headshot or business logo. Shown in the partner directory.</p>
-            <div className="flex items-center gap-3">
+            <p className="text-xs text-gray-400 mb-3″>Upload a professional headshot or business logo. Shown in the partner directory.</p>
+            <div className="flex items-center gap-3″>
               <div className="w-14 h-14 rounded-xl flex-shrink-0 overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
                 {(partner as any).avatarUrl || (partner as any).profilePhotoUrl ? (
                   <img src={(partner as any).avatarUrl ?? (partner as any).profilePhotoUrl} alt="Profile" className="w-full h-full object-cover" />
                 ) : (
-                  <Camera className="w-6 h-6 text-gray-300" />
+                  <Camera className="w-6 h-6 text-gray-300″ />
                 )}
               </div>
               <div>
@@ -570,55 +570,55 @@ export default function PartnerProfileEditor() {
                 <Button type="button" variant="outline" size="sm" disabled={photoUploading}
                   onClick={() => photoInputRef.current?.click()}
                   className="gap-2 text-xs">
-                  {photoUploading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Upload className="w-3.5 h-3.5" />}
+                  {photoUploading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Upload className="w-3.5 h-3.5″ />}
                   {photoUploading ? "Uploading..." : "Upload Photo"}
                 </Button>
-                <p className="text-xs text-gray-400 mt-1">JPG or PNG, max 5MB</p>
+                <p className="text-xs text-gray-400 mt-1″>JPG or PNG, max 5MB</p>
               </div>
             </div>
           </div>
 
           {/* License Number */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
-              <Hash className="w-4 h-4 text-gray-400" /> License Number
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1″>
+              <Hash className="w-4 h-4 text-gray-400″ /> License Number
             </label>
-            <p className="text-xs text-gray-400 mb-2">Your state contractor or trade license number. Required for Verified badge.</p>
+            <p className="text-xs text-gray-400 mb-2″>Your state contractor or trade license number. Required for Verified badge.</p>
             <Input
               value={form.licenseNumber}
               onChange={(e) => handleChange("licenseNumber", e.target.value)}
-              placeholder="e.g. TX-CONT-123456"
+              placeholder="e.g. TX-CONT-123456″
               className="text-sm"
             />
             {(partner as any).licenseVerifiedAt && (
-              <p className="text-xs text-green-600 mt-1.5 flex items-center gap-1">
-                <CheckCircle className="w-3 h-3" /> License verified
+              <p className="text-xs text-green-600 mt-1.5 flex items-center gap-1″>
+                <CheckCircle className="w-3 h-3″ /> License verified
               </p>
             )}
           </div>
 
           {/* License File Upload */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
-              <FileText className="w-4 h-4 text-gray-400" /> License Document
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1″>
+              <FileText className="w-4 h-4 text-gray-400″ /> License Document
             </label>
-            <p className="text-xs text-gray-400 mb-3">Upload a copy of your contractor license (PDF, JPG, PNG — max 10MB).</p>
+            <p className="text-xs text-gray-400 mb-3″>Upload a copy of your contractor license (PDF, JPG, PNG — max 10MB).</p>
             {(partner as any).licenseUrl && (
-              <div className="flex items-center gap-2 mb-3 p-2.5 rounded-lg bg-gray-50 border border-gray-200">
-                <FileText className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-gray-700">License on file</p>
+              <div className="flex items-center gap-2 mb-3 p-2.5 rounded-lg bg-gray-50 border border-gray-200″>
+                <FileText className="w-4 h-4 text-gray-400 flex-shrink-0″ />
+                <div className="flex-1 min-w-0″>
+                  <p className="text-xs font-medium text-gray-700″>License on file</p>
                   {(partner as any).licenseExpiresAt && (
-                    <p className="text-xs text-gray-400">Expires: {new Date((partner as any).licenseExpiresAt).toLocaleDateString()}</p>
+                    <p className="text-xs text-gray-400″>Expires: {new Date((partner as any).licenseExpiresAt).toLocaleDateString()}</p>
                   )}
                 </div>
                 {(partner as any).licenseVerifiedAt ? (
-                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#D1FAE5", color: "#059669" }}>
-                    <CheckCircle className="w-3 h-3" /> Verified
+                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#D1FAE5″, color: "#059669" }}>
+                    <CheckCircle className="w-3 h-3″ /> Verified
                   </span>
                 ) : (
-                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#FEF3C7", color: "#D97706" }}>
-                    <AlertTriangle className="w-3 h-3" /> Pending Review
+                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#FEF3C7″, color: "#D97706" }}>
+                    <AlertTriangle className="w-3 h-3″ /> Pending Review
                   </span>
                 )}
                 <a href={(partner as any).licenseUrl} target="_blank" rel="noopener noreferrer">
@@ -626,7 +626,7 @@ export default function PartnerProfileEditor() {
                 </a>
               </div>
             )}
-            <div className="mb-2">
+            <div className="mb-2″>
               <label className="text-xs text-gray-500 mb-1 block">License Expiration Date (optional)</label>
               <input type="date" value={licenseExpiry} onChange={e => setLicenseExpiry(e.target.value)}
                 min={new Date().toISOString().split("T")[0]}
@@ -636,40 +636,40 @@ export default function PartnerProfileEditor() {
               onChange={e => { const f = e.target.files?.[0]; if (f) handleLicenseUpload(f); }} />
             <Button type="button" variant="outline" size="sm" disabled={licenseUploading}
               onClick={() => licenseInputRef.current?.click()} className="gap-2 text-xs"
-              style={{ borderColor: "#1B4FD8", color: "#1B4FD8" }}>
-              {licenseUploading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Upload className="w-3.5 h-3.5" />}
+              style={{ borderColor: "#1B4FD8″, color: "#1B4FD8" }}>
+              {licenseUploading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Upload className="w-3.5 h-3.5″ />}
               {licenseUploading ? "Uploading..." : "Upload License Document"}
             </Button>
           </div>
 
           {/* Service ZIP Codes */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
-              <MapPin className="w-4 h-4 text-gray-400" /> Service ZIP Codes
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1″>
+              <MapPin className="w-4 h-4 text-gray-400″ /> Service ZIP Codes
             </label>
-            <p className="text-xs text-gray-400 mb-3">
+            <p className="text-xs text-gray-400 mb-3″>
               Add the specific ZIP codes you serve. Your tier allows up to <strong>{(partner as any).maxZipCodes ?? 5}</strong> ZIP codes.
             </p>
-            <div className="flex gap-2 mb-3">
+            <div className="flex gap-2 mb-3″>
               <Input
                 value={zipInput}
                 onChange={e => setZipInput(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); addZip(); } }}
-                placeholder="75001"
+                placeholder="75001″
                 maxLength={5}
-                className="text-sm w-32"
+                className="text-sm w-32″
               />
               <Button type="button" variant="outline" size="sm" onClick={addZip} className="gap-1.5 text-xs">
-                <Plus className="w-3.5 h-3.5" /> Add
+                <Plus className="w-3.5 h-3.5″ /> Add
               </Button>
             </div>
             {serviceZipCodes.length > 0 && (
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-1.5″>
                 {serviceZipCodes.map(zip => (
                   <span key={zip} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#EFF6FF] text-[#1B4FD8] text-xs font-semibold border border-[#BFDBFE]">
                     {zip}
                     <button type="button" onClick={() => removeZip(zip)} className="hover:text-red-500 transition-colors">
-                      <X className="w-3 h-3" />
+                      <X className="w-3 h-3″ />
                     </button>
                   </span>
                 ))}
@@ -678,47 +678,47 @@ export default function PartnerProfileEditor() {
           </div>
 
           {/* Hourly Rate / Job Size */}
-          <div className="p-5">
-            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
-              <DollarSign className="w-4 h-4 text-gray-400" /> Rate & Job Size Preference
+          <div className="p-5″>
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1″>
+              <DollarSign className="w-4 h-4 text-gray-400″ /> Rate & Job Size Preference
             </label>
-            <p className="text-xs text-gray-400 mb-3">Help homeowners understand your pricing range and ideal job sizes.</p>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="flex-1">
+            <p className="text-xs text-gray-400 mb-3″>Help homeowners understand your pricing range and ideal job sizes.</p>
+            <div className="flex items-center gap-3 mb-3″>
+              <div className="flex-1″>
                 <label className="text-xs text-gray-500 mb-1 block">Min rate ($/hr)</label>
                 <Input
                   value={hourlyRateMin}
                   onChange={e => { setHourlyRateMin(e.target.value); setDirty(true); }}
-                  placeholder="75"
+                  placeholder="75″
                   type="number"
-                  min="0"
+                  min="0″
                   className="text-sm"
                 />
               </div>
-              <span className="text-gray-400 text-sm mt-5">–</span>
-              <div className="flex-1">
+              <span className="text-gray-400 text-sm mt-5″>–</span>
+              <div className="flex-1″>
                 <label className="text-xs text-gray-500 mb-1 block">Max rate ($/hr)</label>
                 <Input
                   value={hourlyRateMax}
                   onChange={e => { setHourlyRateMax(e.target.value); setDirty(true); }}
-                  placeholder="150"
+                  placeholder="150″
                   type="number"
-                  min="0"
+                  min="0″
                   className="text-sm"
                 />
               </div>
             </div>
             <div>
               <label className="text-xs text-gray-500 mb-2 block">Preferred job sizes</label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2″>
                 {JOB_SIZE_OPTIONS.map(size => (
                   <button key={size} type="button" onClick={() => toggleJobSize(size)}
                     className={`text-xs px-3 py-1.5 rounded-lg border font-medium transition-all ${
                       jobSizePref.includes(size)
                         ? "bg-[#0A1628] text-white border-[#0A1628]"
-                        : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                        : "bg-white text-gray-600 border-gray-200 hover:border-gray-400″
                     }`}>
-                    <Tag className="w-3 h-3 inline mr-1" />
+                    <Tag className="w-3 h-3 inline mr-1″ />
                     {size}
                   </button>
                 ))}
@@ -728,19 +728,19 @@ export default function PartnerProfileEditor() {
 
           {/* Save button */}
           <div className="p-5 flex items-center justify-between">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-400″>
               {dirty ? "You have unsaved changes" : "All changes saved"}
             </p>
             <Button
               onClick={handleSave}
               disabled={!dirty || updateProfile.isPending}
-              className="text-white flex items-center gap-2"
-              style={{ backgroundColor: "#0A1628" }}
+              className="text-white flex items-center gap-2″
+              style={{ backgroundColor: "#0A1628″ }}
             >
               {updateProfile.isPending ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
               ) : (
-                <Save className="w-4 h-4" />
+                <Save className="w-4 h-4″ />
               )}
               Save Changes
             </Button>
@@ -748,16 +748,16 @@ export default function PartnerProfileEditor() {
         </div>
 
         {/* Quick links */}
-        <div className="mt-6 grid grid-cols-2 gap-4">
+        <div className="mt-6 grid grid-cols-2 gap-4″>
           <Link href="/dashboard/referral">
             <div className="bg-white rounded-xl border border-gray-200 p-4 cursor-pointer hover:border-[#0A1628]/30 transition-colors group">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3″>
                 <div className="w-9 h-9 rounded-lg bg-[#F5E642]/10 flex items-center justify-center">
                   <User className="w-4 h-4 text-[#0A1628]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900">Referral Hub</p>
-                  <p className="text-xs text-gray-400">Share your link</p>
+                <div className="flex-1 min-w-0″>
+                  <p className="text-sm font-semibold text-gray-900″>Referral Hub</p>
+                  <p className="text-xs text-gray-400″>Share your link</p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-[#0A1628] transition-colors" />
               </div>
@@ -765,13 +765,13 @@ export default function PartnerProfileEditor() {
           </Link>
           <Link href="/dashboard/reviews">
             <div className="bg-white rounded-xl border border-gray-200 p-4 cursor-pointer hover:border-[#0A1628]/30 transition-colors group">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3″>
                 <div className="w-9 h-9 rounded-lg bg-yellow-50 flex items-center justify-center">
-                  <Star className="w-4 h-4 text-yellow-500" />
+                  <Star className="w-4 h-4 text-yellow-500″ />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900">My Reviews</p>
-                  <p className="text-xs text-gray-400">See what partners say</p>
+                <div className="flex-1 min-w-0″>
+                  <p className="text-sm font-semibold text-gray-900″>My Reviews</p>
+                  <p className="text-xs text-gray-400″>See what partners say</p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-yellow-500 transition-colors" />
               </div>
@@ -779,13 +779,13 @@ export default function PartnerProfileEditor() {
           </Link>
           <Link href="/job/new">
             <div className="bg-white rounded-xl border border-gray-200 p-4 cursor-pointer hover:border-[#0A1628]/30 transition-colors group">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3″>
                 <div className="w-9 h-9 rounded-lg bg-purple-50 flex items-center justify-center">
-                  <Camera className="w-4 h-4 text-purple-500" />
+                  <Camera className="w-4 h-4 text-purple-500″ />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900">Log a Job</p>
-                  <p className="text-xs text-gray-400">Upload photos for AI</p>
+                <div className="flex-1 min-w-0″>
+                  <p className="text-sm font-semibold text-gray-900″>Log a Job</p>
+                  <p className="text-xs text-gray-400″>Upload photos for AI</p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-purple-500 transition-colors" />
               </div>
@@ -793,13 +793,13 @@ export default function PartnerProfileEditor() {
           </Link>
           <Link href="/dashboard/tier">
             <div className="bg-white rounded-xl border border-gray-200 p-4 cursor-pointer hover:border-[#0A1628]/30 transition-colors group">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3″>
                 <div className="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center">
-                  <Award className="w-4 h-4 text-amber-500" />
+                  <Award className="w-4 h-4 text-amber-500″ />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900">Tier Progress</p>
-                  <p className="text-xs text-gray-400">Track your ranking</p>
+                <div className="flex-1 min-w-0″>
+                  <p className="text-sm font-semibold text-gray-900″>Tier Progress</p>
+                  <p className="text-xs text-gray-400″>Track your ranking</p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-amber-500 transition-colors" />
               </div>
@@ -810,15 +810,15 @@ export default function PartnerProfileEditor() {
         {/* Photo Guide banner */}
         <Link href="/photo-guide">
           <div className="mt-4 bg-gradient-to-r from-[#0A1628] to-[#1B4FD8] rounded-xl p-4 cursor-pointer hover:opacity-95 transition-opacity group">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-3″>
+              <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0″>
                 <Camera className="w-4 h-4 text-[#F5E642]" />
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0″>
                 <p className="text-sm font-semibold text-white">Photo Guide</p>
-                <p className="text-xs text-blue-300">Learn how to document homes for maximum AI match quality and origination rights</p>
+                <p className="text-xs text-blue-300″>Learn how to document homes for maximum AI match quality and origination rights</p>
               </div>
-              <ArrowRight className="w-4 h-4 text-blue-300 group-hover:text-[#F5E642] transition-colors flex-shrink-0" />
+              <ArrowRight className="w-4 h-4 text-blue-300 group-hover:text-[#F5E642] transition-colors flex-shrink-0″ />
             </div>
           </div>
         </Link>

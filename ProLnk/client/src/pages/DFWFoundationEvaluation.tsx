@@ -16,10 +16,10 @@ const companyChecks = [
 ];
 
 const normalVsActive = [
-  { label: 'Normal', sign: 'Hairline cracks (<1/16") in drywall near doors and windows — seasonal shrink/expand' },
+  { label: 'Normal', sign: 'Hairline cracks (<1/16″) in drywall near doors and windows — seasonal shrink/expand' },
   { label: 'Normal', sign: 'Slight door stick in summer (high humidity) that resolves in fall' },
   { label: 'Normal', sign: 'Diagonal crack at window corner (stair-step pattern, fine width)' },
-  { label: 'Active', sign: 'Crack wider than 1/4" or crack that has grown since last observation' },
+  { label: 'Active', sign: 'Crack wider than 1/4″ or crack that has grown since last observation' },
   { label: 'Active', sign: 'Doors or windows that will no longer close or latch regardless of season' },
   { label: 'Active', sign: 'Crack runs from foundation to roofline — story-height fracture' },
   { label: 'Active', sign: 'Separation between slab and wall (gap visible at floor level)' },
@@ -54,21 +54,21 @@ export default function DFWFoundationEvaluation() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           <div style={{ background: '#1e293b', borderRadius: 10, padding: '1rem' }}>
             <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.75rem', fontSize: '0.9rem' }}>🏛️ Structural Engineer Checks</div>
-            {engineerChecks.map((c, i) => <div key={i} style={{ marginBottom: '0.6rem' }}><div style={{ fontWeight: 600, fontSize: '0.8rem', color: '#e2e8f0' }}>{c.item}</div><div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{c.detail}</div></div>)}
+            {engineerChecks.map((c, i) => <div key={i} style={{ marginBottom: '0.6rem' }}><div style={{ fontWeight: 600, fontSize: '0.8rem', color: '#e2e8f0′ }}>{c.item}</div><div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{c.detail}</div></div>)}
           </div>
           <div style={{ background: '#1e293b', borderRadius: 10, padding: '1rem' }}>
             <div style={{ fontWeight: 700, color: '#94a3b8', marginBottom: '0.75rem', fontSize: '0.9rem' }}>🏢 Foundation Company "Inspection"</div>
-            {companyChecks.map((c, i) => <div key={i} style={{ marginBottom: '0.6rem' }}><div style={{ fontWeight: 600, fontSize: '0.8rem', color: '#e2e8f0' }}>{c.item}</div><div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{c.detail}</div></div>)}
-            <div style={{ marginTop: '0.5rem', padding: '0.6rem', background: '#0A1628', borderRadius: 6, fontSize: '0.75rem', color: '#94a3b8' }}>Get PE report first. Then get 3 company bids if repair is warranted.</div>
+            {companyChecks.map((c, i) => <div key={i} style={{ marginBottom: '0.6rem' }}><div style={{ fontWeight: 600, fontSize: '0.8rem', color: '#e2e8f0′ }}>{c.item}</div><div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{c.detail}</div></div>)}
+            <div style={{ marginTop: '0.5rem', padding: '0.6rem', background: '#0A1628', borderRadius: 6, fontSize: '0.75rem', color: '#94a3b8′ }}>Get PE report first. Then get 3 company bids if repair is warranted.</div>
           </div>
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📊 Normal Settlement vs Active Movement</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📊 Normal Settlement vs Active Movement</h2>
           <div style={{ display: 'grid', gap: '0.5rem' }}>
             {normalVsActive.map((item, i) => (
               <div key={i} style={{ background: '#1e293b', borderRadius: 8, padding: '0.75rem 1rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ padding: '0.2rem 0.5rem', borderRadius: 4, fontSize: '0.75rem', fontWeight: 700, background: item.label === 'Normal' ? '#16a34a20' : '#ef444420', color: item.label === 'Normal' ? '#4ade80' : '#f87171', minWidth: 55, textAlign: 'center' }}>{item.label}</div>
+                <div style={{ padding: '0.2rem 0.5rem', borderRadius: 4, fontSize: '0.75rem', fontWeight: 700, background: item.label === 'Normal' ? '#16a34a20′ : '#ef444420', color: item.label === ’Normal' ? '#4ade80′ : '#f87171', minWidth: 55, textAlign: ’center' }}>{item.label}</div>
                 <div style={{ color: '#cbd5e1', fontSize: '0.85rem', lineHeight: 1.4 }}>{item.sign}</div>
               </div>
             ))}
@@ -76,7 +76,7 @@ export default function DFWFoundationEvaluation() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 What Type of Evaluation Do You Need?</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 What Type of Evaluation Do You Need?</h2>
           <div style={{ marginBottom: '1rem' }}>
             {[['cracks', '🪟 Cracks at door/window corners or in drywall'], ['doors', '🚪 Doors or windows that stick or won\’t close properly'], ['slopes', '📐 Noticeable floor slope (marble rolls across room)'], ['gaps', '🔓 Gap between baseboard and floor or wall and ceiling']].map(([key, label]) => (
               <label key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.5rem', cursor: 'pointer' }}>
@@ -87,7 +87,7 @@ export default function DFWFoundationEvaluation() {
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', fontSize: '0.95rem' }}>Get My Evaluation Plan →</button>
           {showResult && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}><strong>Urgency:</strong> {urgency}</div>
               <div style={{ marginBottom: '0.5rem' }}><strong>Recommended:</strong> {evalType}</div>
               <div><strong>DFW PE evaluation cost:</strong> $400–$800 — worth every dollar before committing to repair</div>

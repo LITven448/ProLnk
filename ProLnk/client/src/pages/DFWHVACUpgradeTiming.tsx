@@ -94,9 +94,9 @@ export default function DFWHVACUpgradeTiming() {
               key={s.id}
               onClick={() => setSelected(s.id)}
               style={{
-                background: selected === s.id ? '#0f2040' : '#0f2040',
+                background: selected === s.id ? '#0f2040′ : '#0f2040',
                 border: '2px solid',
-                borderColor: selected === s.id ? '#F5E642' : '#1e3a5f',
+                borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f',
                 borderRadius: 12,
                 padding: '16px',
                 cursor: 'pointer',
@@ -140,7 +140,7 @@ export default function DFWHVACUpgradeTiming() {
             <div style={{ color: '#94a3b8', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 10 }}>DFW TIPS</div>
             {s.tips.map((t, i) => (
               <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 14 }}>
-                <span style={{ color: '#F5E642' }}>→</span>
+                <span style={{ color: '#F5E642′ }}>→</span>
                 <span>{t}</span>
               </div>
             ))}

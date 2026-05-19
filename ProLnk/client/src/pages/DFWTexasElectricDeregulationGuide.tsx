@@ -37,9 +37,9 @@ export default function DFWTexasElectricDeregulationGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '12px' }}>⚡ How DFW's Market Works</h2>
           <p style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '14px' }}>
             In DFW, you choose your Retail Electric Provider (REP) — there are 100+ competing for your business. 
-            The physical wires and poles are owned by <strong style={{ color: '#F5E642' }}>Oncor</strong>, your Transmission & Distribution Utility (TDU). 
+            The physical wires and poles are owned by <strong style={{ color: '#F5E642′ }}>Oncor</strong>, your Transmission & Distribution Utility (TDU). 
             You cannot choose Oncor — they are regulated and their delivery charges appear on every bill regardless of your REP. 
-            Shop plans at <strong style={{ color: '#F5E642' }}>PowerToChoose.org</strong> (the official state comparison site).
+            Shop plans at <strong style={{ color: '#F5E642′ }}>PowerToChoose.org</strong> (the official state comparison site).
           </p>
         </div>
 
@@ -62,8 +62,8 @@ export default function DFWTexasElectricDeregulationGuide() {
                 key={u.id}
                 onClick={() => setSelectedUsage(u.id)}
                 style={{
-                  backgroundColor: selectedUsage === u.id ? '#F5E642' : '#0A1628',
-                  color: selectedUsage === u.id ? '#0A1628' : '#fff',
+                  backgroundColor: selectedUsage === u.id ? '#F5E642′ : '#0A1628',
+                  color: selectedUsage === u.id ? '#0A1628′ : '#fff',
                   border: '1px solid #F5E642',
                   borderRadius: '8px',
                   padding: '12px 16px',
@@ -82,7 +82,7 @@ export default function DFWTexasElectricDeregulationGuide() {
               <p style={{ color: '#F5E642', fontWeight: '700', marginBottom: '6px' }}>
                 ✅ Recommended: {planTypes.find(p => p.id === rec.rec)?.label}
               </p>
-              <p style={{ color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6' }}>{rec.note}</p>
+              <p style={{ color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6′ }}>{rec.note}</p>
             </div>
           )}
         </div>
@@ -93,7 +93,7 @@ export default function DFWTexasElectricDeregulationGuide() {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 style={{ color: '#F5E642', fontSize: '16px' }}>⚠️ What Is NOT Deregulated (Oncor TDU Charges)</h2>
-            <span style={{ color: '#F5E642' }}>{showTDU ? '▲' : '▼'}</span>
+            <span style={{ color: '#F5E642′ }}>{showTDU ? '▲' : '▼'}</span>
           </div>
           {showTDU && (
             <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.7', marginTop: '12px' }}>

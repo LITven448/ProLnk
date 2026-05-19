@@ -4,7 +4,7 @@ const COMPARISONS = [
   { label: 'Who Shows Up', google: 'Paid Google Ads at top, then map listings — anyone who pays or has reviews', prolnk: 'Only pre-screened, background-checked, licensed contractors who applied and passed vetting' },
   { label: 'Vetting', google: 'Google Local Services Ads have some screening, standard results have none', prolnk: 'Criminal background check, license verification, and insurance confirmation — mandatory' },
   { label: 'Quote Process', google: 'Call each contractor individually — no structured comparison', prolnk: 'One job post gets 3 competing quotes delivered directly to you' },
-  { label: 'Spam Risk', google: 'High — your number goes to whoever you call, no gatekeeping', prolnk: 'Low — ProLnk controls which contractors see your job, limited to 3' },
+  { label: 'Spam Risk', google: 'High — your number goes to whoever you call, no gatekeeping', prolnk: 'Low — ProLnk controls which contractors see your job, limited to 3′ },
   { label: 'Review Integrity', google: 'Reviews can be bought, gamed, or disputed away — not always reliable', prolnk: 'Performance scores tied to real completed jobs on the platform' },
   { label: 'Emergency Search', google: 'Must browse and call — slow for time-sensitive situations', prolnk: 'Urgent queue contacts available vetted pros within minutes' },
 ];
@@ -29,7 +29,7 @@ export default function ProLnkVsGoogle() {
 
   const rec = SCENARIOS[selectedIdx].rec;
   const recLabel = rec === 'prolnk' ? '⚡ Use ProLnk' : '✅ Either works';
-  const recColor = rec === 'prolnk' ? '#F5E642' : '#93C5FD';
+  const recColor = rec === 'prolnk' ? '#F5E642′ : '#93C5FD';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', color: '#0A1628', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
@@ -37,7 +37,7 @@ export default function ProLnkVsGoogle() {
         <div style={{ textAlign: 'center', marginBottom: 44 }}>
           <div style={{ fontSize: 38, marginBottom: 12 }}>🔎 ⚡</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 10 }}>ProLnk vs Google Search</h1>
-          <p style={{ fontSize: 16, color: '#6B7280' }}>Finding a contractor on Google vs using a vetted marketplace</p>
+          <p style={{ fontSize: 16, color: '#6B7280′ }}>Finding a contractor on Google vs using a vetted marketplace</p>
         </div>
 
         <div style={{ backgroundColor: '#fff', borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 40 }}>
@@ -48,7 +48,7 @@ export default function ProLnkVsGoogle() {
           </div>
           {COMPARISONS.map((c, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '160px 1fr 1fr', padding: '16px 20px', borderBottom: '1px solid #F3F4F6', backgroundColor: i % 2 === 0 ? '#fff' : '#FAFAFA' }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{c.label}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#374151′ }}>{c.label}</div>
               <div style={{ fontSize: 12, color: '#9CA3AF', paddingRight: 12 }}>{c.google}</div>
               <div style={{ fontSize: 12, color: '#059669', paddingRight: 12 }}>{c.prolnk}</div>
             </div>
@@ -62,7 +62,7 @@ export default function ProLnkVsGoogle() {
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '12px 16px', backgroundColor: '#F9FAFB', borderRadius: 8 }}>
                 <span style={{ fontSize: 22 }}>{s.emoji}</span>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#0A1628' }}>{s.step}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: '#0A1628′ }}>{s.step}</div>
                   <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>{s.desc}</div>
                 </div>
               </div>
@@ -76,8 +76,8 @@ export default function ProLnkVsGoogle() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {SCENARIOS.map((s, i) => (
               <button key={i} onClick={() => setSelectedIdx(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedIdx === i ? '#F5E642' : '#E5E7EB',
-                  backgroundColor: selectedIdx === i ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedIdx === i ? '#F5E642′ : '#E5E7EB',
+                  backgroundColor: selectedIdx === i ? '#F5E642′ : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 12, cursor: ’pointer' }}>
                 {s.label}
               </button>
             ))}

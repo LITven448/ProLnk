@@ -41,7 +41,7 @@ export default function DFWHVACMaintenanceCost() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>💰</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -50,7 +50,7 @@ export default function DFWHVACMaintenanceCost() {
         <p style={{ color: '#9AAFC4', marginBottom: 16 }}>
           What DFW homeowners actually spend on HVAC maintenance each year — not national averages, but real DFW data. Know your budget before the season hits.
         </p>
-        <div style={{ background: '#1A2B45', borderRadius: 8, padding: '10px 16px', marginBottom: 24, fontSize: 14, color: '#F5E642' }}>
+        <div style={{ background: '#1A2B45', borderRadius: 8, padding: '10px 16px', marginBottom: 24, fontSize: 14, color: '#F5E642′ }}>
           📊 DFW average: $600-1,400/year per household — vs $350-600 national average. Higher runtime = higher maintenance cost.
         </div>
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>What's Included in DFW HVAC Maintenance</h2>
@@ -63,7 +63,7 @@ export default function DFWHVACMaintenanceCost() {
                   <div style={{ color: '#9AAFC4', fontSize: 13 }}>{item.note}</div>
                 </div>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>
-                  ${item.low === 0 ? '0' : item.low}–${item.high}
+                  ${item.low === 0 ? '0′ : item.low}–${item.high}
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function DFWHVACMaintenanceCost() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>Estimate Your Annual DFW Cost</h2>
         <div style={{ background: '#1A2B45', borderRadius: 8, padding: 24, marginBottom: 24 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>Your DFW home profile</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>Your DFW home profile</div>
             <select value={profile} onChange={e => setProfile(e.target.value)}
               style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B' }}>
               <option value="">Select home profile</option>
@@ -80,7 +80,7 @@ export default function DFWHVACMaintenanceCost() {
             </select>
           </label>
           <label style={{ display: 'block', marginBottom: 20 }}>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>System age</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>System age</div>
             <select value={age} onChange={e => setAge(e.target.value)}
               style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B' }}>
               <option value="">Select system age</option>
@@ -95,12 +95,12 @@ export default function DFWHVACMaintenanceCost() {
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 20 }}>
               <div style={{ textAlign: 'center', marginBottom: 16 }}>
                 <div style={{ color: '#9AAFC4', fontSize: 14 }}>Estimated Annual DFW Maintenance Cost</div>
-                <div style={{ color: '#F5E642', fontSize: 36, fontWeight: 700, margin: '8px 0' }}>
+                <div style={{ color: '#F5E642', fontSize: 36, fontWeight: 700, margin: '8px 0′ }}>
                   ${result.low.toLocaleString()} – ${result.high.toLocaleString()}
                 </div>
                 <div style={{ color: '#9AAFC4', fontSize: 14 }}>per year</div>
               </div>
-              <div style={{ background: '#1A2B45', borderRadius: 8, padding: 12, fontSize: 14, color: '#E8EDF5' }}>
+              <div style={{ background: '#1A2B45', borderRadius: 8, padding: 12, fontSize: 14, color: '#E8EDF5′ }}>
                 💡 {result.note}
               </div>
             </div>

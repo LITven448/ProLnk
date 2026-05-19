@@ -52,12 +52,12 @@ export default function DFWHomeSharingGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>✈️</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>DFW Home Sharing While You Travel</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>DFW Home Sharing While You Travel</h1>
           <p style={{ margin: 0, opacity: 0.8, lineHeight: 1.6 }}>DFW events create massive rental demand year-round. Rent your home while you're away — the State Fair alone can yield 3x your normal nightly rate.</p>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📅 Premium DFW Events</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📅 Premium DFW Events</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {EVENTS.map(e => (
               <div key={e.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: 'rgba(255,255,255,0.05)', borderRadius: 8 }}>
@@ -72,7 +72,7 @@ export default function DFWHomeSharingGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>💵 Income Estimator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>💵 Income Estimator</h2>
           <div style={{ display: 'grid', gap: 14, marginBottom: 20 }}>
             {[
               { label: 'DFW Suburb', val: suburb, set: setSuburb, opts: SUBURBS },
@@ -88,7 +88,7 @@ export default function DFWHomeSharingGuide() {
             ))}
             <div>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>Available Nights/Month</label>
-              <input type="number" min={1} max={31} value={nights} onChange={e => setNights(e.target.value)} placeholder="e.g. 10" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1.5px solid rgba(255,255,255,0.2)', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" min={1} max={31} value={nights} onChange={e => setNights(e.target.value)} placeholder="e.g. 10″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1.5px solid rgba(255,255,255,0.2)', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 16, cursor: 'pointer', width: '100%' }}>Estimate My Income</button>
@@ -102,7 +102,7 @@ export default function DFWHomeSharingGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🛡️ Insurance During Home Sharing</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🛡️ Insurance During Home Sharing</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, margin: 0, opacity: 0.9 }}>
             {INSURANCE_NOTES.map((n, i) => <li key={i}>{n}</li>)}
           </ul>

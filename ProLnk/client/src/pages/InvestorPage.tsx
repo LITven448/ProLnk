@@ -13,8 +13,8 @@ const HERO_STATS = [
   { value: "$120B", label: "SAM", sub: "Referral-Addressable" },
   { value: "85%", label: "Net Margin", sub: "At scale" },
   { value: "14.4×", label: "LTV:CAC", sub: "Unit economics" },
-  { value: "500", label: "Break-even", sub: "Active pros" },
-  { value: "2,125", label: "Founding Spots", sub: "Charter + Founding" },
+  { value: "500″, label: "Break-even", sub: "Active pros" },
+  { value: "2,125″, label: "Founding Spots", sub: "Charter + Founding" },
 ];
 
 const REVENUE_STREAMS = [
@@ -28,7 +28,7 @@ const REVENUE_STREAMS = [
   },
   {
     icon: Users,
-    color: "#3b82f6",
+    color: "#3b82f6″,
     title: "Stream 2: Network Override",
     range: "1–4% per level (4 levels)",
     desc: "Partners earn override on every job completed by pros in their recruited network — 4 levels deep.",
@@ -36,7 +36,7 @@ const REVENUE_STREAMS = [
   },
   {
     icon: TrendingUp,
-    color: "#a855f7",
+    color: "#a855f7″,
     title: "Stream 3: Subscription Override",
     range: "10% recurring",
     desc: "Every pro you refer pays $149/mo. You earn 10% of their subscription — permanently, as long as they're active.",
@@ -48,11 +48,11 @@ const REVENUE_STREAMS = [
     title: "Stream 4: Homeowner Override",
     range: "$25–$100 per qualified lead",
     desc: "Partners who source homeowners earn a negotiated per-lead fee on every qualified homeowner they bring to the platform.",
-    tiers: ["Typical range: $25–$100", "Based on lead quality", "Negotiated per partner", "Ongoing per lead"],
+    tiers: ["Typical range: $25–$100″, "Based on lead quality", "Negotiated per partner", "Ongoing per lead"],
   },
   {
     icon: Lock,
-    color: "#06b6d4",
+    color: "#06b6d4″,
     title: "Stream 5: Home Origination",
     range: "Permanent revenue share",
     desc: "Help a homeowner add their property to the Home Health Vault. Earn a permanent share of all platform fees tied to that home — forever.",
@@ -69,8 +69,8 @@ const UNIT_ECONOMICS = [
 
 const MOAT = [
   { icon: Brain, color: "#22c55e", title: "Home Health Vault", desc: "50M+ homes targeted. Structural + health data as a permanent, compounding platform asset. Locked to the property, not the user." },
-  { icon: Lock, color: "#3b82f6", title: "Network Lock-In", desc: "5-stream income makes switching prohibitive. A partner earning commissions across 4 levels of a network has no rational path to leave." },
-  { icon: Zap, color: "#a855f7", title: "AI Feedback Loop", desc: "Match quality compounds as the model trains on closed jobs. After 500K photos the detection model becomes an uncopyable asset." },
+  { icon: Lock, color: "#3b82f6″, title: "Network Lock-In", desc: "5-stream income makes switching prohibitive. A partner earning commissions across 4 levels of a network has no rational path to leave." },
+  { icon: Zap, color: "#a855f7″, title: "AI Feedback Loop", desc: "Match quality compounds as the model trains on closed jobs. After 500K photos the detection model becomes an uncopyable asset." },
   { icon: Shield, color: "#f59e0b", title: "Patent Pending", desc: "Network income system and AI lead matching algorithm are protected. Provisional filed; continuation strategy in place." },
 ];
 
@@ -114,15 +114,15 @@ function StreamCard({ stream, open, onToggle }: { stream: typeof REVENUE_STREAMS
             <Icon size={18} color={stream.color} />
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "#f1f5f9" }}>{stream.title}</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#f1f5f9″ }}>{stream.title}</div>
             <div style={{ fontSize: 12, color: stream.color, marginTop: 2 }}>{stream.range}</div>
           </div>
         </div>
-        {open ? <ChevronUp size={16} color="#475569" /> : <ChevronDown size={16} color="#475569" />}
+        {open ? <ChevronUp size={16} color="#475569″ /> : <ChevronDown size={16} color="#475569" />}
       </button>
       {open && (
         <div style={{ padding: "0 22px 20px", borderTop: "1px solid #1e293b" }}>
-          <p style={{ fontSize: 13, color: "#94a3b8", lineHeight: 1.7, margin: "16px 0 12px" }}>{stream.desc}</p>
+          <p style={{ fontSize: 13, color: "#94a3b8″, lineHeight: 1.7, margin: "16px 0 12px" }}>{stream.desc}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
             {stream.tiers.map(t => (
               <span key={t} style={{ fontSize: 11, background: `${stream.color}12`, border: `1px solid ${stream.color}30`, color: stream.color, borderRadius: 6, padding: "3px 10px", fontWeight: 600 }}>{t}</span>
@@ -157,19 +157,19 @@ export default function InvestorPage() {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div style={{ minHeight: "100vh", background: "#080b12", color: "#e2e8f0", fontFamily: "'Inter', sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: "#080b12″, color: "#e2e8f0", fontFamily: "'Inter', sans-serif" }}>
 
         {/* Nav */}
-        <header style={{ borderBottom: "1px solid #1e293b", padding: "16px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "#080b12", zIndex: 50 }}>
+        <header style={{ borderBottom: "1px solid #1e293b", padding: "16px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "#080b12″, zIndex: 50 }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontWeight: 800, fontSize: 18, color: "#22c55e" }}>ProLnk</span>
-            <span style={{ color: "#334155", fontSize: 12 }}>× TrustyPro</span>
+            <span style={{ color: "#334155″, fontSize: 12 }}>× TrustyPro</span>
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <span style={{ fontSize: 10, color: "#334155", letterSpacing: "0.12em", textTransform: "uppercase" }}>Confidential — Not for Distribution</span>
+            <span style={{ fontSize: 10, color: "#334155″, letterSpacing: "0.12em", textTransform: "uppercase" }}>Confidential — Not for Distribution</span>
             <a
               href="mailto:andrew@lit-ventures.com?subject=ProLnk%20Investor%20Deck%20Request"
-              style={{ fontSize: 12, color: "#22c55e", textDecoration: "none", fontWeight: 600, border: "1px solid #22c55e30", borderRadius: 6, padding: "6px 12px" }}
+              style={{ fontSize: 12, color: "#22c55e", textDecoration: "none", fontWeight: 600, border: "1px solid #22c55e30″, borderRadius: 6, padding: "6px 12px" }}
             >
               Request Deck
             </a>
@@ -186,7 +186,7 @@ export default function InvestorPage() {
             ProLnk is building the<br />
             <span style={{ color: "#22c55e" }}>network economy for home services</span>
           </h1>
-          <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.75, maxWidth: 660, margin: "0 auto 48px" }}>
+          <p style={{ fontSize: 18, color: "#94a3b8″, lineHeight: 1.75, maxWidth: 660, margin: "0 auto 48px" }}>
             A two-sided marketplace with a permanent data moat — AI-powered lead matching,
             a 5-stream income model that locks in service professionals, and the Home Health Vault
             targeting 50M+ US homes.
@@ -194,13 +194,13 @@ export default function InvestorPage() {
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <button
               onClick={() => setShowDeckForm(true)}
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#22c55e", color: "#000", fontWeight: 800, fontSize: 15, padding: "15px 34px", borderRadius: 10, border: "none", cursor: "pointer" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#22c55e", color: "#000″, fontWeight: 800, fontSize: 15, padding: "15px 34px", borderRadius: 10, border: "none", cursor: "pointer" }}
             >
               Request Investor Deck <ArrowRight size={16} />
             </button>
             <a
               href="mailto:andrew@lit-ventures.com"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "transparent", color: "#94a3b8", fontWeight: 600, fontSize: 15, padding: "15px 34px", borderRadius: 10, border: "1px solid #1e293b", textDecoration: "none" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "transparent", color: "#94a3b8″, fontWeight: 600, fontSize: 15, padding: "15px 34px", borderRadius: 10, border: "1px solid #1e293b", textDecoration: "none" }}
             >
               <Mail size={16} /> Contact Founder
             </a>
@@ -210,7 +210,7 @@ export default function InvestorPage() {
           {showDeckForm && (
             <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100, padding: 24 }}>
               <div style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 16, padding: "40px", maxWidth: 440, width: "100%" }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: "#f1f5f9", marginBottom: 6 }}>Request Investor Deck</h3>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: "#f1f5f9″, marginBottom: 6 }}>Request Investor Deck</h3>
                 <p style={{ fontSize: 13, color: "#64748b", marginBottom: 24 }}>We'll follow up within 24 hours with the full deck and data room access.</p>
                 <form onSubmit={handleDeckRequest} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
@@ -219,22 +219,22 @@ export default function InvestorPage() {
                     { key: "email", label: "Email Address", placeholder: "jane@firm.com" },
                   ].map(field => (
                     <div key={field.key}>
-                      <label style={{ display: "block", fontSize: 11, fontWeight: 700, color: "#475569", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>{field.label}</label>
+                      <label style={{ display: "block", fontSize: 11, fontWeight: 700, color: "#475569″, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>{field.label}</label>
                       <input
                         required
                         type={field.key === "email" ? "email" : "text"}
                         value={deckForm[field.key as keyof typeof deckForm]}
                         onChange={e => setDeckForm(f => ({ ...f, [field.key]: e.target.value }))}
                         placeholder={field.placeholder}
-                        style={{ width: "100%", background: "#0d1117", border: "1px solid #1e293b", borderRadius: 8, padding: "10px 14px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none" }}
+                        style={{ width: "100%", background: "#0d1117″, border: "1px solid #1e293b", borderRadius: 8, padding: "10px 14px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none" }}
                       />
                     </div>
                   ))}
                   <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
-                    <button type="submit" style={{ flex: 1, background: "#22c55e", color: "#000", border: "none", padding: "12px", borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: "pointer" }}>
+                    <button type="submit" style={{ flex: 1, background: "#22c55e", color: "#000″, border: "none", padding: "12px", borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: "pointer" }}>
                       Send Request
                     </button>
-                    <button type="button" onClick={() => setShowDeckForm(false)} style={{ flex: 1, background: "#1e293b", color: "#94a3b8", border: "none", padding: "12px", borderRadius: 8, fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
+                    <button type="button" onClick={() => setShowDeckForm(false)} style={{ flex: 1, background: "#1e293b", color: "#94a3b8″, border: "none", padding: "12px", borderRadius: 8, fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
                       Cancel
                     </button>
                   </div>
@@ -246,13 +246,13 @@ export default function InvestorPage() {
 
         {/* Market Metrics */}
         <section style={{ maxWidth: 1100, margin: "0 auto 90px", padding: "0 24px" }}>
-          <p style={{ textAlign: "center", fontSize: 11, fontWeight: 700, color: "#334155", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 32 }}>Market & Business Metrics</p>
+          <p style={{ textAlign: "center", fontSize: 11, fontWeight: 700, color: "#334155″, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 32 }}>Market & Business Metrics</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
             {HERO_STATS.map(s => (
-              <div key={s.label} style={{ background: "#0d1117", border: "1px solid #1e293b", borderRadius: 12, padding: "24px 16px", textAlign: "center" }}>
+              <div key={s.label} style={{ background: "#0d1117″, border: "1px solid #1e293b", borderRadius: 12, padding: "24px 16px", textAlign: "center" }}>
                 <div style={{ fontSize: 30, fontWeight: 900, color: "#22c55e", letterSpacing: "-0.02em", marginBottom: 6 }}>{s.value}</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#f1f5f9", marginBottom: 3 }}>{s.label}</div>
-                <div style={{ fontSize: 11, color: "#334155" }}>{s.sub}</div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: "#f1f5f9″, marginBottom: 3 }}>{s.label}</div>
+                <div style={{ fontSize: 11, color: "#334155″ }}>{s.sub}</div>
               </div>
             ))}
           </div>
@@ -260,13 +260,13 @@ export default function InvestorPage() {
 
         {/* Market Size Breakdown */}
         <section style={{ maxWidth: 860, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 8, textAlign: "center" }}>Market Opportunity</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 8, textAlign: "center" }}>Market Opportunity</h2>
           <p style={{ textAlign: "center", fontSize: 14, color: "#64748b", marginBottom: 40 }}>Three concentric markets, one platform</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
             {[
               { label: "TAM", value: "$600B", desc: "Total US home services market — plumbing, HVAC, electrical, roofing, landscaping, and 90+ other trades.", color: "#22c55e" },
-              { label: "SAM", value: "$120B", desc: "Referral-addressable segment — pros who use or would use a lead network platform. ~20% of total market.", color: "#3b82f6" },
-              { label: "SOM (Yr 3)", value: "$12M", desc: "Serviceable obtainable market — 3,000 founding partners across 5–8 US metros at $149/mo + match fees.", color: "#a855f7" },
+              { label: "SAM", value: "$120B", desc: "Referral-addressable segment — pros who use or would use a lead network platform. ~20% of total market.", color: "#3b82f6″ },
+              { label: "SOM (Yr 3)", value: "$12M", desc: "Serviceable obtainable market — 3,000 founding partners across 5–8 US metros at $149/mo + match fees.", color: "#a855f7″ },
             ].map(m => (
               <div key={m.label} style={{ background: "#0f172a", border: `1px solid ${m.color}30`, borderRadius: 12, padding: "28px 24px" }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: m.color, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>{m.label}</div>
@@ -279,7 +279,7 @@ export default function InvestorPage() {
 
         {/* Business Model — 5 Streams */}
         <section style={{ maxWidth: 860, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 8, textAlign: "center" }}>5 Revenue Streams Per Partner</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 8, textAlign: "center" }}>5 Revenue Streams Per Partner</h2>
           <p style={{ textAlign: "center", fontSize: 14, color: "#64748b", marginBottom: 40 }}>Every partner earns from 5 independent income channels — creating strong retention economics</p>
           {REVENUE_STREAMS.map((stream, i) => (
             <StreamCard
@@ -290,7 +290,7 @@ export default function InvestorPage() {
             />
           ))}
           <div style={{ marginTop: 20, background: "rgba(34,197,94,0.06)", border: "1px solid rgba(34,197,94,0.2)", borderRadius: 10, padding: "16px 20px" }}>
-            <p style={{ fontSize: 13, color: "#4ade80", margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 13, color: "#4ade80″, margin: 0, lineHeight: 1.6 }}>
               <strong>Why this matters:</strong> A founding partner earning across all 5 streams — especially the network cascade and origination rights — creates income so entangled with the platform that churn becomes economically irrational. This is structural retention, not preference-based.
             </p>
           </div>
@@ -298,23 +298,23 @@ export default function InvestorPage() {
 
         {/* Unit Economics */}
         <section style={{ maxWidth: 860, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 40, textAlign: "center" }}>Unit Economics at Scale</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 40, textAlign: "center" }}>Unit Economics at Scale</h2>
           <div style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 14, overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1.5fr", background: "#080b12", borderBottom: "1px solid #1e293b" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1.5fr", background: "#080b12″, borderBottom: "1px solid #1e293b" }}>
               {["Milestone", "Est. MRR", "Net Margin", "Note"].map(h => (
-                <div key={h} style={{ padding: "12px 20px", fontSize: 11, fontWeight: 700, color: "#334155", letterSpacing: "0.1em", textTransform: "uppercase" }}>{h}</div>
+                <div key={h} style={{ padding: "12px 20px", fontSize: 11, fontWeight: 700, color: "#334155″, letterSpacing: "0.1em", textTransform: "uppercase" }}>{h}</div>
               ))}
             </div>
             {UNIT_ECONOMICS.map((row, i) => (
-              <div key={row.milestone} style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1.5fr", borderBottom: i < UNIT_ECONOMICS.length - 1 ? "1px solid #1e293b" : "none", background: i % 2 === 0 ? "transparent" : "#0d1117" }}>
-                <div style={{ padding: "16px 20px", fontSize: 14, fontWeight: 700, color: "#f1f5f9" }}>{row.milestone}</div>
+              <div key={row.milestone} style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1.5fr", borderBottom: i < UNIT_ECONOMICS.length - 1 ? "1px solid #1e293b" : "none", background: i % 2 === 0 ? "transparent" : "#0d1117″ }}>
+                <div style={{ padding: "16px 20px", fontSize: 14, fontWeight: 700, color: "#f1f5f9″ }}>{row.milestone}</div>
                 <div style={{ padding: "16px 20px", fontSize: 14, fontWeight: 800, color: "#22c55e" }}>{row.mrr}</div>
                 <div style={{ padding: "16px 20px", fontSize: 14, color: "#64748b" }}>{row.margin}</div>
-                <div style={{ padding: "16px 20px", fontSize: 13, color: "#94a3b8" }}>{row.note}</div>
+                <div style={{ padding: "16px 20px", fontSize: 13, color: "#94a3b8″ }}>{row.note}</div>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: "center", fontSize: 12, color: "#334155", marginTop: 14 }}>
+          <p style={{ textAlign: "center", fontSize: 12, color: "#334155″, marginTop: 14 }}>
             Based on $149/mo × active pro count. 85% net margin target at 10K pros.
             Break-even at 500 pros = $74.5K MRR.
           </p>
@@ -322,7 +322,7 @@ export default function InvestorPage() {
 
         {/* Traction */}
         <section style={{ maxWidth: 780, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 32, textAlign: "center" }}>Traction</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 32, textAlign: "center" }}>Traction</h2>
           <div style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 14, padding: "32px 36px" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", borderRadius: 20, padding: "4px 14px", fontSize: 11, color: "#22c55e", fontWeight: 700, letterSpacing: "0.08em", marginBottom: 24 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", display: "inline-block" }} />
@@ -330,7 +330,7 @@ export default function InvestorPage() {
             </div>
             <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
               {TRACTION.map(item => (
-                <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 16, fontSize: 14, color: "#cbd5e1", lineHeight: 1.6 }}>
+                <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 16, fontSize: 14, color: "#cbd5e1″, lineHeight: 1.6 }}>
                   <CheckCircle size={16} color="#22c55e" style={{ flexShrink: 0, marginTop: 2 }} />
                   {item}
                 </li>
@@ -341,7 +341,7 @@ export default function InvestorPage() {
 
         {/* Competitive Moat */}
         <section style={{ maxWidth: 860, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 8, textAlign: "center" }}>Competitive Moat</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 8, textAlign: "center" }}>Competitive Moat</h2>
           <p style={{ textAlign: "center", fontSize: 14, color: "#64748b", marginBottom: 40 }}>Four structural advantages that compound over time</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {MOAT.map(m => {
@@ -351,7 +351,7 @@ export default function InvestorPage() {
                   <div style={{ width: 40, height: 40, borderRadius: 10, background: `${m.color}18`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                     <Icon size={20} color={m.color} />
                   </div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#f1f5f9", marginBottom: 8 }}>{m.title}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#f1f5f9″, marginBottom: 8 }}>{m.title}</div>
                   <div style={{ fontSize: 13, color: "#64748b", lineHeight: 1.65 }}>{m.desc}</div>
                 </div>
               );
@@ -361,14 +361,14 @@ export default function InvestorPage() {
 
         {/* Team */}
         <section style={{ maxWidth: 780, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 32, textAlign: "center" }}>Team</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 32, textAlign: "center" }}>Team</h2>
           {TEAM.map(t => (
             <div key={t.name} style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 14, padding: "32px 36px", display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap" }}>
-              <div style={{ width: 76, height: 76, borderRadius: "50%", background: t.gradient, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, fontWeight: 900, color: "#000" }}>{t.initials}</div>
+              <div style={{ width: 76, height: 76, borderRadius: "50%", background: t.gradient, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, fontWeight: 900, color: "#000″ }}>{t.initials}</div>
               <div style={{ flex: 1, minWidth: 260 }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#f1f5f9", marginBottom: 4 }}>{t.name}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: "#f1f5f9″, marginBottom: 4 }}>{t.name}</div>
                 <div style={{ fontSize: 13, color: "#22c55e", fontWeight: 700, marginBottom: 16 }}>{t.title}</div>
-                <p style={{ fontSize: 14, color: "#94a3b8", lineHeight: 1.75, margin: "0 0 16px" }}>{t.bio}</p>
+                <p style={{ fontSize: 14, color: "#94a3b8″, lineHeight: 1.75, margin: "0 0 16px" }}>{t.bio}</p>
                 <a href={`mailto:${t.email}`} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none" }}>
                   <Mail size={13} /> {t.email}
                 </a>
@@ -376,11 +376,11 @@ export default function InvestorPage() {
             </div>
           ))}
           <div style={{ marginTop: 20, background: "#0f172a", border: "1px solid #1e293b", borderRadius: 12, padding: "20px 24px" }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#475569", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>Advisory Board (Forming)</div>
+            <div style={{ fontSize: 12, fontWeight: 700, color: "#475569″, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>Advisory Board (Forming)</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 10 }}>
               {["Operations: Former VP Ops, ServiceMaster", "Technology: ML Engineer, mapping systems", "Finance: PE-backed home services operator", "Legal: IP attorney, platform businesses"].map(a => (
                 <div key={a} style={{ fontSize: 12, color: "#64748b", display: "flex", alignItems: "flex-start", gap: 8 }}>
-                  <span style={{ color: "#334155", marginTop: 1 }}>→</span> {a}
+                  <span style={{ color: "#334155″, marginTop: 1 }}>→</span> {a}
                 </div>
               ))}
             </div>
@@ -392,7 +392,7 @@ export default function InvestorPage() {
           <div style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 16, padding: "40px 44px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
               <BarChart3 size={20} color="#22c55e" />
-              <h2 style={{ fontSize: 20, fontWeight: 800, color: "#f1f5f9", margin: 0 }}>Detailed Financials</h2>
+              <h2 style={{ fontSize: 20, fontWeight: 800, color: "#f1f5f9″, margin: 0 }}>Detailed Financials</h2>
             </div>
             <p style={{ fontSize: 13, color: "#64748b", marginBottom: 24, lineHeight: 1.65 }}>
               Full projections, cap table, use-of-funds breakdown, and SAFE terms available under NDA.
@@ -405,7 +405,7 @@ export default function InvestorPage() {
                 onChange={e => { setNdaChecked(e.target.checked); if (!e.target.checked) setShowFinancials(false); }}
                 style={{ marginTop: 3, accentColor: "#22c55e", width: 16, height: 16, flexShrink: 0 }}
               />
-              <span style={{ fontSize: 13, color: "#94a3b8", lineHeight: 1.65 }}>
+              <span style={{ fontSize: 13, color: "#94a3b8″, lineHeight: 1.65 }}>
                 I confirm I am a prospective investor or authorized party. I agree to keep all financial details,
                 projections, and business information strictly confidential and not share or distribute this
                 information without written consent from ProLnk / LIT Ventures.
@@ -414,7 +414,7 @@ export default function InvestorPage() {
             {ndaChecked && !showFinancials && (
               <button
                 onClick={() => setShowFinancials(true)}
-                style={{ background: "#22c55e", color: "#000", border: "none", padding: "12px 28px", borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: "pointer" }}
+                style={{ background: "#22c55e", color: "#000″, border: "none", padding: "12px 28px", borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: "pointer" }}
               >
                 View Financial Summary
               </button>
@@ -428,14 +428,14 @@ export default function InvestorPage() {
                     { label: "Break-even", value: "500 Pros", note: "~$74.5K MRR" },
                     { label: "Target Round", value: "Seed: $3M", note: "12 months post-launch" },
                   ].map(item => (
-                    <div key={item.label} style={{ background: "#080b12", border: "1px solid #1e293b", borderRadius: 10, padding: "18px" }}>
-                      <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>{item.label}</div>
+                    <div key={item.label} style={{ background: "#080b12″, border: "1px solid #1e293b", borderRadius: 10, padding: "18px" }}>
+                      <div style={{ fontSize: 11, color: "#334155″, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>{item.label}</div>
                       <div style={{ fontSize: 22, fontWeight: 800, color: "#22c55e", marginBottom: 4 }}>{item.value}</div>
                       <div style={{ fontSize: 12, color: "#64748b" }}>{item.note}</div>
                     </div>
                   ))}
                 </div>
-                <p style={{ fontSize: 12, color: "#334155", lineHeight: 1.65, borderTop: "1px solid #1e293b", paddingTop: 16, margin: 0 }}>
+                <p style={{ fontSize: 12, color: "#334155″, lineHeight: 1.65, borderTop: "1px solid #1e293b", paddingTop: 16, margin: 0 }}>
                   Full financial model, detailed projections, and investor deck available on request.
                   Contact <a href="mailto:andrew@lit-ventures.com" style={{ color: "#22c55e" }}>andrew@lit-ventures.com</a>
                 </p>
@@ -446,37 +446,37 @@ export default function InvestorPage() {
 
         {/* Cap Table Basics */}
         <section style={{ maxWidth: 700, margin: "0 auto 90px", padding: "0 24px" }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9", marginBottom: 8, textAlign: "center" }}>Cap Table Basics</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "#f1f5f9″, marginBottom: 8, textAlign: "center" }}>Cap Table Basics</h2>
           <p style={{ textAlign: "center", fontSize: 14, color: "#64748b", marginBottom: 32 }}>Preliminary — subject to change at close</p>
           <div style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: 14, overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr", background: "#080b12", borderBottom: "1px solid #1e293b" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr", background: "#080b12″, borderBottom: "1px solid #1e293b" }}>
               {["Party", "Stake", "Notes"].map(h => (
-                <div key={h} style={{ padding: "12px 20px", fontSize: 11, fontWeight: 700, color: "#334155", letterSpacing: "0.1em", textTransform: "uppercase" }}>{h}</div>
+                <div key={h} style={{ padding: "12px 20px", fontSize: 11, fontWeight: 700, color: "#334155″, letterSpacing: "0.1em", textTransform: "uppercase" }}>{h}</div>
               ))}
             </div>
             {CAP_TABLE_PLACEHOLDERS.map((row, i) => (
-              <div key={row.party} style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr", borderBottom: i < CAP_TABLE_PLACEHOLDERS.length - 1 ? "1px solid #1e293b" : "none", background: i % 2 === 0 ? "transparent" : "#0d1117" }}>
-                <div style={{ padding: "15px 20px", fontSize: 14, color: "#f1f5f9" }}>{row.party}</div>
+              <div key={row.party} style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr", borderBottom: i < CAP_TABLE_PLACEHOLDERS.length - 1 ? "1px solid #1e293b" : "none", background: i % 2 === 0 ? "transparent" : "#0d1117″ }}>
+                <div style={{ padding: "15px 20px", fontSize: 14, color: "#f1f5f9″ }}>{row.party}</div>
                 <div style={{ padding: "15px 20px", fontSize: 14, fontWeight: 700, color: "#22c55e" }}>{row.stake}</div>
                 <div style={{ padding: "15px 20px", fontSize: 13, color: "#64748b" }}>{row.note}</div>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: "center", fontSize: 12, color: "#334155", marginTop: 14 }}>
+          <p style={{ textAlign: "center", fontSize: 12, color: "#334155″, marginTop: 14 }}>
             Full cap table, vesting schedules, and SAFE terms available in the data room under NDA.
           </p>
         </section>
 
         {/* CTA */}
         <section style={{ textAlign: "center", padding: "60px 24px 110px", maxWidth: 640, margin: "0 auto" }}>
-          <h2 style={{ fontSize: 26, fontWeight: 800, color: "#f1f5f9", marginBottom: 14 }}>Ready to Learn More?</h2>
+          <h2 style={{ fontSize: 26, fontWeight: 800, color: "#f1f5f9″, marginBottom: 14 }}>Ready to Learn More?</h2>
           <p style={{ fontSize: 15, color: "#64748b", marginBottom: 36, lineHeight: 1.75 }}>
             We're building the network infrastructure for the $600B home services market.
             Founding spots are limited. Full deck and data room available on request.
           </p>
           <button
             onClick={() => setShowDeckForm(true)}
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#22c55e", color: "#000", fontWeight: 800, fontSize: 16, padding: "16px 40px", borderRadius: 10, border: "none", cursor: "pointer" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#22c55e", color: "#000″, fontWeight: 800, fontSize: 16, padding: "16px 40px", borderRadius: 10, border: "none", cursor: "pointer" }}
           >
             Request Investor Deck <ArrowRight size={16} />
           </button>

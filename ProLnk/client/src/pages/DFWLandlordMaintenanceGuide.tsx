@@ -41,7 +41,7 @@ export default function DFWLandlordMaintenanceGuide() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '1px solid #1E3A5F' }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 16 }}>📜 Texas Habitability Standards</h2>
-          <p style={{ color: '#B0C0D0', lineHeight: 1.7 }}>Under Texas Property Code §92.056, landlords must make repairs that materially affect health or safety within a reasonable time — typically <strong style={{ color: '#F5E642' }}>7 days</strong> after written notice. HVAC failures during summer heat (above 99°F) require response within <strong style={{ color: '#F5E642' }}>3 days</strong> in most Dallas-area jurisdictions. Failure to comply allows tenants to repair-and-deduct or terminate lease.</p>
+          <p style={{ color: '#B0C0D0', lineHeight: 1.7 }}>Under Texas Property Code §92.056, landlords must make repairs that materially affect health or safety within a reasonable time — typically <strong style={{ color: '#F5E642′ }}>7 days</strong> after written notice. HVAC failures during summer heat (above 99°F) require response within <strong style={{ color: '#F5E642' }}>3 days</strong> in most Dallas-area jurisdictions. Failure to comply allows tenants to repair-and-deduct or terminate lease.</p>
         </div>
 
         <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '1px solid #1E3A5F' }}>
@@ -49,7 +49,7 @@ export default function DFWLandlordMaintenanceGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642' }}>
+                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: '#F5E642', fontSize: 13 }}>Item</th>
                   <th style={{ textAlign: 'center', padding: '10px 12px', color: '#F5E642', fontSize: 13 }}>Responsible Party</th>
                   <th style={{ textAlign: 'center', padding: '10px 12px', color: '#F5E642', fontSize: 13 }}>Response Time</th>
@@ -57,10 +57,10 @@ export default function DFWLandlordMaintenanceGuide() {
               </thead>
               <tbody>
                 {obligations.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#0D1F38' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#0D1F38′ }}>
                     <td style={{ padding: '10px 12px', color: '#E8EDF5', fontSize: 14 }}>{row.item}</td>
                     <td style={{ padding: '10px 12px', textAlign: 'center' }}>
-                      <span style={{ background: row.landlordResponsible ? '#1A4A2E' : '#3A1A1A', color: row.landlordResponsible ? '#4ADE80' : '#F87171', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 600 }}>
+                      <span style={{ background: row.landlordResponsible ? '#1A4A2E' : '#3A1A1A', color: row.landlordResponsible ? '#4ADE80′ : '#F87171', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 600 }}>
                         {row.landlordResponsible ? 'Landlord' : 'Tenant'}
                       </span>
                     </td>
@@ -72,7 +72,7 @@ export default function DFWLandlordMaintenanceGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🧮 Annual Maintenance Budget Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
             <div>

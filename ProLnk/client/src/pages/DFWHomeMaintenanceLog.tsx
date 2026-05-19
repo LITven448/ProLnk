@@ -42,16 +42,16 @@ export default function DFWHomeMaintenanceLog() {
           {CATEGORIES.map(cat => (
             <button key={cat} onClick={() => setActiveCategory(cat)}
               style={{ padding: '8px 18px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                borderColor: activeCategory === cat ? '#F5E642' : '#1E3A5F',
-                background: activeCategory === cat ? '#F5E642' : 'transparent',
-                color: activeCategory === cat ? '#0A1628' : '#8CA4C0' }}>
+                borderColor: activeCategory === cat ? '#F5E642′ : '#1E3A5F',
+                background: activeCategory === cat ? '#F5E642′ : ’transparent',
+                color: activeCategory === cat ? '#0A1628′ : '#8CA4C0' }}>
               {cat}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#0F2037', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>➕ Log {activeCategory} Work</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>➕ Log {activeCategory} Work</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['date','Date','date'],['task','Task / Description','text'],['contractor','Contractor Name','text'],['cost','Cost','text']].map(([key, label, type]) => (
               <div key={key}>
@@ -75,14 +75,14 @@ export default function DFWHomeMaintenanceLog() {
 
         <div style={{ background: '#0F2037', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📋 {activeCategory} History ({filtered.length} entries)</h2>
-          {filtered.length === 0 && <p style={{ color: '#8CA4C0' }}>No entries yet. Log your first {activeCategory} service above.</p>}
+          {filtered.length === 0 && <p style={{ color: '#8CA4C0′ }}>No entries yet. Log your first {activeCategory} service above.</p>}
           {filtered.map((e, i) => (
             <div key={i} style={{ borderBottom: '1px solid #1E3A5F', paddingBottom: 14, marginBottom: 14 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ fontWeight: 700 }}>{e.task}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{e.cost}</span>
               </div>
-              <div style={{ fontSize: 13, color: '#8CA4C0' }}>{e.date} · {e.contractor}</div>
+              <div style={{ fontSize: 13, color: '#8CA4C0′ }}>{e.date} · {e.contractor}</div>
               {e.notes && <div style={{ fontSize: 13, color: '#A8C4E0', marginTop: 4 }}>📝 {e.notes}</div>}
             </div>
           ))}
@@ -94,7 +94,7 @@ export default function DFWHomeMaintenanceLog() {
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: i < UPCOMING.length - 1 ? '1px solid #1E3A5F' : 'none' }}>
               <div>
                 <span style={{ fontWeight: 600 }}>{u.task}</span>
-                <span style={{ marginLeft: 10, fontSize: 12, background: '#1E3A5F', padding: '2px 8px', borderRadius: 10, color: '#8CA4C0' }}>{u.category}</span>
+                <span style={{ marginLeft: 10, fontSize: 12, background: '#1E3A5F', padding: '2px 8px', borderRadius: 10, color: '#8CA4C0′ }}>{u.category}</span>
               </div>
               <span style={{ color: '#F5E642', fontSize: 14, fontWeight: 700 }}>{u.due}</span>
             </div>

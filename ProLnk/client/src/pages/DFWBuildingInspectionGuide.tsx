@@ -94,7 +94,7 @@ export default function DFWBuildingInspectionGuide() {
               <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 17, marginBottom: 4 }}>Recommended: {result.type}</div>
               <div style={{ color: '#374151', fontSize: 15, marginBottom: 16 }}>Estimated Cost: <strong>{result.cost}</strong></div>
               <div style={{ color: '#374151', fontWeight: 700, marginBottom: 8 }}>⚠️ Red Flags to Watch For:</div>
-              {result.redFlags.map((flag, i) => <div key={i} style={{ color: '#DC2626', fontSize: 14, padding: '3px 0' }}>• {flag}</div>)}
+              {result.redFlags.map((flag, i) => <div key={i} style={{ color: '#DC2626', fontSize: 14, padding: '3px 0′ }}>• {flag}</div>)}
             </div>
           )}
         </div>

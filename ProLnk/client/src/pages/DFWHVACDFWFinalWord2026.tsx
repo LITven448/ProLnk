@@ -6,7 +6,7 @@ const situations = [
   { value: 'newbuyer', label: '🏡 I just bought or am buying a DFW home' },
   { value: 'selling', label: '📋 I\’m planning to sell in 1–3 years' },
   { value: 'comfortable', label: '✅ My system works but I want to stay ahead' },
-  { value: 'worried', label: '😰 I\’m worried about summer 2026' },
+  { value: 'worried', label: '😰 I\’m worried about summer 2026′ },
 ];
 
 const finalWords: Record<string, { headline: string; body: string; cta: string }> = {
@@ -57,7 +57,7 @@ export default function DFWHVACDFWFinalWord2026() {
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8, letterSpacing: 1 }}>PROLNK · DFW HVAC GUIDE · 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>The DFW HVAC Final Word 🏁</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6, marginBottom: 32 }}>
-          You've read the guides. You know DFW HVAC is different. You know what benchmarks matter, what trouble looks like, and how to build a legacy worth something. Here's what ties it all together — the definitive 2026 word for DFW homeowners, based on where you stand.
+          You've read the guides. You know DFW HVAC is different. You know what benchmarks matter, what trouble looks like, and how to build a legacy worth something. Here’s what ties it all together — the definitive 2026 word for DFW homeowners, based on where you stand.
         </p>
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 24 }}>

@@ -12,9 +12,9 @@ const services = [
 
 const tagColors: Record<string, { color: string; bg: string }> = {
   Diagnostic: { color: '#60A5FA', bg: '#0a1a2e' },
-  Minor: { color: '#22C55E', bg: '#052e16' },
-  Major: { color: '#FF8C00', bg: '#1a0a00' },
-  Urgent: { color: '#FF4444', bg: '#1a0000' },
+  Minor: { color: '#22C55E', bg: '#052e16′ },
+  Major: { color: '#FF8C00', bg: '#1a0a00′ },
+  Urgent: { color: '#FF4444', bg: '#1a0000′ },
 };
 
 export default function DFWPlumbingCostMatrix2026() {
@@ -35,7 +35,7 @@ export default function DFWPlumbingCostMatrix2026() {
           {[['💧', '300+ ppm', 'DFW water hardness (very hard)'],['🏚️', 'Slab-built', '85%+ DFW homes on slabs'],['⚠️', '2× avg', 'DFW slab leak rate vs national']].map(([icon, val, label]) => (
             <div key={label as string} style={{ background: '#0F2040', borderRadius: 10, padding: 14, textAlign: 'center' }}>
               <div style={{ fontSize: 20 }}>{icon}</div>
-              <div style={{ fontWeight: 800, fontSize: 16, color: '#F5E642' }}>{val}</div>
+              <div style={{ fontWeight: 800, fontSize: 16, color: '#F5E642′ }}>{val}</div>
               <div style={{ fontSize: 10, color: '#94A3B8', marginTop: 4 }}>{label}</div>
             </div>
           ))}
@@ -46,7 +46,7 @@ export default function DFWPlumbingCostMatrix2026() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {tags.map(t => (
               <button key={t} onClick={() => setFilter(t)}
-                style={{ padding: '7px 14px', borderRadius: 8, border: `2px solid ${filter === t ? '#F5E642' : '#1E3A5F'}`, background: filter === t ? '#F5E642' : 'transparent', color: filter === t ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
+                style={{ padding: '7px 14px', borderRadius: 8, border: `2px solid ${filter === t ? '#F5E642' : '#1E3A5F'}`, background: filter === t ? '#F5E642′ : ’transparent', color: filter === t ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: 12, fontWeight: 600 }}>
                 {t}
               </button>
             ))}

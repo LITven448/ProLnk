@@ -59,7 +59,7 @@ export default function DFWHomeEnergyMythsGuide() {
                 borderRadius: '12px',
                 padding: '20px',
                 cursor: 'pointer',
-                border: activeMyth === idx ? '2px solid #F5E642' : '2px solid transparent',
+                border: activeMyth === idx ? '2px solid #F5E642′ : '2px solid transparent',
                 transition: 'all 0.2s',
               }}
             >
@@ -71,8 +71,8 @@ export default function DFWHomeEnergyMythsGuide() {
                   <p style={{ color: '#F5E642', fontWeight: '700', fontSize: '14px' }}>{item.reality}</p>
                   {activeMyth === idx && (
                     <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px' }}>
-                      <p style={{ fontSize: '13px', color: '#cbd5e1', lineHeight: '1.7' }}>
-                        🏙️ <strong style={{ color: '#F5E642' }}>DFW Context:</strong> {item.dfwExplanation}
+                      <p style={{ fontSize: '13px', color: '#cbd5e1', lineHeight: '1.7′ }}>
+                        🏙️ <strong style={{ color: '#F5E642′ }}>DFW Context:</strong> {item.dfwExplanation}
                       </p>
                     </div>
                   )}

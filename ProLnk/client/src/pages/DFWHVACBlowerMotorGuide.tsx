@@ -45,8 +45,8 @@ export default function DFWHVACBlowerMotorGuide() {
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔎 Motor vs Capacitor: Quick Test</h2>
           <div style={{ color: '#C8D8E8', lineHeight: 1.8 }}>
-            <p><strong style={{ color: '#F5E642' }}>Capacitor failed:</strong> Motor tries to start, hums, shuts off. Replace capacitor first (~$150) — it may be the only problem.</p>
-            <p style={{ marginTop: 12 }}><strong style={{ color: '#F5E642' }}>Motor failed:</strong> No attempt to start even with good capacitor, burning smell, or motor is seized/hot to touch.</p>
+            <p><strong style={{ color: '#F5E642′ }}>Capacitor failed:</strong> Motor tries to start, hums, shuts off. Replace capacitor first (~$150) — it may be the only problem.</p>
+            <p style={{ marginTop: 12 }}><strong style={{ color: '#F5E642′ }}>Motor failed:</strong> No attempt to start even with good capacitor, burning smell, or motor is seized/hot to touch.</p>
           </div>
         </div>
 
@@ -72,12 +72,12 @@ export default function DFWHVACBlowerMotorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📊 Blower Assessment</h3>
             <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>MOTOR FAILURE LIKELIHOOD: </span><span style={{ color: '#E8EFF8', fontWeight: 700 }}>{result.motorLikelihood}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>CAPACITOR CHECK: </span><span style={{ color: '#E8EFF8' }}>{result.capacitorLikelihood}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>ESTIMATED COST: </span><span style={{ color: '#E8EFF8' }}>{result.cost}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>URGENCY: </span><span style={{ color: '#E8EFF8' }}>{result.urgency}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>CAPACITOR CHECK: </span><span style={{ color: '#E8EFF8′ }}>{result.capacitorLikelihood}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>ESTIMATED COST: </span><span style={{ color: '#E8EFF8′ }}>{result.cost}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>URGENCY: </span><span style={{ color: '#E8EFF8′ }}>{result.urgency}</span></div>
           </div>
         )}
       </div>

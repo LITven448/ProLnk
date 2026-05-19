@@ -53,8 +53,8 @@ export default function DFWPlumbingNoiseGuide2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔊</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Plumbing Noise Identification Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>What plumbing sounds mean in DFW homes — and what to do about them</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Plumbing Noise Identification Guide 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>What plumbing sounds mean in DFW homes — and what to do about them</p>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -77,17 +77,17 @@ export default function DFWPlumbingNoiseGuide2026() {
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {noises.map(n => (
               <button key={n.id} onClick={() => setSelected(selected === n.id ? null : n.id)}
-                style={{ background: selected === n.id ? '#F5E642' : '#0f172a', color: selected === n.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem' }}>
+                style={{ background: selected === n.id ? '#F5E642′ : '#0f172a', color: selected === n.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: ’left', cursor: 'pointer', fontSize: '0.95rem' }}>
                 {n.emoji} {n.label}
               </button>
             ))}
           </div>
           {diag && (
-            <div style={{ background: '#0f172a', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0f172a', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Cause: {diag.cause}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.75rem', fontStyle: 'italic' }}>🌍 {diag.dfwNote}</div>
               <div style={{ color: '#cbd5e1', marginBottom: '0.75rem', lineHeight: 1.7 }}>🔧 {diag.fix}</div>
-              <div style={{ display: 'inline-block', background: diag.diy ? '#166534' : '#7c2d12', color: '#fff', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 600 }}>
+              <div style={{ display: 'inline-block', background: diag.diy ? '#166534′ : '#7c2d12', color: '#fff', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 600 }}>
                 {diag.diy ? '✅ DIY Possible' : '🔴 Call a Plumber'}
               </div>
             </div>

@@ -29,8 +29,8 @@ export default function DFWEvaporatorCoilGuide2026() {
             { icon: '📉', title: 'Efficiency Loss', body: 'A dirty evaporator coil acts as insulation between refrigerant and your air. Just 0.1 inches of dust reduces efficiency 25-40%. Annual cleaning in DFW is not optional — it is break-even on energy savings alone.' },
             { icon: '🔧', title: 'Cleaning vs Replacement', body: 'Coil cleaning costs $150-250 and restores full function in most cases. Replacement ($800-1,500 for coil only) is needed when fins are corroded through or refrigerant leaks develop inside coil walls. Ask for a leak check during cleaning.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642' }}>
-              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</span></div>
+            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</span></div>
               <p style={{ color: '#B0B8CC', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
@@ -41,13 +41,13 @@ export default function DFWEvaporatorCoilGuide2026() {
           <p style={{ color: '#9BA3B4', fontSize: 14, marginBottom: 16 }}>Select your symptom for an evaporator coil diagnosis:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
             {symptoms.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
               <p style={{ color: '#E8EAF0', fontSize: 14, margin: 0, lineHeight: 1.7 }}>{result.diagnosis}</p>
             </div>
           )}

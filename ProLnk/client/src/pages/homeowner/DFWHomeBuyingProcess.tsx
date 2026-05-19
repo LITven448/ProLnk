@@ -98,17 +98,17 @@ export default function DFWHomeBuyingProcess() {
                   onClick={() => setActiveStep(i)}
                   style={{
                     display: 'flex', alignItems: 'center', gap: 14, width: '100%', background: activeStep === i ? 'rgba(245,200,66,0.12)' : 'transparent',
-                    border: 'none', borderLeft: activeStep === i ? '3px solid #F5C842' : '3px solid transparent',
+                    border: 'none', borderLeft: activeStep === i ? '3px solid #F5C842′ : '3px solid transparent',
                     padding: '14px 16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s', marginBottom: 4, borderRadius: '0 8px 8px 0',
                   }}
                 >
                   <div style={{
                     width: 32, height: 32, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: activeStep === i ? '#F5C842' : 'rgba(255,255,255,0.08)', color: activeStep === i ? '#0A1628' : '#fff',
+                    background: activeStep === i ? '#F5C842′ : ’rgba(255,255,255,0.08)', color: activeStep === i ? '#0A1628′ : '#fff',
                     fontSize: 13, fontWeight: 700, flexShrink: 0,
                   }}>{s.num}</div>
                   <div>
-                    <div style={{ color: activeStep === i ? '#F5C842' : '#fff', fontSize: 13, fontWeight: 600 }}>{s.title}</div>
+                    <div style={{ color: activeStep === i ? '#F5C842′ : '#fff', fontSize: 13, fontWeight: 600 }}>{s.title}</div>
                     <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, marginTop: 2 }}>{s.duration}</div>
                   </div>
                 </button>
@@ -119,7 +119,7 @@ export default function DFWHomeBuyingProcess() {
           <div>
             <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, padding: 36, border: '1px solid rgba(255,255,255,0.08)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: '#F5C842', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 800, color: '#0A1628' }}>
+                <div style={{ width: 48, height: 48, borderRadius: '50%', background: '#F5C842', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 800, color: '#0A1628′ }}>
                   {steps[activeStep].num}
                 </div>
                 <div>

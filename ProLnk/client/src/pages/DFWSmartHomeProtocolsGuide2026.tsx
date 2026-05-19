@@ -23,7 +23,7 @@ export default function DFWSmartHomeProtocolsGuide2026() {
   ];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏡</div>
@@ -70,7 +70,7 @@ export default function DFWSmartHomeProtocolsGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW smart home installer to set up your protocol and devices? <span style={{ color: '#F5E642' }}>ProLnk connects you with vetted local smart home pros.</span></p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW smart home installer to set up your protocol and devices? <span style={{ color: '#F5E642′ }}>ProLnk connects you with vetted local smart home pros.</span></p>
         </div>
       </div>
     </div>

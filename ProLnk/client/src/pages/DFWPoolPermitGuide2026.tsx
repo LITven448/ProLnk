@@ -26,7 +26,7 @@ export default function DFWPoolPermitGuide2026() {
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 14 }}>🔒 TEXAS STATE LAW — ALL POOLS</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {['4ft fence required by TX law','Fence inspected before filling','Electrical bonding mandatory','Licensed electrician required','Self-closing gate required','Final inspection before water'].map(r => (
-              <div key={r} style={{ background: '#1a2f50', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#cbd5e1' }}>⚖️ {r}</div>
+              <div key={r} style={{ background: '#1a2f50', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#cbd5e1′ }}>⚖️ {r}</div>
             ))}
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function DFWPoolPermitGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(110px, 1fr))', gap: 8 }}>
             {cities.map(c => (
               <button key={c.name} onClick={() => setSelected(c.name)}
-                style={{ background: selected === c.name ? '#F5E642' : '#1a2f50', color: selected === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === c.name ? '#F5E642′ : '#1a2f50', color: selected === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {c.name}
               </button>
             ))}
@@ -44,7 +44,7 @@ export default function DFWPoolPermitGuide2026() {
         </div>
 
         {city && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 800, marginBottom: 16 }}>🏊 {city.name} — Pool Permit Process</h2>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ background: '#1a2f50', borderRadius: 8, padding: 14 }}>
@@ -67,7 +67,7 @@ export default function DFWPoolPermitGuide2026() {
                   {city.steps.map((s, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13 }}>
                       <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 20, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 11, flexShrink: 0 }}>{i+1}</span>
-                      <span style={{ color: '#cbd5e1' }}>{s}</span>
+                      <span style={{ color: '#cbd5e1′ }}>{s}</span>
                     </div>
                   ))}
                 </div>

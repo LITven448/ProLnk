@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/button";
 
 const PATENTS = [
   {
-    id: "PAT-001",
+    id: "PAT-001″,
     title: "AI-Driven Cross-Trade Lead Generation via Field Photo Analysis",
     status: "Pending",
-    filedDate: "2025-Q4",
-    version: "V11",
+    filedDate: "2025-Q4″,
+    version: "V11″,
     icon: Camera,
     description:
       "A system and method for automatically identifying cross-trade home service opportunities by applying computer vision and large language model analysis to photos captured by field service technicians during routine job visits. The system generates structured opportunity records with confidence scores, estimated job values, and matched partner recommendations without requiring homeowner initiation.",
@@ -28,11 +28,11 @@ const PATENTS = [
     defensibility: "High",
   },
   {
-    id: "PAT-002",
+    id: "PAT-002″,
     title: "Homeowner Property Intelligence Platform with Tiered AI Offer Classification",
     status: "Pending",
-    filedDate: "2025-Q4",
-    version: "V11",
+    filedDate: "2025-Q4″,
+    version: "V11″,
     icon: Zap,
     description:
       "A system for building and maintaining a structured homeowner property intelligence profile that combines self-reported data (systems inventory, improvement history, wish list with budget/urgency), AI-analyzed property photos, and behavioral signals to generate two-track service offers: repair offers (issue-based, no visualization required) and transformation offers (AI-generated before/after images showing the desired outcome).",
@@ -47,11 +47,11 @@ const PATENTS = [
     defensibility: "Very High",
   },
   {
-    id: "PAT-003",
+    id: "PAT-003″,
     title: "Automated Commission Attribution and Payout System for Multi-Party Home Service Networks",
     status: "Pending",
-    filedDate: "2025-Q4",
-    version: "V11",
+    filedDate: "2025-Q4″,
+    version: "V11″,
     icon: Network,
     description:
       "A system for automatically calculating, attributing, and distributing commissions across a multi-party home service partner network where a single job may generate commission obligations to a source partner (who identified the opportunity), a platform operator (network fee), and optionally a referring partner (referral bonus). The system integrates with FSM platforms (Jobber, Housecall Pro, ServiceTitan) via webhook to trigger commission events on job close.",
@@ -66,11 +66,11 @@ const PATENTS = [
     defensibility: "High",
   },
   {
-    id: "PAT-004",
+    id: "PAT-004″,
     title: "Zero-Self-Reporting Automated Payment Collection via Homeowner Check-In Confirmation",
     status: "Pending",
-    filedDate: "2026-Q1",
-    version: "V12",
+    filedDate: "2026-Q1″,
+    version: "V12″,
     icon: CheckCircle,
     description:
       "A system and method for automatically collecting platform commissions and homeowner payments triggered solely by the homeowner's digital confirmation of job completion — without any manual reporting, invoice submission, or action from the service partner. The system stores a homeowner payment method on file at deal acceptance and executes milestone-based charges (deposit on job start, balance on homeowner check-in) through a tokenized payment processor, eliminating the possibility of commission evasion through non-reporting.",
@@ -110,8 +110,8 @@ const TRADE_SECRETS = [
 ];
 
 const VERSION_COLORS: Record<string, string> = {
-  V11: "border-blue-500/40 text-blue-400",
-  V12: "border-emerald-500/40 text-emerald-400",
+  V11: "border-blue-500/40 text-blue-400″,
+  V12: "border-emerald-500/40 text-emerald-400″,
 };
 
 export default function PatentDisclosure() {
@@ -122,7 +122,7 @@ export default function PatentDisclosure() {
     const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8″ />
 <title>ProLnk Patent & IP Disclosure — Confidential</title>
 <style>
   body { font-family: 'Georgia', serif; max-width: 800px; margin: 0 auto; padding: 40px; color: #111; }
@@ -184,11 +184,11 @@ ${PATENTS.map(p => `
 
   return (
     <AdminLayout>
-    <div className="p-6 max-w-5xl mx-auto space-y-8">
+    <div className="p-6 max-w-5xl mx-auto space-y-8″>
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white mb-1">Patent & IP Disclosure</h1>
+          <h1 className="text-2xl font-bold text-white mb-1″>Patent & IP Disclosure</h1>
           <p className="text-gray-400 text-sm">
             Confidential — For internal use, investor due diligence, and M&A purposes only.
           </p>
@@ -199,20 +199,20 @@ ${PATENTS.map(p => `
           className="gap-2 border-white/20 text-gray-300 hover:text-white"
           onClick={handleExportPDF}
         >
-          <Download className="w-4 h-4" />
+          <Download className="w-4 h-4″ />
           Export for Attorney
         </Button>
       </div>
 
       {/* Summary Banner */}
-      <Card className="bg-indigo-950/40 border-indigo-500/30">
-        <CardContent className="p-5">
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-              <Shield className="w-5 h-5 text-indigo-400" />
+      <Card className="bg-indigo-950/40 border-indigo-500/30″>
+        <CardContent className="p-5″>
+          <div className="flex items-start gap-4″>
+            <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center flex-shrink-0″>
+              <Shield className="w-5 h-5 text-indigo-400″ />
             </div>
-            <div className="flex-1">
-              <h2 className="text-white font-semibold mb-1">4 Patent Applications — V12 Updated</h2>
+            <div className="flex-1″>
+              <h2 className="text-white font-semibold mb-1″>4 Patent Applications — V12 Updated</h2>
               <p className="text-gray-400 text-sm leading-relaxed">
                 ProLnk has identified four novel, defensible workflows eligible for utility patent protection.
                 PAT-001 through PAT-003 were identified in V11. PAT-004 (Zero-Self-Reporting Payment Collection)
@@ -220,7 +220,7 @@ ${PATENTS.map(p => `
                 evasion architecturally impossible. All four represent first-mover innovations with no direct prior art
                 from existing competitors.
               </p>
-              <div className="flex items-center gap-3 mt-3">
+              <div className="flex items-center gap-3 mt-3″>
                 <Badge variant="outline" className="border-blue-500/40 text-blue-400 text-xs">3 V11 Claims</Badge>
                 <Badge variant="outline" className="border-emerald-500/40 text-emerald-400 text-xs">1 V12 Claim (New)</Badge>
                 <Badge variant="outline" className="border-yellow-500/40 text-yellow-400 text-xs">4 Total Pending</Badge>
@@ -231,21 +231,21 @@ ${PATENTS.map(p => `
       </Card>
 
       {/* Patent Applications */}
-      <div className="space-y-6">
+      <div className="space-y-6″>
         <h2 className="text-lg font-semibold text-white">Patent Applications</h2>
         {PATENTS.map((patent) => {
           const Icon = patent.icon;
           const isExpanded = expandedId === patent.id;
-          const isNew = patent.version === "V12";
+          const isNew = patent.version === "V12″;
 
           return (
             <Card
               key={patent.id}
               className={`border transition-all ${isNew ? "bg-emerald-950/20 border-emerald-500/30" : "bg-gray-900 border-white/10"}`}
             >
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-3">
+              <CardHeader className="pb-3″>
+                <div className="flex items-start justify-between gap-4″>
+                  <div className="flex items-start gap-3″>
                     <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${isNew ? "bg-emerald-500/10" : "bg-indigo-500/10"}`}>
                       <Icon className={`w-4.5 h-4.5 ${isNew ? "text-emerald-400" : "text-indigo-400"}`} />
                     </div>
@@ -269,18 +269,18 @@ ${PATENTS.map(p => `
                           {patent.defensibility} Defensibility
                         </Badge>
                         {isNew && (
-                          <Badge className="bg-emerald-600/30 text-emerald-300 text-xs border-0">NEW</Badge>
+                          <Badge className="bg-emerald-600/30 text-emerald-300 text-xs border-0″>NEW</Badge>
                         )}
                       </div>
                       <CardTitle className="text-white text-base leading-snug">{patent.title}</CardTitle>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 flex-shrink-0">
+                  <div className="flex items-center gap-2 flex-shrink-0″>
                     <span className="text-xs text-gray-500 whitespace-nowrap">Filed: {patent.filedDate}</span>
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-gray-500 hover:text-white h-7 px-2"
+                      className="text-gray-500 hover:text-white h-7 px-2″
                       onClick={() => setExpandedId(isExpanded ? null : patent.id)}
                     >
                       {isExpanded ? "Collapse" : "Expand"}
@@ -288,14 +288,14 @@ ${PATENTS.map(p => `
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4″>
                 <p className="text-gray-400 text-sm leading-relaxed">{patent.description}</p>
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-2">Key Claims</p>
-                  <ul className="space-y-1.5">
+                  <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-2″>Key Claims</p>
+                  <ul className="space-y-1.5″>
                     {patent.claims.map((claim, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-400">
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-400″>
                         <ArrowRight className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${isNew ? "text-emerald-400" : "text-indigo-400"}`} />
                         {claim}
                       </li>
@@ -304,8 +304,8 @@ ${PATENTS.map(p => `
                 </div>
 
                 {isExpanded && (
-                  <div className="bg-gray-800/60 rounded-lg p-3">
-                    <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-1">Novelty Argument</p>
+                  <div className="bg-gray-800/60 rounded-lg p-3″>
+                    <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-1″>Novelty Argument</p>
                     <p className="text-xs text-gray-400 leading-relaxed">{patent.novelty}</p>
                   </div>
                 )}
@@ -325,24 +325,24 @@ ${PATENTS.map(p => `
       </div>
 
       {/* V12 Architecture Note */}
-      <Card className="bg-emerald-950/30 border-emerald-500/30">
-        <CardContent className="p-5">
-          <div className="flex items-start gap-3">
-            <CreditCard className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+      <Card className="bg-emerald-950/30 border-emerald-500/30″>
+        <CardContent className="p-5″>
+          <div className="flex items-start gap-3″>
+            <CreditCard className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0″ />
             <div>
-              <h3 className="text-white font-semibold mb-2">V12 Architecture — Patent Attorney Briefing Notes</h3>
-              <div className="space-y-2 text-sm text-gray-400">
+              <h3 className="text-white font-semibold mb-2″>V12 Architecture — Patent Attorney Briefing Notes</h3>
+              <div className="space-y-2 text-sm text-gray-400″>
                 <p>
-                  <strong className="text-gray-300">Core Innovation (Claim 20):</strong> The homeowner check-in is an independent third-party confirmation that cannot be colluded with the partner. This makes it a structurally superior trigger for commission collection compared to any partner-controlled event (invoice submission, job close button). The patent should emphasize the independence of the trigger.
+                  <strong className="text-gray-300″>Core Innovation (Claim 20):</strong> The homeowner check-in is an independent third-party confirmation that cannot be colluded with the partner. This makes it a structurally superior trigger for commission collection compared to any partner-controlled event (invoice submission, job close button). The patent should emphasize the independence of the trigger.
                 </p>
                 <p>
-                  <strong className="text-gray-300">Dual-Path Architecture (Claims 22-23):</strong> The automatic selection between card-on-file and ACH debit based on job type classification (insurance vs. standard) is novel. The system reads the deal's insurance flag and routes to the appropriate payment collection mechanism without any manual selection.
+                  <strong className="text-gray-300″>Dual-Path Architecture (Claims 22-23):</strong> The automatic selection between card-on-file and ACH debit based on job type classification (insurance vs. standard) is novel. The system reads the deal's insurance flag and routes to the appropriate payment collection mechanism without any manual selection.
                 </p>
                 <p>
-                  <strong className="text-gray-300">Prior Art Risk:</strong> Stripe's standard card-on-file and ACH products exist, but the specific application to home service commission collection triggered by a third-party (homeowner) confirmation event is novel. The patent should be drafted around the workflow, not the payment technology.
+                  <strong className="text-gray-300″>Prior Art Risk:</strong> Stripe's standard card-on-file and ACH products exist, but the specific application to home service commission collection triggered by a third-party (homeowner) confirmation event is novel. The patent should be drafted around the workflow, not the payment technology.
                 </p>
                 <p>
-                  <strong className="text-gray-300">Recommended Filing Strategy:</strong> File PAT-004 as a continuation-in-part of PAT-003 to establish the V11 priority date for the commission attribution claims, while adding the V12 payment collection claims as new matter.
+                  <strong className="text-gray-300″>Recommended Filing Strategy:</strong> File PAT-004 as a continuation-in-part of PAT-003 to establish the V11 priority date for the commission attribution claims, while adding the V12 payment collection claims as new matter.
                 </p>
               </div>
             </div>
@@ -351,23 +351,23 @@ ${PATENTS.map(p => `
       </Card>
 
       {/* Trade Secrets */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-2">
-          <Lock className="w-4 h-4 text-yellow-400" />
+      <div className="space-y-4″>
+        <div className="flex items-center gap-2″>
+          <Lock className="w-4 h-4 text-yellow-400″ />
           <h2 className="text-lg font-semibold text-white">Trade Secrets (Not for Patent Filing)</h2>
         </div>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-400″>
           The following proprietary elements are better protected as trade secrets than patents, as disclosure through
           the patent process would enable competitors to design around them.
         </p>
-        <div className="grid gap-4">
+        <div className="grid gap-4″>
           {TRADE_SECRETS.map((secret, i) => (
-            <Card key={i} className="bg-gray-900 border-yellow-500/20">
-              <CardContent className="p-4">
-                <div className="flex items-start gap-3">
-                  <Lock className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+            <Card key={i} className="bg-gray-900 border-yellow-500/20″>
+              <CardContent className="p-4″>
+                <div className="flex items-start gap-3″>
+                  <Lock className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0″ />
                   <div>
-                    <p className="text-white font-medium text-sm mb-1">{secret.title}</p>
+                    <p className="text-white font-medium text-sm mb-1″>{secret.title}</p>
                     <p className="text-gray-400 text-sm leading-relaxed">{secret.description}</p>
                   </div>
                 </div>
@@ -378,14 +378,14 @@ ${PATENTS.map(p => `
       </div>
 
       {/* Recommended Actions */}
-      <Card className="bg-gray-900 border-white/10">
+      <Card className="bg-gray-900 border-white/10″>
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
-            <FileText className="w-4 h-4 text-indigo-400" />
+          <CardTitle className="text-white flex items-center gap-2″>
+            <FileText className="w-4 h-4 text-indigo-400″ />
             Recommended Next Steps (V12 Updated)
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
+        <CardContent className="space-y-3″>
           {[
             "File PAT-004 as a continuation-in-part of PAT-003 to capture the V12 zero-self-reporting payment architecture. Engage IP attorney immediately — the V12 system is live and public disclosure starts the 1-year USPTO clock.",
             "File provisional applications for PAT-001, PAT-002, and PAT-003 before any public launch or investor presentation. Provisional applications (~$1,500–$3,000 each) establish a priority date.",
@@ -393,7 +393,7 @@ ${PATENTS.map(p => `
             "Include the V12 payment architecture infographic and this IP schedule in the data room for any M&A due diligence process.",
             "Consider filing a design patent for the two-track offer card UI (before/after transformation visualization) as a supplementary IP layer.",
           ].map((action, i) => (
-            <div key={i} className="flex items-start gap-3">
+            <div key={i} className="flex items-start gap-3″>
               <span className="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
                 {i + 1}
               </span>
@@ -403,7 +403,7 @@ ${PATENTS.map(p => `
         </CardContent>
       </Card>
 
-      <p className="text-xs text-gray-600 text-center pb-4">
+      <p className="text-xs text-gray-600 text-center pb-4″>
         This document is confidential and intended solely for internal use, investor due diligence, and M&A purposes.
         Do not distribute without NDA. Last updated: V12 — {new Date().toLocaleDateString()}.
       </p>

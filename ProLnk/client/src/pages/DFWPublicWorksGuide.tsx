@@ -157,11 +157,11 @@ export default function DFWPublicWorksGuide() {
 
         <div style={{ background: '#111F35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
-            <div style={{ background: '#052e1680', borderRadius: 12, padding: 18, border: '1px solid #4ade8040' }}>
+            <div style={{ background: '#052e1680', borderRadius: 12, padding: 18, border: '1px solid #4ade8040′ }}>
               <div style={{ fontSize: 11, color: '#4ade80', fontWeight: 700, marginBottom: 8 }}>🏛️ CITY HANDLES</div>
               <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{issue.cityScope}</p>
             </div>
-            <div style={{ background: '#3b0a0a80', borderRadius: 12, padding: 18, border: '1px solid #f8717140' }}>
+            <div style={{ background: '#3b0a0a80', borderRadius: 12, padding: 18, border: '1px solid #f8717140′ }}>
               <div style={{ fontSize: 11, color: '#f87171', fontWeight: 700, marginBottom: 8 }}>🏠 YOU HANDLE</div>
               <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{issue.homeownerScope}</p>
             </div>

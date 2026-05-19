@@ -5,9 +5,9 @@ export default function DFWDeckBuildingCosts2026() {
   const [material, setMaterial] = useState<'pressure' | 'composite' | 'aluminum'>('pressure');
 
   const costs: Record<string, Record<string, string>> = {
-    small: { pressure: '$5,500–$8,000', composite: '$9,000–$13,000', aluminum: '$10,000–$15,000' },
-    medium: { pressure: '$8,000–$12,000', composite: '$14,000–$20,000', aluminum: '$15,000–$22,000' },
-    large: { pressure: '$14,000–$20,000', composite: '$22,000–$32,000', aluminum: '$26,000–$38,000' },
+    small: { pressure: '$5,500–$8,000', composite: '$9,000–$13,000', aluminum: '$10,000–$15,000′ },
+    medium: { pressure: '$8,000–$12,000', composite: '$14,000–$20,000', aluminum: '$15,000–$22,000′ },
+    large: { pressure: '$14,000–$20,000', composite: '$22,000–$32,000', aluminum: '$26,000–$38,000′ },
   };
 
   return (
@@ -23,8 +23,8 @@ export default function DFWDeckBuildingCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Deck Size</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['small', 'medium', 'large'] as const).map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: size === s ? '#F5E642' : '#1e2d45', color: size === s ? '#0A1628' : '#fff', fontWeight: 600 }}>
-                  {s === 'small' ? '10×12' : s === 'medium' ? '12×16' : '16×20'}
+                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: size === s ? '#F5E642′ : '#1e2d45', color: size === s ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                  {s === 'small' ? '10×12′ : s === ’medium' ? '12×16′ : '16×20'}
                 </button>
               ))}
             </div>
@@ -33,7 +33,7 @@ export default function DFWDeckBuildingCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Material</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {(['pressure', 'composite', 'aluminum'] as const).map(m => (
-                <button key={m} onClick={() => setMaterial(m)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: material === m ? '#F5E642' : '#1e2d45', color: material === m ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                <button key={m} onClick={() => setMaterial(m)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: material === m ? '#F5E642′ : '#1e2d45', color: material === m ? '#0A1628' : '#fff', fontWeight: 600 }}>
                   {m === 'pressure' ? 'Pressure Treated' : m === 'composite' ? 'Composite (Trex)' : 'Aluminum'}
                 </button>
               ))}
@@ -41,7 +41,7 @@ export default function DFWDeckBuildingCosts2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Estimated DFW Cost</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{costs[size][material]}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{costs[size][material]}</div>
             <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>+ $150–400 DFW permit</div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function DFWDeckBuildingCosts2026() {
             <div key={c.title} style={{ background: '#111e33', borderRadius: 10, padding: 18 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 600, marginBottom: 6 }}>{c.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{c.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{c.desc}</div>
             </div>
           ))}
         </div>

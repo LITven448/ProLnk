@@ -63,7 +63,7 @@ export default function DFWHomeValuePerRoom() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>Addition Cost vs Value Add</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
             {Object.entries(ADDITION_COSTS).map(([k, v]) => (
-              <button key={k} onClick={() => setAddition(k === addition ? '' : k)} style={{ padding: '8px 16px', borderRadius: 8, border: `1px solid ${addition === k ? '#F5E642' : '#1e3a5f'}`, background: addition === k ? '#F5E642' : '#0A1628', color: addition === k ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13 }}>
+              <button key={k} onClick={() => setAddition(k === addition ? '' : k)} style={{ padding: '8px 16px', borderRadius: 8, border: `1px solid ${addition === k ? '#F5E642' : '#1e3a5f'}`, background: addition === k ? '#F5E642′ : '#0A1628', color: addition === k ? '#0A1628' : '#94a3b8', cursor: ’pointer', fontSize: 13 }}>
                 {k === 'bedroom' ? 'Bedroom' : k === 'bathroom_full' ? 'Full Bath' : 'Half Bath'}
               </button>
             ))}

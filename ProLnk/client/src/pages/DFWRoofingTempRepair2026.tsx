@@ -24,7 +24,7 @@ export default function DFWRoofingTempRepair2026() {
         <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>DFW hail and thunderstorms can cause immediate damage requiring same-day temporary fixes. These techniques protect your home while you schedule permanent repair — and document the damage for insurance.</p>
 
         <div style={{ backgroundColor: '#0D1F38', border: '2px solid #F5E642', borderRadius: '12px', padding: '20px', marginBottom: '28px' }}>
-          <div style={{ fontWeight: 800, fontSize: '16px', marginBottom: '12px', color: '#F5E642' }}>⚡ Before Any DFW Temporary Repair</div>
+          <div style={{ fontWeight: 800, fontSize: '16px', marginBottom: '12px', color: '#F5E642′ }}>⚡ Before Any DFW Temporary Repair</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {['NEVER go on a wet roof — DFW summer shingles are extremely slippery when wet', 'Photograph ALL damage before making any repairs — essential for insurance claim', 'Call insurance company same day as storm event — DFW insurers have claim deadlines', 'Temporary repairs do NOT void insurance claim — they demonstrate responsible mitigation', 'DFW roofing contractors often book 2-4 weeks out after major storm — start calling immediately'].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
@@ -51,7 +51,7 @@ export default function DFWRoofingTempRepair2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '28px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>🔧 Get My Temporary Repair Guide</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>🔧 Get My Temporary Repair Guide</h2>
           <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>DFW Roof Damage Type</label>
             <select value={damageType} onChange={e => setDamageType(e.target.value)} style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px' }}>
@@ -68,7 +68,7 @@ export default function DFWRoofingTempRepair2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
-          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: '#F5E642' }}>📋 When Temporary Is Not Enough — DFW Warning Signs</h3>
+          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: '#F5E642′ }}>📋 When Temporary Is Not Enough — DFW Warning Signs</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {['Decking (plywood) visible and spongy or rotted — structural urgency, not cosmetic', 'Leak continuing despite cement or tarp — opening larger than visible damage suggests', 'DFW summer heat: any moisture under tarp breeds mold within 48-72 hours — act fast', 'Large puncture from falling tree limb — tarp only masks; structural inspection required', 'Multiple areas damaged in storm — individual patches inadequate, full replacement needed'].map((warn, i) => (
               <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>

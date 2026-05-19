@@ -42,11 +42,11 @@ export default function DFWHVACReplacementTimeline() {
           <h2 style={{ fontSize: 15, fontWeight: 600, color: '#F5E642', marginBottom: 14 }}>🌡️ What's Your Situation?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 16 }}>
             {Object.entries(urgencyOptions).map(([key, val]) => (
-              <button key={key} onClick={() => setUrgency(key)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${urgency === key ? '#F5E642' : '#1E3050'}`, background: urgency === key ? '#F5E642' : 'transparent', color: urgency === key ? '#0A1628' : '#9BAEC8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>{val.label}</button>
+              <button key={key} onClick={() => setUrgency(key)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${urgency === key ? '#F5E642' : '#1E3050'}`, background: urgency === key ? '#F5E642′ : ’transparent', color: urgency === key ? '#0A1628′ : '#9BAEC8', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>{val.label}</button>
             ))}
           </div>
           {selected && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642′ }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Expected Timeline: </span>
               <span style={{ color: '#E8EDF5', fontWeight: 600 }}>{selected.timeline}</span>
             </div>
@@ -57,7 +57,7 @@ export default function DFWHVACReplacementTimeline() {
           <>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 24 }}>
               {selected.phases.map((p, i) => (
-                <div key={i} style={{ background: '#111E35', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
+                <div key={i} style={{ background: '#111E35', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
                     <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap' }}>{p.duration}</span>
                     <span style={{ fontWeight: 700, color: '#fff', fontSize: 15 }}>{p.step}</span>

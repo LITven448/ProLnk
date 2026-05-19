@@ -26,19 +26,19 @@ export default function DFWElectricalWireGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642' }}>⚡ DFW ELECTRICAL GUIDE</div>
+        <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642′ }}>⚡ DFW ELECTRICAL GUIDE</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '8px', color: '#FFFFFF' }}>Wire Gauge Guide for DFW Homeowners</h1>
-        <p style={{ color: '#9BA3B5', fontSize: '15px', marginBottom: '32px', lineHeight: '1.6' }}>
+        <p style={{ color: '#9BA3B5', fontSize: '15px', marginBottom: '32px', lineHeight: '1.6′ }}>
           Choosing the wrong wire gauge is a fire hazard. DFW homes run high electrical loads — especially A/C — so proper sizing is critical. Here's what every gauge handles.
         </p>
 
         <div style={{ marginBottom: '32px' }}>
           {wireData.map((w) => (
-            <div key={w.gauge} style={{ background: '#111D33', borderRadius: '10px', padding: '18px 20px', marginBottom: '12px', borderLeft: '4px solid #F5E642' }}>
+            <div key={w.gauge} style={{ background: '#111D33', borderRadius: '10px', padding: '18px 20px', marginBottom: '12px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '18px', fontWeight: '700', color: '#F5E642' }}>{w.gauge}</span>
-                <span style={{ background: '#1E2D47', padding: '2px 10px', borderRadius: '20px', fontSize: '13px', color: '#A8B4C8' }}>{w.amps} max</span>
-                <span style={{ fontSize: '13px', color: '#6B7A94' }}>{w.breaker}</span>
+                <span style={{ fontSize: '18px', fontWeight: '700', color: '#F5E642′ }}>{w.gauge}</span>
+                <span style={{ background: '#1E2D47', padding: '2px 10px', borderRadius: '20px', fontSize: '13px', color: '#A8B4C8′ }}>{w.amps} max</span>
+                <span style={{ fontSize: '13px', color: '#6B7A94′ }}>{w.breaker}</span>
               </div>
               <div style={{ fontSize: '14px', color: '#C8D0DC', marginBottom: '6px' }}>✅ {w.uses}</div>
               <div style={{ fontSize: '13px', color: '#F5E642', opacity: 0.85 }}>🌡️ DFW Note: {w.dfwNote}</div>
@@ -59,14 +59,14 @@ export default function DFWElectricalWireGuide() {
           {result && (
             <div style={{ background: '#0D1F35', borderRadius: '8px', padding: '16px' }}>
               <div style={{ fontSize: '22px', fontWeight: '700', color: '#F5E642', marginBottom: '8px' }}>Use {result.gauge}</div>
-              <div style={{ fontSize: '14px', color: '#C8D0DC', lineHeight: '1.6' }}>📋 {result.reason}</div>
+              <div style={{ fontSize: '14px', color: '#C8D0DC', lineHeight: '1.6′ }}>📋 {result.reason}</div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#1A1200', border: '1px solid #F5E642', borderRadius: '10px', padding: '16px' }}>
           <div style={{ fontWeight: '600', color: '#F5E642', marginBottom: '6px' }}>⚠️ DFW Safety Reminder</div>
-          <div style={{ fontSize: '13px', color: '#C8D0DC', lineHeight: '1.6' }}>
+          <div style={{ fontSize: '13px', color: '#C8D0DC', lineHeight: '1.6′ }}>
             Never upsize a breaker to match a smaller wire. The wire is the safety limit. In DFW, electrical permits are required for new circuits — always pull a permit to protect your home sale value.
           </div>
         </div>

@@ -36,9 +36,9 @@ const CITIES: CityMarket[] = [
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 const STATUS_CONFIG: Record<MarketStatus, { label: string; color: string; bg: string; icon: React.ElementType }> = {
-  "Active":           { label: "Active",           color: "#34d399", bg: "#34d39920", icon: CheckCircle },
-  "Ready to Launch":  { label: "Ready to Launch",  color: "#60a5fa", bg: "#60a5fa20", icon: Clock },
-  "Needs Pros":       { label: "Needs Pros",        color: "#f59e0b", bg: "#f59e0b20", icon: AlertTriangle },
+  "Active":           { label: "Active",           color: "#34d399″, bg: "#34d39920", icon: CheckCircle },
+  "Ready to Launch":  { label: "Ready to Launch",  color: "#60a5fa", bg: "#60a5fa20″, icon: Clock },
+  "Needs Pros":       { label: "Needs Pros",        color: "#f59e0b", bg: "#f59e0b20″, icon: AlertTriangle },
 };
 
 // Sort by demand gap (homeowners with fewer pros = higher priority)
@@ -59,40 +59,40 @@ function CityCard({ city }: CityCardProps) {
 
   return (
     <div className="bg-slate-800 rounded-xl border border-slate-700 p-5 hover:border-slate-600 transition-colors">
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0" />
+      <div className="flex items-start justify-between mb-4″>
+        <div className="flex items-center gap-2″>
+          <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0″ />
           <span className="font-semibold text-white">{city.city}</span>
         </div>
         <span
           className="flex items-center gap-1 text-xs px-2 py-1 rounded-full font-semibold"
           style={{ color: cfg.color, background: cfg.bg }}
         >
-          <StatusIcon className="w-3 h-3" />
+          <StatusIcon className="w-3 h-3″ />
           {cfg.label}
         </span>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-4">
-        <div className="bg-slate-700/50 rounded-lg p-3">
-          <div className="flex items-center gap-1.5 mb-1">
-            <Users className="w-3 h-3 text-teal-400" />
-            <span className="text-xs text-slate-400">Pros</span>
+      <div className="grid grid-cols-2 gap-3 mb-4″>
+        <div className="bg-slate-700/50 rounded-lg p-3″>
+          <div className="flex items-center gap-1.5 mb-1″>
+            <Users className="w-3 h-3 text-teal-400″ />
+            <span className="text-xs text-slate-400″>Pros</span>
           </div>
           <span className="text-xl font-bold text-white">{city.proCount}</span>
         </div>
-        <div className="bg-slate-700/50 rounded-lg p-3">
-          <div className="flex items-center gap-1.5 mb-1">
-            <Home className="w-3 h-3 text-blue-400" />
-            <span className="text-xs text-slate-400">Homeowners</span>
+        <div className="bg-slate-700/50 rounded-lg p-3″>
+          <div className="flex items-center gap-1.5 mb-1″>
+            <Home className="w-3 h-3 text-blue-400″ />
+            <span className="text-xs text-slate-400″>Homeowners</span>
           </div>
           <span className="text-xl font-bold text-white">{city.homeownerCount}</span>
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2″>
         <div className="flex justify-between items-center text-xs">
-          <span className="text-slate-400">Coverage</span>
+          <span className="text-slate-400″>Coverage</span>
           <span className="font-semibold text-white">{city.coveragePct}%</span>
         </div>
         <div className="h-1.5 rounded-full bg-slate-700 overflow-hidden">
@@ -100,12 +100,12 @@ function CityCard({ city }: CityCardProps) {
             className="h-full rounded-full transition-all"
             style={{
               width: `${city.coveragePct}%`,
-              background: city.coveragePct >= 75 ? "#34d399" : city.coveragePct >= 50 ? "#60a5fa" : "#f59e0b",
+              background: city.coveragePct >= 75 ? "#34d399″ : city.coveragePct >= 50 ? "#60a5fa" : "#f59e0b",
             }}
           />
         </div>
-        <div className="flex justify-between text-xs text-slate-500">
-          <span>Top trade: <span className="text-slate-300">{city.topTrade}</span></span>
+        <div className="flex justify-between text-xs text-slate-500″>
+          <span>Top trade: <span className="text-slate-300″>{city.topTrade}</span></span>
           <span>{ratio} HOs/pro</span>
         </div>
       </div>
@@ -127,35 +127,35 @@ export default function GeoExpansionMap() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8″>
 
         {/* Header */}
-        <div className="flex items-center justify-between flex-wrap gap-4">
+        <div className="flex items-center justify-between flex-wrap gap-4″>
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <MapPin className="w-6 h-6 text-teal-400" />
+            <h1 className="text-2xl font-bold text-white flex items-center gap-2″>
+              <MapPin className="w-6 h-6 text-teal-400″ />
               Geo Expansion Map
             </h1>
             <p className="text-slate-400 mt-1 text-sm">Market readiness across DFW — 10 cities tracked</p>
           </div>
           <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white text-sm font-semibold transition-colors">
-            <Plus className="w-4 h-4" />
+            <Plus className="w-4 h-4″ />
             Launch New Market
           </button>
         </div>
 
         {/* Summary KPIs */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
           {[
             { label: "Total Pros",          value: totalPros.toString(),   icon: Users,        color: "#2dd4bf" },
             { label: "Total Homeowners",    value: totalHOs.toString(),    icon: Home,         color: "#60a5fa" },
-            { label: "Active Markets",      value: `${activeCount}/10`,    icon: CheckCircle,  color: "#34d399" },
+            { label: "Active Markets",      value: `${activeCount}/10`,    icon: CheckCircle,  color: "#34d399″ },
             { label: "Markets Need Pros",   value: needsProCount.toString(), icon: AlertTriangle, color: "#f59e0b" },
           ].map((k) => (
-            <div key={k.label} className="bg-slate-800 rounded-xl p-5 border border-slate-700">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{k.label}</span>
-                <k.icon className="w-4 h-4" style={{ color: k.color }} />
+            <div key={k.label} className="bg-slate-800 rounded-xl p-5 border border-slate-700″>
+              <div className="flex items-center justify-between mb-2″>
+                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400″>{k.label}</span>
+                <k.icon className="w-4 h-4″ style={{ color: k.color }} />
               </div>
               <div className="text-2xl font-bold text-white">{k.value}</div>
             </div>
@@ -163,15 +163,15 @@ export default function GeoExpansionMap() {
         </div>
 
         {/* Filter tabs */}
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-400">Show:</span>
-          <div className="flex rounded-lg overflow-hidden border border-slate-700">
+        <div className="flex items-center gap-2″>
+          <span className="text-sm text-slate-400″>Show:</span>
+          <div className="flex rounded-lg overflow-hidden border border-slate-700″>
             {(["All", "Active", "Ready to Launch", "Needs Pros"] as const).map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  filter === f ? "bg-teal-500 text-white" : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+                  filter === f ? "bg-teal-500 text-white" : "bg-slate-800 text-slate-400 hover:bg-slate-700″
                 }`}
               >
                 {f}
@@ -181,7 +181,7 @@ export default function GeoExpansionMap() {
         </div>
 
         {/* City Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4″>
           {filtered.map((city) => (
             <CityCard key={city.city} city={city} />
           ))}
@@ -189,42 +189,42 @@ export default function GeoExpansionMap() {
 
         {/* Priority List */}
         <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-amber-400" />
+          <div className="px-6 py-4 border-b border-slate-700″>
+            <h2 className="text-white font-semibold text-base flex items-center gap-2″>
+              <TrendingUp className="w-4 h-4 text-amber-400″ />
               Priority: High Demand, Low Supply
             </h2>
-            <p className="text-xs text-slate-400 mt-0.5">Cities with the most homeowner demand relative to pro count</p>
+            <p className="text-xs text-slate-400 mt-0.5″>Cities with the most homeowner demand relative to pro count</p>
           </div>
-          <div className="divide-y divide-slate-700/50">
+          <div className="divide-y divide-slate-700/50″>
             {PRIORITY_LIST.map((city, i) => {
               const cfg = STATUS_CONFIG[city.status];
               const StatusIcon = cfg.icon;
               const gap = city.homeownerCount - city.proCount * 5;
               return (
                 <div key={city.city} className="flex items-center gap-4 px-6 py-4 hover:bg-slate-700/30 transition-colors">
-                  <span className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-300 flex-shrink-0">
+                  <span className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-300 flex-shrink-0″>
                     {i + 1}
                   </span>
-                  <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0″ />
+                  <div className="flex-1 min-w-0″>
+                    <div className="flex items-center gap-2″>
                       <span className="font-medium text-white">{city.city}</span>
                       <span
                         className="flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-full"
                         style={{ color: cfg.color, background: cfg.bg }}
                       >
-                        <StatusIcon className="w-2.5 h-2.5" />
+                        <StatusIcon className="w-2.5 h-2.5″ />
                         {cfg.label}
                       </span>
                     </div>
-                    <div className="text-xs text-slate-400 mt-0.5">
+                    <div className="text-xs text-slate-400 mt-0.5″>
                       {city.homeownerCount} homeowners · only {city.proCount} pros · {city.topTrade} demand
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-bold text-amber-400">+{Math.max(0, gap)} gap</div>
-                    <div className="text-xs text-slate-500">demand vs supply</div>
+                    <div className="text-sm font-bold text-amber-400″>+{Math.max(0, gap)} gap</div>
+                    <div className="text-xs text-slate-500″>demand vs supply</div>
                   </div>
                   <button className="ml-2 text-xs px-3 py-1.5 rounded-lg bg-teal-500/20 text-teal-400 hover:bg-teal-500/30 font-semibold transition-colors whitespace-nowrap">
                     Recruit Pros

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const pierTypes = [
-  { icon: '🔔', name: 'Bell-Bottom Piers', detail: 'Drilled into DFW clay until rock layer, then belled out to 18–24". Shaft filled with concrete grout for full structural column.' },
+  { icon: '🔔', name: 'Bell-Bottom Piers', detail: 'Drilled into DFW clay until rock layer, then belled out to 18–24″. Shaft filled with concrete grout for full structural column.' },
   { icon: '🌀', name: 'Helical Piers — Solid Shaft', detail: 'Solid steel shaft screwed into ground. Grout sleeve optional — used when corrosion from DFW expansive clay is a concern.' },
   { icon: '⬜', name: 'Helical Piers — Hollow Shaft', detail: 'Hollow shaft allows grout injection through center after installation, filling voids around helix blades for enhanced load transfer.' },
   { icon: '🧱', name: 'Push Piers', detail: 'Hydraulically driven segments. Grout is not part of installation — load transferred mechanically to competent strata.' },
@@ -46,13 +46,13 @@ export default function DFWFoundationPierGrouting2026() {
               <div key={i}>
                 <button
                   onClick={() => setSelected(selected === i ? null : i)}
-                  style={{ width: '100%', textAlign: 'left', background: selected === i ? '#F5E642' : '#162035', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
+                  style={{ width: '100%', textAlign: 'left', background: selected === i ? '#F5E642′ : '#162035', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
                 >
                   {d.concern}
                 </button>
                 {selected === i && (
                   <div style={{ background: '#1a2d4a', borderRadius: '0 0 8px 8px', padding: '12px 16px', color: '#c0cce0', fontSize: 14, lineHeight: 1.6 }}>
-                    <strong style={{ color: '#F5E642' }}>Pier Type: {d.type}</strong><br />{d.recommendation}
+                    <strong style={{ color: '#F5E642′ }}>Pier Type: {d.type}</strong><br />{d.recommendation}
                   </div>
                 )}
               </div>

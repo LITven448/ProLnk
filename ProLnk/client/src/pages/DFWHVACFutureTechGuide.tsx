@@ -59,14 +59,14 @@ export default function DFWHVACFutureTechGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1, textTransform: 'uppercase' }}>DFW HVAC Guide</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🚀 Future HVAC Technology Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
-          DFW's extreme climate is making it a testing ground for the next generation of HVAC technology. Here's what's coming — and when it helps you.
+          DFW's extreme climate is making it a testing ground for the next generation of HVAC technology. Here’s what’s coming — and when it helps you.
         </p>
 
         <div style={{ marginBottom: 28 }}>
           <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 10 }}>What interests you most?</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {(Object.entries(techData) as [Interest, TechData][]).map(([k, v]) => (
-              <button key={k} onClick={() => setInterest(k)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${interest === k ? '#F5E642' : '#1e3a5f'}`, background: interest === k ? '#F5E642' : 'transparent', color: interest === k ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{v.label}</button>
+              <button key={k} onClick={() => setInterest(k)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${interest === k ? '#F5E642' : '#1e3a5f'}`, background: interest === k ? '#F5E642′ : ’transparent', color: interest === k ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{v.label}</button>
             ))}
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function DFWHVACFutureTechGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div style={{ background: '#0f2236', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 6, fontWeight: 600 }}>⏱️ Timeline</div>
-              <div style={{ color: '#cbd5e1' }}>{data.timeline}</div>
+              <div style={{ color: '#cbd5e1′ }}>{data.timeline}</div>
             </div>
             <div style={{ background: '#0f2236', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 6, fontWeight: 600 }}>⚙️ How It Works</div>
@@ -91,7 +91,7 @@ export default function DFWHVACFutureTechGuide() {
             </div>
           </div>
         ) : (
-          <div style={{ background: '#0f2236', borderRadius: 12, padding: 32, textAlign: 'center', color: '#94a3b8' }}>Select a technology to see your DFW-specific guide</div>
+          <div style={{ background: '#0f2236', borderRadius: 12, padding: 32, textAlign: 'center', color: '#94a3b8′ }}>Select a technology to see your DFW-specific guide</div>
         )}
 
         <div style={{ marginTop: 32, background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628', fontWeight: 600, textAlign: 'center' }}>

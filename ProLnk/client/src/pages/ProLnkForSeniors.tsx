@@ -6,7 +6,7 @@ export default function ProLnkForSeniors() {
   const toggle = (key: string) => setExpanded(prev => prev === key ? null : key);
 
   return (
-    <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: 'Georgia, serif', color: '#1a2744' }}>
+    <div style={{ background: '#FAFAF9', minHeight: '100vh', fontFamily: 'Georgia, serif', color: '#1a2744′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
@@ -35,7 +35,7 @@ export default function ProLnkForSeniors() {
               <div key={item.title} style={{ display: 'flex', gap: 16, padding: 20, background: '#f8f9fa', borderRadius: 12 }}>
                 <div style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6, color: '#1a2744' }}>{item.title}</div>
+                  <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6, color: '#1a2744′ }}>{item.title}</div>
                   <div style={{ color: '#4a5568', lineHeight: 1.6 }}>{item.body}</div>
                 </div>
               </div>
@@ -67,10 +67,10 @@ export default function ProLnkForSeniors() {
           <h2 style={{ fontSize: 26, fontWeight: 700, marginBottom: 12 }}>
             👨‍👩‍👧 For Adult Children of DFW Homeowners
           </h2>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: '#cbd5e0' }}>
-            TrustyPro lets your parents' home speak for itself. You'll receive regular home health reports, alert notifications for urgent issues, and the ability to schedule contractors on their behalf — all from your phone, whether you're in Frisco or across the country.
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: '#cbd5e0′ }}>
+            TrustyPro lets your parents' home speak for itself. You’ll receive regular home health reports, alert notifications for urgent issues, and the ability to schedule contractors on their behalf — all from your phone, whether you’re in Frisco or across the country.
           </p>
-          <div style={{ marginTop: 20, padding: 20, background: 'rgba(232,180,0,0.15)', borderRadius: 12, borderLeft: '4px solid #e8b400' }}>
+          <div style={{ marginTop: 20, padding: 20, background: 'rgba(232,180,0,0.15)', borderRadius: 12, borderLeft: '4px solid #e8b400′ }}>
             <p style={{ fontSize: 16, color: '#e8b400', fontStyle: 'italic', margin: 0 }}>
               "TrustyPro lets your kids check your home's condition from anywhere — they'll sleep better knowing it's monitored."
             </p>
@@ -111,13 +111,13 @@ export default function ProLnkForSeniors() {
             <div key={item.key} style={{ marginBottom: 12, border: '1px solid #e2e8f0', borderRadius: 10, overflow: 'hidden' }}>
               <button
                 onClick={() => toggle(item.key)}
-                style={{ width: '100%', textAlign: 'left', padding: '16px 20px', background: expanded === item.key ? '#f0f4ff' : '#fff', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 16, fontWeight: 600, color: '#1a2744' }}
+                style={{ width: '100%', textAlign: 'left', padding: '16px 20px', background: expanded === item.key ? '#f0f4ff' : '#fff', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 16, fontWeight: 600, color: '#1a2744′ }}
               >
                 {item.title}
                 <span>{expanded === item.key ? '▲' : '▼'}</span>
               </button>
               {expanded === item.key && (
-                <div style={{ padding: '16px 20px', color: '#4a5568', lineHeight: 1.7, borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ padding: '16px 20px', color: '#4a5568', lineHeight: 1.7, borderTop: '1px solid #e2e8f0′ }}>
                   {item.body}
                 </div>
               )}

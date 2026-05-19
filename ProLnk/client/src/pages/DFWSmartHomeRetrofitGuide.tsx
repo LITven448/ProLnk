@@ -59,15 +59,15 @@ export default function DFWSmartHomeRetrofitGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏚️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Smart Home Retrofit Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Smart Home Retrofit Guide</h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>Adding smart features to existing DFW homes without rewiring</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {PROTOCOLS.map(p => (
-            <div key={p.name} style={{ background: '#0F2240', borderRadius: 10, padding: '1rem', borderTop: '3px solid #F5E642' }}>
+            <div key={p.name} style={{ background: '#0F2240', borderRadius: 10, padding: '1rem', borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: '1.3rem' }}>{p.icon}</div>
-              <div style={{ fontWeight: 700, color: '#F5E642', fontSize: '0.9rem', margin: '0.3rem 0' }}>{p.name}</div>
+              <div style={{ fontWeight: 700, color: '#F5E642', fontSize: '0.9rem', margin: '0.3rem 0′ }}>{p.name}</div>
               <div style={{ color: '#34D399', fontSize: '0.78rem', marginBottom: '0.2rem' }}>+ {p.pros}</div>
               <div style={{ color: '#F87171', fontSize: '0.78rem', marginBottom: '0.3rem' }}>- {p.cons}</div>
               <div style={{ color: '#94A3B8', fontSize: '0.78rem' }}>Best for: {p.bestFor}</div>
@@ -83,9 +83,9 @@ export default function DFWSmartHomeRetrofitGuide() {
             {HOME_AGES.map(a => (
               <button key={a} onClick={() => setAge(a)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: age === a ? '#F5E642' : '#1E3A5F',
-                background: age === a ? '#F5E642' : 'transparent',
-                color: age === a ? '#0A1628' : '#94A3B8',
+                borderColor: age === a ? '#F5E642′ : '#1E3A5F',
+                background: age === a ? '#F5E642′ : ’transparent',
+                color: age === a ? '#0A1628′ : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{a}</button>
             ))}
@@ -96,9 +96,9 @@ export default function DFWSmartHomeRetrofitGuide() {
             {ELECTRICAL.map(e => (
               <button key={e} onClick={() => setElectrical(e)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: electrical === e ? '#F5E642' : '#1E3A5F',
-                background: electrical === e ? '#F5E642' : 'transparent',
-                color: electrical === e ? '#0A1628' : '#94A3B8',
+                borderColor: electrical === e ? '#F5E642′ : '#1E3A5F',
+                background: electrical === e ? '#F5E642′ : ’transparent',
+                color: electrical === e ? '#0A1628′ : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{e}</button>
             ))}
@@ -109,23 +109,23 @@ export default function DFWSmartHomeRetrofitGuide() {
             {GOALS.map(g => (
               <button key={g} onClick={() => setGoal(g)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: goal === g ? '#F5E642' : '#1E3A5F',
-                background: goal === g ? '#F5E642' : 'transparent',
-                color: goal === g ? '#0A1628' : '#94A3B8',
+                borderColor: goal === g ? '#F5E642′ : '#1E3A5F',
+                background: goal === g ? '#F5E642′ : ’transparent',
+                color: goal === g ? '#0A1628′ : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{g}</button>
             ))}
           </div>
 
           <button onClick={() => setShowPlan(true)} disabled={!ready} style={{
-            background: ready ? '#F5E642' : '#1E3A5F', color: '#0A1628',
+            background: ready ? '#F5E642′ : '#1E3A5F', color: '#0A1628',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem',
             fontWeight: 700, fontSize: '1rem', cursor: ready ? 'pointer' : 'not-allowed',
           }}>Get My Retrofit Plan →</button>
         </div>
 
         {showPlan && plan && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             {warn && (
               <div style={{ background: '#92400E', borderRadius: 6, padding: '0.6rem 1rem', marginBottom: '1rem', fontSize: '0.85rem' }}>
                 ⚠️ {plan.caution}
@@ -142,7 +142,7 @@ export default function DFWSmartHomeRetrofitGuide() {
             ].map(([k, v]) => (
               <div key={String(k)} style={{ marginBottom: '0.8rem' }}>
                 <div style={{ color: '#94A3B8', fontSize: '0.82rem' }}>{k}</div>
-                <div style={{ color: k === '💰 Budget Range' ? '#34D399' : '#E2E8F0', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.2rem' }}>{v}</div>
+                <div style={{ color: k === '💰 Budget Range' ? '#34D399′ : '#E2E8F0', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.2rem' }}>{v}</div>
               </div>
             ))}
             {!warn && (

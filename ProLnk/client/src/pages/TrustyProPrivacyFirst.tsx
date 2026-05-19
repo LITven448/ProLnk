@@ -44,11 +44,11 @@ export default function TrustyProPrivacyFirst() {
   ];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
       <div style={{ background: "linear-gradient(135deg,#0A1628,#112240)", padding: "60px 24px 40px", textAlign: "center" }}>
         <div style={{ fontSize: 48 }}>🔐</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>Privacy-First Design</h1>
-        <p style={{ fontSize: 18, color: "#94a3b8", maxWidth: 560, margin: "0 auto" }}>
+        <h1 style={{ fontSize: 36, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>Privacy-First Design</h1>
+        <p style={{ fontSize: 18, color: "#94a3b8″, maxWidth: 560, margin: "0 auto" }}>
           Your home data belongs to you. We built TrustyPro so it could never be any other way.
         </p>
       </div>
@@ -56,35 +56,35 @@ export default function TrustyProPrivacyFirst() {
       <div style={{ maxWidth: 780, margin: "0 auto", padding: "40px 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 12, marginBottom: 40 }}>
           {principles.map(p => (
-            <div key={p.label} style={{ background: "#112240", borderRadius: 12, padding: "20px 14px", textAlign: "center", border: "1px solid #1e3a5f" }}>
+            <div key={p.label} style={{ background: "#112240″, borderRadius: 12, padding: "20px 14px", textAlign: "center", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{p.icon}</div>
-              <div style={{ fontWeight: 700, color: "#F5E642", fontSize: 13, marginBottom: 4 }}>{p.label}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642″, fontSize: 13, marginBottom: 4 }}>{p.label}</div>
               <div style={{ color: "#64748b", fontSize: 11 }}>{p.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#112240", borderRadius: 16, padding: "28px 24px", border: "1px solid #F5E642", marginBottom: 40 }}>
-          <h2 style={{ color: "#F5E642", textAlign: "center", marginTop: 0, marginBottom: 16 }}>Ask a Privacy Question</h2>
+        <div style={{ background: "#112240″, borderRadius: 16, padding: "28px 24px", border: "1px solid #F5E642", marginBottom: 40 }}>
+          <h2 style={{ color: "#F5E642″, textAlign: "center", marginTop: 0, marginBottom: 16 }}>Ask a Privacy Question</h2>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 20 }}>
             {Object.entries(concerns).map(([key, val]) => (
               <button key={key} onClick={() => setActiveConcern(key)}
-                style={{ background: activeConcern === key ? "#F5E642" : "#0A1628", color: activeConcern === key ? "#0A1628" : "#94a3b8",
-                  border: "1px solid " + (activeConcern === key ? "#F5E642" : "#1e3a5f"), borderRadius: 8,
+                style={{ background: activeConcern === key ? "#F5E642″ : "#0A1628", color: activeConcern === key ? "#0A1628" : "#94a3b8",
+                  border: "1px solid " + (activeConcern === key ? "#F5E642″ : "#1e3a5f"), borderRadius: 8,
                   padding: "8px 12px", cursor: "pointer", fontWeight: 600, fontSize: 12 }}>
                 {val.icon}
               </button>
             ))}
           </div>
-          <div style={{ background: "#0A1628", borderRadius: 12, padding: "20px 18px" }}>
-            <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 16, marginBottom: 10 }}>{concerns[activeConcern].question}</div>
-            <div style={{ color: "#cbd5e1", fontSize: 14, lineHeight: 1.6 }}>{concerns[activeConcern].answer}</div>
+          <div style={{ background: "#0A1628″, borderRadius: 12, padding: "20px 18px" }}>
+            <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 16, marginBottom: 10 }}>{concerns[activeConcern].question}</div>
+            <div style={{ color: "#cbd5e1″, fontSize: 14, lineHeight: 1.6 }}>{concerns[activeConcern].answer}</div>
           </div>
         </div>
 
-        <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
+        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "24px", textAlign: "center" }}>
           <div style={{ fontSize: 24 }}>🛡️</div>
-          <div style={{ fontWeight: 800, color: "#0A1628", fontSize: 20, margin: "8px 0 4px" }}>Privacy You Can Trust</div>
+          <div style={{ fontWeight: 800, color: "#0A1628″, fontSize: 20, margin: "8px 0 4px" }}>Privacy You Can Trust</div>
           <div style={{ color: "#1e3a5f", fontSize: 14 }}>TrustyPro is built for homeowners who want the power of AI without surrendering control of their data.</div>
         </div>
       </div>

@@ -64,7 +64,7 @@ export default function DFWAtticStorageGuide() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME ORGANIZATION</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>Attic Storage Guide — Dallas-Fort Worth 2026</h1>
-        <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 32, maxWidth: 680 }}>DFW attics reach 150–160°F in summer. Most homeowners don't realize they're destroying valuable belongings. This guide tells you exactly what's safe — and what's not.</p>
+        <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 32, maxWidth: 680 }}>DFW attics reach 150–160°F in summer. Most homeowners don't realize they’re destroying valuable belongings. This guide tells you exactly what’s safe — and what’s not.</p>
 
         <div style={{ background: '#1a0000', border: '2px solid #7f1d1d', borderRadius: 12, padding: 20, marginBottom: 32 }}>
           <div style={{ color: '#f87171', fontWeight: 800, fontSize: 17, marginBottom: 4 }}>🌡️ DFW ATTIC TEMPERATURE WARNING</div>
@@ -83,7 +83,7 @@ export default function DFWAtticStorageGuide() {
           </div>
           <div style={{ background: '#0f2040', border: '1px solid #14532d', borderRadius: 12, padding: 20 }}>
             <div style={{ color: '#22c55e', fontWeight: 700, marginBottom: 12, fontSize: 15 }}>✅ Generally Safe for DFW Attic</div>
-            {safeItems.map(s => <div key={s} style={{ color: '#94a3b8', fontSize: 13, padding: '5px 0', borderBottom: '1px solid #0f2040' }}>{s}</div>)}
+            {safeItems.map(s => <div key={s} style={{ color: '#94a3b8', fontSize: 13, padding: '5px 0', borderBottom: '1px solid #0f2040′ }}>{s}</div>)}
             <div style={{ marginTop: 16, color: '#22c55e', fontSize: 12 }}>Always use sealed bins. Check annually for pest activity and moisture damage.</div>
           </div>
         </div>
@@ -102,13 +102,13 @@ export default function DFWAtticStorageGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🧮 Attic Storage Safety Assessment</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Attic floored sq footage</label>
-            <input value={sqft} onChange={e => setSqft(e.target.value)} type="number" placeholder="e.g. 150" style={{ width: 200, background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15 }} />
+            <input value={sqft} onChange={e => setSqft(e.target.value)} type="number" placeholder="e.g. 150″ style={{ width: 200, background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15 }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 10 }}>What do you want to store? (select all)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {itemOptions.map(o => (
-                <button key={o} onClick={() => toggleItem(o)} style={{ background: itemTypes.includes(o) ? '#F5E642' : '#0A1628', color: itemTypes.includes(o) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 6, padding: '6px 14px', fontSize: 13, cursor: 'pointer' }}>{o}</button>
+                <button key={o} onClick={() => toggleItem(o)} style={{ background: itemTypes.includes(o) ? '#F5E642′ : '#0A1628', color: itemTypes.includes(o) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 6, padding: '6px 14px', fontSize: 13, cursor: ’pointer' }}>{o}</button>
               ))}
             </div>
           </div>

@@ -40,41 +40,41 @@ export default function DFWToiletRepairGuide2026() {
   const repair = REPAIRS[symptom];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
+        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🚽 DFW DIY Toilet Repair Guide 2026</h1>
-        <p style={{ color: "#94a3b8", marginBottom: 32 }}>Most toilet problems are DIY-fixable for under $25. Select your symptom.</p>
+        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>Most toilet problems are DIY-fixable for under $25. Select your symptom.</p>
 
         <div style={{ marginBottom: 28 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 12, fontSize: 14 }}>WHAT IS YOUR TOILET DOING?</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 12, fontSize: 14 }}>WHAT IS YOUR TOILET DOING?</div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {(Object.keys(REPAIRS) as Symptom[]).map((s) => (
-              <button key={s} onClick={() => setSymptom(s)} style={{ padding: "9px 14px", borderRadius: 8, border: "2px solid", borderColor: symptom === s ? "#F5E642" : "#1e3a5f", background: symptom === s ? "#F5E642" : "transparent", color: symptom === s ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>{s}</button>
+              <button key={s} onClick={() => setSymptom(s)} style={{ padding: "9px 14px", borderRadius: 8, border: "2px solid", borderColor: symptom === s ? "#F5E642″ : "#1e3a5f", background: symptom === s ? "#F5E642" : "transparent", color: symptom === s ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>{s}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, marginBottom: 14, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 8 }}>🔍 DIAGNOSIS</div>
-          <div style={{ color: "#e2e8f0", fontSize: 14 }}>{repair.diagnosis}</div>
+        <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, marginBottom: 14, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 8 }}>🔍 DIAGNOSIS</div>
+          <div style={{ color: "#e2e8f0″, fontSize: 14 }}>{repair.diagnosis}</div>
         </div>
 
-        <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, marginBottom: 14, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 12 }}>🔧 REPAIR STEPS</div>
-          <ol style={{ margin: 0, paddingLeft: 20, color: "#e2e8f0", lineHeight: 2, fontSize: 13 }}>
+        <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, marginBottom: 14, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 12 }}>🔧 REPAIR STEPS</div>
+          <ol style={{ margin: 0, paddingLeft: 20, color: "#e2e8f0″, lineHeight: 2, fontSize: 13 }}>
             {repair.steps.map((step, i) => <li key={i}>{step}</li>)}
           </ol>
         </div>
 
-        <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, marginBottom: 14, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 8 }}>🛒 PARTS NEEDED</div>
-          <div style={{ color: "#e2e8f0", fontSize: 14 }}>{repair.parts}</div>
+        <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, marginBottom: 14, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 8 }}>🛒 PARTS NEEDED</div>
+          <div style={{ color: "#e2e8f0″, fontSize: 14 }}>{repair.parts}</div>
         </div>
 
-        <div style={{ background: "#162d4a", borderRadius: 12, padding: 20, border: "1px solid #F5E642" }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 8 }}>💡 DFW NOTE</div>
-          <div style={{ color: "#fef9c3", fontSize: 14, lineHeight: 1.6 }}>DFW hard water corrodes flappers and fill valves faster than the national average. Replace proactively every 3-5 years rather than waiting for failure.</div>
+        <div style={{ background: "#162d4a", borderRadius: 12, padding: 20, border: "1px solid #F5E642″ }}>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 8 }}>💡 DFW NOTE</div>
+          <div style={{ color: "#fef9c3″, fontSize: 14, lineHeight: 1.6 }}>DFW hard water corrodes flappers and fill valves faster than the national average. Replace proactively every 3-5 years rather than waiting for failure.</div>
         </div>
 
         <div style={{ marginTop: 32, textAlign: "center", color: "#64748b", fontSize: 13 }}>ProLnk - Connecting DFW Homeowners with Trusted Pros - prolnk.io</div>

@@ -96,7 +96,7 @@ export default function DFWLightingDesignGuide() {
 
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {roomTypes.map(r => (
-            <button key={r.id} onClick={() => setRoom(r.id)} style={{ padding: '10px 20px', borderRadius: 100, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: room === r.id ? '#F5E642' : 'rgba(255,255,255,0.1)', color: room === r.id ? '#0A1628' : '#ccc', transition: 'all 0.2s' }}>
+            <button key={r.id} onClick={() => setRoom(r.id)} style={{ padding: '10px 20px', borderRadius: 100, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: room === r.id ? '#F5E642′ : ’rgba(255,255,255,0.1)', color: room === r.id ? '#0A1628′ : '#ccc', transition: ’all 0.2s' }}>
               {r.icon} {r.label}
             </button>
           ))}
@@ -139,7 +139,7 @@ export default function DFWLightingDesignGuide() {
               <div style={{ fontSize: 11, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>Estimated Cost</div>
               <div style={{ fontSize: 22, fontWeight: 800 }}>{plan.cost}</div>
             </div>
-            <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 11, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>🌞 DFW Note</div>
               <div style={{ fontSize: 13, color: '#ccc', lineHeight: 1.5 }}>{plan.dfwNote}</div>
             </div>

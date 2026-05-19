@@ -39,7 +39,7 @@ export default function DFWExteriorPaintROIGuide() {
 
   function calculate() {
     const sData = sizeCost[homeSize];
-    const storyMult = stories === '2' ? 1.35 : stories === '3' ? 1.6 : 1.0;
+    const storyMult = stories === '2′ ? 1.35 : stories === '3' ? 1.6 : 1.0;
     const submarketMult = submarket === 'northdfw' ? 1.2 : submarket === 'innerdfw' ? 1.1 : submarket === 'suburban' ? 1.1 : 1.0;
     const baseCost = Math.round(((sData.baseCost1 + sData.baseCost2) / 2) * storyMult);
     const baseROI = conditionROI[condition] ?? 65;
@@ -95,9 +95,9 @@ export default function DFWExteriorPaintROIGuide() {
             <div>
               <label style={styles.label}>Number of Stories</label>
               <select style={styles.select} value={stories} onChange={e => setStories(e.target.value)}>
-                <option value="1">1 Story</option>
-                <option value="2">2 Stories</option>
-                <option value="3">3 Stories</option>
+                <option value="1″>1 Story</option>
+                <option value="2″>2 Stories</option>
+                <option value="3″>3 Stories</option>
               </select>
             </div>
           </div>

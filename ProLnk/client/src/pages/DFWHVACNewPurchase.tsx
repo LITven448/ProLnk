@@ -59,7 +59,7 @@ export default function DFWHVACNewPurchase() {
           <div style={{ display: 'grid', gap: 10 }}>
             {dfwSystemTypes.map(s => (
               <button key={s.id} onClick={() => setSystem(s.id)}
-                style={{ background: system === s.id ? '#F5E642' : '#1A2D4A', color: system === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: system === s.id ? '#F5E642′ : '#1A2D4A', color: system === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {s.label}
                 <span style={{ display: 'block', fontWeight: 400, fontSize: 12, marginTop: 2, opacity: 0.8 }}>{s.brand}</span>
               </button>

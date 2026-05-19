@@ -30,7 +30,7 @@ export default function DFWDiverseFamilyHomeGuide() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🌍</div>
-          <h1 style={{ fontSize: '2.2rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Multicultural Family Home Guide</h1>
+          <h1 style={{ fontSize: '2.2rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Multicultural Family Home Guide</h1>
           <p style={{ color: '#8A9BB5', fontSize: '1.05rem' }}>DFW is one of America's most diverse metros — find where your community thrives</p>
         </div>
 
@@ -38,7 +38,7 @@ export default function DFWDiverseFamilyHomeGuide() {
           {communities.map(c => (
             <div key={c.name} onClick={() => setSelectedCommunity(c.name)} style={{ background: selectedCommunity === c.name ? '#1A3A6F' : '#0F2040', border: `1px solid ${selectedCommunity === c.name ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '0.9rem', cursor: 'pointer', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '1.8rem' }}>{c.icon}</div>
-              <div style={{ color: selectedCommunity === c.name ? '#F5E642' : '#E8EDF5', fontWeight: 600, fontSize: '0.85rem', marginTop: 4 }}>{c.name}</div>
+              <div style={{ color: selectedCommunity === c.name ? '#F5E642′ : '#E8EDF5', fontWeight: 600, fontSize: '0.85rem', marginTop: 4 }}>{c.name}</div>
             </div>
           ))}
         </div>
@@ -47,10 +47,10 @@ export default function DFWDiverseFamilyHomeGuide() {
           <div style={{ background: '#0F2040', border: '1px solid #1E3A5F', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
             <h2 style={{ color: '#F5E642', marginTop: 0 }}>{activeCommunity.icon} {activeCommunity.name} Community in DFW</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <div><span style={{ color: '#5BA4F5' }}>📍 Strong Areas: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.strongAreas}</span></div>
-              <div><span style={{ color: '#5BA4F5' }}>🛒 Cultural Stores: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.stores}</span></div>
-              <div><span style={{ color: '#5BA4F5' }}>🙏 Faith Communities: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.faith}</span></div>
-              <div><span style={{ color: '#5BA4F5' }}>🤝 Community Centers: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.centers}</span></div>
+              <div><span style={{ color: '#5BA4F5′ }}>📍 Strong Areas: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.strongAreas}</span></div>
+              <div><span style={{ color: '#5BA4F5′ }}>🛒 Cultural Stores: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.stores}</span></div>
+              <div><span style={{ color: '#5BA4F5′ }}>🙏 Faith Communities: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.faith}</span></div>
+              <div><span style={{ color: '#5BA4F5′ }}>🤝 Community Centers: </span><span style={{ color: '#8A9BB5' }}>{activeCommunity.centers}</span></div>
             </div>
             <div style={{ marginTop: '1.2rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 8 }}>🏘️ Best DFW Neighborhoods:</div>
@@ -65,12 +65,12 @@ export default function DFWDiverseFamilyHomeGuide() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.1rem' }}>🎯 Refine by Priority</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
             {priorities.map(p => (
-              <button key={p} onClick={() => setSelectedPriority(selectedPriority === p ? '' : p)} style={{ background: selectedPriority === p ? '#F5E642' : '#0A1628', color: selectedPriority === p ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A7F', borderRadius: 20, padding: '0.4rem 1rem', cursor: 'pointer', fontSize: '0.85rem' }}>{p}</button>
+              <button key={p} onClick={() => setSelectedPriority(selectedPriority === p ? '' : p)} style={{ background: selectedPriority === p ? '#F5E642′ : '#0A1628', color: selectedPriority === p ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A7F', borderRadius: 20, padding: '0.4rem 1rem', cursor: ’pointer', fontSize: '0.85rem' }}>{p}</button>
             ))}
           </div>
           {selectedPriority && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
-              <strong style={{ color: '#F5E642' }}>{selectedPriority}</strong>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+              <strong style={{ color: '#F5E642′ }}>{selectedPriority}</strong>
               <p style={{ color: '#8A9BB5', margin: '0.5rem 0 0', fontSize: '0.9rem' }}>
                 {selectedPriority === 'Good schools' && 'Frisco, Allen, Southlake, Keller — all ranked top 10% in TX. Plano ISD has strong bilingual programs.'}
                 {selectedPriority === 'Cultural community density' && 'Choose the neighborhood where your specific community is concentrated — density matters for schools, stores, and social connection.'}
@@ -87,7 +87,7 @@ export default function DFWDiverseFamilyHomeGuide() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.1rem' }}>📊 DFW Diversity Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.7rem' }}>
             {['7M+ population, 4th largest metro in the US', '50+ languages spoken in DFW schools', 'Fastest-growing diverse suburbs: Frisco, McKinney', 'Texas has no state income tax — more disposable income', 'Dallas ISD: 93% minority enrollment, bilingual programs', '200+ international grocery stores across DFW'].map(f => (
-              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem', fontSize: '0.82rem', color: '#8A9BB5' }}>🌟 {f}</div>
+              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem', fontSize: '0.82rem', color: '#8A9BB5′ }}>🌟 {f}</div>
             ))}
           </div>
         </div>

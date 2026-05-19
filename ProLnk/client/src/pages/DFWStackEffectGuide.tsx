@@ -66,10 +66,10 @@ export default function DFWStackEffectGuide() {
           ].map(item => (
             <div key={item.title} style={{ marginBottom: 16, padding: 14, background: '#0A1628', borderRadius: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{item.title}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{item.title}</div>
                 <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700 }}>{item.when}</div>
               </div>
-              <div style={{ fontSize: 14, color: '#94a3b8' }}>{item.desc}</div>
+              <div style={{ fontSize: 14, color: '#94a3b8′ }}>{item.desc}</div>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function DFWStackEffectGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Number of Floors</label>
-              <input value={homeHeight} onChange={e => setHomeHeight(e.target.value)} placeholder="e.g. 1 or 2" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={homeHeight} onChange={e => setHomeHeight(e.target.value)} placeholder="e.g. 1 or 2″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Problem Season</label>
@@ -88,7 +88,7 @@ export default function DFWStackEffectGuide() {
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer' }}>Assess My DFW Stack Effect →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Impact: {result.impact}</div>
               <div style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: 6 }}>Priority guidance:</div>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10 }}>{result.priority}</div>

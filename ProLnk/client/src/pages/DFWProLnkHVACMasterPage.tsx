@@ -110,7 +110,7 @@ export default function DFWProLnkHVACMasterPage() {
           <div style={{ display: 'grid', gap: '10px' }}>
             {needs.map(n => (
               <button key={n.value} onClick={() => setSelected(n.value)}
-                style={{ padding: '14px 18px', borderRadius: '8px', border: selected === n.value ? '2px solid #F5E642' : '2px solid #1e3a5f', backgroundColor: selected === n.value ? '#1a2f50' : 'transparent', color: selected === n.value ? '#F5E642' : '#cbd5e1', cursor: 'pointer', textAlign: 'left', fontSize: '15px', fontWeight: selected === n.value ? 700 : 400 }}>
+                style={{ padding: '14px 18px', borderRadius: '8px', border: selected === n.value ? '2px solid #F5E642′ : '2px solid #1e3a5f', backgroundColor: selected === n.value ? '#1a2f50' : ’transparent', color: selected === n.value ? '#F5E642′ : '#cbd5e1', cursor: ’pointer', textAlign: 'left', fontSize: '15px', fontWeight: selected === n.value ? 700 : 400 }}>
                 {n.label}
               </button>
             ))}
@@ -129,7 +129,7 @@ export default function DFWProLnkHVACMasterPage() {
                 </div>
               ))}
             </div>
-            <div style={{ backgroundColor: '#1a2f50', borderRadius: '8px', padding: '16px', marginBottom: '16px', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#1a2f50', borderRadius: '8px', padding: '16px', marginBottom: '16px', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: '13px', color: '#F5E642', fontWeight: 600, marginBottom: '6px' }}>🗄️ HOME HEALTH VAULT</div>
               <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: 1.5 }}>{sol.vault}</div>
             </div>

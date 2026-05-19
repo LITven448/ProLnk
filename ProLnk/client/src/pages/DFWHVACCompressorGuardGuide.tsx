@@ -88,7 +88,7 @@ export default function DFWHVACCompressorGuardGuide() {
             Get Recommendation
           </button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}>✅ <strong>Benefit:</strong> {result.benefit}</div>
               <div style={{ marginBottom: '0.5rem' }}>💰 <strong>Cost:</strong> {result.cost}</div>
               <div>📋 <strong>Verdict:</strong> {result.recommend}</div>
@@ -98,7 +98,7 @@ export default function DFWHVACCompressorGuardGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
           <p style={{ color: '#9BA8BB', fontSize: '0.9rem', margin: 0 }}>
-            🏠 <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> Ask your HVAC tech to check run capacitor health when installing a hard start kit — both degrade together in DFW heat.
+            🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> Ask your HVAC tech to check run capacitor health when installing a hard start kit — both degrade together in DFW heat.
           </p>
         </div>
       </div>

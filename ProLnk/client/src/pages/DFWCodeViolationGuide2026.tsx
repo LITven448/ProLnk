@@ -69,39 +69,39 @@ export default function DFWCodeViolationGuide2026() {
   const info = violationData[violationType];
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
         <div style={{ marginBottom: "32px" }}>
           <span style={{ fontSize: "32px" }}>🚨</span>
-          <h1 style={{ fontSize: "28px", fontWeight: "800", color: "#F5E642", marginTop: "8px" }}>DFW Code Violation Guide 2026</h1>
-          <p style={{ color: "#94a3b8", marginTop: "8px" }}>DFW cities actively enforce code violations. Unpermitted work, overgrown lots, and derelict structures can result in daily fines and liens. Here is how to cure violations before they escalate.</p>
+          <h1 style={{ fontSize: "28px", fontWeight: "800″, color: "#F5E642", marginTop: "8px" }}>DFW Code Violation Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, marginTop: "8px" }}>DFW cities actively enforce code violations. Unpermitted work, overgrown lots, and derelict structures can result in daily fines and liens. Here is how to cure violations before they escalate.</p>
         </div>
 
         <div style={{ marginBottom: "24px" }}>
-          <label style={{ color: "#94a3b8", fontSize: "13px", display: "block", marginBottom: "6px" }}>Violation Type</label>
-          <select value={violationType} onChange={e => setViolationType(e.target.value)} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155", borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "280px" }}>
+          <label style={{ color: "#94a3b8″, fontSize: "13px", display: "block", marginBottom: "6px" }}>Violation Type</label>
+          <select value={violationType} onChange={e => setViolationType(e.target.value)} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155″, borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "280px" }}>
             {Object.keys(violationData).map(k => <option key={k}>{k}</option>)}
           </select>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "24px" }}>
-          <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px", borderLeft: "4px solid #F5E642" }}>
-            <p style={{ color: "#94a3b8", fontSize: "12px", marginBottom: "4px" }}>CURE TIMELINE</p>
-            <p style={{ color: "#F5E642", fontWeight: "700", fontSize: "18px" }}>{info.timeline}</p>
+          <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px", borderLeft: "4px solid #F5E642″ }}>
+            <p style={{ color: "#94a3b8″, fontSize: "12px", marginBottom: "4px" }}>CURE TIMELINE</p>
+            <p style={{ color: "#F5E642″, fontWeight: "700", fontSize: "18px" }}>{info.timeline}</p>
           </div>
-          <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px", borderLeft: "4px solid #ef4444" }}>
-            <p style={{ color: "#94a3b8", fontSize: "12px", marginBottom: "4px" }}>POTENTIAL FINES</p>
-            <p style={{ color: "#ef4444", fontWeight: "700", fontSize: "18px" }}>{info.fines}</p>
+          <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px", borderLeft: "4px solid #ef4444″ }}>
+            <p style={{ color: "#94a3b8″, fontSize: "12px", marginBottom: "4px" }}>POTENTIAL FINES</p>
+            <p style={{ color: "#ef4444″, fontWeight: "700", fontSize: "18px" }}>{info.fines}</p>
           </div>
         </div>
 
         <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "24px", marginBottom: "24px" }}>
-          <h2 style={{ color: "#F5E642", fontWeight: "700", marginBottom: "16px" }}>Cure Process — {violationType}</h2>
+          <h2 style={{ color: "#F5E642″, fontWeight: "700", marginBottom: "16px" }}>Cure Process — {violationType}</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {info.process.map((step, i) => (
               <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                <div style={{ backgroundColor: "#F5E642", color: "#0A1628", borderRadius: "50%", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: "800", flexShrink: 0, marginTop: "1px" }}>{i + 1}</div>
-                <p style={{ color: "#e2e8f0", fontSize: "14px", lineHeight: "1.6" }}>{step}</p>
+                <div style={{ backgroundColor: "#F5E642″, color: "#0A1628", borderRadius: "50%", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: "800", flexShrink: 0, marginTop: "1px" }}>{i + 1}</div>
+                <p style={{ color: "#e2e8f0″, fontSize: "14px", lineHeight: "1.6" }}>{step}</p>
               </div>
             ))}
           </div>
@@ -115,8 +115,8 @@ export default function DFWCodeViolationGuide2026() {
           ].map(({ icon, title, body }) => (
             <div key={title} style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px" }}>
               <div style={{ fontSize: "24px", marginBottom: "8px" }}>{icon}</div>
-              <h3 style={{ color: "#F5E642", fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
-              <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
+              <h3 style={{ color: "#F5E642″, fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
+              <p style={{ color: "#94a3b8″, fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
             </div>
           ))}
         </div>

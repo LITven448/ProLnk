@@ -63,11 +63,11 @@ export default function DFWHVACCommunicatingSystemGuide() {
           🔗 What "Communicating" Means: <span style={{ fontWeight: 400 }}>All components (thermostat, air handler, compressor) send real-time data to each other via digital signals — not just analog on/off. This enables precise inverter control, fault detection, and efficiency optimization impossible with standard wiring.</span>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Top Communicating Systems for DFW</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Top Communicating Systems for DFW</h2>
         <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '2rem' }}>
           {systems.map((s, i) => (
             <div key={i} onClick={() => setSystemOpen(systemOpen === i ? null : i)}
-              style={{ background: systemOpen === i ? '#162035' : '#111D33', border: `1.5px solid ${systemOpen === i ? s.color : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
+              style={{ background: systemOpen === i ? '#162035′ : '#111D33', border: `1.5px solid ${systemOpen === i ? s.color : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: ’pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                   <span style={{ fontSize: '1.5rem' }}>{s.icon}</span>
@@ -103,14 +103,14 @@ export default function DFWHVACCommunicatingSystemGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🏠 My DFW Situation → Worth It?</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🏠 My DFW Situation → Worth It?</h2>
         <div style={{ display: 'grid', gap: '0.5rem' }}>
           {situations.map((s, i) => (
             <div key={i} onClick={() => setSituationOpen(situationOpen === i ? null : i)}
-              style={{ background: situationOpen === i ? '#162035' : '#111D33', border: `1.5px solid ${situationOpen === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: 'pointer' }}>
+              style={{ background: situationOpen === i ? '#162035′ : '#111D33', border: `1.5px solid ${situationOpen === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: ’pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontWeight: 600 }}>{s.situation}</span>
-                <span style={{ color: s.rec.startsWith('Yes') ? '#7ED321' : s.rec.startsWith('No') ? '#E87D4A' : '#F5E642', fontWeight: 700, fontSize: '0.8rem', textAlign: 'right', maxWidth: 120 }}>{s.rec}</span>
+                <span style={{ color: s.rec.startsWith('Yes') ? '#7ED321′ : s.rec.startsWith(’No') ? '#E87D4A' : '#F5E642', fontWeight: 700, fontSize: '0.8rem', textAlign: 'right', maxWidth: 120 }}>{s.rec}</span>
               </div>
               {situationOpen === i && <p style={{ color: '#8A9BB5', fontSize: '0.9rem', marginTop: '0.5rem' }}>{s.detail}</p>}
             </div>

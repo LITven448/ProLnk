@@ -25,10 +25,10 @@ export default function DFWEnergyModelingGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, margin: '0 0 12px' }}>📊 DFW HERS Score Benchmarks</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { label: 'New DFW Homes Avg', value: 'HERS 60–70' },
-              { label: 'Resale DFW Homes Avg', value: 'HERS 80–120' },
-              { label: 'ENERGY STAR Threshold', value: 'HERS ≤ 57' },
-              { label: 'Near Net-Zero', value: 'HERS < 30' },
+              { label: 'New DFW Homes Avg', value: 'HERS 60–70′ },
+              { label: 'Resale DFW Homes Avg', value: 'HERS 80–120′ },
+              { label: 'ENERGY STAR Threshold', value: 'HERS ≤ 57′ },
+              { label: 'Near Net-Zero', value: 'HERS < 30′ },
             ].map(item => (
               <div key={item.label} style={{ background: '#1a2f4a', borderRadius: 8, padding: '10px 14px' }}>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>{item.label}</div>
@@ -43,13 +43,13 @@ export default function DFWEnergyModelingGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {vintages.map(v => (
               <button key={v.id} onClick={() => setSelected(v.id === selected ? null : v.id)}
-                style={{ background: selected === v.id ? '#F5E642' : '#1a2f4a', color: selected === v.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === v.id ? '#F5E642′ : '#1a2f4a', color: selected === v.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {v.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Estimated Current HERS: {match.hers}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 10 }}>{match.note}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Top Improvements (Priority Order):</div>

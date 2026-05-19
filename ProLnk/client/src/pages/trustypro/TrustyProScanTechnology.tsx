@@ -41,7 +41,7 @@ export default function TrustyProScanTechnology() {
 
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <div style={{ background: '#4F46E5', display: 'inline-block', borderRadius: 8, padding: '6px 16px', fontSize: 13, fontWeight: 600, marginBottom: 16 }}>SCAN TECHNOLOGY</div>
-          <h1 style={{ fontSize: 48, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>AI That Sees What<br /><span style={{ color: '#4F46E5' }}>Inspectors Miss</span></h1>
+          <h1 style={{ fontSize: 48, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>AI That Sees What<br /><span style={{ color: '#4F46E5′ }}>Inspectors Miss</span></h1>
           <p style={{ color: '#94a3b8', fontSize: 18, maxWidth: 580, margin: '0 auto' }}>TrustyPro's visual AI was trained on millions of real property images to detect issues before they become emergencies.</p>
         </div>
 

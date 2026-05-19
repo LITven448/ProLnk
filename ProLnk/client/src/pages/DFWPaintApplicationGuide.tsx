@@ -36,7 +36,7 @@ export default function DFWPaintApplicationGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, letterSpacing: 2, textTransform: 'uppercase' }}>DFW Home Guide</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Paint Application Guide for DFW</h1>
-        <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 32 }}>DFW's extreme heat and humidity don't just make painting uncomfortable — they cause paint failures. Timing is everything.</p>
+        <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 32 }}>DFW's extreme heat and humidity don’t just make painting uncomfortable — they cause paint failures. Timing is everything.</p>
 
         <div style={{ backgroundColor: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🌡️ DFW Paint Temperature Rules</h2>
@@ -79,13 +79,13 @@ export default function DFWPaintApplicationGuide() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>PAINTING TYPE</label>
               {[{ val: 'exterior', label: '🏠 Exterior Walls' }, { val: 'interior', label: '🛋️ Interior Walls' }, { val: 'trim', label: '🪟 Trim & Doors' }].map(opt => (
-                <button key={opt.val} onClick={() => setPaintType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${paintType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: paintType === opt.val ? '#F5E642' : 'transparent', color: paintType === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setPaintType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${paintType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: paintType === opt.val ? '#F5E642′ : ’transparent', color: paintType === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>DFW SEASON</label>
               {[{ val: 'spring', label: '🌸 Spring (Mar–Apr)' }, { val: 'summer', label: '☀️ Summer (May–Sep)' }, { val: 'fall', label: '🍂 Fall (Oct–Nov)' }, { val: 'winter', label: '❄️ Winter (Dec–Feb)' }].map(opt => (
-                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642' : 'transparent', color: season === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642′ : ’transparent', color: season === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function DFWPaintApplicationGuide() {
               {result.warning && <div style={{ backgroundColor: '#7f1d1d', borderRadius: 8, padding: 12, marginBottom: 12, color: '#fca5a5', fontSize: 14 }}>⚠️ {result.warning}</div>}
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>🌡️ Conditions: {result.temp}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 12 }}>⏱️ Dry time: {result.dryTime}</div>
-              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642' }}>💡 DFW Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
+              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642′ }}>💡 DFW Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
             </div>
           )}
         </div>

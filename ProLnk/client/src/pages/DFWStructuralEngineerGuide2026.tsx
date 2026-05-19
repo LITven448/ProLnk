@@ -35,7 +35,7 @@ export default function DFWStructuralEngineerGuide2026() {
               <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{section.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>{section.title}</div>
               {section.items.map((item, j) => (
-                <div key={j} style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.3rem', color: '#94a3b8', fontSize: '0.85rem' }}><span style={{ color: '#F5E642' }}>▶</span>{item}</div>
+                <div key={j} style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.3rem', color: '#94a3b8', fontSize: '0.85rem' }}><span style={{ color: '#F5E642′ }}>▶</span>{item}</div>
               ))}
             </div>
           ))}
@@ -44,7 +44,7 @@ export default function DFWStructuralEngineerGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '1rem' }}>📌 When DFW Permits Require a PE Stamp</div>
           {['Load bearing wall removal (all DFW cities)','Roof structure modifications or attic conversions','Additions over 200 sq ft in most municipalities','Deck or patio cover over 200 sq ft with footing','Foundation repair permits in some cities (Dallas, Plano, Frisco)','Retaining walls over 4 feet in height'].map((tip, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#cbd5e1' }}><span style={{ color: '#F5E642' }}>▶</span>{tip}</div>
+            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#cbd5e1′ }}><span style={{ color: '#F5E642' }}>▶</span>{tip}</div>
           ))}
         </div>
 
@@ -63,7 +63,7 @@ export default function DFWStructuralEngineerGuide2026() {
             </select>
             <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.5rem 1.2rem', fontWeight: 700, cursor: 'pointer' }}>Get Answer</button>
           </div>
-          {result && <div style={{ background: '#0f2744', borderRadius: 8, padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
+          {result && <div style={{ background: '#0f2744', borderRadius: 8, padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
         </div>
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '1rem 1.5rem', color: '#0A1628', fontWeight: 600 }}>

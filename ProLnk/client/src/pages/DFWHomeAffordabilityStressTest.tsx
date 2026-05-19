@@ -43,7 +43,7 @@ export default function DFWHomeAffordabilityStressTest() {
   const passTax = taxStress.totalDTI < 0.43;
 
   const score = [passBase, passRate, passIncome, passTax].filter(Boolean).length;
-  const scoreColor = score === 4 ? '#16a34a' : score >= 2 ? '#d97706' : '#dc2626';
+  const scoreColor = score === 4 ? '#16a34a' : score >= 2 ? '#d97706′ : '#dc2626';
   const scoreLabel = score === 4 ? 'Strong' : score >= 2 ? 'Moderate' : 'Risky';
 
   const scenarios = [
@@ -67,22 +67,22 @@ export default function DFWHomeAffordabilityStressTest() {
             <div>
               <label style={{ fontWeight: 600, fontSize: '0.88rem' }}>Monthly Income: {fmt(income)}</label>
               <input type="range" min={3000} max={30000} step={250} value={income} onChange={e => setIncome(Number(e.target.value))}
-                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628' }} />
+                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628′ }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: '0.88rem' }}>Monthly Debts: {fmt(debts)}</label>
               <input type="range" min={0} max={5000} step={50} value={debts} onChange={e => setDebts(Number(e.target.value))}
-                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628' }} />
+                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628′ }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: '0.88rem' }}>Home Price: {fmt(homePrice)}</label>
               <input type="range" min={200000} max={1200000} step={5000} value={homePrice} onChange={e => setHomePrice(Number(e.target.value))}
-                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628' }} />
+                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628′ }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: '0.88rem' }}>Rate: {rate.toFixed(1)}%</label>
               <input type="range" min={5.0} max={10.5} step={0.1} value={rate} onChange={e => setRate(Number(e.target.value))}
-                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628' }} />
+                style={{ width: '100%', marginTop: 6, accentColor: '#0A1628′ }} />
             </div>
           </div>
           <div style={{ marginTop: '1rem' }}>
@@ -112,11 +112,11 @@ export default function DFWHomeAffordabilityStressTest() {
             <div key={s.label} style={{ background: '#fff', borderRadius: 8, padding: '0.9rem 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.05)', borderLeft: `4px solid ${s.pass ? '#16a34a' : '#dc2626'}` }}>
               <div>
                 <div style={{ fontWeight: 600 }}>{s.label}</div>
-                <div style={{ fontSize: '0.78rem', color: '#777' }}>{s.sub}</div>
+                <div style={{ fontSize: '0.78rem', color: '#777′ }}>{s.sub}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: s.pass ? '#16a34a' : '#dc2626' }}>{s.pass ? 'PASS' : 'FAIL'}</div>
-                <div style={{ fontSize: '0.75rem', color: '#888' }}>DTI: {(s.dti * 100).toFixed(1)}%</div>
+                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: s.pass ? '#16a34a' : '#dc2626′ }}>{s.pass ? ’PASS' : 'FAIL'}</div>
+                <div style={{ fontSize: '0.75rem', color: '#888′ }}>DTI: {(s.dti * 100).toFixed(1)}%</div>
               </div>
             </div>
           ))}

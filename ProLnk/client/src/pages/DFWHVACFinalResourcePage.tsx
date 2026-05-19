@@ -82,8 +82,8 @@ export default function DFWHVACFinalResourcePage() {
                 key={n.need}
                 onClick={() => setSelectedNeed(selectedNeed === n.need ? null : n.need)}
                 style={{
-                  background: selectedNeed === n.need ? '#F5E642' : '#0F1E35',
-                  color: selectedNeed === n.need ? '#0A1628' : '#C8CDD8',
+                  background: selectedNeed === n.need ? '#F5E642′ : '#0F1E35',
+                  color: selectedNeed === n.need ? '#0A1628′ : '#C8CDD8',
                   border: `1.5px solid ${selectedNeed === n.need ? '#F5E642' : '#1E2D45'}`,
                   borderRadius: 20,
                   padding: '7px 16px',

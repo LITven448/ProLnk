@@ -47,7 +47,7 @@ export default function DFWInsuranceClaimDenied2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚖️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Insurance Claim Denied Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Insurance Claim Denied Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>What to do when your DFW homeowner claim is denied — Texas-specific strategies</p>
         </div>
 
@@ -57,21 +57,21 @@ export default function DFWInsuranceClaimDenied2026() {
             {denialReasons.map(d => (
               <button key={d.id} onClick={() => setSelected(d.id)}
                 style={{ padding: '0.5rem 1rem', borderRadius: 8, cursor: 'pointer', fontWeight: 600,
-                  background: selected === d.id ? '#F5E642' : '#1e3a5f',
-                  color: selected === d.id ? '#0A1628' : '#fff', border: 'none', fontSize: '0.85rem' }}>
+                  background: selected === d.id ? '#F5E642′ : '#1e3a5f',
+                  color: selected === d.id ? '#0A1628′ : '#fff', border: ’none', fontSize: '0.85rem' }}>
                 {d.icon} {d.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.05rem', marginBottom: 8 }}>🎯 Strategy: {active.strategy}</div>
-            <ol style={{ margin: '0 0 0.8rem', paddingLeft: '1.2rem', color: '#cbd5e1' }}>
+            <ol style={{ margin: '0 0 0.8rem', paddingLeft: '1.2rem', color: '#cbd5e1′ }}>
               {active.steps.map(s => <li key={s} style={{ marginBottom: 6, fontSize: '0.9rem' }}>{s}</li>)}
             </ol>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: 8 }}>
-              {active.tdi && <span style={{ background: '#1e3a5f', padding: '0.25rem 0.6rem', borderRadius: 6, fontSize: '0.8rem', color: '#F5E642' }}>📞 File TDI Complaint</span>}
-              {active.adjuster && <span style={{ background: '#1e3a5f', padding: '0.25rem 0.6rem', borderRadius: 6, fontSize: '0.8rem', color: '#F5E642' }}>🔍 Hire Public Adjuster</span>}
-              {active.attorney && <span style={{ background: '#1e3a5f', padding: '0.25rem 0.6rem', borderRadius: 6, fontSize: '0.8rem', color: '#F5E642' }}>⚖️ DTPA Attorney</span>}
+              {active.tdi && <span style={{ background: '#1e3a5f', padding: '0.25rem 0.6rem', borderRadius: 6, fontSize: '0.8rem', color: '#F5E642′ }}>📞 File TDI Complaint</span>}
+              {active.adjuster && <span style={{ background: '#1e3a5f', padding: '0.25rem 0.6rem', borderRadius: 6, fontSize: '0.8rem', color: '#F5E642′ }}>🔍 Hire Public Adjuster</span>}
+              {active.attorney && <span style={{ background: '#1e3a5f', padding: '0.25rem 0.6rem', borderRadius: 6, fontSize: '0.8rem', color: '#F5E642′ }}>⚖️ DTPA Attorney</span>}
             </div>
             <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.85rem', fontStyle: 'italic' }}>💡 {active.note}</p>
           </div>

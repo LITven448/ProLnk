@@ -28,7 +28,7 @@ export default function DFWHomeInsuranceGuide2026() {
   function calculate() {
     const base = homeValue * 0.0065;
     const roofMult = roofAge < 5 ? 0.85 : roofAge < 10 ? 1.0 : roofAge < 15 ? 1.22 : 1.45;
-    const deductMult = deductible === '500' ? 1.15 : deductible === '1000' ? 1.0 : deductible === '2500' ? 0.88 : 0.80;
+    const deductMult = deductible === '500′ ? 1.15 : deductible === '1000' ? 1.0 : deductible === '2500' ? 0.88 : 0.80;
     const raw = base * roofMult * deductMult;
     const low = Math.round(raw * 0.85 / 100) * 100;
     const high = Math.round(raw * 1.15 / 100) * 100;
@@ -37,7 +37,7 @@ export default function DFWHomeInsuranceGuide2026() {
       premium: `$${low.toLocaleString()} – $${high.toLocaleString()}/year`,
       dwelling: `$${dwelling.toLocaleString()} dwelling coverage recommended`,
       liability: homeValue > 400000 ? '$300K–$500K liability minimum' : '$100K–$300K liability minimum',
-      deductibleNote: deductible === '500' ? 'Low deductible: higher premium, less out-of-pocket per claim' : deductible === '5000' ? 'High deductible: significant savings but large out-of-pocket risk' : 'Balanced deductible choice for most DFW homeowners',
+      deductibleNote: deductible === '500′ ? ’Low deductible: higher premium, less out-of-pocket per claim' : deductible === '5000′ ? ’High deductible: significant savings but large out-of-pocket risk' : 'Balanced deductible choice for most DFW homeowners',
     });
   }
 
@@ -48,7 +48,7 @@ export default function DFWHomeInsuranceGuide2026() {
         <h1 style={{ fontSize: 40, fontWeight: 800, color: '#FFFFFF', marginBottom: 12, lineHeight: 1.1 }}>DFW Home Insurance Guide 2026</h1>
         <p style={{ fontSize: 18, color: '#8BA3C7', marginBottom: 48, maxWidth: 680 }}>Why rates are rising in North Texas, what drives your premium, and how to get the right coverage without overpaying.</p>
 
-        <div style={{ background: '#1A2640', borderRadius: 16, padding: 32, marginBottom: 40, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1A2640', borderRadius: 16, padding: 32, marginBottom: 40, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>⚠️ Why DFW Rates Are Rising Fast</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
             {[
@@ -92,7 +92,7 @@ export default function DFWHomeInsuranceGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1A2640', borderRadius: 16, padding: 32, marginBottom: 40, borderLeft: '4px solid #4A90D9' }}>
+        <div style={{ background: '#1A2640', borderRadius: 16, padding: 32, marginBottom: 40, borderLeft: '4px solid #4A90D9′ }}>
           <h2 style={{ color: '#4A90D9', fontSize: 20, fontWeight: 700, marginBottom: 12 }}>🏛️ Texas FAIR Plan — Last Resort Coverage</h2>
           <p style={{ color: '#8BA3C7', lineHeight: 1.7, marginBottom: 16 }}>If private insurers have denied you or your home is in a high-risk area, the Texas FAIR Plan provides basic dwelling coverage as a last resort. Coverage limits are lower and premiums are higher than standard market, but it prevents you from being uninsured entirely.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
@@ -107,21 +107,21 @@ export default function DFWHomeInsuranceGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginBottom: 28 }}>
             <div>
               <label style={{ color: '#8BA3C7', fontSize: 13, display: 'block', marginBottom: 8 }}>Home Value: ${homeValue.toLocaleString()}</label>
-              <input type="range" min={150000} max={1000000} step={25000} value={homeValue} onChange={e => setHomeValue(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={150000} max={1000000} step={25000} value={homeValue} onChange={e => setHomeValue(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#4A5568', fontSize: 12, marginTop: 4 }}><span>$150K</span><span>$1M</span></div>
             </div>
             <div>
               <label style={{ color: '#8BA3C7', fontSize: 13, display: 'block', marginBottom: 8 }}>Roof Age: {roofAge} years</label>
-              <input type="range" min={0} max={25} step={1} value={roofAge} onChange={e => setRoofAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={0} max={25} step={1} value={roofAge} onChange={e => setRoofAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#4A5568', fontSize: 12, marginTop: 4 }}><span>New</span><span>25 yrs</span></div>
             </div>
             <div>
               <label style={{ color: '#8BA3C7', fontSize: 13, display: 'block', marginBottom: 8 }}>Wind/Hail Deductible</label>
               <select value={deductible} onChange={e => setDeductible(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#E8EDF5', border: '1px solid #2D3F5C', borderRadius: 8, padding: '10px 12px', fontSize: 15 }}>
-                <option value="500">$500 (Low)</option>
-                <option value="1000">$1,000 (Standard)</option>
-                <option value="2500">$2,500 (Higher Deductible)</option>
-                <option value="5000">$5,000 (High Deductible)</option>
+                <option value="500″>$500 (Low)</option>
+                <option value="1000″>$1,000 (Standard)</option>
+                <option value="2500″>$2,500 (Higher Deductible)</option>
+                <option value="5000″>$5,000 (High Deductible)</option>
               </select>
             </div>
           </div>

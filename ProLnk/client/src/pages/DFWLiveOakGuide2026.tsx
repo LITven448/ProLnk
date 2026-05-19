@@ -30,13 +30,13 @@ export default function DFWLiveOakGuide2026() {
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>The Live Oak — DFW's most majestic tree, century lifespan, and one deadly disease window you must respect.</p>
 
         <div style={{ background: '#7f1d1d', border: '1px solid #ef4444', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
-          <h2 style={{ color: '#fca5a5', margin: '0 0 .5rem 0' }}>🚫 NEVER Prune Live Oaks February–June</h2>
+          <h2 style={{ color: '#fca5a5', margin: '0 0 .5rem 0′ }}>🚫 NEVER Prune Live Oaks February–June</h2>
           <p style={{ color: '#fecaca', margin: 0 }}>Oak wilt beetles are active Feb–June. Fresh pruning cuts attract them instantly. If you MUST prune in this window due to storm damage, paint every cut immediately with wound sealant. Violating this rule can kill an entire grove through root grafts.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[{ icon: '📅', label: 'Leaf Drop', value: 'March (New Leaves Push)' }, { icon: '📏', label: 'Foundation Clearance', value: '20+ Feet Minimum' }, { icon: '⏳', label: 'Lifespan', value: '100–500+ Years' }, { icon: '🌿', label: 'Type', value: 'Evergreen (DFW)' }].map(s => (
-            <div key={s.label} style={{ background: '#1e293b', borderRadius: '8px', padding: '1rem', border: '1px solid #334155' }}>
+            <div key={s.label} style={{ background: '#1e293b', borderRadius: '8px', padding: '1rem', border: '1px solid #334155′ }}>
               <div style={{ fontSize: '1.5rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '.8rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{s.value}</div>
@@ -50,7 +50,7 @@ export default function DFWLiveOakGuide2026() {
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '.5rem' }}>Property Size</label>
             <div style={{ display: 'flex', gap: '.5rem' }}>
               {['small', 'medium', 'large'].map(s => (
-                <button key={s} onClick={() => setPropertySize(s)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: propertySize === s ? '#F5E642' : '#334155', color: propertySize === s ? '#0A1628' : '#fff', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>
+                <button key={s} onClick={() => setPropertySize(s)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: propertySize === s ? '#F5E642′ : '#334155', color: propertySize === s ? '#0A1628' : '#fff', fontWeight: 600, textTransform: ’capitalize' }}>{s}</button>
               ))}
             </div>
           </div>
@@ -58,11 +58,11 @@ export default function DFWLiveOakGuide2026() {
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '.5rem' }}>Placement Area</label>
             <div style={{ display: 'flex', gap: '.5rem' }}>
               {['front', 'side', 'back'].map(p => (
-                <button key={p} onClick={() => setPlacement(p)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: placement === p ? '#F5E642' : '#334155', color: placement === p ? '#0A1628' : '#fff', fontWeight: 600, textTransform: 'capitalize' }}>{p}</button>
+                <button key={p} onClick={() => setPlacement(p)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: placement === p ? '#F5E642′ : '#334155', color: placement === p ? '#0A1628' : '#fff', fontWeight: 600, textTransform: ’capitalize' }}>{p}</button>
               ))}
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0' }}>{guide[propertySize][placement]}</div>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0′ }}>{guide[propertySize][placement]}</div>
         </div>
 
         <div style={{ background: '#F5E642', borderRadius: '12px', padding: '1.5rem', textAlign: 'center' }}>

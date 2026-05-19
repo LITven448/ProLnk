@@ -27,7 +27,7 @@ export default function DFWHVACRepairVsReplace2026() {
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📐 The 50% Rule</div>
-          <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>If your repair cost exceeds <strong style={{ color: '#fff' }}>50% of what a new system costs</strong>, replace it. A new 3-ton system in DFW runs $5,000–8,000, so the threshold is roughly <strong style={{ color: '#F5E642' }}>$2,500–4,000</strong>.</p>
+          <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>If your repair cost exceeds <strong style={{ color: '#fff' }}>50% of what a new system costs</strong>, replace it. A new 3-ton system in DFW runs $5,000–8,000, so the threshold is roughly <strong style={{ color: '#F5E642′ }}>$2,500–4,000</strong>.</p>
         </div>
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, marginBottom: 20 }}>
@@ -41,7 +41,7 @@ export default function DFWHVACRepairVsReplace2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>System age:</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {[{ v: 'new', l: 'Under 8 yrs' }, { v: 'mid', l: '8–14 yrs' }, { v: 'old', l: '15+ yrs' }].map(a => (
-                <button key={a.v} onClick={() => setAge(a.v)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, background: age === a.v ? '#F5E642' : '#1e3a5f', color: age === a.v ? '#0A1628' : '#fff' }}>{a.l}</button>
+                <button key={a.v} onClick={() => setAge(a.v)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, background: age === a.v ? '#F5E642′ : '#1e3a5f', color: age === a.v ? '#0A1628' : '#fff' }}>{a.l}</button>
               ))}
             </div>
           </div>
@@ -49,13 +49,13 @@ export default function DFWHVACRepairVsReplace2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Refrigerant type:</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {[{ v: 'r22', l: 'R-22 (old)' }, { v: 'r410', l: 'R-410A' }, { v: 'r454', l: 'R-454B (new)' }].map(r => (
-                <button key={r.v} onClick={() => setRefrigerant(r.v)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, background: refrigerant === r.v ? '#F5E642' : '#1e3a5f', color: refrigerant === r.v ? '#0A1628' : '#fff' }}>{r.l}</button>
+                <button key={r.v} onClick={() => setRefrigerant(r.v)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, background: refrigerant === r.v ? '#F5E642′ : '#1e3a5f', color: refrigerant === r.v ? '#0A1628' : '#fff' }}>{r.l}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 16 }}>
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Repair quote ($):</div>
-            <input type="number" placeholder="e.g. 1800" value={repairQuote} onChange={e => setRepairQuote(e.target.value)} style={{ background: '#1e3a5f', border: 'none', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 16, width: '100%', boxSizing: 'border-box' }} />
+            <input type="number" placeholder="e.g. 1800″ value={repairQuote} onChange={e => setRepairQuote(e.target.value)} style={{ background: '#1e3a5f', border: 'none', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 16, width: '100%', boxSizing: 'border-box' }} />
           </div>
           {rec && (
             <div style={{ background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: `4px solid ${rec.action === 'Replace' ? '#f87171' : '#34d399'}` }}>

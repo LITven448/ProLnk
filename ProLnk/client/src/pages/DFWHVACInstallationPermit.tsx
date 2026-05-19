@@ -37,7 +37,7 @@ export default function DFWHVACInstallationPermit() {
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 20px', marginBottom: 32 }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>✅ Rule: </span>
-          <span style={{ color: '#e2e8f0' }}>All DFW cities require permits. Any contractor who says otherwise is cutting corners. Always verify the permit was pulled before work begins.</span>
+          <span style={{ color: '#e2e8f0′ }}>All DFW cities require permits. Any contractor who says otherwise is cutting corners. Always verify the permit was pulled before work begins.</span>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 40 }}>
@@ -51,16 +51,16 @@ export default function DFWHVACInstallationPermit() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏙️ Look Up Your DFW City</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏙️ Look Up Your DFW City</h2>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Select Your DFW City</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Select Your DFW City</label>
             <select value={selectedCity} onChange={e => setSelectedCity(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
               <option value=''>Select city...</option>
               {dfwCities.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           {cityData && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 12 }}>📋 {cityData.city} Permit Requirements</div>
               <div style={{ display: 'grid', gap: 8, marginBottom: 12 }}>
                 <div><span style={{ color: '#94a3b8', fontSize: 13 }}>Permit required: </span><span style={{ color: '#22c55e' }}>✅ Yes — all HVAC replacements</span></div>
@@ -75,7 +75,7 @@ export default function DFWHVACInstallationPermit() {
           )}
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🏠 Resale Risks of Unpermitted HVAC in DFW</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🏠 Resale Risks of Unpermitted HVAC in DFW</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 32 }}>
           {resaleRisks.map((r, i) => (
             <div key={i} style={{ background: '#0f1f3d', borderRadius: 10, padding: '14px 18px', display: 'flex', gap: 12, alignItems: 'flex-start' }}>

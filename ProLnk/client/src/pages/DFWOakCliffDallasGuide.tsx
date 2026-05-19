@@ -45,7 +45,7 @@ export default function DFWOakCliffDallasGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🏠 Home Decade</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeDecades.map(d => (
-              <button key={d.value} onClick={() => setDecade(d.value)} style={{ background: decade === d.value ? '#F5E642' : '#1E2D45', color: decade === d.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{d.label}</button>
+              <button key={d.value} onClick={() => setDecade(d.value)} style={{ background: decade === d.value ? '#F5E642′ : '#1E2D45', color: decade === d.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{d.label}</button>
             ))}
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function DFWOakCliffDallasGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🔨 Renovation Status</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {renovationStatuses.map(r => (
-              <button key={r.value} onClick={() => setStatus(r.value)} style={{ background: status === r.value ? '#F5E642' : '#1E2D45', color: status === r.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{r.label}</button>
+              <button key={r.value} onClick={() => setStatus(r.value)} style={{ background: status === r.value ? '#F5E642′ : '#1E2D45', color: status === r.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{r.label}</button>
             ))}
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function DFWOakCliffDallasGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>⚠️ Common Issues for This Era</div>
-              {result.issues.map((item, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F97316' }}>{item}</div>)}
+              {result.issues.map((item, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F97316′ }}>{item}</div>)}
             </div>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>💡 Renovation Opportunities</div>

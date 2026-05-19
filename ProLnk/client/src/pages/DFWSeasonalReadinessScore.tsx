@@ -71,7 +71,7 @@ export default function DFWSeasonalReadinessScore() {
   const missing = list.filter((_, i) => !checked.has(i));
   const firstMissing = missing[0];
 
-  const scoreColor = score >= 80 ? '#4ade80' : score >= 50 ? '#F5E642' : '#f87171';
+  const scoreColor = score >= 80 ? '#4ade80′ : score >= 50 ? '#F5E642' : '#f87171';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 16px' }}>
@@ -84,7 +84,7 @@ export default function DFWSeasonalReadinessScore() {
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 28 }}>
           {(Object.keys(SEASON_LABELS) as Season[]).map(s => (
             <button key={s} onClick={() => changeSeason(s)}
-              style={{ background: season === s ? '#F5E642' : '#111f38', color: season === s ? '#0A1628' : '#94a3b8', border: '1px solid', borderColor: season === s ? '#F5E642' : '#2d4166', borderRadius: 8, padding: '8px 16px', fontWeight: season === s ? 700 : 400, cursor: 'pointer', fontSize: 13 }}>
+              style={{ background: season === s ? '#F5E642′ : '#111f38', color: season === s ? '#0A1628' : '#94a3b8', border: '1px solid', borderColor: season === s ? '#F5E642' : '#2d4166', borderRadius: 8, padding: '8px 16px', fontWeight: season === s ? 700 : 400, cursor: ’pointer', fontSize: 13 }}>
               {SEASON_LABELS[s]}
             </button>
           ))}
@@ -96,7 +96,7 @@ export default function DFWSeasonalReadinessScore() {
             <div style={{ color: scoreColor, fontSize: 12, marginTop: 4 }}>{score >= 80 ? '✅ Well prepared!' : score >= 50 ? '⚠️ Needs attention' : '🚨 Action required'}</div>
           </div>
           <div style={{ flex: 1, background: '#111f38', border: '1px solid #2d4166', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-            <div style={{ fontSize: 32, fontWeight: 700, color: '#F5E642' }}>{done}/{total}</div>
+            <div style={{ fontSize: 32, fontWeight: 700, color: '#F5E642′ }}>{done}/{total}</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>Tasks Complete</div>
             <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{criticalsDone}/{criticals.length} critical</div>
           </div>
@@ -105,10 +105,10 @@ export default function DFWSeasonalReadinessScore() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: 16 }}>{SEASON_LABELS[season]} Checklist</h2>
           {list.map((item, i) => (
             <label key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: i < list.length - 1 ? '1px solid #1e2d4a' : 'none', cursor: 'pointer' }}>
-              <input type="checkbox" checked={checked.has(i)} onChange={() => toggle(i)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+              <input type="checkbox" checked={checked.has(i)} onChange={() => toggle(i)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
               <span style={{ fontSize: 18 }}>{item.emoji}</span>
               <div style={{ flex: 1 }}>
-                <span style={{ color: checked.has(i) ? '#4ade80' : '#e2e8f0', textDecoration: checked.has(i) ? 'line-through' : 'none', fontSize: 14 }}>{item.task}</span>
+                <span style={{ color: checked.has(i) ? '#4ade80′ : '#e2e8f0', textDecoration: checked.has(i) ? ’line-through' : 'none', fontSize: 14 }}>{item.task}</span>
                 {item.critical && !checked.has(i) && <span style={{ marginLeft: 8, background: '#7f1d1d', color: '#f87171', fontSize: 10, padding: '2px 6px', borderRadius: 4 }}>CRITICAL</span>}
               </div>
             </label>
@@ -120,7 +120,7 @@ export default function DFWSeasonalReadinessScore() {
             <div style={{ fontSize: 14 }}>{firstMissing.emoji} {firstMissing.task}</div>
           </div>
         )}
-        <div style={{ textAlign: 'center', padding: 20, background: '#111f38', borderRadius: 12, border: '1px solid #2d4166' }}>
+        <div style={{ textAlign: 'center', padding: 20, background: '#111f38', borderRadius: 12, border: '1px solid #2d4166′ }}>
           <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Need a DFW pro to tackle your checklist items? ProLnk connects you with vetted contractors.</div>
           <button style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '10px 28px', borderRadius: 8, border: 'none', cursor: 'pointer' }}>
             🔗 Find a Pro via ProLnk

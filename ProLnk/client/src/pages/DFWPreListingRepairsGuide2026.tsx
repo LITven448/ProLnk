@@ -71,15 +71,15 @@ export default function DFWPreListingRepairsGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🔨</div>
-          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Pre-Listing Repairs Guide 2026</h1>
+          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Pre-Listing Repairs Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Ranked by ROI — what actually moves the needle in DFW</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '2rem' }}>
           {[
-            { icon: '❄️', label: 'HVAC Service', ret: '20x return', cost: '$150' },
-            { icon: '🎨', label: 'Neutral Repaint', ret: '3.2x return', cost: '$2,500' },
-            { icon: '🏠', label: 'Roof Certification', ret: 'Deal saver', cost: '$150' },
+            { icon: '❄️', label: 'HVAC Service', ret: '20x return', cost: '$150′ },
+            { icon: '🎨', label: 'Neutral Repaint', ret: '3.2x return', cost: '$2,500′ },
+            { icon: '🏠', label: 'Roof Certification', ret: 'Deal saver', cost: '$150′ },
           ].map((s) => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 12, padding: '1rem', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem' }}>{s.icon}</div>
@@ -97,7 +97,7 @@ export default function DFWPreListingRepairsGuide2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Home Age</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 {['0-10', '10-20', '20+'].map((a) => (
-                  <button key={a} onClick={() => setAge(a)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: age === a ? '#F5E642' : '#1e3a5f', color: age === a ? '#0A1628' : '#fff' }}>{a} yrs</button>
+                  <button key={a} onClick={() => setAge(a)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: age === a ? '#F5E642′ : '#1e3a5f', color: age === a ? '#0A1628' : '#fff' }}>{a} yrs</button>
                 ))}
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function DFWPreListingRepairsGuide2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Condition</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 {['excellent', 'average', 'poor'].map((c) => (
-                  <button key={c} onClick={() => setCond(c)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: cond === c ? '#F5E642' : '#1e3a5f', color: cond === c ? '#0A1628' : '#fff' }}>{c.charAt(0).toUpperCase() + c.slice(1)}</button>
+                  <button key={c} onClick={() => setCond(c)} style={{ padding: '0.3rem 0.75rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: cond === c ? '#F5E642′ : '#1e3a5f', color: cond === c ? '#0A1628' : '#fff' }}>{c.charAt(0).toUpperCase() + c.slice(1)}</button>
                 ))}
               </div>
             </div>

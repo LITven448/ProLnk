@@ -29,8 +29,8 @@ export default function DFWAtticHatchGuide() {
       cost = '$20 – $60 DIY materials';
       savings = '$8 – $20/month in DFW summers';
       steps = [
-        'Cut a piece of 2" polyiso rigid foam to fit the hatch opening (R-13 per inch)',
-        'Add 3" polyiso for R-20+ — ideal for DFW\’s 150°F attic temperatures',
+        'Cut a piece of 2″ polyiso rigid foam to fit the hatch opening (R-13 per inch)',
+        'Add 3″ polyiso for R-20+ — ideal for DFW\’s 150°F attic temperatures',
         'Glue foam layers together if stacking for added R-value',
         'Attach foam adhesive-backed weatherstripping to the hatch frame',
         'Add a latch or simple hook to pull hatch tight against weatherstripping',
@@ -52,7 +52,7 @@ export default function DFWAtticHatchGuide() {
       savings = '$10 – $25/month in DFW summers';
       steps = [
         'Measure your attic hatch opening precisely',
-        'Cut 2–4" rigid polyiso foam board to fit (stack layers for higher R-value)',
+        'Cut 2–4″ rigid polyiso foam board to fit (stack layers for higher R-value)',
         'Apply weatherstripping tape to hatch frame perimeter',
         'Place foam on top of hatch when closed (or build a simple plywood box in the attic)',
         'Verify seal by feeling for air movement on a hot DFW afternoon',
@@ -70,10 +70,10 @@ export default function DFWAtticHatchGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🌡️ The DFW Attic Hatch Problem</h2>
-          <p style={{ color: '#94a3b8', marginBottom: 16 }}>In DFW summer, your attic reaches 140–160°F. Your house sits at 75–78°F. That 70–80°F temperature difference, combined with an uninsulated or unsealed hatch, creates two simultaneous problems: <strong style={{ color: '#e2e8f0' }}>conductive heat transfer</strong> (heat passing through the thin drywall) and <strong style={{ color: '#e2e8f0' }}>air leakage</strong> (hot attic air flowing through gaps around the frame).</p>
+          <p style={{ color: '#94a3b8', marginBottom: 16 }}>In DFW summer, your attic reaches 140–160°F. Your house sits at 75–78°F. That 70–80°F temperature difference, combined with an uninsulated or unsealed hatch, creates two simultaneous problems: <strong style={{ color: '#e2e8f0′ }}>conductive heat transfer</strong> (heat passing through the thin drywall) and <strong style={{ color: '#e2e8f0' }}>air leakage</strong> (hot attic air flowing through gaps around the frame).</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {[
-              { label: 'Uninsulated hatch R-value', value: 'R-1 to R-3' },
+              { label: 'Uninsulated hatch R-value', value: 'R-1 to R-3′ },
               { label: 'DFW code wall R-value', value: 'R-13 minimum' },
               { label: 'DFW attic summer temp', value: '140–160°F' },
             ].map(item => (
@@ -94,7 +94,7 @@ export default function DFWAtticHatchGuide() {
           ].map(item => (
             <div key={item.type} style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{item.type}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{item.type}</div>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>{item.cost}</div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>{item.solution}</div>
@@ -117,10 +117,10 @@ export default function DFWAtticHatchGuide() {
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer' }}>Get My DFW Hatch Fix Plan →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{result.solution}</div>
-              <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>Cost: <strong style={{ color: '#e2e8f0' }}>{result.cost}</strong></div>
-              <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 12 }}>Estimated DFW savings: <strong style={{ color: '#F5E642' }}>{result.savings}</strong></div>
+              <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>Cost: <strong style={{ color: '#e2e8f0′ }}>{result.cost}</strong></div>
+              <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 12 }}>Estimated DFW savings: <strong style={{ color: '#F5E642′ }}>{result.savings}</strong></div>
               <div style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: 8 }}>Step-by-step for your DFW home:</div>
               {result.steps.map((s, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>

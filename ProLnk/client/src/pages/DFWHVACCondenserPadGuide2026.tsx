@@ -41,7 +41,7 @@ export default function DFWHVACCondenserPadGuide2026() {
               onClick={() => setSelected(s.id)}
               style={{
                 background: selected === s.id ? '#1a3a5c' : '#0f2037',
-                border: selected === s.id ? '2px solid #F5E642' : '2px solid #1e3a5f',
+                border: selected === s.id ? '2px solid #F5E642′ : '2px solid #1e3a5f',
                 borderRadius: 8, padding: '12px 16px', color: '#fff',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15,
               }}

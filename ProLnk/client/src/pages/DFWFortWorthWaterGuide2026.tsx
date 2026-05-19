@@ -5,7 +5,7 @@ const needs = [
   { id: 'leak', label: '🔍 Leak Detection', contact: '817-392-8185', process: 'FW Water offers FREE leak detection for customers — a technician visits with acoustic equipment to find hidden leaks. Call to schedule. Also request a free meter audit to check for continuous low-flow leaks.' },
   { id: 'quality', label: '🧪 Water Quality', contact: '817-392-4477', process: 'Fort Worth water averages 250 TDS — slightly softer than Dallas. Sourced from Eagle Mountain and Benbrook lakes. Annual quality report at fortworthtexas.gov/water. Free lead testing for pre-1986 homes.' },
   { id: 'rebates', label: '💰 Conservation Rebates', contact: 'fortworthtexas.gov/water', process: 'Rebates available: $100 WaterSense toilet, $150 smart irrigation controller, $25 rain sensor, lawn conversion $0.10/sq ft. Apply within 90 days of purchase. Limited annual funding — apply early.' },
-  { id: 'newservice', label: '🏗️ New Service', contact: '817-392-8185', process: 'New service connections for construction or additions require permit and licensed plumber. FW Water installs meter and tap. 3/4" meter tap fee: ~$2,200. Apply online or at 200 Texas St., Fort Worth.' },
+  { id: 'newservice', label: '🏗️ New Service', contact: '817-392-8185', process: 'New service connections for construction or additions require permit and licensed plumber. FW Water installs meter and tap. 3/4″ meter tap fee: ~$2,200. Apply online or at 200 Texas St., Fort Worth.' },
 ];
 
 export default function DFWFortWorthWaterGuide2026() {
@@ -30,12 +30,12 @@ export default function DFWFortWorthWaterGuide2026() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 16, marginBottom: 24, border: '2px solid #F5E64240' }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 16, marginBottom: 24, border: '2px solid #F5E64240′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 15, marginBottom: 8 }}>🌿 Outdoor Watering Schedule (Stage 1)</h2>
           <p style={{ color: '#94a3b8', fontSize: 12, marginBottom: 10 }}>Currently active — check fortworthtexas.gov for current stage</p>
           {[{ day: 'Odd addresses', times: 'Tue / Thu / Sat' },{ day: 'Even addresses', times: 'Wed / Fri / Sun' },{ day: 'No watering', times: '10am – 6pm any day' }].map((r,i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', color: '#cbd5e1', fontSize: 13, padding: '5px 0', borderBottom: i < 2 ? '1px solid #1e3a5f' : 'none' }}>
-              <span>{r.day}</span><span style={{ color: '#F5E642' }}>{r.times}</span>
+              <span>{r.day}</span><span style={{ color: '#F5E642′ }}>{r.times}</span>
             </div>
           ))}
         </div>
@@ -44,14 +44,14 @@ export default function DFWFortWorthWaterGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {needs.map(n => (
             <button key={n.id} onClick={() => setSelected(selected === n.id ? null : n.id)}
-              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220' : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220′ : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
               {n.label}
             </button>
           ))}
         </div>
 
         {active && (
-          <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>{active.label}</h3>
             <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.6, margin: '0 0 12px' }}>{active.process}</p>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>

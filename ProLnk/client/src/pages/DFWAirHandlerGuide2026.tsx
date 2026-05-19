@@ -29,8 +29,8 @@ export default function DFWAirHandlerGuide2026() {
             { icon: '🔗', title: 'Age Matching — Critical', body: 'An older air handler paired with a new outdoor unit creates an efficiency mismatch. The AHRI certified efficiency rating only applies to matched systems. In DFW, if your outdoor unit dies at year 12, replacing only the outdoor unit saves $800-1,000 upfront but costs more in efficiency every month for the next 10 years.' },
             { icon: '🌡️', title: 'Component Life in DFW Attics', body: 'Expected component life in DFW attic conditions: capacitors 6-9 years (vs 12-15 in conditioned space), fan motors 8-12 years (vs 15-20), control boards 8-12 years. Conditioned-space air handlers routinely outlast warranty by 5+ years. If you are building or doing a major renovation, a closet or garage install pays long-term dividends.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642' }}>
-              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</span></div>
+            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</span></div>
               <p style={{ color: '#B0B8CC', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
@@ -41,13 +41,13 @@ export default function DFWAirHandlerGuide2026() {
           <p style={{ color: '#9BA3B4', fontSize: 14, marginBottom: 16 }}>Select your situation for a service recommendation:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
               <p style={{ color: '#E8EAF0', fontSize: 14, margin: 0, lineHeight: 1.7 }}>{result.diagnosis}</p>
             </div>
           )}

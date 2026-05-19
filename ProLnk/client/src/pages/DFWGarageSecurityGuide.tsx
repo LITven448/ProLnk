@@ -54,13 +54,13 @@ export default function DFWGarageSecurityGuide() {
     setResult({ vulns, fixes: filtered.length ? filtered : fixList });
   }
 
-  const riskColor = (r: string) => r === 'high' ? '#FF6B6B' : r === 'medium' ? '#F5A623' : '#4CAF82';
+  const riskColor = (r: string) => r === 'high' ? '#FF6B6B' : r === 'medium' ? '#F5A623′ : '#4CAF82';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 40 }}>🏠</div>
-        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0' }}>DFW Garage Security Guide</h1>
+        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0′ }}>DFW Garage Security Guide</h1>
         <p style={{ color: '#9BA8BB', marginBottom: '1.5rem' }}>
           Garages are the #1 entry point for DFW burglars. Two common exploits: remote cloning (older openers) and
           the wire-hanger trick (fishing the emergency cord through the top gap in 6 seconds). Both are fixable for under $20.
@@ -110,7 +110,7 @@ export default function DFWGarageSecurityGuide() {
                   <span style={{ color: riskColor(v.risk), fontSize: 12, fontWeight: 700, marginTop: 2, whiteSpace: 'nowrap' }}>
                     {v.risk.toUpperCase()}
                   </span>
-                  <span style={{ color: '#E8EDF5' }}>{v.issue}</span>
+                  <span style={{ color: '#E8EDF5′ }}>{v.issue}</span>
                 </div>
               ))}
             </div>

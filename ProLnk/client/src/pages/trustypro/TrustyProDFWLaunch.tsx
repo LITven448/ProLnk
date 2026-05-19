@@ -31,13 +31,13 @@ export default function TrustyProDFWLaunch() {
       <div style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #050d1a 60%)', padding: '80px 24px', textAlign: 'center', borderBottom: '1px solid #1e3a5f' }}>
         <div style={{ background: '#FACC15', color: '#050d1a', display: 'inline-block', borderRadius: 8, padding: '6px 16px', fontSize: 13, fontWeight: 800, marginBottom: 24, letterSpacing: 1 }}>COMING TO DFW</div>
         <h1 style={{ fontSize: 56, fontWeight: 900, lineHeight: 1.1, marginBottom: 20, maxWidth: 800, margin: '0 auto 20px' }}>
-          TrustyPro Launches in<br /><span style={{ color: '#4F46E5' }}>Dallas–Fort Worth</span>
+          TrustyPro Launches in<br /><span style={{ color: '#4F46E5′ }}>Dallas–Fort Worth</span>
         </h1>
         <p style={{ color: '#94a3b8', fontSize: 20, maxWidth: 600, margin: '0 auto 40px', lineHeight: 1.6 }}>The AI-powered home services platform is starting in DFW — and we want you in before it opens to everyone.</p>
         <div style={{ display: 'flex', gap: 24, justifyContent: 'center', flexWrap: 'wrap' }}>
           {stats.map((s, i) => (
             <div key={i} style={{ background: 'rgba(79,70,229,0.15)', border: '1px solid #4F46E5', borderRadius: 14, padding: '20px 28px', minWidth: 140 }}>
-              <div style={{ fontSize: 34, fontWeight: 800, color: '#FACC15' }}>{s.num}</div>
+              <div style={{ fontSize: 34, fontWeight: 800, color: '#FACC15′ }}>{s.num}</div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function TrustyProDFWLaunch() {
           ))}
         </div>
 
-        <div style={{ background: 'linear-gradient(135deg, #1e1b4b, #0f1e35)', borderRadius: 24, padding: 56, textAlign: 'center', border: '1px solid #4F46E5' }}>
+        <div style={{ background: 'linear-gradient(135deg, #1e1b4b, #0f1e35)', borderRadius: 24, padding: 56, textAlign: 'center', border: '1px solid #4F46E5′ }}>
           <h2 style={{ fontSize: 36, fontWeight: 800, marginBottom: 12 }}>Get Priority Access</h2>
           <p style={{ color: '#a5b4fc', fontSize: 16, marginBottom: 36, maxWidth: 480, margin: '0 auto 36px' }}>Waitlist closes when we hit 500 charter pros + 5,000 homeowners. DFW goes first.</p>
 
@@ -90,7 +90,7 @@ export default function TrustyProDFWLaunch() {
           ) : (
             <div style={{ background: 'rgba(74,222,128,0.1)', border: '1px solid #4ade80', borderRadius: 12, padding: '20px 32px', display: 'inline-block' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>✅</div>
-              <div style={{ fontWeight: 700, fontSize: 18, color: '#4ade80' }}>You're on the DFW waitlist!</div>
+              <div style={{ fontWeight: 700, fontSize: 18, color: '#4ade80′ }}>You’re on the DFW waitlist!</div>
               <div style={{ color: '#94a3b8', fontSize: 14, marginTop: 8 }}>We'll email you with launch details and your priority access link.</div>
             </div>
           )}

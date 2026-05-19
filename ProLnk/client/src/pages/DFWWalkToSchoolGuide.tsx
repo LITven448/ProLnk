@@ -36,14 +36,14 @@ export default function DFWWalkToSchoolGuide() {
   const match = priorities.find(p => p.id === selected);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0' }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0′ }}>
       <div style={{ maxWidth: 820, margin: '0 auto', padding: '40px 20px' }}>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 32, marginBottom: 24, border: '1px solid #1e3560' }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 32, marginBottom: 24, border: '1px solid #1e3560′ }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>🚶 🚲 🏫</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>DFW Walk-to-School Neighborhood Guide</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>DFW Walk-to-School Neighborhood Guide</h1>
           <p style={{ margin: 0, color: '#a0aec0', fontSize: 15, lineHeight: 1.6 }}>
-            Most of DFW was built around the car. True walk-to-school neighborhoods are rare — and they carry a <strong style={{ color: '#F5E642' }}>significant home price premium</strong>. Here's where to find them and what to expect.
+            Most of DFW was built around the car. True walk-to-school neighborhoods are rare — and they carry a <strong style={{ color: '#F5E642′ }}>significant home price premium</strong>. Here’s where to find them and what to expect.
           </p>
         </div>
 
@@ -54,20 +54,20 @@ export default function DFWWalkToSchoolGuide() {
             { icon: '💵', title: 'The Walkability Premium', body: 'Homes within a 0.5-mile walk of a well-rated elementary school command 10–25% premiums over comparable homes requiring driving. In Highland Park ISD, that premium can reach 30–40%. Walkability + school quality is the most powerful value combination in DFW real estate.' },
             { icon: '📍', title: 'How to Verify Walk Route Safety', body: 'Use the district\’s "Safe Routes to School" maps (available on most district websites). Walk the route yourself before buying — Google Maps doesn\’t account for missing sidewalks, drainage ditches, or 5-lane arterial crossings common in DFW suburbia.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#111f3a', borderRadius: 10, padding: 20, border: '1px solid #1e3560' }}>
+            <div key={card.title} style={{ background: '#111f3a', borderRadius: 10, padding: 20, border: '1px solid #1e3560′ }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>
-              <h3 style={{ margin: '0 0 6px', fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</h3>
+              <h3 style={{ margin: '0 0 6px', fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</h3>
               <p style={{ margin: 0, color: '#a0aec0', fontSize: 14, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 28, border: '1px solid #1e3560' }}>
-          <h2 style={{ margin: '0 0 16px', fontSize: 20, fontWeight: 700, color: '#F5E642' }}>🎯 Your Priorities → DFW Neighborhoods</h2>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 28, border: '1px solid #1e3560′ }}>
+          <h2 style={{ margin: '0 0 16px', fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>🎯 Your Priorities → DFW Neighborhoods</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {priorities.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id)}
-                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === p.id ? '#F5E642' : '#1e3560'}`, background: selected === p.id ? 'rgba(245,230,66,0.1)' : '#0d1a30', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14, color: '#e8eaf0' }}>
+                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === p.id ? '#F5E642' : '#1e3560'}`, background: selected === p.id ? 'rgba(245,230,66,0.1)' : '#0d1a30', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14, color: '#e8eaf0′ }}>
                 {p.label}
               </button>
             ))}
@@ -75,7 +75,7 @@ export default function DFWWalkToSchoolGuide() {
           {match && (
             <div>
               {match.neighborhoods.map((n, i) => (
-                <div key={i} style={{ background: '#0d1a30', borderRadius: 8, padding: 16, marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
+                <div key={i} style={{ background: '#0d1a30', borderRadius: 8, padding: 16, marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
                     <div style={{ fontWeight: 700, fontSize: 15 }}>{n.name}</div>
                     <div style={{ background: 'rgba(245,230,66,0.15)', color: '#F5E642', padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{n.premium}</div>

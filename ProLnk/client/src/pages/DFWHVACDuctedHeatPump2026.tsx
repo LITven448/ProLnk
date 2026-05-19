@@ -15,7 +15,7 @@ export default function DFWHVACDuctedHeatPump2026() {
     'Old gas furnace + AC': 'Replace both with a 3-4 ton ducted heat pump. Use existing ductwork. Add 10kW backup heat strips for the 10-15 freezing nights DFW gets. Efficiency gain: 30-40% vs gas in DFW mild winters. ROI: 5-7 years.',
     'Electric furnace + AC': 'Direct swap to heat pump is ideal. Your ductwork is already sized correctly. Heat pump will cut heating costs 50-60% since electric resistance heat is expensive. No backup strips needed if rated to 0°F.',
     'Window units': 'Ducted heat pump requires duct installation — budget $4,000-8,000 extra. Consider mini-split heat pumps per zone as alternative. Central ducted is still more efficient at DFW scale with whole-home conditioning.',
-    'No central system': 'New construction opportunity. Run 8" ducts, size unit at 1 ton per 500 sq ft for DFW climate. Install variable-speed compressor (inverter) for best efficiency. Total project: $12,000-18,000 installed.',
+    'No central system': 'New construction opportunity. Run 8″ ducts, size unit at 1 ton per 500 sq ft for DFW climate. Install variable-speed compressor (inverter) for best efficiency. Total project: $12,000-18,000 installed.',
   };
 
   function handleCheck() {
@@ -81,7 +81,7 @@ export default function DFWHVACDuctedHeatPump2026() {
             'Rebates: Oncor and CoServ offer $200-600 rebates for qualifying heat pumps',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642' }}>✓</span>
+              <span style={{ color: '#F5E642′ }}>✓</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>
           ))}

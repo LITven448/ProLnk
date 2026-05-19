@@ -41,7 +41,7 @@ export default function DFWWindowFrameGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1rem' }}>
             {profiles.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-                style={{ background: selected === p.id ? '#F5E642' : '#1e3a5f', color: selected === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
+                style={{ background: selected === p.id ? '#F5E642′ : '#1e3a5f', color: selected === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
                 {p.label}
               </button>
             ))}

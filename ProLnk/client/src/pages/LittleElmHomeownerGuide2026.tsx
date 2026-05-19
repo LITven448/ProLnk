@@ -31,8 +31,8 @@ export default function LittleElmHomeownerGuide2026() {
             <div style={{ display: 'flex', gap: 10 }}>
               {['new', 'older'].map(v => (
                 <button key={v} onClick={() => setAge(v)}
-                  style={{ flex: 1, background: age === v ? '#F5E642' : '#1a2f50', color: age === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
-                  {v === 'new' ? '🆕 Built 2010–2026' : '📅 Built Before 2010'}
+                  style={{ flex: 1, background: age === v ? '#F5E642′ : '#1a2f50', color: age === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                  {v === 'new' ? '🆕 Built 2010–2026′ : '📅 Built Before 2010'}
                 </button>
               ))}
             </div>
@@ -42,7 +42,7 @@ export default function LittleElmHomeownerGuide2026() {
             <div style={{ display: 'flex', gap: 10 }}>
               {['lake', 'inland'].map(v => (
                 <button key={v} onClick={() => setLake(v)}
-                  style={{ flex: 1, background: lake === v ? '#F5E642' : '#1a2f50', color: lake === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                  style={{ flex: 1, background: lake === v ? '#F5E642′ : '#1a2f50', color: lake === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {v === 'lake' ? '🌊 Lakefront / Near Water' : '🏘️ Interior Neighborhood'}
                 </button>
               ))}

@@ -80,8 +80,8 @@ export default function DFWRoofingContractorHiring2026() {
                 key={t.id}
                 onClick={() => setSelected(t.id)}
                 style={{
-                  background: selected === t.id ? '#F5E642' : '#1e3a5f',
-                  color: selected === t.id ? '#0A1628' : '#fff',
+                  background: selected === t.id ? '#F5E642′ : '#1e3a5f',
+                  color: selected === t.id ? '#0A1628′ : '#fff',
                   border: 'none', borderRadius: '8px', padding: '0.75rem',
                   fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
                 }}
@@ -97,7 +97,7 @@ export default function DFWRoofingContractorHiring2026() {
             <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '1rem' }}>{GUIDES[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {GUIDES[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1' }}>
+                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1′ }}>
                   {item}
                 </li>
               ))}

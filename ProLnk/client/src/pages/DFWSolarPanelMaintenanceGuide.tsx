@@ -24,7 +24,7 @@ function getResult(size: string, location: string): MaintenanceResult {
   const isNorth = location.includes('Frisco') || location.includes('North');
   return {
     cleanings: isNorth ? 4 : 3,
-    annualCost: isNorth ? '$300-$600' : '$200-$450',
+    annualCost: isNorth ? '$300-$600′ : '$200-$450',
     productionLoss: 'DFW cedar and oak pollen can reduce output 10-20% if panels go uncleaned Feb-April',
     inverterCheck: 'Test inverter string efficiency monthly via monitoring app. DFW heat causes string inverters to throttle above 95F — microinverters recommended for peak performance.',
     hailNote: 'DFW averages 7 significant hail events/year. After any hail above 1 inch, visually inspect for micro-cracks. Most tier-1 panels withstand 1-inch hail at 55mph.',
@@ -52,9 +52,9 @@ export default function DFWSolarPanelMaintenanceGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📅 DFW Pollen & Cleaning Calendar</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', gap: 8 }}>
             {pollenCalendar.map(m => (
-              <div key={m.month} style={{ background: m.cleaning ? '#1A3020' : '#0A1628', border: m.cleaning ? '1px solid #4CAF50' : '1px solid #1E3050', borderRadius: 8, padding: 10, textAlign: 'center' }}>
+              <div key={m.month} style={{ background: m.cleaning ? '#1A3020′ : '#0A1628', border: m.cleaning ? '1px solid #4CAF50' : '1px solid #1E3050', borderRadius: 8, padding: 10, textAlign: ’center' }}>
                 <div style={{ fontWeight: 700, fontSize: 13 }}>{m.month}</div>
-                <div style={{ fontSize: 11, color: m.cleaning ? '#4CAF50' : '#8899AA', marginTop: 2 }}>{m.pollen}</div>
+                <div style={{ fontSize: 11, color: m.cleaning ? '#4CAF50′ : '#8899AA', marginTop: 2 }}>{m.pollen}</div>
                 {m.cleaning && <div style={{ fontSize: 11, color: '#F5E642', marginTop: 4, fontWeight: 700 }}>CLEAN</div>}
               </div>
             ))}
@@ -93,7 +93,7 @@ export default function DFWSolarPanelMaintenanceGuide() {
               { label: '🔌 Inverter Monitoring', value: result.inverterCheck },
               { label: '🌨️ Hail Protocol', value: result.hailNote },
             ].map(item => (
-              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050' }}>
+              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ color: '#CCD6E0', lineHeight: 1.6 }}>{item.value}</div>
               </div>

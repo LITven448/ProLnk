@@ -40,7 +40,7 @@ export default function DFWCondenserUnitGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>The outdoor unit — what's inside, how DFW heat affects it, and how to diagnose problems</p>
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14 }}>
             🌡️ DFW context: Your condenser must reject heat in 100–108°F ambient temps — far beyond what units are tested at (95°F AHRI standard). Clearance, shade, and clean coils are critical here.
           </p>
@@ -73,15 +73,15 @@ export default function DFWCondenserUnitGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {symptomList.map(s => (
             <button key={s.id} onClick={() => setSymptom(s.id === symptom ? null : s.id)}
-              style={{ background: symptom === s.id ? '#F5E642' : '#1e2d45', border: '2px solid',
-                borderColor: symptom === s.id ? '#F5E642' : '#2d3f5a', borderRadius: 8,
-                padding: '12px', cursor: 'pointer', color: symptom === s.id ? '#0A1628' : '#fff',
+              style={{ background: symptom === s.id ? '#F5E642′ : '#1e2d45', border: '2px solid',
+                borderColor: symptom === s.id ? '#F5E642′ : '#2d3f5a', borderRadius: 8,
+                padding: '12px', cursor: 'pointer', color: symptom === s.id ? '#0A1628′ : '#fff',
                 fontWeight: 600, fontSize: 13 }}>{s.label}</button>
           ))}
         </div>
 
         {result && (
-          <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>{result.icon} Diagnosis</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>

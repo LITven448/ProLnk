@@ -94,7 +94,7 @@ export default function DFWDecemberHomeGuide() {
           Year-end home review. Holiday safety checks. Final freeze prep for DFW cold snaps. Capture renovation receipts before January for tax credits and cost basis updates.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628′ }}>
           <strong>📋 December Year-End Priorities</strong>
           <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.8 }}>
             <li>Holiday light safety: use surge protectors, set timers</li>
@@ -107,14 +107,14 @@ export default function DFWDecemberHomeGuide() {
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14 }}>🏠 Select Your Home Features</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
           {HOME_FEATURES.map(f => (
-            <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${features.includes(f) ? '#F5E642' : '#1E3050'}`, background: features.includes(f) ? '#F5E642' : '#111F35', color: features.includes(f) ? '#0A1628' : '#ccc', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>{f}</button>
+            <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${features.includes(f) ? '#F5E642' : '#1E3050'}`, background: features.includes(f) ? '#F5E642′ : '#111F35', color: features.includes(f) ? '#0A1628' : '#ccc', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>{f}</button>
           ))}
         </div>
 
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14 }}>🔨 Renovations Completed This Year</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
           {RENOVATIONS.map(r => (
-            <button key={r} onClick={() => toggleReno(r)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${renovations.includes(r) ? '#F5E642' : '#1E3050'}`, background: renovations.includes(r) ? '#F5E642' : '#111F35', color: renovations.includes(r) ? '#0A1628' : '#ccc', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>{r}</button>
+            <button key={r} onClick={() => toggleReno(r)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${renovations.includes(r) ? '#F5E642' : '#1E3050'}`, background: renovations.includes(r) ? '#F5E642′ : '#111F35', color: renovations.includes(r) ? '#0A1628' : '#ccc', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>{r}</button>
           ))}
         </div>
 
@@ -126,7 +126,7 @@ export default function DFWDecemberHomeGuide() {
                 <div key={i} style={{ background: '#111F35', borderRadius: 10, padding: '14px 18px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 6 }}>
                     <span style={{ fontWeight: 600, fontSize: 15, flex: 1 }}>{t.task}</span>
-                    <span style={{ background: t.category === 'Safety' ? '#FF4444' : '#1E3050', padding: '3px 10px', borderRadius: 6, fontSize: 12, color: t.category === 'Safety' ? '#fff' : '#F5E642', whiteSpace: 'nowrap' }}>{t.category}</span>
+                    <span style={{ background: t.category === 'Safety' ? '#FF4444′ : '#1E3050', padding: '3px 10px', borderRadius: 6, fontSize: 12, color: t.category === ’Safety' ? '#fff' : '#F5E642', whiteSpace: 'nowrap' }}>{t.category}</span>
                   </div>
                   <div style={{ fontSize: 12, color: '#8899AA', marginTop: 4 }}>Est. cost: {t.cost}</div>
                 </div>

@@ -67,14 +67,14 @@ export default function DFWExteriorMaterialCostGuide() {
             </thead>
             <tbody>
               {MATERIALS.map((m, i) => (
-                <tr key={m.name} style={{ background: i % 2 === 0 ? '#111E35' : '#0D1929', borderBottom: '1px solid #1E3A5F' }}>
+                <tr key={m.name} style={{ background: i % 2 === 0 ? '#111E35′ : '#0D1929', borderBottom: '1px solid #1E3A5F' }}>
                   <td style={{ padding: '0.65rem 0.75rem', fontWeight: 600, color: '#E8EDF5', whiteSpace: 'nowrap' }}>{m.name}</td>
                   <td style={{ padding: '0.65rem 0.75rem', color: '#4CAF50', fontWeight: 700 }}>${m.install}</td>
-                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0' }}>${m.maintenance}</td>
-                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0' }}>{m.lifespan} yrs</td>
-                  <td style={{ padding: '0.65rem 0.75rem', color: m.hailRating === 'Excellent' ? '#4CAF50' : m.hailRating === 'Poor' ? '#FF6B6B' : '#F5E642' }}>{m.hailRating}</td>
-                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0' }}>{m.hoa}</td>
-                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0' }}>{m.beauty}</td>
+                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0′ }}>${m.maintenance}</td>
+                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0′ }}>{m.lifespan} yrs</td>
+                  <td style={{ padding: '0.65rem 0.75rem', color: m.hailRating === 'Excellent' ? '#4CAF50′ : m.hailRating === ’Poor' ? '#FF6B6B' : '#F5E642′ }}>{m.hailRating}</td>
+                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0′ }}>{m.hoa}</td>
+                  <td style={{ padding: '0.65rem 0.75rem', color: '#C5D3E0′ }}>{m.beauty}</td>
                 </tr>
               ))}
             </tbody>

@@ -48,7 +48,7 @@ export default function DFWHVACWorkmanshipWarranty() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF4' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF4′ }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔨</div>
@@ -56,7 +56,7 @@ export default function DFWHVACWorkmanshipWarranty() {
             DFW HVAC Workmanship Warranty Guide
           </h1>
           <p style={{ fontSize: 16, color: '#9BAAC0', maxWidth: 580, margin: '0 auto' }}>
-            Labor warranties for DFW HVAC installs — what's standard, what's exceptional, and what's a red flag.
+            Labor warranties for DFW HVAC installs — what's standard, what’s exceptional, and what’s a red flag.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function DFWHVACWorkmanshipWarranty() {
               onClick={() => setSelected(selected === w.id ? null : w.id)}
               style={{
                 background: selected === w.id ? '#1A3A6E' : '#0F2040',
-                border: selected === w.id ? '2px solid #F5E642' : '1px solid #1E3A5F',
+                border: selected === w.id ? '2px solid #F5E642′ : '1px solid #1E3A5F',
                 borderRadius: 10, padding: '16px 20px', cursor: 'pointer',
                 textAlign: 'left', color: '#E8EDF4', fontSize: 15, fontWeight: 600,
                 transition: 'all 0.2s', width: '100%',

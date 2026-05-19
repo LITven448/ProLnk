@@ -18,7 +18,7 @@ function getPlan(hoaStatus: string, budget: string): ImprovementPlan {
     { priority: '8', item: '🧱 Driveway replacement or resurfacing', cost: '$3,000–$15,000', valueImpact: '+1–3% value' },
   ];
   if (hoaStatus !== 'No HOA') {
-    return baseItems.map(i => ({ ...i, item: i.priority <= '4' ? i.item + ' (HOA-safe)' : i.item }));
+    return baseItems.map(i => ({ ...i, item: i.priority <= '4′ ? i.item + ' (HOA-safe)' : i.item }));
   }
   return baseItems;
 }
@@ -52,9 +52,9 @@ export default function DFWFrontYardGuide() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642' }}>🏡 DFW Exterior Guides</div>
+        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642′ }}>🏡 DFW Exterior Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>Front Yard Curb Appeal Guide — DFW</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6' }}>DFW buyers form their impression in 8 seconds from the curb. Here's what actually moves the needle — and what to skip.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6′ }}>DFW buyers form their impression in 8 seconds from the curb. Here’s what actually moves the needle — and what to skip.</p>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>👁️ What DFW Buyers Notice First</h2>

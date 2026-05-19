@@ -37,11 +37,11 @@ export default function DFWUVAirPurifierGuide() {
         <p style={{ color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>☀️ DFW HVAC GUIDE</p>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>UV Air Purifier Guide for DFW HVAC Systems</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>
-          In Dallas-Fort Worth, your AC's evaporator coil runs wet for months at a time. That's a mold incubator sitting inside your air handler. In-duct UV purifiers kill what filters miss — here's what's real and what's marketing.
+          In Dallas-Fort Worth, your AC's evaporator coil runs wet for months at a time. That’s a mold incubator sitting inside your air handler. In-duct UV purifiers kill what filters miss — here’s what’s real and what’s marketing.
         </p>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔬 How In-Duct UV Works</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔬 How In-Duct UV Works</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
             UV-C light (200–280 nm wavelength) disrupts DNA in microorganisms — killing or inactivating mold, bacteria, and some viruses on contact. When mounted near the evaporator coil, it irradiates the coil surface 24/7, preventing mold colonies from forming. Secondary "air sterilizer" lamps in the supply plenum treat passing air, though effectiveness varies with air speed.
           </p>
@@ -63,21 +63,21 @@ export default function DFWUVAirPurifierGuide() {
         </div>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Is UV Worth It for Your DFW Home?</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Is UV Worth It for Your DFW Home?</h2>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your home age:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {homeAges.map(h => (
-              <button key={h.id} onClick={() => setAge(h.id)} style={{ background: age === h.id ? '#F5E642' : '#1e3a5f', color: age === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{h.label}</button>
+              <button key={h.id} onClick={() => setAge(h.id)} style={{ background: age === h.id ? '#F5E642′ : '#1e3a5f', color: age === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{h.label}</button>
             ))}
           </div>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Primary air quality concern:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {concerns.map(c => (
-              <button key={c.id} onClick={() => setConcern(c.id)} style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{c.label}</button>
+              <button key={c.id} onClick={() => setConcern(c.id)} style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{c.label}</button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 8 }}>Recommended: {result.rec}</p>
               <p style={{ color: '#e2e8f0', marginBottom: 4 }}>📍 Placement: <strong>{result.placement}</strong></p>
               <p style={{ color: '#e2e8f0', marginBottom: 4 }}>💰 DFW installed cost: <strong>{result.cost}</strong></p>

@@ -101,7 +101,7 @@ export default function DFWAllergySeasonHomeGuide() {
           <>
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24, marginBottom: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                <h3 style={{ color: '#F5E642' }}>Your Allergy Reduction Plan</h3>
+                <h3 style={{ color: '#F5E642′ }}>Your Allergy Reduction Plan</h3>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 20, padding: '4px 14px', fontWeight: 700, fontSize: 13 }}>{plan.cost}</span>
               </div>
               <div style={{ marginBottom: 16 }}>

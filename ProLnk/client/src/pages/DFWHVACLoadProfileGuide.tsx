@@ -46,7 +46,7 @@ export default function DFWHVACLoadProfileGuide() {
         </p>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>⏱️ Typical DFW Summer Day — Cooling Load by Hour</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>⏱️ Typical DFW Summer Day — Cooling Load by Hour</h2>
           <p style={{ fontSize: 13, color: '#64748B', marginBottom: 16 }}>100°F design day, 2,000 sq ft home, SEER 16</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {timeBlocks.map(b => (
@@ -65,7 +65,7 @@ export default function DFWHVACLoadProfileGuide() {
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🧭 My Home's Load Profile by Orientation</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🧭 My Home’s Load Profile by Orientation</h2>
           <select value={orientation} onChange={e => setOrientation(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
             <option value=>Select your lot orientation...</option>
@@ -73,9 +73,9 @@ export default function DFWHVACLoadProfileGuide() {
           </select>
           {orientation && orientations[orientation] && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Peak window: </span><span style={{ color: '#CBD5E1' }}>{orientations[orientation].peak}</span></div>
-              <div><span style={{ color: '#EF4444', fontWeight: 700 }}>Challenge: </span><span style={{ color: '#CBD5E1' }}>{orientations[orientation].worst}</span></div>
-              <div><span style={{ color: '#10B981', fontWeight: 700 }}>Strategy: </span><span style={{ color: '#CBD5E1' }}>{orientations[orientation].strategy}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Peak window: </span><span style={{ color: '#CBD5E1′ }}>{orientations[orientation].peak}</span></div>
+              <div><span style={{ color: '#EF4444', fontWeight: 700 }}>Challenge: </span><span style={{ color: '#CBD5E1′ }}>{orientations[orientation].worst}</span></div>
+              <div><span style={{ color: '#10B981', fontWeight: 700 }}>Strategy: </span><span style={{ color: '#CBD5E1′ }}>{orientations[orientation].strategy}</span></div>
             </div>
           )}
         </div>

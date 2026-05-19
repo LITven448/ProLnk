@@ -5,11 +5,11 @@ const CONDITIONS = ['Healthy & thick', 'Thin & patchy', 'Dormant (winter)', 'Bro
 
 const SCHEDULES: Record<string, { tasks: string[]; cost: string }> = {
   'Healthy & thick': {
-    tasks: ['Feb: Apply pre-emergent before soil hits 55°F', 'Apr: First mow at 1.5"–2" as growth resumes', 'May: Fertilize with 3-1-2 ratio nitrogen', 'Jun–Aug: Mow every 5–7 days, maintain 1.5"–2"', 'Jul: Second fertilizer application', 'Sep: Reduce mowing frequency as growth slows', 'Oct–Nov: Let go dormant naturally — no fertilizer'],
+    tasks: ['Feb: Apply pre-emergent before soil hits 55°F', 'Apr: First mow at 1.5″–2″ as growth resumes', 'May: Fertilize with 3-1-2 ratio nitrogen', 'Jun–Aug: Mow every 5–7 days, maintain 1.5″–2″', 'Jul: Second fertilizer application', 'Sep: Reduce mowing frequency as growth slows', 'Oct–Nov: Let go dormant naturally — no fertilizer'],
     cost: '$300–$600/season for pro care',
   },
   'Thin & patchy': {
-    tasks: ['Mar–Apr: Dethatch if thatch exceeds 0.5"', 'Apr–May: Core aerate DFW clay soil', 'May: Fertilize heavily with slow-release nitrogen', 'Jun: Overseed bare spots with Bermuda seed', 'Jul: Second fertilizer push for fill-in', 'Aug: Spot treat weeds competing with Bermuda', 'Oct: Evaluate results before dormancy'],
+    tasks: ['Mar–Apr: Dethatch if thatch exceeds 0.5″', 'Apr–May: Core aerate DFW clay soil', 'May: Fertilize heavily with slow-release nitrogen', 'Jun: Overseed bare spots with Bermuda seed', 'Jul: Second fertilizer push for fill-in', 'Aug: Spot treat weeds competing with Bermuda', 'Oct: Evaluate results before dormancy'],
     cost: '$500–$900/season for restoration',
   },
   'Dormant (winter)': {
@@ -17,7 +17,7 @@ const SCHEDULES: Record<string, { tasks: string[]; cost: string }> = {
     cost: '$150–$300 for winter overseed',
   },
   'Brown/stressed': {
-    tasks: ['Identify cause: drought, disease, or grubs first', 'Water deeply 1" per week if drought stress', 'May–Jun: Fungicide if brown patch suspected', 'Delay fertilizer until grass shows recovery', 'Jul: Soil test to identify nutrient deficiencies', 'Aug: Grub treatment if June beetle larvae found'],
+    tasks: ['Identify cause: drought, disease, or grubs first', 'Water deeply 1″ per week if drought stress', 'May–Jun: Fungicide if brown patch suspected', 'Delay fertilizer until grass shows recovery', 'Jul: Soil test to identify nutrient deficiencies', 'Aug: Grub treatment if June beetle larvae found'],
     cost: '$200–$800 depending on cause',
   },
   'Mixed weeds': {
@@ -50,7 +50,7 @@ export default function DFWBermudaGrassGuide() {
             '☀️ Requires 6+ hours of direct sun — shaded Bermuda will thin and die',
             '💤 Dormant Nov–Mar — tan/brown is normal, not dead',
             '🌡️ Wakes up when soil hits 65°F (typically late March–April)',
-            '💧 Drought-tolerant once established, but needs 1" water/week in peak summer',
+            '💧 Drought-tolerant once established, but needs 1″ water/week in peak summer',
             '📅 Never fertilize dormant grass — wait for active green growth',
             '🌱 Spreads via stolons and rhizomes — very aggressive spreader',
           ].map((fact, i) => (
@@ -83,7 +83,7 @@ export default function DFWBermudaGrassGuide() {
           <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20 }}>
             <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📋 Your {condition} Bermuda Plan — {submarket}</h2>
             {result.tasks.map((task, i) => (
-              <div key={i} style={{ color: '#cbd5e1', marginBottom: 10, fontSize: 14, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{task}</div>
+              <div key={i} style={{ color: '#cbd5e1', marginBottom: 10, fontSize: 14, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{task}</div>
             ))}
             <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 12 }}>
               <span style={{ color: '#94a3b8', fontSize: 13 }}>💰 Estimated Cost: </span>

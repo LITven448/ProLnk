@@ -45,7 +45,7 @@ function getOrgPlan(sqft: number, use: GarageUse): OrgResult {
       topItems: ['Overhead storage platform for seasonal items ($400-800)', 'Slatwall zones for different purposes ($600-1,200)', 'Rolling workbench (movable) ($400-700)', 'Epoxy floor throughout ($1,500-3,500)'],
       climateRecommendation: 'Portable AC ($300-600) for immediate relief; mini-split ($1,500-3,500) for long-term solution if you use the space regularly.',
       estimatedCost: { low: 2500, high: 7000 },
-      notes: ['Zone your garage: parking zone, storage zone, work zone', 'Color-code zones with floor tape ($20) during planning phase', 'Mixed-use garages benefit most from epoxy floors — handles all uses', 'Keep 3' clearance around vehicle doors at minimum'],
+      notes: ['Zone your garage: parking zone, storage zone, work zone', 'Color-code zones with floor tape ($20) during planning phase', 'Mixed-use garages benefit most from epoxy floors — handles all uses', 'Keep 3′ clearance around vehicle doors at minimum'],
     },
   };
   return plans[use];
@@ -75,7 +75,7 @@ export default function GarageOrganizationGuide() {
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #f59e0b' }}>
           <p style={{ fontSize: 16, color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            🌡️ <strong style={{ color: '#f1f5f9' }}>DFW garage reality:</strong> DFW's heat makes the garage one of the most challenging spaces to organize — products melt, pests invade, and Texas residents use garages year-round. A well-organized garage adds real value and usability.
+            🌡️ <strong style={{ color: '#f1f5f9′ }}>DFW garage reality:</strong> DFW’s heat makes the garage one of the most challenging spaces to organize — products melt, pests invade, and Texas residents use garages year-round. A well-organized garage adds real value and usability.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export default function GarageOrganizationGuide() {
               <span style={{ fontSize: 24, flexShrink: 0 }}>{item.icon}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-                  <div style={{ fontWeight: 700, color: '#f1f5f9' }}>{item.title}</div>
+                  <div style={{ fontWeight: 700, color: '#f1f5f9′ }}>{item.title}</div>
                   <div style={{ color: '#22c55e', fontWeight: 700, fontSize: 13, marginLeft: 16, flexShrink: 0 }}>{item.cost}</div>
                 </div>
                 <div style={{ color: '#94a3b8', lineHeight: 1.6, fontSize: 15 }}>{item.body}</div>
@@ -134,7 +134,7 @@ export default function GarageOrganizationGuide() {
             <div style={{ display: 'grid', gap: 8 }}>
               {dangerItems.map(item => (
                 <div key={item} style={{ color: '#94a3b8', fontSize: 14, display: 'flex', gap: 8 }}>
-                  <span style={{ color: '#ef4444' }}>✗</span><span>{item}</span>
+                  <span style={{ color: '#ef4444′ }}>✗</span><span>{item}</span>
                 </div>
               ))}
             </div>
@@ -155,7 +155,7 @@ export default function GarageOrganizationGuide() {
               <span style={{ fontSize: 24, flexShrink: 0 }}>{item.icon}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-                  <div style={{ fontWeight: 700, color: '#f1f5f9' }}>{item.title}</div>
+                  <div style={{ fontWeight: 700, color: '#f1f5f9′ }}>{item.title}</div>
                   <div style={{ color: '#38bdf8', fontWeight: 700, fontSize: 13, marginLeft: 16, flexShrink: 0 }}>{item.cost}</div>
                 </div>
                 <div style={{ color: '#94a3b8', lineHeight: 1.6, fontSize: 15 }}>{item.body}</div>
@@ -176,7 +176,7 @@ export default function GarageOrganizationGuide() {
                 value={sqft}
                 onChange={e => setSqft(e.target.value)}
                 style={{ width: '100%', background: '#0f172a', border: '1px solid #334155', borderRadius: 8, padding: '12px 16px', color: '#f1f5f9', fontSize: 16, boxSizing: 'border-box' }}
-                placeholder="400"
+                placeholder="400″
               />
             </div>
             <div>

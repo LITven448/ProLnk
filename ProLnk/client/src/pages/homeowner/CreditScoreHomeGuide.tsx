@@ -15,10 +15,10 @@ const improvements = [
 ];
 
 const scoreRanges = [
-  { range: '750+',     label: 'Excellent', helocRate: '~7.2%', monthly200k: '$1,361/mo', color: '#4ADE80' },
+  { range: '750+',     label: 'Excellent', helocRate: '~7.2%', monthly200k: '$1,361/mo', color: '#4ADE80′ },
   { range: '700–749', label: 'Good',       helocRate: '~7.9%', monthly200k: '$1,453/mo', color: '#86EFAC' },
   { range: '650–699', label: 'Fair',       helocRate: '~9.5%', monthly200k: '$1,680/mo', color: '#F59E0B' },
-  { range: '<650',    label: 'Poor',       helocRate: 'FHA / secured only', monthly200k: 'N/A — consider FHA loan', color: '#EF4444' },
+  { range: '<650',    label: 'Poor',       helocRate: 'FHA / secured only', monthly200k: 'N/A — consider FHA loan', color: '#EF4444′ },
 ];
 
 export default function CreditScoreHomeGuide() {
@@ -79,9 +79,9 @@ export default function CreditScoreHomeGuide() {
               </thead>
               <tbody>
                 {creditImpacts.map((row, i) => (
-                  <tr key={row.event} style={{ background: i % 2 === 0 ? '#111E33' : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
+                  <tr key={row.event} style={{ background: i % 2 === 0 ? '#111E33′ : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
                     <td style={{ padding: '14px 16px', color: '#E8EDF5', fontSize: 14 }}>{row.event}</td>
-                    <td style={{ padding: '14px 16px', textAlign: 'center', fontWeight: 700, color: row.severity === 'high' ? '#EF4444' : '#F59E0B' }}>{row.impact}</td>
+                    <td style={{ padding: '14px 16px', textAlign: 'center', fontWeight: 700, color: row.severity === 'high' ? '#EF4444′ : '#F59E0B' }}>{row.impact}</td>
                     <td style={{ padding: '14px 16px', color: '#94A3B8', fontSize: 13 }}>{row.note}</td>
                   </tr>
                 ))}
@@ -121,10 +121,10 @@ export default function CreditScoreHomeGuide() {
             <div style={{ marginBottom: 20 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Your Credit Score (300–850)</label>
               <input
-                type="number" min="300" max="850"
+                type="number" min="300″ max="850"
                 value={score}
                 onChange={e => setScore(e.target.value)}
-                placeholder="e.g. 720"
+                placeholder="e.g. 720″
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #2D4A6B', borderRadius: 8, padding: '10px 14px', color: '#FFFFFF', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>

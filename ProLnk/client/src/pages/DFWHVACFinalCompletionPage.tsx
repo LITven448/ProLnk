@@ -56,7 +56,7 @@ export default function DFWHVACFinalCompletionPage() {
           <h1 style={{ fontSize: '2.25rem', fontWeight: 700, marginBottom: '1rem', lineHeight: 1.3 }}>You Now Know More About DFW HVAC Than 99% of Homeowners</h1>
           <p style={{ color: '#9BA8BB', lineHeight: 1.7, maxWidth: 600, margin: '0 auto' }}>
             ProLnk's 3,000+ page DFW HVAC resource library is the most comprehensive free HVAC knowledge base ever built for North Texas homeowners.
-            Here's what you've mastered — and how to put it to work.
+            Here's what you’ve mastered — and how to put it to work.
           </p>
         </div>
 
@@ -76,11 +76,11 @@ export default function DFWHVACFinalCompletionPage() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>🤝 The ProLnk HVAC Partner Promise</h2>
           <ul style={{ color: '#9BA8BB', lineHeight: 2.1, paddingLeft: '1.25rem', margin: 0 }}>
-            <li><strong style={{ color: '#E8EDF5' }}>Vetted contractors only</strong> — background-checked, licensed, and DFW-experienced</li>
-            <li><strong style={{ color: '#E8EDF5' }}>No price markup</strong> — ProLnk earns from contractors, not from homeowners</li>
-            <li><strong style={{ color: '#E8EDF5' }}>Competitive quotes</strong> — get 3 bids on every job, always</li>
-            <li><strong style={{ color: '#E8EDF5' }}>Knowledge-matched</strong> — you'll never be upsold something you know you don't need</li>
-            <li><strong style={{ color: '#E8EDF5' }}>DFW-specific expertise</strong> — every partner understands North Texas climate demands</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>Vetted contractors only</strong> — background-checked, licensed, and DFW-experienced</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>No price markup</strong> — ProLnk earns from contractors, not from homeowners</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>Competitive quotes</strong> — get 3 bids on every job, always</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>Knowledge-matched</strong> — you’ll never be upsold something you know you don’t need</li>
+            <li><strong style={{ color: '#E8EDF5′ }}>DFW-specific expertise</strong> — every partner understands North Texas climate demands</li>
           </ul>
         </div>
 
@@ -102,11 +102,11 @@ export default function DFWHVACFinalCompletionPage() {
             Get My Complete Action Plan
           </button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.75rem' }}>🎯 <strong>Priority:</strong> {result.priority}</div>
               <div style={{ marginBottom: '0.75rem' }}>📋 <strong>Your Next Step:</strong> {result.nextStep}</div>
               <div style={{ background: '#0F2040', borderRadius: 8, padding: '1rem', marginTop: '0.5rem' }}>
-                🏠 <strong style={{ color: '#F5E642' }}>ProLnk Can Help:</strong> <span style={{ color: '#9BA8BB' }}>{result.proLnkAction}</span>
+                🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Can Help:</strong> <span style={{ color: '#9BA8BB' }}>{result.proLnkAction}</span>
               </div>
             </div>
           )}

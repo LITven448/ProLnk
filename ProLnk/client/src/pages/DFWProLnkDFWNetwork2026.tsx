@@ -69,7 +69,7 @@ export default function DFWProLnkDFWNetwork2026() {
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 32 }}>
-          {[{ label: 'Charter Pros', val: '131' }, { label: 'DFW Areas', val: '6' }, { label: 'Trades Active', val: '7' }].map(s => (
+          {[{ label: 'Charter Pros', val: '131′ }, { label: ’DFW Areas', val: '6′ }, { label: ’Trades Active', val: '7′ }].map(s => (
             <div key={s.label} style={{ background: '#0F2040', border: '1px solid #1E3A5F', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#F5E642', fontSize: 28, fontWeight: 800 }}>{s.val}</div>
               <div style={{ color: '#64748B', fontSize: 13 }}>{s.label}</div>
@@ -84,10 +84,10 @@ export default function DFWProLnkDFWNetwork2026() {
               key={a.id}
               onClick={() => setSelected(selected === a.id ? null : a.id)}
               style={{
-                background: selected === a.id ? '#F5E642' : '#0F2040',
-                color: selected === a.id ? '#0A1628' : '#fff',
+                background: selected === a.id ? '#F5E642′ : '#0F2040',
+                color: selected === a.id ? '#0A1628′ : '#fff',
                 border: '1px solid',
-                borderColor: selected === a.id ? '#F5E642' : '#1E3A5F',
+                borderColor: selected === a.id ? '#F5E642′ : '#1E3A5F',
                 borderRadius: 10,
                 padding: '12px 14px',
                 textAlign: 'left',

@@ -48,7 +48,7 @@ export default function DFWElectricalWireGuide2026() {
             <option value="hvac">Central A/C or Heat Pump</option>
           </select>
           {appliance && applianceGuide[appliance] && (
-            <div style={{ marginTop: 14, padding: 14, background: '#0f172a', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 14, padding: 14, background: '#0f172a', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ display: 'flex', gap: 24, marginBottom: 8, flexWrap: 'wrap' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>Wire: {applianceGuide[appliance].wire}</span>
                 <span style={{ color: '#60a5fa', fontWeight: 700 }}>Breaker: {applianceGuide[appliance].breaker}</span>
@@ -84,7 +84,7 @@ export default function DFWElectricalWireGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #ef4444' }}>
+        <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #ef4444′ }}>
           <p style={{ color: '#fca5a5', fontSize: 13, margin: '0 0 4px', fontWeight: 700 }}>⚠️ Aluminum Wiring Warning</p>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>DFW homes built 1965–1973 may have aluminum branch circuit wiring. This is a fire hazard — look for outlets that feel warm, flickering lights, or a burning smell. Remediation options: COPALUM crimp connectors or AlumiConn lugs at every device. Do not use copper pigtails alone.</p>
         </div>

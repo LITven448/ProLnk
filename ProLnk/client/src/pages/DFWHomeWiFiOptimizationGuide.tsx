@@ -72,13 +72,13 @@ export default function DFWHomeWiFiOptimizationGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📶</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Home WiFi Optimization Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Home WiFi Optimization Guide</h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>Engineered for larger Texas homes with thick walls and high device loads</p>
         </div>
 
-        <div style={{ background: '#0F2240', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0F2240', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <p style={{ color: '#94A3B8', margin: 0, fontSize: '0.88rem' }}>
-            <strong style={{ color: '#F5E642' }}>DFW Wall Warning:</strong> {WALL_NOTE}
+            <strong style={{ color: '#F5E642′ }}>DFW Wall Warning:</strong> {WALL_NOTE}
           </p>
         </div>
 
@@ -97,9 +97,9 @@ export default function DFWHomeWiFiOptimizationGuide() {
                   onClick={() => set(o)}
                   style={{
                     padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                    borderColor: val === o ? '#F5E642' : '#1E3A5F',
-                    background: val === o ? '#F5E642' : 'transparent',
-                    color: val === o ? '#0A1628' : '#94A3B8',
+                    borderColor: val === o ? '#F5E642′ : '#1E3A5F',
+                    background: val === o ? '#F5E642′ : ’transparent',
+                    color: val === o ? '#0A1628′ : '#94A3B8',
                     cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
                   }}
                 >
@@ -115,7 +115,7 @@ export default function DFWHomeWiFiOptimizationGuide() {
           disabled={!ready}
           style={{
             display: 'block', width: '100%',
-            background: ready ? '#F5E642' : '#1E3A5F',
+            background: ready ? '#F5E642′ : '#1E3A5F',
             color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.85rem',
             fontWeight: 700, fontSize: '1rem',
             cursor: ready ? 'pointer' : 'not-allowed', marginBottom: '1.5rem',
@@ -125,7 +125,7 @@ export default function DFWHomeWiFiOptimizationGuide() {
         </button>
 
         {showConfig && cfg && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your DFW WiFi Plan</h3>
             {[
               ['🏗️ Architecture', cfg.arch],
@@ -141,7 +141,7 @@ export default function DFWHomeWiFiOptimizationGuide() {
             ))}
             <div style={{ marginTop: '1rem', padding: '0.75rem', background: '#0A1628', borderRadius: 8 }}>
               <p style={{ color: '#94A3B8', margin: 0, fontSize: '0.85rem' }}>
-                <strong style={{ color: '#F5E642' }}>DFW Tip:</strong> {cfg.notes}
+                <strong style={{ color: '#F5E642′ }}>DFW Tip:</strong> {cfg.notes}
               </p>
             </div>
           </div>

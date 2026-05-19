@@ -121,7 +121,7 @@ export default function DFWHVACDFWSuburb() {
           <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Select Your DFW Suburb</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {suburbList.map(s => (
-              <button key={s} onClick={() => setSelected(s)} style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', borderColor: selected === s ? '#F5E642' : '#1E3A5F', background: selected === s ? '#F5E642' : '#0D2137', color: selected === s ? '#0A1628' : '#E8F4FD', fontWeight: selected === s ? 700 : 400, cursor: 'pointer', fontSize: 13 }}>{s}</button>
+              <button key={s} onClick={() => setSelected(s)} style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', borderColor: selected === s ? '#F5E642′ : '#1E3A5F', background: selected === s ? '#F5E642' : '#0D2137', color: selected === s ? '#0A1628' : '#E8F4FD', fontWeight: selected === s ? 700 : 400, cursor: ’pointer', fontSize: 13 }}>{s}</button>
             ))}
           </div>
         </div>

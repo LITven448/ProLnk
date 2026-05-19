@@ -77,7 +77,7 @@ export default function DFWProLnkMorningBrief() {
           {userTypes.map(type => (
             <button key={type} onClick={() => setActiveType(type)}
               style={{ padding: '10px 18px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeType === type ? '#F5E642' : '#1e2d45', color: activeType === type ? '#0A1628' : '#94a3b8' }}>
+                background: activeType === type ? '#F5E642′ : '#1e2d45', color: activeType === type ? '#0A1628' : '#94a3b8' }}>
               {type}
             </button>
           ))}
@@ -85,7 +85,7 @@ export default function DFWProLnkMorningBrief() {
 
         {data && (
           <div>
-            <div style={{ background: '#1e2d45', borderRadius: 14, padding: '20px 24px', marginBottom: 20, border: '1px solid #F5E642' }}>
+            <div style={{ background: '#1e2d45', borderRadius: 14, padding: '20px 24px', marginBottom: 20, border: '1px solid #F5E642′ }}>
               <h2 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 22, fontWeight: 800 }}>{data.title}</h2>
               <p style={{ color: '#94a3b8', margin: 0, fontSize: 14 }}>{data.status}</p>
             </div>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ADA_DATA: Record<string, Record<string, Record<string, { violations: string[]; retrofitCost: string; priorities: string[] }>>> = {
   commercial: {
     pre1990: {
-      small: { violations: ['Non-compliant parking (no van accessible, improper slope)', 'No accessible route from parking to entrance', 'Entry door too narrow (<32" clear)', 'Restroom non-compliant (grab bars, turning radius)', 'Interior door hardware (round knobs)'], retrofitCost: '$18,000–$55,000', priorities: ['Parking + accessible route — highest liability', 'Entry door width & hardware', 'Restroom compliance — ADA first enforcement target'] },
+      small: { violations: ['Non-compliant parking (no van accessible, improper slope)', 'No accessible route from parking to entrance', 'Entry door too narrow (<32″ clear)', 'Restroom non-compliant (grab bars, turning radius)', 'Interior door hardware (round knobs)'], retrofitCost: '$18,000–$55,000', priorities: ['Parking + accessible route — highest liability', 'Entry door width & hardware', 'Restroom compliance — ADA first enforcement target'] },
       large: { violations: ['Multiple inaccessible parking zones', 'Ramp slope too steep (>1:12)', 'Elevator missing or non-compliant', 'Signage (Braille + tactile missing)', 'Service counter height non-compliant'], retrofitCost: '$65,000–$250,000+', priorities: ['Elevator installation or upgrade', 'Parking lot reconfiguration', 'Service counter height & knee clearance'] },
     },
     post1990: {
@@ -31,7 +31,7 @@ export default function DFWAccessibilityCodeGuide() {
 
   function generate() {
     if (!propertyType || !constructionYear || !propertySize) return;
-    const era = constructionYear === 'pre1990' ? 'pre1990' : 'post1990';
+    const era = constructionYear === 'pre1990′ ? ’pre1990′ : ’post1990';
     setResult(ADA_DATA[propertyType]?.[era]?.[propertySize] || null);
   }
 
@@ -59,7 +59,7 @@ export default function DFWAccessibilityCodeGuide() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginTop: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>⚠️ Most Common DFW ADA Violations</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {[['🅿️ Parking', 'Wrong van accessible space ratio, improper slope (must be <2%), missing signage'], ['🚪 Entry Doors', 'Clear width under 32", excessive opening force (>5 lbs interior), round knobs'], ['🛗 Ramps', 'Slope exceeds 1:12, no level landing at top/bottom, no handrails both sides'], ['🚻 Restrooms', 'Missing grab bars, non-compliant turning radius, paper towel dispenser height'], ['🏊 Pools', 'Pool lift required since 2013 — commonly missing in DFW multifamily']].map(([icon, title, desc]) => (
+            {[['🅿️ Parking', 'Wrong van accessible space ratio, improper slope (must be <2%), missing signage'], ['🚪 Entry Doors', 'Clear width under 32″, excessive opening force (>5 lbs interior), round knobs'], ['🛗 Ramps', 'Slope exceeds 1:12, no level landing at top/bottom, no handrails both sides'], ['🚻 Restrooms', 'Missing grab bars, non-compliant turning radius, paper towel dispenser height'], ['🏊 Pools', 'Pool lift required since 2013 — commonly missing in DFW multifamily']].map(([icon, title, desc]) => (
               <div key={title as string} style={{ background: '#0A1628', borderRadius: 8, padding: 14, display: 'flex', gap: 12 }}>
                 <div style={{ fontSize: 20, flexShrink: 0 }}>{icon}</div>
                 <div><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>{title}</div><div style={{ color: '#94A3B8', fontSize: 13 }}>{desc}</div></div>
@@ -83,8 +83,8 @@ export default function DFWAccessibilityCodeGuide() {
               <label style={{ color: '#0A1628', fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6 }}>Construction Year</label>
               <select value={constructionYear} onChange={e => setConstructionYear(e.target.value)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: 'none', fontSize: 14 }}>
                 <option value="">Select</option>
-                <option value="pre1990">Before 1990</option>
-                <option value="post1990">1990 or Later</option>
+                <option value="pre1990″>Before 1990</option>
+                <option value="post1990″>1990 or Later</option>
               </select>
             </div>
             <div>
@@ -100,10 +100,10 @@ export default function DFWAccessibilityCodeGuide() {
           {result && (
             <div style={{ marginTop: 20, background: '#fff', borderRadius: 8, padding: 20 }}>
               <div style={{ color: '#DC2626', fontWeight: 800, fontSize: 16, marginBottom: 4 }}>⚠️ Common Violations for This Profile:</div>
-              {result.violations.map((v, i) => <div key={i} style={{ color: '#374151', fontSize: 13, padding: '3px 0' }}>• {v}</div>)}
+              {result.violations.map((v, i) => <div key={i} style={{ color: '#374151', fontSize: 13, padding: '3px 0′ }}>• {v}</div>)}
               <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 15, margin: '16px 0 4px' }}>Estimated Retrofit Cost: {result.retrofitCost}</div>
               <div style={{ color: '#374151', fontWeight: 700, marginBottom: 8, marginTop: 12 }}>✅ Priority Fixes:</div>
-              {result.priorities.map((p, i) => <div key={i} style={{ color: '#374151', fontSize: 13, padding: '3px 0' }}>{i + 1}. {p}</div>)}
+              {result.priorities.map((p, i) => <div key={i} style={{ color: '#374151', fontSize: 13, padding: '3px 0′ }}>{i + 1}. {p}</div>)}
             </div>
           )}
         </div>

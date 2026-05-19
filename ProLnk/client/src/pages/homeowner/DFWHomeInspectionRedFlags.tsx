@@ -127,7 +127,7 @@ export default function DFWHomeInspectionRedFlags() {
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, lineHeight: 1.6 }}>{f.desc}</div>
                 <div style={{ color: '#64748b', fontSize: 13 }}>
-                  <strong style={{ color: '#475569' }}>Recommended action:</strong> {f.action}
+                  <strong style={{ color: '#475569′ }}>Recommended action:</strong> {f.action}
                 </div>
               </button>
             );

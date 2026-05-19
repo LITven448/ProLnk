@@ -81,7 +81,7 @@ export default function DFWPoolSafetyGuide2026() {
               <div key={label as string} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                   <span style={{ fontWeight: 700 }}>{label as string}</span>
-                  <span style={{ fontSize: 11, color: (req as string).includes('REQUIRED') || (req as string) === 'FEDERAL LAW' ? '#ef4444' : '#F5E642', fontWeight: 700 }}>{req as string}</span>
+                  <span style={{ fontSize: 11, color: (req as string).includes('REQUIRED') || (req as string) === 'FEDERAL LAW' ? '#ef4444′ : '#F5E642', fontWeight: 700 }}>{req as string}</span>
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>{note as string}</div>
               </div>
@@ -127,7 +127,7 @@ export default function DFWPoolSafetyGuide2026() {
           <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, marginBottom: 20 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <h2 style={{ color: '#F5E642', margin: 0, fontSize: 18 }}>📊 Safety Compliance Report</h2>
-              <div style={{ background: passCount === totalCount ? '#16a34a' : passCount >= 3 ? '#d97706' : '#dc2626', borderRadius: 20, padding: '4px 14px', fontWeight: 700, fontSize: 14 }}>
+              <div style={{ background: passCount === totalCount ? '#16a34a' : passCount >= 3 ? '#d97706′ : '#dc2626', borderRadius: 20, padding: '4px 14px', fontWeight: 700, fontSize: 14 }}>
                 {passCount}/{totalCount} Passed
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function DFWPoolSafetyGuide2026() {
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 10, borderLeft:  }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                   <span style={{ fontWeight: 700, fontSize: 14 }}>{item.item}</span>
-                  <span style={{ color: item.pass ? '#4ade80' : '#f87171', fontWeight: 700, fontSize: 13 }}>{item.pass ? '✅ PASS' : '❌ FAIL'}</span>
+                  <span style={{ color: item.pass ? '#4ade80′ : '#f87171', fontWeight: 700, fontSize: 13 }}>{item.pass ? '✅ PASS' : '❌ FAIL'}</span>
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>{item.note}</div>
               </div>

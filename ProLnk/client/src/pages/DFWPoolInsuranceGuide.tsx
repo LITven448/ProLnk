@@ -53,7 +53,7 @@ export default function DFWPoolInsuranceGuide() {
     }
   }
 
-  const riskColor = (r: string) => r.startsWith('HIGH') ? '#EF4444' : r.startsWith('MEDIUM') ? '#F59E0B' : '#10B981';
+  const riskColor = (r: string) => r.startsWith('HIGH') ? '#EF4444′ : r.startsWith(’MEDIUM') ? '#F59E0B' : '#10B981';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>

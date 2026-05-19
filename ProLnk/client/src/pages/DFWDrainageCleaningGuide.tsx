@@ -53,7 +53,7 @@ export default function DFWDrainageCleaningGuide() {
             Drainage System Maintenance for DFW
           </h1>
           <p style={{ color: '#94A3B8', fontSize: 16, margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
-            DFW's clay soil is the enemy of every drain system. It migrates, compacts, and eventually blocks French drains and downspout lines — leading to foundation flooding. Here's how to stay ahead of it.
+            DFW's clay soil is the enemy of every drain system. It migrates, compacts, and eventually blocks French drains and downspout lines — leading to foundation flooding. Here’s how to stay ahead of it.
           </p>
         </div>
       </div>
@@ -61,12 +61,12 @@ export default function DFWDrainageCleaningGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ marginTop: 48 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🧱 The Clay Problem</h2>
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054′ }}>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: '0 0 12px' }}>
               DFW Blackland Prairie clay has a 10–30% volumetric change between wet and dry states. When water moves through a French drain system, clay particles follow — gradually clogging the perforated pipe and filter sock from the inside. Signs of failure: standing water 24+ hours after rain, soggy patches in lawn, foundation damp spots.
             </p>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#F5E642' }}>Pro tip:</strong> DFW pros recommend hydro-jetting (high-pressure water flushing) rather than mechanical snaking for clay-affected drain lines. Snaking can push clay further into the system.
+              <strong style={{ color: '#F5E642′ }}>Pro tip:</strong> DFW pros recommend hydro-jetting (high-pressure water flushing) rather than mechanical snaking for clay-affected drain lines. Snaking can push clay further into the system.
             </p>
           </div>
 
@@ -97,9 +97,9 @@ export default function DFWDrainageCleaningGuide() {
               {drainTypes.map(d => (
                 <button key={d.id} onClick={() => setDrainType(d.id)} style={{
                   textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: drainType === d.id ? '#F5E642' : '#1E3054',
+                  borderColor: drainType === d.id ? '#F5E642′ : '#1E3054',
                   background: drainType === d.id ? 'rgba(245,230,66,0.1)' : 'transparent',
-                  color: drainType === d.id ? '#F5E642' : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: 'pointer'
+                  color: drainType === d.id ? '#F5E642′ : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: ’pointer'
                 }}>
                   <div>{d.label}</div>
                   {drainType === d.id && <div style={{ fontSize: 12, color: '#94A3B8', fontWeight: 400, marginTop: 4 }}>{d.typical}</div>}
@@ -115,9 +115,9 @@ export default function DFWDrainageCleaningGuide() {
                 {ageOptions.map(a => (
                   <button key={a.id} onClick={() => setAge(a.id)} style={{
                     padding: '9px 16px', borderRadius: 20, border: '2px solid',
-                    borderColor: age === a.id ? '#F5E642' : '#1E3054',
-                    background: age === a.id ? '#F5E642' : 'transparent',
-                    color: age === a.id ? '#0A1628' : '#94A3B8',
+                    borderColor: age === a.id ? '#F5E642′ : '#1E3054',
+                    background: age === a.id ? '#F5E642′ : ’transparent',
+                    color: age === a.id ? '#0A1628′ : '#94A3B8',
                     fontWeight: 600, fontSize: 13, cursor: 'pointer'
                   }}>{a.label}</button>
                 ))}
@@ -126,13 +126,13 @@ export default function DFWDrainageCleaningGuide() {
           )}
 
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3054' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3054′ }}>
               <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Recommended Action</div>
               <div style={{ color: '#E8EDF5', fontWeight: 600, fontSize: 15, marginBottom: 12, lineHeight: 1.5 }}>{rec.action}</div>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 12 }}>
                 <div>
                   <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 2 }}>Estimated Cost</div>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{rec.cost}</div>
+                  <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{rec.cost}</div>
                 </div>
               </div>
               <div style={{ borderTop: '1px solid #1E3054', paddingTop: 12, color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}>

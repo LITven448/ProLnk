@@ -90,7 +90,7 @@ export default function DFWConcreteStainingGuide() {
             <div key={label} style={{ marginBottom: '1rem' }}>
               <label style={{ display: 'block', color: '#aac', marginBottom: '0.4rem', fontSize: '0.9rem' }}>{label}</label>
               <select value={value} onChange={e => setter(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334' }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334′ }}>
                 <option value=''>{placeholder}</option>
                 {options.map(o => <option key={o} value={o}>{o}</option>)}
               </select>
@@ -104,7 +104,7 @@ export default function DFWConcreteStainingGuide() {
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               <div><span style={{ color: '#aac' }}>Staining Type: </span><strong>{result.type}</strong></div>
               <div><span style={{ color: '#aac' }}>Process: </span><strong>{result.process}</strong></div>
-              <div><span style={{ color: '#aac' }}>Estimated Cost: </span><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+              <div><span style={{ color: '#aac' }}>Estimated Cost: </span><strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
               <div><span style={{ color: '#aac' }}>DFW Climate Consideration: </span><em style={{ color: '#ccf' }}>{result.climate}</em></div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', color: '#cce', fontSize: '0.9rem' }}>
                 💡 {result.note}

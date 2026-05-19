@@ -88,20 +88,20 @@ export default function TexasPropertyTaxGuide() {
 
       <div className="min-h-screen bg-[#0A1628] text-white">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-slate-900 via-amber-950/20 to-slate-900 border-b border-slate-800">
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-4 py-1.5 mb-4">
+        <div className="bg-gradient-to-br from-slate-900 via-amber-950/20 to-slate-900 border-b border-slate-800″>
+          <div className="max-w-4xl mx-auto px-6 py-12″>
+            <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-4 py-1.5 mb-4″>
               <span className="text-yellow-400 text-sm font-medium">💰 Texas Property Tax Guide</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3″>
               Fight Your Assessment and Save $1,000+
             </h1>
-            <p className="text-slate-400 text-lg mb-4">
+            <p className="text-slate-400 text-lg mb-4″>
               Texas has no state income tax — but property taxes average 2.0–2.3% in DFW, among the highest in the US. A $485K home pays $10,000–$11,000 per year. Here's how to fight back.
             </p>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4″>
               {['65% of appeals succeed', 'Avg homestead saves $1,200/yr', 'Protest deadline: May 15'].map((stat) => (
-                <div key={stat} className="bg-slate-800/60 rounded-xl p-3 text-center border border-slate-700">
+                <div key={stat} className="bg-slate-800/60 rounded-xl p-3 text-center border border-slate-700″>
                   <p className="text-yellow-400 text-sm font-semibold">{stat}</p>
                 </div>
               ))}
@@ -109,15 +109,15 @@ export default function TexasPropertyTaxGuide() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-8 space-y-10">
+        <div className="max-w-4xl mx-auto px-6 py-8 space-y-10″>
 
           {/* DFW Tax Rates Table */}
           <section>
-            <h2 className="text-xl font-bold text-white mb-4">DFW Property Tax Rates by City</h2>
-            <div className="overflow-x-auto rounded-2xl border border-slate-700">
+            <h2 className="text-xl font-bold text-white mb-4″>DFW Property Tax Rates by City</h2>
+            <div className="overflow-x-auto rounded-2xl border border-slate-700″>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-slate-800 border-b border-slate-700">
+                  <tr className="bg-slate-800 border-b border-slate-700″>
                     <th className="text-left px-4 py-3 text-slate-400 font-medium">City</th>
                     <th className="text-left px-4 py-3 text-slate-400 font-medium">County</th>
                     <th className="text-right px-4 py-3 text-slate-400 font-medium">Rate</th>
@@ -125,18 +125,18 @@ export default function TexasPropertyTaxGuide() {
                     <th className="text-left px-4 py-3 text-slate-400 font-medium">CAD</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800">
+                <tbody className="divide-y divide-slate-800″>
                   {TAX_RATES.map((row) => (
-                    <tr key={row.city} className="hover:bg-slate-800/40">
+                    <tr key={row.city} className="hover:bg-slate-800/40″>
                       <td className="px-4 py-3 text-white font-medium">{row.city}</td>
-                      <td className="px-4 py-3 text-slate-400">{row.county}</td>
+                      <td className="px-4 py-3 text-slate-400″>{row.county}</td>
                       <td className="px-4 py-3 text-right">
                         <span className={`font-semibold ${row.rate >= 2.25 ? 'text-red-400' : row.rate >= 2.15 ? 'text-yellow-400' : 'text-green-400'}`}>
                           {row.rate}%
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-right text-slate-300">{formatCurrency(row.example * row.rate / 100)}/yr</td>
-                      <td className="px-4 py-3">
+                      <td className="px-4 py-3 text-right text-slate-300″>{formatCurrency(row.example * row.rate / 100)}/yr</td>
+                      <td className="px-4 py-3″>
                         <a href={row.cadUrl} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:underline text-xs">{row.cad} →</a>
                       </td>
                     </tr>
@@ -144,26 +144,26 @@ export default function TexasPropertyTaxGuide() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-slate-500 mt-2">Rates shown are effective 2024 combined rates (city + county + school district + MUD). Verify current rates at your county appraisal district.</p>
+            <p className="text-xs text-slate-500 mt-2″>Rates shown are effective 2024 combined rates (city + county + school district + MUD). Verify current rates at your county appraisal district.</p>
           </section>
 
           {/* Homestead Exemption */}
-          <section className="bg-green-950/30 border border-green-700/30 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-white mb-2">🏡 Homestead Exemption — File First, Everything Else Second</h2>
-            <p className="text-slate-300 text-sm mb-4">
-              If your primary residence in Texas doesn't have a homestead exemption on file, you're leaving $1,000–$1,500 per year on the table. The state mandates a $40,000 exemption from school district taxes.
+          <section className="bg-green-950/30 border border-green-700/30 rounded-2xl p-6″>
+            <h2 className="text-xl font-bold text-white mb-2″>🏡 Homestead Exemption — File First, Everything Else Second</h2>
+            <p className="text-slate-300 text-sm mb-4″>
+              If your primary residence in Texas doesn't have a homestead exemption on file, you’re leaving $1,000–$1,500 per year on the table. The state mandates a $40,000 exemption from school district taxes.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div className="bg-slate-800/60 rounded-xl p-4 border border-slate-700">
+            <div className="grid sm:grid-cols-2 gap-4 mb-4″>
+              <div className="bg-slate-800/60 rounded-xl p-4 border border-slate-700″>
                 <p className="text-green-400 font-semibold text-lg">$40,000</p>
-                <p className="text-slate-400 text-xs mt-1">Mandatory school district exemption removes this from taxable value</p>
+                <p className="text-slate-400 text-xs mt-1″>Mandatory school district exemption removes this from taxable value</p>
               </div>
-              <div className="bg-slate-800/60 rounded-xl p-4 border border-slate-700">
+              <div className="bg-slate-800/60 rounded-xl p-4 border border-slate-700″>
                 <p className="text-green-400 font-semibold text-lg">April 30</p>
-                <p className="text-slate-400 text-xs mt-1">Annual deadline to file for homestead exemption (no penalty for late first-time filings)</p>
+                <p className="text-slate-400 text-xs mt-1″>Annual deadline to file for homestead exemption (no penalty for late first-time filings)</p>
               </div>
             </div>
-            <div className="space-y-2 text-sm text-slate-300">
+            <div className="space-y-2 text-sm text-slate-300″>
               <p><span className="text-white font-medium">How to file:</span> Download Form 50-114 from your county CAD website. Attach a copy of your TX driver's license showing your home address. Mail or submit online — no in-person required.</p>
               <p><span className="text-white font-medium">Who qualifies:</span> You must own and occupy the home as your primary residence as of January 1 of the tax year. Rental properties and investment homes do not qualify.</p>
               <p><span className="text-white font-medium">Bonus:</span> Once you turn 65 or claim disability status, you receive an additional $10,000+ exemption and school tax freeze.</p>
@@ -171,17 +171,17 @@ export default function TexasPropertyTaxGuide() {
           </section>
 
           {/* Protest Calculator */}
-          <section className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-white mb-1">Is a Protest Worth It?</h2>
-            <p className="text-slate-400 text-sm mb-5">Enter your assessed value and estimated true market value to see if you should protest.</p>
+          <section className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6″>
+            <h2 className="text-xl font-bold text-white mb-1″>Is a Protest Worth It?</h2>
+            <p className="text-slate-400 text-sm mb-5″>Enter your assessed value and estimated true market value to see if you should protest.</p>
 
-            <div className="grid sm:grid-cols-3 gap-4 mb-6">
+            <div className="grid sm:grid-cols-3 gap-4 mb-6″>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1.5">Your City</label>
+                <label className="block text-xs font-medium text-slate-400 mb-1.5″>Your City</label>
                 <select
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}
-                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-yellow-500"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-yellow-500″
                 >
                   <option value="">Select city...</option>
                   {TAX_RATES.map((r) => (
@@ -190,43 +190,43 @@ export default function TexasPropertyTaxGuide() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1.5">County Assessed Value ($)</label>
+                <label className="block text-xs font-medium text-slate-400 mb-1.5″>County Assessed Value ($)</label>
                 <input
                   type="text"
                   value={assessedValue}
                   onChange={(e) => setAssessedValue(formatInput(e.target.value))}
-                  placeholder="e.g. 520,000"
-                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-500"
+                  placeholder="e.g. 520,000″
+                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-500″
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1.5">Estimated True Market Value ($)</label>
+                <label className="block text-xs font-medium text-slate-400 mb-1.5″>Estimated True Market Value ($)</label>
                 <input
                   type="text"
                   value={marketValue}
                   onChange={(e) => setMarketValue(formatInput(e.target.value))}
-                  placeholder="e.g. 480,000"
-                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-500"
+                  placeholder="e.g. 480,000″
+                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-500″
                 />
               </div>
             </div>
 
             {assessed > 0 && (
-              <div className="space-y-3">
-                <div className="grid sm:grid-cols-3 gap-3">
-                  <div className="bg-slate-900/60 rounded-xl p-4 text-center border border-slate-700">
+              <div className="space-y-3″>
+                <div className="grid sm:grid-cols-3 gap-3″>
+                  <div className="bg-slate-900/60 rounded-xl p-4 text-center border border-slate-700″>
                     <p className="text-red-400 text-2xl font-bold">{formatCurrency(currentBill)}</p>
-                    <p className="text-slate-500 text-xs mt-1">Current annual tax bill</p>
+                    <p className="text-slate-500 text-xs mt-1″>Current annual tax bill</p>
                   </div>
                   {market > 0 && (
-                    <div className="bg-slate-900/60 rounded-xl p-4 text-center border border-slate-700">
+                    <div className="bg-slate-900/60 rounded-xl p-4 text-center border border-slate-700″>
                       <p className="text-yellow-400 text-2xl font-bold">{formatCurrency(marketBill)}</p>
-                      <p className="text-slate-500 text-xs mt-1">Tax bill at market value</p>
+                      <p className="text-slate-500 text-xs mt-1″>Tax bill at market value</p>
                     </div>
                   )}
-                  <div className="bg-green-950/40 rounded-xl p-4 text-center border border-green-700/30">
+                  <div className="bg-green-950/40 rounded-xl p-4 text-center border border-green-700/30″>
                     <p className="text-green-400 text-2xl font-bold">{formatCurrency(homesteadSavings)}</p>
-                    <p className="text-slate-500 text-xs mt-1">Homestead exemption savings/yr</p>
+                    <p className="text-slate-500 text-xs mt-1″>Homestead exemption savings/yr</p>
                   </div>
                 </div>
 
@@ -235,14 +235,14 @@ export default function TexasPropertyTaxGuide() {
                     {appealWorthIt ? (
                       <div>
                         <p className="text-green-400 font-semibold">✅ Protest looks worthwhile</p>
-                        <p className="text-slate-300 text-sm mt-1">
+                        <p className="text-slate-300 text-sm mt-1″>
                           Your assessed value is {Math.round(((assessed - market) / market) * 100)}% above estimated market value. A successful protest to market value could save you <span className="text-green-400 font-semibold">{formatCurrency(potentialSavings)}/year</span>. That's worth a few hours of your time.
                         </p>
                       </div>
                     ) : (
                       <div>
                         <p className="text-slate-400 font-semibold">The math may not support a protest</p>
-                        <p className="text-slate-500 text-sm mt-1">
+                        <p className="text-slate-500 text-sm mt-1″>
                           Your assessed value appears close to or below market value. Texas CADs generally won't reduce below market value. Focus on the homestead exemption instead.
                         </p>
                       </div>
@@ -261,19 +261,19 @@ export default function TexasPropertyTaxGuide() {
 
           {/* Protest Steps */}
           <section>
-            <h2 className="text-xl font-bold text-white mb-2">How to Protest — Step by Step</h2>
-            <p className="text-slate-400 text-sm mb-5">65% of Texas property tax protests result in a reduction. Here's the process:</p>
-            <div className="space-y-4">
+            <h2 className="text-xl font-bold text-white mb-2″>How to Protest — Step by Step</h2>
+            <p className="text-slate-400 text-sm mb-5″>65% of Texas property tax protests result in a reduction. Here's the process:</p>
+            <div className="space-y-4″>
               {PROTEST_STEPS.map((step) => (
-                <div key={step.step} className="bg-slate-800/40 border border-slate-700 rounded-xl p-5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-yellow-500/20 border border-yellow-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                <div key={step.step} className="bg-slate-800/40 border border-slate-700 rounded-xl p-5″>
+                  <div className="flex items-start gap-4″>
+                    <div className="w-8 h-8 rounded-full bg-yellow-500/20 border border-yellow-500/30 flex items-center justify-center shrink-0 mt-0.5″>
                       <span className="text-yellow-400 font-bold text-sm">{step.step}</span>
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1">{step.title}</h3>
-                      <p className="text-slate-400 text-sm leading-relaxed mb-2">{step.detail}</p>
-                      <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg px-3 py-2">
+                      <h3 className="text-white font-semibold mb-1″>{step.title}</h3>
+                      <p className="text-slate-400 text-sm leading-relaxed mb-2″>{step.detail}</p>
+                      <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg px-3 py-2″>
                         <p className="text-yellow-300 text-xs">💡 {step.tip}</p>
                       </div>
                     </div>
@@ -285,8 +285,8 @@ export default function TexasPropertyTaxGuide() {
 
           {/* CAD Links */}
           <section>
-            <h2 className="text-xl font-bold text-white mb-4">DFW County Appraisal Districts</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <h2 className="text-xl font-bold text-white mb-4″>DFW County Appraisal Districts</h2>
+            <div className="grid sm:grid-cols-2 gap-4″>
               {CAD_LINKS.map((cad) => (
                 <a
                   key={cad.name}
@@ -296,7 +296,7 @@ export default function TexasPropertyTaxGuide() {
                   className="bg-slate-800/40 border border-slate-700 hover:border-teal-500/50 rounded-xl p-4 block transition-colors"
                 >
                   <p className="text-white font-semibold">{cad.name} →</p>
-                  <p className="text-slate-400 text-xs mt-1">{cad.counties}</p>
+                  <p className="text-slate-400 text-xs mt-1″>{cad.counties}</p>
                 </a>
               ))}
             </div>
@@ -304,8 +304,8 @@ export default function TexasPropertyTaxGuide() {
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-teal-900/40 to-slate-800/60 border border-teal-700/30 rounded-2xl p-8 text-center">
-            <p className="text-2xl font-bold text-white mb-2">Know your home's true market value</p>
-            <p className="text-slate-400 mb-5">A current market value estimate is the core of any successful protest. ProLnk's Home Health Vault gives you a data-backed value estimate for your DFW property.</p>
+            <p className="text-2xl font-bold text-white mb-2″>Know your home's true market value</p>
+            <p className="text-slate-400 mb-5″>A current market value estimate is the core of any successful protest. ProLnk's Home Health Vault gives you a data-backed value estimate for your DFW property.</p>
             <Link href="/my-home/value">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 hover:bg-yellow-400 rounded-xl text-slate-900 font-semibold transition-colors">
                 Get My Home Value Estimate →

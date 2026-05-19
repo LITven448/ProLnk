@@ -60,7 +60,7 @@ export default function DFWGableAndDormerGuide() {
             {[['Ranch', 'Low'], ['Two-Story', 'Medium'], ['Colonial', 'Medium'], ['Craftsman', 'High'], ['Tudor', 'High']].map(([s, risk]) => (
               <div key={s} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', textAlign: 'center' }}>
                 <div style={{ color: '#fff', fontSize: '0.85rem', fontWeight: 600 }}>{s}</div>
-                <div style={{ color: risk === 'Low' ? '#4ade80' : risk === 'Medium' ? '#facc15' : '#f87171', fontSize: '0.8rem', marginTop: 4 }}>{risk} Risk</div>
+                <div style={{ color: risk === 'Low' ? '#4ade80′ : risk === ’Medium' ? '#facc15′ : '#f87171', fontSize: '0.8rem', marginTop: 4 }}>{risk} Risk</div>
               </div>
             ))}
           </div>
@@ -94,11 +94,11 @@ export default function DFWGableAndDormerGuide() {
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Feasibility</div>
-                <div style={{ color: result.feasibility === 'Straightforward' ? '#4ade80' : result.feasibility === 'Moderate' ? '#facc15' : '#f87171', fontSize: '1.1rem', fontWeight: 700 }}>{result.feasibility}</div>
+                <div style={{ color: result.feasibility === 'Straightforward' ? '#4ade80′ : result.feasibility === ’Moderate' ? '#facc15′ : '#f87171', fontSize: '1.1rem', fontWeight: 700 }}>{result.feasibility}</div>
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Permit Required</div>
-                <div style={{ color: result.permitNeeded ? '#f87171' : '#4ade80', fontSize: '1.1rem', fontWeight: 700 }}>{result.permitNeeded ? 'Yes' : 'Likely No'}</div>
+                <div style={{ color: result.permitNeeded ? '#f87171′ : '#4ade80', fontSize: '1.1rem', fontWeight: 700 }}>{result.permitNeeded ? ’Yes' : 'Likely No'}</div>
               </div>
             </div>
           )}

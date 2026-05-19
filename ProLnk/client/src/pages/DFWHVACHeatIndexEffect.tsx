@@ -25,7 +25,7 @@ export default function DFWHVACHeatIndexEffect() {
   const effectiveCapacity = Math.round(base.capacity * multiplier);
 
   const capacityColor =
-    effectiveCapacity >= 90 ? '#4ade80' : effectiveCapacity >= 80 ? '#facc15' : '#f87171';
+    effectiveCapacity >= 90 ? '#4ade80′ : effectiveCapacity >= 80 ? '#facc15' : '#f87171';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
@@ -43,7 +43,7 @@ export default function DFWHVACHeatIndexEffect() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>
             🔢 DFW Capacity Calculator
           </h2>
           <div style={{ marginBottom: 20 }}>

@@ -29,8 +29,8 @@ export default function DFWFoundationInsuranceCover2026() {
 
   const isPartial = result?.covered.includes('POSSIBLY') || result?.covered.includes('RARELY');
   const isCovered = result?.covered === 'LIKELY COVERED';
-  const borderColor = isCovered ? '#22C55E' : isPartial ? '#F5E642' : '#FF4444';
-  const headerColor = isCovered ? '#22C55E' : isPartial ? '#F5E642' : '#FF6B6B';
+  const borderColor = isCovered ? '#22C55E' : isPartial ? '#F5E642′ : '#FF4444';
+  const headerColor = isCovered ? '#22C55E' : isPartial ? '#F5E642′ : '#FF6B6B';
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui,sans-serif', padding: '40px 20px' }}>
@@ -50,7 +50,7 @@ export default function DFWFoundationInsuranceCover2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {damageTypes.map(d => (
               <button key={d.id} onClick={() => { setDamageType(d.id); setResult(null); }}
-                style={{ background: damageType === d.id ? '#F5E642' : '#1A2F4A', color: damageType === d.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: damageType === d.id ? '#F5E642′ : '#1A2F4A', color: damageType === d.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
                 {d.label}
               </button>
             ))}

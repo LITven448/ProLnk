@@ -26,24 +26,24 @@ export default function EulessHomeownerGuide2026() {
   const groups = Object.keys(ageGroups);
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", padding: "40px 20px", fontFamily: "sans-serif", color: "#fff" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", padding: "40px 20px", fontFamily: "sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 48 }}>✈️</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "12px 0 4px" }}>Euless TX Homeowner Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 15 }}>DFW Airport proximity · 1970s-1990s homes · Noise abatement zone · Original panels common</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "12px 0 4px" }}>Euless TX Homeowner Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 15 }}>DFW Airport proximity · 1970s-1990s homes · Noise abatement zone · Original panels common</p>
         </div>
 
-        <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: "20px 24px", marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
-          <p style={{ margin: 0, fontSize: 14, color: "#cbd5e1", lineHeight: 1.6 }}>
-            ✈️ <strong style={{ color: "#F5E642" }}>Flight Path Zone:</strong> Euless sits under active DFW approach corridors. Homes experience 65-75 dB aircraft noise during peak hours (6am-10pm). Items marked with ✈️ directly relate to sound abatement upgrades that improve comfort and home value.
+        <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: "20px 24px", marginBottom: 28, borderLeft: "4px solid #F5E642″ }}>
+          <p style={{ margin: 0, fontSize: 14, color: "#cbd5e1″, lineHeight: 1.6 }}>
+            ✈️ <strong style={{ color: "#F5E642″ }}>Flight Path Zone:</strong> Euless sits under active DFW approach corridors. Homes experience 65-75 dB aircraft noise during peak hours (6am-10pm). Items marked with ✈️ directly relate to sound abatement upgrades that improve comfort and home value.
           </p>
         </div>
 
-        <h2 style={{ fontSize: 17, color: "#F5E642", marginBottom: 14 }}>Select Your Home Age</h2>
+        <h2 style={{ fontSize: 17, color: "#F5E642″, marginBottom: 14 }}>Select Your Home Age</h2>
         <div style={{ display: "flex", gap: 10, marginBottom: 28, flexWrap: "wrap" }}>
           {groups.map(g => (
-            <button key={g} onClick={() => setSelected(g)} style={{ padding: "10px 20px", borderRadius: 8, border: "2px solid", borderColor: selected === g ? "#F5E642" : "#1e3a5f", backgroundColor: selected === g ? "#F5E642" : "transparent", color: selected === g ? "#0A1628" : "#94a3b8", fontWeight: 700, cursor: "pointer", fontSize: 14 }}>
+            <button key={g} onClick={() => setSelected(g)} style={{ padding: "10px 20px", borderRadius: 8, border: "2px solid", borderColor: selected === g ? "#F5E642″ : "#1e3a5f", backgroundColor: selected === g ? "#F5E642" : "transparent", color: selected === g ? "#0A1628" : "#94a3b8", fontWeight: 700, cursor: "pointer", fontSize: 14 }}>
               {g}
             </button>
           ))}
@@ -56,19 +56,19 @@ export default function EulessHomeownerGuide2026() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <span style={{ fontWeight: 700, fontSize: 15, color: "#f1f5f9" }}>{item.title}</span>
+                    <span style={{ fontWeight: 700, fontSize: 15, color: "#f1f5f9″ }}>{item.title}</span>
                     {item.flightNote && <span style={{ fontSize: 11 }}>✈️</span>}
                   </div>
-                  <span style={{ fontSize: 12, padding: "3px 10px", borderRadius: 20, backgroundColor: item.urgency === "Critical" ? "#450a0a" : item.urgency === "High" ? "#7f1d1d" : item.urgency === "Medium" ? "#78350f" : "#14532d", color: item.urgency === "Critical" ? "#fecaca" : item.urgency === "High" ? "#fca5a5" : item.urgency === "Medium" ? "#fcd34d" : "#86efac" }}>{item.urgency}</span>
+                  <span style={{ fontSize: 12, padding: "3px 10px", borderRadius: 20, backgroundColor: item.urgency === "Critical" ? "#450a0a" : item.urgency === "High" ? "#7f1d1d" : item.urgency === "Medium" ? "#78350f" : "#14532d", color: item.urgency === "Critical" ? "#fecaca" : item.urgency === "High" ? "#fca5a5″ : item.urgency === "Medium" ? "#fcd34d" : "#86efac" }}>{item.urgency}</span>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: "#94a3b8", lineHeight: 1.6 }}>{item.detail}</p>
+                <p style={{ margin: 0, fontSize: 13, color: "#94a3b8″, lineHeight: 1.6 }}>{item.detail}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div style={{ marginTop: 32, textAlign: "center", backgroundColor: "#111f3a", borderRadius: 12, padding: 24 }}>
-          <p style={{ color: "#F5E642", fontWeight: 700, marginBottom: 8 }}>🔗 Find Euless-experienced contractors</p>
+          <p style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 8 }}>🔗 Find Euless-experienced contractors</p>
           <p style={{ color: "#64748b", fontSize: 13, margin: 0 }}>ProLnk connects Euless homeowners with pros who know DFW flight path upgrades inside and out.</p>
         </div>
       </div>

@@ -45,9 +45,9 @@ export default function DFWDuplexBuildingGuide() {
       </div>
 
       <div style={{ maxWidth: 880, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, margin: '40px 0' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, margin: '40px 0′ }}>
           {[
-            { icon: '💰', title: '$100–150K/Unit', desc: 'Typical construction cost per unit in DFW. Total duplex: $220–330K all-in.', bg: '#EFF6FF', accent: '#1D4ED8' },
+            { icon: '💰', title: '$100–150K/Unit', desc: 'Typical construction cost per unit in DFW. Total duplex: $220–330K all-in.', bg: '#EFF6FF', accent: '#1D4ED8′ },
             { icon: '📈', title: 'Day 1 Cash Flow', desc: 'Live in one unit, rent the other. Your tenant covers most of your mortgage.', bg: '#F0FDF4', accent: '#15803D' },
             { icon: '🏗️', title: '9–12 Months', desc: 'Typical permit-to-certificate timeline in DFW for new duplex construction.', bg: '#FFF7ED', accent: '#C2410C' },
             { icon: '🏦', title: 'Construction Loan', desc: '20–25% down required. Convert to permanent financing upon C.O.', bg: '#FDF4FF', accent: '#7C3AED' },
@@ -64,7 +64,7 @@ export default function DFWDuplexBuildingGuide() {
           <h2 style={{ color: '#1E3A5F', margin: '0 0 16px' }}>🗺️ DFW Duplex Zoning at a Glance</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
             {(Object.entries(cityZoning) as [DuplexCity, typeof cityZoning[DuplexCity]][]).map(([c, z]) => (
-              <div key={c} style={{ background: z.zoned ? '#F0FDF4' : '#FFF5F5', borderRadius: 10, padding: 16, border: `1px solid ${z.zoned ? '#86EFAC' : '#FECACA'}` }}>
+              <div key={c} style={{ background: z.zoned ? '#F0FDF4′ : '#FFF5F5', borderRadius: 10, padding: 16, border: `1px solid ${z.zoned ? '#86EFAC' : '#FECACA'}` }}>
                 <h4 style={{ color: '#1E293B', margin: '0 0 4px', fontSize: 13, textTransform: 'capitalize' }}>{c === 'fortworth' ? 'Fort Worth' : c === 'mckinney' ? 'McKinney' : c.charAt(0).toUpperCase() + c.slice(1)}</h4>
                 <div style={{ fontSize: 11, fontWeight: 700, color: z.zoned ? '#15803D' : '#DC2626', marginBottom: 4 }}>{z.zoned ? '✓ Duplex Zones Available' : '✗ Variance Required'}</div>
                 <div style={{ color: '#64748B', fontSize: 11 }}>Min lot: {z.minLot.toLocaleString()} sq ft</div>
@@ -81,7 +81,7 @@ export default function DFWDuplexBuildingGuide() {
               { type: 'FHA 203(k)', down: '3.5%', rate: 'Market rate', convert: 'Owner-occupied only', detail: 'Can buy land + build or renovate. Must occupy one unit for 1 year minimum.' },
               { type: 'Conventional Investment', down: '25%', rate: 'Market + 0.5%', convert: 'If buying existing duplex', detail: 'For purchase of existing 2-unit property. Strong reserves required by most lenders.' },
             ].map(loan => (
-              <div key={loan.type} style={{ background: '#F8FAFC', borderRadius: 10, padding: 20, border: '1px solid #E2E8F0' }}>
+              <div key={loan.type} style={{ background: '#F8FAFC', borderRadius: 10, padding: 20, border: '1px solid #E2E8F0′ }}>
                 <h4 style={{ color: '#1E3A5F', margin: '0 0 8px', fontSize: 14 }}>{loan.type}</h4>
                 <div style={{ display: 'flex', gap: 8, marginBottom: 8, flexWrap: 'wrap' }}>
                   <span style={{ background: '#EFF6FF', color: '#1D4ED8', fontSize: 11, padding: '2px 8px', borderRadius: 4, fontWeight: 600 }}>Down: {loan.down}</span>
@@ -131,9 +131,9 @@ export default function DFWDuplexBuildingGuide() {
                 <div style={{ background: '#F0FDF4', borderRadius: 10, padding: 16 }}><div style={{ color: '#15803D', fontSize: 12 }}>Gross Monthly Rent</div><div style={{ color: '#15803D', fontSize: 18, fontWeight: 700 }}>${monthlyGross.toLocaleString()}</div></div>
                 <div style={{ background: '#F8FAFC', borderRadius: 10, padding: 16 }}><div style={{ color: '#475569', fontSize: 12 }}>Monthly NOI</div><div style={{ color: '#1E293B', fontSize: 18, fontWeight: 700 }}>${monthlyNOI.toLocaleString()}</div></div>
                 <div style={{ background: '#F8FAFC', borderRadius: 10, padding: 16 }}><div style={{ color: '#475569', fontSize: 12 }}>Annual NOI</div><div style={{ color: '#1E293B', fontSize: 18, fontWeight: 700 }}>${annualNOI.toLocaleString()}</div></div>
-                <div style={{ background: canAfford ? '#F0FDF4' : '#FFF5F5', borderRadius: 10, padding: 16, border: `2px solid ${canAfford ? '#22C55E' : '#EF4444'}` }}><div style={{ color: canAfford ? '#15803D' : '#DC2626', fontSize: 12 }}>Cap Rate</div><div style={{ color: canAfford ? '#15803D' : '#DC2626', fontSize: 22, fontWeight: 700 }}>{capRate}%</div></div>
+                <div style={{ background: canAfford ? '#F0FDF4′ : '#FFF5F5', borderRadius: 10, padding: 16, border: `2px solid ${canAfford ? '#22C55E' : '#EF4444'}` }}><div style={{ color: canAfford ? '#15803D' : '#DC2626', fontSize: 12 }}>Cap Rate</div><div style={{ color: canAfford ? '#15803D' : '#DC2626', fontSize: 22, fontWeight: 700 }}>{capRate}%</div></div>
               </div>
-              <div style={{ background: '#F8FAFC', borderRadius: 10, padding: 18, border: '1px solid #E2E8F0' }}>
+              <div style={{ background: '#F8FAFC', borderRadius: 10, padding: 18, border: '1px solid #E2E8F0′ }}>
                 <p style={{ color: '#475569', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#1E3A5F' }}>Zoning:</strong> {zoning.notes}</p>
                 <p style={{ color: '#475569', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#1E3A5F' }}>Setbacks:</strong> {zoning.setback}</p>
                 <p style={{ color: '#475569', margin: 0, fontSize: 13 }}><strong style={{ color: '#1E3A5F' }}>Market Rent ({unit.label}):</strong> ${unit.rent.toLocaleString()}/unit/month — ${monthlyGross.toLocaleString()} total</p>

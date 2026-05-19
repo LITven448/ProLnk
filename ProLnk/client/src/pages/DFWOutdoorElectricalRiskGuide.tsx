@@ -74,7 +74,7 @@ export default function DFWOutdoorElectricalRiskGuide() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>⚡ DFW Outdoor Electrical Reality</h2>
           {[['Lightning capital of Texas', 'DFW averages 50+ lightning days per year — surge protection is not optional.'],['Pool electrocution risk', 'Improperly bonded DFW pools have caused fatalities. Bonding code updates 2008-2023 require many older pools to be upgraded.'],['Outdoor kitchen boom', 'DFW outdoor kitchen installs up 300% since 2018 — most were DIY or under-permitted.'],['GFCI failures', 'Outdoor GFCI outlets degrade faster in DFW heat and humidity — test monthly or replace every 10 years.']].map(([t, d]) => (
-            <div key={t} style={{ borderBottom: '1px solid #1E2D4A', padding: '10px 0' }}>
+            <div key={t} style={{ borderBottom: '1px solid #1E2D4A', padding: '10px 0′ }}>
               <div style={{ fontWeight: 600, color: '#F5E642', fontSize: 14 }}>{t}</div>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>{d}</div>
             </div>
@@ -85,12 +85,12 @@ export default function DFWOutdoorElectricalRiskGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🏡 Select Your Outdoor Features</h2>
           <div style={{ display: 'grid', gap: 10, marginBottom: 16 }}>
             {outdoorFeatures.map(f => (
-              <button key={f.key} onClick={() => toggle(f.key)} style={{ background: selected.includes(f.key) ? '#F5E642' : '#0A1628', color: selected.includes(f.key) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontSize: 14, textAlign: 'left', fontWeight: selected.includes(f.key) ? 700 : 400 }}>{f.label}</button>
+              <button key={f.key} onClick={() => toggle(f.key)} style={{ background: selected.includes(f.key) ? '#F5E642′ : '#0A1628', color: selected.includes(f.key) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontSize: 14, textAlign: 'left', fontWeight: selected.includes(f.key) ? 700 : 400 }}>{f.label}</button>
             ))}
           </div>
           {overallRisk && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: `4px solid ${overallRisk === 'High' ? '#EF4444' : overallRisk === 'Elevated' ? '#FB923C' : '#F5E642'}` }}>
-              <div style={{ fontWeight: 700, color: overallRisk === 'High' ? '#EF4444' : overallRisk === 'Elevated' ? '#FB923C' : '#F5E642' }}>Overall Outdoor Risk: {overallRisk}</div>
+              <div style={{ fontWeight: 700, color: overallRisk === 'High' ? '#EF4444′ : overallRisk === ’Elevated' ? '#FB923C' : '#F5E642′ }}>Overall Outdoor Risk: {overallRisk}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>Click any feature below to see specific requirements and upgrades.</div>
             </div>
           )}
@@ -101,7 +101,7 @@ export default function DFWOutdoorElectricalRiskGuide() {
             <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>📋 Feature Details</h2>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
               {selected.map(s => (
-                <button key={s} onClick={() => setViewing(s)} style={{ background: viewing === s ? '#F5E642' : '#0A1628', color: viewing === s ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 6, padding: '6px 14px', cursor: 'pointer', fontSize: 13, fontWeight: viewing === s ? 700 : 400 }}>{outdoorFeatures.find(f => f.key === s)?.label.split(' ')[0]} {outdoorFeatures.find(f => f.key === s)?.label.split(' ')[1]}</button>
+                <button key={s} onClick={() => setViewing(s)} style={{ background: viewing === s ? '#F5E642′ : '#0A1628', color: viewing === s ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 6, padding: '6px 14px', cursor: ’pointer', fontSize: 13, fontWeight: viewing === s ? 700 : 400 }}>{outdoorFeatures.find(f => f.key === s)?.label.split(' ')[0]} {outdoorFeatures.find(f => f.key === s)?.label.split(' ')[1]}</button>
               ))}
             </div>
             {viewing && featureRisks[viewing] && (
@@ -113,7 +113,7 @@ export default function DFWOutdoorElectricalRiskGuide() {
                 <ul style={{ paddingLeft: 20, marginBottom: 12 }}>{featureRisks[viewing].required.map((r, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5', fontSize: 14 }}>{r}</li>)}</ul>
                 <h3 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 8 }}>⬆️ Recommended Upgrades</h3>
                 <ul style={{ paddingLeft: 20, marginBottom: 12 }}>{featureRisks[viewing].upgrades.map((u, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5', fontSize: 14 }}>{u}</li>)}</ul>
-                <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #F5E642' }}>
+                <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #F5E642′ }}>
                   <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>💰 Typical DFW Costs</div>
                   <div style={{ color: '#94A3B8', fontSize: 14 }}>{featureRisks[viewing].cost}</div>
                 </div>

@@ -5,8 +5,8 @@ export default function DFWCarportGuide2026() {
   const [material, setMaterial] = useState<'steel' | 'aluminum' | 'wood'>('steel');
 
   const costs: Record<string, Record<string, string>> = {
-    freestanding: { steel: '$3,500–$6,000', aluminum: '$4,500–$7,500', wood: '$5,000–$9,000' },
-    attached: { steel: '$4,500–$7,500', aluminum: '$5,500–$9,000', wood: '$6,500–$11,000' },
+    freestanding: { steel: '$3,500–$6,000', aluminum: '$4,500–$7,500', wood: '$5,000–$9,000′ },
+    attached: { steel: '$4,500–$7,500', aluminum: '$5,500–$9,000', wood: '$6,500–$11,000′ },
   };
 
   const materialNotes: Record<string, string> = {
@@ -26,7 +26,7 @@ export default function DFWCarportGuide2026() {
           <div style={{ fontSize: 24 }}>🌩</div>
           <div>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>DFW Hail: The #1 Reason for Carports</div>
-            <div style={{ fontSize: 13, color: '#94a3b8' }}>DFW averages $1B+ in hail damage annually. A carport pays for itself after one significant hail storm. Most DFW insurance agents recommend covered parking for vehicles over $30K in value.</div>
+            <div style={{ fontSize: 13, color: '#94a3b8′ }}>DFW averages $1B+ in hail damage annually. A carport pays for itself after one significant hail storm. Most DFW insurance agents recommend covered parking for vehicles over $30K in value.</div>
           </div>
         </div>
 
@@ -36,7 +36,7 @@ export default function DFWCarportGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Carport Style</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['freestanding', 'attached'] as const).map(t => (
-                <button key={t} onClick={() => setCarportType(t)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: carportType === t ? '#F5E642' : '#1e2d45', color: carportType === t ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                <button key={t} onClick={() => setCarportType(t)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: carportType === t ? '#F5E642′ : '#1e2d45', color: carportType === t ? '#0A1628' : '#fff', fontWeight: 600 }}>
                   {t === 'freestanding' ? 'Free-Standing' : 'Attached to Home'}
                 </button>
               ))}
@@ -46,7 +46,7 @@ export default function DFWCarportGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Frame Material</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['steel', 'aluminum', 'wood'] as const).map(m => (
-                <button key={m} onClick={() => setMaterial(m)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: material === m ? '#F5E642' : '#1e2d45', color: material === m ? '#0A1628' : '#fff', fontWeight: 600, textTransform: 'capitalize' }}>
+                <button key={m} onClick={() => setMaterial(m)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: material === m ? '#F5E642′ : '#1e2d45', color: material === m ? '#0A1628' : '#fff', fontWeight: 600, textTransform: ’capitalize' }}>
                   {m}
                 </button>
               ))}
@@ -54,7 +54,7 @@ export default function DFWCarportGuide2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Estimated DFW Cost</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{costs[carportType][material]}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{costs[carportType][material]}</div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 8, background: '#111e33', borderRadius: 8, padding: '10px 14px', textAlign: 'left' }}>{materialNotes[material]}</div>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function DFWCarportGuide2026() {
             <div key={c.title} style={{ background: '#111e33', borderRadius: 10, padding: 18 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 600, marginBottom: 6 }}>{c.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{c.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{c.desc}</div>
             </div>
           ))}
         </div>

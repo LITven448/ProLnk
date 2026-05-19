@@ -48,7 +48,7 @@ export default function DFWProLnk4500Pages2026() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
           {categories.map(c => (
             <button key={c.id} onClick={() => setActiveCategory(c.id)}
-              style={{ background: activeCategory === c.id ? '#F5E642' : '#1e2d4a', color: activeCategory === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: activeCategory === c.id ? '#F5E642′ : '#1e2d4a', color: activeCategory === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {c.label} ({c.count})
             </button>
           ))}
@@ -66,13 +66,13 @@ export default function DFWProLnk4500Pages2026() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(situationGuides).map(([key, val]) => (
               <button key={key} onClick={() => setSituation(key)}
-                style={{ background: situation === key ? '#F5E642' : '#0A1628', color: situation === key ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: situation === key ? '#F5E642′ : '#0A1628', color: situation === key ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {val.label}
               </button>
             ))}
           </div>
           {guide && guide.pages.map((page, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 0', borderBottom: '1px solid #0A1628' }}>
+            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 0', borderBottom: '1px solid #0A1628′ }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{i + 1}.</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{page}</span>
             </div>

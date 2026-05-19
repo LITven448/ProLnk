@@ -42,8 +42,8 @@ export default function DFWHVACActionSummary() {
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: '14px', padding: '24px', marginBottom: '32px', border: '1px solid #1e3a5f' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-            <span style={{ fontSize: '15px', color: '#94a3b8' }}>Actions completed</span>
-            <span style={{ fontSize: '22px', fontWeight: '800', color: '#F5E642' }}>{count} / {actions.length}</span>
+            <span style={{ fontSize: '15px', color: '#94a3b8′ }}>Actions completed</span>
+            <span style={{ fontSize: '22px', fontWeight: '800', color: '#F5E642′ }}>{count} / {actions.length}</span>
           </div>
           <div style={{ backgroundColor: '#0A1628', borderRadius: '100px', height: '10px', overflow: 'hidden' }}>
             <div style={{ width: `${pct}%`, backgroundColor: '#F5E642', height: '100%', borderRadius: '100px', transition: 'width 0.4s ease' }} />
@@ -59,7 +59,7 @@ export default function DFWHVACActionSummary() {
                 key={action.id}
                 onClick={() => toggle(action.id)}
                 style={{
-                  backgroundColor: isDone ? '#0f2040' : '#0f2040',
+                  backgroundColor: isDone ? '#0f2040′ : '#0f2040',
                   border: `2px solid ${isDone ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: '14px',
                   padding: '20px',
@@ -68,11 +68,11 @@ export default function DFWHVACActionSummary() {
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '10px' }}>
-                  <div style={{ width: '28px', height: '28px', borderRadius: '50%', border: `2px solid ${isDone ? '#F5E642' : '#4a5568'}`, backgroundColor: isDone ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '14px', color: '#0A1628', fontWeight: '800' }}>
+                  <div style={{ width: '28px', height: '28px', borderRadius: '50%', border: `2px solid ${isDone ? '#F5E642' : '#4a5568'}`, backgroundColor: isDone ? '#F5E642′ : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '14px', color: '#0A1628', fontWeight: '800′ }}>
                     {isDone ? '✓' : i + 1}
                   </div>
                   <span style={{ fontSize: '24px' }}>{action.emoji}</span>
-                  <span style={{ fontSize: '17px', fontWeight: '700', color: isDone ? '#F5E642' : '#fff', textDecoration: isDone ? 'line-through' : 'none' }}>{action.label}</span>
+                  <span style={{ fontSize: '17px', fontWeight: '700', color: isDone ? '#F5E642′ : '#fff', textDecoration: isDone ? ’line-through' : 'none' }}>{action.label}</span>
                 </div>
                 <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.6, marginLeft: '42px' }}>{action.detail}</p>
               </div>

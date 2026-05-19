@@ -105,7 +105,7 @@ export default function DFWOfferReviewGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 48 }}>
-          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50' }}>
+          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🎯 Price vs Terms in DFW</h2>
             <p style={{ color: '#9aa5b4', fontSize: 14, lineHeight: 1.7, marginBottom: 12 }}>DFW sellers often choose a <strong style={{ color: '#fff' }}>faster close over a higher price</strong>. A $10K lower offer with 21-day close can be worth more than a higher offer with 45-day financing and a sale contingency.</p>
             <ul style={{ paddingLeft: 20, color: '#ccc', fontSize: 14, lineHeight: 2 }}>
@@ -114,7 +114,7 @@ export default function DFWOfferReviewGuide() {
               <li>Cash offers often accepted at 2–5% below asking</li>
             </ul>
           </div>
-          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50' }}>
+          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>⏱️ Texas Option Period</h2>
             <p style={{ color: '#9aa5b4', fontSize: 14, lineHeight: 1.7, marginBottom: 12 }}>Unique to Texas: buyers pay an <strong style={{ color: '#fff' }}>option fee ($100–$500)</strong> for the right to back out for any reason within the option period (typically 7–10 days). After option period ends, backing out means losing earnest money.</p>
             <ul style={{ paddingLeft: 20, color: '#ccc', fontSize: 14, lineHeight: 2 }}>
@@ -125,7 +125,7 @@ export default function DFWOfferReviewGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #2a3a50' }}>
+        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #2a3a50′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📋 Contingency Quick Guide</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {contingencies.map(c => (
@@ -140,17 +140,17 @@ export default function DFWOfferReviewGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #2a3a50' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Offer Strength Scorer</h2>
+        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #2a3a50′ }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Offer Strength Scorer</h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
-              { label: 'Offer Amount ($)', value: offerAmount, setter: (v: string) => { setOfferAmount(v); setShowResult(false); }, placeholder: 'e.g. 450000' },
-              { label: 'List Price ($)', value: listPrice, setter: (v: string) => { setListPrice(v); setShowResult(false); }, placeholder: 'e.g. 445000' },
-              { label: 'Close Timeline (days)', value: closeTimeline, setter: (v: string) => { setCloseTimeline(v); setShowResult(false); }, placeholder: 'e.g. 30' },
-              { label: 'Earnest Money ($)', value: earnestMoney, setter: (v: string) => { setEarnestMoney(v); setShowResult(false); }, placeholder: 'e.g. 3000' },
-              { label: 'Option Fee ($)', value: optionFee, setter: (v: string) => { setOptionFee(v); setShowResult(false); }, placeholder: 'e.g. 250' },
-              { label: 'Option Period (days)', value: optionDays, setter: (v: string) => { setOptionDays(v); setShowResult(false); }, placeholder: 'e.g. 7' },
+              { label: 'Offer Amount ($)', value: offerAmount, setter: (v: string) => { setOfferAmount(v); setShowResult(false); }, placeholder: 'e.g. 450000′ },
+              { label: 'List Price ($)', value: listPrice, setter: (v: string) => { setListPrice(v); setShowResult(false); }, placeholder: 'e.g. 445000′ },
+              { label: 'Close Timeline (days)', value: closeTimeline, setter: (v: string) => { setCloseTimeline(v); setShowResult(false); }, placeholder: 'e.g. 30′ },
+              { label: 'Earnest Money ($)', value: earnestMoney, setter: (v: string) => { setEarnestMoney(v); setShowResult(false); }, placeholder: 'e.g. 3000′ },
+              { label: 'Option Fee ($)', value: optionFee, setter: (v: string) => { setOptionFee(v); setShowResult(false); }, placeholder: 'e.g. 250′ },
+              { label: 'Option Period (days)', value: optionDays, setter: (v: string) => { setOptionDays(v); setShowResult(false); }, placeholder: 'e.g. 7′ },
             ].map(field => (
               <div key={field.label}>
                 <label style={{ display: 'block', marginBottom: 6, color: '#ccc', fontSize: 13 }}>{field.label}</label>
@@ -167,7 +167,7 @@ export default function DFWOfferReviewGuide() {
                 const selected = selectedContingencies.includes(c);
                 return (
                   <button key={c} onClick={() => toggleContingency(c)}
-                    style={{ padding: '8px 16px', borderRadius: 20, border: `1px solid ${selected ? '#F5E642' : '#2a3a50'}`, backgroundColor: selected ? '#F5E642' : '#0A1628', color: selected ? '#0A1628' : '#ccc', fontSize: 13, cursor: 'pointer', fontWeight: selected ? 700 : 400 }}>
+                    style={{ padding: '8px 16px', borderRadius: 20, border: `1px solid ${selected ? '#F5E642' : '#2a3a50'}`, backgroundColor: selected ? '#F5E642′ : '#0A1628', color: selected ? '#0A1628' : '#ccc', fontSize: 13, cursor: ’pointer', fontWeight: selected ? 700 : 400 }}>
                     {c}
                   </button>
                 );

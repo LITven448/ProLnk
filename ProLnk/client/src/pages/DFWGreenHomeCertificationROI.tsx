@@ -73,7 +73,7 @@ export default function DFWGreenHomeCertificationROI() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                 <div>
                   <span style={{ fontSize: 22, marginRight: 8 }}>{c.icon}</span>
-                  <span style={{ fontWeight: 700, color: '#F5E642' }}>{c.name}</span>
+                  <span style={{ fontWeight: 700, color: '#F5E642′ }}>{c.name}</span>
                 </div>
                 <span style={{ background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 6, padding: '0.2rem 0.5rem', fontSize: '0.8rem', color: '#22c55e' }}>
                   +{c.resalePremium} premium
@@ -96,7 +96,7 @@ export default function DFWGreenHomeCertificationROI() {
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               {[{ v: 'existing', l: 'Existing Home Upgrades' }, { v: 'new', l: 'New Construction / Full Reno' }].map(o => (
                 <div key={o.v} onClick={() => { setScope(o.v); setResult(null); }}
-                  style={{ flex: 1, textAlign: 'center', padding: '0.65rem', borderRadius: 8, cursor: 'pointer', border: scope === o.v ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)', background: scope === o.v ? 'rgba(245,230,66,0.1)' : 'rgba(255,255,255,0.04)', fontSize: '0.85rem', fontWeight: scope === o.v ? 600 : 400, color: scope === o.v ? '#F5E642' : '#fff' }}>
+                  style={{ flex: 1, textAlign: 'center', padding: '0.65rem', borderRadius: 8, cursor: 'pointer', border: scope === o.v ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)', background: scope === o.v ? ’rgba(245,230,66,0.1)' : 'rgba(255,255,255,0.04)', fontSize: '0.85rem', fontWeight: scope === o.v ? 600 : 400, color: scope === o.v ? '#F5E642′ : '#fff' }}>
                   {o.l}
                 </div>
               ))}
@@ -107,7 +107,7 @@ export default function DFWGreenHomeCertificationROI() {
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {Object.entries(priceTiers).map(([v, l]) => (
                 <div key={v} onClick={() => { setTier(v); setResult(null); }}
-                  style={{ flex: 1, minWidth: 100, textAlign: 'center', padding: '0.65rem', borderRadius: 8, cursor: 'pointer', border: tier === v ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)', background: tier === v ? 'rgba(245,230,66,0.1)' : 'rgba(255,255,255,0.04)', fontSize: '0.82rem', fontWeight: tier === v ? 600 : 400, color: tier === v ? '#F5E642' : '#fff' }}>
+                  style={{ flex: 1, minWidth: 100, textAlign: 'center', padding: '0.65rem', borderRadius: 8, cursor: 'pointer', border: tier === v ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)', background: tier === v ? ’rgba(245,230,66,0.1)' : 'rgba(255,255,255,0.04)', fontSize: '0.82rem', fontWeight: tier === v ? 600 : 400, color: tier === v ? '#F5E642′ : '#fff' }}>
                   {l}
                 </div>
               ))}
@@ -118,7 +118,7 @@ export default function DFWGreenHomeCertificationROI() {
         <button
           onClick={getRec}
           disabled={!scope || !tier}
-          style={{ width: '100%', background: scope && tier ? '#F5E642' : '#334155', color: '#0A1628', border: 'none', borderRadius: 10, padding: '0.85rem', fontWeight: 700, fontSize: '1rem', cursor: scope && tier ? 'pointer' : 'default', marginBottom: '1.5rem' }}
+          style={{ width: '100%', background: scope && tier ? '#F5E642′ : '#334155', color: '#0A1628', border: ’none', borderRadius: 10, padding: '0.85rem', fontWeight: 700, fontSize: '1rem', cursor: scope && tier ? 'pointer' : 'default', marginBottom: '1.5rem' }}
         >
           Get Certification Recommendation →
         </button>

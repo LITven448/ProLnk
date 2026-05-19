@@ -68,7 +68,7 @@ export default function DFWElectricalMaintenanceFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeAges.map((a) => (
               <button key={a} onClick={() => setAge(a)}
-                style={{ padding: '11px 16px', borderRadius: 8, border: age === a ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: age === a ? '#F5E642' : '#0d1f36', color: age === a ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '11px 16px', borderRadius: 8, border: age === a ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: age === a ? '#F5E642' : '#0d1f36', color: age === a ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
                 {a}
               </button>
             ))}
@@ -80,7 +80,7 @@ export default function DFWElectricalMaintenanceFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {panelTypes.map((p) => (
               <button key={p} onClick={() => setPanel(p)}
-                style={{ padding: '11px 16px', borderRadius: 8, border: panel === p ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: panel === p ? '#F5E642' : '#0d1f36', color: panel === p ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '11px 16px', borderRadius: 8, border: panel === p ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: panel === p ? '#F5E642' : '#0d1f36', color: panel === p ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
                 {p}
               </button>
             ))}
@@ -106,7 +106,7 @@ export default function DFWElectricalMaintenanceFrequency2026() {
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 10 }}>⚡ DFW Storm Season Tip</h3>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
             After any major DFW storm, check your whole-home surge protector indicator light and test all GFCIs.
-            DFW averages <strong style={{ color: '#e2e8f0' }}>over 50 thunderstorm days per year</strong> — surge events are cumulative and degrade electronics invisibly.
+            DFW averages <strong style={{ color: '#e2e8f0′ }}>over 50 thunderstorm days per year</strong> — surge events are cumulative and degrade electronics invisibly.
           </div>
         </div>
       </div>

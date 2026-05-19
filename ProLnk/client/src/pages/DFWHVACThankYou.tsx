@@ -45,8 +45,8 @@ export default function DFWHVACThankYou() {
                 key={t.id}
                 onClick={() => setSelected(t.id)}
                 style={{
-                  backgroundColor: selected === t.id ? '#F5E642' : '#0f2040',
-                  color: selected === t.id ? '#0A1628' : '#fff',
+                  backgroundColor: selected === t.id ? '#F5E642′ : '#0f2040',
+                  color: selected === t.id ? '#0A1628′ : '#fff',
                   border: `2px solid ${selected === t.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: '12px',
                   padding: '18px',
@@ -67,7 +67,7 @@ export default function DFWHVACThankYou() {
         {chosen && (
           <div style={{ backgroundColor: '#0f2040', borderRadius: '16px', padding: '32px', border: '2px solid #F5E642', marginBottom: '36px' }}>
             <p style={{ fontSize: '17px', color: '#e2e8f0', lineHeight: 1.7, marginBottom: '20px' }}>
-              <strong style={{ color: '#F5E642' }}>Our thanks to you: </strong>{chosen.thanks}
+              <strong style={{ color: '#F5E642′ }}>Our thanks to you: </strong>{chosen.thanks}
             </p>
             <div style={{ backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px' }}>
               <p style={{ fontSize: '15px', color: '#F5E642', fontWeight: '700', marginBottom: '8px' }}>Your ProLnk Next Step</p>

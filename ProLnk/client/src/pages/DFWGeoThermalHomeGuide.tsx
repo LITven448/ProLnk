@@ -73,11 +73,11 @@ export default function DFWGeoThermalHomeGuide() {
           {systemTypes.map((s, i) => (
             <div key={i} style={{ background: '#0f2340', borderRadius: 10, padding: '1rem 1.25rem', border: '1px solid #1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4, flexWrap: 'wrap', gap: 8 }}>
-                <span style={{ fontWeight: 700, color: '#F5E642' }}>{s.type}</span>
+                <span style={{ fontWeight: 700, color: '#F5E642′ }}>{s.type}</span>
                 <span style={{ color: '#60a5fa', fontSize: '0.85rem' }}>{s.depth}</span>
               </div>
               <div style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: 4 }}>Best for: {s.bestFor}</div>
-              <div style={{ fontSize: '0.85rem' }}><span style={{ color: '#4ade80' }}>✅ {s.pros}</span> &nbsp;|&nbsp; <span style={{ color: '#f87171' }}>⚠️ {s.cons}</span></div>
+              <div style={{ fontSize: '0.85rem' }}><span style={{ color: '#4ade80′ }}>✅ {s.pros}</span> &nbsp;|&nbsp; <span style={{ color: '#f87171' }}>⚠️ {s.cons}</span></div>
             </div>
           ))}
         </div>
@@ -123,7 +123,7 @@ export default function DFWGeoThermalHomeGuide() {
                 <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.875rem 1rem', border: '1px solid #1e3a5f', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <div style={{ minWidth: 160 }}>
                     <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 2 }}>{item.label}</div>
-                    <div style={{ fontWeight: 700, color: '#F5E642' }}>{item.value}</div>
+                    <div style={{ fontWeight: 700, color: '#F5E642′ }}>{item.value}</div>
                   </div>
                   <div style={{ color: '#94a3b8', fontSize: '0.875rem', flex: 1 }}>{item.detail}</div>
                 </div>

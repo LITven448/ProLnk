@@ -22,7 +22,7 @@ export default function DFWHVACHumidistatsGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>📊 DFW Optimal Humidity Ranges</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             {[['Summer (May–Sep)', '45–50%', '🌞'], ['Winter (Nov–Feb)', '35–45%', '❄️'], ['Spring (Mar–Apr)', '40–50%', '🌧️'], ['Fall (Oct)', '40–48%', '🍂']].map(([season, range, icon]) => (
-              <div key={season} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div key={season} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ fontSize: '1.5rem' }}>{icon}</div>
                 <div style={{ fontWeight: 700, fontSize: '0.9rem', marginTop: '0.25rem' }}>{season}</div>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '1.1rem' }}>{range}</div>
@@ -33,7 +33,7 @@ export default function DFWHVACHumidistatsGuide2026() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🔧 How Humidistats Integrate with Your HVAC</h2>
-          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.9, color: '#C5CAD8' }}>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.9, color: '#C5CAD8′ }}>
             <li>Humidistat reads indoor RH% continuously</li>
             <li>Signals air handler to run dehumidification or humidification cycle</li>
             <li>Thermostat-integrated models coordinate with temp setpoints automatically</li>
@@ -46,7 +46,7 @@ export default function DFWHVACHumidistatsGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🎯 Your Humidity Situation → Recommendation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1rem' }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '1px solid #F5E642', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', transition: 'all 0.2s' }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#0A1628', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '1px solid #F5E642', borderRadius: 8, padding: '0.75rem 1rem', textAlign: ’left', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', transition: 'all 0.2s' }}>{s.label}</button>
             ))}
           </div>
           {rec && <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642', color: '#E8EAF0', lineHeight: 1.7 }}>{rec.rec}</div>}

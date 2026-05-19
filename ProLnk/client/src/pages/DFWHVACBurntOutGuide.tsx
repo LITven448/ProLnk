@@ -43,24 +43,24 @@ export default function DFWHVACBurntOutGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🩺 Your Situation</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {situations.map(s => (
-              <button key={s.value} onClick={() => setSituation(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: situation.value === s.value ? '#F5E642' : '#1e3a5f', color: situation.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSituation(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: situation.value === s.value ? '#F5E642′ : '#1e3a5f', color: situation.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
 
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 20 }}>📅 Compressor Age</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {ages.map(a => (
-              <button key={a.value} onClick={() => setAge(a)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: age.value === a.value ? '#F5E642' : '#1e3a5f', color: age.value === a.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{a.label}</button>
+              <button key={a.value} onClick={() => setAge(a)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: age.value === a.value ? '#F5E642′ : '#1e3a5f', color: age.value === a.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{a.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>🧠 Burnout Likelihood: {burnoutLikelihood}%</div>
           <div style={{ color: '#94a3b8', marginBottom: 6 }}>{situation.cause}</div>
           <div style={{ color: '#94a3b8', marginBottom: 10 }}>{age.note}</div>
           {flushRequired && <div style={{ color: '#F5E642', fontWeight: 700 }}>⚠️ System flush required before compressor replacement</div>}
-          <div style={{ marginTop: 12, color: '#cbd5e1' }}>
+          <div style={{ marginTop: 12, color: '#cbd5e1′ }}>
             Compressor + Flush: ~${compressorCost.low.toLocaleString()}–${compressorCost.high.toLocaleString()}<br/>
             Full System Replacement: ~${fullSystemCost.low.toLocaleString()}–${fullSystemCost.high.toLocaleString()}
           </div>

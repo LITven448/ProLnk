@@ -94,10 +94,10 @@ export default function DFWLightingUpgradeGuide() {
             </p>
             <div style={{ display: 'grid', gap: 8 }}>
               {[
-                { label: 'Per recessed can (with attic access)', cost: '$75–$150' },
-                { label: 'Per can (no attic, drywall patch)', cost: '$150–$250' },
+                { label: 'Per recessed can (with attic access)', cost: '$75–$150′ },
+                { label: 'Per can (no attic, drywall patch)', cost: '$150–$250′ },
                 { label: 'Dimmer switch add-on', cost: '$30–$80 each' },
-                { label: 'Full kitchen recessed (8 lights)', cost: '$800–$1,800' },
+                { label: 'Full kitchen recessed (8 lights)', cost: '$800–$1,800′ },
               ].map(r => (
                 <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1E2D4A' }}>
                   <span style={{ color: '#8A9AB5', fontSize: 13 }}>{r.label}</span>
@@ -145,7 +145,7 @@ export default function DFWLightingUpgradeGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 20px' }}>🧮 Calculate Your Savings</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#8A9AB5', fontSize: 13, display: 'block', marginBottom: 8 }}>Rooms to Upgrade (select all that apply)</label>
@@ -153,9 +153,9 @@ export default function DFWLightingUpgradeGuide() {
               {roomTypes.map(r => (
                 <button key={r} onClick={() => toggleRoom(r)}
                   style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                    background: selectedRooms.includes(r) ? '#F5E642' : '#0A1628',
-                    color: selectedRooms.includes(r) ? '#0A1628' : '#8A9AB5',
-                    borderColor: selectedRooms.includes(r) ? '#F5E642' : '#1E2D4A' }}>
+                    background: selectedRooms.includes(r) ? '#F5E642′ : '#0A1628',
+                    color: selectedRooms.includes(r) ? '#0A1628′ : '#8A9AB5',
+                    borderColor: selectedRooms.includes(r) ? '#F5E642′ : '#1E2D4A' }}>
                   {r}
                 </button>
               ))}

@@ -36,8 +36,8 @@ export default function DFWRoofingDFWSummer2026B() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642' : '#112240',
-                color: selected === s.id ? '#0A1628' : '#fff',
+                background: selected === s.id ? '#F5E642′ : '#112240',
+                color: selected === s.id ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 600,
               }}
@@ -48,7 +48,7 @@ export default function DFWRoofingDFWSummer2026B() {
         </div>
 
         {match && (
-          <div style={{ background: '#1e3a5f', borderRadius: 10, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 10, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
             <p style={{ color: '#e2e8f0', lineHeight: 1.75, fontSize: 15 }}>{match.action}</p>
           </div>
         )}

@@ -43,7 +43,7 @@ export default function DFWDumpsterRentalGuide() {
           Dumpster or junk removal crew? The right answer depends on your project type and volume. For light loads, a junk crew is faster. For remodels and cleanouts, a dumpster gives you time to work at your pace — no crew waiting.
         </p>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1rem' }}>🚫 DFW Prohibited Materials</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
             {['Electronics (TVs, computers)', 'Tires (any quantity)', 'Hazardous materials (paint, solvents)', 'Asbestos-containing materials', 'Freon-containing appliances', 'Medical / biohazard waste', 'Propane tanks', 'Lead batteries'].map(item => (
@@ -55,7 +55,7 @@ export default function DFWDumpsterRentalGuide() {
           <p style={{ color: '#9BA3B5', fontSize: '0.85rem', marginTop: '1rem', lineHeight: 1.5 }}>Dallas County Household Hazardous Waste accepts most prohibited items for free at 11234 Platt Rd, Dallas. Collin County offers quarterly HHW events in Plano and McKinney.</p>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem' }}>🔍 Size + Cost Estimator</h2>
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.25rem' }}>
             {[['Project Type', PROJECT_TYPES, project, setProject], ['Estimated Waste Volume', WASTE_VOLUMES, volume, setVolume], ['Your City (Permit Check)', CITIES, city, setCity]].map(([label, opts, val, setter]: any) => (
@@ -77,14 +77,14 @@ export default function DFWDumpsterRentalGuide() {
             </div>
           )}
           {permitInfo && city && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #2A3F60' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #2A3F60′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>📍 {city} Permit Info</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', lineHeight: 1.6 }}>{permitInfo}</div>
             </div>
           )}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050' }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>📋 DFW Dumpster Rental Tips</h2>
           {['Get quotes from at least 3 companies — DFW pricing varies up to 40% for same-size dumpsters',
             'Ask about weight limits before signing — overage fees in DFW average $75–100/ton over limit',

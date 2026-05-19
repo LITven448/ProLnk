@@ -37,14 +37,14 @@ export default function DFWRoofingGoodBetterBest2026() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK DFW GUIDE 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 900, marginBottom: 8 }}>🏠 DFW Roofing Good / Better / Best</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>DFW is in the heart of hail alley. One severe storm can total a standard roof. Choose your protection level wisely.</p>
-        <div style={{ background: '#0f1f38', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f1f38', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>🌩️ DFW Hail Alley Fact</div>
           <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>DFW averages 5+ significant hail events per year and ranks in the top 5 most hail-damaged metros in the US. Roofing tier choice is a financial decision as much as a home decision.</div>
         </div>
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {Object.entries(tiers).map(([key, t]) => (
             <div key={key} style={{ background: tier === key ? '#1e3a5f' : '#0f1f38', border: `2px solid ${tier === key ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20 }}>
-              <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: tier === key ? '#F5E642' : '#fff' }}>{t.label}</div>
+              <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: tier === key ? '#F5E642′ : '#fff' }}>{t.label}</div>
               <ul style={{ margin: 0, paddingLeft: 18, color: '#cbd5e1', lineHeight: 1.8 }}>
                 {t.points.map((p, i) => <li key={i}>{p}</li>)}
               </ul>
@@ -53,11 +53,11 @@ export default function DFWRoofingGoodBetterBest2026() {
           ))}
         </div>
         <div style={{ background: '#0f1f38', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Find Your Roofing Tier</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Find Your Roofing Tier</div>
           <div style={{ marginBottom: 12 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Top priority</div>
             {([['insurance', '📉 Insurance savings'], ['longevity', '🕐 Long-term ownership'], ['minimal', '💰 Minimal upfront']] as [string,string][]).map(([v, l]) => (
-              <button key={v} onClick={() => setPriority(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: priority === v ? '#F5E642' : '#0A1628', color: priority === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>
+              <button key={v} onClick={() => setPriority(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: priority === v ? '#F5E642′ : '#0A1628', color: priority === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 12 }}>
                 {l}
               </button>
             ))}
@@ -65,7 +65,7 @@ export default function DFWRoofingGoodBetterBest2026() {
           <div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Budget range</div>
             {([['tight', 'Under $14K'], ['moderate', '$14K–$22K'], ['premium', '$22K+']] as [string,string][]).map(([v, l]) => (
-              <button key={v} onClick={() => setBudget(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: budget === v ? '#F5E642' : '#0A1628', color: budget === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setBudget(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: budget === v ? '#F5E642′ : '#0A1628', color: budget === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}

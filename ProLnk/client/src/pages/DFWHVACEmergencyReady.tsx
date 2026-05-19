@@ -19,7 +19,7 @@ export default function DFWHVACEmergencyReady() {
 
   const score = Math.round((checked.length / checklist.length) * 100);
   const missing = checklist.filter(item => !checked.includes(item.id));
-  const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642' : '#ef4444';
+  const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642′ : '#ef4444';
   const scoreLabel = score >= 80 ? '🚨 Emergency Ready' : score >= 50 ? '⚠️ Partially Prepared' : '🆘 Not Ready — High Risk';
 
   return (
@@ -27,7 +27,7 @@ export default function DFWHVACEmergencyReady() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🚨</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0' }}>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0′ }}>
             Is Your DFW HVAC Emergency Plan in Place?
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
@@ -35,7 +35,7 @@ export default function DFWHVACEmergencyReady() {
           </p>
         </div>
 
-        <div style={{ background: '#1a0000', border: '1px solid #7c0000', borderRadius: 10, padding: '0.75rem 1rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: '#f87171' }}>
+        <div style={{ background: '#1a0000', border: '1px solid #7c0000', borderRadius: 10, padding: '0.75rem 1rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: '#f87171′ }}>
           🚨 DFW averages 20+ days above 100°F per summer. An AC failure becomes a health emergency in under 4 hours for vulnerable family members.
         </div>
 

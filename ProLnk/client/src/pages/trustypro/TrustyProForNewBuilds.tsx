@@ -13,7 +13,7 @@ const phases = [
     id: 'framing',
     label: 'Framing',
     emoji: '🪵',
-    scans: ['Stud spacing compliance (16" OC standard)', 'Header sizing over openings', 'Shear wall blocking presence', 'Roof rafter and ridge board alignment', 'Fire blocking in wall cavities'],
+    scans: ['Stud spacing compliance (16″ OC standard)', 'Header sizing over openings', 'Shear wall blocking presence', 'Roof rafter and ridge board alignment', 'Fire blocking in wall cavities'],
     lookFor: 'Missing fire blocking and incorrect header sizing are the two most commonly missed framing defects that disappear behind drywall',
     builderUse: 'Document framing before insulation and drywall goes up. If issues surface later, you have timestamped proof they were present — and whether they were corrected.',
   },
@@ -68,23 +68,23 @@ export default function TrustyProForNewBuilds() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>Select Construction Phase</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {phases.map(p => (
-              <button key={p.id} onClick={() => setPhase(p)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: phase.id === p.id ? '#4F46E5' : '#1e3a5f', color: '#fff' }}>
+              <button key={p.id} onClick={() => setPhase(p)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: phase.id === p.id ? '#4F46E5′ : '#1e3a5f', color: '#fff' }}>
                 {p.emoji} {p.label}
               </button>
             ))}
           </div>
 
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14, color: '#FACC15' }}>{phase.emoji} {phase.label} — What TrustyPro Scans</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14, color: '#FACC15′ }}>{phase.emoji} {phase.label} — What TrustyPro Scans</h3>
           <ul style={{ paddingLeft: 20, marginBottom: 24 }}>
             {phase.scans.map(s => <li key={s} style={{ color: '#e2e8f0', fontSize: 15, marginBottom: 8, lineHeight: 1.6 }}>{s}</li>)}
           </ul>
 
-          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #FACC15' }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #FACC15′ }}>
             <div style={{ color: '#FACC15', fontWeight: 700, marginBottom: 8 }}>🔍 What to Look For at This Phase</div>
             <p style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{phase.lookFor}</p>
           </div>
 
-          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, borderLeft: '4px solid #4F46E5' }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, borderLeft: '4px solid #4F46E5′ }}>
             <div style={{ color: '#4F46E5', fontWeight: 700, marginBottom: 8 }}>📋 How to Use This Report with Your Builder</div>
             <p style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{phase.builderUse}</p>
           </div>

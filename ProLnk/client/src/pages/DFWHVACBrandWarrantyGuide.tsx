@@ -63,7 +63,7 @@ export default function DFWHVACBrandWarrantyGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '0.6rem', marginBottom: '1.25rem' }}>
           {brands.map(b => (
             <button key={b.id} onClick={() => setBrand(b.id === brand ? null : b.id)}
-              style={{ background: brand === b.id ? '#F5E642' : '#0f2240', color: brand === b.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: brand === b.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '0.75rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem' }}>
+              style={{ background: brand === b.id ? '#F5E642′ : '#0f2240', color: brand === b.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: brand === b.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '0.75rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.85rem' }}>
               <div style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>{b.icon}</div>
               {b.name}
             </button>
@@ -76,7 +76,7 @@ export default function DFWHVACBrandWarrantyGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1.5rem' }}>
               {ages.map(a => (
                 <button key={a.id} onClick={() => setAge(a.id === age ? null : a.id)}
-                  style={{ background: age === a.id ? '#F5E642' : '#0f2240', color: age === a.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: age === a.id ? '#F5E642' : '#1e3a5f', borderRadius: 8, padding: '0.6rem 1rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem' }}>
+                  style={{ background: age === a.id ? '#F5E642′ : '#0f2240', color: age === a.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: age === a.id ? '#F5E642' : '#1e3a5f', borderRadius: 8, padding: '0.6rem 1rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.85rem' }}>
                   {a.icon} {a.label}
                 </button>
               ))}

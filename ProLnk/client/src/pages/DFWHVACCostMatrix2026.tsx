@@ -11,10 +11,10 @@ const services = [
 ];
 
 const badges: Record<string, { color: string; bg: string }> = {
-  Low: { color: '#22C55E', bg: '#052e16' },
-  Medium: { color: '#F5E642', bg: '#1a1a00' },
-  High: { color: '#FF8C00', bg: '#1a0a00' },
-  Planned: { color: '#60A5FA', bg: '#0a1628' },
+  Low: { color: '#22C55E', bg: '#052e16′ },
+  Medium: { color: '#F5E642', bg: '#1a1a00′ },
+  High: { color: '#FF8C00', bg: '#1a0a00′ },
+  Planned: { color: '#60A5FA', bg: '#0a1628′ },
 };
 
 export default function DFWHVACCostMatrix2026() {
@@ -35,7 +35,7 @@ export default function DFWHVACCostMatrix2026() {
           {[['🌡️', '114°F', 'DFW record high'],['⏱️', '5–7 days', 'Summer wait time'],['💸', '$180–250', 'Avg monthly summer electric']].map(([icon, val, label]) => (
             <div key={label as string} style={{ background: '#0F2040', borderRadius: 10, padding: 14, textAlign: 'center' }}>
               <div style={{ fontSize: 20 }}>{icon}</div>
-              <div style={{ fontWeight: 800, fontSize: 16, color: '#F5E642' }}>{val}</div>
+              <div style={{ fontWeight: 800, fontSize: 16, color: '#F5E642′ }}>{val}</div>
               <div style={{ fontSize: 10, color: '#94A3B8', marginTop: 4 }}>{label}</div>
             </div>
           ))}
@@ -46,7 +46,7 @@ export default function DFWHVACCostMatrix2026() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {filters.map(f => (
               <button key={f} onClick={() => setFilter(f)}
-                style={{ padding: '7px 14px', borderRadius: 8, border: `2px solid ${filter === f ? '#F5E642' : '#1E3A5F'}`, background: filter === f ? '#F5E642' : 'transparent', color: filter === f ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
+                style={{ padding: '7px 14px', borderRadius: 8, border: `2px solid ${filter === f ? '#F5E642' : '#1E3A5F'}`, background: filter === f ? '#F5E642′ : ’transparent', color: filter === f ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: 12, fontWeight: 600 }}>
                 {f}
               </button>
             ))}

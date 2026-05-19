@@ -72,7 +72,7 @@ export default function DFWTitleDisputeGuide() {
           <p style={{ color: '#CBD5E1', marginTop: 8 }}>When a title issue surfaces after purchase — what your title insurance covers and what to do</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Title Insurance Basics</h2>
           {[
             ['One-Time Premium', 'Texas title insurance is priced by the state — you paid at closing, coverage is permanent.'],
@@ -82,16 +82,16 @@ export default function DFWTitleDisputeGuide() {
           ].map(([title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <span style={{ color: '#F5E642', fontSize: 20, flexShrink: 0 }}>✔</span>
-              <div><strong style={{ color: '#0A1628' }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
+              <div><strong style={{ color: '#0A1628′ }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🔍 Find Your Title Dispute Path</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>Title Issue Type</label>
-            <select value={issueType} onChange={e => setIssueType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
+            <select value={issueType} onChange={e => setIssueType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
               <option value="">Select issue type...</option>
               {issueOptions.map(o => <option key={o} value={o}>{o}</option>)}
             </select>
@@ -116,7 +116,7 @@ export default function DFWTitleDisputeGuide() {
               {result.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
                   <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: '#E2E8F0' }}>{step}</span>
+                  <span style={{ color: '#E2E8F0′ }}>{step}</span>
                 </div>
               ))}
             </div>

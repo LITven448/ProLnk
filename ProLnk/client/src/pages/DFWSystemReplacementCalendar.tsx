@@ -53,7 +53,7 @@ export default function DFWSystemReplacementCalendar() {
                 type="number"
                 value={homeAge}
                 onChange={e => { setHomeAge(e.target.value); setComputed(false); }}
-                placeholder="e.g. 18"
+                placeholder="e.g. 18″
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, boxSizing: 'border-box' }}
               />
             </div>

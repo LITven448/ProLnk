@@ -3,8 +3,8 @@ import { useState } from 'react';
 const vanityOptions = [
   { id: 'floating', label: '🛁 Floating Vanity', sizes: ['small','medium','large'], priorities: ['modern','cleaning','flood'], desc: 'Floor-mounted plumbing hidden in wall. Easy floor cleaning. DFW favorite in modern remodels. Avoid in high-humidity baths without ventilation.' },
   { id: 'floorMounted', label: '🪵 Floor-Mounted Vanity', sizes: ['small','medium','large'], priorities: ['traditional','storage','stability'], desc: 'More storage, more stable. Standard in DFW traditional homes. Use plywood base — particleboard swells in humidity.' },
-  { id: 'double', label: '👫 Double Sink Vanity', sizes: ['large'], priorities: ['master','storage','modern'], desc: 'DFW master bath standard. 60-72" wide. Requires minimum 8ft bathroom width. Two basins, shared storage.' },
-  { id: 'single', label: '🚿 Single Sink Vanity', sizes: ['small','medium'], priorities: ['guest','budget','small'], desc: 'Best for DFW guest baths and secondary baths. 30-48" wide. More countertop space per basin.' },
+  { id: 'double', label: '👫 Double Sink Vanity', sizes: ['large'], priorities: ['master','storage','modern'], desc: 'DFW master bath standard. 60-72″ wide. Requires minimum 8ft bathroom width. Two basins, shared storage.' },
+  { id: 'single', label: '🚿 Single Sink Vanity', sizes: ['small','medium'], priorities: ['guest','budget','small'], desc: 'Best for DFW guest baths and secondary baths. 30-48″ wide. More countertop space per basin.' },
 ];
 
 const bathSizes = ['small','medium','large'];
@@ -29,7 +29,7 @@ export default function DFWBathroomVanityGuide2026() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem' }}>🛁 DFW Bathroom Vanity Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Vanity selection tailored for DFW homes — humidity, resale value, and DFW buyer expectations.</p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>🏠 DFW Resale Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>DFW buyers expect double sinks in master baths. Solid wood in high-humidity baths without proper ventilation will swell — always use plywood-based cabinets.</div>
         </div>
@@ -75,7 +75,7 @@ export default function DFWBathroomVanityGuide2026() {
           <div>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended Vanities</h3>
             {result.map(r => (
-              <div key={r.id} style={{ background: '#132035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', borderLeft: '3px solid #F5E642' }}>
+              <div key={r.id} style={{ background: '#132035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{r.desc}</div>
               </div>
@@ -87,7 +87,7 @@ export default function DFWBathroomVanityGuide2026() {
           <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>📏 DFW Standard Dimensions</h3>
           {[['Master bath double sink', '60–72 inches wide'],['Guest bath single sink', '30–48 inches wide'],['Vanity depth', '21–24 inches standard'],['Counter height', '36 inches (comfort height)']].map(([k,v]) => (
             <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f', fontSize: '0.9rem' }}>
-              <span style={{ color: '#94a3b8' }}>{k}</span><span style={{ color: '#F5E642' }}>{v}</span>
+              <span style={{ color: '#94a3b8′ }}>{k}</span><span style={{ color: '#F5E642' }}>{v}</span>
             </div>
           ))}
         </div>

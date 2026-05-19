@@ -29,7 +29,7 @@ const labels: Record<string, string> = {
 };
 
 function Stars({ n }: { n: number }) {
-  return <span style={{ color: '#F5E642' }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
+  return <span style={{ color: '#F5E642′ }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
 }
 
 export default function DFWSmartThermostatBrandsCompared() {
@@ -57,9 +57,9 @@ export default function DFWSmartThermostatBrandsCompared() {
                 {(['small', 'medium', 'large'] as HomeSize[]).map(h => (
                   <button key={h} onClick={() => setHomeSize(h)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: homeSize === h ? '#F5E642' : '#1e3a5f',
-                      background: homeSize === h ? '#F5E642' : 'transparent',
-                      color: homeSize === h ? '#0A1628' : '#94a3b8' }}>
+                      borderColor: homeSize === h ? '#F5E642′ : '#1e3a5f',
+                      background: homeSize === h ? '#F5E642′ : ’transparent',
+                      color: homeSize === h ? '#0A1628′ : '#94a3b8' }}>
                     {h.charAt(0).toUpperCase() + h.slice(1)}
                   </button>
                 ))}
@@ -71,9 +71,9 @@ export default function DFWSmartThermostatBrandsCompared() {
                 {(['single', 'multi'] as ZoneCount[]).map(z => (
                   <button key={z} onClick={() => setZones(z)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: zones === z ? '#F5E642' : '#1e3a5f',
-                      background: zones === z ? '#F5E642' : 'transparent',
-                      color: zones === z ? '#0A1628' : '#94a3b8' }}>
+                      borderColor: zones === z ? '#F5E642′ : '#1e3a5f',
+                      background: zones === z ? '#F5E642′ : ’transparent',
+                      color: zones === z ? '#0A1628′ : '#94a3b8' }}>
                     {z.charAt(0).toUpperCase() + z.slice(1)}-zone
                   </button>
                 ))}
@@ -85,18 +85,18 @@ export default function DFWSmartThermostatBrandsCompared() {
                 {(['low', 'medium', 'high'] as TechComfort[]).map(t => (
                   <button key={t} onClick={() => setTechComfort(t)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: techComfort === t ? '#F5E642' : '#1e3a5f',
-                      background: techComfort === t ? '#F5E642' : 'transparent',
-                      color: techComfort === t ? '#0A1628' : '#94a3b8' }}>
+                      borderColor: techComfort === t ? '#F5E642′ : '#1e3a5f',
+                      background: techComfort === t ? '#F5E642′ : ’transparent',
+                      color: techComfort === t ? '#0A1628′ : '#94a3b8' }}>
                     {t.charAt(0).toUpperCase() + t.slice(1)}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-          <div style={{ padding: '14px 18px', background: '#1a3a6e', borderRadius: 10, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ padding: '14px 18px', background: '#1a3a6e', borderRadius: 10, borderLeft: '4px solid #F5E642′ }}>
             <p style={{ margin: 0, color: '#F5E642', fontWeight: 700 }}>🏆 Best thermostat for your DFW home: {pick}</p>
-            <p style={{ margin: '8px 0 0', color: '#94a3b8', fontSize: 14 }}>⚡ Estimated DFW annual savings: <strong style={{ color: '#F5E642' }}>{estSavings}</strong> (vs. non-smart thermostat)</p>
+            <p style={{ margin: '8px 0 0', color: '#94a3b8', fontSize: 14 }}>⚡ Estimated DFW annual savings: <strong style={{ color: '#F5E642′ }}>{estSavings}</strong> (vs. non-smart thermostat)</p>
           </div>
         </div>
 
@@ -104,13 +104,13 @@ export default function DFWSmartThermostatBrandsCompared() {
           {brands.map(b => (
             <div key={b.name} onClick={() => setExpanded(expanded === b.name ? null : b.name)}
               style={{ background: '#0f2040', borderRadius: 12, padding: 20, cursor: 'pointer',
-                border: b.name === pick ? '2px solid #F5E642' : '2px solid #1e3a5f' }}>
+                border: b.name === pick ? '2px solid #F5E642′ : '2px solid #1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   {b.name === pick && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 20 }}>TOP PICK</span>}
                   <span style={{ fontWeight: 700, fontSize: 16 }}>{b.name}</span>
                 </div>
-                <span style={{ color: '#94a3b8' }}>{expanded === b.name ? '▲' : '▼'}</span>
+                <span style={{ color: '#94a3b8′ }}>{expanded === b.name ? '▲' : '▼'}</span>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 14 }}>
                 {Object.keys(labels).map(k => (
@@ -130,7 +130,7 @@ export default function DFWSmartThermostatBrandsCompared() {
         </div>
 
         <div style={{ marginTop: 28, textAlign: 'center', color: '#475569', fontSize: 13 }}>
-          Get matched with top DFW HVAC & smart home installers — <span style={{ color: '#F5E642' }}>prolnk.io</span>
+          Get matched with top DFW HVAC & smart home installers — <span style={{ color: '#F5E642′ }}>prolnk.io</span>
         </div>
       </div>
     </div>

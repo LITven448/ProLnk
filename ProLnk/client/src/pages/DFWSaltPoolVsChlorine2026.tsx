@@ -34,7 +34,7 @@ export default function DFWSaltPoolVsChlorine2026() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚖️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Salt Pool vs Traditional Chlorine 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Salt Pool vs Traditional Chlorine 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             The definitive comparison for DFW pool owners. Both systems produce the same sanitizer (chlorine).
             The differences are in cost, feel, and maintenance habits.
@@ -57,7 +57,7 @@ export default function DFWSaltPoolVsChlorine2026() {
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #2d4a7a' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🌡️ DFW Climate — Both Systems Work</h2>
-          <p style={{ color: '#94a3b8' }}>Neither salt nor chlorine has a meaningful advantage in DFW's climate. Both handle the 9-month swim season fine. The key DFW variable is hard water: it accelerates calcium scaling on salt cells and can cloud chlorine pools if not managed. Test weekly either way, and the DFW climate is very manageable for both systems.</p>
+          <p style={{ color: '#94a3b8′ }}>Neither salt nor chlorine has a meaningful advantage in DFW’s climate. Both handle the 9-month swim season fine. The key DFW variable is hard water: it accelerates calcium scaling on salt cells and can cloud chlorine pools if not managed. Test weekly either way, and the DFW climate is very manageable for both systems.</p>
         </div>
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', border: '1px solid #2d4a7a' }}>
@@ -66,7 +66,7 @@ export default function DFWSaltPoolVsChlorine2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
             {([['cost','💰 Lowest Cost'],['feel','✨ Best Water Feel'],['maintenance','🔧 Least Maintenance'],['environment','🌿 Environmental Impact']] as [Priority,string][]).map(([id, label]) => (
               <button key={id} onClick={() => setSelected(id === selected ? null : id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === id ? '#F5E642' : '#2d4a7a', background: selected === id ? '#F5E642' : '#0A1628', color: selected === id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === id ? '#F5E642′ : '#2d4a7a', background: selected === id ? '#F5E642' : '#0A1628', color: selected === id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600 }}>
                 {label}
               </button>
             ))}
@@ -81,7 +81,7 @@ export default function DFWSaltPoolVsChlorine2026() {
               </ul>
             </div>
           )}
-          {!selected && <p style={{ color: '#94a3b8' }}>Select your top priority above to get a DFW-specific pool system recommendation.</p>}
+          {!selected && <p style={{ color: '#94a3b8′ }}>Select your top priority above to get a DFW-specific pool system recommendation.</p>}
         </div>
       </div>
     </div>

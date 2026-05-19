@@ -4,7 +4,7 @@ const homeAges = ['Built after 2010', 'Built 1990–2010', 'Built 1970–1990', 
 const conditions = ['Move-in ready / just painted', 'Average wear — some scuffs and stains', 'Heavy wear — needs significant work', 'Vacant 6+ months'];
 
 function getChecklist(age: string, condition: string) {
-  const old = age === 'Built before 1970' || age === 'Built 1970–1990';
+  const old = age === 'Built before 1970′ || age === ’Built 1970–1990';
   const heavy = condition === 'Heavy wear — needs significant work' || condition === 'Vacant 6+ months';
   const vacant = condition === 'Vacant 6+ months';
 
@@ -51,7 +51,7 @@ export default function DFWMoveInDeepCleanGuide() {
     <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F', marginBottom: 14 }}>
       <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>{title}</div>
       <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
-        {items.map(item => <li key={item} style={{ color: '#CBD5E1' }}>{item}</li>)}
+        {items.map(item => <li key={item} style={{ color: '#CBD5E1′ }}>{item}</li>)}
       </ul>
     </div>
   );

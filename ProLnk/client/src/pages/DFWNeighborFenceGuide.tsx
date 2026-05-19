@@ -52,7 +52,7 @@ export default function DFWNeighborFenceGuide() {
             {[['🤝 Joint Ownership', 'A fence on the property line belongs to both neighbors — you each own half and share maintenance costs'], ['💰 Cost Sharing', 'Repairs to a line fence are split 50/50 by default under Texas law — in writing is better'], ['📍 Placement', 'Building within your property avoids joint ownership — entirely your fence, your cost'], ['📋 Written Agreement', 'Always document fence agreements in writing — verbal agreements are hard to enforce']].map(([icon, desc]) => (
               <div key={icon} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{icon}</div>
-                <div style={{ fontSize: '0.85rem', color: '#9BA3B8' }}>{desc}</div>
+                <div style={{ fontSize: '0.85rem', color: '#9BA3B8′ }}>{desc}</div>
               </div>
             ))}
           </div>
@@ -88,7 +88,7 @@ export default function DFWNeighborFenceGuide() {
           {[['📏 Height Limits', 'Most DFW cities: 6 ft backyard, 4 ft front yard — verify with your city'], ['🎨 Materials', 'Wood, vinyl, wrought iron, masonry — HOA often restricts to match neighborhood'], ['🏗 Permits', 'Many DFW cities require a fence permit — check before building'], ['📐 Survey First', 'Always get a survey before building near the property line to avoid disputes']].map(([icon, desc]) => (
             <div key={icon} style={{ display: 'flex', gap: '1rem', padding: '0.75rem 0', borderBottom: '1px solid #1E3A5F', alignItems: 'flex-start' }}>
               <span style={{ fontSize: '1.1rem', minWidth: 28 }}>{icon}</span>
-              <span style={{ fontSize: '0.9rem', color: '#9BA3B8' }}>{desc}</span>
+              <span style={{ fontSize: '0.9rem', color: '#9BA3B8′ }}>{desc}</span>
             </div>
           ))}
         </div>

@@ -37,7 +37,7 @@ export default function DFWKitchenCabinetCosts2026() {
   const opt = options[budgetLevel];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EAF0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EAF0′ }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 8 }}>DFW Home Cost Guide 2026</div>
         <h1 style={{ fontSize: 30, fontWeight: 800, color: '#FFFFFF', margin: '0 0 8px' }}>🍳 Kitchen Cabinet Cost Guide</h1>
@@ -45,7 +45,7 @@ export default function DFWKitchenCabinetCosts2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 24 }}>
           {['stock', 'ikea', 'semicustom', 'custom'].map((t) => (
-            <button key={t} onClick={() => setBudgetLevel(t)} style={{ padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 12, background: budgetLevel === t ? '#F5E642' : '#111D33', color: budgetLevel === t ? '#0A1628' : '#8892A4' }}>
+            <button key={t} onClick={() => setBudgetLevel(t)} style={{ padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 12, background: budgetLevel === t ? '#F5E642′ : '#111D33', color: budgetLevel === t ? '#0A1628' : '#8892A4' }}>
               {options[t].label}
             </button>
           ))}
@@ -67,7 +67,7 @@ export default function DFWKitchenCabinetCosts2026() {
           </div>
         </div>
 
-        <div style={{ background: '#111D33', borderRadius: 12, padding: 20, border: '1px solid #1E2D45' }}>
+        <div style={{ background: '#111D33', borderRadius: 12, padding: 20, border: '1px solid #1E2D45′ }}>
           <p style={{ fontSize: 13, color: '#8892A4', margin: 0 }}>💡 <strong style={{ color: '#FFFFFF' }}>ProLnk Tip:</strong> Kitchen remodels return 60–80% at resale in DFW. Get 3 bids from ProLnk's verified kitchen contractors before committing to materials.</p>
         </div>
       </div>

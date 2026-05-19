@@ -49,7 +49,7 @@ export default function DFWExteriorSidingGuide2026() {
           ].map(t => (
             <div key={t.label} style={{ background: '#0F2035', border: `1px solid ${t.star ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{t.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: t.star ? '#F5E642' : '#fff' }}>{t.label}{t.star ? ' ⭐' : ''}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: t.star ? '#F5E642′ : '#fff' }}>{t.label}{t.star ? ' ⭐' : ''}</div>
               <div style={{ color: '#8899AA', fontSize: 13 }}>{t.desc}</div>
             </div>
           ))}

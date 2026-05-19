@@ -38,20 +38,20 @@ function ProgressRing({ completed, total }: { completed: number; total: number }
   const offset = circ - (pct / 100) * circ;
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-      <svg width="88" height="88" style={{ transform: 'rotate(-90deg)' }}>
-        <circle cx="44" cy="44" r={radius} fill="none" stroke="#1E3A5F" strokeWidth="8" />
+      <svg width="88″ height="88" style={{ transform: 'rotate(-90deg)' }}>
+        <circle cx="44″ cy="44" r={radius} fill="none" stroke="#1E3A5F" strokeWidth="8" />
         <circle
-          cx="44" cy="44" r={radius} fill="none"
+          cx="44″ cy="44" r={radius} fill="none"
           stroke={pct === 100 ? '#22C55E' : '#3B82F6'}
-          strokeWidth="8"
+          strokeWidth="8″
           strokeDasharray={circ}
           strokeDashoffset={offset}
           style={{ transition: 'stroke-dashoffset 0.4s ease' }}
         />
       </svg>
       <div>
-        <div style={{ fontSize: '32px', fontWeight: '700', color: pct === 100 ? '#22C55E' : '#F1F5F9' }}>{pct}%</div>
-        <div style={{ fontSize: '13px', color: '#94A3B8' }}>{completed} of {total} done</div>
+        <div style={{ fontSize: '32px', fontWeight: '700', color: pct === 100 ? '#22C55E' : '#F1F5F9′ }}>{pct}%</div>
+        <div style={{ fontSize: '13px', color: '#94A3B8′ }}>{completed} of {total} done</div>
       </div>
     </div>
   );
@@ -74,7 +74,7 @@ export default function MoveInChecklist() {
           <span style={{
             marginLeft: 'auto',
             fontSize: '12px',
-            background: sectionDone === items.length ? '#166534' : '#1E3A5F',
+            background: sectionDone === items.length ? '#166534′ : '#1E3A5F',
             color: sectionDone === items.length ? '#86EFAC' : '#93C5FD',
             padding: '2px 10px',
             borderRadius: '12px',
@@ -90,7 +90,7 @@ export default function MoveInChecklist() {
                 alignItems: 'flex-start',
                 gap: '14px',
                 padding: '14px 16px',
-                background: checked[item.id] ? '#0F2918' : '#0F1E38',
+                background: checked[item.id] ? '#0F2918′ : '#0F1E38',
                 borderRadius: '10px',
                 border: `1px solid ${checked[item.id] ? '#166534' : '#1E3A5F'}`,
                 cursor: 'pointer',
@@ -116,7 +116,7 @@ export default function MoveInChecklist() {
                 <div style={{
                   fontSize: '15px',
                   fontWeight: '600',
-                  color: checked[item.id] ? '#6EE7B7' : '#F1F5F9',
+                  color: checked[item.id] ? '#6EE7B7′ : '#F1F5F9',
                   textDecoration: checked[item.id] ? 'line-through' : 'none',
                   marginBottom: '3px',
                 }}>{item.label}</div>
@@ -145,9 +145,9 @@ export default function MoveInChecklist() {
           <ProgressRing completed={completed} total={allIds.length} />
         </div>
 
-        <Section title="Priority 1 — Do Immediately" emoji="🚨" items={priority1Items} color="#F87171" />
-        <Section title="Priority 2 — First Week" emoji="📅" items={priority2Items} color="#FBBF24" />
-        <Section title="Priority 3 — First Month" emoji="🏡" items={priority3Items} color="#34D399" />
+        <Section title="Priority 1 — Do Immediately" emoji="🚨" items={priority1Items} color="#F87171″ />
+        <Section title="Priority 2 — First Week" emoji="📅" items={priority2Items} color="#FBBF24″ />
+        <Section title="Priority 3 — First Month" emoji="🏡" items={priority3Items} color="#34D399″ />
 
         <div style={{
           background: '#0F2035',
@@ -160,10 +160,10 @@ export default function MoveInChecklist() {
             🌵 DFW-Specific: Foundation Watering
           </div>
           <div style={{ fontSize: '14px', color: '#CBD5E1', lineHeight: 1.7 }}>
-            If you moved to DFW, start a foundation watering schedule <strong style={{ color: '#F1F5F9' }}>immediately</strong>.
+            If you moved to DFW, start a foundation watering schedule <strong style={{ color: '#F1F5F9′ }}>immediately</strong>.
             North Texas clay soil shrinks and swells dramatically with moisture changes.
             A soaker hose on a timer ($80) keeps the perimeter consistently moist and can prevent
-            foundation repairs that average <strong style={{ color: '#F87171' }}>$8,000-22,000</strong>.
+            foundation repairs that average <strong style={{ color: '#F87171′ }}>$8,000-22,000</strong>.
           </div>
         </div>
 

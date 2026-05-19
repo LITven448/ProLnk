@@ -39,7 +39,7 @@ export default function DFWApplianceLifespanGuide2026() {
   const adjusted = (app && hw) ? Math.max(5, app.national + Math.round(app.hardWaterImpact * hw.multiplier)) : null;
   const remaining = (adjusted !== null && !isNaN(ageNum)) ? Math.max(0, adjusted - ageNum) : null;
   const pct = (adjusted && !isNaN(ageNum)) ? Math.min(100, Math.round((ageNum / adjusted) * 100)) : null;
-  const statusColor = remaining === null ? '#aaa' : remaining === 0 ? '#ef4444' : remaining <= 2 ? '#f97316' : '#22c55e';
+  const statusColor = remaining === null ? '#aaa' : remaining === 0 ? '#ef4444′ : remaining <= 2 ? '#f97316' : '#22c55e';
   const statusLabel = remaining === null ? '' : remaining === 0 ? 'Replace Now' : remaining <= 2 ? 'Replace Soon' : remaining <= 5 ? 'Plan Ahead' : 'Still Good';
 
   return (
@@ -47,8 +47,8 @@ export default function DFWApplianceLifespanGuide2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Appliance Lifespan Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>DFW hard water shortens appliance life 20–30%. Know your real lifespan.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Appliance Lifespan Guide 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>DFW hard water shortens appliance life 20–30%. Know your real lifespan.</p>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -66,7 +66,7 @@ export default function DFWApplianceLifespanGuide2026() {
             </div>
           ))}
           <label style={{ display: 'block', color: '#F5E642', marginBottom: 6, fontWeight: 600 }}>📅 Current Age (years)</label>
-          <input type="number" min={0} max={50} placeholder="e.g. 7" value={age} onChange={e => setAge(e.target.value)}
+          <input type="number" min={0} max={50} placeholder="e.g. 7″ value={age} onChange={e => setAge(e.target.value)}
             style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
         </div>
 
@@ -85,13 +85,13 @@ export default function DFWApplianceLifespanGuide2026() {
               <div style={{ height: '100%', width: `${pct}%`, background: statusColor, borderRadius: 5 }} />
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '1rem' }}>
-              <span style={{ color: '#94a3b8' }}>Status</span>
+              <span style={{ color: '#94a3b8′ }}>Status</span>
               <span style={{ color: statusColor, fontWeight: 700, fontSize: '1.1rem' }}>{statusLabel}</span>
             </div>
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', background: '#0A1628', padding: '0.75rem', borderRadius: 8, marginBottom: '1rem' }}>📍 {app.dfwNote}</div>
             <div>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>🛠️ DFW Maintenance to Extend Life</div>
-              {MAINTENANCE.map(m => <div key={m} style={{ color: '#cbd5e1', fontSize: '0.85rem', padding: '0.3rem 0' }}>✓ {m}</div>)}
+              {MAINTENANCE.map(m => <div key={m} style={{ color: '#cbd5e1', fontSize: '0.85rem', padding: '0.3rem 0′ }}>✓ {m}</div>)}
             </div>
           </div>
         )}
@@ -100,7 +100,7 @@ export default function DFWApplianceLifespanGuide2026() {
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>All DFW Appliance Lifespans (Hard Water Adjusted)</h3>
           {APPLIANCES.map(a => (
             <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #1e3a5f' }}>
-              <span style={{ color: '#e2e8f0' }}>{a.icon} {a.name}</span>
+              <span style={{ color: '#e2e8f0′ }}>{a.icon} {a.name}</span>
               <span style={{ color: '#F5E642', fontWeight: 600 }}>{a.national + Math.round(a.hardWaterImpact)} yrs (DFW)</span>
             </div>
           ))}

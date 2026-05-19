@@ -56,7 +56,7 @@ export default function DFWProLnkFAQTop10_2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {faqs.map((faq, i) => (
             <div key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#0F2040' : '#0D1E35', border: `1px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px 20px', cursor: 'pointer', transition: 'all 0.2s' }}>
+              style={{ backgroundColor: selected === i ? '#0F2040′ : '#0D1E35', border: `1px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px 20px', cursor: ’pointer', transition: 'all 0.2s' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15 }}>{faq.q}</div>
               {selected === i && (
                 <div style={{ color: '#C8D8E8', fontSize: 14, lineHeight: 1.7, marginTop: 12, paddingTop: 12, borderTop: '1px solid #1E3A5F' }}>{faq.a}</div>
@@ -64,7 +64,7 @@ export default function DFWProLnkFAQTop10_2026() {
             </div>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: 36, padding: 20, backgroundColor: '#0D1E35', borderRadius: 10, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', marginTop: 36, padding: 20, backgroundColor: '#0D1E35', borderRadius: 10, border: '1px solid #F5E642′ }}>
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Ready to get started with ProLnk?</p>
           <p style={{ color: '#8899AA', fontSize: 13 }}>Join DFW homeowners getting matched with vetted pros. It is free and takes under 2 minutes.</p>
         </div>

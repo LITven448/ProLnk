@@ -86,7 +86,7 @@ function RatingDots({ rating, max = 5 }: { rating: number; max?: number }) {
             width: 10,
             height: 10,
             borderRadius: '50%',
-            background: i < rating ? '#F5E642' : '#1E2D45',
+            background: i < rating ? '#F5E642′ : '#1E2D45',
             display: 'inline-block',
           }}
         />
@@ -152,7 +152,7 @@ export default function DFWCountertopGuide() {
                 max={50}
                 value={countertopPct}
                 onChange={(e) => setCountertopPct(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642' }}
+                style={{ width: '100%', accentColor: '#F5E642′ }}
               />
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function DFWCountertopGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedMaterial === m.name ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedMaterial === m.name ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedMaterial === m.name ? '#F5E642' : '#94A3B8',
+                    color: selectedMaterial === m.name ? '#F5E642′ : '#94A3B8',
                     cursor: 'pointer',
                     fontWeight: 600,
                     fontSize: 14,
@@ -185,7 +185,7 @@ export default function DFWCountertopGuide() {
               ))}
             </div>
           </div>
-          <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642' }}>
+          <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642′ }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Estimated Total (Installed)</div>
@@ -245,15 +245,15 @@ export default function DFWCountertopGuide() {
               </thead>
               <tbody>
                 {MATERIALS.map((m, i) => (
-                  <tr key={m.name} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? '#0A1628' : 'transparent' }}>
-                    <td style={{ padding: '10px 12px', color: m.popular ? '#F5E642' : '#E8EDF5', fontWeight: m.popular ? 700 : 400 }}>
+                  <tr key={m.name} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? '#0A1628′ : ’transparent' }}>
+                    <td style={{ padding: '10px 12px', color: m.popular ? '#F5E642′ : '#E8EDF5', fontWeight: m.popular ? 700 : 400 }}>
                       {m.name} {m.popular ? '★' : ''}
                     </td>
-                    <td style={{ padding: '10px 12px', color: '#CBD5E1' }}>${m.costMin}-${m.costMax}</td>
+                    <td style={{ padding: '10px 12px', color: '#CBD5E1′ }}>${m.costMin}-${m.costMax}</td>
                     <td style={{ padding: '10px 12px' }}><RatingDots rating={m.heatResistance} /></td>
                     <td style={{ padding: '10px 12px' }}><RatingDots rating={m.scratchResistance} /></td>
                     <td style={{ padding: '10px 12px' }}><RatingDots rating={m.stainResistance} /></td>
-                    <td style={{ padding: '10px 12px', color: '#94A3B8' }}>
+                    <td style={{ padding: '10px 12px', color: '#94A3B8′ }}>
                       {m.name === 'Granite' || m.name === 'Quartzite' ? 'Annual' : m.name === 'Marble' ? 'Quarterly' : 'None'}
                     </td>
                   </tr>
@@ -263,7 +263,7 @@ export default function DFWCountertopGuide() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642' }}>
+        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🏠</div>
           <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 8 }}>Get DFW Countertop Quotes</h3>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Connect with vetted DFW countertop installers through ProLnk — free quotes, no commitment.</p>

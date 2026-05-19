@@ -65,7 +65,7 @@ export default function DFWJanuaryHomeGuide() {
           Post-holiday reset month. Property tax bills arrive (due Jan 31). DFW winters are mild but cold snaps happen — stay ready.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628′ }}>
           <strong>📋 January DFW Reminders</strong>
           <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.8 }}>
             <li>Property tax bills due January 31 — pay or set up installment plan</li>
@@ -84,8 +84,8 @@ export default function DFWJanuaryHomeGuide() {
                 padding: '8px 16px',
                 borderRadius: 8,
                 border: `2px solid ${selected.includes(f) ? '#F5E642' : '#1E3050'}`,
-                background: selected.includes(f) ? '#F5E642' : '#111F35',
-                color: selected.includes(f) ? '#0A1628' : '#ccc',
+                background: selected.includes(f) ? '#F5E642′ : '#111F35',
+                color: selected.includes(f) ? '#0A1628′ : '#ccc',
                 fontWeight: 600,
                 cursor: 'pointer',
                 fontSize: 13,
@@ -108,8 +108,8 @@ export default function DFWJanuaryHomeGuide() {
                   </div>
                   <span style={{
                     padding: '4px 10px', borderRadius: 6, fontSize: 12, fontWeight: 700,
-                    background: t.priority === 'Critical' ? '#FF4444' : t.priority === 'High' ? '#F5E642' : '#1E3050',
-                    color: t.priority === 'Critical' || t.priority === 'High' ? '#0A1628' : '#aaa',
+                    background: t.priority === 'Critical' ? '#FF4444′ : t.priority === ’High' ? '#F5E642′ : '#1E3050',
+                    color: t.priority === 'Critical' || t.priority === 'High' ? '#0A1628′ : '#aaa',
                   }}>{t.priority}</span>
                 </div>
               ))}

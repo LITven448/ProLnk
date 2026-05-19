@@ -49,20 +49,20 @@ export default function FortWorthNorthsideHomeownerGuide2026() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: "0.85rem", marginBottom: "0.5rem", letterSpacing: "0.1em" }}>
+        <div style={{ color: "#F5E642″, fontSize: "0.85rem", marginBottom: "0.5rem", letterSpacing: "0.1em" }}>
           TARRANT COUNTY · FORT WORTH NORTH SIDE
         </div>
         <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
           Fort Worth North Side Homeowner Guide 2026
         </h1>
-        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.7 }}>
+        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.7 }}>
           Fort Worth's North Side is a historic neighborhood of 1920s-1950s bungalows and cottages, now in the middle of a major gentrification wave driven by Stockyards tourism and proximity to downtown. Original plumbing, aging electrical, and pier-and-beam foundations are the defining maintenance challenges — but renovation upside is significant.
         </p>
 
         <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🏚️ Select Your Home's Era</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🏚️ Select Your Home's Era</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {homeEras.map((e) => (
               <button
@@ -73,8 +73,8 @@ export default function FortWorthNorthsideHomeownerGuide2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  backgroundColor: selected === e ? "#F5E642" : "#1e3a5f",
-                  color: selected === e ? "#0A1628" : "#fff",
+                  backgroundColor: selected === e ? "#F5E642″ : "#1e3a5f",
+                  color: selected === e ? "#0A1628″ : "#fff",
                   fontWeight: 600,
                 }}
               >
@@ -86,12 +86,12 @@ export default function FortWorthNorthsideHomeownerGuide2026() {
 
         {selected && (
           <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem" }}>
-            <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>
+            <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>
               🔧 North FW Maintenance Guide — {selected}
             </h2>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {guides[selected].map((item, i) => (
-                <li key={i} style={{ padding: "0.6rem 0", borderBottom: "1px solid #1e3a5f", color: "#cbd5e1" }}>
+                <li key={i} style={{ padding: "0.6rem 0″, borderBottom: "1px solid #1e3a5f", color: "#cbd5e1" }}>
                   {item}
                 </li>
               ))}
@@ -100,12 +100,12 @@ export default function FortWorthNorthsideHomeownerGuide2026() {
         )}
 
         <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>📍 FW North Side Fast Facts</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>📍 FW North Side Fast Facts</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
             {[["County", "Tarrant"], ["Home Era", "1920s-1950s mostly"], ["Foundation Type", "Pier and beam dominant"], ["Renovation Activity", "High — Stockyards effect"], ["Lead/Asbestos Risk", "High — pre-1978 majority"], ["Character", "Historic — gentrifying"]].map(([k, v]) => (
-              <div key={k} style={{ backgroundColor: "#0A1628", borderRadius: 8, padding: "0.75rem" }}>
-                <div style={{ color: "#94a3b8", fontSize: "0.75rem" }}>{k}</div>
-                <div style={{ color: "#F5E642", fontWeight: 600 }}>{v}</div>
+              <div key={k} style={{ backgroundColor: "#0A1628″, borderRadius: 8, padding: "0.75rem" }}>
+                <div style={{ color: "#94a3b8″, fontSize: "0.75rem" }}>{k}</div>
+                <div style={{ color: "#F5E642″, fontWeight: 600 }}>{v}</div>
               </div>
             ))}
           </div>

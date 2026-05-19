@@ -33,7 +33,7 @@ export default function DFWHVACMonthlyBillGuide() {
   const bill = parseFloat(yourBill);
   const diff = !isNaN(bill) ? bill - dfwAvg : null;
   const diffLabel = diff === null ? '' : diff > 20 ? `$${Math.round(diff)} above DFW average` : diff < -20 ? `$${Math.abs(Math.round(diff))} below DFW average` : 'Right at DFW average';
-  const diffColor = diff === null ? '#94A3B8' : diff > 20 ? '#f87171' : diff < -20 ? '#4ade80' : '#F5E642';
+  const diffColor = diff === null ? '#94A3B8′ : diff > 20 ? '#f87171' : diff < -20 ? '#4ade80' : '#F5E642';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
@@ -51,7 +51,7 @@ export default function DFWHVACMonthlyBillGuide() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>
             🔢 DFW Bill Comparison Tool
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
@@ -72,12 +72,12 @@ export default function DFWHVACMonthlyBillGuide() {
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontSize: 14, color: '#94A3B8', marginBottom: 8 }}>Your Actual Bill (optional, $)</label>
-            <input type="number" value={yourBill} onChange={e => setYourBill(e.target.value)} placeholder="e.g. 285"
+            <input type="number" value={yourBill} onChange={e => setYourBill(e.target.value)} placeholder="e.g. 285″
               style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EAF0', fontSize: 15, boxSizing: 'border-box' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: yourBill ? '1fr 1fr' : '1fr', gap: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642' }}>${dfwAvg}</div>
+              <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642′ }}>${dfwAvg}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>DFW Average — {month}</div>
             </div>
             {diff !== null && (

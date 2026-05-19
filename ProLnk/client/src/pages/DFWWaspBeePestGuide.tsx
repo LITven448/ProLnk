@@ -218,16 +218,16 @@ export default function DFWWaspBeePestGuide() {
             </select>
           </div>
           {rec && (
-            <div style={{ background: rec.callPro ? '#1a0a0a' : '#F5E642', border: rec.callPro ? '2px solid #FF4444' : 'none', borderRadius: 8, padding: 16 }}>
+            <div style={{ background: rec.callPro ? '#1a0a0a' : '#F5E642', border: rec.callPro ? '2px solid #FF4444′ : ’none', borderRadius: 8, padding: 16 }}>
               {rec.callPro && (
                 <div style={{ color: '#FF4444', fontWeight: 700, fontSize: 16, marginBottom: 10 }}>⚠️ PROFESSIONAL RECOMMENDED</div>
               )}
               <div style={{ color: rec.callPro ? '#E8F0FE' : '#0A1628', fontWeight: 700, marginBottom: 6 }}>🧪 Approach</div>
-              <div style={{ color: rec.callPro ? '#94A3B8' : '#0A1628', lineHeight: 1.6, marginBottom: 10 }}>{rec.approach}</div>
+              <div style={{ color: rec.callPro ? '#94A3B8′ : '#0A1628', lineHeight: 1.6, marginBottom: 10 }}>{rec.approach}</div>
               <div style={{ color: rec.callPro ? '#E8F0FE' : '#0A1628', fontWeight: 700, marginBottom: 6 }}>⏰ Timing</div>
-              <div style={{ color: rec.callPro ? '#94A3B8' : '#0A1628', lineHeight: 1.6, marginBottom: 10 }}>{rec.timing}</div>
+              <div style={{ color: rec.callPro ? '#94A3B8′ : '#0A1628', lineHeight: 1.6, marginBottom: 10 }}>{rec.timing}</div>
               <div style={{ color: rec.callPro ? '#E8F0FE' : '#0A1628', fontWeight: 700, marginBottom: 4 }}>💡 Note</div>
-              <div style={{ color: rec.callPro ? '#94A3B8' : '#0A1628', lineHeight: 1.6 }}>{rec.note}</div>
+              <div style={{ color: rec.callPro ? '#94A3B8′ : '#0A1628', lineHeight: 1.6 }}>{rec.note}</div>
             </div>
           )}
         </div>

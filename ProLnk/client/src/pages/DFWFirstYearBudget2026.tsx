@@ -15,12 +15,12 @@ export default function DFWFirstYearBudget2026() {
   const estimate = getEstimate();
 
   const fixedCosts = [
-    { label: '🚛 Moving costs (local DFW move)', range: '$1,200 – $3,500' },
-    { label: '💡 Utility deposits (electric, gas, water)', range: '$300 – $700' },
-    { label: '🔒 Lock replacement / rekeying', range: '$150 – $400' },
-    { label: '🛋️ Immediate furniture and window coverings', range: '$2,000 – $8,000' },
-    { label: '💨 HVAC filter + first tune-up', range: '$80 – $200' },
-    { label: '🌿 Lawn care equipment or first service', range: '$200 – $600' },
+    { label: '🚛 Moving costs (local DFW move)', range: '$1,200 – $3,500′ },
+    { label: '💡 Utility deposits (electric, gas, water)', range: '$300 – $700′ },
+    { label: '🔒 Lock replacement / rekeying', range: '$150 – $400′ },
+    { label: '🛋️ Immediate furniture and window coverings', range: '$2,000 – $8,000′ },
+    { label: '💨 HVAC filter + first tune-up', range: '$80 – $200′ },
+    { label: '🌿 Lawn care equipment or first service', range: '$200 – $600′ },
   ];
 
   return (

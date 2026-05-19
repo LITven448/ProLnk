@@ -45,7 +45,7 @@ export default function DFWReturnAirGuide() {
           <p style={{ color: '#CBD2E0', lineHeight: 1.7, marginBottom: 12 }}>
             DFW builders followed minimum code: one central return in a hallway. When bedroom doors close, the air handler creates negative pressure at the return and positive pressure in bedrooms. That pressure differential equalizes through every gap in your ceiling and exterior walls.
           </p>
-          <div style={{ background: '#162035', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642' }}>
+          <div style={{ background: '#162035', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>The DFW summer consequence:</div>
             <div style={{ color: '#9BA4B4', fontSize: 14, lineHeight: 1.6 }}>
               A 140 degree attic is connected to your bedroom through pressure. Your AC is actively pulling hot air in. This can add 2,000-4,000 BTU per hour of heat gain per room, forcing the system to work 15-25% harder.
@@ -59,7 +59,7 @@ export default function DFWReturnAirGuide() {
             {improvements.map(imp => (
               <div key={imp.name} style={{ background: '#162035', borderRadius: 8, padding: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-                  <div style={{ fontWeight: 700, color: '#E8EAF0' }}>{imp.name}</div>
+                  <div style={{ fontWeight: 700, color: '#E8EAF0′ }}>{imp.name}</div>
                   <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600, whiteSpace: 'nowrap', marginLeft: 12 }}>{imp.cost}</div>
                 </div>
                 <div style={{ color: '#9BA4B4', fontSize: 14, lineHeight: 1.5 }}>{imp.desc}</div>

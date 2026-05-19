@@ -108,13 +108,13 @@ export default function DFWContingencyGuide() {
           <div key={i} style={{ backgroundColor: '#fff', borderRadius: '10px', padding: '1.25rem', marginBottom: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
               <span style={{ fontSize: '1.5rem' }}>{c.icon}</span>
-              <div style={{ fontWeight: 700, fontSize: '1rem', color: '#1a2744' }}>{c.name}</div>
+              <div style={{ fontWeight: 700, fontSize: '1rem', color: '#1a2744′ }}>{c.name}</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '0.5rem' }}>
-              <div style={{ padding: '0.5rem', backgroundColor: '#e8f5e9', borderRadius: '6px', fontSize: '0.85rem', color: '#2e7d32' }}>✅ Keep When: {c.keep}</div>
-              <div style={{ padding: '0.5rem', backgroundColor: '#fff3e0', borderRadius: '6px', fontSize: '0.85rem', color: '#e65100' }}>⚠️ Waive When: {c.waive}</div>
+              <div style={{ padding: '0.5rem', backgroundColor: '#e8f5e9', borderRadius: '6px', fontSize: '0.85rem', color: '#2e7d32′ }}>✅ Keep When: {c.keep}</div>
+              <div style={{ padding: '0.5rem', backgroundColor: '#fff3e0', borderRadius: '6px', fontSize: '0.85rem', color: '#e65100′ }}>⚠️ Waive When: {c.waive}</div>
             </div>
-            <div style={{ padding: '0.5rem', backgroundColor: '#e3f2fd', borderRadius: '6px', fontSize: '0.85rem', color: '#1565c0' }}>🏠 DFW Reality: {c.dfwNote}</div>
+            <div style={{ padding: '0.5rem', backgroundColor: '#e3f2fd', borderRadius: '6px', fontSize: '0.85rem', color: '#1565c0′ }}>🏠 DFW Reality: {c.dfwNote}</div>
           </div>
         ))}
 
@@ -147,7 +147,7 @@ export default function DFWContingencyGuide() {
               {rec.items.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '0.6rem', padding: '0.6rem', backgroundColor: '#0A1628', borderRadius: '8px' }}>
                   <div style={{ minWidth: '130px', fontWeight: 600, color: '#aaa', fontSize: '0.85rem' }}>{item.contingency}</div>
-                  <div style={{ minWidth: '160px', fontWeight: 700, color: item.action.includes('KEEP') ? '#4caf50' : item.action.includes('WAIVE') ? '#ff7043' : '#F5E642', fontSize: '0.9rem' }}>{item.action}</div>
+                  <div style={{ minWidth: '160px', fontWeight: 700, color: item.action.includes('KEEP') ? '#4caf50′ : item.action.includes(’WAIVE') ? '#ff7043′ : '#F5E642', fontSize: '0.9rem' }}>{item.action}</div>
                   <div style={{ fontSize: '0.85rem', color: '#ccc' }}>{item.note}</div>
                 </div>
               ))}

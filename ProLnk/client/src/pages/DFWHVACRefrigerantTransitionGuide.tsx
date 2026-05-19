@@ -18,7 +18,7 @@ export default function DFWHVACRefrigerantTransitionGuide() {
   const result = key && refrigerantData[key] ? refrigerantData[key] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700 }}>DFW HVAC GUIDE</span>
@@ -61,7 +61,7 @@ export default function DFWHVACRefrigerantTransitionGuide() {
               <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.35rem' }}>System Installation Era</label>
               <select value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: '8px', color: '#e2e8f0', padding: '0.6rem' }}>
                 <option value=''>Select era...</option>
-                {refrigerant === 'R22' && <><option value='pre2000'>Before 2000</option><option value='2000s'>2000–2010</option></>}
+                {refrigerant === 'R22′ && <><option value=’pre2000'>Before 2000</option><option value='2000s'>2000–2010</option></>}
                 {refrigerant === 'R410A' && <><option value='pre2020'>Before 2020</option><option value='post2020'>2020 or newer</option></>}
                 {(refrigerant === 'R454B' || refrigerant === 'R32') && <option value='any'>Any age</option>}
               </select>

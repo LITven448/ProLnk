@@ -88,10 +88,10 @@ const deductions = [
 ];
 
 const quarterlyDates = [
-  { quarter: 'Q1', label: 'April 15', income: 'Jan 1 – Mar 31' },
-  { quarter: 'Q2', label: 'June 15', income: 'Apr 1 – May 31' },
-  { quarter: 'Q3', label: 'September 15', income: 'Jun 1 – Aug 31' },
-  { quarter: 'Q4', label: 'January 15', income: 'Sep 1 – Dec 31' },
+  { quarter: 'Q1', label: 'April 15', income: 'Jan 1 – Mar 31′ },
+  { quarter: 'Q2', label: 'June 15', income: 'Apr 1 – May 31′ },
+  { quarter: 'Q3', label: 'September 15', income: 'Jun 1 – Aug 31′ },
+  { quarter: 'Q4', label: 'January 15', income: 'Sep 1 – Dec 31′ },
 ];
 
 export default function ProTaxGuide() {
@@ -108,28 +108,28 @@ export default function ProTaxGuide() {
 
   return (
     <div className="min-h-screen" style={{ background: '#FAFAF9', fontFamily: 'system-ui, sans-serif' }}>
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-12″>
 
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-10″>
           <div className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
             Partner Resource
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#1E3A5F' }}>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3″ style={{ color: '#1E3A5F' }}>
             ProLnk Partner Tax Guide
           </h1>
-          <p className="text-lg text-gray-600">Keep More of What You Earn — Deductions Every Home Service Pro Should Know</p>
+          <p className="text-lg text-gray-600″>Keep More of What You Earn — Deductions Every Home Service Pro Should Know</p>
         </div>
 
         {/* Self-Employment Context */}
         <div
-          className="rounded-2xl p-6 mb-8"
+          className="rounded-2xl p-6 mb-8″
           style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}
         >
-          <h2 className="text-lg font-bold mb-3" style={{ color: '#1E3A5F' }}>
+          <h2 className="text-lg font-bold mb-3″ style={{ color: '#1E3A5F' }}>
             Your Tax Situation as a ProLnk Partner
           </h2>
-          <p className="text-gray-700 text-sm leading-relaxed mb-3">
+          <p className="text-gray-700 text-sm leading-relaxed mb-3″>
             As a ProLnk partner, you're self-employed. Unlike W-2 employees who split payroll taxes
             with an employer, you pay both the employer and employee portions of Social Security and
             Medicare — a combined <strong>15.3% self-employment tax</strong> — on top of your income
@@ -143,15 +143,15 @@ export default function ProTaxGuide() {
         </div>
 
         {/* Quarterly Dates */}
-        <div className="mb-8">
-          <h2 className="text-xl font-bold mb-4" style={{ color: '#1E3A5F' }}>
+        <div className="mb-8″>
+          <h2 className="text-xl font-bold mb-4″ style={{ color: '#1E3A5F' }}>
             Quarterly Estimated Tax Deadlines
           </h2>
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-gray-500 mb-4″>
             If you expect to owe $1,000+ in taxes for the year, you must pay quarterly or face penalties.
             Set calendar reminders for all four.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
             {quarterlyDates.map((q) => (
               <div key={q.quarter} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 text-center">
                 <div
@@ -161,20 +161,20 @@ export default function ProTaxGuide() {
                   {q.quarter}
                 </div>
                 <div className="font-bold text-lg" style={{ color: '#1E3A5F' }}>{q.label}</div>
-                <div className="text-xs text-gray-500 mt-1">Income period:<br />{q.income}</div>
+                <div className="text-xs text-gray-500 mt-1″>Income period:<br />{q.income}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Deduction Calculator */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mb-8″>
+          <div className="flex items-center justify-between mb-4″>
             <h2 className="text-xl font-bold" style={{ color: '#1E3A5F' }}>
               Deduction Calculator
             </h2>
             <div className="text-right">
-              <div className="text-xs text-gray-500">Estimated Total Deduction</div>
+              <div className="text-xs text-gray-500″>Estimated Total Deduction</div>
               <div className="text-2xl font-bold" style={{ color: '#1E3A5F' }}>
                 ${totalDeduction.toLocaleString()}
               </div>
@@ -184,27 +184,27 @@ export default function ProTaxGuide() {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4″>
             {deductions.map((d) => {
               const deductionAmt = d.calc(values[d.id]);
               return (
-                <div key={d.id} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
-                  <div className="flex items-start justify-between mb-2">
+                <div key={d.id} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5″>
+                  <div className="flex items-start justify-between mb-2″>
                     <div>
-                      <h3 className="font-semibold text-gray-800">{d.label}</h3>
-                      <p className="text-xs text-gray-500">{d.description}</p>
+                      <h3 className="font-semibold text-gray-800″>{d.label}</h3>
+                      <p className="text-xs text-gray-500″>{d.description}</p>
                     </div>
-                    <div className="text-right flex-shrink-0 ml-4">
+                    <div className="text-right flex-shrink-0 ml-4″>
                       <div className="font-bold text-lg" style={{ color: '#1E3A5F' }}>
                         ${deductionAmt.toLocaleString()}
                       </div>
-                      <div className="text-xs text-gray-400">deductible</div>
+                      <div className="text-xs text-gray-400″>deductible</div>
                     </div>
                   </div>
 
                   {d.unit !== 'dollars' || d.id === 'tools' || d.id === 'training' || d.id === 'insurance' ? (
-                    <div className="mt-3">
-                      <div className="flex justify-between text-xs text-gray-400 mb-1">
+                    <div className="mt-3″>
+                      <div className="flex justify-between text-xs text-gray-400 mb-1″>
                         <span>
                           {d.unit === 'dollars'
                             ? `$${values[d.id].toLocaleString()}`
@@ -230,7 +230,7 @@ export default function ProTaxGuide() {
                       />
                     </div>
                   ) : (
-                    <p className="text-xs text-gray-400 mt-2">{d.helper}</p>
+                    <p className="text-xs text-gray-400 mt-2″>{d.helper}</p>
                   )}
                 </div>
               );
@@ -240,52 +240,52 @@ export default function ProTaxGuide() {
 
         {/* S-Corp Strategy */}
         <div
-          className="rounded-2xl p-6 mb-8"
+          className="rounded-2xl p-6 mb-8″
           style={{ background: '#FFFBEB', border: '1px solid #FDE68A' }}
         >
-          <h2 className="text-xl font-bold mb-3" style={{ color: '#92400E' }}>
+          <h2 className="text-xl font-bold mb-3″ style={{ color: '#92400E' }}>
             S-Corp Strategy — Save $3,000–$8,000/Year at Scale
           </h2>
-          <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          <p className="text-sm text-gray-700 leading-relaxed mb-3″>
             When you exceed <strong>$40,000 in net profit</strong>, forming an S-Corp can significantly
             reduce your self-employment tax. Here's how it works: Instead of paying SE tax on all
             your earnings, you pay yourself a "reasonable salary" (e.g., $35,000) and take the rest
             as S-Corp distributions — which are not subject to self-employment tax.
           </p>
           <div className="bg-white rounded-xl p-4 text-sm">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4″>
               <div>
-                <div className="text-xs text-gray-500 mb-1">As a Sole Proprietor at $80K net</div>
+                <div className="text-xs text-gray-500 mb-1″>As a Sole Proprietor at $80K net</div>
                 <div className="text-red-600 font-bold">SE Tax: $12,240</div>
-                <div className="text-gray-600">Paid on 100% of earnings</div>
+                <div className="text-gray-600″>Paid on 100% of earnings</div>
               </div>
               <div>
-                <div className="text-xs text-gray-500 mb-1">As an S-Corp at $80K net</div>
+                <div className="text-xs text-gray-500 mb-1″>As an S-Corp at $80K net</div>
                 <div className="text-green-600 font-bold">SE Tax: $5,355</div>
-                <div className="text-gray-600">Paid on $35K salary only</div>
+                <div className="text-gray-600″>Paid on $35K salary only</div>
               </div>
             </div>
             <div
               className="mt-3 pt-3 border-t border-gray-100 text-center font-semibold"
-              style={{ color: '#059669' }}
+              style={{ color: '#059669′ }}
             >
               Annual savings: $6,885 — exceeds S-Corp formation and accounting costs in Year 1
             </div>
           </div>
-          <p className="text-xs text-gray-500 mt-3">
+          <p className="text-xs text-gray-500 mt-3″>
             S-Corp requires payroll setup, quarterly filing, and a CPA. Net benefit typically starts at
             $40K+ in net profit. Consult a CPA before forming.
           </p>
         </div>
 
         {/* CTA */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4″>
           <div
-            className="rounded-2xl p-6"
+            className="rounded-2xl p-6″
             style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #2D5F8A 100%)' }}
           >
-            <h3 className="font-bold text-white mb-2">Find a Gig-Worker CPA</h3>
-            <p className="text-blue-200 text-sm mb-4">
+            <h3 className="font-bold text-white mb-2″>Find a Gig-Worker CPA</h3>
+            <p className="text-blue-200 text-sm mb-4″>
               Not all CPAs understand self-employment tax strategy. Find one who specializes in
               1099 contractors and home service businesses.
             </p>
@@ -300,13 +300,13 @@ export default function ProTaxGuide() {
             </a>
           </div>
           <div
-            className="rounded-2xl p-6"
-            style={{ background: '#F0FDF4', border: '1px solid #BBF7D0' }}
+            className="rounded-2xl p-6″
+            style={{ background: '#F0FDF4', border: '1px solid #BBF7D0′ }}
           >
-            <h3 className="font-bold mb-2" style={{ color: '#065F46' }}>
+            <h3 className="font-bold mb-2″ style={{ color: '#065F46' }}>
               Join ProLnk — Your $149/mo is Deductible
             </h3>
-            <p className="text-sm text-green-700 mb-4">
+            <p className="text-sm text-green-700 mb-4″>
               ProLnk membership pays for itself through leads. After tax deduction,
               your net cost is as low as $94/mo depending on your bracket.
             </p>

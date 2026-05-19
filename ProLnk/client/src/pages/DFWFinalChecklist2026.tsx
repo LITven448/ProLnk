@@ -97,7 +97,7 @@ export default function DFWFinalChecklist2026() {
             <div style={{ fontSize: 16, fontWeight: 700, color: '#CBD5E1', marginBottom: 16 }}>Select features that apply to your home:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
               {featureOptions.map(f => (
-                <button key={f.id} onClick={() => toggleFeature(f.id)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: features.includes(f.id) ? '#F5E642' : '#1E3A5F', color: features.includes(f.id) ? '#0A1628' : '#fff' }}>{f.label}</button>
+                <button key={f.id} onClick={() => toggleFeature(f.id)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: features.includes(f.id) ? '#F5E642′ : '#1E3A5F', color: features.includes(f.id) ? '#0A1628' : '#fff' }}>{f.label}</button>
               ))}
             </div>
             <button onClick={() => setStarted(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '14px 28px', fontWeight: 800, fontSize: 16, cursor: 'pointer' }}>
@@ -108,8 +108,8 @@ export default function DFWFinalChecklist2026() {
           <>
             <div style={{ background: '#0D2137', borderRadius: 12, padding: 20, marginBottom: 24 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-                <span style={{ fontWeight: 700, color: '#CBD5E1' }}>Overall Completion</span>
-                <span style={{ fontWeight: 900, fontSize: 20, color: '#F5E642' }}>{pct}%</span>
+                <span style={{ fontWeight: 700, color: '#CBD5E1′ }}>Overall Completion</span>
+                <span style={{ fontWeight: 900, fontSize: 20, color: '#F5E642′ }}>{pct}%</span>
               </div>
               <div style={{ background: '#1E3A5F', borderRadius: 8, height: 12 }}>
                 <div style={{ background: '#F5E642', borderRadius: 8, height: 12, width: `${pct}%`, transition: 'width 0.4s' }} />
@@ -123,7 +123,7 @@ export default function DFWFinalChecklist2026() {
                 if (ci.length === 0) return null;
                 const cc = ci.filter(i => completed.has(i.id)).length;
                 return (
-                  <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: activeCategory === cat ? '#F5E642' : '#1E3A5F', color: activeCategory === cat ? '#0A1628' : '#fff' }}>
+                  <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: activeCategory === cat ? '#F5E642′ : '#1E3A5F', color: activeCategory === cat ? '#0A1628' : '#fff' }}>
                     {categoryEmojis[cat]} {cat} ({cc}/{ci.length})
                   </button>
                 );

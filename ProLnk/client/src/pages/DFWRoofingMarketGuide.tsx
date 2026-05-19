@@ -78,11 +78,11 @@ export default function DFWRoofingMarketGuide() {
               </select>
             </div>
           </div>
-          {areaNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#F5E642' }}>{areaNote}</div>}
+          {areaNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#F5E642′ }}>{areaNote}</div>}
           {timingResult && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ marginBottom: 10, fontWeight: 600 }}>Market Conditions</div>
-              <div style={{ marginBottom: 12, color: '#e2e8f0' }}>{timingResult.conditions}</div>
+              <div style={{ marginBottom: 12, color: '#e2e8f0′ }}>{timingResult.conditions}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Recommended Approach: </span>{timingResult.approach}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Insurance Tip: </span>{timingResult.insuranceTip}</div>
               <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8', marginTop: 12 }}>⚠️ Watch out: {timingResult.watch}</div>

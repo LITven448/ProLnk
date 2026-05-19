@@ -88,8 +88,8 @@ export default function DFWGarageDoorOpenerGuide() {
             <div key={d.type} style={{ backgroundColor: '#0D1E3A', border: `1px solid ${d.recommended ? '#F5E64260' : '#1E3A5F'}`, borderRadius: 12, padding: 18, position: 'relative' }}>
               {d.recommended && <div style={{ position: 'absolute', top: 10, right: 10, backgroundColor: '#F5E642', color: '#0A1628', fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 10 }}>BEST FOR DFW</div>}
               <h3 style={{ color: '#F1F5F9', fontSize: 15, margin: '0 0 10px' }}>{d.type}</h3>
-              <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Noise: <span style={{ color: '#E2E8F0' }}>{d.noise}</span></div>
-              <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Durability: <span style={{ color: '#E2E8F0' }}>{d.durability}</span></div>
+              <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Noise: <span style={{ color: '#E2E8F0′ }}>{d.noise}</span></div>
+              <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Durability: <span style={{ color: '#E2E8F0′ }}>{d.durability}</span></div>
               <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 600, marginBottom: 8 }}>{d.cost}</div>
               <p style={{ color: '#64748B', fontSize: 12, margin: 0, lineHeight: 1.5 }}>{d.dfwNote}</p>
             </div>
@@ -114,7 +114,7 @@ export default function DFWGarageDoorOpenerGuide() {
           </div>
           <button onClick={evaluate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 4 }}>Recommended: {result.model}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>HP: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.hp}</span> · Installed cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.cost}</span></div>
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 14 }}>{result.reason}</p>

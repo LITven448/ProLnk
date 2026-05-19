@@ -89,7 +89,7 @@ export default function DFWBackupPowerGuide() {
           {outageData.map(o => (
             <div key={o.event} style={{ background: '#111E35', borderRadius: 10, padding: 16, border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4, gap: 12 }}>
-                <span style={{ fontWeight: 700, color: '#E8EDF5' }}>{o.event}</span>
+                <span style={{ fontWeight: 700, color: '#E8EDF5′ }}>{o.event}</span>
                 <span style={{ color: '#F5E642', fontSize: 13, whiteSpace: 'nowrap' }}>{o.duration}</span>
               </div>
               <div style={{ color: '#8A9BBE', fontSize: 13 }}>{o.impact}</div>
@@ -121,13 +121,13 @@ export default function DFWBackupPowerGuide() {
             <label style={{ display: 'block', color: '#8A9BBE', fontSize: 13, marginBottom: 10 }}>Must-Have Circuits During Outage</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {circuits.map(c => (
-                <button key={c.id} onClick={() => toggleCircuit(c.id)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: mustHaveCircuits.includes(c.id) ? '#F5E642' : '#1E3A5F', background: mustHaveCircuits.includes(c.id) ? '#F5E642' : '#0A1628', color: mustHaveCircuits.includes(c.id) ? '#0A1628' : '#C8D5E8', fontWeight: mustHaveCircuits.includes(c.id) ? 700 : 400, cursor: 'pointer', fontSize: 13 }}>{c.label}</button>
+                <button key={c.id} onClick={() => toggleCircuit(c.id)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: mustHaveCircuits.includes(c.id) ? '#F5E642′ : '#1E3A5F', background: mustHaveCircuits.includes(c.id) ? '#F5E642' : '#0A1628', color: mustHaveCircuits.includes(c.id) ? '#0A1628' : '#C8D5E8', fontWeight: mustHaveCircuits.includes(c.id) ? 700 : 400, cursor: ’pointer', fontSize: 13 }}>{c.label}</button>
               ))}
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer' }}>Get My Backup Power Recommendation</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
               <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>{result.system}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
                 <div><div style={{ color: '#8A9BBE', fontSize: 12 }}>Installed Cost</div><div style={{ color: '#E8EDF5', fontWeight: 700 }}>{result.cost}</div></div>

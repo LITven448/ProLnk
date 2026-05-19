@@ -35,7 +35,7 @@ export default function DFWBackyardRemodelGuide() {
   const avgRoi = selectedProjects.length > 0 ? Math.round(selectedProjects.reduce((s, p) => s + p.roi, 0) / selectedProjects.length) : 0;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2a45 100%)', borderBottom: '2px solid #F5E642', padding: '48px 24px 36px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>🏠 DFW Homeowner Guide</div>
@@ -46,7 +46,7 @@ export default function DFWBackyardRemodelGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px 0' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px 0′ }}>
         <div style={{ background: '#0f1e35', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 36 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 10px' }}>☀️ DFW Climate = Shade First</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
@@ -60,7 +60,7 @@ export default function DFWBackyardRemodelGuide() {
               key={p.id}
               onClick={() => toggle(p.id)}
               style={{
-                background: selected.has(p.id) ? '#1a2a45' : '#0f1e35',
+                background: selected.has(p.id) ? '#1a2a45′ : '#0f1e35',
                 border: `2px solid ${selected.has(p.id) ? '#F5E642' : '#1E2D45'}`,
                 borderRadius: 12, padding: 22, cursor: 'pointer', transition: 'all 0.15s',
               }}
@@ -72,7 +72,7 @@ export default function DFWBackyardRemodelGuide() {
                 </div>
                 <div style={{
                   width: 22, height: 22, borderRadius: 4, flexShrink: 0,
-                  background: selected.has(p.id) ? '#F5E642' : 'transparent',
+                  background: selected.has(p.id) ? '#F5E642′ : ’transparent',
                   border: `2px solid ${selected.has(p.id) ? '#F5E642' : '#475569'}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: '#0A1628', fontWeight: 800, fontSize: 13,
@@ -105,7 +105,7 @@ export default function DFWBackyardRemodelGuide() {
                 <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Down Payment %</label>
                 <input
                   type="range" min={0} max={100} value={downPct} onChange={e => setDownPct(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642' }}
+                  style={{ width: '100%', accentColor: '#F5E642′ }}
                 />
                 <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{downPct}% (${downPayment.toLocaleString(undefined, { maximumFractionDigits: 0 })})</div>
               </div>
@@ -113,7 +113,7 @@ export default function DFWBackyardRemodelGuide() {
                 <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Loan Term</label>
                 <input
                   type="range" min={5} max={20} step={5} value={years} onChange={e => setYears(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642' }}
+                  style={{ width: '100%', accentColor: '#F5E642′ }}
                 />
                 <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{years} years</div>
               </div>

@@ -42,7 +42,7 @@ export default function DFWInvestorHousingGuide() {
           ].map((s, i) => (
             <div key={i} style={{ background: '#111f3d', borderRadius: 12, padding: '1.25rem', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>{s.label}</p>
-              <p style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700, margin: '0.25rem 0' }}>{s.value}</p>
+              <p style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700, margin: '0.25rem 0′ }}>{s.value}</p>
               <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{s.sub}</p>
             </div>
           ))}
@@ -90,7 +90,7 @@ export default function DFWInvestorHousingGuide() {
         </div>
 
         {results.length > 0 ? (
-          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>🎯 Top DFW Investment Submarkets for You</h3>
             {results.map((r, i) => (
               <div key={r.name} style={{ borderBottom: i < results.length - 1 ? '1px solid #1e3a5f' : 'none', paddingBottom: '1rem', marginBottom: '1rem' }}>
@@ -109,7 +109,7 @@ export default function DFWInvestorHousingGuide() {
           </div>
         ) : results !== null && results.length === 0 && strategy ? (
           <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '1px solid #f87171', textAlign: 'center' }}>
-            <p style={{ color: '#f87171' }}>No submarkets match your criteria. Try increasing your budget or changing your strategy.</p>
+            <p style={{ color: '#f87171′ }}>No submarkets match your criteria. Try increasing your budget or changing your strategy.</p>
           </div>
         ) : null}
       </div>

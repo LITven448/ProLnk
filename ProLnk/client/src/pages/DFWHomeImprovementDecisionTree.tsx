@@ -9,7 +9,7 @@ const decisions: Record<string, Record<string, Decision>> = {
     wait: { recommendation: '⏳ Defer if system is 5-8 years old and running efficiently', financial: 'Defer 3-5 years saves $7,000-10,000 in capital but costs ~$300-500/yr in extra operating costs vs new unit.', roi: 'Financially optimal to defer if SEER > 14 and no repair history', nextStep: 'Budget $150-200/yr for annual maintenance. Set replacement reserve of $100/mo.' },
   },
   roof: {
-    repair: { recommendation: '🔧 Repair if under 15 years old, hail damage is isolated, < 3 layers', financial: 'Repair: $300-2,000. Full replacement: $12,000-22,000. Insurance may cover hail damage minus deductible.', roi: 'File insurance claim for hail events > 1" — DFW averages 5+ hail events per year', nextStep: 'Get roofer inspection + public adjuster review before signing with any contractor.' },
+    repair: { recommendation: '🔧 Repair if under 15 years old, hail damage is isolated, < 3 layers', financial: 'Repair: $300-2,000. Full replacement: $12,000-22,000. Insurance may cover hail damage minus deductible.', roi: 'File insurance claim for hail events > 1″ — DFW averages 5+ hail events per year', nextStep: 'Get roofer inspection + public adjuster review before signing with any contractor.' },
     replace: { recommendation: '🔄 Replace — DFW hail and heat cycles shorten roof life to 15-20 years max', financial: 'Insurance replacement: $0-3,000 out of pocket. Cash replacement: $12,000-22,000. Impact-resistant Class 4 shingles: insurance discount 20-35%.', roi: 'Class 4 shingles cost $2,000-3,000 more but save $400-700/yr on insurance. Break-even: 4-6 years.', nextStep: 'Request Class 4 shingle upgrade quote. Call insurance before project for pre-approval.' },
     wait: { recommendation: '⏳ Defer only if no active leaks and under 12 years old', financial: 'Risk: one DFW hail storm can cause interior damage. Water damage claims average $11,000 in DFW.', roi: 'Defer only with annual inspection. Cost of waiting: high if weather event occurs.', nextStep: 'Annual inspection $150-200. Add roof to home warranty if < 15 years old.' },
   },
@@ -51,7 +51,7 @@ export default function DFWHomeImprovementDecisionTree() {
           <div style={{ display: 'flex', gap: 12 }}>
             {systems.map(s => (
               <button key={s.id} onClick={() => { setSystem(s.id); setAction(''); }}
-                style={{ flex: 1, background: system === s.id ? '#F5E642' : '#0A1628', color: system === s.id ? '#0A1628' : '#CBD5E1', border: `2px solid ${system === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 8px', fontSize: 13, fontWeight: system === s.id ? 700 : 400, cursor: 'pointer' }}>
+                style={{ flex: 1, background: system === s.id ? '#F5E642′ : '#0A1628', color: system === s.id ? '#0A1628' : '#CBD5E1', border: `2px solid ${system === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 8px', fontSize: 13, fontWeight: system === s.id ? 700 : 400, cursor: ’pointer' }}>
                 {s.label}
               </button>
             ))}
@@ -64,7 +64,7 @@ export default function DFWHomeImprovementDecisionTree() {
             <div style={{ display: 'flex', gap: 12 }}>
               {actions.map(a => (
                 <button key={a.id} onClick={() => setAction(a.id)}
-                  style={{ flex: 1, background: action === a.id ? '#F5E642' : '#0A1628', color: action === a.id ? '#0A1628' : '#CBD5E1', border: `2px solid ${action === a.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 8px', fontSize: 13, fontWeight: action === a.id ? 700 : 400, cursor: 'pointer' }}>
+                  style={{ flex: 1, background: action === a.id ? '#F5E642′ : '#0A1628', color: action === a.id ? '#0A1628' : '#CBD5E1', border: `2px solid ${action === a.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 8px', fontSize: 13, fontWeight: action === a.id ? 700 : 400, cursor: ’pointer' }}>
                   {a.label}
                 </button>
               ))}
@@ -74,7 +74,7 @@ export default function DFWHomeImprovementDecisionTree() {
 
         {result && (
           <>
-            <div style={{ background: '#0F3460', borderRadius: 12, padding: 24, marginBottom: 16, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0F3460', borderRadius: 12, padding: 24, marginBottom: 16, border: '2px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 10 }}>📊 DFW Recommendation</h3>
               <p style={{ color: '#CBD5E1', lineHeight: 1.6, margin: 0, fontSize: 15 }}>{result.recommendation}</p>
             </div>

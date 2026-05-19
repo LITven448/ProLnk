@@ -30,7 +30,7 @@ export default function DFWHandymanProGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '💵', label: 'Avg DFW Job', value: '$350' },
+            { icon: '💵', label: 'Avg DFW Job', value: '$350′ },
             { icon: '⚖️', label: 'TX License Law', value: 'Scoped by trade' },
             { icon: '🔄', label: 'Trade Routing', value: 'ProLnk handles' },
             { icon: '📍', label: 'DFW Market', value: 'High demand' },
@@ -47,7 +47,7 @@ export default function DFWHandymanProGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 16px' }}>⚖️ TX Licensing Requirement Check</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {Object.entries(services).map(([key, val]) => (
-              <button key={key} onClick={() => setService(key)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: service === key ? '#F5E642' : '#1e3a5f', color: service === key ? '#0A1628' : '#94a3b8' }}>
+              <button key={key} onClick={() => setService(key)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: service === key ? '#F5E642′ : '#1e3a5f', color: service === key ? '#0A1628' : '#94a3b8' }}>
                 {val.label}
               </button>
             ))}

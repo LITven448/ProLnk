@@ -50,7 +50,7 @@ export default function DFWEnergyRebatesGuide() {
   const netCost = totalCost - totalOncor - totalFederal;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', color: '#fff', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>⚡</div>
         <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700 }}>DFW Energy Rebates & Tax Credits 2026</h1>
@@ -61,11 +61,11 @@ export default function DFWEnergyRebatesGuide() {
 
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '20px 24px', marginBottom: 24 }}>
-          <h2 style={{ margin: '0 0 12px', fontSize: 18, color: '#0A1628' }}>💡 Program Overview</h2>
+          <h2 style={{ margin: '0 0 12px', fontSize: 18, color: '#0A1628′ }}>💡 Program Overview</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 12 }}>
             {[
               { label: 'Oncor Smart Usage Rebates', value: 'Up to $750/item', note: 'Texas utility rebates' },
-              { label: 'Federal IRA Tax Credits', value: 'Up to 30%', note: 'Inflation Reduction Act 2022-2032' },
+              { label: 'Federal IRA Tax Credits', value: 'Up to 30%', note: 'Inflation Reduction Act 2022-2032′ },
               { label: 'Solar Tax Credit', value: '30% (no cap)', note: 'Full install + storage' },
               { label: 'TCEQ LoanStar', value: '3% financing', note: 'TX state low-interest loan' },
             ].map(s => (
@@ -76,14 +76,14 @@ export default function DFWEnergyRebatesGuide() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 12, background: '#fff', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#0A1628' }}>
+          <div style={{ marginTop: 12, background: '#fff', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#0A1628′ }}>
             <strong>⚡ Stacking Rule:</strong> You can claim Oncor rebates AND federal tax credits on the same project. They are not mutually exclusive. Federal credits apply to the full installed cost before any rebates.
           </div>
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: '24px', marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.07)' }}>
           <h2 style={{ margin: '0 0 8px', fontSize: 20 }}>🏗️ Select Your Planned Improvements</h2>
-          <p style={{ margin: '0 0 16px', color: '#64748B', fontSize: 14 }}>Select all upgrades you're considering — we'll calculate your total available incentives.</p>
+          <p style={{ margin: '0 0 16px', color: '#64748B', fontSize: 14 }}>Select all upgrades you're considering — we’ll calculate your total available incentives.</p>
           <div style={{ display: 'grid', gap: 10 }}>
             {IMPROVEMENTS.map(item => {
               const isSelected = selected.includes(item.id);
@@ -94,7 +94,7 @@ export default function DFWEnergyRebatesGuide() {
                   style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px', borderRadius: 10, cursor: 'pointer',
                     background: isSelected ? '#F0F9FF' : '#F8FAFC',
                     border: `2px solid ${isSelected ? '#0A1628' : '#E2E8F0'}` }}>
-                  <div style={{ width: 22, height: 22, borderRadius: 4, background: isSelected ? '#0A1628' : '#fff', border: '2px solid #0A1628', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 22, height: 22, borderRadius: 4, background: isSelected ? '#0A1628′ : '#fff', border: '2px solid #0A1628', display: ’flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     {isSelected && <span style={{ color: '#F5E642', fontSize: 14, fontWeight: 700 }}>✓</span>}
                   </div>
                   <div style={{ flex: 1 }}>
@@ -115,12 +115,12 @@ export default function DFWEnergyRebatesGuide() {
           <div style={{ background: '#fff', borderRadius: 12, padding: '24px', boxShadow: '0 1px 4px rgba(0,0,0,0.07)' }}>
             <h2 style={{ margin: '0 0 16px', fontSize: 20 }}>💰 Your Total Incentives Summary</h2>
             {[
-              { label: 'Total Project Cost', value: `$${totalCost.toLocaleString()}`, color: '#0A1628' },
+              { label: 'Total Project Cost', value: `$${totalCost.toLocaleString()}`, color: '#0A1628′ },
               { label: 'Oncor Rebates (immediate check)', value: `-$${totalOncor.toLocaleString()}`, color: '#16A34A' },
               { label: 'Federal IRA Tax Credits (file with taxes)', value: `-$${totalFederal.toFixed(0)}`, color: '#2563EB' },
             ].map(row => (
               <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #F1F5F9', fontSize: 15 }}>
-                <span style={{ color: '#475569' }}>{row.label}</span>
+                <span style={{ color: '#475569′ }}>{row.label}</span>
                 <span style={{ fontWeight: 700, color: row.color }}>{row.value}</span>
               </div>
             ))}
@@ -131,7 +131,7 @@ export default function DFWEnergyRebatesGuide() {
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: '16px', textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>TOTAL SAVINGS</div>
-                <div style={{ fontSize: 26, fontWeight: 700, color: '#F5E642' }}>${(totalOncor + totalFederal).toFixed(0)}</div>
+                <div style={{ fontSize: 26, fontWeight: 700, color: '#F5E642′ }}>${(totalOncor + totalFederal).toFixed(0)}</div>
               </div>
             </div>
             <div style={{ marginTop: 16, background: '#F0F9FF', borderRadius: 8, padding: '12px 16px', fontSize: 13, color: '#1E40AF' }}>

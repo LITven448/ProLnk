@@ -84,29 +84,29 @@ export default function DFWHomeRenovationOrderGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: '1rem' }}>
             {ALL_PROJECTS.map(p => (
               <button key={p} onClick={() => toggle(p)}
-                style={{ background: selected.includes(p) ? '#F5E642' : 'rgba(255,255,255,0.07)', color: selected.includes(p) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '6px 12px', fontSize: 13, cursor: 'pointer' }}>
+                style={{ background: selected.includes(p) ? '#F5E642′ : ’rgba(255,255,255,0.07)', color: selected.includes(p) ? '#0A1628′ : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '6px 12px', fontSize: 13, cursor: ’pointer' }}>
                 {p}
               </button>
             ))}
           </div>
 
           <button onClick={() => setShowSequence(true)} disabled={selected.length === 0}
-            style={{ background: selected.length > 0 ? '#F5E642' : '#1E3A5F', color: selected.length > 0 ? '#0A1628' : '#8FA3BF', border: 'none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, fontSize: 14, cursor: selected.length > 0 ? 'pointer' : 'not-allowed' }}>
+            style={{ background: selected.length > 0 ? '#F5E642′ : '#1E3A5F', color: selected.length > 0 ? '#0A1628' : '#8FA3BF', border: ’none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, fontSize: 14, cursor: selected.length > 0 ? 'pointer' : 'not-allowed' }}>
             Generate Sequence →
           </button>
 
           {showSequence && sequence.length > 0 && (
             <div style={{ marginTop: '1.25rem' }}>
-              <p style={{ color: '#8FA3BF', fontSize: 13, marginBottom: 10 }}>Correct order for your projects · Est. total: <strong style={{ color: '#F5E642' }}>{totalWeeks} weeks</strong></p>
+              <p style={{ color: '#8FA3BF', fontSize: 13, marginBottom: 10 }}>Correct order for your projects · Est. total: <strong style={{ color: '#F5E642′ }}>{totalWeeks} weeks</strong></p>
               {sequence.map((s, idx) => (
-                <div key={s.project} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: 8, borderLeft: s.parallel ? '3px solid #8FA3BF' : '3px solid #F5E642' }}>
+                <div key={s.project} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: 8, borderLeft: s.parallel ? '3px solid #8FA3BF' : '3px solid #F5E642′ }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                     <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 12 }}>{idx + 1}</span>
                     <span style={{ fontWeight: 700, fontSize: 14 }}>{s.project}</span>
                     <span style={{ marginLeft: 'auto', color: '#8FA3BF', fontSize: 12 }}>{s.weeks}w</span>
                   </div>
                   <p style={{ fontSize: 13, color: '#8FA3BF', margin: 0 }}>{s.reason}</p>
-                  {s.parallel && <p style={{ fontSize: 12, color: '#22C55E', margin: '4px 0 0' }}>✓ Can run parallel with: {s.parallel}</p>}
+                  {s.parallel && <p style={{ fontSize: 12, color: '#22C55E', margin: '4px 0 0′ }}>✓ Can run parallel with: {s.parallel}</p>}
                 </div>
               ))}
             </div>

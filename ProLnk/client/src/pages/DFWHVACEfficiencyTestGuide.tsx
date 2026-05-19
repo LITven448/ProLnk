@@ -39,10 +39,10 @@ export default function DFWHVACEfficiencyTestGuide() {
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🌡️ The Delta T Test (DIY)</h2>
           <ul style={{ color: '#C8D8E8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EFF8' }}>What you need:</strong> A digital thermometer ($15 at hardware store)</li>
-            <li><strong style={{ color: '#E8EFF8' }}>Measure:</strong> Temperature of air at the return vent (where air goes in)</li>
-            <li><strong style={{ color: '#E8EFF8' }}>Measure:</strong> Temperature of air at the supply vent (where cold air comes out)</li>
-            <li><strong style={{ color: '#E8EFF8' }}>Subtract:</strong> Difference = Delta T</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>What you need:</strong> A digital thermometer ($15 at hardware store)</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Measure:</strong> Temperature of air at the return vent (where air goes in)</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Measure:</strong> Temperature of air at the supply vent (where cold air comes out)</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Subtract:</strong> Difference = Delta T</li>
             <li>18–22°F difference: System working well</li>
             <li>14–17°F: Marginal — possible low refrigerant or dirty coil</li>
             <li>Under 14°F: Problem — schedule service</li>
@@ -52,10 +52,10 @@ export default function DFWHVACEfficiencyTestGuide() {
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚡ Technician Efficiency Tests</h2>
           <ul style={{ color: '#C8D8E8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EFF8' }}>Amp draw:</strong> Compressor pulling correct amperage = healthy motor and charge</li>
-            <li><strong style={{ color: '#E8EFF8' }}>Superheat:</strong> Measures refrigerant state — confirms proper charge level</li>
-            <li><strong style={{ color: '#E8EFF8' }}>Subcooling:</strong> Liquid refrigerant measurement — confirms no overcharge</li>
-            <li><strong style={{ color: '#E8EFF8' }}>Condenser coil check:</strong> DFW dust + cottonwood seeds clog condenser frequently</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Amp draw:</strong> Compressor pulling correct amperage = healthy motor and charge</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Superheat:</strong> Measures refrigerant state — confirms proper charge level</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Subcooling:</strong> Liquid refrigerant measurement — confirms no overcharge</li>
+            <li><strong style={{ color: '#E8EFF8′ }}>Condenser coil check:</strong> DFW dust + cottonwood seeds clog condenser frequently</li>
           </ul>
         </div>
 
@@ -81,10 +81,10 @@ export default function DFWHVACEfficiencyTestGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📊 Efficiency Assessment</h3>
             <div style={{ marginBottom: 16, padding: 12, background: '#0A1628', borderRadius: 8, color: '#C8D8E8', fontSize: 14, lineHeight: 1.7 }}>{result.deltaTNote}</div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>DFW CONDITIONS NOTE: </span><span style={{ color: '#E8EFF8' }}>{result.dfwNote}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>DFW CONDITIONS NOTE: </span><span style={{ color: '#E8EFF8′ }}>{result.dfwNote}</span></div>
             <div style={{ marginTop: 16 }}>
               <div style={{ color: '#F5E642', marginBottom: 8, fontWeight: 700 }}>🔧 Likely Causes:</div>
               {result.likelyCauses.map(c => <div key={c} style={{ color: '#C8D8E8', marginBottom: 6, paddingLeft: 8 }}>• {c}</div>)}

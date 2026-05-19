@@ -122,7 +122,7 @@ export default function DFWWaterQualityReport() {
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
             {cities.map((c, i) => (
               <button key={c.name} onClick={() => setCityIdx(i)}
-                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: i === cityIdx ? '2px solid #F5E642' : '2px solid #2d4a7a', background: i === cityIdx ? '#F5E642' : 'transparent', color: i === cityIdx ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}>
+                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: i === cityIdx ? '2px solid #F5E642′ : '2px solid #2d4a7a', background: i === cityIdx ? '#F5E642' : ’transparent', color: i === cityIdx ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: '0.85rem' }}>
                 {c.name}
               </button>
             ))}

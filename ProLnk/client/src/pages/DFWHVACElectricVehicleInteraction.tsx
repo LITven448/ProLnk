@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 type ElectricalService = '100a' | '150a' | '200a' | '400a';
 type EVCharger = 'l1_120v' | 'l2_30a' | 'l2_50a' | 'dcfc';
-type ChargingTime = 'peak_3to7' | 'offpeak_night' | 'morning_early' | 'midday_solar';
+type ChargingTime = 'peak_3to7′ | ’offpeak_night' | 'morning_early' | 'midday_solar';
 
 const services: Record<ElectricalService, { label: string; capacity: string; warning: string }> = {
   '100a': { label: '100A Service (older home)', capacity: '24 kW total', warning: '⚠️ Severely limited — L2 EV + AC likely exceeds capacity at 3–7 PM' },
@@ -77,22 +77,22 @@ export default function DFWHVACElectricVehicleInteraction() {
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>HOME ELECTRICAL SERVICE</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
             {(Object.keys(services) as ElectricalService[]).map(s => (
-              <button key={s} onClick={() => setService(s)} style={{ padding: '10px', borderRadius: '10px', border: service === s ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: service === s ? '#F5E642' : '#E8EDF5', marginBottom: '2px' }}>{services[s].label}</div>
+              <button key={s} onClick={() => setService(s)} style={{ padding: '10px', borderRadius: '10px', border: service === s ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: service === s ? '#F5E642′ : '#E8EDF5', marginBottom: '2px' }}>{services[s].label}</div>
                 <div style={{ fontSize: '11px', color: '#64748B' }}>{services[s].capacity}</div>
               </button>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#0D2137', borderRadius: '8px', padding: '10px 14px', marginBottom: '14px', fontSize: '12px', color: '#94A3B8' }}>{services[service].warning}</div>
+        <div style={{ backgroundColor: '#0D2137', borderRadius: '8px', padding: '10px 14px', marginBottom: '14px', fontSize: '12px', color: '#94A3B8′ }}>{services[service].warning}</div>
 
         <div style={{ marginBottom: '14px' }}>
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>EV CHARGER TYPE</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
             {(Object.keys(chargers) as EVCharger[]).map(c => (
-              <button key={c} onClick={() => setCharger(c)} style={{ padding: '10px', borderRadius: '10px', border: charger === c ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: charger === c ? '#F5E642' : '#E8EDF5', marginBottom: '2px' }}>{chargers[c].label}</div>
+              <button key={c} onClick={() => setCharger(c)} style={{ padding: '10px', borderRadius: '10px', border: charger === c ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: charger === c ? '#F5E642′ : '#E8EDF5', marginBottom: '2px' }}>{chargers[c].label}</div>
                 <div style={{ fontSize: '11px', color: '#64748B' }}>{chargers[c].draw} draw</div>
               </button>
             ))}
@@ -103,7 +103,7 @@ export default function DFWHVACElectricVehicleInteraction() {
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>CHARGING TIME</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {(Object.keys(timings) as ChargingTime[]).map(t => (
-              <button key={t} onClick={() => setTiming(t)} style={{ padding: '8px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: timing === t ? '#F5E642' : '#1E2D45', color: timing === t ? '#0A1628' : '#E8EDF5' }}>{timings[t].label}</button>
+              <button key={t} onClick={() => setTiming(t)} style={{ padding: '8px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: timing === t ? '#F5E642′ : '#1E2D45', color: timing === t ? '#0A1628' : '#E8EDF5' }}>{timings[t].label}</button>
             ))}
           </div>
           <div style={{ fontSize: '11px', color: '#64748B', marginTop: '6px' }}>{timings[timing].oncorCost}</div>

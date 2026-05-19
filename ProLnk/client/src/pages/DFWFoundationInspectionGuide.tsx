@@ -4,33 +4,33 @@ const styles = {
   page: { backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' },
   container: { maxWidth: '860px', margin: '0 auto' },
   badge: { backgroundColor: '#1a2d4a', color: '#F5E642', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block', marginBottom: '16px' },
-  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' },
-  accent: { color: '#F5E642' },
-  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6' },
+  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ },
+  accent: { color: '#F5E642′ },
+  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6′ },
   card: { backgroundColor: '#111f38', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' },
   cardTitle: { fontSize: '20px', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' },
   grid2: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' },
   statBox: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', textAlign: 'center' as const },
-  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642' },
+  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642′ },
   statLabel: { color: '#94a3b8', fontSize: '13px', marginTop: '4px' },
   list: { listStyle: 'none', padding: 0, margin: 0 },
   listItem: { padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', display: 'flex', gap: '10px', fontSize: '14px' },
   label: { color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block' },
   checkLabel: { display: 'flex', gap: '10px', alignItems: 'flex-start', padding: '10px 0', borderBottom: '1px solid #1e3a5f', cursor: 'pointer', color: '#cbd5e1', fontSize: '14px' },
   btn: { backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' },
-  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642' },
+  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642′ },
   redFlag: { backgroundColor: '#2d0000', border: '1px solid #ef4444', borderRadius: '8px', padding: '10px 14px', color: '#fca5a5', marginBottom: '8px', fontSize: '14px' },
   greenNote: { backgroundColor: '#0d2e1a', border: '1px solid #166534', borderRadius: '8px', padding: '14px 18px', color: '#86efac', fontSize: '14px', marginTop: '16px' },
   warnNote: { backgroundColor: '#2d1000', border: '1px solid #9a3412', borderRadius: '8px', padding: '14px 18px', color: '#fdba74', fontSize: '14px', marginTop: '16px' },
   compRow: { display: 'flex', gap: '16px', marginBottom: '16px' },
   compBox: { flex: 1, backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '16px' },
-  compTitle: { fontWeight: '700', marginBottom: '10px', fontSize: '15px', color: '#F5E642' },
+  compTitle: { fontWeight: '700', marginBottom: '10px', fontSize: '15px', color: '#F5E642′ },
 };
 
 const whenToInspect = [
   { icon: '🏠', trigger: 'Buying a home', detail: 'Always get a foundation inspection before closing — it\’s separate from a standard home inspection.' },
   { icon: '🌩️', trigger: 'After a major storm', detail: 'Heavy rains, hail, or tornado events can shift DFW clay soil rapidly.' },
-  { icon: '📐', trigger: 'Seeing new cracks', detail: 'Any crack wider than 1/8" or horizontal cracks in brick or drywall.' },
+  { icon: '📐', trigger: 'Seeing new cracks', detail: 'Any crack wider than 1/8″ or horizontal cracks in brick or drywall.' },
   { icon: '🚪', trigger: 'Doors/windows sticking', detail: 'Sudden difficulty opening or closing interior doors is a classic early sign.' },
   { icon: '📅', trigger: 'Every 5–7 years proactively', detail: 'Even without visible symptoms — especially on homes over 20 years old in DFW.' },
 ];
@@ -47,8 +47,8 @@ const inspectorLooks = [
 
 const redFlags = [
   'Horizontal cracks in foundation wall (structural emergency)',
-  'Multiple wide cracks (over 1/4") radiating from corners',
-  'Gaps between walls and ceiling/floor over 1/2"',
+  'Multiple wide cracks (over 1/4″) radiating from corners',
+  'Gaps between walls and ceiling/floor over 1/2″',
   'Slab showing upward "heaving" or domed areas',
   'Active water intrusion through foundation cracks',
 ];
@@ -61,7 +61,7 @@ const symptomLogic: Record<string, { rec: string; urgency: string; why: string }
 };
 
 const checkItems = [
-  { key: 'wideCrack', label: 'Cracks wider than 1/4" in drywall, brick, or slab', weight: 3 },
+  { key: 'wideCrack', label: 'Cracks wider than 1/4″ in drywall, brick, or slab', weight: 3 },
   { key: 'horizontal', label: 'Horizontal cracks in any wall or foundation', weight: 4 },
   { key: 'sticking', label: 'Multiple doors or windows suddenly sticking', weight: 2 },
   { key: 'floors', label: 'Visible floor slope or unevenness', weight: 2 },
@@ -104,7 +104,7 @@ export default function DFWFoundationInspectionGuide() {
             {whenToInspect.map((item, i) => (
               <li key={i} style={{ ...styles.listItem, flexDirection: 'column' as const, gap: '4px' }}>
                 <div style={{ fontWeight: '700', color: '#ffffff' }}>{item.icon} {item.trigger}</div>
-                <div style={{ color: '#94a3b8' }}>{item.detail}</div>
+                <div style={{ color: '#94a3b8′ }}>{item.detail}</div>
               </li>
             ))}
           </ul>
@@ -147,7 +147,7 @@ export default function DFWFoundationInspectionGuide() {
           <p style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '16px' }}>Check all symptoms you're currently observing:</p>
           {checkItems.map(item => (
             <label key={item.key} style={styles.checkLabel} onClick={() => toggle(item.key)}>
-              <div style={{ width: '20px', height: '20px', borderRadius: '4px', backgroundColor: checked.includes(item.key) ? '#F5E642' : '#0d1a2e', border: '2px solid #1e3a5f', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: '800', fontSize: '13px' }}>{checked.includes(item.key) ? '✓' : ''}</div>
+              <div style={{ width: '20px', height: '20px', borderRadius: '4px', backgroundColor: checked.includes(item.key) ? '#F5E642′ : '#0d1a2e', border: '2px solid #1e3a5f', flexShrink: 0, display: ’flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: '800', fontSize: '13px' }}>{checked.includes(item.key) ? '✓' : ''}</div>
               <span>{item.label}</span>
             </label>
           ))}

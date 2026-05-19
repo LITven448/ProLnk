@@ -40,7 +40,7 @@ export default function DFWIrrigationGuide() {
         <div style={{ background: '#132038', borderRadius: 12, padding: '24px 28px', marginBottom: 32 }}>
           <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>📍 Why Irrigation Matters in DFW</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7 }}>
-            DFW sits on highly expansive clay soil — it swells when wet and shrinks when dry. <strong style={{ color: '#fff' }}>90%+ of DFW foundation problems</strong> relate to inconsistent soil moisture. A properly maintained irrigation system isn't a luxury — it's foundation protection. Dallas averages only 37 inches of rain annually, with extreme summer droughts that dry the soil to 12+ inches deep.
+            DFW sits on highly expansive clay soil — it swells when wet and shrinks when dry. <strong style={{ color: '#fff' }}>90%+ of DFW foundation problems</strong> relate to inconsistent soil moisture. A properly maintained irrigation system isn't a luxury — it’s foundation protection. Dallas averages only 37 inches of rain annually, with extreme summer droughts that dry the soil to 12+ inches deep.
           </p>
         </div>
 
@@ -55,11 +55,11 @@ export default function DFWIrrigationGuide() {
               </div>
               <div style={{ minWidth: 100 }}>
                 <p style={{ color: '#94A3B8', fontSize: 12, marginBottom: 2 }}>Frequency</p>
-                <p style={{ fontWeight: 700, color: '#FACC15' }}>{freq}</p>
+                <p style={{ fontWeight: 700, color: '#FACC15′ }}>{freq}</p>
               </div>
               <div style={{ minWidth: 120 }}>
                 <p style={{ color: '#94A3B8', fontSize: 12, marginBottom: 2 }}>Duration</p>
-                <p style={{ fontWeight: 700, color: '#34D399' }}>{duration}</p>
+                <p style={{ fontWeight: 700, color: '#34D399′ }}>{duration}</p>
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{ color: '#94A3B8', fontSize: 12, marginBottom: 2 }}>Note</p>
@@ -86,8 +86,8 @@ export default function DFWIrrigationGuide() {
                   width: 22,
                   height: 22,
                   borderRadius: 5,
-                  border: checked[item.id] ? '2px solid #34D399' : '2px solid #2A3A52',
-                  background: checked[item.id] ? '#34D399' : 'transparent',
+                  border: checked[item.id] ? '2px solid #34D399′ : '2px solid #2A3A52',
+                  background: checked[item.id] ? '#34D399′ : ’transparent',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -115,7 +115,7 @@ export default function DFWIrrigationGuide() {
         <div style={{ background: '#1A2C44', border: '1px solid #2A3A52', borderRadius: 12, padding: '20px 24px', marginBottom: 40 }}>
           <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 10 }}>🤖 Smart Controllers — Worth It?</h3>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 8 }}>
-            <strong style={{ color: '#fff' }}>Yes.</strong> Rachio, RainBird, and Hunter smart controllers integrate with weather data and skip watering on rain days automatically. DFW homeowners save <strong style={{ color: '#34D399' }}>30–50% on water bills</strong> with smart controllers — typical payback is 1–2 summers.
+            <strong style={{ color: '#fff' }}>Yes.</strong> Rachio, RainBird, and Hunter smart controllers integrate with weather data and skip watering on rain days automatically. DFW homeowners save <strong style={{ color: '#34D399′ }}>30–50% on water bills</strong> with smart controllers — typical payback is 1–2 summers.
           </p>
           <p style={{ color: '#64748B', fontSize: 13 }}>Installed cost: $200–$450 depending on zone count.</p>
         </div>

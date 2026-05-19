@@ -108,11 +108,11 @@ export default function ProLnkVsHomeAdvisor() {
             <div style={{ background: '#0F172A', color: '#F1F5F9', borderRadius: 16, padding: 28, border: '1px solid #1E293B' }}>
               <h3 style={{ fontSize: 20, fontWeight: 800, color: '#FCA5A5', margin: '0 0 20px' }}>HomeAdvisor — 1 Year</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontSize: 14 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Profile listing fee</span><span style={{ color: '#EF4444' }}>−$350/yr</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Avg leads/month (15)</span><span style={{ color: '#94A3B8' }}>180 leads</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Avg lead cost</span><span style={{ color: '#EF4444' }}>$95/lead</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Total lead spend</span><span style={{ color: '#EF4444' }}>−$17,100</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Close rate (45%)</span><span style={{ color: '#94A3B8' }}>81 jobs</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Profile listing fee</span><span style={{ color: '#EF4444' }}>−$350/yr</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Avg leads/month (15)</span><span style={{ color: '#94A3B8' }}>180 leads</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Avg lead cost</span><span style={{ color: '#EF4444' }}>$95/lead</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Total lead spend</span><span style={{ color: '#EF4444' }}>−$17,100</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Close rate (45%)</span><span style={{ color: '#94A3B8' }}>81 jobs</span></div>
                 <div style={{ borderTop: '1px solid #1E293B', paddingTop: 12, display: 'flex', justifyContent: 'space-between', fontWeight: 800 }}>
                   <span>Total platform cost</span>
                   <span style={{ color: '#EF4444', fontSize: 18 }}>−$17,450</span>
@@ -123,10 +123,10 @@ export default function ProLnkVsHomeAdvisor() {
             <div style={{ background: '#1E3A5F', color: '#F1F5F9', borderRadius: 16, padding: 28, border: '2px solid #FCD34D' }}>
               <h3 style={{ fontSize: 20, fontWeight: 800, color: '#FCD34D', margin: '0 0 20px' }}>ProLnk — 1 Year</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontSize: 14 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Profile listing fee</span><span style={{ color: '#22C55E' }}>$0</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Monthly subscription (12)</span><span style={{ color: '#94A3B8' }}>$1,788/yr</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Upfront lead cost</span><span style={{ color: '#22C55E' }}>$0</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Network earnings (est.)</span><span style={{ color: '#FCD34D' }}>+$3,000–$8,000</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Profile listing fee</span><span style={{ color: '#22C55E' }}>$0</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Monthly subscription (12)</span><span style={{ color: '#94A3B8' }}>$1,788/yr</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Upfront lead cost</span><span style={{ color: '#22C55E' }}>$0</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Network earnings (est.)</span><span style={{ color: '#FCD34D' }}>+$3,000–$8,000</span></div>
                 <div style={{ borderTop: '1px solid #2D4A7A', paddingTop: 12, display: 'flex', justifyContent: 'space-between', fontWeight: 800 }}>
                   <span>Net platform cost</span>
                   <span style={{ color: '#22C55E', fontSize: 18 }}>−$1,788 to +$6,212</span>

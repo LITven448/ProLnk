@@ -62,13 +62,13 @@ export default function DFWERCOTGuide2026() {
             {features.map(f => (
               <label key={f.value} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer' }}>
                 <input type="checkbox" checked={checked.includes(f.value)} onChange={() => toggle(f.value)}
-                  style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+                  style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
                 <span style={{ color: '#cbd5e1', fontSize: 14 }}>{f.label}</span>
                 <span style={{ color: '#F5E642', fontSize: 12, marginLeft: 'auto' }}>+{f.points}pts</span>
               </label>
             ))}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontSize: 32, fontWeight: 900 }}>{score}/145</div>
             <div style={{ color: '#fff', fontSize: 20, fontWeight: 700, marginTop: 4 }}>{scoreLabel}</div>
             <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 6 }}>

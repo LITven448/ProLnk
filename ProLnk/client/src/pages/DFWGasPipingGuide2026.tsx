@@ -23,8 +23,8 @@ export default function DFWGasPipingGuide2026() {
         <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Gas Piping Upgrade Guide for DFW 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW sits in tornado and lightning alley. Gas line safety — especially CSST bonding — is critical. All gas work requires a licensed master plumber in Texas.</p>
 
-        <div style={{ background: '#7f1d1d', borderRadius: '8px', padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #ef4444' }}>
-          <strong style={{ color: '#fca5a5' }}>⚠️ Texas Law:</strong>
+        <div style={{ background: '#7f1d1d', borderRadius: '8px', padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #ef4444′ }}>
+          <strong style={{ color: '#fca5a5′ }}>⚠️ Texas Law:</strong>
           <span style={{ color: '#fecaca' }}> All gas piping work — including repairs — must be performed by a licensed master plumber. No exceptions. Unlicensed work voids homeowner insurance.</span>
         </div>
 
@@ -49,7 +49,7 @@ export default function DFWGasPipingGuide2026() {
             <option value="replacement">Full gas line replacement</option>
           </select>
           <button onClick={getRequirements} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '6px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Get Requirements</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '10px', padding: '1.5rem' }}>

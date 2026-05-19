@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const seasons = [
-  { id: 'fall', label: '🍂 Fall (Oct–Nov): Cooling → Heating', tasks: ['Test furnace before first cold night', 'Replace air filter (1" every 30 days, 4" every 6 months)', 'Set thermostat to HEAT mode', 'Run furnace 10 min — listen for odd sounds', 'Check pilot light or igniter status', 'Clear 2-ft radius around outdoor heat pump unit', 'Schedule professional tune-up (book early, fills fast)'] },
+  { id: 'fall', label: '🍂 Fall (Oct–Nov): Cooling → Heating', tasks: ['Test furnace before first cold night', 'Replace air filter (1″ every 30 days, 4″ every 6 months)', 'Set thermostat to HEAT mode', 'Run furnace 10 min — listen for odd sounds', 'Check pilot light or igniter status', 'Clear 2-ft radius around outdoor heat pump unit', 'Schedule professional tune-up (book early, fills fast)'] },
   { id: 'spring', label: '🌸 Spring (Mar–Apr): Heating → Cooling', tasks: ['Test AC before first hot day', 'Replace air filter at seasonal switch', 'Set thermostat to COOL mode', 'Run AC 15 min — confirm cold air at vents', 'Inspect outdoor condenser coils for debris', 'Check refrigerant lines for ice (sign of low charge)', 'Schedule pre-season AC tune-up'] },
   { id: 'summer', label: '☀️ Summer (Jun–Sep): AC Running Continuously', tasks: ['Check filter monthly (DFW dust is relentless)', 'Keep thermostat at 78°F or above when away', 'Ensure vents are open and unobstructed', 'Listen for unusual sounds (squealing = belt, grinding = motor)', 'Watch for water near air handler (drain clog sign)'] },
 ];
@@ -16,7 +16,7 @@ export default function DFWHVACSeasonalTip2026() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EEF7' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EEF7′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🌡️</div>

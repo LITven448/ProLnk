@@ -14,27 +14,27 @@ function getQuarterRoundAssessment(flooring: string, situation: string) {
   if (situation.includes('Seasonal gaps') || situation.includes('expanding')) return {
     needed: 'Required — Use Wider Profile',
     method: 'Nail to baseboard ONLY — never nail to floor (must float with floor)',
-    expansion: 'DFW temp swings 40°F–105°F cause hardwood to expand/contract up to 3/8" per 10 ft',
+    expansion: 'DFW temp swings 40°F–105°F cause hardwood to expand/contract up to 3/8″ per 10 ft',
     dfwNote: 'Nailing quarter round to the floor traps expansion and causes buckling — common DFW mistake',
     color: '#FF4444'
   };
   if (flooring === 'Hardwood' || flooring === 'Engineered Wood') return {
     needed: 'Required — Standard Profile',
-    method: 'Nail to baseboard only, 3/4" gap at perimeter maintained by spacers',
-    expansion: 'DFW hardwood needs 3/4"–1" expansion gap — quarter round covers this gap',
+    method: 'Nail to baseboard only, 3/4″ gap at perimeter maintained by spacers',
+    expansion: 'DFW hardwood needs 3/4″–1″ expansion gap — quarter round covers this gap',
     dfwNote: 'Install during fall when wood is at median moisture — neither peak expansion nor peak contraction',
     color: '#F5A623'
   };
   if (flooring === 'LVP / Luxury Vinyl' || flooring === 'Laminate') return {
     needed: 'Required — Lightweight Profile OK',
-    method: '1/2" gap at perimeter — LVP expands more than hardwood in DFW heat',
-    expansion: 'LVP in DFW sun-exposed rooms can expand 1/2"+ — undersized gap causes floor to lift',
+    method: '1/2″ gap at perimeter — LVP expands more than hardwood in DFW heat',
+    expansion: 'LVP in DFW sun-exposed rooms can expand 1/2″+ — undersized gap causes floor to lift',
     dfwNote: 'LVP flooring near DFW south-facing windows needs maximum gap — direct sun adds 20°F to surface temp',
     color: '#F5A623'
   };
   return {
     needed: 'Recommended',
-    method: 'Nail to baseboard only, standard 1/2" gap',
+    method: 'Nail to baseboard only, standard 1/2″ gap',
     expansion: 'Follow manufacturer\’s expansion gap requirements for DFW climate zone',
     dfwNote: 'DFW\’s temperature range is one of the widest in the U.S. — always use maximum recommended gap',
     color: '#22C55E'
@@ -79,7 +79,7 @@ export default function DFWQuarterRoundGuide() {
               { icon: '🔫', name: 'Nail to Baseboard', desc: 'Only correct method for floating floors. Quarter round must move with the floor, not anchor it.' },
               { icon: '🪝', name: 'Adhesive on Tile', desc: 'No nail option on tile — use construction adhesive. Quarter round is cosmetic only on tile.' },
               { icon: '❌', name: 'Never Nail to Floor', desc: 'Nailing to flooring locks expansion — causes buckling, cupping, and warranty void in DFW heat.' },
-              { icon: '✅', name: 'Stagger Joints', desc: 'On long DFW hallways, stagger quarter round joints at least 24" from flooring seams below.' },
+              { icon: '✅', name: 'Stagger Joints', desc: 'On long DFW hallways, stagger quarter round joints at least 24″ from flooring seams below.' },
             ].map(({ icon, name, desc }) => (
               <div key={name} style={{ background: '#162035', borderRadius: '8px', padding: '14px' }}>
                 <div style={{ fontSize: '20px', marginBottom: '6px' }}>{icon}</div>
@@ -97,7 +97,7 @@ export default function DFWQuarterRoundGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {flooringTypes.map(f => (
                 <button key={f} onClick={() => setFlooring(f)} style={{
-                  background: flooring === f ? '#F5E642' : '#162035', color: flooring === f ? '#0A1628' : '#CBD5E1',
+                  background: flooring === f ? '#F5E642′ : '#162035', color: flooring === f ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: flooring === f ? 700 : 400
                 }}>{f}</button>
               ))}
@@ -108,7 +108,7 @@ export default function DFWQuarterRoundGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {installSituations.map(s => (
                 <button key={s} onClick={() => setSituation(s)} style={{
-                  background: situation === s ? '#F5E642' : '#162035', color: situation === s ? '#0A1628' : '#CBD5E1',
+                  background: situation === s ? '#F5E642′ : '#162035', color: situation === s ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: situation === s ? 700 : 400
                 }}>{s}</button>
               ))}

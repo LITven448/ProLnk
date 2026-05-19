@@ -3,7 +3,7 @@ import { useState } from 'react';
 const homeTypes = ['1950s Slab', '1970s Pier & Beam', '1990s Two-Story', '2000s+ New Build'];
 
 const baseData = {
-  panelSafety: ['Know your panel location and label every breaker', 'Never block panel access — 36" clearance required by code', 'Tripping breaker = overloaded circuit or failing breaker'],
+  panelSafety: ['Know your panel location and label every breaker', 'Never block panel access — 36″ clearance required by code', 'Tripping breaker = overloaded circuit or failing breaker'],
   gfci: ['Test GFCI outlets monthly: press TEST, confirm power off, press RESET', 'Required in: kitchen, bathrooms, garage, outdoors, pool area', 'Replace if test button doesn\’t cut power within 1 second'],
   outdoor: ['Use weatherproof outlet covers year-round in DFW humidity', 'All outdoor circuits must be GFCI protected', 'Inspect landscape lighting wiring after hail storms'],
   storm: ['Surge protector whole-home unit at panel: $300–$600 installed', 'DFW averages 50+ storm days/year — surge risk is real', 'Unplug sensitive electronics during severe thunderstorm warnings'],
@@ -53,7 +53,7 @@ export default function DFWElectricalFinalReferenceCard() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
           {sections.map(sec => (
-            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155' }}>
+            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', gap: '8px' }}>
                 <span style={{ fontSize: '20px' }}>{sec.emoji}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '14px' }}>{sec.title}</span>

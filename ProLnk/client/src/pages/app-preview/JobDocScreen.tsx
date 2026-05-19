@@ -9,14 +9,14 @@ const NAV = [
 ];
 
 const COLORS = {
-  bg: "#0A1628",
-  card: "#152035",
-  border: "#1E2E45",
+  bg: "#0A1628″,
+  card: "#152035″,
+  border: "#1E2E45″,
   text: "#F0F4FF",
-  muted: "#7A8BA8",
-  yellow: "#F5E642",
-  green: "#10B981",
-  red: "#EF4444",
+  muted: "#7A8BA8″,
+  yellow: "#F5E642″,
+  green: "#10B981″,
+  red: "#EF4444″,
   amber: "#F59E0B",
 };
 
@@ -92,26 +92,26 @@ export default function JobDocScreen() {
           <div style={{ fontSize: 11, color: COLORS.muted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Job Photos</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
             {/* Before */}
-            <div style={{ aspectRatio: "1", borderRadius: 10, background: "linear-gradient(135deg, #1E3A5F, #152035)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px solid ${COLORS.green}`, position: "relative", overflow: "hidden" }}>
+            <div style={{ aspectRatio: "1″, borderRadius: 10, background: "linear-gradient(135deg, #1E3A5F, #152035)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px solid ${COLORS.green}`, position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: 6, right: 6, width: 18, height: 18, borderRadius: 9, background: COLORS.green, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10 }}>✓</div>
               <span style={{ fontSize: 22 }}>📷</span>
               <span style={{ fontSize: 9, color: COLORS.muted, marginTop: 4 }}>Before</span>
             </div>
             {/* After */}
-            <div style={{ aspectRatio: "1", borderRadius: 10, background: "linear-gradient(135deg, #1E3A5F, #152035)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px solid ${COLORS.green}`, position: "relative", overflow: "hidden" }}>
+            <div style={{ aspectRatio: "1″, borderRadius: 10, background: "linear-gradient(135deg, #1E3A5F, #152035)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px solid ${COLORS.green}`, position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: 6, right: 6, width: 18, height: 18, borderRadius: 9, background: COLORS.green, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10 }}>✓</div>
               <span style={{ fontSize: 22 }}>📷</span>
               <span style={{ fontSize: 9, color: COLORS.muted, marginTop: 4 }}>After</span>
             </div>
             {/* Add photo slot */}
             {photos[2] ? (
-              <div style={{ aspectRatio: "1", borderRadius: 10, background: "linear-gradient(135deg, #1E3A5F, #152035)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px solid ${COLORS.green}`, position: "relative" }}>
+              <div style={{ aspectRatio: "1″, borderRadius: 10, background: "linear-gradient(135deg, #1E3A5F, #152035)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px solid ${COLORS.green}`, position: "relative" }}>
                 <div style={{ position: "absolute", top: 6, right: 6, width: 18, height: 18, borderRadius: 9, background: COLORS.green, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10 }}>✓</div>
                 <span style={{ fontSize: 22 }}>📷</span>
                 <span style={{ fontSize: 9, color: COLORS.green, marginTop: 4 }}>Added</span>
               </div>
             ) : (
-              <button onClick={handleAddPhoto} style={{ aspectRatio: "1", borderRadius: 10, background: "transparent", border: `2px dashed ${COLORS.border}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+              <button onClick={handleAddPhoto} style={{ aspectRatio: "1″, borderRadius: 10, background: "transparent", border: `2px dashed ${COLORS.border}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
                 <span style={{ fontSize: 24, color: COLORS.muted }}>📷</span>
                 <span style={{ fontSize: 9, color: COLORS.muted, marginTop: 4 }}>+ Add photo</span>
               </button>

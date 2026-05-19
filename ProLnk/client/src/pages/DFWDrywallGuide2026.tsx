@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const issues = [
-  { id: 'nailPop', label: '📌 Nail Pops', recs: ['Nail pops are extremely common in DFW — clay soil movement shifts studs seasonally', 'Drive a drywall screw 2" above and below the popped nail to re-secure', 'Knock the nail back in flush (do not remove) then apply the new screws', 'Fill with lightweight spackle, feather 3-4 inches wide', 'Prime before painting — bare spackle flashes through latex paint', 'If pops recur in same spot each year, that stud is moving with soil moisture cycles'] },
+  { id: 'nailPop', label: '📌 Nail Pops', recs: ['Nail pops are extremely common in DFW — clay soil movement shifts studs seasonally', 'Drive a drywall screw 2″ above and below the popped nail to re-secure', 'Knock the nail back in flush (do not remove) then apply the new screws', 'Fill with lightweight spackle, feather 3-4 inches wide', 'Prime before painting — bare spackle flashes through latex paint', 'If pops recur in same spot each year, that stud is moving with soil moisture cycles'] },
   { id: 'cornerBead', label: '🔲 Corner Bead Damage', recs: ['Metal corner bead dents from impacts — most common in hallways and tight spaces', 'Replace metal bead with flexible vinyl corner bead — far more durable', 'Cut out 6-12 inches of damaged section with oscillating tool', 'Tape vinyl bead in place before applying compound', 'Three coats of compound, feathering 8-10 inches on each side', 'DFW homes with kids: consider plastic corner guards on vulnerable corners'] },
   { id: 'waterStain', label: '💧 Water Stains', recs: ['Never paint over a water stain without fixing the source first', 'Check roof, window flashing, and AC drain pan — all common DFW sources', 'Let the area dry completely — use moisture meter, target below 12% MC', 'Apply shellac-based stain blocker (Zinsser BIN) — latex primer will not block stains', 'Texture to match existing wall surface before final paint coat', 'If stain keeps returning: source is still active — do not repaint until resolved'] },
   { id: 'texture', label: '🎨 Texture Matching', recs: ['Skip trowel and orange peel are the two dominant textures in DFW residential', 'Skip trowel: apply joint compound with trowel, skip across surface, knock high spots', 'Orange peel: spray hopper or aerosol can — practice on cardboard first', 'Knockdown texture: hopper spray then flatten peaks with trowel before fully dry', 'Lighting is critical — check match with raking light before painting', 'Hire a pro for large patches in living areas — texture matching takes experience'] },
@@ -40,7 +40,7 @@ export default function DFWDrywallGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {issues.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id === selected ? null : i.id)}
-              style={{ background: selected === i.id ? '#F5E642' : '#111d30', color: selected === i.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === i.id ? '#F5E642′ : '#111d30', color: selected === i.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {i.label}
             </button>
           ))}
@@ -62,14 +62,14 @@ export default function DFWDrywallGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🛠️ DIY vs Pro Decision Guide</div>
           {[
             { task: 'Nail pops (1-5 pops)', rec: 'DIY — 30 min max', diy: true },
-            { task: 'Small holes under 6"', rec: 'DIY with patch kit', diy: true },
+            { task: 'Small holes under 6″', rec: 'DIY with patch kit', diy: true },
             { task: 'Texture matching in main living areas', rec: 'Hire a pro', diy: false },
             { task: 'Water damage repair', rec: 'Fix source first, then hire', diy: false },
             { task: 'Corner bead replacement', rec: 'DIY if comfortable with mud', diy: true },
           ].map(r => (
             <div key={r.task} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 14, alignItems: 'center' }}>
-              <span style={{ color: '#94a3b8' }}>{r.task}</span>
-              <span style={{ color: r.diy ? '#4ade80' : '#f59e0b', fontWeight: 700, fontSize: 13 }}>{r.rec}</span>
+              <span style={{ color: '#94a3b8′ }}>{r.task}</span>
+              <span style={{ color: r.diy ? '#4ade80′ : '#f59e0b', fontWeight: 700, fontSize: 13 }}>{r.rec}</span>
             </div>
           ))}
         </div>

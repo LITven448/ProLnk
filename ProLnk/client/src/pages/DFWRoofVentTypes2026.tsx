@@ -22,7 +22,7 @@ export default function DFWRoofVentTypes2026() {
   const hasRidge = currentVents.includes('ridge');
   const hasSoffit = currentVents.includes('soffit');
   const score = hasRidge && hasSoffit ? 'Optimal' : hasRidge || hasSoffit ? 'Adequate' : currentVents.length > 0 ? 'Marginal' : 'Unknown';
-  const scoreColor = score === 'Optimal' ? '#22c55e' : score === 'Adequate' ? '#F5E642' : '#ef4444';
+  const scoreColor = score === 'Optimal' ? '#22c55e' : score === 'Adequate' ? '#F5E642′ : '#ef4444';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
@@ -34,17 +34,17 @@ export default function DFWRoofVentTypes2026() {
         </div>
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {ventTypes.map(v => (
-            <div key={v.id} style={{ background: '#1a2744', borderRadius: 12, padding: 20, border: v.best ? '2px solid #F5E642' : '1px solid #2a3a5c' }}>
+            <div key={v.id} style={{ background: '#1a2744', borderRadius: 12, padding: 20, border: v.best ? '2px solid #F5E642′ : '1px solid #2a3a5c' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <span style={{ fontSize: 28 }}>{v.icon}</span>
                 <div>
-                  <h3 style={{ margin: 0, color: '#F5E642' }}>{v.name} {v.best && <span style={{ fontSize: 12, background: '#F5E642', color: '#0A1628', padding: '2px 8px', borderRadius: 20, marginLeft: 8 }}>BEST FOR DFW</span>}</h3>
+                  <h3 style={{ margin: 0, color: '#F5E642′ }}>{v.name} {v.best && <span style={{ fontSize: 12, background: '#F5E642', color: '#0A1628', padding: '2px 8px', borderRadius: 20, marginLeft: 8 }}>BEST FOR DFW</span>}</h3>
                   <p style={{ margin: 0, color: '#94a3b8', fontSize: 14 }}>{v.desc}</p>
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div><p style={{ margin: '0 0 4px', fontSize: 12, color: '#22c55e', fontWeight: 600 }}>✅ PROS</p>{v.pros.map(p => <p key={p} style={{ margin: '2px 0', fontSize: 13, color: '#cbd5e1' }}>• {p}</p>)}</div>
-                <div><p style={{ margin: '0 0 4px', fontSize: 12, color: '#ef4444', fontWeight: 600 }}>❌ CONS</p>{v.cons.map(c => <p key={c} style={{ margin: '2px 0', fontSize: 13, color: '#cbd5e1' }}>• {c}</p>)}</div>
+                <div><p style={{ margin: '0 0 4px', fontSize: 12, color: '#22c55e', fontWeight: 600 }}>✅ PROS</p>{v.pros.map(p => <p key={p} style={{ margin: '2px 0', fontSize: 13, color: '#cbd5e1′ }}>• {p}</p>)}</div>
+                <div><p style={{ margin: '0 0 4px', fontSize: 12, color: '#ef4444', fontWeight: 600 }}>❌ CONS</p>{v.cons.map(c => <p key={c} style={{ margin: '2px 0', fontSize: 13, color: '#cbd5e1′ }}>• {c}</p>)}</div>
               </div>
             </div>
           ))}
@@ -61,7 +61,7 @@ export default function DFWRoofVentTypes2026() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>Current vents (select all that apply):</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {ventTypes.map(v => (
-              <button key={v.id} onClick={() => toggleVent(v.id)} style={{ padding: '8px 14px', borderRadius: 20, border: '1px solid', borderColor: currentVents.includes(v.id) ? '#F5E642' : '#2a3a5c', background: currentVents.includes(v.id) ? '#F5E642' : 'transparent', color: currentVents.includes(v.id) ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: 13 }}>{v.icon} {v.name}</button>
+              <button key={v.id} onClick={() => toggleVent(v.id)} style={{ padding: '8px 14px', borderRadius: 20, border: '1px solid', borderColor: currentVents.includes(v.id) ? '#F5E642′ : '#2a3a5c', background: currentVents.includes(v.id) ? '#F5E642' : ’transparent', color: currentVents.includes(v.id) ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: 13 }}>{v.icon} {v.name}</button>
             ))}
           </div>
           <button onClick={() => setShowAssessment(true)} disabled={!selectedStyle} style={{ width: '100%', padding: 14, background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: selectedStyle ? 'pointer' : 'not-allowed', opacity: selectedStyle ? 1 : 0.5 }}>Assess My Ventilation</button>

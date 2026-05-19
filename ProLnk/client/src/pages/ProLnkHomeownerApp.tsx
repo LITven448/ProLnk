@@ -46,8 +46,8 @@ export default function ProLnkHomeownerApp() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {scenarios.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)} style={{
-                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '1px solid #1e3a5f',
-                background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
+                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '1px solid #1e3a5f',
+                background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{s.situation}</button>
             ))}
@@ -56,7 +56,7 @@ export default function ProLnkHomeownerApp() {
             <div style={{ background: '#0A1628', border: '1px solid #F5E642', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>✅ {scenarios[selected].feature}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7, marginBottom: 10 }}>{scenarios[selected].detail}</div>
-              <div style={{ display: 'inline-block', background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#94a3b8' }}>
+              <div style={{ display: 'inline-block', background: '#1e3a5f', borderRadius: 6, padding: '4px 12px', fontSize: 12, color: '#94a3b8′ }}>
                 🗓 {scenarios[selected].timeline}
               </div>
             </div>

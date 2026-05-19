@@ -50,7 +50,7 @@ export default function DFWSprinklerSystemDesign2026() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🗺️ Zone Design by Area Type</h2>
           {zones.map(z => (
-            <div key={z.type} style={{ borderBottom: '1px solid #1E3A5F', padding: '12px 0' }}>
+            <div key={z.type} style={{ borderBottom: '1px solid #1E3A5F', padding: '12px 0′ }}>
               <div style={{ color: '#FFFFFF', fontWeight: 700, marginBottom: 4 }}>{z.type}</div>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>Heads: {z.heads} · Pressure: {z.pressure} · Precip rate: {z.precip}</div>
             </div>
@@ -79,7 +79,7 @@ export default function DFWSprinklerSystemDesign2026() {
             </div>
           </div>
           {guide && (
-            <div style={{ background: '#162035', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 800, marginBottom: 10 }}>📐 Recommended Design — {yardSize}</div>
               <div style={{ color: '#E8EAF6', fontSize: 14, lineHeight: 1.8 }}>
                 <div>🔢 <strong>Zones needed:</strong> {guide.zones}+ zones</div>

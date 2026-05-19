@@ -22,7 +22,7 @@ export default function DFWGroutDryingGuide() {
     cementUnsanded: {
       summer: {
         shower: { trafficTime: '48 hrs', cureTime: '28 days', sealTime: '28 days', hardWater: 'HIGH — narrow grout lines concentrate hard water mineral deposits', tip: 'DFW hard water + summer humidity = fast mineral buildup on wall tile. Use a squeegee after every shower after sealing' },
-        floor: { trafficTime: '24–48 hrs', cureTime: '28 days', sealTime: '28 days', hardWater: 'Moderate', tip: 'Unsanded grout for floor joints under 1/8" — ensure tile is fully leveled before grouting in DFW summer heat (tiles expand)' },
+        floor: { trafficTime: '24–48 hrs', cureTime: '28 days', sealTime: '28 days', hardWater: 'Moderate', tip: 'Unsanded grout for floor joints under 1/8″ — ensure tile is fully leveled before grouting in DFW summer heat (tiles expand)' },
         exterior: { trafficTime: '48–72 hrs', cureTime: '28 days', sealTime: '21 days', hardWater: 'Low impact outdoors', tip: 'Unsanded rarely used outdoors — if used for pool tile: DFW chlorine + minerals accelerate grout degradation' },
       },
       mild: {
@@ -62,8 +62,8 @@ export default function DFWGroutDryingGuide() {
           <p style={{ color: '#94a3b8', marginBottom: 16, fontSize: 14 }}>DFW water has 200–400 ppm hardness (very hard). Calcium and magnesium minerals deposit in unsealed grout pores within weeks. Once stained, mineral deposits are very difficult to remove without acid cleaners that damage grout further.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {[
-              { label: 'DFW Water Hardness', value: '200–400 ppm', note: 'Classified as "Very Hard"', color: '#ef4444' },
-              { label: 'Staining Timeline', value: '2–8 weeks', note: 'Unsealed grout in shower', color: '#f97316' },
+              { label: 'DFW Water Hardness', value: '200–400 ppm', note: 'Classified as "Very Hard"', color: '#ef4444′ },
+              { label: 'Staining Timeline', value: '2–8 weeks', note: 'Unsealed grout in shower', color: '#f97316′ },
               { label: 'Sealing Protects', value: '3–5 years', note: 'With quality penetrating sealer', color: '#22c55e' },
             ].map(item => (
               <div key={item.label} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, textAlign: 'center', borderTop: `3px solid ${item.color}` }}>
@@ -80,27 +80,27 @@ export default function DFWGroutDryingGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>GROUT TYPE</label>
-              {[{ val: 'cementSanded', label: '🪨 Sanded Cement', desc: 'Joints 1/8" or wider' }, { val: 'cementUnsanded', label: '🔲 Unsanded Cement', desc: 'Joints under 1/8"' }, { val: 'epoxy', label: '⭐ Epoxy Grout', desc: 'No sealing needed' }].map(opt => (
-                <button key={opt.val} onClick={() => setGroutType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${groutType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: groutType === opt.val ? '#F5E642' : 'transparent', color: groutType === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 13 }}>{opt.label}<div style={{ fontSize: 11, opacity: 0.7 }}>{opt.desc}</div></button>
+              {[{ val: 'cementSanded', label: '🪨 Sanded Cement', desc: 'Joints 1/8″ or wider' }, { val: 'cementUnsanded', label: '🔲 Unsanded Cement', desc: 'Joints under 1/8″' }, { val: 'epoxy', label: '⭐ Epoxy Grout', desc: 'No sealing needed' }].map(opt => (
+                <button key={opt.val} onClick={() => setGroutType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${groutType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: groutType === opt.val ? '#F5E642′ : ’transparent', color: groutType === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 13 }}>{opt.label}<div style={{ fontSize: 11, opacity: 0.7 }}>{opt.desc}</div></button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>DFW SEASON</label>
               {[{ val: 'summer', label: '☀️ Summer (May–Sep)' }, { val: 'mild', label: '🍂 Fall / Spring' }].map(opt => (
-                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642' : 'transparent', color: season === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642′ : ’transparent', color: season === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>LOCATION</label>
               {[{ val: 'shower', label: '🚿 Shower / Bath' }, { val: 'floor', label: '🏠 Interior Floor' }, { val: 'exterior', label: '🌳 Exterior / Patio' }].map(opt => (
-                <button key={opt.val} onClick={() => setLocation(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${location === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: location === opt.val ? '#F5E642' : 'transparent', color: location === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setLocation(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${location === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: location === opt.val ? '#F5E642′ : ’transparent', color: location === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>Get My Grout Timeline →</button>
 
           {result && (
-            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div><div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>SAFE FOR TRAFFIC</div><div style={{ fontWeight: 700 }}>{result.trafficTime}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>FULL CURE</div><div style={{ fontWeight: 700 }}>{result.cureTime}</div></div>
@@ -110,9 +110,9 @@ export default function DFWGroutDryingGuide() {
                 <div style={{ fontWeight: 700, fontSize: 15 }}>{result.sealTime}</div>
               </div>
               <div style={{ backgroundColor: '#7c2d12', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 13 }}>
-                <span style={{ color: '#fdba74' }}>💧 DFW Hard Water: </span><span style={{ color: '#fed7aa' }}>{result.hardWater}</span>
+                <span style={{ color: '#fdba74′ }}>💧 DFW Hard Water: </span><span style={{ color: '#fed7aa' }}>{result.hardWater}</span>
               </div>
-              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642' }}>💡 Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
+              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642′ }}>💡 Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
             </div>
           )}
         </div>

@@ -79,30 +79,30 @@ export default function DFWProLnkThreeThousandPage() {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '1.25rem', flexWrap: 'wrap' }}>
             {[['600+','HVAC Pages'],['400+','Foundation Pages'],['350+','Plumbing Pages'],['300+','Electrical Pages']].map(([n,l]) => (
               <div key={l} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#F5E642' }}>{n}</div>
-                <div style={{ fontSize: '0.8rem', color: '#9AA5B8' }}>{l}</div>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#F5E642′ }}>{n}</div>
+                <div style={{ fontSize: '0.8rem', color: '#9AA5B8′ }}>{l}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📚 The Next 1,000 Pages — Coming Soon</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📚 The Next 1,000 Pages — Coming Soon</h2>
         <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '2.5rem' }}>
           {next1000.map((n, i) => (
             <div key={i} style={{ background: '#0F2040', borderRadius: '10px', padding: '1rem 1.25rem', border: '1px solid #1E3A5F', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
               <div style={{ background: '#F5E64220', color: '#F5E642', borderRadius: '8px', padding: '0.3rem 0.7rem', fontWeight: 700, fontSize: '0.85rem', whiteSpace: 'nowrap' }}>{n.area}</div>
-              <div style={{ fontSize: '0.875rem', color: '#9AA5B8' }}>{n.examples}</div>
+              <div style={{ fontSize: '0.875rem', color: '#9AA5B8′ }}>{n.examples}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>👤 What 3,000 Pages Means for You</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>👤 What 3,000 Pages Means for You</h2>
         <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '2rem' }}>
           <div style={{ marginBottom: '1.25rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.5rem' }}>I am a...</label>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {roles.map(r => (
-                <button key={r.id} onClick={() => setSelectedRole(r.id)} style={{ padding: '0.6rem 1.25rem', borderRadius: '8px', border: selectedRole === r.id ? '2px solid #F5E642' : '1px solid #1E3A5F', background: selectedRole === r.id ? '#F5E64220' : '#0A1628', color: selectedRole === r.id ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.9rem', fontWeight: 600 }}>{r.icon} {r.label}</button>
+                <button key={r.id} onClick={() => setSelectedRole(r.id)} style={{ padding: '0.6rem 1.25rem', borderRadius: '8px', border: selectedRole === r.id ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: selectedRole === r.id ? '#F5E64220' : '#0A1628', color: selectedRole === r.id ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.9rem', fontWeight: 600 }}>{r.icon} {r.label}</button>
               ))}
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function DFWProLnkThreeThousandPage() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <div style={{ fontWeight: 800, fontSize: '1.15rem', color: '#F5E642', marginBottom: '0.5rem' }}>{result.icon} {result.headline}</div>
             <div style={{ color: '#9AA5B8', fontSize: '0.9rem', marginBottom: '1.25rem' }}>{result.description}</div>
             <div style={{ fontWeight: 700, marginBottom: '0.75rem' }}>📖 Your Top 5 Pages to Read:</div>
@@ -120,14 +120,14 @@ export default function DFWProLnkThreeThousandPage() {
                 <span>{p}</span>
               </div>
             ))}
-            <div style={{ marginTop: '1.25rem', background: '#F5E64215', borderRadius: '8px', padding: '0.85rem', fontSize: '0.875rem', color: '#F5E642' }}>💡 {result.what3000Means}</div>
+            <div style={{ marginTop: '1.25rem', background: '#F5E64215', borderRadius: '8px', padding: '0.85rem', fontSize: '0.875rem', color: '#F5E642′ }}>💡 {result.what3000Means}</div>
           </div>
         )}
 
         <div style={{ marginTop: '3rem', background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', textAlign: 'center' }}>
           <div style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>ProLnk — Built for DFW Homeowners.</div>
           <div style={{ color: '#9AA5B8', fontSize: '0.9rem', marginBottom: '1rem' }}>Every page in this library exists to help you make a smarter decision — and connect with the right pro when you are ready.</div>
-          <div style={{ fontSize: '0.85rem', color: '#F5E642' }}>3,000 pages. One platform. The DFW home service marketplace.</div>
+          <div style={{ fontSize: '0.85rem', color: '#F5E642′ }}>3,000 pages. One platform. The DFW home service marketplace.</div>
         </div>
       </div>
     </div>

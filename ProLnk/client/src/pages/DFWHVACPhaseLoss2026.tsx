@@ -39,7 +39,7 @@ export default function DFWHVACPhaseLoss2026() {
           </select>
           <div style={{ background: '#122040', borderRadius: 8, padding: 16 }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>{g.icon}</div>
-            <div style={{ color: sysType === 'residential' ? '#4CAF50' : '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>Risk: {g.risk}</div>
+            <div style={{ color: sysType === 'residential' ? '#4CAF50′ : '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>Risk: {g.risk}</div>
             <div style={{ fontWeight: 700, fontSize: 16, color: '#fff', marginBottom: 8 }}>Action: {g.action}</div>
             <p style={{ color: '#B0C4D8', fontSize: 13, lineHeight: 1.6, margin: 0 }}>{g.detail}</p>
           </div>

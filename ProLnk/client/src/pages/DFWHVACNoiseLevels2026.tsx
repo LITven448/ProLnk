@@ -66,18 +66,18 @@ export default function DFWHVACNoiseLevels2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 28 }}>
           {[['🗣️ 50 dB', 'Normal conversation'], ['🌀 65 dB', 'Variable-speed AC'], ['🧹 75 dB', 'Single-stage AC'], ['📺 70 dB', 'Television at home'], ['💨 78 dB', 'Standard AC max'], ['🚨 85 dB', 'Mechanical failure zone']].map(([db, label]) => (
             <div key={db as string} style={{ background: '#0f2040', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{db}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{db}</div>
               <div style={{ fontSize: 11, color: '#64748b', marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎧 What noise are you hearing?</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎧 What noise are you hearing?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {CONCERNS.map((c, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1e3a5f'}`, background: '#0A1628', color: selected === i ? '#F5E642' : '#e2e8f0', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1e3a5f'}`, background: '#0A1628', color: selected === i ? '#F5E642′ : '#e2e8f0', cursor: ’pointer', textAlign: 'left', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {c.concern}
               </button>
             ))}
@@ -86,7 +86,7 @@ export default function DFWHVACNoiseLevels2026() {
 
         {result && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>System Type: <span style={{ color: '#94a3b8' }}>{result.type}</span> · Typical: <span style={{ color: '#94a3b8' }}>{result.db}</span></div>
+            <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>System Type: <span style={{ color: '#94a3b8′ }}>{result.type}</span> · Typical: <span style={{ color: '#94a3b8' }}>{result.db}</span></div>
             <div style={{ fontSize: 16, fontWeight: 700, color: '#e2e8f0', marginBottom: 12 }}>{result.verdict}</div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
               <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>RECOMMENDED ACTION</div>

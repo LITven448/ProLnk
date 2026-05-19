@@ -18,9 +18,9 @@ import {
 
 function ScoreBadge({ score }: { score: number | null }) {
   if (score == null) return <Badge variant="outline" className="text-xs">No data</Badge>;
-  const color = score >= 80 ? "bg-emerald-500/10 text-emerald-600 border-emerald-500/30"
-    : score >= 50 ? "bg-amber-500/10 text-amber-600 border-amber-500/30"
-    : "bg-rose-500/10 text-rose-600 border-rose-500/30";
+  const color = score >= 80 ? "bg-emerald-500/10 text-emerald-600 border-emerald-500/30″
+    : score >= 50 ? "bg-amber-500/10 text-amber-600 border-amber-500/30″
+    : "bg-rose-500/10 text-rose-600 border-rose-500/30″;
   return (
     <div className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border text-xs font-medium ${color}`}>
       <div className="w-1.5 h-1.5 rounded-full bg-current" />
@@ -31,10 +31,10 @@ function ScoreBadge({ score }: { score: number | null }) {
 
 function InfoRow({ label, value, icon }: { label: string; value: React.ReactNode; icon?: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-2 py-1.5 border-b border-border/30 last:border-0">
-      {icon && <span className="text-muted-foreground mt-0.5 shrink-0">{icon}</span>}
-      <span className="text-xs text-muted-foreground w-36 shrink-0">{label}</span>
-      <span className="text-sm font-medium flex-1">{value ?? <span className="text-muted-foreground/50 text-xs">—</span>}</span>
+    <div className="flex items-start gap-2 py-1.5 border-b border-border/30 last:border-0″>
+      {icon && <span className="text-muted-foreground mt-0.5 shrink-0″>{icon}</span>}
+      <span className="text-xs text-muted-foreground w-36 shrink-0″>{label}</span>
+      <span className="text-sm font-medium flex-1″>{value ?? <span className="text-muted-foreground/50 text-xs">—</span>}</span>
     </div>
   );
 }
@@ -43,7 +43,7 @@ function BoolChip({ value, label }: { value: boolean | null | undefined; label: 
   if (value == null) return null;
   return (
     <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full border ${value ? "bg-emerald-500/10 text-emerald-600 border-emerald-500/30" : "bg-rose-500/10 text-rose-600 border-rose-500/30"}`}>
-      {value ? <CheckCircle className="w-3 h-3" /> : <XCircle className="w-3 h-3" />}
+      {value ? <CheckCircle className="w-3 h-3″ /> : <XCircle className="w-3 h-3" />}
       {label}
     </span>
   );
@@ -53,7 +53,7 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
   const { data, isLoading } = trpc.profile360.adminGetMember360.useQuery({ type: "partner", id: partnerId });
 
   if (isLoading) return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-48″>
       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
     </div>
   );
@@ -64,7 +64,7 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
   const p = profile360;
 
   return (
-    <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
+    <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1″>
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
@@ -75,10 +75,10 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
             <ScoreBadge score={p?.completenessScore ?? null} />
           </div>
         </div>
-        {p && <Progress value={p.completenessScore ?? 0} className="w-24 h-2 mt-2" />}
+        {p && <Progress value={p.completenessScore ?? 0} className="w-24 h-2 mt-2″ />}
       </div>
 
-      <Tabs defaultValue="contact" className="space-y-3">
+      <Tabs defaultValue="contact" className="space-y-3″>
         <TabsList className="grid grid-cols-4 h-auto">
           <TabsTrigger value="contact" className="text-xs">Contact</TabsTrigger>
           <TabsTrigger value="business" className="text-xs">Business</TabsTrigger>
@@ -87,13 +87,13 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
         </TabsList>
 
         <TabsContent value="contact">
-          <Card><CardContent className="pt-4 space-y-0">
-            <InfoRow label="Contact Name" value={partner.contactName} icon={<Users className="w-3 h-3" />} />
-            <InfoRow label="Email" value={partner.contactEmail} icon={<Mail className="w-3 h-3" />} />
-            <InfoRow label="Phone" value={partner.contactPhone} icon={<Phone className="w-3 h-3" />} />
-            <InfoRow label="Website" value={partner.website} icon={<Zap className="w-3 h-3" />} />
-            <InfoRow label="Service Area" value={partner.serviceArea} icon={<MapPin className="w-3 h-3" />} />
-            <InfoRow label="Applied" value={partner.appliedAt ? new Date(partner.appliedAt).toLocaleDateString() : null} icon={<Calendar className="w-3 h-3" />} />
+          <Card><CardContent className="pt-4 space-y-0″>
+            <InfoRow label="Contact Name" value={partner.contactName} icon={<Users className="w-3 h-3″ />} />
+            <InfoRow label="Email" value={partner.contactEmail} icon={<Mail className="w-3 h-3″ />} />
+            <InfoRow label="Phone" value={partner.contactPhone} icon={<Phone className="w-3 h-3″ />} />
+            <InfoRow label="Website" value={partner.website} icon={<Zap className="w-3 h-3″ />} />
+            <InfoRow label="Service Area" value={partner.serviceArea} icon={<MapPin className="w-3 h-3″ />} />
+            <InfoRow label="Applied" value={partner.appliedAt ? new Date(partner.appliedAt).toLocaleDateString() : null} icon={<Calendar className="w-3 h-3″ />} />
             {p && <>
               <InfoRow label="Comm. Style" value={p.communicationStyle?.replace(/_/g, " ")} />
               <InfoRow label="Best Time" value={p.bestTimeToContact?.replace(/_/g, " ")} />
@@ -102,7 +102,7 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
         </TabsContent>
 
         <TabsContent value="business">
-          <Card><CardContent className="pt-4 space-y-0">
+          <Card><CardContent className="pt-4 space-y-0″>
             {p ? <>
               <InfoRow label="Years in Business" value={p.yearsInBusiness?.replace(/_/g, " ")} />
               <InfoRow label="Team Size" value={p.teamSize?.replace(/_/g, " ")} />
@@ -113,7 +113,7 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
               <InfoRow label="Preferred Lead" value={p.preferredLeadType} />
               <InfoRow label="Tech Comfort" value={p.techComfortLevel} />
               <InfoRow label="CRM" value={p.currentCrm} />
-              <div className="flex flex-wrap gap-1.5 pt-2">
+              <div className="flex flex-wrap gap-1.5 pt-2″>
                 <BoolChip value={p.isLicensed} label="Licensed" />
                 <BoolChip value={p.isInsured} label="Insured" />
                 <BoolChip value={p.isBonded} label="Bonded" />
@@ -125,13 +125,13 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
         </TabsContent>
 
         <TabsContent value="goals">
-          <Card><CardContent className="pt-4 space-y-0">
+          <Card><CardContent className="pt-4 space-y-0″>
             {p ? <>
               <InfoRow label="Primary Goal" value={p.primaryGoal?.replace(/_/g, " ")} />
               <InfoRow label="Revenue Goal 12mo" value={p.revenueGoal12mo?.replace(/_/g, " ")} />
               <InfoRow label="Biggest Challenge" value={p.biggestChallenge?.replace(/_/g, " ")} />
               <InfoRow label="Referral Motivation" value={p.referralMotivation?.replace(/_/g, " ")} />
-              <div className="flex flex-wrap gap-1.5 pt-2">
+              <div className="flex flex-wrap gap-1.5 pt-2″>
                 <BoolChip value={p.openToHiring} label="Open to Hiring" />
                 <BoolChip value={p.openToFranchise} label="Open to Franchise" />
                 <BoolChip value={p.openToAcquisition} label="Open to Acquisition" />
@@ -143,7 +143,7 @@ function PartnerDetailModal({ partnerId, onClose }: { partnerId: number; onClose
         </TabsContent>
 
         <TabsContent value="social">
-          <Card><CardContent className="pt-4 space-y-0">
+          <Card><CardContent className="pt-4 space-y-0″>
             {p ? <>
               <InfoRow label="Google Business" value={p.googleBusinessUrl ? <a href={p.googleBusinessUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs">View</a> : null} />
               <InfoRow label="Yelp" value={p.yelpUrl ? <a href={p.yelpUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs">View</a> : null} />
@@ -163,7 +163,7 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
   const { data, isLoading } = trpc.profile360.adminGetMember360.useQuery({ type: "homeowner", id: userId });
 
   if (isLoading) return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-48″>
       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
     </div>
   );
@@ -173,7 +173,7 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
   const { user, profile360: p, homeProfile, properties } = data;
 
   return (
-    <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
+    <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1″>
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-lg font-bold">{homeProfile?.displayName ?? user.name ?? "Homeowner"}</h3>
@@ -186,10 +186,10 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
       </div>
 
       {properties.length > 0 && (
-        <Card className="bg-muted/30">
-          <CardContent className="pt-3 pb-3">
-            <p className="text-xs font-medium text-muted-foreground mb-2">Primary Property</p>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+        <Card className="bg-muted/30″>
+          <CardContent className="pt-3 pb-3″>
+            <p className="text-xs font-medium text-muted-foreground mb-2″>Primary Property</p>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1″>
               <InfoRow label="Address" value={properties[0].address} />
               <InfoRow label="Type" value={properties[0].propertyType} />
               <InfoRow label="Sq Ft" value={properties[0].sqft?.toLocaleString()} />
@@ -200,7 +200,7 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
         </Card>
       )}
 
-      <Tabs defaultValue="lifestyle" className="space-y-3">
+      <Tabs defaultValue="lifestyle" className="space-y-3″>
         <TabsList className="grid grid-cols-3 h-auto">
           <TabsTrigger value="lifestyle" className="text-xs">Lifestyle</TabsTrigger>
           <TabsTrigger value="finances" className="text-xs">Finances</TabsTrigger>
@@ -208,14 +208,14 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
         </TabsList>
 
         <TabsContent value="lifestyle">
-          <Card><CardContent className="pt-4 space-y-0">
+          <Card><CardContent className="pt-4 space-y-0″>
             {p ? <>
               <InfoRow label="Household Size" value={p.householdSize?.replace(/_/g, " ")} />
               <InfoRow label="Lifestyle Type" value={p.lifestyleType?.replace(/_/g, " ")} />
               <InfoRow label="Comm. Style" value={p.communicationStyle?.replace(/_/g, " ")} />
               <InfoRow label="Best Time" value={p.bestTimeToContact?.replace(/_/g, " ")} />
               <InfoRow label="Response Expectation" value={p.responseExpectation?.replace(/_/g, " ")} />
-              <div className="flex flex-wrap gap-1.5 pt-2">
+              <div className="flex flex-wrap gap-1.5 pt-2″>
                 <BoolChip value={p.hasChildren} label="Has Children" />
                 <BoolChip value={p.entertainsFrequently} label="Entertains" />
                 <BoolChip value={p.workFromHome} label="WFH" />
@@ -227,14 +227,14 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
         </TabsContent>
 
         <TabsContent value="finances">
-          <Card><CardContent className="pt-4 space-y-0">
+          <Card><CardContent className="pt-4 space-y-0″>
             {p ? <>
               <InfoRow label="Budget Comfort" value={p.budgetComfort?.replace(/_/g, " ")} />
               <InfoRow label="Typical Budget" value={p.typicalProjectBudget?.replace(/_/g, " ")} />
               <InfoRow label="Insurance Provider" value={p.insuranceProvider} />
               <InfoRow label="Decision Maker" value={p.decisionMaker} />
               <InfoRow label="Decision Speed" value={p.decisionSpeed?.replace(/_/g, " ")} />
-              <div className="flex flex-wrap gap-1.5 pt-2">
+              <div className="flex flex-wrap gap-1.5 pt-2″>
                 <BoolChip value={p.financesBigProjects} label="Finances Projects" />
                 <BoolChip value={p.hasHomeWarranty} label="Home Warranty" />
                 <BoolChip value={p.hasHomeInsurance} label="Home Insurance" />
@@ -245,25 +245,25 @@ function HomeownerDetailModal({ userId, onClose }: { userId: number; onClose: ()
         </TabsContent>
 
         <TabsContent value="goals">
-          <Card><CardContent className="pt-4 space-y-0">
+          <Card><CardContent className="pt-4 space-y-0″>
             {p ? <>
               <InfoRow label="Primary Goal" value={p.primaryHomeGoal?.replace(/_/g, " ")} />
               <InfoRow label="Sell Timeframe" value={p.sellTimeframe?.replace(/_/g, " ")} />
               <InfoRow label="Referral Motivation" value={p.referralMotivation} />
               <InfoRow label="NPS Score" value={p.npsScore != null ? `${p.npsScore}/10` : null} />
               {p.dreamProjects && (
-                <div className="pt-2">
-                  <p className="text-xs text-muted-foreground mb-1">Dream Projects</p>
-                  <p className="text-sm bg-muted/40 rounded p-2">{p.dreamProjects}</p>
+                <div className="pt-2″>
+                  <p className="text-xs text-muted-foreground mb-1″>Dream Projects</p>
+                  <p className="text-sm bg-muted/40 rounded p-2″>{p.dreamProjects}</p>
                 </div>
               )}
               {p.satisfactionNotes && (
-                <div className="pt-2">
-                  <p className="text-xs text-muted-foreground mb-1">Feedback</p>
-                  <p className="text-sm bg-muted/40 rounded p-2">{p.satisfactionNotes}</p>
+                <div className="pt-2″>
+                  <p className="text-xs text-muted-foreground mb-1″>Feedback</p>
+                  <p className="text-sm bg-muted/40 rounded p-2″>{p.satisfactionNotes}</p>
                 </div>
               )}
-              <div className="flex flex-wrap gap-1.5 pt-2">
+              <div className="flex flex-wrap gap-1.5 pt-2″>
                 <BoolChip value={p.planningToSell} label="Planning to Sell" />
                 <BoolChip value={p.hasReferredBefore} label="Has Referred" />
                 <BoolChip value={p.socialMediaActive} label="Social Active" />
@@ -305,24 +305,24 @@ export default function Admin360Members() {
 
   return (
     <AdminLayout>
-    <div className="p-6 max-w-6xl mx-auto space-y-6">
+    <div className="p-6 max-w-6xl mx-auto space-y-6″>
       <div>
         <h1 className="text-2xl font-bold">360° Member Intelligence</h1>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-sm mt-1″>
           Deep profile data for every partner and homeowner in the network.
         </p>
       </div>
 
       {/* Stats strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
         {[
-          { label: "Total Partners", value: partnerRows.length, icon: <Building2 className="w-4 h-4 text-blue-500" /> },
-          { label: "Homeowners", value: homeownerRows.length, icon: <Home className="w-4 h-4 text-emerald-500" /> },
-          { label: "Partners w/ 360 Data", value: (partnerRows as any[]).filter(p => p.profile360).length, icon: <Star className="w-4 h-4 text-amber-500" /> },
-          { label: "Homeowners w/ 360 Data", value: (homeownerRows as any[]).filter(h => h.profile360).length, icon: <TrendingUp className="w-4 h-4 text-purple-500" /> },
+          { label: "Total Partners", value: partnerRows.length, icon: <Building2 className="w-4 h-4 text-blue-500″ /> },
+          { label: "Homeowners", value: homeownerRows.length, icon: <Home className="w-4 h-4 text-emerald-500″ /> },
+          { label: "Partners w/ 360 Data", value: (partnerRows as any[]).filter(p => p.profile360).length, icon: <Star className="w-4 h-4 text-amber-500″ /> },
+          { label: "Homeowners w/ 360 Data", value: (homeownerRows as any[]).filter(h => h.profile360).length, icon: <TrendingUp className="w-4 h-4 text-purple-500″ /> },
         ].map(item => (
-          <Card key={item.label} className="p-3">
-            <div className="flex items-center gap-2">
+          <Card key={item.label} className="p-3″>
+            <div className="flex items-center gap-2″>
               {item.icon}
               <div>
                 <p className="text-xs text-muted-foreground">{item.label}</p>
@@ -333,15 +333,15 @@ export default function Admin360Members() {
         ))}
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3″>
         <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input placeholder="Search by name, email, trade..." value={search} onChange={e => setSearch(e.target.value)} className="pl-9 h-9 text-sm" />
         </div>
         <Tabs value={tab} onValueChange={v => setTab(v as any)}>
           <TabsList>
-            <TabsTrigger value="partners" className="text-xs gap-1"><Building2 className="w-3 h-3" /> Partners</TabsTrigger>
-            <TabsTrigger value="homeowners" className="text-xs gap-1"><Home className="w-3 h-3" /> Homeowners</TabsTrigger>
+            <TabsTrigger value="partners" className="text-xs gap-1″><Building2 className="w-3 h-3" /> Partners</TabsTrigger>
+            <TabsTrigger value="homeowners" className="text-xs gap-1″><Home className="w-3 h-3" /> Homeowners</TabsTrigger>
           </TabsList>
         </Tabs>
       </div>
@@ -349,9 +349,9 @@ export default function Admin360Members() {
       {/* Partners table */}
       {tab === "partners" && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent className="p-0″>
             {loadingPartners ? (
-              <div className="flex items-center justify-center h-32">
+              <div className="flex items-center justify-center h-32″>
                 <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary" />
               </div>
             ) : filteredPartners.length === 0 ? (
@@ -360,20 +360,20 @@ export default function Admin360Members() {
               <div className="divide-y divide-border">
                 {filteredPartners.map((p: any) => (
                   <div key={p.id} className="flex items-center justify-between px-4 py-3 hover:bg-muted/30 transition-colors">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <div className="flex items-center gap-3 min-w-0″>
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0″>
                         <Building2 className="w-4 h-4 text-primary" />
                       </div>
-                      <div className="min-w-0">
+                      <div className="min-w-0″>
                         <p className="text-sm font-medium truncate">{p.businessName}</p>
                         <p className="text-xs text-muted-foreground truncate">{p.businessType} · {p.contactEmail}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex items-center gap-3 shrink-0″>
                       <Badge variant={p.status === "approved" ? "default" : "secondary"} className="text-xs hidden sm:inline-flex">{p.status}</Badge>
                       <ScoreBadge score={p.profile360?.completenessScore ?? null} />
-                      <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={() => setSelectedPartner(p.id)}>
-                        <Eye className="w-3.5 h-3.5" />
+                      <Button size="sm" variant="ghost" className="h-7 w-7 p-0″ onClick={() => setSelectedPartner(p.id)}>
+                        <Eye className="w-3.5 h-3.5″ />
                       </Button>
                     </div>
                   </div>
@@ -387,9 +387,9 @@ export default function Admin360Members() {
       {/* Homeowners table */}
       {tab === "homeowners" && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent className="p-0″>
             {loadingHomeowners ? (
-              <div className="flex items-center justify-center h-32">
+              <div className="flex items-center justify-center h-32″>
                 <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary" />
               </div>
             ) : filteredHomeowners.length === 0 ? (
@@ -398,19 +398,19 @@ export default function Admin360Members() {
               <div className="divide-y divide-border">
                 {filteredHomeowners.map((h: any) => (
                   <div key={h.id} className="flex items-center justify-between px-4 py-3 hover:bg-muted/30 transition-colors">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
-                        <Home className="w-4 h-4 text-emerald-500" />
+                    <div className="flex items-center gap-3 min-w-0″>
+                      <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0″>
+                        <Home className="w-4 h-4 text-emerald-500″ />
                       </div>
-                      <div className="min-w-0">
+                      <div className="min-w-0″>
                         <p className="text-sm font-medium truncate">{h.displayName ?? `Homeowner #${h.userId}`}</p>
                         <p className="text-xs text-muted-foreground truncate">User ID: {h.userId}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex items-center gap-3 shrink-0″>
                       <ScoreBadge score={h.profile360?.completenessScore ?? null} />
-                      <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={() => setSelectedHomeowner(h.userId)}>
-                        <Eye className="w-3.5 h-3.5" />
+                      <Button size="sm" variant="ghost" className="h-7 w-7 p-0″ onClick={() => setSelectedHomeowner(h.userId)}>
+                        <Eye className="w-3.5 h-3.5″ />
                       </Button>
                     </div>
                   </div>

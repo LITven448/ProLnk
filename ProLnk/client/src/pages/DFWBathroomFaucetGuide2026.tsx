@@ -35,14 +35,14 @@ export default function DFWBathroomFaucetGuide2026() {
           ].map((c, i) => (
             <div key={i} style={{ background: '#1a2840', borderRadius: 12, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>{c.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1a2840', borderRadius: 16, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Find Your DFW Bathroom Faucet</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Find Your DFW Bathroom Faucet</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', marginBottom: 8, fontWeight: 600 }}>Vanity Hole Configuration</label>
             <select value={vanityType} onChange={e => setVanityType(e.target.value)} style={{ width: '100%', padding: '12px', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, fontSize: 15 }}>

@@ -68,7 +68,7 @@ export default function DFWUltimateHomeownerGuide2026() {
           {stats.map((s, i) => (
             <div key={i} style={{ background: '#1e3a5f', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #2d4a7a' }}>
               <div style={{ fontSize: 24, marginBottom: 4 }}>{s.icon}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 2 }}>{s.label}</div>
             </div>
           ))}
@@ -81,7 +81,7 @@ export default function DFWUltimateHomeownerGuide2026() {
               onClick={() => setActive(s.id)}
               style={{
                 padding: '10px 20px', borderRadius: 24, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: active === s.id ? '#F5E642' : '#1e3a5f', color: active === s.id ? '#0A1628' : '#94a3b8',
+                background: active === s.id ? '#F5E642′ : '#1e3a5f', color: active === s.id ? '#0A1628' : '#94a3b8',
               }}
             >
               {s.label}
@@ -104,7 +104,7 @@ export default function DFWUltimateHomeownerGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>🏆</div>
           <h2 style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>ProLnk — Your DFW Homeownership Partner</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16 }}>From your first home inspection to your final sale, ProLnk connects you with the best pros in North Texas at every stage.</p>

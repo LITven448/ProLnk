@@ -105,9 +105,9 @@ export default function DFWHVACHeatExchangerFinal() {
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: `4px solid ${assessment.color}` }}>
               <div style={{ color: assessment.color, fontWeight: 700, fontSize: 18, marginBottom: 8 }}>{assessment.urgency}</div>
               <div style={{ color: '#94a3b8', marginBottom: 12, lineHeight: 1.6 }}>{assessment.assessment}</div>
-              <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642' }}>✅ Recommendation: </span><span style={{ color: '#e2e8f0', fontSize: 14 }}>{assessment.recommendation}</span></div>
+              <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>✅ Recommendation: </span><span style={{ color: '#e2e8f0', fontSize: 14 }}>{assessment.recommendation}</span></div>
               <div style={{ background: '#0f2040', borderRadius: 8, padding: 12, marginBottom: 10 }}>
-                <span style={{ color: '#F5E642' }}>🔧 What to ask your inspector: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{assessment.inspectionNote}</span>
+                <span style={{ color: '#F5E642′ }}>🔧 What to ask your inspector: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{assessment.inspectionNote}</span>
               </div>
               <div style={{ color: '#64748b', fontSize: 13 }}>💰 {assessment.cost}</div>
             </div>

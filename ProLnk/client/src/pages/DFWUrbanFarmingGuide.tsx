@@ -54,8 +54,8 @@ export default function DFWUrbanFarmingGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🌽</div>
           <h1 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#F5E642', margin: '0 0 12px' }}>DFW Urban Farming Guide</h1>
@@ -68,16 +68,16 @@ export default function DFWUrbanFarmingGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #F5E642' }}>
-                  {['City','Allowed','Limit','Notes'].map(h => <th key={h} style={{ color: '#F5E642', padding: '8px 12px', textAlign: 'left', fontWeight: '700' }}>{h}</th>)}
+                <tr style={{ borderBottom: '1px solid #F5E642′ }}>
+                  {['City','Allowed','Limit','Notes'].map(h => <th key={h} style={{ color: '#F5E642', padding: '8px 12px', textAlign: 'left', fontWeight: '700′ }}>{h}</th>)}
                 </tr>
               </thead>
               <tbody>
                 {chickenLegality.map(r => (
                   <tr key={r.city} style={{ borderBottom: '1px solid #1e3a5f' }}>
-                    <td style={{ padding: '10px 12px', color: '#e2e8f0' }}>{r.city}</td>
+                    <td style={{ padding: '10px 12px', color: '#e2e8f0′ }}>{r.city}</td>
                     <td style={{ padding: '10px 12px' }}><span style={{ background: r.allowed ? '#14532d' : '#7f1d1d', color: r.allowed ? '#86efac' : '#fca5a5', borderRadius: '4px', padding: '2px 8px', fontSize: '0.78rem' }}>{r.allowed ? 'Yes' : 'No'}</span></td>
-                    <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{r.limit}</td>
+                    <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{r.limit}</td>
                     <td style={{ padding: '10px 12px', color: '#64748b', fontSize: '0.8rem' }}>{r.notes}</td>
                   </tr>
                 ))}
@@ -92,7 +92,7 @@ export default function DFWUrbanFarmingGuide() {
               <div key={t.tree} style={{ background: '#0A1628', borderRadius: '12px', padding: '16px', border: '1px solid #1e3a5f' }}>
                 <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '4px' }}>{t.tree}</div>
                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '8px' }}>Difficulty: {t.difficulty} | Yield: {t.yield}</div>
-                <div style={{ fontSize: '0.82rem', color: '#94a3b8' }}>{t.note}</div>
+                <div style={{ fontSize: '0.82rem', color: '#94a3b8′ }}>{t.note}</div>
               </div>
             ))}
           </div>
@@ -106,7 +106,7 @@ export default function DFWUrbanFarmingGuide() {
             </div>
           ))}
         </div>
-        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '24px' }}>🔍 Get Your Urban Farm Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
@@ -126,11 +126,11 @@ export default function DFWUrbanFarmingGuide() {
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '10px', padding: '12px 28px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Get My Urban Farm Plan</button>
           {guide && (
-            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642' }}>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🐓 Chickens: </span><span style={{ color: '#94a3b8' }}>{guide.chickenNote}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🥦 Raised Beds: </span><span style={{ color: '#94a3b8' }}>{guide.beds}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🌳 Fruit Trees: </span><span style={{ color: '#94a3b8' }}>{guide.trees}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: '600' }}>🌾 Expected Yield: </span><span style={{ color: '#94a3b8' }}>{guide.yieldEst}</span></div>
+            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642′ }}>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🐓 Chickens: </span><span style={{ color: '#94a3b8' }}>{guide.chickenNote}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🥦 Raised Beds: </span><span style={{ color: '#94a3b8' }}>{guide.beds}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🌳 Fruit Trees: </span><span style={{ color: '#94a3b8' }}>{guide.trees}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: '600′ }}>🌾 Expected Yield: </span><span style={{ color: '#94a3b8' }}>{guide.yieldEst}</span></div>
             </div>
           )}
         </div>

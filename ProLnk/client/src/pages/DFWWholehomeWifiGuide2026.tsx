@@ -15,7 +15,7 @@ export default function DFWWholehomeWifiGuide2026() {
   }
 
   const btnStyle = (active: boolean) => ({
-    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642' : '2px solid #1e3a5f',
+    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642′ : '2px solid #1e3a5f',
     backgroundColor: active ? '#1a2f4e' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '.9rem'
   });
 
@@ -24,12 +24,12 @@ export default function DFWWholehomeWifiGuide2026() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>📶</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0' }}>DFW Whole-Home WiFi Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>Mesh WiFi systems for larger DFW homes — which covers your smart home best?</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0′ }}>DFW Whole-Home WiFi Guide 2026</h1>
+          <p style={{ color: '#94a3b8′ }}>Mesh WiFi systems for larger DFW homes — which covers your smart home best?</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.25rem', marginBottom: '2rem' }}>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.25rem', border: '2px solid #3b82f6' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.25rem', border: '2px solid #3b82f6′ }}>
             <div style={{ fontSize: '1.4rem', marginBottom: '.5rem' }}>🔵 Eero Pro 6E</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.7', paddingLeft: '1rem', fontSize: '.85rem' }}>
               <li>WiFi 6E tri-band</li>
@@ -39,7 +39,7 @@ export default function DFWWholehomeWifiGuide2026() {
               <li>$599 (3-pack)</li>
             </ul>
           </div>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.25rem', border: '2px solid #4285F4' }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.25rem', border: '2px solid #4285F4′ }}>
             <div style={{ fontSize: '1.4rem', marginBottom: '.5rem' }}>🔵 Google Nest WiFi Pro</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.7', paddingLeft: '1rem', fontSize: '.85rem' }}>
               <li>WiFi 6E tri-band</li>
@@ -81,12 +81,12 @@ export default function DFWWholehomeWifiGuide2026() {
           <button onClick={recommend} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '.75rem 2rem', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
             Find My Mesh System →
           </button>
-          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642', lineHeight: '1.6' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642', lineHeight: '1.6′ }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '.5rem' }}>🏡 DFW Two-Story Placement Tip</h3>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>DFW homes commonly have open floor plans with bonus rooms, media rooms, and detached garages. Place one mesh node per floor, and a third in the garage or back patio for smart sprinkler and camera coverage. Avoid placing nodes near microwaves or brick walls — common in DFW construction — which degrade 5GHz signal by up to 40%.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.7′ }}>DFW homes commonly have open floor plans with bonus rooms, media rooms, and detached garages. Place one mesh node per floor, and a third in the garage or back patio for smart sprinkler and camera coverage. Avoid placing nodes near microwaves or brick walls — common in DFW construction — which degrade 5GHz signal by up to 40%.</p>
         </div>
       </div>
     </div>

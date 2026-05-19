@@ -27,11 +27,11 @@ export default function DFWTrashRecyclingGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>
               <div style={{ color: '#4ade80', fontWeight: 700, fontSize: 12, marginBottom: 6 }}>✅ YES — Recycle</div>
-              {['Paper, cardboard (flattened)','Glass bottles & jars','Plastic #1 and #2 only','Aluminum & tin cans'].map((i,k) => <div key={k} style={{ color: '#cbd5e1', fontSize: 12, padding: '2px 0' }}>{i}</div>)}
+              {['Paper, cardboard (flattened)','Glass bottles & jars','Plastic #1 and #2 only','Aluminum & tin cans'].map((i,k) => <div key={k} style={{ color: '#cbd5e1', fontSize: 12, padding: '2px 0′ }}>{i}</div>)}
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>
               <div style={{ color: '#f87171', fontWeight: 700, fontSize: 12, marginBottom: 6 }}>❌ NO — Trash Only</div>
-              {['Plastic bags (return to store)','Styrofoam','Food-contaminated containers','Shredded paper (bag separately)'].map((i,k) => <div key={k} style={{ color: '#cbd5e1', fontSize: 12, padding: '2px 0' }}>{i}</div>)}
+              {['Plastic bags (return to store)','Styrofoam','Food-contaminated containers','Shredded paper (bag separately)'].map((i,k) => <div key={k} style={{ color: '#cbd5e1', fontSize: 12, padding: '2px 0′ }}>{i}</div>)}
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function DFWTrashRecyclingGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {cities.map(n => (
             <button key={n.id} onClick={() => setSelected(selected === n.id ? null : n.id)}
-              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220' : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220′ : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
               {n.label}
             </button>
           ))}

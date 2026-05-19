@@ -8,7 +8,7 @@ const disabilityTypes = [
       { name: 'SAH Grant', amount: 'Up to $109,986', description: 'Specially Adapted Housing grant for veterans with severe service-connected disability. Covers ramps, widened doors, roll-in showers, adapted kitchens.' },
       { name: 'TRA Grant', amount: 'Up to $49,470', description: 'Temporary Residence Adaptation grant helps a family member adapt their home where the veteran temporarily lives.' },
     ],
-    mods: ['Roll-in shower', 'Widened doorways (36"+)', 'Lowered countertops', 'Accessible parking', 'Ramp at all entries']
+    mods: ['Roll-in shower', 'Widened doorways (36″+)', 'Lowered countertops', 'Accessible parking', 'Ramp at all entries']
   },
   {
     type: 'Spinal Cord Injury / Paralysis',
@@ -17,7 +17,7 @@ const disabilityTypes = [
       { name: 'SAH Grant', amount: 'Up to $109,986', description: 'Primary grant for veterans requiring wheelchair-accessible homes. One of the most comprehensive federal housing grants available.' },
       { name: 'SHA Grant', amount: 'Up to $21,935', description: 'Special Home Adaptation grant for veterans with blindness or loss of use of both hands. Broader eligibility than SAH.' },
     ],
-    mods: ['Elevator or vertical platform lift', 'Wheelchair turning radius (60" min)', 'Roll-under sink and range', 'Automatic door openers', 'Grab bars and transfer areas']
+    mods: ['Elevator or vertical platform lift', 'Wheelchair turning radius (60″ min)', 'Roll-under sink and range', 'Automatic door openers', 'Grab bars and transfer areas']
   },
   {
     type: 'Vision Loss / Blindness',
@@ -57,17 +57,17 @@ export default function DFWVeteranHomeModification2026() {
           {[{ label: 'SAH Grant Maximum', value: '$109,986', icon: '🏅' }, { label: 'SHA Grant Maximum', value: '$21,935', icon: '🎖️' }, { label: 'DFW Veterans', value: '400K+', icon: '⭐' }, { label: 'HISA Grant', value: '$6,800', icon: '🏠' }].map(s => (
             <div key={s.label} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Select your service-connected disability type:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Select your service-connected disability type:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {disabilityTypes.map((d, i) => (
             <button key={i} onClick={() => setTypeIdx(i === typeIdx ? null : i)}
-              style={{ background: typeIdx === i ? '#F5E642' : '#132036', color: typeIdx === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: typeIdx === i ? '#F5E642′ : '#132036', color: typeIdx === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
               {d.type}
             </button>
@@ -76,10 +76,10 @@ export default function DFWVeteranHomeModification2026() {
 
         {typeIdx !== null && (
           <div style={{ marginBottom: '2rem' }}>
-            <h3 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>VA Grants You May Qualify For</h3>
+            <h3 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>VA Grants You May Qualify For</h3>
             <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1.5rem' }}>
               {disabilityTypes[typeIdx].grants.map((g, i) => (
-                <div key={i} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
+                <div key={i} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                     <span style={{ fontWeight: 700 }}>{g.name}</span>
                     <span style={{ color: '#F5E642', fontWeight: 700 }}>{g.amount}</span>
@@ -88,7 +88,7 @@ export default function DFWVeteranHomeModification2026() {
                 </div>
               ))}
             </div>
-            <h3 style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Recommended Modifications</h3>
+            <h3 style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Recommended Modifications</h3>
             <ul style={{ background: '#132036', borderRadius: 10, padding: '1rem 1rem 1rem 2rem', lineHeight: 2 }}>
               {disabilityTypes[typeIdx].mods.map((m, i) => <li key={i}>{m}</li>)}
             </ul>

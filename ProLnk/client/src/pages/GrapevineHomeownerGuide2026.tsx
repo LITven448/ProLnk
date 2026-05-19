@@ -64,7 +64,7 @@ export default function GrapevineHomeownerGuide2026() {
         <h2 style={{ color: '#F5E642', marginBottom: 16 }}>Select Your Home Era</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 32 }}>
           {eras.map(era => (
-            <button key={era.id} onClick={() => setSelectedEra(era.id)} style={{ background: selectedEra === era.id ? era.color : '#0D1F3C', border: `2px solid ${era.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedEra === era.id ? '#0A1628' : '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+            <button key={era.id} onClick={() => setSelectedEra(era.id)} style={{ background: selectedEra === era.id ? era.color : '#0D1F3C', border: `2px solid ${era.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedEra === era.id ? '#0A1628′ : '#fff', textAlign: ’left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{era.label}</div>
               <div style={{ fontSize: 13, opacity: 0.85 }}>{era.desc}</div>
             </button>

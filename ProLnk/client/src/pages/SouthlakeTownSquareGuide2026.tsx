@@ -64,7 +64,7 @@ export default function SouthlakeTownSquareGuide2026() {
         <h2 style={{ color: '#F5E642', marginBottom: 16 }}>Select Your Property Type</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 32 }}>
           {types.map(t => (
-            <button key={t.id} onClick={() => setSelectedType(t.id)} style={{ background: selectedType === t.id ? t.color : '#0D1F3C', border: `2px solid ${t.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedType === t.id ? '#0A1628' : '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+            <button key={t.id} onClick={() => setSelectedType(t.id)} style={{ background: selectedType === t.id ? t.color : '#0D1F3C', border: `2px solid ${t.color}`, borderRadius: 12, padding: '20px 16px', cursor: 'pointer', color: selectedType === t.id ? '#0A1628′ : '#fff', textAlign: ’left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{t.label}</div>
               <div style={{ fontSize: 13, opacity: 0.85 }}>{t.desc}</div>
             </button>

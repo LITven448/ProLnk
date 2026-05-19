@@ -29,9 +29,9 @@ const MARKETS: MarketRow[] = [
 ];
 
 const STATUS_CFG = {
-  Live:     { color: "#10B981", bg: "rgba(16,185,129,0.12)",  border: "rgba(16,185,129,0.25)" },
+  Live:     { color: "#10B981″, bg: "rgba(16,185,129,0.12)",  border: "rgba(16,185,129,0.25)" },
   Planning: { color: "#F59E0B", bg: "rgba(245,158,11,0.12)",  border: "rgba(245,158,11,0.25)" },
-  Interest: { color: "#3B82F6", bg: "rgba(59,130,246,0.12)",  border: "rgba(59,130,246,0.25)" },
+  Interest: { color: "#3B82F6″, bg: "rgba(59,130,246,0.12)",  border: "rgba(59,130,246,0.25)" },
   Watch:    { color: "#64748B", bg: "rgba(100,116,139,0.12)", border: "rgba(100,116,139,0.25)" },
 };
 
@@ -44,11 +44,11 @@ const HOUSTON_CHECKLIST = [
 ];
 
 const TIMELINE = [
-  { label: "DFW",         period: "Q1 2026", active: true },
-  { label: "Houston",     period: "Q3 2026", active: false },
-  { label: "San Antonio", period: "Q4 2026", active: false },
-  { label: "Austin",      period: "Q1 2027", active: false },
-  { label: "Phoenix",     period: "Q2 2027", active: false },
+  { label: "DFW",         period: "Q1 2026″, active: true },
+  { label: "Houston",     period: "Q3 2026″, active: false },
+  { label: "San Antonio", period: "Q4 2026″, active: false },
+  { label: "Austin",      period: "Q1 2027″, active: false },
+  { label: "Phoenix",     period: "Q2 2027″, active: false },
 ];
 
 export default function GeographicExpansionTracker() {
@@ -72,7 +72,7 @@ export default function GeographicExpansionTracker() {
               <h1 style={{ fontSize: 24, fontWeight: 800, color: "#F8FAFC", margin: 0 }}>
                 Geographic Expansion Tracker
               </h1>
-              <p style={{ fontSize: 14, color: "#94A3B8", margin: 0 }}>
+              <p style={{ fontSize: 14, color: "#94A3B8″, margin: 0 }}>
                 From DFW to nationwide, one market at a time
               </p>
             </div>
@@ -87,17 +87,17 @@ export default function GeographicExpansionTracker() {
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
             <div style={{
-              background: "#10B981", borderRadius: 20,
+              background: "#10B981″, borderRadius: 20,
               padding: "2px 10px", fontSize: 11, fontWeight: 700, color: "#fff",
             }}>LIVE</div>
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#E2E8F0" }}>Dallas-Fort Worth — Home Market</span>
+            <span style={{ fontSize: 16, fontWeight: 700, color: "#E2E8F0″ }}>Dallas-Fort Worth — Home Market</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 16 }}>
             {[
-              { label: "Active partners",    value: "147",    color: "#A78BFA" },
-              { label: "ZIP coverage",        value: "89/342", color: "#00B5B8" },
+              { label: "Active partners",    value: "147″,    color: "#A78BFA" },
+              { label: "ZIP coverage",        value: "89/342″, color: "#00B5B8" },
               { label: "Coverage %",          value: "26%",    color: "#F59E0B" },
-              { label: "Monthly MRR",         value: "$147K",  color: "#34D399" },
+              { label: "Monthly MRR",         value: "$147K",  color: "#34D399″ },
             ].map(({ label, value, color }) => (
               <div key={label} style={{ textAlign: "center" as const }}>
                 <div style={{ fontSize: 24, fontWeight: 800, color, marginBottom: 4 }}>{value}</div>
@@ -108,7 +108,7 @@ export default function GeographicExpansionTracker() {
           <div style={{
             marginTop: 14, padding: "10px 14px",
             background: "rgba(255,255,255,0.04)", borderRadius: 10,
-            fontSize: 13, color: "#94A3B8",
+            fontSize: 13, color: "#94A3B8″,
           }}>
             <Clock size={13} color="#64748B" style={{ marginRight: 6, verticalAlign: "middle" }} />
             <strong style={{ color: "#C4B5FD" }}>18 months</strong> estimated to full DFW ZIP coverage at current growth rate
@@ -117,12 +117,12 @@ export default function GeographicExpansionTracker() {
 
         {/* Houston Next Market */}
         <div style={{
-          background: "#1E293B", border: "1px solid #F59E0B44",
+          background: "#1E293B", border: "1px solid #F59E0B44″,
           borderRadius: 16, padding: "20px 24px", marginBottom: 20,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
             <Target size={18} color="#F59E0B" />
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#E2E8F0" }}>Next Market: Houston</span>
+            <span style={{ fontSize: 16, fontWeight: 700, color: "#E2E8F0″ }}>Next Market: Houston</span>
             <span style={{
               fontSize: 11, fontWeight: 700, color: "#F59E0B",
               background: "rgba(245,158,11,0.12)", borderRadius: 20, padding: "2px 10px",
@@ -138,17 +138,17 @@ export default function GeographicExpansionTracker() {
                 border: done ? "1px solid rgba(16,185,129,0.2)" : "1px solid rgba(239,68,68,0.2)",
               }}>
                 {done
-                  ? <CheckCircle size={16} color="#10B981" />
-                  : <XCircle size={16} color="#EF4444" />
+                  ? <CheckCircle size={16} color="#10B981″ />
+                  : <XCircle size={16} color="#EF4444″ />
                 }
-                <span style={{ fontSize: 14, color: done ? "#86EFAC" : "#FCA5A5" }}>{label}</span>
+                <span style={{ fontSize: 14, color: done ? "#86EFAC" : "#FCA5A5″ }}>{label}</span>
               </div>
             ))}
           </div>
           <Button
             onClick={() => window.location.href = "/admin/broadcast?city=houston"}
             style={{
-              marginTop: 16, background: "#F59E0B", color: "#1C1917",
+              marginTop: 16, background: "#F59E0B", color: "#1C1917″,
               fontWeight: 700, borderRadius: 10, padding: "10px 22px",
               border: "none", cursor: "pointer", fontSize: 14,
             }}
@@ -159,15 +159,15 @@ export default function GeographicExpansionTracker() {
 
         {/* Market Pipeline Table */}
         <div style={{ marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9", marginBottom: 14 }}>Market pipeline</h2>
-          <Card style={{ background: "#1E293B", border: "1px solid #334155", overflow: "hidden" }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9″, marginBottom: 14 }}>Market pipeline</h2>
+          <Card style={{ background: "#1E293B", border: "1px solid #334155″, overflow: "hidden" }}>
             <CardContent style={{ padding: 0 }}>
               {/* Table header */}
               <div style={{
                 display: "grid",
                 gridTemplateColumns: "2fr 1fr 1fr 80px 100px 80px 90px",
                 gap: 0, padding: "10px 20px",
-                background: "#0F172A", borderBottom: "1px solid #334155",
+                background: "#0F172A", borderBottom: "1px solid #334155″,
               }}>
                 {["Market", "Population", "TAM ($B)", "Pipeline", "HO Interest", "Readiness", "Status"].map(h => (
                   <div key={h} style={{ fontSize: 11, fontWeight: 700, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.04em" }}>{h}</div>
@@ -185,19 +185,19 @@ export default function GeographicExpansionTracker() {
                       display: "grid",
                       gridTemplateColumns: "2fr 1fr 1fr 80px 100px 80px 90px",
                       padding: "13px 20px", alignItems: "center",
-                      borderBottom: i < MARKETS.length - 1 ? "1px solid #293548" : "none",
+                      borderBottom: i < MARKETS.length - 1 ? "1px solid #293548″ : "none",
                       background: isHovered ? "rgba(255,255,255,0.03)" : "transparent",
                       transition: "background 0.15s",
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <MapPin size={14} color={cfg.color} />
-                      <span style={{ fontSize: 14, fontWeight: 600, color: "#E2E8F0" }}>{row.market}</span>
+                      <span style={{ fontSize: 14, fontWeight: 600, color: "#E2E8F0″ }}>{row.market}</span>
                     </div>
-                    <div style={{ fontSize: 13, color: "#94A3B8" }}>{row.population}</div>
-                    <div style={{ fontSize: 13, color: "#94A3B8" }}>{row.tam}</div>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: "#E2E8F0" }}>{row.pipeline}</div>
-                    <div style={{ fontSize: 13, color: "#94A3B8" }}>{row.homeownerInterest.toLocaleString()}</div>
+                    <div style={{ fontSize: 13, color: "#94A3B8″ }}>{row.population}</div>
+                    <div style={{ fontSize: 13, color: "#94A3B8″ }}>{row.tam}</div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: "#E2E8F0″ }}>{row.pipeline}</div>
+                    <div style={{ fontSize: 13, color: "#94A3B8″ }}>{row.homeownerInterest.toLocaleString()}</div>
                     <div>
                       <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                         <div style={{
@@ -230,12 +230,12 @@ export default function GeographicExpansionTracker() {
 
         {/* Cost Model */}
         <div style={{
-          background: "#1E293B", border: "1px solid #334155",
+          background: "#1E293B", border: "1px solid #334155″,
           borderRadius: 14, padding: "20px 24px", marginBottom: 20,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <BarChart3 size={18} color="#00B5B8" />
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#E2E8F0" }}>Expansion cost model</span>
+            <BarChart3 size={18} color="#00B5B8″ />
+            <span style={{ fontSize: 16, fontWeight: 700, color: "#E2E8F0″ }}>Expansion cost model</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 14 }}>
             {[
@@ -247,8 +247,8 @@ export default function GeographicExpansionTracker() {
                 background: "#0F172A", borderRadius: 10,
                 padding: "14px 16px", textAlign: "center" as const,
               }}>
-                <div style={{ fontSize: 22, fontWeight: 800, color: "#00B5B8", marginBottom: 4 }}>{amount}</div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: "#E2E8F0", marginBottom: 2 }}>{label}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: "#00B5B8″, marginBottom: 4 }}>{amount}</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: "#E2E8F0″, marginBottom: 2 }}>{label}</div>
                 <div style={{ fontSize: 11, color: "#64748B" }}>{desc}</div>
               </div>
             ))}
@@ -256,17 +256,17 @@ export default function GeographicExpansionTracker() {
           <div style={{
             background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.2)",
             borderRadius: 10, padding: "12px 16px",
-            fontSize: 14, color: "#6EE7B7", lineHeight: 1.5,
+            fontSize: 14, color: "#6EE7B7″, lineHeight: 1.5,
           }}>
-            <strong style={{ color: "#34D399" }}>ROI break-even at 50 active partners</strong> — generating ~$7,350/mo in subscription revenue alone.
+            <strong style={{ color: "#34D399″ }}>ROI break-even at 50 active partners</strong> — generating ~$7,350/mo in subscription revenue alone.
           </div>
         </div>
 
         {/* Expansion Timeline */}
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9", marginBottom: 16 }}>Expansion timeline</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F1F5F9″, marginBottom: 16 }}>Expansion timeline</h2>
           <div style={{
-            background: "#1E293B", border: "1px solid #334155",
+            background: "#1E293B", border: "1px solid #334155″,
             borderRadius: 14, padding: "24px 28px",
           }}>
             <div style={{ display: "flex", alignItems: "center", position: "relative" as const }}>
@@ -274,7 +274,7 @@ export default function GeographicExpansionTracker() {
               <div style={{
                 position: "absolute" as const,
                 top: 14, left: 14, right: 14,
-                height: 2, background: "#334155", zIndex: 0,
+                height: 2, background: "#334155″, zIndex: 0,
               }} />
               {TIMELINE.map((item, i) => (
                 <div key={item.label} style={{
@@ -284,7 +284,7 @@ export default function GeographicExpansionTracker() {
                   <div style={{
                     width: 28, height: 28, borderRadius: "50%",
                     background: item.active ? "#7C3AED" : "#1E293B",
-                    border: item.active ? "3px solid #A78BFA" : "2px solid #334155",
+                    border: item.active ? "3px solid #A78BFA" : "2px solid #334155″,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginBottom: 10,
                     boxShadow: item.active ? "0 0 12px rgba(124,58,237,0.5)" : "none",
@@ -293,7 +293,7 @@ export default function GeographicExpansionTracker() {
                   </div>
                   <div style={{
                     fontSize: 13, fontWeight: 700,
-                    color: item.active ? "#C4B5FD" : "#E2E8F0",
+                    color: item.active ? "#C4B5FD" : "#E2E8F0″,
                     marginBottom: 2, textAlign: "center" as const,
                   }}>{item.label}</div>
                   <div style={{

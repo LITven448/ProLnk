@@ -17,7 +17,7 @@ export default function DFWFoundationSteelPier2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚙️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Steel Push Pier Deep Dive 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Steel Push Pier Deep Dive 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>How steel push piers solve foundation settlement in North Texas clay soil</p>
         </div>
 
@@ -27,13 +27,13 @@ export default function DFWFoundationSteelPier2026() {
             {concerns.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id)}
                 style={{ padding: '0.5rem 1rem', borderRadius: 8, cursor: 'pointer', fontWeight: 600,
-                  background: selected === c.id ? '#F5E642' : '#1e3a5f',
-                  color: selected === c.id ? '#0A1628' : '#fff', border: 'none', fontSize: '0.85rem' }}>
+                  background: selected === c.id ? '#F5E642′ : '#1e3a5f',
+                  color: selected === c.id ? '#0A1628′ : '#fff', border: ’none', fontSize: '0.85rem' }}>
                 {c.icon} {c.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1a3a6e', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: 8 }}>{active.icon} {active.label} — {active.applicable ? '✅ Push Pier Candidate' : '⚠️ Evaluate First'}</div>
             {active.applicable && (
               <div style={{ display: 'flex', gap: '1rem', marginBottom: 8, flexWrap: 'wrap' }}>

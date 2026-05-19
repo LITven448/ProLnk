@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const homeownerTypes = [
-  { id: 'new', label: '🏠 New Homeowner', tips: ['Start a Home Health Vault profile before your first repair', 'Water your foundation within 18" of slab daily in summer', 'Schedule HVAC tune-up every March before heat hits', 'Use ProLnk to get 3 bids before hiring any contractor', 'Document every repair with photos — protects resale value'] },
+  { id: 'new', label: '🏠 New Homeowner', tips: ['Start a Home Health Vault profile before your first repair', 'Water your foundation within 18″ of slab daily in summer', 'Schedule HVAC tune-up every March before heat hits', 'Use ProLnk to get 3 bids before hiring any contractor', 'Document every repair with photos — protects resale value'] },
   { id: 'established', label: '🏡 Established Owner', tips: ['Audit your foundation watering system this month', 'Check HVAC filter — replace if it’s been over 30 days', 'Review your Home Health Vault — add recent repairs', 'Vet your next contractor on ProLnk before calling anyone', 'Pre-season HVAC service saves $800+ in emergency calls'] },
   { id: 'investor', label: '💼 Property Investor', tips: ['Add all properties to Home Health Vault for portfolio health view', 'ProLnk Charter pros handle multi-property portfolios', 'Foundation checks on all DFW properties every 2 years', 'HVAC age over 12 years = plan a replacement budget now', 'Hail season: check roofs every April before insurance windows close'] },
 ];
@@ -45,7 +45,7 @@ export default function DFWHomeownerSummaryGuide2026() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
             {homeownerTypes.map(h => (
               <button key={h.id} onClick={() => setSelected(h.id === selected ? null : h.id)}
-                style={{ background: selected === h.id ? '#F5E642' : '#111D35', color: selected === h.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === h.id ? '#F5E642′ : '#111D35', color: selected === h.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
                 {h.label}
               </button>
             ))}

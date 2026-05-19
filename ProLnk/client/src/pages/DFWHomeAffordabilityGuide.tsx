@@ -36,10 +36,10 @@ export default function DFWHomeAffordabilityGuide() {
   const affordabilityScore = Math.min(100, Math.round((maxHomePrice / 400000) * 70 + (downPayment / maxHomePrice) * 30));
 
   const scoreLabel = affordabilityScore >= 80 ? 'Strong' : affordabilityScore >= 55 ? 'Moderate' : 'Stretched';
-  const scoreColor = affordabilityScore >= 80 ? '#22c55e' : affordabilityScore >= 55 ? '#F5E642' : '#ef4444';
+  const scoreColor = affordabilityScore >= 80 ? '#22c55e' : affordabilityScore >= 55 ? '#F5E642′ : '#ef4444';
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '48px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36 }}>🏡</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '12px 0 8px' }}>
@@ -52,27 +52,27 @@ export default function DFWHomeAffordabilityGuide() {
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 40 }}>
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>📐 The 28% Rule</h2>
             <p style={{ fontSize: 14, color: '#64748b', marginBottom: 12 }}>
               Housing costs (P+I+T+I) should not exceed 28% of gross monthly income.
             </p>
-            <div style={{ background: '#F9FAFB', borderRadius: 8, padding: 12, fontSize: 14, color: '#475569' }}>
-              At {formatCurrency(grossIncome)}/mo income → max housing: <strong style={{ color: '#0A1628' }}>{formatCurrency(maxHousingPayment28)}/mo</strong>
+            <div style={{ background: '#F9FAFB', borderRadius: 8, padding: 12, fontSize: 14, color: '#475569′ }}>
+              At {formatCurrency(grossIncome)}/mo income → max housing: <strong style={{ color: '#0A1628′ }}>{formatCurrency(maxHousingPayment28)}/mo</strong>
             </div>
           </div>
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>📊 The 36% Total Debt Rule</h2>
             <p style={{ fontSize: 14, color: '#64748b', marginBottom: 12 }}>
               All debt (housing + car + student loans) should not exceed 36% of gross income.
             </p>
-            <div style={{ background: '#F9FAFB', borderRadius: 8, padding: 12, fontSize: 14, color: '#475569' }}>
-              After other debts → max housing: <strong style={{ color: '#0A1628' }}>{formatCurrency(maxHousingAfterDebts)}/mo</strong>
+            <div style={{ background: '#F9FAFB', borderRadius: 8, padding: 12, fontSize: 14, color: '#475569′ }}>
+              After other debts → max housing: <strong style={{ color: '#0A1628′ }}>{formatCurrency(maxHousingAfterDebts)}/mo</strong>
             </div>
           </div>
         </div>
 
-        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 40, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 40, borderLeft: '4px solid #F5E642′ }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>⚠️ DFW Property Tax Reality Check</h3>
           <p style={{ fontSize: 14, color: '#475569', margin: 0 }}>
             Texas has no state income tax but property taxes average <strong>2.1–2.8%</strong> of home value — among the highest in the nation.
@@ -123,7 +123,7 @@ export default function DFWHomeAffordabilityGuide() {
               </label>
               <input
                 type="number"
-                step="0.1"
+                step="0.1″
                 value={rate}
                 onChange={e => setRate(Number(e.target.value))}
                 style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: 8, fontSize: 16, boxSizing: 'border-box' }}
@@ -146,7 +146,7 @@ export default function DFWHomeAffordabilityGuide() {
                 <div style={{ color: scoreColor, fontSize: 26, fontWeight: 800 }}>{scoreLabel}</div>
               </div>
             </div>
-            <div style={{ borderTop: '1px solid #1e293b', paddingTop: 16, fontSize: 13, color: '#94a3b8' }}>
+            <div style={{ borderTop: '1px solid #1e293b', paddingTop: 16, fontSize: 13, color: '#94a3b8′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <span>Principal & Interest</span><span style={{ color: '#fff' }}>{formatCurrency(actualMonthlyPayment)}/mo</span>
               </div>
@@ -160,9 +160,9 @@ export default function DFWHomeAffordabilityGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📋 DFW Homebuyer Checklist</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 14, color: '#475569' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 14, color: '#475569′ }}>
             {['✅ Budget for 2.1–2.8% annual property tax','✅ Add homeowner\’s insurance ($150–200/mo)','✅ Check HOA fees in target neighborhoods','✅ Budget 1% home value/yr for maintenance','✅ Consider Texas homestead exemption savings','✅ Get pre-approved before touring homes'].map(item => (
               <div key={item} style={{ padding: '8px 12px', background: '#F9FAFB', borderRadius: 8 }}>{item}</div>
             ))}

@@ -72,7 +72,7 @@ export default function DFWHomeInspectionGuide() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeTab === tab ? '#F5E642' : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
+                background: activeTab === tab ? '#F5E642′ : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
               }}
             >
               {tab === 'overview' ? '📋 Overview' : tab === 'checklist' ? '✅ Pre-Inspection Checklist' : tab === 'flags' ? '🚩 Red Flags' : '📄 Reading the Report'}
@@ -91,7 +91,7 @@ export default function DFWHomeInspectionGuide() {
                   <h3 style={{ color: '#F5E642', marginBottom: 16, fontSize: 16 }}>{card.icon} {card.label}</h3>
                   {card.items.map(item => (
                     <div key={item} style={{ display: 'flex', gap: 8, marginBottom: 8, color: '#CBD5E1', fontSize: 13 }}>
-                      <span style={{ color: card.icon === '✅' ? '#34D399' : '#F87171', flexShrink: 0 }}>{card.icon === '✅' ? '✓' : '✗'}</span>
+                      <span style={{ color: card.icon === '✅' ? '#34D399′ : '#F87171', flexShrink: 0 }}>{card.icon === '✅' ? '✓' : '✗'}</span>
                       {item}
                     </div>
                   ))}
@@ -115,13 +115,13 @@ export default function DFWHomeInspectionGuide() {
                       <tr key={row.size} style={{ borderBottom: '1px solid #1A2E4A' }}>
                         <td style={{ padding: '12px 16px', color: '#fff', fontWeight: 600 }}>{row.size}</td>
                         <td style={{ padding: '12px 16px', color: '#F5E642', fontWeight: 700 }}>{row.range}</td>
-                        <td style={{ padding: '12px 16px', color: '#94A3B8' }}>{row.time}</td>
+                        <td style={{ padding: '12px 16px', color: '#94A3B8′ }}>{row.time}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginTop: 16, fontSize: 13, color: '#94A3B8' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginTop: 16, fontSize: 13, color: '#94A3B8′ }}>
                 💡 Add-ons: Sewer scope +$150–$250 | Pool inspection +$100–$200 | Mold testing +$300–$600 | Chimney scope +$100–$200
               </div>
             </div>
@@ -156,12 +156,12 @@ export default function DFWHomeInspectionGuide() {
                   <p style={{ color: '#94A3B8', fontSize: 14, marginTop: 4 }}>Complete these before your inspector arrives to avoid failed re-inspection or repair credits.</p>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: progress === 100 ? '#34D399' : '#F5E642' }}>{progress}%</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: progress === 100 ? '#34D399′ : '#F5E642' }}>{progress}%</div>
                   <div style={{ color: '#94A3B8', fontSize: 12 }}>{checkedCount}/{totalItems} items</div>
                 </div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, height: 8, marginBottom: 28 }}>
-                <div style={{ background: progress === 100 ? '#34D399' : '#F5E642', height: 8, borderRadius: 8, width: `${progress}%`, transition: 'width 0.3s' }} />
+                <div style={{ background: progress === 100 ? '#34D399′ : '#F5E642', height: 8, borderRadius: 8, width: `${progress}%`, transition: ’width 0.3s' }} />
               </div>
               {checklistItems.map(cat => (
                 <div key={cat.category} style={{ marginBottom: 28 }}>
@@ -177,7 +177,7 @@ export default function DFWHomeInspectionGuide() {
                     >
                       <div style={{
                         width: 22, height: 22, borderRadius: 6, border: `2px solid ${checkedItems.has(item) ? '#F5E642' : '#2D4A6B'}`,
-                        background: checkedItems.has(item) ? '#F5E642' : 'transparent',
+                        background: checkedItems.has(item) ? '#F5E642′ : ’transparent',
                         display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1,
                       }}>
                         {checkedItems.has(item) && <span style={{ color: '#0A1628', fontSize: 14, fontWeight: 800 }}>✓</span>}

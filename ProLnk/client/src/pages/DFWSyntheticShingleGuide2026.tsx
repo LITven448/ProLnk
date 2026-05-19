@@ -52,10 +52,10 @@ export default function DFWSyntheticShingleGuide2026() {
             ['Asphalt Shingle', '$4-7/sqft installed', '15-25 years DFW', 'Standard approval'],
           ].map(([mat, cost, life, hoa]) => (
             <div key={mat} style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', gap: '8px', borderBottom: '1px solid #1e3a5f', padding: '8px 0', fontSize: '0.85rem' }}>
-              <span style={{ color: '#F5E642' }}>{mat}</span>
+              <span style={{ color: '#F5E642′ }}>{mat}</span>
               <span style={{ color: '#60a5fa' }}>{cost}</span>
-              <span style={{ color: '#34d399' }}>{life}</span>
-              <span style={{ color: '#94a3b8' }}>{hoa}</span>
+              <span style={{ color: '#34d399′ }}>{life}</span>
+              <span style={{ color: '#94a3b8′ }}>{hoa}</span>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function DFWSyntheticShingleGuide2026() {
             </div>
           </div>
           <button onClick={getRecommendation} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', marginBottom: '16px' }}>Get Recommendation →</button>
-          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6' }}>{recommendation}</div>}
+          {recommendation && <div style={{ backgroundColor: '#0d3b5e', borderRadius: '8px', padding: '16px', color: '#e2e8f0', lineHeight: '1.6′ }}>{recommendation}</div>}
         </div>
       </div>
     </div>

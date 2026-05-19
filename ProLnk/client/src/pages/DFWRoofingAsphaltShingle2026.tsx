@@ -53,7 +53,7 @@ export default function DFWRoofingAsphaltShingle2026() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🔍 Select a Shingle Concern</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             {Object.entries(concerns).map(([key, val]) => (
-              <button key={key} onClick={() => setSelected(key)} style={{ background: selected === key ? '#F5E642' : '#0A1628', color: selected === key ? '#0A1628' : '#E2E8F0', border: `1px solid ${selected === key ? '#F5E642' : '#2D4A7A'}`, borderRadius: 8, padding: '0.75rem', fontWeight: 600, cursor: 'pointer', fontSize: '0.85rem', textAlign: 'left' }}>{val.title}</button>
+              <button key={key} onClick={() => setSelected(key)} style={{ background: selected === key ? '#F5E642′ : '#0A1628', color: selected === key ? '#0A1628' : '#E2E8F0', border: `1px solid ${selected === key ? '#F5E642' : '#2D4A7A'}`, borderRadius: 8, padding: '0.75rem', fontWeight: 600, cursor: ’pointer', fontSize: '0.85rem', textAlign: 'left' }}>{val.title}</button>
             ))}
           </div>
           {selected && (

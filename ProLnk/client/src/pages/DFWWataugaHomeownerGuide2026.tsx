@@ -35,9 +35,9 @@ export default function DFWWataugaHomeownerGuide2026() {
             {decades.map((d, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
                 style={{ padding: '12px', borderRadius: 8, border: '2px solid',
-                  borderColor: selected === i ? '#F5E642' : '#1e3a5f',
+                  borderColor: selected === i ? '#F5E642′ : '#1e3a5f',
                   backgroundColor: selected === i ? '#1a2f4a' : 'transparent',
-                  color: selected === i ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                  color: selected === i ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
                 {d.label}
               </button>
             ))}

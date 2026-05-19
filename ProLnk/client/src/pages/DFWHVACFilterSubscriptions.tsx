@@ -84,7 +84,7 @@ export default function DFWHVACFilterSubscriptions() {
             <div key={s.id} style={{ background: '#112240', borderRadius: 12, padding: '20px', borderLeft: `4px solid ${s.dfwFit === 'Excellent' ? '#F5E642' : s.dfwFit === 'Great' ? '#4ADE80' : '#94A3B8'}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                 <div style={{ fontWeight: 700, fontSize: 16 }}>{s.logo} {s.name}</div>
-                <div style={{ fontSize: 12, color: s.dfwFit === 'Excellent' ? '#F5E642' : s.dfwFit === 'Great' ? '#4ADE80' : '#94A3B8', fontWeight: 700 }}>DFW Fit: {s.dfwFit}</div>
+                <div style={{ fontSize: 12, color: s.dfwFit === 'Excellent' ? '#F5E642′ : s.dfwFit === ’Great' ? '#4ADE80′ : '#94A3B8', fontWeight: 700 }}>DFW Fit: {s.dfwFit}</div>
               </div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 8 }}>{s.price} · {s.delivery}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
@@ -105,14 +105,14 @@ export default function DFWHVACFilterSubscriptions() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {situationLabels.map((s) => (
             <button key={s.id} onClick={() => setSituation(s.id)} style={{
-              background: situation === s.id ? '#F5E642' : '#1E3A5F', color: situation === s.id ? '#0A1628' : '#fff',
+              background: situation === s.id ? '#F5E642′ : '#1E3A5F', color: situation === s.id ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600,
             }}>{s.label}</button>
           ))}
         </div>
 
         {rec && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Recommended for You</div>
             <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 6 }}>{rec.logo} {rec.name}</div>
             <div style={{ color: '#94A3B8', fontSize: 14 }}>{rec.price} · Delivers {rec.delivery}</div>

@@ -39,14 +39,14 @@ export default function DFWFoundationGoodBetterBest2026() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK DFW GUIDE 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 900, marginBottom: 8 }}>🏗️ DFW Foundation Repair Good / Better / Best</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>DFW sits on some of the most expansive clay soil in North America. Choosing the right repair level protects your largest investment.</p>
-        <div style={{ background: '#0f1f38', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0f1f38', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>⚠️ DFW Clay Soil Warning</div>
           <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>DFW expansive clay can shift 4–6 inches seasonally. Always get a structural engineer report before choosing a repair level.</div>
         </div>
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {Object.entries(tiers).map(([key, t]) => (
             <div key={key} style={{ background: tier === key ? '#1e3a5f' : '#0f1f38', border: `2px solid ${tier === key ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20 }}>
-              <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: tier === key ? '#F5E642' : '#fff' }}>{t.label}</div>
+              <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: tier === key ? '#F5E642′ : '#fff' }}>{t.label}</div>
               <ul style={{ margin: 0, paddingLeft: 18, color: '#cbd5e1', lineHeight: 1.8 }}>
                 {t.points.map((p, i) => <li key={i}>{p}</li>)}
               </ul>
@@ -55,11 +55,11 @@ export default function DFWFoundationGoodBetterBest2026() {
           ))}
         </div>
         <div style={{ background: '#0f1f38', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Get Your Repair Level</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Get Your Repair Level</div>
           <div style={{ marginBottom: 12 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Current situation</div>
             {situations.map(([v, l]) => (
-              <button key={v} onClick={() => setSituation(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: situation === v ? '#F5E642' : '#0A1628', color: situation === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>
+              <button key={v} onClick={() => setSituation(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: situation === v ? '#F5E642′ : '#0A1628', color: situation === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 12 }}>
                 {l}
               </button>
             ))}
@@ -67,7 +67,7 @@ export default function DFWFoundationGoodBetterBest2026() {
           <div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Budget range</div>
             {([['tight', 'Under $7K'], ['moderate', '$7K–$15K'], ['premium', '$15K+']] as [string,string][]).map(([v, l]) => (
-              <button key={v} onClick={() => setBudget(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: budget === v ? '#F5E642' : '#0A1628', color: budget === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setBudget(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: budget === v ? '#F5E642′ : '#0A1628', color: budget === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}

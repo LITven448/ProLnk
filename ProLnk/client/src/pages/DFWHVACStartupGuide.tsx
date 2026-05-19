@@ -58,7 +58,7 @@ export default function DFWHVACStartupGuide() {
         <div style={{ textAlign: 'center', marginBottom: 28 }}>
           <div style={{ fontSize: 40 }}>🌅</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '8px 0 4px' }}>DFW HVAC First Startup Guide</h1>
-          <p style={{ color: '#94A3B8', fontSize: 15 }}>What to do when turning on your AC for DFW's first hot day — what's normal, what's not</p>
+          <p style={{ color: '#94A3B8', fontSize: 15 }}>What to do when turning on your AC for DFW's first hot day — what’s normal, what’s not</p>
         </div>
 
         <div style={{ marginBottom: 28 }}>
@@ -66,7 +66,7 @@ export default function DFWHVACStartupGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 10 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSituation(situation === s.id ? null : s.id)}
-                style={{ background: situation === s.id ? '#1E3A5F' : '#0F2237', border: `2px solid ${situation === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 10px', cursor: 'pointer', color: situation === s.id ? '#F5E642' : '#CBD5E1', fontSize: 13, fontWeight: 600, textAlign: 'center' }}>
+                style={{ background: situation === s.id ? '#1E3A5F' : '#0F2237', border: `2px solid ${situation === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 10px', cursor: 'pointer', color: situation === s.id ? '#F5E642′ : '#CBD5E1', fontSize: 13, fontWeight: 600, textAlign: ’center' }}>
                 {s.label}
               </button>
             ))}
@@ -99,7 +99,7 @@ export default function DFWHVACStartupGuide() {
             </div>
 
             <div style={{ background: active.callNow ? '#7F1D1D' : '#0F2237', border: `1px solid ${active.callNow ? '#FCA5A5' : '#1E3A5F'}`, borderRadius: 10, padding: 16 }}>
-              <div style={{ color: active.callNow ? '#FCA5A5' : '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 6 }}>{active.callNow ? '📞 CALL A TECH' : '💡 TECH TIP'}</div>
+              <div style={{ color: active.callNow ? '#FCA5A5′ : '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 6 }}>{active.callNow ? '📞 CALL A TECH' : '💡 TECH TIP'}</div>
               <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>{active.callTip}</p>
             </div>
           </div>

@@ -71,9 +71,9 @@ export default function DFWInflationImpactHomeGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
-            { icon: '📈', label: 'Materials Inflation', value: '+38%', sub: 'Building materials 2021-2026' },
+            { icon: '📈', label: 'Materials Inflation', value: '+38%', sub: 'Building materials 2021-2026′ },
             { icon: '👷', label: 'Labor Inflation', value: '+34%', sub: 'Skilled trades wage growth DFW' },
-            { icon: '🏠', label: 'Home Value Hedge', value: '+52%', sub: 'DFW median home value 2021-2026' },
+            { icon: '🏠', label: 'Home Value Hedge', value: '+52%', sub: 'DFW median home value 2021-2026′ },
             { icon: '🔧', label: 'DIY Savings Gap', value: '+28%', sub: 'DIY vs contractor cost differential widened' },
           ].map(card => (
             <div key={card.label} style={{ backgroundColor: '#111f3a', borderRadius: 12, padding: '20px 18px', border: '1px solid #1e3a5f' }}>
@@ -129,11 +129,11 @@ export default function DFWInflationImpactHomeGuide() {
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ color: '#64748b', fontSize: 13, marginBottom: 4 }}>Inflation Increase</div>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: '#ef4444' }}>{result.increase}</div>
+                  <div style={{ fontSize: 24, fontWeight: 800, color: '#ef4444′ }}>{result.increase}</div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ color: '#64748b', fontSize: 13, marginBottom: 4 }}>2026 DFW Cost</div>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>${result.inflationAdj.toLocaleString()}</div>
+                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>${result.inflationAdj.toLocaleString()}</div>
                 </div>
               </div>
               <div style={{ backgroundColor: '#0d1b30', borderRadius: 10, padding: '16px' }}>

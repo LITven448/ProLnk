@@ -110,7 +110,7 @@ export default function DFWHVACWarrantyTracker() {
           <div style={{ background: '#111c35', borderRadius: 12, padding: 18 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>🔧 Labor Warranty: <span style={{ color: '#F5E642', fontWeight: 700 }}>{laborYears} year</span></div>
             <input type="range" min={1} max={5} value={laborYears} onChange={e => setLaborYears(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#64748b', marginTop: 4 }}>
               <span>1 yr (standard)</span><span>5 yrs (extended)</span>
             </div>
@@ -126,7 +126,7 @@ export default function DFWHVACWarrantyTracker() {
             {warrantiesData.map(w => {
               const expired = w.months <= 0;
               const expiringSoon = w.months > 0 && w.months <= 6;
-              const borderColor = expired ? '#ef4444' : expiringSoon ? '#f97316' : '#22c55e';
+              const borderColor = expired ? '#ef4444′ : expiringSoon ? '#f97316' : '#22c55e';
               return (
                 <div key={w.name} style={{ background: '#111c35', border: `1px solid ${borderColor}33`, borderRadius: 14, padding: 18, marginBottom: 14 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
@@ -140,7 +140,7 @@ export default function DFWHVACWarrantyTracker() {
             })}
             {!registered && regDeadlineMonths > 0 && (
               <div style={{ background: '#2a1a0a', border: '1px solid #f9731633', borderRadius: 12, padding: 16, fontSize: 14 }}>
-                ⚠️ Registration deadline: <strong style={{ color: '#F5E642' }}>{fmt(registrationDeadline.year, registrationDeadline.month)}</strong> ({regDeadlineMonths} months away). Register now to double your parts warranty from 5 to 10 years.
+                ⚠️ Registration deadline: <strong style={{ color: '#F5E642′ }}>{fmt(registrationDeadline.year, registrationDeadline.month)}</strong> ({regDeadlineMonths} months away). Register now to double your parts warranty from 5 to 10 years.
               </div>
             )}
           </div>

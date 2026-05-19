@@ -48,7 +48,7 @@ export default function DFWHVACScrollCompressor2026() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: 20 }}>🔍 Your DFW Situation → Scroll Guide</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
-              <button key={s.value} onClick={() => { setSituation(s.value); setResult(s.value); }} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${situation === s.value ? '#F5E642' : '#1e3a5f'}`, background: situation === s.value ? '#F5E642' : '#0A1628', color: situation === s.value ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => { setSituation(s.value); setResult(s.value); }} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${situation === s.value ? '#F5E642' : '#1e3a5f'}`, background: situation === s.value ? '#F5E642′ : '#0A1628', color: situation === s.value ? '#0A1628' : '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function DFWHVACScrollCompressor2026() {
             <p style={{ color: '#86efac', marginBottom: 12 }}>{outcomes[result].body}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>📊 Key stat: </span>
-              <span style={{ color: '#4ade80' }}>{outcomes[result].stat}</span>
+              <span style={{ color: '#4ade80′ }}>{outcomes[result].stat}</span>
             </div>
             <p style={{ color: '#64748b', fontSize: 13, marginTop: 16 }}>ProLnk connects you with DFW HVAC pros who stock scroll-based systems from Carrier, Trane, Lennox, and Daikin.</p>
           </div>

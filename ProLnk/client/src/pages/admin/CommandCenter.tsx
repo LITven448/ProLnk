@@ -118,7 +118,7 @@ interface StatusDotProps {
 }
 function StatusDot({ active, label, detail, icon: Icon }: StatusDotProps) {
   const color = active === null ? T.muted : active ? T.green : T.red;
-  const bg    = active === null ? `${T.muted}18` : active ? "#D1FAE5" : "#FEE2E2";
+  const bg    = active === null ? `${T.muted}18` : active ? "#D1FAE5″ : "#FEE2E2";
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 10, backgroundColor: T.bg }}>
       <div style={{ width: 32, height: 32, borderRadius: 8, background: bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -302,7 +302,7 @@ export default function CommandCenter() {
             <div style={{ height: 110 }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={waitlistStats.signupsPerDay} margin={{ top: 0, right: 4, bottom: 0, left: -30 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
                   <XAxis dataKey="date" tick={{ fill: T.muted, fontSize: 10, fontFamily: FONT }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: T.muted, fontSize: 10, fontFamily: FONT }} axisLine={false} tickLine={false} allowDecimals={false} />
                   <Tooltip contentStyle={tooltipStyle} labelStyle={{ color: T.muted }} />
@@ -317,19 +317,19 @@ export default function CommandCenter() {
 
             {/* Today vs yesterday */}
             <div style={{ ...CARD_STYLE, display: "flex", gap: 16 }}>
-              <div style={{ flex: 1, textAlign: "center", padding: "12px 0" }}>
+              <div style={{ flex: 1, textAlign: "center", padding: "12px 0″ }}>
                 <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: T.muted, marginBottom: 6 }}>Today</div>
                 <div style={{ fontSize: 36, fontWeight: 800, color: T.accent, fontFamily: MONO, lineHeight: 1 }}>{waitlistStats.todayCount}</div>
                 <div style={{ fontSize: 11, color: T.muted, marginTop: 4 }}>new signups</div>
               </div>
               <div style={{ width: 1, backgroundColor: T.border }} />
-              <div style={{ flex: 1, textAlign: "center", padding: "12px 0" }}>
+              <div style={{ flex: 1, textAlign: "center", padding: "12px 0″ }}>
                 <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: T.muted, marginBottom: 6 }}>Yesterday</div>
                 <div style={{ fontSize: 36, fontWeight: 800, color: T.muted, fontFamily: MONO, lineHeight: 1 }}>{waitlistStats.yesterdayCount}</div>
                 <div style={{ fontSize: 11, color: T.muted, marginTop: 4 }}>new signups</div>
               </div>
               <div style={{ width: 1, backgroundColor: T.border }} />
-              <div style={{ flex: 1, textAlign: "center", padding: "12px 0" }}>
+              <div style={{ flex: 1, textAlign: "center", padding: "12px 0″ }}>
                 <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: T.muted, marginBottom: 6 }}>Capacity</div>
                 <div style={{ fontSize: 36, fontWeight: 800, color: waitlistStats.total >= 2125 ? T.red : T.green, fontFamily: MONO, lineHeight: 1 }}>
                   {Math.round((waitlistStats.total / 2125) * 100)}%
@@ -353,7 +353,7 @@ export default function CommandCenter() {
                   </div>
                 ))}
                 {waitlistStats.topTrades.length === 0 && (
-                  <div style={{ color: T.muted, fontSize: 12, textAlign: "center", padding: "16px 0" }}>No waitlist data yet</div>
+                  <div style={{ color: T.muted, fontSize: 12, textAlign: "center", padding: "16px 0″ }}>No waitlist data yet</div>
                 )}
               </div>
             </div>
@@ -391,16 +391,16 @@ export default function CommandCenter() {
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={growthData} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
                   <defs>
-                    <linearGradient id="gradProfiles" x1="0" y1="0" x2="0" y2="1">
+                    <linearGradient id="gradProfiles" x1="0″ y1="0" x2="0" y2="1">
                       <stop offset="5%"  stopColor={T.accent} stopOpacity={0.25} />
                       <stop offset="95%" stopColor={T.accent} stopOpacity={0} />
                     </linearGradient>
-                    <linearGradient id="gradPartners" x1="0" y1="0" x2="0" y2="1">
+                    <linearGradient id="gradPartners" x1="0″ y1="0" x2="0" y2="1">
                       <stop offset="5%"  stopColor={T.blue} stopOpacity={0.2} />
                       <stop offset="95%" stopColor={T.blue} stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
                   <XAxis dataKey="month" tick={axisStyle} axisLine={false} tickLine={false} />
                   <YAxis tick={axisStyle} axisLine={false} tickLine={false} />
                   <Tooltip contentStyle={tooltipStyle} labelStyle={{ color: T.muted }} />
@@ -436,7 +436,7 @@ export default function CommandCenter() {
             </div>
 
             {attentionItems.length === 0 ? (
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px 0", textAlign: "center" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px 0″, textAlign: "center" }}>
                 <CheckCircle style={{ width: 32, height: 32, color: T.green, marginBottom: 10 }} />
                 <p style={{ color: T.muted, fontSize: 13 }}>All clear</p>
               </div>
@@ -539,10 +539,10 @@ export default function CommandCenter() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
             {[
-              { name: "Storm Watch", icon: CloudLightning, color: "#3B82F6", status: "Active", leads: Math.round(totalEventTriggers * 0.28), statusColor: "#059669", statusBg: "#D1FAE5" },
-              { name: "Asset Aging", icon: Clock, color: "#F59E0B", status: "Active", leads: Math.round(totalEventTriggers * 0.45), statusColor: "#059669", statusBg: "#D1FAE5" },
-              { name: "Market Events", icon: Home, color: "#10B981", status: "Standby", leads: Math.round(totalEventTriggers * 0.15), statusColor: "#D97706", statusBg: "#FEF3C7" },
-              { name: "Safety Recalls", icon: AlertTriangle, color: "#EF4444", status: activeRecallAlerts > 0 ? "Active" : "Standby", leads: activeRecallAlerts, statusColor: activeRecallAlerts > 0 ? "#059669" : "#D97706", statusBg: activeRecallAlerts > 0 ? "#D1FAE5" : "#FEF3C7" },
+              { name: "Storm Watch", icon: CloudLightning, color: "#3B82F6″, status: "Active", leads: Math.round(totalEventTriggers * 0.28), statusColor: "#059669", statusBg: "#D1FAE5" },
+              { name: "Asset Aging", icon: Clock, color: "#F59E0B", status: "Active", leads: Math.round(totalEventTriggers * 0.45), statusColor: "#059669″, statusBg: "#D1FAE5" },
+              { name: "Market Events", icon: Home, color: "#10B981″, status: "Standby", leads: Math.round(totalEventTriggers * 0.15), statusColor: "#D97706", statusBg: "#FEF3C7" },
+              { name: "Safety Recalls", icon: AlertTriangle, color: "#EF4444″, status: activeRecallAlerts > 0 ? "Active" : "Standby", leads: activeRecallAlerts, statusColor: activeRecallAlerts > 0 ? "#059669" : "#D97706", statusBg: activeRecallAlerts > 0 ? "#D1FAE5" : "#FEF3C7" },
             ].map((engine, i) => (
               <div key={i} style={{ padding: "14px 16px", borderRadius: 10, backgroundColor: T.bg, borderLeft: `3px solid ${engine.color}` }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
@@ -571,7 +571,7 @@ export default function CommandCenter() {
                 (totalCommissionsPaid > 0 ? 25 : 0) +
                 (newTrustyLeads > 0 ? 20 : 0)
               )),
-              suffix: "/100",
+              suffix: "/100″,
               color: T.green,
               icon: "🏥",
               sub: "Overall platform score",
@@ -601,7 +601,7 @@ export default function CommandCenter() {
               sub: "Active TrustyPro users",
             },
           ].map((item, i) => (
-            <div key={i} style={{ textAlign: "center", padding: "8px 0" }}>
+            <div key={i} style={{ textAlign: "center", padding: "8px 0″ }}>
               <div style={{ fontSize: 24, marginBottom: 4 }}>{item.icon}</div>
               <div style={{ fontSize: 28, fontWeight: 800, color: item.color, fontFamily: MONO }}>
                 {item.value}{item.suffix}
@@ -671,9 +671,9 @@ export default function CommandCenter() {
             <div style={{ ...CARD_STYLE, display: 'grid', gridTemplateColumns: '200px 1fr', gap: 32, alignItems: 'center' }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ position: 'relative', width: 140, height: 140, margin: '0 auto' }}>
-                  <svg viewBox="0 0 140 140" style={{ width: '100%', height: '100%', transform: 'rotate(-90deg)' }}>
-                    <circle cx="70" cy="70" r="58" fill="none" stroke={T.border} strokeWidth="14" />
-                    <circle cx="70" cy="70" r="58" fill="none" stroke={healthColor} strokeWidth="14"
+                  <svg viewBox="0 0 140 140″ style={{ width: '100%', height: '100%', transform: 'rotate(-90deg)' }}>
+                    <circle cx="70″ cy="70" r="58" fill="none" stroke={T.border} strokeWidth="14" />
+                    <circle cx="70″ cy="70" r="58" fill="none" stroke={healthColor} strokeWidth="14"
                       strokeDasharray={`${(healthScore / 100) * 364.4} 364.4`}
                       strokeLinecap="round" />
                   </svg>
@@ -729,7 +729,7 @@ export default function CommandCenter() {
           <div style={{ height: 180 }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={weeklyData} margin={{ top: 0, right: 4, bottom: 0, left: -20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
                 <XAxis dataKey="week" tick={axisStyle} axisLine={false} tickLine={false} />
                 <YAxis tick={axisStyle} axisLine={false} tickLine={false} />
                 <Tooltip contentStyle={tooltipStyle} labelStyle={{ color: T.muted }} />
@@ -919,8 +919,8 @@ export default function CommandCenter() {
                 onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.card}
                 onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.bg}
               >
-                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#FEF3C7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Send style={{ width: 15, height: 15, color: "#D97706" }} />
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#FEF3C7″, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Send style={{ width: 15, height: 15, color: "#D97706″ }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>Send Test Notification</div>
@@ -962,8 +962,8 @@ export default function CommandCenter() {
                 onMouseEnter={e => { if (!exporting) (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.card; }}
                 onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.bg}
               >
-                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#D1FAE5", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Download style={{ width: 15, height: 15, color: "#059669" }} />
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#D1FAE5″, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Download style={{ width: 15, height: 15, color: "#059669″ }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>Export All Waitlist Data</div>

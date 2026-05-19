@@ -53,13 +53,13 @@ export default function DFWFoundationEpoxyGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1rem' }}>
             {crackTypes.map(c => (
               <button key={c.id} onClick={() => setCrackType(c.id)}
-                style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: '8px', border: crackType === c.id ? '2px solid #F5E642' : '1px solid #1e3a5f', backgroundColor: crackType === c.id ? '#1a3060' : '#0A1628', color: '#fff', cursor: 'pointer', fontSize: '0.9rem' }}>
+                style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: '8px', border: crackType === c.id ? '2px solid #F5E642′ : '1px solid #1e3a5f', backgroundColor: crackType === c.id ? '#1a3060' : '#0A1628', color: '#fff', cursor: ’pointer', fontSize: '0.9rem' }}>
                 {c.label}
               </button>
             ))}
           </div>
           <button onClick={handleCheck} disabled={!crackType}
-            style={{ backgroundColor: crackType ? '#F5E642' : '#2a3a50', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', cursor: crackType ? 'pointer' : 'not-allowed', fontSize: '0.95rem', width: '100%' }}>
+            style={{ backgroundColor: crackType ? '#F5E642′ : '#2a3a50', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: '8px', padding: '0.75rem 1.5rem', cursor: crackType ? 'pointer' : 'not-allowed', fontSize: '0.95rem', width: '100%' }}>
             Get Treatment Recommendation →
           </button>
           {result && (

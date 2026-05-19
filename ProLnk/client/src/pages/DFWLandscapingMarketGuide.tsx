@@ -102,19 +102,19 @@ export default function DFWLandscapingMarketGuide() {
 
           {needResult && (
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642', marginBottom: 12 }}>
-              <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642' }}>About This Service</div>
-              <div style={{ marginBottom: 10, color: '#e2e8f0' }}>{needResult.description}</div>
+              <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642′ }}>About This Service</div>
+              <div style={{ marginBottom: 10, color: '#e2e8f0′ }}>{needResult.description}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }}>
-                <div style={{ backgroundColor: '#112240', borderRadius: 8, padding: 10 }}><div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Best Time to Book</div><div style={{ fontSize: 13, color: '#4ade80' }}>{needResult.bestTime}</div></div>
-                <div style={{ backgroundColor: '#112240', borderRadius: 8, padding: 10 }}><div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Avoid Booking</div><div style={{ fontSize: 13, color: '#f87171' }}>{needResult.worstTime}</div></div>
+                <div style={{ backgroundColor: '#112240', borderRadius: 8, padding: 10 }}><div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Best Time to Book</div><div style={{ fontSize: 13, color: '#4ade80′ }}>{needResult.bestTime}</div></div>
+                <div style={{ backgroundColor: '#112240', borderRadius: 8, padding: 10 }}><div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Avoid Booking</div><div style={{ fontSize: 13, color: '#f87171′ }}>{needResult.worstTime}</div></div>
               </div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>💡 Pro Tip: {needResult.tip}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>💡 Pro Tip: {needResult.tip}</div>
             </div>
           )}
 
           {timingResult && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #4ade80' }}>
-              <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642' }}>Current Window Conditions</div>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #4ade80′ }}>
+              <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642′ }}>Current Window Conditions</div>
               <div style={{ marginBottom: 8 }}>{timingResult.market}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 <div><span style={{ color: '#94a3b8', fontSize: 12, display: 'block' }}>Drought Status</span><span style={{ fontSize: 13 }}>{timingResult.drought}</span></div>

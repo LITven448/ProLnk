@@ -77,7 +77,7 @@ export default function DFWHVACMythsDebunked() {
               style={{
                 background: '#111f3a',
                 borderRadius: 10,
-                border: openIndex === i ? '1.5px solid #F5E642' : '1.5px solid #1e3a5f',
+                border: openIndex === i ? '1.5px solid #F5E642′ : '1.5px solid #1e3a5f',
                 cursor: 'pointer',
                 padding: '1rem 1.25rem',
                 transition: 'border 0.2s',
@@ -93,7 +93,7 @@ export default function DFWHVACMythsDebunked() {
                 <div style={{ marginTop: '1rem' }}>
                   <div style={{ background: '#0f2a4a', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '0.75rem' }}>
                     <span style={{ color: '#F5E642', fontWeight: 700 }}>✅ Reality: </span>
-                    <span style={{ color: '#e2e8f0' }}>{item.reality}</span>
+                    <span style={{ color: '#e2e8f0′ }}>{item.reality}</span>
                   </div>
                   <div style={{ background: '#0d1f38', borderRadius: 8, padding: '0.75rem 1rem' }}>
                     <span style={{ color: '#60a5fa', fontWeight: 600 }}>📍 DFW Context: </span>

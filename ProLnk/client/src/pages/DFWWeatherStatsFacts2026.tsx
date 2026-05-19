@@ -23,7 +23,7 @@ export default function DFWWeatherStatsFacts2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '0.6rem', marginBottom: '2rem' }}>
           {concerns.map(c => (
-            <button key={c.id} onClick={() => setActive(c.id)} style={{ background: active === c.id ? '#F5E642' : '#0F2340', color: active === c.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === c.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.8rem 0.3rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.8rem' }}>
+            <button key={c.id} onClick={() => setActive(c.id)} style={{ background: active === c.id ? '#F5E642′ : '#0F2340', color: active === c.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === c.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.8rem 0.3rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.8rem' }}>
               <div style={{ fontSize: '1.4rem' }}>{c.icon}</div>
               <div>{c.label}</div>
             </button>

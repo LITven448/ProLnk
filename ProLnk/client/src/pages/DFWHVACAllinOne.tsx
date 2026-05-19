@@ -76,9 +76,9 @@ export default function DFWHVACAllinOne() {
                 padding: '12px 20px',
                 borderRadius: 10,
                 border: '2px solid',
-                borderColor: activeTab.id === t.id ? '#F5E642' : '#1e3a5f',
-                background: activeTab.id === t.id ? '#F5E642' : '#112240',
-                color: activeTab.id === t.id ? '#0A1628' : '#94a3b8',
+                borderColor: activeTab.id === t.id ? '#F5E642′ : '#1e3a5f',
+                background: activeTab.id === t.id ? '#F5E642′ : '#112240',
+                color: activeTab.id === t.id ? '#0A1628′ : '#94a3b8',
                 fontWeight: 700,
                 cursor: 'pointer',
                 fontSize: 14,
@@ -98,7 +98,7 @@ export default function DFWHVACAllinOne() {
                   {i + 1}
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e2e8f0' }}>{item.title}</div>
+                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e2e8f0′ }}>{item.title}</div>
                   <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5 }}>{item.desc}</div>
                 </div>
               </div>

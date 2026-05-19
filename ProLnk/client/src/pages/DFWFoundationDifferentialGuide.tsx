@@ -58,7 +58,7 @@ export default function DFWFoundationDifferentialGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                   <div style={{ color: '#94A3B8', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>TYPE</div>
-                  <div style={{ color: result.type === 'Differential' ? '#F87171' : '#34D399', fontWeight: 700, fontSize: 16 }}>{result.type}</div>
+                  <div style={{ color: result.type === 'Differential' ? '#F87171′ : '#34D399', fontWeight: 700, fontSize: 16 }}>{result.type}</div>
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                   <div style={{ color: '#94A3B8', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>SEVERITY</div>
@@ -78,7 +78,7 @@ export default function DFWFoundationDifferentialGuide() {
 
         <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 15, marginBottom: 12 }}>📐 DFW Action Thresholds</h2>
-          {[['&lt;0.5"', 'Monitor', '#34D399'], ['0.5–1"', 'Annual engineer review', '#F5E642'], ['1–2"', 'Repair planning', '#FB923C'], ['&gt;2"', 'Urgent structural review', '#F87171']].map(([val, label, color]) => (
+          {[['&lt;0.5″', 'Monitor', '#34D399'], ['0.5–1″', 'Annual engineer review', '#F5E642'], ['1–2″', 'Repair planning', '#FB923C'], ['&gt;2″', 'Urgent structural review', '#F87171']].map(([val, label, color]) => (
             <div key={val} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
               <div style={{ background: color + '22', border: `1px solid ${color}`, borderRadius: 6, padding: '4px 10px', color: color, fontSize: 13, fontWeight: 700, minWidth: 60, textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: val }} />
               <div style={{ color: '#CBD5E1', fontSize: 14 }}>{label}</div>

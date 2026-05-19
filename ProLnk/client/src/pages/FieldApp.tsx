@@ -228,11 +228,11 @@ export default function FieldApp() {
             <Smartphone className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">ProLnk Field</h1>
-          <p className="text-teal-200 text-sm mt-1">Log jobs. Earn more.</p>
+          <p className="text-teal-200 text-sm mt-1″>Log jobs. Earn more.</p>
         </div>
 
         {/* Stats */}
-        <div className="px-6 grid grid-cols-3 gap-3 mb-8">
+        <div className="px-6 grid grid-cols-3 gap-3 mb-8″>
           {[
             { label: "Jobs Today", value: String(jobsToday) },
             { label: "Total Jobs", value: String((myJobs ?? []).length) },
@@ -240,40 +240,40 @@ export default function FieldApp() {
           ].map((stat) => (
             <div key={stat.label} className="bg-white/10 rounded-xl p-3 text-center backdrop-blur">
               <div className="text-xl font-bold text-white">{stat.value}</div>
-              <div className="text-xs text-teal-200 mt-0.5">{stat.label}</div>
+              <div className="text-xs text-teal-200 mt-0.5″>{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Main CTA */}
-        <div className="flex-1 px-6">
+        <div className="flex-1 px-6″>
           <button
             onClick={() => setStep("new-job")}
             className="w-full bg-white text-teal-900 rounded-2xl p-6 flex items-center justify-between shadow-xl active:scale-95 transition-transform"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4″>
               <div className="w-12 h-12 bg-[#0A1628]/10 rounded-xl flex items-center justify-center">
                 <Plus className="w-6 h-6 text-[#0A1628]" />
               </div>
               <div className="text-left">
                 <div className="font-bold text-lg">New Job</div>
-                <div className="text-sm text-gray-500">Log a job & upload photos</div>
+                <div className="text-sm text-gray-500″>Log a job & upload photos</div>
               </div>
             </div>
-            <ChevronRight className="w-5 h-5 text-gray-400" />
+            <ChevronRight className="w-5 h-5 text-gray-400″ />
           </button>
 
           {/* How it works */}
-          <div className="mt-8 space-y-3">
+          <div className="mt-8 space-y-3″>
             <p className="text-teal-200 text-xs font-semibold uppercase tracking-wider">How it works</p>
             {[
-              { icon: <MapPin className="w-4 h-4" />, text: "GPS auto-fills the job address" },
-              { icon: <Camera className="w-4 h-4" />, text: "Take 1-5 photos of the job site" },
-              { icon: <Zap className="w-4 h-4" />, text: "AI scans for cross-sell opportunities" },
-              { icon: <Star className="w-4 h-4" />, text: "Earn commissions when leads convert" },
+              { icon: <MapPin className="w-4 h-4″ />, text: "GPS auto-fills the job address" },
+              { icon: <Camera className="w-4 h-4″ />, text: "Take 1-5 photos of the job site" },
+              { icon: <Zap className="w-4 h-4″ />, text: "AI scans for cross-sell opportunities" },
+              { icon: <Star className="w-4 h-4″ />, text: "Earn commissions when leads convert" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 text-teal-100 text-sm">
-                <div className="w-7 h-7 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-7 h-7 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0″>
                   {item.icon}
                 </div>
                 {item.text}
@@ -297,23 +297,23 @@ export default function FieldApp() {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col">
         {/* Header */}
-        <div className="bg-teal-700 text-white px-4 py-4 flex items-center gap-3">
-          <button onClick={() => setStep("home")} className="p-1">
-            <ArrowLeft className="w-5 h-5" />
+        <div className="bg-teal-700 text-white px-4 py-4 flex items-center gap-3″>
+          <button onClick={() => setStep("home")} className="p-1″>
+            <ArrowLeft className="w-5 h-5″ />
           </button>
           <h1 className="font-semibold text-lg">New Job</h1>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-4 py-6 space-y-5">
+        <div className="flex-1 overflow-y-auto px-4 py-6 space-y-5″>
           {/* Address */}
-          <div className="space-y-2">
-            <Label className="text-sm font-semibold text-gray-700">Job Address *</Label>
-            <div className="flex gap-2">
+          <div className="space-y-2″>
+            <Label className="text-sm font-semibold text-gray-700″>Job Address *</Label>
+            <div className="flex gap-2″>
               <Input
-                placeholder="123 Main St, Dallas, TX 75201"
+                placeholder="123 Main St, Dallas, TX 75201″
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className="flex-1"
+                className="flex-1″
               />
               <Button
                 variant="outline"
@@ -322,15 +322,15 @@ export default function FieldApp() {
                 disabled={gpsLoading}
                 className="flex-shrink-0 border-[#0A1628]/20 text-[#0A1628]"
               >
-                {gpsLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Navigation className="w-4 h-4" />}
+                {gpsLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Navigation className="w-4 h-4″ />}
               </Button>
             </div>
-            <p className="text-xs text-gray-400">Tap the GPS icon to auto-fill your current location</p>
+            <p className="text-xs text-gray-400″>Tap the GPS icon to auto-fill your current location</p>
           </div>
 
           {/* Customer Name (optional) */}
-          <div className="space-y-2">
-            <Label className="text-sm font-semibold text-gray-700">Customer Name <span className="text-gray-400 font-normal">(optional)</span></Label>
+          <div className="space-y-2″>
+            <Label className="text-sm font-semibold text-gray-700″>Customer Name <span className="text-gray-400 font-normal">(optional)</span></Label>
             <Input
               placeholder="John Smith"
               value={customerName}
@@ -339,8 +339,8 @@ export default function FieldApp() {
           </div>
 
           {/* Job Type */}
-          <div className="space-y-2">
-            <Label className="text-sm font-semibold text-gray-700">Job Type <span className="text-gray-400 font-normal">(optional)</span></Label>
+          <div className="space-y-2″>
+            <Label className="text-sm font-semibold text-gray-700″>Job Type <span className="text-gray-400 font-normal">(optional)</span></Label>
             <Input
               placeholder="e.g. Pet waste removal, lawn mowing..."
               value={jobType}
@@ -349,14 +349,14 @@ export default function FieldApp() {
           </div>
 
           {/* Photos */}
-          <div className="space-y-3">
-            <Label className="text-sm font-semibold text-gray-700">Job Photos * <span className="text-gray-400 font-normal">(1-5 photos)</span></Label>
+          <div className="space-y-3″>
+            <Label className="text-sm font-semibold text-gray-700″>Job Photos * <span className="text-gray-400 font-normal">(1-5 photos)</span></Label>
 
             {/* Photo Grid */}
             {photos.length > 0 && (
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-2″>
                 {photos.map((photo, i) => (
-                  <div key={i} className="relative aspect-square rounded-xl overflow-hidden bg-gray-200">
+                  <div key={i} className="relative aspect-square rounded-xl overflow-hidden bg-gray-200″>
                     <img src={photo.previewUrl} alt="" className="w-full h-full object-cover" />
                     <button
                       onClick={() => removePhoto(i)}
@@ -369,10 +369,10 @@ export default function FieldApp() {
                 {photos.length < 5 && (
                   <button
                     onClick={() => fileInputRef.current?.click()}
-                    className="aspect-square rounded-xl border-2 border-dashed border-[#0A1628]/30 flex flex-col items-center justify-center bg-[#F5E642]/10 active:bg-[#0A1628]/10"
+                    className="aspect-square rounded-xl border-2 border-dashed border-[#0A1628]/30 flex flex-col items-center justify-center bg-[#F5E642]/10 active:bg-[#0A1628]/10″
                   >
                     <Plus className="w-6 h-6 text-[#0A1628]" />
-                    <span className="text-xs text-[#0A1628] mt-1">Add</span>
+                    <span className="text-xs text-[#0A1628] mt-1″>Add</span>
                   </button>
                 )}
               </div>
@@ -381,14 +381,14 @@ export default function FieldApp() {
             {photos.length === 0 && (
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="w-full border-2 border-dashed border-[#0A1628]/30 rounded-2xl p-8 flex flex-col items-center gap-3 bg-[#F5E642]/10 active:bg-[#0A1628]/10"
+                className="w-full border-2 border-dashed border-[#0A1628]/30 rounded-2xl p-8 flex flex-col items-center gap-3 bg-[#F5E642]/10 active:bg-[#0A1628]/10″
               >
                 <div className="w-14 h-14 bg-[#0A1628]/10 rounded-2xl flex items-center justify-center">
                   <Camera className="w-7 h-7 text-[#0A1628]" />
                 </div>
                 <div className="text-center">
                   <p className="font-semibold text-[#0A1628]">Take or Upload Photos</p>
-                  <p className="text-xs text-[#0A1628] mt-1">Tap to open camera or photo library</p>
+                  <p className="text-xs text-[#0A1628] mt-1″>Tap to open camera or photo library</p>
                 </div>
               </button>
             )}
@@ -405,10 +405,10 @@ export default function FieldApp() {
           </div>
 
           {/* Notes */}
-          <div className="space-y-2">
-            <Label className="text-sm font-semibold text-gray-700">Notes <span className="text-gray-400 font-normal">(optional)</span></Label>
+          <div className="space-y-2″>
+            <Label className="text-sm font-semibold text-gray-700″>Notes <span className="text-gray-400 font-normal">(optional)</span></Label>
             <textarea
-              className="w-full border border-gray-200 rounded-xl p-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full border border-gray-200 rounded-xl p-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-teal-500″
               rows={3}
               placeholder="Any notes about the job site..."
               value={notes}
@@ -418,16 +418,16 @@ export default function FieldApp() {
         </div>
 
         {/* Submit Button */}
-        <div className="px-4 pb-8 pt-4 bg-white border-t border-gray-100">
+        <div className="px-4 pb-8 pt-4 bg-white border-t border-gray-100″>
           <Button
             className="w-full bg-[#0A1628] hover:bg-teal-700 text-white h-14 text-base font-semibold rounded-2xl"
             onClick={handleSubmit}
             disabled={!address.trim() || photos.length === 0}
           >
-            <Upload className="w-5 h-5 mr-2" />
+            <Upload className="w-5 h-5 mr-2″ />
             Submit Job & Scan Photos
           </Button>
-          <p className="text-center text-xs text-gray-400 mt-2">AI will scan for cross-sell opportunities</p>
+          <p className="text-center text-xs text-gray-400 mt-2″>AI will scan for cross-sell opportunities</p>
         </div>
       </div>
     );
@@ -436,15 +436,15 @@ export default function FieldApp() {
   // --- Submitting ---------------------------------------------------------------
   if (step === "submitting") {
     return (
-      <div className="min-h-screen bg-teal-900 flex flex-col items-center justify-center text-white px-6">
+      <div className="min-h-screen bg-teal-900 flex flex-col items-center justify-center text-white px-6″>
         <div className="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center mb-6 animate-pulse">
-          <Zap className="w-10 h-10 text-[#0A1628]/60" />
+          <Zap className="w-10 h-10 text-[#0A1628]/60″ />
         </div>
-        <h2 className="text-xl font-bold mb-2">Scanning Photos...</h2>
+        <h2 className="text-xl font-bold mb-2″>Scanning Photos...</h2>
         <p className="text-teal-200 text-sm text-center">
           AI is analyzing your job site photos for cross-sell opportunities
         </p>
-        <div className="mt-8 flex gap-2">
+        <div className="mt-8 flex gap-2″>
           {[0, 1, 2].map((i) => (
             <div
               key={i}
@@ -461,19 +461,19 @@ export default function FieldApp() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <div className="bg-teal-700 text-white px-4 py-4 flex items-center gap-3">
-        <CheckCircle className="w-5 h-5" />
+      <div className="bg-teal-700 text-white px-4 py-4 flex items-center gap-3″>
+        <CheckCircle className="w-5 h-5″ />
         <h1 className="font-semibold text-lg">Job Submitted!</h1>
       </div>
 
-      <div className="flex-1 px-4 py-6 space-y-5">
+      <div className="flex-1 px-4 py-6 space-y-5″>
         {/* Success Card */}
-        <Card className="border-green-200 bg-green-50">
-          <CardContent className="p-4 flex items-start gap-3">
-            <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+        <Card className="border-green-200 bg-green-50″>
+          <CardContent className="p-4 flex items-start gap-3″>
+            <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5″ />
             <div>
-              <p className="font-semibold text-green-800">Photos received and analyzed</p>
-              <p className="text-sm text-green-600 mt-0.5">{address}</p>
+              <p className="font-semibold text-green-800″>Photos received and analyzed</p>
+              <p className="text-sm text-green-600 mt-0.5″>{address}</p>
             </div>
           </CardContent>
         </Card>
@@ -481,31 +481,31 @@ export default function FieldApp() {
         {/* Opportunities Found */}
         {opportunities.length > 0 && (
           <div>
-            <h2 className="font-semibold text-gray-800 mb-3">
+            <h2 className="font-semibold text-gray-800 mb-3″>
               [TARGET] {opportunities.length} Opportunity{opportunities.length > 1 ? "s" : ""} Detected
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-3″>
               {opportunities.map((opp, i) => (
-                <Card key={i} className="border-[#0A1628]/20">
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex-1">
+                <Card key={i} className="border-[#0A1628]/20″>
+                  <CardContent className="p-4″>
+                    <div className="flex items-start justify-between gap-2″>
+                      <div className="flex-1″>
                         <div className="flex items-center gap-2 flex-wrap">
                           <Badge className="bg-[#0A1628]/10 text-[#0A1628] border-[#0A1628]/20 text-xs">
                             {opp.category}
                           </Badge>
-                          <span className="text-xs text-gray-400">
+                          <span className="text-xs text-gray-400″>
                             {Math.round(opp.confidence * 100)}% confidence
                           </span>
                         </div>
-                        <p className="text-sm text-gray-700 mt-2">{opp.description}</p>
+                        <p className="text-sm text-gray-700 mt-2″>{opp.description}</p>
                       </div>
                       {opp.estimatedValue && (
-                        <div className="text-right flex-shrink-0">
-                          <div className="text-sm font-bold text-green-600">
+                        <div className="text-right flex-shrink-0″>
+                          <div className="text-sm font-bold text-green-600″>
                             ~${opp.estimatedValue}
                           </div>
-                          <div className="text-xs text-gray-400">est. value</div>
+                          <div className="text-xs text-gray-400″>est. value</div>
                         </div>
                       )}
                     </div>
@@ -520,22 +520,22 @@ export default function FieldApp() {
         )}
 
         {opportunities.length === 0 && (
-          <Card className="border-gray-200">
+          <Card className="border-gray-200″>
             <CardContent className="p-6 text-center">
               <p className="text-gray-500 text-sm">No cross-sell opportunities detected in these photos.</p>
-              <p className="text-gray-400 text-xs mt-1">Try uploading photos that show more of the property.</p>
+              <p className="text-gray-400 text-xs mt-1″>Try uploading photos that show more of the property.</p>
             </CardContent>
           </Card>
         )}
       </div>
 
       {/* Actions */}
-      <div className="px-4 pb-8 pt-4 bg-white border-t border-gray-100 space-y-3">
+      <div className="px-4 pb-8 pt-4 bg-white border-t border-gray-100 space-y-3″>
         <Button
           className="w-full bg-[#0A1628] hover:bg-teal-700 text-white h-12 rounded-2xl"
           onClick={() => { resetForm(); setStep("new-job"); }}
         >
-          <Plus className="w-4 h-4 mr-2" />
+          <Plus className="w-4 h-4 mr-2″ />
           Log Another Job
         </Button>
         <Button

@@ -45,7 +45,7 @@ export default function DFWNorthDallasCorridorGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🗓️ Home Era</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeEras.map(e => (
-              <button key={e.value} onClick={() => setEra(e.value)} style={{ background: era === e.value ? '#F5E642' : '#1E2D45', color: era === e.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{e.label}</button>
+              <button key={e.value} onClick={() => setEra(e.value)} style={{ background: era === e.value ? '#F5E642′ : '#1E2D45', color: era === e.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{e.label}</button>
             ))}
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function DFWNorthDallasCorridorGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🎯 Upgrade Goal</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {upgradeGoals.map(g => (
-              <button key={g.value} onClick={() => setGoal(g.value)} style={{ background: goal === g.value ? '#F5E642' : '#1E2D45', color: goal === g.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{g.label}</button>
+              <button key={g.value} onClick={() => setGoal(g.value)} style={{ background: goal === g.value ? '#F5E642′ : '#1E2D45', color: goal === g.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{g.label}</button>
             ))}
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function DFWNorthDallasCorridorGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>📋 Renovation Priorities</div>
-              {result.priorities.map((p, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F5E642' }}>{p}</div>)}
+              {result.priorities.map((p, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F5E642′ }}>{p}</div>)}
             </div>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🤝 Service Level Expectations</div>

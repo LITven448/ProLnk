@@ -52,14 +52,14 @@ export default function DFWExteriorWaterproofingGuide() {
               <div style={{ fontSize: 12, color: '#94A3B8', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>{label}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {opts.map(o => (
-                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642' : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
+                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642′ : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
                 ))}
               </div>
             </div>
           ))}
         </div>
         {result ? (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>RECOMMENDED SOLUTION</div>
             <div style={{ fontSize: 19, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, lineHeight: 1.4 }}>{result.solution}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
@@ -75,7 +75,7 @@ export default function DFWExteriorWaterproofingGuide() {
             <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>💡 {result.notes}</div>
           </div>
         ) : (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8' }}>Select your exterior type and water issue location to get a targeted waterproofing solution.</div>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8′ }}>Select your exterior type and water issue location to get a targeted waterproofing solution.</div>
         )}
         <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           {[{ icon: '🌊', title: 'French Drains', text: 'A trench filled with gravel and perforated pipe that intercepts surface and subsurface water before it reaches your walls. Standard DFW solution for clay-driven moisture problems.' }, { icon: '💧', title: 'Pop-Up Emitters', text: 'Terminate French drains with pop-up emitters that open under water pressure and close when flow stops — prevents backflow and critter intrusion. DFW code preferred.' }, { icon: '🌡️', title: 'Sealant Selection', text: 'In DFW heat, standard acrylic caulk fails in 2–3 years. Polyurethane (NP1, Sikaflex) or hybrid sealants are required at all exterior joints for 10+ year life.' }, { icon: '🏗️', title: 'Drainage Plane', text: 'Modern exterior walls need a drainage plane behind the cladding — a gap where any penetrating water can drain down and out. Missing in many DFW homes built before 2000.' }].map(({ icon, title, text }) => (

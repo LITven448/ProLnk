@@ -30,7 +30,7 @@ export default function DFWHomeInspectionRedFlagsGuide() {
           <h1 style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>DFW Home Inspection Red Flags</h1>
           <p style={{ color: '#94A3B8', fontSize: 15 }}>Walk away vs. negotiate — with DFW-specific context and repair estimates.</p>
           <div style={{ background: '#1E3A5F', borderLeft: '4px solid #F5E642', padding: '12px 16px', borderRadius: 6, marginTop: 20, textAlign: 'left' }}>
-            <strong style={{ color: '#F5E642' }}>🏗️ DFW Reality Check:</strong>
+            <strong style={{ color: '#F5E642′ }}>🏗️ DFW Reality Check:</strong>
             <span style={{ color: '#CBD5E1', fontSize: 14 }}> Foundation letters are extremely common in North Texas. Expansive clay soil means over 50% of DFW homes have had some repair. A letter alone is NOT a dealbreaker — what matters is scope, certification, and warranty.</span>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function DFWHomeInspectionRedFlagsGuide() {
           <div>
             <div style={{ background: hasWalkAway ? '#450A0A' : '#052E16', border: `2px solid ${hasWalkAway ? '#DC2626' : '#16A34A'}`, borderRadius: 12, padding: 20, marginBottom: 24, textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{hasWalkAway ? '🚨' : '🤝'}</div>
-              <h2 style={{ fontSize: 22, fontWeight: 800, color: hasWalkAway ? '#FCA5A5' : '#86EFAC', marginBottom: 4 }}>
+              <h2 style={{ fontSize: 22, fontWeight: 800, color: hasWalkAway ? '#FCA5A5′ : '#86EFAC', marginBottom: 4 }}>
                 {hasWalkAway ? 'CONSIDER WALKING AWAY' : 'NEGOTIATE — DON\’T WALK'}
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 14 }}>{criticalCount} critical issue{criticalCount !== 1 ? 's' : ''} detected across {selected_findings.length} finding{selected_findings.length !== 1 ? 's' : ''}</p>
@@ -62,7 +62,7 @@ export default function DFWHomeInspectionRedFlagsGuide() {
                 <div key={f.id} style={{ background: '#0F2236', border: '1px solid #1E3A5F', borderRadius: 10, padding: 16 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                     <span style={{ fontSize: 14, fontWeight: 600, color: '#E8F0FE', flex: 1 }}>{f.label}</span>
-                    <span style={{ fontSize: 12, padding: '3px 10px', borderRadius: 12, background: f.walkAway ? '#7F1D1D' : '#052E16', color: f.walkAway ? '#FCA5A5' : '#86EFAC', marginLeft: 12, whiteSpace: 'nowrap' }}>{f.walkAway ? '🚨 Walk Away' : '🤝 Negotiate'}</span>
+                    <span style={{ fontSize: 12, padding: '3px 10px', borderRadius: 12, background: f.walkAway ? '#7F1D1D' : '#052E16', color: f.walkAway ? '#FCA5A5′ : '#86EFAC', marginLeft: 12, whiteSpace: ’nowrap' }}>{f.walkAway ? '🚨 Walk Away' : '🤝 Negotiate'}</span>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 10 }}>
                     <div style={{ background: '#1E3A5F', borderRadius: 6, padding: '8px 12px' }}>
@@ -71,7 +71,7 @@ export default function DFWHomeInspectionRedFlagsGuide() {
                     </div>
                     <div style={{ background: '#1E3A5F', borderRadius: 6, padding: '8px 12px' }}>
                       <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 2 }}>STRATEGY</div>
-                      <div style={{ fontSize: 13, color: '#CBD5E1' }}>{f.strategy}</div>
+                      <div style={{ fontSize: 13, color: '#CBD5E1′ }}>{f.strategy}</div>
                     </div>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export default function DFWHomeInspectionRedFlagsGuide() {
         )}
 
         {selected.length === 0 && (
-          <div style={{ textAlign: 'center', padding: 40, color: '#475569' }}>
+          <div style={{ textAlign: 'center', padding: 40, color: '#475569′ }}>
             <div style={{ fontSize: 40, marginBottom: 12 }}>☝️</div>
             <p>Select inspection findings above to get your walk-away vs. negotiate assessment.</p>
           </div>

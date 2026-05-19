@@ -80,18 +80,18 @@ export default function DFWTitleInsuranceGuide() {
           </ul>
         </div>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: 28, marginBottom: 28, color: '#fff' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Title Insurance Cost Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Title Insurance Cost Estimator</h2>
           <p style={{ color: '#ccc', marginBottom: 20 }}>Enter your home purchase price to estimate title insurance costs and see negotiation tips</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {purchasePrices.map(p => (
               <button key={p.id} onClick={() => { setSelectedPrice(p.id); setShowResult(false); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedPrice === p.id ? '#F5E642' : '#444', background: selectedPrice === p.id ? '#F5E642' : 'transparent', color: selectedPrice === p.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedPrice === p.id ? '#F5E642′ : '#444', background: selectedPrice === p.id ? '#F5E642' : ’transparent', color: selectedPrice === p.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
                 {p.label}
               </button>
             ))}
           </div>
           <button onClick={() => setShowResult(true)} disabled={!selectedPrice}
-            style={{ background: selectedPrice ? '#F5E642' : '#333', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: selectedPrice ? 'pointer' : 'not-allowed', fontSize: 16 }}>
+            style={{ background: selectedPrice ? '#F5E642′ : '#333', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: selectedPrice ? 'pointer' : 'not-allowed', fontSize: 16 }}>
             Estimate Costs →
           </button>
           {showResult && costs && (
@@ -110,7 +110,7 @@ export default function DFWTitleInsuranceGuide() {
                 ))}
               </div>
               <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 8, padding: 16, fontSize: 14 }}>
-                <strong style={{ color: '#F5E642' }}>Negotiation Tips:</strong>
+                <strong style={{ color: '#F5E642′ }}>Negotiation Tips:</strong>
                 <ul style={{ paddingLeft: 18, marginTop: 8, color: '#ccc', lineHeight: 1.9 }}>
                   <li>Ask seller to pay the owner policy — common in Texas and saves you the larger premium</li>
                   <li>Ensure both policies are issued simultaneously to get the discount</li>
@@ -122,7 +122,7 @@ export default function DFWTitleInsuranceGuide() {
         </div>
         <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 28 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📌 DFW Title Insurance Notes</h2>
-          <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#444' }}>
+          <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#444′ }}>
             <li>Texas title insurance rates are set by the state — all companies charge the same base rate</li>
             <li>Title companies compete on service and closing speed, not price — ask your agent for a referral</li>
             <li>New construction in DFW — verify builder has clear title before closing</li>

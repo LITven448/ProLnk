@@ -64,11 +64,11 @@ export default function DFWJumboLoanGuide() {
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>DFW Luxury Markets — Jumbo Impact</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 14, marginBottom: 32 }}>
           {luxuryAreas.map(a => (
-            <div key={a.name} style={{ background: 'white', borderRadius: 10, padding: 18, boxShadow: '0 1px 6px rgba(0,0,0,0.06)', borderLeft: '4px solid #F5E642' }}>
+            <div key={a.name} style={{ background: 'white', borderRadius: 10, padding: 18, boxShadow: '0 1px 6px rgba(0,0,0,0.06)', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 15 }}>{a.name}</div>
               <div style={{ color: '#64748B', fontSize: 13, marginTop: 4 }}>{a.city}</div>
               <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628', margin: '8px 0 4px' }}>{a.medianPrice}</div>
-              <div style={{ fontSize: 12, color: '#94A3B8' }}>{a.note}</div>
+              <div style={{ fontSize: 12, color: '#94A3B8′ }}>{a.note}</div>
             </div>
           ))}
         </div>
@@ -90,7 +90,7 @@ export default function DFWJumboLoanGuide() {
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, color: '#475569', display: 'block', marginBottom: 6 }}>Home Price: ${homePrice.toLocaleString()}</label>
               <input type="range" min={400000} max={3000000} step={50000} value={homePrice} onChange={e => setHomePrice(Number(e.target.value))} style={{ width: '100%' }} />
-              <div style={{ fontSize: 12, marginTop: 4, color: isJumbo ? '#DC2626' : '#16A34A' }}>
+              <div style={{ fontSize: 12, marginTop: 4, color: isJumbo ? '#DC2626′ : '#16A34A' }}>
                 {isJumbo ? '⚠️ Jumbo loan required' : '✅ Conforming loan eligible'}
               </div>
             </div>
@@ -117,17 +117,17 @@ export default function DFWJumboLoanGuide() {
                 { label: 'Rate Premium', value: isJumbo ? `+${(jumboRate - conformingRate).toFixed(2)}%` : 'N/A', highlight: isJumbo },
                 { label: 'Monthly Premium', value: isJumbo ? `+$${Math.round(diff).toLocaleString()}` : '$0', highlight: isJumbo },
               ].map(item => (
-                <div key={item.label} style={{ background: item.highlight ? '#FEF2F2' : '#F8FAFC', borderRadius: 10, padding: 14, textAlign: 'center' }}>
+                <div key={item.label} style={{ background: item.highlight ? '#FEF2F2′ : '#F8FAFC', borderRadius: 10, padding: 14, textAlign: ’center' }}>
                   <div style={{ fontSize: 12, color: '#64748B', marginBottom: 6 }}>{item.label}</div>
-                  <div style={{ fontSize: 17, fontWeight: 800, color: item.highlight ? '#DC2626' : '#0A1628' }}>{item.value}</div>
+                  <div style={{ fontSize: 17, fontWeight: 800, color: item.highlight ? '#DC2626′ : '#0A1628' }}>{item.value}</div>
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 20, border: '1px solid #BBF7D0' }}>
-          <h3 style={{ margin: '0 0 8px', color: '#166534' }}>💡 DFW Jumbo Strategy</h3>
+        <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 20, border: '1px solid #BBF7D0′ }}>
+          <h3 style={{ margin: '0 0 8px', color: '#166534′ }}>💡 DFW Jumbo Strategy</h3>
           <p style={{ margin: 0, color: '#14532D', fontSize: 14 }}>
             Portfolio lenders (local banks, credit unions) often offer better jumbo rates than national lenders in DFW. First Financial Bank, Prosperity Bank, and Veritex Community Bank are known for competitive jumbo programs. Consider a 5/1 or 7/1 ARM if you plan to sell or refinance within 7 years — luxury DFW appreciation averages 6-8% annually.
           </p>

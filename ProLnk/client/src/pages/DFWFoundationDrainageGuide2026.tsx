@@ -33,7 +33,7 @@ export default function DFWFoundationDrainageGuide2026() {
             { label: '🔲 Window Well Drains', desc: 'Any below-grade window well must have a drain connected to a French drain or daylight. Failure here causes direct water intrusion.' },
           ].map((c) => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 8, padding: 20, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{c.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{c.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{c.desc}</div>
             </div>
           ))}
@@ -53,13 +53,13 @@ export default function DFWFoundationDrainageGuide2026() {
             <option value="slope">Yard slopes toward house from neighbors</option>
           </select>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Solution: {result.solution}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10 }}>{result.detail}</div>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <div style={{ background: '#112240', padding: '4px 12px', borderRadius: 4, fontSize: 13, color: '#94a3b8' }}>💰 {result.cost}</div>
-                <div style={{ background: '#112240', padding: '4px 12px', borderRadius: 4, fontSize: 13, color: '#94a3b8' }}>🔧 {result.diy ? 'DIY Possible' : 'Pro Required'}</div>
-                <div style={{ background: '#112240', padding: '4px 12px', borderRadius: 4, fontSize: 13, color: '#94a3b8' }}>⏱️ {result.urgency}</div>
+                <div style={{ background: '#112240', padding: '4px 12px', borderRadius: 4, fontSize: 13, color: '#94a3b8′ }}>💰 {result.cost}</div>
+                <div style={{ background: '#112240', padding: '4px 12px', borderRadius: 4, fontSize: 13, color: '#94a3b8′ }}>🔧 {result.diy ? ’DIY Possible' : 'Pro Required'}</div>
+                <div style={{ background: '#112240', padding: '4px 12px', borderRadius: 4, fontSize: 13, color: '#94a3b8′ }}>⏱️ {result.urgency}</div>
               </div>
             </div>
           )}

@@ -24,7 +24,7 @@ export default function DFWRealEstateStats2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem', marginBottom: '2rem' }}>
           {metrics.map(m => (
-            <button key={m.id} onClick={() => setActive(m.id)} style={{ background: active === m.id ? '#F5E642' : '#0F2340', color: active === m.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === m.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.85rem 0.5rem', cursor: 'pointer', transition: 'all 0.2s', fontWeight: 700, fontSize: '0.85rem' }}>
+            <button key={m.id} onClick={() => setActive(m.id)} style={{ background: active === m.id ? '#F5E642′ : '#0F2340', color: active === m.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === m.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.85rem 0.5rem', cursor: ’pointer', transition: 'all 0.2s', fontWeight: 700, fontSize: '0.85rem' }}>
               <div style={{ fontSize: '1.5rem' }}>{m.icon}</div>
               <div>{m.label}</div>
               <div style={{ fontSize: '1.1rem', marginTop: '0.2rem' }}>{m.value}</div>

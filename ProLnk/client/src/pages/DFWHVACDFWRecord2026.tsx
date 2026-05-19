@@ -40,7 +40,7 @@ export default function DFWHVACDFWRecord2026() {
           DFW holds some of the nation's most punishing weather records. Understanding them helps you prepare your HVAC system before extremes strike again.
         </p>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: '20px 24px', marginBottom: 28, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: '20px 24px', marginBottom: 28, border: '1px solid #334155′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>📊 Why Records Matter for HVAC</div>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14, lineHeight: 1.6 }}>
             HVAC equipment is rated for ASHRAE design conditions — not record extremes. When DFW breaks records, systems run at 130-150% of design load. Knowing historical extremes lets you spec and maintain equipment for worst-case survival.
@@ -52,7 +52,7 @@ export default function DFWHVACDFWRecord2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
             {extremes.map((e, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: ’pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
                 {e.type}
               </button>
             ))}
@@ -71,7 +71,7 @@ export default function DFWHVACDFWRecord2026() {
           </div>
         )}
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
           <div style={{ color: '#fff', fontWeight: 700, marginBottom: 8 }}>🛡️ Bottom Line for DFW Homeowners</div>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0, lineHeight: 1.6 }}>
             Size and maintain for the extremes, not the averages. A system that fails at 110°F in August or -2°F in February costs far more than preventive preparation. ProLnk connects you with DFW HVAC pros who understand local weather history.

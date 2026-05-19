@@ -63,7 +63,7 @@ export default function DFWCompostingGuide() {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1a3a1a,#0f2a0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1a3a1a,#0f2a0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0′ }}>
           <h2 style={{ color: '#4ADE80', fontSize: 20, fontWeight: 700, margin: '0 0 8px' }}>🌡️ DFW Heat Is Your Composting Advantage</h2>
           <p style={{ color: '#86EFAC', margin: 0 }}>Hot compost piles in DFW summer (100°F+ ambient) can reach 140–160°F internally — ideal for rapid decomposition. What takes 3 months in Seattle takes 4–6 weeks in a Dallas summer. DFW's alkaline clay soil also benefits enormously from compost, which lowers pH, improves drainage, and adds organic matter.</p>
         </div>
@@ -81,7 +81,7 @@ export default function DFWCompostingGuide() {
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, margin: '48px 0 0' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, margin: '48px 0 0′ }}>
           <div style={{ background: '#1E2D45', borderRadius: 16, padding: 24, border: '1px solid #2A3F5C' }}>
             <h3 style={{ color: '#4ADE80', fontWeight: 700, margin: '0 0 16px', fontSize: 18 }}>✅ Compost These in DFW</h3>
             {doList.map(item => <div key={item} style={{ color: '#94A3B8', fontSize: 14, marginBottom: 8 }}>{item}</div>)}
@@ -107,10 +107,10 @@ export default function DFWCompostingGuide() {
         <p style={{ color: '#94A3B8', marginBottom: 20 }}>Enter your weekly waste to get a bin size recommendation and time-to-compost estimate.</p>
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 28, border: '1px solid #2A3F5C', maxWidth: 520 }}>
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Weekly Yard Waste (lbs)</label>
-          <input type="number" value={yardWaste} onChange={e => setYardWaste(e.target.value)} placeholder="e.g. 20"
+          <input type="number" value={yardWaste} onChange={e => setYardWaste(e.target.value)} placeholder="e.g. 20″
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Weekly Food Scraps (lbs)</label>
-          <input type="number" value={foodScraps} onChange={e => setFoodScraps(e.target.value)} placeholder="e.g. 5"
+          <input type="number" value={foodScraps} onChange={e => setFoodScraps(e.target.value)} placeholder="e.g. 5″
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: 'pointer', width: '100%' }}>
             Get My Composting Plan
@@ -128,7 +128,7 @@ export default function DFWCompostingGuide() {
               <div style={{ color: '#4ADE80', fontSize: 32, fontWeight: 800 }}>{result.weeks} wks</div>
               <div style={{ color: '#64748B', fontSize: 13 }}>in DFW summer heat</div>
             </div>
-            <div style={{ background: '#1E2D45', borderRadius: 12, padding: '20px 24px', border: '1px solid #2A3F5C', gridColumn: 'span 2' }}>
+            <div style={{ background: '#1E2D45', borderRadius: 12, padding: '20px 24px', border: '1px solid #2A3F5C', gridColumn: 'span 2′ }}>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 4 }}>Soil Impact</div>
               <div style={{ color: '#60A5FA', fontSize: 16, fontWeight: 600 }}>{result.yardBenefit}</div>
             </div>

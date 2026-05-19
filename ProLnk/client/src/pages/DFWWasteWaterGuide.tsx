@@ -49,8 +49,8 @@ export default function DFWWasteWaterGuide() {
                 key={c.city}
                 onClick={() => setSelectedCity(c.city)}
                 style={{
-                  backgroundColor: selectedCity === c.city ? '#F5E642' : '#0A1628',
-                  color: selectedCity === c.city ? '#0A1628' : '#fff',
+                  backgroundColor: selectedCity === c.city ? '#F5E642′ : '#0A1628',
+                  color: selectedCity === c.city ? '#0A1628′ : '#fff',
                   border: '1px solid #F5E642',
                   borderRadius: '8px',
                   padding: '10px',
@@ -66,7 +66,7 @@ export default function DFWWasteWaterGuide() {
           {cityInfo && (
             <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px' }}>
               <p style={{ color: '#F5E642', fontWeight: '700', marginBottom: '6px' }}>🏛️ {cityInfo.sewer}</p>
-              <p style={{ color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6' }}>{cityInfo.note}</p>
+              <p style={{ color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6′ }}>{cityInfo.note}</p>
             </div>
           )}
         </div>
@@ -77,7 +77,7 @@ export default function DFWWasteWaterGuide() {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <h2 style={{ color: '#F5E642', fontSize: '16px' }}>⚙️ What Is a Lift Station? (DFW Has Thousands)</h2>
-            <span style={{ color: '#F5E642' }}>{showLiftStation ? '▲' : '▼'}</span>
+            <span style={{ color: '#F5E642′ }}>{showLiftStation ? '▲' : '▼'}</span>
           </div>
           {showLiftStation && (
             <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.7', marginTop: '12px' }}>
@@ -95,7 +95,7 @@ export default function DFWWasteWaterGuide() {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <h2 style={{ color: '#F5E642', fontSize: '16px' }}>🚫 Never Flush in DFW</h2>
-            <span style={{ color: '#F5E642' }}>{showNeverFlush ? '▲' : '▼'}</span>
+            <span style={{ color: '#F5E642′ }}>{showNeverFlush ? '▲' : '▼'}</span>
           </div>
           {showNeverFlush && (
             <ul style={{ marginTop: '12px', paddingLeft: '0', listStyle: 'none' }}>

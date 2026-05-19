@@ -47,7 +47,7 @@ export default function DFWFloodPreparationGuide() {
             {[['🌧️ Growth Problem', 'DFW added 1.3M people in 10 years — concrete and pavement overwhelm aging drainage infrastructure'], ['⚡ Flash Flood Speed', 'DFW creeks can rise 20+ feet in under an hour — Turn Around, Don\’t Drown applies even on local roads'], ['🏠 False Security', '25% of NFIP claims come from Zone X (low risk) — location on a map doesn\’t make you immune'], ['📊 Record Events', 'May 2015: 11 inches in 24 hours. 2022: $3B in DFW flood losses. 2024: multiple hundred-year events in one season']].map(([t, d]) => (
               <div key={t as string} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 6 }}>{t}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{d}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{d}</div>
               </div>
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function DFWFloodPreparationGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>🪜 Sandbag Placement Guide</h2>
           {[['Garage doors', 'Line threshold with sandbags 3 high — garage is most common flood entry point'], ['Entry doors', 'L-shaped sandbag barrier, 6 inches out from door frame'], ['Window wells', 'Surround basement window wells to prevent water intrusion'], ['HVAC vents', 'Sandbag around ground-level AC compressor and utility vents'], ['Sewer clean-out', 'Cap sewer clean-out with plug — prevents sewage backflow into home']].map(([loc, tip]) => (
-            <div key={loc} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #0A1628' }}>
+            <div key={loc} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #0A1628′ }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 130, fontSize: 14 }}>{loc}</span>
               <span style={{ color: '#94a3b8', fontSize: 14 }}>{tip}</span>
             </div>
@@ -66,7 +66,7 @@ export default function DFWFloodPreparationGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Flood Risk Assessment</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>FEMA Flood Zone (check msc.fema.gov)</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>FEMA Flood Zone (check msc.fema.gov)</label>
             <select value={floodZone} onChange={e => setFloodZone(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select flood zone...</option>
               <option value="zone-x">Zone X — Minimal Risk (outside 500-year floodplain)</option>
@@ -75,7 +75,7 @@ export default function DFWFloodPreparationGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home Foundation Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home Foundation Type</label>
             <select value={homeFeature} onChange={e => setHomeFeature(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select foundation type...</option>
               <option value="slab-elevated">Slab — Elevated (first floor 2+ feet above grade)</option>

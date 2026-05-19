@@ -14,54 +14,54 @@ export default function DFWHVACDirectExpansion2026() {
   const active = buildingTypes.find(b => b.id === selected);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <div style={{ fontSize: 40 }}>❄️</div>
-          <h1 style={{ color: "#F5E642", fontSize: 24, fontWeight: 700, margin: "8px 0 4px" }}>DFW Direct Expansion HVAC Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 14, margin: 0 }}>DX vs Chilled Water — System Selection for North Texas Buildings</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 24, fontWeight: 700, margin: "8px 0 4px" }}>DFW Direct Expansion HVAC Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 14, margin: 0 }}>DX vs Chilled Water — System Selection for North Texas Buildings</p>
         </div>
-        <div style={{ background: "#F5E64222", border: "1px solid #F5E64244", borderRadius: 10, padding: "14px 18px", marginBottom: 24 }}>
-          <div style={{ fontSize: 13, color: "#F5E642", fontWeight: 600, marginBottom: 6 }}>🔬 DX vs Chilled Water — The Core Difference</div>
+        <div style={{ background: "#F5E64222″, border: "1px solid #F5E64244", borderRadius: 10, padding: "14px 18px", marginBottom: 24 }}>
+          <div style={{ fontSize: 13, color: "#F5E642″, fontWeight: 600, marginBottom: 6 }}>🔬 DX vs Chilled Water — The Core Difference</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: "10px 12px" }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#F5E642", marginBottom: 4 }}>Direct Expansion (DX)</div>
-              <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.5 }}>Refrigerant flows directly to air handler coil. Air touches refrigerant coil. 90%+ of DFW residential and small commercial.</div>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: "10px 12px" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#F5E642″, marginBottom: 4 }}>Direct Expansion (DX)</div>
+              <div style={{ fontSize: 11, color: "#94a3b8″, lineHeight: 1.5 }}>Refrigerant flows directly to air handler coil. Air touches refrigerant coil. 90%+ of DFW residential and small commercial.</div>
             </div>
-            <div style={{ background: "#0A1628", borderRadius: 8, padding: "10px 12px" }}>
+            <div style={{ background: "#0A1628″, borderRadius: 8, padding: "10px 12px" }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#93c5fd", marginBottom: 4 }}>Chilled Water</div>
-              <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.5 }}>Chiller produces 44°F water. Water pipes to AHU coils. Air touches water coil. Large DFW commercial buildings.</div>
+              <div style={{ fontSize: 11, color: "#94a3b8″, lineHeight: 1.5 }}>Chiller produces 44°F water. Water pipes to AHU coils. Air touches water coil. Large DFW commercial buildings.</div>
             </div>
           </div>
         </div>
-        <div style={{ marginBottom: 16, fontSize: 14, fontWeight: 600, color: "#94a3b8" }}>Select your DFW building type:</div>
+        <div style={{ marginBottom: 16, fontSize: 14, fontWeight: 600, color: "#94a3b8″ }}>Select your DFW building type:</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12, marginBottom: 20 }}>
           {buildingTypes.map(b => (
-            <button key={b.id} onClick={() => setSelected(b.id)} style={{ background: selected === b.id ? "#F5E64222" : "#1e2d45", border: `1px solid ${selected === b.id ? "#F5E642" : "#334155"}`, borderRadius: 10, padding: "14px", textAlign: "left", cursor: "pointer", color: "#fff" }}>
+            <button key={b.id} onClick={() => setSelected(b.id)} style={{ background: selected === b.id ? "#F5E64222″ : "#1e2d45", border: `1px solid ${selected === b.id ? "#F5E642" : "#334155"}`, borderRadius: 10, padding: "14px", textAlign: "left", cursor: "pointer", color: "#fff" }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{b.icon}</div>
-              <div style={{ fontSize: 12, fontWeight: 600, color: selected === b.id ? "#F5E642" : "#e2e8f0" }}>{b.label}</div>
-              <div style={{ marginTop: 6, fontSize: 11, color: "#F5E642", fontWeight: 600 }}>{b.system}</div>
+              <div style={{ fontSize: 12, fontWeight: 600, color: selected === b.id ? "#F5E642″ : "#e2e8f0" }}>{b.label}</div>
+              <div style={{ marginTop: 6, fontSize: 11, color: "#F5E642″, fontWeight: 600 }}>{b.system}</div>
             </button>
           ))}
         </div>
         {active && (
-          <div style={{ background: "#1e2d45", border: "1px solid #F5E642", borderRadius: 12, padding: "18px 22px" }}>
+          <div style={{ background: "#1e2d45″, border: "1px solid #F5E642", borderRadius: 12, padding: "18px 22px" }}>
             <div style={{ fontSize: 28, marginBottom: 6 }}>{active.icon}</div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "#F5E642", marginBottom: 4 }}>{active.system}</div>
-            <div style={{ fontSize: 13, color: "#cbd5e1", lineHeight: 1.6, marginBottom: 14 }}>{active.desc}</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "#F5E642″, marginBottom: 4 }}>{active.system}</div>
+            <div style={{ fontSize: 13, color: "#cbd5e1″, lineHeight: 1.6, marginBottom: 14 }}>{active.desc}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: "#86efac", marginBottom: 6 }}>Pros in DFW</div>
-                {active.pros.map(p => <div key={p} style={{ fontSize: 12, color: "#94a3b8", marginBottom: 3 }}>• {p}</div>)}
+                {active.pros.map(p => <div key={p} style={{ fontSize: 12, color: "#94a3b8″, marginBottom: 3 }}>• {p}</div>)}
               </div>
               <div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#fca5a5", marginBottom: 6 }}>Cons in DFW</div>
-                {active.cons.map(c => <div key={c} style={{ fontSize: 12, color: "#94a3b8", marginBottom: 3 }}>• {c}</div>)}
+                <div style={{ fontSize: 12, fontWeight: 700, color: "#fca5a5″, marginBottom: 6 }}>Cons in DFW</div>
+                {active.cons.map(c => <div key={c} style={{ fontSize: 12, color: "#94a3b8″, marginBottom: 3 }}>• {c}</div>)}
               </div>
             </div>
           </div>
         )}
-        <div style={{ marginTop: 24, fontSize: 11, color: "#475569", textAlign: "center" }}>R-410A phase-out underway — new DFW installs moving to R-454B (lower GWP). Factor into system selection • ProLnk 2026</div>
+        <div style={{ marginTop: 24, fontSize: 11, color: "#475569″, textAlign: "center" }}>R-410A phase-out underway — new DFW installs moving to R-454B (lower GWP). Factor into system selection • ProLnk 2026</div>
       </div>
     </div>
   );

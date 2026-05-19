@@ -1,33 +1,33 @@
 import { Link } from "wouter";
 import { ArrowLeft, FileText } from "lucide-react";
 
-const LAST_UPDATED = "March 29, 2026";
+const LAST_UPDATED = "March 29, 2026″;
 const COMPANY = "ProLnk Technologies, LLC";
 const EMAIL = "legal@prolnk.com";
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-gray-50″ style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10″>
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
             <button className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition-colors">
-              <ArrowLeft className="w-4 h-4" /> Back to Home
+              <ArrowLeft className="w-4 h-4″ /> Back to Home
             </button>
           </Link>
-          <div className="flex items-center gap-2 text-sm text-gray-400">
-            <FileText className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-sm text-gray-400″>
+            <FileText className="w-4 h-4″ />
             Last updated: {LAST_UPDATED}
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10">
+      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10″>
         <div>
-          <h1 className="text-3xl font-black text-gray-900 mb-2">Terms of Service</h1>
-          <p className="text-gray-500">
+          <h1 className="text-3xl font-black text-gray-900 mb-2″>Terms of Service</h1>
+          <p className="text-gray-500″>
             These Terms of Service govern your use of the ProLnk and TrustyPro platforms operated by {COMPANY}.
             By creating an account or using our services, you agree to these terms.
           </p>
@@ -83,14 +83,14 @@ export default function TermsOfService() {
             body: `For questions about these Terms, contact us at ${EMAIL} or by mail at ${COMPANY}, Dallas, TX.`,
           },
         ].map(({ title, body }) => (
-          <section key={title} className="space-y-3">
-            <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <section key={title} className="space-y-3″>
+            <h2 className="text-lg font-bold text-gray-900″>{title}</h2>
             <p className="text-gray-600 leading-relaxed text-sm">{body}</p>
           </section>
         ))}
 
         {/* Footer nav */}
-        <div className="border-t border-gray-200 pt-8 flex flex-wrap gap-4 text-sm text-indigo-600">
+        <div className="border-t border-gray-200 pt-8 flex flex-wrap gap-4 text-sm text-indigo-600″>
           <Link href="/privacy"><span className="hover:underline cursor-pointer">Privacy Policy</span></Link>
           <Link href="/ccpa"><span className="hover:underline cursor-pointer">CCPA Data Rights</span></Link>
           <Link href="/cookies"><span className="hover:underline cursor-pointer">Cookie Policy</span></Link>

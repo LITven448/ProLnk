@@ -77,17 +77,17 @@ export default function DFWHVACDrainLineMaintenanceCalc() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Calculate Your DFW Drain Line Risk</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Calculate Your DFW Drain Line Risk</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Air Handler Location</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Air Handler Location</label>
               <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select location...</option>
                 {locations.map(l => <option key={l} value={l}>{l}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Usage Pattern</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Usage Pattern</label>
               <select value={usage} onChange={e => setUsage(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select usage...</option>
                 {usages.map(u => <option key={u} value={u}>{u}</option>)}

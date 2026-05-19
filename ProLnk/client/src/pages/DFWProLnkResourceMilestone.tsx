@@ -71,7 +71,7 @@ export default function DFWProLnkResourceMilestone() {
           <p style={{ color: '#8B9BB4', fontSize: 13, marginBottom: 14, textTransform: 'uppercase', letterSpacing: 1 }}>How did you find ProLnk?</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
             {discoveryPaths.map(dp => (
-              <button key={dp.id} onClick={() => setPath(dp.id)} style={{ padding: '9px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: path === dp.id ? '#F5E642' : '#1A2E4A', color: path === dp.id ? '#0A1628' : '#8B9BB4' }}>{dp.label}</button>
+              <button key={dp.id} onClick={() => setPath(dp.id)} style={{ padding: '9px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: path === dp.id ? '#F5E642′ : '#1A2E4A', color: path === dp.id ? '#0A1628' : '#8B9BB4' }}>{dp.label}</button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 20 }}>
@@ -91,10 +91,10 @@ export default function DFWProLnkResourceMilestone() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>Why We Built This</h2>
-          <p style={{ color: '#8B9BB4', fontSize: 14, lineHeight: 1.7, margin: 0 }}>DFW is one of the fastest-growing metros in the country. Hundreds of thousands of new homeowners arrive every year — and most of them don't know what they don't know. DFW's clay soil, storm seasons, extreme heat, and sudden freezes create a home maintenance environment unlike anywhere else. We built 2,700+ resources so that no DFW homeowner ever gets caught unprepared — or overcharged — again.</p>
+          <p style={{ color: '#8B9BB4', fontSize: 14, lineHeight: 1.7, margin: 0 }}>DFW is one of the fastest-growing metros in the country. Hundreds of thousands of new homeowners arrive every year — and most of them don't know what they don’t know. DFW’s clay soil, storm seasons, extreme heat, and sudden freezes create a home maintenance environment unlike anywhere else. We built 2,700+ resources so that no DFW homeowner ever gets caught unprepared — or overcharged — again.</p>
         </div>
 
-        <div style={{ background: 'linear-gradient(135deg, #1A2E4A 0%, #0A1628 100%)', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642' }}>
+        <div style={{ background: 'linear-gradient(135deg, #1A2E4A 0%, #0A1628 100%)', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642′ }}>
           <div style={{ fontSize: 32, marginBottom: 10 }}>🚀</div>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Get Free Quotes from Vetted DFW Pros</h2>
           <p style={{ color: '#8B9BB4', fontSize: 14, marginBottom: 16 }}>The library helps you understand your home. ProLnk helps you fix it — with contractors you can trust.</p>

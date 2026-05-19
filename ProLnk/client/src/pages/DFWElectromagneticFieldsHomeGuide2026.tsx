@@ -73,8 +73,8 @@ export default function DFWElectromagneticFieldsHomeGuide2026() {
             'ONCOR publishes easement maps — critical due diligence before purchasing any DFW property near transmission corridors.\',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ color: '#F5E642' }}>▸</span>
-              <span style={{ color: '#cbd5e1' }}>{fact}</span>
+              <span style={{ color: '#F5E642′ }}>▸</span>
+              <span style={{ color: '#cbd5e1′ }}>{fact}</span>
             </div>
           ))}
         </div>
@@ -84,7 +84,7 @@ export default function DFWElectromagneticFieldsHomeGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {Object.entries({ 'power-lines': '🏗️ Power Lines', 'smart-meter': '📡 Smart Meter', 'wifi-router': '📶 WiFi Router', 'electrical-panel': '⚡ Electrical Panel' }).map(([k, v]) => (
               <button key={k} onClick={() => setConcern(k)}
-                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: concern === k ? '#F5E642' : '#1e3a5f', color: concern === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: concern === k ? '#F5E642′ : '#1e3a5f', color: concern === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
                 {v}
               </button>
             ))}

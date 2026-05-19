@@ -5,9 +5,9 @@ export default function DFWFoundationWireMeshGuide2026() {
   const [result, setResult] = useState('');
 
   const vintages = [
-    { label: 'Built before 1970', key: 'pre1970' },
-    { label: 'Built 1970–1985', key: '70s85' },
-    { label: 'Built 1986–1999', key: '86to99' },
+    { label: 'Built before 1970', key: 'pre1970′ },
+    { label: 'Built 1970–1985', key: '70s85′ },
+    { label: 'Built 1986–1999', key: '86to99′ },
     { label: 'Built 2000–2015', key: '2000s' },
     { label: 'Built 2016–present', key: 'modern' },
   ];
@@ -15,14 +15,14 @@ export default function DFWFoundationWireMeshGuide2026() {
   const results: Record<string, string> = {
     pre1970: '🏚️ Likely unreinforced or minimal wire mesh (6x6 W1.4). Older DFW homes often have thinner slabs 3.5–4 inches. Expansive clay movement is your biggest concern. Engineer inspection recommended before any foundation work.',
     '70s85': '🔧 Wire mesh (6x6 W2.9) common in this era — adequate for the time but undersized for DFW clay. Watch for mid-slab cracking patterns. Many of these slabs have had previous repairs. Check for evidence of epoxy injection.',
-    '86to99': '⚙️ Transition era — mix of wire mesh and early rebar (#3 at 18" spacing). Some early post-tension systems appear. Check with original builder records if accessible. Reinforcement quality varies widely by subdivision.',
-    '2000s': '🏗️ Rebar dominant (#3 or #4 at 12–18" spacing) with growing post-tension adoption especially post-2005. Most DFW builders shifted to post-tension by 2008. Consult original engineering documents for your subdivision.',
+    '86to99': '⚙️ Transition era — mix of wire mesh and early rebar (#3 at 18″ spacing). Some early post-tension systems appear. Check with original builder records if accessible. Reinforcement quality varies widely by subdivision.',
+    '2000s': '🏗️ Rebar dominant (#3 or #4 at 12–18″ spacing) with growing post-tension adoption especially post-2005. Most DFW builders shifted to post-tension by 2008. Consult original engineering documents for your subdivision.',
     modern: '⚡ Almost certainly post-tension. DFW standard since mid-2000s. Fiber reinforcement may supplement as crack control. NEVER cut slab without detensiometer scan. Original slab plans should be available from builder or HOA.',
   };
 
   const types = [
-    { icon: '🕸️', name: 'Wire Mesh', pros: 'Low cost, easy installation', cons: 'Weaker, prone to mid-slab cracks', era: 'Pre-1990' },
-    { icon: '🔩', name: 'Rebar', pros: 'Strong, reliable in DFW clay', cons: 'Higher cost, labor intensive', era: '1985–2005' },
+    { icon: '🕸️', name: 'Wire Mesh', pros: 'Low cost, easy installation', cons: 'Weaker, prone to mid-slab cracks', era: 'Pre-1990′ },
+    { icon: '🔩', name: 'Rebar', pros: 'Strong, reliable in DFW clay', cons: 'Higher cost, labor intensive', era: '1985–2005′ },
     { icon: '⚡', name: 'Post-Tension', pros: 'Best for DFW clay, thinner slab', cons: 'Cable cut risk, complex repairs', era: '1995–present' },
     { icon: '🧵', name: 'Fiber Reinf.', pros: 'Reduces micro-cracking', cons: 'Not structural, supplement only', era: '2010–present' },
   ];
@@ -43,10 +43,10 @@ export default function DFWFoundationWireMeshGuide2026() {
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px', marginBottom: '4px' }}>{t.name}</div>
               <div style={{ color: '#64748B', fontSize: '11px', marginBottom: '10px' }}>Era: {t.era}</div>
               <div style={{ marginBottom: '6px' }}>
-                <span style={{ color: '#22C55E', fontSize: '12px', fontWeight: '600' }}>✅ {t.pros}</span>
+                <span style={{ color: '#22C55E', fontSize: '12px', fontWeight: '600′ }}>✅ {t.pros}</span>
               </div>
               <div>
-                <span style={{ color: '#EF4444', fontSize: '12px', fontWeight: '600' }}>⚠️ {t.cons}</span>
+                <span style={{ color: '#EF4444', fontSize: '12px', fontWeight: '600′ }}>⚠️ {t.cons}</span>
               </div>
             </div>
           ))}
@@ -58,7 +58,7 @@ export default function DFWFoundationWireMeshGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
             {vintages.map(v => (
               <button key={v.key} onClick={() => { setVintage(v.key); setResult(results[v.key]); }}
-                style={{ background: vintage === v.key ? '#F5E642' : '#1E3A5F', color: vintage === v.key ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600' }}>
+                style={{ background: vintage === v.key ? '#F5E642′ : '#1E3A5F', color: vintage === v.key ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600′ }}>
                 {v.label}
               </button>
             ))}

@@ -49,7 +49,7 @@ export default function DFWZoysiaGrassGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Your DFW yard condition:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {conditions.map(c => (
-                <button key={c} onClick={() => setSelectedCondition(c)} style={{ background: selectedCondition === c ? '#F5E642' : '#1e3a5f', color: selectedCondition === c ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{c}</button>
+                <button key={c} onClick={() => setSelectedCondition(c)} style={{ background: selectedCondition === c ? '#F5E642′ : '#1e3a5f', color: selectedCondition === c ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{c}</button>
               ))}
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function DFWZoysiaGrassGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Primary usage:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {usages.map(u => (
-                <button key={u} onClick={() => setSelectedUsage(u)} style={{ background: selectedUsage === u ? '#F5E642' : '#1e3a5f', color: selectedUsage === u ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{u}</button>
+                <button key={u} onClick={() => setSelectedUsage(u)} style={{ background: selectedUsage === u ? '#F5E642′ : '#1e3a5f', color: selectedUsage === u ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{u}</button>
               ))}
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function DFWZoysiaGrassGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
               {Object.entries(comparison).map(([grass, data]) => (
                 <div key={grass} style={{ background: grass === recommended ? '#1a3a6a' : '#0A1628', border: `1px solid ${grass === recommended ? '#F5E642' : '#1e3a5f'}`, borderRadius: 10, padding: 14 }}>
-                  <div style={{ color: grass === recommended ? '#F5E642' : '#94a3b8', fontWeight: 700, marginBottom: 8 }}>{grass} {grass === recommended ? '⭐' : ''}</div>
+                  <div style={{ color: grass === recommended ? '#F5E642′ : '#94a3b8', fontWeight: 700, marginBottom: 8 }}>{grass} {grass === recommended ? '⭐' : ''}</div>
                   {Object.entries(data).map(([k, v]) => (
                     <div key={k} style={{ fontSize: 12, color: '#cbd5e1', marginBottom: 4 }}><span style={{ color: '#64748b' }}>{k}:</span> {v}</div>
                   ))}

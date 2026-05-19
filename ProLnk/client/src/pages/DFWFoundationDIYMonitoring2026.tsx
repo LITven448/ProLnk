@@ -66,7 +66,7 @@ export default function DFWFoundationDIYMonitoring2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏗️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Foundation DIY Monitoring 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Foundation DIY Monitoring 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>Monthly self-checks every DFW homeowner should run. Expansive clay soil makes foundation monitoring essential in North Texas.</p>
         </div>
 
@@ -81,7 +81,7 @@ export default function DFWFoundationDIYMonitoring2026() {
               style={{ background: '#0d1f3c', border: `1px solid ${selected?.type === concern.type ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: '1.25rem', cursor: 'pointer' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <span style={{ fontSize: '1.5rem' }}>{concern.icon}</span>
-                <div style={{ fontWeight: 700, color: '#e2e8f0' }}>{concern.type}</div>
+                <div style={{ fontWeight: 700, color: '#e2e8f0′ }}>{concern.type}</div>
                 <span style={{ marginLeft: 'auto', color: '#64748b', fontSize: '0.85rem' }}>{selected?.type === concern.type ? '▲ Close' : '▼ Guide'}</span>
               </div>
               {selected?.type === concern.type && (

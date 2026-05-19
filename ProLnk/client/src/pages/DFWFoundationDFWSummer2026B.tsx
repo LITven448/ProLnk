@@ -5,7 +5,7 @@ const situations = [
   { id: 'south-west', label: '☀️ South + west sides drying fastest', action: 'Standard in DFW summers. South and west walls get 6-8 hrs direct sun. These sides need 40-60% more irrigation than north/east sides. Install drip line specifically for these exposures.' },
   { id: 'new-symptoms', label: '📸 Documenting new symptoms', action: 'Photo every crack with a coin for scale. Note: location, direction (horizontal vs diagonal = different causes), width change over 2 weeks. Horizontal = lateral pressure. Diagonal = differential settlement.' },
   { id: 'condensation', label: '💧 Condensation on slab edge', action: 'High water table indicator — unusual but present in low-lying DFW areas. Note on FEMA flood map. This means soil stays wetter than typical — adjust watering DOWN on those sides to prevent swelling pressure.' },
-  { id: 'watering-schedule', label: '🌊 Building a watering schedule', action: 'DFW summer protocol: water every 3 days minimum. Cycle: 20 min soaker, wait 2 hrs, 20 min more (allows absorption without runoff). Adjust after rain — clay holds moisture 3-5 days after 1" rain.' },
+  { id: 'watering-schedule', label: '🌊 Building a watering schedule', action: 'DFW summer protocol: water every 3 days minimum. Cycle: 20 min soaker, wait 2 hrs, 20 min more (allows absorption without runoff). Adjust after rain — clay holds moisture 3-5 days after 1″ rain.' },
 ];
 
 export default function DFWFoundationDFWSummer2026B() {
@@ -36,8 +36,8 @@ export default function DFWFoundationDFWSummer2026B() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642' : '#112240',
-                color: selected === s.id ? '#0A1628' : '#fff',
+                background: selected === s.id ? '#F5E642′ : '#112240',
+                color: selected === s.id ? '#0A1628′ : '#fff',
                 border: 'none', borderRadius: 8, padding: '14px 18px',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 600,
               }}
@@ -48,7 +48,7 @@ export default function DFWFoundationDFWSummer2026B() {
         </div>
 
         {match && (
-          <div style={{ background: '#1e3a5f', borderRadius: 10, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 10, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
             <p style={{ color: '#e2e8f0', lineHeight: 1.75, fontSize: 15 }}>{match.action}</p>
           </div>
         )}

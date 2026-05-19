@@ -29,7 +29,7 @@ export default function DFWCarportInstallGuide() {
 
   const hailScore = rt.hailBonus + (ct.id.includes('metal') ? 2 : 1);
   const hailLabel = hailScore >= 4 ? 'Excellent' : hailScore >= 3 ? 'Good' : hailScore >= 2 ? 'Fair' : 'Poor';
-  const hailColor = hailScore >= 4 ? '#22c55e' : hailScore >= 3 ? '#F5E642' : hailScore >= 2 ? '#f97316' : '#ef4444';
+  const hailColor = hailScore >= 4 ? '#22c55e' : hailScore >= 3 ? '#F5E642′ : hailScore >= 2 ? '#f97316' : '#ef4444';
 
   const needsPermit = ct.permitLikely;
   const hoaRisk = hasHOA && (constraintFront || ct.id === 'portable');
@@ -67,7 +67,7 @@ export default function DFWCarportInstallGuide() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Vehicles to Cover</label>
               <input type="range" min={1} max={4} value={vehicles} onChange={e => setVehicles(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
               <span style={{ color: '#F5E642', fontSize: 15, fontWeight: 700 }}>{vehicles} vehicle{vehicles > 1 ? 's' : ''}</span>
             </div>
             <div>
@@ -127,13 +127,13 @@ export default function DFWCarportInstallGuide() {
           <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 12px' }}>⛈️ DFW Hail Protection Ratings</h3>
           {[
             { type: 'Solid Metal Roof', rating: 'Excellent', note: 'Best hail protection. 26-gauge steel handles up to baseball-size hail.' },
-            { type: 'Polycarbonate Panels', rating: 'Good', note: 'Lets light through. Impact-rated panels handle up to 1" hail; larger stones may crack panels.' },
+            { type: 'Polycarbonate Panels', rating: 'Good', note: 'Lets light through. Impact-rated panels handle up to 1″ hail; larger stones may crack panels.' },
             { type: 'Shade Cloth / Open', rating: 'Poor', note: 'No hail protection. Reduces UV and heat only. Fine for mild weather, not DFW storm season.' },
           ].map(item => (
             <div key={item.type} style={{ display: 'flex', gap: 12, marginBottom: 10, alignItems: 'flex-start' }}>
               <div style={{ minWidth: 160 }}>
                 <div style={{ color: '#94A3B8', fontSize: 13, fontWeight: 700 }}>{item.type}</div>
-                <div style={{ color: item.rating === 'Excellent' ? '#22c55e' : item.rating === 'Good' ? '#F5E642' : '#ef4444', fontSize: 12, fontWeight: 700 }}>{item.rating}</div>
+                <div style={{ color: item.rating === 'Excellent' ? '#22c55e' : item.rating === 'Good' ? '#F5E642′ : '#ef4444', fontSize: 12, fontWeight: 700 }}>{item.rating}</div>
               </div>
               <span style={{ color: '#64748B', fontSize: 13 }}>{item.note}</span>
             </div>

@@ -24,11 +24,11 @@ export default function TrustyProForHomeInspectors() {
   ];
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
       <div style={{ background: "linear-gradient(135deg,#0A1628,#112240)", padding: "60px 24px 40px", textAlign: "center" }}>
         <div style={{ fontSize: 48 }}>🔍</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>TrustyPro for Home Inspectors</h1>
-        <p style={{ fontSize: 18, color: "#94a3b8", maxWidth: 560, margin: "0 auto" }}>
+        <h1 style={{ fontSize: 36, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>TrustyPro for Home Inspectors</h1>
+        <p style={{ fontSize: 18, color: "#94a3b8″, maxWidth: 560, margin: "0 auto" }}>
           Supplement your expertise with AI-assisted documentation. More inspections. Less paperwork.
         </p>
       </div>
@@ -36,39 +36,39 @@ export default function TrustyProForHomeInspectors() {
       <div style={{ maxWidth: 780, margin: "0 auto", padding: "40px 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 14, marginBottom: 40 }}>
           {features.map(f => (
-            <div key={f.title} style={{ background: "#112240", borderRadius: 12, padding: "20px 18px", border: "1px solid #1e3a5f" }}>
+            <div key={f.title} style={{ background: "#112240″, borderRadius: 12, padding: "20px 18px", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{f.icon}</div>
-              <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: 4, fontSize: 14 }}>{f.title}</div>
-              <div style={{ color: "#94a3b8", fontSize: 13 }}>{f.desc}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 4, fontSize: 14 }}>{f.title}</div>
+              <div style={{ color: "#94a3b8″, fontSize: 13 }}>{f.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#112240", borderRadius: 16, padding: "32px 24px", border: "1px solid #F5E642", marginBottom: 40 }}>
-          <h2 style={{ color: "#F5E642", textAlign: "center", marginTop: 0, marginBottom: 8 }}>Efficiency Gain Calculator</h2>
-          <p style={{ color: "#94a3b8", textAlign: "center", marginBottom: 24, fontSize: 14 }}>How many inspections do you complete per month?</p>
+        <div style={{ background: "#112240″, borderRadius: 16, padding: "32px 24px", border: "1px solid #F5E642", marginBottom: 40 }}>
+          <h2 style={{ color: "#F5E642″, textAlign: "center", marginTop: 0, marginBottom: 8 }}>Efficiency Gain Calculator</h2>
+          <p style={{ color: "#94a3b8″, textAlign: "center", marginBottom: 24, fontSize: 14 }}>How many inspections do you complete per month?</p>
           <div style={{ textAlign: "center" }}>
             <input type="range" min={5} max={60} value={inspectionsPerMonth} onChange={e => setInspectionsPerMonth(Number(e.target.value))}
-              style={{ width: "100%", maxWidth: 400, accentColor: "#F5E642" }} />
-            <div style={{ color: "#F5E642", fontSize: 28, fontWeight: 800, margin: "12px 0 16px" }}>{inspectionsPerMonth} inspections / month</div>
+              style={{ width: "100%", maxWidth: 400, accentColor: "#F5E642″ }} />
+            <div style={{ color: "#F5E642″, fontSize: 28, fontWeight: 800, margin: "12px 0 16px" }}>{inspectionsPerMonth} inspections / month</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, maxWidth: 360, margin: "0 auto" }}>
-              <div style={{ background: "#0A1628", borderRadius: 10, padding: "16px" }}>
-                <div style={{ color: "#F5E642", fontSize: 28, fontWeight: 900 }}>{getTimeSaved(inspectionsPerMonth)}h</div>
-                <div style={{ color: "#94a3b8", fontSize: 12 }}>hours saved per month</div>
+              <div style={{ background: "#0A1628″, borderRadius: 10, padding: "16px" }}>
+                <div style={{ color: "#F5E642″, fontSize: 28, fontWeight: 900 }}>{getTimeSaved(inspectionsPerMonth)}h</div>
+                <div style={{ color: "#94a3b8″, fontSize: 12 }}>hours saved per month</div>
               </div>
-              <div style={{ background: "#0A1628", borderRadius: 10, padding: "16px" }}>
-                <div style={{ color: "#F5E642", fontSize: 28, fontWeight: 900 }}>${getRevenue(inspectionsPerMonth)}</div>
-                <div style={{ color: "#94a3b8", fontSize: 12 }}>est. referral credits/mo</div>
+              <div style={{ background: "#0A1628″, borderRadius: 10, padding: "16px" }}>
+                <div style={{ color: "#F5E642″, fontSize: 28, fontWeight: 900 }}>${getRevenue(inspectionsPerMonth)}</div>
+                <div style={{ color: "#94a3b8″, fontSize: 12 }}>est. referral credits/mo</div>
               </div>
             </div>
           </div>
         </div>
 
-        <h2 style={{ color: "#F5E642", textAlign: "center", marginBottom: 20 }}>Your New Workflow</h2>
+        <h2 style={{ color: "#F5E642″, textAlign: "center", marginBottom: 20 }}>Your New Workflow</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 40 }}>
           {workflow.map((w, i) => (
-            <div key={i} style={{ background: "#112240", borderRadius: 10, padding: "16px 20px", display: "flex", alignItems: "center", gap: 16, border: "1px solid #1e3a5f" }}>
-              <div style={{ background: "#F5E642", color: "#0A1628", borderRadius: "50%", width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 14, flexShrink: 0 }}>{i + 1}</div>
+            <div key={i} style={{ background: "#112240″, borderRadius: 10, padding: "16px 20px", display: "flex", alignItems: "center", gap: 16, border: "1px solid #1e3a5f" }}>
+              <div style={{ background: "#F5E642″, color: "#0A1628", borderRadius: "50%", width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 14, flexShrink: 0 }}>{i + 1}</div>
               <div>
                 <div style={{ fontWeight: 700, color: "#fff", fontSize: 14 }}>{w.step}</div>
                 <div style={{ color: "#64748b", fontSize: 12 }}>{w.detail}</div>
@@ -77,9 +77,9 @@ export default function TrustyProForHomeInspectors() {
           ))}
         </div>
 
-        <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
+        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "24px", textAlign: "center" }}>
           <div style={{ fontSize: 24 }}>📝</div>
-          <div style={{ fontWeight: 800, color: "#0A1628", fontSize: 20, margin: "8px 0 4px" }}>Join the Inspector Early Access Program</div>
+          <div style={{ fontWeight: 800, color: "#0A1628″, fontSize: 20, margin: "8px 0 4px" }}>Join the Inspector Early Access Program</div>
           <div style={{ color: "#1e3a5f", fontSize: 14 }}>Free during DFW beta. Your license, your expertise — TrustyPro amplifies it.</div>
         </div>
       </div>

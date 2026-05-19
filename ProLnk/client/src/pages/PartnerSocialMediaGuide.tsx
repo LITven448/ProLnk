@@ -92,7 +92,7 @@ const platforms = [
 const captions = [
   {
     type: 'Before/After',
-    text: 'This [job type] in [city] was [problem description]. The homeowner had been living with it for [time period]. Here's what we found — and what we did about it. 🛠️
+    text: 'This [job type] in [city] was [problem description]. The homeowner had been living with it for [time period]. Here’s what we found — and what we did about it. 🛠️
 
 [Benefit 1] ✅
 [Benefit 2] ✅
@@ -104,7 +104,7 @@ DFW homeowner? Find us at the link in bio. We match you with verified local pros
   },
   {
     type: 'Storm Response',
-    text: 'If you got hit by last night's storm in [area], here's what to check first:
+    text: 'If you got hit by last night’s storm in [area], here’s what to check first:
 
 1️⃣ [Check 1]
 2️⃣ [Check 2]
@@ -188,8 +188,8 @@ export default function PartnerSocialMediaGuide() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
               <span style={{ fontSize: 28 }}>{platforms[activePlatform].icon}</span>
               <div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827' }}>{platforms[activePlatform].name}</h3>
-                <span style={{ fontSize: 13, color: '#6b7280' }}>Best for: {platforms[activePlatform].focus}</span>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827′ }}>{platforms[activePlatform].name}</h3>
+                <span style={{ fontSize: 13, color: '#6b7280′ }}>Best for: {platforms[activePlatform].focus}</span>
               </div>
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -211,10 +211,10 @@ export default function PartnerSocialMediaGuide() {
                 key={trade}
                 onClick={() => setActiveTrade(trade)}
                 style={{
-                  background: activeTrade === trade ? '#111827' : '#ffffff',
+                  background: activeTrade === trade ? '#111827′ : '#ffffff',
                   color: activeTrade === trade ? '#ffffff' : '#374151',
                   border: '1px solid',
-                  borderColor: activeTrade === trade ? '#111827' : '#d1d5db',
+                  borderColor: activeTrade === trade ? '#111827′ : '#d1d5db',
                   borderRadius: 8,
                   padding: '8px 16px',
                   fontSize: 14,
@@ -244,10 +244,10 @@ export default function PartnerSocialMediaGuide() {
                 key={c.type}
                 onClick={() => setActiveCaption(i)}
                 style={{
-                  background: activeCaption === i ? '#059669' : '#ffffff',
+                  background: activeCaption === i ? '#059669′ : '#ffffff',
                   color: activeCaption === i ? '#ffffff' : '#374151',
                   border: '1px solid',
-                  borderColor: activeCaption === i ? '#059669' : '#d1d5db',
+                  borderColor: activeCaption === i ? '#059669′ : '#d1d5db',
                   borderRadius: 8,
                   padding: '8px 16px',
                   fontSize: 13,
@@ -269,10 +269,10 @@ export default function PartnerSocialMediaGuide() {
                 position: 'absolute',
                 top: 16,
                 right: 16,
-                background: copied ? '#059669' : '#ffffff',
+                background: copied ? '#059669′ : '#ffffff',
                 color: copied ? '#ffffff' : '#374151',
                 border: '1px solid',
-                borderColor: copied ? '#059669' : '#d1d5db',
+                borderColor: copied ? '#059669′ : '#d1d5db',
                 borderRadius: 6,
                 padding: '6px 14px',
                 fontSize: 13,

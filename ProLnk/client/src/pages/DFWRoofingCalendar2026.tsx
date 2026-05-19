@@ -15,7 +15,7 @@ const MONTHS = [
   { name: 'December', short: 'Dec', tasks: ['Check roof after any freeze event for ice damage', 'Monitor attic for condensation issues in cold snaps', 'Keep emergency roofer contact ready for storm damage'], urgency: 'MEDIUM', context: 'DFW freeze events can cause ice dam formation in poorly ventilated roofs.' },
 ];
 
-const URGENCY_COLOR = { HIGH: '#F5E642', MEDIUM: '#60A5FA', LOW: '#34D399' };
+const URGENCY_COLOR = { HIGH: '#F5E642', MEDIUM: '#60A5FA', LOW: '#34D399′ };
 
 export default function DFWRoofingCalendar2026() {
   const [selected, setSelected] = useState(1);
@@ -33,15 +33,15 @@ export default function DFWRoofingCalendar2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 8, marginBottom: 32 }}>
           {MONTHS.map((m, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
-              background: selected === i ? '#F5E642' : '#1E293B',
-              color: selected === i ? '#0A1628' : '#94A3B8',
+              background: selected === i ? '#F5E642′ : '#1E293B',
+              color: selected === i ? '#0A1628′ : '#94A3B8',
               border: 'none', borderRadius: 8, padding: '10px 4px',
               fontWeight: 700, fontSize: 13, cursor: 'pointer', transition: 'all 0.15s'
             }}>{m.short}</button>
           ))}
         </div>
 
-        <div style={{ background: '#1E293B', borderRadius: 16, padding: 32, border: '1px solid #334155' }}>
+        <div style={{ background: '#1E293B', borderRadius: 16, padding: 32, border: '1px solid #334155′ }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
             <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F1F5F9', margin: 0 }}>📅 {month.name} Tasks</h2>
             <span style={{
@@ -52,12 +52,12 @@ export default function DFWRoofingCalendar2026() {
             }}>{month.urgency} PRIORITY</span>
           </div>
 
-          <div style={{ background: '#0F172A', borderRadius: 10, padding: '14px 18px', marginBottom: 20, borderLeft: '3px solid #F5E642' }}>
-            <p style={{ margin: 0, color: '#CBD5E1', fontSize: 14, lineHeight: 1.6 }}>⛈️ <strong style={{ color: '#F5E642' }}>DFW Context:</strong> {month.context}</p>
+          <div style={{ background: '#0F172A', borderRadius: 10, padding: '14px 18px', marginBottom: 20, borderLeft: '3px solid #F5E642′ }}>
+            <p style={{ margin: 0, color: '#CBD5E1', fontSize: 14, lineHeight: 1.6 }}>⛈️ <strong style={{ color: '#F5E642′ }}>DFW Context:</strong> {month.context}</p>
           </div>
 
           {month.tasks.length === 0 ? (
-            <p style={{ color: '#64748B', fontStyle: 'italic', textAlign: 'center', padding: '20px 0' }}>Low-activity month — review your roof documentation and plan ahead.</p>
+            <p style={{ color: '#64748B', fontStyle: 'italic', textAlign: 'center', padding: '20px 0′ }}>Low-activity month — review your roof documentation and plan ahead.</p>
           ) : (
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {month.tasks.map((task, i) => (

@@ -55,7 +55,7 @@ export default function DFWHailProofingGuide2026() {
         <div style={{ background: '#132035', borderRadius: 10, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>⛈️ DFW Hail Key Facts</div>
           {['DFW averages 5-7 significant hail events per year — storm season peaks April-June','Class 4 impact-resistant roof earns 20-30% insurance premium discount','AC condenser hail guards cost $200-400 and prevent $3,000-8,000 replacements','Solar screens are 3x more hail-tolerant than bare window glass','Document your exterior in February — before storm season opens'].map((f,i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
           ))}
         </div>
       </div>

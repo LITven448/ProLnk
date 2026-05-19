@@ -47,11 +47,11 @@ const WISH_CATEGORIES = [
 ];
 
 const BUDGET_OPTIONS = [
-  { value: "under_1k",  label: "Under $1,000" },
-  { value: "1k_5k",    label: "$1,000 - $5,000" },
-  { value: "5k_15k",   label: "$5,000 - $15,000" },
-  { value: "15k_50k",  label: "$15,000 - $50,000" },
-  { value: "over_50k", label: "Over $50,000" },
+  { value: "under_1k",  label: "Under $1,000″ },
+  { value: "1k_5k",    label: "$1,000 - $5,000″ },
+  { value: "5k_15k",   label: "$5,000 - $15,000″ },
+  { value: "15k_50k",  label: "$15,000 - $50,000″ },
+  { value: "over_50k", label: "Over $50,000″ },
   { value: "not_sure", label: "Not sure yet" },
 ];
 
@@ -84,7 +84,7 @@ export default function HomeownerSetup() {
     propertyType: "single_family",
     yearBuilt: "", sqft: "", bedrooms: "", bathrooms: "",
     hasPool: false, hasGarage: false, hasFence: false,
-    isRental: false, ownershipYears: "3_to_7",
+    isRental: false, ownershipYears: "3_to_7″,
   });
 
   // Step 3: improvements
@@ -246,95 +246,95 @@ export default function HomeownerSetup() {
     <HomeownerLayout>
     <div className="min-h-screen flex flex-col" style={{ background: "linear-gradient(135deg, #050d1a 0%, #0a1628 60%, #0d1f3c 100%)" }}>
       {/* Header */}
-      <div className="border-b px-6 py-4 flex items-center gap-3" style={{ borderColor: "#1E3A5F" }}>
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#00B5B820" }}>
-          <Home className="w-4 h-4" style={{ color: "#00B5B8" }} />
+      <div className="border-b px-6 py-4 flex items-center gap-3″ style={{ borderColor: "#1E3A5F" }}>
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#00B5B820″ }}>
+          <Home className="w-4 h-4″ style={{ color: "#00B5B8" }} />
         </div>
         <div>
           <div className="font-bold text-white text-sm">TrustyPro Setup</div>
-          <div className="text-xs" style={{ color: "#4A6FA5" }}>Step {step} of {STEPS.length} -- {STEPS[step - 1].label}</div>
+          <div className="text-xs" style={{ color: "#4A6FA5″ }}>Step {step} of {STEPS.length} -- {STEPS[step - 1].label}</div>
         </div>
       </div>
 
-      <div className="flex-1 flex items-start justify-center p-4 md:p-8">
+      <div className="flex-1 flex items-start justify-center p-4 md:p-8″>
         <div className="w-full max-w-2xl">
 
           {/* Progress bar */}
-          <div className="flex items-center gap-1 mb-8">
+          <div className="flex items-center gap-1 mb-8″>
             {STEPS.map((s, i) => (
-              <div key={s.id} className="flex items-center gap-1 flex-1">
+              <div key={s.id} className="flex items-center gap-1 flex-1″>
                 <div
                   className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-all"
                   style={{
-                    backgroundColor: step > s.id ? "#00B5B8" : step === s.id ? "#00B5B820" : "#0F1F35",
+                    backgroundColor: step > s.id ? "#00B5B8″ : step === s.id ? "#00B5B820" : "#0F1F35",
                     border: `2px solid ${step >= s.id ? "#00B5B8" : "#1E3A5F"}`,
-                    color: step > s.id ? "white" : step === s.id ? "#00B5B8" : "#4A6FA5",
+                    color: step > s.id ? "white" : step === s.id ? "#00B5B8″ : "#4A6FA5",
                   }}
                 >
-                  {step > s.id ? <CheckCircle className="w-3.5 h-3.5" /> : s.id}
+                  {step > s.id ? <CheckCircle className="w-3.5 h-3.5″ /> : s.id}
                 </div>
                 {i < STEPS.length - 1 && (
-                  <div className="flex-1 h-0.5 rounded" style={{ backgroundColor: step > s.id ? "#00B5B8" : "#1E3A5F" }} />
+                  <div className="flex-1 h-0.5 rounded" style={{ backgroundColor: step > s.id ? "#00B5B8″ : "#1E3A5F" }} />
                 )}
               </div>
             ))}
           </div>
 
           {/* Card */}
-          <div className="rounded-2xl border p-6 md:p-8" style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
-            <div className="mb-6">
-              <h2 className="font-bold text-white text-2xl mb-1">{STEPS[step - 1].label}</h2>
-              <p className="text-sm" style={{ color: "#4A6FA5" }}>{STEPS[step - 1].description}</p>
+          <div className="rounded-2xl border p-6 md:p-8″ style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
+            <div className="mb-6″>
+              <h2 className="font-bold text-white text-2xl mb-1″>{STEPS[step - 1].label}</h2>
+              <p className="text-sm" style={{ color: "#4A6FA5″ }}>{STEPS[step - 1].description}</p>
             </div>
 
             {/* -- Step 1: Address ------------------------------------------- */}
             {step === 1 && (
-              <div className="space-y-4">
+              <div className="space-y-4″>
                 <div>
-                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Street Address *</label>
+                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Street Address *</label>
                   <Input
                     placeholder="123 Main Street"
                     value={property.address}
                     onChange={e => setProperty(p => ({ ...p, address: e.target.value }))}
-                    className="border-0 text-white placeholder:text-slate-600 h-11"
-                    style={{ backgroundColor: "#0A1628" }}
+                    className="border-0 text-white placeholder:text-slate-600 h-11″
+                    style={{ backgroundColor: "#0A1628″ }}
                   />
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3″>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>City *</label>
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>City *</label>
                     <Input
                       placeholder="Dallas"
                       value={property.city}
                       onChange={e => setProperty(p => ({ ...p, city: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-11"
-                      style={{ backgroundColor: "#0A1628" }}
+                      className="border-0 text-white placeholder:text-slate-600 h-11″
+                      style={{ backgroundColor: "#0A1628″ }}
                     />
                   </div>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>ZIP Code *</label>
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>ZIP Code *</label>
                     <Input
-                      placeholder="75201"
+                      placeholder="75201″
                       value={property.zip}
                       onChange={e => setProperty(p => ({ ...p, zip: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-11"
-                      style={{ backgroundColor: "#0A1628" }}
+                      className="border-0 text-white placeholder:text-slate-600 h-11″
+                      style={{ backgroundColor: "#0A1628″ }}
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>State</label>
+                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>State</label>
                   <Input
                     placeholder="TX"
                     value={property.state}
                     onChange={e => setProperty(p => ({ ...p, state: e.target.value }))}
-                    className="border-0 text-white placeholder:text-slate-600 h-11"
-                    style={{ backgroundColor: "#0A1628" }}
+                    className="border-0 text-white placeholder:text-slate-600 h-11″
+                    style={{ backgroundColor: "#0A1628″ }}
                   />
                 </div>
-                <div className="rounded-xl p-3 flex items-start gap-2" style={{ backgroundColor: "#00B5B810", border: "1px solid #00B5B830" }}>
-                  <Info className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#00B5B8" }} />
-                  <p className="text-xs" style={{ color: "#4A6FA5" }}>
+                <div className="rounded-xl p-3 flex items-start gap-2″ style={{ backgroundColor: "#00B5B810", border: "1px solid #00B5B830" }}>
+                  <Info className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: "#00B5B8" }} />
+                  <p className="text-xs" style={{ color: "#4A6FA5″ }}>
                     Your address is used to match you with local service professionals. It is never shared publicly.
                   </p>
                 </div>
@@ -343,10 +343,10 @@ export default function HomeownerSetup() {
 
             {/* -- Step 2: Property Details ----------------------------------- */}
             {step === 2 && (
-              <div className="space-y-4">
+              <div className="space-y-4″>
                 <div>
-                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8" }}>Property Type *</label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8″ }}>Property Type *</label>
+                  <div className="grid grid-cols-2 gap-2″>
                     {[
                       { value: "single_family", label: "Single Family" },
                       { value: "condo",         label: "Condo / Apt" },
@@ -359,66 +359,66 @@ export default function HomeownerSetup() {
                         onClick={() => setProperty(p => ({ ...p, propertyType: pt.value }))}
                         className="flex items-center gap-2 p-3 rounded-xl text-left transition-all"
                         style={{
-                          backgroundColor: property.propertyType === pt.value ? "#00B5B815" : "#0A1628",
+                          backgroundColor: property.propertyType === pt.value ? "#00B5B815″ : "#0A1628",
                           border: `1px solid ${property.propertyType === pt.value ? "#00B5B840" : "#1E3A5F"}`,
                         }}
                       >
                         <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center"
-                          style={{ borderColor: property.propertyType === pt.value ? "#00B5B8" : "#4A6FA5" }}>
-                          {property.propertyType === pt.value && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#00B5B8" }} />}
+                          style={{ borderColor: property.propertyType === pt.value ? "#00B5B8″ : "#4A6FA5" }}>
+                          {property.propertyType === pt.value && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#00B5B8″ }} />}
                         </div>
                         <span className="text-sm text-white">{pt.label}</span>
                       </button>
                     ))}
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3″>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Year Built</label>
-                    <Input type="number" placeholder="2005" value={property.yearBuilt}
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Year Built</label>
+                    <Input type="number" placeholder="2005″ value={property.yearBuilt}
                       onChange={e => setProperty(p => ({ ...p, yearBuilt: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-11" style={{ backgroundColor: "#0A1628" }} />
+                      className="border-0 text-white placeholder:text-slate-600 h-11″ style={{ backgroundColor: "#0A1628" }} />
                   </div>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Square Footage</label>
-                    <Input type="number" placeholder="2,400" value={property.sqft}
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Square Footage</label>
+                    <Input type="number" placeholder="2,400″ value={property.sqft}
                       onChange={e => setProperty(p => ({ ...p, sqft: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-11" style={{ backgroundColor: "#0A1628" }} />
+                      className="border-0 text-white placeholder:text-slate-600 h-11″ style={{ backgroundColor: "#0A1628" }} />
                   </div>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Bedrooms</label>
-                    <Input type="number" placeholder="4" value={property.bedrooms}
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Bedrooms</label>
+                    <Input type="number" placeholder="4″ value={property.bedrooms}
                       onChange={e => setProperty(p => ({ ...p, bedrooms: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-11" style={{ backgroundColor: "#0A1628" }} />
+                      className="border-0 text-white placeholder:text-slate-600 h-11″ style={{ backgroundColor: "#0A1628" }} />
                   </div>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Bathrooms</label>
-                    <Input type="number" placeholder="2.5" step="0.5" value={property.bathrooms}
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Bathrooms</label>
+                    <Input type="number" placeholder="2.5″ step="0.5" value={property.bathrooms}
                       onChange={e => setProperty(p => ({ ...p, bathrooms: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-11" style={{ backgroundColor: "#0A1628" }} />
+                      className="border-0 text-white placeholder:text-slate-600 h-11″ style={{ backgroundColor: "#0A1628" }} />
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8" }}>How long have you owned this property?</label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8″ }}>How long have you owned this property?</label>
+                  <div className="grid grid-cols-2 gap-2″>
                     {[
-                      { value: "under_1",  label: "Less than 1 year" },
-                      { value: "1_to_3",   label: "1 - 3 years" },
-                      { value: "3_to_7",   label: "3 - 7 years" },
-                      { value: "7_to_15",  label: "7 - 15 years" },
-                      { value: "over_15",  label: "15+ years" },
+                      { value: "under_1″,  label: "Less than 1 year" },
+                      { value: "1_to_3″,   label: "1 - 3 years" },
+                      { value: "3_to_7″,   label: "3 - 7 years" },
+                      { value: "7_to_15″,  label: "7 - 15 years" },
+                      { value: "over_15″,  label: "15+ years" },
                     ].map(opt => (
                       <button key={opt.value}
                         onClick={() => setProperty(p => ({ ...p, ownershipYears: opt.value }))}
                         className="flex items-center gap-2 p-3 rounded-xl text-left transition-all"
                         style={{
-                          backgroundColor: property.ownershipYears === opt.value ? "#00B5B815" : "#0A1628",
+                          backgroundColor: property.ownershipYears === opt.value ? "#00B5B815″ : "#0A1628",
                           border: `1px solid ${property.ownershipYears === opt.value ? "#00B5B840" : "#1E3A5F"}`,
                         }}
                       >
                         <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center"
-                          style={{ borderColor: property.ownershipYears === opt.value ? "#00B5B8" : "#4A6FA5" }}>
-                          {property.ownershipYears === opt.value && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#00B5B8" }} />}
+                          style={{ borderColor: property.ownershipYears === opt.value ? "#00B5B8″ : "#4A6FA5" }}>
+                          {property.ownershipYears === opt.value && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#00B5B8″ }} />}
                         </div>
                         <span className="text-sm text-white">{opt.label}</span>
                       </button>
@@ -426,8 +426,8 @@ export default function HomeownerSetup() {
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8" }}>Property features (check all that apply)</label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8″ }}>Property features (check all that apply)</label>
+                  <div className="grid grid-cols-2 gap-2″>
                     {[
                       { key: "hasPool",   label: "Pool / Spa" },
                       { key: "hasGarage", label: "Garage" },
@@ -438,12 +438,12 @@ export default function HomeownerSetup() {
                         onClick={() => setProperty(p => ({ ...p, [f.key]: !p[f.key as keyof typeof p] }))}
                         className="flex items-center gap-2 p-3 rounded-xl text-left transition-all"
                         style={{
-                          backgroundColor: (property as any)[f.key] ? "#00B5B815" : "#0A1628",
+                          backgroundColor: (property as any)[f.key] ? "#00B5B815″ : "#0A1628",
                           border: `1px solid ${(property as any)[f.key] ? "#00B5B840" : "#1E3A5F"}`,
                         }}
                       >
                         <div className="w-4 h-4 rounded flex-shrink-0 flex items-center justify-center"
-                          style={{ backgroundColor: (property as any)[f.key] ? "#00B5B8" : "transparent", border: `2px solid ${(property as any)[f.key] ? "#00B5B8" : "#4A6FA5"}` }}>
+                          style={{ backgroundColor: (property as any)[f.key] ? "#00B5B8″ : "transparent", border: `2px solid ${(property as any)[f.key] ? "#00B5B8" : "#4A6FA5"}` }}>
                           {(property as any)[f.key] && <CheckCircle className="w-3 h-3 text-white" />}
                         </div>
                         <span className="text-sm text-white">{f.label}</span>
@@ -453,62 +453,62 @@ export default function HomeownerSetup() {
                 </div>
 
                 {/* -- Style Preferences (optional) -- */}
-                <div className="rounded-xl p-4 space-y-4" style={{ backgroundColor: "#00B5B808", border: "1px solid #00B5B820" }}>
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4" style={{ color: "#00B5B8" }} />
-                    <span className="text-sm font-semibold" style={{ color: "#00B5B8" }}>Style Preferences</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: "#00B5B815", color: "#4A6FA5" }}>Optional</span>
+                <div className="rounded-xl p-4 space-y-4″ style={{ backgroundColor: "#00B5B808", border: "1px solid #00B5B820" }}>
+                  <div className="flex items-center gap-2″>
+                    <Sparkles className="w-4 h-4″ style={{ color: "#00B5B8" }} />
+                    <span className="text-sm font-semibold" style={{ color: "#00B5B8″ }}>Style Preferences</span>
+                    <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: "#00B5B815″, color: "#4A6FA5" }}>Optional</span>
                   </div>
-                  <p className="text-xs" style={{ color: "#4A6FA5" }}>
+                  <p className="text-xs" style={{ color: "#4A6FA5″ }}>
                     These help us generate better AI mockups and renovation suggestions tailored to your taste.
                   </p>
                   <div>
-                    <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8" }}>Home Style Preference</label>
-                    <div className="grid grid-cols-2 gap-2">
+                    <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8″ }}>Home Style Preference</label>
+                    <div className="grid grid-cols-2 gap-2″>
                       {["Modern / Contemporary","Traditional / Classic","Farmhouse / Rustic","Spanish / Mediterranean","Craftsman","Minimalist"].map(style => (
                         <button key={style}
                           onClick={() => setStylePrefs(p => ({ ...p, homeStyle: p.homeStyle === style ? "" : style }))}
                           className="flex items-center gap-2 p-2.5 rounded-xl text-left transition-all"
                           style={{
-                            backgroundColor: stylePrefs.homeStyle === style ? "#00B5B815" : "#0A1628",
+                            backgroundColor: stylePrefs.homeStyle === style ? "#00B5B815″ : "#0A1628",
                             border: `1px solid ${stylePrefs.homeStyle === style ? "#00B5B840" : "#1E3A5F"}`,
                           }}
                         >
                           <div className="w-3.5 h-3.5 rounded-full border-2 flex-shrink-0 flex items-center justify-center"
-                            style={{ borderColor: stylePrefs.homeStyle === style ? "#00B5B8" : "#4A6FA5" }}>
-                            {stylePrefs.homeStyle === style && <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#00B5B8" }} />}
+                            style={{ borderColor: stylePrefs.homeStyle === style ? "#00B5B8″ : "#4A6FA5" }}>
+                            {stylePrefs.homeStyle === style && <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#00B5B8″ }} />}
                           </div>
                           <span className="text-xs text-white">{style}</span>
                         </button>
                       ))}
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-3″>
                     <div>
-                      <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Exterior Color Preference</label>
+                      <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Exterior Color Preference</label>
                       <Input placeholder="e.g. White, Greige, Navy" value={stylePrefs.exteriorColor}
                         onChange={e => setStylePrefs(p => ({ ...p, exteriorColor: e.target.value }))}
-                        className="border-0 text-white placeholder:text-slate-600 h-10 text-sm" style={{ backgroundColor: "#0A1628" }} />
+                        className="border-0 text-white placeholder:text-slate-600 h-10 text-sm" style={{ backgroundColor: "#0A1628″ }} />
                     </div>
                     <div>
-                      <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Interior Color Palette</label>
+                      <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Interior Color Palette</label>
                       <Input placeholder="e.g. Warm neutrals, Bold accents" value={stylePrefs.interiorPalette}
                         onChange={e => setStylePrefs(p => ({ ...p, interiorPalette: e.target.value }))}
-                        className="border-0 text-white placeholder:text-slate-600 h-10 text-sm" style={{ backgroundColor: "#0A1628" }} />
+                        className="border-0 text-white placeholder:text-slate-600 h-10 text-sm" style={{ backgroundColor: "#0A1628″ }} />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Design Aesthetic / Vibe</label>
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Design Aesthetic / Vibe</label>
                     <Input placeholder="e.g. Clean & minimal, Cozy & warm, Bold & dramatic" value={stylePrefs.designAesthetic}
                       onChange={e => setStylePrefs(p => ({ ...p, designAesthetic: e.target.value }))}
-                      className="border-0 text-white placeholder:text-slate-600 h-10 text-sm" style={{ backgroundColor: "#0A1628" }} />
+                      className="border-0 text-white placeholder:text-slate-600 h-10 text-sm" style={{ backgroundColor: "#0A1628″ }} />
                   </div>
                   <div>
-                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Additional Style Notes</label>
+                    <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Additional Style Notes</label>
                     <Textarea placeholder="Anything else you'd like pros to know about your style preferences..." value={stylePrefs.styleNotes}
                       onChange={e => setStylePrefs(p => ({ ...p, styleNotes: e.target.value }))}
                       rows={2}
-                      className="border-0 text-white placeholder:text-slate-600 text-sm resize-none" style={{ backgroundColor: "#0A1628" }} />
+                      className="border-0 text-white placeholder:text-slate-600 text-sm resize-none" style={{ backgroundColor: "#0A1628″ }} />
                   </div>
                 </div>
               </div>
@@ -516,11 +516,11 @@ export default function HomeownerSetup() {
 
             {/* -- Step 3: Past Improvements ---------------------------------- */}
             {step === 3 && (
-              <div className="space-y-3">
-                <p className="text-sm" style={{ color: "#A0B4C8" }}>
+              <div className="space-y-3″>
+                <p className="text-sm" style={{ color: "#A0B4C8″ }}>
                   Check anything that has been done in the last 10 years. This helps pros understand what's been maintained and what may be aging out.
                 </p>
-                <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto pr-1">
+                <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto pr-1″>
                   {IMPROVEMENT_CATEGORIES.map(cat => {
                     const imp = improvements[cat];
                     return (
@@ -528,24 +528,24 @@ export default function HomeownerSetup() {
                         <button
                           onClick={() => toggleImprovement(cat)}
                           className="w-full flex items-center gap-3 p-3 text-left transition-all"
-                          style={{ backgroundColor: imp?.checked ? "#00B5B815" : "#0A1628" }}
+                          style={{ backgroundColor: imp?.checked ? "#00B5B815″ : "#0A1628" }}
                         >
                           <div className="w-4 h-4 rounded flex-shrink-0 flex items-center justify-center"
-                            style={{ backgroundColor: imp?.checked ? "#00B5B8" : "transparent", border: `2px solid ${imp?.checked ? "#00B5B8" : "#4A6FA5"}` }}>
+                            style={{ backgroundColor: imp?.checked ? "#00B5B8″ : "transparent", border: `2px solid ${imp?.checked ? "#00B5B8" : "#4A6FA5"}` }}>
                             {imp?.checked && <CheckCircle className="w-3 h-3 text-white" />}
                           </div>
                           <span className="text-sm text-white">{cat}</span>
                         </button>
                         {imp?.checked && (
-                          <div className="px-3 pb-3 pt-1" style={{ backgroundColor: "#00B5B808" }}>
-                            <label className="text-xs mb-1 block" style={{ color: "#4A6FA5" }}>Approximate year completed (optional)</label>
+                          <div className="px-3 pb-3 pt-1″ style={{ backgroundColor: "#00B5B808" }}>
+                            <label className="text-xs mb-1 block" style={{ color: "#4A6FA5″ }}>Approximate year completed (optional)</label>
                             <Input
                               type="number"
-                              placeholder="2021"
+                              placeholder="2021″
                               value={imp.year}
                               onChange={e => setImprovements(prev => ({ ...prev, [cat]: { ...prev[cat], year: e.target.value } }))}
                               className="border-0 text-white placeholder:text-slate-600 h-9 text-sm"
-                              style={{ backgroundColor: "#0A1628" }}
+                              style={{ backgroundColor: "#0A1628″ }}
                             />
                           </div>
                         )}
@@ -553,19 +553,19 @@ export default function HomeownerSetup() {
                     );
                   })}
                 </div>
-                <p className="text-xs" style={{ color: "#4A6FA5" }}>
-                  Don't worry if you're not sure -- you can always update this from your property dashboard.
+                <p className="text-xs" style={{ color: "#4A6FA5″ }}>
+                  Don't worry if you’re not sure -- you can always update this from your property dashboard.
                 </p>
               </div>
             )}
 
             {/* -- Step 4: Project Wishes ------------------------------------- */}
             {step === 4 && (
-              <div className="space-y-3">
-                <p className="text-sm" style={{ color: "#A0B4C8" }}>
+              <div className="space-y-3″>
+                <p className="text-sm" style={{ color: "#A0B4C8″ }}>
                   Select anything you're thinking about getting done. This is how we match you with the right pros.
                 </p>
-                <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto pr-1">
+                <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto pr-1″>
                   {WISH_CATEGORIES.map(cat => {
                     const wish = wishes[cat];
                     return (
@@ -573,35 +573,35 @@ export default function HomeownerSetup() {
                         <button
                           onClick={() => toggleWish(cat)}
                           className="w-full flex items-center gap-3 p-3 text-left transition-all"
-                          style={{ backgroundColor: wish?.checked ? "#00B5B815" : "#0A1628" }}
+                          style={{ backgroundColor: wish?.checked ? "#00B5B815″ : "#0A1628" }}
                         >
                           <div className="w-4 h-4 rounded flex-shrink-0 flex items-center justify-center"
-                            style={{ backgroundColor: wish?.checked ? "#00B5B8" : "transparent", border: `2px solid ${wish?.checked ? "#00B5B8" : "#4A6FA5"}` }}>
+                            style={{ backgroundColor: wish?.checked ? "#00B5B8″ : "transparent", border: `2px solid ${wish?.checked ? "#00B5B8" : "#4A6FA5"}` }}>
                             {wish?.checked && <CheckCircle className="w-3 h-3 text-white" />}
                           </div>
                           <span className="text-sm text-white">{cat}</span>
                         </button>
                         {wish?.checked && (
-                          <div className="px-3 pb-3 pt-1 space-y-2" style={{ backgroundColor: "#00B5B808" }}>
-                            <div className="grid grid-cols-2 gap-2">
+                          <div className="px-3 pb-3 pt-1 space-y-2″ style={{ backgroundColor: "#00B5B808" }}>
+                            <div className="grid grid-cols-2 gap-2″>
                               <div>
-                                <label className="text-xs mb-1 block" style={{ color: "#4A6FA5" }}>Budget range</label>
+                                <label className="text-xs mb-1 block" style={{ color: "#4A6FA5″ }}>Budget range</label>
                                 <select
                                   value={wish.budget}
                                   onChange={e => setWishes(prev => ({ ...prev, [cat]: { ...prev[cat], budget: e.target.value } }))}
-                                  className="w-full rounded-lg px-2 py-1.5 text-xs text-white border-0"
-                                  style={{ backgroundColor: "#0A1628" }}
+                                  className="w-full rounded-lg px-2 py-1.5 text-xs text-white border-0″
+                                  style={{ backgroundColor: "#0A1628″ }}
                                 >
                                   {BUDGET_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                                 </select>
                               </div>
                               <div>
-                                <label className="text-xs mb-1 block" style={{ color: "#4A6FA5" }}>Timing</label>
+                                <label className="text-xs mb-1 block" style={{ color: "#4A6FA5″ }}>Timing</label>
                                 <select
                                   value={wish.urgency}
                                   onChange={e => setWishes(prev => ({ ...prev, [cat]: { ...prev[cat], urgency: e.target.value } }))}
-                                  className="w-full rounded-lg px-2 py-1.5 text-xs text-white border-0"
-                                  style={{ backgroundColor: "#0A1628" }}
+                                  className="w-full rounded-lg px-2 py-1.5 text-xs text-white border-0″
+                                  style={{ backgroundColor: "#0A1628″ }}
                                 >
                                   {URGENCY_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                                 </select>
@@ -612,7 +612,7 @@ export default function HomeownerSetup() {
                               value={wish.notes}
                               onChange={e => setWishes(prev => ({ ...prev, [cat]: { ...prev[cat], notes: e.target.value } }))}
                               className="border-0 text-white placeholder:text-slate-600 h-8 text-xs"
-                              style={{ backgroundColor: "#0A1628" }}
+                              style={{ backgroundColor: "#0A1628″ }}
                             />
                           </div>
                         )}
@@ -625,47 +625,47 @@ export default function HomeownerSetup() {
 
             {/* -- Step 5: Photos --------------------------------------------- */}
             {step === 5 && (
-              <div className="space-y-4">
-                <div className="rounded-xl p-3 flex items-start gap-2" style={{ backgroundColor: "#00B5B810", border: "1px solid #00B5B830" }}>
-                  <Info className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#00B5B8" }} />
-                  <div className="text-xs" style={{ color: "#4A6FA5" }}>
+              <div className="space-y-4″>
+                <div className="rounded-xl p-3 flex items-start gap-2″ style={{ backgroundColor: "#00B5B810", border: "1px solid #00B5B830" }}>
+                  <Info className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: "#00B5B8" }} />
+                  <div className="text-xs" style={{ color: "#4A6FA5″ }}>
                     <strong className="text-white">Photo tips:</strong> Take photos in good natural light. Capture the full space -- not just a corner. Avoid photos of pets, people, or personal items. All 6 prompts are optional; add what you can.
                   </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3″>
                   {PHOTO_PROMPTS.map(prompt => (
-                    <div key={prompt.key} className="rounded-xl border p-4" style={{ borderColor: photoUrls[prompt.key] ? "#00B5B840" : "#1E3A5F", backgroundColor: "#0A1628" }}>
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex-1">
+                    <div key={prompt.key} className="rounded-xl border p-4″ style={{ borderColor: photoUrls[prompt.key] ? "#00B5B840" : "#1E3A5F", backgroundColor: "#0A1628" }}>
+                      <div className="flex items-start justify-between gap-3″>
+                        <div className="flex-1″>
                           <p className="text-sm font-medium text-white">{prompt.label}</p>
-                          <p className="text-xs mt-0.5" style={{ color: "#4A6FA5" }}>{prompt.hint}</p>
+                          <p className="text-xs mt-0.5″ style={{ color: "#4A6FA5" }}>{prompt.hint}</p>
                         </div>
                         {photoUrls[prompt.key] ? (
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2″>
                             <img src={photoUrls[prompt.key]} alt={prompt.label} className="w-16 h-12 object-cover rounded-lg" />
                             <button onClick={() => setPhotoUrls(p => { const n = { ...p }; delete n[prompt.key]; return n; })}
-                              className="text-xs px-2 py-1 rounded" style={{ color: "#EF4444", backgroundColor: "#EF444410" }}>
+                              className="text-xs px-2 py-1 rounded" style={{ color: "#EF4444″, backgroundColor: "#EF444410" }}>
                               Remove
                             </button>
                           </div>
                         ) : uploadingKey === prompt.key ? (
                           <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium"
-                            style={{ backgroundColor: "#00B5B820", color: "#00B5B8" }}>Uploading...</div>
+                            style={{ backgroundColor: "#00B5B820″, color: "#00B5B8" }}>Uploading...</div>
                         ) : (
-                          <div className="flex gap-2">
+                          <div className="flex gap-2″>
                             <label className="cursor-pointer">
                               <input type="file" accept="image/*" capture="environment" className="hidden"
                                 onChange={e => { const f = e.target.files?.[0]; if (f) handlePhotoUpload(prompt.key, f); }} />
                               <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all"
-                                style={{ backgroundColor: "#00B5B8", color: "white" }}>
-                                <Camera className="w-3.5 h-3.5" /> Take Photo
+                                style={{ backgroundColor: "#00B5B8″, color: "white" }}>
+                                <Camera className="w-3.5 h-3.5″ /> Take Photo
                               </div>
                             </label>
                             <label className="cursor-pointer">
                               <input type="file" accept="image/*" className="hidden"
                                 onChange={e => { const f = e.target.files?.[0]; if (f) handlePhotoUpload(prompt.key, f); }} />
                               <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all"
-                                style={{ backgroundColor: "#00B5B820", color: "#00B5B8", border: "1px solid #00B5B840" }}>
+                                style={{ backgroundColor: "#00B5B820″, color: "#00B5B8", border: "1px solid #00B5B840" }}>
                                 Library
                               </div>
                             </label>
@@ -675,29 +675,29 @@ export default function HomeownerSetup() {
                     </div>
                   ))}
                 </div>
-                <p className="text-xs" style={{ color: "#4A6FA5" }}>
+                <p className="text-xs" style={{ color: "#4A6FA5″ }}>
                   Photos can be added or updated at any time from your property dashboard. This step is entirely optional.
                 </p>
 
                 {/* -- Inspiration Photos -- */}
-                <div className="rounded-xl p-4 space-y-3" style={{ backgroundColor: "#00B5B808", border: "1px solid #00B5B820" }}>
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4" style={{ color: "#00B5B8" }} />
-                    <span className="text-sm font-semibold" style={{ color: "#00B5B8" }}>Style Inspiration Photos</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: "#00B5B815", color: "#4A6FA5" }}>Optional</span>
+                <div className="rounded-xl p-4 space-y-3″ style={{ backgroundColor: "#00B5B808", border: "1px solid #00B5B820" }}>
+                  <div className="flex items-center gap-2″>
+                    <Sparkles className="w-4 h-4″ style={{ color: "#00B5B8" }} />
+                    <span className="text-sm font-semibold" style={{ color: "#00B5B8″ }}>Style Inspiration Photos</span>
+                    <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: "#00B5B815″, color: "#4A6FA5" }}>Optional</span>
                   </div>
-                  <p className="text-xs" style={{ color: "#4A6FA5" }}>
+                  <p className="text-xs" style={{ color: "#4A6FA5″ }}>
                     Upload 1-3 photos of styles you love -- from Pinterest, Houzz, or anywhere. These help pros and our AI generate mockups that match your taste.
                   </p>
                   {inspirationPhotos.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2″>
                       {inspirationPhotos.map((url, i) => (
                         <div key={i} className="relative">
                           <img src={url} alt={`Inspiration ${i + 1}`} className="w-20 h-16 object-cover rounded-lg" />
                           <button
                             onClick={() => setInspirationPhotos(p => p.filter((_, j) => j !== i))}
                             className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-xs"
-                            style={{ backgroundColor: "#EF4444", color: "white" }}
+                            style={{ backgroundColor: "#EF4444″, color: "white" }}
                           ></button>
                         </div>
                       ))}
@@ -727,8 +727,8 @@ export default function HomeownerSetup() {
                         }}
                       />
                       <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium"
-                        style={{ backgroundColor: "#00B5B820", color: "#00B5B8", border: "1px solid #00B5B840" }}>
-                        {uploadingInspo ? "Uploading..." : <><Camera className="w-3.5 h-3.5" /> Add Inspiration Photo</>}
+                        style={{ backgroundColor: "#00B5B820″, color: "#00B5B8", border: "1px solid #00B5B840" }}>
+                        {uploadingInspo ? "Uploading..." : <><Camera className="w-3.5 h-3.5″ /> Add Inspiration Photo</>}
                       </div>
                     </label>
                   )}
@@ -738,33 +738,33 @@ export default function HomeownerSetup() {
 
             {/* -- Step 6: Contact -------------------------------------------- */}
             {step === 6 && (
-              <div className="space-y-4">
+              <div className="space-y-4″>
                 <div>
-                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Your Name *</label>
+                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Your Name *</label>
                   <Input
                     placeholder="First name or full name"
                     value={contact.displayName}
                     onChange={e => setContact(c => ({ ...c, displayName: e.target.value }))}
-                    className="border-0 text-white placeholder:text-slate-600 h-11"
-                    style={{ backgroundColor: "#0A1628" }}
+                    className="border-0 text-white placeholder:text-slate-600 h-11″
+                    style={{ backgroundColor: "#0A1628″ }}
                   />
                 </div>
                 <div>
-                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8" }}>Phone Number <span style={{ color: "#FF6B6B" }}>*</span></label>
+                  <label className="text-xs mb-1.5 block font-medium" style={{ color: "#A0B4C8″ }}>Phone Number <span style={{ color: "#FF6B6B" }}>*</span></label>
                   <Input
                     type="tel"
-                    placeholder="(214) 555-0100"
+                    placeholder="(214) 555-0100″
                     value={contact.phone}
                     onChange={e => setContact(c => ({ ...c, phone: e.target.value }))}
-                    className="border-0 text-white placeholder:text-slate-600 h-11"
-                    style={{ backgroundColor: "#0A1628" }}
+                    className="border-0 text-white placeholder:text-slate-600 h-11″
+                    style={{ backgroundColor: "#0A1628″ }}
                     required
                   />
-                  <p className="text-xs mt-1" style={{ color: "#4A6FA5" }}>Required so verified pros can reach you directly.</p>
+                  <p className="text-xs mt-1″ style={{ color: "#4A6FA5" }}>Required so verified pros can reach you directly.</p>
                 </div>
                 <div>
-                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8" }}>Preferred contact method</label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <label className="text-xs mb-2 block font-medium" style={{ color: "#A0B4C8″ }}>Preferred contact method</label>
+                  <div className="grid grid-cols-2 gap-2″>
                     {[
                       { value: "email",   label: "Email" },
                       { value: "text",    label: "Text / SMS" },
@@ -775,30 +775,30 @@ export default function HomeownerSetup() {
                         onClick={() => setContact(c => ({ ...c, contactPreference: opt.value }))}
                         className="flex items-center gap-2 p-3 rounded-xl text-left transition-all"
                         style={{
-                          backgroundColor: contact.contactPreference === opt.value ? "#00B5B815" : "#0A1628",
+                          backgroundColor: contact.contactPreference === opt.value ? "#00B5B815″ : "#0A1628",
                           border: `1px solid ${contact.contactPreference === opt.value ? "#00B5B840" : "#1E3A5F"}`,
                         }}
                       >
                         <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center"
-                          style={{ borderColor: contact.contactPreference === opt.value ? "#00B5B8" : "#4A6FA5" }}>
-                          {contact.contactPreference === opt.value && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#00B5B8" }} />}
+                          style={{ borderColor: contact.contactPreference === opt.value ? "#00B5B8″ : "#4A6FA5" }}>
+                          {contact.contactPreference === opt.value && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#00B5B8″ }} />}
                         </div>
                         <span className="text-sm text-white">{opt.label}</span>
                       </button>
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 rounded-xl" style={{ backgroundColor: "#0A1628", border: "1px solid #1E3A5F" }}>
+                <div className="flex items-center gap-3 p-3 rounded-xl" style={{ backgroundColor: "#0A1628″, border: "1px solid #1E3A5F" }}>
                   <button
                     onClick={() => setContact(c => ({ ...c, openToRecommendations: !c.openToRecommendations }))}
                     className="w-5 h-5 rounded flex-shrink-0 flex items-center justify-center transition-all"
-                    style={{ backgroundColor: contact.openToRecommendations ? "#00B5B8" : "transparent", border: `2px solid ${contact.openToRecommendations ? "#00B5B8" : "#4A6FA5"}` }}
+                    style={{ backgroundColor: contact.openToRecommendations ? "#00B5B8″ : "transparent", border: `2px solid ${contact.openToRecommendations ? "#00B5B8" : "#4A6FA5"}` }}
                   >
                     {contact.openToRecommendations && <CheckCircle className="w-3.5 h-3.5 text-white" />}
                   </button>
                   <div>
                     <p className="text-sm text-white">Open to pro recommendations</p>
-                    <p className="text-xs" style={{ color: "#4A6FA5" }}>Allow trusted pros in the network to reach out with relevant offers</p>
+                    <p className="text-xs" style={{ color: "#4A6FA5″ }}>Allow trusted pros in the network to reach out with relevant offers</p>
                   </div>
                 </div>
               </div>
@@ -806,10 +806,10 @@ export default function HomeownerSetup() {
 
             {/* -- Step 7: Consent -------------------------------------------- */}
             {step === 7 && (
-              <div className="space-y-4">
-                <div className="rounded-xl p-4" style={{ backgroundColor: "#0A1628", border: "1px solid #1E3A5F" }}>
-                  <p className="text-sm font-medium text-white mb-2">Almost done!</p>
-                  <p className="text-xs" style={{ color: "#4A6FA5" }}>
+              <div className="space-y-4″>
+                <div className="rounded-xl p-4″ style={{ backgroundColor: "#0A1628", border: "1px solid #1E3A5F" }}>
+                  <p className="text-sm font-medium text-white mb-2″>Almost done!</p>
+                  <p className="text-xs" style={{ color: "#4A6FA5″ }}>
                     Review and agree to the following to complete your TrustyPro profile. You can update your preferences at any time from your account settings.
                   </p>
                 </div>
@@ -822,21 +822,21 @@ export default function HomeownerSetup() {
                   <div key={item.key}
                     className="flex items-start gap-3 p-4 rounded-xl cursor-pointer transition-all"
                     style={{
-                      backgroundColor: (consent as any)[item.key] ? "#00B5B815" : "#0A1628",
+                      backgroundColor: (consent as any)[item.key] ? "#00B5B815″ : "#0A1628",
                       border: `1px solid ${(consent as any)[item.key] ? "#00B5B840" : "#1E3A5F"}`,
                     }}
                     onClick={() => setConsent(c => ({ ...c, [item.key]: !(c as any)[item.key] }))}
                   >
                     <div className="w-5 h-5 rounded flex-shrink-0 flex items-center justify-center mt-0.5 transition-all"
-                      style={{ backgroundColor: (consent as any)[item.key] ? "#00B5B8" : "transparent", border: `2px solid ${(consent as any)[item.key] ? "#00B5B8" : "#4A6FA5"}` }}>
+                      style={{ backgroundColor: (consent as any)[item.key] ? "#00B5B8″ : "transparent", border: `2px solid ${(consent as any)[item.key] ? "#00B5B8" : "#4A6FA5"}` }}>
                       {(consent as any)[item.key] && <CheckCircle className="w-3.5 h-3.5 text-white" />}
                     </div>
                     <div>
                       <p className="text-sm text-white">
                         {item.label}
-                        {item.required && <span className="ml-1 text-xs px-1.5 py-0.5 rounded" style={{ backgroundColor: "#00B5B820", color: "#00B5B8" }}>Required</span>}
+                        {item.required && <span className="ml-1 text-xs px-1.5 py-0.5 rounded" style={{ backgroundColor: "#00B5B820″, color: "#00B5B8" }}>Required</span>}
                       </p>
-                      <p className="text-xs mt-0.5" style={{ color: "#4A6FA5" }}>{item.description}</p>
+                      <p className="text-xs mt-0.5″ style={{ color: "#4A6FA5" }}>{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -846,8 +846,8 @@ export default function HomeownerSetup() {
             {/* Navigation */}
             <div className="flex items-center justify-between mt-8 pt-6 border-t" style={{ borderColor: "#1E3A5F" }}>
               {step > 1 ? (
-                <Button variant="outline" onClick={() => setStep(s => s - 1)} className="gap-2 border-slate-600 text-slate-300 hover:bg-white/5">
-                  <ArrowLeft className="w-4 h-4" /> Back
+                <Button variant="outline" onClick={() => setStep(s => s - 1)} className="gap-2 border-slate-600 text-slate-300 hover:bg-white/5″>
+                  <ArrowLeft className="w-4 h-4″ /> Back
                 </Button>
               ) : <div />}
 
@@ -856,26 +856,26 @@ export default function HomeownerSetup() {
                   onClick={() => setStep(s => s + 1)}
                   disabled={!canNext()}
                   className="gap-2 font-bold text-white"
-                  style={{ backgroundColor: "#00B5B8" }}
+                  style={{ backgroundColor: "#00B5B8″ }}
                 >
-                  Continue <ArrowRight className="w-4 h-4" />
+                  Continue <ArrowRight className="w-4 h-4″ />
                 </Button>
               ) : (
                 <Button
                   onClick={handleFinish}
                   disabled={!canNext() || isSubmitting}
                   className="gap-2 font-bold text-white"
-                  style={{ backgroundColor: "#00B5B8" }}
+                  style={{ backgroundColor: "#00B5B8″ }}
                 >
-                  {isSubmitting ? "Saving..." : <><CheckCircle className="w-4 h-4" /> Complete Setup</>}
+                  {isSubmitting ? "Saving..." : <><CheckCircle className="w-4 h-4″ /> Complete Setup</>}
                 </Button>
               )}
             </div>
           </div>
 
           {/* Skip link */}
-          <div className="text-center mt-4">
-            <button onClick={() => navigate("/my-home")} className="text-xs hover:underline" style={{ color: "#4A6FA5" }}>
+          <div className="text-center mt-4″>
+            <button onClick={() => navigate("/my-home")} className="text-xs hover:underline" style={{ color: "#4A6FA5″ }}>
               Skip for now -- I'll complete this later
             </button>
           </div>

@@ -72,11 +72,11 @@ export default function DFWHVACCapacitorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📊 Assessment Result</h3>
             <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>CAPACITOR LIKELIHOOD: </span><span style={{ color: '#E8EFF8', fontWeight: 700 }}>{result.likelihood}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>URGENCY: </span><span style={{ color: '#E8EFF8' }}>{result.urgency}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>COST RANGE: </span><span style={{ color: '#E8EFF8' }}>{result.cost}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>URGENCY: </span><span style={{ color: '#E8EFF8′ }}>{result.urgency}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>COST RANGE: </span><span style={{ color: '#E8EFF8′ }}>{result.cost}</span></div>
             <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, color: '#C8D8E8', lineHeight: 1.6 }}>{result.rec}</div>
           </div>
         )}

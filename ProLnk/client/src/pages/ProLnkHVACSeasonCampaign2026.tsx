@@ -38,10 +38,10 @@ export default function ProLnkHVACSeasonCampaign2026() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#F5E642' : '#111f35',
-                color: selected === i ? '#0A1628' : '#ffffff',
+                background: selected === i ? '#F5E642′ : '#111f35',
+                color: selected === i ? '#0A1628′ : '#ffffff',
                 border: '1px solid',
-                borderColor: selected === i ? '#F5E642' : '#1e3050',
+                borderColor: selected === i ? '#F5E642′ : '#1e3050',
                 borderRadius: '10px',
                 padding: '16px 20px',
                 fontSize: '15px',
@@ -53,7 +53,7 @@ export default function ProLnkHVACSeasonCampaign2026() {
             >
               {c.concern}
               {selected === i && (
-                <p style={{ marginTop: '10px', fontWeight: '400', fontSize: '14px', lineHeight: 1.6, color: '#0A1628' }}>
+                <p style={{ marginTop: '10px', fontWeight: '400', fontSize: '14px', lineHeight: 1.6, color: '#0A1628′ }}>
                   {c.process}
                 </p>
               )}
@@ -68,14 +68,14 @@ export default function ProLnkHVACSeasonCampaign2026() {
           🏦 What is Home Health Vault? {showVault ? '▲' : '▼'}
         </button>
         {showVault && (
-          <div style={{ background: '#111f35', borderRadius: '10px', padding: '20px', marginBottom: '32px', border: '1px solid #1e3050' }}>
+          <div style={{ background: '#111f35', borderRadius: '10px', padding: '20px', marginBottom: '32px', border: '1px solid #1e3050′ }}>
             <p style={{ color: '#a0b4cc', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
               Every ProLnk service visit is permanently logged in your Home Health Vault — HVAC model, service date, tech, parts used, and next service window. Accessible to you, adds verifiable value to your home.
             </p>
           </div>
         )}
 
-        <div style={{ background: '#111f35', borderRadius: '14px', padding: '28px', textAlign: 'center', border: '1px solid #1e3050' }}>
+        <div style={{ background: '#111f35', borderRadius: '14px', padding: '28px', textAlign: 'center', border: '1px solid #1e3050′ }}>
           <h3 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', margin: '0 0 8px' }}>Get Matched to a Charter HVAC Tech</h3>
           <p style={{ color: '#7a90a8', fontSize: '14px', margin: '0 0 20px' }}>DFW homeowners — join ProLnk now before the peak season backlog.</p>
           <a href="/homeowner-signup" style={{ display: 'inline-block', background: '#F5E642', color: '#0A1628', fontWeight: '700', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontSize: '16px' }}>

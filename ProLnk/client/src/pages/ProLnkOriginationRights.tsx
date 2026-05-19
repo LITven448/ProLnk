@@ -21,7 +21,7 @@ export default function ProLnkOriginationRights() {
         </p>
 
         <div style={{ background: '#111d2e', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>How It Works</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>How It Works</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginTop: 16 }}>
             {[
               { step: '1', label: 'You add a home', desc: 'Help a homeowner set up their Health Vault profile with property data.' },
@@ -38,26 +38,26 @@ export default function ProLnkOriginationRights() {
         </div>
 
         <div style={{ background: '#111d2e', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>Income Calculator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>Income Calculator</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 14 }}>Homes you add: {homes}</label>
             <input type="range" min={1} max={200} value={homes} onChange={e => setHomes(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 14 }}>Years: {years}</label>
             <input type="range" min={1} max={10} value={years} onChange={e => setYears(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Monthly origination income</div>
-              <div style={{ fontSize: 40, fontWeight: 900, color: '#F5E642' }}>${monthly}</div>
+              <div style={{ fontSize: 40, fontWeight: 900, color: '#F5E642′ }}>${monthly}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{years}-year total</div>
-              <div style={{ fontSize: 40, fontWeight: 900, color: '#4ade80' }}>${totalIncome.toLocaleString()}</div>
+              <div style={{ fontSize: 40, fontWeight: 900, color: '#4ade80′ }}>${totalIncome.toLocaleString()}</div>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export default function ProLnkOriginationRights() {
         </div>
 
         <div style={{ background: '#111d2e', borderRadius: 10, padding: 20, marginBottom: 20 }}>
-          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 10, color: '#F5E642' }}>Why This Compounds Over Time</div>
+          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 10, color: '#F5E642′ }}>Why This Compounds Over Time</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
             As ProLnk grows, more jobs per home are generated, more lead value flows through the platform, and fees increase with service demand. Your 1.5% origination right grows in absolute dollars even if you never add another home. 10,000 homeowner installs across the network = massive passive income for originators.
           </div>

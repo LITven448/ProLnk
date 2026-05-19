@@ -40,18 +40,18 @@ export default function DFWHomeHumidityControl2026() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔍 Get Your Action Plan</h2>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔍 Get Your Action Plan</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
           <div>
             <label style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8, display: 'block' }}>Current Season</label>
             {['summer', 'winter'].map(s => (
-              <button key={s} onClick={() => setSeason(s)} style={{ display: 'block', width: '100%', marginBottom: 8, background: season === s ? '#F5E642' : '#1e2d4a', color: season === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '10px', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>
+              <button key={s} onClick={() => setSeason(s)} style={{ display: 'block', width: '100%', marginBottom: 8, background: season === s ? '#F5E642′ : '#1e2d4a', color: season === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '10px', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>
             ))}
           </div>
           <div>
             <label style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8, display: 'block' }}>Current Humidity Reading</label>
             {[{ val: 'high', label: 'High (>50%)' }, { val: 'normal', label: 'Normal (35-50%)' }, { val: 'low', label: 'Low (<35%)' }].map(r => (
-              <button key={r.val} onClick={() => setReading(r.val)} style={{ display: 'block', width: '100%', marginBottom: 8, background: reading === r.val ? '#F5E642' : '#1e2d4a', color: reading === r.val ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '10px', cursor: 'pointer', fontWeight: 600 }}>{r.label}</button>
+              <button key={r.val} onClick={() => setReading(r.val)} style={{ display: 'block', width: '100%', marginBottom: 8, background: reading === r.val ? '#F5E642′ : '#1e2d4a', color: reading === r.val ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '10px', cursor: 'pointer', fontWeight: 600 }}>{r.label}</button>
             ))}
           </div>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from "react";
 
-const NAVY = "#0A1628";
-const YELLOW = "#F5E642";
-const BG = "#FAFAF9";
+const NAVY = "#0A1628″;
+const YELLOW = "#F5E642″;
+const BG = "#FAFAF9″;
 const CARD_BG = "#FFFFFF";
 
 const styles: Record<string, React.CSSProperties> = {
@@ -11,45 +11,45 @@ const styles: Record<string, React.CSSProperties> = {
   hero: { background: NAVY, color: "#FFFFFF", padding: "80px 24px 60px", textAlign: "center" },
   heroEyebrow: { fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: YELLOW, marginBottom: 16, fontWeight: 600 },
   h1: { fontSize: "clamp(28px, 5vw, 52px)", fontWeight: 800, lineHeight: 1.1, maxWidth: 800, margin: "0 auto 24px" },
-  heroSub: { fontSize: 18, color: "#B8C4D4", maxWidth: 600, margin: "0 auto 36px" },
+  heroSub: { fontSize: 18, color: "#B8C4D4″, maxWidth: 600, margin: "0 auto 36px" },
   statBar: { display: "flex", flexWrap: "wrap" as const, justifyContent: "center", gap: "32px", borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: 32, marginTop: 8 },
   stat: { textAlign: "center" as const },
   statNum: { fontSize: 28, fontWeight: 800, color: YELLOW, display: "block" },
   statLabel: { fontSize: 12, color: "#8899AA", letterSpacing: "0.08em", textTransform: "uppercase" as const },
   section: { maxWidth: 1080, margin: "0 auto", padding: "72px 24px" },
   sectionTitle: { fontSize: 32, fontWeight: 800, marginBottom: 12, color: NAVY },
-  sectionSub: { fontSize: 16, color: "#4A5568", marginBottom: 48, maxWidth: 640 },
+  sectionSub: { fontSize: 16, color: "#4A5568″, marginBottom: 48, maxWidth: 640 },
   cards: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 },
-  card: { background: CARD_BG, border: "1px solid #E8EDF2", borderRadius: 16, padding: 28, boxShadow: "0 2px 8px rgba(10,22,40,0.06)" },
+  card: { background: CARD_BG, border: "1px solid #E8EDF2″, borderRadius: 16, padding: 28, boxShadow: "0 2px 8px rgba(10,22,40,0.06)" },
   cardIcon: { fontSize: 32, marginBottom: 16 },
   cardTitle: { fontSize: 18, fontWeight: 700, marginBottom: 8, color: NAVY },
-  cardText: { fontSize: 14, color: "#4A5568", lineHeight: 1.6 },
+  cardText: { fontSize: 14, color: "#4A5568″, lineHeight: 1.6 },
   incomeBox: { background: NAVY, color: "#FFFFFF", borderRadius: 20, padding: "48px 40px", marginBottom: 24 },
   incomeTitle: { fontSize: 24, fontWeight: 800, marginBottom: 24, color: YELLOW },
-  incomeLine: { display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: 15 },
-  incomeTotal: { display: "flex", justifyContent: "space-between", padding: "16px 0 0", fontSize: 20, fontWeight: 800, color: YELLOW },
+  incomeLine: { display: "flex", justifyContent: "space-between", padding: "10px 0″, borderBottom: "1px solid rgba(255,255,255,0.08)", fontSize: 15 },
+  incomeTotal: { display: "flex", justifyContent: "space-between", padding: "16px 0 0″, fontSize: 20, fontWeight: 800, color: YELLOW },
   steps: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 },
   step: { display: "flex", gap: 16, alignItems: "flex-start" },
   stepNum: { background: YELLOW, color: NAVY, borderRadius: "50%", width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 16, flexShrink: 0 },
   stepTitle: { fontSize: 17, fontWeight: 700, marginBottom: 6, color: NAVY },
-  stepText: { fontSize: 14, color: "#4A5568", lineHeight: 1.6 },
-  calcBox: { background: "#F0F4F8", borderRadius: 20, padding: "40px 36px" },
+  stepText: { fontSize: 14, color: "#4A5568″, lineHeight: 1.6 },
+  calcBox: { background: "#F0F4F8″, borderRadius: 20, padding: "40px 36px" },
   calcRow: { display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" as const, marginBottom: 24 },
   calcLabel: { fontSize: 14, fontWeight: 600, color: NAVY, minWidth: 180 },
-  calcInput: { border: "2px solid #CBD5E0", borderRadius: 8, padding: "10px 14px", fontSize: 16, fontWeight: 600, width: 140, background: "#FFFFFF", color: NAVY },
+  calcInput: { border: "2px solid #CBD5E0″, borderRadius: 8, padding: "10px 14px", fontSize: 16, fontWeight: 600, width: 140, background: "#FFFFFF", color: NAVY },
   calcResult: { background: NAVY, color: "#FFFFFF", borderRadius: 14, padding: "24px 28px", marginTop: 8 },
-  calcResultRow: { display: "flex", justifyContent: "space-between", padding: "8px 0", fontSize: 15, borderBottom: "1px solid rgba(255,255,255,0.1)" },
-  calcResultTotal: { display: "flex", justifyContent: "space-between", padding: "12px 0 0", fontSize: 22, fontWeight: 800, color: YELLOW },
+  calcResultRow: { display: "flex", justifyContent: "space-between", padding: "8px 0″, fontSize: 15, borderBottom: "1px solid rgba(255,255,255,0.1)" },
+  calcResultTotal: { display: "flex", justifyContent: "space-between", padding: "12px 0 0″, fontSize: 22, fontWeight: 800, color: YELLOW },
   cta: { background: YELLOW, borderRadius: 20, padding: "64px 32px", textAlign: "center" as const },
   ctaTitle: { fontSize: 34, fontWeight: 800, color: NAVY, marginBottom: 12 },
-  ctaSub: { fontSize: 16, color: "#2D3748", marginBottom: 32, maxWidth: 520, margin: "0 auto 32px" },
+  ctaSub: { fontSize: 16, color: "#2D3748″, marginBottom: 32, maxWidth: 520, margin: "0 auto 32px" },
   ctaBtn: { display: "inline-block", background: NAVY, color: "#FFFFFF", padding: "18px 48px", borderRadius: 12, fontWeight: 700, fontSize: 17, textDecoration: "none", letterSpacing: "0.02em" },
   faq: { maxWidth: 720, margin: "0 auto" },
-  faqItem: { borderBottom: "1px solid #E8EDF2", padding: "24px 0" },
+  faqItem: { borderBottom: "1px solid #E8EDF2″, padding: "24px 0" },
   faqQ: { fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 10 },
-  faqA: { fontSize: 15, color: "#4A5568", lineHeight: 1.7 },
-  dfw: { background: "#EBF4FF", borderLeft: "4px solid #0A1628", borderRadius: "0 12px 12px 0", padding: "24px 28px", margin: "0 0 48px" },
-  dfwText: { fontSize: 15, color: "#2D3748", lineHeight: 1.7 },
+  faqA: { fontSize: 15, color: "#4A5568″, lineHeight: 1.7 },
+  dfw: { background: "#EBF4FF", borderLeft: "4px solid #0A1628″, borderRadius: "0 12px 12px 0", padding: "24px 28px", margin: "0 0 48px" },
+  dfwText: { fontSize: 15, color: "#2D3748″, lineHeight: 1.7 },
 };
 
 const benefits = [

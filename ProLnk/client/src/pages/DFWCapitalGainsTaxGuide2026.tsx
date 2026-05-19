@@ -22,7 +22,7 @@ export default function DFWCapitalGainsTaxGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>💰</div>
-          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Capital Gains on Home Sale 2026</h1>
+          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Capital Gains on Home Sale 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Texas has NO state capital gains tax — major advantage over CA or NY</p>
         </div>
 
@@ -59,7 +59,7 @@ export default function DFWCapitalGainsTaxGuide2026() {
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: 4 }}>Filing Status</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 {['single', 'married'].map((s) => (
-                  <button key={s} onClick={() => setFilingStatus(s)} style={{ flex: 1, padding: '0.5rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: filingStatus === s ? '#F5E642' : '#1e3a5f', color: filingStatus === s ? '#0A1628' : '#fff' }}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
+                  <button key={s} onClick={() => setFilingStatus(s)} style={{ flex: 1, padding: '0.5rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: filingStatus === s ? '#F5E642′ : '#1e3a5f', color: filingStatus === s ? '#0A1628' : '#fff' }}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
                 ))}
               </div>
             </div>
@@ -67,11 +67,11 @@ export default function DFWCapitalGainsTaxGuide2026() {
           <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', marginTop: '1rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
               <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Total Gain</span>
-              <span style={{ fontWeight: 700, color: gain >= 0 ? '#22c55e' : '#ef4444' }}>{fmt(gain)}</span>
+              <span style={{ fontWeight: 700, color: gain >= 0 ? '#22c55e' : '#ef4444′ }}>{fmt(gain)}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
               <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Exclusion ({qualifies ? 'qualifies' : 'does not qualify'})</span>
-              <span style={{ fontWeight: 700, color: '#F5E642' }}>{qualifies ? fmt(Math.min(exclusion, gain)) : '$0'}</span>
+              <span style={{ fontWeight: 700, color: '#F5E642′ }}>{qualifies ? fmt(Math.min(exclusion, gain)) : '$0'}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
               <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>TX State Tax</span>
@@ -79,7 +79,7 @@ export default function DFWCapitalGainsTaxGuide2026() {
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #1e3a5f', paddingTop: '0.5rem', marginTop: '0.5rem' }}>
               <span style={{ fontWeight: 700 }}>Est. Federal Tax Owed</span>
-              <span style={{ fontWeight: 800, fontSize: '1.1rem', color: federalTax > 0 ? '#ef4444' : '#22c55e' }}>{fmt(federalTax)}</span>
+              <span style={{ fontWeight: 800, fontSize: '1.1rem', color: federalTax > 0 ? '#ef4444′ : '#22c55e' }}>{fmt(federalTax)}</span>
             </div>
             {!qualifies && <div style={{ color: '#f97316', fontSize: '0.75rem', marginTop: '0.5rem' }}>⚠️ Must live in home 2 of last 5 years to qualify for exclusion</div>}
           </div>

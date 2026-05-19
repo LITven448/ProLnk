@@ -34,13 +34,13 @@ export default function DFWPropertyTaxFAQ() {
           <p style={{ color: '#64748b', fontSize: 16, margin: 0 }}>15 essential questions about property taxes in Dallas-Fort Worth</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
           <p style={{ color: '#0A1628', fontWeight: 700, margin: '0 0 12px', fontSize: 14 }}>🎯 FILTER BY YOUR SITUATION</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {situations.map(s => (
               <button key={s} onClick={() => { setActiveSituation(s); setOpen(null); }}
                 style={{ padding: '7px 16px', borderRadius: 20, border: activeSituation === s ? 'none' : '1px solid #e2e8f0', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: activeSituation === s ? '#0A1628' : '#fff', color: activeSituation === s ? '#F5E642' : '#475569' }}>
+                  background: activeSituation === s ? '#0A1628′ : '#fff', color: activeSituation === s ? '#F5E642' : '#475569' }}>
                 {s}
               </button>
             ))}
@@ -49,7 +49,7 @@ export default function DFWPropertyTaxFAQ() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {filtered.map((faq, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, overflow: 'hidden', border: open === i ? '2px solid #0A1628' : '1px solid #e2e8f0' }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, overflow: 'hidden', border: open === i ? '2px solid #0A1628′ : '1px solid #e2e8f0' }}>
               <button onClick={() => setOpen(open === i ? null : i)}
                 style={{ width: '100%', textAlign: 'left', padding: '16px 20px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
@@ -59,7 +59,7 @@ export default function DFWPropertyTaxFAQ() {
                 <span style={{ color: '#0A1628', fontSize: 18, marginLeft: 12 }}>{open === i ? '▲' : '▼'}</span>
               </button>
               {open === i && (
-                <div style={{ padding: '0 20px 16px', color: '#475569', fontSize: 14, lineHeight: 1.7, borderTop: '1px solid #f1f5f9' }}>{faq.a}</div>
+                <div style={{ padding: '0 20px 16px', color: '#475569', fontSize: 14, lineHeight: 1.7, borderTop: '1px solid #f1f5f9′ }}>{faq.a}</div>
               )}
             </div>
           ))}

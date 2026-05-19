@@ -83,8 +83,8 @@ export default function DFWProLnkHVACFinalPage() {
                 key={r.id}
                 onClick={() => setSelected(r.id)}
                 style={{
-                  background: selected === r.id ? '#F5E642' : '#1a2f55',
-                  color: selected === r.id ? '#0A1628' : '#fff',
+                  background: selected === r.id ? '#F5E642′ : '#1a2f55',
+                  color: selected === r.id ? '#0A1628′ : '#fff',
                   border: 'none', borderRadius: 8, padding: '1rem', cursor: 'pointer',
                   fontWeight: 600, textAlign: 'left',
                 }}

@@ -106,8 +106,8 @@ export default function DFWPreventiveMaintenanceROIGuide() {
               {SYSTEMS.map(s => (
                 <button key={s.value} onClick={() => setSystem(s.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: system === s.value ? '#F5E642' : '#0A1628',
-                    color: system === s.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: system === s.value ? '#F5E642′ : '#0A1628',
+                    color: system === s.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {s.label}
                 </button>
               ))}
@@ -116,9 +116,9 @@ export default function DFWPreventiveMaintenanceROIGuide() {
           {data && (
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
-                <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
+                <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
                   <div style={{ fontSize: 12, color: '#8899AA', marginBottom: 4 }}>PREVENTIVE MAINTENANCE</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{data.maintCost}</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{data.maintCost}</div>
                   <div style={{ fontSize: 12, color: '#8899AA' }}>{data.maintFreq}</div>
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #FF6B6B' }}>
@@ -131,11 +131,11 @@ export default function DFWPreventiveMaintenanceROIGuide() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                   <div>
                     <div style={{ fontSize: 12, color: '#8899AA' }}>RETURN ON INVESTMENT</div>
-                    <div style={{ fontSize: 36, fontWeight: 800, color: '#4CAF50' }}>{data.roi.toLocaleString()}%</div>
+                    <div style={{ fontSize: 36, fontWeight: 800, color: '#4CAF50′ }}>{data.roi.toLocaleString()}%</div>
                   </div>
                   <div style={{ textAlign: 'right' as const }}>
                     <div style={{ fontSize: 12, color: '#8899AA' }}>PAYBACK PERIOD</div>
-                    <div style={{ fontSize: 18, fontWeight: 700, color: '#E8EDF5' }}>{data.payback}</div>
+                    <div style={{ fontSize: 18, fontWeight: 700, color: '#E8EDF5′ }}>{data.payback}</div>
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function DFWPreventiveMaintenanceROIGuide() {
           ))}
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, fontWeight: 700 }}>
             <span>Total Annual Investment</span>
-            <span style={{ color: '#4CAF50' }}>$1,085/yr → protects $86,300 in failure risk</span>
+            <span style={{ color: '#4CAF50′ }}>$1,085/yr → protects $86,300 in failure risk</span>
           </div>
         </div>
 

@@ -11,7 +11,7 @@ const bathTypes = [
 const bathAdvice: Record<string, { score: number; priorities: string[]; layout: string; cost: string; dfwNote: string }> = {
   primary_large: {
     score: 90,
-    priorities: ['Walk-in shower separate from soaking tub', 'Double vanity minimum 60" wide', 'Large mirror spanning vanity width', 'Frameless glass shower enclosure', 'Heated floors — DFW luxury baseline in 2026'],
+    priorities: ['Walk-in shower separate from soaking tub', 'Double vanity minimum 60″ wide', 'Large mirror spanning vanity width', 'Frameless glass shower enclosure', 'Heated floors — DFW luxury baseline in 2026'],
     layout: 'Place double vanity on longest wall. Separate wet area (shower + tub) behind glass partition or in alcove. Toilet in private water closet with door. Large format tile (24x24 or herringbone) with minimal grout lines.',
     cost: '$8,000–$25,000 to optimize or renovate',
     dfwNote: 'Large primary baths are a DFW differentiator — new DFW construction often has 150+ sq ft primaries. A large bath that isn\’t upgraded loses its competitive advantage vs new construction comps.',
@@ -19,7 +19,7 @@ const bathAdvice: Record<string, { score: number; priorities: string[]; layout: 
   primary_small: {
     score: 65,
     priorities: ['Walk-in shower (remove tub if space constrained)', 'Single vanity with double sinks if width allows', 'Large mirror to open space visually', 'Light color tile throughout — avoid dark small baths', 'Frameless glass shower to maximize visual space'],
-    layout: 'Prioritize large walk-in shower over soaking tub in small primary — DFW buyers prefer walk-in shower. Double sinks on 48–54" vanity. Eliminate any visual clutter. Lighter tile, no busy patterns.',
+    layout: 'Prioritize large walk-in shower over soaking tub in small primary — DFW buyers prefer walk-in shower. Double sinks on 48–54″ vanity. Eliminate any visual clutter. Lighter tile, no busy patterns.',
     cost: '$6,000–$18,000 to optimize for DFW buyers',
     dfwNote: 'Small primary baths are a DFW risk factor — buyers compare to new construction 5 miles away with spa baths. A well-executed small primary needs to look intentionally designed, not like a compromise.',
   },
@@ -33,7 +33,7 @@ const bathAdvice: Record<string, { score: number; priorities: string[]; layout: 
   guest_shower: {
     score: 70,
     priorities: ['Ensure shower pan is modern (no old acrylic bases)', 'Frameless glass enclosure — DFW buyers expect this', 'Subway or large format tile on walls', 'Built-in niche for shampoo — remove plastic shower caddy', 'Rainhead or dual shower heads for DFW luxury feel'],
-    layout: 'Walk-in shower without tub is acceptable in secondary guest bath if home has tub elsewhere. Size matters — 36x36" minimum, 36x48" preferred. Larger shower reads more valuable than small shower with tub.',
+    layout: 'Walk-in shower without tub is acceptable in secondary guest bath if home has tub elsewhere. Size matters — 36x36″ minimum, 36x48″ preferred. Larger shower reads more valuable than small shower with tub.',
     cost: '$3,000–$10,000 for shower upgrade',
     dfwNote: 'DFW buyers with school-age children want at least one tub in the home — ensure primary or another bath retains tub if this guest bath is shower-only.',
   },
@@ -69,7 +69,7 @@ export default function DFWBathroomLayoutGuide() {
           ].map(tip => (
             <div key={tip.title} style={{ background: '#0F2040', borderRadius: 10, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 24, marginBottom: 10 }}>{tip.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{tip.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{tip.title}</div>
               <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.5 }}>{tip.note}</div>
             </div>
           ))}
@@ -80,33 +80,33 @@ export default function DFWBathroomLayoutGuide() {
           <p style={{ color: '#8B9DC3', marginBottom: 16, fontSize: 14 }}>Select your bathroom type:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 10, marginBottom: 24 }}>
             {bathTypes.map(b => (
-              <button key={b.id} onClick={() => setSelected(b.id)} style={{ background: selected === b.id ? '#F5E642' : '#0A1628', color: selected === b.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === b.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
+              <button key={b.id} onClick={() => setSelected(b.id)} style={{ background: selected === b.id ? '#F5E642′ : '#0A1628', color: selected === b.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === b.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
                 {b.label}
               </button>
             ))}
           </div>
           {adv && bath && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 4, color: '#F5E642' }}>{bath.label}</div>
+                  <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 4, color: '#F5E642′ }}>{bath.label}</div>
                   <div style={{ color: '#8B9DC3', fontSize: 13 }}>DFW Buyer Appeal Score</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 44, fontWeight: 800, color: adv.score >= 80 ? '#4CAF50' : adv.score >= 65 ? '#F5E642' : '#FF6B6B' }}>{adv.score}</div>
+                  <div style={{ fontSize: 44, fontWeight: 800, color: adv.score >= 80 ? '#4CAF50′ : adv.score >= 65 ? '#F5E642' : '#FF6B6B' }}>{adv.score}</div>
                   <div style={{ fontSize: 11, color: '#8B9DC3', letterSpacing: 1, textTransform: 'uppercase' }}>out of 100</div>
                 </div>
               </div>
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 10, color: '#F5E642' }}>⭐ DFW Buyer Priority Features</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 10, color: '#F5E642′ }}>⭐ DFW Buyer Priority Features</div>
                 {adv.priorities.map((p, i) => (
                   <div key={i} style={{ fontSize: 13, color: '#8B9DC3', marginBottom: 7, paddingLeft: 16, position: 'relative', lineHeight: 1.5 }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>→</span>{p}
+                    <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>→</span>{p}
                   </div>
                 ))}
               </div>
               <div style={{ background: '#0F2040', borderRadius: 8, padding: 14, marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#E8EAF0' }}>📐 Layout Recommendation</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#E8EAF0′ }}>📐 Layout Recommendation</div>
                 <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.6 }}>{adv.layout}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

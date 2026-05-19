@@ -64,7 +64,7 @@ const EDGE_PLANS: Record<string, Record<string, EdgePlan>> = {
         'Concrete edges do NOT stop Bermuda — it grows right over them',
         'Weekly stick edging during summer is necessary for clean appearance',
         'Bermuda overgrowing driveway cracks is a DFW-specific problem — don\’t let it get ahead',
-        'Blade edging creates a 1/4" gap that slows regrowth vs trimmer against concrete',
+        'Blade edging creates a 1/4″ gap that slows regrowth vs trimmer against concrete',
       ],
     },
     'St. Augustine': {
@@ -158,14 +158,14 @@ export default function DFWEdgingGuide() {
               {[['Edging Frequency', plan.frequency], ['Best Method', plan.method], ['Estimated Cost', plan.cost]].map(([label, val]) => (
                 <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                   <div style={{ color: '#94a3b8', fontSize: 12 }}>{label}</div>
-                  <div style={{ color: '#fff', fontSize: 14, marginTop: 2, fontWeight: label === 'Estimated Cost' ? 700 : 400, ...(label === 'Estimated Cost' ? { color: '#F5E642' } : {}) }}>{val}</div>
+                  <div style={{ color: '#fff', fontSize: 14, marginTop: 2, fontWeight: label === 'Estimated Cost' ? 700 : 400, ...(label === 'Estimated Cost' ? { color: '#F5E642′ } : {}) }}>{val}</div>
                 </div>
               ))}
             </div>
             <div>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>📌 DFW-Specific Tips</div>
               {plan.tips.map((tip, i) => (
-                <div key={i} style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{tip}</div>
+                <div key={i} style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{tip}</div>
               ))}
             </div>
           </div>

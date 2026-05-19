@@ -38,7 +38,7 @@ export default function DFWFoundationRepairSunnyvale() {
       </div>
 
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '32px 24px' }}>
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🌍 Why Sunnyvale Soil Is Different</h2>
           <div style={{ display: 'grid', gap: '12px' }}>
             {[
@@ -57,7 +57,7 @@ export default function DFWFoundationRepairSunnyvale() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🔍 Risk Factors + Inspection Recommendation</h2>
           <div style={{ display: 'grid', gap: '16px', marginBottom: '16px' }}>
             <div>
@@ -90,15 +90,15 @@ export default function DFWFoundationRepairSunnyvale() {
           <button
             onClick={assess}
             disabled={!homeType || !foundationType}
-            style={{ width: '100%', background: homeType && foundationType ? '#F5E642' : '#2A4080', color: homeType && foundationType ? '#0A1628' : '#4A6080', border: 'none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeType && foundationType ? 'pointer' : 'not-allowed' }}
+            style={{ width: '100%', background: homeType && foundationType ? '#F5E642′ : '#2A4080', color: homeType && foundationType ? '#0A1628' : '#4A6080', border: ’none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeType && foundationType ? 'pointer' : 'not-allowed' }}
           >
             Assess My Foundation Risk
           </button>
           {result && (
             <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: `1px solid ${result.risk.startsWith('High') ? '#FF4444' : result.risk.startsWith('Moderate-High') ? '#FF8C00' : '#F5E642'}` }}>
-              <div style={{ fontWeight: '800', fontSize: '16px', color: result.risk.startsWith('High') ? '#FF4444' : result.risk.startsWith('Moderate-High') ? '#FF8C00' : '#F5E642', marginBottom: '6px' }}>Risk Level: {result.risk}</div>
+              <div style={{ fontWeight: '800', fontSize: '16px', color: result.risk.startsWith('High') ? '#FF4444′ : result.risk.startsWith(’Moderate-High') ? '#FF8C00′ : '#F5E642', marginBottom: '6px' }}>Risk Level: {result.risk}</div>
               <div style={{ color: '#8898AA', fontSize: '13px', marginBottom: '10px' }}>{result.factors}</div>
-              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#E8EDF5', fontSize: '13px', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#E8EDF5', fontSize: '13px', borderLeft: '3px solid #F5E642′ }}>
                 ✅ Recommended Action: {result.action}
               </div>
             </div>

@@ -102,7 +102,7 @@ export default function NetworkGrowthPlaybook() {
           <h1 style={{ fontSize: 42, fontWeight: 800, margin: 0, color: '#0F172A' }}>
             Network Growth Playbook
           </h1>
-          <p style={{ fontSize: 18, color: '#64748B', marginTop: 12, maxWidth: 620, margin: '12px auto 0' }}>
+          <p style={{ fontSize: 18, color: '#64748B', marginTop: 12, maxWidth: 620, margin: '12px auto 0′ }}>
             A step-by-step system for building a 4-level income network on ProLnk — from your first recruit to passive override income.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20, marginTop: 28, flexWrap: 'wrap' }}>
@@ -156,7 +156,7 @@ export default function NetworkGrowthPlaybook() {
                     </div>
                   </div>
                   {isOpen && (
-                    <div style={{ padding: '0 24px 24px 88px', borderTop: '1px solid #E2E8F0' }}>
+                    <div style={{ padding: '0 24px 24px 88px', borderTop: '1px solid #E2E8F0′ }}>
                       <div style={{ paddingTop: 20 }}>
                         <div style={{ fontWeight: 700, color: '#0F172A', marginBottom: 12, fontSize: 15 }}>Action Items:</div>
                         <ul style={{ margin: 0, padding: '0 0 0 20px' }}>
@@ -165,7 +165,7 @@ export default function NetworkGrowthPlaybook() {
                           ))}
                         </ul>
                         <div style={{ marginTop: 20, background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 8, padding: '10px 16px' }}>
-                          <span style={{ fontWeight: 700, color: '#166534' }}>✅ Success Metric: </span>
+                          <span style={{ fontWeight: 700, color: '#166534′ }}>✅ Success Metric: </span>
                           <span style={{ color: '#166534', fontSize: 14 }}>{p.metric}</span>
                         </div>
                       </div>
@@ -195,9 +195,9 @@ export default function NetworkGrowthPlaybook() {
                     <div style={{ color: '#2563EB', fontSize: 18 }}>{isOpen ? '▲' : '▼'}</div>
                   </div>
                   {isOpen && (
-                    <div style={{ padding: '0 20px 20px', borderTop: '1px solid #F1F5F9' }}>
+                    <div style={{ padding: '0 20px 20px', borderTop: '1px solid #F1F5F9′ }}>
                       <div style={{ paddingTop: 14, color: '#374151', fontSize: 14, lineHeight: 1.7 }}>
-                        <span style={{ fontWeight: 700, color: '#166534' }}>Your response: </span>{o.a}
+                        <span style={{ fontWeight: 700, color: '#166534′ }}>Your response: </span>{o.a}
                       </div>
                     </div>
                   )}

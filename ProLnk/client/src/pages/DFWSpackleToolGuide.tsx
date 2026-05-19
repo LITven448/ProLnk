@@ -4,35 +4,35 @@ const repairs = [
   {
     type: 'Nail pop (small dent)',
     texture: 'Flat/smooth',
-    tools: ['Putty knife (3")', 'Fine grit sanding sponge', 'Paint brush'],
+    tools: ['Putty knife (3″)', 'Fine grit sanding sponge', 'Paint brush'],
     technique: 'Apply lightweight spackle in thin layers. Sand flush when dry. Prime before painting.',
-    dfwTip: 'DFW humidity swings cause nail pops — drive nail 1/8" deeper before spackling.',
+    dfwTip: 'DFW humidity swings cause nail pops — drive nail 1/8″ deeper before spackling.',
   },
   {
     type: 'Hairline crack',
     texture: 'Any',
-    tools: ['6" drywall knife', 'Mesh tape', 'All-purpose joint compound', 'Mud pan', 'Sanding sponge'],
-    technique: 'Embed mesh tape in first coat. Feather two more coats 8–12" wide. Sand smooth between coats.',
+    tools: ['6″ drywall knife', 'Mesh tape', 'All-purpose joint compound', 'Mud pan', 'Sanding sponge'],
+    technique: 'Embed mesh tape in first coat. Feather two more coats 8–12″ wide. Sand smooth between coats.',
     dfwTip: 'DFW clay soil movement causes cracks — fix cause before cosmetic repair or cracks return.',
   },
   {
     type: 'Hole 1–4 inches',
     texture: 'Skip trowel (common in DFW)',
-    tools: ['Patch kit or backer board', '6" & 10" drywall knives', 'Mud pan', 'Texture spray or skip trowel tool', 'Sanding block'],
+    tools: ['Patch kit or backer board', '6″ & 10″ drywall knives', 'Mud pan', 'Texture spray or skip trowel tool', 'Sanding block'],
     technique: 'Install backer, apply three coats of compound, feather wide. Replicate skip trowel with irregular stipple sponge or spray.',
     dfwTip: 'Skip trowel is the dominant DFW texture — practice the pattern on cardboard before applying to wall.',
   },
   {
     type: 'Corner bead damage',
     texture: 'Any',
-    tools: ['Corner bead crimper or screws', '6" knife', 'All-purpose compound', 'Sanding sponge', 'Mud pan'],
-    technique: 'Secure new bead flush and straight. Apply three coats of compound 6" out from bead on each side. Sand carefully — do not sand bead itself.',
+    tools: ['Corner bead crimper or screws', '6″ knife', 'All-purpose compound', 'Sanding sponge', 'Mud pan'],
+    technique: 'Secure new bead flush and straight. Apply three coats of compound 6″ out from bead on each side. Sand carefully — do not sand bead itself.',
     dfwTip: 'Use vinyl corner bead in DFW — paper bead absorbs humidity and can bubble in humid spring months.',
   },
   {
     type: 'Water-damaged section',
     texture: 'Popcorn or smooth',
-    tools: ['Utility knife', 'Drywall saw', 'Backer boards', '12" knife', 'Mud pan', 'Popcorn texture spray'],
+    tools: ['Utility knife', 'Drywall saw', 'Backer boards', '12″ knife', 'Mud pan', 'Popcorn texture spray'],
     technique: 'Cut out damaged section square. Fix water source first. Install new drywall with backer support. Three coats compound, feather wide.',
     dfwTip: 'DFW roof/plumbing leaks are common — verify dry for 72 hrs before any drywall repair.',
   },
@@ -57,7 +57,7 @@ export default function DFWSpackleToolGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🪣 Spackle & Drywall Tool Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28, lineHeight: 1.6 }}>Right tools for every drywall repair. Includes DFW-specific skip trowel matching techniques.</p>
 
-        <div style={{ background: '#F5E64215', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F5E642' }}>
+        <div style={{ background: '#F5E64215', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F5E642′ }}>
           🏠 Skip trowel is the most common wall texture in DFW homes. Matching it requires practice — take your time.
         </div>
 
@@ -75,7 +75,7 @@ export default function DFWSpackleToolGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{result.type}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 10 }}>Texture: {result.texture}</div>
               <div style={{ marginBottom: 8 }}>

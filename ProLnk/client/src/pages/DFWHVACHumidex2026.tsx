@@ -13,11 +13,11 @@ export default function DFWHVACHumidex2026() {
   const match = situations.find(s => s.id === selected);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ marginBottom: "0.5rem", fontSize: "0.85rem", color: "#F5E642", letterSpacing: 2, textTransform: "uppercase" }}>DFW HVAC Guide 2026</div>
+        <div style={{ marginBottom: "0.5rem", fontSize: "0.85rem", color: "#F5E642″, letterSpacing: 2, textTransform: "uppercase" }}>DFW HVAC Guide 2026</div>
         <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "0.5rem" }}>💧 DFW Humidity & Heat Index Guide</h1>
-        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.6 }}>
+        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.6 }}>
           In DFW, your HVAC fights two battles: temperature AND humidity. At 95°F and 50% humidity, the heat index hits 107°F. A properly functioning system maintains 75°F AND 45–50% relative humidity — that's what comfort actually means in North Texas.
         </p>
 
@@ -28,28 +28,28 @@ export default function DFWHVACHumidex2026() {
             { icon: "🥵", label: "95°F + 50% RH Feels Like", val: "107°F" },
             { icon: "😌", label: "75°F + 47% RH Feels Like", val: "75°F" },
           ].map(card => (
-            <div key={card.label} style={{ background: "#111d35", borderRadius: 10, padding: "1rem", textAlign: "center" }}>
+            <div key={card.label} style={{ background: "#111d35″, borderRadius: 10, padding: "1rem", textAlign: "center" }}>
               <div style={{ fontSize: "1.5rem", marginBottom: "0.25rem" }}>{card.icon}</div>
-              <div style={{ color: "#94a3b8", fontSize: "0.8rem", marginBottom: "0.25rem" }}>{card.label}</div>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: "0.95rem" }}>{card.val}</div>
+              <div style={{ color: "#94a3b8″, fontSize: "0.8rem", marginBottom: "0.25rem" }}>{card.label}</div>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: "0.95rem" }}>{card.val}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642", marginBottom: "1rem" }}>🔍 What's Your DFW Comfort Situation?</h2>
+        <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642″, marginBottom: "1rem" }}>🔍 What's Your DFW Comfort Situation?</h2>
         <div style={{ display: "grid", gap: "0.5rem", marginBottom: "1.25rem" }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-              style={{ background: selected === s.id ? "#1e3a5f" : "#111d35", border: `2px solid ${selected === s.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "0.85rem 1rem", color: "#fff", textAlign: "left", cursor: "pointer", fontSize: "0.95rem", transition: "all 0.15s" }}>
+              style={{ background: selected === s.id ? "#1e3a5f" : "#111d35″, border: `2px solid ${selected === s.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 8, padding: "0.85rem 1rem", color: "#fff", textAlign: "left", cursor: "pointer", fontSize: "0.95rem", transition: "all 0.15s" }}>
               {s.label}
             </button>
           ))}
         </div>
 
         {match && (
-          <div style={{ background: "#1e3a5f", border: "2px solid #F5E642", borderRadius: 10, padding: "1.25rem" }}>
-            <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: "0.5rem" }}>🌬️ Guide</div>
-            <p style={{ color: "#e2e8f0", lineHeight: 1.65, margin: 0 }}>{match.result}</p>
+          <div style={{ background: "#1e3a5f", border: "2px solid #F5E642″, borderRadius: 10, padding: "1.25rem" }}>
+            <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: "0.5rem" }}>🌬️ Guide</div>
+            <p style={{ color: "#e2e8f0″, lineHeight: 1.65, margin: 0 }}>{match.result}</p>
           </div>
         )}
       </div>

@@ -82,7 +82,7 @@ export default function DFWHVACNoiseTypes() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {noiseTypes.map(n => (
               <button key={n.id} onClick={() => setNoise(n.id)}
-                style={{ background: noise === n.id ? '#F5E642' : '#1A3060', color: noise === n.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: noise === n.id ? 700 : 400, textAlign: 'left' }}>
+                style={{ background: noise === n.id ? '#F5E642′ : '#1A3060', color: noise === n.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: noise === n.id ? 700 : 400, textAlign: 'left' }}>
                 {n.emoji} {n.label}
               </button>
             ))}
@@ -94,7 +94,7 @@ export default function DFWHVACNoiseTypes() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {whenOccurs.map(w => (
               <button key={w.id} onClick={() => setWhen(w.id)}
-                style={{ background: when === w.id ? '#F5E642' : '#1A3060', color: when === w.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: when === w.id ? 700 : 400 }}>
+                style={{ background: when === w.id ? '#F5E642′ : '#1A3060', color: when === w.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: when === w.id ? 700 : 400 }}>
                 {w.label}
               </button>
             ))}
@@ -119,9 +119,9 @@ export default function DFWHVACNoiseTypes() {
                   <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{result.cost}</div>
                 </div>
               </div>
-              <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642' }}>
+              <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642′ }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>🌡️ DFW Context: </span>
-                <span style={{ color: '#CBD5E1' }}>{result.dfwContext}</span>
+                <span style={{ color: '#CBD5E1′ }}>{result.dfwContext}</span>
               </div>
             </div>
           </div>

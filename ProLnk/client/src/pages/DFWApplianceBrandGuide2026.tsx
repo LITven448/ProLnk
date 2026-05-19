@@ -21,9 +21,9 @@ const recommendations: Record<ApplianceType, Record<Budget, { brand: string; why
     premium: { brand: 'Electrolux ELFW7637A', why: 'Largest capacity front-loader available in DFW; handles oversized ranch loads.', dfwNote: 'Perfect wash in DFW hard water with SmartBoost pre-mix technology.', repairNote: 'Electrolux-certified techs in Southlake, Frisco, and McKinney.' },
   },
   range: {
-    value: { brand: 'GE 30" Freestanding', why: 'Most in-stock range at DFW supply houses; fastest service turnaround.', dfwNote: 'DFW builders default to GE — largest installed base = most parts available.', repairNote: 'GE authorized in every DFW suburb; parts same-day at Encompass.' },
+    value: { brand: 'GE 30″ Freestanding', why: 'Most in-stock range at DFW supply houses; fastest service turnaround.', dfwNote: 'DFW builders default to GE — largest installed base = most parts available.', repairNote: 'GE authorized in every DFW suburb; parts same-day at Encompass.' },
     mid: { brand: 'Samsung NX60 Flex Duo', why: 'Dual-oven ideal for DFW holiday cooking; FlexCook zone for Texas brisket pans.', dfwNote: 'Strong in DFW market; Samsung Experience Store in Galleria for demos.', repairNote: 'Samsung service, 2–4 day DFW response.' },
-    premium: { brand: 'Wolf 30" Dual Fuel', why: 'Standard in DFW luxury builds; all DFW Wolf dealers offer showroom demonstrations.', dfwNote: 'Natural gas burners designed for Texas gas pressure ranges.', repairNote: 'Wolf sub-zero service covers all DFW; 2-yr full warranty.' },
+    premium: { brand: 'Wolf 30″ Dual Fuel', why: 'Standard in DFW luxury builds; all DFW Wolf dealers offer showroom demonstrations.', dfwNote: 'Natural gas burners designed for Texas gas pressure ranges.', repairNote: 'Wolf sub-zero service covers all DFW; 2-yr full warranty.' },
   },
 };
 
@@ -46,7 +46,7 @@ export default function DFWApplianceBrandGuide2026() {
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>⚠️ DFW-SPECIFIC FACTORS</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {['💧 Hard water destroys dishwashers fast', '🌡️ 110°F garage temps damage plastic parts', '⚡ Spring storms = surge damage', '🏗️ Caliche soil in laundry loads'].map(f => (
-              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: 10, fontSize: 13, color: '#C8D0E0' }}>{f}</div>
+              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: 10, fontSize: 13, color: '#C8D0E0′ }}>{f}</div>
             ))}
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function DFWApplianceBrandGuide2026() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>1️⃣ SELECT APPLIANCE TYPE</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {(['refrigerator', 'dishwasher', 'washer', 'range'] as ApplianceType[]).map(a => (
-              <button key={a} onClick={() => setAppliance(a)} style={{ background: appliance === a ? '#F5E642' : '#111E35', color: appliance === a ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (appliance === a ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13, textTransform: 'capitalize' }}>{a === 'refrigerator' ? '🧊' : a === 'dishwasher' ? '🫧' : a === 'washer' ? '🌀' : '🔥'} {a}</button>
+              <button key={a} onClick={() => setAppliance(a)} style={{ background: appliance === a ? '#F5E642′ : '#111E35', color: appliance === a ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (appliance === a ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontWeight: 700, fontSize: 13, textTransform: 'capitalize' }}>{a === 'refrigerator' ? '🧊' : a === 'dishwasher' ? '🫧' : a === 'washer' ? '🌀' : '🔥'} {a}</button>
             ))}
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function DFWApplianceBrandGuide2026() {
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>2️⃣ SELECT BUDGET</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
             {[['value', '💰 Value', 'Under $1,200'], ['mid', '💎 Mid', '$1,200–$2,500'], ['premium', '👑 Premium', '$2,500+']] .map(([k, label, range]) => (
-              <button key={k} onClick={() => setBudget(k as Budget)} style={{ background: budget === k ? '#F5E642' : '#111E35', color: budget === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (budget === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}<br /><span style={{ fontWeight: 400, fontSize: 11 }}>{range}</span></button>
+              <button key={k} onClick={() => setBudget(k as Budget)} style={{ background: budget === k ? '#F5E642′ : '#111E35', color: budget === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (budget === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '10px 12px', cursor: ’pointer', fontWeight: 700, fontSize: 12, textAlign: 'center' }}>{label}<br /><span style={{ fontWeight: 400, fontSize: 11 }}>{range}</span></button>
             ))}
           </div>
         </div>

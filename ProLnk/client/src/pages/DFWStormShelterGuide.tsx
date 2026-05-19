@@ -90,7 +90,7 @@ export default function DFWStormShelterGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>HOME TYPE</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {HOME_TYPES.map(t => (
-                <button key={t} onClick={() => { setHomeType(t); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: homeType === t ? '#F5E642' : '#1e3a5f', backgroundColor: homeType === t ? '#F5E642' : 'transparent', color: homeType === t ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer' }}>{t}</button>
+                <button key={t} onClick={() => { setHomeType(t); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: homeType === t ? '#F5E642′ : '#1e3a5f', backgroundColor: homeType === t ? '#F5E642' : ’transparent', color: homeType === t ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.82rem', cursor: ’pointer' }}>{t}</button>
               ))}
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function DFWStormShelterGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>FAMILY SIZE</div>
             <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
               {[1, 2, 3, 4, 5, 6, 8].map(n => (
-                <button key={n} onClick={() => { setFamilySize(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: familySize === n ? '#F5E642' : '#1e3a5f', backgroundColor: familySize === n ? '#F5E642' : 'transparent', color: familySize === n ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer' }}>{n}</button>
+                <button key={n} onClick={() => { setFamilySize(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: familySize === n ? '#F5E642′ : '#1e3a5f', backgroundColor: familySize === n ? '#F5E642' : ’transparent', color: familySize === n ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer' }}>{n}</button>
               ))}
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function DFWStormShelterGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>BUDGET</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {BUDGET_RANGES.map(b => (
-                <button key={b} onClick={() => { setBudget(b); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: budget === b ? '#F5E642' : '#1e3a5f', backgroundColor: budget === b ? '#F5E642' : 'transparent', color: budget === b ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer' }}>{b}</button>
+                <button key={b} onClick={() => { setBudget(b); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: budget === b ? '#F5E642′ : '#1e3a5f', backgroundColor: budget === b ? '#F5E642' : ’transparent', color: budget === b ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: ’pointer' }}>{b}</button>
               ))}
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function DFWStormShelterGuide() {
               {[['💰 Installed Cost', result.cost], ['📐 Minimum Size', `${result.sqft} sq ft`], ['🏛️ Grant Eligibility', result.grantAmount]].map(([label, val]) => (
                 <div key={label as string} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem', fontSize: '0.88rem' }}>
                   <span style={{ color: '#94a3b8', minWidth: '160px' }}>{label}</span>
-                  <span style={{ color: '#e2e8f0' }}>{val}</span>
+                  <span style={{ color: '#e2e8f0′ }}>{val}</span>
                 </div>
               ))}
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginTop: '0.75rem', lineHeight: 1.5 }}>📋 Notes: {result.notes}</div>

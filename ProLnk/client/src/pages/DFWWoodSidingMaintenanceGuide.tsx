@@ -49,13 +49,13 @@ export default function DFWWoodSidingMaintenanceGuide() {
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642', letterSpacing: '0.08em', textTransform: 'uppercase' }}>🪵 DFW Siding Guide</div>
-        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25' }}>Wood Siding Maintenance Guide for DFW</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6' }}>
-          DFW's UV intensity and humidity swings are especially harsh on wood siding. Paint fails 2–3x faster on south and west faces than in northern markets. A structured maintenance schedule — painting every 3–5 years, annual inspection, and timely caulk repair — can make wood siding last 30+ years in DFW's climate.
+        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25′ }}>Wood Siding Maintenance Guide for DFW</h1>
+        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6′ }}>
+          DFW's UV intensity and humidity swings are especially harsh on wood siding. Paint fails 2–3x faster on south and west faces than in northern markets. A structured maintenance schedule — painting every 3–5 years, annual inspection, and timely caulk repair — can make wood siding last 30+ years in DFW’s climate.
         </p>
 
         <div style={{ backgroundColor: '#111E35', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642' }}>⚙️ Get Your DFW Maintenance Schedule</h2>
+          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642′ }}>⚙️ Get Your DFW Maintenance Schedule</h2>
           <div style={{ display: 'grid', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '13px', color: '#94A3B8', marginBottom: '6px' }}>Wood Siding Type</label>
@@ -75,17 +75,17 @@ export default function DFWWoodSidingMaintenanceGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642′ }}>
             <div style={{ fontSize: '13px', color: '#F5E642', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>✅ Maintenance Plan</div>
             <div style={{ display: 'flex', gap: '16px', marginBottom: '12px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '13px', color: '#F5E642' }}>🖌️ {result.paintSchedule}</span>
+              <span style={{ fontSize: '13px', color: '#F5E642′ }}>🖌️ {result.paintSchedule}</span>
             </div>
-            <div style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '12px' }}><strong style={{ color: '#E8EDF5' }}>Primer: </strong>{result.primer}</div>
+            <div style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '12px' }}><strong style={{ color: '#E8EDF5′ }}>Primer: </strong>{result.primer}</div>
             <p style={{ color: '#94A3B8', lineHeight: '1.6', fontSize: '14px', marginBottom: '16px' }}>{result.recommendation}</p>
             <div style={{ borderTop: '1px solid #1E3A5F', paddingTop: '14px' }}>
               <div style={{ fontSize: '13px', color: '#F5E642', marginBottom: '8px' }}>🔍 Annual Inspection Checklist</div>
               {result.inspection.map((item, i) => (
-                <div key={i} style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '6px', paddingLeft: '12px', borderLeft: '2px solid #F5E642' }}>{item}</div>
+                <div key={i} style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '6px', paddingLeft: '12px', borderLeft: '2px solid #F5E642′ }}>{item}</div>
               ))}
             </div>
           </div>

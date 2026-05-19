@@ -42,7 +42,7 @@ export default function DFWEarthquakeGuide() {
             {[['🛢️ Injection Wells', 'Wastewater injection from oil & gas operations causes induced seismicity — Azle, Irving, and Grand Prairie are epicenter zones'], ['📊 Magnitude Range', 'Most DFW earthquakes are M2.0–M3.5 — felt but rarely damaging. M4.0+ can cause minor damage to older structures'], ['🗺️ High Activity Zones', 'Azle/Reno: most active cluster. Irving/Dallas: 2014–2015 swarm. Grand Prairie: ongoing monitoring by USGS'], ['🏚️ Structural Risk', 'Unreinforced masonry and pre-1980 construction carry the highest risk in DFW\’s typical seismic range']].map(([t, d]) => (
               <div key={t as string} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 6 }}>{t}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{d}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{d}</div>
               </div>
             ))}
           </div>
@@ -61,16 +61,16 @@ export default function DFWEarthquakeGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Vulnerability Assessment</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home Age</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home Age</label>
             <select value={homeAge} onChange={e => setHomeAge(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select home age...</option>
-              <option value="pre-1980">Pre-1980 (older construction)</option>
-              <option value="1980-2000">1980–2000</option>
-              <option value="post-2000">Post-2000 (modern construction)</option>
+              <option value="pre-1980″>Pre-1980 (older construction)</option>
+              <option value="1980-2000″>1980–2000</option>
+              <option value="post-2000″>Post-2000 (modern construction)</option>
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Primary Construction Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Primary Construction Type</label>
             <select value={construction} onChange={e => setConstruction(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select construction type...</option>
               <option value="wood-frame">Wood Frame (most DFW homes)</option>

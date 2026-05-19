@@ -102,7 +102,7 @@ export default function DFWHomeownerTop10Mistakes() {
         <div style={{ fontSize: 13, color: '#F5E642', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>ProLnk DFW Series</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>💸 Top 10 DFW Homeowner Mistakes</h1>
         <p style={{ color: '#8899AA', fontSize: 15, marginBottom: 32, lineHeight: 1.6 }}>
-          The most expensive mistakes DFW homeowners make — ranked by total damage. These aren't hypotheticals. They're what shows up in Texas home inspection reports and insurance claims every year.
+          The most expensive mistakes DFW homeowners make — ranked by total damage. These aren't hypotheticals. They’re what shows up in Texas home inspection reports and insurance claims every year.
         </p>
 
         <div style={{ background: '#0D1F38', border: '1px solid #1E3A5F', borderRadius: 12, padding: 20, marginBottom: 28 }}>
@@ -125,9 +125,9 @@ export default function DFWHomeownerTop10Mistakes() {
                 key={m.rank}
                 onClick={() => setExpanded(isOpen ? null : m.rank)}
                 style={{
-                  background: isRelevant ? '#0D1F38' : '#07111F',
+                  background: isRelevant ? '#0D1F38′ : '#07111F',
                   border: `1px solid ${isRelevant ? '#1E3A5F' : '#0D1F38'}`,
-                  borderLeft: isRelevant ? '4px solid #F5E642' : '4px solid #1E3A5F',
+                  borderLeft: isRelevant ? '4px solid #F5E642′ : '4px solid #1E3A5F',
                   borderRadius: 10,
                   padding: '14px 16px',
                   cursor: 'pointer',
@@ -141,7 +141,7 @@ export default function DFWHomeownerTop10Mistakes() {
                 {isOpen && (
                   <div style={{ marginTop: 12 }}>
                     <p style={{ color: '#AABBCC', fontSize: 14, lineHeight: 1.7, marginBottom: 10 }}>{m.detail}</p>
-                    <div style={{ background: '#F5E64215', borderRadius: 6, padding: '10px 14px', fontSize: 13, color: '#F5E642' }}>✅ Fix: {m.fix}</div>
+                    <div style={{ background: '#F5E64215', borderRadius: 6, padding: '10px 14px', fontSize: 13, color: '#F5E642′ }}>✅ Fix: {m.fix}</div>
                   </div>
                 )}
               </div>

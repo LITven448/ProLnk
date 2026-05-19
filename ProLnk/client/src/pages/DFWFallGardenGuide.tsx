@@ -46,12 +46,12 @@ export default function DFWFallGardenGuide() {
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ fontSize: '48px', marginBottom: '8px' }}>🍂</div>
           <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', margin: '0 0 8px' }}>DFW Fall Garden Guide</h1>
-          <p style={{ color: '#94a3b8', margin: 0 }}>September–December is DFW's best gardening season — here's how to maximize it</p>
+          <p style={{ color: '#94a3b8', margin: 0 }}>September–December is DFW's best gardening season — here’s how to maximize it</p>
         </div>
 
         <div style={{ background: '#1e3a2a', borderRadius: '12px', padding: '16px', marginBottom: '24px', border: '1px solid #2d5a3d' }}>
           <div style={{ fontSize: '1rem', fontWeight: 700, color: '#4ade80', marginBottom: '6px' }}>🏆 DFW's Best Gardening Season</div>
-          <div style={{ fontSize: '0.9rem', color: '#94a3b8' }}>DFW summers are brutal — but fall is when gardens truly thrive. Moderate temps, fewer pests, and excellent soil conditions make September–December perfect for cool-season crops and winter flowers.</div>
+          <div style={{ fontSize: '0.9rem', color: '#94a3b8′ }}>DFW summers are brutal — but fall is when gardens truly thrive. Moderate temps, fewer pests, and excellent soil conditions make September–December perfect for cool-season crops and winter flowers.</div>
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '20px', marginBottom: '24px', border: '1px solid #2d3f5e' }}>
@@ -59,20 +59,20 @@ export default function DFWFallGardenGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642' }}>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Vegetable</th>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Start Seeds</th>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Transplant</th>
-                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642' }}>Harvest</th>
+                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Vegetable</th>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Start Seeds</th>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Transplant</th>
+                  <th style={{ padding: '8px', textAlign: 'left', color: '#F5E642′ }}>Harvest</th>
                 </tr>
               </thead>
               <tbody>
                 {coolWeatherVegs.map((v, i) => (
-                  <tr key={v.name} style={{ borderBottom: '1px solid #2d3f5e', background: i % 2 === 0 ? 'transparent' : '#0d1f38' }}>
+                  <tr key={v.name} style={{ borderBottom: '1px solid #2d3f5e', background: i % 2 === 0 ? 'transparent' : '#0d1f38′ }}>
                     <td style={{ padding: '8px', fontWeight: 600 }}>{v.name}</td>
-                    <td style={{ padding: '8px', color: '#94a3b8' }}>{v.startSeeds}</td>
-                    <td style={{ padding: '8px', color: '#94a3b8' }}>{v.transplant}</td>
-                    <td style={{ padding: '8px', color: '#4ade80' }}>{v.harvest}</td>
+                    <td style={{ padding: '8px', color: '#94a3b8′ }}>{v.startSeeds}</td>
+                    <td style={{ padding: '8px', color: '#94a3b8′ }}>{v.transplant}</td>
+                    <td style={{ padding: '8px', color: '#4ade80′ }}>{v.harvest}</td>
                   </tr>
                 ))}
               </tbody>
@@ -87,7 +87,7 @@ export default function DFWFallGardenGuide() {
               <div key={f.name} style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', border: '1px solid #2d3f5e' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>{f.name}</div>
                 <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '4px' }}>Plant: {f.plant}</div>
-                <div style={{ fontSize: '0.8rem', color: '#4ade80' }}>Bloom: {f.bloom}</div>
+                <div style={{ fontSize: '0.8rem', color: '#4ade80′ }}>Bloom: {f.bloom}</div>
                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px' }}>{f.notes}</div>
               </div>
             ))}
@@ -112,14 +112,14 @@ export default function DFWFallGardenGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowPlan(true)} disabled={!gardenSize || !goals} style={{ background: gardenSize && goals ? '#F5E642' : '#2d3f5e', color: gardenSize && goals ? '#0A1628' : '#64748b', border: 'none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: gardenSize && goals ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowPlan(true)} disabled={!gardenSize || !goals} style={{ background: gardenSize && goals ? '#F5E642′ : '#2d3f5e', color: gardenSize && goals ? '#0A1628' : '#64748b', border: ’none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: gardenSize && goals ? 'pointer' : 'not-allowed' }}>
             Generate My Fall Plan
           </button>
           {showPlan && goals && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '10px' }}>{calendarLabel}</div>
               {getCalendar().map((item, i) => (
-                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45' }}>✅ {item}</div>
+                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45′ }}>✅ {item}</div>
               ))}
             </div>
           )}

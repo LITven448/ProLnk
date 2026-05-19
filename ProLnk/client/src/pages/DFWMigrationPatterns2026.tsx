@@ -24,7 +24,7 @@ export default function DFWMigrationPatterns2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK MARKET DATA</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🗺 DFW Migration Patterns 2026</h1>
-        <p style={{ color: '#8899BB', marginBottom: 32 }}>Where DFW's newest residents are coming from — and where they're landing</p>
+        <p style={{ color: '#8899BB', marginBottom: 32 }}>Where DFW's newest residents are coming from — and where they’re landing</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 32 }}>
           {[
@@ -32,7 +32,7 @@ export default function DFWMigrationPatterns2026() {
             { label: 'From Out of State', value: '58%', icon: '✈️' },
             { label: 'Internal TX Migration', value: '42%', icon: '🤠' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
+            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', margin: '8px 0 4px' }}>{s.value}</div>
               <div style={{ color: '#8899BB', fontSize: 13 }}>{s.label}</div>
@@ -40,10 +40,10 @@ export default function DFWMigrationPatterns2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060' }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🏙 Internal Texas Migration to DFW</h2>
           {internalMigration.map(m => (
-            <div key={m.from} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1E3060' }}>
+            <div key={m.from} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1E3060′ }}>
               <span style={{ fontSize: 18 }}>{m.emoji}</span>
               <span style={{ color: '#8899BB', flex: 1, marginLeft: 12 }}>{m.from} → {m.to}</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{m.pct}% of arrivals</span>
@@ -51,14 +51,14 @@ export default function DFWMigrationPatterns2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Origin State → DFW Neighborhood Match</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {origins.map(o => (
               <button key={o.state} onClick={() => setSelectedState(o.state)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                  background: selectedState === o.state ? '#F5E642' : '#1E3060',
-                  color: selectedState === o.state ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 13 }}>
+                  background: selectedState === o.state ? '#F5E642′ : '#1E3060',
+                  color: selectedState === o.state ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 13 }}>
                 {o.emoji} {o.state} ({o.pct}%)
               </button>
             ))}

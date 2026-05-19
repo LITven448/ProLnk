@@ -33,11 +33,11 @@ export default function DFWCopperPipeGuide() {
     const moderate = waterType === 'moderate';
 
     if (old && aggressive) {
-      setResult({ condition: '🔴 High Risk', pinholeRisk: 'Very High — inspect walls/ceilings for staining immediately', maintenance: 'Install whole-home water softener + pH neutralizer; budget $10K–$18K for full copper repipe to PEX', color: '#ef4444' });
+      setResult({ condition: '🔴 High Risk', pinholeRisk: 'Very High — inspect walls/ceilings for staining immediately', maintenance: 'Install whole-home water softener + pH neutralizer; budget $10K–$18K for full copper repipe to PEX', color: '#ef4444′ });
     } else if (old && moderate) {
-      setResult({ condition: '🟠 Elevated', pinholeRisk: 'Moderate — schedule borescope inspection of horizontal runs', maintenance: 'Flush water softener annually; inspect solder joints every 2 years; budget for eventual repipe', color: '#f97316' });
+      setResult({ condition: '🟠 Elevated', pinholeRisk: 'Moderate — schedule borescope inspection of horizontal runs', maintenance: 'Flush water softener annually; inspect solder joints every 2 years; budget for eventual repipe', color: '#f97316′ });
     } else if (mid && aggressive) {
-      setResult({ condition: '🟡 Watch Closely', pinholeRisk: 'Moderate — aggressive water accelerates pitting even in newer copper', maintenance: 'Test water pH quarterly (target 7.0–8.5); install inline pH neutralizer if below 7.0', color: '#eab308' });
+      setResult({ condition: '🟡 Watch Closely', pinholeRisk: 'Moderate — aggressive water accelerates pitting even in newer copper', maintenance: 'Test water pH quarterly (target 7.0–8.5); install inline pH neutralizer if below 7.0', color: '#eab308′ });
     } else if (mid) {
       setResult({ condition: '🟢 Good', pinholeRisk: 'Low — copper in good range with normal DFW water', maintenance: 'Annual water test; flush aerators semi-annually; no immediate action needed', color: '#22c55e' });
     } else {
@@ -57,8 +57,8 @@ export default function DFWCopperPipeGuide() {
         <h2 style={styles.sectionTitle}>📍 Copper in DFW — Excellent But Not Invincible</h2>
         <p style={styles.text}>Copper remains the gold standard for plumbing durability and water quality — when DFW water conditions cooperate. The critical variable is water pH. DFW municipal water varies significantly by city and even by season, and aggressive (low pH) water causes the infamous pinhole leak phenomenon.</p>
         <div style={styles.warning}>
-          <strong style={{ color: '#fca5a5' }}>⚠️ DFW Pinhole Alert:</strong>
-          <span style={{ color: '#fca5a5' }}> Several DFW cities — particularly Plano, Frisco, and McKinney — have documented pinhole leak clusters in copper pipes due to water chemistry. Test your water pH before assuming copper is safe.</span>
+          <strong style={{ color: '#fca5a5′ }}>⚠️ DFW Pinhole Alert:</strong>
+          <span style={{ color: '#fca5a5′ }}> Several DFW cities — particularly Plano, Frisco, and McKinney — have documented pinhole leak clusters in copper pipes due to water chemistry. Test your water pH before assuming copper is safe.</span>
         </div>
         <div style={styles.grid}>
           <div style={styles.card}><div style={styles.cardTitle}>💰 Cost Premium</div><div style={styles.text}>Copper costs 3–5× more than PEX but adds resale value and lasts 50–70+ years in good conditions</div></div>
@@ -81,9 +81,9 @@ export default function DFWCopperPipeGuide() {
         <label style={styles.label}>Copper Pipe Age</label>
         <select style={styles.select} value={copperAge} onChange={e => setCopperAge(e.target.value)}>
           <option value="">Select age...</option>
-          <option value="under20">Under 20 years</option>
-          <option value="20_40">20–40 years</option>
-          <option value="over40">Over 40 years</option>
+          <option value="under20″>Under 20 years</option>
+          <option value="20_40″>20–40 years</option>
+          <option value="over40″>Over 40 years</option>
         </select>
         <label style={styles.label}>DFW Water Type (test your water or check city reports)</label>
         <select style={styles.select} value={waterType} onChange={e => setWaterType(e.target.value)}>
@@ -98,8 +98,8 @@ export default function DFWCopperPipeGuide() {
           <div style={styles.result}>
             <div style={styles.resultTitle}>Copper Assessment</div>
             <span style={{ ...styles.badge, backgroundColor: result.color + '22', color: result.color, border: `1px solid ${result.color}` }}>{result.condition}</span>
-            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642' }}>Pinhole Risk:</strong> {result.pinholeRisk}</p>
-            <p style={{ color: '#cbd5e1', marginTop: '8px' }}><strong style={{ color: '#F5E642' }}>Maintenance Plan:</strong> {result.maintenance}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642′ }}>Pinhole Risk:</strong> {result.pinholeRisk}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '8px' }}><strong style={{ color: '#F5E642′ }}>Maintenance Plan:</strong> {result.maintenance}</p>
           </div>
         )}
       </div>

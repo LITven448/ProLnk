@@ -87,7 +87,7 @@ export default function SepticInspectionGuide() {
         </div>
 
         {/* Red flags */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, borderLeft: '4px solid #ef4444' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, borderLeft: '4px solid #ef4444′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f8fafc', margin: '0 0 20px' }}>🚨 Red Flags That Mean Immediate Replacement</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[
@@ -119,7 +119,7 @@ export default function SepticInspectionGuide() {
             <div key={c.service} style={{ background: '#1e293b', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>{c.service}</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#60a5fa', marginBottom: 6 }}>{c.cost}</div>
-              <div style={{ fontSize: 12, color: '#475569' }}>{c.note}</div>
+              <div style={{ fontSize: 12, color: '#475569′ }}>{c.note}</div>
             </div>
           ))}
         </div>
@@ -129,7 +129,7 @@ export default function SepticInspectionGuide() {
           <div style={{ fontSize: 20, marginBottom: 10 }}>⚠️</div>
           <p style={{ color: '#fbbf24', fontWeight: 700, fontSize: 16, margin: '0 0 8px' }}>Buying a Home on Septic</p>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
-            Get the inspection <strong style={{ color: '#fbbf24' }}>BEFORE your option period expires</strong>. A failed septic system is a complete 
+            Get the inspection <strong style={{ color: '#fbbf24′ }}>BEFORE your option period expires</strong>. A failed septic system is a complete 
             deal-killer — the cost to replace ($8K–25K) is substantial, and sellers are rarely willing to absorb it fully. 
             Never waive the septic inspection on an option-period purchase. It is the single most expensive surprise in rural DFW real estate.
           </p>
@@ -153,7 +153,7 @@ export default function SepticInspectionGuide() {
           {/* Progress */}
           <div style={{ marginBottom: 24 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ fontSize: 13, color: '#94a3b8' }}>{completedCount} of {DUE_DILIGENCE_STEPS.length} steps completed</span>
+              <span style={{ fontSize: 13, color: '#94a3b8′ }}>{completedCount} of {DUE_DILIGENCE_STEPS.length} steps completed</span>
               <span style={{ fontSize: 13, fontWeight: 700, color: pct === 100 ? '#22c55e' : '#60a5fa' }}>{pct}%</span>
             </div>
             <div style={{ height: 6, background: '#0f172a', borderRadius: 999 }}>
@@ -182,7 +182,7 @@ export default function SepticInspectionGuide() {
                   {checked[step.id] && <span style={{ color: '#fff', fontSize: 13 }}>✓</span>}
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: checked[step.id] ? '#4ade80' : '#f8fafc', marginBottom: 4 }}>{step.label}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: checked[step.id] ? '#4ade80′ : '#f8fafc', marginBottom: 4 }}>{step.label}</div>
                   <div style={{ fontSize: 12, color: '#64748b', lineHeight: 1.55 }}>{step.detail}</div>
                 </div>
               </div>

@@ -16,37 +16,37 @@ export default function DFWCaulkingTechniqueGuide2026() {
   const guide = GUIDES[surface];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
+        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🔫 DFW Caulking Technique Guide 2026</h1>
-        <p style={{ color: "#94a3b8", marginBottom: 32 }}>Proper caulking for the DFW climate. Choose your surface for the right caulk type and technique.</p>
+        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>Proper caulking for the DFW climate. Choose your surface for the right caulk type and technique.</p>
 
         <div style={{ marginBottom: 32 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 12, fontSize: 14 }}>SELECT SURFACE TYPE</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 12, fontSize: 14 }}>SELECT SURFACE TYPE</div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {(Object.keys(GUIDES) as Surface[]).map((s) => (
-              <button key={s} onClick={() => setSurface(s)} style={{ padding: "9px 14px", borderRadius: 8, border: "2px solid", borderColor: surface === s ? "#F5E642" : "#1e3a5f", background: surface === s ? "#F5E642" : "transparent", color: surface === s ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>{s}</button>
+              <button key={s} onClick={() => setSurface(s)} style={{ padding: "9px 14px", borderRadius: 8, border: "2px solid", borderColor: surface === s ? "#F5E642″ : "#1e3a5f", background: surface === s ? "#F5E642" : "transparent", color: surface === s ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 12 }}>{s}</button>
             ))}
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
-            <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 6 }}>RECOMMENDED CAULK</div>
-            <div style={{ color: "#e2e8f0", fontSize: 15 }}>🧴 {guide.caulkType}</div>
+          <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
+            <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 6 }}>RECOMMENDED CAULK</div>
+            <div style={{ color: "#e2e8f0″, fontSize: 15 }}>🧴 {guide.caulkType}</div>
           </div>
-          <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
-            <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 6 }}>TECHNIQUE</div>
-            <div style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.7 }}>{guide.technique}</div>
+          <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
+            <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 6 }}>TECHNIQUE</div>
+            <div style={{ color: "#e2e8f0″, fontSize: 14, lineHeight: 1.7 }}>{guide.technique}</div>
           </div>
-          <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
-            <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 6 }}>CURE TIME</div>
-            <div style={{ color: "#e2e8f0", fontSize: 14 }}>⏱️ {guide.cure}</div>
+          <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, border: "1px solid #1e3a5f" }}>
+            <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 6 }}>CURE TIME</div>
+            <div style={{ color: "#e2e8f0″, fontSize: 14 }}>⏱️ {guide.cure}</div>
           </div>
-          <div style={{ background: "#162d4a", borderRadius: 12, padding: 20, border: "1px solid #F5E642" }}>
-            <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 6 }}>DFW PRO TIP</div>
-            <div style={{ color: "#fef9c3", fontSize: 14, lineHeight: 1.7 }}>💡 {guide.tip}</div>
+          <div style={{ background: "#162d4a", borderRadius: 12, padding: 20, border: "1px solid #F5E642″ }}>
+            <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 6 }}>DFW PRO TIP</div>
+            <div style={{ color: "#fef9c3″, fontSize: 14, lineHeight: 1.7 }}>💡 {guide.tip}</div>
           </div>
         </div>
 

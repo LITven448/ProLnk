@@ -47,7 +47,7 @@ export default function DFWRoofingInsuranceGuide() {
         <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>Coverage Types — What You Need in DFW</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
           {coverageTypes.map(c => (
-            <div key={c.label} style={{ background: '#132035', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642' }}>
+            <div key={c.label} style={{ background: '#132035', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{c.label}</div>
               <div style={{ color: '#94A3B8', fontSize: 14 }}>{c.desc}</div>
             </div>
@@ -69,27 +69,27 @@ export default function DFWRoofingInsuranceGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Home Dwelling Value ($)</label>
-              <input value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 400000" style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 400000″ style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Deductible Type</label>
               <select value={deductType} onChange={e => setDeductType(e.target.value)} style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', color: '#E8EDF5', fontSize: 15 }}>
-                <option value="flat1000">Flat $1,000</option>
-                <option value="flat2500">Flat $2,500</option>
+                <option value="flat1000″>Flat $1,000</option>
+                <option value="flat2500″>Flat $2,500</option>
                 <option value="1%">1% of Dwelling</option>
                 <option value="2%">2% of Dwelling</option>
               </select>
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Estimated Damage ($)</label>
-              <input value={damageEst} onChange={e => setDamageEst(e.target.value)} placeholder="e.g. 8000" style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={damageEst} onChange={e => setDamageEst(e.target.value)} placeholder="e.g. 8000″ style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, padding: '12px 0', borderRadius: 8, border: 'none', cursor: 'pointer' }}>Analyze My Situation</button>
           </div>
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 18 }}>
-              <div style={{ fontSize: 18, fontWeight: 800, color: result.claim ? '#10B981' : '#F59E0B', marginBottom: 10 }}>{result.claim ? '✅ File the Claim' : '⚠️ Pay Out of Pocket'}</div>
-              <div style={{ fontSize: 14, color: '#94A3B8' }}>Estimated Deductible: <span style={{ color: '#E8EDF5', fontWeight: 600 }}>${result.deductible.toLocaleString()}</span></div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: result.claim ? '#10B981′ : '#F59E0B', marginBottom: 10 }}>{result.claim ? '✅ File the Claim' : '⚠️ Pay Out of Pocket'}</div>
+              <div style={{ fontSize: 14, color: '#94A3B8′ }}>Estimated Deductible: <span style={{ color: '#E8EDF5', fontWeight: 600 }}>${result.deductible.toLocaleString()}</span></div>
               <div style={{ fontSize: 14, color: '#94A3B8', marginTop: 4 }}>Estimated Net Payout: <span style={{ color: '#E8EDF5', fontWeight: 600 }}>${result.netPayout.toLocaleString()}</span></div>
               <div style={{ fontSize: 14, color: '#94A3B8', marginTop: 4 }}>Premium Impact: <span style={{ color: '#E8EDF5', fontWeight: 600 }}>{result.premiumImpact}</span></div>
             </div>

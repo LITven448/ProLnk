@@ -79,7 +79,7 @@ export default function DFWGreenBuildingCertificationsGuide() {
         </p>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🌱 Calculate Your Green ROI</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🌱 Calculate Your Green ROI</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>Home Value</label>
@@ -104,7 +104,7 @@ export default function DFWGreenBuildingCertificationsGuide() {
                 <span key={c.name} style={{ background: '#F5E642', color: '#0A1628', borderRadius: 20, padding: '4px 14px', fontSize: 13, fontWeight: 700 }}>
                   {c.icon} {c.name}
                 </span>
-              )) : <span style={{ color: '#ef4444' }}>Increase budget premium to unlock certifications</span>}
+              )) : <span style={{ color: '#ef4444′ }}>Increase budget premium to unlock certifications</span>}
             </div>
           </div>
         </div>

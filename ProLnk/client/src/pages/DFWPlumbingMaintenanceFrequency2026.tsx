@@ -55,7 +55,7 @@ export default function DFWPlumbingMaintenanceFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeAges.map((a) => (
               <button key={a} onClick={() => setAge(a)}
-                style={{ padding: '12px 16px', borderRadius: 8, border: age === a ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: age === a ? '#F5E642' : '#0d1f36', color: age === a ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '12px 16px', borderRadius: 8, border: age === a ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: age === a ? '#F5E642' : '#0d1f36', color: age === a ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
                 {a}
               </button>
             ))}
@@ -80,9 +80,9 @@ export default function DFWPlumbingMaintenanceFrequency2026() {
         <div style={{ backgroundColor: '#1e2d47', borderRadius: 12, padding: 20 }}>
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 10 }}>💧 DFW Hard Water Alert</h3>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            DFW water hardness ranges from <strong style={{ color: '#e2e8f0' }}>200-400 mg/L</strong> (very hard).
+            DFW water hardness ranges from <strong style={{ color: '#e2e8f0′ }}>200-400 mg/L</strong> (very hard).
             This accelerates anode rod degradation, causes sediment in water heaters, and clogs aerators.
-            A whole-home water softener can reduce plumbing maintenance frequency by up to <strong style={{ color: '#F5E642' }}>40%</strong>.
+            A whole-home water softener can reduce plumbing maintenance frequency by up to <strong style={{ color: '#F5E642′ }}>40%</strong>.
           </div>
         </div>
       </div>

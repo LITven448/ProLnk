@@ -111,7 +111,7 @@ export default function DFWHoaArchitecturalReview() {
             <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 2 }}>
               <div>{result.required ? '🔴 HOA Approval Required' : '🟢 Approval Not Required'}</div>
               <div>⏰ Typical Timeline: {result.timeline}</div>
-              <div style={{ marginTop: '0.5rem', color: '#e2e8f0' }}>💡 {result.tips}</div>
+              <div style={{ marginTop: '0.5rem', color: '#e2e8f0′ }}>💡 {result.tips}</div>
             </div>
           </div>
         )}

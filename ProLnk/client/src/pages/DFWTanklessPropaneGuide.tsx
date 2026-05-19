@@ -41,9 +41,9 @@ export default function DFWTanklessPropaneGuide() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem' }}>Why Propane Tankless for Outer DFW?</h2>
-          <p style={{ lineHeight: 1.7, color: '#c8d8f0' }}>
+          <p style={{ lineHeight: 1.7, color: '#c8d8f0′ }}>
             Many outer DFW communities — Parker County, Hood County, Kaufman County, parts of Ellis County — lack natural gas infrastructure.
-            Propane tankless water heaters offer the <strong style={{ color: '#F5E642' }}>same endless hot water and efficiency benefits</strong> as
+            Propane tankless water heaters offer the <strong style={{ color: '#F5E642′ }}>same endless hot water and efficiency benefits</strong> as
             natural gas tankless, burning cleaner and more efficiently than traditional propane storage tank heaters.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function DFWTanklessPropaneGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>DFW Area</label>
               <select value={area} onChange={e => setArea(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
                 <option value=''>Select area...</option>
                 {Object.keys(areaData).map(a => <option key={a} value={a}>{a}</option>)}
               </select>
@@ -91,7 +91,7 @@ export default function DFWTanklessPropaneGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Household Size</label>
               <select value={household} onChange={e => setHousehold(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
                 <option value=''>Select size...</option>
                 {householdSizes.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
@@ -102,13 +102,13 @@ export default function DFWTanklessPropaneGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>Your Propane Tankless Profile</div>
               <div style={{ color: '#c8d8f0', lineHeight: 1.9 }}>
                 <div>🔥 Recommended BTU: <strong style={{ color: '#fff' }}>{result.btu}</strong></div>
                 <div>🪣 Propane Tank Size: <strong style={{ color: '#fff' }}>{result.tank}</strong></div>
                 <div>💳 Est. Monthly Propane Cost: <strong style={{ color: '#fff' }}>{result.monthly}</strong></div>
-                <div style={{ marginTop: '0.75rem', color: '#F5E642' }}>{result.rec}</div>
+                <div style={{ marginTop: '0.75rem', color: '#F5E642′ }}>{result.rec}</div>
               </div>
             </div>
           )}

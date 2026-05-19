@@ -35,14 +35,14 @@ export default function DFWHVACCopperLinesDFW2026() {
           { icon: '📉', title: '20% Efficiency Loss Threshold', desc: 'A line set with degraded insulation creates heat gain on the suction line, forcing compressor to work harder. This shows up as high electric bills before any diagnostic fault code.' },
           { icon: '🔒', title: 'Copper Theft — DFW Reality', desc: 'DFW metro ranks in top 10 nationwide for HVAC copper theft. Exposed outdoor line sets in accessible locations (side yards, back fences) are targets. Security cages cost $200–$500 installed.' },
         ].map((item) => (
-          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>
+          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ }}>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>{item.icon} {item.title}</div>
             <div style={{ color: '#9BAEC8', fontSize: '14px' }}>{item.desc}</div>
           </div>
         ))}
 
         <div style={{ backgroundColor: '#111D35', borderRadius: '12px', padding: '24px', marginTop: '28px' }}>
-          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>🔍 Line Set Condition → Maintenance Guide</div>
+          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>🔍 Line Set Condition → Maintenance Guide</div>
           <select
             value={condition}
             onChange={(e) => { setCondition(e.target.value); setResult(''); }}

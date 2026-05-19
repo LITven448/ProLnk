@@ -7,7 +7,7 @@ import {
   Camera, BookOpen, Star, MapPin,
 } from "lucide-react";
 
-const STORAGE_KEY = "prolnk_onboarding_v3";
+const STORAGE_KEY = "prolnk_onboarding_v3″;
 
 type StepStatus = "complete" | "active" | "pending";
 
@@ -57,7 +57,7 @@ const ALL_STEPS: Step[] = [
     href: "/dashboard/profile",
     timeEstimate: "10 min",
     icon: User,
-    color: "#8b5cf6",
+    color: "#8b5cf6″,
     bg: "rgba(139,92,246,0.12)",
     border: "rgba(139,92,246,0.3)",
     category: "Profile Setup",
@@ -98,7 +98,7 @@ const ALL_STEPS: Step[] = [
     href: "/dashboard/profile",
     timeEstimate: "5 min",
     icon: Shield,
-    color: "#3b82f6",
+    color: "#3b82f6″,
     bg: "rgba(59,130,246,0.12)",
     border: "rgba(59,130,246,0.3)",
     category: "Verification",
@@ -139,7 +139,7 @@ const ALL_STEPS: Step[] = [
     href: "/job-log",
     timeEstimate: "5 min",
     icon: Briefcase,
-    color: "#06b6d4",
+    color: "#06b6d4″,
     bg: "rgba(6,182,212,0.12)",
     border: "rgba(6,182,212,0.3)",
     category: "First Earnings",
@@ -179,7 +179,7 @@ const ALL_STEPS: Step[] = [
     href: "/resources",
     timeEstimate: "5 min",
     icon: BookOpen,
-    color: "#818cf8",
+    color: "#818cf8″,
     bg: "rgba(129,140,248,0.12)",
     border: "rgba(129,140,248,0.3)",
     category: "Network Growth",
@@ -193,7 +193,7 @@ const ALL_STEPS: Step[] = [
     href: "/dashboard/referral",
     timeEstimate: "2 min",
     icon: Users,
-    color: "#f472b6",
+    color: "#f472b6″,
     bg: "rgba(244,114,182,0.12)",
     border: "rgba(244,114,182,0.3)",
     category: "Network Growth",
@@ -215,8 +215,8 @@ const CATEGORY_ICONS: Record<string, React.ElementType> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  "Profile Setup": "#8b5cf6",
-  "Verification": "#3b82f6",
+  "Profile Setup": "#8b5cf6″,
+  "Verification": "#3b82f6″,
   "First Earnings": "#2dd4bf",
   "Network Growth": "#fb923c",
 };
@@ -281,25 +281,25 @@ export default function OnboardingChecklist() {
 
   return (
     <div className="min-h-screen bg-[#0A1628]">
-      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6″>
 
         {/* Header */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4″>
           <div
-            className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
+            className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0″
             style={{ background: "rgba(45,212,191,0.12)", border: "1px solid rgba(45,212,191,0.25)" }}
           >
-            <Rocket size={22} className="text-teal-400" />
+            <Rocket size={22} className="text-teal-400″ />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Partner Activation Checklist</h1>
-            <p className="text-sm text-slate-400 mt-0.5">Complete these steps to go fully live on ProLnk.</p>
+            <p className="text-sm text-slate-400 mt-0.5″>Complete these steps to go fully live on ProLnk.</p>
           </div>
         </div>
 
         {/* ── UPGRADED: Progress Bar Header ── */}
         <div
-          className="rounded-2xl p-5"
+          className="rounded-2xl p-5″
           style={{
             background: allDone
               ? "linear-gradient(135deg, rgba(34,197,94,0.15), rgba(34,197,94,0.05))"
@@ -313,9 +313,9 @@ export default function OnboardingChecklist() {
               : "1px solid rgba(139,92,246,0.25)",
           }}
         >
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-2″>
             <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-0.5">
+              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-0.5″>
                 {progressMessage}
               </p>
               <p className="text-2xl font-bold text-white">
@@ -338,7 +338,7 @@ export default function OnboardingChecklist() {
                   >
                     {progressPct}%
                   </p>
-                  <p className="text-xs text-slate-500 flex items-center gap-1 justify-end mt-0.5">
+                  <p className="text-xs text-slate-500 flex items-center gap-1 justify-end mt-0.5″>
                     <Clock size={10} />
                     {totalSteps - completedCount} step{totalSteps - completedCount !== 1 ? "s" : ""} left
                   </p>
@@ -348,7 +348,7 @@ export default function OnboardingChecklist() {
           </div>
 
           {/* Progress bar */}
-          <div className="w-full h-3 rounded-full overflow-hidden bg-slate-800 mt-3">
+          <div className="w-full h-3 rounded-full overflow-hidden bg-slate-800 mt-3″>
             <div
               className="h-full rounded-full transition-all duration-700 relative overflow-hidden"
               style={{
@@ -361,7 +361,7 @@ export default function OnboardingChecklist() {
               }}
             >
               <div
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0 opacity-30″
                 style={{
                   background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)",
                   animation: "shimmer 2s infinite",
@@ -407,9 +407,9 @@ export default function OnboardingChecklist() {
           const globalIndexOffset = CATEGORIES.slice(0, catIdx).reduce((s, c) => s + c.steps.length, 0);
 
           return (
-            <div key={cat.id} className="space-y-2">
+            <div key={cat.id} className="space-y-2″>
               {/* Category header */}
-              <div className="flex items-center gap-2 px-1">
+              <div className="flex items-center gap-2 px-1″>
                 <div
                   className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
                   style={{
@@ -420,7 +420,7 @@ export default function OnboardingChecklist() {
                 >
                   {catComplete
                     ? <CheckCircle size={13} style={{ color: catColor }} />
-                    : <CatIcon size={13} style={{ color: catComplete ? catColor : "#475569" }} />
+                    : <CatIcon size={13} style={{ color: catComplete ? catColor : "#475569″ }} />
                   }
                 </div>
                 <span
@@ -437,8 +437,8 @@ export default function OnboardingChecklist() {
                     ✓ Done
                   </span>
                 )}
-                <div className="flex-1 h-px bg-slate-800 ml-1" />
-                <span className="text-[10px] text-slate-600">{catDone}/{cat.steps.length}</span>
+                <div className="flex-1 h-px bg-slate-800 ml-1″ />
+                <span className="text-[10px] text-slate-600″>{catDone}/{cat.steps.length}</span>
               </div>
 
               {/* Steps in category */}
@@ -467,29 +467,29 @@ export default function OnboardingChecklist() {
                       opacity: done ? 0.72 : 1,
                     }}
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-4″>
                       {/* Check toggle */}
                       <button
                         onClick={() => toggle(step.id, step.alwaysComplete)}
-                        className="flex-shrink-0 mt-0.5 transition-transform hover:scale-105"
+                        className="flex-shrink-0 mt-0.5 transition-transform hover:scale-105″
                         aria-label={done ? "Mark incomplete" : "Mark complete"}
                       >
                         {done
-                          ? <CheckCircle size={22} className="text-green-400" />
-                          : <Circle size={22} className="text-slate-600" />
+                          ? <CheckCircle size={22} className="text-green-400″ />
+                          : <Circle size={22} className="text-slate-600″ />
                         }
                       </button>
 
                       {/* Icon */}
                       <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″
                         style={{ background: step.bg, border: `1px solid ${step.border}` }}
                       >
                         <Icon size={18} style={{ color: step.color }} />
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0">
+                      <div className="flex-1 min-w-0″>
                         <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                           {isActive && (
                             <span
@@ -515,7 +515,7 @@ export default function OnboardingChecklist() {
                           <div className="flex items-center gap-3 mt-3 flex-wrap">
                             <Link href={step.href}>
                               <span
-                                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all hover:opacity-90"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all hover:opacity-90″
                                 style={{
                                   background: step.bg,
                                   color: step.color,
@@ -526,7 +526,7 @@ export default function OnboardingChecklist() {
                                 <ChevronRight size={11} />
                               </span>
                             </Link>
-                            <span className="flex items-center gap-1 text-xs text-slate-500">
+                            <span className="flex items-center gap-1 text-xs text-slate-500″>
                               <Clock size={10} />
                               {step.timeEstimate}
                             </span>
@@ -558,9 +558,9 @@ export default function OnboardingChecklist() {
               border: "1px solid rgba(34,197,94,0.3)",
             }}
           >
-            <CheckCircle size={32} className="text-green-400 mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-white mb-1">You're fully activated!</h3>
-            <p className="text-sm text-slate-400 mb-4">
+            <CheckCircle size={32} className="text-green-400 mx-auto mb-3″ />
+            <h3 className="text-lg font-bold text-white mb-1″>You're fully activated!</h3>
+            <p className="text-sm text-slate-400 mb-4″>
               Your profile is live, payouts are ready, and your network is growing. Go earn.
             </p>
             <Link href="/dashboard/partner-home">
@@ -573,10 +573,10 @@ export default function OnboardingChecklist() {
           </div>
         ) : (
           <div
-            className="rounded-2xl p-4 flex items-center gap-4 bg-slate-900 border border-slate-700"
+            className="rounded-2xl p-4 flex items-center gap-4 bg-slate-900 border border-slate-700″
           >
-            <div className="flex-1">
-              <p className="text-xs text-slate-500">
+            <div className="flex-1″>
+              <p className="text-xs text-slate-500″>
                 Need help? Visit the{" "}
                 <Link href="/resources">
                   <span className="text-teal-400 hover:underline cursor-pointer">Resource Center</span>
@@ -585,7 +585,7 @@ export default function OnboardingChecklist() {
               </p>
             </div>
             <Link href="/dashboard/partner-home">
-              <span className="text-xs font-semibold flex items-center gap-1 text-teal-400">
+              <span className="text-xs font-semibold flex items-center gap-1 text-teal-400″>
                 Dashboard <ChevronRight size={11} />
               </span>
             </Link>

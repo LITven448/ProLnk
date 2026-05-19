@@ -22,9 +22,9 @@ export default function DFWCFMGuide() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📐 What Is CFM and Why Does It Matter in DFW?</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📐 What Is CFM and Why Does It Matter in DFW?</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>
-            Every air conditioner moves a specific volume of air per minute. If your ducts can't carry enough CFM to all rooms, some rooms starve for cool air no matter how powerful your unit is. In DFW's extreme heat, a 10% CFM deficit that would be barely noticeable in Colorado becomes a room that hits 82°F when your setpoint is 75°F.
+            Every air conditioner moves a specific volume of air per minute. If your ducts can't carry enough CFM to all rooms, some rooms starve for cool air no matter how powerful your unit is. In DFW’s extreme heat, a 10% CFM deficit that would be barely noticeable in Colorado becomes a room that hits 82°F when your setpoint is 75°F.
           </p>
           <p style={{ color: '#94A3B8', lineHeight: 1.7 }}>
             The standard rule is 400 CFM per ton of cooling capacity. DFW homes built before 2005 frequently have duct systems that were undersized at installation, then further degraded by attic heat, settling, and leaks. Many DFW homeowners have perfectly good equipment and terrible duct delivery.
@@ -35,25 +35,25 @@ export default function DFWCFMGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🏠 Your DFW Home CFM Target</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Home Size</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Home Size</label>
               <div style={{ display: 'flex', gap: 8 }}>
                 {[['small', 'Small
 <1,500 sf'], [’medium', 'Medium
 1,500–3,000 sf'], [’large', 'Large
 3,000+ sf']].map(([val, label]) => (
                   <button key={val} onClick={() => setHomeSize(val)}
-                    style={{ flex: 1, padding: '10px 8px', borderRadius: 10, border: `2px solid ${homeSize === val ? '#F5E642' : '#1E3A5F'}`, background: homeSize === val ? '#F5E642' : 'transparent', color: homeSize === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 13, whiteSpace: 'pre-line', lineHeight: 1.3 }}>
+                    style={{ flex: 1, padding: '10px 8px', borderRadius: 10, border: `2px solid ${homeSize === val ? '#F5E642' : '#1E3A5F'}`, background: homeSize === val ? '#F5E642′ : ’transparent', color: homeSize === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 13, whiteSpace: 'pre-line', lineHeight: 1.3 }}>
                     {label}
                   </button>
                 ))}
               </div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Stories</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Stories</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {[['single', '🏠 Single Story'], ['multi', '🏢 Two Story']].map(([val, label]) => (
                   <button key={val} onClick={() => setStories(val)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${stories === val ? '#F5E642' : '#1E3A5F'}`, background: stories === val ? '#F5E642' : 'transparent', color: stories === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${stories === val ? '#F5E642' : '#1E3A5F'}`, background: stories === val ? '#F5E642′ : ’transparent', color: stories === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {label}
                   </button>
                 ))}
@@ -64,12 +64,12 @@ export default function DFWCFMGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
-                <div style={{ background: '#111D35', borderRadius: 10, padding: 16, textAlign: 'center', border: '1px solid #F5E642' }}>
-                  <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>{result.targetCFM}</div>
+                <div style={{ background: '#111D35', borderRadius: 10, padding: 16, textAlign: 'center', border: '1px solid #F5E642′ }}>
+                  <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>{result.targetCFM}</div>
                   <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Target CFM (DFW)</div>
                 </div>
                 <div style={{ background: '#111D35', borderRadius: 10, padding: 16, textAlign: 'center' }}>
-                  <div style={{ fontSize: 32, fontWeight: 800, color: '#E8EAF0' }}>{result.tonsNeeded}</div>
+                  <div style={{ fontSize: 32, fontWeight: 800, color: '#E8EAF0′ }}>{result.tonsNeeded}</div>
                   <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Tons AC Capacity Needed</div>
                 </div>
               </div>

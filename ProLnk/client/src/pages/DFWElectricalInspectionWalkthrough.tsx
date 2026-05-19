@@ -54,7 +54,7 @@ export default function DFWElectricalInspectionWalkthrough() {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔍 What Gets Inspected</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔍 What Gets Inspected</h2>
           <div style={{ display: 'grid', gap: '0.6rem' }}>
             {inspectionAreas.map((item, i) => (
               <div key={i} style={{ background: '#1e293b', borderRadius: 8, padding: '0.9rem 1.1rem', display: 'flex', gap: '1rem' }}>
@@ -66,7 +66,7 @@ export default function DFWElectricalInspectionWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Your Inspection Focus Areas</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Your Inspection Focus Areas</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Home age (years)</label>
             <input type="number" min={1} max={100} value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ width: '100%', padding: '0.6rem', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: '1rem' }} />
@@ -82,7 +82,7 @@ export default function DFWElectricalInspectionWalkthrough() {
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', fontSize: '0.95rem' }}>Get My Inspection Plan →</button>
           {showResult && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}><strong>Urgency:</strong> {urgency}</div>
               {focusAreas.length > 0 && <div style={{ marginBottom: '0.25rem' }}><strong>Ask inspector to focus on:</strong></div>}
               {focusAreas.map((f, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.85rem', paddingLeft: '1rem', marginBottom: '0.3rem' }}>→ {f}</div>)}
@@ -92,8 +92,8 @@ export default function DFWElectricalInspectionWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#ef4444' }}>🚨 Findings That Require Immediate Action</h2>
-          {immediateActions.map((item, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #ef4444' }}>{item}</div>)}
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#ef4444′ }}>🚨 Findings That Require Immediate Action</h2>
+          {immediateActions.map((item, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.6rem', paddingLeft: '1rem', borderLeft: '2px solid #ef4444′ }}>{item}</div>)}
         </div>
       </div>
     </div>

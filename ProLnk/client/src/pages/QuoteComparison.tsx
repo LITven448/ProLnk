@@ -83,24 +83,24 @@ const MOCK_QUOTES: Quote[] = [
 const BADGE_CONFIG: Record<Badge, { label: string; icon: React.ReactNode; color: string; border: string; bg: string }> = {
   "best-value": {
     label: "Best Value",
-    icon: <Trophy className="w-3.5 h-3.5" />,
-    color: "text-amber-300",
-    border: "border-amber-400/40",
-    bg: "bg-amber-500/10",
+    icon: <Trophy className="w-3.5 h-3.5″ />,
+    color: "text-amber-300″,
+    border: "border-amber-400/40″,
+    bg: "bg-amber-500/10″,
   },
   fastest: {
     label: "Fastest",
-    icon: <Zap className="w-3.5 h-3.5" />,
-    color: "text-blue-300",
-    border: "border-blue-400/40",
-    bg: "bg-blue-500/10",
+    icon: <Zap className="w-3.5 h-3.5″ />,
+    color: "text-blue-300″,
+    border: "border-blue-400/40″,
+    bg: "bg-blue-500/10″,
   },
   "most-trusted": {
     label: "Most Trusted",
-    icon: <ThumbsUp className="w-3.5 h-3.5" />,
-    color: "text-emerald-300",
-    border: "border-emerald-400/40",
-    bg: "bg-emerald-500/10",
+    icon: <ThumbsUp className="w-3.5 h-3.5″ />,
+    color: "text-emerald-300″,
+    border: "border-emerald-400/40″,
+    bg: "bg-emerald-500/10″,
   },
 };
 
@@ -118,14 +118,14 @@ function renderComparisonValue(quote: Quote, key: keyof Quote): React.ReactNode 
     return (
       <div>
         <span className="font-bold text-white text-base">${quote.price}</span>
-        <p className="text-white/40 text-xs mt-0.5">{quote.priceNote}</p>
+        <p className="text-white/40 text-xs mt-0.5″>{quote.priceNote}</p>
       </div>
     );
   }
   if (key === "rating") {
     return (
-      <div className="flex items-center gap-1">
-        <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+      <div className="flex items-center gap-1″>
+        <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400″ />
         <span className="text-white font-semibold text-sm">{quote.rating}</span>
         <span className="text-white/40 text-xs">({quote.reviewCount})</span>
       </div>
@@ -155,8 +155,8 @@ function ProCard({
     <div
       className={`relative flex flex-col bg-white/5 border rounded-2xl overflow-hidden h-full transition-all duration-300 ${
         accepted
-          ? "border-green-400/50 ring-2 ring-green-400/30"
-          : "border-white/10 hover:border-white/20"
+          ? "border-green-400/50 ring-2 ring-green-400/30″
+          : "border-white/10 hover:border-white/20″
       }`}
     >
       {/* Badge */}
@@ -168,16 +168,16 @@ function ProCard({
       </div>
 
       {/* Header */}
-      <div className="p-5 pb-4 border-b border-white/10">
-        <div className="flex items-start gap-3 mb-3">
-          <div className="w-12 h-12 rounded-xl bg-indigo-600/40 border border-indigo-400/30 flex items-center justify-center flex-shrink-0">
+      <div className="p-5 pb-4 border-b border-white/10″>
+        <div className="flex items-start gap-3 mb-3″>
+          <div className="w-12 h-12 rounded-xl bg-indigo-600/40 border border-indigo-400/30 flex items-center justify-center flex-shrink-0″>
             <span className="text-indigo-200 font-bold text-sm">{quote.avatar}</span>
           </div>
-          <div className="min-w-0 pr-16">
+          <div className="min-w-0 pr-16″>
             <p className="text-white font-bold text-base leading-tight">{quote.proName}</p>
-            <p className="text-indigo-300 text-xs mt-0.5">{quote.trade}</p>
-            <div className="flex items-center gap-1 mt-1">
-              <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+            <p className="text-indigo-300 text-xs mt-0.5″>{quote.trade}</p>
+            <div className="flex items-center gap-1 mt-1″>
+              <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400″ />
               <span className="text-amber-300 font-semibold text-xs">{quote.rating}</span>
               <span className="text-white/40 text-xs">({quote.reviewCount} reviews)</span>
             </div>
@@ -185,11 +185,11 @@ function ProCard({
         </div>
 
         {/* Verified pills */}
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5″>
           {[
-            { icon: <BadgeCheck className="w-3 h-3" />, label: "Licensed" },
-            { icon: <Shield className="w-3 h-3" />, label: "Insured" },
-            { icon: <CheckCircle className="w-3 h-3" />, label: "Background checked" },
+            { icon: <BadgeCheck className="w-3 h-3″ />, label: "Licensed" },
+            { icon: <Shield className="w-3 h-3″ />, label: "Insured" },
+            { icon: <CheckCircle className="w-3 h-3″ />, label: "Background checked" },
           ].map((p) => (
             <div
               key={p.label}
@@ -203,33 +203,33 @@ function ProCard({
       </div>
 
       {/* Price & timeline */}
-      <div className="grid grid-cols-2 divide-x divide-white/10 border-b border-white/10">
-        <div className="p-4">
-          <p className="text-white/50 text-xs mb-1">Quoted price</p>
+      <div className="grid grid-cols-2 divide-x divide-white/10 border-b border-white/10″>
+        <div className="p-4″>
+          <p className="text-white/50 text-xs mb-1″>Quoted price</p>
           <p className="text-white font-black text-2xl">${quote.price}</p>
-          <p className="text-white/40 text-xs mt-0.5">{quote.priceNote}</p>
+          <p className="text-white/40 text-xs mt-0.5″>{quote.priceNote}</p>
         </div>
-        <div className="p-4">
-          <p className="text-white/50 text-xs mb-1">Availability</p>
-          <div className="flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-indigo-400" />
+        <div className="p-4″>
+          <p className="text-white/50 text-xs mb-1″>Availability</p>
+          <div className="flex items-center gap-1.5″>
+            <Clock className="w-3.5 h-3.5 text-indigo-400″ />
             <p className="text-white font-semibold text-sm">{quote.timeline}</p>
           </div>
-          <p className="text-white/40 text-xs mt-1">Responded {quote.responseTime}</p>
+          <p className="text-white/40 text-xs mt-1″>Responded {quote.responseTime}</p>
         </div>
       </div>
 
       {/* Notes */}
-      <div className="p-4 flex-1">
+      <div className="p-4 flex-1″>
         <p className="text-white/50 text-xs mb-2 uppercase tracking-wide font-medium">Pro's notes</p>
         <p className="text-white/70 text-sm leading-relaxed">{quote.notes}</p>
       </div>
 
       {/* Actions */}
-      <div className="p-4 pt-0 space-y-2">
+      <div className="p-4 pt-0 space-y-2″>
         {accepted ? (
           <div className="flex items-center justify-center gap-2 h-11 rounded-xl bg-green-600/20 border border-green-400/40 text-green-300 font-semibold text-sm">
-            <CheckCircle className="w-4 h-4" />
+            <CheckCircle className="w-4 h-4″ />
             Quote Accepted!
           </div>
         ) : (
@@ -237,16 +237,16 @@ function ProCard({
             onClick={onAccept}
             className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm"
           >
-            Accept Quote <ArrowRight className="w-4 h-4 ml-1.5" />
+            Accept Quote <ArrowRight className="w-4 h-4 ml-1.5″ />
           </Button>
         )}
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2″>
           <Button
             variant="outline"
             onClick={onRevision}
             className="h-9 border-white/20 text-white/70 hover:text-white hover:border-white/40 text-xs font-medium bg-transparent"
           >
-            <RefreshCw className="w-3.5 h-3.5 mr-1.5" />
+            <RefreshCw className="w-3.5 h-3.5 mr-1.5″ />
             Request Revision
           </Button>
           <Button
@@ -254,7 +254,7 @@ function ProCard({
             onClick={onMessage}
             className="h-9 border-white/20 text-white/70 hover:text-white hover:border-white/40 text-xs font-medium bg-transparent"
           >
-            <MessageCircle className="w-3.5 h-3.5 mr-1.5" />
+            <MessageCircle className="w-3.5 h-3.5 mr-1.5″ />
             Message Pro
           </Button>
         </div>
@@ -285,23 +285,23 @@ export default function QuoteComparison() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-blue-950 to-slate-900">
-      <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-blue-950 to-slate-900″>
+      <div className="max-w-6xl mx-auto px-4 py-10 md:py-14″>
 
         {/* Acceptance confirmation banner */}
         {showConfirm && (
-          <div className="mb-8 flex items-start gap-3 bg-green-900/40 border border-green-400/40 rounded-2xl p-5">
-            <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
-            <div className="flex-1">
+          <div className="mb-8 flex items-start gap-3 bg-green-900/40 border border-green-400/40 rounded-2xl p-5″>
+            <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5″ />
+            <div className="flex-1″>
               <p className="text-white font-bold text-base">Quote accepted — {confirmName} is confirmed!</p>
-              <p className="text-white/60 text-sm mt-1">
+              <p className="text-white/60 text-sm mt-1″>
                 You'll receive a booking confirmation email within minutes. {confirmName} will reach out
                 directly to finalize the schedule.
               </p>
             </div>
             <button
               onClick={() => setShowConfirm(false)}
-              className="text-white/40 hover:text-white/70 text-xs ml-2 flex-shrink-0"
+              className="text-white/40 hover:text-white/70 text-xs ml-2 flex-shrink-0″
             >
               Dismiss
             </button>
@@ -309,18 +309,18 @@ export default function QuoteComparison() {
         )}
 
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8″>
           <a href="/get-quotes" className="inline-flex items-center gap-1.5 text-indigo-400 hover:text-indigo-300 text-sm mb-4 transition-colors">
-            <ChevronLeft className="w-4 h-4" /> Back to request
+            <ChevronLeft className="w-4 h-4″ /> Back to request
           </a>
-          <h1 className="text-3xl md:text-4xl font-black text-white mb-2">Compare Your Quotes</h1>
+          <h1 className="text-3xl md:text-4xl font-black text-white mb-2″>Compare Your Quotes</h1>
           <p className="text-white/60 text-base">
             3 verified pros responded to your HVAC request in ZIP 75034. Review and pick the best fit.
           </p>
         </div>
 
         {/* Desktop: 3-column grid */}
-        <div className="hidden md:grid grid-cols-3 gap-5 mb-10">
+        <div className="hidden md:grid grid-cols-3 gap-5 mb-10″>
           {MOCK_QUOTES.map((q) => (
             <ProCard
               key={q.id}
@@ -334,9 +334,9 @@ export default function QuoteComparison() {
         </div>
 
         {/* Mobile: tabbed carousel */}
-        <div className="md:hidden mb-10">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex gap-1.5">
+        <div className="md:hidden mb-10″>
+          <div className="flex items-center justify-between mb-4″>
+            <div className="flex gap-1.5″>
               {MOCK_QUOTES.map((q, i) => (
                 <button
                   key={q.id}
@@ -344,27 +344,27 @@ export default function QuoteComparison() {
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                     i === mobileIndex
                       ? "bg-indigo-600 text-white"
-                      : "bg-white/10 text-white/60 hover:bg-white/20"
+                      : "bg-white/10 text-white/60 hover:bg-white/20″
                   }`}
                 >
                   {q.proName.split(" ")[0]}
                 </button>
               ))}
             </div>
-            <div className="flex gap-1">
+            <div className="flex gap-1″>
               <button
                 onClick={() => setMobileIndex((i) => Math.max(0, i - 1))}
                 disabled={mobileIndex === 0}
                 className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white/60 disabled:opacity-30 hover:bg-white/20 transition-colors"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-4 h-4″ />
               </button>
               <button
                 onClick={() => setMobileIndex((i) => Math.min(MOCK_QUOTES.length - 1, i + 1))}
                 disabled={mobileIndex === MOCK_QUOTES.length - 1}
                 className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white/60 disabled:opacity-30 hover:bg-white/20 transition-colors"
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-4 h-4″ />
               </button>
             </div>
           </div>
@@ -379,20 +379,20 @@ export default function QuoteComparison() {
 
         {/* Side-by-side comparison table */}
         <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-          <div className="px-5 py-4 border-b border-white/10">
+          <div className="px-5 py-4 border-b border-white/10″>
             <h2 className="text-white font-bold text-base">Side-by-Side Comparison</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[560px]">
               <thead>
-                <tr className="border-b border-white/10">
-                  <th className="text-left px-5 py-3 text-white/50 text-xs font-medium uppercase tracking-wide w-32">
+                <tr className="border-b border-white/10″>
+                  <th className="text-left px-5 py-3 text-white/50 text-xs font-medium uppercase tracking-wide w-32″>
                     Criteria
                   </th>
                   {MOCK_QUOTES.map((q) => {
                     const badge = BADGE_CONFIG[q.badge];
                     return (
-                      <th key={q.id} className="text-left px-5 py-3">
+                      <th key={q.id} className="text-left px-5 py-3″>
                         <div>
                           <p className="text-white font-semibold text-sm">{q.proName.split(" ")[0]}</p>
                           <div
@@ -415,7 +415,7 @@ export default function QuoteComparison() {
                   >
                     <td className="px-5 py-3.5 text-white/50 text-xs font-medium">{row.label}</td>
                     {MOCK_QUOTES.map((q) => (
-                      <td key={q.id} className="px-5 py-3.5">
+                      <td key={q.id} className="px-5 py-3.5″>
                         {renderComparisonValue(q, row.key)}
                       </td>
                     ))}
@@ -428,7 +428,7 @@ export default function QuoteComparison() {
 
         {/* Footer note */}
         <div className="mt-6 flex items-center gap-2 justify-center">
-          <Shield className="w-4 h-4 text-white/30" />
+          <Shield className="w-4 h-4 text-white/30″ />
           <p className="text-white/30 text-xs text-center">
             All pros are licensed, insured, and background-checked before joining ProLnk.
             Payments are held in escrow until the job is complete.

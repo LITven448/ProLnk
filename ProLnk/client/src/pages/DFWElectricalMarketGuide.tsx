@@ -69,7 +69,7 @@ export default function DFWElectricalMarketGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>⚡ DFW Electrical Market</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>DFW has a licensed electrician shortage that is getting worse, not better. TDLR data shows the licensed electrician pipeline has not kept pace with DFW's explosive growth. EV charger demand is adding new pressure on top of already-constrained capacity.</p>
 
-        <div style={{ backgroundColor: '#1a2f4e', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1a2f4e', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>📊 The DFW Electrician Shortage — By The Numbers</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>Texas requires a 4-year apprenticeship + journeyman license + additional years for master electrician status. With DFW adding 100,000+ new residents per year, the licensed electrician base is structurally short. TDLR data shows commercial projects routinely outbid residential work, pulling talent away from homeowner projects.</div>
         </div>
@@ -102,16 +102,16 @@ export default function DFWElectricalMarketGuide() {
               </select>
             </div>
           </div>
-          {areaNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#F5E642' }}>{areaNote}</div>}
+          {areaNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#F5E642′ }}>{areaNote}</div>}
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ marginBottom: 10 }}>{result.conditions}</div>
-              {result.evNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, marginBottom: 10, fontSize: 13, color: '#F5E642' }}>{result.evNote}</div>}
+              {result.evNote && <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, marginBottom: 10, fontSize: 13, color: '#F5E642′ }}>{result.evNote}</div>}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 10 }}>
-                <div><span style={{ color: '#94a3b8', fontSize: 13, display: 'block' }}>Typical Wait Time</span><span style={{ fontWeight: 700, color: '#F5E642' }}>{result.waitTime}</span></div>
-                <div><span style={{ color: '#94a3b8', fontSize: 13, display: 'block' }}>Price Range</span><span style={{ fontWeight: 700, color: '#F5E642' }}>{result.priceRange}</span></div>
+                <div><span style={{ color: '#94a3b8', fontSize: 13, display: 'block' }}>Typical Wait Time</span><span style={{ fontWeight: 700, color: '#F5E642′ }}>{result.waitTime}</span></div>
+                <div><span style={{ color: '#94a3b8', fontSize: 13, display: 'block' }}>Price Range</span><span style={{ fontWeight: 700, color: '#F5E642′ }}>{result.priceRange}</span></div>
               </div>
-              <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8' }}>📋 Permit Note: {result.permitNote}</div>
+              <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8′ }}>📋 Permit Note: {result.permitNote}</div>
             </div>
           )}
         </div>

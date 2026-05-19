@@ -7,7 +7,7 @@ export default function DFWTreeRemovalGuide2026() {
     danger: {
       urgency: 'URGENT — Do not wait. Dead limbs over structure, trunk cracks, or severe lean toward a building are imminent failure risks. DFW storms in spring/summer create explosive failure conditions.',
       cost: '$800–5,000+ depending on size and crane requirements. Emergency removal (same-day) adds 25-50% premium. Get 3 quotes even urgently — prices vary widely.',
-      permit: 'Dallas: Heritage Trees (24"+ trunk diameter) require permit even in emergency. Fort Worth, Plano, Irving: Check city ordinance — some require permits for any removal over specified size.',
+      permit: 'Dallas: Heritage Trees (24″+ trunk diameter) require permit even in emergency. Fort Worth, Plano, Irving: Check city ordinance — some require permits for any removal over specified size.',
       next: '1. Clear the danger zone now. 2. Call licensed arborist for assessment. 3. Check city Heritage Tree database. 4. Get 3 quotes. 5. Schedule removal — include stump grinding.',
     },
     dead: {
@@ -46,8 +46,8 @@ export default function DFWTreeRemovalGuide2026() {
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>When trees must come down in DFW — danger signs, permit rules, real costs, and what to do next.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
-          {[{ icon: '💰', label: 'Cost Range', value: '$500–$5,000+' }, { icon: '🌳', label: 'Heritage Tree', value: '24"+ Trunk = Permit' }, { icon: '🪵', label: 'Stump Grind', value: '+$150–$400' }, { icon: '📋', label: 'Always Get', value: '3 Quotes' }].map(s => (
-            <div key={s.label} style={{ background: '#1e293b', borderRadius: '8px', padding: '1rem', border: '1px solid #334155' }}>
+          {[{ icon: '💰', label: 'Cost Range', value: '$500–$5,000+' }, { icon: '🌳', label: 'Heritage Tree', value: '24″+ Trunk = Permit' }, { icon: '🪵', label: 'Stump Grind', value: '+$150–$400′ }, { icon: '📋', label: ’Always Get', value: '3 Quotes' }].map(s => (
+            <div key={s.label} style={{ background: '#1e293b', borderRadius: '8px', padding: '1rem', border: '1px solid #334155′ }}>
               <div style={{ fontSize: '1.5rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '.8rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{s.value}</div>
@@ -59,7 +59,7 @@ export default function DFWTreeRemovalGuide2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🌳 My Situation</h2>
           <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {[{ v: 'danger', l: '⚠️ Danger Risk' }, { v: 'dead', l: '💀 Dead Tree' }, { v: 'roots', l: '🌱 Root Damage' }, { v: 'diseased', l: '🦠 Diseased' }, { v: 'aesthetic', l: '✨ Aesthetic' }].map(t => (
-              <button key={t.v} onClick={() => setTreeSituation(t.v)} style={{ padding: '.5rem .75rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: treeSituation === t.v ? '#F5E642' : '#334155', color: treeSituation === t.v ? '#0A1628' : '#fff', fontWeight: 600, fontSize: '.85rem' }}>{t.l}</button>
+              <button key={t.v} onClick={() => setTreeSituation(t.v)} style={{ padding: '.5rem .75rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: treeSituation === t.v ? '#F5E642′ : '#334155', color: treeSituation === t.v ? '#0A1628' : '#fff', fontWeight: 600, fontSize: '.85rem' }}>{t.l}</button>
             ))}
           </div>
 

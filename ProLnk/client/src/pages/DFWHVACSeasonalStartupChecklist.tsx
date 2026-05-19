@@ -71,14 +71,14 @@ export default function DFWHVACSeasonalStartupChecklist() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📋</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Seasonal Startup Checklist</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Seasonal Startup Checklist</h1>
           <p style={{ color: '#9BB0CC', margin: 0 }}>Spring AC startup and fall heat startup — step by step for DFW</p>
         </div>
 
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           {seasons.map((s) => (
             <button key={s} onClick={() => { setSeason(s); setStage(Object.keys(checklists[s])[0]); setChecked(new Set()); }}
-              style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: season === s ? '#F5E642' : '#1E3A5F', background: season === s ? '#F5E642' : '#112240', color: season === s ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>
+              style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: season === s ? '#F5E642′ : '#1E3A5F', background: season === s ? '#F5E642' : '#112240', color: season === s ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer' }}>
               {s.includes('Spring') ? '🌸' : '🍂'} {s}
             </button>
           ))}
@@ -87,7 +87,7 @@ export default function DFWHVACSeasonalStartupChecklist() {
         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
           {stages.map((st) => (
             <button key={st} onClick={() => setStage(st)}
-              style={{ padding: '0.4rem 1rem', borderRadius: 6, border: '1px solid', borderColor: stage === st ? '#F5E642' : '#1E3A5F', background: stage === st ? '#1E3A5F' : 'transparent', color: stage === st ? '#F5E642' : '#9BB0CC', cursor: 'pointer', fontSize: '0.85rem' }}>
+              style={{ padding: '0.4rem 1rem', borderRadius: 6, border: '1px solid', borderColor: stage === st ? '#F5E642′ : '#1E3A5F', background: stage === st ? '#1E3A5F' : ’transparent', color: stage === st ? '#F5E642′ : '#9BB0CC', cursor: ’pointer', fontSize: '0.85rem' }}>
               {st}
             </button>
           ))}
@@ -96,7 +96,7 @@ export default function DFWHVACSeasonalStartupChecklist() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2 style={{ color: '#F5E642', margin: 0 }}>{stage}</h2>
-            <div style={{ background: done === items.length ? '#0F4C2A' : '#1E3A5F', borderRadius: 8, padding: '0.3rem 0.8rem', fontSize: '0.85rem', color: done === items.length ? '#4ADE80' : '#9BB0CC', fontWeight: 700 }}>
+            <div style={{ background: done === items.length ? '#0F4C2A' : '#1E3A5F', borderRadius: 8, padding: '0.3rem 0.8rem', fontSize: '0.85rem', color: done === items.length ? '#4ADE80′ : '#9BB0CC', fontWeight: 700 }}>
               {done}/{items.length} done
             </div>
           </div>

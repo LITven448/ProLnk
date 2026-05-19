@@ -31,7 +31,7 @@ export default function DFWNewToTexasGuide() {
         <p style={{ color: '#475569', marginBottom: 8, fontSize: 16 }}>
           What nobody tells you when you move to DFW. The good, the real, and the things that will surprise you about Texas homeownership.
         </p>
-        <div style={{ background: '#FEF9C3', border: '1px solid #F5E642', borderRadius: 8, padding: 12, marginBottom: 32, fontSize: 14, color: '#713F12' }}>
+        <div style={{ background: '#FEF9C3', border: '1px solid #F5E642', borderRadius: 8, padding: 12, marginBottom: 32, fontSize: 14, color: '#713F12′ }}>
           ⭐ No state income tax is real — but property taxes, clay soil, ERCOT, and tornado prep are equally real. Welcome home.
         </div>
 
@@ -78,7 +78,7 @@ export default function DFWNewToTexasGuide() {
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
             <div style={{ color: '#0A1628', fontWeight: 700, fontSize: 18, marginBottom: 16 }}>🗺️ From {origin} to DFW — What's Different</div>
             {advice.map((a, i) => (
-              <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12, paddingBottom: 12, borderBottom: i < advice.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
+              <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12, paddingBottom: 12, borderBottom: i < advice.length - 1 ? '1px solid #f1f5f9′ : ’none' }}>
                 <span style={{ color: '#F5E642', background: '#0A1628', borderRadius: 4, width: 22, height: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{i + 1}</span>
                 <span style={{ color: '#475569', fontSize: 15 }}>{a}</span>
               </div>
@@ -90,7 +90,7 @@ export default function DFWNewToTexasGuide() {
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
             <div style={{ color: '#0A1628', fontWeight: 700, fontSize: 16, marginBottom: 12 }}>🏠 Immediate Actions When You Move to DFW</div>
             {['Get a foundation inspection within 30 days — clay soil may have already moved', 'Find your nearest tornado shelter — Nextdoor shows community shelters', 'Sign up for DFW emergency alerts — weather.gov and your city system', 'Shop ERCOT electricity providers — rates vary 40% by provider', 'Check your HVAC age — Texas heat on an old system is expensive urgency'].map((a, i) => (
-              <div key={i} style={{ color: '#475569', fontSize: 14, marginBottom: 10, paddingLeft: 16, borderLeft: '3px solid #0A1628' }}>{a}</div>
+              <div key={i} style={{ color: '#475569', fontSize: 14, marginBottom: 10, paddingLeft: 16, borderLeft: '3px solid #0A1628′ }}>{a}</div>
             ))}
           </div>
         )}

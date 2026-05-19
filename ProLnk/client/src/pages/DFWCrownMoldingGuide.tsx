@@ -7,7 +7,7 @@ function getCrownAssessment(room: string, concern: string) {
   if (concern.includes('gaps at seams')) return {
     cause: 'DFW Winter Dry Season (10–25% humidity)',
     fix: 'Paintable latex caulk in gaps — do NOT use silicone (won\’t take paint)',
-    prevention: 'Install in fall when humidity is stable; leave 1/16" gap at coped joints',
+    prevention: 'Install in fall when humidity is stable; leave 1/16″ gap at coped joints',
     finish: 'Satin or semi-gloss — wipes clean, shows gaps less than flat',
     color: '#F5A623'
   };
@@ -20,7 +20,7 @@ function getCrownAssessment(room: string, concern: string) {
   };
   if (concern.includes('New installation')) return {
     cause: 'Planning phase',
-    fix: 'For DFW open floor plans: use 3.5"–5.5" crown. Larger rooms need taller profile.',
+    fix: 'For DFW open floor plans: use 3.5″–5.5″ crown. Larger rooms need taller profile.',
     prevention: 'Glue + nail gun combo — DFW humidity causes nail-only crown to loosen',
     finish: 'Satin finish standard for DFW open floor plans — elegant without glare',
     color: '#22C55E'
@@ -59,7 +59,7 @@ export default function DFWCrownMoldingGuide() {
             <li>DFW winter: 10–25% relative humidity — wood and MDF shrink, gaps open at corners</li>
             <li>DFW summer: 70–85% RH — MDF swells, paint peels if not properly primed</li>
             <li>Gap at coped joints in winter is NORMAL in DFW — not a sign of bad installation</li>
-            <li>Open floor plans with 10+ ft ceilings need 4.5"–6" crown to look proportional</li>
+            <li>Open floor plans with 10+ ft ceilings need 4.5"–6″ crown to look proportional</li>
             <li>Finger-jointed pine is most stable for DFW humidity cycles — knot-free and takes paint well</li>
           </ul>
         </div>
@@ -89,7 +89,7 @@ export default function DFWCrownMoldingGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {roomTypes.map(r => (
                 <button key={r} onClick={() => setRoom(r)} style={{
-                  background: room === r ? '#F5E642' : '#162035', color: room === r ? '#0A1628' : '#CBD5E1',
+                  background: room === r ? '#F5E642′ : '#162035', color: room === r ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: room === r ? 700 : 400
                 }}>{r}</button>
               ))}
@@ -100,7 +100,7 @@ export default function DFWCrownMoldingGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {dfwConcerns.map(c => (
                 <button key={c} onClick={() => setConcern(c)} style={{
-                  background: concern === c ? '#F5E642' : '#162035', color: concern === c ? '#0A1628' : '#CBD5E1',
+                  background: concern === c ? '#F5E642′ : '#162035', color: concern === c ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: concern === c ? 700 : 400
                 }}>{c}</button>
               ))}
@@ -108,10 +108,10 @@ export default function DFWCrownMoldingGuide() {
           </div>
           {result && (
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '18px', borderLeft: `4px solid ${result.color}` }}>
-              <div style={{ color: '#CBD5E1', fontSize: '13px', marginBottom: '6px' }}>Root cause: <span style={{ color: '#F5E642' }}>{result.cause}</span></div>
+              <div style={{ color: '#CBD5E1', fontSize: '13px', marginBottom: '6px' }}>Root cause: <span style={{ color: '#F5E642′ }}>{result.cause}</span></div>
               <div style={{ color: '#CBD5E1', fontSize: '14px', marginBottom: '6px' }}>Fix: <span style={{ color: '#FFFFFF' }}>{result.fix}</span></div>
               <div style={{ color: '#CBD5E1', fontSize: '14px', marginBottom: '6px' }}>Prevention: <span style={{ color: '#FFFFFF' }}>{result.prevention}</span></div>
-              <div style={{ color: '#94A3B8', fontSize: '13px' }}>Recommended finish: <span style={{ color: '#F5E642' }}>{result.finish}</span></div>
+              <div style={{ color: '#94A3B8', fontSize: '13px' }}>Recommended finish: <span style={{ color: '#F5E642′ }}>{result.finish}</span></div>
             </div>
           )}
         </div>

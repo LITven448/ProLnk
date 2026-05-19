@@ -47,21 +47,21 @@ export default function DFWHomeSellingSummaryGuide() {
           <p style={{ color: '#a0aec0', margin: 0 }}>The complete condensed guide to selling in Dallas-Fort Worth</p>
         </div>
         <div style={{ background: '#fff', borderRadius: 16, padding: '1.75rem', marginBottom: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-          <h2 style={{ margin: '0 0 1rem', fontSize: '1.2rem', color: '#0A1628' }}>🏆 DFW Seller Essentials</h2>
+          <h2 style={{ margin: '0 0 1rem', fontSize: '1.2rem', color: '#0A1628′ }}>🏆 DFW Seller Essentials</h2>
           {TOP_TIPS.map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.75rem', padding: '0.6rem 0', borderBottom: i < TOP_TIPS.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
+            <div key={i} style={{ display: 'flex', gap: '0.75rem', padding: '0.6rem 0', borderBottom: i < TOP_TIPS.length - 1 ? '1px solid #f0f0f0′ : ’none' }}>
               <span style={{ fontSize: 20 }}>{item.icon}</span>
               <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>{item.tip}</span>
             </div>
           ))}
         </div>
         <div style={{ background: '#fff', borderRadius: 16, padding: '1.75rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-          <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.2rem', color: '#0A1628' }}>🎯 Your Personalized Selling Checklist</h2>
+          <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.2rem', color: '#0A1628′ }}>🎯 Your Personalized Selling Checklist</h2>
           <p style={{ color: '#666', fontSize: '0.9rem', margin: '0 0 1rem' }}>Select your seller situation:</p>
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
             {[['fastSale', '⚡ Fast Sale'], ['maxPrice', '💎 Max Price'], ['investorSale', '💼 Investor Sale']].map(([val, label]) => (
               <button key={val} onClick={() => setSituation(val)}
-                style={{ padding: '0.5rem 1.1rem', borderRadius: 8, border: '2px solid', borderColor: situation === val ? '#F5E642' : '#e2e8f0', background: situation === val ? '#0A1628' : '#fff', color: situation === val ? '#F5E642' : '#333', fontWeight: 600, cursor: 'pointer', fontSize: '0.875rem' }}>
+                style={{ padding: '0.5rem 1.1rem', borderRadius: 8, border: '2px solid', borderColor: situation === val ? '#F5E642′ : '#e2e8f0', background: situation === val ? '#0A1628' : '#fff', color: situation === val ? '#F5E642' : '#333', fontWeight: 600, cursor: ’pointer', fontSize: '0.875rem' }}>
                 {label}
               </button>
             ))}

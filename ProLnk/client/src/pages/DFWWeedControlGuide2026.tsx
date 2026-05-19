@@ -74,7 +74,7 @@ Goathead (Tribulus terrestris) and field sandbur cause the painful stickers comm
               <div style={{ fontSize: 24, marginBottom: 6 }}>{w.emoji}</div>
               <div style={{ fontWeight: 700, fontSize: 11, marginBottom: 4 }}>{w.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 10, marginBottom: 4 }}>{w.timing}</div>
-              <div style={{ fontSize: 10, color: '#F5E642' }}>Difficulty: {w.difficulty}</div>
+              <div style={{ fontSize: 10, color: '#F5E642′ }}>Difficulty: {w.difficulty}</div>
             </div>
           ))}
         </div>
@@ -82,7 +82,7 @@ Goathead (Tribulus terrestris) and field sandbur cause the painful stickers comm
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>What weed do you have?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
           {[['🌱 Crabgrass', 'crabgrass'], ['🌿 Dallisgrass', 'dallisgrass'], ['🟡 Nutsedge', 'nutsedge'], ['🌼 Dandelion', 'dandelion'], ['⚠️ Goathead/Stickers', 'goathead']].map(([label, val]) => (
-            <button key={val} onClick={() => setWeedType(val)} style={{ padding: '12px', border: weedType === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: weedType === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontSize: 13 }}>{label}</button>
+            <button key={val} onClick={() => setWeedType(val)} style={{ padding: '12px', border: weedType === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: weedType === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontSize: 13 }}>{label}</button>
           ))}
         </div>
 

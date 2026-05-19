@@ -4,17 +4,17 @@ const DOORBELL_RECS: Record<string, Record<string, Record<string, { product: str
   new: {
     wired: {
       front: { product: 'Ring Video Doorbell Pro 2 (hardwired)', wiring: 'Compatible with 16–24V AC existing transformer', complexity: 'Easy — 30 min DIY install', note: 'Wired is strongly preferred in DFW — summer heat drains Ring battery in 2–4 weeks.', cost: '$249 + $100 pro install (optional)' },
-      large: { product: 'Ring Floodlight Cam Wired Pro + Ring Doorbell Pro 2', wiring: 'Requires 120V outlet for floodlight + 16V AC for doorbell', complexity: 'Moderate — electrician recommended for floodlight', note: 'Large DFW driveways benefit from floodlight cam covering full approach.', cost: '$399–$550 + electrician $150–$300' },
+      large: { product: 'Ring Floodlight Cam Wired Pro + Ring Doorbell Pro 2', wiring: 'Requires 120V outlet for floodlight + 16V AC for doorbell', complexity: 'Moderate — electrician recommended for floodlight', note: 'Large DFW driveways benefit from floodlight cam covering full approach.', cost: '$399–$550 + electrician $150–$300′ },
     },
     battery: {
-      front: { product: 'Ring Battery Doorbell Plus (reluctantly)', wiring: 'No wiring needed — USB-C rechargeable', complexity: 'Easiest install — 10 min', note: 'Battery in DFW summer heat: expect monthly recharges. Upgrade to wired when possible.', cost: '$179 + optional solar charger $49' },
+      front: { product: 'Ring Battery Doorbell Plus (reluctantly)', wiring: 'No wiring needed — USB-C rechargeable', complexity: 'Easiest install — 10 min', note: 'Battery in DFW summer heat: expect monthly recharges. Upgrade to wired when possible.', cost: '$179 + optional solar charger $49′ },
       large: { product: 'Ring Spotlight Cam Battery x2 + Battery Doorbell Plus', wiring: 'All battery — no wiring required', complexity: 'Easy — no electrician', note: 'Cameras on large driveways will drain faster due to motion volume — solar strongly recommended.', cost: '$350–$500 + solar mounts' },
     },
   },
   mid: {
     wired: {
       front: { product: 'Ring Video Doorbell Wired + check transformer voltage first', wiring: 'Check existing: if under 16V, replace transformer ($25)', complexity: 'Moderate — check wiring compatibility', note: 'Many DFW homes 10–20 years old have original 8–10V transformers — upgrade required.', cost: '$59 doorbell + $25–$80 transformer + $100 install' },
-      large: { product: 'Ring Floodlight Cam Wired + Doorbell Wired (transformer upgraded)', wiring: '120V junction box for floodlight needed — common in mid-age DFW garages', complexity: 'Moderate — check garage outlet availability', note: 'Mid-age DFW homes usually have a usable outlet near garage for floodlight cam.', cost: '$299 + electrician $100–$200' },
+      large: { product: 'Ring Floodlight Cam Wired + Doorbell Wired (transformer upgraded)', wiring: '120V junction box for floodlight needed — common in mid-age DFW garages', complexity: 'Moderate — check garage outlet availability', note: 'Mid-age DFW homes usually have a usable outlet near garage for floodlight cam.', cost: '$299 + electrician $100–$200′ },
     },
     battery: {
       front: { product: 'Ring Battery Doorbell Pro (solar charger bundle)', wiring: 'No wiring — solar trickle charge recommended', complexity: 'Easy install', note: 'Solar charger in DFW gets strong sunlight — significantly extends battery life in summer.', cost: '$228 bundle with solar charger' },
@@ -23,8 +23,8 @@ const DOORBELL_RECS: Record<string, Record<string, Record<string, { product: str
   },
   old: {
     wired: {
-      front: { product: 'Ring Video Doorbell Pro 2 — must upgrade to 16V transformer', wiring: 'High likelihood of needing new transformer or full wiring run', complexity: 'Complex — electrician strongly recommended', note: 'Older DFW homes may have low-voltage wiring issues. Electrician assessment worth it.', cost: '$249 + electrician assessment $150–$400' },
-      large: { product: 'Ring Floodlight Cam Wired Pro — new electrical run likely needed', wiring: 'New 120V circuit required if no outdoor outlet exists', complexity: 'Complex — full electrician job', note: 'Older DFW homes often lack outdoor outlets in the right locations. Budget for conduit run.', cost: '$249 + electrician $300–$600' },
+      front: { product: 'Ring Video Doorbell Pro 2 — must upgrade to 16V transformer', wiring: 'High likelihood of needing new transformer or full wiring run', complexity: 'Complex — electrician strongly recommended', note: 'Older DFW homes may have low-voltage wiring issues. Electrician assessment worth it.', cost: '$249 + electrician assessment $150–$400′ },
+      large: { product: 'Ring Floodlight Cam Wired Pro — new electrical run likely needed', wiring: 'New 120V circuit required if no outdoor outlet exists', complexity: 'Complex — full electrician job', note: 'Older DFW homes often lack outdoor outlets in the right locations. Budget for conduit run.', cost: '$249 + electrician $300–$600′ },
     },
     battery: {
       front: { product: 'Ring Battery Doorbell Plus + solar charger — bypass wiring issues', wiring: 'No wiring — fully wireless solution', complexity: 'Easy — bypasses old wiring problems', note: 'For older DFW homes, battery + solar is often the best path until you do a full remodel.', cost: '$179 + $49 solar charger' },
@@ -77,7 +77,7 @@ export default function DFWRingDoorbellInstallGuide() {
               {[{ v: 'new', l: 'New (0–10 years)' }, { v: 'mid', l: 'Mid-Age (10–25 years)' }, { v: 'old', l: 'Older (25+ years)' }].map((o) => (
                 <button key={o.v} onClick={() => setHomeAge(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${homeAge === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: homeAge === o.v ? '#F5E642' : 'transparent', color: homeAge === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: homeAge === o.v ? '#F5E642′ : ’transparent', color: homeAge === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -90,7 +90,7 @@ export default function DFWRingDoorbellInstallGuide() {
               {[{ v: 'wired', l: 'Has Existing Wired Doorbell' }, { v: 'battery', l: 'No Wiring / Going Battery' }].map((o) => (
                 <button key={o.v} onClick={() => setWiring(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${wiring === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: wiring === o.v ? '#F5E642' : 'transparent', color: wiring === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: wiring === o.v ? '#F5E642′ : ’transparent', color: wiring === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -103,7 +103,7 @@ export default function DFWRingDoorbellInstallGuide() {
               {[{ v: 'front', l: 'Front Door Only' }, { v: 'large', l: 'Front Door + Large Driveway / Side Yard' }].map((o) => (
                 <button key={o.v} onClick={() => setCoverage(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${coverage === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: coverage === o.v ? '#F5E642' : 'transparent', color: coverage === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: coverage === o.v ? '#F5E642′ : ’transparent', color: coverage === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>

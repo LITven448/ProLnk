@@ -119,7 +119,7 @@ export default function GutterGuardGuide() {
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginTop: 32 }}>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: '#f1f5f9', margin: '0 0 14px' }}>⚠️ What Gutter Guards Don't Eliminate</h3>
           <ul style={{ color: '#94a3b8', lineHeight: 1.8, margin: 0, paddingLeft: 20 }}>
-            <li>You still need <strong style={{ color: '#f1f5f9' }}>occasional cleaning</strong> even with guards — micro-mesh surfaces accumulate pollen and debris.</li>
+            <li>You still need <strong style={{ color: '#f1f5f9′ }}>occasional cleaning</strong> even with guards — micro-mesh surfaces accumulate pollen and debris.</li>
             <li>"Occasional" vs. "twice a year" is still a major win in time and cost.</li>
             <li>Guards don't address existing damage — inspect gutters before installation.</li>
           </ul>
@@ -139,18 +139,18 @@ export default function GutterGuardGuide() {
             max={400}
             value={linearFeet}
             onChange={e => setLinearFeet(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 28, accentColor: '#38bdf8' }}
+            style={{ width: '100%', marginBottom: 28, accentColor: '#38bdf8′ }}
           />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             <div style={{ background: '#0f172a', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#64748b', fontSize: 13, marginBottom: 8 }}>Annual Cleaning Cost</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#ef4444' }}>${annualCleaning}/yr</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#ef4444′ }}>${annualCleaning}/yr</div>
               <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>2× per year forever</div>
             </div>
             <div style={{ background: '#0f172a', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#64748b', fontSize: 13, marginBottom: 8 }}>Micro-Mesh Install</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#38bdf8' }}>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#38bdf8′ }}>
                 ${microMeshLow.toLocaleString()}–${microMeshHigh.toLocaleString()}
               </div>
               <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>one-time cost</div>

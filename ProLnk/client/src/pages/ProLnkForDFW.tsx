@@ -22,7 +22,7 @@ export default function ProLnkForDFW() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ background: '#0A1628', color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, display: 'inline-block', padding: '6px 18px', borderRadius: 20, marginBottom: 16 }}>DALLAS-FORT WORTH</div>
-          <h1 style={{ fontSize: 44, fontWeight: 900, margin: '0 0 16px', color: '#0A1628' }}>Why ProLnk Was Built for DFW</h1>
+          <h1 style={{ fontSize: 44, fontWeight: 900, margin: '0 0 16px', color: '#0A1628′ }}>Why ProLnk Was Built for DFW</h1>
           <p style={{ color: '#475569', fontSize: 18, maxWidth: 600, margin: '0 auto' }}>
             The fastest-growing metro in America has a home services crisis. ProLnk was designed to solve it here first — then everywhere.
           </p>
@@ -37,7 +37,7 @@ export default function ProLnkForDFW() {
                   <span style={{ color: '#0A1628', fontWeight: 700, fontSize: 17 }}>{c.challenge}</span>
                   <span style={{ background: '#fef9c3', color: '#854d0e', fontSize: 12, fontWeight: 600, padding: '3px 10px', borderRadius: 20 }}>{c.stat}</span>
                 </div>
-                <div style={{ color: '#475569' }}>{c.how}</div>
+                <div style={{ color: '#475569′ }}>{c.how}</div>
               </div>
             </div>
           ))}
@@ -58,7 +58,7 @@ export default function ProLnkForDFW() {
             <div style={{ fontSize: 40 }}>🌎</div>
             <div>
               <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 18, marginBottom: 6 }}>Why Starting in DFW Makes ProLnk Better Nationally</div>
-              <div style={{ color: '#475569' }}>DFW has every market condition at once — aging stock, new builds, climate extremes, rapid migration, contractor shortage, and a diverse homeowner base. If the algorithm works here, it works anywhere. Every match in DFW trains the system for Houston, Phoenix, Charlotte, and beyond.</div>
+              <div style={{ color: '#475569′ }}>DFW has every market condition at once — aging stock, new builds, climate extremes, rapid migration, contractor shortage, and a diverse homeowner base. If the algorithm works here, it works anywhere. Every match in DFW trains the system for Houston, Phoenix, Charlotte, and beyond.</div>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function ProLnkForDFW() {
             {homeownerTypes.map((t, i) => (
               <button key={i} onClick={() => setOwnerType(i)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: ownerType === i ? '#F5E642' : '#1e3a5f', color: ownerType === i ? '#0A1628' : '#fff' }}>
+                  background: ownerType === i ? '#F5E642′ : '#1e3a5f', color: ownerType === i ? '#0A1628' : '#fff' }}>
                 {t.label}
               </button>
             ))}

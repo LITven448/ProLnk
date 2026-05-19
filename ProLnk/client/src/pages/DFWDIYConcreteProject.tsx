@@ -5,7 +5,7 @@ type ProjectSize = 'Small (< 10 sq ft)' | 'Medium (10–50 sq ft)' | 'Large (50+
 
 const PROJECTS = [
   { name: 'Stepping stones', diy: true, size: 'Small', note: 'Ideal DFW DIY project; use pre-mixed bags.' },
-  { name: 'Mailbox base', diy: true, size: 'Small', note: 'Set in 12" deep holes below DFW frost line (6").' },
+  { name: 'Mailbox base', diy: true, size: 'Small', note: 'Set in 12″ deep holes below DFW frost line (6″).' },
   { name: 'Fence post setting', diy: true, size: 'Small', note: 'Quick-set concrete; DFW clay soil drains slowly — wait 48 h.' },
   { name: 'Garden border / edging', diy: true, size: 'Small', note: 'Use dry-stacked forms; no finishing required.' },
   { name: 'Patio (< 100 sq ft)', diy: true, size: 'Medium', note: 'DFW heat cures concrete fast; mist surface for 7 days.' },
@@ -24,7 +24,7 @@ const SEASON_TIPS: Record<Season, string> = {
 
 const COST: Record<string, { diy: string; pro: string }> = {
   'Small (< 10 sq ft)': { diy: '–', pro: '–' },
-  'Medium (10–50 sq ft)': { diy: '–', pro: '–,000' },
+  'Medium (10–50 sq ft)': { diy: '–', pro: '–,000′ },
   'Large (50+ sq ft)': { diy: 'Not recommended', pro: ',500–,000+' },
 };
 
@@ -69,7 +69,7 @@ export default function DFWDIYConcreteProject() {
             </div>
           </div>
           {season && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: '1rem', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: '1rem', borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>🌡️ {SEASON_TIPS[season]}</p>
             </div>
           )}
@@ -86,7 +86,7 @@ export default function DFWDIYConcreteProject() {
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>Project Guide</h2>
           {feasibleProjects.map((p, i) => (
-            <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '0.75rem 0', borderBottom: i < feasibleProjects.length - 1 ? '1px solid #334155' : 'none' }}>
+            <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '0.75rem 0', borderBottom: i < feasibleProjects.length - 1 ? '1px solid #334155′ : ’none' }}>
               <span style={{ fontSize: '1.2rem' }}>{p.diy ? '✅' : '🚫'}</span>
               <div>
                 <div style={{ fontWeight: 600, marginBottom: '0.2rem' }}>{p.name} <span style={{ color: '#64748b', fontSize: '0.8rem' }}>({p.size})</span></div>

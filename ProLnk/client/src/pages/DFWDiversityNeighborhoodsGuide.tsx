@@ -95,7 +95,7 @@ export default function DFWDiversityNeighborhoodsGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
             <input type="range" min={200000} max={600000} step={10000} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ flex: 1, accentColor: '#F5E642' }} />
+              style={{ flex: 1, accentColor: '#F5E642′ }} />
             <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 100 }}>${budget.toLocaleString()}</span>
           </div>
           <label style={{ display: 'block', marginBottom: 12, color: '#94a3b8', fontSize: 13 }}>Cultural Communities of Interest (optional)</label>
@@ -103,9 +103,9 @@ export default function DFWDiversityNeighborhoodsGuide() {
             {culturalOptions.map(c => (
               <button key={c} onClick={() => toggleCulture(c)}
                 style={{ padding: '6px 14px', borderRadius: 20, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  borderColor: selectedCultures.includes(c) ? '#F5E642' : '#1e3a5f',
-                  background: selectedCultures.includes(c) ? '#F5E642' : 'transparent',
-                  color: selectedCultures.includes(c) ? '#0A1628' : '#94a3b8' }}>
+                  borderColor: selectedCultures.includes(c) ? '#F5E642′ : '#1e3a5f',
+                  background: selectedCultures.includes(c) ? '#F5E642′ : ’transparent',
+                  color: selectedCultures.includes(c) ? '#0A1628′ : '#94a3b8' }}>
                 {c}
               </button>
             ))}
@@ -120,7 +120,7 @@ export default function DFWDiversityNeighborhoodsGuide() {
           <div>
             <h2 style={{ marginBottom: 16, fontSize: 18 }}>{results.length > 0 ? `✅ ${results.length} Neighborhoods Found` : '❌ No matches — try a higher budget'}</h2>
             {results.map(n => (
-              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                   <h3 style={{ fontSize: 20, margin: 0 }}>{n.name}</h3>
                   <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{n.diversityScore}/100 🌍</span>

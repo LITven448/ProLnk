@@ -76,8 +76,8 @@ export default function DFWHVACNewConstruction() {
               onClick={() => setSelected(s)}
               style={{
                 padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected.stage === s.stage ? '#F5E642' : '#1e3a5f'}`,
-                background: selected.stage === s.stage ? '#F5E642' : '#0d2137',
-                color: selected.stage === s.stage ? '#0A1628' : '#94a3b8',
+                background: selected.stage === s.stage ? '#F5E642′ : '#0d2137',
+                color: selected.stage === s.stage ? '#0A1628′ : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 13,
               }}
             >

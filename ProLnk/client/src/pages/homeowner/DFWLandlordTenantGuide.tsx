@@ -115,7 +115,7 @@ export default function DFWLandlordTenantGuide() {
               </div>
               <div style={{ borderTop: '1px solid #2a2d3a', paddingTop: 16 }}>
                 <h3 style={{ fontSize: 16, fontWeight: 600, color: '#ffffff', marginBottom: 8 }}>Repair Timeline</h3>
-                <p style={{ color: '#9ca3af', lineHeight: 1.7 }}>Texas requires repair within a "reasonable time" after written notice. Courts typically interpret this as <strong style={{ color: '#fbbf24' }}>7 days for non-emergency</strong> and faster for health-threatening issues (no AC in a DFW summer = urgent).</p>
+                <p style={{ color: '#9ca3af', lineHeight: 1.7 }}>Texas requires repair within a "reasonable time" after written notice. Courts typically interpret this as <strong style={{ color: '#fbbf24′ }}>7 days for non-emergency</strong> and faster for health-threatening issues (no AC in a DFW summer = urgent).</p>
               </div>
               <div style={{ borderTop: '1px solid #2a2d3a', paddingTop: 16 }}>
                 <h3 style={{ fontSize: 16, fontWeight: 600, color: '#ffffff', marginBottom: 8 }}>Repair and Deduct Option</h3>
@@ -212,7 +212,7 @@ export default function DFWLandlordTenantGuide() {
         </section>
 
         <section>
-          <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2544)', borderRadius: 16, padding: 36, textAlign: 'center', border: '1px solid #3b82f6' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2544)', borderRadius: 16, padding: 36, textAlign: 'center', border: '1px solid #3b82f6′ }}>
             <span style={{ fontSize: 36 }}>🤖</span>
             <h2 style={{ fontSize: 24, fontWeight: 700, color: '#ffffff', margin: '16px 0 12px' }}>TrustyPro for Landlords</h2>
             <p style={{ color: '#93c5fd', lineHeight: 1.7, marginBottom: 24, maxWidth: 540, margin: '0 auto 24px' }}>

@@ -70,9 +70,9 @@ export default function DFWProLnkSummerCampaign2026B() {
           {Object.keys(urgencyGuides).map(u => (
             <button key={u} onClick={() => setUrgency(u)} style={{
               padding: '11px 16px', borderRadius: 10, border: '2px solid',
-              borderColor: urgency === u ? '#F5E642' : '#1E3A5F',
-              background: urgency === u ? '#F5E642' : '#0D1F3C',
-              color: urgency === u ? '#0A1628' : '#fff',
+              borderColor: urgency === u ? '#F5E642′ : '#1E3A5F',
+              background: urgency === u ? '#F5E642′ : '#0D1F3C',
+              color: urgency === u ? '#0A1628′ : '#fff',
               cursor: 'pointer', fontWeight: 700, fontSize: 13
             }}>{u}</button>
           ))}

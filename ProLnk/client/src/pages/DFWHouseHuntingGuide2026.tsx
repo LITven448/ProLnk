@@ -109,7 +109,7 @@ export default function DFWHouseHuntingGuide2026() {
               <button
                 key={p.id}
                 onClick={() => toggle(p.id)}
-                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected.includes(p.id) ? '#F5E642' : '#1a2d4a', color: selected.includes(p.id) ? '#0A1628' : '#ccc', fontWeight: selected.includes(p.id) ? 700 : 400 }}
+                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected.includes(p.id) ? '#F5E642′ : '#1a2d4a', color: selected.includes(p.id) ? '#0A1628' : '#ccc', fontWeight: selected.includes(p.id) ? 700 : 400 }}
               >
                 {p.label}
               </button>
@@ -119,7 +119,7 @@ export default function DFWHouseHuntingGuide2026() {
             <div key={id} style={{ marginBottom: 16 }}>
               <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>{priorities.find(p => p.id === id)?.label}</div>
               {checklists[id].map(item => (
-                <div key={item} style={{ color: '#ccc', fontSize: 13, padding: '4px 0' }}>→ {item}</div>
+                <div key={item} style={{ color: '#ccc', fontSize: 13, padding: '4px 0′ }}>→ {item}</div>
               ))}
             </div>
           ))}

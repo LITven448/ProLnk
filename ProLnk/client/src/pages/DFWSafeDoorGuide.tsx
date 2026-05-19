@@ -53,7 +53,7 @@ export default function DFWSafeDoorGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 40 }}>🚪</div>
-        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0' }}>DFW Safe Door & Entry Guide</h1>
+        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0′ }}>DFW Safe Door & Entry Guide</h1>
         <p style={{ color: '#9BA8BB', marginBottom: '1.5rem' }}>
           The lock isn't the weakest point — the door frame is. Most DFW break-ins happen by kicking in the door
           frame, not picking the lock. Proper reinforcement costs under $200 and takes an afternoon.
@@ -61,7 +61,7 @@ export default function DFWSafeDoorGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
-            { icon: '🦵', title: 'Kick-In Attack', desc: '60-second fix: 3-inch screws into stud framing costs $10' },
+            { icon: '🦵', title: 'Kick-In Attack', desc: '60-second fix: 3-inch screws into stud framing costs $10′ },
             { icon: '🔑', title: 'Lock Picking', desc: 'Grade 1 deadbolt resists picking for 5+ minutes' },
             { icon: '🔧', title: 'Hinge Attack', desc: 'Hinge bolts prevent removal from outside on outswing doors' },
             { icon: '📷', title: 'Deterrence', desc: 'Video doorbell reduces entry attempts — visibility is a deterrent' },
@@ -105,7 +105,7 @@ export default function DFWSafeDoorGuide() {
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <div style={{ color: '#E8EDF5', marginBottom: 2 }}>{r.label}</div>
-                  <div style={{ fontSize: 12, color: r.diy ? '#4CAF82' : '#F5A623' }}>{r.diy ? '🔧 DIY' : '👷 Professional recommended'}</div>
+                  <div style={{ fontSize: 12, color: r.diy ? '#4CAF82′ : '#F5A623' }}>{r.diy ? '🔧 DIY' : '👷 Professional recommended'}</div>
                 </div>
                 <span style={{ color: '#F5E642', fontWeight: 700, whiteSpace: 'nowrap', marginLeft: '1rem' }}>{r.cost}</span>
               </div>

@@ -70,7 +70,7 @@ export default function DFWSeniorHomeMaintenanceGuide2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F5E642' }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F5E642′ }}>
             📌 <strong>ProLnk Verified Pros</strong> — every contractor is background-checked and license-verified through TDLR. No door-to-door scammers. No surprises.
           </p>
         </div>
@@ -85,8 +85,8 @@ export default function DFWSeniorHomeMaintenanceGuide2026() {
               key={c.id}
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               style={{
-                background: selected === c.id ? '#F5E642' : '#1e2d45',
-                color: selected === c.id ? '#0A1628' : '#fff',
+                background: selected === c.id ? '#F5E642′ : '#1e2d45',
+                color: selected === c.id ? '#0A1628′ : '#fff',
                 border: '1px solid #334155',
                 borderRadius: 8,
                 padding: '0.9rem 1.2rem',

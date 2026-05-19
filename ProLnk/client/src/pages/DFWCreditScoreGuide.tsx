@@ -49,7 +49,7 @@ export default function DFWCreditScoreGuide() {
   ];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DFW BUYER EDUCATION</div>
@@ -57,13 +57,13 @@ export default function DFWCreditScoreGuide() {
           <p style={{ color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>A 80-point difference in credit score can cost you $200+/mo on a DFW mortgage. Know where you stand and how to improve.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>📊 Check Your Score Tier</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 20 }}>Based on a $390K DFW home with 5% down ($370,500 loan) at current rates.</p>
           <div style={{ display: 'flex', gap: 12, marginBottom: 20, alignItems: 'flex-end' }}>
             <div style={{ flex: 1 }}>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Your Credit Score (300–850)</label>
-              <input value={score} onChange={e => setScore(e.target.value)} placeholder="720" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #d1d5db', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={score} onChange={e => setScore(e.target.value)} placeholder="720″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #d1d5db', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', whiteSpace: 'nowrap' }}>See My Options</button>
           </div>
@@ -87,7 +87,7 @@ export default function DFWCreditScoreGuide() {
                       )}
                     </>
                   ) : (
-                    <div style={{ fontSize: 14, color: '#dc2626' }}>Below minimum for most loan programs. Focus on credit repair before applying.</div>
+                    <div style={{ fontSize: 14, color: '#dc2626′ }}>Below minimum for most loan programs. Focus on credit repair before applying.</div>
                   )}
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function DFWCreditScoreGuide() {
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📈 How to Improve Your Score</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {improvements.map(imp => (
@@ -108,11 +108,11 @@ export default function DFWCreditScoreGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fef2f2', borderRadius: 12, padding: 28, border: '1px solid #fca5a5' }}>
+        <div style={{ background: '#fef2f2', borderRadius: 12, padding: 28, border: '1px solid #fca5a5′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#991b1b' }}>🚫 While You're Buying — Never Do This</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {donts.map(d => (
-              <div key={d} style={{ fontSize: 14, color: '#7f1d1d', padding: '8px 12px', background: '#fff', borderRadius: 6, border: '1px solid #fca5a5' }}>❌ {d}</div>
+              <div key={d} style={{ fontSize: 14, color: '#7f1d1d', padding: '8px 12px', background: '#fff', borderRadius: 6, border: '1px solid #fca5a5′ }}>❌ {d}</div>
             ))}
           </div>
         </div>

@@ -55,10 +55,10 @@ export default function DFWMaintenanceBudgetTool() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 24 }}>
           {[
-            { label: 'Home Value ($)', value: homeValue, set: setHomeValue, placeholder: '425,000' },
-            { label: 'Home Age (years)', value: homeAge, set: setHomeAge, placeholder: '15' },
-            { label: 'HVAC System Age (years)', value: hvacAge, set: setHvacAge, placeholder: '8' },
-            { label: 'Roof Age (years)', value: roofAge, set: setRoofAge, placeholder: '12' },
+            { label: 'Home Value ($)', value: homeValue, set: setHomeValue, placeholder: '425,000′ },
+            { label: 'Home Age (years)', value: homeAge, set: setHomeAge, placeholder: '15′ },
+            { label: 'HVAC System Age (years)', value: hvacAge, set: setHvacAge, placeholder: '8′ },
+            { label: 'Roof Age (years)', value: roofAge, set: setRoofAge, placeholder: '12′ },
           ].map(({ label, value, set, placeholder }) => (
             <div key={label} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>{label}</label>
@@ -68,7 +68,7 @@ export default function DFWMaintenanceBudgetTool() {
           ))}
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontWeight: 600, cursor: 'pointer' }}>
-              <input type="checkbox" checked={hasPool} onChange={e => setHasPool(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+              <input type="checkbox" checked={hasPool} onChange={e => setHasPool(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
               🏊 Home has a pool
             </label>
           </div>
@@ -90,13 +90,13 @@ export default function DFWMaintenanceBudgetTool() {
               ].map(({ label, value }) => (
                 <div key={label} style={{ flex: 1, background: '#F5E642', borderRadius: 8, padding: '14px 12px', textAlign: 'center' }}>
                   <div style={{ fontSize: 12, fontWeight: 600, color: '#0A1628', marginBottom: 4 }}>{label}</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{value}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{value}</div>
                 </div>
               ))}
             </div>
             <h3 style={{ fontWeight: 700, fontSize: 15, marginBottom: 12 }}>📋 Budget Breakdown</h3>
             {results.breakdown.map(({ label, amount, note }) => (
-              <div key={label} style={{ padding: '10px 0', borderBottom: '1px solid #F3F4F6' }}>
+              <div key={label} style={{ padding: '10px 0', borderBottom: '1px solid #F3F4F6′ }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ fontWeight: 600 }}>{label}</span>
                   <span style={{ fontWeight: 700 }}>{fmt(amount)}</span>

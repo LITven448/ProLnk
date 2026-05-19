@@ -54,8 +54,8 @@ export default function DFWHVACMoldPrevention() {
             ].map(stat => (
               <div key={stat.label} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem' }}>
                 <div style={{ fontSize: '1.25rem' }}>{stat.icon}</div>
-                <div style={{ fontSize: '0.75rem', color: '#94A3B8' }}>{stat.label}</div>
-                <div style={{ fontWeight: 600, color: '#F5E642' }}>{stat.value}</div>
+                <div style={{ fontSize: '0.75rem', color: '#94A3B8′ }}>{stat.label}</div>
+                <div style={{ fontWeight: 600, color: '#F5E642′ }}>{stat.value}</div>
               </div>
             ))}
           </div>
@@ -67,7 +67,7 @@ export default function DFWHVACMoldPrevention() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
             {homeTypes.map(h => (
               <button key={h.id} onClick={() => setSelectedHome(h.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selectedHome === h.id ? '#F5E642' : '#1E3A5F', background: selectedHome === h.id ? '#F5E642' : 'transparent', color: selectedHome === h.id ? '#0A1628' : '#E8EEF4', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selectedHome === h.id ? '#F5E642′ : '#1E3A5F', background: selectedHome === h.id ? '#F5E642' : ’transparent', color: selectedHome === h.id ? '#0A1628′ : '#E8EEF4', cursor: ’pointer', fontWeight: 600, fontSize: '0.85rem' }}>
                 {h.label}
               </button>
             ))}
@@ -76,7 +76,7 @@ export default function DFWHVACMoldPrevention() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
             {moldConcerns.map(c => (
               <button key={c.id} onClick={() => setSelectedConcern(c.id)}
-                style={{ padding: '0.65rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selectedConcern === c.id ? '#F5E642' : '#1E3A5F', background: selectedConcern === c.id ? '#1a2f50' : 'transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
+                style={{ padding: '0.65rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selectedConcern === c.id ? '#F5E642′ : '#1E3A5F', background: selectedConcern === c.id ? '#1a2f50' : ’transparent', color: '#E8EEF4', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
                 {c.label}
               </button>
             ))}
@@ -88,7 +88,7 @@ export default function DFWHVACMoldPrevention() {
         </div>
 
         {plan && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <span style={{ fontSize: '1.25rem' }}>📋</span>
               <h3 style={{ color: '#F5E642', margin: 0 }}>Your Plan — Risk: {plan.risk}</h3>

@@ -51,7 +51,7 @@ export default function DFWHomeMaintenanceROI() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
-                    <div style={{ fontWeight: 600, color: selected[item.id] ? '#34d399' : '#fff', fontSize: 15 }}>
+                    <div style={{ fontWeight: 600, color: selected[item.id] ? '#34d399′ : '#fff', fontSize: 15 }}>
                       {selected[item.id] ? '✅' : '⬜'} {item.label}
                     </div>
                     <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 2 }}>{item.description}</div>
@@ -70,7 +70,7 @@ export default function DFWHomeMaintenanceROI() {
           onClick={() => setCalculated(true)}
           disabled={Object.values(selected).every(v => !v)}
           style={{
-            background: Object.values(selected).some(v => v) ? '#F5E642' : '#1e3a5f',
+            background: Object.values(selected).some(v => v) ? '#F5E642′ : '#1e3a5f',
             color: '#0A1628',
             fontWeight: 700,
             fontSize: 16,
@@ -86,7 +86,7 @@ export default function DFWHomeMaintenanceROI() {
         </button>
 
         {calculated && Object.values(selected).some(v => v) && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 20px' }}>📈 Your DFW Maintenance ROI</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div style={{ background: '#1a2f4e', borderRadius: 8, padding: 16, textAlign: 'center' }}>
@@ -95,11 +95,11 @@ export default function DFWHomeMaintenanceROI() {
               </div>
               <div style={{ background: '#1a2f4e', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>Costs Avoided</div>
-                <div style={{ fontSize: 24, fontWeight: 700, color: '#34d399' }}>${totalAvoided.toLocaleString()}</div>
+                <div style={{ fontSize: 24, fontWeight: 700, color: '#34d399′ }}>${totalAvoided.toLocaleString()}</div>
               </div>
               <div style={{ background: '#1a2f4e', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>ROI</div>
-                <div style={{ fontSize: 24, fontWeight: 700, color: '#F5E642' }}>{roi.toLocaleString()}%</div>
+                <div style={{ fontSize: 24, fontWeight: 700, color: '#F5E642′ }}>{roi.toLocaleString()}%</div>
               </div>
             </div>
             <div style={{ background: '#0d2d1a', borderRadius: 8, padding: 14 }}>

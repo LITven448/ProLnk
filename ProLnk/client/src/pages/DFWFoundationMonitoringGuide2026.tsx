@@ -9,7 +9,7 @@ const guides: Record<string, { title: string; steps: string[]; frequency: string
       'Mark 8-10 points across your home with masking tape labels',
       'Use a digital level or laser level to record elevation',
       'Log readings quarterly in a notebook or spreadsheet',
-      'Flag any point that shifts more than 1/4" between readings',
+      'Flag any point that shifts more than 1/4″ between readings',
       'Compare corner-to-corner — DFW soil moves most at perimeter',
     ],
     frequency: 'Every 90 days',
@@ -33,8 +33,8 @@ const guides: Record<string, { title: string; steps: string[]; frequency: string
       'Draw pencil lines at each end of every visible crack with date',
       'Measure width with a coin or credit card edge — log in mm',
       'Photograph with a ruler or coin for scale',
-      'Stair-step cracks in brick are high priority — call a pro if > 1/4"',
-      'Hairline cracks under 1/16" that do not grow are usually cosmetic',
+      'Stair-step cracks in brick are high priority — call a pro if > 1/4″',
+      'Hairline cracks under 1/16″ that do not grow are usually cosmetic',
     ],
     frequency: 'Monthly — measure and photo every visible crack',
     icon: '🔍',
@@ -43,9 +43,9 @@ const guides: Record<string, { title: string; steps: string[]; frequency: string
     title: 'Perimeter Soil Moisture Check',
     steps: [
       'Walk entire foundation perimeter after 2+ weeks without rain',
-      'Probe soil 6" deep with a screwdriver — it should resist but not crack',
-      'Dry, cracked soil within 12" of foundation = watering needed',
-      'Maintain consistent moisture with soaker hoses 18-24" from foundation',
+      'Probe soil 6″ deep with a screwdriver — it should resist but not crack',
+      'Dry, cracked soil within 12″ of foundation = watering needed',
+      'Maintain consistent moisture with soaker hoses 18-24″ from foundation',
       'Log moisture condition and any watering performed',
     ],
     frequency: 'Weekly during summer dry stretches',
@@ -92,9 +92,9 @@ export default function DFWFoundationMonitoringGuide2026() {
                 style={{
                   padding: '12px 16px',
                   borderRadius: 8,
-                  border: selected === c ? '2px solid #F5E642' : '2px solid #2d3f5a',
-                  backgroundColor: selected === c ? '#F5E642' : '#0d1f36',
-                  color: selected === c ? '#0A1628' : '#cbd5e1',
+                  border: selected === c ? '2px solid #F5E642′ : '2px solid #2d3f5a',
+                  backgroundColor: selected === c ? '#F5E642′ : '#0d1f36',
+                  color: selected === c ? '#0A1628′ : '#cbd5e1',
                   fontWeight: 700,
                   fontSize: 15,
                   cursor: 'pointer',
@@ -128,8 +128,8 @@ export default function DFWFoundationMonitoringGuide2026() {
         <div style={{ backgroundColor: '#1e2d47', borderRadius: 12, padding: 20 }}>
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 10 }}>⚠️ When to Call a Pro Immediately</h3>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            Stair-step cracks wider than <strong style={{ color: '#e2e8f0' }}>1/4"</strong>, doors that suddenly refuse to close,
-            floors that shift more than <strong style={{ color: '#F5E642' }}>1/2" corner-to-corner</strong>, or cracks growing faster than
+            Stair-step cracks wider than <strong style={{ color: '#e2e8f0′ }}>1/4″</strong>, doors that suddenly refuse to close,
+            floors that shift more than <strong style={{ color: '#F5E642′ }}>1/2″ corner-to-corner</strong>, or cracks growing faster than
             1/16" per month warrant a licensed foundation engineer — not just a contractor.
           </div>
         </div>

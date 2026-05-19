@@ -44,7 +44,7 @@ export default function DFWPlumbingMaintenanceWalkthrough() {
         </p>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔧 Standard Inspection Checklist</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔧 Standard Inspection Checklist</h2>
           <div style={{ display: 'grid', gap: '0.6rem' }}>
             {standardChecks.map((c, i) => (
               <div key={i} style={{ background: '#1e293b', borderRadius: 8, padding: '0.9rem 1.1rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -56,7 +56,7 @@ export default function DFWPlumbingMaintenanceWalkthrough() {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🌵 DFW-Specific Items</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🌵 DFW-Specific Items</h2>
           <div style={{ display: 'grid', gap: '0.6rem' }}>
             {dfwSpecific.map((c, i) => (
               <div key={i} style={{ background: '#F5E64210', border: '1px solid #F5E64230', borderRadius: 8, padding: '0.9rem 1.1rem' }}>
@@ -68,7 +68,7 @@ export default function DFWPlumbingMaintenanceWalkthrough() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Your Plumbing Inspection Plan</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Your Plumbing Inspection Plan</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Home age (years)</label>
             <input type="number" min={1} max={80} value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ width: '100%', padding: '0.6rem', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: '1rem' }} />
@@ -84,7 +84,7 @@ export default function DFWPlumbingMaintenanceWalkthrough() {
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', fontSize: '0.95rem' }}>Build My Checklist →</button>
           {showResult && (
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ marginBottom: '0.5rem' }}><strong>Schedule:</strong> {urgency}</div>
               {focus.length > 0 && <div style={{ marginBottom: '0.25rem' }}><strong>Priority focus areas:</strong></div>}
               {focus.map((f, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: '0.85rem', paddingLeft: '1rem', marginBottom: '0.3rem' }}>→ {f}</div>)}

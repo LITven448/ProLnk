@@ -33,7 +33,7 @@ export default function DFWRefinancingGuide() {
   const totalInterestSaved = currentTotalInterest - newTotalInterest;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '48px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36 }}>🔄</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '12px 0 8px' }}>
@@ -51,7 +51,7 @@ export default function DFWRefinancingGuide() {
             { icon: '📅', label: 'Break-Even Analysis', desc: 'Divide closing costs by monthly savings to find break-even. Under 36 months = likely worth it. Under 24 = strong yes.' },
             { icon: '🏠', label: 'DFW Cash-Out Opportunity', desc: 'DFW values up 40%+ since 2020. Many homeowners have $80K–$200K in accessible equity for cash-out refinancing.' },
           ].map(card => (
-            <div key={card.label} style={{ background: '#fff', borderRadius: 12, padding: 20, border: '1px solid #e2e8f0' }}>
+            <div key={card.label} style={{ background: '#fff', borderRadius: 12, padding: 20, border: '1px solid #e2e8f0′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>{card.label}</div>
               <div style={{ fontSize: 13, color: '#64748b' }}>{card.desc}</div>
@@ -60,18 +60,18 @@ export default function DFWRefinancingGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 40 }}>
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
             <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🔄 Rate-and-Term Refi</h3>
-            <div style={{ fontSize: 14, color: '#475569' }}>
+            <div style={{ fontSize: 14, color: '#475569′ }}>
               <p style={{ marginBottom: 8 }}>Lower your interest rate or change loan length (30→15 yr). Keeps your loan balance the same.</p>
               <div style={{ background: '#dcfce7', borderRadius: 8, padding: 12 }}>
-                <strong style={{ color: '#166534' }}>Best for:</strong> Reducing monthly payment or total interest paid when rates have dropped from your original loan.
+                <strong style={{ color: '#166534′ }}>Best for:</strong> Reducing monthly payment or total interest paid when rates have dropped from your original loan.
               </div>
             </div>
           </div>
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
             <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>💵 Cash-Out Refi</h3>
-            <div style={{ fontSize: 14, color: '#475569' }}>
+            <div style={{ fontSize: 14, color: '#475569′ }}>
               <p style={{ marginBottom: 8 }}>Borrow more than you owe and take the difference in cash. Creates a new, larger loan.</p>
               <div style={{ background: '#fef3c7', borderRadius: 8, padding: 12 }}>
                 <strong style={{ color: '#92400e' }}>Best for:</strong> Home improvements, debt consolidation, or investment if the net rate beats alternatives. Higher risk — don't use for lifestyle expenses.
@@ -80,9 +80,9 @@ export default function DFWRefinancingGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
           <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>💰 Typical DFW Refinancing Costs (2026)</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13, color: '#475569' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13, color: '#475569′ }}>
             {[
               'Origination fee: 0.5–1% of loan amount',
               'Appraisal: $400–700 (DFW rates)',
@@ -119,12 +119,12 @@ export default function DFWRefinancingGuide() {
             ))}
           </div>
 
-          <div style={{ background: worthIt ? '#0A1628' : '#7f1d1d', borderRadius: 12, padding: 28, color: '#fff', marginBottom: 16 }}>
+          <div style={{ background: worthIt ? '#0A1628′ : '#7f1d1d', borderRadius: 12, padding: 28, color: '#fff', marginBottom: 16 }}>
             <div style={{ textAlign: 'center', marginBottom: 20 }}>
-              <div style={{ fontSize: 18, fontWeight: 700, color: worthIt ? '#F5E642' : '#fca5a5', marginBottom: 4 }}>
+              <div style={{ fontSize: 18, fontWeight: 700, color: worthIt ? '#F5E642′ : '#fca5a5', marginBottom: 4 }}>
                 {worthIt ? '✅ Refinancing Likely Makes Sense' : monthlySavings <= 0 ? '❌ Rate Increase — Not Worth It' : '⚠️ Long Break-Even — Evaluate Carefully'}
               </div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>Rate reduction: {rateDiff.toFixed(2)} percentage points</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>Rate reduction: {rateDiff.toFixed(2)} percentage points</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20, textAlign: 'center' }}>
               <div>
@@ -137,7 +137,7 @@ export default function DFWRefinancingGuide() {
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>10-Year Net Savings</div>
-                <div style={{ color: tenYearSavings > 0 ? '#F5E642' : '#ef4444', fontSize: 24, fontWeight: 800 }}>{formatCurrency(tenYearSavings)}</div>
+                <div style={{ color: tenYearSavings > 0 ? '#F5E642′ : '#ef4444', fontSize: 24, fontWeight: 800 }}>{formatCurrency(tenYearSavings)}</div>
               </div>
             </div>
             <div style={{ borderTop: '1px solid #1e293b', paddingTop: 16, marginTop: 20, fontSize: 13, color: '#94a3b8', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>

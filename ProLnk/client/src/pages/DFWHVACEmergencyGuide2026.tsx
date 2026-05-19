@@ -47,7 +47,7 @@ export default function DFWHVACEmergencyGuide2026() {
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>💰 Emergency Service Rates in DFW</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
-            {[{ l: 'Diagnostic Fee', v: '$150–300' }, { l: 'After-Hours', v: '+$75–150' }, { l: 'Weekend Rate', v: '+$100–200' }].map(i => (
+            {[{ l: 'Diagnostic Fee', v: '$150–300′ }, { l: ’After-Hours', v: '+$75–150′ }, { l: ’Weekend Rate', v: '+$100–200′ }].map(i => (
               <div key={i.l} style={{ background: '#0d2240', borderRadius: 8, padding: 12, textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 11, marginBottom: 4 }}>{i.l}</div>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 16 }}>{i.v}</div>
@@ -67,7 +67,7 @@ export default function DFWHVACEmergencyGuide2026() {
               { v: 'noise', l: 'Strange noises' },
               { v: 'leak', l: 'Water leak' },
             ].map(s => (
-              <button key={s.v} onClick={() => toggleSymptom(s.v)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, background: symptoms.includes(s.v) ? '#F5E642' : '#1e3a5f', color: symptoms.includes(s.v) ? '#0A1628' : '#fff' }}>{s.l}</button>
+              <button key={s.v} onClick={() => toggleSymptom(s.v)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, background: symptoms.includes(s.v) ? '#F5E642′ : '#1e3a5f', color: symptoms.includes(s.v) ? '#0A1628' : '#fff' }}>{s.l}</button>
             ))}
           </div>
           {urgency && (

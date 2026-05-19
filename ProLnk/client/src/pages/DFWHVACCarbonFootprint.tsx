@@ -67,12 +67,12 @@ export default function DFWHVACCarbonFootprint() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>HVAC accounts for 40-50% of a DFW home's energy use — and energy use is the largest source of residential carbon. Here is how to measure and cut yours.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌍 What Is Your DFW Energy Setup?</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌍 What Is Your DFW Energy Setup?</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {energySituations.map(s => (
               <button key={s} onClick={() => setSituation(s)}
                 style={{ padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer',
-                  background: situation === s ? '#F5E642' : '#162035', color: situation === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>
+                  background: situation === s ? '#F5E642′ : '#162035', color: situation === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>
                 {s}
               </button>
             ))}
@@ -80,12 +80,12 @@ export default function DFWHVACCarbonFootprint() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
             <div style={{ background: '#162035', borderRadius: 8, padding: 16 }}>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>Annual HVAC Carbon</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>Annual HVAC Carbon</div>
               <div style={{ fontSize: 26, fontWeight: 800, color: data.color }}>{data.lbs.toLocaleString()} lbs</div>
               <div style={{ fontSize: 12, color: '#64748b' }}>CO₂ equivalent per year</div>
             </div>
             <div style={{ background: '#162035', borderRadius: 8, padding: 16 }}>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>Carbon Rating</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>Carbon Rating</div>
               <div style={{ fontSize: 26, fontWeight: 800, color: data.color }}>{data.rating}</div>
               <div style={{ fontSize: 12, color: '#64748b' }}>vs DFW average: 9,400 lbs</div>
             </div>
@@ -99,7 +99,7 @@ export default function DFWHVACCarbonFootprint() {
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📋 Carbon Reduction Action List</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📋 Carbon Reduction Action List</div>
           {actions.map((a, i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#162035', borderRadius: 8, padding: '12px 16px', marginBottom: 8 }}>
               <div>

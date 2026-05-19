@@ -113,8 +113,8 @@ export default function DFWHOATransferFeeGuide() {
             ].map(item => (
               <div key={item.label} style={{ background: '#f0f4ff', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 700, color: '#1a3a5c', fontSize: 15 }}>{item.label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#1a3a5c', margin: '4px 0' }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#666' }}>{item.note}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#1a3a5c', margin: '4px 0′ }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#666′ }}>{item.note}</div>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function DFWHOATransferFeeGuide() {
           <div style={{ display: 'grid', gap: 12 }}>
             {situations.map(s => (
               <button key={s.value} onClick={() => setSelected(s.value)}
-                style={{ padding: '14px 18px', borderRadius: 8, border: selected === s.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: selected === s.value ? '#e8f0fb' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === s.value ? 600 : 400, color: '#333' }}>
+                style={{ padding: '14px 18px', borderRadius: 8, border: selected === s.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: selected === s.value ? '#e8f0fb' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === s.value ? 600 : 400, color: '#333′ }}>
                 {s.label}
               </button>
             ))}

@@ -55,16 +55,16 @@ export default function DFWHomeValueByZip() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: 14, alignItems: 'flex-end' }}>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Max Budget</label>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 450000" style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 450000″ style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Min School Rating</label>
               <select value={minSchool} onChange={e => setMinSchool(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15 }}>
-                <option value="0">Any Rating</option>
-                <option value="7">7+ (Good)</option>
-                <option value="8">8+ (Great)</option>
-                <option value="9">9+ (Excellent)</option>
-                <option value="10">10 (Top Rated)</option>
+                <option value="0″>Any Rating</option>
+                <option value="7″>7+ (Good)</option>
+                <option value="8″>8+ (Great)</option>
+                <option value="9″>9+ (Excellent)</option>
+                <option value="10″>10 (Top Rated)</option>
               </select>
             </div>
             <button onClick={runFilter} style={{ background: '#0066cc', color: '#fff', border: 'none', borderRadius: 8, padding: '11px 24px', fontSize: 15, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap' }}>Filter ZIPs</button>
@@ -98,7 +98,7 @@ export default function DFWHomeValueByZip() {
               </thead>
               <tbody>
                 {ZIPS.map((z, i) => (
-                  <tr key={z.zip} style={{ background: i % 2 === 0 ? '#f9f9f9' : '#fff', borderBottom: '1px solid #eee' }}>
+                  <tr key={z.zip} style={{ background: i % 2 === 0 ? '#f9f9f9′ : '#fff', borderBottom: '1px solid #eee' }}>
                     <td style={{ padding: '11px 14px', fontWeight: 700, color: '#0066cc' }}>{z.zip}</td>
                     <td style={{ padding: '11px 14px' }}>{z.city}</td>
                     <td style={{ padding: '11px 14px', fontWeight: 700 }}>{fmt(z.median)}</td>

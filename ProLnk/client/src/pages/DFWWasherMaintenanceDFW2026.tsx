@@ -34,7 +34,7 @@ export default function DFWWasherMaintenanceDFW2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 28 }}>
           {[["🧼","Monthly Affresh Cycle","Run Affresh tablet on hottest cycle empty. DFW hard water + detergent residue builds fast."],["💧","Supply Line Check","Inspect braided supply lines every 2 years. Replace every 5 years — DFW water pressure fluctuates and weakens rubber."],["🌫️","Front-Load Gasket","Wipe DRY after every load. DFW humidity + trapped moisture = black mold within weeks if neglected."],["⚖️","Level Monthly","DFW clay soil shifts foundations. Check and re-level all 4 feet every 3 months to prevent bearing wear."]].map(([icon, title, desc]) => (
-            <div key={title as string} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
+            <div key={title as string} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{title as string}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc as string}</div>
@@ -62,7 +62,7 @@ export default function DFWWasherMaintenanceDFW2026() {
           {guide && <div style={{ background: '#1a3a5c', borderRadius: 8, padding: 16, color: '#e2e8f0', lineHeight: 1.6 }}>{guide}</div>}
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🏠 Need a DFW Appliance Pro?</div>
           <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10 }}>ProLnk connects you with vetted DFW technicians who know local hard water and humidity challenges.</div>
           <a href="/" style={{ color: '#F5E642', fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>Get Free Quotes →</a>

@@ -23,8 +23,8 @@ export default function DFWOutdoorPlumbingGuide2026() {
         <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Outdoor Plumbing Guide for DFW 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>From frost-free bibs to outdoor kitchens, DFW outdoor plumbing has unique requirements. Backflow preventers are legally required across most of the metroplex.</p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: '8px', padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>❄️ Post-Winter 2021 Lesson:</strong>
+        <div style={{ background: '#1e3a5f', borderRadius: '8px', padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>❄️ Post-Winter 2021 Lesson:</strong>
           <span style={{ color: '#bfdbfe' }}> The Feb 2021 freeze damaged 1 in 3 DFW homes with exterior plumbing. Frost-free bibs and proper winterization are now standard requirements for any outdoor water feature.</span>
         </div>
 
@@ -39,15 +39,15 @@ export default function DFWOutdoorPlumbingGuide2026() {
             <option value="pool">Pool fill line</option>
           </select>
           <button onClick={getReqs} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '6px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Get Requirements</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '10px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>📋 DFW Outdoor Plumbing Checklist</h3>
           {['All exterior hose bibs should be frost-free ball-type — especially post-2021','Irrigation backflow preventer required + annual test in most DFW cities','Outdoor kitchen plumbing requires a permit in virtually all DFW municipalities','Any outdoor water feature needs a shutoff inside the heated envelope of the home'].map((s,i)=>(
             <div key={i} style={{ display: 'flex', gap: '0.7rem', marginBottom: '0.5rem' }}>
-              <span style={{ color: '#F5E642' }}>✓</span>
-              <span style={{ color: '#cbd5e1' }}>{s}</span>
+              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#cbd5e1′ }}>{s}</span>
             </div>
           ))}
         </div>

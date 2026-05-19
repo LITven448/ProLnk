@@ -48,7 +48,7 @@ export default function DFWProLnkReadyToLaunch2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginBottom: '2rem' }}>
           {stakeholders.map(s => (
             <button key={s.label} onClick={() => handleStakeholder(s)}
-              style={{ background: selected === s.label ? '#F5E642' : '#1e3a5f', color: selected === s.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '.6rem 1.1rem', cursor: 'pointer', fontWeight: 600 }}>
+              style={{ background: selected === s.label ? '#F5E642′ : '#1e3a5f', color: selected === s.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '.6rem 1.1rem', cursor: 'pointer', fontWeight: 600 }}>
               {s.label}
             </button>
           ))}

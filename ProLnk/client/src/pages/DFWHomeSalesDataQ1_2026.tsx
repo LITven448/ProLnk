@@ -38,7 +38,7 @@ export default function DFWHomeSalesDataQ1_2026() {
             { label: 'Months of Inventory', value: '1.8 mo', icon: '📦' },
             { label: 'YoY Price Change', value: '+4.2%', icon: '📈' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
+            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', margin: '8px 0 4px' }}>{s.value}</div>
               <div style={{ color: '#8899BB', fontSize: 13 }}>{s.label}</div>
@@ -46,10 +46,10 @@ export default function DFWHomeSalesDataQ1_2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060' }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🏆 Fastest Moving Markets — Q1 2026</h2>
           {areas.map(a => (
-            <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1E3060' }}>
+            <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1E3060′ }}>
               <span style={{ fontWeight: 600 }}>{a.emoji} {a.name}</span>
               <span style={{ color: '#8899BB' }}>Median: <strong style={{ color: '#fff' }}>${(a.medianPrice / 1000).toFixed(0)}K</strong></span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{a.dom} days avg</span>
@@ -57,7 +57,7 @@ export default function DFWHomeSalesDataQ1_2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🔍 Budget Explorer</h2>
           <p style={{ color: '#8899BB', marginBottom: 16, fontSize: 14 }}>Slide to see what your budget gets you in DFW Q1 2026</p>
           <input type="range" min={150000} max={900000} step={25000} value={budget}

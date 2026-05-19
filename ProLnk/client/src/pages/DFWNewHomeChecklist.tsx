@@ -100,7 +100,7 @@ export default function DFWNewHomeChecklist() {
             <div style={{ background: '#F5E642', borderRadius: 99, height: 10, width: `${pct}%`, transition: 'width 0.3s' }} />
           </div>
           {pct === 100 && (
-            <p style={{ color: '#34d399', fontWeight: 700, textAlign: 'center', margin: '12px 0 0' }}>
+            <p style={{ color: '#34d399', fontWeight: 700, textAlign: 'center', margin: '12px 0 0′ }}>
               Year 1 complete! You are a pro DFW homeowner.
             </p>
           )}
@@ -135,7 +135,7 @@ export default function DFWNewHomeChecklist() {
                     }}>
                       {checked[key] ? '✓' : ''}
                     </div>
-                    <span style={{ fontSize: 14, color: checked[key] ? '#556677' : '#cdd9e5', textDecoration: checked[key] ? 'line-through' : 'none', lineHeight: 1.5 }}>
+                    <span style={{ fontSize: 14, color: checked[key] ? '#556677′ : '#cdd9e5', textDecoration: checked[key] ? ’line-through' : 'none', lineHeight: 1.5 }}>
                       {item}
                     </span>
                   </div>

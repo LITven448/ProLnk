@@ -31,7 +31,7 @@ export default function DFWHVACQuoteRedFlags() {
   }
 
   const toggle = (key: keyof typeof quoteDetails) => setQuoteDetails(prev => ({ ...prev, [key]: !prev[key] }));
-  const proceedColor = result ? (result.proceed.startsWith('DO NOT') ? '#FF6B6B' : result.proceed.startsWith('NEG') ? '#F5A623' : result.proceed.startsWith('GET') ? '#F5E642' : '#22C55E') : '#F5E642';
+  const proceedColor = result ? (result.proceed.startsWith('DO NOT') ? '#FF6B6B' : result.proceed.startsWith('NEG') ? '#F5A623′ : result.proceed.startsWith(’GET') ? '#F5E642′ : '#22C55E') : '#F5E642';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -40,14 +40,14 @@ export default function DFWHVACQuoteRedFlags() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.2 }}>HVAC Quote Red Flags Guide</h1>
         <p style={{ color: '#9AA5B8', marginBottom: '2rem', fontSize: '1rem' }}>The 10 biggest red flags in a DFW HVAC quote — and exactly what to do about each one.</p>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🚩 The 10 DFW HVAC Quote Red Flags</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🚩 The 10 DFW HVAC Quote Red Flags</h2>
         <div style={{ display: 'grid', gap: '0.85rem', marginBottom: '2.5rem' }}>
           {redFlags.map((f, i) => (
             <div key={f.id} style={{ background: '#0F2040', borderRadius: '10px', padding: '1.1rem 1.25rem', border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
                 <span style={{ fontWeight: 800, color: '#F5E642', minWidth: '24px' }}>{i + 1}.</span>
                 <span style={{ fontWeight: 700 }}>{f.flag}</span>
-                <span style={{ background: f.severity === 'CRITICAL' ? '#FF6B6B30' : f.severity === 'HIGH' ? '#F5A62330' : '#F5E64220', color: f.severity === 'CRITICAL' ? '#FF6B6B' : f.severity === 'HIGH' ? '#F5A623' : '#F5E642', fontSize: '0.72rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '20px' }}>{f.severity}</span>
+                <span style={{ background: f.severity === 'CRITICAL' ? '#FF6B6B30′ : f.severity === ’HIGH' ? '#F5A62330′ : '#F5E64220', color: f.severity === ’CRITICAL' ? '#FF6B6B' : f.severity === 'HIGH' ? '#F5A623′ : '#F5E642', fontSize: '0.72rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '20px' }}>{f.severity}</span>
               </div>
               <div style={{ fontSize: '0.84rem', color: '#9AA5B8', marginBottom: '0.3rem' }}>{f.means}</div>
               <div style={{ fontSize: '0.83rem', color: '#22C55E' }}>→ {f.action}</div>
@@ -55,7 +55,7 @@ export default function DFWHVACQuoteRedFlags() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Evaluate Your Quote</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Evaluate Your Quote</h2>
         <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '2rem' }}>
           <div style={{ fontSize: '0.9rem', color: '#9AA5B8', marginBottom: '1rem' }}>Check all that apply to your quote:</div>
           <div style={{ display: 'grid', gap: '0.7rem', marginBottom: '1.25rem' }}>

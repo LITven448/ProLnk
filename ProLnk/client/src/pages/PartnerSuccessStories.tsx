@@ -29,8 +29,8 @@ const FEATURED_STORY = {
   headline: 'How Carlos M. earned $8,400 passive income by recruiting 12 HVAC techs',
   body: 'I spent 11 years doing HVAC solo. Good money, but every dollar required me on a job site. When a buddy told me about ProLnk\’s network income, I didn\’t believe you could build real passive income in the trades — not without a franchise. I was wrong. I started by joining as a Company-tier partner and closed 8 matched jobs in the first month. Then I started talking to the other HVAC guys I knew. Within 6 months, 12 of them were active on ProLnk. Now every time one of my Level-1 techs closes a $3,000 job, I earn $90 automatically. Multiply that by 12 techs doing 4–6 jobs a month each and the math gets stupid fast. Last quarter I collected $8,400 in network overrides — while I was on vacation in Cabo.',
   keyNumbers: [
-    { icon: 'users', label: 'Active Level-1 recruits', value: '12' },
-    { icon: 'dollar', label: 'Network overrides (last quarter)', value: '$8,400' },
+    { icon: 'users', label: 'Active Level-1 recruits', value: '12′ },
+    { icon: 'dollar', label: 'Network overrides (last quarter)', value: '$8,400′ },
     { icon: 'trend', label: 'Direct commission rate (Company tier)', value: '72%' },
   ],
 };
@@ -50,9 +50,9 @@ const STORIES: Story[] = [
     keyWin: '2x close rate in first quarter',
     quote: 'The Lead Distributor sends me matched jobs before I\’d normally even know they exist. I\’m not chasing calls or paying for garbage leads anymore — the platform pre-qualifies everything.',
     stats: [
-      { label: 'Jobs closed (first 90 days)', value: '14' },
-      { label: 'Total job value', value: '$28,400' },
-      { label: 'Commission earned', value: '$20,448' },
+      { label: 'Jobs closed (first 90 days)', value: '14′ },
+      { label: 'Total job value', value: '$28,400′ },
+      { label: 'Commission earned', value: '$20,448′ },
       { label: 'Close rate', value: '58%' },
     ],
     tags: ['Lead Distributor', 'High Close Rate', 'Company Tier'],
@@ -71,10 +71,10 @@ const STORIES: Story[] = [
     keyWin: 'Stopped door-knocking entirely',
     quote: 'I was skeptical about the network income piece. Felt like MLM talk. But when my Level-1 recruits started closing jobs and I saw $400 show up in my dashboard without lifting a finger, it clicked.',
     stats: [
-      { label: 'Active recruits (Level 1)', value: '7' },
-      { label: 'Monthly network overrides', value: '$420' },
+      { label: 'Active recruits (Level 1)', value: '7′ },
+      { label: 'Monthly network overrides', value: '$420′ },
       { label: 'Total network job value', value: '$6,000/mo' },
-      { label: 'Days to first override', value: '18' },
+      { label: 'Days to first override', value: '18′ },
     ],
     tags: ['Network Income', 'Referral Champion', 'Passive Overrides'],
   },
@@ -92,8 +92,8 @@ const STORIES: Story[] = [
     keyWin: '$150 from a neighbor referral in 30 seconds',
     quote: 'My neighbor mentioned his panel needed upgrading. I pulled up the ProLnk app, filled in his address and what he needed, and submitted it. Thirty seconds. Two weeks later he booked the job and I earned a $150 origination commission.',
     stats: [
-      { label: 'Homes documented', value: '34' },
-      { label: 'Origination commissions earned', value: '$890' },
+      { label: 'Homes documented', value: '34′ },
+      { label: 'Origination commissions earned', value: '$890′ },
       { label: 'Time to document a home', value: '~30 sec' },
       { label: 'Projected annual origination', value: '$3,200+' },
     ],
@@ -113,10 +113,10 @@ const STORIES: Story[] = [
     keyWin: 'Eliminated the slow season entirely',
     quote: 'November and December used to kill my revenue. This year I activated ProLnk in October and had 6 matched jobs by Thanksgiving. The platform doesn\’t care what month it is — homeowners need plumbers year-round.',
     stats: [
-      { label: 'Slow-season jobs closed', value: '6' },
-      { label: 'Total job value (Nov–Dec)', value: '$8,200' },
-      { label: 'Commission earned', value: '$5,330' },
-      { label: 'Average job size', value: '$1,367' },
+      { label: 'Slow-season jobs closed', value: '6′ },
+      { label: 'Total job value (Nov–Dec)', value: '$8,200′ },
+      { label: 'Commission earned', value: '$5,330′ },
+      { label: 'Average job size', value: '$1,367′ },
     ],
     tags: ['Seasonal Coverage', 'Consistent Leads', 'Crew Tier'],
   },
@@ -134,10 +134,10 @@ const STORIES: Story[] = [
     keyWin: 'Eliminated $1,200/mo ad spend',
     quote: 'Foundation repair is a trust sale. When the homeowner already has 3 years of documented data in their Vault showing exactly what I\’m describing, the close happens in minutes, not weeks.',
     stats: [
-      { label: 'Jobs in first 60 days', value: '5' },
-      { label: 'Total job value', value: '$22,000' },
+      { label: 'Jobs in first 60 days', value: '5′ },
+      { label: 'Total job value', value: '$22,000′ },
       { label: 'Ad spend eliminated', value: '$1,200/mo' },
-      { label: 'Homes enrolled in Vault', value: '14' },
+      { label: 'Homes enrolled in Vault', value: '14′ },
     ],
     tags: ['Foundation', 'Home Health Vault', 'Company Tier'],
   },
@@ -155,9 +155,9 @@ const STORIES: Story[] = [
     keyWin: 'Built a multi-trade network in 12 months',
     quote: 'I\’ve been a GC for 19 years. I know everybody in the trades in north DFW. I gave them the same pitch I got: better leads, guaranteed commission, passive income from your own recruits. 47 active contractors later, I get override income from four levels of my network.',
     stats: [
-      { label: 'Active network contractors', value: '47' },
-      { label: 'Network levels earning overrides', value: '4' },
-      { label: 'Trades represented', value: '8' },
+      { label: 'Active network contractors', value: '47′ },
+      { label: 'Network levels earning overrides', value: '4′ },
+      { label: 'Trades represented', value: '8′ },
       { label: 'Monthly override income', value: '$3,800+' },
     ],
     tags: ['Network Builder', 'Multi-trade', '4-Level Cascade'],
@@ -187,40 +187,40 @@ export default function PartnerSuccessStories() {
   const filtered = filter === 'All' ? STORIES : STORIES.filter((s) => s.trade === filter);
 
   const iconMap: Record<string, any> = {
-    users: <Users className="h-5 w-5 text-teal-400" />,
-    dollar: <DollarSign className="h-5 w-5 text-teal-400" />,
-    trend: <TrendingUp className="h-5 w-5 text-teal-400" />,
+    users: <Users className="h-5 w-5 text-teal-400″ />,
+    dollar: <DollarSign className="h-5 w-5 text-teal-400″ />,
+    trend: <TrendingUp className="h-5 w-5 text-teal-400″ />,
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
-      <div className="container max-w-4xl mx-auto px-4 py-10 space-y-10">
+    <div className="min-h-screen bg-slate-950″>
+      <div className="container max-w-4xl mx-auto px-4 py-10 space-y-10″>
 
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <Award className="h-6 w-6 text-teal-400" />
+          <h1 className="text-2xl font-bold text-white flex items-center gap-2″>
+            <Award className="h-6 w-6 text-teal-400″ />
             Partner Success Stories
           </h1>
-          <p className="text-slate-400 mt-1">
+          <p className="text-slate-400 mt-1″>
             Real DFW pros. Real ProLnk results. Their words, not ours.
           </p>
         </div>
 
         {/* Featured Story */}
         <div className="rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-950/60 to-slate-800/60 overflow-hidden">
-          <div className="p-6 border-b border-teal-500/20">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="p-6 border-b border-teal-500/20″>
+            <div className="flex items-center gap-2 mb-4″>
               <span className="text-xs font-semibold uppercase tracking-widest text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2.5 py-0.5 rounded-full">
                 Featured Story
               </span>
             </div>
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-400 to-teal-700 flex items-center justify-center text-white font-bold text-base shrink-0">
+            <div className="flex items-start gap-4 mb-4″>
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-400 to-teal-700 flex items-center justify-center text-white font-bold text-base shrink-0″>
                 {FEATURED_STORY.avatar}
               </div>
               <div>
-                <div className="flex flex-wrap items-center gap-2 mb-1">
+                <div className="flex flex-wrap items-center gap-2 mb-1″>
                   <span className="text-white font-semibold text-lg">{FEATURED_STORY.name}</span>
                   <span className="text-slate-500 text-sm">{FEATURED_STORY.trade} · {FEATURED_STORY.location}</span>
                   <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${TIER_COLORS[FEATURED_STORY.tier] ?? ''}`}>
@@ -232,11 +232,11 @@ export default function PartnerSuccessStories() {
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">{FEATURED_STORY.body}</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-teal-500/20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-teal-500/20″>
             {FEATURED_STORY.keyNumbers.map((kn) => (
-              <div key={kn.label} className="p-5 flex flex-col items-center text-center gap-1">
+              <div key={kn.label} className="p-5 flex flex-col items-center text-center gap-1″>
                 {iconMap[kn.icon]}
-                <div className="text-2xl font-bold text-white mt-1">{kn.value}</div>
+                <div className="text-2xl font-bold text-white mt-1″>{kn.value}</div>
                 <div className="text-xs text-slate-500 leading-snug">{kn.label}</div>
               </div>
             ))}
@@ -245,18 +245,18 @@ export default function PartnerSuccessStories() {
 
         {/* Video Testimonial Placeholder */}
         <div className="rounded-2xl border border-slate-700 bg-slate-800/40 overflow-hidden">
-          <div className="p-5 border-b border-slate-700/60">
+          <div className="p-5 border-b border-slate-700/60″>
             <h2 className="text-white font-semibold text-base">Watch: Carlos explains the override model in 90 seconds</h2>
-            <p className="text-slate-500 text-sm mt-0.5">Video testimonial — DFW Founding Network Partner</p>
+            <p className="text-slate-500 text-sm mt-0.5″>Video testimonial — DFW Founding Network Partner</p>
           </div>
           <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-teal-950/30 to-slate-900 flex items-center justify-center cursor-pointer group">
-            <div className="relative z-10 flex flex-col items-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-teal-500/90 group-hover:bg-teal-400/90 transition-colors flex items-center justify-center shadow-xl shadow-teal-900/50">
-                <Play className="h-7 w-7 text-white fill-white ml-1" />
+            <div className="relative z-10 flex flex-col items-center gap-3″>
+              <div className="w-16 h-16 rounded-full bg-teal-500/90 group-hover:bg-teal-400/90 transition-colors flex items-center justify-center shadow-xl shadow-teal-900/50″>
+                <Play className="h-7 w-7 text-white fill-white ml-1″ />
               </div>
               <span className="text-slate-400 text-sm group-hover:text-white transition-colors">Video testimonial coming soon</span>
             </div>
-            <div className="absolute bottom-4 left-4 flex items-center gap-2">
+            <div className="absolute bottom-4 left-4 flex items-center gap-2″>
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-700 flex items-center justify-center text-white font-bold text-xs">CM</div>
               <div>
                 <p className="text-white text-xs font-medium">Carlos M.</p>
@@ -269,7 +269,7 @@ export default function PartnerSuccessStories() {
         {/* Filter by trade */}
         <div>
           <p className="text-slate-500 text-xs mb-2 uppercase tracking-wider font-medium">Filter by trade</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2″>
             {TRADE_FILTERS.map((t) => (
               <button
                 key={t}
@@ -287,20 +287,20 @@ export default function PartnerSuccessStories() {
         </div>
 
         {/* Stories */}
-        <div className="space-y-6">
+        <div className="space-y-6″>
           {filtered.map((story) => (
             <div
               key={story.name}
               className="rounded-2xl border border-slate-700 bg-slate-800/40 overflow-hidden"
             >
               {/* Story header */}
-              <div className="p-6 border-b border-slate-700/60">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white font-bold text-sm shrink-0">
+              <div className="p-6 border-b border-slate-700/60″>
+                <div className="flex items-start gap-4 mb-4″>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white font-bold text-sm shrink-0″>
                     {story.avatar}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <div className="flex-1 min-w-0″>
+                    <div className="flex flex-wrap items-center gap-2 mb-1″>
                       <span className="text-white font-semibold">{story.name}</span>
                       <span className="text-slate-500 text-sm">{story.trade} · {story.city}</span>
                       <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${TIER_COLORS[story.tier] ?? ''}`}>
@@ -311,7 +311,7 @@ export default function PartnerSuccessStories() {
                 </div>
 
                 {/* Before / Turning / Current */}
-                <div className="space-y-3 mb-4">
+                <div className="space-y-3 mb-4″>
                   <div>
                     <span className="text-xs text-red-400 font-semibold uppercase tracking-wider">Before ProLnk</span>
                     <p className="text-slate-400 text-sm mt-1 leading-relaxed">{story.before}</p>
@@ -326,15 +326,15 @@ export default function PartnerSuccessStories() {
                   </div>
                 </div>
 
-                <blockquote className="text-slate-300 text-sm leading-relaxed border-l-4 border-yellow-500/60 pl-4 italic bg-yellow-500/5 rounded-r-lg py-2 pr-3">
+                <blockquote className="text-slate-300 text-sm leading-relaxed border-l-4 border-yellow-500/60 pl-4 italic bg-yellow-500/5 rounded-r-lg py-2 pr-3″>
                   "{story.quote}"
                 </blockquote>
 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-4″>
                   {story.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2 py-0.5 rounded-full bg-slate-700/60 text-slate-400 border border-slate-700"
+                      className="text-xs px-2 py-0.5 rounded-full bg-slate-700/60 text-slate-400 border border-slate-700″
                     >
                       {tag}
                     </span>
@@ -343,7 +343,7 @@ export default function PartnerSuccessStories() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-slate-700/60">
+              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-slate-700/60″>
                 {story.stats.map((stat) => (
                   <div key={stat.label} className="p-4 text-center">
                     <div className="text-xl font-bold text-white">{stat.value}</div>
@@ -357,10 +357,10 @@ export default function PartnerSuccessStories() {
 
         {/* Share your story */}
         <div className="rounded-2xl border border-teal-500/20 bg-teal-500/5 overflow-hidden">
-          <div className="p-6 border-b border-teal-500/10">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="rounded-lg p-2 bg-teal-500/10 border border-teal-500/20">
-                <Send className="h-4 w-4 text-teal-400" />
+          <div className="p-6 border-b border-teal-500/10″>
+            <div className="flex items-center gap-3 mb-2″>
+              <div className="rounded-lg p-2 bg-teal-500/10 border border-teal-500/20″>
+                <Send className="h-4 w-4 text-teal-400″ />
               </div>
               <h2 className="text-white font-bold text-lg">Share Your Story</h2>
             </div>
@@ -370,54 +370,54 @@ export default function PartnerSuccessStories() {
             </p>
           </div>
 
-          <div className="p-6">
+          <div className="p-6″>
             {submitted ? (
               <div className="flex flex-col items-center gap-3 py-6 text-center">
-                <CheckCircle className="h-10 w-10 text-teal-400" />
+                <CheckCircle className="h-10 w-10 text-teal-400″ />
                 <p className="text-white font-semibold">Story submitted — thank you!</p>
                 <p className="text-slate-400 text-sm">
                   Our team will reach out within 3 business days if we select your story for the platform.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4″>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4″>
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1.5">Your Name</label>
+                    <label className="block text-xs font-medium text-slate-400 mb-1.5″>Your Name</label>
                     <input
                       required
                       type="text"
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       placeholder="e.g. Marcus T."
-                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-teal-500"
+                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-teal-500″
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1.5">Trade</label>
+                    <label className="block text-xs font-medium text-slate-400 mb-1.5″>Trade</label>
                     <input
                       required
                       type="text"
                       value={form.trade}
                       onChange={(e) => setForm((f) => ({ ...f, trade: e.target.value }))}
                       placeholder="e.g. HVAC, Roofing, Plumbing"
-                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-teal-500"
+                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-teal-500″
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1.5">Email</label>
+                  <label className="block text-xs font-medium text-slate-400 mb-1.5″>Email</label>
                   <input
                     required
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                     placeholder="your@email.com"
-                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-teal-500"
+                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-teal-500″
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1.5">
+                  <label className="block text-xs font-medium text-slate-400 mb-1.5″>
                     Your Story <span className="text-slate-600 font-normal">(what results did ProLnk help you achieve?)</span>
                   </label>
                   <textarea
@@ -434,7 +434,7 @@ export default function PartnerSuccessStories() {
                   className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-teal-500 hover:bg-teal-400 text-white text-sm font-medium transition-colors"
                 >
                   Submit My Story
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4″ />
                 </button>
               </form>
             )}
@@ -443,14 +443,14 @@ export default function PartnerSuccessStories() {
 
         {/* CTA */}
         <div className="rounded-xl border border-slate-700 bg-slate-800/40 p-6 text-center">
-          <p className="text-white font-semibold mb-1">Ready to start your own story?</p>
-          <p className="text-slate-400 text-sm mb-4">
+          <p className="text-white font-semibold mb-1″>Ready to start your own story?</p>
+          <p className="text-slate-400 text-sm mb-4″>
             The Founding Network waitlist closes at 500 approvals. Secure your spot today.
           </p>
           <Link href="/apply">
             <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium transition-colors">
               Apply to Founding Network
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4″ />
             </button>
           </Link>
         </div>

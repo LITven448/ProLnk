@@ -55,7 +55,7 @@ export default function DFWIrrigationBackflowDFW2026() {
             {dfwCities.map(c => <option key={c}>{c}</option>)}
           </select>
           {guide && (
-            <div style={{ background: '#162035', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162035', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>🏙️ {city} Backflow Requirements</div>
                 <div style={{ background: '#10B981', color: '#FFFFFF', borderRadius: 6, padding: '4px 12px', fontSize: 12, fontWeight: 700 }}>✅ Required</div>

@@ -44,17 +44,17 @@ export default function DFWHVACFilterTypeGuide() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Get Your DFW Filter Recommendation</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Get Your DFW Filter Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Primary Health Concern</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Primary Health Concern</label>
               <select value={concern} onChange={e => setConcern(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select concern...</option>
                 {concerns.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>System Age</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>System Age</label>
               <select value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select age...</option>
                 {ages.map(a => <option key={a} value={a}>{a}</option>)}
@@ -62,7 +62,7 @@ export default function DFWHVACFilterTypeGuide() {
             </div>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>✅ Recommended: {rec.filter}</div>
               <div style={{ color: '#94a3b8', marginBottom: 6 }}>Change frequency: <span style={{ color: '#fff' }}>{rec.change}</span></div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{rec.note}</div>

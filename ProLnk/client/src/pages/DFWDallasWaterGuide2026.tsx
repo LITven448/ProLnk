@@ -5,7 +5,7 @@ const issues = [
   { id: 'quality', label: '🧪 Water Quality', contact: '214-670-3155', process: 'Dallas water averages 300 TDS (total dissolved solids) — slightly hard. Annual water quality report at dallaswater.org. For specific concerns, call the lab at 214-670-3155. Free lead testing for homes built before 1986.' },
   { id: 'leak', label: '💧 Report a Leak', contact: '214-651-1441', process: 'Report street or main line leaks 24/7 at 214-651-1441. For leaks on your property side of the meter, you are responsible — call a licensed plumber. Check your meter box for leaks: open lid and look for spinning dial when all water is off.' },
   { id: 'watering', label: '🌿 Watering Restrictions', contact: 'dallaswater.org', process: 'Dallas enforces Stage 1-4 water restrictions during drought. Stage 1 (currently): odd addresses water Tue/Thu/Sat, even addresses water Wed/Fri/Sun. No watering 10am-6pm. Violators face $250+ fines.' },
-  { id: 'newservice', label: '🏗️ New Service Connection', contact: '214-651-1441', process: 'For additions or new construction, apply online at dallaswater.org or call. Meter installation requires permit and licensed plumber. Tap fee based on meter size: 3/4" meter = ~$2,400 tap fee.' },
+  { id: 'newservice', label: '🏗️ New Service Connection', contact: '214-651-1441', process: 'For additions or new construction, apply online at dallaswater.org or call. Meter installation requires permit and licensed plumber. Tap fee based on meter size: 3/4″ meter = ~$2,400 tap fee.' },
 ];
 
 export default function DFWDallasWaterGuide2026() {
@@ -45,14 +45,14 @@ export default function DFWDallasWaterGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {issues.map(n => (
             <button key={n.id} onClick={() => setSelected(selected === n.id ? null : n.id)}
-              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220' : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220′ : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
               {n.label}
             </button>
           ))}
         </div>
 
         {active && (
-          <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>{active.label}</h3>
             <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.6, margin: '0 0 12px' }}>{active.process}</p>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>

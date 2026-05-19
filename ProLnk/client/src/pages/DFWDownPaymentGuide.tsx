@@ -44,7 +44,7 @@ export default function DFWDownPaymentGuide() {
   ];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DFW BUYER EDUCATION</div>
@@ -52,13 +52,13 @@ export default function DFWDownPaymentGuide() {
           <p style={{ color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>DFW median home price is ~$390K. Here's exactly what each down payment option costs — and what assistance is available.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>🧮 Compare Your Down Payment Options</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 20 }}>Enter your available savings and target price to see which scenarios you can afford.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
-              { label: 'Available Savings ($)', val: savings, set: setSavings, ph: '25000' },
-              { label: 'Target Home Price ($)', val: targetPrice, set: setTargetPrice, ph: '390000' },
+              { label: 'Available Savings ($)', val: savings, set: setSavings, ph: '25000′ },
+              { label: 'Target Home Price ($)', val: targetPrice, set: setTargetPrice, ph: '390000′ },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>{f.label}</label>
@@ -73,7 +73,7 @@ export default function DFWDownPaymentGuide() {
               <div style={{ fontSize: 13, color: '#64748b', marginBottom: 12 }}>Closing costs estimated at ~${result.closingCosts.toLocaleString()} (3% of price). Taxes: ${result.taxes}/mo. Insurance: ${result.insurance}/mo.</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {result.scenarios.map((s: any) => (
-                  <div key={s.name} style={{ background: s.canAfford ? '#f0fdf4' : '#f8fafc', borderRadius: 10, padding: 18, border: s.canAfford ? '2px solid #86efac' : '1px solid #e2e8f0' }}>
+                  <div key={s.name} style={{ background: s.canAfford ? '#f0fdf4′ : '#f8fafc', borderRadius: 10, padding: 18, border: s.canAfford ? '2px solid #86efac' : '1px solid #e2e8f0' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                       <div>
                         <div style={{ fontWeight: 700, fontSize: 16 }}>{s.name} {s.canAfford ? '✅' : '❌'}</div>
@@ -81,7 +81,7 @@ export default function DFWDownPaymentGuide() {
                       </div>
                       <div style={{ textAlign: 'right' }}>
                         <div style={{ fontSize: 20, fontWeight: 800 }}>${s.totalMonthly.toLocaleString()}/mo</div>
-                        <div style={{ fontSize: 12, color: '#94a3b8' }}>Down: ${s.dp.toLocaleString()} + Closing: ${result.closingCosts.toLocaleString()}</div>
+                        <div style={{ fontSize: 12, color: '#94a3b8′ }}>Down: ${s.dp.toLocaleString()} + Closing: ${result.closingCosts.toLocaleString()}</div>
                       </div>
                     </div>
                     {s.pmi > 0 && <div style={{ marginTop: 8, fontSize: 13, color: '#b45309', background: '#fef9c3', borderRadius: 6, padding: '6px 12px', display: 'inline-block' }}>⚠️ PMI: ${s.pmi}/mo until 20% equity reached</div>}
@@ -92,14 +92,14 @@ export default function DFWDownPaymentGuide() {
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #e2e8f0′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🤝 Down Payment Assistance Programs</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             {programs.map(p => (
-              <div key={p.name} style={{ background: '#f8fafc', borderRadius: 10, padding: 18, border: '1px solid #e2e8f0' }}>
+              <div key={p.name} style={{ background: '#f8fafc', borderRadius: 10, padding: 18, border: '1px solid #e2e8f0′ }}>
                 <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{p.name}</div>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 6 }}>Offered by: {p.org}</div>
-                <div style={{ fontSize: 14, color: '#0A1628' }}>🎁 {p.benefit}</div>
+                <div style={{ fontSize: 14, color: '#0A1628′ }}>🎁 {p.benefit}</div>
               </div>
             ))}
           </div>

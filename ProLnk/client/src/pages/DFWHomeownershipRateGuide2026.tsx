@@ -25,7 +25,7 @@ export default function DFWHomeownershipRateGuide2026() {
           {[['🇺🇸','65%','National avg ownership'],['🏙️','61%','DFW metro avg ownership'],['🏆','78%','Frisco — highest in DFW']].map(([icon,val,label],i)=>(
             <div key={i} style={{ background: '#0F2340', borderRadius: 10, padding: '0.9rem', textAlign: 'center', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: '1.4rem' }}>{icon}</div>
-              <div style={{ fontWeight: 800, fontSize: '1.5rem', color: '#F5E642' }}>{val}</div>
+              <div style={{ fontWeight: 800, fontSize: '1.5rem', color: '#F5E642′ }}>{val}</div>
               <div style={{ fontSize: '0.75rem', color: '#8899AA' }}>{label}</div>
             </div>
           ))}
@@ -33,10 +33,10 @@ export default function DFWHomeownershipRateGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '0.6rem', marginBottom: '1.5rem', marginTop: '1.25rem' }}>
           {counties.map(c => (
-            <button key={c.id} onClick={() => setActive(c.id)} style={{ background: active === c.id ? '#F5E642' : '#0F2340', color: active === c.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === c.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.8rem 0.3rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.8rem' }}>
+            <button key={c.id} onClick={() => setActive(c.id)} style={{ background: active === c.id ? '#F5E642′ : '#0F2340', color: active === c.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === c.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.8rem 0.3rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.8rem' }}>
               <div style={{ fontSize: '1.4rem' }}>{c.icon}</div>
               <div>{c.label.replace(' County','')}</div>
-              <div style={{ fontSize: '1.1rem', color: active === c.id ? '#0A1628' : '#F5E642', marginTop: '0.2rem' }}>{c.rate}</div>
+              <div style={{ fontSize: '1.1rem', color: active === c.id ? '#0A1628′ : '#F5E642', marginTop: '0.2rem' }}>{c.rate}</div>
             </button>
           ))}
         </div>
@@ -47,7 +47,7 @@ export default function DFWHomeownershipRateGuide2026() {
               <h2 style={{ margin: 0, color: '#F5E642', fontSize: '1.4rem' }}>{selected.icon} {selected.label} — {selected.rate} ownership</h2>
               <p style={{ margin: 0, color: '#8899AA', fontSize: '0.9rem' }}>{selected.cities}</p>
             </div>
-            <div style={{ background: selected.verdict === 'Buy' ? '#00C853' : '#FF9800', color: '#0A1628', borderRadius: 8, padding: '0.3rem 0.8rem', fontWeight: 700, fontSize: '0.85rem' }}>{selected.verdict}</div>
+            <div style={{ background: selected.verdict === 'Buy' ? '#00C853′ : '#FF9800', color: '#0A1628', borderRadius: 8, padding: '0.3rem 0.8rem', fontWeight: 700, fontSize: '0.85rem' }}>{selected.verdict}</div>
           </div>
           <div style={{ display: 'grid', gap: '0.6rem' }}>
             {selected.data.map((item, i) => (

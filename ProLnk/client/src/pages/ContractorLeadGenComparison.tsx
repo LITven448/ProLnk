@@ -120,7 +120,7 @@ export default function ContractorLeadGenComparison() {
                 <button
                   key={trade}
                   onClick={() => setSelectedTrade(trade)}
-                  style={{ padding: '9px 18px', borderRadius: 8, border: '2px solid', borderColor: selectedTrade === trade ? '#F5E642' : 'rgba(255,255,255,0.2)', background: selectedTrade === trade ? '#F5E642' : 'transparent', color: selectedTrade === trade ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}
+                  style={{ padding: '9px 18px', borderRadius: 8, border: '2px solid', borderColor: selectedTrade === trade ? '#F5E642′ : ’rgba(255,255,255,0.2)', background: selectedTrade === trade ? '#F5E642′ : ’transparent', color: selectedTrade === trade ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}
                 >
                   {trade}
                 </button>
@@ -152,7 +152,7 @@ export default function ContractorLeadGenComparison() {
                       {platform.recommended && <span style={{ fontSize: 11, fontWeight: 800, background: '#F5E642', color: '#0A1628', padding: '2px 8px', borderRadius: 20 }}>RECOMMENDED</span>}
                       {recommended.includes(platform.name) && !platform.recommended && <span style={{ fontSize: 11, fontWeight: 700, background: 'rgba(245,230,66,0.2)', color: '#F5E642', padding: '2px 8px', borderRadius: 20 }}>GOOD FOR {selectedTrade.toUpperCase()}</span>}
                     </div>
-                    <div style={{ fontSize: 14, color: '#a0aec0' }}>{platform.costModel} · {platform.monthlyCost}</div>
+                    <div style={{ fontSize: 14, color: '#a0aec0′ }}>{platform.costModel} · {platform.monthlyCost}</div>
                   </div>
                   <span style={{ color: '#555', fontSize: 20 }}>{highlightedPlatform === platform.name ? '▲' : '▼'}</span>
                 </div>
@@ -162,12 +162,12 @@ export default function ContractorLeadGenComparison() {
                       {comparisonFields.map(field => (
                         <div key={field} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 8, padding: '10px 14px' }}>
                           <div style={{ fontSize: 12, color: '#888', fontWeight: 700, marginBottom: 4 }}>{fieldLabels[field]}</div>
-                          <div style={{ fontSize: 14, color: '#e0e6f0' }}>{platform[field]}</div>
+                          <div style={{ fontSize: 14, color: '#e0e6f0′ }}>{platform[field]}</div>
                         </div>
                       ))}
                     </div>
                     <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '12px 16px', fontSize: 14, color: '#c0c8d8', lineHeight: 1.6 }}>
-                      <strong style={{ color: '#F5E642' }}>Our Take: </strong>{platform.verdict}
+                      <strong style={{ color: '#F5E642′ }}>Our Take: </strong>{platform.verdict}
                     </div>
                   </div>
                 )}
@@ -198,11 +198,11 @@ export default function ContractorLeadGenComparison() {
                   { name: 'Google LSA', monthly: '$800', annual: '$9,600', close: '~45%', costPerJob: '$80–160', highlight: false },
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: row.highlight ? 'rgba(245,230,66,0.06)' : 'transparent' }}>
-                    <td style={{ padding: '12px 16px', fontWeight: row.highlight ? 700 : 400, color: row.highlight ? '#F5E642' : '#e0e6f0' }}>{row.name}{row.highlight ? ' ⭐' : ''}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: '#a0aec0' }}>{row.monthly}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: '#a0aec0' }}>{row.annual}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: row.highlight ? '#4ade80' : '#a0aec0' }}>{row.close}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 700, color: row.highlight ? '#F5E642' : '#a0aec0' }}>{row.costPerJob}</td>
+                    <td style={{ padding: '12px 16px', fontWeight: row.highlight ? 700 : 400, color: row.highlight ? '#F5E642′ : '#e0e6f0' }}>{row.name}{row.highlight ? ' ⭐' : ''}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: '#a0aec0′ }}>{row.monthly}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: '#a0aec0′ }}>{row.annual}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: row.highlight ? '#4ade80′ : '#a0aec0' }}>{row.close}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 700, color: row.highlight ? '#F5E642′ : '#a0aec0' }}>{row.costPerJob}</td>
                   </tr>
                 ))}
               </tbody>

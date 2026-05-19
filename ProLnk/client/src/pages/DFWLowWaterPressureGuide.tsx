@@ -3,10 +3,10 @@ import { useState } from 'react';
 type Issue = { label: string; location: string };
 
 const diagnose = (issue: string, location: string) => {
-  if (location === 'whole-home') return { cause: 'Pressure Reducing Valve (PRV) failure or city supply issue', fix: 'Test PRV at main shutoff. Normal DFW city pressure: 50-80 PSI. PRV typically located near main shutoff — adjust clockwise to increase pressure.', urgency: 'medium', diy: '$0-15 (adjustment) or $200-400 (PRV replacement)', plumber: '$250-500' };
+  if (location === 'whole-home') return { cause: 'Pressure Reducing Valve (PRV) failure or city supply issue', fix: 'Test PRV at main shutoff. Normal DFW city pressure: 50-80 PSI. PRV typically located near main shutoff — adjust clockwise to increase pressure.', urgency: 'medium', diy: '$0-15 (adjustment) or $200-400 (PRV replacement)', plumber: '$250-500′ };
   if (location === 'one-room' && issue === 'mineral') return { cause: 'Mineral buildup in aerators and shower heads (DFW hard water)', fix: 'Unscrew aerators and shower heads. Soak in white vinegar 4-8 hours. DFW water leaves calcium scale — do this every 6 months.', urgency: 'low', diy: '$0-5', plumber: 'Not needed' };
-  if (location === 'one-fixture') return { cause: 'Clogged aerator or cartridge (DFW calcium deposits)', fix: 'Remove and soak aerator in vinegar overnight. If persistent, replace faucet cartridge — DFW minerals score cartridge seats over time.', urgency: 'low', diy: '$5-30', plumber: '$85-150' };
-  return { cause: 'Possible slab leak or supply line issue', fix: 'Turn off all fixtures and watch water meter. If meter moves — you have a leak. DFW clay soil shifts cause slab leaks in 10-20 year homes.', urgency: 'high', diy: 'Call plumber immediately', plumber: '$1,200-4,000' };
+  if (location === 'one-fixture') return { cause: 'Clogged aerator or cartridge (DFW calcium deposits)', fix: 'Remove and soak aerator in vinegar overnight. If persistent, replace faucet cartridge — DFW minerals score cartridge seats over time.', urgency: 'low', diy: '$5-30', plumber: '$85-150′ };
+  return { cause: 'Possible slab leak or supply line issue', fix: 'Turn off all fixtures and watch water meter. If meter moves — you have a leak. DFW clay soil shifts cause slab leaks in 10-20 year homes.', urgency: 'high', diy: 'Call plumber immediately', plumber: '$1,200-4,000′ };
 };
 
 export default function DFWLowWaterPressureGuide() {
@@ -18,8 +18,8 @@ export default function DFWLowWaterPressureGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW PLUMBING GUIDE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>💧 Low Water Pressure<br /><span style={{ color: '#F5E642' }}>Dallas-Fort Worth Guide</span></h1>
-        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW homeowners face unique pressure issues: PRV failures in aging suburbs, heavy mineral buildup in aerators, and clay-soil-related slab leaks. Normal household pressure is <strong style={{ color: '#F5E642' }}>50-80 PSI</strong> — below 40 PSI causes noticeable problems.</p>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>💧 Low Water Pressure<br /><span style={{ color: '#F5E642′ }}>Dallas-Fort Worth Guide</span></h1>
+        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW homeowners face unique pressure issues: PRV failures in aging suburbs, heavy mineral buildup in aerators, and clay-soil-related slab leaks. Normal household pressure is <strong style={{ color: '#F5E642′ }}>50-80 PSI</strong> — below 40 PSI causes noticeable problems.</p>
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>📊 DFW PRESSURE RANGES</div>

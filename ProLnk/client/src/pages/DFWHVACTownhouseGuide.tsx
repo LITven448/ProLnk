@@ -42,7 +42,7 @@ export default function DFWHVACTownhouseGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Townhomes in DFW</h1>
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-          DFW townhomes are one of the fastest-growing housing types in the metroplex. Shared walls, multiple floors, and narrow footprints create HVAC challenges that don't exist in detached homes. The right solution depends on your specific layout and what you're experiencing.
+          DFW townhomes are one of the fastest-growing housing types in the metroplex. Shared walls, multiple floors, and narrow footprints create HVAC challenges that don't exist in detached homes. The right solution depends on your specific layout and what you’re experiencing.
         </p>
 
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '14px 18px', marginBottom: 28, fontSize: 14, fontWeight: 600 }}>
@@ -50,12 +50,12 @@ export default function DFWHVACTownhouseGuide() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏙️ Get Your Recommendation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏙️ Get Your Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>TOWNHOME LAYOUT</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {layouts.map(l => (
-                <button key={l} onClick={() => setLayout(l)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: layout === l ? '#F5E642' : '#1e3a5f', background: layout === l ? '#F5E642' : 'transparent', color: layout === l ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{l}</button>
+                <button key={l} onClick={() => setLayout(l)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: layout === l ? '#F5E642′ : '#1e3a5f', background: layout === l ? '#F5E642' : ’transparent', color: layout === l ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{l}</button>
               ))}
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function DFWHVACTownhouseGuide() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>YOUR ISSUE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {issues.map(i => (
-                <button key={i} onClick={() => setIssue(i)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: issue === i ? '#F5E642' : '#1e3a5f', background: issue === i ? '#F5E642' : 'transparent', color: issue === i ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{i}</button>
+                <button key={i} onClick={() => setIssue(i)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: issue === i ? '#F5E642′ : '#1e3a5f', background: issue === i ? '#F5E642' : ’transparent', color: issue === i ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{i}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Recommendation</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result}</div>
             </div>

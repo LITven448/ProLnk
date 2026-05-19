@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const laws = [
   {
-    name: "Texas Property Code Chapter 209",
+    name: "Texas Property Code Chapter 209″,
     short: "HOA Law",
     emoji: "🏘️",
     applies: "HOA governance and homeowner rights",
@@ -100,7 +100,7 @@ const laws = [
 ];
 
 const concerns = [
-  { concern: "My HOA is trying to fine me", law: "Texas Property Code Chapter 209" },
+  { concern: "My HOA is trying to fine me", law: "Texas Property Code Chapter 209″ },
   { concern: "A contractor deceived or defrauded me", law: "Texas Deceptive Trade Practices Act (DTPA)" },
   { concern: "I got unsolicited contractor texts after a storm", law: "TCPA (Telephone Consumer Protection Act)" },
   { concern: "My new construction home has defects", law: "Texas Lemon Law (Home Warranty Version)" },
@@ -117,17 +117,17 @@ export default function DFWTexasHomeLawGuide2026() {
   const detailLaw = laws.find(l => l.name === selectedLaw);
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "24px" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>📚</div>
-          <h1 style={{ color: "#F5E642", fontSize: 28, fontWeight: 700, margin: "8px 0 4px" }}>DFW Texas Homeowner Law Guide 2026</h1>
-          <p style={{ color: "#94a3b8", fontSize: 14 }}>Key Texas laws every DFW homeowner should know — HOA, DTPA, RESPA, TCPA, and more</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 28, fontWeight: 700, margin: "8px 0 4px" }}>DFW Texas Homeowner Law Guide 2026</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 14 }}>Key Texas laws every DFW homeowner should know — HOA, DTPA, RESPA, TCPA, and more</p>
         </div>
 
         <div style={{ display: "flex", gap: 8, marginBottom: 24, justifyContent: "center" }}>
           {["laws", "lookup"].map(tab => (
-            <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: "8px 18px", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13, backgroundColor: activeTab === tab ? "#F5E642" : "#1e2d45", color: activeTab === tab ? "#0A1628" : "#94a3b8" }}>
+            <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: "8px 18px", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13, backgroundColor: activeTab === tab ? "#F5E642″ : "#1e2d45", color: activeTab === tab ? "#0A1628" : "#94a3b8" }}>
               {tab === "laws" ? "📋 All Laws" : "🔍 Concern Lookup"}
             </button>
           ))}
@@ -137,20 +137,20 @@ export default function DFWTexasHomeLawGuide2026() {
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {laws.map((law, i) => (
               <div key={i}>
-                <button onClick={() => setSelectedLaw(selectedLaw === law.name ? null : law.name)} style={{ width: "100%", backgroundColor: selectedLaw === law.name ? "#1e3a5f" : "#1e2d45", borderRadius: 10, padding: 16, border: selectedLaw === law.name ? "1px solid #F5E642" : "1px solid transparent", cursor: "pointer", textAlign: "left" }}>
+                <button onClick={() => setSelectedLaw(selectedLaw === law.name ? null : law.name)} style={{ width: "100%", backgroundColor: selectedLaw === law.name ? "#1e3a5f" : "#1e2d45″, borderRadius: 10, padding: 16, border: selectedLaw === law.name ? "1px solid #F5E642" : "1px solid transparent", cursor: "pointer", textAlign: "left" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}><span style={{ fontSize: 24 }}>{law.emoji}</span><div><div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14 }}>{law.name}</div><div style={{ color: "#94a3b8", fontSize: 12 }}>{law.applies}</div></div></div>
-                    <span style={{ backgroundColor: "#0f2027", borderRadius: 6, padding: "2px 8px", color: "#60a5fa", fontSize: 11 }}>{law.short}</span>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}><span style={{ fontSize: 24 }}>{law.emoji}</span><div><div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14 }}>{law.name}</div><div style={{ color: "#94a3b8", fontSize: 12 }}>{law.applies}</div></div></div>
+                    <span style={{ backgroundColor: "#0f2027″, borderRadius: 6, padding: "2px 8px", color: "#60a5fa", fontSize: 11 }}>{law.short}</span>
                   </div>
                 </button>
                 {selectedLaw === law.name && (
-                  <div style={{ backgroundColor: "#1e2d45", borderRadius: "0 0 10px 10px", padding: 16, marginTop: -4 }}>
+                  <div style={{ backgroundColor: "#1e2d45″, borderRadius: "0 0 10px 10px", padding: 16, marginTop: -4 }}>
                     <div style={{ marginBottom: 12 }}>
-                      <div style={{ color: "#94a3b8", fontSize: 11, marginBottom: 8 }}>KEY PROVISIONS</div>
-                      <ul style={{ color: "#cbd5e1", fontSize: 13, paddingLeft: 20, margin: 0 }}>{law.keyPoints.map((pt, j) => <li key={j} style={{ marginBottom: 4 }}>{pt}</li>)}</ul>
+                      <div style={{ color: "#94a3b8″, fontSize: 11, marginBottom: 8 }}>KEY PROVISIONS</div>
+                      <ul style={{ color: "#cbd5e1″, fontSize: 13, paddingLeft: 20, margin: 0 }}>{law.keyPoints.map((pt, j) => <li key={j} style={{ marginBottom: 4 }}>{pt}</li>)}</ul>
                     </div>
-                    <div style={{ backgroundColor: "#0A1628", borderRadius: 8, padding: 10, marginBottom: 10 }}><div style={{ color: "#94a3b8", fontSize: 11, marginBottom: 4 }}>🏙️ DFW RELEVANCE</div><p style={{ color: "#60a5fa", fontSize: 13, margin: 0 }}>{law.dfwRelevance}</p></div>
-                    <div style={{ backgroundColor: "#14532d", borderRadius: 8, padding: 10 }}><div style={{ color: "#4ade80", fontSize: 11, marginBottom: 4 }}>✅ WHAT TO DO</div><p style={{ color: "#86efac", fontSize: 13, margin: 0 }}>{law.actionable}</p></div>
+                    <div style={{ backgroundColor: "#0A1628″, borderRadius: 8, padding: 10, marginBottom: 10 }}><div style={{ color: "#94a3b8", fontSize: 11, marginBottom: 4 }}>🏙️ DFW RELEVANCE</div><p style={{ color: "#60a5fa", fontSize: 13, margin: 0 }}>{law.dfwRelevance}</p></div>
+                    <div style={{ backgroundColor: "#14532d", borderRadius: 8, padding: 10 }}><div style={{ color: "#4ade80″, fontSize: 11, marginBottom: 4 }}>✅ WHAT TO DO</div><p style={{ color: "#86efac", fontSize: 13, margin: 0 }}>{law.actionable}</p></div>
                   </div>
                 )}
               </div>
@@ -159,23 +159,23 @@ export default function DFWTexasHomeLawGuide2026() {
         )}
 
         {activeTab === "lookup" && (
-          <div style={{ backgroundColor: "#1e2d45", borderRadius: 12, padding: 24 }}>
-            <h3 style={{ color: "#F5E642", marginTop: 0, fontSize: 15 }}>🔍 What's Your Legal Concern?</h3>
-            <select value={selectedConcern} onChange={e => setSelectedConcern(e.target.value)} style={{ width: "100%", padding: 12, borderRadius: 8, border: "1px solid #334155", backgroundColor: "#0A1628", color: "#fff", fontSize: 14, marginBottom: 16 }}>
+          <div style={{ backgroundColor: "#1e2d45″, borderRadius: 12, padding: 24 }}>
+            <h3 style={{ color: "#F5E642″, marginTop: 0, fontSize: 15 }}>🔍 What's Your Legal Concern?</h3>
+            <select value={selectedConcern} onChange={e => setSelectedConcern(e.target.value)} style={{ width: "100%", padding: 12, borderRadius: 8, border: "1px solid #334155″, backgroundColor: "#0A1628", color: "#fff", fontSize: 14, marginBottom: 16 }}>
               <option value="">Select your situation...</option>
               {concerns.map(c => <option key={c.concern} value={c.concern}>{c.concern}</option>)}
             </select>
             {matchedLaw && (
-              <div style={{ backgroundColor: "#0A1628", borderRadius: 10, padding: 16 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}><span style={{ fontSize: 28 }}>{matchedLaw.emoji}</span><div><div style={{ color: "#F5E642", fontWeight: 700, fontSize: 15 }}>{matchedLaw.name}</div><div style={{ color: "#94a3b8", fontSize: 12 }}>{matchedLaw.short}</div></div></div>
-                <ul style={{ color: "#cbd5e1", fontSize: 13, paddingLeft: 20, marginBottom: 12 }}>{matchedLaw.keyPoints.map((pt, i) => <li key={i} style={{ marginBottom: 4 }}>{pt}</li>)}</ul>
-                <div style={{ backgroundColor: "#14532d", borderRadius: 8, padding: 10 }}><div style={{ color: "#4ade80", fontSize: 11, fontWeight: 700, marginBottom: 4 }}>✅ YOUR NEXT STEP</div><p style={{ color: "#86efac", fontSize: 13, margin: 0 }}>{matchedLaw.actionable}</p></div>
+              <div style={{ backgroundColor: "#0A1628″, borderRadius: 10, padding: 16 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}><span style={{ fontSize: 28 }}>{matchedLaw.emoji}</span><div><div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 15 }}>{matchedLaw.name}</div><div style={{ color: "#94a3b8", fontSize: 12 }}>{matchedLaw.short}</div></div></div>
+                <ul style={{ color: "#cbd5e1″, fontSize: 13, paddingLeft: 20, marginBottom: 12 }}>{matchedLaw.keyPoints.map((pt, i) => <li key={i} style={{ marginBottom: 4 }}>{pt}</li>)}</ul>
+                <div style={{ backgroundColor: "#14532d", borderRadius: 8, padding: 10 }}><div style={{ color: "#4ade80″, fontSize: 11, fontWeight: 700, marginBottom: 4 }}>✅ YOUR NEXT STEP</div><p style={{ color: "#86efac", fontSize: 13, margin: 0 }}>{matchedLaw.actionable}</p></div>
               </div>
             )}
           </div>
         )}
 
-        <div style={{ textAlign: "center", marginTop: 32, color: "#475569", fontSize: 11 }}>ProLnk DFW · Homeowner Law Guide · 2026</div>
+        <div style={{ textAlign: "center", marginTop: 32, color: "#475569″, fontSize: 11 }}>ProLnk DFW · Homeowner Law Guide · 2026</div>
       </div>
     </div>
   );

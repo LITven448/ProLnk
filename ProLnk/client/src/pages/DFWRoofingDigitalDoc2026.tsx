@@ -43,7 +43,7 @@ export default function DFWRoofingDigitalDoc2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {stages.map(s => (
               <button key={s.id} onClick={() => { setStage(s.id); setResult(''); }}
-                style={{ background: stage === s.id ? '#F5E642' : '#1A2F4A', color: stage === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: stage === s.id ? '#F5E642′ : '#1A2F4A', color: stage === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '14px 20px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
@@ -55,7 +55,7 @@ export default function DFWRoofingDigitalDoc2026() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2139', borderRadius: 12, padding: 28, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0F2139', borderRadius: 12, padding: 28, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>📋 Your Documentation Plan</h3>
             <p style={{ lineHeight: 1.7, fontSize: 15 }}>{result}</p>
           </div>

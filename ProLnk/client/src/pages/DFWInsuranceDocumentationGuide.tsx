@@ -74,17 +74,17 @@ export default function DFWInsuranceDocumentationGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', display: 'block', marginBottom: 6 }}>Estimated Room Value ($) — optional</label>
-              <input value={valueEst} onChange={e => setValueEst(e.target.value)} placeholder="e.g. 15000" style={{ width: '100%', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 6, padding: '10px 12px', color: '#1E293B', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={valueEst} onChange={e => setValueEst(e.target.value)} placeholder="e.g. 15000″ style={{ width: '100%', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 6, padding: '10px 12px', color: '#1E293B', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <button onClick={generate} style={{ background: '#1D4ED8', color: '#fff', fontWeight: 700, fontSize: 15, padding: '12px 0', borderRadius: 8, border: 'none', cursor: 'pointer' }}>Generate Checklist</button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#F8FAFC', borderRadius: 8, padding: 18, border: '1px solid #E2E8F0' }}>
+            <div style={{ marginTop: 20, background: '#F8FAFC', borderRadius: 8, padding: 18, border: '1px solid #E2E8F0′ }}>
               <div style={{ fontWeight: 700, fontSize: 15, color: '#1D4ED8', marginBottom: 12 }}>Documentation Checklist</div>
               {result.items.map(item => (
                 <div key={item} style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'flex-start' }}>
                   <span style={{ color: '#1D4ED8', marginTop: 1 }}>☐</span>
-                  <span style={{ fontSize: 13, color: '#374151' }}>{item}</span>
+                  <span style={{ fontSize: 13, color: '#374151′ }}>{item}</span>
                 </div>
               ))}
               <div style={{ marginTop: 14, padding: '10px 14px', background: '#EFF6FF', borderRadius: 6 }}>

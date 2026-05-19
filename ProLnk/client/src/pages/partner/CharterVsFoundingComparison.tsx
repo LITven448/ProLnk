@@ -72,7 +72,7 @@ export default function CharterVsFoundingComparison() {
         <div style={{ backgroundColor: '#fff', borderRadius: 12, border: '1px solid #E2E8F0', marginBottom: 28, overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ backgroundColor: '#0A1628' }}>
+              <tr style={{ backgroundColor: '#0A1628′ }}>
                 <th style={{ textAlign: 'left', padding: '14px 20px', color: '#94A3B8', fontWeight: 600, width: '40%' }}>Feature</th>
                 <th style={{ textAlign: 'center', padding: '14px 20px', color: '#F5E642', fontWeight: 700 }}>🌟 Charter</th>
                 <th style={{ textAlign: 'center', padding: '14px 20px', color: '#fff', fontWeight: 700 }}>🔥 Founding</th>
@@ -80,7 +80,7 @@ export default function CharterVsFoundingComparison() {
             </thead>
             <tbody>
               {rows.map((row, i) => (
-                <tr key={i} style={{ backgroundColor: row.highlight ? '#FFFBEA' : i % 2 === 0 ? '#fff' : '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
+                <tr key={i} style={{ backgroundColor: row.highlight ? '#FFFBEA' : i % 2 === 0 ? '#fff' : '#F8FAFC', borderBottom: '1px solid #E2E8F0′ }}>
                   <td style={{ padding: '12px 20px', color: '#374151', fontWeight: row.highlight ? 700 : 400 }}>{row.label}</td>
                   <td style={{ padding: '12px 20px', textAlign: 'center', color: '#0A1628', fontWeight: row.highlight ? 800 : 600 }}>{row.charter}</td>
                   <td style={{ padding: '12px 20px', textAlign: 'center', color: '#0A1628', fontWeight: row.highlight ? 800 : 600 }}>{row.founding}</td>
@@ -90,7 +90,7 @@ export default function CharterVsFoundingComparison() {
           </table>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #E2E8F0' }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 6 }}>🗓️ Which tier am I in?</h2>
           <p style={{ color: '#64748B', fontSize: 13, marginTop: 0, marginBottom: 16 }}>Enter your application date to find out your tier assignment.</p>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>

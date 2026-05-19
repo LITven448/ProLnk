@@ -47,7 +47,7 @@ export default function ProLnkJobCompletionFlow() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginBottom: 32 }}>
               {steps.map((_, i) => (
-                <div key={i} style={{ width: 32, height: 32, borderRadius: '50%', background: i + 1 <= step ? '#F5E642' : '#1e3a5f', color: i + 1 <= step ? '#0A1628' : '#94a3b8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 14 }}>{i + 1}</div>
+                <div key={i} style={{ width: 32, height: 32, borderRadius: '50%', background: i + 1 <= step ? '#F5E642′ : '#1e3a5f', color: i + 1 <= step ? '#0A1628' : '#94a3b8', display: ’flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 14 }}>{i + 1}</div>
               ))}
             </div>
             <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 32, textAlign: 'center', marginBottom: 24 }}>
@@ -58,7 +58,7 @@ export default function ProLnkJobCompletionFlow() {
                 <div style={{ marginTop: 20 }}>
                   <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginBottom: 12 }}>
                     {[1,2,3,4,5].map(n => (
-                      <span key={n} onClick={() => setRating(n)} style={{ fontSize: 32, cursor: 'pointer', color: n <= rating ? '#F5E642' : '#1e3a5f', filter: 'drop-shadow(0 0 2px #000)' }}>★</span>
+                      <span key={n} onClick={() => setRating(n)} style={{ fontSize: 32, cursor: 'pointer', color: n <= rating ? '#F5E642′ : '#1e3a5f', filter: ’drop-shadow(0 0 2px #000)' }}>★</span>
                     ))}
                   </div>
                   <input value={comment} onChange={e => setComment(e.target.value)} placeholder="Optional comment..." style={{ background: '#0A1628', border: '1px solid #334', borderRadius: 8, padding: '10px 14px', color: '#fff', width: '80%', fontSize: 14 }} />

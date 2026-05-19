@@ -34,7 +34,7 @@ export default function PartnerDuplicatingGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
           {principles.map((p, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '18px', border: '1px solid #E2E8F0' }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '18px', border: '1px solid #E2E8F0′ }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{p.icon}</div>
               <div style={{ color: '#0A1628', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>{p.title}</div>
               <div style={{ color: '#64748B', fontSize: 13 }}>{p.desc}</div>
@@ -42,7 +42,7 @@ export default function PartnerDuplicatingGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>📅 Teaching Schedule</h3>
           {schedule.map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, marginBottom: 14, alignItems: 'flex-start' }}>
@@ -53,7 +53,7 @@ export default function PartnerDuplicatingGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>📊 Duplication Income Projection</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
             <div>
@@ -78,12 +78,12 @@ export default function PartnerDuplicatingGuide() {
                 ))}
               </div>
               <div style={{ borderTop: '1px solid #1E3A5F', paddingTop: 14, display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#94A3B8' }}>Total Network</span>
+                <span style={{ color: '#94A3B8′ }}>Total Network</span>
                 <span style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>{total} partners</span>
               </div>
               {monthlyIncome && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
-                  <span style={{ color: '#94A3B8' }}>Est. Monthly Override Income</span>
+                  <span style={{ color: '#94A3B8′ }}>Est. Monthly Override Income</span>
                   <span style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>${Number(monthlyIncome).toLocaleString()}</span>
                 </div>
               )}

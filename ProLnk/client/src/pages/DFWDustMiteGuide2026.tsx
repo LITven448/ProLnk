@@ -48,7 +48,7 @@ export default function DFWDustMiteGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {severities.map(s => (
               <button key={s.id} onClick={() => setSeverity(s.id === severity ? null : s.id)}
-                style={{ background: severity === s.id ? '#F5E642' : '#1e3a5f', color: severity === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: severity === s.id ? '#F5E642′ : '#1e3a5f', color: severity === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
@@ -75,7 +75,7 @@ export default function DFWDustMiteGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>March–May and October–November are peak DFW humidity months — dust mite populations spike</p>
           {['Monitor indoor humidity with a $15 hygrometer — keep below 50%','Run HVAC dehumidification mode during high-humidity spring weeks','Vacuum with HEPA-filter vacuum weekly (standard vacuums exhaust mite allergens)','Replace carpet with hard flooring in bedroom for 10x reduction in mite habitat'].map(item => (
             <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642' }}>⚠</span>
+              <span style={{ color: '#F5E642′ }}>⚠</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item}</span>
             </div>
           ))}

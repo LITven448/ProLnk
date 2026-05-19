@@ -12,7 +12,7 @@ const rebateData: RebateMap = {
   'High-Efficiency AC/Heat Pump': {
     'Oncor': { rebate: 'Oncor HVAC Efficiency Rebate', provider: 'Oncor', process: 'Contractor submits Form 4014; homeowner co-signs', amount: '$200–$1,200 based on efficiency rating' },
     'Dallas Water Utilities': { rebate: 'N/A — contact Oncor', provider: 'Oncor', process: 'See Oncor rebate program', amount: 'See Oncor above' },
-    'Reliant': { rebate: 'Reliant Home Upgrade Rebate', provider: 'Reliant', process: 'Submit AHRI certificate + invoice at reliant.com', amount: '$150–$500' },
+    'Reliant': { rebate: 'Reliant Home Upgrade Rebate', provider: 'Reliant', process: 'Submit AHRI certificate + invoice at reliant.com', amount: '$150–$500′ },
   },
   'Irrigation Controller (Weather-Based)': {
     'Dallas Water Utilities': { rebate: 'DWU WaterSense Controller Rebate', provider: 'Dallas Water Utilities', process: 'Apply at dallaswatersupply.com — requires WaterSense label', amount: '$100 per controller' },
@@ -25,7 +25,7 @@ const rebateData: RebateMap = {
     'Reliant': { rebate: 'Reliant Energy Efficiency Rebate', provider: 'Reliant', process: 'Online at reliant.com — upload purchase receipts', amount: 'Up to $50/household' },
   },
   'Insulation Upgrade': {
-    'Oncor': { rebate: 'Oncor Home Performance Rebate', provider: 'Oncor', process: 'Must use Oncor-approved contractor; pre-approval required before work starts', amount: '$0.10 per sq ft — avg $300–$600' },
+    'Oncor': { rebate: 'Oncor Home Performance Rebate', provider: 'Oncor', process: 'Must use Oncor-approved contractor; pre-approval required before work starts', amount: '$0.10 per sq ft — avg $300–$600′ },
     'Dallas Water Utilities': { rebate: 'Not applicable', provider: 'N/A', process: 'See energy utility rebates', amount: 'N/A' },
     'TXU Energy': { rebate: 'TXU Home Weatherization', provider: 'TXU Energy', process: 'Schedule a home energy audit at txu.com — rebates follow audit completion', amount: '$200–$800 based on work completed' },
   },
@@ -87,7 +87,7 @@ export default function DFWConservationRebates() {
             <div style={{ marginTop: '1.5rem', background: '#0A1628', borderRadius: 8, padding: '1.25rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.75rem' }}>{result.rebate}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                <div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Rebate amount</div><div style={{ fontWeight: 700, color: '#4ade80' }}>{result.amount}</div></div>
+                <div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Rebate amount</div><div style={{ fontWeight: 700, color: '#4ade80′ }}>{result.amount}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Administered by</div><div style={{ fontWeight: 700 }}>{result.provider}</div></div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.3rem' }}>Application process</div>

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const cities: Record<string, { waterRate: number; restrictions: string; rebates: string }> = {
-  Dallas: { waterRate: 3.10, restrictions: 'Stage 1 at <50% lake capacity', rebates: 'Smart irrigation rebate $200' },
-  Frisco: { waterRate: 4.20, restrictions: 'Stage 2 watering 2x/week summer', rebates: 'Rain sensor rebate $75' },
+  Dallas: { waterRate: 3.10, restrictions: 'Stage 1 at <50% lake capacity', rebates: 'Smart irrigation rebate $200′ },
+  Frisco: { waterRate: 4.20, restrictions: 'Stage 2 watering 2x/week summer', rebates: 'Rain sensor rebate $75′ },
   Plano: { waterRate: 3.65, restrictions: 'Stage 1 at <45% reservoir', rebates: 'Landscape audit free' },
-  McKinney: { waterRate: 3.80, restrictions: 'Odd/even day watering year-round', rebates: 'Smart controller rebate $150' },
+  McKinney: { waterRate: 3.80, restrictions: 'Odd/even day watering year-round', rebates: 'Smart controller rebate $150′ },
   Arlington: { waterRate: 3.25, restrictions: 'Stage 1 voluntary restrictions', rebates: 'WaterWise landscape rebate' },
-  'Fort Worth': { waterRate: 3.40, restrictions: 'Stage 2 limits 2x/week irrigation', rebates: 'Rain gauge rebate $25' },
-  Garland: { waterRate: 3.55, restrictions: 'Stage 1 at <40% capacity', rebates: 'Smart irrigation rebate $100' },
+  'Fort Worth': { waterRate: 3.40, restrictions: 'Stage 2 limits 2x/week irrigation', rebates: 'Rain gauge rebate $25′ },
+  Garland: { waterRate: 3.55, restrictions: 'Stage 1 at <40% capacity', rebates: 'Smart irrigation rebate $100′ },
   Irving: { waterRate: 3.30, restrictions: 'Year-round 2x/week limit', rebates: 'Water audit free' },
 };
 
@@ -41,7 +41,7 @@ export default function DFWWaterConservationGuide() {
             DFW Water Conservation Guide
           </h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>
-            DFW irrigation accounts for <strong style={{ color: '#F5E642' }}>50–70% of summer water bills</strong>. Know your city's rules and how to save.
+            DFW irrigation accounts for <strong style={{ color: '#F5E642′ }}>50–70% of summer water bills</strong>. Know your city’s rules and how to save.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function DFWWaterConservationGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {Object.keys(cities).map(c => (
               <button key={c} onClick={() => setCity(c)}
-                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: `1px solid ${city === c ? '#F5E642' : '#1E3A5F'}`, background: city === c ? '#F5E642' : '#0A1628', color: city === c ? '#0A1628' : '#E8F0FE', cursor: 'pointer', fontWeight: city === c ? 700 : 400 }}>
+                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: `1px solid ${city === c ? '#F5E642' : '#1E3A5F'}`, background: city === c ? '#F5E642′ : '#0A1628', color: city === c ? '#0A1628' : '#E8F0FE', cursor: ’pointer', fontWeight: city === c ? 700 : 400 }}>
                 {c}
               </button>
             ))}
@@ -58,8 +58,8 @@ export default function DFWWaterConservationGuide() {
           {cityData && (
             <div style={{ marginTop: '1rem', display: 'grid', gap: '0.5rem' }}>
               <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>💰 Rate: <strong style={{ color: '#E8F0FE' }}>${cityData.waterRate}/1,000 gal</strong></div>
-              <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>🚫 Restrictions: <strong style={{ color: '#FF9F43' }}>{cityData.restrictions}</strong></div>
-              <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>🎁 Rebates: <strong style={{ color: '#34D399' }}>{cityData.rebates}</strong></div>
+              <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>🚫 Restrictions: <strong style={{ color: '#FF9F43′ }}>{cityData.restrictions}</strong></div>
+              <div style={{ color: '#94A3B8', fontSize: '0.9rem' }}>🎁 Rebates: <strong style={{ color: '#34D399′ }}>{cityData.rebates}</strong></div>
             </div>
           )}
         </div>
@@ -68,7 +68,7 @@ export default function DFWWaterConservationGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginTop: 0 }}>🧮 Calculate Your Water Conservation Plan</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.85rem', marginBottom: 4 }}>Yard / Irrigated Area (sq ft)</label>
-            <input value={yardSqFt} onChange={e => setYardSqFt(e.target.value)} type="number" placeholder="e.g. 3000"
+            <input value={yardSqFt} onChange={e => setYardSqFt(e.target.value)} type="number" placeholder="e.g. 3000″
               style={{ width: 200, padding: '0.6rem', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0A1628', color: '#E8F0FE', fontSize: '1rem' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.25rem' }}>
@@ -88,15 +88,15 @@ export default function DFWWaterConservationGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginTop: 0 }}>📊 Your Water Plan</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               <div style={{ textAlign: 'center', padding: '1rem', background: '#0A1628', borderRadius: 10 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642' }}>${result.monthlyBase}</div>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642′ }}>${result.monthlyBase}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Est. summer monthly bill</div>
               </div>
               <div style={{ textAlign: 'center', padding: '1rem', background: '#0A1628', borderRadius: 10 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#34D399' }}>${result.savings}</div>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#34D399′ }}>${result.savings}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Monthly savings potential</div>
               </div>
             </div>

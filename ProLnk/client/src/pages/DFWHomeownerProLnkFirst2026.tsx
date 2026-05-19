@@ -25,7 +25,7 @@ export default function DFWHomeownerProLnkFirst2026() {
           </p>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#F5E642', marginBottom: '24px', fontWeight: '600' }}>
+        <p style={{ textAlign: 'center', color: '#F5E642', marginBottom: '24px', fontWeight: '600′ }}>
           What challenge are you dealing with?
         </p>
 
@@ -35,9 +35,9 @@ export default function DFWHomeownerProLnkFirst2026() {
               key={c.id}
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               style={{
-                background: selected === c.id ? '#F5E642' : '#1e2d4a',
-                color: selected === c.id ? '#0A1628' : '#fff',
-                border: '2px solid' + (selected === c.id ? ' #F5E642' : ' #334155'),
+                background: selected === c.id ? '#F5E642′ : '#1e2d4a',
+                color: selected === c.id ? '#0A1628′ : '#fff',
+                border: '2px solid' + (selected === c.id ? ' #F5E642′ : ' #334155'),
                 borderRadius: '12px', padding: '16px 8px', cursor: 'pointer',
                 fontSize: '12px', fontWeight: '700', textAlign: 'center'
               }}
@@ -49,10 +49,10 @@ export default function DFWHomeownerProLnkFirst2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#1e2d4a', borderRadius: '16px', padding: '28px', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e2d4a', borderRadius: '16px', padding: '28px', border: '2px solid #F5E642′ }}>
             <h2 style={{ color: '#F5E642', fontSize: '20px', marginBottom: '16px' }}>{active.icon} {active.label}</h2>
             <div style={{ display: 'grid', gap: '14px' }}>
-              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #ef4444' }}>
+              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #ef4444′ }}>
                 <div style={{ color: '#ef4444', fontWeight: '700', marginBottom: '4px' }}>❌ The Problem:</div>
                 {active.problem}
               </div>
@@ -60,8 +60,8 @@ export default function DFWHomeownerProLnkFirst2026() {
                 <div style={{ color: '#22c55e', fontWeight: '700', marginBottom: '4px' }}>✅ ProLnk Solution:</div>
                 {active.solution}
               </div>
-              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #F5E642' }}>
-                <span style={{ color: '#F5E642', fontWeight: '700' }}>💡 Why It Matters: </span>{active.why}
+              <div style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', borderLeft: '3px solid #F5E642′ }}>
+                <span style={{ color: '#F5E642', fontWeight: '700′ }}>💡 Why It Matters: </span>{active.why}
               </div>
             </div>
             <div style={{ marginTop: '20px', textAlign: 'center' }}>

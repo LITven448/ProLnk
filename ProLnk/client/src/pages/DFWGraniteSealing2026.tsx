@@ -20,7 +20,7 @@ export default function DFWGraniteSealing2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>DFW hard water and heat make stone sealing critical — learn what your stone needs.</p>
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 18, marginBottom: 24, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 18, marginBottom: 24, border: '1px solid #334155′ }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 10px', fontSize: 15 }}>💧 The Water Drop Test</h3>
           <p style={{ color: '#94a3b8', margin: '0 0 8px', fontSize: 14 }}>Place a few drops of water on your stone and wait 3–5 minutes:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -38,15 +38,15 @@ export default function DFWGraniteSealing2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {stones.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)}
-              style={{ background: selected === s.id ? '#F5E642' : '#1e293b', color: selected === s.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === s.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === s.id ? '#F5E642′ : '#1e293b', color: selected === s.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === s.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {s.label}
-              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === s.id ? '#0A1628' : '#94a3b8' }}>Seal: {s.frequency}</div>
+              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === s.id ? '#0A1628′ : '#94a3b8' }}>Seal: {s.frequency}</div>
             </button>
           ))}
         </div>
 
         {stone && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155' }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 6px' }}>{stone.label}</h2>
             <div style={{ display: 'grid', gap: 10, marginBottom: 16 }}>
               <div style={{ background: '#0f172a', borderRadius: 8, padding: 12 }}>
@@ -57,7 +57,7 @@ export default function DFWGraniteSealing2026() {
                 <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 3 }}>🛍️ Recommended Brands</div>
                 <div style={{ color: '#e2e8f0', fontSize: 14 }}>{stone.brands}</div>
               </div>
-              <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 12, border: '1px solid #3b82f6' }}>
+              <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 12, border: '1px solid #3b82f6′ }}>
                 <div style={{ color: '#93c5fd', fontSize: 13, fontWeight: 700, marginBottom: 3 }}>🔬 DFW Test Tip</div>
                 <div style={{ color: '#e2e8f0', fontSize: 14 }}>{stone.test}</div>
               </div>
@@ -72,7 +72,7 @@ export default function DFWGraniteSealing2026() {
         )}
 
         {!stone && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
             <div style={{ fontSize: 36, marginBottom: 8 }}>👆</div>
             <p>Select your stone type above to get the sealing guide and product recommendations.</p>
           </div>

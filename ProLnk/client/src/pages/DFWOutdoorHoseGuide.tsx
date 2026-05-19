@@ -73,7 +73,7 @@ export default function DFWOutdoorHoseGuide() {
             <label style={{ display: 'block', marginBottom: 6, fontWeight: 600 }}>Home Age</label>
             <select value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#E8EAF0', border: '1px solid #1E3A5F', borderRadius: 8 }}>
               <option value="">Select home age...</option>
-              <option value="pre1980">Pre-1980 (older DFW home)</option>
+              <option value="pre1980″>Pre-1980 (older DFW home)</option>
               <option value="1980s">1980s–1999</option>
               <option value="2000s">2000–2015</option>
               <option value="new">2016 or newer</option>
@@ -95,19 +95,19 @@ export default function DFWOutdoorHoseGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Diagnosis: {result.name}</div>
             <p style={{ color: '#94A3B8', marginBottom: 12 }}>{result.description}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14 }}>{result.dfwNote}</div>
             <div style={{ marginBottom: 8 }}><strong>🔧 Repair:</strong> {result.repairType}</div>
             <div style={{ marginBottom: 8 }}><strong>❄️ Freeze Risk:</strong> {result.freezeRisk}</div>
-            <div style={{ color: '#F5E642' }}><strong>⏰ Timeline:</strong> {result.timeline}</div>
+            <div style={{ color: '#F5E642′ }}><strong>⏰ Timeline:</strong> {result.timeline}</div>
           </div>
         )}
 
         <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>DFW Freeze Protection Options</h2>
         {freezeProtection.map(fp => (
-          <div key={fp.method} style={{ background: '#111F3A', borderRadius: 12, padding: 20, marginBottom: 16, border: fp.recommended ? '1px solid #F5E642' : '1px solid #1E3A5F' }}>
+          <div key={fp.method} style={{ background: '#111F3A', borderRadius: 12, padding: 20, marginBottom: 16, border: fp.recommended ? '1px solid #F5E642′ : '1px solid #1E3A5F' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
               <h3 style={{ fontWeight: 700 }}>{fp.method}</h3>
               {fp.recommended && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 4 }}>RECOMMENDED</span>}

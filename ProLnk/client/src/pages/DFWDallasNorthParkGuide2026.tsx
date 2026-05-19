@@ -25,7 +25,7 @@ export default function DFWDallasNorthParkGuide2026() {
           high rental demand. Maintenance needs vary widely by property type.
         </p>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>📍 Area Snapshot</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>
             ZIP codes 75231, 75243 · Vickery Meadow Planning District active since 1990s ·
@@ -35,7 +35,7 @@ export default function DFWDallasNorthParkGuide2026() {
           </div>
         </div>
 
-        <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>
+        <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>
           Select your property type for a tailored guide:
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
@@ -44,9 +44,9 @@ export default function DFWDallasNorthParkGuide2026() {
               key={p.id}
               onClick={() => setSelected(p.id === selected ? null : p.id)}
               style={{
-                background: selected === p.id ? '#F5E642' : '#0f2040',
-                color: selected === p.id ? '#0A1628' : '#fff',
-                border: '1px solid ' + (selected === p.id ? '#F5E642' : '#1e3a5f'),
+                background: selected === p.id ? '#F5E642′ : '#0f2040',
+                color: selected === p.id ? '#0A1628′ : '#fff',
+                border: '1px solid ' + (selected === p.id ? '#F5E642′ : '#1e3a5f'),
                 borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left',
                 fontWeight: 600, cursor: 'pointer', fontSize: '0.95rem',
               }}
@@ -58,7 +58,7 @@ export default function DFWDallasNorthParkGuide2026() {
 
         {active && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>
+            <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>
               {active.label} — 2026 Priorities
             </div>
             <ul style={{ margin: 0, paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

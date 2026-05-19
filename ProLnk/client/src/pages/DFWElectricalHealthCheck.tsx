@@ -54,16 +54,16 @@ export default function DFWElectricalHealthCheck() {
           <>
             {questions.map((q, qi) => (
               <div key={q.id} style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 16 }}>
-                <p style={{ fontWeight: 600, marginBottom: 12, color: '#e2e8f0' }}>{qi + 1}. {q.label}</p>
+                <p style={{ fontWeight: 600, marginBottom: 12, color: '#e2e8f0′ }}>{qi + 1}. {q.label}</p>
                 {q.options.map((opt, oi) => (
                   <label key={oi} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, cursor: 'pointer' }}>
                     <input type="radio" name={q.id} checked={answers[q.id] === q.scores[oi]} onChange={() => setAnswers(prev => ({ ...prev, [q.id]: q.scores[oi] }))} />
-                    <span style={{ color: '#cbd5e1' }}>{opt}</span>
+                    <span style={{ color: '#cbd5e1′ }}>{opt}</span>
                   </label>
                 ))}
               </div>
             ))}
-            <button onClick={() => answered === questions.length && setSubmitted(true)} style={{ width: '100%', padding: '14px', background: answered === questions.length ? '#F5E642' : '#334155', color: '#0A1628', fontWeight: 700, fontSize: 16, border: 'none', borderRadius: 10, cursor: answered === questions.length ? 'pointer' : 'not-allowed' }}>
+            <button onClick={() => answered === questions.length && setSubmitted(true)} style={{ width: '100%', padding: '14px', background: answered === questions.length ? '#F5E642′ : '#334155', color: '#0A1628', fontWeight: 700, fontSize: 16, border: ’none', borderRadius: 10, cursor: answered === questions.length ? 'pointer' : 'not-allowed' }}>
               {answered < questions.length ? `Answer all questions (${answered}/${questions.length})` : 'Get My Electrical Score'}
             </button>
           </>
@@ -85,7 +85,7 @@ export default function DFWElectricalHealthCheck() {
               {questions.map(q => (
                 <div key={q.id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                   <span style={{ color: '#94a3b8', fontSize: 14 }}>{q.label}</span>
-                  <span style={{ color: (answers[q.id] ?? 0) <= 5 ? '#ef4444' : '#22c55e', fontWeight: 600 }}>{answers[q.id]}/12</span>
+                  <span style={{ color: (answers[q.id] ?? 0) <= 5 ? '#ef4444′ : '#22c55e', fontWeight: 600 }}>{answers[q.id]}/12</span>
                 </div>
               ))}
             </div>

@@ -60,7 +60,7 @@ export default function DFWHomeRenovationSuccessStories() {
           {cases.map((c, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
               padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-              backgroundColor: selected === i ? '#0A1628' : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
+              backgroundColor: selected === i ? '#0A1628′ : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
             }}>
               {c.type}
             </button>
@@ -81,7 +81,7 @@ export default function DFWHomeRenovationSuccessStories() {
           <p style={{ lineHeight: 1.7, marginBottom: 16 }}>{c.summary}</p>
           <div style={{ backgroundColor: '#FAFAFA', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>💡 What Made It Work</div>
-            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151' }}>{c.what}</p>
+            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151′ }}>{c.what}</p>
           </div>
         </div>
 

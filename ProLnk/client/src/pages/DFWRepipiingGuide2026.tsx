@@ -37,10 +37,10 @@ export default function DFWRepipiingGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <select value={homeAge} onChange={e=>setHomeAge(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: '6px', padding: '0.6rem' }}>
               <option value="">Home age...</option>
-              <option value="10">Under 20 years</option>
-              <option value="25">20–35 years</option>
-              <option value="40">36–50 years</option>
-              <option value="60">50+ years</option>
+              <option value="10″>Under 20 years</option>
+              <option value="25″>20–35 years</option>
+              <option value="40″>36–50 years</option>
+              <option value="60″>50+ years</option>
             </select>
             <select value={pipeType} onChange={e=>setPipeType(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: '6px', padding: '0.6rem' }}>
               <option value="">Pipe type...</option>
@@ -51,7 +51,7 @@ export default function DFWRepipiingGuide2026() {
             </select>
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '6px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Assess My Home</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '10px', padding: '1.5rem' }}>
@@ -59,7 +59,7 @@ export default function DFWRepipiingGuide2026() {
           {['Day 1: Plumber maps all supply lines, protects floors and furniture','Day 1-2: New PEX lines run through walls via small access holes','Day 2-3: Old pipes capped, new lines pressurized and tested','Day 3-4: Drywall patched, water restored, final inspection'].map((s,i) => (
             <div key={i} style={{ display: 'flex', gap: '0.7rem', marginBottom: '0.6rem', alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{i+1}.</span>
-              <span style={{ color: '#cbd5e1' }}>{s}</span>
+              <span style={{ color: '#cbd5e1′ }}>{s}</span>
             </div>
           ))}
         </div>

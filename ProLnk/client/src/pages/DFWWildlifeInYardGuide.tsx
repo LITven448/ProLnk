@@ -32,8 +32,8 @@ export default function DFWWildlifeInYardGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🦌</div>
           <h1 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#F5E642', margin: '0 0 12px' }}>DFW Backyard Wildlife Guide</h1>
@@ -49,7 +49,7 @@ export default function DFWWildlifeInYardGuide() {
                 <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '1rem', marginBottom: '6px' }}>{w.animal}</div>
                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '8px' }}>📍 {w.range} | 📈 {w.trend}</div>
                 <div style={{ fontSize: '0.82rem', color: '#ef4444', marginBottom: '6px' }}>⚠️ Risk: {w.risk}</div>
-                <div style={{ fontSize: '0.82rem', color: '#94a3b8' }}>✅ {w.tip}</div>
+                <div style={{ fontSize: '0.82rem', color: '#94a3b8′ }}>✅ {w.tip}</div>
               </div>
             ))}
           </div>
@@ -63,7 +63,7 @@ export default function DFWWildlifeInYardGuide() {
             </div>
           ))}
         </div>
-        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '24px' }}>🔍 Get Your Wildlife Coexistence Guide</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
@@ -83,11 +83,11 @@ export default function DFWWildlifeInYardGuide() {
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '10px', padding: '12px 28px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Get My Coexistence Guide</button>
           {guide && (
-            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '1.1rem', marginBottom: '16px' }}>{guide.title}</div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🎯 What attracts them: </span><span style={{ color: '#94a3b8' }}>{guide.attracts}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🚫 How to discourage: </span><span style={{ color: '#94a3b8' }}>{guide.discourage}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: '600' }}>🐕 Pet safety: </span><span style={{ color: '#94a3b8' }}>{guide.pets}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🎯 What attracts them: </span><span style={{ color: '#94a3b8' }}>{guide.attracts}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🚫 How to discourage: </span><span style={{ color: '#94a3b8' }}>{guide.discourage}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: '600′ }}>🐕 Pet safety: </span><span style={{ color: '#94a3b8' }}>{guide.pets}</span></div>
             </div>
           )}
         </div>

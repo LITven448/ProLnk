@@ -47,7 +47,7 @@ export default function DFWACCompressorGuide() {
         </p>
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ Why DFW Is Hard on Compressors</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ Why DFW Is Hard on Compressors</h2>
           {[
             ['🌡️ Extreme Duty Cycle', 'DFW ACs run May through October almost continuously. That\’s 2x the hours of systems in cooler climates, accelerating oil breakdown and motor wear inside the compressor.'],
             ['☀️ Outdoor Unit Heat Soak', 'Outdoor temperatures regularly hit 100–112°F. Compressors reject heat to ambient air — the hotter it is outside, the harder the compressor works and the shorter its life.'],
@@ -62,16 +62,16 @@ export default function DFWACCompressorGuide() {
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Compressor Assessment Tool</h2>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>System Age (years)</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>System Age (years)</label>
           <input
-            type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 9"
+            type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 9″
             style={{ background: '#1a2f4a', border: '1px solid #2a4060', borderRadius: 8, color: '#fff', padding: '10px 14px', width: '100%', marginBottom: 20, fontSize: 15, boxSizing: 'border-box' }}
           />
-          <div style={{ marginBottom: 8, fontSize: 14, color: '#94a3b8' }}>Symptoms you're experiencing:</div>
+          <div style={{ marginBottom: 8, fontSize: 14, color: '#94a3b8′ }}>Symptoms you’re experiencing:</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {symptoms.map(s => (
               <button key={s} onClick={() => toggleSymptom(s)}
-                style={{ background: selected.includes(s) ? '#F5E642' : '#1a2f4a', color: selected.includes(s) ? '#0A1628' : '#fff', border: 'none', borderRadius: 20, padding: '8px 16px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: selected.includes(s) ? '#F5E642′ : '#1a2f4a', color: selected.includes(s) ? '#0A1628' : '#fff', border: ’none', borderRadius: 20, padding: '8px 16px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {s}
               </button>
             ))}
@@ -83,7 +83,7 @@ export default function DFWACCompressorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12 }}>{result.verdict}</div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Estimated Cost: {result.cost}</div>
             <div style={{ marginBottom: 12, lineHeight: 1.6 }}>{result.action}</div>

@@ -32,7 +32,7 @@ const SEED_BIDS: MyBid[] = [
     competingBids: 3,
     status: "pending",
     submittedDaysAgo: 1,
-    budget: "$45,000–$65,000",
+    budget: "$45,000–$65,000″,
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const SEED_BIDS: MyBid[] = [
     competingBids: 2,
     status: "won",
     submittedDaysAgo: 4,
-    budget: "$28,000–$42,000",
+    budget: "$28,000–$42,000″,
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ const SEED_BIDS: MyBid[] = [
     competingBids: 4,
     status: "lost",
     submittedDaysAgo: 8,
-    budget: "$38,000–$52,000",
+    budget: "$38,000–$52,000″,
     awardedTo: "DFW Paint Pros",
   },
   {
@@ -69,7 +69,7 @@ const SEED_BIDS: MyBid[] = [
     competingBids: 5,
     status: "pending",
     submittedDaysAgo: 2,
-    budget: "$95,000–$130,000",
+    budget: "$95,000–$130,000″,
   },
   {
     id: 5,
@@ -94,7 +94,7 @@ const SEED_BIDS: MyBid[] = [
     competingBids: 4,
     status: "won",
     submittedDaysAgo: 9,
-    budget: "$55,000–$72,000",
+    budget: "$55,000–$72,000″,
   },
 ];
 
@@ -106,21 +106,21 @@ const STATUS_CONFIG: Record<
     label: "Awaiting Response",
     bg: "rgba(245,158,11,0.12)",
     color: "#F59E0B",
-    icon: <AlertCircle className="w-3.5 h-3.5" />,
+    icon: <AlertCircle className="w-3.5 h-3.5″ />,
     tab: "Pending",
   },
   won: {
     label: "Contract Awarded",
     bg: "rgba(34,197,94,0.12)",
-    color: "#4ade80",
-    icon: <CheckCircle className="w-3.5 h-3.5" />,
+    color: "#4ade80″,
+    icon: <CheckCircle className="w-3.5 h-3.5″ />,
     tab: "Won",
   },
   lost: {
     label: "Not Selected",
     bg: "rgba(239,68,68,0.1)",
-    color: "#f87171",
-    icon: <XCircle className="w-3.5 h-3.5" />,
+    color: "#f87171″,
+    icon: <XCircle className="w-3.5 h-3.5″ />,
     tab: "Lost",
   },
 };
@@ -139,7 +139,7 @@ function BidRow({ bid }: { bid: MyBid }) {
 
   return (
     <div
-      className="rounded-2xl p-5 border transition-all hover:border-white/20"
+      className="rounded-2xl p-5 border transition-all hover:border-white/20″
       style={{
         backgroundColor: "rgba(255,255,255,0.04)",
         borderColor:
@@ -151,9 +151,9 @@ function BidRow({ bid }: { bid: MyBid }) {
       }}
     >
       {/* Top row */}
-      <div className="flex items-start gap-3 mb-3">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap mb-1.5">
+      <div className="flex items-start gap-3 mb-3″>
+        <div className="flex-1 min-w-0″>
+          <div className="flex items-center gap-2 flex-wrap mb-1.5″>
             <span
               className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
               style={{ backgroundColor: cfg.bg, color: cfg.color }}
@@ -185,25 +185,25 @@ function BidRow({ bid }: { bid: MyBid }) {
       </div>
 
       {/* Meta row */}
-      <div className="flex flex-wrap gap-4 mb-3">
+      <div className="flex flex-wrap gap-4 mb-3″>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-          <Building2 className="w-3.5 h-3.5 flex-shrink-0" />
+          <Building2 className="w-3.5 h-3.5 flex-shrink-0″ />
           {bid.company}
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-          <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+          <MapPin className="w-3.5 h-3.5 flex-shrink-0″ />
           {bid.location}
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-          <DollarSign className="w-3.5 h-3.5 flex-shrink-0" />
+          <DollarSign className="w-3.5 h-3.5 flex-shrink-0″ />
           Budget: {bid.budget}
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-          <Users className="w-3.5 h-3.5 flex-shrink-0" />
+          <Users className="w-3.5 h-3.5 flex-shrink-0″ />
           {bid.competingBids} competing bid{bid.competingBids !== 1 ? "s" : ""}
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-          <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+          <Clock className="w-3.5 h-3.5 flex-shrink-0″ />
           Submitted {submittedLabel}
         </div>
       </div>
@@ -214,7 +214,7 @@ function BidRow({ bid }: { bid: MyBid }) {
           className="rounded-xl px-4 py-2.5 text-xs"
           style={{ backgroundColor: "rgba(239,68,68,0.07)", color: "rgba(255,255,255,0.5)" }}
         >
-          Awarded to: <span className="font-semibold text-white/70">{bid.awardedTo}</span>
+          Awarded to: <span className="font-semibold text-white/70″>{bid.awardedTo}</span>
         </div>
       )}
 
@@ -222,7 +222,7 @@ function BidRow({ bid }: { bid: MyBid }) {
       {bid.status === "won" && (
         <div
           className="rounded-xl px-4 py-2.5 text-xs font-semibold"
-          style={{ backgroundColor: "rgba(34,197,94,0.08)", color: "#4ade80" }}
+          style={{ backgroundColor: "rgba(34,197,94,0.08)", color: "#4ade80″ }}
         >
           You won this contract. ProLnk will reach out to coordinate.
         </div>
@@ -234,18 +234,18 @@ function BidRow({ bid }: { bid: MyBid }) {
 function SummaryCard({ label, value, color, icon }: { label: string; value: number; color: string; icon: ReactNode }) {
   return (
     <div
-      className="rounded-2xl p-5 border flex items-center gap-4"
+      className="rounded-2xl p-5 border flex items-center gap-4″
       style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}
     >
       <div
-        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0″
         style={{ backgroundColor: `${color}18` }}
       >
         <span style={{ color }}>{icon}</span>
       </div>
       <div>
         <p className="text-2xl font-bold text-white">{value}</p>
-        <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{label}</p>
+        <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.45)" }}>{label}</p>
       </div>
     </div>
   );
@@ -272,14 +272,14 @@ export default function ExchangeMyBids() {
   return (
     <div
       className="min-h-screen"
-      style={{ backgroundColor: "#0A1628", fontFamily: "'Inter', system-ui, sans-serif" }}
+      style={{ backgroundColor: "#0A1628″, fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10 max-w-6xl mx-auto">
         <Link href="/">
           <span className="text-white font-bold text-lg tracking-tight cursor-pointer">ProLnk</span>
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4″>
           <Link href="/exchange">
             <span className="text-sm cursor-pointer transition-colors" style={{ color: "rgba(255,255,255,0.5)" }}>
               Exchange Home
@@ -292,7 +292,7 @@ export default function ExchangeMyBids() {
           </Link>
           <Link href="/exchange/post">
             <button
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#0A1628] transition-all hover:opacity-90"
+              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#0A1628] transition-all hover:opacity-90″
               style={{ backgroundColor: "#F59E0B" }}
             >
               Post a Job
@@ -302,7 +302,7 @@ export default function ExchangeMyBids() {
       </nav>
 
       {/* Header */}
-      <section className="max-w-6xl mx-auto px-6 pt-12 pb-8">
+      <section className="max-w-6xl mx-auto px-6 pt-12 pb-8″>
         <div
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 border"
           style={{
@@ -311,56 +311,56 @@ export default function ExchangeMyBids() {
             borderColor: "rgba(245,158,11,0.3)",
           }}
         >
-          <Briefcase className="w-3.5 h-3.5" />
+          <Briefcase className="w-3.5 h-3.5″ />
           My Bids
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Your Bid History</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2″>Your Bid History</h1>
         <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
           Track all bids you've submitted across the ProLnk Exchange.
         </p>
       </section>
 
       {/* Summary cards */}
-      <section className="max-w-6xl mx-auto px-6 pb-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <section className="max-w-6xl mx-auto px-6 pb-8″>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
           <SummaryCard
             label="Total Bids"
             value={SEED_BIDS.length}
-            color="#818cf8"
-            icon={<Briefcase className="w-5 h-5" />}
+            color="#818cf8″
+            icon={<Briefcase className="w-5 h-5″ />}
           />
           <SummaryCard
             label="Awaiting Response"
             value={pending.length}
             color="#F59E0B"
-            icon={<AlertCircle className="w-5 h-5" />}
+            icon={<AlertCircle className="w-5 h-5″ />}
           />
           <SummaryCard
             label="Won Contracts"
             value={won.length}
-            color="#4ade80"
-            icon={<CheckCircle className="w-5 h-5" />}
+            color="#4ade80″
+            icon={<CheckCircle className="w-5 h-5″ />}
           />
           <div
-            className="rounded-2xl p-5 border flex items-center gap-4"
+            className="rounded-2xl p-5 border flex items-center gap-4″
             style={{ backgroundColor: "rgba(34,197,94,0.06)", borderColor: "rgba(34,197,94,0.2)" }}
           >
             <div
-              className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+              className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0″
               style={{ backgroundColor: "rgba(34,197,94,0.15)" }}
             >
-              <TrendingUp className="w-5 h-5 text-green-400" />
+              <TrendingUp className="w-5 h-5 text-green-400″ />
             </div>
             <div>
               <p className="text-2xl font-bold text-white">${(totalWonValue / 1000).toFixed(0)}K</p>
-              <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>Total won value</p>
+              <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.45)" }}>Total won value</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Tabs */}
-      <section className="max-w-6xl mx-auto px-6 pb-4">
+      <section className="max-w-6xl mx-auto px-6 pb-4″>
         <div
           className="flex items-center gap-1 p-1 rounded-2xl border w-fit"
           style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}
@@ -381,7 +381,7 @@ export default function ExchangeMyBids() {
                 className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all"
                 style={{
                   backgroundColor: tab === t ? "#F59E0B" : "transparent",
-                  color: tab === t ? "#0A1628" : "rgba(255,255,255,0.5)",
+                  color: tab === t ? "#0A1628″ : "rgba(255,255,255,0.5)",
                 }}
               >
                 {t}
@@ -389,7 +389,7 @@ export default function ExchangeMyBids() {
                   className="text-xs px-1.5 py-0.5 rounded-full font-bold"
                   style={{
                     backgroundColor: tab === t ? "rgba(0,0,0,0.15)" : "rgba(255,255,255,0.08)",
-                    color: tab === t ? "#0A1628" : "rgba(255,255,255,0.5)",
+                    color: tab === t ? "#0A1628″ : "rgba(255,255,255,0.5)",
                   }}
                 >
                   {count}
@@ -401,7 +401,7 @@ export default function ExchangeMyBids() {
       </section>
 
       {/* Bid rows */}
-      <section className="max-w-6xl mx-auto px-6 pb-16">
+      <section className="max-w-6xl mx-auto px-6 pb-16″>
         {displayed.length === 0 ? (
           <div
             className="text-center py-16 rounded-2xl border"
@@ -410,13 +410,13 @@ export default function ExchangeMyBids() {
             <Briefcase className="w-10 h-10 mx-auto mb-3 opacity-20 text-white" />
             <p className="text-white/40 text-sm">No bids in this category yet.</p>
             <Link href="/exchange/jobs">
-              <button className="mt-4 text-amber-400 text-sm font-semibold underline inline-flex items-center gap-1">
-                Browse open jobs <ArrowRight className="w-3.5 h-3.5" />
+              <button className="mt-4 text-amber-400 text-sm font-semibold underline inline-flex items-center gap-1″>
+                Browse open jobs <ArrowRight className="w-3.5 h-3.5″ />
               </button>
             </Link>
           </div>
         ) : (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4″>
             {displayed.map((bid) => (
               <BidRow key={bid.id} bid={bid} />
             ))}

@@ -20,7 +20,7 @@ export default function DFWCondoBuyingGuide() {
 
   const score = Math.round((checked.length / CHECKLIST_ITEMS.length) * 100);
   const riskLabel = score >= 75 ? 'Low Risk' : score >= 50 ? 'Moderate Risk' : 'High Risk';
-  const riskColor = score >= 75 ? '#4ade80' : score >= 50 ? '#facc15' : '#f87171';
+  const riskColor = score >= 75 ? '#4ade80′ : score >= 50 ? '#facc15' : '#f87171';
 
   return (
     <div style={{ minHeight: '100vh', background: '#0f172a', color: '#f1f5f9', fontFamily: 'system-ui, sans-serif' }}>
@@ -37,16 +37,16 @@ export default function DFWCondoBuyingGuide() {
         </p>
 
         {/* Market context */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, borderLeft: '4px solid #6366f1' }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, borderLeft: '4px solid #6366f1′ }}>
           <div style={{ fontSize: 13, color: '#818cf8', fontWeight: 700, marginBottom: 12, textTransform: 'uppercase' }}>DFW Condo Market Reality</div>
           <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.7 }}>
-            Condos make up only <strong style={{ color: '#f1f5f9' }}>8% of DFW sales</strong> — far below the national average. Many DFW buyers overlook them entirely, but the right condo can be an excellent investment. The catch: condo due diligence is fundamentally different from single-family, and buyers who treat it the same often get burned.
+            Condos make up only <strong style={{ color: '#f1f5f9′ }}>8% of DFW sales</strong> — far below the national average. Many DFW buyers overlook them entirely, but the right condo can be an excellent investment. The catch: condo due diligence is fundamentally different from single-family, and buyers who treat it the same often get burned.
           </p>
         </div>
 
         {/* HOA Deep Dive */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9' }}>🏢 HOA Due Diligence</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9′ }}>🏢 HOA Due Diligence</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {[
               { title: 'HOA Financial Health', detail: 'Request last 3 years of financials. Low reserves = special assessments ahead. A reserve fund below 50% funded is a red flag.' },
@@ -64,7 +64,7 @@ export default function DFWCondoBuyingGuide() {
 
         {/* Insurance */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9' }}>🛡️ Insurance — Two Separate Policies</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9′ }}>🛡️ Insurance — Two Separate Policies</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#0f172a', borderRadius: 10, padding: 20 }}>
               <div style={{ fontWeight: 700, color: '#818cf8', marginBottom: 8 }}>HOA Master Policy</div>
@@ -79,7 +79,7 @@ export default function DFWCondoBuyingGuide() {
 
         {/* FHA/VA */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9' }}>🏛️ FHA/VA Condo Approval</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9′ }}>🏛️ FHA/VA Condo Approval</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: '0 0 16px' }}>
             Not all condos are FHA or VA approved. If you're using an FHA or VA loan, the entire condo community must be on HUD’s approved list — not just your unit. Check <strong style={{ color: '#818cf8' }}>HUD.gov/program_offices/housing/sfh/reo/condos</strong> before you fall in love with a unit.
           </p>
@@ -87,7 +87,7 @@ export default function DFWCondoBuyingGuide() {
 
         {/* DFW Markets */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9' }}>📍 DFW Condo Hot Spots</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9′ }}>📍 DFW Condo Hot Spots</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {[
               { area: 'Uptown Dallas', note: 'Most active; premium pricing' },
@@ -114,7 +114,7 @@ export default function DFWCondoBuyingGuide() {
 
         {/* Interactive Checklist */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 8px', color: '#f1f5f9' }}>✅ Condo Due Diligence Checklist</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 8px', color: '#f1f5f9′ }}>✅ Condo Due Diligence Checklist</h2>
           <p style={{ color: '#64748b', margin: '0 0 24px', fontSize: 15 }}>Check off each item before making an offer.</p>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 28, background: '#0f172a', borderRadius: 12, padding: 20 }}>
@@ -144,7 +144,7 @@ export default function DFWCondoBuyingGuide() {
                 >
                   <div style={{
                     width: 22, height: 22, borderRadius: 6, flexShrink: 0,
-                    background: done ? '#4ade80' : 'transparent',
+                    background: done ? '#4ade80′ : ’transparent',
                     border: `2px solid ${done ? '#4ade80' : '#334155'}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 13, color: '#0f172a', fontWeight: 700,
@@ -153,7 +153,7 @@ export default function DFWCondoBuyingGuide() {
                   <span style={{
                     fontSize: 11, fontWeight: 700, padding: '3px 8px', borderRadius: 99, flexShrink: 0,
                     background: item.risk === 'high' ? '#450a0a' : '#422006',
-                    color: item.risk === 'high' ? '#fca5a5' : '#fdba74',
+                    color: item.risk === 'high' ? '#fca5a5′ : '#fdba74',
                   }}>{item.risk.toUpperCase()}</span>
                 </button>
               );

@@ -92,11 +92,11 @@ export default function PartnerGeographicExpansionGuide() {
               <div key={tier.coverage} style={{ background: '#f8fafc', borderRadius: 10, padding: 20, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 6 }}>{tier.coverage}</div>
                 <div style={{ fontSize: 20, fontWeight: 800, color: '#3b82f6', marginBottom: 6 }}>{tier.leads}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8' }}>{tier.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{tier.note}</div>
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 20, padding: 16, background: '#eff6ff', borderRadius: 10, borderLeft: '4px solid #3b82f6' }}>
+          <div style={{ marginTop: 20, padding: 16, background: '#eff6ff', borderRadius: 10, borderLeft: '4px solid #3b82f6′ }}>
             <strong style={{ color: '#1e40af' }}>Key insight:</strong>
             <span style={{ color: '#1e3a8a', marginLeft: 6 }}>Growth is not linear. Coverage density creates a multiplier effect — nearby ZIPs make each other more efficient for routing and response time.</span>
           </div>
@@ -110,7 +110,7 @@ export default function PartnerGeographicExpansionGuide() {
               <div style={{ fontSize: 14, fontWeight: 700, color: '#15803d', marginBottom: 8 }}>✓ Signal: Expand Now</div>
               <div style={{ fontSize: 14, color: '#166534', lineHeight: 1.6 }}>You are booking 80%+ of leads you receive. You have capacity to take more. Adjacent ZIPs show demand but low partner coverage.</div>
             </div>
-            <div style={{ background: '#fef2f2', borderRadius: 10, padding: 20, borderLeft: '4px solid #ef4444' }}>
+            <div style={{ background: '#fef2f2', borderRadius: 10, padding: 20, borderLeft: '4px solid #ef4444′ }}>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#b91c1c', marginBottom: 8 }}>✗ Signal: Wait</div>
               <div style={{ fontSize: 14, color: '#991b1b', lineHeight: 1.6 }}>You are not following up on current leads within 2 hours. Your booking rate is below 50%. You cannot serve an area within 60 minutes.</div>
             </div>
@@ -165,9 +165,9 @@ export default function PartnerGeographicExpansionGuide() {
                   onClick={() => { setTrade(t.id); setShowRecs(false); }}
                   style={{
                     padding: '8px 16px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                    background: trade === t.id ? '#3b82f6' : '#f8fafc',
+                    background: trade === t.id ? '#3b82f6′ : '#f8fafc',
                     color: trade === t.id ? '#fff' : '#475569',
-                    borderColor: trade === t.id ? '#3b82f6' : '#e2e8f0',
+                    borderColor: trade === t.id ? '#3b82f6′ : '#e2e8f0',
                   }}
                 >
                   {t.label}
@@ -180,7 +180,7 @@ export default function PartnerGeographicExpansionGuide() {
             <input
               value={currentZips}
               onChange={e => setCurrentZips(e.target.value)}
-              placeholder="e.g. 75034, 75035, 75025"
+              placeholder="e.g. 75034, 75035, 75025″
               style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #e2e8f0', background: '#f8fafc', color: '#0f172a', fontSize: 14, boxSizing: 'border-box' }}
             />
           </div>
@@ -196,19 +196,19 @@ export default function PartnerGeographicExpansionGuide() {
                 {trades.find(t => t.id === trade)?.label} — Expansion Strategy
               </div>
               <div style={{ display: 'grid', gap: 12 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #e2e8f0′ }}>
                   <span style={{ fontSize: 13, color: '#64748b' }}>Recommended Strategy</span>
                   <span style={{ fontSize: 13, fontWeight: 600, color: '#0f172a' }}>{tradeData.strategy}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #e2e8f0′ }}>
                   <span style={{ fontSize: 13, color: '#64748b' }}>Priority Areas</span>
                   <span style={{ fontSize: 13, fontWeight: 600, color: '#0f172a', textAlign: 'right', maxWidth: '60%' }}>{tradeData.priority}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #e2e8f0′ }}>
                   <span style={{ fontSize: 13, color: '#64748b' }}>Demand Volume</span>
                   <span style={{ fontSize: 13, fontWeight: 600, color: '#0f172a' }}>{tradeData.demand}</span>
                 </div>
-                <div style={{ padding: '12px 0' }}>
+                <div style={{ padding: '12px 0′ }}>
                   <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Strategic Notes</div>
                   <div style={{ fontSize: 14, color: '#475569', lineHeight: 1.65 }}>{tradeData.notes}</div>
                 </div>

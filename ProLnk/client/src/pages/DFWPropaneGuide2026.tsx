@@ -54,17 +54,17 @@ export default function DFWPropaneGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 14 }}>Select your home size:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {HOME_SIZES.map(h => (
-              <button key={h.id} onClick={() => setSelectedSize(h.id)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, backgroundColor: selectedSize === h.id ? '#F5E642' : '#1e2d4a', color: selectedSize === h.id ? '#0A1628' : '#fff' }}>{h.label}</button>
+              <button key={h.id} onClick={() => setSelectedSize(h.id)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, backgroundColor: selectedSize === h.id ? '#F5E642′ : '#1e2d4a', color: selectedSize === h.id ? '#0A1628' : '#fff' }}>{h.label}</button>
             ))}
           </div>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 12 }}>Select propane appliances:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {APPLIANCES.map(a => (
-              <button key={a} onClick={() => toggleAppliance(a)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, backgroundColor: selectedAppliances.includes(a) ? '#F5E642' : '#1e2d4a', color: selectedAppliances.includes(a) ? '#0A1628' : '#fff' }}>{a}</button>
+              <button key={a} onClick={() => toggleAppliance(a)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, backgroundColor: selectedAppliances.includes(a) ? '#F5E642′ : '#1e2d4a', color: selectedAppliances.includes(a) ? '#0A1628' : '#fff' }}>{a}</button>
             ))}
           </div>
           {found && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Recommended Tank Size: {found.tank}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14 }}>{found.notes}</div>
               {selectedAppliances.includes('Generator Backup') && <div style={{ color: '#fbbf24', fontSize: 13, marginTop: 8 }}>⚡ Generator use significantly increases consumption — consider upsizing one tier.</div>}
@@ -74,7 +74,7 @@ export default function DFWPropaneGuide2026() {
 
         <div style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🛡️ Safety Inspection Checklist</h2>
-          {SAFETY_CHECKS.map((s, i) => <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1' }}>✅ {s}</div>)}
+          {SAFETY_CHECKS.map((s, i) => <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1′ }}>✅ {s}</div>)}
         </div>
 
         <div style={{ backgroundColor: '#F5E642', borderRadius: 12, padding: 24, textAlign: 'center' }}>

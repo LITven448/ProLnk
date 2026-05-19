@@ -49,13 +49,13 @@ export default function DFWHVACCityCode2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10, marginBottom: 20 }}>
             {cities.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id)}
-                style={{ background: selected === c.id ? '#F5E642' : '#162236', color: selected === c.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 10, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === c.id ? '#F5E642′ : '#162236', color: selected === c.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 10, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {c.icon} {c.name}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162236', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162236', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>{result.icon} {result.name} HVAC Requirements</div>
               <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>{result.req}</p>
             </div>

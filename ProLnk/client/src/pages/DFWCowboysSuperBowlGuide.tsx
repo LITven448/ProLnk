@@ -65,7 +65,7 @@ export default function DFWCowboysSuperBowlGuide() {
             <div key={s.id}>
               <button
                 onClick={() => setActive(active === s.id ? null : s.id)}
-                style={{ width: '100%', textAlign: 'left', background: active === s.id ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === s.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}
+                style={{ width: '100%', textAlign: 'left', background: active === s.id ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === s.id ? '#F5E642′ : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: ’pointer' }}
               >
                 {s.label}
               </button>
@@ -86,7 +86,7 @@ export default function DFWCowboysSuperBowlGuide() {
             <p style={{ color: '#8A9BB5', fontSize: 13, margin: '0 0 10px' }}>Distance from AT&T Stadium:</p>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {(['ultra', 'near', 'mid', 'far'] as const).map(p => (
-                <button key={p} onClick={() => setProximity(p)} style={{ flex: 1, minWidth: 100, padding: '9px 0', background: proximity === p ? '#F5E642' : '#1E3A5F', color: proximity === p ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
+                <button key={p} onClick={() => setProximity(p)} style={{ flex: 1, minWidth: 100, padding: '9px 0', background: proximity === p ? '#F5E642′ : '#1E3A5F', color: proximity === p ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
                   {p === 'ultra' ? 'Under 1 mi' : p === 'near' ? '1-3 miles' : p === 'mid' ? '3-8 miles' : '8+ miles'}
                 </button>
               ))}
@@ -96,7 +96,7 @@ export default function DFWCowboysSuperBowlGuide() {
             <p style={{ color: '#8A9BB5', fontSize: 13, margin: '0 0 10px' }}>Home size:</p>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {(['small', 'medium', 'large'] as const).map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ flex: 1, padding: '9px 0', background: size === s ? '#F5E642' : '#1E3A5F', color: size === s ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
+                <button key={s} onClick={() => setSize(s)} style={{ flex: 1, padding: '9px 0', background: size === s ? '#F5E642′ : '#1E3A5F', color: size === s ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
                   {s === 'small' ? '1-2 BR' : s === 'medium' ? '3-4 BR' : '5+ BR'}
                 </button>
               ))}

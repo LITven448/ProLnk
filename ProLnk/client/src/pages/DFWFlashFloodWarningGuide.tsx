@@ -36,7 +36,7 @@ const zones = [
   { name: 'Cottonwood / Coppell (Lewisville Lake area)', risk: 'High', flood100yr: '6 ft above bank', note: 'Lake overflow risk in extreme events', emoji: '🔴' },
   { name: 'Marine Creek (Fort Worth NW)', risk: 'High', flood100yr: '9 ft above bank', note: 'Rapid rise after heavy rain upstream', emoji: '🔴' },
   { name: 'Upland Suburban (Frisco / Allen / McKinney)', risk: 'Moderate', flood100yr: '4 ft in low spots', note: 'Sheet flow and street flooding common', emoji: '🟡' },
-  { name: 'Downtown Dallas / Uptown', risk: 'Moderate', flood100yr: 'Street flooding likely', note: 'Storm drain overload in 3"+ events', emoji: '🟡' },
+  { name: 'Downtown Dallas / Uptown', risk: 'Moderate', flood100yr: 'Street flooding likely', note: 'Storm drain overload in 3″+ events', emoji: '🟡' },
 ];
 
 const propertyTypes = [
@@ -89,11 +89,11 @@ export default function DFWFlashFloodWarningGuide() {
             <h3 style={{ color: alert.color, marginBottom: '1rem' }}>{alert.emoji} {alert.level} — Response Plan</h3>
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '0.75rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>⏱️ Flood Rise Speed</div>
-              <div style={{ color: '#e2e8f0' }}>{alert.riseSpeed}</div>
+              <div style={{ color: '#e2e8f0′ }}>{alert.riseSpeed}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '0.75rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>✅ Immediate Actions</div>
-              <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#e2e8f0' }}>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#e2e8f0′ }}>
                 {alert.actions.map((a) => <li key={a} style={{ marginBottom: '0.25rem' }}>{a}</li>)}
               </ul>
             </div>
@@ -106,7 +106,7 @@ export default function DFWFlashFloodWarningGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {zones.map((z, i) => (
               <button key={z.name} onClick={() => setSelectedZone(i === selectedZone ? null : i)}
-                style={{ background: selectedZone === i ? '#1e3a5f' : '#0A1628', border: selectedZone === i ? '2px solid #F5E642' : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem 1rem', cursor: 'pointer', color: '#fff', textAlign: 'left', display: 'flex', justifyContent: 'space-between', transition: 'all 0.2s' }}>
+                style={{ background: selectedZone === i ? '#1e3a5f' : '#0A1628', border: selectedZone === i ? '2px solid #F5E642′ : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem 1rem', cursor: ’pointer', color: '#fff', textAlign: 'left', display: 'flex', justifyContent: 'space-between', transition: 'all 0.2s' }}>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}><span>{z.emoji}</span><div><div style={{ fontWeight: 600 }}>{z.name}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{z.note}</div></div></div>
                 <div style={{ textAlign: 'right', whiteSpace: 'nowrap' }}><div style={{ color: '#ef4444', fontWeight: 700 }}>{z.risk}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{z.flood100yr}</div></div>
               </button>
@@ -119,7 +119,7 @@ export default function DFWFlashFloodWarningGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             {propertyTypes.map((p, i) => (
               <button key={p.type} onClick={() => setSelectedProp(i === selectedProp ? null : i)}
-                style={{ background: selectedProp === i ? '#1e3a5f' : '#0A1628', border: selectedProp === i ? '2px solid #F5E642' : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.85rem', cursor: 'pointer', color: '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+                style={{ background: selectedProp === i ? '#1e3a5f' : '#0A1628', border: selectedProp === i ? '2px solid #F5E642′ : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.85rem', cursor: ’pointer', color: '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: '1.5rem' }}>{p.emoji}</div>
                 <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{p.type}</div>
                 {selectedProp === i && <div style={{ color: '#94a3b8', fontSize: '0.82rem', marginTop: '0.4rem' }}>{p.extra}</div>}

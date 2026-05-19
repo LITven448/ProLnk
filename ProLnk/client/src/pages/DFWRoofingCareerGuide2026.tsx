@@ -19,7 +19,7 @@ export default function DFWRoofingCareerGuide2026() {
           <p style={{ color: '#8fa3c0', fontSize: 16 }}>Start a roofing business in Dallas-Fort Worth — no state license required, but credentials matter</p>
         </div>
 
-        <div style={{ background: '#1a0a0a', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #8b2020' }}>
+        <div style={{ background: '#1a0a0a', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #8b2020′ }}>
           <div style={{ fontWeight: 700, color: '#ff6b6b', marginBottom: 4 }}>⚠️ Know Before You Start</div>
           <div style={{ color: '#ffaaaa', fontSize: 13 }}>Texas has NO state roofing license — this creates opportunity but also floods DFW with unqualified contractors. Certifications are your competitive moat and your protection against liability.</div>
         </div>
@@ -42,7 +42,7 @@ export default function DFWRoofingCareerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[['$18K–$28K', 'Avg Residential Roof Job'], ['Storm Season', 'Apr–Sep Peak Demand'], ['$500K+', 'Solo Operator Revenue Cap']].map(([val, lbl], i) => (
               <div key={i} style={{ textAlign: 'center', background: '#0A1628', borderRadius: 8, padding: '14px 8px' }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                 <div style={{ color: '#8fa3c0', fontSize: 12, marginTop: 4 }}>{lbl}</div>
               </div>
             ))}
@@ -53,14 +53,14 @@ export default function DFWRoofingCareerGuide2026() {
           <div style={{ fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 16 }}>🗺️ Your DFW Roofing Business Setup Guide</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {guides.map((g, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff' }}>{g.label}</button>
+              <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff' }}>{g.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
             {guides[selected].steps.map((s, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: '8px 14px', color: '#F5E642', fontWeight: 600, fontSize: 13 }}>{s}</div>
-                {i < guides[selected].steps.length - 1 && <span style={{ color: '#F5E642' }}>→</span>}
+                {i < guides[selected].steps.length - 1 && <span style={{ color: '#F5E642′ }}>→</span>}
               </div>
             ))}
           </div>

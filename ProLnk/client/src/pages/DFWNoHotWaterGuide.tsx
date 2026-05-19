@@ -61,7 +61,7 @@ export default function DFWNoHotWaterGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Water heater type:</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'gas', label: '🔥 Gas (has pilot light / flame)' }, { key: 'electric', label: '⚡ Electric (no flame, 240V breaker)' }].map(opt => (
-              <button key={opt.key} onClick={() => setHeaterType(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: heaterType === opt.key ? '#F5E642' : '#334155', background: heaterType === opt.key ? '#F5E642' : 'transparent', color: heaterType === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={opt.key} onClick={() => setHeaterType(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: heaterType === opt.key ? '#F5E642′ : '#334155', background: heaterType === opt.key ? '#F5E642' : ’transparent', color: heaterType === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -69,7 +69,7 @@ export default function DFWNoHotWaterGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>What's happening?</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'no_hot', label: '❄️ No hot water at all' }, { key: 'lukewarm', label: '🌡️ Water only gets lukewarm' }].map(opt => (
-              <button key={opt.key} onClick={() => setSymptom(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: symptom === opt.key ? '#F5E642' : '#334155', background: symptom === opt.key ? '#F5E642' : 'transparent', color: symptom === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={opt.key} onClick={() => setSymptom(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: symptom === opt.key ? '#F5E642′ : '#334155', background: symptom === opt.key ? '#F5E642' : ’transparent', color: symptom === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -81,15 +81,15 @@ export default function DFWNoHotWaterGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <div style={{ background: result.diy ? '#064e3b' : '#7f1d1d', borderRadius: '8px', padding: '0.6rem 1rem', display: 'inline-block', marginBottom: '1rem', color: result.diy ? '#6ee7b7' : '#fca5a5', fontWeight: 700 }}>
+            <div style={{ background: result.diy ? '#064e3b' : '#7f1d1d', borderRadius: '8px', padding: '0.6rem 1rem', display: 'inline-block', marginBottom: '1rem', color: result.diy ? '#6ee7b7′ : '#fca5a5', fontWeight: 700 }}>
               {result.diy ? '✅ DIY Possible' : '🔧 Call a Plumber'}
             </div>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🔎 Likely Cause</div>
-              <div style={{ color: '#cbd5e1' }}>{result.likelyCause}</div>
+              <div style={{ color: '#cbd5e1′ }}>{result.likelyCause}</div>
             </div>
             <h3 style={{ color: '#F5E642', fontSize: '1rem', marginBottom: '0.75rem' }}>🛠️ Try This First</h3>
-            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0' }}>
+            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0′ }}>
               {result.diySteps.map((s, i) => <li key={i}>{s}</li>)}
             </ol>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>

@@ -82,17 +82,17 @@ export default function DFWProLnkProJourney2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🗺️ Select Your Pro Journey Stage</div>
+          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🗺️ Select Your Pro Journey Stage</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {stages.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Timeline: {result.timeline}</div>
               <div style={{ color: '#27ae60', fontWeight: 600, marginBottom: 10 }}>Income: {result.income}</div>
               <div style={{ color: '#cbd5e1', marginBottom: 12, lineHeight: 1.6 }}>{result.detail}</div>
@@ -103,7 +103,7 @@ export default function DFWProLnkProJourney2026() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628' }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628′ }}>
           <div style={{ fontWeight: 800, fontSize: 16 }}>🔒 Charter Status Closes at 500 Applications</div>
           <div style={{ fontSize: 14, marginTop: 6 }}>Once 500 Charter pros are confirmed in DFW, this tier closes permanently. The locked $149/mo rate and 25% commission tier are exclusive to Charter members.</div>
         </div>

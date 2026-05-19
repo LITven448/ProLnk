@@ -120,7 +120,7 @@ export default function DFWStormPrepChecklist() {
                 }}
               >
                 {phase.emoji} {phase.label}
-                {done === phase.tasks.length && <span style={{ color: '#34d399' }}>✓</span>}
+                {done === phase.tasks.length && <span style={{ color: '#34d399′ }}>✓</span>}
               </button>
             );
           })}
@@ -153,7 +153,7 @@ export default function DFWStormPrepChecklist() {
                 }}>
                   {checked[key] ? '✓' : ''}
                 </div>
-                <span style={{ fontSize: 14, color: checked[key] ? '#556677' : '#cdd9e5', textDecoration: checked[key] ? 'line-through' : 'none', lineHeight: 1.5 }}>
+                <span style={{ fontSize: 14, color: checked[key] ? '#556677′ : '#cdd9e5', textDecoration: checked[key] ? ’line-through' : 'none', lineHeight: 1.5 }}>
                   {task}
                 </span>
               </div>
@@ -161,7 +161,7 @@ export default function DFWStormPrepChecklist() {
           })}
 
           {phaseDone === currentPhase.tasks.length && (
-            <p style={{ color: '#34d399', fontWeight: 700, textAlign: 'center', margin: '14px 0 0' }}>
+            <p style={{ color: '#34d399', fontWeight: 700, textAlign: 'center', margin: '14px 0 0′ }}>
               {currentPhase.emoji} Phase complete — you are ready!
             </p>
           )}

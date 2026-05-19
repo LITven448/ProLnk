@@ -45,22 +45,22 @@ export default function DFWHVACBabyGuide() {
       <div style={{ background: 'linear-gradient(135deg, #0D1F3C 0%, #0A1628 100%)', borderBottom: '1px solid #1E3A5F', padding: '48px 24px 40px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW HVAC GUIDE</div>
-          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', lineHeight: 1.2 }}>HVAC & Baby Safety<br /><span style={{ color: '#F5E642' }}>Preparing Your DFW Home</span></h1>
+          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', lineHeight: 1.2 }}>HVAC & Baby Safety<br /><span style={{ color: '#F5E642′ }}>Preparing Your DFW Home</span></h1>
           <p style={{ fontSize: 17, color: '#A8B4C8', lineHeight: 1.7, margin: 0 }}>Babies breathe 3x faster than adults and cannot regulate body temperature. In DFW — with extreme humidity swings, cedar pollen winters, and scorching summers — your HVAC system is a critical safety system, not just comfort.</p>
         </div>
       </div>
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 0' }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 0′ }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 40 }}>
           {[['👶', '3x', 'Faster breathing rate than adults'], ['💧', '20%', 'DFW winter humidity (too dry)'], ['🔴', '#1', 'CO: leading cause of infant poisoning']].map(([icon, stat, label]) => (
             <div key={label} style={{ background: '#0D1F3C', borderRadius: 12, padding: '20px 16px', textAlign: 'center', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{icon}</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>{stat}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>{stat}</div>
               <div style={{ fontSize: 12, color: '#6B7A99', marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>
         <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', color: '#F5E642' }}>👶 Get Your Baby HVAC Prep Checklist</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', color: '#F5E642′ }}>👶 Get Your Baby HVAC Prep Checklist</h2>
           <p style={{ fontSize: 13, color: '#6B7A99', margin: '0 0 20px' }}>Tell us your baby's age and your DFW home type for a prioritized preparation checklist.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -78,24 +78,24 @@ export default function DFWHVACBabyGuide() {
               </select>
             </div>
           </div>
-          <button onClick={generate} disabled={!age || !home} style={{ background: age && home ? '#F5E642' : '#1E3A5F', color: age && home ? '#0A1628' : '#4A5568', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: age && home ? 'pointer' : 'not-allowed' }}>Get Baby HVAC Checklist →</button>
+          <button onClick={generate} disabled={!age || !home} style={{ background: age && home ? '#F5E642′ : '#1E3A5F', color: age && home ? '#0A1628' : '#4A5568', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: age && home ? 'pointer' : 'not-allowed' }}>Get Baby HVAC Checklist →</button>
         </div>
         {plan && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px', color: '#F5E642' }}>🌟 Priority HVAC Upgrades</h3>
+            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
+              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px', color: '#F5E642′ }}>🌟 Priority HVAC Upgrades</h3>
               <div style={{ fontSize: 13, color: '#6B7A99', marginBottom: 14 }}>Estimated investment: <span style={{ color: '#F5E642', fontWeight: 700 }}>{plan.cost}</span></div>
               {plan.priority.map((item, i) => <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{item}</div>)}
             </div>
             <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #1E3A5F' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#F5E642' }}>📋 Safety Checklist</h3>
+              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#F5E642′ }}>📋 Safety Checklist</h3>
               {plan.checklist.map((item, i) => <div key={i} style={{ padding: '7px 0', borderBottom: '1px solid #1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{item}</div>)}
             </div>
-            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 20, border: '1px solid #3B82F6' }}>
+            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 20, border: '1px solid #3B82F6′ }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#3B82F6', marginBottom: 8 }}>💧 HUMIDITY GUIDE FOR DFW</div>
               <div style={{ fontSize: 13, color: '#A8B4C8', lineHeight: 1.7 }}>{plan.humidity}</div>
             </div>
-            <div style={{ background: '#1A0A0A', borderRadius: 16, padding: 20, border: '1px solid #EF4444' }}>
+            <div style={{ background: '#1A0A0A', borderRadius: 16, padding: 20, border: '1px solid #EF4444′ }}>
               <div style={{ fontSize: 13, color: '#E8EAF0', lineHeight: 1.7 }}>{plan.coNote}</div>
             </div>
           </div>

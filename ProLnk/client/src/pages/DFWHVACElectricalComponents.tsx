@@ -69,8 +69,8 @@ export default function DFWHVACElectricalComponents() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {components.map(c => (
                 <button key={c.id} onClick={() => setComponent(c.id)} style={{
-                  background: component === c.id ? '#F5E642' : '#0A1628',
-                  color: component === c.id ? '#0A1628' : '#E8EDF5',
+                  background: component === c.id ? '#F5E642′ : '#0A1628',
+                  color: component === c.id ? '#0A1628′ : '#E8EDF5',
                   border: '2px solid #1E3A5F', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600,
                 }}>{c.icon} {c.label}</button>
               ))}
@@ -82,8 +82,8 @@ export default function DFWHVACElectricalComponents() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {seasons.map(s => (
                 <button key={s} onClick={() => setSeason(s)} style={{
-                  background: season === s ? '#F5E642' : '#0A1628',
-                  color: season === s ? '#0A1628' : '#E8EDF5',
+                  background: season === s ? '#F5E642′ : '#0A1628',
+                  color: season === s ? '#0A1628′ : '#E8EDF5',
                   border: '2px solid #1E3A5F', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontSize: 13,
                 }}>{s}</button>
               ))}
@@ -91,10 +91,10 @@ export default function DFWHVACElectricalComponents() {
           </div>
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642' }}>Failure Likelihood:</strong> <span>{result.likelihood}</span></div>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642' }}>DIY vs. Tech:</strong> <span style={{ color: '#94A3B8' }}>{result.diy}</span></div>
-              <div style={{ color: '#94A3B8', fontSize: 14 }}>Cost: <strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642′ }}>Failure Likelihood:</strong> <span>{result.likelihood}</span></div>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642′ }}>DIY vs. Tech:</strong> <span style={{ color: '#94A3B8' }}>{result.diy}</span></div>
+              <div style={{ color: '#94A3B8', fontSize: 14 }}>Cost: <strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
             </div>
           )}
           {(!component || !season) && (

@@ -12,9 +12,9 @@ const stats: Stat[] = [
 ];
 
 const pros: Pro[] = [
-  { name: "DeShawn P.", trade: "Foundation & Drainage", specialty: "Clay soil pier repair, French drain installation", rating: "4.95" },
-  { name: "Maria C.", trade: "HVAC & Weatherization", specialty: "High-efficiency system upgrades, attic air sealing", rating: "4.92" },
-  { name: "Troy W.", trade: "Roofing & Gutters", specialty: "Deferred maintenance catch-up, storm damage assessment", rating: "4.89" },
+  { name: "DeShawn P.", trade: "Foundation & Drainage", specialty: "Clay soil pier repair, French drain installation", rating: "4.95″ },
+  { name: "Maria C.", trade: "HVAC & Weatherization", specialty: "High-efficiency system upgrades, attic air sealing", rating: "4.92″ },
+  { name: "Troy W.", trade: "Roofing & Gutters", specialty: "Deferred maintenance catch-up, storm damage assessment", rating: "4.89″ },
 ];
 
 const testimonials: Testimonial[] = [
@@ -34,17 +34,17 @@ export default function TrustyProDeSotoLancaster() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
       {/* Hero */}
       <div style={{ background: "linear-gradient(135deg, #0A1628 0%, #1a2f1a 100%)", padding: "80px 24px 60px", textAlign: "center" }}>
-        <div style={{ fontSize: "14px", color: "#34d399", fontWeight: 600, letterSpacing: "2px", marginBottom: "16px" }}>DESOTO & LANCASTER TX</div>
+        <div style={{ fontSize: "14px", color: "#34d399″, fontWeight: 600, letterSpacing: "2px", marginBottom: "16px" }}>DESOTO & LANCASTER TX</div>
         <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 800, margin: "0 0 20px", lineHeight: 1.15 }}>
           DeSoto & Lancaster TX: Southwest Dallas Growth Corridor
         </h1>
-        <p style={{ fontSize: "18px", color: "#94a3b8", maxWidth: "640px", margin: "0 auto 40px" }}>
+        <p style={{ fontSize: "18px", color: "#94a3b8″, maxWidth: "640px", margin: "0 auto 40px" }}>
           Rapidly growing, value-focused communities with clay soil challenges and deferred maintenance that needs experienced local pros — not discount operators.
         </p>
-        <a href="/waitlist/homeowner" style={{ background: "#34d399", color: "#0A1628", padding: "16px 36px", borderRadius: "8px", fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
+        <a href="/waitlist/homeowner" style={{ background: "#34d399″, color: "#0A1628", padding: "16px 36px", borderRadius: "8px", fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
           Get Matched with a Local Pro ↗
         </a>
       </div>
@@ -52,9 +52,9 @@ export default function TrustyProDeSotoLancaster() {
       {/* Stats */}
       <div style={{ display: "flex", gap: "24px", padding: "48px 24px", maxWidth: "900px", margin: "0 auto", flexWrap: "wrap", justifyContent: "center" }}>
         {stats.map((s) => (
-          <div key={s.label} style={{ background: "#111d35", borderRadius: "12px", padding: "28px 32px", flex: "1 1 240px", textAlign: "center", border: "1px solid #1a3a2a" }}>
-            <div style={{ fontSize: "28px", fontWeight: 800, color: "#34d399" }}>{s.value}</div>
-            <div style={{ fontSize: "13px", color: "#94a3b8", marginTop: "6px" }}>{s.label}</div>
+          <div key={s.label} style={{ background: "#111d35″, borderRadius: "12px", padding: "28px 32px", flex: "1 1 240px", textAlign: "center", border: "1px solid #1a3a2a" }}>
+            <div style={{ fontSize: "28px", fontWeight: 800, color: "#34d399″ }}>{s.value}</div>
+            <div style={{ fontSize: "13px", color: "#94a3b8″, marginTop: "6px" }}>{s.label}</div>
             <div style={{ fontSize: "12px", color: "#64748b", marginTop: "4px" }}>{s.note}</div>
           </div>
         ))}
@@ -65,31 +65,31 @@ export default function TrustyProDeSotoLancaster() {
         <h2 style={{ fontSize: "28px", fontWeight: 700, textAlign: "center", marginBottom: "40px" }}>How It Works</h2>
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
           {[
-            { step: "1", icon: "🏡", title: "Share Your Situation", desc: "Tell us what's going on — foundation, HVAC, roof, drainage, or general maintenance." },
-            { step: "2", icon: "📍", title: "Local Match", desc: "We find pros with documented DeSoto/Lancaster project history." },
-            { step: "3", icon: "💰", title: "Fair Quotes", desc: "Itemized, transparent quotes from vetted, value-focused pros." },
+            { step: "1″, icon: "🏡", title: "Share Your Situation", desc: "Tell us what's going on — foundation, HVAC, roof, drainage, or general maintenance." },
+            { step: "2″, icon: "📍", title: "Local Match", desc: "We find pros with documented DeSoto/Lancaster project history." },
+            { step: "3″, icon: "💰", title: "Fair Quotes", desc: "Itemized, transparent quotes from vetted, value-focused pros." },
           ].map((item) => (
-            <div key={item.step} style={{ background: "#111d35", borderRadius: "12px", padding: "28px", flex: "1 1 200px", border: "1px solid #1a3a2a", textAlign: "center" }}>
+            <div key={item.step} style={{ background: "#111d35″, borderRadius: "12px", padding: "28px", flex: "1 1 200px", border: "1px solid #1a3a2a", textAlign: "center" }}>
               <div style={{ fontSize: "32px", marginBottom: "12px" }}>{item.icon}</div>
-              <div style={{ fontSize: "12px", color: "#34d399", fontWeight: 700, marginBottom: "6px" }}>STEP {item.step}</div>
+              <div style={{ fontSize: "12px", color: "#34d399″, fontWeight: 700, marginBottom: "6px" }}>STEP {item.step}</div>
               <div style={{ fontWeight: 700, marginBottom: "8px" }}>{item.title}</div>
-              <div style={{ fontSize: "14px", color: "#94a3b8" }}>{item.desc}</div>
+              <div style={{ fontSize: "14px", color: "#94a3b8″ }}>{item.desc}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Featured Pros */}
-      <div style={{ background: "#0d1f38", padding: "60px 24px" }}>
+      <div style={{ background: "#0d1f38″, padding: "60px 24px" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "28px", fontWeight: 700, textAlign: "center", marginBottom: "40px" }}>Featured Southwest Dallas Pros</h2>
           <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center" }}>
             {pros.map((p) => (
-              <div key={p.name} style={{ background: "#111d35", borderRadius: "12px", padding: "28px", flex: "1 1 240px", border: "1px solid #1a3a2a" }}>
+              <div key={p.name} style={{ background: "#111d35″, borderRadius: "12px", padding: "28px", flex: "1 1 240px", border: "1px solid #1a3a2a" }}>
                 <div style={{ fontSize: "28px", marginBottom: "12px" }}>⭐ {p.rating}</div>
                 <div style={{ fontWeight: 700, fontSize: "18px" }}>{p.name}</div>
-                <div style={{ color: "#34d399", fontSize: "13px", marginTop: "4px" }}>{p.trade}</div>
-                <div style={{ color: "#94a3b8", fontSize: "13px", marginTop: "8px" }}>{p.specialty}</div>
+                <div style={{ color: "#34d399″, fontSize: "13px", marginTop: "4px" }}>{p.trade}</div>
+                <div style={{ color: "#94a3b8″, fontSize: "13px", marginTop: "8px" }}>{p.specialty}</div>
               </div>
             ))}
           </div>
@@ -101,27 +101,27 @@ export default function TrustyProDeSotoLancaster() {
         <h2 style={{ fontSize: "28px", fontWeight: 700, textAlign: "center", marginBottom: "40px" }}>DeSoto & Lancaster Homeowner Stories</h2>
         <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center" }}>
           {testimonials.map((t) => (
-            <div key={t.name} style={{ background: "#111d35", borderRadius: "12px", padding: "28px", flex: "1 1 240px", border: "1px solid #1a3a2a" }}>
+            <div key={t.name} style={{ background: "#111d35″, borderRadius: "12px", padding: "28px", flex: "1 1 240px", border: "1px solid #1a3a2a" }}>
               <div style={{ fontSize: "20px", marginBottom: "12px" }}>💬</div>
-              <p style={{ color: "#cbd5e1", fontSize: "14px", lineHeight: 1.6, marginBottom: "16px" }}>"{t.quote}"</p>
+              <p style={{ color: "#cbd5e1″, fontSize: "14px", lineHeight: 1.6, marginBottom: "16px" }}>"{t.quote}"</p>
               <div style={{ fontWeight: 700, fontSize: "14px" }}>{t.name}</div>
-              <div style={{ color: "#34d399", fontSize: "12px" }}>{t.city}</div>
+              <div style={{ color: "#34d399″, fontSize: "12px" }}>{t.city}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* FAQ */}
-      <div style={{ background: "#0d1f38", padding: "60px 24px" }}>
+      <div style={{ background: "#0d1f38″, padding: "60px 24px" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "28px", fontWeight: 700, textAlign: "center", marginBottom: "40px" }}>Frequently Asked Questions</h2>
           {faqs.map((f, i) => (
-            <div key={i} style={{ borderBottom: "1px solid #1a3a2a", padding: "20px 0" }}>
+            <div key={i} style={{ borderBottom: "1px solid #1a3a2a", padding: "20px 0″ }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 style={{ background: "none", border: "none", color: "#fff", fontSize: "16px", fontWeight: 600, cursor: "pointer", textAlign: "left", width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                {f.q} <span style={{ color: "#34d399" }}>{openFaq === i ? "−" : "+"}</span>
+                {f.q} <span style={{ color: "#34d399″ }}>{openFaq === i ? "−" : "+"}</span>
               </button>
-              {openFaq === i && <p style={{ color: "#94a3b8", fontSize: "14px", lineHeight: 1.6, marginTop: "12px", marginBottom: 0 }}>{f.a}</p>}
+              {openFaq === i && <p style={{ color: "#94a3b8″, fontSize: "14px", lineHeight: 1.6, marginTop: "12px", marginBottom: 0 }}>{f.a}</p>}
             </div>
           ))}
         </div>
@@ -130,8 +130,8 @@ export default function TrustyProDeSotoLancaster() {
       {/* CTA */}
       <div style={{ textAlign: "center", padding: "80px 24px" }}>
         <h2 style={{ fontSize: "32px", fontWeight: 800, marginBottom: "16px" }}>Southwest Dallas Deserves Better Options</h2>
-        <p style={{ color: "#94a3b8", fontSize: "16px", marginBottom: "32px" }}>Join DeSoto and Lancaster homeowners getting fair, transparent quotes from vetted local pros.</p>
-        <a href="/waitlist/homeowner" style={{ background: "#34d399", color: "#0A1628", padding: "18px 48px", borderRadius: "8px", fontWeight: 700, fontSize: "18px", textDecoration: "none", display: "inline-block" }}>
+        <p style={{ color: "#94a3b8″, fontSize: "16px", marginBottom: "32px" }}>Join DeSoto and Lancaster homeowners getting fair, transparent quotes from vetted local pros.</p>
+        <a href="/waitlist/homeowner" style={{ background: "#34d399″, color: "#0A1628", padding: "18px 48px", borderRadius: "8px", fontWeight: 700, fontSize: "18px", textDecoration: "none", display: "inline-block" }}>
           Join the Waitlist — It's Free
         </a>
       </div>

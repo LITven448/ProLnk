@@ -65,8 +65,8 @@ export default function DFWAtticScienceGuide2026() {
             'Air sealing is more impactful than added insulation in most DFW homes built before 2000.\',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ color: '#F5E642' }}>▸</span>
-              <span style={{ color: '#cbd5e1' }}>{fact}</span>
+              <span style={{ color: '#F5E642′ }}>▸</span>
+              <span style={{ color: '#cbd5e1′ }}>{fact}</span>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default function DFWAtticScienceGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {Object.entries({ 'hot-rooms': '🔥 Hot Rooms', 'high-bills': '💸 High Bills', 'moisture': '💧 Moisture', 'ice-dams': '❄️ Cold Spots' }).map(([k, v]) => (
               <button key={k} onClick={() => setSymptom(k)}
-                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: symptom === k ? '#F5E642' : '#1e3a5f', color: symptom === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: symptom === k ? '#F5E642′ : '#1e3a5f', color: symptom === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
                 {v}
               </button>
             ))}

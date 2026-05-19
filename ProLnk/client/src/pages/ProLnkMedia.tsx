@@ -108,11 +108,11 @@ const CASE_STUDIES = [
 const PRICING_TIERS = [
   {
     name: "Connect",
-    price: "$199",
+    price: "$199″,
     period: "/mo",
     desc: "Up to 3 zip codes. Non-exclusive — up to 3 partners per category per zip.",
     featured: false,
-    color: "#6366F1",
+    color: "#6366F1″,
     badge: null,
     features: [
       "Professional profile card on homeowner dashboard",
@@ -125,11 +125,11 @@ const PRICING_TIERS = [
   },
   {
     name: "Preferred",
-    price: "$349",
+    price: "$349″,
     period: "/mo",
     desc: "Up to 8 zip codes. Semi-exclusive — max 2 partners per category per zip.",
     featured: true,
-    color: "#00B5B8",
+    color: "#00B5B8″,
     badge: "Most Popular",
     features: [
       "Profile card on dashboard + scan results",
@@ -144,7 +144,7 @@ const PRICING_TIERS = [
   },
   {
     name: "Exclusive",
-    price: "$799",
+    price: "$799″,
     period: "/mo",
     desc: "Up to 15 zip codes. Fully exclusive — only 1 partner per category per zip.",
     featured: false,
@@ -166,9 +166,9 @@ const PRICING_TIERS = [
 
 const STATS = [
   { value: "DFW", label: "Hyper-Local Market Focus" },
-  { value: "8", label: "Home Service Trade Categories" },
+  { value: "8″, label: "Home Service Trade Categories" },
   { value: "Early", label: "Founding Advertiser Pricing" },
-  { value: "0", label: "Competitor Ads in Your Category" },
+  { value: "0″, label: "Competitor Ads in Your Category" },
 ];
 
 // ─── Advertiser Categories ───────────────────────────────────────────────────
@@ -224,7 +224,7 @@ export default function ProLnkMedia() {
   const roiTierData = AD_TIERS.find(t => t.id === roiTier) ?? AD_TIERS[1];
   const tierPrice = roiTierData.price;
   const roiRevenue = roiConversions * roiPreset.avgRevenue;
-  const roiMultiple = tierPrice > 0 ? (roiRevenue / tierPrice).toFixed(1) : "0";
+  const roiMultiple = tierPrice > 0 ? (roiRevenue / tierPrice).toFixed(1) : "0″;
 
   const submitMutation = trpc.waitlist.submitAdvertiserWaitlist.useMutation({
     onSuccess: () => {
@@ -259,20 +259,20 @@ export default function ProLnkMedia() {
     </Helmet>
     <div className="min-h-screen bg-white font-sans">
       {/* ── NAV ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100″>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
-            <span className="text-xl font-black tracking-tight text-slate-900">
-              ProLnk <span className="text-sky-500">Media</span>
+            <span className="text-xl font-black tracking-tight text-slate-900″>
+              ProLnk <span className="text-sky-500″>Media</span>
             </span>
           </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600″>
             <a href="#formats" className="hover:text-sky-500 transition-colors">Ad Formats</a>
             <a href="#audience" className="hover:text-sky-500 transition-colors">Our Audience</a>
             <a href="#case-studies" className="hover:text-sky-500 transition-colors">Case Studies</a>
             <a href="#pricing" className="hover:text-sky-500 transition-colors">Pricing</a>
           </div>
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3″>
             <Link href="/">
               <span className="text-sm text-slate-500 hover:text-slate-900 transition-colors cursor-pointer">← Back to ProLnk</span>
             </Link>
@@ -284,13 +284,13 @@ export default function ProLnkMedia() {
             </a>
           </div>
           <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? <X className="w-6 h-6″ /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
         {mobileOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4″>
             {["#formats", "#audience", "#case-studies", "#pricing"].map((href, i) => (
-              <a key={href} href={href} className="text-slate-700 font-medium py-2 border-b border-gray-50" onClick={() => setMobileOpen(false)}>
+              <a key={href} href={href} className="text-slate-700 font-medium py-2 border-b border-gray-50″ onClick={() => setMobileOpen(false)}>
                 {["Ad Formats", "Our Audience", "Case Studies", "Pricing"][i]}
               </a>
             ))}
@@ -307,28 +307,28 @@ export default function ProLnkMedia() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-slate-900/80" />
+        <div className="absolute inset-0 bg-slate-900/80″ />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-500/30 text-sky-300 text-sm font-medium px-4 py-1.5 rounded-full mb-8">
-              <Zap className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-500/30 text-sky-300 text-sm font-medium px-4 py-1.5 rounded-full mb-8″>
+              <Zap className="w-3.5 h-3.5″ />
               Now accepting founding advertisers
             </div>
-            <h1 className="text-6xl md:text-7xl font-black text-white leading-none mb-6">
+            <h1 className="text-6xl md:text-7xl font-black text-white leading-none mb-6″>
               Reach the Trades.{" "}
-              <span className="text-sky-400">Own the</span>{" "}
+              <span className="text-sky-400″>Own the</span>{" "}
               Neighborhood.
             </h1>
             <p className="text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
               ProLnk Media connects your brand with verified home service professionals and homeowners across DFW — at the exact moment they're making buying decisions.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4″>
               <a
                 href="#apply"
                 className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
               >
-                Join Advertiser Waitlist <ArrowRight className="w-5 h-5" />
+                Join Advertiser Waitlist <ArrowRight className="w-5 h-5″ />
               </a>
               <a
                 href="#formats"
@@ -340,31 +340,31 @@ export default function ProLnkMedia() {
           </div>
 
           {/* Floating stat cards */}
-          <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4">
-            <div className="bg-white rounded-2xl p-5 shadow-2xl w-52">
-              <div className="text-3xl font-black text-slate-900">500+</div>
+          <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4″>
+            <div className="bg-white rounded-2xl p-5 shadow-2xl w-52″>
+              <div className="text-3xl font-black text-slate-900″>500+</div>
               <div className="text-sm text-slate-500 font-medium">Verified Trade Partners</div>
-              <div className="text-xs text-sky-500 font-semibold mt-1">↑ Growing daily</div>
+              <div className="text-xs text-sky-500 font-semibold mt-1″>↑ Growing daily</div>
             </div>
-            <div className="bg-sky-500 rounded-2xl p-5 shadow-2xl w-52">
+            <div className="bg-sky-500 rounded-2xl p-5 shadow-2xl w-52″>
               <div className="text-3xl font-black text-white">94%</div>
               <div className="text-sm text-sky-100 font-medium">Audience Engagement</div>
-              <div className="text-xs text-sky-200 font-semibold mt-1">vs. 2% industry avg</div>
+              <div className="text-xs text-sky-200 font-semibold mt-1″>vs. 2% industry avg</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── TRUST STRIP ── */}
-      <section className="bg-slate-900 py-8 border-y border-slate-800">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-slate-900 py-8 border-y border-slate-800″>
+        <div className="max-w-7xl mx-auto px-6″>
           <p className="text-center text-slate-400 text-xs font-medium mb-5 uppercase tracking-widest">
             Ideal for brands reaching the home services market
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-slate-400 text-sm font-semibold uppercase tracking-wider">
             {WHO_ITS_FOR.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2">
-                <Icon className="w-4 h-4 text-sky-500" />
+              <div key={label} className="flex items-center gap-2″>
+                <Icon className="w-4 h-4 text-sky-500″ />
                 <span>{label}</span>
               </div>
             ))}
@@ -374,27 +374,27 @@ export default function ProLnkMedia() {
 
       {/* ── AD FORMATS ── */}
       <section id="formats" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">Ad Formats</p>
-            <h2 className="text-5xl font-black text-slate-900 mb-4">
+        <div className="max-w-7xl mx-auto px-6″>
+          <div className="text-center mb-16″>
+            <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3″>Ad Formats</p>
+            <h2 className="text-5xl font-black text-slate-900 mb-4″>
               Every Touchpoint in the{" "}
-              <span className="text-sky-500">Trade Ecosystem</span>
+              <span className="text-sky-500″>Trade Ecosystem</span>
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-              ProLnk Media gives you access to every moment in a contractor's and homeowner's journey — from job creation to payment to referral.
+              ProLnk Media gives you access to every moment in a contractor's and homeowner’s journey — from job creation to payment to referral.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6″>
             {AD_FORMATS.map((f) => (
               <div
                 key={f.title}
                 className="group p-8 border border-slate-100 rounded-2xl hover:border-sky-200 hover:shadow-lg transition-all"
               >
                 <div className="w-12 h-12 bg-sky-50 group-hover:bg-sky-100 rounded-xl flex items-center justify-center mb-5 transition-colors">
-                  <f.icon className="w-6 h-6 text-sky-500" />
+                  <f.icon className="w-6 h-6 text-sky-500″ />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-2″>{f.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -403,31 +403,31 @@ export default function ProLnkMedia() {
       </section>
 
       {/* ── ABOUT / WHY PROLNK MEDIA ── */}
-      <section id="audience" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="audience" className="py-24 bg-slate-50″>
+        <div className="max-w-7xl mx-auto px-6″>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">About ProLnk Media</p>
-              <h2 className="text-5xl font-black text-slate-900 mb-6">
+              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3″>About ProLnk Media</p>
+              <h2 className="text-5xl font-black text-slate-900 mb-6″>
                 Not Another{" "}
-                <span className="text-sky-500">Ad Network.</span>
+                <span className="text-sky-500″>Ad Network.</span>
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-6">
+              <p className="text-slate-600 text-lg leading-relaxed mb-6″>
                 ProLnk Media is the advertising arm of the ProLnk partner network — a verified community of licensed, insured home service professionals and the homeowners they serve across DFW.
               </p>
-              <p className="text-slate-600 leading-relaxed mb-8">
+              <p className="text-slate-600 leading-relaxed mb-8″>
                 Every impression is earned. Every touchpoint is contextual. Your brand reaches verified pros and homeowners at the exact moment they're making decisions about tools, materials, insurance, and services.
               </p>
-              <div className="space-y-3 mb-8">
+              <div className="space-y-3 mb-8″>
                 {[
                   "Zero cold audiences — every user is verified and active",
                   "Hyper-local DFW targeting by ZIP, neighborhood, or service area",
                   "Context-aware placements — not banner blindness",
                   "First-party data from real job activity, not cookies",
                 ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <span className="text-sky-500 font-bold text-lg mt-0.5 flex-shrink-0">+</span>
-                    <span className="text-slate-700">{item}</span>
+                  <div key={item} className="flex items-start gap-3″>
+                    <span className="text-sky-500 font-bold text-lg mt-0.5 flex-shrink-0″>+</span>
+                    <span className="text-slate-700″>{item}</span>
                   </div>
                 ))}
               </div>
@@ -435,7 +435,7 @@ export default function ProLnkMedia() {
                 href="#pricing"
                 className="inline-flex items-center gap-2 border-2 border-slate-900 hover:bg-slate-900 hover:text-white text-slate-900 font-semibold px-6 py-3 rounded-full transition-all"
               >
-                View Pricing <ArrowRight className="w-4 h-4" />
+                View Pricing <ArrowRight className="w-4 h-4″ />
               </a>
             </div>
             <div className="relative">
@@ -445,9 +445,9 @@ export default function ProLnkMedia() {
                 className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-xl">
-                <div className="text-4xl font-black text-slate-900">12K+</div>
+                <div className="text-4xl font-black text-slate-900″>12K+</div>
                 <div className="text-sm text-slate-500 font-medium">Monthly homeowner touchpoints</div>
-                <div className="text-xs text-sky-500 font-semibold mt-1">↑ Growing with every partner</div>
+                <div className="text-xs text-sky-500 font-semibold mt-1″>↑ Growing with every partner</div>
               </div>
             </div>
           </div>
@@ -460,32 +460,32 @@ export default function ProLnkMedia() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${AERIAL_IMG})` }}
         />
-        <div className="absolute inset-0 bg-slate-900/85" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
+        <div className="absolute inset-0 bg-slate-900/85″ />
+        <div className="relative z-10 max-w-7xl mx-auto px-6″>
+          <div className="text-center mb-16″>
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-4″>
               The Audience You{" "}
-              <span className="text-sky-400">Can't Reach</span>{" "}
+              <span className="text-sky-400″>Can't Reach</span>{" "}
               Anywhere Else
             </h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               ProLnk's verified network is built on real job data, real referrals, and real relationships — not scraped lists or demographic guesses.
             </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6″>
             {STATS.map((s) => (
               <div key={s.label} className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-8 text-center">
-                <div className="text-5xl font-black text-white mb-2">{s.value}</div>
+                <div className="text-5xl font-black text-white mb-2″>{s.value}</div>
                 <div className="text-slate-300 text-sm font-medium">{s.label}</div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-12″>
             <a
               href="#apply"
               className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
             >
-              Get Started Now <ArrowRight className="w-5 h-5" />
+              Get Started Now <ArrowRight className="w-5 h-5″ />
             </a>
           </div>
         </div>
@@ -493,9 +493,9 @@ export default function ProLnkMedia() {
 
       {/* ── DRIVE RESULTS ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6″>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1″>
               <img
                 src={TRADES_IMG}
                 alt="ProLnk trade professionals"
@@ -507,16 +507,16 @@ export default function ProLnkMedia() {
                 <div className="text-sm text-sky-100 font-medium">generic display ads</div>
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">Why It Works</p>
-              <h2 className="text-5xl font-black text-slate-900 mb-6">
-                <span className="text-sky-500">Drive Results</span>{" "}
+            <div className="order-1 lg:order-2″>
+              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3″>Why It Works</p>
+              <h2 className="text-5xl font-black text-slate-900 mb-6″>
+                <span className="text-sky-500″>Drive Results</span>{" "}
                 With Precision Advertising
               </h2>
-              <p className="text-slate-600 leading-relaxed mb-8">
+              <p className="text-slate-600 leading-relaxed mb-8″>
                 Unlike broad digital advertising, ProLnk Media placements are contextual — your brand appears when pros are actively managing jobs, reviewing payouts, or when homeowners are reading their property reports.
               </p>
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-8″>
                 {[
                   "Verified audience — no bots, no fake accounts",
                   "Intent-based targeting — reach buyers when they're deciding",
@@ -524,9 +524,9 @@ export default function ProLnkMedia() {
                   "Transparent reporting — see exactly what you paid for",
                   "Brand safety — every placement reviewed before going live",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0" />
-                    <span className="text-slate-700">{item}</span>
+                  <div key={item} className="flex items-center gap-3″>
+                    <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0″ />
+                    <span className="text-slate-700″>{item}</span>
                   </div>
                 ))}
               </div>
@@ -534,7 +534,7 @@ export default function ProLnkMedia() {
                 href="#apply"
                 className="inline-flex items-center gap-2 border-2 border-slate-900 hover:bg-slate-900 hover:text-white text-slate-900 font-semibold px-6 py-3 rounded-full transition-all"
               >
-                Get Started Now <ArrowRight className="w-4 h-4" />
+                Get Started Now <ArrowRight className="w-4 h-4″ />
               </a>
             </div>
           </div>
@@ -543,39 +543,39 @@ export default function ProLnkMedia() {
 
       {/* ── ROI CALCULATOR ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">Return on Investment</p>
-            <h2 className="text-5xl font-black text-slate-900 mb-4">
+        <div className="max-w-6xl mx-auto px-6″>
+          <div className="text-center mb-10″>
+            <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3″>Return on Investment</p>
+            <h2 className="text-5xl font-black text-slate-900 mb-4″>
               See what one new client is{" "}
-              <span className="text-sky-500">worth to you</span>
+              <span className="text-sky-500″>worth to you</span>
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto">
               ProLnk placement costs a fraction of what other platforms charge — and delivers homeowners who are already engaged and looking for help.
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto bg-slate-50 rounded-2xl border border-slate-200 p-8">
-            <div className="flex items-center gap-2 mb-6">
-              <Calculator className="w-5 h-5 text-sky-500" />
-              <span className="font-bold text-slate-900">ROI Calculator</span>
+          <div className="max-w-2xl mx-auto bg-slate-50 rounded-2xl border border-slate-200 p-8″>
+            <div className="flex items-center gap-2 mb-6″>
+              <Calculator className="w-5 h-5 text-sky-500″ />
+              <span className="font-bold text-slate-900″>ROI Calculator</span>
             </div>
 
-            <div className="space-y-5">
+            <div className="space-y-5″>
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Your business category</label>
+                <label className="block text-sm font-semibold text-slate-700 mb-2″>Your business category</label>
                 <select
                   value={roiCategory}
                   onChange={e => setRoiCategory(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500"
+                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500″
                 >
                   {Object.keys(ROI_PRESETS).map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">
-                  New clients per month from ProLnk: <span className="text-sky-500">{roiConversions}</span>
+                <label className="block text-sm font-semibold text-slate-700 mb-2″>
+                  New clients per month from ProLnk: <span className="text-sky-500″>{roiConversions}</span>
                 </label>
                 <input
                   type="range"
@@ -583,16 +583,16 @@ export default function ProLnkMedia() {
                   max={10}
                   value={roiConversions}
                   onChange={e => setRoiConversions(Number(e.target.value))}
-                  className="w-full accent-sky-500"
+                  className="w-full accent-sky-500″
                 />
-                <div className="flex justify-between text-xs text-slate-400 mt-1">
+                <div className="flex justify-between text-xs text-slate-400 mt-1″>
                   <span>1 client/mo</span><span>10 clients/mo</span>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Your plan</label>
-                <div className="grid grid-cols-3 gap-2">
+                <label className="block text-sm font-semibold text-slate-700 mb-2″>Your plan</label>
+                <div className="grid grid-cols-3 gap-2″>
                   {AD_TIERS.map(t => (
                     <button
                       key={t.id}
@@ -600,34 +600,34 @@ export default function ProLnkMedia() {
                       onClick={() => setRoiTier(t.id as "connect" | "preferred" | "exclusive")}
                       className={`p-2.5 rounded-xl border-2 text-center transition-all ${
                         roiTier === t.id
-                          ? "border-sky-500 bg-sky-50"
-                          : "border-slate-200 bg-white hover:border-slate-300"
+                          ? "border-sky-500 bg-sky-50″
+                          : "border-slate-200 bg-white hover:border-slate-300″
                       }`}
                     >
                       <div className={`text-xs font-bold ${roiTier === t.id ? "text-sky-500" : "text-slate-400"}`}>{t.name}</div>
-                      <div className="text-sm font-bold text-slate-900">${t.price}<span className="text-xs font-normal text-slate-400">/mo</span></div>
+                      <div className="text-sm font-bold text-slate-900″>${t.price}<span className="text-xs font-normal text-slate-400">/mo</span></div>
                     </button>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl border border-slate-200 p-5">
+              <div className="bg-white rounded-xl border border-slate-200 p-5″>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-xs text-slate-500 mb-1">Monthly Cost</div>
-                    <div className="text-xl font-black text-slate-900">${tierPrice}</div>
+                    <div className="text-xs text-slate-500 mb-1″>Monthly Cost</div>
+                    <div className="text-xl font-black text-slate-900″>${tierPrice}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 mb-1">Revenue Generated</div>
-                    <div className="text-xl font-black text-emerald-600">${roiRevenue.toLocaleString()}</div>
+                    <div className="text-xs text-slate-500 mb-1″>Revenue Generated</div>
+                    <div className="text-xl font-black text-emerald-600″>${roiRevenue.toLocaleString()}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 mb-1">Return Multiple</div>
-                    <div className="text-xl font-black text-sky-500">{roiMultiple}×</div>
+                    <div className="text-xs text-slate-500 mb-1″>Return Multiple</div>
+                    <div className="text-xl font-black text-sky-500″>{roiMultiple}×</div>
                   </div>
                 </div>
                 <div className="mt-3 pt-3 border-t border-slate-100 text-center">
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-400″>
                     Based on {roiConversions} new client{roiConversions > 1 ? "s" : ""}/month at {roiPreset.label} of ${roiPreset.avgRevenue.toLocaleString()}
                   </p>
                 </div>
@@ -638,25 +638,25 @@ export default function ProLnkMedia() {
       </section>
 
       {/* ── EXCLUSIVITY SECTION ── */}
-      <section className="bg-slate-950 text-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
-              <Lock className="w-6 h-6 text-sky-400" />
+      <section className="bg-slate-950 text-white py-20″>
+        <div className="max-w-6xl mx-auto px-6″>
+          <div className="text-center mb-12″>
+            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4″>
+              <Lock className="w-6 h-6 text-sky-400″ />
             </div>
-            <h2 className="text-4xl font-black mb-3">One partner. One category. One zip code.</h2>
+            <h2 className="text-4xl font-black mb-3″>One partner. One category. One zip code.</h2>
             <p className="text-white/60 max-w-xl mx-auto leading-relaxed">
               Unlike platforms where you compete with dozens of others for the same homeowner's attention, ProLnk limits placement to a maximum of one Exclusive partner per category per zip code.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6″>
             {[
-              { tier: "Connect", desc: "Up to 3 partners per category per zip. Great for testing new markets.", color: "#6366F1" },
-              { tier: "Preferred", desc: "Max 2 partners per category per zip. Meaningful differentiation from competitors.", color: "#00B5B8" },
+              { tier: "Connect", desc: "Up to 3 partners per category per zip. Great for testing new markets.", color: "#6366F1″ },
+              { tier: "Preferred", desc: "Max 2 partners per category per zip. Meaningful differentiation from competitors.", color: "#00B5B8″ },
               { tier: "Exclusive", desc: "Only 1 partner per category per zip. You own the relationship in your territory.", color: "#7C3AED" },
             ].map(({ tier, desc, color }) => (
-              <div key={tier} className="bg-white/5 border border-white/10 rounded-xl p-5">
-                <div className="text-sm font-bold mb-2" style={{ color }}>{tier}</div>
+              <div key={tier} className="bg-white/5 border border-white/10 rounded-xl p-5″>
+                <div className="text-sm font-bold mb-2″ style={{ color }}>{tier}</div>
                 <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -665,33 +665,33 @@ export default function ProLnkMedia() {
       </section>
 
       {/* ── CASE STUDIES ── */}
-      <section id="case-studies" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <section id="case-studies" className="py-24 bg-slate-50″>
+        <div className="max-w-7xl mx-auto px-6″>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6″>
             <div>
-              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">Ad Formats in Action</p>
-              <h2 className="text-5xl font-black text-slate-900">
+              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3″>Ad Formats in Action</p>
+              <h2 className="text-5xl font-black text-slate-900″>
                 See How Brands{" "}
-                <span className="text-sky-500">Win the Trades</span>
+                <span className="text-sky-500″>Win the Trades</span>
               </h2>
             </div>
             <a
               href="#apply"
               className="inline-flex items-center gap-2 border-2 border-slate-900 hover:bg-slate-900 hover:text-white text-slate-900 font-semibold px-6 py-3 rounded-full transition-all whitespace-nowrap"
             >
-              Apply Now <ArrowRight className="w-4 h-4" />
+              Apply Now <ArrowRight className="w-4 h-4″ />
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div className="flex flex-wrap gap-2 mb-10″>
             {CASE_TABS.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all ${
                   activeTab === tab
-                    ? "bg-slate-900 text-white border-slate-900"
-                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-400"
+                    ? "bg-slate-900 text-white border-slate-900″
+                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-400″
                 }`}
               >
                 {tab}
@@ -699,20 +699,20 @@ export default function ProLnkMedia() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6″>
             {filteredCases.map((c) => (
-              <div key={c.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100">
+              <div key={c.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100″>
                 <div className="h-52 overflow-hidden">
                   <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
                 </div>
-                <div className="p-6">
-                  <span className="inline-block bg-sky-50 text-sky-600 text-xs font-bold px-3 py-1 rounded-full mb-3">
+                <div className="p-6″>
+                  <span className="inline-block bg-sky-50 text-sky-600 text-xs font-bold px-3 py-1 rounded-full mb-3″>
                     {c.badge}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{c.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-4">{c.desc}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2″>{c.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-4″>{c.desc}</p>
                   <a href="#apply" className="inline-flex items-center gap-1 text-sky-500 font-semibold text-sm hover:gap-2 transition-all">
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    Learn More <ArrowRight className="w-4 h-4″ />
                   </a>
                 </div>
               </div>
@@ -723,13 +723,13 @@ export default function ProLnkMedia() {
 
       {/* ── PRICING ── */}
       <section id="pricing" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="max-w-7xl mx-auto px-6″>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6″>
             <div>
-              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">Pricing</p>
-              <h2 className="text-5xl font-black text-slate-900">
+              <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3″>Pricing</p>
+              <h2 className="text-5xl font-black text-slate-900″>
                 Simple Plans for{" "}
-                <span className="text-sky-500">Every Budget</span>
+                <span className="text-sky-500″>Every Budget</span>
               </h2>
               <p className="text-slate-500 mt-3 max-w-xl">
                 Founding advertiser rates locked in for 12 months. Join the waitlist now to secure your spot and pricing.
@@ -739,7 +739,7 @@ export default function ProLnkMedia() {
               href="#apply"
               className="inline-flex items-center gap-2 border-2 border-slate-900 hover:bg-slate-900 hover:text-white text-slate-900 font-semibold px-6 py-3 rounded-full transition-all whitespace-nowrap"
             >
-              Get Started Now <ArrowRight className="w-4 h-4" />
+              Get Started Now <ArrowRight className="w-4 h-4″ />
             </a>
           </div>
 
@@ -749,8 +749,8 @@ export default function ProLnkMedia() {
                 key={tier.name}
                 className={`relative rounded-2xl p-8 flex flex-col ${
                   tier.featured
-                    ? "bg-sky-500 text-white shadow-2xl md:-mt-4 md:mb-4"
-                    : "bg-slate-50 border border-slate-100"
+                    ? "bg-sky-500 text-white shadow-2xl md:-mt-4 md:mb-4″
+                    : "bg-slate-50 border border-slate-100″
                 }`}
               >
                 {tier.badge && (
@@ -764,7 +764,7 @@ export default function ProLnkMedia() {
                 <div className={`text-sm font-bold uppercase tracking-widest mb-2 ${tier.featured ? "text-sky-100" : "text-slate-500"}`}>
                   {tier.name}
                 </div>
-                <div className="flex items-end gap-1 mb-2">
+                <div className="flex items-end gap-1 mb-2″>
                   <span className={`text-4xl font-black ${tier.featured ? "text-white" : "text-slate-900"}`}>
                     {tier.price}
                   </span>
@@ -778,9 +778,9 @@ export default function ProLnkMedia() {
                 <div className={`text-xs font-bold uppercase tracking-widest mb-4 ${tier.featured ? "text-sky-200" : "text-slate-400"}`}>
                   What You'll Get
                 </div>
-                <ul className="space-y-3 mb-8 flex-1">
+                <ul className="space-y-3 mb-8 flex-1″>
                   {tier.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2">
+                    <li key={f} className="flex items-center gap-2″>
                       <CheckCircle className={`w-4 h-4 flex-shrink-0 ${tier.featured ? "text-sky-200" : "text-sky-500"}`} />
                       <span className={`text-sm ${tier.featured ? "text-sky-50" : "text-slate-700"}`}>{f}</span>
                     </li>
@@ -790,7 +790,7 @@ export default function ProLnkMedia() {
                   href="#apply"
                   className={`block text-center font-bold py-3 rounded-full transition-all ${
                     tier.featured
-                      ? "bg-white text-sky-500 hover:bg-sky-50"
+                      ? "bg-white text-sky-500 hover:bg-sky-50″
                       : "border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
                   }`}
                 >
@@ -803,13 +803,13 @@ export default function ProLnkMedia() {
       </section>
 
       {/* ── APPLY / WAITLIST FORM ── */}
-      <section id="apply" className="py-24 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3">Founding Advertisers</p>
-            <h2 className="text-5xl font-black text-white mb-4">
+      <section id="apply" className="py-24 bg-slate-900″>
+        <div className="max-w-4xl mx-auto px-6″>
+          <div className="text-center mb-16″>
+            <p className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3″>Founding Advertisers</p>
+            <h2 className="text-5xl font-black text-white mb-4″>
               Secure Your Spot in the{" "}
-              <span className="text-sky-400">ProLnk Network</span>
+              <span className="text-sky-400″>ProLnk Network</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
               We're accepting a limited number of founding advertisers. Lock in your rate and category before we open to the public.
@@ -818,18 +818,18 @@ export default function ProLnkMedia() {
 
           {submitted ? (
             <div className="bg-sky-500/20 border border-sky-500/40 rounded-3xl p-12 text-center">
-              <CheckCircle className="w-16 h-16 text-sky-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-black text-white mb-2">Application Received!</h3>
-              <p className="text-slate-300">
+              <CheckCircle className="w-16 h-16 text-sky-400 mx-auto mb-4″ />
+              <h3 className="text-2xl font-black text-white mb-2″>Application Received!</h3>
+              <p className="text-slate-300″>
                 Our team will review your application and reach out within 48 business hours to discuss your campaign goals and available inventory.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12″>
+              <div className="grid md:grid-cols-2 gap-6 mb-6″>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Company Name <span className="text-sky-400">*</span>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2″>
+                    Company Name <span className="text-sky-400″>*</span>
                   </label>
                   <input
                     type="text"
@@ -841,8 +841,8 @@ export default function ProLnkMedia() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Contact Name <span className="text-sky-400">*</span>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2″>
+                    Contact Name <span className="text-sky-400″>*</span>
                   </label>
                   <input
                     type="text"
@@ -854,8 +854,8 @@ export default function ProLnkMedia() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">
-                    Email Address <span className="text-sky-400">*</span>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2″>
+                    Email Address <span className="text-sky-400″>*</span>
                   </label>
                   <input
                     type="email"
@@ -867,17 +867,17 @@ export default function ProLnkMedia() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">Phone</label>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2″>Phone</label>
                   <input
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="(214) 555-0100"
+                    placeholder="(214) 555-0100″
                     className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">Industry / Category</label>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2″>Industry / Category</label>
                   <select
                     value={form.industry}
                     onChange={(e) => setForm({ ...form, industry: e.target.value })}
@@ -897,23 +897,23 @@ export default function ProLnkMedia() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">Monthly Ad Budget</label>
+                  <label className="block text-sm font-semibold text-slate-300 mb-2″>Monthly Ad Budget</label>
                   <select
                     value={form.budget}
                     onChange={(e) => setForm({ ...form, budget: e.target.value })}
                     className="w-full bg-slate-800 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-colors"
                   >
                     <option value="">Select budget range</option>
-                    <option value="under-500">Under $500/mo</option>
-                    <option value="500-1500">$500 – $1,500/mo</option>
-                    <option value="1500-5000">$1,500 – $5,000/mo</option>
+                    <option value="under-500″>Under $500/mo</option>
+                    <option value="500-1500″>$500 – $1,500/mo</option>
+                    <option value="1500-5000″>$1,500 – $5,000/mo</option>
                     <option value="5000-plus">$5,000+/mo</option>
                     <option value="custom">Custom / Enterprise</option>
                   </select>
                 </div>
               </div>
-              <div className="mb-8">
-                <label className="block text-sm font-semibold text-slate-300 mb-2">Tell us about your campaign goals</label>
+              <div className="mb-8″>
+                <label className="block text-sm font-semibold text-slate-300 mb-2″>Tell us about your campaign goals</label>
                 <textarea
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -929,7 +929,7 @@ export default function ProLnkMedia() {
               >
                 {submitMutation.isPending ? "Submitting..." : "Submit Advertiser Application →"}
               </button>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6″>
                 <p className="text-slate-500 text-sm">
                   We review all applications within 48 hours. No commitment required.
                 </p>
@@ -937,7 +937,7 @@ export default function ProLnkMedia() {
                   href="mailto:media@prolnk.io?subject=Book%20a%20Call%20-%20ProLnk%20Media"
                   className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 font-semibold text-sm transition-colors whitespace-nowrap"
                 >
-                  <Zap className="w-4 h-4" /> Prefer to talk? Email us to book a call
+                  <Zap className="w-4 h-4″ /> Prefer to talk? Email us to book a call
                 </a>
               </div>
             </form>
@@ -946,12 +946,12 @@ export default function ProLnkMedia() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-slate-950 py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-12">
+      <footer className="bg-slate-950 py-16″>
+        <div className="max-w-7xl mx-auto px-6″>
+          <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-12″>
             <div>
-              <div className="text-2xl font-black text-white mb-2">
-                ProLnk <span className="text-sky-400">Media</span>
+              <div className="text-2xl font-black text-white mb-2″>
+                ProLnk <span className="text-sky-400″>Media</span>
               </div>
               <p className="text-slate-400 text-sm max-w-xs">
                 The advertising network built for the home services industry.
@@ -959,8 +959,8 @@ export default function ProLnkMedia() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
               <div>
-                <div className="text-white font-bold mb-3">Ad Formats</div>
-                <ul className="space-y-2 text-slate-400">
+                <div className="text-white font-bold mb-3″>Ad Formats</div>
+                <ul className="space-y-2 text-slate-400″>
                   <li>Dashboard Ads</li>
                   <li>Email Placements</li>
                   <li>Notifications</li>
@@ -968,16 +968,16 @@ export default function ProLnkMedia() {
                 </ul>
               </div>
               <div>
-                <div className="text-white font-bold mb-3">Company</div>
-                <ul className="space-y-2">
+                <div className="text-white font-bold mb-3″>Company</div>
+                <ul className="space-y-2″>
                   <li><Link href="/" className="text-slate-400 hover:text-white transition-colors">ProLnk Home</Link></li>
                   <li><Link href="/waitlist/pro" className="text-slate-400 hover:text-white transition-colors">Partner Waitlist</Link></li>
                   <li><Link href="/waitlist/homeowner" className="text-slate-400 hover:text-white transition-colors">Homeowner Waitlist</Link></li>
                 </ul>
               </div>
               <div>
-                <div className="text-white font-bold mb-3">Resources</div>
-                <ul className="space-y-2 text-slate-400">
+                <div className="text-white font-bold mb-3″>Resources</div>
+                <ul className="space-y-2 text-slate-400″>
                   <li><a href="#apply" className="hover:text-white transition-colors">Advertise With Us</a></li>
                   <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                   <li><a href="#formats" className="hover:text-white transition-colors">Ad Formats</a></li>

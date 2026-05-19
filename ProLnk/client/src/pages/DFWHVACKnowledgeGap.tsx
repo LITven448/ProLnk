@@ -139,7 +139,7 @@ export default function DFWHVACKnowledgeGap() {
                       background: answers[q.id] === oi ? '#1e3a5f' : '#0A1628',
                       color: '#fff',
                       border: '2px solid',
-                      borderColor: answers[q.id] === oi ? '#F5E642' : '#1e3a5f',
+                      borderColor: answers[q.id] === oi ? '#F5E642′ : '#1e3a5f',
                       borderRadius: 8,
                       padding: '10px 14px',
                       marginBottom: 8,
@@ -157,7 +157,7 @@ export default function DFWHVACKnowledgeGap() {
               onClick={() => setSubmitted(true)}
               disabled={Object.keys(answers).length < questions.length}
               style={{
-                background: Object.keys(answers).length === questions.length ? '#F5E642' : '#1e3a5f',
+                background: Object.keys(answers).length === questions.length ? '#F5E642′ : '#1e3a5f',
                 color: '#0A1628',
                 border: 'none',
                 borderRadius: 10,
@@ -178,7 +178,7 @@ export default function DFWHVACKnowledgeGap() {
           <div>
             <div style={{ background: '#0f2040', borderRadius: 16, padding: 28, marginBottom: 24, textAlign: 'center', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 56, marginBottom: 8 }}>{pct >= 80 ? '🏆' : pct >= 60 ? '📚' : '🔧'}</div>
-              <div style={{ fontWeight: 800, fontSize: 32, color: '#F5E642' }}>{score}/{questions.length}</div>
+              <div style={{ fontWeight: 800, fontSize: 32, color: '#F5E642′ }}>{score}/{questions.length}</div>
               <div style={{ color: '#94a3b8', marginTop: 4 }}>{pct}% correct</div>
               <div style={{ marginTop: 12, fontSize: 16 }}>
                 {pct >= 80 ? 'Strong DFW HVAC knowledge — you\’re well-prepared.' : pct >= 60 ? 'Good foundation with some gaps to fill.' : 'Several key gaps — the resources below will help.'}
@@ -188,7 +188,7 @@ export default function DFWHVACKnowledgeGap() {
               <div>
                 <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 16 }}>Your Knowledge Gaps</div>
                 {gaps.map((q, i) => (
-                  <div key={q.id} style={{ background: '#0f2040', borderRadius: 12, padding: 18, marginBottom: 12, border: '1px solid #ef4444' }}>
+                  <div key={q.id} style={{ background: '#0f2040', borderRadius: 12, padding: 18, marginBottom: 12, border: '1px solid #ef4444′ }}>
                     <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8 }}>{i + 1}. {q.question}</div>
                     <div style={{ color: '#ef4444', fontSize: 13, marginBottom: 6 }}>Your answer: {q.options[answers[q.id]]}</div>
                     <div style={{ color: '#34d399', fontSize: 13, marginBottom: 10 }}>Correct: {q.options[q.correct]}</div>

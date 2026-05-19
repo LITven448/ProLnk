@@ -38,42 +38,42 @@ export default function ProLnkStream5OriginationRights() {
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 What Are Origination Rights?</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🏠 What Are Origination Rights?</div>
           <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
             When you add a home to the ProLnk Health Vault, you become the permanent originator. Every time that home generates revenue — from match fees, inspections, or data licensing — you receive 1.5% automatically. This is a long-term asset: 100 homes today could generate passive income for decades.
           </p>
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 Origination Income Projector</div>
+          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 Origination Income Projector</div>
 
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Homes Added to Vault: {homes}</label>
             <input type="range" min={0} max={500} value={homes} onChange={e => setHomes(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
 
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Projection Horizon: {yearsOut} years</label>
             <input type="range" min={1} max={10} value={yearsOut} onChange={e => setYearsOut(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 18, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4 }}>Annual Origination Income</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>${annualIncome.toFixed(0)}/yr</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>${annualIncome.toFixed(0)}/yr</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 18, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4 }}>{yearsOut}-Year Total</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#10B981' }}>${projectedTotal.toFixed(0)}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#10B981′ }}>${projectedTotal.toFixed(0)}</div>
             </div>
           </div>
 
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 14px' }}>
             {yearRows.map(row => (
               <div key={row.year} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
-                <span style={{ color: '#94A3B8' }}>Year {row.year}</span>
+                <span style={{ color: '#94A3B8′ }}>Year {row.year}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>+${annualIncome.toFixed(0)} → ${row.cumulative.toFixed(0)} total</span>
               </div>
             ))}

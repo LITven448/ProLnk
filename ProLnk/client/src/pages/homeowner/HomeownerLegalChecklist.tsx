@@ -69,7 +69,7 @@ export default function HomeownerLegalChecklist() {
 
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0′ }}>
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 36, marginBottom: 16 }}>📁</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,38px)', fontWeight: 800, color: '#f1f5f9', margin: '0 0 16px', lineHeight: 1.15 }}>
@@ -80,7 +80,7 @@ export default function HomeownerLegalChecklist() {
           </p>
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 14, padding: '20px 24px', marginBottom: 36, display: 'flex', alignItems: 'center', gap: 24, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 14, padding: '20px 24px', marginBottom: 36, display: 'flex', alignItems: 'center', gap: 24, border: '1px solid #334155′ }}>
           <div style={{ textAlign: 'center', minWidth: 80 }}>
             <div style={{ color: scoreColor, fontWeight: 800, fontSize: 36 }}>{pct}%</div>
             <div style={{ color: '#64748b', fontSize: 12, fontWeight: 700 }}>Complete</div>
@@ -97,7 +97,7 @@ export default function HomeownerLegalChecklist() {
         </div>
 
         {sections.map(s => (
-          <div key={s.title} style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 24, border: '1px solid #334155' }}>
+          <div key={s.title} style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 24, border: '1px solid #334155′ }}>
             <h2 style={{ color: '#f1f5f9', fontSize: 16, fontWeight: 800, margin: '0 0 18px', display: 'flex', alignItems: 'center', gap: 8 }}>
               <span>{s.icon}</span> {s.title}
             </h2>
@@ -137,7 +137,7 @@ export default function HomeownerLegalChecklist() {
         ))}
 
         {missing.length > 0 && (
-          <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 40, border: '1px solid #334155' }}>
+          <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginBottom: 40, border: '1px solid #334155′ }}>
             <h2 style={{ color: '#f1f5f9', fontSize: 16, fontWeight: 800, margin: '0 0 16px' }}>📋 Priority List — Documents to Obtain</h2>
             {[...sections].map(s => {
               const missingInSection = s.items.filter(i => !checked.has(i.id));

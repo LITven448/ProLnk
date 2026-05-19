@@ -44,19 +44,19 @@ export default function DFWHomeImprovementROIRanker() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: '1.5rem' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🔨</div>
-          <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700, color: '#F5E642' }}>DFW Home Improvement ROI Ranker</h1>
+          <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700, color: '#F5E642′ }}>DFW Home Improvement ROI Ranker</h1>
           <p style={{ margin: '0.5rem 0 0', color: '#8899bb', fontSize: 14 }}>Select your planned improvements — we rank them by DFW-specific ROI</p>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
           {categories.map(c => (
-            <button key={c} onClick={() => setFilter(c)} style={{ padding: '6px 16px', borderRadius: 20, border: 'none', background: filter === c ? '#F5E642' : '#1e2d4a', color: filter === c ? '#0A1628' : '#ccc', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>{c}</button>
+            <button key={c} onClick={() => setFilter(c)} style={{ padding: '6px 16px', borderRadius: 20, border: 'none', background: filter === c ? '#F5E642′ : '#1e2d4a', color: filter === c ? '#0A1628' : '#ccc', fontWeight: 600, fontSize: 13, cursor: ’pointer' }}>{c}</button>
           ))}
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem', marginBottom: '1rem' }}>
           {visible.map(item => {
             const isSelected = selected.includes(item.name);
             return (
-              <div key={item.name} onClick={() => toggle(item.name)} style={{ background: isSelected ? '#1e3a6e' : '#132035', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', border: isSelected ? '2px solid #F5E642' : '2px solid transparent', transition: 'all 0.2s' }}>
+              <div key={item.name} onClick={() => toggle(item.name)} style={{ background: isSelected ? '#1e3a6e' : '#132035', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', border: isSelected ? '2px solid #F5E642′ : '2px solid transparent', transition: ’all 0.2s' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 20, marginBottom: 4 }}>{item.emoji}</div>
@@ -64,7 +64,7 @@ export default function DFWHomeImprovementROIRanker() {
                     <div style={{ fontSize: 12, color: '#8899bb' }}>~${item.cost.toLocaleString()} avg cost</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: 18, fontWeight: 700, color: item.roi >= 85 ? '#4ade80' : item.roi >= 70 ? '#F5E642' : '#f87171' }}>{item.roi}%</div>
+                    <div style={{ fontSize: 18, fontWeight: 700, color: item.roi >= 85 ? '#4ade80′ : item.roi >= 70 ? '#F5E642' : '#f87171' }}>{item.roi}%</div>
                     <div style={{ fontSize: 10, color: '#8899bb' }}>ROI</div>
                   </div>
                 </div>
@@ -74,24 +74,24 @@ export default function DFWHomeImprovementROIRanker() {
         </div>
         {selected.length > 0 && (
           <div style={{ background: '#132035', borderRadius: 10, padding: '0.75rem 1rem', marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ color: '#ccc', fontSize: 14 }}>{selected.length} selected — Total: <strong style={{ color: '#F5E642' }}>${totalCost.toLocaleString()}</strong></span>
+            <span style={{ color: '#ccc', fontSize: 14 }}>{selected.length} selected — Total: <strong style={{ color: '#F5E642′ }}>${totalCost.toLocaleString()}</strong></span>
             <button onClick={() => setSelected([])} style={{ background: 'none', border: '1px solid #444', color: '#888', fontSize: 12, padding: '4px 10px', borderRadius: 6, cursor: 'pointer' }}>Clear</button>
           </div>
         )}
-        <button onClick={rank} disabled={selected.length === 0} style={{ width: '100%', background: selected.length ? '#F5E642' : '#2a3a50', color: selected.length ? '#0A1628' : '#666', padding: '14px', borderRadius: 10, border: 'none', fontSize: 16, fontWeight: 700, cursor: selected.length ? 'pointer' : 'not-allowed', marginBottom: '1rem' }}>
+        <button onClick={rank} disabled={selected.length === 0} style={{ width: '100%', background: selected.length ? '#F5E642′ : '#2a3a50', color: selected.length ? '#0A1628' : '#666', padding: '14px', borderRadius: 10, border: ’none', fontSize: 16, fontWeight: 700, cursor: selected.length ? 'pointer' : 'not-allowed', marginBottom: '1rem' }}>
           🏆 Rank My Improvements by ROI
         </button>
         {ranked && (
           <div style={{ background: '#132035', borderRadius: 12, padding: '1.5rem' }}>
-            <h3 style={{ margin: '0 0 1rem', color: '#F5E642' }}>🏆 Your Prioritized DFW Improvement Plan</h3>
+            <h3 style={{ margin: '0 0 1rem', color: '#F5E642′ }}>🏆 Your Prioritized DFW Improvement Plan</h3>
             {ranked.map((item, i) => (
               <div key={item.name} style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '0.5rem' }}>
-                <div style={{ width: 32, height: 32, background: i === 0 ? '#F5E642' : i === 1 ? '#aaa' : i === 2 ? '#cd7f32' : '#2a3a50', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: i < 3 ? '#000' : '#ccc', flexShrink: 0, fontSize: 13 }}>#{i+1}</div>
+                <div style={{ width: 32, height: 32, background: i === 0 ? '#F5E642′ : i === 1 ? '#aaa' : i === 2 ? '#cd7f32' : '#2a3a50', borderRadius: '50%', display: ’flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: i < 3 ? '#000′ : '#ccc', flexShrink: 0, fontSize: 13 }}>#{i+1}</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 600, color: '#fff', fontSize: 14 }}>{item.emoji} {item.name}</div>
                   <div style={{ fontSize: 12, color: '#8899bb' }}>~${item.cost.toLocaleString()} cost • ${Math.round(item.cost * item.roi / 100).toLocaleString()} estimated return</div>
                 </div>
-                <div style={{ fontWeight: 700, fontSize: 18, color: item.roi >= 85 ? '#4ade80' : item.roi >= 70 ? '#F5E642' : '#f87171' }}>{item.roi}%</div>
+                <div style={{ fontWeight: 700, fontSize: 18, color: item.roi >= 85 ? '#4ade80′ : item.roi >= 70 ? '#F5E642' : '#f87171' }}>{item.roi}%</div>
               </div>
             ))}
           </div>

@@ -38,22 +38,22 @@ export default function DFWHVACAirQualityCalc() {
       <h1 style={{ color: '#F5E642', fontSize: '1.6rem', marginBottom: '0.25rem' }}>🌬️ DFW HVAC Air Quality Calculator</h1>
       <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>Calculate your DFW home's indoor air quality score and get improvement recommendations.</p>
       <div style={{ display: 'grid', gap: '1rem', maxWidth: 560 }}>
-        <label style={{ color: '#F5E642' }}>Current Filter Rating
+        <label style={{ color: '#F5E642′ }}>Current Filter Rating
           <select value={merv} onChange={e => setMerv(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {MERV_OPTIONS.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>Ventilation Type
+        <label style={{ color: '#F5E642′ }}>Ventilation Type
           <select value={vent} onChange={e => setVent(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {VENT_OPTIONS.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>DFW Season
+        <label style={{ color: '#F5E642′ }}>DFW Season
           <select value={season} onChange={e => setSeason(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {SEASON_OPTIONS.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>Primary Health Concern
+        <label style={{ color: '#F5E642′ }}>Primary Health Concern
           <select value={concern} onChange={e => setConcern(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {CONCERN_OPTIONS.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
@@ -70,9 +70,9 @@ export default function DFWHVACAirQualityCalc() {
       </div>
       {result && (
         <div style={{ marginTop: '1.5rem', background: '#1e2d45', borderRadius: 10, padding: '1.25rem', maxWidth: 560 }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642' }}>{result.score}<span style={{ fontSize: '1rem', color: '#94a3b8' }}>/100</span></div>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642′ }}>{result.score}<span style={{ fontSize: '1rem', color: '#94a3b8' }}>/100</span></div>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>{result.grade} Air Quality</div>
-          {result.tips.map((t, i) => <div key={i} style={{ marginBottom: '0.4rem', color: '#e2e8f0' }}>{t}</div>)}
+          {result.tips.map((t, i) => <div key={i} style={{ marginBottom: '0.4rem', color: '#e2e8f0′ }}>{t}</div>)}
           {result.cost !== 'No upgrades needed' && <div style={{ marginTop: '0.75rem', color: '#94a3b8', fontSize: '0.85rem' }}>💰 Estimated investment: {result.cost}</div>}
         </div>
       )}

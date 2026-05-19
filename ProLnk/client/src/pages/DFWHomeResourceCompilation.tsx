@@ -117,9 +117,9 @@ export default function DFWHomeResourceCompilation() {
         </div>
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
-          <button onClick={() => setActiveCategory(null)} style={{ background: !activeCategory ? '#F5E642' : '#0D1F38', color: !activeCategory ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>All</button>
+          <button onClick={() => setActiveCategory(null)} style={{ background: !activeCategory ? '#F5E642′ : '#0D1F38', color: !activeCategory ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 14px', fontSize: 13, fontWeight: 600, cursor: ’pointer' }}>All</button>
           {categories.map(c => (
-            <button key={c.id} onClick={() => setActiveCategory(activeCategory === c.id ? null : c.id)} style={{ background: activeCategory === c.id ? '#F5E642' : '#0D1F38', color: activeCategory === c.id ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>{c.label}</button>
+            <button key={c.id} onClick={() => setActiveCategory(activeCategory === c.id ? null : c.id)} style={{ background: activeCategory === c.id ? '#F5E642′ : '#0D1F38', color: activeCategory === c.id ? '#0A1628' : '#fff', border: '1px solid #1E3A5F', borderRadius: 20, padding: '6px 14px', fontSize: 13, fontWeight: 600, cursor: ’pointer' }}>{c.label}</button>
           ))}
         </div>
 

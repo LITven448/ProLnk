@@ -24,18 +24,18 @@ export default function DFWChimneyFireplaceGuide2026() {
             <div key={i} style={{ background: '#1E2D45', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ color: '#F5E642', fontSize: 13, marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1' }}>{s.val}</div>
+              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1′ }}>{s.val}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📋 Annual Maintenance Checklist</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📋 Annual Maintenance Checklist</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
             {['wood', 'gas', 'electric'].map(t => (
               <button key={t} onClick={() => { setFireplaceType(t); setShowChecklist(true); }}
                 style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                  background: fireplaceType === t ? '#F5E642' : '#2d3f5a', color: fireplaceType === t ? '#0A1628' : '#fff' }}>
+                  background: fireplaceType === t ? '#F5E642′ : '#2d3f5a', color: fireplaceType === t ? '#0A1628' : '#fff' }}>
                 {t.charAt(0).toUpperCase() + t.slice(1)} Burning
               </button>
             ))}
@@ -44,7 +44,7 @@ export default function DFWChimneyFireplaceGuide2026() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {checklists[fireplaceType].map((item, i) => (
                 <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #2d3f5a', display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ color: '#F5E642' }}>✓</span><span style={{ color: '#cbd5e1' }}>{item}</span>
+                  <span style={{ color: '#F5E642′ }}>✓</span><span style={{ color: '#cbd5e1' }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -52,7 +52,7 @@ export default function DFWChimneyFireplaceGuide2026() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚠️ DFW-Specific Risks</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚠️ DFW-Specific Risks</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
             Even occasional fireplace use in DFW can cause creosote buildup. Gas logs require annual professional inspection. Wood-burning fireplaces must have chimney caps to keep out pests year-round.
           </p>

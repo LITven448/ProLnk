@@ -25,7 +25,7 @@ export default function DFWWholeHomeSurgeProtection2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '32px' }}>
           {[
             { icon: '⛈️', label: 'DFW Risk Level', value: 'Very High' },
-            { icon: '💵', label: 'Installed Cost', value: '$300–500' },
+            { icon: '💵', label: 'Installed Cost', value: '$300–500′ },
             { icon: '🔌', label: 'Protects', value: 'Whole Panel' },
             { icon: '📅', label: 'Install Time', value: '1–2 Hours' },
           ].map(stat => (
@@ -41,18 +41,18 @@ export default function DFWWholeHomeSurgeProtection2026() {
           <h2 style={{ color: '#F5E642', fontSize: '20px', margin: '0 0 8px' }}>💡 Calculate Your Surge Protection ROI</h2>
           <p style={{ color: '#94a3b8', fontSize: '14px', margin: '0 0 20px' }}>Estimate total value of home electronics (TVs, HVAC, appliances, computers, audio)</p>
           <div style={{ marginBottom: '16px' }}>
-            <input type='range' min='0' max='100000' step='5000' value={value} onChange={e => setValue(Number(e.target.value))}
+            <input type='range' min='0′ max='100000' step='5000' value={value} onChange={e => setValue(Number(e.target.value))}
               style={{ width: '100%', accentColor: '#F5E642', cursor: 'pointer' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', color: '#64748b', fontSize: '12px', marginTop: '4px' }}>
               <span>$0</span><span>$25K</span><span>$50K</span><span>$75K</span><span>$100K+</span>
             </div>
           </div>
-          <div style={{ backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', flexWrap: 'wrap', gap: '8px' }}>
               <span style={{ color: '#F5E642', fontWeight: '700', fontSize: '18px' }}>{tier.label}</span>
               <span style={{ padding: '4px 12px', borderRadius: '20px', backgroundColor: '#1e3a5f', color: '#60a5fa', fontWeight: '600', fontSize: '13px' }}>Risk: {tier.risk}</span>
             </div>
-            <p style={{ color: '#cbd5e1', margin: '0 0 10px', lineHeight: '1.6' }}>{tier.rec}</p>
+            <p style={{ color: '#cbd5e1', margin: '0 0 10px', lineHeight: '1.6′ }}>{tier.rec}</p>
             <p style={{ color: '#94a3b8', margin: 0, lineHeight: '1.6', fontSize: '14px' }}>{tier.roi}</p>
           </div>
         </div>
@@ -68,8 +68,8 @@ export default function DFWWholeHomeSurgeProtection2026() {
           ].map((row, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '10px', padding: '10px 0', borderBottom: i < 4 ? '1px solid #1e3a5f' : 'none', alignItems: 'center' }}>
               <span style={{ color: '#cbd5e1', fontSize: '14px' }}>{row.feature}</span>
-              <span style={{ textAlign: 'center', color: row.whole ? '#4ade80' : '#ef4444' }}>{row.whole ? '✅' : '❌'}</span>
-              <span style={{ textAlign: 'center', color: row.strip ? '#4ade80' : '#ef4444' }}>{row.strip ? '✅' : '❌'}</span>
+              <span style={{ textAlign: 'center', color: row.whole ? '#4ade80′ : '#ef4444' }}>{row.whole ? '✅' : '❌'}</span>
+              <span style={{ textAlign: 'center', color: row.strip ? '#4ade80′ : '#ef4444' }}>{row.strip ? '✅' : '❌'}</span>
             </div>
           ))}
         </div>

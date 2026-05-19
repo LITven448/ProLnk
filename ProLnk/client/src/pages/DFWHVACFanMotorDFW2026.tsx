@@ -39,7 +39,7 @@ export default function DFWHVACFanMotorDFW2026() {
           ].map(m => (
             <div key={m.title} style={{ background: '#1e2d45', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{m.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{m.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{m.title}</div>
               {m.items.map(item => (
                 <div key={item} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>• {item}</div>
               ))}
@@ -47,11 +47,11 @@ export default function DFWHVACFanMotorDFW2026() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>🔍 Your Motor Concern → DFW Guide</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>🔍 Your Motor Concern → DFW Guide</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => handleSelect(c.id)}
-              style={{ background: motorConcern === c.id ? '#F5E642' : '#1e2d45', color: motorConcern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: motorConcern === c.id ? '#F5E642′ : '#1e2d45', color: motorConcern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {c.label}
             </button>
           ))}
@@ -61,7 +61,7 @@ export default function DFWHVACFanMotorDFW2026() {
             {result}
           </div>
         )}
-        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8' }}>
+        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8′ }}>
           💡 ProLnk connects DFW homeowners with HVAC pros who stock both PSC and ECM motors for same-day service.
         </div>
       </div>

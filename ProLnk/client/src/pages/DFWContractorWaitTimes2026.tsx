@@ -63,8 +63,8 @@ export default function DFWContractorWaitTimes2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 28 }}>
           {(Object.keys(tradeData) as Trade[]).map((key) => (
             <button key={key} onClick={() => setTrade(key)} style={{
-              background: trade === key ? '#F5E642' : '#1e2d45',
-              color: trade === key ? '#0A1628' : '#fff',
+              background: trade === key ? '#F5E642′ : '#1e2d45',
+              color: trade === key ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 8, padding: '12px 8px', cursor: 'pointer', fontWeight: 700, fontSize: 14,
             }}>{tradeData[key].icon} {tradeData[key].label}</button>
           ))}
@@ -74,8 +74,8 @@ export default function DFWContractorWaitTimes2026() {
         <div style={{ display: 'flex', gap: 10, marginBottom: 28, flexWrap: 'wrap' }}>
           {urgencies.map(({ key, label }) => (
             <button key={key} onClick={() => setUrgency(key)} style={{
-              background: urgency === key ? '#F5E642' : '#1e2d45',
-              color: urgency === key ? '#0A1628' : '#fff',
+              background: urgency === key ? '#F5E642′ : '#1e2d45',
+              color: urgency === key ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14,
             }}>{label}</button>
           ))}

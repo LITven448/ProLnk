@@ -20,7 +20,7 @@ export default function DFWRentalHVACGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Texas habitability law, repair vs. replace decisions, and ProLnk emergency HVAC access</p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15, marginBottom: 8 }}>⚖️ Texas Property Code — HVAC Habitability Requirement</div>
           <div style={{ color: '#cbd5e1', fontSize: 13, lineHeight: 1.7 }}>
             Under Texas Property Code §92.052–92.061, landlords must maintain rental properties in a habitable condition. Working HVAC (heating AND cooling) is required. In DFW summers exceeding 100°F, a broken AC qualifies as a habitability violation. Landlords must repair within a <span style={{ color: '#F5E642', fontWeight: 700 }}>reasonable time</span> after written notice — courts typically interpret this as 7–14 days for HVAC in summer.
@@ -31,7 +31,7 @@ export default function DFWRentalHVACGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 16 }}>🛠️ HVAC Age → Repair vs. Replace Decision</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {hvacAgeData.map((h, i) => (
-              <button key={h.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
+              <button key={h.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
                 {h.label}
               </button>
             ))}

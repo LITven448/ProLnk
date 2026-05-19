@@ -8,10 +8,10 @@ function getAssessment(age: string, vintage: string) {
   const vintageScore = homeVintages.indexOf(vintage);
   const total = ageScore * 2 + (4 - vintageScore);
   const cost = 4500 + ageScore * 1200 + (4 - vintageScore) * 400;
-  if (total >= 10) return { urgency: 'REPLACE NOW', detail: 'System is near or past end-of-life. Efficiency losses are costing you money monthly. Old ductwork in pre-1980s homes may need replacement too.', estimate: `$${cost.toLocaleString()}–$${(cost + 2500).toLocaleString()}`, color: '#FF4444' };
-  if (total >= 6) return { urgency: 'PLAN REPLACEMENT', detail: 'Within 2-3 years you\’ll need a new system. Start budgeting now. Consider a tune-up to extend life and lower bills.', estimate: `$${cost.toLocaleString()}–$${(cost + 2000).toLocaleString()}`, color: '#FF8C00' };
-  if (total >= 3) return { urgency: 'MAINTAIN & MONITOR', detail: 'System has good life remaining. Annual tune-ups and filter changes keep efficiency high. Watch for unusual sounds or rising bills.', estimate: '$150–$350/year maintenance', color: '#F5E642' };
-  return { urgency: 'IN GOOD SHAPE', detail: 'Newer system in a well-built home. Keep up with filter changes and annual inspections. You\’re in great shape.', estimate: '$100–$200/year maintenance', color: '#44FF88' };
+  if (total >= 10) return { urgency: 'REPLACE NOW', detail: 'System is near or past end-of-life. Efficiency losses are costing you money monthly. Old ductwork in pre-1980s homes may need replacement too.', estimate: `$${cost.toLocaleString()}–$${(cost + 2500).toLocaleString()}`, color: '#FF4444′ };
+  if (total >= 6) return { urgency: 'PLAN REPLACEMENT', detail: 'Within 2-3 years you\’ll need a new system. Start budgeting now. Consider a tune-up to extend life and lower bills.', estimate: `$${cost.toLocaleString()}–$${(cost + 2000).toLocaleString()}`, color: '#FF8C00′ };
+  if (total >= 3) return { urgency: 'MAINTAIN & MONITOR', detail: 'System has good life remaining. Annual tune-ups and filter changes keep efficiency high. Watch for unusual sounds or rising bills.', estimate: '$150–$350/year maintenance', color: '#F5E642′ };
+  return { urgency: 'IN GOOD SHAPE', detail: 'Newer system in a well-built home. Keep up with filter changes and annual inspections. You\’re in great shape.', estimate: '$100–$200/year maintenance', color: '#44FF88′ };
 }
 
 export default function DFWHVACFarmersBranch() {
@@ -28,7 +28,7 @@ export default function DFWHVACFarmersBranch() {
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.2, marginBottom: 12 }}>
           Farmers Branch TX HVAC<br />
-          <span style={{ color: '#F5E642' }}>Established Suburb Specialists</span>
+          <span style={{ color: '#F5E642′ }}>Established Suburb Specialists</span>
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, maxWidth: 680, lineHeight: 1.7, marginBottom: 40 }}>
           Farmers Branch is one of the few DFW suburbs completely surrounded by Dallas — a compact, mature community where most homes date from the 1960s through 1980s. HVAC in these older homes often means dealing with original ductwork, limited attic clearance, and systems that haven't been upgraded in decades. Our vetted Farmers Branch HVAC pros know these homes inside and out.
@@ -43,14 +43,14 @@ export default function DFWHVACFarmersBranch() {
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.emoji}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{card.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{card.label}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{card.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#132040', borderRadius: 16, padding: 32, border: '1px solid #F5E642', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>
             🌡️ Replacement Urgency Calculator
           </h2>
           <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 24 }}>
@@ -109,7 +109,7 @@ export default function DFWHVACFarmersBranch() {
               { num: '3', label: 'Competing Quotes Always' },
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>{s.num}</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>{s.num}</div>
                 <div style={{ color: '#94A3B8', fontSize: 14, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}

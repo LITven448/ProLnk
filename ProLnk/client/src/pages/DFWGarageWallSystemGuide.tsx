@@ -31,7 +31,7 @@ const wallSystems = [
     difficulty: 'Moderate',
     heatRating: 'Excellent',
     weightRating: '350+ lbs/shelf',
-    notes: 'Best for heavy tools and bins. Steel expands minimally in DFW heat — leaves 1/8" gap at walls.',
+    notes: 'Best for heavy tools and bins. Steel expands minimally in DFW heat — leaves 1/8″ gap at walls.',
   },
 ];
 
@@ -89,7 +89,7 @@ export default function DFWGarageWallSystemGuide() {
           {wallSystems.map(s => (
             <div key={s.type} style={{ background: '#1e2d45', borderRadius: 8, padding: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <strong style={{ color: '#F5E642' }}>{s.type}</strong>
+                <strong style={{ color: '#F5E642′ }}>{s.type}</strong>
                 <span style={{ color: '#94a3b8', fontSize: 13 }}>
                   {s.costPerSqFt}/sq ft · {s.weightRating} · Install: {s.difficulty} · Heat: {s.heatRating}
                 </span>
@@ -133,8 +133,8 @@ export default function DFWGarageWallSystemGuide() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>💡 DFW Pro Tip</strong>
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>💡 DFW Pro Tip</strong>
           <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 14 }}>
             Install wall systems in spring or fall when temps are 65–80°F.
             Installing in July heat causes metal to expand — panels installed tight will buckle when they cool in winter.

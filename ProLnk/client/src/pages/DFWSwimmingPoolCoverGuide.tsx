@@ -4,7 +4,7 @@ const coverTypes = [
   {
     id: 'safety',
     name: 'Safety Cover',
-    description: 'Mesh or solid covers that support weight — required by some DFW city codes for pools over 18" deep.',
+    description: 'Mesh or solid covers that support weight — required by some DFW city codes for pools over 18″ deep.',
     dfwNote: '📋 Arlington, Plano, and Frisco require ASTM F1346 safety covers or fencing for residential pools.',
     evaporationReduction: '15–25%',
     tempEffect: 'Neutral',
@@ -101,7 +101,7 @@ export default function DFWSwimmingPoolCoverGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Best Cover for Your DFW Pool</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.name}</h3>
             <p style={{ color: '#94A3B8', marginBottom: 12 }}>{result.description}</p>
@@ -110,7 +110,7 @@ export default function DFWSwimmingPoolCoverGuide() {
               <div><strong>💧 Evaporation Reduction:</strong><br />{result.evaporationReduction}</div>
               <div><strong>🌡️ Temp Effect:</strong><br />{result.tempEffect}</div>
             </div>
-            <div style={{ color: '#F5E642' }}><strong>💰 Cost:</strong> {result.costRange}</div>
+            <div style={{ color: '#F5E642′ }}><strong>💰 Cost:</strong> {result.costRange}</div>
           </div>
         )}
 

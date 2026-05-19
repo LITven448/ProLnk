@@ -63,8 +63,8 @@ export default function ProLnkLiveJobsPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {tradeOptions.map((t) => (
               <button key={t.key} onClick={() => setSelected(t.key)} style={{
-                padding: '10px 18px', borderRadius: 8, border: selected === t.key ? '2px solid #F5E642' : '1px solid #1e3a5f',
-                background: selected === t.key ? '#F5E642' : '#0A1628', color: selected === t.key ? '#0A1628' : '#fff',
+                padding: '10px 18px', borderRadius: 8, border: selected === t.key ? '2px solid #F5E642′ : '1px solid #1e3a5f',
+                background: selected === t.key ? '#F5E642′ : '#0A1628', color: selected === t.key ? '#0A1628' : '#fff',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{t.label}</button>
             ))}
@@ -75,11 +75,11 @@ export default function ProLnkLiveJobsPage() {
                 <div key={job.id} style={{ background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 10, padding: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: 15, color: '#fff', marginBottom: 4 }}>{job.type}</div>
-                    <div style={{ fontSize: 13, color: '#94a3b8' }}>📍 {job.area} &nbsp;·&nbsp; {job.scope}</div>
+                    <div style={{ fontSize: 13, color: '#94a3b8′ }}>📍 {job.area} &nbsp;·&nbsp; {job.scope}</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ fontSize: 13, marginBottom: 4 }}>{job.urgency}</div>
-                    <div style={{ fontSize: 11, color: '#475569' }}>{job.posted}</div>
+                    <div style={{ fontSize: 11, color: '#475569′ }}>{job.posted}</div>
                   </div>
                 </div>
               ))}

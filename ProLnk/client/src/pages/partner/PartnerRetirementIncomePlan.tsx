@@ -42,13 +42,13 @@ export default function PartnerRetirementIncomePlan() {
             {Object.entries(dfwMonthlyExpenses).map(([k, v]) => (
               <div key={k} style={{ background: '#F9FAFB', borderRadius: 8, padding: '10px 12px' }}>
                 <div style={{ fontSize: 11, color: '#9CA3AF', textTransform: 'capitalize', marginBottom: 3 }}>{k}</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#0A1628' }}>${v.toLocaleString()}</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: '#0A1628′ }}>${v.toLocaleString()}</div>
               </div>
             ))}
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#F0F9FF', borderRadius: 8, padding: '12px 16px' }}>
-            <span style={{ fontWeight: 700, color: '#0369A1' }}>Total DFW Comfortable Monthly</span>
-            <span style={{ fontWeight: 800, fontSize: 20, color: '#0369A1' }}>${dfwTotal.toLocaleString()}</span>
+            <span style={{ fontWeight: 700, color: '#0369A1′ }}>Total DFW Comfortable Monthly</span>
+            <span style={{ fontWeight: 800, fontSize: 20, color: '#0369A1′ }}>${dfwTotal.toLocaleString()}</span>
           </div>
         </div>
 
@@ -57,15 +57,15 @@ export default function PartnerRetirementIncomePlan() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Target Monthly Income: ${targetMonthly.toLocaleString()}</label>
-              <input type="range" min={1000} max={20000} step={500} value={targetMonthly} onChange={e => setTargetMonthly(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={1000} max={20000} step={500} value={targetMonthly} onChange={e => setTargetMonthly(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Years to Build: {activityYearsLeft} yrs</label>
-              <input type="range" min={2} max={25} value={activityYearsLeft} onChange={e => setActivityYearsLeft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={2} max={25} value={activityYearsLeft} onChange={e => setActivityYearsLeft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Your Current Age: {currentAge}</label>
-              <input type="range" min={25} max={70} value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+              <input type="range" min={25} max={70} value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           </div>
         </div>
@@ -74,9 +74,9 @@ export default function PartnerRetirementIncomePlan() {
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16 }}>🎯 What You Need to Build by Age {retireAge}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             {[
-              { icon: '🔨', label: 'Monthly Matches', value: matchesMonthly, unit: 'matches/mo', color: '#34D399' },
+              { icon: '🔨', label: 'Monthly Matches', value: matchesMonthly, unit: 'matches/mo', color: '#34D399′ },
               { icon: '🌐', label: 'Network Partners', value: partnersNeeded, unit: 'active partners', color: '#60A5FA' },
-              { icon: '🏠', label: 'Homes in Vault', value: homesNeeded, unit: 'properties', color: '#FBBF24' },
+              { icon: '🏠', label: 'Homes in Vault', value: homesNeeded, unit: 'properties', color: '#FBBF24′ },
             ].map((item, i) => (
               <div key={i} style={{ background: '#1E3A5F', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
@@ -101,12 +101,12 @@ export default function PartnerRetirementIncomePlan() {
         <div style={{ background: 'white', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #E5E7EB' }}>
           <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>📋 Income Stream Breakdown at Retirement Target</div>
           {[
-            { stream: 'Direct Match Income', pct: 35, monthly: matchIncomeNeeded, color: '#059669' },
-            { stream: 'Network Override Income', pct: 40, monthly: networkOverrideNeeded, color: '#3B82F6' },
+            { stream: 'Direct Match Income', pct: 35, monthly: matchIncomeNeeded, color: '#059669′ },
+            { stream: 'Network Override Income', pct: 40, monthly: networkOverrideNeeded, color: '#3B82F6′ },
             { stream: 'Origination Rights', pct: 25, monthly: originationNeeded, color: '#F59E0B' },
           ].map((s, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-              <div style={{ width: 120, fontSize: 12, color: '#6B7280' }}>{s.stream}</div>
+              <div style={{ width: 120, fontSize: 12, color: '#6B7280′ }}>{s.stream}</div>
               <div style={{ flex: 1, background: '#F3F4F6', borderRadius: 4, height: 10, overflow: 'hidden' }}>
                 <div style={{ width: `${s.pct}%`, height: '100%', background: s.color, borderRadius: 4 }} />
               </div>

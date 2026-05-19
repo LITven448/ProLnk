@@ -115,9 +115,9 @@ export default function HowToGetHomeRepairQuotes() {
           <p style={{ color: '#CBD5E1', lineHeight: 1.8, marginBottom: 12 }}>
             Always get at least 3 quotes. Not because you should pick the middle one — because it gives you a market baseline. One quote tells you nothing. Two quotes create a coin flip. Three quotes reveal whether someone is dramatically over or under market.
           </p>
-          <div style={{ backgroundColor: '#132040', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642' }}>
-            <strong style={{ color: '#F5E642' }}>Pro tip:</strong>
-            <span style={{ color: '#CBD5E1' }}> Get all 3 quotes in the same week. Prices fluctuate with material costs — a quote from 3 months ago is worthless for comparison.</span>
+          <div style={{ backgroundColor: '#132040', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642′ }}>
+            <strong style={{ color: '#F5E642′ }}>Pro tip:</strong>
+            <span style={{ color: '#CBD5E1′ }}> Get all 3 quotes in the same week. Prices fluctuate with material costs — a quote from 3 months ago is worthless for comparison.</span>
           </div>
         </section>
 
@@ -147,7 +147,7 @@ export default function HowToGetHomeRepairQuotes() {
               ['Pressure to decide today', 'Urgency tactics are a scam signal. Any legitimate contractor will give you time to compare.'],
               ['No itemization', 'A single lump-sum number tells you nothing. Require labor, materials, permits, and markup broken out separately.'],
             ].map(([flag, detail]) => (
-              <div key={flag as string} style={{ backgroundColor: '#1a0a0a', borderRadius: 10, padding: '16px 20px', border: '1px solid #3a1515' }}>
+              <div key={flag as string} style={{ backgroundColor: '#1a0a0a', borderRadius: 10, padding: '16px 20px', border: '1px solid #3a1515′ }}>
                 <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>⚠️ {flag}</div>
                 <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{detail}</div>
               </div>
@@ -167,9 +167,9 @@ export default function HowToGetHomeRepairQuotes() {
             '🧹 Site cleanup and debris removal included',
             '📞 Single point of contact throughout the project',
           ].map((item) => (
-            <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E2D45' }}>
-              <span style={{ color: '#F5E642' }}>✓</span>
-              <span style={{ color: '#CBD5E1' }}>{item}</span>
+            <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E2D45′ }}>
+              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#CBD5E1′ }}>{item}</span>
             </div>
           ))}
         </section>
@@ -185,9 +185,9 @@ export default function HowToGetHomeRepairQuotes() {
                 onClick={() => { setSelectedProject(pt.value); setShowTemplate(false); }}
                 style={{
                   padding: '12px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: selectedProject === pt.value ? '#F5E642' : '#1E3A5F',
-                  backgroundColor: selectedProject === pt.value ? '#1a1a00' : 'transparent',
-                  color: selectedProject === pt.value ? '#F5E642' : '#94A3B8',
+                  borderColor: selectedProject === pt.value ? '#F5E642′ : '#1E3A5F',
+                  backgroundColor: selectedProject === pt.value ? '#1a1a00′ : ’transparent',
+                  color: selectedProject === pt.value ? '#F5E642′ : '#94A3B8',
                   cursor: 'pointer', fontSize: 13, fontWeight: 600, textAlign: 'left',
                 }}
               >
@@ -200,8 +200,8 @@ export default function HowToGetHomeRepairQuotes() {
             onClick={handleGenerate}
             disabled={!selectedProject}
             style={{
-              backgroundColor: selectedProject ? '#F5E642' : '#1E2D45',
-              color: selectedProject ? '#0A1628' : '#475569',
+              backgroundColor: selectedProject ? '#F5E642′ : '#1E2D45',
+              color: selectedProject ? '#0A1628′ : '#475569',
               border: 'none', borderRadius: 8, padding: '14px 28px',
               fontWeight: 700, fontSize: 15, cursor: selectedProject ? 'pointer' : 'not-allowed', marginBottom: 24,
             }}
@@ -215,13 +215,13 @@ export default function HowToGetHomeRepairQuotes() {
                 📋 Questions to ask every {projectTypes.find(p => p.value === selectedProject)?.label} contractor:
               </div>
               {templates[selectedProject].map((q, i) => (
-                <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E2D45' }}>
+                <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E2D45′ }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 24 }}>{i + 1}.</span>
                   <span style={{ color: '#CBD5E1', lineHeight: 1.6 }}>{q}</span>
                 </div>
               ))}
               <div style={{ marginTop: 20, padding: '14px 18px', backgroundColor: '#132040', borderRadius: 8, color: '#94A3B8', fontSize: 13 }}>
-                💡 <strong style={{ color: '#F5E642' }}>Tip:</strong> Any contractor who refuses to answer these questions in writing is telling you something important.
+                💡 <strong style={{ color: '#F5E642′ }}>Tip:</strong> Any contractor who refuses to answer these questions in writing is telling you something important.
               </div>
             </div>
           )}

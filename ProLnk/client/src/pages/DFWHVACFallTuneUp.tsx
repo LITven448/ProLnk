@@ -11,7 +11,7 @@ const fallItems = [
   { task: 'Thermostat heat mode changeover test', urgency: 'MEDIUM', note: 'Many DFW thermostats haven\’t been in heat mode since March — test the full cycle', season: 'all' },
   { task: 'Condensate drain winterization check', urgency: 'MEDIUM', note: 'DFW freeze events can crack condensate lines — ensure drain slope is adequate', season: 'all' },
   { task: 'Refrigerant check (heat pump systems)', urgency: 'MEDIUM', note: 'Heat pumps move refrigerant both ways — low charge reduces heating efficiency 30%+', season: 'heat pump' },
-  { task: 'Outdoor unit clearance for winter debris', urgency: 'LOW', note: 'DFW November brings cedar and oak leaf drop — ensure 18" clearance around condenser', season: 'all' },
+  { task: 'Outdoor unit clearance for winter debris', urgency: 'LOW', note: 'DFW November brings cedar and oak leaf drop — ensure 18″ clearance around condenser', season: 'all' },
   { task: 'Filter replacement before heating season', urgency: 'MEDIUM', note: 'Heating moves more dust than cooling in DFW homes — clean filter = efficient heat distribution', season: 'all' },
   { task: 'Carbon monoxide detector test & battery', urgency: 'HIGH', note: 'Required with any gas system — CO is odorless; February is highest-risk period in DFW', season: 'heating' },
 ];
@@ -23,7 +23,7 @@ export default function DFWHVACFallTuneUp() {
   const [heatingType, setHeatingType] = useState('');
   const [showPlan, setShowPlan] = useState(false);
 
-  const urgencyColor = (u: string) => u === 'LIFE SAFETY' ? '#EF4444' : u === 'HIGH' ? '#F5E642' : u === 'MEDIUM' ? '#60A5FA' : '#64748B';
+  const urgencyColor = (u: string) => u === 'LIFE SAFETY' ? '#EF4444′ : u === ’HIGH' ? '#F5E642′ : u === ’MEDIUM' ? '#60A5FA' : '#64748B';
 
   const filteredItems = showPlan ? fallItems.filter(item => {
     if (item.season === 'all') return true;
@@ -39,7 +39,7 @@ export default function DFWHVACFallTuneUp() {
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF', marginBottom: 8 }}>Fall Tune-Up Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 24 }}>October-November is your last chance to prepare DFW's HVAC systems before the heating season that might be mild — or might be Winter Storm Uri 2.0.</p>
 
-        <div style={{ background: '#1A1010', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #EF4444' }}>
+        <div style={{ background: '#1A1010', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #EF4444′ }}>
           <div style={{ fontWeight: 700, fontSize: 16, color: '#FCA5A5', marginBottom: 8 }}>❄️ The February Factor</div>
           <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6 }}>{februaryFact}</div>
         </div>
@@ -65,7 +65,7 @@ export default function DFWHVACFallTuneUp() {
             <label style={{ fontSize: 14, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Your home type:</label>
             <div style={{ display: 'grid', gap: 8 }}>
               {homeTypes.map(ht => (
-                <button key={ht} onClick={() => setHomeType(ht)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: homeType === ht ? '#F5E642' : '#1E3A5F', background: homeType === ht ? '#1A2A10' : '#0A1628', color: homeType === ht ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: 'pointer' }}>
+                <button key={ht} onClick={() => setHomeType(ht)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: homeType === ht ? '#F5E642′ : '#1E3A5F', background: homeType === ht ? '#1A2A10' : '#0A1628', color: homeType === ht ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: ’pointer' }}>
                   {homeType === ht ? '● ' : '○ '}{ht}
                 </button>
               ))}
@@ -75,13 +75,13 @@ export default function DFWHVACFallTuneUp() {
             <label style={{ fontSize: 14, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Heating system type:</label>
             <div style={{ display: 'grid', gap: 8 }}>
               {heatingTypes.map(ht => (
-                <button key={ht} onClick={() => setHeatingType(ht)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: heatingType === ht ? '#F5E642' : '#1E3A5F', background: heatingType === ht ? '#1A2A10' : '#0A1628', color: heatingType === ht ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: 'pointer' }}>
+                <button key={ht} onClick={() => setHeatingType(ht)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: heatingType === ht ? '#F5E642′ : '#1E3A5F', background: heatingType === ht ? '#1A2A10' : '#0A1628', color: heatingType === ht ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: ’pointer' }}>
                   {heatingType === ht ? '● ' : '○ '}{ht}
                 </button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowPlan(true)} disabled={!homeType || !heatingType} style={{ background: homeType && heatingType ? '#F5E642' : '#1E3A5F', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeType && heatingType ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowPlan(true)} disabled={!homeType || !heatingType} style={{ background: homeType && heatingType ? '#F5E642′ : '#1E3A5F', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeType && heatingType ? 'pointer' : 'not-allowed' }}>
             Show My Fall Priorities →
           </button>
         </div>

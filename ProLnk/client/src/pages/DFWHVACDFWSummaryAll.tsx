@@ -27,11 +27,11 @@ export default function DFWHVACDFWSummaryAll() {
               key={t.id}
               onClick={() => setActive(active === t.id ? null : t.id)}
               style={{
-                background: active === t.id ? '#F5E642' : '#0f1f35',
+                background: active === t.id ? '#F5E642′ : '#0f1f35',
                 border: `2px solid ${active === t.id ? '#F5E642' : '#1e3a5f'}`,
                 borderRadius: 8,
                 padding: '0.6rem 1rem',
-                color: active === t.id ? '#0A1628' : '#fff',
+                color: active === t.id ? '#0A1628′ : '#fff',
                 cursor: 'pointer',
                 fontSize: 14,
                 fontWeight: 600,
@@ -44,7 +44,7 @@ export default function DFWHVACDFWSummaryAll() {
         </div>
         {selected && (
           <div style={{ background: '#0f1f35', border: '2px solid #F5E642', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>{selected.label}</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>{selected.label}</h2>
             <p style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: 15 }}>{selected.summary}</p>
           </div>
         )}

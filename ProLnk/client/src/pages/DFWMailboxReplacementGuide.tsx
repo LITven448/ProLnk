@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const mailboxTypes: Record<string, { uspsOk: string; security: string; cost: string; note: string }> = {
-  Standard_Curbside: { uspsOk: '✅ USPS compliant', security: 'Basic mail only', cost: '$30–$80', note: 'T1 USPS approved post height 41–45" from road' },
+  Standard_Curbside: { uspsOk: '✅ USPS compliant', security: 'Basic mail only', cost: '$30–$80', note: 'T1 USPS approved post height 41–45″ from road' },
   Locking_Curbside: { uspsOk: '✅ USPS compliant', security: 'Anti-theft locking slot', cost: '$80–$250', note: 'Popular in DFW suburbs with package theft concerns' },
   Cluster_Unit: { uspsOk: '✅ HOA managed', security: 'Locked per unit', cost: 'HOA covers', note: 'Common in Frisco, McKinney, Allen master plans' },
   Package_Locker: { uspsOk: '⚠️ Check carrier', security: 'Package + mail secure', cost: '$200–$600', note: 'Verify UPS/FedEx will use before purchasing' },
@@ -44,7 +44,7 @@ export default function DFWMailboxReplacementGuide() {
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '1rem' }}>📏 USPS Curbside Specs for DFW</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#94a3b8', fontSize: '0.9rem' }}>
             <div>📐 Post height: 41–45" from road surface</div>
-            <div>📦 Opening: min 3.5" H × 15" W × 5" D</div>
+            <div>📦 Opening: min 3.5" H × 15″ W × 5″ D</div>
             <div>🚗 Setback: 6–8" from curb face</div>
             <div>🔵 Flag: right side or top, red preferred</div>
             <div>🏷️ Numbers: visible on both sides</div>
@@ -84,7 +84,7 @@ export default function DFWMailboxReplacementGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>✅ Recommended Mailbox</div>
             <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 2 }}>
               <div>{result.rec.uspsOk}</div>

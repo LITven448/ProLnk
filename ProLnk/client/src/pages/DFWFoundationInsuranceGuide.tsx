@@ -38,14 +38,14 @@ export default function DFWFoundationInsuranceGuide() {
         <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>What IS Covered</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 24 }}>
           {[['✅', 'Sudden collapse from a covered structural peril'],['✅', 'Foundation damage caused by an accidental plumbing leak'],['✅', 'Explosion or vehicle impact causing foundation failure']].map(([icon, text]) => (
-            <div key={text} style={{ background: '#132035', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #10B981' }}>{icon} {text}</div>
+            <div key={text} style={{ background: '#132035', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #10B981′ }}>{icon} {text}</div>
           ))}
         </div>
 
         <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>What Is NOT Covered</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
           {[['❌', 'Normal settling, shifting, or soil expansion (the #1 DFW cause)'],['❌', 'Tree root intrusion'],['❌', 'Gradual water infiltration'],['❌', 'Poor original construction or soil prep']].map(([icon, text]) => (
-            <div key={text} style={{ background: '#132035', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #EF4444' }}>{icon} {text}</div>
+            <div key={text} style={{ background: '#132035', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #EF4444′ }}>{icon} {text}</div>
           ))}
         </div>
 
@@ -64,12 +64,12 @@ export default function DFWFoundationInsuranceGuide() {
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, padding: '12px 0', borderRadius: 8, border: 'none', cursor: 'pointer', width: '100%' }}>Check Coverage</button>
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 18 }}>
-              <div style={{ fontSize: 17, fontWeight: 800, color: result.covered ? '#10B981' : '#EF4444', marginBottom: 10 }}>{result.covered ? '✅ Likely Covered' : '❌ Typically NOT Covered'}</div>
+              <div style={{ fontSize: 17, fontWeight: 800, color: result.covered ? '#10B981′ : '#EF4444', marginBottom: 10 }}>{result.covered ? '✅ Likely Covered' : '❌ Typically NOT Covered'}</div>
               <div style={{ fontSize: 14, color: '#94A3B8', marginBottom: 12 }}>{result.reason}</div>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#F5E642', marginBottom: 6 }}>Evidence to Gather:</div>
               {result.evidence.map(e => <div key={e} style={{ fontSize: 13, color: '#94A3B8', marginBottom: 4 }}>• {e}</div>)}
               <div style={{ fontWeight: 700, fontSize: 13, color: '#F5E642', marginTop: 12, marginBottom: 6 }}>Appeal Strategy:</div>
-              <div style={{ fontSize: 13, color: '#94A3B8' }}>{result.appeal}</div>
+              <div style={{ fontSize: 13, color: '#94A3B8′ }}>{result.appeal}</div>
             </div>
           )}
         </div>

@@ -29,7 +29,7 @@ export default function DFWNeighborhoodNoiseGuide() {
             {[['✈️ DFW Airport', 'World’s 2nd busiest — approach paths over Grapevine, Irving, Euless, Coppell'], ['💛 Love Field', 'Southwest hub — flight paths over Oak Cliff, University Park, Highland Park'], ['🛣 Freeway Grid', 'I-635, I-30, I-35E, Hwy 183, SH-121, SH-114 — dense and loud'], ['🚊 DART Expansion', 'Light rail expanding through Plano, Garland, Richardson, Irving, DeSoto']].map(([icon, desc]) => (
               <div key={icon} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{icon}</div>
-                <div style={{ fontSize: '0.85rem', color: '#9BA3B8' }}>{desc}</div>
+                <div style={{ fontSize: '0.85rem', color: '#9BA3B8′ }}>{desc}</div>
               </div>
             ))}
           </div>
@@ -67,7 +67,7 @@ export default function DFWNeighborhoodNoiseGuide() {
           {[['🗺 Noise Maps', 'FAA aviation noise maps at faa.gov — look up any address near DFW or Love Field'], ['📍 Street View + Visit', 'Visit the home at 7am, noon, and 6pm on a weekday to hear actual noise levels'], ['📄 HOA Docs', 'Review CC&Rs for noise hours, prohibited activities, fence/landscaping rules'], ['🏗 City Permits', 'Check city permit portal for approved construction within 1 mile']].map(([icon, desc]) => (
             <div key={icon} style={{ padding: '0.75rem 0', borderBottom: '1px solid #1E3A5F', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
               <span style={{ fontSize: '1.2rem' }}>{icon}</span>
-              <span style={{ fontSize: '0.9rem', color: '#9BA3B8' }}>{desc}</span>
+              <span style={{ fontSize: '0.9rem', color: '#9BA3B8′ }}>{desc}</span>
             </div>
           ))}
         </div>

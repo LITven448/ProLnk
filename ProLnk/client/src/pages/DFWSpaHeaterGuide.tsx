@@ -67,14 +67,14 @@ export default function DFWSpaHeaterGuide() {
           🛁 DFW Spa & Hot Tub Heater Guide
         </h1>
         <p style={{ color: '#94A3B8', margin: '0 0 28px', lineHeight: 1.6 }}>
-          DFW's milder winters mean smaller heaters and lower heating bills than northern climates. Here's how to right-size your spa heater for North Texas.
+          DFW's milder winters mean smaller heaters and lower heating bills than northern climates. Here’s how to right-size your spa heater for North Texas.
         </p>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '16px 20px', marginBottom: 28 }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>❄️ DFW WINTER SIZING ADVANTAGE</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             <div style={{ textAlign: 'center', background: '#0A1628', borderRadius: 8, padding: 14 }}>
-              <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>35–55°F</div>
+              <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>35–55°F</div>
               <div style={{ fontSize: 11, color: '#94A3B8', marginTop: 4 }}>DFW Winter Range</div>
             </div>
             <div style={{ textAlign: 'center', background: '#0A1628', borderRadius: 8, padding: 14 }}>
@@ -82,7 +82,7 @@ export default function DFWSpaHeaterGuide() {
               <div style={{ fontSize: 11, color: '#94A3B8', marginTop: 4 }}>Typical DFW Spa Size</div>
             </div>
             <div style={{ textAlign: 'center', background: '#0A1628', borderRadius: 8, padding: 14 }}>
-              <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>15kW+</div>
+              <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>15kW+</div>
               <div style={{ fontSize: 11, color: '#94A3B8', marginTop: 4 }}>Northern US Requirement</div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function DFWSpaHeaterGuide() {
           <label style={{ display: 'block', fontSize: 12, color: '#94A3B8', marginBottom: 6 }}>NATURAL GAS LINE AVAILABLE?</label>
           <div style={{ display: 'flex', gap: 10 }}>
             {['yes', 'no'].map(v => (
-              <button key={v} onClick={() => setHasGas(v)} style={{ flex: 1, padding: '10px', background: hasGas === v ? '#F5E642' : '#1E2D45', color: hasGas === v ? '#0A1628' : '#E8EDF5', border: '1px solid #2D4060', borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+              <button key={v} onClick={() => setHasGas(v)} style={{ flex: 1, padding: '10px', background: hasGas === v ? '#F5E642′ : '#1E2D45', color: hasGas === v ? '#0A1628' : '#E8EDF5', border: '1px solid #2D4060', borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: ’pointer' }}>
                 {v === 'yes' ? '✅ Yes, I have gas' : '❌ No gas line'}
               </button>
             ))}
@@ -125,7 +125,7 @@ export default function DFWSpaHeaterGuide() {
         </button>
 
         {result && (
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28, border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28, border: '2px solid #F5E642′ }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>RECOMMENDED FOR YOUR DFW SPA</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 4px' }}>{result.emoji} {result.name}</h3>
             <p style={{ color: '#94A3B8', margin: '0 0 16px', fontSize: 13 }}>{result.dfwNote}</p>
@@ -136,7 +136,7 @@ export default function DFWSpaHeaterGuide() {
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>DFW WINTER/MO</div>
-                <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{result.monthly_dfwWinter}</div>
+                <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{result.monthly_dfwWinter}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>DFW SUMMER/MO</div>
@@ -146,7 +146,7 @@ export default function DFWSpaHeaterGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>RECOMMENDED SIZE FOR YOUR SPA</div>
-                <div style={{ fontWeight: 700, color: '#F5E642' }}>{result.sizing[spaSize]}</div>
+                <div style={{ fontWeight: 700, color: '#F5E642′ }}>{result.sizing[spaSize]}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>HEAT-UP TIME</div>
@@ -164,9 +164,9 @@ export default function DFWSpaHeaterGuide() {
                 <div style={{ fontWeight: 700 }}>{h.emoji} {h.name}</div>
                 <div style={{ color: '#F5E642', fontSize: 13 }}>{h.install}</div>
               </div>
-              <div style={{ fontSize: 12, color: '#94A3B8' }}>{h.best_for}</div>
+              <div style={{ fontSize: 12, color: '#94A3B8′ }}>{h.best_for}</div>
               <div style={{ display: 'flex', gap: 16, marginTop: 8 }}>
-                <span style={{ fontSize: 12 }}>Winter: <strong style={{ color: '#F5E642' }}>{h.monthly_dfwWinter}/mo</strong></span>
+                <span style={{ fontSize: 12 }}>Winter: <strong style={{ color: '#F5E642′ }}>{h.monthly_dfwWinter}/mo</strong></span>
                 <span style={{ fontSize: 12 }}>Summer: <strong style={{ color: '#22C55E' }}>{h.monthly_dfwSummer}/mo</strong></span>
               </div>
             </div>

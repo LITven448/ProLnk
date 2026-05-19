@@ -36,7 +36,7 @@ export default function TrustyProForHomeowners() {
 
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <div style={{ background: '#4F46E5', display: 'inline-block', borderRadius: 8, padding: '6px 16px', fontSize: 13, fontWeight: 600, marginBottom: 16 }}>FOR HOMEOWNERS</div>
-          <h1 style={{ fontSize: 48, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>Know Before<br /><span style={{ color: '#4F46E5' }}>You Hire</span></h1>
+          <h1 style={{ fontSize: 48, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>Know Before<br /><span style={{ color: '#4F46E5′ }}>You Hire</span></h1>
           <p style={{ color: '#94a3b8', fontSize: 18, maxWidth: 580, margin: '0 auto' }}>Get a full property health report — the same data your contractor sees — before you ever pick up the phone. Free forever.</p>
         </div>
 
@@ -63,7 +63,7 @@ export default function TrustyProForHomeowners() {
             <>
               {questions.map((q, qi) => (
                 <div key={qi} style={{ marginBottom: 32 }}>
-                  <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 14, color: '#e2e8f0' }}>{qi + 1}. {q.q}</div>
+                  <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 14, color: '#e2e8f0′ }}>{qi + 1}. {q.q}</div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10 }}>
                     {q.options.map((opt, oi) => (
                       <button key={oi} onClick={() => { const next = [...answers]; next[qi] = oi; setAnswers(next); }} style={{ padding: '12px 16px', borderRadius: 10, border: `2px solid ${answers[qi] === oi ? '#4F46E5' : '#1e3a5f'}`, background: answers[qi] === oi ? '#1e1b4b' : 'transparent', color: answers[qi] === oi ? '#fff' : '#94a3b8', fontWeight: 600, fontSize: 14, cursor: 'pointer', textAlign: 'center', transition: 'all 0.15s' }}>
@@ -74,7 +74,7 @@ export default function TrustyProForHomeowners() {
                 </div>
               ))}
               <div style={{ textAlign: 'center' }}>
-                <button onClick={() => answered === questions.length && setSubmitted(true)} style={{ background: answered === questions.length ? '#4F46E5' : '#1e3a5f', color: answered === questions.length ? '#fff' : '#64748b', border: 'none', borderRadius: 10, padding: '16px 40px', fontSize: 17, fontWeight: 700, cursor: answered === questions.length ? 'pointer' : 'not-allowed' }}>
+                <button onClick={() => answered === questions.length && setSubmitted(true)} style={{ background: answered === questions.length ? '#4F46E5′ : '#1e3a5f', color: answered === questions.length ? '#fff' : '#64748b', border: ’none', borderRadius: 10, padding: '16px 40px', fontSize: 17, fontWeight: 700, cursor: answered === questions.length ? 'pointer' : 'not-allowed' }}>
                   {answered < questions.length ? `Answer all questions (${answered}/${questions.length})` : 'Get My Health Score →'}
                 </button>
               </div>
@@ -88,7 +88,7 @@ export default function TrustyProForHomeowners() {
               {tier && recommendations[tier].map((r, i) => (
                 <div key={i} style={{ background: '#050d1a', borderRadius: 10, padding: '14px 20px', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 12, maxWidth: 480, margin: '0 auto 10px' }}>
                   <span style={{ color: '#4F46E5', fontSize: 20 }}>▸</span>
-                  <span style={{ fontSize: 15, color: '#e2e8f0' }}>{r}</span>
+                  <span style={{ fontSize: 15, color: '#e2e8f0′ }}>{r}</span>
                 </div>
               ))}
               <button onClick={() => { setAnswers(Array(questions.length).fill(-1)); setSubmitted(false); }} style={{ marginTop: 28, background: 'transparent', border: '1px solid #1e3a5f', color: '#94a3b8', borderRadius: 8, padding: '10px 24px', fontSize: 14, cursor: 'pointer' }}>Retake Quiz</button>

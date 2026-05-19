@@ -44,19 +44,19 @@ export default function DFWMovingCostGuide() {
             { emoji: '✈️', label: 'Interstate Move', range: '$2,000 – $12,000+', note: 'Crossing state lines' },
             { emoji: '☀️', label: 'Peak Season Bump', range: '+30%', note: 'May through August' },
           ].map(card => (
-            <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45' }}>
+            <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45′ }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.emoji}</div>
               <div style={{ fontWeight: 700, color: '#FFFFFF', marginBottom: 4 }}>{card.label}</div>
               <div style={{ fontSize: 20, color: '#F5E642', fontWeight: 800, marginBottom: 4 }}>{card.range}</div>
-              <div style={{ fontSize: 13, color: '#9BA3B8' }}>{card.note}</div>
+              <div style={{ fontSize: 13, color: '#9BA3B8′ }}>{card.note}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45′ }}>
           <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
             {(['estimate', 'checklist'] as const).map(tab => (
-              <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, backgroundColor: activeTab === tab ? '#F5E642' : '#1E2D45', color: activeTab === tab ? '#0A1628' : '#9BA3B8' }}>
+              <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, backgroundColor: activeTab === tab ? '#F5E642′ : '#1E2D45', color: activeTab === tab ? '#0A1628' : '#9BA3B8' }}>
                 {tab === 'estimate' ? '💰 Cost Estimator' : '📋 Move Checklist'}
               </button>
             ))}
@@ -90,12 +90,12 @@ export default function DFWMovingCostGuide() {
               </div>
               {estimated && (
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                  <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
+                  <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
                     <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 4 }}>Full-Service Movers</div>
-                    <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>${estimated.toLocaleString()}</div>
+                    <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>${estimated.toLocaleString()}</div>
                     <div style={{ fontSize: 13, color: '#9BA3B8', marginTop: 4 }}>Estimated total cost</div>
                   </div>
-                  <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55' }}>
+                  <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #2A3A55′ }}>
                     <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 4 }}>DIY Truck Rental</div>
                     <div style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF' }}>${diyEstimate?.toLocaleString()}</div>
                     <div style={{ fontSize: 13, color: '#9BA3B8', marginTop: 4 }}>Estimated total cost</div>
@@ -113,7 +113,7 @@ export default function DFWMovingCostGuide() {
                   <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15, marginBottom: 10 }}>⏳ {group.days} Days Before Move</div>
                   {group.tasks.map(task => (
                     <div key={task} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, color: '#CBD2E0', fontSize: 14 }}>
-                      <span style={{ color: '#F5E642' }}>✓</span> {task}
+                      <span style={{ color: '#F5E642′ }}>✓</span> {task}
                     </div>
                   ))}
                 </div>
@@ -122,7 +122,7 @@ export default function DFWMovingCostGuide() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 24, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 24, border: '1px solid #1E2D45′ }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🚫 What Movers Won't Move</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['Hazardous Materials', 'Paint, propane, chemicals, gasoline, fireworks'], ['High-Value Items', 'Jewelry, cash, passports, irreplaceable documents'], ['Perishables', 'Food, plants (some movers refuse), open bottles'], ['Pets', 'Always transport pets yourself in your vehicle']].map(([title, desc]) => (
@@ -134,7 +134,7 @@ export default function DFWMovingCostGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, border: '1px solid #1E2D45' }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, border: '1px solid #1E2D45′ }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>💵 Tipping Guide</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[['Small Move', '$20–$40/mover', 'Studio or 1BR local'], ['Standard Move', '$40–$80/mover', '2–3BR or half-day'], ['Large/Long Move', '$80–$120/mover', 'Full day or multi-day']].map(([tier, amount, desc]) => (

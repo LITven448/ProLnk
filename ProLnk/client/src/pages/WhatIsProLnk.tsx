@@ -39,7 +39,7 @@ export default function WhatIsProLnk() {
           <p style={{ fontSize: 17, lineHeight: 1.8, color: '#444', marginBottom: 16 }}>
             Finding a trustworthy home service pro is broken. Homeowners waste hours calling companies, getting ghosted, or paying for low-quality leads that go nowhere. Contractors spend thousands on pay-per-lead platforms that send the same lead to 5 competitors simultaneously.
           </p>
-          <p style={{ fontSize: 17, lineHeight: 1.8, color: '#444' }}>
+          <p style={{ fontSize: 17, lineHeight: 1.8, color: '#444′ }}>
             ProLnk fixes this with a match-based model: homeowners post their needs, AI finds the single best-fit pro, and the pro only pays if they're actually hired. No spam. No wasted money.
           </p>
         </section>
@@ -91,13 +91,13 @@ export default function WhatIsProLnk() {
 
         <section style={{ background: '#0A1628', borderRadius: 16, padding: 40, marginBottom: 60, color: '#fff' }}>
           <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>The 5 Income Streams for Partners</h2>
-          <p style={{ color: '#a0aec0', marginBottom: 28, fontSize: 15 }}>ProLnk isn't just a lead platform — it's a network income system with five ways to earn.</p>
+          <p style={{ color: '#a0aec0', marginBottom: 28, fontSize: 15 }}>ProLnk isn't just a lead platform — it’s a network income system with five ways to earn.</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {incomeStreams.map((s, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 16, background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '16px 20px' }}>
                 <div style={{ fontSize: 28, minWidth: 40, textAlign: 'center' }}>{s.emoji}</div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#F5E642' }}>{s.title}</div>
+                  <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#F5E642′ }}>{s.title}</div>
                   <div style={{ fontSize: 14, color: '#a0aec0', lineHeight: 1.6 }}>{s.desc}</div>
                 </div>
               </div>

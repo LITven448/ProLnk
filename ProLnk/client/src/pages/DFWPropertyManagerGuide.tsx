@@ -60,7 +60,7 @@ export default function DFWPropertyManagerGuide() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '1px solid #1E3A5F' }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 16 }}>🎓 NARPM Certification — Why It Matters</h2>
-          <p style={{ color: '#B0C0D0', lineHeight: 1.7 }}>The National Association of Residential Property Managers (NARPM) offers three credentials: <strong style={{ color: '#F5E642' }}>RMP</strong> (Residential Management Professional), <strong style={{ color: '#F5E642' }}>MPM</strong> (Master Property Manager), and <strong style={{ color: '#F5E642' }}>CRMC</strong> (company certification). NARPM-certified managers in DFW have demonstrated ethical standards and ongoing education. Texas also requires a real estate license to manage properties — verify at TREC.texas.gov.</p>
+          <p style={{ color: '#B0C0D0', lineHeight: 1.7 }}>The National Association of Residential Property Managers (NARPM) offers three credentials: <strong style={{ color: '#F5E642′ }}>RMP</strong> (Residential Management Professional), <strong style={{ color: '#F5E642' }}>MPM</strong> (Master Property Manager), and <strong style={{ color: '#F5E642' }}>CRMC</strong> (company certification). NARPM-certified managers in DFW have demonstrated ethical standards and ongoing education. Texas also requires a real estate license to manage properties — verify at TREC.texas.gov.</p>
         </div>
 
         <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '1px solid #1E3A5F' }}>
@@ -68,7 +68,7 @@ export default function DFWPropertyManagerGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642' }}>
+                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
                   {['Fee Type', 'Flat Rate', 'Percentage', 'Notes'].map(h => (
                     <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#F5E642', fontSize: 13 }}>{h}</th>
                   ))}
@@ -76,7 +76,7 @@ export default function DFWPropertyManagerGuide() {
               </thead>
               <tbody>
                 {feeTypes.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#0D1F38' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#0D1F38′ }}>
                     <td style={{ padding: '10px 12px', color: '#E8EDF5', fontWeight: 600, fontSize: 14 }}>{row.type}</td>
                     <td style={{ padding: '10px 12px', color: '#F5E642', fontSize: 14 }}>{row.flat}</td>
                     <td style={{ padding: '10px 12px', color: '#4ADE80', fontSize: 14 }}>{row.percentage}</td>
@@ -88,7 +88,7 @@ export default function DFWPropertyManagerGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🧮 Monthly Cost Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             <div>
@@ -112,19 +112,19 @@ export default function DFWPropertyManagerGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#8899AA', fontSize: 13 }}>Flat Rate (estimated)</div>
-              <div style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '8px 0' }}>${flatLow}–${flatHigh}/mo</div>
+              <div style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '8px 0′ }}>${flatLow}–${flatHigh}/mo</div>
               <div style={{ color: '#8899AA', fontSize: 12 }}>Fixed monthly regardless of rent</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#8899AA', fontSize: 13 }}>Percentage Rate (8–12%)</div>
-              <div style={{ color: '#4ADE80', fontSize: 28, fontWeight: 800, margin: '8px 0' }}>${pctLow}–${pctHigh}/mo</div>
+              <div style={{ color: '#4ADE80', fontSize: 28, fontWeight: 800, margin: '8px 0′ }}>${pctLow}–${pctHigh}/mo</div>
               <div style={{ color: '#8899AA', fontSize: 12 }}>Based on monthly rent collected</div>
             </div>
           </div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-          <div style={{ background: '#112240', borderRadius: 16, padding: 28, border: '1px solid #F87171' }}>
+          <div style={{ background: '#112240', borderRadius: 16, padding: 28, border: '1px solid #F87171′ }}>
             <h2 style={{ color: '#F87171', fontSize: 18, fontWeight: 700, marginBottom: 14 }}>🚩 Red Flags to Avoid</h2>
             {redFlags.map((flag, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
@@ -133,7 +133,7 @@ export default function DFWPropertyManagerGuide() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#112240', borderRadius: 16, padding: 28, border: '1px solid #4ADE80' }}>
+          <div style={{ background: '#112240', borderRadius: 16, padding: 28, border: '1px solid #4ADE80′ }}>
             <h2 style={{ color: '#4ADE80', fontSize: 18, fontWeight: 700, marginBottom: 14 }}>💬 Interview Questions</h2>
             {interviewQuestions.map((q, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>

@@ -34,7 +34,7 @@ export default function DFWRoofingWindRating2026() {
             {ratings.map((r, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '14px 16px', border: `1px solid ${r.rec ? '#F5E642' : '#2d5a8e'}`, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
                 <div style={{ minWidth: 90 }}>
-                  <div style={{ color: r.rec ? '#F5E642' : '#94a3b8', fontWeight: 800, fontSize: 16 }}>{r.cls}</div>
+                  <div style={{ color: r.rec ? '#F5E642′ : '#94a3b8', fontWeight: 800, fontSize: 16 }}>{r.cls}</div>
                   <div style={{ color: '#22c55e', fontSize: 13, fontWeight: 700 }}>{r.speed}</div>
                 </div>
                 <div style={{ flex: 1 }}>
@@ -63,7 +63,7 @@ export default function DFWRoofingWindRating2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {concerns.map((c, i) => (
               <div key={i}>
-                <button onClick={() => toggle(i)} style={{ width: '100%', textAlign: 'left', background: open[i] ? '#0d2137' : '#0A1628', border: '1px solid', borderColor: open[i] ? '#F5E642' : '#2d5a8e', borderRadius: 8, padding: '12px 16px', color: open[i] ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 14, fontWeight: open[i] ? 700 : 400, display: 'flex', justifyContent: 'space-between' }}>
+                <button onClick={() => toggle(i)} style={{ width: '100%', textAlign: 'left', background: open[i] ? '#0d2137′ : '#0A1628', border: '1px solid', borderColor: open[i] ? '#F5E642' : '#2d5a8e', borderRadius: 8, padding: '12px 16px', color: open[i] ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 14, fontWeight: open[i] ? 700 : 400, display: 'flex', justifyContent: 'space-between' }}>
                   {c.q} <span>{open[i] ? '▲' : '▼'}</span>
                 </button>
                 {open[i] && <div style={{ background: '#0d2137', border: '1px solid #F5E642', borderTop: 'none', borderRadius: '0 0 8px 8px', padding: '14px 16px', color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{c.a}</div>}

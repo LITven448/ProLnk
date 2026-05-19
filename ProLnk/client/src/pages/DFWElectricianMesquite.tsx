@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const mesquiteStats = [
   { label: 'Homes Built 1970–1995', value: '70%+' },
-  { label: 'Aluminum Wiring Era Homes', value: '~18,000' },
+  { label: 'Aluminum Wiring Era Homes', value: '~18,000′ },
   { label: 'Panel Upgrade Cost', value: '$2K–$5K' },
   { label: 'Electrical Fire Risk (old panels)', value: '3x higher' },
 ];
@@ -92,7 +92,7 @@ export default function DFWElectricianMesquite() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {mesquiteStats.map(s => (
             <div key={s.label} style={{ backgroundColor: '#1E2D45', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
@@ -101,7 +101,7 @@ export default function DFWElectricianMesquite() {
         <div style={{ backgroundColor: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32 }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 8 }}>🔌 Electrical Safety Score — 10-Question Check</h2>
           <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 24 }}>
-            Answer yes or no to each question. We'll calculate your home's risk level and priority repairs.
+            Answer yes or no to each question. We'll calculate your home’s risk level and priority repairs.
           </p>
 
           <div style={{ display: 'grid', gap: 12, marginBottom: 24 }}>
@@ -124,7 +124,7 @@ export default function DFWElectricianMesquite() {
                   width: 24,
                   height: 24,
                   borderRadius: 4,
-                  backgroundColor: answers[i] ? '#4CAF50' : 'transparent',
+                  backgroundColor: answers[i] ? '#4CAF50′ : ’transparent',
                   border: `2px solid ${answers[i] ? '#4CAF50' : '#334155'}`,
                   display: 'flex',
                   alignItems: 'center',

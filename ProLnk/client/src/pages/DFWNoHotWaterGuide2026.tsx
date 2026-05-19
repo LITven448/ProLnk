@@ -45,18 +45,18 @@ export default function DFWNoHotWaterGuide2026() {
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Interactive Diagnosis Tool</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Water Heater Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Water Heater Type</label>
             <select value={heaterType} onChange={e => setHeaterType(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
               <option value="">Select type...</option>
               <option value="gas">🔥 Gas Water Heater</option>
               <option value="electric">⚡ Electric Water Heater</option>
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Primary Symptom</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Primary Symptom</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
               <option value="">Select symptom...</option>
               <option value="no-heat">❄️ Completely no hot water</option>
               <option value="lukewarm">🌡️ Water only lukewarm</option>
@@ -69,7 +69,7 @@ export default function DFWNoHotWaterGuide2026() {
             Diagnose My Issue
           </button>
           {diagnosis && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>
               {diagnosis}
             </div>
           )}
@@ -79,14 +79,14 @@ export default function DFWNoHotWaterGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>💰 DFW Repair Cost Ranges 2026</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
-              { item: 'Thermocouple replacement', cost: '$80–$150' },
-              { item: 'Heating element (electric)', cost: '$100–$200' },
-              { item: 'Thermostat replacement', cost: '$120–$200' },
-              { item: 'Tank flush + inspection', cost: '$80–$120' },
-              { item: 'Full unit replacement (50 gal)', cost: '$900–$1,400' },
+              { item: 'Thermocouple replacement', cost: '$80–$150′ },
+              { item: 'Heating element (electric)', cost: '$100–$200′ },
+              { item: 'Thermostat replacement', cost: '$120–$200′ },
+              { item: 'Tank flush + inspection', cost: '$80–$120′ },
+              { item: 'Full unit replacement (50 gal)', cost: '$900–$1,400′ },
             ].map(r => (
               <div key={r.item} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: 8 }}>
-                <span style={{ color: '#cbd5e1' }}>{r.item}</span>
+                <span style={{ color: '#cbd5e1′ }}>{r.item}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{r.cost}</span>
               </div>
             ))}

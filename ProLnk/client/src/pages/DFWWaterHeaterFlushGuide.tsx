@@ -77,7 +77,7 @@ export default function DFWWaterHeaterFlushGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
               <div style={{ background: '#1E2D42', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>FLUSH FREQUENCY</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{result.freq}</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{result.freq}</div>
               </div>
               <div style={{ background: '#1E2D42', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>URGENCY</div>
@@ -97,7 +97,7 @@ export default function DFWWaterHeaterFlushGuide() {
 
         <div style={{ background: '#111C2E', borderRadius: 12, padding: 20 }}>
           <h3 style={{ fontSize: 15, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>🔍 What You'll See in DFW</h3>
-          <div style={{ display: 'grid', gap: 8, fontSize: 14, color: '#94A3B8' }}>
+          <div style={{ display: 'grid', gap: 8, fontSize: 14, color: '#94A3B8′ }}>
             <div>🟤 Rusty water early in flush = iron sediment (common in older DFW tanks)</div>
             <div>🟡 White/tan flakes = calcium carbonate from hard water — normal but needs clearing</div>
             <div>⚫ Black flakes = deteriorating anode rod — replace immediately</div>

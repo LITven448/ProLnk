@@ -39,8 +39,8 @@ function getSummerPlan(features: string, family: string) {
   const cost = hasOutdoor
     ? large ? '$500–$1,100 professional summer deep clean' : '$350–$750 professional summer deep clean'
     : hasPool
-    ? large ? '$350–$700' : '$250–$500'
-    : large ? '$200–$450' : '$150–$350';
+    ? large ? '$350–$700′ : '$250–$500'
+    : large ? '$200–$450′ : '$150–$350';
 
   const dfwSummerFacts = [
     '🌡️ DFW averages 70+ days above 100°F — AC runs nearly 24/7 from June–September',
@@ -61,7 +61,7 @@ export default function DFWSummerDeepCleanGuide() {
     <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F', marginBottom: 14 }}>
       <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>{title}</div>
       <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
-        {items.map(item => <li key={item} style={{ color: '#CBD5E1' }}>{item}</li>)}
+        {items.map(item => <li key={item} style={{ color: '#CBD5E1′ }}>{item}</li>)}
       </ul>
     </div>
   );
@@ -83,7 +83,7 @@ export default function DFWSummerDeepCleanGuide() {
             <div key={s.label} style={{ background: '#0F1F3D', borderRadius: 10, padding: 14, border: '1px solid #1E3A5F', textAlign: 'center' }}>
               <div style={{ fontSize: 22 }}>{s.icon}</div>
               <div style={{ color: '#94A3B8', fontSize: 12, marginTop: 4 }}>{s.label}</div>
-              <div style={{ fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
             </div>
           ))}
         </div>

@@ -7,31 +7,31 @@ const problems = [
   { label: 'Sagging / Visible Dip', value: 'sag' },
 ];
 const vintages = [
-  { label: 'Pre-1960 (Older Pier & Beam)', value: 'pre60' },
-  { label: '1960–1990', value: '60to90' },
-  { label: '1990–Present', value: 'post90' },
+  { label: 'Pre-1960 (Older Pier & Beam)', value: 'pre60′ },
+  { label: '1960–1990', value: '60to90′ },
+  { label: '1990–Present', value: 'post90′ },
 ];
 
 const assess: Record<string, Record<string, { cause: string; repair: string; cost: string }>> = {
   bounce: {
-    pre60: { cause: 'Original 2×8 joists undersized for span; DFW clay shifted piers', repair: 'Sister joists full length + re-level piers', cost: '$1,200–$3,500' },
-    '60to90': { cause: 'Joist crown reversed by moisture cycling; mid-span sag', repair: 'Sister joist + bridging installation', cost: '$800–$2,500' },
-    post90: { cause: 'Engineered I-joist web damage or improper notching', repair: 'Web filler patch or full joist replacement', cost: '$600–$2,000' },
+    pre60: { cause: 'Original 2×8 joists undersized for span; DFW clay shifted piers', repair: 'Sister joists full length + re-level piers', cost: '$1,200–$3,500′ },
+    '60to90': { cause: 'Joist crown reversed by moisture cycling; mid-span sag', repair: 'Sister joist + bridging installation', cost: '$800–$2,500′ },
+    post90: { cause: 'Engineered I-joist web damage or improper notching', repair: 'Web filler patch or full joist replacement', cost: '$600–$2,000′ },
   },
   squeak: {
-    pre60: { cause: 'Subfloor boards rubbing original lumber joists; nail fatigue', repair: 'Screw subfloor to joist from below + shim gaps', cost: '$400–$1,200' },
-    '60to90': { cause: 'Seasonal DFW expansion pulling nails; subfloor separation', repair: 'Construction adhesive + screw from above', cost: '$300–$900' },
-    post90: { cause: 'OSB subfloor separation from I-joist flange', repair: 'Squeeeeek No More screws from below', cost: '$200–$700' },
+    pre60: { cause: 'Subfloor boards rubbing original lumber joists; nail fatigue', repair: 'Screw subfloor to joist from below + shim gaps', cost: '$400–$1,200′ },
+    '60to90': { cause: 'Seasonal DFW expansion pulling nails; subfloor separation', repair: 'Construction adhesive + screw from above', cost: '$300–$900′ },
+    post90: { cause: 'OSB subfloor separation from I-joist flange', repair: 'Squeeeeek No More screws from below', cost: '$200–$700′ },
   },
   rot: {
-    pre60: { cause: 'Ground moisture + poor ventilation in old crawl space', repair: 'Replace rotted section + install vapor barrier', cost: '$1,500–$5,000' },
-    '60to90': { cause: 'Plumbing leak or inadequate crawl space venting', repair: 'Remediate moisture source + sister or replace joist', cost: '$1,200–$4,000' },
-    post90: { cause: 'Improper drainage grading directing water to crawl', repair: 'Full joist replacement + drainage correction', cost: '$1,800–$6,000' },
+    pre60: { cause: 'Ground moisture + poor ventilation in old crawl space', repair: 'Replace rotted section + install vapor barrier', cost: '$1,500–$5,000′ },
+    '60to90': { cause: 'Plumbing leak or inadequate crawl space venting', repair: 'Remediate moisture source + sister or replace joist', cost: '$1,200–$4,000′ },
+    post90: { cause: 'Improper drainage grading directing water to crawl', repair: 'Full joist replacement + drainage correction', cost: '$1,800–$6,000′ },
   },
   sag: {
-    pre60: { cause: 'Pier settlement from DFW expansive clay; joist overspanned', repair: 'Re-level piers + sister joists + center beam check', cost: '$2,500–$8,000' },
-    '60to90': { cause: 'Overloaded mid-span; added heavy appliance without reinforcement', repair: 'Add mid-span support beam or sister joists', cost: '$1,500–$4,500' },
-    post90: { cause: 'Engineered lumber moisture damage causing camber loss', repair: 'Full I-joist replacement in affected bay', cost: '$2,000–$6,000' },
+    pre60: { cause: 'Pier settlement from DFW expansive clay; joist overspanned', repair: 'Re-level piers + sister joists + center beam check', cost: '$2,500–$8,000′ },
+    '60to90': { cause: 'Overloaded mid-span; added heavy appliance without reinforcement', repair: 'Add mid-span support beam or sister joists', cost: '$1,500–$4,500′ },
+    post90: { cause: 'Engineered lumber moisture damage causing camber loss', repair: 'Full I-joist replacement in affected bay', cost: '$2,000–$6,000′ },
   },
 };
 
@@ -86,9 +86,9 @@ export default function DFWFloorJoistGuide() {
           </div>
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ marginBottom: 12 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Likely Cause: </span><span style={{ color: '#C5CAD8' }}>{result.cause}</span></div>
-              <div style={{ marginBottom: 12 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Repair Approach: </span><span style={{ color: '#C5CAD8' }}>{result.repair}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Typical DFW Cost: </span><span style={{ color: '#4ADE80' }}>{result.cost}</span></div>
+              <div style={{ marginBottom: 12 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Likely Cause: </span><span style={{ color: '#C5CAD8′ }}>{result.cause}</span></div>
+              <div style={{ marginBottom: 12 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Repair Approach: </span><span style={{ color: '#C5CAD8′ }}>{result.repair}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Typical DFW Cost: </span><span style={{ color: '#4ADE80′ }}>{result.cost}</span></div>
             </div>
           )}
         </div>

@@ -23,7 +23,7 @@ export default function DFWRoofingDrainageCalc2026() {
     { icon: '🌧️', label: 'DFW 10-Year Storm Peak', value: '6 in/hr (inner), 5.5 in/hr (outer)' },
     { icon: '📏', label: '4×4 Downspout Capacity', value: '~20.8 GPM' },
     { icon: '📏', label: '3×4 Downspout Capacity', value: '~14.7 GPM' },
-    { icon: '🏠', label: '5" Gutter Max Roof Area', value: '~5,000 sq ft per run' },
+    { icon: '🏠', label: '5″ Gutter Max Roof Area', value: '~5,000 sq ft per run' },
     { icon: '📐', label: 'Min Extension from Foundation', value: '6 feet (DFW code)' },
     { icon: '🔢', label: 'Design Standard', value: 'IPC Table 1106.2 + DFW overlay' },
   ];
@@ -65,7 +65,7 @@ export default function DFWRoofingDrainageCalc2026() {
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
             <div style={{ flex: 1, minWidth: 180 }}>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Roof Area (sq ft)</label>
-              <input value={roofArea} onChange={e => setRoofArea(e.target.value)} placeholder="e.g. 2500" style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={roofArea} onChange={e => setRoofArea(e.target.value)} placeholder="e.g. 2500″ style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div style={{ flex: 1, minWidth: 180 }}>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>DFW Zone</label>
@@ -84,7 +84,7 @@ export default function DFWRoofingDrainageCalc2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {concerns.map((c, i) => (
               <div key={i}>
-                <button onClick={() => toggle(i)} style={{ width: '100%', textAlign: 'left', background: open[i] ? '#0d2137' : '#0A1628', border: '1px solid', borderColor: open[i] ? '#F5E642' : '#2d5a8e', borderRadius: 8, padding: '12px 16px', color: open[i] ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 14, fontWeight: open[i] ? 700 : 400, display: 'flex', justifyContent: 'space-between' }}>
+                <button onClick={() => toggle(i)} style={{ width: '100%', textAlign: 'left', background: open[i] ? '#0d2137′ : '#0A1628', border: '1px solid', borderColor: open[i] ? '#F5E642' : '#2d5a8e', borderRadius: 8, padding: '12px 16px', color: open[i] ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 14, fontWeight: open[i] ? 700 : 400, display: 'flex', justifyContent: 'space-between' }}>
                   {c.q} <span>{open[i] ? '▲' : '▼'}</span>
                 </button>
                 {open[i] && <div style={{ background: '#0d2137', border: '1px solid #F5E642', borderTop: 'none', borderRadius: '0 0 8px 8px', padding: '14px 16px', color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{c.a}</div>}

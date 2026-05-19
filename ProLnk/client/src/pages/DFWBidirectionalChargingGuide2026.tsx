@@ -25,7 +25,7 @@ export default function DFWBidirectionalChargingGuide2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>DFW Bidirectional EV Charging Guide 2026</h1>
         <p style={{ color: '#94A3B8', fontSize: 15, marginBottom: 28 }}>V2H and V2G for DFW ERCOT grid — which EVs can power your home and how to set it up</p>
 
-        <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⚡ V2H vs V2G — What is the Difference</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             <div style={{ background: '#1E2F4F', borderRadius: 8, padding: 14 }}>

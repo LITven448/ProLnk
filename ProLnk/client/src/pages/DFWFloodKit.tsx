@@ -72,7 +72,7 @@ export default function DFWFloodKit() {
           in under an hour. Flash flooding is the #1 weather-related killer in North Texas.
         </p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <strong>📌 DFW Fact:</strong> The Trinity River Watershed covers most of DFW — flood risk exists across all 13 DFW counties.
         </div>
 
@@ -113,14 +113,14 @@ export default function DFWFloodKit() {
 
         {showKit && riskInfo && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>⚠️ Your Flood Risk</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>⚠️ Your Flood Risk</h2>
             <p style={{ color: '#cbd5e1', marginBottom: 16 }}>{riskInfo.risk}</p>
             <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 10 }}>🚨 Action Trigger Thresholds</h3>
             {riskInfo.triggers.map((t, i) => (
-              <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1' }}>{t}</div>
+              <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1′ }}>{t}</div>
             ))}
             {hasBasement === 'yes' && (
-              <div style={{ marginTop: 16, background: '#F5E642', borderRadius: 8, padding: '12px 16px', color: '#0A1628' }}>
+              <div style={{ marginTop: 16, background: '#F5E642', borderRadius: 8, padding: '12px 16px', color: '#0A1628′ }}>
                 <strong>🚗 Garage Priority:</strong> Move vehicles to street level before any flood warning. Water enters garages in minutes.
               </div>
             )}
@@ -137,7 +137,7 @@ export default function DFWFloodKit() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🗺️ DFW Evacuation Route Tips</h2>
           {evacuationRoutes.map((r, i) => (
-            <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1' }}>{r}</div>
+            <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1′ }}>{r}</div>
           ))}
         </div>
 

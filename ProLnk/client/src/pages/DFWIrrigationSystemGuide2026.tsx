@@ -25,12 +25,12 @@ export default function DFWIrrigationSystemGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[
-            { icon: '💰', label: 'Average Install Cost', value: '$4,500–$8,000' },
+            { icon: '💰', label: 'Average Install Cost', value: '$4,500–$8,000′ },
             { icon: '🗺️', label: 'Typical Zones (1/4 acre)', value: '4–6 zones' },
             { icon: '📋', label: 'TX License Required', value: 'TCEQ Irrigator' },
             { icon: '🔁', label: 'Backflow Test', value: 'Annual required' },
           ].map((s, i) => (
-            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155' }}>
+            <div key={i} style={{ background: '#1e293b', borderRadius: 12, padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{s.value}</div>
@@ -38,21 +38,21 @@ export default function DFWIrrigationSystemGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🌿 Drip vs Spray for DFW</h2>
           {[
             { type: 'Spray Heads', best: 'Turf grass', water: '1–1.5 in/hr', note: 'Most common in DFW' },
             { type: 'Rotor Heads', best: 'Large turf areas', water: '0.4–0.6 in/hr', note: 'More efficient coverage' },
             { type: 'Drip Emitters', best: 'Beds, shrubs, trees', water: '0.5–2 gph', note: '50% less water than spray' },
           ].map((r, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: i < 2 ? '1px solid #334155' : 'none' }}>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: i < 2 ? '1px solid #334155′ : ’none' }}>
               <div><div style={{ fontWeight: 600 }}>{r.type}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>{r.note}</div></div>
-              <div style={{ textAlign: 'right' }}><div style={{ color: '#F5E642' }}>{r.water}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Best for: {r.best}</div></div>
+              <div style={{ textAlign: 'right' }}><div style={{ color: '#F5E642′ }}>{r.water}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Best for: {r.best}</div></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🧮 System Size Estimator</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
             <input value={lotSize} onChange={e => setLotSize(e.target.value)} placeholder="Lot size (sq ft)" style={{ flex: 1, minWidth: 140, padding: '10px', borderRadius: 8, border: '1px solid #475569', background: '#0f172a', color: '#fff' }} />

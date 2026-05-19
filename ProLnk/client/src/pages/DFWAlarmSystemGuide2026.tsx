@@ -28,8 +28,8 @@ export default function DFWAlarmSystemGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Cellular backup · ERCOT outage resilience · DFW insurance discounts</p>
         </div>
 
-        <div style={{ backgroundColor: '#1e3a5f', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>⚡ ERCOT Outage Requirement</div>
+        <div style={{ backgroundColor: '#1e3a5f', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>⚡ ERCOT Outage Requirement</div>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>DFW experienced multiple multi-day ERCOT grid failures. Internet-only alarms go offline during outages. <strong style={{ color: '#fff' }}>Cellular backup is mandatory</strong> — all systems below include cellular. Non-cellular systems are not recommended for DFW.</p>
         </div>
 
@@ -41,7 +41,7 @@ export default function DFWAlarmSystemGuide2026() {
               <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 2 }}>Equipment: {s.equipment > 0 ? `$${s.equipment}` : 'Included'}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 2 }}>Contract: {s.contract}</div>
               <div style={{ fontSize: 12, color: '#22c55e', marginBottom: 2 }}>Insurance discount: {s.discount}</div>
-              <div style={{ fontSize: 11, padding: '4px 8px', borderRadius: 6, backgroundColor: '#0A1628', marginTop: 4, color: '#94a3b8' }}>Best: {s.best}</div>
+              <div style={{ fontSize: 11, padding: '4px 8px', borderRadius: 6, backgroundColor: '#0A1628', marginTop: 4, color: '#94a3b8′ }}>Best: {s.best}</div>
             </div>
           ))}
         </div>
@@ -55,7 +55,7 @@ export default function DFWAlarmSystemGuide2026() {
             { label: 'Payback period on $299 equipment', value: '6-9 months' },
           ].map(item => (
             <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1e3a5f', fontSize: 13 }}>
-              <span style={{ color: '#94a3b8' }}>{item.label}</span>
+              <span style={{ color: '#94a3b8′ }}>{item.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{item.value}</span>
             </div>
           ))}
@@ -83,7 +83,7 @@ export default function DFWAlarmSystemGuide2026() {
               </select>
             </div>
           </div>
-          {rec && <div style={{ backgroundColor: '#0A1628', padding: 16, borderRadius: 8, fontSize: 14, borderLeft: '3px solid #F5E642' }}>{rec}</div>}
+          {rec && <div style={{ backgroundColor: '#0A1628', padding: 16, borderRadius: 8, fontSize: 14, borderLeft: '3px solid #F5E642′ }}>{rec}</div>}
         </div>
 
         <div style={{ textAlign: 'center', padding: 16, backgroundColor: '#112240', borderRadius: 12 }}>

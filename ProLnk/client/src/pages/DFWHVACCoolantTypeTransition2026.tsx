@@ -38,9 +38,9 @@ export default function DFWHVACCoolantTypeTransition2026() {
           <label style={{ display: 'block', marginBottom: '0.4rem', color: '#9BA3B2', fontSize: '0.9rem' }}>What refrigerant does your system use?</label>
           <select value={system} onChange={e => setSystem(e.target.value)} style={{ width: '100%', padding: '0.6rem', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: '8px', color: '#E8EAF0', fontSize: '0.95rem' }}>
             <option value="">Select refrigerant type...</option>
-            <option value="r22">R-22 (Freon) — pre-2010 system</option>
+            <option value="r22″>R-22 (Freon) — pre-2010 system</option>
             <option value="r410a">R-410A — 2010 to 2024 system</option>
-            <option value="r32">R-32 or R-454B — 2024 or newer</option>
+            <option value="r32″>R-32 or R-454B — 2024 or newer</option>
             <option value="unknown">Not sure / need to check</option>
           </select>
         </div>

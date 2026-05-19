@@ -116,7 +116,7 @@ export default function DFWTrashRecyclingGuide() {
             { icon: '☠️', label: 'HAZARDOUS WASTE', value: city.hazardousWaste },
             { icon: '🌱', label: 'COMPOSTING', value: city.composting },
           ].map(item => (
-            <div key={item.label} style={{ background: '#111F35', borderRadius: 12, padding: 20, borderTop: '3px solid #F5E642' }}>
+            <div key={item.label} style={{ background: '#111F35', borderRadius: 12, padding: 20, borderTop: '3px solid #F5E642′ }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 8, fontWeight: 700 }}>{item.icon} {item.label}</div>
               <div style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6 }}>{item.value}</div>
             </div>
@@ -128,20 +128,20 @@ export default function DFWTrashRecyclingGuide() {
           <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
             <button onClick={() => setTab('accepted')}
               style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 14, cursor: 'pointer',
-                background: tab === 'accepted' ? '#4ade80' : '#1A2E4A', color: tab === 'accepted' ? '#0A1628' : '#8A9BB5' }}>
+                background: tab === 'accepted' ? '#4ade80′ : '#1A2E4A', color: tab === ’accepted' ? '#0A1628′ : '#8A9BB5' }}>
               ✅ Accepted
             </button>
             <button onClick={() => setTab('rejected')}
               style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 14, cursor: 'pointer',
-                background: tab === 'rejected' ? '#f87171' : '#1A2E4A', color: tab === 'rejected' ? '#0A1628' : '#8A9BB5' }}>
+                background: tab === 'rejected' ? '#f87171′ : '#1A2E4A', color: tab === ’rejected' ? '#0A1628′ : '#8A9BB5' }}>
               ❌ NOT Accepted
             </button>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {(tab === 'accepted' ? city.recyclingAccepted : city.recyclingRejected).map(item => (
               <span key={item} style={{
-                background: tab === 'accepted' ? '#052e1680' : '#3b0a0a80',
-                color: tab === 'accepted' ? '#4ade80' : '#f87171',
+                background: tab === 'accepted' ? '#052e1680′ : '#3b0a0a80',
+                color: tab === 'accepted' ? '#4ade80′ : '#f87171',
                 border: `1px solid ${tab === 'accepted' ? '#4ade8040' : '#f8717140'}`,
                 borderRadius: 6, padding: '6px 14px', fontSize: 13, fontWeight: 600
               }}>{item}</span>

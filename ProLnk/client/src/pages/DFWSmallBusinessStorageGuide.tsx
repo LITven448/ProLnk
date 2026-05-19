@@ -94,7 +94,7 @@ export default function DFWSmallBusinessStorageGuide() {
             {recs.length === 0 ? (
               <div style={{ color: '#FCA5A5', fontSize: 14 }}>No perfect match — consider increasing your budget or exploring warehouse space.</div>
             ) : recs.map(r => (
-              <div key={r.name} style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginBottom: 10, borderLeft: '3px solid #F5E642' }}>
+              <div key={r.name} style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginBottom: 10, borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700 }}>{r.name}</div>
                 <div style={{ color: '#F5E642', fontSize: 13, marginTop: 2 }}>{r.cost}</div>
               </div>

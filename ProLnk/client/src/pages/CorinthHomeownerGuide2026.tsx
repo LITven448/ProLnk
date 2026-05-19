@@ -42,7 +42,7 @@ export default function CorinthHomeownerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {[{ v: 'spring', l: '🌸 Spring' }, { v: 'summer', l: '☀️ Summer' }, { v: 'fall', l: '🍂 Fall' }, { v: 'winter', l: '❄️ Winter' }].map(opt => (
               <button key={opt.v} onClick={() => setSeason(opt.v)}
-                style={{ background: season === opt.v ? '#F5E642' : '#1a2f50', color: season === opt.v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: season === opt.v ? '#F5E642′ : '#1a2f50', color: season === opt.v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {opt.l}
               </button>
             ))}
@@ -64,8 +64,8 @@ export default function CorinthHomeownerGuide2026() {
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 16, marginBottom: 24 }}>
           <h3 style={{ color: '#F5E642', fontSize: 14, marginBottom: 12 }}>🧱 Corinth Foundation Watch — Year-Round</h3>
-          {['Water foundation perimeter during drought — 18" from house, slow drip', 'Check corner cracks in drywall — clay soil movement indicator', 'Ensure gutters divert water 6+ feet from foundation', 'Professional foundation inspection every 3 years recommended'].map((item, i) => (
-            <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{item}</div>
+          {['Water foundation perimeter during drought — 18″ from house, slow drip', 'Check corner cracks in drywall — clay soil movement indicator', 'Ensure gutters divert water 6+ feet from foundation', 'Professional foundation inspection every 3 years recommended'].map((item, i) => (
+            <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{item}</div>
           ))}
         </div>
 

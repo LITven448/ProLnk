@@ -33,7 +33,7 @@ export default function ProLnkAIMatchingExplainer() {
             <div key={i} style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 10 }}>{s.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>{s.label}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8' }}>{s.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{s.desc}</div>
             </div>
           ))}
         </div>
@@ -46,15 +46,15 @@ export default function ProLnkAIMatchingExplainer() {
             {Object.keys(tradeMap).map(t => (
               <button key={t} onClick={() => setSelected(t)}
                 style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                  background: selected === t ? '#F5E642' : '#1e3a5f', color: selected === t ? '#0A1628' : '#fff' }}>
+                  background: selected === t ? '#F5E642′ : '#1e3a5f', color: selected === t ? '#0A1628' : '#fff' }}>
                 {t}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
             {tradeMap[selected].map((item, i) => (
-              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
-                <span style={{ fontSize: 13, color: '#cbd5e1' }}>✅ {item}</span>
+              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+                <span style={{ fontSize: 13, color: '#cbd5e1′ }}>✅ {item}</span>
               </div>
             ))}
           </div>
@@ -66,8 +66,8 @@ export default function ProLnkAIMatchingExplainer() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 20 }}>
             {[['200+', 'signals per match'], ['48hr', 'demand forecasting'], ['DFW-tuned', 'local patterns']].map(([v, l], i) => (
               <div key={i}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{v}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{l}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{v}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{l}</div>
               </div>
             ))}
           </div>

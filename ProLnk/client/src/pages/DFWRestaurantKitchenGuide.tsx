@@ -35,7 +35,7 @@ export default function DFWRestaurantKitchenGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase' }}>🍳 DFW Restaurant Kitchen Guide</div>
-        <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.15, marginBottom: 12 }}>Restaurant Plumbing & Kitchen <span style={{ color: '#F5E642' }}>Compliance in DFW</span></h1>
+        <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.15, marginBottom: 12 }}>Restaurant Plumbing & Kitchen <span style={{ color: '#F5E642′ }}>Compliance in DFW</span></h1>
         <p style={{ color: '#94A3B8', fontSize: 17, marginBottom: 36 }}>Every food service location in DFW cities requires grease interceptors by ordinance. Failing a health inspection costs more than installing it right the first time.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 32 }}>
@@ -54,14 +54,14 @@ export default function DFWRestaurantKitchenGuide() {
           ].map(card => (
             <div key={card.title} style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: '#F5E642' }}>{card.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: '#F5E642′ }}>{card.title}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{card.body}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, border: '1px solid #F5E642', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🧮 Kitchen Compliance Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🧮 Kitchen Compliance Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Restaurant Type</label>
@@ -91,7 +91,7 @@ export default function DFWRestaurantKitchenGuide() {
                 <div><span style={{ color: '#94A3B8', fontSize: 13 }}>HOOD EXHAUST CFM</span><div style={{ color: '#E8EDF5', marginTop: 4 }}>{result.hoodCFM}</div></div>
               </div>
               <div><span style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 10 }}>PLUMBING INSPECTION CHECKLIST</span>
-                {result.checklist.map((item, i) => <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>✓</span><span style={{ color: '#E8EDF5', fontSize: 14 }}>{item}</span></div>)}
+                {result.checklist.map((item, i) => <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>✓</span><span style={{ color: '#E8EDF5', fontSize: 14 }}>{item}</span></div>)}
               </div>
             </div>
           )}

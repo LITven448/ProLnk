@@ -44,7 +44,7 @@ export default function DFWMasterPlannedGuide2026() {
             {lifestyles.map((l) => (
               <button key={l.id} onClick={() => setSelected(l.id)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selected === l.id ? '#F5E642' : '#1e2e4a', color: selected === l.id ? '#0A1628' : '#94a3b8' }}>
+                  background: selected === l.id ? '#F5E642′ : '#1e2e4a', color: selected === l.id ? '#0A1628' : '#94a3b8' }}>
                 {l.label}
               </button>
             ))}
@@ -73,7 +73,7 @@ export default function DFWMasterPlannedGuide2026() {
               <span style={{ fontSize: 22 }}>{row.icon}</span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{row.title}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8' }}>{row.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{row.note}</div>
               </div>
             </div>
           ))}

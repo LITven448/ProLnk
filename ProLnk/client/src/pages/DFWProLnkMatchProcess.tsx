@@ -27,9 +27,9 @@ export default function DFWProLnkMatchProcess() {
           {(['homeowner', 'partner'] as const).map(r => (
             <button key={r} onClick={() => setRole(r)} style={{
               padding: '10px 28px', borderRadius: 8, border: '2px solid',
-              borderColor: role === r ? '#F5E642' : '#1e3a5f',
-              background: role === r ? '#F5E642' : 'transparent',
-              color: role === r ? '#0A1628' : '#fff', fontWeight: 700,
+              borderColor: role === r ? '#F5E642′ : '#1e3a5f',
+              background: role === r ? '#F5E642′ : ’transparent',
+              color: role === r ? '#0A1628′ : '#fff', fontWeight: 700,
               fontSize: 15, cursor: 'pointer', textTransform: 'capitalize'
             }}>{r === 'homeowner' ? '🏠 Homeowner' : '🔧 Partner'}</button>
           ))}
@@ -39,12 +39,12 @@ export default function DFWProLnkMatchProcess() {
           {steps.map((step, i) => (
             <div key={step.id} onClick={() => setActiveStep(i)} style={{
               background: activeStep === i ? '#0f2a4a' : '#0d1f36',
-              border: '1px solid', borderColor: activeStep === i ? '#F5E642' : '#1e3a5f',
+              border: '1px solid', borderColor: activeStep === i ? '#F5E642′ : '#1e3a5f',
               borderRadius: 10, padding: '16px 20px', cursor: 'pointer', transition: 'all 0.2s'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <span style={{ fontSize: 24 }}>{step.emoji}</span>
-                <span style={{ fontWeight: 700, fontSize: 15, color: activeStep === i ? '#F5E642' : '#e2e8f0' }}>{step.label}</span>
+                <span style={{ fontWeight: 700, fontSize: 15, color: activeStep === i ? '#F5E642′ : '#e2e8f0' }}>{step.label}</span>
               </div>
               {activeStep === i && role && (
                 <p style={{ margin: '12px 0 0', color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>

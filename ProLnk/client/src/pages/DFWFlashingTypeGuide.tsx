@@ -55,7 +55,7 @@ export default function DFWFlashingTypeGuide() {
             { label: 'Base/Apron Flashing', icon: '🔽', desc: 'Flat flashing at the base of chimneys and walls where roof meets vertical surface.' },
             { label: 'Pipe Boot Flashing', icon: '🔧', desc: 'Rubber collar around plumbing vents — most commonly replaced flashing component in DFW.' },
           ].map(f => (
-            <div key={f.label} style={{ background: '#0F2040', borderRadius: 10, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
+            <div key={f.label} style={{ background: '#0F2040', borderRadius: 10, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: '1.25rem', marginBottom: '.25rem' }}>{f.icon}</div>
               <div style={{ fontWeight: 600, color: '#F5E642', fontSize: '.9rem', marginBottom: '.25rem' }}>{f.label}</div>
               <div style={{ color: '#9AAAB8', fontSize: '.85rem' }}>{f.desc}</div>
@@ -95,8 +95,8 @@ export default function DFWFlashingTypeGuide() {
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: `1px solid ${result.urgencyColor}` }}>
             <h3 style={{ color: result.urgencyColor, marginBottom: '1rem' }}>{result.urgency}</h3>
             <div style={{ display: 'grid', gap: '.75rem' }}>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>REPAIR TYPE</div><div style={{ color: '#E8EDF5' }}>{result.repairType}</div></div>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>ESTIMATED COST</div><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>REPAIR TYPE</div><div style={{ color: '#E8EDF5′ }}>{result.repairType}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>ESTIMATED COST</div><strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
               <div style={{ color: '#9AAAB8', fontSize: '.9rem', borderTop: '1px solid #1E3A5F', paddingTop: '.75rem' }}>{result.context}</div>
             </div>
           </div>

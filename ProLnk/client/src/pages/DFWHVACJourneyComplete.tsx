@@ -77,7 +77,7 @@ export default function DFWHVACJourneyComplete() {
   const plan = selected ? actionPlans[selected] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 56, marginBottom: 12 }}>🎓</div>
@@ -105,7 +105,7 @@ export default function DFWHVACJourneyComplete() {
           <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
             {knowledgeAreas.map(k => (
               <button key={k.id} onClick={() => setSelected(k.id)}
-                style={{ background: selected === k.id ? '#F5E642' : '#0A1628', color: selected === k.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: selected === k.id ? '#F5E642′ : '#0A1628', color: selected === k.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 10, padding: '14px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
                 <div>{k.label}</div>
                 {selected !== k.id && <div style={{ fontSize: 12, color: '#64748B', marginTop: 4, fontWeight: 400 }}>{k.description}</div>}
               </button>

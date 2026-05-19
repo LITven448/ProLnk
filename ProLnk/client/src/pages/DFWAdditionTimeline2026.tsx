@@ -23,7 +23,7 @@ export default function DFWAdditionTimeline2026() {
       phases: [
         { phase: '📐 Design & Drawings', duration: '2–4 weeks', notes: 'HOA approval in many DFW communities' },
         { phase: '📋 DFW Permit', duration: '3–6 weeks', notes: 'Faster than living space; site plan required' },
-        { phase: '🏗️ Foundation', duration: '1 week', notes: 'Thickened slab; 4" with turndowns' },
+        { phase: '🏗️ Foundation', duration: '1 week', notes: 'Thickened slab; 4″ with turndowns' },
         { phase: '🪵 Framing & Roof', duration: '1–2 weeks', notes: 'Match existing roof pitch for aesthetics' },
         { phase: '🔧 Electrical & Doors', duration: '1–2 weeks', notes: '240V for EV charger growing demand' },
         { phase: '🧱 Drywall & Finish', duration: '2–3 weeks', notes: 'Fire-rated if attached to home' },
@@ -57,14 +57,14 @@ export default function DFWAdditionTimeline2026() {
         {[{ k: 'bedroom', l: 'Bedroom/Living' }, { k: 'garage', l: 'Garage' }, { k: 'sunroom', l: 'Sunroom/Bonus' }].map(({ k, l }) => (
           <button key={k} onClick={() => setType(k)}
             style={{ marginRight: '0.5rem', padding: '0.4rem 1rem', borderRadius: '6px', border: '2px solid #F5E642',
-              background: type === k ? '#F5E642' : 'transparent', color: type === k ? '#0A1628' : '#F5E642', cursor: 'pointer', fontWeight: '700' }}>
+              background: type === k ? '#F5E642′ : ’transparent', color: type === k ? '#0A1628′ : '#F5E642', cursor: ’pointer', fontWeight: '700′ }}>
             {l}
           </button>
         ))}
       </div>
 
       <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '1rem', marginBottom: '0.5rem' }}>
-        <span style={{ color: '#F5E642', fontWeight: '700' }}>Estimated Total: </span>
+        <span style={{ color: '#F5E642', fontWeight: '700′ }}>Estimated Total: </span>
         <span style={{ fontSize: '1.2rem' }}>{current.total}</span>
         <span style={{ color: '#aaa', marginLeft: '1rem', fontSize: '0.9rem' }}>{current.sqft}</span>
       </div>
@@ -72,7 +72,7 @@ export default function DFWAdditionTimeline2026() {
 
       {current.phases.map((p, i) => (
         <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '0.75rem', background: '#0d1e38', borderRadius: '8px', padding: '0.75rem 1rem' }}>
-          <div style={{ flex: '1', fontWeight: '600' }}>{p.phase}</div>
+          <div style={{ flex: '1', fontWeight: '600′ }}>{p.phase}</div>
           <div style={{ color: '#F5E642', minWidth: '100px', textAlign: 'right' }}>{p.duration}</div>
           <div style={{ color: '#aaa', flex: '2', textAlign: 'right' }}>{p.notes}</div>
         </div>

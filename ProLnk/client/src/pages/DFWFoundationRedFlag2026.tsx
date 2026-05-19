@@ -31,12 +31,12 @@ export default function DFWFoundationRedFlag2026() {
     : cautionCount === 1 ? { label: 'Proceed With Caution', color: '#F5E642', icon: '🟡' }
     : { label: 'No Red Flags Detected', color: '#22c55e', icon: '✅' };
 
-  const levelColor = (l: string) => l === 'reject' ? { bg: '#7f1d1d', text: '#fca5a5' }
-    : l === 'major' ? { bg: '#78350f', text: '#fdba74' }
+  const levelColor = (l: string) => l === 'reject' ? { bg: '#7f1d1d', text: '#fca5a5′ }
+    : l === 'major' ? { bg: '#78350f', text: '#fdba74′ }
     : { bg: '#1e3a5f', text: '#93c5fd' };
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h1 style={{ color: '#F5E642', fontSize: '1.6rem', fontWeight: 700, marginBottom: '0.5rem' }}>
@@ -49,7 +49,7 @@ export default function DFWFoundationRedFlag2026() {
           {FLAGS.map((f, i) => {
             const lc = levelColor(f.level);
             return (
-              <div key={f.id} style={{ borderBottom: i < FLAGS.length - 1 ? '1px solid #1e2d47' : 'none', paddingBottom: '0.75rem', marginBottom: '0.75rem' }}>
+              <div key={f.id} style={{ borderBottom: i < FLAGS.length - 1 ? '1px solid #1e2d47′ : ’none', paddingBottom: '0.75rem', marginBottom: '0.75rem' }}>
                 <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer' }}>
                   <input type="checkbox" checked={selected.has(f.id)} onChange={() => toggle(f.id)}
                     style={{ width: '18px', height: '18px', accentColor: '#ef4444', marginTop: '2px' }} />

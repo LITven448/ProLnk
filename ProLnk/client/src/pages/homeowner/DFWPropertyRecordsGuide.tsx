@@ -16,8 +16,8 @@ const checklistItems = [
 const resources = [
   { county: 'Collin County', url: 'collincad.org', color: '#1e3a5f', accent: '#60a5fa' },
   { county: 'Dallas County', url: 'dallascad.org', color: '#1a1a3a', accent: '#a78bfa' },
-  { county: 'Denton County', url: 'dentoncad.com', color: '#0d2a1a', accent: '#4ade80' },
-  { county: 'Tarrant County', url: 'tad.org', color: '#1a2030', accent: '#38bdf8' },
+  { county: 'Denton County', url: 'dentoncad.com', color: '#0d2a1a', accent: '#4ade80′ },
+  { county: 'Tarrant County', url: 'tad.org', color: '#1a2030', accent: '#38bdf8′ },
   { county: 'FEMA Flood Map', url: 'msc.fema.gov', color: '#2a1a0d', accent: '#fb923c' },
 ];
 
@@ -88,7 +88,7 @@ export default function DFWPropertyRecordsGuide() {
         </div>
         <div style={{ background: '#1e293b', borderRadius: 14, padding: 18, marginBottom: 40 }}>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>
-            <strong style={{ color: '#f0f0f0' }}>City Permits:</strong> Each city maintains its own portal. Search "[city name] building permits" + "permit portal" or "permit search" for Dallas, Frisco, Plano, McKinney, Fort Worth, Arlington, etc.
+            <strong style={{ color: '#f0f0f0′ }}>City Permits:</strong> Each city maintains its own portal. Search "[city name] building permits" + "permit portal" or "permit search" for Dallas, Frisco, Plano, McKinney, Fort Worth, Arlington, etc.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export default function DFWPropertyRecordsGuide() {
               <p style={{ color: '#fb923c', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>{cat}</p>
               <div style={{ display: 'grid', gap: 8 }}>
                 {items.map(item => (
-                  <label key={item.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', background: checked.includes(item.id) ? '#0d2010' : '#1e293b', border: `1px solid ${checked.includes(item.id) ? '#fb923c' : '#334155'}`, borderRadius: 8, padding: 12 }}>
+                  <label key={item.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', background: checked.includes(item.id) ? '#0d2010′ : '#1e293b', border: `1px solid ${checked.includes(item.id) ? '#fb923c' : '#334155'}`, borderRadius: 8, padding: 12 }}>
                     <input type="checkbox" checked={checked.includes(item.id)} onChange={() => toggle(item.id)} style={{ width: 16, height: 16 }} />
                     <span style={{ color: '#e2e8f0', fontSize: 14 }}>{item.label}</span>
                   </label>

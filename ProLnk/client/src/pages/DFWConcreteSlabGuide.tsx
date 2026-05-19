@@ -32,7 +32,7 @@ export default function DFWConcreteSlabGuide() {
   const [showResult, setShowResult] = useState(false);
 
   const result = slabType && projectType ? getSlabGuidance(slabType, projectType) : null;
-  const riskColor = result?.risk === 'HIGH' ? '#ef4444' : result?.risk === 'MEDIUM' ? '#f59e0b' : '#22c55e';
+  const riskColor = result?.risk === 'HIGH' ? '#ef4444′ : result?.risk === ’MEDIUM' ? '#f59e0b' : '#22c55e';
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#fff' }}>
@@ -75,16 +75,16 @@ export default function DFWConcreteSlabGuide() {
           {showResult && result && (
             <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: `3px solid ${riskColor}` }}>
               <div style={{ color: riskColor, fontWeight: 700, marginBottom: 8 }}>⚠️ Risk Level: {result.risk}</div>
-              <p style={{ fontSize: 14, lineHeight: 1.7, margin: '0 0 12px 0' }}>{result.guidance}</p>
-              <div style={{ fontSize: 13, color: '#F5E642' }}>👷 Who to Consult: {result.consult}</div>
+              <p style={{ fontSize: 14, lineHeight: 1.7, margin: '0 0 12px 0′ }}>{result.guidance}</p>
+              <div style={{ fontSize: 13, color: '#F5E642′ }}>👷 Who to Consult: {result.consult}</div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📋 How to Identify Your Slab Type</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📋 How to Identify Your Slab Type</div>
           {['Check your closing documents for "post-tension" or "PT slab" notation', 'Pull your building permit from the city — it lists foundation type', 'Look for PT end caps on slab edges (square metal plates, often painted)', 'Ask your HOA or builder — most DFW builders document slab specs'].map(f => (
-            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1' }}>• {f}</div>
+            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1′ }}>• {f}</div>
           ))}
         </div>
       </div>

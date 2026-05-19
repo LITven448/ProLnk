@@ -36,7 +36,7 @@ export default function DFWHomeMaintenanceGamePlan2026() {
           {Object.keys(labels).map(k => (
             <button key={k} onClick={() => setAge(k)}
               style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: age === k ? '#F5E642' : '#1e2d45', color: age === k ? '#0A1628' : '#94a3b8' }}>
+                background: age === k ? '#F5E642′ : '#1e2d45', color: age === k ? '#0A1628' : '#94a3b8' }}>
               {labels[k]}
             </button>
           ))}
@@ -45,7 +45,7 @@ export default function DFWHomeMaintenanceGamePlan2026() {
           <div key={quarter} style={{ background: '#132035', borderRadius: 14, padding: '20px', marginBottom: 16 }}>
             <h3 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 12 }}>📅 {quarter}</h3>
             {tasks.map((t, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: i < tasks.length - 1 ? '1px solid #1e2d45' : 'none', color: '#e2e8f0', fontSize: 14 }}>
+              <div key={i} style={{ padding: '8px 0', borderBottom: i < tasks.length - 1 ? '1px solid #1e2d45′ : ’none', color: '#e2e8f0', fontSize: 14 }}>
                 ☐ {t}
               </div>
             ))}

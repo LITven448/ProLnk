@@ -54,7 +54,7 @@ export default function DFWInsuranceDisputeGuide() {
           <p style={{ color: '#CBD5E1', marginTop: 8 }}>Texas law gives homeowners strong tools against underpaying insurers</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Texas Insurance Rights</h2>
           {[
             ['TDI Oversight', 'Texas Dept of Insurance regulates all homeowner policies — complaints carry real weight.'],
@@ -64,16 +64,16 @@ export default function DFWInsuranceDisputeGuide() {
           ].map(([title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <span style={{ color: '#F5E642', fontSize: 20, flexShrink: 0 }}>✔</span>
-              <div><strong style={{ color: '#0A1628' }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
+              <div><strong style={{ color: '#0A1628′ }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🔍 Find Your Resolution Path</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>What is Your Dispute?</label>
-            <select value={disputeType} onChange={e => setDisputeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
+            <select value={disputeType} onChange={e => setDisputeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
               <option value="">Select dispute type...</option>
               {disputeOptions.map(d => <option key={d} value={d}>{d}</option>)}
             </select>
@@ -91,13 +91,13 @@ export default function DFWInsuranceDisputeGuide() {
               {result.path.map((step, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
                   <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: '#E2E8F0' }}>{step}</span>
+                  <span style={{ color: '#E2E8F0′ }}>{step}</span>
                 </div>
               ))}
             </div>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '16px 20px' }}>
               <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>🎯 LIKELY OUTCOME</div>
-              <div style={{ color: '#E2E8F0' }}>{result.outcome}</div>
+              <div style={{ color: '#E2E8F0′ }}>{result.outcome}</div>
             </div>
           </div>
         )}

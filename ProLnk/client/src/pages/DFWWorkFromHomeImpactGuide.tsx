@@ -54,13 +54,13 @@ export default function DFWWorkFromHomeImpactGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW REMOTE WORK MIGRATION</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 16, lineHeight: 1.2 }}>Remote Work Impact on DFW Housing — 2026 Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 17, marginBottom: 40, lineHeight: 1.7 }}>
-          DFW has been the #1 destination for California-to-Texas migration since 2020. Remote work didn't just relocate people — it fundamentally changed what they buy. Home offices aren't nice-to-have anymore. Pools are expected. Fiber internet is a deal-breaker. Here's the full picture.
+          DFW has been the #1 destination for California-to-Texas migration since 2020. Remote work didn't just relocate people — it fundamentally changed what they buy. Home offices aren’t nice-to-have anymore. Pools are expected. Fiber internet is a deal-breaker. Here’s the full picture.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
             { icon: '✈️', label: 'CA→TX Migration', value: '95,000/yr', sub: 'Annual California to Texas movers' },
-            { icon: '🏠', label: 'Demand for Home Offices', value: '+340%', sub: 'Listings featuring office vs 2019' },
+            { icon: '🏠', label: 'Demand for Home Offices', value: '+340%', sub: 'Listings featuring office vs 2019′ },
             { icon: '🌐', label: 'Fiber Internet Priority', value: '#2 Factor', sub: 'After school district in buyer surveys' },
             { icon: '🏊', label: 'Pool Demand', value: '+180%', sub: 'Remote workers prioritize outdoor space' },
           ].map(card => (

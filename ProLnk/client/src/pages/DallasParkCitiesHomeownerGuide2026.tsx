@@ -45,7 +45,7 @@ export default function DallasParkCitiesHomeownerGuide2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {scales.map(s => (
               <button key={s.id} onClick={() => setPropertyScale(s.id)}
-                style={{ background: propertyScale === s.id ? '#F5E642' : '#0f1f3d', color: propertyScale === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 600 }}>
+                style={{ background: propertyScale === s.id ? '#F5E642′ : '#0f1f3d', color: propertyScale === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '14px 18px', textAlign: ’left', cursor: 'pointer', fontSize: 15, fontWeight: 600 }}>
                 {s.label} <span style={{ fontWeight: 400, fontSize: 13, opacity: 0.75 }}>— {s.desc}</span>
               </button>
             ))}

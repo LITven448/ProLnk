@@ -34,9 +34,9 @@ export default function DFWProLnkVaultDemo2026() {
           {Object.keys(vaultRecords).map(type => (
             <button key={type} onClick={() => setHomeType(type)} style={{
               padding: '12px 18px', borderRadius: 10, border: '2px solid',
-              borderColor: homeType === type ? '#F5E642' : '#1E3A5F',
-              background: homeType === type ? '#F5E642' : '#0D1F3C',
-              color: homeType === type ? '#0A1628' : '#fff',
+              borderColor: homeType === type ? '#F5E642′ : '#1E3A5F',
+              background: homeType === type ? '#F5E642′ : '#0D1F3C',
+              color: homeType === type ? '#0A1628′ : '#fff',
               cursor: 'pointer', fontWeight: 700, fontSize: 14
             }}>{type}</button>
           ))}
@@ -46,7 +46,7 @@ export default function DFWProLnkVaultDemo2026() {
           <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 24 }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📂 {homeType} Vault Records</h3>
             {vaultRecords[homeType].map(record => (
-              <div key={record} style={{ padding: '10px 14px', background: '#0A1628', borderRadius: 8, marginBottom: 8, fontSize: 14, color: '#CBD5E1' }}>
+              <div key={record} style={{ padding: '10px 14px', background: '#0A1628', borderRadius: 8, marginBottom: 8, fontSize: 14, color: '#CBD5E1′ }}>
                 {record}
               </div>
             ))}
@@ -57,7 +57,7 @@ export default function DFWProLnkVaultDemo2026() {
           <h3 style={{ color: '#F5E642', marginBottom: 12 }}>📄 Vault Report Uses</h3>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {['🏷️ Home Resale Disclosure', '🛡️ Insurance Claims', '💰 Tax Deduction Support', '📋 HOA Compliance'].map(use => (
-              <div key={use} style={{ background: '#1E3A5F', borderRadius: 8, padding: '10px 14px', fontSize: 14, color: '#CBD5E1' }}>{use}</div>
+              <div key={use} style={{ background: '#1E3A5F', borderRadius: 8, padding: '10px 14px', fontSize: 14, color: '#CBD5E1′ }}>{use}</div>
             ))}
           </div>
         </div>

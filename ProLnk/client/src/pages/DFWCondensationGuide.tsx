@@ -17,7 +17,7 @@ export default function DFWCondensationGuide() {
 
   const result = assessments[severity]?.[humidity];
 
-  const severityColor: Record<string, string> = { Normal: '#22C55E', 'Moderate Concern': '#F59E0B', Investigate: '#F59E0B', '⚠️ Act Now': '#EF4444' };
+  const severityColor: Record<string, string> = { Normal: '#22C55E', 'Moderate Concern': '#F59E0B', Investigate: '#F59E0B', '⚠️ Act Now': '#EF4444′ };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
@@ -29,7 +29,7 @@ export default function DFWCondensationGuide() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💧 The DFW Humidity Problem</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💧 The DFW Humidity Problem</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>
             DFW sits at the intersection of Gulf moisture and continental air masses. Summer afternoons regularly hit 65–80% relative humidity, and humid air infiltrates homes through door seals, attic bypasses, and duct gaps. When that air contacts a 55°F supply vent, condensation is physics, not a malfunction.
           </p>
@@ -42,22 +42,22 @@ export default function DFWCondensationGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🔍 Assess Your Situation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Condensation Severity</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Condensation Severity</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {[['light', '💧 Light (damp to touch)'], ['heavy', '💦 Heavy (dripping)']].map(([val, label]) => (
                   <button key={val} onClick={() => setSeverity(val)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${severity === val ? '#F5E642' : '#1E3A5F'}`, background: severity === val ? '#F5E642' : 'transparent', color: severity === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${severity === val ? '#F5E642' : '#1E3A5F'}`, background: severity === val ? '#F5E642′ : ’transparent', color: severity === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {label}
                   </button>
                 ))}
               </div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Your DFW Location Humidity</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8′ }}>Your DFW Location Humidity</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {[['low', '🌵 Drier (far North DFW / inland)'], ['high', '💧 Humid (South/East DFW)']].map(([val, label]) => (
                   <button key={val} onClick={() => setHumidity(val)}
-                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${humidity === val ? '#F5E642' : '#1E3A5F'}`, background: humidity === val ? '#F5E642' : 'transparent', color: humidity === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
+                    style={{ flex: 1, padding: '12px', borderRadius: 10, border: `2px solid ${humidity === val ? '#F5E642' : '#1E3A5F'}`, background: humidity === val ? '#F5E642′ : ’transparent', color: humidity === val ? '#0A1628′ : '#E8EAF0', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
                     {label}
                   </button>
                 ))}
@@ -68,7 +68,7 @@ export default function DFWCondensationGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-                <span style={{ fontSize: 15, fontWeight: 700, color: severityColor[result.severity] || '#E8EAF0' }}>{result.severity}</span>
+                <span style={{ fontSize: 15, fontWeight: 700, color: severityColor[result.severity] || '#E8EAF0′ }}>{result.severity}</span>
               </div>
               <div style={{ fontSize: 14, color: '#94A3B8', marginBottom: 4 }}>Root Cause</div>
               <div style={{ color: '#E8EAF0', marginBottom: 20, lineHeight: 1.6 }}>{result.cause}</div>

@@ -70,7 +70,7 @@ export default function DFWHomeAffordabilityRealityGuide() {
   const affordable = annualIncome >= incomeNeeded;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
       <div style={{ background: '#0A1628', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 48 }}>💵</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '12px 0 8px' }}>DFW Home Affordability Reality Check 2026</h1>
@@ -86,7 +86,7 @@ export default function DFWHomeAffordabilityRealityGuide() {
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Select a Price Point to See the Full Reality</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 32 }}>
           {pricePoints.map(p => (
-            <button key={p.key} onClick={() => setSelected(p.key)} style={{ padding: '16px 12px', borderRadius: 10, border: '2px solid', borderColor: selected === p.key ? '#F5E642' : '#E2E8F0', background: selected === p.key ? '#0A1628' : '#fff', color: selected === p.key ? '#F5E642' : '#0A1628', fontWeight: 700, cursor: 'pointer', fontSize: 18 }}>
+            <button key={p.key} onClick={() => setSelected(p.key)} style={{ padding: '16px 12px', borderRadius: 10, border: '2px solid', borderColor: selected === p.key ? '#F5E642′ : '#E2E8F0', background: selected === p.key ? '#0A1628' : '#fff', color: selected === p.key ? '#F5E642' : '#0A1628', fontWeight: 700, cursor: ’pointer', fontSize: 18 }}>
               {p.price}
             </button>
           ))}
@@ -100,14 +100,14 @@ export default function DFWHomeAffordabilityRealityGuide() {
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
                   <tbody>
                     {[['🏠 Principal & Interest', point.mortgage], ['🏛 Property Tax (est.)', point.propTax], ['🛡 Homeowners Insurance', point.insurance], ['🏘 HOA (avg DFW)', point.hoa], ['⚡ Utilities (avg)', point.utilities]].map(([label, val]) => (
-                      <tr key={label as string} style={{ borderBottom: '1px solid #F1F5F9' }}>
+                      <tr key={label as string} style={{ borderBottom: '1px solid #F1F5F9′ }}>
                         <td style={{ padding: '10px 0', color: '#64748B' }}>{label}</td>
                         <td style={{ padding: '10px 0', fontWeight: 600, textAlign: 'right' }}>{val}</td>
                       </tr>
                     ))}
-                    <tr style={{ borderTop: '2px solid #0A1628' }}>
+                    <tr style={{ borderTop: '2px solid #0A1628′ }}>
                       <td style={{ padding: '12px 0', fontWeight: 700, fontSize: 16 }}>TOTAL Monthly</td>
-                      <td style={{ padding: '12px 0', fontWeight: 700, fontSize: 16, textAlign: 'right', color: '#DC2626' }}>{point.total}</td>
+                      <td style={{ padding: '12px 0', fontWeight: 700, fontSize: 16, textAlign: 'right', color: '#DC2626′ }}>{point.total}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -128,11 +128,11 @@ export default function DFWHomeAffordabilityRealityGuide() {
         )}
 
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🎯 Your DFW Affordability Check</h2>
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Your Annual Household Income</label>
-              <input value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. $120,000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. $120,000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Target Price Point</label>
@@ -143,7 +143,7 @@ export default function DFWHomeAffordabilityRealityGuide() {
             </div>
           </div>
           {income && selected && (
-            <div style={{ background: affordable ? '#DCFCE7' : '#FEE2E2', border: `2px solid ${affordable ? '#16A34A' : '#DC2626'}`, borderRadius: 10, padding: 16 }}>
+            <div style={{ background: affordable ? '#DCFCE7′ : '#FEE2E2', border: `2px solid ${affordable ? '#16A34A' : '#DC2626'}`, borderRadius: 10, padding: 16 }}>
               <p style={{ margin: 0, fontWeight: 700, fontSize: 16 }}>
                 {affordable ? '✅ You can comfortably afford this — you exceed the income threshold.' : `⚠️ This may stretch your budget — income threshold is ${point?.income}/yr. Consider going down one price point.`}
               </p>

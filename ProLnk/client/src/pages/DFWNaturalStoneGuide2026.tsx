@@ -23,7 +23,7 @@ export default function DFWNaturalStoneGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '32px' }}>
           {stones.map((stone, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#F5E642' : '#0f2040', color: selected === i ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '18px 14px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
+              style={{ backgroundColor: selected === i ? '#F5E642′ : '#0f2040', color: selected === i ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '18px 14px', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{stone.icon}</div>
               <div style={{ fontWeight: '600', fontSize: '14px' }}>{stone.label}</div>
             </button>
@@ -34,7 +34,7 @@ export default function DFWNaturalStoneGuide2026() {
           <div style={{ backgroundColor: '#0f2040', border: '1px solid #F5E642', borderRadius: '12px', padding: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontSize: '32px' }}>{stones[selected].icon}</span>
-              <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700' }}>{stones[selected].label}</h2>
+              <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700′ }}>{stones[selected].label}</h2>
             </div>
             <p style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '15px' }}>{stones[selected].guide}</p>
           </div>
@@ -46,7 +46,7 @@ export default function DFWNaturalStoneGuide2026() {
             {[['Granite','★★★★★','Best for DFW'],['Slate','★★★★☆','Very durable'],['Travertine','★★★☆☆','Needs sealing'],['Limestone','★★★☆☆','Acid sensitive'],['Marble','★★☆☆☆','High maintenance']].map(([stone,stars,note],i) => (
               <div key={i} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '10px', textAlign: 'center' }}>
                 <div style={{ color: '#ffffff', fontWeight: '600', fontSize: '12px' }}>{stone}</div>
-                <div style={{ color: '#F5E642', fontSize: '11px', margin: '2px 0' }}>{stars}</div>
+                <div style={{ color: '#F5E642', fontSize: '11px', margin: '2px 0′ }}>{stars}</div>
                 <div style={{ color: '#94a3b8', fontSize: '11px' }}>{note}</div>
               </div>
             ))}

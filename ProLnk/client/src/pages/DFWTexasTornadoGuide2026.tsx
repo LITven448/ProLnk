@@ -34,18 +34,18 @@ export default function DFWTexasTornadoGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 14 }}>🏠 Select Your Home Type</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {tornadoGuide.map(g => (
-              <button key={g.homeType} onClick={() => setHomeType(g.homeType)} style={{ padding: '9px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: homeType === g.homeType ? '#F5E642' : '#162842', color: homeType === g.homeType ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{g.icon} {g.homeType}</button>
+              <button key={g.homeType} onClick={() => setHomeType(g.homeType)} style={{ padding: '9px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: homeType === g.homeType ? '#F5E642′ : '#162842', color: homeType === g.homeType ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{g.icon} {g.homeType}</button>
             ))}
           </div>
 
           <div style={{ display: 'flex', gap: 6, marginBottom: 16, flexWrap: 'wrap' }}>
             {tabs.map(t => (
-              <button key={t.key} onClick={() => setTab(t.key)} style={{ padding: '7px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: tab === t.key ? '#F5E642' : '#162842', color: tab === t.key ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: 12 }}>{t.label}</button>
+              <button key={t.key} onClick={() => setTab(t.key)} style={{ padding: '7px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: tab === t.key ? '#F5E642′ : '#162842', color: tab === t.key ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: 12 }}>{t.label}</button>
             ))}
           </div>
 
           {result && (
-            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result[tabs.find(t => t.key === tab)?.field as keyof typeof result]}</div>
             </div>
           )}

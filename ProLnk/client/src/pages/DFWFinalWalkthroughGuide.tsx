@@ -70,7 +70,7 @@ export default function DFWFinalWalkthroughGuide() {
             <div style={{ background: '#fff', border: '1.5px solid #E2E8F0', borderRadius: 6, padding: 32, marginBottom: 32, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <h2 style={{ color: '#1A2B3C', fontSize: 20, margin: '0 0 24px', borderBottom: '2px solid #E2E8F0', paddingBottom: 12 }}>Your Walkthrough Checklist</h2>
               {result.checklist.map(({ item, check, priority }) => (
-                <div key={item} style={{ borderLeft: '4px solid ' + (priority.includes('Critical') ? '#9B2335' : priority.includes('Important') ? '#1A4A8C' : '#CBD5E0'), paddingLeft: 16, marginBottom: 24 }}>
+                <div key={item} style={{ borderLeft: '4px solid ' + (priority.includes('Critical') ? '#9B2335′ : priority.includes(’Important') ? '#1A4A8C' : '#CBD5E0'), paddingLeft: 16, marginBottom: 24 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
                     <div style={{ fontWeight: 700, fontSize: 15, color: '#1A2B3C' }}>{item}</div>
                     <div style={{ fontSize: 11, color: '#6B7280', whiteSpace: 'nowrap', marginLeft: 12 }}>{priority}</div>
@@ -90,7 +90,7 @@ export default function DFWFinalWalkthroughGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
           {[['📸 Photo Everything', 'Document condition at walkthrough — timestamped photos protect you post-closing'],['🔑 Get All Keys', 'Do not leave walkthrough without every key, fob, remote, and code'],['⏱️ 24-48 hrs Before', 'Ideal walkthrough window — leaves time to address issues before closing']].map(([title, desc]) => (
             <div key={title as string} style={{ background: '#1A2B3C', color: '#F8F6F1', borderRadius: 4, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{title}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{title}</div>
               <div style={{ fontSize: 13, color: '#CBD5E0', lineHeight: 1.5 }}>{desc}</div>
             </div>
           ))}

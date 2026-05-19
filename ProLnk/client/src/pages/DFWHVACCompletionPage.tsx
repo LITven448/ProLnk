@@ -11,11 +11,11 @@ const situations = [
 
 const stats = [
   { num: "3,100+", label: "Pages built" },
-  { num: "15", label: "Best practices" },
-  { num: "10", label: "Worst practices" },
-  { num: "5", label: "Decision guides" },
-  { num: "8", label: "Timeline stages" },
-  { num: "1", label: "ProLnk promise" },
+  { num: "15″, label: "Best practices" },
+  { num: "10″, label: "Worst practices" },
+  { num: "5″, label: "Decision guides" },
+  { num: "8″, label: "Timeline stages" },
+  { num: "1″, label: "ProLnk promise" },
 ];
 
 export default function DFWHVACCompletionPage() {
@@ -25,58 +25,58 @@ export default function DFWHVACCompletionPage() {
   const active = situations.find(s => s.id === selected);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 52 }}>🏆</div>
-          <h1 style={{ color: "#F5E642", fontSize: 30, margin: "12px 0 8px" }}>The Most Comprehensive DFW HVAC Resource Ever Built</h1>
-          <p style={{ color: "#94a3b8", fontSize: 16, margin: 0 }}>3,100+ pages. One mission: DFW homeowners who never get taken advantage of again.</p>
+          <h1 style={{ color: "#F5E642″, fontSize: 30, margin: "12px 0 8px" }}>The Most Comprehensive DFW HVAC Resource Ever Built</h1>
+          <p style={{ color: "#94a3b8″, fontSize: 16, margin: 0 }}>3,100+ pages. One mission: DFW homeowners who never get taken advantage of again.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 36 }}>
           {stats.map((s, i) => (
-            <div key={i} style={{ background: "#1e293b", border: "1px solid #334155", borderRadius: 10, padding: "16px 12px", textAlign: "center" }}>
-              <div style={{ color: "#F5E642", fontSize: 26, fontWeight: 700 }}>{s.num}</div>
-              <div style={{ color: "#94a3b8", fontSize: 13 }}>{s.label}</div>
+            <div key={i} style={{ background: "#1e293b", border: "1px solid #334155″, borderRadius: 10, padding: "16px 12px", textAlign: "center" }}>
+              <div style={{ color: "#F5E642″, fontSize: 26, fontWeight: 700 }}>{s.num}</div>
+              <div style={{ color: "#94a3b8″, fontSize: 13 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: "#1e293b", borderRadius: 12, padding: 22, marginBottom: 28 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 16, marginBottom: 16 }}>Your HVAC situation → your personalized final message</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 16, marginBottom: 16 }}>Your HVAC situation → your personalized final message</div>
           <div style={{ display: "grid", gap: 8 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-                style={{ background: selected === s.id ? "#1e3a5f" : "#0A1628", border: selected === s.id ? "1px solid #F5E642" : "1px solid #334155", borderRadius: 8, padding: "11px 16px", cursor: "pointer", textAlign: "left", color: "#fff", display: "flex", gap: 10, alignItems: "center" }}>
+                style={{ background: selected === s.id ? "#1e3a5f" : "#0A1628″, border: selected === s.id ? "1px solid #F5E642" : "1px solid #334155", borderRadius: 8, padding: "11px 16px", cursor: "pointer", textAlign: "left", color: "#fff", display: "flex", gap: 10, alignItems: "center" }}>
                 <span style={{ fontSize: 20 }}>{s.emoji}</span>
                 <span style={{ fontWeight: 500 }}>{s.label}</span>
-                {selected === s.id && <span style={{ marginLeft: "auto", color: "#F5E642" }}>✓</span>}
+                {selected === s.id && <span style={{ marginLeft: "auto", color: "#F5E642″ }}>✓</span>}
               </button>
             ))}
           </div>
         </div>
 
         {active && (
-          <div style={{ background: "#1e3a5f", border: "1px solid #F5E642", borderRadius: 12, padding: 24, marginBottom: 28 }}>
+          <div style={{ background: "#1e3a5f", border: "1px solid #F5E642″, borderRadius: 12, padding: 24, marginBottom: 28 }}>
             <div style={{ fontSize: 32, marginBottom: 12 }}>{active.emoji}</div>
-            <p style={{ color: "#e2e8f0", lineHeight: 1.8, margin: 0, fontSize: 16 }}>{active.message}</p>
+            <p style={{ color: "#e2e8f0″, lineHeight: 1.8, margin: 0, fontSize: 16 }}>{active.message}</p>
           </div>
         )}
 
-        <div style={{ background: "linear-gradient(135deg, #1e293b, #1e3a5f)", border: "2px solid #F5E642", borderRadius: 16, padding: 28, textAlign: "center" }}>
+        <div style={{ background: "linear-gradient(135deg, #1e293b, #1e3a5f)", border: "2px solid #F5E642″, borderRadius: 16, padding: 28, textAlign: "center" }}>
           <div style={{ fontSize: 36, marginBottom: 12 }}>🤝</div>
-          <h2 style={{ color: "#F5E642", fontSize: 22, margin: "0 0 12px" }}>The ProLnk Promise for DFW HVAC</h2>
-          <p style={{ color: "#cbd5e1", lineHeight: 1.7, marginBottom: 20, fontSize: 15 }}>
+          <h2 style={{ color: "#F5E642″, fontSize: 22, margin: "0 0 12px" }}>The ProLnk Promise for DFW HVAC</h2>
+          <p style={{ color: "#cbd5e1″, lineHeight: 1.7, marginBottom: 20, fontSize: 15 }}>
             Every contractor in our network is licensed, insured, and reviewed by real DFW homeowners.
             No bait-and-switch pricing. No unnecessary upsells. Just vetted professionals who show up on time.
           </p>
           {joined ? (
             <div style={{ background: "#14532d", border: "1px solid #22c55e", borderRadius: 10, padding: "14px 20px", color: "#86efac", fontWeight: 700, fontSize: 16 }}>
-              ✅ You're on the list. We'll reach out when we launch in your area.
+              ✅ You're on the list. We’ll reach out when we launch in your area.
             </div>
           ) : (
             <button onClick={() => setJoined(true)}
-              style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 10, padding: "14px 36px", fontWeight: 700, fontSize: 17, cursor: "pointer", display: "block", margin: "0 auto", width: "100%", maxWidth: 320 }}>
+              style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 10, padding: "14px 36px", fontWeight: 700, fontSize: 17, cursor: "pointer", display: "block", margin: "0 auto", width: "100%", maxWidth: 320 }}>
               🚀 Join the ProLnk Waitlist — Free
             </button>
           )}

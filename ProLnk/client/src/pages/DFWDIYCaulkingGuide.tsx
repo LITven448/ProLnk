@@ -34,8 +34,8 @@ export default function DFWDIYCaulkingGuide() {
   const est = selected.length > 0 ? getEstimate(selected) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🔧</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 10px' }}>DFW DIY Caulking Guide</h1>
@@ -100,7 +100,7 @@ export default function DFWDIYCaulkingGuide() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {LOCATIONS.map(loc => (
-              <button key={loc.id} onClick={() => toggle(loc.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected.includes(loc.id) ? '#F5E642' : '#334155', background: selected.includes(loc.id) ? '#F5E64215' : 'transparent', color: selected.includes(loc.id) ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600 }}>
+              <button key={loc.id} onClick={() => toggle(loc.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected.includes(loc.id) ? '#F5E642′ : '#334155', background: selected.includes(loc.id) ? '#F5E64215' : ’transparent', color: selected.includes(loc.id) ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: 600 }}>
                 {loc.label}
               </button>
             ))}
@@ -116,7 +116,7 @@ export default function DFWDIYCaulkingGuide() {
                 {[['🧴 Tubes', `${est.tubes}`], ['🕐 Time', `${est.hours} hrs`], ['💰 Cost', `~$${est.cost}`]].map(([label, val]) => (
                   <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                     <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                    <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
                   </div>
                 ))}
               </div>
@@ -127,7 +127,7 @@ export default function DFWDIYCaulkingGuide() {
                 return (
                   <div key={id} style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 10 }}>
                     <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{loc?.label}</div>
-                    <div style={{ color: '#fff', fontSize: 14, marginBottom: 4 }}>Type: <span style={{ color: '#F5E642' }}>{c.type}</span> — {c.brand}</div>
+                    <div style={{ color: '#fff', fontSize: 14, marginBottom: 4 }}>Type: <span style={{ color: '#F5E642′ }}>{c.type}</span> — {c.brand}</div>
                     <div style={{ color: '#94a3b8', fontSize: 13 }}>{c.reason}</div>
                   </div>
                 );

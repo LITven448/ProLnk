@@ -29,7 +29,7 @@ export default function DFWHVACHighElectricBillGuide2026() {
             { label: 'Unit over 12 years old', impact: 'SEER drops 30-50%' },
           ].map((item, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '10px 0', borderBottom: '1px solid #1e3a5f' }}>
-              <div style={{ color: '#cdd9e5' }}>{item.label}</div>
+              <div style={{ color: '#cdd9e5′ }}>{item.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{item.impact}</div>
             </div>
           ))}
@@ -40,7 +40,7 @@ export default function DFWHVACHighElectricBillGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {diagnoses.map(d => (
               <button key={d.range} onClick={() => setSelected(d.range === selected ? null : d.range)}
-                style={{ background: selected === d.range ? '#F5E642' : '#1e3a5f', color: selected === d.range ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between' }}>
+                style={{ background: selected === d.range ? '#F5E642′ : '#1e3a5f', color: selected === d.range ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between' }}>
                 <span>{d.range}</span>
                 <span style={{ fontSize: 13, opacity: 0.8 }}>{d.size}</span>
               </button>
@@ -48,11 +48,11 @@ export default function DFWHVACHighElectricBillGuide2026() {
           </div>
           {active && (
             <div style={{ marginTop: 20, background: '#0d1f3c', borderRadius: 8, padding: 20 }}>
-              <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 16, color: '#F5E642' }}>{active.verdict}</div>
+              <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 16, color: '#F5E642′ }}>{active.verdict}</div>
               {active.issues.length > 0 ? active.issues.map((issue, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
                   <span style={{ color: '#F5E642', fontWeight: 800, minWidth: 24 }}>{i + 1}.</span>
-                  <span style={{ color: '#cdd9e5' }}>{issue}</span>
+                  <span style={{ color: '#cdd9e5′ }}>{issue}</span>
                 </div>
               )) : <div style={{ color: '#4ade80', fontWeight: 600 }}>Your bill looks normal for DFW. Keep up with filter changes monthly.</div>}
             </div>
@@ -62,7 +62,7 @@ export default function DFWHVACHighElectricBillGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>💰 Quick Wins to Lower Bill</h2>
           {['Set thermostat to 78°F when home, 85°F when away', 'Replace filter monthly June-Sept', 'Add attic insulation (DFW heat hits R-38 minimum)', 'Seal duct connections with mastic (not tape)', 'Get unit serviced annually — coil cleaning improves efficiency 10-15%'].map((item, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#cdd9e5' }}>💡 {item}</div>
+            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#cdd9e5′ }}>💡 {item}</div>
           ))}
           <div style={{ marginTop: 20, background: '#F5E642', borderRadius: 8, padding: 16, textAlign: 'center' }}>
             <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 16 }}>ProLnk connects you with DFW energy efficiency experts.</div>

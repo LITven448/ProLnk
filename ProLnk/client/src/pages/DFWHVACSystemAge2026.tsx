@@ -50,7 +50,7 @@ export default function DFWHVACSystemAge2026() {
         <div style={{ background: '#0f2235', border: '1px solid #1e3a5f', borderRadius: 12, padding: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Enter Your System Age</h2>
           <input
-            type="number" placeholder="e.g. 11" value={age} onChange={e => setAge(e.target.value)}
+            type="number" placeholder="e.g. 11″ value={age} onChange={e => setAge(e.target.value)}
             style={{ width: '100%', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 16, boxSizing: 'border-box' }}
           />
           {result && (

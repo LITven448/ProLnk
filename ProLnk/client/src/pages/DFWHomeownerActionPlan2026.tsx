@@ -74,8 +74,8 @@ export default function DFWHomeownerActionPlan2026() {
             ].map(o => (
               <button key={o.v} onClick={() => setStage(o.v)}
                 style={{ padding: '16px', borderRadius: 10, border: '2px solid', cursor: 'pointer',
-                  borderColor: stage === o.v ? '#F5E642' : '#1e3a5f',
-                  backgroundColor: stage === o.v ? '#F5E64220' : '#0d1f3c',
+                  borderColor: stage === o.v ? '#F5E642′ : '#1e3a5f',
+                  backgroundColor: stage === o.v ? '#F5E64220′ : '#0d1f3c',
                   color: '#fff', fontSize: 15, textAlign: 'left' }}>
                 {o.l}
               </button>
@@ -84,7 +84,7 @@ export default function DFWHomeownerActionPlan2026() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0d1f3c', borderRadius: 12, padding: 24, border: '1px solid #F5E64240' }}>
+          <div style={{ backgroundColor: '#0d1f3c', borderRadius: 12, padding: 24, border: '1px solid #F5E64240′ }}>
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>{result.title}</h2>
             {result.steps.map((step, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, padding: '12px 0', borderBottom: i < result.steps.length - 1 ? '1px solid #1e3a5f' : 'none' }}>
@@ -95,7 +95,7 @@ export default function DFWHomeownerActionPlan2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 24, textAlign: 'center', border: '1px solid #F5E64240' }}>
+        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 24, textAlign: 'center', border: '1px solid #F5E64240′ }}>
           <div style={{ fontSize: 32 }}>⏰</div>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, margin: '8px 0 4px' }}>Charter Waitlist Closing Soon</p>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>ProLnk Charter tier locks in your rate forever. Only 500 DFW homeowner spots available.</p>

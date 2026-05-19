@@ -46,7 +46,7 @@ export default function DFWPickleballCourtGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>📐 Standard Court Dimensions</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#CBD5E1' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#CBD5E1′ }}>
             <div>Doubles court: <strong style={{ color: '#fff' }}>20 × 44 ft</strong></div>
             <div>Kitchen (NVZ): <strong style={{ color: '#fff' }}>7 ft each side</strong></div>
             <div>Recommended space: <strong style={{ color: '#fff' }}>30 × 60 ft</strong></div>
@@ -66,15 +66,15 @@ export default function DFWPickleballCourtGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Available Length (ft)</div>
-              <input value={length} onChange={e => setLength(e.target.value)} placeholder="e.g. 50" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={length} onChange={e => setLength(e.target.value)} placeholder="e.g. 50″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Available Width (ft)</div>
-              <input value={width} onChange={e => setWidth(e.target.value)} placeholder="e.g. 30" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={width} onChange={e => setWidth(e.target.value)} placeholder="e.g. 30″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Budget ($)</div>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 20000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 20000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Preferred Surface</div>
@@ -86,10 +86,10 @@ export default function DFWPickleballCourtGuide() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>{result.type}</div>
-              <div style={{ color: '#CBD5E1' }}>Surface: {result.surface}</div>
-              <div style={{ color: '#CBD5E1' }}>Estimated Cost: {result.cost}</div>
+              <div style={{ color: '#CBD5E1′ }}>Surface: {result.surface}</div>
+              <div style={{ color: '#CBD5E1′ }}>Estimated Cost: {result.cost}</div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.9rem' }}>{result.note}</div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.85rem' }}>🏘️ HOA: {result.hoaNote}</div>
             </div>

@@ -28,7 +28,7 @@ export default function MoldRemediationGuide() {
   const pct = Math.round((score / maxScore) * 100);
 
   const risk = pct >= 60 ? 'High' : pct >= 35 ? 'Moderate' : 'Low';
-  const riskColor = pct >= 60 ? '#ef4444' : pct >= 35 ? '#f59e0b' : '#22c55e';
+  const riskColor = pct >= 60 ? '#ef4444′ : pct >= 35 ? '#f59e0b' : '#22c55e';
   const action = pct >= 60
     ? 'Schedule a professional mold inspection within 30 days. Do not attempt DIY remediation on hidden or widespread mold.'
     : pct >= 35
@@ -38,7 +38,7 @@ export default function MoldRemediationGuide() {
   const toggle = (id: string) => setAnswers(prev => ({ ...prev, [id]: !prev[id] }));
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2a45 100%)', borderBottom: '2px solid #F5E642', padding: '48px 24px 36px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>🏠 DFW Homeowner Guide</div>
@@ -49,11 +49,11 @@ export default function MoldRemediationGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0′ }}>
         <div style={{ background: '#0f1e35', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 36 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 10px' }}>🌡️ The DFW Mold Problem</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
-            DFW's hot, humid summers push indoor humidity dangerously high when AC systems are oversized or poorly maintained. When an oversized system cools air too quickly, it doesn't run long enough to remove humidity — creating the ideal 65–70°F, 60%+ humidity environment where mold thrives, especially in attics, crawlspaces, and HVAC ducts.
+            DFW's hot, humid summers push indoor humidity dangerously high when AC systems are oversized or poorly maintained. When an oversized system cools air too quickly, it doesn’t run long enough to remove humidity — creating the ideal 65–70°F, 60%+ humidity environment where mold thrives, especially in attics, crawlspaces, and HVAC ducts.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function MoldRemediationGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #1E2D45' }}>
+                <tr style={{ borderBottom: '1px solid #1E2D45′ }}>
                   {['Scope', 'Low', 'High', 'DIY OK?'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: '#F5E642', fontWeight: 700 }}>{h}</th>
                   ))}
@@ -87,10 +87,10 @@ export default function MoldRemediationGuide() {
               </thead>
               <tbody>
                 {costRanges.map((r, i) => (
-                  <tr key={r.scope} style={{ background: i % 2 === 0 ? 'transparent' : '#0A1628' }}>
+                  <tr key={r.scope} style={{ background: i % 2 === 0 ? 'transparent' : '#0A1628′ }}>
                     <td style={{ padding: '10px 14px' }}>{r.scope}</td>
-                    <td style={{ padding: '10px 14px', color: '#94a3b8' }}>${r.low.toLocaleString()}</td>
-                    <td style={{ padding: '10px 14px', color: '#94a3b8' }}>${r.high.toLocaleString()}</td>
+                    <td style={{ padding: '10px 14px', color: '#94a3b8′ }}>${r.low.toLocaleString()}</td>
+                    <td style={{ padding: '10px 14px', color: '#94a3b8′ }}>${r.high.toLocaleString()}</td>
                     <td style={{ padding: '10px 14px' }}>
                       <span style={{ color: r.diy ? '#22c55e' : '#ef4444', fontWeight: 700 }}>{r.diy ? 'Yes' : 'No'}</span>
                     </td>
@@ -112,21 +112,21 @@ export default function MoldRemediationGuide() {
                 onClick={() => toggle(q.id)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 14, padding: '14px 18px',
-                  background: answers[q.id] ? '#1a2a45' : '#0A1628',
+                  background: answers[q.id] ? '#1a2a45′ : '#0A1628',
                   border: `1px solid ${answers[q.id] ? '#F5E642' : '#1E2D45'}`,
                   borderRadius: 10, cursor: 'pointer',
                 }}
               >
                 <div style={{
                   width: 22, height: 22, borderRadius: 4, flexShrink: 0,
-                  background: answers[q.id] ? '#F5E642' : 'transparent',
+                  background: answers[q.id] ? '#F5E642′ : ’transparent',
                   border: `2px solid ${answers[q.id] ? '#F5E642' : '#475569'}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: '#0A1628', fontWeight: 800, fontSize: 14,
                 }}>
                   {answers[q.id] ? '✓' : ''}
                 </div>
-                <span style={{ fontSize: 14 }}><strong style={{ color: '#94a3b8' }}>{i + 1}.</strong> {q.text}</span>
+                <span style={{ fontSize: 14 }}><strong style={{ color: '#94a3b8′ }}>{i + 1}.</strong> {q.text}</span>
               </div>
             ))}
           </div>

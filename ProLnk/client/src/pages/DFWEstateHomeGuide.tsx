@@ -45,9 +45,9 @@ export default function DFWEstateHomeGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0' }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0′ }}>
         <div style={{ background: '#ECFDF5', border: '2px solid #6EE7B7', borderRadius: 10, padding: 16, marginBottom: 28 }}>
-          <strong style={{ color: '#065F46' }}>💡 Stepped-Up Basis:</strong>
+          <strong style={{ color: '#065F46′ }}>💡 Stepped-Up Basis:</strong>
           <span style={{ color: '#047857', fontSize: 14 }}> One of the biggest tax advantages in real estate. Your cost basis resets to fair market value at date of death — eliminating most capital gains from prior appreciation. Act before the estate is settled to preserve this benefit.</span>
         </div>
 
@@ -55,9 +55,9 @@ export default function DFWEstateHomeGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 32 }}>
           {SITUATIONS.map((s, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#0A1628' : '#FFFFFF', border: `2px solid ${selected === i ? '#F5E642' : '#E5E7EB'}`, borderRadius: 10, padding: '16px', cursor: 'pointer', textAlign: 'left', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+              style={{ background: selected === i ? '#0A1628′ : '#FFFFFF', border: `2px solid ${selected === i ? '#F5E642' : '#E5E7EB'}`, borderRadius: 10, padding: '16px', cursor: ’pointer', textAlign: 'left', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: selected === i ? '#F5E642' : '#1A2B3C' }}>{s.type}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: selected === i ? '#F5E642′ : '#1A2B3C' }}>{s.type}</div>
             </button>
           ))}
         </div>
@@ -65,7 +65,7 @@ export default function DFWEstateHomeGuide() {
         {item && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 14, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>{item.icon} {item.type}</h2>
-            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 20, background: '#F0F9FF', padding: 16, borderRadius: 8, borderLeft: '3px solid #0A1628' }}>{item.path}</p>
+            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 20, background: '#F0F9FF', padding: 16, borderRadius: 8, borderLeft: '3px solid #0A1628′ }}>{item.path}</p>
             <h3 style={{ fontSize: 13, fontWeight: 700, color: '#374151', letterSpacing: 1, marginBottom: 12 }}>RECOMMENDED TIMELINE</h3>
             <ol style={{ paddingLeft: 20, margin: '0 0 20px' }}>
               {item.timeline.map((t, i) => <li key={i} style={{ fontSize: 14, color: '#4B5563', marginBottom: 8, lineHeight: 1.5 }}>{t}</li>)}

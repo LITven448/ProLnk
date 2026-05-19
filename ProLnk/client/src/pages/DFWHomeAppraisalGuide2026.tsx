@@ -37,15 +37,15 @@ export default function DFWHomeAppraisalGuide2026() {
                 key={f.feature}
                 onClick={() => setSelected(selected === f.feature ? null : f.feature)}
                 style={{
-                  background: selected === f.feature ? '#F5E642' : '#1a3a5c',
-                  color: selected === f.feature ? '#0A1628' : '#fff',
+                  background: selected === f.feature ? '#F5E642′ : '#1a3a5c',
+                  color: selected === f.feature ? '#0A1628′ : '#fff',
                   border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: 600
                 }}
               >{f.feature}</button>
             ))}
           </div>
           {selectedFactor && (
-            <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{selectedFactor.impact}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14 }}>{selectedFactor.note}</div>
             </div>

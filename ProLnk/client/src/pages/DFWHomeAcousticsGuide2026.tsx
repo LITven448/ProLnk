@@ -6,7 +6,7 @@ const solutions = [
     '🛋️ Upholstered furniture — sectional sofas absorb 3x more than leather',
     '📚 Bookshelves on bare walls — irregular surfaces diffuse sound',
     '🪟 Curtains floor-to-ceiling — double-lined absorb high freq echo',
-    '🎨 Acoustic art panels — 2" thick fiberglass wrapped in fabric',
+    '🎨 Acoustic art panels — 2″ thick fiberglass wrapped in fabric',
   ]},
   { problem: 'neighbor', label: 'Neighbor / Street Noise', fixes: [
     '🧱 Mass-loaded vinyl (MLV) between drywall layers — STC 52+',
@@ -16,7 +16,7 @@ const solutions = [
     '🌿 Exterior landscaping — dense hedges cut 5–10dB',
   ]},
   { problem: 'studio', label: 'Home Studio / Media Room', fixes: [
-    '🎵 Double-stud wall with 1" air gap — STC 60+ isolation',
+    '🎵 Double-stud wall with 1″ air gap — STC 60+ isolation',
     '🟫 Rockwool Safe n Sound insulation in all cavities',
     '🏗️ Decoupled ceiling with resilient channels — stop structure-borne noise',
     '🔲 Acoustic foam panels (bass traps in corners, broadband on walls)',
@@ -24,7 +24,7 @@ const solutions = [
   ]},
   { problem: 'hvac', label: 'HVAC / Mechanical Noise', fixes: [
     '🌀 Flex duct connections isolate equipment vibration',
-    '📐 Duct lining with 1" acoustic duct liner',
+    '📐 Duct lining with 1″ acoustic duct liner',
     '🔇 Sound boot at register — reduces turbulence noise',
     '⚙️ Variable speed air handler — 50% quieter than single-stage',
     '🏠 Equipment closet with acoustic door and floor pad',
@@ -57,14 +57,14 @@ export default function DFWHomeAcousticsGuide2026() {
             {solutions.map(s => (
               <button key={s.problem} onClick={() => setProblem(problem === s.problem ? '' : s.problem)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                  background: problem === s.problem ? '#F5E642' : '#1C2D4A', color: problem === s.problem ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                  background: problem === s.problem ? '#F5E642′ : '#1C2D4A', color: problem === s.problem ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                 {s.label.split(' / ')[0]}
               </button>
             ))}
           </div>
         </div>
         {sol && (
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #F5E642' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 14 }}>🔇 {sol.label} — Solutions</div>
             {sol.fixes.map(f => (
               <div key={f} style={{ color: '#CBD1DC', fontSize: 14, marginBottom: 10 }}>{f}</div>

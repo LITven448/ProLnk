@@ -18,11 +18,11 @@ export default function DFWHardwareStoreGuide() {
   const result = storeMatrix.find(r => r.project === project && r.location === location);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#E8EAF0", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#E8EAF0", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>🏪</div>
-        <h1 style={{ color: "#F5E642", fontSize: "1.8rem", marginBottom: "0.5rem" }}>DFW Hardware Store Guide</h1>
-        <p style={{ color: "#9BA3B5", marginBottom: "2rem" }}>When to use Home Depot vs Lowe's vs Ace vs specialty stores — and how DFW's construction boom affects what's in stock.</p>
+        <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", marginBottom: "0.5rem" }}>DFW Hardware Store Guide</h1>
+        <p style={{ color: "#9BA3B5″, marginBottom: "2rem" }}>When to use Home Depot vs Lowe's vs Ace vs specialty stores — and how DFW's construction boom affects what's in stock.</p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {[
@@ -30,48 +30,48 @@ export default function DFWHardwareStoreGuide() {
             { store: "🔵 Lowe's", best: "Appliances, finish materials, often cleaner stores. Better west DFW presence than HD in some areas." },
             { store: "🔴 Ace Hardware", best: "Neighborhood knowledge, small parts, quick service. Worth the slight premium for expert help and convenience." },
           ].map(item => (
-            <div key={item.store} style={{ background: "#1A2840", borderRadius: 8, padding: "1.25rem" }}>
-              <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: "0.5rem" }}>{item.store}</div>
-              <p style={{ color: "#9BA3B5", fontSize: "0.85rem", margin: 0, lineHeight: 1.6 }}>{item.best}</p>
+            <div key={item.store} style={{ background: "#1A2840″, borderRadius: 8, padding: "1.25rem" }}>
+              <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: "0.5rem" }}>{item.store}</div>
+              <p style={{ color: "#9BA3B5″, fontSize: "0.85rem", margin: 0, lineHeight: 1.6 }}>{item.best}</p>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#1A2840", borderRadius: 8, padding: "1.5rem", marginBottom: "2rem" }}>
-          <h3 style={{ color: "#F5E642", marginTop: 0 }}>🏗️ How DFW's Construction Boom Affects You</h3>
-          <p style={{ color: "#9BA3B5", lineHeight: 1.7 }}>DFW is one of the fastest-growing metros in the US. That means contractor crews buy out lumber, drywall, and fixtures weekly. Check online inventory before driving to any big box. North DFW (Frisco, McKinney, Prosper) stores restock fastest — southern and western stores often run low. Tuesday–Thursday mornings have the best stock.</p>
+        <div style={{ background: "#1A2840″, borderRadius: 8, padding: "1.5rem", marginBottom: "2rem" }}>
+          <h3 style={{ color: "#F5E642″, marginTop: 0 }}>🏗️ How DFW's Construction Boom Affects You</h3>
+          <p style={{ color: "#9BA3B5″, lineHeight: 1.7 }}>DFW is one of the fastest-growing metros in the US. That means contractor crews buy out lumber, drywall, and fixtures weekly. Check online inventory before driving to any big box. North DFW (Frisco, McKinney, Prosper) stores restock fastest — southern and western stores often run low. Tuesday–Thursday mornings have the best stock.</p>
         </div>
 
-        <div style={{ background: "#1A2840", borderRadius: 12, padding: "2rem", marginBottom: "2rem" }}>
-          <h2 style={{ color: "#F5E642", marginTop: 0 }}>Where to Shop</h2>
+        <div style={{ background: "#1A2840″, borderRadius: 12, padding: "2rem", marginBottom: "2rem" }}>
+          <h2 style={{ color: "#F5E642″, marginTop: 0 }}>Where to Shop</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.5rem" }}>
             <div>
-              <label style={{ color: "#9BA3B5", display: "block", marginBottom: "0.5rem" }}>Project Type</label>
-              <select value={project} onChange={e => setProject(e.target.value)} style={{ width: "100%", padding: "0.75rem", background: "#0A1628", color: "#E8EAF0", border: "1px solid #2A3A50", borderRadius: 6 }}>
+              <label style={{ color: "#9BA3B5″, display: "block", marginBottom: "0.5rem" }}>Project Type</label>
+              <select value={project} onChange={e => setProject(e.target.value)} style={{ width: "100%", padding: "0.75rem", background: "#0A1628″, color: "#E8EAF0", border: "1px solid #2A3A50", borderRadius: 6 }}>
                 <option value="">Select project...</option>
                 {[...new Set(storeMatrix.map(r => r.project))].map(p => <option key={p} value={p}>{p}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ color: "#9BA3B5", display: "block", marginBottom: "0.5rem" }}>DFW Location</label>
-              <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: "100%", padding: "0.75rem", background: "#0A1628", color: "#E8EAF0", border: "1px solid #2A3A50", borderRadius: 6 }}>
+              <label style={{ color: "#9BA3B5″, display: "block", marginBottom: "0.5rem" }}>DFW Location</label>
+              <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: "100%", padding: "0.75rem", background: "#0A1628″, color: "#E8EAF0", border: "1px solid #2A3A50", borderRadius: 6 }}>
                 <option value="">Select location...</option>
                 {[...new Set(storeMatrix.map(r => r.location))].map(l => <option key={l} value={l}>{l}</option>)}
               </select>
             </div>
           </div>
           {result && (
-            <div style={{ background: "#0D2A1A", borderRadius: 8, padding: "1.5rem", border: "2px solid #F5E642" }}>
-              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.75rem" }}>Go to: {result.store}</div>
-              <div style={{ color: "#9BA3B5", fontSize: "0.9rem", marginBottom: "0.75rem" }}>💡 Pro tip: {result.tip}</div>
-              <div style={{ color: "#9BA3B5", borderTop: "1px solid #2A3A50", paddingTop: "0.75rem", lineHeight: 1.6 }}>{result.note}</div>
+            <div style={{ background: "#0D2A1A", borderRadius: 8, padding: "1.5rem", border: "2px solid #F5E642″ }}>
+              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.75rem" }}>Go to: {result.store}</div>
+              <div style={{ color: "#9BA3B5″, fontSize: "0.9rem", marginBottom: "0.75rem" }}>💡 Pro tip: {result.tip}</div>
+              <div style={{ color: "#9BA3B5″, borderTop: "1px solid #2A3A50", paddingTop: "0.75rem", lineHeight: 1.6 }}>{result.note}</div>
             </div>
           )}
         </div>
 
-        <div style={{ background: "#1A2840", borderRadius: 8, padding: "1.5rem", textAlign: "center" }}>
-          <p style={{ color: "#9BA3B5", margin: "0 0 1rem" }}>Rather have a pro handle materials and sourcing for you?</p>
-          <button style={{ background: "#F5E642", color: "#0A1628", padding: "0.75rem 2rem", borderRadius: 6, border: "none", fontWeight: 700, cursor: "pointer", fontSize: "1rem" }}>Find a DFW Pro on ProLnk</button>
+        <div style={{ background: "#1A2840″, borderRadius: 8, padding: "1.5rem", textAlign: "center" }}>
+          <p style={{ color: "#9BA3B5″, margin: "0 0 1rem" }}>Rather have a pro handle materials and sourcing for you?</p>
+          <button style={{ background: "#F5E642″, color: "#0A1628", padding: "0.75rem 2rem", borderRadius: 6, border: "none", fontWeight: 700, cursor: "pointer", fontSize: "1rem" }}>Find a DFW Pro on ProLnk</button>
         </div>
       </div>
     </div>

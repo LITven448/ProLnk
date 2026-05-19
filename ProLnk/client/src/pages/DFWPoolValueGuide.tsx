@@ -68,7 +68,7 @@ export default function DFWPoolValueGuide() {
         </div>
 
         <div style={{ background: '#12213A', borderRadius: 14, padding: 32, marginBottom: 28, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🏊 Pool Value Impact Estimator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🏊 Pool Value Impact Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 12, fontWeight: 600, color: '#8a9fc0', display: 'block', marginBottom: 6 }}>Neighborhood Tier</label>
@@ -101,7 +101,7 @@ export default function DFWPoolValueGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 12, color: '#8a9fc0', marginBottom: 4 }}>Estimated Value Added</p>
-                  <p style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{fmt(result.value)}</p>
+                  <p style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{fmt(result.value)}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 12, color: '#8a9fc0', marginBottom: 4 }}>Annual Maintenance Cost</p>
@@ -109,7 +109,7 @@ export default function DFWPoolValueGuide() {
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 12, color: '#8a9fc0', marginBottom: 4 }}>Value-to-Cost Ratio</p>
-                  <p style={{ fontSize: 28, fontWeight: 800, color: result.ratio > 10 ? '#6af26a' : '#f87171' }}>{result.ratio}x</p>
+                  <p style={{ fontSize: 28, fontWeight: 800, color: result.ratio > 10 ? '#6af26a' : '#f87171′ }}>{result.ratio}x</p>
                 </div>
               </div>
               {result.expected && (

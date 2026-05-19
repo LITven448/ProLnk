@@ -24,7 +24,7 @@ function getStrategy(holiday: typeof holidays[0], home: typeof homeTypes[0]) {
   tips.push('🔄 Change filter if older than 30 days before the gathering');
   tips.push('💨 Keep interior doors open for airflow balance');
   tips.push('🌿 Add portable fans in high-traffic areas to assist circulation');
-  if (holiday.id === 'july4' || holiday.id === 'memorial') tips.push('☀️ DFW summer heat + guests = consider calling a pro same week');
+  if (holiday.id === 'july4′ || holiday.id === ’memorial') tips.push('☀️ DFW summer heat + guests = consider calling a pro same week');
   return tips;
 }
 
@@ -50,7 +50,7 @@ export default function DFWHVACHolidayGuide() {
           <div style={{ display: 'grid', gap: 10 }}>
             {holidays.map(h => (
               <button key={h.id} onClick={() => setHoliday(h.id)}
-                style={{ background: holiday === h.id ? '#F5E642' : '#1A2D4A', color: holiday === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: holiday === h.id ? '#F5E642′ : '#1A2D4A', color: holiday === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {h.label} — {h.guests} avg guests · {h.cookingHours}h cooking · Load: {h.extraLoad}
               </button>
             ))}
@@ -62,7 +62,7 @@ export default function DFWHVACHolidayGuide() {
           <div style={{ display: 'grid', gap: 10 }}>
             {homeTypes.map(h => (
               <button key={h.id} onClick={() => setHome(h.id)}
-                style={{ background: home === h.id ? '#F5E642' : '#1A2D4A', color: home === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: home === h.id ? '#F5E642′ : '#1A2D4A', color: home === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {h.label}
               </button>
             ))}

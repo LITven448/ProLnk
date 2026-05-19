@@ -74,7 +74,7 @@ function mkRuns(good: number, warn: number, bad: number): AgentRun[] {
 const AGENT_CATEGORIES: AgentCategory[] = [
   {
     label: "Executive",
-    color: "#F5E642",
+    color: "#F5E642″,
     icon: Star,
     agents: [
       { name: "CEO Agent",        status: "active",  lastRun: "5m ago",  successRate: 99, avgResponseMs: 420, recentRuns: mkRuns(5,0,0) },
@@ -97,7 +97,7 @@ const AGENT_CATEGORIES: AgentCategory[] = [
   },
   {
     label: "Financial",
-    color: "#82D616",
+    color: "#82D616″,
     icon: DollarSign,
     agents: [
       { name: "Commission Calculator", status: "active",  lastRun: "8m ago",  nextRun: "continuous",    jobsToday: 38,  errorsToday: 0, successRate: 100, avgResponseMs: 210,  recentRuns: mkRuns(5,0,0) },
@@ -105,7 +105,7 @@ const AGENT_CATEGORIES: AgentCategory[] = [
       { name: "Revenue Analyzer",      status: "active",  lastRun: "30m ago", nextRun: "hourly",        jobsToday: 24,  errorsToday: 0, successRate: 98,  avgResponseMs: 560,  recentRuns: mkRuns(5,0,0) },
       { name: "Cost Tracker",          status: "active",  lastRun: "1h ago",  nextRun: "hourly",        jobsToday: 12,  errorsToday: 0, successRate: 100, avgResponseMs: 310,  recentRuns: mkRuns(5,0,0) },
       { name: "Fraud Detector",        status: "active",  lastRun: "3h ago",  nextRun: "6:00 AM",       jobsToday: 2,   errorsToday: 1, successRate: 75,  avgResponseMs: 8200, recentRuns: mkRuns(2,1,2) },
-      { name: "Tax Helper",            status: "standby", lastRun: "Jan 31",  nextRun: "Jan 31",        jobsToday: 0,   errorsToday: 0, successRate: 100, avgResponseMs: 0,    recentRuns: mkRuns(5,0,0) },
+      { name: "Tax Helper",            status: "standby", lastRun: "Jan 31″,  nextRun: "Jan 31",        jobsToday: 0,   errorsToday: 0, successRate: 100, avgResponseMs: 0,    recentRuns: mkRuns(5,0,0) },
       { name: "Audit Log",             status: "active",  lastRun: "1m ago",  nextRun: "continuous",    jobsToday: 203, errorsToday: 0, successRate: 100, avgResponseMs: 45,   recentRuns: mkRuns(5,0,0) },
     ],
   },
@@ -126,7 +126,7 @@ const AGENT_CATEGORIES: AgentCategory[] = [
   },
   {
     label: "Customer Success",
-    color: "#FBB140",
+    color: "#FBB140″,
     icon: HeartHandshake,
     agents: [
       { name: "Onboarding Flow",    status: "active",  lastRun: "8m ago",    successRate: 99,  avgResponseMs: 540,  recentRuns: mkRuns(5,0,0) },
@@ -177,7 +177,7 @@ const AGENT_CATEGORIES: AgentCategory[] = [
   },
   {
     label: "Field / Operations",
-    color: "#FF6B35",
+    color: "#FF6B35″,
     icon: Map,
     agents: [
       { name: "Territory Manager", status: "active",  lastRun: "35m ago", successRate: 98,  avgResponseMs: 740,  recentRuns: mkRuns(5,0,0) },
@@ -201,9 +201,9 @@ const RECENT_ERRORS = [
 
 function StatusDot({ status, pulse = false }: { status: AgentEntry["status"]; pulse?: boolean }) {
   const map: Record<AgentEntry["status"], string> = {
-    active:  "#82D616",
-    standby: "#FBB140",
-    error:   "#EA0606",
+    active:  "#82D616″,
+    standby: "#FBB140″,
+    error:   "#EA0606″,
   };
   return (
     <span
@@ -215,9 +215,9 @@ function StatusDot({ status, pulse = false }: { status: AgentEntry["status"]; pu
 
 function RunBadge({ result }: { result: AgentRun["result"] }) {
   const map = {
-    ok:    { bg: "#82D61618", border: "#82D61640", color: "#82D616", label: "OK" },
-    warn:  { bg: "#FBB14018", border: "#FBB14040", color: "#FBB140", label: "WARN" },
-    error: { bg: "#EA060618", border: "#EA060640", color: "#EA0606", label: "ERR" },
+    ok:    { bg: "#82D61618″, border: "#82D61640", color: "#82D616", label: "OK" },
+    warn:  { bg: "#FBB14018″, border: "#FBB14040", color: "#FBB140", label: "WARN" },
+    error: { bg: "#EA060618″, border: "#EA060640", color: "#EA0606", label: "ERR" },
   };
   const s = map[result];
   return (
@@ -228,10 +228,10 @@ function RunBadge({ result }: { result: AgentRun["result"] }) {
 }
 
 function SuccessBar({ pct }: { pct: number }) {
-  const color = pct >= 95 ? "#82D616" : pct >= 85 ? "#FBB140" : "#EA0606";
+  const color = pct >= 95 ? "#82D616″ : pct >= 85 ? "#FBB140" : "#EA0606";
   return (
-    <div className="flex items-center gap-1.5">
-      <div className="h-1.5 w-16 rounded-full overflow-hidden" style={{ background: "#ffffff10" }}>
+    <div className="flex items-center gap-1.5″>
+      <div className="h-1.5 w-16 rounded-full overflow-hidden" style={{ background: "#ffffff10″ }}>
         <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: color }} />
       </div>
       <span className="text-[10px] font-bold" style={{ color }}>{pct}%</span>
@@ -272,44 +272,44 @@ export default function AgentStatusDashboard() {
 
   return (
     <AdminLayout>
-    <div className="p-6 space-y-6" style={{ fontFamily: "Inter, sans-serif" }}>
+    <div className="p-6 space-y-6″ style={{ fontFamily: "Inter, sans-serif" }}>
 
       {/* ── Hero Banner ───────────────────────────────────────────────────────── */}
       <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1628 0%, #0e2040 60%, #0f2d4a 100%)" }}>
-        <div className="px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #00D4FF30, #7928CA40)" }}>
-              <Bot className="w-7 h-7" style={{ color: "#00D4FF" }} />
+        <div className="px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4″>
+          <div className="flex items-center gap-4″>
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0″ style={{ background: "linear-gradient(135deg, #00D4FF30, #7928CA40)" }}>
+              <Bot className="w-7 h-7″ style={{ color: "#00D4FF" }} />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-2xl font-black text-white tracking-tight">{TOTAL_AGENTS} Agents Deployed</h1>
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: "#82D61620", border: "1px solid #82D61650", color: "#82D616" }}>
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: "#82D61620″, border: "1px solid #82D61650", color: "#82D616" }}>
                   AGaaS v1.0
                 </span>
               </div>
-              <p className="text-sm mt-0.5" style={{ color: "#7eb8d4" }}>
+              <p className="text-sm mt-0.5″ style={{ color: "#7eb8d4" }}>
                 Autonomous Growth-as-a-Service — AI agents running the platform 24/7
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3 flex-wrap">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#82D61618", border: "1px solid #82D61640" }}>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#82D61618″, border: "1px solid #82D61640" }}>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-bold" style={{ color: "#82D616" }}>{activeCount} Active</span>
+              <span className="text-xs font-bold" style={{ color: "#82D616″ }}>{activeCount} Active</span>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#FBB14018", border: "1px solid #FBB14040" }}>
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} />
-              <span className="text-xs font-bold" style={{ color: "#FBB140" }}>{standbyCount} Standby</span>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#FBB14018″, border: "1px solid #FBB14040" }}>
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140″ }} />
+              <span className="text-xs font-bold" style={{ color: "#FBB140″ }}>{standbyCount} Standby</span>
             </div>
             {errorCount > 0 ? (
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#EA060618", border: "1px solid #EA060640" }}>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#EA060618″, border: "1px solid #EA060640" }}>
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-xs font-bold text-red-400">{errorCount} Error</span>
+                <span className="text-xs font-bold text-red-400″>{errorCount} Error</span>
               </div>
             ) : (
-              <Badge variant="outline" className="border-green-500/50 text-green-400 gap-1">
-                <CheckCircle className="h-3 w-3" />
+              <Badge variant="outline" className="border-green-500/50 text-green-400 gap-1″>
+                <CheckCircle className="h-3 w-3″ />
                 All Systems Operational
               </Badge>
             )}
@@ -318,9 +318,9 @@ export default function AgentStatusDashboard() {
               onClick={() => setAutoRefresh(r => !r)}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all"
               style={{
-                background: autoRefresh ? "#00D4FF20" : "#ffffff08",
+                background: autoRefresh ? "#00D4FF20″ : "#ffffff08",
                 border: `1px solid ${autoRefresh ? "#00D4FF50" : "#ffffff18"}`,
-                color: autoRefresh ? "#00D4FF" : "#7eb8d4",
+                color: autoRefresh ? "#00D4FF" : "#7eb8d4″,
               }}
             >
               <RefreshCw className={`w-3 h-3 ${autoRefresh ? "animate-spin" : ""}`} />
@@ -330,14 +330,14 @@ export default function AgentStatusDashboard() {
         </div>
 
         {/* Overall system health bar */}
-        <div className="px-6 pb-4">
-          <div className="flex items-center justify-between text-xs mb-1.5">
-            <span style={{ color: "#7eb8d4" }}>System Health</span>
-            <span className="font-bold" style={{ color: healthPct >= 90 ? "#82D616" : "#FBB140" }}>{healthPct}% Healthy</span>
+        <div className="px-6 pb-4″>
+          <div className="flex items-center justify-between text-xs mb-1.5″>
+            <span style={{ color: "#7eb8d4″ }}>System Health</span>
+            <span className="font-bold" style={{ color: healthPct >= 90 ? "#82D616″ : "#FBB140" }}>{healthPct}% Healthy</span>
           </div>
-          <div className="h-2 rounded-full overflow-hidden" style={{ background: "#ffffff12" }}>
+          <div className="h-2 rounded-full overflow-hidden" style={{ background: "#ffffff12″ }}>
             <div
-              className="h-full rounded-full transition-all duration-700"
+              className="h-full rounded-full transition-all duration-700″
               style={{
                 width: `${healthPct}%`,
                 background: healthPct >= 90
@@ -351,19 +351,19 @@ export default function AgentStatusDashboard() {
         </div>
 
         {/* KPI strip */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-0 border-t" style={{ borderColor: "#ffffff12" }}>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-0 border-t" style={{ borderColor: "#ffffff12″ }}>
           {[
             { label: "Total Partners",    value: platformStats?.totalPartners ?? "—",      icon: Users,          color: "#00D4FF" },
             { label: "Jobs Logged",       value: platformStats?.totalJobs ?? "—",          icon: Camera,         color: "#00D4FF" },
             { label: "Storm Leads",       value: stormStats?.totalLeads ?? "—",             icon: CloudLightning, color: "#7928CA" },
-            { label: "Agent Jobs Today",  value: totalJobsToday,                            icon: Activity,       color: "#82D616" },
-            { label: "Errors Today",      value: totalErrorsToday,                          icon: AlertTriangle,  color: totalErrorsToday > 0 ? "#EA0606" : "#82D616" },
+            { label: "Agent Jobs Today",  value: totalJobsToday,                            icon: Activity,       color: "#82D616″ },
+            { label: "Errors Today",      value: totalErrorsToday,                          icon: AlertTriangle,  color: totalErrorsToday > 0 ? "#EA0606″ : "#82D616" },
           ].map((stat, i) => (
-            <div key={stat.label} className="px-5 py-3 flex items-center gap-3" style={{ borderLeft: i > 0 ? "1px solid #ffffff10" : undefined }}>
-              <stat.icon className="w-4 h-4 flex-shrink-0" style={{ color: stat.color }} />
+            <div key={stat.label} className="px-5 py-3 flex items-center gap-3″ style={{ borderLeft: i > 0 ? "1px solid #ffffff10" : undefined }}>
+              <stat.icon className="w-4 h-4 flex-shrink-0″ style={{ color: stat.color }} />
               <div>
                 <div className="text-lg font-black text-white leading-none">{stat.value}</div>
-                <div className="text-xs mt-0.5" style={{ color: "#7eb8d4" }}>{stat.label}</div>
+                <div className="text-xs mt-0.5″ style={{ color: "#7eb8d4" }}>{stat.label}</div>
               </div>
             </div>
           ))}
@@ -372,7 +372,7 @@ export default function AgentStatusDashboard() {
 
       {/* ── Category Filter ───────────────────────────────────────────────────── */}
       <div className="flex items-center gap-2 flex-wrap">
-        <Filter className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#7eb8d4" }} />
+        <Filter className="w-3.5 h-3.5 flex-shrink-0″ style={{ color: "#7eb8d4" }} />
         {catLabels.map(label => {
           const cat = AGENT_CATEGORIES.find(c => c.label === label);
           const active = filterCat === label;
@@ -382,9 +382,9 @@ export default function AgentStatusDashboard() {
               onClick={() => setFilterCat(label)}
               className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
               style={{
-                background: active ? (cat?.color ?? "#00D4FF") + "25" : "#ffffff08",
+                background: active ? (cat?.color ?? "#00D4FF") + "25″ : "#ffffff08",
                 border: `1px solid ${active ? (cat?.color ?? "#00D4FF") + "60" : "#ffffff15"}`,
-                color: active ? (cat?.color ?? "#00D4FF") : "#7eb8d4",
+                color: active ? (cat?.color ?? "#00D4FF") : "#7eb8d4″,
               }}
             >
               {label}
@@ -394,20 +394,20 @@ export default function AgentStatusDashboard() {
       </div>
 
       {/* ── Agent Grid ────────────────────────────────────────────────────────── */}
-      <div className="space-y-4">
+      <div className="space-y-4″>
         {visibleCats.map((cat) => {
           const CatIcon = cat.icon;
           const catActive = cat.agents.filter(a => a.status === "active").length;
           return (
             <div key={cat.label}>
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-3″>
                 <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: `${cat.color}22` }}>
-                  <CatIcon className="w-3.5 h-3.5" style={{ color: cat.color }} />
+                  <CatIcon className="w-3.5 h-3.5″ style={{ color: cat.color }} />
                 </div>
                 <h2 className="text-sm font-bold" style={{ color: cat.color }}>{cat.label}</h2>
                 <span className="text-xs text-muted-foreground">{catActive}/{cat.agents.length} active</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3″>
                 {cat.agents.map((agent) => {
                   const isExpanded = expandedAgent === `${cat.label}::${agent.name}`;
                   return (
@@ -415,20 +415,20 @@ export default function AgentStatusDashboard() {
                       key={agent.name}
                       className="rounded-xl overflow-hidden transition-all"
                       style={{
-                        background: "#0D1F38",
+                        background: "#0D1F38″,
                         border: `1px solid ${isExpanded ? cat.color + "50" : "#ffffff12"}`,
                       }}
                     >
                       {/* Agent row */}
-                      <div className="flex items-center gap-3 px-4 py-3">
+                      <div className="flex items-center gap-3 px-4 py-3″>
                         <StatusDot status={agent.status} pulse />
                         <span className="text-sm font-semibold text-white flex-1 truncate">{agent.name}</span>
-                        <div className="flex items-center gap-2 flex-shrink-0">
+                        <div className="flex items-center gap-2 flex-shrink-0″>
                           {agent.successRate !== undefined && (
                             <SuccessBar pct={agent.successRate} />
                           )}
                           {agent.avgResponseMs !== undefined && agent.avgResponseMs > 0 && (
-                            <span className="text-[10px] font-mono" style={{ color: "#7eb8d4" }}>
+                            <span className="text-[10px] font-mono" style={{ color: "#7eb8d4″ }}>
                               {agent.avgResponseMs >= 1000
                                 ? `${(agent.avgResponseMs / 1000).toFixed(1)}s`
                                 : `${agent.avgResponseMs}ms`}
@@ -446,56 +446,56 @@ export default function AgentStatusDashboard() {
                       </div>
 
                       {/* Meta row */}
-                      <div className="flex items-center gap-3 px-4 pb-2.5 text-[10px]" style={{ color: "#5a7a94" }}>
+                      <div className="flex items-center gap-3 px-4 pb-2.5 text-[10px]" style={{ color: "#5a7a94″ }}>
                         {agent.lastRun && (
-                          <span className="flex items-center gap-1">
-                            <Clock className="w-3 h-3" /> {agent.lastRun}
+                          <span className="flex items-center gap-1″>
+                            <Clock className="w-3 h-3″ /> {agent.lastRun}
                           </span>
                         )}
                         {agent.nextRun && (
-                          <span className="flex items-center gap-1">
-                            <Zap className="w-3 h-3" /> {agent.nextRun}
+                          <span className="flex items-center gap-1″>
+                            <Zap className="w-3 h-3″ /> {agent.nextRun}
                           </span>
                         )}
                         {agent.jobsToday !== undefined && (
                           <span>{agent.jobsToday} jobs</span>
                         )}
                         {!!agent.errorsToday && (
-                          <span style={{ color: "#EA0606" }}>{agent.errorsToday} err</span>
+                          <span style={{ color: "#EA0606″ }}>{agent.errorsToday} err</span>
                         )}
                       </div>
 
                       {/* Expandable detail */}
                       {isExpanded && (
-                        <div className="border-t px-4 py-3 space-y-3" style={{ borderColor: "#ffffff10" }}>
-                          <p className="text-xs font-semibold" style={{ color: "#7eb8d4" }}>Last 5 Runs</p>
-                          <div className="space-y-1.5">
+                        <div className="border-t px-4 py-3 space-y-3″ style={{ borderColor: "#ffffff10" }}>
+                          <p className="text-xs font-semibold" style={{ color: "#7eb8d4″ }}>Last 5 Runs</p>
+                          <div className="space-y-1.5″>
                             {(agent.recentRuns ?? []).map((run, i) => (
                               <div key={i} className="flex items-center gap-2 text-[11px]">
                                 <RunBadge result={run.result} />
                                 <span className="font-mono text-muted-foreground">{run.at}</span>
-                                <span className="font-mono" style={{ color: "#7eb8d4" }}>{run.duration}</span>
+                                <span className="font-mono" style={{ color: "#7eb8d4″ }}>{run.duration}</span>
                                 <span className="flex-1 text-muted-foreground truncate">{run.message}</span>
                               </div>
                             ))}
                           </div>
-                          <div className="flex items-center gap-2 pt-1">
+                          <div className="flex items-center gap-2 pt-1″>
                             <Button
                               size="sm"
                               variant="outline"
-                              className="h-7 text-xs gap-1.5 flex-1"
+                              className="h-7 text-xs gap-1.5 flex-1″
                               onClick={() => toast.success(`Restarting ${agent.name}…`)}
                             >
-                              <RotateCcw className="w-3 h-3" />
+                              <RotateCcw className="w-3 h-3″ />
                               Restart Agent
                             </Button>
                             <Button
                               size="sm"
                               variant="outline"
-                              className="h-7 text-xs gap-1.5 flex-1"
+                              className="h-7 text-xs gap-1.5 flex-1″
                               onClick={() => toast.info(`Opening logs for ${agent.name}`)}
                             >
-                              <FileText className="w-3 h-3" />
+                              <FileText className="w-3 h-3″ />
                               View Logs
                             </Button>
                           </div>
@@ -512,38 +512,38 @@ export default function AgentStatusDashboard() {
 
       {/* ── Recent Agent Errors ────────────────────────────────────────────────── */}
       <div>
-        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
+        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3″>
           Recent Agent Errors (Last 5)
         </h2>
         <Card className="border border-border">
-          <CardContent className="pt-4 pb-2">
+          <CardContent className="pt-4 pb-2″>
             {RECENT_ERRORS.length === 0 ? (
               <div className="flex items-center gap-2 py-4 justify-center text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-green-400" />
+                <CheckCircle className="w-4 h-4 text-green-400″ />
                 <span className="text-sm">No errors in the last 24 hours</span>
               </div>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-2″>
                 {RECENT_ERRORS.map((err, i) => (
                   <div
                     key={i}
                     className="flex items-start gap-3 py-2 px-3 rounded-lg"
                     style={{
-                      background: err.severity === "error" ? "#EA060608" : "#FBB14008",
+                      background: err.severity === "error" ? "#EA060608″ : "#FBB14008",
                       borderLeft: `3px solid ${err.severity === "error" ? "#EA0606" : "#FBB140"}`,
                     }}
                   >
                     {err.severity === "error"
-                      ? <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-red-500" />
-                      : <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#FBB140" }} />}
-                    <div className="flex-1 min-w-0">
+                      ? <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-red-500″ />
+                      : <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5″ style={{ color: "#FBB140" }} />}
+                    <div className="flex-1 min-w-0″>
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-xs font-semibold">{err.agent}</span>
                         <span className="text-[10px] text-muted-foreground">{err.time}</span>
                       </div>
                       <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{err.message}</p>
                     </div>
-                    <Terminal className="w-3 h-3 flex-shrink-0 text-muted-foreground/40 mt-0.5" />
+                    <Terminal className="w-3 h-3 flex-shrink-0 text-muted-foreground/40 mt-0.5″ />
                   </div>
                 ))}
               </div>
@@ -553,10 +553,10 @@ export default function AgentStatusDashboard() {
       </div>
 
       {/* ── Legend ───────────────────────────────────────────────────────────── */}
-      <div className="flex items-center gap-6 text-xs text-muted-foreground pb-2">
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400" /> Active — running, processing jobs</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} /> Standby — deployed, awaiting trigger</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-red-500" /> Error — needs attention</div>
+      <div className="flex items-center gap-6 text-xs text-muted-foreground pb-2″>
+        <div className="flex items-center gap-1.5″><span className="w-2 h-2 rounded-full bg-green-400" /> Active — running, processing jobs</div>
+        <div className="flex items-center gap-1.5″><span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} /> Standby — deployed, awaiting trigger</div>
+        <div className="flex items-center gap-1.5″><span className="w-2 h-2 rounded-full bg-red-500" /> Error — needs attention</div>
       </div>
 
     </div>

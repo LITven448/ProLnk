@@ -27,13 +27,13 @@ export default function DFWMosquitoControlGuide() {
           <div style={{ fontSize: 40, marginBottom: 12 }}>🦟</div>
           <h1 style={{ fontSize: 32, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>DFW Mosquito Control Guide</h1>
           <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6 }}>
-            Mosquito season in DFW runs <strong style={{ color: '#F5E642' }}>April through October</strong>, peaking in June–September. North Texas consistently reports West Nile Virus cases — Tarrant and Dallas counties among the highest in the state. Control is not optional here.
+            Mosquito season in DFW runs <strong style={{ color: '#F5E642′ }}>April through October</strong>, peaking in June–September. North Texas consistently reports West Nile Virus cases — Tarrant and Dallas counties among the highest in the state. Control is not optional here.
           </p>
         </div>
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 600, color: '#F5E642', marginBottom: 16 }}>🦠 West Nile Risk in North Texas</h2>
-          <div style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, borderLeft: '4px solid #ef4444' }}>
+          <div style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, borderLeft: '4px solid #ef4444′ }}>
             <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
               Texas leads the nation in West Nile cases most years. DFW's warm winters allow Culex mosquitoes (primary WNV carriers) to survive and emerge earlier. Peak transmission: <strong style={{ color: '#e2e8f0' }}>July–September</strong>. Protect yourself with elimination of standing water + professional spray programs.
             </p>
@@ -72,7 +72,7 @@ export default function DFWMosquitoControlGuide() {
             <div key={t.name} style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                 <span style={{ fontSize: 20 }}>{t.icon}</span>
-                <span style={{ fontWeight: 600, color: '#e2e8f0' }}>{t.name}</span>
+                <span style={{ fontWeight: 600, color: '#e2e8f0′ }}>{t.name}</span>
                 <span style={{ marginLeft: 'auto', color: '#22c55e', fontSize: 12 }}>{t.best}</span>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 6 }}>{t.desc}</div>
@@ -89,7 +89,7 @@ export default function DFWMosquitoControlGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {['small', 'medium', 'large'].map(s => (
                 <button key={s} onClick={() => setYardSize(s)}
-                  style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: yardSize === s ? '#F5E642' : '#1a2d4a', backgroundColor: yardSize === s ? '#F5E642' : '#1a2d4a', color: yardSize === s ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+                  style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: yardSize === s ? '#F5E642′ : '#1a2d4a', backgroundColor: yardSize === s ? '#F5E642' : '#1a2d4a', color: yardSize === s ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', textTransform: 'capitalize' }}>
                   {s === 'small' ? 'Small (<1/4 ac)' : s === 'medium' ? 'Medium (1/4–1/2 ac)' : 'Large (1/2+ ac)'}
                 </button>
               ))}
@@ -101,7 +101,7 @@ export default function DFWMosquitoControlGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {['none', 'some', 'many'].map(w => (
                 <button key={w} onClick={() => setWaterFeatures(w)}
-                  style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: waterFeatures === w ? '#F5E642' : '#1a2d4a', backgroundColor: waterFeatures === w ? '#F5E642' : '#1a2d4a', color: waterFeatures === w ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+                  style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: waterFeatures === w ? '#F5E642′ : '#1a2d4a', backgroundColor: waterFeatures === w ? '#F5E642' : '#1a2d4a', color: waterFeatures === w ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', textTransform: 'capitalize' }}>
                   {w === 'none' ? 'None' : w === 'some' ? 'Some (pond/fountain)' : 'Many sources'}
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function DFWMosquitoControlGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {[['professional', 'Professional'], ['diy', 'DIY']].map(([val, label]) => (
                 <button key={val} onClick={() => setPreference(val)}
-                  style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: preference === val ? '#F5E642' : '#1a2d4a', backgroundColor: preference === val ? '#F5E642' : '#1a2d4a', color: preference === val ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
+                  style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: preference === val ? '#F5E642′ : '#1a2d4a', backgroundColor: preference === val ? '#F5E642' : '#1a2d4a', color: preference === val ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
                   {label}
                 </button>
               ))}

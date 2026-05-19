@@ -7,20 +7,20 @@ import {
 } from "lucide-react";
 
 const D = {
-  bg: "#0D0F14",
+  bg: "#0D0F14″,
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8",
-  dim: "#555B72",
-  green: "#00E676",
+  muted: "#8B91A8″,
+  dim: "#555B72″,
+  green: "#00E676″,
   cyan: "#00D4FF",
-  amber: "#FFB300",
-  red: "#FF4444",
-  blue: "#3B82F6",
-  teal: "#14B8A6",
-  lime: "#84CC16",
+  amber: "#FFB300″,
+  red: "#FF4444″,
+  blue: "#3B82F6″,
+  teal: "#14B8A6″,
+  lime: "#84CC16″,
 };
 
 const CURRENT_MONTH = new Date().getMonth();
@@ -50,7 +50,7 @@ interface Plant {
 }
 
 const PLANTS: Plant[] = [
-  { name: "Texas Sage", type: "Shrub", sun: "Full sun", water: "Very low — drought tolerant", season: "Summer/Fall bloom", color: D.purple ?? "#A855F7" },
+  { name: "Texas Sage", type: "Shrub", sun: "Full sun", water: "Very low — drought tolerant", season: "Summer/Fall bloom", color: D.purple ?? "#A855F7″ },
   { name: "Live Oak", type: "Tree", sun: "Full sun", water: "Low once established", season: "Year-round shade", color: D.green },
   { name: "Crape Myrtle", type: "Ornamental tree", sun: "Full sun", water: "Moderate", season: "Summer bloom (June–Sep)", color: D.cyan },
   { name: "Buffalo Grass", type: "Turfgrass", sun: "Full sun", water: "Very low — native", season: "Green Apr–Oct", color: D.lime },
@@ -112,7 +112,7 @@ export default function LandscapingGuide() {
               <div style={{
                 width: 44, height: 44, borderRadius: 12,
                 background: "linear-gradient(135deg, #00E67622, #00E67644)",
-                border: "1px solid #00E67630",
+                border: "1px solid #00E67630″,
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
                 <Leaf size={22} color={D.green} />
@@ -127,7 +127,7 @@ export default function LandscapingGuide() {
           {/* DFW context card */}
           <div style={{
             background: "linear-gradient(135deg, #00E67610, #14B8A610)",
-            border: "1px solid #00E67630",
+            border: "1px solid #00E67630″,
             borderRadius: 16, padding: "18px 22px", marginBottom: 28,
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
@@ -165,7 +165,7 @@ export default function LandscapingGuide() {
                       {isCurrent && (
                         <span style={{
                           fontSize: 10, fontWeight: 700, color: D.cyan,
-                          background: "#00D4FF18", border: "1px solid #00D4FF30",
+                          background: "#00D4FF18″, border: "1px solid #00D4FF30",
                           borderRadius: 20, padding: "2px 8px",
                         }}>NOW</span>
                       )}
@@ -202,7 +202,7 @@ export default function LandscapingGuide() {
                 }}>
                   <div style={{
                     width: 28, height: 28, borderRadius: 8,
-                    background: "#3B82F620", border: "1px solid #3B82F630",
+                    background: "#3B82F620″, border: "1px solid #3B82F630",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0, marginTop: 1,
                   }}>
@@ -299,7 +299,7 @@ export default function LandscapingGuide() {
                       <div style={{ padding: "0 18px 16px", borderTop: `1px solid ${D.border}` }}>
                         <p style={{ fontSize: 13, color: D.muted, margin: "12px 0 10px", lineHeight: 1.6 }}>{m.detail}</p>
                         <div style={{
-                          background: "#00E67610", border: "1px solid #00E67630",
+                          background: "#00E67610″, border: "1px solid #00E67630",
                           borderRadius: 8, padding: "10px 14px",
                         }}>
                           <span style={{ fontSize: 11, fontWeight: 700, color: D.green, textTransform: "uppercase" as const, letterSpacing: 0.6 }}>Fix: </span>
@@ -316,7 +316,7 @@ export default function LandscapingGuide() {
           {/* Find a Landscaper CTA */}
           <div style={{
             background: "linear-gradient(135deg, #14B8A618, #00E67618)",
-            border: "1px solid #14B8A630",
+            border: "1px solid #14B8A630″,
             borderRadius: 16, padding: "22px 24px",
             display: "flex", alignItems: "center", justifyContent: "space-between",
           }}>
@@ -333,7 +333,7 @@ export default function LandscapingGuide() {
                 display: "flex", alignItems: "center", gap: 8,
                 padding: "12px 22px", borderRadius: 10,
                 background: "linear-gradient(135deg, #00E676, #14B8A6)",
-                border: "none", color: "#0D0F14", fontWeight: 700, fontSize: 14,
+                border: "none", color: "#0D0F14″, fontWeight: 700, fontSize: 14,
                 cursor: "pointer", whiteSpace: "nowrap" as const,
               }}>
                 <Leaf size={16} />

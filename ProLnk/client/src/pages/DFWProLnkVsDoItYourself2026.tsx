@@ -84,7 +84,7 @@ export default function DFWProLnkVsDoItYourself2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>What type of task are you looking at?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {taskTypes.map(t => (
-            <button key={t.id} onClick={() => setSelected(t.id)} style={{ background: selected === t.id ? '#F5E642' : '#1e3a5f', color: selected === t.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+            <button key={t.id} onClick={() => setSelected(t.id)} style={{ background: selected === t.id ? '#F5E642′ : '#1e3a5f', color: selected === t.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{t.label}</div>
               <div style={{ fontSize: '.85rem', opacity: .8, marginTop: '.25rem' }}>{t.desc}</div>
             </button>

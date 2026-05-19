@@ -92,13 +92,13 @@ export default function DFWApartmentVsHouseGuide() {
           </div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Monthly Budget: ${budget.toLocaleString()}</label>
-            <input type="range" min={2000} max={15000} step={250} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
+            <input type="range" min={2000} max={15000} step={250} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, cursor: 'pointer', width: '100%' }}>Compare Options</button>
         </div>
 
         {result && (
-          <div style={{ background: '#1a3a5c', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1a3a5c', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', fontSize: 22, marginBottom: 12 }}>{result.rec}</h3>
             <p style={{ color: '#cbd5e1', marginBottom: 20 }}>{result.reason}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>

@@ -69,7 +69,7 @@ export default function DFWInsuranceRenewalGuide() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
           {[['⭐', 'Claims reputation in DFW — ask local contractors who they see pay claims fastest'],['📋', 'Coverage terms — RCV vs ACV roof coverage, ordinance/law coverage'],['📞', 'Local claims adjusting — some carriers use remote adjusters who miss DFW-specific damage'],['🔄', 'Non-renewal history — is this carrier exiting Texas? Check their market commitment'],['🔗', 'Bundling discounts — auto + home bundles can offset 10–20% of premium increases']].map(([icon, text]) => (
             <div key={text} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: 8, padding: '12px 16px', display: 'flex', gap: 10, alignItems: 'flex-start', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
-              <span style={{ fontSize: 16 }}>{icon}</span><span style={{ fontSize: 13, color: '#374151' }}>{text}</span>
+              <span style={{ fontSize: 16 }}>{icon}</span><span style={{ fontSize: 13, color: '#374151′ }}>{text}</span>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function DFWInsuranceRenewalGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', display: 'block', marginBottom: 6 }}>Current Annual Premium ($)</label>
-              <input value={currentPremium} onChange={e => setCurrentPremium(e.target.value)} placeholder="e.g. 2800" style={{ width: '100%', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 6, padding: '10px 12px', color: '#1E293B', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={currentPremium} onChange={e => setCurrentPremium(e.target.value)} placeholder="e.g. 2800″ style={{ width: '100%', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 6, padding: '10px 12px', color: '#1E293B', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', display: 'block', marginBottom: 6 }}>Roof Age</label>
@@ -98,8 +98,8 @@ export default function DFWInsuranceRenewalGuide() {
             <button onClick={analyze} style={{ background: '#059669', color: '#fff', fontWeight: 700, fontSize: 15, padding: '12px 0', borderRadius: 8, border: 'none', cursor: 'pointer' }}>Get My Renewal Strategy</button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#F0FDF4', borderRadius: 8, padding: 18, border: '1px solid #BBF7D0' }}>
-              <div style={{ fontSize: 17, fontWeight: 800, color: result.shouldShop ? '#B45309' : '#166534', marginBottom: 10 }}>{result.shouldShop ? '🔍 Shop Your Policy This Renewal' : '✅ Renew With Review'}</div>
+            <div style={{ marginTop: 20, background: '#F0FDF4', borderRadius: 8, padding: 18, border: '1px solid #BBF7D0′ }}>
+              <div style={{ fontSize: 17, fontWeight: 800, color: result.shouldShop ? '#B45309′ : '#166534', marginBottom: 10 }}>{result.shouldShop ? '🔍 Shop Your Policy This Renewal' : '✅ Renew With Review'}</div>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#166534', marginBottom: 4 }}>Expected Renewal Range:</div>
               <div style={{ fontSize: 16, fontWeight: 800, color: '#0F172A', marginBottom: 12 }}>{result.expectedRange}</div>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#166534', marginBottom: 6 }}>Strategy:</div>

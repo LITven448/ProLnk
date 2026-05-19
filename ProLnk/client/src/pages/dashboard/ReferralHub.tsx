@@ -21,10 +21,10 @@ const PLATFORM_FEE = 0.12;
 const SUB_FEE = 149;
 
 const OVERRIDE_RATES = [
-  { level: "L1", jobRate: 0.07, subRate: 0.12 },
-  { level: "L2", jobRate: 0.04, subRate: 0.06 },
-  { level: "L3", jobRate: 0.02, subRate: 0.03 },
-  { level: "L4", jobRate: 0.01, subRate: 0.015 },
+  { level: "L1″, jobRate: 0.07, subRate: 0.12 },
+  { level: "L2″, jobRate: 0.04, subRate: 0.06 },
+  { level: "L3″, jobRate: 0.02, subRate: 0.03 },
+  { level: "L4″, jobRate: 0.01, subRate: 0.015 },
 ];
 
 function calcNetworkIncome(l1: number, l2: number, l3: number, l4: number): number {
@@ -49,10 +49,10 @@ function calcOverrideBreakdown(prosCount: number, prosEarnings: number) {
 }
 
 const TIER_THRESHOLDS = [
-  { label: "Charter", total: 25, color: "#F5E642" },
-  { label: "Founding", total: 100, color: "#3b82f6" },
-  { label: "Level 3", total: 400, color: "#22c55e" },
-  { label: "Level 4", total: 1600, color: "#8b5cf6" },
+  { label: "Charter", total: 25, color: "#F5E642″ },
+  { label: "Founding", total: 100, color: "#3b82f6″ },
+  { label: "Level 3″, total: 400, color: "#22c55e" },
+  { label: "Level 4″, total: 1600, color: "#8b5cf6" },
 ];
 
 const RECRUITING_TIPS = [
@@ -65,22 +65,22 @@ const REFERRAL_PIPELINE = [
   {
     label: "Invited",
     count: 8,
-    color: "border-slate-600 bg-slate-800",
-    badgeColor: "text-slate-400",
+    color: "border-slate-600 bg-slate-800″,
+    badgeColor: "text-slate-400″,
     people: ["JM", "SR", "KL", "BW", "TD", "MP", "RA", "CG"],
   },
   {
     label: "Signed Up",
     count: 5,
-    color: "border-teal-600/40 bg-teal-900/20",
-    badgeColor: "text-teal-400",
+    color: "border-teal-600/40 bg-teal-900/20″,
+    badgeColor: "text-teal-400″,
     people: ["DH", "NF", "PC", "YL", "WB"],
   },
   {
     label: "Active",
     count: 2,
-    color: "border-green-600/40 bg-green-900/20",
-    badgeColor: "text-green-400",
+    color: "border-green-600/40 bg-green-900/20″,
+    badgeColor: "text-green-400″,
     people: ["AM", "RK"],
   },
 ];
@@ -89,20 +89,20 @@ const VIRAL_POSTS = [
   {
     platform: "LinkedIn",
     icon: Linkedin,
-    color: "text-blue-400",
-    text: "I've been using ProLnk for a few months and the passive income model is genuinely different. Every job I complete builds a permanent revenue stream — even after I move on. If you're a licensed contractor looking for smarter income, check it out. Limited founding partner spots left. prolnk.io/join?ref=partner123",
+    color: "text-blue-400″,
+    text: "I've been using ProLnk for a few months and the passive income model is genuinely different. Every job I complete builds a permanent revenue stream — even after I move on. If you're a licensed contractor looking for smarter income, check it out. Limited founding partner spots left. prolnk.io/join?ref=partner123″,
   },
   {
     platform: "Facebook",
     icon: Share2,
-    color: "text-blue-500",
-    text: "Hey [Trade] friends! Found a platform that actually pays you passive income from your photos. Called ProLnk — when you document a home, you're the originating pro FOREVER. Any future job at that address earns you a cut. Founding spots are almost gone. Use my link: prolnk.io/join?ref=partner123",
+    color: "text-blue-500″,
+    text: "Hey [Trade] friends! Found a platform that actually pays you passive income from your photos. Called ProLnk — when you document a home, you're the originating pro FOREVER. Any future job at that address earns you a cut. Founding spots are almost gone. Use my link: prolnk.io/join?ref=partner123″,
   },
   {
     platform: "SMS",
     icon: MessageSquare,
-    color: "text-green-400",
-    text: "Hey, thought of you — there's a new platform for contractors called ProLnk that pays passive income on every home you document. Founding partner rate is locked at $149/mo. Only a few spots left. Join with my link: prolnk.io/join?ref=partner123",
+    color: "text-green-400″,
+    text: "Hey, thought of you — there's a new platform for contractors called ProLnk that pays passive income on every home you document. Founding partner rate is locked at $149/mo. Only a few spots left. Join with my link: prolnk.io/join?ref=partner123″,
   },
 ];
 
@@ -121,21 +121,21 @@ const HOW_IT_WORKS = [
   {
     step: 1,
     icon: Home,
-    color: "#17C1E8",
+    color: "#17C1E8″,
     title: "You Do the Job",
     desc: "Complete any job at a home address. Upload your photos through the ProLnk app or your FSM software.",
   },
   {
     step: 2,
     icon: Zap,
-    color: "#82D616",
+    color: "#82D616″,
     title: "AI Builds the Profile",
     desc: "Our AI analyzes your photos and creates a home profile. You become the Originating Pro for that address — permanently.",
   },
   {
     step: 3,
     icon: DollarSign,
-    color: "#FBB140",
+    color: "#FBB140″,
     title: "Every Future Job Pays You",
     desc: "Any time another pro does a job at that address through TrustyPro, you earn a 1.5% override on the platform fee. Forever. No extra work.",
   },
@@ -161,14 +161,14 @@ export default function ReferralHub() {
   const [copied, setCopied] = useState(false);
   const [copiedPost, setCopiedPost] = useState<string | null>(null);
   const [tipsOpen, setTipsOpen] = useState(false);
-  const [calcPros, setCalcPros] = useState("5");
-  const [calcEarnings, setCalcEarnings] = useState("5000");
+  const [calcPros, setCalcPros] = useState("5″);
+  const [calcEarnings, setCalcEarnings] = useState("5000″);
 
   const { data: partner } = trpc.partners.getMyProfile.useQuery(undefined, {
     enabled: !!user,
   });
 
-  const referralCode = partner?.referralCode ?? "partner123";
+  const referralCode = partner?.referralCode ?? "partner123″;
   const referralLink = `prolnk.io/join?ref=${referralCode}`;
   const fullReferralLink = `${window.location.origin}/apply?ref=${referralCode}`;
 
@@ -177,8 +177,8 @@ export default function ReferralHub() {
     partnersReferred: partner?.partnersReferred ?? 0,
     homesOriginated: 0,
     overrideCommissionsEarned: 0,
-    referralCommissionsEarned: parseFloat(partner?.totalCommissionEarned ?? "0"),
-    totalPassiveIncome: parseFloat(partner?.totalCommissionEarned ?? "0"),
+    referralCommissionsEarned: parseFloat(partner?.totalCommissionEarned ?? "0″),
+    totalPassiveIncome: parseFloat(partner?.totalCommissionEarned ?? "0″),
     nextMilestone: 5,
     nextMilestoneReward: "Scout Badge + $25 bonus",
   };
@@ -253,42 +253,42 @@ export default function ReferralHub() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A1628] p-6">
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="min-h-screen bg-[#0A1628] p-6″>
+      <div className="max-w-5xl mx-auto space-y-6″>
 
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold text-white">Referral Hub</h1>
-          <p className="text-slate-400 mt-1">
+          <p className="text-slate-400 mt-1″>
             Your passive income engine — earn from every job at every home you've ever documented.
           </p>
         </div>
 
         {/* Network Worth Header Card */}
-        <Card className="bg-slate-800 border-teal-500/30 shadow-lg shadow-teal-500/10">
-          <CardContent className="p-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <Card className="bg-slate-800 border-teal-500/30 shadow-lg shadow-teal-500/10″>
+          <CardContent className="p-6″>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4″>
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Sparkles className="w-5 h-5 text-teal-400" />
+                <div className="flex items-center gap-2 mb-1″>
+                  <Sparkles className="w-5 h-5 text-teal-400″ />
                   <span className="text-slate-400 text-sm font-medium uppercase tracking-wide">Network Value</span>
                 </div>
                 <p className="text-3xl font-bold text-white">
                   Your network is worth{" "}
-                  <span className="text-teal-400">
-                    ${totalNetworkSize > 0 ? monthlyNetworkIncome.toLocaleString() : "247"}/month
+                  <span className="text-teal-400″>
+                    ${totalNetworkSize > 0 ? monthlyNetworkIncome.toLocaleString() : "247″}/month
                   </span>{" "}
                   in passive income
                 </p>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-slate-400 text-sm mt-1″>
                   {totalNetworkSize > 0
                     ? `Based on ${totalNetworkSize} partners across 4 levels`
                     : "Estimated at 8 active partners — grows every time you refer someone"}
                 </p>
               </div>
-              <div className="text-right shrink-0">
-                <p className="text-slate-500 text-xs mb-1">Leaderboard position</p>
-                <p className="text-2xl font-bold text-teal-400">#47</p>
+              <div className="text-right shrink-0″>
+                <p className="text-slate-500 text-xs mb-1″>Leaderboard position</p>
+                <p className="text-2xl font-bold text-teal-400″>#47</p>
                 <p className="text-slate-400 text-xs">of 112 partners this month</p>
               </div>
             </div>
@@ -298,70 +298,70 @@ export default function ReferralHub() {
         {/* ── Your Referral Impact ── */}
         <Card className="bg-slate-800 border-slate-700 overflow-hidden">
           <div className="h-1 w-full" style={{ background: "linear-gradient(90deg,#14b8a6,#7928CA)" }} />
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-2″>
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-              <Network className="w-4 h-4 text-teal-400" />
+              <Network className="w-4 h-4 text-teal-400″ />
               Your Referral Impact
             </CardTitle>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-400″>
               L2–L4 counts are projected at 2× each level until real downstream data loads.
             </p>
           </CardHeader>
-          <CardContent className="space-y-5">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <CardContent className="space-y-5″>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
               {[
-                { label: "L1 Direct", count: l1Count, color: "#14b8a6", rate: "7% job / 12% sub" },
+                { label: "L1 Direct", count: l1Count, color: "#14b8a6″, rate: "7% job / 12% sub" },
                 { label: "L2 Network", count: l2Count, color: "#22c55e", rate: "4% job / 6% sub" },
                 { label: "L3 Network", count: l3Count, color: "#f59e0b", rate: "2% job / 3% sub" },
-                { label: "L4 Network", count: l4Count, color: "#8b5cf6", rate: "1% job / 1.5% sub" },
+                { label: "L4 Network", count: l4Count, color: "#8b5cf6″, rate: "1% job / 1.5% sub" },
               ].map(({ label, count, color, rate }) => (
-                <div key={label} className="rounded-xl p-3 bg-slate-900 border border-slate-700">
-                  <p className="text-xs text-slate-400 mb-1">{label}</p>
+                <div key={label} className="rounded-xl p-3 bg-slate-900 border border-slate-700″>
+                  <p className="text-xs text-slate-400 mb-1″>{label}</p>
                   <p className="text-2xl font-bold" style={{ color }}>{count}</p>
-                  <p className="text-[10px] text-slate-500 mt-1">{rate}</p>
+                  <p className="text-[10px] text-slate-500 mt-1″>{rate}</p>
                 </div>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <div className="flex-1 rounded-xl p-4 border border-teal-500/30 bg-teal-500/10">
-                <p className="text-xs text-teal-400 font-semibold uppercase tracking-wide mb-1">Total Network Size</p>
-                <p className="text-3xl font-bold text-teal-300">{totalNetworkSize}</p>
-                <p className="text-xs text-teal-500 mt-0.5">partners across all 4 levels</p>
+            <div className="flex flex-col sm:flex-row gap-3″>
+              <div className="flex-1 rounded-xl p-4 border border-teal-500/30 bg-teal-500/10″>
+                <p className="text-xs text-teal-400 font-semibold uppercase tracking-wide mb-1″>Total Network Size</p>
+                <p className="text-3xl font-bold text-teal-300″>{totalNetworkSize}</p>
+                <p className="text-xs text-teal-500 mt-0.5″>partners across all 4 levels</p>
               </div>
-              <div className="flex-1 rounded-xl p-4 border border-purple-500/30 bg-purple-500/10">
-                <p className="text-xs text-purple-400 font-semibold uppercase tracking-wide mb-1">Monthly Passive Income</p>
-                <p className="text-3xl font-bold text-purple-300">
+              <div className="flex-1 rounded-xl p-4 border border-purple-500/30 bg-purple-500/10″>
+                <p className="text-xs text-purple-400 font-semibold uppercase tracking-wide mb-1″>Monthly Passive Income</p>
+                <p className="text-3xl font-bold text-purple-300″>
                   {totalNetworkSize > 0 ? `$${monthlyNetworkIncome.toLocaleString()}` : "—"}
                 </p>
-                <p className="text-xs text-purple-500 mt-0.5">estimated at avg 8 jobs/mo per pro</p>
+                <p className="text-xs text-purple-500 mt-0.5″>estimated at avg 8 jobs/mo per pro</p>
               </div>
-              <div className="flex-1 rounded-xl p-4 border border-amber-500/30 bg-amber-500/10">
-                <p className="text-xs text-amber-400 font-semibold uppercase tracking-wide mb-1">Next Tier: {nextTier.label}</p>
-                <p className="text-3xl font-bold text-amber-300">{toNextTier}</p>
-                <p className="text-xs text-amber-500 mt-0.5">more partners to unlock</p>
-                <Progress value={Math.min(tierProgress, 100)} className="h-1.5 mt-2" />
+              <div className="flex-1 rounded-xl p-4 border border-amber-500/30 bg-amber-500/10″>
+                <p className="text-xs text-amber-400 font-semibold uppercase tracking-wide mb-1″>Next Tier: {nextTier.label}</p>
+                <p className="text-3xl font-bold text-amber-300″>{toNextTier}</p>
+                <p className="text-xs text-amber-500 mt-0.5″>more partners to unlock</p>
+                <Progress value={Math.min(tierProgress, 100)} className="h-1.5 mt-2″ />
               </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
           {[
-            { label: "Homes Originated", value: stats.homesOriginated, icon: Home, color: "#14b8a6" },
-            { label: "Pros Referred", value: stats.partnersReferred, icon: Users, color: "#82D616" },
-            { label: "Override Income", value: `$${stats.overrideCommissionsEarned.toFixed(2)}`, icon: DollarSign, color: "#FBB140" },
+            { label: "Homes Originated", value: stats.homesOriginated, icon: Home, color: "#14b8a6″ },
+            { label: "Pros Referred", value: stats.partnersReferred, icon: Users, color: "#82D616″ },
+            { label: "Override Income", value: `$${stats.overrideCommissionsEarned.toFixed(2)}`, icon: DollarSign, color: "#FBB140″ },
             { label: "Total Passive", value: `$${stats.totalPassiveIncome.toFixed(2)}`, icon: TrendingUp, color: "#7928CA" },
           ].map(stat => (
-            <Card key={stat.label} className="bg-slate-800 border-slate-700">
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+            <Card key={stat.label} className="bg-slate-800 border-slate-700″>
+              <CardContent className="p-4″>
+                <div className="flex items-center gap-3″>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″
                     style={{ backgroundColor: `${stat.color}18` }}>
-                    <stat.icon className="w-5 h-5" style={{ color: stat.color }} />
+                    <stat.icon className="w-5 h-5″ style={{ color: stat.color }} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500">{stat.label}</p>
+                    <p className="text-xs text-slate-500″>{stat.label}</p>
                     <p className="text-xl font-bold text-white">{stat.value}</p>
                   </div>
                 </div>
@@ -371,42 +371,42 @@ export default function ReferralHub() {
         </div>
 
         {/* Shareable Link Card */}
-        <Card className="bg-slate-800 border-teal-500/40 shadow-lg shadow-teal-500/10">
+        <Card className="bg-slate-800 border-teal-500/40 shadow-lg shadow-teal-500/10″>
           <div className="h-1 w-full rounded-t-md" style={{ background: "linear-gradient(90deg,#14b8a6,#0EA5E9)" }} />
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-3″>
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-              <Gift className="w-4 h-4 text-teal-400" />
+              <Gift className="w-4 h-4 text-teal-400″ />
               Your Referral Link
             </CardTitle>
-            <p className="text-xs text-slate-400">Share this link to grow your network and earn passive overrides.</p>
+            <p className="text-xs text-slate-400″>Share this link to grow your network and earn passive overrides.</p>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center gap-2 bg-slate-900 rounded-lg px-4 py-3 border border-slate-700">
+          <CardContent className="space-y-4″>
+            <div className="flex items-center gap-2 bg-slate-900 rounded-lg px-4 py-3 border border-slate-700″>
               <span className="font-mono text-teal-300 text-sm flex-1 truncate">{referralLink}</span>
-              <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs shrink-0">
+              <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs shrink-0″>
                 47 clicks this month
               </Badge>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3″>
               <Button onClick={copyLink}
                 variant="outline"
-                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700">
-                {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700″>
+                {copied ? <Check className="w-4 h-4 text-green-400″ /> : <Copy className="w-4 h-4" />}
                 {copied ? "Copied!" : "Copy Link"}
               </Button>
               <Button onClick={shareEmail} variant="outline"
-                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700">
-                <Mail className="w-4 h-4 text-blue-400" />
+                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700″>
+                <Mail className="w-4 h-4 text-blue-400″ />
                 Email
               </Button>
               <Button onClick={shareSms} variant="outline"
-                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700">
-                <MessageSquare className="w-4 h-4 text-green-400" />
+                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700″>
+                <MessageSquare className="w-4 h-4 text-green-400″ />
                 SMS
               </Button>
               <Button onClick={shareLinkedIn}
                 className="flex-1 gap-2 h-10 text-sm bg-blue-600 hover:bg-blue-700 text-white">
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4″ />
                 LinkedIn
               </Button>
             </div>
@@ -417,30 +417,30 @@ export default function ReferralHub() {
         </Card>
 
         {/* Referral Pipeline + Leaderboard */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6″>
           {/* Pipeline Kanban */}
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-3">
+          <Card className="bg-slate-800 border-slate-700″>
+            <CardHeader className="pb-3″>
               <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-                <Users className="w-4 h-4 text-teal-400" />
+                <Users className="w-4 h-4 text-teal-400″ />
                 Referral Pipeline
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-3″>
                 {REFERRAL_PIPELINE.map((col) => (
                   <div key={col.label} className={`rounded-xl p-3 border ${col.color}`}>
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3″>
                       <p className="text-xs text-slate-400 font-medium">{col.label}</p>
                       <Badge variant="outline" className={`text-xs border-current ${col.badgeColor}`}>
                         {col.count}
                       </Badge>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5″>
                       {col.people.map((initials) => (
                         <div
                           key={initials}
-                          className="w-7 h-7 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-[10px] font-bold text-slate-300"
+                          className="w-7 h-7 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-[10px] font-bold text-slate-300″
                         >
                           {initials}
                         </div>
@@ -453,22 +453,22 @@ export default function ReferralHub() {
           </Card>
 
           {/* Leaderboard Position */}
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-3">
+          <Card className="bg-slate-800 border-slate-700″>
+            <CardHeader className="pb-3″>
               <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-                <Trophy className="w-4 h-4 text-amber-400" />
+                <Trophy className="w-4 h-4 text-amber-400″ />
                 Leaderboard Position
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4″>
               <div className="bg-slate-900 rounded-xl p-4 border border-amber-500/20 text-center">
                 <p className="text-slate-400 text-sm">You're</p>
-                <p className="text-5xl font-bold text-amber-400 my-1">#47</p>
+                <p className="text-5xl font-bold text-amber-400 my-1″>#47</p>
                 <p className="text-slate-400 text-sm">of 112 partners by referral earnings this month</p>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2″>
                 {["#44 — Alex M.", "#45 — James T.", "#46 — Sandra K."].map((entry, i) => (
-                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400">
+                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400″>
                     <span>{entry}</span>
                   </div>
                 ))}
@@ -477,7 +477,7 @@ export default function ReferralHub() {
                   <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs">Current</Badge>
                 </div>
                 {["#48 — Marcus D.", "#49 — Priya N."].map((entry, i) => (
-                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400">
+                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400″>
                     <span>{entry}</span>
                   </div>
                 ))}
@@ -487,15 +487,15 @@ export default function ReferralHub() {
         </div>
 
         {/* Commission Calculator */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardHeader className="pb-3">
+        <Card className="bg-slate-800 border-slate-700″>
+          <CardHeader className="pb-3″>
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-              <DollarSign className="w-4 h-4 text-green-400" />
+              <DollarSign className="w-4 h-4 text-green-400″ />
               Commission Calculator
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
+          <CardContent className="space-y-4″>
+            <div className="grid sm:grid-cols-2 gap-4″>
               <div>
                 <label className="text-slate-400 text-xs mb-1.5 block">Number of referrals earning</label>
                 <Input
@@ -517,7 +517,7 @@ export default function ReferralHub() {
                 />
               </div>
             </div>
-            <div className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3">
+            <div className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3″>
               <p className="text-slate-400 text-sm">
                 If {calcPros} of your referrals each earn ${parseInt(calcEarnings).toLocaleString()}/month, you earn:
               </p>
@@ -536,19 +536,19 @@ export default function ReferralHub() {
         </Card>
 
         {/* Viral Content Kit */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardHeader className="pb-3">
+        <Card className="bg-slate-800 border-slate-700″>
+          <CardHeader className="pb-3″>
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-              <Sparkles className="w-4 h-4 text-purple-400" />
+              <Sparkles className="w-4 h-4 text-purple-400″ />
               Viral Content Kit
             </CardTitle>
-            <p className="text-xs text-slate-400">Pre-written posts ready to share. Edit to add your personal touch.</p>
+            <p className="text-xs text-slate-400″>Pre-written posts ready to share. Edit to add your personal touch.</p>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4″>
             {VIRAL_POSTS.map((post) => (
-              <div key={post.platform} className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3">
+              <div key={post.platform} className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3″>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2″>
                     <post.icon className={`w-4 h-4 ${post.color}`} />
                     <span className="text-white font-semibold text-sm">{post.platform}</span>
                   </div>
@@ -556,9 +556,9 @@ export default function ReferralHub() {
                     size="sm"
                     variant="outline"
                     onClick={() => copyPost(post.platform, post.text)}
-                    className="border-slate-600 text-slate-300 hover:bg-slate-700 text-xs h-7 gap-1"
+                    className="border-slate-600 text-slate-300 hover:bg-slate-700 text-xs h-7 gap-1″
                   >
-                    {copiedPost === post.platform ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3" />}
+                    {copiedPost === post.platform ? <Check className="w-3 h-3 text-green-400″ /> : <Copy className="w-3 h-3" />}
                     {copiedPost === post.platform ? "Copied!" : "Copy"}
                   </Button>
                 </div>
@@ -569,38 +569,38 @@ export default function ReferralHub() {
         </Card>
 
         {/* Two Column: Referral Link (legacy) + Milestone */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6″>
           {/* Milestone Progress */}
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-3">
+          <Card className="bg-slate-800 border-slate-700″>
+            <CardHeader className="pb-3″>
               <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-                <Star className="w-4 h-4 text-amber-400" />
+                <Star className="w-4 h-4 text-amber-400″ />
                 Origination Milestones
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4″>
               <div>
-                <div className="flex justify-between text-sm mb-2">
+                <div className="flex justify-between text-sm mb-2″>
                   <span className="text-slate-400 font-medium">
                     {stats.homesOriginated} / {nextMilestone.count} homes
                   </span>
                   <span className="text-amber-400 font-semibold">{nextMilestone.reward}</span>
                 </div>
-                <Progress value={Math.min(milestoneProgress, 100)} className="h-2" />
-                <p className="text-xs text-slate-500 mt-1">
+                <Progress value={Math.min(milestoneProgress, 100)} className="h-2″ />
+                <p className="text-xs text-slate-500 mt-1″>
                   {nextMilestone.count - stats.homesOriginated} more homes to unlock next reward
                 </p>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2″>
                 {MILESTONES.map(m => {
                   const achieved = stats.homesOriginated >= m.count;
                   return (
                     <div key={m.count}
                       className={`flex items-center justify-between py-2 px-3 rounded-lg ${achieved ? "bg-green-500/10 border border-green-500/20" : "bg-slate-900 border border-slate-700"}`}>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2″>
                         {achieved
-                          ? <Check className="w-4 h-4 text-green-400" />
-                          : <div className="w-4 h-4 rounded-full border-2 border-slate-600" />
+                          ? <Check className="w-4 h-4 text-green-400″ />
+                          : <div className="w-4 h-4 rounded-full border-2 border-slate-600″ />
                         }
                         <span className={`text-sm font-medium ${achieved ? "text-green-300" : "text-slate-400"}`}>
                           {m.label}
@@ -617,16 +617,16 @@ export default function ReferralHub() {
           </Card>
 
           {/* Share Script */}
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-3">
+          <Card className="bg-slate-800 border-slate-700″>
+            <CardHeader className="pb-3″>
               <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-                <Gift className="w-4 h-4 text-teal-400" />
+                <Gift className="w-4 h-4 text-teal-400″ />
                 Share Script
               </CardTitle>
-              <p className="text-xs text-slate-400">Drop this into a text or DM — personalize as needed.</p>
+              <p className="text-xs text-slate-400″>Drop this into a text or DM — personalize as needed.</p>
             </CardHeader>
             <CardContent>
-              <div className="bg-slate-900 rounded-xl p-4 border border-slate-700">
+              <div className="bg-slate-900 rounded-xl p-4 border border-slate-700″>
                 <p className="text-slate-300 text-sm leading-relaxed italic">
                   "Hey! I'm building passive income through ProLnk — it pays me on every job at every home I've documented.
                   There are only {toNextTier > 0 ? toNextTier : "a few"} spots left at the {nextTier.label} level.
@@ -636,9 +636,9 @@ export default function ReferralHub() {
                   size="sm"
                   variant="outline"
                   onClick={copyLink}
-                  className="mt-3 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs gap-1"
+                  className="mt-3 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs gap-1″
                 >
-                  {copied ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3" />}
+                  {copied ? <Check className="w-3 h-3 text-green-400″ /> : <Copy className="w-3 h-3" />}
                   Copy Script
                 </Button>
               </div>
@@ -650,29 +650,29 @@ export default function ReferralHub() {
         </div>
 
         {/* How It Works */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardHeader className="pb-3">
+        <Card className="bg-slate-800 border-slate-700″>
+          <CardHeader className="pb-3″>
             <CardTitle className="text-base font-semibold text-white">How Passive Income Works</CardTitle>
-            <p className="text-sm text-slate-400">Two streams. Zero extra work after the first job.</p>
+            <p className="text-sm text-slate-400″>Two streams. Zero extra work after the first job.</p>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-4 gap-4″>
               {HOW_IT_WORKS.map((step, i) => (
                 <div key={step.step} className="relative">
-                  <div className="flex flex-col items-center text-center gap-3">
+                  <div className="flex flex-col items-center text-center gap-3″>
                     <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
                       style={{ backgroundColor: `${step.color}18` }}>
-                      <step.icon className="w-6 h-6" style={{ color: step.color }} />
+                      <step.icon className="w-6 h-6″ style={{ color: step.color }} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Step {step.step}</p>
-                      <p className="font-semibold text-white text-sm mb-1">{step.title}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1″>Step {step.step}</p>
+                      <p className="font-semibold text-white text-sm mb-1″>{step.title}</p>
                       <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                   {i < HOW_IT_WORKS.length - 1 && (
                     <div className="hidden md:flex absolute top-6 -right-2 items-center">
-                      <ChevronRight className="w-4 h-4 text-slate-600" />
+                      <ChevronRight className="w-4 h-4 text-slate-600″ />
                     </div>
                   )}
                 </div>
@@ -682,33 +682,33 @@ export default function ReferralHub() {
         </Card>
 
         {/* Quick Recruiting Tips */}
-        <Card className="bg-slate-800 border-slate-700">
+        <Card className="bg-slate-800 border-slate-700″>
           <button
             className="w-full text-left"
             onClick={() => setTipsOpen(prev => !prev)}
             type="button"
           >
-            <CardHeader className="pb-3">
+            <CardHeader className="pb-3″>
               <CardTitle className="text-base font-semibold flex items-center justify-between gap-2 text-white">
-                <span className="flex items-center gap-2">
-                  <Lightbulb className="w-4 h-4 text-amber-400" />
+                <span className="flex items-center gap-2″>
+                  <Lightbulb className="w-4 h-4 text-amber-400″ />
                   Quick Recruiting Tips
                 </span>
                 {tipsOpen
-                  ? <ChevronUp className="w-4 h-4 text-slate-400" />
-                  : <ChevronDown className="w-4 h-4 text-slate-400" />
+                  ? <ChevronUp className="w-4 h-4 text-slate-400″ />
+                  : <ChevronDown className="w-4 h-4 text-slate-400″ />
                 }
               </CardTitle>
               {!tipsOpen && (
-                <p className="text-xs text-slate-400">Proven scripts and tactics to grow your L1 downline fast.</p>
+                <p className="text-xs text-slate-400″>Proven scripts and tactics to grow your L1 downline fast.</p>
               )}
             </CardHeader>
           </button>
           {tipsOpen && (
-            <CardContent className="pt-0 space-y-3">
+            <CardContent className="pt-0 space-y-3″>
               {RECRUITING_TIPS.map((tip, i) => (
-                <div key={i} className="flex gap-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                  <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                <div key={i} className="flex gap-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20″>
+                  <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5″>
                     {i + 1}
                   </div>
                   <p className="text-sm text-amber-300 leading-relaxed">{tip}</p>
@@ -719,16 +719,16 @@ export default function ReferralHub() {
         </Card>
 
         {/* Commission Breakdown Table */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardHeader className="pb-3">
+        <Card className="bg-slate-800 border-slate-700″>
+          <CardHeader className="pb-3″>
             <CardTitle className="text-base font-semibold text-white">Commission Breakdown</CardTitle>
-            <p className="text-sm text-slate-400">How the money flows on a $5,000 job</p>
+            <p className="text-sm text-slate-400″>How the money flows on a $5,000 job</p>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-700">
+                  <tr className="border-b border-slate-700″>
                     <th className="text-left py-2 px-3 text-slate-400 font-medium">Who</th>
                     <th className="text-left py-2 px-3 text-slate-400 font-medium">Why</th>
                     <th className="text-right py-2 px-3 text-slate-400 font-medium">Amount</th>
@@ -737,17 +737,17 @@ export default function ReferralHub() {
                 </thead>
                 <tbody>
                   {[
-                    { who: "Receiving Pro", why: "Does the actual job", amount: "$4,400", rate: "88% of job value", color: "#14b8a6" },
-                    { who: "Platform Fee", why: "ProLnk takes 12% of job value", amount: "$600", rate: "12%", color: "#7B809A" },
-                    { who: "Referring Pro", why: "Whose photos triggered the lead", amount: "$288", rate: "48% of platform fee", color: "#82D616" },
-                    { who: "Originating Pro", why: "First to document this address", amount: "$9", rate: "1.5% of platform fee", color: "#FBB140" },
-                    { who: "ProLnk Net", why: "Platform keeps the rest", amount: "$303", rate: "~50% of platform fee", color: "#EA0606" },
+                    { who: "Receiving Pro", why: "Does the actual job", amount: "$4,400″, rate: "88% of job value", color: "#14b8a6" },
+                    { who: "Platform Fee", why: "ProLnk takes 12% of job value", amount: "$600″, rate: "12%", color: "#7B809A" },
+                    { who: "Referring Pro", why: "Whose photos triggered the lead", amount: "$288″, rate: "48% of platform fee", color: "#82D616" },
+                    { who: "Originating Pro", why: "First to document this address", amount: "$9″, rate: "1.5% of platform fee", color: "#FBB140" },
+                    { who: "ProLnk Net", why: "Platform keeps the rest", amount: "$303″, rate: "~50% of platform fee", color: "#EA0606" },
                   ].map(row => (
                     <tr key={row.who} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
-                      <td className="py-2.5 px-3">
+                      <td className="py-2.5 px-3″>
                         <span className="font-semibold" style={{ color: row.color }}>{row.who}</span>
                       </td>
-                      <td className="py-2.5 px-3 text-slate-400">{row.why}</td>
+                      <td className="py-2.5 px-3 text-slate-400″>{row.why}</td>
                       <td className="py-2.5 px-3 text-right font-bold text-white">{row.amount}</td>
                       <td className="py-2.5 px-3 text-right text-slate-500 text-xs">{row.rate}</td>
                     </tr>
@@ -755,8 +755,8 @@ export default function ReferralHub() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 p-3 bg-amber-500/10 rounded-xl border border-amber-500/20">
-              <p className="text-xs text-amber-300">
+            <div className="mt-4 p-3 bg-amber-500/10 rounded-xl border border-amber-500/20″>
+              <p className="text-xs text-amber-300″>
                 <strong>The compounding effect:</strong> If you originate 50 homes and each home averages 3 jobs/year at $3,000 each, your override income alone is{" "}
                 <strong>$2,025/year</strong> — completely passive.
               </p>
@@ -767,14 +767,14 @@ export default function ReferralHub() {
         {/* CTA */}
         <div className="rounded-2xl p-6 text-white text-center"
           style={{ background: "linear-gradient(135deg, #14b8a6, #0EA5E9)" }}>
-          <h3 className="text-xl font-bold mb-2">Start Originating Homes Today</h3>
-          <p className="text-white/80 text-sm mb-4">
+          <h3 className="text-xl font-bold mb-2″>Start Originating Homes Today</h3>
+          <p className="text-white/80 text-sm mb-4″>
             Every job you do is a permanent stake in that address. The sooner you start, the bigger your passive stream grows.
           </p>
-          <Button variant="outline" className="bg-white text-teal-600 hover:bg-white/90 border-0 gap-2"
+          <Button variant="outline" className="bg-white text-teal-600 hover:bg-white/90 border-0 gap-2″
             onClick={() => window.location.href = "/dashboard/jobs/new"}>
             Log a Job Now
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4″ />
           </Button>
         </div>
 

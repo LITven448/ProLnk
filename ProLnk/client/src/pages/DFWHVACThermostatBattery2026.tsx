@@ -61,7 +61,7 @@ export default function DFWHVACThermostatBattery2026() {
   const selected_item = symptoms.find(s => s.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🔋</div>
@@ -76,7 +76,7 @@ export default function DFWHVACThermostatBattery2026() {
         <div style={{ background: '#0F1E35', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1A2E4A' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 12px' }}>🌡️ Why DFW Heat Kills Thermostat Batteries</h2>
           <p style={{ color: '#B0BFDA', fontSize: 14, lineHeight: 1.6, margin: '0 0 12px' }}>
-            DFW summers push thermostats into overdrive — your HVAC runs nearly continuously from June through September. This constant electronic load, combined with heat stress from ambient temperatures, reduces battery life by <strong style={{ color: '#F5E642' }}>25-40% vs moderate climates</strong>.
+            DFW summers push thermostats into overdrive — your HVAC runs nearly continuously from June through September. This constant electronic load, combined with heat stress from ambient temperatures, reduces battery life by <strong style={{ color: '#F5E642′ }}>25-40% vs moderate climates</strong>.
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {[['🌡️ 8-12 months', 'Expected DFW battery life'], ['⚡ Lithium wins', 'Best for DFW heat stress'], ['📅 Replace Oct', 'Before heating season']].map(([label, desc]) => (
@@ -92,7 +92,7 @@ export default function DFWHVACThermostatBattery2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {symptoms.map(s => (
             <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-              style={{ background: selected === s.id ? '#F5E642' : '#0F1E35', color: selected === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid', borderColor: selected === s.id ? '#F5E642' : '#1A2E4A', borderRadius: 10, padding: '12px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
+              style={{ background: selected === s.id ? '#F5E642′ : '#0F1E35', color: selected === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid', borderColor: selected === s.id ? '#F5E642' : '#1A2E4A', borderRadius: 10, padding: '12px 14px', fontSize: 13, fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
               {s.label}
             </button>
           ))}

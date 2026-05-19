@@ -54,7 +54,7 @@ export default function DFWHomeMaintenanceQuiz() {
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Q{current + 1} of {questions.length}</span>
-              <span style={{ color: '#94a3b8' }}>{answers.filter(Boolean).length} correct so far</span>
+              <span style={{ color: '#94a3b8′ }}>{answers.filter(Boolean).length} correct so far</span>
             </div>
             <div style={{ background: '#1e3a5f', borderRadius: 6, height: 6, marginBottom: '1.5rem' }}>
               <div style={{ background: '#F5E642', height: 6, borderRadius: 6, width: `${((current) / questions.length) * 100}%`, transition: 'width .3s' }} />
@@ -82,11 +82,11 @@ export default function DFWHomeMaintenanceQuiz() {
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '2rem', textAlign: 'center' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{grade.split(' ')[0]}</div>
             <h2 style={{ color: '#F5E642', fontSize: '1.4rem' }}>{grade.slice(2)}</h2>
-            <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#F5E642', margin: '1rem 0' }}>{pct}%</div>
-            <p style={{ color: '#94a3b8' }}>{score} of {questions.length} correct</p>
+            <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#F5E642', margin: '1rem 0′ }}>{pct}%</div>
+            <p style={{ color: '#94a3b8′ }}>{score} of {questions.length} correct</p>
             <div style={{ marginTop: '2rem', textAlign: 'left' }}>
               <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '.75rem' }}>📋 Recommended Resources:</p>
-              {resources.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '.6rem 1rem', marginBottom: '.5rem', color: '#cbd5e1' }}>📌 {r}</div>)}
+              {resources.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '.6rem 1rem', marginBottom: '.5rem', color: '#cbd5e1′ }}>📌 {r}</div>)}
             </div>
             <button onClick={() => { setCurrent(0); setAnswers([]); setSelected(null); setDone(false); }} style={{ marginTop: '1.5rem', background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '.75rem 2rem', fontWeight: 700, cursor: 'pointer' }}>Retake Quiz</button>
           </div>

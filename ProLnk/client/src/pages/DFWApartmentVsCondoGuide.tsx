@@ -60,7 +60,7 @@ export default function DFWApartmentVsCondoGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {Object.values(data).map(d => (
-            <div key={d.label} style={{ background: '#fff', borderRadius: 10, padding: 20, border: '1px solid #e2e8f0' }}>
+            <div key={d.label} style={{ background: '#fff', borderRadius: 10, padding: 20, border: '1px solid #e2e8f0′ }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{d.icon}</div>
               <h2 style={{ fontSize: 18, margin: '0 0 12px' }}>{d.label}</h2>
               <div style={{ fontSize: 13, color: '#475569', lineHeight: 1.8 }}>
@@ -81,12 +81,12 @@ export default function DFWApartmentVsCondoGuide() {
           {dfwCondoMarkets.map(m => (
             <div key={m.area} style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: 12, marginBottom: 12 }}>
               <div style={{ fontWeight: 600 }}>{m.area}</div>
-              <div style={{ fontSize: 13, color: '#475569' }}>Avg price: {m.avgPrice} · HOA: {m.hoa} · {m.notes}</div>
+              <div style={{ fontSize: 13, color: '#475569′ }}>Avg price: {m.avgPrice} · HOA: {m.hoa} · {m.notes}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642' }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, margin: '0 0 16px' }}>🔍 Apartment vs Condo Recommender</h2>
           <div style={{ marginBottom: 12 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>Your current lifestyle</label>

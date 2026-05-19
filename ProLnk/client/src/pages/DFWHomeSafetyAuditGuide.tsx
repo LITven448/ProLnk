@@ -82,7 +82,7 @@ const auditData: Record<Room, RoomAudit> = {
   },
 };
 
-const priorityColor = { high: '#ef4444', medium: '#f59e0b', low: '#4ade80' };
+const priorityColor = { high: '#ef4444', medium: '#f59e0b', low: '#4ade80′ };
 const priorityLabel = { high: '🔴 High', medium: '🟡 Medium', low: '🟢 Low' };
 
 export default function DFWHomeSafetyAuditGuide() {
@@ -112,7 +112,7 @@ export default function DFWHomeSafetyAuditGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
             {rooms.map(([r, icon, label]) => (
               <button key={r} onClick={() => { setRoom(r); setFilter('all'); }}
-                style={{ background: room === r ? '#F5E642' : '#1e3a5f', color: room === r ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 8px', cursor: 'pointer', fontWeight: room === r ? 700 : 400, fontSize: 14, transition: 'all 0.15s' }}>
+                style={{ background: room === r ? '#F5E642′ : '#1e3a5f', color: room === r ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 8px', cursor: 'pointer', fontWeight: room === r ? 700 : 400, fontSize: 14, transition: 'all 0.15s' }}>
                 <div style={{ fontSize: 24, marginBottom: 4 }}>{icon}</div>
                 {label}
               </button>
@@ -128,7 +128,7 @@ export default function DFWHomeSafetyAuditGuide() {
               </div>
               {(['all', 'high', 'medium', 'low'] as const).map(f => (
                 <button key={f} onClick={() => setFilter(f)}
-                  style={{ background: filter === f ? '#F5E642' : '#112240', color: filter === f ? '#0A1628' : '#94a3b8', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: filter === f ? 700 : 400, textTransform: 'capitalize' }}>
+                  style={{ background: filter === f ? '#F5E642′ : '#112240', color: filter === f ? '#0A1628' : '#94a3b8', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: filter === f ? 700 : 400, textTransform: 'capitalize' }}>
                   {f === 'all' ? 'All Items' : priorityLabel[f]}
                 </button>
               ))}
@@ -142,9 +142,9 @@ export default function DFWHomeSafetyAuditGuide() {
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                         <span style={{ color: priorityColor[check.priority], fontSize: 12, fontWeight: 700, background: '#0A1628', padding: '2px 8px', borderRadius: 4 }}>{priorityLabel[check.priority]}</span>
                       </div>
-                      <p style={{ color: '#fff', fontSize: 14, fontWeight: 600, margin: '0 0 6px 0' }}>{check.item}</p>
+                      <p style={{ color: '#fff', fontSize: 14, fontWeight: 600, margin: '0 0 6px 0′ }}>{check.item}</p>
                       {check.dfwNote && (
-                        <p style={{ color: '#F5E642', fontSize: 12, margin: '0 0 4px 0' }}>⚠️ DFW Note: {check.dfwNote}</p>
+                        <p style={{ color: '#F5E642', fontSize: 12, margin: '0 0 4px 0′ }}>⚠️ DFW Note: {check.dfwNote}</p>
                       )}
                     </div>
                     <div style={{ background: '#112240', borderRadius: 8, padding: '8px 12px', textAlign: 'center', flexShrink: 0 }}>

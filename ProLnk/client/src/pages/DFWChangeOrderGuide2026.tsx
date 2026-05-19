@@ -49,7 +49,7 @@ export default function DFWChangeOrderGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {scenarios.map(s => (
             <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-              style={{ background: '#0f2340', border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', borderRadius: 12, padding: 16, cursor: 'pointer', color: '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
+              style={{ background: '#0f2340', border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f', borderRadius: 12, padding: 16, cursor: ’pointer', color: '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ fontSize: 22 }}>{s.icon}</span>
               <span style={{ fontWeight: 600, fontSize: 13 }}>{s.label}</span>
             </button>
@@ -67,7 +67,7 @@ export default function DFWChangeOrderGuide2026() {
         )}
 
         <div style={{ background: '#0f2340', border: '1px solid #1e3a5f', borderRadius: 16, padding: 20 }}>
-          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642' }}>📌 The Golden Rule</p>
+          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642′ }}>📌 The Golden Rule</p>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>Every change to scope, cost, or timeline must be in writing and signed by both parties BEFORE work starts. ProLnk contractors use digital COs stored in your Health Vault — no verbal agreements, ever.</p>
         </div>
       </div>

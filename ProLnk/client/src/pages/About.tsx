@@ -8,15 +8,15 @@ import {
   AlertTriangle, Search, Lightbulb,
 } from "lucide-react";
 
-const NAVY = "#0A1628";
-const TEAL = "#14b8a6";
-const YELLOW = "#F5E642";
+const NAVY = "#0A1628″;
+const TEAL = "#14b8a6″;
+const YELLOW = "#F5E642″;
 const MUTED = "#64748b";
 
 const STATS = [
-  { value: "2,125", label: "Founding Network Spots", icon: Users },
-  { value: "5", label: "Income Streams per Partner", icon: DollarSign },
-  { value: "47", label: "AI Agents Running 24/7", icon: Brain },
+  { value: "2,125″, label: "Founding Network Spots", icon: Users },
+  { value: "5″, label: "Income Streams per Partner", icon: DollarSign },
+  { value: "47″, label: "AI Agents Running 24/7", icon: Brain },
   { value: "130+", label: "Database Tables", icon: Network },
 ];
 
@@ -31,13 +31,13 @@ const PAIN_POINTS = [
     icon: Search,
     title: "Homeowners can't find trusted pros",
     desc: "Review platforms are gamed. Referral networks are opaque. Most homeowners settle for whoever answers the phone, not whoever is best for the job. That mismatch costs billions in rework, disputes, and safety incidents annually.",
-    color: "#ef4444",
+    color: "#ef4444″,
   },
   {
     icon: Lightbulb,
     title: "AI-driven insights aren't reaching the field",
     desc: "GPT-4o Vision can identify roof granule loss from a smartphone photo. It can estimate HVAC age from an outdoor condenser. That intelligence exists — but no platform has put it in the hands of the person standing in the homeowner's driveway. Until now.",
-    color: "#6366f1",
+    color: "#6366f1″,
   },
 ];
 
@@ -61,7 +61,7 @@ const TEAM = [
     role: "Chief Technology Officer",
     bio: "We're seeking a CTO who lives at the intersection of AI infrastructure and marketplace mechanics. If you've scaled a two-sided marketplace or built vision AI in production, let's talk.",
     initials: "?",
-    color: "#6366f1",
+    color: "#6366f1″,
     isOpen: true,
   },
   {
@@ -75,12 +75,12 @@ const TEAM = [
 ];
 
 const TIMELINE = [
-  { year: "2024", event: "ProLnk concept developed — network income model for home services trades" },
-  { year: "Q1 2025", event: "TrustyPro AI photo scan technology built — GPT-4o Vision analyzes home photos" },
-  { year: "Q2 2025", event: "130+ database tables, tRPC API, TiDB Cloud infrastructure deployed" },
-  { year: "May 2026", event: "Founding Network waitlist launch — 2,125 charter spots available" },
-  { year: "Q3 2026", event: "Lead matching algorithm goes live — first pro-homeowner matches" },
-  { year: "2027", event: "Home Health Vault data licensing to insurance and mortgage industries" },
+  { year: "2024″, event: "ProLnk concept developed — network income model for home services trades" },
+  { year: "Q1 2025″, event: "TrustyPro AI photo scan technology built — GPT-4o Vision analyzes home photos" },
+  { year: "Q2 2025″, event: "130+ database tables, tRPC API, TiDB Cloud infrastructure deployed" },
+  { year: "May 2026″, event: "Founding Network waitlist launch — 2,125 charter spots available" },
+  { year: "Q3 2026″, event: "Lead matching algorithm goes live — first pro-homeowner matches" },
+  { year: "2027″, event: "Home Health Vault data licensing to insurance and mortgage industries" },
 ];
 
 export default function About() {
@@ -98,8 +98,8 @@ export default function About() {
             <span style={{ fontSize: 22, fontWeight: 900, color: TEAL, cursor: "pointer", letterSpacing: -0.5 }}>ProLnk</span>
           </Link>
           <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
-            <Link href="/"><span style={{ color: "#94a3b8", fontSize: 14, cursor: "pointer" }}>Home</span></Link>
-            <Link href="/founding-partner"><span style={{ color: "#94a3b8", fontSize: 14, cursor: "pointer" }}>Join Network</span></Link>
+            <Link href="/"><span style={{ color: "#94a3b8″, fontSize: 14, cursor: "pointer" }}>Home</span></Link>
+            <Link href="/founding-partner"><span style={{ color: "#94a3b8″, fontSize: 14, cursor: "pointer" }}>Join Network</span></Link>
             <Link href="/partner-signup">
               <span style={{ background: TEAL, color: NAVY, padding: "8px 20px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
                 Get Started
@@ -118,7 +118,7 @@ export default function About() {
             We built the network<br />
             <span style={{ color: TEAL }}>home services deserves.</span>
           </h1>
-          <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px" }}>
+          <p style={{ fontSize: 18, color: "#94a3b8″, lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px" }}>
             ProLnk is the first home services marketplace built around the contractor — with AI matching, permanent income streams, and a 4-level referral network that keeps paying.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
@@ -157,7 +157,7 @@ export default function About() {
             <blockquote style={{ fontSize: 28, fontWeight: 800, color: "#fff", margin: "0 0 20px", lineHeight: 1.35, letterSpacing: -0.5, fontStyle: "italic" }}>
               "We believe every home service professional deserves a business that works as hard as they do."
             </blockquote>
-            <p style={{ color: "#94a3b8", fontSize: 16, lineHeight: 1.8 }}>
+            <p style={{ color: "#94a3b8″, fontSize: 16, lineHeight: 1.8 }}>
               Every homeowner deserves fast, reliable service from verified professionals. Every contractor deserves leads that convert, income that compounds, and a platform that works for them — not against them. ProLnk is how both sides win.
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function About() {
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)", borderRadius: 20, padding: "6px 16px", marginBottom: 16 }}>
-                <span style={{ fontSize: 12, color: "#f87171", fontWeight: 700 }}>THE PROBLEM WE SOLVE</span>
+                <span style={{ fontSize: 12, color: "#f87171″, fontWeight: 700 }}>THE PROBLEM WE SOLVE</span>
               </div>
               <h2 style={{ fontSize: 36, fontWeight: 900, color: "#fff", margin: 0, letterSpacing: -0.5 }}>
                 A broken industry. A solvable problem.
@@ -181,7 +181,7 @@ export default function About() {
                     <p.icon style={{ width: 22, height: 22, color: p.color }} />
                   </div>
                   <h3 style={{ fontSize: 17, fontWeight: 800, color: "#fff", margin: "0 0 10px", lineHeight: 1.3 }}>{p.title}</h3>
-                  <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{p.desc}</p>
+                  <p style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.75, margin: 0 }}>{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -195,17 +195,17 @@ export default function About() {
               <h2 style={{ fontSize: 36, fontWeight: 900, color: "#fff", margin: "0 0 20px", lineHeight: 1.2 }}>
                 Why we built ProLnk
               </h2>
-              <p style={{ color: "#94a3b8", lineHeight: 1.8, marginBottom: 16 }}>
-                Home service contractors are the backbone of America's housing infrastructure. They fix roofs, clear drains, and keep the lights on — yet they've historically been exploited by lead-gen platforms that charge $80/lead and deliver nothing.
+              <p style={{ color: "#94a3b8″, lineHeight: 1.8, marginBottom: 16 }}>
+                Home service contractors are the backbone of America's housing infrastructure. They fix roofs, clear drains, and keep the lights on — yet they’ve historically been exploited by lead-gen platforms that charge $80/lead and deliver nothing.
               </p>
-              <p style={{ color: "#94a3b8", lineHeight: 1.8, marginBottom: 24 }}>
+              <p style={{ color: "#94a3b8″, lineHeight: 1.8, marginBottom: 24 }}>
                 ProLnk flips that model. Contractors join a network, refer other contractors, and build permanent income streams that compound over time. We handle AI matching, payment processing, and homeowner acquisition — you do the work and keep 72%.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {["No pay-per-lead fees", "72% commission keep rate", "4-level referral overrides that pay forever", "AI lead matching — no cold outreach needed"].map(item => (
                   <div key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <CheckCircle style={{ width: 16, height: 16, color: TEAL, flexShrink: 0 }} />
-                    <span style={{ color: "#cbd5e1", fontSize: 14 }}>{item}</span>
+                    <span style={{ color: "#cbd5e1″, fontSize: 14 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -213,18 +213,18 @@ export default function About() {
             <div style={{ background: "linear-gradient(135deg, rgba(20,184,166,0.1), rgba(8,145,178,0.05))", border: "1px solid rgba(20,184,166,0.2)", borderRadius: 20, padding: 36 }}>
               <div style={{ fontSize: 14, color: TEAL, fontWeight: 700, marginBottom: 20 }}>THE NETWORK INCOME MODEL</div>
               {[
-                { stream: "Stream 1", desc: "Direct commission from every matched job", rate: "Up to 70% keep" },
-                { stream: "Stream 2", desc: "Override on your recruits' job earnings", rate: "1–4 levels deep" },
-                { stream: "Stream 3", desc: "Monthly subscription override from referrals", rate: "10% recurring" },
-                { stream: "Stream 4", desc: "Per-lead fee for homeowners you source", rate: "$25–100/lead" },
-                { stream: "Stream 5", desc: "Permanent Home Vault origination rights", rate: "Forever" },
+                { stream: "Stream 1″, desc: "Direct commission from every matched job", rate: "Up to 70% keep" },
+                { stream: "Stream 2″, desc: "Override on your recruits' job earnings", rate: "1–4 levels deep" },
+                { stream: "Stream 3″, desc: "Monthly subscription override from referrals", rate: "10% recurring" },
+                { stream: "Stream 4″, desc: "Per-lead fee for homeowners you source", rate: "$25–100/lead" },
+                { stream: "Stream 5″, desc: "Permanent Home Vault origination rights", rate: "Forever" },
               ].map((s, i) => (
                 <div key={s.stream} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: i < 4 ? 16 : 0 }}>
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: "rgba(20,184,166,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <span style={{ fontSize: 11, fontWeight: 800, color: TEAL }}>{i + 1}</span>
                   </div>
                   <div>
-                    <div style={{ fontSize: 12, fontWeight: 700, color: "#e2e8f0" }}>{s.stream}: {s.desc}</div>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: "#e2e8f0″ }}>{s.stream}: {s.desc}</div>
                     <div style={{ fontSize: 11, color: TEAL, marginTop: 2 }}>{s.rate}</div>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ export default function About() {
                     <v.icon style={{ width: 22, height: 22, color: TEAL }} />
                   </div>
                   <h3 style={{ fontSize: 18, fontWeight: 800, color: "#fff", margin: "0 0 8px" }}>{v.title}</h3>
-                  <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.7, margin: 0 }}>{v.desc}</p>
+                  <p style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.7, margin: 0 }}>{v.desc}</p>
                 </div>
               ))}
             </div>
@@ -256,7 +256,7 @@ export default function About() {
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <h2 style={{ fontSize: 32, fontWeight: 900, color: "#fff", margin: "0 0 12px" }}>The Team</h2>
-              <p style={{ color: "#94a3b8", fontSize: 16, margin: 0 }}>Built by operators, not spectators.</p>
+              <p style={{ color: "#94a3b8″, fontSize: 16, margin: 0 }}>Built by operators, not spectators.</p>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {TEAM.map(member => (
@@ -271,7 +271,7 @@ export default function About() {
                   </div>
                   <h3 style={{ fontSize: 17, fontWeight: 800, color: "#fff", margin: "0 0 4px" }}>{member.name}</h3>
                   <div style={{ fontSize: 13, color: member.color, fontWeight: 600, marginBottom: 12 }}>{member.role}</div>
-                  <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{member.bio}</p>
+                  <p style={{ color: "#94a3b8″, fontSize: 13, lineHeight: 1.7, margin: 0 }}>{member.bio}</p>
                   {member.isOpen && (
                     <a href="mailto:andrew@lit-ventures.com" style={{ display: "inline-block", marginTop: 16, color: TEAL, fontSize: 12, fontWeight: 700, textDecoration: "none" }}>
                       Apply → andrew@lit-ventures.com
@@ -296,7 +296,7 @@ export default function About() {
                   </div>
                   <div style={{ paddingTop: 4 }}>
                     <div style={{ fontSize: 12, color: TEAL, fontWeight: 700, marginBottom: 4 }}>{t.year}</div>
-                    <div style={{ color: "#cbd5e1", fontSize: 14, lineHeight: 1.6 }}>{t.event}</div>
+                    <div style={{ color: "#cbd5e1″, fontSize: 14, lineHeight: 1.6 }}>{t.event}</div>
                   </div>
                 </div>
               ))}
@@ -310,11 +310,11 @@ export default function About() {
             <div>
               <div style={{ fontSize: 13, color: TEAL, fontWeight: 700, marginBottom: 12 }}>OUR SISTER PRODUCT</div>
               <h2 style={{ fontSize: 32, fontWeight: 900, color: "#fff", margin: "0 0 16px" }}>TrustyPro: AI Home Health</h2>
-              <p style={{ color: "#94a3b8", lineHeight: 1.8, marginBottom: 24 }}>
+              <p style={{ color: "#94a3b8″, lineHeight: 1.8, marginBottom: 24 }}>
                 TrustyPro uses AI photo analysis to detect home maintenance issues before they become expensive emergencies. Homeowners scan their home, get a health score, and get connected with vetted ProLnk contractors.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                {["GPT-4o Vision", "Health Score 0-100", "Instant Issue Detection", "Privacy-First"].map(tag => (
+                {["GPT-4o Vision", "Health Score 0-100″, "Instant Issue Detection", "Privacy-First"].map(tag => (
                   <span key={tag} style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.25)", borderRadius: 20, padding: "4px 12px", fontSize: 12, color: "#a5b4fc", fontWeight: 600 }}>{tag}</span>
                 ))}
               </div>
@@ -325,13 +325,13 @@ export default function About() {
               </div>
             </div>
             <div style={{ background: "linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.04))", border: "1px solid rgba(99,102,241,0.15)", borderRadius: 20, padding: 32, textAlign: "center" }}>
-              <Camera style={{ width: 48, height: 48, color: "#818cf8", margin: "0 auto 16px" }} />
+              <Camera style={{ width: 48, height: 48, color: "#818cf8″, margin: "0 auto 16px" }} />
               <div style={{ fontSize: 20, fontWeight: 800, color: "#fff", marginBottom: 8 }}>Scan Any Room</div>
-              <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>
+              <p style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>
                 Upload a photo and AI identifies issues in seconds — water damage, HVAC problems, structural concerns, and more.
               </p>
               <Link href="/trustypro/scan">
-                <span style={{ background: "#6366f1", color: "#fff", padding: "12px 28px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer", display: "inline-block" }}>
+                <span style={{ background: "#6366f1″, color: "#fff", padding: "12px 28px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer", display: "inline-block" }}>
                   Try a Free Scan
                 </span>
               </Link>
@@ -345,7 +345,7 @@ export default function About() {
             <h2 style={{ fontSize: 36, fontWeight: 900, color: "#fff", marginBottom: 16 }}>
               Ready to own your income?
             </h2>
-            <p style={{ color: "#94a3b8", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
+            <p style={{ color: "#94a3b8″, fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
               Join 2,125 contractors building the founding network. Charter spots are limited and will never be available again at these terms.
             </p>
             <Link href="/founding-partner">

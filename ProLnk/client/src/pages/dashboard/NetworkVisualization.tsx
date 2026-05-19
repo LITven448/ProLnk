@@ -15,7 +15,7 @@ function CopyButton({ text }: { text: string }) {
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
       style={{
         background: copied ? "rgba(20,184,166,0.2)" : "rgba(20,184,166,0.1)",
-        color: "#14b8a6",
+        color: "#14b8a6″,
         border: `1px solid ${copied ? "rgba(20,184,166,0.5)" : "rgba(20,184,166,0.25)"}`,
       }}
     >
@@ -54,35 +54,35 @@ const L3_NODES = [
 ];
 
 const LEVEL_EARNINGS = [
-  { level: "L1", recruits: 8, avg: 847, pct: 7, monthly: 474 },
-  { level: "L2", recruits: 12, avg: 623, pct: 4, monthly: 299 },
-  { level: "L3", recruits: 3, avg: 412, pct: 2, monthly: 25 },
+  { level: "L1″, recruits: 8, avg: 847, pct: 7, monthly: 474 },
+  { level: "L2″, recruits: 12, avg: 623, pct: 4, monthly: 299 },
+  { level: "L3″, recruits: 3, avg: 412, pct: 2, monthly: 25 },
 ];
 
-const REFERRAL_LINK = "prolnk.io/join?ref=partner123";
+const REFERRAL_LINK = "prolnk.io/join?ref=partner123″;
 
 export default function NetworkVisualization() {
   return (
-    <div className="min-h-screen bg-[#0A1628] px-4 py-8">
-      <div className="max-w-5xl mx-auto space-y-8">
+    <div className="min-h-screen bg-[#0A1628] px-4 py-8″>
+      <div className="max-w-5xl mx-auto space-y-8″>
 
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold text-white">Your Network</h1>
-          <p className="text-sm text-gray-400 mt-1">See your earning cascade at a glance</p>
+          <p className="text-sm text-gray-400 mt-1″>See your earning cascade at a glance</p>
         </div>
 
         {/* Summary stat cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
           {[
-            { label: "Direct Recruits", value: "8", icon: Users, color: "#14b8a6" },
-            { label: "Total Network", value: "23", icon: Network, color: "#8b5cf6" },
-            { label: "Monthly Network Income", value: "$247", icon: DollarSign, color: "#F5E642" },
-            { label: "Network Depth", value: "3 levels", icon: TrendingUp, color: "#3b82f6" },
+            { label: "Direct Recruits", value: "8″, icon: Users, color: "#14b8a6" },
+            { label: "Total Network", value: "23″, icon: Network, color: "#8b5cf6" },
+            { label: "Monthly Network Income", value: "$247″, icon: DollarSign, color: "#F5E642" },
+            { label: "Network Depth", value: "3 levels", icon: TrendingUp, color: "#3b82f6″ },
           ].map(({ label, value, icon: Icon, color }) => (
             <div
               key={label}
-              className="rounded-xl p-4 flex flex-col gap-2"
+              className="rounded-xl p-4 flex flex-col gap-2″
               style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${color}18` }}>
@@ -99,7 +99,7 @@ export default function NetworkVisualization() {
           className="rounded-2xl p-6 overflow-x-auto"
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
         >
-          <h2 className="text-sm font-semibold text-gray-300 mb-6">Network Tree</h2>
+          <h2 className="text-sm font-semibold text-gray-300 mb-6″>Network Tree</h2>
 
           {/* Level 0 — You */}
           <div className="flex flex-col items-center">
@@ -108,23 +108,23 @@ export default function NetworkVisualization() {
               style={{ background: "rgba(245,230,66,0.12)", border: "2px solid rgba(245,230,66,0.4)" }}
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-1"
-                style={{ background: "rgba(245,230,66,0.2)", color: "#F5E642" }}
+                className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-1″
+                style={{ background: "rgba(245,230,66,0.2)", color: "#F5E642″ }}
               >
                 YOU
               </div>
               <p className="text-xs font-bold text-white">Your Name</p>
-              <p className="text-[10px] text-gray-400">Founding Member</p>
+              <p className="text-[10px] text-gray-400″>Founding Member</p>
               <span
                 className="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold"
-                style={{ background: "rgba(245,230,66,0.15)", color: "#F5E642" }}
+                style={{ background: "rgba(245,230,66,0.15)", color: "#F5E642″ }}
               >
                 Founding
               </span>
             </div>
 
             {/* Connector down */}
-            <div className="w-px h-6 bg-white/10" />
+            <div className="w-px h-6 bg-white/10″ />
 
             {/* Level 1 row */}
             <div className="flex gap-4 sm:gap-6 relative">
@@ -135,23 +135,23 @@ export default function NetworkVisualization() {
               />
               {L1_NODES.map((node, i) => (
                 <div key={i} className="flex flex-col items-center">
-                  <div className="w-px h-6 bg-white/10" />
+                  <div className="w-px h-6 bg-white/10″ />
                   <div
-                    className="rounded-xl p-3 text-center w-36"
+                    className="rounded-xl p-3 text-center w-36″
                     style={{ background: "rgba(20,184,166,0.1)", border: "1px solid rgba(20,184,166,0.3)" }}
                   >
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mx-auto mb-1"
-                      style={{ background: "rgba(20,184,166,0.2)", color: "#14b8a6" }}
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mx-auto mb-1″
+                      style={{ background: "rgba(20,184,166,0.2)", color: "#14b8a6″ }}
                     >
                       {node.initials}
                     </div>
                     <p className="text-xs font-semibold text-white">{node.name}</p>
-                    <p className="text-[10px] text-gray-400">{node.trade}</p>
-                    <p className="text-[10px] text-teal-400 font-medium mt-0.5">earning ${node.monthly}/mo</p>
+                    <p className="text-[10px] text-gray-400″>{node.trade}</p>
+                    <p className="text-[10px] text-teal-400 font-medium mt-0.5″>earning ${node.monthly}/mo</p>
                     <div
-                      className="mt-1.5 px-1.5 py-0.5 rounded text-[9px] font-bold inline-flex items-center gap-0.5"
-                      style={{ background: "rgba(245,230,66,0.12)", color: "#F5E642" }}
+                      className="mt-1.5 px-1.5 py-0.5 rounded text-[9px] font-bold inline-flex items-center gap-0.5″
+                      style={{ background: "rgba(245,230,66,0.12)", color: "#F5E642″ }}
                     >
                       <ArrowRight size={8} /> {node.override}% override
                     </div>
@@ -160,26 +160,26 @@ export default function NetworkVisualization() {
                   {/* L2 children */}
                   {L2_NODES[i] && (
                     <>
-                      <div className="w-px h-4 bg-white/10" />
-                      <div className="flex gap-2">
+                      <div className="w-px h-4 bg-white/10″ />
+                      <div className="flex gap-2″>
                         {L2_NODES[i].map((l2, j) => (
                           <div key={j} className="flex flex-col items-center">
                             <div
-                              className="rounded-lg p-2 text-center w-24"
+                              className="rounded-lg p-2 text-center w-24″
                               style={{ background: "rgba(139,92,246,0.08)", border: "1px solid rgba(139,92,246,0.2)" }}
                             >
                               <div
-                                className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold mx-auto mb-0.5"
-                                style={{ background: "rgba(139,92,246,0.2)", color: "#8b5cf6" }}
+                                className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold mx-auto mb-0.5″
+                                style={{ background: "rgba(139,92,246,0.2)", color: "#8b5cf6″ }}
                               >
                                 {l2.initials}
                               </div>
                               <p className="text-[10px] font-medium text-white">{l2.name}</p>
-                              <p className="text-[9px] text-gray-500">{l2.trade}</p>
-                              <p className="text-[9px] text-purple-400">${l2.monthly}/mo</p>
+                              <p className="text-[9px] text-gray-500″>{l2.trade}</p>
+                              <p className="text-[9px] text-purple-400″>${l2.monthly}/mo</p>
                               <div
                                 className="mt-1 px-1 py-0.5 rounded text-[8px] font-bold"
-                                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642" }}
+                                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642″ }}
                               >
                                 4% override
                               </div>
@@ -188,24 +188,24 @@ export default function NetworkVisualization() {
                             {/* L3 child (first L2 per L1 gets one) */}
                             {L3_NODES[i] && j === 0 && (
                               <>
-                                <div className="w-px h-3 bg-white/10" />
+                                <div className="w-px h-3 bg-white/10″ />
                                 {L3_NODES[i].map((l3, k) => (
                                   <div
                                     key={k}
-                                    className="rounded-lg p-1.5 text-center w-20"
+                                    className="rounded-lg p-1.5 text-center w-20″
                                     style={{ background: "rgba(59,130,246,0.07)", border: "1px solid rgba(59,130,246,0.18)" }}
                                   >
                                     <div
-                                      className="w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold mx-auto mb-0.5"
-                                      style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
+                                      className="w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold mx-auto mb-0.5″
+                                      style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6″ }}
                                     >
                                       {l3.initials}
                                     </div>
                                     <p className="text-[9px] text-white">{l3.name}</p>
-                                    <p className="text-[8px] text-blue-400">${l3.monthly}/mo</p>
+                                    <p className="text-[8px] text-blue-400″>${l3.monthly}/mo</p>
                                     <div
                                       className="mt-0.5 px-1 py-0.5 rounded text-[7px] font-bold"
-                                      style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642" }}
+                                      style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642″ }}
                                     >
                                       2% override
                                     </div>
@@ -226,10 +226,10 @@ export default function NetworkVisualization() {
 
         {/* Earnings breakdown table */}
         <div
-          className="rounded-2xl p-6"
+          className="rounded-2xl p-6″
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
         >
-          <h2 className="text-sm font-semibold text-gray-300 mb-4">Earnings Breakdown by Level</h2>
+          <h2 className="text-sm font-semibold text-gray-300 mb-4″>Earnings Breakdown by Level</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -241,22 +241,22 @@ export default function NetworkVisualization() {
                   <th className="text-right pb-3 font-medium">Monthly Income</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5">
+              <tbody className="divide-y divide-white/5″>
                 {LEVEL_EARNINGS.map(({ level, recruits, avg, pct, monthly }) => (
                   <tr key={level}>
-                    <td className="py-3">
+                    <td className="py-3″>
                       <span
                         className="px-2 py-0.5 rounded-full text-xs font-bold"
                         style={{
-                          background: level === "L1" ? "rgba(20,184,166,0.12)" : level === "L2" ? "rgba(139,92,246,0.12)" : "rgba(59,130,246,0.12)",
-                          color: level === "L1" ? "#14b8a6" : level === "L2" ? "#8b5cf6" : "#3b82f6",
+                          background: level === "L1″ ? "rgba(20,184,166,0.12)" : level === "L2" ? "rgba(139,92,246,0.12)" : "rgba(59,130,246,0.12)",
+                          color: level === "L1″ ? "#14b8a6" : level === "L2" ? "#8b5cf6" : "#3b82f6",
                         }}
                       >
                         {level}
                       </span>
                     </td>
                     <td className="py-3 text-right text-white font-semibold">{recruits}</td>
-                    <td className="py-3 text-right text-gray-300">${avg}/mo</td>
+                    <td className="py-3 text-right text-gray-300″>${avg}/mo</td>
                     <td className="py-3 text-right">
                       <span className="text-yellow-400 font-bold">{pct}%</span>
                     </td>
@@ -274,20 +274,20 @@ export default function NetworkVisualization() {
 
         {/* Recruit CTA */}
         <div
-          className="rounded-2xl p-6"
+          className="rounded-2xl p-6″
           style={{ background: "linear-gradient(135deg, rgba(20,184,166,0.12), rgba(20,184,166,0.04))", border: "1px solid rgba(20,184,166,0.3)" }}
         >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4″>
             <div>
               <p className="text-white font-bold text-base">Recruit More — Earn Passive Income</p>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-gray-400 mt-1″>
                 Each direct recruit earning <span className="text-teal-400 font-semibold">$1,000/mo</span> = <span className="text-teal-400 font-semibold">$70/mo</span> passive income for you — forever.
               </p>
             </div>
             <Link href="/dashboard/founding-network">
               <span
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all hover:opacity-90"
-                style={{ background: "#14b8a6", color: "#0A1628" }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all hover:opacity-90″
+                style={{ background: "#14b8a6″, color: "#0A1628" }}
               >
                 Recruit Now <ArrowRight size={14} />
               </span>
@@ -297,11 +297,11 @@ export default function NetworkVisualization() {
 
         {/* Share link */}
         <div
-          className="rounded-2xl p-5"
+          className="rounded-2xl p-5″
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
         >
           <p className="text-xs text-gray-500 mb-2 font-medium uppercase tracking-wider">Your Referral Link</p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3″>
             <code
               className="flex-1 text-sm text-gray-300 bg-white/5 rounded-lg px-3 py-2 font-mono truncate"
               style={{ border: "1px solid rgba(255,255,255,0.08)" }}

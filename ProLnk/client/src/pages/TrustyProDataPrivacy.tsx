@@ -166,7 +166,7 @@ export default function TrustyProDataPrivacy() {
           </ul>
         </div>
 
-        <div style={{ marginTop: 32, background: '#f0fdf4', borderRadius: 12, padding: 24, border: '1px solid #bbf7d0' }}>
+        <div style={{ marginTop: 32, background: '#f0fdf4', borderRadius: 12, padding: 24, border: '1px solid #bbf7d0′ }}>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: '#166534', marginBottom: 8 }}>🔐 Security</h3>
           <p style={{ color: '#15803d', lineHeight: 1.7 }}>
             SOC 2 Type II audit currently in progress. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). Our infrastructure is hosted in US-based data centers with regular penetration testing.

@@ -30,7 +30,7 @@ const scopeLevels: Record<string, { label: string; rooms: string; totalTimeline:
     totalTimeline: '6–12 months',
     phases: [
       { name: 'Design & Permits', order: 1, duration: '4–8 weeks', trades: 'Architect, designer, permit office', note: 'DFW permits for whole-home renos can take 3–6 weeks depending on city and scope' },
-      { name: 'Demo', order: 2, duration: '1–2 weeks', trades: 'Demo crew', note: 'Full demo reveals hidden issues — budget 10–15% contingency for DFW homes built pre-1990' },
+      { name: 'Demo', order: 2, duration: '1–2 weeks', trades: 'Demo crew', note: 'Full demo reveals hidden issues — budget 10–15% contingency for DFW homes built pre-1990′ },
       { name: 'Structural & Foundation', order: 3, duration: '1–4 weeks', trades: 'Structural engineer, foundation company', note: 'Address any foundation or structural issues BEFORE mechanical rough-in' },
       { name: 'All Mechanical Rough-In', order: 4, duration: '4–8 weeks', trades: 'Plumber, HVAC, electrician', note: 'DFW scheduling reality: 3–6 week booking waits per trade. Start scheduling at permit approval.' },
       { name: 'Inspections', order: 5, duration: '1–3 weeks', trades: 'City inspector (multiple visits)', note: 'Rough framing, rough plumbing, rough electrical — 3 separate inspections in most DFW cities' },
@@ -55,8 +55,8 @@ export default function DFWWholeHomeRenovationTimeline() {
           <h2 style={{ fontSize: 15, fontWeight: 600, color: '#F5E642', marginBottom: 14 }}>🔨 Renovation Scope</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {Object.entries(scopeLevels).map(([key, val]) => (
-              <button key={key} onClick={() => setScope(key)} style={{ padding: '12px 18px', borderRadius: 8, border: `2px solid ${scope === key ? '#F5E642' : '#1E3050'}`, background: scope === key ? '#1E3050' : 'transparent', color: scope === key ? '#F5E642' : '#9BAEC8', fontWeight: 600, cursor: 'pointer', fontSize: 13, textAlign: 'left' }}>
-                <div style={{ fontWeight: 700, color: scope === key ? '#F5E642' : '#E8EDF5' }}>{val.label}</div>
+              <button key={key} onClick={() => setScope(key)} style={{ padding: '12px 18px', borderRadius: 8, border: `2px solid ${scope === key ? '#F5E642' : '#1E3050'}`, background: scope === key ? '#1E3050′ : ’transparent', color: scope === key ? '#F5E642′ : '#9BAEC8', fontWeight: 600, cursor: ’pointer', fontSize: 13, textAlign: 'left' }}>
+                <div style={{ fontWeight: 700, color: scope === key ? '#F5E642′ : '#E8EDF5' }}>{val.label}</div>
                 <div style={{ fontSize: 12, color: '#9BAEC8', marginTop: 2 }}>{val.rooms}</div>
               </button>
             ))}
@@ -72,7 +72,7 @@ export default function DFWWholeHomeRenovationTimeline() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {selected.phases.map((p, i) => (
-                <div key={i} style={{ background: '#111E35', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
+                <div key={i} style={{ background: '#111E35', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, flexWrap: 'wrap' }}>
                     <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '2px 10px', fontSize: 11, fontWeight: 700 }}>Phase {p.order}</span>
                     <span style={{ fontWeight: 700, color: '#fff', fontSize: 15 }}>{p.name}</span>

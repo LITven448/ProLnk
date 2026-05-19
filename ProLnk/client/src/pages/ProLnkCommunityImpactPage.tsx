@@ -53,7 +53,7 @@ export default function ProLnkCommunityImpactPage() {
 
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 36 }}>
           {(Object.keys(communityImpacts) as ImpactKey[]).map(k => (
-            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642' : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
+            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642′ : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
               {communityImpacts[k].icon} {communityImpacts[k].label}
             </button>
           ))}

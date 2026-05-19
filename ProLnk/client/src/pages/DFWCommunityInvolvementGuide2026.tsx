@@ -32,7 +32,7 @@ export default function DFWCommunityInvolvementGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 40 }}>
           {stats.map(s => (
             <div key={s.label} style={{ background: '#111e35', borderRadius: 12, padding: '20px 16px', textAlign: 'center', border: '1px solid #1e3a5f' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontWeight: 700, fontSize: 14, marginTop: 4 }}>{s.label}</div>
               <div style={{ color: '#64748b', fontSize: 12, marginTop: 2 }}>{s.sub}</div>
             </div>
@@ -43,7 +43,7 @@ export default function DFWCommunityInvolvementGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
           {interests.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id)}
-              style={{ background: selected === i.id ? '#F5E642' : '#111e35', color: selected === i.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: selected === i.id ? '#F5E642′ : '#111e35', color: selected === i.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
               {i.icon} {i.label}
             </button>
           ))}

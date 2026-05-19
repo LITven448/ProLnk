@@ -35,11 +35,11 @@ export default function DFWBatteryBackupGuide2026() {
           {[
             { icon: '⚡', label: 'Typical Capacity', value: '10–15 kWh' },
             { icon: '🏠', label: 'Essentials Coverage', value: '8–12 hrs' },
-            { icon: '💵', label: 'After 30% ITC', value: '~$8,400' },
+            { icon: '💵', label: 'After 30% ITC', value: '~$8,400′ },
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{card.icon}</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642' }}>{card.value}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>{card.value}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{card.label}</div>
             </div>
           ))}
@@ -49,9 +49,9 @@ export default function DFWBatteryBackupGuide2026() {
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔋 Popular Battery Options</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }}>
             {[
-              { name: 'Tesla Powerwall 3', kWh: '13.5 kWh', price: '~$11,500' },
-              { name: 'Enphase IQ Battery 5P', kWh: '5 kWh', price: '~$5,000' },
-              { name: 'Franklin WH', kWh: '13.6 kWh', price: '~$10,000' },
+              { name: 'Tesla Powerwall 3', kWh: '13.5 kWh', price: '~$11,500′ },
+              { name: 'Enphase IQ Battery 5P', kWh: '5 kWh', price: '~$5,000′ },
+              { name: 'Franklin WH', kWh: '13.6 kWh', price: '~$10,000′ },
             ].map(b => (
               <div key={b.name} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                 <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>{b.name}</div>
@@ -82,7 +82,7 @@ export default function DFWBatteryBackupGuide2026() {
                 { label: 'Est. Cost (after ITC)', value: `$${afterItc.toLocaleString()}` },
               ].map(r => (
                 <div key={r.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{r.value}</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{r.value}</div>
                   <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4 }}>{r.label}</div>
                 </div>
               ))}

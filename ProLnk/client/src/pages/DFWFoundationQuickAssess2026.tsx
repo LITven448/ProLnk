@@ -15,9 +15,9 @@ export default function DFWFoundationQuickAssess2026() {
   const results: Record<string, { label: string; detail: string; action: string }> = {
     'ext-doors': { label: '🚪 Exterior Door Issues', detail: 'Door frame misalignment often appears before visible cracks. Note which corners are tight vs. which have gaps.', action: 'Document with photos. If more than one door affected, call ProLnk for foundation assessment.' },
     'int-doors': { label: '🚪 Interior Door Issues', detail: 'Self-opening or heavy-closing doors suggest the floor plane has shifted. Mark the date you first noticed.', action: 'If combined with wall cracks, this is a pattern — ProLnk foundation assessment recommended.' },
-    'wall-cracks': { label: '🧱 Wall Crack Found', detail: 'Hairline cracks under 1/16" are usually cosmetic. Diagonal cracks wider than a quarter = structural concern.', action: 'Photograph with a coin for scale. Call ProLnk if crack is diagonal, wide, or growing.' },
-    'floor-level': { label: '📐 Floor Not Level', detail: 'Slope over 1" per 8 feet is considered significant in DFW engineering standards.', action: 'ProLnk can connect you with a licensed engineer for a level survey — often free initial assessment.' },
-    'soil-perim': { label: '🌱 Soil Gap Found', detail: 'DFW clay soil expands and contracts with moisture. Dry soil pulling away stresses the slab edge.', action: 'Install soaker hoses 18" from foundation. If gaps are over 2", call ProLnk for watering protocol.' },
+    'wall-cracks': { label: '🧱 Wall Crack Found', detail: 'Hairline cracks under 1/16″ are usually cosmetic. Diagonal cracks wider than a quarter = structural concern.', action: 'Photograph with a coin for scale. Call ProLnk if crack is diagonal, wide, or growing.' },
+    'floor-level': { label: '📐 Floor Not Level', detail: 'Slope over 1″ per 8 feet is considered significant in DFW engineering standards.', action: 'ProLnk can connect you with a licensed engineer for a level survey — often free initial assessment.' },
+    'soil-perim': { label: '🌱 Soil Gap Found', detail: 'DFW clay soil expands and contracts with moisture. Dry soil pulling away stresses the slab edge.', action: 'Install soaker hoses 18″ from foundation. If gaps are over 2″, call ProLnk for watering protocol.' },
   };
 
   const checkedCount = Object.values(checks).filter(Boolean).length;
@@ -35,7 +35,7 @@ export default function DFWFoundationQuickAssess2026() {
             <div key={item.id} style={{ background: '#1e2d45', borderRadius: '12px', padding: '16px', marginBottom: '10px', display: 'flex', gap: '14px', alignItems: 'flex-start', cursor: 'pointer' }}
               onClick={() => setSelected(selected === item.id ? '' : item.id)}>
               <div onClick={e => { e.stopPropagation(); setChecks(c => ({ ...c, [item.id]: !c[item.id] })); }}
-                style={{ width: '24px', height: '24px', borderRadius: '6px', border: '2px solid', borderColor: checks[item.id] ? '#F5E642' : '#475569', background: checks[item.id] ? '#F5E642' : 'transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#0A1628', fontSize: '14px' }}>
+                style={{ width: '24px', height: '24px', borderRadius: '6px', border: '2px solid', borderColor: checks[item.id] ? '#F5E642′ : '#475569', background: checks[item.id] ? '#F5E642' : ’transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#0A1628', fontSize: '14px' }}>
                 {checks[item.id] ? '✓' : ''}
               </div>
               <div>

@@ -36,7 +36,7 @@ export default function ProLnkDataPrivacy() {
   ];
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827' }}>
+    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827′ }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 12 }}>
           <span style={{ background: '#dcfce7', color: '#15803d', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
@@ -47,7 +47,7 @@ export default function ProLnkDataPrivacy() {
           How ProLnk<br />Protects Your Data
         </h1>
         <p style={{ fontSize: 18, color: '#6b7280', marginBottom: 24 }}>
-          Your data belongs to you. We collect only what's needed, protect it with enterprise-grade security, and never sell it. Here's everything, plainly explained.
+          Your data belongs to you. We collect only what's needed, protect it with enterprise-grade security, and never sell it. Here’s everything, plainly explained.
         </p>
 
         <div style={{ display: 'flex', gap: 2, background: '#e5e7eb', borderRadius: 10, padding: 4, marginBottom: 32, flexWrap: 'wrap' }}>
@@ -58,7 +58,7 @@ export default function ProLnkDataPrivacy() {
               style={{
                 flex: 1, padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
                 background: activeTab === tab.id ? '#fff' : 'transparent',
-                color: activeTab === tab.id ? '#111827' : '#6b7280',
+                color: activeTab === tab.id ? '#111827′ : '#6b7280',
                 boxShadow: activeTab === tab.id ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
                 whiteSpace: 'nowrap',
               }}
@@ -70,7 +70,7 @@ export default function ProLnkDataPrivacy() {
 
         {activeTab === 'collect' && (
           <div>
-            <p style={{ fontSize: 14, color: '#6b7280', marginBottom: 20 }}>We collect only what's necessary to deliver ProLnk's matching service. Here's each category, what's collected, and why.</p>
+            <p style={{ fontSize: 14, color: '#6b7280', marginBottom: 20 }}>We collect only what's necessary to deliver ProLnk’s matching service. Here’s each category, what’s collected, and why.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {DATA_COLLECTED.map(cat => (
                 <div key={cat.category} style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 12, padding: 24 }}>
@@ -80,7 +80,7 @@ export default function ProLnkDataPrivacy() {
                       <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>{cat.category}</div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 10 }}>
                         {cat.items.map(item => (
-                          <span key={item} style={{ background: '#f3f4f6', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#374151' }}>{item}</span>
+                          <span key={item} style={{ background: '#f3f4f6', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#374151′ }}>{item}</span>
                         ))}
                       </div>
                       <div style={{ fontSize: 13, color: '#9ca3af' }}>Why: {cat.why}</div>

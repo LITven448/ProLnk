@@ -31,7 +31,7 @@ export default function DFWInterestOnlyMortgageGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>When IO loans make sense — and when they do not — in the DFW market.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📋 How Interest-Only Loans Work</h2>
           <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.6, marginBottom: 12 }}>During the IO period (typically 5–10 years), you pay only the interest — no principal reduction. After the IO period ends, the loan fully amortizes over the remaining term, causing a significant payment increase.</p>
           <div style={{ background: '#FEF3C7', border: '1px solid #F59E0B', borderRadius: 8, padding: 12 }}>
@@ -39,7 +39,7 @@ export default function DFWInterestOnlyMortgageGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>✅ When IO Loans Make Sense in DFW</h2>
           {[
             'Investment properties — maximize cash flow during hold period',
@@ -54,7 +54,7 @@ export default function DFWInterestOnlyMortgageGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🏦 DFW Lender Requirements</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -63,7 +63,7 @@ export default function DFWInterestOnlyMortgageGuide() {
               { label: 'Max LTV', value: '70–80%' },
               { label: 'Reserve Requirement', value: '12–24 months' },
             ].map(item => (
-              <div key={item.label} style={{ background: '#F9FAFB', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
+              <div key={item.label} style={{ background: '#F9FAFB', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
                 <div style={{ color: '#64748B', fontSize: 12, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ color: '#0A1628', fontSize: 16, fontWeight: 700 }}>{item.value}</div>
               </div>

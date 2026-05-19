@@ -17,7 +17,7 @@ function getStatus(brand: string, date: string) {
   if (date === 'More than 60 days ago — not registered') {
     return { urgent: true, message: 'Registration window has closed for most brands. Call the manufacturer — some allow late registration with proof of install date. Act immediately.', warranty: '5-year parts (unregistered default)', gain: 'You may lose 5 years of parts coverage.' };
   }
-  const daysLeft = date === 'Installed today' ? 60 : date === 'Less than 30 days ago' ? '~30-59' : '~1-30';
+  const daysLeft = date === 'Installed today' ? 60 : date === 'Less than 30 days ago' ? '~30-59′ : '~1-30';
   return { urgent: false, message: `Register now at ${b.url}`, warranty: '10-year parts when registered in time', gain: 'Registration adds 5 additional years of parts warranty at no cost.', daysLeft, steps: b.steps };
 }
 
@@ -35,7 +35,7 @@ export default function DFWHVACWarrantyRegistration() {
 
         <div style={{ background: '#ef444420', border: '1px solid #ef4444', borderRadius: 10, padding: '14px 20px', marginBottom: 32 }}>
           <span style={{ color: '#ef4444', fontWeight: 700 }}>⏰ Critical: </span>
-          <span style={{ color: '#fca5a5' }}>Register within 60 days of DFW installation. Missing this window costs you 5 years of manufacturer parts coverage.</span>
+          <span style={{ color: '#fca5a5′ }}>Register within 60 days of DFW installation. Missing this window costs you 5 years of manufacturer parts coverage.</span>
         </div>
 
         <div style={{ display: 'grid', gap: 10, marginBottom: 40 }}>
@@ -50,17 +50,17 @@ export default function DFWHVACWarrantyRegistration() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📋 Check Your DFW Warranty Status</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📋 Check Your DFW Warranty Status</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>HVAC Brand</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>HVAC Brand</label>
               <select value={brand} onChange={e => setBrand(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select brand...</option>
                 {brands.map(b => <option key={b.name} value={b.name}>{b.name}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>DFW Installation Date</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>DFW Installation Date</label>
               <select value={date} onChange={e => setDate(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select timeframe...</option>
                 {installDates.map(d => <option key={d} value={d}>{d}</option>)}
@@ -69,7 +69,7 @@ export default function DFWHVACWarrantyRegistration() {
           </div>
           {status && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: `4px solid ${status.urgent ? '#ef4444' : '#F5E642'}` }}>
-              <div style={{ color: status.urgent ? '#ef4444' : '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 10 }}>{status.urgent ? '🚨 URGENT: Act Now' : '✅ Register Immediately'}</div>
+              <div style={{ color: status.urgent ? '#ef4444′ : '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 10 }}>{status.urgent ? '🚨 URGENT: Act Now' : '✅ Register Immediately'}</div>
               <div style={{ color: '#94a3b8', marginBottom: 8, fontSize: 14 }}>{status.message}</div>
               <div style={{ marginBottom: 4 }}><span style={{ color: '#94a3b8', fontSize: 13 }}>Coverage: </span><span style={{ color: '#fff' }}>{status.warranty}</span></div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{status.gain}</div>

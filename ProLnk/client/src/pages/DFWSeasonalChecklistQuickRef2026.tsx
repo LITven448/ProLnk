@@ -43,7 +43,7 @@ const seasons = [
       { icon: '🔥', task: 'HVAC heating mode check before first cold snap' },
       { icon: '🍃', task: 'Gutter cleaning — oak leaves clog fast in Oct/Nov' },
       { icon: '🪟', task: 'Exterior caulk & weatherstrip before winter' },
-      { icon: '💧', task: 'Irrigation winterization — drain lines by Nov 15' },
+      { icon: '💧', task: 'Irrigation winterization — drain lines by Nov 15′ },
       { icon: '🏠', task: 'Chimney inspection if you have a fireplace' },
     ],
   },
@@ -92,14 +92,14 @@ export default function DFWSeasonalChecklistQuickRef2026() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
             <span style={{ fontSize: '32px' }}>{season.icon}</span>
             <div>
-              <h2 style={{ color: season.color, fontSize: '20px', margin: 0, fontWeight: '700' }}>{season.name} Checklist</h2>
+              <h2 style={{ color: season.color, fontSize: '20px', margin: 0, fontWeight: '700′ }}>{season.name} Checklist</h2>
               <div style={{ color: '#475569', fontSize: '13px' }}>{season.months} • DFW-specific tasks</div>
             </div>
           </div>
           {season.tasks.map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: '12px', marginBottom: '14px', alignItems: 'flex-start', padding: '10px', backgroundColor: '#0A1628', borderRadius: '8px' }}>
               <span style={{ fontSize: '20px', flexShrink: 0 }}>{t.icon}</span>
-              <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>{t.task}</span>
+              <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5′ }}>{t.task}</span>
             </div>
           ))}
         </div>

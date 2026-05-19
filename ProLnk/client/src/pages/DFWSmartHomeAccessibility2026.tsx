@@ -57,17 +57,17 @@ export default function DFWSmartHomeAccessibility2026() {
           {[{ label: 'Typical Install Cost', value: '$500–$3K', icon: '💰' }, { label: 'Setup Time', value: '1 Day', icon: '⚡' }, { label: 'Voice Platforms', value: '3 Major', icon: '🎙️' }, { label: 'Falls Prevented', value: 'Up to 40%', icon: '🛡️' }].map(s => (
             <div key={s.label} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>What is your primary accessibility need?</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>What is your primary accessibility need?</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {needs.map((n, i) => (
             <button key={i} onClick={() => setNeedIdx(i === needIdx ? null : i)}
-              style={{ background: needIdx === i ? '#F5E642' : '#132036', color: needIdx === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: needIdx === i ? '#F5E642′ : '#132036', color: needIdx === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{n.icon}</div>
               {n.need}
             </button>
@@ -76,10 +76,10 @@ export default function DFWSmartHomeAccessibility2026() {
 
         {needIdx !== null && (
           <div style={{ marginBottom: '2rem' }}>
-            <h3 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Recommended Solutions: {needs[needIdx].need}</h3>
+            <h3 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Recommended Solutions: {needs[needIdx].need}</h3>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               {needs[needIdx].solutions.map((s, i) => (
-                <div key={i} style={{ background: '#132036', borderRadius: 10, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+                <div key={i} style={{ background: '#132036', borderRadius: 10, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
                   <div style={{ fontWeight: 700, marginBottom: 6 }}>{s.device}</div>
                   <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}>{s.detail}</div>
                 </div>

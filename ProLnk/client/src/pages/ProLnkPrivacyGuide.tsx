@@ -36,38 +36,38 @@ export default function ProLnkPrivacyGuide() {
   const [activeConcern, setActiveConcern] = useState(concerns[0]);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🛡️</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", marginBottom: 8 }}>Privacy Guide</h1>
-          <p style={{ color: "#94A3B8", fontSize: 16 }}>Plain English explanation of how ProLnk protects your data</p>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, marginBottom: 8 }}>Privacy Guide</h1>
+          <p style={{ color: "#94A3B8″, fontSize: 16 }}>Plain English explanation of how ProLnk protects your data</p>
         </div>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 32, justifyContent: "center" }}>
           {concerns.map((c) => (
             <button key={c} onClick={() => setActiveConcern(c)}
               style={{ padding: "8px 18px", borderRadius: 20, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13,
-                background: activeConcern === c ? "#F5E642" : "#1E2D45", color: activeConcern === c ? "#0A1628" : "#94A3B8" }}>
+                background: activeConcern === c ? "#F5E642″ : "#1E2D45", color: activeConcern === c ? "#0A1628" : "#94A3B8" }}>
               {c}
             </button>
           ))}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {(answers[activeConcern] || []).map((item, i) => (
-            <div key={i} style={{ background: "#1E2D45", borderRadius: 12, padding: 24, display: "flex", gap: 16, alignItems: "flex-start" }}>
+            <div key={i} style={{ background: "#1E2D45″, borderRadius: 12, padding: 24, display: "flex", gap: 16, alignItems: "flex-start" }}>
               <div style={{ fontSize: 32, flexShrink: 0 }}>{item.icon}</div>
               <div>
-                <p style={{ fontWeight: 700, color: "#F5E642", marginBottom: 6 }}>{item.title}</p>
-                <p style={{ color: "#94A3B8", fontSize: 14, lineHeight: 1.7 }}>{item.body}</p>
+                <p style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 6 }}>{item.title}</p>
+                <p style={{ color: "#94A3B8″, fontSize: 14, lineHeight: 1.7 }}>{item.body}</p>
               </div>
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 48, background: "#1E2D45", borderRadius: 16, padding: 28, textAlign: "center" }}>
+        <div style={{ marginTop: 48, background: "#1E2D45″, borderRadius: 16, padding: 28, textAlign: "center" }}>
           <div style={{ fontSize: 32, marginBottom: 10 }}>📬</div>
           <p style={{ fontWeight: 700, color: "#fff", marginBottom: 6 }}>Privacy questions or requests?</p>
-          <p style={{ color: "#94A3B8", fontSize: 13, marginBottom: 20 }}>Email privacy@prolnk.io — we respond within 2 business days</p>
-          <button style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, cursor: "pointer" }}>
+          <p style={{ color: "#94A3B8″, fontSize: 13, marginBottom: 20 }}>Email privacy@prolnk.io — we respond within 2 business days</p>
+          <button style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 28px", fontWeight: 700, cursor: "pointer" }}>
             Submit a Privacy Request
           </button>
         </div>

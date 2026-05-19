@@ -55,7 +55,7 @@ export default function DFWOutletGuide() {
           ].map(({ label, value, setter, options }) => (
             <div key={label} style={{ marginBottom: '1rem' }}>
               <div style={{ color: '#94a3b8', marginBottom: '0.4rem' }}>{label}</div>
-              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155' }}>
+              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155′ }}>
                 <option value="">Select...</option>
                 {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
               </select>
@@ -63,11 +63,11 @@ export default function DFWOutletGuide() {
           ))}
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', width: '100%' }}>Check Requirements</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: '#001a2e', borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: '#001a2e', borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>Required: {result.type}</div>
               <div style={{ display: 'flex', gap: '1rem', margin: '0.5rem 0', flexWrap: 'wrap' }}>
-                <span style={{ color: result.permit ? '#f87171' : '#4ade80' }}>{result.permit ? '📋 Permit Required' : '✅ No Permit Needed'}</span>
-                <span style={{ color: result.diy ? '#4ade80' : '#f87171' }}>{result.diy ? '🔧 DIY Possible' : '👷 Electrician Recommended'}</span>
+                <span style={{ color: result.permit ? '#f87171′ : '#4ade80' }}>{result.permit ? '📋 Permit Required' : '✅ No Permit Needed'}</span>
+                <span style={{ color: result.diy ? '#4ade80′ : '#f87171' }}>{result.diy ? '🔧 DIY Possible' : '👷 Electrician Recommended'}</span>
               </div>
               <div style={{ color: '#cbd5e1', marginBottom: '0.4rem' }}>💰 {result.cost}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.note}</div>
@@ -77,7 +77,7 @@ export default function DFWOutletGuide() {
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🏘️ DFW Permit Note</div>
-          <div style={{ color: '#94a3b8' }}>Adding any new circuit or outlet in DFW (Dallas, Fort Worth, Plano, Frisco, McKinney) requires a permit and inspection. Replacing an existing outlet in-place typically does not. When in doubt, call your city's building department.</div>
+          <div style={{ color: '#94a3b8′ }}>Adding any new circuit or outlet in DFW (Dallas, Fort Worth, Plano, Frisco, McKinney) requires a permit and inspection. Replacing an existing outlet in-place typically does not. When in doubt, call your city’s building department.</div>
         </div>
       </div>
     </div>

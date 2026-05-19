@@ -21,7 +21,7 @@ const DISPUTE_STEPS = [
   { step: 2, action: 'Review your CC&Rs — confirm the rule actually exists and applies to your situation' },
   { step: 3, action: 'Submit a written response within the notice deadline (typically 30 days)' },
   { step: 4, action: 'Request a hearing before the board if the violation stands' },
-  { step: 5, action: 'File with the Texas Office of Public Insurance Counsel if HOA violates §209.007' },
+  { step: 5, action: 'File with the Texas Office of Public Insurance Counsel if HOA violates §209.007′ },
   { step: 6, action: 'Consult a Texas HOA attorney — many offer free 30-min consultations' },
 ];
 
@@ -53,8 +53,8 @@ export default function DFWHOAGuide() {
   const calculate = () => setResult(getValueScore(monthlyFee, selectedAmenities));
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: '#F5E642', letterSpacing: '2px', marginBottom: '12px' }}>🏘️ DFW HOMEOWNER SERIES</div>
           <h1 style={{ fontSize: '36px', fontWeight: '800', color: '#FFFFFF', margin: '0 0 12px' }}>DFW HOA Guide</h1>
@@ -73,11 +73,11 @@ export default function DFWHOAGuide() {
               <div key={i} style={{ background: '#112240', borderRadius: '10px', padding: '16px 20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                   <span style={{ color: '#22C55E', fontSize: '16px', marginTop: '2px' }}>✅</span>
-                  <span style={{ fontSize: '14px', color: '#CBD5E1' }}>{r.can}</span>
+                  <span style={{ fontSize: '14px', color: '#CBD5E1′ }}>{r.can}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                   <span style={{ color: '#EF4444', fontSize: '16px', marginTop: '2px' }}>❌</span>
-                  <span style={{ fontSize: '14px', color: '#CBD5E1' }}>{r.cannot}</span>
+                  <span style={{ fontSize: '14px', color: '#CBD5E1′ }}>{r.cannot}</span>
                 </div>
               </div>
             ))}
@@ -88,10 +88,10 @@ export default function DFWHOAGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#F5E642', marginBottom: '20px' }}>💵 DFW HOA Fee Ranges</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
             {HOA_FEES.map((f, i) => (
-              <div key={i} style={{ background: '#112240', borderRadius: '10px', padding: '20px', borderTop: '3px solid #F5E642' }}>
+              <div key={i} style={{ background: '#112240', borderRadius: '10px', padding: '20px', borderTop: '3px solid #F5E642′ }}>
                 <div style={{ fontSize: '20px', fontWeight: '800', color: '#F5E642', marginBottom: '4px' }}>{f.range}</div>
                 <div style={{ fontSize: '14px', fontWeight: '600', color: '#FFFFFF', marginBottom: '8px' }}>{f.type}</div>
-                <div style={{ fontSize: '12px', color: '#94A3B8' }}>{f.covers}</div>
+                <div style={{ fontSize: '12px', color: '#94A3B8′ }}>{f.covers}</div>
               </div>
             ))}
           </div>
@@ -113,19 +113,19 @@ export default function DFWHOAGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#F5E642', marginBottom: '8px' }}>🧮 HOA Value Assessment</h2>
           <p style={{ fontSize: '14px', color: '#94A3B8', marginBottom: '24px' }}>Enter your monthly fee and check what amenities are included to get your value score.</p>
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#CBD5E1' }}>Monthly HOA Fee: <strong style={{ color: '#F5E642' }}>${monthlyFee}</strong></label>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#CBD5E1′ }}>Monthly HOA Fee: <strong style={{ color: '#F5E642' }}>${monthlyFee}</strong></label>
           <input type="range" min={30} max={800} step={10} value={monthlyFee} onChange={e => setMonthlyFee(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642' }} />
+            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642′ }} />
 
           <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', marginBottom: '10px', fontSize: '14px', color: '#CBD5E1' }}>Included Amenities:</label>
+            <label style={{ display: 'block', marginBottom: '10px', fontSize: '14px', color: '#CBD5E1′ }}>Included Amenities:</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {amenityOptions.map(a => (
                 <button key={a} onClick={() => toggleAmenity(a)}
                   style={{ padding: '6px 14px', borderRadius: '20px', border: '1px solid', fontSize: '13px', cursor: 'pointer',
-                    background: selectedAmenities.includes(a) ? '#F5E642' : 'transparent',
-                    color: selectedAmenities.includes(a) ? '#0A1628' : '#94A3B8',
-                    borderColor: selectedAmenities.includes(a) ? '#F5E642' : '#334155' }}>
+                    background: selectedAmenities.includes(a) ? '#F5E642′ : ’transparent',
+                    color: selectedAmenities.includes(a) ? '#0A1628′ : '#94A3B8',
+                    borderColor: selectedAmenities.includes(a) ? '#F5E642′ : '#334155' }}>
                   {a}
                 </button>
               ))}
@@ -139,7 +139,7 @@ export default function DFWHOAGuide() {
 
           {result && (
             <div style={{ marginTop: '24px', padding: '20px', background: '#0A1628', borderRadius: '10px' }}>
-              <div style={{ fontSize: '32px', fontWeight: '800', color: '#F5E642' }}>{result.score}/100 — {result.label}</div>
+              <div style={{ fontSize: '32px', fontWeight: '800', color: '#F5E642′ }}>{result.score}/100 — {result.label}</div>
               <div style={{ marginTop: '16px' }}>
                 <div style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '8px' }}>💡 Money-Saving Tips:</div>
                 {result.tips.map((t, i) => <div key={i} style={{ fontSize: '14px', color: '#CBD5E1', marginBottom: '6px' }}>• {t}</div>)}

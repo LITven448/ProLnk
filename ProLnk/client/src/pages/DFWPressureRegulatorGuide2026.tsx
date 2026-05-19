@@ -39,11 +39,11 @@ export default function DFWPressureRegulatorGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🔍 Pressure Symptoms → PRV Assessment</div>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#8899AA', fontSize: '0.85rem', marginBottom: '0.4rem' }}>What Are You Experiencing?</div>
-            <select value={symptom} onChange={(e) => setSymptom(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5' }}>
+            <select value={symptom} onChange={(e) => setSymptom(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5′ }}>
               {symptoms.map((s) => <option key={s}>{s}</option>)}
             </select>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#E8EDF5' }}>{assessments[symptom]}</div>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#E8EDF5′ }}>{assessments[symptom]}</div>
         </div>
       </div>
     </div>

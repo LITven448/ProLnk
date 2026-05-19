@@ -26,16 +26,16 @@ export default function DFWRoofSafetyScore() {
   const maxScore = questions.length * 10;
   const pct = Math.round((totalScore / maxScore) * 100);
   const grade = pct >= 90 ? 'A' : pct >= 75 ? 'B' : pct >= 60 ? 'C' : pct >= 45 ? 'D' : 'F';
-  const gradeColor = pct >= 90 ? '#22c55e' : pct >= 75 ? '#84cc16' : pct >= 60 ? '#eab308' : pct >= 45 ? '#f97316' : '#ef4444';
+  const gradeColor = pct >= 90 ? '#22c55e' : pct >= 75 ? '#84cc16′ : pct >= 60 ? '#eab308' : pct >= 45 ? '#f97316' : '#ef4444';
 
   const hailRisk = pct >= 75 ? 'Low' : pct >= 55 ? 'Moderate' : 'High';
-  const hailColor = hailRisk === 'Low' ? '#22c55e' : hailRisk === 'Moderate' ? '#eab308' : '#ef4444';
+  const hailColor = hailRisk === 'Low' ? '#22c55e' : hailRisk === 'Moderate' ? '#eab308′ : '#ef4444';
 
   const dfwRisks = [
     answers[8] === 6 && 'Standard 3-tab shingles — DFW hail alley demands Class 4 impact-resistant shingles',
     answers[3] <= 2 && 'Hail damage not addressed — DFW averages 8+ hail events/year in Collin/Denton counties',
     answers[5] <= 1 && 'Poor attic ventilation — DFW summer heat (110°F+) destroys roof decking from below',
-    answers[6] <= 3 && 'Failing flashing — Dallas-area storms drive 3"+ rain events that exploit every gap',
+    answers[6] <= 3 && 'Failing flashing — Dallas-area storms drive 3″+ rain events that exploit every gap',
   ].filter(Boolean);
 
   const priorities = questions.filter(q => (answers[q.id] ?? 10) < 5).map(q => q.text);
@@ -45,19 +45,19 @@ export default function DFWRoofSafetyScore() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 40 }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0' }}>DFW Roof Safety Score</h1>
-          <p style={{ color: '#94a3b8' }}>15-question hail alley roof assessment</p>
+          <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0′ }}>DFW Roof Safety Score</h1>
+          <p style={{ color: '#94a3b8′ }}>15-question hail alley roof assessment</p>
         </div>
 
         {!submitted ? (
           <>
             {questions.map((q, qi) => (
               <div key={q.id} style={{ background: '#0f2038', borderRadius: 12, padding: 20, marginBottom: 16 }}>
-                <p style={{ fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>{qi + 1}. {q.text}</p>
+                <p style={{ fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>{qi + 1}. {q.text}</p>
                 <div style={{ display: 'grid', gap: 8 }}>
                   {q.options.map((opt, oi) => (
                     <button key={oi} onClick={() => setAnswers(prev => ({ ...prev, [q.id]: q.scores[oi] }))}
-                      style={{ background: answers[q.id] === q.scores[oi] ? '#F5E642' : '#1e3a5f', color: answers[q.id] === q.scores[oi] ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 500 }}>
+                      style={{ background: answers[q.id] === q.scores[oi] ? '#F5E642′ : '#1e3a5f', color: answers[q.id] === q.scores[oi] ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 500 }}>
                       {opt}
                     </button>
                   ))}
@@ -73,10 +73,10 @@ export default function DFWRoofSafetyScore() {
           <div style={{ textAlign: 'center' }}>
             <div style={{ background: '#0f2038', borderRadius: 16, padding: 32, marginBottom: 24 }}>
               <div style={{ fontSize: 72, fontWeight: 900, color: gradeColor }}>{grade}</div>
-              <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642' }}>{pct}%</div>
-              <p style={{ color: '#94a3b8' }}>{totalScore} / {maxScore} points</p>
+              <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642′ }}>{pct}%</div>
+              <p style={{ color: '#94a3b8′ }}>{totalScore} / {maxScore} points</p>
               <div style={{ marginTop: 16, padding: '8px 20px', background: '#0A1628', borderRadius: 8, display: 'inline-block' }}>
-                <span style={{ color: '#94a3b8' }}>Hail Alley Risk: </span>
+                <span style={{ color: '#94a3b8′ }}>Hail Alley Risk: </span>
                 <span style={{ color: hailColor, fontWeight: 700 }}>{hailRisk}</span>
               </div>
             </div>

@@ -31,8 +31,8 @@ export default function DFWRadonGuide2026() {
           {[['🎯','EPA Action Level','4 pCi/L — test and mitigate'],['🧪','Test Kit Cost','$15–$25 at hardware stores'],['🔧','Mitigation Cost','$800–$2,500 installed']].map(([icon, title, sub]) => (
             <div key={title} style={{ background: '#1a2744', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24 }}>{icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{title}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>{sub}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{title}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -40,13 +40,13 @@ export default function DFWRadonGuide2026() {
         <div style={{ background: '#1a2744', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🗺️ DFW Zip Zone Radon Lookup</h2>
           <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 14 }}>Enter your DFW zip code:</label>
-          <input type='text' value={zip} onChange={e => setZip(e.target.value.slice(0, 5))} placeholder='e.g. 75034' maxLength={5}
+          <input type='text' value={zip} onChange={e => setZip(e.target.value.slice(0, 5))} placeholder='e.g. 75034′ maxLength={5}
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155', fontSize: 15, marginBottom: 16, boxSizing: 'border-box' }} />
           {result && (
             <div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: `4px solid ${result.color}` }}>
                 <div style={{ fontWeight: 800, color: result.color, marginBottom: 4 }}>{result.risk}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8' }}>{result.pCi}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{result.pCi}</div>
               </div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Recommendations:</div>
               {result.rec.map(r => <div key={r} style={{ fontSize: 14, color: '#cbd5e1', marginBottom: 6 }}>• {r}</div>)}
@@ -60,7 +60,7 @@ export default function DFWRadonGuide2026() {
           {[['1️⃣','Buy Test Kit','Charcoal canister from hardware store (~$15)'],['2️⃣','Place in Lowest Level','Basement or lowest livable floor, closed windows 12 hrs prior'],['3️⃣','Leave 2–7 Days','Short-term test; long-term test = 90+ days (more accurate)'],['4️⃣','Mail to Lab','Lab processes and returns digital results in 3–5 days'],['5️⃣','Act on Results','<4 pCi/L: retest in 2 yrs. ≥4 pCi/L: install mitigation system']].map(([num, title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <div style={{ fontSize: 20, minWidth: 28 }}>{num}</div>
-              <div><div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642' }}>{title}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
+              <div><div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642′ }}>{title}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
             </div>
           ))}
         </div>

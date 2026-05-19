@@ -43,7 +43,7 @@ export default function DFWRentARoomGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32, color: '#fff' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🏠</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>Rent a Room in Your DFW Home</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>Rent a Room in Your DFW Home</h1>
           <p style={{ margin: 0, opacity: 0.85, lineHeight: 1.6 }}>Texas law makes room rentals straightforward for primary residence owners. No landlord license required — but you do need to handle taxes, insurance, and a solid rental agreement.</p>
         </div>
 
@@ -72,8 +72,8 @@ export default function DFWRentARoomGuide() {
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>Rooms Available</label>
               <select value={rooms} onChange={e => setRooms(e.target.value)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 15 }}>
                 <option value="">Select rooms</option>
-                <option value="1">1 Room</option>
-                <option value="2">2 Rooms</option>
+                <option value="1″>1 Room</option>
+                <option value="2″>2 Rooms</option>
                 <option value="3+">3+ Rooms</option>
               </select>
             </div>

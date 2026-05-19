@@ -57,14 +57,14 @@ export default function DFWBuyerVsSellerMarketGuide() {
   };
 
   const marketLabel = marketType === 'seller' ? "🔥 Seller's Market" : marketType === 'balanced' ? "⚖️ Balanced Market" : "🏷️ Buyer's Market";
-  const marketColor = marketType === 'seller' ? '#f97316' : marketType === 'balanced' ? '#eab308' : '#22c55e';
+  const marketColor = marketType === 'seller' ? '#f97316′ : marketType === ’balanced' ? '#eab308′ : '#22c55e';
 
   return (
     <div style={{ background: '#0f0f0f', minHeight: '100vh', color: '#f1f5f9', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: 1 }}>DFW Market Intelligence</div>
         <h1 style={{ fontSize: 36, fontWeight: 700, color: '#f1f5f9', marginBottom: 16, lineHeight: 1.2 }}>
-          DFW Buyer's vs. Seller's Market — How to Read the Market Right Now
+          DFW Buyer's vs. Seller’s Market — How to Read the Market Right Now
         </h1>
         <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 48, lineHeight: 1.7 }}>
           Reading the DFW market correctly determines your entire strategy — whether you're buying or selling. Use this guide to understand what the numbers mean and exactly what to do about them.
@@ -79,8 +79,8 @@ export default function DFWBuyerVsSellerMarketGuide() {
                 label: 'Months of Inventory',
                 desc: 'How long it would take to sell all homes if no new listings appeared.',
                 ranges: [
-                  { range: '< 3 months', label: "Strong Seller's Market", color: '#f97316' },
-                  { range: '3–6 months', label: 'Balanced Market', color: '#eab308' },
+                  { range: '< 3 months', label: "Strong Seller's Market", color: '#f97316′ },
+                  { range: '3–6 months', label: 'Balanced Market', color: '#eab308′ },
                   { range: '> 6 months', label: "Buyer's Market", color: '#22c55e' },
                 ],
               },
@@ -88,8 +88,8 @@ export default function DFWBuyerVsSellerMarketGuide() {
                 label: 'Days on Market (DOM)',
                 desc: 'Average time from listing to contract.',
                 ranges: [
-                  { range: '< 20 days', label: "Seller's Market", color: '#f97316' },
-                  { range: '20–45 days', label: 'Balanced', color: '#eab308' },
+                  { range: '< 20 days', label: "Seller's Market", color: '#f97316′ },
+                  { range: '20–45 days', label: 'Balanced', color: '#eab308′ },
                   { range: '> 45 days', label: "Buyer's Market", color: '#22c55e' },
                 ],
               },
@@ -97,8 +97,8 @@ export default function DFWBuyerVsSellerMarketGuide() {
                 label: 'List-to-Sale Price Ratio',
                 desc: 'What percent of list price homes actually sell for.',
                 ranges: [
-                  { range: '> 99%', label: "Seller's Market", color: '#f97316' },
-                  { range: '95–99%', label: 'Balanced', color: '#eab308' },
+                  { range: '> 99%', label: "Seller's Market", color: '#f97316′ },
+                  { range: '95–99%', label: 'Balanced', color: '#eab308′ },
                   { range: '< 95%', label: "Buyer's Market", color: '#22c55e' },
                 ],
               },
@@ -106,8 +106,8 @@ export default function DFWBuyerVsSellerMarketGuide() {
                 label: 'Price Reductions',
                 desc: 'Percentage of active listings that have cut their price.',
                 ranges: [
-                  { range: '< 15% of listings', label: "Seller's Market", color: '#f97316' },
-                  { range: '15–30%', label: 'Balanced', color: '#eab308' },
+                  { range: '< 15% of listings', label: "Seller's Market", color: '#f97316′ },
+                  { range: '15–30%', label: 'Balanced', color: '#eab308′ },
                   { range: '> 30%', label: "Buyer's Market", color: '#22c55e' },
                 ],
               },
@@ -119,7 +119,7 @@ export default function DFWBuyerVsSellerMarketGuide() {
                   {item.ranges.map(r => (
                     <div key={r.range} style={{ display: 'flex', alignItems: 'center', gap: 6, background: '#111', borderRadius: 6, padding: '6px 12px' }}>
                       <div style={{ width: 8, height: 8, borderRadius: '50%', background: r.color }} />
-                      <span style={{ fontSize: 12, color: '#cbd5e1' }}><strong>{r.range}</strong> → {r.label}</span>
+                      <span style={{ fontSize: 12, color: '#cbd5e1′ }}><strong>{r.range}</strong> → {r.label}</span>
                     </div>
                   ))}
                 </div>
@@ -133,8 +133,8 @@ export default function DFWBuyerVsSellerMarketGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f8fafc', marginBottom: 24 }}>📍 DFW 2026 Current Reading</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
-              { area: 'North DFW (Frisco, Plano, Allen)', status: "Seller's Market", detail: '1.8 months inventory — homes flying off the market', color: '#f97316' },
-              { area: 'Inner Suburbs (Garland, Mesquite, Irving)', status: 'Balanced Market', detail: '3.5 months inventory — give and take on both sides', color: '#eab308' },
+              { area: 'North DFW (Frisco, Plano, Allen)', status: "Seller's Market", detail: '1.8 months inventory — homes flying off the market', color: '#f97316′ },
+              { area: 'Inner Suburbs (Garland, Mesquite, Irving)', status: 'Balanced Market', detail: '3.5 months inventory — give and take on both sides', color: '#eab308′ },
               { area: 'Outer Suburbs (DeSoto, Duncanville, Lancaster)', status: "Moving Toward Buyer's", detail: '4.5 months inventory — buyers gaining leverage', color: '#22c55e' },
             ].map(item => (
               <div key={item.area} style={{ background: '#1a1a1a', border: `1px solid ${item.color}33`, borderRadius: 12, padding: 20, display: 'flex', alignItems: 'flex-start', gap: 16 }}>

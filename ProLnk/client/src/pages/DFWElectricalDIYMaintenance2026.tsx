@@ -92,7 +92,7 @@ export default function DFWElectricalDIYMaintenance2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Electrical DIY Maintenance 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Electrical DIY Maintenance 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>What DFW homeowners can safely handle in electrical vs. what requires a TDLR-licensed electrician in Texas.</p>
         </div>
 
@@ -104,7 +104,7 @@ export default function DFWElectricalDIYMaintenance2026() {
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', justifyContent: 'center' }}>
           {(['all', 'diy', 'pro'] as const).map(f => (
             <button key={f} onClick={() => { setSelected(null); setFilter(f); }}
-              style={{ background: filter === f ? '#F5E642' : '#1e3a5f', color: filter === f ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1.25rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textTransform: 'uppercase' }}>
+              style={{ background: filter === f ? '#F5E642′ : '#1e3a5f', color: filter === f ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 1.25rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textTransform: 'uppercase' }}>
               {f === 'all' ? 'All Tasks' : f === 'diy' ? '✅ DIY Safe' : '⚡ TDLR Required'}
             </button>
           ))}
@@ -117,7 +117,7 @@ export default function DFWElectricalDIYMaintenance2026() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <span style={{ fontSize: '1.4rem' }}>{task.icon}</span>
                 <div style={{ fontWeight: 700, color: '#e2e8f0', flex: 1 }}>{task.type}</div>
-                <span style={{ background: task.diy ? '#166534' : '#7f1d1d', color: '#fff', borderRadius: 6, padding: '0.2rem 0.7rem', fontSize: '0.78rem' }}>
+                <span style={{ background: task.diy ? '#166534′ : '#7f1d1d', color: '#fff', borderRadius: 6, padding: '0.2rem 0.7rem', fontSize: '0.78rem' }}>
                   {task.diy ? '✅ DIY' : '⚡ Pro Only'}
                 </span>
               </div>

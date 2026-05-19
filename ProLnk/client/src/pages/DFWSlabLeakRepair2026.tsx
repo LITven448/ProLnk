@@ -50,10 +50,10 @@ export default function DFWSlabLeakRepair2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, marginBottom: 28 }}>
           {[
-            { icon: '🔨', title: 'Spot Repair', body: 'Open slab directly above leak, fix or replace pipe section, repatch with concrete. Fastest and cheapest for single leaks with expendable flooring. Floor above is demolished.', cost: '$1,000–$3,500' },
-            { icon: '🚇', title: 'Tunneling', body: 'Dig access tunnel under slab from perimeter or interior. Plumber works under foundation — floor stays intact. Premium method for hardwood, tile preservation.', cost: '$3,000–$8,000' },
-            { icon: '🔄', title: 'Rerouting', body: 'Abandon old pipe entirely. Run new copper or PEX through walls and attic, connecting supply from above. Best for aging pipes with multiple leaks. Zero floor disturbance.', cost: '$4,000–$12,000' },
-            { icon: '🧪', title: 'Epoxy Coating', body: 'Spray epoxy through pipe interior — seals multiple pinholes at once. Ideal for systemic pipe degradation where excavation would cost more. 10–15 year typical lifespan.', cost: '$2,500–$6,500' },
+            { icon: '🔨', title: 'Spot Repair', body: 'Open slab directly above leak, fix or replace pipe section, repatch with concrete. Fastest and cheapest for single leaks with expendable flooring. Floor above is demolished.', cost: '$1,000–$3,500′ },
+            { icon: '🚇', title: 'Tunneling', body: 'Dig access tunnel under slab from perimeter or interior. Plumber works under foundation — floor stays intact. Premium method for hardwood, tile preservation.', cost: '$3,000–$8,000′ },
+            { icon: '🔄', title: 'Rerouting', body: 'Abandon old pipe entirely. Run new copper or PEX through walls and attic, connecting supply from above. Best for aging pipes with multiple leaks. Zero floor disturbance.', cost: '$4,000–$12,000′ },
+            { icon: '🧪', title: 'Epoxy Coating', body: 'Spray epoxy through pipe interior — seals multiple pinholes at once. Ideal for systemic pipe degradation where excavation would cost more. 10–15 year typical lifespan.', cost: '$2,500–$6,500′ },
           ].map(c => (
             <div key={c.title} style={{ background: '#112240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
@@ -81,7 +81,7 @@ export default function DFWSlabLeakRepair2026() {
             </div>
           </div>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer', marginBottom: 16 }}>Get Repair Recommendation</button>
-          {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#E8EAF0', fontSize: 14, lineHeight: 1.7, border: '1px solid #F5E642' }}>{guide}</div>}
+          {guide && <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, color: '#E8EAF0', fontSize: 14, lineHeight: 1.7, border: '1px solid #F5E642′ }}>{guide}</div>}
         </div>
 
         <p style={{ textAlign: 'center', color: '#475569', fontSize: 13, marginTop: 28 }}>ProLnk — DFW Slab Leak Repair Methods 2026</p>

@@ -73,7 +73,7 @@ export default function DFWMorningHomeGuide() {
           <p style={{ color: '#8B9BB4', fontSize: 13, marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>Current Season</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {seasons.map(s => (
-              <button key={s} onClick={() => setSeason(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: season === s ? '#F5E642' : '#1A2E4A', color: season === s ? '#0A1628' : '#8B9BB4' }}>{s}</button>
+              <button key={s} onClick={() => setSeason(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: season === s ? '#F5E642′ : '#1A2E4A', color: season === s ? '#0A1628' : '#8B9BB4' }}>{s}</button>
             ))}
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function DFWMorningHomeGuide() {
           <p style={{ color: '#8B9BB4', fontSize: 13, marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>Your Home Features</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {features.map(f => (
-              <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '7px 14px', borderRadius: 8, border: selectedFeatures.includes(f) ? '2px solid #F5E642' : '2px solid #1A2E4A', cursor: 'pointer', fontSize: 13, background: selectedFeatures.includes(f) ? '#1A2E4A' : 'transparent', color: selectedFeatures.includes(f) ? '#F5E642' : '#8B9BB4' }}>{f}</button>
+              <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '7px 14px', borderRadius: 8, border: selectedFeatures.includes(f) ? '2px solid #F5E642′ : '2px solid #1A2E4A', cursor: ’pointer', fontSize: 13, background: selectedFeatures.includes(f) ? '#1A2E4A' : 'transparent', color: selectedFeatures.includes(f) ? '#F5E642′ : '#8B9BB4' }}>{f}</button>
             ))}
           </div>
         </div>
@@ -91,8 +91,8 @@ export default function DFWMorningHomeGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🌅 {season} Morning Checklist</h2>
           {list.map(item => (
             <div key={item} onClick={() => toggleCheck(item)} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '10px 0', borderBottom: '1px solid #1A2E4A', cursor: 'pointer' }}>
-              <div style={{ width: 20, height: 20, borderRadius: 4, background: checked[item] ? '#F5E642' : 'transparent', border: '2px solid #F5E642', flexShrink: 0, marginTop: 2 }}>{checked[item] ? '✓' : ''}</div>
-              <span style={{ fontSize: 14, color: checked[item] ? '#8B9BB4' : '#E8EAF0', textDecoration: checked[item] ? 'line-through' : 'none' }}>{item}</span>
+              <div style={{ width: 20, height: 20, borderRadius: 4, background: checked[item] ? '#F5E642′ : ’transparent', border: '2px solid #F5E642', flexShrink: 0, marginTop: 2 }}>{checked[item] ? '✓' : ''}</div>
+              <span style={{ fontSize: 14, color: checked[item] ? '#8B9BB4′ : '#E8EAF0', textDecoration: checked[item] ? ’line-through' : 'none' }}>{item}</span>
             </div>
           ))}
           {featureItems.map(tip => (

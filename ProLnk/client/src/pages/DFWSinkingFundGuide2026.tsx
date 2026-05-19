@@ -36,7 +36,7 @@ export default function DFWSinkingFundGuide2026() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 28, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Monthly Sinking Fund Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Monthly Sinking Fund Calculator</h2>
           <div style={{ display: 'grid', gap: 20 }}>
             {[
               { label: '❄️ HVAC Age (years)', val: hvacAge, set: setHvacAge, max: 20 },
@@ -44,8 +44,8 @@ export default function DFWSinkingFundGuide2026() {
               { label: '🚿 Water Heater Age (years)', val: waterHeaterAge, set: setWaterHeaterAge, max: 15 },
             ].map((item) => (
               <label key={item.label} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <span style={{ fontSize: 14, color: '#94a3b8' }}>{item.label}: <strong style={{ color: '#fff' }}>{item.val}</strong></span>
-                <input type="range" min={0} max={item.max} value={item.val} onChange={e => item.set(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+                <span style={{ fontSize: 14, color: '#94a3b8′ }}>{item.label}: <strong style={{ color: '#fff' }}>{item.val}</strong></span>
+                <input type="range" min={0} max={item.max} value={item.val} onChange={e => item.set(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
               </label>
             ))}
             <label style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}>
@@ -62,8 +62,8 @@ export default function DFWSinkingFundGuide2026() {
               { label: 'Foundation', val: foundMonthly },
             ].map((item) => (
               <div key={item.label} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 10, padding: '14px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: 14, color: '#94a3b8' }}>{item.label}</span>
-                <span style={{ fontWeight: 700, color: '#F5E642' }}>${item.val}/mo</span>
+                <span style={{ fontSize: 14, color: '#94a3b8′ }}>{item.label}</span>
+                <span style={{ fontWeight: 700, color: '#F5E642′ }}>${item.val}/mo</span>
               </div>
             ))}
           </div>

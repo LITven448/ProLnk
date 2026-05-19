@@ -27,7 +27,7 @@ export default function DFWGroutSealerGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>🧱 DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Grout Sealer Guide for DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW's hard water (200–500 PPM mineral content) and fine clay dust are grout's worst enemies. Unsealed grout in DFW homes stains within months. The right sealer, applied correctly, keeps grout looking new for years.
+          DFW's hard water (200–500 PPM mineral content) and fine clay dust are grout’s worst enemies. Unsealed grout in DFW homes stains within months. The right sealer, applied correctly, keeps grout looking new for years.
         </p>
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -53,7 +53,7 @@ export default function DFWGroutSealerGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642' }}>🧴 Sealer Recommendation</div>
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642′ }}>🧴 Sealer Recommendation</div>
             <div style={{ display: 'grid', gap: 12 }}>
               {[
                 ['Sealer Type', result.type],

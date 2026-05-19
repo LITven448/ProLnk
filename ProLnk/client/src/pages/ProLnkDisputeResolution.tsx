@@ -46,7 +46,7 @@ export default function ProLnkDisputeResolution() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>🛡️</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: '12px 0 8px' }}>Dispute Resolution</h1>
-          <p style={{ color: '#94a3b8' }}>ProLnk mediates every dispute — 5 business day resolution guarantee</p>
+          <p style={{ color: '#94a3b8′ }}>ProLnk mediates every dispute — 5 business day resolution guarantee</p>
         </div>
 
         {!disputeType && (

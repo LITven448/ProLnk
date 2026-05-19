@@ -90,12 +90,12 @@ export default function PartnerNetworkFAQ() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 20px 0' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 20px 0′ }}>
         {sections.map((section) => (
           <div key={section.title} style={{ marginBottom: 48 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
               <span style={{ fontSize: 24 }}>{section.icon}</span>
-              <h2 style={{ fontSize: 22, fontWeight: 800, margin: 0, color: '#0A1628' }}>{section.title}</h2>
+              <h2 style={{ fontSize: 22, fontWeight: 800, margin: 0, color: '#0A1628′ }}>{section.title}</h2>
             </div>
 
             <div style={{ border: '1px solid #e5e5e3', borderRadius: 16, overflow: 'hidden' }}>
@@ -103,19 +103,19 @@ export default function PartnerNetworkFAQ() {
                 const key = `${section.title}-${i}`;
                 const isOpen = openItem === key;
                 return (
-                  <div key={i} style={{ borderBottom: i < section.faqs.length - 1 ? '1px solid #e5e5e3' : 'none' }}>
+                  <div key={i} style={{ borderBottom: i < section.faqs.length - 1 ? '1px solid #e5e5e3′ : ’none' }}>
                     <button
                       onClick={() => toggle(key)}
                       style={{
                         display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',
-                        padding: '20px 24px', background: isOpen ? '#f5f5f3' : '#fff', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16,
+                        padding: '20px 24px', background: isOpen ? '#f5f5f3′ : '#fff', border: ’none', cursor: 'pointer', textAlign: 'left', gap: 16,
                       }}
                     >
                       <span style={{ fontWeight: 600, fontSize: 16, color: '#0A1628', lineHeight: 1.4 }}>{faq.q}</span>
                       <span style={{ color: '#F5C842', fontSize: 20, fontWeight: 700, flexShrink: 0, transition: 'transform 0.2s', transform: isOpen ? 'rotate(45deg)' : 'none' }}>+</span>
                     </button>
                     {isOpen && (
-                      <div style={{ padding: '0 24px 24px', background: '#f5f5f3' }}>
+                      <div style={{ padding: '0 24px 24px', background: '#f5f5f3′ }}>
                         <p style={{ color: '#444', fontSize: 15, lineHeight: 1.8, margin: 0 }}>{faq.a}</p>
                       </div>
                     )}

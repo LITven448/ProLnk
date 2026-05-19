@@ -74,7 +74,7 @@ export default function PartnerIncomeStreamsDeepDive() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628' }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>⚡</div>
@@ -146,7 +146,7 @@ export default function PartnerIncomeStreamsDeepDive() {
                     <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 4 }}>
                       <span style={{ color: '#F5E642', background: stream.color, borderRadius: '50%', width: 16, height: 16,
                         display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 800, flexShrink: 0, marginTop: 1 }}>✓</span>
-                      <span style={{ fontSize: 13, color: '#374151' }}>{tip}</span>
+                      <span style={{ fontSize: 13, color: '#374151′ }}>{tip}</span>
                     </div>
                   ))}
                 </div>

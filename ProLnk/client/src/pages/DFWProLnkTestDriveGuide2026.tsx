@@ -19,10 +19,10 @@ export default function DFWProLnkTestDriveGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Experience ProLnk with zero risk — no payment, no commitment, no pressure</p>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>🛡️ The Zero-Risk Guarantee</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>
-            Joining the ProLnk waitlist costs <strong style={{ color: '#F5E642' }}>nothing and obligates nothing</strong>. You can browse available Charter Pros in your DFW area, preview the Home Health Vault demo, and run the income calculator — all before deciding if ProLnk is right for you. No credit card. No contract. No follow-up calls unless you request them.
+            Joining the ProLnk waitlist costs <strong style={{ color: '#F5E642′ }}>nothing and obligates nothing</strong>. You can browse available Charter Pros in your DFW area, preview the Home Health Vault demo, and run the income calculator — all before deciding if ProLnk is right for you. No credit card. No contract. No follow-up calls unless you request them.
           </p>
         </div>
 
@@ -42,13 +42,13 @@ export default function DFWProLnkTestDriveGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {userTypes.map((u, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {u.icon} {u.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>{userTypes[selected].icon} {userTypes[selected].label} — Your ProLnk Path</h3>
               <ol style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.8, paddingLeft: 20 }}>
                 {userTypes[selected].steps.map((s, i) => <li key={i}>{s}</li>)}
@@ -62,7 +62,7 @@ export default function DFWProLnkTestDriveGuide2026() {
             <p style={{ color: '#0A1628', fontWeight: 700, fontSize: 15, marginBottom: 4 }}>🏠 Homeowners</p>
             <p style={{ color: '#0A1628', fontSize: 13 }}>Join free at prolnk.io — no payment ever required to browse or request quotes</p>
           </div>
-          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, textAlign: 'center', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 20, textAlign: 'center', border: '2px solid #F5E642′ }}>
             <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 15, marginBottom: 4 }}>🔧 Pros</p>
             <p style={{ color: '#cbd5e1', fontSize: 13 }}>Charter waitlist is live — 500 spots, $149/mo locked forever</p>
           </div>

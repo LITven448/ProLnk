@@ -48,7 +48,7 @@ export default function DFWCopperLinesetGuide() {
         </p>
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📋 What Is the Lineset?</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📋 What Is the Lineset?</h2>
           {[
             ['Two copper pipes', 'A smaller suction line and a larger liquid line run between your indoor evaporator coil and your outdoor condenser, carrying refrigerant in a continuous loop.'],
             ['Foam insulation wrap', 'The suction line runs cold and must be insulated to prevent condensation and heat gain. DFW attic heat destroys foam insulation over time.'],
@@ -63,18 +63,18 @@ export default function DFWCopperLinesetGuide() {
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Lineset Replacement Calculator</h2>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Current Insulation Condition</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Current Insulation Condition</label>
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {conditions.map(c => (
               <button key={c.value} onClick={() => setCondition(c.value)}
-                style={{ background: condition === c.value ? '#F5E642' : '#1a2f4a', color: condition === c.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
+                style={{ background: condition === c.value ? '#F5E642′ : '#1a2f4a', color: condition === c.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
                 {c.label}
               </button>
             ))}
           </div>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Lineset Age (years, or same as system age)</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Lineset Age (years, or same as system age)</label>
           <input
-            type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="e.g. 12"
+            type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="e.g. 12″
             style={{ background: '#1a2f4a', border: '1px solid #2a4060', borderRadius: 8, color: '#fff', padding: '10px 14px', width: '100%', marginBottom: 20, fontSize: 15, boxSizing: 'border-box' }}
           />
           <button onClick={evaluate}
@@ -84,7 +84,7 @@ export default function DFWCopperLinesetGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 10 }}>{result.urgency}</div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>{result.include}</div>
             <div style={{ color: '#F5E642', fontSize: 14, marginBottom: 12 }}>{result.cost}</div>

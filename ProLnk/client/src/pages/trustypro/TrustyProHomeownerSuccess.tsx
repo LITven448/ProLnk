@@ -79,7 +79,7 @@ export default function TrustyProHomeownerSuccess() {
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '28px' }}>
           {categories.map((cat, i) => (
             <button key={i} onClick={() => { setSelectedCategory(cat); setSelectedStory(0); }}
-              style={{ padding: '8px 16px', borderRadius: '20px', border: `2px solid ${selectedCategory === cat ? '#4F46E5' : '#e2e8f0'}`, backgroundColor: selectedCategory === cat ? '#4F46E5' : '#fff', color: selectedCategory === cat ? '#fff' : '#374151', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textTransform: 'capitalize' }}>
+              style={{ padding: '8px 16px', borderRadius: '20px', border: `2px solid ${selectedCategory === cat ? '#4F46E5' : '#e2e8f0'}`, backgroundColor: selectedCategory === cat ? '#4F46E5′ : '#fff', color: selectedCategory === cat ? '#fff' : '#374151', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600, textTransform: 'capitalize' }}>
               {cat}
             </button>
           ))}

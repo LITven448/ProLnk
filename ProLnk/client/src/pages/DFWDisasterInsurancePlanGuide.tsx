@@ -39,22 +39,22 @@ export default function DFWDisasterInsurancePlanGuide() {
         </p>
 
         {gaps.length > 0 && (
-          <div style={{ background: 'rgba(239,68,68,0.1)', border: '1.5px solid rgba(239,68,68,0.3)', borderRadius: 12, padding: 16, marginBottom: 24, fontSize: 14, color: '#fca5a5' }}>
+          <div style={{ background: 'rgba(239,68,68,0.1)', border: '1.5px solid rgba(239,68,68,0.3)', borderRadius: 12, padding: 16, marginBottom: 24, fontSize: 14, color: '#fca5a5′ }}>
             ⚠️ Based on your selections, you likely have <strong>{gaps.length} coverage gap{gaps.length > 1 ? 's' : ''}</strong> not included in a standard HO3 policy.
           </div>
         )}
 
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📍 Your DFW Profile</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📍 Your DFW Profile</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>DFW Location</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>DFW Location</label>
               <select value={loc} onChange={e => setLoc(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {dfwLocations.map(l => <option key={l}>{l}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Home Type</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Home Type</label>
               <select value={homeType} onChange={e => setHomeType(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {homeTypes.map(h => <option key={h}>{h}</option>)}
               </select>
@@ -70,12 +70,12 @@ export default function DFWDisasterInsurancePlanGuide() {
                   <span style={{ fontSize: 22 }}>{item.icon}</span>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: 15 }}>{item.name}</div>
-                    <div style={{ fontSize: 12, color: '#64748b' }}>DFW Risk: <span style={{ color: item.dfwRisk === 'Extreme' || item.dfwRisk === 'High (post-Uri)' ? '#ef4444' : item.dfwRisk.includes('High') ? '#f97316' : '#eab308' }}>{item.dfwRisk}</span></div>
+                    <div style={{ fontSize: 12, color: '#64748b' }}>DFW Risk: <span style={{ color: item.dfwRisk === 'Extreme' || item.dfwRisk === 'High (post-Uri)' ? '#ef4444′ : item.dfwRisk.includes(’High') ? '#f97316′ : '#eab308' }}>{item.dfwRisk}</span></div>
                   </div>
                 </div>
                 <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: 12 }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: priorityColor[item.priority], background: 'rgba(255,255,255,0.06)', borderRadius: 6, padding: '3px 8px', marginBottom: 4 }}>{priorityLabel[item.priority]}</div>
-                  <div style={{ fontSize: 11, color: item.includedInHO3 ? '#22c55e' : '#ef4444' }}>{item.includedInHO3 ? '✓ In HO3' : '✗ Not in HO3'}</div>
+                  <div style={{ fontSize: 11, color: item.includedInHO3 ? '#22c55e' : '#ef4444′ }}>{item.includedInHO3 ? '✓ In HO3' : '✗ Not in HO3'}</div>
                 </div>
               </div>
               <div style={{ fontSize: 13, color: '#64748b', marginBottom: 6 }}>💰 {item.avgPremium}</div>

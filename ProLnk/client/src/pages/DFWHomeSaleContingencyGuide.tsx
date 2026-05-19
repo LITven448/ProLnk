@@ -100,7 +100,7 @@ export default function DFWHomeSaleContingencyGuide() {
         {result && (
           <div style={{ background: '#1a3a5c', color: '#fff', borderRadius: 12, padding: 28 }}>
             <h2 style={{ margin: '0 0 8px', fontSize: 20 }}>✅ Recommended Strategy</h2>
-            <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{result.choice}</div>
+            <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{result.choice}</div>
             <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 8, padding: 12, marginBottom: 16, fontSize: 14 }}>
               <strong>Risk Level:</strong> {result.risk}
             </div>

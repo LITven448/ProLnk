@@ -72,8 +72,8 @@ export default function DFWHVACDFWCost2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 28 }}>
           {[
-            { l: 'Tune-Up', v: '$150–250' },
-            { l: 'Capacitor', v: '$100–250' },
+            { l: 'Tune-Up', v: '$150–250′ },
+            { l: 'Capacitor', v: '$100–250′ },
             { l: 'Full Replace (3T)', v: '$6.5K–12K' },
           ].map((s, i) => (
             <div key={i} style={{ background: '#1e293b', borderRadius: 10, padding: 16, border: '1px solid #334155', textAlign: 'center' }}>
@@ -88,7 +88,7 @@ export default function DFWHVACDFWCost2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 10 }}>
             {services.map((s, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642' : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642′ : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: ’pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
                 {s.emoji} {s.name}
               </button>
             ))}
@@ -118,7 +118,7 @@ export default function DFWHVACDFWCost2026() {
           </div>
         )}
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
           <div style={{ color: '#fff', fontWeight: 700, marginBottom: 8 }}>Get Competitive DFW HVAC Quotes</div>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0, lineHeight: 1.6 }}>
             ProLnk connects DFW homeowners with vetted HVAC pros. Describe your need and get competitive quotes from local contractors who know DFW conditions.

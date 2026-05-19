@@ -56,12 +56,12 @@ export default function DFWFoundationPierConnector2026() {
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🔍 Post-Repair Concern Guide</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {CONCERNS.map(c => (
-              <button key={c.id} onClick={() => setSelected(c.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', background: selected === c.id ? '#F5E642' : '#1e3a5f', color: selected === c.id ? '#0A1628' : '#cbd5e1', fontWeight: selected === c.id ? 700 : 400, cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>
+              <button key={c.id} onClick={() => setSelected(c.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', background: selected === c.id ? '#F5E642′ : '#1e3a5f', color: selected === c.id ? '#0A1628' : '#cbd5e1', fontWeight: selected === c.id ? 700 : 400, cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>
                 {c.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
             <div style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>{current.guide}</div>
           </div>
         </div>

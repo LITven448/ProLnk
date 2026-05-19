@@ -31,7 +31,7 @@ export default function DFWRoofingNeighborEffect2026() {
           {(['guide', 'tool'] as const).map(t => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: '0.5rem 1.2rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem',
-              background: tab === t ? '#F5E642' : '#1e3a5f', color: tab === t ? '#0A1628' : '#94a3b8'
+              background: tab === t ? '#F5E642′ : '#1e3a5f', color: tab === t ? '#0A1628' : '#94a3b8'
             }}>{t === 'guide' ? '📖 Guide' : '🎯 My Situation'}</button>
           ))}
         </div>
@@ -45,7 +45,7 @@ export default function DFWRoofingNeighborEffect2026() {
               { icon: '📉', title: 'How Neighbor Claims Raise Your Rates', body: 'If 15%+ of homes in your census block file hail claims in a given year, insurers revise their actuarial tables for that block. Next renewal, your rate increases reflect neighborhood risk — not just your personal loss history. The only counter is Class 4 designation.' },
               { icon: '🤝', title: 'ProLnk Neighborhood Assessments', body: 'ProLnk coordinates roofing assessments for entire DFW subdivisions — one scheduling event, one contractor team, economies of scale for all. Neighborhood projects complete faster, cost less per home, and allow HOAs to negotiate collective pricing.' },
             ].map(card => (
-              <div key={card.title} style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+              <div key={card.title} style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, marginBottom: '0.4rem', fontSize: '1rem' }}>{card.icon} {card.title}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>{card.body}</div>
               </div>
@@ -59,16 +59,16 @@ export default function DFWRoofingNeighborEffect2026() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
               {neighborScenarios.map(s => (
                 <button key={s.id} onClick={() => setSelected(s.id)} style={{
-                  background: selected === s.id ? '#1e3a5f' : '#132240', border: selected === s.id ? '2px solid #F5E642' : '2px solid transparent',
+                  background: selected === s.id ? '#1e3a5f' : '#132240', border: selected === s.id ? '2px solid #F5E642′ : '2px solid transparent',
                   borderRadius: '0.75rem', padding: '0.9rem 1.2rem', color: '#e2e8f0', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem', fontWeight: 600
                 }}>{s.label}</button>
               ))}
             </div>
             {match && (
-              <div style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
+              <div style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>🏘️ Insurance Strategy</div>
                 <div style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: '0.95rem' }}>{match.advice}</div>
-                <div style={{ marginTop: '1rem', padding: '0.8rem', background: '#0A1628', borderRadius: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
+                <div style={{ marginTop: '1rem', padding: '0.8rem', background: '#0A1628', borderRadius: '0.5rem', fontSize: '0.85rem', color: '#94a3b8′ }}>
                   📞 ProLnk can coordinate a neighborhood roofing assessment — connect with a DFW roofing specialist today.
                 </div>
               </div>

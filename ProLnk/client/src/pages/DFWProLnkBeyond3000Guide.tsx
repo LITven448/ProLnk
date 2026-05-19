@@ -75,7 +75,7 @@ export default function DFWProLnkBeyond3000Guide() {
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', fontWeight: 600 }}>🚀 PROLNK PLATFORM</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>ProLnk Beyond 3,000 Pages: What's Next</h1>
         <p style={{ color: '#94A3B8', marginBottom: 24, fontSize: 15 }}>
-          ProLnk's DFW resource library just crossed 3,000 pages — the most comprehensive local home services content in Texas. Here's what the next phase looks like.
+          ProLnk's DFW resource library just crossed 3,000 pages — the most comprehensive local home services content in Texas. Here’s what the next phase looks like.
         </p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 28 }}>
@@ -86,7 +86,7 @@ export default function DFWProLnkBeyond3000Guide() {
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 6 }}>
                     <span style={{ fontSize: 12, color: p.color, fontWeight: 700 }}>{p.phase}</span>
-                    <span style={{ fontSize: 16, fontWeight: 800, color: '#E8EDF5' }}>{p.label}</span>
+                    <span style={{ fontSize: 16, fontWeight: 800, color: '#E8EDF5′ }}>{p.label}</span>
                   </div>
                   <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.6, marginBottom: 10 }}>{p.desc}</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -101,7 +101,7 @@ export default function DFWProLnkBeyond3000Guide() {
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🎯 What's Coming For Me?</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🎯 What’s Coming For Me?</h2>
           <select value={userType} onChange={e => setUserType(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
             <option value=>I am a...</option>
@@ -113,7 +113,7 @@ export default function DFWProLnkBeyond3000Guide() {
                 {userTypes[userType].upcoming.map(item => (
                   <div key={item} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <span style={{ color: '#F5E642', marginTop: 2 }}>→</span>
-                    <span style={{ fontSize: 14, color: '#CBD5E1' }}>{item}</span>
+                    <span style={{ fontSize: 14, color: '#CBD5E1′ }}>{item}</span>
                   </div>
                 ))}
               </div>

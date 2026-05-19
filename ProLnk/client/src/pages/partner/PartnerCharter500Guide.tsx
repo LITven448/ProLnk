@@ -35,7 +35,7 @@ export default function PartnerCharter500Guide() {
           <p style={{ color: '#94A3B8', margin: 0 }}>ProLnk closes the waitlist at exactly 500 Charter applications. Here is where we stand.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
             <span style={{ color: '#0A1628', fontWeight: 700, fontSize: 16 }}>Charter Applications</span>
             <span style={{ color: '#F5E642', background: '#0A1628', padding: '4px 12px', borderRadius: 20, fontWeight: 700, fontSize: 15 }}>
@@ -50,7 +50,7 @@ export default function PartnerCharter500Guide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 24 }}>
           {perks.map((p, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '16px 18px', border: '1px solid #E2E8F0' }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '16px 18px', border: '1px solid #E2E8F0′ }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{p.icon}</div>
               <div style={{ color: '#0A1628', fontWeight: 700, marginBottom: 4, fontSize: 14 }}>{p.title}</div>
               <div style={{ color: '#64748B', fontSize: 13 }}>{p.desc}</div>
@@ -58,7 +58,7 @@ export default function PartnerCharter500Guide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>⏱️ Urgency Calculator</h3>
           <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>
             What week are you in (from ProLnk launch)?

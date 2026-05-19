@@ -37,10 +37,10 @@ function getRecommendation(space: string, priority: string, sun: string) {
     };
   }
   return {
-    rec: sun.includes('Shade') ? 'Sonos Era 300 Outdoor or Yamaha NS-AW294' : 'Polk Audio Atrium 8 SDI',
+    rec: sun.includes('Shade') ? 'Sonos Era 300 Outdoor or Yamaha NS-AW294′ : ’Polk Audio Atrium 8 SDI',
     type: priority === 'Background Music Only' ? 'Wireless (covered location only)' : 'Wired outdoor rated',
     placement: 'Mount at ear level + 4ft (7-8ft height), aim across space, keep out of direct summer sun',
-    cost: priority === 'Background Music Only' ? '$150-350' : '$300-700/pair',
+    cost: priority === 'Background Music Only' ? '$150-350′ : '$300-700/pair',
     warning: dfwWarning,
     note: 'Covered patios can use wireless — but avoid leaving wireless speakers in summer heat even covered.',
   };

@@ -152,7 +152,7 @@ export default function DFWHVACDFWZip() {
           <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Select Your DFW Zip Code</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
             {zipList.map(zip => (
-              <button key={zip} onClick={() => { setSelectedZip(zip); setCustomZip(''); }} style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', borderColor: selectedZip === zip ? '#F5E642' : '#1E3A5F', background: selectedZip === zip ? '#F5E642' : '#0D2137', color: selectedZip === zip ? '#0A1628' : '#E8F4FD', fontWeight: selectedZip === zip ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{zip}</button>
+              <button key={zip} onClick={() => { setSelectedZip(zip); setCustomZip(''); }} style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', borderColor: selectedZip === zip ? '#F5E642′ : '#1E3A5F', background: selectedZip === zip ? '#F5E642' : '#0D2137', color: selectedZip === zip ? '#0A1628' : '#E8F4FD', fontWeight: selectedZip === zip ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{zip}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>

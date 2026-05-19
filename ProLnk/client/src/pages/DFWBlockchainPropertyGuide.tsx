@@ -40,7 +40,7 @@ export default function DFWBlockchainPropertyGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Select your transaction type to see how blockchain could affect your DFW real estate deal:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {txTypes.map(t => (
-              <button key={t.id} onClick={() => setSelected(t.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === t.id ? '#F5E642' : '#1e3a5f', background: selected === t.id ? '#F5E642' : 'transparent', color: selected === t.id ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{t.label}</button>
+              <button key={t.id} onClick={() => setSelected(t.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === t.id ? '#F5E642′ : '#1e3a5f', background: selected === t.id ? '#F5E642' : ’transparent', color: selected === t.id ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{t.label}</button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 16 }}>
@@ -52,7 +52,7 @@ export default function DFWBlockchainPropertyGuide() {
               <div style={{ color: '#94a3b8', fontWeight: 700, marginBottom: 8, fontSize: 13 }}>📍 DFW Status</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>{tx.status}</div>
             </div>
-            <div style={{ background: '#003d1a', borderRadius: 12, padding: 16, border: '1px solid #006630' }}>
+            <div style={{ background: '#003d1a', borderRadius: 12, padding: 16, border: '1px solid #006630′ }}>
               <div style={{ color: '#22c55e', fontWeight: 700, marginBottom: 8, fontSize: 13 }}>💰 Potential Savings</div>
               <div style={{ color: '#22c55e', fontSize: 20, fontWeight: 800 }}>{tx.savings}</div>
             </div>

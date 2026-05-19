@@ -97,9 +97,9 @@ export default function DFWProLnk5300Pages2026() {
               onClick={() => setActive(s.id)}
               style={{
                 padding: '10px 18px', borderRadius: 8, border: '2px solid',
-                borderColor: active === s.id ? '#F5E642' : '#1e3a5f',
-                background: active === s.id ? '#F5E642' : '#0f2240',
-                color: active === s.id ? '#0A1628' : '#cbd5e1',
+                borderColor: active === s.id ? '#F5E642′ : '#1e3a5f',
+                background: active === s.id ? '#F5E642′ : '#0f2240',
+                color: active === s.id ? '#0A1628′ : '#cbd5e1',
                 fontWeight: 700, cursor: 'pointer', fontSize: 13,
               }}
             >

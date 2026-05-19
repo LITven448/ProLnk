@@ -65,18 +65,18 @@ export default function DFWHVACElectricReadyGuide() {
             </div>
           </div>
           <button onClick={() => setShowPath(true)} disabled={!currentSystem || !electrifyTimeline}
-            style={{ background: currentSystem && electrifyTimeline ? '#F5E642' : '#1e3a5f', color: currentSystem && electrifyTimeline ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: currentSystem && electrifyTimeline ? 'pointer' : 'not-allowed' }}>
+            style={{ background: currentSystem && electrifyTimeline ? '#F5E642′ : '#1e3a5f', color: currentSystem && electrifyTimeline ? '#0A1628' : '#4a6080', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: currentSystem && electrifyTimeline ? 'pointer' : 'not-allowed' }}>
             Show My Path →
           </button>
         </div>
 
         {showPath && (
           <div style={{ marginBottom: 28 }}>
-            <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>💰 Available Federal Tax Credits</div>
               <div style={{ fontSize: 22, fontWeight: 800 }}>Up to ${totalCredit.toLocaleString()} back</div>
               <div style={{ color: '#8899aa', fontSize: 13, marginTop: 4 }}>
-                Heat pump credit: $2,000 + {isGas ? 'Panel upgrade credit: $1,200' : 'No panel upgrade needed'}
+                Heat pump credit: $2,000 + {isGas ? 'Panel upgrade credit: $1,200′ : ’No panel upgrade needed'}
               </div>
             </div>
             <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20 }}>

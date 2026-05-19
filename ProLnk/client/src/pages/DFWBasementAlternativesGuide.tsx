@@ -35,7 +35,7 @@ export default function DFWBasementAlternativesGuide() {
       <div style={{ backgroundColor: '#0D1E38', borderBottom: '3px solid #F5E642', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW HOME IMPROVEMENT GUIDE 2026</div>
-          <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 12px', lineHeight: 1.2 }}>DFW Doesn't Have Basements — Here's What to Do Instead</h1>
+          <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 12px', lineHeight: 1.2 }}>DFW Doesn't Have Basements — Here’s What to Do Instead</h1>
           <p style={{ color: '#A0AABE', fontSize: 16, margin: 0, maxWidth: 640 }}>Why North Texas homes have no basements, and the best alternatives for extra storage and livable space.</p>
         </div>
       </div>
@@ -95,8 +95,8 @@ export default function DFWBasementAlternativesGuide() {
                 </div>
                 <div style={{ color: '#A0AABE', fontSize: 13, marginBottom: 6 }}>{alt.details}</div>
                 <div style={{ display: 'flex', gap: 12 }}>
-                  <span style={{ fontSize: 12, color: '#8090A8' }}>Storage: {alt.storageCapacity}</span>
-                  <span style={{ fontSize: 12, color: '#8090A8' }}>Best for: {alt.bestFor}</span>
+                  <span style={{ fontSize: 12, color: '#8090A8′ }}>Storage: {alt.storageCapacity}</span>
+                  <span style={{ fontSize: 12, color: '#8090A8′ }}>Best for: {alt.bestFor}</span>
                 </div>
               </div>
             ))}

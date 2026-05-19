@@ -12,7 +12,7 @@ export default function DFWWindowReplacementGuide2026() {
   };
 
   function assess() {
-    const c = count === '1-5' ? 'few' : count === '6-14' ? 'moderate' : 'many';
+    const c = count === '1-5′ ? ’few' : count === '6-14′ ? ’moderate' : 'many';
     const r = priorities[condition]?.[c];
     setResult(r || 'Consult a DFW window professional');
   }
@@ -44,8 +44,8 @@ export default function DFWWindowReplacementGuide2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             <select value={count} onChange={e => setCount(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem', flex: 1 }}>
               <option value="">Number of Windows</option>
-              <option value="1-5">1–5 windows</option>
-              <option value="6-14">6–14 windows</option>
+              <option value="1-5″>1–5 windows</option>
+              <option value="6-14″>6–14 windows</option>
               <option value="15+">15+ windows</option>
             </select>
             <select value={condition} onChange={e => setCondition(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem', flex: 1 }}>

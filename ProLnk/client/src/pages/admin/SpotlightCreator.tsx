@@ -38,8 +38,8 @@ const ACTIVE_SPOTLIGHTS: Spotlight[] = [
     partnerName: "Marcus Williams",
     trade: "Electrician",
     type: "Homepage",
-    startDate: "May 1, 2026",
-    endDate: "May 31, 2026",
+    startDate: "May 1, 2026″,
+    endDate: "May 31, 2026″,
     views: 2_840,
     status: "active",
   },
@@ -48,8 +48,8 @@ const ACTIVE_SPOTLIGHTS: Spotlight[] = [
     partnerName: "Diana Chen",
     trade: "HVAC",
     type: "Email",
-    startDate: "May 8, 2026",
-    endDate: "May 22, 2026",
+    startDate: "May 8, 2026″,
+    endDate: "May 22, 2026″,
     views: 1_205,
     status: "active",
   },
@@ -58,8 +58,8 @@ const ACTIVE_SPOTLIGHTS: Spotlight[] = [
     partnerName: "Roberto Morales",
     trade: "Plumber",
     type: "All Three",
-    startDate: "May 15, 2026",
-    endDate: "Jun 14, 2026",
+    startDate: "May 15, 2026″,
+    endDate: "Jun 14, 2026″,
     views: 412,
     status: "scheduled",
   },
@@ -74,9 +74,9 @@ const PERF_DATA: SpotlightPerf[] = [
 ];
 
 const STATUS_STYLES = {
-  active: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-  scheduled: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  ended: "bg-slate-500/20 text-slate-400 border-slate-500/30",
+  active: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30″,
+  scheduled: "bg-blue-500/20 text-blue-400 border-blue-500/30″,
+  ended: "bg-slate-500/20 text-slate-400 border-slate-500/30″,
 };
 
 const STAT_OPTIONS = ["Jobs Completed", "Rating", "Response Time", "Years Experience"];
@@ -113,24 +113,24 @@ export default function SpotlightCreator() {
 
   return (
     <AdminLayout>
-      <div className="max-w-5xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8″>
         {/* Header */}
         <div>
-          <div className="flex items-center gap-2 text-teal-400 text-sm font-medium mb-2">
-            <Award className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-teal-400 text-sm font-medium mb-2″>
+            <Award className="w-4 h-4″ />
             <span>Content Tools</span>
           </div>
           <h1 className="text-2xl font-bold text-white">Spotlight Creator</h1>
-          <p className="text-slate-400 mt-1">Feature your best partners</p>
+          <p className="text-slate-400 mt-1″>Feature your best partners</p>
         </div>
 
         {/* Auto-spotlight toggle */}
         <div className="rounded-2xl border border-slate-700 bg-[#0F1E35] p-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Zap className="w-5 h-5 text-teal-400" />
+          <div className="flex items-center gap-3″>
+            <Zap className="w-5 h-5 text-teal-400″ />
             <div>
               <p className="font-semibold text-white text-sm">Auto-Spotlight</p>
-              <p className="text-slate-400 text-xs mt-0.5">Automatically feature the top-rated partner in each trade monthly</p>
+              <p className="text-slate-400 text-xs mt-0.5″>Automatically feature the top-rated partner in each trade monthly</p>
             </div>
           </div>
           <button
@@ -143,35 +143,35 @@ export default function SpotlightCreator() {
 
         {/* Active spotlights */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <Star className="w-5 h-5 text-teal-400" /> Active Spotlights
+          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2″>
+            <Star className="w-5 h-5 text-teal-400″ /> Active Spotlights
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4″>
             {ACTIVE_SPOTLIGHTS.map(s => (
-              <div key={s.id} className="rounded-2xl border border-slate-700 bg-[#0F1E35] p-5">
-                <div className="flex items-start justify-between mb-3">
+              <div key={s.id} className="rounded-2xl border border-slate-700 bg-[#0F1E35] p-5″>
+                <div className="flex items-start justify-between mb-3″>
                   <div>
                     <p className="font-semibold text-white">{s.partnerName}</p>
                     <p className="text-slate-400 text-xs">{s.trade}</p>
                   </div>
                   <Badge className={`text-xs border ${STATUS_STYLES[s.status]}`}>{s.status}</Badge>
                 </div>
-                <div className="space-y-2 text-sm mb-4">
+                <div className="space-y-2 text-sm mb-4″>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Type</span>
+                    <span className="text-slate-400″>Type</span>
                     <span className="text-white">{s.type}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Period</span>
+                    <span className="text-slate-400″>Period</span>
                     <span className="text-white text-xs">{s.startDate} – {s.endDate}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400 flex items-center gap-1"><Eye className="w-3 h-3" /> Views</span>
+                    <span className="text-slate-400 flex items-center gap-1″><Eye className="w-3 h-3" /> Views</span>
                     <span className="text-white">{s.views.toLocaleString()}</span>
                   </div>
                 </div>
                 <Button size="sm" variant="outline" className="w-full border-slate-600 text-slate-300 text-xs">
-                  <Edit2 className="w-3 h-3 mr-1" /> Edit
+                  <Edit2 className="w-3 h-3 mr-1″ /> Edit
                 </Button>
               </div>
             ))}
@@ -179,31 +179,31 @@ export default function SpotlightCreator() {
         </div>
 
         {/* Create new spotlight */}
-        <div className="rounded-2xl border border-slate-700 bg-[#0F1E35] p-6">
-          <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-            <Plus className="w-5 h-5 text-teal-400" /> Create New Spotlight
+        <div className="rounded-2xl border border-slate-700 bg-[#0F1E35] p-6″>
+          <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2″>
+            <Plus className="w-5 h-5 text-teal-400″ /> Create New Spotlight
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6″>
             {/* Partner search */}
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Partner Search</label>
-              <div className="flex gap-2">
+              <label className="block text-sm text-slate-400 mb-2″>Partner Search</label>
+              <div className="flex gap-2″>
                 <Input
                   value={searchInput}
                   onChange={e => setSearchInput(e.target.value)}
                   placeholder="Search by name or partner ID..."
-                  className="bg-[#0A1628] border-slate-700 text-white placeholder-slate-500"
+                  className="bg-[#0A1628] border-slate-700 text-white placeholder-slate-500″
                   onKeyDown={e => e.key === "Enter" && handleSearch()}
                 />
-                <Button onClick={handleSearch} className="bg-teal-500 hover:bg-teal-400 text-white px-4">
-                  <Search className="w-4 h-4" />
+                <Button onClick={handleSearch} className="bg-teal-500 hover:bg-teal-400 text-white px-4″>
+                  <Search className="w-4 h-4″ />
                 </Button>
               </div>
               {foundPartner && (
-                <div className="mt-3 rounded-xl border border-teal-500/30 bg-teal-500/5 p-3 flex items-center gap-3">
+                <div className="mt-3 rounded-xl border border-teal-500/30 bg-teal-500/5 p-3 flex items-center gap-3″>
                   <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center">
-                    <Star className="w-4 h-4 text-teal-400" />
+                    <Star className="w-4 h-4 text-teal-400″ />
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm">{foundPartner.name}</p>
@@ -216,8 +216,8 @@ export default function SpotlightCreator() {
 
             {/* Spotlight type */}
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Spotlight Type</label>
-              <div className="flex flex-wrap gap-2">
+              <label className="block text-sm text-slate-400 mb-2″>Spotlight Type</label>
+              <div className="flex flex-wrap gap-2″>
                 {TYPE_OPTIONS.map(t => (
                   <button
                     key={t}
@@ -225,7 +225,7 @@ export default function SpotlightCreator() {
                     className={`px-4 py-2 rounded-xl border text-sm font-medium transition-all ${
                       selectedType === t
                         ? "bg-teal-500 border-teal-500 text-white"
-                        : "bg-[#0A1628] border-slate-700 text-slate-300 hover:border-teal-500/50"
+                        : "bg-[#0A1628] border-slate-700 text-slate-300 hover:border-teal-500/50″
                     }`}
                   >
                     {t}
@@ -236,8 +236,8 @@ export default function SpotlightCreator() {
 
             {/* Duration */}
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Duration</label>
-              <div className="flex gap-2">
+              <label className="block text-sm text-slate-400 mb-2″>Duration</label>
+              <div className="flex gap-2″>
                 {DURATION_OPTIONS.map(d => (
                   <button
                     key={d}
@@ -245,7 +245,7 @@ export default function SpotlightCreator() {
                     className={`px-5 py-2 rounded-xl border text-sm font-medium transition-all ${
                       selectedDuration === d
                         ? "bg-teal-500 border-teal-500 text-white"
-                        : "bg-[#0A1628] border-slate-700 text-slate-300 hover:border-teal-500/50"
+                        : "bg-[#0A1628] border-slate-700 text-slate-300 hover:border-teal-500/50″
                     }`}
                   >
                     {d} days
@@ -256,7 +256,7 @@ export default function SpotlightCreator() {
 
             {/* Quote */}
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Quote / Tagline</label>
+              <label className="block text-sm text-slate-400 mb-2″>Quote / Tagline</label>
               <Textarea
                 value={quote}
                 onChange={e => setQuote(e.target.value)}
@@ -267,19 +267,19 @@ export default function SpotlightCreator() {
 
             {/* Stats to highlight */}
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Stats to Highlight</label>
-              <div className="flex flex-wrap gap-2">
+              <label className="block text-sm text-slate-400 mb-2″>Stats to Highlight</label>
+              <div className="flex flex-wrap gap-2″>
                 {STAT_OPTIONS.map(stat => (
                   <button
                     key={stat}
                     onClick={() => toggleStat(stat)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-xl border text-sm transition-all ${
                       selectedStats.includes(stat)
-                        ? "bg-teal-500/10 border-teal-500/50 text-teal-400"
-                        : "bg-[#0A1628] border-slate-700 text-slate-400 hover:border-slate-500"
+                        ? "bg-teal-500/10 border-teal-500/50 text-teal-400″
+                        : "bg-[#0A1628] border-slate-700 text-slate-400 hover:border-slate-500″
                     }`}
                   >
-                    {selectedStats.includes(stat) && <CheckCircle className="w-3 h-3" />}
+                    {selectedStats.includes(stat) && <CheckCircle className="w-3 h-3″ />}
                     {stat}
                   </button>
                 ))}
@@ -290,46 +290,46 @@ export default function SpotlightCreator() {
             <div>
               <button
                 onClick={() => setPreviewVisible(!previewVisible)}
-                className="text-sm text-teal-400 hover:text-teal-300 flex items-center gap-1 mb-3"
+                className="text-sm text-teal-400 hover:text-teal-300 flex items-center gap-1 mb-3″
               >
-                <Eye className="w-4 h-4" />
+                <Eye className="w-4 h-4″ />
                 {previewVisible ? "Hide preview" : "Show preview"}
               </button>
               {previewVisible && (
-                <div className="rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-500/10 to-[#0A1628] p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0">
-                      <Star className="w-7 h-7 text-teal-400" />
+                <div className="rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-500/10 to-[#0A1628] p-6″>
+                  <div className="flex items-start gap-4″>
+                    <div className="w-14 h-14 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0″>
+                      <Star className="w-7 h-7 text-teal-400″ />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
+                    <div className="flex-1″>
+                      <div className="flex items-center gap-2 mb-1″>
                         <p className="font-bold text-white text-lg">{foundPartner?.name || "Partner Name"}</p>
                         <Badge className="bg-teal-500/20 text-teal-400 border-teal-500/30 text-xs">Featured Pro</Badge>
                       </div>
-                      <p className="text-slate-400 text-sm mb-3">{foundPartner?.trade || "Trade"}</p>
-                      <p className="text-slate-300 text-sm italic mb-4">"{quote || "Your spotlight quote will appear here..."}"</p>
-                      <div className="flex flex-wrap gap-3">
+                      <p className="text-slate-400 text-sm mb-3″>{foundPartner?.trade || "Trade"}</p>
+                      <p className="text-slate-300 text-sm italic mb-4″>"{quote || "Your spotlight quote will appear here..."}"</p>
+                      <div className="flex flex-wrap gap-3″>
                         {selectedStats.includes("Jobs Completed") && (
                           <div className="rounded-lg bg-[#0A1628] px-3 py-2 text-center">
-                            <p className="text-xl font-bold text-teal-400">{foundPartner?.jobs || 84}</p>
+                            <p className="text-xl font-bold text-teal-400″>{foundPartner?.jobs || 84}</p>
                             <p className="text-slate-400 text-xs">Jobs</p>
                           </div>
                         )}
                         {selectedStats.includes("Rating") && (
                           <div className="rounded-lg bg-[#0A1628] px-3 py-2 text-center">
-                            <p className="text-xl font-bold text-teal-400">5.0 ⭐</p>
+                            <p className="text-xl font-bold text-teal-400″>5.0 ⭐</p>
                             <p className="text-slate-400 text-xs">Rating</p>
                           </div>
                         )}
                         {selectedStats.includes("Response Time") && (
                           <div className="rounded-lg bg-[#0A1628] px-3 py-2 text-center">
-                            <p className="text-xl font-bold text-teal-400">&lt; 2h</p>
+                            <p className="text-xl font-bold text-teal-400″>&lt; 2h</p>
                             <p className="text-slate-400 text-xs">Response</p>
                           </div>
                         )}
                         {selectedStats.includes("Years Experience") && (
                           <div className="rounded-lg bg-[#0A1628] px-3 py-2 text-center">
-                            <p className="text-xl font-bold text-teal-400">12 yrs</p>
+                            <p className="text-xl font-bold text-teal-400″>12 yrs</p>
                             <p className="text-slate-400 text-xs">Experience</p>
                           </div>
                         )}
@@ -348,8 +348,8 @@ export default function SpotlightCreator() {
 
         {/* Performance table */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <BarChart2 className="w-5 h-5 text-teal-400" /> Spotlight Performance
+          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2″>
+            <BarChart2 className="w-5 h-5 text-teal-400″ /> Spotlight Performance
           </h2>
           <div className="rounded-2xl border border-slate-700 bg-[#0F1E35] overflow-hidden">
             <table className="w-full text-sm">
@@ -364,7 +364,7 @@ export default function SpotlightCreator() {
                 {PERF_DATA.map((row, i) => (
                   <tr key={row.id} className={`border-b border-slate-700/50 hover:bg-slate-800/30 transition-colors ${i === PERF_DATA.length - 1 ? "border-0" : ""}`}>
                     <td className="px-4 py-3 text-white font-medium">{row.partnerName}</td>
-                    <td className="px-4 py-3 text-slate-300">{row.type}</td>
+                    <td className="px-4 py-3 text-slate-300″>{row.type}</td>
                     <td className="px-4 py-3 text-white">{row.views.toLocaleString()}</td>
                     <td className="px-4 py-3 text-white">{row.profileVisits.toLocaleString()}</td>
                     <td className="px-4 py-3 text-teal-400 font-medium">{row.leadsBooked}</td>

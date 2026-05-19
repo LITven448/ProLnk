@@ -67,7 +67,7 @@ export default function DFWAnnualPestInspection2026() {
   const doneCount = allItems.filter(i => checked[i]).length;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E2E8F0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E2E8F0′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🐜</div>
@@ -80,7 +80,7 @@ export default function DFWAnnualPestInspection2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {homeTypes.map(t => (
               <button key={t} onClick={() => { setHomeType(t); setChecked({}); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: homeType === t ? '#F5E642' : '#1E3A5F', background: homeType === t ? '#F5E642' : 'transparent', color: homeType === t ? '#0A1628' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: homeType === t ? '#F5E642′ : '#1E3A5F', background: homeType === t ? '#F5E642' : ’transparent', color: homeType === t ? '#0A1628′ : '#94A3B8', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
                 {t}
               </button>
             ))}
@@ -89,7 +89,7 @@ export default function DFWAnnualPestInspection2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {pestHistories.map(h => (
               <button key={h} onClick={() => { setHistory(h); setChecked({}); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: history === h ? '#F5E642' : '#1E3A5F', background: history === h ? '#F5E642' : 'transparent', color: history === h ? '#0A1628' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: history === h ? '#F5E642′ : '#1E3A5F', background: history === h ? '#F5E642' : ’transparent', color: history === h ? '#0A1628′ : '#94A3B8', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
                 {h}
               </button>
             ))}
@@ -104,7 +104,7 @@ export default function DFWAnnualPestInspection2026() {
             </div>
             {allItems.map(item => (
               <div key={item} onClick={() => toggleItem(item)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E3A5F', cursor: 'pointer' }}>
-                <div style={{ width: 22, height: 22, borderRadius: 6, border: '2px solid', borderColor: checked[item] ? '#F5E642' : '#334155', background: checked[item] ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 22, height: 22, borderRadius: 6, border: '2px solid', borderColor: checked[item] ? '#F5E642′ : '#334155', background: checked[item] ? '#F5E642' : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   {checked[item] && <span style={{ color: '#0A1628', fontSize: 13, fontWeight: 900 }}>✓</span>}
                 </div>
                 <span style={{ color: checked[item] ? '#64748B' : '#E2E8F0', fontSize: 14, textDecoration: checked[item] ? 'line-through' : 'none' }}>{item}</span>
@@ -116,10 +116,10 @@ export default function DFWAnnualPestInspection2026() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h3 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10, fontSize: 15 }}>📅 DFW Pest Treatment Calendar</h3>
           <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.9 }}>
-            <div><span style={{ color: '#F5E642' }}>March: </span>Mosquito prevention, fire ant broadcast, wasp nest watch</div>
-            <div><span style={{ color: '#F5E642' }}>April-May: </span>Termite swarm season — inspect and treat</div>
-            <div><span style={{ color: '#F5E642' }}>October: </span>Rodent exclusion, second fire ant treatment</div>
-            <div><span style={{ color: '#F5E642' }}>November: </span>Fall termite inspection (best annual timing)</div>
+            <div><span style={{ color: '#F5E642′ }}>March: </span>Mosquito prevention, fire ant broadcast, wasp nest watch</div>
+            <div><span style={{ color: '#F5E642′ }}>April-May: </span>Termite swarm season — inspect and treat</div>
+            <div><span style={{ color: '#F5E642′ }}>October: </span>Rodent exclusion, second fire ant treatment</div>
+            <div><span style={{ color: '#F5E642′ }}>November: </span>Fall termite inspection (best annual timing)</div>
           </div>
         </div>
 

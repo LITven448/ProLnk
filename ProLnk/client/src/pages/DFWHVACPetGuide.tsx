@@ -49,22 +49,22 @@ export default function DFWHVACPetGuide() {
       <div style={{ background: 'linear-gradient(135deg, #0D1F3C 0%, #0A1628 100%)', borderBottom: '1px solid #1E3A5F', padding: '48px 24px 40px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW HVAC GUIDE</div>
-          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', lineHeight: 1.2 }}>HVAC & Pets in DFW:<br /><span style={{ color: '#F5E642' }}>Filters, Safety & Summer Survival</span></h1>
+          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', lineHeight: 1.2 }}>HVAC & Pets in DFW:<br /><span style={{ color: '#F5E642′ }}>Filters, Safety & Summer Survival</span></h1>
           <p style={{ fontSize: 17, color: '#A8B4C8', lineHeight: 1.7, margin: 0 }}>DFW pets clog HVAC filters 2–3x faster than normal. Add 108°F summers and cedar pollen winters, and your HVAC system needs a pet-specific maintenance plan — and so do your pets.</p>
         </div>
       </div>
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 0' }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 0′ }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 40 }}>
           {[['🐾', '3x', 'Faster filter clogging with pets'], ['🌡️', '108°F', 'DFW peak — dangerous for pets'], ['💰', '$340+', 'Extra HVAC cost with multiple pets']].map(([icon, stat, label]) => (
             <div key={label} style={{ background: '#0D1F3C', borderRadius: 12, padding: '20px 16px', textAlign: 'center', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{icon}</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>{stat}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>{stat}</div>
               <div style={{ fontSize: 12, color: '#6B7A99', marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>
         <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', color: '#F5E642' }}>🐾 Get Your Pet HVAC Plan</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', color: '#F5E642′ }}>🐾 Get Your Pet HVAC Plan</h2>
           <p style={{ fontSize: 13, color: '#6B7A99', margin: '0 0 20px' }}>Tell us your pet situation for a filter schedule, maintenance plan, and DFW summer safety checklist.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -82,21 +82,21 @@ export default function DFWHVACPetGuide() {
               </select>
             </div>
           </div>
-          <button onClick={generate} disabled={!petType || !count} style={{ background: petType && count ? '#F5E642' : '#1E3A5F', color: petType && count ? '#0A1628' : '#4A5568', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: petType && count ? 'pointer' : 'not-allowed' }}>Get My Pet HVAC Plan →</button>
+          <button onClick={generate} disabled={!petType || !count} style={{ background: petType && count ? '#F5E642′ : '#1E3A5F', color: petType && count ? '#0A1628' : '#4A5568', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: petType && count ? 'pointer' : 'not-allowed' }}>Get My Pet HVAC Plan →</button>
         </div>
         {plan && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#F5E642' }}>🔬 Filter Plan</h3>
+            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
+              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#F5E642′ }}>🔬 Filter Plan</h3>
               <div style={{ fontSize: 13, color: '#6B7A99', marginBottom: 14 }}>Annual extra HVAC cost with pets: <span style={{ color: '#F5E642', fontWeight: 700 }}>{plan.safetyCost}</span></div>
               {plan.filterPlan.map((item, i) => <div key={i} style={{ padding: '7px 0', borderBottom: '1px solid #1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{item}</div>)}
             </div>
             <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #1E3A5F' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#F5E642' }}>⚙️ Maintenance Acceleration Plan</h3>
+              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#F5E642′ }}>⚙️ Maintenance Acceleration Plan</h3>
               {plan.maintenancePlan.map((item, i) => <div key={i} style={{ padding: '7px 0', borderBottom: '1px solid #1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{item}</div>)}
             </div>
-            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #EF4444' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#EF4444' }}>🚨 DFW Summer Pet Safety Plan</h3>
+            <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #EF4444′ }}>
+              <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px', color: '#EF4444′ }}>🚨 DFW Summer Pet Safety Plan</h3>
               {plan.summerSafety.map((item, i) => <div key={i} style={{ padding: '7px 0', borderBottom: '1px solid #1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{item}</div>)}
             </div>
           </div>

@@ -88,9 +88,9 @@ export default function DFWHVACLifecyclePlan2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8, marginBottom: 32 }}>
           {[1, 3, 5, 8, 10, 12, 15, 17, 20, 25].map(yr => (
             <button key={yr} onClick={() => setAge(age === yr ? null : yr)}
-              style={{ background: age === yr ? '#F5E642' : '#1e2d45', border: '2px solid',
-                borderColor: age === yr ? '#F5E642' : '#2d3f5a', borderRadius: 8,
-                padding: '12px 4px', cursor: 'pointer', color: age === yr ? '#0A1628' : '#fff',
+              style={{ background: age === yr ? '#F5E642′ : '#1e2d45', border: '2px solid',
+                borderColor: age === yr ? '#F5E642′ : '#2d3f5a', borderRadius: 8,
+                padding: '12px 4px', cursor: 'pointer', color: age === yr ? '#0A1628′ : '#fff',
                 fontWeight: 700, fontSize: 15 }}>{yr} yr{yr === 1 ? '' : 's'}</button>
           ))}
         </div>
@@ -112,7 +112,7 @@ export default function DFWHVACLifecyclePlan2026() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 16, background: '#1e2d45', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 16, background: '#1e2d45', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>🔗 {stage.prolnk}</p>
             </div>
           </div>

@@ -27,7 +27,7 @@ const rugMaterials = {
 const sizingGuide = {
   living: 'DFW open plans: 9×12 minimum — all sofa legs on rug',
   dining: '8×10 for standard table — chairs stay on rug when pulled out',
-  bedroom: '8×10 under queen, 9×12 under king — 18–24" exposed floor on sides',
+  bedroom: '8×10 under queen, 9×12 under king — 18–24″ exposed floor on sides',
   patio: 'Match seating area — polypropylene only, 8×10 most common DFW covered patio',
   entryway: '2×3 or 3×5 — weather-resistant critical for DFW mud/rain entries',
 };
@@ -46,7 +46,7 @@ export default function DFWTextileAndRugGuide() {
       material: best[0].charAt(0).toUpperCase() + best[0].slice(1),
       score: best[1].score,
       note: best[1].note,
-      size: sizingGuide[room as keyof typeof sizingGuide] || 'Measure your space — allow 18" clearance on all sides',
+      size: sizingGuide[room as keyof typeof sizingGuide] || 'Measure your space — allow 18″ clearance on all sides',
     });
   }
 
@@ -93,13 +93,13 @@ export default function DFWTextileAndRugGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#1a3a5c', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#1a3a5c', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>✅ Best Choice: {result.material}</h3>
             <p style={{ color: '#cbd5e1', marginBottom: 8 }}>Score: {'⭐'.repeat(Math.round(result.score / 2))} ({result.score}/10)</p>
             <p style={{ color: '#94a3b8', marginBottom: 12 }}>{result.note}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
               <p style={{ color: '#F5E642', fontWeight: 600, marginBottom: 4 }}>📐 Sizing for your room:</p>
-              <p style={{ color: '#cbd5e1' }}>{result.size}</p>
+              <p style={{ color: '#cbd5e1′ }}>{result.size}</p>
             </div>
           </div>
         )}

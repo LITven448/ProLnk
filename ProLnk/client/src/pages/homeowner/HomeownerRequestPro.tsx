@@ -50,9 +50,9 @@ export default function HomeownerRequestPro() {
       <HomeownerLayout>
         <div className="p-6 flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
-            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Request Submitted!</h2>
-            <p className="text-muted-foreground mb-6">Verified pros in your area will contact you soon.</p>
+            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4″ />
+            <h2 className="text-2xl font-bold mb-2″>Request Submitted!</h2>
+            <p className="text-muted-foreground mb-6″>Verified pros in your area will contact you soon.</p>
             <Button onClick={() => setSubmitted(false)}>Submit Another Request</Button>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function HomeownerRequestPro() {
 
   return (
     <HomeownerLayout>
-      <div className="p-6 max-w-2xl mx-auto space-y-6">
+      <div className="p-6 max-w-2xl mx-auto space-y-6″>
         <div>
           <h1 className="text-2xl font-bold">Request a Pro</h1>
           <p className="text-muted-foreground">Tell us what you need and we'll connect you with verified pros in your area</p>
@@ -70,7 +70,7 @@ export default function HomeownerRequestPro() {
 
         <Card>
           <CardHeader><CardTitle>Service Details</CardTitle></CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4″>
             <div>
               <label className="text-sm font-medium mb-1 block">Service Category *</label>
               <Select value={form.serviceType} onValueChange={v => set("serviceType", v)}>
@@ -110,15 +110,15 @@ export default function HomeownerRequestPro() {
 
         <Card>
           <CardHeader><CardTitle>Your Contact Info</CardTitle></CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+          <CardContent className="space-y-4″>
+            <div className="grid grid-cols-2 gap-4″>
               <div>
                 <label className="text-sm font-medium mb-1 block">Name *</label>
                 <Input placeholder="Your name" value={form.name} onChange={e => set("name", e.target.value)} />
               </div>
               <div>
                 <label className="text-sm font-medium mb-1 block">Phone</label>
-                <Input placeholder="(214) 555-0100" value={form.phone} onChange={e => set("phone", e.target.value)} />
+                <Input placeholder="(214) 555-0100″ value={form.phone} onChange={e => set("phone", e.target.value)} />
               </div>
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function HomeownerRequestPro() {
         </Card>
 
         <Button
-          className="w-full gap-2"
+          className="w-full gap-2″
           size="lg"
           disabled={!form.serviceType || !form.description || !form.address || !form.name || !form.email || submitLead.isPending}
           onClick={() => submitLead.mutate({
@@ -142,7 +142,7 @@ export default function HomeownerRequestPro() {
             phone: form.phone,
           })}
         >
-          <Send className="h-4 w-4" />
+          <Send className="h-4 w-4″ />
           {submitLead.isPending ? "Submitting…" : "Submit Request"}
         </Button>
       </div>

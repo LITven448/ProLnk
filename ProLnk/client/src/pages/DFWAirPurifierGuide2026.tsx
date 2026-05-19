@@ -43,13 +43,13 @@ export default function DFWAirPurifierGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {levels.map(l => (
               <button key={l.id} onClick={() => setSelected(l.id === selected ? null : l.id)}
-                style={{ background: selected === l.id ? '#F5E642' : '#1a2f4a', color: selected === l.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === l.id ? '#F5E642′ : '#1a2f4a', color: selected === l.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {l.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Air Purification Solution</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 8 }}>{match.rec}</div>
               <div style={{ color: '#F5E642', fontSize: 13 }}>💰 Installed Cost: {match.cost}</div>

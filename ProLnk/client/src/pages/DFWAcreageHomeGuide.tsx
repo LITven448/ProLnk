@@ -30,7 +30,7 @@ export default function DFWAcreageHomeGuide() {
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 28 }}>
           {tiers.map(t => (
-            <div key={t.range} style={{ background: '#111E35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div key={t.range} style={{ background: '#111E35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                 <span style={{ fontWeight: 700, fontSize: 16 }}>📐 {t.range} — {t.label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>+{t.premium} cost premium</span>
@@ -45,7 +45,7 @@ export default function DFWAcreageHomeGuide() {
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', marginBottom: 8, fontWeight: 600 }}>Acreage Target: {acreage} acres</label>
             <input type="range" min={1} max={100} value={acreage} onChange={e => setAcreage(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontWeight: 600, marginBottom: 12 }}>Distance from DFW Core (Dallas/Fort Worth):</div>
@@ -53,7 +53,7 @@ export default function DFWAcreageHomeGuide() {
               {[['0-30', 'Under 30 mi'], ['30-60', '30–60 mi'], ['60+', '60+ mi']].map(([val, label]) => (
                 <button key={val} onClick={() => setDistance(val)}
                   style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                    background: distance === val ? '#F5E642' : '#1E2F4A', color: distance === val ? '#0A1628' : '#8A9BB5' }}>
+                    background: distance === val ? '#F5E642′ : '#1E2F4A', color: distance === val ? '#0A1628' : '#8A9BB5' }}>
                   {label}
                 </button>
               ))}
@@ -82,7 +82,7 @@ export default function DFWAcreageHomeGuide() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>⚡ Key Due Diligence Items</div>
               <ul style={{ color: '#8A9BB5', fontSize: 14, paddingLeft: 20, margin: 0 }}>
                 <li>Confirm well output (GPM) and water quality test</li>

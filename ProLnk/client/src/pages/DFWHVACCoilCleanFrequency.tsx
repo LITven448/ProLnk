@@ -34,13 +34,13 @@ export default function DFWHVACCoilCleanFrequency() {
         <p style={{ color: '#94a3b8', marginBottom: 12 }}>DFW's oak and cedar pollen season loads coils faster than most US cities. The minimum is annual — post-renovation or heavy pollen exposure requires immediate cleaning.</p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 10, padding: '14px 20px', marginBottom: 32, display: 'flex', gap: 32 }}>
-          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>1x</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Annual minimum for DFW</div></div>
-          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>2x</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Recommended with pets/pollen</div></div>
-          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>ASAP</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Post-renovation always</div></div>
-          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>$150-350</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Typical DFW pro cleaning cost</div></div>
+          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>1x</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Annual minimum for DFW</div></div>
+          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>2x</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Recommended with pets/pollen</div></div>
+          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>ASAP</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Post-renovation always</div></div>
+          <div style={{ textAlign: 'center' }}><div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>$150-350</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Typical DFW pro cleaning cost</div></div>
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ Signs Your DFW Coil Needs Cleaning Now</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ Signs Your DFW Coil Needs Cleaning Now</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 40 }}>
           {signs.map(s => (
             <div key={s.label} style={{ background: '#0f1f3d', borderRadius: 10, padding: '14px 18px', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -51,17 +51,17 @@ export default function DFWHVACCoilCleanFrequency() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📅 Get Your DFW Coil Cleaning Schedule</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📅 Get Your DFW Coil Cleaning Schedule</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>DFW Home Condition</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>DFW Home Condition</label>
               <select value={condition} onChange={e => setCondition(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select condition...</option>
                 {conditions.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Last Coil Cleaning</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Last Coil Cleaning</label>
               <select value={history} onChange={e => setHistory(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value=''>Select history...</option>
                 {histories.map(h => <option key={h} value={h}>{h}</option>)}
@@ -69,7 +69,7 @@ export default function DFWHVACCoilCleanFrequency() {
             </div>
           </div>
           {schedule && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>🧹 Schedule: {schedule.freq}</div>
               <div style={{ color: '#94a3b8', marginBottom: 6 }}>Service type: <span style={{ color: '#fff' }}>{schedule.type}</span></div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{schedule.note}</div>

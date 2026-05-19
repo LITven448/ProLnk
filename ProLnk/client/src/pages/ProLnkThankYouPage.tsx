@@ -50,13 +50,13 @@ export default function ProLnkThankYouPage() {
           </div>
         </div>
         <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>Personalize your next steps:</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>Personalize your next steps:</div>
           <div style={{ marginBottom: 16 }}>
             <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>I joined as a...</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
               {(['homeowner', 'partner', 'both'] as const).map(r => (
                 <button key={r} onClick={() => setRole(r)}
-                  style={{ padding: '12px 8px', background: role === r ? '#F5E642' : '#0A1628', color: role === r ? '#0A1628' : '#cbd5e1', border: '1.5px solid #1e3a5f', borderRadius: 10, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+                  style={{ padding: '12px 8px', background: role === r ? '#F5E642′ : '#0A1628', color: role === r ? '#0A1628' : '#cbd5e1', border: '1.5px solid #1e3a5f', borderRadius: 10, fontWeight: 700, fontSize: 14, cursor: ’pointer' }}>
                   {r === 'homeowner' ? '🏠 Homeowner' : r === 'partner' ? '🔧 Partner' : '⭐ Both'}
                 </button>
               ))}
@@ -72,8 +72,8 @@ export default function ProLnkThankYouPage() {
           </div>
         </div>
         {steps && (
-          <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 24, border: '2px solid #F5E642' }}>
-            <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 20, color: '#F5E642' }}>
+          <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 24, border: '2px solid #F5E642′ }}>
+            <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 20, color: '#F5E642′ }}>
               Your Next Steps {location ? `— ${location}` : ''}
             </div>
             {steps.map((s, i) => (
@@ -85,7 +85,7 @@ export default function ProLnkThankYouPage() {
           </div>
         )}
         <div style={{ background: '#111d30', borderRadius: 16, padding: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>⚡ Accelerate Your Results</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>⚡ Accelerate Your Results</div>
           {accelerators.map((a, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #1e3a5f', alignItems: 'flex-start' }}>
               <div style={{ fontSize: 24 }}>{a.icon}</div>

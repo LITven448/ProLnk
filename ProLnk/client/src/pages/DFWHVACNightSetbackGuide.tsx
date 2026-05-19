@@ -132,7 +132,7 @@ export default function DFWHVACNightSetbackGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>🌡️ DFW vs. Northern Climates: The Key Difference</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem' }}>
@@ -153,7 +153,7 @@ export default function DFWHVACNightSetbackGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {homeTypes.map(h => (
                 <button key={h} onClick={() => setHomeType(h)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: homeType === h ? '#F5E642' : '#1e3a5f', color: homeType === h ? '#0A1628' : '#e2e8f0', fontWeight: homeType === h ? 'bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: homeType === h ? '#F5E642′ : '#1e3a5f', color: homeType === h ? '#0A1628' : '#e2e8f0', fontWeight: homeType === h ? ’bold' : 'normal' }}>
                   {h}
                 </button>
               ))}
@@ -164,7 +164,7 @@ export default function DFWHVACNightSetbackGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {seasons.map(s => (
                 <button key={s} onClick={() => setSeason(s)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: season === s ? '#F5E642' : '#1e3a5f', color: season === s ? '#0A1628' : '#e2e8f0', fontWeight: season === s ? 'bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: season === s ? '#F5E642′ : '#1e3a5f', color: season === s ? '#0A1628' : '#e2e8f0', fontWeight: season === s ? ’bold' : 'normal' }}>
                   {s}
                 </button>
               ))}
@@ -175,7 +175,7 @@ export default function DFWHVACNightSetbackGuide() {
         {result && (
           <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', borderLeft: `4px solid ${result.color}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-              <span style={{ fontWeight: 'bold', color: '#e2e8f0' }}>Strategy:</span>
+              <span style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>Strategy:</span>
               <span style={{ background: result.color, color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontWeight: 'bold' }}>{result.strategy}</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -190,7 +190,7 @@ export default function DFWHVACNightSetbackGuide() {
             </div>
             <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>{result.explanation}</p>
             {result.warning && (
-              <div style={{ background: '#1a1000', borderRadius: '8px', padding: '0.75rem', marginBottom: '1rem', borderLeft: '3px solid #f97316' }}>
+              <div style={{ background: '#1a1000', borderRadius: '8px', padding: '0.75rem', marginBottom: '1rem', borderLeft: '3px solid #f97316′ }}>
                 <p style={{ color: '#fdba74', fontSize: '0.875rem' }}>⚠️ {result.warning}</p>
               </div>
             )}

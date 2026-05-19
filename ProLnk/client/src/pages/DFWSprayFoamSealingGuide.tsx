@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 const AREAS = ['Attic penetrations', 'Rim joist', 'HVAC chase', 'Plumbing penetrations', 'Electrical holes'];
 const CONDITIONS = ['Hot and humid (summer)', 'Dry and hot (late summer)', 'Mild and dry (fall/spring)', 'Cool (winter)'];
-const DEPTHS = ['Tight gap (<1")', 'Moderate gap (1–3")', 'Large cavity (3"+)', 'Rim joist cavity'];
+const DEPTHS = ['Tight gap (<1″)', 'Moderate gap (1–3″)', 'Large cavity (3″+)', 'Rim joist cavity'];
 
 function getFoamRecommendation(area: string, condition: string, depth: string) {
   const isHumid = condition.includes('humid');
   const isDry = condition.includes('Dry');
   const isLargeArea = area.includes('HVAC') || area.includes('Rim');
-  const isBigCavity = depth.includes('3"+') || depth.includes('Rim');
+  const isBigCavity = depth.includes('3″+') || depth.includes('Rim');
 
   if (isHumid && isLargeArea) {
     return {
@@ -28,9 +28,9 @@ function getFoamRecommendation(area: string, condition: string, depth: string) {
   }
   if (isBigCavity) {
     return {
-      type: 'Closed-Cell (2" minimum depth)',
-      note: 'Rim joists and large cavities: closed-cell at 2" depth provides R-13 and vapor control — meets DFW energy code.',
-      coverage: 'Measure cavity volume — 1 board-foot per sqft at 1" depth',
+      type: 'Closed-Cell (2″ minimum depth)',
+      note: 'Rim joists and large cavities: closed-cell at 2″ depth provides R-13 and vapor control — meets DFW energy code.',
+      coverage: 'Measure cavity volume — 1 board-foot per sqft at 1″ depth',
       cost: '$600–$2,000 DIY kit | $1,800–$5,000 professional',
     };
   }
@@ -80,7 +80,7 @@ export default function DFWSprayFoamSealingGuide() {
             </div>
           ))}
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{result.type}</div>
               <div style={{ color: '#9BA3B8', fontSize: 14, marginBottom: 12 }}>{result.note}</div>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>

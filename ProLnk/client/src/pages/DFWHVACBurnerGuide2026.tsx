@@ -19,7 +19,7 @@ export default function DFWHVACBurnerGuide2026() {
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🔧</div>
           <h1 style={{ color: '#F5E642', fontSize: '1.8rem', marginBottom: '0.5rem' }}>DFW Gas Furnace Burner Guide 2026</h1>
-          <p style={{ color: '#94a3b8' }}>Diagnose your furnace behavior — DFW-specific guidance</p>
+          <p style={{ color: '#94a3b8′ }}>Diagnose your furnace behavior — DFW-specific guidance</p>
         </div>
 
         <div style={{ backgroundColor: '#0d2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #1e3a5f' }}>
@@ -28,17 +28,17 @@ export default function DFWHVACBurnerGuide2026() {
             {Object.entries(guide).map(([k, v]) => (
               <button key={k} onClick={() => setBehavior(k)}
                 style={{ padding: '0.75rem 1rem', borderRadius: '8px', textAlign: 'left',
-                  border: behavior === k ? '2px solid #F5E642' : '2px solid #1e3a5f',
+                  border: behavior === k ? '2px solid #F5E642′ : '2px solid #1e3a5f',
                   backgroundColor: behavior === k ? '#1e3a5f' : '#0A1628',
-                  color: behavior === k ? '#F5E642' : '#94a3b8', cursor: 'pointer' }}>{v.label}</button>
+                  color: behavior === k ? '#F5E642′ : '#94a3b8', cursor: ’pointer' }}>{v.label}</button>
             ))}
           </div>
         </div>
 
         <div style={{ backgroundColor: '#0d2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #1e3a5f' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div><span style={{ color: '#94a3b8' }}>Likely Cause</span><div style={{ color: '#fff' }}>{sel.cause}</div></div>
-            <div><span style={{ color: '#94a3b8' }}>Urgency</span><div style={{ color: sel.urgencyColor, fontWeight: 'bold' }}>{sel.urgency}</div></div>
+            <div><span style={{ color: '#94a3b8′ }}>Likely Cause</span><div style={{ color: '#fff' }}>{sel.cause}</div></div>
+            <div><span style={{ color: '#94a3b8′ }}>Urgency</span><div style={{ color: sel.urgencyColor, fontWeight: ’bold' }}>{sel.urgency}</div></div>
           </div>
           <div style={{ backgroundColor: '#0A1628', padding: '0.75rem', borderRadius: '8px', color: '#22c55e' }}>🔧 {sel.action}</div>
         </div>

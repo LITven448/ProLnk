@@ -23,8 +23,8 @@ const geoRisks: Record<string, { riskType: string; color: string; level: string;
       'Unusual ponding in areas that previously drained',
     ],
     triggers: [
-      'Any circular depression larger than 12" diameter → call geotechnical engineer immediately',
-      'Rapid crack opening (more than 1/4" in 30 days) → foundation inspection priority',
+      'Any circular depression larger than 12″ diameter → call geotechnical engineer immediately',
+      'Rapid crack opening (more than 1/4″ in 30 days) → foundation inspection priority',
       'Multiple neighbors reporting similar ground movement → county survey recommended',
       'Any visible hole forming in yard → do not approach — call engineering first',
     ],
@@ -43,8 +43,8 @@ const geoRisks: Record<string, { riskType: string; color: string; level: string;
     ],
     triggers: [
       'Door or window misalignment appearing suddenly → foundation inspection within 60 days',
-      'Any depression deeper than 3" forming within a week → geotechnical consult',
-      'Foundation crack wider than 1/4" → structural engineer, not just a foundation company',
+      'Any depression deeper than 3″ forming within a week → geotechnical consult',
+      'Foundation crack wider than 1/4″ → structural engineer, not just a foundation company',
       'Utility company noting pipe deflection or breakage → ground movement indicator',
     ],
   },
@@ -79,7 +79,7 @@ const geoRisks: Record<string, { riskType: string; color: string; level: string;
     ],
     triggers: [
       'Sudden depression forming near utility easement → call city utility line first',
-      'Foundation crack wider than 3/16" → licensed foundation contractor + engineer',
+      'Foundation crack wider than 3/16″ → licensed foundation contractor + engineer',
       'Visible gap between soil and foundation beam → immediate soaker hose and inspection',
       'Any water meter spike without explanation → possible underground pipe leak feeding void',
     ],
@@ -135,7 +135,7 @@ export default function DFWSinkholeRiskGuide() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {locations.map(l => (
             <button key={l.id} onClick={() => setSelected(l.id)}
-              style={{ background: selected === l.id ? '#F5E642' : '#0f2240', color: selected === l.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
+              style={{ background: selected === l.id ? '#F5E642′ : '#0f2240', color: selected === l.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '10px 14px', cursor: ’pointer', fontWeight: 700, fontSize: 13 }}>
               {l.label}
             </button>
           ))}

@@ -43,7 +43,7 @@ export default function DFWFoundationCrackRepairMethods2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {methods.map(m => (
               <button key={m.id} onClick={() => setSelected(m.id)}
-                style={{ background: selected === m.id ? '#F5E642' : '#1A2F50', color: selected === m.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === m.id ? '#F5E642′ : '#1A2F50', color: selected === m.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
                 {m.label}
               </button>
             ))}

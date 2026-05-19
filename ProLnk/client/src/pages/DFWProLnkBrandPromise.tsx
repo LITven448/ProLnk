@@ -61,13 +61,13 @@ export default function DFWProLnkBrandPromise() {
           {(['homeowner', 'contractor', 'partner'] as UserType[]).map(t => (
             <button key={t} onClick={() => setUserType(t)}
               style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: userType === t ? '#F5E642' : '#1e3a5f', color: userType === t ? '#0A1628' : '#94a3b8' }}>
+                background: userType === t ? '#F5E642′ : '#1e3a5f', color: userType === t ? '#0A1628' : '#94a3b8' }}>
               {labels[t]}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 28, marginBottom: 28, borderTop: '4px solid #F5E642' }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 28, marginBottom: 28, borderTop: '4px solid #F5E642′ }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', margin: '0 0 20px' }}>{PROMISES[userType].headline}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {PROMISES[userType].points.map((p, i) => (

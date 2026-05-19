@@ -68,7 +68,7 @@ export default function DFWMasonryChimneyGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Priority List + Cost Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Priority List + Cost Estimator</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Chimney Age</label>
@@ -82,7 +82,7 @@ export default function DFWMasonryChimneyGuide() {
               <div style={{ display: 'grid', gap: 8 }}>
                 {PROBLEMS.map(p => (
                   <label key={p.id} style={{ display: 'flex', gap: 12, alignItems: 'center', cursor: 'pointer', padding: '10px 14px', background: selectedProblems.includes(p.id) ? '#1e3a5f' : '#0A1628', borderRadius: 8, border: `1px solid ${selectedProblems.includes(p.id) ? '#F5E642' : '#2d4a7a'}` }}>
-                    <input type="checkbox" checked={selectedProblems.includes(p.id)} onChange={() => toggleProblem(p.id)} style={{ width: 16, height: 16, accentColor: '#F5E642' }} />
+                    <input type="checkbox" checked={selectedProblems.includes(p.id)} onChange={() => toggleProblem(p.id)} style={{ width: 16, height: 16, accentColor: '#F5E642′ }} />
                     <span style={{ fontSize: 14 }}>{p.label}</span>
                     <span style={{ marginLeft: 'auto', color: '#64748b', fontSize: 12 }}>${p.cost_low.toLocaleString()}–${p.cost_high.toLocaleString()}</span>
                   </label>

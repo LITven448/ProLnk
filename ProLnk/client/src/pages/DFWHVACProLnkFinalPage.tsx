@@ -71,7 +71,7 @@ export default function DFWHVACProLnkFinalPage() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🏗️ The Four ProLnk Pillars</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🏗️ The Four ProLnk Pillars</h2>
           {PILLARS.map(p => (
             <div key={p.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <div style={{ fontSize: 22, flexShrink: 0 }}>{p.icon}</div>
@@ -84,15 +84,15 @@ export default function DFWHVACProLnkFinalPage() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📍 Your HVAC Situation → How ProLnk Helps</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📍 Your HVAC Situation → How ProLnk Helps</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {HVAC_SITUATIONS.map(s => (
-              <button key={s} onClick={() => setSelected(s)} style={{ background: selected === s ? '#F5E642' : '#162030', color: selected === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: selected === s ? 700 : 400, fontSize: 14 }}>{s}</button>
+              <button key={s} onClick={() => setSelected(s)} style={{ background: selected === s ? '#F5E642′ : '#162030', color: selected === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: selected === s ? 700 : 400, fontSize: 14 }}>{s}</button>
             ))}
           </div>
           {help && (
             <div style={{ background: '#162030', borderRadius: 10, padding: 20 }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14, color: '#F5E642' }}>{help.headline}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14, color: '#F5E642′ }}>{help.headline}</div>
               {help.points.map(pt => <div key={pt} style={{ marginBottom: 10, fontSize: 14, color: '#ddd', lineHeight: 1.6 }}>→ {pt}</div>)}
               <div style={{ marginTop: 16, background: '#0F2040', borderRadius: 8, padding: 12, fontSize: 13, color: '#8899AA', lineHeight: 1.6 }}>🗂️ {help.vault}</div>
             </div>

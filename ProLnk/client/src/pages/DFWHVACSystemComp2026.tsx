@@ -48,42 +48,42 @@ export default function DFWHVACSystemComp2026() {
   const selected = components.find((c) => c.id === active);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "2rem", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "2rem", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 820, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>❄️</div>
-          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW HVAC System Components</h1>
-          <p style={{ color: "#94a3b8", margin: 0 }}>Complete Reference 2026 — Select a component to explore</p>
+          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW HVAC System Components</h1>
+          <p style={{ color: "#94a3b8″, margin: 0 }}>Complete Reference 2026 — Select a component to explore</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
           {components.map((c) => (
             <button key={c.id} onClick={() => setActive(active === c.id ? null : c.id)}
-              style={{ background: active === c.id ? "#F5E642" : "#1e2d4a", border: "2px solid " + (active === c.id ? "#F5E642" : "#2d3f5e"),
+              style={{ background: active === c.id ? "#F5E642″ : "#1e2d4a", border: "2px solid " + (active === c.id ? "#F5E642" : "#2d3f5e"),
                 borderRadius: 12, padding: "1.2rem", cursor: "pointer", textAlign: "left", transition: "all 0.2s" }}>
               <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{c.emoji}</div>
-              <div style={{ fontWeight: 700, color: active === c.id ? "#0A1628" : "#F5E642", fontSize: "0.95rem" }}>{c.name}</div>
+              <div style={{ fontWeight: 700, color: active === c.id ? "#0A1628″ : "#F5E642", fontSize: "0.95rem" }}>{c.name}</div>
               <div style={{ color: active === c.id ? "#1e2d4a" : "#64748b", fontSize: "0.8rem", marginTop: "0.3rem" }}>{c.parts.length} parts</div>
             </button>
           ))}
         </div>
         {selected && (
-          <div style={{ background: "#1e2d4a", border: "2px solid #F5E642", borderRadius: 16, padding: "1.5rem" }}>
-            <h2 style={{ color: "#F5E642", margin: "0 0 0.5rem" }}>{selected.emoji} {selected.name}</h2>
+          <div style={{ background: "#1e2d4a", border: "2px solid #F5E642″, borderRadius: 16, padding: "1.5rem" }}>
+            <h2 style={{ color: "#F5E642″, margin: "0 0 0.5rem" }}>{selected.emoji} {selected.name}</h2>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
               {selected.parts.map((p) => (
-                <span key={p} style={{ background: "#0A1628", border: "1px solid #2d3f5e", borderRadius: 20, padding: "0.2rem 0.8rem", fontSize: "0.8rem", color: "#94a3b8" }}>{p}</span>
+                <span key={p} style={{ background: "#0A1628″, border: "1px solid #2d3f5e", borderRadius: 20, padding: "0.2rem 0.8rem", fontSize: "0.8rem", color: "#94a3b8" }}>{p}</span>
               ))}
             </div>
-            <p style={{ color: "#e2e8f0", lineHeight: 1.7, margin: "0 0 1rem" }}>{selected.desc}</p>
-            <div style={{ background: "#0A1628", borderRadius: 10, padding: "1rem", borderLeft: "4px solid #F5E642" }}>
-              <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.3rem" }}>🌡️ DFW-Specific Note</div>
-              <p style={{ color: "#94a3b8", margin: 0, fontSize: "0.9rem", lineHeight: 1.6 }}>{selected.dfw}</p>
+            <p style={{ color: "#e2e8f0″, lineHeight: 1.7, margin: "0 0 1rem" }}>{selected.desc}</p>
+            <div style={{ background: "#0A1628″, borderRadius: 10, padding: "1rem", borderLeft: "4px solid #F5E642" }}>
+              <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.3rem" }}>🌡️ DFW-Specific Note</div>
+              <p style={{ color: "#94a3b8″, margin: 0, fontSize: "0.9rem", lineHeight: 1.6 }}>{selected.dfw}</p>
             </div>
           </div>
         )}
         <div style={{ textAlign: "center", marginTop: "2rem", padding: "1rem", background: "#1e2d4a", borderRadius: 12 }}>
-          <div style={{ color: "#F5E642", fontWeight: 700 }}>🔧 Need a DFW HVAC Pro?</div>
-          <div style={{ color: "#94a3b8", fontSize: "0.85rem", marginTop: "0.3rem" }}>ProLnk matches you with verified DFW HVAC specialists — free quotes, no commitment</div>
+          <div style={{ color: "#F5E642″, fontWeight: 700 }}>🔧 Need a DFW HVAC Pro?</div>
+          <div style={{ color: "#94a3b8″, fontSize: "0.85rem", marginTop: "0.3rem" }}>ProLnk matches you with verified DFW HVAC specialists — free quotes, no commitment</div>
         </div>
       </div>
     </div>

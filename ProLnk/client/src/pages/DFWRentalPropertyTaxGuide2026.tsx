@@ -78,7 +78,7 @@ export default function DFWRentalPropertyTaxGuide2026() {
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
             <span>🏗️</span>
-            <span style={{ fontSize: 14, color: '#E8EAF0' }}>Depreciation: Residential rental property depreciates over 27.5 years. On a $350K DFW property (land $80K), that is roughly $9,818/year in non-cash deductions.</span>
+            <span style={{ fontSize: 14, color: '#E8EAF0′ }}>Depreciation: Residential rental property depreciates over 27.5 years. On a $350K DFW property (land $80K), that is roughly $9,818/year in non-cash deductions.</span>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function DFWRentalPropertyTaxGuide2026() {
               {guide.deductions.map(d => (
                 <div key={d} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>💵</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{d}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{d}</span>
                 </div>
               ))}
             </div>
@@ -106,7 +106,7 @@ export default function DFWRentalPropertyTaxGuide2026() {
               {guide.notes.map(n => (
                 <div key={n} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>🔔</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{n}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{n}</span>
                 </div>
               ))}
             </div>

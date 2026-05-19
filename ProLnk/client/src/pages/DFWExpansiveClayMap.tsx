@@ -62,10 +62,10 @@ export default function DFWExpansiveClayMap() {
           <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.25rem' }}>
             <p style={{ fontWeight: 600, color: '#F5E642', marginBottom: '0.75rem' }}>🏔️ Soil Formations in DFW</p>
             <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#94a3b8', lineHeight: 1.9 }}>
-              <li><strong style={{ color: '#e2e8f0' }}>Taylor Clay</strong> - Most expansive, central DFW</li>
-              <li><strong style={{ color: '#e2e8f0' }}>Austin Chalk</strong> - Less clay, more stable</li>
-              <li><strong style={{ color: '#e2e8f0' }}>Woodbine Sandstone</strong> - West Fort Worth, low clay</li>
-              <li><strong style={{ color: '#e2e8f0' }}>Navarro Clay</strong> - South DFW, high expansion</li>
+              <li><strong style={{ color: '#e2e8f0′ }}>Taylor Clay</strong> - Most expansive, central DFW</li>
+              <li><strong style={{ color: '#e2e8f0′ }}>Austin Chalk</strong> - Less clay, more stable</li>
+              <li><strong style={{ color: '#e2e8f0′ }}>Woodbine Sandstone</strong> - West Fort Worth, low clay</li>
+              <li><strong style={{ color: '#e2e8f0′ }}>Navarro Clay</strong> - South DFW, high expansion</li>
             </ul>
           </div>
           <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.25rem' }}>
@@ -92,7 +92,7 @@ export default function DFWExpansiveClayMap() {
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div><p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: '0 0 0.25rem' }}>Soil Type</p><p style={{ color: '#F5E642', fontWeight: 600, margin: 0 }}>{area.soil}</p></div>
-                <div><p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: '0 0 0.25rem' }}>Clay Level</p><p style={{ color: area.clay === 'Very High' ? '#ef4444' : area.clay === 'High' ? '#f97316' : '#22c55e', fontWeight: 600, margin: 0 }}>{area.clay}</p></div>
+                <div><p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: '0 0 0.25rem' }}>Clay Level</p><p style={{ color: area.clay === 'Very High' ? '#ef4444′ : area.clay === ’High' ? '#f97316′ : '#22c55e', fontWeight: 600, margin: 0 }}>{area.clay}</p></div>
                 <div><p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: '0 0 0.25rem' }}>Volume Expansion</p><p style={{ color: '#e2e8f0', fontWeight: 600, margin: 0 }}>{area.expansion}</p></div>
               </div>
               <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>Geological formation: {area.formation}</p>
@@ -104,7 +104,7 @@ export default function DFWExpansiveClayMap() {
           )}
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-          <strong style={{ color: '#F5E642' }}>ProLnk Note:</strong> Foundation issues from expansive clay are the most common and costly home repair in DFW. Get a structural engineer's assessment before any major foundation work. ProLnk connects you with licensed foundation specialists throughout the metroplex.
+          <strong style={{ color: '#F5E642′ }}>ProLnk Note:</strong> Foundation issues from expansive clay are the most common and costly home repair in DFW. Get a structural engineer’s assessment before any major foundation work. ProLnk connects you with licensed foundation specialists throughout the metroplex.
         </div>
       </div>
     </div>

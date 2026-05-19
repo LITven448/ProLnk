@@ -49,8 +49,8 @@ export default function DFWBestTimeToHirePlumber2026() {
         <div style={{ display: 'flex', gap: 12, marginBottom: 28, flexWrap: 'wrap' }}>
           {(Object.keys(urgencyData) as Urgency[]).map((key) => (
             <button key={key} onClick={() => setUrgency(key)} style={{
-              background: urgency === key ? '#F5E642' : '#1e2d45',
-              color: urgency === key ? '#0A1628' : '#fff',
+              background: urgency === key ? '#F5E642′ : '#1e2d45',
+              color: urgency === key ? '#0A1628′ : '#fff',
               border: 'none', borderRadius: 8, padding: '12px 20px', cursor: 'pointer', fontWeight: 600, fontSize: 14,
             }}>{urgencyData[key].label}</button>
           ))}
@@ -60,7 +60,7 @@ export default function DFWBestTimeToHirePlumber2026() {
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
               <div><div style={{ color: '#64748b', fontSize: 12 }}>Expected Wait</div><div style={{ fontWeight: 700, fontSize: 18 }}>{data.wait}</div></div>
-              <div><div style={{ color: '#64748b', fontSize: 12 }}>Pricing</div><div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642' }}>{data.cost}</div></div>
+              <div><div style={{ color: '#64748b', fontSize: 12 }}>Pricing</div><div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642′ }}>{data.cost}</div></div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, color: '#cbd5e1', fontSize: 14 }}>{data.advice}</div>
           </div>

@@ -48,7 +48,7 @@ export default function DFWPlumberSelectionGuide() {
         <div style={{ backgroundColor: '#1a2744', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>🔎 License & Verification</h2>
           <div style={{ color: '#94a3b8', fontSize: 15, lineHeight: 1.7, marginBottom: 16 }}>
-            All plumbers in Texas must be licensed by the <strong style={{ color: '#e2e8f0' }}>Texas State Board of Plumbing Examiners (TSBPE)</strong>. Verify at tsbpe.texas.gov before any work begins. Look for a Master Plumber license for any gas or new-installation work — Journeyman license is for repairs under supervision only.
+            All plumbers in Texas must be licensed by the <strong style={{ color: '#e2e8f0′ }}>Texas State Board of Plumbing Examiners (TSBPE)</strong>. Verify at tsbpe.texas.gov before any work begins. Look for a Master Plumber license for any gas or new-installation work — Journeyman license is for repairs under supervision only.
           </div>
           <div style={{ backgroundColor: '#0f1e3a', borderRadius: 8, padding: 16 }}>
             <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 8 }}>Local vs National Franchise Tradeoffs</div>
@@ -77,9 +77,9 @@ export default function DFWPlumberSelectionGuide() {
             {projectTypes.map((p, i) => (
               <button key={i} onClick={() => setSelected(selected === i ? null : i)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  borderColor: selected === i ? '#F5E642' : '#2d3f6b',
-                  backgroundColor: selected === i ? '#F5E642' : 'transparent',
-                  color: selected === i ? '#0A1628' : '#94a3b8' }}>
+                  borderColor: selected === i ? '#F5E642′ : '#2d3f6b',
+                  backgroundColor: selected === i ? '#F5E642′ : ’transparent',
+                  color: selected === i ? '#0A1628′ : '#94a3b8' }}>
                 {p.label}
               </button>
             ))}

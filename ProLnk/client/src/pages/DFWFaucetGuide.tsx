@@ -32,12 +32,12 @@ export default function DFWFaucetGuide() {
         <p style={{ color: '#8B9CC8', marginBottom: 32, fontSize: 16 }}>DFW hard water destroys cheap faucets in 3–5 years. Ceramic disc valves and the right finish last decades.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ DFW Faucet Facts</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ DFW Faucet Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['🔩 Ceramic Disc', 'Most DFW-durable valve — resists mineral buildup best'],['🪩 Finish Matters', 'Brushed nickel hides DFW deposits; chrome shows every spot'],['🔧 Ball Valves', 'Wear faster in DFW water — more maintenance required'],['💧 Cartridge', 'Good DFW choice — easy and cheap to replace when needed']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 13, color: '#8B9CC8' }}>{val}</div>
+                <div style={{ fontSize: 13, color: '#8B9CC8′ }}>{val}</div>
               </div>
             ))}
           </div>
@@ -72,16 +72,16 @@ export default function DFWFaucetGuide() {
             <h3 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>{result.valve} Valve — {result.finish}</h3>
             <p style={{ color: '#8B9CC8', marginBottom: 16 }}>{result.note}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 12 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 800, color: '#F5E642' }}>{result.cost}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Price Range</div></div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 800, color: '#F5E642' }}>{result.lifespan}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>DFW Lifespan</div></div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642' }}>{result.durability}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Durability</div></div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 800, color: '#F5E642′ }}>{result.cost}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Price Range</div></div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 800, color: '#F5E642′ }}>{result.lifespan}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>DFW Lifespan</div></div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642′ }}>{result.durability}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Durability</div></div>
             </div>
             <div style={{ padding: 12, background: '#0A1628', borderRadius: 8 }}><span style={{ color: '#8B9CC8', fontSize: 13 }}>Top brands: </span><span style={{ color: '#E8EAF0', fontSize: 13, fontWeight: 600 }}>{result.brands}</span></div>
           </div>
         )}
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 DFW Pro Tips</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Pro Tips</h2>
           {['Wipe faucets dry daily in DFW hard water areas to prevent mineral staining','Brushed nickel costs more upfront but saves cleaning time every week in DFW','Check for a lifetime warranty — major brands back ceramic disc faucets fully','Install a whole-house filter or softener to protect all your DFW faucets'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span>

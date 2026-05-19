@@ -30,7 +30,7 @@ export default function DFWHomeAppraisalGuide() {
     const mid = Math.round(tier.base * sizeAdj);
     const low = Math.round(mid * 0.94);
     const high = Math.round(mid * 1.06);
-    const cost = size === 'over3500' ? 650 : size === '2500to3500' ? 575 : 490;
+    const cost = size === 'over3500′ ? 650 : size === '2500to3500' ? 575 : 490;
     setResult({ low, high, cost });
   }
 
@@ -72,7 +72,7 @@ export default function DFWHomeAppraisalGuide() {
               {[['📍 Location', '1-mile radius preferred'], ['📅 Recency', '90 days max (180 in low-volume areas)'], ['📐 Size', 'Within 150-200 sq ft ideally']].map(([icon, text]) => (
                 <div key={text} style={{ background: '#f0f4ff', borderRadius: 8, padding: 14, textAlign: 'center', fontSize: 14 }}>
                   <div style={{ fontWeight: 700, marginBottom: 4 }}>{icon}</div>
-                  <div style={{ color: '#333' }}>{text}</div>
+                  <div style={{ color: '#333′ }}>{text}</div>
                 </div>
               ))}
             </div>
@@ -91,7 +91,7 @@ export default function DFWHomeAppraisalGuide() {
           {['1. Request a copy of the appraisal report immediately.', '2. Review the comps used — were any in inferior condition or different neighborhoods?', '3. Provide the appraiser with better comps they may have missed (recent sales, pending sales if allowed).', '4. Document improvements: new roof, HVAC, kitchen remodel with receipts.', '5. Request a Reconsideration of Value (ROV) through your lender — it\’s free.', '6. If still unsatisfied, hire a second independent appraiser (~$450-700) for a second opinion.'].map((step, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', marginBottom: 10 }}>
               <div style={{ background: '#0066cc', color: '#fff', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
-              <div style={{ lineHeight: 1.7, color: '#333' }}>{step}</div>
+              <div style={{ lineHeight: 1.7, color: '#333′ }}>{step}</div>
             </div>
           ))}
         </section>
@@ -108,10 +108,10 @@ export default function DFWHomeAppraisalGuide() {
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Home Size</label>
               <select value={size} onChange={e => setSize(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #ccc', fontSize: 15 }}>
-                <option value="under1500">Under 1,500 sq ft</option>
-                <option value="1500to2500">1,500 – 2,500 sq ft</option>
-                <option value="2500to3500">2,500 – 3,500 sq ft</option>
-                <option value="over3500">Over 3,500 sq ft</option>
+                <option value="under1500″>Under 1,500 sq ft</option>
+                <option value="1500to2500″>1,500 – 2,500 sq ft</option>
+                <option value="2500to3500″>2,500 – 3,500 sq ft</option>
+                <option value="over3500″>Over 3,500 sq ft</option>
               </select>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function DFWHomeAppraisalGuide() {
             <div style={{ marginTop: 22, background: '#f0f8ff', borderRadius: 10, padding: 20, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
               <div style={{ textAlign: 'center' }}><div style={{ fontSize: 13, color: '#555', marginBottom: 4 }}>Low Estimate</div><div style={{ fontSize: 22, fontWeight: 800, color: '#0066cc' }}>{fmt(result.low)}</div></div>
               <div style={{ textAlign: 'center' }}><div style={{ fontSize: 13, color: '#555', marginBottom: 4 }}>High Estimate</div><div style={{ fontSize: 22, fontWeight: 800, color: '#0066cc' }}>{fmt(result.high)}</div></div>
-              <div style={{ textAlign: 'center' }}><div style={{ fontSize: 13, color: '#555', marginBottom: 4 }}>Appraisal Cost</div><div style={{ fontSize: 22, fontWeight: 800, color: '#333' }}>{fmt(result.cost)}</div></div>
+              <div style={{ textAlign: 'center' }}><div style={{ fontSize: 13, color: '#555', marginBottom: 4 }}>Appraisal Cost</div><div style={{ fontSize: 22, fontWeight: 800, color: '#333′ }}>{fmt(result.cost)}</div></div>
             </div>
           )}
         </section>

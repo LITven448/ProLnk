@@ -44,26 +44,26 @@ export default function ProLnkStream2NetworkOverride() {
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 How It Works</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 How It Works</div>
           <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
             Every time a pro in your network earns a direct commission (Stream 1), you receive a percentage override based on which level they sit in your tree. You do not need to be active — this income flows automatically as your recruits close jobs.
           </p>
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 Network Override Projector</div>
+          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 Network Override Projector</div>
 
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Avg Monthly Earnings per Pro: ${avgEarning.toLocaleString()}</label>
             <input type="range" min={500} max={8000} step={100} value={avgEarning} onChange={e => setAvgEarning(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
           </div>
 
           {LEVELS.map((lv, i) => (
             <div key={lv.level} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>{lv.emoji} Level {lv.level} Pros: {counts[i]}</label>
               <input type="range" min={0} max={500} value={counts[i]} onChange={e => setters[i](+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642' }} />
+                style={{ width: '100%', accentColor: '#F5E642′ }} />
             </div>
           ))}
 
@@ -76,7 +76,7 @@ export default function ProLnkStream2NetworkOverride() {
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12, borderTop: '1px solid #1E3A5F', paddingTop: 12 }}>
               <span style={{ fontWeight: 700, fontSize: 16 }}>Total Network Override</span>
-              <span style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>${total.toFixed(0)}/mo</span>
+              <span style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>${total.toFixed(0)}/mo</span>
             </div>
           </div>
         </div>

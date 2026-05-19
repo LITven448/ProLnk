@@ -42,7 +42,7 @@ export default function DFWContractorEstimateSystemGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[{ title: '📊 Line-Item Clarity', desc: 'DFW homeowners expect itemized breakdowns — not a single lump sum. List every material, labor hour, and permit separately.' }, { title: '🏷️ Material Specs', desc: 'Include brand names, model numbers, and grades. "3/4 inch Type L copper pipe" beats "plumbing materials."' }, { title: '📅 Timeline', desc: 'Start date, milestone dates, completion date. DFW homeowners coordinate around your schedule.' }, { title: '💰 Payment Schedule', desc: 'Tie payments to milestones, never front-load. Texas homeowners are cautious about contractors who demand too much upfront.' }].map((item) => (
             <div key={item.title} style={{ background: '#111f3a', borderRadius: '8px', padding: '1.25rem', border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>{item.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>{item.title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>{item.desc}</div>
             </div>
           ))}
@@ -78,7 +78,7 @@ export default function DFWContractorEstimateSystemGuide() {
           )}
         </div>
 
-        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>💡 ProLnk Pro Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>ProLnk pros who send estimates within 2 hours of a lead have a 3x higher win rate in DFW. Speed signals professionalism. Your estimate system should let you generate a quote in under 10 minutes.</div>
         </div>

@@ -41,7 +41,7 @@ const counties = [
     name: 'Denton County',
     icon: '🌳',
     dates: [
-      { date: 'Jan 31', action: 'Property tax payment — discount available if paid by Dec 31' },
+      { date: 'Jan 31', action: 'Property tax payment — discount available if paid by Dec 31′ },
       { date: 'Apr 30', action: 'Homestead exemption filing deadline' },
       { date: 'May 15', action: 'Protest deadline — Denton CAD values rising fast' },
       { date: 'Oct 1', action: 'New appraisal year begins' },
@@ -65,7 +65,7 @@ export default function DFWPropertyTaxQuickRef2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
           {counties.map((c, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642' : '2px solid #1e3a5f', borderRadius: '12px', padding: '20px', cursor: 'pointer', textAlign: 'left' }}>
+              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642′ : '2px solid #1e3a5f', borderRadius: '12px', padding: '20px', cursor: ’pointer', textAlign: 'left' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{c.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px' }}>{c.name}</div>
               <div style={{ color: '#475569', fontSize: '11px', marginTop: '4px' }}>{c.portal}</div>

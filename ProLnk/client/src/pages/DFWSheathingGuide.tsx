@@ -8,9 +8,9 @@ function getSheathingAssessment(material: string, issue: string) {
     const structural = material === 'OSB (oriented strand board)' || material === 'Plywood';
     return {
       rating: structural ? 'GOOD' : 'CONCERN',
-      color: structural ? '#00CC66' : '#FF8C00',
+      color: structural ? '#00CC66′ : '#FF8C00',
       assessment: structural
-        ? 'OSB and plywood provide strong racking resistance — critical in DFW wind events. Properly nailed (6" edge, 12" field) to studs, these panels act as the primary lateral load system.'
+        ? 'OSB and plywood provide strong racking resistance — critical in DFW wind events. Properly nailed (6″ edge, 12″ field) to studs, these panels act as the primary lateral load system.'
         : material === 'Foam board (exterior insulation)'
           ? 'Foam board alone provides minimal racking resistance. DFW wind loads require a separate structural sheathing layer or engineered bracing system when foam is used.'
           : 'Diagonal board sheathing provides racking resistance through triangulation but is inferior to panel sheathing in extreme wind. Older DFW homes with board sheathing are more vulnerable in tornado events.',
@@ -21,7 +21,7 @@ function getSheathingAssessment(material: string, issue: string) {
   if (issue === 'Moisture intrusion / staining') {
     return {
       rating: material === 'OSB (oriented strand board)' ? 'HIGH RISK' : 'MODERATE RISK',
-      color: material === 'OSB (oriented strand board)' ? '#FF4444' : '#FF8C00',
+      color: material === 'OSB (oriented strand board)' ? '#FF4444′ : '#FF8C00',
       assessment: 'OSB is highly moisture-sensitive. DFW\’s humidity (averaging 60–70% RH) combined with inadequate house wrap or failed window flashing causes OSB to swell, delaminate, and lose shear strength. Plywood is more forgiving due to cross-laminated layers.',
       performance: 'Water infiltration behind cladding is a primary cause of wall sheathing failure in DFW. Often invisible until re-siding.',
       recommendation: 'Inspect sheathing condition whenever re-siding. Any soft, dark, or crumbling panels must be replaced before new siding application.',
@@ -82,7 +82,7 @@ export default function DFWSheathingGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>🔍 Sheathing Performance Assessment</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#8899BB', fontSize: 13, marginBottom: 8 }}>Sheathing material (if known)</label>

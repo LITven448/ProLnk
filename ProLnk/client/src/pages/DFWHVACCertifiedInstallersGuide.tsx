@@ -48,7 +48,7 @@ export default function DFWHVACCertifiedInstallersGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏅</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Certified HVAC Installers Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Certified HVAC Installers Guide</h1>
           <p style={{ color: '#9BB0CC', margin: 0 }}>Find, verify, and evaluate certified HVAC pros in DFW</p>
         </div>
 
@@ -81,7 +81,7 @@ export default function DFWHVACCertifiedInstallersGuide() {
         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
           {([['certs', '🎓 Certifications'], ['install', '🛠 Good Installation'], ['redflags', '🚩 Red Flags']] as const).map(([key, label]) => (
             <button key={key} onClick={() => setTab(key)}
-              style={{ padding: '0.5rem 1rem', borderRadius: 6, border: '1px solid', borderColor: tab === key ? '#F5E642' : '#1E3A5F', background: tab === key ? '#1E3A5F' : 'transparent', color: tab === key ? '#F5E642' : '#9BB0CC', cursor: 'pointer', fontWeight: 700 }}>
+              style={{ padding: '0.5rem 1rem', borderRadius: 6, border: '1px solid', borderColor: tab === key ? '#F5E642′ : '#1E3A5F', background: tab === key ? '#1E3A5F' : ’transparent', color: tab === key ? '#F5E642′ : '#9BB0CC', cursor: ’pointer', fontWeight: 700 }}>
               {label}
             </button>
           ))}
@@ -93,9 +93,9 @@ export default function DFWHVACCertifiedInstallersGuide() {
               <div key={cert.label} style={{ background: '#112240', borderRadius: 12, padding: '1.25rem', marginBottom: '1rem' }}>
                 <h3 style={{ color: '#F5E642', marginTop: 0 }}>{cert.emoji} {cert.label}</h3>
                 <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: '0.75rem' }}>{cert.why}</p>
-                <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '4px solid #F5E642' }}>
+                <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '4px solid #F5E642′ }}>
                   <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>How to Verify</div>
-                  <div style={{ color: '#CBD5E1' }}>{cert.howToVerify}</div>
+                  <div style={{ color: '#CBD5E1′ }}>{cert.howToVerify}</div>
                 </div>
               </div>
             ))}
@@ -106,7 +106,7 @@ export default function DFWHVACCertifiedInstallersGuide() {
           <div style={{ background: '#112240', borderRadius: 12, padding: '1.25rem' }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>🛠 What Good DFW HVAC Installation Looks Like</h3>
             {goodInstall.map((item, i) => (
-              <div key={i} style={{ display: 'flex', gap: '0.75rem', padding: '0.6rem 0', borderBottom: '1px solid #1E3A5F', color: '#CBD5E1' }}>
+              <div key={i} style={{ display: 'flex', gap: '0.75rem', padding: '0.6rem 0', borderBottom: '1px solid #1E3A5F', color: '#CBD5E1′ }}>
                 <span style={{ color: '#4ADE80', flexShrink: 0 }}>✓</span><span>{item}</span>
               </div>
             ))}
@@ -117,7 +117,7 @@ export default function DFWHVACCertifiedInstallersGuide() {
           <div style={{ background: '#112240', borderRadius: 12, padding: '1.25rem' }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>🚩 DFW HVAC Installer Red Flags</h3>
             {redFlags.map((item, i) => (
-              <div key={i} style={{ padding: '0.6rem 0', borderBottom: '1px solid #1E3A5F', color: '#CBD5E1' }}>{item}</div>
+              <div key={i} style={{ padding: '0.6rem 0', borderBottom: '1px solid #1E3A5F', color: '#CBD5E1′ }}>{item}</div>
             ))}
           </div>
         )}

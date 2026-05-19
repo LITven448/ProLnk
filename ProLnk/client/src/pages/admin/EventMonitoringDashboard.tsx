@@ -10,20 +10,20 @@ import {
 } from "recharts";
 
 const D = {
-  bg: "#0D1117",
+  bg: "#0D1117″,
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8",
-  dim: "#555B72",
+  muted: "#8B91A8″,
+  dim: "#555B72″,
   cyan: "#00D4FF",
-  green: "#00E676",
-  amber: "#FFB300",
-  red: "#FF4444",
-  purple: "#A855F7",
-  teal: "#14B8A6",
-  orange: "#F97316",
+  green: "#00E676″,
+  amber: "#FFB300″,
+  red: "#FF4444″,
+  purple: "#A855F7″,
+  teal: "#14B8A6″,
+  orange: "#F97316″,
 };
 
 const EVENT_TYPES = [
@@ -52,9 +52,9 @@ const PARTNER_NAMES = [
 ];
 
 const AMOUNTS: Partial<Record<EventType, string[]>> = {
-  "payment.succeeded": ["$149.00", "$299.00", "$74.50", "$199.00"],
-  "lead.created":      ["$45.00", "$80.00", "$120.00"],
-  "job.completed":     ["$320.00", "$580.00", "$250.00"],
+  "payment.succeeded": ["$149.00″, "$299.00", "$74.50", "$199.00"],
+  "lead.created":      ["$45.00″, "$80.00", "$120.00"],
+  "job.completed":     ["$320.00″, "$580.00", "$250.00"],
 };
 
 interface LiveEvent {
@@ -116,7 +116,7 @@ function LiveCounter({ label, value, color, icon: Icon }: CounterProps) {
   }, []);
 
   return (
-    <div style={{ background: D.card, border: `1px solid ${D.border}` }} className="rounded-2xl p-5 flex flex-col gap-2">
+    <div style={{ background: D.card, border: `1px solid ${D.border}` }} className="rounded-2xl p-5 flex flex-col gap-2″>
       <div className="flex items-center justify-between">
         <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: D.dim }}>{label}</span>
         <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${color}18` }}>
@@ -124,7 +124,7 @@ function LiveCounter({ label, value, color, icon: Icon }: CounterProps) {
         </div>
       </div>
       <p className="text-4xl font-black" style={{ color }}>{displayed}</p>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1″>
         <span className="inline-block w-2 h-2 rounded-full animate-pulse" style={{ background: color }} />
         <span className="text-xs" style={{ color: D.dim }}>live</span>
       </div>
@@ -150,23 +150,23 @@ export default function EventMonitoringDashboard() {
 
   return (
     <AdminLayout>
-      <div style={{ background: D.bg, minHeight: "100vh", color: D.text }} className="p-4 md:p-8 space-y-8">
+      <div style={{ background: D.bg, minHeight: "100vh", color: D.text }} className="p-4 md:p-8 space-y-8″>
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4″>
           <div>
             <h1 className="text-2xl font-bold" style={{ color: D.text }}>Event Monitor</h1>
-            <p className="text-sm mt-1" style={{ color: D.muted }}>Everything happening on the platform right now</p>
+            <p className="text-sm mt-1″ style={{ color: D.muted }}>Everything happening on the platform right now</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3″>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl" style={{ background: D.card, border: `1px solid ${D.green}44` }}>
               <span className="inline-block w-2 h-2 rounded-full animate-pulse" style={{ background: D.green }} />
               <span className="text-xs font-semibold" style={{ color: D.green }}>Live</span>
             </div>
             <button
               onClick={() => setPaused(p => !p)}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all hover:opacity-80"
-              style={{ background: paused ? D.cyan : D.card, color: paused ? "#000" : D.text, border: `1px solid ${D.border}` }}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all hover:opacity-80″
+              style={{ background: paused ? D.cyan : D.card, color: paused ? "#000″ : D.text, border: `1px solid ${D.border}` }}
             >
               {paused ? <Play size={14} /> : <Pause size={14} />}
               {paused ? "Resume feed" : "Pause feed"}
@@ -175,7 +175,7 @@ export default function EventMonitoringDashboard() {
         </div>
 
         {/* Live Counters */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
           <LiveCounter label="Events/min"         value={24}  color={D.cyan}   icon={Zap} />
           <LiveCounter label="Active users"        value={67}  color={D.green}  icon={Users} />
           <LiveCounter label="Leads in flight"     value={8}   color={D.amber}  icon={Activity} />
@@ -183,11 +183,11 @@ export default function EventMonitoringDashboard() {
         </div>
 
         {/* Event Stream + Donut side by side */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6″>
 
           {/* Stream */}
           <div className="md:col-span-2 flex flex-col" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-            <div className="rounded-t-2xl flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${D.border}` }}>
+            <div className="rounded-t-2xl flex items-center justify-between px-5 py-4″ style={{ borderBottom: `1px solid ${D.border}` }}>
               <span className="text-sm font-bold" style={{ color: D.text }}>Live Event Stream</span>
               <RefreshCw size={14} style={{ color: paused ? D.dim : D.cyan }} className={paused ? "" : "animate-spin"} />
             </div>
@@ -195,12 +195,12 @@ export default function EventMonitoringDashboard() {
               {events.map(ev => (
                 <div
                   key={ev.id}
-                  className="flex items-center gap-3 px-5 py-2.5"
+                  className="flex items-center gap-3 px-5 py-2.5″
                   style={{ borderBottom: `1px solid ${D.border}22` }}
                 >
-                  <span className="text-xs font-mono shrink-0" style={{ color: D.dim, width: 60 }}>{ev.ts}</span>
+                  <span className="text-xs font-mono shrink-0″ style={{ color: D.dim, width: 60 }}>{ev.ts}</span>
                   <span
-                    className="text-xs font-semibold px-2 py-0.5 rounded-full shrink-0"
+                    className="text-xs font-semibold px-2 py-0.5 rounded-full shrink-0″
                     style={{
                       background: `${EVENT_COLORS[ev.type]}18`,
                       color: EVENT_COLORS[ev.type],
@@ -210,7 +210,7 @@ export default function EventMonitoringDashboard() {
                     {ev.type}
                   </span>
                   <span className="text-xs flex-1 truncate" style={{ color: D.muted }}>{ev.entity}</span>
-                  {ev.amount && <span className="text-xs font-bold shrink-0" style={{ color: D.green }}>{ev.amount}</span>}
+                  {ev.amount && <span className="text-xs font-bold shrink-0″ style={{ color: D.green }}>{ev.amount}</span>}
                 </div>
               ))}
             </div>
@@ -218,8 +218,8 @@ export default function EventMonitoringDashboard() {
 
           {/* Donut */}
           <div style={{ background: D.card, border: `1px solid ${D.border}` }} className="rounded-2xl p-5 flex flex-col">
-            <h2 className="text-sm font-bold mb-4" style={{ color: D.text }}>Event Type Breakdown</h2>
-            <div className="flex-1" style={{ minHeight: 200 }}>
+            <h2 className="text-sm font-bold mb-4″ style={{ color: D.text }}>Event Type Breakdown</h2>
+            <div className="flex-1″ style={{ minHeight: 200 }}>
               <ResponsiveContainer width="100%" height={200}>
                 <PieChart>
                   <Pie data={DONUT_DATA} dataKey="value" cx="50%" cy="50%" innerRadius={55} outerRadius={85} paddingAngle={3}>
@@ -234,10 +234,10 @@ export default function EventMonitoringDashboard() {
                 </PieChart>
               </ResponsiveContainer>
             </div>
-            <div className="space-y-2 mt-2">
+            <div className="space-y-2 mt-2″>
               {DONUT_DATA.map(d => (
                 <div key={d.name} className="flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2″>
                     <span className="w-2 h-2 rounded-full" style={{ background: d.color }} />
                     <span style={{ color: D.muted }}>{d.name}</span>
                   </div>
@@ -249,17 +249,17 @@ export default function EventMonitoringDashboard() {
         </div>
 
         {/* Volume Chart */}
-        <div style={{ background: D.card, border: `1px solid ${D.border}` }} className="rounded-2xl p-5">
-          <h2 className="text-sm font-bold mb-4" style={{ color: D.text }}>Events Per Hour — Last 24 Hours</h2>
+        <div style={{ background: D.card, border: `1px solid ${D.border}` }} className="rounded-2xl p-5″>
+          <h2 className="text-sm font-bold mb-4″ style={{ color: D.text }}>Events Per Hour — Last 24 Hours</h2>
           <ResponsiveContainer width="100%" height={180}>
             <AreaChart data={hourly}>
               <defs>
-                <linearGradient id="evGrad" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="evGrad" x1="0″ y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor={D.cyan} stopOpacity={0.3} />
                   <stop offset="95%" stopColor={D.cyan} stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke={D.border} />
+              <CartesianGrid strokeDasharray="3 3″ stroke={D.border} />
               <XAxis dataKey="time" tick={{ fill: D.dim, fontSize: 10 }} interval={3} />
               <YAxis tick={{ fill: D.dim, fontSize: 10 }} />
               <Tooltip
@@ -271,8 +271,8 @@ export default function EventMonitoringDashboard() {
         </div>
 
         {/* Error Rate Banner */}
-        <div style={{ background: `${D.amber}10`, border: `1px solid ${D.amber}33` }} className="rounded-2xl p-4 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+        <div style={{ background: `${D.amber}10`, border: `1px solid ${D.amber}33` }} className="rounded-2xl p-4 flex items-center justify-between gap-4″>
+          <div className="flex items-center gap-3″>
             <AlertTriangle size={18} style={{ color: D.amber }} />
             <p className="text-sm" style={{ color: D.muted }}>
               <span style={{ color: D.amber }} className="font-semibold">0.08% error rate</span>

@@ -127,7 +127,7 @@ export default function DFWRelocationGuide() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeTab === tab ? '#F5E642' : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
+                background: activeTab === tab ? '#F5E642′ : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
               }}
             >
               {tab === 'overview' ? '🌆 DFW Overview' : tab === 'suburbs' ? '🏘️ Compare Suburbs' : tab === 'finder' ? '🧭 Neighborhood Finder' : '💰 Cost of Living'}
@@ -147,7 +147,7 @@ export default function DFWRelocationGuide() {
                 { label: 'Median Home Price', value: '$420K', note: 'vs $520K Austin, $850K LA' },
               ].map(stat => (
                 <div key={stat.label} style={{ background: '#1E3A5F', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{stat.value}</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{stat.value}</div>
                   <div style={{ color: '#fff', fontWeight: 600, fontSize: 13, marginTop: 4 }}>{stat.label}</div>
                   <div style={{ color: '#64748B', fontSize: 12, marginTop: 4 }}>{stat.note}</div>
                 </div>
@@ -242,8 +242,8 @@ export default function DFWRelocationGuide() {
                     onClick={() => togglePriority(p)}
                     style={{
                       padding: '10px 18px', borderRadius: 8, border: `2px solid ${selectedPriorities.includes(p) ? '#F5E642' : '#2D4A6B'}`,
-                      background: selectedPriorities.includes(p) ? '#F5E642' : 'transparent',
-                      color: selectedPriorities.includes(p) ? '#0A1628' : '#CBD5E1',
+                      background: selectedPriorities.includes(p) ? '#F5E642′ : ’transparent',
+                      color: selectedPriorities.includes(p) ? '#0A1628′ : '#CBD5E1',
                       cursor: selectedPriorities.includes(p) || selectedPriorities.length < 3 ? 'pointer' : 'not-allowed',
                       fontWeight: selectedPriorities.includes(p) ? 700 : 400, fontSize: 14,
                     }}
@@ -267,7 +267,7 @@ export default function DFWRelocationGuide() {
                 {topThree.map((sub, i) => (
                   <div key={sub.name} style={{ background: '#1E3A5F', borderRadius: 12, padding: 24, marginBottom: 16, borderLeft: `4px solid ${i === 0 ? '#F5E642' : i === 1 ? '#60A5FA' : '#94A3B8'}` }}>
                     <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 12 }}>
-                      <div style={{ fontSize: 28, fontWeight: 800, color: i === 0 ? '#F5E642' : i === 1 ? '#60A5FA' : '#94A3B8' }}>#{i + 1}</div>
+                      <div style={{ fontSize: 28, fontWeight: 800, color: i === 0 ? '#F5E642′ : i === 1 ? '#60A5FA' : '#94A3B8' }}>#{i + 1}</div>
                       <div>
                         <div style={{ fontSize: 20, fontWeight: 800, color: '#fff' }}>{sub.name}</div>
                         <div style={{ color: '#94A3B8', fontSize: 13 }}>{sub.medianHome} median • {sub.schoolRating} schools • {sub.commute}</div>
@@ -297,12 +297,12 @@ export default function DFWRelocationGuide() {
                   </thead>
                   <tbody>
                     {metros.map((row, i) => (
-                      <tr key={row.metro} style={{ borderBottom: '1px solid #1A2E4A', background: i === 0 ? '#0A2040' : 'transparent' }}>
-                        <td style={{ padding: '12px 16px', color: i === 0 ? '#F5E642' : '#fff', fontWeight: i === 0 ? 800 : 400 }}>{row.metro} {i === 0 ? '⭐' : ''}</td>
-                        <td style={{ padding: '12px 16px', color: '#CBD5E1' }}>{row.medianHome}</td>
-                        <td style={{ padding: '12px 16px', color: '#CBD5E1' }}>{row.medianIncome}</td>
-                        <td style={{ padding: '12px 16px', color: row.stateTax === 'None' ? '#34D399' : '#F87171', fontWeight: 600 }}>{row.stateTax}</td>
-                        <td style={{ padding: '12px 16px', color: '#CBD5E1' }}>{row.avgCommute}</td>
+                      <tr key={row.metro} style={{ borderBottom: '1px solid #1A2E4A', background: i === 0 ? '#0A2040′ : ’transparent' }}>
+                        <td style={{ padding: '12px 16px', color: i === 0 ? '#F5E642′ : '#fff', fontWeight: i === 0 ? 800 : 400 }}>{row.metro} {i === 0 ? '⭐' : ''}</td>
+                        <td style={{ padding: '12px 16px', color: '#CBD5E1′ }}>{row.medianHome}</td>
+                        <td style={{ padding: '12px 16px', color: '#CBD5E1′ }}>{row.medianIncome}</td>
+                        <td style={{ padding: '12px 16px', color: row.stateTax === 'None' ? '#34D399′ : '#F87171', fontWeight: 600 }}>{row.stateTax}</td>
+                        <td style={{ padding: '12px 16px', color: '#CBD5E1′ }}>{row.avgCommute}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -317,7 +317,7 @@ export default function DFWRelocationGuide() {
                   ['Net savings moving DFW from LA (Year 1)', '—', '$430K+ in equity + $11K/yr tax savings'],
                 ].map(([label, dfw, la]) => (
                   <div key={label} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 16, padding: '10px 0', borderBottom: '1px solid #1A2E4A', fontSize: 13 }}>
-                    <div style={{ color: '#94A3B8' }}>{label}</div>
+                    <div style={{ color: '#94A3B8′ }}>{label}</div>
                     <div style={{ color: '#34D399', fontWeight: 600 }}>{dfw}</div>
                     <div style={{ color: '#F87171', fontWeight: 600 }}>{la}</div>
                   </div>

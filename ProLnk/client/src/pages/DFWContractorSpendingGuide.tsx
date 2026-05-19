@@ -93,7 +93,7 @@ export default function DFWContractorSpendingGuide() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>Expected Annual Spend</div>
-                <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>${total.toLocaleString()}</div>
+                <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>${total.toLocaleString()}</div>
               </div>
               <div style={{ background: '#1a2f4e', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>Per Month</div>

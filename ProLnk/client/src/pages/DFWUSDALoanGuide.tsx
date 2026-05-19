@@ -82,13 +82,13 @@ export default function DFWUSDALoanGuide() {
             { icon: '💵', label: 'Down Payment', value: '0%', sub: '100% financing available' },
             { icon: '📊', label: 'Guarantee Fee', value: '1.0%', sub: 'Added to loan balance' },
             { icon: '📅', label: 'Annual Fee', value: '0.35%', sub: 'Much less than FHA MIP' },
-            { icon: '🏡', label: 'Max Income (4-person)', value: '$68,450', sub: 'DFW county limits 2026' },
+            { icon: '🏡', label: 'Max Income (4-person)', value: '$68,450', sub: 'DFW county limits 2026′ },
           ].map(s => (
             <div key={s.label} style={{ background: 'white', borderRadius: 12, padding: 18, textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#64748B', marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, margin: '4px 0' }}>{s.value}</div>
-              <div style={{ fontSize: 11, color: '#94A3B8' }}>{s.sub}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, margin: '4px 0′ }}>{s.value}</div>
+              <div style={{ fontSize: 11, color: '#94A3B8′ }}>{s.sub}</div>
             </div>
           ))}
         </div>
@@ -130,7 +130,7 @@ export default function DFWUSDALoanGuide() {
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, color: '#475569', display: 'block', marginBottom: 6 }}>Household Income: ${householdIncome.toLocaleString()}</label>
               <input type="range" min={25000} max={130000} step={2500} value={householdIncome} onChange={e => setHouseholdIncome(Number(e.target.value))} style={{ width: '100%' }} />
-              <div style={{ fontSize: 12, marginTop: 4, color: incomeEligible ? '#16A34A' : '#DC2626' }}>
+              <div style={{ fontSize: 12, marginTop: 4, color: incomeEligible ? '#16A34A' : '#DC2626′ }}>
                 Limit for {familySize}-person household: ${incomeLimit.toLocaleString()}
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function DFWUSDALoanGuide() {
           </button>
           {showCalc && (
             <div style={{ marginTop: 24 }}>
-              <div style={{ background: fullyEligible ? '#F0FDF4' : '#FEF2F2', borderRadius: 10, padding: 16, marginBottom: 20, textAlign: 'center' }}>
+              <div style={{ background: fullyEligible ? '#F0FDF4′ : '#FEF2F2', borderRadius: 10, padding: 16, marginBottom: 20, textAlign: ’center' }}>
                 <div style={{ fontSize: 28 }}>{fullyEligible ? '✅' : '❌'}</div>
                 <div style={{ fontWeight: 700, fontSize: 18, color: fullyEligible ? '#16A34A' : '#DC2626', marginTop: 8 }}>
                   {fullyEligible ? 'Likely USDA Eligible!' : 'May Not Qualify'}
@@ -169,7 +169,7 @@ export default function DFWUSDALoanGuide() {
                   ].map(item => (
                     <div key={item.label} style={{ background: '#F8FAFC', borderRadius: 10, padding: 14, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, color: '#64748B', marginBottom: 6 }}>{item.label}</div>
-                      <div style={{ fontSize: 17, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
+                      <div style={{ fontSize: 17, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
                       <div style={{ fontSize: 11, color: '#94A3B8', marginTop: 4 }}>{item.sub}</div>
                     </div>
                   ))}
@@ -179,8 +179,8 @@ export default function DFWUSDALoanGuide() {
           )}
         </div>
 
-        <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 20, border: '1px solid #BBF7D0' }}>
-          <h3 style={{ margin: '0 0 8px', color: '#166534' }}>🌾 DFW USDA Strategy</h3>
+        <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 20, border: '1px solid #BBF7D0′ }}>
+          <h3 style={{ margin: '0 0 8px', color: '#166534′ }}>🌾 DFW USDA Strategy</h3>
           <p style={{ margin: 0, color: '#14532D', fontSize: 14 }}>
             As DFW suburbs grow, USDA eligible boundaries shrink. Celina and Forney are growing fast — boundaries could shift in 2027. Buy now while eligible. Use USDA eligibility map at eligibility.sc.egov.usda.gov to verify any address. USDA loans typically take 30-45 days vs 20-30 for conventional in DFW — budget extra time.
           </p>

@@ -47,9 +47,9 @@ export default function DFWHVACRepairVsReplaceGuide() {
       onClick={() => set(val)}
       style={{
         padding: '8px 18px', borderRadius: 20, border: '2px solid',
-        borderColor: current === val ? '#F5E642' : '#2A3A5C',
-        background: current === val ? '#F5E642' : 'transparent',
-        color: current === val ? '#0A1628' : '#CBD5E1',
+        borderColor: current === val ? '#F5E642′ : '#2A3A5C',
+        background: current === val ? '#F5E642′ : ’transparent',
+        color: current === val ? '#0A1628′ : '#CBD5E1',
         cursor: 'pointer', fontWeight: 600, fontSize: 14, margin: '4px 6px 4px 0'
       }}
     >{label}</button>
@@ -61,18 +61,18 @@ export default function DFWHVACRepairVsReplaceGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME SERVICES GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F1F5F9', margin: '0 0 8px' }}>HVAC: Repair vs Replace?</h1>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW summers push AC units harder than nearly anywhere in the US. Use the industry-standard <strong style={{ color: '#F5E642' }}>5,000 Rule</strong> — multiply your unit's age by the repair cost. Above $5,000 means replace. Below means repair.
+          DFW summers push AC units harder than nearly anywhere in the US. Use the industry-standard <strong style={{ color: '#F5E642′ }}>5,000 Rule</strong> — multiply your unit’s age by the repair cost. Above $5,000 means replace. Below means repair.
         </p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 700, color: '#F1F5F9', marginBottom: 8 }}>Unit Age (years)</label>
-            <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 14"
+            <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 14″
               style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '2px solid #2A3A5C', background: '#0A1628', color: '#F1F5F9', fontSize: 16, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 700, color: '#F1F5F9', marginBottom: 8 }}>Repair Quote ($)</label>
-            <input type="number" value={repairQuote} onChange={e => setRepairQuote(e.target.value)} placeholder="e.g. 850"
+            <input type="number" value={repairQuote} onChange={e => setRepairQuote(e.target.value)} placeholder="e.g. 850″
               style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '2px solid #2A3A5C', background: '#0A1628', color: '#F1F5F9', fontSize: 16, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
@@ -90,15 +90,15 @@ export default function DFWHVACRepairVsReplaceGuide() {
         </div>
 
         {result && (
-          <div style={{ background: result.recommend === 'Replace' ? '#1a0f00' : result.recommend === 'Repair' ? '#0a1a0a' : '#1a1500', border: `2px solid ${result.recommend === 'Replace' ? '#F97316' : result.recommend === 'Repair' ? '#22C55E' : '#F5E642'}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 22, fontWeight: 800, color: result.recommend === 'Replace' ? '#F97316' : result.recommend === 'Repair' ? '#22C55E' : '#F5E642', marginBottom: 12 }}>
+          <div style={{ background: result.recommend === 'Replace' ? '#1a0f00′ : result.recommend === ’Repair' ? '#0a1a0a' : '#1a1500', border: `2px solid ${result.recommend === 'Replace' ? '#F97316' : result.recommend === 'Repair' ? '#22C55E' : '#F5E642'}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
+            <div style={{ fontSize: 22, fontWeight: 800, color: result.recommend === 'Replace' ? '#F97316′ : result.recommend === ’Repair' ? '#22C55E' : '#F5E642', marginBottom: 12 }}>
               {result.recommend === 'Replace' ? '🔄' : result.recommend === 'Repair' ? '🔧' : '🤔'} {result.recommend}
             </div>
             <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: 20 }}>{result.reason}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>5-Year Repair Cost</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F97316' }}>${result.repairFiveYear.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F97316′ }}>${result.repairFiveYear.toLocaleString()}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>5-Year Replace Cost (net)</div>
@@ -119,7 +119,7 @@ export default function DFWHVACRepairVsReplaceGuide() {
             ].map(([title, desc]) => (
               <div key={title as string} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <div style={{ fontSize: 20, minWidth: 28 }}>{(title as string).split(' ')[0]}</div>
-                <div><strong style={{ color: '#F1F5F9' }}>{(title as string).slice(3)}</strong><br /><span style={{ color: '#94A3B8', fontSize: 14 }}>{desc}</span></div>
+                <div><strong style={{ color: '#F1F5F9′ }}>{(title as string).slice(3)}</strong><br /><span style={{ color: '#94A3B8', fontSize: 14 }}>{desc}</span></div>
               </div>
             ))}
           </div>

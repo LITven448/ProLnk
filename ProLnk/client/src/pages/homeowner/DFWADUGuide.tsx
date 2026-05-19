@@ -47,8 +47,8 @@ export default function DFWADUGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#f1f5f9', marginTop: 0, marginBottom: 12 }}>🏡 What Is an ADU?</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
             Accessory Dwelling Units are secondary housing units on the same property as a primary residence.
-            Types include <strong style={{ color: '#e2e8f0' }}>garage apartments</strong>, <strong style={{ color: '#e2e8f0' }}>backyard cottages</strong>,
-            <strong style={{ color: '#e2e8f0' }}> basement apartments</strong>, and <strong style={{ color: '#e2e8f0' }}>attached in-law suites</strong>.
+            Types include <strong style={{ color: '#e2e8f0′ }}>garage apartments</strong>, <strong style={{ color: '#e2e8f0' }}>backyard cottages</strong>,
+            <strong style={{ color: '#e2e8f0′ }}> basement apartments</strong>, and <strong style={{ color: '#e2e8f0' }}>attached in-law suites</strong>.
             They let homeowners generate rental income without buying a second property.
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function DFWADUGuide() {
                 <div style={{ fontSize: 20, flexShrink: 0, marginTop: 2 }}>{row.emoji}</div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#f1f5f9', marginBottom: 4 }}>{row.city} <span style={{ fontSize: 12, color: '#7c8db5', fontWeight: 400 }}>— {row.status}</span></div>
-                  <div style={{ fontSize: 14, color: '#94a3b8' }}>{row.detail}</div>
+                  <div style={{ fontSize: 14, color: '#94a3b8′ }}>{row.detail}</div>
                 </div>
               </div>
             ))}
@@ -80,12 +80,12 @@ export default function DFWADUGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#86efac', marginTop: 0, marginBottom: 12 }}>💰 The Financial Case</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
             {[
-              { label: 'Monthly Rental Income', value: '$500–$1,500' },
+              { label: 'Monthly Rental Income', value: '$500–$1,500′ },
               { label: 'Typical ADU Cost', value: '$60K–$150K' },
               { label: 'Avg Payback Period', value: '6–12 years' },
             ].map(item => (
               <div key={item.label} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 24, fontWeight: 800, color: '#4ade80' }}>{item.value}</div>
+                <div style={{ fontSize: 24, fontWeight: 800, color: '#4ade80′ }}>{item.value}</div>
                 <div style={{ fontSize: 13, color: '#86efac', marginTop: 4 }}>{item.label}</div>
               </div>
             ))}
@@ -105,8 +105,8 @@ export default function DFWADUGuide() {
               <div key={item.rank} style={{ display: 'flex', alignItems: 'center', gap: 16, background: '#0f1117', borderRadius: 8, padding: '12px 16px' }}>
                 <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>{item.rank}</div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 600, color: '#f1f5f9' }}>{item.type}</div>
-                  <div style={{ fontSize: 13, color: '#7c8db5' }}>{item.note}</div>
+                  <div style={{ fontWeight: 600, color: '#f1f5f9′ }}>{item.type}</div>
+                  <div style={{ fontSize: 13, color: '#7c8db5′ }}>{item.note}</div>
                 </div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: '#60a5fa', flexShrink: 0 }}>{item.cost}</div>
               </div>
@@ -139,7 +139,7 @@ export default function DFWADUGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                 {aduTypes.map((t, i) => (
                   <button key={t.label} onClick={() => setSelectedType(i)}
-                    style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: selectedType === i ? '#3b82f6' : '#2d3748', background: selectedType === i ? '#1e3a5f' : '#0f1117', color: selectedType === i ? '#60a5fa' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: 600, textAlign: 'left' }}>
+                    style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: selectedType === i ? '#3b82f6′ : '#2d3748', background: selectedType === i ? '#1e3a5f' : '#0f1117', color: selectedType === i ? '#60a5fa' : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: 600, textAlign: 'left' }}>
                     {t.label}
                   </button>
                 ))}
@@ -150,7 +150,7 @@ export default function DFWADUGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
                 {sizes.map((s, i) => (
                   <button key={s.label} onClick={() => setSelectedSize(i)}
-                    style={{ padding: '10px 8px', borderRadius: 8, border: '2px solid', borderColor: selectedSize === i ? '#3b82f6' : '#2d3748', background: selectedSize === i ? '#1e3a5f' : '#0f1117', color: selectedSize === i ? '#60a5fa' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+                    style={{ padding: '10px 8px', borderRadius: 8, border: '2px solid', borderColor: selectedSize === i ? '#3b82f6′ : '#2d3748', background: selectedSize === i ? '#1e3a5f' : '#0f1117', color: selectedSize === i ? '#60a5fa' : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
                     {s.label}
                   </button>
                 ))}
@@ -159,7 +159,7 @@ export default function DFWADUGuide() {
             <div>
               <label style={{ fontSize: 13, color: '#7c8db5', display: 'block', marginBottom: 8 }}>Expected Monthly Rent: ${monthlyRent.toLocaleString()}</label>
               <input type="range" min={400} max={1800} step={50} value={monthlyRent} onChange={e => setMonthlyRent(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#3b82f6' }} />
+                style={{ width: '100%', accentColor: '#3b82f6′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#4b5563', marginTop: 4 }}>
                 <span>$400/mo</span><span>$1,800/mo</span>
               </div>
@@ -171,7 +171,7 @@ export default function DFWADUGuide() {
               <div style={{ fontSize: 12, color: '#7c8db5', marginTop: 4 }}>Estimated Build Cost</div>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#4ade80' }}>${annualRent.toLocaleString()}/yr</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#4ade80′ }}>${annualRent.toLocaleString()}/yr</div>
               <div style={{ fontSize: 12, color: '#7c8db5', marginTop: 4 }}>Annual Rental Income</div>
             </div>
             <div style={{ textAlign: 'center' }}>

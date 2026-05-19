@@ -45,7 +45,7 @@ export default function DFWHVACShortCyclingGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🔄 DFW HVAC Guide</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🔄 DFW HVAC Guide</div>
         <h1 style={{ fontSize: '1.9rem', fontWeight: 800, marginBottom: '0.5rem', color: '#FFFFFF' }}>
           HVAC Short Cycling in DFW
         </h1>
@@ -53,7 +53,7 @@ export default function DFWHVACShortCyclingGuide() {
           Short cycling is when your AC turns on and off too frequently. In DFW, this is especially damaging — long run times are required to control humidity in 60–80% summer air.
         </p>
 
-        <div style={{ background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.25rem' }}>Why DFW Is Different</div>
           <div style={{ color: '#9CA3B0', fontSize: '0.9rem' }}>
             DFW summer humidity averages 65–80%. Humidity removal requires 15–20 minute run cycles minimum. Short cycling means humidity builds even when the temperature feels fine — leading to mold risk, wood damage, and that muggy feeling.
@@ -68,7 +68,7 @@ export default function DFWHVACShortCyclingGuide() {
               onClick={() => setSelected(c)}
               style={{
                 background: selected === c ? '#1E3A5F' : '#111E35',
-                border: selected === c ? '1.5px solid #F5E642' : '1.5px solid #1A2540',
+                border: selected === c ? '1.5px solid #F5E642′ : '1.5px solid #1A2540',
                 borderRadius: 10, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', color: '#E8EAF0',
               }}
             >
@@ -81,8 +81,8 @@ export default function DFWHVACShortCyclingGuide() {
         </div>
 
         {selected && (
-          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642' }}>
-            <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '1rem', color: '#F5E642' }}>
+          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642′ }}>
+            <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '1rem', color: '#F5E642′ }}>
               Assessment: {selected.label}
             </div>
             <div style={{ display: 'grid', gap: '0.85rem' }}>
@@ -98,9 +98,9 @@ export default function DFWHVACShortCyclingGuide() {
                 <div style={{ color: '#9CA3B0', fontSize: '0.75rem', marginBottom: '0.25rem' }}>FIX</div>
                 <div>{selected.fix}</div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ fontSize: '0.8rem', color: '#F5E642', marginBottom: '0.25rem' }}>🌆 DFW Specific</div>
-                <div style={{ fontSize: '0.85rem', color: '#9CA3B0' }}>{selected.dfwNote}</div>
+                <div style={{ fontSize: '0.85rem', color: '#9CA3B0′ }}>{selected.dfwNote}</div>
               </div>
               <div style={{ background: '#1A2540', borderRadius: 8, padding: '0.5rem 1rem', display: 'inline-block', fontSize: '0.85rem' }}>
                 ⚡ Urgency: <strong>{selected.urgency}</strong>
@@ -109,7 +109,7 @@ export default function DFWHVACShortCyclingGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0' }}>
+        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0′ }}>
           💡 Rule of Thumb: In DFW, your AC should run in 15–20 minute cycles during peak summer heat. Shorter = problem. Longer = acceptable if temperatures are extreme.
         </div>
       </div>

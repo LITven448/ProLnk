@@ -80,7 +80,7 @@ export default function DFWPoolEquipmentGuide2026() {
               <span style={{ color: '#e2e8f0', fontSize: 14 }}>Already have heater</span>
             </label>
           </div>
-          <button onClick={() => setShowRecs(true)} disabled={!poolSize || !filterType} style={{ background: poolSize && filterType ? '#F5E642' : '#334155', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: poolSize && filterType ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowRecs(true)} disabled={!poolSize || !filterType} style={{ background: poolSize && filterType ? '#F5E642′ : '#334155', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: 8, padding: '12px 28px', cursor: poolSize && filterType ? 'pointer' : 'not-allowed' }}>
             Show My Upgrade Plan →
           </button>
         </div>

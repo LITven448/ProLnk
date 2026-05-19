@@ -92,7 +92,7 @@ export default function SmokeDetectorGuide() {
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#FFFFFF', marginBottom: 4 }}>{card.label}</div>
                 <div style={{ fontSize: 15, fontWeight: 800, color: '#60A5FA', marginBottom: 6 }}>{card.life}</div>
-                <div style={{ fontSize: 12, color: '#8FB0D4' }}>{card.note}</div>
+                <div style={{ fontSize: 12, color: '#8FB0D4′ }}>{card.note}</div>
               </div>
             ))}
           </div>
@@ -119,7 +119,7 @@ export default function SmokeDetectorGuide() {
                 key={room}
                 onClick={() => toggleRoom(room)}
                 style={{
-                  background: checkedRooms[room] ? '#0D3321' : '#0D2144',
+                  background: checkedRooms[room] ? '#0D3321′ : '#0D2144',
                   border: `1px solid ${checkedRooms[room] ? '#22C55E' : '#1E3A5F'}`,
                   borderRadius: 10,
                   padding: '14px 20px',
@@ -139,7 +139,7 @@ export default function SmokeDetectorGuide() {
                 }}>
                   {checkedRooms[room] ? '✓' : ''}
                 </div>
-                <span style={{ fontSize: 15, color: checkedRooms[room] ? '#4ADE80' : '#E8EDF5', fontWeight: checkedRooms[room] ? 600 : 400 }}>{room}</span>
+                <span style={{ fontSize: 15, color: checkedRooms[room] ? '#4ADE80′ : '#E8EDF5', fontWeight: checkedRooms[room] ? 600 : 400 }}>{room}</span>
               </div>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function SmokeDetectorGuide() {
                 type="number"
                 value={installYear}
                 onChange={e => setInstallYear(e.target.value)}
-                placeholder="e.g. 2018"
+                placeholder="e.g. 2018″
                 style={{ width: '100%', padding: '10px 14px', background: '#162A4A', border: '1px solid #2A4A6A', borderRadius: 8, color: '#FFFFFF', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>

@@ -40,9 +40,9 @@ export default function CellinaHomeownerGuide2026() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📅 When Was Your Home Built?</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-            {[{ v: '2020', l: '🗓️ 2020–2021' }, { v: '2022', l: '🗓️ 2022–2023' }, { v: '2024', l: '🗓️ 2024–2025' }, { v: '2026', l: '🆕 2026' }].map(opt => (
+            {[{ v: '2020', l: '🗓️ 2020–2021′ }, { v: '2022', l: '🗓️ 2022–2023' }, { v: '2024', l: '🗓️ 2024–2025' }, { v: '2026', l: '🆕 2026' }].map(opt => (
               <button key={opt.v} onClick={() => setYear(opt.v)}
-                style={{ background: year === opt.v ? '#F5E642' : '#1a2f50', color: year === opt.v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: year === opt.v ? '#F5E642′ : '#1a2f50', color: year === opt.v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {opt.l}
               </button>
             ))}

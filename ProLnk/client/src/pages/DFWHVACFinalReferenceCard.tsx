@@ -3,7 +3,7 @@ import { useState } from 'react';
 const homeTypes = ['1950s Slab', '1970s Pier & Beam', '1990s Two-Story', '2000s+ New Build'];
 
 const baseData = {
-  filterSchedule: ['1" filters: every 30 days', '4" media filters: every 90 days', 'MERV 11+ recommended for DFW allergens'],
+  filterSchedule: ['1″ filters: every 30 days', '4″ media filters: every 90 days', 'MERV 11+ recommended for DFW allergens'],
   tuneUp: ['Spring tune-up: March–April before 100°F season', 'Fall tune-up: October before first freeze', 'Two tune-ups/year standard in DFW climate'],
   drainLine: ['Flush with 1 cup bleach + water monthly May–Sept', 'Clear trap at air handler quarterly', 'Install float switch to prevent overflow damage'],
   emergency: ['No cool air: check thermostat, filter, breaker first', 'Ice on coil: shut off AC, run fan only 1 hour', 'Call for service if temp rises >5°F above setpoint'],
@@ -54,7 +54,7 @@ export default function DFWHVACFinalReferenceCard() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
           {sections.map(sec => (
-            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155' }}>
+            <div key={sec.title} style={{ background: '#1e293b', borderRadius: '10px', padding: '16px', border: '1px solid #334155′ }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', gap: '8px' }}>
                 <span style={{ fontSize: '20px' }}>{sec.emoji}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '14px' }}>{sec.title}</span>

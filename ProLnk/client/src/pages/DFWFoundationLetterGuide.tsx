@@ -41,7 +41,7 @@ const riskMap: Record<string, Record<string, { risk: string; level: string; step
   },
 };
 
-const levelColors: Record<string, string> = { green: '#16A34A', yellow: '#CA8A04', red: '#DC2626' };
+const levelColors: Record<string, string> = { green: '#16A34A', yellow: '#CA8A04', red: '#DC2626′ };
 
 export default function DFWFoundationLetterGuide() {
   const [letterType, setLetterType] = useState('');
@@ -67,7 +67,7 @@ export default function DFWFoundationLetterGuide() {
             <h2 style={{ fontSize: 15, fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>📄 Letter / Documentation Type</h2>
             {letterTypes.map(lt => (
               <button key={lt.id} onClick={() => setLetterType(lt.id)}
-                style={{ width: '100%', background: letterType === lt.id ? '#0A1628' : '#FFF', border: `2px solid ${letterType === lt.id ? '#F5E642' : '#E2E8F0'}`, borderRadius: 8, padding: '10px 14px', color: letterType === lt.id ? '#F5E642' : '#334155', cursor: 'pointer', textAlign: 'left', fontSize: 13, marginBottom: 8 }}>
+                style={{ width: '100%', background: letterType === lt.id ? '#0A1628′ : '#FFF', border: `2px solid ${letterType === lt.id ? '#F5E642' : '#E2E8F0'}`, borderRadius: 8, padding: '10px 14px', color: letterType === lt.id ? '#F5E642' : '#334155', cursor: ’pointer', textAlign: 'left', fontSize: 13, marginBottom: 8 }}>
                 {lt.label}
               </button>
             ))}
@@ -76,7 +76,7 @@ export default function DFWFoundationLetterGuide() {
             <h2 style={{ fontSize: 15, fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>🔧 Repair Scope Described</h2>
             {repairScopes.map(rs => (
               <button key={rs.id} onClick={() => setRepairScope(rs.id)}
-                style={{ width: '100%', background: repairScope === rs.id ? '#0A1628' : '#FFF', border: `2px solid ${repairScope === rs.id ? '#F5E642' : '#E2E8F0'}`, borderRadius: 8, padding: '10px 14px', color: repairScope === rs.id ? '#F5E642' : '#334155', cursor: 'pointer', textAlign: 'left', fontSize: 13, marginBottom: 8 }}>
+                style={{ width: '100%', background: repairScope === rs.id ? '#0A1628′ : '#FFF', border: `2px solid ${repairScope === rs.id ? '#F5E642' : '#E2E8F0'}`, borderRadius: 8, padding: '10px 14px', color: repairScope === rs.id ? '#F5E642' : '#334155', cursor: ’pointer', textAlign: 'left', fontSize: 13, marginBottom: 8 }}>
                 {rs.label}
               </button>
             ))}
@@ -101,7 +101,7 @@ export default function DFWFoundationLetterGuide() {
               {result.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, alignItems: 'flex-start' }}>
                   <span style={{ color: levelColors[result.level], fontWeight: 700, minWidth: 20 }}>{i + 1}.</span>
-                  <span style={{ fontSize: 13, color: '#334155' }}>{step}</span>
+                  <span style={{ fontSize: 13, color: '#334155′ }}>{step}</span>
                 </div>
               ))}
             </div>
@@ -109,7 +109,7 @@ export default function DFWFoundationLetterGuide() {
         )}
 
         {!result && (
-          <div style={{ textAlign: 'center', padding: 40, color: '#94A3B8', background: '#F8FAFC', borderRadius: 12, border: '2px dashed #E2E8F0' }}>
+          <div style={{ textAlign: 'center', padding: 40, color: '#94A3B8', background: '#F8FAFC', borderRadius: 12, border: '2px dashed #E2E8F0′ }}>
             <div style={{ fontSize: 36, marginBottom: 12 }}>📋</div>
             <p>Select both the documentation type and repair scope to get your risk assessment.</p>
           </div>

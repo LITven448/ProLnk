@@ -39,11 +39,11 @@ export default function DFWRentalInspectionGuide2026() {
         <div style={{ background: '#1A2640', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
             <span>📸</span>
-            <span style={{ fontSize: 14, color: '#E8EAF0' }}>Texas law: landlords must return deposit within 30 days of move-out. Your move-in documentation is your evidence of pre-existing damage.</span>
+            <span style={{ fontSize: 14, color: '#E8EAF0′ }}>Texas law: landlords must return deposit within 30 days of move-out. Your move-in documentation is your evidence of pre-existing damage.</span>
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
             <span>📁</span>
-            <span style={{ fontSize: 14, color: '#E8EAF0' }}>Most DFW property management companies (Invitation Homes, Pathlight, Progress) use online portals — upload photos there AND email to yourself for backup.</span>
+            <span style={{ fontSize: 14, color: '#E8EAF0′ }}>Most DFW property management companies (Invitation Homes, Pathlight, Progress) use online portals — upload photos there AND email to yourself for backup.</span>
           </div>
         </div>
 
@@ -61,7 +61,7 @@ export default function DFWRentalInspectionGuide2026() {
             {section.checks.map(c => (
               <div key={c} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                 <span>🔲</span>
-                <span style={{ fontSize: 14, color: '#E8EAF0' }}>{c}</span>
+                <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{c}</span>
               </div>
             ))}
           </div>

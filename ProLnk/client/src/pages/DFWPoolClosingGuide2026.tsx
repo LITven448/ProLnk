@@ -78,7 +78,7 @@ export default function DFWPoolClosingGuide2026() {
               <option value='fiberglass'>Fiberglass</option>
             </select>
           </div>
-          <button onClick={() => setShowChecklist(true)} disabled={!poolType} style={{ background: poolType ? '#F5E642' : '#334155', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: poolType ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowChecklist(true)} disabled={!poolType} style={{ background: poolType ? '#F5E642′ : '#334155', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: 8, padding: '12px 28px', cursor: poolType ? 'pointer' : 'not-allowed' }}>
             Get My Winterization Steps →
           </button>
         </div>

@@ -40,20 +40,20 @@ const RATING_OPTIONS = [
 ];
 
 const TIER_CONFIG: Record<string, { label: string; bg: string; color: string; border: string }> = {
-  charter:    { label: "Charter Member",  bg: "#fefce8", color: "#ca8a04", border: "#fde68a" },
+  charter:    { label: "Charter Member",  bg: "#fefce8″, color: "#ca8a04", border: "#fde68a" },
   founding:   { label: "Founding Member", bg: "#fdf4ff", color: "#9333ea", border: "#e9d5ff" },
-  l3:         { label: "L3 Member",       bg: "#eef2ff", color: "#6366f1", border: "#c7d2fe" },
-  l4:         { label: "L4 Member",       bg: "#f0fdfa", color: "#0d9488", border: "#99f6e4" },
-  scout:      { label: "Scout",           bg: "#f8fafc", color: "#64748b", border: "#cbd5e1" },
-  pro:        { label: "Pro",             bg: "#f0fdfa", color: "#0d9488", border: "#99f6e4" },
-  crew:       { label: "Crew",            bg: "#eef2ff", color: "#6366f1", border: "#c7d2fe" },
-  company:    { label: "Company",         bg: "#fefce8", color: "#ca8a04", border: "#fde68a" },
-  enterprise: { label: "Enterprise",      bg: "#1e293b", color: "#f8fafc", border: "#475569" },
+  l3:         { label: "L3 Member",       bg: "#eef2ff", color: "#6366f1″, border: "#c7d2fe" },
+  l4:         { label: "L4 Member",       bg: "#f0fdfa", color: "#0d9488″, border: "#99f6e4" },
+  scout:      { label: "Scout",           bg: "#f8fafc", color: "#64748b", border: "#cbd5e1″ },
+  pro:        { label: "Pro",             bg: "#f0fdfa", color: "#0d9488″, border: "#99f6e4" },
+  crew:       { label: "Crew",            bg: "#eef2ff", color: "#6366f1″, border: "#c7d2fe" },
+  company:    { label: "Company",         bg: "#fefce8″, color: "#ca8a04", border: "#fde68a" },
+  enterprise: { label: "Enterprise",      bg: "#1e293b", color: "#f8fafc", border: "#475569″ },
 };
 
 const AVATAR_COLORS = [
-  "#1B4FD8", "#0d9488", "#7c3aed", "#d97706", "#dc2626",
-  "#059669", "#0891b2", "#9333ea", "#c2410c", "#0369a1",
+  "#1B4FD8″, "#0d9488", "#7c3aed", "#d97706", "#dc2626",
+  "#059669″, "#0891b2", "#9333ea", "#c2410c", "#0369a1",
 ];
 
 function avatarColor(name: string) {
@@ -74,11 +74,11 @@ function TierBadge({ tier }: { tier: string }) {
 
 function StarRating({ rating, count }: { rating: number; count: number }) {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1″>
       {[1, 2, 3, 4, 5].map(s => (
         <Star key={s} className={`w-3 h-3 ${s <= Math.round(rating) ? "fill-amber-400 text-amber-400" : "text-gray-200"}`} />
       ))}
-      <span className="text-xs text-gray-500 ml-0.5">{rating.toFixed(1)} ({count})</span>
+      <span className="text-xs text-gray-500 ml-0.5″>{rating.toFixed(1)} ({count})</span>
     </div>
   );
 }
@@ -144,35 +144,35 @@ export default function PartnerDirectory() {
 
   return (
     <PartnerLayout>
-      <div className="p-6">
+      <div className="p-6″>
 
         {/* Hero */}
         <div className="mb-6 rounded-2xl overflow-hidden relative"
           style={{ background: "linear-gradient(135deg, #0A1628 0%, #1B4FD8 100%)" }}>
-          <div className="absolute inset-0 opacity-10"
+          <div className="absolute inset-0 opacity-10″
             style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
           <div className="relative px-6 py-8 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-3">
+            <div className="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-3″>
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
               {(partners?.length ?? 0) > 0 ? `${partners!.length} Verified Pros` : "DFW Network"}
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-white mb-2">
+            <h1 className="text-2xl sm:text-3xl font-black text-white mb-2″>
               Find Verified Home Service Pros<br className="hidden sm:block" /> in Your Area
             </h1>
-            <p className="text-white/70 text-sm max-w-md mx-auto mb-4">
+            <p className="text-white/70 text-sm max-w-md mx-auto mb-4″>
               Every partner in the ProLnk network is vetted, insured, and ready to serve DFW homeowners.
             </p>
-            <div className="flex items-center justify-center gap-6">
+            <div className="flex items-center justify-center gap-6″>
               <div className="text-center">
                 <p className="text-xl font-black text-white">{partners?.length ?? 0}</p>
                 <p className="text-white/60 text-xs">Active Pros</p>
               </div>
-              <div className="w-px h-8 bg-white/20" />
+              <div className="w-px h-8 bg-white/20″ />
               <div className="text-center">
                 <p className="text-xl font-black text-white">{(waitlistCounts?.pros ?? 0).toLocaleString()}</p>
                 <p className="text-white/60 text-xs">On Waitlist</p>
               </div>
-              <div className="w-px h-8 bg-white/20" />
+              <div className="w-px h-8 bg-white/20″ />
               <div className="text-center">
                 <p className="text-xl font-black text-white">18</p>
                 <p className="text-white/60 text-xs">Trades</p>
@@ -182,8 +182,8 @@ export default function PartnerDirectory() {
         </div>
 
         {/* Search bar */}
-        <div className="relative mb-4">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+        <div className="relative mb-4″>
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400″ />
           <Input
             placeholder="Search by name, trade, or city..."
             value={search}
@@ -193,8 +193,8 @@ export default function PartnerDirectory() {
         </div>
 
         {/* Filter bar */}
-        <div className="flex flex-wrap items-center gap-2 mb-4">
-          <Filter className="w-4 h-4 text-gray-400 flex-shrink-0" />
+        <div className="flex flex-wrap items-center gap-2 mb-4″>
+          <Filter className="w-4 h-4 text-gray-400 flex-shrink-0″ />
 
           {/* Trade filter */}
           <select
@@ -216,9 +216,9 @@ export default function PartnerDirectory() {
               onClick={() => { setCityOpen(v => !v); setRatingOpen(false); }}
               className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-white border border-gray-200 rounded-lg px-3 py-2 hover:border-gray-300 transition-colors"
             >
-              <MapPin className="w-3.5 h-3.5 text-gray-400" />
+              <MapPin className="w-3.5 h-3.5 text-gray-400″ />
               {selectedCity}
-              <ChevronDown className="w-3 h-3 text-gray-400" />
+              <ChevronDown className="w-3 h-3 text-gray-400″ />
             </button>
             {cityOpen && (
               <div className="absolute top-full left-0 mt-1 z-20 bg-white border border-gray-200 rounded-xl shadow-lg py-1 min-w-[160px]">
@@ -238,9 +238,9 @@ export default function PartnerDirectory() {
               onClick={() => { setRatingOpen(v => !v); setCityOpen(false); }}
               className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-white border border-gray-200 rounded-lg px-3 py-2 hover:border-gray-300 transition-colors"
             >
-              <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+              <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400″ />
               {RATING_OPTIONS.find(r => r.value === minRating)?.label ?? "Any Rating"}
-              <ChevronDown className="w-3 h-3 text-gray-400" />
+              <ChevronDown className="w-3 h-3 text-gray-400″ />
             </button>
             {ratingOpen && (
               <div className="absolute top-full left-0 mt-1 z-20 bg-white border border-gray-200 rounded-xl shadow-lg py-1 min-w-[140px]">
@@ -259,11 +259,11 @@ export default function PartnerDirectory() {
             onClick={() => setAvailableOnly(v => !v)}
             className={`flex items-center gap-1.5 text-xs font-semibold rounded-lg px-3 py-2 border transition-all ${
               availableOnly
-                ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                : "bg-white text-gray-700 border-gray-200 hover:border-gray-300"
+                ? "bg-emerald-50 text-emerald-700 border-emerald-200″
+                : "bg-white text-gray-700 border-gray-200 hover:border-gray-300″
             }`}
           >
-            <Clock className="w-3.5 h-3.5" />
+            <Clock className="w-3.5 h-3.5″ />
             Available Now
           </button>
 
@@ -273,20 +273,20 @@ export default function PartnerDirectory() {
               onClick={() => setViewMode("grid")}
               className={`px-3 py-2 flex items-center gap-1.5 text-xs font-semibold transition-colors ${viewMode === "grid" ? "bg-gray-900 text-white" : "text-gray-600 hover:bg-gray-50"}`}
             >
-              <LayoutGrid className="w-3.5 h-3.5" /> Grid
+              <LayoutGrid className="w-3.5 h-3.5″ /> Grid
             </button>
             <button
               onClick={() => setViewMode("map")}
               className={`px-3 py-2 flex items-center gap-1.5 text-xs font-semibold transition-colors ${viewMode === "map" ? "bg-gray-900 text-white" : "text-gray-600 hover:bg-gray-50"}`}
             >
-              <Map className="w-3.5 h-3.5" /> Map
+              <Map className="w-3.5 h-3.5″ /> Map
             </button>
           </div>
         </div>
 
         {/* Results count + clear */}
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-sm text-gray-500">
+        <div className="flex items-center justify-between mb-4″>
+          <p className="text-sm text-gray-500″>
             {isLoading ? "Loading..." : `${filtered.length} partner${filtered.length !== 1 ? "s" : ""} found`}
           </p>
           {hasFilters && (
@@ -307,7 +307,7 @@ export default function PartnerDirectory() {
               <div className="w-14 h-14 rounded-full bg-white/80 flex items-center justify-center mx-auto mb-3 shadow-sm">
                 <Map className="w-7 h-7 text-[#1B4FD8]" />
               </div>
-              <p className="text-sm font-bold text-gray-700">Map view coming soon</p>
+              <p className="text-sm font-bold text-gray-700″>Map view coming soon</p>
               <p className="text-xs text-gray-500 mt-1 max-w-xs mx-auto">
                 Interactive map with partner pins and service area overlays launches with the full platform in September 2026.
               </p>
@@ -319,17 +319,17 @@ export default function PartnerDirectory() {
         {viewMode === "grid" && (
           <>
             {isLoading ? (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4″>
                 {Array.from({ length: 6 }).map((_, i) => (
                   <div key={i} className="bg-white rounded-xl border border-gray-100 p-5 animate-pulse">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-12 h-12 bg-gray-200 rounded-xl flex-shrink-0" />
-                      <div className="flex-1">
-                        <div className="h-4 bg-gray-200 rounded w-3/4 mb-2" />
-                        <div className="h-3 bg-gray-100 rounded w-1/2" />
+                    <div className="flex items-center gap-3 mb-3″>
+                      <div className="w-12 h-12 bg-gray-200 rounded-xl flex-shrink-0″ />
+                      <div className="flex-1″>
+                        <div className="h-4 bg-gray-200 rounded w-3/4 mb-2″ />
+                        <div className="h-3 bg-gray-100 rounded w-1/2″ />
                       </div>
                     </div>
-                    <div className="h-3 bg-gray-100 rounded w-2/3 mb-2" />
+                    <div className="h-3 bg-gray-100 rounded w-2/3 mb-2″ />
                     <div className="h-3 bg-gray-100 rounded w-full" />
                   </div>
                 ))}
@@ -337,13 +337,13 @@ export default function PartnerDirectory() {
             ) : filtered.length === 0 ? (
               /* Empty state */
               <div className="py-20 text-center max-w-md mx-auto">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1628]/5 to-[#1B4FD8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="w-8 h-8 text-[#1B4FD8]/40" />
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1628]/5 to-[#1B4FD8]/10 rounded-full flex items-center justify-center mx-auto mb-4″>
+                  <Search className="w-8 h-8 text-[#1B4FD8]/40″ />
                 </div>
                 {hasFilters ? (
                   <>
-                    <h3 className="text-lg font-bold text-gray-700 mb-2">No Partners Match Your Filters</h3>
-                    <p className="text-gray-500 text-sm mb-2">
+                    <h3 className="text-lg font-bold text-gray-700 mb-2″>No Partners Match Your Filters</h3>
+                    <p className="text-gray-500 text-sm mb-2″>
                       {search
                         ? `No results for "${search}".`
                         : selectedType !== "All"
@@ -352,12 +352,12 @@ export default function PartnerDirectory() {
                             ? `No pros found serving ${selectedCity} yet.`
                             : "Try adjusting your filters to see more results."}
                     </p>
-                    <p className="text-xs text-gray-400 mb-6">
+                    <p className="text-xs text-gray-400 mb-6″>
                       More pros join every week. The DFW founding network fills September 2026.
                     </p>
                     <Button
                       onClick={() => { setSearch(""); setSelectedType("All"); setSelectedCity("All Cities"); setMinRating(0); setAvailableOnly(false); }}
-                      variant="outline" className="mr-2"
+                      variant="outline" className="mr-2″
                     >
                       Clear Filters
                     </Button>
@@ -369,11 +369,11 @@ export default function PartnerDirectory() {
                   </>
                 ) : (
                   <>
-                    <h3 className="text-xl font-black text-[#0A1628] mb-3">Be the First in DFW</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-2">
+                    <h3 className="text-xl font-black text-[#0A1628] mb-3″>Be the First in DFW</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-2″>
                       The DFW founding network is forming now. Apply for a Charter or Founding Member spot before launch — Sep 1, 2026.
                     </p>
-                    <p className="text-xs text-gray-400 mb-6">
+                    <p className="text-xs text-gray-400 mb-6″>
                       Founding Members get locked rates at $149/mo, priority lead routing, and permanent origination rights.
                     </p>
                     <Link href="/apply">
@@ -385,23 +385,23 @@ export default function PartnerDirectory() {
                 )}
               </div>
             ) : (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4″>
                 {filtered.map((partner) => {
                   const rating = deriveRating(partner.referralCount);
                   const reviewCount = Math.max(1, Math.floor(partner.referralCount * 0.6));
                   const yearsExp = deriveYearsExp(partner.id, (partner as any).approvedAt);
-                  const isVerified = ["founding", "charter", "l3", "l4", "pro", "crew", "company", "enterprise"].includes(partner.tier?.toLowerCase());
+                  const isVerified = ["founding", "charter", "l3″, "l4", "pro", "crew", "company", "enterprise"].includes(partner.tier?.toLowerCase());
                   const isAvailable = partner.referralCount < 20;
                   const bgColor = avatarColor(partner.businessName);
                   const city = cityFromServiceArea(partner.serviceArea);
 
                   return (
                     <Link key={partner.id} href={`/partner/${partner.id}`}>
-                      <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-all bg-white group cursor-pointer h-full hover:border-[#1B4FD8]/20">
-                        <CardContent className="p-5">
+                      <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-all bg-white group cursor-pointer h-full hover:border-[#1B4FD8]/20″>
+                        <CardContent className="p-5″>
                           {/* Photo placeholder + badges */}
-                          <div className="flex items-start justify-between mb-3">
-                            <div className="relative flex-shrink-0">
+                          <div className="flex items-start justify-between mb-3″>
+                            <div className="relative flex-shrink-0″>
                               <div
                                 className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-sm"
                                 style={{ backgroundColor: bgColor }}
@@ -412,10 +412,10 @@ export default function PartnerDirectory() {
                                 <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white" title="Available now" />
                               )}
                             </div>
-                            <div className="flex flex-col items-end gap-1">
+                            <div className="flex flex-col items-end gap-1″>
                               {isVerified && (
                                 <span className="flex items-center gap-0.5 text-xs font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded-full">
-                                  <ShieldCheck className="w-3 h-3" /> Verified
+                                  <ShieldCheck className="w-3 h-3″ /> Verified
                                 </span>
                               )}
                               <TierBadge tier={partner.tier} />
@@ -428,26 +428,26 @@ export default function PartnerDirectory() {
                           </h3>
 
                           {/* Trade badge */}
-                          <div className="mb-2">
+                          <div className="mb-2″>
                             <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1B4FD8]">
                               {partner.businessType}
                             </span>
                           </div>
 
                           {/* Star rating */}
-                          <div className="mb-2">
+                          <div className="mb-2″>
                             <StarRating rating={rating} count={reviewCount} />
                           </div>
 
                           {/* Service area + city */}
-                          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1.5">
-                            <MapPin className="w-3 h-3 flex-shrink-0 text-gray-400" />
+                          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1.5″>
+                            <MapPin className="w-3 h-3 flex-shrink-0 text-gray-400″ />
                             <span className="truncate">{city ?? partner.serviceArea}</span>
                           </div>
 
                           {/* Years experience */}
-                          <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-2">
-                            <Zap className="w-3 h-3 flex-shrink-0" />
+                          <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-2″>
+                            <Zap className="w-3 h-3 flex-shrink-0″ />
                             <span>{yearsExp}+ years experience</span>
                           </div>
 
@@ -458,8 +458,8 @@ export default function PartnerDirectory() {
 
                           {/* Footer */}
                           <div className="flex items-center justify-between pt-3 border-t border-gray-50 mt-auto">
-                            <div className="flex items-center gap-1 text-xs text-gray-400">
-                              <CheckCircle className="w-3 h-3 text-emerald-500" />
+                            <div className="flex items-center gap-1 text-xs text-gray-400″>
+                              <CheckCircle className="w-3 h-3 text-emerald-500″ />
                               <span>{partner.referralCount} jobs</span>
                             </div>
                             <span className="flex items-center gap-1 text-xs font-semibold text-[#1B4FD8] group-hover:underline">
@@ -478,18 +478,18 @@ export default function PartnerDirectory() {
 
         {/* "Not listed yet?" inline CTA for partners browsing the directory */}
         {!isLoading && filtered.length > 0 && (
-          <div className="mt-6 rounded-xl border border-dashed border-[#1B4FD8]/30 bg-[#EFF6FF]/60 p-4 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-[#1B4FD8]/10 flex items-center justify-center flex-shrink-0">
+          <div className="mt-6 rounded-xl border border-dashed border-[#1B4FD8]/30 bg-[#EFF6FF]/60 p-4 flex items-center justify-between gap-4″>
+            <div className="flex items-center gap-3″>
+              <div className="w-9 h-9 rounded-lg bg-[#1B4FD8]/10 flex items-center justify-center flex-shrink-0″>
                 <BadgePlus className="w-4 h-4 text-[#1B4FD8]" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-800">You're not listed yet</p>
-                <p className="text-xs text-gray-500">Complete your profile and get verified to appear in this directory.</p>
+                <p className="text-sm font-semibold text-gray-800″>You're not listed yet</p>
+                <p className="text-xs text-gray-500″>Complete your profile and get verified to appear in this directory.</p>
               </div>
             </div>
             <Link href="/partner-verification">
-              <Button size="sm" className="text-white flex-shrink-0 text-xs" style={{ backgroundColor: "#1B4FD8" }}>
+              <Button size="sm" className="text-white flex-shrink-0 text-xs" style={{ backgroundColor: "#1B4FD8″ }}>
                 Get Verified
               </Button>
             </Link>
@@ -499,8 +499,8 @@ export default function PartnerDirectory() {
         {/* Bottom CTA */}
         {!isLoading && (
           <div className="mt-10 rounded-2xl p-8 text-center" style={{ background: "linear-gradient(135deg, #0A1628 0%, #1B4FD8 100%)" }}>
-            <Award className="w-10 h-10 text-white/70 mx-auto mb-3" />
-            <h3 className="text-2xl font-black text-white mb-2">Are You a Home Service Pro?</h3>
+            <Award className="w-10 h-10 text-white/70 mx-auto mb-3″ />
+            <h3 className="text-2xl font-black text-white mb-2″>Are You a Home Service Pro?</h3>
             <p className="text-white/70 text-sm mb-5 max-w-md mx-auto">
               Join the ProLnk founding network. Lock in $149/mo for life, get priority lead routing, and earn from every job in your referral network.
             </p>

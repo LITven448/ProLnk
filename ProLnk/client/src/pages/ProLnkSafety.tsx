@@ -58,14 +58,14 @@ export default function ProLnkSafety() {
         <div style={{ textAlign: 'center', marginBottom: 44 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🛡️</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 10 }}>ProLnk Safety and Trust Guide</h1>
-          <p style={{ fontSize: 16, color: '#6B7280' }}>How we protect you, what we verify, and what is still your responsibility as a homeowner</p>
+          <p style={{ fontSize: 16, color: '#6B7280′ }}>How we protect you, what we verify, and what is still your responsibility as a homeowner</p>
         </div>
 
         <div style={{ backgroundColor: '#fff', borderRadius: 14, padding: 28, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 40 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 18 }}>What Every Contractor Goes Through</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
             {CHECKS.map((c, i) => (
-              <div key={i} style={{ backgroundColor: '#F0FDF4', borderRadius: 10, padding: 16, borderLeft: '3px solid #10B981' }}>
+              <div key={i} style={{ backgroundColor: '#F0FDF4', borderRadius: 10, padding: 16, borderLeft: '3px solid #10B981′ }}>
                 <div style={{ fontSize: 22, marginBottom: 6 }}>{c.emoji}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#065F46', marginBottom: 4 }}>{c.label}</div>
                 <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.6 }}>{c.detail}</div>
@@ -80,8 +80,8 @@ export default function ProLnkSafety() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {CONCERNS.map((c, i) => (
               <button key={i} onClick={() => setSelectedConcern(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedConcern === i ? '#F5E642' : '#E5E7EB',
-                  backgroundColor: selectedConcern === i ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedConcern === i ? '#F5E642′ : '#E5E7EB',
+                  backgroundColor: selectedConcern === i ? '#F5E642′ : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: ’pointer' }}>
                 {c.label}
               </button>
             ))}
@@ -104,7 +104,7 @@ export default function ProLnkSafety() {
                 <div style={{ width: 28, height: 28, borderRadius: '50%', backgroundColor: '#0A1628', color: '#F5E642', fontWeight: 700, fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{i + 1}</div>
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 700, color: '#0A1628', marginBottom: 3 }}>{s.step}</div>
-                  <div style={{ fontSize: 12, color: '#6B7280' }}>{s.desc}</div>
+                  <div style={{ fontSize: 12, color: '#6B7280′ }}>{s.desc}</div>
                 </div>
               </div>
             ))}

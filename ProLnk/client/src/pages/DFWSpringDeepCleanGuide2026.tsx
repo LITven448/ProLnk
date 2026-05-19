@@ -57,7 +57,7 @@ export default function DFWSpringDeepCleanGuide2026() {
           <div style={{ fontWeight: 600, marginBottom: '0.75rem' }}>🏠 What size is your home?</div>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {(['small', 'medium', 'large'] as const).map(s => (
-              <button key={s} onClick={() => { setSize(s); setChecked({}); }} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: size === s ? '#F5E642' : '#1e3a5f', background: size === s ? '#F5E642' : 'transparent', color: size === s ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+              <button key={s} onClick={() => { setSize(s); setChecked({}); }} style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: size === s ? '#F5E642′ : '#1e3a5f', background: size === s ? '#F5E642' : ’transparent', color: size === s ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer', textTransform: 'capitalize' }}>
                 {s === 'small' ? '🏠 Under 1,500 sqft' : s === 'medium' ? '🏡 1,500–3,000 sqft' : '🏰 3,000+ sqft'}
               </button>
             ))}

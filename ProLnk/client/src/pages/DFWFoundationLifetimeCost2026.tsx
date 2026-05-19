@@ -49,13 +49,13 @@ export default function DFWFoundationLifetimeCost2026() {
         <div style={{ background: '#F5E642', color: '#0A1628', display: 'inline-block', padding: '4px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, marginBottom: 16, letterSpacing: 1 }}>DFW HOMEOWNER GUIDE · 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>DFW Foundation Lifetime Care Cost Guide 2026</h1>
         <p style={{ color: '#8FA3BF', marginBottom: 16, fontSize: 15 }}>DFW sits on some of the most expansive clay soil in the country. Foundation care is not optional — it's a lifetime cost every homeowner should plan for.</p>
-        <div style={{ background: '#132238', borderRadius: 8, padding: '12px 16px', marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#132238', borderRadius: 8, padding: '12px 16px', marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
           <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>📍 DFW Context: </span>
           <span style={{ color: '#C2D3E8', fontSize: 13 }}>DFW's black clay (Blackland Prairie) expands 30–35% when wet and shrinks dramatically in drought. This cycle — repeated for decades — is the primary driver of foundation movement in North Texas.</span>
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {ageGroups.map(g => (
-            <button key={g.id} onClick={() => setActive(g.id)} style={{ background: active === g.id ? '#F5E642' : '#132238', color: active === g.id ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
+            <button key={g.id} onClick={() => setActive(g.id)} style={{ background: active === g.id ? '#F5E642′ : '#132238', color: active === g.id ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
               {g.icon} {g.label}
             </button>
           ))}
@@ -77,12 +77,12 @@ export default function DFWFoundationLifetimeCost2026() {
               <div style={{ fontWeight: 800, fontSize: 17 }}>{fmt(row.val)}</div>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0′ }}>
             <div style={{ fontWeight: 800, fontSize: 17 }}>💰 Estimated Total for Period</div>
-            <div style={{ fontWeight: 900, fontSize: 26, color: '#F5E642' }}>{fmt(total)}</div>
+            <div style={{ fontWeight: 900, fontSize: 26, color: '#F5E642′ }}>{fmt(total)}</div>
           </div>
         </div>
-        <div style={{ background: '#132238', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#132238', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>💡 Pro Tip for {g.label} Homes</div>
           <p style={{ color: '#C2D3E8', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{g.tip}</p>
         </div>

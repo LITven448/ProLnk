@@ -64,12 +64,12 @@ export default function DFWTradeMarketingGuide() {
           <h2 style={{ margin: '0 0 16px', fontSize: 18 }}>Get Your DFW Marketing Priority List</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(tradeMarketing).map(([k, v]) => (
-              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642' : '#1e3a5f', background: trade === k ? '#F5E642' : 'transparent', color: trade === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v.label}</button>
+              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642′ : '#1e3a5f', background: trade === k ? '#F5E642' : ’transparent', color: trade === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {Object.entries(budgets).map(([k, v]) => (
-              <button key={k} onClick={() => setBudget(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: budget === k ? '#F5E642' : '#1e3a5f', background: budget === k ? '#F5E642' : 'transparent', color: budget === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v.label}</button>
+              <button key={k} onClick={() => setBudget(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: budget === k ? '#F5E642′ : '#1e3a5f', background: budget === k ? '#F5E642' : ’transparent', color: budget === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v.label}</button>
             ))}
           </div>
         </div>
@@ -83,10 +83,10 @@ export default function DFWTradeMarketingGuide() {
                     <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 4 }}>{channel.name}</div>
                     <div style={{ display: 'flex', gap: 8 }}>
                       <span style={{ background: channel.cost === 0 ? '#14532d' : '#1e3a5f', color: channel.cost === 0 ? '#86efac' : '#93c5fd', padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{channel.cost === 0 ? 'FREE' : '$' + channel.cost + '/mo'}</span>
-                      <span style={{ background: channel.impact === 'Very High' ? '#713f12' : '#1e3a5f', color: channel.impact === 'Very High' ? '#fde68a' : '#93c5fd', padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{channel.impact} Impact</span>
+                      <span style={{ background: channel.impact === 'Very High' ? '#713f12′ : '#1e3a5f', color: channel.impact === ’Very High' ? '#fde68a' : '#93c5fd', padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{channel.impact} Impact</span>
                     </div>
                   </div>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>#{i + 1}</div>
+                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>#{i + 1}</div>
                 </div>
                 <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14, lineHeight: 1.6 }}>{channel.tip}</p>
               </div>
@@ -101,7 +101,7 @@ export default function DFWTradeMarketingGuide() {
                 'Respond to every review within 24 hours. DFW homeowners read responses.',
                 'Use reviews in your next ProLnk bio update. Social proof compounds over time.'
               ].map((tip, i) => (
-                <div key={i} style={{ padding: '10px 0', borderBottom: i < 4 ? '1px solid #1e3a5f' : 'none', fontSize: 14, color: '#cbd5e1' }}>{i + 1}. {tip}</div>
+                <div key={i} style={{ padding: '10px 0', borderBottom: i < 4 ? '1px solid #1e3a5f' : 'none', fontSize: 14, color: '#cbd5e1′ }}>{i + 1}. {tip}</div>
               ))}
             </div>
           </div>

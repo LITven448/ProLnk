@@ -31,13 +31,13 @@ export default function DFWGalvanizedPipeGuide() {
     const medPressure = pressure === 'medium';
 
     if (old && lowPressure) {
-      setResult({ likelihood: 'Very High', urgency: '🚨 Immediate — schedule inspection now', cost: '$8,000–$15,000 full repipe', color: '#ef4444' });
+      setResult({ likelihood: 'Very High', urgency: '🚨 Immediate — schedule inspection now', cost: '$8,000–$15,000 full repipe', color: '#ef4444′ });
     } else if (old && medPressure) {
-      setResult({ likelihood: 'High', urgency: '⚠️ Within 12 months', cost: '$6,000–$12,000 full repipe', color: '#f97316' });
+      setResult({ likelihood: 'High', urgency: '⚠️ Within 12 months', cost: '$6,000–$12,000 full repipe', color: '#f97316′ });
     } else if (old) {
-      setResult({ likelihood: 'Moderate–High', urgency: '📅 Monitor, plan for 2–3 years', cost: '$5,000–$10,000 repipe', color: '#eab308' });
-    } else if (homeAge === '1960_1980' && lowPressure) {
-      setResult({ likelihood: 'Moderate', urgency: '⚠️ Inspect within 6 months', cost: '$4,000–$9,000 partial or full repipe', color: '#f97316' });
+      setResult({ likelihood: 'Moderate–High', urgency: '📅 Monitor, plan for 2–3 years', cost: '$5,000–$10,000 repipe', color: '#eab308′ });
+    } else if (homeAge === '1960_1980′ && lowPressure) {
+      setResult({ likelihood: 'Moderate', urgency: '⚠️ Inspect within 6 months', cost: '$4,000–$9,000 partial or full repipe', color: '#f97316′ });
     } else {
       setResult({ likelihood: 'Low', urgency: '✅ No immediate action needed', cost: 'Inspection only: $150–$300', color: '#22c55e' });
     }
@@ -76,9 +76,9 @@ export default function DFWGalvanizedPipeGuide() {
         <label style={styles.label}>Home Age</label>
         <select style={styles.select} value={homeAge} onChange={e => setHomeAge(e.target.value)}>
           <option value="">Select home age...</option>
-          <option value="pre1960">Before 1960</option>
-          <option value="1960_1980">1960–1980</option>
-          <option value="post1980">After 1980</option>
+          <option value="pre1960″>Before 1960</option>
+          <option value="1960_1980″>1960–1980</option>
+          <option value="post1980″>After 1980</option>
         </select>
         <label style={styles.label}>Water Pressure Issue</label>
         <select style={styles.select} value={pressure} onChange={e => setPressure(e.target.value)}>
@@ -93,8 +93,8 @@ export default function DFWGalvanizedPipeGuide() {
           <div style={styles.result}>
             <div style={styles.resultTitle}>Assessment Result</div>
             <span style={{ ...styles.badge, backgroundColor: result.color + '22', color: result.color, border: `1px solid ${result.color}` }}>{result.likelihood} Likelihood</span>
-            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642' }}>Urgency:</strong> {result.urgency}</p>
-            <p style={{ color: '#cbd5e1' }}><strong style={{ color: '#F5E642' }}>Estimated Cost:</strong> {result.cost}</p>
+            <p style={{ color: '#cbd5e1', marginTop: '12px' }}><strong style={{ color: '#F5E642′ }}>Urgency:</strong> {result.urgency}</p>
+            <p style={{ color: '#cbd5e1′ }}><strong style={{ color: '#F5E642' }}>Estimated Cost:</strong> {result.cost}</p>
           </div>
         )}
       </div>

@@ -5,23 +5,23 @@ const sunLevels = ['Full Sun (6+ hrs)', 'Partial Shade (3–6 hrs)', 'Full Shade
 
 const recommendations: Record<string, Record<string, { cover: string; desc: string; install: string; cost: string }>> = {
   'Deep Shade': {
-    'Full Shade (<3 hrs)': { cover: 'Asian Jasmine', desc: "DFW's most popular ground cover — thrives in deep shade, spreads aggressively, evergreen.", install: 'Plant plugs 12–18" apart in fall or spring. Water weekly first season.', cost: '$0.50–1.00/plug' },
-    'Partial Shade (3–6 hrs)': { cover: 'Liriope', desc: 'Grass-like, purple blooms in summer, nearly indestructible in DFW conditions.', install: 'Plant 12" apart, divide clumps every 3–4 years. Cut back in late Feb.', cost: '$3–6/plant' },
-    'Full Sun (6+ hrs)': { cover: 'Monkey Grass (Ophiopogon)', desc: 'Handles sun to part shade, low-growing, forms dense mat.', install: 'Plant 6–8" apart. Very low water once established.', cost: '$2–4/plant' },
+    'Full Shade (<3 hrs)': { cover: 'Asian Jasmine', desc: "DFW's most popular ground cover — thrives in deep shade, spreads aggressively, evergreen.", install: 'Plant plugs 12–18″ apart in fall or spring. Water weekly first season.', cost: '$0.50–1.00/plug' },
+    'Partial Shade (3–6 hrs)': { cover: 'Liriope', desc: 'Grass-like, purple blooms in summer, nearly indestructible in DFW conditions.', install: 'Plant 12″ apart, divide clumps every 3–4 years. Cut back in late Feb.', cost: '$3–6/plant' },
+    'Full Sun (6+ hrs)': { cover: 'Monkey Grass (Ophiopogon)', desc: 'Handles sun to part shade, low-growing, forms dense mat.', install: 'Plant 6–8″ apart. Very low water once established.', cost: '$2–4/plant' },
   },
   'Steep Slope': {
-    'Full Sun (6+ hrs)': { cover: 'Lantana (Groundcover Type)', desc: 'Covers slopes fast, drought-tolerant, attracts butterflies — DFW native-friendly.', install: 'Plant 24–36" apart. No irrigation needed after first season.', cost: '$8–15/plant' },
-    'Partial Shade (3–6 hrs)': { cover: 'Asian Jasmine', desc: 'Roots hold slopes well, spreads to fill gaps, minimal maintenance after establishment.', install: 'Plant plugs 12" apart, water deeply weekly until established.', cost: '$0.50–1.00/plug' },
-    'Full Shade (<3 hrs)': { cover: 'Liriope', desc: 'Handles slopes in shade, clumping habit stabilizes soil.', install: 'Stagger rows on slopes, plant 12" apart.', cost: '$3–6/plant' },
+    'Full Sun (6+ hrs)': { cover: 'Lantana (Groundcover Type)', desc: 'Covers slopes fast, drought-tolerant, attracts butterflies — DFW native-friendly.', install: 'Plant 24–36″ apart. No irrigation needed after first season.', cost: '$8–15/plant' },
+    'Partial Shade (3–6 hrs)': { cover: 'Asian Jasmine', desc: 'Roots hold slopes well, spreads to fill gaps, minimal maintenance after establishment.', install: 'Plant plugs 12″ apart, water deeply weekly until established.', cost: '$0.50–1.00/plug' },
+    'Full Shade (<3 hrs)': { cover: 'Liriope', desc: 'Handles slopes in shade, clumping habit stabilizes soil.', install: 'Stagger rows on slopes, plant 12″ apart.', cost: '$3–6/plant' },
   },
   'Dry Shade': {
-    'Full Shade (<3 hrs)': { cover: 'Cast Iron Plant', desc: "Virtually indestructible in DFW dry shade — no water, no fuss.", install: 'Plant 18–24" apart. Extremely slow growing — be patient.', cost: '$15–25/plant' },
+    'Full Shade (<3 hrs)': { cover: 'Cast Iron Plant', desc: "Virtually indestructible in DFW dry shade — no water, no fuss.", install: 'Plant 18–24″ apart. Extremely slow growing — be patient.', cost: '$15–25/plant' },
     'Partial Shade (3–6 hrs)': { cover: 'Asian Jasmine', desc: 'Handles dry shade better than most ground covers in DFW.', install: 'Establish with weekly watering for first summer, then drought-tolerant.', cost: '$0.50–1.00/plug' },
-    'Full Sun (6+ hrs)': { cover: 'Decomposed Granite', desc: 'Non-plant option — best for impossibly dry sunny spots. Pairs with natives.', install: '3–4" depth over landscape fabric, edge with steel banding.', cost: '$1.50–3.00/sq ft installed' },
+    'Full Sun (6+ hrs)': { cover: 'Decomposed Granite', desc: 'Non-plant option — best for impossibly dry sunny spots. Pairs with natives.', install: '3–4″ depth over landscape fabric, edge with steel banding.', cost: '$1.50–3.00/sq ft installed' },
   },
 };
 
-const fallback = { cover: 'Asian Jasmine', desc: 'A great all-around DFW ground cover for most conditions.', install: 'Plant plugs 12–18" apart. Water weekly first season.', cost: '$0.50–1.00/plug' };
+const fallback = { cover: 'Asian Jasmine', desc: 'A great all-around DFW ground cover for most conditions.', install: 'Plant plugs 12–18″ apart. Water weekly first season.', cost: '$0.50–1.00/plug' };
 
 export default function DFWGroundCoverGuide() {
   const [area, setArea] = useState('');
@@ -52,7 +52,7 @@ export default function DFWGroundCoverGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Problem area type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {problemAreas.map(a => (
-                <button key={a} onClick={() => setArea(a)} style={{ background: area === a ? '#F5E642' : '#1e3a5f', color: area === a ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{a}</button>
+                <button key={a} onClick={() => setArea(a)} style={{ background: area === a ? '#F5E642′ : '#1e3a5f', color: area === a ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{a}</button>
               ))}
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function DFWGroundCoverGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Sun exposure in that spot:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {sunLevels.map(s => (
-                <button key={s} onClick={() => setSun(s)} style={{ background: sun === s ? '#F5E642' : '#1e3a5f', color: sun === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSun(s)} style={{ background: sun === s ? '#F5E642′ : '#1e3a5f', color: sun === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function DFWGroundCoverGuide() {
         </div>
 
         {showResult && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>✅ {result.cover}</div>
             <p style={{ color: '#cbd5e1', marginBottom: 12 }}>{result.desc}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>

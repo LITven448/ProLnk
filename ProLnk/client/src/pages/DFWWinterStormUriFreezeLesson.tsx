@@ -42,7 +42,7 @@ export default function DFWWinterStormUriFreezeLesson() {
           <div style={{ fontSize: 48 }}>🧊</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '8px 0 4px' }}>DFW Winter Storm Uri: What We Learned</h1>
           <p style={{ color: '#94a3b8', fontSize: 15 }}>February 2021 exposed every vulnerability in DFW homes. Here's how to not repeat it.</p>
-          <div style={{ display: 'inline-block', background: '#1e3a5f', borderRadius: 8, padding: '6px 16px', marginTop: 10, fontSize: 13, color: '#94a3b8' }}>
+          <div style={{ display: 'inline-block', background: '#1e3a5f', borderRadius: 8, padding: '6px 16px', marginTop: 10, fontSize: 13, color: '#94a3b8′ }}>
             📅 Feb 10–20, 2021 · 246 deaths · $195B in damage statewide
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function DFWWinterStormUriFreezeLesson() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {Object.keys(scores).map((k) => (
               <button key={k} onClick={() => setSelected(k)}
-                style={{ background: selected === k ? '#F5E642' : '#1e3a5f', color: selected === k ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === k ? '#F5E642′ : '#1e3a5f', color: selected === k ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {k}
               </button>
             ))}
@@ -86,7 +86,7 @@ export default function DFWWinterStormUriFreezeLesson() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 32, background: '#F5E642', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontSize: 20, fontWeight: 700, color: '#0A1628' }}>Uri was a warning. The next freeze won't be.</div>
+          <div style={{ fontSize: 20, fontWeight: 700, color: '#0A1628′ }}>Uri was a warning. The next freeze won’t be.</div>
           <div style={{ color: '#0A1628', marginTop: 6 }}>ProLnk connects DFW homeowners with licensed plumbers and contractors.</div>
         </div>
       </div>

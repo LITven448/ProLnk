@@ -69,32 +69,32 @@ export default function DFWProLnkDispatchGuide2026() {
   const [scenario, setScenario] = useState<string>(scenarioKeys[0]);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <span style={{ fontSize: 48 }}>📡</span>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>
             ProLnk Job Dispatch & Scheduling Guide 2026
           </h1>
-          <p style={{ color: "#94a3b8", fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
+          <p style={{ color: "#94a3b8″, fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
             How ProLnk dispatches matches to Charter pros — what to expect, how to respond, and how to protect your response score.
           </p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 8 }}>⚡ Response Time Scoring</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 8 }}>⚡ Response Time Scoring</h2>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 16 }}>
             {[["Under 10 min", "🏆 Priority Boost"], ["10-30 min", "✅ Standard"], ["30-60 min", "⚠️ Below Average"], ["60+ min", "🔴 Score Penalty"]].map(([time, label]) => (
-              <div key={time} style={{ background: "#0A1628", borderRadius: 8, padding: "10px 14px", border: "1px solid #1e3a5f", textAlign: "center" }}>
-                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 13 }}>{time}</div>
-                <div style={{ color: "#94a3b8", fontSize: 12 }}>{label}</div>
+              <div key={time} style={{ background: "#0A1628″, borderRadius: 8, padding: "10px 14px", border: "1px solid #1e3a5f", textAlign: "center" }}>
+                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 13 }}>{time}</div>
+                <div style={{ color: "#94a3b8″, fontSize: 12 }}>{label}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 16 }}>Select Scenario → Pro Response Guide</h2>
+          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 16 }}>Select Scenario → Pro Response Guide</h2>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 24 }}>
             {scenarioKeys.map(s => (
               <button
@@ -105,8 +105,8 @@ export default function DFWProLnkDispatchGuide2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  background: scenario === s ? "#F5E642" : "#1a2f55",
-                  color: scenario === s ? "#0A1628" : "#e2e8f0",
+                  background: scenario === s ? "#F5E642″ : "#1a2f55",
+                  color: scenario === s ? "#0A1628″ : "#e2e8f0",
                   fontWeight: 700,
                   fontSize: 13,
                 }}
@@ -117,12 +117,12 @@ export default function DFWProLnkDispatchGuide2026() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
             {scenarios[scenario].steps.map((item, i) => (
-              <div key={i} style={{ background: "#0A1628", borderRadius: 8, padding: "11px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
+              <div key={i} style={{ background: "#0A1628″, borderRadius: 8, padding: "11px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
                 {item}
               </div>
             ))}
           </div>
-          <h3 style={{ color: "#F5E642", fontSize: 14, marginBottom: 10 }}>Pro Tips</h3>
+          <h3 style={{ color: "#F5E642″, fontSize: 14, marginBottom: 10 }}>Pro Tips</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {scenarios[scenario].tips.map((tip, i) => (
               <div key={i} style={{ background: "#0a1a0a", borderRadius: 8, padding: "11px 16px", fontSize: 14, color: "#86efac", border: "1px solid #14532d" }}>
@@ -132,9 +132,9 @@ export default function DFWProLnkDispatchGuide2026() {
           </div>
         </div>
 
-        <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
-          <p style={{ color: "#0A1628", fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>Join ProLnk Charter — DFW Founding Slots Available</p>
-          <p style={{ color: "#1a2f55", fontSize: 14, margin: 0 }}>Lock your founding rate at prolnk.io — waitlist closes at 500 Charter members</p>
+        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "24px", textAlign: "center" }}>
+          <p style={{ color: "#0A1628″, fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>Join ProLnk Charter — DFW Founding Slots Available</p>
+          <p style={{ color: "#1a2f55″, fontSize: 14, margin: 0 }}>Lock your founding rate at prolnk.io — waitlist closes at 500 Charter members</p>
         </div>
       </div>
     </div>

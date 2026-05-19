@@ -43,18 +43,18 @@ export default function DFWHomeEquityLines2026() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Your DFW Equity Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Your DFW Equity Calculator</h2>
           <div style={{ display: 'grid', gap: 20, marginBottom: 20 }}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Home Value: <strong style={{ color: '#fff' }}>${homeValue.toLocaleString()}</strong></span>
-              <input type="range" min={150000} max={1500000} step={10000} value={homeValue} onChange={e => setHomeValue(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Home Value: <strong style={{ color: '#fff' }}>${homeValue.toLocaleString()}</strong></span>
+              <input type="range" min={150000} max={1500000} step={10000} value={homeValue} onChange={e => setHomeValue(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Primary Mortgage Balance: <strong style={{ color: '#fff' }}>${primaryMortgage.toLocaleString()}</strong></span>
-              <input type="range" min={0} max={homeValue} step={10000} value={primaryMortgage} onChange={e => setPrimaryMortgage(+e.target.value)} style={{ accentColor: '#F5E642' }} />
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Primary Mortgage Balance: <strong style={{ color: '#fff' }}>${primaryMortgage.toLocaleString()}</strong></span>
+              <input type="range" min={0} max={homeValue} step={10000} value={primaryMortgage} onChange={e => setPrimaryMortgage(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>Use Case</span>
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Use Case</span>
               <select value={useCase} onChange={e => setUseCase(e.target.value)} style={{ background: '#1e3a5f', color: '#fff', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value="renovation">🔧 Home Renovation</option>
                 <option value="consolidation">💳 Debt Consolidation</option>
@@ -72,7 +72,7 @@ export default function DFWHomeEquityLines2026() {
             ].map((item) => (
               <div key={item.label} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 10, padding: '14px 12px', textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>{item.val}</div>
+                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>{item.val}</div>
               </div>
             ))}
           </div>

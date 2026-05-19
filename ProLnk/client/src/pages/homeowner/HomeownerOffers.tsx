@@ -13,13 +13,13 @@ import { useAuth } from "@/_core/hooks/useAuth";
 
 // Before images (current state) keyed by trade category
 const TRADE_BEFORE: Record<string, string> = {
-  Fencing: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-  Gutters: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80",
-  Concrete: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-  Handyman: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
-  Interior: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&q=80",
-  Painting: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80",
-  default: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+  Fencing: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80″,
+  Gutters: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80″,
+  Concrete: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80″,
+  Handyman: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80″,
+  Interior: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&q=80″,
+  Painting: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80″,
+  default: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80″,
 };
 
 // Style-matched mockup images keyed by trade category
@@ -45,7 +45,7 @@ const DEMO_OFFERS = [
   {
     id: 1, type: "Fence Repair", trade: "Fencing", urgency: "medium",
     description: "Rotting fence post at the back gate -- detected during lawn service. Left unaddressed, the post will fail within 6-12 months requiring full section replacement.",
-    detectedBy: "Green Thumb Lawn Care", detectedDate: "Mar 15, 2025",
+    detectedBy: "Green Thumb Lawn Care", detectedDate: "Mar 15, 2025″,
     proName: "DFW Fence Masters", proRating: 4.9, proJobs: 312, proVerified: true,
     estimateRange: "Free estimate", status: "pending", expiresIn: "31 hours",
     photoUrl: null, token: null, isDemo: true, popularity: 12,
@@ -53,33 +53,33 @@ const DEMO_OFFERS = [
   {
     id: 2, type: "Gutter Cleaning", trade: "Gutters", urgency: "low",
     description: "Debris buildup in front gutters visible from ground level. Downspout may be partially blocked -- could cause fascia damage in heavy rain.",
-    detectedBy: "ProLnk AI", detectedDate: "Mar 12, 2025",
+    detectedBy: "ProLnk AI", detectedDate: "Mar 12, 2025″,
     proName: "Clear Flow Gutters", proRating: 4.8, proJobs: 189, proVerified: true,
-    estimateRange: "$120-$180", status: "pending", expiresIn: "4 days",
+    estimateRange: "$120-$180″, status: "pending", expiresIn: "4 days",
     photoUrl: null, token: null, isDemo: true, popularity: 8,
   },
   {
     id: 3, type: "Driveway Crack Sealing", trade: "Concrete", urgency: "high",
     description: "Expansion crack running 8 feet across the driveway. Texas freeze/thaw cycles will widen this significantly. Seal now or replace a section later.",
-    detectedBy: "ProLnk AI", detectedDate: "Mar 8, 2025",
+    detectedBy: "ProLnk AI", detectedDate: "Mar 8, 2025″,
     proName: "DFW Concrete Pros", proRating: 4.7, proJobs: 445, proVerified: true,
-    estimateRange: "$150-$300", status: "accepted", expiresIn: null,
+    estimateRange: "$150-$300″, status: "accepted", expiresIn: null,
     photoUrl: null, token: null, isDemo: true, popularity: 17,
   },
   {
     id: 4, type: "Window Caulking", trade: "Handyman", urgency: "low",
     description: "Exterior caulking around two front windows is cracked and pulling away. Air and moisture infiltration risk.",
-    detectedBy: "Green Thumb Lawn Care", detectedDate: "Feb 20, 2025",
+    detectedBy: "Green Thumb Lawn Care", detectedDate: "Feb 20, 2025″,
     proName: "Handy Dan's Services", proRating: 4.6, proJobs: 98, proVerified: true,
-    estimateRange: "$80-$150", status: "declined", expiresIn: null,
+    estimateRange: "$80-$150″, status: "declined", expiresIn: null,
     photoUrl: null, token: null, isDemo: true, popularity: 5,
   },
 ];
 
 const urgencyConfig: Record<string, { dot: string; label: string; text: string }> = {
-  high:   { dot: "#EF4444", label: "Urgent", text: "#EF4444" },
-  medium: { dot: "#F59E0B", label: "Soon",   text: "#D97706" },
-  low:    { dot: "#10B981", label: "When Ready", text: "#059669" },
+  high:   { dot: "#EF4444″, label: "Urgent", text: "#EF4444" },
+  medium: { dot: "#F59E0B", label: "Soon",   text: "#D97706″ },
+  low:    { dot: "#10B981″, label: "When Ready", text: "#059669" },
 };
 
 // Countdown timer hook-free component
@@ -110,7 +110,7 @@ function CountdownTimer({ expiresMs }: { expiresMs: number }) {
 
   return (
     <div className="flex items-center gap-1 text-xs text-amber-500 flex-shrink-0 font-medium bg-amber-50 px-2 py-1 rounded-lg">
-      <Clock className="w-3 h-3" /> {label}
+      <Clock className="w-3 h-3″ /> {label}
     </div>
   );
 }
@@ -149,8 +149,8 @@ function BeforeAfterSlider({ before, after, alt }: { before: string; after: stri
       {/* Slider line */}
       <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg" style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center">
-          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-            <path d="M8 9l-4 3 4 3M16 9l4 3-4 3" strokeLinecap="round" strokeLinejoin="round" />
+          <svg className="w-4 h-4 text-gray-600″ fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path d="M8 9l-4 3 4 3M16 9l4 3-4 3″ strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
@@ -192,7 +192,7 @@ function mapDbDeal(d: any) {
   };
 }
 
-const ZIP_CODE = "75034";
+const ZIP_CODE = "75034″;
 const DEALS_CLAIMED = 2;
 const DEALS_TOTAL = 3;
 const SAVINGS_TOTAL = 284;
@@ -267,45 +267,45 @@ export default function HomeownerOffers() {
 
   return (
     <HomeownerLayout>
-      <div className="p-4 md:p-8 max-w-3xl mx-auto space-y-6">
+      <div className="p-4 md:p-8 max-w-3xl mx-auto space-y-6″>
 
         {/* Personalized header */}
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start justify-between gap-4″>
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <MapPin className="w-4 h-4 text-teal-400" />
-              <span className="text-sm font-semibold text-teal-400">{pendingCount} offers saved for your ZIP {ZIP_CODE}</span>
+            <div className="flex items-center gap-2 mb-1″>
+              <MapPin className="w-4 h-4 text-teal-400″ />
+              <span className="text-sm font-semibold text-teal-400″>{pendingCount} offers saved for your ZIP {ZIP_CODE}</span>
             </div>
             <h1 className="text-xl font-bold text-gray-900 tracking-tight">Suggestions for Your Home</h1>
-            <p className="text-sm text-gray-400 mt-0.5">
+            <p className="text-sm text-gray-400 mt-0.5″>
               {(isLoading || scanLoading) ? "Loading..." : pendingCount > 0
                 ? `${pendingCount} suggestion${pendingCount > 1 ? "s" : ""} waiting -- each includes a style preview`
                 : "All caught up"}
             </p>
           </div>
           {usingRealData && (
-            <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100 flex-shrink-0">
-              <Database className="w-3 h-3" /> Live
+            <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100 flex-shrink-0″>
+              <Database className="w-3 h-3″ /> Live
             </div>
           )}
         </div>
 
         {/* Loyalty savings banner */}
-        <div className="flex items-center gap-3 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-xl px-4 py-3">
-          <div className="w-9 h-9 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
-            <Gift className="w-4 h-4 text-teal-600" />
+        <div className="flex items-center gap-3 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-xl px-4 py-3″>
+          <div className="w-9 h-9 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0″>
+            <Gift className="w-4 h-4 text-teal-600″ />
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-teal-800">You've saved <span className="text-teal-600">${SAVINGS_TOTAL}</span> with ProLnk offers</p>
-            <p className="text-xs text-teal-600/70 mt-0.5">Keep using ProLnk to unlock higher savings tiers</p>
+          <div className="flex-1 min-w-0″>
+            <p className="text-sm font-semibold text-teal-800″>You've saved <span className="text-teal-600">${SAVINGS_TOTAL}</span> with ProLnk offers</p>
+            <p className="text-xs text-teal-600/70 mt-0.5″>Keep using ProLnk to unlock higher savings tiers</p>
           </div>
         </div>
 
         {/* Deals claimed progress bar */}
-        <div className="bg-white rounded-xl border border-slate-100 px-4 py-3 space-y-2">
-          <div className="flex items-center justify-between text-xs text-gray-500">
-            <span className="font-medium text-gray-700">Monthly deals claimed</span>
-            <span className="font-bold text-gray-900">{DEALS_CLAIMED} of {DEALS_TOTAL} available</span>
+        <div className="bg-white rounded-xl border border-slate-100 px-4 py-3 space-y-2″>
+          <div className="flex items-center justify-between text-xs text-gray-500″>
+            <span className="font-medium text-gray-700″>Monthly deals claimed</span>
+            <span className="font-bold text-gray-900″>{DEALS_CLAIMED} of {DEALS_TOTAL} available</span>
           </div>
           <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
             <div
@@ -313,7 +313,7 @@ export default function HomeownerOffers() {
               style={{ width: `${(DEALS_CLAIMED / DEALS_TOTAL) * 100}%` }}
             />
           </div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-400″>
             You've claimed {DEALS_CLAIMED} of {DEALS_TOTAL} available deals this month
           </p>
         </div>
@@ -324,8 +324,8 @@ export default function HomeownerOffers() {
             <button key={f} onClick={() => setFilter(f)}
               className="px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all capitalize"
               style={filter === f
-                ? { backgroundColor: "#111827", color: "#fff" }
-                : { backgroundColor: "#F9FAFB", color: "#6B7280", border: "1px solid #E5E7EB" }}>
+                ? { backgroundColor: "#111827″, color: "#fff" }
+                : { backgroundColor: "#F9FAFB", color: "#6B7280″, border: "1px solid #E5E7EB" }}>
               {f === "all" ? `All (${displayOffers.length})`
                 : f === "pending" ? `Pending (${displayOffers.filter((o: any) => o.status === "pending").length})`
                 : f === "accepted" ? `Accepted (${displayOffers.filter((o: any) => o.status === "accepted").length})`
@@ -336,16 +336,16 @@ export default function HomeownerOffers() {
 
         {/* Cards */}
         {isLoading ? (
-          <div className="space-y-4">
+          <div className="space-y-4″>
             {[1, 2].map(i => <div key={i} className="bg-white rounded-2xl border border-slate-100 h-64 animate-pulse" />)}
           </div>
         ) : filtered.length === 0 ? (
           <div className="bg-white rounded-2xl border border-slate-100 p-10 text-center">
-            <div className="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mx-auto mb-4">
-              <Sparkles className="w-8 h-8 text-indigo-400" />
+            <div className="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mx-auto mb-4″>
+              <Sparkles className="w-8 h-8 text-indigo-400″ />
             </div>
-            <h3 className="font-semibold text-gray-800 mb-2">No suggestions yet</h3>
-            <p className="text-sm text-gray-500 max-w-xs mx-auto mb-5">
+            <h3 className="font-semibold text-gray-800 mb-2″>No suggestions yet</h3>
+            <p className="text-sm text-gray-500 max-w-xs mx-auto mb-5″>
               Once a ProLnk partner visits your property, AI will scan their photos and send you personalized suggestions — including style previews of what your home could look like.
             </p>
             <Link href="/my-home/pros">
@@ -355,7 +355,7 @@ export default function HomeownerOffers() {
             </Link>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-4″>
             {filtered.map((offer: any) => {
               const urg = urgencyConfig[offer.urgency] || urgencyConfig.medium;
               const mockupUrl = TRADE_MOCKUPS[offer.trade] || TRADE_MOCKUPS.default;
@@ -363,16 +363,16 @@ export default function HomeownerOffers() {
               return (
                 <div key={offer.id}
                   className={`bg-white rounded-2xl border overflow-hidden transition-all ${offer.status === "declined" ? "opacity-50" : "hover:shadow-md"}`}
-                  style={{ borderColor: offer.status === "pending" ? "#E0E7FF" : "#F1F5F9" }}>
+                  style={{ borderColor: offer.status === "pending" ? "#E0E7FF" : "#F1F5F9″ }}>
 
                   {/* Top: detected photo OR before/after slider */}
                   <div className="relative">
                     {offer.photoUrl ? (
-                      <div className="relative h-44">
+                      <div className="relative h-44″>
                         <img src={offer.photoUrl} alt={offer.type} className="w-full h-44 object-cover" />
                         <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
                           style={{ backgroundColor: "rgba(17,24,39,0.75)", color: "#fff", backdropFilter: "blur(4px)" }}>
-                          <Camera className="w-3 h-3 text-blue-300" />
+                          <Camera className="w-3 h-3 text-blue-300″ />
                           Photo detected
                         </div>
                       </div>
@@ -385,7 +385,7 @@ export default function HomeownerOffers() {
                         />
                         <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
                           style={{ backgroundColor: "rgba(17,24,39,0.75)", color: "#fff", backdropFilter: "blur(4px)" }}>
-                          <Sparkles className="w-3 h-3 text-indigo-300" />
+                          <Sparkles className="w-3 h-3 text-indigo-300″ />
                           Drag to compare
                         </div>
                       </div>
@@ -400,22 +400,22 @@ export default function HomeownerOffers() {
                     )}
                   </div>
 
-                  <div className="p-5 space-y-4">
+                  <div className="p-5 space-y-4″>
                     {/* Title row */}
-                    <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start justify-between gap-3″>
                       <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: urg.dot }} />
+                        <div className="flex items-center gap-2 mb-1″>
+                          <span className="w-2 h-2 rounded-full flex-shrink-0″ style={{ backgroundColor: urg.dot }} />
                           <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: urg.text }}>{urg.label}</span>
                         </div>
                         <h3 className="text-base font-bold text-gray-900 leading-tight">{offer.type}</h3>
                       </div>
-                      <div className="flex items-center gap-2 flex-shrink-0">
+                      <div className="flex items-center gap-2 flex-shrink-0″>
                         {expiresMs != null ? (
                           <CountdownTimer expiresMs={expiresMs} />
                         ) : offer.expiresIn ? (
                           <div className="flex items-center gap-1 text-xs text-amber-500 font-medium bg-amber-50 px-2 py-1 rounded-lg">
-                            <Clock className="w-3 h-3" /> {offer.expiresIn} left
+                            <Clock className="w-3 h-3″ /> {offer.expiresIn} left
                           </div>
                         ) : null}
                         <button
@@ -423,7 +423,7 @@ export default function HomeownerOffers() {
                           className="p-1.5 rounded-lg hover:bg-slate-100 text-gray-400 hover:text-gray-600 transition-colors"
                           title="Share offer"
                         >
-                          <Share2 className="w-4 h-4" />
+                          <Share2 className="w-4 h-4″ />
                         </button>
                       </div>
                     </div>
@@ -432,68 +432,68 @@ export default function HomeownerOffers() {
                     <p className="text-sm text-gray-500 leading-relaxed">{offer.description}</p>
 
                     {/* Detected by */}
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                      <Camera className="w-3 h-3" />
-                      Spotted by <span className="font-medium text-gray-600 ml-0.5">{offer.detectedBy}</span>
-                      <span className="mx-1"></span>{offer.detectedDate}
+                    <div className="flex items-center gap-1.5 text-xs text-gray-400″>
+                      <Camera className="w-3 h-3″ />
+                      Spotted by <span className="font-medium text-gray-600 ml-0.5″>{offer.detectedBy}</span>
+                      <span className="mx-1″></span>{offer.detectedDate}
                     </div>
 
                     {/* Divider */}
-                    <div className="border-t border-slate-50" />
+                    <div className="border-t border-slate-50″ />
 
                     {/* Pro row */}
                     {offer.proName && (
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
-                            style={{ backgroundColor: "#1B4FD8" }}>
+                      <div className="flex items-center justify-between gap-3″>
+                        <div className="flex items-center gap-3″>
+                          <div className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-white flex-shrink-0″
+                            style={{ backgroundColor: "#1B4FD8″ }}>
                             {(offer.proName || "P")[0]}
                           </div>
                           <div>
                             <div className="text-sm font-semibold text-gray-900 leading-tight">{offer.proName}</div>
-                            <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-0.5">
-                              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                            <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-0.5″>
+                              <Star className="w-3 h-3 fill-amber-400 text-amber-400″ />
                               <span>{offer.proRating?.toFixed(1)}</span>
                               {offer.proJobs && <><span></span><span>{offer.proJobs} jobs</span></>}
                               {offer.proVerified && (
-                                <span className="flex items-center gap-0.5 font-medium" style={{ color: "#10B981" }}>
-                                  <CheckCircle className="w-3 h-3" /> Verified
+                                <span className="flex items-center gap-0.5 font-medium" style={{ color: "#10B981″ }}>
+                                  <CheckCircle className="w-3 h-3″ /> Verified
                                 </span>
                               )}
                             </div>
                           </div>
                         </div>
-                        <div className="text-right flex-shrink-0">
-                          <div className="text-xs text-gray-400">Estimate</div>
-                          <div className="text-sm font-bold text-gray-900">{offer.estimateRange}</div>
+                        <div className="text-right flex-shrink-0″>
+                          <div className="text-xs text-gray-400″>Estimate</div>
+                          <div className="text-sm font-bold text-gray-900″>{offer.estimateRange}</div>
                         </div>
                       </div>
                     )}
 
                     {/* CTA */}
                     {offer.status === "pending" && (
-                      <div className="flex gap-2 pt-1">
+                      <div className="flex gap-2 pt-1″>
                         {offer.token ? (
-                          <Link href={`/deal/${offer.token}`} className="flex-1">
-                            <Button className="w-full text-white font-semibold text-sm rounded-xl h-10" style={{ backgroundColor: "#111827" }}>
-                              View Full Offer <ArrowRight className="w-4 h-4 ml-1.5" />
+                          <Link href={`/deal/${offer.token}`} className="flex-1″>
+                            <Button className="w-full text-white font-semibold text-sm rounded-xl h-10″ style={{ backgroundColor: "#111827" }}>
+                              View Full Offer <ArrowRight className="w-4 h-4 ml-1.5″ />
                             </Button>
                           </Link>
                         ) : (
-                          <Button className="flex-1 text-white font-semibold text-sm rounded-xl h-10" style={{ backgroundColor: "#111827" }}
+                          <Button className="flex-1 text-white font-semibold text-sm rounded-xl h-10″ style={{ backgroundColor: "#111827" }}
                             onClick={() => toast.info("A pro will reach out within 24 hours to schedule your estimate.")}>
-                            <Calendar className="w-4 h-4 mr-1.5" /> Schedule Estimate
+                            <Calendar className="w-4 h-4 mr-1.5″ /> Schedule Estimate
                           </Button>
                         )}
-                        <Button variant="outline" className="text-sm text-gray-400 border-slate-200 rounded-xl h-10 px-3">
-                          <ThumbsDown className="w-4 h-4" />
+                        <Button variant="outline" className="text-sm text-gray-400 border-slate-200 rounded-xl h-10 px-3″>
+                          <ThumbsDown className="w-4 h-4″ />
                         </Button>
                       </div>
                     )}
 
                     {offer.status === "accepted" && (
-                      <div className="flex items-center gap-2 text-sm font-medium p-3 rounded-xl bg-emerald-50 text-emerald-700">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                      <div className="flex items-center gap-2 text-sm font-medium p-3 rounded-xl bg-emerald-50 text-emerald-700″>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0″ />
                         Estimate scheduled -- the pro will contact you within 24 hours
                       </div>
                     )}
@@ -507,18 +507,18 @@ export default function HomeownerOffers() {
       {/* -- Bundle Offers Banner: show when 3+ pending scan offers exist -- */}
       {allOffers.filter((o: any) => o.isScanOffer && o.status === "pending").length >= 3 && (
         <div className="bg-gradient-to-r from-indigo-900 to-blue-800 rounded-2xl p-5 text-white">
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-              <Sparkles className="w-5 h-5 text-yellow-300" />
+          <div className="flex items-start gap-4″>
+            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0″>
+              <Sparkles className="w-5 h-5 text-yellow-300″ />
             </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-bold uppercase tracking-wider text-yellow-300">Bundle Opportunity</span>
+            <div className="flex-1 min-w-0″>
+              <div className="flex items-center gap-2 mb-1″>
+                <span className="text-xs font-bold uppercase tracking-wider text-yellow-300″>Bundle Opportunity</span>
               </div>
-              <h3 className="font-bold text-base mb-1">
+              <h3 className="font-bold text-base mb-1″>
                 {allOffers.filter((o: any) => o.isScanOffer && o.status === "pending").length} projects detected — one visit could handle them all
               </h3>
-              <p className="text-white/70 text-sm mb-3">
+              <p className="text-white/70 text-sm mb-3″>
                 TrustyPro can match you with a pro who covers multiple trades, saving you time and potentially reducing costs vs. booking each separately.
               </p>
               <Link href="/my-home/quick-quote">
@@ -531,7 +531,7 @@ export default function HomeownerOffers() {
         </div>
       )}
       {/* -- Featured Partner Banner (high-intent scan results placement) -- */}
-      <FeaturedAdvertiserBanner placement="scanResults" className="mt-2" />
+      <FeaturedAdvertiserBanner placement="scanResults" className="mt-2″ />
 
       </div>
     </HomeownerLayout>

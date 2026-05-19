@@ -55,7 +55,7 @@ export default function DFWConcreteFloorGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Home type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {homeTypes.map(h => (
-                <button key={h} onClick={() => setHomeType(h)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: homeType === h ? '#F5E642' : '#0A1628', color: homeType === h ? '#0A1628' : '#fff', fontSize: 12 }}>{h}</button>
+                <button key={h} onClick={() => setHomeType(h)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: homeType === h ? '#F5E642′ : '#0A1628', color: homeType === h ? '#0A1628' : '#fff', fontSize: 12 }}>{h}</button>
               ))}
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function DFWConcreteFloorGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Your lifestyle:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {lifestyles.map(l => (
-                <button key={l} onClick={() => setLifestyle(l)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: lifestyle === l ? '#F5E642' : '#0A1628', color: lifestyle === l ? '#0A1628' : '#fff', fontSize: 12 }}>{l}</button>
+                <button key={l} onClick={() => setLifestyle(l)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: lifestyle === l ? '#F5E642′ : '#0A1628', color: lifestyle === l ? '#0A1628' : '#fff', fontSize: 12 }}>{l}</button>
               ))}
             </div>
           </div>

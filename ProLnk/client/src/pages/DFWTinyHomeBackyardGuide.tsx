@@ -5,7 +5,7 @@ const cityRules: Record<string, { allowed: boolean; notes: string; setbacks: str
   fortworth: { allowed: true, notes: 'Fort Worth embraced ADUs post-SB 2. "Detached ADU" category added 2023.', setbacks: '5ft side, 5ft rear', maxSqFt: '1,200 sq ft', utility: 'Shared or separate meter' },
   plano: { allowed: true, notes: 'Plano updated codes 2024. ADUs allowed in most residential zones.', setbacks: '5ft side, 10ft rear', maxSqFt: '50% primary structure or 800 sq ft', utility: 'Shared meter standard, separate available with utility upgrade' },
   frisco: { allowed: true, notes: 'Frisco allows per state law. Strict design standards — must match primary structure aesthetics.', setbacks: '5ft side, 10ft rear', maxSqFt: '700 sq ft max', utility: 'Shared meter required in most cases' },
-  mckinney: { allowed: true, notes: 'McKinney allows ADUs. 2024 update streamlined permit process.', setbacks: '5ft side, 5ft rear', maxSqFt: '1,000 sq ft', utility: 'Utility connection fee: $2,000–4,000' },
+  mckinney: { allowed: true, notes: 'McKinney allows ADUs. 2024 update streamlined permit process.', setbacks: '5ft side, 5ft rear', maxSqFt: '1,000 sq ft', utility: 'Utility connection fee: $2,000–4,000′ },
   denton: { allowed: true, notes: 'Denton allows ADUs, somewhat more flexible than north DFW suburbs.', setbacks: '5ft side, 5ft rear', maxSqFt: '1,200 sq ft or 50% primary', utility: 'Separate meter available for rentals' },
   arlington: { allowed: true, notes: 'Arlington allows per SB 2. Some older SF zones have restrictions — verify by address.', setbacks: '5ft side, 5ft rear', maxSqFt: '1,000 sq ft', utility: 'Utility hookup runs $3,000–6,000 for separate service' },
   other: { allowed: true, notes: 'Texas SB 2 (2023) prohibits cities from banning ADUs outright in single-family zones. Check your specific city — most DFW cities have updated codes.', setbacks: 'Varies (5–10ft typical)', maxSqFt: 'Varies (700–1,400 sq ft)', utility: 'Connection fees $2,000–8,000 depending on distance from main service' },
@@ -51,10 +51,10 @@ export default function DFWTinyHomeBackyardGuide() {
           {Object.entries(useCaseCosts).map(([key, val]) => (
             <div key={key} style={{ background: '#1e2d45', borderRadius: 8, padding: 14 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <strong style={{ color: '#F5E642' }}>{key === 'guest' ? '🛏️ Guest Suite' : key === 'rental' ? '💰 Rental Income' : '👨‍👩‍👧 Multigenerational'}</strong>
+                <strong style={{ color: '#F5E642′ }}>{key === ’guest' ? '🛏️ Guest Suite' : key === 'rental' ? '💰 Rental Income' : '👨‍👩‍👧 Multigenerational'}</strong>
                 <span style={{ color: '#94a3b8', fontSize: 12 }}>{val.cost} · {val.timeline}</span>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{val.notes}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{val.notes}</p>
             </div>
           ))}
         </div>
@@ -108,7 +108,7 @@ export default function DFWTinyHomeBackyardGuide() {
               <div style={{ borderTop: '1px solid #1e2d45', paddingTop: 12 }}>
                 <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>💰 Cost & Timeline</div>
                 <p style={{ color: '#cbd5e1', fontSize: 13, margin: '0 0 4px' }}>
-                  Estimated Cost: <strong style={{ color: '#F5E642' }}>{useData.cost}</strong> · Timeline: <strong style={{ color: '#fff' }}>{useData.timeline}</strong>
+                  Estimated Cost: <strong style={{ color: '#F5E642′ }}>{useData.cost}</strong> · Timeline: <strong style={{ color: '#fff' }}>{useData.timeline}</strong>
                 </p>
                 <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>{useData.notes}</p>
               </div>
@@ -116,8 +116,8 @@ export default function DFWTinyHomeBackyardGuide() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
-          <strong style={{ color: '#F5E642' }}>⚠️ Check Your HOA First</strong>
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <strong style={{ color: '#F5E642′ }}>⚠️ Check Your HOA First</strong>
           <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 14 }}>
             Texas SB 2 does not override HOA restrictions. Before spending a dollar on plans,
             review your HOA CC&Rs or email your HOA board. In DFW, approximately 60% of subdivisions

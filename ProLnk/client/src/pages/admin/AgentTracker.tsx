@@ -36,11 +36,11 @@ interface Agent {
 }
 
 const STATUS_COLORS: Record<AgentStatus, string> = {
-  active:     "#82D616",
+  active:     "#82D616″,
   idle:       "#7B809A",
-  processing: "#17C1E8",
-  error:      "#EA0606",
-  standby:    "#FBB140",
+  processing: "#17C1E8″,
+  error:      "#EA0606″,
+  standby:    "#FBB140″,
 };
 
 const STATUS_LABELS: Record<AgentStatus, string> = {
@@ -78,7 +78,7 @@ const AGENTS: Agent[] = [
     role: "Visual Intelligence Agent",
     domain: "ProLnk + TrustyPro",
     icon: Camera,
-    color: "#17C1E8",
+    color: "#17C1E8″,
     status: "processing",
     lastAction: "Analyzing 3 job photos — HVAC, roofing, landscaping",
     actionsToday: 87,
@@ -98,15 +98,15 @@ const AGENTS: Agent[] = [
     role: "Opportunity Distribution Agent",
     domain: "ProLnk Residential",
     icon: Zap,
-    color: "#FBB140",
+    color: "#FBB140″,
     status: "active",
-    lastAction: "Matched HVAC opportunity to 2 verified partners in 75034",
+    lastAction: "Matched HVAC opportunity to 2 verified partners in 75034″,
     actionsToday: 63,
     successRate: 97.8,
     reportsTo: "orchestrator",
     manages: [],
     logs: [
-      { time: "12:00 PM", message: "Matched opportunity #4821 → 2 HVAC partners in ZIP 75034", type: "success" },
+      { time: "12:00 PM", message: "Matched opportunity #4821 → 2 HVAC partners in ZIP 75034″, type: "success" },
       { time: "11:55 AM", message: "No eligible partners found for ZIP 75013 — expanding radius to 15mi", type: "warning" },
       { time: "11:40 AM", message: "Routed 7 opportunities across 5 service categories", type: "success" },
       { time: "11:20 AM", message: "Partner tier filter applied — Scout partners excluded from $8K+ jobs", type: "info" },
@@ -118,7 +118,7 @@ const AGENTS: Agent[] = [
     role: "Predictive Event Agent",
     domain: "ProLnk + TrustyPro",
     icon: CloudLightning,
-    color: "#EA0606",
+    color: "#EA0606″,
     status: "standby",
     lastAction: "Monitoring NWS feed — no active weather events in DFW",
     actionsToday: 14,
@@ -128,7 +128,7 @@ const AGENTS: Agent[] = [
     logs: [
       { time: "11:45 AM", message: "NWS alert: Hail risk elevated for Frisco/Allen — pre-alert queued for roofing partners", type: "warning" },
       { time: "10:30 AM", message: "Weather scan complete — no active events in monitored ZIP codes", type: "info" },
-      { time: "9:15 AM", message: "Post-storm job surge detected: +34% roofing inquiries in 75035", type: "success" },
+      { time: "9:15 AM", message: "Post-storm job surge detected: +34% roofing inquiries in 75035″, type: "success" },
       { time: "8:00 AM", message: "Daily weather scan initiated for 47 monitored ZIP codes", type: "info" },
     ],
   },
@@ -158,7 +158,7 @@ const AGENTS: Agent[] = [
     role: "Commission & Payout Agent",
     domain: "ProLnk Residential",
     icon: DollarSign,
-    color: "#82D616",
+    color: "#82D616″,
     status: "idle",
     lastAction: "Reconciled 3 closed jobs — $847 in commissions pending",
     actionsToday: 28,
@@ -178,7 +178,7 @@ const AGENTS: Agent[] = [
     role: "Homeowner Intelligence Agent",
     domain: "TrustyPro",
     icon: Shield,
-    color: "#4F46E5",
+    color: "#4F46E5″,
     status: "active",
     lastAction: "Processed 2 home scan uploads — 14 issues flagged across 100+ categories",
     actionsToday: 41,
@@ -187,7 +187,7 @@ const AGENTS: Agent[] = [
     manages: [],
     logs: [
       { time: "11:58 AM", message: "Home scan #HS-221: 14 issues detected — roof, HVAC, exterior", type: "success" },
-      { time: "11:40 AM", message: "Homeowner match: 3 verified pros sent to homeowner in 75034", type: "success" },
+      { time: "11:40 AM", message: "Homeowner match: 3 verified pros sent to homeowner in 75034″, type: "success" },
       { time: "11:15 AM", message: "Home Health Vault updated for 2 homeowners", type: "info" },
       { time: "10:30 AM", message: "Waitlist priority score recalculated for 18 homeowners", type: "info" },
     ],
@@ -272,7 +272,7 @@ function AgentCard({
           style={{ color: agent.color, width: isRoot ? 28 : 22, height: isRoot ? 28 : 22 }}
         />
         {/* Status dot */}
-        <span className="absolute -top-1 -right-1">
+        <span className="absolute -top-1 -right-1″>
           <StatusDot status={agent.status} size={10} />
         </span>
       </div>
@@ -284,7 +284,7 @@ function AgentCard({
         >
           {agent.name}
         </p>
-        <p className="text-[10px] mt-0.5" style={{ color: T.muted }}>{agent.role.split(" ")[0]}</p>
+        <p className="text-[10px] mt-0.5″ style={{ color: T.muted }}>{agent.role.split(" ")[0]}</p>
       </div>
     </button>
   );
@@ -333,7 +333,7 @@ function OrgChart({
         {/* Children */}
         <div className="flex items-start gap-8 flex-wrap justify-center">
           {children.map(child => (
-            <div key={child.id} className="flex flex-col items-center gap-0">
+            <div key={child.id} className="flex flex-col items-center gap-0″>
               {/* Vertical connector up */}
               <div style={{ width: 2, height: 28, backgroundColor: T.border }} />
               <AgentCard
@@ -360,24 +360,24 @@ function AgentDetailPanel({ agent }: { agent: Agent }) {
     >
       {/* Header */}
       <div
-        className="flex items-center gap-4 px-5 py-4"
+        className="flex items-center gap-4 px-5 py-4″
         style={{ background: `linear-gradient(135deg, ${agent.color}11, ${agent.color}22)`, borderBottom: `1px solid ${T.border}` }}
       >
         <div
-          className="flex items-center justify-center rounded-xl flex-shrink-0"
+          className="flex items-center justify-center rounded-xl flex-shrink-0″
           style={{ width: 48, height: 48, background: `linear-gradient(135deg, ${agent.color}33, ${agent.color}55)` }}
         >
           <Icon style={{ color: agent.color, width: 22, height: 22 }} />
         </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
+        <div className="flex-1 min-w-0″>
+          <div className="flex items-center gap-2″>
             <h3 className="text-base font-bold truncate" style={{ color: T.text }}>{agent.name}</h3>
             <StatusDot status={agent.status} size={8} />
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: STATUS_COLORS[agent.status] + "22", color: STATUS_COLORS[agent.status] }}>
+            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: STATUS_COLORS[agent.status] + "22″, color: STATUS_COLORS[agent.status] }}>
               {STATUS_LABELS[agent.status]}
             </span>
           </div>
-          <p className="text-xs mt-0.5" style={{ color: T.muted }}>{agent.role} · {agent.domain}</p>
+          <p className="text-xs mt-0.5″ style={{ color: T.muted }}>{agent.role} · {agent.domain}</p>
         </div>
       </div>
 
@@ -389,7 +389,7 @@ function AgentDetailPanel({ agent }: { agent: Agent }) {
           { label: "Reports To", value: agent.reportsTo ? AGENTS.find(a => a.id === agent.reportsTo)?.name ?? "—" : "None (Root)", icon: Users },
         ].map(({ label, value, icon: StatIcon }) => (
           <div key={label} className="flex flex-col items-center justify-center py-3 px-2 text-center">
-            <StatIcon className="w-3.5 h-3.5 mb-1" style={{ color: agent.color }} />
+            <StatIcon className="w-3.5 h-3.5 mb-1″ style={{ color: agent.color }} />
             <p className="text-sm font-bold" style={{ color: T.text }}>{value}</p>
             <p className="text-[10px]" style={{ color: T.muted }}>{label}</p>
           </div>
@@ -397,21 +397,21 @@ function AgentDetailPanel({ agent }: { agent: Agent }) {
       </div>
 
       {/* Last action */}
-      <div className="px-5 py-3" style={{ borderBottom: `1px solid ${T.border}` }}>
-        <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: T.muted }}>Last Action</p>
+      <div className="px-5 py-3″ style={{ borderBottom: `1px solid ${T.border}` }}>
+        <p className="text-[10px] font-bold uppercase tracking-widest mb-1″ style={{ color: T.muted }}>Last Action</p>
         <p className="text-sm" style={{ color: T.text }}>{agent.lastAction}</p>
       </div>
 
       {/* Activity log */}
-      <div className="flex-1 overflow-y-auto px-5 py-3">
-        <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: T.muted }}>Activity Log</p>
-        <div className="space-y-2">
+      <div className="flex-1 overflow-y-auto px-5 py-3″>
+        <p className="text-[10px] font-bold uppercase tracking-widest mb-3″ style={{ color: T.muted }}>Activity Log</p>
+        <div className="space-y-2″>
           {agent.logs.map((log, i) => {
-            const logColor = log.type === "success" ? "#82D616" : log.type === "warning" ? "#FBB140" : log.type === "error" ? "#EA0606" : T.muted;
+            const logColor = log.type === "success" ? "#82D616″ : log.type === "warning" ? "#FBB140" : log.type === "error" ? "#EA0606" : T.muted;
             return (
-              <div key={i} className="flex items-start gap-2.5">
-                <span className="text-[10px] font-mono flex-shrink-0 mt-0.5" style={{ color: T.dim }}>{log.time}</span>
-                <Circle className="w-1.5 h-1.5 flex-shrink-0 mt-1.5" style={{ color: logColor, fill: logColor }} />
+              <div key={i} className="flex items-start gap-2.5″>
+                <span className="text-[10px] font-mono flex-shrink-0 mt-0.5″ style={{ color: T.dim }}>{log.time}</span>
+                <Circle className="w-1.5 h-1.5 flex-shrink-0 mt-1.5″ style={{ color: logColor, fill: logColor }} />
                 <p className="text-xs leading-relaxed" style={{ color: T.text }}>{log.message}</p>
               </div>
             );
@@ -434,7 +434,7 @@ function AccountabilityChart({
   onSelect: (id: string) => void;
 }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3″>
       {agents.map(agent => {
         const Icon = agent.icon;
         const isSelected = selectedId === agent.id;
@@ -444,7 +444,7 @@ function AccountabilityChart({
             onClick={() => onSelect(agent.id)}
             className="flex flex-col gap-3 p-4 rounded-2xl text-left transition-all focus:outline-none"
             style={{
-              backgroundColor: isSelected ? agent.color + "11" : T.surface,
+              backgroundColor: isSelected ? agent.color + "11″ : T.surface,
               border: `1.5px solid ${isSelected ? agent.color : T.border}`,
               boxShadow: isSelected ? `0 4px 16px ${agent.color}22` : "none",
             }}
@@ -457,7 +457,7 @@ function AccountabilityChart({
               >
                 <Icon style={{ color: agent.color, width: 18, height: 18 }} />
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5″>
                 <StatusDot status={agent.status} size={7} />
                 <span className="text-[10px] font-semibold" style={{ color: STATUS_COLORS[agent.status] }}>
                   {STATUS_LABELS[agent.status]}
@@ -467,7 +467,7 @@ function AccountabilityChart({
             {/* Name + role */}
             <div>
               <p className="text-sm font-semibold leading-tight" style={{ color: T.text }}>{agent.name}</p>
-              <p className="text-[11px] mt-0.5" style={{ color: T.muted }}>{agent.role}</p>
+              <p className="text-[11px] mt-0.5″ style={{ color: T.muted }}>{agent.role}</p>
             </div>
             {/* Stats */}
             <div className="flex items-center justify-between">
@@ -476,14 +476,14 @@ function AccountabilityChart({
                 <p className="text-[10px]" style={{ color: T.muted }}>Actions today</p>
               </div>
               <div className="text-right">
-                <p className="text-xs font-bold" style={{ color: agent.successRate >= 98 ? "#82D616" : agent.successRate >= 90 ? "#FBB140" : "#EA0606" }}>
+                <p className="text-xs font-bold" style={{ color: agent.successRate >= 98 ? "#82D616″ : agent.successRate >= 90 ? "#FBB140" : "#EA0606" }}>
                   {agent.successRate}%
                 </p>
                 <p className="text-[10px]" style={{ color: T.muted }}>Success</p>
               </div>
             </div>
             {/* Last action */}
-            <p className="text-[11px] leading-relaxed line-clamp-2" style={{ color: T.muted }}>
+            <p className="text-[11px] leading-relaxed line-clamp-2″ style={{ color: T.muted }}>
               {agent.lastAction}
             </p>
           </button>
@@ -525,11 +525,11 @@ export default function AgentTracker() {
       <div className="p-6 flex flex-col gap-6 min-h-0 overflow-y-auto">
 
         {/* ── Header Stats ── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
           {[
             { label: "Total Agents",    value: agents.length,    color: T.accent,   icon: Bot },
-            { label: "Active Now",      value: activeCount + processingCount, color: "#82D616", icon: Activity },
-            { label: "Actions Today",   value: totalActions.toLocaleString(), color: "#FBB140", icon: Zap },
+            { label: "Active Now",      value: activeCount + processingCount, color: "#82D616″, icon: Activity },
+            { label: "Actions Today",   value: totalActions.toLocaleString(), color: "#FBB140″, icon: Zap },
             { label: "Avg Success Rate", value: `${(agents.reduce((s, a) => s + a.successRate, 0) / agents.length).toFixed(1)}%`, color: "#7928CA", icon: TrendingUp },
           ].map(({ label, value, color, icon: Icon }) => (
             <div
@@ -538,7 +538,7 @@ export default function AgentTracker() {
               style={{ backgroundColor: T.surface, border: `1px solid ${T.border}` }}
             >
               <div
-                className="flex items-center justify-center rounded-xl flex-shrink-0"
+                className="flex items-center justify-center rounded-xl flex-shrink-0″
                 style={{ width: 40, height: 40, background: `linear-gradient(135deg, ${color}22, ${color}44)` }}
               >
                 <Icon style={{ color, width: 18, height: 18 }} />
@@ -569,20 +569,20 @@ export default function AgentTracker() {
             ))}
           </div>
           <div className="flex items-center gap-2 text-xs" style={{ color: T.muted }}>
-            <RefreshCw className="w-3.5 h-3.5" />
+            <RefreshCw className="w-3.5 h-3.5″ />
             Last refresh: {lastRefresh.toLocaleTimeString()}
           </div>
         </div>
 
         {/* ── Main Content ── */}
-        <div className="flex flex-col lg:flex-row gap-6">
+        <div className="flex flex-col lg:flex-row gap-6″>
 
           {/* Left: Chart */}
           <div
-            className="flex-1 rounded-2xl overflow-auto p-6"
+            className="flex-1 rounded-2xl overflow-auto p-6″
             style={{ backgroundColor: T.surface, border: `1px solid ${T.border}`, minHeight: 400 }}
           >
-            <h2 className="text-sm font-bold mb-6" style={{ color: T.text }}>
+            <h2 className="text-sm font-bold mb-6″ style={{ color: T.text }}>
               {view === "org" ? "Agent Org Chart" : "Agent Accountability Grid"}
             </h2>
             {view === "org" ? (
@@ -593,7 +593,7 @@ export default function AgentTracker() {
           </div>
 
           {/* Right: Detail Panel */}
-          <div className="w-full lg:w-80 flex-shrink-0">
+          <div className="w-full lg:w-80 flex-shrink-0″>
             {selectedAgent ? (
               <AgentDetailPanel agent={selectedAgent} />
             ) : (
@@ -601,7 +601,7 @@ export default function AgentTracker() {
                 className="flex flex-col items-center justify-center h-64 rounded-2xl"
                 style={{ backgroundColor: T.surface, border: `1px solid ${T.border}` }}
               >
-                <Bot className="w-8 h-8 mb-3" style={{ color: T.dim }} />
+                <Bot className="w-8 h-8 mb-3″ style={{ color: T.dim }} />
                 <p className="text-sm font-medium" style={{ color: T.muted }}>Select an agent to view details</p>
               </div>
             )}
@@ -615,7 +615,7 @@ export default function AgentTracker() {
         >
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: T.muted }}>Status Legend</span>
           {(Object.entries(STATUS_LABELS) as [AgentStatus, string][]).map(([status, label]) => (
-            <div key={status} className="flex items-center gap-1.5">
+            <div key={status} className="flex items-center gap-1.5″>
               <StatusDot status={status} size={8} />
               <span className="text-xs" style={{ color: T.text }}>{label}</span>
             </div>

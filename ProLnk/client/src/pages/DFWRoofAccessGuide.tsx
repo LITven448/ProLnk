@@ -61,7 +61,7 @@ export default function DFWRoofAccessGuide() {
             {homeTypes.map(h => <option key={h} value={h}>{h}</option>)}
           </select>
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '0.7rem 2rem', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}>Get Safety Checklist</button>
-          {result && <div style={{ marginTop: '1rem', background: '#162035', borderRadius: 8, padding: '1rem', color: '#CBD5E8', lineHeight: 1.7, borderLeft: '3px solid #F5E642' }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#162035', borderRadius: 8, padding: '1rem', color: '#CBD5E8', lineHeight: 1.7, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
         </div>
 
         <p style={{ color: '#6B7FA3', fontSize: '0.8rem', textAlign: 'center' }}>

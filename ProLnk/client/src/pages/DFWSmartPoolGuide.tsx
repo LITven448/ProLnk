@@ -61,7 +61,7 @@ export default function DFWSmartPoolGuide() {
               {[{ v: 'new', l: 'New (0–4 years)' }, { v: 'mid', l: 'Mid-Age (5–10 years)' }, { v: 'old', l: 'Older (10+ years)' }].map((o) => (
                 <button key={o.v} onClick={() => setAge(o.v as EquipmentAge)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${age === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: age === o.v ? '#F5E642' : 'transparent', color: age === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: age === o.v ? '#F5E642′ : ’transparent', color: age === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -74,7 +74,7 @@ export default function DFWSmartPoolGuide() {
               {[{ v: 'basic', l: 'Basic App Control' }, { v: 'full', l: 'Full Automation + Chemical' }, { v: 'premium', l: 'Premium Smart Pool System' }].map((o) => (
                 <button key={o.v} onClick={() => setTier(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${tier === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: tier === o.v ? '#F5E642' : 'transparent', color: tier === o.v ? '#0A1628' : '#9BA3B8',
+                    backgroundColor: tier === o.v ? '#F5E642′ : ’transparent', color: tier === o.v ? '#0A1628′ : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>

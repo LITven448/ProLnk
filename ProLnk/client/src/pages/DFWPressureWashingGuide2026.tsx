@@ -48,20 +48,20 @@ export default function DFWPressureWashingGuide2026() {
             <div key={i} style={{ background: '#1E2D45', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ color: '#F5E642', fontSize: 13, marginTop: 8 }}>{s.label}</div>
-              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1' }}>{s.val}</div>
+              <div style={{ fontSize: 14, marginTop: 4, color: '#cbd5e1′ }}>{s.val}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Service Recommender</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Service Recommender</h2>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>SELECT SURFACE</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {Object.keys(surfaceData).map(t => (
                 <button key={t} onClick={() => setSurface(t)}
                   style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                    background: surface === t ? '#F5E642' : '#2d3f5a', color: surface === t ? '#0A1628' : '#fff' }}>
+                    background: surface === t ? '#F5E642′ : '#2d3f5a', color: surface === t ? '#0A1628' : '#fff' }}>
                   {t.charAt(0).toUpperCase() + t.slice(1)}
                 </button>
               ))}
@@ -83,7 +83,7 @@ export default function DFWPressureWashingGuide2026() {
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 14, color: '#cbd5e1', fontSize: 14, lineHeight: 1.6 }}>
-            <strong style={{ color: '#F5E642' }}>Recommended Service: </strong>{s.service}
+            <strong style={{ color: '#F5E642′ }}>Recommended Service: </strong>{s.service}
           </div>
         </div>
       </div>

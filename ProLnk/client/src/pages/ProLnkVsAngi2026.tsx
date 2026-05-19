@@ -27,7 +27,7 @@ export default function ProLnkVsAngi2026() {
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 38, marginBottom: 12 }}>⚔️</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 10 }}>ProLnk vs Angi — 2026 Update</h1>
-          <p style={{ fontSize: 16, color: '#6B7280' }}>How the two platforms compare for DFW homeowners finding home service pros</p>
+          <p style={{ fontSize: 16, color: '#6B7280′ }}>How the two platforms compare for DFW homeowners finding home service pros</p>
         </div>
 
         <div style={{ backgroundColor: '#fff', borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 40 }}>
@@ -38,7 +38,7 @@ export default function ProLnkVsAngi2026() {
           </div>
           {DIMENSIONS.map((d, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '16px 20px', borderBottom: '1px solid #F3F4F6', backgroundColor: i % 2 === 0 ? '#fff' : '#FAFAFA' }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{d.label}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#374151′ }}>{d.label}</div>
               <div style={{ fontSize: 13, color: '#6B7280', paddingRight: 12 }}>{d.angi}</div>
               <div style={{ fontSize: 13, color: '#059669', paddingRight: 12 }}>{d.prolnk}</div>
             </div>
@@ -51,13 +51,13 @@ export default function ProLnkVsAngi2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {PRIORITIES.map((p, i) => (
               <button key={i} onClick={() => setSelectedPriority(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedPriority === i ? '#F5E642' : '#E5E7EB',
-                  backgroundColor: selectedPriority === i ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedPriority === i ? '#F5E642′ : '#E5E7EB',
+                  backgroundColor: selectedPriority === i ? '#F5E642′ : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: ’pointer' }}>
                 {p.label}
               </button>
             ))}
           </div>
-          <div style={{ backgroundColor: '#F0FDF4', borderRadius: 10, padding: 20, borderLeft: '4px solid #10B981' }}>
+          <div style={{ backgroundColor: '#F0FDF4', borderRadius: 10, padding: 20, borderLeft: '4px solid #10B981′ }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#065F46', marginBottom: 6 }}>
               {PRIORITIES[selectedPriority].winner === 'prolnk' ? '✅ ProLnk wins on this' : '🔶 Angi wins on this'}
             </div>

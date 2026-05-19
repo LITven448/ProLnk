@@ -104,19 +104,19 @@ export default function DFWHomeMortgageLienGuide() {
             <div>
               <div style={{ background: '#f0f7ff', borderRadius: 8, padding: 14, marginBottom: 16 }}>
                 <div style={{ fontWeight: 700, marginBottom: 6 }}>💡 Lien Implication</div>
-                <div style={{ fontSize: 14, lineHeight: 1.6, color: '#333' }}>{match.implications}</div>
+                <div style={{ fontSize: 14, lineHeight: 1.6, color: '#333′ }}>{match.implications}</div>
               </div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontWeight: 700, marginBottom: 8 }}>📋 Process Steps</div>
-                {match.process.map((step, i) => <div key={i} style={{ fontSize: 14, padding: '7px 0', borderBottom: '1px solid #f0f0f0', color: '#333' }}>{i + 1}. {step}</div>)}
+                {match.process.map((step, i) => <div key={i} style={{ fontSize: 14, padding: '7px 0', borderBottom: '1px solid #f0f0f0', color: '#333′ }}>{i + 1}. {step}</div>)}
               </div>
               <div style={{ background: '#fff8e1', borderRadius: 8, padding: 14, marginBottom: 12 }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>✅ What to Verify</div>
-                <div style={{ fontSize: 13, color: '#555' }}>{match.verify}</div>
+                <div style={{ fontSize: 13, color: '#555′ }}>{match.verify}</div>
               </div>
               <div style={{ background: '#f0fdf4', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>💵 Estimated Cost</div>
-                <div style={{ fontSize: 13, color: '#555' }}>{match.cost}</div>
+                <div style={{ fontSize: 13, color: '#555′ }}>{match.cost}</div>
               </div>
             </div>
           )}

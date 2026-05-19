@@ -43,13 +43,13 @@ export default function DFWHVACDFWCommunity() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>Your Community Situation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontSize: 15, color: '#e2e8f0', lineHeight: 1.8 }}>{result.message}</div>
             </div>
           )}
@@ -57,7 +57,7 @@ export default function DFWHVACDFWCommunity() {
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '24px 32px', textAlign: 'center' }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628', marginBottom: 8 }}>Better Together</div>
-          <div style={{ fontSize: 14, color: '#0A1628' }}>Every verified review and shared price makes the DFW HVAC market fairer for everyone. ProLnk provides the infrastructure — the community provides the trust.</div>
+          <div style={{ fontSize: 14, color: '#0A1628′ }}>Every verified review and shared price makes the DFW HVAC market fairer for everyone. ProLnk provides the infrastructure — the community provides the trust.</div>
         </div>
       </div>
     </div>

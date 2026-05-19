@@ -81,7 +81,7 @@ export default function DFWHolidayStringLightGuide() {
           ))}
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642′ }}>
               {[
                 { label: '🎄 Approach', value: result.approach },
                 { label: '⚡ Power Planning', value: result.power },

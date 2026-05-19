@@ -30,7 +30,7 @@ export default function DFWRoofPermitInspection2026() {
           {Object.keys(cities).map(c => (
             <button key={c} onClick={() => setCity(c)}
               style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                background: city === c ? '#F5E642' : '#1e2d45', color: city === c ? '#0A1628' : '#94a3b8' }}>
+                background: city === c ? '#F5E642′ : '#1e2d45', color: city === c ? '#0A1628' : '#94a3b8' }}>
               {c}
             </button>
           ))}
@@ -38,7 +38,7 @@ export default function DFWRoofPermitInspection2026() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: '18px 20px', borderLeft: `4px solid ${info.required ? '#F5E642' : '#22c55e'}` }}>
-            <div style={{ color: info.required ? '#F5E642' : '#22c55e', fontWeight: 800, fontSize: 18 }}>
+            <div style={{ color: info.required ? '#F5E642′ : '#22c55e', fontWeight: 800, fontSize: 18 }}>
               {info.required ? '✅ Permit Required' : '⚪ No Permit Required'}
             </div>
             <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 6 }}>{info.note}</div>
@@ -61,7 +61,7 @@ export default function DFWRoofPermitInspection2026() {
             'Take photos of decking condition before shingles go on — required in some cities.',
             'Save passed inspection certificate in ProLnk Vault — it permanently raises home value.']
             .map((r, i) => (
-              <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642' }}>{r}</div>
+              <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642′ }}>{r}</div>
             ))}
         </div>
       </div>

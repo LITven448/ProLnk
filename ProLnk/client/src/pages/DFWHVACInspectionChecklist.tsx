@@ -96,7 +96,7 @@ export default function DFWHVACInspectionChecklist() {
               <div key={b.brand} style={{ background: '#162035', borderRadius: 8, padding: 14, display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <div style={{ minWidth: 140 }}>
                   <div style={{ fontWeight: 700, color: '#E8EAF0', fontSize: 13 }}>{b.brand}</div>
-                  <div style={{ color: b.durabilityDFW === 'Excellent' ? '#22C55E' : b.durabilityDFW === 'Very Good' ? '#86EFAC' : b.durabilityDFW === 'Good' ? '#F5E642' : '#EF4444', fontSize: 12, fontWeight: 700, marginTop: 4 }}>{b.durabilityDFW}</div>
+                  <div style={{ color: b.durabilityDFW === 'Excellent' ? '#22C55E' : b.durabilityDFW === 'Very Good' ? '#86EFAC' : b.durabilityDFW === 'Good' ? '#F5E642′ : '#EF4444', fontSize: 12, fontWeight: 700, marginTop: 4 }}>{b.durabilityDFW}</div>
                 </div>
                 <div style={{ color: '#9BA4B4', fontSize: 13, lineHeight: 1.5 }}>{b.notes}</div>
               </div>
@@ -129,7 +129,7 @@ export default function DFWHVACInspectionChecklist() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {(['summer', 'winter', 'spring', 'fall'] as Season[]).map(s => (
                 <button key={s} onClick={() => { setSeason(s); setShowResult(false); }}
-                  style={{ padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: season === s ? '#F5E642' : '#1E3A5F', background: season === s ? '#F5E642' : 'transparent', color: season === s ? '#0A1628' : '#9BA4B4', fontWeight: 700, cursor: 'pointer', fontSize: 14, textTransform: 'capitalize' }}>
+                  style={{ padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: season === s ? '#F5E642′ : '#1E3A5F', background: season === s ? '#F5E642' : ’transparent', color: season === s ? '#0A1628′ : '#9BA4B4', fontWeight: 700, cursor: ’pointer', fontSize: 14, textTransform: 'capitalize' }}>
                   {s}
                 </button>
               ))}
@@ -140,7 +140,7 @@ export default function DFWHVACInspectionChecklist() {
             Get My Inspection Checklist
           </button>
           {showResult && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6, fontSize: 16 }}>System: {ageData.label}</div>
               <div style={{ color: '#9BA4B4', fontSize: 13, marginBottom: 4 }}>Condition: {ageData.condition} - {ageData.lifeRemaining}</div>
               <div style={{ color: '#CBD2E0', fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>{ageData.focus}</div>
@@ -151,7 +151,7 @@ export default function DFWHVACInspectionChecklist() {
                 </div>
               ))}
               {ageIdx >= 2 && (
-                <div style={{ marginTop: 12, background: '#1A0A0A', borderRadius: 8, padding: 14, borderLeft: '3px solid #EF4444' }}>
+                <div style={{ marginTop: 12, background: '#1A0A0A', borderRadius: 8, padding: 14, borderLeft: '3px solid #EF4444′ }}>
                   <div style={{ color: '#EF4444', fontWeight: 700, marginBottom: 6 }}>Negotiation note:</div>
                   <div style={{ color: '#9BA4B4', fontSize: 13, lineHeight: 1.5 }}>
                     System age {ageData.range} years in DFW attic is near end of typical service life. Request $4,000-$8,000 HVAC credit or seller-funded replacement. Get a second opinion from an independent HVAC tech (not the inspector).

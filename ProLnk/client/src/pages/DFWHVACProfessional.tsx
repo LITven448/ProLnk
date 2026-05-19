@@ -72,7 +72,7 @@ export default function DFWHVACProfessional() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>📋 Select Your Relationship Stage</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem' }}>
             {stages.map((s, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642' : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642′ : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
                 <div>{s.stage}</div>
                 <div style={{ fontSize: '0.75rem', opacity: 0.75, marginTop: '0.2rem', fontWeight: 400 }}>{s.description}</div>
               </button>
@@ -80,7 +80,7 @@ export default function DFWHVACProfessional() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.25rem' }}>{current.stage}</h2>
           <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginBottom: '1.25rem' }}>{current.description}</p>
 

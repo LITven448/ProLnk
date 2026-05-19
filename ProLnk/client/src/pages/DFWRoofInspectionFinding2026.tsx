@@ -11,46 +11,46 @@ export default function DFWRoofInspectionFinding2026() {
   const [activeItem, setActiveItem] = useState<number | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>🏠</div>
-          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Post-Storm Roof Inspection Findings Guide 2026</h1>
+          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Post-Storm Roof Inspection Findings Guide 2026</h1>
           <p style={{ color: "#aaa", fontSize: "0.95rem" }}>What to document after DFW hail or wind — before calling your insurance company</p>
         </div>
 
-        <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>⚡ Select Your Storm Type</h2>
+        <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>⚡ Select Your Storm Type</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {stormTypes.map((s, i) => (
-              <button key={i} onClick={() => { setSelected(i); setActiveItem(null); }} style={{ padding: "0.6rem 1.2rem", borderRadius: 8, border: selected === i ? "2px solid #F5E642" : "2px solid #334", backgroundColor: selected === i ? "#F5E642" : "transparent", color: selected === i ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer" }}>{s.label}</button>
+              <button key={i} onClick={() => { setSelected(i); setActiveItem(null); }} style={{ padding: "0.6rem 1.2rem", borderRadius: 8, border: selected === i ? "2px solid #F5E642″ : "2px solid #334", backgroundColor: selected === i ? "#F5E642" : "transparent", color: selected === i ? "#0A1628" : "#fff", fontWeight: 600, cursor: "pointer" }}>{s.label}</button>
             ))}
           </div>
         </div>
 
         {selected !== null && (
-          <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-            <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>📋 Documentation Checklist — {stormTypes[selected].label}</h2>
+          <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+            <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>📋 Documentation Checklist — {stormTypes[selected].label}</h2>
             {stormTypes[selected].checklist.map((item, i) => (
-              <div key={i} onClick={() => setActiveItem(activeItem === i ? null : i)} style={{ padding: "0.75rem 1rem", marginBottom: "0.5rem", borderRadius: 8, backgroundColor: activeItem === i ? "#1e3a5f" : "#0d2040", cursor: "pointer", borderLeft: activeItem === i ? "3px solid #F5E642" : "3px solid transparent", transition: "all 0.2s" }}>
+              <div key={i} onClick={() => setActiveItem(activeItem === i ? null : i)} style={{ padding: "0.75rem 1rem", marginBottom: "0.5rem", borderRadius: 8, backgroundColor: activeItem === i ? "#1e3a5f" : "#0d2040″, cursor: "pointer", borderLeft: activeItem === i ? "3px solid #F5E642" : "3px solid transparent", transition: "all 0.2s" }}>
                 <span style={{ fontSize: "0.95rem" }}>{item}</span>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ backgroundColor: "#122040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "0.75rem" }}>📏 Hail Impact Documentation Standards</h2>
+        <div style={{ backgroundColor: "#122040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "0.75rem" }}>📏 Hail Impact Documentation Standards</h2>
           {[["Dime size (0.75\")", "Minor — document but may not reach claim threshold"],["Quarter size (0.96\")", "Moderate — typically claim-worthy in DFW"],["Golf ball (1.68\")", "Severe — immediate structural review required"],["Egg size (2.0\"+)", "Critical — emergency inspection needed"]].map(([size, note], i) => (
-            <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: i < 3 ? "1px solid #1e3a5f" : "none" }}>
-              <span style={{ color: "#F5E642", fontWeight: 600 }}>{size}</span>
+            <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0″, borderBottom: i < 3 ? "1px solid #1e3a5f" : "none" }}>
+              <span style={{ color: "#F5E642″, fontWeight: 600 }}>{size}</span>
               <span style={{ color: "#aaa", fontSize: "0.9rem" }}>{note}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: "#F5E642", borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
-          <p style={{ color: "#0A1628", fontWeight: 700, margin: 0, fontSize: "1.05rem" }}>📱 Get Your DFW Roofing Estimate on ProLnk — Free, Fast, No Obligation</p>
+        <div style={{ backgroundColor: "#F5E642″, borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
+          <p style={{ color: "#0A1628″, fontWeight: 700, margin: 0, fontSize: "1.05rem" }}>📱 Get Your DFW Roofing Estimate on ProLnk — Free, Fast, No Obligation</p>
         </div>
       </div>
     </div>

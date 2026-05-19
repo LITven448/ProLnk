@@ -36,7 +36,7 @@ export default function DFWPoolResurfacingGuide() {
   const totalHigh = Math.round((baseCost + drainFill + acidWash) * 1.12);
 
   const urgency = yearsSince >= 12 ? 'high' : yearsSince >= 8 ? 'moderate' : 'low';
-  const urgencyColor = urgency === 'high' ? '#ef4444' : urgency === 'moderate' ? '#f59e0b' : '#22c55e';
+  const urgencyColor = urgency === 'high' ? '#ef4444′ : urgency === ’moderate' ? '#f59e0b' : '#22c55e';
   const urgencyLabel = urgency === 'high' ? 'Resurface Now' : urgency === 'moderate' ? 'Plan Within 2 Years' : 'Monitor Annually';
 
   return (
@@ -86,18 +86,18 @@ export default function DFWPoolResurfacingGuide() {
             {POOL_SIZES.map(s => <option key={s.label}>{s.label}</option>)}
           </select>
           <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Years Since Last Resurface: <strong style={{ color: '#fff' }}>{yearsSince} years</strong></label>
-          <input type="range" min={1} max={25} value={yearsSince} onChange={e => setYearsSince(Number(e.target.value))} style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642' }} />
+          <input type="range" min={1} max={25} value={yearsSince} onChange={e => setYearsSince(Number(e.target.value))} style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642′ }} />
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 800, cursor: 'pointer', width: '100%', fontSize: 16 }}>
             Get My Recommendation
           </button>
           {showResult && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
+                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
                 <div style={{ background: urgencyColor, color: '#fff', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 700 }}>{urgencyLabel}</div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Includes drain/refill (~$450), prep/acid wash (~$350), and {surface.label} resurface. Timeline: 5–8 days out of service.</div>
-              <div style={{ color: '#cbd5e1', marginTop: 10, fontSize: 14 }}>Recommended finish: <strong style={{ color: '#F5E642' }}>{surface.label}</strong> — {surface.lifespan} lifespan in DFW conditions.</div>
+              <div style={{ color: '#cbd5e1', marginTop: 10, fontSize: 14 }}>Recommended finish: <strong style={{ color: '#F5E642′ }}>{surface.label}</strong> — {surface.lifespan} lifespan in DFW conditions.</div>
             </div>
           )}
         </div>

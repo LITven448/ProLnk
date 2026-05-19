@@ -34,8 +34,8 @@ export default function DFWAsbestosGuide2026() {
           {[['📅','Risk Era','Homes built 1950–1980'],['🏘️','DFW Areas','Mesquite, Garland, Irving, Richardson'],['💲','Abatement','$1,500–$30,000 depending on scope']].map(([icon, title, sub]) => (
             <div key={title} style={{ background: '#1a2744', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24 }}>{icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{title}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8' }}>{sub}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{title}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -68,8 +68,8 @@ export default function DFWAsbestosGuide2026() {
         </div>
 
         <div style={{ background: '#1a2744', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>🔑 Golden Rule</div>
-          <div style={{ fontSize: 14, color: '#94a3b8' }}>If asbestos-containing material is undisturbed and in good condition, leaving it in place is often safer than removing it. When in doubt, test before you touch.</div>
+          <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>🔑 Golden Rule</div>
+          <div style={{ fontSize: 14, color: '#94a3b8′ }}>If asbestos-containing material is undisturbed and in good condition, leaving it in place is often safer than removing it. When in doubt, test before you touch.</div>
         </div>
       </div>
     </div>

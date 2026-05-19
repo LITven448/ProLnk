@@ -83,8 +83,8 @@ export default function DFWProLnkBigPicture() {
         <div style={{ display: 'flex', gap: 8, marginBottom: 40, flexWrap: 'wrap', justifyContent: 'center' }}>
           {STAKEHOLDERS.map(s => (
             <button key={s.id} onClick={() => setActiveStakeholder(s.id)} style={{
-              background: activeStakeholder === s.id ? '#F5E642' : '#1E293B',
-              color: activeStakeholder === s.id ? '#0A1628' : '#94A3B8',
+              background: activeStakeholder === s.id ? '#F5E642′ : '#1E293B',
+              color: activeStakeholder === s.id ? '#0A1628′ : '#94A3B8',
               border: 'none', borderRadius: 40, padding: '10px 22px',
               fontWeight: 700, fontSize: 14, cursor: 'pointer', transition: 'all 0.15s'
             }}>{s.label}</button>
@@ -92,21 +92,21 @@ export default function DFWProLnkBigPicture() {
         </div>
 
         {stakeholder && (
-          <div style={{ background: '#1E293B', borderRadius: 20, padding: 36, marginBottom: 40, border: '1px solid #334155' }}>
+          <div style={{ background: '#1E293B', borderRadius: 20, padding: 36, marginBottom: 40, border: '1px solid #334155′ }}>
             <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F5E642', marginTop: 0 }}>{stakeholder.headline}</h2>
-            <div style={{ background: '#0F172A', borderRadius: 10, padding: '16px 20px', marginBottom: 20, borderLeft: '3px solid #EF4444' }}>
-              <p style={{ margin: 0, color: '#CBD5E1', lineHeight: 1.7, fontSize: 15 }}>😤 <strong style={{ color: '#FCA5A5' }}>The Problem:</strong> {stakeholder.problem}</p>
+            <div style={{ background: '#0F172A', borderRadius: 10, padding: '16px 20px', marginBottom: 20, borderLeft: '3px solid #EF4444′ }}>
+              <p style={{ margin: 0, color: '#CBD5E1', lineHeight: 1.7, fontSize: 15 }}>😤 <strong style={{ color: '#FCA5A5′ }}>The Problem:</strong> {stakeholder.problem}</p>
             </div>
             <div style={{ background: '#0F172A', borderRadius: 10, padding: '16px 20px', marginBottom: 20, borderLeft: '3px solid #22C55E' }}>
               <p style={{ margin: 0, color: '#CBD5E1', lineHeight: 1.7, fontSize: 15 }}>✅ <strong style={{ color: '#86EFAC' }}>The Fix:</strong> {stakeholder.solution}</p>
             </div>
-            <div style={{ background: '#0F172A', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '3px solid #F5E642' }}>
-              <p style={{ margin: 0, color: '#CBD5E1', lineHeight: 1.7, fontSize: 15 }}>🏦 <strong style={{ color: '#F5E642' }}>The Moat:</strong> {stakeholder.vault}</p>
+            <div style={{ background: '#0F172A', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '3px solid #F5E642′ }}>
+              <p style={{ margin: 0, color: '#CBD5E1', lineHeight: 1.7, fontSize: 15 }}>🏦 <strong style={{ color: '#F5E642′ }}>The Moat:</strong> {stakeholder.vault}</p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 28 }}>
               {stakeholder.stats.map((stat, i) => (
                 <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: '16px', textAlign: 'center', border: '1px solid #1E293B' }}>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{stat.value}</div>
+                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{stat.value}</div>
                   <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>{stat.label}</div>
                 </div>
               ))}
@@ -121,7 +121,7 @@ export default function DFWProLnkBigPicture() {
           <h3 style={{ fontSize: 20, fontWeight: 700, color: '#F1F5F9', marginBottom: 20, textAlign: 'center' }}>5 Income Streams. One Platform.</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
             {STREAMS.map((s, i) => (
-              <div key={i} style={{ background: '#1E293B', borderRadius: 12, padding: '20px 16px', border: '1px solid #334155' }}>
+              <div key={i} style={{ background: '#1E293B', borderRadius: 12, padding: '20px 16px', border: '1px solid #334155′ }}>
                 <div style={{ fontSize: 28, marginBottom: 10 }}>{s.icon}</div>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6, fontSize: 14 }}>{s.name}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.5 }}>{s.desc}</div>

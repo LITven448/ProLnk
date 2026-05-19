@@ -12,7 +12,7 @@ const layouts = [
 const advice: Record<string, { score: number; islandFeasible: string; optimization: string[]; cost: string; entertaining: string }> = {
   galley: {
     score: 55,
-    islandFeasible: 'Not feasible — galley kitchens lack width for safe island clearance (48" minimum required)',
+    islandFeasible: 'Not feasible — galley kitchens lack width for safe island clearance (48″ minimum required)',
     optimization: ['Widen the galley opening to adjacent living area', 'Remove upper cabinets on one side for open feel', 'Add peninsula at one end to create eating bar', 'Upgrade hardware, counters, and backsplash — cosmetics matter here'],
     cost: '$8,000–$20,000 to open and improve',
     entertaining: 'Galley kitchens are the lowest-rated DFW kitchen type — single-file cooking limits the Texas entertaining lifestyle buyers expect.',
@@ -77,7 +77,7 @@ export default function DFWKitchenLayoutGuide() {
           ].map(tip => (
             <div key={tip.title} style={{ background: '#0F2040', borderRadius: 10, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 24, marginBottom: 10 }}>{tip.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{tip.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{tip.title}</div>
               <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.5 }}>{tip.note}</div>
             </div>
           ))}
@@ -88,32 +88,32 @@ export default function DFWKitchenLayoutGuide() {
           <p style={{ color: '#8B9DC3', marginBottom: 16, fontSize: 14 }}>Select your current kitchen layout:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10, marginBottom: 24 }}>
             {layouts.map(l => (
-              <button key={l.id} onClick={() => setSelected(l.id)} style={{ background: selected === l.id ? '#F5E642' : '#0A1628', color: selected === l.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === l.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
+              <button key={l.id} onClick={() => setSelected(l.id)} style={{ background: selected === l.id ? '#F5E642′ : '#0A1628', color: selected === l.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === l.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
                 {l.label}
               </button>
             ))}
           </div>
           {adv && layout && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642' }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642′ }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 4, color: '#F5E642' }}>{layout.label}</div>
+                  <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 4, color: '#F5E642′ }}>{layout.label}</div>
                   <div style={{ color: '#8B9DC3', fontSize: 13 }}>DFW Buyer Appeal Score</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 44, fontWeight: 800, color: adv.score >= 80 ? '#4CAF50' : adv.score >= 65 ? '#F5E642' : '#FF6B6B' }}>{adv.score}</div>
+                  <div style={{ fontSize: 44, fontWeight: 800, color: adv.score >= 80 ? '#4CAF50′ : adv.score >= 65 ? '#F5E642' : '#FF6B6B' }}>{adv.score}</div>
                   <div style={{ fontSize: 11, color: '#8B9DC3', letterSpacing: 1, textTransform: 'uppercase' }}>out of 100</div>
                 </div>
               </div>
               <div style={{ background: '#0F2040', borderRadius: 8, padding: 14, marginBottom: 16, border: '1px solid #1E3A5F' }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: layout.hasIsland ? '#4CAF50' : '#FF6B6B' }}>🏝️ Island Feasibility</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: layout.hasIsland ? '#4CAF50′ : '#FF6B6B' }}>🏝️ Island Feasibility</div>
                 <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.6 }}>{adv.islandFeasible}</div>
               </div>
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 10, color: '#F5E642' }}>⚡ Top Optimization Moves</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 10, color: '#F5E642′ }}>⚡ Top Optimization Moves</div>
                 {adv.optimization.map((opt, i) => (
                   <div key={i} style={{ fontSize: 13, color: '#8B9DC3', marginBottom: 8, paddingLeft: 16, position: 'relative', lineHeight: 1.5 }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>→</span>{opt}
+                    <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>→</span>{opt}
                   </div>
                 ))}
               </div>

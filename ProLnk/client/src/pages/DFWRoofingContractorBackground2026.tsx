@@ -20,7 +20,7 @@ export default function DFWRoofingContractorBackground2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW ROOFING GUIDE 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🔍 DFW Roofing Contractor Background Check Guide 2026</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 24 }}>DFW's hail season attracts storm chasers who disappear after the season. Here's what to check beyond the license — and why ProLnk's vetting process matters.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 24 }}>DFW's hail season attracts storm chasers who disappear after the season. Here’s what to check beyond the license — and why ProLnk’s vetting process matters.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>⚠️ DFW Roofing Red Flags</h2>

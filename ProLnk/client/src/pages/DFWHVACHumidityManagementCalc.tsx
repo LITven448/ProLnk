@@ -45,25 +45,25 @@ export default function DFWHVACHumidityManagementCalc() {
       <h1 style={{ color: '#F5E642', fontSize: '1.6rem', marginBottom: '0.25rem' }}>💧 DFW HVAC Humidity Management Calculator</h1>
       <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>DFW-specific humidity analysis — find what HVAC changes you need to hit your target comfort level.</p>
       <div style={{ display: 'grid', gap: '1rem', maxWidth: 560 }}>
-        <label style={{ color: '#F5E642' }}>Current Indoor Humidity: {currentRH}%
+        <label style={{ color: '#F5E642′ }}>Current Indoor Humidity: {currentRH}%
           <input type="range" min={20} max={90} value={currentRH} onChange={e => setCurrentRH(+e.target.value)}
-            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642' }} />
+            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642′ }} />
         </label>
-        <label style={{ color: '#F5E642' }}>Target Humidity: {targetRH}%
+        <label style={{ color: '#F5E642′ }}>Target Humidity: {targetRH}%
           <input type="range" min={30} max={60} value={targetRH} onChange={e => setTargetRH(+e.target.value)}
-            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642' }} />
+            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642′ }} />
         </label>
-        <label style={{ color: '#F5E642' }}>DFW Season
+        <label style={{ color: '#F5E642′ }}>DFW Season
           <select value={season} onChange={e => setSeason(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {SEASON_OPTIONS.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>Primary Symptom
+        <label style={{ color: '#F5E642′ }}>Primary Symptom
           <select value={symptom} onChange={e => setSymptom(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {SYMPTOM_OPTIONS.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
         </label>
-        <label style={{ color: '#F5E642' }}>Home Size
+        <label style={{ color: '#F5E642′ }}>Home Size
           <select value={homeSize} onChange={e => setHomeSize(+e.target.value)} style={{ display: 'block', width: '100%', marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
             {HOME_SIZE.map((o, i) => <option key={i} value={i}>{o}</option>)}
           </select>
@@ -74,7 +74,7 @@ export default function DFWHVACHumidityManagementCalc() {
         <div style={{ marginTop: '1.5rem', background: '#1e2d45', borderRadius: 10, padding: '1.25rem', maxWidth: 560 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>{result.urgency}</div>
           <div style={{ color: '#94a3b8', marginBottom: '0.75rem' }}>Humidity gap: {Math.abs(result.gap)}% {result.gap > 0 ? 'too high' : result.gap < 0 ? 'too low' : '— on target'}</div>
-          {result.plan.map((p, i) => <div key={i} style={{ marginBottom: '0.4rem', color: '#e2e8f0' }}>{p}</div>)}
+          {result.plan.map((p, i) => <div key={i} style={{ marginBottom: '0.4rem', color: '#e2e8f0′ }}>{p}</div>)}
           <div style={{ marginTop: '0.75rem', color: '#94a3b8', fontSize: '0.85rem' }}>💰 {result.cost}</div>
         </div>
       )}

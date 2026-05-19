@@ -65,24 +65,24 @@ export default function DFWVsAustinHousingGuide() {
               <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>📍 {city}</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8' }}>Median Home Price</span>
+                  <span style={{ color: '#94a3b8′ }}>Median Home Price</span>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>${d.medianPrice.toLocaleString()}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8' }}>Property Tax Rate</span>
-                  <span style={{ color: '#e2e8f0' }}>{d.propertyTax}%</span>
+                  <span style={{ color: '#94a3b8′ }}>Property Tax Rate</span>
+                  <span style={{ color: '#e2e8f0′ }}>{d.propertyTax}%</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8' }}>Avg Commute (min)</span>
-                  <span style={{ color: '#e2e8f0' }}>{d.avgCommute} min</span>
+                  <span style={{ color: '#94a3b8′ }}>Avg Commute (min)</span>
+                  <span style={{ color: '#e2e8f0′ }}>{d.avgCommute} min</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8' }}>Tech Jobs</span>
-                  <span style={{ color: '#e2e8f0' }}>{d.techJobs.toLocaleString()}+</span>
+                  <span style={{ color: '#94a3b8′ }}>Tech Jobs</span>
+                  <span style={{ color: '#e2e8f0′ }}>{d.techJobs.toLocaleString()}+</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8' }}>Metro Population</span>
-                  <span style={{ color: '#e2e8f0' }}>{(d.population / 1000000).toFixed(1)}M</span>
+                  <span style={{ color: '#94a3b8′ }}>Metro Population</span>
+                  <span style={{ color: '#e2e8f0′ }}>{(d.population / 1000000).toFixed(1)}M</span>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function DFWVsAustinHousingGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
+          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended: {result.city}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>

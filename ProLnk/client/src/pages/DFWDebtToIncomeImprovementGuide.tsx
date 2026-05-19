@@ -31,10 +31,10 @@ export default function DFWDebtToIncomeImprovementGuide() {
     return scoreB - scoreA;
   });
 
-  const dtiColor = currentDTI <= dtiLimit ? '#22c55e' : currentDTI <= dtiLimit + 5 ? '#eab308' : '#ef4444';
+  const dtiColor = currentDTI <= dtiLimit ? '#22c55e' : currentDTI <= dtiLimit + 5 ? '#eab308′ : '#ef4444';
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628' }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628′ }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '2rem', marginBottom: '2rem', color: '#fff' }}>
           <div style={{ fontSize: 30, marginBottom: 8 }}>📉 DFW DTI Improvement Guide</div>
@@ -54,7 +54,7 @@ export default function DFWDebtToIncomeImprovementGuide() {
             </div>
           </div>
           <label style={{ fontWeight: 600 }}>Lender DTI Limit: <span style={{ color: '#F5E642', background: '#0A1628', padding: '2px 10px', borderRadius: 6 }}>{dtiLimit}%</span></label>
-          <input type="range" min={36} max={50} value={dtiLimit} onChange={e => setDtiLimit(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642' }} />
+          <input type="range" min={36} max={50} value={dtiLimit} onChange={e => setDtiLimit(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642′ }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', color: '#64748b', fontSize: 12 }}>
             <span>36% (Conservative)</span><span>43% (FHA/Conv standard)</span><span>50% (FHA max)</span>
           </div>
@@ -81,7 +81,7 @@ export default function DFWDebtToIncomeImprovementGuide() {
             const newDTI = Math.round(((totalDebtPayments - d.payment + targetMortgage) / income) * 100);
             const improvement = currentDTI - newDTI;
             return (
-              <div key={i} style={{ border: `2px solid ${i === 0 ? '#F5E642' : '#e2e8f0'}`, borderRadius: 10, padding: '1rem', marginBottom: 10, background: i === 0 ? '#fefce8' : '#fff' }}>
+              <div key={i} style={{ border: `2px solid ${i === 0 ? '#F5E642' : '#e2e8f0'}`, borderRadius: 10, padding: '1rem', marginBottom: 10, background: i === 0 ? '#fefce8′ : '#fff' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <span style={{ fontWeight: 700 }}>{i + 1}. {d.name}</span>
@@ -99,9 +99,9 @@ export default function DFWDebtToIncomeImprovementGuide() {
         </div>
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-          <h2 style={{ marginTop: 0, color: '#F5E642' }}>📊 Your DTI Snapshot</h2>
+          <h2 style={{ marginTop: 0, color: '#F5E642′ }}>📊 Your DTI Snapshot</h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-            <div><div style={{ fontSize: 48, fontWeight: 800, color: dtiColor }}>{currentDTI}%</div><div style={{ color: '#94a3b8' }}>Current DTI</div></div>
+            <div><div style={{ fontSize: 48, fontWeight: 800, color: dtiColor }}>{currentDTI}%</div><div style={{ color: '#94a3b8′ }}>Current DTI</div></div>
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: 18, fontWeight: 700 }}>Limit: {dtiLimit}%</div>
               {gap > 0
@@ -111,7 +111,7 @@ export default function DFWDebtToIncomeImprovementGuide() {
             </div>
           </div>
           <div style={{ background: '#1e293b', borderRadius: 8, padding: '1rem' }}>
-            <div style={{ fontWeight: 700 }}>Max available for mortgage: <span style={{ color: '#F5E642' }}>${availableForMortgage}/mo</span></div>
+            <div style={{ fontWeight: 700 }}>Max available for mortgage: <span style={{ color: '#F5E642′ }}>${availableForMortgage}/mo</span></div>
             <div style={{ color: '#94a3b8', fontSize: 14, marginTop: 4 }}>Based on your income and current debts at {dtiLimit}% DTI limit.</div>
           </div>
         </div>

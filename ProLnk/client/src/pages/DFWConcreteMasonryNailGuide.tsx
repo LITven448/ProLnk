@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const fastenerMatrix = [
-  { weight: 'Light (under 50 lbs)', substrate: 'Concrete Block', fastener: 'Tapcon Concrete Screw (3/16")', install: '3/16" carbide bit, min 1" embedment', tool: 'Hammer drill' },
-  { weight: 'Light (under 50 lbs)', substrate: 'Poured Concrete Slab', fastener: 'Tapcon Concrete Screw (3/16")', install: '3/16" carbide bit, min 1" embedment', tool: 'Hammer drill' },
-  { weight: 'Light (under 50 lbs)', substrate: 'Brick Mortar Joint', fastener: 'Tapcon Concrete Screw (1/4")', install: 'Drill into mortar joint, not brick face', tool: 'Hammer drill' },
-  { weight: 'Medium (50–200 lbs)', substrate: 'Concrete Block', fastener: 'Wedge Anchor Expansion Bolt (3/8")', install: '3/8" hole, min 2.5" embedment, torque to spec', tool: 'Hammer drill + wrench' },
-  { weight: 'Medium (50–200 lbs)', substrate: 'Poured Concrete Slab', fastener: 'Wedge Anchor Expansion Bolt (3/8")', install: '3/8" hole, min 2.5" embedment, torque to spec', tool: 'Hammer drill + wrench' },
-  { weight: 'Medium (50–200 lbs)', substrate: 'Brick Mortar Joint', fastener: 'Sleeve Anchor (3/8")', install: 'Into mortar, not brick — sleeve distributes load', tool: 'Hammer drill + wrench' },
+  { weight: 'Light (under 50 lbs)', substrate: 'Concrete Block', fastener: 'Tapcon Concrete Screw (3/16″)', install: '3/16″ carbide bit, min 1″ embedment', tool: 'Hammer drill' },
+  { weight: 'Light (under 50 lbs)', substrate: 'Poured Concrete Slab', fastener: 'Tapcon Concrete Screw (3/16″)', install: '3/16″ carbide bit, min 1″ embedment', tool: 'Hammer drill' },
+  { weight: 'Light (under 50 lbs)', substrate: 'Brick Mortar Joint', fastener: 'Tapcon Concrete Screw (1/4″)', install: 'Drill into mortar joint, not brick face', tool: 'Hammer drill' },
+  { weight: 'Medium (50–200 lbs)', substrate: 'Concrete Block', fastener: 'Wedge Anchor Expansion Bolt (3/8″)', install: '3/8″ hole, min 2.5″ embedment, torque to spec', tool: 'Hammer drill + wrench' },
+  { weight: 'Medium (50–200 lbs)', substrate: 'Poured Concrete Slab', fastener: 'Wedge Anchor Expansion Bolt (3/8″)', install: '3/8″ hole, min 2.5″ embedment, torque to spec', tool: 'Hammer drill + wrench' },
+  { weight: 'Medium (50–200 lbs)', substrate: 'Brick Mortar Joint', fastener: 'Sleeve Anchor (3/8″)', install: 'Into mortar, not brick — sleeve distributes load', tool: 'Hammer drill + wrench' },
   { weight: 'Heavy (200+ lbs)', substrate: 'Poured Concrete Slab', fastener: 'Powder-Actuated Fastener (Hilti/Ramset)', install: 'Requires powder tool, use .27 cal load for standard concrete', tool: 'Powder-actuated tool (rent or hire)' },
   { weight: 'Heavy (200+ lbs)', substrate: 'Concrete Block', fastener: 'Through-Bolt with Washer', install: 'Drill completely through, use large washer on back side', tool: 'Hammer drill + wrench' },
 ];
@@ -55,7 +55,7 @@ export default function DFWConcreteMasonryNailGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642' }}>🔩 Fastener Recommendation</div>
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642′ }}>🔩 Fastener Recommendation</div>
             <div style={{ display: 'grid', gap: 12 }}>
               {[
                 ['Fastener Type', result.fastener],
@@ -74,10 +74,10 @@ export default function DFWConcreteMasonryNailGuide() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📦 DFW Common Fastener Projects</h2>
           {[
-            { icon: '🏗️', project: 'Anchor deck ledger to house', rec: 'Lag screws + concrete anchors into foundation stem wall, min 3" embedment' },
-            { icon: '🏠', project: 'Mount fence post base to patio', rec: 'Wedge anchor 1/2" into slab, min 3.5" embedment — DFW wind loads require overspec' },
+            { icon: '🏗️', project: 'Anchor deck ledger to house', rec: 'Lag screws + concrete anchors into foundation stem wall, min 3″ embedment' },
+            { icon: '🏠', project: 'Mount fence post base to patio', rec: 'Wedge anchor 1/2″ into slab, min 3.5″ embedment — DFW wind loads require overspec' },
             { icon: '🧱', project: 'Attach shelf bracket to brick', rec: 'Tapcon into mortar joint, NEVER into brick face — brick face spalls under DFW freeze-thaw' },
-            { icon: '⚡', project: 'Mount electrical conduit to block wall', rec: 'Tapcon 3/16" — conduit clips every 24" max per code' },
+            { icon: '⚡', project: 'Mount electrical conduit to block wall', rec: 'Tapcon 3/16″ — conduit clips every 24″ max per code' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.icon} {item.project}</div>

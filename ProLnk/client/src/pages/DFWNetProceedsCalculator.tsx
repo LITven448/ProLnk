@@ -51,10 +51,10 @@ export default function DFWNetProceedsCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 24 }}>
           {[
-            { label: 'Sale Price ($)', value: salePrice, set: setSalePrice, placeholder: '525,000' },
-            { label: 'Mortgage Payoff Balance ($)', value: mortgageBalance, set: setMortgageBalance, placeholder: '310,000' },
-            { label: 'HOA Transfer / Resale Fee ($)', value: hoaTransfer, set: setHoaTransfer, placeholder: '350' },
-            { label: 'Moving Costs ($)', value: movingCosts, set: setMovingCosts, placeholder: '3,500' },
+            { label: 'Sale Price ($)', value: salePrice, set: setSalePrice, placeholder: '525,000′ },
+            { label: 'Mortgage Payoff Balance ($)', value: mortgageBalance, set: setMortgageBalance, placeholder: '310,000′ },
+            { label: 'HOA Transfer / Resale Fee ($)', value: hoaTransfer, set: setHoaTransfer, placeholder: '350′ },
+            { label: 'Moving Costs ($)', value: movingCosts, set: setMovingCosts, placeholder: '3,500′ },
           ].map(({ label, value, set, placeholder }) => (
             <div key={label} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>{label}</label>
@@ -64,9 +64,9 @@ export default function DFWNetProceedsCalculator() {
           ))}
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>Agent Commission: {commission}%</label>
-            <input type="range" min="3" max="8" step="0.25" value={commission} onChange={e => setCommission(e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6B7280' }}><span>3%</span><span>8%</span></div>
+            <input type="range" min="3″ max="8" step="0.25" value={commission} onChange={e => setCommission(e.target.value)}
+              style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6B7280′ }}><span>3%</span><span>8%</span></div>
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, fontSize: 14 }}>Approximate Close Date</label>
@@ -77,7 +77,7 @@ export default function DFWNetProceedsCalculator() {
                 { key: 'late', label: '🍂 Late Year (Sep–Dec)' },
               ].map(({ key, label }) => (
                 <button key={key} onClick={() => setClosingDate(key)}
-                  style={{ flex: 1, padding: '8px 6px', borderRadius: 8, border: `2px solid ${closingDate === key ? '#F5E642' : '#E5E7EB'}`, background: closingDate === key ? '#FEFCE8' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 11 }}>
+                  style={{ flex: 1, padding: '8px 6px', borderRadius: 8, border: `2px solid ${closingDate === key ? '#F5E642' : '#E5E7EB'}`, background: closingDate === key ? '#FEFCE8′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 11 }}>
                   {label}
                 </button>
               ))}
@@ -107,19 +107,19 @@ export default function DFWNetProceedsCalculator() {
               { label: '🚚 Moving Costs', value: -results.moving },
               { label: '🏦 Mortgage Payoff', value: -results.mortgagePayoff },
             ].map(({ label, value }) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #F3F4F6', color: '#DC2626' }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #F3F4F6', color: '#DC2626′ }}>
                 <span style={{ fontSize: 14 }}>{label}</span>
                 <span style={{ fontWeight: 600 }}>({fmt(Math.abs(value))})</span>
               </div>
             ))}
-            <div style={{ background: results.netProceeds > 0 ? '#F5E642' : '#FEF2F2', borderRadius: 8, padding: '14px 12px', marginTop: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ background: results.netProceeds > 0 ? '#F5E642′ : '#FEF2F2', borderRadius: 8, padding: '14px 12px', marginTop: 12, display: ’flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontWeight: 700, fontSize: 16 }}>🎯 Net Proceeds</span>
               <span style={{ fontWeight: 800, fontSize: 22 }}>{fmt(results.netProceeds)}</span>
             </div>
             {results.netProceeds > 0 && (
               <div style={{ background: '#F0FDF4', borderRadius: 8, padding: '12px', marginTop: 10, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#065F46', fontWeight: 600 }}>🏠 As 20% down on your next DFW home, this buys you a</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#065F46' }}>{fmt(results.netProceeds / 0.2)} home</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#065F46′ }}>{fmt(results.netProceeds / 0.2)} home</div>
               </div>
             )}
           </div>

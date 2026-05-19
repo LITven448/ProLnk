@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const BEAM_DATA: Record<string, Record<string, string>> = {
   'load-bearing': {
-    '8': 'LVL beam: 3.5" x 9.5" minimum (engineer stamp required)',
-    '12': 'LVL beam: 3.5" x 11.25" minimum (engineer stamp required)',
-    '16': 'LVL beam: 3.5" x 14" minimum (structural engineer required)',
+    '8': 'LVL beam: 3.5″ x 9.5″ minimum (engineer stamp required)',
+    '12': 'LVL beam: 3.5″ x 11.25″ minimum (engineer stamp required)',
+    '16': 'LVL beam: 3.5″ x 14″ minimum (structural engineer required)',
     '20+': 'Custom engineered beam — structural engineer required',
   },
   'non-load-bearing': {
@@ -84,7 +84,7 @@ export default function DFWOpenWallGuide() {
               ['Home built', homeAge, setHomeAge, [['', 'Select era'], ['pre-1980', 'Before 1980'], ['1980-2000', '1980–2000'], ['post-2000', 'After 2000']]],
             ].map(([label, val, setter, opts]: any) => (
               <div key={label}>
-                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>{label}</label>
+                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>{label}</label>
                 <select value={val} onChange={e => setter(e.target.value)}
                   style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                   {opts.map(([v, l]: string[]) => <option key={v} value={v}>{l}</option>)}

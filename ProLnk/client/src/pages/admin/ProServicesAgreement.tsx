@@ -185,11 +185,11 @@ export default function ProServicesAgreement() {
   };
 
   const tierColor: Record<string, string> = {
-    scout: "bg-gray-100 text-gray-700",
-    pro: "bg-blue-100 text-blue-700",
-    crew: "bg-purple-100 text-purple-700",
-    company: "bg-amber-100 text-amber-700",
-    enterprise: "bg-teal-100 text-teal-700",
+    scout: "bg-gray-100 text-gray-700″,
+    pro: "bg-blue-100 text-blue-700″,
+    crew: "bg-purple-100 text-purple-700″,
+    company: "bg-amber-100 text-amber-700″,
+    enterprise: "bg-teal-100 text-teal-700″,
   };
 
   return (
@@ -197,32 +197,32 @@ export default function ProServicesAgreement() {
 
       {/* Agreement Preview Modal */}
       {showPreview && selectedPartner && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4″>
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col">
             <div className="flex items-center justify-between p-5 border-b">
               <div>
-                <h2 className="font-bold text-gray-900">Pro Services Agreement</h2>
-                <p className="text-sm text-gray-500">{selectedPartner.businessName}  Partner #{selectedPartner.id}</p>
+                <h2 className="font-bold text-gray-900″>Pro Services Agreement</h2>
+                <p className="text-sm text-gray-500″>{selectedPartner.businessName}  Partner #{selectedPartner.id}</p>
               </div>
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" onClick={handleCopy} className="gap-1.5">
-                  <Copy className="w-4 h-4" /> Copy
+              <div className="flex items-center gap-2″>
+                <Button variant="outline" size="sm" onClick={handleCopy} className="gap-1.5″>
+                  <Copy className="w-4 h-4″ /> Copy
                 </Button>
-                <Button size="sm" onClick={handleDownload} className="gap-1.5 bg-teal-600 hover:bg-teal-700 text-gray-800">
-                  <Download className="w-4 h-4" /> Download .txt
+                <Button size="sm" onClick={handleDownload} className="gap-1.5 bg-teal-600 hover:bg-teal-700 text-gray-800″>
+                  <Download className="w-4 h-4″ /> Download .txt
                 </Button>
-                <button onClick={() => setShowPreview(false)} className="p-2 rounded-lg hover:bg-gray-100">
-                  <X className="w-4 h-4 text-gray-500" />
+                <button onClick={() => setShowPreview(false)} className="p-2 rounded-lg hover:bg-gray-100″>
+                  <X className="w-4 h-4 text-gray-500″ />
                 </button>
               </div>
             </div>
-            <div className="flex-1 overflow-y-auto p-6">
+            <div className="flex-1 overflow-y-auto p-6″>
               <pre className="text-xs text-gray-700 whitespace-pre-wrap font-mono leading-relaxed">
                 {generateAgreementText(selectedPartner)}
               </pre>
             </div>
             <div className="p-4 border-t bg-amber-50 rounded-b-2xl">
-              <p className="text-xs text-amber-700">
+              <p className="text-xs text-amber-700″>
                 <strong>Note:</strong> This is a template agreement. Have your attorney review before use. Upload to DocuSign or HelloSign for e-signature collection.
               </p>
             </div>
@@ -230,30 +230,30 @@ export default function ProServicesAgreement() {
         </div>
       )}
 
-      <div className="space-y-5">
+      <div className="space-y-5″>
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4″>
           {[
-            { label: "Approved Partners", value: (allPartners ?? []).filter((p: any) => p.status === "approved").length, icon: CheckCircle, color: "text-green-600" },
-            { label: "Agreements Needed", value: (allPartners ?? []).filter((p: any) => p.status === "approved").length, icon: FileText, color: "text-blue-600" },
-            { label: "Pending Partners", value: (allPartners ?? []).filter((p: any) => p.status === "pending").length, icon: Clock, color: "text-amber-600" },
+            { label: "Approved Partners", value: (allPartners ?? []).filter((p: any) => p.status === "approved").length, icon: CheckCircle, color: "text-green-600″ },
+            { label: "Agreements Needed", value: (allPartners ?? []).filter((p: any) => p.status === "approved").length, icon: FileText, color: "text-blue-600″ },
+            { label: "Pending Partners", value: (allPartners ?? []).filter((p: any) => p.status === "pending").length, icon: Clock, color: "text-amber-600″ },
           ].map(({ label, value, icon: Icon, color }) => (
-            <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-              <div className="flex items-center gap-2 mb-1">
+            <div key={label} className="rounded-xl border p-4″ style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
+              <div className="flex items-center gap-2 mb-1″>
                 <Icon className={`w-4 h-4 ${color}`} />
                 <span className="text-xs" style={{ color: "#7B809A" }}>{label}</span>
               </div>
-              <p className="text-2xl font-bold text-gray-800">{isLoading ? "..." : value}</p>
+              <p className="text-2xl font-bold text-gray-800″>{isLoading ? "..." : value}</p>
             </div>
           ))}
         </div>
 
         {/* Info card */}
-        <div className="rounded-xl border p-4 flex items-start gap-3" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-          <FileText className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+        <div className="rounded-xl border p-4 flex items-start gap-3″ style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
+          <FileText className="w-5 h-5 text-teal-400 shrink-0 mt-0.5″ />
           <div>
-            <p className="text-sm font-medium text-gray-800">How to use this tool</p>
-            <p className="text-xs mt-1" style={{ color: "#7B809A" }}>
+            <p className="text-sm font-medium text-gray-800″>How to use this tool</p>
+            <p className="text-xs mt-1″ style={{ color: "#7B809A" }}>
               Select any approved partner to generate a pre-filled Pro Services Agreement with their business name, Partner ID, Lead Source Tag (ProLnk-{"{id}"}), tier details, and commission rates. Download as .txt and upload to DocuSign, HelloSign, or PandaDoc for e-signature. Each agreement is unique to the partner.
             </p>
           </div>
@@ -261,19 +261,19 @@ export default function ProServicesAgreement() {
 
         {/* Search */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400″ />
           <Input
             placeholder="Search approved partners..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9 border-slate-700 bg-slate-800 text-gray-800 placeholder:text-slate-500"
+            className="pl-9 border-slate-700 bg-slate-800 text-gray-800 placeholder:text-slate-500″
           />
         </div>
 
         {/* Partner list */}
         <div className="rounded-xl border overflow-hidden" style={{ borderColor: "#E9ECEF" }}>
-          <div className="px-4 py-3 border-b flex items-center justify-between" style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF" }}>
-            <span className="text-xs font-semibold text-gray-800">Approved Partners</span>
+          <div className="px-4 py-3 border-b flex items-center justify-between" style={{ backgroundColor: "#0A1628″, borderColor: "#E9ECEF" }}>
+            <span className="text-xs font-semibold text-gray-800″>Approved Partners</span>
             <span className="text-xs" style={{ color: "#7B809A" }}>{filtered.length} partners</span>
           </div>
           {isLoading ? (
@@ -281,20 +281,20 @@ export default function ProServicesAgreement() {
           ) : filtered.length === 0 ? (
             <div className="p-8 text-center text-gray-400 text-sm">No approved partners found</div>
           ) : (
-            <div className="divide-y divide-slate-700">
+            <div className="divide-y divide-slate-700″>
               {filtered.map((partner: any) => (
                 <div key={partner.id} className="flex items-center gap-4 px-4 py-3 hover:bg-white/5 transition-colors" style={{ backgroundColor: "#FFFFFF" }}>
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-gray-800 shrink-0"
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-gray-800 shrink-0″
                     style={{ backgroundColor: "#1E3A5F" }}>
                     {(partner.businessName ?? "?")[0].toUpperCase()}
                   </div>
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0″>
                     <p className="text-sm font-medium text-gray-800 truncate">{partner.businessName}</p>
                     <p className="text-xs truncate" style={{ color: "#7B809A" }}>
                       {partner.contactName}  Partner #{partner.id}  Tag: ProLnk-{partner.id}
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-2 shrink-0″>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium capitalize ${tierColor[partner.tier ?? "scout"] ?? "bg-gray-100 text-gray-700"}`}>
                       {partner.tier ?? "scout"}
                     </span>
@@ -302,9 +302,9 @@ export default function ProServicesAgreement() {
                       size="sm"
                       variant="outline"
                       onClick={() => handleGenerate(partner)}
-                      className="gap-1.5 text-xs border-slate-600 text-slate-300 hover:bg-white/10"
+                      className="gap-1.5 text-xs border-slate-600 text-slate-300 hover:bg-white/10″
                     >
-                      <Eye className="w-3.5 h-3.5" /> Generate
+                      <Eye className="w-3.5 h-3.5″ /> Generate
                     </Button>
                   </div>
                 </div>

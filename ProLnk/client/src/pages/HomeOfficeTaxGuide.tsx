@@ -27,7 +27,7 @@ export default function HomeOfficeTaxGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 20px 0' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 20px 0′ }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 48 }}>
           <div style={{ background: '#fff', border: '2px solid #16a34a', borderRadius: 16, padding: 28 }}>
             <div style={{ color: '#16a34a', fontWeight: 700, fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 12 }}>Qualifies</div>
@@ -51,7 +51,7 @@ export default function HomeOfficeTaxGuide() {
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #e5e5e3', borderRadius: 20, padding: 36, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 24px', color: '#0A1628' }}>Two Calculation Methods</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 24px', color: '#0A1628′ }}>Two Calculation Methods</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div style={{ background: '#FAFAF9', border: '1px solid #e5e5e3', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628', marginBottom: 8 }}>Simplified Method</div>
@@ -77,7 +77,7 @@ export default function HomeOfficeTaxGuide() {
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #e5e5e3', borderRadius: 20, padding: 36, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 8px', color: '#0A1628' }}>Interactive Deduction Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 8px', color: '#0A1628′ }}>Interactive Deduction Calculator</h2>
           <p style={{ color: '#666', fontSize: 14, margin: '0 0 28px' }}>Enter your numbers to compare both methods and see which saves you more.</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
@@ -91,15 +91,15 @@ export default function HomeOfficeTaxGuide() {
             ] as [string, number, (v: number) => void, number, number, number, boolean][]).map(([label, value, setter, min, max, step, isSqft]) => (
               <div key={label}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                  <label style={{ fontSize: 13, fontWeight: 600, color: '#333' }}>{label}</label>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: '#0A1628' }}>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: '#333′ }}>{label}</label>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: '#0A1628′ }}>
                     {isSqft ? `${value.toLocaleString()} sq ft` : formatDollar(value)}
                   </span>
                 </div>
                 <input
                   type="range" min={min} max={max} step={step} value={value}
                   onChange={(e) => setter(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5C842' }}
+                  style={{ width: '100%', accentColor: '#F5C842′ }}
                 />
               </div>
             ))}
@@ -109,17 +109,17 @@ export default function HomeOfficeTaxGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, marginBottom: 24 }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, marginBottom: 4 }}>Office Allocation</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5C842' }}>{formatPct(allocationPct)}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5C842′ }}>{formatPct(allocationPct)}</div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11 }}>{officeSqft} / {homeSqft} sq ft</div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, marginBottom: 4 }}>Simplified Method</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: betterMethod === 'simplified' ? '#4ade80' : '#fff' }}>{formatDollar(simplifiedDeduction)}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: betterMethod === 'simplified' ? '#4ade80′ : '#fff' }}>{formatDollar(simplifiedDeduction)}</div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11 }}>$5 x {Math.min(officeSqft, 300)} sq ft</div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, marginBottom: 4 }}>Actual Expense Method</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: betterMethod === 'actual' ? '#4ade80' : '#fff' }}>{formatDollar(actualDeduction)}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: betterMethod === 'actual' ? '#4ade80′ : '#fff' }}>{formatDollar(actualDeduction)}</div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11 }}>{formatPct(allocationPct)} x {formatDollar(totalExpenses)}</div>
               </div>
             </div>
@@ -132,12 +132,12 @@ export default function HomeOfficeTaxGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 40 }}>
           <div style={{ background: '#fff', border: '1px solid #e5e5e3', borderRadius: 16, padding: 28 }}>
             <span style={{ fontSize: 28 }}>🔒</span>
-            <h3 style={{ fontSize: 17, fontWeight: 800, margin: '12px 0 8px', color: '#0A1628' }}>Exclusivity Requirement</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 800, margin: '12px 0 8px', color: '#0A1628′ }}>Exclusivity Requirement</h3>
             <p style={{ color: '#555', fontSize: 14, lineHeight: 1.7, margin: 0 }}>Your office must be used exclusively for business. A room with a desk, TV, and guest bed does not qualify. The IRS takes this seriously — the space must be dedicated business use only.</p>
           </div>
           <div style={{ background: '#fff', border: '1px solid #fbbf24', borderRadius: 16, padding: 28 }}>
             <span style={{ fontSize: 28 }}>⚠️</span>
-            <h3 style={{ fontSize: 17, fontWeight: 800, margin: '12px 0 8px', color: '#0A1628' }}>Home Sale Implications</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 800, margin: '12px 0 8px', color: '#0A1628′ }}>Home Sale Implications</h3>
             <p style={{ color: '#555', fontSize: 14, lineHeight: 1.7, margin: 0 }}>If you use the actual expense method, you may owe depreciation recapture tax when you sell the home. The simplified method avoids this. Consult a CPA before deciding which method to use long-term.</p>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function HomeOfficeTaxGuide() {
         <div style={{ background: '#fff', border: '1px solid #e5e5e3', borderRadius: 16, padding: 28, display: 'flex', gap: 20, alignItems: 'flex-start' }}>
           <span style={{ fontSize: 32, flexShrink: 0 }}>👩‍💼</span>
           <div>
-            <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 8px', color: '#0A1628' }}>Work with a CPA Who Understands Self-Employment</h3>
+            <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 8px', color: '#0A1628′ }}>Work with a CPA Who Understands Self-Employment</h3>
             <p style={{ color: '#555', fontSize: 14, lineHeight: 1.7, margin: '0 0 16px' }}>
               Home office deductions are an area where small mistakes create big audit risks. A CPA who specializes in self-employed and gig economy workers will ensure you maximize deductions legally and maintain proper documentation. ProLnk partners who work with a CPA report avg $3,800 more in annual deductions.
             </p>

@@ -37,7 +37,7 @@ export default function DFWRecessionLightsGuide2026() {
           <p style={{ color: '#94a3b8', marginTop: 8 }}>Can lights done right — air sealing, IC rating, and color temperature for DFW homes</p>
         </div>
 
-        <div style={{ background: '#7c2d12', borderRadius: 10, padding: 14, marginBottom: 20, borderLeft: '3px solid #ef4444' }}>
+        <div style={{ background: '#7c2d12', borderRadius: 10, padding: 14, marginBottom: 20, borderLeft: '3px solid #ef4444′ }}>
           <p style={{ color: '#fca5a5', fontSize: 14, margin: '0 0 4px', fontWeight: 700 }}>⚠️ DFW Air Sealing Warning</p>
           <p style={{ color: '#fecaca', fontSize: 13, margin: 0 }}>Recessed lights are the #1 source of air leakage into DFW attics. In DFW's climate, this means hot attic air pulls into living spaces in summer. Use ICAT (airtight) fixtures only — or add airtight boxes above existing fixtures. This single upgrade can cut cooling costs 10–15% in DFW homes.</p>
         </div>
@@ -58,7 +58,7 @@ export default function DFWRecessionLightsGuide2026() {
             <option value="office">Home Office</option>
           </select>
           {rec && (
-            <div style={{ marginTop: 14, padding: 14, background: '#0f172a', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+            <div style={{ marginTop: 14, padding: 14, background: '#0f172a', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 8 }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>Size: {rec.size}</span>
                 <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13 }}>Color: {rec.kelvin}</span>
@@ -79,11 +79,11 @@ export default function DFWRecessionLightsGuide2026() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ fontSize: 20 }}>{ct.emoji}</span>
-                <span style={{ fontWeight: 700, color: '#F5E642' }}>{ct.k}</span>
+                <span style={{ fontWeight: 700, color: '#F5E642′ }}>{ct.k}</span>
                 <span style={{ color: '#e2e8f0', fontSize: 14 }}>{ct.label}</span>
                 <span style={{ marginLeft: 'auto', color: '#64748b' }}>{activeTemp === ct.k ? '▲' : '▼'}</span>
               </div>
-              {activeTemp === ct.k && <p style={{ color: '#94a3b8', fontSize: 14, margin: '8px 0 0' }}>{ct.desc}</p>}
+              {activeTemp === ct.k && <p style={{ color: '#94a3b8', fontSize: 14, margin: '8px 0 0′ }}>{ct.desc}</p>}
             </div>
           ))}
         </div>

@@ -249,7 +249,7 @@ export default function DFWHVACAtticSlab() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Current Installation Location</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {installations.map(i => (
-                <button key={i} onClick={() => setInstall(i)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: install === i ? '#F5E642' : '#1E3A5F', background: install === i ? '#F5E642' : '#0D2137', color: install === i ? '#0A1628' : '#E8F4FD', fontWeight: install === i ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{i}</button>
+                <button key={i} onClick={() => setInstall(i)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: install === i ? '#F5E642′ : '#1E3A5F', background: install === i ? '#F5E642' : '#0D2137', color: install === i ? '#0A1628' : '#E8F4FD', fontWeight: install === i ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{i}</button>
               ))}
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function DFWHVACAtticSlab() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Your DFW Concern</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {concerns.map(c => (
-                <button key={c} onClick={() => setConcern(c)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: concern === c ? '#F5E642' : '#1E3A5F', background: concern === c ? '#F5E642' : '#0D2137', color: concern === c ? '#0A1628' : '#E8F4FD', fontWeight: concern === c ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{c}</button>
+                <button key={c} onClick={() => setConcern(c)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: concern === c ? '#F5E642′ : '#1E3A5F', background: concern === c ? '#F5E642' : '#0D2137', color: concern === c ? '#0A1628' : '#E8F4FD', fontWeight: concern === c ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{c}</button>
               ))}
             </div>
           </div>

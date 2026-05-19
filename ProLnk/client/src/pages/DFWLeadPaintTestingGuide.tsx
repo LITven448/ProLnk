@@ -41,7 +41,7 @@ export default function DFWLeadPaintTestingGuide() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🏚️ DFW HOME SAFETY GUIDES</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🏚️ DFW HOME SAFETY GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>Lead Paint Testing Guide</h1>
         <p style={{ color: '#9AA3B2', marginBottom: '2rem' }}>Homes built before 1978 may contain lead paint. DFW has thousands of pre-1978 homes — especially in Dallas, Fort Worth, and Garland's older neighborhoods. Know your risk before renovating.</p>
 
@@ -93,12 +93,12 @@ export default function DFWLeadPaintTestingGuide() {
 
         {result && (
           <div style={{ background: result.riskLevel === 'none' ? '#0D2B1A' : result.riskLevel === 'high' ? '#2B0D0D' : '#2B1A0D', border: `1px solid ${result.riskLevel === 'none' ? '#2ECC71' : result.riskLevel === 'high' ? '#E74C3C' : '#E67E22'}`, borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontSize: '1.3rem', fontWeight: 800, color: result.riskLevel === 'none' ? '#2ECC71' : result.riskLevel === 'high' ? '#E74C3C' : '#E67E22', marginBottom: '0.75rem' }}>
+            <div style={{ fontSize: '1.3rem', fontWeight: 800, color: result.riskLevel === 'none' ? '#2ECC71′ : result.riskLevel === ’high' ? '#E74C3C' : '#E67E22', marginBottom: '0.75rem' }}>
               {result.riskLevel === 'none' ? '✅' : result.riskLevel === 'high' ? '🚨' : '⚠️'} {result.riskLabel}
             </div>
             <div style={{ color: '#C8D0DC', lineHeight: 1.8 }}>
-              <div style={{ marginBottom: '0.5rem' }}><strong style={{ color: '#F5E642' }}>Testing:</strong> {result.testing}</div>
-              {result.riskLevel !== 'none' && <div style={{ marginBottom: '0.5rem' }}><strong style={{ color: '#F5E642' }}>Remediation cost:</strong> {result.costRange}</div>}
+              <div style={{ marginBottom: '0.5rem' }}><strong style={{ color: '#F5E642′ }}>Testing:</strong> {result.testing}</div>
+              {result.riskLevel !== 'none' && <div style={{ marginBottom: '0.5rem' }}><strong style={{ color: '#F5E642′ }}>Remediation cost:</strong> {result.costRange}</div>}
               {result.rrpRequired && <div style={{ color: '#E74C3C', fontWeight: 600, marginBottom: '0.5rem' }}>🚨 EPA RRP-certified contractor REQUIRED for your planned renovation</div>}
               {result.actions.map((a, i) => <div key={i} style={{ marginTop: 4 }}>• {a}</div>)}
             </div>

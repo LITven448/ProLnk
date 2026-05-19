@@ -59,7 +59,7 @@ export default function DFWWaterTestingGuide() {
         <div style={{ overflowX: 'auto', marginBottom: '2.5rem' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
             <thead>
-              <tr style={{ background: '#0f2340' }}>
+              <tr style={{ background: '#0f2340′ }}>
                 {['Method', 'Cost', 'Turnaround', 'Accuracy', 'Best For'].map(h => (
                   <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>
                 ))}
@@ -69,10 +69,10 @@ export default function DFWWaterTestingGuide() {
               {testOptions.map((o, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid #1e3a5f' }}>
                   <td style={{ padding: '0.75rem 1rem', fontWeight: 600 }}>{o.label}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80' }}>{o.cost}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{o.turnaround}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{o.accuracy}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{o.best}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80′ }}>{o.cost}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{o.turnaround}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{o.accuracy}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{o.best}</td>
                 </tr>
               ))}
             </tbody>
@@ -104,7 +104,7 @@ export default function DFWWaterTestingGuide() {
             <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', marginBottom: 8 }}>CONCERNS (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {waterTests.map(t => (
-                <button key={t.id} onClick={() => toggleConcern(t.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: concerns.includes(t.id) ? '#F5E642' : '#1e3a5f', background: concerns.includes(t.id) ? '#F5E642' : 'transparent', color: concerns.includes(t.id) ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                <button key={t.id} onClick={() => toggleConcern(t.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: concerns.includes(t.id) ? '#F5E642′ : '#1e3a5f', background: concerns.includes(t.id) ? '#F5E642' : ’transparent', color: concerns.includes(t.id) ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                   {t.icon} {t.label}
                 </button>
               ))}
@@ -114,7 +114,7 @@ export default function DFWWaterTestingGuide() {
             Get Recommendation →
           </button>
           {showResults && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642' }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642′ }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Your Testing Plan:</div>
               {getRecommendations().map((r, i) => <div key={i} style={{ color: '#e2e8f0', marginBottom: 4, fontSize: '0.95rem' }}>✅ {r}</div>)}
               <div style={{ marginTop: 12, color: '#94a3b8', fontSize: '0.85rem' }}>Estimated cost: $50–$200 depending on lab and panel selected.</div>

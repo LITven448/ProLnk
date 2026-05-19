@@ -76,7 +76,7 @@ export default function DFWContractorOnlinePresenceGuide() {
           )}
         </div>
 
-        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642' }}>
+        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642′ }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>💡 ProLnk Pro Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>Your ProLnk profile is indexed by search engines. A complete ProLnk profile with your trade keywords, service area, and reviews ranks for DFW contractor searches. It extends your online presence automatically — with zero extra effort.</div>
         </div>

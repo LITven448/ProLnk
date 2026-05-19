@@ -72,7 +72,7 @@ export default function DFWLawnCareCostGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
+        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', marginBottom: 12, fontSize: 18 }}>📍 DFW Lawn Care Market Realities</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: 10 }}>
             DFW's competitive lawn care market means you can often get professional service for less than homeowners pay in coastal markets. 
@@ -90,16 +90,16 @@ export default function DFWLawnCareCostGuide() {
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 600 }}>
               <thead>
                 <tr>
-                  <th style={{ textAlign: 'left', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628' }}>Service</th>
-                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#60A5FA', borderBottom: '2px solid #0A1628' }}>Small {'<'}5k sqft</th>
-                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#4ADE80', borderBottom: '2px solid #0A1628' }}>Medium 5–10k</th>
-                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#F5E642', borderBottom: '2px solid #0A1628' }}>Large 10k+</th>
-                  <th style={{ textAlign: 'center', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628' }}>DIY?</th>
+                  <th style={{ textAlign: 'left', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628′ }}>Service</th>
+                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#60A5FA', borderBottom: '2px solid #0A1628′ }}>Small {'<'}5k sqft</th>
+                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#4ADE80', borderBottom: '2px solid #0A1628′ }}>Medium 5–10k</th>
+                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#F5E642', borderBottom: '2px solid #0A1628′ }}>Large 10k+</th>
+                  <th style={{ textAlign: 'center', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628′ }}>DIY?</th>
                 </tr>
               </thead>
               <tbody>
                 {services.map((s, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #0A1628' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #0A1628′ }}>
                     <td style={{ padding: '10px 14px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                         <span>{s.icon}</span>
@@ -113,7 +113,7 @@ export default function DFWLawnCareCostGuide() {
                     <td style={{ padding: '10px 14px', textAlign: 'right', color: '#4ADE80', fontWeight: 600 }}>{s.mid}</td>
                     <td style={{ padding: '10px 14px', textAlign: 'right', color: '#F5E642', fontWeight: 600 }}>{s.large}</td>
                     <td style={{ padding: '10px 14px', textAlign: 'center' }}>
-                      <span style={{ color: s.diy ? '#4ADE80' : '#F87171' }}>{s.diy ? '✓' : '✗'}</span>
+                      <span style={{ color: s.diy ? '#4ADE80′ : '#F87171' }}>{s.diy ? '✓' : '✗'}</span>
                     </td>
                   </tr>
                 ))}
@@ -130,7 +130,7 @@ export default function DFWLawnCareCostGuide() {
                 <span style={{ color: '#F5E642', fontSize: 16, flexShrink: 0 }}>⚠️</span>
                 <div>
                   <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 4 }}>{f.fact}</div>
-                  <div style={{ fontSize: 14, color: '#CBD5E1' }}>{f.impact}</div>
+                  <div style={{ fontSize: 14, color: '#CBD5E1′ }}>{f.impact}</div>
                 </div>
               </div>
             ))}
@@ -146,7 +146,7 @@ export default function DFWLawnCareCostGuide() {
               {(['small', 'mid', 'large'] as const).map(size => (
                 <button key={size} onClick={() => setYardSize(size)}
                   style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                    background: yardSize === size ? '#F5E642' : '#0A1628', color: yardSize === size ? '#0A1628' : '#94A3B8' }}>
+                    background: yardSize === size ? '#F5E642′ : '#0A1628', color: yardSize === size ? '#0A1628' : '#94A3B8' }}>
                   {size === 'small' ? '🏠 Small' : size === 'mid' ? '🏡 Medium' : '🏰 Large'}
                 </button>
               ))}
@@ -159,7 +159,7 @@ export default function DFWLawnCareCostGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10 }}>
               {(Object.entries(serviceLevels) as [keyof typeof serviceLevels, typeof serviceLevels[keyof typeof serviceLevels]][]).map(([key, val]) => (
                 <div key={key} onClick={() => setServiceLevel(key)}
-                  style={{ background: serviceLevel === key ? '#1A3050' : '#0A1628', borderRadius: 10, padding: 16, cursor: 'pointer',
+                  style={{ background: serviceLevel === key ? '#1A3050′ : '#0A1628', borderRadius: 10, padding: 16, cursor: ’pointer',
                     border: `2px solid ${serviceLevel === key ? val.color : '#1E2D45'}`, transition: 'all 0.15s', textAlign: 'center' }}>
                   <div style={{ fontSize: 24, marginBottom: 6 }}>{val.icon}</div>
                   <div style={{ fontWeight: 700, color: serviceLevel === key ? val.color : '#E8EDF5', fontSize: 15 }}>{val.label}</div>
@@ -172,8 +172,8 @@ export default function DFWLawnCareCostGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 14 }}>
             {[
               { label: 'Monthly Average', value: `$${monthlyAvg}`, sub: '12-month average', color: '#60A5FA' },
-              { label: 'Active Season Mo.', value: `$${activeMonthly}`, sub: 'Mar–Nov (9 months)', color: '#F5E642' },
-              { label: 'Annual Total', value: `$${annualTotal.toLocaleString()}`, sub: 'full year', color: '#4ADE80' },
+              { label: 'Active Season Mo.', value: `$${activeMonthly}`, sub: 'Mar–Nov (9 months)', color: '#F5E642′ },
+              { label: 'Annual Total', value: `$${annualTotal.toLocaleString()}`, sub: 'full year', color: '#4ADE80′ },
             ].map((stat, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 24, fontWeight: 800, color: stat.color }}>{stat.value}</div>

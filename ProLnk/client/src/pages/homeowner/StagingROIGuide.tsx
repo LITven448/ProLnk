@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STAGING_OPTIONS = [
-  { level: 'DIY Staging', cost: '$0–500', desc: 'Declutter, clean, rearrange. Works best in occupied homes.', roi: '$8,000–14,000' },
-  { level: 'Staging Consultation', cost: '$300–800', desc: 'Stager walks through, tells you what to do. You execute.', roi: '$10,000–20,000' },
-  { level: 'Full Occupied Staging', cost: '$1,000–3,000', desc: 'Stager edits your furniture, adds accessories.', roi: '$14,000–28,000' },
-  { level: 'Full Vacant Staging', cost: '$2,500–8,000', desc: 'Stager brings furniture and accessories. Essential for empty homes.', roi: '$18,000–35,000' },
+  { level: 'DIY Staging', cost: '$0–500', desc: 'Declutter, clean, rearrange. Works best in occupied homes.', roi: '$8,000–14,000′ },
+  { level: 'Staging Consultation', cost: '$300–800', desc: 'Stager walks through, tells you what to do. You execute.', roi: '$10,000–20,000′ },
+  { level: 'Full Occupied Staging', cost: '$1,000–3,000', desc: 'Stager edits your furniture, adds accessories.', roi: '$14,000–28,000′ },
+  { level: 'Full Vacant Staging', cost: '$2,500–8,000', desc: 'Stager brings furniture and accessories. Essential for empty homes.', roi: '$18,000–35,000′ },
 ];
 
 const ROI_ELEMENTS = [
@@ -56,12 +56,12 @@ export default function StagingROIGuide() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         {/* The Math */}
-        <div style={{ background: '#1a1a2e', border: '1px solid #2a2a4e', borderRadius: 16, padding: 32, margin: '40px 0' }}>
+        <div style={{ background: '#1a1a2e', border: '1px solid #2a2a4e', borderRadius: 16, padding: 32, margin: '40px 0′ }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#a0c4ff', margin: '0 0 16px' }}>📊 The Staging Math</h2>
           <p style={{ color: '#ccc', lineHeight: 1.8, margin: 0 }}>
             Staged homes in DFW sell for <strong style={{ color: '#fff' }}>6% more</strong> and <strong style={{ color: '#fff' }}>73% faster</strong> than unstaged homes.
-            Average staging cost: <strong style={{ color: '#4ade80' }}>$1,500–5,000</strong>.
-            Average additional return: <strong style={{ color: '#4ade80' }}>$14,000–35,000</strong>.
+            Average staging cost: <strong style={{ color: '#4ade80′ }}>$1,500–5,000</strong>.
+            Average additional return: <strong style={{ color: '#4ade80′ }}>$14,000–35,000</strong>.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function StagingROIGuide() {
               <div style={{ fontSize: 14, fontWeight: 700, color: '#a0c4ff', marginBottom: 8 }}>{opt.level}</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#4ade80', marginBottom: 8 }}>{opt.cost}</div>
               <div style={{ fontSize: 13, color: '#aaa', marginBottom: 12, lineHeight: 1.5 }}>{opt.desc}</div>
-              <div style={{ fontSize: 13, color: '#fbbf24' }}>Projected return: {opt.roi}</div>
+              <div style={{ fontSize: 13, color: '#fbbf24′ }}>Projected return: {opt.roi}</div>
             </div>
           ))}
         </div>
@@ -83,7 +83,7 @@ export default function StagingROIGuide() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {ROI_ELEMENTS.map(el => (
             <div key={el.item} style={{ background: '#1a1a2e', border: '1px solid #2a2a4e', borderRadius: 12, padding: 20, display: 'flex', gap: 20, alignItems: 'flex-start' }}>
-              <div style={{ minWidth: 120, fontSize: 13, fontWeight: 700, color: '#4ade80' }}>{el.cost}</div>
+              <div style={{ minWidth: 120, fontSize: 13, fontWeight: 700, color: '#4ade80′ }}>{el.cost}</div>
               <div>
                 <div style={{ fontWeight: 600, color: '#fff', marginBottom: 4 }}>{el.item}</div>
                 <div style={{ fontSize: 13, color: '#aaa', lineHeight: 1.5 }}>{el.impact}</div>
@@ -93,7 +93,7 @@ export default function StagingROIGuide() {
         </div>
 
         {/* DFW Priorities */}
-        <div style={{ background: '#1a2a1a', border: '1px solid #2a4a2a', borderRadius: 16, padding: 32, margin: '40px 0' }}>
+        <div style={{ background: '#1a2a1a', border: '1px solid #2a4a2a', borderRadius: 16, padding: 32, margin: '40px 0′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#4ade80', margin: '0 0 16px' }}>🤠 DFW-Specific Staging Priorities</h2>
           <ul style={{ margin: 0, padding: '0 0 0 20px' }}>
             {DFW_PRIORITIES.map((p, i) => (
@@ -103,7 +103,7 @@ export default function StagingROIGuide() {
         </div>
 
         {/* Budget Planner */}
-        <div style={{ background: '#16213e', border: '2px solid #0f3460', borderRadius: 16, padding: 32, margin: '40px 0' }}>
+        <div style={{ background: '#16213e', border: '2px solid #0f3460', borderRadius: 16, padding: 32, margin: '40px 0′ }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#fff', margin: '0 0 8px' }}>🧮 Staging Budget Planner</h2>
           <p style={{ color: '#aaa', margin: '0 0 24px', fontSize: 14 }}>Enter your home details to get a personalized staging recommendation.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
@@ -113,7 +113,7 @@ export default function StagingROIGuide() {
                 type="number"
                 value={sqft}
                 onChange={e => setSqft(e.target.value)}
-                placeholder="e.g. 2400"
+                placeholder="e.g. 2400″
                 style={{ width: '100%', background: '#0f0f0f', border: '1px solid #333', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -123,7 +123,7 @@ export default function StagingROIGuide() {
                 type="number"
                 value={timeline}
                 onChange={e => setTimeline(e.target.value)}
-                placeholder="e.g. 2"
+                placeholder="e.g. 2″
                 style={{ width: '100%', background: '#0f0f0f', border: '1px solid #333', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>
@@ -144,7 +144,7 @@ export default function StagingROIGuide() {
                 </div>
                 <div>
                   <div style={{ fontSize: 12, color: '#aaa', marginBottom: 4 }}>PROJECTED ADDITIONAL RETURN</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: '#fbbf24' }}>${result.roiLow.toLocaleString()}–${result.roiHigh.toLocaleString()}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#fbbf24′ }}>${result.roiLow.toLocaleString()}–${result.roiHigh.toLocaleString()}</div>
                 </div>
               </div>
             </div>

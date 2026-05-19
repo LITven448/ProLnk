@@ -47,7 +47,7 @@ export default function DFWHVACLegislation2026() {
           {projectTypes.map(type => (
             <button key={type} onClick={() => setActiveType(type)}
               style={{ padding: '10px 18px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeType === type ? '#F5E642' : '#1e2d45', color: activeType === type ? '#0A1628' : '#94a3b8' }}>
+                background: activeType === type ? '#F5E642′ : '#1e2d45', color: activeType === type ? '#0A1628' : '#94a3b8' }}>
               {type}
             </button>
           ))}
@@ -58,7 +58,7 @@ export default function DFWHVACLegislation2026() {
             <div key={i} style={{ background: '#1e2d45', borderRadius: 14, padding: '22px 24px', border: '1px solid #2a3f5f' }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 12px', fontSize: 17, fontWeight: 700 }}>📋 {reg.title}</h3>
               <p style={{ color: '#cbd5e1', margin: '0 0 14px', fontSize: 14, lineHeight: 1.7 }}>{reg.detail}</p>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642′ }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 12, marginBottom: 6 }}>WHAT THIS MEANS FOR YOU</div>
                 <p style={{ color: '#94a3b8', margin: 0, fontSize: 13, lineHeight: 1.6 }}>{reg.impact}</p>
               </div>

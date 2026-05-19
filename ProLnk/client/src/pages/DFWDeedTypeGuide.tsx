@@ -43,7 +43,7 @@ export default function DFWDeedTypeGuide() {
           {['types', 'counties'].map(tab => (
             <button key={tab} onClick={() => { setActiveTab(tab); setSelected(null); }}
               style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                background: activeTab === tab ? '#F5E642' : '#fff', color: activeTab === tab ? '#0A1628' : '#64748B' }}>
+                background: activeTab === tab ? '#F5E642′ : '#fff', color: activeTab === tab ? '#0A1628' : '#64748B' }}>
               {tab === 'types' ? '📋 Deed Types' : '🏛️ County Records'}
             </button>
           ))}
@@ -56,11 +56,11 @@ export default function DFWDeedTypeGuide() {
               {DEED_TYPES.map((d, i) => (
                 <div key={i} onClick={() => setSelected(selected === i ? null : i)}
                   style={{ background: '#fff', borderRadius: 10, padding: '1.2rem', cursor: 'pointer',
-                    border: selected === i ? '2px solid #F5E642' : '2px solid transparent',
+                    border: selected === i ? '2px solid #F5E642′ : '2px solid transparent',
                     boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontWeight: 600, color: '#0A1628' }}>{d.transaction}</div>
-                    <div style={{ background: d.common ? '#F0FDF4' : '#FFF9E6', color: d.common ? '#166534' : '#92400E',
+                    <div style={{ fontWeight: 600, color: '#0A1628′ }}>{d.transaction}</div>
+                    <div style={{ background: d.common ? '#F0FDF4′ : '#FFF9E6', color: d.common ? '#166534' : '#92400E',
                       padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 600 }}>
                       {d.common ? '✅ Common' : '⚠️ Uncommon'}
                     </div>

@@ -155,10 +155,10 @@ export default function PartnerMarketingKit() {
                     <div style={{ fontSize: 12, color: '#64748B', fontWeight: 600, marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</div>
                     <div
                       onClick={() => copy(text, key)}
-                      style={{ backgroundColor: '#fff', border: copiedKey === key ? '1.5px solid #10B981' : '1px solid #E2E8F0', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontSize: 14, color: '#374151', lineHeight: 1.7, whiteSpace: 'pre-wrap', position: 'relative' }}
+                      style={{ backgroundColor: '#fff', border: copiedKey === key ? '1.5px solid #10B981′ : '1px solid #E2E8F0', borderRadius: 10, padding: '14px 16px', cursor: ’pointer', fontSize: 14, color: '#374151', lineHeight: 1.7, whiteSpace: 'pre-wrap', position: 'relative' }}
                     >
                       {text}
-                      <div style={{ position: 'absolute', top: 10, right: 12, fontSize: 12, color: copiedKey === key ? '#10B981' : '#94A3B8', fontWeight: 600 }}>
+                      <div style={{ position: 'absolute', top: 10, right: 12, fontSize: 12, color: copiedKey === key ? '#10B981′ : '#94A3B8', fontWeight: 600 }}>
                         {copiedKey === key ? '✅ Copied!' : '📋 Click to copy'}
                       </div>
                     </div>
@@ -178,10 +178,10 @@ export default function PartnerMarketingKit() {
                 <div style={{ fontWeight: 700, color: '#0A1628', fontSize: 14, marginBottom: 6 }}>{icon} For: {type}</div>
                 <div
                   onClick={() => copy(script, key)}
-                  style={{ backgroundColor: '#fff', border: copiedKey === key ? '1.5px solid #10B981' : '1px solid #E2E8F0', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontSize: 14, color: '#374151', lineHeight: 1.7, position: 'relative' }}
+                  style={{ backgroundColor: '#fff', border: copiedKey === key ? '1.5px solid #10B981′ : '1px solid #E2E8F0', borderRadius: 10, padding: '14px 16px', cursor: ’pointer', fontSize: 14, color: '#374151', lineHeight: 1.7, position: 'relative' }}
                 >
                   {script}
-                  <div style={{ position: 'absolute', top: 10, right: 12, fontSize: 12, color: copiedKey === key ? '#10B981' : '#94A3B8', fontWeight: 600 }}>
+                  <div style={{ position: 'absolute', top: 10, right: 12, fontSize: 12, color: copiedKey === key ? '#10B981′ : '#94A3B8', fontWeight: 600 }}>
                     {copiedKey === key ? '✅ Copied!' : '📋 Click to copy'}
                   </div>
                 </div>
@@ -201,12 +201,12 @@ export default function PartnerMarketingKit() {
                   <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>{icon} {type}</span>
                   <button
                     onClick={() => copy(fullText, key)}
-                    style={{ backgroundColor: copiedKey === key ? '#10B981' : '#F5E642', color: '#0A1628', border: 'none', borderRadius: 6, padding: '4px 12px', fontWeight: 700, fontSize: 12, cursor: 'pointer' }}
+                    style={{ backgroundColor: copiedKey === key ? '#10B981′ : '#F5E642', color: '#0A1628', border: ’none', borderRadius: 6, padding: '4px 12px', fontWeight: 700, fontSize: 12, cursor: 'pointer' }}
                   >
                     {copiedKey === key ? '✅ Copied!' : '📋 Copy All'}
                   </button>
                 </div>
-                <div style={{ padding: '12px 16px', borderBottom: '1px solid #E2E8F0' }}>
+                <div style={{ padding: '12px 16px', borderBottom: '1px solid #E2E8F0′ }}>
                   <span style={{ fontWeight: 600, color: '#64748B', fontSize: 12 }}>SUBJECT: </span>
                   <span style={{ color: '#0A1628', fontSize: 13, fontWeight: 600 }}>{subject}</span>
                 </div>
@@ -223,7 +223,7 @@ export default function PartnerMarketingKit() {
             style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, cursor: 'pointer', position: 'relative' }}
           >
             <div style={{ color: '#F5E642', fontSize: 14, lineHeight: 1.8, whiteSpace: 'pre-wrap' }}>{flyerCopy}</div>
-            <div style={{ position: 'absolute', top: 16, right: 16, fontSize: 12, color: copiedKey === 'flyer' ? '#10B981' : '#94A3B8', fontWeight: 600 }}>
+            <div style={{ position: 'absolute', top: 16, right: 16, fontSize: 12, color: copiedKey === 'flyer' ? '#10B981′ : '#94A3B8', fontWeight: 600 }}>
               {copiedKey === 'flyer' ? '✅ Copied!' : '📋 Click to copy'}
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function PartnerMarketingKit() {
                 </div>
               ))}
             </div>
-            <div style={{ backgroundColor: '#FFF1F2', borderRadius: 12, padding: 20, border: '1px solid #FECDD3' }}>
+            <div style={{ backgroundColor: '#FFF1F2', borderRadius: 12, padding: 20, border: '1px solid #FECDD3′ }}>
               <div style={{ fontWeight: 700, color: '#991B1B', fontSize: 15, marginBottom: 12 }}>❌ DON'Ts</div>
               {donts.map((d, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>

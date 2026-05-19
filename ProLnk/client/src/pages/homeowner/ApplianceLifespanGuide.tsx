@@ -41,11 +41,11 @@ export default function ApplianceLifespanGuide() {
   const homeAge = getAge(birthYear);
 
   function getStatus(dfwLife: number): { label: string; color: string } {
-    if (homeAge < 0) return { label: '—', color: '#6B7280' };
+    if (homeAge < 0) return { label: '—', color: '#6B7280′ };
     const pct = homeAge / dfwLife;
     if (pct < 0.6) return { label: 'Good', color: '#22C55E' };
     if (pct < 0.85) return { label: 'Watch', color: '#F59E0B' };
-    return { label: 'Due Soon', color: '#EF4444' };
+    return { label: 'Due Soon', color: '#EF4444′ };
   }
 
   return (
@@ -71,7 +71,7 @@ export default function ApplianceLifespanGuide() {
           <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
             <input
               type="number"
-              placeholder="e.g. 2008"
+              placeholder="e.g. 2008″
               value={birthYear}
               onChange={e => setBirthYear(e.target.value)}
               style={{ padding: '12px 16px', borderRadius: 8, border: '1px solid #3B5780', background: '#0A1628', color: '#F1F5F9', fontSize: 16, width: 160 }}
@@ -98,14 +98,14 @@ export default function ApplianceLifespanGuide() {
               {appliances.map((a, i) => {
                 const status = getStatus(a.dfwLifespan);
                 return (
-                  <tr key={a.name} style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(30,58,95,0.3)', borderBottom: '1px solid #1E2D45' }}>
+                  <tr key={a.name} style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(30,58,95,0.3)', borderBottom: '1px solid #1E2D45′ }}>
                     <td style={{ padding: '14px 16px', fontWeight: 600 }}>{a.icon} {a.name}</td>
-                    <td style={{ padding: '14px 16px', color: '#94A3B8' }}>{a.avgLifespan} yrs</td>
+                    <td style={{ padding: '14px 16px', color: '#94A3B8′ }}>{a.avgLifespan} yrs</td>
                     <td style={{ padding: '14px 16px', color: '#F59E0B', fontWeight: 600 }}>{a.dfwLifespan} yrs</td>
                     <td style={{ padding: '14px 16px', color: '#CBD5E1', maxWidth: 220 }}>{a.warningSign}</td>
                     <td style={{ padding: '14px 16px', color: '#22C55E', fontWeight: 600 }}>{a.replacementCost}</td>
                     <td style={{ padding: '14px 16px' }}>
-                      <span style={{ padding: '3px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700, background: a.runToFailure ? 'rgba(100,116,139,0.2)' : 'rgba(239,68,68,0.15)', color: a.runToFailure ? '#94A3B8' : '#FCA5A5' }}>
+                      <span style={{ padding: '3px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700, background: a.runToFailure ? 'rgba(100,116,139,0.2)' : 'rgba(239,68,68,0.15)', color: a.runToFailure ? '#94A3B8′ : '#FCA5A5' }}>
                         {a.runToFailure ? 'Run to Failure OK' : 'Replace Proactively'}
                       </span>
                     </td>
@@ -115,7 +115,7 @@ export default function ApplianceLifespanGuide() {
                           {status.label}
                         </span>
                       ) : (
-                        <span style={{ color: '#4B5563' }}>Enter year ↑</span>
+                        <span style={{ color: '#4B5563′ }}>Enter year ↑</span>
                       )}
                     </td>
                   </tr>
@@ -163,7 +163,7 @@ export default function ApplianceLifespanGuide() {
             ].map(item => (
               <div key={item.title}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, marginBottom: 4, color: '#E2E8F0' }}>{item.title}</div>
+                <div style={{ fontWeight: 700, marginBottom: 4, color: '#E2E8F0′ }}>{item.title}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>{item.desc}</div>
               </div>
             ))}

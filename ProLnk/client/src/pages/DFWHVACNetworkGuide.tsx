@@ -64,21 +64,21 @@ export default function DFWHVACNetworkGuide() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>📊 What Is Your Current Network?</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
             {networkGaps.map((g, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642' : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642′ : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
                 {g.situation}
               </button>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
+        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>{current.situation}</h2>
 
           <div style={{ marginBottom: '1.25rem' }}>
             <h3 style={{ color: '#EF4444', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.5rem' }}>What You Are Missing</h3>
             {current.missing.map((m, i) => (
-              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.4rem 0', fontSize: '0.9rem', color: '#E8EDF2' }}>
-                <span style={{ color: '#EF4444' }}>✗</span>{m}
+              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.4rem 0', fontSize: '0.9rem', color: '#E8EDF2′ }}>
+                <span style={{ color: '#EF4444′ }}>✗</span>{m}
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ export default function DFWHVACNetworkGuide() {
           <div style={{ marginBottom: '1.25rem' }}>
             <h3 style={{ color: '#22C55E', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.5rem' }}>How to Fill the Gap</h3>
             {current.howToFill.map((f, i) => (
-              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.4rem 0', fontSize: '0.9rem', color: '#E8EDF2' }}>
+              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.4rem 0', fontSize: '0.9rem', color: '#E8EDF2′ }}>
                 <span style={{ color: '#22C55E' }}>✓</span>{f}
               </div>
             ))}

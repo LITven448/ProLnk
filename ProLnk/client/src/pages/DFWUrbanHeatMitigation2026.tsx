@@ -50,7 +50,7 @@ export default function DFWUrbanHeatMitigation2026() {
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>{s.title}</div>
               <div style={{ color: '#4ade80', fontSize: 12, marginTop: 4 }}>💰 {s.saving}</div>
               <div style={{ color: '#94a3b8', fontSize: 11 }}>⏱️ {s.time}</div>
-              <div style={{ marginTop: 6, fontSize: 11, background: '#0A1628', borderRadius: 6, padding: '3px 8px', display: 'inline-block', color: s.impact === 'High' ? '#4ade80' : '#f97316' }}>Impact: {s.impact}</div>
+              <div style={{ marginTop: 6, fontSize: 11, background: '#0A1628', borderRadius: 6, padding: '3px 8px', display: 'inline-block', color: s.impact === 'High' ? '#4ade80′ : '#f97316' }}>Impact: {s.impact}</div>
             </div>
           ))}
         </div>
@@ -61,7 +61,7 @@ export default function DFWUrbanHeatMitigation2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Home location:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {locations.map(l => (
-                <button key={l} onClick={() => setLocation(l)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: location === l ? '#F5E642' : '#0A1628', color: location === l ? '#0A1628' : '#fff', fontSize: 12 }}>{l}</button>
+                <button key={l} onClick={() => setLocation(l)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: location === l ? '#F5E642′ : '#0A1628', color: location === l ? '#0A1628' : '#fff', fontSize: 12 }}>{l}</button>
               ))}
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function DFWUrbanHeatMitigation2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Your home features (select all that apply):</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {featureList.map(f => (
-                <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: features.includes(f) ? '#F5E642' : '#0A1628', color: features.includes(f) ? '#0A1628' : '#fff', fontSize: 12 }}>{f}</button>
+                <button key={f} onClick={() => toggleFeature(f)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: features.includes(f) ? '#F5E642′ : '#0A1628', color: features.includes(f) ? '#0A1628' : '#fff', fontSize: 12 }}>{f}</button>
               ))}
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function DFWUrbanHeatMitigation2026() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 14, fontSize: 12, color: '#94a3b8' }}>
+        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 14, fontSize: 12, color: '#94a3b8′ }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>🌳 DFW Urban Forest: </span>
           Dallas has planted 100K+ trees since 2019. Free street trees available via Dallas Park and Recreation. Each mature tree removes 48 lbs of CO2 and reduces nearby AC usage by up to 30%.
         </div>

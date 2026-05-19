@@ -105,7 +105,7 @@ export default function DFWEMFProtectionGuide() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #3B82F6' }}>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #3B82F6′ }}>
               <div style={{ color: '#60A5FA', fontWeight: 700, marginBottom: 6 }}>🔬 What the Science Says</div>
               <p style={{ color: '#94A3B8', lineHeight: 1.6, margin: 0, fontSize: 13 }}>{advice.science}</p>
             </div>

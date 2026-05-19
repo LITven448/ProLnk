@@ -37,7 +37,7 @@ export default function DFWMasterBedroomRemodelGuide2026() {
               { icon: '🛁', label: 'Ensuite Bath Addition', cost: '$18K-$35K' },
               { icon: '👗', label: 'Walk-In Closet Conversion', cost: '$3K-$8K' },
               { icon: '🪵', label: 'LVP Flooring (DFW Preferred)', cost: '$3K-$7K' },
-              { icon: '💨', label: 'Ceiling Fan Upgrade', cost: '$300-$900' },
+              { icon: '💨', label: 'Ceiling Fan Upgrade', cost: '$300-$900′ },
               { icon: '📚', label: 'Reading Nook Addition', cost: '$1K-$4K' },
               { icon: '💡', label: 'Smart Lighting System', cost: '$800-$2K' },
             ].map((item) => (
@@ -55,7 +55,7 @@ export default function DFWMasterBedroomRemodelGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>Move the slider to see your DFW master bedroom upgrade scope.</p>
           <input type="range" min={5000} max={60000} step={1000} value={budget}
             onChange={(e) => setBudget(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 12, accentColor: '#F5E642' }} />
+            style={{ width: '100%', marginBottom: 12, accentColor: '#F5E642′ }} />
           <div style={{ textAlign: 'center', color: '#F5E642', fontWeight: 700, fontSize: 20, marginBottom: 16 }}>${budget.toLocaleString()} Budget</div>
           <div style={{ background: '#0f172a', borderRadius: 8, padding: 16 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>{scope.label}</div>
@@ -75,7 +75,7 @@ export default function DFWMasterBedroomRemodelGuide2026() {
             'Walk-in closet conversions may need structural assessment.',
             'Reading nooks near exterior walls benefit from extra insulation in DFW heat.',
           ].map((tip) => (
-            <div key={tip} style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{tip}</div>
+            <div key={tip} style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{tip}</div>
           ))}
         </div>
       </div>

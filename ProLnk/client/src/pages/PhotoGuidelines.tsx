@@ -30,8 +30,8 @@ const TRADES = [
     name: "Lawn Care & Landscaping",
     icon: Leaf,
     color: "#22C55E",
-    bg: "#22C55E15",
-    border: "#22C55E30",
+    bg: "#22C55E15″,
+    border: "#22C55E30″,
     photograph: [
       "Full front yard from the street -- capture the entire lawn and bed lines",
       "Full back yard from the rear of the property",
@@ -52,8 +52,8 @@ const TRADES = [
     name: "Pest Control",
     icon: Bug,
     color: "#F59E0B",
-    bg: "#F59E0B15",
-    border: "#F59E0B30",
+    bg: "#F59E0B15″,
+    border: "#F59E0B30″,
     photograph: [
       "Exterior perimeter of the home at foundation level -- all four sides",
       "Any visible entry points: gaps in siding, cracks in foundation, open vents",
@@ -73,9 +73,9 @@ const TRADES = [
     id: "hvac",
     name: "HVAC",
     icon: Wind,
-    color: "#3B82F6",
-    bg: "#3B82F615",
-    border: "#3B82F630",
+    color: "#3B82F6″,
+    bg: "#3B82F615″,
+    border: "#3B82F630″,
     photograph: [
       "Outdoor condenser unit -- full unit, all four sides",
       "Indoor air handler or furnace -- full unit with serial/model tag visible",
@@ -96,9 +96,9 @@ const TRADES = [
     id: "plumbing",
     name: "Plumbing",
     icon: Droplets,
-    color: "#06B6D4",
-    bg: "#06B6D415",
-    border: "#06B6D430",
+    color: "#06B6D4″,
+    bg: "#06B6D415″,
+    border: "#06B6D430″,
     photograph: [
       "Water heater -- full unit with serial/model tag visible",
       "Under-sink cabinet before and after any repair",
@@ -119,9 +119,9 @@ const TRADES = [
     id: "electrical",
     name: "Electrical",
     icon: Zap,
-    color: "#EAB308",
-    bg: "#EAB30815",
-    border: "#EAB30830",
+    color: "#EAB308″,
+    bg: "#EAB30815″,
+    border: "#EAB30830″,
     photograph: [
       "Electrical panel -- full panel with cover off, showing breaker labels",
       "Any outlets, switches, or fixtures that were replaced -- before and after",
@@ -140,9 +140,9 @@ const TRADES = [
     id: "roofing",
     name: "Roofing",
     icon: Home,
-    color: "#8B5CF6",
-    bg: "#8B5CF615",
-    border: "#8B5CF630",
+    color: "#8B5CF6″,
+    bg: "#8B5CF615″,
+    border: "#8B5CF630″,
     photograph: [
       "Full aerial or elevated view of the entire roof surface",
       "Close-up of any damaged, missing, or lifted shingles",
@@ -162,9 +162,9 @@ const TRADES = [
     id: "cabinets",
     name: "Cabinets & Millwork",
     icon: Wrench,
-    color: "#D97706",
-    bg: "#D9770615",
-    border: "#D9770630",
+    color: "#D97706″,
+    bg: "#D9770615″,
+    border: "#D9770630″,
     photograph: [
       "Full kitchen -- stand in the doorway and capture the entire room",
       "Full bathroom vanity -- capture the full wall of cabinetry",
@@ -185,9 +185,9 @@ const TRADES = [
     id: "painting",
     name: "Painting",
     icon: PaintBucket,
-    color: "#EC4899",
-    bg: "#EC489915",
-    border: "#EC489930",
+    color: "#EC4899″,
+    bg: "#EC489915″,
+    border: "#EC489930″,
     photograph: [
       "Full wall or room before painting -- capture the entire surface",
       "Close-up of any cracks, holes, or surface damage being repaired",
@@ -207,9 +207,9 @@ const TRADES = [
     id: "fencing",
     name: "Fencing & Gates",
     icon: Shield,
-    color: "#14B8A6",
-    bg: "#14B8A615",
-    border: "#14B8A630",
+    color: "#14B8A6″,
+    bg: "#14B8A615″,
+    border: "#14B8A630″,
     photograph: [
       "Full fence line -- walk the perimeter and capture each side",
       "Gate hardware: hinges, latch, and post before and after",
@@ -234,71 +234,71 @@ export default function PhotoGuidelines() {
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #050d1a 0%, #0a1628 60%, #0d1f3c 100%)" }}>
       {/* Header */}
-      <div className="border-b px-6 py-5" style={{ borderColor: "#1E3A5F" }}>
-        <div className="max-w-4xl mx-auto flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#0A162820" }}>
-            <Camera className="w-5 h-5" style={{ color: "#0A1628" }} />
+      <div className="border-b px-6 py-5″ style={{ borderColor: "#1E3A5F" }}>
+        <div className="max-w-4xl mx-auto flex items-center gap-3″>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#0A162820″ }}>
+            <Camera className="w-5 h-5″ style={{ color: "#0A1628" }} />
           </div>
           <div>
             <h1 className="font-bold text-white text-xl">Partner Photo Guidelines</h1>
-            <p className="text-sm" style={{ color: "#4A6FA5" }}>How to document jobs for maximum referral signal quality</p>
+            <p className="text-sm" style={{ color: "#4A6FA5″ }}>How to document jobs for maximum referral signal quality</p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 space-y-8">
+      <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 space-y-8″>
 
         {/* Why this matters */}
-        <div className="rounded-2xl border p-6" style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
-          <div className="flex items-start gap-3 mb-4">
-            <Info className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#0A1628" }} />
+        <div className="rounded-2xl border p-6″ style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
+          <div className="flex items-start gap-3 mb-4″>
+            <Info className="w-5 h-5 mt-0.5 flex-shrink-0″ style={{ color: "#0A1628" }} />
             <div>
-              <h2 className="font-bold text-white text-lg mb-1">Why photos matter</h2>
-              <p className="text-sm" style={{ color: "#A0B4C8" }}>
+              <h2 className="font-bold text-white text-lg mb-1″>Why photos matter</h2>
+              <p className="text-sm" style={{ color: "#A0B4C8″ }}>
                 Every photo you upload is analyzed by the platform's AI to identify referral opportunities for other pros in the network. A well-documented job can generate 2-5 additional referral signals -- meaning more commissions for you and better service for the homeowner. Poor or off-topic photos generate no signals and can delay payout verification.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3 mt-4">
+          <div className="grid grid-cols-3 gap-3 mt-4″>
             {[
               { label: "Before photo", desc: "Documents existing condition, protects you legally" },
               { label: "After photo", desc: "Confirms job completion, triggers payout verification" },
               { label: "Clean site photo", desc: "Shows professionalism, builds homeowner trust" },
             ].map(item => (
-              <div key={item.label} className="rounded-xl p-3 text-center" style={{ backgroundColor: "#0A1628", border: "1px solid #1E3A5F" }}>
-                <p className="text-xs font-bold text-white mb-1">{item.label}</p>
-                <p className="text-xs" style={{ color: "#4A6FA5" }}>{item.desc}</p>
+              <div key={item.label} className="rounded-xl p-3 text-center" style={{ backgroundColor: "#0A1628″, border: "1px solid #1E3A5F" }}>
+                <p className="text-xs font-bold text-white mb-1″>{item.label}</p>
+                <p className="text-xs" style={{ color: "#4A6FA5″ }}>{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Universal rules */}
-        <div className="rounded-2xl border p-6" style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
-          <h2 className="font-bold text-white text-lg mb-5">Universal rules -- every trade, every job</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="rounded-2xl border p-6″ style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
+          <h2 className="font-bold text-white text-lg mb-5″>Universal rules -- every trade, every job</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6″>
             <div>
-              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: "#22C55E" }}>
-                <CheckCircle className="w-4 h-4" /> Always do this
+              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2″ style={{ color: "#22C55E" }}>
+                <CheckCircle className="w-4 h-4″ /> Always do this
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2″>
                 {UNIVERSAL_DO.map((rule, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#22C55E" }} />
-                    <span className="text-sm" style={{ color: "#A0B4C8" }}>{rule}</span>
+                  <li key={i} className="flex items-start gap-2″>
+                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0″ style={{ backgroundColor: "#22C55E" }} />
+                    <span className="text-sm" style={{ color: "#A0B4C8″ }}>{rule}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: "#EF4444" }}>
-                <XCircle className="w-4 h-4" /> Never do this
+              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2″ style={{ color: "#EF4444" }}>
+                <XCircle className="w-4 h-4″ /> Never do this
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2″>
                 {UNIVERSAL_DONT.map((rule, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#EF4444" }} />
-                    <span className="text-sm" style={{ color: "#A0B4C8" }}>{rule}</span>
+                  <li key={i} className="flex items-start gap-2″>
+                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0″ style={{ backgroundColor: "#EF4444" }} />
+                    <span className="text-sm" style={{ color: "#A0B4C8″ }}>{rule}</span>
                   </li>
                 ))}
               </ul>
@@ -308,65 +308,65 @@ export default function PhotoGuidelines() {
 
         {/* Trade-specific sections */}
         <div>
-          <h2 className="font-bold text-white text-lg mb-4">Trade-specific guidelines</h2>
-          <div className="space-y-3">
+          <h2 className="font-bold text-white text-lg mb-4″>Trade-specific guidelines</h2>
+          <div className="space-y-3″>
             {TRADES.map(trade => {
               const Icon = trade.icon;
               const isOpen = openTrade === trade.id;
               return (
                 <div key={trade.id} className="rounded-2xl border overflow-hidden transition-all"
-                  style={{ borderColor: isOpen ? trade.border : "#1E3A5F", backgroundColor: "#0F1F35" }}>
+                  style={{ borderColor: isOpen ? trade.border : "#1E3A5F", backgroundColor: "#0F1F35″ }}>
                   <button
                     className="w-full flex items-center justify-between p-5 text-left"
                     onClick={() => setOpenTrade(isOpen ? null : trade.id)}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                    <div className="flex items-center gap-3″>
+                      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
                         style={{ backgroundColor: trade.bg, border: `1px solid ${trade.border}` }}>
-                        <Icon className="w-4.5 h-4.5" style={{ color: trade.color }} />
+                        <Icon className="w-4.5 h-4.5″ style={{ color: trade.color }} />
                       </div>
                       <span className="font-semibold text-white">{trade.name}</span>
                     </div>
                     {isOpen
-                      ? <ChevronUp className="w-4 h-4 flex-shrink-0" style={{ color: "#4A6FA5" }} />
-                      : <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: "#4A6FA5" }} />
+                      ? <ChevronUp className="w-4 h-4 flex-shrink-0″ style={{ color: "#4A6FA5" }} />
+                      : <ChevronDown className="w-4 h-4 flex-shrink-0″ style={{ color: "#4A6FA5" }} />
                     }
                   </button>
 
                   {isOpen && (
                     <div className="px-5 pb-5 space-y-5 border-t" style={{ borderColor: "#1E3A5F" }}>
-                      <div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-5″>
                         <div>
-                          <h4 className="text-xs font-semibold mb-2 flex items-center gap-1.5" style={{ color: "#22C55E" }}>
-                            <CheckCircle className="w-3.5 h-3.5" /> Photograph these
+                          <h4 className="text-xs font-semibold mb-2 flex items-center gap-1.5″ style={{ color: "#22C55E" }}>
+                            <CheckCircle className="w-3.5 h-3.5″ /> Photograph these
                           </h4>
-                          <ul className="space-y-1.5">
+                          <ul className="space-y-1.5″>
                             {trade.photograph.map((item, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: "#22C55E" }} />
-                                <span className="text-xs" style={{ color: "#A0B4C8" }}>{item}</span>
+                              <li key={i} className="flex items-start gap-2″>
+                                <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0″ style={{ backgroundColor: "#22C55E" }} />
+                                <span className="text-xs" style={{ color: "#A0B4C8″ }}>{item}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                         <div>
-                          <h4 className="text-xs font-semibold mb-2 flex items-center gap-1.5" style={{ color: "#EF4444" }}>
-                            <XCircle className="w-3.5 h-3.5" /> Do not photograph
+                          <h4 className="text-xs font-semibold mb-2 flex items-center gap-1.5″ style={{ color: "#EF4444" }}>
+                            <XCircle className="w-3.5 h-3.5″ /> Do not photograph
                           </h4>
-                          <ul className="space-y-1.5">
+                          <ul className="space-y-1.5″>
                             {trade.avoid.map((item, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: "#EF4444" }} />
-                                <span className="text-xs" style={{ color: "#A0B4C8" }}>{item}</span>
+                              <li key={i} className="flex items-start gap-2″>
+                                <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0″ style={{ backgroundColor: "#EF4444" }} />
+                                <span className="text-xs" style={{ color: "#A0B4C8″ }}>{item}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                       </div>
-                      <div className="rounded-xl p-3 flex items-start gap-2"
+                      <div className="rounded-xl p-3 flex items-start gap-2″
                         style={{ backgroundColor: `${trade.color}10`, border: `1px solid ${trade.border}` }}>
-                        <Info className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: trade.color }} />
-                        <p className="text-xs" style={{ color: "#A0B4C8" }}>
+                        <Info className="w-3.5 h-3.5 mt-0.5 flex-shrink-0″ style={{ color: trade.color }} />
+                        <p className="text-xs" style={{ color: "#A0B4C8″ }}>
                           <strong className="text-white">AI referral signals: </strong>{trade.aiSignals}
                         </p>
                       </div>
@@ -379,11 +379,11 @@ export default function PhotoGuidelines() {
         </div>
 
         {/* Footer note */}
-        <div className="rounded-2xl border p-5 flex items-start gap-3" style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
-          <Shield className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#0A1628" }} />
+        <div className="rounded-2xl border p-5 flex items-start gap-3″ style={{ backgroundColor: "#0F1F35", borderColor: "#1E3A5F" }}>
+          <Shield className="w-5 h-5 mt-0.5 flex-shrink-0″ style={{ color: "#0A1628" }} />
           <div>
-            <p className="text-sm font-semibold text-white mb-1">Privacy and legal protection</p>
-            <p className="text-sm" style={{ color: "#4A6FA5" }}>
+            <p className="text-sm font-semibold text-white mb-1″>Privacy and legal protection</p>
+            <p className="text-sm" style={{ color: "#4A6FA5″ }}>
               All photos uploaded through the platform are stored securely and used only for job documentation, AI analysis, and referral matching. Photos are never shared publicly without homeowner consent. Following these guidelines protects you from liability disputes -- a timestamped before photo is your best defense if a homeowner later claims pre-existing damage was caused by your crew.
             </p>
           </div>

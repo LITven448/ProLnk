@@ -60,7 +60,7 @@ export default function DFWPropertyManagementProLnkGuide() {
             {['Background-checked contractors', 'License verification on file', 'Insurance certificates stored', 'Rated by property managers like you', 'No surprise invoicing', 'Consistent DFW service area coverage'].map(item => (
               <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ color: '#22C55E', fontSize: 16 }}>✔</span>
-                <span style={{ fontSize: 14, color: '#334155' }}>{item}</span>
+                <span style={{ fontSize: 14, color: '#334155′ }}>{item}</span>
               </div>
             ))}
           </div>
@@ -71,11 +71,11 @@ export default function DFWPropertyManagementProLnkGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Units Managed</label>
-              <input type="number" value={units} onChange={e => setUnits(e.target.value)} placeholder="e.g. 120" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0F2040', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={units} onChange={e => setUnits(e.target.value)} placeholder="e.g. 120″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0F2040', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Monthly Service Requests</label>
-              <input type="number" value={requestsPerMonth} onChange={e => setRequestsPerMonth(e.target.value)} placeholder="e.g. 25" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0F2040', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={requestsPerMonth} onChange={e => setRequestsPerMonth(e.target.value)} placeholder="e.g. 25″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1E3A5F', background: '#0F2040', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer', width: '100%' }}>Calculate Savings →</button>

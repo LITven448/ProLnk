@@ -33,14 +33,14 @@ export default function DFWCircadianLightingGuide2026() {
             {guides.map(g => (
               <button key={g.concern} onClick={() => setConcern(concern === g.concern ? '' : g.concern)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                  background: concern === g.concern ? '#F5E642' : '#1C2D4A', color: concern === g.concern ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                  background: concern === g.concern ? '#F5E642′ : '#1C2D4A', color: concern === g.concern ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                 {g.label}
               </button>
             ))}
           </div>
         </div>
         {guide && (
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #F5E642' }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 28, border: '1px solid #F5E642′ }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 14 }}>💡 {guide.label} — Action Plan</div>
             {guide.steps.map(s => (
               <div key={s} style={{ color: '#CBD1DC', fontSize: 14, marginBottom: 10, display: 'flex', gap: 8 }}>

@@ -37,12 +37,12 @@ export default function DFWUrbanHeatIsland() {
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.25rem', textAlign: 'center' }}>
-            <p style={{ fontSize: '1.75rem', margin: '0 0 0.5rem', color: '#ef4444' }}>+12°F</p>
+            <p style={{ fontSize: '1.75rem', margin: '0 0 0.5rem', color: '#ef4444′ }}>+12°F</p>
             <p style={{ color: '#F5E642', fontWeight: 600, margin: '0 0 0.25rem', fontSize: '0.9rem' }}>Peak Urban-Rural Gap</p>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Downtown Dallas vs. outskirts</p>
           </div>
           <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.25rem', textAlign: 'center' }}>
-            <p style={{ fontSize: '1.75rem', margin: '0 0 0.5rem', color: '#F5E642' }}>25%</p>
+            <p style={{ fontSize: '1.75rem', margin: '0 0 0.5rem', color: '#F5E642′ }}>25%</p>
             <p style={{ color: '#F5E642', fontWeight: 600, margin: '0 0 0.25rem', fontSize: '0.9rem' }}>Cooling Cost Reduction</p>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>From strategic tree planting</p>
           </div>
@@ -77,10 +77,10 @@ export default function DFWUrbanHeatIsland() {
           )}
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>
-          <strong style={{ color: '#F5E642' }}>Community Programs:</strong> Dallas, Fort Worth, Plano, and most DFW cities offer free tree giveaways and subsidized cool roof rebates. Search your city's sustainability office for current programs.
+          <strong style={{ color: '#F5E642′ }}>Community Programs:</strong> Dallas, Fort Worth, Plano, and most DFW cities offer free tree giveaways and subsidized cool roof rebates. Search your city’s sustainability office for current programs.
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-          <strong style={{ color: '#F5E642' }}>ProLnk Note:</strong> Tree planting, cool roofing, and permeable paving all require licensed contractors to maximize benefit and avoid code violations. ProLnk connects you with verified DFW contractors for energy-efficient home upgrades.
+          <strong style={{ color: '#F5E642′ }}>ProLnk Note:</strong> Tree planting, cool roofing, and permeable paving all require licensed contractors to maximize benefit and avoid code violations. ProLnk connects you with verified DFW contractors for energy-efficient home upgrades.
         </div>
       </div>
     </div>

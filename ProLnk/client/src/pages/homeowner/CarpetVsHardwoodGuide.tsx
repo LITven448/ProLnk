@@ -37,7 +37,7 @@ export default function CarpetVsHardwoodGuide() {
   const costHigh = rec ? area * parseFloat(rec.cost.split('–')[1].replace('/sq ft installed', '').trim()) : 0;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2a45 100%)', borderBottom: '2px solid #F5E642', padding: '48px 24px 36px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>🏠 DFW Homeowner Guide</div>
@@ -48,7 +48,7 @@ export default function CarpetVsHardwoodGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0′ }}>
         <div style={{ background: '#0f1e35', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 36 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 10px' }}>🌡️ The DFW Humidity Problem with Hardwood</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
@@ -59,18 +59,18 @@ export default function CarpetVsHardwoodGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 40 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ background: '#0f1e35' }}>
+              <tr style={{ background: '#0f1e35′ }}>
                 {['Metric', 'Carpet', 'Hardwood'].map(h => (
-                  <th key={h} style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642', fontWeight: 700, borderBottom: '1px solid #1E2D45' }}>{h}</th>
+                  <th key={h} style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642', fontWeight: 700, borderBottom: '1px solid #1E2D45′ }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {comparison.map((row, i) => (
-                <tr key={row.metric} style={{ background: i % 2 === 0 ? '#0A1628' : '#0d1a2e' }}>
+                <tr key={row.metric} style={{ background: i % 2 === 0 ? '#0A1628′ : '#0d1a2e' }}>
                   <td style={{ padding: '11px 16px', fontWeight: 600 }}>{row.metric}</td>
-                  <td style={{ padding: '11px 16px', color: '#94a3b8' }}>{row.carpet}</td>
-                  <td style={{ padding: '11px 16px', color: '#94a3b8' }}>{row.hardwood}</td>
+                  <td style={{ padding: '11px 16px', color: '#94a3b8′ }}>{row.carpet}</td>
+                  <td style={{ padding: '11px 16px', color: '#94a3b8′ }}>{row.hardwood}</td>
                 </tr>
               ))}
             </tbody>
@@ -88,7 +88,7 @@ export default function CarpetVsHardwoodGuide() {
                 onClick={() => setSelected(p.id)}
                 style={{
                   padding: '18px 20px', borderRadius: 10, cursor: 'pointer',
-                  background: selected === p.id ? '#1a2a45' : '#0A1628',
+                  background: selected === p.id ? '#1a2a45′ : '#0A1628',
                   border: `2px solid ${selected === p.id ? '#F5E642' : '#1E2D45'}`,
                   transition: 'all 0.15s',
                 }}
@@ -109,7 +109,7 @@ export default function CarpetVsHardwoodGuide() {
                   type="number"
                   value={sqft}
                   onChange={e => setSqft(e.target.value)}
-                  placeholder="e.g. 1800"
+                  placeholder="e.g. 1800″
                   style={{ background: '#0f1e35', border: '1px solid #1E2D45', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, width: '100%', boxSizing: 'border-box' }}
                 />
               </div>

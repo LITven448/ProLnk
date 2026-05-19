@@ -33,7 +33,7 @@ export default function HomeownerWaitlistBenefits() {
         <div style={{ textAlign: 'center', marginBottom: 44 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🏡</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 10 }}>Why Join the ProLnk Waitlist?</h1>
-          <p style={{ fontSize: 16, color: '#6B7280' }}>Early access, vetted contractors, and locked-in launch pricing — all free for homeowners</p>
+          <p style={{ fontSize: 16, color: '#6B7280′ }}>Early access, vetted contractors, and locked-in launch pricing — all free for homeowners</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 44 }}>
@@ -52,13 +52,13 @@ export default function HomeownerWaitlistBenefits() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {NEEDS.map((n, i) => (
               <button key={i} onClick={() => setSelectedNeed(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedNeed === i ? '#F5E642' : '#E5E7EB',
-                  backgroundColor: selectedNeed === i ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedNeed === i ? '#F5E642′ : '#E5E7EB',
+                  backgroundColor: selectedNeed === i ? '#F5E642′ : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: ’pointer' }}>
                 {n.label}
               </button>
             ))}
           </div>
-          <div style={{ backgroundColor: '#FFFBEB', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
+          <div style={{ backgroundColor: '#FFFBEB', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
             <p style={{ fontSize: 14, color: '#0A1628', lineHeight: 1.7, margin: 0 }}>{NEEDS[selectedNeed].benefit}</p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function HomeownerWaitlistBenefits() {
                 <span style={{ fontSize: 24, minWidth: 32 }}>{t.emoji}</span>
                 <div>
                   <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{t.phase}</div>
-                  <div style={{ fontSize: 13, color: '#6B7280' }}>{t.desc}</div>
+                  <div style={{ fontSize: 13, color: '#6B7280′ }}>{t.desc}</div>
                 </div>
               </div>
             ))}

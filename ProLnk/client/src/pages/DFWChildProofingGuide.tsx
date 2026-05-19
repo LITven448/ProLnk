@@ -113,7 +113,7 @@ export default function DFWChildProofingGuide() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>
             🛡️ Build Your Child-Proofing Checklist
           </h2>
 
@@ -123,8 +123,8 @@ export default function DFWChildProofingGuide() {
               {homeTypes.map(t => (
                 <button key={t} onClick={() => { setHomeType(t); setShowResults(false); }}
                   style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '14px',
-                    backgroundColor: homeType === t ? '#F5E642' : '#1E3A5F',
-                    color: homeType === t ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
+                    backgroundColor: homeType === t ? '#F5E642′ : '#1E3A5F',
+                    color: homeType === t ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
                   {t}
                 </button>
               ))}
@@ -137,8 +137,8 @@ export default function DFWChildProofingGuide() {
               {ageRanges.map(a => (
                 <button key={a} onClick={() => { setAgeRange(a); setShowResults(false); }}
                   style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '13px',
-                    backgroundColor: ageRange === a ? '#F5E642' : '#1E3A5F',
-                    color: ageRange === a ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
+                    backgroundColor: ageRange === a ? '#F5E642′ : '#1E3A5F',
+                    color: ageRange === a ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
                   {a}
                 </button>
               ))}
@@ -160,8 +160,8 @@ export default function DFWChildProofingGuide() {
               <div key={ii} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: ii < section.items.length - 1 ? '1px solid #1E3A5F' : 'none' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '4px',
-                    backgroundColor: item.priority === 'Critical' || item.priority === 'Legal Requirement' ? '#FF444430' : item.priority === 'High' ? '#F5E64220' : '#1E3A5F',
-                    color: item.priority === 'Critical' || item.priority === 'Legal Requirement' ? '#FF7777' : item.priority === 'High' ? '#F5E642' : '#94A3B8' }}>
+                    backgroundColor: item.priority === 'Critical' || item.priority === 'Legal Requirement' ? '#FF444430′ : item.priority === ’High' ? '#F5E64220′ : '#1E3A5F',
+                    color: item.priority === 'Critical' || item.priority === 'Legal Requirement' ? '#FF7777′ : item.priority === ’High' ? '#F5E642′ : '#94A3B8' }}>
                     {item.priority.toUpperCase()}
                   </span>
                   <span style={{ fontSize: '14px' }}>{item.task}</span>

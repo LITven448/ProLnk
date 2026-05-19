@@ -125,9 +125,9 @@ export default function DFWFoodieNeighborhoodsGuide() {
             {foodTypes.map(f => (
               <button key={f} onClick={() => toggleFood(f)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  borderColor: selectedFood.includes(f) ? '#F5E642' : '#1e3a5f',
-                  background: selectedFood.includes(f) ? '#F5E642' : 'transparent',
-                  color: selectedFood.includes(f) ? '#0A1628' : '#94a3b8' }}>
+                  borderColor: selectedFood.includes(f) ? '#F5E642′ : '#1e3a5f',
+                  background: selectedFood.includes(f) ? '#F5E642′ : ’transparent',
+                  color: selectedFood.includes(f) ? '#0A1628′ : '#94a3b8' }}>
                 {f === 'bbq' ? '🥩 BBQ' : f === 'international' ? '🌍 International' : f === 'fine dining' ? '🍷 Fine Dining' : f === 'brunch' ? '🥞 Brunch' : '🏪 Food Halls'}
               </button>
             ))}
@@ -137,7 +137,7 @@ export default function DFWFoodieNeighborhoodsGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
             <input type="range" min={250000} max={900000} step={10000} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ flex: 1, accentColor: '#F5E642' }} />
+              style={{ flex: 1, accentColor: '#F5E642′ }} />
             <span style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</span>
           </div>
 
@@ -151,7 +151,7 @@ export default function DFWFoodieNeighborhoodsGuide() {
           <div>
             <h2 style={{ marginBottom: 16 }}>🍴 {results.length} Neighborhoods Match</h2>
             {results.map(n => (
-              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
                 <h3 style={{ margin: '0 0 6px', fontSize: 20 }}>{n.name}</h3>
                 <p style={{ color: '#94a3b8', marginBottom: 10 }}>{n.highlight}</p>
                 <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 10 }}>
@@ -169,7 +169,7 @@ export default function DFWFoodieNeighborhoodsGuide() {
         <div style={{ marginTop: 32, background: '#111e35', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', marginBottom: 12 }}>🔥 Dallas BBQ Culture</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-            Texas BBQ is not just food — it's identity. Pecan Lodge, Cattleack Barbeque, and Terry Black's are nationally ranked. Deep Ellum and Oak Cliff have the densest concentration. If BBQ matters, location within Dallas matters.
+            Texas BBQ is not just food — it's identity. Pecan Lodge, Cattleack Barbeque, and Terry Black’s are nationally ranked. Deep Ellum and Oak Cliff have the densest concentration. If BBQ matters, location within Dallas matters.
           </p>
         </div>
       </div>

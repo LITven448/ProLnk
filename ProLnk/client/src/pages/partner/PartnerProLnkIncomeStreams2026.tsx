@@ -61,7 +61,7 @@ export default function PartnerProLnkIncomeStreams2026() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
                   <span style={{ fontWeight: 700, color: '#0A1628', fontSize: 15 }}>Stream {s.id}: {s.name}</span>
-                  <span style={{ background: s.status === 'LIVE' ? '#D1FAE5' : '#FEF3C7', color: s.status === 'LIVE' ? '#065F46' : '#92400E', borderRadius: 20, padding: '2px 10px', fontSize: 12, fontWeight: 700 }}>{s.status}</span>
+                  <span style={{ background: s.status === 'LIVE' ? '#D1FAE5′ : '#FEF3C7', color: s.status === ’LIVE' ? '#065F46′ : '#92400E', borderRadius: 20, padding: '2px 10px', fontSize: 12, fontWeight: 700 }}>{s.status}</span>
                 </div>
                 <p style={{ color: '#64748B', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{s.desc}</p>
               </div>
@@ -74,13 +74,13 @@ export default function PartnerProLnkIncomeStreams2026() {
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 20 }}>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#64748B', marginBottom: 6 }}>Current Tier</label>
-              <select value={tier} onChange={e => setTier(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 13, color: '#0A1628' }}>
+              <select value={tier} onChange={e => setTier(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 13, color: '#0A1628′ }}>
                 {TIERS.map(t => <option key={t}>{t}</option>)}
               </select>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#64748B', marginBottom: 6 }}>Activity Level</label>
-              <select value={activity} onChange={e => setActivity(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 13, color: '#0A1628' }}>
+              <select value={activity} onChange={e => setActivity(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 13, color: '#0A1628′ }}>
                 {ACTIVITY.map(a => <option key={a}>{a}</option>)}
               </select>
             </div>

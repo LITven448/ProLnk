@@ -58,7 +58,7 @@ export default function DFWHVACPostInstallationGuide() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {stages.map(s => (
             <button key={s.id} onClick={() => setActiveStage(s.id)}
-              style={{ background: activeStage === s.id ? '#F5E642' : '#132035', color: activeStage === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: activeStage === s.id ? '#F5E642′ : '#132035', color: activeStage === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {s.icon} {s.label}
             </button>
           ))}

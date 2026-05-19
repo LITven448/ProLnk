@@ -21,13 +21,13 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  job_photo: "bg-blue-500/20 text-blue-400",
-  before_after: "bg-purple-500/20 text-purple-400",
-  profile: "bg-green-500/20 text-green-400",
-  property: "bg-amber-500/20 text-amber-400",
-  document: "bg-slate-500/20 text-slate-400",
-  marketing: "bg-pink-500/20 text-pink-400",
-  ai_generated: "bg-teal-500/20 text-teal-400",
+  job_photo: "bg-blue-500/20 text-blue-400″,
+  before_after: "bg-purple-500/20 text-purple-400″,
+  profile: "bg-green-500/20 text-green-400″,
+  property: "bg-amber-500/20 text-amber-400″,
+  document: "bg-slate-500/20 text-slate-400″,
+  marketing: "bg-pink-500/20 text-pink-400″,
+  ai_generated: "bg-teal-500/20 text-teal-400″,
 };
 
 function formatBytes(bytes: number): string {
@@ -67,71 +67,71 @@ export default function MediaLibraryAdmin() {
 
   return (
     <AdminLayout>
-      <div className="space-y-6">
+      <div className="space-y-6″>
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Image className="h-6 w-6 text-purple-400" />
+            <h1 className="text-2xl font-bold text-white flex items-center gap-2″>
+              <Image className="h-6 w-6 text-purple-400″ />
               Media Library
             </h1>
-            <p className="text-slate-400 mt-1">Manage all photos, documents, and AI-generated content</p>
+            <p className="text-slate-400 mt-1″>Manage all photos, documents, and AI-generated content</p>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-5 gap-4">
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2">
-                <FileImage className="h-4 w-4 text-slate-400" />
-                <span className="text-sm text-slate-400">Total Files</span>
+        <div className="grid grid-cols-5 gap-4″>
+          <Card className="bg-slate-800/60 border-slate-700″>
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2″>
+                <FileImage className="h-4 w-4 text-slate-400″ />
+                <span className="text-sm text-slate-400″>Total Files</span>
               </div>
-              <div className="text-2xl font-bold text-white mt-1">{stats?.total || 0}</div>
+              <div className="text-2xl font-bold text-white mt-1″>{stats?.total || 0}</div>
             </CardContent>
           </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2">
-                <HardDrive className="h-4 w-4 text-slate-400" />
-                <span className="text-sm text-slate-400">Storage Used</span>
+          <Card className="bg-slate-800/60 border-slate-700″>
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2″>
+                <HardDrive className="h-4 w-4 text-slate-400″ />
+                <span className="text-sm text-slate-400″>Storage Used</span>
               </div>
-              <div className="text-2xl font-bold text-white mt-1">{formatBytes(stats?.totalSizeBytes || 0)}</div>
+              <div className="text-2xl font-bold text-white mt-1″>{formatBytes(stats?.totalSizeBytes || 0)}</div>
             </CardContent>
           </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2">
-                <Camera className="h-4 w-4 text-blue-400" />
-                <span className="text-sm text-slate-400">Job Photos</span>
+          <Card className="bg-slate-800/60 border-slate-700″>
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2″>
+                <Camera className="h-4 w-4 text-blue-400″ />
+                <span className="text-sm text-slate-400″>Job Photos</span>
               </div>
-              <div className="text-2xl font-bold text-blue-400 mt-1">{stats?.jobPhotos || 0}</div>
+              <div className="text-2xl font-bold text-blue-400 mt-1″>{stats?.jobPhotos || 0}</div>
             </CardContent>
           </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-teal-400" />
-                <span className="text-sm text-slate-400">AI Generated</span>
+          <Card className="bg-slate-800/60 border-slate-700″>
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2″>
+                <Sparkles className="h-4 w-4 text-teal-400″ />
+                <span className="text-sm text-slate-400″>AI Generated</span>
               </div>
-              <div className="text-2xl font-bold text-teal-400 mt-1">{stats?.aiGenerated || 0}</div>
+              <div className="text-2xl font-bold text-teal-400 mt-1″>{stats?.aiGenerated || 0}</div>
             </CardContent>
           </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-2">
-                <Eye className="h-4 w-4 text-amber-400" />
-                <span className="text-sm text-slate-400">AI Analyzed</span>
+          <Card className="bg-slate-800/60 border-slate-700″>
+            <CardContent className="p-4″>
+              <div className="flex items-center gap-2″>
+                <Eye className="h-4 w-4 text-amber-400″ />
+                <span className="text-sm text-slate-400″>AI Analyzed</span>
               </div>
-              <div className="text-2xl font-bold text-amber-400 mt-1">{stats?.aiAnalyzed || 0}</div>
+              <div className="text-2xl font-bold text-amber-400 mt-1″>{stats?.aiAnalyzed || 0}</div>
             </CardContent>
           </Card>
         </div>
 
         {/* Filters */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3″>
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500″ />
             <Input
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -150,37 +150,37 @@ export default function MediaLibraryAdmin() {
               ))}
             </SelectContent>
           </Select>
-          <div className="flex items-center gap-1 bg-slate-800 rounded-lg p-1">
+          <div className="flex items-center gap-1 bg-slate-800 rounded-lg p-1″>
             <Button
               variant="ghost"
               size="icon"
-              className={viewMode === "grid" ? "bg-slate-700 text-white" : "text-slate-400"}
+              className={viewMode === "grid" ? "bg-slate-700 text-white" : "text-slate-400″}
               onClick={() => setViewMode("grid")}
             >
-              <Grid3X3 className="h-4 w-4" />
+              <Grid3X3 className="h-4 w-4″ />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              className={viewMode === "list" ? "bg-slate-700 text-white" : "text-slate-400"}
+              className={viewMode === "list" ? "bg-slate-700 text-white" : "text-slate-400″}
               onClick={() => setViewMode("list")}
             >
-              <List className="h-4 w-4" />
+              <List className="h-4 w-4″ />
             </Button>
           </div>
         </div>
 
         {/* Content */}
         {items.length === 0 ? (
-          <Card className="bg-slate-800/60 border-slate-700">
+          <Card className="bg-slate-800/60 border-slate-700″>
             <CardContent className="p-12 text-center">
-              <Image className="h-12 w-12 text-slate-600 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-white mb-2">No media files yet</h3>
-              <p className="text-slate-400">Media files will appear here as partners and homeowners upload photos and documents.</p>
+              <Image className="h-12 w-12 text-slate-600 mx-auto mb-4″ />
+              <h3 className="text-lg font-medium text-white mb-2″>No media files yet</h3>
+              <p className="text-slate-400″>Media files will appear here as partners and homeowners upload photos and documents.</p>
             </CardContent>
           </Card>
         ) : viewMode === "grid" ? (
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4″>
             {items.map((item) => (
               <Card key={item.id} className="bg-slate-800/60 border-slate-700 overflow-hidden group">
                 <div className="aspect-square bg-slate-900 relative">
@@ -188,35 +188,35 @@ export default function MediaLibraryAdmin() {
                     <img src={item.fileUrl} alt={item.fileName} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <FileImage className="h-12 w-12 text-slate-600" />
+                      <FileImage className="h-12 w-12 text-slate-600″ />
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                    <Button size="icon" variant="ghost" className="text-white hover:bg-white/20">
-                      <Eye className="h-4 w-4" />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2″>
+                    <Button size="icon" variant="ghost" className="text-white hover:bg-white/20″>
+                      <Eye className="h-4 w-4″ />
                     </Button>
                     <Button
                       size="icon"
                       variant="ghost"
-                      className="text-red-400 hover:bg-red-500/20"
+                      className="text-red-400 hover:bg-red-500/20″
                       onClick={() => deleteMutation.mutate({ id: item.id })}
                     >
-                      <Trash2 className="h-4 w-4" />
+                      <Trash2 className="h-4 w-4″ />
                     </Button>
                   </div>
                 </div>
-                <CardContent className="p-3">
+                <CardContent className="p-3″>
                   <p className="text-sm text-white truncate">{item.fileName}</p>
-                  <div className="flex items-center justify-between mt-1">
+                  <div className="flex items-center justify-between mt-1″>
                     <Badge className={CATEGORY_COLORS[item.category || "document"] + " text-xs"}>
                       {CATEGORY_LABELS[item.category || "document"]}
                     </Badge>
-                    <span className="text-xs text-slate-500">{formatBytes(item.fileSizeBytes || 0)}</span>
+                    <span className="text-xs text-slate-500″>{formatBytes(item.fileSizeBytes || 0)}</span>
                   </div>
                   {item.aiAnalyzed && (
-                    <div className="flex items-center gap-1 mt-1">
-                      <Sparkles className="h-3 w-3 text-teal-400" />
-                      <span className="text-xs text-teal-400">AI Analyzed</span>
+                    <div className="flex items-center gap-1 mt-1″>
+                      <Sparkles className="h-3 w-3 text-teal-400″ />
+                      <span className="text-xs text-teal-400″>AI Analyzed</span>
                     </div>
                   )}
                 </CardContent>
@@ -224,29 +224,29 @@ export default function MediaLibraryAdmin() {
             ))}
           </div>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-2″>
             {items.map((item) => (
-              <Card key={item.id} className="bg-slate-800/60 border-slate-700">
-                <CardContent className="p-3 flex items-center gap-4">
+              <Card key={item.id} className="bg-slate-800/60 border-slate-700″>
+                <CardContent className="p-3 flex items-center gap-4″>
                   <div className="w-12 h-12 rounded bg-slate-900 flex-shrink-0 overflow-hidden">
                     {item.mimeType?.startsWith("image/") ? (
                       <img src={item.fileUrl} alt={item.fileName} className="w-full h-full object-cover" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <FileImage className="h-6 w-6 text-slate-600" />
+                        <FileImage className="h-6 w-6 text-slate-600″ />
                       </div>
                     )}
                   </div>
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0″>
                     <p className="text-sm text-white truncate">{item.fileName}</p>
-                    <div className="flex items-center gap-2 mt-1">
+                    <div className="flex items-center gap-2 mt-1″>
                       <Badge className={CATEGORY_COLORS[item.category || "document"] + " text-xs"}>
                         {CATEGORY_LABELS[item.category || "document"]}
                       </Badge>
-                      <span className="text-xs text-slate-500">{formatBytes(item.fileSizeBytes || 0)}</span>
+                      <span className="text-xs text-slate-500″>{formatBytes(item.fileSizeBytes || 0)}</span>
                       {item.aiAnalyzed && (
-                        <span className="flex items-center gap-1 text-xs text-teal-400">
-                          <Sparkles className="h-3 w-3" /> Analyzed
+                        <span className="flex items-center gap-1 text-xs text-teal-400″>
+                          <Sparkles className="h-3 w-3″ /> Analyzed
                         </span>
                       )}
                     </div>
@@ -254,10 +254,10 @@ export default function MediaLibraryAdmin() {
                   <Button
                     size="icon"
                     variant="ghost"
-                    className="text-red-400 hover:bg-red-500/10"
+                    className="text-red-400 hover:bg-red-500/10″
                     onClick={() => deleteMutation.mutate({ id: item.id })}
                   >
-                    <Trash2 className="h-4 w-4" />
+                    <Trash2 className="h-4 w-4″ />
                   </Button>
                 </CardContent>
               </Card>

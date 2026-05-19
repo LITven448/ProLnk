@@ -30,7 +30,7 @@ export default function DFWHVACRedFlag2026() {
     : { label: 'No Red Flags Detected', color: '#22c55e', icon: '✅' };
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0′ }}>
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h1 style={{ color: '#F5E642', fontSize: '1.6rem', fontWeight: 700, marginBottom: '0.5rem' }}>
@@ -41,7 +41,7 @@ export default function DFWHVACRedFlag2026() {
 
         <div style={{ background: '#111e36', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
           {FLAGS.map((f, i) => (
-            <div key={f.id} style={{ borderBottom: i < FLAGS.length - 1 ? '1px solid #1e2d47' : 'none', paddingBottom: '0.75rem', marginBottom: '0.75rem' }}>
+            <div key={f.id} style={{ borderBottom: i < FLAGS.length - 1 ? '1px solid #1e2d47′ : ’none', paddingBottom: '0.75rem', marginBottom: '0.75rem' }}>
               <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer' }}>
                 <input type="checkbox" checked={selected.has(f.id)} onChange={() => toggle(f.id)}
                   style={{ width: '18px', height: '18px', accentColor: '#ef4444', marginTop: '2px' }} />
@@ -50,7 +50,7 @@ export default function DFWHVACRedFlag2026() {
                     <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>{f.label}</span>
                     <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '2px 8px', borderRadius: '4px',
                       background: f.level === 'reject' ? '#7f1d1d' : '#78350f',
-                      color: f.level === 'reject' ? '#fca5a5' : '#fcd34d' }}>
+                      color: f.level === 'reject' ? '#fca5a5′ : '#fcd34d' }}>
                       {f.level.toUpperCase()}
                     </span>
                   </div>

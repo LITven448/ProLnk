@@ -39,23 +39,23 @@ export default function DFWNegotiatingWithLendersGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>DFW lenders compete hard for your business — use that leverage.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📋 What Is Negotiable</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ background: '#0A1628' }}>
-                  <th style={{ color: '#F5E642', padding: '10px 12px', textAlign: 'left', borderRadius: '6px 0 0 0' }}>Item</th>
+                <tr style={{ background: '#0A1628′ }}>
+                  <th style={{ color: '#F5E642', padding: '10px 12px', textAlign: 'left', borderRadius: '6px 0 0 0′ }}>Item</th>
                   <th style={{ color: '#F5E642', padding: '10px 12px', textAlign: 'left' }}>Typical Cost</th>
-                  <th style={{ color: '#F5E642', padding: '10px 12px', textAlign: 'left', borderRadius: '0 6px 0 0' }}>Negotiation Tip</th>
+                  <th style={{ color: '#F5E642', padding: '10px 12px', textAlign: 'left', borderRadius: '0 6px 0 0′ }}>Negotiation Tip</th>
                 </tr>
               </thead>
               <tbody>
                 {negotiables.map((row, i) => (
                   <tr key={row.item} style={{ background: i % 2 === 0 ? '#F9FAFB' : '#fff' }}>
                     <td style={{ padding: '10px 12px', color: '#0A1628', fontWeight: 600 }}>{row.item}</td>
-                    <td style={{ padding: '10px 12px', color: '#374151' }}>{row.typical}</td>
-                    <td style={{ padding: '10px 12px', color: '#374151' }}>{row.notes}</td>
+                    <td style={{ padding: '10px 12px', color: '#374151′ }}>{row.typical}</td>
+                    <td style={{ padding: '10px 12px', color: '#374151′ }}>{row.notes}</td>
                   </tr>
                 ))}
               </tbody>
@@ -63,7 +63,7 @@ export default function DFWNegotiatingWithLendersGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🚫 What Lenders Will Not Budge On</h2>
           {['Government-set FHA/VA funding fees', 'Third-party title insurance rates (set by state)', 'Property tax escrow requirements', 'Mandatory PMI until 20% LTV (conventional)'].map(pt => (
             <div key={pt} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
@@ -73,7 +73,7 @@ export default function DFWNegotiatingWithLendersGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>💡 DFW Market Advantage</h2>
           <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.6 }}>DFW is one of the highest-volume mortgage markets in the US. Lenders — from community banks to national chains — actively compete for DFW borrowers. This gives you real negotiating power, especially on jumbo loans and conventional purchases above $400K.</p>
         </div>
@@ -93,7 +93,7 @@ export default function DFWNegotiatingWithLendersGuide() {
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Credit score</label>
-              <input type="number" value={creditScore} onChange={e => setCreditScore(e.target.value)} placeholder="e.g. 740" style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={creditScore} onChange={e => setCreditScore(e.target.value)} placeholder="e.g. 740″ style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Show My Leverage Points</button>

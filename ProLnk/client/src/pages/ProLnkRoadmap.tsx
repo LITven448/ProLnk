@@ -73,7 +73,7 @@ export default function ProLnkRoadmap() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#f1f5f9' }}>
+    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#f1f5f9′ }}>
       <div style={{ maxWidth: 880, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
@@ -85,7 +85,7 @@ export default function ProLnkRoadmap() {
         </div>
 
         <div style={{ position: 'relative', marginBottom: 64 }}>
-          <div style={{ position: 'absolute', left: 28, top: 0, bottom: 0, width: 2, background: '#334155' }} />
+          <div style={{ position: 'absolute', left: 28, top: 0, bottom: 0, width: 2, background: '#334155′ }} />
 
           {phases.map((phase, i) => (
             <div key={phase.quarter} style={{ marginBottom: 24, paddingLeft: 72, position: 'relative' }}>
@@ -152,7 +152,7 @@ export default function ProLnkRoadmap() {
           ].map(s => (
             <div key={s.label} style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#1e293b', borderRadius: 10, padding: '14px 20px' }}>
               <div style={{ width: 12, height: 12, borderRadius: '50%', background: s.color, flexShrink: 0 }} />
-              <span style={{ fontSize: 14, color: '#94a3b8' }}>{s.label}</span>
+              <span style={{ fontSize: 14, color: '#94a3b8′ }}>{s.label}</span>
             </div>
           ))}
         </div>

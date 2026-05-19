@@ -54,21 +54,21 @@ export default function DFWDivorceSaleGuide() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e5e7eb', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642' }}>Divorce Home Sale Guide — DFW</h1>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642′ }}>Divorce Home Sale Guide — DFW</h1>
         <p style={{ fontSize: '1.1rem', color: '#9ca3af', marginBottom: '2rem' }}>Texas community property rules, buyouts, court sales, and your financial options</p>
         {sections.map((s, i) => (
           <div key={i} style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '1rem', border: '1px solid #1e3a5f' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>{s.icon} {s.heading}</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>{s.icon} {s.heading}</h2>
             <p style={{ color: '#d1d5db', lineHeight: 1.7, whiteSpace: 'pre-line' }}>{s.body}</p>
           </div>
         ))}
         <div style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Divorce Sale Impact Calculator</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Divorce Sale Impact Calculator</h2>
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {[['Home Value ($)', homeValue, setHomeValue], ['Mortgage Balance ($)', mortgage, setMortgage]].map(([label, val, setter]: any) => (
               <div key={label}>
                 <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#9ca3af' }}>{label}</label>
-                <input type="number" value={val} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0" />
+                <input type="number" value={val} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0″ />
               </div>
             ))}
             <div>
@@ -81,10 +81,10 @@ export default function DFWDivorceSaleGuide() {
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Calculate Options</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#1a2e4a', borderRadius: '8px', border: '1px solid #374151' }}>
-              <p>Total Equity: <strong style={{ color: result.equity >= 0 ? '#4ade80' : '#f87171' }}>${result.equity.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong></p>
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#1a2e4a', borderRadius: '8px', border: '1px solid #374151′ }}>
+              <p>Total Equity: <strong style={{ color: result.equity >= 0 ? '#4ade80′ : '#f87171' }}>${result.equity.toLocaleString(’en-US', { maximumFractionDigits: 0 })}</strong></p>
               <p>Est. Sale Costs (~8%): <strong>-${result.costs.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong></p>
-              <p>Net Per Spouse: <strong style={{ color: result.netEach >= 0 ? '#4ade80' : '#f87171' }}>${result.netEach.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong></p>
+              <p>Net Per Spouse: <strong style={{ color: result.netEach >= 0 ? '#4ade80′ : '#f87171' }}>${result.netEach.toLocaleString(’en-US', { maximumFractionDigits: 0 })}</strong></p>
               <div style={{ marginTop: '0.75rem', padding: '0.75rem', backgroundColor: '#0f2137', borderRadius: '8px' }}>
                 <p style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.25rem' }}>📋 Recommended Path:</p>
                 <p style={{ color: '#d1d5db' }}>{result.guidance}</p>

@@ -39,21 +39,21 @@ export default function DFWTreeRootIntrusion2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔍 Select Intrusion Type</h2>
           <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {[{ v: 'sewer', l: '🚽 Sewer Line' }, { v: 'water', l: '💧 Water Line' }, { v: 'foundation', l: '🏠 Foundation' }, { v: 'driveway', l: '🚗 Driveway' }].map(t => (
-              <button key={t.v} onClick={() => setIntrusionType(t.v)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: intrusionType === t.v ? '#F5E642' : '#334155', color: intrusionType === t.v ? '#0A1628' : '#fff', fontWeight: 600 }}>{t.l}</button>
+              <button key={t.v} onClick={() => setIntrusionType(t.v)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: intrusionType === t.v ? '#F5E642′ : '#334155', color: intrusionType === t.v ? '#0A1628' : '#fff', fontWeight: 600 }}>{t.l}</button>
             ))}
           </div>
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '.25rem' }}>⚠️ Risk Level</div>
-            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0' }}>{data.risk}</div>
+            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0′ }}>{data.risk}</div>
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '.25rem' }}>🛠️ Action Plan</div>
-            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0' }}>{data.action}</div>
+            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0′ }}>{data.action}</div>
           </div>
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '.25rem' }}>🌳 Remove the Tree?</div>
-            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0' }}>{data.remove}</div>
+            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0′ }}>{data.remove}</div>
           </div>
         </div>
 

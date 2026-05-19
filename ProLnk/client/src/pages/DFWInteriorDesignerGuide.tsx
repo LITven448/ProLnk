@@ -92,12 +92,12 @@ export default function DFWInteriorDesignerGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6 }}>Total Budget</label>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder='e.g. $30,000' style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #ddd', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder='e.g. $30,000′ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #ddd', fontSize: 15, boxSizing: ’border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#1a1a1a', color: '#fff', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get My Recommendation</button>
           {result && (
-            <div style={{ marginTop: 20, background: result.needsDesigner ? '#e8f5e9' : '#fff8e1', borderRadius: 8, padding: 20 }}>
+            <div style={{ marginTop: 20, background: result.needsDesigner ? '#e8f5e9′ : '#fff8e1', borderRadius: 8, padding: 20 }}>
               <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 8 }}>{result.needsDesigner ? '✅ A designer adds clear value here' : '🛠️ DIY or e-design is viable'}</div>
               <div style={{ fontSize: 15, marginBottom: 8, fontWeight: 600 }}>{result.fee}</div>
               <div style={{ fontSize: 14, color: '#555', lineHeight: 1.6 }}>{result.tip}</div>

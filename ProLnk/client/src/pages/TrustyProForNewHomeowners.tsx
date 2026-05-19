@@ -52,7 +52,7 @@ export default function TrustyProForNewHomeowners() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 48 }}>
           {stats.map((s, i) => (
             <div key={i} style={{ background: '#fff', borderRadius: 12, border: '1px solid #e2e8f0', padding: 20, textAlign: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#0ea5e9' }}>{s.val}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#0ea5e9′ }}>{s.val}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4, lineHeight: 1.4 }}>{s.label}</div>
             </div>
           ))}
@@ -78,7 +78,7 @@ export default function TrustyProForNewHomeowners() {
                     <div style={{ fontSize: 12, color: '#0ea5e9', fontWeight: 700, marginBottom: 2 }}>{step.timeframe}</div>
                     <div style={{ fontSize: 15, fontWeight: 600, color: '#1a202c' }}>{step.action}</div>
                   </div>
-                  <span style={{ fontSize: 16, color: '#94a3b8' }}>{openItem === i ? '▲' : '▼'}</span>
+                  <span style={{ fontSize: 16, color: '#94a3b8′ }}>{openItem === i ? '▲' : '▼'}</span>
                 </button>
                 {openItem === i && (
                   <div style={{ padding: '0 24px 20px 80px' }}>
@@ -108,7 +108,7 @@ export default function TrustyProForNewHomeowners() {
         <div style={{ background: '#fffbeb', borderRadius: 12, border: '1px solid #fcd34d', padding: 24, marginBottom: 48 }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 8px', color: '#92400e' }}>📜 About Origination Rights</h3>
           <p style={{ fontSize: 14, color: '#78350f', lineHeight: 1.7, margin: 0 }}>
-            The pro who added your home to the TrustyPro vault before you purchased it holds origination rights — a permanent connection to your home's service history. But this doesn't affect your benefits: you still get full access to AI scans, health scores, verified pros, and all platform features. Origination rights only affect how platform fees are distributed between pros — never your costs.
+            The pro who added your home to the TrustyPro vault before you purchased it holds origination rights — a permanent connection to your home's service history. But this doesn’t affect your benefits: you still get full access to AI scans, health scores, verified pros, and all platform features. Origination rights only affect how platform fees are distributed between pros — never your costs.
           </p>
         </div>
 

@@ -57,14 +57,14 @@ export default function DFWHVACProLnkSummaryFinal() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🔗</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>How ProLnk Helps with DFW HVAC</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>How ProLnk Helps with DFW HVAC</h1>
           <p style={{ color: '#8899AA', fontSize: '1rem' }}>ProLnk's role in every DFW HVAC scenario — find your situation below</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', marginBottom: '2rem' }}>
           {roles.map(r => (
             <button key={r.id} onClick={() => setActiveRole(r.id)} style={{ padding: '1rem', borderRadius: 12, border: `2px solid ${activeRole === r.id ? '#F5E642' : '#1E3A5F'}`, background: activeRole === r.id ? '#0D2A0D' : '#0D1F35', color: '#fff', cursor: 'pointer', textAlign: 'left' }}>
-              <div style={{ fontWeight: 700, fontSize: '1rem', color: activeRole === r.id ? '#F5E642' : '#fff' }}>{r.label}</div>
+              <div style={{ fontWeight: 700, fontSize: '1rem', color: activeRole === r.id ? '#F5E642′ : '#fff' }}>{r.label}</div>
               <div style={{ fontSize: '0.8rem', color: '#8899AA', marginTop: 4 }}>{r.desc}</div>
             </button>
           ))}

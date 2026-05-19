@@ -98,7 +98,7 @@ export default function DFWPublicAdjusterGuide() {
               { label: 'Texas License Required', value: 'Yes — TDI regulated', note: 'Verify at tdi.texas.gov before signing' },
               { label: 'Average Recovery Increase', value: '25–55% higher settlement', note: 'Varies widely by claim type and complexity' },
             ].map(c => (
-              <div key={c.label} style={{ background: '#F8F9FA', borderRadius: 12, padding: 20, borderTop: '3px solid #0A1628' }}>
+              <div key={c.label} style={{ background: '#F8F9FA', borderRadius: 12, padding: 20, borderTop: '3px solid #0A1628′ }}>
                 <div style={{ color: '#4A5568', fontSize: 13, marginBottom: 6 }}>{c.label}</div>
                 <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, marginBottom: 4 }}>{c.value}</div>
                 <div style={{ color: '#718096', fontSize: 12 }}>{c.note}</div>
@@ -110,7 +110,7 @@ export default function DFWPublicAdjusterGuide() {
         <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, marginBottom: 40, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>✅ How to Vet a Public Adjuster in DFW</h2>
           {vetChecklist.map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '12px 0', borderBottom: i < vetChecklist.length - 1 ? '1px solid #E2E8F0' : 'none' }}>
+            <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '12px 0', borderBottom: i < vetChecklist.length - 1 ? '1px solid #E2E8F0′ : ’none' }}>
               <div style={{ background: '#0A1628', color: '#F5E642', borderRadius: 50, width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
               <div style={{ color: '#1A2640', fontSize: 15, lineHeight: 1.6 }}>{item}</div>
             </div>
@@ -123,7 +123,7 @@ export default function DFWPublicAdjusterGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 28 }}>
             <div>
               <label style={{ color: '#4A5568', fontSize: 13, display: 'block', marginBottom: 8 }}>Current Claim Amount: ${claimAmount.toLocaleString()}</label>
-              <input type="range" min={5000} max={500000} step={5000} value={claimAmount} onChange={e => setClaimAmount(Number(e.target.value))} style={{ width: '100%', accentColor: '#0A1628' }} />
+              <input type="range" min={5000} max={500000} step={5000} value={claimAmount} onChange={e => setClaimAmount(Number(e.target.value))} style={{ width: '100%', accentColor: '#0A1628′ }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#718096', fontSize: 12, marginTop: 4 }}><span>$5K</span><span>$500K</span></div>
             </div>
             <div>

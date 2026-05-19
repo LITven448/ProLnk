@@ -38,7 +38,7 @@ export default function DFWHVACProLnkEvolution() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>🎯 Your Role in the DFW HVAC Market</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
             {roles.map(r => (
-              <button key={r.key} onClick={() => setSelected(r.key)} style={{ background: selected === r.key ? '#F5E642' : '#1a3a5c', color: selected === r.key ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{r.label}</button>
+              <button key={r.key} onClick={() => setSelected(r.key)} style={{ background: selected === r.key ? '#F5E642′ : '#1a3a5c', color: selected === r.key ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{r.label}</button>
             ))}
           </div>
           {match && (
@@ -48,7 +48,7 @@ export default function DFWHVACProLnkEvolution() {
                 { phase: '🔵 Next 12 Months', content: match.next },
                 { phase: '🟡 2027+', content: match.future },
               ].map(p => (
-                <div key={p.phase} style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+                <div key={p.phase} style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
                   <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.4rem', fontSize: '0.9rem' }}>{p.phase}</div>
                   <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>{p.content}</div>
                 </div>

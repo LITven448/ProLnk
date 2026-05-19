@@ -496,7 +496,6 @@ const WarrantyTracker = lazy(() => import("./pages/homeowner/WarrantyTracker"));
 const PartnerResourceCenter = lazy(() => import("./pages/PartnerResourceCenter"));
 const PhotoGuide = lazy(() => import("./pages/PhotoGuide"));
 const MaximizeEarnings = lazy(() => import("./pages/MaximizeEarnings"));
-const PartnerFAQ = lazy(() => import("./pages/PartnerFAQ"));
 const PartnerSuccessStories = lazy(() => import("./pages/PartnerSuccessStories"));
 const ProLnkAcademy = lazy(() => import("./pages/resources/ProLnkAcademy"));
 const SuccessStoriesPage = lazy(() => import("./pages/resources/SuccessStoriesPage"));

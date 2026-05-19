@@ -113,7 +113,7 @@ export default function PartnerWeekendWarriorGuide() {
         <h2 style={{ fontSize: 24, fontWeight: 700, color: '#0f172a', marginBottom: 20 }}>💰 Tax Advantage of Part-Time Self-Employment</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🚗', title: 'Vehicle Mileage', desc: '67 cents/mile deduction in 2026. If you drive 300 miles/month for ProLnk jobs, that's $240/mo in deductions.' },
+            { icon: '🚗', title: 'Vehicle Mileage', desc: '67 cents/mile deduction in 2026. If you drive 300 miles/month for ProLnk jobs, that is $240/mo in deductions.' },
             { icon: '🔧', title: 'Tools & Equipment', desc: 'Tools purchased for your ProLnk work are deductible. New tool set, specialty equipment, safety gear.' },
             { icon: '📱', title: 'Phone & App Costs', desc: 'Portion of phone bill used for business (typically 50-80% if you use it for job coordination).' },
             { icon: '📚', title: 'Training & Licenses', desc: 'License renewal fees, continuing education, certifications — all deductible against self-employment income.' },

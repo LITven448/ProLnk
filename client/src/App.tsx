@@ -586,7 +586,7 @@ const LazyFallback = () => (
 );
 
 const WAITLIST_ALLOWED = new Set([
-  "/", "/apply", "/join", "/pro-waitlist", "/home-waitlist", "/referral",
+  "/apply", "/join", "/pro-waitlist", "/home-waitlist", "/referral",
   "/waitlist/pro", "/waitlist/homeowner", "/waitlist/homeowner/status",
   "/waitlist-status", "/waitlist/status", "/success",
   "/founding-partner", "/founding-network", "/leaderboard", "/network/leaderboard",

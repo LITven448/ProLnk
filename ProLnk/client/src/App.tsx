@@ -1271,8 +1271,6 @@ function Router() {
       <Route path="/my-home/roof-inspection" component={RoofInspectionGuide} />
       <Route path="/my-home/drainage-grading" component={DrainageAndGradingGuide} />
       <Route path="/my-home/driveway-maintenance" component={DrivewayMaintenanceGuide} />
-// <Route path="/my-home/garage-organization" component={GarageOrganizationGuide} />  // QUARANTINED: build error
-// <Route path="/my-home/home-theater" component={HomeTheaterGuide} />  // QUARANTINED: build error
       <Route path="/resources/network-growth-playbook" component={NetworkGrowthPlaybook} />
       <Route path="/resources/prolnk-vs-going-alone" component={ProLnkVsGoingAlone} />
       <Route path="/resources/weekend-warrior" component={PartnerWeekendWarriorGuide} />

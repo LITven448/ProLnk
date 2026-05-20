@@ -993,7 +993,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
   // Capture referral code from URL
   const inboundRefCode = (() => {
     const p = new URLSearchParams(window.location.search);
-    return p.get("ref") || localStorage.getItem("prolnk_ref_code") || undefined;
+    return p.get("ref") || localStorage.getItem("prolnk_referral_code") || undefined;
   })();
 
   const join = trpc.waitlist.joinProWaitlist.useMutation({
@@ -1271,24 +1271,36 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             </select>
             <button
               onClick={() => {
-                if (!form.firstName || !form.email || !form.phone || !form.companyName) {
-                  toast.error("Name, email, phone, and company name are required."); return;
+                if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.companyName) {
+                  toast.error("First name, last name, email, phone, and company name are required."); return;
+                }
+                if (!form.city) {
+                  toast.error("City is required."); return;
+                }
+                const stateNorm = (form.state || "").trim().toUpperCase().slice(0, 2);
+                if (stateNorm.length !== 2 || !/^[A-Z]{2}$/.test(stateNorm)) {
+                  toast.error("Please enter a valid 2-letter state (e.g. TX)."); return;
+                }
+                if (form.phone.replace(/\D/g, "").length < 7) {
+                  toast.error("Please enter a valid phone number."); return;
                 }
                 if (selectedTrades.length === 0) {
                   toast.error("Please select at least one trade or service."); return;
                 }
+                const tradesNote = selectedTrades.length > 1 ? ` | Additional trades: ${selectedTrades.slice(1).join(", ")}` : "";
+                const baseNote = charterCode ? `Charter invite: ${charterCode}` : "";
                 join.mutate({
-                  firstName: form.firstName,
-                  lastName: form.lastName || "-",
-                  email: form.email,
+                  firstName: form.firstName.trim(),
+                  lastName: form.lastName.trim(),
+                  email: form.email.trim().toLowerCase(),
                   phone: form.phone,
-                  trade: selectedTrades[0] || "handyman",
-                  primaryCity: form.city || "Not provided",
-                  primaryState: form.state,
+                  trade: selectedTrades[0],
+                  primaryCity: form.city.trim(),
+                  primaryState: stateNorm,
                   referredBy: inboundRefCode ?? undefined,
                   workStyle: workStyle || undefined,
                   employeeCount: form.employeeCount || undefined,
-                  notes: charterCode ? `Charter invite: ${charterCode}` : undefined,
+                  notes: (baseNote + tradesNote).trim() || undefined,
                 });
               }}
               disabled={join.isPending}

@@ -107,16 +107,32 @@ export default function HomeownerWaitlistForm() {
       toast.error("Please fill in all required fields.");
       return;
     }
+    // Validate state format (2 letters)
+    const stateNorm = state.trim().toUpperCase().slice(0, 2);
+    if (stateNorm.length !== 2 || !/^[A-Z]{2}$/.test(stateNorm)) {
+      toast.error("Please enter a valid 2-letter state (e.g. TX).");
+      return;
+    }
+    // Validate zip format (5 digits or 5-4)
+    const zipNorm = zipCode.trim();
+    if (!/^\d{5}(-\d{4})?$/.test(zipNorm)) {
+      toast.error("Please enter a valid US zip code (5 digits).");
+      return;
+    }
+    // Compose serviceNeeded with additional notes if provided
+    const composedService = additionalNotes.trim()
+      ? `${serviceNeeded} | Notes: ${additionalNotes.trim()}`
+      : serviceNeeded;
     submitMutation.mutate({
       firstName: firstName.trim(),
       lastName: lastName.trim(),
-      email: email.trim(),
+      email: email.trim().toLowerCase(),
       phone: phone.trim() || undefined,
       address: address.trim(),
       city: city.trim(),
-      state: state.trim(),
-      zipCode: zipCode.trim(),
-      serviceNeeded,
+      state: stateNorm,
+      zipCode: zipNorm,
+      serviceNeeded: composedService,
       referredBy: referralCode ?? undefined,
     });
   };

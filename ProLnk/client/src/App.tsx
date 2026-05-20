@@ -719,9 +719,10 @@ const WAITLIST_ALLOWED = new Set([
 function WaitlistGuard() {
   const [location, navigate] = useLocation();
   useEffect(() => {
+    const search = typeof window !== "undefined" ? window.location.search : "";
     if (location === "/") {
       const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-      navigate(isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist", { replace: true });
+      navigate((isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist") + search, { replace: true });
       return;
     }
     if (location.startsWith("/admin")) return;
@@ -729,7 +730,7 @@ function WaitlistGuard() {
     if (location.startsWith("/trustypro/")) return;
     if (WAITLIST_ALLOWED.has(location)) return;
     const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-    navigate(isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist", { replace: true });
+    navigate((isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist") + search, { replace: true });
   }, [location, navigate]);
   return null;
 }

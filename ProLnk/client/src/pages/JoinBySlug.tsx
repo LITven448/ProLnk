@@ -32,7 +32,7 @@ export default function JoinBySlug() {
           join the ProLnk founding network directly.
         </p>
         <Link
-          href="/apply"
+          href="/pro-waitlist"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#F5E642] hover:bg-[#f0dc30] text-[#0A1628] font-bold rounded-xl transition-colors"
         >
           Apply Now
@@ -65,7 +65,7 @@ export default function JoinBySlug() {
         </p>
 
         <Link
-          href={`/apply?ref=${data.referralCode}`}
+          href={`/pro-waitlist?ref=${data.referralCode}`}
           className="inline-flex items-center gap-2 px-8 py-4 bg-[#F5E642] hover:bg-[#f0dc30] text-[#0A1628] font-black text-lg rounded-xl transition-colors shadow-lg shadow-[#F5E642]/20"
         >
           Join ProLnk Now

@@ -77,14 +77,17 @@ export default function TrustyProWaitlist() {
     if (!zipCode.trim() || !/^\d{5}/.test(zipCode.trim())) { toast.error("Valid ZIP code is required."); return; }
     if (!serviceNeeded) { toast.error("Please select a service."); return; }
 
+    if (!lastName.trim()) { toast.error("Last name is required."); return; }
+    const stateNorm = (state || "TX").trim().toUpperCase().slice(0, 2);
+    if (stateNorm.length !== 2 || !/^[A-Z]{2}$/.test(stateNorm)) { toast.error("Please enter a valid 2-letter state (e.g. TX)."); return; }
     joinWaitlist.mutate({
       firstName: firstName.trim(),
-      lastName: lastName.trim() || ".",
-      email: email.trim(),
+      lastName: lastName.trim(),
+      email: email.trim().toLowerCase(),
       phone: phone.trim() || undefined,
       address: address.trim(),
       city: city.trim(),
-      state: state || "TX",
+      state: stateNorm,
       zipCode: zipCode.trim().slice(0, 5),
       serviceNeeded,
     });

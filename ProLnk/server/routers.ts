@@ -4754,6 +4754,17 @@ Return a JSON object with:
       .input(z.object({ source: z.enum(['pro', 'home', 'all']) }))
       .query(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).exportWaitlist(input)),
 
+    claimSlug: publicProcedure
+      .input(z.object({
+        email: z.string().email().toLowerCase(),
+        slug: z.string().min(3).max(30),
+      }))
+      .mutation(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).claimSlug(input)),
+
+    resolveSlug: publicProcedure
+      .input(z.object({ slug: z.string().min(1).max(30) }))
+      .query(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).resolveSlug(input)),
+
     getPublicCounts: publicProcedure.query(async () => {
       const pool = await getPool();
       if (!pool) return { pros: 0, homes: 0 };

@@ -221,8 +221,8 @@ const ADD_ONS = [
 // --- Who Can Join -------------------------------------------------------------
 const WHO_CAN_JOIN = [
   { group: "Outdoor & Lawn", emoji: "", categories: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Trimming & Removal", "Irrigation & Sprinklers", "Hardscaping & Patios", "Outdoor Lighting", "Drainage Solutions"] },
-  { group: "Home Maintenance", emoji: "[TOOL]", categories: ["Handyman Services", "Fencing & Gates", "Roofing & Gutters", "HVAC Service & Repair", "Plumbing", "Electrical", "Garage Door Service", "Foundation Repair"] },
-  { group: "Cleaning & Restoration", emoji: "[SPARK]", categories: ["House Cleaning", "Pressure Washing", "Window Cleaning", "Carpet Cleaning", "Gutter Cleaning", "Junk Removal", "Mold Remediation"] },
+  { group: "Home Maintenance", emoji: "", categories: ["Handyman Services", "Fencing & Gates", "Roofing & Gutters", "HVAC Service & Repair", "Plumbing", "Electrical", "Garage Door Service", "Foundation Repair"] },
+  { group: "Cleaning & Restoration", emoji: "", categories: ["House Cleaning", "Pressure Washing", "Window Cleaning", "Carpet Cleaning", "Gutter Cleaning", "Junk Removal", "Mold Remediation"] },
   { group: "Specialty Trades", emoji: "", categories: ["Interior & Exterior Painting", "Pool Service & Repair", "Pest Control", "Security Systems", "Solar Installation", "Kitchen & Bath Remodeling"] },
   { group: "Pet & Animal", emoji: "", categories: ["Pet Waste Removal", "Dog Walking & Pet Sitting", "Pet Grooming"] },
 ];

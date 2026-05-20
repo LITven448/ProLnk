@@ -705,7 +705,7 @@ const LazyFallback = () => (
 );
 
 const WAITLIST_ALLOWED = new Set([
-  "/join", "/pro-waitlist", "/home-waitlist", "/referral",
+  "/join", "/pro-waitlist", "/home-waitlist", "/referral", "/dashboard",
   "/waitlist/pro", "/waitlist/homeowner", "/waitlist/homeowner/status",
   "/waitlist-status", "/waitlist/status", "/success",
   "/founding-partner", "/founding-network", "/leaderboard", "/network/leaderboard",
@@ -726,6 +726,8 @@ function WaitlistGuard() {
       return;
     }
     if (location.startsWith("/admin")) return;
+    if (location.startsWith("/dashboard")) return;
+    if (location.startsWith("/my-home")) return;
     if (location.startsWith("/join/")) return;
     if (location.startsWith("/trustypro/")) return;
     if (WAITLIST_ALLOWED.has(location)) return;

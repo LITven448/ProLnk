@@ -12,7 +12,7 @@ interface TrustyProLogoProps {
  * TrustyPro brand logo -- shield + house + checkmark symbol with wordmark.
  * Uses the generated CDN image asset.
  */
-export function TrustyProLogo({ variant = "light", className = "", height = 40 }: TrustyProLogoProps) {
+export function TrustyProLogo({ variant = "light", className = "", height = 56 }: TrustyProLogoProps) {
   // For dark backgrounds, we can apply a brightness filter if needed
   const style: React.CSSProperties = {
     height,

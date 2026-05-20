@@ -986,7 +986,7 @@ export default function TrustyProHome() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/trustypro">
-            <TrustyProLogo height={52} />
+            <TrustyProLogo height={72} />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"]].map(([id,label]) => (
@@ -1762,7 +1762,7 @@ Join the TrustyPro waitlist today. We'll build your home profile, save your spot
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-10">
             <div className="md:col-span-2">
-              <TrustyProLogo height={34} variant="dark" />
+              <TrustyProLogo height={44} variant="dark" />
               <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-xs">At TrustyPro, we transform DFW homes with verified professionals who blend style, function, and lasting quality into every project.</p>
             </div>
             <div>

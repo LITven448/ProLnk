@@ -15,7 +15,7 @@ interface ProLnkLogoProps {
  * The "dark" variant inverts the wordmark text to white (not yet implemented -- use light for now).
  * The "icon-only" variant shows just the teal triangle icon portion.
  */
-export function ProLnkLogo({ variant = "light", className = "", height = 40 }: ProLnkLogoProps) {
+export function ProLnkLogo({ variant = "light", className = "", height = 56 }: ProLnkLogoProps) {
   // The cropped logo image has a 3:1 aspect ratio (1677565 px)
   const aspectRatio = 1677 / 565;
   const width = Math.round(height * aspectRatio);

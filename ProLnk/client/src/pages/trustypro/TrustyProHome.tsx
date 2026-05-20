@@ -54,12 +54,12 @@ const SERVICES = [
 
 // --- Projects ------------------------------------------------------------------
 const PROJECTS = [
-  { cat: "Kitchen Remodel",   year: "2025", title: "Modern Kitchen Transformation",   desc: "Full gut renovation with quartz countertops and custom cabinetry in Frisco.", img: CDN.projectKitchen },
-  { cat: "Exterior",          year: "2025", title: "Luxury Curb Appeal Upgrade",       desc: "Complete exterior renovation with new siding, windows, and landscaping.", img: CDN.heroExterior },
-  { cat: "Bathroom",          year: "2025", title: "Master Bath Spa Retreat",          desc: "Walk-in shower, soaking tub, and heated floors in a Plano home.", img: CDN.projectBath },
-  { cat: "Flooring",          year: "2025", title: "Hardwood Throughout",              desc: "3,200 sq ft of white oak hardwood installed in a Frisco home.", img: CDN.projectFloor },
-  { cat: "Landscaping",       year: "2025", title: "Backyard Oasis",                   desc: "Full landscaping with pergola, turf, and outdoor lighting in Allen.", img: CDN.projectLand },
-  { cat: "Painting",          year: "2025", title: "Interior Refresh",                 desc: "Full interior repaint with premium Sherwin-Williams paint in McKinney.", img: CDN.projectPaint },
+  { cat: "Kitchen Remodel",   year: "2026", title: "Modern Kitchen Transformation",   desc: "Full gut renovation with quartz countertops and custom cabinetry in Frisco.", img: CDN.projectKitchen },
+  { cat: "Exterior",          year: "2026", title: "Luxury Curb Appeal Upgrade",       desc: "Complete exterior renovation with new siding, windows, and landscaping.", img: CDN.heroExterior },
+  { cat: "Bathroom",          year: "2026", title: "Master Bath Spa Retreat",          desc: "Walk-in shower, soaking tub, and heated floors in a Plano home.", img: CDN.projectBath },
+  { cat: "Flooring",          year: "2026", title: "Hardwood Throughout",              desc: "3,200 sq ft of white oak hardwood installed in a Frisco home.", img: CDN.projectFloor },
+  { cat: "Landscaping",       year: "2026", title: "Backyard Oasis",                   desc: "Full landscaping with pergola, turf, and outdoor lighting in Allen.", img: CDN.projectLand },
+  { cat: "Painting",          year: "2026", title: "Interior Refresh",                 desc: "Full interior repaint with premium Sherwin-Williams paint in McKinney.", img: CDN.projectPaint },
 ];
 
 // --- Benefits ------------------------------------------------------------------
@@ -74,7 +74,7 @@ const BENEFITS = [
 
 // --- FAQ -----------------------------------------------------------------------
 const FAQS = [
-  { q: "What is TrustyPro?", a: "TrustyPro is a homeowner platform launching soon in DFW. We help you build a complete profile of your home and connect you with verified, certified pros for any maintenance or improvement project. Free to join the waitlist — paid pros pay us when they close a job." },
+  { q: "What is TrustyPro?", a: "TrustyPro is a homeowner platform launching soon in DFW. We help you build a complete profile of your home and connect you with verified, certified pros for any maintenance or improvement project. Free for homeowners — always. We're funded by a small platform fee paid by pros when they close a job." },
   { q: "When does TrustyPro launch?", a: "We're onboarding our founding contractor network now. Homeowner access opens in waves as we verify enough TrustyPro Certified pros in each ZIP code. Join the waitlist to be notified the moment your area is live." },
   { q: "What happens after I join the waitlist?", a: "You'll get a confirmation email and a private home profile we build together. As we onboard pros in your area, we'll match your home with the right professionals for the projects you're planning — no spam, no calls from random contractors." },
   { q: "How are TrustyPro contractors verified?", a: "Every TrustyPro Certified pro is background-checked, license-verified, insured, and reviewed by our network. They earn the badge only after passing onboarding." },
@@ -197,7 +197,7 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight mb-4">
             Finding a Contractor Is<br />
-            <span style={{ color: "#4f46e5" }}>Still Broken in 2025.</span>
+            <span style={{ color: "#4f46e5" }}>Still Broken in 2026.</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             Most homeowners don't realize they're overpaying, getting ghosted, or hiring unverified strangers. Here's the reality of the traditional contractor search.
@@ -1641,25 +1641,7 @@ export default function TrustyProHome() {
               </AnimSection>
             ))}
           </div>
-          <AnimSection variants={fadeUp} className="mt-8">
-            <div className="bg-white rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 border border-gray-100 text-center sm:text-left">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0" style={{ backgroundColor: ACCENT }}>
-                <Award className="w-7 h-7 text-white" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-black text-gray-900 mb-1">TrustyPro Certified Badge</h3>
-                <p className="text-sm text-gray-500">Only pros who pass all 7 checks earn the TrustyPro Certified badge. If a pro loses their license or lets insurance lapse, they're removed immediately — no exceptions.</p>
-              </div>
-              <motion.button
-                onClick={goToWizard}
-                className="px-6 py-3 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity flex-shrink-0"
-                style={{ backgroundColor: ACCENT }}
-                whileHover={{ scale: 1.04 }}
-              >
-                Join the Waitlist
-              </motion.button>
-            </div>
-          </AnimSection>
+
         </div>
       </section>
 

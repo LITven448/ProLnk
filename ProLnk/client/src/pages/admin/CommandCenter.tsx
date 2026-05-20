@@ -114,7 +114,7 @@ function ChartTooltip({ active, payload, label }: any) {
 
 export default function CommandCenter() {
   const { user, loading: authLoading } = useAuth();
-  const metrics = trpc.waitlistAdmin.getWaitlistMetrics.useQuery(undefined, {
+  const metrics = trpc.waitlist.getWaitlistMetrics.useQuery(undefined, {
     retry: 1,
     refetchOnWindowFocus: false,
   });

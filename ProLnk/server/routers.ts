@@ -44,6 +44,7 @@ import { checkrRouter } from "./routers/checkr";
 import { facilityRouter } from "./routers/facility";
 import { projectBidsRouter } from "./routers/projectBids";
 import { waitlistRouter } from "./routers/waitlist";
+import { propertyRouter } from "./routers/property";
 import { waitlistAdminRouter } from "./routers/waitlistAdmin";
 import { rewardfulRouter } from "./routers/rewardful";
 import { analyticsAdminRouter } from "./routers/analyticsAdmin";
@@ -5022,6 +5023,7 @@ Return a JSON object with:
   integrationWebhooks: integrationWebhooksRouter,
   mediaLibrary: mediaLibraryRouter,
   partnerAuth: partnerAuthRouter,
+  property: propertyRouter,
   photoIntelligence: router({
     scanPhoto: protectedProcedure
       .input(z.object({

@@ -51,9 +51,29 @@ export const partnerAuthRouter = router({
                suspendedAt, strikeCount
         FROM partners WHERE contactEmail = ${input.email} LIMIT 1
       `);
-      const partner = firstRow(result);
+      let partner: any = firstRow(result);
 
+      // Admin fallback: check users table for role=admin with passwordHash
       if (!partner || !partner.passwordHash) {
+        const adminResult = await db.execute(sql`
+          SELECT id, name, email, role, adminPasswordHash, openId
+          FROM users WHERE email = ${input.email} AND role = 'admin' LIMIT 1
+        `);
+        const adminUser: any = firstRow(adminResult);
+        if (adminUser && adminUser.adminPasswordHash) {
+          const validAdmin = await bcrypt.compare(input.password, adminUser.adminPasswordHash as string);
+          if (validAdmin) {
+            // Issue admin session
+            const sessionToken = await sdk.createSessionToken(adminUser.openId, {
+              name: adminUser.name as string,
+              expiresInMs: ONE_YEAR_MS,
+            });
+            const cookieOptions = getSessionCookieOptions(ctx.req);
+            ctx.res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
+            db.execute(sql`UPDATE users SET lastSignedIn = NOW() WHERE id = ${adminUser.id}`).catch(() => {});
+            return { success: true as const, partner: { id: adminUser.id, businessName: "Admin", email: adminUser.email, status: "active", tier: "admin" } };
+          }
+        }
         throw new TRPCError({ code: "UNAUTHORIZED", message: "Invalid email or password" });
       }
 

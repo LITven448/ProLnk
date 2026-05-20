@@ -27,6 +27,7 @@ export const users = mysqlTable("users", {
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
   lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
   stripeCustomerId: varchar("stripeCustomerId", { length: 255 }),
+  adminPasswordHash: varchar("adminPasswordHash", { length: 255 }),
 });
 
 export type User = typeof users.$inferSelect;

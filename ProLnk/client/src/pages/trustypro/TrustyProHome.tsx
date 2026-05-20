@@ -984,8 +984,7 @@ export default function TrustyProHome() {
             <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</button>
           </div>
           <div className="hidden md:flex items-center gap-3">
-<button onClick={openIntake} className="text-sm font-semibold px-4 py-1.5 rounded-full border-2 transition-colors" style={{ borderColor: ACCENT, color: ACCENT }}>Join the Waitlist ✦</button>
-            <button
+<button
               onClick={() => navigate("/trustypro/login")}
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 px-4 py-2 rounded-full hover:border-gray-400"
             >
@@ -1010,7 +1009,6 @@ export default function TrustyProHome() {
                 <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
               <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-left text-sm font-medium text-gray-600">Contact</button>
-              <button onClick={openIntake} className="text-left text-sm font-medium text-gray-600">Join the Waitlist</button>
               <button onClick={() => navigate("/trustypro/login")} className="text-left text-sm font-medium text-gray-600">My Home Login</button>
               <button onClick={openIntake} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Join the Waitlist</button>
             </motion.div>

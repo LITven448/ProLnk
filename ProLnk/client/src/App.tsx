@@ -632,7 +632,7 @@ function DomainRouter() {
     if (isTrustyPro) {
       // trustypro.io/waitlist → homeowner waitlist
       if (location === "/waitlist" || location === "/waitlist/") {
-        navigate("/trustypro/waitlist", { replace: true });
+        navigate("/waitlist/homeowner", { replace: true });
         return;
       }
       // Allow /waitlist/* paths through
@@ -722,7 +722,7 @@ function WaitlistGuard() {
     const search = typeof window !== "undefined" ? window.location.search : "";
     if (location === "/") {
       const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-      navigate((isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist") + search, { replace: true });
+      navigate((isTrustyPro ? "/waitlist/homeowner" : "/pro-waitlist") + search, { replace: true });
       return;
     }
     if (location.startsWith("/admin")) return;
@@ -730,7 +730,7 @@ function WaitlistGuard() {
     if (location.startsWith("/trustypro/")) return;
     if (WAITLIST_ALLOWED.has(location)) return;
     const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-    navigate((isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist") + search, { replace: true });
+    navigate((isTrustyPro ? "/waitlist/homeowner" : "/pro-waitlist") + search, { replace: true });
   }, [location, navigate]);
   return null;
 }

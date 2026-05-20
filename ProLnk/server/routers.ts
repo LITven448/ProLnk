@@ -4766,6 +4766,9 @@ Return a JSON object with:
       .input(z.object({ slug: z.string().min(1).max(30) }))
       .query(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).resolveSlug(input)),
 
+    getBetaCount: publicProcedure
+      .query(async ({ ctx }) => waitlistRouter.createCaller(ctx).getBetaCount()),
+
     getPublicCounts: publicProcedure.query(async () => {
       const pool = await getPool();
       if (!pool) return { pros: 0, homes: 0 };

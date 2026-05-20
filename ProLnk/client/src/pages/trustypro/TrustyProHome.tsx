@@ -497,6 +497,14 @@ export default function TrustyProHome() {
     } catch {}
   }, []);
 
+  // Beta program capacity check — hides opt-in once 1,000 spots are filled
+  const betaStatus = trpc.waitlist.getBetaCount.useQuery(undefined, {
+    refetchOnWindowFocus: false,
+    staleTime: 60 * 1000, // 1 min cache
+  });
+  const betaIsOpen = betaStatus.data?.isOpen !== false;
+  const betaSpotsRemaining = betaStatus.data?.spotsRemaining ?? 1000;
+
   const joinWaitlist = trpc.waitlist.joinHomeWaitlist.useMutation({
     onSuccess: (data: { success: true; position: number }) => {
       const slug = `${intakeForm.firstName}-${intakeForm.lastName}`.toLowerCase().replace(/[^a-z0-9-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "").slice(0, 30) || `home-${data.position}`;
@@ -550,7 +558,7 @@ export default function TrustyProHome() {
     const meta: string[] = [];
     if (intakeForm.timeline) meta.push(`timeline:${intakeForm.timeline}`);
     if (intakeForm.budget) meta.push(`budget:${intakeForm.budget}`);
-    if (intakeForm.betaOptIn) meta.push("beta:true");
+    if (intakeForm.betaOptIn && betaIsOpen) meta.push("beta:true");
     if (intakeForm.notes) meta.push(`notes:${intakeForm.notes.slice(0, 100)}`);
     const serviceNeeded = `${projectsLabel} | ${meta.join(" | ")}`.slice(0, 255);
 
@@ -890,25 +898,29 @@ export default function TrustyProHome() {
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-900 resize-none"
                     />
                   </div>
-                  <label className="flex items-start gap-3 p-4 rounded-2xl cursor-pointer border-2 transition-colors"
-                    style={intakeForm.betaOptIn
-                      ? { backgroundColor: ACCENT_LIGHT, borderColor: ACCENT }
-                      : { backgroundColor: "white", borderColor: "#E5E7EB" }}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={intakeForm.betaOptIn}
-                      onChange={e => setIntakeForm(f => ({ ...f, betaOptIn: e.target.checked }))}
-                      className="mt-1 accent-indigo-600 w-4 h-4"
-                    />
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="font-black text-gray-900 text-sm">Join the Beta Program</span>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: ACCENT }}>Limited · 1,000 spots</span>
+                  {betaIsOpen && (
+                    <label className="flex items-start gap-3 p-4 rounded-2xl cursor-pointer border-2 transition-colors"
+                      style={intakeForm.betaOptIn
+                        ? { backgroundColor: ACCENT_LIGHT, borderColor: ACCENT }
+                        : { backgroundColor: "white", borderColor: "#E5E7EB" }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={intakeForm.betaOptIn}
+                        onChange={e => setIntakeForm(f => ({ ...f, betaOptIn: e.target.checked }))}
+                        className="mt-1 accent-indigo-600 w-4 h-4"
+                      />
+                      <div>
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          <span className="font-black text-gray-900 text-sm">Join the Beta Program</span>
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: ACCENT }}>
+                            {betaSpotsRemaining < 100 ? `Only ${betaSpotsRemaining} spots left!` : `Limited · ${betaSpotsRemaining} spots remaining`}
+                          </span>
+                        </div>
+                        <p className="text-xs text-gray-600 leading-snug">First 1,000 homeowners get early access to test new features — AI home scan, instant pro matching, and the Home Health Vault — before public launch.</p>
                       </div>
-                      <p className="text-xs text-gray-600 leading-snug">First 1,000 homeowners get early access to test new features — AI home scan, instant pro matching, and the Home Health Vault — before public launch.</p>
-                    </div>
-                  </label>
+                    </label>
+                  )}
                   <div className="flex gap-3">
                     <button onClick={() => setIntakeStep(3)} className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors">Back</button>
                     <button

@@ -439,6 +439,22 @@ export const waitlistRouter = router({
     return rows as any[];
   }),
 
+  // Public query — returns count of homeowners who opted into beta program
+  // Used by waitlist form to hide the beta checkbox once 1,000 spots are filled
+  getBetaCount: publicProcedure.query(async () => {
+    const pool = await getPool();
+    if (!pool) return { count: 0, spotsRemaining: 1000, isOpen: true, cap: 1000 };
+    const [rows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist WHERE serviceNeeded LIKE '%BETA: yes%'");
+    const count = Number((rows as any[])[0]?.cnt ?? 0);
+    const cap = 1000;
+    return {
+      count,
+      cap,
+      spotsRemaining: Math.max(0, cap - count),
+      isOpen: count < cap,
+    };
+  }),
+
   claimSlug: publicProcedure
     .input(z.object({
       email: z.string().email().toLowerCase(),

@@ -765,9 +765,6 @@ function Router() {
       <Route path="/waitlist/homeowner" component={TrustyProWaitlistPage} />
       <Route path="/waitlist/homeowner/status" component={TrustyProWaitlistStatus} />
       <Route path="/contest" component={Contest} />
-      <Route path="/advertise" component={MediaSiteLazy} />
-      <Route path="/media" component={MediaSiteLazy} />
-      <Route path="/prolnk-media" component={MediaSiteLazy} />
       <Route path="/partners" component={PartnerDirectory} />
       <Route path="/pro/:id" component={PartnerSpotlight} />
       <Route path="/login" component={LoginRedirect} />
@@ -916,31 +913,10 @@ function Router() {
       <Route path="/admin/dashboard/agents"     component={AIAgentsDashboard} />
 
       {/* ProLnk Residential — 7 company dashboards */}
-      <Route path="/admin/prolnk/executive"   component={ProLnkExecutive}   />
-      <Route path="/admin/prolnk/operations"  component={ProLnkOperations}  />
-      <Route path="/admin/prolnk/sales"       component={ProLnkSales}       />
-      <Route path="/admin/prolnk/marketing"   component={ProLnkMarketing}   />
-      <Route path="/admin/prolnk/support"     component={ProLnkSupport}     />
-      <Route path="/admin/prolnk/financial"   component={ProLnkFinancial}   />
-      <Route path="/admin/prolnk/agents"      component={ProLnkAgents}      />
 
       {/* TrustyPro — 7 company dashboards */}
-      <Route path="/admin/tp/executive"       component={TrustyProExecutive}   />
-      <Route path="/admin/tp/operations"      component={TrustyProOperations}  />
-      <Route path="/admin/tp/sales"           component={TrustyProSales}       />
-      <Route path="/admin/tp/marketing"       component={TrustyProMarketing}   />
-      <Route path="/admin/tp/support"         component={TrustyProSupport}     />
-      <Route path="/admin/tp/financial"       component={TrustyProFinancial}   />
-      <Route path="/admin/tp/agents"          component={TrustyProAgents}      />
 
       {/* ProLnk Media — 7 company dashboards */}
-      <Route path="/admin/media-dash/executive"  component={MediaExecutive}   />
-      <Route path="/admin/media-dash/operations" component={MediaOperations}  />
-      <Route path="/admin/media-dash/sales"      component={MediaSales}       />
-      <Route path="/admin/media-dash/marketing"  component={MediaMarketing}   />
-      <Route path="/admin/media-dash/support"    component={MediaSupport}     />
-      <Route path="/admin/media-dash/financial"  component={MediaFinancial}   />
-      <Route path="/admin/media-dash/agents"     component={MediaAgents}      />
 
       {/* V6 -- Predictive Engine */}
       <Route path="/admin/predict" component={EventEngineDashboard} />

@@ -210,19 +210,19 @@ class SDKServer {
       });
       const { openId, appId, name } = payload as Record<string, unknown>;
 
-      if (
-        !isNonEmptyString(openId) ||
-        !isNonEmptyString(appId) ||
-        !isNonEmptyString(name)
-      ) {
-        console.warn("[Auth] Session payload missing required fields");
+      // Note: appId can be empty string when VITE_APP_ID env var isn't set —
+      // we still trust the JWT signature (HS256) since cookieSecret validates it.
+      if (!isNonEmptyString(openId)) {
+        console.warn("[Auth] Session payload missing openId");
         return null;
       }
+      const safeAppId = isNonEmptyString(appId) ? appId : "";
+      const safeName = isNonEmptyString(name) ? name : "";
 
       return {
         openId,
-        appId,
-        name,
+        appId: safeAppId,
+        name: safeName,
       };
     } catch (error) {
       console.warn("[Auth] Session verification failed", String(error));

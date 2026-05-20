@@ -926,30 +926,41 @@ export default function TrustyProHome() {
               {intakeStep === 5 && (
                 <div className="px-8 py-6 space-y-5">
                   <div className="rounded-2xl p-5" style={{ backgroundColor: ACCENT_LIGHT, border: `1px solid ${ACCENT}33` }}>
-                    <p className="text-xs font-black uppercase tracking-wider mb-2" style={{ color: ACCENT }}>
-                      <Share2 className="inline w-3.5 h-3.5 mr-1" /> Skip the line — invite friends
+                    <p className="text-sm font-bold mb-2" style={{ color: ACCENT }}>
+                      Know someone who could use TrustyPro?
                     </p>
-                    <p className="text-xs text-gray-600 leading-snug mb-3">Every friend who joins from your link moves you up the list. Founding homeowners get lifetime perks at launch.</p>
-                    <div className="flex items-center gap-2 bg-white rounded-xl border border-gray-200 px-3 py-2">
+                    <p className="text-xs text-gray-600 leading-snug mb-4">Help your neighbors find verified, trusted pros. No tracking, no points — just genuine recommendation.</p>
+
+                    <div className="grid grid-cols-2 gap-2 mb-2">
+                      <a
+                        href={`mailto:?subject=${encodeURIComponent("You should check out TrustyPro")}&body=${encodeURIComponent("Hey — I just joined the TrustyPro waitlist. It's a new home services platform launching in DFW that connects you with verified, certified pros. Free for homeowners — you might want to be on the list too:\n\nhttps://trustypro.io\n\nLet me know what you think!")}`}
+                        className="flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white transition-opacity hover:opacity-90"
+                        style={{ backgroundColor: ACCENT }}
+                      >
+                        <Mail className="w-3.5 h-3.5" /> Email friends
+                      </a>
+                      <a
+                        href={`sms:?body=${encodeURIComponent("Hey — just joined the TrustyPro waitlist. New home services platform launching in DFW with verified pros, free for homeowners. You might want to grab a spot: https://trustypro.io")}`}
+                        className="flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white transition-opacity hover:opacity-90"
+                        style={{ backgroundColor: ACCENT }}
+                      >
+                        <Phone className="w-3.5 h-3.5" /> Text friends
+                      </a>
+                    </div>
+
+                    <div className="flex items-center gap-2 bg-white rounded-xl border border-gray-200 px-3 py-2 mt-3">
                       <input
                         readOnly
-                        value={shareUrl}
+                        value="https://trustypro.io"
                         className="flex-1 text-xs text-gray-700 bg-transparent outline-none truncate"
                       />
                       <button
-                        onClick={copyShareLink}
-                        className="px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-opacity"
-                        style={{ backgroundColor: ACCENT }}
+                        onClick={() => { navigator.clipboard.writeText("https://trustypro.io").then(() => setCopyStatus("copied")); setTimeout(() => setCopyStatus("idle"), 1800); }}
+                        className="px-3 py-1.5 rounded-lg text-xs font-bold border border-gray-200 hover:bg-gray-50 transition-colors"
                       >
-                        {copyStatus === "copied" ? <><CheckCircle className="inline w-3.5 h-3.5 mr-1" />Copied</> : <><Copy className="inline w-3.5 h-3.5 mr-1" />Copy</>}
+                        {copyStatus === "copied" ? <><CheckCircle className="inline w-3.5 h-3.5 mr-1" />Copied</> : <><Copy className="inline w-3.5 h-3.5 mr-1" />Copy link</>}
                       </button>
                     </div>
-                    <button
-                      onClick={nativeShare}
-                      className="mt-2 w-full py-2 rounded-xl text-xs font-bold border border-gray-200 hover:bg-gray-50 transition-colors flex items-center justify-center gap-1.5"
-                    >
-                      <Share2 className="w-3.5 h-3.5" /> Share with friends
-                    </button>
                   </div>
                   {intakeForm.betaOptIn && (
                     <div className="rounded-xl p-3 flex items-center gap-2" style={{ backgroundColor: "#fef3c7", border: "1px solid #fde68a" }}>

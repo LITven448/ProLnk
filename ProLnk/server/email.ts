@@ -552,12 +552,27 @@ export async function sendProWaitlistConfirmation(opts: {
     <!-- Referral code box -->
     <div style="background:#0d2245;border:1px solid rgba(245,230,66,0.2);border-radius:14px;padding:24px;margin:0 0 24px;">
       <div style="color:rgba(255,255,255,0.5);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 6px;">Your Referral Code</div>
-      <div style="color:#F5E642;font-size:28px;font-weight:900;font-family:'Courier New',monospace;letter-spacing:4px;margin:0 0 14px;">${refCode}</div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;margin:0 0 16px;word-break:break-all;">
-        <span style="color:rgba(255,255,255,0.55);font-size:12px;font-family:'Courier New',monospace;">${refLink}</span>
+      <div style="color:#F5E642;font-size:28px;font-weight:900;font-family:'Courier New',monospace;letter-spacing:4px;margin:0 0 18px;">${refCode}</div>
+
+      <!-- Pro referral link -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px;margin:0 0 14px;">
+        <div style="color:rgba(245,230,66,0.85);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px;">Invite other pros</div>
+        <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 12px;margin:0 0 10px;word-break:break-all;">
+          <span style="color:rgba(255,255,255,0.7);font-size:12px;font-family:'Courier New',monospace;">${refLink}</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.5);font-size:12px;margin:0;line-height:1.5;">Send to other service professionals. Every pro who signs up through your link becomes part of your 4-generation override network.</p>
       </div>
-      <p style="color:rgba(255,255,255,0.5);font-size:13px;margin:0 0 16px;line-height:1.6;">Share this link with contractors. Every pro who signs up using your code becomes your Level 1 — earning you <strong style="color:rgba(255,255,255,0.75);">12% of their $149/mo subscription</strong>, recurring every month.</p>
-      <a href="${refLink}" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 26px;border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;">Share Your Referral Link →</a>
+
+      <!-- Homeowner referral link -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px;margin:0 0 16px;">
+        <div style="color:rgba(245,230,66,0.85);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px;">Invite homeowners</div>
+        <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 12px;margin:0 0 10px;word-break:break-all;">
+          <span style="color:rgba(255,255,255,0.7);font-size:12px;font-family:'Courier New',monospace;">https://trustypro.io/join/${refCode}</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.5);font-size:12px;margin:0;line-height:1.5;">Send to homeowners in your area. Every home that signs up through you pays a permanent Home Origination Bonus — recurring revenue from their property forever.</p>
+      </div>
+
+      <a href="${refLink}" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 26px;border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;">View Your Referral Hub →</a>
     </div>
 
     <!-- What happens next timeline -->

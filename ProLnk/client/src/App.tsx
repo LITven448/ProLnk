@@ -16,6 +16,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import Apply from "./pages/Apply";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerForgotPassword from "./pages/PartnerForgotPassword";
+import AdminLogin from "./pages/AdminLogin";
 import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
 import TrustyProWaitlistPage from "./pages/trustypro/TrustyProHome";
@@ -711,7 +712,7 @@ const WAITLIST_ALLOWED = new Set([
   "/founding-partner", "/founding-network", "/leaderboard", "/network/leaderboard",
   "/privacy", "/terms", "/ccpa", "/cookies", "/security",
   "/trustypro", "/trustypro/waitlist", "/trustypro/app",
-  "/login", "/partner-login", "/partner-forgot-password",
+  "/login", "/admin-login", "/partner-login", "/partner-forgot-password",
   "/set-password", "/pricing", "/pricing/standard",
   "/partner-agreement", "/ach-authorization",
 ]);
@@ -772,6 +773,7 @@ function Router() {
       <Route path="/pro/:id" component={PartnerSpotlight} />
       <Route path="/login" component={LoginRedirect} />
       <Route path="/partner-login" component={PartnerLogin} />
+      <Route path="/admin-login" component={AdminLogin} />
       <Route path="/partner-forgot-password" component={PartnerForgotPassword} />
 
       {/* Partner */}

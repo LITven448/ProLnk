@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminLayout";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
 import {
@@ -98,6 +99,22 @@ function ChartTooltip({ active, payload, label }: any) {
 }
 
 export default function CommandCenter() {
+  const { user, isLoading: authLoading } = useAuth();
+  
+  if (authLoading) {
+    return <div style={{ padding: "40px", textAlign: "center", color: "#7B809A", fontFamily: "system-ui" }}>Loading...</div>;
+  }
+  
+  if (!user || (user as any).role !== "admin") {
+    return (
+      <div style={{ padding: "60px 20px", maxWidth: "440px", margin: "80px auto", textAlign: "center", fontFamily: "system-ui" }}>
+        <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#344767", marginBottom: "12px" }}>Admin Login Required</h2>
+        <p style={{ color: "#7B809A", marginBottom: "24px" }}>You must be signed in as an admin to view the dashboard.</p>
+        <a href="/login" style={{ display: "inline-block", padding: "12px 24px", background: "#1A73E8", color: "#fff", textDecoration: "none", borderRadius: "8px", fontWeight: 600 }}>Sign In</a>
+      </div>
+    );
+  }
+
   const metrics = trpc.waitlistAdmin.getWaitlistMetrics.useQuery(undefined, {
     retry: 1,
     refetchOnWindowFocus: false,
@@ -108,7 +125,7 @@ export default function CommandCenter() {
     refetchOnWindowFocus: false,
   });
 
-  const proWaitlist = trpc.waitlistAdmin.getProWaitlist.useQuery(undefined, {
+  const proWaitlist = trpc.waitlistAdmin.getProWaitlist.useQuery({ limit: 200 }, {
     retry: 1,
     refetchOnWindowFocus: false,
   });

@@ -1371,6 +1371,13 @@ export const proWaitlist = mysqlTable("proWaitlist", {
   rejectedAt: timestamp("rejectedAt"),
   activatedAt: timestamp("activatedAt"),
   source: varchar("source", { length: 100 }).default("prolnk-waitlist"),
+  // Network/Referral system
+  referralCode: varchar("referralCode", { length: 16 }).unique(),
+  referredBy: varchar("referredBy", { length: 32 }),
+  tier: varchar("tier", { length: 20 }).default("waitlist"),
+  waitlistPosition: int("waitlistPosition"),
+  referralCount: int("referralCount").default(0).notNull(),
+  customSlug: varchar("customSlug", { length: 64 }).unique(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 });
@@ -1444,6 +1451,8 @@ export const homeWaitlist = mysqlTable("homeWaitlist", {
   rejectedAt: timestamp("rejectedAt"),
   activatedAt: timestamp("activatedAt"),
   source: varchar("source", { length: 100 }).default("trustypro-waitlist"),
+  // Network/Referral
+  referredBy: varchar("referredBy", { length: 32 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 });

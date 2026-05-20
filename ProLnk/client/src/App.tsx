@@ -721,7 +721,7 @@ function WaitlistGuard() {
   useEffect(() => {
     if (location === "/") {
       const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-      navigate(isTrustyPro ? "/trustypro/waitlist" : "/apply", { replace: true });
+      navigate(isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist", { replace: true });
       return;
     }
     if (location.startsWith("/admin")) return;
@@ -729,7 +729,7 @@ function WaitlistGuard() {
     if (location.startsWith("/trustypro/")) return;
     if (WAITLIST_ALLOWED.has(location)) return;
     const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-    navigate(isTrustyPro ? "/trustypro/waitlist" : "/apply", { replace: true });
+    navigate(isTrustyPro ? "/trustypro/waitlist" : "/pro-waitlist", { replace: true });
   }, [location, navigate]);
   return null;
 }

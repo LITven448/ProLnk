@@ -28,7 +28,7 @@ const BUSINESS_TYPES_GROUPED = SERVICE_GROUPS.map(group => ({
 const schema = z.object({
   businessName: z.string().min(2, "Business name is required"),
   businessType: z.string().min(1, "Please select a business type"),
-  serviceArea: z.string().min(3, "Service area is required"),
+  serviceArea: z.string().optional(),
   contactName: z.string().min(2, "Contact name is required"),
   contactEmail: z.string().email("Valid email required"),
   contactPhone: z.string().optional(),
@@ -88,14 +88,16 @@ export default function Apply() {
   });
 
   const onSubmit = (data: FormData) => {
-    // Compose address into serviceArea field
+    // Compose address into serviceArea field — required for backend
     const addressParts = [addrStreet, addrCity, addrState, addrZip].filter(Boolean);
-    const composed = addressParts.length > 0
-      ? `${addressParts.join(", ")} (${serviceRadius}mi radius)`
-      : data.serviceArea;
+    if (addressParts.length < 2 || !addrCity || !addrZip) {
+      toast.error("Please fill in your service address (city and zip required)");
+      return;
+    }
+    const composed = `${addressParts.join(", ")} (${serviceRadius}mi radius)`;
     applyMutation.mutate({
       ...data,
-      serviceArea: composed || data.serviceArea,
+      serviceArea: composed,
       referredByCode: referralCode ?? undefined,
     });
   };

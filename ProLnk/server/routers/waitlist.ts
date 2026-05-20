@@ -216,8 +216,8 @@ export const waitlistRouter = router({
         automations.partnerWaitlistJoined({ email: input.email, tier, position, referralCode }).catch(() => {});
 
         notifyOwner({
-          subject: `New ProLnk Pro Signup: ${input.firstName} ${input.lastName} (${input.trade})`,
-          body: `Position #${position} | Tier: ${rates.label} | Referred by: ${input.referredBy || "organic"} | City: ${input.primaryCity}, ${input.primaryState}`,
+          title: `New ProLnk Pro Signup: ${input.firstName} ${input.lastName} (${input.trade})`,
+          content: `Position #${position} | Tier: ${rates.label} | Referred by: ${input.referredBy || "organic"} | City: ${input.primaryCity}, ${input.primaryState}`,
         }).catch(() => {});
 
         return {
@@ -385,8 +385,8 @@ export const waitlistRouter = router({
         automations.homeownerWaitlistJoined({ email: input.email, city: input.city, serviceNeeded: input.serviceNeeded }).catch(() => {});
 
         notifyOwner({
-          subject: `New TrustyPro Homeowner Signup: ${input.firstName} ${input.lastName}`,
-          body: `Position #${position} | Service: ${input.serviceNeeded} | City: ${input.city}, ${input.state}`,
+          title: `New TrustyPro Homeowner Signup: ${input.firstName} ${input.lastName}`,
+          content: `Position #${position} | Service: ${input.serviceNeeded} | City: ${input.city}, ${input.state}`,
         }).catch(() => {});
 
         return { success: true as const, position };

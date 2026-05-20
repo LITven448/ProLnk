@@ -969,7 +969,7 @@ function Router() {
       <Route path="/trustypro/homeowner-login" component={HomeownerLogin} />
       <Route path="/trustypro/dashboard" component={TrustyProHomeownerDashboard} />
       <Route path="/trustypro/waitlist" component={TrustyProWaitlist} />
-      <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
+      <Route path="/pro/waitlist" component={ProWaitlist} />
       {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
       <Route path="/trustypro/property-setup" component={PropertySetup} />
       <Route path="/trustypro/scan" component={PhotoScan} />

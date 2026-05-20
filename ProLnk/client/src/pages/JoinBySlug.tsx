@@ -238,8 +238,8 @@ export default function JoinBySlug() {
                 <li className="flex gap-3 items-start">
                   <div className="w-5 h-5 rounded-full bg-teal-400/20 border border-teal-300/40 flex items-center justify-center flex-shrink-0 mt-0.5"><Users className="w-3 h-3 text-teal-300" /></div>
                   <div>
-                    <div className="text-white text-sm font-bold">4-generation override income</div>
-                    <div className="text-white/50 text-xs mt-0.5">Earn a share of every job closed by pros you bring in — and pros they bring in — four generations deep.</div>
+                    <div className="text-white text-sm font-bold">Bonus from pros you invite</div>
+                    <div className="text-white/50 text-xs mt-0.5">When you invite another pro to ProLnk, you earn a small share of the platform fees from their work. Same applies to anyone they invite, up to 4 layers deep. Every member gets this — regardless of when you joined.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">

@@ -6,7 +6,7 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { TrustyProLogo } from "@/components/TrustyProLogo";
-import { Plus, X, Star, Menu, Phone, Mail, MapPin, Shield, Clock, Award, MessageSquare, ArrowRight, Camera, CheckCircle, ChevronLeft, ChevronRight, Loader2, AlertTriangle, DollarSign, Search, Zap, Lock, FileText, TrendingUp, XCircle, Target, RefreshCw, Copy, Share2, Sparkles } from "lucide-react";
+import { Plus, X, Menu, Phone, Mail, MapPin, Shield, Clock, Award, MessageSquare, ArrowRight, Camera, CheckCircle, ChevronLeft, ChevronRight, Loader2, AlertTriangle, DollarSign, Search, Zap, Lock, FileText, TrendingUp, XCircle, Target, RefreshCw, Copy, Share2, Sparkles } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { AddressAutofill } from "@/components/AddressAutofill";
 import { toast } from "sonner";

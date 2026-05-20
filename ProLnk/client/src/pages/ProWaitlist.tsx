@@ -929,7 +929,7 @@ function TradeSearchDropdown({
                 autoFocus
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search 93 trades…"
+                placeholder="Search trades…"
                 className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none"
               />
               {query && (
@@ -950,24 +950,43 @@ function TradeSearchDropdown({
               {items.map((cat) => {
                 const checked = selected.includes(cat.id);
                 return (
-                  <label key={cat.id} className="flex items-center gap-2.5 px-3 py-2 hover:bg-gray-50 cursor-pointer">
+                  <label key={cat.id} className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={checked}
                       onChange={() => onToggle(cat.id)}
                       className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30 flex-shrink-0"
                     />
-                    <span className="text-base w-5 text-center flex-shrink-0">{cat.icon}</span>
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <span className="text-sm text-gray-800 font-medium">{cat.name}</span>
                       <p className="text-xs text-gray-400 truncate">{cat.description}</p>
                     </div>
-                    {checked && <CheckCircle size={14} className="text-[#0A1628] ml-auto flex-shrink-0" />}
+                    {checked && <CheckCircle size={14} className="text-[#0A1628] flex-shrink-0" />}
                   </label>
                 );
               })}
             </div>
           ))}
+
+          {/* Other — synthetic option for trades we don't list */}
+          <div className="border-t border-gray-100">
+            <div className="px-3 py-1.5 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider sticky top-[52px]">
+              Other
+            </div>
+            <label className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={selected.includes("other")}
+                onChange={() => onToggle("other")}
+                className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30 flex-shrink-0"
+              />
+              <div className="min-w-0 flex-1">
+                <span className="text-sm text-gray-800 font-medium">Other (describe below)</span>
+                <p className="text-xs text-gray-400">Tell us about your trade in the notes section</p>
+              </div>
+              {selected.includes("other") && <CheckCircle size={14} className="text-[#0A1628] flex-shrink-0" />}
+            </label>
+          </div>
         </div>
       )}
     </div>

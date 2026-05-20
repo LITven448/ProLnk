@@ -163,9 +163,7 @@ export default function JoinBySlug() {
       <header className="relative z-10 py-8 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/">
-            <div className="bg-white rounded-2xl px-4 py-2 inline-block">
-              <ProLnkLogo height={44} />
-            </div>
+            <ProLnkLogo variant="dark" height={48} />
           </Link>
           <div className="hidden sm:flex items-center gap-2 text-white/50 text-xs font-medium">
             <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />

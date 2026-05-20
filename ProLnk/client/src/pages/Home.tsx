@@ -41,7 +41,7 @@ const PRICING_TIERS = [
     cta: "Claim Charter Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% keep on every closed job",
+      "72% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -64,7 +64,7 @@ const PRICING_TIERS = [
     cta: "Claim Founding Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% keep on every closed job",
+      "72% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -76,7 +76,7 @@ const PRICING_TIERS = [
     ],
   },
   {
-    name: "Level 3",
+    name: "Growth Member",
     subtitle: "Next 400 founding partners",
     monthlyFee: 149,
     commissionShare: 0.72,
@@ -87,7 +87,7 @@ const PRICING_TIERS = [
     cta: "Claim L3 Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% keep on every closed job",
+      "72% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -99,7 +99,7 @@ const PRICING_TIERS = [
     ],
   },
   {
-    name: "Level 4",
+    name: "Network Member",
     subtitle: "Final 1,600 founding partners",
     monthlyFee: 149,
     commissionShare: 0.72,
@@ -110,7 +110,7 @@ const PRICING_TIERS = [
     cta: "Claim L4 Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% keep on every closed job",
+      "72% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -1194,7 +1194,7 @@ export default function Home() {
         <meta property="og:title" content="ProLnk — Reach the Trades. Own the Neighborhood." />
         <meta property="og:description" content="AI-powered referral commissions for home service professionals in DFW. Upload job photos, earn passive income." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://prolnk.io/" />
+        <meta property="og:url" content="https://prolnk.xyz/" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -1202,16 +1202,16 @@ export default function Home() {
         <meta name="twitter:title" content="ProLnk — Reach the Trades. Own the Neighborhood." />
         <meta name="twitter:description" content="AI-powered referral commissions for home service professionals in DFW. Upload job photos, earn passive income." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
-        <link rel="canonical" href="https://prolnk.io" />
+        <link rel="canonical" href="https://prolnk.xyz" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "ProLnk",
-          "url": "https://prolnk.io",
+          "url": "https://prolnk.xyz",
           "description": "AI-powered referral network for home service professionals in Dallas-Fort Worth. Upload job-site photos, earn commissions on cross-trade referrals.",
           "areaServed": { "@type": "Place", "name": "Dallas-Fort Worth, TX" },
           "sameAs": [],
-          "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "support@prolnk.io" }
+          "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "hello@prolnk.xyz" }
         })}</script>
       </Helmet>
 
@@ -2402,7 +2402,7 @@ export default function Home() {
                 <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                 <Link href="/ccpa" className="hover:text-white transition-colors">CCPA Rights</Link>
                 <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
-                <a href="mailto:hello@prolnk.io" className="hover:text-white transition-colors">Contact</a>
+                <a href="mailto:hello@prolnk.xyz" className="hover:text-white transition-colors">Contact</a>
                 <a href="https://instagram.com/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
                 <a href="https://facebook.com/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
                 <a href="https://linkedin.com/company/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>

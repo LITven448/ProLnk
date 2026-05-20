@@ -73,7 +73,7 @@ export async function notify(opts: NotifyOptions): Promise<void> {
       method: "POST",
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: "ProLnk <noreply@prolnk.io>",
+        from: "ProLnk <hello@prolnk.xyz>",
         to: [OWNER_EMAIL],
         subject: `[ProLnk] ${title}`,
         html: `<div style="font-family:monospace;max-width:600px;margin:0 auto;padding:24px;">

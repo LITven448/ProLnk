@@ -7,10 +7,10 @@ export const ENV = {
   isProduction: process.env.NODE_ENV === "production",
   forgeApiUrl: process.env.BUILT_IN_FORGE_API_URL ?? "",
   forgeApiKey: process.env.BUILT_IN_FORGE_API_KEY ?? "",
-  /** Public-facing base URL (e.g. https://prolnk.io). Falls back to the OAuth portal URL. */
-  appBaseUrl: process.env.APP_BASE_URL || process.env.VITE_OAUTH_PORTAL_URL || "https://prolnk.io",
+  /** Public-facing base URL (e.g. https://prolnk.xyz). Falls back to the OAuth portal URL. */
+  appBaseUrl: process.env.APP_BASE_URL || process.env.VITE_OAUTH_PORTAL_URL || "https://prolnk.xyz",
   /** From address used in all outbound emails */
-  fromEmail: process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.io>",
+  fromEmail: process.env.FROM_EMAIL || "ProLnk <hello@prolnk.xyz>",
 };
 
 // render deploy test 1778190741

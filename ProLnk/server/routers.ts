@@ -1469,7 +1469,7 @@ export const appRouter = router({
         try {
           const { generateHomePassportPdf } = await import("./_core/homePassportPdf");
           const { storagePut } = await import("./storage");
-          const origin = (input as any).origin ?? "https://prolnk.io";
+          const origin = (input as any).origin ?? "https://prolnk.xyz";
           const { buffer, filename } = await generateHomePassportPdf(input.propertyId, token, origin);
           const { url } = await storagePut(`passports/${filename}`, buffer, "application/pdf");
           pdfUrl = url;
@@ -2009,7 +2009,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         const partner = await getPartnerByUserId(ctx.user.id);
         if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
         const { sendSms } = await import("./notifications");
-        const baseUrl = process.env.APP_BASE_URL || "https://prolnk.io";
+        const baseUrl = process.env.APP_BASE_URL || "https://prolnk.xyz";
         const referralCode = (partner as any).referralCode || partner.id;
         const link = `${baseUrl}/join?ref=${referralCode}`;
         const body = input.message
@@ -2910,7 +2910,7 @@ Answer concisely and helpfully. If asked about specific real-time account data (
           to: input.email,
           name: input.name ?? 'Partner',
           businessName: '',
-          loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.io',
+          loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.xyz',
         });
         return { success: true };
       }),
@@ -3205,7 +3205,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
               trade: opp.opportunityType ?? opp.opportunityCategory ?? "Service Request",
               address: opp.serviceAddress ?? "your service area",
               estimatedValue: opp.estimatedJobValue ? Number(opp.estimatedJobValue) : 0,
-              dashboardUrl: `${process.env.APP_BASE_URL ?? "https://prolnk.io"}/dashboard/leads/${input.opportunityId}`,
+              dashboardUrl: `${process.env.APP_BASE_URL ?? "https://prolnk.xyz"}/dashboard/leads/${input.opportunityId}`,
             }).catch(() => {});
           }
         }
@@ -5253,7 +5253,7 @@ Return a JSON object with:
         const entry = (rows?.[0] as any[])?.[0] ?? rows?.[0];
         if (!entry) throw new TRPCError({ code: 'NOT_FOUND', message: 'Waitlist entry not found' });
 
-        const origin = input.origin ?? 'https://prolnk.io';
+        const origin = input.origin ?? 'https://prolnk.xyz';
         const email = (entry.email ?? entry.contactEmail) as string | undefined;
         const firstName = (entry.firstName ?? entry.contactName ?? 'Partner') as string;
         const lastName = (entry.lastName ?? '') as string;
@@ -5419,7 +5419,7 @@ Return a JSON object with:
       .input(z.object({ email: z.string().email(), name: z.string().optional() }))
       .mutation(async ({ input }) => {
         const { sendPartnerApproved } = await import('./email');
-        await sendPartnerApproved({ to: input.email, name: input.name ?? 'Partner', businessName: '', loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.io' });
+        await sendPartnerApproved({ to: input.email, name: input.name ?? 'Partner', businessName: '', loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.xyz' });
         return { success: true };
       }),
   }),

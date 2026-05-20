@@ -33,7 +33,7 @@ export async function setupVite(app: Express, server: Server) {
       );
 
       // Detect brand from hostname
-      const hostname = (req.get("host") || "prolnk.io").split(":")[0].toLowerCase();
+      const hostname = (req.get("host") || "prolnk.xyz").split(":")[0].toLowerCase();
       const isTrustyPro = hostname.includes("trustypro");
 
       // always reload the index.html file from disk incase it changes
@@ -93,7 +93,7 @@ export function serveStatic(app: Express) {
     }
 
     // Detect brand from hostname
-    const hostname = (req.get("host") || "prolnk.io").split(":")[0].toLowerCase();
+    const hostname = (req.get("host") || "prolnk.xyz").split(":")[0].toLowerCase();
     const isTrustyPro = hostname.includes("trustypro");
 
     let indexHtml = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");

@@ -84,6 +84,8 @@ type FormData = {
   estimatedBudget: string; primaryPainPoint: string;
   // Step 7 — Referral & notes
   hearAboutUs: string; additionalNotes: string;
+  // Step 7+ — Beta program
+  betaOptIn: boolean;
 };
 
 const EMPTY_FORM: FormData = {
@@ -102,6 +104,7 @@ const EMPTY_FORM: FormData = {
   desiredProjects: [], projectTimeline: "just_exploring",
   estimatedBudget: "", primaryPainPoint: "",
   hearAboutUs: "", additionalNotes: "",
+  betaOptIn: false,
 };
 
 const STEP_TITLES = [
@@ -207,16 +210,28 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
   };
 
   const handleSubmit = () => {
+    // Capture referral code from URL ?ref= or localStorage
+    const refCode = (() => {
+      const p = new URLSearchParams(window.location.search);
+      return p.get("ref") || localStorage.getItem("trustypro_referral_code") || undefined;
+    })();
+    // Append additional context (notes, beta opt-in, all desired projects) to serviceNeeded
+    const projects = form.desiredProjects.length > 0 ? form.desiredProjects.join(", ") : "General home maintenance";
+    const extras = [];
+    if (form.additionalNotes.trim()) extras.push("Notes: " + form.additionalNotes.trim());
+    if (form.betaOptIn) extras.push("BETA: yes");
+    const serviceNeeded = projects + (extras.length > 0 ? " | " + extras.join(" | ") : "");
     join.mutate({
       firstName: form.firstName.trim(),
       lastName: form.lastName.trim() || "—",
-      email: form.email.trim(),
+      email: form.email.trim().toLowerCase(),
       phone: form.phone || undefined,
       address: form.address.trim(),
       city: form.city.trim(),
-      state: form.state || "TX",
+      state: (form.state || "TX").toUpperCase().slice(0, 2),
       zipCode: form.zipCode.trim(),
-      serviceNeeded: form.desiredProjects.length > 0 ? form.desiredProjects[0] : "General home maintenance",
+      serviceNeeded,
+      referredBy: refCode,
     });
   };
 
@@ -573,6 +588,21 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                       className={`${inp} resize-none`}
                     />
                   </div>
+                  {/* Beta program opt-in */}
+                  <div className="p-4 rounded-xl bg-indigo-50 border border-indigo-100">
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={form.betaOptIn}
+                        onChange={(e) => setForm(p => ({ ...p, betaOptIn: e.target.checked }))}
+                        className="mt-1 w-4 h-4 accent-indigo-600 cursor-pointer flex-shrink-0"
+                      />
+                      <div>
+                        <div className="text-sm font-semibold text-indigo-900">Join the Beta Program</div>
+                        <div className="text-xs text-indigo-700 mt-1">The first 1,000 homeowners can opt in to test new features early — home scanning, AI insights, exclusive perks. Limited spots.</div>
+                      </div>
+                    </label>
+                  </div>
                   {/* Summary card */}
                   <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 text-xs text-gray-600 space-y-1">
                     <p className="font-semibold text-gray-800 mb-2">Profile Summary</p>
@@ -686,12 +716,12 @@ const TESTIMONIALS = [
 
 // --- FAQ -----------------------------------------------------------------------
 const FAQS = [
-  { q: "What types of home improvement projects do you specialize in?", a: "TrustyPro covers the full spectrum of home improvements -- from kitchen and bathroom remodels to roofing, HVAC, plumbing, flooring, painting, landscaping, and more. If it's your home, we've got a verified pro for it." },
-  { q: "How do I get started with a project?",                          a: "Simply upload photos of your home or describe what you need. Our AI analyzes your home and matches you with verified local pros. You'll receive quotes within 24 hours." },
-  { q: "Are TrustyPro contractors verified and insured?",               a: "Yes -- every contractor on TrustyPro is background-checked, license-verified, and carries full liability insurance. We don't let just anyone on the platform." },
-  { q: "How long does a typical project take?",                         a: "Project timelines vary by scope. Small jobs like painting or flooring can be completed in 1-3 days. Larger renovations like kitchen remodels typically take 2-6 weeks. Your pro will provide a detailed timeline upfront." },
-  { q: "What if I'm not satisfied with the work?",                      a: "TrustyPro stands behind every project with a satisfaction guarantee. If you're not happy with the results, contact us within 30 days and we'll work to make it right at no additional cost." },
-  { q: "Can I get multiple quotes from different contractors?",          a: "Absolutely. We encourage you to compare quotes from multiple verified pros. Our platform makes it easy to review profiles, ratings, and past work before making your decision." },
+  { q: "What is TrustyPro?",                                              a: "TrustyPro is a homeowner platform launching soon in DFW. We help you build a complete profile of your home and connect you with verified, certified pros for any maintenance or improvement project. Free to join the waitlist — paid pros pay us when they close a job." },
+  { q: "When does TrustyPro launch?",                                     a: "We're onboarding our founding contractor network now. Homeowner access opens in waves as we verify enough TrustyPro Certified pros in each ZIP code. Join the waitlist to be notified the moment your area is live." },
+  { q: "What happens after I join the waitlist?",                         a: "You'll get a confirmation email and a private home profile we build together. As we onboard pros in your area, we'll match your home with the right professionals for the projects you're planning — no spam, no calls from random contractors." },
+  { q: "How are TrustyPro contractors verified?",                         a: "Every TrustyPro Certified pro is background-checked, license-verified, insured, and reviewed by our network. They earn the badge only after passing onboarding — homeowners never see anyone who hasn\'t been through the process." },
+  { q: "Is TrustyPro free for homeowners?",                               a: "Yes — using TrustyPro to plan, document, and find pros is completely free. The platform is funded by a small platform fee paid by the pro when a job closes — never by you." },
+  { q: "Will my home data be private?",                                   a: "Yes. Your home profile is yours. We only share your information with pros you explicitly request quotes from. You can opt in or out of marketing communications at any time." },
 ];
 
 // --- Marquee Items -------------------------------------------------------------
@@ -1203,7 +1233,7 @@ export default function TrustyProHome() {
             ))}
           </div>
           <div className="hidden md:flex items-center gap-3">
-            <button onClick={goToWizard} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Scan My Home</button>
+            <button onClick={goToWizard} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Join the Waitlist</button>
             <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity" style={{ backgroundColor: ACCENT }}>
               Get Started
             </button>
@@ -1222,7 +1252,7 @@ export default function TrustyProHome() {
               {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"],["contact","Contact"]].map(([id,label]) => (
                 <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
-              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Scan My Home</button>
+              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Join the Waitlist</button>
               <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Get Started</button>
             </motion.div>
           )}
@@ -1288,7 +1318,7 @@ export default function TrustyProHome() {
               className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
               style={{ backgroundColor: ACCENT }}
             >
-              Scan My Home -- It's Free <ArrowRight className="w-5 h-5" />
+              Join the Waitlist <ArrowRight className="w-5 h-5" />
             </button>
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400 font-medium">
               <span className="flex items-center gap-1"><CheckCircle className="w-3.5 h-3.5 text-green-500" /> No credit card required</span>
@@ -1349,7 +1379,7 @@ export default function TrustyProHome() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Scan My Home Free <ArrowRight className="w-4 h-4" />
+                Join the Waitlist <ArrowRight className="w-4 h-4" />
               </motion.button>
               </div>
             </AnimSection>
@@ -1570,72 +1600,7 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- TESTIMONIALS ------------------------------------------------------ */}
-      <section className="bg-gray-50 py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimSection variants={fadeUp} className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Reviews</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950">What DFW Homeowners Say</h2>
-            <p className="mt-3 text-gray-500 text-lg">Real reviews from real homeowners across the DFW Metroplex.</p>
-          </AnimSection>
-          {/* Staggered 2-column layout like Estatia -- cards come at you from different heights */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Left column -- offset down */}
-            <motion.div
-              className="flex flex-col gap-6 md:mt-10"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
-            >
-              {[TESTIMONIALS[0], TESTIMONIALS[2], TESTIMONIALS[4]].map((t, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white rounded-2xl p-6 shadow-sm"
-                  variants={{ hidden: { opacity: 0, y: 48, rotate: -1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-400">{t.loc}</div>
-                    </div>
-                    <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-            {/* Right column -- offset up */}
-            <motion.div
-              className="flex flex-col gap-6 md:-mt-10"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } } }}
-            >
-              {[TESTIMONIALS[1], TESTIMONIALS[3], TESTIMONIALS[5]].map((t, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white rounded-2xl p-6 shadow-sm"
-                  variants={{ hidden: { opacity: 0, y: 48, rotate: 1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-400">{t.loc}</div>
-                    </div>
-                    <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* -- HOW IT WORKS ------------------------------------------------------ */}
       <section id="how-it-works" className="bg-white py-24">
@@ -1715,7 +1680,7 @@ export default function TrustyProHome() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Try It Free -- Scan My Home <ArrowRight className="w-4 h-4" />
+              Join the Waitlist <ArrowRight className="w-4 h-4" />
             </motion.button>
           </AnimSection>
         </div>
@@ -1892,7 +1857,7 @@ export default function TrustyProHome() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Scan My Home Free
+                Join the Waitlist
               </motion.button>
               <motion.button
                 onClick={() => navigate("/trustypro/directory")}

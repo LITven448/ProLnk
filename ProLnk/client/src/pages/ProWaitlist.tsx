@@ -43,7 +43,7 @@ const PRICING_TIERS = [
       "AI opportunity detection on all jobs",
       "Commission tracking dashboard",
       "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Keep 40% of every referral",
+      "Keep 40% Network Bonus on every referral",
       "$500/mo earnings cap",
       "Event-driven leads (storm, aging, recalls)",
       "Mobile app access",
@@ -64,7 +64,7 @@ const PRICING_TIERS = [
     networkRate: "0.5% L1",
     features: [
       "Up to 3 user seats",
-      "Keep 55% of every referral",
+      "Keep 55% Network Bonus on every referral",
       "No earnings cap",
       "Network income from 1 direct referral",
       "2% bonus on your own completed jobs",
@@ -89,7 +89,7 @@ const PRICING_TIERS = [
     networkRate: "1% L4 + bonuses",
     features: [
       "Up to 10 user seats",
-      "Keep 65% of every referral",
+      "Keep 65% Network Bonus on every referral",
       "Unlimited earnings",
       "Network income: 1% from 4th-level referrals",
       "2% bonus on your own jobs",
@@ -115,7 +115,7 @@ const PRICING_TIERS = [
     networkRate: "1.5% L3, 1% L4",
     features: [
       "Up to 25 user seats",
-      "Keep 72% of every referral",
+      "Keep 72% Network Bonus on every referral",
       "Unlimited earnings",
       "Network income: 1.5% from L3 + 1% from L4",
       "2% bonus on your own jobs",
@@ -239,7 +239,7 @@ const FAQS = [
   },
   {
     q: "How do I earn commissions?",
-    a: "When your job photos generate a lead that another partner closes, you earn a share of the platform fee: Scout keeps 40%, Pro 55%, Crew 65%, Company 72%, Enterprise 78%. Plus earn network income when partners you refer complete jobs. Paid monthly, tracked in real time.",
+    a: "When ProLnk generates a lead that closes, we charge a small platform fee (3-15% of job value). You earn a share of that fee as Network Bonus income — never out of what you would normally charge the customer. Scout earns 40% of the fee, Pro 55%, Crew 65%, Company 72%, Enterprise 78%. Plus earn network income when partners you refer complete jobs. Paid monthly, tracked in real time.",
   },
   {
     q: "What is network income?",
@@ -671,8 +671,8 @@ function PartnerSpotlightSection() {
 const TIER_BADGE_CONFIG: Record<string, { label: string; badge: string; color: string; bg: string; border: string }> = {
   charter:  { label: "Charter Member",    badge: "MOST EXCLUSIVE",  color: "#7C3AED", bg: "bg-purple-50",  border: "border-purple-200" },
   founding: { label: "Founding Member",   badge: "FOUNDING MEMBER", color: "#0A1628", bg: "bg-[#0A1628]/5", border: "border-[#0A1628]/20" },
-  level3:   { label: "Level 3 Partner",   badge: "EARLY ADOPTER",   color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
-  level4:   { label: "Level 4 Partner",   badge: "PARTNER",         color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
+  level3:   { label: "Growth Member",      badge: "EARLY ADOPTER",   color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
+  level4:   { label: "Network Member",   badge: "PARTNER",         color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
 };
 
 // --- Success State Component --------------------------------------------------
@@ -697,12 +697,12 @@ function SuccessState({
   })();
   const tierConf = TIER_BADGE_CONFIG[tierKey] ?? TIER_BADGE_CONFIG.level4;
   const referralCode = data.referralCode ?? "";
-  const refUrl = `https://prolnk.io/join?ref=${referralCode}`;
+  const refUrl = `https://prolnk.xyz/join?ref=${referralCode}`;
   const trialEndDate = new Date();
   trialEndDate.setDate(trialEndDate.getDate() + 90);
   const trialEndStr = trialEndDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
-  const twitterText = `Just joined the ProLnk Founding Network! Get your charter spot at prolnk.io — only 2,125 contractors get in. Use my link to skip the line: ${refUrl}`;
+  const twitterText = `Just joined the ProLnk Founding Network! Get your charter spot at prolnk.xyz — only 2,125 contractors get in. Use my link to skip the line: ${refUrl}`;
   const linkedinText = `Excited to join the ProLnk Founding Network as a ${tierConf.label}. ProLnk pays contractors 72% on every referral plus 4-level network income — 5 income streams total. Only 2,125 founding spots available. Claim yours: ${refUrl}`;
   const smsText = `Hey! I just reserved my spot in the ProLnk Founding Network. Check it out: ${refUrl}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`;
@@ -1406,13 +1406,13 @@ export default function ProWaitlist() {
         <meta property="og:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
         <meta property="og:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system. DFW Texas, launching nationally." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://prolnk.io/pro-waitlist" />
+        <meta property="og:url" content="https://prolnk.xyz/pro-waitlist" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
         <meta name="twitter:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
-        <link rel="canonical" href="https://prolnk.io/pro-waitlist" />
+        <link rel="canonical" href="https://prolnk.xyz/pro-waitlist" />
       </Helmet>
 
       {/* -- Navigation -- */}
@@ -1965,7 +1965,7 @@ export default function ProWaitlist() {
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
                 <Link href="/advertise" className="hover:text-white transition-colors">Advertise</Link>
-                <a href="mailto:hello@prolnk.io" className="hover:text-white transition-colors">Contact</a>
+                <a href="mailto:hello@prolnk.xyz" className="hover:text-white transition-colors">Contact</a>
               </div>
             </div>
           </div>

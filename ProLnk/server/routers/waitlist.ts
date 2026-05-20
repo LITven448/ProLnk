@@ -39,8 +39,8 @@ const FOUNDING_RATES = {
 const TIER_LABELS: Record<string, string> = {
   charter:  "Charter Member",
   founding: "Founding Member",
-  level3:   "Level 3 Partner",
-  level4:   "Level 4 Partner",
+  level3:   "Growth Member",
+  level4:   "Network Member",
   waitlist: "Waitlist",
 };
 
@@ -56,8 +56,8 @@ const TIER_SPOTS_REMAINING = (totalSignups: number) => ({
 const TIER_RATES: Record<string, { label: string; ownJob: number; networkL1: number }> = {
   charter:  { label: "Charter Member",   ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
   founding: { label: "Founding Member",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
-  level3:   { label: "Level 3 Partner",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
-  level4:   { label: "Level 4 Partner",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
+  level3:   { label: "Growth Member",    ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
+  level4:   { label: "Network Member",    ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
   waitlist: { label: "Waitlist",          ownJob: 0, networkL1: 0 },
 };
 
@@ -469,7 +469,7 @@ export const waitlistRouter = router({
       }
 
       await pool.query("UPDATE proWaitlist SET customSlug = ? WHERE email = ?", [slug, input.email]);
-      return { success: true as const, slug, shareUrl: `https://prolnk.io/join/${slug}` };
+      return { success: true as const, slug, shareUrl: `https://prolnk.xyz/join/${slug}` };
     }),
 
   resolveSlug: publicProcedure

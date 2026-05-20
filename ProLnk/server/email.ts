@@ -8,7 +8,7 @@
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_PROLNK = "ProLnk <onboarding@resend.dev>";
 const FROM_TRUSTYPRO = "TrustyPro <onboarding@resend.dev>";
-const BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.io";
+const BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.xyz";
 
 interface EmailPayload {
   to: string;

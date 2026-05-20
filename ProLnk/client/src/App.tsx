@@ -18,7 +18,7 @@ import PartnerLogin from "./pages/PartnerLogin";
 import PartnerForgotPassword from "./pages/PartnerForgotPassword";
 import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
-import TrustyProWaitlistPage from "./pages/TrustyProWaitlistV2";
+import TrustyProWaitlistPage from "./pages/trustypro/TrustyProHome";
 import JoinLanding from "./pages/JoinLanding";
 import JoinBySlug from "./pages/JoinBySlug";
 import ReferralLanding from "./pages/ReferralLanding";

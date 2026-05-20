@@ -6,8 +6,9 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { TrustyProLogo } from "@/components/TrustyProLogo";
-import { Plus, X, Star, Menu, Phone, Mail, MapPin, Shield, Clock, Award, MessageSquare, ArrowRight, Camera, CheckCircle, ChevronLeft, ChevronRight, Loader2, AlertTriangle, DollarSign, Search, Zap, Lock, FileText, TrendingUp, XCircle, Target, RefreshCw } from "lucide-react";
+import { Plus, X, Star, Menu, Phone, Mail, MapPin, Shield, Clock, Award, MessageSquare, ArrowRight, Camera, CheckCircle, ChevronLeft, ChevronRight, Loader2, AlertTriangle, DollarSign, Search, Zap, Lock, FileText, TrendingUp, XCircle, Target, RefreshCw, Copy, Share2, Sparkles } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { AddressAutofill } from "@/components/AddressAutofill";
 import { toast } from "sonner";
 import {
   motion,
@@ -71,24 +72,14 @@ const BENEFITS = [
   { icon: TrendingUp,  title: "Protect and Grow Your Home's Value",                  desc: "Deferred maintenance costs 3x more to fix later and kills resale value. TrustyPro's proactive alerts tell you what to address now. Every dollar spent on maintenance returns $2–4 at resale." },
 ];
 
-// --- Testimonials --------------------------------------------------------------
-const TESTIMONIALS = [
-  { name: "Sarah M.",    loc: "Frisco, TX",   rating: 5, text: "TrustyPro matched me with an amazing kitchen contractor. The whole process was seamless -- from the AI scan to the final walkthrough. My kitchen looks incredible.", proj: "Kitchen Remodel" },
-  { name: "James T.",    loc: "Plano, TX",    rating: 5, text: "I was skeptical at first but the AI photo scan actually found issues I didn't even know about. Got my roof fixed before the next storm season. Worth every penny.", proj: "Roof Repair" },
-  { name: "Maria L.",    loc: "McKinney, TX", rating: 5, text: "Three quotes in 24 hours, all from verified pros. Chose the best one and my bathroom renovation was done in 8 days. Absolutely stunning results.", proj: "Bathroom Remodel" },
-  { name: "David K.",    loc: "Allen, TX",    rating: 5, text: "The contractor TrustyPro matched me with was professional, on time, and under budget. My backyard transformation exceeded every expectation.", proj: "Landscaping" },
-  { name: "Jennifer R.", loc: "Prosper, TX",  rating: 5, text: "As a first-time homeowner, I was nervous about hiring contractors. TrustyPro made it easy and safe. My flooring looks amazing and the process was stress-free.", proj: "Hardwood Flooring" },
-  { name: "Michael B.",  loc: "Celina, TX",   rating: 5, text: "The AI scan found a plumbing issue behind my walls that I never would have caught. Saved me from a major disaster. TrustyPro is a game-changer.", proj: "Plumbing" },
-];
-
 // --- FAQ -----------------------------------------------------------------------
 const FAQS = [
-  { q: "What types of home improvement projects do you specialize in?", a: "TrustyPro covers the full spectrum of home improvements -- from kitchen and bathroom remodels to roofing, HVAC, plumbing, flooring, painting, landscaping, and more. If it's your home, we've got a verified pro for it." },
-  { q: "How do I get started with a project?",                          a: "Simply upload photos of your home or describe what you need. Our AI analyzes your home and matches you with verified local pros. You'll receive quotes within 24 hours." },
-  { q: "Are TrustyPro contractors verified and insured?",               a: "Yes -- every contractor on TrustyPro is background-checked, license-verified, and carries full liability insurance. We don't let just anyone on the platform." },
-  { q: "How long does a typical project take?",                         a: "Project timelines vary by scope. Small jobs like painting or flooring can be completed in 1-3 days. Larger renovations like kitchen remodels typically take 2-6 weeks. Your pro will provide a detailed timeline upfront." },
-  { q: "What if I'm not satisfied with the work?",                      a: "TrustyPro stands behind every project with a satisfaction guarantee. If you're not happy with the results, contact us within 30 days and we'll work to make it right at no additional cost." },
-  { q: "Can I get multiple quotes from different contractors?",          a: "Absolutely. We encourage you to compare quotes from multiple verified pros. Our platform makes it easy to review profiles, ratings, and past work before making your decision." },
+  { q: "What is TrustyPro?", a: "TrustyPro is a homeowner platform launching soon in DFW. We help you build a complete profile of your home and connect you with verified, certified pros for any maintenance or improvement project. Free to join the waitlist — paid pros pay us when they close a job." },
+  { q: "When does TrustyPro launch?", a: "We're onboarding our founding contractor network now. Homeowner access opens in waves as we verify enough TrustyPro Certified pros in each ZIP code. Join the waitlist to be notified the moment your area is live." },
+  { q: "What happens after I join the waitlist?", a: "You'll get a confirmation email and a private home profile we build together. As we onboard pros in your area, we'll match your home with the right professionals for the projects you're planning — no spam, no calls from random contractors." },
+  { q: "How are TrustyPro contractors verified?", a: "Every TrustyPro Certified pro is background-checked, license-verified, insured, and reviewed by our network. They earn the badge only after passing onboarding." },
+  { q: "Is TrustyPro free for homeowners?", a: "Yes — using TrustyPro to plan, document, and find pros is completely free. The platform is funded by a small platform fee paid by the pro when a job closes — never by you." },
+  { q: "Will my home data be private?", a: "Yes. Your home profile is yours. We only share your information with pros you explicitly request quotes from. You can opt in or out of marketing communications at any time." },
 ];
 
 // --- Marquee Items -------------------------------------------------------------
@@ -268,7 +259,7 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Scan My Home Free — See the Difference <ArrowRight className="w-5 h-5" />
+              Join the Waitlist — Be First In Line <ArrowRight className="w-5 h-5" />
             </motion.button>
           </div>
         </AnimSection>
@@ -442,53 +433,161 @@ const SERVICE_TYPES = [
   "General Repairs", "Other",
 ];
 
+const TIMELINES = [
+  { value: "asap", label: "ASAP" },
+  { value: "1-3mo", label: "1–3 months" },
+  { value: "3-6mo", label: "3–6 months" },
+  { value: "6-12mo", label: "6–12 months" },
+  { value: "exploring", label: "Just exploring" },
+];
+
+const BUDGETS = [
+  { value: "<5k", label: "Under $5k" },
+  { value: "5-15k", label: "$5k–$15k" },
+  { value: "15-50k", label: "$15k–$50k" },
+  { value: "50-150k", label: "$50k–$150k" },
+  { value: "150k+", label: "$150k+" },
+  { value: "unsure", label: "Not sure yet" },
+];
+
 export default function TrustyProHome() {
   const [mobileOpen, setMobileOpen]       = useState(false);
   const [activeService, setActiveService] = useState(0);
   const [openFaq, setOpenFaq]             = useState<number | null>(0);
   const [chatOpen, setChatOpen]           = useState(false);
 
-  // -- Intake modal state --------------------------------------------------
+  const [, navigate] = useLocation();
+  const { isAuthenticated, user } = useAuth();
+
+  // -- Waitlist modal state --------------------------------------------------
   const [intakeOpen, setIntakeOpen]       = useState(false);
-  const [intakeStep, setIntakeStep]       = useState(1); // 1 = contact, 2 = project, 3 = success
+  const [intakeStep, setIntakeStep]       = useState(1); // 1=address, 2=contact, 3=projects, 4=notes+beta, 5=success
+  const [referralCode, setReferralCode]   = useState<string | null>(null);
+  const [successData, setSuccessData]     = useState<{ position: number; shareSlug: string } | null>(null);
+  const [copyStatus, setCopyStatus]       = useState<"idle" | "copied">("idle");
   const [intakeForm, setIntakeForm]       = useState({
-    name: "", email: "", phone: "", address: "",
-    serviceType: "", description: "", urgency: "moderate" as "urgent" | "moderate" | "low",
+    firstName: "", lastName: "", email: "", phone: "",
+    address: "", city: "", state: "", zipCode: "",
+    propertyData: null as null | {
+      squareFeet: number | null; yearBuilt: number | null;
+      bedrooms: number | null; bathrooms: number | null;
+      propertyType: string | null;
+    },
+    projects: [] as string[],
+    timeline: "",
+    budget: "",
+    notes: "",
+    betaOptIn: false,
+    smsConsent: false,
+    emailConsent: true,
   });
 
-  const submitLead = trpc.trustyPro.submitRequest.useMutation({
-    onSuccess: () => { setIntakeStep(3); },
+  // Capture referral on mount from ?ref= or localStorage
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref");
+      if (ref) {
+        localStorage.setItem("trustypro_referral_code", ref);
+        setReferralCode(ref.toUpperCase());
+      } else {
+        const stored = localStorage.getItem("trustypro_referral_code");
+        if (stored) setReferralCode(stored.toUpperCase());
+      }
+    } catch {}
+  }, []);
+
+  const joinWaitlist = trpc.waitlist.joinHomeWaitlist.useMutation({
+    onSuccess: (data: { success: true; position: number }) => {
+      const slug = `${intakeForm.firstName}-${intakeForm.lastName}`.toLowerCase().replace(/[^a-z0-9-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "").slice(0, 30) || `home-${data.position}`;
+      setSuccessData({ position: data.position, shareSlug: slug });
+      setIntakeStep(5);
+      toast.success(`You're on the waitlist — position #${data.position}`);
+    },
     onError: (err: { message?: string }) => { toast.error(err.message || "Something went wrong. Please try again."); },
   });
 
-  const openIntake = () => { setIntakeOpen(true); setIntakeStep(1); setIntakeForm({ name: user?.name ?? "", email: user?.email ?? "", phone: "", address: "", serviceType: "", description: "", urgency: "moderate" }); };
+  const openIntake = () => {
+    setIntakeOpen(true);
+    setIntakeStep(1);
+    setSuccessData(null);
+    setIntakeForm({
+      firstName: (user?.name?.split(" ")[0]) ?? "",
+      lastName: (user?.name?.split(" ").slice(1).join(" ")) ?? "",
+      email: user?.email ?? "",
+      phone: "",
+      address: "", city: "", state: "", zipCode: "",
+      propertyData: null,
+      projects: [],
+      timeline: "",
+      budget: "",
+      notes: "",
+      betaOptIn: false,
+      smsConsent: false,
+      emailConsent: true,
+    });
+  };
   const closeIntake = () => { setIntakeOpen(false); setIntakeStep(1); };
 
-  const handleIntakeSubmit = () => {
-    if (!intakeForm.name || !intakeForm.email || !intakeForm.address) {
-      toast.error("Please fill in your name, email, and address."); return;
+  const toggleProject = (p: string) => {
+    setIntakeForm(f => ({
+      ...f,
+      projects: f.projects.includes(p) ? f.projects.filter(x => x !== p) : [...f.projects, p],
+    }));
+  };
+
+  const handleWaitlistSubmit = () => {
+    if (!intakeForm.address || !intakeForm.city || !intakeForm.state || !intakeForm.zipCode) {
+      toast.error("Please select your home address first."); setIntakeStep(1); return;
     }
-    if (!intakeForm.serviceType || !intakeForm.description) {
-      toast.error("Please describe your project."); return;
+    if (!intakeForm.firstName || !intakeForm.lastName || !intakeForm.email) {
+      toast.error("Please fill in your name and email."); setIntakeStep(2); return;
     }
-    submitLead.mutate({
-      name: intakeForm.name,
+    if (intakeForm.projects.length === 0) {
+      toast.error("Pick at least one project you're planning."); setIntakeStep(3); return;
+    }
+    const projectsLabel = intakeForm.projects.join(", ");
+    const meta: string[] = [];
+    if (intakeForm.timeline) meta.push(`timeline:${intakeForm.timeline}`);
+    if (intakeForm.budget) meta.push(`budget:${intakeForm.budget}`);
+    if (intakeForm.betaOptIn) meta.push("beta:true");
+    if (intakeForm.notes) meta.push(`notes:${intakeForm.notes.slice(0, 100)}`);
+    const serviceNeeded = `${projectsLabel} | ${meta.join(" | ")}`.slice(0, 255);
+
+    joinWaitlist.mutate({
+      firstName: intakeForm.firstName,
+      lastName: intakeForm.lastName,
       email: intakeForm.email,
       phone: intakeForm.phone || undefined,
       address: intakeForm.address,
-      serviceType: intakeForm.serviceType,
-      description: intakeForm.description,
-      urgency: intakeForm.urgency,
+      city: intakeForm.city,
+      state: intakeForm.state.toUpperCase().slice(0, 2),
+      zipCode: intakeForm.zipCode,
+      serviceNeeded,
+      referredBy: referralCode || undefined,
     });
   };
 
-  const [, navigate] = useLocation();
-  const { isAuthenticated, user } = useAuth();
-  const goToWizard = () => {
-    // Always route to the live AI scan — no login wall
-    navigate("/trustypro/scan");
+  const shareUrl = successData ? `https://trustypro.io/?ref=${encodeURIComponent(successData.shareSlug)}` : "";
+  const copyShareLink = async () => {
+    if (!shareUrl) return;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopyStatus("copied");
+      setTimeout(() => setCopyStatus("idle"), 2000);
+    } catch { toast.error("Could not copy. Please copy the link manually."); }
   };
-  // All scan/find-a-pro CTAs route directly to /trustypro/scan
+  const nativeShare = async () => {
+    if (!shareUrl) return;
+    if (navigator.share) {
+      try { await navigator.share({ title: "Join the TrustyPro waitlist", text: "I just joined the TrustyPro waitlist — join with my link:", url: shareUrl }); } catch {}
+    } else {
+      copyShareLink();
+    }
+  };
+
+  const goToWizard = () => { openIntake(); };
+  // All home CTAs now open the waitlist signup modal
 
   const s1 = useCountUp(500);
   const s2 = useCountUp(47);
@@ -544,25 +643,37 @@ export default function TrustyProHome() {
             >
               {/* Header */}
               <div className="px-8 pt-8 pb-5 border-b border-gray-100">
-                <button onClick={closeIntake} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
+                <button onClick={closeIntake} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors z-10">
                   <X className="w-4 h-4 text-gray-600" />
                 </button>
-                {intakeStep < 3 ? (
+                {intakeStep < 5 ? (
                   <>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: ACCENT }}>Free</span>
-                      <span className="text-xs text-gray-400 font-medium">No credit card required</span>
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: ACCENT }}>Waitlist · Free</span>
+                      <span className="text-xs text-gray-400 font-medium">DFW launch · 2026</span>
+                      {referralCode && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold" style={{ backgroundColor: ACCENT_LIGHT, color: ACCENT }}>
+                          <Sparkles className="w-3 h-3" /> Referred · {referralCode}
+                        </span>
+                      )}
                     </div>
                     <h2 className="text-2xl font-black text-gray-950">
-                      {intakeStep === 1 ? "Tell us about yourself" : "Describe your project"}
+                      {intakeStep === 1 && "Start with your home address"}
+                      {intakeStep === 2 && "How can we reach you?"}
+                      {intakeStep === 3 && "What are you planning?"}
+                      {intakeStep === 4 && "One last thing"}
                     </h2>
                     <p className="text-sm text-gray-500 mt-1">
-                      {intakeStep === 1 ? "We'll match you with a verified local pro in your area." : "The more detail you share, the better we can match you."}
+                      {intakeStep === 1 && "We'll pre-fill your home profile from public property records — square footage, year built, beds, baths."}
+                      {intakeStep === 2 && "We'll send your confirmation and notify you the moment your area goes live."}
+                      {intakeStep === 3 && "Tell us what's on your list. We'll match you with the right TrustyPro Certified pro at launch."}
+                      {intakeStep === 4 && "Optional notes plus our Beta program — first 1,000 homeowners only."}
                     </p>
                     {/* Step indicator */}
                     <div className="flex gap-2 mt-4">
-                      <div className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= 1 ? ACCENT : "#E5E7EB" }} />
-                      <div className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= 2 ? ACCENT : "#E5E7EB" }} />
+                      {[1,2,3,4].map(n => (
+                        <div key={n} className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= n ? ACCENT : "#E5E7EB" }} />
+                      ))}
                     </div>
                   </>
                 ) : (
@@ -571,7 +682,9 @@ export default function TrustyProHome() {
                       <CheckCircle className="w-8 h-8" style={{ color: ACCENT }} />
                     </div>
                     <h2 className="text-2xl font-black text-gray-950">You're on the list!</h2>
-                    <p className="text-gray-500 mt-2 text-sm">We received your request and will match you with a verified DFW pro within a few hours. Check your email for updates.</p>
+                    <p className="text-gray-500 mt-2 text-sm">
+                      You're <span className="font-bold" style={{ color: ACCENT }}>#{successData?.position}</span> on the TrustyPro homeowner waitlist. Check your email for confirmation — we'll notify you the moment your area is live.
+                    </p>
                   </div>
                 )}
               </div>
@@ -579,24 +692,69 @@ export default function TrustyProHome() {
               {/* Body */}
               {intakeStep === 1 && (
                 <div className="px-8 py-6 space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">Home Address *</label>
+                    <AddressAutofill
+                      value={intakeForm.address ? `${intakeForm.address}, ${intakeForm.city}, ${intakeForm.state} ${intakeForm.zipCode}`.trim() : ""}
+                      onAddressSelect={(sel) => {
+                        setIntakeForm(f => ({
+                          ...f,
+                          address: sel.street,
+                          city: sel.city,
+                          state: sel.state,
+                          zipCode: sel.zip,
+                          propertyData: sel.propertyData,
+                        }));
+                      }}
+                    />
+                  </div>
+                  {intakeForm.propertyData && (
+                    <div className="rounded-xl p-4 grid grid-cols-2 gap-3" style={{ backgroundColor: ACCENT_LIGHT }}>
+                      <p className="col-span-2 text-xs font-black uppercase tracking-wider" style={{ color: ACCENT }}>
+                        <Sparkles className="inline w-3.5 h-3.5 mr-1" /> Found your home — pre-filled from public records
+                      </p>
+                      {intakeForm.propertyData.squareFeet && <div className="text-xs"><span className="text-gray-500">Sq ft</span> <span className="font-bold text-gray-900">{intakeForm.propertyData.squareFeet.toLocaleString()}</span></div>}
+                      {intakeForm.propertyData.yearBuilt && <div className="text-xs"><span className="text-gray-500">Built</span> <span className="font-bold text-gray-900">{intakeForm.propertyData.yearBuilt}</span></div>}
+                      {intakeForm.propertyData.bedrooms != null && <div className="text-xs"><span className="text-gray-500">Beds</span> <span className="font-bold text-gray-900">{intakeForm.propertyData.bedrooms}</span></div>}
+                      {intakeForm.propertyData.bathrooms != null && <div className="text-xs"><span className="text-gray-500">Baths</span> <span className="font-bold text-gray-900">{intakeForm.propertyData.bathrooms}</span></div>}
+                      {intakeForm.propertyData.propertyType && <div className="col-span-2 text-xs"><span className="text-gray-500">Type</span> <span className="font-bold text-gray-900">{intakeForm.propertyData.propertyType}</span></div>}
+                    </div>
+                  )}
+                  <button
+                    onClick={() => {
+                      if (!intakeForm.address || !intakeForm.city || !intakeForm.state || !intakeForm.zipCode) {
+                        toast.error("Please select your home address from the suggestions."); return;
+                      }
+                      setIntakeStep(2);
+                    }}
+                    className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: ACCENT }}
+                  >
+                    Continue <ArrowRight className="inline w-4 h-4 ml-1" />
+                  </button>
+                  <p className="text-[11px] text-center text-gray-400">Your address is private. We never share it without your explicit consent.</p>
+                </div>
+              )}
+
+              {intakeStep === 2 && (
+                <div className="px-8 py-6 space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">Full Name *</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">First Name *</label>
                       <input
-                        type="text" placeholder="Jane Smith"
-                        value={intakeForm.name}
-                        onChange={e => setIntakeForm(f => ({ ...f, name: e.target.value }))}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
-                        style={{ focusRingColor: ACCENT } as React.CSSProperties}
+                        type="text" placeholder="Jane"
+                        value={intakeForm.firstName}
+                        onChange={e => setIntakeForm(f => ({ ...f, firstName: e.target.value }))}
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-900"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">Phone</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Last Name *</label>
                       <input
-                        type="tel" placeholder="(214) 555-0100"
-                        value={intakeForm.phone}
-                        onChange={e => setIntakeForm(f => ({ ...f, phone: e.target.value }))}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
+                        type="text" placeholder="Smith"
+                        value={intakeForm.lastName}
+                        onChange={e => setIntakeForm(f => ({ ...f, lastName: e.target.value }))}
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-900"
                       />
                     </div>
                   </div>
@@ -606,101 +764,205 @@ export default function TrustyProHome() {
                       type="email" placeholder="jane@example.com"
                       value={intakeForm.email}
                       onChange={e => setIntakeForm(f => ({ ...f, email: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-900"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">Home Address *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Phone <span className="text-gray-400 font-normal">(optional, for launch alerts)</span></label>
                     <input
-                      type="text" placeholder="123 Main St, Frisco, TX 75034"
-                      value={intakeForm.address}
-                      onChange={e => setIntakeForm(f => ({ ...f, address: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
+                      type="tel" placeholder="(214) 555-0100"
+                      value={intakeForm.phone}
+                      onChange={e => setIntakeForm(f => ({ ...f, phone: e.target.value }))}
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-900"
                     />
                   </div>
-                  <button
-                    onClick={() => {
-                      if (!intakeForm.name || !intakeForm.email || !intakeForm.address) {
-                        toast.error("Please fill in your name, email, and address."); return;
-                      }
-                      setIntakeStep(2);
-                    }}
-                    className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: ACCENT }}
-                  >
-                    Next -- Describe Your Project <ArrowRight className="inline w-4 h-4 ml-1" />
-                  </button>
-                </div>
-              )}
-
-              {intakeStep === 2 && (
-                <div className="px-8 py-6 space-y-4">
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2">What type of project? *</label>
-                    <div className="flex flex-wrap gap-2">
-                      {SERVICE_TYPES.map(s => (
-                        <button
-                          key={s}
-                          onClick={() => setIntakeForm(f => ({ ...f, serviceType: s }))}
-                          className="px-3 py-1.5 rounded-full text-xs font-semibold border transition-all"
-                          style={intakeForm.serviceType === s ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">Describe what you need *</label>
-                    <textarea
-                      rows={3} placeholder="e.g. My kitchen cabinets need replacing and I'd like new countertops too..."
-                      value={intakeForm.description}
-                      onChange={e => setIntakeForm(f => ({ ...f, description: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900 resize-none"
+                  <label className="flex items-start gap-2.5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={intakeForm.emailConsent}
+                      onChange={e => setIntakeForm(f => ({ ...f, emailConsent: e.target.checked }))}
+                      className="mt-0.5 accent-indigo-600"
                     />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2">How urgent is this?</label>
-                    <div className="flex gap-2">
-                      {(["urgent","moderate","low"] as const).map(u => (
-                        <button
-                          key={u}
-                          onClick={() => setIntakeForm(f => ({ ...f, urgency: u }))}
-                          className="flex-1 py-2 rounded-xl text-xs font-semibold border capitalize transition-all"
-                          style={intakeForm.urgency === u ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
-                        >
-                          {u === "urgent" ? " Urgent" : u === "moderate" ? " Moderate" : " No Rush"}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+                    <span className="text-xs text-gray-600 leading-snug">Yes, email me launch updates, home tips, and pro matches. You can unsubscribe anytime.</span>
+                  </label>
+                  {intakeForm.phone && (
+                    <label className="flex items-start gap-2.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={intakeForm.smsConsent}
+                        onChange={e => setIntakeForm(f => ({ ...f, smsConsent: e.target.checked }))}
+                        className="mt-0.5 accent-indigo-600"
+                      />
+                      <span className="text-xs text-gray-600 leading-snug">Text me at launch — standard messaging rates apply. Reply STOP to opt out.</span>
+                    </label>
+                  )}
                   <div className="flex gap-3">
+                    <button onClick={() => setIntakeStep(1)} className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors">Back</button>
                     <button
-                      onClick={() => setIntakeStep(1)}
-                      className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors"
-                    >
-                      Back
-                    </button>
-                    <button
-                      onClick={handleIntakeSubmit}
-                      disabled={submitLead.isPending}
-                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60 flex items-center justify-center gap-2"
+                      onClick={() => {
+                        if (!intakeForm.firstName || !intakeForm.lastName || !intakeForm.email) { toast.error("Please fill in your name and email."); return; }
+                        setIntakeStep(3);
+                      }}
+                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
                       style={{ backgroundColor: ACCENT }}
                     >
-                      {submitLead.isPending ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</> : "Get Matched -- It's Free"}
+                      Continue <ArrowRight className="inline w-4 h-4 ml-1" />
                     </button>
                   </div>
                 </div>
               )}
 
               {intakeStep === 3 && (
-                <div className="px-8 py-6 text-center">
+                <div className="px-8 py-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">What are you planning? * <span className="text-gray-400 font-normal">(select all that apply)</span></label>
+                    <div className="flex flex-wrap gap-2">
+                      {SERVICE_TYPES.map(s => {
+                        const active = intakeForm.projects.includes(s);
+                        return (
+                          <button
+                            key={s}
+                            onClick={() => toggleProject(s)}
+                            className="px-3 py-1.5 rounded-full text-xs font-semibold border transition-all"
+                            style={active ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
+                          >
+                            {active ? "✓ " : ""}{s}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">When are you hoping to start?</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {TIMELINES.map(t => (
+                        <button
+                          key={t.value}
+                          onClick={() => setIntakeForm(f => ({ ...f, timeline: t.value }))}
+                          className="py-2 rounded-xl text-xs font-semibold border transition-all"
+                          style={intakeForm.timeline === t.value ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
+                        >
+                          {t.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">Approximate budget</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {BUDGETS.map(b => (
+                        <button
+                          key={b.value}
+                          onClick={() => setIntakeForm(f => ({ ...f, budget: b.value }))}
+                          className="py-2 rounded-xl text-xs font-semibold border transition-all"
+                          style={intakeForm.budget === b.value ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
+                        >
+                          {b.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex gap-3 pt-2">
+                    <button onClick={() => setIntakeStep(2)} className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors">Back</button>
+                    <button
+                      onClick={() => {
+                        if (intakeForm.projects.length === 0) { toast.error("Pick at least one project."); return; }
+                        setIntakeStep(4);
+                      }}
+                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                      style={{ backgroundColor: ACCENT }}
+                    >
+                      Continue <ArrowRight className="inline w-4 h-4 ml-1" />
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {intakeStep === 4 && (
+                <div className="px-8 py-6 space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Anything else we should know? <span className="text-gray-400 font-normal">(optional)</span></label>
+                    <textarea
+                      rows={3}
+                      placeholder="e.g. Trying to finish before family visits in March, looking for eco-friendly materials, recently bought the home..."
+                      value={intakeForm.notes}
+                      onChange={e => setIntakeForm(f => ({ ...f, notes: e.target.value }))}
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-900 resize-none"
+                    />
+                  </div>
+                  <label className="flex items-start gap-3 p-4 rounded-2xl cursor-pointer border-2 transition-colors"
+                    style={intakeForm.betaOptIn
+                      ? { backgroundColor: ACCENT_LIGHT, borderColor: ACCENT }
+                      : { backgroundColor: "white", borderColor: "#E5E7EB" }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={intakeForm.betaOptIn}
+                      onChange={e => setIntakeForm(f => ({ ...f, betaOptIn: e.target.checked }))}
+                      className="mt-1 accent-indigo-600 w-4 h-4"
+                    />
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-black text-gray-900 text-sm">Join the Beta Program</span>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: ACCENT }}>Limited · 1,000 spots</span>
+                      </div>
+                      <p className="text-xs text-gray-600 leading-snug">First 1,000 homeowners get early access to test new features — AI home scan, instant pro matching, and the Home Health Vault — before public launch.</p>
+                    </div>
+                  </label>
+                  <div className="flex gap-3">
+                    <button onClick={() => setIntakeStep(3)} className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors">Back</button>
+                    <button
+                      onClick={handleWaitlistSubmit}
+                      disabled={joinWaitlist.isPending}
+                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60 flex items-center justify-center gap-2"
+                      style={{ backgroundColor: ACCENT }}
+                    >
+                      {joinWaitlist.isPending ? <><Loader2 className="w-4 h-4 animate-spin" /> Joining...</> : "Join the Waitlist"}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {intakeStep === 5 && (
+                <div className="px-8 py-6 space-y-5">
+                  <div className="rounded-2xl p-5" style={{ backgroundColor: ACCENT_LIGHT, border: `1px solid ${ACCENT}33` }}>
+                    <p className="text-xs font-black uppercase tracking-wider mb-2" style={{ color: ACCENT }}>
+                      <Share2 className="inline w-3.5 h-3.5 mr-1" /> Skip the line — invite friends
+                    </p>
+                    <p className="text-xs text-gray-600 leading-snug mb-3">Every friend who joins from your link moves you up the list. Founding homeowners get lifetime perks at launch.</p>
+                    <div className="flex items-center gap-2 bg-white rounded-xl border border-gray-200 px-3 py-2">
+                      <input
+                        readOnly
+                        value={shareUrl}
+                        className="flex-1 text-xs text-gray-700 bg-transparent outline-none truncate"
+                      />
+                      <button
+                        onClick={copyShareLink}
+                        className="px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-opacity"
+                        style={{ backgroundColor: ACCENT }}
+                      >
+                        {copyStatus === "copied" ? <><CheckCircle className="inline w-3.5 h-3.5 mr-1" />Copied</> : <><Copy className="inline w-3.5 h-3.5 mr-1" />Copy</>}
+                      </button>
+                    </div>
+                    <button
+                      onClick={nativeShare}
+                      className="mt-2 w-full py-2 rounded-xl text-xs font-bold border border-gray-200 hover:bg-gray-50 transition-colors flex items-center justify-center gap-1.5"
+                    >
+                      <Share2 className="w-3.5 h-3.5" /> Share with friends
+                    </button>
+                  </div>
+                  {intakeForm.betaOptIn && (
+                    <div className="rounded-xl p-3 flex items-center gap-2" style={{ backgroundColor: "#fef3c7", border: "1px solid #fde68a" }}>
+                      <Sparkles className="w-4 h-4 text-yellow-700 flex-shrink-0" />
+                      <p className="text-xs font-semibold text-yellow-900">You're in the Beta queue. We'll email beta invites as soon as your area is live.</p>
+                    </div>
+                  )}
                   <button
                     onClick={closeIntake}
                     className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
                     style={{ backgroundColor: ACCENT }}
                   >
-                    Close
+                    Done
                   </button>
                 </div>
               )}
@@ -722,15 +984,15 @@ export default function TrustyProHome() {
             <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</button>
           </div>
           <div className="hidden md:flex items-center gap-3">
-<button onClick={goToWizard} className="text-sm font-semibold px-4 py-1.5 rounded-full border-2 transition-colors" style={{ borderColor: ACCENT, color: ACCENT }}>Scan My Home ✦</button>
+<button onClick={openIntake} className="text-sm font-semibold px-4 py-1.5 rounded-full border-2 transition-colors" style={{ borderColor: ACCENT, color: ACCENT }}>Join the Waitlist ✦</button>
             <button
               onClick={() => navigate("/trustypro/login")}
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 px-4 py-2 rounded-full hover:border-gray-400"
             >
               My Home Login
             </button>
-            <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity" style={{ backgroundColor: ACCENT }}>
-              Get Started
+            <button onClick={openIntake} className="px-5 py-2 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity" style={{ backgroundColor: ACCENT }}>
+              Join the Waitlist
             </button>
           </div>
           <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
@@ -748,9 +1010,9 @@ export default function TrustyProHome() {
                 <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
               <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-left text-sm font-medium text-gray-600">Contact</button>
-              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Scan My Home</button>
+              <button onClick={openIntake} className="text-left text-sm font-medium text-gray-600">Join the Waitlist</button>
               <button onClick={() => navigate("/trustypro/login")} className="text-left text-sm font-medium text-gray-600">My Home Login</button>
-              <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Get Started</button>
+              <button onClick={openIntake} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Join the Waitlist</button>
             </motion.div>
           )}
         </AnimatePresence>
@@ -769,7 +1031,7 @@ export default function TrustyProHome() {
             transition={{ duration: 0.5, ease: EASE }}
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm font-bold text-green-700">100% Free for Homeowners — No Catch. No Credit Card.</span>
+            <span className="text-sm font-bold text-green-700">DFW Waitlist Now Open — Founding Homeowner Perks Inside</span>
           </motion.div>
 
           {/* Primary headline */}
@@ -844,7 +1106,7 @@ export default function TrustyProHome() {
               ))}
             </div>
             <p className="text-sm font-bold" style={{ color: ACCENT }}>
-              10,000+ homes scanned — 3.2 issues found per scan on average
+              2,400+ DFW homes on the waitlist — limited founding spots remaining
             </p>
           </motion.div>
 
@@ -860,7 +1122,7 @@ export default function TrustyProHome() {
               className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
               style={{ backgroundColor: ACCENT }}
             >
-              Start Your Free Scan <ArrowRight className="w-5 h-5" />
+              Join the Waitlist <ArrowRight className="w-5 h-5" />
             </button>
 
             {/* Trust badges */}
@@ -881,11 +1143,11 @@ export default function TrustyProHome() {
               ))}
             </div>
 
-            {/* Claim CTA */}
+            {/* Status check */}
             <p className="text-sm text-gray-500">
-              Already a DFW homeowner?{" "}
-              <Link href="/trustypro/claim" className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity" style={{ color: ACCENT }}>
-                Search if your home is in our network →
+              Already on the waitlist?{" "}
+              <Link href="/waitlist/homeowner/status" className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity" style={{ color: ACCENT }}>
+                Check your position →
               </Link>
             </p>
           </motion.div>
@@ -942,7 +1204,7 @@ export default function TrustyProHome() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Scan My Home Free <ArrowRight className="w-4 h-4" />
+                Join the Waitlist <ArrowRight className="w-4 h-4" />
               </motion.button>
               </div>
             </AnimSection>
@@ -1060,7 +1322,7 @@ export default function TrustyProHome() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Try It Free -- Scan My Home <ArrowRight className="w-4 h-4" />
+              Join the Waitlist — It's Free <ArrowRight className="w-4 h-4" />
             </motion.button>
             <p className="text-xs text-gray-400 mt-3">Free • No account required • Results in under 60 seconds</p>
           </AnimSection>
@@ -1185,80 +1447,6 @@ export default function TrustyProHome() {
                   <div>
                     <h3 className="font-bold text-gray-900">{b.title}</h3>
                     <p className="mt-1 text-sm text-gray-500 leading-relaxed">{b.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* -- TESTIMONIALS ------------------------------------------------------ */}
-      <section className="bg-gray-50 py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimSection variants={fadeUp} className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Reviews</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950">What DFW Homeowners Say</h2>
-            <p className="mt-3 text-gray-500 text-lg">Real reviews from real homeowners across the DFW Metroplex.</p>
-          </AnimSection>
-          {/* Staggered 2-column layout like Estatia -- cards come at you from different heights */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Left column -- offset down */}
-            <motion.div
-              className="flex flex-col gap-6 md:mt-10"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
-            >
-              {[TESTIMONIALS[0], TESTIMONIALS[2], TESTIMONIALS[4]].map((t, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-50"
-                  variants={{ hidden: { opacity: 0, y: 48, rotate: -1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
-                  whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(0,0,0,0.1)" }}
-                >
-                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 ring-2 ring-offset-1 ring-indigo-200" style={{ background: `linear-gradient(135deg, ${ACCENT}, #7C3AED)` }}>{t.name[0]}</div>
-                      <div>
-                        <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                        <div className="text-xs text-gray-400">{t.loc}</div>
-                      </div>
-                    </div>
-                    <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-            {/* Right column -- offset up */}
-            <motion.div
-              className="flex flex-col gap-6 md:-mt-10"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } } }}
-            >
-              {[TESTIMONIALS[1], TESTIMONIALS[3], TESTIMONIALS[5]].map((t, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-50"
-                  variants={{ hidden: { opacity: 0, y: 48, rotate: 1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
-                  whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(0,0,0,0.1)" }}
-                >
-                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 ring-2 ring-offset-1 ring-indigo-200" style={{ background: `linear-gradient(135deg, ${ACCENT}, #7C3AED)` }}>{t.name[0]}</div>
-                      <div>
-                        <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                        <div className="text-xs text-gray-400">{t.loc}</div>
-                      </div>
-                    </div>
-                    <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
                   </div>
                 </motion.div>
               ))}
@@ -1404,7 +1592,7 @@ export default function TrustyProHome() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Start Building Your Vault — Free <ArrowRight className="w-4 h-4" />
+              Reserve Your Vault — Join the Waitlist <ArrowRight className="w-4 h-4" />
             </motion.button>
           </AnimSection>
         </div>
@@ -1468,7 +1656,7 @@ export default function TrustyProHome() {
                 style={{ backgroundColor: ACCENT }}
                 whileHover={{ scale: 1.04 }}
               >
-                Find Certified Pros
+                Join the Waitlist
               </motion.button>
             </div>
           </AnimSection>
@@ -1539,7 +1727,7 @@ export default function TrustyProHome() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: EASE }}
           >
-            Ready to Transform Your Home?
+            Be First In Line at Launch.
           </motion.h2>
           <motion.p
             className="text-gray-400 text-lg max-w-2xl mx-auto mb-10"
@@ -1548,7 +1736,7 @@ export default function TrustyProHome() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
           >
-            Get matched with a verified TrustyPro contractor in your area today. Upload photos of your home and let our AI find exactly what needs attention.
+Join the TrustyPro waitlist today. We'll build your home profile, save your spot, and notify you the moment our verified pros go live in your area. Founding homeowners get lifetime perks.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -1564,23 +1752,15 @@ export default function TrustyProHome() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Scan My Home Free
+                Join the Waitlist
               </motion.button>
               <motion.button
-                onClick={() => navigate("/trustypro/waitlist")}
+                onClick={() => navigate("/trustypro/login")}
                 className="px-8 py-4 rounded-full text-base font-semibold text-white border border-white/30 hover:bg-white/10 transition-colors"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Join the Waitlist
-              </motion.button>
-              <motion.button
-                onClick={() => navigate("/trustypro/directory")}
-                className="px-8 py-4 rounded-full text-base font-semibold text-gray-900 bg-white hover:bg-gray-100 transition-colors"
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Browse Verified Pros
+                Already On the List? Sign In
               </motion.button>
           </motion.div>
         </div>
@@ -1617,7 +1797,7 @@ export default function TrustyProHome() {
               <a href="/privacy" className="text-xs text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="text-xs text-gray-500 hover:text-white transition-colors">Terms of Service</a>
               <a href="/ccpa" className="text-xs text-gray-500 hover:text-white transition-colors">CCPA Rights</a>
-              <button onClick={() => scrollTo("contact")} className="text-xs text-gray-500 hover:text-white transition-colors">Find a Pro</button>
+              <button onClick={openIntake} className="text-xs text-gray-500 hover:text-white transition-colors">Join the Waitlist</button>
             </div>
           </div>
         </div>

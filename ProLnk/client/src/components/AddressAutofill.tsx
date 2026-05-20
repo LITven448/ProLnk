@@ -66,10 +66,16 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
   } | null>(null);
   const pendingAddressRef = useRef<Omit<SelectedAddress, "propertyData"> | null>(null);
 
-  const enrichQuery = trpc.propertyEnrichment.enrichAddress.useQuery(
-    enrichInput as { address: string; city?: string; state?: string; zip?: string },
+  // Use the new property.lookupByAddress endpoint (ATTOM-backed, working)
+  const enrichQuery = trpc.property.lookupByAddress.useQuery(
     {
-      enabled: !!enrichInput,
+      address: enrichInput?.address ?? "",
+      city: enrichInput?.city ?? "",
+      state: (enrichInput?.state ?? "").toUpperCase().slice(0, 2),
+      zipCode: enrichInput?.zip ?? "",
+    },
+    {
+      enabled: !!enrichInput && !!enrichInput.address && !!enrichInput.city && !!enrichInput.state && !!enrichInput.zip,
       retry: false,
     }
   );
@@ -83,9 +89,22 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
     setLoadingEnrich(false);
     const base = pendingAddressRef.current;
     if (base && enrichQuery.data !== undefined) {
+      // Map the property.lookupByAddress response to PropertyData shape
+      const raw = enrichQuery.data;
+      const propertyData: PropertyData | null = (raw && raw.found) ? {
+        squareFeet: typeof raw.squareFootage === "number" ? raw.squareFootage : null,
+        yearBuilt: typeof raw.yearBuilt === "number" ? raw.yearBuilt : null,
+        bedrooms: typeof raw.bedrooms === "number" ? raw.bedrooms : null,
+        bathrooms: typeof raw.bathrooms === "number" ? raw.bathrooms : null,
+        propertyType: raw.propertyType ?? raw.homeType ?? null,
+        stories: typeof raw.stories === "number" ? raw.stories : null,
+        garage: raw.garageType ?? (raw.garageSpaces ? `${raw.garageSpaces}-car` : null),
+        pool: null,
+        lotSizeAcres: typeof raw.lotSizeAcres === "number" ? raw.lotSizeAcres : null,
+      } : null;
       const enriched: SelectedAddress = {
         ...base,
-        propertyData: enrichQuery.data as PropertyData | null,
+        propertyData,
       };
       setSelected(enriched);
       onAddressSelect(enriched);

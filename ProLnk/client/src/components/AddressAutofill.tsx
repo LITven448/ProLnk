@@ -19,8 +19,19 @@ interface PropertyData {
   propertyType: string | null;
   stories?: number | null;
   garage?: string | null;
+  garageSpaces?: number | null;
   pool?: boolean | null;
   lotSizeAcres?: number | null;
+  lotSizeSqFt?: number | null;
+  hasFireplace?: boolean | null;
+  fireplaceCount?: number | null;
+  hasPool?: boolean | null;
+  roofMaterial?: string | null;
+  foundationType?: string | null;
+  coolingType?: string | null;
+  heatingType?: string | null;
+  subdivision?: string | null;
+  majorRenovationYear?: number | null;
 }
 
 interface SelectedAddress {
@@ -98,9 +109,20 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
         bathrooms: typeof raw.bathrooms === "number" ? raw.bathrooms : null,
         propertyType: raw.propertyType ?? raw.homeType ?? null,
         stories: typeof raw.stories === "number" ? raw.stories : null,
-        garage: raw.garageType ?? (raw.garageSpaces ? `${raw.garageSpaces}-car` : null),
-        pool: null,
+        garage: raw.garageType ?? (raw.garageSpaces ? `${raw.garageSpaces}-car attached` : null),
+        garageSpaces: typeof raw.garageSpaces === "number" ? raw.garageSpaces : null,
+        pool: typeof raw.hasPool === "boolean" ? raw.hasPool : null,
+        hasPool: typeof raw.hasPool === "boolean" ? raw.hasPool : null,
         lotSizeAcres: typeof raw.lotSizeAcres === "number" ? raw.lotSizeAcres : null,
+        lotSizeSqFt: typeof raw.lotSizeSqFt === "number" ? raw.lotSizeSqFt : null,
+        hasFireplace: typeof raw.hasFireplace === "boolean" ? raw.hasFireplace : null,
+        fireplaceCount: typeof raw.fireplaceCount === "number" ? raw.fireplaceCount : null,
+        roofMaterial: raw.roofMaterial ?? null,
+        foundationType: raw.foundationType ?? null,
+        coolingType: raw.coolingType ?? null,
+        heatingType: raw.heatingType ?? null,
+        subdivision: raw.subdivision ?? null,
+        majorRenovationYear: typeof raw.majorRenovationYear === "number" ? raw.majorRenovationYear : null,
       } : null;
       const enriched: SelectedAddress = {
         ...base,
@@ -165,10 +187,12 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
   const updatePropField = (field: keyof PropertyData, val: string) => {
     if (!selected) return;
     const pd = { ...(selected.propertyData || { squareFeet: null, yearBuilt: null, bedrooms: null, bathrooms: null, propertyType: null }) } as PropertyData;
-    if (field === "squareFeet" || field === "yearBuilt" || field === "bedrooms") {
+    if (field === "squareFeet" || field === "yearBuilt" || field === "bedrooms" || field === "stories" || field === "garageSpaces" || field === "lotSizeSqFt") {
       (pd as Record<string, unknown>)[field] = val ? Number(val) : null;
     } else if (field === "bathrooms") {
       pd.bathrooms = val ? Number(val) : null;
+    } else if (field === "stories" || field === "garageSpaces" || field === "lotSizeSqFt") {
+      (pd as any)[field] = val ? Number(val) : null;
     } else {
       (pd as Record<string, unknown>)[field] = val || null;
     }
@@ -224,26 +248,6 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
 
           <div className="grid grid-cols-2 gap-2 text-sm">
             <PropertyFieldRow
-              label="Sq Footage"
-              value={selected.propertyData.squareFeet?.toString() || ""}
-              field="squareFeet"
-              type="number"
-              editing={editingField === "squareFeet"}
-              onEdit={() => setEditingField("squareFeet")}
-              onDone={() => setEditingField(null)}
-              onChange={v => updatePropField("squareFeet", v)}
-            />
-            <PropertyFieldRow
-              label="Year Built"
-              value={selected.propertyData.yearBuilt?.toString() || ""}
-              field="yearBuilt"
-              type="number"
-              editing={editingField === "yearBuilt"}
-              onEdit={() => setEditingField("yearBuilt")}
-              onDone={() => setEditingField(null)}
-              onChange={v => updatePropField("yearBuilt", v)}
-            />
-            <PropertyFieldRow
               label="Bedrooms"
               value={selected.propertyData.bedrooms?.toString() || ""}
               field="bedrooms"
@@ -263,6 +267,62 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
               onDone={() => setEditingField(null)}
               onChange={v => updatePropField("bathrooms", v)}
             />
+            <PropertyFieldRow
+              label="Sq Footage"
+              value={selected.propertyData.squareFeet?.toString() || ""}
+              field="squareFeet"
+              type="number"
+              editing={editingField === "squareFeet"}
+              onEdit={() => setEditingField("squareFeet")}
+              onDone={() => setEditingField(null)}
+              onChange={v => updatePropField("squareFeet", v)}
+            />
+            <PropertyFieldRow
+              label="Year Built"
+              value={selected.propertyData.yearBuilt?.toString() || ""}
+              field="yearBuilt"
+              type="number"
+              editing={editingField === "yearBuilt"}
+              onEdit={() => setEditingField("yearBuilt")}
+              onDone={() => setEditingField(null)}
+              onChange={v => updatePropField("yearBuilt", v)}
+            />
+            {selected.propertyData.stories != null && (
+              <PropertyFieldRow
+                label="Stories"
+                value={selected.propertyData.stories?.toString() || ""}
+                field="stories"
+                type="number"
+                editing={editingField === "stories"}
+                onEdit={() => setEditingField("stories")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("stories", v)}
+              />
+            )}
+            {selected.propertyData.garageSpaces != null && (
+              <PropertyFieldRow
+                label="Garage Spaces"
+                value={selected.propertyData.garageSpaces?.toString() || ""}
+                field="garageSpaces"
+                type="number"
+                editing={editingField === "garageSpaces"}
+                onEdit={() => setEditingField("garageSpaces")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("garageSpaces", v)}
+              />
+            )}
+            {selected.propertyData.lotSizeSqFt != null && (
+              <PropertyFieldRow
+                label="Lot Size (sqft)"
+                value={selected.propertyData.lotSizeSqFt?.toString() || ""}
+                field="lotSizeSqFt"
+                type="number"
+                editing={editingField === "lotSizeSqFt"}
+                onEdit={() => setEditingField("lotSizeSqFt")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("lotSizeSqFt", v)}
+              />
+            )}
             {selected.propertyData.propertyType && (
               <PropertyFieldRow
                 label="Property Type"
@@ -275,7 +335,72 @@ export function AddressAutofill({ onAddressSelect, value, className }: AddressAu
                 onChange={v => updatePropField("propertyType", v)}
               />
             )}
+            {selected.propertyData.roofMaterial && (
+              <PropertyFieldRow
+                label="Roof"
+                value={selected.propertyData.roofMaterial}
+                field="roofMaterial"
+                type="text"
+                editing={editingField === "roofMaterial"}
+                onEdit={() => setEditingField("roofMaterial")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("roofMaterial", v)}
+              />
+            )}
+            {selected.propertyData.heatingType && (
+              <PropertyFieldRow
+                label="Heating"
+                value={selected.propertyData.heatingType}
+                field="heatingType"
+                type="text"
+                editing={editingField === "heatingType"}
+                onEdit={() => setEditingField("heatingType")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("heatingType", v)}
+              />
+            )}
+            {selected.propertyData.coolingType && (
+              <PropertyFieldRow
+                label="Cooling"
+                value={selected.propertyData.coolingType}
+                field="coolingType"
+                type="text"
+                editing={editingField === "coolingType"}
+                onEdit={() => setEditingField("coolingType")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("coolingType", v)}
+              />
+            )}
+            {selected.propertyData.foundationType && (
+              <PropertyFieldRow
+                label="Foundation"
+                value={selected.propertyData.foundationType}
+                field="foundationType"
+                type="text"
+                editing={editingField === "foundationType"}
+                onEdit={() => setEditingField("foundationType")}
+                onDone={() => setEditingField(null)}
+                onChange={v => updatePropField("foundationType", v)}
+              />
+            )}
           </div>
+
+          {/* Feature pills row */}
+          {(selected.propertyData.hasPool || selected.propertyData.hasFireplace || selected.propertyData.subdivision) && (
+            <div className="flex flex-wrap gap-1.5 mt-2">
+              {selected.propertyData.hasPool && (
+                <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">Pool</span>
+              )}
+              {selected.propertyData.hasFireplace && (
+                <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
+                  {selected.propertyData.fireplaceCount && selected.propertyData.fireplaceCount > 1 ? selected.propertyData.fireplaceCount : ""}Fireplace{selected.propertyData.fireplaceCount && selected.propertyData.fireplaceCount > 1 ? "s" : ""}
+                </span>
+              )}
+              {selected.propertyData.subdivision && (
+                <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-700">{selected.propertyData.subdivision}</span>
+              )}
+            </div>
+          )}
         </div>
       )}
 

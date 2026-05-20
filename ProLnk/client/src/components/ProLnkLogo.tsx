@@ -1,4 +1,5 @@
 import React from "react";
+import { PROLNK_LOGO_LIGHT } from "./prolnk-logo-data";
 
 interface ProLnkLogoProps {
   variant?: "light" | "dark" | "icon-only";
@@ -7,77 +8,31 @@ interface ProLnkLogoProps {
 }
 
 /**
- * ProLnk brand logo — inline SVG vector.
+ * ProLnk brand logo — uses the exact official brand image (base64 embedded PNG).
+ * This is the authoritative logo. DO NOT replace with a different mark.
  *
- * Renders the two interlocking link nodes (icon mark) plus the "ProLnk" wordmark.
- *
- *  - `light`     — for use on white/light backgrounds: navy + brand blue
- *  - `dark`      — for use on dark backgrounds: white + teal accents (cleaner than wrapping in a white card)
- *  - `icon-only` — just the link-node mark, omits the wordmark (use a smaller width)
+ *  - `light`     — logo on light/white backgrounds (default rendering)
+ *  - `dark`      — same logo but inverted to white via CSS filter for use on dark backgrounds
+ *  - `icon-only` — currently renders the full logo; cropping not yet wired
  */
 export function ProLnkLogo({ variant = "light", className = "", height = 56 }: ProLnkLogoProps) {
-  const isDark = variant === "dark";
-  const isIcon = variant === "icon-only";
-
-  // Colour tokens
-  const nodeA = isDark ? "#FFFFFF" : "#0A1628";
-  const nodeB = isDark ? "#5EEAD4" : "#1B4FD8"; // teal accent on dark, brand blue on light
-  const innerHole = isDark ? "#0A1628" : "#FFFFFF";
-  const bridge = nodeB;
-  const wordA = isDark ? "#FFFFFF" : "#0A1628";
-  const wordB = isDark ? "#5EEAD4" : "#1B4FD8";
-
-  // Aspect ratio: icon-only = 1:1 (just the mark), full = roughly 4.6:1 to fit "ProLnk"
-  const viewBox = isIcon ? "0 0 48 48" : "0 0 220 48";
-  const aspectRatio = isIcon ? 1 : 220 / 48;
+  // The cropped logo image has a 3:1 aspect ratio (1677x565 px)
+  const aspectRatio = 1677 / 565;
   const width = Math.round(height * aspectRatio);
 
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={viewBox}
-      width={width}
-      height={height}
-      className={`shrink-0 ${className}`}
-      role="img"
-      aria-label="ProLnk"
-      style={{ display: "block" }}
-    >
-      {/* Two interlocking link nodes */}
-      <circle cx="16" cy="24" r="10" fill={nodeA} />
-      <circle cx="36" cy="24" r="10" fill={nodeB} />
-      <circle cx="16" cy="24" r="5" fill={innerHole} />
-      <circle cx="36" cy="24" r="5" fill={innerHole} />
-      {/* Connecting bridge */}
-      <rect x="21" y="21" width="10" height="6" rx="3" fill={bridge} />
+  // For dark backgrounds: invert + brightness makes the logo render as solid white,
+  // preserving the original artwork's silhouette without altering its design.
+  const darkFilter = variant === "dark" ? "brightness(0) invert(1)" : undefined;
 
-      {!isIcon && (
-        <>
-          <text
-            x="56"
-            y="32"
-            fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
-            fontWeight="700"
-            fontSize="22"
-            fill={wordA}
-            letterSpacing="-0.5"
-          >
-            Pro
-          </text>
-          <text
-            x="93"
-            y="32"
-            fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
-            fontWeight="700"
-            fontSize="22"
-            fill={wordB}
-            letterSpacing="-0.5"
-          >
-            Lnk
-          </text>
-        </>
-      )}
-    </svg>
+  return (
+    <img
+      src={PROLNK_LOGO_LIGHT}
+      alt="ProLnk"
+      height={height}
+      width={width}
+      className={`shrink-0 ${className}`}
+      style={{ display: "block", objectFit: "contain", filter: darkFilter }}
+    />
   );
 }
 

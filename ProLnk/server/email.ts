@@ -486,8 +486,8 @@ export async function sendProWaitlistConfirmation(opts: {
   const tierLabel =
     opts.tier === "charter" ? "Charter Member" :
     opts.tier === "founding" ? "Founding Member" :
-    opts.tier === "level3" ? "Level 3 Partner" :
-    opts.tier === "level4" ? "Level 4 Partner" :
+    opts.tier === "level3" ? "Growth Member" :
+    opts.tier === "level4" ? "Network Member" :
     "Founding Network Member";
   const tierBadgeColor =
     opts.tier === "charter" ? "#F5E642" :
@@ -495,12 +495,17 @@ export async function sendProWaitlistConfirmation(opts: {
     opts.tier === "level3" ? "#A78BFA" :
     "#60A5FA";
   const refCode = opts.referralCode ?? Buffer.from(opts.to).toString("base64").replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase();
-  const refLink = opts.referralLink ?? `${BASE_URL}/apply?ref=${refCode}`;
+  const refLink = opts.referralLink ?? `${BASE_URL}/join/${refCode}`;
   const statusUrl = `${BASE_URL}/waitlist-status?ref=${refCode}`;
   return sendEmail({
     from: FROM_PROLNK,
     to: opts.to,
-    subject: `Your Charter Spot is Reserved — Position #${opts.position} · ProLnk Founding Network`,
+    subject:
+      opts.tier === "charter"  ? `${opts.firstName}, you've been selected as one of 25 ProLnk Charter Members` :
+      opts.tier === "founding" ? `${opts.firstName}, you've been nominated for the ProLnk Founding 100` :
+      opts.tier === "level3"   ? `${opts.firstName}, welcome to ProLnk — you're a Growth Member` :
+      opts.tier === "level4"   ? `${opts.firstName}, welcome to ProLnk — you're a Network Member` :
+                                  `${opts.firstName}, thanks for joining the ProLnk waitlist`,
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:20px 0;background:#0f172a;">
 <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;background:#0A1628;border-radius:16px;overflow:hidden;">
 
@@ -516,7 +521,13 @@ export async function sendProWaitlistConfirmation(opts: {
   <!-- Body -->
   <div style="padding:40px;">
     <h1 style="color:#ffffff;margin:0 0 10px;font-size:22px;font-weight:800;">You're in, ${opts.firstName}.</h1>
-    <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 32px;font-size:15px;">Your spot on the ProLnk Founding Network is confirmed. You're among the first service professionals in DFW to lock in founding rates — before we open to the public. This position is yours and cannot be taken.</p>
+    <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 32px;font-size:15px;">${
+      opts.tier === "charter"  ? "You are one of just 25 service professionals personally selected as a Charter Member. You are why ProLnk exists — every pro who joins after comes through you." :
+      opts.tier === "founding" ? "You have been nominated to the Founding 100, the second tier of the network — opened by personal invitation from our 25 Charter Members. Your spot is reserved." :
+      opts.tier === "level3"   ? "You have been brought into ProLnk as a Growth Member — the third wave of founding pros in DFW. Your spot among the 400 Growth Members is reserved." :
+      opts.tier === "level4"   ? "Welcome to ProLnk as a Network Member — part of the founding 2,125 professionals building this network across DFW. Your spot is reserved." :
+                                  "Thanks for joining the ProLnk waitlist. We will reach out as we open enrollment in your area."
+    }</p>
 
     <!-- Position card -->
     <div style="background:linear-gradient(135deg,#111e35,#0d2245);border:2px solid ${tierBadgeColor};border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
@@ -530,10 +541,10 @@ export async function sendProWaitlistConfirmation(opts: {
     <div style="background:#111e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;margin:0 0 24px;">
       <div style="color:${tierBadgeColor};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 16px;">Your Founding Network Benefits</div>
       <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;width:24px;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">72% keep rate</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — keep the majority of every job match</span></td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">90-day free trial</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — $149/mo locked in after, no price increases ever</span></td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">4-level network income</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — earn on every pro you recruit, 4 levels deep</span></td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">Home origination rights</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — 1.5% of platform fees at homes you document, forever</span></td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;width:24px;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">72% Network Bonus</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — share of platform fee (3-15% of job value), on top of normal earnings</span></td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">90 days free top-tier ($249/mo benefits)</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — after, $149/mo locked for life with full top-tier features</span></td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">4-generation override income</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — earn on every pro you recruit, 4 levels deep</span></td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">Home Origination Bonus</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — permanent recurring revenue on homes you bring onto TrustyPro</span></td></tr>
         <tr><td style="padding:8px 0;vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;"><span style="color:#ffffff;font-size:14px;font-weight:600;">AI-matched leads</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — photo-detected jobs delivered to your inbox</span></td></tr>
       </table>
     </div>
@@ -567,7 +578,7 @@ export async function sendProWaitlistConfirmation(opts: {
             <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,230,66,0.12);border:1.5px solid rgba(245,230,66,0.3);text-align:center;line-height:36px;color:rgba(245,230,66,0.5);font-weight:900;font-size:14px;">2</div>
           </td>
           <td style="padding:0 0 20px;padding-left:4px;">
-            <div style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 3px;">Start your 90-day free trial</div>
+            <div style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 3px;">Start your 90 days free top-tier ($249/mo benefits)</div>
             <div style="color:rgba(255,255,255,0.45);font-size:13px;line-height:1.5;">Set your service zip codes, upload your license, and you're live. $0 for 90 days — no credit card required at signup.</div>
           </td>
         </tr>

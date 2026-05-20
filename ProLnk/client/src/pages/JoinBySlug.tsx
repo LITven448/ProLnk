@@ -219,24 +219,46 @@ export default function JoinBySlug() {
               Only 2,125 founding spots exist. Your seat is reserved.
             </p>
 
-            {/* Benefits pills */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 max-w-2xl mx-auto">
-              <div className="bg-white/[0.04] border border-white/10 rounded-xl p-3 flex flex-col items-center gap-2">
-                <Lock className="w-5 h-5 text-teal-300" />
-                <span className="text-white/80 text-[11px] font-bold leading-tight text-center">$149/mo<br /><span className="text-white/40 font-medium">Locked for life</span></span>
-              </div>
-              <div className="bg-white/[0.04] border border-white/10 rounded-xl p-3 flex flex-col items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-teal-300" />
-                <span className="text-white/80 text-[11px] font-bold leading-tight text-center">72% Bonus<br /><span className="text-white/40 font-medium">On every job</span></span>
-              </div>
-              <div className="bg-white/[0.04] border border-white/10 rounded-xl p-3 flex flex-col items-center gap-2">
-                <Users className="w-5 h-5 text-teal-300" />
-                <span className="text-white/80 text-[11px] font-bold leading-tight text-center">4-gen network<br /><span className="text-white/40 font-medium">Override income</span></span>
-              </div>
-              <div className="bg-white/[0.04] border border-white/10 rounded-xl p-3 flex flex-col items-center gap-2">
-                <Award className="w-5 h-5 text-teal-300" />
-                <span className="text-white/80 text-[11px] font-bold leading-tight text-center">TrustyPro<br /><span className="text-white/40 font-medium">Certified badge</span></span>
-              </div>
+            {/* Benefits — clear, scannable, bulleted */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-7 mb-8 max-w-xl mx-auto text-left">
+              <p className="text-teal-300 text-[11px] font-black uppercase tracking-[0.18em] mb-4 text-center">What You Get</p>
+              <ul className="space-y-3.5">
+                <li className="flex gap-3 items-start">
+                  <div className="w-5 h-5 rounded-full bg-teal-400/20 border border-teal-300/40 flex items-center justify-center flex-shrink-0 mt-0.5"><Lock className="w-3 h-3 text-teal-300" /></div>
+                  <div>
+                    <div className="text-white text-sm font-bold">90 days free, then $149/mo locked for life</div>
+                    <div className="text-white/50 text-xs mt-0.5">Top-tier subscription (normally $249/mo) — saving you $1,200/year, forever.</div>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="w-5 h-5 rounded-full bg-teal-400/20 border border-teal-300/40 flex items-center justify-center flex-shrink-0 mt-0.5"><TrendingUp className="w-3 h-3 text-teal-300" /></div>
+                  <div>
+                    <div className="text-white text-sm font-bold">72% Network Bonus on every closed job</div>
+                    <div className="text-white/50 text-xs mt-0.5">Paid from the platform fee (3–15% of job value) — bonus income on top of what you'd normally charge.</div>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="w-5 h-5 rounded-full bg-teal-400/20 border border-teal-300/40 flex items-center justify-center flex-shrink-0 mt-0.5"><Users className="w-3 h-3 text-teal-300" /></div>
+                  <div>
+                    <div className="text-white text-sm font-bold">4-generation override income</div>
+                    <div className="text-white/50 text-xs mt-0.5">Earn a share of every job closed by pros you bring in — and pros they bring in — four generations deep.</div>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="w-5 h-5 rounded-full bg-teal-400/20 border border-teal-300/40 flex items-center justify-center flex-shrink-0 mt-0.5"><HomeIcon className="w-3 h-3 text-teal-300" /></div>
+                  <div>
+                    <div className="text-white text-sm font-bold">Home Origination Bonus — permanent</div>
+                    <div className="text-white/50 text-xs mt-0.5">Every homeowner you bring onto TrustyPro pays you a permanent share of platform fees on every future job at their home. Recurring revenue, forever.</div>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="w-5 h-5 rounded-full bg-teal-400/20 border border-teal-300/40 flex items-center justify-center flex-shrink-0 mt-0.5"><Award className="w-3 h-3 text-teal-300" /></div>
+                  <div>
+                    <div className="text-white text-sm font-bold">TrustyPro Certified badge</div>
+                    <div className="text-white/50 text-xs mt-0.5">The credential homeowners search for — only pros who pass onboarding earn it.</div>
+                  </div>
+                </li>
+              </ul>
             </div>
 
             <Link
@@ -247,8 +269,8 @@ export default function JoinBySlug() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <p className="text-white/30 text-xs mt-6 max-w-sm mx-auto">
-              90 days free top-tier subscription · Charter Member status · Home Origination Bonus
+            <p className="text-white/40 text-xs mt-6 max-w-md mx-auto leading-relaxed">
+              Founding members lock in lifetime benefits. Public launch pricing will be $249/mo — your spot saves you <span className="text-teal-300 font-bold">$1,200 per year</span>, with override + origination income on top.
             </p>
           </div>
 

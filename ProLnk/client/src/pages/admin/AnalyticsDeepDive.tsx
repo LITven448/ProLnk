@@ -177,14 +177,14 @@ export default function AnalyticsDeepDive() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <StatCard label="Monthly Recurring Revenue" value={fmt(metrics.mrr)} sub="Platform take rate 15%" icon={DollarSign} />
               <StatCard label="Annual Run Rate" value={fmt(metrics.arr)} sub="MRR × 12" icon={TrendingUp} color="text-green-500" bg="bg-green-50 dark:bg-green-950/20" />
-              <StatCard label="Active Partners" value={(metrics.approved ?? 0).toLocaleString()} sub="Approved & onboarded" icon={Users} color="text-purple-500" bg="bg-purple-50 dark:bg-purple-950/20" />
+              <StatCard label="Active Partners" value={metrics.approved.toLocaleString()} sub="Approved & onboarded" icon={Users} color="text-purple-500" bg="bg-purple-50 dark:bg-purple-950/20" />
               <StatCard label="Conversion Rate" value={pct(metrics.convRate)} sub="Opps → closed deals" icon={Target} color="text-yellow-500" bg="bg-yellow-50 dark:bg-yellow-950/20" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <StatCard label="Partner LTV" value={fmt(metrics.ltv)} sub="Avg 18-month lifetime" icon={Activity} />
               <StatCard label="CAC" value={fmt(metrics.cac)} sub="Cost to acquire partner" icon={Zap} color="text-orange-500" bg="bg-orange-50 dark:bg-orange-950/20" />
-              <StatCard label="LTV : CAC Ratio" value={`${(metrics.ltvCac ?? 0).toFixed(1)}x`} sub="Target: >3x" icon={BarChart3} color="text-blue-500" bg="bg-blue-50 dark:bg-blue-950/20" />
-              <StatCard label="Payback Period" value={`${(metrics.payback ?? 0).toFixed(1)} mo`} sub="Months to recoup CAC" icon={Clock} color="text-rose-500" bg="bg-rose-50 dark:bg-rose-950/20" />
+              <StatCard label="LTV : CAC Ratio" value={`${metrics.ltvCac.toFixed(1)}x`} sub="Target: >3x" icon={BarChart3} color="text-blue-500" bg="bg-blue-50 dark:bg-blue-950/20" />
+              <StatCard label="Payback Period" value={`${metrics.payback.toFixed(1)} mo`} sub="Months to recoup CAC" icon={Clock} color="text-rose-500" bg="bg-rose-50 dark:bg-rose-950/20" />
             </div>
 
             {/* Health indicators */}
@@ -276,12 +276,12 @@ export default function AnalyticsDeepDive() {
               <p className="text-sm font-semibold mb-3">Summary</p>
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <p className="text-2xl font-bold text-[#00B5B8]">{(metrics.ltvCac ?? 0).toFixed(1)}x</p>
+                  <p className="text-2xl font-bold text-[#00B5B8]">{metrics.ltvCac.toFixed(1)}x</p>
                   <p className="text-xs text-white/70 mt-1">LTV:CAC Ratio</p>
                   <p className="text-[10px] text-white/50">{metrics.ltvCac >= 3 ? "✓ Healthy" : "⚠ Below target"}</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#F5E642]">{(metrics.payback ?? 0).toFixed(1)} mo</p>
+                  <p className="text-2xl font-bold text-[#F5E642]">{metrics.payback.toFixed(1)} mo</p>
                   <p className="text-xs text-white/70 mt-1">Payback Period</p>
                   <p className="text-[10px] text-white/50">{metrics.payback <= 12 ? "✓ Under 12 months" : "⚠ Over 12 months"}</p>
                 </div>
@@ -304,7 +304,7 @@ export default function AnalyticsDeepDive() {
                 <div key={stage.label} className="space-y-1">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">{stage.label}</span>
-                    <span className="font-semibold text-foreground">{(stage.count ?? 0).toLocaleString()} ({pct(stage.pctOfTop)})</span>
+                    <span className="font-semibold text-foreground">{stage.count.toLocaleString()} ({pct(stage.pctOfTop)})</span>
                   </div>
                   <div className="h-8 bg-muted rounded-lg overflow-hidden">
                     <div
@@ -315,7 +315,7 @@ export default function AnalyticsDeepDive() {
                       }}
                     >
                       {stage.pctOfTop > 15 && (
-                        <span className="text-xs font-semibold text-white">{(stage.count ?? 0).toLocaleString()}</span>
+                        <span className="text-xs font-semibold text-white">{stage.count.toLocaleString()}</span>
                       )}
                     </div>
                   </div>

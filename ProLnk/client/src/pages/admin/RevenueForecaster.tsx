@@ -190,7 +190,7 @@ export default function RevenueForecaster() {
                   }`}
                 >
                   <p className="text-xs text-gray-400">{t.label}</p>
-                  <p className="text-sm font-bold text-white">{(t.pros ?? 0).toLocaleString()} pros</p>
+                  <p className="text-sm font-bold text-white">{t.pros.toLocaleString()} pros</p>
                   <p className="text-xs text-green-400">{fmtK(t.subMRR + t.jobMRR)}/mo</p>
                   <p className="text-xs text-gray-500 mt-1">{t.desc}</p>
                 </button>

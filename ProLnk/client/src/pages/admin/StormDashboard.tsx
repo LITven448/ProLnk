@@ -577,8 +577,8 @@ export default function StormDashboard() {
                               <p className="font-semibold">{row.storm}</p>
                               <p className="text-xs text-muted-foreground">{row.date}, 2026</p>
                             </td>
-                            <td className="py-3 pr-4 text-right font-bold">{(row.leadsGen ?? 0).toLocaleString()}</td>
-                            <td className="py-3 pr-4 text-right text-green-500 font-medium">{(row.accepted ?? 0).toLocaleString()}</td>
+                            <td className="py-3 pr-4 text-right font-bold">{row.leadsGen.toLocaleString()}</td>
+                            <td className="py-3 pr-4 text-right text-green-500 font-medium">{row.accepted.toLocaleString()}</td>
                             <td className="py-3 pr-4 text-right text-muted-foreground">{row.passed}</td>
                             <td className="py-3 pr-4 text-right">
                               <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${rate > 90 ? "bg-green-500/15 text-green-400" : rate > 80 ? "bg-teal-500/15 text-teal-400" : "bg-yellow-500/15 text-yellow-400"}`}>

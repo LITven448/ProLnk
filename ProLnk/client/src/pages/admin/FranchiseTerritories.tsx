@@ -219,7 +219,7 @@ export default function FranchiseTerritories() {
                       <td style={{ padding: "10px 12px", textAlign: "right", color: T.text }}>{t.zips.length || "—"}</td>
                       <td style={{ padding: "10px 12px", textAlign: "right", color: T.text }}>{t.partnerCount || "—"}</td>
                       <td style={{ padding: "10px 12px", textAlign: "right", fontFamily: MONO, color: T.green, fontWeight: 700 }}>
-                        {t.monthlyRevenue ? `$${(t.monthlyRevenue ?? 0).toLocaleString()}` : "—"}
+                        {t.monthlyRevenue ? `$${t.monthlyRevenue.toLocaleString()}` : "—"}
                       </td>
                       <td style={{ padding: "10px 12px" }}>
                         <span style={{ background: statusBg[t.status], color: statusColor[t.status], fontSize: 11, fontWeight: 700, borderRadius: 6, padding: "3px 10px" }}>{t.status}</span>
@@ -251,7 +251,7 @@ export default function FranchiseTerritories() {
               {[
                 { label: "Status",          value: selected.status,                                                   chip: true  },
                 { label: "ZIP Range",       value: selected.zipRange,                                                 chip: false },
-                { label: "Monthly Revenue", value: selected.monthlyRevenue ? `$${(selected.monthlyRevenue ?? 0).toLocaleString()}` : "—", chip: false },
+                { label: "Monthly Revenue", value: selected.monthlyRevenue ? `$${selected.monthlyRevenue.toLocaleString()}` : "—", chip: false },
                 { label: "Partner Count",   value: String(selected.partnerCount || "—"),                              chip: false },
                 { label: "Monthly Leads",   value: String(selected.monthlyLeads || "—"),                              chip: false },
               ].map(({ label, value, chip }) => (

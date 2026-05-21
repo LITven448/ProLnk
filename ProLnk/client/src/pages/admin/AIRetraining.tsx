@@ -149,7 +149,7 @@ export default function AIRetraining() {
                   <div className="flex items-center gap-4 text-xs text-gray-600 mb-1">
                     <span>Accuracy: <strong>{model.accuracy}%</strong></span>
                     <span>F1: <strong>{model.f1Score}</strong></span>
-                    <span>Samples: <strong>{(model.samples ?? 0).toLocaleString()}</strong></span>
+                    <span>Samples: <strong>{model.samples.toLocaleString()}</strong></span>
                   </div>
                   <p className="text-xs text-gray-500">{model.notes}</p>
                   {model.status === "archived" && (
@@ -182,7 +182,7 @@ export default function AIRetraining() {
                       }>{item.priority}</Badge>
                     </div>
                     <div className="text-xs text-gray-500 mt-0.5">
-                      +{item.newSamples} new / {(item.totalSamples ?? 0).toLocaleString()} total · {item.lastUpdated}
+                      +{item.newSamples} new / {item.totalSamples.toLocaleString()} total · {item.lastUpdated}
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1 mt-1.5">
                       <div

@@ -83,7 +83,7 @@ function BizCard({ name, tagline, color, icon: Icon, gradient, href, kpis, alert
           <div key={k.label} style={{ backgroundColor: T.bg, borderRadius: 8, padding: "10px 12px" }}>
             <p style={LABEL}>{k.label}</p>
             <p style={{ fontSize: 20, fontWeight: 700, color: T.text, fontFamily: MONO, marginTop: 2 }}>
-              {k.prefix ?? ""}{typeof k.value === "number" ? (k.value ?? 0).toLocaleString() : k.value}{k.suffix ?? ""}
+              {k.prefix ?? ""}{typeof k.value === "number" ? k.value.toLocaleString() : k.value}{k.suffix ?? ""}
             </p>
             {k.trend !== undefined && (
               <span style={{ fontSize: 11, fontWeight: 600, color: k.trend >= 0 ? T.green : T.red, display: "flex", alignItems: "center", gap: 2, marginTop: 2 }}>
@@ -164,7 +164,7 @@ export default function PortfolioDashboard() {
               <div style={{ textAlign: "right" }}>
                 <p style={LABEL}>{k.label}</p>
                 <p style={{ fontSize: "1.6rem", fontWeight: 700, color: T.text, fontFamily: MONO, lineHeight: 1.1, marginTop: 4 }}>
-                  {k.prefix}{typeof k.value === "number" ? (k.value ?? 0).toLocaleString() : k.value}
+                  {k.prefix}{typeof k.value === "number" ? k.value.toLocaleString() : k.value}
                 </p>
               </div>
               <div style={{ borderTop: `1px solid ${T.border}`, marginTop: 14, paddingTop: 10 }}>
@@ -305,7 +305,7 @@ export default function PortfolioDashboard() {
                     <span style={{ width: 8, height: 8, borderRadius: 2, backgroundColor: r.color, display: "inline-block" }} />
                     {r.name}
                   </span>
-                  <span style={{ fontWeight: 600, color: T.text, fontFamily: MONO }}>${(r.value ?? 0).toLocaleString()}</span>
+                  <span style={{ fontWeight: 600, color: T.text, fontFamily: MONO }}>${r.value.toLocaleString()}</span>
                 </div>
               ))}
             </div>

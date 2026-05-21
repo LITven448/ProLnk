@@ -189,8 +189,8 @@ export default function RevenueByZipDashboard() {
                         <span className={`font-mono font-semibold ${isTop5 ? "text-teal-300" : "text-slate-300"}`}>{row.zip}</span>
                       </td>
                       <td className="py-3 pr-4 text-slate-300">{row.city}</td>
-                      <td className="py-3 text-right text-slate-400">{(row.leads ?? 0).toLocaleString()}</td>
-                      <td className="py-3 text-right text-slate-300">{(row.jobs ?? 0).toLocaleString()}</td>
+                      <td className="py-3 text-right text-slate-400">{row.leads.toLocaleString()}</td>
+                      <td className="py-3 text-right text-slate-300">{row.jobs.toLocaleString()}</td>
                       <td className="py-3 text-right font-semibold text-white">{fmtDollar(row.revenue)}</td>
                       <td className="py-3 text-right text-slate-400">${row.avgCommission}</td>
                       <td className="py-3 text-right text-slate-400">{row.pros}</td>

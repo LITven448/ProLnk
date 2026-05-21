@@ -54,8 +54,8 @@ function StatCard({
 }) {
   return (
     <div
-      className="rounded-2xl p-5 relative overflow-hidden"
-      style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
+      className="rounded-2xl p-5"
+      style={{ backgroundColor: T.card, border: `1px solid ${T.border}` }}
     >
       <div className="flex items-start justify-between">
         <div>
@@ -156,31 +156,31 @@ export default function CommandCenter() {
 
   return (
     <AdminLayout title="Command Center" subtitle="ProLnk Platform Overview">
-      <div className="p-6 space-y-6" style={{ fontFamily: FONT }}>
+      <div className="p-8 space-y-8" style={{ fontFamily: FONT }}>
 
         {/* ── Top Metrics Row ─────────────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <StatCard
             label="Pro Signups"
-            value={metricsError ? "0" : m ? (m.totalPros ?? 0).toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? m.proSignups.toLocaleString() : "—"}
             icon={UserPlus}
             gradient={BADGE_GRADIENTS.blue}
           />
           <StatCard
             label="Homeowner Signups"
-            value={metricsError ? "0" : m ? (m.totalHomes ?? 0).toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? m.trustyproSignups.toLocaleString() : "—"}
             icon={Home}
             gradient={BADGE_GRADIENTS.green}
           />
           <StatCard
             label="Total Signups"
-            value={metricsError ? "0" : m ? ((m.totalPros ?? 0) + (m.totalHomes ?? 0)).toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? m.totalSignups.toLocaleString() : "—"}
             icon={Users}
             gradient={BADGE_GRADIENTS.cyan}
           />
           <StatCard
-            label="Charter Spots"
-            value={metricsError ? "0" : m ? `${(m.tierBreakdown?.charter ?? 0)}/25` : "—"}
+            label="Referral Rate"
+            value={metricsError ? "0%" : m ? `${m.conversionRate}%` : "—"}
             icon={TrendingUp}
             gradient={BADGE_GRADIENTS.orange}
           />
@@ -189,7 +189,7 @@ export default function CommandCenter() {
         {/* ── Signup Trends Chart ─────────────────────────────────── */}
         <div
           className="rounded-2xl p-6"
-          style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
+          style={{ backgroundColor: T.card, border: `1px solid ${T.border}` }}
         >
           <div className="flex items-center justify-between mb-4">
             <div>
@@ -257,7 +257,7 @@ export default function CommandCenter() {
           {/* Launch Progression Checklist */}
           <div
             className="rounded-2xl p-6"
-            style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
+            style={{ backgroundColor: T.card, border: `1px solid ${T.border}` }}
           >
             <div className="flex items-center justify-between mb-4">
               <div>
@@ -334,7 +334,7 @@ export default function CommandCenter() {
           {/* Recent Pro Signups */}
           <div
             className="rounded-2xl p-6"
-            style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
+            style={{ backgroundColor: T.card, border: `1px solid ${T.border}` }}
           >
             <div className="flex items-center justify-between mb-4">
               <div>

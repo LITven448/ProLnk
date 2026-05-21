@@ -14,33 +14,39 @@ import { GlobalSearch } from "@/components/GlobalSearch";
 import ProLnkLogo from "@/components/ProLnkLogo";
 import AdminTodoPanel from "@/components/AdminTodoPanel";
 
-// --- Design Tokens -- Soft UI / Material Dashboard inspired -------------------
+// --- Design Tokens -- Clean editorial / Linear / Notion inspired ------------
 export const T = {
-  bg:        "#F0F2F5",
+  bg:        "#FAFBFC",         // page background — barely off-white
   sidebar:   "#FFFFFF",
   surface:   "#FFFFFF",
   card:      "#FFFFFF",
-  text:      "#344767",
-  muted:     "#7B809A",
-  dim:       "#AEAEAE",
-  accent:    "#17C1E8",
-  accentBg:  "#E8F9FC",
-  green:     "#82D616",
-  amber:     "#FBB140",
-  red:       "#EA0606",
-  blue:      "#1A73E8",
-  purple:    "#7928CA",
-  border:    "#E9ECEF",
+  text:      "#0F172A",         // near-black for headings
+  textBody:  "#334155",         // body text
+  muted:     "#64748B",         // secondary text
+  dim:       "#94A3B8",         // tertiary text
+  accent:    "#0EA5E9",         // sky-500 — clean, modern
+  accentBg:  "#F0F9FF",         // sky-50
+  accentInk: "#0369A1",         // sky-700 for text on accentBg
+  green:     "#10B981",         // emerald-500
+  greenBg:   "#ECFDF5",         // emerald-50
+  amber:     "#F59E0B",         // amber-500
+  amberBg:   "#FFFBEB",         // amber-50
+  red:       "#EF4444",         // red-500
+  redBg:     "#FEF2F2",         // red-50
+  blue:      "#3B82F6",         // blue-500
+  purple:    "#8B5CF6",         // violet-500
+  border:    "#E2E8F0",         // slate-200
+  borderSubtle: "#F1F5F9",      // slate-100
 };
 
 export const BADGE_GRADIENTS = {
-  teal:   "linear-gradient(195deg, #42424a, #191919)",
-  blue:   "linear-gradient(195deg, #49a3f1, #1A73E8)",
-  green:  "linear-gradient(195deg, #66BB6A, #43A047)",
-  pink:   "linear-gradient(195deg, #EC407A, #D81B60)",
-  cyan:   "linear-gradient(195deg, #26C6DA, #00ACC1)",
-  orange: "linear-gradient(195deg, #FFA726, #FB8C00)",
-  purple: "linear-gradient(195deg, #ab47bc, #8e24aa)",
+  teal:   "linear-gradient(135deg, #0891B2, #06B6D4)",     // cyan
+  blue:   "linear-gradient(135deg, #2563EB, #3B82F6)",     // blue
+  green:  "linear-gradient(135deg, #059669, #10B981)",     // emerald
+  pink:   "linear-gradient(135deg, #DB2777, #EC4899)",     // pink
+  cyan:   "linear-gradient(135deg, #0E7490, #06B6D4)",     // cyan-dark
+  orange: "linear-gradient(135deg, #EA580C, #F97316)",     // orange
+  purple: "linear-gradient(135deg, #7C3AED, #8B5CF6)",     // violet
 };
 
 export const FONT = "'Inter', system-ui, sans-serif";

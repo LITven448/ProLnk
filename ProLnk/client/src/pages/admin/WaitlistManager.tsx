@@ -357,7 +357,7 @@ export default function WaitlistManager() {
       <div style={{ padding: "60px 20px", maxWidth: "440px", margin: "80px auto", textAlign: "center", fontFamily: "system-ui" }}>
         <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#344767", marginBottom: "12px" }}>Admin Login Required</h2>
         <p style={{ color: "#7B809A", marginBottom: "24px" }}>You must be signed in as an admin to view the waitlist manager.</p>
-        <a href="/login" style={{ display: "inline-block", padding: "12px 24px", background: "#1A73E8", color: "#fff", textDecoration: "none", borderRadius: "8px", fontWeight: 600 }}>Sign In</a>
+        <a href="/admin-login" style={{ display: "inline-block", padding: "12px 24px", background: "#1A73E8", color: "#fff", textDecoration: "none", borderRadius: "8px", fontWeight: 600 }}>Sign In</a>
       </div>
     );
   }

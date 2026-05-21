@@ -52,20 +52,6 @@ function StatCard({
   icon: React.ElementType;
   gradient: string;
 }) {
-  // Auth gate — placed AFTER all hooks to avoid Rules-of-Hooks violation
-  if (authLoading) {
-    return <div style={{ padding: "40px", textAlign: "center", color: "#7B809A", fontFamily: "system-ui" }}>Loading...</div>;
-  }
-  if (!user || (user as any).role !== "admin") {
-    return (
-      <div style={{ padding: "60px 20px", maxWidth: "440px", margin: "80px auto", textAlign: "center", fontFamily: "system-ui" }}>
-        <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#344767", marginBottom: "12px" }}>Admin Login Required</h2>
-        <p style={{ color: "#7B809A", marginBottom: "24px" }}>You must be signed in as an admin to view the dashboard.</p>
-        <a href="/login" style={{ display: "inline-block", padding: "12px 24px", background: "#1A73E8", color: "#fff", textDecoration: "none", borderRadius: "8px", fontWeight: 600 }}>Sign In</a>
-      </div>
-    );
-  }
-
   return (
     <div
       className="rounded-2xl p-5 relative overflow-hidden"
@@ -152,6 +138,22 @@ export default function CommandCenter() {
   const m = metrics.data;
   const metricsError = metrics.isError;
 
+  // Auth gate — runs after ALL hooks (queries above) to avoid Rules-of-Hooks violation
+  if (authLoading) {
+    return (
+      <div style={{ padding: "40px", textAlign: "center", color: "#7B809A", fontFamily: "system-ui" }}>Loading...</div>
+    );
+  }
+  if (!user || (user as any).role !== "admin") {
+    return (
+      <div style={{ padding: "60px 20px", maxWidth: "440px", margin: "80px auto", textAlign: "center", fontFamily: "system-ui" }}>
+        <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#344767", marginBottom: "12px" }}>Admin Login Required</h2>
+        <p style={{ color: "#7B809A", marginBottom: "24px" }}>You must be signed in as an admin to view the dashboard.</p>
+        <a href="/admin-login" style={{ display: "inline-block", padding: "12px 24px", background: "#1A73E8", color: "#fff", textDecoration: "none", borderRadius: "8px", fontWeight: 600 }}>Sign In</a>
+      </div>
+    );
+  }
+
   return (
     <AdminLayout title="Command Center" subtitle="ProLnk Platform Overview">
       <div className="p-6 space-y-6" style={{ fontFamily: FONT }}>
@@ -160,25 +162,25 @@ export default function CommandCenter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <StatCard
             label="Pro Signups"
-            value={metricsError ? "0" : m ? (m.totalPros ?? 0).toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? m.proSignups.toLocaleString() : "—"}
             icon={UserPlus}
             gradient={BADGE_GRADIENTS.blue}
           />
           <StatCard
             label="Homeowner Signups"
-            value={metricsError ? "0" : m ? (m.totalHomes ?? 0).toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? m.trustyproSignups.toLocaleString() : "—"}
             icon={Home}
             gradient={BADGE_GRADIENTS.green}
           />
           <StatCard
             label="Total Signups"
-            value={metricsError ? "0" : m ? ((m.totalPros ?? 0) + (m.totalHomes ?? 0)).toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? m.totalSignups.toLocaleString() : "—"}
             icon={Users}
             gradient={BADGE_GRADIENTS.cyan}
           />
           <StatCard
-            label="Charter Spots Filled"
-            value={metricsError ? "0" : m ? `${m.tierBreakdown?.charter ?? 0}/25` : "—"}
+            label="Referral Rate"
+            value={metricsError ? "0%" : m ? `${m.conversionRate}%` : "—"}
             icon={TrendingUp}
             gradient={BADGE_GRADIENTS.orange}
           />

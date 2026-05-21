@@ -14,7 +14,7 @@ import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { geocodeAddress, distanceMiles } from "../geocoding";
-import { queryPropertyHistory, queryPartnerBehavior } from "../zep";
+import { queryPropertyHistory, queryPartnerBehavior } from "../graphiti";
 
 export interface SmartRouteCandidate {
   partnerId: number;

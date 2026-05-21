@@ -15,7 +15,7 @@ import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { dashboard, aiHandled } from "../notify";
-import { queryPropertyHistory, recordPropertyCondition } from "../zep";
+import { queryPropertyHistory, recordPropertyCondition } from "../graphiti";
 import { addAgentMemory, searchAgentMemory } from "../memory";
 
 // ─── Origination Lock Agent ───────────────────────────────────────────────────

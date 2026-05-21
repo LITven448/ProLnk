@@ -7,7 +7,7 @@
  */
 import { StateGraph, END, START } from "@langchain/langgraph";
 import { searchMemories, addMemory } from "./mem0.js";
-import { logPropertyEvent, getPropertyTimeline } from "./zep.js";
+import { logPropertyEvent, getPropertyTimeline } from "./graphiti.js";
 import { findMatchingPartners, upsertProperty } from "./qdrant.js";
 
 // ─── Lead Routing Graph ───────────────────────────────────────────────────────

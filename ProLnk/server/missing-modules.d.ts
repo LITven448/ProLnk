@@ -17,9 +17,3 @@ declare module "mem0ai" {
   const Memory: any;
   export default Memory;
 }
-declare module "@getzep/zep-cloud" {
-  export class ZepClient {
-    constructor(opts: { apiKey: string });
-    [key: string]: any;
-  }
-}

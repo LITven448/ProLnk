@@ -11,7 +11,7 @@
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
-import { queryPropertyHistory } from "../zep";
+import { queryPropertyHistory } from "../graphiti";
 
 const DFW_SEASONAL_CONTEXT: Record<string, string> = {
   spring: "In DFW, spring brings hail season (April-June), severe thunderstorms, and extreme pollen. HVAC tune-up season as heat approaches. Check roof and gutters after winter.",

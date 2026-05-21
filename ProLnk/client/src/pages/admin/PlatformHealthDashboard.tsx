@@ -138,7 +138,7 @@ export default function PlatformHealthDashboard() {
                 { service: "Stripe", status: process.env.STRIPE_SECRET_KEY ? "ok" : "warning" },
                 { service: "Resend Email", status: process.env.RESEND_API_KEY ? "ok" : "warning" },
                 { service: "OpenAI", status: process.env.OPENAI_API_KEY ? "ok" : "warning" },
-                { service: "Zep Memory", status: process.env.ZEP_API_KEY ? "ok" : "warning" },
+                { service: "Graphiti Memory", status: process.env.GRAPHITI_API_URL ? "ok" : "warning" },
                 { service: "Twilio SMS", status: process.env.TWILIO_ACCOUNT_SID ? "ok" : "warning" },
                 { service: "CompanyCam", status: process.env.COMPANYCAM_CLIENT_ID ? "ok" : "warning" },
                 { service: "Inngest Jobs", status: process.env.INNGEST_EVENT_KEY ? "ok" : "warning" },

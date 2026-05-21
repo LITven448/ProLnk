@@ -284,7 +284,7 @@ function getActiveSection(path: string, search?: string): string {
       path.startsWith("/admin/territory") || path.startsWith("/admin/franchise")) return "exchange";
 
   // Commercial
-  if (path.startsWith("/admin/commercial") || path.startsWith("/admin/mass-adoption")) return "commercial";
+  if (path.startsWith("/admin/commercial") || path.startsWith("/admin/mass-adoption")) return "exchange";
 
   // Platform — settings, integrations
   if (

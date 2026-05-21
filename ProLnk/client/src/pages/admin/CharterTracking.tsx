@@ -91,10 +91,10 @@ export default function CharterTracking() {
       const q = search.toLowerCase();
       return (
         r.code.toLowerCase().includes(q) ||
-        r.usedBy?.name.toLowerCase().includes(q) ||
-        r.usedBy?.email.toLowerCase().includes(q) ||
+        r.usedBy?.name?.toLowerCase().includes(q) ||
+        r.usedBy?.email?.toLowerCase().includes(q) ||
         r.usedBy?.trade.toLowerCase().includes(q) ||
-        r.sentTo?.recipientName.toLowerCase().includes(q) ||
+        r.sentTo?.recipientName?.toLowerCase().includes(q) ||
         r.sentTo?.recipientEmail.toLowerCase().includes(q)
       );
     });

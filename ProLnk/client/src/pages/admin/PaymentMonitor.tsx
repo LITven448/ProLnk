@@ -137,7 +137,7 @@ export default function PaymentMonitor() {
                 {FAILED_PAYMENTS.map(p => (
                   <tr key={p.id} className="border-b border-white/5 hover:bg-white/2">
                     <td className="px-4 py-3 font-medium text-white">{p.partner}</td>
-                    <td className="px-4 py-3 font-bold text-red-400">${p.amount.toLocaleString()}</td>
+                    <td className="px-4 py-3 font-bold text-red-400">${(p.amount ?? 0).toLocaleString()}</td>
                     <td className="px-4 py-3 text-xs text-slate-400">{p.reason}</td>
                     <td className="px-4 py-3 text-center">
                       <span className={`text-xs px-2 py-0.5 rounded-full ${p.attempts >= 3 ? "bg-red-500/20 text-red-400" : "bg-amber-500/20 text-amber-400"}`}>{p.attempts}x</span>
@@ -190,7 +190,7 @@ export default function PaymentMonitor() {
                   <tr key={d.id} className="border-b border-white/5 hover:bg-white/2">
                     <td className="px-4 py-3 font-medium text-white">{d.partner}</td>
                     <td className="px-4 py-3 text-xs text-slate-400">{d.homeowner}</td>
-                    <td className="px-4 py-3 font-bold text-amber-400">${d.amount.toLocaleString()}</td>
+                    <td className="px-4 py-3 font-bold text-amber-400">${(d.amount ?? 0).toLocaleString()}</td>
                     <td className="px-4 py-3 text-xs text-slate-400">{d.reason}</td>
                     <td className="px-4 py-3 text-xs text-slate-400">{d.opened}</td>
                     <td className="px-4 py-3 text-xs text-red-400 font-medium">{d.dueDate}</td>
@@ -226,7 +226,7 @@ export default function PaymentMonitor() {
                 <div className="text-xs text-slate-400 mt-0.5">{s.type} · {s.count} partners</div>
               </div>
               <div className="text-right">
-                <div className="font-bold text-teal-400 text-sm">${s.total.toLocaleString()}</div>
+                <div className="font-bold text-teal-400 text-sm">${(s.total ?? 0).toLocaleString()}</div>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${s.status === "scheduled" ? "bg-teal-500/20 text-teal-400" : "bg-slate-500/20 text-slate-400"}`}>
                   {s.status === "scheduled" ? "Scheduled" : "Pending"}
                 </span>

@@ -255,7 +255,7 @@ export default function FinancialCenter() {
                 <div key={m.label} className="rounded-lg p-3 bg-[#0A1628]">
                   <div className="text-xs mb-1 text-slate-400">{m.label}</div>
                   <div className="text-xl font-bold" style={{ color: m.color }}>
-                    {m.prefix ?? ""}{m.value.toLocaleString()}{m.suffix ?? ""}
+                    {m.prefix ?? ""}{(m.value ?? 0).toLocaleString()}{m.suffix ?? ""}
                   </div>
                 </div>
               ))}
@@ -293,7 +293,7 @@ export default function FinancialCenter() {
                     <tr key={i} className="border-b border-white/5 hover:bg-white/2 transition-colors">
                       <td className="px-4 py-3 font-medium text-white">{p.name}</td>
                       <td className="px-4 py-3 text-xs text-slate-400">{p.trade}</td>
-                      <td className="px-4 py-3 font-bold text-amber-400">${p.amount.toFixed(2)}</td>
+                      <td className="px-4 py-3 font-bold text-amber-400">${(p.amount ?? 0).toFixed(2)}</td>
                       <td className="px-4 py-3 text-xs text-slate-400">{p.dueDate}</td>
                       <td className="px-4 py-3">
                         <span className={`text-xs px-2 py-0.5 rounded-full ${p.method === "Wire" ? "bg-purple-500/20 text-purple-400" : "bg-blue-500/20 text-blue-400"}`}>{p.method}</span>
@@ -380,7 +380,7 @@ export default function FinancialCenter() {
             ].map(b => (
               <div key={b.label} className="p-4 bg-[#0D1F3C]">
                 <div className="text-xs text-slate-400 mb-1">{b.label}</div>
-                <div className={`text-xl font-bold ${b.color}`}>${b.value.toLocaleString()}</div>
+                <div className={`text-xl font-bold ${b.color}`}>${(b.value ?? 0).toLocaleString()}</div>
               </div>
             ))}
           </div>
@@ -401,7 +401,7 @@ export default function FinancialCenter() {
                     <tr key={i} className="border-b border-white/5 hover:bg-white/2">
                       <td className="px-4 py-3 font-medium text-white">{item.partner}</td>
                       <td className="px-4 py-3 text-xs text-slate-400 font-mono">{item.invoiceId}</td>
-                      <td className="px-4 py-3 font-bold text-white">${item.amount.toLocaleString()}</td>
+                      <td className="px-4 py-3 font-bold text-white">${(item.amount ?? 0).toLocaleString()}</td>
                       <td className="px-4 py-3 text-xs text-slate-400">{item.daysPast} days</td>
                       <td className="px-4 py-3"><span className={`text-xs px-2 py-0.5 rounded-full ${statusColor}`}>{statusLabel}</span></td>
                       <td className="px-4 py-3">
@@ -456,8 +456,8 @@ export default function FinancialCenter() {
                   return (
                     <tr key={i} className="border-b border-white/5 hover:bg-white/2">
                       <td className="px-4 py-3 font-medium text-white">{d.category}</td>
-                      <td className="px-4 py-3 text-slate-400">${d.budget.toLocaleString()}</td>
-                      <td className="px-4 py-3 text-white font-medium">${d.actual.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-slate-400">${(d.budget ?? 0).toLocaleString()}</td>
+                      <td className="px-4 py-3 text-white font-medium">${(d.actual ?? 0).toLocaleString()}</td>
                       <td className={`px-4 py-3 font-medium ${variance > 0 ? "text-red-400" : "text-emerald-400"}`}>
                         {variance > 0 ? "+" : ""}${variance.toLocaleString()} ({pct > 0 ? "+" : ""}{pct}%)
                       </td>

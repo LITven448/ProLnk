@@ -395,8 +395,8 @@ export default function GrowthEngine() {
                           <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: c.color }} />
                           {c.name}
                         </td>
-                        <td className="py-2 text-right text-slate-400">${c.spend.toLocaleString()}</td>
-                        <td className="py-2 text-right text-slate-400">${c.recommended.toLocaleString()}</td>
+                        <td className="py-2 text-right text-slate-400">${(c.spend ?? 0).toLocaleString()}</td>
+                        <td className="py-2 text-right text-slate-400">${(c.recommended ?? 0).toLocaleString()}</td>
                         <td className={`py-2 text-right font-bold ${c.roi >= 2 ? "text-green-400" : c.roi >= 1.5 ? "text-amber-400" : "text-red-400"}`}>
                           {c.roi}x
                         </td>

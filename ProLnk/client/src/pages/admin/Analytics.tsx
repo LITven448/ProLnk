@@ -254,7 +254,7 @@ export default function Analytics() {
                 <div key={step.label}>
                   <div className="flex justify-between text-xs mb-1">
                     <span className="text-slate-400">{step.label}</span>
-                    <span className="text-white font-bold">{step.value.toLocaleString()}</span>
+                    <span className="text-white font-bold">{(step.value ?? 0).toLocaleString()}</span>
                   </div>
                   <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
                     <div
@@ -304,7 +304,7 @@ export default function Analytics() {
               {forecastMonths.map((f) => (
                 <div key={f.month} className="flex justify-between text-xs">
                   <span className="text-slate-400">{f.month} projected</span>
-                  <span className="text-green-400 font-bold">${f.projected.toLocaleString()}</span>
+                  <span className="text-green-400 font-bold">${(f.projected ?? 0).toLocaleString()}</span>
                 </div>
               ))}
             </div>

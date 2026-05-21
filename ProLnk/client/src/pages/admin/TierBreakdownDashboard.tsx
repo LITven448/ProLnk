@@ -302,7 +302,7 @@ export default function TierBreakdownDashboard() {
                   {PERFORMANCE_ROWS.map((row) => (
                     <tr key={row.tier} className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-colors">
                       <td className={`py-3 pr-6 font-semibold ${row.color}`}>{row.tier}</td>
-                      <td className="py-3 pr-6 text-slate-200">{row.partners.toLocaleString()}</td>
+                      <td className="py-3 pr-6 text-slate-200">{(row.partners ?? 0).toLocaleString()}</td>
                       <td className="py-3 pr-6 text-slate-200">{row.avgPPS}</td>
                       <td className="py-3 pr-6 text-slate-200">{row.avgJobsMo}</td>
                       <td className="py-3 pr-6 text-emerald-400 font-medium">{row.avgCommMo}</td>

@@ -532,7 +532,7 @@ export default function LeadScoring() {
                     <div className="text-slate-400 text-xs mt-0.5 truncate">{lead.description}</div>
                     <div className="flex flex-wrap gap-3 mt-1.5 text-xs text-slate-400">
                       <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{lead.address}</span>
-                      <span className="flex items-center gap-1"><DollarSign className="w-3 h-3" />${lead.budget.toLocaleString()} budget</span>
+                      <span className="flex items-center gap-1"><DollarSign className="w-3 h-3" />${(lead.budget ?? 0).toLocaleString()} budget</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{new Date(lead.receivedAt).toLocaleDateString()}</span>
                       <span className={`capitalize font-medium ${lead.urgency === "high" ? "text-red-400" : lead.urgency === "medium" ? "text-yellow-400" : "text-slate-400"}`}>
                         {lead.urgency} urgency
@@ -564,7 +564,7 @@ export default function LeadScoring() {
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                       {[
                         { label: "Verification", score: lead.components.verification, max: 30, desc: `Email ${lead.verifiedEmail ? "✓" : "✗"} · Phone ${lead.verifiedPhone ? "✓" : "✗"} · Address ${lead.verifiedAddress ? "✓" : "✗"}` },
-                        { label: "Budget", score: lead.components.budget, max: 30, desc: `$${lead.budget.toLocaleString()} requested` },
+                        { label: "Budget", score: lead.components.budget, max: 30, desc: `$${(lead.budget ?? 0).toLocaleString()} requested` },
                         { label: "Urgency", score: lead.components.urgency, max: 20, desc: `${lead.urgency} priority` },
                         { label: "History", score: lead.components.history, max: 20, desc: `${lead.pastJobs} past jobs · ${lead.avgRating > 0 ? lead.avgRating + "★ avg" : "no ratings"}` },
                       ].map((c) => (

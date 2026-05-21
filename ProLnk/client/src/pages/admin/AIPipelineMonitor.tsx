@@ -290,7 +290,7 @@ export default function AIPipelineMonitor() {
                     <div className="space-y-2 mt-3 pt-3" style={{ borderTop: "1px solid #ffffff10" }}>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-muted-foreground">Processed</span>
-                        <span className="font-bold text-white font-mono">{stage.processed.toLocaleString()}</span>
+                        <span className="font-bold text-white font-mono">{(stage.processed ?? 0).toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-muted-foreground">Avg Latency</span>
@@ -567,7 +567,7 @@ export default function AIPipelineMonitor() {
                           <span className="font-semibold" style={{ color: stage.color }}>{stage.name}</span>
                         </div>
                       </td>
-                      <td className="py-2.5 px-4 font-bold font-mono text-white">{stage.processed.toLocaleString()}</td>
+                      <td className="py-2.5 px-4 font-bold font-mono text-white">{(stage.processed ?? 0).toLocaleString()}</td>
                       <td className="py-2.5 px-4">
                         <QueuePill depth={stage.queueDepth} />
                       </td>

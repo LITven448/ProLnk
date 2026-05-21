@@ -144,7 +144,7 @@ export default function CommissionStrategy() {
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
                   <div>
                     <div style={{ fontSize: 16, fontWeight: 800, color: T.text }}>{t.label}</div>
-                    <div style={{ fontSize: 12, color: T.muted }}>{t.slots.toLocaleString()} slots</div>
+                    <div style={{ fontSize: 12, color: T.muted }}>{(t.slots ?? 0).toLocaleString()} slots</div>
                   </div>
                   {t.locked ? (
                     <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#FFF8E6", color: T.amber, padding: "3px 8px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>
@@ -327,7 +327,7 @@ export default function CommissionStrategy() {
                     </td>
                     <td style={{ padding: "12px 16px", fontSize: 13, fontWeight: 700, color: T.green }}>{tier.avgEarnings}</td>
                     <td style={{ padding: "12px 16px", fontSize: 13, color: tier.accentColor, fontWeight: 700 }}>{tier.topEarner}</td>
-                    <td style={{ padding: "12px 16px", fontSize: 13, color: T.text }}>{tier.tierSize.toLocaleString()}</td>
+                    <td style={{ padding: "12px 16px", fontSize: 13, color: T.text }}>{(tier.tierSize ?? 0).toLocaleString()}</td>
                     <td style={{ padding: "12px 16px", fontSize: 13, fontWeight: 700, color: T.text, fontFamily: MONO }}>{fmtDollars(totalVol)}</td>
                   </tr>
                 );

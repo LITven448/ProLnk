@@ -115,7 +115,7 @@ export default function ConversionFunnel() {
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-bold" style={{ color: s.color }}>{s.stage}</span>
-                      <span className="text-lg font-black" style={{ color: D.text }}>{s.count.toLocaleString()}</span>
+                      <span className="text-lg font-black" style={{ color: D.text }}>{(s.count ?? 0).toLocaleString()}</span>
                     </div>
                     <div className="mt-1 h-1.5 rounded-full" style={{ backgroundColor: `${s.color}20` }}>
                       <div className="h-full rounded-full" style={{ width: "100%", backgroundColor: s.color, opacity: 0.6 }} />
@@ -144,8 +144,8 @@ export default function ConversionFunnel() {
                   {DROPOFF.map((row, i) => (
                     <tr key={i} style={{ borderBottom: i < DROPOFF.length - 1 ? `1px solid ${D.border}` : "none", backgroundColor: i % 2 === 0 ? D.card : D.surface }}>
                       <td className="px-4 py-3 text-xs font-medium" style={{ color: D.text }}>{row.from}</td>
-                      <td className="px-4 py-3 text-xs font-mono" style={{ color: D.muted }}>{row.entered.toLocaleString()}</td>
-                      <td className="px-4 py-3 text-xs font-mono" style={{ color: D.red }}>{row.dropped.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-xs font-mono" style={{ color: D.muted }}>{(row.entered ?? 0).toLocaleString()}</td>
+                      <td className="px-4 py-3 text-xs font-mono" style={{ color: D.red }}>{(row.dropped ?? 0).toLocaleString()}</td>
                       <td className="px-4 py-3 text-xs font-bold" style={{ color: D.green }}>{row.cr}%</td>
                       <td className="px-4 py-3 text-xs font-semibold" style={{ color: row.delta >= 0 ? D.green : D.red }}>
                         {row.delta >= 0 ? "+" : ""}{row.delta}%

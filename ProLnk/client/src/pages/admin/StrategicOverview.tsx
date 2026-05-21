@@ -314,7 +314,7 @@ function ProLnkTab() {
                     <span className="text-muted-foreground">{p.leadsCount} leads</span>
                     <div className="flex items-center gap-1">
                       <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
-                      <span>{p.rating.toFixed(1)}</span>
+                      <span>{(p.rating ?? 0).toFixed(1)}</span>
                     </div>
                     <span className="font-bold text-emerald-600">{fmt$(p.totalEarned)}</span>
                   </div>

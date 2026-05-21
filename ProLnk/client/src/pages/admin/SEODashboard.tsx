@@ -238,7 +238,7 @@ export default function SEODashboard() {
                     {TOP_KEYWORDS.map((kw) => (
                       <tr key={kw.keyword} className="hover:bg-slate-700/30 transition-colors">
                         <td className="px-5 py-3 text-white font-medium">{kw.keyword}</td>
-                        <td className="px-5 py-3 text-slate-400 text-right">{kw.volume.toLocaleString()}</td>
+                        <td className="px-5 py-3 text-slate-400 text-right">{(kw.volume ?? 0).toLocaleString()}</td>
                         <td className="px-5 py-3 text-right">
                           <span
                             className={`font-mono font-bold ${
@@ -254,8 +254,8 @@ export default function SEODashboard() {
                             #{kw.position}
                           </span>
                         </td>
-                        <td className="px-5 py-3 text-slate-300 text-right">{kw.clicks.toLocaleString()}</td>
-                        <td className="px-5 py-3 text-slate-400 text-right">{kw.impressions.toLocaleString()}</td>
+                        <td className="px-5 py-3 text-slate-300 text-right">{(kw.clicks ?? 0).toLocaleString()}</td>
+                        <td className="px-5 py-3 text-slate-400 text-right">{(kw.impressions ?? 0).toLocaleString()}</td>
                         <td className="px-5 py-3 text-center">
                           <div className="flex justify-center">
                             <ChangeChip change={kw.change} />
@@ -295,7 +295,7 @@ export default function SEODashboard() {
                           {pg.path}
                           <ExternalLink className="w-3 h-3 text-slate-500" />
                         </td>
-                        <td className="px-5 py-3 text-white text-right font-bold">{pg.visits.toLocaleString()}</td>
+                        <td className="px-5 py-3 text-white text-right font-bold">{(pg.visits ?? 0).toLocaleString()}</td>
                         <td className="px-5 py-3 text-right">
                           <span className={parseFloat(pg.bounce) > 45 ? "text-red-400" : "text-green-400"}>
                             {pg.bounce}
@@ -327,7 +327,7 @@ export default function SEODashboard() {
                       <div className="flex items-center gap-3 mt-1">
                         <span className="text-xs text-slate-400">
                           <Eye className="w-3 h-3 inline mr-1" />
-                          {opp.volume.toLocaleString()}/mo
+                          {(opp.volume ?? 0).toLocaleString()}/mo
                         </span>
                         <Badge
                           variant="outline"

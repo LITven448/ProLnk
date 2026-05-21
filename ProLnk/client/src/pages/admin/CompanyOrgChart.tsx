@@ -1080,7 +1080,7 @@ function AgentCard({ agent, onClick, isSelected }: { agent: Agent; onClick: () =
       </div>
       <span className="text-xs font-semibold leading-tight" style={{ color: D.text }}>{agent.name}</span>
       <span className="text-[10px]" style={{ color: D.muted }}>{agent.llm}</span>
-      <span className="text-[10px]" style={{ color: D.dim }}>{agent.actionsToday.toLocaleString()} actions</span>
+      <span className="text-[10px]" style={{ color: D.dim }}>{(agent.actionsToday ?? 0).toLocaleString()} actions</span>
     </button>
   );
 }
@@ -1114,7 +1114,7 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
 
         <div className="grid grid-cols-2 gap-3">
           {[
-            { label: "Actions Today", value: agent.actionsToday.toLocaleString() },
+            { label: "Actions Today", value: (agent.actionsToday ?? 0).toLocaleString() },
             { label: "Success Rate",  value: `${agent.successRate}%` },
             { label: "LLM Model",     value: agent.llm },
             { label: "Layer",         value: agent.layer.replace("-", " ").replace(/\b\w/g, l => l.toUpperCase()) },
@@ -1417,7 +1417,7 @@ function AccountabilityView({ onSelectAgent, selectedAgent, filterCompany }: { o
                         <td className="px-3 py-2.5 text-center" style={{ borderBottom: `1px solid ${D.border}` }}>
                           <span className="w-2 h-2 rounded-full inline-block" style={{ background: STATUS_COLOR[agent.status] }} />
                         </td>
-                        <td className="px-3 py-2.5 text-right font-mono font-bold" style={{ color: D.text, borderBottom: `1px solid ${D.border}` }}>{agent.actionsToday.toLocaleString()}</td>
+                        <td className="px-3 py-2.5 text-right font-mono font-bold" style={{ color: D.text, borderBottom: `1px solid ${D.border}` }}>{(agent.actionsToday ?? 0).toLocaleString()}</td>
                         <td className="px-3 py-2.5 text-right font-mono" style={{ color: agent.successRate >= 98 ? "#82D616" : agent.successRate >= 90 ? "#FBB140" : "#EA0606", borderBottom: `1px solid ${D.border}` }}>{agent.successRate}%</td>
                         <td className="px-3 py-2.5 max-w-[250px] truncate" style={{ color: D.muted, borderBottom: `1px solid ${D.border}` }}>{agent.lastAction}</td>
                       </tr>
@@ -1697,7 +1697,7 @@ export default function CompanyOrgChart() {
                     <div className="grid grid-cols-3 gap-2 mb-2">
                       <div className="p-1.5 rounded" style={{ background: D.bg }}>
                         <div className="text-[10px]" style={{ color: D.muted }}>Actions</div>
-                        <div className="text-xs font-bold" style={{ color: D.text }}>{agent.actionsToday.toLocaleString()}</div>
+                        <div className="text-xs font-bold" style={{ color: D.text }}>{(agent.actionsToday ?? 0).toLocaleString()}</div>
                       </div>
                       <div className="p-1.5 rounded" style={{ background: D.bg }}>
                         <div className="text-[10px]" style={{ color: D.muted }}>Success</div>

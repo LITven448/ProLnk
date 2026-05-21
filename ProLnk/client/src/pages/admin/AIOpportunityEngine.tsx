@@ -274,7 +274,7 @@ export default function AIOpportunityEngine() {
               <span className="text-xs" style={{ color: "#7B809A" }}>{s.label}</span>
             </div>
             <div className="font-heading text-3xl" style={{ color: s.color }}>
-              {s.prefix ?? ""}{s.value.toLocaleString()}{s.suffix}
+              {s.prefix ?? ""}{(s.value ?? 0).toLocaleString()}{s.suffix}
             </div>
           </div>
         ))}

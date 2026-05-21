@@ -146,7 +146,7 @@ export default function NetworkGrowthDashboard() {
         {/* Top KPIs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Total Waitlist", value: rawSignups.length.toLocaleString(), icon: <Users size={16} className="text-blue-400" />, sub: "Pro applicants" },
+            { label: "Total Waitlist", value: (rawSignups.length ?? 0).toLocaleString(), icon: <Users size={16} className="text-blue-400" />, sub: "Pro applicants" },
             { label: "Founding Slots Filled", value: `${pctFull}%`, icon: <Award size={16} className="text-amber-400" />, sub: `${totalFilled} of ${TOTAL_CAPACITY}` },
             { label: "7-Day Signups", value: today7DaySignups.toLocaleString(), icon: <TrendingUp size={16} className="text-green-400" />, sub: `~${avgDaily}/day avg` },
             { label: "Est. Days to Full", value: daysToFull > 0 ? `${daysToFull}d` : "Live", icon: <Clock size={16} className="text-teal-400" />, sub: "at current pace" },

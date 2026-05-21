@@ -324,7 +324,7 @@ export default function DataMarketplace() {
                   <div style={{ height: "100%", width: `${(row.amount / 100000) * 100}%`, backgroundColor: row.color, borderRadius: 4, transition: "width 0.5s" }} />
                 </div>
                 <span style={{ fontSize: 12, fontWeight: 700, color: T.text, fontFamily: MONO, width: 80, textAlign: "right" }}>
-                  ${row.amount.toLocaleString()}
+                  ${(row.amount ?? 0).toLocaleString()}
                 </span>
               </div>
             ))}

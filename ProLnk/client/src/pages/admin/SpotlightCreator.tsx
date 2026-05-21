@@ -167,7 +167,7 @@ export default function SpotlightCreator() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400 flex items-center gap-1"><Eye className="w-3 h-3" /> Views</span>
-                    <span className="text-white">{s.views.toLocaleString()}</span>
+                    <span className="text-white">{(s.views ?? 0).toLocaleString()}</span>
                   </div>
                 </div>
                 <Button size="sm" variant="outline" className="w-full border-slate-600 text-slate-300 text-xs">
@@ -207,7 +207,7 @@ export default function SpotlightCreator() {
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm">{foundPartner.name}</p>
-                    <p className="text-slate-400 text-xs">{foundPartner.trade} · {foundPartner.jobs} jobs · {foundPartner.rating.toFixed(1)} ⭐</p>
+                    <p className="text-slate-400 text-xs">{foundPartner.trade} · {foundPartner.jobs} jobs · {(foundPartner.rating ?? 0).toFixed(1)} ⭐</p>
                   </div>
                   <CheckCircle className="w-4 h-4 text-teal-400 ml-auto" />
                 </div>
@@ -365,8 +365,8 @@ export default function SpotlightCreator() {
                   <tr key={row.id} className={`border-b border-slate-700/50 hover:bg-slate-800/30 transition-colors ${i === PERF_DATA.length - 1 ? "border-0" : ""}`}>
                     <td className="px-4 py-3 text-white font-medium">{row.partnerName}</td>
                     <td className="px-4 py-3 text-slate-300">{row.type}</td>
-                    <td className="px-4 py-3 text-white">{row.views.toLocaleString()}</td>
-                    <td className="px-4 py-3 text-white">{row.profileVisits.toLocaleString()}</td>
+                    <td className="px-4 py-3 text-white">{(row.views ?? 0).toLocaleString()}</td>
+                    <td className="px-4 py-3 text-white">{(row.profileVisits ?? 0).toLocaleString()}</td>
                     <td className="px-4 py-3 text-teal-400 font-medium">{row.leadsBooked}</td>
                     <td className="px-4 py-3 text-emerald-400 font-semibold">{row.roi}</td>
                   </tr>

@@ -134,8 +134,8 @@ export default function EventEngineDashboard() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             { label: "Active Triggers", value: totals.triggers.toString(), icon: Radar, gradient: BADGE_GRADIENTS.cyan, delta: "+12 this week" },
-            { label: "Properties Monitored", value: totals.properties.toLocaleString(), icon: Eye, gradient: BADGE_GRADIENTS.blue, delta: "+234 this month" },
-            { label: "Predictive Leads", value: totals.leads.toLocaleString(), icon: Target, gradient: BADGE_GRADIENTS.green, delta: "+89 this week" },
+            { label: "Properties Monitored", value: (totals.properties ?? 0).toLocaleString(), icon: Eye, gradient: BADGE_GRADIENTS.blue, delta: "+234 this month" },
+            { label: "Predictive Leads", value: (totals.leads ?? 0).toLocaleString(), icon: Target, gradient: BADGE_GRADIENTS.green, delta: "+89 this week" },
             { label: "Projected Revenue", value: fmt$(totals.revenue), icon: TrendingUp, gradient: BADGE_GRADIENTS.orange, delta: "+18% vs last month" },
           ].map((stat, i) => (
             <div key={i} className="rounded-2xl p-5 relative overflow-hidden" style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
@@ -231,7 +231,7 @@ export default function EventEngineDashboard() {
                     <div className="grid grid-cols-4 gap-3 mb-3">
                       {[
                         { label: "Triggers", value: engine.stats.triggers },
-                        { label: "Properties", value: engine.stats.properties.toLocaleString() },
+                        { label: "Properties", value: engine.(stats.properties ?? 0).toLocaleString() },
                         { label: "Leads", value: engine.stats.leads },
                         { label: "Revenue", value: fmt$(engine.stats.revenue) },
                       ].map((s, i) => (
@@ -313,7 +313,7 @@ export default function EventEngineDashboard() {
                 <div key={i}>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs" style={{ color: T.muted }}>{step.label}</span>
-                    <span className="text-xs font-bold" style={{ color: T.text, fontFamily: MONO }}>{step.value.toLocaleString()}</span>
+                    <span className="text-xs font-bold" style={{ color: T.text, fontFamily: MONO }}>{(step.value ?? 0).toLocaleString()}</span>
                   </div>
                   <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: T.bg }}>
                     <div

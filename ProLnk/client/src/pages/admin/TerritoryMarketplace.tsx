@@ -335,7 +335,7 @@ function TerritoryCard({ t, onSelect }: { t: typeof TERRITORIES[0]; onSelect: (t
         </div>
         <div className="bg-gray-50 rounded-xl p-3">
           <p className="text-xs text-gray-500 mb-0.5">Homes</p>
-          <p className="text-lg font-bold text-gray-900">{t.homeCount.toLocaleString()}</p>
+          <p className="text-lg font-bold text-gray-900">{(t.homeCount ?? 0).toLocaleString()}</p>
         </div>
         <div className="bg-gray-50 rounded-xl p-3">
           <p className="text-xs text-gray-500 mb-0.5">Avg Home Value</p>
@@ -529,7 +529,7 @@ export default function TerritoryMarketplace() {
                         </div>
                         <div>
                           <p className="text-gray-500 text-xs">Total Homes</p>
-                          <p className="font-bold text-gray-900">{selected.homeCount.toLocaleString()}</p>
+                          <p className="font-bold text-gray-900">{(selected.homeCount ?? 0).toLocaleString()}</p>
                         </div>
                       </div>
                       <div className="border-t border-gray-200 pt-3">

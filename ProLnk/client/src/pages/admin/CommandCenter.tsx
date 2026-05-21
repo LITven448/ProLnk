@@ -162,25 +162,25 @@ export default function CommandCenter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <StatCard
             label="Pro Signups"
-            value={metricsError ? "0" : m ? m.proSignups.toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? (m.totalPros ?? 0).toLocaleString() : "—"}
             icon={UserPlus}
             gradient={BADGE_GRADIENTS.blue}
           />
           <StatCard
             label="Homeowner Signups"
-            value={metricsError ? "0" : m ? m.trustyproSignups.toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? (m.totalHomes ?? 0).toLocaleString() : "—"}
             icon={Home}
             gradient={BADGE_GRADIENTS.green}
           />
           <StatCard
             label="Total Signups"
-            value={metricsError ? "0" : m ? m.totalSignups.toLocaleString() : "—"}
+            value={metricsError ? "0" : m ? ((m.totalPros ?? 0) + (m.totalHomes ?? 0)).toLocaleString() : "—"}
             icon={Users}
             gradient={BADGE_GRADIENTS.cyan}
           />
           <StatCard
-            label="Referral Rate"
-            value={metricsError ? "0%" : m ? `${m.conversionRate}%` : "—"}
+            label="Charter Spots"
+            value={metricsError ? "0" : m ? `${(m.tierBreakdown?.charter ?? 0)}/25` : "—"}
             icon={TrendingUp}
             gradient={BADGE_GRADIENTS.orange}
           />

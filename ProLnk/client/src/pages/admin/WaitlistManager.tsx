@@ -392,8 +392,8 @@ export default function WaitlistManager() {
           {/* Stats Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             {[
-              { label: "Total Applicants", value: (s?.pros.total ?? 0) + (s?.homes.total ?? 0), icon: <Users className="w-4 h-4" />, color: "text-teal-400", sub: `${s?.pros.total ?? 0} pros · ${s?.homes.total ?? 0} homeowners` },
-              { label: "Pending Review", value: (s?.pros.pending ?? 0) + (s?.homes.pending ?? 0), icon: <Clock className="w-4 h-4" />, color: "text-amber-400", sub: "Awaiting decision" },
+              { label: "Total Applicants", value: (s?.pros?.total ?? 0) + (s?.homes?.total ?? 0), icon: <Users className="w-4 h-4" />, color: "text-teal-400", sub: `${s?.pros?.total ?? 0} pros · ${s?.homes?.total ?? 0} homeowners` },
+              { label: "Pending Review", value: (s?.pros?.pending ?? 0) + (s?.homes?.pending ?? 0), icon: <Clock className="w-4 h-4" />, color: "text-amber-400", sub: "Awaiting decision" },
               { label: "Approved Today", value: approvedToday, icon: <CheckCircle className="w-4 h-4" />, color: "text-green-400", sub: new Date().toLocaleDateString() },
               { label: "Top Trade", value: topTrade, icon: <Star className="w-4 h-4" />, color: "text-purple-400", sub: "Most applications" },
             ].map(stat => (
@@ -463,8 +463,8 @@ export default function WaitlistManager() {
           {/* Progress toward goals */}
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {[
-              { label: "ProLnk Pro Goal", current: s?.pros.total ?? 0, goal: 1000, color: "#2DD4BF" },
-              { label: "TrustyPro Home Goal", current: s?.homes.total ?? 0, goal: 10000, color: "#818CF8" },
+              { label: "ProLnk Pro Goal", current: s?.pros?.total ?? 0, goal: 1000, color: "#2DD4BF" },
+              { label: "TrustyPro Home Goal", current: s?.homes?.total ?? 0, goal: 10000, color: "#818CF8" },
             ].map(g => {
               const pct = Math.min(100, Math.round(((g.current as number) / g.goal) * 100));
               return (
@@ -518,7 +518,7 @@ export default function WaitlistManager() {
           {/* Status summary + charter approve */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 bg-slate-800/60 border border-slate-700/60 rounded-xl px-4 py-3">
             <div className="flex flex-wrap gap-3 text-xs text-slate-400">
-              <span><span className="font-bold text-amber-400">{s?.pros.pending ?? 0} pending</span> · <span className="font-bold text-teal-400">{s?.pros.approved ?? 0} approved</span> · <span className="font-bold text-red-400">{s?.pros.rejected ?? 0} rejected</span></span>
+              <span><span className="font-bold text-amber-400">{s?.pros?.pending ?? 0} pending</span> · <span className="font-bold text-teal-400">{s?.pros?.approved ?? 0} approved</span> · <span className="font-bold text-red-400">{s?.pros?.rejected ?? 0} rejected</span></span>
               <span className="text-slate-600">|</span>
               {(["charter", "founding", "level3", "level4"] as const).map(tier => {
                 const count = (pros.data || []).filter((p: any) => p.tier === tier).length;
@@ -539,7 +539,7 @@ export default function WaitlistManager() {
             {(["pros", "homes"] as const).map(t => (
               <button key={t} onClick={() => setTab(t)}
                 className={`px-5 py-2 rounded-lg text-sm font-semibold transition-colors ${tab === t ? "bg-teal-500/20 text-teal-300 border border-teal-500/40" : "text-slate-400 hover:text-slate-200"}`}>
-                {t === "pros" ? `Service Pros (${s?.pros.total ?? 0})` : `Homeowners (${s?.homes.total ?? 0})`}
+                {t === "pros" ? `Service Pros (${s?.pros?.total ?? 0})` : `Homeowners (${s?.homes?.total ?? 0})`}
               </button>
             ))}
           </div>

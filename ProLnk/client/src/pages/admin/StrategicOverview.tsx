@@ -192,8 +192,8 @@ function ProLnkTab() {
     enterprise: "bg-emerald-100 text-emerald-700",
   };
 
-  const totalMrr = data?.tiers.reduce((a, t) => a + t.mrr, 0) ?? 0;
-  const totalPartners = data?.tiers.reduce((a, t) => a + t.partnerCount, 0) ?? 0;
+  const totalMrr = data?.tiers?.reduce((a, t) => a + t.mrr, 0) ?? 0;
+  const totalPartners = data?.tiers?.reduce((a, t) => a + t.partnerCount, 0) ?? 0;
 
   return (
     <div className="space-y-6">
@@ -205,7 +205,7 @@ function ProLnkTab() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <MetricCard label="Monthly Recurring Revenue" value={isLoading ? "—" : fmt$(totalMrr)} sub="from subscriptions" icon={DollarSign} accent="green" />
         <MetricCard label="Active Partners" value={isLoading ? "—" : fmtN(totalPartners)} sub="approved & active" icon={Users} accent="blue" />
-        <MetricCard label="Commission Queue" value={isLoading ? "—" : fmt$(data?.commissionQueue.total ?? 0)} sub={`${data?.commissionQueue.count ?? 0} unpaid`} icon={Clock} accent="amber" alert={(data?.commissionQueue.count ?? 0) > 10} />
+        <MetricCard label="Commission Queue" value={isLoading ? "—" : fmt$(data?.commissionQueue?.total ?? 0)} sub={`${data?.commissionQueue?.count ?? 0} unpaid`} icon={Clock} accent="amber" alert={(data?.commissionQueue?.count ?? 0) > 10} />
         <MetricCard
           label="Lead Conversion"
           value={isLoading || !data ? "—" : data.funnel.dispatched > 0 ? `${Math.round((data.funnel.completed / data.funnel.dispatched) * 100)}%` : "0%"}
@@ -249,15 +249,15 @@ function ProLnkTab() {
           <CardContent>
             <div className="space-y-2">
               {[
-                { label: "Dispatched", value: data?.funnel.dispatched ?? 0, color: "bg-blue-500" },
-                { label: "Accepted", value: data?.funnel.accepted ?? 0, color: "bg-purple-500" },
-                { label: "Completed", value: data?.funnel.completed ?? 0, color: "bg-emerald-500" },
-                { label: "Paid", value: data?.funnel.paid ?? 0, color: "bg-green-600" },
+                { label: "Dispatched", value: data?.funnel?.dispatched ?? 0, color: "bg-blue-500" },
+                { label: "Accepted", value: data?.funnel?.accepted ?? 0, color: "bg-purple-500" },
+                { label: "Completed", value: data?.funnel?.completed ?? 0, color: "bg-emerald-500" },
+                { label: "Paid", value: data?.funnel?.paid ?? 0, color: "bg-green-600" },
               ].map((step) => (
                 <div key={step.label} className="flex items-center gap-3">
                   <span className="text-sm w-20 text-muted-foreground">{step.label}</span>
                   <div className="flex-1 bg-muted rounded-full h-2">
-                    <div className={`${step.color} h-2 rounded-full`} style={{ width: (data?.funnel.dispatched ?? 0) > 0 ? `${(step.value / (data?.funnel.dispatched ?? 1)) * 100}%` : "0%" }} />
+                    <div className={`${step.color} h-2 rounded-full`} style={{ width: (data?.funnel?.dispatched ?? 0) > 0 ? `${(step.value / (data?.funnel?.dispatched ?? 1)) * 100}%` : "0%" }} />
                   </div>
                   <span className="text-sm font-bold w-8 text-right">{step.value}</span>
                 </div>
@@ -274,11 +274,11 @@ function ProLnkTab() {
           <CardContent>
             <div className="space-y-2">
               {[
-                { label: "Healthy", value: data?.health.healthy ?? 0, color: "text-emerald-600", icon: CheckCircle },
-                { label: "1 Strike", value: data?.health.oneStrike ?? 0, color: "text-amber-600", icon: AlertTriangle },
-                { label: "2 Strikes", value: data?.health.twoStrikes ?? 0, color: "text-orange-600", icon: AlertTriangle },
-                { label: "Suspended", value: data?.health.suspended ?? 0, color: "text-red-600", icon: XCircle },
-                { label: "Pending Review", value: data?.health.pending ?? 0, color: "text-blue-600", icon: Clock },
+                { label: "Healthy", value: data?.health?.healthy ?? 0, color: "text-emerald-600", icon: CheckCircle },
+                { label: "1 Strike", value: data?.health?.oneStrike ?? 0, color: "text-amber-600", icon: AlertTriangle },
+                { label: "2 Strikes", value: data?.health?.twoStrikes ?? 0, color: "text-orange-600", icon: AlertTriangle },
+                { label: "Suspended", value: data?.health?.suspended ?? 0, color: "text-red-600", icon: XCircle },
+                { label: "Pending Review", value: data?.health?.pending ?? 0, color: "text-blue-600", icon: Clock },
               ].map((item) => (
                 <div key={item.label} className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -340,9 +340,9 @@ function TrustyProTab() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <MetricCard label="Total Homeowners" value={isLoading ? "—" : fmtN(data?.profiles.total ?? 0)} sub={`+${data?.profiles.today ?? 0} today, +${data?.profiles.last7 ?? 0} this week`} icon={Home} accent="blue" />
-        <MetricCard label="AI Scans Completed" value={isLoading ? "—" : fmtN(data?.aiScans.completed ?? 0)} sub={`${data?.aiScans.today ?? 0} today`} icon={Activity} accent="purple" />
-        <MetricCard label="Quote Requests" value={isLoading ? "—" : fmtN(data?.quotes.total ?? 0)} sub={`${data?.quotes.pending ?? 0} pending`} icon={Wrench} accent="amber" />
+        <MetricCard label="Total Homeowners" value={isLoading ? "—" : fmtN(data?.profiles?.total ?? 0)} sub={`+${data?.profiles?.today ?? 0} today, +${data?.profiles?.last7 ?? 0} this week`} icon={Home} accent="blue" />
+        <MetricCard label="AI Scans Completed" value={isLoading ? "—" : fmtN(data?.aiScans?.completed ?? 0)} sub={`${data?.aiScans?.today ?? 0} today`} icon={Activity} accent="purple" />
+        <MetricCard label="Quote Requests" value={isLoading ? "—" : fmtN(data?.quotes?.total ?? 0)} sub={`${data?.quotes?.pending ?? 0} pending`} icon={Wrench} accent="amber" />
         <MetricCard label="Churn Risk" value={isLoading ? "—" : fmtN(data?.churnRisk ?? 0)} sub="inactive 60+ days" icon={TrendingDown} accent="red" alert={(data?.churnRisk ?? 0) > 5} />
       </div>
 
@@ -354,22 +354,22 @@ function TrustyProTab() {
           <CardContent>
             <div className="space-y-3">
               {[
-                { label: "Total Scans", value: data?.aiScans.total ?? 0, color: "text-slate-600" },
-                { label: "Completed", value: data?.aiScans.completed ?? 0, color: "text-emerald-600" },
-                { label: "Processing", value: data?.aiScans.processing ?? 0, color: "text-blue-600" },
-                { label: "Failed", value: data?.aiScans.failed ?? 0, color: "text-red-600" },
+                { label: "Total Scans", value: data?.aiScans?.total ?? 0, color: "text-slate-600" },
+                { label: "Completed", value: data?.aiScans?.completed ?? 0, color: "text-emerald-600" },
+                { label: "Processing", value: data?.aiScans?.processing ?? 0, color: "text-blue-600" },
+                { label: "Failed", value: data?.aiScans?.failed ?? 0, color: "text-red-600" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">{item.label}</span>
                   <span className={`text-sm font-bold ${item.color}`}>{item.value}</span>
                 </div>
               ))}
-              {(data?.aiScans.total ?? 0) > 0 && (
+              {(data?.aiScans?.total ?? 0) > 0 && (
                 <div className="pt-2 border-t">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>Success rate</span>
                     <span className="font-medium text-emerald-600">
-                      {Math.round(((data?.aiScans.completed ?? 0) / (data?.aiScans.total ?? 1)) * 100)}%
+                      {Math.round(((data?.aiScans?.completed ?? 0) / (data?.aiScans?.total ?? 1)) * 100)}%
                     </span>
                   </div>
                 </div>
@@ -385,14 +385,14 @@ function TrustyProTab() {
           <CardContent>
             <div className="space-y-3">
               {[
-                { label: "Submitted", value: data?.quotes.total ?? 0, color: "bg-blue-500" },
-                { label: "Quoted", value: data?.quotes.quoted ?? 0, color: "bg-purple-500" },
-                { label: "Accepted", value: data?.quotes.accepted ?? 0, color: "bg-emerald-500" },
+                { label: "Submitted", value: data?.quotes?.total ?? 0, color: "bg-blue-500" },
+                { label: "Quoted", value: data?.quotes?.quoted ?? 0, color: "bg-purple-500" },
+                { label: "Accepted", value: data?.quotes?.accepted ?? 0, color: "bg-emerald-500" },
               ].map((step) => (
                 <div key={step.label} className="flex items-center gap-3">
                   <span className="text-sm w-20 text-muted-foreground">{step.label}</span>
                   <div className="flex-1 bg-muted rounded-full h-2">
-                    <div className={`${step.color} h-2 rounded-full`} style={{ width: (data?.quotes.total ?? 0) > 0 ? `${(step.value / (data?.quotes.total ?? 1)) * 100}%` : "0%" }} />
+                    <div className={`${step.color} h-2 rounded-full`} style={{ width: (data?.quotes?.total ?? 0) > 0 ? `${(step.value / (data?.quotes?.total ?? 1)) * 100}%` : "0%" }} />
                   </div>
                   <span className="text-sm font-bold w-8 text-right">{step.value}</span>
                 </div>
@@ -413,11 +413,11 @@ function TrustyProTab() {
         <CardContent>
           <div className="grid grid-cols-2 gap-4">
             <div className="text-center">
-              <p className="text-3xl font-bold text-blue-700">{data?.stormWatch.events7d ?? 0}</p>
+              <p className="text-3xl font-bold text-blue-700">{data?.stormWatch?.events7d ?? 0}</p>
               <p className="text-xs text-muted-foreground mt-1">Storm Events Detected</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-emerald-700">{data?.stormWatch.leads7d ?? 0}</p>
+              <p className="text-3xl font-bold text-emerald-700">{data?.stormWatch?.leads7d ?? 0}</p>
               <p className="text-xs text-muted-foreground mt-1">Leads Generated</p>
             </div>
           </div>
@@ -439,22 +439,22 @@ function AdvertisersTab() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <MetricCard label="Active Advertisers" value={isLoading ? "—" : data?.totals.active ?? 0} sub="live placements" icon={BarChart3} accent="blue" />
-        <MetricCard label="Advertiser MRR" value={isLoading ? "—" : fmt$(data?.totals.mrr ?? 0)} sub="monthly recurring" icon={DollarSign} accent="green" />
-        <MetricCard label="Total Impressions" value={isLoading ? "—" : fmtN(data?.totals.totalImpressions ?? 0)} sub="all time" icon={Eye} accent="purple" />
-        <MetricCard label="Total Clicks" value={isLoading ? "—" : fmtN(data?.totals.totalClicks ?? 0)} sub={`${data?.totals.totalImpressions && data?.totals.totalClicks ? ((data.totals.totalClicks / data.totals.totalImpressions) * 100).toFixed(1) : "0.0"}% CTR`} icon={MousePointerClick} accent="amber" />
+        <MetricCard label="Active Advertisers" value={isLoading ? "—" : data?.totals?.active ?? 0} sub="live placements" icon={BarChart3} accent="blue" />
+        <MetricCard label="Advertiser MRR" value={isLoading ? "—" : fmt$(data?.totals?.mrr ?? 0)} sub="monthly recurring" icon={DollarSign} accent="green" />
+        <MetricCard label="Total Impressions" value={isLoading ? "—" : fmtN(data?.totals?.totalImpressions ?? 0)} sub="all time" icon={Eye} accent="purple" />
+        <MetricCard label="Total Clicks" value={isLoading ? "—" : fmtN(data?.totals?.totalClicks ?? 0)} sub={`${data?.totals?.totalImpressions && data?.totals?.totalClicks ? ((data.totals.totalClicks / data.totals.totalImpressions) * 100).toFixed(1) : "0.0"}% CTR`} icon={MousePointerClick} accent="amber" />
       </div>
 
-      {((data?.totals.pendingApplications ?? 0) > 0 || (data?.totals.expiringContracts ?? 0) > 0) && (
+      {((data?.totals?.pendingApplications ?? 0) > 0 || (data?.totals?.expiringContracts ?? 0) > 0) && (
         <div className="flex flex-wrap gap-2">
-          {(data?.totals.pendingApplications ?? 0) > 0 && (
+          {(data?.totals?.pendingApplications ?? 0) > 0 && (
             <Badge className="bg-amber-100 text-amber-700 border-amber-200 text-sm py-1 px-3">
-              <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />{data?.totals.pendingApplications} pending applications
+              <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />{data?.totals?.pendingApplications} pending applications
             </Badge>
           )}
-          {(data?.totals.expiringContracts ?? 0) > 0 && (
+          {(data?.totals?.expiringContracts ?? 0) > 0 && (
             <Badge className="bg-red-100 text-red-700 border-red-200 text-sm py-1 px-3">
-              <Clock className="w-3.5 h-3.5 mr-1.5" />{data?.totals.expiringContracts} contracts expiring in 30 days
+              <Clock className="w-3.5 h-3.5 mr-1.5" />{data?.totals?.expiringContracts} contracts expiring in 30 days
             </Badge>
           )}
         </div>
@@ -521,9 +521,9 @@ function AffiliateTab() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <MetricCard label="Clicks Today" value={isLoading ? "—" : data?.clicks.today ?? 0} sub="affiliate link clicks" icon={MousePointerClick} accent="blue" />
-        <MetricCard label="Clicks (7 days)" value={isLoading ? "—" : fmtN(data?.clicks.last7 ?? 0)} sub="last 7 days" icon={TrendingUp} accent="purple" />
-        <MetricCard label="Clicks (30 days)" value={isLoading ? "—" : fmtN(data?.clicks.last30 ?? 0)} sub="last 30 days" icon={BarChart3} accent="indigo" />
+        <MetricCard label="Clicks Today" value={isLoading ? "—" : data?.clicks?.today ?? 0} sub="affiliate link clicks" icon={MousePointerClick} accent="blue" />
+        <MetricCard label="Clicks (7 days)" value={isLoading ? "—" : fmtN(data?.clicks?.last7 ?? 0)} sub="last 7 days" icon={TrendingUp} accent="purple" />
+        <MetricCard label="Clicks (30 days)" value={isLoading ? "—" : fmtN(data?.clicks?.last30 ?? 0)} sub="last 30 days" icon={BarChart3} accent="indigo" />
         <MetricCard label="Est. Earnings (30d)" value={isLoading ? "—" : fmt$(data?.estimatedEarnings30d ?? 0)} sub="~3% conv × 4% commission" icon={DollarSign} accent="green" />
       </div>
 

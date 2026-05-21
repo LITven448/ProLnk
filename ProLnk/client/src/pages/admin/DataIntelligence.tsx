@@ -170,7 +170,7 @@ export default function DataIntelligence() {
                 )}
                 {asset.id === 2 && partnerStats && (
                   <div className="text-xs text-muted-foreground space-y-0.5">
-                    <div>Avg Health Score: {partnerStats.avgHealthScore.toFixed(0)}/100</div>
+                    <div>Avg Health Score: {(partnerStats.avgHealthScore ?? 0).toFixed(0)}/100</div>
                     <div>High Churn Risk: {partnerStats.highChurnRiskCount} partners</div>
                   </div>
                 )}
@@ -189,7 +189,7 @@ export default function DataIntelligence() {
                 {asset.id === 5 && graphStats && (
                   <div className="text-xs text-muted-foreground space-y-0.5">
                     <div>Network Value: {formatCurrency(graphStats.totalNetworkValue)}</div>
-                    <div>Avg Strength: {graphStats.avgRelationshipStrength.toFixed(0)}/100</div>
+                    <div>Avg Strength: {(graphStats.avgRelationshipStrength ?? 0).toFixed(0)}/100</div>
                   </div>
                 )}
                 {asset.id === 6 && geoStats && (
@@ -201,7 +201,7 @@ export default function DataIntelligence() {
                 {asset.id === 7 && signalStats && (
                   <div className="text-xs text-muted-foreground space-y-0.5">
                     <div>Acceptance Rate: {(signalStats.overallAcceptanceRate * 100).toFixed(1)}%</div>
-                    <div>Avg Discount Accepted: {signalStats.avgAcceptedDiscountPct.toFixed(1)}%</div>
+                    <div>Avg Discount Accepted: {(signalStats.avgAcceptedDiscountPct ?? 0).toFixed(1)}%</div>
                   </div>
                 )}
               </CardContent>
@@ -323,7 +323,7 @@ export default function DataIntelligence() {
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-muted-foreground">Avg Health Score</span>
-                        <span className="font-medium">{partnerStats.avgHealthScore.toFixed(0)}/100</span>
+                        <span className="font-medium">{(partnerStats.avgHealthScore ?? 0).toFixed(0)}/100</span>
                       </div>
                       <Progress value={partnerStats.avgHealthScore} className="h-2" />
                     </div>
@@ -374,7 +374,7 @@ export default function DataIntelligence() {
                       <div className="text-xs text-muted-foreground">Acceptance Rate</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold">{signalStats.avgAcceptedDiscountPct.toFixed(1)}%</div>
+                      <div className="text-2xl font-bold">{(signalStats.avgAcceptedDiscountPct ?? 0).toFixed(1)}%</div>
                       <div className="text-xs text-muted-foreground">Avg Discount Accepted</div>
                     </div>
                     <div className="text-center">
@@ -440,7 +440,7 @@ export default function DataIntelligence() {
                       <div className="text-xs text-muted-foreground">Total Network Value</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold">{graphStats.avgRelationshipStrength.toFixed(0)}/100</div>
+                      <div className="text-2xl font-bold">{(graphStats.avgRelationshipStrength ?? 0).toFixed(0)}/100</div>
                       <div className="text-xs text-muted-foreground">Avg Relationship Strength</div>
                     </div>
                   </div>

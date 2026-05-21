@@ -208,7 +208,7 @@ export default function WaitlistIntelligence() {
   const households = homeWaitlist ?? [];
   const proData = proStats.data;
 
-  const totalSignups = (totalCount?.count ?? 0) + (proData?.pros.total ?? 0);
+  const totalSignups = (totalCount?.count ?? 0) + (proData?.pros?.total ?? 0);
   const pendingCount = households.filter((h: any) => h.status === "pending").length;
   const invitedCount = households.filter((h: any) => h.status === "invited").length;
   const urgentCount = households.filter((h: any) => h.urgencyLevel === "urgent").length;
@@ -283,7 +283,7 @@ export default function WaitlistIntelligence() {
   const weekGrowth = prev7 > 0 ? Math.round(((last7 - prev7) / prev7) * 100) : 0;
 
   const WAITLIST_GOAL = 500;
-  const remaining = Math.max(0, WAITLIST_GOAL - (proData?.pros.total ?? 0));
+  const remaining = Math.max(0, WAITLIST_GOAL - (proData?.pros?.total ?? 0));
   const daysToClose = avgDailySignups > 0 ? Math.ceil(remaining / avgDailySignups) : null;
   const projectedCloseDate = daysToClose ? (() => { const d = new Date(); d.setDate(d.getDate() + daysToClose); return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); })() : null;
   const riskLevel = daysToClose === null ? "unknown" : daysToClose > 90 ? "high" : daysToClose > 30 ? "medium" : "low";
@@ -292,7 +292,7 @@ export default function WaitlistIntelligence() {
     const total = totalSignups;
     const formStarts = Math.round(total * 1.4);
     const visitors = Math.round(formStarts * 3.2);
-    const charterUpgrades = (proData?.pros.total ?? 0) > 0 ? Math.max(1, Math.round((proData?.pros.total ?? 0) * 0.12)) : 0;
+    const charterUpgrades = (proData?.pros?.total ?? 0) > 0 ? Math.max(1, Math.round((proData?.pros?.total ?? 0) * 0.12)) : 0;
     return [
       { label: "Unique Visitors", value: visitors, color: "#818CF8" },
       { label: "Form Starts", value: formStarts, color: "#60A5FA" },
@@ -361,7 +361,7 @@ export default function WaitlistIntelligence() {
             <>
               {/* KPI Row */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <StatCard icon={Users} label="Total Signups" value={totalSignups.toLocaleString()} sub={`${proData?.pros.total ?? 0} pros · ${totalCount?.count ?? 0} homeowners`} color={TEAL} />
+                <StatCard icon={Users} label="Total Signups" value={totalSignups.toLocaleString()} sub={`${proData?.pros?.total ?? 0} pros · ${totalCount?.count ?? 0} homeowners`} color={TEAL} />
                 <StatCard icon={Clock} label="Pending" value={pendingCount} sub="Awaiting invitation" color="#F59E0B" />
                 <StatCard icon={Send} label="Invited" value={invitedCount} sub="Launch emails sent" color="#10B981" />
                 <StatCard icon={Zap} label="Urgent Need" value={urgentCount} sub="Need help now" color="#EF4444" />
@@ -400,10 +400,10 @@ export default function WaitlistIntelligence() {
                     <div>
                       <div className="text-xs text-slate-400 mb-1">Progress to {WAITLIST_GOAL} pro goal</div>
                       <div className="h-2.5 bg-slate-700 rounded-full overflow-hidden">
-                        <div className="h-full rounded-full" style={{ width: `${Math.min(100, ((proData?.pros.total ?? 0) / WAITLIST_GOAL) * 100)}%`, background: TEAL }} />
+                        <div className="h-full rounded-full" style={{ width: `${Math.min(100, ((proData?.pros?.total ?? 0) / WAITLIST_GOAL) * 100)}%`, background: TEAL }} />
                       </div>
                       <div className="flex justify-between text-xs mt-1">
-                        <span className="text-teal-400 font-semibold">{proData?.pros.total ?? 0} joined</span>
+                        <span className="text-teal-400 font-semibold">{proData?.pros?.total ?? 0} joined</span>
                         <span className="text-slate-500">{remaining} remaining</span>
                       </div>
                     </div>

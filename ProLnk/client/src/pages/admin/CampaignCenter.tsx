@@ -356,7 +356,7 @@ export default function CampaignCenter() {
                     <p className="text-sm text-gray-500 mb-2">{campaign.desc}</p>
                     <div className="flex items-center gap-4 text-xs text-gray-400">
                       <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />{campaign.timing}</span>
-                      <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{campaign.estimatedReach.toLocaleString()} homeowners</span>
+                      <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{(campaign.estimatedReach ?? 0).toLocaleString()} homeowners</span>
                       <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />Last: {campaign.lastRun}</span>
                     </div>
                   </div>

@@ -929,6 +929,7 @@ function Router() {
       <Route path="/admin/storm-watch" component={StormWatch} />
       <Route path="/admin/storm" component={StormDashboard} />
       <Route path="/admin/agents" component={AgentTracker} />
+      <Route path="/admin/agent-status" component={AgentStatusDashboard} />
       <Route path="/admin/org-chart" component={CompanyOrgChart} />
       <Route path="/admin/accountability" component={Accountability} />
       <Route path="/admin/agent-command-center" component={AgentCommandCenter} />

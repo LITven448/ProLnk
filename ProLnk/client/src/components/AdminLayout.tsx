@@ -14,39 +14,33 @@ import { GlobalSearch } from "@/components/GlobalSearch";
 import ProLnkLogo from "@/components/ProLnkLogo";
 import AdminTodoPanel from "@/components/AdminTodoPanel";
 
-// --- Design Tokens -- Clean editorial / Linear / Notion inspired ------------
+// --- Design Tokens -- Soft UI / Material Dashboard inspired -------------------
 export const T = {
-  bg:        "#FAFBFC",         // page background — barely off-white
+  bg:        "#F0F2F5",
   sidebar:   "#FFFFFF",
   surface:   "#FFFFFF",
   card:      "#FFFFFF",
-  text:      "#0F172A",         // near-black for headings
-  textBody:  "#334155",         // body text
-  muted:     "#64748B",         // secondary text
-  dim:       "#94A3B8",         // tertiary text
-  accent:    "#0EA5E9",         // sky-500 — clean, modern
-  accentBg:  "#F0F9FF",         // sky-50
-  accentInk: "#0369A1",         // sky-700 for text on accentBg
-  green:     "#10B981",         // emerald-500
-  greenBg:   "#ECFDF5",         // emerald-50
-  amber:     "#F59E0B",         // amber-500
-  amberBg:   "#FFFBEB",         // amber-50
-  red:       "#EF4444",         // red-500
-  redBg:     "#FEF2F2",         // red-50
-  blue:      "#3B82F6",         // blue-500
-  purple:    "#8B5CF6",         // violet-500
-  border:    "#E2E8F0",         // slate-200
-  borderSubtle: "#F1F5F9",      // slate-100
+  text:      "#344767",
+  muted:     "#7B809A",
+  dim:       "#AEAEAE",
+  accent:    "#17C1E8",
+  accentBg:  "#E8F9FC",
+  green:     "#82D616",
+  amber:     "#FBB140",
+  red:       "#EA0606",
+  blue:      "#1A73E8",
+  purple:    "#7928CA",
+  border:    "#E9ECEF",
 };
 
 export const BADGE_GRADIENTS = {
-  teal:   "linear-gradient(135deg, #0891B2, #06B6D4)",     // cyan
-  blue:   "linear-gradient(135deg, #2563EB, #3B82F6)",     // blue
-  green:  "linear-gradient(135deg, #059669, #10B981)",     // emerald
-  pink:   "linear-gradient(135deg, #DB2777, #EC4899)",     // pink
-  cyan:   "linear-gradient(135deg, #0E7490, #06B6D4)",     // cyan-dark
-  orange: "linear-gradient(135deg, #EA580C, #F97316)",     // orange
-  purple: "linear-gradient(135deg, #7C3AED, #8B5CF6)",     // violet
+  teal:   "linear-gradient(195deg, #42424a, #191919)",
+  blue:   "linear-gradient(195deg, #49a3f1, #1A73E8)",
+  green:  "linear-gradient(195deg, #66BB6A, #43A047)",
+  pink:   "linear-gradient(195deg, #EC407A, #D81B60)",
+  cyan:   "linear-gradient(195deg, #26C6DA, #00ACC1)",
+  orange: "linear-gradient(195deg, #FFA726, #FB8C00)",
+  purple: "linear-gradient(195deg, #ab47bc, #8e24aa)",
 };
 
 export const FONT = "'Inter', system-ui, sans-serif";
@@ -54,54 +48,58 @@ export const MONO = "'JetBrains Mono', 'Courier New', monospace";
 
 // --- Sub-tab definitions per section — organized by brand --------------------
 export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
-
-  // ── Overview ─────────────────────────────────────────────────────────────
+  // Each item below resolves to a UNIQUE page — no duplicates, no aliases.
   overview: [
-    { label: "Dashboard",        href: "/admin" },
-    { label: "Platform Health",  href: "/admin/health" },
-    { label: "Analytics",        href: "/admin/analytics" },
-    { label: "Investor Metrics", href: "/admin/investor" },
-    { label: "Activity Log",     href: "/admin/activity" },
+    { label: "Dashboard",         href: "/admin" },
+    { label: "Strategic Overview",href: "/admin/strategic-overview" },
+    { label: "Platform Health",   href: "/admin/health" },
+    { label: "Analytics",         href: "/admin/analytics" },
+    { label: "Investor Metrics",  href: "/admin/investor" },
+    { label: "Activity Log",      href: "/admin/activity" },
   ],
-
-  // ── ProLnk — partner network ─────────────────────────────────────────────
   prolnk: [
-    { label: "Waitlist",           href: "/admin/waitlist?view=pros" },
-    { label: "All Partners",       href: "/admin/partners" },
-    { label: "Applications",       href: "/admin/pipeline" },
-    { label: "Leaderboard",        href: "/admin/leaderboard" },
-    { label: "Referral Tree",      href: "/admin/referral-tree" },
-    { label: "Commissions",        href: "/admin/rates" },
-    { label: "Network Income",     href: "/admin/finance" },
-    { label: "Network Analytics",  href: "/admin/network-analytics" },
+    { label: "Pro Waitlist",      href: "/admin/waitlist?view=pros" },
+    { label: "Charter Tracking",  href: "/admin/charter-tracking" },
+    { label: "All Partners",      href: "/admin/partners" },
+    { label: "Applications",      href: "/admin/pipeline" },
+    { label: "Leaderboard",       href: "/admin/leaderboard" },
+    { label: "Referral Tree",     href: "/admin/referral-tree" },
+    { label: "Network Analytics", href: "/admin/network-analytics" },
+    { label: "Lead Scoring",      href: "/admin/lead-scoring" },
   ],
-
-  // ── TrustyPro — homeowner platform ───────────────────────────────────────
   trustypro: [
-    { label: "Homeowner Waitlist", href: "/admin/waitlist?view=homes" },
-    { label: "Homeowners",         href: "/admin/homeowners" },
-    { label: "Photo Queue",        href: "/admin/photo-queue" },
-    { label: "Scan Engine",        href: "/admin/ai" },
-    { label: "Opportunities",      href: "/admin/opportunities" },
-    { label: "Storm",              href: "/admin/storm" },
+    { label: "Homeowner Waitlist",href: "/admin/waitlist?view=homes" },
+    { label: "Homeowner CRM",     href: "/admin/homeowners" },
+    { label: "Photo Queue",       href: "/admin/photo-queue" },
+    { label: "Opportunities",     href: "/admin/opportunities" },
+    { label: "Storm Watch",       href: "/admin/storm" },
+    { label: "Trusted Pro Algo",  href: "/admin/trusted-pro-algorithm" },
   ],
-
-  // ── Media — marketing & content ──────────────────────────────────────────
   media: [
-    { label: "Campaigns",   href: "/admin/campaigns" },
-    { label: "Broadcast",   href: "/admin/broadcast" },
-    { label: "Automation",  href: "/admin/marketing-automation" },
-    { label: "Advertising", href: "/admin/advertising-preview" },
-    { label: "Reviews",     href: "/admin/google-reviews" },
+    { label: "Campaigns",         href: "/admin/campaigns" },
+    { label: "Broadcast",         href: "/admin/broadcast" },
+    { label: "Automation",        href: "/admin/marketing-automation" },
+    { label: "Featured Ads",      href: "/admin/featured-advertisers" },
+    { label: "Real Estate Agents",href: "/admin/real-estate-agents" },
+    { label: "Reviews",           href: "/admin/google-reviews" },
+    { label: "Competitor Intel",  href: "/admin/competitor-intelligence" },
   ],
-
-  // ── Platform — settings & integrations ───────────────────────────────────
+  exchange: [
+    { label: "B2B Exchange",      href: "/admin/exchange" },
+    { label: "Territories",       href: "/admin/territory" },
+    { label: "Data Marketplace",  href: "/admin/data-marketplace" },
+    { label: "Properties",        href: "/admin/properties" },
+    { label: "Data Export",       href: "/admin/analytics-export" },
+  ],
   platform: [
-    { label: "Settings",     href: "/admin/platform-settings" },
-    { label: "Integrations", href: "/admin/integrations" },
-    { label: "Webhooks",     href: "/admin/n8n-setup" },
-    { label: "FSM Setup",    href: "/admin/fsm-webhooks" },
-    { label: "Data Export",  href: "/admin/analytics-export" },
+    { label: "Settings",          href: "/admin/platform-settings" },
+    { label: "Service Categories",href: "/admin/categories" },
+    { label: "Strikes & Compliance",href: "/admin/compliance" },
+    { label: "API Credits",       href: "/admin/api-credits" },
+    { label: "Integrations",      href: "/admin/integrations" },
+    { label: "Integration Health",href: "/admin/integration-health" },
+    { label: "n8n Webhooks",      href: "/admin/n8n-setup" },
+    { label: "FSM Webhooks",      href: "/admin/fsm-webhooks" },
   ],
 };
 
@@ -113,11 +111,13 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   overview: {
     header: "PORTFOLIO OVERVIEW",
     items: [
-      { label: "Command Center",  href: "/admin" },
-      { label: "Executive",       href: "/admin/investor" },
-      { label: "Financial",       href: "/admin/finance" },
-      { label: "Operations",      href: "/admin/health" },
-      { label: "All Waitlists",   href: "/admin/waitlist" },
+      { label: "Command Center",    href: "/admin" },
+      { label: "Strategic Overview",href: "/admin/strategic-overview" },
+      { label: "Investor Metrics",  href: "/admin/investor" },
+      { label: "Financial Center",  href: "/admin/finance" },
+      { label: "Platform Health",   href: "/admin/health" },
+      { label: "All Waitlists",     href: "/admin/waitlist" },
+      { label: "Activity Log",      href: "/admin/activity" },
     ],
     groups: [
       {
@@ -125,7 +125,9 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
         defaultOpen: true,
         items: [
           { label: "All Agents",       href: "/admin/agents" },
+          { label: "Agent Status",     href: "/admin/agent-status" },
           { label: "Org Chart",        href: "/admin/org-chart" },
+          { label: "Accountability",   href: "/admin/accountability" },
           { label: "Knowledge Graph",  href: "/admin/knowledge-graph" },
           { label: "n8n Hub",          href: "/admin/n8n" },
         ],
@@ -136,29 +138,37 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   prolnk: {
     header: "PROLNK RESIDENTIAL",
     items: [
-      { label: "Command Center",  href: "/admin/prolnk/overview" },
-      { label: "Waitlist",        href: "/admin/waitlist?view=pros" },
-      { label: "Partners",        href: "/admin/partners" },
-      { label: "Leads & Intel",   href: "/admin/opportunities" },
-      { label: "AI Agents",       href: "/admin/agents" },
-      { label: "Org Chart",       href: "/admin/org-chart" },
-      { label: "Accountability",  href: "/admin/accountability" },
-      { label: "Revenue",         href: "/admin/finance" },
+      { label: "Pro Waitlist",      href: "/admin/waitlist?view=pros" },
+      { label: "Charter Tracking",  href: "/admin/charter-tracking" },
+      { label: "All Partners",      href: "/admin/partners" },
+      { label: "Applications",      href: "/admin/pipeline" },
+      { label: "Leaderboard",       href: "/admin/leaderboard" },
+      { label: "Referral Tree",     href: "/admin/referral-tree" },
+      { label: "Network Analytics", href: "/admin/network-analytics" },
+      { label: "Lead Scoring",      href: "/admin/lead-scoring" },
     ],
-    groups: [],
+    groups: [
+      {
+        label: "FINANCIAL",
+        defaultOpen: false,
+        items: [
+          { label: "Commission Rates",   href: "/admin/rates" },
+          { label: "Commission Strategy",href: "/admin/commission-strategy" },
+          { label: "Payouts",            href: "/admin/payouts" },
+        ],
+      },
+    ],
   },
 
   trustypro: {
     header: "TRUSTYPRO",
     items: [
-      { label: "Command Center",  href: "/admin/trustypro/overview" },
-      { label: "Waitlist",        href: "/admin/waitlist?view=homes" },
-      { label: "Homeowners",      href: "/admin/homeowners" },
-      { label: "Photo Analysis",  href: "/admin/photo-queue" },
-      { label: "AI Agents",       href: "/admin/tp-agents" },
-      { label: "Org Chart",       href: "/admin/tp-org-chart" },
-      { label: "Accountability",  href: "/admin/accountability" },
-      { label: "Revenue",         href: "/admin/tp-revenue" },
+      { label: "Homeowner Waitlist",   href: "/admin/waitlist?view=homes" },
+      { label: "Homeowner CRM",        href: "/admin/homeowners" },
+      { label: "Photo Queue",          href: "/admin/photo-queue" },
+      { label: "Opportunities",        href: "/admin/opportunities" },
+      { label: "Storm Watch",          href: "/admin/storm" },
+      { label: "Trusted Pro Algorithm",href: "/admin/trusted-pro-algorithm" },
     ],
     groups: [],
   },
@@ -166,40 +176,26 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   media: {
     header: "PROLNK MEDIA",
     items: [
-      { label: "Command Center",    href: "/admin/campaigns" },
-      { label: "Advertiser Leads",  href: "/admin/featured-advertisers" },
-      { label: "Advertisers",       href: "/admin/advertising-preview" },
-      { label: "Real Estate",       href: "/admin/real-estate-agents" },
-      { label: "AI Agents",         href: "/admin/media-agents" },
-      { label: "Org Chart",         href: "/admin/media-org-chart" },
-      { label: "Accountability",    href: "/admin/accountability" },
-      { label: "Revenue",           href: "/admin/media-revenue" },
+      { label: "Campaigns",         href: "/admin/campaigns" },
+      { label: "Broadcast",         href: "/admin/broadcast" },
+      { label: "Automation",        href: "/admin/marketing-automation" },
+      { label: "Featured Advertisers",href: "/admin/featured-advertisers" },
+      { label: "Real Estate Agents",href: "/admin/real-estate-agents" },
+      { label: "Google Reviews",    href: "/admin/google-reviews" },
+      { label: "Competitor Intel",  href: "/admin/competitor-intelligence" },
     ],
     groups: [],
   },
 
   exchange: {
-    header: "PROLNK EXCHANGE",
+    header: "EXCHANGE & DATA",
     items: [
-      { label: "Command Center",    href: "/admin/exchange" },
-      { label: "Job Board",         href: "/exchange" },
-      { label: "Brokers",           href: "/admin/exchange" },
-      { label: "Commercial Bids",   href: "/admin/exchange" },
+      { label: "B2B Exchange",      href: "/admin/exchange" },
       { label: "Territories",       href: "/admin/territory" },
       { label: "Data Marketplace",  href: "/admin/data-marketplace" },
-    ],
-    groups: [],
-  },
-
-  commercial: {
-    header: "TRUSTYPRO COMMERCIAL",
-    items: [
-      { label: "Command Center",    href: "/admin/commercial" },
       { label: "Properties",        href: "/admin/properties" },
-      { label: "Contractors",       href: "/admin/partners" },
-      { label: "Inspections",       href: "/admin/commercial" },
-      { label: "Compliance",        href: "/admin/compliance" },
-      { label: "Revenue",           href: "/admin/commercial" },
+      { label: "Public Job Board",  href: "/exchange" },
+      { label: "Data Export",       href: "/admin/analytics-export" },
     ],
     groups: [],
   },
@@ -207,42 +203,32 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   platform: {
     header: "PLATFORM",
     items: [
-      { label: "Platform Settings", href: "/admin/platform-settings" },
-      { label: "Service Categories",href: "/admin/categories" },
-      { label: "Integrations",      href: "/admin/integrations" },
-      { label: "n8n / Webhooks",    href: "/admin/n8n" },
-      { label: "FSM Webhooks",      href: "/admin/fsm-webhooks" },
-      { label: "Jobber",            href: "/admin/jobber" },
-      { label: "Housecall Pro",     href: "/admin/housecallpro" },
-      { label: "ServiceTitan",      href: "/admin/servicetitan" },
-      { label: "Integration Health",href: "/admin/integration-health" },
-      { label: "Data Export",       href: "/admin/analytics-export" },
+      { label: "Platform Settings",  href: "/admin/platform-settings" },
+      { label: "Service Categories", href: "/admin/categories" },
+      { label: "Strikes & Compliance",href: "/admin/compliance" },
+      { label: "API Credits",        href: "/admin/api-credits" },
     ],
-    groups: [],
+    groups: [
+      {
+        label: "INTEGRATIONS",
+        defaultOpen: true,
+        items: [
+          { label: "All Integrations",     href: "/admin/integrations" },
+          { label: "Integration Health",   href: "/admin/integration-health" },
+          { label: "n8n / Webhooks",       href: "/admin/n8n-setup" },
+          { label: "FSM Webhooks",         href: "/admin/fsm-webhooks" },
+          { label: "Jobber",               href: "/admin/jobber" },
+          { label: "Housecall Pro",        href: "/admin/housecallpro" },
+          { label: "ServiceTitan",         href: "/admin/servicetitan" },
+        ],
+      },
+    ],
   },
+
+  // Legacy "commercial" section removed (3 of its 6 links were duplicates of /admin/commercial).
+  // Properties and Compliance are now under Exchange and Platform respectively.
 };
 
-// --- Icon rail config ─────────────────────────────────────────────────────────
-const RAIL_ITEMS = [
-  { icon: LayoutDashboard, section: "overview",    color: "#17C1E8" },
-  { icon: Home,            section: "prolnk",      color: "#0A1628" },
-  { icon: Shield,          section: "trustypro",   color: "#00B5B8" },
-  { icon: Megaphone,       section: "media",       color: "#7C3AED" },
-  { icon: ArrowLeftRight,  section: "exchange",    color: "#F59E0B" },
-  { icon: Building2,       section: "commercial",  color: "#059669" },
-  { icon: Wrench,          section: "platform",    color: "#6B7280" },
-] as const;
-
-// Brand accent colors for sub-tab active indicators
-const SECTION_COLORS: Record<string, string> = {
-  overview:   T.accent,
-  prolnk:     "#0A1628",
-  trustypro:  "#00B5B8",
-  media:      "#7C3AED",
-  exchange:   "#F59E0B",
-  commercial: "#059669",
-  platform:   "#6B7280",
-};
 
 // --- Helper: which brand section is active ───────────────────────────────────
 function getActiveSection(path: string, search?: string): string {

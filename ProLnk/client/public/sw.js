@@ -7,7 +7,7 @@
  *   - Offline fallback: /offline.html for navigation requests
  */
 
-const CACHE_VERSION = "prolnk-v3";
+const CACHE_VERSION = "prolnk-v4-may21";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const API_CACHE = `${CACHE_VERSION}-api`;

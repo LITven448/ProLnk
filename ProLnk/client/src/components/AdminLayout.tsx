@@ -418,6 +418,17 @@ function NavGroup({
 }
 
 // --- Icon Rail ───────────────────────────────────────────────────────────────
+// --- Icon rail config ─────────────────────────────────────────────────────────
+const RAIL_ITEMS = [
+  { icon: LayoutDashboard, section: "overview",    color: "#0EA5E9" },
+  { icon: Home,            section: "prolnk",      color: "#0A1628" },
+  { icon: Shield,          section: "trustypro",   color: "#0891B2" },
+  { icon: Megaphone,       section: "media",       color: "#7C3AED" },
+  { icon: ArrowLeftRight,  section: "exchange",    color: "#F59E0B" },
+  { icon: Wrench,          section: "platform",    color: "#64748B" },
+] as const;
+
+
 function IconRail({
   activeSection,
   user,

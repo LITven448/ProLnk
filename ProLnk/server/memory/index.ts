@@ -49,10 +49,10 @@ export async function logPropertyEventSafe(params: {
   metadata?: Record<string, unknown>;
 }): Promise<void> {
   try {
-    const { logPropertyEvent } = await import("./zep.js");
+    const { logPropertyEvent } = await import("./graphiti.js");
     await logPropertyEvent(params);
   } catch {
-    // zep-cloud not available yet — silently skip
+    // graphiti not configured — silently skip
   }
 }
 
@@ -61,7 +61,7 @@ export async function getPropertyTimelineSafe(params: {
   limit?: number;
 }): Promise<Array<{ content: string; timestamp: string; eventType: string }>> {
   try {
-    const { getPropertyTimeline } = await import("./zep.js");
+    const { getPropertyTimeline } = await import("./graphiti.js");
     return await getPropertyTimeline(params);
   } catch {
     return [];

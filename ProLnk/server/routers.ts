@@ -4216,7 +4216,7 @@ Return JSON only.`,
         // Log to Zep property timeline when address is provided
         if (input.address) {
           const detectedIssues = (parsed as any)?.issues ?? [];
-          const { logPropertyEvent } = await import('./memory/zep.js');
+          const { logPropertyEvent } = await import('./memory/graphiti.js');
           await logPropertyEvent({
             address: input.address,
             eventType: 'photo_scan',

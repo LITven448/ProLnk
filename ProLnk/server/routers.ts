@@ -122,6 +122,9 @@ import { ONE_YEAR_MS } from "@shared/const";
 import { dispatchLeadToPartner, rejectOpportunityByAdmin, sweepExpiredLeads } from "./intake-router";
 import { sendLeadAlertSMS } from "./sms";
 import { analyzeJobPhoto } from "./photo-intelligence";
+import { commissionsRouter } from "./routers/commissions";
+import { partnerOAuthRouter } from "./routers/partnerOAuth";
+import { photoUploadRouter } from "./routers/photoUpload";
 
 // -- Admin guard --
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -348,6 +351,9 @@ export const appRouter = router({
   checkr: checkrRouter,
   facility: facilityRouter,
   rewardful: rewardfulRouter,
+  commissions: commissionsRouter,
+  partnerOAuth: partnerOAuthRouter,
+  photoUpload: photoUploadRouter,
   homeowner: router({
     // -- Profile --
     saveProfile: protectedProcedure

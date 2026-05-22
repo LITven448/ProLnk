@@ -1120,7 +1120,6 @@ function Router() {
       <Route path="/my-home/homeowner-referral" component={HomeownerReferral} />
       <Route path="/neighborhood-referral" component={NeighborhoodReferral} />
       <Route path="/my-home/neighborhood-referral" component={NeighborhoodReferral} />
-      <Route path="/my-home/photos" component={HomeownerPhotos} />
       <Route path="/my-home/emergency" component={EmergencyServices} />
       <Route path="/my-home/neighborhood-deals" component={NeighborhoodDeals} />
       <Route path="/my-home/favorites" component={HomeownerFavorites} />
@@ -1215,7 +1214,7 @@ function Router() {
       <Route path="/agent/pre-listing-scan" component={PreListingScan} />
 
       {/* Partner Training */}
-      <Route path="/resources" component={PartnerResourceCenter} />
+      <Route path="/partner-resources" component={PartnerResourceCenter} />
       <Route path="/resources/photo-guide" component={PhotoGuide} />
       <Route path="/resources/maximize-earnings" component={MaximizeEarnings} />
       <Route path="/resources/faq" component={PartnerFAQ} />

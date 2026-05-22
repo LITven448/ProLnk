@@ -7,7 +7,7 @@
 **Build Command**: `npm run build`
 **Dev Server**: `npm run dev`
 **Type Check**: `npm run check`
-**Deploy**: Push to main → Railway auto-deploys
+**Deploy**: Push to main → Render auto-deploys (service: srv-d7ugk90sfn5c73b5pvd0)
 
 **Key Files**:
 - server/_core/vite.ts - Brand detection (hostname-based routing)
@@ -19,12 +19,12 @@
 
 ## Deployment
 
-**Production URL**: prolnk-production.up.railway.app
+**Production URL**: prolnk-platform.onrender.com
 **Custom Domains**:
-- prolnk.io → prolnk-production.up.railway.app (CNAME)
-- trustypro.prolnk.io → prolnk-production.up.railway.app (CNAME - subdomain strategy to avoid Cloudflare zone limit)
+- prolnk.xyz → prolnk-platform.onrender.com (Render custom domain)
+- trustypro.io → prolnk-platform.onrender.com (Render custom domain)
 
-**Environment Variables** (set in Railway dashboard):
+**Environment Variables** (set in Render dashboard, service srv-d7ugk90sfn5c73b5pvd0):
 ```
 DATABASE_URL=mysql://[tidb_credentials]@gateway01.us-east-1.prod.aws.tidbcloud.com:4000/prolnk
 RESEND_API_KEY=re_[key]
@@ -41,7 +41,7 @@ PORT=3000
 ## Brand Routing
 
 **How it works**:
-1. Request comes in for prolnk.io or trustypro.prolnk.io
+1. Request comes in for prolnk.xyz or trustypro.io
 2. server/_core/vite.ts detects hostname
 3. Injects window.__BRAND__ into HTML
 4. client/src/App.tsx renders appropriate home page
@@ -49,7 +49,7 @@ PORT=3000
 **Code Pattern**:
 ```typescript
 // server/_core/vite.ts line 36
-const hostname = (req.get("host") || "prolnk.io").split(":")[0].toLowerCase();
+const hostname = (req.get("host") || "prolnk.xyz").split(":")[0].toLowerCase();
 const isTrustyPro = hostname.includes("trustypro");
 const brandScript = `<script>window.__BRAND__='${isTrustyPro ? "trustypro" : "prolnk"}';</script>`;
 ```
@@ -117,7 +117,7 @@ const result = await dbConn
 import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 await resend.emails.send({
-  from: "noreply@prolnk.io",
+  from: "noreply@prolnk.xyz",
   to: email,
   subject: "Welcome to ProLnk",
   html: template,
@@ -156,12 +156,12 @@ npm run build
 git add .
 git commit -m "message"
 git push origin main
-# Railway auto-deploys
+# Render auto-deploys
 ```
 
 **Test database connection**:
 ```bash
-curl -X POST https://prolnk-production.up.railway.app/setup
+curl -X POST https://prolnk-platform.onrender.com/setup
 # Should return {"status":"success","created":106}
 ```
 
@@ -181,7 +181,7 @@ npm run dev
 
 - main branch is production
 - All commits go to main (no feature branches currently)
-- Push triggers Railway auto-deploy
+- Push triggers Render auto-deploy
 - Do NOT force push
 - Do NOT rebase public commits
 
@@ -193,18 +193,18 @@ npm run dev
 - Check browser console for client-side validation errors
 
 **Database not found**:
-- Verify DATABASE_URL in Railway dashboard
+- Verify DATABASE_URL in Render dashboard
 - Run /setup endpoint to initialize
 - Check TiDB Cloud console for connectivity
 
 **Emails not arriving**:
-- Check Resend API key in Railway
+- Check Resend API key in Render
 - Verify sender email is verified in Resend
 - Check spam/junk folders
 - Review Resend dashboard for delivery failures
 
 **Brand detection not working**:
-- Verify hostname matches prolnk.io or trustypro.prolnk.io
+- Verify hostname matches prolnk.xyz or trustypro.io
 - Check browser console for window.__BRAND__ value
 - Clear browser cache (⌘+Shift+Delete)
 - Verify server/_core/vite.ts changes are deployed
@@ -213,5 +213,5 @@ npm run dev
 
 - **Andrew**: andrew@lit-ventures.com
 - **GitHub**: LITven448
-- **Railway**: (credentials in .env)
+- **Render**: service srv-d7ugk90sfn5c73b5pvd0 (token in .env)
 - **TiDB**: (credentials in .env)

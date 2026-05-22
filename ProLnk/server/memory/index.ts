@@ -2,12 +2,12 @@
  * Memory Layer — ProLnk / TrustyPro
  *
  * Stack:
- *   Mem0    → Short-term session memory (preferences, conversation context)
- *   Zep     → Long-term temporal memory (property timeline, service history)
- *   Qdrant  → Vector semantic search (lead matching, similar properties)
+ *   Mem0      → Short-term session memory (preferences, conversation context)
+ *   Graphiti  → Long-term temporal knowledge graph (property timeline, service history)
+ *   Qdrant    → Vector semantic search (lead matching, similar properties)
  *   LangGraph → Stateful agent pipelines (photo → issues → match → notify)
  *
- * All exports are safe no-ops if underlying packages are not installed.
+ * All exports are safe no-ops if underlying packages / services are not configured.
  */
 
 // Safe re-exports with try/catch to prevent crash if packages missing

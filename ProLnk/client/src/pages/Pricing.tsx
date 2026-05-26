@@ -1,661 +1,378 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ProLnkLogo } from "@/components/ProLnkLogo";
-import {
-  Check, ArrowRight, Zap, Shield, TrendingUp, DollarSign,
-  Star, ChevronDown, ChevronUp, Sparkles, Crown, Lock,
-  Users, Home, Bolt, MapPin, Smartphone, AlertTriangle, CheckCircle2
-} from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star } from "lucide-react";
 
-const POST_FOUNDING_PREVIEW = [
+// ─── Tier definitions ──────────────────────────────────────────────────────────
+// Three tiers + Enterprise. Keep rates: 54% / 65% / 72%.
+// ProLnk always retains a minimum of 20% of the commission pool.
+// No founding network or cascade language anywhere on this page.
+
+const TIERS = [
   {
+    id: "scout",
     name: "Scout",
-    price: "$99/mo",
-    keep: "40%",
-    desc: "Individual professionals",
-    rank: "Standard ranking",
-    color: "text-blue-400",
-    border: "border-blue-400/20",
+    price: 99,
+    keep: 54,
+    tagline: "For solo pros getting started with AI-matched leads.",
+    color: "#0EA5E9",
+    popular: false,
+    cta: "Start Free Trial",
+    features: [
+      "AI-matched homeowner leads in your service area",
+      "54% commission keep on every completed job",
+      "PhotoScan AI — review job photos before accepting",
+      "Storm alert leads — real-time weather damage notifications",
+      "Partner directory listing",
+      "1 user seat",
+      "Standard lead priority ranking",
+      "90-day free trial, no credit card required",
+    ],
   },
   {
-    name: "Crew",
-    price: "$149/mo",
-    keep: "55%",
-    desc: "Small crews & teams",
-    rank: "Priority ranking",
-    color: "text-teal-400",
-    border: "border-teal-400/20",
+    id: "pro",
+    name: "Pro",
+    price: 149,
+    keep: 65,
+    tagline: "For growing businesses that want more leads and a bigger cut.",
+    color: "#14B8A6",
     popular: true,
+    cta: "Start Free Trial",
+    features: [
+      "Everything in Scout, plus:",
+      "65% commission keep — 11 points more per job",
+      "Priority lead ranking over Scout members",
+      "3 user seats — manage your team in one account",
+      "ProLnk Exchange — bid on and post residential & commercial jobs",
+      "Advanced lead filters by trade, zip, and job size",
+    ],
   },
   {
-    name: "Company",
-    price: "$249/mo",
-    keep: "65%",
-    desc: "Multi-person companies",
-    rank: "Top ranking",
-    color: "text-[#F5E642]",
-    border: "border-[#F5E642]/20",
+    id: "business",
+    name: "Business",
+    price: 249,
+    keep: 72,
+    tagline: "For established companies running at full scale.",
+    color: "#F59E0B",
+    popular: false,
+    cta: "Start Free Trial",
+    features: [
+      "Everything in Pro, plus:",
+      "72% commission keep — maximum rate on the platform",
+      "Top-tier lead ranking — highest priority in the algorithm",
+      "8 user seats with role-based access",
+      "Dedicated account manager",
+      "Custom service area territories",
+      "Early access to new platform features",
+    ],
   },
 ];
 
-const FOUNDING_TIERS = [
-  {
-    id: "charter",
-    name: "Charter",
-    range: "Spots 1–25",
-    spotsLabel: "25 spots",
-    description: "First 25 founding members. Position 1 in the cascade — every member below you contributes to your override income.",
-    color: "#F5E642",
-    borderColor: "border-[#F5E642]/40",
-    accentBg: "from-[#F5E642]/10 to-[#F5E642]/5",
-    badgeColor: "bg-[#F5E642]/20 text-[#F5E642]",
-    icon: Crown,
-    cascadeAdvantage: "Sits above all 2,100 members below",
-  },
-  {
-    id: "founding",
-    name: "Founding",
-    range: "Spots 26–125",
-    spotsLabel: "100 spots",
-    description: "Core founding cohort. Level 2 in the cascade — earns overrides from Levels 3 and 4 below.",
-    color: "#14b8a6",
-    borderColor: "border-teal-500/40",
-    accentBg: "from-teal-500/10 to-teal-600/5",
-    badgeColor: "bg-teal-500/20 text-teal-300",
-    icon: Star,
-    cascadeAdvantage: "Sits above 2,000 members below",
-  },
-  {
-    id: "level3",
-    name: "Level 3",
-    range: "Spots 126–525",
-    spotsLabel: "400 spots",
-    description: "Extended founding network. Level 3 in the cascade.",
-    color: "#60a5fa",
-    borderColor: "border-blue-400/40",
-    accentBg: "from-blue-500/10 to-blue-600/5",
-    badgeColor: "bg-blue-500/20 text-blue-300",
-    icon: TrendingUp,
-    cascadeAdvantage: "Sits above 1,600 members below",
-  },
-  {
-    id: "level4",
-    name: "Level 4",
-    range: "Spots 526–2,125",
-    spotsLabel: "1,600 spots",
-    description: "Final founding tier. Level 4 in the cascade — still earns overrides from all post-founding members they recruit.",
-    color: "#a78bfa",
-    borderColor: "border-violet-400/40",
-    accentBg: "from-violet-500/10 to-violet-600/5",
-    badgeColor: "bg-violet-500/20 text-violet-300",
-    icon: Zap,
-    cascadeAdvantage: "First founding tier — still earns from post-founding recruits",
-  },
-];
-
-const FOUNDING_FEATURES = [
-  { label: "72% commission keep on every job you close", icon: DollarSign, highlight: true },
-  { label: "AI-matched homeowner leads in your service area", icon: Sparkles, highlight: true },
-  { label: "5-stream income: job commissions + 4-level network overrides (7/4/2/1%) + subscription override + homeowner leads + home origination", icon: TrendingUp, highlight: true },
-  { label: "PhotoScan AI — review homeowner-submitted job photos to scope work before you accept", icon: Bolt },
-  { label: "Storm alert leads — real-time weather damage notifications in your area", icon: AlertTriangle },
-  { label: "ProLnk Exchange access — bid on and post residential & commercial jobs", icon: Users },
-  { label: "Partner directory listing", icon: MapPin },
-  { label: "ProLnk App — mobile lead management (Q3 2026)", icon: Smartphone },
-];
-
-const UNIVERSAL_BENEFITS = [
-  { label: "72% commission keep — locked forever", detail: "Standard Crew is 55%. You keep 72% for life." },
-  { label: "$149/mo — locked forever", detail: "Standard Crew price is $149. Yours never increases." },
-  { label: "4-level network income cascade", detail: "7/4/2/1% overrides on all jobs in your downline" },
-  { label: "ProLnk Exchange access", detail: "Bid on and post residential & commercial jobs" },
-  { label: "90-day free trial", detail: "No payment until Day 91 — no credit card required" },
-  { label: "Priority algorithm ranking", detail: "Founding members rank above all post-founding pros" },
-  { label: "PhotoScan AI + Storm alert leads", detail: "Every founding member gets full-feature access" },
-  { label: "Founding badge on profile", detail: "Permanent credential — visible to every homeowner" },
-];
+const ENTERPRISE = {
+  features: [
+    "Unlimited user seats",
+    "Negotiated commission keep rate",
+    "Dedicated implementation & support team",
+    "Custom territory and lead routing rules",
+    "API access for your existing systems",
+    "SLA-backed uptime and priority incident response",
+    "Quarterly business reviews",
+  ],
+};
 
 const FAQS = [
   {
-    q: "Can the price ever change?",
-    a: "Never for founding members. Your $149/mo is locked for life — regardless of what happens to market pricing after the founding network closes. This is a permanent founding member benefit, contractually guaranteed in your membership agreement.",
+    q: "How does the commission pool work?",
+    a: "ProLnk takes 3–12% of the completed job value as a platform fee (varies by trade type and job size — in line with typical industry referral rates). Of that pool, you keep your tier's percentage. ProLnk always retains a minimum of 20% to cover platform operations, AI analysis, and lead sourcing. You keep 100% of everything you charge the homeowner — the platform fee is collected separately.",
   },
   {
-    q: "What if I cancel?",
-    a: "You lose your founding member pricing permanently and cannot get it back. After the founding network closes, new members pay standard rates: Scout ($99/mo · 40% keep), Crew ($149/mo · 55% keep), or Company ($249/mo · 65% keep). Cancellation terminates your locked 72% keep rate and locked pricing. We recommend pausing rather than canceling — contact support and we'll work with you.",
+    q: "When do I get paid?",
+    a: "ProLnk's AI tracks payments through to completion — whether the homeowner pays all at once, in installments, or on net-30/60/90 terms. Your commission is released once payment clears, not when the job is invoiced.",
   },
   {
-    q: "When does the 90-day free trial end?",
-    a: "Day 90 from the date you complete signup. You won't be charged until day 91. We'll send you reminders at day 75 and day 87 so you're never caught off guard. No credit card is required to start.",
+    q: "What counts as a completed job?",
+    a: "A job is marked complete when the homeowner confirms completion in the app or payment is received in full. Our AI monitors payment status in real time so your earnings are always up to date.",
   },
   {
-    q: "Why does my position in the network matter if the price is the same?",
-    a: "Your network position determines how far your override income reaches down the cascade. A Charter member (spot 1–25) earns overrides from every Level 2, 3, and 4 member who joins below them. A Level 4 member still earns overrides from everyone they personally recruit and their recruits recruit — but doesn't reach as far up in the cascade. The price and features are identical; position only affects override depth.",
+    q: "Can I upgrade my plan later?",
+    a: "Yes. You can upgrade at any time and your new keep rate applies immediately to all future completed jobs. Downgrading is available at the end of your billing cycle.",
   },
   {
-    q: "What happens to my position when the founding network closes?",
-    a: "Your position is permanently fixed from the moment you join. When the founding network closes at 500 applications + 5,000 homes, no new founding members are accepted. All members who join after that point are 'post-founding' and pay market rates. Your position and locked pricing are yours forever.",
+    q: "What is the 90-day free trial?",
+    a: "All plans include a 90-day free trial with no credit card required. You get full access to leads, AI matching, and platform features from day one. Billing begins on day 91.",
   },
   {
-    q: "Why is the founding rate $149 and not higher or lower?",
-    a: "$149/mo is the standard Crew tier price. Founding members get Crew pricing locked forever — but with 72% commission keep instead of Crew's standard 55%. You're getting Company-level economics at Crew pricing, locked for life. That's the founding member advantage.",
+    q: "Is there a long-term contract?",
+    a: "No contracts. All plans are month-to-month. Cancel any time before your next billing date.",
   },
-];
-
-const CASCADE_ROWS = [
-  { level: "L1 (Your direct recruit)", jobOverride: "7%", subOverride: "12%", origination: "1.5%" },
-  { level: "L2 (Their recruit)", jobOverride: "4%", subOverride: "6%", origination: "1.5%" },
-  { level: "L3 (L2's recruit)", jobOverride: "2%", subOverride: "3%", origination: "1.5%" },
-  { level: "L4 (L3's recruit)", jobOverride: "1%", subOverride: "1.5%", origination: "1.5%" },
-];
-
-const LOCKING_MECHANISM = [
-  { step: "1", title: "You Join", detail: "When you complete signup, your spot number is permanently assigned. Spot numbers are sequential and never reassigned." },
-  { step: "2", title: "Membership Agreement Signed", detail: "Your $149/mo rate is contractually locked in your membership agreement. Price increases require your written consent — which you're under no obligation to give." },
-  { step: "3", title: "As Long As You Remain Active", detail: "Your locked rate holds indefinitely. If you cancel, the rate is forfeited. If you remain active — even during a low job month — the rate stays locked." },
-  { step: "4", title: "Network Closes, Rate Stays", detail: "When the founding network closes at 500 applications, new members pay market rate. Your $149 does not change. This is a permanent competitive advantage." },
 ];
 
 export default function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [billing] = useState<"monthly">("monthly");
 
   return (
-    <div className="min-h-screen bg-[#060D1A] text-white">
-
-      {/* Founding Network Urgency Banner */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-[#F5E642]/25 via-teal-500/20 to-[#F5E642]/25 border-b border-[#F5E642]/40 py-2.5 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
-          <div className="flex items-center gap-2">
-            <Crown className="w-4 h-4 text-[#F5E642] shrink-0" />
-            <span className="text-sm font-bold text-[#F5E642]">Founding Network spots available</span>
-            <span className="text-sm text-white/70 hidden sm:inline">— $149/mo locked forever. Closes at 500 applications.</span>
-          </div>
-          <Link href="/founding-partner">
-            <span className="inline-flex items-center gap-1.5 bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-4 py-1.5 rounded-full text-xs font-bold transition-colors cursor-pointer whitespace-nowrap">
-              Claim Your Spot <ArrowRight className="w-3 h-3" />
-            </span>
-          </Link>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[#0A1628] text-white">
 
       {/* Nav */}
-      <nav className="fixed top-[42px] left-0 right-0 z-50 bg-[#060D1A]/90 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <header className="border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
-            <ProLnkLogo className="h-7 w-auto cursor-pointer" />
+            <div className="bg-white rounded-xl px-3 py-1.5 inline-block cursor-pointer">
+              <ProLnkLogo height={32} />
+            </div>
           </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/partner-checkout">
-              <button className="bg-teal-500 hover:bg-teal-400 text-white px-5 py-2 rounded-xl text-sm font-semibold transition-colors">
-                Claim Your Spot
-              </button>
-            </Link>
-          </div>
+          <Link href="/apply">
+            <button className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-semibold px-5 py-2 rounded-xl text-sm transition-colors">
+              Apply Now
+            </button>
+          </Link>
         </div>
-      </nav>
+      </header>
 
       {/* Hero */}
-      <section className="pt-40 pb-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-[#F5E642]/10 border border-[#F5E642]/20 rounded-full px-4 py-2 text-sm text-[#F5E642] mb-6"
-          >
-            <Lock className="w-4 h-4" />
-            First 2,125 founding members only — waitlist closes at 500 apps + 5,000 homes
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-black mb-4 leading-tight"
-          >
-            One price.{" "}
-            <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              Forever locked.
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="text-2xl font-bold text-white/80 mb-2"
-          >
-            $149/mo — locked for founding members
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-[#F5E642] font-semibold mb-6"
-          >
-            90-day free trial — no charge today
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="text-white/50 text-lg max-w-2xl mx-auto mb-10"
-          >
-            All 2,125 founding members pay the same price, get the same features, and keep the same rate forever. The only difference is your position in the network cascade — determined by when you join.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <Link href="/partner-checkout">
-              <button className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-teal-500/25 inline-flex items-center gap-3">
-                Claim Your Founding Spot <ArrowRight className="w-5 h-5" />
-              </button>
-            </Link>
-            <p className="text-white/30 text-sm mt-3">No credit card required · 90 days free · Cancel anytime</p>
-          </motion.div>
+      <section className="pt-16 pb-12 text-center px-6">
+        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs text-white/60 mb-6">
+          <Zap className="w-3.5 h-3.5 text-[#0EA5E9]" />
+          90-day free trial on all plans · No credit card required
         </div>
+        <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
+          Simple pricing.<br />
+          <span className="text-[#0EA5E9]">Keep more of what you earn.</span>
+        </h1>
+        <p className="text-white/60 text-lg max-w-xl mx-auto">
+          AI-matched leads, real-time payment tracking, and commission rates that scale with your business.
+        </p>
       </section>
 
-      {/* Single Plan Card */}
-      <section className="pb-16 px-6">
-        <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="relative rounded-3xl border border-teal-500/40 p-8 md:p-10 bg-gradient-to-br from-teal-500/10 to-[#0A1628] shadow-2xl shadow-teal-500/10"
-          >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-              <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-xs font-bold px-5 py-2 rounded-full flex items-center gap-2">
-                <Star className="w-3 h-3" /> Founding Member Plan
-              </div>
-            </div>
+      {/* Pricing cards */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {TIERS.map((tier) => (
+            <div
+              key={tier.id}
+              className={`relative rounded-2xl border bg-white/5 backdrop-blur-sm flex flex-col ${
+                tier.popular
+                  ? "border-[#14B8A6]/60 ring-1 ring-[#14B8A6]/30"
+                  : "border-white/10"
+              }`}
+            >
+              {tier.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="bg-[#14B8A6] text-white text-xs font-bold px-4 py-1 rounded-full">
+                    Most Popular
+                  </span>
+                </div>
+              )}
 
-            <div className="text-center mb-8 pt-2">
-              <div className="flex items-end justify-center gap-2 mb-1">
-                <span className="text-6xl font-black text-white">$149</span>
-                <span className="text-white/40 text-lg mb-3">/mo</span>
-              </div>
-              <p className="text-[#F5E642] font-semibold text-sm mb-1">Founding price — never increases</p>
-              <p className="text-white/40 text-sm">90 days free, then $149/mo</p>
-            </div>
-
-            <ul className="space-y-4 mb-8">
-              {FOUNDING_FEATURES.map((f, i) => (
-                <li key={i} className={`flex items-start gap-3 text-sm ${f.highlight ? "text-white" : "text-white/70"}`}>
-                  <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${f.highlight ? "bg-teal-500/20" : "bg-white/5"}`}>
-                    <Check className={`w-3 h-3 ${f.highlight ? "text-teal-400" : "text-white/40"}`} />
-                  </div>
-                  <span className={f.highlight ? "font-medium" : ""}>{f.label}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Link href="/partner-checkout">
-              <button className="w-full py-4 rounded-2xl font-bold text-base transition-all bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white shadow-lg shadow-teal-500/20 flex items-center justify-center gap-2">
-                Start 90-Day Free Trial <ArrowRight className="w-5 h-5" />
-              </button>
-            </Link>
-
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-white/30">
-              <Lock className="w-3 h-3" />
-              Founding rate locked as long as you remain a member
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What You Get at Every Tier */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-3">Universal Benefits</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              What Every Founding Member Gets
-            </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Charter, Founding, Level 3, and Level 4 all receive the same plan. No feature gating. No upsells. These are the benefits every founding member gets, period.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {UNIVERSAL_BENEFITS.map((b, i) => (
-              <div key={i} className="rounded-2xl p-5 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                <CheckCircle2 className="w-5 h-5 text-teal-400" />
-                <div className="font-bold text-sm text-white">{b.label}</div>
-                <div className="text-xs text-white/40">{b.detail}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tier Comparison */}
-      <section className="py-16 px-6 bg-gradient-to-b from-transparent to-white/[0.02]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-3">Network Position Tiers</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              Same price. Same features.{" "}
-              <span className="text-[#F5E642]">Different position.</span>
-            </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Charter, Founding, Level 3, and Level 4 are not pricing tiers — they are network positions. Earlier members sit higher in the cascade and earn overrides from more of the network below them.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-            {FOUNDING_TIERS.map((tier, i) => {
-              const Icon = tier.icon;
-              return (
-                <motion.div
-                  key={tier.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                  className={`rounded-2xl border p-6 bg-gradient-to-br ${tier.accentBg} ${tier.borderColor}`}
-                >
-                  <div className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full mb-4 ${tier.badgeColor}`}>
-                    <Icon className="w-3 h-3" />
+              <div className="p-6 pb-4">
+                {/* Tier name + keep rate badge */}
+                <div className="flex items-start justify-between mb-3">
+                  <span className="text-sm font-bold uppercase tracking-widest" style={{ color: tier.color }}>
                     {tier.name}
-                  </div>
-                  <p className="text-white font-semibold text-sm mb-1">{tier.range}</p>
-                  <p className="text-white/30 text-xs mb-3">{tier.spotsLabel}</p>
-                  <p className="text-white/50 text-xs leading-relaxed mb-3">{tier.description}</p>
-                  <div className="text-xs font-semibold px-2 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
-                    {tier.cascadeAdvantage}
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="flex items-end gap-1">
-                      <span className="text-2xl font-black text-white">$149</span>
-                      <span className="text-white/30 text-xs mb-1">/mo</span>
-                    </div>
-                    <p className="text-[#F5E642] text-xs font-medium mt-0.5">Same price, always</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                  </span>
+                  <span
+                    className="text-xs font-bold px-2.5 py-1 rounded-full"
+                    style={{ backgroundColor: tier.color + "20", color: tier.color }}
+                  >
+                    {tier.keep}% keep
+                  </span>
+                </div>
 
-          {/* All same features callout */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8">
-            <div className="flex flex-wrap gap-6 justify-center text-center">
+                {/* Price */}
+                <div className="mb-3">
+                  <span className="text-4xl font-black">${tier.price}</span>
+                  <span className="text-white/40 text-sm">/mo</span>
+                </div>
+
+                <p className="text-white/50 text-sm leading-relaxed mb-6">{tier.tagline}</p>
+
+                <Link href="/apply">
+                  <button
+                    className="w-full py-3 rounded-xl font-bold text-sm transition-all"
+                    style={{
+                      backgroundColor: tier.popular ? tier.color : "transparent",
+                      color: tier.popular ? "#fff" : tier.color,
+                      border: `1.5px solid ${tier.color}`,
+                    }}
+                  >
+                    {tier.cta}
+                    <ArrowRight className="inline-block w-4 h-4 ml-1.5 -mt-0.5" />
+                  </button>
+                </Link>
+              </div>
+
+              {/* Feature list */}
+              <div className="px-6 pb-6 pt-2 flex-1">
+                <div className="border-t border-white/10 pt-4 space-y-3">
+                  {tier.features.map((feat, i) => {
+                    const isHeader = feat.startsWith("Everything in");
+                    return (
+                      <div key={i} className={`flex items-start gap-2.5 ${isHeader ? "pt-1" : ""}`}>
+                        {isHeader ? (
+                          <span className="text-xs text-white/40 font-semibold uppercase tracking-wider w-full">{feat}</span>
+                        ) : (
+                          <>
+                            <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: tier.color }} />
+                            <span className="text-sm text-white/70 leading-snug">{feat}</span>
+                          </>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Commission keep comparison bar */}
+        <div className="mt-10 bg-white/5 border border-white/10 rounded-2xl p-6">
+          <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-4">Commission Keep Rate by Plan</p>
+          <div className="space-y-3">
+            {TIERS.map((tier) => (
+              <div key={tier.id} className="flex items-center gap-4">
+                <span className="text-sm text-white/60 w-20">{tier.name}</span>
+                <div className="flex-1 bg-white/10 rounded-full h-2.5 overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all"
+                    style={{ width: `${tier.keep}%`, backgroundColor: tier.color }}
+                  />
+                </div>
+                <span className="text-sm font-bold" style={{ color: tier.color }}>{tier.keep}%</span>
+              </div>
+            ))}
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-white/60 w-20">Enterprise</span>
+              <div className="flex-1 bg-white/10 rounded-full h-2.5 overflow-hidden">
+                <div className="h-full rounded-full bg-white/40" style={{ width: "80%" }} />
+              </div>
+              <span className="text-sm font-bold text-white/50">Custom</span>
+            </div>
+          </div>
+          <p className="text-xs text-white/30 mt-4">ProLnk retains a minimum of 20% of the commission pool to cover platform operations, AI analysis, and lead sourcing.</p>
+        </div>
+
+        {/* Enterprise */}
+        <div className="mt-6 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <Building2 className="w-5 h-5 text-white/40" />
+                <span className="text-sm font-bold uppercase tracking-widest text-white/40">Enterprise</span>
+              </div>
+              <h3 className="text-xl font-black mb-2">Built for large operations</h3>
+              <p className="text-white/50 text-sm mb-4">Custom seat counts, negotiated rates, API access, and a dedicated team for companies with complex needs.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {ENTERPRISE.features.map((feat, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <Check className="w-3.5 h-3.5 text-white/30 shrink-0" />
+                    <span className="text-sm text-white/50">{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="shrink-0">
+              <a href="mailto:hello@prolnk.xyz">
+                <button className="bg-white text-[#0A1628] font-bold px-6 py-3 rounded-xl text-sm hover:bg-white/90 transition-colors">
+                  Contact Sales
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature comparison table */}
+      <section className="max-w-4xl mx-auto px-6 pb-20">
+        <h2 className="text-2xl font-black text-center mb-8">What's included at each level</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-white/10">
+                <th className="text-left py-3 text-white/40 font-medium w-1/2"></th>
+                {TIERS.map(t => (
+                  <th key={t.id} className="text-center py-3 font-bold" style={{ color: t.color }}>{t.name}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/5">
               {[
-                { label: "$149/mo locked", sub: "Every tier, forever" },
-                { label: "72% keep rate", sub: "Every tier, every job" },
-                { label: "4-level cascade", sub: "All tiers earn overrides" },
-                { label: "All features", sub: "No feature gating" },
-              ].map((item) => (
-                <div key={item.label} className="flex flex-col items-center">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Check className="w-4 h-4 text-teal-400" />
-                    <span className="text-white font-semibold text-sm">{item.label}</span>
-                  </div>
-                  <span className="text-white/30 text-xs">{item.sub}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Cascade table */}
-          <div className="mb-4">
-            <h3 className="text-xl font-bold text-white text-center mb-6">Network override rates (all tiers)</h3>
-            <div className="overflow-x-auto rounded-2xl border border-white/10">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
-                    <th className="text-left px-6 py-4 text-white/50 font-medium">Level in your network</th>
-                    <th className="text-right px-4 py-4 text-white/50 font-medium">Job override</th>
-                    <th className="text-right px-4 py-4 text-white/50 font-medium">Subscription override</th>
-                    <th className="text-right px-6 py-4 text-white/50 font-medium">Home origination</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {CASCADE_ROWS.map((row, i) => (
-                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                      <td className="px-6 py-4 text-white font-medium">{row.level}</td>
-                      <td className="px-4 py-4 text-right text-teal-400 font-semibold">{row.jobOverride}</td>
-                      <td className="px-4 py-4 text-right text-emerald-400 font-semibold">{row.subOverride}</td>
-                      <td className="px-6 py-4 text-right text-[#F5E642] font-semibold">{row.origination}</td>
-                    </tr>
+                { label: "Commission keep rate",   vals: ["54%", "65%", "72%"] },
+                { label: "Monthly price",          vals: ["$99", "$149", "$249"] },
+                { label: "User seats",             vals: ["1", "3", "8"] },
+                { label: "AI-matched leads",       vals: ["✓", "✓", "✓"] },
+                { label: "PhotoScan AI",           vals: ["✓", "✓", "✓"] },
+                { label: "Storm alert leads",      vals: ["✓", "✓", "✓"] },
+                { label: "Lead ranking",           vals: ["Standard", "Priority", "Top"] },
+                { label: "ProLnk Exchange",        vals: ["—", "✓", "✓"] },
+                { label: "Advanced lead filters",  vals: ["—", "✓", "✓"] },
+                { label: "Custom territory",       vals: ["—", "—", "✓"] },
+                { label: "Dedicated account mgr",  vals: ["—", "—", "✓"] },
+                { label: "90-day free trial",      vals: ["✓", "✓", "✓"] },
+              ].map((row, i) => (
+                <tr key={i} className="hover:bg-white/[0.02]">
+                  <td className="py-3 text-white/60">{row.label}</td>
+                  {row.vals.map((val, j) => (
+                    <td key={j} className="py-3 text-center">
+                      {val === "✓" ? (
+                        <Check className="w-4 h-4 mx-auto text-[#0EA5E9]" />
+                      ) : val === "—" ? (
+                        <span className="text-white/20">—</span>
+                      ) : (
+                        <span className="font-semibold text-white/80">{val}</span>
+                      )}
+                    </td>
                   ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-white/30 text-xs text-center mt-3">
-              Job override = % of gross job value when a member in your network closes. Subscription override = % of monthly fee. Home origination = recurring % when a home you enrolled transacts on the platform.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Founding Rates Never Increase */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-3">The Locking Mechanism</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              Why Founding Rates <span className="text-teal-400">Never Increase</span>
-            </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              This isn't a marketing promise — it's a contractual guarantee built into how the platform works. Here's exactly how it works.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {LOCKING_MECHANISM.map((step, i) => (
-              <div key={i} className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm mb-4" style={{ background: "rgba(20,184,166,0.2)", color: "#14B8A6" }}>
-                  {step.step}
-                </div>
-                <div className="font-bold text-white mb-2">{step.title}</div>
-                <p className="text-sm text-white/50 leading-relaxed">{step.detail}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 bg-gradient-to-r from-[#F5E642]/10 to-teal-500/10 border border-[#F5E642]/20 rounded-2xl p-6 text-center">
-            <Lock className="w-6 h-6 text-[#F5E642] mx-auto mb-3" />
-            <p className="text-white font-bold">Bottom line: as long as you remain an active member, $149/mo is your price — forever.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* After founding closes */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-[#F5E642]/5 to-transparent border border-[#F5E642]/20 rounded-3xl p-10 md:p-12">
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 bg-[#F5E642]/10 border border-[#F5E642]/20 rounded-full px-4 py-2 text-xs font-bold text-[#F5E642] mb-5 uppercase tracking-wider">
-                  <Shield className="w-3.5 h-3.5" />
-                  After the founding network closes
-                </div>
-                <h2 className="text-3xl font-black text-white mb-4">
-                  New members will pay market rate.{" "}
-                  <span className="text-[#F5E642]">You won't.</span>
-                </h2>
-                <p className="text-white/60 mb-4 leading-relaxed">
-                  Once 500 pro applications and 5,000 homes are submitted, the founding network closes. New members choose from three standard tiers: Scout ($99/mo), Crew ($149/mo), or Company ($249/mo) — with lower commission keeps and no founding benefits.
-                </p>
-                <p className="text-white/60 leading-relaxed">
-                  Your $149/mo is locked at Crew pricing — but with a 72% commission keep instead of 55%. That gap compounds on every single job for the life of your membership.
-                </p>
-              </div>
-              <div className="md:w-64 shrink-0">
-                <div className="bg-[#0A1628] rounded-2xl p-6 border border-white/10">
-                  <p className="text-white/40 text-xs uppercase font-semibold tracking-widest mb-4">Price comparison</p>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/70 text-sm">Founding members</span>
-                      <span className="text-teal-400 font-bold">$149/mo</span>
-                    </div>
-                    <div className="border-t border-white/5" />
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/50 text-sm">Standard Crew (after closing)</span>
-                      <span className="text-white/40 font-medium">$149/mo · 55% keep</span>
-                    </div>
-                    <div className="border-t border-white/5" />
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/50 text-sm">Standard Company</span>
-                      <span className="text-white/40 font-medium">$249/mo · 65% keep</span>
-                    </div>
-                  </div>
-                  <div className="mt-5 pt-4 border-t border-white/10">
-                    <p className="text-[#F5E642] text-xs font-semibold text-center">You keep 72% — 17pts more than Crew forever</p>
-                  </div>
-                </div>
-
-                <div className="mt-5">
-                  <Link href="/partner-checkout">
-                    <button className="w-full bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] py-3.5 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2">
-                      Refer a Pro <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </Link>
-                  <p className="text-white/30 text-xs text-center mt-2">Earn 12% of their $149/mo for life</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Post-Launch Pricing Preview */}
-      <section className="py-16 px-6 bg-gradient-to-b from-transparent to-white/[0.02]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-bold text-white/30 uppercase tracking-widest mb-3">After the founding network closes</p>
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
-              Post-Launch Pricing Preview
-            </h2>
-            <p className="text-white/40 text-sm max-w-xl mx-auto">
-              Once 500 applications are submitted, these are the tiers new members will choose from. Founding members are permanently exempt from this pricing.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-4 mb-8">
-            {POST_FOUNDING_PREVIEW.map((tier) => (
-              <div key={tier.name} className={`relative rounded-2xl border ${tier.border} p-5 bg-white/[0.02]`}>
-                {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-teal-500/20 text-teal-300 text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
-                  </div>
-                )}
-                <div className={`text-xs font-bold ${tier.color} mb-3 ${tier.popular ? "mt-2" : ""}`}>{tier.name}</div>
-                <div className="text-2xl font-black text-white mb-4">{tier.price}</div>
-                <div className="space-y-2 text-xs text-white/50">
-                  <div className="flex items-center gap-2">
-                    <DollarSign className="w-3 h-3 text-white/30" />
-                    <span>{tier.keep} commission keep</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="w-3 h-3 text-white/30" />
-                    <span>{tier.desc}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-3 h-3 text-white/30" />
-                    <span>{tier.rank}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 bg-gradient-to-r from-[#F5E642]/10 to-teal-500/10 border border-[#F5E642]/20 rounded-2xl p-6 text-center">
-            <Crown className="w-8 h-8 text-[#F5E642] mx-auto mb-3" />
-            <p className="text-white font-bold text-lg mb-1">Founding members pay $149/mo. Forever.</p>
-            <p className="text-white/50 text-sm mb-4">
-              72% keep · 4-level network · top algorithm ranking — regardless of what standard pricing becomes.
-            </p>
-            <Link href="/partner-checkout">
-              <button className="bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-8 py-3 rounded-xl font-bold text-sm transition-all inline-flex items-center gap-2">
-                Claim Your Founding Spot <ArrowRight className="w-4 h-4" />
-              </button>
-            </Link>
-          </div>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-white mb-3">Pricing Questions</h2>
-            <p className="text-white/40 text-sm">Everything you need to know about founding member pricing.</p>
-          </div>
-          <div className="space-y-3">
-            {FAQS.map((faq, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left"
-                >
-                  <span className="font-medium text-white text-sm">{faq.q}</span>
-                  {openFaq === i
-                    ? <ChevronUp className="w-4 h-4 text-white/40 shrink-0" />
-                    : <ChevronDown className="w-4 h-4 text-white/40 shrink-0" />
-                  }
-                </button>
-                <AnimatePresence>
-                  {openFaq === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="px-6 pb-5 text-sm text-white/50 leading-relaxed border-t border-white/5 pt-4">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-teal-500/10 to-[#0A1628] border border-teal-500/20 rounded-3xl p-12">
-            <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-2 text-sm text-teal-300 mb-6">
-              <Lock className="w-4 h-4" />
-              Founding price · locked forever
-            </div>
-            <h2 className="text-4xl font-black text-white mb-4">
-              $149/mo. 90 days free.
-            </h2>
-            <p className="text-white/60 mb-2 text-lg">
-              First 2,125 members only. Your price never increases.
-            </p>
-            <p className="text-white/40 text-sm mb-8">
-              After founding closes, new members pay standard rates: Scout $99, Crew $149, or Company $249/mo — with lower commission keeps. Join now to lock your rate.
-            </p>
-            <Link href="/partner-checkout">
-              <button className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-teal-500/25 inline-flex items-center gap-3">
-                Claim Your Founding Spot <ArrowRight className="w-5 h-5" />
+      <section className="max-w-2xl mx-auto px-6 pb-24">
+        <h2 className="text-2xl font-black text-center mb-8">Common questions</h2>
+        <div className="space-y-3">
+          {FAQS.map((faq, i) => (
+            <div
+              key={i}
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden"
+            >
+              <button
+                className="w-full text-left px-5 py-4 flex items-center justify-between gap-3"
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+              >
+                <span className="font-semibold text-sm text-white/90">{faq.q}</span>
+                {openFaq === i
+                  ? <ChevronUp className="w-4 h-4 shrink-0 text-white/40" />
+                  : <ChevronDown className="w-4 h-4 shrink-0 text-white/40" />
+                }
               </button>
-            </Link>
-            <p className="text-white/30 text-sm mt-4">No credit card required · Cancel anytime · Lock your rate today</p>
-          </div>
+              {openFaq === i && (
+                <div className="px-5 pb-4 text-sm text-white/60 leading-relaxed">
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-8 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <ProLnkLogo className="h-6 w-auto opacity-60" />
-          <p className="text-white/30 text-sm">© 2026 ProLnk. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-white/30">
-            <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
-            <Link href="/partner-checkout" className="hover:text-white/60 transition-colors">Join</Link>
-            <Link href="/apply" className="hover:text-white/60 transition-colors">Apply</Link>
-          </div>
-        </div>
-      </footer>
+      {/* Bottom CTA */}
+      <section className="border-t border-white/10 py-16 text-center px-6">
+        <Star className="w-8 h-8 text-[#0EA5E9] mx-auto mb-4" />
+        <h2 className="text-2xl font-black mb-3">Start your 90-day free trial</h2>
+        <p className="text-white/50 text-sm mb-6 max-w-sm mx-auto">No credit card. No contracts. Full platform access from day one.</p>
+        <Link href="/apply">
+          <button className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-colors inline-flex items-center gap-2">
+            Apply to Join ProLnk
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </Link>
+        <p className="text-white/30 text-xs mt-4">Questions? <a href="mailto:hello@prolnk.xyz" className="underline hover:text-white/50">hello@prolnk.xyz</a></p>
+      </section>
     </div>
   );
 }

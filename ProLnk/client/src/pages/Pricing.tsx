@@ -10,29 +10,29 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const POST_FOUNDING_PREVIEW = [
   {
-    name: "Starter",
-    price: "$199/mo",
+    name: "Scout",
+    price: "$99/mo",
     keep: "40%",
-    levels: "2-level network",
-    rank: "Basic ranking",
+    desc: "Individual professionals",
+    rank: "Standard ranking",
     color: "text-blue-400",
     border: "border-blue-400/20",
   },
   {
-    name: "Professional",
-    price: "$279/mo",
+    name: "Crew",
+    price: "$149/mo",
     keep: "55%",
-    levels: "3-level network",
+    desc: "Small crews & teams",
     rank: "Priority ranking",
     color: "text-teal-400",
     border: "border-teal-400/20",
     popular: true,
   },
   {
-    name: "Elite",
-    price: "$399/mo",
+    name: "Company",
+    price: "$249/mo",
     keep: "65%",
-    levels: "4-level network",
+    desc: "Multi-person companies",
     rank: "Top ranking",
     color: "text-[#F5E642]",
     border: "border-[#F5E642]/20",
@@ -95,26 +95,25 @@ const FOUNDING_TIERS = [
 ];
 
 const FOUNDING_FEATURES = [
-  { label: "72% of every job you close stays with you", icon: DollarSign, highlight: true },
-  { label: "AI matching to homeowner leads in your service area", icon: Sparkles, highlight: true },
-  { label: "5-stream income system (direct jobs + 4-level network + subscription override + homeowner leads + home origination)", icon: TrendingUp },
-  { label: "4-level referral cascade — 7 / 4 / 2 / 1% on network jobs", icon: Users },
-  { label: "Subscription override — 12% L1 · 6% L2 · 3% L3 · 1.5% L4", icon: DollarSign },
-  { label: "PhotoScan AI (TrustyPro) — scan homeowner photos to identify issues", icon: Bolt },
-  { label: "Storm alert leads — real-time weather damage notifications", icon: AlertTriangle },
+  { label: "72% commission keep on every job you close", icon: DollarSign, highlight: true },
+  { label: "AI-matched homeowner leads in your service area", icon: Sparkles, highlight: true },
+  { label: "5-stream income: job commissions + 4-level network overrides (7/4/2/1%) + subscription override + homeowner leads + home origination", icon: TrendingUp, highlight: true },
+  { label: "PhotoScan AI — review homeowner-submitted job photos to scope work before you accept", icon: Bolt },
+  { label: "Storm alert leads — real-time weather damage notifications in your area", icon: AlertTriangle },
+  { label: "ProLnk Exchange access — bid on and post residential & commercial jobs", icon: Users },
   { label: "Partner directory listing", icon: MapPin },
-  { label: "Mobile app (coming Q3 2026)", icon: Smartphone },
+  { label: "ProLnk App — mobile lead management (Q3 2026)", icon: Smartphone },
 ];
 
 const UNIVERSAL_BENEFITS = [
-  { label: "72% commission keep rate", detail: "Every tier, every job, forever" },
-  { label: "$149/mo locked for life", detail: "Never increases regardless of market pricing" },
-  { label: "4-level network income cascade", detail: "All tiers participate in the full cascade" },
-  { label: "All platform features included", detail: "No feature gating — zero tiers get more features" },
+  { label: "72% commission keep — locked forever", detail: "Standard Crew is 55%. You keep 72% for life." },
+  { label: "$149/mo — locked forever", detail: "Standard Crew price is $149. Yours never increases." },
+  { label: "4-level network income cascade", detail: "7/4/2/1% overrides on all jobs in your downline" },
+  { label: "ProLnk Exchange access", detail: "Bid on and post residential & commercial jobs" },
   { label: "90-day free trial", detail: "No payment until Day 91 — no credit card required" },
-  { label: "Priority algorithm ranking", detail: "Founding members get top placement over post-founding" },
-  { label: "Same homeowner lead access", detail: "Every tier competes for the same high-quality leads" },
-  { label: "Founding badge on profile", detail: "Permanent credential showing you were first" },
+  { label: "Priority algorithm ranking", detail: "Founding members rank above all post-founding pros" },
+  { label: "PhotoScan AI + Storm alert leads", detail: "Every founding member gets full-feature access" },
+  { label: "Founding badge on profile", detail: "Permanent credential — visible to every homeowner" },
 ];
 
 const FAQS = [
@@ -124,7 +123,7 @@ const FAQS = [
   },
   {
     q: "What if I cancel?",
-    a: "You lose your founding member pricing permanently and cannot get it back. After the founding network closes, new members will pay market rate (estimated $249–399/mo). Cancellation terminates your locked rate. We recommend pausing rather than canceling if you need a break — contact support and we'll work with you.",
+    a: "You lose your founding member pricing permanently and cannot get it back. After the founding network closes, new members pay standard rates: Scout ($99/mo · 40% keep), Crew ($149/mo · 55% keep), or Company ($249/mo · 65% keep). Cancellation terminates your locked 72% keep rate and locked pricing. We recommend pausing rather than canceling — contact support and we'll work with you.",
   },
   {
     q: "When does the 90-day free trial end?",
@@ -140,7 +139,7 @@ const FAQS = [
   },
   {
     q: "Why is the founding rate $149 and not higher or lower?",
-    a: "$149/mo was set to be accessible to working contractors while being sustainable for the platform. At 500 founding members, the platform reaches break-even. At 1,000 members, it's highly profitable. The founding rate is low because early members take the most risk — they're betting on a platform that hasn't proven itself yet. That risk deserves a permanent reward.",
+    a: "$149/mo is the standard Crew tier price. Founding members get Crew pricing locked forever — but with 72% commission keep instead of Crew's standard 55%. You're getting Company-level economics at Crew pricing, locked for life. That's the founding member advantage.",
   },
 ];
 
@@ -478,10 +477,10 @@ export default function Pricing() {
                   <span className="text-[#F5E642]">You won't.</span>
                 </h2>
                 <p className="text-white/60 mb-4 leading-relaxed">
-                  Once 500 pro applications and 5,000 homes are submitted, the founding network closes. New members joining after that point will pay the then-current market rate — estimated $249–399/mo.
+                  Once 500 pro applications and 5,000 homes are submitted, the founding network closes. New members choose from three standard tiers: Scout ($99/mo), Crew ($149/mo), or Company ($249/mo) — with lower commission keeps and no founding benefits.
                 </p>
                 <p className="text-white/60 leading-relaxed">
-                  Your $149/mo is locked for life from the moment you join. That's a permanent competitive cost advantage — your leads cost less, your margins are higher, your network income compounds.
+                  Your $149/mo is locked at Crew pricing — but with a 72% commission keep instead of 55%. That gap compounds on every single job for the life of your membership.
                 </p>
               </div>
               <div className="md:w-64 shrink-0">
@@ -494,12 +493,17 @@ export default function Pricing() {
                     </div>
                     <div className="border-t border-white/5" />
                     <div className="flex justify-between items-center">
-                      <span className="text-white/50 text-sm">After closing (est.)</span>
-                      <span className="text-white/40 font-medium">$249–399/mo</span>
+                      <span className="text-white/50 text-sm">Standard Crew (after closing)</span>
+                      <span className="text-white/40 font-medium">$149/mo · 55% keep</span>
+                    </div>
+                    <div className="border-t border-white/5" />
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/50 text-sm">Standard Company</span>
+                      <span className="text-white/40 font-medium">$249/mo · 65% keep</span>
                     </div>
                   </div>
                   <div className="mt-5 pt-4 border-t border-white/10">
-                    <p className="text-[#F5E642] text-xs font-semibold text-center">Up to 63% savings — locked forever</p>
+                    <p className="text-[#F5E642] text-xs font-semibold text-center">You keep 72% — 17pts more than Crew forever</p>
                   </div>
                 </div>
 
@@ -547,7 +551,7 @@ export default function Pricing() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Users className="w-3 h-3 text-white/30" />
-                    <span>{tier.levels}</span>
+                    <span>{tier.desc}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-3 h-3 text-white/30" />
@@ -628,7 +632,7 @@ export default function Pricing() {
               First 2,125 members only. Your price never increases.
             </p>
             <p className="text-white/40 text-sm mb-8">
-              After founding closes, new members pay $249–399/mo. Join now to lock your rate.
+              After founding closes, new members pay standard rates: Scout $99, Crew $149, or Company $249/mo — with lower commission keeps. Join now to lock your rate.
             </p>
             <Link href="/partner-checkout">
               <button className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-teal-500/25 inline-flex items-center gap-3">

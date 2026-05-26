@@ -38,7 +38,27 @@ PORT=3000
 - Only runs once, subsequent calls are no-ops
 - Idempotent (safe to call multiple times)
 
-## Brand Routing
+## Brand Portfolio
+
+**6 Consumer Brands + Internal Operator Layer + 2 Mobile Apps**
+
+| Brand | Audience | Domain |
+|-------|----------|--------|
+| ProLnk | Individual service professionals | prolnk.xyz (live) → prolnk.io (pending) |
+| ProLnk Exchange | Commercial contractors / job board | exchange.prolnk.io |
+| TrustyPro | Homeowners | trustypro.io (live) |
+| TrustyPro Commercial | Commercial property owners | commercial.trustypro.io |
+| ProLnk Media | Advertisers (real estate, title, mortgage) | media.prolnk.io |
+| LNKD | Room scan + affiliate product links | TBD |
+| ProLnk Network | Internal operator/admin (not a consumer brand) | network.prolnk.io |
+
+**Mobile Apps**: ProLnk App (service professionals), TrustyPro App (homeowners)
+
+**Note**: LIT Ventures is the investment group (parent company). It is NOT a brand and must not appear in routing or UI.
+
+**Domain note**: prolnk.io is currently locked in Manus (prior AI build platform). prolnk.xyz is the live domain until prolnk.io is released. The new Azure build must support both.
+
+## Brand Routing (Current Vite/Render Stack)
 
 **How it works**:
 1. Request comes in for prolnk.xyz or trustypro.io

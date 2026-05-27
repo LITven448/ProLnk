@@ -24,135 +24,92 @@ import { Badge } from "@/components/ui/badge";
 // Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
 // Hero/final CTA bg: #050d1a
 
-// --- Pricing -- 5 tiers with Network Income -----------------------------------------------
+// --- Pricing -- Scout $99/54%, Pro $149/65%, Business $249/72%, Enterprise custom ------
 const PRICING_TIERS = [
   {
     name: "Scout",
-    subtitle: "Free to join",
-    monthlyFee: 0,
-    keepRate: 0.40,
-    commissionCap: 500,
+    subtitle: "Start earning",
+    monthlyFee: 99,
+    keepRate: 0.54,
+    commissionCap: null,
     seats: 1,
     popular: false,
-    cta: "Start Free",
+    cta: "Get Scout",
     apiAccess: false,
     tier: "scout",
-    networkIncome: false,
     features: [
       "1 user seat",
       "AI opportunity detection on all jobs",
       "Commission tracking dashboard",
       "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Keep 40% Network Bonus on every referral",
-      "$500/mo earnings cap",
+      "Keep 54% of every referral commission",
       "Event-driven leads (storm, aging, recalls)",
       "Mobile app access",
     ],
   },
   {
     name: "Pro",
-    subtitle: "Build your network",
-    monthlyFee: 49,
-    keepRate: 0.55,
+    subtitle: "Most popular",
+    monthlyFee: 149,
+    keepRate: 0.65,
     commissionCap: null,
     seats: 3,
-    popular: false,
+    popular: true,
     cta: "Get Pro",
     apiAccess: true,
     tier: "pro",
-    networkIncome: true,
-    networkRate: "0.5% L1",
     features: [
+      "Everything in Scout, plus:",
       "Up to 3 user seats",
-      "Keep 55% Network Bonus on every referral",
-      "No earnings cap",
-      "Network income from 1 direct referral",
-      "2% bonus on your own completed jobs",
+      "Keep 65% of every referral commission",
       "API & webhook access",
       "Priority lead routing",
       "Weekly performance analytics",
-      "FSM + AI integration",
     ],
   },
   {
-    name: "Crew",
-    subtitle: "Scale faster",
-    monthlyFee: 99,
-    keepRate: 0.65,
-    commissionCap: null,
-    seats: 10,
-    popular: false,
-    cta: "Get Crew",
-    apiAccess: true,
-    tier: "crew",
-    networkIncome: true,
-    networkRate: "1% L4 + bonuses",
-    features: [
-      "Up to 10 user seats",
-      "Keep 65% Network Bonus on every referral",
-      "Unlimited earnings",
-      "Network income: 1% from 4th-level referrals",
-      "2% bonus on your own jobs",
-      "API & webhook access",
-      "Priority lead routing",
-      "Bi-weekly strategy reviews",
-      "Custom FSM workflows",
-      "Advanced analytics & forecasting",
-    ],
-  },
-  {
-    name: "Company",
-    subtitle: "Most popular",
-    monthlyFee: 149,
+    name: "Business",
+    subtitle: "Scale your team",
+    monthlyFee: 249,
     keepRate: 0.72,
     commissionCap: null,
-    seats: 25,
-    popular: true,
-    cta: "Get Company",
+    seats: 8,
+    popular: false,
+    cta: "Get Business",
     apiAccess: true,
-    tier: "company",
-    networkIncome: true,
-    networkRate: "1.5% L3, 1% L4",
+    tier: "business",
     features: [
-      "Up to 25 user seats",
-      "Keep 72% Network Bonus on every referral",
-      "Unlimited earnings",
-      "Network income: 1.5% from L3 + 1% from L4",
-      "2% bonus on your own jobs",
-      "Dedicated API support",
+      "Everything in Pro, plus:",
+      "Up to 8 user seats",
+      "Keep 72% of every referral commission",
       "First-priority lead routing",
       "Monthly strategy reviews",
       "Co-marketing opportunities",
-      "Custom integrations",
-      "Revenue forecasting",
+      "Custom FSM workflows",
+      "Advanced analytics & forecasting",
     ],
   },
   {
     name: "Enterprise",
     subtitle: "Unlimited growth",
     monthlyFee: null,
-    keepRate: 0.78,
+    keepRate: null,
     commissionCap: null,
     seats: 999,
     popular: false,
     cta: "Contact Sales",
     apiAccess: true,
     tier: "enterprise",
-    networkIncome: true,
-    networkRate: "2% all levels",
     features: [
+      "Everything in Business, plus:",
       "Unlimited user seats",
-      "Keep up to 78% of every referral",
-      "Unlimited earnings",
-      "Network income: 2% from ALL downline levels",
-      "2% bonus on your own jobs",
+      "Negotiated keep rate",
       "Dedicated account manager",
       "White-label portal options",
       "Custom pricing & terms",
       "Integration development support",
       "Predictive revenue forecasting",
       "Exclusive partner events",
-      "Strategic partnership opportunities",
     ],
   },
 ];
@@ -239,11 +196,7 @@ const FAQS = [
   },
   {
     q: "How do I earn commissions?",
-    a: "When ProLnk generates a lead that closes, we charge a small platform fee (3-15% of job value). You earn a share of that fee as Network Bonus income — never out of what you would normally charge the customer. Scout earns 40% of the fee, Pro 55%, Crew 65%, Company 72%, Enterprise 78%. Plus earn network income when partners you refer complete jobs. Paid monthly, tracked in real time.",
-  },
-  {
-    q: "What is network income?",
-    a: "When you refer someone to ProLnk, you earn a percentage of their job commissions. Pro earns 0.5% from direct referrals. Crew earns from 4 levels deep. Company earns 1.5% from level 3 + 1% from level 4. Enterprise earns 2% from all downline levels.",
+    a: "When ProLnk generates a lead that closes, we take a small platform fee (3-12% of job value). You keep your tier's percentage of that fee — never out of what you would normally charge the customer. Scout keeps 54% of the fee, Pro keeps 65%, Business keeps 72%. ProLnk always retains a minimum 20% of the commission pool. Commissions are paid monthly and tracked in real time.",
   },
   {
     q: "Do I have to change how I run my business?",
@@ -278,21 +231,20 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 function ROICalculator() {
   const [jobsPerMonth, setJobsPerMonth] = useState([20]);
   const [avgJobValue, setAvgJobValue] = useState([1200]);
-  const [tier, setTier] = useState<"scout" | "pro" | "crew" | "company" | "enterprise">("pro");
+  const [tier, setTier] = useState<"scout" | "pro" | "business" | "enterprise">("pro");
 
   const tierData = {
-    scout: { keep: 0.40, fee: 0, cap: 500 },
-    pro: { keep: 0.55, fee: 49, cap: null },
-    crew: { keep: 0.65, fee: 99, cap: null },
-    company: { keep: 0.72, fee: 149, cap: null },
-    enterprise: { keep: 0.78, fee: 0, cap: null } // Custom pricing
+    scout: { keep: 0.54, fee: 99, cap: null },
+    pro: { keep: 0.65, fee: 149, cap: null },
+    business: { keep: 0.72, fee: 249, cap: null },
+    enterprise: { keep: 0.72, fee: 0, cap: null },
   };
   const t = tierData[tier];
   const platformFee = 0.10;
   const conversionRate = 0.15;
   const leadsGenerated = Math.round(jobsPerMonth[0] * conversionRate);
   const grossCommission = leadsGenerated * avgJobValue[0] * platformFee * t.keep;
-  const capped = t.cap ? Math.min(grossCommission, t.cap) : grossCommission;
+  const capped = grossCommission;
   const net = Math.max(0, capped - t.fee);
 
   return (
@@ -315,8 +267,8 @@ function ROICalculator() {
         </div>
       </div>
       <div className="flex gap-2 mb-6 flex-wrap">
-        {(["scout", "pro", "crew", "company", "enterprise"] as const).map((t) => {
-          const tierLabel = { scout: "Scout", pro: "Pro", crew: "Crew", company: "Company", enterprise: "Enterprise" }[t];
+        {(["scout", "pro", "business", "enterprise"] as const).map((t) => {
+          const tierLabel = { scout: "Scout", pro: "Pro", business: "Business", enterprise: "Enterprise" }[t];
           return (
             <button
               key={t}
@@ -352,7 +304,7 @@ function PricingSection() {
   const [activeTierIdx, setActiveTierIdx] = useState(1); // Pro by default
 
   const activeTier = PRICING_TIERS[activeTierIdx];
-  const baseFee = activeTier.monthlyFee ?? 299;
+  const baseFee = activeTier.monthlyFee ?? 0;
 
   const addOnTotal = ADD_ONS.reduce((sum, addon) => {
     const qty = selectedAddOns[addon.id] ?? 0;
@@ -393,7 +345,7 @@ function PricingSection() {
       </div>
 
       {/* Tier Cards */}
-      <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-14">
         {PRICING_TIERS.map((tier, idx) => (
           <div
             key={tier.name}
@@ -429,7 +381,9 @@ function PricingSection() {
             </div>
             <div className="flex items-center gap-1.5 mb-4 pb-4 border-b border-gray-100">
               <TrendingUp className="h-4 w-4 text-[#0A1628]" />
-              <span className="text-sm font-bold text-[#0A1628]">Keep {(tier.keepRate * 100).toFixed(0)}% of every referral</span>
+              <span className="text-sm font-bold text-[#0A1628]">
+                {tier.keepRate != null ? `Keep ${(tier.keepRate * 100).toFixed(0)}% of every referral` : "Negotiated keep rate"}
+              </span>
             </div>
             <ul className="space-y-2 mb-6 flex-1">
               {tier.features.map((feature) => (
@@ -548,15 +502,13 @@ function PricingSection() {
 // --- Partner Spotlight Section --------------------------------------------------
 const TIER_COLORS: Record<string, string> = {
   enterprise: "#7C3AED",
-  company: "#0A1628",
-  crew: "#1D4ED8",
-  pro: "#059669",
-  scout: "#6B7280",
+  business: "#0A1628",
+  pro: "#1D4ED8",
+  scout: "#059669",
 };
 const TIER_LABELS: Record<string, string> = {
   enterprise: "Enterprise",
-  company: "Company",
-  crew: "Crew",
+  business: "Business",
   pro: "Pro",
   scout: "Scout",
 };
@@ -669,10 +621,10 @@ function PartnerSpotlightSection() {
 
 // --- Tier badge config for success state --------------------------------------
 const TIER_BADGE_CONFIG: Record<string, { label: string; badge: string; color: string; bg: string; border: string }> = {
-  charter:  { label: "Charter Member",    badge: "MOST EXCLUSIVE",  color: "#7C3AED", bg: "bg-purple-50",  border: "border-purple-200" },
-  founding: { label: "Founding Member",   badge: "FOUNDING MEMBER", color: "#0A1628", bg: "bg-[#0A1628]/5", border: "border-[#0A1628]/20" },
-  level3:   { label: "Growth Member",      badge: "EARLY ADOPTER",   color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
-  level4:   { label: "Network Member",   badge: "PARTNER",         color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
+  business:   { label: "Business Member",  badge: "BUSINESS",       color: "#7C3AED", bg: "bg-purple-50",  border: "border-purple-200" },
+  pro:        { label: "Pro Member",       badge: "PRO MEMBER",     color: "#0A1628", bg: "bg-[#0A1628]/5", border: "border-[#0A1628]/20" },
+  scout:      { label: "Scout Member",     badge: "SCOUT",          color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
+  enterprise: { label: "Enterprise Member", badge: "ENTERPRISE",    color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
 };
 
 // --- Success State Component --------------------------------------------------
@@ -689,22 +641,21 @@ function SuccessState({
 }) {
   const tierKey = (() => {
     const label = (data.tierLabel ?? "").toLowerCase();
-    if (label.includes("charter")) return "charter";
-    if (label.includes("founding")) return "founding";
-    if (label.includes("level 3") || label.includes("level3")) return "level3";
-    if (label.includes("level 4") || label.includes("level4")) return "level4";
-    return "level4";
+    if (label.includes("enterprise")) return "enterprise";
+    if (label.includes("business")) return "business";
+    if (label.includes("pro")) return "pro";
+    return "scout";
   })();
-  const tierConf = TIER_BADGE_CONFIG[tierKey] ?? TIER_BADGE_CONFIG.level4;
+  const tierConf = TIER_BADGE_CONFIG[tierKey] ?? TIER_BADGE_CONFIG.scout;
   const referralCode = data.referralCode ?? "";
   const refUrl = `https://prolnk.xyz/join?ref=${referralCode}`;
   const trialEndDate = new Date();
   trialEndDate.setDate(trialEndDate.getDate() + 90);
   const trialEndStr = trialEndDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
-  const twitterText = `Just joined the ProLnk Founding Network! Get your charter spot at prolnk.xyz — only 2,125 contractors get in. Use my link to skip the line: ${refUrl}`;
-  const linkedinText = `Excited to join the ProLnk Founding Network as a ${tierConf.label}. ProLnk pays contractors 72% on every referral plus 4-level network income — 5 income streams total. Only 2,125 founding spots available. Claim yours: ${refUrl}`;
-  const smsText = `Hey! I just reserved my spot in the ProLnk Founding Network. Check it out: ${refUrl}`;
+  const twitterText = `Just joined the ProLnk Partner Network! Get your spot at prolnk.xyz — AI-powered home services referrals. Use my link: ${refUrl}`;
+  const linkedinText = `Excited to join ProLnk as a ${tierConf.label}. ProLnk pays contractors up to 72% of every referral commission — AI finds the leads in your job photos automatically. Claim your spot: ${refUrl}`;
+  const smsText = `Hey! I just reserved my spot in ProLnk — they pay you commissions from photos you already take at jobs. Check it out: ${refUrl}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(refUrl)}&summary=${encodeURIComponent(linkedinText)}`;
   const smsUrl = `sms:?body=${encodeURIComponent(smsText)}`;
@@ -716,7 +667,7 @@ function SuccessState({
         <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
           <CheckCircle className="w-8 h-8 text-green-600" />
         </div>
-        <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're in the founding network!</h2>
+        <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the ProLnk waitlist!</h2>
         <p className="text-gray-500 text-sm">Confirmation sent to {email}</p>
       </div>
 
@@ -743,8 +694,8 @@ function SuccessState({
           <div className="flex items-center gap-2">
             <Lock className="w-3.5 h-3.5 text-gray-500 shrink-0" />
             <div>
-              <div className="text-xs font-bold text-gray-900">$149/mo for life</div>
-              <div className="text-[10px] text-gray-500">Locked rate</div>
+              <div className="text-xs font-bold text-gray-900">Rate locked in</div>
+              <div className="text-[10px] text-gray-500">Based on your plan</div>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -762,7 +713,7 @@ function SuccessState({
         <p className="text-white font-semibold text-sm mb-1 flex items-center gap-2">
           <Users className="w-4 h-4 text-[#F5E642]" /> Your Referral Code
         </p>
-        <p className="text-white/50 text-xs mb-3">Every pro you invite counts toward your network income — 4 levels deep.</p>
+        <p className="text-white/50 text-xs mb-3">Share your link and move up the waitlist priority queue.</p>
 
         {/* Code copy row */}
         <div className="flex items-center gap-2 mb-2">
@@ -832,7 +783,7 @@ function SuccessState({
           {[
             { num: "1", title: "Complete your profile", desc: "Add your license, trade details, and service area", href: `/waitlist-status?ref=${referralCode}` },
             { num: "2", title: "Add your first home", desc: "Protect your own home in TrustyPro — it's included", href: `/trustypro/waitlist?ref=${btoa(email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase()}` },
-            { num: "3", title: "Invite 5 pros", desc: "Unlock Charter-level priority routing benefits", href: undefined },
+            { num: "3", title: "Invite 5 pros", desc: "Move up the waitlist and unlock priority routing benefits", href: undefined },
           ].map((step) => (
             <div key={step.num} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
               <div
@@ -1412,24 +1363,20 @@ export default function ProWaitlist() {
   const spotsUsed = totalSignups;
   const spotsRemaining = Math.max(0, TOTAL_NETWORK_SPOTS - totalSignups);
   const spotsPercent = Math.min(100, Math.round((spotsUsed / TOTAL_NETWORK_SPOTS) * 100));
-  const charterRemaining = Math.max(0, 25 - totalSignups);
-  const foundingRemaining = Math.max(0, 125 - totalSignups);
-  const level3Remaining = Math.max(0, 525 - totalSignups);
-  const currentTierLabel = totalSignups < 25 ? "Charter" : totalSignups < 125 ? "Founding" : totalSignups < 525 ? "Level 3" : "Level 4";
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>ProLnk — Join the AI-Powered Home Services Partner Network</title>
-        <meta name="description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system. DFW Texas, launching nationally." />
+        <meta name="description" content="Join the ProLnk Partner Network. Keep up to 72% of every referral commission. AI finds leads in your job photos automatically. DFW Texas, launching nationally." />
         <meta property="og:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
-        <meta property="og:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system. DFW Texas, launching nationally." />
+        <meta property="og:description" content="Join the ProLnk Partner Network. Keep up to 72% of every referral commission. AI finds leads in your job photos automatically. DFW Texas, launching nationally." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.xyz/pro-waitlist" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
-        <meta name="twitter:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system." />
+        <meta name="twitter:description" content="Join the ProLnk Partner Network. Keep up to 72% of every referral commission. AI finds leads in your job photos automatically." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.xyz/pro-waitlist" />
       </Helmet>
@@ -1505,7 +1452,7 @@ export default function ProWaitlist() {
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <span className="text-[#F5E642] text-xs font-black uppercase tracking-wider whitespace-nowrap">
-              {currentTierLabel} Tier Open
+              Waitlist Open
             </span>
             <div className="flex-1 bg-white/10 rounded-full h-1.5 overflow-hidden min-w-0">
               <div
@@ -1852,76 +1799,45 @@ export default function ProWaitlist() {
                 </span>
               </div>
 
-              {/* 4-Tier Founding Network Sidebar */}
+              {/* Pricing Tier Summary Sidebar */}
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
                 <div className="bg-[#0A1628] px-5 py-4">
-                  <h4 className="font-heading font-bold text-white text-sm">Founding Network Tiers</h4>
-                  <p className="text-white/50 text-xs mt-0.5">Join now — current tier: <span className="text-[#F5E642] font-semibold">{currentTierLabel}</span></p>
-                </div>
-                {/* Progress bar */}
-                <div className="px-5 py-3 border-b border-gray-100 bg-gray-50">
-                  <div className="flex justify-between text-xs text-gray-500 mb-1.5">
-                    <span>{totalSignups.toLocaleString()} joined</span>
-                    <span>{spotsRemaining.toLocaleString()} spots left</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                    <div
-                      className="h-2 rounded-full transition-all duration-700"
-                      style={{ width: `${spotsPercent}%`, backgroundColor: "#0A1628" }}
-                    />
-                  </div>
+                  <h4 className="font-heading font-bold text-white text-sm">Choose Your Plan</h4>
+                  <p className="text-white/50 text-xs mt-0.5">Flat monthly fee. No contracts. Cancel anytime.</p>
                 </div>
                 <div className="p-4 space-y-3">
                   {[
-                    { key: "charter",  label: "Charter",   spots: 25,   remaining: charterRemaining,  badge: "MOST EXCLUSIVE — only 25 total, ever",  color: "#7C3AED", textColor: "text-purple-700" },
-                    { key: "founding", label: "Founding",  spots: 100,  remaining: Math.max(0, foundingRemaining - charterRemaining <= 0 ? 0 : foundingRemaining), badge: "FOUNDING MEMBER", color: "#0A1628", textColor: "text-[#0A1628]" },
-                    { key: "level3",   label: "Level 3",   spots: 400,  remaining: Math.max(0, level3Remaining - foundingRemaining <= 0 ? 0 : level3Remaining),   badge: "EARLY ADOPTER",   color: "#1D4ED8", textColor: "text-blue-700" },
-                    { key: "level4",   label: "Level 4",   spots: 1600, remaining: Math.max(0, Math.min(1600, TOTAL_NETWORK_SPOTS - Math.max(totalSignups, 525))), badge: "PARTNER",         color: "#059669", textColor: "text-emerald-700" },
-                  ].map((tier) => {
-                    const isFull = tier.remaining === 0;
-                    return (
-                      <div
-                        key={tier.key}
-                        className={`rounded-xl p-3 border ${isFull ? "border-gray-200 bg-gray-50 opacity-60" : "border-gray-200 bg-white"}`}
-                      >
-                        <div className="flex items-start justify-between mb-1">
-                          <div className="flex-1 min-w-0 pr-2">
-                            <div className="flex items-center gap-1.5 mb-0.5 flex-wrap">
-                              <span className="font-heading font-bold text-gray-900 text-sm">{tier.label}</span>
-                              <span
-                                className="text-[8px] font-black tracking-wide uppercase px-1.5 py-0.5 rounded text-white leading-tight"
-                                style={{ backgroundColor: tier.color }}
-                              >
-                                {tier.badge}
-                              </span>
-                            </div>
-                            <div className="text-xs text-gray-400">{tier.spots} total spots · <span className="font-semibold text-gray-700">$149/mo</span></div>
-                          </div>
-                          <div className="text-right flex-shrink-0">
-                            {isFull ? (
-                              <span className="text-xs font-bold text-gray-400">FULL</span>
-                            ) : (
-                              <>
-                                <div className="text-base font-heading font-bold" style={{ color: tier.color }}>{tier.remaining}</div>
-                                <div className="text-[10px] text-gray-400">left</div>
-                              </>
-                            )}
-                          </div>
+                    { key: "scout",    label: "Scout",    fee: "$99/mo",   keep: "54% keep", seats: "1 seat",    color: "#059669" },
+                    { key: "pro",      label: "Pro",      fee: "$149/mo",  keep: "65% keep", seats: "3 seats",   color: "#1D4ED8" },
+                    { key: "business", label: "Business", fee: "$249/mo",  keep: "72% keep", seats: "8 seats",   color: "#0A1628" },
+                    { key: "enterprise", label: "Enterprise", fee: "Custom", keep: "Negotiated", seats: "Unlimited", color: "#7C3AED" },
+                  ].map((plan) => (
+                    <div key={plan.key} className="rounded-xl p-3 border border-gray-200 bg-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="text-[8px] font-black tracking-wide uppercase px-1.5 py-0.5 rounded text-white leading-tight"
+                            style={{ backgroundColor: plan.color }}
+                          >
+                            {plan.label}
+                          </span>
+                          <span className="font-semibold text-gray-900 text-sm">{plan.fee}</span>
+                        </div>
+                        <div className="text-xs text-gray-500 text-right">
+                          <span className="font-semibold text-gray-700">{plan.keep}</span>
+                          <span className="text-gray-400"> · {plan.seats}</span>
                         </div>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                   <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-1">
                     <p className="text-[10px] text-amber-800 leading-snug font-medium">
-                      These prices are locked in your membership agreement. Non-members pay $249/mo.
+                      ProLnk retains a minimum 20% of the commission pool on every closed job.
                     </p>
                   </div>
-                  <p className="text-[10px] text-gray-400 text-center leading-snug">
-                    Rates lock permanently once the founding network closes at 2,125 partners.
-                  </p>
                   <span onClick={openWaitlist} className="cursor-pointer block">
                     <button className="w-full py-2.5 text-sm font-bold bg-[#0A1628] text-white hover:opacity-90 transition-all rounded-lg">
-                      Claim Your Spot Now
+                      Join the Waitlist
                     </button>
                   </span>
                 </div>
@@ -1951,7 +1867,7 @@ export default function ProWaitlist() {
           </FadeUp>
           <FadeUp delay={0.15}>
             <p className="text-slate-400 text-lg mb-10 max-w-md mx-auto">
-              Free to apply. Start earning referral commissions from your first job.
+              Join the waitlist now. Start earning referral commissions from your first job.
             </p>
           </FadeUp>
           <FadeUp delay={0.25}>
@@ -1960,7 +1876,7 @@ export default function ProWaitlist() {
                 className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
                 style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
               >
-                Apply Now -- It's Free <ArrowRight className="h-5 w-5" />
+                Apply Now <ArrowRight className="h-5 w-5" />
               </button>
             </span>
           </FadeUp>
@@ -1999,3 +1915,4 @@ export default function ProWaitlist() {
     </div>
   );
 }
+

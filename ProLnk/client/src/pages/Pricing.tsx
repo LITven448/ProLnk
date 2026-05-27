@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ProLnkLogo } from "@/components/ProLnkLogo";
-import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star } from "lucide-react";
+import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star, Shield } from "lucide-react";
 
 // ─── Tier definitions ──────────────────────────────────────────────────────────
 // Three tiers + Enterprise. Keep rates: 54% / 65% / 72%.
@@ -86,6 +86,10 @@ const FAQS = [
     a: "ProLnk takes 3–12% of the completed job value as a platform fee (varies by trade type and job size — in line with typical industry referral rates). Of that pool, you keep your tier's percentage. ProLnk always retains a minimum of 20% to cover platform operations, AI analysis, and lead sourcing. You keep 100% of everything you charge the homeowner — the platform fee is collected separately.",
   },
   {
+    q: "Is there a background check requirement?",
+    a: "Yes. All ProLnk members are required to pass a background check before accessing leads. The one-time $35 fee is paid by you at onboarding — we use Checkr, the same service used by Uber, Lyft, and DoorDash. Once you submit your application, you'll receive an email with a secure link to complete the check. Most results come back within 24–48 hours. If your check clears, your account activates automatically. The $35 is a one-time cost — no annual renewal required.",
+  },
+  {
     q: "When do I get paid?",
     a: "ProLnk's AI tracks payments through to completion — whether the homeowner pays all at once, in installments, or on net-30/60/90 terms. Your commission is released once payment clears, not when the job is invoiced.",
   },
@@ -94,12 +98,16 @@ const FAQS = [
     a: "A job is marked complete when the homeowner confirms completion in the app or payment is received in full. Our AI monitors payment status in real time so your earnings are always up to date.",
   },
   {
+    q: "How do I access commercial jobs?",
+    a: "Commercial job access is available on the Business plan ($249/mo) and requires ProPass verification — a one-time credential check that confirms your commercial trade license and liability insurance coverage. Once verified, you unlock the commercial job board (Briefcase) where you can bid on larger commercial and multi-trade projects. Commercial jobs typically carry higher job values and ProLnk's commission rate reflects that accordingly.",
+  },
+  {
     q: "Can I upgrade my plan later?",
     a: "Yes. You can upgrade at any time and your new keep rate applies immediately to all future completed jobs. Downgrading is available at the end of your billing cycle.",
   },
   {
     q: "What is the 90-day free trial?",
-    a: "All plans include a 90-day free trial with no credit card required. You get full access to leads, AI matching, and platform features from day one. Billing begins on day 91.",
+    a: "All plans include a 90-day free trial with no credit card required for the subscription. The one-time $35 background check fee applies at the start of your trial. You get full platform access from day one and subscription billing begins on day 91.",
   },
   {
     q: "Is there a long-term contract?",
@@ -143,6 +151,17 @@ export default function Pricing() {
         <p className="text-white/60 text-lg max-w-xl mx-auto">
           AI-matched leads, real-time payment tracking, and commission rates that scale with your business.
         </p>
+      </section>
+
+      {/* Background check notice */}
+      <section className="max-w-3xl mx-auto px-6 pb-6">
+        <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+          <Shield className="w-5 h-5 text-[#0EA5E9] shrink-0 mt-0.5" />
+          <div>
+            <span className="text-sm font-semibold text-white/90">One-time $35 background check required for all plans.</span>
+            <span className="text-sm text-white/50 ml-1">Processed automatically through Checkr. Most results in 24–48 hours. Account activates the moment your check clears — no manual review needed.</span>
+          </div>
+        </div>
       </section>
 
       {/* Pricing cards */}
@@ -309,6 +328,8 @@ export default function Pricing() {
                 { label: "Advanced lead filters",  vals: ["—", "✓", "✓"] },
                 { label: "Custom territory",       vals: ["—", "—", "✓"] },
                 { label: "Dedicated account mgr",  vals: ["—", "—", "✓"] },
+                { label: "Commercial job access",   vals: ["—", "—", "✓ + ProPass"] },
+                { label: "Background check (one-time)", vals: ["$35", "$35", "$35"] },
                 { label: "90-day free trial",      vals: ["✓", "✓", "✓"] },
               ].map((row, i) => (
                 <tr key={i} className="hover:bg-white/[0.02]">

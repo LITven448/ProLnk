@@ -135,11 +135,25 @@ export const waitlistRouter = router({
           throw new TRPCError({ code: "CONFLICT", message: "This email is already registered on the ProLnk waitlist." });
         }
 
+
+      // Charter invite token — if provided and valid, force Charter tier
+      let forcedTier: string | null = null;
+      if (input.charterToken) {
+        const [[tokenRow]] = await (db as any).execute(sql\`
+          SELECT token, used, expiresAt FROM charterInvites WHERE token = \${input.charterToken} LIMIT 1
+        \`) as any;
+        if (tokenRow && !tokenRow.used && new Date(tokenRow.expiresAt) >= new Date()) {
+          forcedTier = "charter";
+          // Mark token as used
+          await (db as any).execute(sql\`UPDATE charterInvites SET used = 1 WHERE token = \${input.charterToken}\`);
+        }
+      }
+
         // Get current position
         const [countRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
         const currentCount = Number((countRows as any[])[0]?.cnt ?? 0);
         const position = currentCount + 1;
-        const tier = assignTier(position);
+        const tier = forcedTier ?? assignTier(position);
 
         // Generate unique referral code
         let referralCode = generateReferralCode();

@@ -17,11 +17,11 @@ import { Decimal } from "decimal.js";
 // the same commission package — tier only affects recruiting position, not rate.
 //
 // Platform fee: 6–15% of job value (varies by trade). Default assumption: 12%.
-// The completing pro keeps 72% of the platform fee on every job they complete.
+// The completing pro keeps their tier% of the platform fee on every job they complete.
 // Their upline earns network overrides from ProLnk's share (not from the pro's share).
 //
-// Stream 1 — Own job keep rate
-//   Completing pro: 72% of platform fee
+// Stream 1 — Own job keep rate (Business tier max)
+//   Core: 40% | Pro: 50% | Business: 60%
 //
 // Stream 2 — Network job overrides (% of platform fee, from ProLnk's share)
 //   Direct recruit (L1): 7%
@@ -30,10 +30,10 @@ import { Decimal } from "decimal.js";
 //   L3's recruit  (L4): 1%
 //
 // Platform minimum retention: 20% of platform fee after all commissions paid.
-// Check: 72% + 7% + 4% + 2% + 1% = 86% → ProLnk keeps 14% minimum ✓
+// Check (Business): 60% + 7% + 4% + 2% + 1% = 74% → ProLnk keeps 26% minimum ✓
 
 const COMMISSION_RATES = {
-  own_job:    new Decimal(0.72), // Pro keeps 72% of platform fee
+  own_job:    new Decimal(0.60), // Business tier: 60% of platform fee (Core 40%, Pro 50%)
   network_l1: new Decimal(0.07), // Direct recruit: 7%
   network_l2: new Decimal(0.04), // Two levels up: 4%
   network_l3: new Decimal(0.02), // Three levels up: 2%
@@ -194,7 +194,7 @@ export const commissionsRouter = router({
 
       const distributions: CommissionDistribution[] = [];
 
-      // Completing pro: 72% of platform fee
+      // Completing pro: keep rate (Business 60% / Pro 50% / Core 40%) of platform fee
       distributions.push({
         recipientUserId: sourceProId,
         payoutType: "own_job",
@@ -261,3 +261,4 @@ export const commissionsRouter = router({
       };
     }),
 });
+

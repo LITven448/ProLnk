@@ -29,6 +29,19 @@ export async function getDb() {
         charset: 'utf8mb4',
       });
       _db = drizzle(_pool);
+      // Ensure charterInvites table exists (idempotent)
+      await _pool!.query(`CREATE TABLE IF NOT EXISTS charterInvites (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        token VARCHAR(32) NOT NULL UNIQUE,
+        inviteeEmail VARCHAR(255),
+        inviteeName VARCHAR(255),
+        note TEXT,
+        expiresAt DATETIME NOT NULL,
+        used TINYINT(1) NOT NULL DEFAULT 0,
+        createdAt DATETIME DEFAULT NOW(),
+        INDEX idx_token (token)
+      )`).catch(() => {});
+
     } catch (e) {
       console.error("[DB] Failed to connect:", e);
       return null;

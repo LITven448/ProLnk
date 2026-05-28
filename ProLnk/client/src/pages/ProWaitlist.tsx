@@ -1726,88 +1726,11 @@ export default function ProWaitlist() {
       {/* -- 4. Pricing -- */}
       <section id="pricing" className="py-24 bg-white">
         <PricingSection />
-      </section>
 
-      {/* -- 5. Social Proof & Guarantee -- */}
-      <section id="guarantee" className="py-24" style={{ backgroundColor: "#FAFAF9" }}>
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-
-
-
-            {/* Guarantee + Founding Partner */}
-            <div className="space-y-6">
-              <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
-                <div className="text-4xl mb-4"></div>
-                <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-5">
-                  If you don't receive at least <strong className="text-white">3 qualified inbound leads</strong> in your first 30 days, we'll refund your first month. No questions asked.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "No contracts -- cancel anytime",
-                    "Refund issued within 5 business days",
-                    "Applies to first-time partners only",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="h-4 w-4 text-[#F5E642] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <span onClick={openWaitlist} className="cursor-pointer">
-                  <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
-                    Claim Your Spot 
-                  </button>
-                </span>
-              </div>
-
-              {/* Pricing Tier Summary Sidebar */}
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-                <div className="bg-[#0A1628] px-5 py-4">
-                  <h4 className="font-heading font-bold text-white text-sm">Choose Your Plan</h4>
-                  <p className="text-white/50 text-xs mt-0.5">Flat monthly fee. No contracts. Cancel anytime.</p>
-                </div>
-                <div className="p-4 space-y-3">
-                  {[
-                    { key: "core",     label: "Core",     fee: "$99/mo",   keep: "54% keep", seats: "1 seat",    color: "#059669" },
-                    { key: "pro",      label: "Pro",      fee: "$149/mo",  keep: "65% keep", seats: "3 seats",   color: "#1D4ED8" },
-                    { key: "business", label: "Business", fee: "$249/mo",  keep: "72% keep", seats: "8 seats",   color: "#0A1628" },
-                    { key: "enterprise", label: "Enterprise", fee: "Custom", keep: "Negotiated", seats: "Unlimited", color: "#7C3AED" },
-                  ].map((plan) => (
-                    <div key={plan.key} className="rounded-xl p-3 border border-gray-200 bg-white">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className="text-[8px] font-black tracking-wide uppercase px-1.5 py-0.5 rounded text-white leading-tight"
-                            style={{ backgroundColor: plan.color }}
-                          >
-                            {plan.label}
-                          </span>
-                          <span className="font-semibold text-gray-900 text-sm">{plan.fee}</span>
-                        </div>
-                        <div className="text-xs text-gray-500 text-right">
-                          <span className="font-semibold text-gray-700">{plan.keep}</span>
-                          <span className="text-gray-400"> · {plan.seats}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-1">
-                    <p className="text-[10px] text-amber-800 leading-snug font-medium">
-                      ProLnk retains a minimum 20% of the commission pool on every closed job.
-                    </p>
-                  </div>
-                  <span onClick={openWaitlist} className="cursor-pointer block">
-                    <button className="w-full py-2.5 text-sm font-bold bg-[#0A1628] text-white hover:opacity-90 transition-all rounded-lg">
-                      Join the Waitlist
-                    </button>
-                  </span>
-                </div>
-              </div>
-
-        
-      {/* Scout Standalone Subscription */}
+      {/* Scout Subscription — full width after pricing */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="container max-w-6xl mx-auto px-4">
+          {/* Scout Standalone Subscription */}
       <div className="max-w-4xl mx-auto mb-14">
         <div className="rounded-2xl border-2 border-[#0A1628] overflow-hidden">
           <div className="bg-[#0A1628] px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
@@ -1877,9 +1800,44 @@ export default function ProWaitlist() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </section>
 
-      {/* FAQ */}
+
+      {/* -- 5. Social Proof & Guarantee -- */}
+      <section id="guarantee" className="py-16" style={{ backgroundColor: "#FAFAF9" }}>
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div>
+              <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
+                <div className="text-4xl mb-4"></div>
+                <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-5">
+                  If you don't receive at least <strong className="text-white">3 qualified inbound leads</strong> in your first 30 days, we'll refund your first month. No questions asked.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "No contracts -- cancel anytime",
+                    "Refund issued within 5 business days",
+                    "Applies to first-time partners only",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                      <CheckCircle className="h-4 w-4 text-[#F5E642] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <span onClick={openWaitlist} className="cursor-pointer">
+                  <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
+                    Claim Your Spot 
+                  </button>
+                </span>
+              </div>
+              </div>
+
+
+              </div>
               <div id="faq">
                 <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">Common Questions</h3>
                 <div className="space-y-2">

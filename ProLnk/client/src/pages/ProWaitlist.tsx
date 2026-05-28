@@ -1726,125 +1726,116 @@ export default function ProWaitlist() {
       {/* -- 4. Pricing -- */}
       <section id="pricing" className="py-24 bg-white">
         <PricingSection />
+      </section>
 
-      {/* Scout Subscription — full width after pricing */}
+      {/* Scout Standalone Subscription */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="container max-w-6xl mx-auto px-4">
-          {/* Scout Standalone Subscription */}
-      <div className="max-w-4xl mx-auto mb-14">
-        <div className="rounded-2xl border-2 border-[#0A1628] overflow-hidden">
-          <div className="bg-[#0A1628] px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-0.5">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#F5E642]">Scout Subscription</span>
-                <span className="bg-[#F5E642]/20 text-[#F5E642] text-xs font-bold px-2.5 py-0.5 rounded-full">$99/mo standalone</span>
-              </div>
-              <h3 className="text-xl font-bold text-white">Not a service pro? Earn from every job you bring in.</h3>
-            </div>
-          </div>
-          <div className="p-6 md:p-8 bg-white">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                  Scouts find opportunities, onboard homeowners, and coordinate bids — without doing the work themselves.
-                  You earn origination rights on every property you bring to the network: <strong>1.5% of the platform fee
-                  on every job at that address, forever</strong> — even if you never touch it again.
-                </p>
-                <div className="space-y-3 mb-6">
-                  {[
-                    { label: "Permanent origination rights", detail: "1.5% of platform fee on every job at properties you onboard — forever" },
-                    { label: "Coordinate multi-trade bids", detail: "Scope the job, get homeowner approval, post to the Exchange with your margin built in" },
-                    { label: "Onboard homeowners to TrustyPro", detail: "Pre-move-in repairs, new construction walkthroughs, insurance inspections" },
-                    { label: "Referral commissions on closed jobs", detail: "Every time a job closes at a property you brought in, you earn" },
-                    { label: "Access the ProLnk Exchange job board", detail: "Post and coordinate large residential and commercial projects" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#0A1628]" />
-                      <div>
-                        <div className="text-sm font-semibold text-gray-900">{item.label}</div>
-                        <div className="text-xs text-gray-500 mt-0.5">{item.detail}</div>
-                      </div>
-                    </div>
-                  ))}
+          <div className="rounded-2xl border-2 border-[#0A1628] overflow-hidden">
+            <div className="bg-[#0A1628] px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#F5E642]">Scout Subscription</span>
+                  <span className="bg-[#F5E642]/20 text-[#F5E642] text-xs font-bold px-2.5 py-0.5 rounded-full">$99/mo standalone</span>
                 </div>
-                <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2">Built for</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Real estate agents", "Home inspectors", "Insurance adjusters", "Property managers", "GCs needing subs"].map((who) => (
-                      <span key={who} className="bg-white border border-gray-200 text-gray-600 text-xs px-2.5 py-1 rounded-full">{who}</span>
+                <h3 className="text-xl font-bold text-white">Not a service pro? Earn from every job you bring in.</h3>
+              </div>
+            </div>
+            <div className="p-6 md:p-8 bg-white">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                    Scouts find opportunities, onboard homeowners, and coordinate bids — without doing the work themselves.
+                    You earn origination rights on every property you bring to the network: <strong>1.5% of the platform fee
+                    on every job at that address, forever</strong> — even if you never touch it again.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    {[
+                      { label: "Permanent origination rights", detail: "1.5% of platform fee on every job at properties you onboard — forever" },
+                      { label: "Coordinate multi-trade bids", detail: "Scope the job, get homeowner approval, post to the Exchange with your margin built in" },
+                      { label: "Onboard homeowners to TrustyPro", detail: "Pre-move-in repairs, new construction walkthroughs, insurance inspections" },
+                      { label: "Referral commissions on closed jobs", detail: "Every time a job closes at a property you brought in, you earn" },
+                      { label: "Access the ProLnk Exchange job board", detail: "Post and coordinate large residential and commercial projects" },
+                      { label: "Scout dashboard", detail: "Track your properties, origination income, and active bid coordination in one place" },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#0A1628]" />
+                        <div>
+                          <div className="text-sm font-semibold text-gray-900">{item.label}</div>
+                          <div className="text-xs text-gray-500 mt-0.5">{item.detail}</div>
+                        </div>
+                      </div>
                     ))}
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                    <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2">Built for</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {["Real estate agents", "Home inspectors", "Insurance adjusters", "Property managers", "GCs needing subs"].map((who) => (
+                        <span key={who} className="bg-white border border-gray-200 text-gray-600 text-xs px-2.5 py-1 rounded-full">{who}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="bg-[#0A1628]/5 rounded-xl p-5 mb-4">
+                    <p className="text-xs font-semibold text-[#0A1628] uppercase tracking-wider mb-3">Origination income example</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      A Scout who onboards <strong>50 homes</strong>, each generating 2 jobs/year at $3,500 average,
+                      earns <strong className="text-[#0A1628]">$9,450/year in passive origination income</strong> — growing with every property added, compounding for the life of the platform.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))}
+                    className="w-full py-3.5 bg-[#0A1628] text-white font-bold text-sm tracking-wide hover:opacity-90 transition-opacity rounded-none mb-3"
+                  >
+                    Apply as Scout — $99/mo
+                  </button>
+                  <p className="text-center text-xs text-gray-400">90-day free trial · month-to-month · cancel anytime</p>
+                  <div className="mt-5 pt-5 border-t border-gray-100">
+                    <p className="text-xs text-gray-400 font-semibold mb-1">Already a service pro?</p>
+                    <p className="text-xs text-gray-500">Add TrustyPro Connect to your existing plan for $49/mo instead.</p>
                   </div>
                 </div>
               </div>
-              <div>
-                <div className="bg-[#0A1628]/5 rounded-xl p-5 mb-4">
-                  <p className="text-xs font-semibold text-[#0A1628] uppercase tracking-wider mb-3">Origination income example</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    A Scout who onboards <strong>50 homes</strong>, each generating 2 jobs/year at $3,500 average,
-                    earns <strong className="text-[#0A1628]">$9,450/year in passive origination income</strong> — 
-                    growing with every property added, compounding for the life of the platform.
-                  </p>
-                </div>
-                <button
-                  onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))}
-                  className="w-full py-3.5 bg-[#0A1628] text-white font-bold text-sm tracking-wide hover:opacity-90 transition-opacity rounded-none mb-3"
-                >
-                  Apply as Scout — $99/mo
-                </button>
-                <p className="text-center text-xs text-gray-400">90-day free trial · month-to-month · cancel anytime</p>
-                <div className="mt-5 pt-5 border-t border-gray-100">
-                  <p className="text-xs text-gray-400 font-semibold mb-1">Already a service pro?</p>
-                  <p className="text-xs text-gray-500">Add TrustyPro Connect to your existing plan for $49/mo instead of starting a separate subscription.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        </div>
       </section>
 
-
-      {/* -- 5. Social Proof & Guarantee -- */}
+      {/* -- 5. Guarantee & FAQ -- */}
       <section id="guarantee" className="py-16" style={{ backgroundColor: "#FAFAF9" }}>
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div>
-              <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
-                <div className="text-4xl mb-4"></div>
-                <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-5">
-                  If you don't receive at least <strong className="text-white">3 qualified inbound leads</strong> in your first 30 days, we'll refund your first month. No questions asked.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "No contracts -- cancel anytime",
-                    "Refund issued within 5 business days",
-                    "Applies to first-time partners only",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="h-4 w-4 text-[#F5E642] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <span onClick={openWaitlist} className="cursor-pointer">
-                  <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
-                    Claim Your Spot 
-                  </button>
-                </span>
-              </div>
-              </div>
-
-
-              </div>
-              <div id="faq">
-                <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">Common Questions</h3>
-                <div className="space-y-2">
-                  {FAQS.map((faq) => (
-                    <FAQItem key={faq.q} q={faq.q} a={faq.a} />
-                  ))}
-                </div>
+        <div className="container max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-5">
+                If you don't receive at least <strong className="text-white">3 qualified inbound leads</strong> in your first 30 days, we'll refund your first month. No questions asked.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  "No contracts -- cancel anytime",
+                  "Refund issued within 5 business days",
+                  "Applies to first-time partners only",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle className="h-4 w-4 text-[#F5E642] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <span onClick={openWaitlist} className="cursor-pointer">
+                <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
+                  Claim Your Spot
+                </button>
+              </span>
+            </div>
+            <div id="faq">
+              <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">Common Questions</h3>
+              <div className="space-y-2">
+                {FAQS.map((faq) => (
+                  <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+                ))}
               </div>
             </div>
           </div>

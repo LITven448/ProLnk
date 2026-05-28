@@ -4,7 +4,7 @@ import { ProLnkLogo } from "@/components/ProLnkLogo";
 import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star, Shield } from "lucide-react";
 
 // ─── Tier definitions ──────────────────────────────────────────────────────────
-// Three tiers + Enterprise. Keep rates: 54% / 65% / 72%.
+// Three tiers + Enterprise. Keep rates: 40% / 50% / 60%.
 // ProLnk always retains a minimum of 20% of the commission pool.
 // No founding network or cascade language anywhere on this page.
 
@@ -13,14 +13,14 @@ const TIERS = [
     id: "scout",
     name: "Scout",
     price: 99,
-    keep: 54,
+    keep: 40,
     tagline: "For solo pros getting started with AI-matched leads.",
     color: "#0EA5E9",
     popular: false,
     cta: "Start Free Trial",
     features: [
       "AI-matched homeowner leads in your service area",
-      "54% commission keep on every completed job",
+      "40% commission keep on every completed job",
       "PhotoScan AI — review job photos before accepting",
       "Storm alert leads — real-time weather damage notifications",
       "Partner directory listing",
@@ -33,14 +33,14 @@ const TIERS = [
     id: "pro",
     name: "Pro",
     price: 149,
-    keep: 65,
+    keep: 50,
     tagline: "For growing businesses that want more leads and a bigger cut.",
     color: "#14B8A6",
     popular: true,
     cta: "Start Free Trial",
     features: [
       "Everything in Scout, plus:",
-      "65% commission keep — 11 points more per job",
+      "50% commission keep — 10 points more per job",
       "Priority lead ranking over Scout members",
       "3 user seats — manage your team in one account",
       "ProLnk Exchange — bid on and post residential & commercial jobs",
@@ -51,14 +51,14 @@ const TIERS = [
     id: "business",
     name: "Business",
     price: 249,
-    keep: 72,
+    keep: 60,
     tagline: "For established companies running at full scale.",
     color: "#F59E0B",
     popular: false,
     cta: "Start Free Trial",
     features: [
       "Everything in Pro, plus:",
-      "72% commission keep — maximum rate on the platform",
+      "60% commission keep — maximum rate on the platform",
       "Top-tier lead ranking — highest priority in the algorithm",
       "8 user seats with role-based access",
       "Dedicated account manager",
@@ -317,7 +317,7 @@ export default function Pricing() {
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                { label: "Commission keep rate",   vals: ["54%", "65%", "72%"] },
+                { label: "Commission keep rate",   vals: ["40%", "50%", "60%"] },
                 { label: "Monthly price",          vals: ["$99", "$149", "$249"] },
                 { label: "User seats",             vals: ["1", "3", "8"] },
                 { label: "AI-matched leads",       vals: ["✓", "✓", "✓"] },
@@ -397,3 +397,4 @@ export default function Pricing() {
     </div>
   );
 }
+

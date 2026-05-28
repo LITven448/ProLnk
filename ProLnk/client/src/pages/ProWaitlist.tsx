@@ -13,7 +13,7 @@ import {
   ArrowRight, Zap, Camera, Menu, X, Shield, BadgeCheck, Play,
   Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
   Copy, Share2, Twitter, Linkedin, MessageSquare, Lock, Calendar,
-  User, Building2, Search,
+  User, Building2, Search, MapPin,
 } from "lucide-react";
 import { SERVICE_CATEGORIES, TIER_LABELS } from "@/data/serviceCategories";
 import { Button } from "@/components/ui/button";

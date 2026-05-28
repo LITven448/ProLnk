@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ProLnkLogo } from "@/components/ProLnkLogo";
-import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star, Shield, Search } from "lucide-react";
+import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star, Shield } from "lucide-react";
 
 // ─── Tier definitions ──────────────────────────────────────────────────────────
 // Three tiers + Enterprise. Keep rates: 54% / 65% / 72%.
@@ -10,8 +10,8 @@ import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarCh
 
 const TIERS = [
   {
-    id: "core",
-    name: "Core",
+    id: "scout",
+    name: "Scout",
     price: 99,
     keep: 54,
     tagline: "For solo pros getting started with AI-matched leads.",
@@ -39,9 +39,9 @@ const TIERS = [
     popular: true,
     cta: "Start Free Trial",
     features: [
-      "Everything in Core, plus:",
+      "Everything in Scout, plus:",
       "65% commission keep — 11 points more per job",
-      "Priority lead ranking over Core members",
+      "Priority lead ranking over Scout members",
       "3 user seats — manage your team in one account",
       "ProLnk Exchange — bid on and post residential & commercial jobs",
       "Advanced lead filters by trade, zip, and job size",
@@ -300,47 +300,6 @@ export default function Pricing() {
             </div>
           </div>
         </div>
-
-        {/* Scout Program */}
-        <div className="mt-6 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
-          <div className="flex flex-col md:flex-row md:items-center gap-6">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Search className="w-5 h-5 text-[#14B8A6]" />
-                <span className="text-sm font-bold uppercase tracking-widest text-[#14B8A6]">Scout Program</span>
-              </div>
-              <h3 className="text-xl font-black mb-2">Not a service pro? Earn from every job you bring in.</h3>
-              <p className="text-white/50 text-sm mb-4">
-                Scouts are real estate agents, home inspectors, insurance adjusters, and property managers who onboard homeowners and coordinate bids — without doing the work themselves. You earn origination rights on every property you bring to the network: 1.5% of the platform fee on every job completed at that address, forever.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
-                {[
-                  "Onboard homeowners to TrustyPro",
-                  "Coordinate bids on large projects",
-                  "Earn 1.5% origination rights permanently",
-                  "Pre-move-in repair coordination",
-                  "Post jobs to the ProLnk Exchange",
-                  "Referral commissions on completed jobs",
-                  "One-time $35 background check",
-                  "Service pros can add Scout as an add-on",
-                ].map((feat, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
-                    <span className="text-sm text-white/60">{feat}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-white/30">$49/mo · Already a service pro? Add Scout to your existing plan for $39/mo.</p>
-            </div>
-            <div className="shrink-0">
-              <Link href="/apply">
-                <button className="border border-[#14B8A6] text-[#14B8A6] font-bold px-6 py-3 rounded-xl text-sm hover:bg-[#14B8A6]/10 transition-colors">
-                  Apply as Scout
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Feature comparison table */}
@@ -438,4 +397,3 @@ export default function Pricing() {
     </div>
   );
 }
-

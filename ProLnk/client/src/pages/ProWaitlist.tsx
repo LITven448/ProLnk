@@ -24,19 +24,19 @@ import { Badge } from "@/components/ui/badge";
 // Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
 // Hero/final CTA bg: #050d1a
 
-// --- Pricing -- Scout $99/54%, Pro $149/65%, Business $249/72%, Enterprise custom ------
+// --- Pricing -- Core $99/54%, Pro $149/65%, Business $249/72%, Enterprise custom ------
 const PRICING_TIERS = [
   {
-    name: "Scout",
+    name: "Core",
     subtitle: "Start earning",
     monthlyFee: 99,
     keepRate: 0.54,
     commissionCap: null,
     seats: 1,
     popular: false,
-    cta: "Get Scout",
+    cta: "Get Core",
     apiAccess: false,
-    tier: "scout",
+    tier: "core",
     features: [
       "1 user seat",
       "AI opportunity detection on all jobs",
@@ -59,7 +59,7 @@ const PRICING_TIERS = [
     apiAccess: true,
     tier: "pro",
     features: [
-      "Everything in Scout, plus:",
+      "Everything in Core, plus:",
       "Up to 3 user seats",
       "Keep 65% of every referral commission",
       "API & webhook access",
@@ -196,7 +196,7 @@ const FAQS = [
   },
   {
     q: "How do I earn commissions?",
-    a: "When ProLnk generates a lead that closes, we take a small platform fee (3-12% of job value). You keep your tier's percentage of that fee — never out of what you would normally charge the customer. Scout keeps 54% of the fee, Pro keeps 65%, Business keeps 72%. ProLnk always retains a minimum 20% of the commission pool. Commissions are paid monthly and tracked in real time.",
+    a: "When ProLnk generates a lead that closes, we take a small platform fee (3-12% of job value). You keep your tier's percentage of that fee — never out of what you would normally charge the customer. Core keeps 54% of the fee, Pro keeps 65%, Business keeps 72%. ProLnk always retains a minimum 20% of the commission pool. Commissions are paid monthly and tracked in real time.",
   },
   {
     q: "Do I have to change how I run my business?",
@@ -231,10 +231,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 function ROICalculator() {
   const [jobsPerMonth, setJobsPerMonth] = useState([20]);
   const [avgJobValue, setAvgJobValue] = useState([1200]);
-  const [tier, setTier] = useState<"scout" | "pro" | "business" | "enterprise">("pro");
+  const [tier, setTier] = useState<"core" | "pro" | "business" | "enterprise">("pro");
 
   const tierData = {
-    scout: { keep: 0.54, fee: 99, cap: null },
+    core: { keep: 0.54, fee: 99, cap: null },
     pro: { keep: 0.65, fee: 149, cap: null },
     business: { keep: 0.72, fee: 249, cap: null },
     enterprise: { keep: 0.72, fee: 0, cap: null },
@@ -267,8 +267,8 @@ function ROICalculator() {
         </div>
       </div>
       <div className="flex gap-2 mb-6 flex-wrap">
-        {(["scout", "pro", "business", "enterprise"] as const).map((t) => {
-          const tierLabel = { scout: "Scout", pro: "Pro", business: "Business", enterprise: "Enterprise" }[t];
+        {(["core", "pro", "business", "enterprise"] as const).map((t) => {
+          const tierLabel = { core: "Core", pro: "Pro", business: "Business", enterprise: "Enterprise" }[t];
           return (
             <button
               key={t}
@@ -504,13 +504,13 @@ const TIER_COLORS: Record<string, string> = {
   enterprise: "#7C3AED",
   business: "#0A1628",
   pro: "#1D4ED8",
-  scout: "#059669",
+  core: "#059669",
 };
 const TIER_LABELS: Record<string, string> = {
   enterprise: "Enterprise",
   business: "Business",
   pro: "Pro",
-  scout: "Scout",
+  core: "Core",
 };
 
 function PartnerSpotlightSection() {
@@ -623,7 +623,7 @@ function PartnerSpotlightSection() {
 const TIER_BADGE_CONFIG: Record<string, { label: string; badge: string; color: string; bg: string; border: string }> = {
   business:   { label: "Business Member",  badge: "BUSINESS",       color: "#7C3AED", bg: "bg-purple-50",  border: "border-purple-200" },
   pro:        { label: "Pro Member",       badge: "PRO MEMBER",     color: "#0A1628", bg: "bg-[#0A1628]/5", border: "border-[#0A1628]/20" },
-  scout:      { label: "Scout Member",     badge: "SCOUT",          color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
+  core:       { label: "Core Member",      badge: "CORE",           color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
   enterprise: { label: "Enterprise Member", badge: "ENTERPRISE",    color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
 };
 
@@ -644,9 +644,9 @@ function SuccessState({
     if (label.includes("enterprise")) return "enterprise";
     if (label.includes("business")) return "business";
     if (label.includes("pro")) return "pro";
-    return "scout";
+    return "core";
   })();
-  const tierConf = TIER_BADGE_CONFIG[tierKey] ?? TIER_BADGE_CONFIG.scout;
+  const tierConf = TIER_BADGE_CONFIG[tierKey] ?? TIER_BADGE_CONFIG.core;
   const referralCode = data.referralCode ?? "";
   const refUrl = `https://prolnk.xyz/join?ref=${referralCode}`;
   const trialEndDate = new Date();
@@ -1807,7 +1807,7 @@ export default function ProWaitlist() {
                 </div>
                 <div className="p-4 space-y-3">
                   {[
-                    { key: "scout",    label: "Scout",    fee: "$99/mo",   keep: "54% keep", seats: "1 seat",    color: "#059669" },
+                    { key: "core",     label: "Core",     fee: "$99/mo",   keep: "54% keep", seats: "1 seat",    color: "#059669" },
                     { key: "pro",      label: "Pro",      fee: "$149/mo",  keep: "65% keep", seats: "3 seats",   color: "#1D4ED8" },
                     { key: "business", label: "Business", fee: "$249/mo",  keep: "72% keep", seats: "8 seats",   color: "#0A1628" },
                     { key: "enterprise", label: "Enterprise", fee: "Custom", keep: "Negotiated", seats: "Unlimited", color: "#7C3AED" },
@@ -1915,4 +1915,5 @@ export default function ProWaitlist() {
     </div>
   );
 }
+
 

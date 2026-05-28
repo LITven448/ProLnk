@@ -138,18 +138,24 @@ export const waitlistRouter = router({
 
       // Charter invite token — if provided and valid, force Charter tier
       let forcedTier: string | null = null;
-      if (input.charterToken) {
-        const [[tokenRow]] = await (db as any).execute(sql\`
-          SELECT token, used, expiresAt FROM charterInvites WHERE token = \${input.charterToken} LIMIT 1
-        \`) as any;
-        if (tokenRow && !tokenRow.used && new Date(tokenRow.expiresAt) >= new Date()) {
-          forcedTier = "charter";
-          // Mark token as used
-          await (db as any).execute(sql\`UPDATE charterInvites SET used = 1 WHERE token = \${input.charterToken}\`);
-        }
+
+      // Charter slug recruiter — anyone referred by Andrew's link gets Charter tier (up to 25 cap)
+      const CHARTER_RECRUITER_SLUGS = ["andrew-frakes"];
+      const CHARTER_RECRUITER_CODES = ["Z3YYJP7"];
+      const referrerSlug = (input.referredBy ?? "").toLowerCase();
+      const isCharterRecruiter =
+        CHARTER_RECRUITER_SLUGS.includes(referrerSlug) ||
+        CHARTER_RECRUITER_CODES.includes((input.referredBy ?? "").toUpperCase());
+
+      if (isCharterRecruiter) {
+        const [[charterCountRow]] = await (db as any).execute(
+          sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE tier = 'charter'`
+        ) as any;
+        const charterUsed = Number(charterCountRow?.cnt ?? 0);
+        if (charterUsed < 25) forcedTier = "charter";
       }
 
-        // Get current position
+            // Get current position
         const [countRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
         const currentCount = Number((countRows as any[])[0]?.cnt ?? 0);
         const position = currentCount + 1;

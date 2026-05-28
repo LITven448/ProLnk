@@ -129,6 +129,18 @@ const ADD_ONS = [
     unitMax: 20,
   },
   {
+    id: "extra-zipcodes",
+    name: "Extra Zip Codes",
+    price: 19,
+    unit: "per zip/mo",
+    description: "Expand your lead coverage beyond your base service area. Each additional zip code opens AI matching and Exchange visibility in that territory.",
+    icon: MapPin,
+    perUnit: true,
+    unitLabel: "zip codes",
+    unitMin: 1,
+    unitMax: 20,
+  },
+  {
     id: "priority-routing",
     name: "Priority Routing",
     price: 29,
@@ -155,15 +167,7 @@ const ADD_ONS = [
     icon: Star,
     perUnit: false,
   },
-  {
-    id: "preferred-routing",
-    name: "Preferred Routing",
-    price: 99,
-    unit: "/mo",
-    description: "Get first-look on every lead in your selected zip codes for 24 hours before the general queue. Competitors still receive the same leads.",
-    icon: TrendingUp,
-    perUnit: false,
-  },
+
   {
     id: "co-marketing",
     name: "Co-Marketing Package",
@@ -200,11 +204,11 @@ const FAQS = [
   },
   {
     q: "Do I have to change how I run my business?",
-    a: "No. Upload 1-3 photos after each job. It takes 60 seconds. The AI does everything else -- detection, routing, tracking. Your existing workflow stays the same.",
+    a: "No. Take 3 photos before the job starts and 3 photos when the job is complete — that's it. You can do this directly through your integrated field service management software (Jobber, HCP, ServiceTitan, and others). We also automatically extract photos from your existing job history so the AI starts working from day one, even before your first new job on the platform. The AI handles everything else: detection, opportunity routing, payment tracking.",
   },
   {
     q: "How long does approval take?",
-    a: "Most applications are reviewed within 1-2 business days. Once approved, you can start uploading jobs and receiving leads immediately.",
+    a: "It depends on your qualifications. If you have an complete application — active trade license, current general liability insurance, a passed background check, and you're applying in an area where your service type is in high demand — you could be approved instantly. In most cases it takes 1–2 business days. Incomplete applications or missing documentation will delay your approval.",
   },
 ];
 
@@ -1729,48 +1733,7 @@ export default function ProWaitlist() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
 
-            {/* Testimonials */}
-            <div>
-              <h2 className="text-3xl font-heading font-bold text-gray-900 mb-8">What Partners Say</h2>
-              <div className="space-y-5">
-                {[
-                  {
-                    name: "Marcus T.",
-                    business: "Green Edge Landscaping",
-                    quote: "I uploaded gate photos from a pet waste job and within an hour had a lead for a full backyard landscaping project. Closed it for $2,400.",
-                    tier: "Pro",
-                  },
-                  {
-                    name: "Sarah K.",
-                    business: "Paws & Play Dog Walking",
-                    quote: "My team takes photos at every visit anyway. Now those photos are generating referral income I didn't have before. Completely passive.",
-                    tier: "Pro",
-                  },
-                  {
-                    name: "David R.",
-                    business: "AquaClear Pool Services",
-                    quote: "The AI caught a broken fence panel in a photo I didn't even notice. The fence company closed the job and I got a commission check.",
-                    tier: "Starter",
-                  },
-                ].map((t) => (
-                  <div key={t.name} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-[#F5E642] text-[#F5E642]" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.quote}"</p>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
-                        <div className="text-xs text-gray-400">{t.business}</div>
-                      </div>
-                      <span className="text-xs font-bold px-2 py-1 bg-gray-100 text-gray-600 rounded">{t.tier}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+
 
             {/* Guarantee + Founding Partner */}
             <div className="space-y-6">

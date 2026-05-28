@@ -24,13 +24,13 @@ import { Badge } from "@/components/ui/badge";
 // Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
 // Hero/final CTA bg: #050d1a
 
-// --- Pricing -- Core $99/54%, Pro $149/65%, Business $249/72%, Enterprise custom ------
+// --- Pricing -- Core $99/40%, Pro $149/50%, Business $249/60%, Enterprise custom ------
 const PRICING_TIERS = [
   {
     name: "Core",
     subtitle: "Start earning",
     monthlyFee: 99,
-    keepRate: 0.54,
+    keepRate: 0.40,
     commissionCap: null,
     seats: 1,
     popular: false,
@@ -42,7 +42,7 @@ const PRICING_TIERS = [
       "AI opportunity detection on all jobs",
       "Commission tracking dashboard",
       "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Keep 54% of every referral commission",
+      "Keep 40% of every referral commission",
       "Event-driven leads (storm, aging, recalls)",
       "Mobile app access",
     ],
@@ -51,7 +51,7 @@ const PRICING_TIERS = [
     name: "Pro",
     subtitle: "Most popular",
     monthlyFee: 149,
-    keepRate: 0.65,
+    keepRate: 0.50,
     commissionCap: null,
     seats: 3,
     popular: true,
@@ -61,7 +61,7 @@ const PRICING_TIERS = [
     features: [
       "Everything in Core, plus:",
       "Up to 3 user seats",
-      "Keep 65% of every referral commission",
+      "Keep 50% of every referral commission",
       "API & webhook access",
       "Priority lead routing",
       "Weekly performance analytics",
@@ -71,7 +71,7 @@ const PRICING_TIERS = [
     name: "Business",
     subtitle: "Scale your team",
     monthlyFee: 249,
-    keepRate: 0.72,
+    keepRate: 0.60,
     commissionCap: null,
     seats: 8,
     popular: false,
@@ -81,7 +81,7 @@ const PRICING_TIERS = [
     features: [
       "Everything in Pro, plus:",
       "Up to 8 user seats",
-      "Keep 72% of every referral commission",
+      "Keep 60% of every referral commission",
       "First-priority lead routing",
       "Monthly strategy reviews",
       "Co-marketing opportunities",
@@ -200,7 +200,7 @@ const FAQS = [
   },
   {
     q: "How do I earn commissions?",
-    a: "When ProLnk generates a lead that closes, we take a small platform fee (3-12% of job value). You keep your tier's percentage of that fee — never out of what you would normally charge the customer. Core keeps 54% of the fee, Pro keeps 65%, Business keeps 72%. ProLnk always retains a minimum 20% of the commission pool. Commissions are paid monthly and tracked in real time.",
+    a: "When ProLnk generates a lead that closes, we take a small platform fee (3-12% of job value). You keep your tier's percentage of that fee — never out of what you would normally charge the customer. Core keeps 40% of the fee, Pro keeps 50%, Business keeps 60%. ProLnk always retains a minimum 20% of the commission pool. Commissions are paid monthly and tracked in real time.",
   },
   {
     q: "Do I have to change how I run my business?",
@@ -238,10 +238,10 @@ function ROICalculator() {
   const [tier, setTier] = useState<"core" | "pro" | "business" | "enterprise">("pro");
 
   const tierData = {
-    core: { keep: 0.54, fee: 99, cap: null },
-    pro: { keep: 0.65, fee: 149, cap: null },
-    business: { keep: 0.72, fee: 249, cap: null },
-    enterprise: { keep: 0.72, fee: 0, cap: null },
+    core: { keep: 0.40, fee: 99, cap: null },
+    pro: { keep: 0.50, fee: 149, cap: null },
+    business: { keep: 0.60, fee: 249, cap: null },
+    enterprise: { keep: 0.60, fee: 0, cap: null },
   };
   const t = tierData[tier];
   const platformFee = 0.10;
@@ -658,7 +658,7 @@ function SuccessState({
   const trialEndStr = trialEndDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
   const twitterText = `Just joined the ProLnk Partner Network! Get your spot at prolnk.xyz — AI-powered home services referrals. Use my link: ${refUrl}`;
-  const linkedinText = `Excited to join ProLnk as a ${tierConf.label}. ProLnk pays contractors up to 72% of every referral commission — AI finds the leads in your job photos automatically. Claim your spot: ${refUrl}`;
+  const linkedinText = `Excited to join ProLnk as a ${tierConf.label}. ProLnk pays contractors up to 60% of every referral commission — AI finds the leads in your job photos automatically. Claim your spot: ${refUrl}`;
   const smsText = `Hey! I just reserved my spot in ProLnk — they pay you commissions from photos you already take at jobs. Check it out: ${refUrl}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(refUrl)}&summary=${encodeURIComponent(linkedinText)}`;
@@ -1372,15 +1372,15 @@ export default function ProWaitlist() {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>ProLnk — Join the AI-Powered Home Services Partner Network</title>
-        <meta name="description" content="Join the ProLnk Partner Network. Keep up to 72% of every referral commission. AI finds leads in your job photos automatically. DFW Texas, launching nationally." />
+        <meta name="description" content="Join the ProLnk Partner Network. Keep up to 60% of every referral commission. AI finds leads in your job photos automatically. DFW Texas, launching nationally." />
         <meta property="og:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
-        <meta property="og:description" content="Join the ProLnk Partner Network. Keep up to 72% of every referral commission. AI finds leads in your job photos automatically. DFW Texas, launching nationally." />
+        <meta property="og:description" content="Join the ProLnk Partner Network. Keep up to 60% of every referral commission. AI finds leads in your job photos automatically. DFW Texas, launching nationally." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.xyz/pro-waitlist" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
-        <meta name="twitter:description" content="Join the ProLnk Partner Network. Keep up to 72% of every referral commission. AI finds leads in your job photos automatically." />
+        <meta name="twitter:description" content="Join the ProLnk Partner Network. Keep up to 60% of every referral commission. AI finds leads in your job photos automatically." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.xyz/pro-waitlist" />
       </Helmet>
@@ -1746,12 +1746,12 @@ export default function ProWaitlist() {
                 <div className="lg:col-span-2">
                   <p className="text-gray-600 text-sm leading-relaxed mb-5">
                     Scouts find opportunities, onboard homeowners, and coordinate bids — without doing the work themselves.
-                    You earn origination rights on every property you bring to the network: <strong>1.5% of the platform fee
+                    You earn origination rights on every property you bring to the network: <strong>5% of the platform fee
                     on every job at that address, forever</strong> — even if you never touch it again.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-3 mb-6">
                     {[
-                      { label: "Permanent origination rights", detail: "1.5% of platform fee on every job at properties you onboard — forever" },
+                      { label: "Permanent origination rights", detail: "5% of platform fee on every job at properties you onboard — forever" },
                       { label: "Coordinate multi-trade bids", detail: "Scope the job, get homeowner approval, post to the Exchange with your margin built in" },
                       { label: "Onboard homeowners to TrustyPro", detail: "Pre-move-in repairs, new construction walkthroughs, insurance inspections" },
                       { label: "Referral commissions on closed jobs", detail: "Every time a job closes at a property you brought in, you earn" },
@@ -1780,7 +1780,7 @@ export default function ProWaitlist() {
                   <div className="bg-[#0A1628]/5 rounded-xl p-5 mb-4">
                     <p className="text-xs font-semibold text-[#0A1628] uppercase tracking-wider mb-3">Origination income example</p>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      A Scout who onboards <strong>50 homes</strong>, each generating 2 jobs/year at $3,500 average,
+                      A Scout who onboards <strong>200 homes</strong>, each generating 3 jobs/year at $3,500 average,
                       earns <strong className="text-[#0A1628]">$9,450/year in passive origination income</strong> — growing with every property added, compounding for the life of the platform.
                     </p>
                   </div>
@@ -1900,5 +1900,6 @@ export default function ProWaitlist() {
     </div>
   );
 }
+
 
 

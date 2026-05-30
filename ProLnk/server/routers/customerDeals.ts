@@ -282,6 +282,10 @@ export const customerDealsRouter = router({
     }),
 
   // -- Public: Homeowner signs the deal (e-signature capture) -----------------
+  // SECURITY TODO: publicProcedure is intentional -- the homeowner signing is not a
+  // logged-in user; the unguessable deal `token` is the only auth. Consider rate-limiting
+  // by token and validating token entropy. Do NOT convert to protectedProcedure (would
+  // break the public CustomerDealPage signing flow).
   saveSignature: publicProcedure
     .input(z.object({
       token: z.string(),
@@ -491,6 +495,10 @@ export const customerDealsRouter = router({
 
   // -- Public: Homeowner confirms job is done (triggers commission release) --------
   // Patent Core: commission triggers ONLY when homeowner confirms, not when partner reports
+  // SECURITY TODO: publicProcedure is intentional -- the homeowner confirming is not a
+  // logged-in user; the unguessable deal `token` is the only auth. Consider rate-limiting
+  // by token. Do NOT convert to protectedProcedure (would break the public CustomerDealPage
+  // confirmation flow).
   confirmJobDone: publicProcedure
     .input(z.object({
       token: z.string(),

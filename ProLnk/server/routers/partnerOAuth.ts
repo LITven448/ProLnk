@@ -11,6 +11,34 @@ function generateReferralCode(): string {
   return crypto.randomBytes(3).toString("hex").toUpperCase();
 }
 
+interface VerifiedGoogleToken {
+  sub: string;
+  email: string;
+  aud: string;
+}
+
+async function verifyGoogleIdToken(idToken: string): Promise<VerifiedGoogleToken | null> {
+  if (!idToken) return null;
+  try {
+    const resp = await fetch(
+      `https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(idToken)}`
+    );
+    if (!resp.ok) return null;
+    const data = (await resp.json()) as {
+      sub?: string;
+      email?: string;
+      aud?: string;
+      email_verified?: string | boolean;
+    };
+    if (!data.sub || !data.email) return null;
+    if (data.email_verified === "false" || data.email_verified === false) return null;
+    return { sub: data.sub, email: data.email, aud: data.aud ?? "" };
+  } catch (err) {
+    console.error("[partnerOAuth] Google token verification failed:", err);
+    return null;
+  }
+}
+
 export const partnerOAuthRouter = router({
   // Get Google OAuth redirect URL for partner signup
   getGoogleAuthUrl: publicProcedure
@@ -43,6 +71,7 @@ export const partnerOAuthRouter = router({
   createPartnerProfile: publicProcedure
     .input(
       z.object({
+        idToken: z.string(),
         googleId: z.string(),
         email: z.string().email(),
         name: z.string(),
@@ -51,9 +80,22 @@ export const partnerOAuthRouter = router({
       })
     )
     .mutation(async ({ input }) => {
-      const { googleId, email, name, businessName, businessType } = input;
+      const { idToken, googleId, email, name, businessName, businessType } = input;
+
+      const verified = await verifyGoogleIdToken(idToken);
+      if (!verified) {
+        throw new Error("Invalid Google identity token");
+      }
+      if (verified.sub !== googleId || verified.email.toLowerCase() !== email.toLowerCase()) {
+        throw new Error("Identity token does not match supplied account");
+      }
+      if (GOOGLE_CLIENT_ID && verified.aud !== GOOGLE_CLIENT_ID) {
+        throw new Error("Identity token issued for a different client");
+      }
 
       try {
+        const db = await getDb();
+        if (!db) throw new Error("Database unavailable");
         // Check if partner profile exists
         const existing = await db.query.partners.findFirst({
           where: (partners, { eq }) => eq(partners.contactEmail, email),

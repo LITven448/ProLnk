@@ -19,6 +19,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { webhookRouter } from "../webhooks";
+import { fsmWebhookRouter } from "../fsm-webhooks";
 import { registerN8nWebhooks } from "../webhooks/n8n";
 import { handleStripeWebhook } from "../routers/stripe";
 import { handleCheckrWebhook } from "../routers/checkr";
@@ -118,6 +119,15 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Webhook receivers for external integrations
   app.use("/api/webhooks", webhookRouter);
+  // FSM job-complete / commission auto-close webhooks (Jobber, Housecall Pro, Workiz,
+  // Service Fusion, FieldEdge). Mounted under a distinct prefix to avoid colliding with
+  // the existing /api/webhooks/jobber handler. Routes: /api/fsm-webhooks/{jobber,housecall-pro,...}
+  app.use("/api/fsm-webhooks", fsmWebhookRouter);
+  // Swallow any error thrown out of the FSM router with a 200 ack to avoid partner retry storms
+  app.use("/api/fsm-webhooks", (err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+    console.error("[FSM Webhook] handler error:", err);
+    if (!res.headersSent) res.status(200).json({ received: true });
+  });
   // Checkr background-check result webhook (auto-activates partners on clear)
   app.post("/api/checkr/webhook", async (req, res) => {
     try {

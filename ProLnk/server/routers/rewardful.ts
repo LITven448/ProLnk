@@ -72,6 +72,9 @@ export const rewardfulRouter = router({
       };
     }),
 
+  // SECURITY TODO: left as publicProcedure -- this is a pure URL-string builder with no
+  // DB write, no PII, and no state change, so gating it adds no security value and could
+  // break public callers. Revisit only if affiliate codes become sensitive/issued server-side.
   createAffiliateLink: publicProcedure
     .input(z.object({ code: z.string() }))
     .mutation(({ input }) => {

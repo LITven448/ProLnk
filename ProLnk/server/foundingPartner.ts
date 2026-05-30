@@ -7,12 +7,12 @@
  *
  * WHAT FOUNDING PARTNERS GET:
  * 1. Locked rate: $149/month forever (gets the $249/month feature set)
- * 2. Maximum commission keep rate on their own jobs (72% = Enterprise rate)
+ * 2. Maximum commission keep rate on their own jobs (60% = founding network max)
  * 3. Network job commissions from 4 levels deep:
  *    L1=7%, L2=4%, L3=2%, L4=1% of platform fee per closed job
  * 4. Network subscription commissions from 4 levels deep:
  *    L1=12%, L2=6%, L3=3%, L4=1.5% of monthly subscription fee
- * 5. Home origination rights: 1.5% of platform fee on every job
+ * 5. Home origination rights: 5% of platform fee on every job
  *    at any address they were first to document — forever
  * 6. Priority lead routing (highest PPS weight)
  * 7. TrustyPro Verified Badge (top tier)
@@ -29,9 +29,9 @@
  * - Active participation (feedback, jobs, referrals)
  *
  * COMMISSION MATH:
- * ProLnk platform fee is 6-15% of job value (varies by trade).
+ * ProLnk platform fee is 3-12% of job value (varies by trade).
  * From that fee:
- *   → Doing pro keeps their tier rate (40-72%)
+ *   → Doing pro keeps their tier rate (40-60%)
  *   → Network cuts come from ProLnk's remaining share
  *   → Cuts do NOT reduce what the doing pro earned
  *
@@ -66,8 +66,8 @@ export const FOUNDING_PARTNER_RATES = {
     level3: 0.03,   // 3% of base subscription
     level4: 0.015,  // 1.5% of base subscription
   },
-  origination: 0.015,  // 1.5% of platform fee per job at documented address
-  commissionKeepRate: 0.72,     // Enterprise-level keep rate (72%)
+  origination: 0.05,   // 5% of platform fee per job at documented address
+  commissionKeepRate: 0.60,     // Maximum keep rate (60% — Business tier)
   lockedMonthlyRate: 149.00,    // $149/month locked forever
   featureSetMonthly: 249.00,    // Gets $249/month feature set
 } as const;
@@ -414,13 +414,13 @@ export async function enrollFoundingPartner(opts: {
       isFoundingPartner = 1,
       foundingPartnerNumber = ${enrollmentNumber},
       tier = 'enterprise',
-      commissionRate = 0.7200,  -- 72% keep rate (enterprise)
+      commissionRate = 0.6000,  -- 60% keep rate (founding network max)
       subscriptionFee = 149.00,
       networkLevel1CommissionRate = 0.0700,
       networkLevel2CommissionRate = 0.0400,
       networkLevel3CommissionRate = 0.0200,
       networkLevel4CommissionRate = 0.0100,
-      originationCommissionRate = 0.0150,
+      originationCommissionRate = 0.0500,
       updatedAt = NOW()
     WHERE id = ${opts.partnerId}
   `);

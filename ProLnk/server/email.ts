@@ -541,7 +541,7 @@ export async function sendProWaitlistConfirmation(opts: {
     <div style="background:#111e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;margin:0 0 24px;">
       <div style="color:${tierBadgeColor};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 16px;">Your Founding Network Benefits</div>
       <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;width:24px;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">72% Network Bonus</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — share of platform fee (3-15% of job value), on top of normal earnings</span></td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;width:24px;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">60% Network Bonus</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — share of platform fee (3-12% of job value), on top of normal earnings</span></td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">90 days free top-tier ($249/mo benefits)</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — after, $149/mo locked for life with full top-tier features</span></td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">4-generation override income</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — earn on every pro you recruit, 4 levels deep</span></td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;"><span style="color:${tierBadgeColor};font-size:16px;">✓</span></td><td style="padding:8px 0 8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:14px;font-weight:600;">Home Origination Bonus</span><span style="color:rgba(255,255,255,0.45);font-size:13px;"> — permanent recurring revenue on homes you bring onto TrustyPro</span></td></tr>
@@ -878,7 +878,7 @@ export async function sendPartnerApprovalEmail(params: {
       <table style="width:100%;border-collapse:collapse;">
         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
           <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;width:45%;">Keep Rate</td>
-          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:18px;font-weight:900;">72%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> of every job match</span></td>
+          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:18px;font-weight:900;">60%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> of every job match</span></td>
         </tr>
         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
           <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Network Job Commissions</td>
@@ -890,7 +890,7 @@ export async function sendPartnerApprovalEmail(params: {
         </tr>
         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
           <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Origination Rights</td>
-          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:15px;font-weight:800;">1.5%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> per documented home, forever</span></td>
+          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:15px;font-weight:800;">5%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> per documented home, forever</span></td>
         </tr>
         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
           <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Monthly Fee</td>
@@ -938,7 +938,7 @@ export async function sendPartnerApprovalEmail(params: {
       <table style="width:100%;border-collapse:collapse;">
         <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;width:28px;vertical-align:middle;">1</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Start your free trial</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — no charge for 90 days, activate above</span></td></tr>
         <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">2</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Set your service zip codes</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — define exactly where you want leads</span></td></tr>
-        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">3</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Log your first job photo</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — claim 1.5% origination rights on that home, forever</span></td></tr>
+        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">3</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Log your first job photo</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — claim 5% origination rights on that home, forever</span></td></tr>
         <tr><td style="padding:9px 0;color:#F5E642;font-size:16px;vertical-align:middle;">4</td><td style="padding:9px 0 9px 10px;"><span style="color:#ffffff;font-size:13px;font-weight:700;">Invite 3 contractors this week</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — earn $53/mo recurring before you finish your first job</span></td></tr>
       </table>
     </div>
@@ -1040,7 +1040,7 @@ export async function sendWelcomeToNetworkEmail(params: {
     <div style="margin:0 0 24px;">
       <p style="color:#0f172a;font-weight:700;font-size:14px;margin:0 0 14px;">Your 3 Commission Streams</p>
       ${[
-        ["🏠", "Home Origination", "1.5% of every platform fee at homes you've documented. Perpetual.", "#f0fdf4", "#15803d"],
+        ["🏠", "Home Origination", "5% of every platform fee at homes you've documented. Perpetual.", "#f0fdf4", "#15803d"],
         ["👥", "Network Job Commissions", "7% of platform fees when L1 pros complete jobs. 4%/2%/1% for L2–L4.", "#EFF6FF", "#1d4ed8"],
         ["🔄", "Subscription Overrides", "12% of each L1 recruit's $149/mo. Recurring, every month.", "#faf5ff", "#7c3aed"],
       ].map(([icon, title, desc, bg, color]) => `

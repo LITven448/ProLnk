@@ -2180,7 +2180,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
 
 Key facts:
 - ProLnk is an AI-powered home services referral commission network in DFW, Texas
-- Partners earn: 72% commission keep, 4-level network overrides (7/4/2/1%), subscription overrides (12/6/3/1.5%), home origination rights (1.5% perpetual)
+- Partners earn: 60% commission keep, 4-level network overrides (7/4/2/1%), subscription overrides (12/6/3/1.5%), home origination rights (5% perpetual)
 - Founding network: 2,125 spots (Charter 25, Founding 100, L3 400, L4 1600), all at $149/mo locked for life
 - Partners upload job photos → AI detects 65 categories → auto-routes cross-trade leads to network
 - Home origination rights: first pro to document an address gets 1.5% of every future platform fee at that home, forever
@@ -4949,7 +4949,7 @@ Return a JSON object with:
 
         const tier = row.tier || (position <= 25 ? 'charter' : position <= 125 ? 'founding' : position <= 525 ? 'level3' : 'level4');
         const tierLabel = tier === 'charter' ? 'Charter Member' : tier === 'founding' ? 'Founding Member' : tier === 'level3' ? 'Level 3 Partner' : 'Level 4 Partner';
-        const keepRate = 0.72;
+        const keepRate = 0.60;
         const commissionRate = 2.0;
         const overrideLevels = 4;
 

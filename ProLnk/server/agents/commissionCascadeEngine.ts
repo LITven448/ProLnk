@@ -3,7 +3,7 @@ import { sql } from "drizzle-orm";
 import crypto from "crypto";
 
 const RATES = {
-  homeOrigination: 0.015,
+  homeOrigination: 0.05,
   networkJob: { l1: 0.07, l2: 0.04, l3: 0.02, l4: 0.01 },
   subscriptionOverride: { l1: 0.12, l2: 0.06, l3: 0.03, l4: 0.015 },
   prolnkMinFloor: 0.20,

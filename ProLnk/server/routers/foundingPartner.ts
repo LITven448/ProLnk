@@ -238,7 +238,7 @@ export const foundingPartnerRouter = router({
       },
       {
         title: "Home Origination Rights",
-        description: "Every address you document becomes yours permanently. Earn 1.5% of the platform fee on every job at that address, forever, as long as the home is active on TrustyPro.",
+        description: "Every address you document becomes yours permanently. Earn 5% of the platform fee on every job at that address, forever, as long as the home is active on TrustyPro.",
         icon: "🏠",
       },
       {

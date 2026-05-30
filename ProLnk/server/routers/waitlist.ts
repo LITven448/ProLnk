@@ -14,7 +14,7 @@ const logger = createLogger("waitlist");
 
 // ProLnk 4-Tier Founding Network — caps are cumulative position thresholds
 // Charter (25) → Founding (100) → Level 3 (400) → Level 4 (1600) = 2,125 total
-// All founding network tiers get same package: $149/mo locked, 72% keep, 4-level depth
+// All founding network tiers get same package: $149/mo locked, 60% keep, 4-level depth
 const TIER_CAP = { charter: 25, founding: 125, level3: 525, level4: 2125 };
 
 function assignTier(position: number): string {
@@ -26,13 +26,13 @@ function assignTier(position: number): string {
 }
 
 // All 4 tiers in founding network share the same rates
-// (tier label differs, benefits are identical — $149/mo locked, 72% keep rate)
+// (tier label differs, benefits are identical — $149/mo locked, 60% keep rate)
 const FOUNDING_RATES = {
-  jobCommissionKeepRate: 0.72,
-  homeOriginationRate: 0.015,
+  jobCommissionKeepRate: 0.60,
+  homeOriginationRate: 0.05,
   networkJob:  { l1: 0.07, l2: 0.04, l3: 0.02, l4: 0.01 },
   networkSubs: { l1: 0.12, l2: 0.06, l3: 0.03, l4: 0.015 },
-  platformFeeMin: 0.06, platformFeeMax: 0.15,
+  platformFeeMin: 0.03, platformFeeMax: 0.12,
   subscriptionRate: 149, trialDays: 90,
 };
 

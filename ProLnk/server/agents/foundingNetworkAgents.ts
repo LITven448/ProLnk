@@ -30,7 +30,7 @@ const NETWORK_RATES = {
   l2: 0.04,
   l3: 0.02,
   l4: 0.01,
-  originator: 0.015,
+  originator: 0.05,
 } as const;
 
 const PROLNK_FLOOR = 0.20;

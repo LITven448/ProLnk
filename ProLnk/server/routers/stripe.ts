@@ -34,28 +34,28 @@ export const TIER_PRODUCTS = {
     amount: 2900, // $29/month in cents
     lookupKey: "prolnk_pro_monthly",
     tier: "pro" as const,
-    keepRate: 0.55,
+    keepRate: 0.40,
   },
   crew: {
     name: "ProLnk Crew",
     amount: 7900, // $79/month
     lookupKey: "prolnk_crew_monthly",
     tier: "crew" as const,
-    keepRate: 0.65,
+    keepRate: 0.50,
   },
   company: {
     name: "ProLnk Company",
     amount: 14900, // $149/month
     lookupKey: "prolnk_company_monthly",
     tier: "company" as const,
-    keepRate: 0.72,
+    keepRate: 0.60,
   },
   enterprise: {
     name: "ProLnk Enterprise",
     amount: 29900, // $299/month
     lookupKey: "prolnk_enterprise_monthly",
     tier: "enterprise" as const,
-    keepRate: 0.78,
+    keepRate: 0.60,
   },
 } as const;
 
@@ -649,7 +649,7 @@ export const stripeRouter = router({
             currency: "usd",
             product_data: {
               name: "ProLnk Founding Network — Charter Member",
-              description: "72% commission keep rate · 4-level network depth · 90-day free trial · $149/mo locked for life",
+              description: "60% commission keep rate · 4-level network depth · 90-day free trial · $149/mo locked for life",
             },
             unit_amount: 14900,
             recurring: { interval: "month", trial_period_days: 90 },
@@ -676,7 +676,7 @@ export const stripeRouter = router({
       const stripeProduct = await stripe.products.create({
         name: product.name,
         description: tierKey === "company"
-          ? "$149/mo locked forever. 72% commission keep, 4-level network income, 90-day free trial."
+          ? "$149/mo locked forever. 60% commission keep, 4-level network income, 90-day free trial."
           : `ProLnk ${tierKey.charAt(0).toUpperCase() + tierKey.slice(1)} subscription.`,
         metadata: { tier: tierKey },
       });
@@ -696,7 +696,7 @@ export const stripeRouter = router({
     if (foundingPrices.data.length === 0) {
       const foundingProduct = await stripe.products.create({
         name: "ProLnk Founding Network — Charter Member",
-        description: "$149/mo locked forever. 72% commission keep rate · 4-level network depth · 90-day free trial.",
+        description: "$149/mo locked forever. 60% commission keep rate · 4-level network depth · 90-day free trial.",
         metadata: { tier: "founding_network" },
       });
       const foundingPrice = await stripe.prices.create({
@@ -993,7 +993,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
               trialEndsAt = DATE_ADD(NOW(), INTERVAL 90 DAY),
               subscriptionPlan = 'founding_network',
               tier = 'company',
-              commissionKeepRate = 0.72,
+              commissionKeepRate = 0.60,
               updatedAt = NOW(),
               stripeSubscriptionId = ${subscriptionId ?? null}
             WHERE id = ${parseInt(foundingPartnerId)}
@@ -1013,7 +1013,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
             VALUES (
               ${parseInt(foundingPartnerId)}, 'system',
               'Welcome to the Founding Network!',
-              'Your 90-day free trial is now active. You keep 72% of every referral commission at $149/mo locked for life.',
+              'Your 90-day free trial is now active. You keep 60% of every referral commission at $149/mo locked for life.',
               '/dashboard'
             )
           `);
@@ -1029,7 +1029,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
               p.trialEndsAt = DATE_ADD(NOW(), INTERVAL 90 DAY),
               p.subscriptionPlan = 'founding_network',
               p.tier = 'company',
-              p.commissionKeepRate = 0.72,
+              p.commissionKeepRate = 0.60,
               p.updatedAt = NOW(),
               p.stripeSubscriptionId = ${subscriptionId ?? null}
             WHERE u.email = ${session.customer_email}

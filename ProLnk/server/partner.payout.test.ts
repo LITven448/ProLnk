@@ -116,20 +116,20 @@ describe("Commission calculation", () => {
     expect(commission).toBe(40);
   });
 
-  it("calculates Pro tier commission correctly (55%)", () => {
+  it("calculates Pro tier commission correctly (50%)", () => {
     const jobValue = 1000;
     const platformFee = jobValue * PLATFORM_FEE_RATE; // $100
-    const proShare = 0.55;
+    const proShare = 0.50;
     const commission = platformFee * proShare;
-    expect(commission).toBeCloseTo(55, 5);
+    expect(commission).toBeCloseTo(50, 5);
   });
 
-  it("calculates Crew tier commission correctly (65%)", () => {
+  it("calculates Business tier commission correctly (60%)", () => {
     const jobValue = 1000;
     const platformFee = jobValue * PLATFORM_FEE_RATE; // $100
-    const crewShare = 0.65;
-    const commission = platformFee * crewShare;
-    expect(commission).toBe(65);
+    const businessShare = 0.60;
+    const commission = platformFee * businessShare;
+    expect(commission).toBe(60);
   });
 
   it("calculates agent perpetual commission correctly (25% of platform fee)", () => {
@@ -143,10 +143,10 @@ describe("Commission calculation", () => {
   it("ensures platform retains minimum margin after commissions", () => {
     const jobValue = 1000;
     const platformFee = jobValue * PLATFORM_FEE_RATE; // $100
-    const maxPartnerShare = 0.65; // Crew tier
+    const maxPartnerShare = 0.60; // Business tier
     const platformRetains = platformFee * (1 - maxPartnerShare);
     expect(platformRetains).toBeGreaterThan(0);
-    expect(platformRetains).toBe(35);
+    expect(platformRetains).toBe(40);
   });
 });
 

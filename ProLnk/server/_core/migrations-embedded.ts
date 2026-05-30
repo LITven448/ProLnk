@@ -2893,7 +2893,7 @@ CREATE TABLE \`homeProfiles\` (
 	\`activeAlerts\` json DEFAULT '[]',
 	\`lastScannedAt\` timestamp,
 	\`originatingPartnerId\` int,
-	\`originationOverrideRate\` decimal(5,4) DEFAULT '0.0150',
+	\`originationOverrideRate\` decimal(5,4) DEFAULT '0.0500',
 	\`originationLockedAt\` timestamp,
 	\`isDraft\` boolean NOT NULL DEFAULT false,
 	\`draftOutreachSentAt\` timestamp,

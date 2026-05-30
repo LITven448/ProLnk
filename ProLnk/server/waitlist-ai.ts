@@ -404,7 +404,7 @@ export async function sendApplicationFeedbackEmail(opts: {
       You're welcome to reapply after 30 days.
     </p>
     <div style="text-align:center;margin:32px 0;">
-      <a href="https://prolnk.io/apply" style="background:#14b8a6;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;display:inline-block;">
+      <a href="https://prolnk.xyz/apply" style="background:#14b8a6;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;display:inline-block;">
         Update My Application →
       </a>
     </div>
@@ -429,7 +429,7 @@ async function sendEmail(opts: { to: string; subject: string; html: string; text
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from: "ProLnk <noreply@prolnk.io>", to: [opts.to], subject: opts.subject, html: opts.html, text: opts.text }),
+      body: JSON.stringify({ from: "ProLnk <noreply@prolnk.xyz>", to: [opts.to], subject: opts.subject, html: opts.html, text: opts.text }),
     });
     return res.ok;
   } catch {

@@ -75,7 +75,7 @@ export const rewardfulRouter = router({
   createAffiliateLink: publicProcedure
     .input(z.object({ code: z.string() }))
     .mutation(({ input }) => {
-      const url = `https://prolnk.io/pro-waitlist?via=${encodeURIComponent(input.code)}`;
+      const url = `https://prolnk.xyz/pro-waitlist?via=${encodeURIComponent(input.code)}`;
       return { url };
     }),
 });

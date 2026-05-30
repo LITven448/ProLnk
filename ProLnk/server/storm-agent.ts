@@ -159,7 +159,7 @@ export async function fetchStormAlerts(state?: string): Promise<StormEvent[]> {
       : `${NOAA_ALERTS_URL}?severity=Severe,Extreme&status=actual`;
 
     const res = await fetch(url, {
-      headers: { "User-Agent": "ProLnk-StormAgent/1.0 (contact@prolnk.io)" },
+      headers: { "User-Agent": "ProLnk-StormAgent/1.0 (contact@prolnk.xyz)" },
     });
 
     if (!res.ok) {
@@ -353,7 +353,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
               LIMIT 50`
         ).catch(() => ({ rows: [] })) as any;
         const homeowners = (homeownerRows.rows ?? homeownerRows) as any[];
-        const dashboardUrl = 'https://prolnk.io/my-home';
+        const dashboardUrl = 'https://prolnk.xyz/my-home';
         for (const ho of homeowners.slice(0, 50)) {
           sendStormAlertToHomeowner({
             homeownerEmail: ho.email,
@@ -387,7 +387,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
             const proZips = (pro.serviceZipCodes ?? '').split(/[,\s]+/).filter(Boolean);
             return proZips.some((z: string) => affectedZips.includes(z));
           });
-          const leadsUrl = 'https://prolnk.io/dashboard/leads';
+          const leadsUrl = 'https://prolnk.xyz/dashboard/leads';
           for (const pro of filteredPros.slice(0, 100)) {
             sendStormAlertToPro({
               to: pro.contactEmail,

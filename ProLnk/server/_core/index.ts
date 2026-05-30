@@ -21,6 +21,7 @@ import { serveStatic, setupVite } from "./vite";
 import { webhookRouter } from "../webhooks";
 import { registerN8nWebhooks } from "../webhooks/n8n";
 import { handleStripeWebhook } from "../routers/stripe";
+import { handleCheckrWebhook } from "../routers/checkr";
 import { serve } from "inngest/express";
 import { inngest, functions } from "../inngest";
 import { storagePut } from "../storage";
@@ -117,6 +118,16 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Webhook receivers for external integrations
   app.use("/api/webhooks", webhookRouter);
+  // Checkr background-check result webhook (auto-activates partners on clear)
+  app.post("/api/checkr/webhook", async (req, res) => {
+    try {
+      await handleCheckrWebhook(req.body);
+      res.status(200).json({ received: true });
+    } catch (err) {
+      console.error("[Checkr] webhook error:", err);
+      res.status(200).json({ received: true }); // ack to avoid retries storm
+    }
+  });
   // n8n automation webhooks
   registerN8nWebhooks(app);
   app.use("/api/inngest", serve({ client: inngest, functions }));

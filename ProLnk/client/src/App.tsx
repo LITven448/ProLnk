@@ -1214,7 +1214,6 @@ function Router() {
       <Route path="/agent/pre-listing-scan" component={PreListingScan} />
 
       {/* Partner Training */}
-      <Route path="/partner-resources" component={PartnerResourceCenter} />
       <Route path="/resources/photo-guide" component={PhotoGuide} />
       <Route path="/resources/maximize-earnings" component={MaximizeEarnings} />
       <Route path="/resources/faq" component={PartnerFAQ} />

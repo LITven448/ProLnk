@@ -29,7 +29,7 @@ const TIERS = [
     benefits: [
       "First 25 positions — founding status forever",
       "$149/mo subscription locked forever",
-      "72% commission keep rate on every job",
+      "60% commission keep rate on every job",
       "90-day free trial — no credit card required",
       "7% / 4% / 2% / 1% job override cascade (4 levels)",
       "12% / 6% / 3% / 1.5% subscription override cascade",
@@ -58,7 +58,7 @@ const TIERS = [
     benefits: [
       "Positions 26–125 — founding status forever",
       "$149/mo subscription locked forever",
-      "72% commission keep rate on every job",
+      "60% commission keep rate on every job",
       "90-day free trial — no credit card required",
       "7% / 4% / 2% / 1% job override cascade (4 levels)",
       "12% / 6% / 3% / 1.5% subscription override cascade",
@@ -85,7 +85,7 @@ const TIERS = [
     benefits: [
       "Positions 126–525 — founding status forever",
       "$149/mo subscription locked forever",
-      "72% commission keep rate on every job",
+      "60% commission keep rate on every job",
       "90-day free trial — no credit card required",
       "7% / 4% / 2% / 1% job override cascade (4 levels)",
       "12% / 6% / 3% / 1.5% subscription override cascade",
@@ -111,7 +111,7 @@ const TIERS = [
     benefits: [
       "Positions 526–2,125 — founding status forever",
       "$149/mo subscription locked forever",
-      "72% commission keep rate on every job",
+      "60% commission keep rate on every job",
       "90-day free trial — no credit card required",
       "7% / 4% / 2% / 1% job override cascade (4 levels)",
       "12% / 6% / 3% / 1.5% subscription override cascade",
@@ -214,7 +214,7 @@ export default function TierBenefits() {
         <title>Tier Benefits — ProLnk Founding Partner Program</title>
         <meta name="description" content="Charter, Founding, Level 3, Level 4 — 2,125 founding spots, all at $149/mo locked forever. See every benefit, commission rate, and exclusive perk." />
         <meta property="og:title" content="ProLnk Tier Benefits — 2,125 Founding Spots, $149/mo Forever" />
-        <meta property="og:description" content="All 4 tiers: $149/mo locked, 72% keep rate, 4-level network income. Charter members get exclusive origination rights." />
+        <meta property="og:description" content="All 4 tiers: $149/mo locked, 60% keep rate, 4-level network income. Charter members get exclusive origination rights." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/tier-benefits" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
@@ -248,7 +248,7 @@ export default function TierBenefits() {
           <span className="text-teal-400">One Locked Rate.</span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          All 2,125 founding partners pay $149/mo, keep 72% of every job, and earn the same 4-level network income.
+          All 2,125 founding partners pay $149/mo, keep 60% of every job, and earn the same 4-level network income.
           Position determines your tier name — and whether you unlock Charter-exclusive origination rights.
         </p>
       </section>
@@ -293,7 +293,7 @@ export default function TierBenefits() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className={`text-2xl font-black ${tier.color}`}>72%</div>
+                  <div className={`text-2xl font-black ${tier.color}`}>60%</div>
                   <div className="text-xs text-slate-500">commission keep</div>
                 </div>
               </div>
@@ -411,7 +411,7 @@ export default function TierBenefits() {
                 { label: "Positions",          vals: ["1–25", "26–125", "126–525", "526–2,125"] },
                 { label: "Total spots",        vals: ["25", "100", "400", "1,600"] },
                 { label: "Monthly fee",        vals: ["$149/mo ∞", "$149/mo ∞", "$149/mo ∞", "$149/mo ∞"] },
-                { label: "Commission keep",    vals: ["72%", "72%", "72%", "72%"] },
+                { label: "Commission keep",    vals: ["60%", "60%", "60%", "60%"] },
                 { label: "Job override L1",    vals: ["7%", "7%", "7%", "7%"] },
                 { label: "Job override L2",    vals: ["4%", "4%", "4%", "4%"] },
                 { label: "Job override L3",    vals: ["2%", "2%", "2%", "2%"] },

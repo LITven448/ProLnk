@@ -63,7 +63,7 @@ export default function DFWProLnkProResourceHub2026() {
               { label: '5 Income Streams', icon: '💰' },
               { label: '$149/mo Charter', icon: '⭐' },
               { label: 'Exclusive DFW Leads', icon: '🎯' },
-              { label: '72% Job Keep Rate', icon: '📈' },
+              { label: '60% Job Keep Rate', icon: '📈' },
             ].map((s, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ fontSize: 20 }}>{s.icon}</span>

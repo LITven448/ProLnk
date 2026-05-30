@@ -4,7 +4,7 @@ import { trpc } from "@/lib/trpc";
 import { CheckCircle, Zap, Shield, TrendingUp, Clock, Star, Users, Camera, Network, CreditCard } from "lucide-react";
 
 const BENEFITS = [
-  { icon: TrendingUp, title: "72% Commission Keep Rate", desc: "The highest rate on the platform — locked forever at this tier." },
+  { icon: TrendingUp, title: "60% Commission Keep Rate", desc: "The highest rate on the platform — locked forever at this tier." },
   { icon: Zap, title: "4-Level Network Override", desc: "Earn on every job completed by up to 4 levels of your recruited network." },
   { icon: Clock, title: "90-Day Free Trial", desc: "Zero cost for 90 days. Full access from day one. Then $149/mo locked for life." },
   { icon: Shield, title: "1.5% Origination Rights", desc: "Earn a perpetual 1.5% on every job at every home you document — forever." },

@@ -10,7 +10,7 @@ const TIERS = [
   { id: "t1", label: "Tier 1", subLabel: "New Partner", keep: 0.40, color: "#94a3b8", bg: "rgba(148,163,184,0.12)" },
   { id: "t2", label: "Tier 2", subLabel: "10+ Matches", keep: 0.55, color: "#2dd4bf", bg: "rgba(45,212,191,0.12)" },
   { id: "t3", label: "Tier 3", subLabel: "50+ Matches", keep: 0.65, color: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
-  { id: "founding", label: "Founding", subLabel: "Locked Rate", keep: 0.72, color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
+  { id: "founding", label: "Founding", subLabel: "Locked Rate", keep: 0.60, color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
 ];
 
 const TIER_COMPARE_COLS = [
@@ -24,7 +24,7 @@ const TIER_COMPARE_DATA: Record<string, Record<string, string>> = {
   t1: { keep: "40%", override: "7%", sub: "12%", locked: "No" },
   t2: { keep: "55%", override: "7%", sub: "12%", locked: "No" },
   t3: { keep: "65%", override: "7%", sub: "12%", locked: "No" },
-  founding: { keep: "72%", override: "7%", sub: "12%", locked: "Yes" },
+  founding: { keep: "60%", override: "7%", sub: "12%", locked: "Yes" },
 };
 
 const COMPETITOR_KEEP = 0.28;

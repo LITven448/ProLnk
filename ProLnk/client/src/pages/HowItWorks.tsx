@@ -35,8 +35,8 @@ const PRO_STEPS = [
     num: "03",
     icon: Briefcase,
     title: "Win the Job",
-    body: "Review the homeowner's request, upload photos, and send your quote through the platform. Close the deal, do the work, and receive your payout on the 1st of the month. You keep 72%.",
-    tag: "72% yours to keep",
+    body: "Review the homeowner's request, upload photos, and send your quote through the platform. Close the deal, do the work, and receive your payout on the 1st of the month. You keep 60%.",
+    tag: "60% yours to keep",
   },
   {
     num: "04",
@@ -133,7 +133,7 @@ export default function HowItWorks() {
     <>
       <Helmet>
         <title>How It Works — ProLnk Home Services Network</title>
-        <meta name="description" content="Learn how ProLnk works for contractors and homeowners. AI-powered lead matching, 72% job keep rate, and a 4-level network income system for trade professionals." />
+        <meta name="description" content="Learn how ProLnk works for contractors and homeowners. AI-powered lead matching, 60% job keep rate, and a 4-level network income system for trade professionals." />
       </Helmet>
 
       <div style={{ background: NAVY, minHeight: "100vh", fontFamily: "'Inter', sans-serif", color: TEXT }}>

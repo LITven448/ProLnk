@@ -23,7 +23,7 @@ const PARTNER_FAQS: FAQItem[] = [
   },
   {
     q: "When do I get paid?",
-    a: "Payouts go to your bank account via direct deposit on the 1st of every month. The minimum payout threshold is $50. You keep 72% of every job you close through the platform. Earnings are tracked in your Commission Ledger dashboard and you receive an itemized statement each month. Network override income — from your recruits and their recruits — is calculated and paid on the same schedule.",
+    a: "Payouts go to your bank account via direct deposit on the 1st of every month. The minimum payout threshold is $50. You keep 60% of every job you close through the platform. Earnings are tracked in your Commission Ledger dashboard and you receive an itemized statement each month. Network override income — from your recruits and their recruits — is calculated and paid on the same schedule.",
   },
   {
     q: "Can I join if I'm not in DFW?",
@@ -77,7 +77,7 @@ const PROLNK_FAQS: FAQItem[] = [
   },
   {
     q: "Is the network income system an MLM?",
-    a: "No, and here's the distinction: In an MLM, participants primarily make money by recruiting — the product is secondary. In ProLnk, income comes from real home service jobs closed on the platform. You earn on recruiting (subscription overrides) and on jobs (job overrides), but the foundation is actual work delivered to real homeowners. There is no buy-in inventory, no product to resell, and no pressure to recruit. You can join, do zero recruiting, and earn 72% of every job you close. The network income layer is optional and additive — not the core model.",
+    a: "No, and here's the distinction: In an MLM, participants primarily make money by recruiting — the product is secondary. In ProLnk, income comes from real home service jobs closed on the platform. You earn on recruiting (subscription overrides) and on jobs (job overrides), but the foundation is actual work delivered to real homeowners. There is no buy-in inventory, no product to resell, and no pressure to recruit. You can join, do zero recruiting, and earn 60% of every job you close. The network income layer is optional and additive — not the core model.",
   },
   {
     q: "What happens to my origination rights if I cancel?",

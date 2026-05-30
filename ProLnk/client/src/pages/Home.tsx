@@ -33,7 +33,7 @@ const PRICING_TIERS = [
     name: "Charter",
     subtitle: "First 25 founding partners",
     monthlyFee: 149,
-    commissionShare: 0.72,
+    commissionShare: 0.60,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
@@ -41,7 +41,7 @@ const PRICING_TIERS = [
     cta: "Claim Charter Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% Network Bonus on every closed job",
+      "60% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -56,7 +56,7 @@ const PRICING_TIERS = [
     name: "Founding",
     subtitle: "Next 100 founding partners",
     monthlyFee: 149,
-    commissionShare: 0.72,
+    commissionShare: 0.60,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
@@ -64,7 +64,7 @@ const PRICING_TIERS = [
     cta: "Claim Founding Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% Network Bonus on every closed job",
+      "60% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -79,7 +79,7 @@ const PRICING_TIERS = [
     name: "Growth Member",
     subtitle: "Next 400 founding partners",
     monthlyFee: 149,
-    commissionShare: 0.72,
+    commissionShare: 0.60,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
@@ -87,7 +87,7 @@ const PRICING_TIERS = [
     cta: "Claim L3 Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% Network Bonus on every closed job",
+      "60% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -102,7 +102,7 @@ const PRICING_TIERS = [
     name: "Network Member",
     subtitle: "Final 1,600 founding partners",
     monthlyFee: 149,
-    commissionShare: 0.72,
+    commissionShare: 0.60,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
@@ -110,7 +110,7 @@ const PRICING_TIERS = [
     cta: "Claim L4 Slot",
     features: [
       "Locked at $149/mo — forever",
-      "72% Network Bonus on every closed job",
+      "60% Network Bonus on every closed job",
       "No lead cap, no earnings cap",
       "4-level network override income",
       "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
@@ -334,10 +334,10 @@ function EarningsEstimator() {
   const [receivedJobs, setReceivedJobs] = useState([5]);
   const [tier, setTier] = useState<"Charter" | "Founding" | "Level 3" | "Level 4">("Founding");
   const tierData = {
-    Charter:   { share: 0.72, fee: 149, earningsCap: null as number | null },
-    Founding:  { share: 0.72, fee: 149, earningsCap: null as number | null },
-    "Level 3": { share: 0.72, fee: 149, earningsCap: null as number | null },
-    "Level 4": { share: 0.72, fee: 149, earningsCap: null as number | null },
+    Charter:   { share: 0.60, fee: 149, earningsCap: null as number | null },
+    Founding:  { share: 0.60, fee: 149, earningsCap: null as number | null },
+    "Level 3": { share: 0.60, fee: 149, earningsCap: null as number | null },
+    "Level 4": { share: 0.60, fee: 149, earningsCap: null as number | null },
   };
   const t = tierData[tier];
   const proLnkRate = 0.10;
@@ -642,7 +642,7 @@ function PricingSection() {
               </div>
               <div className="flex items-center gap-1.5 mb-2 pb-3 border-b border-gray-100">
                 <TrendingUp className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span className="text-xs font-bold text-emerald-700">72% commission keep — every closed job</span>
+                <span className="text-xs font-bold text-emerald-700">60% commission keep — every closed job</span>
               </div>
               <ul className="space-y-2 mb-6 flex-1">
                 {tier.features.map((feature) => (

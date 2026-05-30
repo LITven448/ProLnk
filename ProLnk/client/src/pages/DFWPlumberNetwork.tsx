@@ -64,7 +64,7 @@ const faqs = [
   { q: "Do I need a Texas Master Plumber license to join?", a: "A Texas State Board of Plumbing Examiners license (Journeyman or Master) is required. We verify credentials before activating your account. Licensed apprentices working under a Master Plumber may be eligible — contact us to discuss your situation." },
   { q: "How does my photo generate a lead for another homeowner?", a: "When you upload a job photo through the ProLnk app, our Vision AI scans it for indicators like water heater age labels, mineral buildup on pipes, corroded fittings, and drainage configuration. When it spots a high-probability issue at a neighboring property, it generates a lead alert — with your contact info attached as the referring plumber." },
   { q: "When do I get paid?", a: "Commissions are calculated when a job is marked complete by both the homeowner and pro. Payouts process every Friday via ACH direct deposit. Typical clearing time is 2–3 business days. There's no minimum payout threshold." },
-  { q: "What's the difference between a commission and a network override?", a: "Your commission is 72% of the ProLnk platform fee on jobs you complete directly (10% of job value). A network override is 7% of commissions earned by plumbers you recruited — passive income that stacks on top of your direct earnings." },
+  { q: "What's the difference between a commission and a network override?", a: "Your commission is 60% of the ProLnk platform fee on jobs you complete directly (10% of job value). A network override is 7% of commissions earned by plumbers you recruited — passive income that stacks on top of your direct earnings." },
 ];
 
 export default function DFWPlumberNetwork() {
@@ -73,8 +73,8 @@ export default function DFWPlumberNetwork() {
   const [networkAvgJob, setNetworkAvgJob] = useState(5000);
 
   const platformFee = jobValue * 0.10;
-  const yourCommission = platformFee * 0.72;
-  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.72) * 0.07;
+  const yourCommission = platformFee * 0.60;
+  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.60) * 0.07;
   const total = yourCommission + networkOverride;
 
   return (
@@ -98,7 +98,7 @@ export default function DFWPlumberNetwork() {
           <div style={styles.incomeTitle}>$8,000 Water Heater + Repiping Job</div>
           <div style={styles.incomeLine}><span>Job Value</span><span>$8,000</span></div>
           <div style={styles.incomeLine}><span>ProLnk Platform Fee (10%)</span><span>$800</span></div>
-          <div style={styles.incomeLine}><span>Your Share (72% of fee)</span><span style={{ color: YELLOW }}>$576</span></div>
+          <div style={styles.incomeLine}><span>Your Share (60% of fee)</span><span style={{ color: YELLOW }}>$576</span></div>
           <div style={styles.incomeLine}><span>+ Network Override (3 recruited plumbers × avg job)</span><span style={{ color: YELLOW }}>+$241</span></div>
           <div style={styles.incomeTotal}><span>Total You Keep</span><span>$817</span></div>
         </div>
@@ -142,7 +142,7 @@ export default function DFWPlumberNetwork() {
               <div style={styles.stepNum}>3</div>
               <div style={styles.stepContent}>
                 <div style={styles.stepTitle}>Earn commissions and overrides</div>
-                <div style={styles.stepText}>Accept the lead, complete the job, collect your 72% commission. Recruit other plumbers and earn 7% of their commissions indefinitely.</div>
+                <div style={styles.stepText}>Accept the lead, complete the job, collect your 60% commission. Recruit other plumbers and earn 7% of their commissions indefinitely.</div>
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function DFWPlumberNetwork() {
             <input style={styles.calcInput} type="number" value={networkAvgJob} onChange={e => setNetworkAvgJob(Number(e.target.value))} min={500} max={30000} step={500} />
           </div>
           <div style={styles.calcResult}>
-            <div style={styles.calcResultRow}><span>Your direct commission (72% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
+            <div style={styles.calcResultRow}><span>Your direct commission (60% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
             <div style={styles.calcResultRow}><span>Network override ({networkPros} pros × 7%)</span><span>${networkOverride.toFixed(0)}</span></div>
             <div style={styles.calcResultTotal}><span>Estimated Monthly</span><span>${total.toFixed(0)}</span></div>
           </div>

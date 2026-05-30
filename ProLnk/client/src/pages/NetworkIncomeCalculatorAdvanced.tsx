@@ -13,8 +13,8 @@ function calcStreams(
   homeowners: number,
   origHomes: number
 ) {
-  const s1 = jobs * avgJob * 0.10 * 0.72;
-  const s2 = recruits * (jobs * avgJob * 0.10 * 0.72) * 0.07;
+  const s1 = jobs * avgJob * 0.10 * 0.60;
+  const s2 = recruits * (jobs * avgJob * 0.10 * 0.60) * 0.07;
   const s3 = recruits * 149 * 0.12;
   const s4 = homeowners * 50;
   const s5 = origHomes * 2 * 800 * 0.015;
@@ -56,7 +56,7 @@ export default function NetworkIncomeCalculatorAdvanced() {
   const annualTotal = months.reduce((acc, m) => acc + m.total, 0);
 
   const streams = [
-    { label: 'Stream 1: Direct Job Commission', val: monthly.s1, desc: `${jobs} jobs × $${avgJob} × 10% fee × 72% keep` },
+    { label: 'Stream 1: Direct Job Commission', val: monthly.s1, desc: `${jobs} jobs × $${avgJob} × 10% fee × 60% keep` },
     { label: 'Stream 2: Recruit Override', val: monthly.s2, desc: `${recruits} recruits × their earnings × 7%` },
     { label: 'Stream 3: Subscription Override', val: monthly.s3, desc: `${recruits} recruits × $149/mo × 12%` },
     { label: 'Stream 4: Homeowner Referrals', val: monthly.s4, desc: `${homeowners} referrals × $50 avg fee` },

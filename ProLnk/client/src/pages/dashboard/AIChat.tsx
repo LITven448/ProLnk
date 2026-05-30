@@ -35,7 +35,7 @@ const PROMPT_GROUPS: PromptGroup[] = [
       "Calculate my override income",
       "How much can I earn at Tier 3?",
       "When is my next payout?",
-      "Explain the 72% commission keep",
+      "Explain the 60% commission keep",
       "What is home origination income?",
     ],
   },
@@ -117,7 +117,7 @@ function MessageBubble({ msg }: { msg: Message }) {
       </div>
       <div
         className={cn(
-          "max-w-[72%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
+          "max-w-[60%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
           isUser
             ? "text-white rounded-tr-sm shadow-sm"
             : "bg-white border border-gray-100 text-gray-800 rounded-tl-sm shadow-sm",

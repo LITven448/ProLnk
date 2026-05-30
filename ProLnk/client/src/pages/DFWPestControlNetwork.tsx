@@ -64,7 +64,7 @@ export default function DFWPestControlNetwork() {
                 <span style={{ fontWeight: 700 }}>$15</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 0" }}>
-                <span style={{ color: "#a8bdd4", fontSize: 14 }}>Your commission (72%)</span>
+                <span style={{ color: "#a8bdd4", fontSize: 14 }}>Your commission (60%)</span>
                 <span style={{ fontWeight: 700, color: "#F5E642", fontSize: 20 }}>$10.80</span>
               </div>
               <p style={{ color: "#718096", fontSize: 13, marginTop: 12, lineHeight: 1.5 }}>Per visit. 4 visits/year = $43.20 direct per customer annually.</p>

@@ -59,7 +59,7 @@ export default function TrustyProProsper() {
             { stat: "4 yrs", label: "Avg Prosper Home Age" },
             { stat: "#1", label: "Fastest Growing TX City" },
             { stat: "1-2-10", label: "Builder Warranty Structure" },
-            { stat: "72%", label: "Homeowners Unaware of Issues" },
+            { stat: "60%", label: "Homeowners Unaware of Issues" },
           ].map((s) => (
             <div key={s.stat} style={{ textAlign: "center", minWidth: "140px" }}>
               <div style={{ fontSize: "36px", fontWeight: 800 }}>{s.stat}</div>

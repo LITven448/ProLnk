@@ -128,7 +128,7 @@ export default function FinancialCenter() {
         <KPI label="Monthly Recurring Revenue" value={Math.round(projectedMRR)} prefix="$" icon={TrendingUp} color="#00B5B8" delta={8} deltaLabel="vs last month" />
         <KPI label="Annual Recurring Revenue" value={Math.round(projectedARR)} prefix="$" icon={DollarSign} color="#8B5CF6" delta={12} />
         <KPI label="Gross Transaction Volume" value={Math.round(gtv)} prefix="$" icon={Banknote} color="#F59E0B" delta={5} deltaLabel="all closed jobs" />
-        <KPI label="Net Revenue (72%)" value={Math.round(netRevenue)} prefix="$" icon={CheckCircle} color="#10B981" delta={8} deltaLabel="after partner share" />
+        <KPI label="Net Revenue (60%)" value={Math.round(netRevenue)} prefix="$" icon={CheckCircle} color="#10B981" delta={8} deltaLabel="after partner share" />
       </div>
 
       {/* Secondary KPIs */}

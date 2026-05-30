@@ -8,7 +8,7 @@ export default function ProLnkCharterClosingScript() {
       id: 'cost',
       label: '💰 "$149 is too much"',
       response: 'Let me put it in perspective. One ProLnk match on an average DFW job is $800. At Charter rate you keep $200 of that. Two jobs and the month is paid. After that, everything else is profit — and your rate is locked for life. If you wait and sign up at Founding tier, you pay the same $149 but keep less from every job, forever.',
-      proof: 'Charter: $149/mo · 72% keep · 25% on jobs\nFounding (next tier): $149/mo · 69% keep · 22% on jobs\nDifference compounds to $4,200/yr at 100 matches',
+      proof: 'Charter: $149/mo · 60% keep · 25% on jobs\nFounding (next tier): $149/mo · 69% keep · 22% on jobs\nDifference compounds to $4,200/yr at 100 matches',
     },
     {
       id: 'timing',

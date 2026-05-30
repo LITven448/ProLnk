@@ -59,7 +59,7 @@ export default function DFWProLnkCharterIncome2026() {
           <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", marginBottom: 8 }}>Charter Tier Income Projection Guide 2026</h1>
           <p style={{ color: "#94a3b8", fontSize: 15 }}>What DFW Charter pros realistically earn — by trade and year</p>
           <div style={{ background: "#1a2744", borderRadius: 8, padding: 12, marginTop: 16, display: "inline-block" }}>
-            <span style={{ color: "#F5E642", fontSize: 13 }}>🔒 Charter Tier: $149/mo locked forever · 72% commission kept · 5-stream income</span>
+            <span style={{ color: "#F5E642", fontSize: 13 }}>🔒 Charter Tier: $149/mo locked forever · 60% commission kept · 5-stream income</span>
           </div>
         </div>
         <div style={{ marginBottom: 28 }}>

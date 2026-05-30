@@ -49,14 +49,14 @@ export default function ReferralNetworkCalculator() {
         <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0A1628', marginBottom: '1rem' }}>📖 How It Works</h2>
           <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '0.75rem' }}>
-            When sub-partners you recruit earn income on the platform, you earn a <strong>network override</strong> — a percentage of the commission they keep (72% of job value). Overrides cascade 4 levels deep:
+            When sub-partners you recruit earn income on the platform, you earn a <strong>network override</strong> — a percentage of the commission they keep (60% of job value). Overrides cascade 4 levels deep:
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {RATES.map((rate, i) => (
               <div key={i} style={{ flex: '1', minWidth: '150px', background: '#fff', borderRadius: '8px', padding: '0.75rem', border: `2px solid ${LEVEL_COLORS[i]}`, textAlign: 'center' }}>
                 <div style={{ color: LEVEL_COLORS[i], fontSize: '1.4rem', fontWeight: 700 }}>{(rate * 100).toFixed(0)}%</div>
                 <div style={{ color: '#0A1628', fontWeight: 600, fontSize: '0.85rem' }}>{LEVEL_LABELS[i]}</div>
-                <div style={{ color: '#64748b', fontSize: '0.75rem' }}>of partner\'s 72% earned</div>
+                <div style={{ color: '#64748b', fontSize: '0.75rem' }}>of partner\'s 60% earned</div>
               </div>
             ))}
           </div>

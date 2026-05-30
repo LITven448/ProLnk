@@ -11,7 +11,7 @@ import { Link } from "wouter";
 const FEATURES = [
   { feature: "No pay-per-lead fees", prolnk: true, angi: false, ha: false, thumbtack: false, note: "Angi charges $15–$85 per lead regardless of outcome" },
   { feature: "Network income (earn from referrals)", prolnk: true, angi: false, ha: false, thumbtack: false, note: "ProLnk's 4-level network income — unique in the industry" },
-  { feature: "Keep 72%+ of every job", prolnk: true, angi: false, ha: false, thumbtack: false, note: "Competitors take 15–40% via fees and mandatory packages" },
+  { feature: "Keep 60%+ of every job", prolnk: true, angi: false, ha: false, thumbtack: false, note: "Competitors take 15–40% via fees and mandatory packages" },
   { feature: "Algorithm-based lead ranking", prolnk: true, angi: "partial", ha: "partial", thumbtack: "partial", note: "ProLnk ranks by quality, reviews, and response rate — not ad spend" },
   { feature: "Fixed monthly subscription ($149)", prolnk: true, angi: false, ha: false, thumbtack: false, note: "Angi & HA push annual memberships $300–$3,000+" },
   { feature: "Subscription income override", prolnk: true, angi: false, ha: false, thumbtack: false, note: "Earn 12% recurring on every pro you refer — forever" },
@@ -169,9 +169,9 @@ export default function CompetitiveAdvantage() {
             />
             <DiffCard
               icon={<Shield size={20} color="#f59e0b" />}
-              title="72% Keeper Rate"
+              title="60% Keeper Rate"
               accent="#f59e0b"
-              body="Keep 72% of every job matched through ProLnk. HomeAdvisor's annual membership alone can cost $300–$3,000+, before you buy a single lead."
+              body="Keep 60% of every job matched through ProLnk. HomeAdvisor's annual membership alone can cost $300–$3,000+, before you buy a single lead."
             />
             <DiffCard
               icon={<Zap size={20} color="#8b5cf6" />}

@@ -77,7 +77,7 @@ export default function DFWProLnkFinalResource() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '🏠', title: 'Home Health Vault', body: 'Every repair, permit, upgrade, and inspection in one secure place. Increases resale value. Transfers with the home. Permanent data asset for the homeowner and the platform.' },
-            { icon: '💰', title: '5-Stream Income', body: 'Direct commissions (72% match value). Pro network overrides (4 levels deep). Subscription overrides (12% recurring). Homeowner origination fees. Vault origination rights (permanent).' },
+            { icon: '💰', title: '5-Stream Income', body: 'Direct commissions (60% match value). Pro network overrides (4 levels deep). Subscription overrides (12% recurring). Homeowner origination fees. Vault origination rights (permanent).' },
             { icon: '🔧', title: 'DFW Pro Network', body: 'TX-licensed, insured, and rated pros in roofing, electrical, plumbing, HVAC, pest control, and 20+ trades. Every pro verified before their first match. Quality guaranteed.' },
             { icon: '🤖', title: 'AI-Powered Platform', body: '47 AI agents handle matching, payments, compliance, marketing, and customer success. 85% net margin at scale. Autonomous operation means unit economics that improve continuously.' },
             { icon: '🌐', title: 'Network Income System', body: 'Patented-pending 5-level network income creates lock-in no competitor can replicate. Charter pros earn 25% more than post-launch members. Waitlist closes at 500 applications + 5,000 homes.' },

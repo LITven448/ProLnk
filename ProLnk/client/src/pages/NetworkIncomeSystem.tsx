@@ -126,7 +126,7 @@ function IncomeSlider() {
   const [recruits, setRecruits] = useState(12);
   const avgJob = 1000;
   const platformFee = 0.10;
-  const yourKeep = 0.72;
+  const yourKeep = 0.60;
   const jobIncome = Math.round(jobs * avgJob * platformFee * yourKeep);
   const overrideIncome = Math.round(recruits * 4 * avgJob * platformFee * yourKeep * 0.07);
   const subIncome = Math.round(recruits * 149 * 0.12);
@@ -235,7 +235,7 @@ export default function NetworkIncomeSystem() {
         <div style={{ background: "#fff", borderBottom: "1px solid #E5E7EB", padding: "20px 20px" }}>
           <div style={{ maxWidth: 980, margin: "0 auto", display: "flex", justifyContent: "center", gap: 8, flexWrap: "wrap" }}>
             {[
-              { label: "Stream 1", desc: "Job Commission (72%)" },
+              { label: "Stream 1", desc: "Job Commission (60%)" },
               { label: "Stream 2", desc: "Network Override (4 levels)" },
               { label: "Stream 3", desc: "Subscription Override" },
               { label: "Stream 4", desc: "Per-Lead Homeowner Fee" },
@@ -259,10 +259,10 @@ export default function NetworkIncomeSystem() {
 
             <StreamCard
               number="1"
-              title="Job Commission (72% Keep)"
+              title="Job Commission (60% Keep)"
               icon={DollarSign}
-              how="Upload photos of your work to your profile → AI detects service opportunities at that home → homeowner requests a quote → you book the job → ProLnk charges a 10% platform fee → you keep 72% of that fee directly."
-              math="$8,400 job × 10% platform fee = $840 fee. You keep 72% = $604.80 your commission on a single job."
+              how="Upload photos of your work to your profile → AI detects service opportunities at that home → homeowner requests a quote → you book the job → ProLnk charges a 10% platform fee → you keep 60% of that fee directly."
+              math="$8,400 job × 10% platform fee = $840 fee. You keep 60% = $604.80 your commission on a single job."
               timeline="Paid after homeowner confirms job complete. No waiting 30 days — payment releases within 48 hours of confirmation."
               accentColor={YELLOW}
             />

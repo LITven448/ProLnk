@@ -98,7 +98,7 @@ const COMPARISON = [
   },
   {
     feature: "Commission keep",
-    founding: "72% (locked forever)",
+    founding: "60% (locked forever)",
     scout: "40%",
     crew: "55%",
     company: "65%",
@@ -210,7 +210,7 @@ export default function PostFoundingPricing() {
           <div className="flex items-center gap-3">
             <Crown className="w-5 h-5 text-[#F5E642] shrink-0" />
             <p className="text-sm font-medium text-white">
-              <span className="text-[#F5E642] font-bold">Founding Network still open</span> — $149/mo locked forever with 72% commission keep.
+              <span className="text-[#F5E642] font-bold">Founding Network still open</span> — $149/mo locked forever with 60% commission keep.
               This page shows pricing <span className="italic">after</span> the founding network closes.
             </p>
           </div>
@@ -400,7 +400,7 @@ export default function PostFoundingPricing() {
               <span className="text-white/50">Standard Pricing</span>
             </h2>
             <p className="text-white/50 max-w-2xl mx-auto">
-              Founding members pay $149/mo locked forever, keep 72% from day one, and get 3 seats — that's Crew pricing with a 17-point commission advantage, locked for life.
+              Founding members pay $149/mo locked forever, keep 60% from day one, and get 3 seats — that's Crew pricing with a 17-point commission advantage, locked for life.
             </p>
           </div>
 
@@ -441,7 +441,7 @@ export default function PostFoundingPricing() {
             <Link href="/founding-partner">
               <button className="bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-8 py-4 rounded-2xl font-bold transition-all flex items-center gap-2 justify-center">
                 <Crown className="w-5 h-5" />
-                Claim Founding Spot — $149/mo, 72% keep, locked forever
+                Claim Founding Spot — $149/mo, 60% keep, locked forever
               </button>
             </Link>
             <Link href="/pricing">

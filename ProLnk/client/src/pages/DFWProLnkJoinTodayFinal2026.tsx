@@ -26,7 +26,7 @@ export default function DFWProLnkJoinTodayFinal2026() {
         { icon: '3️⃣', action: 'Activate your Network Income', detail: 'Your referral link is ready at signup. Refer other pros and earn 7% of their job commissions + 12% of their subscriptions.' },
         { icon: '4️⃣', action: 'Wait for DFW launch — leads arrive automatically', detail: 'Charter pros are first in the queue. When matching goes live, your leads are priority-routed.' },
       ],
-      benefit: 'Charter tier earns 72% of job value, locked forever at $149/mo. Post-launch, Charter closes and pricing increases.',
+      benefit: 'Charter tier earns 60% of job value, locked forever at $149/mo. Post-launch, Charter closes and pricing increases.',
     },
     investor: {
       title: 'Explore ProLnk Investment',

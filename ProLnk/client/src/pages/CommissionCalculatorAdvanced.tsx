@@ -7,10 +7,10 @@ import { Link } from "wouter";
 import { Slider } from "@/components/ui/slider";
 
 const CHARTER_TIERS = [
-  { id: "charter",  label: "Charter",  color: "#f59e0b", keepRate: 0.72, jobOverride: 0.07, subOverride: 0.12 },
-  { id: "founding", label: "Founding", color: "#0891b2", keepRate: 0.72, jobOverride: 0.07, subOverride: 0.12 },
-  { id: "l3",       label: "L3",       color: "#6366f1", keepRate: 0.72, jobOverride: 0.07, subOverride: 0.12 },
-  { id: "l4",       label: "L4",       color: "#16a34a", keepRate: 0.72, jobOverride: 0.07, subOverride: 0.12 },
+  { id: "charter",  label: "Charter",  color: "#f59e0b", keepRate: 0.60, jobOverride: 0.07, subOverride: 0.12 },
+  { id: "founding", label: "Founding", color: "#0891b2", keepRate: 0.60, jobOverride: 0.07, subOverride: 0.12 },
+  { id: "l3",       label: "L3",       color: "#6366f1", keepRate: 0.60, jobOverride: 0.07, subOverride: 0.12 },
+  { id: "l4",       label: "L4",       color: "#16a34a", keepRate: 0.60, jobOverride: 0.07, subOverride: 0.12 },
 ];
 
 const SUB_FEE = 149;
@@ -113,7 +113,7 @@ export default function CommissionCalculatorAdvanced() {
                   </button>
                 ))}
               </div>
-              <p className="text-xs text-slate-500">All founding tiers lock in $149/mo and 72% job keep rate.</p>
+              <p className="text-xs text-slate-500">All founding tiers lock in $149/mo and 60% job keep rate.</p>
             </div>
 
             {/* Monthly jobs */}
@@ -275,7 +275,7 @@ export default function CommissionCalculatorAdvanced() {
                   title: "Complete 10 jobs/month at $3,500 avg",
                   value: fmt(10 * 3500 * 0.72),
                   color: "text-teal-400",
-                  desc: "That's 72% of $35,000 in job volume — your direct commission.",
+                  desc: "That's 60% of $35,000 in job volume — your direct commission.",
                 },
                 {
                   step: "2",

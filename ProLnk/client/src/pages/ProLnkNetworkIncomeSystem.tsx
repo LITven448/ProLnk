@@ -9,8 +9,8 @@ const streams = [
 ];
 
 const tiers = [
-  { name: 'Charter', price: '$149/mo', slots: 500, keep: '72%', networkJob: '7/4/2/1%', sub: '12/6/3/1.5%', orig: '1.5%' },
-  { name: 'Founding', price: '$149/mo', slots: 1600, keep: '72%', networkJob: '4/2/1/0.5%', sub: '6/3/1.5/0.75%', orig: '1.0%' },
+  { name: 'Charter', price: '$149/mo', slots: 500, keep: '60%', networkJob: '7/4/2/1%', sub: '12/6/3/1.5%', orig: '1.5%' },
+  { name: 'Founding', price: '$149/mo', slots: 1600, keep: '60%', networkJob: '4/2/1/0.5%', sub: '6/3/1.5/0.75%', orig: '1.0%' },
 ];
 
 export default function ProLnkNetworkIncomeSystem() {

@@ -161,7 +161,7 @@ export default function ProLnkVsHomeAdvisor() {
               <h3 style={{ fontSize: 16, fontWeight: 700, color: '#14532D', margin: '0 0 8px' }}>What ProLnk Was Built to Fix</h3>
               <p style={{ color: '#166534', margin: 0, fontSize: 14, lineHeight: 1.7 }}>
                 ProLnk was built specifically because the pay-per-lead model fundamentally misaligns incentives — platforms make more money when they sell more leads, not when pros succeed. 
-                Our subscription model means we win when you win. 72% of your earnings stay with you. 
+                Our subscription model means we win when you win. 60% of your earnings stay with you. 
                 The network income system means your best move is to grow the platform, not game it.
               </p>
             </div>

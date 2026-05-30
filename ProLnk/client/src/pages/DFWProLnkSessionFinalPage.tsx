@@ -21,7 +21,7 @@ const messages: Record<Role, RoleMessage> = {
   },
   pro: {
     label: '🔧 Home Service Pro',
-    message: "ProLnk isn't just a lead service. It's a network income system — you earn on every pro you bring in, every homeowner you refer, and every job that runs through your network. Charter tier is locked at $149/month with 72% job fee retention. There are only 500 Charter spots. When the platform matches you to a homeowner, you get the job details, their address, their service need, and a direct connection — no middleman, no bidding war, no auction. Just matched work.",
+    message: "ProLnk isn't just a lead service. It's a network income system — you earn on every pro you bring in, every homeowner you refer, and every job that runs through your network. Charter tier is locked at $149/month with 60% job fee retention. There are only 500 Charter spots. When the platform matches you to a homeowner, you get the job details, their address, their service need, and a direct connection — no middleman, no bidding war, no auction. Just matched work.",
     action: 'Join the waitlist at prolnk.io — Charter spots are limited to 500.',
   },
   homeowner: {

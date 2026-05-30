@@ -62,7 +62,7 @@ export default function DFWLandscaperNetwork() {
               <span style={{ fontWeight: 700, fontSize: 20 }}>$30</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 0", borderBottom: "1px solid #2a4a6a" }}>
-              <span style={{ color: "#a8bdd4", fontSize: 16 }}>Your direct commission (72%)</span>
+              <span style={{ color: "#a8bdd4", fontSize: 16 }}>Your direct commission (60%)</span>
               <span style={{ fontWeight: 700, fontSize: 20, color: "#F5E642" }}>$21.60</span>
             </div>
             <div style={{ backgroundColor: "#0A1628", borderRadius: 12, padding: 24, marginTop: 24 }}>

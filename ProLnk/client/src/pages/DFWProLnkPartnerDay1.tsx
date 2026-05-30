@@ -6,7 +6,7 @@ const dfwAreas = ['Dallas proper', 'Fort Worth area', 'Plano/Frisco/McKinney', '
 
 const baseActions = [
   { icon: '👤', title: 'Complete Your Partner Profile', desc: 'Add photo, bio, and DFW service area — partners with complete profiles get 3x more referral trust.' },
-  { icon: '📋', title: 'Review the Commission Structure', desc: 'Charter partners earn 72% of match fees + 4-level network overrides. Know your numbers before your first conversation.' },
+  { icon: '📋', title: 'Review the Commission Structure', desc: 'Charter partners earn 60% of match fees + 4-level network overrides. Know your numbers before your first conversation.' },
   { icon: '🏡', title: 'Understand What Makes a Good Referral', desc: 'Ideal DFW homeowner: owns their home, 1+ service need in past 12mo, DFW metro area, responsive to follow-up.' },
   { icon: '📱', title: 'Download the Partner App', desc: 'Track referrals, earnings, and network activity in real time.' },
   { icon: '🗣️', title: 'Practice Your 30-Second Pitch', desc: '"I connect DFW homeowners with vetted service pros — you get quotes fast, I earn when jobs close."' },

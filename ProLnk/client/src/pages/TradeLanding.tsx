@@ -28,7 +28,7 @@ const TRADES: Record<string, TradeData> = {
       "Network income from HVAC and roofer cross-referrals",
       "Zero cold calls — leads come to you",
     ],
-    focus: "DFW homeowners contact you directly. You quote, you close, you keep 72%+.",
+    focus: "DFW homeowners contact you directly. You quote, you close, you keep 60%+.",
     testimonials: [
       {
         name: "Carlos M.",
@@ -500,7 +500,7 @@ export default function TradeLanding() {
           </div>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {[
-              { icon: <DollarSign className="w-4 h-4 text-yellow-400" />, label: "Direct Commissions", desc: "72% of every job you close" },
+              { icon: <DollarSign className="w-4 h-4 text-yellow-400" />, label: "Direct Commissions", desc: "60% of every job you close" },
               { icon: <Users className="w-4 h-4 text-yellow-400" />, label: "Network Override", desc: "Earn on jobs your referrals close" },
               { icon: <Zap className="w-4 h-4 text-yellow-400" />, label: "Subscription Override", desc: "Recurring % when your referred pros pay monthly" },
               { icon: <Shield className="w-4 h-4 text-yellow-400" />, label: "Homeowner Origination", desc: "Permanent share of platform fees from homes you bring in" },

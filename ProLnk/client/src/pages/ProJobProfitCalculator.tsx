@@ -11,7 +11,7 @@ export default function ProJobProfitCalculator() {
   const [targetMonthlyNet, setTargetMonthlyNet] = useState(3000);
 
   const prolnkShare = Math.round(jobValue * 0.28);
-  const proKeeps = Math.round(jobValue * 0.72);
+  const proKeeps = Math.round(jobValue * 0.60);
   const laborCost = laborHours * laborRate;
   const totalCosts = materials + laborCost + fuelCost + toolWear + insurance;
   const netWithProLnk = proKeeps - totalCosts;
@@ -99,7 +99,7 @@ export default function ProJobProfitCalculator() {
             }}>
               -${prolnkShare.toLocaleString()}
             </div>
-            <div style={{ fontSize: '11px', color: '#94A3B8', marginTop: '4px' }}>You keep 72% = ${proKeeps.toLocaleString()}</div>
+            <div style={{ fontSize: '11px', color: '#94A3B8', marginTop: '4px' }}>You keep 60% = ${proKeeps.toLocaleString()}</div>
           </div>
           <div>
             <label style={labelStyle}>MATERIALS COST</label>
@@ -180,7 +180,7 @@ export default function ProJobProfitCalculator() {
               WITH PROLNK ⚡
             </div>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8' }}>You keep (72%)</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>You keep (60%)</div>
               <div style={{ fontSize: '20px', fontWeight: '700', color: '#F1F5F9' }}>${proKeeps.toLocaleString()}</div>
             </div>
             <div style={{ marginBottom: '8px' }}>

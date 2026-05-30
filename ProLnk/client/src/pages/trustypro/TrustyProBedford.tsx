@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const stats = [
   { label: 'Avg Home Age', value: '40 yrs' },
-  { label: 'Owner-Occupied', value: '72%' },
+  { label: 'Owner-Occupied', value: '60%' },
   { label: 'Clay Soil Index', value: 'High' },
   { label: 'Homes in Bedford', value: '19,000+' },
 ];

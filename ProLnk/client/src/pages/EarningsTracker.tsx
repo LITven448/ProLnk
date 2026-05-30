@@ -59,7 +59,7 @@ export default function EarningsTracker() {
     scout:      { label: "Scout",      cap: 500,  keepRate: 0.40, color: "bg-gray-100 text-gray-700" },
     pro:        { label: "Pro",        cap: null, keepRate: 0.55, color: "bg-blue-100 text-blue-700" },
     crew:       { label: "Crew",       cap: null, keepRate: 0.65, color: "bg-purple-100 text-purple-700" },
-    company:    { label: "Company",    cap: null, keepRate: 0.72, color: "bg-amber-100 text-amber-700" },
+    company:    { label: "Company",    cap: null, keepRate: 0.60, color: "bg-amber-100 text-amber-700" },
     enterprise: { label: "Enterprise", cap: null, keepRate: 0.78, color: "bg-[#0A1628]/10 text-[#0A1628]" },
   };
   const partnerTier = (profileData?.partner as any)?.tier ?? "scout";

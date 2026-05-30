@@ -63,7 +63,7 @@ const faqs = [
   { q: "What Texas electrical license is required?", a: "A Texas Department of Licensing and Regulation (TDLR) Journeyman Electrician or Master Electrician license is required. Electrical Apprentices working under a licensed Master Electrician are not eligible for independent lead acceptance." },
   { q: "How does the panel age AI detection work?", a: "When you upload photos at any job site, our Vision AI identifies manufacturer labels, breaker styles, and wire types associated with panels installed before 2000. For panels flagged as high-risk (Federal Pacific, Zinsco, older Cutler-Hammer), the system generates an immediate upgrade alert and routes it to you as the originating electrician — putting you first in line for the upgrade job." },
   { q: "Are EV charger leads residential or commercial?", a: "Both. The majority of EV charger leads (about 70%) are residential Level 2 installations. The remaining 30% are commercial fleet charging or multi-unit residential (MDU) properties. You can filter lead types in your dashboard to accept only the jobs that match your specialization." },
-  { q: "How does the solar hookup referral work financially?", a: "Solar hookup referrals work the same as all ProLnk leads — you earn 72% of the 10% platform fee on the job value. A typical DFW solar hookup (sub-panel upgrade + interconnection) runs $2,000–$5,000, generating $144–$360 per job. You also originate the referral, earning origination rights of 1.5% of that home's future ProLnk revenue." },
+  { q: "How does the solar hookup referral work financially?", a: "Solar hookup referrals work the same as all ProLnk leads — you earn 60% of the 10% platform fee on the job value. A typical DFW solar hookup (sub-panel upgrade + interconnection) runs $2,000–$5,000, generating $144–$360 per job. You also originate the referral, earning origination rights of 1.5% of that home's future ProLnk revenue." },
 ];
 
 export default function DFWElectricianNetwork() {
@@ -72,8 +72,8 @@ export default function DFWElectricianNetwork() {
   const [networkAvgJob, setNetworkAvgJob] = useState(3000);
 
   const platformFee = jobValue * 0.10;
-  const yourCommission = platformFee * 0.72;
-  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.72) * 0.07;
+  const yourCommission = platformFee * 0.60;
+  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.60) * 0.07;
   const total = yourCommission + networkOverride;
 
   return (
@@ -97,7 +97,7 @@ export default function DFWElectricianNetwork() {
           <div style={styles.incomeTitle}>$4,200 Electrical Panel Upgrade (200A)</div>
           <div style={styles.incomeLine}><span>Job Value</span><span>$4,200</span></div>
           <div style={styles.incomeLine}><span>ProLnk Platform Fee (10%)</span><span>$420</span></div>
-          <div style={styles.incomeLine}><span>Your Share (72% of fee)</span><span style={{ color: YELLOW }}>$302</span></div>
+          <div style={styles.incomeLine}><span>Your Share (60% of fee)</span><span style={{ color: YELLOW }}>$302</span></div>
           <div style={styles.incomeLine}><span>+ Network Override (3 recruited electricians × avg job)</span><span style={{ color: YELLOW }}>+$45</span></div>
           <div style={styles.incomeTotal}><span>Total You Keep</span><span>$347</span></div>
         </div>
@@ -141,7 +141,7 @@ export default function DFWElectricianNetwork() {
               <div style={styles.stepNum}>3</div>
               <div>
                 <div style={styles.stepTitle}>Earn commissions + origination rights</div>
-                <div style={styles.stepText}>Complete the job, collect your 72% commission. Homes you originate generate 1.5% origination income from all future ProLnk platform fees — permanently.</div>
+                <div style={styles.stepText}>Complete the job, collect your 60% commission. Homes you originate generate 1.5% origination income from all future ProLnk platform fees — permanently.</div>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function DFWElectricianNetwork() {
             <input style={styles.calcInput} type="number" value={networkAvgJob} onChange={e => setNetworkAvgJob(Number(e.target.value))} min={200} max={15000} step={200} />
           </div>
           <div style={styles.calcResult}>
-            <div style={styles.calcResultRow}><span>Your direct commission (72% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
+            <div style={styles.calcResultRow}><span>Your direct commission (60% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
             <div style={styles.calcResultRow}><span>Network override ({networkPros} electricians × 7%)</span><span>${networkOverride.toFixed(0)}</span></div>
             <div style={styles.calcResultTotal}><span>Estimated Monthly</span><span>${total.toFixed(0)}</span></div>
           </div>

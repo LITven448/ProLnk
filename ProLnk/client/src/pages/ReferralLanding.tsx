@@ -247,7 +247,7 @@ export default function ReferralLanding() {
               {[
                 "$149/mo founding rate locked for life",
                 "90-day free trial — no charge until launch",
-                "72% commission keep on every completed job",
+                "60% commission keep on every completed job",
                 "5 income streams including 4-level network income",
                 "AI-powered lead detection from job photos",
                 "Charter member badge on your partner profile",
@@ -266,7 +266,7 @@ export default function ReferralLanding() {
               {
                 icon: <Zap size={16} style={{ color: "#F5E642" }} />,
                 bg: "rgba(245,230,66,0.1)",
-                title: "72% Keep",
+                title: "60% Keep",
                 desc: "On every referral closed",
               },
               {

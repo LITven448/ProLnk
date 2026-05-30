@@ -12,7 +12,7 @@ const TIERS = [
 
 const BENEFITS = [
   { icon: Lock, title: "$149/mo Locked Forever", desc: "This rate never changes. Future partners pay more. You won\'t." },
-  { icon: TrendingUp, title: "72% Commission Keep Rate", desc: "Highest tier on the platform — on jobs you complete." },
+  { icon: TrendingUp, title: "60% Commission Keep Rate", desc: "Highest tier on the platform — on jobs you complete." },
   { icon: Users, title: "4-Level Network Override", desc: "Earn on every job by up to 4 levels of your recruited network." },
   { icon: Shield, title: "1.5% Origination Rights", desc: "Earn forever on every job at every home you document first." },
   { icon: Zap, title: "AI-Generated Leads", desc: "Computer vision analyzes your photos for 65+ cross-trade opportunities." },
@@ -28,7 +28,7 @@ const NETWORK_RATES = [
 
 const FAQS = [
   { q: "What happens after the network closes?", a: "Once all 2,125 slots fill, the founding network closes permanently. Your position, rate, and origination rights are locked in for the lifetime of the platform." },
-  { q: "Do I have to recruit to earn?", a: "No — you earn your 72% commission keep rate on every job you complete yourself, regardless of your network. Recruiting amplifies your earnings by adding network override income on top." },
+  { q: "Do I have to recruit to earn?", a: "No — you earn your 60% commission keep rate on every job you complete yourself, regardless of your network. Recruiting amplifies your earnings by adding network override income on top." },
   { q: "What if I document a home someone else later services?", a: "You keep 1.5% of the platform fee on every job completed at that address, forever. That\'s the origination right — it doesn\'t expire and it can\'t be taken away." },
   { q: "How does the 90-day trial work?", a: "You get full access to every platform feature from day one. Billing begins after 90 days at $149/month. You can cancel any time before then with no charge." },
   { q: "Is the $149/month rate really permanent?", a: "Yes. Contractually fixed at enrollment. ProLnk may raise rates for future standard-tier partners, but founding network members\' rates are locked at $149/month in perpetuity." },

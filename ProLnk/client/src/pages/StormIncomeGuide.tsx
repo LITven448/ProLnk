@@ -109,7 +109,7 @@ export default function StormIncomeGuide() {
               ["×40%", "Book rate"],
               ["×$14,000", "Avg roof replacement"],
               ["×10%", "ProLnk partner commission"],
-              ["×72%", "Your take-home after network"],
+              ["×60%", "Your take-home after network"],
               ["= $2,419", "Storm weekend income"],
             ].map(([val, label], i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.08)", borderRadius: 10, padding: "16px 18px" }}>
@@ -119,7 +119,7 @@ export default function StormIncomeGuide() {
             ))}
           </div>
           <p style={{ color: "#94A3B8", fontSize: 13, marginTop: 20 }}>
-            Based on 6 dispatched leads, 40% booking rate, $14,000 average roof replacement value, 10% ProLnk commission, 72% partner take-home after network fee share.
+            Based on 6 dispatched leads, 40% booking rate, $14,000 average roof replacement value, 10% ProLnk commission, 60% partner take-home after network fee share.
           </p>
         </div>
 

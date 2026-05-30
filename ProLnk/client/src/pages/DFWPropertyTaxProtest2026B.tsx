@@ -7,7 +7,7 @@ export default function DFWPropertyTaxProtest2026B() {
 
   const overAppraisal = Math.max(0, appraisedValue - homeValue);
   const taxRate: Record<string, number> = { dallas: 0.0215, tarrant: 0.0198, collin: 0.0172, denton: 0.0185, rockwall: 0.0190 };
-  const successRate: Record<string, string> = { dallas: '68%', tarrant: '71%', collin: '74%', denton: '69%', rockwall: '72%' };
+  const successRate: Record<string, string> = { dallas: '68%', tarrant: '71%', collin: '74%', denton: '69%', rockwall: '60%' };
   const rate = taxRate[county] ?? 0.02;
   const annualSavings = Math.round(overAppraisal * rate);
   const contingencyFee = Math.round(annualSavings * 0.35);

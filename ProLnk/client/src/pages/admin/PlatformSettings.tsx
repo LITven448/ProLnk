@@ -236,7 +236,7 @@ export default function PlatformSettings() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {[
-                { label: "Partner Keep Rate", value: "72%", color: "text-teal-400" },
+                { label: "Partner Keep Rate", value: "60%", color: "text-teal-400" },
                 { label: "Network L1 Override", value: "7%", color: "text-blue-400" },
                 { label: "Network L2 Override", value: "4%", color: "text-blue-400" },
                 { label: "Network L3 Override", value: "2%", color: "text-blue-400" },

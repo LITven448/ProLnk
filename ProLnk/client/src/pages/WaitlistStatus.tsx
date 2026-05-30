@@ -869,7 +869,7 @@ export default function WaitlistStatus() {
           <p className="text-gray-400 text-sm mb-4">
             {tier === "Charter"
               ? "You're in the top 100. Lock in your 2.0% commission rate and 4-level override network forever."
-              : `Charter Members (first 25 spots) earn 72% commission keep rate and 4 levels of network overriderrides. ${status.spotsToCharter > 0 ? `${status.spotsToCharter} spots remain — get 5 referrals to qualify.` : "Get 5 referrals to qualify."}`}
+              : `Charter Members (first 25 spots) earn 60% commission keep rate and 4 levels of network overriderrides. ${status.spotsToCharter > 0 ? `${status.spotsToCharter} spots remain — get 5 referrals to qualify.` : "Get 5 referrals to qualify."}`}
           </p>
           <CopyButton text={referralLink} label="Copy My Referral Link" />
           <div className="mt-3">

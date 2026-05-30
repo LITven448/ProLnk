@@ -42,7 +42,7 @@ const PAIN_POINTS = [
 ];
 
 const VALUES = [
-  { icon: Shield, title: "Contractor-First", desc: "We built for the trade professional, not the VC. 72% of job value stays with the pro." },
+  { icon: Shield, title: "Contractor-First", desc: "We built for the trade professional, not the VC. 60% of job value stays with the pro." },
   { icon: Brain, title: "AI-Powered", desc: "47 autonomous agents handle matching, alerts, payouts — so contractors work, not admin." },
   { icon: Heart, title: "Community-Owned", desc: "The founding network earns overrides forever. Your recruits make you money while you sleep." },
   { icon: Lock, title: "Privacy-First", desc: "Homeowner data is never sold. The Home Health Vault is controlled by the homeowner." },
@@ -199,10 +199,10 @@ export default function About() {
                 Home service contractors are the backbone of America's housing infrastructure. They fix roofs, clear drains, and keep the lights on — yet they've historically been exploited by lead-gen platforms that charge $80/lead and deliver nothing.
               </p>
               <p style={{ color: "#94a3b8", lineHeight: 1.8, marginBottom: 24 }}>
-                ProLnk flips that model. Contractors join a network, refer other contractors, and build permanent income streams that compound over time. We handle AI matching, payment processing, and homeowner acquisition — you do the work and keep 72%.
+                ProLnk flips that model. Contractors join a network, refer other contractors, and build permanent income streams that compound over time. We handle AI matching, payment processing, and homeowner acquisition — you do the work and keep 60%.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {["No pay-per-lead fees", "72% commission keep rate", "4-level referral overrides that pay forever", "AI lead matching — no cold outreach needed"].map(item => (
+                {["No pay-per-lead fees", "60% commission keep rate", "4-level referral overrides that pay forever", "AI lead matching — no cold outreach needed"].map(item => (
                   <div key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <CheckCircle style={{ width: 16, height: 16, color: TEAL, flexShrink: 0 }} />
                     <span style={{ color: "#cbd5e1", fontSize: 14 }}>{item}</span>

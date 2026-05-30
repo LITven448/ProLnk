@@ -43,8 +43,8 @@ const FOUNDING_BENEFITS = [
   },
   {
     icon: <DollarSign className="w-6 h-6" />,
-    title: "72% Commission Keep Rate",
-    description: "The highest keep rate on the platform. You keep 72 cents of every dollar from every job you close.",
+    title: "60% Commission Keep Rate",
+    description: "The highest keep rate on the platform. You keep 60 cents of every commission dollar from every job you close.",
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
@@ -224,7 +224,7 @@ export default function FoundingPartnerPage() {
         </h1>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
           2,125 founding spots — across 4 tiers. Once the waitlist closes, this status is gone forever.
-          Lock in $149/mo, 72% keep rate, and permanent network income rights before someone else takes your position.
+          Lock in $149/mo, 60% keep rate, and permanent network income rights before someone else takes your position.
         </p>
 
         {/* Live spot counter */}
@@ -362,7 +362,7 @@ export default function FoundingPartnerPage() {
                 icon: DollarSign,
                 color: "text-green-400",
                 bg: "bg-green-400/10",
-                title: "72% commission keep",
+                title: "60% commission keep",
                 desc: "Highest keep rate on the platform — locked in for every job, forever.",
               },
               {
@@ -415,7 +415,7 @@ export default function FoundingPartnerPage() {
       <section className="max-w-5xl mx-auto px-6 py-12">
         <h2 className="text-2xl font-black text-white text-center mb-3">4 Tiers. One Program.</h2>
         <p className="text-gray-400 text-center text-sm mb-10 max-w-xl mx-auto">
-          Every tier gets identical benefits — $149/mo locked, 72% keep, full network income. The only difference is how early you joined.
+          Every tier gets identical benefits — $149/mo locked, 60% keep, full network income. The only difference is how early you joined.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {TIERS.map((tier, i) => (
@@ -463,7 +463,7 @@ export default function FoundingPartnerPage() {
             <div className="px-6 py-4 flex items-center justify-between">
               <div>
                 <div className="text-white font-semibold text-sm">Your $3,000 job</div>
-                <div className="text-gray-500 text-xs mt-0.5">72% keep rate</div>
+                <div className="text-gray-500 text-xs mt-0.5">60% keep rate</div>
               </div>
               <div className="text-right">
                 <div className="text-teal-400 font-black text-xl">$2,160</div>

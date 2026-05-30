@@ -625,7 +625,7 @@ export default function StormAlert() {
           <div className="bg-gradient-to-r from-red-500/15 via-amber-500/10 to-orange-500/10 border border-red-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="text-base font-bold text-white">Don't wait for the next storm to cost you jobs.</p>
-              <p className="text-sm text-gray-300 mt-1">Join ProLnk's founding network — 72% commission keep, instant storm leads, 4-level network income. <span className="text-amber-400 font-semibold">First 500 partners only.</span></p>
+              <p className="text-sm text-gray-300 mt-1">Join ProLnk's founding network — 60% commission keep, instant storm leads, 4-level network income. <span className="text-amber-400 font-semibold">First 500 partners only.</span></p>
             </div>
             <button onClick={() => navigate("/apply")} className="px-7 py-3.5 rounded-xl bg-red-500 hover:bg-red-400 text-white font-bold text-sm transition-colors flex-shrink-0 whitespace-nowrap shadow-lg shadow-red-500/20">
               Sign Up as a Pro →

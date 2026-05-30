@@ -52,7 +52,7 @@ const TIER_CONFIG: Record<string, {
     keepRate: 72,
     headline: "Company tier -- built for scale.",
     perks: [
-      "Keep 72% of every commission",
+      "Keep 60% of every commission",
       "Unlimited team members",
       "White-label customer reports",
       "API access + webhook integrations",

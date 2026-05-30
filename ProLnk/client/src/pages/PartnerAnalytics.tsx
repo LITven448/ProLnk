@@ -451,7 +451,7 @@ export default function PartnerAnalytics() {
             : new Date().toLocaleString("default", { month: "long", year: "numeric" });
 
           const rows: Array<{ label: string; amount: number; icon: ReactNode; sub?: string }> = [
-            { label: "Direct commissions (72% keep)", amount: direct, icon: <Briefcase size={14} className="text-blue-500" /> },
+            { label: "Direct commissions (60% keep)", amount: direct, icon: <Briefcase size={14} className="text-blue-500" /> },
             { label: "L1 network overrides (7%)", amount: l1, icon: <Network size={14} className="text-purple-500" /> },
             { label: "L2 network overrides (4%)", amount: l2, icon: <Network size={14} className="text-purple-400" /> },
             { label: "L3 network overrides (2%)", amount: l3, icon: <Network size={14} className="text-purple-300" /> },

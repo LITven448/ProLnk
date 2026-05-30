@@ -54,7 +54,7 @@ const HOW_IT_WORKS = [
 const FOUNDING_PERKS = [
   { icon: Gift, title: "90-Day Free Trial", desc: "No credit card required. Full access from day one." },
   { icon: Lock, title: "$149/mo Locked for Life", desc: "Founding rate never increases, even as we raise prices." },
-  { icon: Percent, title: "72% Commission Keep Rate", desc: "You keep 72 cents of every dollar earned through the network." },
+  { icon: Percent, title: "60% Commission Keep Rate", desc: "You keep 60 cents of every commission dollar earned through the network." },
   { icon: Crown, title: "Founding Network Status", desc: "Permanent founding badge — priority placement, early access, network perks forever." },
 ];
 

@@ -43,7 +43,7 @@ const TIER_BENEFITS = [
   { tier: "Scout",      price: "Free",      keepRate: "40%", seats: "1 seat",     color: "bg-slate-100 text-slate-700",  cap: "$500/mo cap" },
   { tier: "Pro",        price: "$29/mo",    keepRate: "55%", seats: "3 seats",    color: "bg-[#0A1628]/10 text-[#0A1628]",   cap: "No cap" },
   { tier: "Crew",       price: "$79/mo",    keepRate: "65%", seats: "5 seats",    color: "bg-indigo-100 text-indigo-700", cap: "No cap", recommended: true },
-  { tier: "Company",    price: "$149/mo",   keepRate: "72%", seats: "15 seats",   color: "bg-amber-100 text-amber-700", cap: "No cap" },
+  { tier: "Company",    price: "$149/mo",   keepRate: "60%", seats: "15 seats",   color: "bg-amber-100 text-amber-700", cap: "No cap" },
   { tier: "Enterprise", price: "$299/mo",   keepRate: "78%", seats: "Unlimited",  color: "bg-slate-800 text-slate-100", cap: "No cap" },
 ];
 

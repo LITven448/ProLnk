@@ -72,8 +72,8 @@ export default function DFWHVACNetwork() {
   const [networkAvgJob, setNetworkAvgJob] = useState(4000);
 
   const platformFee = jobValue * 0.10;
-  const yourCommission = platformFee * 0.72;
-  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.72) * 0.07;
+  const yourCommission = platformFee * 0.60;
+  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.60) * 0.07;
   const total = yourCommission + networkOverride;
 
   return (
@@ -97,7 +97,7 @@ export default function DFWHVACNetwork() {
           <div style={styles.incomeTitle}>$5,400 AC System Replacement</div>
           <div style={styles.incomeLine}><span>Job Value</span><span>$5,400</span></div>
           <div style={styles.incomeLine}><span>ProLnk Platform Fee (10%)</span><span>$540</span></div>
-          <div style={styles.incomeLine}><span>Your Share (72% of fee)</span><span style={{ color: YELLOW }}>$388</span></div>
+          <div style={styles.incomeLine}><span>Your Share (60% of fee)</span><span style={{ color: YELLOW }}>$388</span></div>
           <div style={styles.incomeLine}><span>+ Network Override (4 recruited techs × avg job)</span><span style={{ color: YELLOW }}>+$80</span></div>
           <div style={styles.incomeTotal}><span>Total You Keep</span><span>$468</span></div>
         </div>
@@ -141,7 +141,7 @@ export default function DFWHVACNetwork() {
               <div style={styles.stepNum}>3</div>
               <div>
                 <div style={styles.stepTitle}>Collect commission + network income</div>
-                <div style={styles.stepText}>Complete the job, get paid 72% of the 10% platform fee. Recruit other HVAC techs and earn 7% of their commissions indefinitely.</div>
+                <div style={styles.stepText}>Complete the job, get paid 60% of the 10% platform fee. Recruit other HVAC techs and earn 7% of their commissions indefinitely.</div>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function DFWHVACNetwork() {
             <input style={styles.calcInput} type="number" value={networkAvgJob} onChange={e => setNetworkAvgJob(Number(e.target.value))} min={200} max={20000} step={200} />
           </div>
           <div style={styles.calcResult}>
-            <div style={styles.calcResultRow}><span>Your direct commission (72% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
+            <div style={styles.calcResultRow}><span>Your direct commission (60% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
             <div style={styles.calcResultRow}><span>Network override ({networkPros} techs × 7%)</span><span>${networkOverride.toFixed(0)}</span></div>
             <div style={styles.calcResultTotal}><span>Estimated Monthly</span><span>${total.toFixed(0)}</span></div>
           </div>

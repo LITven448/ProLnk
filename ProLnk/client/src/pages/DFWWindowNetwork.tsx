@@ -17,7 +17,7 @@ const findings = [
 
 const faqs = [
   { q: "Why do DFW windows fail faster than national averages?", a: "DFW summers average UV index 11+ for 90+ days — the same UV load that California sees in 12–14 years hits DFW in 5–7. Most manufacturer seal warranties don't account for Texas UV exposure rates, voiding coverage." },
-  { q: "What commission rate do window pros earn?", a: "Window pros earn 72% of their own job revenue and 7.2% commission on every adjacent trade lead that converts to a completed job. On a $4,500 window job with 2.8 average adjacent leads, total commission opportunity exceeds $440." },
+  { q: "What commission rate do window pros earn?", a: "Window pros earn 60% of their own job revenue and 7.2% commission on every adjacent trade lead that converts to a completed job. On a $4,500 window job with 2.8 average adjacent leads, total commission opportunity exceeds $440." },
   { q: "Do I need to be a licensed window contractor?", a: "Window replacement in Texas requires a general contractor license or specialty contractor registration depending on job scope. We verify licensing before activation. Window film installation has separate registration requirements." },
   { q: "How does the HVAC lead from window film installs work?", a: "When you install solar or EV film, you're implicitly confirming the homeowner cares about energy efficiency. Our AI flags these installs and automatically generates a warm HVAC efficiency lead for the homeowner within 24 hours of your job close." },
 ];

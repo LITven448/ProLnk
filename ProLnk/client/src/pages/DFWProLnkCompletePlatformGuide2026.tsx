@@ -24,7 +24,7 @@ const GUIDES: Record<string, { title: string; items: string[] }> = {
     items: [
       '🥇 Charter Tier: first 500 applications — $149/month, locked for life',
       '💰 5 income streams: direct commissions, pro overrides, subscriptions, leads, origination',
-      '📊 72% of each job revenue flows directly to the Charter Pro',
+      '📊 60% of each job revenue flows directly to the Charter Pro',
       '🌐 4-level network: your downline earns you passive override income',
       '📱 Dispatch notifications — matched leads delivered to your phone in real time',
       '🏛️ Origination rights — homes you service earn you a permanent revenue share',

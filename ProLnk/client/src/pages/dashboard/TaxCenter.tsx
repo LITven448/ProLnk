@@ -128,7 +128,7 @@ export default function TaxCenter() {
       [
         ["Gross Income", formatCurrency(data.grossIncome)],
         ["Platform Fees Paid", formatCurrency(platformFees)],
-        ["Net Income (72%)", formatCurrency(netIncome)],
+        ["Net Income (60%)", formatCurrency(netIncome)],
         ["Jobs Completed", String(data.jobCount)],
         ["Tax Year", taxYear],
         ["1099 Required", needs1099 ? "Yes" : "No"],
@@ -258,7 +258,7 @@ export default function TaxCenter() {
             <div className="bg-slate-900 rounded-lg p-4">
               <p className="text-slate-400 text-sm mb-1">Net Income</p>
               <p className="text-2xl font-bold text-green-400">{formatCurrency(netIncome)}</p>
-              <p className="text-slate-500 text-xs mt-1">72% you keep</p>
+              <p className="text-slate-500 text-xs mt-1">60% you keep</p>
             </div>
           </div>
 

@@ -3,7 +3,7 @@ import { ArrowRight, TrendingUp, DollarSign, Users, Star } from "lucide-react";
 type Row = { label: string; prolnk: string; w2: string; solo: string; angi: string; thumbtack: string };
 
 const rows: Row[] = [
-  { label: "Keep % of earnings", prolnk: "72%", w2: "55–65%", solo: "65–75%", angi: "35–55%", thumbtack: "40–60%" },
+  { label: "Keep % of earnings", prolnk: "60%", w2: "55–65%", solo: "65–75%", angi: "35–55%", thumbtack: "40–60%" },
   { label: "Passive income", prolnk: "Yes — 4 levels", w2: "None", solo: "None", angi: "None", thumbtack: "None" },
   { label: "Upfront costs", prolnk: "$149/mo", w2: "None", solo: "Tools only", angi: "$300+/mo", thumbtack: "$150+/mo" },
   { label: "Lead quality", prolnk: "AI-matched", w2: "N/A", solo: "Self-sourced", angi: "Shared leads", thumbtack: "Shared leads" },
@@ -18,13 +18,13 @@ const scenarios: Scenario[] = [
     title: "Part-Time",
     detail: "5 jobs/mo × $3,000 avg",
     result: "$2,160/mo kept",
-    note: "72% commission on $3,000 avg job value",
+    note: "60% commission on $3,000 avg job value",
   },
   {
     title: "Full-Time",
     detail: "15 jobs/mo × $5,000 avg",
     result: "$5,400/mo kept",
-    note: "72% commission on $5,000 avg job value",
+    note: "60% commission on $5,000 avg job value",
   },
   {
     title: "With Network of 10",
@@ -113,13 +113,13 @@ export default function ProIncomeComparison() {
           </div>
           <h2 className="text-3xl font-bold text-white mb-3">Ready to Keep More of What You Earn?</h2>
           <p className="text-gray-300 mb-8 max-w-md mx-auto">
-            Join the waitlist. Charter members lock in $149/mo forever and keep 72% from day one.
+            Join the waitlist. Charter members lock in $149/mo forever and keep 60% from day one.
           </p>
           <a
             href="/apply"
             className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1B2A4A] font-bold px-8 py-4 rounded-xl transition-colors text-lg"
           >
-            Join ProLnk — Keep 72%
+            Join ProLnk — Keep 60%
             <ArrowRight className="w-5 h-5" />
           </a>
           <div className="mt-6 flex justify-center gap-6 text-sm text-gray-400">

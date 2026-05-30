@@ -171,7 +171,7 @@ const TIER_CONFIG = {
   scout:      { label: "Scout",      color: "text-slate-600",  bg: "bg-slate-50 border-slate-200",   bar: "#94A3B8", icon: "[SEARCH]", keepRate: 0.40, next: "Pro",     monthlyFee: 0 },
   pro:        { label: "Pro",        color: "text-[#0A1628]",   bg: "bg-[#F5E642]/10 border-[#0A1628]/20",     bar: "#0A1628", icon: "",   keepRate: 0.55, next: "Crew",    monthlyFee: 29 },
   crew:       { label: "Crew",       color: "text-indigo-600", bg: "bg-indigo-50 border-indigo-200", bar: "#6366F1", icon: "",   keepRate: 0.65, next: "Company", monthlyFee: 79 },
-  company:    { label: "Company",    color: "text-amber-600",  bg: "bg-amber-50 border-amber-200",   bar: "#F59E0B", icon: "",   keepRate: 0.72, next: "Enterprise", monthlyFee: 149 },
+  company:    { label: "Company",    color: "text-amber-600",  bg: "bg-amber-50 border-amber-200",   bar: "#F59E0B", icon: "",   keepRate: 0.60, next: "Enterprise", monthlyFee: 149 },
   enterprise: { label: "Enterprise", color: "text-slate-100",  bg: "bg-slate-900 border-slate-700",  bar: "#64748B", icon: "[AWARD]",   keepRate: 0.78, next: null,      monthlyFee: 299 },
 };
 

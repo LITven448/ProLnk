@@ -486,7 +486,7 @@ export default function TierUpgradeWizard() {
               </div>
 
               {[
-                { label: "Partner commission rate", value: "72% → 72% (same at all tiers)", note: null },
+                { label: "Partner commission rate", value: "60% → 60% (same at all tiers)", note: null },
                 { label: "Network job override to recruits", value: "7/4/2/1% → 7/4/2/1% (unchanged)", note: null },
                 { label: "Subscription override rate", value: "12/6/3/1.5% → 12/6/3/1.5% (unchanged)", note: null },
                 { label: "Monthly platform fee", value: "$149/mo → $149/mo (locked at all tiers)", note: null },

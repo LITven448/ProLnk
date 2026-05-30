@@ -198,7 +198,7 @@ export default function NetworkIncomeCalculator() {
           <div className="rounded-2xl p-5" style={{ background: `${D.cyan}08`, border: `1px solid ${D.cyan}20` }}>
             <p className="text-xs font-bold mb-3" style={{ color: D.cyan }}>HOW IT CALCULATES</p>
             <p className="text-xs leading-relaxed" style={{ color: D.muted }}>
-              Each job flows 10% platform fee → you keep 72% → then network override applies by level.
+              Each job flows 10% platform fee → you keep 60% → then network override applies by level.
               {" "}<strong style={{ color: D.text }}>L1 = 7% of the fee pool</strong>, L2 = 4%, L3 = 2%, L4 = 1%.
               Your passive income compounds as your recruits recruit.
             </p>

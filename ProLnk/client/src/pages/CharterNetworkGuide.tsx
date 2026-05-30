@@ -10,7 +10,7 @@ const comparison = [
 ];
 
 function calcIncome(jobs: number, recruits: number, homes: number) {
-  const directCommission = jobs * 14000 * 0.10 * 0.72;
+  const directCommission = jobs * 14000 * 0.10 * 0.60;
   const networkOverride = recruits * (jobs * 14000 * 0.10) * 0.07;
   const origination = homes * 2 * 800 * 0.015;
   return Math.round(directCommission + networkOverride + origination);
@@ -112,7 +112,7 @@ export default function CharterNetworkGuide() {
           <div style={{ color: "#94A3B8", fontSize: 14, marginBottom: 28 }}>Illustrative example at full network buildout</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 }}>
             {[
-              ["$25,200", "Direct commissions/mo", "25 jobs × $14K × 10% × 72%"],
+              ["$25,200", "Direct commissions/mo", "25 jobs × $14K × 10% × 60%"],
               ["$2,450", "Network overrides/mo", "25 recruits × jobs × 7%"],
               ["$2,400", "Origination income/yr", "100 homes × 2 jobs × $800 × 1.5%"],
               [`$${monthlyIncome.toLocaleString()}+`, "Total monthly est.", "Direct + network streams"],

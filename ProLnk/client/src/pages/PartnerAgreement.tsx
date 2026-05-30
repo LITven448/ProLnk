@@ -46,7 +46,7 @@ const SECTIONS = [
   {
     id: "commissions",
     title: "3. Commission Structure and Network Income",
-    content: `**3.1 Founding Member Commission Rate.** All Founding Members earn a 72% keep rate on each matched job's platform fee — meaning ProLnk retains 28% and Partner retains 72% of all fees collected on jobs attributed to the Partner. This rate is locked for life and is not subject to the standard tier schedule.
+    content: `**3.1 Founding Member Commission Rate.** All Founding Members earn a 60% keep rate on each matched job's platform fee — meaning ProLnk retains 28% and Partner retains 60% of all fees collected on jobs attributed to the Partner. This rate is locked for life and is not subject to the standard tier schedule.
 
 **3.2 Platform Subscription.** All Partners (Founding and Standard) pay $149/month. This rate is locked for Founding Members and will not increase regardless of future price changes to the standard subscription tier.
 
@@ -81,7 +81,7 @@ const SECTIONS = [
 
 **4.2 Legitimate Recruitment Only.** Partner agrees to recruit only genuine home service professionals who meet ProLnk's licensing and insurance requirements. Recruiting fictitious, unqualified, or nominee accounts is a violation of this Agreement and grounds for immediate termination and forfeiture of all earned but unpaid Network Income.
 
-**4.3 Tier Structure.** The 500 Founding Member spots are allocated in cohorts: Charter (first 25), Founding (next 100), Level 3 (next 400), Level 4 (next 1,600). All cohorts share the same $149/month rate and 72% keep rate. Cohort assignment determines the order of Network Income distribution when cascading through levels.
+**4.3 Tier Structure.** The 500 Founding Member spots are allocated in cohorts: Charter (first 25), Founding (next 100), Level 3 (next 400), Level 4 (next 1,600). All cohorts share the same $149/month rate and 60% keep rate. Cohort assignment determines the order of Network Income distribution when cascading through levels.
 
 **4.4 No Pyramid or Ponzi Structure.** ProLnk's Network Income system is based exclusively on commissions derived from real job completions and actual paid subscriptions. No earnings are derived from recruitment fees alone. No Partner is required to recruit other Partners as a condition of earning commission on their own job completions.
 
@@ -235,7 +235,7 @@ export default function PartnerAgreement() {
               <div className="grid sm:grid-cols-3 gap-4">
                 <div className="bg-slate-900/60 rounded-lg p-4">
                   <div className="text-xs text-slate-400 mb-1">Keep Rate</div>
-                  <div className="text-2xl font-bold text-teal-400">72%</div>
+                  <div className="text-2xl font-bold text-teal-400">60%</div>
                   <div className="text-xs text-slate-400 mt-1">of all job fees, locked for life</div>
                 </div>
                 <div className="bg-slate-900/60 rounded-lg p-4">

@@ -40,7 +40,7 @@ const TIERS = [
       "12% subscription override on L1 recruits",
       "4/2/1% cascading overrides L2–L4",
       "$149/mo locked forever",
-      "72% direct job commission keep",
+      "60% direct job commission keep",
       "Charter badge + lifetime origination rights",
       "1.5% home origination override",
       "Priority lead routing",
@@ -64,7 +64,7 @@ const TIERS = [
       "12% subscription override on L1 recruits",
       "4/2/1% cascading overrides L2–L4",
       "$149/mo locked forever",
-      "72% direct job commission keep",
+      "60% direct job commission keep",
       "Founding badge + origination rights",
       "1.5% home origination override",
       "Priority lead routing",
@@ -87,7 +87,7 @@ const TIERS = [
       "12% subscription override on L1 recruits",
       "4/2/1% cascading overrides L2–L4",
       "$149/mo locked rate",
-      "72% direct job commission keep",
+      "60% direct job commission keep",
       "1.5% home origination override",
     ],
   },
@@ -108,7 +108,7 @@ const TIERS = [
       "12% subscription override on L1 recruits",
       "4/2/1% cascading overrides L2–L4",
       "$149/mo locked rate",
-      "72% direct job commission keep",
+      "60% direct job commission keep",
     ],
   },
 ];
@@ -228,7 +228,7 @@ function BenefitsComparison({ current, next }: { current: typeof TIERS[0]; next:
 const FAQS = [
   {
     q: "What happens to my current commission rate when I upgrade?",
-    a: "Your commission rate stays the same — all tiers keep 72% of direct job earnings. Upgrading unlocks a higher tier badge, more network override levels, and origination rights.",
+    a: "Your commission rate stays the same — all tiers keep 60% of direct job earnings. Upgrading unlocks a higher tier badge, more network override levels, and origination rights.",
   },
   {
     q: "Do I pay more when I upgrade?",

@@ -171,7 +171,7 @@ export default function CheckoutSuccess() {
         {/* Benefits recap */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 40 }}>
           {[
-            { icon: TrendingUp, label: "72% commission keep rate — locked forever" },
+            { icon: TrendingUp, label: "60% commission keep rate — locked forever" },
             { icon: Zap, label: "4-level network override cascade active" },
             { icon: Shield, label: "1.5% origination rights on every home" },
             { icon: Network, label: "Referral link ready to share now" },

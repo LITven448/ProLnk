@@ -16,7 +16,7 @@ const AUDIENCE_OPTIONS = [
   { key: "scout",     label: "Scout Tier",          icon: Hash,    color: "#6B7280", description: "Free tier -- 40% commission keep rate" },
   { key: "pro",       label: "Pro Tier",            icon: Trophy,  color: "#3B82F6", description: "$29/mo -- 55% commission keep rate" },
   { key: "crew",      label: "Crew Tier",           icon: Trophy,  color: "#8B5CF6", description: "$79/mo -- 65% commission keep rate" },
-  { key: "company",   label: "Company Tier",        icon: Trophy,  color: "#F59E0B", description: "$149/mo -- 72% commission keep rate" },
+  { key: "company",   label: "Company Tier",        icon: Trophy,  color: "#F59E0B", description: "$149/mo -- 60% commission keep rate" },
   { key: "enterprise",label: "Enterprise Tier",     icon: Trophy,  color: "#14B8A6", description: "$299/mo -- 78% commission keep rate" },
   { key: "pending",   label: "Pending Approval",    icon: Zap,     color: "#F59E0B", description: "Applicants awaiting review" },
 ];

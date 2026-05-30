@@ -51,7 +51,7 @@ function CopyButton({ text }: { text: string }) {
 
 function CommissionPreview({ referralCode, tier }: { referralCode?: string; tier?: string }) {
   const [jobValue, setJobValue] = useState(5000);
-  const keepRate = 0.72;
+  const keepRate = 0.60;
   const platformFee = jobValue * 0.10;
   const proEarns = (jobValue - platformFee) * keepRate;
   const l1Override = platformFee * 0.07;
@@ -79,7 +79,7 @@ function CommissionPreview({ referralCode, tier }: { referralCode?: string; tier
           <span className="text-gray-700">−${platformFee.toLocaleString()}</span>
         </div>
         <div className="flex justify-between border-t border-gray-100 pt-2">
-          <span className="text-gray-700 font-medium">Pro keeps (72%)</span>
+          <span className="text-gray-700 font-medium">Pro keeps (60%)</span>
           <span className="font-bold text-green-700">${proEarns.toFixed(0)}</span>
         </div>
         <div className="flex justify-between mt-1 pt-1 border-t border-gray-100">

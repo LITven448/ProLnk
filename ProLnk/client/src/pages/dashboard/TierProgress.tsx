@@ -69,7 +69,7 @@ const TIER_LADDER = [
     threshold: 25,
     color: "#22c55e",
     emoji: "👑",
-    keepRate: "72%",
+    keepRate: "60%",
     overrides: "7 / 4 / 2 / 1%",
     jobPool: "Full priority access",
     highlight: "Highest priority leads",
@@ -80,7 +80,7 @@ const TIER_LADDER = [
     threshold: 125,
     color: "#3b82f6",
     emoji: "⭐",
-    keepRate: "72%",
+    keepRate: "60%",
     overrides: "7 / 4 / 2 / 1%",
     jobPool: "High-priority access",
     highlight: "Same rates, top 125 position",
@@ -91,7 +91,7 @@ const TIER_LADDER = [
     threshold: 525,
     color: "#f59e0b",
     emoji: "🔷",
-    keepRate: "72%",
+    keepRate: "60%",
     overrides: "7 / 4 / 2 / 1%",
     jobPool: "Standard priority access",
     highlight: "Full 4-level network active",
@@ -102,7 +102,7 @@ const TIER_LADDER = [
     threshold: 2125,
     color: "#8b5cf6",
     emoji: "🟣",
-    keepRate: "72%",
+    keepRate: "60%",
     overrides: "7 / 4 / 2 / 1%",
     jobPool: "General access",
     highlight: "All income streams unlocked",
@@ -117,8 +117,8 @@ const INCOME_STREAMS = [
     icon: DollarSign,
     color: "#22c55e",
     label: "Direct Commission",
-    value: "72% keep rate",
-    detail: "You keep 72% of the platform fee on every job you win through ProLnk.",
+    value: "60% keep rate",
+    detail: "You keep 60% of the platform fee on every job you win through ProLnk.",
   },
   {
     id: "network",
@@ -320,7 +320,7 @@ export default function TierProgress() {
           {isFoundingNetwork && (
             <div className="grid grid-cols-3 gap-3 mt-5 pt-5" style={{ borderTop: `1px solid ${tierCfg.color}20` }}>
               {[
-                { label: "Keep Rate", value: "72%" },
+                { label: "Keep Rate", value: "60%" },
                 { label: "Override Levels", value: "4 deep" },
                 { label: "Sub Override", value: "12%" },
               ].map(({ label, value }) => (

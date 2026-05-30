@@ -13,7 +13,7 @@ const TIER_CONFIG: Record<string, { label: string; keepRate: number; cap: string
   scout:      { label: "Scout",      keepRate: 0.40, cap: "$500/month", fee: "$0/month" },
   pro:        { label: "Pro",        keepRate: 0.55, cap: "None",       fee: "$29/month" },
   crew:       { label: "Crew",       keepRate: 0.65, cap: "None",       fee: "$79/month" },
-  company:    { label: "Company",    keepRate: 0.72, cap: "None",       fee: "$149/month" },
+  company:    { label: "Company",    keepRate: 0.60, cap: "None",       fee: "$149/month" },
   enterprise: { label: "Enterprise", keepRate: 0.78, cap: "None",       fee: "$299/month" },
 };
 

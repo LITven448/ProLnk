@@ -38,7 +38,7 @@ const SOLUTIONS: Record<StakeholderType, Record<string, string>> = {
     'Hard to grow passive income': '💰 5 income streams — direct commission, network override, subscription share, homeowner leads, origination rights.',
     'No recurring revenue from referrals': '🔁 Earn monthly on every pro subscription your network generates — forever.',
     'No tools to build a network': '📈 Partner dashboard with real-time leaderboard, earnings tracker, and downline visibility.',
-    'Platforms take too much commission': '🤝 Partners keep 72% of job value. No platform clawback, no hidden deductions.',
+    'Platforms take too much commission': '🤝 Partners keep 60% of job value. No platform clawback, no hidden deductions.',
     'No origination rights on clients I bring': '📜 Charter Partners lock origination rights permanently — the homes you bring earn you revenue for life.',
   },
   pro: {

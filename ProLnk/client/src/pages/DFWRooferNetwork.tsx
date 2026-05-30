@@ -73,8 +73,8 @@ export default function DFWRooferNetwork() {
   const [networkAvgJob, setNetworkAvgJob] = useState(10000);
 
   const platformFee = jobValue * 0.10;
-  const yourCommission = platformFee * 0.72;
-  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.72) * 0.07;
+  const yourCommission = platformFee * 0.60;
+  const networkOverride = networkPros * (networkAvgJob * 0.10 * 0.60) * 0.07;
   const total = yourCommission + networkOverride;
 
   return (
@@ -98,7 +98,7 @@ export default function DFWRooferNetwork() {
           <div style={styles.incomeTitle}>$12,000 Full Roof Replacement (Post-Hail)</div>
           <div style={styles.incomeLine}><span>Job Value</span><span>$12,000</span></div>
           <div style={styles.incomeLine}><span>ProLnk Platform Fee (10%)</span><span>$1,200</span></div>
-          <div style={styles.incomeLine}><span>Your Share (72% of fee)</span><span style={{ color: YELLOW }}>$864</span></div>
+          <div style={styles.incomeLine}><span>Your Share (60% of fee)</span><span style={{ color: YELLOW }}>$864</span></div>
           <div style={styles.incomeLine}><span>+ Network Override (5 recruited roofers × avg job)</span><span style={{ color: YELLOW }}>+$252</span></div>
           <div style={styles.incomeTotal}><span>Total You Keep</span><span>$1,116</span></div>
         </div>
@@ -142,7 +142,7 @@ export default function DFWRooferNetwork() {
               <div style={styles.stepNum}>3</div>
               <div>
                 <div style={styles.stepTitle}>Complete jobs and earn network income</div>
-                <div style={styles.stepText}>Close the job, collect your 72% commission. Recruit other roofers to your ProLnk network and earn 7% of every commission they earn — storm season and off-season.</div>
+                <div style={styles.stepText}>Close the job, collect your 60% commission. Recruit other roofers to your ProLnk network and earn 7% of every commission they earn — storm season and off-season.</div>
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function DFWRooferNetwork() {
             <input style={styles.calcInput} type="number" value={networkAvgJob} onChange={e => setNetworkAvgJob(Number(e.target.value))} min={1000} max={50000} step={1000} />
           </div>
           <div style={styles.calcResult}>
-            <div style={styles.calcResultRow}><span>Your direct commission (72% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
+            <div style={styles.calcResultRow}><span>Your direct commission (60% of 10%)</span><span>${yourCommission.toFixed(0)}</span></div>
             <div style={styles.calcResultRow}><span>Network override ({networkPros} roofers × 7%)</span><span>${networkOverride.toFixed(0)}</span></div>
             <div style={styles.calcResultTotal}><span>Estimated Monthly</span><span>${total.toFixed(0)}</span></div>
           </div>

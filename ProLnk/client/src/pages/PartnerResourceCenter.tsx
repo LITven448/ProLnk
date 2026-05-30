@@ -97,7 +97,7 @@ const CATEGORIES: Category[] = [
     resources: [
       {
         title: "Founding Member Commission Deep Dive",
-        description: "Complete breakdown of the 72% keep rate, how fees are calculated, and payout timelines.",
+        description: "Complete breakdown of the 60% keep rate, how fees are calculated, and payout timelines.",
         type: "download",
         badge: "PDF",
       },

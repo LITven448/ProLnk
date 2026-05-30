@@ -35,7 +35,7 @@ const painPoints = [
 
 const comparison = [
   { feature: 'Lead fees', prolnk: '$0 upfront', thumbtack: '$8–$40 per lead' },
-  { feature: 'Commission structure', prolnk: '72% keep on job value', thumbtack: 'N/A — you set your price' },
+  { feature: 'Commission structure', prolnk: '60% keep on job value', thumbtack: 'N/A — you set your price' },
   { feature: 'Passive income', prolnk: '4-level cascade ♾️', thumbtack: 'None' },
   { feature: 'Photo-to-lead AI', prolnk: '✅ Yes', thumbtack: '❌ No' },
   { feature: 'Background check', prolnk: '✅ Required', thumbtack: '⚠️ Optional' },
@@ -140,7 +140,7 @@ export default function ProLnkVsThumbtack() {
               <div>Avg job: $700</div>
               <div style={{ borderTop: '1px solid #58D68D', marginTop: 12, paddingTop: 12 }}>
                 <strong>Closed 4 jobs = $2,800 gross</strong><br />
-                72% keep = $2,016<br />
+                60% keep = $2,016<br />
                 Minus $149/mo sub = <strong style={{ color: '#2A7A3B' }}>$1,867 net</strong><br />
                 <em>Plus network income on top</em>
               </div>

@@ -21,7 +21,7 @@ const OBJECTIONS = [
 ];
 
 const INCOME_STREAMS = [
-  { icon: TrendingUp, title: "72% Commission Keep Rate",   desc: "Highest in the industry — locked at this tier forever." },
+  { icon: TrendingUp, title: "60% Commission Keep Rate",   desc: "Highest in the industry — locked at this tier forever." },
   { icon: Network,    title: "4-Level Override Cascade",   desc: "Earn on every job completed up to 4 levels deep in your network." },
   { icon: Shield,     title: "1.5% Origination Rights",    desc: "Perpetual 1.5% on every job at every home you ever document." },
   { icon: Zap,        title: "AI Lead Generation",         desc: "Your job photos feed our AI to generate cross-trade leads automatically." },

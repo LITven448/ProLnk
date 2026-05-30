@@ -426,7 +426,7 @@ export default function CommissionCalculator() {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-400">You keep</span>
-                  <span className="text-teal-400 font-bold">72%</span>
+                  <span className="text-teal-400 font-bold">60%</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-400">Your earnings</span>

@@ -68,7 +68,7 @@ export default function ProLnkFAQNetworkIncome() {
         </div>
         <div style={{ marginTop: 48, background: "#1E2D45", borderRadius: 16, padding: 28 }}>
           <p style={{ color: "#F5E642", fontWeight: 700, fontSize: 16, marginBottom: 16 }}>📊 5 Income Streams at a Glance</p>
-          {["Stream 1: Direct Commission — 72% of job match fee", "Stream 2: Pro Job Override — 7/4/2/1% (4 levels)", "Stream 3: Subscription Override — 12/6/3/1.5% (4 levels)", "Stream 4: Homeowner Override — per qualified lead you source", "Stream 5: Origination Rights — 1.5% of home revenue, permanent"].map((s, i) => (
+          {["Stream 1: Direct Commission — 60% of job match fee", "Stream 2: Pro Job Override — 7/4/2/1% (4 levels)", "Stream 3: Subscription Override — 12/6/3/1.5% (4 levels)", "Stream 4: Homeowner Override — per qualified lead you source", "Stream 5: Origination Rights — 1.5% of home revenue, permanent"].map((s, i) => (
             <div key={i} style={{ color: "#94A3B8", fontSize: 13, padding: "6px 0", borderBottom: "1px solid #2D3F5A" }}>✅ {s}</div>
           ))}
         </div>

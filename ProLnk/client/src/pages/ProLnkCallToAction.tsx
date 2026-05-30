@@ -10,7 +10,7 @@ const pitches: Record<Prospect, Record<SitType, { reason: string; gain: string[]
   'licensed contractor': {
     'just exploring': {
       reason: 'Explore now — Charter closes at 500 and you\’re in a window most pros miss',
-      gain: ['🔒 $149/mo subscription locked forever at Charter rate', '💰 25 referral slots at 72% commission keep rate', '🏆 Founding member status — priority lead routing in DFW'],
+      gain: ['🔒 $149/mo subscription locked forever at Charter rate', '💰 25 referral slots at 60% commission keep rate', '🏆 Founding member status — priority lead routing in DFW'],
       loss: ['📈 Every week you wait, another contractor in your trade claims Charter', '⬆️ Next tier is $199/mo — $50/mo more for the same access'],
       next: 'Browse the lead feed at prolnk.io — no commitment required to see what\’s available',
     },

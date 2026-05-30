@@ -133,7 +133,7 @@ export default function WaitlistProLanding() {
             <div className="mt-1 w-8 h-0.5 bg-teal-400/40 mx-auto rounded-full" />
           </div>
           <div className="text-center p-5 rounded-2xl bg-white/5 border border-yellow-400/20">
-            <div className="text-3xl font-black text-yellow-400 mb-1">72%</div>
+            <div className="text-3xl font-black text-yellow-400 mb-1">60%</div>
             <div className="text-xs text-white/50 leading-tight">commission kept by you</div>
             <div className="mt-1 w-8 h-0.5 bg-yellow-400/40 mx-auto rounded-full" />
           </div>
@@ -275,10 +275,10 @@ export default function WaitlistProLanding() {
         <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">Start free, tier up as you close jobs. Higher tiers unlock higher commission splits and priority lead routing.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
-            { tier: "Charter",  spots: 25,   color: "#10B981", border: "border-emerald-500/30", bg: "bg-emerald-500/5",  keep: "72%", badge: "Founding Network", desc: "First 25 pros. Locked pricing forever. Priority lead routing at launch." },
-            { tier: "Founding", spots: 100,  color: "#3B82F6", border: "border-blue-500/30",    bg: "bg-blue-500/5",    keep: "72%", badge: "Founding Network", desc: "Spots 26–125. Same founding rate, second-tier network income rights." },
-            { tier: "Level 3",  spots: 400,  color: "#8B5CF6", border: "border-purple-500/30",  bg: "bg-purple-500/5",  keep: "72%", badge: "Early Access",     desc: "Spots 126–525. Full platform access, $149/mo at launch." },
-            { tier: "Level 4",  spots: 1600, color: "#F59E0B", border: "border-amber-500/30",   bg: "bg-amber-500/5",   keep: "72%", badge: "Open Waitlist",    desc: "Spots 526–2125. Standard launch pricing, all core features included." },
+            { tier: "Charter",  spots: 25,   color: "#10B981", border: "border-emerald-500/30", bg: "bg-emerald-500/5",  keep: "60%", badge: "Founding Network", desc: "First 25 pros. Locked pricing forever. Priority lead routing at launch." },
+            { tier: "Founding", spots: 100,  color: "#3B82F6", border: "border-blue-500/30",    bg: "bg-blue-500/5",    keep: "60%", badge: "Founding Network", desc: "Spots 26–125. Same founding rate, second-tier network income rights." },
+            { tier: "Level 3",  spots: 400,  color: "#8B5CF6", border: "border-purple-500/30",  bg: "bg-purple-500/5",  keep: "60%", badge: "Early Access",     desc: "Spots 126–525. Full platform access, $149/mo at launch." },
+            { tier: "Level 4",  spots: 1600, color: "#F59E0B", border: "border-amber-500/30",   bg: "bg-amber-500/5",   keep: "60%", badge: "Open Waitlist",    desc: "Spots 526–2125. Standard launch pricing, all core features included." },
           ].map((t) => (
             <div key={t.tier} className={`rounded-2xl border ${t.border} ${t.bg} p-5 flex flex-col`}>
               <div className="flex items-start justify-between mb-3">

@@ -31,7 +31,7 @@ const FEATURED_STORY = {
   keyNumbers: [
     { icon: 'users', label: 'Active Level-1 recruits', value: '12' },
     { icon: 'dollar', label: 'Network overrides (last quarter)', value: '$8,400' },
-    { icon: 'trend', label: 'Direct commission rate (Company tier)', value: '72%' },
+    { icon: 'trend', label: 'Direct commission rate (Company tier)', value: '60%' },
   ],
 };
 

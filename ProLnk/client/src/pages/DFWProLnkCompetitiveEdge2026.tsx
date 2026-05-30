@@ -27,7 +27,7 @@ const guides: Record<string, { title: string; items: { icon: string; point: stri
   'income': {
     title: '5-Stream Income Model',
     items: [
-      { icon: '1️⃣', point: 'Stream 1: Direct Job Commission', detail: '12–70% commission on each matched job, scaling by tier (New → Charter → Founding → L3 → L4)', edge: 'All tiers: $149/mo locked rate, 72% job keep, increasing network bonuses' },
+      { icon: '1️⃣', point: 'Stream 1: Direct Job Commission', detail: '12–70% commission on each matched job, scaling by tier (New → Charter → Founding → L3 → L4)', edge: 'All tiers: $149/mo locked rate, 60% job keep, increasing network bonuses' },
       { icon: '2️⃣', point: 'Stream 2: Pro Network Override', detail: '7/4/2/1% on network job income — 4 levels deep on every pro you recruit', edge: 'One recruited pro doing 10 jobs/month = passive monthly income indefinitely' },
       { icon: '3️⃣', point: 'Streams 3–5: Subscription + Origination', detail: '12/6/3/1.5% on subscription overrides + 1.5% home origination rights on every home added', edge: 'Origination rights are permanent — home stays in your income stream forever' },
     ],

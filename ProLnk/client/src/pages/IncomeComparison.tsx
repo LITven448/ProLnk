@@ -22,7 +22,7 @@ const PLATFORMS: Platform[] = [
   {
     name: "ProLnk",
     highlight: true,
-    keepRate: "72%",
+    keepRate: "60%",
     leadCost: "$0",
     networkIncome: "4-level cascade",
     passiveIncome: "Origination rights",

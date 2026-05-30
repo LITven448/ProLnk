@@ -51,8 +51,8 @@ const CATEGORIES: Category[] = [
     color: "text-teal-400",
     faqs: [
       {
-        q: "How does the 72% commission work for Founding Members?",
-        a: "Founding Members keep 72% of every job fee collected by ProLnk on jobs matched to you. For example, if ProLnk charges a $500 platform fee on a roofing job, you receive $360 and ProLnk retains $140. This rate is locked for the lifetime of your account — it will never go down, even when ProLnk introduces new pricing tiers for standard partners.",
+        q: "How does the 60% commission work for Founding Members?",
+        a: "Founding Members keep 60% of every job fee collected by ProLnk on jobs matched to you. For example, if ProLnk charges a $500 platform fee on a roofing job, you receive $360 and ProLnk retains $140. This rate is locked for the lifetime of your account — it will never go down, even when ProLnk introduces new pricing tiers for standard partners.",
       },
       {
         q: "When do I get paid?",
@@ -156,7 +156,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: "Is this MLM?",
-        a: "No — and here's the clear distinction: In an MLM, you pay to join, and your income comes primarily from recruiting other people who also pay to join. ProLnk's network income is derived entirely from real job completions and actual paid subscriptions — not from recruitment fees. There is no recruitment fee. You can earn your full 72% direct commission without ever recruiting a single person. The 4-level override is a bonus structure available to Founding Members on top of their direct earnings. ProLnk publishes an annual income disclosure statement in compliance with FTC guidelines. If someone in your circle raises the MLM concern, share that disclosure — it answers the question with data.",
+        a: "No — and here's the clear distinction: In an MLM, you pay to join, and your income comes primarily from recruiting other people who also pay to join. ProLnk's network income is derived entirely from real job completions and actual paid subscriptions — not from recruitment fees. There is no recruitment fee. You can earn your full 60% direct commission without ever recruiting a single person. The 4-level override is a bonus structure available to Founding Members on top of their direct earnings. ProLnk publishes an annual income disclosure statement in compliance with FTC guidelines. If someone in your circle raises the MLM concern, share that disclosure — it answers the question with data.",
       },
       {
         q: "What if I recruit someone who outcompetes me for leads in my area?",
@@ -180,7 +180,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: "\"I'm close to the 500-application limit. What happens if I apply but there's no spot left?\" — Elena P., Dallas",
-        a: "If the Founding Network waitlist closes before your application is fully processed, you will be placed on the Standard Partner waitlist and notified when Standard Partner enrollment opens (estimated Q3 2026). Standard Partners receive 65% direct commission (vs. 72% for Founding Members) and do not have access to the 4-level network income override. However, if you applied before the 500-application cutoff — even if your documents aren't fully uploaded — your application date is locked and you retain Founding Member pricing. File early, complete documents later.",
+        a: "If the Founding Network waitlist closes before your application is fully processed, you will be placed on the Standard Partner waitlist and notified when Standard Partner enrollment opens (estimated Q3 2026). Standard Partners receive 65% direct commission (vs. 60% for Founding Members) and do not have access to the 4-level network income override. However, if you applied before the 500-application cutoff — even if your documents aren't fully uploaded — your application date is locked and you retain Founding Member pricing. File early, complete documents later.",
       },
     ],
   },

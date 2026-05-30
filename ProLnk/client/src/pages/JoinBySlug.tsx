@@ -166,8 +166,8 @@ export default function JoinBySlug() {
                 <li className="flex gap-3 items-start">
                   <div className="w-5 h-5 rounded-full bg-teal-100 border border-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5"><TrendingUp className="w-3 h-3 text-teal-700" /></div>
                   <div>
-                    <div className="text-gray-900 text-sm font-bold">72% Network Bonus on every closed job</div>
-                    <div className="text-gray-500 text-xs mt-0.5">Paid from the platform fee (3–15% of job value) — bonus income on top of what you'd normally charge.</div>
+                    <div className="text-gray-900 text-sm font-bold">60% commission keep on every closed job</div>
+                    <div className="text-gray-500 text-xs mt-0.5">Paid from the platform fee (3–12% of job value) — bonus income on top of what you'd normally charge.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">

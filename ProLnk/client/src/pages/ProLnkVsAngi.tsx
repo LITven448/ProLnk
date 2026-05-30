@@ -12,7 +12,7 @@ const rows: CompareRow[] = [
   { feature: 'Lead quality guarantee', prolnk: 'Admin-reviewed, AI-screened homeowners', angi: 'Unverified homeowner submissions', prolnkGood: true },
   { feature: 'Passive income streams', prolnk: '4-level network cascade + subscription overrides', angi: 'None', prolnkGood: true },
   { feature: 'AI photo-to-lead', prolnk: 'Yes — AI detects home damage in photos', angi: 'No', prolnkGood: true },
-  { feature: 'Commission you keep', prolnk: '72% of all match earnings', angi: 'You set price — Angi charges for access, not commission', prolnkGood: true },
+  { feature: 'Commission you keep', prolnk: '60% of all match earnings', angi: 'You set price — Angi charges for access, not commission', prolnkGood: true },
   { feature: 'Background check', prolnk: 'Required for all active pros', angi: 'Optional — "screened" is a paid badge', prolnkGood: true },
   { feature: 'Monthly platform cost', prolnk: '$149/mo flat — locked forever', angi: '$0 + pay $25–$300 per lead', prolnkGood: true },
   { feature: 'Lead recycling', prolnk: 'Each lead assigned to 1 matched pro', angi: 'Same lead sold to 3–5 pros simultaneously', prolnkGood: true },

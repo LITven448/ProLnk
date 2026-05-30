@@ -70,7 +70,7 @@ export default function DFWHandymanNetwork() {
             </tbody>
           </table>
         </div>
-        <p style={{ fontSize: 12, color: "#9CA3AF", marginTop: 10, textAlign: "center" }}>Commission based on 72% Pro keep rate. Cross-trade potential assumes avg 3.1 leads at $20–$40 commission each.</p>
+        <p style={{ fontSize: 12, color: "#9CA3AF", marginTop: 10, textAlign: "center" }}>Commission based on 60% Pro keep rate. Cross-trade potential assumes avg 3.1 leads at $20–$40 commission each.</p>
       </section>
 
       {/* What You Can Detect */}

@@ -181,11 +181,11 @@ const ADD_ONS = [
 
 // --- Who Can Join -------------------------------------------------------------
 const WHO_CAN_JOIN = [
-  { group: "Outdoor & Lawn", emoji: "", categories: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Trimming & Removal", "Irrigation & Sprinklers", "Hardscaping & Patios", "Outdoor Lighting", "Drainage Solutions"] },
-  { group: "Home Maintenance", emoji: "", categories: ["Handyman Services", "Fencing & Gates", "Roofing & Gutters", "HVAC Service & Repair", "Plumbing", "Electrical", "Garage Door Service", "Foundation Repair"] },
-  { group: "Cleaning & Restoration", emoji: "", categories: ["House Cleaning", "Pressure Washing", "Window Cleaning", "Carpet Cleaning", "Gutter Cleaning", "Junk Removal", "Mold Remediation"] },
-  { group: "Specialty Trades", emoji: "", categories: ["Interior & Exterior Painting", "Pool Service & Repair", "Pest Control", "Security Systems", "Solar Installation", "Kitchen & Bath Remodeling"] },
-  { group: "Pet & Animal", emoji: "", categories: ["Pet Waste Removal", "Dog Walking & Pet Sitting", "Pet Grooming"] },
+  { group: "Outdoor & Lawn", categories: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Trimming & Removal", "Irrigation & Sprinklers", "Hardscaping & Patios", "Outdoor Lighting", "Drainage Solutions"] },
+  { group: "Home Maintenance", categories: ["Handyman Services", "Fencing & Gates", "Roofing & Gutters", "HVAC Service & Repair", "Plumbing", "Electrical", "Garage Door Service", "Foundation Repair"] },
+  { group: "Cleaning & Restoration", categories: ["House Cleaning", "Pressure Washing", "Window Cleaning", "Carpet Cleaning", "Gutter Cleaning", "Junk Removal", "Mold Remediation"] },
+  { group: "Specialty Trades", categories: ["Interior & Exterior Painting", "Pool Service & Repair", "Pest Control", "Security Systems", "Solar Installation", "Kitchen & Bath Remodeling"] },
+  { group: "Pet & Animal", categories: ["Pet Waste Removal", "Dog Walking & Pet Sitting", "Pet Grooming"] },
 ];
 
 // --- FAQ ----------------------------------------------------------------------
@@ -489,7 +489,7 @@ function PricingSection() {
               </div>
             </div>
             <button onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))} className="px-8 py-3 bg-[#F5E642] text-[#0A1628] font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
-                Apply Now
+                Join the Waitlist
               </button>
           </div>
         </div>
@@ -1347,7 +1347,7 @@ export default function ProWaitlist() {
             </a>
             
             <Button onClick={openWaitlist} className="text-sm font-semibold text-white rounded-none px-5" style={{ backgroundColor: "#0A1628" }}>
-              Join Waitlist
+              Join the Waitlist
             </Button>
           </div>
           <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -1364,7 +1364,7 @@ export default function ProWaitlist() {
             <div className="flex gap-3 pt-2">
               
               <span onClick={openWaitlist} className="flex-1 cursor-pointer">
-                <Button className="w-full text-sm text-white rounded-none font-semibold" style={{ backgroundColor: "#0A1628" }}>Apply Now</Button>
+                <Button className="w-full text-sm text-white rounded-none font-semibold" style={{ backgroundColor: "#0A1628" }}>Join the Waitlist</Button>
               </span>
             </div>
             <a href="https://trustypro.io" className="block">
@@ -1399,7 +1399,7 @@ export default function ProWaitlist() {
             onClick={openWaitlist}
             className="cursor-pointer text-xs font-bold text-[#0A1628] bg-[#F5E642] px-3 py-1 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
           >
-            Claim Your Spot →
+            Join the Waitlist →
           </span>
         </div>
       </div>
@@ -1445,7 +1445,7 @@ export default function ProWaitlist() {
                   className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:opacity-90"
                   style={{ backgroundColor: "#0A1628", color: "white", border: "2px solid #F5E642" }}
                 >
-                  Join the Network <ArrowRight className="h-5 w-5" />
+                  Join the Waitlist <ArrowRight className="h-5 w-5" />
                 </button>
               </span>
             </FadeUp>
@@ -1600,7 +1600,7 @@ export default function ProWaitlist() {
           <div className="text-center mt-12">
             <span onClick={openWaitlist} className="cursor-pointer">
               <button className="px-8 py-4 text-sm font-bold text-[#0A1628] transition-all hover:brightness-110 rounded-none" style={{ backgroundColor: "#F5E642" }}>
-                Start Building Your Photo Library <ArrowRight className="w-4 h-4 inline ml-2" />
+                Join the Waitlist <ArrowRight className="w-4 h-4 inline ml-2" />
               </button>
             </span>
           </div>
@@ -1624,7 +1624,7 @@ export default function ProWaitlist() {
               <StaggerItem key={group.group}>
                 <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{group.emoji}</span>
+                    <div className="w-1.5 h-6 rounded-full flex-shrink-0 bg-[#F5E642]" />
                     <h3 className="text-base font-heading font-bold text-gray-900">{group.group}</h3>
                   </div>
                   <div className="space-y-1.5">
@@ -1753,7 +1753,7 @@ export default function ProWaitlist() {
               </ul>
               <span onClick={openWaitlist} className="cursor-pointer">
                 <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
-                  Claim Your Spot
+                  Join the Waitlist
                 </button>
               </span>
             </div>
@@ -1788,7 +1788,7 @@ export default function ProWaitlist() {
                 className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
                 style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
               >
-                Apply Now <ArrowRight className="h-5 w-5" />
+                Join the Waitlist <ArrowRight className="h-5 w-5" />
               </button>
             </span>
           </FadeUp>
@@ -1801,7 +1801,7 @@ export default function ProWaitlist() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <ProLnkLogo height={28} variant="dark" className="shrink-0" />
             <div className="flex gap-6 text-sm">
-              <span onClick={openWaitlist} className="hover:text-white transition-colors cursor-pointer">Join Waitlist</span>
+              <span onClick={openWaitlist} className="hover:text-white transition-colors cursor-pointer">Join the Waitlist</span>
               <Link href="/partners" className="hover:text-white transition-colors">Directory</Link>
               <Link href="/leaderboard" className="hover:text-white transition-colors">Leaderboard</Link>
               <Link href="/trustypro/waitlist" className="hover:text-white transition-colors">TrustyPro</Link>

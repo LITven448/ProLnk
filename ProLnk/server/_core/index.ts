@@ -292,6 +292,21 @@ async function startServer() {
     }
   });
 
+  // Sweep expired job offers and cascade each to the next-ranked partner.
+  app.post("/api/agents/sweep-offers", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.headers["x-agent-secret"] !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const { sweepExpiredOffers } = await import("../routers/matching");
+      const result = await sweepExpiredOffers();
+      return res.json({ success: true, ran: "sweep-offers", ...result, timestamp: new Date().toISOString() });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
 
   // Migrate: add referral columns to existing proWaitlist table
   app.get("/api/add-referral-columns", async (req, res) => {

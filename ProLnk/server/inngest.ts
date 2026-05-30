@@ -91,6 +91,16 @@ export const sweepExpiredLeadsJob = inngest.createFunction(
   }
 );
 
+export const sweepExpiredOffersJob = inngest.createFunction(
+  { id: "sweep-expired-offers", name: "Sweep Expired Job Offers", retries: 2, triggers: [{ cron: "*/15 * * * *" }] },
+  async ({ step }: { step: any }) => {
+    return step.run("sweep-offers", async () => {
+      const { sweepExpiredOffers } = await import("./routers/matching");
+      return sweepExpiredOffers();
+    });
+  }
+);
+
 export const nightlyComplianceScan = inngest.createFunction(
   { id: "nightly-compliance-scan", name: "Nightly Compliance Scan", retries: 2, triggers: [{ cron: "0 3 * * *" }] },
   async ({ step, logger }: { step: any; logger: any }) => {
@@ -193,6 +203,7 @@ export const dailyMarketingAutomation = inngest.createFunction(
 export const functions = [
   nightlyPayoutSweep,
   sweepExpiredLeadsJob,
+  sweepExpiredOffersJob,
   nightlyComplianceScan,
   nightlyStormScan,
   nightlyPpsRecalculation,

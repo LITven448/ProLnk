@@ -41,6 +41,9 @@ const PartnerCheckout = lazy(() => import("./pages/PartnerCheckout"));
 const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
 const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
+const PartnerOffers = lazy(() => import("./pages/PartnerOffers"));
+const RequestService = lazy(() => import("./pages/RequestService"));
+const MatchingConsole = lazy(() => import("./pages/admin/MatchingConsole"));
 const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
 const MyReferrals = lazy(() => import("./pages/MyReferrals"));
@@ -640,6 +643,8 @@ function DomainRouter() {
       if (location.startsWith("/waitlist")) return;
       // Allow /trustypro/* paths through
       if (location.startsWith("/trustypro")) return;
+      // Allow homeowner job-request intake on the trustypro brand
+      if (location.startsWith("/request-service")) return;
       // trustypro.io root → stay at / (TrustyProHome renders via Router below)
       if (location === "/" || location === "") return;
       // Any unmatched trustypro.io path → redirect to root
@@ -715,6 +720,7 @@ const WAITLIST_ALLOWED = new Set([
   "/login", "/admin-login", "/partner-login", "/partner-forgot-password",
   "/set-password", "/pricing", "/pricing/standard",
   "/partner-agreement", "/ach-authorization",
+  "/partner/offers", "/request-service",
 ]);
 
 function WaitlistGuard() {
@@ -778,6 +784,8 @@ function Router() {
 
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />
+      <Route path="/partner/offers" component={PartnerOffers} />
+      <Route path="/request-service" component={RequestService} />
       <Route path="/dashboard/leads" component={InboundLeads} />
       <Route path="/leads/marketplace" component={LeadMarketplace} />
       <Route path="/dashboard/referrals" component={MyReferrals} />
@@ -846,6 +854,7 @@ function Router() {
       <Route path="/admin/activity-logs" component={ActivityLog} />
       <Route path="/admin/rates" component={AdminCommissionRates} />
       <Route path="/admin/opportunities-old" component={AdminOpportunityFeed} />
+      <Route path="/admin/matching" component={MatchingConsole} />
 
       {/* Admin Command Center */}
       <Route path="/admin" component={CommandCenter} />

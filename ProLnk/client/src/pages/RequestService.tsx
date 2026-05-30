@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
-import AddressAutofill from "@/components/AddressAutofill";
+import { AddressAutofill } from "@/components/AddressAutofill";
 import { SERVICE_CATEGORIES } from "@/data/serviceCategories";
 import {
   CheckCircle, Loader2, Sparkles, Home, ArrowRight, ShieldCheck,

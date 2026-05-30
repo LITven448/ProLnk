@@ -159,9 +159,74 @@ export const photoPipelineRouter = router({
         sql`UPDATE photoSessions SET analysisStatus = 'processing' WHERE id = ${input.sessionId}`
       );
 
-      // In production, this would trigger the 8-stage pipeline via n8n or a background job
-      // For now, mark as queued and return
-      return { status: "queued", message: "Analysis queued. You will be notified when results are ready." };
+      // Defensive: if no vision API key, fall back to queued state (background job / n8n
+      // would pick it up later). Never throw here -- keep the photo flow non-blocking.
+      if (!process.env.OPENAI_API_KEY) {
+        return { status: "queued", message: "Analysis queued. You will be notified when results are ready." };
+      }
+
+      const photos = await db.select().from(sessionPhotos)
+        .where(eq(sessionPhotos.sessionId, input.sessionId));
+
+      const { analyzeJobPhoto } = await import("../photo-intelligence");
+
+      let analyzedCount = 0;
+      let failedCount = 0;
+      let totalOpportunities = 0;
+      let highPriorityCount = 0;
+      const trades = new Set<string>();
+
+      for (const photo of photos) {
+        try {
+          const result = await analyzeJobPhoto(photo.photoUrl);
+          totalOpportunities += result.totalOpportunities;
+          highPriorityCount += result.highPriorityCount;
+          for (const d of result.detections) {
+            if (d.trade) trades.add(d.trade);
+          }
+          await db.update(sessionPhotos)
+            .set({
+              analysisStatus: "complete",
+              findings: JSON.stringify(result),
+              aiModel: "gpt-4o",
+              processingTimeMs: result.scanDurationMs,
+            })
+            .where(eq(sessionPhotos.id, photo.id));
+          analyzedCount++;
+        } catch (err) {
+          failedCount++;
+          console.error(`[PhotoPipeline] Analysis failed for photo ${photo.id}:`, err);
+          await db.update(sessionPhotos)
+            .set({ analysisStatus: "failed" })
+            .where(eq(sessionPhotos.id, photo.id))
+            .catch(() => {});
+        }
+      }
+
+      const sessionStatus = analyzedCount > 0 ? "complete" : "failed";
+      const aggregate = {
+        analyzedCount,
+        failedCount,
+        totalOpportunities,
+        highPriorityCount,
+        trades: Array.from(trades),
+      };
+      await db.update(photoSessions)
+        .set({ analysisStatus: sessionStatus, analysisResult: JSON.stringify(aggregate) })
+        .where(eq(photoSessions.id, input.sessionId));
+
+      if (analyzedCount === 0) {
+        return { status: "failed", message: "Analysis failed for all photos in this session." };
+      }
+
+      return {
+        status: "complete",
+        message: `Analyzed ${analyzedCount} photo(s): ${totalOpportunities} opportunities found (${highPriorityCount} high-priority).`,
+        analyzedCount,
+        failedCount,
+        totalOpportunities,
+        highPriorityCount,
+      };
     }),
 
   // ── Get Home Health Vault scores ────────────────────────────────────────────

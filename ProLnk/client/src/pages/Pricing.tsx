@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ProLnkLogo } from "@/components/ProLnkLogo";
-import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Users, Building2, BarChart3, Headphones, Star, Shield } from "lucide-react";
+import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Building2, Star, Shield } from "lucide-react";
 
 // ─── Tier definitions ──────────────────────────────────────────────────────────
 // Three tiers + Enterprise. Keep rates: 40% / 50% / 60%.

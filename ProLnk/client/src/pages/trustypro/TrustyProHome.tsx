@@ -1494,7 +1494,7 @@ export default function TrustyProHome() {
             {[
               {
                 label: "The Old Way",
-                icon: "",
+                icon: XCircle,
                 color: "#ef4444",
                 bg: "rgba(239,68,68,0.08)",
                 border: "rgba(239,68,68,0.2)",
@@ -1508,7 +1508,7 @@ export default function TrustyProHome() {
               },
               {
                 label: "The TrustyPro Way",
-                icon: "",
+                icon: CheckCircle,
                 color: "#818cf8",
                 bg: "rgba(79,70,229,0.08)",
                 border: "rgba(79,70,229,0.3)",
@@ -1520,7 +1520,9 @@ export default function TrustyProHome() {
                   "Matched within hours -- work starts when you're ready",
                 ],
               },
-            ].map((col, i) => (
+            ].map((col, i) => {
+              const ColIcon = col.icon;
+              return (
               <motion.div
                 key={i}
                 className="rounded-2xl p-7 border"
@@ -1528,19 +1530,20 @@ export default function TrustyProHome() {
                 variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } } }}
               >
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-2xl font-black" style={{ color: col.color }}>{col.icon}</span>
+                  <ColIcon className="w-6 h-6 flex-shrink-0" style={{ color: col.color }} />
                   <span className="font-black text-white text-lg">{col.label}</span>
                 </div>
                 <ul className="space-y-3">
                   {col.points.map((pt, j) => (
                     <li key={j} className="flex items-start gap-3">
-                      <span className="mt-0.5 flex-shrink-0 text-sm font-bold" style={{ color: col.color }}>{col.icon}</span>
+                      <ColIcon className="mt-0.5 w-4 h-4 flex-shrink-0" style={{ color: col.color }} />
                       <span className="text-gray-300 text-sm leading-relaxed">{pt}</span>
                     </li>
                   ))}
                 </ul>
               </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
           <AnimSection variants={fadeUp}>
             <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "rgba(79,70,229,0.12)", border: "1px solid rgba(79,70,229,0.25)" }}>

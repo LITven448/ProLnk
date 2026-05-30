@@ -518,106 +518,33 @@ const TIER_LABELS: Record<string, string> = {
 };
 
 function PartnerSpotlightSection() {
-  const { data: spotlightPartners, isLoading } = trpc.directory.getSpotlightPartners.useQuery();
-
   return (
     <section id="spotlight" className="py-24 bg-white">
       <div className="container">
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-bold tracking-widest text-[#0A1628] uppercase mb-3 px-3 py-1 bg-[#F5E642] rounded-full">Network Spotlight</span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Top Performers in DFW</h2>
+        <div className="text-center mb-10">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#0A1628] uppercase mb-3 px-3 py-1 bg-[#F5E642] rounded-full">Founding Network</span>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">The DFW founding network is forming</h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            These partners are generating the most referral revenue on the network this month.
+            We're hand-selecting the first verified pros across the Dallas–Fort Worth metro. Founding members lock in lifetime rates and permanent network income rights before public launch.
           </p>
         </div>
-        {isLoading && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[1,2,3,4,5,6].map(i => (
-              <div key={i} className="bg-gray-100 rounded-2xl h-48 animate-pulse" />
-            ))}
+        <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
+            <CheckCircle className="w-8 h-8 mx-auto mb-3 text-[#0A1628]" />
+            <div className="font-heading font-bold text-gray-900 text-sm">Checkr background-verified</div>
+            <div className="text-xs text-gray-500 mt-1">Every pro is screened before they join.</div>
           </div>
-        )}
-        {!isLoading && (!spotlightPartners || spotlightPartners.length === 0) && (
-          <div className="text-center py-16 text-gray-400">
-            <Star className="w-12 h-12 mx-auto mb-4 opacity-30" />
-            <p className="text-lg font-medium">Partner spotlight coming soon</p>
-            <p className="text-sm mt-1">Top performers will appear here once the network launches.</p>
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
+            <HomeIcon className="w-8 h-8 mx-auto mb-3 text-[#0A1628]" />
+            <div className="font-heading font-bold text-gray-900 text-sm">DFW first</div>
+            <div className="text-xs text-gray-500 mt-1">Launching across the Dallas–Fort Worth metro.</div>
           </div>
-        )}
-        {!isLoading && spotlightPartners && spotlightPartners.length > 0 && (<>
-          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {spotlightPartners.slice(0, 6).map((p: any, i: number) => {
-            const tierColor = TIER_COLORS[p.tier] ?? "#6B7280";
-            const tierLabel = TIER_LABELS[p.tier] ?? p.tier;
-            const rating = Number(p.avgRating ?? 0).toFixed(1);
-            const reviews = Number(p.reviewCount ?? 0);
-            const referrals = Number(p.referralCount ?? 0);
-            return (
-              <StaggerItem key={p.id}>
-                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
-                        style={{ backgroundColor: tierColor }}
-                      >
-                        {p.businessName?.[0] ?? "P"}
-                      </div>
-                      <div>
-                        <div className="font-heading font-bold text-gray-900 text-sm leading-tight">{p.businessName}</div>
-                        <div className="text-xs text-gray-500 mt-0.5">{p.businessType}</div>
-                      </div>
-                    </div>
-                    <span
-                      className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white flex-shrink-0"
-                      style={{ backgroundColor: tierColor }}
-                    >
-                      {tierLabel}
-                    </span>
-                  </div>
-                  {/* Stats row */}
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    <div className="bg-gray-50 rounded-lg p-2 text-center">
-                      <div className="text-base font-heading font-bold text-gray-800">{referrals}</div>
-                      <div className="text-[10px] text-gray-400">Referrals</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-2 text-center">
-                      <div className="text-base font-heading font-bold text-gray-800">{rating}</div>
-                      <div className="text-[10px] text-gray-400">Rating</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-2 text-center">
-                      <div className="text-base font-heading font-bold text-gray-800">{reviews}</div>
-                      <div className="text-[10px] text-gray-400">Reviews</div>
-                    </div>
-                  </div>
-                  {/* Service area */}
-                  <div className="text-xs text-gray-400 mt-auto flex items-center gap-1">
-                    <HomeIcon className="w-3 h-3" />
-                    <span className="truncate">{p.serviceArea}</span>
-                  </div>
-                  {/* Rank badge for top 3 */}
-                  {i < 3 && (
-                    <div className="mt-3 flex items-center gap-1.5">
-                      <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                      <span className="text-xs font-semibold text-yellow-600">
-                        {i === 0 ? "#1 This Month" : i === 1 ? "#2 This Month" : "#3 This Month"}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </StaggerItem>
-            );
-          })}
-        </StaggerChildren>
-          <div className="text-center mt-10">
-            <Link href="/leaderboard">
-              <button className="px-6 py-3 text-sm font-semibold text-[#0A1628] border-2 border-[#0A1628] hover:bg-[#0A1628] hover:text-white transition-all rounded-none">
-                View Full Leaderboard <ArrowRight className="w-4 h-4 inline ml-1" />
-              </button>
-            </Link>
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
+            <Star className="w-8 h-8 mx-auto mb-3 text-[#0A1628]" />
+            <div className="font-heading font-bold text-gray-900 text-sm">Patent-pending engine</div>
+            <div className="text-xs text-gray-500 mt-1">AI finds leads in your job photos automatically.</div>
           </div>
-        </>)}
+        </div>
       </div>
     </section>
   );
@@ -1526,18 +1453,18 @@ export default function ProWaitlist() {
             <FadeIn delay={0.6}>
               <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-white/10">
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white"><CountUp target={148} suffix="+" /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Active Partners</div>
+                  <div className="text-2xl font-heading font-bold text-white">{spotsRemaining.toLocaleString()}</div>
+                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">of {TOTAL_NETWORK_SPOTS.toLocaleString()} founding spots left</div>
                 </div>
                 <div className="hidden sm:block w-px h-10 bg-white/10" />
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white"><CountUp target={820} suffix="+" /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Leads Detected</div>
+                  <div className="text-2xl font-heading font-bold text-white">Patent Pending</div>
+                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">AI lead-detection engine</div>
                 </div>
                 <div className="hidden sm:block w-px h-10 bg-white/10" />
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white">$<CountUp target={45} suffix="K+" /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Commissions Paid</div>
+                  <div className="text-2xl font-heading font-bold text-white">Checkr-Verified</div>
+                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Background-checked network · DFW</div>
                 </div>
               </div>
             </FadeIn>

@@ -597,11 +597,6 @@ export default function TrustyProHome() {
   const goToWizard = () => { openIntake(); };
   // All home CTAs now open the waitlist signup modal
 
-  const s1 = useCountUp(500);
-  const s2 = useCountUp(47);
-  const s3 = useCountUp(98);
-  const s4 = useCountUp(2400);
-
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
@@ -1127,7 +1122,7 @@ export default function TrustyProHome() {
               ))}
             </div>
             <p className="text-sm font-bold" style={{ color: ACCENT }}>
-              2,400+ DFW homes on the waitlist — limited founding spots remaining
+              Founding network forming in DFW — limited founding spots remaining
             </p>
           </motion.div>
 
@@ -1239,7 +1234,7 @@ export default function TrustyProHome() {
         </div>
       </section>
 
-      {/* -- STATS ------------------------------------------------------------- */}
+      {/* -- TRUST SIGNALS ----------------------------------------------------- */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -1250,13 +1245,13 @@ export default function TrustyProHome() {
             variants={staggerContainer}
           >
             {[
-              { r: s1.ref, c: s1.count, suffix: "+",  label: "Projects Completed",    desc: "Home improvements delivered on time and on budget." },
-              { r: s2.ref, c: s2.count, suffix: "+",  label: "Verified DFW Partners",   desc: "Background-checked, licensed pros across the metroplex." },
-              { r: s3.ref, c: s3.count, suffix: "%",  label: "Customer Satisfaction",  desc: "Consistently high praise from our homeowners." },
-              { r: s4.ref, c: s4.count, suffix: "+",  label: "Homeowners Matched",      desc: "Homeowners connected to the right pro for their project." },
+              { value: "7-Point",       label: "Pro Verification",     desc: "Background check, license, insurance, and references before any pro appears." },
+              { value: "Checkr",        label: "Background-Verified",  desc: "Every pro is screened through Checkr before joining the network." },
+              { value: "DFW",           label: "Launching First",      desc: "Building the founding network across the Dallas–Fort Worth metro." },
+              { value: "Patent Pending", label: "AI Matching Engine",  desc: "Photos in. Matched to the right verified pro. No calls, no guessing." },
             ].map((s, i) => (
-              <motion.div key={i} ref={s.r as React.RefObject<HTMLDivElement>} className="text-center md:text-left" variants={staggerItem}>
-                <div className="text-5xl md:text-6xl font-black text-gray-950 leading-none">{s.c.toLocaleString()}{s.suffix}</div>
+              <motion.div key={i} className="text-center md:text-left" variants={staggerItem}>
+                <div className="text-4xl md:text-5xl font-black text-gray-950 leading-none">{s.value}</div>
                 <div className="mt-2 text-sm font-bold text-gray-900">{s.label}</div>
                 <div className="mt-1 text-xs text-gray-500 leading-relaxed">{s.desc}</div>
               </motion.div>

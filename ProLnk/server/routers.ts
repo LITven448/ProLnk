@@ -38,6 +38,7 @@ import { foundingPartnerRouter } from "./routers/foundingPartner";
 import { networkOverridesRouter } from "./routers/networkOverrides";
 import { bidBoardRouter } from "./routers/bidBoard";
 import { smartRouteRouter } from "./routers/smartRoute";
+import { matchingRouter, createOfferForOpportunity } from "./routers/matching";
 import { adminDisputesRouter } from "./routers/adminDisputes";
 import { adminNotificationsRouter } from "./routers/adminNotifications";
 import { checkrRouter } from "./routers/checkr";
@@ -346,6 +347,7 @@ export const appRouter = router({
   bidBoard: bidBoardRouter,
   propertyEnrichment: propertyEnrichmentRouter,
   smartRoute: smartRouteRouter,
+  matching: matchingRouter,
   adminDisputes: adminDisputesRouter,
   adminNotifications: adminNotificationsRouter,
   checkr: checkrRouter,
@@ -355,6 +357,64 @@ export const appRouter = router({
   partnerOAuth: partnerOAuthRouter,
   photoUpload: photoUploadRouter,
   homeowner: router({
+    // -- Structured job intake → opportunity record (matching engine entry point) --
+    submitJobRequest: publicProcedure
+      .input(z.object({
+        category: z.string().min(1),
+        zip: z.string().min(3).max(20),
+        description: z.string().min(1),
+        address: z.string().optional(),
+        estimatedValue: z.number().optional(),
+        contactName: z.string().optional(),
+        contactEmail: z.string().email().optional(),
+        contactPhone: z.string().optional(),
+        autoOffer: z.boolean().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
+        const { ensureJobOffersInfra } = await import('./routers/matching');
+        await ensureJobOffersInfra();
+        const submittedByUserId = ctx.user?.id ?? null;
+        const result = await (db as any).execute(
+          `INSERT INTO opportunities
+             (intakeSource, opportunityType, opportunityCategory, description,
+              jobZip, jobAddress, estimatedJobValue,
+              homeownerName, homeownerEmail, homeownerPhone, submittedByUserId,
+              adminReviewStatus, status, routingPosition)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending_review', 'new', 0)`,
+          [
+            submittedByUserId ? 'homeowner' : 'homeowner',
+            input.category,
+            input.category,
+            input.description,
+            input.zip,
+            input.address ?? null,
+            input.estimatedValue != null ? String(input.estimatedValue) : null,
+            input.contactName ?? null,
+            input.contactEmail ?? null,
+            input.contactPhone ?? null,
+            submittedByUserId,
+          ]
+        );
+        const opportunityId = (result?.[0]?.insertId ?? result?.insertId) as number;
+        try {
+          await notifyOwner({
+            title: 'New Homeowner Job Request',
+            content: `${input.category} in ${input.zip}${input.estimatedValue ? ` (est. $${input.estimatedValue})` : ''}. Review in Lead Dispatch Portal.`,
+          });
+        } catch {}
+        let offerId: number | null = null;
+        if (input.autoOffer && opportunityId) {
+          try {
+            offerId = await createOfferForOpportunity(opportunityId);
+          } catch (err) {
+            console.warn('[homeowner.submitJobRequest] auto-offer failed:', err);
+          }
+        }
+        return { opportunityId, offerId };
+      }),
+
     // -- Profile --
     saveProfile: protectedProcedure
       .input(z.object({

@@ -61,7 +61,7 @@ const SENDGRID_TEMPLATES = [
 const SENDGRID_SETUP = [
   { step: 1, title: "Create SendGrid Account & Verify Domain", desc: "Sign up at sendgrid.com. Add prolnk.io as a sender domain. Complete DNS verification (CNAME records). This ensures emails land in inbox, not spam.", done: false },
   { step: 2, title: "Add SENDGRID_API_KEY to Secrets", desc: "Create an API key in SendGrid with 'Mail Send' permissions. Add to Settings → Secrets.", done: false },
-  { step: 3, title: "Set SENDGRID_FROM_EMAIL", desc: "Use noreply@prolnk.io or hello@prolnk.io. Add to Secrets.", done: false },
+  { step: 3, title: "Set SENDGRID_FROM_EMAIL", desc: "Use noreply@prolnk.xyz or hello@prolnk.xyz. Add to Secrets.", done: false },
   { step: 4, title: "Create Email Templates in SendGrid", desc: "Build dynamic templates for each trigger above. Use {{partner_name}}, {{address}}, {{amount}} variables.", done: false },
   { step: 5, title: "Add SENDGRID_TEMPLATE_IDs to Secrets", desc: "One secret per template: SENDGRID_TEMPLATE_APPROVAL, SENDGRID_TEMPLATE_COMMISSION, etc.", done: false },
 ];

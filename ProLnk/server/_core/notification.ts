@@ -17,7 +17,7 @@ export type NotificationPayload = {
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const OWNER_EMAIL = process.env.OWNER_EMAIL || process.env.FROM_EMAIL?.replace(/.*</, "").replace(">", "") || "";
-const FROM_EMAIL = process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.io>";
+const FROM_EMAIL = process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.xyz>";
 
 /**
  * Send an admin alert to the platform owner.

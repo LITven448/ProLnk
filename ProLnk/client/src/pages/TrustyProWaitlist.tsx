@@ -1890,7 +1890,7 @@ export default function TrustyProHome() {
             <div>
               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Contact</div>
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-gray-400"><Mail className="w-3.5 h-3.5" /> support@trustypro.com</div>
+                <div className="flex items-center gap-2 text-sm text-gray-400"><Mail className="w-3.5 h-3.5" /> support@trustypro.io</div>
                 <div className="flex items-center gap-2 text-sm text-gray-400"><MapPin className="w-3.5 h-3.5" /> DFW Metroplex, TX</div>
               </div>
             </div>

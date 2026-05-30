@@ -42,7 +42,7 @@ import {
 } from "../drizzle/schema";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM_PROLNK = process.env.FROM_EMAIL ?? "ProLnk <noreply@prolnk.io>";
+const FROM_PROLNK = process.env.FROM_EMAIL ?? "ProLnk <noreply@prolnk.xyz>";
 const FROM_TRUSTYPRO = process.env.FROM_EMAIL_TRUSTYPRO ?? "TrustyPro <noreply@trustypro.io>";
 const APP_BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.io";
 

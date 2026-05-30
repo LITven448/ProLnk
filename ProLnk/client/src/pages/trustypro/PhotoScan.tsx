@@ -395,7 +395,7 @@ function RequestProModal({
     }
     submitRequest.mutate({
       name: contact.name || "Homeowner",
-      email: contact.email || "noreply@trustypro.com",
+      email: contact.email || "noreply@trustypro.io",
       phone: contact.phone || undefined,
       address: contact.address || "Address on file",
       serviceType: issue.tradeType,

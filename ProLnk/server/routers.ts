@@ -478,7 +478,7 @@ export const appRouter = router({
               await sendHomeownerWelcome({
                 to: ctx.user.email,
                 name: input.displayName ?? ctx.user.name ?? 'Homeowner',
-                dashboardUrl: `${ENV.oAuthServerUrl?.replace('api.', '') ?? 'https://trustypro.com'}/my-home`,
+                dashboardUrl: `${ENV.oAuthServerUrl?.replace('api.', '') ?? 'https://trustypro.io'}/my-home`,
               }).catch(() => {});
             }
             // Fire n8n webhook for homeowner welcome sequence

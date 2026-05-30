@@ -67,9 +67,9 @@ export async function runMigrations() {
 
 async function getMigrationStatements(): Promise<string[]> {
   // Import the embedded migrations
-  const { MIGRATION_0000, MIGRATION_0001 } = await import("./migrations-embedded");
+  const { MIGRATION_0000, MIGRATION_0001, MIGRATION_0002, MIGRATION_0003 } = await import("./migrations-embedded");
 
-  const allSql = [MIGRATION_0000, MIGRATION_0001].join("\n");
+  const allSql = [MIGRATION_0000, MIGRATION_0001, MIGRATION_0002, MIGRATION_0003].join("\n");
 
   // Split by statement-breakpoint and clean up
   return allSql

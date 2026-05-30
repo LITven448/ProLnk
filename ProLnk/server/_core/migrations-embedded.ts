@@ -3213,3 +3213,34 @@ CREATE INDEX \`analytics_source_idx\` ON \`analytics_events\` (\`source\`);--> s
 CREATE INDEX \`analytics_email_idx\` ON \`analytics_events\` (\`email\`);--> statement-breakpoint
 CREATE INDEX \`analytics_created_at_idx\` ON \`analytics_events\` (\`created_at\`);
 `;
+
+export const MIGRATION_0003 = `
+CREATE TABLE IF NOT EXISTS \`jobOffers\` (
+	\`id\` int AUTO_INCREMENT NOT NULL,
+	\`opportunityId\` int NOT NULL,
+	\`partnerId\` int NOT NULL,
+	\`status\` varchar(30) NOT NULL DEFAULT 'offered',
+	\`rank\` int,
+	\`score\` decimal(8,2),
+	\`reasons\` json,
+	\`offeredAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`expiresAt\` timestamp NULL,
+	\`respondedAt\` timestamp NULL,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT \`jobOffers_id\` PRIMARY KEY(\`id\`)
+);
+--> statement-breakpoint
+CREATE INDEX \`jobOffers_opportunity_idx\` ON \`jobOffers\` (\`opportunityId\`);--> statement-breakpoint
+CREATE INDEX \`jobOffers_partner_status_idx\` ON \`jobOffers\` (\`partnerId\`,\`status\`);--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`intakeSource\` varchar(50) DEFAULT 'ai_photo';--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`jobZip\` varchar(20);--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`jobAddress\` varchar(500);--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`homeownerName\` varchar(255);--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`homeownerEmail\` varchar(320);--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`homeownerPhone\` varchar(30);--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`submittedByUserId\` int;--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`assignedPartnerId\` int;--> statement-breakpoint
+ALTER TABLE \`opportunities\` ADD \`assignedAt\` timestamp NULL;--> statement-breakpoint
+ALTER TABLE \`opportunities\` MODIFY \`jobId\` int NULL;--> statement-breakpoint
+ALTER TABLE \`opportunities\` MODIFY \`sourcePartnerId\` int NULL;
+`;

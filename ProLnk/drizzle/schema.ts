@@ -211,6 +211,22 @@ export const opportunities = mysqlTable("opportunities", {
   // Routing queue — JSON array of partner IDs to try in order if first partner declines/times out
   routingQueue: text("routingQueue"),
   routingPosition: int("routingPosition").default(0).notNull(),
+  // --- Direct homeowner / Scout structured intake (matching engine) ---
+  // Source of this opportunity: "ai_photo" (partner photo cross-sell), "homeowner", "scout"
+  intakeSource: varchar("intakeSource", { length: 50 }).default("ai_photo"),
+  // Service ZIP for this job (used by the matching engine for service-area matching)
+  jobZip: varchar("jobZip", { length: 20 }),
+  // Free-text service address for direct intake (when there is no linked job row)
+  jobAddress: varchar("jobAddress", { length: 500 }),
+  // Homeowner contact captured at intake (when there is no linked job/user)
+  homeownerName: varchar("homeownerName", { length: 255 }),
+  homeownerEmail: varchar("homeownerEmail", { length: 320 }),
+  homeownerPhone: varchar("homeownerPhone", { length: 30 }),
+  // Optional FK to the user who submitted (homeowner) or the Scout-source partner
+  submittedByUserId: int("submittedByUserId"),
+  // Partner ultimately assigned to this job (set on offer acceptance)
+  assignedPartnerId: int("assignedPartnerId"),
+  assignedAt: timestamp("assignedAt"),
   // Job value and commission (filled when job closes)
   estimatedJobValue: decimal("estimatedJobValue", { precision: 10, scale: 2 }),
   actualJobValue: decimal("actualJobValue", { precision: 10, scale: 2 }),
@@ -227,6 +243,27 @@ export const opportunities = mysqlTable("opportunities", {
 
 export type Opportunity = typeof opportunities.$inferSelect;
 export type InsertOpportunity = typeof opportunities.$inferInsert;
+
+// Job offers — the offer/accept/decline cascade for the matching engine.
+// One opportunity produces a chain of offers (one per ranked partner) until accepted/exhausted.
+export const jobOffers = mysqlTable("jobOffers", {
+  id: int("id").primaryKey().autoincrement(),
+  opportunityId: int("opportunityId").notNull(),
+  partnerId: int("partnerId").notNull(),
+  // "offered" | "accepted" | "declined" | "expired"
+  status: varchar("status", { length: 30 }).default("offered").notNull(),
+  // Rank/score snapshot from the matching engine at offer time
+  rank: int("rank"),
+  score: decimal("score", { precision: 8, scale: 2 }),
+  reasons: json("reasons").$type<string[]>().default([]),
+  offeredAt: timestamp("offeredAt").defaultNow().notNull(),
+  expiresAt: timestamp("expiresAt"),
+  respondedAt: timestamp("respondedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type JobOffer = typeof jobOffers.$inferSelect;
+export type InsertJobOffer = typeof jobOffers.$inferInsert;
 
 // Commission records (financial ledger)
 export const commissions = mysqlTable("commissions", {

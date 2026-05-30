@@ -72,6 +72,7 @@ export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
     { label: "Homeowner CRM",     href: "/admin/homeowners" },
     { label: "Photo Queue",       href: "/admin/photo-queue" },
     { label: "Opportunities",     href: "/admin/opportunities" },
+    { label: "Matching Console",  href: "/admin/matching" },
     { label: "Storm Watch",       href: "/admin/storm" },
     { label: "Trusted Pro Algo",  href: "/admin/trusted-pro-algorithm" },
   ],

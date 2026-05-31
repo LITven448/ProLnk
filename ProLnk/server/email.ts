@@ -1078,8 +1078,10 @@ export async function sendJobOfferNotification(opts: {
   scope: string;
   estimatedValue?: number | null;
   expiresAt?: Date | null;
+  reminder?: boolean;
 }) {
   const offersUrl = `${BASE_URL}/partner/offers`;
+  const isReminder = opts.reminder === true;
   const valueLabel = opts.estimatedValue != null
     ? `$${Number(opts.estimatedValue).toLocaleString()}`
     : "TBD";
@@ -1089,16 +1091,18 @@ export async function sendJobOfferNotification(opts: {
   return sendEmail({
     from: FROM_PROLNK,
     to: opts.to,
-    subject: `New job offer: ${opts.trade}${opts.location ? ` in ${opts.location}` : ""} — respond within 24h`,
+    subject: isReminder
+      ? `⏰ Your job offer expires soon: ${opts.trade}${opts.location ? ` in ${opts.location}` : ""}`
+      : `New job offer: ${opts.trade}${opts.location ? ` in ${opts.location}` : ""} — respond within 24h`,
     html: `
       <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#0A1628;color:#fff;border-radius:12px;overflow:hidden;">
         <div style="background:linear-gradient(135deg,#0A1628,#0d2040);padding:32px;text-align:center;border-bottom:1px solid rgba(245,230,66,0.2);">
           <div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-1px;">ProLnk</div>
-          <div style="font-size:13px;color:#F5E642;margin-top:4px;letter-spacing:1px;text-transform:uppercase;">New Job Offer</div>
+          <div style="font-size:13px;color:#F5E642;margin-top:4px;letter-spacing:1px;text-transform:uppercase;">${isReminder ? "⏰ Offer Expiring Soon" : "New Job Offer"}</div>
         </div>
         <div style="padding:32px;">
-          <h2 style="color:#fff;margin:0 0 8px;">You have a new job offer, ${opts.partnerName}</h2>
-          <p style="color:#94a3b8;margin:0 0 24px;line-height:1.6;">A homeowner near you needs a pro. You're first in line — accept within <strong style="color:#F5E642;">24 hours</strong> or it routes to the next partner.</p>
+          <h2 style="color:#fff;margin:0 0 8px;">${isReminder ? `Your job offer expires soon, ${opts.partnerName}` : `You have a new job offer, ${opts.partnerName}`}</h2>
+          <p style="color:#94a3b8;margin:0 0 24px;line-height:1.6;">${isReminder ? `Heads up — your job offer is about to expire. Accept now or it routes to the next partner.` : `A homeowner near you needs a pro. You're first in line — accept within <strong style="color:#F5E642;">24 hours</strong> or it routes to the next partner.`}</p>
           <div style="background:#0d2040;border:1px solid #F5E642;border-radius:8px;padding:20px;margin-bottom:24px;">
             <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
               <span style="color:#64748b;font-size:13px;">Trade</span>

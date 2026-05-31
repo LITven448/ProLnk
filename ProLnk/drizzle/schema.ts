@@ -259,6 +259,7 @@ export const jobOffers = mysqlTable("jobOffers", {
   offeredAt: timestamp("offeredAt").defaultNow().notNull(),
   expiresAt: timestamp("expiresAt"),
   respondedAt: timestamp("respondedAt"),
+  reminderSentAt: timestamp("reminderSentAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 

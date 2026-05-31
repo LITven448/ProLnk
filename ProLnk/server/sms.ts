@@ -31,6 +31,18 @@ export async function sendOfferAlertSMS(phone: string, params: {
   );
 }
 
+export async function sendOfferExpiringReminderSMS(phone: string, params: {
+  trade: string;
+  zip: string;
+  estimatedValue?: number | null;
+}): Promise<boolean> {
+  const value = params.estimatedValue != null ? `~$${Number(params.estimatedValue).toLocaleString()}` : "value TBD";
+  return sendSms(
+    phone,
+    `ProLnk: ⏰ your job offer (${params.trade} in ${params.zip}, ${value}) expires soon. Respond now: prolnk.xyz/partner/offers`,
+  );
+}
+
 export async function sendProMatchedSMS(phone: string, params: {
   businessName: string;
   trade: string;

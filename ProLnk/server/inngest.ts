@@ -95,8 +95,10 @@ export const sweepExpiredOffersJob = inngest.createFunction(
   { id: "sweep-expired-offers", name: "Sweep Expired Job Offers", retries: 2, triggers: [{ cron: "*/15 * * * *" }] },
   async ({ step }: { step: any }) => {
     return step.run("sweep-offers", async () => {
-      const { sweepExpiredOffers } = await import("./routers/matching");
-      return sweepExpiredOffers();
+      const { sweepExpiredOffers, sendExpiringOfferReminders } = await import("./routers/matching");
+      const reminders = await sendExpiringOfferReminders();
+      const swept = await sweepExpiredOffers();
+      return { ...swept, ...reminders };
     });
   }
 );

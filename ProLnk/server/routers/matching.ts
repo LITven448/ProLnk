@@ -12,16 +12,17 @@
  */
 
 import { z } from "zod";
-import { and, desc, eq, inArray, lt } from "drizzle-orm";
+import { and, desc, eq, gt, inArray, isNull, lt } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { jobOffers, opportunities, partners } from "../../drizzle/schema";
 import { rankPartnersForOpportunity, type RankedPartner } from "../matching-engine";
 import { sendJobOfferNotification, sendProMatchedNotification } from "../email";
-import { sendOfferAlertSMS, sendProMatchedSMS } from "../sms";
+import { sendOfferAlertSMS, sendOfferExpiringReminderSMS, sendProMatchedSMS } from "../sms";
 
 const OFFER_TTL_MS = 24 * 60 * 60 * 1000;
+const REMINDER_WINDOW_MS = 3 * 60 * 60 * 1000;
 
 let infraEnsured = false;
 
@@ -58,6 +59,7 @@ export async function ensureJobOffersInfra(): Promise<void> {
     `ALTER TABLE \`opportunities\` ADD \`assignedAt\` timestamp NULL`,
     `ALTER TABLE \`opportunities\` MODIFY \`jobId\` int NULL`,
     `ALTER TABLE \`opportunities\` MODIFY \`sourcePartnerId\` int NULL`,
+    `ALTER TABLE \`jobOffers\` ADD \`reminderSentAt\` timestamp NULL`,
   ];
   for (const s of stmts) {
     try {
@@ -227,6 +229,111 @@ async function cascade(opportunityId: number): Promise<number | null> {
     }
   }
   return nextOfferId;
+}
+
+/** Cron/admin entry point: nudge pros whose open offer expires within the next
+ *  ~3 hours, exactly once each. Reuses the existing offer email/SMS senders with a
+ *  reminder framing, then stamps `reminderSentAt` so it never double-sends.
+ *  Fully defensive — per-offer try/catch; no-op when no contact/keys. */
+export async function sendExpiringOfferReminders(): Promise<{ reminded: number }> {
+  await ensureJobOffersInfra();
+  const db = await getDb();
+  if (!db) return { reminded: 0 };
+  const now = new Date();
+  const cutoff = new Date(now.getTime() + REMINDER_WINDOW_MS);
+
+  let due: Array<{ id: number; opportunityId: number; partnerId: number }> = [];
+  try {
+    due = await db
+      .select({ id: jobOffers.id, opportunityId: jobOffers.opportunityId, partnerId: jobOffers.partnerId })
+      .from(jobOffers)
+      .where(
+        and(
+          eq(jobOffers.status, "offered"),
+          isNull(jobOffers.reminderSentAt),
+          gt(jobOffers.expiresAt, now),
+          lt(jobOffers.expiresAt, cutoff)
+        )
+      );
+  } catch (err) {
+    console.error("[Matching] reminder query failed:", err);
+    return { reminded: 0 };
+  }
+
+  let reminded = 0;
+  for (const offer of due) {
+    try {
+      const [partner] = await db
+        .select({
+          businessName: partners.businessName,
+          contactName: partners.contactName,
+          contactEmail: partners.contactEmail,
+          contactPhone: partners.contactPhone,
+        })
+        .from(partners)
+        .where(eq(partners.id, offer.partnerId))
+        .limit(1);
+      const [opp] = await db
+        .select({
+          trade: opportunities.opportunityCategory,
+          type: opportunities.opportunityType,
+          description: opportunities.description,
+          jobZip: opportunities.jobZip,
+          jobAddress: opportunities.jobAddress,
+          estimatedValue: opportunities.estimatedJobValue,
+          expiresAt: opportunities.leadExpiresAt,
+        })
+        .from(opportunities)
+        .where(eq(opportunities.id, offer.opportunityId))
+        .limit(1);
+
+      if (partner && opp) {
+        const trade = opp.trade || opp.type || "Home Service";
+        const location = opp.jobZip || opp.jobAddress || "";
+        const estValue = opp.estimatedValue != null ? Number(opp.estimatedValue) : null;
+
+        if (partner.contactEmail) {
+          try {
+            await sendJobOfferNotification({
+              to: partner.contactEmail,
+              partnerName: partner.contactName || partner.businessName || "Partner",
+              trade,
+              location,
+              scope: opp.description || "",
+              estimatedValue: estValue,
+              expiresAt: opp.expiresAt ?? null,
+              reminder: true,
+            });
+          } catch (err) {
+            console.error("[Matching] reminder email failed:", err);
+          }
+        }
+        if (partner.contactPhone) {
+          try {
+            await sendOfferExpiringReminderSMS(partner.contactPhone, {
+              trade,
+              zip: opp.jobZip || location || "your area",
+              estimatedValue: estValue,
+            });
+          } catch (err) {
+            console.error("[Matching] reminder SMS failed:", err);
+          }
+        }
+      }
+
+      await db
+        .update(jobOffers)
+        .set({ reminderSentAt: now })
+        .where(eq(jobOffers.id, offer.id));
+      reminded++;
+    } catch (err) {
+      console.error(`[Matching] reminder for offer ${offer.id} failed:`, err);
+    }
+  }
+  if (reminded > 0) {
+    console.log(`[Matching] Sent ${reminded} expiring-offer reminders`);
+  }
+  return { reminded };
 }
 
 /** Cron/admin entry point: expire stale 'offered' offers and cascade each. */

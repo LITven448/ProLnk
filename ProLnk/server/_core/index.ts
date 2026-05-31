@@ -302,9 +302,10 @@ async function startServer() {
       return res.status(401).json({ error: "Unauthorized" });
     }
     try {
-      const { sweepExpiredOffers } = await import("../routers/matching");
+      const { sweepExpiredOffers, sendExpiringOfferReminders } = await import("../routers/matching");
+      const reminders = await sendExpiringOfferReminders();
       const result = await sweepExpiredOffers();
-      return res.json({ success: true, ran: "sweep-offers", ...result, timestamp: new Date().toISOString() });
+      return res.json({ success: true, ran: "sweep-offers", ...result, ...reminders, timestamp: new Date().toISOString() });
     } catch (e: any) {
       return res.status(500).json({ error: e.message });
     }

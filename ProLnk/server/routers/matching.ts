@@ -18,6 +18,8 @@ import { router, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { jobOffers, opportunities, partners } from "../../drizzle/schema";
 import { rankPartnersForOpportunity, type RankedPartner } from "../matching-engine";
+import { sendJobOfferNotification, sendProMatchedNotification } from "../email";
+import { sendOfferAlertSMS, sendProMatchedSMS } from "../sms";
 
 const OFFER_TTL_MS = 24 * 60 * 60 * 1000;
 
@@ -78,11 +80,75 @@ async function notifyPartner(
   try {
     await (db as any).execute(
       `INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl, metadata)
-       VALUES (?, 'new_lead', ?, ?, '/partner/leads', ?)`,
+       VALUES (?, 'new_lead', ?, ?, '/partner/offers', ?)`,
       [partnerId, title, message, JSON.stringify(metadata)]
     );
   } catch {
     // partnerNotifications uses a non-auto-increment id in some envs; fall back silently.
+  }
+
+  // Fire real email + SMS to the pro. Each channel is independently guarded so a
+  // delivery failure (or missing API keys) never breaks offer creation/cascade.
+  const opportunityId = typeof metadata.opportunityId === "number" ? metadata.opportunityId : null;
+  if (opportunityId == null) return;
+  try {
+    const [partner] = await db
+      .select({
+        businessName: partners.businessName,
+        contactName: partners.contactName,
+        contactEmail: partners.contactEmail,
+        contactPhone: partners.contactPhone,
+      })
+      .from(partners)
+      .where(eq(partners.id, partnerId))
+      .limit(1);
+    const [opp] = await db
+      .select({
+        trade: opportunities.opportunityCategory,
+        type: opportunities.opportunityType,
+        description: opportunities.description,
+        jobZip: opportunities.jobZip,
+        jobAddress: opportunities.jobAddress,
+        estimatedValue: opportunities.estimatedJobValue,
+        expiresAt: opportunities.leadExpiresAt,
+      })
+      .from(opportunities)
+      .where(eq(opportunities.id, opportunityId))
+      .limit(1);
+    if (!partner || !opp) return;
+
+    const trade = opp.trade || opp.type || "Home Service";
+    const location = opp.jobZip || opp.jobAddress || "";
+    const estValue = opp.estimatedValue != null ? Number(opp.estimatedValue) : null;
+
+    if (partner.contactEmail) {
+      try {
+        await sendJobOfferNotification({
+          to: partner.contactEmail,
+          partnerName: partner.contactName || partner.businessName || "Partner",
+          trade,
+          location,
+          scope: opp.description || "",
+          estimatedValue: estValue,
+          expiresAt: opp.expiresAt ?? null,
+        });
+      } catch (err) {
+        console.error("[Matching] sendJobOfferNotification failed:", err);
+      }
+    }
+    if (partner.contactPhone) {
+      try {
+        await sendOfferAlertSMS(partner.contactPhone, {
+          trade,
+          zip: opp.jobZip || location || "your area",
+          estimatedValue: estValue,
+        });
+      } catch (err) {
+        console.error("[Matching] sendOfferAlertSMS failed:", err);
+      }
+    }
+  } catch (err) {
+    console.error("[Matching] offer notification lookup failed:", err);
   }
 }
 
@@ -247,6 +313,54 @@ export const matchingRouter = router({
             acceptedAt: now,
           })
           .where(eq(opportunities.id, offer.opportunityId));
+
+        // Notify the homeowner that a pro was matched. Fully defensive — no-op if
+        // we have no homeowner contact, and never breaks the acceptance.
+        try {
+          const [opp] = await db
+            .select({
+              homeownerName: opportunities.homeownerName,
+              homeownerEmail: opportunities.homeownerEmail,
+              homeownerPhone: opportunities.homeownerPhone,
+              trade: opportunities.opportunityCategory,
+              type: opportunities.opportunityType,
+            })
+            .from(opportunities)
+            .where(eq(opportunities.id, offer.opportunityId))
+            .limit(1);
+          const [pro] = await db
+            .select({ businessName: partners.businessName })
+            .from(partners)
+            .where(eq(partners.id, offer.partnerId))
+            .limit(1);
+          if (opp && pro) {
+            const trade = opp.trade || opp.type || "Home Service";
+            if (opp.homeownerEmail) {
+              try {
+                await sendProMatchedNotification(opp.homeownerEmail, {
+                  homeownerName: opp.homeownerName ?? undefined,
+                  businessName: pro.businessName || "A verified pro",
+                  trade,
+                });
+              } catch (err) {
+                console.error("[Matching] sendProMatchedNotification failed:", err);
+              }
+            }
+            if (opp.homeownerPhone) {
+              try {
+                await sendProMatchedSMS(opp.homeownerPhone, {
+                  businessName: pro.businessName || "A verified pro",
+                  trade,
+                });
+              } catch (err) {
+                console.error("[Matching] sendProMatchedSMS failed:", err);
+              }
+            }
+          }
+        } catch (err) {
+          console.error("[Matching] homeowner match notification lookup failed:", err);
+        }
+
         return { status: "accepted" as const, opportunityId: offer.opportunityId };
       }
 

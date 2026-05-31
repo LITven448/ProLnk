@@ -1719,7 +1719,12 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     }),
   }),
   auth: router({
-    me: publicProcedure.query(opts => opts.ctx.user),
+    me: publicProcedure.query(opts => {
+      const u = opts.ctx.user;
+      if (!u) return null;
+      const { adminPasswordHash, stripeCustomerId, ...safe } = u as Record<string, unknown>;
+      return safe;
+    }),
     logout: publicProcedure.mutation(({ ctx }) => {
       const cookieOptions = getSessionCookieOptions(ctx.req);
       ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });

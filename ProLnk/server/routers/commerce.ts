@@ -187,6 +187,11 @@ export const commerceRouter = router({
 
   // Future affiliate-network postback: mark a click as converted with an order
   // value so commission can be estimated/reconciled.
+  // SECURITY REVIEW: public + trusts client-supplied orderValue with no signature
+  // verification. Acceptable while estimate-only, but before any real payout is
+  // derived from `converted`/`orderValue` this MUST verify an affiliate-network
+  // HMAC/signature (or move behind a server-to-server secret) to prevent
+  // click/commission inflation. Left public intentionally — affiliate network is the caller.
   recordConversion: publicProcedure
     .input(
       z.object({

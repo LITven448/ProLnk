@@ -22,6 +22,7 @@ import { webhookRouter } from "../webhooks";
 import { fsmWebhookRouter } from "../fsm-webhooks";
 import { registerN8nWebhooks } from "../webhooks/n8n";
 import { handleStripeWebhook } from "../routers/stripe";
+import { handleConnectWebhook } from "../routers/stripeConnect";
 import { handleCheckrWebhook } from "../routers/checkr";
 import { serve } from "inngest/express";
 import { inngest, functions } from "../inngest";
@@ -111,6 +112,8 @@ async function startServer() {
   app.use("/api/upload-photos", scanLimiter);
   // Stripe webhook MUST be registered BEFORE express.json() to preserve raw body for signature verification
   app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), handleStripeWebhook);
+  // Stripe Connect webhook (account.updated, transfer.*) — gated, no-ops until Connect enabled.
+  app.post("/api/stripe/connect-webhook", express.raw({ type: "application/json" }), handleConnectWebhook);
 
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
@@ -302,6 +305,21 @@ async function startServer() {
       const { sweepExpiredOffers } = await import("../routers/matching");
       const result = await sweepExpiredOffers();
       return res.json({ success: true, ran: "sweep-offers", ...result, timestamp: new Date().toISOString() });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
+  // Disburse pending commission_payout rows via Stripe Connect (gated; no-ops until enabled).
+  app.post("/api/agents/disburse-payouts", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.headers["x-agent-secret"] !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const { disbursePendingPayouts } = await import("../routers/stripeConnect");
+      const result = await disbursePendingPayouts();
+      return res.json({ success: true, ran: "disburse-payouts", ...result, timestamp: new Date().toISOString() });
     } catch (e: any) {
       return res.status(500).json({ error: e.message });
     }

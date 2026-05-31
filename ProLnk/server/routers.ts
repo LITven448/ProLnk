@@ -10,6 +10,7 @@ import { dataIntelligenceRouter } from "./routers/dataIntelligence";
 import { reviewsRouter } from "./routers/reviews";
 import { verificationRouter } from "./routers/verification";
 import { stripeRouter } from "./routers/stripe";
+import { stripeConnectRouter } from "./routers/stripeConnect";
 import { paymentsRouter } from "./routers/payments";
 import { stormAgentRouter } from "./routers/stormAgent";
 import { realEstateAgentsRouter } from "./routers/realEstateAgents";
@@ -318,6 +319,7 @@ export const appRouter = router({
   reviews: reviewsRouter,
   verification: verificationRouter,
   stripe: stripeRouter,
+  stripeConnect: stripeConnectRouter,
   payments: paymentsRouter,
   stormAgent: stormAgentRouter,
   realEstateAgents: realEstateAgentsRouter,

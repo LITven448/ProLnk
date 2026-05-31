@@ -3080,6 +3080,7 @@ export const commissionPayout = mysqlTable("commission_payout", {
   amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
   status: varchar("status", { length: 20 }).notNull().default("pending"), // pending|approved|paid|suspended
   payoutMonth: varchar("payout_month", { length: 7 }).notNull(), // "2025-03"
+  stripeTransferId: varchar("stripe_transfer_id", { length: 255 }),
   paidAt: timestamp("paid_at"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 }, (table) => ({

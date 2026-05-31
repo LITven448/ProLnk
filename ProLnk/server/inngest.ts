@@ -200,8 +200,21 @@ export const dailyMarketingAutomation = inngest.createFunction(
   }
 );
 
+export const dailyCommissionDisbursement = inngest.createFunction(
+  { id: "daily-commission-disbursement", name: "Daily Commission Disbursement", retries: 3, triggers: [{ cron: "0 9 * * *" }] },
+  async ({ step, logger }: { step: any; logger: any }) => {
+    return step.run("disburse-commission-payouts", async () => {
+      const { disbursePendingPayouts } = await import("./routers/stripeConnect");
+      const result = await disbursePendingPayouts();
+      logger.info(`Commission disbursement: ${JSON.stringify(result)}`);
+      return result;
+    });
+  }
+);
+
 export const functions = [
   nightlyPayoutSweep,
+  dailyCommissionDisbursement,
   sweepExpiredLeadsJob,
   sweepExpiredOffersJob,
   nightlyComplianceScan,

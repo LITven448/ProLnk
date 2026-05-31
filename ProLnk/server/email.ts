@@ -1069,6 +1069,113 @@ export async function sendWelcomeToNetworkEmail(params: {
   });
 }
 
+// ─── New Job Offer Notification (Pro) ─────────────────────────────────────────
+export async function sendJobOfferNotification(opts: {
+  to: string;
+  partnerName: string;
+  trade: string;
+  location: string;
+  scope: string;
+  estimatedValue?: number | null;
+  expiresAt?: Date | null;
+}) {
+  const offersUrl = `${BASE_URL}/partner/offers`;
+  const valueLabel = opts.estimatedValue != null
+    ? `$${Number(opts.estimatedValue).toLocaleString()}`
+    : "TBD";
+  const expiryLabel = opts.expiresAt
+    ? new Date(opts.expiresAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
+    : "24 hours";
+  return sendEmail({
+    from: FROM_PROLNK,
+    to: opts.to,
+    subject: `New job offer: ${opts.trade}${opts.location ? ` in ${opts.location}` : ""} — respond within 24h`,
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#0A1628;color:#fff;border-radius:12px;overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#0A1628,#0d2040);padding:32px;text-align:center;border-bottom:1px solid rgba(245,230,66,0.2);">
+          <div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-1px;">ProLnk</div>
+          <div style="font-size:13px;color:#F5E642;margin-top:4px;letter-spacing:1px;text-transform:uppercase;">New Job Offer</div>
+        </div>
+        <div style="padding:32px;">
+          <h2 style="color:#fff;margin:0 0 8px;">You have a new job offer, ${opts.partnerName}</h2>
+          <p style="color:#94a3b8;margin:0 0 24px;line-height:1.6;">A homeowner near you needs a pro. You're first in line — accept within <strong style="color:#F5E642;">24 hours</strong> or it routes to the next partner.</p>
+          <div style="background:#0d2040;border:1px solid #F5E642;border-radius:8px;padding:20px;margin-bottom:24px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+              <span style="color:#64748b;font-size:13px;">Trade</span>
+              <span style="color:#fff;font-weight:600;">${opts.trade}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+              <span style="color:#64748b;font-size:13px;">Location</span>
+              <span style="color:#fff;font-weight:600;">${opts.location || "—"}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+              <span style="color:#64748b;font-size:13px;">Est. Job Value</span>
+              <span style="color:#F5E642;font-weight:700;">${valueLabel}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="color:#64748b;font-size:13px;">Expires</span>
+              <span style="color:#fff;font-weight:600;">${expiryLabel}</span>
+            </div>
+          </div>
+          ${opts.scope ? `<div style="background:#0d2040;border-left:4px solid #F5E642;padding:16px;margin:0 0 24px;border-radius:0 8px 8px 0;"><p style="color:#64748b;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;">Job Scope</p><p style="color:#cbd5e1;margin:0;line-height:1.5;">${opts.scope}</p></div>` : ""}
+          <div style="text-align:center;">
+            <a href="${offersUrl}" style="background:#F5E642;color:#0A1628;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:800;font-size:16px;display:inline-block;">View & Respond to Offer →</a>
+          </div>
+          <p style="color:#64748b;font-size:12px;text-align:center;margin-top:16px;">Offers expire — respond quickly to keep your spot in line.</p>
+        </div>
+        <div style="background:#060f1e;padding:20px 32px;text-align:center;">
+          <p style="color:#475569;font-size:12px;margin:0;">© 2026 ProLnk Partner Network · DFW, Texas</p>
+        </div>
+      </div>
+    `,
+  });
+}
+
+// ─── Pro Matched Notification (Homeowner) ─────────────────────────────────────
+export async function sendProMatchedNotification(homeownerEmail: string, opts: {
+  homeownerName?: string;
+  businessName: string;
+  trade: string;
+  dashboardUrl?: string;
+}) {
+  const firstName = opts.homeownerName?.split(" ")[0] || "there";
+  const dashUrl = opts.dashboardUrl ?? `${BASE_URL}`;
+  return sendEmail({
+    from: FROM_TRUSTYPRO,
+    to: homeownerEmail,
+    subject: `Good news — a verified pro has been matched to your request`,
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
+        <div style="background:linear-gradient(135deg,#1e3a5f,#0891b2);padding:32px;text-align:center;">
+          <div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-1px;">TrustyPro</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">Pro Matched</div>
+        </div>
+        <div style="padding:32px;">
+          <h2 style="color:#1e293b;margin:0 0 8px;">You've been matched, ${firstName}!</h2>
+          <p style="color:#64748b;line-height:1.6;">Good news — a verified pro has accepted your request and will be reaching out soon.</p>
+          <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:8px;padding:20px;margin:24px 0;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+              <span style="color:#64748b;font-size:13px;">Matched Pro</span>
+              <span style="color:#1e293b;font-weight:700;">${opts.businessName}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="color:#64748b;font-size:13px;">Service</span>
+              <span style="color:#0891b2;font-weight:600;">${opts.trade}</span>
+            </div>
+          </div>
+          <p style="color:#64748b;line-height:1.6;"><strong style="color:#1e293b;">What's next:</strong> ${opts.businessName} will contact you directly to confirm details and schedule. Keep an eye on your phone and email.</p>
+          <div style="text-align:center;margin:24px 0;">
+            <a href="${dashUrl}" style="background:#0891b2;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;display:inline-block;">View My Request →</a>
+          </div>
+        </div>
+        <div style="background:#f1f5f9;padding:20px 32px;text-align:center;">
+          <p style="color:#94a3b8;font-size:12px;margin:0;">© 2026 TrustyPro · DFW, Texas</p>
+        </div>
+      </div>
+    `,
+  });
+}
+
 // ─── Partner Password Reset ────────────────────────────────────────────────────
 export async function sendPartnerPasswordReset(opts: {
   to: string;

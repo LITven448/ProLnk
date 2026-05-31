@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
 import { AddressAutofill } from "@/components/AddressAutofill";
 import { SERVICE_CATEGORIES } from "@/data/serviceCategories";
@@ -64,6 +65,19 @@ export default function RequestService() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-10 px-4">
+      <Helmet>
+        <title>Request a Pro — Get Matched with Vetted Local Home Service Pros</title>
+        <meta name="description" content="Tell us what you need and get matched with background-checked, verified local home service pros. Free, no obligation. Plumbing, HVAC, electrical, and more." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Request a Pro — Get Matched with Vetted Local Home Service Pros" />
+        <meta property="og:description" content="Tell us what you need and get matched with background-checked, verified local home service pros. Free, no obligation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Request a Pro — Get Matched with Vetted Local Home Service Pros" />
+        <meta name="twitter:description" content="Get matched with background-checked, verified local home service pros. Free, no obligation." />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp" />
+      </Helmet>
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-8">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: INDIGO }}>

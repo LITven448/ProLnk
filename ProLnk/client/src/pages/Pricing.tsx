@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import { ProLnkLogo } from "@/components/ProLnkLogo";
 import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Building2, Star, Shield } from "lucide-react";
 
@@ -121,6 +122,21 @@ export default function Pricing() {
 
   return (
     <div className="min-h-screen bg-[#0A1628] text-white">
+      <Helmet>
+        <title>ProLnk Pricing — Keep up to 60% of Every Referral Commission</title>
+        <meta name="description" content="Simple month-to-month pricing for home service pros. Plans from $99/mo with a 90-day free trial. Keep up to 60% of every commission, AI-matched leads, and real-time payment tracking. No contracts." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="ProLnk Pricing — Keep up to 60% of Every Referral Commission" />
+        <meta property="og:description" content="Simple month-to-month pricing for home service pros. Plans from $99/mo with a 90-day free trial. Keep up to 60% of every commission. No contracts." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.xyz/pricing" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ProLnk Pricing — Keep up to 60% of Every Referral Commission" />
+        <meta name="twitter:description" content="Plans from $99/mo with a 90-day free trial. Keep up to 60% of every commission. No contracts." />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
+        <link rel="canonical" href="https://prolnk.xyz/pricing" />
+      </Helmet>
 
       {/* Nav */}
       <header className="border-b border-white/10">

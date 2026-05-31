@@ -1082,7 +1082,7 @@ export default function TrustyProHome() {
 
           {/* 3 benefit columns */}
           <motion.div
-            className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.35 }}

@@ -8,7 +8,7 @@ const decades = [
 ];
 
 const guides: Record<string, { title: string; items: string[] }> = {
-  1980s: {
+  '1980s': {
     title: '1980s Home Storm Resilience Checklist',
     items: [
       '🌪️ Roofs 35+ years old: full replacement likely needed — inspect for hail damage',
@@ -19,7 +19,7 @@ const guides: Record<string, { title: string; items: string[] }> = {
       '💡 Panel upgrade: 100-amp panels common — upgrade to 200A for storm generators',
     ],
   },
-  1990s: {
+  '1990s': {
     title: '1990s Home Storm Resilience Checklist',
     items: [
       '🛡️ Garage doors are #1 tornado vulnerability — brace kits under $300 available',
@@ -30,7 +30,7 @@ const guides: Record<string, { title: string; items: string[] }> = {
       '🌧️ Lake clay expansive soil: French drain system crucial post-storm',
     ],
   },
-  2000s: {
+  '2000s': {
     title: '2000s Home Storm Resilience Checklist',
     items: [
       '🌪️ Post-2015 tornado: if unaffected, still inspect for micro-damage yearly',

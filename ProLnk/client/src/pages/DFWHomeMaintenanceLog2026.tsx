@@ -18,8 +18,8 @@ export default function DFWHomeMaintenanceLog2026() {
   const [copied, setCopied] = useState(false);
 
   const fields = fieldDefs[service] || fieldDefs['Other'];
-  const template = fields.map(f => `• ${f}: _______________`).join('
-');
+  const template = fields.map(f => `• ${f}: _______________`).join(`
+`);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`[${service} Log Entry]
@@ -34,7 +34,7 @@ ${template}`);
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📋🏠</div>
           <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Home Maintenance Log 2026</h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Every service call deserves a proper record. Use this template — or let ProLnk Vault do it automatically.</p>
+          <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Every service call deserves a proper record. Use this template - or let ProLnk Vault do it automatically.</p>
         </div>
 
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -64,7 +64,7 @@ ${template}`);
 
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.4rem' }}>🏠 ProLnk Vault captures this automatically</p>
-          <p style={{ color: '#94a3b8', fontSize: '0.88rem', margin: 0 }}>Every ProLnk service call logs contractor info, scope, materials, and warranty — searchable forever, transferable when you sell.</p>
+          <p style={{ color: '#94a3b8', fontSize: '0.88rem', margin: 0 }}>Every ProLnk service call logs contractor info, scope, materials, and warranty - searchable forever, transferable when you sell.</p>
         </div>
       </div>
     </div>

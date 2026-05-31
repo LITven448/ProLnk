@@ -7,7 +7,7 @@ export default function DFWTurfMaintenanceGuide2026() {
   const getSchedule = () => {
     if (!grassType) { setResult('Please select your grass type.'); return; }
     const schedules: Record<string, string> = {
-      bermuda: '🟡 Bermuda Monthly DFW Schedule:
+      bermuda: `🟡 Bermuda Monthly DFW Schedule:
 
 • Jan–Feb: Dormant. No mowing. Spot-treat winter weeds.
 • March: Pre-emergent crabgrass (when soil hits 55°F). First mow at 1.5 inches.
@@ -15,8 +15,8 @@ export default function DFWTurfMaintenanceGuide2026() {
 • May–Aug: Mow every 5–7 days at 1–1.5 inches. Fertilize monthly 32-0-10. Water 1 inch/week.
 • September: Potassium boost (0-0-50). Slow mowing to every 10 days.
 • Oct–Nov: Last fertilizer before dormancy. Raise mow height to 2 inches.
-• December: Dormant. Optional overseeding with ryegrass for winter color.',
-      staugustine: '🟣 St. Augustine Monthly DFW Schedule:
+• December: Dormant. Optional overseeding with ryegrass for winter color.`,
+      staugustine: `🟣 St. Augustine Monthly DFW Schedule:
 
 • Jan–Feb: Dormant. No fertilizer. Spot-treat broadleaf weeds carefully.
 • March: First mow 3.5 inches. Apply pre-emergent (avoid simazine near trees).
@@ -24,8 +24,8 @@ export default function DFWTurfMaintenanceGuide2026() {
 • May–Aug: Mow every 7–10 days at 3.5–4 inches. Watch for chinch bugs weekly. Water 1–1.5 inches.
 • September: Reduce nitrogen. Apply potassium 0-0-50 for root strength.
 • Oct–Nov: Raise mow height to 4 inches. Last feed before dormancy.
-• December: Dormant. Inspect for gray leaf spot or brown patch.',
-      zoysia: '🟢 Zoysia Monthly DFW Schedule:
+• December: Dormant. Inspect for gray leaf spot or brown patch.`,
+      zoysia: `🟢 Zoysia Monthly DFW Schedule:
 
 • Jan–Feb: Dormant. No action needed. Best grass for DFW winter dormancy.
 • March: Pre-emergent application. First mow at 1.5 inches when actively growing.
@@ -33,7 +33,7 @@ export default function DFWTurfMaintenanceGuide2026() {
 • June–Aug: Mow every 10–14 days. Fertilize once mid-summer. Water 0.5–0.75 inches/week.
 • September: Zoysia stays green longer than Bermuda — maintain mowing through October.
 • Oct–Nov: Final mow at 1.5 inches. Light potassium feed for winter hardiness.
-• December: Semi-dormant. May hold some green until first hard freeze.',
+• December: Semi-dormant. May hold some green until first hard freeze.`,
     };
     setResult(schedules[grassType] || 'Select a valid grass type.');
   };
@@ -47,12 +47,12 @@ export default function DFWTurfMaintenanceGuide2026() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
-        <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>🌿 PROLNK LAWN GUIDE — DFW 2026</div>
+        <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>🌿 PROLNK LAWN GUIDE - DFW 2026</div>
         <h1 style={{ fontSize: 32, marginBottom: 8 }}>DFW Turf Management Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28 }}>Professional-level turf care for DFW homeowners. Month-by-month schedules by grass type.</p>
 
         <div style={{ marginBottom: 24 }}>
-          <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 13 }}>MOWING QUICK REFERENCE — DFW</div>
+          <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 13 }}>MOWING QUICK REFERENCE - DFW</div>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead><tr style={{ background: '#0d1f3c' }}>
               {['Grass', 'Mow Height', 'Frequency', 'Active Season'].map(h => <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>)}

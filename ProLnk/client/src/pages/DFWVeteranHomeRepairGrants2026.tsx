@@ -17,9 +17,9 @@ export default function DFWVeteranHomeRepairGrants2026() {
     }
     grants.push('🏦 Texas Veterans Land Board Home Improvement Loan: Below-market interest rates, up to $50,000 for home improvements. Call TVL: 1-800-252-VETS (8387)');
     grants.push('🔨 Habitat for Humanity Veterans Build (DFW): Free or subsidized home repairs for qualifying veteran households. Dallas: (214) 678-0100 | Fort Worth: (817) 923-8080');
-    setResult(grants.join('
+    setResult(grants.join(`
 
-'));
+`));
   };
 
   return (
@@ -46,14 +46,14 @@ export default function DFWVeteranHomeRepairGrants2026() {
               style={{ flex: 1, padding: '10px 14px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: period ? '#fff' : '#64748b', fontSize: 14 }}>
               <option value="">Select Service Period</option>
               <option value="wwii">WWII / Korea (pre-1955)</option>
-              <option value="vietnam">Vietnam Era (1955–1975)</option>
-              <option value="gulf">Gulf War (1990–present)</option>
-              <option value="post911">Post-9/11 (2001–present)</option>
+              <option value="vietnam">Vietnam Era (1955-1975)</option>
+              <option value="gulf">Gulf War (1990-present)</option>
+              <option value="post911">Post-9/11 (2001-present)</option>
             </select>
             <select value={disability} onChange={e => setDisability(e.target.value)}
               style={{ flex: 1, padding: '10px 14px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: '#fff', fontSize: 14 }}>
               <option value="none">No Disability Rating</option>
-              <option value="partial">Partial Disability (1–99%)</option>
+              <option value="partial">Partial Disability (1-99%)</option>
               <option value="severe">Severe Disability (loss of limb/sight)</option>
               <option value="100">100% Service-Connected</option>
             </select>
@@ -62,9 +62,9 @@ export default function DFWVeteranHomeRepairGrants2026() {
             style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Find My Programs
           </button>
-          {result && <div style={{ marginTop: 16 }}>{result.split('
+          {result && <div style={{ marginTop: 16 }}>{result.split(`
 
-').map((r, i) => (
+`).map((r, i) => (
             <p key={i} style={{ padding: 14, background: '#0A1628', borderRadius: 8, color: '#cbd5e1', lineHeight: 1.6, marginBottom: 8 }}>{r}</p>
           ))}</div>}
         </div>

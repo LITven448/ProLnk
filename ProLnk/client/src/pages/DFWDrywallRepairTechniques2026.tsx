@@ -3,8 +3,8 @@ import { useState } from 'react';
 const techniques = [
   { size: 'Nail Pop', label: '🔩 Nail Pop', steps: ['Drive nail deeper with hammer', 'Drive new nail 2" above/below', 'Apply two coats spackle over both', 'Sand smooth when dry', 'Prime + paint to match'], difficulty: 'Easy', time: '30 min + dry time' },
   { size: 'Small Hole', label: '🕳️ Small Hole (< 1")', steps: ['Clean edges of hole', 'Fill with lightweight spackle', 'Smooth with putty knife', 'Let dry 2-4 hours', 'Sand with 120-grit', 'Prime + paint'], difficulty: 'Easy', time: '1-2 hours' },
-  { size: 'Medium Hole', label: 🔲 Medium Hole (1-6")', steps: ['Apply self-adhesive mesh patch', 'Cover with joint compound', 'Feather edges 6-8" out', ’Let dry 24 hours', 'Apply second coat', 'Sand, prime, texture, paint'], difficulty: 'Moderate', time: '2-3 days' },
-  { size: 'Large Hole', label: '🪚 Large Hole (6"+)', steps: ['Cut to nearest studs (California patch or backing board)', 'Install backing board if no studs', 'Cut drywall patch to fit', 'Tape all seams with paper tape', 'Apply 3 coats compound', 'Sand, prime, texture, paint'], difficulty: 'Advanced', time: '3-5 days' },
+  { size: 'Medium Hole', label: 🔲 Medium Hole (1-6`)', steps: ['Apply self-adhesive mesh patch', 'Cover with joint compound', 'Feather edges 6-8" out', ’Let dry 24 hours', 'Apply second coat', 'Sand, prime, texture, paint'], difficulty: 'Moderate', time: '2-3 days' },
+  { size: 'Large Hole', label: '🪚 Large Hole (6`+)`, steps: ['Cut to nearest studs (California patch or backing board)`, 'Install backing board if no studs', 'Cut drywall patch to fit', 'Tape all seams with paper tape', 'Apply 3 coats compound', 'Sand, prime, texture, paint'], difficulty: 'Advanced', time: '3-5 days' },
 ];
 
 export default function DFWDrywallRepairTechniques2026() {
@@ -18,7 +18,7 @@ export default function DFWDrywallRepairTechniques2026() {
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🧱</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, margin: '12px 0 8px' }}>DFW Drywall Repair Techniques 2026</h1>
-          <p style={{ color: '#94a3b8', fontSize: 15 }}>Step-by-step repair guide for DFW homeowners — select your hole size below.</p>
+          <p style={{ color: '#94a3b8', fontSize: 15 }}>Step-by-step repair guide for DFW homeowners - select your hole size below.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
@@ -56,14 +56,14 @@ export default function DFWDrywallRepairTechniques2026() {
         <div style={{ marginTop: 28, background: '#1e293b', borderRadius: 14, padding: 20, border: '1px solid #334155' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 12px', fontSize: 16 }}>🌡️ DFW Climate Tips</h3>
           <ul style={{ margin: 0, paddingLeft: 18, color: '#94a3b8', fontSize: 14 }}>
-            <li style={{ marginBottom: 6 }}>Apply joint compound between 55–80°F — DFW summers require early morning work</li>
-            <li style={{ marginBottom: 6 }}>DFW humidity slows drying — run A/C or dehumidifier during repairs</li>
-            <li style={{ marginBottom: 6 }}>Texture matching is the hardest part — always test on cardboard first</li>
+            <li style={{ marginBottom: 6 }}>Apply joint compound between 55-80°F - DFW summers require early morning work</li>
+            <li style={{ marginBottom: 6 }}>DFW humidity slows drying - run A/C or dehumidifier during repairs</li>
+            <li style={{ marginBottom: 6 }}>Texture matching is the hardest part - always test on cardboard first</li>
             <li>Need a pro? ProLnk connects you with vetted DFW drywall contractors.</li>
           </ul>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#475569', fontSize: 13, marginTop: 28 }}>© 2026 ProLnk — DFW Home Services</p>
+        <p style={{ textAlign: 'center', color: '#475569', fontSize: 13, marginTop: 28 }}>© 2026 ProLnk - DFW Home Services</p>
       </div>
     </div>
   );

@@ -6,34 +6,34 @@ export default function DFWElectromagneticFieldsHomeGuide2026() {
   const assessments: Record<string, { title: string; science: string; risk: string; riskColor: string; mitigation: string; note: string }> = {
     'power-lines': {
       title: 'ONCOR High-Voltage Transmission Lines',
-      science: 'DFW has extensive ONCOR transmission corridors running through suburban neighborhoods. These lines operate at 138kV–345kV and generate both electric and magnetic fields. Magnetic field strength drops rapidly with distance — at 100ft from a 345kV line, fields are typically below 2 milligauss (mG).\',
+      science: 'DFW has extensive ONCOR transmission corridors running through suburban neighborhoods. These lines operate at 138kV–345kV and generate both electric and magnetic fields. Magnetic field strength drops rapidly with distance — at 100ft from a 345kV line, fields are typically below 2 milligauss (mG).',
       risk: 'Moderate Concern',
       riskColor: '#f59e0b',
-      mitigation: 'Distance is your primary mitigation. Most health agencies consider fields below 2–4 mG low concern. Measure with a gaussmeter at property boundaries. Check ONCOR easement maps before purchasing.\',
+      mitigation: 'Distance is your primary mitigation. Most health agencies consider fields below 2–4 mG low concern. Measure with a gaussmeter at property boundaries. Check ONCOR easement maps before purchasing.',
       note: 'Power line easements can reduce property values 5–10% for lots within 200ft of transmission towers.'
     },
     'smart-meter': {
       title: 'Oncor Smart Meters (AMI)',
-      science: 'Smart meters transmit data via radio frequency (RF) pulses typically lasting 1–30 milliseconds, a few times per hour. Peak RF exposure at 1 meter from the meter is typically 0.005–0.08 mW/cm² — well below the FCC limit of 0.6 mW/cm².\',
+      science: 'Smart meters transmit data via radio frequency (RF) pulses typically lasting 1–30 milliseconds, a few times per hour. Peak RF exposure at 1 meter from the meter is typically 0.005–0.08 mW/cm² — well below the FCC limit of 0.6 mW/cm².',
       risk: 'Low Concern',
       riskColor: '#22c55e',
-      mitigation: 'Field levels drop to near-background at 3–4 feet. Concern is often based on continuous exposure assumptions that do not match actual duty cycles. No peer-reviewed consensus supports harm at these levels.\',
+      mitigation: 'Field levels drop to near-background at 3–4 feet. Concern is often based on continuous exposure assumptions that do not match actual duty cycles. No peer-reviewed consensus supports harm at these levels.',
       note: 'Opt-out available through Oncor but may involve monthly fees for manual reads.'
     },
     'wifi-router': {
       title: 'WiFi Routers & Smart Home Devices',
-      science: 'WiFi operates at 2.4 GHz and 5 GHz frequencies. At 1 meter, typical home routers measure 0.001–0.01 mW/cm² — 60x below FCC limits. Exposure falls off rapidly with distance following the inverse square law.\',
+      science: 'WiFi operates at 2.4 GHz and 5 GHz frequencies. At 1 meter, typical home routers measure 0.001–0.01 mW/cm² — 60x below FCC limits. Exposure falls off rapidly with distance following the inverse square law.',
       risk: 'Minimal Concern',
       riskColor: '#22c55e',
-      mitigation: 'Place router in a central location away from sleeping areas if concerned. Wired ethernet eliminates WiFi exposure entirely at connected devices. Switch to 5 GHz for shorter range with same throughput.\',
+      mitigation: 'Place router in a central location away from sleeping areas if concerned. Wired ethernet eliminates WiFi exposure entirely at connected devices. Switch to 5 GHz for shorter range with same throughput.',
       note: 'Current scientific consensus (WHO, IARC) does not classify WiFi as a proven health risk at typical home exposure levels.'
     },
     'electrical-panel': {
       title: 'Home Electrical Panel & Wiring',
-      science: '60Hz magnetic fields from home wiring typically measure 0.5–2 mG near walls with active circuits. Major appliances (HVAC, refrigerator motors) can produce 5–20 mG at 6 inches but drop below 1 mG at 3 feet.\',
+      science: '60Hz magnetic fields from home wiring typically measure 0.5–2 mG near walls with active circuits. Major appliances (HVAC, refrigerator motors) can produce 5–20 mG at 6 inches but drop below 1 mG at 3 feet.',
       risk: 'Low Concern',
       riskColor: '#22c55e',
-      mitigation: 'Keep sleeping areas away from large electrical panels. Ground all metal water pipes to reduce stray current on plumbing. Have an electrician verify proper grounding — improper grounding increases fields significantly.\',
+      mitigation: 'Keep sleeping areas away from large electrical panels. Ground all metal water pipes to reduce stray current on plumbing. Have an electrician verify proper grounding — improper grounding increases fields significantly.',
       note: 'Older DFW homes may have aluminum wiring (pre-1972) — a separate fire safety concern, not an EMF issue.'
     },
   };
@@ -47,7 +47,7 @@ export default function DFWElectromagneticFieldsHomeGuide2026() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', marginBottom: '0.5rem' }}>
           ⚡ DFW EMF Home Guide 2026
         </h1>
-        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Electromagnetic fields in DFW homes — science-based risk assessment for ONCOR lines, smart meters, and more.</p>
+        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Electromagnetic fields in DFW homes - science-based risk assessment for ONCOR lines, smart meters, and more.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[
@@ -67,10 +67,10 @@ export default function DFWElectromagneticFieldsHomeGuide2026() {
         <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚗️ EMF Science Fundamentals</h2>
           {[
-            'EMF strength follows the inverse square law — doubling distance reduces field strength to 25% of its original value.\',
-            'Electric fields are blocked by walls and trees. Magnetic fields pass through most materials — only distance reduces them.\',
-            '60Hz power frequency fields (from wiring and appliances) differ from RF fields (WiFi, smart meters) — both follow inverse square law.\',
-            'ONCOR publishes easement maps — critical due diligence before purchasing any DFW property near transmission corridors.\',
+            'EMF strength follows the inverse square law — doubling distance reduces field strength to 25% of its original value.',
+            'Electric fields are blocked by walls and trees. Magnetic fields pass through most materials — only distance reduces them.',
+            '60Hz power frequency fields (from wiring and appliances) differ from RF fields (WiFi, smart meters) — both follow inverse square law.',
+            'ONCOR publishes easement maps — critical due diligence before purchasing any DFW property near transmission corridors.',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
               <span style={{ color: '#F5E642' }}>▸</span>

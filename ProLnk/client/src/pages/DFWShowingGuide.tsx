@@ -36,7 +36,7 @@ const MISLEADING = [
   "New carpet — can hide damaged or uneven subfloor",
   "Staging furniture — makes rooms appear larger than they are",
   "Strong air freshener — can mask mold, pet odor, or smoke",
-  ""Recent updates" — ask for permits; unpermitted work is a liability",
+  `"Recent updates" — ask for permits; unpermitted work is a liability`,
 ];
 
 const QUESTIONS = [
@@ -65,7 +65,7 @@ export default function DFWShowingGuide() {
       <div style={{ maxWidth: 820, margin: "0 auto" }}>
         <div style={{ fontSize: 12, color: "#F5E642", letterSpacing: 2, marginBottom: 8 }}>BUYER TOOL</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, color: "#fff", marginBottom: 6 }}>DFW Home Showing Guide</h1>
-        <p style={{ color: "#aaa", fontSize: 16, marginBottom: 36 }}>What to inspect in your 30-minute window. Don't let staging distract you.</p>
+        <p style={{ color: "#aaa", fontSize: 16, marginBottom: 36 }}>What to inspect in your 30-minute window. Don`t let staging distract you.</p>
 
         {Object.entries(CHECKS).map(([cat, items]) => (
           <div key={cat} style={{ background: "#111e33", borderRadius: 12, padding: 22, marginBottom: 18 }}>
@@ -119,3 +119,4 @@ export default function DFWShowingGuide() {
     </div>
   );
 }
+`

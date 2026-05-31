@@ -25,12 +25,12 @@ export default function DFWSmallApplianceGuide2026() {
     if (amps > 20) msg += '🔴 Overload risk — you\’re exceeding standard 20A counter circuits. You need a dedicated circuit for high-draw appliances. Call a TDLR electrician.';
     else if (amps > 15) msg += '🟡 Near capacity — avoid running all simultaneously. Consider a dedicated 20A circuit for air fryer or toaster oven.';
     else msg += '🟢 Your load is manageable on standard DFW kitchen circuits (typically two 20A GFCI circuits per NEC 2020).';
-    if (o < 4 && count > 3) msg += '
+    if (o < 4 && count > 3) msg += `
 
-⚠️ Too few outlets for your appliances. Add GFCI outlets or an outlet strip rated for kitchen use.';
-    msg += '
+⚠️ Too few outlets for your appliances. Add GFCI outlets or an outlet strip rated for kitchen use.`;
+    msg += `
 
-🛡️ Tip: Whole-home surge protection ($300–600 installed) protects every appliance from DFW storm-season power surges.';
+🛡️ Tip: Whole-home surge protection ($300–600 installed) protects every appliance from DFW storm-season power surges.`;
     setResult(msg);
   }
 
@@ -38,13 +38,13 @@ export default function DFWSmallApplianceGuide2026() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 8 }}>🏠 DFW HOME GUIDE 2026</div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Kitchen Small Appliance Guide — DFW</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Kitchen Small Appliance Guide - DFW</h1>
         <p style={{ color: '#a0b0c8', marginBottom: 28 }}>GFCI outlets required on all kitchen counter circuits per NEC 2020. Plan your load before buying appliances.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
           <div style={{ background: '#13223a', borderRadius: 12, padding: 18, borderTop: '3px solid #F5E642' }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>🔌</div>
-            <div style={{ fontWeight: 700, marginBottom: 8 }}>NEC 2020 — Kitchen Rules</div>
+            <div style={{ fontWeight: 700, marginBottom: 8 }}>NEC 2020 - Kitchen Rules</div>
             <ul style={{ color: '#a0b0c8', fontSize: 12, paddingLeft: 16, lineHeight: 1.9 }}>
               <li>Minimum 2 x 20A small appliance circuits</li>
               <li>All counter outlets must be GFCI protected</li>
@@ -60,7 +60,7 @@ export default function DFWSmallApplianceGuide2026() {
               <li>DFW averages 50+ thunderstorm days/year</li>
               <li>Power surges kill appliances and electronics</li>
               <li>Whole-home surge protector at main panel</li>
-              <li>Cost: $300–600 installed by TDLR electrician</li>
+              <li>Cost: $300-600 installed by TDLR electrician</li>
               <li>Point-of-use strips add secondary protection</li>
             </ul>
           </div>

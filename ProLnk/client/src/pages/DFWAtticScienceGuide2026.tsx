@@ -6,26 +6,26 @@ export default function DFWAtticScienceGuide2026() {
   const solutions: Record<string, { title: string; science: string; fix: string; cost: string }> = {
     'hot-rooms': {
       title: 'Excessive Heat Transfer',
-      science: 'DFW attics reach 140°F in July. Without a radiant barrier, infrared heat radiates through insulation directly into living space, raising ceiling temps by 10–15°F.\',
-      fix: 'Install radiant barrier on roof deck (foil-faced sheathing). Blocks 97% of radiant heat before it reaches insulation.\',
+      science: 'DFW attics reach 140°F in July. Without a radiant barrier, infrared heat radiates through insulation directly into living space, raising ceiling temps by 10–15°F.',
+      fix: 'Install radiant barrier on roof deck (foil-faced sheathing). Blocks 97% of radiant heat before it reaches insulation.',
       cost: '$1,200–$2,800 installed'
     },
     'high-bills': {
       title: 'HVAC Overwork from Attic Heat',
-      science: 'Each 10°F rise in attic temp forces AC to run ~5% longer. At 140°F attic, your system works 35–40% harder than designed.\',
-      fix: 'Combine radiant barrier + R-38 insulation at ceiling level (not roof deck). Add soffit-to-ridge ventilation for convective cooling.\',
+      science: 'Each 10°F rise in attic temp forces AC to run ~5% longer. At 140°F attic, your system works 35–40% harder than designed.',
+      fix: 'Combine radiant barrier + R-38 insulation at ceiling level (not roof deck). Add soffit-to-ridge ventilation for convective cooling.',
       cost: '$2,500–$5,500 combined'
     },
     'moisture': {
       title: 'Attic Moisture & Mold Risk',
-      science: 'Poor ventilation traps humid DFW air (avg 65% RH in summer). Mold begins growing above 70% RH on wood sheathing within 48 hours.\',
-      fix: '1 sq ft ventilation per 150 sq ft attic floor. Add ridge vent + soffit vents for proper cross-flow. Check vapor retarder on insulation.\',
+      science: 'Poor ventilation traps humid DFW air (avg 65% RH in summer). Mold begins growing above 70% RH on wood sheathing within 48 hours.',
+      fix: '1 sq ft ventilation per 150 sq ft attic floor. Add ridge vent + soffit vents for proper cross-flow. Check vapor retarder on insulation.',
       cost: '$800–$2,200'
     },
     'ice-dams': {
       title: 'Winter Condensation / Cold Spots',
-      science: 'DFW winter swings (20°F–70°F in same week) cause rapid condensation cycles. Gaps in air sealing allow warm moist air to hit cold sheathing.\',
-      fix: 'Air-seal all penetrations (can lights, HVAC boots, top plates) before adding insulation. Foam sealant at every gap.\',
+      science: 'DFW winter swings (20°F–70°F in same week) cause rapid condensation cycles. Gaps in air sealing allow warm moist air to hit cold sheathing.',
+      fix: 'Air-seal all penetrations (can lights, HVAC boots, top plates) before adding insulation. Foam sealant at every gap.',
       cost: '$600–$1,400'
     },
   };
@@ -39,9 +39,9 @@ export default function DFWAtticScienceGuide2026() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', marginBottom: '0.5rem' }}>
           🌡️ DFW Attic Science Guide 2026
         </h1>
-        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Understanding attic dynamics in one of America's hottest urban climates.</p>
+        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Understanding attic dynamics in one of America`s hottest urban climates.</p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+        <div style={{ display: 'grid`, gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[
             { icon: '🌡️', label: 'Peak Attic Temp', value: '140°F', note: 'July afternoon' },
             { icon: '☀️', label: 'Radiant Barrier Effect', value: '97% blocked', note: 'of radiant heat' },
@@ -59,10 +59,10 @@ export default function DFWAtticScienceGuide2026() {
         <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚗️ Key Attic Physics</h2>
           {[
-            'Insulation R-value belongs at the ceiling plane, not the roof deck — adding it to the roof traps heat.\',
-            'Radiant heat travels at the speed of light — conventional insulation alone cannot stop it, only absorb it.\',
-            'Ventilation reduces both summer heat gain and winter moisture damage — it must flow soffit-to-ridge.\',
-            'Air sealing is more impactful than added insulation in most DFW homes built before 2000.\',
+            'Insulation R-value belongs at the ceiling plane, not the roof deck — adding it to the roof traps heat.',
+            'Radiant heat travels at the speed of light — conventional insulation alone cannot stop it, only absorb it.',
+            'Ventilation reduces both summer heat gain and winter moisture damage — it must flow soffit-to-ridge.',
+            'Air sealing is more impactful than added insulation in most DFW homes built before 2000.',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
               <span style={{ color: '#F5E642' }}>▸</span>

@@ -23,7 +23,7 @@ function getTheaterPlan(room: RoomType, budget: BudgetTier, use: UseCase): Theat
     'living-mid': { displayRec: '85-98" QLED or Mini-LED TV', audioRec: '5.1 surround sound with rear surrounds', seatingRec: 'Dedicated AV furniture arrangement', keyItems: ['Motorized blackout shades ($500-1,500)', 'Equipment rack/cabinet', 'HDMI 2.1 cables throughout', 'Smart home integration for lighting'], totalLow: 6000, totalHigh: 14000, warnings: ['Rear surround placement in living room requires cable management planning', 'Consider TV lift cabinet for dual-use living rooms'] },
     'living-premium': { displayRec: '100"+ MicroLED or 8K display', audioRec: 'Full surround with in-ceiling Atmos speakers', seatingRec: 'Custom furniture arranged for optimal viewing', keyItems: ['Whole-room AV system', 'Integrated smart home control', 'Motorized art concealing TV', 'Reference-level subwoofer'], totalLow: 20000, totalHigh: 50000, warnings: ['In-ceiling Atmos speakers require structural access — plan with contractor', 'MicroLED displays require professional calibration'] },
     'bonus-budget': { displayRec: '75-85" TV or entry projector', audioRec: '5.1 soundbar or basic surround', seatingRec: 'Bean bags + futon + floor pillows', keyItems: ['Blackout window treatments', 'Gaming-optimized display settings', 'HDMI switch for multiple sources', 'Refrigerator/mini bar'], totalLow: 2500, totalHigh: 5500, warnings: ['Bonus rooms often have HVAC dead zones — verify cooling before heavy use', 'Check floor load capacity for heavy seating'] },
-    'bonus-mid': { displayRec: '100-120" projector + screen', audioRec: '5.1 surround with bookshelf speakers', seatingRec: 'Theater-style seating (2 rows)', keyItems: ['Dedicated HVAC zone (bonus rooms run hot)', 'Acoustic treatment for irregular walls', 'Bar counter + mini fridge', 'Gaming console central hub'], totalLow: 8000, totalHigh: 18000, warnings: ['Bonus rooms benefit most from acoustic treatment — irregular shapes cause echo', 'Two-row seating needs 12' minimum depth for sightlines'] },
+    'bonus-mid': { displayRec: '100-120" projector + screen', audioRec: '5.1 surround with bookshelf speakers', seatingRec: 'Theater-style seating (2 rows)', keyItems: ['Dedicated HVAC zone (bonus rooms run hot)', 'Acoustic treatment for irregular walls', 'Bar counter + mini fridge', 'Gaming console central hub'], totalLow: 8000, totalHigh: 18000, warnings: ['Bonus rooms benefit most from acoustic treatment — irregular shapes cause echo', `Two-row seating needs 12' minimum depth for sightlines`] },
     'bonus-premium': { displayRec: 'Custom scope screen + 4K projector', audioRec: 'Dolby Atmos with in-ceiling speakers', seatingRec: 'Luxury theater seating (2 tiered rows)', keyItems: ['Raised platform for second row', 'Full acoustic design', 'Custom lighting scenes', 'Integrated bar with wine fridge'], totalLow: 20000, totalHigh: 55000, warnings: ['Raised platform requires structural engineering approval and permit', 'In-ceiling speaker installation in bonus room requires attic access'] },
     'garage-budget': { displayRec: '65-75" outdoor-rated or protected TV', audioRec: 'Weather-resistant soundbar', seatingRec: 'Durable patio furniture or bar stools', keyItems: ['Insulated garage door (required first step)', 'Mini-split AC (mandatory in DFW)', 'Epoxy floor before furniture', 'Weatherproof outlet covers'], totalLow: 4000, totalHigh: 9000, warnings: ['DFW garage theater is unlivable without climate control — $1,500-3,500 for mini-split is unavoidable', 'Standard TVs will fail in uncontrolled humidity — use commercial or outdoor-rated display'] },
     'garage-mid': { displayRec: '85-100" outdoor-rated display or projector', audioRec: '5.1 weather-resistant speakers', seatingRec: 'Durable theater-style or bar setup', keyItems: ['Full HVAC for garage space', 'Insulated walls + ceiling', 'Sound dampening on garage door', 'Dedicated electrical subpanel'], totalLow: 12000, totalHigh: 28000, warnings: ['Garage conversion requires permit for electrical work', 'Sound leaks heavily through garage door — add mass-loaded vinyl or solid door'] },
@@ -55,11 +55,11 @@ export default function HomeTheaterGuide() {
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #a78bfa' }}>
           <p style={{ fontSize: 16, color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            🎬 <strong style={{ color: '#f1f5f9' }}>DFW home theater advantage:</strong> DFW's long summers make indoor entertainment essential. A home theater adds $15,000-30,000 in perceived value and is a top selling feature for $500K+ DFW homes. The right system pays back in lifestyle and resale value.
+            🎬 <strong style={{ color: '#f1f5f9' }}>DFW home theater advantage:</strong> DFW`s long summers make indoor entertainment essential. A home theater adds $15,000-30,000 in perceived value and is a top selling feature for $500K+ DFW homes. The right system pays back in lifestyle and resale value.
           </p>
         </div>
 
-        <h2 style={{ fontSize: 24, fontWeight: 700, color: '#f1f5f9', marginBottom: 20 }}>🏠 Room Selection</h2>
+        <h2 style={{ fontSize: 24, fontWeight: 700, color: '#f1f5f9`, marginBottom: 20 }}>🏠 Room Selection</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '🎭', title: 'Dedicated Room', desc: 'Best option. Full light/sound/HVAC control. Bonus rooms, basements (rare in DFW), converted garages.', score: '10/10' },
@@ -197,7 +197,7 @@ export default function HomeTheaterGuide() {
           <div style={{ background: '#0f172a', borderRadius: 10, padding: 16, marginBottom: 20, textAlign: 'center' }}>
             <div style={{ color: '#64748b', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>TOTAL ESTIMATE</div>
             <div style={{ color: '#a78bfa', fontSize: 28, fontWeight: 800 }}>
-              ${plan.totalLow.toLocaleString()} – ${plan.totalHigh.toLocaleString()}
+              ${plan.totalLow.toLocaleString()} - ${plan.totalHigh.toLocaleString()}
             </div>
           </div>
 

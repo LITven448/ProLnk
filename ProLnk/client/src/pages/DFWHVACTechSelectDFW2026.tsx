@@ -21,8 +21,8 @@ export default function DFWHVACTechSelectDFW2026() {
   const handleScenario = (id: string) => {
     setScenario(id);
     const list = checklists[id];
-    setResult(list ? list.join('
-') : '');
+    setResult(list ? list.join(`
+`) : '');
   };
 
   return (
@@ -56,8 +56,8 @@ export default function DFWHVACTechSelectDFW2026() {
           {result && (
             <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>Your Vetting Checklist</div>
-              {result.split('
-').map((line, i) => <div key={i} style={{ color: '#e2e8f0', marginBottom: '0.4rem', fontSize: '0.9rem' }}>{line}</div>)}
+              {result.split(`
+`).map((line, i) => <div key={i} style={{ color: '#e2e8f0', marginBottom: '0.4rem', fontSize: '0.9rem' }}>{line}</div>)}
               <div style={{ marginTop: '1rem', color: '#F5E642', fontSize: '0.85rem' }}>ProLnk pre-verifies all of these before matching you with a DFW tech. 🛡️</div>
             </div>
           )}

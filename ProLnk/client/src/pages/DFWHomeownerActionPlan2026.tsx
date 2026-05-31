@@ -34,7 +34,7 @@ export default function DFWHomeownerActionPlan2026() {
         '🌡️ HVAC inspection report = major buyer confidence builder in DFW',
         '🔍 ProLnk can source foundation inspection, roof cert, and plumbing camera',
         '📊 Vault data shows maintenance history — commands premium pricing',
-        '⚡ Electrical panel inspection — buyers' lenders often require it',
+        `⚡ Electrical panel inspection — buyers' lenders often require it`,
       ],
     },
     renting: {
@@ -60,7 +60,7 @@ export default function DFWHomeownerActionPlan2026() {
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '12px 0 8px' }}>
             DFW Homeowner Action Plan 2026
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: 15 }}>What DFW homeowners should do RIGHT NOW — based on your situation</p>
+          <p style={{ color: '#94a3b8', fontSize: 15 }}>What DFW homeowners should do RIGHT NOW - based on your situation</p>
         </div>
 
         <div>

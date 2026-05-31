@@ -14,7 +14,7 @@ const HOME_TYPES = [
       { day: "Week 2–4", priority: "🟢 Soon", task: "Identify any settlement cracks and photograph with date stamps", detail: "Minor hairline cracks in drywall are normal. Document with photos. Structural cracks (wider than 1/4 inch, horizontal) need immediate builder contact." },
       { day: "Week 2–4", priority: "🟢 Soon", task: "Schedule independent home inspection", detail: "DFW new construction buyers often skip this — do not. An independent inspector often finds items your builder will not mention." },
     ],
-    builderTemplate: "Subject: Punch List Items — [Address]
+    builderTemplate: `Subject: Punch List Items — [Address]
 
 Dear [Builder Contact],
 
@@ -25,7 +25,7 @@ Following our walkthrough on [date], I am documenting the following items for re
 
 Please confirm receipt and provide a repair timeline within 5 business days.
 
-Sincerely, [Your Name]",
+Sincerely, [Your Name]`,
   },
   {
     type: "Custom Build",
@@ -38,7 +38,7 @@ Sincerely, [Your Name]",
       { day: "Week 1", priority: "🟡 Important", task: "Commission a third-party home inspection for independent documentation", detail: "Even with a reputable builder, a third-party inspection provides an independent baseline for warranty claims." },
       { day: "Week 2–4", priority: "🟢 Soon", task: "Register all systems and warranties", detail: "Custom homes typically have multiple warranty registrations: structural, mechanical, roofing, windows. Track deadlines." },
     ],
-    builderTemplate: "Subject: Custom Home Punch List — [Address]
+    builderTemplate: `Subject: Custom Home Punch List — [Address]
 
 Dear [Builder/Project Manager],
 
@@ -48,7 +48,7 @@ Per our walkthrough on [date], the following items require attention under the c
 
 Please provide a written response and completion timeline per our contract.
 
-[Your Name]",
+[Your Name]`,
   },
 ];
 
@@ -63,12 +63,12 @@ export default function DFWNewConstruction30DayGuide() {
         <div style={{ marginBottom: "2rem" }}>
           <span style={{ background: "#F5E642", color: "#0A1628", padding: "0.25rem 0.75rem", borderRadius: 4, fontSize: 12, fontWeight: 700 }}>DFW HOMEOWNER GUIDE</span>
           <h1 style={{ fontSize: 32, fontWeight: 800, marginTop: "1rem", marginBottom: "0.5rem" }}>🏡 First 30 Days in Your New DFW Home</h1>
-          <p style={{ color: "#9BAAC5", fontSize: 16 }}>The first 30 days set the foundation — literally. DFW clay soil, strict builder warranty windows, and summer heat demand immediate action. Do not wait.</p>
+          <p style={{ color: "#9BAAC5", fontSize: 16 }}>The first 30 days set the foundation - literally. DFW clay soil, strict builder warranty windows, and summer heat demand immediate action. Do not wait.</p>
         </div>
 
         <div style={{ background: "#1A0A00", border: "1px solid #F5A623", borderRadius: 10, padding: "1.25rem", marginBottom: "2rem" }}>
-          <h2 style={{ color: "#F5A623", fontSize: 16, marginBottom: "0.75rem" }}>⚠️ DFW Clay Soil Warning — Act Day 1</h2>
-          <p style={{ color: "#CBD5E8", fontSize: 14, lineHeight: 1.7 }}>North Texas sits on some of the most expansive clay soil in the country. When dry, it shrinks and pulls away from your foundation. Most DFW foundation failures in new construction occur in the first 2–3 years from improper moisture management — not poor construction. Install soaker hoses and start watering within your first week.</p>
+          <h2 style={{ color: "#F5A623", fontSize: 16, marginBottom: "0.75rem" }}>⚠️ DFW Clay Soil Warning - Act Day 1</h2>
+          <p style={{ color: "#CBD5E8", fontSize: 14, lineHeight: 1.7 }}>North Texas sits on some of the most expansive clay soil in the country. When dry, it shrinks and pulls away from your foundation. Most DFW foundation failures in new construction occur in the first 2-3 years from improper moisture management - not poor construction. Install soaker hoses and start watering within your first week.</p>
         </div>
 
         <div style={{ background: "#111E35", borderRadius: 10, padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1E3A5F" }}>

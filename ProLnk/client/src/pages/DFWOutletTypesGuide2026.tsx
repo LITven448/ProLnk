@@ -11,26 +11,26 @@ const outletTypes = [
 ];
 
 const needGuide: Record<string, string> = {
-  'water': 'GFCI Outlet required — all outlets within 6 feet of sinks, tubs, showers, or pool equipment. GFCI breaker protects entire circuit.\',
-  'kitchen': '20A T-Slot GFCI Outlets — all kitchen counter outlets must be 20A and GFCI protected. Minimum two small appliance circuits required.\',
-  'bedroom': 'Standard 15A + AFCI Protection — bedrooms need AFCI protection (breaker or outlet). USB-C outlets trending for bedside.\',
-  'garage': '20A GFCI Outlets — all garage outlets must be GFCI protected. At least one outlet required. 20A recommended for tools.\',
-  'ev': 'NEMA 14-50 (240V 50A) — standard EV charger outlet. Requires 6 AWG wire, 50A breaker, and NEMA 14-50R outlet in the garage.\',
-  'outdoor': 'GFCI Weatherproof Outlets — all outdoor outlets in DFW require GFCI and weatherproof in-use covers. Front and back of home required.\',
-  'office': 'Standard 15A + USB-C Combo — home offices benefit from USB-C built-in outlets and surge-protected outlet strips. AFCI protection required.\',
+  'water': 'GFCI Outlet required — all outlets within 6 feet of sinks, tubs, showers, or pool equipment. GFCI breaker protects entire circuit.',
+  'kitchen': '20A T-Slot GFCI Outlets — all kitchen counter outlets must be 20A and GFCI protected. Minimum two small appliance circuits required.',
+  'bedroom': 'Standard 15A + AFCI Protection — bedrooms need AFCI protection (breaker or outlet). USB-C outlets trending for bedside.',
+  'garage': '20A GFCI Outlets — all garage outlets must be GFCI protected. At least one outlet required. 20A recommended for tools.',
+  'ev': 'NEMA 14-50 (240V 50A) — standard EV charger outlet. Requires 6 AWG wire, 50A breaker, and NEMA 14-50R outlet in the garage.',
+  'outdoor': 'GFCI Weatherproof Outlets — all outdoor outlets in DFW require GFCI and weatherproof in-use covers. Front and back of home required.',
+  'office': 'Standard 15A + USB-C Combo — home offices benefit from USB-C built-in outlets and surge-protected outlet strips. AFCI protection required.',
 };
 
 export default function DFWOutletTypesGuide2026() {
-  const [need, setNeed] = useState<string>('\);
+  const [need, setNeed] = useState<string>(`\);
   const [activeOutlet, setActiveOutlet] = useState<string>('\);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
+    <div style={{ background: '#0A1628`, minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>🔌</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: 0 }}>DFW Outlet Types Guide 2026</h1>
-          <p style={{ color: '#94a3b8', marginTop: 8 }}>Every outlet type found in DFW homes — what they do and where they go</p>
+          <p style={{ color: '#94a3b8', marginTop: 8 }}>Every outlet type found in DFW homes - what they do and where they go</p>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -82,7 +82,7 @@ export default function DFWOutletTypesGuide2026() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>💡 DFW adopted the 2020 NEC with local amendments. AFCI protection is now required in almost all living spaces — not just bedrooms. Check with your city permit office before adding outlets.</p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>💡 DFW adopted the 2020 NEC with local amendments. AFCI protection is now required in almost all living spaces - not just bedrooms. Check with your city permit office before adding outlets.</p>
         </div>
       </div>
     </div>

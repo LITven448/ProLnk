@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const brands = [
-  { name: 'Square D', icon: '⚡', category: 'Panels', score: 97, note: 'DFW electricians' preferred panel — QO series is industry standard' },
+  { name: 'Square D', icon: '⚡', category: 'Panels', score: 97, note: `DFW electricians' preferred panel — QO series is industry standard` },
   { name: 'Eaton', icon: '🔌', category: 'Panels', score: 92, note: 'Solid alternative to Square D, CH series widely stocked in DFW' },
   { name: 'Leviton', icon: '🔲', category: 'Outlets/Switches', score: 88, note: 'Most installed outlets in DFW new construction' },
   { name: 'Lutron', icon: '💡', category: 'Smart Switches', score: 93, note: 'Caseta line dominates DFW smart home installs' },
@@ -32,7 +32,7 @@ export default function DFWElectricalBrandGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🏠 DFW Electrical Context</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.6 }}>
-            Most DFW homes built pre-2000 use Federal Pacific or Zinsco panels — both flagged as fire hazards. Panel replacements are the #1 electrical job in DFW. Brand choice affects future service cost and parts availability significantly.
+            Most DFW homes built pre-2000 use Federal Pacific or Zinsco panels - both flagged as fire hazards. Panel replacements are the #1 electrical job in DFW. Brand choice affects future service cost and parts availability significantly.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function DFWElectricalBrandGuide2026() {
           </div>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#475569', fontSize: 12, marginTop: 28 }}>ProLnk vets DFW electricians by license, insurance, and completed job reviews — not brand affiliation.</p>
+        <p style={{ textAlign: 'center', color: '#475569', fontSize: 12, marginTop: 28 }}>ProLnk vets DFW electricians by license, insurance, and completed job reviews - not brand affiliation.</p>
       </div>
     </div>
   );

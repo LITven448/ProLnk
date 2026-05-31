@@ -10,36 +10,36 @@ const fanSizes = [
 
 const fanGuide: Record<string, Record<string, string>> = {
   'small': {
-    'cooling': '36-inch fan, counterclockwise summer rotation. Hunter Dempsey or Hampton Bay Mara. Under $80 at Home Depot in DFW.\',
-    'smart': 'Westinghouse iQ or Hunter SIMPLEconnect 36-inch — WiFi, no neutral needed, works with Alexa. $90–130.\',
-    'outdoor': 'Patriot Lighting 36-inch UL wet-rated fan — small covered porches and DFW outdoor dining nooks. $70–100.\',
+    'cooling': '36-inch fan, counterclockwise summer rotation. Hunter Dempsey or Hampton Bay Mara. Under $80 at Home Depot in DFW.',
+    'smart': 'Westinghouse iQ or Hunter SIMPLEconnect 36-inch — WiFi, no neutral needed, works with Alexa. $90–130.',
+    'outdoor': 'Patriot Lighting 36-inch UL wet-rated fan — small covered porches and DFW outdoor dining nooks. $70–100.',
   },
   'medium': {
-    'cooling': '52-inch fan, counterclockwise in summer. Hunter Builder Elite or Hampton Bay Cobano. Around $60–100 at Home Depot.\',
-    'smart': 'Minka Aire Xtreme or Hunter SIMPLEconnect 52-inch — remote + app control, schedule by DFW sunrise/sunset. $120–180.\',
-    'outdoor': '52-inch UL damp-rated for covered patios. Progress Lighting AirPro or Hunter Christy. $100–150.\',
+    'cooling': '52-inch fan, counterclockwise in summer. Hunter Builder Elite or Hampton Bay Cobano. Around $60–100 at Home Depot.',
+    'smart': 'Minka Aire Xtreme or Hunter SIMPLEconnect 52-inch — remote + app control, schedule by DFW sunrise/sunset. $120–180.',
+    'outdoor': '52-inch UL damp-rated for covered patios. Progress Lighting AirPro or Hunter Christy. $100–150.',
   },
   'large': {
-    'cooling': '54-inch fan, counterclockwise in summer. Essential in DFW where great rooms run 10–14 feet. Harbor Breeze Mazon or Hunter Signal. $100–160.\',
-    'smart': 'Big Ass Fans Haiku L (52-inch) — SenseME technology, auto-adjusts to room occupancy and DFW temperature. $350–500 but unbeatable comfort.\',
-    'outdoor': '60-inch Minka Aire Java or similar — large DFW covered patios. UL wet-rated required for exposed patios, damp-rated for covered.\',
+    'cooling': '54-inch fan, counterclockwise in summer. Essential in DFW where great rooms run 10–14 feet. Harbor Breeze Mazon or Hunter Signal. $100–160.',
+    'smart': 'Big Ass Fans Haiku L (52-inch) — SenseME technology, auto-adjusts to room occupancy and DFW temperature. $350–500 but unbeatable comfort.',
+    'outdoor': '60-inch Minka Aire Java or similar — large DFW covered patios. UL wet-rated required for exposed patios, damp-rated for covered.',
   },
 };
 
 export default function DFWCeilingFanGuide2026() {
-  const [roomSize, setRoomSize] = useState<string>('\);
+  const [roomSize, setRoomSize] = useState<string>(`\);
   const [use, setUse] = useState<string>('\);
   const [activeFan, setActiveFan] = useState<string>('\);
 
   const rec = roomSize && use ? fanGuide[roomSize]?.[use] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
+    <div style={{ background: '#0A1628`, minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>🌀</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: 0 }}>DFW Ceiling Fan Guide 2026</h1>
-          <p style={{ color: '#94a3b8', marginTop: 8 }}>Essential in DFW heat — right size, right direction, right fan</p>
+          <p style={{ color: '#94a3b8', marginTop: 8 }}>Essential in DFW heat - right size, right direction, right fan</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
@@ -65,7 +65,7 @@ export default function DFWCeilingFanGuide2026() {
             >
               <option value="">Select room size...</option>
               <option value="small">Small (under 75 sq ft)</option>
-              <option value="medium">Medium (75–175 sq ft)</option>
+              <option value="medium">Medium (75-175 sq ft)</option>
               <option value="large">Large (175+ sq ft or open plan)</option>
             </select>
             <select

@@ -24,7 +24,7 @@ function getGuidance(situation: string) {
     'I want to tell the seller how much I love the house': {
       channel: '✉️ Buyer letter — use carefully',
       canSay: 'In Texas, a buyer love letter is allowed but carries legal risk. You can mention your plans for the home, your connection to the neighborhood, or your family. Do NOT mention your race, religion, national origin, family composition, or disability — Fair Housing Act violations apply to buyers too.',
-      askAgent: 'Ask your agent whether the listing agent advises against love letters (many sellers' agents now reject them to avoid Fair Housing liability). Some listings explicitly say no letters.',
+      askAgent: `Ask your agent whether the listing agent advises against love letters (many sellers' agents now reject them to avoid Fair Housing liability). Some listings explicitly say no letters.`,
       warning: 'Love letters can backfire if they reveal protected class information. Keep it about the home, not your identity.'
     },
     'I want to ask about the neighborhood directly': {
@@ -89,12 +89,12 @@ export default function DFWBuyersCommunicationsGuide() {
         <div style={{ borderBottom: '3px solid #1A2B3C', paddingBottom: 24, marginBottom: 40 }}>
           <p style={{ color: '#5C7A9F', letterSpacing: 3, fontSize: 11, textTransform: 'uppercase', margin: '0 0 12px' }}>DFW Buyer Guide • 2026</p>
           <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 16px', lineHeight: 1.15 }}>Buyer-Seller Communication Guide</h1>
-          <p style={{ color: '#4A5568', fontSize: 17, margin: 0, lineHeight: 1.6 }}>How communication flows in a DFW transaction — what you can say, what must go through your agent, and why direct contact creates risk.</p>
+          <p style={{ color: '#4A5568', fontSize: 17, margin: 0, lineHeight: 1.6 }}>How communication flows in a DFW transaction - what you can say, what must go through your agent, and why direct contact creates risk.</p>
         </div>
 
         <div style={{ background: '#1A2B3C', color: '#F8F6F1', borderRadius: 6, padding: 20, marginBottom: 32 }}>
           <p style={{ margin: '0 0 8px', fontWeight: 700, fontSize: 15 }}>⚖️ The Core Rule in Texas Real Estate</p>
-          <p style={{ margin: 0, color: '#CBD5E0', fontSize: 14, lineHeight: 1.6 }}>Once both parties are represented by agents, all substantive communications go agent-to-agent. Direct buyer-seller contact is not illegal, but it creates risk: side agreements, waived rights, Fair Housing exposure, and deal-killing animosity. When in doubt — do not.</p>
+          <p style={{ margin: 0, color: '#CBD5E0', fontSize: 14, lineHeight: 1.6 }}>Once both parties are represented by agents, all substantive communications go agent-to-agent. Direct buyer-seller contact is not illegal, but it creates risk: side agreements, waived rights, Fair Housing exposure, and deal-killing animosity. When in doubt - do not.</p>
         </div>
 
         <div style={{ marginBottom: 40 }}>

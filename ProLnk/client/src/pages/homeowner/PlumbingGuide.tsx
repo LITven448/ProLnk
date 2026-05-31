@@ -49,7 +49,7 @@ const INITIAL_CHECKLIST: CheckItem[] = [
 
 const HARD_WATER: HardWaterCard[] = [
   { title: "Scale buildup in pipes", impact: "Reduces flow up to 40%", detail: "Mineral deposits narrow pipe diameter over years. DFW 300+ PPM accelerates this.", icon: Droplets, color: "#3B82F6" },
-  { title: "Water heater efficiency", impact: "+25% energy use", detail: "A ¼" layer of scale on heating element increases energy consumption by 25%.", icon: Zap, color: "#F59E0B" },
+  { title: "Water heater efficiency", impact: "+25% energy use", detail: `A ¼" layer of scale on heating element increases energy consumption by 25%.`, icon: Zap, color: "#F59E0B" },
   { title: "Appliance lifespan", impact: "30–50% shorter life", detail: "Dishwashers, washing machines, and coffee makers all suffer from mineral buildup.", icon: Home, color: "#EF4444" },
   { title: "Shower heads", impact: "Clog quarterly", detail: "Soak in white vinegar overnight to clear mineral deposits. Replace every 2–3 years.", icon: Droplets, color: "#8B5CF6" },
 ];
@@ -109,7 +109,7 @@ export default function PlumbingGuide() {
         }}>
           <ShieldCheck size={18} color="#2563EB" style={{ minWidth: 18, marginTop: 2 }} />
           <p style={{ fontSize: 14, color: "#1D4ED8", margin: 0, lineHeight: 1.6 }}>
-            <strong>DFW plumbing context:</strong> Hard water (300–500 PPM in DFW) causes mineral buildup in pipes and appliances.
+            <strong>DFW plumbing context:</strong> Hard water (300-500 PPM in DFW) causes mineral buildup in pipes and appliances.
             Texas freeze events cause burst pipes. Know your system before an emergency hits.
           </p>
         </div>
@@ -144,7 +144,7 @@ export default function PlumbingGuide() {
                 }} />
                 <div>
                   <span style={{ fontSize: 14, fontWeight: 600, color: "#FEF2F2" }}>{item.loc}</span>
-                  <span style={{ fontSize: 13, color: "#FECACA", marginLeft: 6 }}>— {item.tip}</span>
+                  <span style={{ fontSize: 13, color: "#FECACA", marginLeft: 6 }}>- {item.tip}</span>
                 </div>
               </div>
             ))}
@@ -248,8 +248,8 @@ export default function PlumbingGuide() {
               <span style={{ fontWeight: 700, fontSize: 15, color: "#1E40AF" }}>Water softener guide</span>
             </div>
             <p style={{ fontSize: 14, color: "#1D4ED8", margin: "0 0 10px", lineHeight: 1.6 }}>
-              DFW water hardness: <strong>300–500 PPM</strong>. A water softener is recommended for homes above 180 PPM.
-              At 300+ PPM (most of DFW), scale buildup is measurable within 1–2 years.
+              DFW water hardness: <strong>300-500 PPM</strong>. A water softener is recommended for homes above 180 PPM.
+              At 300+ PPM (most of DFW), scale buildup is measurable within 1-2 years.
             </p>
             <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
               {[

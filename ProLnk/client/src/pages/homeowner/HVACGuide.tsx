@@ -47,7 +47,7 @@ const SEASONS = [
 
 const FILTERS = [
   {
-    size: "1" MERV-8",
+    size: `1" MERV-8`,
     price: "$8",
     interval: "Change monthly",
     desc: "Basic filtration, low restriction. Good for empty homes or allergy-free households.",
@@ -55,7 +55,7 @@ const FILTERS = [
     badgeColor: "bg-slate-700 text-slate-300",
   },
   {
-    size: "4" MERV-11",
+    size: `4" MERV-11`,
     price: "$28",
     interval: "Change every 3 months",
     desc: "Captures pollen, pet dander, and mold spores. Best balance of airflow and filtration.",
@@ -63,7 +63,7 @@ const FILTERS = [
     badgeColor: "bg-teal-500/20 text-teal-300",
   },
   {
-    size: "5" MERV-13",
+    size: `5" MERV-13`,
     price: "$45",
     interval: "Change every 6 months",
     desc: "Hospital-grade filtration. Ideal for allergy sufferers. Needs compatible air handler.",
@@ -195,13 +195,13 @@ export default function HVACGuide() {
             ))}
           </div>
           <div className="bg-teal-500/10 border border-teal-500/30 rounded-lg p-3 text-sm text-teal-300">
-            DFW Recommendation: Use the 4" filter and change every 2 months in summer — dust and pollen loads are 3x higher June through September.
+            DFW Recommendation: Use the 4` filter and change every 2 months in summer — dust and pollen loads are 3x higher June through September.
           </div>
         </div>
 
         {/* Warning Signs */}
         <div>
-          <h2 className="text-white font-semibold mb-3 flex items-center gap-2">
+          <h2 className="text-white font-semibold mb-3 flex items-center gap-2`>
             <AlertTriangle className="w-4 h-4 text-red-400" />
             Warning Signs
           </h2>
@@ -262,7 +262,7 @@ export default function HVACGuide() {
         <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/30 rounded-xl p-6 text-center">
           <Phone className="w-8 h-8 text-teal-400 mx-auto mb-3" />
           <h3 className="text-white font-bold text-lg mb-1">Ready to Schedule?</h3>
-          <p className="text-slate-400 text-sm mb-4">Book a vetted HVAC tech in your area — same-day slots available.</p>
+          <p className="text-slate-400 text-sm mb-4">Book a vetted HVAC tech in your area - same-day slots available.</p>
           <Link href="/trustypro/book?trade=hvac">
             <Button className="bg-teal-500 hover:bg-teal-400 text-white font-semibold px-6">
               Schedule HVAC Service

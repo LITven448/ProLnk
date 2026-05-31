@@ -92,7 +92,7 @@ const platforms = [
 const captions = [
   {
     type: 'Before/After',
-    text: 'This [job type] in [city] was [problem description]. The homeowner had been living with it for [time period]. Here's what we found — and what we did about it. 🛠️
+    text: `This [job type] in [city] was [problem description]. The homeowner had been living with it for [time period]. Here's what we found — and what we did about it. 🛠️
 
 [Benefit 1] ✅
 [Benefit 2] ✅
@@ -100,11 +100,11 @@ const captions = [
 
 DFW homeowner? Find us at the link in bio. We match you with verified local pros in your area.
 
-#DFW[Trade] #[City][Trade] #HomeRepair #DFWHomeowner',
+#DFW[Trade] #[City][Trade] #HomeRepair #DFWHomeowner`,
   },
   {
     type: 'Storm Response',
-    text: 'If you got hit by last night's storm in [area], here's what to check first:
+    text: `If you got hit by last night's storm in [area], here's what to check first:
 
 1️⃣ [Check 1]
 2️⃣ [Check 2]
@@ -112,11 +112,11 @@ DFW homeowner? Find us at the link in bio. We match you with verified local pros
 
 Don't wait — [consequence of delay]. DM me with questions or use the link in my bio for a free inspection.
 
-#DFWStorm #[City]Roofing #HailDamage #DFWHomeowner',
+#DFWStorm #[City]Roofing #HailDamage #DFWHomeowner`,
   },
   {
     type: 'Maintenance Tip',
-    text: 'Most DFW homeowners skip this one thing — and it costs them $[amount] later.
+    text: `Most DFW homeowners skip this one thing — and it costs them $[amount] later.
 
 [The tip]
 
@@ -124,7 +124,7 @@ Why it matters in DFW specifically: [local context]
 
 Save this post. Your future self will thank you.
 
-#HomeMaintenanceTip #DFW[Trade] #[City]Homeowner',
+#HomeMaintenanceTip #DFW[Trade] #[City]Homeowner`,
   },
 ];
 
@@ -157,12 +157,12 @@ export default function PartnerSocialMediaGuide() {
         <div style={{ background: '#eff6ff', borderRadius: 12, padding: 24, marginBottom: 48, border: '1px solid #bfdbfe' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#1e40af', marginBottom: 10 }}>💡 The Opportunity</h2>
           <p style={{ color: '#1e3a8a', lineHeight: 1.7 }}>
-            Partners who document their work on social media generate <strong>2–3x more job inquiries</strong> than those who don't. Your photos are already being used by ProLnk AI — repurpose them for social proof. Every job you complete is content that sells future jobs.
+            Partners who document their work on social media generate <strong>2-3x more job inquiries</strong> than those who don`t. Your photos are already being used by ProLnk AI — repurpose them for social proof. Every job you complete is content that sells future jobs.
           </p>
         </div>
 
         <section style={{ marginBottom: 48 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#111827', marginBottom: 20 }}>Platform Strategy</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#111827`, marginBottom: 20 }}>Platform Strategy</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {platforms.map((p, i) => (
               <button
@@ -289,7 +289,7 @@ export default function PartnerSocialMediaGuide() {
           <div style={{ background: '#fef3c7', borderRadius: 12, padding: 24, border: '1px solid #fde68a' }}>
             <h3 style={{ fontSize: 18, fontWeight: 700, color: '#92400e', marginBottom: 8 }}>🔗 ProLnk Integration</h3>
             <p style={{ color: '#78350f', lineHeight: 1.7 }}>
-              Include your ProLnk partner referral link in every social profile bio. When homeowners click through and sign up, you earn referral credit automatically — no manual tracking required.
+              Include your ProLnk partner referral link in every social profile bio. When homeowners click through and sign up, you earn referral credit automatically - no manual tracking required.
             </p>
           </div>
         </section>

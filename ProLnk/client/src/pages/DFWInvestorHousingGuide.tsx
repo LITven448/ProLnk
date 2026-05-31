@@ -51,17 +51,17 @@ export default function DFWInvestorHousingGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '1px solid #1e3a5f' }}>
             <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>🏦 Institutional Buyer Impact</h2>
-            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Invitation Homes, Progress Residential, and others own ~3% of DFW SFR stock — concentrated below $350K.</p>
-            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• They bid 5–8% over asking in target corridors</p>
-            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• All-cash, waived inspections — hard to compete head-on</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Invitation Homes, Progress Residential, and others own ~3% of DFW SFR stock - concentrated below $350K.</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• They bid 5-8% over asking in target corridors</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• All-cash, waived inspections - hard to compete head-on</p>
             <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>• Opportunity: beat them to off-market deals via direct mail, wholesalers, probate leads</p>
           </div>
           <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '1px solid #1e3a5f' }}>
             <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>⚡ How to Compete with Cash Buyers</h2>
             <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• Get pre-underwritten hard money or DSCR loan ready to close in 10 days</p>
             <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• Build a direct-to-seller pipeline (skip the MLS)</p>
-            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• Target properties needing rehab — institutions avoid heavy lifts</p>
-            <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>• Focus on $200K–$280K range — less institutional competition above $300K</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>• Target properties needing rehab - institutions avoid heavy lifts</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>• Focus on $200K-$280K range - less institutional competition above $300K</p>
           </div>
         </div>
 
@@ -80,8 +80,8 @@ export default function DFWInvestorHousingGuide() {
               <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem' }}>Investment Budget (All-In)</label>
               <select value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', padding: '0.5rem', background: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
                 <option value={220000}>Under $220K</option>
-                <option value={300000}>$220K–$320K</option>
-                <option value={450000}>$320K–$450K</option>
+                <option value={300000}>$220K-$320K</option>
+                <option value={450000}>$320K-$450K</option>
                 <option value={600000}>$450K+</option>
               </select>
             </div>
@@ -96,9 +96,9 @@ export default function DFWInvestorHousingGuide() {
               <div key={r.name} style={{ borderBottom: i < results.length - 1 ? '1px solid #1e3a5f' : 'none', paddingBottom: '1rem', marginBottom: '1rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ color: '#e2e8f0', fontWeight: 600 }}>#{i + 1} {r.name}</span>
-                  <span style={{ color: '#F5E642', fontWeight: 700' }}>~${r.avgPrice.toLocaleString()} avg</span>
+                  <span style={{ color: '#F5E642', fontWeight: 700` }}>~\${r.avgPrice.toLocaleString()} avg</span>
                 </div>
-                <div style={{ display: 'flex', gap: '1.5rem', marginTop: '0.3rem' }}>
+                <div style={{ display: 'flex`, gap: '1.5rem', marginTop: '0.3rem' }}>
                   <span style={{ color: '#4ade80', fontSize: '0.8rem' }}>📊 Cap: {r.capRate}%</span>
                   <span style={{ color: '#60a5fa', fontSize: '0.8rem' }}>🔨 Flip ROI: {r.flipROI}</span>
                   <span style={{ color: '#a78bfa', fontSize: '0.8rem' }}>🏨 STR: {r.strPotential}</span>

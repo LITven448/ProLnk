@@ -6,26 +6,26 @@ export default function DFWCrawlSpaceScienceGuide2026() {
   const fixes: Record<string, { title: string; science: string; solution: string; cost: string }> = {
     'visible-moisture': {
       title: 'Active Moisture Intrusion',
-      science: 'DFW soil releases moisture vapor upward continuously. Without a vapor barrier, relative humidity in pier-and-beam crawl spaces often exceeds 80% — well above the 70% threshold for mold growth.\',
-      solution: 'Install 6-mil polyethylene vapor barrier across entire soil surface, overlapping 12" at seams, sealed to piers. Eliminates up to 98% of soil vapor transmission.\',
+      science: 'DFW soil releases moisture vapor upward continuously. Without a vapor barrier, relative humidity in pier-and-beam crawl spaces often exceeds 80% — well above the 70% threshold for mold growth.',
+      solution: 'Install 6-mil polyethylene vapor barrier across entire soil surface, overlapping 12" at seams, sealed to piers. Eliminates up to 98% of soil vapor transmission.',
       cost: '$1,800–$4,200'
     },
     'musty-smell': {
       title: 'Active Mold / Fungal Growth',
-      science: 'Mold spores are always present in DFW air. They germinate on wood above 70% relative humidity and 50°F — conditions easily met under poorly ventilated pier-and-beam homes.\',
-      solution: 'Mold remediation first (borate treatment on joists), then vapor barrier installation, then humidity monitoring. Encapsulation more effective than open ventilation in high-humidity DFW summers.\',
+      science: 'Mold spores are always present in DFW air. They germinate on wood above 70% relative humidity and 50°F — conditions easily met under poorly ventilated pier-and-beam homes.',
+      solution: 'Mold remediation first (borate treatment on joists), then vapor barrier installation, then humidity monitoring. Encapsulation more effective than open ventilation in high-humidity DFW summers.',
       cost: '$3,500–$9,000'
     },
     'wood-rot': {
       title: 'Structural Wood Degradation',
-      science: 'Wood rot requires moisture above 20% wood moisture content (WMC). DFW crawl spaces without vapor control routinely measure 25–30% WMC — decay fungi activate within months.\',
-      solution: 'Replace damaged sill plates and floor joists. Install full encapsulation system with dehumidifier to maintain WMC below 15%. Add annual WMC monitoring points.\',
+      science: 'Wood rot requires moisture above 20% wood moisture content (WMC). DFW crawl spaces without vapor control routinely measure 25–30% WMC — decay fungi activate within months.',
+      solution: 'Replace damaged sill plates and floor joists. Install full encapsulation system with dehumidifier to maintain WMC below 15%. Add annual WMC monitoring points.',
       cost: '$5,000–$18,000'
     },
     'high-humidity': {
       title: 'Elevated Ambient Humidity',
-      science: 'Warm moist air from the crawl space rises into living areas — called the stack effect. A 500 sq ft crawl space can release 10–18 gallons of water vapor into your home daily without a vapor barrier.\',
-      solution: 'Encapsulation + dehumidifier (70-pint capacity minimum for DFW). Encapsulated crawl spaces outperform vented ones in hot-humid climates like Dallas-Fort Worth.\',
+      science: 'Warm moist air from the crawl space rises into living areas — called the stack effect. A 500 sq ft crawl space can release 10–18 gallons of water vapor into your home daily without a vapor barrier.',
+      solution: 'Encapsulation + dehumidifier (70-pint capacity minimum for DFW). Encapsulated crawl spaces outperform vented ones in hot-humid climates like Dallas-Fort Worth.',
       cost: '$4,000–$8,500'
     },
   };
@@ -59,10 +59,10 @@ export default function DFWCrawlSpaceScienceGuide2026() {
         <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔬 The Encapsulation vs. Ventilation Debate</h2>
           {[
-            'Older building codes required vented crawl spaces — good in dry climates, counterproductive in humid DFW.\',
-            'In hot-humid climates, outdoor air brings IN more moisture than it removes — ventilation worsens the problem.\',
-            'Modern building science (IRC 2012+) allows conditioned/encapsulated crawl spaces — proven superior for DFW.\',
-            'A properly encapsulated crawl space can reduce whole-home humidity by 15–20% without a whole-house dehumidifier.\',
+            'Older building codes required vented crawl spaces — good in dry climates, counterproductive in humid DFW.',
+            'In hot-humid climates, outdoor air brings IN more moisture than it removes — ventilation worsens the problem.',
+            'Modern building science (IRC 2012+) allows conditioned/encapsulated crawl spaces — proven superior for DFW.',
+            'A properly encapsulated crawl space can reduce whole-home humidity by 15–20% without a whole-house dehumidifier.',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
               <span style={{ color: '#F5E642' }}>▸</span>

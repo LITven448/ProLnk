@@ -42,7 +42,7 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
     steps: [
       '⚖️ All heirs must agree on disposition — majority can’t force a sale in TX',
       '📋 Partition lawsuit is last resort but forces sale via court',
-      '💰 Buyout option: one heir purchases others' shares at appraised value',
+      `💰 Buyout option: one heir purchases others' shares at appraised value`,
       '🔧 ProLnk manages repairs when heirs are remote or disagree on scope',
       '📄 Estate attorney drafts heir agreement before any work begins',
     ],
@@ -59,7 +59,7 @@ export default function DFWInheritedHomeGuide2026() {
         <div style={{ fontSize: 36, marginBottom: 8 }}>🏡</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, marginBottom: 8 }}>DFW Inherited Home Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>
-          What to do with an inherited DFW home — your options, TX probate timeline, and tax-saving strategies.
+          What to do with an inherited DFW home - your options, TX probate timeline, and tax-saving strategies.
         </p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 32 }}>
@@ -68,7 +68,7 @@ export default function DFWInheritedHomeGuide2026() {
             <li>TX probate typical timeline: 4-6 months (Independent Administration)</li>
             <li>Stepped-up cost basis eliminates most capital gains if you sell promptly</li>
             <li>Muniment of Title: fastest TX option when no debts exist</li>
-            <li>DFW median home value 2026: ~$385K — estate sales often price 5-10% below</li>
+            <li>DFW median home value 2026: ~$385K - estate sales often price 5-10% below</li>
           </ul>
         </div>
 
@@ -99,7 +99,7 @@ export default function DFWInheritedHomeGuide2026() {
 
         <div style={{ marginTop: 32, background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center' }}>
           <p style={{ color: '#0A1628', fontWeight: 700, marginBottom: 8 }}>Inherited a DFW home that needs repairs?</p>
-          <p style={{ color: '#1e3a5f', fontSize: 14 }}>ProLnk connects you with trusted DFW contractors — fast quotes, vetted pros.</p>
+          <p style={{ color: '#1e3a5f', fontSize: 14 }}>ProLnk connects you with trusted DFW contractors - fast quotes, vetted pros.</p>
         </div>
       </div>
     </div>

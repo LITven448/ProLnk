@@ -30,7 +30,7 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
   },
   contested: {
     steps: [
-      '⚖️ Cannot sell without all parties' agreement or court order — pause listing',
+      `⚖️ Cannot sell without all parties' agreement or court order — pause listing`,
       '📋 Dependent Administration: court approves each sale step — slower but protected',
       '🏗️ Maintain home during dispute: ProLnk for emergency repairs to preserve value',
       '💰 Consider partition lawsuit if stalemate — court forces sale and distributes proceeds',
@@ -59,14 +59,14 @@ export default function DFWEstatePropertyGuide2026() {
         <div style={{ fontSize: 36, marginBottom: 8 }}>🏛️</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, marginBottom: 8 }}>DFW Estate Property Sale Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>
-          Selling an estate property in DFW — working with your estate attorney, TREC disclosures, and pricing strategy for estate homes.
+          Selling an estate property in DFW - working with your estate attorney, TREC disclosures, and pricing strategy for estate homes.
         </p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 32 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📌 DFW Estate Sale Facts</h2>
           <ul style={{ color: '#cbd5e1', lineHeight: 1.9, paddingLeft: 20 }}>
             <li>TX TREC disclosure: estate sales require disclosure of all known defects</li>
-            <li>Independent Administration: fastest path — executor acts without court approval</li>
+            <li>Independent Administration: fastest path - executor acts without court approval</li>
             <li>Estate sale timeline: 60-90 days from probate filing to listing in TX</li>
             <li>DFW estate homes typically price 5-12% below comparable retail homes</li>
           </ul>

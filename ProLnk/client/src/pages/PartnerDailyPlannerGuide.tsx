@@ -22,7 +22,7 @@ const BASE_SCHEDULE = [
     'Confirm all leads accepted for tomorrow',
     'Review any new dispatches',
     'Send follow-up message to today’s homeowners',
-    'Check for new recruits' activity in your network',
+    `Check for new recruits' activity in your network`,
   ]},
 ];
 
@@ -176,24 +176,24 @@ export default function PartnerDailyPlannerGuide() {
           {generated && (
             <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
               <div style={{ fontWeight: 700, color: '#312e81', fontSize: 17, marginBottom: 16 }}>
-                Your Custom ProLnk Schedule — {trade}
+                Your Custom ProLnk Schedule - {trade}
               </div>
               <div style={{ display: 'grid', gap: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
                   <span style={{ color: '#475569' }}>🌅 Morning dashboard check</span>
-                  <span style={{ color: '#6366f1', fontWeight: 600 }}>{startHour}:00–{startHour}:30 AM</span>
+                  <span style={{ color: '#6366f1', fontWeight: 600 }}>{startHour}:00-{startHour}:30 AM</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
                   <span style={{ color: '#475569' }}>🔧 On-site jobs + photo uploads</span>
-                  <span style={{ color: '#6366f1', fontWeight: 600' }}>{startHour}:30 AM – {Number(endHour) > 12 ? `${Number(endHour)-12}:00 PM` : `${endHour}:00`}</span>
+                  <span style={{ color: '#6366f1', fontWeight: 600` }}>{startHour}:30 AM – {Number(endHour) > 12 ? \`\${Number(endHour)-12}:00 PM\` : \`\${endHour}:00\`}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
+                <div style={{ display: 'flex`, justifyContent: 'space-between', padding: '10px 0' }}>
                   <span style={{ color: '#475569' }}>🌇 Evening wrap-up</span>
-                  <span style={{ color: '#6366f1', fontWeight: 600 }}>{Number(endHour) > 12 ? `${Number(endHour)-12}:00` : endHour}–{Number(endHour) > 12 ? `${Number(endHour)-11}:15 PM` : `${Number(endHour)+1}:15`}</span>
+                  <span style={{ color: '#6366f1', fontWeight: 600 }}>{Number(endHour) > 12 ? `${Number(endHour)-12}:00` : endHour}-{Number(endHour) > 12 ? `${Number(endHour)-11}:15 PM` : `${Number(endHour)+1}:15`}</span>
                 </div>
               </div>
               <div style={{ marginTop: 16, background: '#f8f7ff', borderRadius: 8, padding: 14, color: '#4338ca', fontSize: 14 }}>
-                💡 At {jobHours} hours of field time per day, a {trade.toLowerCase()} averaging 3 jobs/day could generate <strong>$450–900/month</strong> in ProLnk commissions at Tier 2.
+                💡 At {jobHours} hours of field time per day, a {trade.toLowerCase()} averaging 3 jobs/day could generate <strong>$450-900/month</strong> in ProLnk commissions at Tier 2.
               </div>
             </div>
           )}

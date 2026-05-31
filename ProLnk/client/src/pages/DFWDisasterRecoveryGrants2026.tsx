@@ -31,9 +31,9 @@ export default function DFWDisasterRecoveryGrants2026() {
   const checkPrograms = () => {
     if (!disasterType) { setResult('⚠️ Please select your disaster type.'); return; }
     const list = programs[disasterType] || ['📍 Contact FEMA at 1-800-621-FEMA and your local emergency management office for disaster-specific assistance programs.'];
-    setResult(list.join('
+    setResult(list.join(`
 
-'));
+`));
   };
 
   return (
@@ -67,9 +67,9 @@ export default function DFWDisasterRecoveryGrants2026() {
             style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Show Assistance Programs
           </button>
-          {result && <div style={{ marginTop: 16 }}>{result.split('
+          {result && <div style={{ marginTop: 16 }}>{result.split(`
 
-').map((r, i) => (
+`).map((r, i) => (
             <p key={i} style={{ padding: 14, background: '#0A1628', borderRadius: 8, color: '#cbd5e1', lineHeight: 1.6, marginBottom: 8 }}>{r}</p>
           ))}</div>}
         </div>

@@ -85,7 +85,7 @@ const dealKillers = [
   },
   {
     issue: 'Roof Condition',
-    detail: 'Hail damage is common in DFW. If your roof is over 15 years old or has visible damage, buyers' insurance may deny coverage, killing the deal.',
+    detail: `Hail damage is common in DFW. If your roof is over 15 years old or has visible damage, buyers' insurance may deny coverage, killing the deal.`,
     risk: 'High',
   },
   {
@@ -127,7 +127,7 @@ export default function DFWHomeSaleTimeline() {
             DFW Home Sale Timeline
           </h1>
           <p className="text-lg text-gray-600">
-            From Decision to Close in 60–90 Days — What to Do, When, and How Much It Costs
+            From Decision to Close in 60-90 Days - What to Do, When, and How Much It Costs
           </p>
           <div className="flex flex-wrap gap-4 mt-4">
             <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100">
@@ -222,7 +222,7 @@ export default function DFWHomeSaleTimeline() {
         {/* Deal Killers */}
         <div className="mb-8">
           <h2 className="text-xl font-bold mb-4" style={{ color: '#1E3A5F' }}>
-            What Kills DFW Deals — 5 Common Deal-Breakers
+            What Kills DFW Deals - 5 Common Deal-Breakers
           </h2>
           <div className="space-y-3">
             {dealKillers.map((d, i) => (

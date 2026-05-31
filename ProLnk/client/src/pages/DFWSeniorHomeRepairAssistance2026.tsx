@@ -31,9 +31,9 @@ export default function DFWSeniorHomeRepairAssistance2026() {
     if (!county || !age || isNaN(a)) { setResult('⚠️ Please select your county and enter your age.'); return; }
     if (a < 60) { setResult('⚠️ Most senior home repair programs require age 60-62+. Check CDBG or HOME programs for general income-based assistance.'); return; }
     const list = programs[county.toLowerCase()] || ['📍 Contact your local Area Agency on Aging for referrals to home repair programs in your area. Texas AAA statewide: 1-800-252-9240'];
-    setResult(list.join('
+    setResult(list.join(`
 
-'));
+`));
   };
 
   return (
@@ -42,7 +42,7 @@ export default function DFWSeniorHomeRepairAssistance2026() {
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>👴</div>
           <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0 4px' }}>DFW Senior Home Repair Assistance 2026</h1>
-          <p style={{ color: '#94a3b8', margin: 0 }}>Programs for DFW homeowners 62+ — city services, AAA, and nonprofits</p>
+          <p style={{ color: '#94a3b8', margin: 0 }}>Programs for DFW homeowners 62+ - city services, AAA, and nonprofits</p>
         </div>
 
         {[{icon:'🏠',title:'Area Agency on Aging (AAA) Programs',body:'Each DFW county has an Area Agency on Aging that provides or coordinates home modification services for seniors 60+. Programs include grab bars, ramps, safety handrails, and minor repairs — often at no cost for qualifying seniors.'},{icon:'🔨',title:'Rebuilding Together DFW',body:'Rebuilding Together chapters in Dallas and Fort Worth conduct annual repair days focusing on seniors and people with disabilities. Services are 100% free. Priority given to veterans, seniors, and single-parent households.'},{icon:'📞',title:'How to Start',body:'Call 211 Texas (free, 24/7) to be connected with local senior home repair resources in your county. You can also contact your county Area Agency on Aging directly for a needs assessment.'}].map((card, i) => (
@@ -71,9 +71,9 @@ export default function DFWSeniorHomeRepairAssistance2026() {
             style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Find Programs
           </button>
-          {result && <div style={{ marginTop: 16 }}>{result.split('
+          {result && <div style={{ marginTop: 16 }}>{result.split(`
 
-').map((r, i) => (
+`).map((r, i) => (
             <p key={i} style={{ padding: 14, background: '#0A1628', borderRadius: 8, color: '#cbd5e1', lineHeight: 1.6, marginBottom: 8 }}>{r}</p>
           ))}</div>}
         </div>

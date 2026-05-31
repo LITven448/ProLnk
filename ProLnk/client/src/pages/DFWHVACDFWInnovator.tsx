@@ -10,7 +10,7 @@ const innovations = [
   {
     id: 'solar',
     label: '☀️ Solar + HVAC Integration',
-    path: 'Size your solar array to cover your HVAC load first — in DFW, HVAC is 50-60% of annual electricity use. A 10kW solar system covers most DFW homes' HVAC needs. Add a 10kWh battery backup and your HVAC runs through ERCOT outages. With solar and heat pump: average DFW utility bill under $40/month.',
+    path: `Size your solar array to cover your HVAC load first — in DFW, HVAC is 50-60% of annual electricity use. A 10kW solar system covers most DFW homes' HVAC needs. Add a 10kWh battery backup and your HVAC runs through ERCOT outages. With solar and heat pump: average DFW utility bill under $40/month.`,
     prolnk: 'ProLnk connects innovators with DFW’s solar-HVAC integration specialists who design both systems together — not two contractors bolting incompatible systems together.',
   },
   {
@@ -95,8 +95,8 @@ export default function DFWHVACDFWInnovator() {
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: 28, textAlign: 'center' }}>
           <div style={{ fontSize: 28, marginBottom: 12 }}>🚀</div>
-          <h3 style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, marginBottom: 8 }}>ProLnk Finds DFW's True Innovators</h3>
-          <p style={{ color: '#1E2D45', fontSize: 14, lineHeight: 1.6 }}>
+          <h3 style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, marginBottom: 8 }}>ProLnk Finds DFW`s True Innovators</h3>
+          <p style={{ color: '#1E2D45`, fontSize: 14, lineHeight: 1.6 }}>
             Not every contractor can execute cutting-edge HVAC systems in DFW conditions. ProLnk matches innovators with the pros who can.
           </p>
         </div>

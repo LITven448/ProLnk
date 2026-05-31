@@ -26,8 +26,8 @@ export default function DFWHVACCompressorProtect2026() {
     tips.push('🏗️ Add shade structure on west side — reduces condenser entering air temp 5-10°F, cuts head pressure significantly');
     tips.push('🔒 Verify high-head pressure cutout is functional — protects compressor when ambient exceeds 105°F');
     tips.push('❄️ Verify refrigerant charge annually — overcharge overheats, undercharge cavitates: both kill compressors');
-    setGuide(tips.join('
-'));
+    setGuide(tips.join(`
+`));
   };
 
   return (
@@ -37,7 +37,7 @@ export default function DFWHVACCompressorProtect2026() {
           <span style={{ color: '#0A1628', fontWeight: 700, fontSize: 12 }}>DFW HVAC GUIDE 2026</span>
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>AC Compressor Protection Guide</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 28 }}>Extending compressor life in Dallas-Fort Worth extreme heat — hard start kits, condenser care, and refrigerant management.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 28 }}>Extending compressor life in Dallas-Fort Worth extreme heat - hard start kits, condenser care, and refrigerant management.</p>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🔍 Get Your Protection Plan</h2>
@@ -54,8 +54,8 @@ export default function DFWHVACCompressorProtect2026() {
         {guide && (
           <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 20 }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🛡️ Your Compressor Protection Plan</h3>
-            {guide.split('
-').map((line, i) => (
+            {guide.split(`
+`).map((line, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 10, fontSize: 14, lineHeight: 1.6 }}>{line}</div>
             ))}
           </div>

@@ -69,9 +69,9 @@ ${capacity}`);
             style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '0.6rem 1.5rem', borderRadius: 6, fontWeight: 700, cursor: 'pointer' }}>
             Assess My Panel
           </button>
-          {result && result.split('
+          {result && result.split(`
 
-').map((r, i) => (
+`).map((r, i) => (
             <div key={i} style={{ marginTop: '0.75rem', padding: '1rem', background: '#0A1628', borderRadius: 8 }}>{r}</div>
           ))}
         </div>

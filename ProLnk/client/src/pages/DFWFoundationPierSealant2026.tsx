@@ -48,8 +48,8 @@ export default function DFWFoundationPierSealant2026() {
     }
     tips.push('💰 Pier bracket sealing costs $200-600 DIY vs $800-2,000 contractor — DFW pier and beam homes average 20-40 brackets');
     tips.push('🏠 Proper sealing reduces moisture infiltration under DFW homes — directly linked to wood rot and mold prevention');
-    setGuide(tips.join('
-'));
+    setGuide(tips.join(`
+`));
   };
 
   return (
@@ -59,7 +59,7 @@ export default function DFWFoundationPierSealant2026() {
           <span style={{ color: '#0A1628', fontWeight: 700, fontSize: 12 }}>DFW FOUNDATION GUIDE 2026</span>
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Foundation Pier Bracket Sealing Guide</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 28 }}>Sealing foundation pier brackets in DFW — moisture intrusion prevention, sealant selection, and maintenance for pier and beam homes.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 28 }}>Sealing foundation pier brackets in DFW - moisture intrusion prevention, sealant selection, and maintenance for pier and beam homes.</p>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🔍 Get Your Sealing Guide</h2>
@@ -74,8 +74,8 @@ export default function DFWFoundationPierSealant2026() {
         {guide && (
           <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 20 }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🔒 Your Pier Sealing Recommendations</h3>
-            {guide.split('
-').map((line, i) => (
+            {guide.split(`
+`).map((line, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 10, fontSize: 14, lineHeight: 1.6 }}>{line}</div>
             ))}
           </div>

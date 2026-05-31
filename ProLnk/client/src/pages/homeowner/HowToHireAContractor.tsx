@@ -76,7 +76,7 @@ const REVIEW_TIPS = [
   { label: "Check Google, Yelp, and BBB", desc: "Look at review volume, recency, and response to negative reviews." },
   { label: "Ask for 3 references", desc: "Call them. Ask about timeline, cleanup, cost accuracy, and re-hire likelihood." },
   { label: "Look for before/after photos", desc: "Skilled tradespeople take pride in their work and show it." },
-  { label: "Check for repeat customers", desc: ""I\'ve used them 4 times" is the strongest endorsement possible." },
+  { label: "Check for repeat customers", desc: `"I\'ve used them 4 times" is the strongest endorsement possible.` },
 ];
 
 function SectionCard({ id, title, icon: Icon, color, children }: {

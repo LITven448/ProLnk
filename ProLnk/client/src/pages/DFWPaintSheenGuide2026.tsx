@@ -22,7 +22,7 @@ export default function DFWPaintSheenGuide2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 14, fontWeight: 700 }}>🎨 DFW PAINTING GUIDE 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW Paint Sheen Guide</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 32 }}>Choosing the right sheen for every room in your Dallas–Fort Worth home — flat to gloss explained.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 32 }}>Choosing the right sheen for every room in your Dallas-Fort Worth home - flat to gloss explained.</p>
 
         <div style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Room Type → Sheen Recommendation</h2>
@@ -47,7 +47,7 @@ export default function DFWPaintSheenGuide2026() {
         {[
           { icon: '📊', title: 'DFW Sheen Spectrum', body: 'Flat → Matte → Eggshell → Satin → Semi-Gloss → Gloss. Each step increases washability and light reflection. DFW homes rarely use gloss on walls — it shows every imperfection. Semi-gloss stays on trim and cabinets only.' },
           { icon: '💦', title: 'Sheen and DFW Humidity', body: 'North Texas summer humidity affects how sheens appear. Higher sheen handles humidity better and resists mold. Bathrooms and laundry rooms must use satin or higher — flat and eggshell absorb moisture and fail within 1-2 years.' },
-          { icon: '🔧', title: 'Touch-Up Reality in DFW', body: 'Eggshell touch-up is easier than satin — slightly flatter sheen blends better. Satin touch-ups show if not blended carefully. If easy touch-up matters (rental properties, kids' rooms), choose eggshell over satin for walls.' },
+          { icon: '🔧', title: 'Touch-Up Reality in DFW', body: `Eggshell touch-up is easier than satin — slightly flatter sheen blends better. Satin touch-ups show if not blended carefully. If easy touch-up matters (rental properties, kids' rooms), choose eggshell over satin for walls.` },
         ].map((card, i) => (
           <div key={i} style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 20, marginBottom: 16 }}>
             <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>{card.icon} {card.title}</div>
@@ -58,7 +58,7 @@ export default function DFWPaintSheenGuide2026() {
         <div style={{ backgroundColor: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628', textAlign: 'center' }}>
           <div style={{ fontSize: 20, marginBottom: 8 }}>🖌️</div>
           <div style={{ fontWeight: 800, marginBottom: 4 }}>Need a DFW Painting Pro?</div>
-          <div style={{ fontSize: 13 }}>ProLnk connects you with vetted local painters — free quotes, verified reviews.</div>
+          <div style={{ fontSize: 13 }}>ProLnk connects you with vetted local painters - free quotes, verified reviews.</div>
         </div>
       </div>
     </div>

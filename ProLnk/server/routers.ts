@@ -22,6 +22,7 @@ import { bundleOffersRouter } from "./routers/bundleOffers";
 import { quickQuoteRouter } from "./routers/quickQuote";
 import { sendPartnerApplicationReceived, sendPartnerApproved, sendPartnerRejected, sendNewLeadNotification, sendHomeownerWelcome, sendQuoteRequestReceived, sendRoomMakeoverReady, sendQuoteResponseNotification, sendCommissionEarned, sendPayoutConfirmation, sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation, sendStormAlertToPro, sendReviewRequest, sendNeighborhoodReferralInvite, sendPartnerApprovalEmail, sendPartnerRejectionEmail, sendWelcomeToNetworkEmail } from "./email";
 import { roomMakeoverRouter } from "./routers/roomMakeover";
+import { commerceRouter } from "./routers/commerce";
 import { serviceAreaRouter } from "./routers/serviceArea";
 import { homeownerExtrasRouter } from "./routers/homeownerExtras";
 import { profile360Router } from "./routers/profile360";
@@ -330,6 +331,7 @@ export const appRouter = router({
   bundleOffers: bundleOffersRouter,
   quickQuote: quickQuoteRouter,
   roomMakeover: roomMakeoverRouter,
+  commerce: commerceRouter,
   serviceArea: serviceAreaRouter,
   homeownerExtras: homeownerExtrasRouter,
   profile360: profile360Router,

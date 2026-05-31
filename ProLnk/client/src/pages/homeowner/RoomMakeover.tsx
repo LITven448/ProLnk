@@ -3,6 +3,7 @@ import type React from "react";
 import { useState, useRef } from "react";
 import { trpc } from "@/lib/trpc";
 import HomeownerLayout from "@/components/HomeownerLayout";
+import ShopThisLook from "@/components/ShopThisLook";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -559,6 +560,9 @@ export default function RoomMakeover() {
                 </div>
               </div>
             </Card>
+
+            {/* Shop this look — affiliate commerce rail (Phase 1) */}
+            {sessionId != null && <ShopThisLook renderingId={sessionId} />}
 
             {/* Before photos */}
             <Card>

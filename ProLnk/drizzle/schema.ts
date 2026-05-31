@@ -2007,6 +2007,43 @@ export type RoomMakeoverSession = typeof roomMakeoverSessions.$inferSelect;
 export type InsertRoomMakeoverSession = typeof roomMakeoverSessions.$inferInsert;
 
 
+// ─── Commerce Rail (Phase 1: affiliate "shop this rendering") ────────────────
+// Products surfaced under an AI room rendering, with affiliate links + click
+// instrumentation. Conversion data here justifies graduating to marketplace
+// take-rate (15-30%) per BUSINESS_MODEL_V2_OPUS.md. See server/commerce.ts.
+
+export const productSuggestions = mysqlTable("productSuggestions", {
+  id: int("id").primaryKey().autoincrement(),
+  // Link to the rendering this product was suggested for.
+  renderingId: int("renderingId"),
+  sessionId: varchar("sessionId", { length: 128 }),
+  category: varchar("category", { length: 60 }).notNull(), // rug/lighting/furniture/paint/decor
+  productName: varchar("productName", { length: 500 }).notNull(),
+  retailer: varchar("retailer", { length: 60 }).notNull(), // amazon/wayfair/homedepot/nfm
+  affiliateUrl: varchar("affiliateUrl", { length: 2000 }).notNull(),
+  imageUrl: varchar("imageUrl", { length: 2000 }),
+  price: decimal("price", { precision: 10, scale: 2 }),
+  position: varchar("position", { length: 120 }), // where in the room (e.g. "floor", "ceiling")
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type ProductSuggestion = typeof productSuggestions.$inferSelect;
+export type InsertProductSuggestion = typeof productSuggestions.$inferInsert;
+
+export const productClicks = mysqlTable("productClicks", {
+  id: int("id").primaryKey().autoincrement(),
+  productSuggestionId: int("productSuggestionId").notNull(),
+  userId: int("userId"),
+  sessionId: varchar("sessionId", { length: 128 }),
+  clickedAt: timestamp("clickedAt").defaultNow().notNull(),
+  // Conversion postback (filled in later via recordConversion).
+  converted: boolean("converted").default(false).notNull(),
+  convertedAt: timestamp("convertedAt"),
+  orderValue: decimal("orderValue", { precision: 10, scale: 2 }),
+});
+export type ProductClick = typeof productClicks.$inferSelect;
+export type InsertProductClick = typeof productClicks.$inferInsert;
+
+
 // ─── 360 Customer Profiles ────────────────────────────────────────────────────
 
 // Partner 360 Profile — deep business intelligence beyond the basic application

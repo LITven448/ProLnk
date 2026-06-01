@@ -13,13 +13,14 @@ import {
   runOriginationLockAgent,
   runPhotoAttributionAgent,
 } from "./foundingNetworkAgents";
+import { withAgentRun } from "./agentLogger";
 
 export async function runMorningAgentCycle(): Promise<void> {
   console.log('[AgentOrchestrator] Starting morning agent cycle');
 
   const [compliance, tierStatus] = await Promise.allSettled([
-    runComplianceCheckAgent(),
-    runTierPromotionAgent(),
+    withAgentRun({ agentId: "founding-compliance-check", action: "Morning compliance scan" }, () => runComplianceCheckAgent()),
+    withAgentRun({ agentId: "founding-tier-promotion", action: "Morning tier-status audit" }, () => runTierPromotionAgent()),
   ]);
 
   if (compliance.status === 'fulfilled') {
@@ -59,7 +60,10 @@ export async function runJobCompleteAgents(jobData: {
 
   if (proEmail && propertyAddress && jobValue && jobId && platformFeeRate) {
     tasks.push(
-      runCommissionDistributionAgent({ jobId, completingProEmail: proEmail, jobValue, platformFeeRate, propertyAddress })
+      withAgentRun(
+        { agentId: "founding-commission-distribution", action: `Distribute commissions for job ${jobId}` },
+        () => runCommissionDistributionAgent({ jobId, completingProEmail: proEmail, jobValue, platformFeeRate, propertyAddress }),
+      )
         .then((r) => console.log('[AgentOrchestrator] Commission distributed — fee:', r.platformFee, '| network payouts:', r.networkPayouts.length, '| ProLnk retained:', r.prolnkRetained))
         .catch((err) => console.log('[AgentOrchestrator] Commission distribution failed:', err))
     );
@@ -67,7 +71,10 @@ export async function runJobCompleteAgents(jobData: {
 
   if (proEmail && propertyAddress) {
     tasks.push(
-      runOriginationLockAgent({ proEmail, propertyAddress, photos: photoUrls })
+      withAgentRun(
+        { agentId: "founding-origination-lock", action: `Origination lock for ${propertyAddress}` },
+        () => runOriginationLockAgent({ proEmail, propertyAddress, photos: photoUrls }),
+      )
         .then((r) => {
           if (r.isNewClaim) {
             console.log('[AgentOrchestrator] Origination lock claimed for:', proEmail, 'at:', propertyAddress);
@@ -86,7 +93,10 @@ export async function runJobCompleteAgents(jobData: {
 
   if (proEmail && propertyAddress && photoUrls.length && jobId) {
     for (const photoUrl of photoUrls) {
-      await runPhotoAttributionAgent({ photoUrl, uploaderEmail: proEmail, propertyAddress, jobId }).catch((err) => {
+      await withAgentRun(
+        { agentId: "founding-photo-attribution", action: `Attribute photo for job ${jobId}` },
+        () => runPhotoAttributionAgent({ photoUrl, uploaderEmail: proEmail, propertyAddress, jobId }),
+      ).catch((err) => {
         console.log('[AgentOrchestrator] Photo attribution error (non-fatal):', err);
       });
     }

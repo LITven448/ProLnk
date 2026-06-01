@@ -8,6 +8,7 @@ import { TRPCError } from "@trpc/server";
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { runStormScan, fetchStormAlerts, checkTomorrowIoAlerts, fetchTomorrowIoForecast } from "../storm-agent";
+import { withAgentRun } from "../agents/agentLogger";
 
 export const stormAgentRouter = router({
   // --- Get recent storm events (admin) ---
@@ -43,7 +44,10 @@ export const stormAgentRouter = router({
     .input(z.object({ state: z.string().optional() }))
     .mutation(async ({ ctx, input }) => {
       if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
-      const result = await runStormScan({ state: input.state, adminUserId: ctx.user.id });
+      const result = await withAgentRun(
+        { agentId: "storm-scan", action: `Storm scan${input.state ? ` (${input.state})` : ""}` },
+        () => runStormScan({ state: input.state, adminUserId: ctx.user.id }),
+      );
       return result;
     }),
 

@@ -8,6 +8,7 @@
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure } from "../_core/trpc";
+import { withAgentRun } from "../agents/agentLogger";
 
 export const brainTrustRouter = router({
 
@@ -22,45 +23,45 @@ export const brainTrustRouter = router({
   runCEO: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runCEOAgent } = await import("../agents/executiveTier");
-    return runCEOAgent();
+    return withAgentRun({ agentId: "exec-ceo", action: "Run CEO Agent" }, () => runCEOAgent());
   }),
 
   runCFO: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runCFOAgent } = await import("../agents/executiveTier");
-    return runCFOAgent();
+    return withAgentRun({ agentId: "exec-cfo", action: "Run CFO Agent" }, () => runCFOAgent());
   }),
 
   runCOO: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runCOOAgent } = await import("../agents/executiveTier");
-    return runCOOAgent();
+    return withAgentRun({ agentId: "exec-coo", action: "Run COO Agent" }, () => runCOOAgent());
   }),
 
   runCMO: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runCMOAgent } = await import("../agents/executiveTier");
-    return runCMOAgent();
+    return withAgentRun({ agentId: "exec-cmo", action: "Run CMO Agent" }, () => runCMOAgent());
   }),
 
   runCTO: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runCTOAgent } = await import("../agents/executiveTier");
-    return runCTOAgent();
+    return withAgentRun({ agentId: "exec-cto", action: "Run CTO Agent" }, () => runCTOAgent());
   }),
 
   // ── Supreme Court agents ─────────────────────────────────────────────────────
   runSupremeCourt: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runSupremeCourtAgents } = await import("../agents/supremeCourtAgents");
-    return runSupremeCourtAgents();
+    return withAgentRun({ agentId: "sc-ethics", action: "Run Supreme Court review" }, () => runSupremeCourtAgents());
   }),
 
   // ── Managing tier agents ─────────────────────────────────────────────────────
   runManagingTier: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runAllManagingAgents } = await import("../agents/managingTierAgents");
-    return runAllManagingAgents();
+    return withAgentRun({ agentId: "mgr-partner-lifecycle", action: "Run all managing-tier agents" }, () => runAllManagingAgents());
   }),
 
   // ── ProLnk Media agents ──────────────────────────────────────────────────────
@@ -98,14 +99,14 @@ export const brainTrustRouter = router({
   runCommissionAudit: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runCommissionAudit } = await import("../agents/commissionAuditAgent");
-    return runCommissionAudit();
+    return withAgentRun({ agentId: "commission-audit", action: "Run commission audit" }, () => runCommissionAudit());
   }),
 
   // ── Data integrity ───────────────────────────────────────────────────────────
   runDataIntegrity: protectedProcedure.mutation(async ({ ctx }) => {
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const { runDataIntegrityCheck } = await import("../agents/dataIntegrityAgent");
-    return runDataIntegrityCheck();
+    return withAgentRun({ agentId: "data-integrity", action: "Run data integrity check" }, () => runDataIntegrityCheck());
   }),
 
   // ── Founding Network agents ───────────────────────────────────────────────────

@@ -97,11 +97,12 @@ function applyInsert(text: string, params: unknown[]): void {
   }
 
   // Inlined literals in the engine's VALUES clause (not bound params):
-  //   job_commission_event_id = 0, status = 'pending', created_at = NOW().
-  // The remaining columns are bound params in declaration order.
-  const inlined = new Set(["job_commission_event_id", "status", "created_at"]);
+  //   status = 'pending', created_at = NOW().
+  // job_commission_event_id is now a BOUND param (the deterministic job-event key),
+  // so it is matched positionally like the other bound columns.
+  const inlined = new Set(["status", "created_at"]);
   const boundColumns = columns.filter((c) => !inlined.has(c));
-  const byColumn: Record<string, unknown> = { job_commission_event_id: 0, status: "pending" };
+  const byColumn: Record<string, unknown> = { status: "pending" };
   boundColumns.forEach((c, i) => {
     byColumn[c] = params[i];
   });
@@ -113,6 +114,13 @@ function makeDb() {
     async execute(query: unknown) {
       const { text } = decodeSql(query);
       const { params } = decodeSql(query);
+
+      // Idempotency existence check: SELECT 1 ... WHERE job_commission_event_id = ?
+      if (/SELECT 1 AS x FROM commission_payout WHERE job_commission_event_id/i.test(text)) {
+        const key = params[0];
+        const exists = recordedInserts.some((r) => r.byColumn.job_commission_event_id === key);
+        return [exists ? [{ x: 1 }] : []];
+      }
 
       if (/^INSERT INTO commission_payout/i.test(text)) {
         applyInsert(text, params);
@@ -161,6 +169,7 @@ vi.mock("./db", async (importOriginal) => {
 import {
   distributeJobCommissions,
   distributeSubscriptionCommissions,
+  jobEventKey,
   previewJobCommissions,
 } from "./agents/commissionCascadeEngine";
 
@@ -391,5 +400,93 @@ describe("commission cascade — preview", () => {
     expect(res.totalDistributed).toBe(140);
     expect(res.prolnkRetains).toBe(860);
     expect(recordedInserts).toHaveLength(0);
+  });
+});
+
+// ── 6. Idempotency + FSM unification (SEAM-2) ─────────────────────────────────
+// Proves the money-loop fix: FSM completions now land in commission_payout (the
+// payout rail), and no path can double-pay the same job.
+describe("commission cascade — idempotency (SEAM-2 double-pay guard)", () => {
+  it("stamps a STABLE deterministic job-event key into every payout row", async () => {
+    uplineChainRows = chain4();
+    const jobId = "fsm_jobber_EXT-123";
+    await distributeJobCommissions({
+      jobId,
+      completingProId: 500,
+      propertyAddress: "100 Main St, Dallas TX",
+      jobValue: 10000,
+      platformFeeRate: 0.1,
+    });
+    const key = jobEventKey(jobId);
+    expect(key).toBeGreaterThan(0);
+    for (const ins of recordedInserts) {
+      expect(ins.byColumn.job_commission_event_id).toBe(key);
+    }
+    // Stable across calls with the same jobId.
+    expect(jobEventKey(jobId)).toBe(key);
+    expect(jobEventKey("different-job")).not.toBe(key);
+  });
+
+  it("(a) an FSM-style completion produces commission_payout rows the disburse rail picks up", async () => {
+    uplineChainRows = chain4();
+    const res = await distributeJobCommissions({
+      jobId: "fsm_jobber_EXT-900",
+      completingProId: 500,
+      propertyAddress: "1 FSM Way, Dallas TX",
+      jobValue: 10000,
+      platformFeeRate: 0.1,
+    });
+    expect(res.success).toBe(true);
+    // disbursePendingPayouts reads rows WHERE status='pending'; every row we wrote is pending.
+    expect(recordedInserts.length).toBe(4);
+    for (const ins of recordedInserts) {
+      expect(ins.byColumn.status).toBe("pending");
+    }
+  });
+
+  it("(b) processing the SAME job twice does NOT create duplicate payout rows", async () => {
+    uplineChainRows = chain4();
+    const args = {
+      jobId: "fsm_jobber_EXT-DUP",
+      completingProId: 500,
+      propertyAddress: "2 Dup Ln, Dallas TX",
+      jobValue: 10000,
+      platformFeeRate: 0.1,
+    };
+    const first = await distributeJobCommissions(args);
+    expect(first.success).toBe(true);
+    expect(recordedInserts).toHaveLength(4);
+
+    const second = await distributeJobCommissions(args);
+    expect(second.success).toBe(true); // idempotent no-op, not a failure
+    expect(second.distributions).toHaveLength(0); // wrote nothing the second time
+    expect(recordedInserts).toHaveLength(4); // STILL only 4 rows total
+  });
+
+  it("(c) a matched-loop completion + an FSM completion for the SAME job don't double-pay", async () => {
+    uplineChainRows = chain4();
+    // Both paths converge on the same stable jobId for the same real job.
+    const sharedJobId = "fsm_jobber_EXT-SHARED";
+
+    // Matched loop fires first.
+    await distributeJobCommissions({
+      jobId: sharedJobId,
+      completingProId: 500,
+      propertyAddress: "3 Shared St, Dallas TX",
+      jobValue: 10000,
+      platformFeeRate: 0.1,
+    });
+    expect(recordedInserts).toHaveLength(4);
+
+    // FSM webhook later fires for the same job → idempotency guard blocks it.
+    const fsm = await distributeJobCommissions({
+      jobId: sharedJobId,
+      completingProId: 500,
+      propertyAddress: "3 Shared St, Dallas TX",
+      jobValue: 10000,
+      platformFeeRate: 0.1,
+    });
+    expect(fsm.distributions).toHaveLength(0);
+    expect(recordedInserts).toHaveLength(4); // no duplicates
   });
 });

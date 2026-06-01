@@ -2721,7 +2721,13 @@ Answer concisely and helpfully. If asked about specific real-time account data (
         const partner = await getPartnerByUserId(ctx.user.id);
         if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
 
-        const jobId = `job_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+        // Deterministic jobId so the cascade engine's idempotency guard can dedupe
+        // repeated completeJob calls for the same job (same pro + address + value in
+        // the same payout month). A random id would defeat that guard and risk
+        // double-paying the network cascade on an accidental double-submit.
+        const payoutMonthKey = new Date().toISOString().slice(0, 7);
+        const normalizedAddr = input.propertyAddress.toLowerCase().trim().replace(/\s+/g, " ");
+        const jobId = `mloop_${partner.id}_${payoutMonthKey}_${input.jobValue}_${normalizedAddr}`;
 
         const { runOriginationLockAgent } = await import("./agents/foundingNetworkAgents");
         const origination = await runOriginationLockAgent({

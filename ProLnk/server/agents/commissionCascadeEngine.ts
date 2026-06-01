@@ -76,6 +76,37 @@ function currentPayoutMonth(): string {
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
 }
 
+// Derive a STABLE positive 31-bit int key from a jobId string. commission_payout
+// has no job_id column, but it does have job_commission_event_id (int). We stamp
+// that column with this deterministic key so the same job completion — whether it
+// arrives via the matched loop (completeJob) or an FSM webhook (autoCloseCommission)
+// — maps to the SAME key, giving us an idempotency anchor that prevents double-pay.
+export function jobEventKey(jobId: string): number {
+  const hash = crypto.createHash("sha256").update(jobId).digest();
+  // first 4 bytes → unsigned, then mask to 31 bits so it always fits a signed INT
+  // and is strictly positive (0 is reserved for legacy / unkeyed rows).
+  const n = hash.readUInt32BE(0) & 0x7fffffff;
+  return n === 0 ? 1 : n;
+}
+
+// Idempotency guard: have we ALREADY written commission_payout rows for this job
+// event? If so, return true and the caller must NOT create duplicates. Defensive:
+// on any error, returns false so a transient read failure never blocks a legit
+// payout (the cascade insert path is itself per-row and the disburse rail is
+// independently idempotent on stripe_transfer_id).
+async function payoutsExistForEvent(db: any, eventKey: number): Promise<boolean> {
+  try {
+    const rows = await (db as any).execute(
+      sql`SELECT 1 AS x FROM commission_payout WHERE job_commission_event_id = ${eventKey} LIMIT 1`
+    );
+    const list: any[] = rows?.[0] ?? rows ?? [];
+    return list.length > 0;
+  } catch (err) {
+    console.error("[CommissionCascade] payoutsExistForEvent error:", err);
+    return false;
+  }
+}
+
 export async function findHomeOriginator(propertyAddress: string): Promise<number | null> {
   try {
     const db = await getDb();
@@ -192,6 +223,7 @@ export async function distributeJobCommissions(params: {
   const platformFee = Math.round(jobValue * safeRate * 100) / 100;
 
   const distributions: CommissionDistribution["distributions"] = [];
+  const eventKey = jobEventKey(jobId);
 
   try {
     const db = await getDb();
@@ -203,6 +235,20 @@ export async function distributeJobCommissions(params: {
         prolnkRetains: platformFee,
         totalDistributed: 0,
         success: false,
+      };
+    }
+
+    // IDEMPOTENCY: if this job completion was already processed (matched loop or a
+    // prior FSM webhook fired for the same jobId), do not create duplicate payouts.
+    if (await payoutsExistForEvent(db, eventKey)) {
+      console.log(`[CommissionCascade] Job ${jobId} (key ${eventKey}) already has payouts — skipping (idempotent).`);
+      return {
+        jobId,
+        platformFee,
+        distributions: [],
+        prolnkRetains: platformFee,
+        totalDistributed: 0,
+        success: true,
       };
     }
 
@@ -263,16 +309,18 @@ export async function distributeJobCommissions(params: {
     const payoutMonth = currentPayoutMonth();
 
     for (const dist of distributions) {
-      (db as any).execute(
-        sql`
-          INSERT INTO commission_payout
-            (job_commission_event_id, recipient_user_id, source_pro_user_id, payout_type, rate_applied, amount, status, payout_month, created_at)
-          VALUES
-            (0, ${String(dist.partnerId)}, ${String(completingProId)}, ${dist.type}, ${dist.rate}, ${dist.amount}, 'pending', ${payoutMonth}, NOW())
-        `
-      ).catch((err: any) => {
+      try {
+        await (db as any).execute(
+          sql`
+            INSERT INTO commission_payout
+              (job_commission_event_id, recipient_user_id, source_pro_user_id, payout_type, rate_applied, amount, status, payout_month, created_at)
+            VALUES
+              (${eventKey}, ${String(dist.partnerId)}, ${String(completingProId)}, ${dist.type}, ${dist.rate}, ${dist.amount}, 'pending', ${payoutMonth}, NOW())
+          `
+        );
+      } catch (err: any) {
         console.error("[CommissionCascade] payout insert error:", err);
-      });
+      }
     }
 
     console.log(
@@ -320,6 +368,20 @@ export async function distributeSubscriptionCommissions(params: {
       };
     }
 
+    // Idempotency key for a subscription override: one cascade per subscriber per
+    // payout month. Re-running the same month's subscription distribution is a no-op.
+    const subEventKey = jobEventKey(`sub_${subscribingPartnerId}_${currentPayoutMonth()}`);
+    if (await payoutsExistForEvent(db, subEventKey)) {
+      console.log(`[CommissionCascade] Subscription for partner ${subscribingPartnerId} (key ${subEventKey}) already distributed this month — skipping (idempotent).`);
+      return {
+        subscribingPartnerId,
+        subscriptionAmount,
+        distributions: [],
+        totalDistributed: 0,
+        success: true,
+      };
+    }
+
     const chain = await getRecruitingChain(subscribingPartnerId);
     const levelRates = [
       RATES.subscriptionOverride.l1,
@@ -346,16 +408,18 @@ export async function distributeSubscriptionCommissions(params: {
     const payoutMonth = currentPayoutMonth();
 
     for (const dist of distributions) {
-      (db as any).execute(
-        sql`
-          INSERT INTO commission_payout
-            (job_commission_event_id, recipient_user_id, source_pro_user_id, payout_type, rate_applied, amount, status, payout_month, created_at)
-          VALUES
-            (0, ${String(dist.partnerId)}, ${String(subscribingPartnerId)}, ${"subscription_l" + dist.level}, ${dist.rate}, ${dist.amount}, 'pending', ${payoutMonth}, NOW())
-        `
-      ).catch((err: any) => {
+      try {
+        await (db as any).execute(
+          sql`
+            INSERT INTO commission_payout
+              (job_commission_event_id, recipient_user_id, source_pro_user_id, payout_type, rate_applied, amount, status, payout_month, created_at)
+            VALUES
+              (${subEventKey}, ${String(dist.partnerId)}, ${String(subscribingPartnerId)}, ${"subscription_l" + dist.level}, ${dist.rate}, ${dist.amount}, 'pending', ${payoutMonth}, NOW())
+          `
+        );
+      } catch (err: any) {
         console.error("[CommissionCascade] subscription payout insert error:", err);
-      });
+      }
     }
 
     console.log(

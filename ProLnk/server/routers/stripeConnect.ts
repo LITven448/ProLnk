@@ -280,16 +280,18 @@ export async function disbursePendingPayouts(opts?: { limit?: number }): Promise
 
   const limit = opts?.limit ?? 200;
 
-  // SEAM-3 FLAG (id-space mismatch, unresolved): the commission cascade engine
-  // (commissionCascadeEngine.ts) writes a `proWaitlist.id` into
-  // commission_payout.recipient_user_id (it resolves the completing pro by email
-  // against proWaitlist). The network-table writers (routers.ts / network.ts)
-  // instead write a pro_network_profile.user_id. This join resolves the recipient
-  // against partners.id / partners.userId — a THIRD id space. Unless proWaitlist.id
-  // == partners.id (or partners.userId), cascade-originated payouts will resolve to
-  // no connected account and be silently SKIPPED here. The extra proWaitlist join
-  // below widens resolution to cover the cascade path; confirm proWaitlist↔partners
-  // linkage before enabling Connect in production.
+  // RECIPIENT ID CONTRACT (SEAM-2 + SEAM-3): commission_payout.recipient_user_id
+  // is an upline/originator pro id written by the ONE cascade engine
+  // (commissionCascadeEngine.ts). ALL payout-bearing job completions now flow
+  // through that engine — both the matched loop (routers.ts completeJob) AND FSM
+  // webhooks (fsm-webhooks.ts autoCloseCommission) — so they share this single
+  // recipient id-space. The engine resolves uplines from pro_upline_chain /
+  // pro_network_profile joined to proWaitlist, so recipient_user_id is a
+  // proWaitlist.id (network-profile user id). This join resolves that recipient to a
+  // partners row via THREE paths: partners.id, partners.userId, OR the email
+  // fallback (proWaitlist.email = partners.contactEmail). Rows that resolve to no
+  // active connected account are SKIPPED (not failed). Confirm proWaitlist↔partners
+  // linkage (preferably the email fallback) before enabling Connect in production.
   const rows = await execRows(
     db,
     sql`

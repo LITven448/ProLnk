@@ -137,7 +137,8 @@ function extractFieldEdge(body: Record<string, unknown>): NormalizedEvent {
 // --- Commission auto-close -----------------------------------------------------
 async function autoCloseCommission(
   partnerId: number,
-  jobValue: number | null
+  jobValue: number | null,
+  fsmEventRef: { source: string; externalJobId: string | null }
 ): Promise<{ opportunityId: number | null; commissionId: number | null }> {
   const db = await getDb();
   if (!db) return { opportunityId: null, commissionId: null };
@@ -201,6 +202,7 @@ async function autoCloseCommission(
     }
   }
 
+  let legacyCommissionId: number | null = null;
   if (commissionAmount && commissionAmount > 0) {
     const [result] = await db.insert(commissions).values({
       opportunityId: opp.id,
@@ -212,10 +214,43 @@ async function autoCloseCommission(
       description: `FSM auto-close: job value $${jobValue?.toFixed(2) ?? "unknown"}`,
       paid: false,
     });
-    return { opportunityId: opp.id, commissionId: (result as { insertId: number }).insertId };
+    legacyCommissionId = (result as { insertId: number }).insertId;
   }
 
-  return { opportunityId: opp.id, commissionId: null };
+  // UNIFY (SEAM-2): the legacy `commissions` write above stays as a historical /
+  // audit record (admin earnings views read it), but it is NOT on the Stripe
+  // payout rail. The rail (disbursePendingPayouts) only reads `commission_payout`.
+  // So we ALSO run the canonical cascade engine here — the exact same entry point
+  // the matched loop (routers.ts completeJob) uses — so FSM-completed jobs produce
+  // commission_payout rows (referring-pro upline cascade 7/4/2/1% + 5% origination)
+  // that actually get disbursed. The engine is idempotent per job-event key, so if
+  // the matched loop already paid this job (or a prior FSM redelivery did), it
+  // creates no duplicates. We derive a STABLE jobId from the FSM source + external
+  // job id (falling back to the opportunity id) so redeliveries map to the same key.
+  if (jobValue && jobValue > 0) {
+    const stableJobId = fsmEventRef.externalJobId
+      ? `fsm_${fsmEventRef.source}_${fsmEventRef.externalJobId}`
+      : `fsm_opp_${opp.id}`;
+    const platformFeeRate = 0.1;
+    const propertyAddress =
+      (typeof opp.jobAddress === "string" && opp.jobAddress.trim()) || `opp-${opp.id}`;
+    try {
+      const { distributeJobCommissions } = await import(
+        "./agents/commissionCascadeEngine"
+      );
+      await distributeJobCommissions({
+        jobId: stableJobId,
+        completingProId: partnerId,
+        propertyAddress,
+        jobValue,
+        platformFeeRate,
+      });
+    } catch (err) {
+      console.error("[FSM Webhook] cascade distribution error:", err);
+    }
+  }
+
+  return { opportunityId: opp.id, commissionId: legacyCommissionId };
 }
 
 // --- Main webhook handler ------------------------------------------------------
@@ -298,7 +333,8 @@ async function handleFsmWebhook(
   // Auto-close commission
   const { opportunityId, commissionId } = await autoCloseCommission(
     partnerId,
-    event.jobValue
+    event.jobValue,
+    { source: event.source, externalJobId: event.externalJobId }
   );
 
   // Log the event

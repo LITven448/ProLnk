@@ -1,13 +1,13 @@
 /**
  * ProLnk / TrustyPro Transactional Email Service
  * Uses Resend API for all outbound emails.
- * Sending domain: onboarding@resend.dev (fallback until custom domains are verified)
- * Future: noreply@prolnk.xyz (ProLnk) | noreply@trustypro.io (TrustyPro)
+ * Sending domains: hello@prolnk.xyz (ProLnk) | hello@trustypro.io (TrustyPro)
+ * Overridable via FROM_EMAIL / FROM_EMAIL_TRUSTYPRO env vars.
  */
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_PROLNK = process.env.FROM_EMAIL || "ProLnk <hello@prolnk.xyz>";
-const FROM_TRUSTYPRO = process.env.FROM_EMAIL_TRUSTYPRO || "TrustyPro <hello@prolnk.xyz>";
+const FROM_TRUSTYPRO = process.env.FROM_EMAIL_TRUSTYPRO || "TrustyPro <hello@trustypro.io>";
 const BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.xyz";
 
 interface EmailPayload {

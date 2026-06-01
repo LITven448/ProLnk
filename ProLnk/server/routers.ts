@@ -5613,7 +5613,7 @@ Return a JSON object with:
             method: 'POST',
             headers: { 'Authorization': `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              from: 'TrustyPro <onboarding@resend.dev>',
+              from: process.env.FROM_EMAIL_TRUSTYPRO || 'TrustyPro <hello@trustypro.io>',
               to: [email],
               subject: "Your TrustyPro Home Access is Ready",
               html: `<div style="font-family:'Helvetica Neue',sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#4F46E5,#818CF8);padding:40px 32px;text-align:center;"><div style="font-size:32px;font-weight:900;color:#fff;">TrustyPro</div><div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">Home Health Network</div></div><div style="padding:40px 36px;"><h2 style="color:#0f172a;margin:0 0 12px;">Welcome, ${firstName}!</h2><p style="color:#475569;line-height:1.7;margin:0 0 28px;">Your home has been approved for TrustyPro access. We'll help you identify repair needs, track your home's health, and connect you with verified local pros \u2014 all in one place.</p><div style="text-align:center;margin:24px 0;"><a href="${homeUrl}" style="background:#4F46E5;color:#fff;padding:16px 40px;border-radius:10px;text-decoration:none;font-weight:800;font-size:15px;display:inline-block;">Set Up My Home \u2192</a></div><p style="color:#94a3b8;font-size:13px;text-align:center;">This invitation expires in 7 days.</p></div><div style="background:#F1F5F9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">\u00a9 2026 TrustyPro \u00b7 DFW, Texas</p></div></div>`,

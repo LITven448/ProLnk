@@ -207,7 +207,7 @@ export const featuredAdvertisersRouter = router({
         to: input.contactEmail,
         businessName: input.businessName,
         tierName: input.selectedTier.charAt(0).toUpperCase() + input.selectedTier.slice(1),
-        dashboardUrl: `${process.env.APP_BASE_URL || 'https://prolnk.io'}/advertise`,
+        dashboardUrl: `https://trustypro.io/advertise`,
       }).catch(() => {});
       return { success: true };
     }),

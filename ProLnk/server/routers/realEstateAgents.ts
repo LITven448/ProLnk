@@ -82,7 +82,7 @@ export const realEstateAgentsRouter = router({
             to: partner.contactEmail,
             agentName: partner.contactName || partner.businessName || 'Agent',
             referralCode,
-            dashboardUrl: `${process.env.VITE_OAUTH_PORTAL_URL || 'https://prolnk.io'}/agent-portal`,
+            dashboardUrl: `${process.env.VITE_OAUTH_PORTAL_URL || process.env.APP_BASE_URL || 'https://prolnk.xyz'}/agent-portal`,
           });
         }
       } catch (emailErr) {

@@ -457,7 +457,7 @@ export const adminExtrasRouter = router({
           partnerName: partner.name || partner.businessName,
           newTierName: input.newTier.charAt(0).toUpperCase() + input.newTier.slice(1),
           keepRate,
-          dashboardUrl: `${process.env.APP_BASE_URL || 'https://prolnk.io'}/dashboard`,
+          dashboardUrl: `${process.env.APP_BASE_URL || 'https://prolnk.xyz'}/dashboard`,
         }).catch(() => {});
       }
       await notifyOwner({

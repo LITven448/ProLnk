@@ -142,7 +142,7 @@ export const quickQuoteRouter = router({
               partnerName: (partner as any).businessName ?? (partner as any).ownerName ?? 'A Pro',
               serviceCategory: req.serviceCategory,
               message: input.partnerResponse ?? '',
-              dashboardUrl: 'https://prolnk.io/my-home/quotes',
+              dashboardUrl: 'https://trustypro.io/my-home/quotes',
             });
           }
         } catch (e) {

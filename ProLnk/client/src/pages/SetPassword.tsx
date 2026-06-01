@@ -5,7 +5,8 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle, Eye, EyeOff, Lock, AlertCircle, Check, X } from "lucide-react";
+import { CheckCircle, Eye, EyeOff, AlertCircle, Check, X } from "lucide-react";
+import ProLnkLogo from "@/components/ProLnkLogo";
 
 function PasswordRule({ met, label }: { met: boolean; label: string }) {
   return (
@@ -114,12 +115,9 @@ export default function SetPassword() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2.5 mb-3">
-            <div className="w-9 h-9 rounded-xl bg-[#F5E642] flex items-center justify-center">
-              <Lock className="w-4.5 h-4.5 text-[#0A1628]" />
-            </div>
-            <span className="text-2xl font-bold text-white tracking-tight">ProLnk</span>
-          </div>
+          <a href="/" className="inline-flex items-center bg-white rounded-xl px-3 py-1.5 mb-3">
+            <ProLnkLogo height={26} />
+          </a>
           <p className="text-white/50 text-sm">Partner Network</p>
         </div>
 
@@ -153,7 +151,7 @@ export default function SetPassword() {
                 </p>
                 {isReset ? (
                   <button
-                    onClick={() => navigate("/partner/dashboard")}
+                    onClick={() => navigate("/partner-forgot-password")}
                     className="text-[#0A1628] hover:underline text-sm font-semibold"
                   >
                     Request a new reset link
@@ -267,7 +265,7 @@ export default function SetPassword() {
         <p className="text-center text-xs text-white/40 mt-6">
           Already have an account?{" "}
           <button
-            onClick={() => navigate("/partner/dashboard")}
+            onClick={() => navigate("/partner-login")}
             className="text-[#F5E642] hover:text-white transition-colors font-semibold"
           >
             Sign in

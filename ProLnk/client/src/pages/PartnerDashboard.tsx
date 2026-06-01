@@ -491,6 +491,35 @@ export default function PartnerDashboard() {
     );
   }
 
+  if (!isAuthenticated) {
+    return (
+      <PartnerLayout>
+        <div className="max-w-md mx-auto py-24 px-6 text-center">
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
+            style={{ background: "linear-gradient(135deg, #E6F9F9, #CCF2F2)" }}>
+            <User className="w-8 h-8 text-[#0A1628]" />
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2 font-heading">Sign in to your dashboard</h2>
+          <p className="text-gray-500 mb-6 max-w-sm mx-auto text-sm">
+            Sign in with your partner account to view leads, earnings, and your network.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/partner-login">
+              <Button className="text-white w-full sm:w-auto" style={{ background: "#0A1628" }}>
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/apply">
+              <Button variant="outline" className="w-full sm:w-auto">
+                Apply to Join
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </PartnerLayout>
+    );
+  }
+
   if (!profileData) {
     return (
       <PartnerLayout>

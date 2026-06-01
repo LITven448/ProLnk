@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
+import ProLnkLogo from "@/components/ProLnkLogo";
 
 export default function PartnerLogin() {
   const [, navigate] = useLocation();
@@ -43,26 +44,16 @@ export default function PartnerLogin() {
         boxSizing: "border-box",
       }}>
         <div style={{ marginBottom: "32px" }}>
-          <div style={{
-            display: "flex",
+          <a href="/" style={{
+            display: "inline-flex",
             alignItems: "center",
-            gap: "10px",
-            marginBottom: "8px",
+            background: "#fff",
+            borderRadius: "10px",
+            padding: "6px 12px",
+            marginBottom: "20px",
           }}>
-            <div style={{
-              background: "#F5E642",
-              borderRadius: "8px",
-              width: "32px",
-              height: "32px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontWeight: 900,
-              fontSize: "16px",
-              color: "#0A1628",
-            }}>P</div>
-            <span style={{ color: "#fff", fontWeight: 700, fontSize: "20px", letterSpacing: "-0.3px" }}>ProLnk</span>
-          </div>
+            <ProLnkLogo height={28} />
+          </a>
           <h1 style={{ color: "#fff", fontSize: "26px", fontWeight: 700, margin: "0 0 6px", letterSpacing: "-0.5px" }}>
             Partner Sign In
           </h1>

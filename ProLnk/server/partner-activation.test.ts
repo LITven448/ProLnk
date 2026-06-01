@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildPartnerActivation, parseTrades, parseZipCsv } from "./partner-activation";
 import {
+  isMatchEligibleStatus,
   rankPartners,
   type MatchPartnerSignals,
   type OpportunityForMatch,
@@ -64,6 +65,37 @@ describe("buildPartnerActivation", () => {
       serviceZipCodes: "",
     });
     expect(warnings.some((w) => /no service zip/i.test(w))).toBe(true);
+  });
+
+  // REGRESSION (the activation bug): a degenerate application — legal structure in
+  // the trade field, no trades, no zips — used to silently produce an un-matchable
+  // partner. The contract is now: such input MUST be flagged by warnings[] so it
+  // never ships green.
+  it("CATCHES a fully degenerate application (legal-structure trade + empty zips) via warnings", () => {
+    const { payload, warnings } = buildPartnerActivation({
+      trades: [],
+      businessType: "LLC",
+      serviceZipCodes: "",
+    });
+    expect(payload.businessType).not.toMatch(/^llc$/i);
+    expect(warnings.some((w) => /no trade/i.test(w))).toBe(true);
+    expect(warnings.some((w) => /no service zip/i.test(w))).toBe(true);
+    expect(warnings.length).toBeGreaterThanOrEqual(2);
+  });
+
+  // The matcher only ever considers partners whose status is approved/active. If
+  // activation ever emitted 'pending' (or anything else), every activated pro would
+  // be invisible to the job loop. Lock the status against the matcher's real
+  // eligibility predicate, not a hardcoded string.
+  it("always emits a status the matching engine treats as eligible", () => {
+    const { payload } = buildPartnerActivation({
+      trades: '["Plumbing"]',
+      serviceZipCodes: "75201",
+    });
+    expect(payload.status).toBe("active");
+    expect(isMatchEligibleStatus(payload.status)).toBe(true);
+    // a known-bad status the matcher would reject — guards the predicate itself
+    expect(isMatchEligibleStatus("pending")).toBe(false);
   });
 });
 

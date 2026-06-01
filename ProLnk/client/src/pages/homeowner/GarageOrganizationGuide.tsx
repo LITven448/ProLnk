@@ -45,7 +45,7 @@ function getOrgPlan(sqft: number, use: GarageUse): OrgResult {
       topItems: ['Overhead storage platform for seasonal items ($400-800)', 'Slatwall zones for different purposes ($600-1,200)', 'Rolling workbench (movable) ($400-700)', 'Epoxy floor throughout ($1,500-3,500)'],
       climateRecommendation: 'Portable AC ($300-600) for immediate relief; mini-split ($1,500-3,500) for long-term solution if you use the space regularly.',
       estimatedCost: { low: 2500, high: 7000 },
-      notes: ['Zone your garage: parking zone, storage zone, work zone', 'Color-code zones with floor tape ($20) during planning phase', 'Mixed-use garages benefit most from epoxy floors — handles all uses', 'Keep 3' clearance around vehicle doors at minimum'],
+      notes: ['Zone your garage: parking zone, storage zone, work zone', 'Color-code zones with floor tape ($20) during planning phase', 'Mixed-use garages benefit most from epoxy floors — handles all uses', "Keep 3' clearance around vehicle doors at minimum"],
     },
   };
   return plans[use];

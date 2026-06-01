@@ -11,7 +11,7 @@ export default function DFWAirflowCalculatorGuide() {
     const fl = parseInt(stories, 10);
     if (!s || !fl || !layout) return;
     const baseCFM = Math.round(s * 0.05 * 400) / 10;
-    const cfm = `${Math.round(baseCFM * 10)–Math.round(baseCFM * 12)} CFM`;
+    const cfm = `${Math.round(baseCFM * 10)}–${Math.round(baseCFM * 12)} CFM`;
     const challenges: string[] = [];
     const solutions: string[] = [];
     if (fl >= 2) {

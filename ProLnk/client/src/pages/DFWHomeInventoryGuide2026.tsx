@@ -14,8 +14,7 @@ export default function DFWHomeInventoryGuide2026() {
 
   const handleCopy = () => {
     if (selected === null) return;
-    navigator.clipboard.writeText(rooms[selected].items.join('
-'));
+    navigator.clipboard.writeText(rooms[selected].items.join('\n'));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

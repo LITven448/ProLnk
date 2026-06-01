@@ -201,7 +201,7 @@ export default function HVACGuide() {
 
         {/* Warning Signs */}
         <div>
-          <h2 className="text-white font-semibold mb-3 flex items-center gap-2`>
+          <h2 className="text-white font-semibold mb-3 flex items-center gap-2">
             <AlertTriangle className="w-4 h-4 text-red-400" />
             Warning Signs
           </h2>

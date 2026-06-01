@@ -10,9 +10,7 @@ export default function DFWFoundationWinterPrep2026() {
     const slabTips = ['Gradually reduce watering by 25% each week starting October 1 — abrupt cutoff causes clay shrinkage and slab movement', 'Clear all gutters and downspouts before first winter rain — DFW clay becomes impermeable when frozen', 'Inspect French drains and ensure slope directs water away from foundation perimeter', 'Mark any existing foundation cracks with tape to monitor winter movement'];
     const pierTips = ['Wrap exposed pier and beam perimeter with thermal insulation before first freeze', 'Inspect crawl space vents — close in winter to reduce freeze risk to pipes and wood framing', 'Check for moisture accumulation under pier and beam before cold season', 'Ensure vapor barrier is intact across crawl space floor'];
     const tips = homeType === 'pier_beam' ? pierTips : slabTips;
-    setGuide(tips.join('
-
-'));
+    setGuide(tips.join('\n\n'));
   }
 
   return (

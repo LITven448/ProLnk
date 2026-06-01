@@ -37,10 +37,7 @@ export default function DFWCFMGuide() {
             <div>
               <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94A3B8' }}>Home Size</label>
               <div style={{ display: 'flex', gap: 8 }}>
-                {[['small', 'Small
-<1,500 sf'], [’medium', 'Medium
-1,500–3,000 sf'], [’large', 'Large
-3,000+ sf']].map(([val, label]) => (
+                {[['small', 'Small\n<1,500 sf'], ['medium', 'Medium\n1,500–3,000 sf'], ['large', 'Large\n3,000+ sf']].map(([val, label]) => (
                   <button key={val} onClick={() => setHomeSize(val)}
                     style={{ flex: 1, padding: '10px 8px', borderRadius: 10, border: `2px solid ${homeSize === val ? '#F5E642' : '#1E3A5F'}`, background: homeSize === val ? '#F5E642' : 'transparent', color: homeSize === val ? '#0A1628' : '#E8EAF0', fontWeight: 600, cursor: 'pointer', fontSize: 13, whiteSpace: 'pre-line', lineHeight: 1.3 }}>
                     {label}

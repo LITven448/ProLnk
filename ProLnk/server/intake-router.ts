@@ -349,7 +349,7 @@ export async function dispatchLeadToPartner(
           serviceType: category,
           address: 'On file',
           estimatedValue: opp?.estimatedJobValue ? Number(opp.estimatedJobValue) : 0,
-          confidence: 90,
+          confidence: 0.9,
           dashboardUrl: `${ENV.appBaseUrl}/dashboard/leads`,
         }).catch(() => {});
       }

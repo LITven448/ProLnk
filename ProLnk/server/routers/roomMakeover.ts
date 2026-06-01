@@ -10,6 +10,7 @@ import { generateImage } from "../_core/imageGeneration";
 import { getDb } from "../db";
 import { roomMakeoverSessions } from "../../drizzle/schema";
 import { eq, desc } from "drizzle-orm";
+import { sendRoomMakeoverReady } from "../email";
 
 // Room type options
 const ROOM_TYPES = [
@@ -182,6 +183,15 @@ export const roomMakeoverRouter = router({
           generatedImageUrl: url,
           generationStatus: 'complete',
         }).where(eq(roomMakeoverSessions.id, sessionId));
+        if (input.guestEmail) {
+          const viewUrl = `https://trustypro.io/room-makeover/${sessionId}`;
+          await sendRoomMakeoverReady({
+            to: input.guestEmail,
+            name: input.guestName || "there",
+            roomType: input.roomType,
+            viewUrl,
+          }).catch((e) => console.error('[RoomMakeover] makeover-ready email failed:', e));
+        }
       }).catch(async (err) => {
         console.error('[RoomMakeover] Image generation failed:', err);
         const db2 = await getDb();

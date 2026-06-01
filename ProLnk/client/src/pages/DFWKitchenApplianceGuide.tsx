@@ -41,7 +41,7 @@ export default function DFWKitchenApplianceGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '32px' }}>
           <div style={{ background: '#112240', borderRadius: '10px', padding: '20px' }}>
-            <h3 style={{ color: '#F5E642', marginTop: 0 }}><url>🔁</span> Gas vs Induction in DFW</h3>
+            <h3 style={{ color: '#F5E642', marginTop: 0 }}><span>🔁</span> Gas vs Induction in DFW</h3>
             <ul style={{ color: '#a0aebe', lineHeight: '1.8', paddingLeft: '20px' }}>
               <li>78% of DFW homes have natural gas access</li>
               <li>Induction adoption growing fast - up 23% since 2023</li>
@@ -77,7 +77,7 @@ export default function DFWKitchenApplianceGuide() {
               <li>Appliances run harder in high ambient temps</li>
               <li>ENERGY STAR saves avg $400/5yr over standard</li>
               <li>Oncor rebates: up to $100 on qualifying units</li>
-              <li>Look for EF rating > 0.75 on water heaters</li>
+              <li>Look for EF rating &gt; 0.75 on water heaters</li>
             </ul>
           </div>
         </div>

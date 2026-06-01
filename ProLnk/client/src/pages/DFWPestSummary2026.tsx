@@ -58,7 +58,7 @@ export default function DFWPestSummary2026() {
               <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 8 }}>Priority pests: {profile.pests}</div>
               <div style={{ color: '#FF8C69', marginBottom: 6, fontSize: 14 }}>⚠️ {profile.risk}</div>
               <div style={{ color: '#6EE7B7', fontSize: 14 }}>✅ {profile.plan}</div>
-              {homeType && <div style={{ marginTop: 10, color: '#8B9BB4', fontSize: 13 }}>🏘️ {homeType === 'Rental property' ? 'Rental properties: consider monthly service — tenant complaints and legal liability increase with deferred pest control. Document every service visit.' : homeType === 'Townhome/condo' : 'Check HOA pest control scope — exterior treatment may be covered. Interior is always your responsibility.' ? false : 'Single-family homes benefit most from bundled quarterly plans — termite bond + general pest + mosquito in one contract for best pricing.'}</div>}
+              {homeType && <div style={{ marginTop: 10, color: '#8B9BB4', fontSize: 13 }}>🏘️ {homeType === 'Rental property' ? 'Rental properties: consider monthly service — tenant complaints and legal liability increase with deferred pest control. Document every service visit.' : homeType === 'Townhome/condo' ? 'Check HOA pest control scope — exterior treatment may be covered. Interior is always your responsibility.' : 'Single-family homes benefit most from bundled quarterly plans — termite bond + general pest + mosquito in one contract for best pricing.'}</div>}
             </div>
           )}
         </div>

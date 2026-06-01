@@ -8,7 +8,7 @@ const waterRates: Record<string, number> = { Dallas: 6.8, Frisco: 7.2, Plano: 6.
 const rebates: Record<string, { amount: string; url: string }> = {
   Dallas: { amount: '$100', url: 'dallas water' }, Frisco: { amount: '$150', url: 'frisco water efficiency' }, Plano: { amount: '$75', url: 'plano water rebate' },
   Allen: { amount: '$100', url: 'allen water conservation' }, McKinney: { amount: '$100', url: 'mckinney utilities' }, Prosper: { amount: '$75', url: 'prosper town water' },
-  Fort Worth: { amount: '$150', url: 'fort worth water' }, Arlington: { amount: '$75', url: 'arlington water rebate' }, Frisco: { amount: '$150', url: 'frisco' },
+  'Fort Worth': { amount: '$150', url: 'fort worth water' }, Arlington: { amount: '$75', url: 'arlington water rebate' },
 };
 
 function calcROI(system: string, yard: string, city: string) {

@@ -110,7 +110,7 @@ export default function DFWNaturalGasServiceGuide() {
                     </div>
                     <div>
                       <div style={{ color: '#64748b', fontSize: '0.75rem' }}>BUDGET BILLING</div>
-                      <div style={{ color: '#22c55e', fontWeight: 600' }}>✅ Available — call to enroll</div>
+                      <div style={{ color: '#22c55e', fontWeight: 600 }}>✅ Available — call to enroll</div>
                     </div>
                   </div>
                   <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{info.setupNote}</div>

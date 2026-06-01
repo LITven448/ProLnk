@@ -6,9 +6,22 @@
  */
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM_PROLNK = process.env.FROM_EMAIL || "ProLnk <hello@prolnk.xyz>";
-const FROM_TRUSTYPRO = process.env.FROM_EMAIL_TRUSTYPRO || "TrustyPro <hello@trustypro.io>";
+export const FROM_PROLNK = process.env.FROM_EMAIL || "ProLnk <hello@prolnk.xyz>";
+export const FROM_TRUSTYPRO = process.env.FROM_EMAIL_TRUSTYPRO || "TrustyPro <hello@trustypro.io>";
 const BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.xyz";
+
+export type EmailBrand = "prolnk" | "trustypro";
+
+/**
+ * Resolve the correct FROM sender for a brand. ProLnk senders must come from the
+ * prolnk.xyz domain and TrustyPro senders from trustypro.io — a mismatch (e.g.
+ * sending a TrustyPro homeowner email from the ProLnk domain) breaks DKIM/SPF
+ * alignment for that brand and tanks deliverability. This is the single source of
+ * truth the brand-FROM contract test locks down.
+ */
+export function fromForBrand(brand: EmailBrand): string {
+  return brand === "trustypro" ? FROM_TRUSTYPRO : FROM_PROLNK;
+}
 
 interface EmailPayload {
   to: string;

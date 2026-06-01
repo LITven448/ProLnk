@@ -185,10 +185,16 @@ function atCapacity(partner: MatchPartnerSignals): boolean {
   return toNum(partner.weeklyLeadsReceived, 0) >= cap;
 }
 
+/** The ONLY partner statuses the matcher (SQL filter + isActive) treats as
+ *  eligible. Exported so the activation flow can assert its output status is one
+ *  the matcher will actually consider. */
+export function isMatchEligibleStatus(status: string | null | undefined): boolean {
+  const s = (status ?? "").toLowerCase();
+  return s === "approved" || s === "active";
+}
+
 function isActive(partner: MatchPartnerSignals): boolean {
-  const status = (partner.status ?? "").toLowerCase();
-  const ok = status === "approved" || status === "active";
-  return ok && !partner.suspendedAt;
+  return isMatchEligibleStatus(partner.status) && !partner.suspendedAt;
 }
 
 /** Pure scoring function — given an eligible partner + proximity, produce a score

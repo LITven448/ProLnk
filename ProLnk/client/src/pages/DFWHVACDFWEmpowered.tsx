@@ -8,7 +8,7 @@ const empowermentAreas = [
     howTo: [
       '📋 Texas law requires contractors to provide itemized estimates on request',
       '📋 You have the right to a second opinion before any repair over $200',
-      '📋 Manufacturers' warranties require documented service records — get them in writing',
+      "📋 Manufacturers' warranties require documented service records — get them in writing",
       '📋 Home warranty companies must honor claims for covered systems — document the failure',
       '📋 You can dispute any invoice that doesn’t match the agreed quote',
     ],

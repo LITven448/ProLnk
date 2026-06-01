@@ -85,7 +85,7 @@ export default function DFWPlumbingRepairCostGuide() {
                 <div style={{ fontSize: 24, fontWeight: 800, color: '#22C55E' }}>${result.low.toLocaleString()}–${result.high.toLocaleString()}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4' }}>Emergency Rate</div>
+                <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Emergency Rate</div>
                 <div style={{ fontSize: 24, fontWeight: 800, color: '#F97316' }}>${result.emergLow.toLocaleString()}–${result.emergHigh.toLocaleString()}</div>
               </div>
             </div>

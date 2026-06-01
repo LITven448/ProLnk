@@ -49,12 +49,12 @@ export default function DFWHumidityTestingGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🌡️ How to Test Humidity in DFW</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {[
-              { icon: '📱', title: 'Digital Hygrometer ($15–30)', desc: `Most accurate. Place in bedroom, living room, and near HVAC return. Read after 30 min.\ },
-              { icon: '🏠`, title: 'Ideal Range: 45–50% Year-Round', desc: `DFW target for comfort + mold prevention. Tighter than national average due to clay soil off-gassing.\ },
-              { icon: '❄️`, title: 'Summer High Reads', desc: `If >55% in summer, AC is undersized or filter clogged. Schedule HVAC service before peak.\ },
-              { icon: '🌬️`, title: 'Winter Low Reads', desc: `If <35% in winter, air leaking out. Seal attic penetrations and weatherstrip doors.\ },
+              { icon: '📱', title: 'Digital Hygrometer ($15–30)', desc: `Most accurate. Place in bedroom, living room, and near HVAC return. Read after 30 min.` },
+              { icon: '🏠', title: 'Ideal Range: 45–50% Year-Round', desc: `DFW target for comfort + mold prevention. Tighter than national average due to clay soil off-gassing.` },
+              { icon: '❄️', title: 'Summer High Reads', desc: `If >55% in summer, AC is undersized or filter clogged. Schedule HVAC service before peak.` },
+              { icon: '🌬️', title: 'Winter Low Reads', desc: `If <35% in winter, air leaking out. Seal attic penetrations and weatherstrip doors.` },
             ].map((item) => (
-              <div key={item.title} style={{ display: 'flex`, gap: '1rem', alignItems: 'flex-start' }}>
+              <div key={item.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '1.5rem' }}>{item.icon}</span>
                 <div><div style={{ fontWeight: 600, color: '#E8EDF5' }}>{item.title}</div><div style={{ color: '#8899AA', fontSize: '0.9rem' }}>{item.desc}</div></div>
               </div>

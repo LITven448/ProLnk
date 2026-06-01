@@ -27,7 +27,7 @@ const fanGuide: Record<string, Record<string, string>> = {
 };
 
 export default function DFWCeilingFanGuide2026() {
-  const [roomSize, setRoomSize] = useState<string>(`\);
+  const [roomSize, setRoomSize] = useState<string>('');
   const [use, setUse] = useState<string>('');
   const [activeFan, setActiveFan] = useState<string>('');
 

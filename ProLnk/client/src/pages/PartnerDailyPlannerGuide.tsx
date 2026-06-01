@@ -185,9 +185,9 @@ export default function PartnerDailyPlannerGuide() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
                   <span style={{ color: '#475569' }}>🔧 On-site jobs + photo uploads</span>
-                  <span style={{ color: '#6366f1', fontWeight: 600` }}>{startHour}:30 AM – {Number(endHour) > 12 ? \`\${Number(endHour)-12}:00 PM\` : \`\${endHour}:00\`}</span>
+                  <span style={{ color: '#6366f1', fontWeight: 600 }}>{startHour}:30 AM – {Number(endHour) > 12 ? `${Number(endHour)-12}:00 PM` : `${endHour}:00`}</span>
                 </div>
-                <div style={{ display: 'flex`, justifyContent: 'space-between', padding: '10px 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
                   <span style={{ color: '#475569' }}>🌇 Evening wrap-up</span>
                   <span style={{ color: '#6366f1', fontWeight: 600 }}>{Number(endHour) > 12 ? `${Number(endHour)-12}:00` : endHour}-{Number(endHour) > 12 ? `${Number(endHour)-11}:15 PM` : `${Number(endHour)+1}:15`}</span>
                 </div>

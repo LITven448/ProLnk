@@ -96,9 +96,9 @@ export default function DFWInvestorHousingGuide() {
               <div key={r.name} style={{ borderBottom: i < results.length - 1 ? '1px solid #1e3a5f' : 'none', paddingBottom: '1rem', marginBottom: '1rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ color: '#e2e8f0', fontWeight: 600 }}>#{i + 1} {r.name}</span>
-                  <span style={{ color: '#F5E642', fontWeight: 700` }}>~\${r.avgPrice.toLocaleString()} avg</span>
+                  <span style={{ color: '#F5E642', fontWeight: 700 }}>~${r.avgPrice.toLocaleString()} avg</span>
                 </div>
-                <div style={{ display: 'flex`, gap: '1.5rem', marginTop: '0.3rem' }}>
+                <div style={{ display: 'flex', gap: '1.5rem', marginTop: '0.3rem' }}>
                   <span style={{ color: '#4ade80', fontSize: '0.8rem' }}>📊 Cap: {r.capRate}%</span>
                   <span style={{ color: '#60a5fa', fontSize: '0.8rem' }}>🔨 Flip ROI: {r.flipROI}</span>
                   <span style={{ color: '#a78bfa', fontSize: '0.8rem' }}>🏨 STR: {r.strPotential}</span>

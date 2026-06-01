@@ -41,7 +41,7 @@ export default function DFWAtticScienceGuide2026() {
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Understanding attic dynamics in one of America`s hottest urban climates.</p>
 
-        <div style={{ display: 'grid`, gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[
             { icon: '🌡️', label: 'Peak Attic Temp', value: '140°F', note: 'July afternoon' },
             { icon: '☀️', label: 'Radiant Barrier Effect', value: '97% blocked', note: 'of radiant heat' },

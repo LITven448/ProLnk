@@ -21,7 +21,7 @@ const needGuide: Record<string, string> = {
 };
 
 export default function DFWOutletTypesGuide2026() {
-  const [need, setNeed] = useState<string>(`\);
+  const [need, setNeed] = useState<string>('');
   const [activeOutlet, setActiveOutlet] = useState<string>('');
 
   return (

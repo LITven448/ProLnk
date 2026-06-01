@@ -113,7 +113,7 @@ export default function PartnerInsuranceRequirementsGuide() {
                 proTip: 'Ask your insurer for a certificate of insurance with ProLnk listed as additional insured for large jobs.',
               },
               {
-                name: 'Workers' Compensation',
+                name: "Workers' Compensation",
                 emoji: '👷',
                 required: false,
                 coverage: 'State-required if you have employees',

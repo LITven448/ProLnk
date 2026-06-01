@@ -128,6 +128,7 @@ import { analyzeJobPhoto } from "./photo-intelligence";
 import { commissionsRouter } from "./routers/commissions";
 import { partnerOAuthRouter } from "./routers/partnerOAuth";
 import { photoUploadRouter } from "./routers/photoUpload";
+import { makeRequestTrackingToken, verifyRequestTrackingToken } from "./_core/requestToken";
 
 // -- Admin guard --
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -416,7 +417,63 @@ export const appRouter = router({
             console.warn('[homeowner.submitJobRequest] auto-offer failed:', err);
           }
         }
-        return { opportunityId, offerId };
+        const trackingToken = opportunityId ? makeRequestTrackingToken(opportunityId) : null;
+        return { opportunityId, offerId, trackingToken };
+      }),
+
+    // -- Public: Homeowner-facing status of a submitted request --------------------
+    // Token-gated (HMAC of opportunity id), mirroring the customerDeals public token
+    // pattern so an unauthenticated homeowner can safely track their request without
+    // exposing internal data. Returns only homeowner-safe fields.
+    getRequestStatus: publicProcedure
+      .input(z.object({ id: z.number().int().positive(), token: z.string().min(8) }))
+      .query(async ({ input }) => {
+        if (!verifyRequestTrackingToken(input.id, input.token)) {
+          throw new TRPCError({ code: 'NOT_FOUND', message: 'Request not found' });
+        }
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
+        const rows = await (db as any).execute(sql`
+          SELECT
+            o.id, o.opportunityCategory, o.description, o.jobAddress, o.jobZip,
+            o.homeownerName, o.status, o.adminReviewStatus, o.assignedPartnerId,
+            o.assignedAt, o.createdAt,
+            p.businessName AS assignedPartnerName,
+            p.businessType AS assignedPartnerType
+          FROM opportunities o
+          LEFT JOIN partners p ON o.assignedPartnerId = p.id
+          WHERE o.id = ${input.id}
+          LIMIT 1
+        `);
+        const o = (rows.rows || rows)[0];
+        if (!o) throw new TRPCError({ code: 'NOT_FOUND', message: 'Request not found' });
+
+        // Derive a homeowner-friendly stage from internal status/assignment.
+        const isAssigned = !!o.assignedPartnerId;
+        let stage: 'submitted' | 'matching' | 'assigned' = 'submitted';
+        if (isAssigned || ['assigned', 'accepted', 'in_progress', 'job_closed', 'completed'].includes(String(o.status))) {
+          stage = 'assigned';
+        } else if (o.adminReviewStatus === 'approved' || ['sent', 'matching', 'dispatched', 'routing'].includes(String(o.status))) {
+          stage = 'matching';
+        }
+
+        return {
+          id: o.id as number,
+          category: o.opportunityCategory as string,
+          description: o.description as string,
+          address: (o.jobAddress as string) ?? null,
+          zip: (o.jobZip as string) ?? null,
+          homeownerName: (o.homeownerName as string) ?? null,
+          submittedAt: o.createdAt,
+          stage,
+          assigned: isAssigned
+            ? {
+                businessName: (o.assignedPartnerName as string) || 'A verified pro',
+                trade: (o.assignedPartnerType as string) || (o.opportunityCategory as string) || 'Home Service',
+                assignedAt: o.assignedAt ?? null,
+              }
+            : null,
+        };
       }),
 
     // -- Profile --

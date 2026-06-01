@@ -261,6 +261,12 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
             >
               Join the Waitlist — Be First In Line <ArrowRight className="w-5 h-5" />
             </motion.button>
+            <p className="mt-4 text-sm text-gray-500">
+              Need a pro now?{" "}
+              <a href="/request-service" className="font-bold underline hover:opacity-80" style={{ color: ACCENT }}>
+                Request service
+              </a>
+            </p>
           </div>
         </AnimSection>
       </div>

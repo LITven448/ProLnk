@@ -41,6 +41,9 @@ export default function RequestService() {
   };
 
   if (submit.isSuccess) {
+    const oppId = submit.data?.opportunityId;
+    const token = submit.data?.trackingToken;
+    const trackUrl = oppId && token ? `/my-request/${oppId}?t=${token}` : null;
     return (
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white flex items-center justify-center px-4">
         <div className="bg-white rounded-3xl shadow-xl border border-indigo-100 max-w-md w-full p-8 text-center">
@@ -51,9 +54,18 @@ export default function RequestService() {
           <p className="text-gray-500 mt-2">
             We're matching your job with the best-rated, verified pros in your area. You'll hear from us shortly.
           </p>
+          {trackUrl && (
+            <a
+              href={trackUrl}
+              className="mt-6 w-full rounded-xl text-white font-semibold py-3 flex items-center justify-center gap-2 transition"
+              style={{ backgroundColor: INDIGO }}
+            >
+              Track my request <ArrowRight className="w-4 h-4" />
+            </a>
+          )}
           <button
             onClick={() => window.location.reload()}
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold"
             style={{ color: INDIGO }}
           >
             Submit another request <ArrowRight className="w-4 h-4" />

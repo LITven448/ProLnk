@@ -444,10 +444,13 @@ export const matchingRouter = router({
             const trade = opp.trade || opp.type || "Home Service";
             if (opp.homeownerEmail) {
               try {
+                const { requestStatusUrl } = await import("../_core/requestToken");
+                const baseUrl = process.env.APP_BASE_URL || "https://trustypro.io";
                 await sendProMatchedNotification(opp.homeownerEmail, {
                   homeownerName: opp.homeownerName ?? undefined,
                   businessName: pro.businessName || "A verified pro",
                   trade,
+                  dashboardUrl: requestStatusUrl(offer.opportunityId, baseUrl),
                 });
               } catch (err) {
                 console.error("[Matching] sendProMatchedNotification failed:", err);

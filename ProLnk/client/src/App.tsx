@@ -43,6 +43,7 @@ const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
 const PartnerOffers = lazy(() => import("./pages/PartnerOffers"));
 const RequestService = lazy(() => import("./pages/RequestService"));
+const RequestStatus = lazy(() => import("./pages/RequestStatus"));
 const MatchingConsole = lazy(() => import("./pages/admin/MatchingConsole"));
 const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
@@ -645,6 +646,8 @@ function DomainRouter() {
       if (location.startsWith("/trustypro")) return;
       // Allow homeowner job-request intake on the trustypro brand
       if (location.startsWith("/request-service")) return;
+      // Allow homeowner request status tracking on the trustypro brand
+      if (location.startsWith("/my-request")) return;
       // trustypro.io root → stay at / (TrustyProHome renders via Router below)
       if (location === "/" || location === "") return;
       // Any unmatched trustypro.io path → redirect to root
@@ -735,6 +738,7 @@ function WaitlistGuard() {
     if (location.startsWith("/admin")) return;
     if (location.startsWith("/dashboard")) return;
     if (location.startsWith("/my-home")) return;
+    if (location.startsWith("/my-request")) return;
     if (location.startsWith("/join/")) return;
     if (location.startsWith("/trustypro/")) return;
     if (WAITLIST_ALLOWED.has(location)) return;
@@ -786,6 +790,7 @@ function Router() {
       <Route path="/dashboard" component={PartnerDashboard} />
       <Route path="/partner/offers" component={PartnerOffers} />
       <Route path="/request-service" component={RequestService} />
+      <Route path="/my-request/:id" component={RequestStatus} />
       <Route path="/dashboard/leads" component={InboundLeads} />
       <Route path="/leads/marketplace" component={LeadMarketplace} />
       <Route path="/dashboard/referrals" component={MyReferrals} />

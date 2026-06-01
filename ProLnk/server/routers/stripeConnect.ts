@@ -280,15 +280,28 @@ export async function disbursePendingPayouts(opts?: { limit?: number }): Promise
 
   const limit = opts?.limit ?? 200;
 
+  // SEAM-3 FLAG (id-space mismatch, unresolved): the commission cascade engine
+  // (commissionCascadeEngine.ts) writes a `proWaitlist.id` into
+  // commission_payout.recipient_user_id (it resolves the completing pro by email
+  // against proWaitlist). The network-table writers (routers.ts / network.ts)
+  // instead write a pro_network_profile.user_id. This join resolves the recipient
+  // against partners.id / partners.userId — a THIRD id space. Unless proWaitlist.id
+  // == partners.id (or partners.userId), cascade-originated payouts will resolve to
+  // no connected account and be silently SKIPPED here. The extra proWaitlist join
+  // below widens resolution to cover the cascade path; confirm proWaitlist↔partners
+  // linkage before enabling Connect in production.
   const rows = await execRows(
     db,
     sql`
       SELECT cp.id, cp.amount, cp.recipient_user_id, cp.status, cp.payout_type, cp.payout_month,
              p.id AS partnerId, p.stripeConnectAccountId AS accountId, p.stripeConnectStatus AS connectStatus
       FROM commission_payout cp
+      LEFT JOIN proWaitlist pw
+        ON pw.id = CAST(cp.recipient_user_id AS UNSIGNED)
       LEFT JOIN partners p
         ON p.id = CAST(cp.recipient_user_id AS UNSIGNED)
         OR p.userId = CAST(cp.recipient_user_id AS UNSIGNED)
+        OR (pw.email IS NOT NULL AND p.contactEmail = pw.email)
       WHERE cp.status = 'pending'
       ORDER BY cp.created_at ASC
       LIMIT ${limit}

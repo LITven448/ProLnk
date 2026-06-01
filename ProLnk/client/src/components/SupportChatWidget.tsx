@@ -6,7 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
-type ChatMode = "advertiser" | "homeowner";
+type ChatMode = "advertiser" | "homeowner" | "pro";
+
+type Brand = "prolnk" | "trustypro" | "advertiser";
 
 interface Message {
   role: "user" | "assistant";
@@ -23,6 +25,12 @@ interface SupportChatWidgetProps {
   onForcedOpenHandled?: () => void;
 }
 
+const MODE_BRAND: Record<ChatMode, Brand> = {
+  advertiser: "advertiser",
+  homeowner: "trustypro",
+  pro: "prolnk",
+};
+
 const DEFAULT_QUESTIONS: Record<ChatMode, string[]> = {
   advertiser: [
     "How does featured advertising work?",
@@ -36,11 +44,18 @@ const DEFAULT_QUESTIONS: Record<ChatMode, string[]> = {
     "What issues do I have?",
     "How does TrustyPro work?",
   ],
+  pro: [
+    "How does the commission pool work?",
+    "What does each plan cost?",
+    "Is there a free trial?",
+    "Do I need a background check?",
+  ],
 };
 
 const DEFAULT_GREETING: Record<ChatMode, string> = {
   advertiser: "Hi! I'm the ProLnk AI assistant. Ask me anything about advertising, tiers, or getting more leads.",
   homeowner: "Hi! I'm the TrustyPro AI assistant. Ask me anything about your home's health, finding pros, or using TrustyPro.",
+  pro: "Hi! I'm the ProLnk AI assistant. Ask me about plans, commissions, the free trial, or getting started as a pro.",
 };
 
 export default function SupportChatWidget({
@@ -77,10 +92,15 @@ export default function SupportChatWidget({
     }
   }, [isOpen]);
 
+  const [showHandoff, setShowHandoff] = useState(false);
+  const [handoffEmail, setHandoffEmail] = useState("");
+  const [handoffSent, setHandoffSent] = useState(false);
+
+  const brand = MODE_BRAND[mode];
   const questions = suggestedQuestions ?? DEFAULT_QUESTIONS[mode];
   const greeting = DEFAULT_GREETING[mode];
 
-  const advertiserMutation = trpc.supportChat.advertiserChat.useMutation({
+  const chatMutation = trpc.supportChat.sendMessage.useMutation({
     onSuccess: (data) => {
       setMessages(prev => [...prev, { role: "assistant", content: data.answer }]);
       if (!isOpen || isMinimized) setHasUnread(true);
@@ -88,26 +108,16 @@ export default function SupportChatWidget({
     onError: () => {
       setMessages(prev => [...prev, {
         role: "assistant",
-        content: "I'm having trouble responding right now. Please try again in a moment.",
+        content: "I'm having trouble responding right now. Please try again in a moment, or tap “Talk to a human” below.",
       }]);
     },
   });
 
-  const homeownerMutation = trpc.supportChat.homeownerChat.useMutation({
-    onSuccess: (data) => {
-      setMessages(prev => [...prev, { role: "assistant", content: data.answer }]);
-      if (!isOpen || isMinimized) setHasUnread(true);
-    },
-    onError: () => {
-      setMessages(prev => [...prev, {
-        role: "assistant",
-        content: "I'm having trouble responding right now. Please try again in a moment.",
-      }]);
-    },
+  const ticketMutation = trpc.supportChat.createTicket.useMutation({
+    onSuccess: () => setHandoffSent(true),
   });
 
-  const mutation = mode === "advertiser" ? advertiserMutation : homeownerMutation;
-  const isLoading = mutation.isPending;
+  const isLoading = chatMutation.isPending;
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -130,11 +140,16 @@ export default function SupportChatWidget({
     setInput("");
 
     const payload = updatedMessages.map(m => ({ role: m.role, content: m.content }));
-    if (mode === "advertiser") {
-      advertiserMutation.mutate({ messages: payload });
-    } else {
-      homeownerMutation.mutate({ messages: payload });
-    }
+    chatMutation.mutate({ brand, messages: payload });
+  };
+
+  const submitHandoff = () => {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(handoffEmail) || ticketMutation.isPending) return;
+    ticketMutation.mutate({
+      brand,
+      email: handoffEmail.trim(),
+      transcript: messages.map(m => ({ role: m.role, content: m.content })),
+    });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -276,6 +291,39 @@ export default function SupportChatWidget({
                 )}
               </div>
 
+              {/* Human handoff */}
+              {showHandoff && (
+                <div className="px-4 py-3 border-t border-gray-100 bg-white">
+                  {handoffSent ? (
+                    <p className="text-sm text-gray-600 text-center py-1">
+                      Thanks! Our team has your conversation and will email you shortly.
+                    </p>
+                  ) : (
+                    <div className="space-y-2">
+                      <p className="text-xs text-gray-500">Leave your email and a teammate will follow up. We'll include this conversation.</p>
+                      <div className="flex gap-2">
+                        <input
+                          type="email"
+                          value={handoffEmail}
+                          onChange={(e) => setHandoffEmail(e.target.value)}
+                          placeholder="you@example.com"
+                          className="flex-1 text-sm px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                        />
+                        <Button
+                          size="sm"
+                          onClick={submitHandoff}
+                          disabled={ticketMutation.isPending || !handoffEmail.trim()}
+                          className="rounded-xl shrink-0"
+                          style={{ background: accentColor }}
+                        >
+                          {ticketMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Send"}
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* Input */}
               <div className="p-3 border-t border-gray-100 bg-white">
                 <div className="flex gap-2 items-end">
@@ -299,7 +347,15 @@ export default function SupportChatWidget({
                     {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                   </Button>
                 </div>
-                <p className="text-xs text-gray-400 mt-1.5 text-center">AI-powered · Responses may vary</p>
+                <div className="flex items-center justify-between mt-1.5">
+                  <span className="text-xs text-gray-400">AI-powered · Responses may vary</span>
+                  <button
+                    onClick={() => { setShowHandoff(v => !v); setHandoffSent(false); }}
+                    className="text-xs text-gray-500 hover:text-gray-700 underline underline-offset-2"
+                  >
+                    Talk to a human
+                  </button>
+                </div>
               </div>
             </>
           )}

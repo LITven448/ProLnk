@@ -4,6 +4,8 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect, useState, Suspense, lazy } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
+import SupportChatWidget from "./components/SupportChatWidget";
+import { detectBrand } from "@/lib/brand";
 import { SmoothScrollProvider } from "./components/SmoothScrollProvider";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { getLoginUrl } from "@/const";
@@ -1357,6 +1359,48 @@ function Router() {
   );
 }
 
+function GlobalSupportChat() {
+  const [location] = useLocation();
+  const brand = detectBrand();
+
+  if (location.startsWith("/admin")) return null;
+  // TrustyPro home page mounts its own widget (with forceOpen CTA wiring).
+  const isTrustyPro = brand === "trustypro" || (typeof window !== "undefined" && window.location.hostname.includes("trustypro"));
+  if (isTrustyPro && (location === "/" || location === "")) return null;
+
+  if (isTrustyPro) {
+    return (
+      <SupportChatWidget
+        mode="homeowner"
+        accentColor="#4F46E5"
+        title="TrustyPro Support"
+        subtitle="Ask us anything about the platform"
+      />
+    );
+  }
+
+  if (brand === "prolnkmedia") {
+    return (
+      <SupportChatWidget
+        mode="advertiser"
+        accentColor="#7C3AED"
+        title="ProLnk Media Support"
+        subtitle="Ask about advertising on ProLnk"
+      />
+    );
+  }
+
+  // Default: ProLnk pro-facing
+  return (
+    <SupportChatWidget
+      mode="pro"
+      accentColor="#0A1628"
+      title="ProLnk Support"
+      subtitle="Ask about plans, commissions & getting started"
+    />
+  );
+}
+
 function AppContent() {
   const [location] = useLocation();
   return (
@@ -1365,6 +1409,7 @@ function AppContent() {
       <DomainRouter />
       <Router />
       <CookieConsentBanner />
+      <GlobalSupportChat />
     </>
   );
 }

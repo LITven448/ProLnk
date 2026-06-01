@@ -317,6 +317,7 @@ const PatentDisclosure = lazy(() => import("./pages/admin/PatentDisclosure"));
 const CampaignCenter = lazy(() => import("./pages/admin/CampaignCenter"));
 const MarketingAutomationDashboard = lazy(() => import("./pages/admin/MarketingAutomationDashboard"));
 const PlatformSettings = lazy(() => import("./pages/admin/PlatformSettings"));
+const ChatbotKnowledge = lazy(() => import("./pages/admin/ChatbotKnowledge"));
 const PartnerAgreement = lazy(() => import("./pages/PartnerAgreement"));
 const TerritoryMarketplace = lazy(() => import("./pages/admin/TerritoryMarketplace"));
 const B2BDataExchange = lazy(() => import("./pages/admin/B2BDataExchange"));
@@ -913,6 +914,7 @@ function Router() {
       <Route path="/admin/data-intelligence" component={DataIntelligence} />
       <Route path="/admin/competitor-intelligence" component={CompetitorIntelligence} />
       <Route path="/admin/platform-settings" component={PlatformSettings} />
+      <Route path="/admin/chatbot-knowledge" component={ChatbotKnowledge} />
       <Route path="/admin/comm-sequence" component={CommSequence} />
       <Route path="/admin/trustypro-leads" component={TrustyProLeads} />
       <Route path="/admin/trustypro" component={TrustyProOverview} />

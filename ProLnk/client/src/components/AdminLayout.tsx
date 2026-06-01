@@ -94,6 +94,7 @@ export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
   ],
   platform: [
     { label: "Settings",          href: "/admin/platform-settings" },
+    { label: "Chatbot Knowledge", href: "/admin/chatbot-knowledge" },
     { label: "Service Categories",href: "/admin/categories" },
     { label: "Strikes & Compliance",href: "/admin/compliance" },
     { label: "API Credits",       href: "/admin/api-credits" },
@@ -205,6 +206,7 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
     header: "PLATFORM",
     items: [
       { label: "Platform Settings",  href: "/admin/platform-settings" },
+      { label: "Chatbot Knowledge",  href: "/admin/chatbot-knowledge" },
       { label: "Service Categories", href: "/admin/categories" },
       { label: "Strikes & Compliance",href: "/admin/compliance" },
       { label: "API Credits",        href: "/admin/api-credits" },

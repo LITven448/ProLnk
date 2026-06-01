@@ -59,7 +59,7 @@ export default function HomeTheaterGuide() {
           </p>
         </div>
 
-        <h2 style={{ fontSize: 24, fontWeight: 700, color: '#f1f5f9`, marginBottom: 20 }}>🏠 Room Selection</h2>
+        <h2 style={{ fontSize: 24, fontWeight: 700, color: '#f1f5f9', marginBottom: 20 }}>🏠 Room Selection</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '🎭', title: 'Dedicated Room', desc: 'Best option. Full light/sound/HVAC control. Bonus rooms, basements (rare in DFW), converted garages.', score: '10/10' },

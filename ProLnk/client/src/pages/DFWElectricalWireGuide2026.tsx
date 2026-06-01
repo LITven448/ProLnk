@@ -19,8 +19,8 @@ const applianceGuide: Record<string, { wire: string; breaker: string; note: stri
 };
 
 export default function DFWElectricalWireGuide2026() {
-  const [appliance, setAppliance] = useState<string>('\);
-  const [activeGauge, setActiveGauge] = useState<string>('\);
+  const [appliance, setAppliance] = useState<string>('');
+  const [activeGauge, setActiveGauge] = useState<string>('');
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>

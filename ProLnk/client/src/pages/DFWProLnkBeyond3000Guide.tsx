@@ -80,7 +80,7 @@ export default function DFWProLnkBeyond3000Guide() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 28 }}>
           {phases.map(p => (
-            <div key={p.phase} style={{ background: '#0F2240', borderRadius: 12, padding: 20, border:  }}>
+            <div key={p.phase} style={{ background: '#0F2240', borderRadius: 12, padding: 20, border: 'none' }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 24 }}>{p.icon}</span>
                 <div style={{ flex: 1 }}>
@@ -104,7 +104,7 @@ export default function DFWProLnkBeyond3000Guide() {
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🎯 What's Coming For Me?</h2>
           <select value={userType} onChange={e => setUserType(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
-            <option value=>I am a...</option>
+            <option value="">I am a...</option>
             {Object.keys(userTypes).map(u => <option key={u} value={u}>{u}</option>)}
           </select>
           {userType && userTypes[userType] && (

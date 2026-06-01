@@ -54,7 +54,7 @@ export default function DFWHVACLoadProfileGuide() {
                 <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 6 }}>
                   <div style={{ minWidth: 90, fontSize: 12, color: '#94A3B8', fontWeight: 600 }}>{b.time}</div>
                   <div style={{ flex: 1, background: '#0F2240', borderRadius: 4, height: 14, overflow: 'hidden' }}>
-                    <div style={{ width: , background: b.color, height: '100%', borderRadius: 4 }} />
+                    <div style={{ width: `${b.pct}%`, background: b.color, height: '100%', borderRadius: 4 }} />
                   </div>
                   <div style={{ minWidth: 36, fontSize: 13, fontWeight: 700, color: b.color }}>{b.pct}%</div>
                 </div>
@@ -68,7 +68,7 @@ export default function DFWHVACLoadProfileGuide() {
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🧭 My Home's Load Profile by Orientation</h2>
           <select value={orientation} onChange={e => setOrientation(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
-            <option value=>Select your lot orientation...</option>
+            <option value="">Select your lot orientation...</option>
             {Object.keys(orientations).map(o => <option key={o} value={o}>{o}</option>)}
           </select>
           {orientation && orientations[orientation] && (

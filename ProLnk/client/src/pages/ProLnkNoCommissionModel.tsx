@@ -64,9 +64,9 @@ export default function ProLnkNoCommissionModel() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 28 }}>
           {[
-            { label: 'Angi cost', amount: angiCost, sub:  },
-            { label: 'HomeAdvisor cost', amount: haCost, sub:  },
-            { label: 'Thumbtack cost', amount: thumbtackCost, sub:  },
+            { label: 'Angi cost', amount: angiCost, sub: 'Per-lead pricing' },
+            { label: 'HomeAdvisor cost', amount: haCost, sub: 'Per-lead pricing' },
+            { label: 'Thumbtack cost', amount: thumbtackCost, sub: 'Per-lead pricing' },
             { label: 'ProLnk cost', amount: prolnkCost, sub: 'Flat. All leads included.', highlight: true },
           ].map((item, i) => (
             <div key={i} style={{ background: item.highlight ? '#0f2d0f' : '#0d1f3c', border: `1px solid ${item.highlight ? '#F5E642' : '#1e3a5f'}`, borderRadius: 10, padding: 20, textAlign: 'center' }}>

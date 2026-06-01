@@ -68,7 +68,7 @@ export default function DFWCactusGardenGuide() {
           <h2 style={{ fontSize: 17, color: '#F5E642', marginBottom: 16 }}>🔍 Find Your Cactus Match</h2>
           <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94a3b8' }}>Select your yard conditions:</label>
           <select value={zone} onChange={(e) => { setZone(e.target.value); setSubmitted(false); }} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 14, marginBottom: 16 }}>
-            <option value=>-- Choose your yard zone --</option>
+            <option value="">-- Choose your yard zone --</option>
             {climateOptions.map((o) => <option key={o} value={o}>{zoneLabels[o]}</option>)}
           </select>
           <button onClick={() => setSubmitted(true)} disabled={!zone} style={{ width: '100%', padding: '12px', background: zone ? '#F5E642' : '#1e3a5f', color: zone ? '#0A1628' : '#4a6080', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: zone ? 'pointer' : 'not-allowed' }}>

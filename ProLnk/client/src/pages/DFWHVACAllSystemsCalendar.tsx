@@ -39,7 +39,7 @@ export default function DFWHVACAllSystemsCalendar() {
         <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '2rem' }}>
           {SYSTEMS.map(s => (
             <button key={s.id} onClick={() => setActiveSystem(activeSystem === s.id ? null : s.id)}
-              style={{ padding: '.5rem 1.25rem', borderRadius: 999, border: , background: activeSystem === s.id ? s.color + '22' : '#0F2035', color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: '.9rem' }}>
+              style={{ padding: '.5rem 1.25rem', borderRadius: 999, border: 'none', background: activeSystem === s.id ? s.color + '22' : '#0F2035', color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: '.9rem' }}>
               {s.label}
             </button>
           ))}

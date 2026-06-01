@@ -11,10 +11,10 @@ function getResult(homeSize: string, eventSize: string, suburb: string): EventRe
   const estate = homeSize.includes('Estate') || homeSize.includes('3,000');
   return {
     capacity: large ? 'Requires coordination of both indoor and outdoor spaces. DFW summer events should start after 7pm or use shade structures.' : 'Standard residential outdoor space can handle this with minor preparation.',
-    parking: large ?  : 'Guest parking typically manageable with neighborhood cooperation and driveway use.',
+    parking: large ? 'Plan for overflow parking and consider valet or a shuttle — large gatherings can strain neighborhood street parking and may prompt HOA or city concerns.' : 'Guest parking typically manageable with neighborhood cooperation and driveway use.',
     lighting: 'DFW outdoor entertaining requires lighting for evening events. String lights: $500-$2,000 installed. Landscape uplighting: $1,500-$5,000. Temporary event lighting rental: $300-$800/event.',
     sound: 'DFW HOAs often restrict outdoor amplified sound after 10pm. Use directional speakers aimed at seating areas. Recommended: 2-4 outdoor rated speakers at 50W each for up to 100 guests.',
-    permit: large ?  : 'No permit required for residential gatherings under 50 guests in most DFW cities.',
+    permit: large ? 'Larger events may require a permit, noise variance, or temporary use authorization — check with your city before the event.' : 'No permit required for residential gatherings under 50 guests in most DFW cities.',
     improvements: estate ? ['Covered patio or pergola for year-round use','Outdoor kitchen with refrigeration','Dedicated 20A outdoor circuit for event equipment','Permanent landscape lighting system','Level turf or patio expansion for dancing/mingling'] : ['String light system on permanent posts','Portable outdoor fans for summer events','Outdoor speaker rough-in during any renovation','Extra outlet circuits on patio','Gravel or decomposed granite for overflow guest areas'],
   };
 }

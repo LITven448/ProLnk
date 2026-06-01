@@ -39,8 +39,8 @@ export default function DFWHVACDFWClimateSummary() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 12, marginBottom: 28 }}>
           {[
-            { label: 'Cooling Degree Days', value: , sub: 'Annual CDD' },
-            { label: 'Heating Degree Days', value: , sub: 'Annual HDD' },
+            { label: 'Cooling Degree Days', value: '—', sub: 'Annual CDD' },
+            { label: 'Heating Degree Days', value: '—', sub: 'Annual HDD' },
             { label: 'Summer Design Temp', value: '100°F', sub: 'Equipment sizing basis' },
             { label: 'Winter Design Temp', value: '25°F', sub: 'Heating load basis' },
           ].map(s => (
@@ -59,7 +59,7 @@ export default function DFWHVACDFWClimateSummary() {
                 <div style={{ minWidth: 32, fontWeight: 700, color: '#F5E642', fontSize: 13 }}>{m.month}</div>
                 <div style={{ flex: 1, fontSize: 13, color: '#CBD5E1' }}>{m.desc}</div>
                 <div style={{ minWidth: 100, fontSize: 11, color: '#64748B', textAlign: 'right' }}>
-                  {m.cdd > 0 ?  : ''}{m.hdd > 0 ?  : ''}
+                  {m.cdd > 0 ? `${m.cdd} CDD ` : ''}{m.hdd > 0 ? `${m.hdd} HDD` : ''}
                 </div>
               </div>
             ))}
@@ -73,7 +73,7 @@ export default function DFWHVACDFWClimateSummary() {
             onChange={e => setVintage(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}
           >
-            <option value=>Select your home vintage...</option>
+            <option value="">Select your home vintage...</option>
             {Object.keys(vintageMap).map(v => <option key={v} value={v}>{v}</option>)}
           </select>
           {vintage && (

@@ -48,9 +48,9 @@ export default function DFWYearInReviewGuide() {
           <div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 24 }}>
               {[
-                { label: 'Current Equity', value: , icon: '💎' },
-                { label: 'Total ROI', value: , icon: '📈' },
-                { label: 'Home Spend', value: , icon: '🔧' },
+                { label: 'Current Equity', value: `$${result.equity.toLocaleString()}`, icon: '💎' },
+                { label: 'Total ROI', value: `${result.roi}%`, icon: '📈' },
+                { label: 'Home Spend', value: `$${result.netSpend.toLocaleString()}`, icon: '🔧' },
               ].map(s => (
                 <div key={s.label} style={{ background: '#fff', borderRadius: 16, padding: '20px 16px', textAlign: 'center', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '2px solid #F5E642' }}>
                   <div style={{ fontSize: 28 }}>{s.icon}</div>

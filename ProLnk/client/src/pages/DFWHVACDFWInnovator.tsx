@@ -96,7 +96,7 @@ export default function DFWHVACDFWInnovator() {
         <div style={{ background: '#F5E642', borderRadius: 12, padding: 28, textAlign: 'center' }}>
           <div style={{ fontSize: 28, marginBottom: 12 }}>🚀</div>
           <h3 style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, marginBottom: 8 }}>ProLnk Finds DFW`s True Innovators</h3>
-          <p style={{ color: '#1E2D45`, fontSize: 14, lineHeight: 1.6 }}>
+          <p style={{ color: '#1E2D45', fontSize: 14, lineHeight: 1.6 }}>
             Not every contractor can execute cutting-edge HVAC systems in DFW conditions. ProLnk matches innovators with the pros who can.
           </p>
         </div>

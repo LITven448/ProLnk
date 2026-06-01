@@ -122,7 +122,7 @@ export default function DFWProLnkJoinNow() {
 
           {pitch && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
-              <h3 style={{ color: '#F5E642', margin: '0 0 1rem' }}>{area ?  : }</h3>
+              <h3 style={{ color: '#F5E642', margin: '0 0 1rem' }}>{area ? `Your Opportunity in ${area}` : 'Your Opportunity'}</h3>
               <p style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: '0.75rem' }}>{pitch.headline}</p>
               <div style={{ marginBottom: '1rem' }}>
                 <div style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: '0.5rem' }}>WHY JOIN NOW</div>

@@ -82,7 +82,7 @@ export default function DFWGroundSourceHeatPumpGuide() {
           </div>
         </div>
 
-        <div style={{ background: data.feasible ? '#0F2040' : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: , marginBottom: '1.5rem' }}>
+        <div style={{ background: data.feasible ? '#0F2040' : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: 'none', marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', margin: 0 }}>📊 Geothermal Feasibility</h2>
             <span style={{ background: data.feasible ? '#065F46' : '#5F1E1E', color: data.feasible ? '#6EE7B7' : '#FCA5A5', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 700 }}>{data.feasible ? 'Feasible' : 'Challenging'}</span>

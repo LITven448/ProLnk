@@ -80,7 +80,7 @@ export default function DFWWindCatcherGuide() {
           </div>
         </div>
 
-        <div style={{ background: data.works ? '#0F2040' : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: , marginBottom: '1.5rem' }}>
+        <div style={{ background: data.works ? '#0F2040' : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: 'none', marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
             <span style={{ fontSize: '1.5rem' }}>{data.works ? '✅' : '🚫'}</span>
             <div>

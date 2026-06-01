@@ -28,13 +28,13 @@ const fanGuide: Record<string, Record<string, string>> = {
 
 export default function DFWCeilingFanGuide2026() {
   const [roomSize, setRoomSize] = useState<string>(`\);
-  const [use, setUse] = useState<string>('\);
-  const [activeFan, setActiveFan] = useState<string>('\);
+  const [use, setUse] = useState<string>('');
+  const [activeFan, setActiveFan] = useState<string>('');
 
   const rec = roomSize && use ? fanGuide[roomSize]?.[use] : null;
 
   return (
-    <div style={{ background: '#0A1628`, minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>🌀</div>

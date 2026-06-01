@@ -22,10 +22,10 @@ const needGuide: Record<string, string> = {
 
 export default function DFWOutletTypesGuide2026() {
   const [need, setNeed] = useState<string>(`\);
-  const [activeOutlet, setActiveOutlet] = useState<string>('\);
+  const [activeOutlet, setActiveOutlet] = useState<string>('');
 
   return (
-    <div style={{ background: '#0A1628`, minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>🔌</div>

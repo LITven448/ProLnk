@@ -3,9 +3,9 @@ import { useState } from 'react';
 const IDENTIFICATION_TESTS = [
   { test: 'Look at the weep holes', result: 'Weep holes visible at bottom course = brick veneer. No weep holes = likely structural brick.' },
   { test: 'Check inside the garage', result: 'If interior walls are wood framing, exterior brick is veneer. Structural brick walls are solid all the way through.' },
-  { test: 'Measure wall thickness', result: 'Exterior brick + 1'' air gap + wood framing = veneer. 8'' or thicker solid masonry = structural.' },
+  { test: 'Measure wall thickness', result: 'Exterior brick + 1" air gap + wood framing = veneer. 8" or thicker solid masonry = structural.' },
   { test: 'Look at the attic', result: 'If roof trusses bear on wood top plates (not brick), your brick is veneer — all DFW homes built after 1960 standard.' },
-  { test: 'Examine mortar joints', result: 'Veneer joints often thinner (3/8'') and more uniform. Structural brick has more variation and thicker beds.' },
+  { test: 'Examine mortar joints', result: 'Veneer joints often thinner (3/8") and more uniform. Structural brick has more variation and thicker beds.' },
 ];
 
 const IMPLICATIONS: Record<string, { veneer: string; structural: string; repair: string; cost: string }> = {
@@ -71,7 +71,7 @@ export default function DFWBrickVeneerGuide() {
             <div style={{ color: '#8899AA', fontWeight: 800, fontSize: '0.95rem', marginBottom: '0.75rem' }}>🏛️ Structural Brick (Pre-1950 DFW)</div>
             <ul style={{ color: '#8899AA', fontSize: '0.82rem', lineHeight: 1.7, margin: 0, paddingLeft: '1.2rem' }}>
               <li>Brick IS the structure — walls carry roof loads</li>
-              <li>Multiple wythes thick (8'' to 16'')</li>
+              <li>Multiple wythes thick (8" to 16")</li>
               <li>No wood frame behind brick</li>
               <li>Failure is a structural event, not cosmetic</li>
               <li>Rare in DFW — mostly pre-WWII commercial / industrial</li>

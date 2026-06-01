@@ -74,7 +74,7 @@ export default function DFWHVACPeakDemandGuide() {
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 My Peak Demand Plan</h2>
           <select value={situation} onChange={e => setSituation(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
-            <option value=>Select your situation...</option>
+            <option value="">Select your situation...</option>
             {situations.map(s => <option key={s} value={s}>{s}</option>)}
           </select>
           {situation && situationPlans[situation] && (

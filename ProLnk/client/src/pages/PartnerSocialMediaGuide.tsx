@@ -162,7 +162,7 @@ export default function PartnerSocialMediaGuide() {
         </div>
 
         <section style={{ marginBottom: 48 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#111827`, marginBottom: 20 }}>Platform Strategy</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#111827', marginBottom: 20 }}>Platform Strategy</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {platforms.map((p, i) => (
               <button

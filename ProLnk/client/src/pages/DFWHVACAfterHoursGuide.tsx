@@ -69,11 +69,11 @@ export default function DFWHVACAfterHoursGuide() {
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 My Situation — Emergency or Wait?</h2>
           <select value={situation} onChange={e => setSituation(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
-            <option value=>Describe your situation...</option>
+            <option value="">Describe your situation...</option>
             {Object.keys(situations).map(s => <option key={s} value={s}>{s}</option>)}
           </select>
           {situation && situations[situation] && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border:  }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: 'none' }}>
               <div style={{ fontSize: 18, fontWeight: 800, color: situations[situation].color, marginBottom: 10 }}>{situations[situation].verdict}</div>
               <div style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, marginBottom: 10 }}>{situations[situation].reason}</div>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642' }}>Estimated cost: {situations[situation].cost}</div>

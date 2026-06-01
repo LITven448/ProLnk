@@ -21,9 +21,9 @@ const homeAgeGuide: Record<string, Record<string, string>> = {
 };
 
 export default function DFWSmartSwitchGuide2026() {
-  const [homeAge, setHomeAge] = useState<string>('\);
-  const [switchType, setSwitchType] = useState<string>('\);
-  const [activeSwitch, setActiveSwitch] = useState<string>('\);
+  const [homeAge, setHomeAge] = useState<string>('');
+  const [switchType, setSwitchType] = useState<string>('');
+  const [activeSwitch, setActiveSwitch] = useState<string>('');
 
   const rec = homeAge && switchType ? homeAgeGuide[homeAge]?.[switchType] : null;
 

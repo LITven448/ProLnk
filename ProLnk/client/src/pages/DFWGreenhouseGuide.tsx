@@ -14,7 +14,7 @@ function getResult(goal: string, yard: string, suburb: string): GreenhouseResult
     size: small ? '8x8 or 8x12 ft' : yard.includes('Medium') ? '12x16 or 16x20 ft' : '20x24 ft or larger',
     shading: 'Essential June-August: 50-60% shade cloth. DFW summer sun will exceed 105F inside unshaded greenhouse — plants cook within hours. Install automated shade before June 1.',
     heating: 'November-January: DFW drops to 20-30F at night. Propane or electric radiant heat needed. Thermostat at 45F minimum. Budget $80-$200/mo for winter heating.',
-    permit: ,
+    permit: 'Check with your city — permit requirements vary by structure size and whether it is permanent or temporary.',
     cost: small ? '$800-$3,500 installed' : yard.includes('Medium') ? '$4,000-$12,000 installed' : '$12,000-$35,000 for large permanent structure',
   };
 }

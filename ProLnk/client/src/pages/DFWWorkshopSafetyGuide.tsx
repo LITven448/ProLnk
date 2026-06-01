@@ -87,7 +87,7 @@ export default function DFWWorkshopSafetyGuide() {
               { label: '💨 Ventilation', value: result.ventilation },
               { label: '⚡ Electrical', value: result.electrical },
               { label: '🔥 Fire Safety', value: result.fire },
-              { label: '📊 Recommended Panel Capacity', value:  },
+              { label: '📊 Recommended Panel Capacity', value: `${result.amps}A` },
             ].map(item => (
               <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{item.label}</div>

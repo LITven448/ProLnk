@@ -17,8 +17,8 @@ const locationGuide: Record<string, string> = {
 };
 
 export default function DFWElectricalConduitGuide2026() {
-  const [location, setLocation] = useState<string>('\);
-  const [activeType, setActiveType] = useState<string>('\);
+  const [location, setLocation] = useState<string>('');
+  const [activeType, setActiveType] = useState<string>('');
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '24px' }}>

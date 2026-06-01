@@ -23,8 +23,8 @@ const brands = [
 ];
 
 export default function DFWRecessionLightsGuide2026() {
-  const [room, setRoom] = useState<string>('\);
-  const [activeTemp, setActiveTemp] = useState<string>('\);
+  const [room, setRoom] = useState<string>('');
+  const [activeTemp, setActiveTemp] = useState<string>('');
 
   const rec = room ? roomGuide[room] : null;
 

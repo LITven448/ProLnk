@@ -11,7 +11,7 @@ export default function DFWFoundationPTCableCount2026() {
     const cables = Math.round((side / 4) * 2);
     const spacing = s < 2000 ? '4-5 ft' : s < 3500 ? '3-4 ft' : '3 ft';
     const note = s < 2000 ? 'Standard density — pier drilling has moderate constraints' : s < 3500 ? 'Higher cable count — must locate cables before any pier drilling' : 'High-density slab — professional cable locating required before all foundation work';
-    setResult({ cables: , spacing, note });
+    setResult({ cables: String(cables), spacing, note });
   };
 
   return (

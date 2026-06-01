@@ -56,7 +56,7 @@ export default function DFWProLnkFoundationPartnerGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '.6rem' }}>
             {BIZ_TYPES.map(b => (
               <button key={b.id} onClick={() => setSelected(b.id)}
-                style={{ padding: '.85rem 1rem', borderRadius: 10, border: , background: selected === b.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ padding: '.85rem 1rem', borderRadius: 10, border: 'none', background: selected === b.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {b.label}
               </button>
             ))}

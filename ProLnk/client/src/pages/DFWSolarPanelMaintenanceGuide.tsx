@@ -87,7 +87,7 @@ export default function DFWSolarPanelMaintenanceGuide() {
           <div style={{ background: '#0D2137', border: '1px solid #F5E642', borderRadius: 12, padding: 24 }}>
             <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>☀️ Your Solar Maintenance Plan</h3>
             {[
-              { label: '🧹 Cleanings Per Year', value:  },
+              { label: '🧹 Cleanings Per Year', value: String(result.cleanings) },
               { label: '💰 Annual Maintenance Cost', value: result.annualCost },
               { label: '📉 Pollen Impact', value: result.productionLoss },
               { label: '🔌 Inverter Monitoring', value: result.inverterCheck },

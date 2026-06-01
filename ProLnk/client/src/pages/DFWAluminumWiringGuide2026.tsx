@@ -50,7 +50,7 @@ export default function DFWAluminumWiringGuide2026() {
             ))}
           </div>
           {selected && (
-            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft:  }}>
+            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: 'none' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', flexWrap: 'wrap', gap: '8px' }}>
                 <h3 style={{ color: '#F5E642', margin: 0, fontSize: '18px' }}>{selected.label}</h3>
                 <span style={{ padding: '4px 14px', borderRadius: '20px', backgroundColor: '#1e2e40', color: selected.color, fontWeight: '700', fontSize: '13px' }}>Risk: {selected.risk}</span>

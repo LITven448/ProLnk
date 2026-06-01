@@ -43,7 +43,7 @@ const RECOMMENDATIONS: Record<string, Record<string, { system: string; cost: str
 
 export default function DFWHVACMonitoringGuide() {
   const [homeSize, setHomeSize] = useState('' );
-  const [hvacAge, setHvacAge] = useState(''\ );
+  const [hvacAge, setHvacAge] = useState('');
   const rec = homeSize && hvacAge ? RECOMMENDATIONS[homeSize][hvacAge] : null;
 
   return (

@@ -68,7 +68,7 @@ export default function DFWFruitTreeGuide() {
           <h2 style={{ fontSize: 17, color: '#F5E642', marginBottom: 16 }}>🔍 Find Your Fruit Trees</h2>
           <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94a3b8' }}>Select your yard size and DFW location:</label>
           <select value={size} onChange={(e) => { setSize(e.target.value); setSubmitted(false); }} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 14, marginBottom: 16 }}>
-            <option value=>-- Choose your situation --</option>
+            <option value="">-- Choose your situation --</option>
             {sizeOptions.map((o) => <option key={o} value={o}>{sizeLabels[o]}</option>)}
           </select>
           <button onClick={() => setSubmitted(true)} disabled={!size} style={{ width: '100%', padding: '12px', background: size ? '#F5E642' : '#1e3a5f', color: size ? '#0A1628' : '#4a6080', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: size ? 'pointer' : 'not-allowed' }}>

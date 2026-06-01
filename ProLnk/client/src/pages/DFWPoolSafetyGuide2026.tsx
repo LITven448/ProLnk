@@ -132,7 +132,7 @@ export default function DFWPoolSafetyGuide2026() {
               </div>
             </div>
             {getCompliance().map((item, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 10, borderLeft:  }}>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 10, borderLeft: 'none' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                   <span style={{ fontWeight: 700, fontSize: 14 }}>{item.item}</span>
                   <span style={{ color: item.pass ? '#4ade80' : '#f87171', fontWeight: 700, fontSize: 13 }}>{item.pass ? '✅ PASS' : '❌ FAIL'}</span>

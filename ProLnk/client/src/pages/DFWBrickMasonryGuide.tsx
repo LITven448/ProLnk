@@ -21,7 +21,7 @@ const URGENCY_MAP: Record<string, Record<string, string>> = {
     high: 'Persistent efflorescence with spalling = active moisture intrusion. Call mason within 30 days.',
   },
   cracking: {
-    low: 'Hairline cracks under 1/16'' — normal DFW thermal cycling. Tuckpoint with matching mortar.',
+    low: 'Hairline cracks under 1/16" — normal DFW thermal cycling. Tuckpoint with matching mortar.',
     medium: 'Stair-step cracks along mortar joints — possible foundation movement. Foundation eval first.',
     high: 'Horizontal cracks or bulging = structural concern. Stop and call structural engineer immediately.',
   },
@@ -112,7 +112,7 @@ export default function DFWBrickMasonryGuide() {
         <div style={{ background: '#111E35', border: '1px solid #1E3A5F', borderRadius: '12px', padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1rem', fontWeight: 700, margin: '0 0 0.75rem' }}>⚠️ DFW Tuckpointing: When to Act</h2>
           <p style={{ color: '#8899AA', fontSize: '0.85rem', lineHeight: 1.6, margin: 0 }}>
-            Tuckpoint when mortar joints are recessed more than 1/4''  or crumble under finger pressure. DFW's heat cycles accelerate mortar breakdown —
+            Tuckpoint when mortar joints are recessed more than 1/4"  or crumble under finger pressure. DFW's heat cycles accelerate mortar breakdown —
             joints that pass in spring may fail by September. Never use caulk as a mortar substitute on DFW brick — it traps moisture and causes faster spalling.
           </p>
         </div>

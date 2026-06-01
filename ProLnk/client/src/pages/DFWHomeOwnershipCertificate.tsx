@@ -63,7 +63,7 @@ export default function DFWHomeOwnershipCertificate() {
   if (showResult) return (
     <div style={{ background: '#0A1628', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 560, width: '100%' }}>
-        <div style={{ background: 'linear-gradient(135deg, #132035, #1e3a6e)', borderRadius: 20, padding: '2.5rem', textAlign: 'center', border: , boxShadow:  }}>
+        <div style={{ background: 'linear-gradient(135deg, #132035, #1e3a6e)', borderRadius: 20, padding: '2.5rem', textAlign: 'center', border: 'none', boxShadow: 'none' }}>
           <div style={{ fontSize: 64, marginBottom: 12 }}>{level.badge}</div>
           <div style={{ fontSize: 12, color: level.color, fontWeight: 700, letterSpacing: 3, marginBottom: 8, textTransform: 'uppercase' }}>Certificate of Achievement</div>
           <div style={{ fontSize: 22, fontWeight: 800, color: '#fff', marginBottom: 4 }}>This certifies that</div>
@@ -99,7 +99,7 @@ export default function DFWHomeOwnershipCertificate() {
           <div style={{ background: '#132035', borderRadius: 20, padding: '4px 14px', fontSize: 13, color: '#F5E642', fontWeight: 700 }}>Score: {score}</div>
         </div>
         <div style={{ background: '#1e2e4a', borderRadius: 4, height: 6, marginBottom: '1.5rem', overflow: 'hidden' }}>
-          <div style={{ background: '#F5E642', height: '100%', width: , transition: 'width 0.4s' }} />
+          <div style={{ background: '#F5E642', height: '100%', width: `${((current + 1) / QUESTIONS.length) * 100}%`, transition: 'width 0.4s' }} />
         </div>
         <div style={{ background: '#132035', borderRadius: 16, padding: '2rem', marginBottom: '1rem' }}>
           <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: '1.5rem', lineHeight: 1.5 }}>{current + 1}. {q.q}</div>
@@ -111,7 +111,7 @@ export default function DFWHomeOwnershipCertificate() {
                 else if (i === selected && selected !== q.ans) { bg = '#2a0a0a'; border = '#f87171'; color = '#f87171'; }
               } else if (selected === i) { bg = '#1e3a6e'; border = '#F5E642'; color = '#F5E642'; }
               return (
-                <div key={i} onClick={() => choose(i)} style={{ background: bg, border: , borderRadius: 10, padding: '0.85rem 1.1rem', cursor: selected === null ? 'pointer' : 'default', color, fontWeight: 500, fontSize: 14, transition: 'all 0.2s' }}>
+                <div key={i} onClick={() => choose(i)} style={{ background: bg, border: 'none', borderRadius: 10, padding: '0.85rem 1.1rem', cursor: selected === null ? 'pointer' : 'default', color, fontWeight: 500, fontSize: 14, transition: 'all 0.2s' }}>
                   {['A','B','C','D'][i]}. {opt}
                 </div>
               );

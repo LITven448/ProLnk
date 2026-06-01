@@ -43,7 +43,7 @@ const RECS: Record<string, Record<string, { approach: string; cost: string; esca
 
 export default function DFWFoundationMonitoringGuide() {
   const [age, setAge] = useState('' );
-  const [concern, setConcern] = useState(''\ );
+  const [concern, setConcern] = useState('');
   const rec = age && concern ? RECS[age][concern] : null;
 
   return (

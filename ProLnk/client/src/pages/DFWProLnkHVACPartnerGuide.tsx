@@ -40,7 +40,7 @@ export default function DFWProLnkHVACPartnerGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '.75rem' }}>
             {TIERS.map(t => (
               <button key={t.id} onClick={() => setSelectedTier(t.id)}
-                style={{ padding: '.85rem', borderRadius: 10, border: , background: selectedTier === t.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left' }}>
+                style={{ padding: '.85rem', borderRadius: 10, border: 'none', background: selectedTier === t.id ? '#F5E64222' : '#0A1628', color: '#fff', cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ fontWeight: 700, fontSize: '.9rem' }}>{t.label}</div>
               </button>
             ))}

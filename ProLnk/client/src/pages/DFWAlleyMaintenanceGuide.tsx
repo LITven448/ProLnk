@@ -122,7 +122,7 @@ export default function DFWAlleyMaintenanceGuide() {
                 <div style={{ color: '#e2e8f0', marginTop: '0.2rem' }}>{result.homeowner}</div>
               </div>
               <div style={{ marginBottom: '0.75rem' }}>
-                <span style={{ color: '#64748b', fontSize: '0.8rem' }}>WHO TO CALL{city ?  : ''}</span>
+                <span style={{ color: '#64748b', fontSize: '0.8rem' }}>WHO TO CALL{city ? ` IN ${city.toUpperCase()}` : ''}</span>
                 <div style={{ color: '#e2e8f0', marginTop: '0.2rem' }}>{result.contact}</div>
               </div>
               <div style={{ marginBottom: '0.75rem' }}>

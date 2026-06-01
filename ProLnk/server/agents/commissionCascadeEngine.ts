@@ -82,7 +82,7 @@ export async function findHomeOriginator(propertyAddress: string): Promise<numbe
     if (!db) return null;
     const addressHash = hashAddress(propertyAddress);
     const rows = await (db as any).execute(
-      sql`SELECT proUserId FROM home_documentation WHERE addressHash = ${addressHash} AND isFirstDocumentation = 1 LIMIT 1`
+      sql`SELECT pro_user_id AS proUserId FROM home_documentation WHERE address_hash = ${addressHash} AND is_first_documentation = 1 LIMIT 1`
     ) as any;
     const row = rows?.[0]?.[0] ?? rows?.[0];
     if (!row?.proUserId) return null;
@@ -101,15 +101,15 @@ export async function getRecruitingChain(partnerId: number): Promise<RecruitingC
 
     const chainRows = await (db as any).execute(
       sql`
-        SELECT u.uplineUserId, u.levelsAbove,
+        SELECT u.upline_user_id AS uplineUserId, u.levels_above AS levelsAbove,
                COALESCE(p.firstName, '') as firstName,
                COALESCE(p.lastName, '') as lastName,
                p.businessType, p.primaryCity
         FROM pro_upline_chain u
-        LEFT JOIN proWaitlist p ON p.id = CAST(u.uplineUserId AS UNSIGNED)
-        WHERE u.proUserId = ${String(partnerId)}
-          AND u.levelsAbove BETWEEN 1 AND 4
-        ORDER BY u.levelsAbove ASC
+        LEFT JOIN proWaitlist p ON p.id = CAST(u.upline_user_id AS UNSIGNED)
+        WHERE u.pro_user_id = ${String(partnerId)}
+          AND u.levels_above BETWEEN 1 AND 4
+        ORDER BY u.levels_above ASC
         LIMIT 4
       `
     ) as any;
@@ -131,13 +131,13 @@ export async function getRecruitingChain(partnerId: number): Promise<RecruitingC
     for (let level = 1; level <= 4; level++) {
       const profileRows = await (db as any).execute(
         sql`
-          SELECT np.referredByUserId,
+          SELECT np.referred_by_user_id AS referredByUserId,
                  COALESCE(pw.firstName, '') as firstName,
                  COALESCE(pw.lastName, '') as lastName,
                  pw.businessType, pw.primaryCity
           FROM pro_network_profile np
-          LEFT JOIN proWaitlist pw ON pw.id = CAST(np.referredByUserId AS UNSIGNED)
-          WHERE np.userId = ${String(currentId)}
+          LEFT JOIN proWaitlist pw ON pw.id = CAST(np.referred_by_user_id AS UNSIGNED)
+          WHERE np.user_id = ${String(currentId)}
           LIMIT 1
         `
       ) as any;
@@ -266,7 +266,7 @@ export async function distributeJobCommissions(params: {
       (db as any).execute(
         sql`
           INSERT INTO commission_payout
-            (jobCommissionEventId, recipientUserId, sourceProUserId, payoutType, rateApplied, amount, status, payoutMonth, createdAt)
+            (job_commission_event_id, recipient_user_id, source_pro_user_id, payout_type, rate_applied, amount, status, payout_month, created_at)
           VALUES
             (0, ${String(dist.partnerId)}, ${String(completingProId)}, ${dist.type}, ${dist.rate}, ${dist.amount}, 'pending', ${payoutMonth}, NOW())
         `
@@ -349,7 +349,7 @@ export async function distributeSubscriptionCommissions(params: {
       (db as any).execute(
         sql`
           INSERT INTO commission_payout
-            (jobCommissionEventId, recipientUserId, sourceProUserId, payoutType, rateApplied, amount, status, payoutMonth, createdAt)
+            (job_commission_event_id, recipient_user_id, source_pro_user_id, payout_type, rate_applied, amount, status, payout_month, created_at)
           VALUES
             (0, ${String(dist.partnerId)}, ${String(subscribingPartnerId)}, ${"subscription_l" + dist.level}, ${dist.rate}, ${dist.amount}, 'pending', ${payoutMonth}, NOW())
         `

@@ -81,6 +81,119 @@ describe("Waitlist Features", () => {
     });
   });
 
+  describe("2-Step Signup (/apply-v2)", () => {
+    // Mirrors server ProWaitlistSchema core fields used by step 1.
+    const step1Schema = z.object({
+      firstName: z.string().min(1).max(100).trim(),
+      lastName: z.string().min(1).max(100).trim(),
+      email: z.string().email().toLowerCase(),
+      phone: z.string().min(7).max(30),
+      trade: z.string().min(1).max(100),
+      primaryCity: z.string().min(1).max(100),
+      primaryState: z.string().min(2).max(2),
+      referredBy: z.string().max(20).optional(),
+    });
+
+    // Mirrors server assignTier + charter-recruiter logic.
+    const TIER_CAP = { charter: 25, founding: 125, level3: 525, level4: 2125 };
+    function assignTier(position: number): string {
+      if (position <= TIER_CAP.charter) return "charter";
+      if (position <= TIER_CAP.founding) return "founding";
+      if (position <= TIER_CAP.level3) return "level3";
+      if (position <= TIER_CAP.level4) return "level4";
+      return "waitlist";
+    }
+    const CHARTER_RECRUITER_CODES = ["Z3YYJP7"];
+    function resolveTier(position: number, referredBy: string | undefined, charterUsed: number) {
+      const isCharterRecruiter =
+        !!referredBy && CHARTER_RECRUITER_CODES.includes(referredBy.toUpperCase());
+      if (isCharterRecruiter && charterUsed < 25) return "charter";
+      return assignTier(position);
+    }
+
+    it("step-1 core payload (minimum fields) is valid", () => {
+      expect(() =>
+        step1Schema.parse({
+          firstName: "Jane",
+          lastName: "Smith",
+          email: "JANE@EXAMPLE.COM",
+          phone: "5551234567",
+          trade: "Plumbing",
+          primaryCity: "Dallas",
+          primaryState: "TX",
+        })
+      ).not.toThrow();
+    });
+
+    it("step-1 lowercases email and works without referral", () => {
+      const r = step1Schema.parse({
+        firstName: "Jane",
+        lastName: "Smith",
+        email: "JANE@EXAMPLE.COM",
+        phone: "5551234567",
+        trade: "Plumbing",
+        primaryCity: "Dallas",
+        primaryState: "TX",
+      });
+      expect(r.email).toBe("jane@example.com");
+      expect(r.referredBy).toBeUndefined();
+    });
+
+    it("step-1 rejects missing required fields", () => {
+      expect(() =>
+        step1Schema.parse({
+          firstName: "Jane",
+          lastName: "Smith",
+          email: "jane@example.com",
+          phone: "5551234567",
+          trade: "",
+          primaryCity: "Dallas",
+          primaryState: "TX",
+        })
+      ).toThrow();
+    });
+
+    it("assigns charter tier when referred by charter recruiter and spots remain", () => {
+      expect(resolveTier(800, "Z3YYJP7", 10)).toBe("charter");
+    });
+
+    it("falls back to position tier when charter cap is full", () => {
+      expect(resolveTier(800, "Z3YYJP7", 25)).toBe("level4");
+      expect(resolveTier(300, "Z3YYJP7", 25)).toBe("level3");
+    });
+
+    it("organic signup gets position-based tier (charter for first 25)", () => {
+      expect(resolveTier(5, undefined, 0)).toBe("charter");
+      expect(resolveTier(50, undefined, 0)).toBe("founding");
+    });
+
+    // Mirrors server UpdateProProfileSchema for step 2 enrichment.
+    const step2Schema = z.object({
+      email: z.string().email().toLowerCase(),
+      id: z.number().int().optional(),
+      businessName: z.string().max(255).optional(),
+      yearsInBusiness: z.coerce.number().int().min(0).max(100).optional(),
+      trades: z.array(z.string().max(100)).max(50).optional(),
+      serviceZipCodes: z.array(z.string().max(12)).max(200).optional(),
+    });
+
+    it("step-2 accepts a partial enrichment payload keyed by email", () => {
+      const r = step2Schema.parse({
+        email: "jane@example.com",
+        businessName: "Acme Plumbing",
+        yearsInBusiness: "7",
+        trades: ["Plumbing", "HVAC"],
+        serviceZipCodes: ["75001", "75002"],
+      });
+      expect(r.yearsInBusiness).toBe(7);
+      expect(r.trades).toHaveLength(2);
+    });
+
+    it("step-2 is valid with only an email (everything optional)", () => {
+      expect(() => step2Schema.parse({ email: "jane@example.com" })).not.toThrow();
+    });
+  });
+
   describe("HomeWaitlist Signup", () => {
     it("should validate home type enum", () => {
       const schema = z.object({

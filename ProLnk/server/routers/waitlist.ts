@@ -111,6 +111,28 @@ const SimpleWaitlistSchema = z.object({
   email: z.string().email().toLowerCase(),
 });
 
+// Step-2 enrichment for the 2-step signup at /apply-v2.
+// Public + keyed by the email/id created in step 1. Purely additive — does NOT
+// touch the joinProWaitlist required-field contract, so the live modal is unaffected.
+const UpdateProProfileSchema = z.object({
+  email: z.string().email().toLowerCase(),
+  id: z.number().int().optional(),
+  businessName: z.string().max(255).optional(),
+  businessType: z.string().max(100).optional(),
+  yearsInBusiness: z.coerce.number().int().min(0).max(100).optional(),
+  employeeCount: z.string().max(50).optional(),
+  estimatedJobsPerMonth: z.coerce.number().int().min(0).max(100000).optional(),
+  avgJobValue: z.string().max(50).optional(),
+  trades: z.array(z.string().max(100)).max(50).optional(),
+  serviceZipCodes: z.array(z.string().max(12)).max(200).optional(),
+  serviceRadiusMiles: z.coerce.number().int().min(1).max(500).optional(),
+  licenseNumber: z.string().max(100).optional(),
+  insuranceCarrier: z.string().max(200).optional(),
+  currentSoftware: z.array(z.string().max(100)).max(50).optional(),
+  hearAboutUs: z.string().max(255).optional(),
+  notes: z.string().max(1000).optional(),
+});
+
 export const waitlistRouter = router({
   joinProWaitlist: publicProcedure
     .input(ProWaitlistSchema)
@@ -433,6 +455,68 @@ export const waitlistRouter = router({
         [id, firstName, lastName, input.email, "", "", "", 1, "1", 0, "varies", "[]", "", "", "", 25, "[]", "0", "0", "more_leads", referralCode, tier, position, 0]
       );
       return { success: true as const, position };
+    }),
+
+  // Step-2 profile enrichment for the 2-step /apply-v2 signup.
+  // Updates the SAME proWaitlist row created in step 1 (looked up by id or email).
+  // Only writes columns the partner actually filled in; tier/position/referral
+  // untouched. Backward compatible — additive endpoint, no impact on live modal.
+  updateProWaitlistProfile: publicProcedure
+    .input(UpdateProProfileSchema)
+    .mutation(async ({ input }) => {
+      const pool = await getPool();
+      if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      let row: any;
+      if (input.id) {
+        const [r] = await pool.query("SELECT id, additionalNotes FROM proWaitlist WHERE id = ? LIMIT 1", [input.id]);
+        row = (r as any[])[0];
+      }
+      if (!row) {
+        const [r] = await pool.query("SELECT id, additionalNotes FROM proWaitlist WHERE email = ? LIMIT 1", [input.email]);
+        row = (r as any[])[0];
+      }
+      if (!row) throw new TRPCError({ code: "NOT_FOUND", message: "No waitlist entry found for this email. Complete step 1 first." });
+
+      const sets: string[] = [];
+      const vals: any[] = [];
+      const push = (col: string, val: any) => { sets.push(`${col} = ?`); vals.push(val); };
+
+      if (input.businessName !== undefined) push("businessName", input.businessName);
+      if (input.businessType !== undefined) push("businessType", input.businessType);
+      if (input.yearsInBusiness !== undefined) push("yearsInBusiness", input.yearsInBusiness);
+      if (input.employeeCount !== undefined) push("employeeCount", input.employeeCount);
+      if (input.estimatedJobsPerMonth !== undefined) push("estimatedJobsPerMonth", input.estimatedJobsPerMonth);
+      if (input.avgJobValue !== undefined) push("avgJobValue", input.avgJobValue);
+      if (input.trades !== undefined && input.trades.length) push("trades", JSON.stringify(input.trades));
+      if (input.serviceZipCodes !== undefined) push("serviceZipCodes", input.serviceZipCodes.join(","));
+      if (input.serviceRadiusMiles !== undefined) push("serviceRadiusMiles", input.serviceRadiusMiles);
+      if (input.currentSoftware !== undefined && input.currentSoftware.length) push("currentSoftware", JSON.stringify(input.currentSoftware));
+      if (input.hearAboutUs !== undefined) push("hearAboutUs", input.hearAboutUs);
+
+      // proWaitlist has no licenseNumber/insuranceCarrier columns — fold these,
+      // plus any free-text notes, into additionalNotes so they're captured.
+      const noteParts: string[] = [];
+      if (input.licenseNumber !== undefined && input.licenseNumber) noteParts.push(`License #: ${input.licenseNumber}`);
+      if (input.insuranceCarrier !== undefined && input.insuranceCarrier) noteParts.push(`Insurance: ${input.insuranceCarrier}`);
+      if (input.notes !== undefined && input.notes) noteParts.push(input.notes);
+      if (noteParts.length) {
+        const existing = (row.additionalNotes as string) || "";
+        const merged = existing ? `${existing}\n${noteParts.join("\n")}` : noteParts.join("\n");
+        push("additionalNotes", merged.slice(0, 2000));
+      }
+
+      if (!sets.length) return { success: true as const, id: row.id, updated: 0 };
+
+      vals.push(row.id);
+      await pool.query(`UPDATE proWaitlist SET ${sets.join(", ")} WHERE id = ?`, vals);
+
+      notifyOwner({
+        title: `Profile enriched (step 2): ${input.email}`,
+        content: `Updated ${sets.length} field(s) via /apply-v2.`,
+      }).catch(() => {});
+
+      return { success: true as const, id: row.id, updated: sets.length };
     }),
 
   getWaitlistMetrics: adminProcedure.query(async () => {

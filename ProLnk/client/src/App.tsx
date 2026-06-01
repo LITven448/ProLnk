@@ -14,6 +14,7 @@ import Home from "@/pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import Apply from "./pages/Apply";
+import ApplyV2 from "./pages/ApplyV2";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerForgotPassword from "./pages/PartnerForgotPassword";
 import AdminLogin from "./pages/AdminLogin";
@@ -714,6 +715,7 @@ const LazyFallback = () => (
 );
 
 const WAITLIST_ALLOWED = new Set([
+  "/apply", "/apply-v2",
   "/join", "/pro-waitlist", "/home-waitlist", "/referral", "/dashboard",
   "/waitlist/pro", "/waitlist/homeowner", "/waitlist/homeowner/status",
   "/waitlist-status", "/waitlist/status", "/success",
@@ -761,6 +763,7 @@ function Router() {
       </Route>
       <Route path="/demo" component={Demo} />
       <Route path="/apply" component={Apply} />
+      <Route path="/apply-v2" component={ApplyV2} />
       <Route path="/application-status" component={ApplicationStatus} />
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />

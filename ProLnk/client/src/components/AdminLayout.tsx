@@ -125,7 +125,7 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
         label: "AI & ORG",
         defaultOpen: true,
         items: [
-          { label: "All Agents",       href: "/admin/agents" },
+          { label: "Agent Activity",   href: "/admin/agents" },
           { label: "Agent Status",     href: "/admin/agent-status" },
           { label: "Org Chart",        href: "/admin/org-chart" },
           { label: "Accountability",   href: "/admin/accountability" },

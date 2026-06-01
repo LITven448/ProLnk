@@ -240,6 +240,7 @@ const MediaSupport = lazy(async () => { const m = await import("./pages/admin/da
 const MediaFinancial = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaFinancial }; });
 const MediaAgents = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaAgents }; });
 const AgentCommandCenter = lazy(() => import("./pages/admin/AgentCommandCenter"));
+const AgentActivityDashboard = lazy(() => import("./pages/admin/AgentActivityDashboard"));
 const AssetAging = lazy(() => import("./pages/admin/AssetAging"));
 const SafetyRecalls = lazy(() => import("./pages/admin/SafetyRecalls"));
 const DataMarketplace = lazy(() => import("./pages/admin/DataMarketplace"));
@@ -942,15 +943,15 @@ function Router() {
 
       {/* V6 -- Predictive Engine */}
       <Route path="/admin/predict" component={EventEngineDashboard} />
-      <Route path="/admin/ai-pipeline" component={AIPipelineMonitor} />
+      <Route path="/admin/ai-pipeline" component={AgentActivityDashboard} />
       <Route path="/admin/storm-watch" component={StormWatch} />
       <Route path="/admin/storm" component={StormDashboard} />
-      <Route path="/admin/agents" component={AgentTracker} />
+      <Route path="/admin/agents" component={AgentActivityDashboard} />
       <Route path="/admin/agent-status" component={AgentStatusDashboard} />
       <Route path="/admin/org-chart" component={CompanyOrgChart} />
       <Route path="/admin/accountability" component={Accountability} />
-      <Route path="/admin/agent-command-center" component={AgentCommandCenter} />
-      <Route path="/admin/ai-command-center" component={AICommandCenter} />
+      <Route path="/admin/agent-command-center" component={AgentActivityDashboard} />
+      <Route path="/admin/ai-command-center" component={AgentActivityDashboard} />
       <Route path="/admin/system-health" component={SystemHealthDashboard} />
       <Route path="/admin/asset-aging" component={AssetAging} />
       <Route path="/admin/recalls" component={SafetyRecalls} />

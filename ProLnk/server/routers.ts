@@ -2433,6 +2433,120 @@ Answer concisely and helpfully. If asked about specific real-time account data (
         const status = (partner as { status?: string }).status ?? "pending";
         return { status: status as "pending" | "approved" | "rejected" | "not_found" };
       }),
+
+    // Approve + activate an existing partners-table application into a MATCHABLE
+    // state. The legacy admin.approvePartner only sets status='approved' but does
+    // NOT guarantee the partner satisfies the matching engine's contract (it can
+    // be approved with no trade and no service zips → silently un-matchable).
+    // This reconciles the partner with rankPartnersForOpportunity's hard filters
+    // and reports back what the matcher will see.
+    approveAndActivate: adminProcedure
+      .input(z.object({
+        partnerId: z.number(),
+        trade: z.string().min(2).max(100).optional(),
+        serviceZipCodes: z.array(z.string()).optional(),
+        serviceRadiusMiles: z.number().int().positive().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+        const partner = await getPartnerById(input.partnerId);
+        if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
+
+        const { buildPartnerActivation } = await import("./partner-activation");
+        const existingZips = Array.isArray((partner as any).serviceZipCodes)
+          ? (partner as any).serviceZipCodes
+          : (partner as any).serviceZipCodes ?? null;
+        const { payload, warnings } = buildPartnerActivation({
+          trades: input.trade ? [input.trade] : (partner.businessType ? [partner.businessType] : []),
+          businessType: partner.businessType,
+          serviceZipCodes: input.serviceZipCodes ?? existingZips,
+          serviceRadiusMiles: input.serviceRadiusMiles ?? (partner as any).serviceRadiusMiles ?? null,
+          primaryCity: (partner as any).serviceArea ?? null,
+        });
+        const zipsJson = JSON.stringify(payload.serviceZipCodes);
+
+        await db.execute(sql`
+          UPDATE partners SET
+            businessType = ${payload.businessType},
+            serviceZipCodes = ${zipsJson},
+            serviceRadiusMiles = ${payload.serviceRadiusMiles},
+            maxZipCodes = ${payload.maxZipCodes},
+            status = 'active',
+            suspendedAt = NULL,
+            approvedAt = NOW(),
+            updatedAt = NOW()
+          WHERE id = ${input.partnerId}
+        `);
+
+        return {
+          success: true,
+          partnerId: input.partnerId,
+          businessType: payload.businessType,
+          serviceZipCodes: payload.serviceZipCodes,
+          matchable: payload.serviceZipCodes.length > 0 && warnings.length === 0,
+          warnings,
+        };
+      }),
+
+    // Admin-only: seed a handful of APPROVED demo partners across common DFW
+    // trades so the matching loop can be demonstrated end-to-end on /admin/matching
+    // without manually approving real applicants. Idempotent — re-running upserts
+    // by contactEmail and never duplicates. All rows are tagged "[DEMO]" so they
+    // are identifiable/removable. NOT auto-run; call it explicitly.
+    seedDemoPartners: adminProcedure.mutation(async () => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      const dfwZips = ["75201", "75202", "75204", "75206", "75230", "75001"];
+      const demos = [
+        { trade: "Plumbing", name: "[DEMO] Lone Star Plumbing", email: "demo+plumbing@prolnk.io", tier: "pro" },
+        { trade: "HVAC", name: "[DEMO] North Texas Air & Heat", email: "demo+hvac@prolnk.io", tier: "crew" },
+        { trade: "Electrical", name: "[DEMO] Metroplex Electric", email: "demo+electrical@prolnk.io", tier: "pro" },
+        { trade: "Roofing & Gutters", name: "[DEMO] DFW Roofing Co", email: "demo+roofing@prolnk.io", tier: "company" },
+        { trade: "Handyman", name: "[DEMO] Dallas Handyman Pros", email: "demo+handyman@prolnk.io", tier: "scout" },
+      ];
+      const zipsJson = JSON.stringify(dfwZips);
+      const results: Array<{ businessName: string; trade: string; partnerId: number; created: boolean }> = [];
+
+      for (const d of demos) {
+        const existing = await db.execute(sql`SELECT id FROM partners WHERE contactEmail = ${d.email} LIMIT 1`);
+        const existingId = (existing?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
+        if (existingId) {
+          await db.execute(sql`
+            UPDATE partners SET
+              businessName = ${d.name}, businessType = ${d.trade}, serviceArea = 'Dallas, TX',
+              serviceZipCodes = ${zipsJson}, serviceRadiusMiles = 25, maxZipCodes = 60,
+              status = 'active', tier = ${d.tier}, suspendedAt = NULL, weeklyLeadCap = 15,
+              rating = '4.70', avgLeadResponseHours = '3.00', approvedAt = NOW(), updatedAt = NOW()
+            WHERE id = ${existingId}
+          `);
+          results.push({ businessName: d.name, trade: d.trade, partnerId: existingId, created: false });
+        } else {
+          await db.execute(sql`
+            INSERT INTO partners (
+              businessName, businessType, serviceArea, serviceZipCodes, serviceRadiusMiles,
+              maxZipCodes, contactName, contactEmail, status, tier, weeklyLeadCap,
+              rating, avgLeadResponseHours, appliedAt, approvedAt, updatedAt
+            ) VALUES (
+              ${d.name}, ${d.trade}, 'Dallas, TX', ${zipsJson}, 25, 60,
+              ${d.name.replace("[DEMO] ", "")}, ${d.email}, 'active', ${d.tier}, 15,
+              '4.70', '3.00', NOW(), NOW(), NOW()
+            )
+          `);
+          const idRow = await db.execute(sql`SELECT id FROM partners WHERE contactEmail = ${d.email} LIMIT 1`);
+          const pid = Number((idRow?.[0]?.[0] as { id?: number } | undefined)?.id ?? 0);
+          results.push({ businessName: d.name, trade: d.trade, partnerId: pid, created: true });
+        }
+      }
+
+      return {
+        success: true,
+        serviceZipCodes: dfwZips,
+        partners: results,
+        message: `Seeded ${results.length} demo partners across DFW. Run a job through /admin/matching with one of these trades + a ZIP in ${dfwZips.join(", ")}.`,
+      };
+    }),
   }),
   // -- Jobs --
   jobs: router({
@@ -5361,25 +5475,51 @@ Return a JSON object with:
           const referralCode = (entry.referralCode ?? String(input.id)) as string;
           const position = Number(entry.waitlistPosition ?? input.id);
 
-          // Upsert a partners record so the token has somewhere to live
+          // Map the waitlist row to a MATCHABLE partner: businessType must be the
+          // TRADE (not the legal structure), and serviceZipCodes must be a JSON
+          // array the matching engine can read. Without this the partner is
+          // silently invisible to rankPartnersForOpportunity.
+          const { buildPartnerActivation } = await import('./partner-activation');
+          const { payload: activation } = buildPartnerActivation({
+            trades: entry.trades,
+            businessType: entry.businessType,
+            serviceZipCodes: entry.serviceZipCodes,
+            serviceRadiusMiles: entry.serviceRadiusMiles,
+            primaryCity: entry.primaryCity,
+            primaryState: entry.primaryState,
+          });
+          const activationZipsJson = JSON.stringify(activation.serviceZipCodes);
+
+          // Upsert a partners record. Status is 'active' so the matching engine
+          // will offer jobs immediately; the activation token lets the pro claim
+          // the account via /set-password.
           await db.execute(sql`
             INSERT INTO partners (
               businessName, businessType, contactName, contactEmail,
-              serviceArea, serviceZipCodes, maxZipCodes,
+              serviceArea, serviceZipCodes, serviceRadiusMiles, maxZipCodes,
               status, tier, commissionRate, platformFeeRate, referralCommissionRate,
-              weeklyLeadCap, passwordResetToken, passwordResetExpiresAt, appliedAt, updatedAt
+              weeklyLeadCap, passwordResetToken, passwordResetExpiresAt, appliedAt, approvedAt, updatedAt
             ) VALUES (
-              ${firstName + (lastName ? ' ' + lastName : '')},
-              ${(entry.businessType ?? entry.trade ?? 'home_services') as string},
+              ${(entry.businessName ?? firstName) as string},
+              ${activation.businessType},
               ${firstName + (lastName ? ' ' + lastName : '')},
               ${email},
-              'DFW',
-              '[]',
-              5,
-              'pending', ${tier}, 0.4000, 0.1200, 0.0480, 5,
-              ${token}, ${tokenExpiry}, ${now}, ${now}
+              ${activation.serviceArea},
+              ${activationZipsJson},
+              ${activation.serviceRadiusMiles},
+              ${activation.maxZipCodes},
+              'active', ${tier}, 0.4000, 0.1200, 0.0480, 5,
+              ${token}, ${tokenExpiry}, ${now}, ${now}, ${now}
             )
             ON DUPLICATE KEY UPDATE
+              businessType = VALUES(businessType),
+              serviceArea = VALUES(serviceArea),
+              serviceZipCodes = VALUES(serviceZipCodes),
+              serviceRadiusMiles = VALUES(serviceRadiusMiles),
+              maxZipCodes = VALUES(maxZipCodes),
+              status = 'active',
+              suspendedAt = NULL,
+              approvedAt = VALUES(approvedAt),
               passwordResetToken = VALUES(passwordResetToken),
               passwordResetExpiresAt = VALUES(passwordResetExpiresAt),
               updatedAt = VALUES(updatedAt)

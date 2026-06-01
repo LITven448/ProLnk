@@ -4,6 +4,7 @@ import { adminProcedure, router } from "../_core/trpc";
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { createLogger } from "../_core/logger";
+import { buildPartnerActivation } from "../partner-activation";
 
 const log = createLogger("WaitlistAdmin");
 
@@ -200,16 +201,88 @@ export const waitlistAdminRouter = router({
       });
     }),
 
+  // Activate a waitlisted pro into a MATCHABLE partner row.
+  // The matching engine only queries the `partners` table, so flipping the
+  // proWaitlist status alone is a no-op for matching. This creates/updates a
+  // partners row mapped to satisfy every rankPartnersForOpportunity hard filter
+  // (status active, businessType = trade, serviceZipCodes JSON array).
   activateProWaitlistEntry: adminProcedure
     .input(z.object({ id: z.number() }))
     .mutation(async ({ input }) => {
       return log.track("Activate Pro Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+
+        const appRows = await db.execute(sql`
+          SELECT id, firstName, lastName, email, phone, businessName, businessType,
+                 trades, serviceZipCodes, serviceRadiusMiles, primaryCity, primaryState
+          FROM proWaitlist WHERE id = ${input.id} LIMIT 1
+        `);
+        const app = (appRows?.[0]?.[0] ?? null) as {
+          firstName: string; lastName: string; email: string; phone?: string;
+          businessName: string; businessType?: string; trades?: unknown;
+          serviceZipCodes?: unknown; serviceRadiusMiles?: number;
+          primaryCity?: string; primaryState?: string;
+        } | null;
+        if (!app) throw new TRPCError({ code: "NOT_FOUND", message: "Waitlist entry not found" });
+
+        const { payload, warnings } = buildPartnerActivation(app);
+        const contactName = `${app.firstName ?? ""} ${app.lastName ?? ""}`.trim() || app.businessName;
+        const zipsJson = JSON.stringify(payload.serviceZipCodes);
+
+        // Link to an existing user if one matches this email.
+        const userRows = await db.execute(sql`SELECT id FROM users WHERE email = ${app.email} LIMIT 1`);
+        const userId = (userRows?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
+
+        // Idempotent: update existing partner (by email) into a matchable state,
+        // otherwise insert a fresh one.
+        const existingRows = await db.execute(sql`SELECT id FROM partners WHERE contactEmail = ${app.email} LIMIT 1`);
+        const existingId = (existingRows?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
+
+        let partnerId: number;
+        if (existingId) {
+          await db.execute(sql`
+            UPDATE partners SET
+              businessType = ${payload.businessType},
+              serviceArea = ${payload.serviceArea},
+              serviceZipCodes = ${zipsJson},
+              serviceRadiusMiles = ${payload.serviceRadiusMiles},
+              maxZipCodes = ${payload.maxZipCodes},
+              status = 'active',
+              suspendedAt = NULL,
+              approvedAt = NOW(),
+              updatedAt = NOW()
+            WHERE id = ${existingId}
+          `);
+          partnerId = existingId;
+        } else {
+          await db.execute(sql`
+            INSERT INTO partners (
+              userId, businessName, businessType, serviceArea, serviceZipCodes,
+              serviceRadiusMiles, maxZipCodes, contactName, contactEmail, contactPhone,
+              status, tier, weeklyLeadCap, appliedAt, approvedAt, updatedAt
+            ) VALUES (
+              ${userId}, ${app.businessName}, ${payload.businessType}, ${payload.serviceArea},
+              ${zipsJson}, ${payload.serviceRadiusMiles}, ${payload.maxZipCodes},
+              ${contactName}, ${app.email}, ${app.phone ?? null},
+              'active', 'scout', ${payload.weeklyLeadCap}, NOW(), NOW(), NOW()
+            )
+          `);
+          const idRow = await db.execute(sql`SELECT id FROM partners WHERE contactEmail = ${app.email} LIMIT 1`);
+          partnerId = Number((idRow?.[0]?.[0] as { id?: number } | undefined)?.id ?? 0);
+        }
+
         await db.execute(sql`
           UPDATE proWaitlist SET status = 'active', activatedAt = NOW() WHERE id = ${input.id}
         `);
-        return { success: true };
+
+        return {
+          success: true,
+          partnerId,
+          businessType: payload.businessType,
+          serviceZipCodes: payload.serviceZipCodes,
+          warnings,
+        };
       });
     }),
 

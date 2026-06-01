@@ -25,7 +25,7 @@ export default function DFWWindowFrameGuide2026() {
             { icon: '🌡️', title: 'DFW Climate Demands', body: 'DFW summers hit 100-110°F with intense UV. Spring storms bring hail and 70+ mph winds. Thermal expansion of window frames across seasons is extreme. The ideal DFW frame handles heat, impact, and minimal maintenance.' },
             { icon: '⚡', title: 'Energy Code in DFW', body: 'DFW is in IECC Climate Zone 3. Windows must meet U-factor ≤0.30 and SHGC ≤0.25 for code compliance. Frame material affects the whole-window U-factor — fiberglass and vinyl outperform aluminum significantly.' },
             { icon: '🌪️', title: 'Storm Performance', body: 'For DFW hail and storm impact, look for AAMA 2605 coating certification and impact-rated glazing. Frame material matters less than glass specification for hail — laminated glass or impact-rated insulated units add significant protection.' },
-            { icon: '💲', title: 'DFW Replacement Costs', body: 'Per window installed by a DFW contractor: Vinyl -600, Fiberglass -1,200, Aluminum -900, Wood -2,000. Full house replacement (15-20 windows): Vinyl -10K, Fiberglass -20K.' },
+            { icon: '💲', title: 'DFW Replacement Costs', body: 'Per window installed by a DFW contractor: Vinyl $400-$600, Fiberglass $700-$1,200, Aluminum $500-$900, Wood $1,200-$2,000. Full house replacement (15-20 windows): Vinyl $6-10K, Fiberglass $12-20K.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#0f2040', border: '1px solid #1e3a5f', borderRadius: 8, padding: '1.2rem' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{c.icon}</div>

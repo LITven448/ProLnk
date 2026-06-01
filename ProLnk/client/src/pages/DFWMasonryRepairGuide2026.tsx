@@ -30,7 +30,7 @@ export default function DFWMasonryRepairGuide2026() {
           {[
             { icon: '⏰', title: 'Mortar Lifespan in DFW', body: 'Mortar in DFW typically lasts 25-50 years depending on original mix quality, drainage, and sun exposure. South and west-facing walls deteriorate faster. Annual inspection lets you catch small areas before they require full repointing.' },
             { icon: '🌡️', title: 'Seasonal Timing', body: 'Masonry repair in DFW should be done in spring (March-May) or fall (October-November). Summer heat (100°F+) causes mortar to cure too quickly, creating weak joints. Winter freezes risk cracking fresh mortar before it sets.' },
-            { icon: '💰', title: 'DFW Cost Ranges', body: 'Tuckpointing: -15/sq ft. Brick replacement: -40/brick installed. Lintel replacement: -2,500/opening. Full facade repoint on average DFW home: ,500-8,000. Always get 3 bids from licensed masons.' },
+            { icon: '💰', title: 'DFW Cost Ranges', body: 'Tuckpointing: $8-$15/sq ft. Brick replacement: $20-$40/brick installed. Lintel replacement: $1,200-$2,500/opening. Full facade repoint on average DFW home: $4,500-$8,000. Always get 3 bids from licensed masons.' },
             { icon: '📋', title: 'Contractor Checklist', body: 'Verify: Texas masonry contractor license, liability insurance (M+), experience matching DFW brick types, written scope specifying mortar type and joint profile, references from DFW projects. Avoid anyone who suggests sealing cracks rather than repointing.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#0f2040', border: '1px solid #1e3a5f', borderRadius: 8, padding: '1.2rem' }}>

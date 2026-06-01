@@ -11,7 +11,7 @@ const approaches: Record<string, { time: string; method: string; apps: string[];
   small: { time: '2-3 hours', method: 'Video walkthrough room by room. Open every drawer, closet, and cabinet. Narrate what you see including model numbers.', apps: ['Encircle (free, insurance-focused)', 'Sortly (tracks values)', 'Google Photos (simple, searchable)'], tips: ['Focus on electronics, appliances, and jewelry first', 'Store in cloud — not just on device that could be damaged', 'Update after any significant purchase over '] },
   medium: { time: '4-6 hours', method: 'Combine video walkthrough with a room-by-room photo spreadsheet. Group items by category. Include receipts and serial numbers for items over .', apps: ['Encircle (best for insurance claims)', 'Sortly (best for valuation)', 'Dropbox (receipt storage)'], tips: ['DFW hail season starts March — update inventory by February', 'Do garage separately — often 20-30% of total value', 'Photograph from multiple angles for art, antiques, or collectibles'] },
   large: { time: '1-2 days (spread over a week)', method: 'Room-by-room documentation with dedicated category lists: electronics, furniture, clothing, tools, outdoor equipment. Use a spreadsheet template alongside video.', apps: ['Encircle with room tags', 'Sortly with custom categories', 'Airtable for detailed tracking'], tips: ['Hire a professional inventory service for art or antiques (150-500 range)', 'Consider a rider for jewelry, art, or wine over policy limits', 'Store backup copy with attorney or in safe deposit box'] },
-  xlarge: { time: '2-5 days or hire a service', method: 'Professional inventory recommended. Many DFW homes at this size have items exceeding standard coverage limits. Document room by room with dedicated photo sessions per room.', apps: ['Encircle Pro', 'Professional home inventory service (800-2000 for full home)', 'Your insurance carrier may have a preferred vendor'], tips: ['Scheduled personal property endorsements needed for high-value items', 'Annual insurance review to ensure coverage keeps pace with inflation', 'Video and photos plus written appraisals for anything over ,500'] },
+  xlarge: { time: '2-5 days or hire a service', method: 'Professional inventory recommended. Many DFW homes at this size have items exceeding standard coverage limits. Document room by room with dedicated photo sessions per room.', apps: ['Encircle Pro', 'Professional home inventory service ($800-$2,000 for full home)', 'Your insurance carrier may have a preferred vendor'], tips: ['Scheduled personal property endorsements needed for high-value items', 'Annual insurance review to ensure coverage keeps pace with inflation', 'Video and photos plus written appraisals for anything over $2,500'] },
 };
 
 export default function DFWHomeInventoryGuide() {
@@ -19,7 +19,7 @@ export default function DFWHomeInventoryGuide() {
   const [hasValuables, setHasValuables] = useState<string[]>([]);
   const [result, setResult] = useState<null | typeof approaches[string]>(null);
 
-  const valuableTypes = ['Jewelry over K', 'Art or collectibles', 'Musical instruments', 'Wine or spirits collection', 'Guns or firearms', 'High-end electronics'];
+  const valuableTypes = ['Jewelry over $5K', 'Art or collectibles', 'Musical instruments', 'Wine or spirits collection', 'Guns or firearms', 'High-end electronics'];
 
   function toggle(v: string) {
     setHasValuables(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
@@ -56,7 +56,7 @@ export default function DFWHomeInventoryGuide() {
               <button key={v} onClick={() => toggle(v)} style={{ background: hasValuables.includes(v) ? '#F5E642' : '#0A1628', color: hasValuables.includes(v) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '8px 12px', cursor: 'pointer', fontSize: 12, textAlign: 'left' }}>{v}</button>
             ))}
           </div>
-          {hasValuables.length > 0 && <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginTop: 8, borderLeft: '3px solid #EF4444' }}><strong style={{ color: '#EF4444' }}>Note:</strong> <span style={{ color: '#94A3B8', fontSize: 14 }}>High-value items often exceed standard policy limits (,000–2,500 cap per category). Ask your agent about a scheduled personal property rider.</span></div>}
+          {hasValuables.length > 0 && <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginTop: 8, borderLeft: '3px solid #EF4444' }}><strong style={{ color: '#EF4444' }}>Note:</strong> <span style={{ color: '#94A3B8', fontSize: 14 }}>High-value items often exceed standard policy limits ($1,000–$2,500 cap per category). Ask your agent about a scheduled personal property rider.</span></div>}
         </div>
 
         {result && (

@@ -18,7 +18,7 @@ const rewardData: Record<string, RewardResult> = {
   waitlist: {
     rewards: [
       '🌟 Early Adopter Badge — permanent recognition on your profile',
-      '🔒 Founding Rate Lock — /bin/zsh/mo homeowner access fee, locked forever',
+      '🔒 Founding Rate Lock — $0/mo homeowner access fee, locked forever',
       '🎯 Priority matching when ProLnk launches — jump the queue',
       '📊 Home Health Vault access free for first 12 months',
     ],
@@ -41,7 +41,7 @@ const rewardData: Record<string, RewardResult> = {
       '🏆 Monthly Home Health Score report — track your home value metrics',
       '🔧 Priority service matching — Pros see your home first',
     ],
-    origination: 'Your home is generating Origination Rights income. Each completed service job on your property contributes a micro-royalty (estimated /bin/zsh.50–.50/job). With 8–12 jobs/yr for an average DFW home, expect –/yr growing as platform scales.',
+    origination: 'Your home is generating Origination Rights income. Each completed service job on your property contributes a micro-royalty (estimated $0.50–$2.50/job). With 8–12 jobs/yr for an average DFW home, expect $5–$30/yr growing as platform scales.',
     credits: [
       'Complete a service booking: +100 Credits per job',
       'Leave a verified review: +200 Credits',
@@ -82,7 +82,7 @@ const rewardData: Record<string, RewardResult> = {
       '🎯 Early access to new ProLnk features before public launch',
       '🤝 Direct line to ProLnk success team for any issues',
     ],
-    origination: 'Power Users receive maximum Origination Rights — your home generates the highest micro-royalty rate tier. Combined with 10+ referred homes, your origination income is estimated at –,500/yr at current platform projections. As ProLnk scales to thousands of Pros in DFW, this compounds significantly.',
+    origination: 'Power Users receive maximum Origination Rights — your home generates the highest micro-royalty rate tier. Combined with 10+ referred homes, your origination income is estimated at $200–$1,500/yr at current platform projections. As ProLnk scales to thousands of Pros in DFW, this compounds significantly.',
     credits: [
       'Power User status bonus: 15,000 Credits',
       'Monthly power user allowance: 500 Credits',

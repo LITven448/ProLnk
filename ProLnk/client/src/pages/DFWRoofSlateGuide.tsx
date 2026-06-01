@@ -5,28 +5,28 @@ const homeTypes = ['Historic Pre-1950', 'Mid-Century 1950-1980', 'Modern Post-19
 
 const slateAdvice: Record<string, Record<string, { action: string; cost: string; specialist: string }>> = {
   'Historic Pre-1950': {
-    Excellent: { action: 'Annual inspection only — slate likely original and solid', cost: 'Inspection: -300', specialist: 'Historic masonry roofer required' },
-    Good: { action: 'Replace cracked or slipped individual slates — repair is always first choice', cost: '-150 per slate replaced', specialist: 'Slate-certified DFW roofer' },
-    Fair: { action: 'Full assessment needed — may need partial re-roofing with salvaged slate', cost: ',000-18,000 partial re-roof', specialist: 'National Slate Association certified contractor' },
-    Poor: { action: 'Full replacement — consider synthetic slate to match historic look', cost: ',000-55,000 for full replacement', specialist: 'Historic preservation roofer + City of Dallas permit' },
+    Excellent: { action: 'Annual inspection only — slate likely original and solid', cost: 'Inspection: $200-$300', specialist: 'Historic masonry roofer required' },
+    Good: { action: 'Replace cracked or slipped individual slates — repair is always first choice', cost: '$50-$150 per slate replaced', specialist: 'Slate-certified DFW roofer' },
+    Fair: { action: 'Full assessment needed — may need partial re-roofing with salvaged slate', cost: '$8,000-$18,000 partial re-roof', specialist: 'National Slate Association certified contractor' },
+    Poor: { action: 'Full replacement — consider synthetic slate to match historic look', cost: '$25,000-$55,000 for full replacement', specialist: 'Historic preservation roofer + City of Dallas permit' },
   },
   'Mid-Century 1950-1980': {
-    Excellent: { action: 'Slate in great shape — inspect flashings and underlayment annually', cost: 'Inspection: -400', specialist: 'General roofer with slate experience' },
-    Good: { action: 'Spot repairs to slipped or cracked slates — cost-effective at this stage', cost: '-800 per repair area', specialist: 'DFW slate-certified contractor' },
-    Fair: { action: 'Structural load assessment first — DFW homes may not support slate weight', cost: '-1,200 structural review + K-15K repairs', specialist: 'Structural engineer + slate roofer' },
-    Poor: { action: 'Replace with lighter alternative — most DFW mid-century homes not built for slate weight', cost: ',000-30,000 full replacement', specialist: 'Licensed DFW roofing contractor' },
+    Excellent: { action: 'Slate in great shape — inspect flashings and underlayment annually', cost: 'Inspection: $200-$400', specialist: 'General roofer with slate experience' },
+    Good: { action: 'Spot repairs to slipped or cracked slates — cost-effective at this stage', cost: '$400-$800 per repair area', specialist: 'DFW slate-certified contractor' },
+    Fair: { action: 'Structural load assessment first — DFW homes may not support slate weight', cost: '$800-$1,200 structural review + $10K-$15K repairs', specialist: 'Structural engineer + slate roofer' },
+    Poor: { action: 'Replace with lighter alternative — most DFW mid-century homes not built for slate weight', cost: '$20,000-$30,000 full replacement', specialist: 'Licensed DFW roofing contractor' },
   },
   'Modern Post-1980': {
-    Excellent: { action: 'Rare — verify it is true slate, not concrete tile. If genuine, inspect annually.', cost: '-500 inspection', specialist: 'Slate expert to verify material' },
-    Good: { action: 'Monitor closely — modern DFW construction rarely designed for slate load', cost: '-900 repairs', specialist: 'Structural review recommended' },
-    Fair: { action: 'Strongly consider replacement — modern framing typically not rated for natural slate', cost: ',000-35,000 replacement', specialist: 'Structural engineer + licensed roofer' },
-    Poor: { action: 'Immediate replacement — safety risk. Modern structures cannot support failing slate', cost: ',000-40,000 emergency replacement', specialist: 'Emergency DFW roofing contractor' },
+    Excellent: { action: 'Rare — verify it is true slate, not concrete tile. If genuine, inspect annually.', cost: '$300-$500 inspection', specialist: 'Slate expert to verify material' },
+    Good: { action: 'Monitor closely — modern DFW construction rarely designed for slate load', cost: '$500-$900 repairs', specialist: 'Structural review recommended' },
+    Fair: { action: 'Strongly consider replacement — modern framing typically not rated for natural slate', cost: '$25,000-$35,000 replacement', specialist: 'Structural engineer + licensed roofer' },
+    Poor: { action: 'Immediate replacement — safety risk. Modern structures cannot support failing slate', cost: '$30,000-$40,000 emergency replacement', specialist: 'Emergency DFW roofing contractor' },
   },
   'Commercial': {
-    Excellent: { action: 'Maintain with annual inspections — commercial slate in DFW extremely rare', cost: '-600 inspection', specialist: 'Commercial roofing specialist' },
-    Good: { action: 'Targeted repairs — document all work for insurance and property records', cost: ',000-5,000 repairs', specialist: 'Commercial slate contractor' },
-    Fair: { action: 'Assess full replacement cost vs repair — commercial ROI calculation needed', cost: ',000-80,000 depending on size', specialist: 'Commercial roofing consultant' },
-    Poor: { action: 'Replace immediately — commercial liability exposure on failing slate', cost: ',000-150,000+ for full commercial re-roof', specialist: 'Commercial roofing firm + structural engineer' },
+    Excellent: { action: 'Maintain with annual inspections — commercial slate in DFW extremely rare', cost: '$400-$600 inspection', specialist: 'Commercial roofing specialist' },
+    Good: { action: 'Targeted repairs — document all work for insurance and property records', cost: '$2,000-$5,000 repairs', specialist: 'Commercial slate contractor' },
+    Fair: { action: 'Assess full replacement cost vs repair — commercial ROI calculation needed', cost: '$40,000-$80,000 depending on size', specialist: 'Commercial roofing consultant' },
+    Poor: { action: 'Replace immediately — commercial liability exposure on failing slate', cost: '$80,000-$150,000+ for full commercial re-roof', specialist: 'Commercial roofing firm + structural engineer' },
   },
 };
 

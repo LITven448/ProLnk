@@ -26,22 +26,22 @@ const materialInfo: Record<string, { lifespan: string; cost: string; dfwNote: st
 
 const repairAdvice: Record<string, Record<string, { action: string; urgency: string; cost: string }>> = {
   'TPO (Thermoplastic Polyolefin)': {
-    Excellent: { action: 'Annual inspection — check seams, flashings, and drains. DFW debris can clog drains and cause ponding.', urgency: 'Low', cost: '-400 inspection' },
-    Good: { action: 'Seal any open seams with TPO tape. Clear all drains before DFW storm season (May-October).', urgency: 'Medium', cost: '-1,500 seam repairs' },
-    Fair: { action: 'Full seam inspection — open seams allow water intrusion. Ponding water is roof life enemy #1 in DFW.', urgency: 'High', cost: ',000-5,000 comprehensive repair' },
-    Poor: { action: 'Full TPO replacement. Blistering, significant ponding, or membrane failure requires immediate action.', urgency: 'Immediate', cost: ',000-25,000 full replacement' },
+    Excellent: { action: 'Annual inspection — check seams, flashings, and drains. DFW debris can clog drains and cause ponding.', urgency: 'Low', cost: '$200-$400 inspection' },
+    Good: { action: 'Seal any open seams with TPO tape. Clear all drains before DFW storm season (May-October).', urgency: 'Medium', cost: '$500-$1,500 seam repairs' },
+    Fair: { action: 'Full seam inspection — open seams allow water intrusion. Ponding water is roof life enemy #1 in DFW.', urgency: 'High', cost: '$2,000-$5,000 comprehensive repair' },
+    Poor: { action: 'Full TPO replacement. Blistering, significant ponding, or membrane failure requires immediate action.', urgency: 'Immediate', cost: '$10,000-$25,000 full replacement' },
   },
   'EPDM (Rubber)': {
-    Excellent: { action: 'Inspect lap seams annually — EPDM seams are the most common failure point.', urgency: 'Low', cost: '-400 inspection' },
-    Good: { action: 'Re-lap any lifting seams. Apply white coating if not already present to reduce DFW heat gain.', urgency: 'Medium', cost: '-2,500' },
-    Fair: { action: 'Assess seam integrity across entire roof. EPDM tears can be patched but extensive damage requires overlay or replacement.', urgency: 'High', cost: ',000-8,000 repair or overlay' },
-    Poor: { action: 'Replace EPDM membrane. Extensive cracking, ponding damage, or seam failure throughout.', urgency: 'Immediate', cost: ',000-30,000 replacement' },
+    Excellent: { action: 'Inspect lap seams annually — EPDM seams are the most common failure point.', urgency: 'Low', cost: '$200-$400 inspection' },
+    Good: { action: 'Re-lap any lifting seams. Apply white coating if not already present to reduce DFW heat gain.', urgency: 'Medium', cost: '$1,000-$2,500' },
+    Fair: { action: 'Assess seam integrity across entire roof. EPDM tears can be patched but extensive damage requires overlay or replacement.', urgency: 'High', cost: '$3,000-$8,000 repair or overlay' },
+    Poor: { action: 'Replace EPDM membrane. Extensive cracking, ponding damage, or seam failure throughout.', urgency: 'Immediate', cost: '$15,000-$30,000 replacement' },
   },
   'Modified Bitumen': {
-    Excellent: { action: 'Annual inspection — check blistering, granule loss from DFW hail, and flashing condition.', urgency: 'Low', cost: '-400 inspection' },
-    Good: { action: 'Patch any blisters or splits. Apply reflective coating to reduce DFW heat load.', urgency: 'Medium', cost: '-2,000 repairs + coating' },
-    Fair: { action: 'Multiple layers may be possible — adding modified bitumen cap sheet over existing can extend life 8-12 years.', urgency: 'High', cost: ',000-10,000 overlay' },
-    Poor: { action: 'Full tear-off and replacement. Do not overlay failing modified bitumen — trapped moisture causes deck damage.', urgency: 'Immediate', cost: ',000-35,000 replacement' },
+    Excellent: { action: 'Annual inspection — check blistering, granule loss from DFW hail, and flashing condition.', urgency: 'Low', cost: '$200-$400 inspection' },
+    Good: { action: 'Patch any blisters or splits. Apply reflective coating to reduce DFW heat load.', urgency: 'Medium', cost: '$500-$2,000 repairs + coating' },
+    Fair: { action: 'Multiple layers may be possible — adding modified bitumen cap sheet over existing can extend life 8-12 years.', urgency: 'High', cost: '$5,000-$10,000 overlay' },
+    Poor: { action: 'Full tear-off and replacement. Do not overlay failing modified bitumen — trapped moisture causes deck damage.', urgency: 'Immediate', cost: '$18,000-$35,000 replacement' },
   },
 };
 

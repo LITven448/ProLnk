@@ -24,19 +24,19 @@ const styles: Record<string, React.CSSProperties> = {
 const decadeData: Record<string, { priorities: string[]; costs: string[] }> = {
   '1980s': {
     priorities: ['HVAC replacement — R-22 systems past end of life, retrofit required', 'Roof replacement — original shingles at 35-40 years', 'Upstairs AC separate zone or additional unit — two-story DFW problem', 'Foundation inspection — 40 years of DFW clay movement', 'Electrical panel upgrade from 100A to 200A for modern loads'],
-    costs: ['HVAC replacement: ,000 – ,000 depending on tonnage', 'Roof: ,000 – ,000 for typical DFW two-story', 'Foundation piers:  –  per pier, 10-20 piers typical', 'Panel upgrade: ,500 – ,500 with permits'],
+    costs: ['HVAC replacement: $8,000 – $16,000 depending on tonnage', 'Roof: $12,000 – $25,000 for typical DFW two-story', 'Foundation piers: $400 – $800 per pier, 10-20 piers typical', 'Panel upgrade: $2,500 – $4,500 with permits'],
   },
   '1990s': {
     priorities: ['Upstairs AC performance audit — #1 complaint in DFW two-story', 'Water heater replacement (25+ years old)', 'HVAC efficiency upgrade — R-22 phase-out impacts older units', 'Windows: single-pane or early low-E nearing end of efficiency life', 'Foundation watering system to manage DFW clay'],
-    costs: ['HVAC upstairs zone add: ,000 – ,000', 'Water heater: ,200 – ,800 (tank) or ,500 – ,500 (tankless)', 'Window replacement:  –  per window installed', 'Foundation monitoring system:  – ,500'],
+    costs: ['HVAC upstairs zone add: $3,000 – $6,000', 'Water heater: $1,200 – $1,800 (tank) or $3,500 – $5,500 (tankless)', 'Window replacement: $400 – $800 per window installed', 'Foundation monitoring system: $1,000 – $2,500'],
   },
   '2000s': {
     priorities: ['HVAC system at or approaching 20-year replacement window', 'Upstairs comfort audit — insulation, radiant barrier, attic ventilation', 'Roofing inspection — original shingles at 20+ years', 'Appliance refresh cycle beginning', 'Smart irrigation to protect foundation in DFW clay'],
-    costs: ['HVAC full replacement: ,000 – ,000', 'Radiant barrier + insulation: ,000 – ,000', 'Roof inspection:  – ; replacement if needed: ,000 – ,000', 'Smart irrigation: ,500 – ,500 installed'],
+    costs: ['HVAC full replacement: $8,000 – $16,000', 'Radiant barrier + insulation: $2,000 – $4,000', 'Roof inspection: $200 – $400; replacement if needed: $12,000 – $25,000', 'Smart irrigation: $2,500 – $4,500 installed'],
   },
   '2010s': {
     priorities: ['HVAC filter and coil maintenance program', 'Upstairs efficiency check — DFW heat exposure accelerates early wear', 'Foundation watering during drought periods', 'Exterior caulking and paint inspection', 'Water heater approaching mid-life — inspect anode rod'],
-    costs: ['Annual HVAC tune-up:  – ', 'Exterior paint refresh: ,000 – ,000', 'Water heater anode rod:  –  service call', 'Foundation watering system:  – ,500 installed'],
+    costs: ['Annual HVAC tune-up: $100 – $200', 'Exterior paint refresh: $3,000 – $6,000', 'Water heater anode rod: $150 – $300 service call', 'Foundation watering system: $1,000 – $2,500 installed'],
   },
 };
 

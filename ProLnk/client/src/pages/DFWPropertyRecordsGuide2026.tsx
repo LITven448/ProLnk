@@ -60,7 +60,7 @@ export default function DFWPropertyRecordsGuide2026() {
 
         <div style={{ marginTop: 24, background: '#1E2D45', borderRadius: 10, padding: 20, border: '1px solid #2D3F5A' }}>
           <p style={{ margin: 0, fontSize: 13, color: '#64748B', lineHeight: 1.6 }}>
-            ⚖️ <strong style={{ color: '#94A3B8' }}>PACER tip:</strong> Search federal bankruptcy court at pacer.gov for any liens that survived foreclosure or are tied to the seller's estate. /bin/zsh.10/page — worth it on any property over K.
+            ⚖️ <strong style={{ color: '#94A3B8' }}>PACER tip:</strong> Search federal bankruptcy court at pacer.gov for any liens that survived foreclosure or are tied to the seller's estate. $0.10/page — worth it on any property over $100K.
           </p>
         </div>
       </div>

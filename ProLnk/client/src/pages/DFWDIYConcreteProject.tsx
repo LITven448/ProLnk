@@ -23,9 +23,9 @@ const SEASON_TIPS: Record<Season, string> = {
 };
 
 const COST: Record<string, { diy: string; pro: string }> = {
-  'Small (< 10 sq ft)': { diy: '–', pro: '–' },
-  'Medium (10–50 sq ft)': { diy: '–', pro: '–,000' },
-  'Large (50+ sq ft)': { diy: 'Not recommended', pro: ',500–,000+' },
+  'Small (< 10 sq ft)': { diy: '$30–$80', pro: '$200–$500' },
+  'Medium (10–50 sq ft)': { diy: '$80–$250', pro: '$500–$2,000' },
+  'Large (50+ sq ft)': { diy: 'Not recommended', pro: '$2,500–$8,000+' },
 };
 
 export default function DFWDIYConcreteProject() {

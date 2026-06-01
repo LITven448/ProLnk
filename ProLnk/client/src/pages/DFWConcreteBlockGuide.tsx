@@ -9,19 +9,19 @@ const CMU_APPLICATIONS = [
 
 const RECOMMENDATIONS: Record<string, Record<string, { maintenance: string; waterproofing: string; cost: string }>> = {
   retaining: {
-    dry: { maintenance: 'Inspect annually for lean or crack. Repoint mortar every 10-15 years.', waterproofing: 'Crystalline waterproof coating on soil side. French drain mandatory.', cost: 'Repair: -2,400. Full replacement: -55/linear ft.' },
-    wet: { maintenance: 'Inspect every 6 months. DFW soil heave can shift wall 1-2 inches per wet season.', waterproofing: 'Dimple mat + crystalline coat. Sump consideration if below grade.', cost: 'Repair: ,200-4,000. Rebuild with drainage: -90/linear ft.' },
-    cracked: { maintenance: 'Stop using wall for retained load immediately. Engineer eval required.', waterproofing: 'Repair before waterproofing — waterproof over cracks fails within 2 years.', cost: 'Structural repair: ,000-8,000+ depending on extent.' },
+    dry: { maintenance: 'Inspect annually for lean or crack. Repoint mortar every 10-15 years.', waterproofing: 'Crystalline waterproof coating on soil side. French drain mandatory.', cost: 'Repair: $800-$2,400. Full replacement: $35-$55/linear ft.' },
+    wet: { maintenance: 'Inspect every 6 months. DFW soil heave can shift wall 1-2 inches per wet season.', waterproofing: 'Dimple mat + crystalline coat. Sump consideration if below grade.', cost: 'Repair: $1,200-$4,000. Rebuild with drainage: $60-$90/linear ft.' },
+    cracked: { maintenance: 'Stop using wall for retained load immediately. Engineer eval required.', waterproofing: 'Repair before waterproofing — waterproof over cracks fails within 2 years.', cost: 'Structural repair: $3,000-$8,000+ depending on extent.' },
   },
   crawl: {
-    dry: { maintenance: 'Check for efflorescence annually. Clean with diluted muriatic acid if present.', waterproofing: 'Elastomeric paint interior sufficient. Ensure exterior grade slopes away.', cost: 'DIY waterproof coat: -600. Pro application: -1,800.' },
-    wet: { maintenance: 'Investigate moisture source first — downspout, grade, or high water table.', waterproofing: 'Interior drain system + vapor barrier + dehumidifier. Exterior membrane preferred.', cost: 'Interior system: ,000-7,000. Exterior excavation + membrane: ,000-18,000.' },
-    cracked: { maintenance: 'Stair-step cracks in crawl CMU = foundation movement. Engineer first.', waterproofing: 'Crack injection (epoxy or polyurethane) before any waterproofing.', cost: 'Crack injection: -800/crack. Foundation underpinning if needed: ,000+.' },
+    dry: { maintenance: 'Check for efflorescence annually. Clean with diluted muriatic acid if present.', waterproofing: 'Elastomeric paint interior sufficient. Ensure exterior grade slopes away.', cost: 'DIY waterproof coat: $200-$600. Pro application: $800-$1,800.' },
+    wet: { maintenance: 'Investigate moisture source first — downspout, grade, or high water table.', waterproofing: 'Interior drain system + vapor barrier + dehumidifier. Exterior membrane preferred.', cost: 'Interior system: $4,000-$7,000. Exterior excavation + membrane: $9,000-$18,000.' },
+    cracked: { maintenance: 'Stair-step cracks in crawl CMU = foundation movement. Engineer first.', waterproofing: 'Crack injection (epoxy or polyurethane) before any waterproofing.', cost: 'Crack injection: $400-$800/crack. Foundation underpinning if needed: $5,000+.' },
   },
   fence: {
-    dry: { maintenance: 'Repoint mortar every 7-10 years. DFW UV degrades mortar faster than northern climates.', waterproofing: 'Penetrating silane sealer every 5 years. Prevents DFW winter ice damage.', cost: 'Sealer: /bin/zsh.50-1.50/sq ft DIY. Mortar repoint: -12/linear ft.' },
-    wet: { maintenance: 'Check cap blocks after heavy rain. Missing caps = rapid moisture damage.', waterproofing: 'Replace caps + apply silane sealer. Add drip edge to cap detail.', cost: 'Cap replacement: -30/cap. Full repoint + seal: -2,500.' },
-    cracked: { maintenance: 'Vertical cracks in fence CMU — likely no rebar (common in older DFW installs).', waterproofing: 'Tuckpoint + seal. If leaning, demo and rebuild with rebar.', cost: 'Tuckpoint: -900. Rebuild with rebar: -40/linear ft.' },
+    dry: { maintenance: 'Repoint mortar every 7-10 years. DFW UV degrades mortar faster than northern climates.', waterproofing: 'Penetrating silane sealer every 5 years. Prevents DFW winter ice damage.', cost: 'Sealer: $0.50-$1.50/sq ft DIY. Mortar repoint: $8-$12/linear ft.' },
+    wet: { maintenance: 'Check cap blocks after heavy rain. Missing caps = rapid moisture damage.', waterproofing: 'Replace caps + apply silane sealer. Add drip edge to cap detail.', cost: 'Cap replacement: $15-$30/cap. Full repoint + seal: $1,200-$2,500.' },
+    cracked: { maintenance: 'Vertical cracks in fence CMU — likely no rebar (common in older DFW installs).', waterproofing: 'Tuckpoint + seal. If leaning, demo and rebuild with rebar.', cost: 'Tuckpoint: $400-$900. Rebuild with rebar: $25-$40/linear ft.' },
   },
 };
 

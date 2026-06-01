@@ -40,10 +40,10 @@ const homeValues: Record<string, { needs: string[]; specialists: string[] }> = {
 };
 
 const featureBudgets: Record<string, string[]> = {
-  'generator': ['Annual service contract:  – /year', 'Transfer switch inspection: included or ', 'Fuel (propane/natural gas):  – ,200/year operational cost'],
-  'smart-home': ['Annual monitoring/support contract: ,200 – ,600/year', 'Software licensing (Savant, Control4):  – /year', 'Hardware refresh cycle: budget ,000 – ,000 every 5 years'],
-  'wine-room': ['Climate control service:  – /year', 'Cooling unit replacement cycle: ,000 – ,000 every 8-12 years', 'Humidity sensor calibration: included in service contract'],
-  'pool': ['Weekly pool service:  – /month', 'Annual equipment inspection:  – ', 'Filter and pump replacement cycle: ,500 – ,000 every 5-8 years'],
+  'generator': ['Annual service contract: varies by provider, billed yearly', 'Transfer switch inspection: included or billed separately', 'Fuel (propane/natural gas): up to $1,200/year operational cost'],
+  'smart-home': ['Annual monitoring/support contract: $1,200 – $3,600/year', 'Software licensing (Savant, Control4): varies by platform, billed yearly', 'Hardware refresh cycle: budget $5,000 – $15,000 every 5 years'],
+  'wine-room': ['Climate control service: varies by system, billed yearly', 'Cooling unit replacement cycle: $3,000 – $8,000 every 8-12 years', 'Humidity sensor calibration: included in service contract'],
+  'pool': ['Weekly pool service: varies by pool size, billed monthly', 'Annual equipment inspection: varies by equipment', 'Filter and pump replacement cycle: $1,500 – $5,000 every 5-8 years'],
 };
 
 export default function DFWLuxuryHomeMaintenanceGuide() {

@@ -24,10 +24,10 @@ export default function DFWHomeEmergencyFundGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '❄️', label: 'HVAC Failure', range: ',000 – ,000', note: 'Avg DFW replacement cost' },
-            { icon: '💧', label: 'Slab Leak Repair', range: ',000 – ,000', note: 'Common in DFW clay soil' },
-            { icon: '🌩️', label: 'Roof Hail Damage', range: ',850 – ,250', note: 'Deductible on avg DFW home' },
-            { icon: '🏗️', label: 'Foundation Repair', range: ',000 – ,000', note: 'Clay soil movement risk' },
+            { icon: '❄️', label: 'HVAC Failure', range: '$8,000 – $16,000', note: 'Avg DFW replacement cost' },
+            { icon: '💧', label: 'Slab Leak Repair', range: '$2,000 – $6,000', note: 'Common in DFW clay soil' },
+            { icon: '🌩️', label: 'Roof Hail Damage', range: '$1,850 – $3,250', note: 'Deductible on avg DFW home' },
+            { icon: '🏗️', label: 'Foundation Repair', range: '$4,000 – $12,000', note: 'Clay soil movement risk' },
           ].map((item) => (
             <div key={item.label} style={{ background: 'rgba(245,230,66,0.07)', border: '1px solid rgba(245,230,66,0.2)', borderRadius: 12, padding: '20px 18px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>

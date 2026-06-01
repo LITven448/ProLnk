@@ -19,7 +19,7 @@ export default function DFWAirDuctCleaningGuide2026() {
     'mold': '✅ WARRANTED — Mold spores circulate throughout the home via ducts. Get an air quality test first, then professional remediation. Address moisture source or mold returns.',
     'spring-cleaning': '⚠️ PROBABLY NOT — EPA states duct cleaning is not proven to improve air quality in routine cases. Spring in DFW means cottonwood — clean your condenser coil instead.',
     'allergies': '⚠️ LIKELY NOT — EPA review found no evidence duct cleaning reduces dust or allergens in typical homes. Check HVAC filter (MERV 11+), humidity levels, and air sealing first.',
-    'contractor-pitch': '🚫 SKIP IT — If no mold, pests, or construction debris, routine duct cleaning is rarely necessary. NADCA-certified cleaners charge –,000. Verify need before spending.',
+    'contractor-pitch': '🚫 SKIP IT — If no mold, pests, or construction debris, routine duct cleaning is rarely necessary. NADCA-certified cleaners charge $400–$1,000. Verify need before spending.',
   };
 
   const handleCheck = () => {
@@ -37,7 +37,7 @@ export default function DFWAirDuctCleaningGuide2026() {
           {[
             { icon: '📋', label: 'EPA Position', value: 'Not proven for routine cases' },
             { icon: '✅', label: 'NADCA Certified', value: 'Legitimate cleaning standard' },
-            { icon: '💰', label: 'Typical Cost', value: ' – ,000 DFW' },
+            { icon: '💰', label: 'Typical Cost', value: '$400 – $1,000 DFW' },
             { icon: '⚠️', label: 'When Warranted', value: 'Mold, pests, new construction' },
           ].map(item => (
             <div key={item.label} style={{ backgroundColor: '#0f2040', border: '1px solid #1e3a5f', borderRadius: '10px', padding: '1.2rem' }}>

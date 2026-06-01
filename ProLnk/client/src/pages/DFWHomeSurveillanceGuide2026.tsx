@@ -7,19 +7,19 @@ export default function DFWHomeSurveillanceGuide2026() {
 
   const recs: Record<string, Record<string, string>> = {
     small: {
-      low: '📦 Budget Pick: Reolink RLC-810A (4K PoE, /camera) + Reolink 8-channel NVR (). 4-camera setup covers most DFW townhomes. Local storage only — no monthly fees. 4K captures license plates at 30ft. Total: -480.',
-      mid: '⭐ Mid-Range: Arlo Pro 5S (2K HDR, wire-free) for flexible placement around your DFW lot. 6-camera kit + Arlo Secure hub (). Cloud + local base station storage. Color night vision handles DFW street light conditions.',
+      low: '📦 Budget Pick: Reolink RLC-810A (4K PoE, $80/camera) + Reolink 8-channel NVR ($200). 4-camera setup covers most DFW townhomes. Local storage only — no monthly fees. 4K captures license plates at 30ft. Total: $400-$480.',
+      mid: '⭐ Mid-Range: Arlo Pro 5S (2K HDR, wire-free) for flexible placement around your DFW lot. 6-camera kit + Arlo Secure hub ($900). Cloud + local base station storage. Color night vision handles DFW street light conditions.',
       high: '🏆 Premium: Avigilon (Motorola) H5SL 4K with AI analytics. Detects humans vs vehicles vs animals — eliminates DFW squirrel false alarms. 4-camera NVR system with 30-day retention. ,800-2,400 installed.',
     },
     medium: {
-      low: '📦 Budget Pick: Reolink 8-camera 4K PoE system (). Single CAT5e run per camera. 3TB NVR covers 45 days continuous. DFW garage, front, back, two side yards fully covered.',
+      low: '📦 Budget Pick: Reolink 8-camera 4K PoE system ($700). Single CAT5e run per camera. 3TB NVR covers 45 days continuous. DFW garage, front, back, two side yards fully covered.',
       mid: '⭐ Mid-Range: Ring Alarm Pro + 8x Ring Spotlight Cam Pro (,100). Integrated alarm + cameras. DFW neighborhoods: motion zones prevent street traffic triggers. 180-day cloud history on Premium plan.',
       high: '🏆 Premium: Hanwha QNV-8080R 4K dome cameras (vandal-resistant) + Synology NAS NVR. 8-camera system with 60-day 4K retention locally. DFW HOA-friendly dome design. ,200-4,800 installed.',
     },
     large: {
-      low: '📦 Budget Pick: 16-channel Reolink PoE NVR + 12x 4K cameras (). Covers DFW estate perimeter with 6TB storage. Add PoE switch for camera expansion without rewiring.',
+      low: '📦 Budget Pick: 16-channel Reolink PoE NVR + 12x 4K cameras ($1,500). Covers DFW estate perimeter with 6TB storage. Add PoE switch for camera expansion without rewiring.',
       mid: '⭐ Mid-Range: Hikvision AcuSense 4K system (16 cameras) + DS-7716NI-I4 NVR. AI human/vehicle detection, DFW perimeter alerts only for relevant motion. ,400-3,800 installed.',
-      high: '🏆 Commercial-Grade: Axis Communications P3245-V 4K with ARTPEC-8 chip. On-camera AI processing — no server needed. 16-camera estate system with redundant 20TB NAS. DFW security integrators install as commercial-grade residential. ,000-15,000.',
+      high: '🏆 Commercial-Grade: Axis Communications P3245-V 4K with ARTPEC-8 chip. On-camera AI processing — no server needed. 16-camera estate system with redundant 20TB NAS. DFW security integrators install as commercial-grade residential. $8,000-$15,000.',
     },
   };
 

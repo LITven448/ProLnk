@@ -41,9 +41,9 @@ export default function DFWRealEstateTaxGuide() {
           <h2 style={{ margin: '0 0 12px', fontSize: 20, color: '#2e7d32' }}>🌟 Texas Tax Advantages</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
-              { label: 'State Income Tax', value: '/bin/zsh', note: 'Texas has NO state income tax on capital gains from home sales' },
-              { label: 'Documentary Stamp Tax', value: '/bin/zsh', note: 'Texas does NOT impose a transfer or documentary stamp tax' },
-              { label: 'Real Estate Transfer Tax', value: '/bin/zsh', note: 'No deed transfer tax — unlike CA, NY, FL which charge 0.1–2%' },
+              { label: 'State Income Tax', value: 0, note: 'Texas has NO state income tax on capital gains from home sales' },
+              { label: 'Documentary Stamp Tax', value: 0, note: 'Texas does NOT impose a transfer or documentary stamp tax' },
+              { label: 'Real Estate Transfer Tax', value: 0, note: 'No deed transfer tax — unlike CA, NY, FL which charge 0.1–2%' },
             ].map(item => (
               <div key={item.label} style={{ background: '#fff', borderRadius: 8, padding: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
@@ -111,7 +111,7 @@ export default function DFWRealEstateTaxGuide() {
             ].map(item => (
               <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
                 <span>{item.label}</span>
-                <span style={{ fontWeight: 700, color: item.value === 0 ? '#4caf50' : '#F5E642' }}>{item.value === 0 ? '✅ /bin/zsh' : formatMoney(item.value)}</span>
+                <span style={{ fontWeight: 700, color: item.value === 0 ? '#4caf50' : '#F5E642' }}>{item.value === 0 ? '✅ $0' : formatMoney(item.value)}</span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px 0 0', marginTop: 4 }}>

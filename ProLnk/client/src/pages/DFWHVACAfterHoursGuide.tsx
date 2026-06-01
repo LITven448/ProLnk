@@ -15,19 +15,19 @@ const emergencyChecklist = [
 
 const costs = [
   { label: 'After-Hours Diagnostic Fee', range: '–', note: 'Just to show up and diagnose — billed regardless of repair' },
-  { label: 'After-Hours Labor Rate', range: '–/hr', note: 'vs –/hr during business hours' },
-  { label: 'Emergency Refrigerant Add', range: '–', note: 'If low refrigerant is the cause; includes overnight premium' },
-  { label: 'Capacitor Replacement (common)', range: '–', note: 'Parts + emergency labor; - during hours' },
-  { label: 'Contactor Replacement', range: '–', note: 'Frequent DFW failure; burns out in summer heat' },
-  { label: 'Emergency Compressor', range: ',200–,500', note: 'Rare overnight — usually flagged for next-day or replacement' },
+  { label: 'After-Hours Labor Rate', range: '$150–$250/hr', note: 'vs $90–$150/hr during business hours' },
+  { label: 'Emergency Refrigerant Add', range: '$300–$600', note: 'If low refrigerant is the cause; includes overnight premium' },
+  { label: 'Capacitor Replacement (common)', range: '$250–$450', note: 'Parts + emergency labor; $150–$300 during hours' },
+  { label: 'Contactor Replacement', range: '$200–$400', note: 'Frequent DFW failure; burns out in summer heat' },
+  { label: 'Emergency Compressor', range: '$1,200–$3,500', note: 'Rare overnight — usually flagged for next-day or replacement' },
 ];
 
 const situations: Record<string, { verdict: string; color: string; reason: string; cost: string }> = {
-  'No AC, 100°F+ outside, elderly or infant in home': { verdict: 'CALL NOW — Emergency', color: '#EF4444', reason: 'Heat stroke risk in 2-4 hours. This is a medical emergency, not just discomfort.', cost: '– expected' },
-  'No AC, 100°F+ outside, healthy adults only': { verdict: 'CALL NOW — Emergency', color: '#EF4444', reason: 'Indoor temp will reach 95°F+ within 4 hours. After-hours is justified at these temps.', cost: '– expected' },
-  'AC running but barely cooling, 95°F outside': { verdict: 'Call Tonight — Urgent', color: '#F59E0B', reason: 'Likely low refrigerant or failing capacitor. Will only get worse. Waiting risks compressor damage.', cost: '– expected' },
-  'Strange noise but still cooling fine, 90°F outside': { verdict: 'Wait Until Morning', color: '#10B981', reason: 'System is still functional. Note the noise type and time it started. Call at 7am for same-day service.', cost: '– during hours' },
-  'AC not running, 75°F outside at night': { verdict: 'Wait Until Morning', color: '#10B981', reason: 'Overnight temps make this safe to wait. Open windows. Call first thing in the morning to get on the early queue.', cost: '– during hours' },
+  'No AC, 100°F+ outside, elderly or infant in home': { verdict: 'CALL NOW — Emergency', color: '#EF4444', reason: 'Heat stroke risk in 2-4 hours. This is a medical emergency, not just discomfort.', cost: '$350-$800 expected' },
+  'No AC, 100°F+ outside, healthy adults only': { verdict: 'CALL NOW — Emergency', color: '#EF4444', reason: 'Indoor temp will reach 95°F+ within 4 hours. After-hours is justified at these temps.', cost: '$350-$800 expected' },
+  'AC running but barely cooling, 95°F outside': { verdict: 'Call Tonight — Urgent', color: '#F59E0B', reason: 'Likely low refrigerant or failing capacitor. Will only get worse. Waiting risks compressor damage.', cost: '$250-$600 expected' },
+  'Strange noise but still cooling fine, 90°F outside': { verdict: 'Wait Until Morning', color: '#10B981', reason: 'System is still functional. Note the noise type and time it started. Call at 7am for same-day service.', cost: '$150-$350 during hours' },
+  'AC not running, 75°F outside at night': { verdict: 'Wait Until Morning', color: '#10B981', reason: 'Overnight temps make this safe to wait. Open windows. Call first thing in the morning to get on the early queue.', cost: '$150-$350 during hours' },
   'Water dripping from indoor unit': { verdict: 'Check First, Then Decide', color: '#8B5CF6', reason: 'Turn off AC. Check drain pan. If minor, place a towel and call morning. If flooding, call now to prevent water damage.', cost: '–' },
 };
 

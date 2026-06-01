@@ -21,10 +21,10 @@ const closingData: Record<string, ClosingResult> = {
     ],
     fees: [
       'Title insurance (owner policy): ~0.5–1% of purchase price — one-time, protects forever',
-      'Title search/exam: –',
-      'Closing/escrow fee: – split between buyer and seller',
-      'Recording fee: – per document (deed + deed of trust)',
-      'Survey: – if required by lender or HOA',
+      'Title search/exam: $100–$200',
+      'Closing/escrow fee: $300–$600 split between buyer and seller',
+      'Recording fee: $25–$50 per document (deed + deed of trust)',
+      'Survey: $400–$700 if required by lender or HOA',
     ],
     bring: [
       'Government-issued photo ID (driver license or passport)',
@@ -45,9 +45,9 @@ const closingData: Record<string, ClosingResult> = {
     ],
     fees: [
       'Owner title policy: seller typically pays in DFW — ~0.5–1% of price',
-      'Closing/escrow fee: ~– (split or seller pays per contract)',
+      'Closing/escrow fee: ~$300–$600 (split or seller pays per contract)',
       'Texas has no transfer/documentary stamp tax — major savings vs. other states',
-      'HOA resale certificate: – if applicable',
+      'HOA resale certificate: $200–$400 if applicable',
       'Agent commissions: negotiated separately, paid from proceeds',
     ],
     bring: [
@@ -69,8 +69,8 @@ const closingData: Record<string, ClosingResult> = {
     ],
     fees: [
       'Title insurance (optional for cash buyers, highly recommended): ~0.5% of price',
-      'Title search: –',
-      'Closing fee: – (no lender fee)',
+      'Title search: $100–$200',
+      'Closing fee: $300–$600 (no lender fee)',
       'Recording: –',
       'No appraisal required — saves – vs financed purchase',
     ],
@@ -90,10 +90,10 @@ const closingData: Record<string, ClosingResult> = {
       '5. Old lien paid off, new deed of trust recorded',
     ],
     fees: [
-      'Lender title policy (required by lender): –,500 depending on loan amount',
-      'Owner title policy update (optional but cheap): –',
-      'Closing/escrow fee: –',
-      'Recording: – for new deed of trust',
+      'Lender title policy (required by lender): $200–$1,500 depending on loan amount',
+      'Owner title policy update (optional but cheap): $50–$150',
+      'Closing/escrow fee: $300–$600',
+      'Recording: $25–$50 for new deed of trust',
     ],
     bring: [
       'Photo ID',

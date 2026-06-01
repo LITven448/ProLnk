@@ -13,35 +13,35 @@ export default function DFWPoolRenovationGuide2026() {
 
     if (age >= 10 || condition === 'rough') {
       scopes.push('🪨 Replaster or Pebble Finish Replacement');
-      costs.push(finishType === 'plaster' ? ',000–,000' : finishType === 'pebble' ? ',000–,000' : ',000–,000');
+      costs.push(finishType === 'plaster' ? '$5,000–$9,000' : finishType === 'pebble' ? '$9,000–$18,000' : '$7,000–$12,000');
     }
     if (age >= 15 || condition === 'rough') {
       scopes.push('🔲 Tile Line Replacement');
-      costs.push(',000–,000');
+      costs.push('$2,000–$5,000');
     }
     if (age >= 20) {
       scopes.push('🏗️ Coping Replacement (bullnose or travertine)');
-      costs.push(',000–,000');
+      costs.push('$3,000–$8,000');
     }
     if (age >= 8) {
       scopes.push('💡 LED Light Upgrade (replace incandescent)');
-      costs.push('– per light');
+      costs.push('$300–$600 per light');
     }
     if (condition === 'rough') {
       scopes.push('🔍 Structural Inspection for cracks/settling');
-      costs.push('– inspection');
+      costs.push('$300–$600 inspection');
     }
     scopes.push('🎨 Waterline Tile Refresh (optional aesthetic)');
-    costs.push('–,000');
+    costs.push('$1,500–$4,000');
 
     return scopes.map((s, i) => ({ scope: s, cost: costs[i] }));
   };
 
   const finishComparison = [
-    { name: 'Standard Plaster', life: '8–12 yrs', cost: '–8K', look: 'Classic white, shows age faster' },
-    { name: 'Quartz Aggregate', life: '12–18 yrs', cost: '–12K', look: 'Subtle sparkle, very popular in DFW' },
-    { name: 'Pebble Tec / Pebble Fina', life: '20–25 yrs', cost: '–18K', look: 'Premium look, rough texture, top DFW choice' },
-    { name: 'Exposed Aggregate', life: '15–20 yrs', cost: '–15K', look: 'Natural stone look, durable in TX heat' },
+    { name: 'Standard Plaster', life: '8–12 yrs', cost: '$5–8K', look: 'Classic white, shows age faster' },
+    { name: 'Quartz Aggregate', life: '12–18 yrs', cost: '$7–12K', look: 'Subtle sparkle, very popular in DFW' },
+    { name: 'Pebble Tec / Pebble Fina', life: '20–25 yrs', cost: '$11–18K', look: 'Premium look, rough texture, top DFW choice' },
+    { name: 'Exposed Aggregate', life: '15–20 yrs', cost: '$9–15K', look: 'Natural stone look, durable in TX heat' },
   ];
 
   return (

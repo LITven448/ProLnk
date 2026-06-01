@@ -38,7 +38,7 @@ export default function DFWFoundationCarbonFiberGuide2026() {
             { icon: '🏗️', label: 'DFW Construction', value: 'Mostly slab-on-grade' },
             { icon: '✅', label: 'Best Use Case', value: 'Bowing basement walls' },
             { icon: '🚫', label: 'Not a Fix For', value: 'DFW slab heave (clay)' },
-            { icon: '💰', label: 'Typical Cost', value: '– per strap' },
+            { icon: '💰', label: 'Typical Cost', value: '$350–$700 per strap' },
           ].map(item => (
             <div key={item.label} style={{ backgroundColor: '#0f2040', border: '1px solid #1e3a5f', borderRadius: '10px', padding: '1.2rem' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>{item.icon}</div>

@@ -13,25 +13,25 @@ const IMPLICATIONS: Record<string, { veneer: string; structural: string; repair:
     veneer: 'Brick veneer bulging = wall ties have failed or corroded. DFW moisture accelerates tie corrosion. Veneer can fall — do not ignore.',
     structural: 'Structural brick bulging is rare and serious — indicates foundation movement or water damage to entire wall assembly.',
     repair: 'Veneer: Re-anchor with helical brick ties through exterior. Structural: Structural engineer required before any repair.',
-    cost: 'Veneer tie replacement: -2,500 per wall section. Structural brick repair: ,000-20,000+.',
+    cost: 'Veneer tie replacement: $1,200-$2,500 per wall section. Structural brick repair: $5,000-$20,000+.',
   },
   cracking: {
     veneer: 'Crack in veneer = cosmetic-to-moderate concern. Stair-step cracks along mortar joints suggest foundation movement transmitted to veneer.',
     structural: 'Cracks in structural brick walls can indicate compromised load path. Foundation evaluation essential.',
     repair: 'Veneer: Tuckpoint cracks, monitor for movement. Diagonal cracks — get foundation checked first.',
-    cost: 'Tuckpointing: -15/linear ft. Foundation evaluation: -800. Foundation repair if needed: ,000-20,000.',
+    cost: 'Tuckpointing: $8-$15/linear ft. Foundation evaluation: $400-$800. Foundation repair if needed: $5,000-$20,000.',
   },
   spalling: {
     veneer: 'Spalling veneer is common in DFW — moisture gets behind veneer and cycles through winter freezes. Cosmetic but must be addressed to prevent water infiltration to sheathing.',
     structural: 'Spalling on structural brick exposes interior to moisture and reduces load capacity over time.',
     repair: 'Veneer: Replace individual spalled bricks. Match DFW clay color carefully — use salvage bricks for historic matches.',
-    cost: 'Brick replacement: -25/brick installed. Full veneer area re-work: -22/sq ft.',
+    cost: 'Brick replacement: $10-$25/brick installed. Full veneer area re-work: $15-$22/sq ft.',
   },
   gaps: {
     veneer: 'Gaps between veneer and foundation, around windows, or at soffit = brick veneer has moved. DFW settlement common.',
     structural: 'Gaps in structural brick indicate serious movement — this is a structural event, not maintenance.',
     repair: 'Veneer: Inspect flashing and ties at gap locations. Seal gaps with backer rod + elastomeric caulk after addressing cause.',
-    cost: 'Caulk and seal: -600 DIY. If movement ongoing, foundation evaluation: -800 before sealing.',
+    cost: 'Caulk and seal: $200-$600 DIY. If movement ongoing, foundation evaluation: $400-$800 before sealing.',
   },
 };
 

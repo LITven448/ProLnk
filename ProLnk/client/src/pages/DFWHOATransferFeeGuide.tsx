@@ -13,9 +13,9 @@ const hoaResults: Record<string, HOAResult> = {
   buyer: {
     payer: 'Typically paid by Seller, but negotiate — ask for it in your offer.',
     fees: [
-      'Resale Certificate fee: – (document package summarizing HOA financials)',
-      'Transfer fee: – (paid to HOA to update ownership records)',
-      'New owner setup fee: – at some DFW HOAs',
+      'Resale Certificate fee: $200–$400 (document package summarizing HOA financials)',
+      'Transfer fee: $100–$300 (paid to HOA to update ownership records)',
+      'New owner setup fee: $50–$200 at some DFW HOAs',
     ],
     documents: [
       'Resale Certificate — required by Texas law (§207.003)',
@@ -33,9 +33,9 @@ const hoaResults: Record<string, HOAResult> = {
   seller: {
     payer: 'You typically pay transfer fees and the resale certificate cost.',
     fees: [
-      'Resale Certificate: – — you order and pay for this',
-      'Transfer fee: – — typically your responsibility',
-      'Account statement/estoppel letter: – some HOAs charge',
+      'Resale Certificate: $200–$400 — you order and pay for this',
+      'Transfer fee: $100–$300 — typically your responsibility',
+      'Account statement/estoppel letter: $50–$200 some HOAs charge',
       'Unpaid dues or violations: settled at closing from proceeds',
     ],
     documents: [
@@ -54,7 +54,7 @@ const hoaResults: Record<string, HOAResult> = {
     fees: [
       'As seller: resale certificate (–) + transfer fee (–)',
       'As buyer: ask seller to cover transfer fee — common in DFW buyer requests',
-      'Total exposure: –,500 across both transactions if not negotiated',
+      'Total exposure: $500–$1,500 across both transactions if not negotiated',
     ],
     documents: [
       'Order your sale resale certificate immediately — do not wait',

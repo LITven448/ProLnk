@@ -37,8 +37,8 @@ export default function DFWFoundationEpoxyGuide2026() {
           {[
             { icon: '✅', label: 'Best For', value: 'Hairline to 1/4 in. cracks' },
             { icon: '💪', label: 'Strength', value: 'Stronger than concrete' },
-            { icon: '🔧', label: 'DIY Kit Cost', value: '– at hardware store' },
-            { icon: '👷', label: 'Pro Injection', value: '– per crack' },
+            { icon: '🔧', label: 'DIY Kit Cost', value: '$60–$150 at hardware store' },
+            { icon: '👷', label: 'Pro Injection', value: '$400–$800 per crack' },
           ].map(item => (
             <div key={item.label} style={{ backgroundColor: '#0f2040', border: '1px solid #1e3a5f', borderRadius: '10px', padding: '1.2rem' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>{item.icon}</div>

@@ -10,12 +10,12 @@ export default function DFWPoolEquipmentGuide2026() {
   const getUpgrades = () => {
     const upgrades: { priority: string; item: string; cost: string; note: string }[] = [];
 
-    if (!hasVSP) upgrades.push({ priority: '🔴 HIGH', item: 'Variable Speed Pump', cost: '–,400 installed', note: 'Cuts electricity 60–70% in DFW. Avg payback 18 months.' });
-    if (filterType === 'sand') upgrades.push({ priority: '🟡 MEDIUM', item: 'Upgrade to Cartridge Filter', cost: '– installed', note: 'Better filtration, no backwash waste — saves water in DFW drought conditions.' });
-    if (!hasHeater) upgrades.push({ priority: '🟡 MEDIUM', item: 'Heat Pump Heater', cost: ',000–,500 installed', note: 'DFW climate ideal for heat pumps. Extends swim season Oct–Apr.' });
-    upgrades.push({ priority: '🟢 NICE', item: 'Pool Automation System', cost: ',200–,500 installed', note: 'Control pump, lights, heater from phone. Hayward OmniLogic popular in DFW.' });
-    upgrades.push({ priority: '🟢 NICE', item: 'Robotic Cleaner', cost: '–,200', note: 'Reduces pump run time. Dolphin and Polaris popular for DFW plaster pools.' });
-    if (poolSize === 'large') upgrades.push({ priority: '🟡 MEDIUM', item: 'Second Skimmer Addition', cost: '–,500', note: 'Large pools in DFW benefit from extra skimming during spring/fall leaf season.' });
+    if (!hasVSP) upgrades.push({ priority: '🔴 HIGH', item: 'Variable Speed Pump', cost: '$1,200–$2,400 installed', note: 'Cuts electricity 60–70% in DFW. Avg payback 18 months.' });
+    if (filterType === 'sand') upgrades.push({ priority: '🟡 MEDIUM', item: 'Upgrade to Cartridge Filter', cost: '$600–$1,200 installed', note: 'Better filtration, no backwash waste — saves water in DFW drought conditions.' });
+    if (!hasHeater) upgrades.push({ priority: '🟡 MEDIUM', item: 'Heat Pump Heater', cost: '$3,000–$5,500 installed', note: 'DFW climate ideal for heat pumps. Extends swim season Oct–Apr.' });
+    upgrades.push({ priority: '🟢 NICE', item: 'Pool Automation System', cost: '$1,200–$2,500 installed', note: 'Control pump, lights, heater from phone. Hayward OmniLogic popular in DFW.' });
+    upgrades.push({ priority: '🟢 NICE', item: 'Robotic Cleaner', cost: '$800–$1,200', note: 'Reduces pump run time. Dolphin and Polaris popular for DFW plaster pools.' });
+    if (poolSize === 'large') upgrades.push({ priority: '🟡 MEDIUM', item: 'Second Skimmer Addition', cost: '$800–$1,500', note: 'Large pools in DFW benefit from extra skimming during spring/fall leaf season.' });
 
     return upgrades;
   };

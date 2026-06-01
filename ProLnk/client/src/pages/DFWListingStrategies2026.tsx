@@ -9,7 +9,7 @@ function getStrategy(type: string, market: string, timeline: string) {
   const dom = isHot ? '4-7' : '10-18';
   const timing = timeline === 'ASAP (within 30 days)' ? 'List Thursday for weekend showings — maximize first-weekend foot traffic.' : 'Plan for Thursday listing day regardless of month; spring (Mar-May) adds 8-12% premium.';
   const photo = type === 'Condo' ? 'Wide-angle interior shots + rooftop/amenity photos — exterior matters less.' : 'Golden hour exterior shot (6-7pm in spring) is non-negotiable. Aerial drone for lots over 0.2 acres.';
-  const price = isHot ? 'Price just below psychological round numbers (,900 vs K). In hot submarkets, slight underpricing triggers bidding war — net 2-4% more.' : 'Price at fair market value. Overpricing by even 3% in this submarket adds 30+ days on market and flags the listing.';
+  const price = isHot ? 'Price just below psychological round numbers ($499,900 vs $500K). In hot submarkets, slight underpricing triggers bidding war — net 2-4% more.' : 'Price at fair market value. Overpricing by even 3% in this submarket adds 30+ days on market and flags the listing.';
   const outcome = isHot ? 'Expect multiple offers by Sunday. Counter highest with best terms, not just price.' : 'Expect 1-3 showings/week. First offer often closest to best — do not let it expire waiting for more.';
   return { dom, timing, photo, price, outcome };
 }

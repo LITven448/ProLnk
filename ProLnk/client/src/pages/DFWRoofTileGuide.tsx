@@ -9,38 +9,38 @@ const tileData: Record<string, { clayLife: string; concreteLife: string; hailNot
     clayLife: '50-100 years with maintenance',
     concreteLife: '30-50 years with sealing',
     hailNote: 'Standard maintenance schedule applies — annual inspection recommended',
-    avgCost: 'Inspection: -400/year',
+    avgCost: 'Inspection: $200-$400/year',
   },
   'Minor Hail Event (<1")': {
     clayLife: 'Clay typically unaffected by small hail',
     concreteLife: 'Concrete may show surface pitting — inspect closely',
     hailNote: 'File inspection with insurance — many policies cover hail regardless of visible damage',
-    avgCost: 'Insurance inspection: free; Repairs if needed: -2,000',
+    avgCost: 'Insurance inspection: free; Repairs if needed: $500-$2,000',
   },
   'Moderate Hail (1-2")': {
     clayLife: 'Cracking possible on older clay — get professional assessment',
     concreteLife: 'Concrete likely cracked — multiple tile replacements expected',
     hailNote: 'File insurance claim immediately — DFW adjusters familiar with tile hail claims',
-    avgCost: 'Repairs: ,000-8,000; Insurance deductible typically ,000-2,500',
+    avgCost: 'Repairs: $3,000-$8,000; Insurance deductible typically $1,000-$2,500',
   },
   'Severe Hail (2"+)': {
     clayLife: 'Significant clay breakage expected — partial or full replacement likely',
     concreteLife: 'Concrete tile likely requires full replacement after 2"+ hail',
     hailNote: 'Full insurance claim — document all damage with photos before any repair work',
-    avgCost: 'Full replacement: ,000-45,000; Insurance should cover most costs',
+    avgCost: 'Full replacement: $25,000-$45,000; Insurance should cover most costs',
   },
 };
 
 const repairGuide: Record<string, Record<string, string>> = {
   'Clay Tile': {
     Excellent: 'Annual inspection only. Clean debris from valleys and gutters. Re-seal exposed mortar.',
-    Good: 'Replace individual cracked tiles — clay tiles are often available from specialty suppliers. Budget -200 per tile installed.',
-    Fair: 'Full assessment needed. Check underlayment condition — often the real problem under seemingly OK tile. Underlayment replacement: ,000-20,000.',
-    Poor: 'Full replacement recommended. Consider continuing with clay for maximum lifespan and historic authenticity. Budget ,000-50,000.',
+    Good: 'Replace individual cracked tiles — clay tiles are often available from specialty suppliers. Budget $100-$200 per tile installed.',
+    Fair: 'Full assessment needed. Check underlayment condition — often the real problem under seemingly OK tile. Underlayment replacement: $8,000-$20,000.',
+    Poor: 'Full replacement recommended. Consider continuing with clay for maximum lifespan and historic authenticity. Budget $25,000-$50,000.',
   },
   'Concrete Tile': {
     Excellent: 'Seal every 5-7 years to prevent water absorption. Annual inspection for cracking.',
-    Good: 'Replace cracked or shifted tiles. Concrete tiles are more readily available than clay — most roofing suppliers stock them. Budget -120 per tile.',
+    Good: 'Replace cracked or shifted tiles. Concrete tiles are more readily available than clay — most roofing suppliers stock them. Budget $80-$120 per tile.',
     Fair: 'Structural underlayment inspection critical — concrete tiles are heavy and underlayment failure common after 20+ years.',
     Poor: 'Full replacement. Consider upgrading to clay for longer lifespan or switching to metal standing seam for DFW hail resistance.',
   },

@@ -54,10 +54,10 @@ export default function DFWRoofingBidCompare2026() {
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
           <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>📊 DFW Typical Roofing Cost Ranges 2026</h3>
-          {[{ type: 'Repair (minor, <10 sq ft)', range: ' – ', note: 'Single missing shingles, small leak source' },
-            { type: 'Partial replacement (10-30 sq ft)', range: ' – ,500', note: 'Storm damage section, one slope' },
-            { type: 'Full replacement (2,000 sq ft home)', range: ',000 – ,000', note: '30-year shingle, synthetic underlayment, full tear-off' },
-            { type: 'Premium replacement (Class 4 impact)', range: ',000 – ,000', note: 'Insurance premium discount often justifies cost' }
+          {[{ type: 'Repair (minor, <10 sq ft)', range: '$300 – $800', note: 'Single missing shingles, small leak source' },
+            { type: 'Partial replacement (10-30 sq ft)', range: '$1,500 – $4,500', note: 'Storm damage section, one slope' },
+            { type: 'Full replacement (2,000 sq ft home)', range: '$9,000 – $18,000', note: '30-year shingle, synthetic underlayment, full tear-off' },
+            { type: 'Premium replacement (Class 4 impact)', range: '$14,000 – $25,000', note: 'Insurance premium discount often justifies cost' }
           ].map(row => (
             <div key={row.type} style={{ padding: '12px 0', borderBottom: '1px solid #1a3050' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>

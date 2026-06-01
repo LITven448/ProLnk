@@ -20,11 +20,11 @@ const checklists: Record<string, { concern: string; items: string[] }[]> = {
   'Commercial / Industrial': [
     {
       concern: '📋 Phase I Environmental Site Assessment',
-      items: ['Required by most lenders on commercial acquisitions', 'Hire licensed Environmental Professional (ASTM E1527-21 standard)', 'Reviews regulatory databases, historical records, and site visit', 'Cost: ,500–,000 in DFW metro; 2–4 week turnaround', 'If Phase I finds RECs (Recognized Environmental Conditions) → triggers Phase II'],
+      items: ['Required by most lenders on commercial acquisitions', 'Hire licensed Environmental Professional (ASTM E1527-21 standard)', 'Reviews regulatory databases, historical records, and site visit', 'Cost: $2,500–$5,000 in DFW metro; 2–4 week turnaround', 'If Phase I finds RECs (Recognized Environmental Conditions) → triggers Phase II'],
     },
     {
       concern: '🧪 Phase II Environmental Site Assessment',
-      items: ['Triggered when Phase I finds soil or groundwater concerns', 'Involves physical soil borings and/or groundwater sampling', 'Cost: ,000–,000+ depending on scope', 'Results may require remediation before financing', 'Budget remediation contingency into acquisition model'],
+      items: ['Triggered when Phase I finds soil or groundwater concerns', 'Involves physical soil borings and/or groundwater sampling', 'Cost: $5,000–$25,000+ depending on scope', 'Results may require remediation before financing', 'Budget remediation contingency into acquisition model'],
     },
   ],
   'Rural / Agricultural': [

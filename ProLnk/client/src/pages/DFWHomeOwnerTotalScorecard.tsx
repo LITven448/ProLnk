@@ -21,7 +21,7 @@ const QUESTIONS = [
   { id: 18, cat: 'Documentation', q: 'Photos of home for insurance?' },
   { id: 19, cat: 'Documentation', q: 'Contractor receipts organized?' },
   { id: 20, cat: 'Documentation', q: 'Utility account info documented?' },
-  { id: 21, cat: 'Financial', q: 'Home emergency fund of ,000+?' },
+  { id: 21, cat: 'Financial', q: 'Home emergency fund of $10,000+?' },
   { id: 22, cat: 'Financial', q: 'Homeowners insurance reviewed this year?' },
   { id: 23, cat: 'Financial', q: 'Property tax exemptions filed?' },
   { id: 24, cat: 'Financial', q: 'Home equity tracked annually?' },

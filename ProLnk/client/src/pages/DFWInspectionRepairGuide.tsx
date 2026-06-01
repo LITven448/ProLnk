@@ -35,19 +35,19 @@ function getRepairGuidance(finding: string) {
     },
     'Electrical panel issues': {
       priority: '🔴 Safety / Major',
-      request: 'Always request repair or credit for safety violations — Federal Pacific and Zinsco panels are fire hazards. Permit-required work must be completed by licensed electrician. DFW panel replacement: ,800-,000.',
+      request: 'Always request repair or credit for safety violations — Federal Pacific and Zinsco panels are fire hazards. Permit-required work must be completed by licensed electrician. DFW panel replacement: $1,800-$3,000.',
       phrase: 'Buyer requests all electrical deficiencies noted in inspection report be repaired by a licensed electrician with permits pulled and final inspection passed prior to closing, or a credit of .',
       letGo: 'Minor items (single GFCI outlet, loose cover plate) can be let go. Major panel issues cannot — insurance may deny coverage on homes with flagged panels.'
     },
     'Plumbing leaks or outdated pipes': {
       priority: '🟡 Functional / Moderate',
-      request: 'Polybutylene pipes (gray plastic, pre-1995 homes) warrant full replacement credit — they fail without warning. Active leaks must be repaired. DFW plumbing scope-out runs -; re-pipe K-K.',
+      request: 'Polybutylene pipes (gray plastic, pre-1995 homes) warrant full replacement credit — they fail without warning. Active leaks must be repaired. DFW plumbing scope-out runs $150-$350; re-pipe $4K-$10K.',
       phrase: 'Buyer requests seller repair all active plumbing leaks identified in inspection and provide plumbing scope video for drain lines, or provide credit of  to cover scope and identified issues.',
       letGo: 'Minor dripping faucets or slow drains are cosmetic and can be let go. Focus on supply line integrity and drain scope results.'
     },
     'Window seals failed (fogging)': {
       priority: '🟢 Cosmetic / Minor',
-      request: 'Window seal failure (fogging between panes) is cosmetic — insulation value is reduced but it is not a safety issue. You can request credit only if there are many units affected. Single IGU replacement: - per unit.',
+      request: 'Window seal failure (fogging between panes) is cosmetic — insulation value is reduced but it is not a safety issue. You can request credit only if there are many units affected. Single IGU replacement: $200-$500 per unit.',
       phrase: 'Buyer requests a credit of  for replacement of X failed window units identified during inspection.',
       letGo: '1-3 windows: let it go or negotiate a small credit and move on. Seller rarely replaces windows for fog — and you do not want them to since quality varies.'
     },
@@ -59,19 +59,19 @@ function getRepairGuidance(finding: string) {
     },
     'Pest or termite evidence': {
       priority: '🔴 Safety / Major',
-      request: 'Texas Wood Destroying Insect (WDI) report is standard. Active termites require treatment — request seller-paid treatment and a 1-year warranty. Structural damage from termites requires repair credit. Treatment: -,500.',
+      request: 'Texas Wood Destroying Insect (WDI) report is standard. Active termites require treatment — request seller-paid treatment and a 1-year warranty. Structural damage from termites requires repair credit. Treatment: $800-$1,500.',
       phrase: 'Buyer requests seller provide licensed termite treatment with transferable 1-year warranty prior to closing, and repair any structural wood damage identified in WDI report, or provide credit of .',
       letGo: 'Previous evidence with existing treatment warranty: you can accept the existing warranty transfer. No active infestation, no structural damage: let old signs go.'
     },
     'Drainage or grading issues': {
       priority: '🟡 Functional / Moderate',
-      request: 'Poor grading that directs water toward the foundation is a serious DFW issue — clay soil holds water and attacks foundations. Request grading correction or credit. Also check French drain needs. Regrading: -,500.',
+      request: 'Poor grading that directs water toward the foundation is a serious DFW issue — clay soil holds water and attacks foundations. Request grading correction or credit. Also check French drain needs. Regrading: $1,500-$3,500.',
       phrase: 'Buyer requests seller correct grading adjacent to foundation on [specify side] of home to ensure positive drainage away from structure, or provide credit of  based on landscape contractor estimate.',
       letGo: 'Standing water away from the foundation in the back yard after heavy rain is common in DFW. Focus only on drainage toward the foundation or toward neighbor property.'
     },
     'Water heater old or failing': {
       priority: '🟡 Functional / Moderate',
-      request: 'Water heaters over 12 years in DFW warrant credit — hard water accelerates mineral buildup. Replacement: -,800 installed. Ask for credit, not replacement — you choose the unit.',
+      request: 'Water heaters over 12 years in DFW warrant credit — hard water accelerates mineral buildup. Replacement: $900-$1,800 installed. Ask for credit, not replacement — you choose the unit.',
       phrase: 'Buyer requests a credit of  toward water heater replacement given unit age of X years and inspector notation of [issue].',
       letGo: 'Under 8 years old with no noted issues: let it go and add to home warranty. Do not fight the seller over a functional water heater.'
     },

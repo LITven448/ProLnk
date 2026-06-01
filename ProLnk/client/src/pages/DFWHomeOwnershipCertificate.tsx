@@ -9,7 +9,7 @@ const QUESTIONS = [
   { q: 'What is a typical seller closing cost percentage in DFW?', opts: ['1-2%', '3-4%', '6-9%', '12-15%'], ans: 2 },
   { q: 'What document must Texas plumbers be licensed through?', opts: ['TDLR', 'TCEQ', 'HUD', 'TREC'], ans: 1 },
   { q: 'Which DFW submarket typically commands the highest rental rates?', opts: ['Mesquite', 'Garland', 'Uptown Dallas', 'Arlington'], ans: 2 },
-  { q: 'What is the typical cap on Texas homestead exemption for school taxes?', opts: [',000', ',000', ',000', ',000'], ans: 3 },
+  { q: 'What is the typical cap on Texas homestead exemption for school taxes?', opts: ['$25,000', '$40,000', '$75,000', '$100,000'], ans: 3 },
   { q: 'What does ARB stand for in the Texas property tax protest process?', opts: ['Annual Review Board', 'Appraisal Review Board', 'Assessed Rate Bureau', 'Arbitration Resolution Board'], ans: 1 },
 ];
 

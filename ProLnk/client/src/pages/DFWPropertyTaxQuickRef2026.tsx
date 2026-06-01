@@ -10,7 +10,7 @@ const counties = [
       { date: 'May 15', action: 'Protest deadline — or 30 days after notice, whichever is later' },
       { date: 'Oct 1', action: 'New tax year values take effect' },
     ],
-    exemptions: ['Homestead: Up to 20% of appraised value', 'Over 65: Additional ,000 exemption', 'Disabled: ,000 exemption', 'Veterans: Up to 100% exemption (service-connected disability)'],
+    exemptions: ['Homestead: Up to 20% of appraised value', 'Over 65: Additional $10,000 exemption', 'Disabled: $10,000 exemption', 'Veterans: Up to 100% exemption (service-connected disability)'],
     portal: 'dallascad.org',
   },
   {
@@ -22,7 +22,7 @@ const counties = [
       { date: 'May 15', action: 'Standard protest deadline' },
       { date: 'Sep 30', action: 'Delinquent penalty escalation if unpaid' },
     ],
-    exemptions: ['Homestead: 20% off appraised value minimum', 'Fort Worth Homestead: Additional ,000 city exemption', 'Over 65: ,000 + tax freeze option', 'Veterans 100% disabled: Full exemption'],
+    exemptions: ['Homestead: 20% off appraised value minimum', 'Fort Worth Homestead: Additional city exemption (varies by year)', 'Over 65: $10,000 + tax freeze option', 'Veterans 100% disabled: Full exemption'],
     portal: 'tad.org',
   },
   {
@@ -46,7 +46,7 @@ const counties = [
       { date: 'May 15', action: 'Protest deadline — Denton CAD values rising fast' },
       { date: 'Oct 1', action: 'New appraisal year begins' },
     ],
-    exemptions: ['Homestead: 20% off + ,000 school district reduction (2023 law)', 'Over 65: School tax freeze', 'New construction: Potential 5-yr partial exemption in some cities', 'Veterans: 100% exemption if total disability'],
+    exemptions: ['Homestead: 20% off + $100,000 school district reduction (2023 law)', 'Over 65: School tax freeze', 'New construction: Potential 5-yr partial exemption in some cities', 'Veterans: 100% exemption if total disability'],
     portal: 'dentoncad.com',
   },
 ];

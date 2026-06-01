@@ -27,7 +27,7 @@ import {
   partners,
   commissions,
 } from "../drizzle/schema";
-import { eq, and } from "drizzle-orm";
+import { eq, and, inArray, desc } from "drizzle-orm";
 
 export const fsmWebhookRouter = Router();
 
@@ -141,16 +141,20 @@ async function autoCloseCommission(
 ): Promise<{ opportunityId: number | null; commissionId: number | null }> {
   const db = await getDb();
   if (!db) return { opportunityId: null, commissionId: null };
-  // Find the most recent open opportunity for this partner
+  // Find the most recent open opportunity for this partner. The matching engine
+  // sets accepted offers to status 'assigned' (matching.ts respondToOffer); older
+  // flows used 'accepted'/'sent'. Match any of them so an FSM completion can never
+  // silently fail to find the live job it belongs to.
   const openOpps = await db
     .select()
     .from(opportunities)
     .where(
       and(
         eq(opportunities.receivingPartnerId, partnerId),
-        eq(opportunities.status, "accepted")
+        inArray(opportunities.status, ["assigned", "accepted", "sent"])
       )
     )
+    .orderBy(desc(opportunities.id))
     .limit(1);
 
   if (!openOpps.length) {

@@ -16,6 +16,7 @@ import {
   agentDailyMetrics,
   supremeCourtAudit,
 } from "../../drizzle/schema";
+import { KNOWN_AGENTS, ensureAgentInfra } from "../agents/agentLogger";
 
 // ── All 45 agents organized by department ────────────────────────────
 const AGENT_SEED: {
@@ -170,6 +171,84 @@ export async function logSupremeCourtRuling(params: {
 // tRPC ROUTER
 // ═══════════════════════════════════════════════════════════════════════
 export const commandCenterRouter = router({
+  // ── Agent Registry — honest list of the agents that ACTUALLY exist ──
+  // Merges the canonical KNOWN_AGENTS source-of-truth with live activity
+  // from agentActivityLog (last run, status, last action).
+  getAgentRegistry: protectedProcedure.query(async () => {
+    await ensureAgentInfra();
+    const db = await getDb();
+
+    type LastRow = {
+      agentId: string;
+      lastAction: string | null;
+      lastOutcome: string | null;
+      lastActiveAt: Date | string | null;
+      runs24h: number;
+      errors24h: number;
+    };
+    let stats: LastRow[] = [];
+    if (db) {
+      try {
+        const res = await db.execute(sql`
+          SELECT
+            l.agentId AS agentId,
+            (SELECT action FROM agentActivityLog x WHERE x.agentId = l.agentId ORDER BY x.createdAt DESC LIMIT 1) AS lastAction,
+            (SELECT outcome FROM agentActivityLog x WHERE x.agentId = l.agentId ORDER BY x.createdAt DESC LIMIT 1) AS lastOutcome,
+            MAX(l.createdAt) AS lastActiveAt,
+            SUM(CASE WHEN l.createdAt > DATE_SUB(NOW(), INTERVAL 24 HOUR) THEN 1 ELSE 0 END) AS runs24h,
+            SUM(CASE WHEN l.createdAt > DATE_SUB(NOW(), INTERVAL 24 HOUR) AND l.outcome = 'failure' THEN 1 ELSE 0 END) AS errors24h
+          FROM agentActivityLog l
+          GROUP BY l.agentId
+        `);
+        const rows = (res as unknown as any[][])[0] ?? [];
+        stats = (rows as any[]).map((r) => ({
+          agentId: String(r.agentId),
+          lastAction: r.lastAction ?? null,
+          lastOutcome: r.lastOutcome ?? null,
+          lastActiveAt: r.lastActiveAt ?? null,
+          runs24h: Number(r.runs24h ?? 0),
+          errors24h: Number(r.errors24h ?? 0),
+        }));
+      } catch {
+        stats = [];
+      }
+    }
+    const byId = new Map(stats.map((s) => [s.agentId, s]));
+
+    const agents = KNOWN_AGENTS.map((a) => {
+      const s = byId.get(a.agentId);
+      let status: "ok" | "error" | "idle" = "idle";
+      if (s) {
+        if (s.lastOutcome === "failure" || (s.errors24h ?? 0) > 0) status = "error";
+        else status = "ok";
+      }
+      return {
+        agentId: a.agentId,
+        name: a.name,
+        tier: a.tier,
+        triggerType: a.triggerType,
+        description: a.description,
+        status,
+        lastAction: s?.lastAction ?? null,
+        lastActiveAt: s?.lastActiveAt ?? null,
+        runs24h: s?.runs24h ?? 0,
+        errors24h: s?.errors24h ?? 0,
+      };
+    });
+
+    const ranAgents24h = agents.filter((a) => a.runs24h > 0).length;
+    const erroredAgents = agents.filter((a) => a.status === "error").length;
+
+    return {
+      agents,
+      counts: {
+        defined: agents.length,
+        ranLast24h: ranAgents24h,
+        errored: erroredAgents,
+      },
+    };
+  }),
+
   // ── Seed all 45 agents ──────────────────────────────────────────────
   seedAgents: protectedProcedure.mutation(async () => {
     const db = await getDb();
@@ -298,12 +377,18 @@ export const commandCenterRouter = router({
   getActivityFeed: protectedProcedure
     .input(z.object({ limit: z.number().min(1).max(100).default(50), offset: z.number().min(0).default(0) }))
     .query(async ({ input }) => {
+      await ensureAgentInfra();
       const db = await getDb();
-      const activities = await db!.select().from(agentActivityLog)
-        .orderBy(desc(agentActivityLog.createdAt))
-        .limit(input.limit)
-        .offset(input.offset);
-      return activities;
+      if (!db) return [];
+      try {
+        const activities = await db.select().from(agentActivityLog)
+          .orderBy(desc(agentActivityLog.createdAt))
+          .limit(input.limit)
+          .offset(input.offset);
+        return activities;
+      } catch {
+        return [];
+      }
     }),
 
   // ── Financial Dashboard ─────────────────────────────────────────────

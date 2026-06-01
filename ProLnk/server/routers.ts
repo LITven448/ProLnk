@@ -33,6 +33,7 @@ import { exchangeRouter } from "./routers/exchange";
 import { partnerToolsRouter } from "./routers/partnerTools";
 import { networkRouter } from "./routers/network";
 import { brainTrustRouter } from "./routers/brainTrust";
+import { commandCenterRouter } from "./routers/commandCenter";
 import { briefcaseRouter } from "./routers/briefcase";
 import { scoutRouter } from "./routers/scout";
 import { proPassRouter } from "./routers/proPass";
@@ -344,6 +345,7 @@ export const appRouter = router({
   projectBids: projectBidsRouter,
   network: networkRouter,
   brainTrust: brainTrustRouter,
+  agentOps: commandCenterRouter,
   briefcase: briefcaseRouter,
   scout: scoutRouter,
   proPass: proPassRouter,

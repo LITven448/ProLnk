@@ -95,7 +95,7 @@ export default function DFWFoundationCostGuide() {
           </p>
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             {[
-              { stat: "4"", label: "Max vertical soil movement per season", icon: "📐" },
+              { stat: '4"', label: "Max vertical soil movement per season", icon: "📐" },
               { stat: "~70%", label: "of DFW homes will need foundation work", icon: "🏠" },
               { stat: "$200/yr", label: "prevention cost vs. $10K–$60K repair", icon: "💡" },
             ].map(s => (

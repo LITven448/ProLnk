@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const COMPARISONS = [
   { label: 'Contractor Vetting', nextdoor: 'Zero vetting — neighbor recommendations with no background check or license check', prolnk: 'Criminal background, license verify, insurance confirm — every contractor, every time' },
-  { label: 'Accountability', nextdoor: 'No formal accountability — reviews are neighbors' opinions, no enforcement', prolnk: ’Performance scores, complaint review, and automatic suspension for bad actors' },
+  { label: 'Accountability', nextdoor: "No formal accountability — reviews are neighbors' opinions, no enforcement", prolnk: 'Performance scores, complaint review, and automatic suspension for bad actors' },
   { label: 'Insurance Coverage', nextdoor: 'Unknown — homeowner has no way to verify contractor is insured', prolnk: 'Insurance certificates verified before any contractor joins the network' },
   { label: 'Quote Process', nextdoor: 'DM the contractor yourself — no structured quote comparison', prolnk: '3 vetted contractors respond to your one job posting with competing quotes' },
   { label: 'Speed', nextdoor: 'Dependent on community activity and response rate — can take days', prolnk: 'Match engine routes your job within minutes; quotes arrive in 24 hours' },

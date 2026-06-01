@@ -8,7 +8,7 @@ const timelines = [
 ];
 
 const guides: Record<string, { steps: string[]; tip: string }> = {
-  30days: {
+  '30days': {
     steps: [
       '🚨 Price aggressively: 3-5% below market to attract immediate offers',
       '🔧 ProLnk priority repairs only — cosmetic issues buyers overlook at right price',
@@ -18,7 +18,7 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
     ],
     tip: 'An iBuyer offer (Opendoor, Offerpad) in DFW closes in 14-30 days — tradeoff is 4-8% discount.',
   },
-  90days: {
+  '90days': {
     steps: [
       '📅 List 60-70 days before must-close date to allow 30-day escrow',
       '🔧 ProLnk handles pre-listing repairs in 2-3 weeks — don’t delay',

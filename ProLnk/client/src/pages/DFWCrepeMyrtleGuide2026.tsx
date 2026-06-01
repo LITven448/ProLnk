@@ -27,9 +27,9 @@ export default function DFWCrepeMyrtleGuide2026() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ fontSize: '2.5rem', marginBottom: '.5rem' }}>🌸</div>
         <h1 style={{ fontSize: '2rem', color: '#F5E642', marginBottom: '.5rem' }}>DFW Crepe Myrtle Guide 2026</h1>
-        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW`s most popular ornamental tree. Beautiful when respected. Butchered when topped.</p>
+        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW's most popular ornamental tree. Beautiful when respected. Butchered when topped.</p>
 
-        <div style={{ background: '#7f1d1d`, border: '1px solid #ef4444', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
+        <div style={{ background: '#7f1d1d', border: '1px solid #ef4444', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#fca5a5', margin: '0 0 .5rem 0' }}>✂️ STOP TOPPING - This Is Crepe Murder</h2>
           <p style={{ color: '#fecaca', margin: 0 }}>Topping (cutting all branches to stubs) is permanent disfigurement. It creates knuckle-fist regrowth, weakens structure, and makes trees more disease-prone. Proper late-winter pruning (Jan-Feb) means removing crossing branches and suckers ONLY. Never cut the main trunks.</p>
         </div>

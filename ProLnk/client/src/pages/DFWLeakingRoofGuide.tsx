@@ -21,7 +21,7 @@ const actionMap: Record<string, Record<string, { action: string; insurance: stri
     'after-storm': { action: 'Inspect valley for lifted or missing shingles; check flashing seams', insurance: 'Document before any repairs; get adjuster out', callWho: 'Licensed roofer for inspection' },
     'no-storm': { action: 'Valley flashing may have separated; check from attic for daylight', insurance: 'Likely maintenance issue — may not be covered', callWho: 'Roofer for flashing repair' },
   },
-  pipe-boot: {
+  'pipe-boot': {
     'active-storm': { action: 'Collect water inside; do not go on roof in storm', insurance: 'Storm-related boot damage may be covered', callWho: 'Emergency roofer after storm passes' },
     'after-storm': { action: 'Inspect boots visually from ground or attic for cracking/lifting', insurance: 'Storm damage covered; wear/tear may not be', callWho: 'Roofer — pipe boot replacement is quick/cheap ($150–$300)' },
     'no-storm': { action: 'UV-cracked boot is a maintenance issue — common in DFW heat', insurance: 'Not typically covered — wear and tear exclusion', callWho: 'Roofer — fast repair, often same day' },

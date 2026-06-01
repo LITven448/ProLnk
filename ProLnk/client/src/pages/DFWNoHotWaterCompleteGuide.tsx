@@ -16,19 +16,19 @@ const electricSteps = [
 
 const diagMap: Record<string, Record<string, { action: string; diyOrPro: string; cost: string }>> = {
   gas: {
-    no-hot: { action: 'Check pilot → relight per instructions → if fails call plumber', diyOrPro: 'DIY pilot relight; plumber if thermocouple or gas valve', cost: '$0–$350' },
-    lukewarm: { action: 'Check thermostat setting → flush sediment → inspect lower burner', diyOrPro: 'DIY flush; plumber for thermostat/burner', cost: '$0–$200' },
-    runs-out-fast: { action: 'Tank too small for demand OR heavy sediment buildup reducing capacity', diyOrPro: 'DIY flush; consider upgrade', cost: '$0–$1,800' },
+    'no-hot': { action: 'Check pilot → relight per instructions → if fails call plumber', diyOrPro: 'DIY pilot relight; plumber if thermocouple or gas valve', cost: '$0–$350' },
+    'lukewarm': { action: 'Check thermostat setting → flush sediment → inspect lower burner', diyOrPro: 'DIY flush; plumber for thermostat/burner', cost: '$0–$200' },
+    'runs-out-fast': { action: 'Tank too small for demand OR heavy sediment buildup reducing capacity', diyOrPro: 'DIY flush; consider upgrade', cost: '$0–$1,800' },
   },
   electric: {
-    no-hot: { action: 'Reset breaker → press high-limit reset → call plumber if still no heat', diyOrPro: 'DIY breaker/reset; plumber for elements', cost: '$0–$300' },
-    lukewarm: { action: 'Upper element most likely failed — lower element handles volume, upper handles recovery', diyOrPro: 'Plumber recommended — involves draining tank', cost: '$100–$300' },
-    runs-out-fast: { action: 'Lower heating element failed OR thermostat set too low', diyOrPro: 'Plumber for element; DIY thermostat adjustment', cost: '$0–$250' },
+    'no-hot': { action: 'Reset breaker → press high-limit reset → call plumber if still no heat', diyOrPro: 'DIY breaker/reset; plumber for elements', cost: '$0–$300' },
+    'lukewarm': { action: 'Upper element most likely failed — lower element handles volume, upper handles recovery', diyOrPro: 'Plumber recommended — involves draining tank', cost: '$100–$300' },
+    'runs-out-fast': { action: 'Lower heating element failed OR thermostat set too low', diyOrPro: 'Plumber for element; DIY thermostat adjustment', cost: '$0–$250' },
   },
   tankless: {
-    no-hot: { action: 'Check error code on display → verify gas/electric supply → clean inlet filter', diyOrPro: 'DIY filter clean; tech for error codes', cost: '$0–$400' },
-    lukewarm: { action: 'Flow rate exceeds unit capacity OR scale buildup on heat exchanger', diyOrPro: 'DIY: reduce simultaneous demand; tech: descale', cost: '$100–$500' },
-    runs-out-fast: { action: 'Tankless units do not run out — if flow drops, scale buildup likely', diyOrPro: 'Annual descaling service', cost: '$150–$300' },
+    'no-hot': { action: 'Check error code on display → verify gas/electric supply → clean inlet filter', diyOrPro: 'DIY filter clean; tech for error codes', cost: '$0–$400' },
+    'lukewarm': { action: 'Flow rate exceeds unit capacity OR scale buildup on heat exchanger', diyOrPro: 'DIY: reduce simultaneous demand; tech: descale', cost: '$100–$500' },
+    'runs-out-fast': { action: 'Tankless units do not run out — if flow drops, scale buildup likely', diyOrPro: 'Annual descaling service', cost: '$150–$300' },
   },
 };
 

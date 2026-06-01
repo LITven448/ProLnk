@@ -15,14 +15,14 @@ const heatPumpSteps = [
 
 const diagMap: Record<string, Record<string, { steps: string; urgency: string; cost: string }>> = {
   furnace: {
-    no-heat: { steps: 'Check thermostat heat mode → check filter → check pilot/igniter → check breaker → call tech', urgency: 'High if below 40°F outside', cost: '$80–$600' },
-    weak-heat: { steps: 'Replace filter → check all vents open → inspect heat exchanger for cracks', urgency: 'Moderate — schedule within 48h', cost: '$50–$400' },
-    short-cycling: { steps: 'Dirty filter most common cause → check flue pipe not blocked → call if continues', urgency: 'High — can damage unit', cost: '$100–$500' },
+    'no-heat': { steps: 'Check thermostat heat mode → check filter → check pilot/igniter → check breaker → call tech', urgency: 'High if below 40°F outside', cost: '$80–$600' },
+    'weak-heat': { steps: 'Replace filter → check all vents open → inspect heat exchanger for cracks', urgency: 'Moderate — schedule within 48h', cost: '$50–$400' },
+    'short-cycling': { steps: 'Dirty filter most common cause → check flue pipe not blocked → call if continues', urgency: 'High — can damage unit', cost: '$100–$500' },
   },
-  heat-pump: {
-    no-heat: { steps: 'Check defrost mode (wait 15 min) → switch to emergency heat → call HVAC', urgency: 'High if temps below 35°F', cost: '$150–$800' },
-    weak-heat: { steps: 'Heat pumps lose efficiency below 35°F — normal. Supplement with emergency heat.', urgency: 'Low if above 35°F outside', cost: '$0–$200' },
-    short-cycling: { steps: 'Check refrigerant charge → inspect reversing valve → call licensed tech', urgency: 'High — compressor at risk', cost: '$200–$1,000' },
+  'heat-pump': {
+    'no-heat': { steps: 'Check defrost mode (wait 15 min) → switch to emergency heat → call HVAC', urgency: 'High if temps below 35°F', cost: '$150–$800' },
+    'weak-heat': { steps: 'Heat pumps lose efficiency below 35°F — normal. Supplement with emergency heat.', urgency: 'Low if above 35°F outside', cost: '$0–$200' },
+    'short-cycling': { steps: 'Check refrigerant charge → inspect reversing valve → call licensed tech', urgency: 'High — compressor at risk', cost: '$200–$1,000' },
   },
 };
 

@@ -46,6 +46,16 @@ export const BADGE_GRADIENTS = {
 export const FONT = "'Inter', system-ui, sans-serif";
 export const MONO = "'JetBrains Mono', 'Courier New', monospace";
 
+// --- Section accent colors (single source of truth for section theming) ------
+const SECTION_COLORS: Record<string, string> = {
+  overview:  "#0EA5E9",
+  prolnk:    "#0A1628",
+  trustypro: "#0891B2",
+  media:     "#7C3AED",
+  exchange:  "#F59E0B",
+  platform:  "#64748B",
+};
+
 // --- Sub-tab definitions per section — organized by brand --------------------
 export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
   // Each item below resolves to a UNIQUE page — no duplicates, no aliases.

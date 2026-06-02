@@ -16,11 +16,22 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
+          if (
+            id.includes('node_modules/react/') ||
+            id.includes('node_modules/react-dom/') ||
+            id.includes('node_modules/scheduler/') ||
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/react-router-dom')
+          )
+            return 'react-vendor';
           if (id.includes('node_modules/three') || id.includes('@react-three')) return 'three';
           if (id.includes('node_modules/framer-motion')) return 'framer';
           if (id.includes('node_modules/recharts')) return 'recharts';
           if (id.includes('node_modules/@radix-ui')) return 'radix';
           if (id.includes('node_modules/@tanstack')) return 'query';
+          if (id.includes('node_modules/lucide-react')) return 'icons';
+          if (id.includes('node_modules/@stripe')) return 'stripe';
+          if (id.includes('node_modules/@sentry')) return 'sentry';
         },
       },
     },

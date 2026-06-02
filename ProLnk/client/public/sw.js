@@ -7,7 +7,7 @@
  *   - Offline fallback: /offline.html for navigation requests
  */
 
-const CACHE_VERSION = "prolnk-v4-may21";
+const CACHE_VERSION = "prolnk-v5-jun2";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const API_CACHE = `${CACHE_VERSION}-api`;
@@ -48,6 +48,17 @@ self.addEventListener("fetch", (event) => {
   // Skip non-GET and cross-origin (except CDN images)
   if (request.method !== "GET") return;
   if (url.origin !== self.location.origin && !url.hostname.includes("cdn")) return;
+
+  // Auth/redirect endpoints — DO NOT intercept; let the browser handle redirects + Set-Cookie natively
+  if (
+    url.pathname.startsWith("/api/admin-session") ||
+    url.pathname.startsWith("/api/admin-create") ||
+    url.pathname.startsWith("/api/oauth") ||
+    url.pathname.startsWith("/api/stripe") ||
+    url.pathname.startsWith("/api/auth")
+  ) {
+    return; // browser handles it directly (preserves 302 redirect + cookies)
+  }
 
   // API calls — network-first with 5s timeout, no cache fallback
   if (url.pathname.startsWith("/api/")) {

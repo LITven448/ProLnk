@@ -9,7 +9,6 @@ const zipRiskMap: Record<string, RiskLevel> = {
   '76049': 'elevated',
   '75009': 'moderate',
   '75078': 'moderate',
-  '75009': 'moderate',
   '76227': 'moderate',
   '75007': 'minimal',
   '75024': 'minimal',

@@ -333,6 +333,7 @@ export default function SupportChatWidget({
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Type a message..."
+                    aria-label="Type a message"
                     className="resize-none text-sm min-h-[40px] max-h-[100px] rounded-xl border-gray-200"
                     rows={1}
                     disabled={isLoading}
@@ -341,6 +342,7 @@ export default function SupportChatWidget({
                     size="icon"
                     onClick={() => sendMessage(input)}
                     disabled={!input.trim() || isLoading}
+                    aria-label="Send message"
                     className="h-10 w-10 rounded-xl shrink-0"
                     style={{ background: accentColor }}
                   >

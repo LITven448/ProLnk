@@ -130,6 +130,7 @@ export default function RequestService() {
                 type="text"
                 inputMode="numeric"
                 placeholder="Or enter ZIP code"
+                aria-label="ZIP code"
                 value={zip}
                 onChange={(e) => setZip(e.target.value)}
                 className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
@@ -142,6 +143,7 @@ export default function RequestService() {
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              aria-label="Describe the job"
               rows={4}
               placeholder="e.g. AC stopped cooling, blowing warm air. Two-story home, unit is ~8 years old."
               className="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none"
@@ -153,6 +155,7 @@ export default function RequestService() {
               <label className="block text-sm font-semibold text-gray-700 mb-1.5">Your name</label>
               <input
                 type="text"
+                aria-label="Your name"
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
                 className="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
@@ -162,6 +165,7 @@ export default function RequestService() {
               <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
               <input
                 type="email"
+                aria-label="Email"
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
                 className="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
@@ -171,6 +175,7 @@ export default function RequestService() {
               <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone</label>
               <input
                 type="tel"
+                aria-label="Phone"
                 value={contactPhone}
                 onChange={(e) => setContactPhone(e.target.value)}
                 className="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"

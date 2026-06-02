@@ -652,6 +652,7 @@ function SuccessState({
             <span className="text-[#F5E642] text-base font-black tracking-widest font-mono">{referralCode}</span>
             <button
               onClick={() => { navigator.clipboard.writeText(referralCode); toast.success("Code copied!"); }}
+              aria-label="Copy referral code"
               className="text-white/60 hover:text-[#F5E642] transition-colors ml-2"
             >
               <Copy className="w-3.5 h-3.5" />
@@ -664,6 +665,7 @@ function SuccessState({
           <span className="text-white/60 text-xs font-mono truncate flex-1">{refUrl}</span>
           <button
             onClick={() => { navigator.clipboard.writeText(refUrl); toast.success("Link copied!"); }}
+            aria-label="Copy referral link"
             className="text-white/60 hover:text-[#F5E642] transition-colors flex-shrink-0"
           >
             <Copy className="w-3.5 h-3.5" />
@@ -923,7 +925,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
   return (
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-5 sm:p-8 relative max-h-[90vh] overflow-y-auto">
-        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">×</button>
+        <button onClick={onClose} aria-label="Close" className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">×</button>
         {step === "success" && join.data ? (
           <SuccessState
             data={join.data}
@@ -1350,7 +1352,7 @@ export default function ProWaitlist() {
               Join the Waitlist
             </Button>
           </div>
-          <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden p-2" aria-label={mobileMenuOpen ? "Close menu" : "Open menu"} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>

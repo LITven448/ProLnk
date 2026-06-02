@@ -1018,7 +1018,7 @@ export default function TrustyProHome() {
               Join the Waitlist
             </button>
           </div>
-          <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
+          <button className="md:hidden p-2" aria-label="Open menu" onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
         </div>
         <AnimatePresence>
           {mobileOpen && (

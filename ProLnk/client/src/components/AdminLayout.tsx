@@ -5,16 +5,15 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import {
-  LayoutDashboard, DollarSign, Settings,
-  LogOut, Search, Bell, Brain, ListChecks, Menu, X, ClipboardList,
-  Home, Megaphone, Wrench, Shield, ChevronDown, ChevronRight,
-  Zap, Database, ArrowLeftRight, Building2, Network, GitBranch,
+  LayoutDashboard, Settings, LogOut, Search, Bell, ListChecks,
+  Menu, X, Home, Shield, ChevronDown, ArrowLeftRight, Megaphone,
+  type LucideIcon,
 } from "lucide-react";
 import { GlobalSearch } from "@/components/GlobalSearch";
 import ProLnkLogo from "@/components/ProLnkLogo";
 import AdminTodoPanel from "@/components/AdminTodoPanel";
 
-// --- Design Tokens -- Soft UI / Material Dashboard inspired -------------------
+// --- Design Tokens — editorial / professional SaaS admin ---------------------
 export const T = {
   bg:        "#F0F2F5",
   sidebar:   "#FFFFFF",
@@ -46,272 +45,117 @@ export const BADGE_GRADIENTS = {
 export const FONT = "'Inter', system-ui, sans-serif";
 export const MONO = "'JetBrains Mono', 'Courier New', monospace";
 
-// --- Section accent colors (single source of truth for section theming) ------
-const SECTION_COLORS: Record<string, string> = {
-  overview:  "#0EA5E9",
-  prolnk:    "#0A1628",
-  trustypro: "#0891B2",
-  media:     "#7C3AED",
-  exchange:  "#F59E0B",
-  platform:  "#64748B",
+// --- ONE navigation system ----------------------------------------------------
+// A single left sidebar organized by business. Each top-level section is a
+// collapsible group of REAL, unique, rendering pages — no header tabs, no icon
+// rail, no redirect aliases. The whole tree shares one professional sky accent.
+type NavLink = { label: string; href: string };
+type NavSection = {
+  id: string;
+  label: string;
+  icon: LucideIcon;
+  href?: string;        // direct target (section with no children, e.g. Command Center)
+  links?: NavLink[];    // collapsible children
 };
 
-// --- Sub-tab definitions per section — organized by brand --------------------
-export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
-  // Each item below resolves to a UNIQUE page — no duplicates, no aliases.
-  overview: [
-    { label: "Dashboard",         href: "/admin" },
-    { label: "Strategic Overview",href: "/admin/strategic-overview" },
-    { label: "Platform Health",   href: "/admin/health" },
-    { label: "Analytics",         href: "/admin/analytics" },
-    { label: "Investor Metrics",  href: "/admin/investor" },
-    { label: "Activity Log",      href: "/admin/activity" },
-  ],
-  prolnk: [
-    { label: "Pro Waitlist",      href: "/admin/waitlist?view=pros" },
-    { label: "Charter Tracking",  href: "/admin/charter-tracking" },
-    { label: "All Partners",      href: "/admin/partners" },
-    { label: "Applications",      href: "/admin/pipeline" },
-    { label: "Leaderboard",       href: "/admin/leaderboard" },
-    { label: "Referral Tree",     href: "/admin/referral-tree" },
-    { label: "Network Analytics", href: "/admin/network-analytics" },
-    { label: "Lead Scoring",      href: "/admin/lead-scoring" },
-  ],
-  trustypro: [
-    { label: "Homeowner Waitlist",href: "/admin/waitlist?view=homes" },
-    { label: "Homeowner CRM",     href: "/admin/homeowners" },
-    { label: "Photo Queue",       href: "/admin/photo-queue" },
-    { label: "Opportunities",     href: "/admin/opportunities" },
-    { label: "Matching Console",  href: "/admin/matching" },
-    { label: "Storm Watch",       href: "/admin/storm" },
-    { label: "Trusted Pro Algo",  href: "/admin/trusted-pro-algorithm" },
-  ],
-  media: [
-    { label: "Campaigns",         href: "/admin/campaigns" },
-    { label: "Broadcast",         href: "/admin/broadcast" },
-    { label: "Automation",        href: "/admin/marketing-automation" },
-    { label: "Featured Ads",      href: "/admin/featured-advertisers" },
-    { label: "Real Estate Agents",href: "/admin/real-estate-agents" },
-    { label: "Reviews",           href: "/admin/google-reviews" },
-    { label: "Competitor Intel",  href: "/admin/competitor-intelligence" },
-  ],
-  exchange: [
-    { label: "B2B Exchange",      href: "/admin/exchange" },
-    { label: "Territories",       href: "/admin/territory" },
-    { label: "Data Marketplace",  href: "/admin/data-marketplace" },
-    { label: "Properties",        href: "/admin/properties" },
-    { label: "Data Export",       href: "/admin/analytics-export" },
-  ],
-  platform: [
-    { label: "Settings",          href: "/admin/platform-settings" },
-    { label: "Chatbot Knowledge", href: "/admin/chatbot-knowledge" },
-    { label: "Service Categories",href: "/admin/categories" },
-    { label: "Strikes & Compliance",href: "/admin/compliance" },
-    { label: "API Credits",       href: "/admin/api-credits" },
-    { label: "Integrations",      href: "/admin/integrations" },
-    { label: "Integration Health",href: "/admin/integration-health" },
-    { label: "n8n Webhooks",      href: "/admin/n8n-setup" },
-    { label: "FSM Webhooks",      href: "/admin/fsm-webhooks" },
-  ],
-};
-
-// --- Brand nav — text sidebar items per section ──────────────────────────────
-type NavItem = { label: string; href: string };
-type NavGroup = { label: string; items: NavItem[]; defaultOpen?: boolean };
-
-const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavGroup[] }> = {
-  overview: {
-    header: "PORTFOLIO OVERVIEW",
-    items: [
-      { label: "Command Center",    href: "/admin" },
-      { label: "Strategic Overview",href: "/admin/strategic-overview" },
-      { label: "Investor Metrics",  href: "/admin/investor" },
-      { label: "Financial Center",  href: "/admin/finance" },
-      { label: "Platform Health",   href: "/admin/health" },
-      { label: "All Waitlists",     href: "/admin/waitlist" },
-      { label: "Activity Log",      href: "/admin/activity" },
-    ],
-    groups: [
-      {
-        label: "AI & ORG",
-        defaultOpen: true,
-        items: [
-          { label: "Agent Activity",   href: "/admin/agents" },
-          { label: "Agent Status",     href: "/admin/agent-status" },
-          { label: "Org Chart",        href: "/admin/org-chart" },
-          { label: "Accountability",   href: "/admin/accountability" },
-          { label: "Knowledge Graph",  href: "/admin/knowledge-graph" },
-          { label: "n8n Hub",          href: "/admin/n8n" },
-        ],
-      },
-    ],
+const NAV_SECTIONS: NavSection[] = [
+  {
+    id: "command",
+    label: "Command Center",
+    icon: LayoutDashboard,
+    href: "/admin",
   },
-
-  prolnk: {
-    header: "PROLNK RESIDENTIAL",
-    items: [
+  {
+    id: "prolnk",
+    label: "ProLnk",
+    icon: Home,
+    links: [
       { label: "Pro Waitlist",      href: "/admin/waitlist?view=pros" },
-      { label: "Charter Tracking",  href: "/admin/charter-tracking" },
-      { label: "All Partners",      href: "/admin/partners" },
       { label: "Applications",      href: "/admin/pipeline" },
+      { label: "All Partners",      href: "/admin/partners" },
+      { label: "Matching Console",  href: "/admin/matching" },
       { label: "Leaderboard",       href: "/admin/leaderboard" },
       { label: "Referral Tree",     href: "/admin/referral-tree" },
       { label: "Network Analytics", href: "/admin/network-analytics" },
       { label: "Lead Scoring",      href: "/admin/lead-scoring" },
-    ],
-    groups: [
-      {
-        label: "FINANCIAL",
-        defaultOpen: false,
-        items: [
-          { label: "Commission Rates",   href: "/admin/rates" },
-          { label: "Commission Strategy",href: "/admin/commission-strategy" },
-          { label: "Payouts",            href: "/admin/payouts" },
-        ],
-      },
+      { label: "Commission Rates",  href: "/admin/rates" },
+      { label: "Payouts",           href: "/admin/payouts" },
     ],
   },
-
-  trustypro: {
-    header: "TRUSTYPRO",
-    items: [
-      { label: "Homeowner Waitlist",   href: "/admin/waitlist?view=homes" },
-      { label: "Homeowner CRM",        href: "/admin/homeowners" },
-      { label: "Photo Queue",          href: "/admin/photo-queue" },
-      { label: "Opportunities",        href: "/admin/opportunities" },
-      { label: "Storm Watch",          href: "/admin/storm" },
-      { label: "Trusted Pro Algorithm",href: "/admin/trusted-pro-algorithm" },
+  {
+    id: "trustypro",
+    label: "TrustyPro",
+    icon: Shield,
+    links: [
+      { label: "Homeowner Waitlist", href: "/admin/waitlist?view=homes" },
+      { label: "Homeowner CRM",      href: "/admin/homeowners" },
+      { label: "Photo Queue",        href: "/admin/photo-queue" },
+      { label: "Opportunities",      href: "/admin/opportunities" },
+      { label: "Properties",         href: "/admin/properties" },
+      { label: "Storm Watch",        href: "/admin/storm" },
+      { label: "Trusted Pro Algorithm", href: "/admin/trusted-pro-algorithm" },
     ],
-    groups: [],
   },
-
-  media: {
-    header: "PROLNK MEDIA",
-    items: [
-      { label: "Campaigns",         href: "/admin/campaigns" },
-      { label: "Broadcast",         href: "/admin/broadcast" },
-      { label: "Automation",        href: "/admin/marketing-automation" },
-      { label: "Featured Advertisers",href: "/admin/featured-advertisers" },
-      { label: "Real Estate Agents",href: "/admin/real-estate-agents" },
-      { label: "Google Reviews",    href: "/admin/google-reviews" },
-      { label: "Competitor Intel",  href: "/admin/competitor-intelligence" },
+  {
+    id: "exchange",
+    label: "Exchange",
+    icon: ArrowLeftRight,
+    links: [
+      { label: "B2B Exchange",     href: "/admin/exchange" },
+      { label: "Deal Pipeline",    href: "/admin/deal-pipeline" },
+      { label: "Deal Composer",    href: "/admin/deal-composer" },
+      { label: "Territories",      href: "/admin/territory" },
+      { label: "Data Marketplace", href: "/admin/data-marketplace" },
     ],
-    groups: [],
   },
-
-  exchange: {
-    header: "EXCHANGE & DATA",
-    items: [
-      { label: "B2B Exchange",      href: "/admin/exchange" },
-      { label: "Territories",       href: "/admin/territory" },
-      { label: "Data Marketplace",  href: "/admin/data-marketplace" },
-      { label: "Properties",        href: "/admin/properties" },
-      { label: "Public Job Board",  href: "/exchange" },
-      { label: "Data Export",       href: "/admin/analytics-export" },
+  {
+    id: "media",
+    label: "Media",
+    icon: Megaphone,
+    links: [
+      { label: "Campaigns",       href: "/admin/campaigns" },
+      { label: "Broadcast",       href: "/admin/broadcast" },
+      { label: "Automation",      href: "/admin/marketing-automation" },
+      { label: "Featured Ads",    href: "/admin/featured-advertisers" },
+      { label: "Google Reviews",  href: "/admin/google-reviews" },
+      { label: "Competitor Intel",href: "/admin/competitor-intelligence" },
     ],
-    groups: [],
   },
-
-  platform: {
-    header: "PLATFORM",
-    items: [
-      { label: "Platform Settings",  href: "/admin/platform-settings" },
+  {
+    id: "platform",
+    label: "Platform",
+    icon: Settings,
+    links: [
+      { label: "Agent Activity",     href: "/admin/agents" },
+      { label: "Agent Status",       href: "/admin/agent-status" },
+      { label: "Org Chart",          href: "/admin/org-chart" },
       { label: "Chatbot Knowledge",  href: "/admin/chatbot-knowledge" },
       { label: "Service Categories", href: "/admin/categories" },
-      { label: "Strikes & Compliance",href: "/admin/compliance" },
+      { label: "Integrations",       href: "/admin/integrations" },
+      { label: "Integration Health", href: "/admin/integration-health" },
+      { label: "n8n / Webhooks",     href: "/admin/n8n-setup" },
+      { label: "Compliance",         href: "/admin/compliance" },
       { label: "API Credits",        href: "/admin/api-credits" },
-    ],
-    groups: [
-      {
-        label: "INTEGRATIONS",
-        defaultOpen: true,
-        items: [
-          { label: "All Integrations",     href: "/admin/integrations" },
-          { label: "Integration Health",   href: "/admin/integration-health" },
-          { label: "n8n / Webhooks",       href: "/admin/n8n-setup" },
-          { label: "FSM Webhooks",         href: "/admin/fsm-webhooks" },
-          { label: "Jobber",               href: "/admin/jobber" },
-          { label: "Housecall Pro",        href: "/admin/housecallpro" },
-          { label: "ServiceTitan",         href: "/admin/servicetitan" },
-        ],
-      },
+      { label: "Activity Log",       href: "/admin/activity" },
+      { label: "Platform Health",    href: "/admin/health" },
+      { label: "Settings",           href: "/admin/platform-settings" },
     ],
   },
+];
 
-  // Legacy "commercial" section removed (3 of its 6 links were duplicates of /admin/commercial).
-  // Properties and Compliance are now under Exchange and Platform respectively.
-};
+// --- Active-state helpers -----------------------------------------------------
+function isLinkActive(href: string, location: string, currentQuery: string): boolean {
+  const path = href.split("?")[0];
+  const query = href.includes("?") ? href.split("?")[1] : null;
+  const pathMatch = location === path || (path !== "/admin" && location.startsWith(path));
+  if (!pathMatch) return false;
+  if (query) return currentQuery.includes(query);
+  return true;
+}
 
-
-// --- Helper: which brand section is active ───────────────────────────────────
-function getActiveSection(path: string, search?: string): string {
-  // Overview
-  if (path === "/admin" || path.startsWith("/admin/health") || path.startsWith("/admin/activity") || path.startsWith("/admin/analytics") || path.startsWith("/admin/investor") || path.startsWith("/admin/business-plan") || path.startsWith("/admin/finance") || path.startsWith("/admin/org-chart") || path.startsWith("/admin/knowledge-graph") || path.startsWith("/admin/agents")) return "overview";
-
-  // Waitlist: route to brand based on ?view= query param
-  if (path.startsWith("/admin/waitlist")) {
-    return (search ?? "").includes("view=homes") ? "trustypro" : "prolnk";
-  }
-
-  // ProLnk — partner network, commissions, exchange
-  if (
-    path.startsWith("/admin/partner") || path.startsWith("/admin/network") ||
-    path.startsWith("/admin/pipeline") || path.startsWith("/admin/verification") ||
-    path.startsWith("/admin/leaderboard") || path.startsWith("/admin/map") ||
-    path.startsWith("/admin/payouts") || path.startsWith("/admin/payout-history") ||
-    path.startsWith("/admin/rates") || path.startsWith("/admin/disputes") ||
-    path.startsWith("/admin/deal-pipeline") || path.startsWith("/admin/deals") ||
-    path.startsWith("/admin/deal-composer") || path.startsWith("/admin/referral-pipeline") ||
-    path.startsWith("/admin/revenue-forecast") || path.startsWith("/admin/market") ||
-    path.startsWith("/admin/compliance") || path.startsWith("/admin/featured-advertisers") ||
-    path.startsWith("/admin/real-estate-agents") || path.startsWith("/admin/referral-tree")
-  ) return "prolnk";
-
-  // TrustyPro — homeowner platform, scans, storm, property data
-  if (
-    path.startsWith("/admin/homeowners") || path.startsWith("/admin/home-intelligence") ||
-    path.startsWith("/admin/trustypro") || path.startsWith("/admin/ai") ||
-    path.startsWith("/admin/photo-pipeline") || path.startsWith("/admin/photo-queue") ||
-    path.startsWith("/admin/opportunities") || path.startsWith("/admin/detector") ||
-    path.startsWith("/admin/bundle-offers") || path.startsWith("/admin/properties") ||
-    path.startsWith("/admin/data-intelligence") || path.startsWith("/admin/storm") ||
-    path.startsWith("/admin/asset-aging") || path.startsWith("/admin/recalls") ||
-    path.startsWith("/admin/heatmap") || path.startsWith("/admin/coverage-map") ||
-    path.startsWith("/admin/ai-pipeline") || path.startsWith("/admin/insurance-claims") ||
-    path.startsWith("/admin/lead-scoring") || path.startsWith("/admin/agents") ||
-    path.startsWith("/admin/predict")
-  ) return "trustypro";
-
-  // Media — marketing, campaigns, content
-  if (
-    path.startsWith("/admin/marketing-automation") || path.startsWith("/admin/campaigns") ||
-    path.startsWith("/admin/broadcast") || path.startsWith("/admin/content") ||
-    path.startsWith("/admin/comm-sequence") || path.startsWith("/admin/nps") ||
-    path.startsWith("/admin/ab-tests") || path.startsWith("/admin/seasonal-campaigns") ||
-    path.startsWith("/admin/smart-notifications") || path.startsWith("/admin/google-reviews") ||
-    path.startsWith("/admin/advertising-preview") || path.startsWith("/admin/comms")
-  ) return "media";
-
-  // Exchange
-  if (path.startsWith("/admin/exchange") || path.startsWith("/admin/data-marketplace") ||
-      path.startsWith("/admin/territory") || path.startsWith("/admin/franchise")) return "exchange";
-
-  // Commercial
-  if (path.startsWith("/admin/commercial") || path.startsWith("/admin/mass-adoption")) return "exchange";
-
-  // Platform — settings, integrations
-  if (
-    path.startsWith("/admin/platform-settings") || path.startsWith("/admin/setup") ||
-    path.startsWith("/admin/categories") || path.startsWith("/admin/integrations") ||
-    path.startsWith("/admin/integration") || path.startsWith("/admin/n8n") ||
-    path.startsWith("/admin/fsm") || path.startsWith("/admin/jobber") ||
-    path.startsWith("/admin/housecallpro") || path.startsWith("/admin/servicetitan") ||
-    path.startsWith("/admin/companycam") || path.startsWith("/admin/buildium") ||
-    path.startsWith("/admin/agreements") || path.startsWith("/admin/api-credits") ||
-    path.startsWith("/admin/analytics-export") || path.startsWith("/admin/payment-flows")
-  ) return "platform";
-
-  return "overview";
+function sectionContainsActive(section: NavSection, location: string, currentQuery: string): boolean {
+  if (section.href) return isLinkActive(section.href, location, currentQuery);
+  return (section.links ?? []).some(l => isLinkActive(l.href, location, currentQuery));
 }
 
 // --- Notification Bell --------------------------------------------------------
@@ -339,87 +183,78 @@ function AdminNotificationsBell() {
   );
 }
 
-// --- Horizontal Sub-Tab Bar ---------------------------------------------------
-function SubTabBar({ section }: { section: string }) {
-  const [location] = useLocation();
-  const tabs = SECTION_TABS[section] ?? [];
-  const accentColor = SECTION_COLORS[section] ?? T.accent;
-  if (tabs.length === 0) return null;
-  return (
-    <div
-      className="flex items-center gap-0 px-4 flex-shrink-0"
-      style={{
-        backgroundColor: T.surface,
-        borderBottom: `1px solid ${T.border}`,
-        overflowX: "auto",
-        WebkitOverflowScrolling: "touch",
-        scrollbarWidth: "none",
-      }}
-    >
-      {tabs.map(tab => {
-        const tabPath = tab.href.split("?")[0];
-        const tabQuery = tab.href.includes("?") ? tab.href.split("?")[1] : null;
-        const currentQuery = typeof window !== "undefined" ? window.location.search.replace("?", "") : "";
-        const pathMatch = location === tabPath || (tabPath !== "/admin" && location.startsWith(tabPath));
-        const isActive = pathMatch && (!tabQuery || currentQuery.includes(tabQuery));
-        return (
-          <Link key={tab.href} href={tab.href}>
-            <button
-              className="flex-shrink-0 px-3 py-3 text-sm font-medium transition-all whitespace-nowrap"
-              style={{
-                color: isActive ? accentColor : T.muted,
-                backgroundColor: "transparent",
-                borderBottom: isActive ? `2px solid ${accentColor}` : "2px solid transparent",
-                marginBottom: "-1px",
-              }}
-            >
-              {tab.label}
-            </button>
-          </Link>
-        );
-      })}
-    </div>
-  );
-}
-
-// --- Collapsible nav group ────────────────────────────────────────────────────
-function NavGroup({
-  group,
+// --- Single sidebar section (collapsible group OR direct link) ----------------
+function SidebarSection({
+  section,
   location,
+  currentQuery,
+  onNavClick,
 }: {
-  group: NavGroup;
+  section: NavSection;
   location: string;
+  currentQuery: string;
+  onNavClick?: () => void;
 }) {
-  const [open, setOpen] = useState(group.defaultOpen ?? false);
+  const Icon = section.icon;
+  const hasActive = sectionContainsActive(section, location, currentQuery);
+  const [open, setOpen] = useState(hasActive);
+
+  useEffect(() => {
+    if (hasActive) setOpen(true);
+  }, [hasActive]);
+
+  // Direct-link section (no children) — e.g. Command Center
+  if (section.href) {
+    const active = isLinkActive(section.href, location, currentQuery);
+    return (
+      <Link href={section.href}>
+        <div
+          className="flex items-center gap-2.5 px-3 py-2 rounded-lg cursor-pointer transition-all"
+          style={{
+            backgroundColor: active ? T.accentBg : "transparent",
+            color: active ? T.accent : T.text,
+            fontWeight: active ? 600 : 500,
+          }}
+          onClick={onNavClick}
+        >
+          <Icon className="w-[18px] h-[18px] flex-shrink-0" />
+          <span className="text-sm">{section.label}</span>
+        </div>
+      </Link>
+    );
+  }
+
   return (
     <div>
       <button
         onClick={() => setOpen(v => !v)}
-        className="w-full flex items-center justify-between px-3 py-1.5 mt-2"
-        style={{ color: T.dim }}
+        className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all"
+        style={{ color: hasActive ? T.text : T.muted, fontWeight: 500 }}
       >
-        <span className="text-[10px] font-bold uppercase tracking-widest">{group.label}</span>
-        {open
-          ? <ChevronDown className="w-3 h-3 flex-shrink-0" />
-          : <ChevronRight className="w-3 h-3 flex-shrink-0" />
-        }
+        <Icon className="w-[18px] h-[18px] flex-shrink-0" style={{ color: hasActive ? T.accent : T.muted }} />
+        <span className="text-sm flex-1 text-left">{section.label}</span>
+        <ChevronDown
+          className="w-3.5 h-3.5 flex-shrink-0 transition-transform"
+          style={{ transform: open ? "rotate(0deg)" : "rotate(-90deg)", color: T.dim }}
+        />
       </button>
       {open && (
-        <div className="flex flex-col gap-0.5 mt-0.5">
-          {group.items.map(item => {
-            const itemPath = item.href.split("?")[0];
-            const isActive = location === itemPath || (itemPath !== "/admin" && location.startsWith(itemPath));
+        <div className="flex flex-col gap-0.5 mt-0.5 mb-1" style={{ paddingLeft: 14 }}>
+          {(section.links ?? []).map(link => {
+            const active = isLinkActive(link.href, location, currentQuery);
             return (
-              <Link key={item.href} href={item.href}>
+              <Link key={link.href} href={link.href}>
                 <div
-                  className="flex items-center px-3 py-2 rounded-lg cursor-pointer transition-all text-xs"
+                  className="flex items-center px-3 py-1.5 rounded-lg cursor-pointer transition-all text-[13px]"
                   style={{
-                    backgroundColor: isActive ? T.accentBg : "transparent",
-                    color: isActive ? T.accent : T.muted,
-                    fontWeight: isActive ? 600 : 400,
+                    borderLeft: `2px solid ${active ? T.accent : "transparent"}`,
+                    backgroundColor: active ? T.accentBg : "transparent",
+                    color: active ? T.accent : T.muted,
+                    fontWeight: active ? 600 : 400,
                   }}
+                  onClick={onNavClick}
                 >
-                  {item.label}
+                  {link.label}
                 </div>
               </Link>
             );
@@ -430,212 +265,96 @@ function NavGroup({
   );
 }
 
-// --- Icon Rail ───────────────────────────────────────────────────────────────
-// --- Icon rail config ─────────────────────────────────────────────────────────
-const RAIL_ITEMS = [
-  { icon: LayoutDashboard, section: "overview",    color: "#0EA5E9" },
-  { icon: Home,            section: "prolnk",      color: "#0A1628" },
-  { icon: Shield,          section: "trustypro",   color: "#0891B2" },
-  { icon: Megaphone,       section: "media",       color: "#7C3AED" },
-  { icon: ArrowLeftRight,  section: "exchange",    color: "#F59E0B" },
-  { icon: Wrench,          section: "platform",    color: "#64748B" },
-] as const;
-
-
-function IconRail({
-  activeSection,
-  user,
-  logout,
-}: {
-  activeSection: string;
-  user: { name?: string | null } | null;
-  logout: () => void;
-}) {
-  return (
-    <div
-      className="flex flex-col items-center py-3 flex-shrink-0"
-      style={{
-        width: 50,
-        backgroundColor: "#1A1D2E",
-        height: "100%",
-      }}
-    >
-      {/* Logo */}
-      <div className="mb-4 flex items-center justify-center w-8 h-8">
-        <ProLnkLogo variant="icon" height={22} />
-      </div>
-
-      {/* Section icons */}
-      <div className="flex flex-col items-center gap-1 flex-1">
-        {RAIL_ITEMS.map(({ icon: Icon, section, color }) => {
-          const isActive = section === activeSection;
-          // Each icon navigates to the first item of the corresponding BRAND_NAV
-          const firstHref = BRAND_NAV[section]?.items?.[0]?.href ?? "/admin";
-          return (
-            <Link key={section} href={firstHref}>
-              <div
-                title={section.charAt(0).toUpperCase() + section.slice(1)}
-                className="w-9 h-9 rounded-xl flex items-center justify-center cursor-pointer transition-all"
-                style={{
-                  backgroundColor: isActive ? color : "transparent",
-                  color: isActive ? "#FFFFFF" : "rgba(255,255,255,0.45)",
-                  boxShadow: isActive ? `0 4px 12px ${color}66` : "none",
-                }}
-              >
-                <Icon className="w-4 h-4" />
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-
-      {/* User avatar + sign out */}
-      <div className="flex flex-col items-center gap-2 mt-2">
-        {user && (
-          <div
-            className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
-            style={{ background: BADGE_GRADIENTS.blue }}
-            title={user.name ?? "Admin"}
-          >
-            {user.name?.[0]?.toUpperCase() ?? "A"}
-          </div>
-        )}
-        <button
-          onClick={logout}
-          title="Sign Out"
-          className="w-8 h-8 rounded-xl flex items-center justify-center transition-all"
-          style={{ color: "rgba(255,255,255,0.4)" }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(234,6,6,0.2)";
-            (e.currentTarget as HTMLButtonElement).style.color = "#EA0606";
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
-            (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.4)";
-          }}
-        >
-          <LogOut className="w-4 h-4" />
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// --- Text Nav Sidebar ─────────────────────────────────────────────────────────
-function TextNav({
-  activeSection,
+// --- Sidebar (shared between desktop and mobile overlay) ----------------------
+function Sidebar({
+  location,
+  currentQuery,
   todoOpen,
   setTodoOpen,
+  user,
+  logout,
   onNavClick,
 }: {
-  activeSection: string;
+  location: string;
+  currentQuery: string;
   todoOpen: boolean;
   setTodoOpen: (v: boolean | ((prev: boolean) => boolean)) => void;
+  user: { name?: string | null } | null;
+  logout: () => void;
   onNavClick?: () => void;
 }) {
-  const [location] = useLocation();
-  const nav = BRAND_NAV[activeSection];
-  if (!nav) return null;
-
   return (
     <div
-      className="flex flex-col"
-      style={{
-        width: 190,
-        backgroundColor: T.sidebar,
-        borderRight: `1px solid ${T.border}`,
-        height: "100%",
-        overflowY: "auto",
-      }}
+      className="flex flex-col h-full"
+      style={{ width: 248, backgroundColor: T.sidebar, borderRight: `1px solid ${T.border}` }}
     >
-      {/* Section header */}
-      <div className="px-4 pt-4 pb-2 flex-shrink-0">
-        <p
-          className="text-[10px] font-bold uppercase tracking-widest"
-          style={{ color: T.dim }}
-        >
-          {nav.header}
-        </p>
+      {/* Brand */}
+      <div
+        className="flex items-center px-5 flex-shrink-0"
+        style={{ height: 64, borderBottom: `1px solid ${T.border}` }}
+      >
+        <ProLnkLogo variant="dark" height={26} />
       </div>
 
-      {/* Nav items */}
-      <nav className="flex-1 px-2 pb-2">
+      {/* Nav */}
+      <nav className="flex-1 overflow-y-auto px-3 py-4">
+        <p
+          className="px-3 mb-2 text-[10px] font-bold uppercase tracking-widest"
+          style={{ color: T.dim }}
+        >
+          Workspace
+        </p>
         <div className="flex flex-col gap-0.5">
-          {nav.items.map(item => {
-            const itemPath = item.href.split("?")[0];
-            const itemQuery = item.href.includes("?") ? item.href.split("?")[1] : null;
-            const currentQuery = typeof window !== "undefined" ? window.location.search.replace("?", "") : "";
-            const pathMatch = location === itemPath || (itemPath !== "/admin" && location.startsWith(itemPath));
-            const isActive = pathMatch && (!itemQuery || currentQuery.includes(itemQuery));
-            return (
-              <Link key={item.href} href={item.href}>
-                <div
-                  className="flex items-center px-3 py-2 rounded-lg cursor-pointer transition-all text-sm"
-                  style={{
-                    backgroundColor: isActive ? T.accentBg : "transparent",
-                    color: isActive ? SECTION_COLORS[activeSection] ?? T.accent : T.muted,
-                    fontWeight: isActive ? 600 : 400,
-                  }}
-                  onClick={onNavClick}
-                >
-                  {item.label}
-                </div>
-              </Link>
-            );
-          })}
+          {NAV_SECTIONS.map(section => (
+            <SidebarSection
+              key={section.id}
+              section={section}
+              location={location}
+              currentQuery={currentQuery}
+              onNavClick={onNavClick}
+            />
+          ))}
         </div>
-
-        {/* Collapsible groups */}
-        {nav.groups.map(group => (
-          <NavGroup key={group.label} group={group} location={location} />
-        ))}
       </nav>
 
-      {/* Agent Workboard button */}
-      <div className="px-2 pb-3 flex-shrink-0">
+      {/* Footer: workboard + user */}
+      <div className="px-3 py-3 flex-shrink-0" style={{ borderTop: `1px solid ${T.border}` }}>
         <button
           onClick={() => setTodoOpen(v => !v)}
-          className="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm transition-all"
+          className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all mb-2"
           style={{
             backgroundColor: todoOpen ? T.accent : T.bg,
             color: todoOpen ? "#FFFFFF" : T.muted,
+            fontWeight: 500,
           }}
         >
-          <ListChecks className="w-4 h-4 flex-shrink-0" />
-          <span className="font-medium text-xs">Agent Workboard</span>
+          <ListChecks className="w-[18px] h-[18px] flex-shrink-0" />
+          <span>Agent Workboard</span>
         </button>
+        <div className="flex items-center gap-2.5 px-2">
+          <div
+            className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
+            style={{ background: BADGE_GRADIENTS.blue }}
+            title={user?.name ?? "Admin"}
+          >
+            {user?.name?.[0]?.toUpperCase() ?? "A"}
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="text-xs font-semibold truncate" style={{ color: T.text }}>
+              {user?.name ?? "Admin"}
+            </p>
+            <p className="text-[10px] truncate" style={{ color: T.dim }}>Administrator</p>
+          </div>
+          <button
+            onClick={logout}
+            title="Sign Out"
+            className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
+            style={{ color: T.muted, backgroundColor: T.bg }}
+          >
+            <LogOut className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
-
-// --- Sidebar Content (shared between mobile overlay and desktop) --------------
-function SidebarContent({
-  activeSection,
-  user,
-  logout,
-  todoOpen,
-  setTodoOpen,
-  onNavClick,
-}: {
-  activeSection: string;
-  user: { name?: string | null } | null;
-  logout: () => void;
-  todoOpen: boolean;
-  setTodoOpen: (v: boolean | ((prev: boolean) => boolean)) => void;
-  onNavClick?: () => void;
-}) {
-  return (
-    <div className="flex" style={{ height: "100%" }}>
-      {/* Icon rail — 50px */}
-      <IconRail activeSection={activeSection} user={user} logout={logout} />
-      {/* Text nav — 190px */}
-      <TextNav
-        activeSection={activeSection}
-        todoOpen={todoOpen}
-        setTodoOpen={setTodoOpen}
-        onNavClick={onNavClick}
-      />
     </div>
   );
 }
@@ -648,12 +367,12 @@ interface AdminLayoutProps {
 }
 
 export default function AdminLayout({ children, title, subtitle }: AdminLayoutProps) {
-  const [location]                    = useLocation();
-  const { user, logout }              = useAuth();
-  const [searchOpen, setSearchOpen]   = useState(false);
-  const [todoOpen, setTodoOpen]       = useState(false);
+  const [location]                                = useLocation();
+  const { user, logout }                          = useAuth();
+  const [searchOpen, setSearchOpen]               = useState(false);
+  const [todoOpen, setTodoOpen]                   = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const activeSection                 = getActiveSection(location, typeof window !== "undefined" ? window.location.search : "");
+  const currentQuery = typeof window !== "undefined" ? window.location.search.replace("?", "") : "";
 
   // Close mobile sidebar on route change
   useEffect(() => {
@@ -676,38 +395,29 @@ export default function AdminLayout({ children, title, subtitle }: AdminLayoutPr
       {/* -- Mobile Sidebar Overlay ----------------------------------------- */}
       {mobileSidebarOpen && (
         <div
-          className="fixed inset-0 z-50 flex"
+          className="fixed inset-0 z-50 md:hidden flex"
           style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
           onClick={() => setMobileSidebarOpen(false)}
         >
           <aside
-            className="flex flex-col h-full overflow-hidden"
-            style={{
-              width: 240,
-              boxShadow: "4px 0 24px rgba(0,0,0,0.15)",
-              zIndex: 51,
-            }}
+            className="flex flex-col h-full overflow-hidden relative"
+            style={{ boxShadow: "4px 0 24px rgba(0,0,0,0.15)", zIndex: 51 }}
             onClick={e => e.stopPropagation()}
           >
-            {/* Close button — floats over icon rail */}
-            <div
-              className="absolute top-3 right-0 z-10 flex items-center justify-end pr-2"
-              style={{ width: 190 + 50 }}
+            <button
+              onClick={() => setMobileSidebarOpen(false)}
+              className="absolute top-4 right-3 z-10 w-7 h-7 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: T.bg, color: T.muted }}
             >
-              <button
-                onClick={() => setMobileSidebarOpen(false)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: T.bg, color: T.muted }}
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            </div>
-            <SidebarContent
-              activeSection={activeSection}
-              user={user}
-              logout={logout}
+              <X className="w-3.5 h-3.5" />
+            </button>
+            <Sidebar
+              location={location}
+              currentQuery={currentQuery}
               todoOpen={todoOpen}
               setTodoOpen={setTodoOpen}
+              user={user}
+              logout={logout}
               onNavClick={() => setMobileSidebarOpen(false)}
             />
           </aside>
@@ -715,20 +425,14 @@ export default function AdminLayout({ children, title, subtitle }: AdminLayoutPr
       )}
 
       {/* -- Desktop Sidebar (hidden on mobile) ---------------------------- */}
-      <aside
-        className="hidden md:flex flex-shrink-0"
-        style={{
-          width: 240,
-          boxShadow: "2px 0 20px rgba(0,0,0,0.05)",
-          zIndex: 10,
-        }}
-      >
-        <SidebarContent
-          activeSection={activeSection}
-          user={user}
-          logout={logout}
+      <aside className="hidden md:flex flex-shrink-0" style={{ zIndex: 10 }}>
+        <Sidebar
+          location={location}
+          currentQuery={currentQuery}
           todoOpen={todoOpen}
           setTodoOpen={setTodoOpen}
+          user={user}
+          logout={logout}
         />
       </aside>
 
@@ -752,13 +456,12 @@ export default function AdminLayout({ children, title, subtitle }: AdminLayoutPr
       {/* -- Main Content --------------------------------------------------- */}
       <main className="flex-1 overflow-auto flex flex-col min-w-0" style={{ backgroundColor: T.bg }}>
 
-        {/* Top bar */}
+        {/* Top bar — minimal: page title + global search + notifications */}
         <div
-          className="flex items-center justify-between px-4 py-3 flex-shrink-0"
-          style={{ backgroundColor: T.surface, borderBottom: `1px solid ${T.border}` }}
+          className="flex items-center justify-between px-4 flex-shrink-0"
+          style={{ height: 64, backgroundColor: T.surface, borderBottom: `1px solid ${T.border}` }}
         >
           <div className="flex items-center gap-3 min-w-0">
-            {/* Mobile hamburger */}
             <button
               className="md:hidden w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ backgroundColor: T.bg, color: T.text }}
@@ -779,17 +482,12 @@ export default function AdminLayout({ children, title, subtitle }: AdminLayoutPr
             <button
               onClick={() => setSearchOpen(true)}
               className="hidden sm:flex items-center gap-2 text-sm rounded-xl px-3 py-2 transition-all"
-              style={{
-                backgroundColor: T.bg,
-                color: T.muted,
-                border: `1px solid ${T.border}`,
-              }}
+              style={{ backgroundColor: T.bg, color: T.muted, border: `1px solid ${T.border}` }}
             >
               <Search className="w-4 h-4" />
               <span className="hidden lg:inline">Search</span>
               <kbd className="hidden lg:inline text-xs rounded-md px-1.5 py-0.5 ml-1" style={{ backgroundColor: T.border, fontFamily: MONO, color: T.muted }}>K</kbd>
             </button>
-            {/* Mobile search icon */}
             <button
               onClick={() => setSearchOpen(true)}
               className="sm:hidden w-9 h-9 rounded-xl flex items-center justify-center"
@@ -800,9 +498,6 @@ export default function AdminLayout({ children, title, subtitle }: AdminLayoutPr
             <AdminNotificationsBell />
           </div>
         </div>
-
-        {/* Horizontal sub-tabs — scrollable on mobile */}
-        <SubTabBar section={activeSection} />
 
         <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
 

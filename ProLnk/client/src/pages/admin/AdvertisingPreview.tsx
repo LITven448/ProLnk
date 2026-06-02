@@ -21,7 +21,7 @@ const MOCK_PREFERRED_PARTNER = {
   website: "premierhvac.com",
   serviceArea: "Dallas / Fort Worth",
   logoInitials: "PH",
-  logoColor: "#0A1628",
+  logoColor: "#F8FAFC",
   description: "Family-owned since 1998. Licensed, insured, and TrustyPro Certified. Same-day service available.",
   specialOffer: "Free diagnostic with any repair — mention TrustyPro",
   ctaLabel: "Request a Quote",
@@ -63,7 +63,7 @@ function PreviewFrame({ label, children }: { label: string; children: React.Reac
 function PreferredBadge() {
   return (
     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
-      style={{ background: "linear-gradient(135deg, #F5E642, #FFD700)", color: "#0A1628" }}>
+      style={{ background: "linear-gradient(135deg, #F5E642, #FFD700)", color: "#F8FAFC" }}>
       <Crown className="w-2.5 h-2.5" />
       Preferred Partner
     </span>
@@ -90,15 +90,15 @@ function DashboardBannerPreview() {
         style={{ borderColor: "#F5E642", background: "linear-gradient(135deg, #FFFEF0 0%, #FFF9C4 50%, #FFFFF0 100%)" }}>
         {/* Label bar */}
         <div className="px-4 py-1.5 flex items-center gap-2"
-          style={{ background: "linear-gradient(90deg, #0A1628, #1a3a5c)" }}>
+          style={{ background: "linear-gradient(90deg, #F8FAFC, #1a3a5c)" }}>
           <Crown className="w-3 h-3 text-[#F5E642]" />
           <span className="text-[10px] font-bold text-[#F5E642] uppercase tracking-widest">Preferred Partner · {p.category}</span>
-          <span className="ml-auto text-[10px] text-white/50">Sponsored</span>
+          <span className="ml-auto text-[10px] text-gray-900/50">Sponsored</span>
         </div>
         {/* Content */}
         <div className="p-4 flex items-center gap-4">
           {/* Logo */}
-          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-sm"
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0 shadow-sm"
             style={{ backgroundColor: p.logoColor }}>
             {p.logoInitials}
           </div>
@@ -111,7 +111,7 @@ function DashboardBannerPreview() {
             <p className="text-xs text-gray-600 mb-1">{p.tagline}</p>
             <div className="flex items-center gap-3 text-xs text-gray-500">
               <span className="flex items-center gap-1">
-                <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                <Star className="w-3 h-3 fill-amber-400 text-amber-700" />
                 <strong className="text-gray-800">{p.rating}</strong> ({p.reviews} reviews)
               </span>
               <span className="flex items-center gap-1">
@@ -121,8 +121,8 @@ function DashboardBannerPreview() {
           </div>
           {/* CTA */}
           <div className="flex-shrink-0 flex flex-col gap-2 items-end">
-            <button className="px-4 py-2 rounded-xl text-xs font-bold text-white shadow-sm whitespace-nowrap"
-              style={{ background: "linear-gradient(135deg, #0A1628, #1a3a5c)" }}>
+            <button className="px-4 py-2 rounded-xl text-xs font-bold text-gray-900 shadow-sm whitespace-nowrap"
+              style={{ background: "linear-gradient(135deg, #F8FAFC, #1a3a5c)" }}>
               {p.ctaLabel}
             </button>
             {p.specialOffer && (
@@ -153,7 +153,7 @@ function ProDirectoryPreview() {
           </div>
           <div className="p-4 pt-3">
             <div className="flex items-start gap-3 mb-3">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold flex-shrink-0 shadow-sm"
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-gray-900 font-bold flex-shrink-0 shadow-sm"
                 style={{ backgroundColor: MOCK_PREFERRED_PARTNER.logoColor }}>
                 {MOCK_PREFERRED_PARTNER.logoInitials}
               </div>
@@ -163,7 +163,7 @@ function ProDirectoryPreview() {
               </div>
             </div>
             <div className="flex items-center gap-1 mb-2">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-700" />
               <span className="text-sm font-bold text-gray-800">{MOCK_PREFERRED_PARTNER.rating}</span>
               <span className="text-xs text-gray-400">({MOCK_PREFERRED_PARTNER.reviews})</span>
             </div>
@@ -175,8 +175,8 @@ function ProDirectoryPreview() {
               </div>
             )}
             <div className="flex gap-2">
-              <button className="flex-1 py-2 rounded-lg text-xs font-bold text-white"
-                style={{ background: "linear-gradient(135deg, #0A1628, #1a3a5c)" }}>
+              <button className="flex-1 py-2 rounded-lg text-xs font-bold text-gray-900"
+                style={{ background: "linear-gradient(135deg, #F8FAFC, #1a3a5c)" }}>
                 Request Quote
               </button>
               <button className="px-3 py-2 rounded-lg text-xs font-semibold border border-gray-200 text-gray-600 hover:bg-gray-50">
@@ -190,7 +190,7 @@ function ProDirectoryPreview() {
         <div className="rounded-xl border border-gray-200 overflow-hidden">
           <div className="p-4">
             <div className="flex items-start gap-3 mb-3">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold flex-shrink-0"
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-gray-900 font-bold flex-shrink-0"
                 style={{ backgroundColor: MOCK_STANDARD_PARTNER.logoColor }}>
                 {MOCK_STANDARD_PARTNER.logoInitials}
               </div>
@@ -200,7 +200,7 @@ function ProDirectoryPreview() {
               </div>
             </div>
             <div className="flex items-center gap-1 mb-2">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-700" />
               <span className="text-sm font-bold text-gray-800">{MOCK_STANDARD_PARTNER.rating}</span>
               <span className="text-xs text-gray-400">({MOCK_STANDARD_PARTNER.reviews})</span>
             </div>
@@ -233,7 +233,7 @@ function ScanResultsPreview() {
         <div className="rounded-xl border border-red-200 bg-red-50 p-3">
           <div className="flex items-start gap-2">
             <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <span className="text-white text-[9px] font-bold">!</span>
+              <span className="text-gray-900 text-[9px] font-bold">!</span>
             </div>
             <div>
               <p className="text-xs font-bold text-red-800">HVAC Filter — Overdue Replacement</p>
@@ -246,12 +246,12 @@ function ScanResultsPreview() {
         <div className="rounded-xl border overflow-hidden shadow-sm"
           style={{ borderColor: "#F5E642", background: "linear-gradient(135deg, #FFFEF0, #FFFFF5)" }}>
           <div className="px-3 py-1.5 flex items-center gap-2"
-            style={{ background: "linear-gradient(90deg, #0A1628, #1a3a5c)" }}>
+            style={{ background: "linear-gradient(90deg, #F8FAFC, #1a3a5c)" }}>
             <Zap className="w-3 h-3 text-[#F5E642]" />
             <span className="text-[10px] font-bold text-[#F5E642] uppercase tracking-widest">Recommended Pro · HVAC</span>
           </div>
           <div className="p-3 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center text-gray-900 font-bold text-sm flex-shrink-0"
               style={{ backgroundColor: MOCK_PREFERRED_PARTNER.logoColor }}>
               {MOCK_PREFERRED_PARTNER.logoInitials}
             </div>
@@ -262,15 +262,15 @@ function ScanResultsPreview() {
               </div>
               <div className="flex items-center gap-2 mt-0.5 text-[10px] text-gray-500">
                 <span className="flex items-center gap-0.5">
-                  <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
+                  <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-700" />
                   {MOCK_PREFERRED_PARTNER.rating}
                 </span>
                 <span>·</span>
                 <span>{MOCK_PREFERRED_PARTNER.specialOffer}</span>
               </div>
             </div>
-            <button className="px-3 py-1.5 rounded-lg text-[10px] font-bold text-white flex-shrink-0"
-              style={{ background: "linear-gradient(135deg, #0A1628, #1a3a5c)" }}>
+            <button className="px-3 py-1.5 rounded-lg text-[10px] font-bold text-gray-900 flex-shrink-0"
+              style={{ background: "linear-gradient(135deg, #F8FAFC, #1a3a5c)" }}>
               Book Now
             </button>
           </div>
@@ -279,7 +279,7 @@ function ScanResultsPreview() {
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-3">
           <div className="flex items-start gap-2">
             <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <span className="text-white text-[9px] font-bold">~</span>
+              <span className="text-gray-900 text-[9px] font-bold">~</span>
             </div>
             <div>
               <p className="text-xs font-bold text-amber-800">Lawn — Patchy Growth Detected</p>
@@ -306,7 +306,7 @@ function OffersPagePreview() {
           <div className="p-4 pt-5">
             <div className="flex items-start justify-between gap-3 mb-3">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-gray-900 font-bold text-sm"
                   style={{ backgroundColor: MOCK_PREFERRED_PARTNER.logoColor }}>
                   {MOCK_PREFERRED_PARTNER.logoInitials}
                 </div>
@@ -326,8 +326,8 @@ function OffersPagePreview() {
               <p className="text-sm font-bold text-emerald-700 mt-0.5">{MOCK_PREFERRED_PARTNER.specialOffer}</p>
             </div>
             <div className="flex gap-2">
-              <button className="flex-1 py-2 rounded-lg text-xs font-bold text-white"
-                style={{ background: "linear-gradient(135deg, #0A1628, #1a3a5c)" }}>
+              <button className="flex-1 py-2 rounded-lg text-xs font-bold text-gray-900"
+                style={{ background: "linear-gradient(135deg, #F8FAFC, #1a3a5c)" }}>
                 Claim Offer
               </button>
               <button className="px-3 py-2 rounded-lg text-xs text-gray-500 border border-gray-200">
@@ -340,7 +340,7 @@ function OffersPagePreview() {
         {/* Standard offer */}
         <div className="rounded-xl border border-gray-200 p-4">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+            <div className="w-9 h-9 rounded-lg flex items-center justify-center text-gray-900 font-bold text-sm"
               style={{ backgroundColor: MOCK_STANDARD_PARTNER.logoColor }}>
               {MOCK_STANDARD_PARTNER.logoInitials}
             </div>
@@ -382,7 +382,7 @@ function PricingTiers() {
       name: "Preferred Partner",
       price: "Add-on",
       priceNote: "contact for pricing",
-      color: "#0A1628",
+      color: "#F8FAFC",
       bg: "linear-gradient(135deg, #FFFEF0, #FFFFF5)",
       border: "#F5E642",
       features: [
@@ -401,7 +401,7 @@ function PricingTiers() {
       name: "Advertising Spotlight",
       price: "Premium",
       priceNote: "contact for pricing",
-      color: "#7C3AED",
+      color: "#0D9488",
       bg: "#F5F3FF",
       border: "#C4B5FD",
       features: [
@@ -427,7 +427,7 @@ function PricingTiers() {
           }}>
           {tier.highlight && (
             <div className="py-1.5 text-center text-[10px] font-bold uppercase tracking-widest"
-              style={{ background: "linear-gradient(90deg, #0A1628, #1a3a5c)", color: "#F5E642" }}>
+              style={{ background: "linear-gradient(90deg, #F8FAFC, #1a3a5c)", color: "#F5E642" }}>
               Most Popular
             </div>
           )}
@@ -446,7 +446,7 @@ function PricingTiers() {
             <button
               className="w-full py-2.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
               style={tier.highlight
-                ? { background: "linear-gradient(135deg, #0A1628, #1a3a5c)", color: "#fff" }
+                ? { background: "linear-gradient(135deg, #F8FAFC, #1a3a5c)", color: "#fff" }
                 : { border: `2px solid ${tier.border}`, color: tier.color, background: "transparent" }
               }
             >
@@ -473,14 +473,14 @@ export default function AdvertisingPreview() {
     <AdminLayout title="Advertising & Preferred Partner Preview" subtitle="Visual mockup of all ad placements on the TrustyPro homeowner platform">
       {/* Intro banner */}
       <div className="rounded-2xl p-5 mb-6 flex items-start gap-4"
-        style={{ background: "linear-gradient(135deg, #0A1628, #1a3a5c)", color: "#fff" }}>
+        style={{ background: "linear-gradient(135deg, #F8FAFC, #1a3a5c)", color: "#fff" }}>
         <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ backgroundColor: "#F5E642" }}>
-          <Crown className="w-6 h-6 text-[#0A1628]" />
+          <Crown className="w-6 h-6 text-[#F8FAFC]" />
         </div>
         <div>
           <h2 className="font-bold text-lg mb-1">Preferred Partner Program</h2>
-          <p className="text-sm text-white/80 max-w-2xl">
+          <p className="text-sm text-gray-900/80 max-w-2xl">
             Preferred Partners get premium visibility across the TrustyPro homeowner platform — from the dashboard banner to contextual injection in AI scan results. Below is a full visual preview of every placement, exactly as homeowners see it.
           </p>
         </div>
@@ -494,8 +494,8 @@ export default function AdvertisingPreview() {
             onClick={() => setActiveTab(tab.id)}
             className="px-4 py-3 text-sm font-medium transition-all whitespace-nowrap"
             style={{
-              color: activeTab === tab.id ? "#0A1628" : "#9CA3AF",
-              borderBottom: activeTab === tab.id ? "2px solid #0A1628" : "2px solid transparent",
+              color: activeTab === tab.id ? "#F8FAFC" : "#9CA3AF",
+              borderBottom: activeTab === tab.id ? "2px solid #F8FAFC" : "2px solid transparent",
               marginBottom: "-1px",
               backgroundColor: "transparent",
             }}
@@ -555,7 +555,7 @@ export default function AdvertisingPreview() {
           <p className="text-sm text-gray-500 mb-4">Partners with Preferred status get a real-time analytics dashboard showing impressions, clicks, and conversions from each placement.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Banner Impressions", value: "12,840", trend: "+18%", icon: Eye, color: "#0A1628" },
+              { label: "Banner Impressions", value: "12,840", trend: "+18%", icon: Eye, color: "#F8FAFC" },
               { label: "Directory Views", value: "3,210", trend: "+24%", icon: Users, color: "#6366F1" },
               { label: "Scan Injections", value: "847", trend: "+31%", icon: Zap, color: "#F59E0B" },
               { label: "Quote Requests", value: "94", trend: "+12%", icon: DollarSign, color: "#059669" },
@@ -576,7 +576,7 @@ export default function AdvertisingPreview() {
             <h4 className="font-semibold text-gray-900 mb-4 text-sm">Conversion Funnel</h4>
             <div className="space-y-3">
               {[
-                { label: "Banner Impressions", value: 12840, pct: 100, color: "#0A1628" },
+                { label: "Banner Impressions", value: 12840, pct: 100, color: "#F8FAFC" },
                 { label: "Banner Clicks", value: 1026, pct: 8, color: "#6366F1" },
                 { label: "Profile Views", value: 847, pct: 6.6, color: "#F59E0B" },
                 { label: "Quote Requests", value: 94, pct: 0.7, color: "#059669" },

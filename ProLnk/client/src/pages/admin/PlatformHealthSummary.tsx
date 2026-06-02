@@ -105,7 +105,7 @@ export default function PlatformHealthSummary() {
 
   return (
     <AdminLayout>
-      <div style={{ background: "#0A1628", minHeight: "100vh", padding: "32px 24px", fontFamily: "'Inter',system-ui,sans-serif" }}>
+      <div style={{ background: "#F8FAFC", minHeight: "100vh", padding: "32px 24px", fontFamily: "'Inter',system-ui,sans-serif" }}>
 
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 28 }}>
@@ -128,7 +128,7 @@ export default function PlatformHealthSummary() {
             </button>
             <button
               onClick={handleExport}
-              style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, background: "#00E676", color: "#0A1628", fontSize: 12, fontWeight: 700, border: "none", cursor: "pointer" }}
+              style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, background: "#00E676", color: "#F8FAFC", fontSize: 12, fontWeight: 700, border: "none", cursor: "pointer" }}
             >
               <FileDown size={14} />
               Generate Report

@@ -149,7 +149,7 @@ const AGENTS: Agent[] = [
     lastAction: "Coordinated lead routing + partner payout batch",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet is best for coordinating complex multi-agent workflows, structured planning, and partner relationship management.",
-    color: "#17C1E8",
+    color: "#0D9488",
     icon: Brain,
     reportsTo: "orch-main",
     manages: ["spec-photo", "spec-lead-router", "spec-partner-health", "spec-storm"],
@@ -168,7 +168,7 @@ const AGENTS: Agent[] = [
     lastAction: "Processed 8 home scans — 24 issues flagged",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet handles nuanced homeowner data, issue categorization, and pro matching logic with high accuracy.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: Shield,
     reportsTo: "orch-main",
     manages: ["spec-scan", "spec-vault", "spec-homeowner-crm", "spec-tp-match"],
@@ -206,7 +206,7 @@ const AGENTS: Agent[] = [
     lastAction: "Payout batch: $4,368 to Apex Roofing — confirmed",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus is the most reliable model for financial reasoning, compliance checks, and high-stakes numerical accuracy.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: DollarSign,
     reportsTo: "orch-main",
     manages: ["spec-payout", "spec-commission", "spec-invoice", "spec-tax"],
@@ -244,7 +244,7 @@ const AGENTS: Agent[] = [
     lastAction: "Platform health check: all systems nominal",
     llm: "Rule-based + GPT-4o",
     llmReason: "Platform ops uses deterministic rule-based logic for routine checks, with GPT-4o escalation for anomaly diagnosis.",
-    color: "#7928CA",
+    color: "#0D9488",
     icon: Cpu,
     reportsTo: "orch-main",
     manages: ["spec-health-monitor", "spec-webhook", "spec-integration", "spec-error-handler"],
@@ -304,7 +304,7 @@ const AGENTS: Agent[] = [
     lastAction: "12 photos processed — 9 opportunities detected",
     llm: "GPT-4o Vision",
     llmReason: "GPT-4o Vision is the leading multimodal model for analyzing construction/home photos and identifying specific trade opportunities.",
-    color: "#17C1E8",
+    color: "#0D9488",
     icon: Camera,
     reportsTo: "mgr-prolnk",
     description: "Analyzes partner job photos to detect upsell opportunities for adjacent home services. Core IP of ProLnk.",
@@ -322,7 +322,7 @@ const AGENTS: Agent[] = [
     lastAction: "7 leads matched — avg response 4.2 min",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet excels at structured matching logic — evaluating trade type, location, partner tier, and capacity simultaneously.",
-    color: "#17C1E8",
+    color: "#0D9488",
     icon: GitBranch,
     reportsTo: "mgr-prolnk",
     description: "Routes detected leads to the best-matched partner based on trade, location, tier, and capacity.",
@@ -340,7 +340,7 @@ const AGENTS: Agent[] = [
     lastAction: "Churn risk flagged: DFW Plumbing Pro — 14 days inactive",
     llm: "GPT-4o",
     llmReason: "GPT-4o is best for behavioral pattern analysis and generating personalized re-engagement messages for at-risk partners.",
-    color: "#17C1E8",
+    color: "#0D9488",
     icon: Activity,
     reportsTo: "mgr-prolnk",
     description: "Monitors partner engagement, flags churn risks, and triggers re-engagement workflows automatically.",
@@ -358,7 +358,7 @@ const AGENTS: Agent[] = [
     lastAction: "Storm alert: ZIP 75034 — hail risk — 3 partners notified",
     llm: "Rule-based + Weather API",
     llmReason: "Storm detection is deterministic — rule-based logic processes weather API data with no LLM needed for core alerts.",
-    color: "#17C1E8",
+    color: "#0D9488",
     icon: CloudLightning,
     reportsTo: "mgr-prolnk",
     description: "Monitors weather data to detect storm events and proactively alert partners and homeowners in affected areas.",
@@ -378,7 +378,7 @@ const AGENTS: Agent[] = [
     lastAction: "5-room scan: 4 issues detected — roof wear, HVAC filter",
     llm: "GPT-4o Vision",
     llmReason: "GPT-4o Vision is the most accurate model for identifying home condition issues from photos across 100+ categories.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: Camera,
     reportsTo: "mgr-tp",
     description: "Analyzes homeowner-submitted photos to identify property issues, maintenance needs, and improvement opportunities.",
@@ -396,7 +396,7 @@ const AGENTS: Agent[] = [
     lastAction: "12 new Home Health records written to vault",
     llm: "Rule-based",
     llmReason: "Vault operations are deterministic CRUD — no LLM needed for structured data storage and retrieval.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: Shield,
     reportsTo: "mgr-tp",
     description: "Manages the Home Health Vault — stores, organizes, and retrieves homeowner property data securely.",
@@ -414,7 +414,7 @@ const AGENTS: Agent[] = [
     lastAction: "Follow-up sent: 8 homeowners with pending scans",
     llm: "GPT-4o",
     llmReason: "GPT-4o generates the most empathetic, personalized homeowner communications — critical for trust-based relationships.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: Users,
     reportsTo: "mgr-tp",
     description: "Manages homeowner relationships, follow-ups, scan reminders, and satisfaction surveys.",
@@ -432,7 +432,7 @@ const AGENTS: Agent[] = [
     lastAction: "3 pro matches sent for roof wear — ZIP 75034",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet handles multi-criteria matching (trade, location, ratings, availability) with high precision.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: GitBranch,
     reportsTo: "mgr-tp",
     description: "Matches homeowner issues to the best ProLnk partner based on trade, location, and ratings.",
@@ -508,7 +508,7 @@ const AGENTS: Agent[] = [
     lastAction: "Payout batch: $4,368 to Apex Roofing — confirmed",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus provides the highest accuracy for financial transaction validation and error detection.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: DollarSign,
     reportsTo: "mgr-finance",
     description: "Processes all partner commission payouts via Stripe. Handles batch payments, retries, and payout confirmations.",
@@ -526,7 +526,7 @@ const AGENTS: Agent[] = [
     lastAction: "Commission: Job #4821 — $8,400 gross, $689 commission",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus handles complex tier-based commission calculations with the highest numerical accuracy.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: BarChart3,
     reportsTo: "mgr-finance",
     description: "Tracks all job completions and calculates partner commissions in real time. Handles tier-based rate adjustments.",
@@ -544,7 +544,7 @@ const AGENTS: Agent[] = [
     lastAction: "Invoice batch: $3,600 sent to 4 media advertisers",
     llm: "Rule-based",
     llmReason: "Invoice generation is template-driven and deterministic — no LLM needed.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: DollarSign,
     reportsTo: "mgr-finance",
     description: "Generates and sends invoices to advertisers and subscription partners. Tracks payment status and sends reminders.",
@@ -562,7 +562,7 @@ const AGENTS: Agent[] = [
     lastAction: "Q1 tax summary generated — ready for review",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus is the most reliable model for tax compliance, 1099 preparation, and IRS regulation interpretation.",
-    color: "#82D616",
+    color: "#16A34A",
     icon: Scale,
     reportsTo: "mgr-finance",
     description: "Prepares tax summaries, 1099s for partners, and quarterly financial reports. Ensures compliance with IRS requirements.",
@@ -656,7 +656,7 @@ const AGENTS: Agent[] = [
     lastAction: "All systems nominal — 0 errors in last 60 min",
     llm: "Rule-based",
     llmReason: "System health monitoring is deterministic — threshold-based rules with no LLM needed for routine checks.",
-    color: "#7928CA",
+    color: "#0D9488",
     icon: Activity,
     reportsTo: "mgr-ops",
     description: "Continuously monitors system health across all ProLnk OS services. Alerts the Ops Manager on degradation or failures.",
@@ -674,7 +674,7 @@ const AGENTS: Agent[] = [
     lastAction: "n8n webhook: 47 events processed — 0 failures",
     llm: "Rule-based",
     llmReason: "Webhook processing is event-driven and deterministic — rule-based routing ensures low latency and reliability.",
-    color: "#7928CA",
+    color: "#0D9488",
     icon: Zap,
     reportsTo: "mgr-ops",
     description: "Processes all incoming webhooks from n8n, Stripe, and third-party integrations. Routes events to the correct agent.",
@@ -692,7 +692,7 @@ const AGENTS: Agent[] = [
     lastAction: "CompanyCam sync: 34 new photos ingested",
     llm: "Rule-based",
     llmReason: "API integrations are deterministic — rule-based adapters handle CompanyCam, Stripe, Resend, and RESO connections.",
-    color: "#7928CA",
+    color: "#0D9488",
     icon: GitBranch,
     reportsTo: "mgr-ops",
     description: "Manages integrations with CompanyCam, Stripe, Resend, RESO/MLS, and other third-party services.",
@@ -710,7 +710,7 @@ const AGENTS: Agent[] = [
     lastAction: "Auto-retry: payout failure for partner #P-284 — resolved",
     llm: "Rule-based + GPT-4o",
     llmReason: "Routine errors use rule-based retry logic. Complex or novel errors escalate to GPT-4o for diagnosis and resolution.",
-    color: "#7928CA",
+    color: "#0D9488",
     icon: RefreshCw,
     reportsTo: "mgr-ops",
     description: "Catches and recovers from errors across all agents. Implements retry logic and escalates unresolvable issues.",
@@ -878,7 +878,7 @@ const AGENTS: Agent[] = [
     lastAction: "Owner notification: 3 new partner applications",
     llm: "Rule-based",
     llmReason: "Push notifications are event-triggered and templated — no LLM needed.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: Zap,
     reportsTo: "orch-main",
     description: "Sends push notifications to the admin owner for critical events: new applications, disputes, and system alerts.",
@@ -896,7 +896,7 @@ const AGENTS: Agent[] = [
     lastAction: "Scheduled: payout batch at 9 AM tomorrow",
     llm: "Rule-based",
     llmReason: "Cron-based scheduling is deterministic — no LLM needed for time-based task management.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: Clock,
     reportsTo: "orch-main",
     description: "Manages all scheduled tasks across ProLnk OS. Triggers cron jobs, batch processes, and time-based workflows.",
@@ -914,7 +914,7 @@ const AGENTS: Agent[] = [
     lastAction: "Audit log: 1,247 agent actions recorded",
     llm: "Rule-based",
     llmReason: "Audit logging is append-only and deterministic — immutable records require no LLM processing.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: CheckCircle,
     reportsTo: "orch-main",
     description: "Records all agent actions to an immutable audit log. Provides full traceability for compliance and debugging.",
@@ -932,7 +932,7 @@ const AGENTS: Agent[] = [
     lastAction: "Daily backup: 2.4 GB — S3 confirmed",
     llm: "Rule-based",
     llmReason: "Backup operations are scheduled and deterministic — no LLM needed.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: RefreshCw,
     reportsTo: "orch-main",
     description: "Performs daily database and file backups to S3. Monitors backup integrity and alerts on failures.",
@@ -950,7 +950,7 @@ const AGENTS: Agent[] = [
     lastAction: "Security scan: 0 anomalies detected",
     llm: "Rule-based + GPT-4o",
     llmReason: "Routine security checks are rule-based. Novel attack patterns escalate to GPT-4o for behavioral analysis.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: Shield,
     reportsTo: "orch-main",
     description: "Monitors all API calls and user actions for security anomalies. Blocks suspicious activity and alerts the admin.",
@@ -968,7 +968,7 @@ const AGENTS: Agent[] = [
     lastAction: "Rate limit enforced: 3 requests throttled",
     llm: "Rule-based",
     llmReason: "Rate limiting is deterministic threshold enforcement — no LLM needed.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: Zap,
     reportsTo: "orch-main",
     description: "Enforces API rate limits across all ProLnk OS services to prevent abuse and manage LLM costs.",
@@ -986,7 +986,7 @@ const AGENTS: Agent[] = [
     lastAction: "Daily LLM cost: $12.40 — within budget",
     llm: "Rule-based",
     llmReason: "Cost tracking is arithmetic — rule-based aggregation of API usage logs with threshold alerts.",
-    color: "#AEAEAE",
+    color: "#6B7280",
     icon: DollarSign,
     reportsTo: "orch-main",
     description: "Tracks LLM API costs in real time. Alerts when daily spend exceeds thresholds and optimizes model selection.",
@@ -997,30 +997,30 @@ const AGENTS: Agent[] = [
 // ─── Mock Activity History ─────────────────────────────────────────────────────
 
 const ACTIVITY_HISTORY: ActivityEntry[] = [
-  { id: "a1",  agentId: "spec-photo",         agentName: "Photo AI",              company: "ProLnk Residential", action: "12 photos processed — 9 upsell opportunities detected (roofing, gutters, HVAC)",                outcome: "success", timestamp: "2 min ago",  color: "#17C1E8" },
-  { id: "a2",  agentId: "spec-lead-router",   agentName: "Lead Router",           company: "ProLnk Residential", action: "Roofing lead matched to Apex Roofing (ZIP 75034) — response time 3.8 min",                    outcome: "success", timestamp: "4 min ago",  color: "#17C1E8" },
-  { id: "a3",  agentId: "mgr-finance",        agentName: "Head of Finance",       company: "ProLnk OS",          action: "Payout batch approved: $4,368 to Apex Roofing — Stripe transfer initiated",                   outcome: "success", timestamp: "8 min ago",  color: "#82D616" },
-  { id: "a4",  agentId: "spec-scan",          agentName: "Home Scan AI",          company: "TrustyPro",          action: "5-room scan complete: 4 issues flagged — roof wear (high), HVAC filter (medium), 2 cosmetic",  outcome: "success", timestamp: "11 min ago", color: "#82D616" },
+  { id: "a1",  agentId: "spec-photo",         agentName: "Photo AI",              company: "ProLnk Residential", action: "12 photos processed — 9 upsell opportunities detected (roofing, gutters, HVAC)",                outcome: "success", timestamp: "2 min ago",  color: "#0D9488" },
+  { id: "a2",  agentId: "spec-lead-router",   agentName: "Lead Router",           company: "ProLnk Residential", action: "Roofing lead matched to Apex Roofing (ZIP 75034) — response time 3.8 min",                    outcome: "success", timestamp: "4 min ago",  color: "#0D9488" },
+  { id: "a3",  agentId: "mgr-finance",        agentName: "Head of Finance",       company: "ProLnk OS",          action: "Payout batch approved: $4,368 to Apex Roofing — Stripe transfer initiated",                   outcome: "success", timestamp: "8 min ago",  color: "#16A34A" },
+  { id: "a4",  agentId: "spec-scan",          agentName: "Home Scan AI",          company: "TrustyPro",          action: "5-room scan complete: 4 issues flagged — roof wear (high), HVAC filter (medium), 2 cosmetic",  outcome: "success", timestamp: "11 min ago", color: "#16A34A" },
   { id: "a5",  agentId: "spec-email",         agentName: "Email Agent",           company: "ProLnk OS",          action: "Weekly partner digest sent to 112 partners — 94% open rate, 23% click-through",                outcome: "success", timestamp: "15 min ago", color: "#EC407A" },
-  { id: "a6",  agentId: "spec-partner-health",agentName: "Partner Health Agent",  company: "ProLnk Residential", action: "Churn risk flagged: DFW Plumbing Pro — 14 days inactive — re-engagement sequence triggered",    outcome: "success", timestamp: "22 min ago", color: "#17C1E8" },
+  { id: "a6",  agentId: "spec-partner-health",agentName: "Partner Health Agent",  company: "ProLnk Residential", action: "Churn risk flagged: DFW Plumbing Pro — 14 days inactive — re-engagement sequence triggered",    outcome: "success", timestamp: "22 min ago", color: "#0D9488" },
   { id: "a7",  agentId: "sc-claude",          agentName: "Claude Arbiter",        company: "ProLnk OS",          action: "Ethics check: partner commission rate change from 8% to 9% — risk assessment: LOW — approved",   outcome: "success", timestamp: "28 min ago", color: "#FFD700" },
   { id: "a8",  agentId: "spec-ad-placement",  agentName: "Ad Placement Agent",    company: "ProLnk Media",       action: "A/B test concluded: Apex Insurance variant B wins (4.8% CTR vs 3.1%) — variant B deployed",     outcome: "success", timestamp: "35 min ago", color: "#FBB140" },
   { id: "a9",  agentId: "spec-waitlist",      agentName: "Waitlist Agent",        company: "ProLnk OS",          action: "4 new waitlist signups (2 ProLnk, 2 TrustyPro) — welcome sequences triggered",                 outcome: "success", timestamp: "41 min ago", color: "#FF6B35" },
-  { id: "a10", agentId: "spec-error-handler", agentName: "Error Handler",         company: "ProLnk OS",          action: "Payout retry for partner #P-284 — Stripe timeout — retry #2 succeeded",                       outcome: "success", timestamp: "48 min ago", color: "#7928CA" },
-  { id: "a11", agentId: "spec-storm",         agentName: "Storm Watch Agent",     company: "ProLnk Residential", action: "Hail alert: ZIP 75034 — 3 roofing partners notified via SMS",                                 outcome: "success", timestamp: "1 hr ago",   color: "#17C1E8" },
+  { id: "a10", agentId: "spec-error-handler", agentName: "Error Handler",         company: "ProLnk OS",          action: "Payout retry for partner #P-284 — Stripe timeout — retry #2 succeeded",                       outcome: "success", timestamp: "48 min ago", color: "#0D9488" },
+  { id: "a11", agentId: "spec-storm",         agentName: "Storm Watch Agent",     company: "ProLnk Residential", action: "Hail alert: ZIP 75034 — 3 roofing partners notified via SMS",                                 outcome: "success", timestamp: "1 hr ago",   color: "#0D9488" },
   { id: "a12", agentId: "spec-ml-train",      agentName: "ML Training Agent",     company: "ProLnk OS",          action: "Photo AI model retrained on 284 new labeled examples — accuracy improved from 94.2% to 95.4%", outcome: "success", timestamp: "2 hr ago",   color: "#26C6DA" },
-  { id: "a13", agentId: "spec-tp-match",      agentName: "TrustyPro Match Agent", company: "TrustyPro",          action: "3 pro matches sent for roof wear (ZIP 75034) — homeowner accepted match #2 within 12 min",     outcome: "success", timestamp: "2 hr ago",   color: "#82D616" },
-  { id: "a14", agentId: "util-audit",         agentName: "Audit Agent",           company: "ProLnk OS",          action: "Audit log checkpoint: 1,247 agent actions recorded — 0 anomalies",                            outcome: "success", timestamp: "3 hr ago",   color: "#AEAEAE" },
-  { id: "a15", agentId: "spec-commission",    agentName: "Commission Tracker",    company: "ProLnk OS",          action: "Commission calculated: Job #4821 — $8,400 gross, 8.2% tier rate, $689 commission",             outcome: "success", timestamp: "3 hr ago",   color: "#82D616" },
+  { id: "a13", agentId: "spec-tp-match",      agentName: "TrustyPro Match Agent", company: "TrustyPro",          action: "3 pro matches sent for roof wear (ZIP 75034) — homeowner accepted match #2 within 12 min",     outcome: "success", timestamp: "2 hr ago",   color: "#16A34A" },
+  { id: "a14", agentId: "util-audit",         agentName: "Audit Agent",           company: "ProLnk OS",          action: "Audit log checkpoint: 1,247 agent actions recorded — 0 anomalies",                            outcome: "success", timestamp: "3 hr ago",   color: "#6B7280" },
+  { id: "a15", agentId: "spec-commission",    agentName: "Commission Tracker",    company: "ProLnk OS",          action: "Commission calculated: Job #4821 — $8,400 gross, 8.2% tier rate, $689 commission",             outcome: "success", timestamp: "3 hr ago",   color: "#16A34A" },
 ];
 
 // ─── Status Colors ─────────────────────────────────────────────────────────────
 
 const STATUS_COLOR: Record<AgentStatus, string> = {
-  active:  "#82D616",
+  active:  "#16A34A",
   idle:    "#FBB140",
   warning: "#EA0606",
-  offline: "#AEAEAE",
+  offline: "#6B7280",
 };
 
 const STATUS_LABEL: Record<AgentStatus, string> = {
@@ -1041,14 +1041,14 @@ const LAYER_LABEL: Record<string, string> = {
 const LAYER_COLOR: Record<string, string> = {
   "supreme-court": "#FFD700",
   "orchestrator":  "#00D4FF",
-  "manager":       "#17C1E8",
-  "specialist":    "#82D616",
-  "utility":       "#AEAEAE",
+  "manager":       "#0D9488",
+  "specialist":    "#16A34A",
+  "utility":       "#6B7280",
 };
 
 const COMPANY_CONFIG = [
-  { id: "ProLnk Residential", label: "ProLnk Residential", color: "#17C1E8", icon: Home },
-  { id: "TrustyPro",          label: "TrustyPro",          color: "#82D616", icon: Shield },
+  { id: "ProLnk Residential", label: "ProLnk Residential", color: "#0D9488", icon: Home },
+  { id: "TrustyPro",          label: "TrustyPro",          color: "#16A34A", icon: Shield },
   { id: "ProLnk Media",       label: "ProLnk Media",       color: "#FBB140", icon: Film },
   { id: "ProLnk OS",          label: "ProLnk OS (Shared)", color: "#00D4FF", icon: Globe },
 ];
@@ -1127,8 +1127,8 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
         </div>
 
         {/* Why this LLM */}
-        <div className="p-3 rounded-lg" style={{ background: "#17C1E811", border: "1px solid #17C1E833" }}>
-          <div className="text-xs font-semibold mb-1" style={{ color: "#17C1E8" }}>WHY {agent.llm.toUpperCase()}</div>
+        <div className="p-3 rounded-lg" style={{ background: "#0D948811", border: "1px solid #0D948833" }}>
+          <div className="text-xs font-semibold mb-1" style={{ color: "#0D9488" }}>WHY {agent.llm.toUpperCase()}</div>
           <div className="text-xs leading-relaxed" style={{ color: D.muted }}>{agent.llmReason}</div>
         </div>
 
@@ -1171,7 +1171,7 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
             {ACTIVITY_HISTORY.filter(a => a.agentId === agent.id).slice(0, 3).map(a => (
               <div key={a.id} className="p-2 rounded text-xs" style={{ background: D.bg }}>
                 <div className="flex items-center justify-between mb-0.5">
-                  <span className="font-medium" style={{ color: a.outcome === "success" ? "#82D616" : "#EA0606" }}>{a.outcome === "success" ? "✓" : "✗"} {a.timestamp}</span>
+                  <span className="font-medium" style={{ color: a.outcome === "success" ? "#16A34A" : "#EA0606" }}>{a.outcome === "success" ? "✓" : "✗"} {a.timestamp}</span>
                 </div>
                 <div style={{ color: D.muted }}>{a.action}</div>
               </div>
@@ -1190,8 +1190,8 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
 
 function SelfLearningLoop() {
   const steps = [
-    { icon: Bot,         label: "Agent Acts",       color: "#17C1E8" },
-    { icon: CheckCircle, label: "Outcome Logged",   color: "#82D616" },
+    { icon: Bot,         label: "Agent Acts",       color: "#0D9488" },
+    { icon: CheckCircle, label: "Outcome Logged",   color: "#16A34A" },
     { icon: Brain,       label: "ML Training",      color: "#26C6DA" },
     { icon: RotateCcw,   label: "Model Retrained",  color: "#FBB140" },
     { icon: Zap,         label: "Agent Improves",   color: "#EC407A" },
@@ -1327,7 +1327,7 @@ function ActivityHistoryView() {
       <div className="space-y-2">
         {filtered.map(entry => (
           <div key={entry.id} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-            <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: entry.outcome === "success" ? "#82D616" : "#EA0606" }} />
+            <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: entry.outcome === "success" ? "#16A34A" : "#EA0606" }} />
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                 <span className="text-xs font-bold" style={{ color: entry.color }}>{entry.agentName}</span>
@@ -1336,7 +1336,7 @@ function ActivityHistoryView() {
               </div>
               <p className="text-xs leading-relaxed" style={{ color: D.muted }}>{entry.action}</p>
             </div>
-            <span className="text-[10px] font-bold flex-shrink-0" style={{ color: entry.outcome === "success" ? "#82D616" : "#EA0606" }}>
+            <span className="text-[10px] font-bold flex-shrink-0" style={{ color: entry.outcome === "success" ? "#16A34A" : "#EA0606" }}>
               {entry.outcome === "success" ? "✓ OK" : "✗ FAIL"}
             </span>
           </div>
@@ -1418,7 +1418,7 @@ function AccountabilityView({ onSelectAgent, selectedAgent, filterCompany }: { o
                           <span className="w-2 h-2 rounded-full inline-block" style={{ background: STATUS_COLOR[agent.status] }} />
                         </td>
                         <td className="px-3 py-2.5 text-right font-mono font-bold" style={{ color: D.text, borderBottom: `1px solid ${D.border}` }}>{agent.actionsToday.toLocaleString()}</td>
-                        <td className="px-3 py-2.5 text-right font-mono" style={{ color: agent.successRate >= 98 ? "#82D616" : agent.successRate >= 90 ? "#FBB140" : "#EA0606", borderBottom: `1px solid ${D.border}` }}>{agent.successRate}%</td>
+                        <td className="px-3 py-2.5 text-right font-mono" style={{ color: agent.successRate >= 98 ? "#16A34A" : agent.successRate >= 90 ? "#FBB140" : "#EA0606", borderBottom: `1px solid ${D.border}` }}>{agent.successRate}%</td>
                         <td className="px-3 py-2.5 max-w-[250px] truncate" style={{ color: D.muted, borderBottom: `1px solid ${D.border}` }}>{agent.lastAction}</td>
                       </tr>
                     );
@@ -1459,7 +1459,7 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
     <div className="space-y-8">
       <div className="p-4 rounded-xl" style={{ background: D.card, border: `1px solid ${D.border}` }}>
         <div className="flex items-center gap-2 mb-2">
-          <Link2 className="w-4 h-4" style={{ color: "#17C1E8" }} />
+          <Link2 className="w-4 h-4" style={{ color: "#0D9488" }} />
           <span className="text-sm font-bold" style={{ color: D.text }}>Dependability Map</span>
         </div>
         <p className="text-xs" style={{ color: D.muted }}>Shows upstream (reports to) and downstream (manages) dependencies for every agent. Reveals single points of failure and critical chains.</p>
@@ -1499,7 +1499,7 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-[10px] font-bold" style={{ color: agent.successRate >= 98 ? "#82D616" : "#FBB140" }}>{agent.successRate}%</span>
+                        <span className="text-[10px] font-bold" style={{ color: agent.successRate >= 98 ? "#16A34A" : "#FBB140" }}>{agent.successRate}%</span>
                         <span className="w-2 h-2 rounded-full" style={{ background: STATUS_COLOR[agent.status] }} />
                       </div>
                     </div>
@@ -1507,7 +1507,7 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
                     <div className="flex items-center gap-4 text-[10px]">
                       {/* Upstream */}
                       <div className="flex items-center gap-1">
-                        <ArrowRight className="w-3 h-3 rotate-180" style={{ color: "#7928CA" }} />
+                        <ArrowRight className="w-3 h-3 rotate-180" style={{ color: "#0D9488" }} />
                         <span style={{ color: D.muted }}>Reports to:</span>
                         {upstream ? (
                           <span className="font-bold" style={{ color: upstream.color }}>{upstream.name}</span>
@@ -1519,7 +1519,7 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
                       {/* Downstream */}
                       {downstream.length > 0 && (
                         <div className="flex items-center gap-1 flex-wrap">
-                          <ArrowRight className="w-3 h-3" style={{ color: "#82D616" }} />
+                          <ArrowRight className="w-3 h-3" style={{ color: "#16A34A" }} />
                           <span style={{ color: D.muted }}>Manages:</span>
                           {downstream.slice(0, 5).map(d => (
                             <span key={d.id} className="px-1.5 py-0.5 rounded" style={{ background: `${d.color}15`, color: d.color, fontWeight: 700 }}>{d.name}</span>
@@ -1573,9 +1573,9 @@ export default function CompanyOrgChart() {
           <div className="flex items-center gap-6">
             {[
               { label: "Total Agents",  value: "47",                              color: "#00D4FF" },
-              { label: "Active Now",    value: `${activeCount}`,                  color: "#82D616" },
+              { label: "Active Now",    value: `${activeCount}`,                  color: "#16A34A" },
               { label: "Actions Today", value: totalActions.toLocaleString(),     color: "#FBB140" },
-              { label: "Avg Success",   value: `${avgSuccess}%`,                  color: "#17C1E8" },
+              { label: "Avg Success",   value: `${avgSuccess}%`,                  color: "#0D9488" },
             ].map(s => (
               <div key={s.label} className="text-center">
                 <div className="text-lg font-bold" style={{ color: s.color }}>{s.value}</div>

@@ -47,14 +47,14 @@ export default function PropertyConditionReports() {
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
-              <Home className="w-6 h-6 text-[#0A1628]" />Property Condition Reports
+              <Home className="w-6 h-6 text-[#F8FAFC]" />Property Condition Reports
             </h1>
             <p className="text-sm text-gray-500 mt-1">
               AI-generated property condition assessments from homeowner photo scans.
             </p>
           </div>
           <Button
-            className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90"
+            className="bg-[#F8FAFC] text-gray-900 hover:bg-[#F8FAFC]/90"
             onClick={() => toast.info("Bulk export queued", { description: "Reports will be emailed as a ZIP within 10 minutes." })}
           >
             <Download className="w-4 h-4 mr-2" />Export All
@@ -119,7 +119,7 @@ export default function PropertyConditionReports() {
           <div className="flex gap-2">
             {["all", "A", "B", "C", "D"].map((g) => (
               <Button key={g} size="sm" variant={gradeFilter === g ? "default" : "outline"}
-                className={gradeFilter === g ? "bg-[#0A1628] text-white" : ""}
+                className={gradeFilter === g ? "bg-[#F8FAFC] text-gray-900" : ""}
                 onClick={() => setGradeFilter(g)}>
                 {g === "all" ? "All" : `Grade ${g}`}
               </Button>

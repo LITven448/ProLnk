@@ -97,7 +97,7 @@ const AGENT_CATEGORIES: AgentCategory[] = [
   },
   {
     label: "Financial",
-    color: "#82D616",
+    color: "#16A34A",
     icon: DollarSign,
     agents: [
       { name: "Commission Calculator", status: "active",  lastRun: "8m ago",  nextRun: "continuous",    jobsToday: 38,  errorsToday: 0, successRate: 100, avgResponseMs: 210,  recentRuns: mkRuns(5,0,0) },
@@ -140,7 +140,7 @@ const AGENT_CATEGORIES: AgentCategory[] = [
   },
   {
     label: "Intelligence",
-    color: "#7928CA",
+    color: "#0D9488",
     icon: Brain,
     agents: [
       { name: "Market Analyzer",      status: "active",  lastRun: "2h ago",  successRate: 98,  avgResponseMs: 2200, recentRuns: mkRuns(4,1,0) },
@@ -201,7 +201,7 @@ const RECENT_ERRORS = [
 
 function StatusDot({ status, pulse = false }: { status: AgentEntry["status"]; pulse?: boolean }) {
   const map: Record<AgentEntry["status"], string> = {
-    active:  "#82D616",
+    active:  "#16A34A",
     standby: "#FBB140",
     error:   "#EA0606",
   };
@@ -215,7 +215,7 @@ function StatusDot({ status, pulse = false }: { status: AgentEntry["status"]; pu
 
 function RunBadge({ result }: { result: AgentRun["result"] }) {
   const map = {
-    ok:    { bg: "#82D61618", border: "#82D61640", color: "#82D616", label: "OK" },
+    ok:    { bg: "#16A34A18", border: "#16A34A40", color: "#16A34A", label: "OK" },
     warn:  { bg: "#FBB14018", border: "#FBB14040", color: "#FBB140", label: "WARN" },
     error: { bg: "#EA060618", border: "#EA060640", color: "#EA0606", label: "ERR" },
   };
@@ -228,7 +228,7 @@ function RunBadge({ result }: { result: AgentRun["result"] }) {
 }
 
 function SuccessBar({ pct }: { pct: number }) {
-  const color = pct >= 95 ? "#82D616" : pct >= 85 ? "#FBB140" : "#EA0606";
+  const color = pct >= 95 ? "#16A34A" : pct >= 85 ? "#FBB140" : "#EA0606";
   return (
     <div className="flex items-center gap-1.5">
       <div className="h-1.5 w-16 rounded-full overflow-hidden" style={{ background: "#ffffff10" }}>
@@ -275,16 +275,16 @@ export default function AgentStatusDashboard() {
     <div className="p-6 space-y-6" style={{ fontFamily: "Inter, sans-serif" }}>
 
       {/* ── Hero Banner ───────────────────────────────────────────────────────── */}
-      <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1628 0%, #0e2040 60%, #0f2d4a 100%)" }}>
+      <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #0e2040 60%, #0f2d4a 100%)" }}>
         <div className="px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #00D4FF30, #7928CA40)" }}>
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #00D4FF30, #0D948840)" }}>
               <Bot className="w-7 h-7" style={{ color: "#00D4FF" }} />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-2xl font-black text-white tracking-tight">{TOTAL_AGENTS} Agents Deployed</h1>
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: "#82D61620", border: "1px solid #82D61650", color: "#82D616" }}>
+                <h1 className="text-2xl font-black text-gray-900 tracking-tight">{TOTAL_AGENTS} Agents Deployed</h1>
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: "#16A34A20", border: "1px solid #16A34A50", color: "#16A34A" }}>
                   AGaaS v1.0
                 </span>
               </div>
@@ -294,9 +294,9 @@ export default function AgentStatusDashboard() {
             </div>
           </div>
           <div className="flex items-center gap-3 flex-wrap">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#82D61618", border: "1px solid #82D61640" }}>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#16A34A18", border: "1px solid #16A34A40" }}>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-bold" style={{ color: "#82D616" }}>{activeCount} Active</span>
+              <span className="text-xs font-bold" style={{ color: "#16A34A" }}>{activeCount} Active</span>
             </div>
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#FBB14018", border: "1px solid #FBB14040" }}>
               <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} />
@@ -305,10 +305,10 @@ export default function AgentStatusDashboard() {
             {errorCount > 0 ? (
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#EA060618", border: "1px solid #EA060640" }}>
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-xs font-bold text-red-400">{errorCount} Error</span>
+                <span className="text-xs font-bold text-red-600">{errorCount} Error</span>
               </div>
             ) : (
-              <Badge variant="outline" className="border-green-500/50 text-green-400 gap-1">
+              <Badge variant="outline" className="border-green-500/50 text-green-700 gap-1">
                 <CheckCircle className="h-3 w-3" />
                 All Systems Operational
               </Badge>
@@ -333,7 +333,7 @@ export default function AgentStatusDashboard() {
         <div className="px-6 pb-4">
           <div className="flex items-center justify-between text-xs mb-1.5">
             <span style={{ color: "#7eb8d4" }}>System Health</span>
-            <span className="font-bold" style={{ color: healthPct >= 90 ? "#82D616" : "#FBB140" }}>{healthPct}% Healthy</span>
+            <span className="font-bold" style={{ color: healthPct >= 90 ? "#16A34A" : "#FBB140" }}>{healthPct}% Healthy</span>
           </div>
           <div className="h-2 rounded-full overflow-hidden" style={{ background: "#ffffff12" }}>
             <div
@@ -341,9 +341,9 @@ export default function AgentStatusDashboard() {
               style={{
                 width: `${healthPct}%`,
                 background: healthPct >= 90
-                  ? "linear-gradient(90deg, #82D616, #00D4FF)"
+                  ? "linear-gradient(90deg, #16A34A, #00D4FF)"
                   : healthPct >= 75
-                  ? "linear-gradient(90deg, #FBB140, #82D616)"
+                  ? "linear-gradient(90deg, #FBB140, #16A34A)"
                   : "linear-gradient(90deg, #EA0606, #FBB140)",
               }}
             />
@@ -355,14 +355,14 @@ export default function AgentStatusDashboard() {
           {[
             { label: "Total Partners",    value: platformStats?.totalPartners ?? "—",      icon: Users,          color: "#00D4FF" },
             { label: "Jobs Logged",       value: platformStats?.totalJobs ?? "—",          icon: Camera,         color: "#00D4FF" },
-            { label: "Storm Leads",       value: stormStats?.totalLeads ?? "—",             icon: CloudLightning, color: "#7928CA" },
-            { label: "Agent Jobs Today",  value: totalJobsToday,                            icon: Activity,       color: "#82D616" },
-            { label: "Errors Today",      value: totalErrorsToday,                          icon: AlertTriangle,  color: totalErrorsToday > 0 ? "#EA0606" : "#82D616" },
+            { label: "Storm Leads",       value: stormStats?.totalLeads ?? "—",             icon: CloudLightning, color: "#0D9488" },
+            { label: "Agent Jobs Today",  value: totalJobsToday,                            icon: Activity,       color: "#16A34A" },
+            { label: "Errors Today",      value: totalErrorsToday,                          icon: AlertTriangle,  color: totalErrorsToday > 0 ? "#EA0606" : "#16A34A" },
           ].map((stat, i) => (
             <div key={stat.label} className="px-5 py-3 flex items-center gap-3" style={{ borderLeft: i > 0 ? "1px solid #ffffff10" : undefined }}>
               <stat.icon className="w-4 h-4 flex-shrink-0" style={{ color: stat.color }} />
               <div>
-                <div className="text-lg font-black text-white leading-none">{stat.value}</div>
+                <div className="text-lg font-black text-gray-900 leading-none">{stat.value}</div>
                 <div className="text-xs mt-0.5" style={{ color: "#7eb8d4" }}>{stat.label}</div>
               </div>
             </div>
@@ -422,7 +422,7 @@ export default function AgentStatusDashboard() {
                       {/* Agent row */}
                       <div className="flex items-center gap-3 px-4 py-3">
                         <StatusDot status={agent.status} pulse />
-                        <span className="text-sm font-semibold text-white flex-1 truncate">{agent.name}</span>
+                        <span className="text-sm font-semibold text-gray-900 flex-1 truncate">{agent.name}</span>
                         <div className="flex items-center gap-2 flex-shrink-0">
                           {agent.successRate !== undefined && (
                             <SuccessBar pct={agent.successRate} />
@@ -519,7 +519,7 @@ export default function AgentStatusDashboard() {
           <CardContent className="pt-4 pb-2">
             {RECENT_ERRORS.length === 0 ? (
               <div className="flex items-center gap-2 py-4 justify-center text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-green-400" />
+                <CheckCircle className="w-4 h-4 text-green-700" />
                 <span className="text-sm">No errors in the last 24 hours</span>
               </div>
             ) : (

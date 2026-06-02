@@ -88,8 +88,8 @@ function StatCard({ label, value, sub, color }: { label: string; value: number |
   return (
     <div style={{ background: "#fff", border: "1px solid #E9ECEF", borderRadius: 12, padding: "16px 20px", minWidth: 140 }}>
       <div style={{ fontSize: 28, fontWeight: 700, color, fontFamily: "'Oswald', sans-serif" }}>{value}</div>
-      <div style={{ fontSize: 13, fontWeight: 600, color: "#344767", marginTop: 2 }}>{label}</div>
-      {sub && <div style={{ fontSize: 11, color: "#7B809A", marginTop: 2 }}>{sub}</div>}
+      <div style={{ fontSize: 13, fontWeight: 600, color: "#1F2937", marginTop: 2 }}>{label}</div>
+      {sub && <div style={{ fontSize: 11, color: "#4B5563", marginTop: 2 }}>{sub}</div>}
     </div>
   );
 }
@@ -222,8 +222,8 @@ export default function PartnerIntegrationHealth() {
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-              <Activity size={22} color="#17C1E8" />
-              <h1 style={{ fontSize: 22, fontWeight: 700, color: "#344767", margin: 0, fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }}>
+              <Activity size={22} color="#0D9488" />
+              <h1 style={{ fontSize: 22, fontWeight: 700, color: "#1F2937", margin: 0, fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }}>
                 Partner Integration Health
               </h1>
               {summary.alerts > 0 && (
@@ -232,7 +232,7 @@ export default function PartnerIntegrationHealth() {
                 </span>
               )}
             </div>
-            <p style={{ color: "#7B809A", fontSize: 13, margin: 0 }}>
+            <p style={{ color: "#4B5563", fontSize: 13, margin: 0 }}>
               Live sync status for all {summary.connected} connected partners across CompanyCam, Jobber, Housecall Pro, and ServiceTitan.
               Partners silent for 48h+ are flagged automatically.
             </p>
@@ -244,8 +244,8 @@ export default function PartnerIntegrationHealth() {
 
         {/* -- Summary Bar -- */}
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
-          <StatCard label="Total Partners" value={summary.total} color="#344767" />
-          <StatCard label="Connected" value={summary.connected} sub={`${Math.round(summary.connected / summary.total * 100)}% of network`} color="#17C1E8" />
+          <StatCard label="Total Partners" value={summary.total} color="#1F2937" />
+          <StatCard label="Connected" value={summary.connected} sub={`${Math.round(summary.connected / summary.total * 100)}% of network`} color="#0D9488" />
           <StatCard label="Healthy" value={summary.healthy} color="#22c55e" />
           <StatCard label="Degraded" value={summary.degraded} color="#f59e0b" />
           <StatCard label="Disconnected" value={summary.disconnected} color="#ef4444" />
@@ -257,8 +257,8 @@ export default function PartnerIntegrationHealth() {
           {(["CompanyCam", "Jobber", "Housecall Pro", "ServiceTitan"] as Platform[]).map(p => (
             <div key={p} style={{ background: "#fff", border: "1px solid #E9ECEF", borderRadius: 8, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
               {PLATFORM_ICON[p]}
-              <span style={{ fontWeight: 600, color: "#344767" }}>{p}</span>
-              <span style={{ color: "#7B809A" }}>{summary.byPlatform[p as keyof typeof summary.byPlatform]} partners</span>
+              <span style={{ fontWeight: 600, color: "#1F2937" }}>{p}</span>
+              <span style={{ color: "#4B5563" }}>{summary.byPlatform[p as keyof typeof summary.byPlatform]} partners</span>
             </div>
           ))}
         </div>
@@ -266,7 +266,7 @@ export default function PartnerIntegrationHealth() {
         {/* -- Filters -- */}
         <div style={{ display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap", alignItems: "center" }}>
           <div style={{ position: "relative", flex: "1 1 220px", maxWidth: 300 }}>
-            <Search size={14} style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", color: "#7B809A" }} />
+            <Search size={14} style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", color: "#4B5563" }} />
             <Input
               placeholder="Search partners..."
               value={search}
@@ -300,7 +300,7 @@ export default function PartnerIntegrationHealth() {
               <SelectItem value="None">Not Connected</SelectItem>
             </SelectContent>
           </Select>
-          <span style={{ fontSize: 12, color: "#7B809A", marginLeft: "auto" }}>
+          <span style={{ fontSize: 12, color: "#4B5563", marginLeft: "auto" }}>
             {filtered.length} of {integrations.length} partners
           </span>
         </div>
@@ -317,22 +317,22 @@ export default function PartnerIntegrationHealth() {
               borderBottom: "1px solid #E9ECEF",
               fontSize: 11,
               fontWeight: 700,
-              color: "#7B809A",
+              color: "#4B5563",
               textTransform: "uppercase",
               letterSpacing: 0.5,
               gap: 8,
             }}>
-              <button onClick={() => toggleSort("name")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#7B809A", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
+              <button onClick={() => toggleSort("name")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#4B5563", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
                 Partner <SortIcon col="name" />
               </button>
               <span>Platform</span>
-              <button onClick={() => toggleSort("status")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#7B809A", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
+              <button onClick={() => toggleSort("status")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#4B5563", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
                 Status <SortIcon col="status" />
               </button>
-              <button onClick={() => toggleSort("lastSync")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#7B809A", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
+              <button onClick={() => toggleSort("lastSync")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#4B5563", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
                 Last Sync <SortIcon col="lastSync" />
               </button>
-              <button onClick={() => toggleSort("photos")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#7B809A", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
+              <button onClick={() => toggleSort("photos")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, color: "#4B5563", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, padding: 0 }}>
                 Photos <SortIcon col="photos" />
               </button>
               <span>Jobs</span>
@@ -341,12 +341,12 @@ export default function PartnerIntegrationHealth() {
             </div>
 
             {isLoading ? (
-              <div style={{ padding: 40, textAlign: "center", color: "#7B809A", fontSize: 14 }}>
+              <div style={{ padding: 40, textAlign: "center", color: "#4B5563", fontSize: 14 }}>
                 <RefreshCw size={20} style={{ animation: "spin 1s linear infinite", marginBottom: 8 }} />
                 <div>Loading partner integrations...</div>
               </div>
             ) : filtered.length === 0 ? (
-              <div style={{ padding: 40, textAlign: "center", color: "#7B809A", fontSize: 14 }}>
+              <div style={{ padding: 40, textAlign: "center", color: "#4B5563", fontSize: 14 }}>
                 No partners match the current filters.
               </div>
             ) : (
@@ -373,15 +373,15 @@ export default function PartnerIntegrationHealth() {
                       <div>
                         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                           {row.alertFlag && <Bell size={11} color="#ef4444" />}
-                          <span style={{ fontSize: 13, fontWeight: 600, color: "#344767" }}>{row.businessName}</span>
+                          <span style={{ fontSize: 13, fontWeight: 600, color: "#1F2937" }}>{row.businessName}</span>
                         </div>
-                        <div style={{ fontSize: 11, color: "#7B809A", marginTop: 1 }}>
+                        <div style={{ fontSize: 11, color: "#4B5563", marginTop: 1 }}>
                           {row.tier}  {row.serviceArea}
                         </div>
                       </div>
 
                       {/* Platform */}
-                      <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "#344767" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "#1F2937" }}>
                         {PLATFORM_ICON[row.platform]}
                         <span>{row.platform === "None" ? "--" : row.platform}</span>
                       </div>
@@ -393,23 +393,23 @@ export default function PartnerIntegrationHealth() {
                       </div>
 
                       {/* Last sync */}
-                      <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "#7B809A" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "#4B5563" }}>
                         <Clock size={12} />
                         {row.lastSync}
                       </div>
 
                       {/* Photos */}
-                      <div style={{ fontSize: 13, fontWeight: 600, color: row.photosLast7d > 0 ? "#344767" : "#AEAEAE", textAlign: "center" }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: row.photosLast7d > 0 ? "#1F2937" : "#6B7280", textAlign: "center" }}>
                         {row.photosLast7d > 0 ? row.photosLast7d : "--"}
                       </div>
 
                       {/* Jobs */}
-                      <div style={{ fontSize: 13, fontWeight: 600, color: row.jobsLast7d > 0 ? "#344767" : "#AEAEAE", textAlign: "center" }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: row.jobsLast7d > 0 ? "#1F2937" : "#6B7280", textAlign: "center" }}>
                         {row.jobsLast7d > 0 ? row.jobsLast7d : "--"}
                       </div>
 
                       {/* Errors */}
-                      <div style={{ fontSize: 13, fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444" : "#AEAEAE", textAlign: "center" }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444" : "#6B7280", textAlign: "center" }}>
                         {row.errorCount24h > 0 ? row.errorCount24h : "--"}
                       </div>
 
@@ -427,7 +427,7 @@ export default function PartnerIntegrationHealth() {
                             {pinging === row.partnerId ? "Pinging..." : "Ping"}
                           </Button>
                         ) : (
-                          <span style={{ fontSize: 11, color: "#AEAEAE" }}>No integration</span>
+                          <span style={{ fontSize: 11, color: "#6B7280" }}>No integration</span>
                         )}
                       </div>
                     </div>
@@ -437,30 +437,30 @@ export default function PartnerIntegrationHealth() {
                       <div style={{ padding: "12px 20px 16px 40px", background: "#F8F9FA", borderBottom: "1px solid #E9ECEF" }}>
                         <div style={{ display: "flex", gap: 24, flexWrap: "wrap", fontSize: 12 }}>
                           <div>
-                            <span style={{ color: "#7B809A" }}>Webhook:</span>{" "}
+                            <span style={{ color: "#4B5563" }}>Webhook:</span>{" "}
                             <span style={{ color: row.webhookActive ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
                               {row.webhookActive ? "Active" : "Inactive"}
                             </span>
                           </div>
                           <div>
-                            <span style={{ color: "#7B809A" }}>Tier:</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.tier}</span>
+                            <span style={{ color: "#4B5563" }}>Tier:</span>{" "}
+                            <span style={{ fontWeight: 600, color: "#1F2937" }}>{row.tier}</span>
                           </div>
                           <div>
-                            <span style={{ color: "#7B809A" }}>Service Area:</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.serviceArea}</span>
+                            <span style={{ color: "#4B5563" }}>Service Area:</span>{" "}
+                            <span style={{ fontWeight: 600, color: "#1F2937" }}>{row.serviceArea}</span>
                           </div>
                           <div>
-                            <span style={{ color: "#7B809A" }}>Photos (7d):</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.photosLast7d}</span>
+                            <span style={{ color: "#4B5563" }}>Photos (7d):</span>{" "}
+                            <span style={{ fontWeight: 600, color: "#1F2937" }}>{row.photosLast7d}</span>
                           </div>
                           <div>
-                            <span style={{ color: "#7B809A" }}>Jobs (7d):</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.jobsLast7d}</span>
+                            <span style={{ color: "#4B5563" }}>Jobs (7d):</span>{" "}
+                            <span style={{ fontWeight: 600, color: "#1F2937" }}>{row.jobsLast7d}</span>
                           </div>
                           <div>
-                            <span style={{ color: "#7B809A" }}>Errors (24h):</span>{" "}
-                            <span style={{ fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444" : "#344767" }}>{row.errorCount24h}</span>
+                            <span style={{ color: "#4B5563" }}>Errors (24h):</span>{" "}
+                            <span style={{ fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444" : "#1F2937" }}>{row.errorCount24h}</span>
                           </div>
                           {row.alertFlag && (
                             <div style={{ color: "#ef4444", fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}>
@@ -476,7 +476,7 @@ export default function PartnerIntegrationHealth() {
             )}
 
             {filtered.length > 100 && (
-              <div style={{ padding: "12px 20px", textAlign: "center", fontSize: 12, color: "#7B809A", borderTop: "1px solid #E9ECEF" }}>
+              <div style={{ padding: "12px 20px", textAlign: "center", fontSize: 12, color: "#4B5563", borderTop: "1px solid #E9ECEF" }}>
                 Showing top 100 of {filtered.length} results. Use filters to narrow down.
               </div>
             )}
@@ -486,7 +486,7 @@ export default function PartnerIntegrationHealth() {
         {/* -- Setup Docs Reference -- */}
         <Card style={{ marginTop: 24, border: "1px solid #E9ECEF" }}>
           <CardHeader style={{ paddingBottom: 8 }}>
-            <CardTitle style={{ fontSize: 14, color: "#344767" }}>Integration Setup Reference</CardTitle>
+            <CardTitle style={{ fontSize: 14, color: "#1F2937" }}>Integration Setup Reference</CardTitle>
           </CardHeader>
           <CardContent>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -506,8 +506,8 @@ export default function PartnerIntegrationHealth() {
                     transition: "border-color 0.15s",
                   }}
                 >
-                  <span style={{ fontSize: 13, fontWeight: 600, color: "#344767" }}>{doc.name} Docs</span>
-                  <span style={{ fontSize: 11, color: "#7B809A" }}>{doc.desc}</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "#1F2937" }}>{doc.name} Docs</span>
+                  <span style={{ fontSize: 11, color: "#4B5563" }}>{doc.desc}</span>
                 </a>
               ))}
             </div>

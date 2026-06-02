@@ -155,7 +155,7 @@ function DealCard({
         {deal.status === "draft" && (
           <button
             onClick={() => onSend(deal.token)}
-            className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1"
+            className="flex-1 text-xs py-1 rounded-lg text-gray-900 flex items-center justify-center gap-1"
             style={{ backgroundColor: "#00B5B8" }}
           >
             <Send className="w-3 h-3" /> Send
@@ -164,7 +164,7 @@ function DealCard({
         {deal.status === "accepted" && (
           <button
             onClick={() => onClose(deal.token)}
-            className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1"
+            className="flex-1 text-xs py-1 rounded-lg text-gray-900 flex items-center justify-center gap-1"
             style={{ backgroundColor: "#059669" }}
           >
             <CheckCircle className="w-3 h-3" /> Close
@@ -220,7 +220,7 @@ function KanbanColumn({
           {totalValue > 0 && (
             <span className="text-xs text-gray-400">${(totalValue / 1000).toFixed(0)}k</span>
           )}
-          <span className="text-xs font-bold px-1.5 py-0.5 rounded-full text-white"
+          <span className="text-xs font-bold px-1.5 py-0.5 rounded-full text-gray-900"
             style={{ backgroundColor: stage.color }}>
             {deals.length}
           </span>
@@ -384,7 +384,7 @@ export default function DealPipelineKanban() {
         <div className="px-6 pt-6 pb-4 border-b border-gray-100 bg-white">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-xl font-bold text-[#0A1628]">Deal Pipeline</h1>
+              <h1 className="text-xl font-bold text-[#F8FAFC]">Deal Pipeline</h1>
               <p className="text-sm text-gray-500 mt-0.5">Drag cards between stages · click checkboxes to bulk-act</p>
             </div>
             <div className="flex items-center gap-2">
@@ -392,7 +392,7 @@ export default function DealPipelineKanban() {
                 <Filter className="w-3.5 h-3.5" />
                 Filters
                 {(stageFilter !== "all" || partnerFilter) && (
-                  <span className="w-4 h-4 rounded-full bg-[#00B5B8] text-white text-[10px] flex items-center justify-center">
+                  <span className="w-4 h-4 rounded-full bg-[#00B5B8] text-gray-900 text-[10px] flex items-center justify-center">
                     {(stageFilter !== "all" ? 1 : 0) + (partnerFilter ? 1 : 0)}
                   </span>
                 )}
@@ -406,7 +406,7 @@ export default function DealPipelineKanban() {
           {/* Stats */}
           <div className="grid grid-cols-4 gap-3 mb-4">
             {[
-              { label: "Total Deals",    value: totalDeals,                            color: "#0A1628" },
+              { label: "Total Deals",    value: totalDeals,                            color: "#F8FAFC" },
               { label: "Pipeline Value", value: `$${(totalValue / 1000).toFixed(0)}k`, color: "#00B5B8" },
               { label: "Closed Value",   value: `$${(closedValue / 1000).toFixed(0)}k`,color: "#059669" },
               { label: "Conv. Rate",     value: `${convRate}%`,                        color: "#F59E0B" },
@@ -465,13 +465,13 @@ export default function DealPipelineKanban() {
 
           {/* Bulk action bar */}
           {selected.size > 0 && (
-            <div className="flex items-center gap-3 py-2.5 px-3 bg-[#0A1628] rounded-xl mt-2">
-              <span className="text-xs text-white font-semibold">{selected.size} selected</span>
+            <div className="flex items-center gap-3 py-2.5 px-3 bg-[#F8FAFC] rounded-xl mt-2">
+              <span className="text-xs text-gray-900 font-semibold">{selected.size} selected</span>
               <div className="flex items-center gap-2 ml-auto">
                 <Button
                   size="sm"
                   variant="outline"
-                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-gray-900 hover:bg-white/20"
                   onClick={handleBulkSend}
                 >
                   <Send className="w-3 h-3" /> Send All Drafts
@@ -479,13 +479,13 @@ export default function DealPipelineKanban() {
                 <Button
                   size="sm"
                   variant="outline"
-                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-gray-900 hover:bg-white/20"
                   onClick={handleBulkExport}
                 >
                   <Download className="w-3 h-3" /> Export CSV
                 </Button>
                 <button
-                  className="text-xs text-white/60 hover:text-white"
+                  className="text-xs text-gray-900/60 hover:text-gray-900"
                   onClick={() => setSelected(new Set())}
                 >
                   Clear

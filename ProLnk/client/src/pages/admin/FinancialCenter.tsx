@@ -101,15 +101,15 @@ export default function FinancialCenter() {
           <Icon className="w-4 h-4" style={{ color }} />
         </div>
         {delta !== undefined && (
-          <div className={`flex items-center gap-1 text-xs font-medium ${delta >= 0 ? "text-emerald-400" : "text-red-400"}`}>
+          <div className={`flex items-center gap-1 text-xs font-medium ${delta >= 0 ? "text-emerald-400" : "text-red-600"}`}>
             {delta >= 0 ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
             {Math.abs(delta)}%
           </div>
         )}
       </div>
-      <div className="text-xs text-slate-400 mb-1">{label}</div>
-      <div className="text-2xl font-bold text-white">{prefix}{typeof value === "number" ? value.toLocaleString() : value}{suffix}</div>
-      {deltaLabel && <div className="text-xs text-slate-500 mt-1">{deltaLabel}</div>}
+      <div className="text-xs text-gray-500 mb-1">{label}</div>
+      <div className="text-2xl font-bold text-gray-900">{prefix}{typeof value === "number" ? value.toLocaleString() : value}{suffix}</div>
+      {deltaLabel && <div className="text-xs text-gray-500 mt-1">{deltaLabel}</div>}
     </div>
   );
 
@@ -145,7 +145,7 @@ export default function FinancialCenter() {
           <button
             key={t.id}
             onClick={() => setActiveTab(t.id as any)}
-            className={`flex-1 text-xs font-medium py-2 px-3 rounded-lg transition-all ${activeTab === t.id ? "bg-teal-500/20 text-teal-400" : "text-slate-400 hover:text-white"}`}
+            className={`flex-1 text-xs font-medium py-2 px-3 rounded-lg transition-all ${activeTab === t.id ? "bg-teal-500/20 text-teal-700" : "text-gray-500 hover:text-gray-900"}`}
           >
             {t.label}
           </button>
@@ -158,10 +158,10 @@ export default function FinancialCenter() {
             {/* Monthly Revenue */}
             <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-white text-sm">Monthly Revenue Trend</h3>
+                <h3 className="font-bold text-gray-900 text-sm">Monthly Revenue Trend</h3>
                 <div className="flex items-center gap-4 text-xs">
-                  <span className="flex items-center gap-1.5 text-teal-400"><span className="w-2 h-2 rounded-full bg-teal-400 inline-block" /> Platform Fees</span>
-                  <span className="flex items-center gap-1.5 text-purple-400"><span className="w-2 h-2 rounded-full bg-purple-400 inline-block" /> Subscriptions</span>
+                  <span className="flex items-center gap-1.5 text-teal-700"><span className="w-2 h-2 rounded-full bg-teal-400 inline-block" /> Platform Fees</span>
+                  <span className="flex items-center gap-1.5 text-gray-600"><span className="w-2 h-2 rounded-full bg-purple-400 inline-block" /> Subscriptions</span>
                 </div>
               </div>
               <div className="h-52">
@@ -191,7 +191,7 @@ export default function FinancialCenter() {
             {/* Cash Position */}
             <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-white text-sm">Cash Position Tracker</h3>
+                <h3 className="font-bold text-gray-900 text-sm">Cash Position Tracker</h3>
                 <span className="text-xs text-emerald-400 font-medium">+41% 6mo</span>
               </div>
               <div className="h-52">
@@ -216,11 +216,11 @@ export default function FinancialCenter() {
 
           {/* Revenue by Category */}
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
-            <h3 className="font-bold text-white text-sm mb-4">Revenue by Service Category</h3>
+            <h3 className="font-bold text-gray-900 text-sm mb-4">Revenue by Service Category</h3>
             {industryData.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-40">
-                <DollarSign className="w-8 h-8 mb-2 text-slate-600" />
-                <p className="text-xs text-slate-500">Revenue data populates as jobs close</p>
+                <DollarSign className="w-8 h-8 mb-2 text-gray-400" />
+                <p className="text-xs text-gray-500">Revenue data populates as jobs close</p>
               </div>
             ) : (
               <div className="h-48">
@@ -242,8 +242,8 @@ export default function FinancialCenter() {
           {/* MRR Model */}
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
             <div className="flex items-center gap-3 mb-4">
-              <TrendingUp className="w-5 h-5 text-teal-400" />
-              <h3 className="font-bold text-white text-sm">MRR Projection Model</h3>
+              <TrendingUp className="w-5 h-5 text-teal-700" />
+              <h3 className="font-bold text-gray-900 text-sm">MRR Projection Model</h3>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -252,15 +252,15 @@ export default function FinancialCenter() {
                 { label: "Subscription MRR", value: Math.round(subscriptionRevenue), prefix: "$", color: "#00B5B8" },
                 { label: "Projected Total MRR", value: Math.round(projectedMRR), prefix: "$", color: "#10B981" },
               ].map((m) => (
-                <div key={m.label} className="rounded-lg p-3 bg-[#0A1628]">
-                  <div className="text-xs mb-1 text-slate-400">{m.label}</div>
+                <div key={m.label} className="rounded-lg p-3 bg-[#F8FAFC]">
+                  <div className="text-xs mb-1 text-gray-500">{m.label}</div>
                   <div className="text-xl font-bold" style={{ color: m.color }}>
                     {m.prefix ?? ""}{m.value.toLocaleString()}{m.suffix ?? ""}
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-xs text-slate-500">
+            <div className="mt-3 text-xs text-gray-500">
               At 500 partners (break-even): ~$74,500/mo subscriptions + match fees. Network effect compounds as each new partner generates leads.
             </div>
           </div>
@@ -273,33 +273,33 @@ export default function FinancialCenter() {
           <div className="rounded-xl border border-white/10 bg-[#0D1F3C]">
             <div className="flex items-center justify-between p-4 border-b border-white/10">
               <div className="flex items-center gap-3">
-                <Calendar className="w-4 h-4 text-teal-400" />
-                <h3 className="font-bold text-white text-sm">Upcoming Payouts — Next 7 Days</h3>
-                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400">{UPCOMING_PAYOUTS.length} scheduled</span>
+                <Calendar className="w-4 h-4 text-teal-700" />
+                <h3 className="font-bold text-gray-900 text-sm">Upcoming Payouts — Next 7 Days</h3>
+                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700">{UPCOMING_PAYOUTS.length} scheduled</span>
               </div>
-              <div className="text-sm font-bold text-amber-400">${upcomingTotal.toLocaleString(undefined, { minimumFractionDigits: 2 })}</div>
+              <div className="text-sm font-bold text-amber-700">${upcomingTotal.toLocaleString(undefined, { minimumFractionDigits: 2 })}</div>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-white/5">
                     {["Partner", "Trade", "Amount", "Due Date", "Method", "Action"].map(h => (
-                      <th key={h} className="text-left px-4 py-3 text-xs font-medium text-slate-500">{h}</th>
+                      <th key={h} className="text-left px-4 py-3 text-xs font-medium text-gray-500">{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {UPCOMING_PAYOUTS.map((p, i) => (
                     <tr key={i} className="border-b border-white/5 hover:bg-white/2 transition-colors">
-                      <td className="px-4 py-3 font-medium text-white">{p.name}</td>
-                      <td className="px-4 py-3 text-xs text-slate-400">{p.trade}</td>
-                      <td className="px-4 py-3 font-bold text-amber-400">${p.amount.toFixed(2)}</td>
-                      <td className="px-4 py-3 text-xs text-slate-400">{p.dueDate}</td>
+                      <td className="px-4 py-3 font-medium text-gray-900">{p.name}</td>
+                      <td className="px-4 py-3 text-xs text-gray-500">{p.trade}</td>
+                      <td className="px-4 py-3 font-bold text-amber-700">${p.amount.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-xs text-gray-500">{p.dueDate}</td>
                       <td className="px-4 py-3">
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${p.method === "Wire" ? "bg-purple-500/20 text-purple-400" : "bg-blue-500/20 text-blue-400"}`}>{p.method}</span>
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${p.method === "Wire" ? "bg-purple-500/20 text-gray-600" : "bg-blue-500/20 text-blue-400"}`}>{p.method}</span>
                       </td>
                       <td className="px-4 py-3">
-                        <Button size="sm" className="h-7 text-xs bg-emerald-600 hover:bg-emerald-700 text-white" onClick={() => toast.success(`Payout triggered for ${p.name}`)}>
+                        <Button size="sm" className="h-7 text-xs bg-emerald-600 hover:bg-emerald-700 text-gray-900" onClick={() => toast.success(`Payout triggered for ${p.name}`)}>
                           Send Now
                         </Button>
                       </td>
@@ -313,18 +313,18 @@ export default function FinancialCenter() {
           {/* Payout queue from DB */}
           <div className="rounded-xl border border-white/10 bg-[#0D1F3C]">
             <div className="flex items-center gap-3 p-4 border-b border-white/10">
-              <Clock className="w-4 h-4 text-amber-400" />
-              <h3 className="font-bold text-white text-sm">Commission Payout Queue</h3>
+              <Clock className="w-4 h-4 text-amber-700" />
+              <h3 className="font-bold text-gray-900 text-sm">Commission Payout Queue</h3>
               {(unpaid?.length ?? 0) > 0 && (
-                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400">{unpaid?.length} pending</span>
+                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700">{unpaid?.length} pending</span>
               )}
-              <div className="ml-auto text-sm font-bold text-amber-400">${Math.round(totalUnpaid).toLocaleString()} total owed</div>
+              <div className="ml-auto text-sm font-bold text-amber-700">${Math.round(totalUnpaid).toLocaleString()} total owed</div>
             </div>
             {(!unpaid || unpaid.length === 0) ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
                 <CheckCircle className="w-10 h-10 mb-3 text-emerald-400" />
-                <p className="text-sm font-medium text-white">All commissions paid</p>
-                <p className="text-xs mt-1 text-slate-500">No pending payouts</p>
+                <p className="text-sm font-medium text-gray-900">All commissions paid</p>
+                <p className="text-xs mt-1 text-gray-500">No pending payouts</p>
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -332,23 +332,23 @@ export default function FinancialCenter() {
                   <thead>
                     <tr className="border-b border-white/5">
                       {["Partner", "Business Type", "Amount", "Job Date", "Action"].map(h => (
-                        <th key={h} className="text-left px-4 py-3 text-xs font-medium text-slate-500">{h}</th>
+                        <th key={h} className="text-left px-4 py-3 text-xs font-medium text-gray-500">{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {unpaid.map((c: any) => (
                       <tr key={c.id} className="border-b border-white/5 hover:bg-white/2 transition-colors">
-                        <td className="px-4 py-3 font-medium text-white">{c.partnerName ?? "Unknown Partner"}</td>
-                        <td className="px-4 py-3 text-xs text-slate-400">{c.businessType ?? "--"}</td>
-                        <td className="px-4 py-3 font-bold text-amber-400">${Number(c.amount).toFixed(2)}</td>
-                        <td className="px-4 py-3 text-xs text-slate-400">{new Date(c.createdAt).toLocaleDateString()}</td>
+                        <td className="px-4 py-3 font-medium text-gray-900">{c.partnerName ?? "Unknown Partner"}</td>
+                        <td className="px-4 py-3 text-xs text-gray-500">{c.businessType ?? "--"}</td>
+                        <td className="px-4 py-3 font-bold text-amber-700">${Number(c.amount).toFixed(2)}</td>
+                        <td className="px-4 py-3 text-xs text-gray-500">{new Date(c.createdAt).toLocaleDateString()}</td>
                         <td className="px-4 py-3">
                           <Button
                             size="sm"
                             disabled={markingId === c.id}
                             onClick={() => { setMarkingId(c.id); markPaid.mutate({ commissionId: c.id }, { onSettled: () => setMarkingId(null) }); }}
-                            className="h-7 text-xs bg-emerald-600 hover:bg-emerald-700 text-white"
+                            className="h-7 text-xs bg-emerald-600 hover:bg-emerald-700 text-gray-900"
                           >
                             {markingId === c.id ? "Marking..." : "Mark Paid"}
                           </Button>
@@ -367,19 +367,19 @@ export default function FinancialCenter() {
         <div className="rounded-xl border border-white/10 bg-[#0D1F3C]">
           <div className="flex items-center justify-between p-4 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <AlertCircle className="w-4 h-4 text-red-400" />
-              <h3 className="font-bold text-white text-sm">Accounts Receivable</h3>
+              <AlertCircle className="w-4 h-4 text-red-600" />
+              <h3 className="font-bold text-gray-900 text-sm">Accounts Receivable</h3>
             </div>
-            <div className="text-sm font-bold text-red-400">${arTotal.toLocaleString()} outstanding</div>
+            <div className="text-sm font-bold text-red-600">${arTotal.toLocaleString()} outstanding</div>
           </div>
           <div className="grid grid-cols-3 gap-px bg-white/5 border-b border-white/10">
             {[
               { label: "Current (0-14d)", value: AR_ITEMS.filter(a => a.daysPast <= 14).reduce((s, a) => s + a.amount, 0), color: "text-emerald-400" },
-              { label: "Past 15-30d", value: AR_ITEMS.filter(a => a.daysPast > 14 && a.daysPast <= 30).reduce((s, a) => s + a.amount, 0), color: "text-amber-400" },
-              { label: "Past 30d+", value: AR_ITEMS.filter(a => a.daysPast > 30).reduce((s, a) => s + a.amount, 0), color: "text-red-400" },
+              { label: "Past 15-30d", value: AR_ITEMS.filter(a => a.daysPast > 14 && a.daysPast <= 30).reduce((s, a) => s + a.amount, 0), color: "text-amber-700" },
+              { label: "Past 30d+", value: AR_ITEMS.filter(a => a.daysPast > 30).reduce((s, a) => s + a.amount, 0), color: "text-red-600" },
             ].map(b => (
               <div key={b.label} className="p-4 bg-[#0D1F3C]">
-                <div className="text-xs text-slate-400 mb-1">{b.label}</div>
+                <div className="text-xs text-gray-500 mb-1">{b.label}</div>
                 <div className={`text-xl font-bold ${b.color}`}>${b.value.toLocaleString()}</div>
               </div>
             ))}
@@ -389,23 +389,23 @@ export default function FinancialCenter() {
               <thead>
                 <tr className="border-b border-white/5">
                   {["Partner", "Invoice", "Amount", "Days Past", "Status", "Action"].map(h => (
-                    <th key={h} className="text-left px-4 py-3 text-xs font-medium text-slate-500">{h}</th>
+                    <th key={h} className="text-left px-4 py-3 text-xs font-medium text-gray-500">{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {AR_ITEMS.map((item, i) => {
-                  const statusColor = item.daysPast <= 14 ? "bg-emerald-500/20 text-emerald-400" : item.daysPast <= 30 ? "bg-amber-500/20 text-amber-400" : "bg-red-500/20 text-red-400";
+                  const statusColor = item.daysPast <= 14 ? "bg-emerald-500/20 text-emerald-400" : item.daysPast <= 30 ? "bg-amber-500/20 text-amber-700" : "bg-red-500/20 text-red-600";
                   const statusLabel = item.daysPast <= 14 ? "Current" : item.daysPast <= 30 ? "Overdue" : "Critical";
                   return (
                     <tr key={i} className="border-b border-white/5 hover:bg-white/2">
-                      <td className="px-4 py-3 font-medium text-white">{item.partner}</td>
-                      <td className="px-4 py-3 text-xs text-slate-400 font-mono">{item.invoiceId}</td>
-                      <td className="px-4 py-3 font-bold text-white">${item.amount.toLocaleString()}</td>
-                      <td className="px-4 py-3 text-xs text-slate-400">{item.daysPast} days</td>
+                      <td className="px-4 py-3 font-medium text-gray-900">{item.partner}</td>
+                      <td className="px-4 py-3 text-xs text-gray-500 font-mono">{item.invoiceId}</td>
+                      <td className="px-4 py-3 font-bold text-gray-900">${item.amount.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-xs text-gray-500">{item.daysPast} days</td>
                       <td className="px-4 py-3"><span className={`text-xs px-2 py-0.5 rounded-full ${statusColor}`}>{statusLabel}</span></td>
                       <td className="px-4 py-3">
-                        <Button size="sm" variant="outline" className="h-7 text-xs border-white/10 text-slate-300 hover:text-white" onClick={() => toast.success(`Reminder sent to ${item.partner}`)}>
+                        <Button size="sm" variant="outline" className="h-7 text-xs border-white/10 text-gray-700 hover:text-gray-900" onClick={() => toast.success(`Reminder sent to ${item.partner}`)}>
                           Send Reminder
                         </Button>
                       </td>
@@ -421,7 +421,7 @@ export default function FinancialCenter() {
       {activeTab === "budget" && (
         <div className="space-y-4">
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
-            <h3 className="font-bold text-white text-sm mb-4">Budget vs Actual Spend (May 2026)</h3>
+            <h3 className="font-bold text-gray-900 text-sm mb-4">Budget vs Actual Spend (May 2026)</h3>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={BUDGET_DATA} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
@@ -439,13 +439,13 @@ export default function FinancialCenter() {
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0D1F3C] overflow-hidden">
             <div className="p-4 border-b border-white/10">
-              <h3 className="font-bold text-white text-sm">Budget Line Items</h3>
+              <h3 className="font-bold text-gray-900 text-sm">Budget Line Items</h3>
             </div>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-white/5">
                   {["Category", "Budget", "Actual", "Variance", "Status"].map(h => (
-                    <th key={h} className="text-left px-4 py-3 text-xs font-medium text-slate-500">{h}</th>
+                    <th key={h} className="text-left px-4 py-3 text-xs font-medium text-gray-500">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -455,14 +455,14 @@ export default function FinancialCenter() {
                   const pct = Math.round((variance / d.budget) * 100);
                   return (
                     <tr key={i} className="border-b border-white/5 hover:bg-white/2">
-                      <td className="px-4 py-3 font-medium text-white">{d.category}</td>
-                      <td className="px-4 py-3 text-slate-400">${d.budget.toLocaleString()}</td>
-                      <td className="px-4 py-3 text-white font-medium">${d.actual.toLocaleString()}</td>
-                      <td className={`px-4 py-3 font-medium ${variance > 0 ? "text-red-400" : "text-emerald-400"}`}>
+                      <td className="px-4 py-3 font-medium text-gray-900">{d.category}</td>
+                      <td className="px-4 py-3 text-gray-500">${d.budget.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-gray-900 font-medium">${d.actual.toLocaleString()}</td>
+                      <td className={`px-4 py-3 font-medium ${variance > 0 ? "text-red-600" : "text-emerald-400"}`}>
                         {variance > 0 ? "+" : ""}${variance.toLocaleString()} ({pct > 0 ? "+" : ""}{pct}%)
                       </td>
                       <td className="px-4 py-3">
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${variance > 0 ? "bg-red-500/20 text-red-400" : "bg-emerald-500/20 text-emerald-400"}`}>
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${variance > 0 ? "bg-red-500/20 text-red-600" : "bg-emerald-500/20 text-emerald-400"}`}>
                           {variance > 0 ? "Over Budget" : "Under Budget"}
                         </span>
                       </td>
@@ -481,12 +481,12 @@ export default function FinancialCenter() {
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-bold text-white text-sm">Commission Ledger Export</h3>
-                <p className="text-xs mt-1 text-slate-400">Download all commission records with payout status as CSV.</p>
+                <h3 className="font-bold text-gray-900 text-sm">Commission Ledger Export</h3>
+                <p className="text-xs mt-1 text-gray-500">Download all commission records with payout status as CSV.</p>
               </div>
               <Button
                 size="sm"
-                className="gap-2 text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white"
+                className="gap-2 text-xs font-bold bg-teal-600 hover:bg-teal-700 text-gray-900"
                 onClick={() => {
                   const allComm = unpaid ?? [];
                   const rows = [
@@ -510,30 +510,30 @@ export default function FinancialCenter() {
           {/* 1099 Report */}
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
             <div className="flex items-center gap-3 mb-4">
-              <FileText className="w-5 h-5 text-teal-400" />
-              <h3 className="font-bold text-white text-sm">1099-NEC Report Generator</h3>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-400">IRS Compliance</span>
+              <FileText className="w-5 h-5 text-teal-700" />
+              <h3 className="font-bold text-gray-900 text-sm">1099-NEC Report Generator</h3>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-700">IRS Compliance</span>
             </div>
-            <p className="text-xs mb-4 text-slate-400">
+            <p className="text-xs mb-4 text-gray-500">
               Generate IRS 1099-NEC reports for all partners who received $600 or more in commissions during the selected tax year.
             </p>
             <div className="flex flex-wrap items-end gap-3 mb-4">
               <div>
-                <label className="block text-xs font-medium mb-1 text-slate-400">Tax Year</label>
+                <label className="block text-xs font-medium mb-1 text-gray-500">Tax Year</label>
                 <select
                   value={report1099Year}
                   onChange={e => setReport1099Year(Number(e.target.value))}
-                  className="border border-white/10 rounded-lg px-3 py-1.5 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="border border-white/10 rounded-lg px-3 py-1.5 text-sm bg-[#F8FAFC] text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 >
                   {[2026, 2025, 2024, 2023].map(y => <option key={y} value={y}>{y}</option>)}
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1 text-slate-400">Minimum Earnings</label>
+                <label className="block text-xs font-medium mb-1 text-gray-500">Minimum Earnings</label>
                 <select
                   value={report1099Min}
                   onChange={e => setReport1099Min(Number(e.target.value))}
-                  className="border border-white/10 rounded-lg px-3 py-1.5 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="border border-white/10 rounded-lg px-3 py-1.5 text-sm bg-[#F8FAFC] text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 >
                   <option value={600}>$600 (IRS minimum)</option>
                   <option value={0}>All partners ($0+)</option>
@@ -541,28 +541,28 @@ export default function FinancialCenter() {
               </div>
               <Button
                 size="sm"
-                className="gap-2 text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white"
+                className="gap-2 text-xs font-bold bg-teal-600 hover:bg-teal-700 text-gray-900"
                 onClick={() => toast.success(`1099-NEC report for ${report1099Year} generated`)}
               >
                 <Download className="w-3.5 h-3.5" /> Generate 1099 CSV
               </Button>
             </div>
-            <div className="rounded-lg p-3 text-xs bg-[#0A1628] text-slate-400">
-              <strong className="text-white">IRS Guidance:</strong> Form 1099-NEC must be filed for any independent contractor paid $600 or more during the tax year. Deadline: January 31.
+            <div className="rounded-lg p-3 text-xs bg-[#F8FAFC] text-gray-500">
+              <strong className="text-gray-900">IRS Guidance:</strong> Form 1099-NEC must be filed for any independent contractor paid $600 or more during the tax year. Deadline: January 31.
             </div>
           </div>
 
           {/* Chargeback Defense */}
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
             <div className="flex items-center gap-3 mb-3">
-              <Shield className="w-4 h-4 text-purple-400" />
-              <h3 className="font-bold text-white text-sm">Chargeback Defense</h3>
+              <Shield className="w-4 h-4 text-gray-600" />
+              <h3 className="font-bold text-gray-900 text-sm">Chargeback Defense</h3>
             </div>
-            <p className="text-xs mb-4 text-slate-400">
+            <p className="text-xs mb-4 text-gray-500">
               For any disputed charge, compile a defense package: job photos, partner notes, commission timeline, and dispute history.
             </p>
             <a href="/admin/disputes">
-              <Button size="sm" variant="outline" className="text-xs gap-2 border-purple-500/30 text-purple-400 hover:bg-purple-500/10">
+              <Button size="sm" variant="outline" className="text-xs gap-2 border-purple-500/30 text-gray-600 hover:bg-purple-500/10">
                 <Shield className="w-3.5 h-3.5" /> Open Dispute Center
               </Button>
             </a>

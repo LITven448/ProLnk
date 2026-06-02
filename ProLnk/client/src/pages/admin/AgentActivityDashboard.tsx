@@ -6,11 +6,11 @@ import {
 } from "lucide-react";
 
 const TIER_COLORS: Record<string, string> = {
-  "Founding Network": "#17C1E8",
-  Executive: "#7928CA",
+  "Founding Network": "#0D9488",
+  Executive: "#0D9488",
   Managing: "#FBB140",
   "Supreme Court": "#EA0606",
-  Standalone: "#82D616",
+  Standalone: "#16A34A",
 };
 
 function timeAgo(value: string | Date | null): string {
@@ -30,7 +30,7 @@ function timeAgo(value: string | Date | null): string {
 }
 
 function StatusDot({ status }: { status: "ok" | "error" | "idle" }) {
-  const color = status === "ok" ? "#82D616" : status === "error" ? "#EA0606" : "#6B7280";
+  const color = status === "ok" ? "#16A34A" : status === "error" ? "#EA0606" : "#6B7280";
   return (
     <span
       className="inline-block w-2.5 h-2.5 rounded-full"
@@ -41,10 +41,10 @@ function StatusDot({ status }: { status: "ok" | "error" | "idle" }) {
 }
 
 const OUTCOME_STYLE: Record<string, { color: string; Icon: typeof CheckCircle }> = {
-  success: { color: "#82D616", Icon: CheckCircle },
+  success: { color: "#16A34A", Icon: CheckCircle },
   failure: { color: "#EA0606", Icon: XCircle },
   blocked: { color: "#FBB140", Icon: AlertTriangle },
-  pending: { color: "#17C1E8", Icon: Clock },
+  pending: { color: "#0D9488", Icon: Clock },
 };
 
 export default function AgentActivityDashboard() {

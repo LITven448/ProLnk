@@ -90,27 +90,27 @@ const crColor = (cr: number) =>
 export default function ProspectPipeline() {
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#F8FAFC] p-6 space-y-8">
 
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <TrendingUp className="w-6 h-6 text-teal-400" />
+          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <TrendingUp className="w-6 h-6 text-teal-700" />
             Prospect Pipeline
           </h1>
-          <p className="text-slate-400 mt-1 text-sm">From awareness to active partner</p>
+          <p className="text-gray-500 mt-1 text-sm">From awareness to active partner</p>
         </div>
 
         {/* Funnel Visualization */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
-          <h2 className="text-white font-semibold text-base mb-5 flex items-center gap-2">
-            <BarChart2 className="w-4 h-4 text-teal-400" />
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <h2 className="text-gray-900 font-semibold text-base mb-5 flex items-center gap-2">
+            <BarChart2 className="w-4 h-4 text-teal-700" />
             Prospect Funnel
           </h2>
           <div className="space-y-3">
             {FUNNEL_STAGES.map((stage, i) => (
               <div key={stage.label} className="flex items-center gap-4">
-                <div className="w-24 text-right text-xs font-medium text-slate-400 flex-shrink-0">
+                <div className="w-24 text-right text-xs font-medium text-gray-500 flex-shrink-0">
                   {stage.label}
                 </div>
                 <div className="flex-1 relative h-9 flex items-center">
@@ -123,12 +123,12 @@ export default function ProspectPipeline() {
                       minWidth: 80,
                     }}
                   >
-                    <span className="text-xs font-bold text-white">{stage.count.toLocaleString()}</span>
+                    <span className="text-xs font-bold text-gray-900">{stage.count.toLocaleString()}</span>
                   </div>
                 </div>
                 <div className="w-14 text-right text-xs flex-shrink-0">
                   {i === 0 ? (
-                    <span className="text-slate-500">—</span>
+                    <span className="text-gray-500">—</span>
                   ) : (
                     <span style={{ color: crColor(stage.pct) }} className="font-semibold">
                       {stage.pct}%
@@ -136,26 +136,26 @@ export default function ProspectPipeline() {
                   )}
                 </div>
                 {i < FUNNEL_STAGES.length - 1 && (
-                  <ArrowRight className="w-4 h-4 text-slate-600 flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-gray-400 flex-shrink-0" />
                 )}
               </div>
             ))}
           </div>
           <div className="flex items-center gap-4 mt-3 ml-28">
-            <span className="text-xs text-slate-500">Bar width = relative volume</span>
-            <span className="text-xs text-slate-500">%  = conversion from prior stage</span>
+            <span className="text-xs text-gray-500">Bar width = relative volume</span>
+            <span className="text-xs text-gray-500">%  = conversion from prior stage</span>
           </div>
         </div>
 
         {/* Drop-off Analysis */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base">Drop-Off Analysis</h2>
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base">Drop-Off Analysis</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-700 text-slate-400 text-xs uppercase tracking-wider">
+                <tr className="border-b border-gray-200 text-gray-500 text-xs uppercase tracking-wider">
                   <th className="text-left px-6 py-3">Stage Transition</th>
                   <th className="text-center px-4 py-3">From</th>
                   <th className="text-center px-4 py-3">To</th>
@@ -166,10 +166,10 @@ export default function ProspectPipeline() {
               </thead>
               <tbody>
                 {DROPOFF.map((row) => (
-                  <tr key={row.transition} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
-                    <td className="px-6 py-3 text-white font-medium">{row.transition}</td>
-                    <td className="px-4 py-3 text-center text-slate-300">{row.from.toLocaleString()}</td>
-                    <td className="px-4 py-3 text-center text-slate-300">{row.to.toLocaleString()}</td>
+                  <tr key={row.transition} className="border-b border-gray-200/50 hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-3 text-gray-900 font-medium">{row.transition}</td>
+                    <td className="px-4 py-3 text-center text-gray-700">{row.from.toLocaleString()}</td>
+                    <td className="px-4 py-3 text-center text-gray-700">{row.to.toLocaleString()}</td>
                     <td className="px-4 py-3 text-center">
                       <span
                         className="text-sm font-bold"
@@ -179,7 +179,7 @@ export default function ProspectPipeline() {
                       </span>
                     </td>
                     <td className="px-4 py-3 text-center">
-                      <div className="w-20 mx-auto h-1.5 rounded-full bg-slate-700 overflow-hidden">
+                      <div className="w-20 mx-auto h-1.5 rounded-full bg-gray-100 overflow-hidden">
                         <div
                           className="h-full rounded-full"
                           style={{ width: `${row.cr}%`, background: crColor(row.cr) }}
@@ -187,7 +187,7 @@ export default function ProspectPipeline() {
                       </div>
                     </td>
                     <td className="px-6 py-3 text-right">
-                      <button className="text-xs px-3 py-1.5 rounded-lg font-semibold bg-teal-500/20 text-teal-400 hover:bg-teal-500/30 transition-colors">
+                      <button className="text-xs px-3 py-1.5 rounded-lg font-semibold bg-teal-500/20 text-teal-700 hover:bg-teal-500/30 transition-colors">
                         Improve
                       </button>
                     </td>
@@ -201,8 +201,8 @@ export default function ProspectPipeline() {
         <div className="grid lg:grid-cols-2 gap-6">
 
           {/* Pipeline by Trade — Donut */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
-            <h2 className="text-white font-semibold text-base mb-4">Pipeline by Trade</h2>
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h2 className="text-gray-900 font-semibold text-base mb-4">Pipeline by Trade</h2>
             <div className="flex items-center gap-6">
               <ResponsiveContainer width={180} height={180}>
                 <PieChart>
@@ -230,8 +230,8 @@ export default function ProspectPipeline() {
                 {TRADE_DONUT.map((entry) => (
                   <div key={entry.name} className="flex items-center gap-2">
                     <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: entry.color }} />
-                    <span className="text-sm text-slate-300 flex-1">{entry.name}</span>
-                    <span className="text-sm font-bold text-white">{entry.value}%</span>
+                    <span className="text-sm text-gray-700 flex-1">{entry.name}</span>
+                    <span className="text-sm font-bold text-gray-900">{entry.value}%</span>
                   </div>
                 ))}
               </div>
@@ -239,9 +239,9 @@ export default function ProspectPipeline() {
           </div>
 
           {/* Pipeline by City */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
-            <h2 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-teal-400" />
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h2 className="text-gray-900 font-semibold text-base mb-4 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-teal-700" />
               Top DFW Cities
             </h2>
             <div className="space-y-3">
@@ -250,18 +250,18 @@ export default function ProspectPipeline() {
                 return (
                   <div key={city.city} className="flex items-center gap-3">
                     <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                      i < 3 ? "bg-teal-500/20 text-teal-400" : "bg-slate-700 text-slate-400"
+                      i < 3 ? "bg-teal-500/20 text-teal-700" : "bg-gray-100 text-gray-500"
                     }`}>
                       {i + 1}
                     </span>
-                    <span className="w-20 text-sm text-slate-300 flex-shrink-0">{city.city}</span>
-                    <div className="flex-1 h-2 rounded-full bg-slate-700 overflow-hidden">
+                    <span className="w-20 text-sm text-gray-700 flex-shrink-0">{city.city}</span>
+                    <div className="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden">
                       <div
                         className="h-full rounded-full"
                         style={{ width: `${(city.count / maxCount) * 100}%`, background: "#2dd4bf" }}
                       />
                     </div>
-                    <span className="text-sm font-bold text-white w-8 text-right">{city.count}</span>
+                    <span className="text-sm font-bold text-gray-900 w-8 text-right">{city.count}</span>
                   </div>
                 );
               })}
@@ -271,40 +271,40 @@ export default function ProspectPipeline() {
         </div>
 
         {/* Conversion Experiments */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <FlaskConical className="w-4 h-4 text-purple-400" />
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <FlaskConical className="w-4 h-4 text-gray-600" />
               Conversion Experiments
             </h2>
           </div>
-          <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-700">
+          <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
             {EXPERIMENTS.map((exp) => (
               <div key={exp.id} className="p-5">
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-sm font-semibold text-white">{exp.name}</span>
+                  <span className="text-sm font-semibold text-gray-900">{exp.name}</span>
                   <span className={`text-xs px-2 py-0.5 rounded-full font-semibold flex-shrink-0 ml-2 ${
                     exp.status === "Running"
                       ? "bg-blue-500/20 text-blue-400"
-                      : "bg-teal-500/20 text-teal-400"
+                      : "bg-teal-500/20 text-teal-700"
                   }`}>
                     {exp.status}
                   </span>
                 </div>
                 <div className="space-y-2 text-xs mb-3">
-                  <div className={`flex items-start gap-2 p-2 rounded-lg ${exp.winner === "A" ? "bg-teal-500/10 border border-teal-500/20" : "bg-slate-700/40"}`}>
-                    <span className="font-bold text-slate-400 flex-shrink-0">A:</span>
-                    <span className="text-slate-300">{exp.variantA}</span>
-                    {exp.winner === "A" && <span className="ml-auto text-teal-400 font-bold">Winner</span>}
+                  <div className={`flex items-start gap-2 p-2 rounded-lg ${exp.winner === "A" ? "bg-teal-500/10 border border-teal-500/20" : "bg-gray-100/40"}`}>
+                    <span className="font-bold text-gray-500 flex-shrink-0">A:</span>
+                    <span className="text-gray-700">{exp.variantA}</span>
+                    {exp.winner === "A" && <span className="ml-auto text-teal-700 font-bold">Winner</span>}
                   </div>
-                  <div className={`flex items-start gap-2 p-2 rounded-lg ${exp.winner === "B" ? "bg-teal-500/10 border border-teal-500/20" : "bg-slate-700/40"}`}>
-                    <span className="font-bold text-slate-400 flex-shrink-0">B:</span>
-                    <span className="text-slate-300">{exp.variantB}</span>
-                    {exp.winner === "B" && <span className="ml-auto text-teal-400 font-bold">Winner</span>}
+                  <div className={`flex items-start gap-2 p-2 rounded-lg ${exp.winner === "B" ? "bg-teal-500/10 border border-teal-500/20" : "bg-gray-100/40"}`}>
+                    <span className="font-bold text-gray-500 flex-shrink-0">B:</span>
+                    <span className="text-gray-700">{exp.variantB}</span>
+                    {exp.winner === "B" && <span className="ml-auto text-teal-700 font-bold">Winner</span>}
                   </div>
                 </div>
-                <div className="text-xs text-slate-400">
-                  Lift: <span className="font-semibold text-white">{exp.lift}</span>
+                <div className="text-xs text-gray-500">
+                  Lift: <span className="font-semibold text-gray-900">{exp.lift}</span>
                 </div>
               </div>
             ))}
@@ -312,15 +312,15 @@ export default function ProspectPipeline() {
         </div>
 
         {/* Time-to-Active */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
           <div className="flex items-start justify-between mb-4">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <Clock className="w-4 h-4 text-amber-400" />
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <Clock className="w-4 h-4 text-amber-700" />
               Time-to-Active
             </h2>
             <div className="text-right">
-              <div className="text-2xl font-bold text-white">6.2 days</div>
-              <div className="text-xs text-slate-400">avg from apply to first job</div>
+              <div className="text-2xl font-bold text-gray-900">6.2 days</div>
+              <div className="text-xs text-gray-500">avg from apply to first job</div>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={180}>
@@ -338,8 +338,8 @@ export default function ProspectPipeline() {
             </BarChart>
           </ResponsiveContainer>
           <div className="flex items-center gap-2 mt-2">
-            <ChevronRight className="w-3.5 h-3.5 text-teal-400" />
-            <span className="text-xs text-slate-400">
+            <ChevronRight className="w-3.5 h-3.5 text-teal-700" />
+            <span className="text-xs text-gray-500">
               48% of partners complete their first job within 6 days of approval
             </span>
           </div>

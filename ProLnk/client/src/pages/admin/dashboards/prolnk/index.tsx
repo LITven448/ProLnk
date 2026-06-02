@@ -7,8 +7,8 @@ import CompanyDashboard, { CompanyDashboardConfig } from "../CompanyDashboard";
 import { D } from "@/components/DashboardShared";
 
 const BASE = "/admin/prolnk";
-const COLOR = "#17C1E8";
-const ACCENT = "#82D616";
+const COLOR = "#0D9488";
+const ACCENT = "#16A34A";
 
 const REVENUE = [38, 52, 47, 63, 71, 85, 92, 86, 99, 114, 128, 147];
 

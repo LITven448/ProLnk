@@ -51,7 +51,7 @@ function CohortRow({ label, months }: { label: string; months: number[] }) {
               className="inline-block w-10 py-1 rounded text-[10px] font-semibold"
               style={{
                 background: `rgba(0, 181, 184, ${0.1 + intensity * 0.7})`,
-                color: intensity > 0.5 ? "#fff" : "#0A1628",
+                color: intensity > 0.5 ? "#fff" : "#F8FAFC",
               }}
             >
               {v > 0 ? pct(v) : "—"}
@@ -272,23 +272,23 @@ export default function AnalyticsDeepDive() {
                 ))}
               </div>
             </div>
-            <div className="bg-gradient-to-r from-[#0A1628] to-[#0d2040] rounded-xl p-5 text-white">
+            <div className="bg-gradient-to-r from-[#F8FAFC] to-[#F1F5F9] rounded-xl p-5 text-gray-900">
               <p className="text-sm font-semibold mb-3">Summary</p>
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-2xl font-bold text-[#00B5B8]">{metrics.ltvCac.toFixed(1)}x</p>
-                  <p className="text-xs text-white/70 mt-1">LTV:CAC Ratio</p>
-                  <p className="text-[10px] text-white/50">{metrics.ltvCac >= 3 ? "✓ Healthy" : "⚠ Below target"}</p>
+                  <p className="text-xs text-gray-900/70 mt-1">LTV:CAC Ratio</p>
+                  <p className="text-[10px] text-gray-900/50">{metrics.ltvCac >= 3 ? "✓ Healthy" : "⚠ Below target"}</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-[#F5E642]">{metrics.payback.toFixed(1)} mo</p>
-                  <p className="text-xs text-white/70 mt-1">Payback Period</p>
-                  <p className="text-[10px] text-white/50">{metrics.payback <= 12 ? "✓ Under 12 months" : "⚠ Over 12 months"}</p>
+                  <p className="text-xs text-gray-900/70 mt-1">Payback Period</p>
+                  <p className="text-[10px] text-gray-900/50">{metrics.payback <= 12 ? "✓ Under 12 months" : "⚠ Over 12 months"}</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">{fmt(metrics.ltv - metrics.cac)}</p>
-                  <p className="text-xs text-white/70 mt-1">Net Value per Partner</p>
-                  <p className="text-[10px] text-white/50">LTV minus CAC</p>
+                  <p className="text-2xl font-bold text-gray-900">{fmt(metrics.ltv - metrics.cac)}</p>
+                  <p className="text-xs text-gray-900/70 mt-1">Net Value per Partner</p>
+                  <p className="text-[10px] text-gray-900/50">LTV minus CAC</p>
                 </div>
               </div>
             </div>
@@ -315,7 +315,7 @@ export default function AnalyticsDeepDive() {
                       }}
                     >
                       {stage.pctOfTop > 15 && (
-                        <span className="text-xs font-semibold text-white">{stage.count.toLocaleString()}</span>
+                        <span className="text-xs font-semibold text-gray-900">{stage.count.toLocaleString()}</span>
                       )}
                     </div>
                   </div>

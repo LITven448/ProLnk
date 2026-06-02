@@ -36,9 +36,9 @@ interface Agent {
 }
 
 const STATUS_COLORS: Record<AgentStatus, string> = {
-  active:     "#82D616",
-  idle:       "#7B809A",
-  processing: "#17C1E8",
+  active:     "#16A34A",
+  idle:       "#4B5563",
+  processing: "#0D9488",
   error:      "#EA0606",
   standby:    "#FBB140",
 };
@@ -58,7 +58,7 @@ const AGENTS: Agent[] = [
     role: "Chief Operations Agent",
     domain: "Platform-Wide",
     icon: Brain,
-    color: "#7928CA",
+    color: "#0D9488",
     status: "active",
     lastAction: "Coordinated photo intake pipeline — 3 jobs queued",
     actionsToday: 142,
@@ -78,7 +78,7 @@ const AGENTS: Agent[] = [
     role: "Visual Intelligence Agent",
     domain: "ProLnk + TrustyPro",
     icon: Camera,
-    color: "#17C1E8",
+    color: "#0D9488",
     status: "processing",
     lastAction: "Analyzing 3 job photos — HVAC, roofing, landscaping",
     actionsToday: 87,
@@ -158,7 +158,7 @@ const AGENTS: Agent[] = [
     role: "Commission & Payout Agent",
     domain: "ProLnk Residential",
     icon: DollarSign,
-    color: "#82D616",
+    color: "#16A34A",
     status: "idle",
     lastAction: "Reconciled 3 closed jobs — $847 in commissions pending",
     actionsToday: 28,
@@ -407,7 +407,7 @@ function AgentDetailPanel({ agent }: { agent: Agent }) {
         <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: T.muted }}>Activity Log</p>
         <div className="space-y-2">
           {agent.logs.map((log, i) => {
-            const logColor = log.type === "success" ? "#82D616" : log.type === "warning" ? "#FBB140" : log.type === "error" ? "#EA0606" : T.muted;
+            const logColor = log.type === "success" ? "#16A34A" : log.type === "warning" ? "#FBB140" : log.type === "error" ? "#EA0606" : T.muted;
             return (
               <div key={i} className="flex items-start gap-2.5">
                 <span className="text-[10px] font-mono flex-shrink-0 mt-0.5" style={{ color: T.dim }}>{log.time}</span>
@@ -476,7 +476,7 @@ function AccountabilityChart({
                 <p className="text-[10px]" style={{ color: T.muted }}>Actions today</p>
               </div>
               <div className="text-right">
-                <p className="text-xs font-bold" style={{ color: agent.successRate >= 98 ? "#82D616" : agent.successRate >= 90 ? "#FBB140" : "#EA0606" }}>
+                <p className="text-xs font-bold" style={{ color: agent.successRate >= 98 ? "#16A34A" : agent.successRate >= 90 ? "#FBB140" : "#EA0606" }}>
                   {agent.successRate}%
                 </p>
                 <p className="text-[10px]" style={{ color: T.muted }}>Success</p>
@@ -528,9 +528,9 @@ export default function AgentTracker() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: "Total Agents",    value: agents.length,    color: T.accent,   icon: Bot },
-            { label: "Active Now",      value: activeCount + processingCount, color: "#82D616", icon: Activity },
+            { label: "Active Now",      value: activeCount + processingCount, color: "#16A34A", icon: Activity },
             { label: "Actions Today",   value: totalActions.toLocaleString(), color: "#FBB140", icon: Zap },
-            { label: "Avg Success Rate", value: `${(agents.reduce((s, a) => s + a.successRate, 0) / agents.length).toFixed(1)}%`, color: "#7928CA", icon: TrendingUp },
+            { label: "Avg Success Rate", value: `${(agents.reduce((s, a) => s + a.successRate, 0) / agents.length).toFixed(1)}%`, color: "#0D9488", icon: TrendingUp },
           ].map(({ label, value, color, icon: Icon }) => (
             <div
               key={label}

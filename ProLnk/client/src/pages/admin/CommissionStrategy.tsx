@@ -27,7 +27,7 @@ const TIERS = [
     subPct: 12,
     networkCascade: [7, 4, 2, 1],
     gradient: BADGE_GRADIENTS.purple,
-    accentColor: "#7928CA",
+    accentColor: "#0D9488",
     avgEarnings: "$1,750/mo",
     topEarner: "$4,200/mo",
     tierSize: 100,

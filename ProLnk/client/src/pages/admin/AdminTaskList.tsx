@@ -223,7 +223,7 @@ export default function AdminTaskList() {
         {/* Progress bar */}
         <div className="bg-muted rounded-full h-2 overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-[#00B5B8] to-[#0A1628] transition-all duration-500"
+            className="h-full rounded-full bg-gradient-to-r from-[#00B5B8] to-[#F8FAFC] transition-all duration-500"
             style={{ width: `${augmented.length > 0 ? (doneCount / augmented.length) * 100 : 0}%` }}
           />
         </div>
@@ -236,7 +236,7 @@ export default function AdminTaskList() {
               onClick={() => setFilter(cat.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 filter === cat.id
-                  ? "bg-[#0A1628] text-white"
+                  ? "bg-[#F8FAFC] text-gray-900"
                   : "bg-muted text-muted-foreground hover:text-foreground"
               }`}
             >

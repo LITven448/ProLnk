@@ -68,14 +68,14 @@ export default function AIRetraining() {
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
-              <Brain className="w-6 h-6 text-[#0A1628]" />AI Model Retraining
+              <Brain className="w-6 h-6 text-[#F8FAFC]" />AI Model Retraining
             </h1>
             <p className="text-sm text-gray-500 mt-1">
               Monitor model performance, review feedback corrections, and trigger retraining cycles.
             </p>
           </div>
           <Button
-            className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90"
+            className="bg-[#F8FAFC] text-gray-900 hover:bg-[#F8FAFC]/90"
             onClick={handleStartTraining}
             disabled={isTraining}
           >
@@ -186,7 +186,7 @@ export default function AIRetraining() {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1 mt-1.5">
                       <div
-                        className="bg-[#0A1628] h-1 rounded-full"
+                        className="bg-[#F8FAFC] h-1 rounded-full"
                         style={{ width: `${Math.min((item.newSamples / item.totalSamples) * 100 * 3, 100)}%` }}
                       />
                     </div>

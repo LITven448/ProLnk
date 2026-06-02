@@ -71,7 +71,7 @@ const INTEGRATIONS: IntegDef[] = [
     description: "Field service management sync for HVAC, plumbing, and electrical partners. Auto-import completed jobs and customer data.",
     status: "configured",
     icon: Wrench,
-    iconColor: "#7C3AED",
+    iconColor: "#0D9488",
     iconBg: "#F5F3FF",
     features: ["Job completion webhooks", "Customer sync", "Invoice import", "Technician data", "Service history"],
     docsUrl: "https://developer.housecallpro.com",
@@ -193,7 +193,7 @@ const INTEGRATIONS: IntegDef[] = [
     description: "Product analytics for tracking partner activation, homeowner engagement, and funnel conversion across both platforms.",
     status: "available",
     icon: BarChart3,
-    iconColor: "#7C3AED",
+    iconColor: "#0D9488",
     iconBg: "#F5F3FF",
     features: ["Partner funnel tracking", "Homeowner engagement", "Cohort analysis", "Retention metrics", "A/B testing"],
     docsUrl: "https://developer.mixpanel.com",
@@ -244,7 +244,7 @@ const STATUS_CONFIG = {
   live:          { label: "Live",           color: "#059669", bg: "#ECFDF5", icon: CheckCircle },
   configured:    { label: "Configured",     color: "#0284C7", bg: "#F0F9FF", icon: Settings2 },
   available:     { label: "Available",      color: "#D97706", bg: "#FFFBEB", icon: Circle },
-  co_marketing:  { label: "Co-Marketing",   color: "#7C3AED", bg: "#F5F3FF", icon: TrendingUp },
+  co_marketing:  { label: "Co-Marketing",   color: "#0D9488", bg: "#F5F3FF", icon: TrendingUp },
   coming_soon:   { label: "Coming Soon",    color: "#6B7280", bg: "#F9FAFB", icon: Clock },
 };
 
@@ -385,7 +385,7 @@ export default function IntegrationHub() {
             { label: "Live Integrations", value: liveCount, color: "#059669", bg: "#ECFDF5", icon: CheckCircle },
             { label: "Configured", value: configuredCount, color: "#0284C7", bg: "#F0F9FF", icon: Settings2 },
             { label: "Available", value: availableCount, color: "#D97706", bg: "#FFFBEB", icon: Circle },
-            { label: "Partners Connected", value: connectedPartners, color: "#7C3AED", bg: "#F5F3FF", icon: Users },
+            { label: "Partners Connected", value: connectedPartners, color: "#0D9488", bg: "#F5F3FF", icon: Users },
             { label: "Photos Processed", value: (queueStats as any)?.completed ?? 0, color: "#1B4FD8", bg: "#EFF6FF", icon: Camera },
           ].map(s => {
             const Icon = s.icon;

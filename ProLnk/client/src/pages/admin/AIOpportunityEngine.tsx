@@ -151,7 +151,7 @@ function OpportunityCard({ opp, onAssign }: { opp: any; onAssign: (opp: any) => 
                 </div>
               ))}
               {opp.description && (
-                <p className="text-xs mt-1" style={{ color: "#7B809A" }}>{opp.description}</p>
+                <p className="text-xs mt-1" style={{ color: "#4B5563" }}>{opp.description}</p>
               )}
             </div>
           )}
@@ -159,7 +159,7 @@ function OpportunityCard({ opp, onAssign }: { opp: any; onAssign: (opp: any) => 
 
         {/* Right column: value + time + CTA */}
         <div className="text-right flex-shrink-0 space-y-2 ml-2">
-          <div className="text-xs" style={{ color: "#7B809A" }}>
+          <div className="text-xs" style={{ color: "#4B5563" }}>
             {new Date(opp.createdAt).toLocaleDateString()}
           </div>
 
@@ -169,7 +169,7 @@ function OpportunityCard({ opp, onAssign }: { opp: any; onAssign: (opp: any) => 
               className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-semibold transition-all hover:opacity-90"
               style={{
                 backgroundColor: "#F5E642",
-                color: "#0A1628",
+                color: "#F8FAFC",
               }}
             >
               <Zap className="w-3 h-3" />
@@ -271,7 +271,7 @@ export default function AIOpportunityEngine() {
           <div key={s.label} className="rounded-xl border p-4" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
             <div className="flex items-center gap-2 mb-2">
               <s.icon className="w-4 h-4" style={{ color: s.color }} />
-              <span className="text-xs" style={{ color: "#7B809A" }}>{s.label}</span>
+              <span className="text-xs" style={{ color: "#4B5563" }}>{s.label}</span>
             </div>
             <div className="font-heading text-3xl" style={{ color: s.color }}>
               {s.prefix ?? ""}{s.value.toLocaleString()}{s.suffix}
@@ -283,11 +283,11 @@ export default function AIOpportunityEngine() {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mb-6">
         {/* Detection breakdown donut */}
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-          <h3 className="font-bold text-[#344767] text-base mb-4">Detection Breakdown</h3>
+          <h3 className="font-bold text-[#1F2937] text-base mb-4">Detection Breakdown</h3>
           {detectionData.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-40">
               <Camera className="w-8 h-8 mb-2" style={{ color: "#1E3A5F" }} />
-              <p className="text-xs" style={{ color: "#7B809A" }}>No detections yet</p>
+              <p className="text-xs" style={{ color: "#4B5563" }}>No detections yet</p>
             </div>
           ) : (
             <>
@@ -307,8 +307,8 @@ export default function AIOpportunityEngine() {
                 {detectionData.slice(0, 5).map((d, i) => (
                   <div key={d.name} className="flex items-center gap-2 text-xs">
                     <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: DETECTION_COLORS[i % DETECTION_COLORS.length] }} />
-                    <span className="flex-1 truncate" style={{ color: "#344767" }}>{d.name}</span>
-                    <span className="font-mono" style={{ color: "#344767" }}>{d.value}</span>
+                    <span className="flex-1 truncate" style={{ color: "#1F2937" }}>{d.name}</span>
+                    <span className="font-mono" style={{ color: "#1F2937" }}>{d.value}</span>
                   </div>
                 ))}
               </div>
@@ -318,14 +318,14 @@ export default function AIOpportunityEngine() {
 
         {/* Conversion funnel */}
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-          <h3 className="font-bold text-[#344767] text-base mb-4">Conversion Funnel</h3>
+          <h3 className="font-bold text-[#1F2937] text-base mb-4">Conversion Funnel</h3>
           <div className="space-y-3">
             {funnelData.map((stage) => {
               const pct = funnelData[0].value > 0 ? Math.round((stage.value / funnelData[0].value) * 100) : 0;
               return (
                 <div key={stage.name}>
                   <div className="flex justify-between text-xs mb-1">
-                    <span style={{ color: "#7B809A" }}>{stage.name}</span>
+                    <span style={{ color: "#4B5563" }}>{stage.name}</span>
                     <span className="font-mono" style={{ color: stage.fill }}>{stage.value} ({pct}%)</span>
                   </div>
                   <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: "#E9ECEF" }}>
@@ -336,28 +336,28 @@ export default function AIOpportunityEngine() {
             })}
           </div>
           <div className="mt-4 pt-4 border-t" style={{ borderColor: "#E9ECEF" }}>
-            <div className="text-xs" style={{ color: "#7B809A" }}>End-to-end conversion</div>
+            <div className="text-xs" style={{ color: "#4B5563" }}>End-to-end conversion</div>
             <div className="font-heading text-2xl mt-1" style={{ color: "#10B981" }}>{conversionRate}%</div>
           </div>
         </div>
 
         {/* Revenue attribution */}
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-          <h3 className="font-bold text-[#344767] text-base mb-4">Revenue Attribution</h3>
+          <h3 className="font-bold text-[#1F2937] text-base mb-4">Revenue Attribution</h3>
           <div className="space-y-4">
             {[
-              { label: "Total Job Value", value: totalRevenue, color: "#344767", prefix: "$" },
+              { label: "Total Job Value", value: totalRevenue, color: "#1F2937", prefix: "$" },
               { label: "Platform Fees (12%)", value: platformFees, color: "#00B5B8", prefix: "$" },
               { label: "Referral Commissions (5%)", value: referralCommissions, color: "#8B5CF6", prefix: "$" },
               { label: "Net ProLnk Revenue", value: platformFees - referralCommissions, color: "#10B981", prefix: "$" },
             ].map((r) => (
               <div key={r.label} className="flex items-center justify-between">
-                <span className="text-xs" style={{ color: "#7B809A" }}>{r.label}</span>
+                <span className="text-xs" style={{ color: "#4B5563" }}>{r.label}</span>
                 <span className="font-heading text-lg" style={{ color: r.color }}>{r.prefix}{Math.round(r.value).toLocaleString()}</span>
               </div>
             ))}
           </div>
-          <div className="mt-4 pt-4 border-t text-xs" style={{ borderColor: "#E9ECEF", color: "#7B809A" }}>
+          <div className="mt-4 pt-4 border-t text-xs" style={{ borderColor: "#E9ECEF", color: "#4B5563" }}>
             Based on {closed} closed jobs from AI-detected opportunities
           </div>
         </div>
@@ -370,7 +370,7 @@ export default function AIOpportunityEngine() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
             LIVE FEED
           </div>
-          <h3 className="font-bold text-[#344767] text-base">AI Detection Feed</h3>
+          <h3 className="font-bold text-[#1F2937] text-base">AI Detection Feed</h3>
           <div className="ml-auto flex items-center gap-2">
             <div className="flex items-center gap-1">
               {["all", "pending", "routed", "accepted", "closed"].map((s) => (
@@ -392,20 +392,20 @@ export default function AIOpportunityEngine() {
               className="p-1.5 rounded-lg transition-colors hover:bg-gray-100"
               title="Refresh"
             >
-              <RefreshCw className="w-3.5 h-3.5" style={{ color: "#7B809A" }} />
+              <RefreshCw className="w-3.5 h-3.5" style={{ color: "#4B5563" }} />
             </button>
           </div>
         </div>
 
         <div>
           {isLoading && (
-            <div className="px-4 py-8 text-center text-sm" style={{ color: "#7B809A" }}>Loading opportunity feed...</div>
+            <div className="px-4 py-8 text-center text-sm" style={{ color: "#4B5563" }}>Loading opportunity feed...</div>
           )}
           {!isLoading && filtered.length === 0 && (
             <div className="flex flex-col items-center justify-center py-12 text-center">
               <Zap className="w-10 h-10 mb-3" style={{ color: "#E9ECEF" }} />
               <p className="text-sm font-medium text-gray-600">No opportunities yet</p>
-              <p className="text-xs mt-1" style={{ color: "#7B809A" }}>Opportunities appear here as partners log jobs with photos</p>
+              <p className="text-xs mt-1" style={{ color: "#4B5563" }}>Opportunities appear here as partners log jobs with photos</p>
             </div>
           )}
           {filtered.map((opp: any) => (
@@ -429,7 +429,7 @@ export default function AIOpportunityEngine() {
                   {assignOpp.opportunityType?.replace(/_/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())}
                 </p>
                 <div className="flex items-center gap-4 mt-2">
-                  <span className="text-xs" style={{ color: "#7B809A" }}>Match Score</span>
+                  <span className="text-xs" style={{ color: "#4B5563" }}>Match Score</span>
                   <div className="flex-1">
                     <MatchScoreBar score={matchScoreFromOpp(assignOpp)} />
                   </div>
@@ -447,7 +447,7 @@ export default function AIOpportunityEngine() {
 
               <div className="max-h-52 overflow-y-auto space-y-1">
                 {filteredPartners.length === 0 && (
-                  <p className="text-xs text-center py-4" style={{ color: "#7B809A" }}>No partners found</p>
+                  <p className="text-xs text-center py-4" style={{ color: "#4B5563" }}>No partners found</p>
                 )}
                 {filteredPartners.map((p: any) => (
                   <button
@@ -475,7 +475,7 @@ export default function AIOpportunityEngine() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-gray-800 truncate">{p.businessName ?? `${p.firstName} ${p.lastName}`}</p>
-                      {p.trade && <p className="text-xs truncate" style={{ color: "#7B809A" }}>{p.trade}</p>}
+                      {p.trade && <p className="text-xs truncate" style={{ color: "#4B5563" }}>{p.trade}</p>}
                     </div>
                     <Award className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#F59E0B" }} />
                   </button>

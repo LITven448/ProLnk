@@ -58,11 +58,11 @@ function CityCard({ city }: CityCardProps) {
   const ratio = city.proCount ? (city.homeownerCount / city.proCount).toFixed(1) : "∞";
 
   return (
-    <div className="bg-slate-800 rounded-xl border border-slate-700 p-5 hover:border-slate-600 transition-colors">
+    <div className="bg-white rounded-xl border border-gray-200 p-5 hover:border-gray-300 transition-colors">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0" />
-          <span className="font-semibold text-white">{city.city}</span>
+          <MapPin className="w-4 h-4 text-teal-700 flex-shrink-0" />
+          <span className="font-semibold text-gray-900">{city.city}</span>
         </div>
         <span
           className="flex items-center gap-1 text-xs px-2 py-1 rounded-full font-semibold"
@@ -74,28 +74,28 @@ function CityCard({ city }: CityCardProps) {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-4">
-        <div className="bg-slate-700/50 rounded-lg p-3">
+        <div className="bg-gray-100/50 rounded-lg p-3">
           <div className="flex items-center gap-1.5 mb-1">
-            <Users className="w-3 h-3 text-teal-400" />
-            <span className="text-xs text-slate-400">Pros</span>
+            <Users className="w-3 h-3 text-teal-700" />
+            <span className="text-xs text-gray-500">Pros</span>
           </div>
-          <span className="text-xl font-bold text-white">{city.proCount}</span>
+          <span className="text-xl font-bold text-gray-900">{city.proCount}</span>
         </div>
-        <div className="bg-slate-700/50 rounded-lg p-3">
+        <div className="bg-gray-100/50 rounded-lg p-3">
           <div className="flex items-center gap-1.5 mb-1">
             <Home className="w-3 h-3 text-blue-400" />
-            <span className="text-xs text-slate-400">Homeowners</span>
+            <span className="text-xs text-gray-500">Homeowners</span>
           </div>
-          <span className="text-xl font-bold text-white">{city.homeownerCount}</span>
+          <span className="text-xl font-bold text-gray-900">{city.homeownerCount}</span>
         </div>
       </div>
 
       <div className="space-y-2">
         <div className="flex justify-between items-center text-xs">
-          <span className="text-slate-400">Coverage</span>
-          <span className="font-semibold text-white">{city.coveragePct}%</span>
+          <span className="text-gray-500">Coverage</span>
+          <span className="font-semibold text-gray-900">{city.coveragePct}%</span>
         </div>
-        <div className="h-1.5 rounded-full bg-slate-700 overflow-hidden">
+        <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
           <div
             className="h-full rounded-full transition-all"
             style={{
@@ -104,8 +104,8 @@ function CityCard({ city }: CityCardProps) {
             }}
           />
         </div>
-        <div className="flex justify-between text-xs text-slate-500">
-          <span>Top trade: <span className="text-slate-300">{city.topTrade}</span></span>
+        <div className="flex justify-between text-xs text-gray-500">
+          <span>Top trade: <span className="text-gray-700">{city.topTrade}</span></span>
           <span>{ratio} HOs/pro</span>
         </div>
       </div>
@@ -127,18 +127,18 @@ export default function GeoExpansionMap() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#F8FAFC] p-6 space-y-8">
 
         {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <MapPin className="w-6 h-6 text-teal-400" />
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <MapPin className="w-6 h-6 text-teal-700" />
               Geo Expansion Map
             </h1>
-            <p className="text-slate-400 mt-1 text-sm">Market readiness across DFW — 10 cities tracked</p>
+            <p className="text-gray-500 mt-1 text-sm">Market readiness across DFW — 10 cities tracked</p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white text-sm font-semibold transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-gray-900 text-sm font-semibold transition-colors">
             <Plus className="w-4 h-4" />
             Launch New Market
           </button>
@@ -152,26 +152,26 @@ export default function GeoExpansionMap() {
             { label: "Active Markets",      value: `${activeCount}/10`,    icon: CheckCircle,  color: "#34d399" },
             { label: "Markets Need Pros",   value: needsProCount.toString(), icon: AlertTriangle, color: "#f59e0b" },
           ].map((k) => (
-            <div key={k.label} className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+            <div key={k.label} className="bg-white rounded-xl p-5 border border-gray-200">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{k.label}</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-gray-500">{k.label}</span>
                 <k.icon className="w-4 h-4" style={{ color: k.color }} />
               </div>
-              <div className="text-2xl font-bold text-white">{k.value}</div>
+              <div className="text-2xl font-bold text-gray-900">{k.value}</div>
             </div>
           ))}
         </div>
 
         {/* Filter tabs */}
         <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-400">Show:</span>
-          <div className="flex rounded-lg overflow-hidden border border-slate-700">
+          <span className="text-sm text-gray-500">Show:</span>
+          <div className="flex rounded-lg overflow-hidden border border-gray-200">
             {(["All", "Active", "Ready to Launch", "Needs Pros"] as const).map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  filter === f ? "bg-teal-500 text-white" : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+                  filter === f ? "bg-teal-500 text-gray-900" : "bg-white text-gray-500 hover:bg-gray-100"
                 }`}
               >
                 {f}
@@ -188,28 +188,28 @@ export default function GeoExpansionMap() {
         </div>
 
         {/* Priority List */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-amber-400" />
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-amber-700" />
               Priority: High Demand, Low Supply
             </h2>
-            <p className="text-xs text-slate-400 mt-0.5">Cities with the most homeowner demand relative to pro count</p>
+            <p className="text-xs text-gray-500 mt-0.5">Cities with the most homeowner demand relative to pro count</p>
           </div>
-          <div className="divide-y divide-slate-700/50">
+          <div className="divide-y divide-gray-200/50">
             {PRIORITY_LIST.map((city, i) => {
               const cfg = STATUS_CONFIG[city.status];
               const StatusIcon = cfg.icon;
               const gap = city.homeownerCount - city.proCount * 5;
               return (
-                <div key={city.city} className="flex items-center gap-4 px-6 py-4 hover:bg-slate-700/30 transition-colors">
-                  <span className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-300 flex-shrink-0">
+                <div key={city.city} className="flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
+                  <span className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 flex-shrink-0">
                     {i + 1}
                   </span>
-                  <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 text-teal-700 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-white">{city.city}</span>
+                      <span className="font-medium text-gray-900">{city.city}</span>
                       <span
                         className="flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-full"
                         style={{ color: cfg.color, background: cfg.bg }}
@@ -218,15 +218,15 @@ export default function GeoExpansionMap() {
                         {cfg.label}
                       </span>
                     </div>
-                    <div className="text-xs text-slate-400 mt-0.5">
+                    <div className="text-xs text-gray-500 mt-0.5">
                       {city.homeownerCount} homeowners · only {city.proCount} pros · {city.topTrade} demand
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-bold text-amber-400">+{Math.max(0, gap)} gap</div>
-                    <div className="text-xs text-slate-500">demand vs supply</div>
+                    <div className="text-sm font-bold text-amber-700">+{Math.max(0, gap)} gap</div>
+                    <div className="text-xs text-gray-500">demand vs supply</div>
                   </div>
-                  <button className="ml-2 text-xs px-3 py-1.5 rounded-lg bg-teal-500/20 text-teal-400 hover:bg-teal-500/30 font-semibold transition-colors whitespace-nowrap">
+                  <button className="ml-2 text-xs px-3 py-1.5 rounded-lg bg-teal-500/20 text-teal-700 hover:bg-teal-500/30 font-semibold transition-colors whitespace-nowrap">
                     Recruit Pros
                   </button>
                 </div>

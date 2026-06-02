@@ -80,13 +80,13 @@ interface KpiCardProps {
 
 function KpiCard({ label, value, sub, icon: Icon, iconColor }: KpiCardProps) {
   return (
-    <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+    <div className="bg-white rounded-xl p-5 border border-gray-200">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{label}</span>
+        <span className="text-xs font-semibold uppercase tracking-widest text-gray-500">{label}</span>
         <Icon className="w-5 h-5" style={{ color: iconColor }} />
       </div>
-      <div className="text-2xl font-bold text-white">{value}</div>
-      <div className="text-xs text-slate-400 mt-1">{sub}</div>
+      <div className="text-2xl font-bold text-gray-900">{value}</div>
+      <div className="text-xs text-gray-500 mt-1">{sub}</div>
     </div>
   );
 }
@@ -98,27 +98,27 @@ export default function LeadQualityCenter() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#F8FAFC] p-6 space-y-8">
 
         {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Target className="w-6 h-6 text-teal-400" />
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <Target className="w-6 h-6 text-teal-700" />
               Lead Quality Center
             </h1>
-            <p className="text-slate-400 mt-1 text-sm">Acceptance rates, quality scoring, and flagged activity by trade</p>
+            <p className="text-gray-500 mt-1 text-sm">Acceptance rates, quality scoring, and flagged activity by trade</p>
           </div>
           <div className="flex items-center gap-2">
-            <Filter className="w-4 h-4 text-slate-400" />
-            <span className="text-sm text-slate-400">Date range:</span>
-            <div className="flex rounded-lg overflow-hidden border border-slate-700">
+            <Filter className="w-4 h-4 text-gray-500" />
+            <span className="text-sm text-gray-500">Date range:</span>
+            <div className="flex rounded-lg overflow-hidden border border-gray-200">
               {(["7d", "30d", "90d"] as DateRange[]).map((r) => (
                 <button
                   key={r}
                   onClick={() => setRange(r)}
                   className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
-                    range === r ? "bg-teal-500 text-white" : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+                    range === r ? "bg-teal-500 text-gray-900" : "bg-white text-gray-500 hover:bg-gray-100"
                   }`}
                 >
                   {r}
@@ -137,17 +137,17 @@ export default function LeadQualityCenter() {
         </div>
 
         {/* Quality Breakdown by Trade */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <BarChart2 className="w-4 h-4 text-teal-400" />
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <BarChart2 className="w-4 h-4 text-teal-700" />
               Lead Quality Breakdown by Trade
             </h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-700 text-slate-400 text-xs uppercase tracking-wider">
+                <tr className="border-b border-gray-200 text-gray-500 text-xs uppercase tracking-wider">
                   <th className="text-left px-6 py-3">Trade</th>
                   <th className="text-center px-3 py-3">High Quality</th>
                   <th className="text-center px-3 py-3">Medium</th>
@@ -158,8 +158,8 @@ export default function LeadQualityCenter() {
               </thead>
               <tbody>
                 {TRADE_QUALITY.map((t) => (
-                  <tr key={t.trade} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
-                    <td className="px-6 py-3 font-medium text-white">{t.trade}</td>
+                  <tr key={t.trade} className="border-b border-gray-200/50 hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-3 font-medium text-gray-900">{t.trade}</td>
                     <td className="px-3 py-3">
                       <div className="flex items-center justify-center gap-1">
                         <div className="h-1.5 rounded-full bg-emerald-500" style={{ width: `${t.high * 0.7}px` }} />
@@ -169,24 +169,24 @@ export default function LeadQualityCenter() {
                     <td className="px-3 py-3">
                       <div className="flex items-center justify-center gap-1">
                         <div className="h-1.5 rounded-full bg-amber-500" style={{ width: `${t.medium * 0.7}px` }} />
-                        <span className="text-amber-400 text-xs font-semibold">{t.medium}%</span>
+                        <span className="text-amber-700 text-xs font-semibold">{t.medium}%</span>
                       </div>
                     </td>
                     <td className="px-3 py-3">
                       <div className="flex items-center justify-center gap-1">
                         <div className="h-1.5 rounded-full bg-red-500" style={{ width: `${t.low * 0.7}px` }} />
-                        <span className="text-red-400 text-xs font-semibold">{t.low}%</span>
+                        <span className="text-red-600 text-xs font-semibold">{t.low}%</span>
                       </div>
                     </td>
                     <td className="px-4 py-3 text-center">
                       <div className="inline-flex items-center gap-1">
-                        <div className="w-16 h-1.5 rounded-full bg-slate-700 overflow-hidden">
+                        <div className="w-16 h-1.5 rounded-full bg-gray-100 overflow-hidden">
                           <div className="h-full rounded-full bg-teal-500" style={{ width: `${t.acceptRate}%` }} />
                         </div>
-                        <span className="text-teal-400 text-xs font-bold">{t.acceptRate}%</span>
+                        <span className="text-teal-700 text-xs font-bold">{t.acceptRate}%</span>
                       </div>
                     </td>
-                    <td className="px-6 py-3 text-right text-slate-300 text-xs">{t.avgResponseMin} min</td>
+                    <td className="px-6 py-3 text-right text-gray-700 text-xs">{t.avgResponseMin} min</td>
                   </tr>
                 ))}
               </tbody>
@@ -197,10 +197,10 @@ export default function LeadQualityCenter() {
         <div className="grid lg:grid-cols-2 gap-6">
 
           {/* Rejection Reasons */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <XCircle className="w-4 h-4 text-red-400" />
+          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-200">
+              <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+                <XCircle className="w-4 h-4 text-red-600" />
                 Lead Rejection Reasons
               </h2>
             </div>
@@ -208,10 +208,10 @@ export default function LeadQualityCenter() {
               {REJECTION_REASONS.map((r) => (
                 <div key={r.reason} className="space-y-1.5">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-300">{r.reason}</span>
-                    <span className="font-bold text-white">{r.count}</span>
+                    <span className="text-gray-700">{r.reason}</span>
+                    <span className="font-bold text-gray-900">{r.count}</span>
                   </div>
-                  <div className="h-2 rounded-full bg-slate-700 overflow-hidden">
+                  <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
                     <div
                       className="h-full rounded-full transition-all"
                       style={{
@@ -222,41 +222,41 @@ export default function LeadQualityCenter() {
                   </div>
                 </div>
               ))}
-              <div className="pt-2 text-xs text-slate-500 border-t border-slate-700 mt-4">
+              <div className="pt-2 text-xs text-gray-500 border-t border-gray-200 mt-4">
                 522 rejections total in selected period
               </div>
             </div>
           </div>
 
           {/* Flagged Leads */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700 flex items-center justify-between">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <Flag className="w-4 h-4 text-amber-400" />
+          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+              <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+                <Flag className="w-4 h-4 text-amber-700" />
                 Flagged Leads
               </h2>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-semibold">
+              <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700 font-semibold">
                 {FLAGGED_LEADS.length} active
               </span>
             </div>
-            <div className="divide-y divide-slate-700/50">
+            <div className="divide-y divide-gray-200/50">
               {FLAGGED_LEADS.map((lead) => (
-                <div key={lead.id} className="flex items-start gap-3 px-6 py-4 hover:bg-slate-700/30 transition-colors">
+                <div key={lead.id} className="flex items-start gap-3 px-6 py-4 hover:bg-gray-50 transition-colors">
                   <div className={`mt-0.5 w-2 h-2 rounded-full flex-shrink-0 ${lead.severity === "high" ? "bg-red-500" : "bg-amber-500"}`} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono text-slate-500">{lead.id}</span>
-                      <span className="text-sm font-medium text-white">{lead.homeowner}</span>
-                      <span className="text-xs px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">{lead.trade}</span>
+                      <span className="text-xs font-mono text-gray-500">{lead.id}</span>
+                      <span className="text-sm font-medium text-gray-900">{lead.homeowner}</span>
+                      <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-700">{lead.trade}</span>
                     </div>
-                    <div className="text-xs text-slate-400 mt-0.5">{lead.flag}</div>
+                    <div className="text-xs text-gray-500 mt-0.5">{lead.flag}</div>
                   </div>
-                  <div className="text-xs text-slate-500 flex-shrink-0">{lead.submitted}</div>
+                  <div className="text-xs text-gray-500 flex-shrink-0">{lead.submitted}</div>
                 </div>
               ))}
             </div>
-            <div className="px-6 py-3 border-t border-slate-700">
-              <button className="text-xs text-teal-400 hover:text-teal-300 font-semibold">
+            <div className="px-6 py-3 border-t border-gray-200">
+              <button className="text-xs text-teal-700 hover:text-teal-700 font-semibold">
                 View all flagged leads →
               </button>
             </div>

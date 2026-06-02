@@ -8,7 +8,7 @@ import { Users, DollarSign, Award, Search, TrendingUp, CheckCircle, XCircle, Arr
 const LEVEL_META: Record<number, { name: string; cap: number; color: string; bg: string; border: string; accent: string }> = {
   1: { name: "Charter",  cap: 25,   color: "#FCD34D", bg: "rgba(252,211,77,0.12)",  border: "rgba(252,211,77,0.25)",  accent: "#F59E0B" },
   2: { name: "Founding", cap: 100,  color: "#60A5FA", bg: "rgba(96,165,250,0.12)",  border: "rgba(96,165,250,0.25)",  accent: "#3B82F6" },
-  3: { name: "L3",       cap: 400,  color: "#A78BFA", bg: "rgba(167,139,250,0.12)", border: "rgba(167,139,250,0.25)", accent: "#7C3AED" },
+  3: { name: "L3",       cap: 400,  color: "#A78BFA", bg: "rgba(167,139,250,0.12)", border: "rgba(167,139,250,0.25)", accent: "#0D9488" },
   4: { name: "L4",       cap: 1600, color: "#6EE7B7", bg: "rgba(110,231,183,0.12)", border: "rgba(110,231,183,0.25)", accent: "#10B981" },
 };
 

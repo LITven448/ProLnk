@@ -102,7 +102,7 @@ export default function HomeIntelligence() {
                 <div>
                   <div className="text-xl font-bold text-gray-800">{item.value}</div>
                   <div className="text-xs font-medium" style={{ color: "#9CA3AF" }}>{item.label}</div>
-                  <div className="text-[10px]" style={{ color: "#7B809A" }}>{item.sub}</div>
+                  <div className="text-[10px]" style={{ color: "#4B5563" }}>{item.sub}</div>
                 </div>
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function HomeIntelligence() {
         </div>
 
         {/* -- Tab Navigation -- */}
-        <div className="flex gap-1 mb-6 p-1 rounded-xl w-fit" style={{ backgroundColor: "#0A1628" }}>
+        <div className="flex gap-1 mb-6 p-1 rounded-xl w-fit" style={{ backgroundColor: "#F8FAFC" }}>
           {[
             { id: "profiles", label: "Home Profiles", icon: Home },
             { id: "detections", label: "AI Detections", icon: Brain },
@@ -136,7 +136,7 @@ export default function HomeIntelligence() {
         {activeTab === "profiles" && (
           <div className="space-y-3">
             <div className="flex items-center justify-between mb-2">
-              <p className="text-sm" style={{ color: "#7B809A" }}>Showing {displayProfiles.length} of {homeProfiles} profiles -- sorted by urgency</p>
+              <p className="text-sm" style={{ color: "#4B5563" }}>Showing {displayProfiles.length} of {homeProfiles} profiles -- sorted by urgency</p>
               <div className="flex items-center gap-2 text-xs">
                 <span className="flex items-center gap-1.5" style={{ color: "#EF4444" }}>
                   <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#EF4444" }} /> Urgent
@@ -160,7 +160,7 @@ export default function HomeIntelligence() {
                   <ScoreRing score={profile.score} />
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-medium text-gray-800 truncate">{profile.address}</div>
-                    <div className="text-xs mt-0.5" style={{ color: "#7B809A" }}>
+                    <div className="text-xs mt-0.5" style={{ color: "#4B5563" }}>
                       {profile.issues} issue{profile.issues !== 1 ? "s" : ""} detected  Last scan {profile.lastScan}
                     </div>
                     <div className="text-xs mt-1 flex items-center gap-1" style={{ color: statusColor }}>
@@ -176,14 +176,14 @@ export default function HomeIntelligence() {
                     }}>
                       {profile.status}
                     </span>
-                    <span className="text-xs font-mono" style={{ color: "#7B809A" }}>{profile.id}</span>
-                    <ChevronRight className="w-4 h-4" style={{ color: "#7B809A" }} />
+                    <span className="text-xs font-mono" style={{ color: "#4B5563" }}>{profile.id}</span>
+                    <ChevronRight className="w-4 h-4" style={{ color: "#4B5563" }} />
                   </div>
                 </div>
               );
             })}
             <div className="rounded-xl border border-dashed p-4 text-center" style={{ borderColor: "#E9ECEF" }}>
-              <p className="text-sm" style={{ color: "#7B809A" }}>
+              <p className="text-sm" style={{ color: "#4B5563" }}>
                 + {Math.max(0, homeProfiles - displayProfiles.length).toLocaleString()} more profiles in database
               </p>
             </div>
@@ -195,7 +195,7 @@ export default function HomeIntelligence() {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
             {/* Detection categories */}
             <div className="rounded-2xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-              <h3 className="font-bold text-[#344767] text-base font-semibold mb-4">Issue Categories Detected</h3>
+              <h3 className="font-bold text-[#1F2937] text-base font-semibold mb-4">Issue Categories Detected</h3>
               <div className="space-y-3">
                 {DETECTION_CATEGORIES.map((cat) => {
                   const maxCount = Math.max(...DETECTION_CATEGORIES.map(c => c.count));
@@ -232,7 +232,7 @@ export default function HomeIntelligence() {
 
             {/* Condition score distribution */}
             <div className="rounded-2xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-              <h3 className="font-bold text-[#344767] text-base font-semibold mb-4">Condition Score Distribution</h3>
+              <h3 className="font-bold text-[#1F2937] text-base font-semibold mb-4">Condition Score Distribution</h3>
               <div className="h-52 mb-4">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
@@ -270,7 +270,7 @@ export default function HomeIntelligence() {
 
             {/* AI Performance Metrics */}
             <div className="xl:col-span-2 rounded-2xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-              <h3 className="font-bold text-[#344767] text-base font-semibold mb-4">AI Detection Performance</h3>
+              <h3 className="font-bold text-[#1F2937] text-base font-semibold mb-4">AI Detection Performance</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
                   { label: "Detection Accuracy", value: "94.2%", sub: "Validated by partner feedback", icon: Brain, color: "#00B5B8" },
@@ -278,13 +278,13 @@ export default function HomeIntelligence() {
                   { label: "Issues per Home", value: "2.1", sub: "Average across all profiles", icon: AlertTriangle, color: "#F59E0B" },
                   { label: "Match Rate", value: "87%", sub: "Leads matched to partners", icon: CheckCircle, color: "#10B981" },
                 ].map((m) => (
-                  <div key={m.label} className="rounded-xl p-4" style={{ backgroundColor: "#0A1628" }}>
+                  <div key={m.label} className="rounded-xl p-4" style={{ backgroundColor: "#F8FAFC" }}>
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: `${m.color}20` }}>
                       <m.icon className="w-4 h-4" style={{ color: m.color }} />
                     </div>
                     <div className="text-2xl font-bold text-gray-800">{m.value}</div>
                     <div className="text-xs font-medium mt-0.5" style={{ color: "#9CA3AF" }}>{m.label}</div>
-                    <div className="text-[10px] mt-0.5" style={{ color: "#7B809A" }}>{m.sub}</div>
+                    <div className="text-[10px] mt-0.5" style={{ color: "#4B5563" }}>{m.sub}</div>
                   </div>
                 ))}
               </div>
@@ -299,8 +299,8 @@ export default function HomeIntelligence() {
             <div className="rounded-2xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h3 className="font-bold text-[#344767] text-base font-semibold">Scan Volume & Profile Growth</h3>
-                  <p className="text-xs mt-0.5" style={{ color: "#7B809A" }}>12-month trajectory -- core acquisition metric</p>
+                  <h3 className="font-bold text-[#1F2937] text-base font-semibold">Scan Volume & Profile Growth</h3>
+                  <p className="text-xs mt-0.5" style={{ color: "#4B5563" }}>12-month trajectory -- core acquisition metric</p>
                 </div>
                 <div className="flex items-center gap-4 text-xs">
                   <span className="flex items-center gap-1.5" style={{ color: "#00B5B8" }}>
@@ -315,8 +315,8 @@ export default function HomeIntelligence() {
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={SCAN_TREND} margin={{ top: 0, right: 0, bottom: 0, left: -20 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E9ECEF" vertical={false} />
-                    <XAxis dataKey="month" tick={{ fill: "#7B809A", fontSize: 11 }} axisLine={false} tickLine={false} />
-                    <YAxis tick={{ fill: "#7B809A", fontSize: 11 }} axisLine={false} tickLine={false} />
+                    <XAxis dataKey="month" tick={{ fill: "#4B5563", fontSize: 11 }} axisLine={false} tickLine={false} />
+                    <YAxis tick={{ fill: "#4B5563", fontSize: 11 }} axisLine={false} tickLine={false} />
                     <Tooltip
                       contentStyle={{ backgroundColor: "#FFFFFF", border: "1px solid #E9ECEF", borderRadius: 8, color: "#fff" }}
                       labelStyle={{ color: "#9CA3AF" }}
@@ -375,7 +375,7 @@ export default function HomeIntelligence() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 pt-3 border-t text-[10px]" style={{ borderColor: "#E9ECEF", color: "#7B809A" }}>
+                  <div className="mt-4 pt-3 border-t text-[10px]" style={{ borderColor: "#E9ECEF", color: "#4B5563" }}>
                     {section.note}
                   </div>
                 </div>
@@ -386,7 +386,7 @@ export default function HomeIntelligence() {
             <div className="rounded-2xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
               <div className="flex items-center gap-3 mb-4">
                 <TrendingUp className="w-5 h-5" style={{ color: "#00B5B8" }} />
-                <h3 className="font-bold text-[#344767] text-base font-semibold">National Scale Projection</h3>
+                <h3 className="font-bold text-[#1F2937] text-base font-semibold">National Scale Projection</h3>
                 <span className="text-xs px-2 py-0.5 rounded-full ml-auto" style={{ backgroundColor: "rgba(0,181,184,0.1)", color: "#00B5B8" }}>
                   Acquisition Thesis
                 </span>
@@ -399,11 +399,11 @@ export default function HomeIntelligence() {
                   { phase: "Phase 4", label: "National", profiles: "72M", timeline: "Year 5-7", color: "#10B981" },
                   { phase: "Exit", label: "Acquisition", profiles: "$9B+", timeline: "Year 7", color: "#EF4444" },
                 ].map((p) => (
-                  <div key={p.phase} className="rounded-xl p-4 text-center" style={{ backgroundColor: "#0A1628" }}>
+                  <div key={p.phase} className="rounded-xl p-4 text-center" style={{ backgroundColor: "#F8FAFC" }}>
                     <div className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: p.color }}>{p.phase}</div>
                     <div className="text-lg font-bold text-gray-800">{p.profiles}</div>
                     <div className="text-xs mt-0.5" style={{ color: "#9CA3AF" }}>{p.label}</div>
-                    <div className="text-[10px] mt-1" style={{ color: "#7B809A" }}>{p.timeline}</div>
+                    <div className="text-[10px] mt-1" style={{ color: "#4B5563" }}>{p.timeline}</div>
                   </div>
                 ))}
               </div>

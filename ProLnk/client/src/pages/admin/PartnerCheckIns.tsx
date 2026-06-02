@@ -94,7 +94,7 @@ export default function PartnerCheckIns() {
       </div>
 
       {/* Churn Risk Banner */}
-      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-600 text-white">
+      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-600 text-gray-900">
         <AlertTriangle className="w-5 h-5 flex-shrink-0" />
         <span className="text-sm font-semibold">3 partners haven&apos;t had a check-in in 30+ days — at churn risk</span>
         <button onClick={scheduleAll} className="ml-auto px-3 py-1.5 bg-white text-red-600 rounded-lg text-xs font-bold hover:bg-red-50 transition-colors whitespace-nowrap">
@@ -166,7 +166,7 @@ export default function PartnerCheckIns() {
                     {p.scheduled ? (
                       <span className="text-xs text-green-600 font-semibold">Scheduled ✓</span>
                     ) : (
-                      <button onClick={() => scheduleOne(p.id)} className="px-3 py-1 bg-blue-600 text-white rounded-lg text-xs hover:bg-blue-700 transition-colors">
+                      <button onClick={() => scheduleOne(p.id)} className="px-3 py-1 bg-blue-600 text-gray-900 rounded-lg text-xs hover:bg-blue-700 transition-colors">
                         Schedule
                       </button>
                     )}
@@ -235,7 +235,7 @@ export default function PartnerCheckIns() {
       <div className="flex items-center gap-3">
         <Filter className="w-4 h-4 text-gray-400" />
         {["all", "job_start", "job_progress", "job_complete", "site_visit", "estimate"].map(f => (
-          <button key={f} onClick={() => setFilter(f)} className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${filter === f ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}>
+          <button key={f} onClick={() => setFilter(f)} className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${filter === f ? "bg-[#F8FAFC] text-gray-900" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}>
             {f === "all" ? "All" : f.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
           </button>
         ))}

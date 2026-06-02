@@ -30,12 +30,12 @@ function PayoutMethodBadge({ status }: { status: string }) {
     </Badge>
   );
   if (status === "pending") return (
-    <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 text-xs gap-1">
+    <Badge className="bg-amber-500/20 text-amber-700 border-amber-500/30 text-xs gap-1">
       <Clock className="w-3 h-3" /> Stripe Pending
     </Badge>
   );
   return (
-    <Badge className="bg-slate-500/20 text-slate-400 border-slate-500/30 text-xs">
+    <Badge className="bg-slate-500/20 text-gray-500 border-slate-500/30 text-xs">
       Paper Check
     </Badge>
   );
@@ -206,13 +206,13 @@ export default function Payouts() {
         <div className="flex items-center justify-between flex-wrap gap-3">
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Payout Center</h1>
-            <p className="text-slate-500 text-sm mt-1">Process partner commission payouts via Stripe or paper check</p>
+            <p className="text-gray-500 text-sm mt-1">Process partner commission payouts via Stripe or paper check</p>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={exportCSV} className="border-slate-300 text-slate-600 hover:bg-slate-50 gap-1">
+            <Button variant="outline" size="sm" onClick={exportCSV} className="border-slate-300 text-gray-400 hover:bg-slate-50 gap-1">
               <Download className="w-4 h-4" /> Export CSV
             </Button>
-            <Button variant="outline" size="sm" onClick={() => { refetchQueue(); refetchStats(); }} className="border-slate-300 text-slate-600 hover:bg-slate-50 gap-1">
+            <Button variant="outline" size="sm" onClick={() => { refetchQueue(); refetchStats(); }} className="border-slate-300 text-gray-400 hover:bg-slate-50 gap-1">
               <RefreshCw className="w-4 h-4" /> Refresh
             </Button>
           </div>
@@ -233,7 +233,7 @@ export default function Payouts() {
                     <s.icon className={`w-5 h-5 ${s.color}`} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500">{s.label}</p>
+                    <p className="text-xs text-gray-500">{s.label}</p>
                     <p className={`text-xl font-bold ${s.color}`}>{s.value}</p>
                   </div>
                 </div>
@@ -266,7 +266,7 @@ export default function Payouts() {
                 size="sm"
                 disabled={bulkProcessing}
                 onClick={handleBulkPay}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white gap-1"
+                className="bg-emerald-600 hover:bg-emerald-500 text-gray-900 gap-1"
               >
                 {bulkProcessing ? (
                   <><Loader2 className="w-3 h-3 animate-spin" /> Processing...</>
@@ -298,7 +298,7 @@ export default function Payouts() {
                     <button
                       key={f}
                       onClick={() => setMethodFilter(f)}
-                      className={`px-3 py-1.5 capitalize transition-colors ${methodFilter === f ? "bg-blue-600 text-white" : "text-slate-600 hover:bg-gray-50"}`}
+                      className={`px-3 py-1.5 capitalize transition-colors ${methodFilter === f ? "bg-blue-600 text-gray-900" : "text-gray-400 hover:bg-gray-50"}`}
                     >
                       {f === "all" ? "All" : f === "stripe" ? "Stripe" : "Paper Check"}
                     </button>
@@ -306,12 +306,12 @@ export default function Payouts() {
                 </div>
                 {/* Search */}
                 <div className="relative w-52">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                   <Input
                     placeholder="Search partner..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="pl-9 border-gray-200 text-gray-800 placeholder:text-slate-400 text-sm h-8"
+                    className="pl-9 border-gray-200 text-gray-800 placeholder:text-gray-500 text-sm h-8"
                   />
                 </div>
               </div>
@@ -320,13 +320,13 @@ export default function Payouts() {
           <CardContent>
             {isLoading ? (
               <div className="flex items-center justify-center py-12">
-                <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
+                <Loader2 className="w-6 h-6 animate-spin text-gray-500" />
               </div>
             ) : filtered.length === 0 ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
                 <p className="text-gray-700 font-medium">All caught up!</p>
-                <p className="text-slate-500 text-sm">No pending commissions to pay out.</p>
+                <p className="text-gray-500 text-sm">No pending commissions to pay out.</p>
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -340,12 +340,12 @@ export default function Payouts() {
                           aria-label="Select all"
                         />
                       </th>
-                      <th className="text-left py-3 px-2 text-slate-500 font-medium">Receiving Partner</th>
-                      <th className="text-left py-3 px-2 text-slate-500 font-medium">Paying Partner</th>
-                      <th className="text-left py-3 px-2 text-slate-500 font-medium">Type</th>
-                      <th className="text-left py-3 px-2 text-slate-500 font-medium">Description</th>
+                      <th className="text-left py-3 px-2 text-gray-500 font-medium">Receiving Partner</th>
+                      <th className="text-left py-3 px-2 text-gray-500 font-medium">Paying Partner</th>
+                      <th className="text-left py-3 px-2 text-gray-500 font-medium">Type</th>
+                      <th className="text-left py-3 px-2 text-gray-500 font-medium">Description</th>
                       <th
-                        className="text-right py-3 px-2 text-slate-500 font-medium cursor-pointer select-none"
+                        className="text-right py-3 px-2 text-gray-500 font-medium cursor-pointer select-none"
                         onClick={() => setSortDir(d => d === "desc" ? "asc" : "desc")}
                       >
                         <span className="flex items-center justify-end gap-1">
@@ -353,8 +353,8 @@ export default function Payouts() {
                           {sortDir === "desc" ? <ChevronDown className="w-3 h-3" /> : <ChevronUp className="w-3 h-3" />}
                         </span>
                       </th>
-                      <th className="text-left py-3 px-2 text-slate-500 font-medium">Method</th>
-                      <th className="text-right py-3 px-2 text-slate-500 font-medium">Action</th>
+                      <th className="text-left py-3 px-2 text-gray-500 font-medium">Method</th>
+                      <th className="text-right py-3 px-2 text-gray-500 font-medium">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -370,13 +370,13 @@ export default function Payouts() {
                         <td className="py-3 px-2">
                           <div className="font-medium text-gray-800">{c.receivingPartnerName ?? "ProLnk Platform"}</div>
                           {c.receivingPartnerEmail && (
-                            <div className="text-xs text-slate-400">{c.receivingPartnerEmail}</div>
+                            <div className="text-xs text-gray-500">{c.receivingPartnerEmail}</div>
                           )}
                         </td>
                         <td className="py-3 px-2">
                           <div className="text-gray-700">{c.payingPartnerName ?? "—"}</div>
                           {c.payingPartnerEmail && (
-                            <div className="text-xs text-slate-400">{c.payingPartnerEmail}</div>
+                            <div className="text-xs text-gray-500">{c.payingPartnerEmail}</div>
                           )}
                         </td>
                         <td className="py-3 px-2">
@@ -384,7 +384,7 @@ export default function Payouts() {
                             {(c.commissionType ?? "").replace(/_/g, " ")}
                           </Badge>
                         </td>
-                        <td className="py-3 px-2 text-slate-600 max-w-[180px] truncate">
+                        <td className="py-3 px-2 text-gray-400 max-w-[180px] truncate">
                           {c.description ?? "Commission payout"}
                         </td>
                         <td className="py-3 px-2 text-right">
@@ -400,7 +400,7 @@ export default function Payouts() {
                             size="sm"
                             disabled={processingId === c.id || bulkProcessing}
                             onClick={() => handlePay(c.id)}
-                            className="bg-teal-600 hover:bg-teal-500 text-white text-xs h-7 px-3 gap-1"
+                            className="bg-teal-600 hover:bg-teal-500 text-gray-900 text-xs h-7 px-3 gap-1"
                           >
                             {processingId === c.id ? (
                               <Loader2 className="w-3 h-3 animate-spin" />
@@ -460,7 +460,7 @@ export default function Payouts() {
                       toast.success(`${ok} approved${fail > 0 ? `, ${fail} failed` : ""}`);
                       refetchRequests();
                     }}
-                    className="px-3 py-1 rounded-lg text-xs font-semibold bg-green-600 text-white hover:bg-green-700 transition-all"
+                    className="px-3 py-1 rounded-lg text-xs font-semibold bg-green-600 text-gray-900 hover:bg-green-700 transition-all"
                   >
                     Approve All Pending
                   </button>
@@ -468,7 +468,7 @@ export default function Payouts() {
                 <button
                   onClick={() => setRequestStatusFilter("pending")}
                   className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                    requestStatusFilter === "pending" ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    requestStatusFilter === "pending" ? "bg-[#F8FAFC] text-gray-900" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
                   Pending
@@ -476,7 +476,7 @@ export default function Payouts() {
                 <button
                   onClick={() => setRequestStatusFilter("all")}
                   className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                    requestStatusFilter === "all" ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    requestStatusFilter === "all" ? "bg-[#F8FAFC] text-gray-900" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
                   All
@@ -521,7 +521,7 @@ export default function Payouts() {
                           <Button
                             size="sm"
                             onClick={() => { setReviewingRequest(req); setAdminNote(""); }}
-                            className="bg-[#0A1628] hover:bg-[#1a2d4a] text-white text-xs h-7 px-3 gap-1"
+                            className="bg-[#F8FAFC] hover:bg-[#1a2d4a] text-gray-900 text-xs h-7 px-3 gap-1"
                           >
                             <Send className="w-3 h-3" /> Review
                           </Button>
@@ -593,7 +593,7 @@ export default function Payouts() {
             <Button
               onClick={() => reviewMutation.mutate({ requestId: reviewingRequest.id, action: 'approved', adminNote: adminNote || undefined })}
               disabled={reviewMutation.isPending || reviewingRequest?.stripeConnectStatus !== 'active'}
-              className="bg-emerald-600 hover:bg-emerald-500 text-white gap-1"
+              className="bg-emerald-600 hover:bg-emerald-500 text-gray-900 gap-1"
             >
               {reviewMutation.isPending ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <><ArrowUpRight className="w-3.5 h-3.5" /> Approve &amp; Pay</>}
             </Button>

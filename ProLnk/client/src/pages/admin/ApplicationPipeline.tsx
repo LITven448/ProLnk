@@ -37,11 +37,11 @@ function RejectModal({ partner, onConfirm, onCancel, isPending }: {
       <div className="rounded-2xl border w-full max-w-md p-6" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
         <div className="flex items-center gap-3 mb-4">
           <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(239,68,68,0.15)" }}>
-            <AlertTriangle className="w-4 h-4 text-red-400" />
+            <AlertTriangle className="w-4 h-4 text-red-600" />
           </div>
           <div>
-            <div className="font-bold text-[#344767] text-sm">Reject Application</div>
-            <div className="text-xs mt-0.5" style={{ color: "#7B809A" }}>{partner.businessName}</div>
+            <div className="font-bold text-[#1F2937] text-sm">Reject Application</div>
+            <div className="text-xs mt-0.5" style={{ color: "#4B5563" }}>{partner.businessName}</div>
           </div>
           <button onClick={onCancel} className="ml-auto text-gray-400 hover:text-gray-800">
             <X className="w-4 h-4" />
@@ -57,7 +57,7 @@ function RejectModal({ partner, onConfirm, onCancel, isPending }: {
                 onClick={() => setReason(p)}
                 className="w-full text-left text-xs px-3 py-2 rounded-lg transition-colors"
                 style={{
-                  backgroundColor: reason === p ? "rgba(0,181,184,0.15)" : "#0A1628",
+                  backgroundColor: reason === p ? "rgba(0,181,184,0.15)" : "#F8FAFC",
                   borderColor: reason === p ? "#00B5B8" : "#1E3A5F",
                   color: reason === p ? "#00B5B8" : "#8BA3C7",
                   border: "1px solid",
@@ -74,7 +74,7 @@ function RejectModal({ partner, onConfirm, onCancel, isPending }: {
             placeholder="Explain why this application is being rejected..."
             rows={3}
             className="w-full rounded-lg px-3 py-2 text-xs resize-none outline-none focus:ring-1 focus:ring-teal-500"
-            style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF", color: "#fff", border: "1px solid" }}
+            style={{ backgroundColor: "#F8FAFC", borderColor: "#E9ECEF", color: "#fff", border: "1px solid" }}
           />
         </div>
 
@@ -86,7 +86,7 @@ function RejectModal({ partner, onConfirm, onCancel, isPending }: {
             size="sm"
             disabled={isPending}
             onClick={() => onConfirm(reason)}
-            className="flex-1 h-8 text-xs font-bold text-[#344767]"
+            className="flex-1 h-8 text-xs font-bold text-[#1F2937]"
             style={{ backgroundColor: "#EF4444" }}
           >
             {isPending ? "Rejecting..." : "Confirm Rejection"}
@@ -121,17 +121,17 @@ function PartnerDrawer({ partner, onClose, onApprove, onRejectRequest, isActing 
       <div className="flex-1" />
       <div
         className="w-full max-w-sm h-full overflow-y-auto border-l shadow-2xl"
-        style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF" }}
+        style={{ backgroundColor: "#F8FAFC", borderColor: "#E9ECEF" }}
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 flex items-center gap-3 px-5 py-4 border-b" style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF" }}>
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold text-[#344767] flex-shrink-0" style={{ backgroundColor: "#00B5B820" }}>
+        <div className="sticky top-0 flex items-center gap-3 px-5 py-4 border-b" style={{ backgroundColor: "#F8FAFC", borderColor: "#E9ECEF" }}>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold text-[#1F2937] flex-shrink-0" style={{ backgroundColor: "#00B5B820" }}>
             {partner.businessName?.[0]?.toUpperCase() ?? "?"}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="font-bold text-[#344767] text-sm truncate">{partner.businessName}</div>
-            <div className="text-xs mt-0.5" style={{ color: "#7B809A" }}>{partner.tier ?? "Standard"} tier</div>
+            <div className="font-bold text-[#1F2937] text-sm truncate">{partner.businessName}</div>
+            <div className="text-xs mt-0.5" style={{ color: "#4B5563" }}>{partner.tier ?? "Standard"} tier</div>
           </div>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-800 ml-2">
             <X className="w-4 h-4" />
@@ -141,11 +141,11 @@ function PartnerDrawer({ partner, onClose, onApprove, onRejectRequest, isActing 
         <div className="p-5 space-y-5">
           {/* Contact info */}
           <div>
-            <div className="text-xs font-medium mb-2" style={{ color: "#7B809A" }}>CONTACT INFO</div>
+            <div className="text-xs font-medium mb-2" style={{ color: "#4B5563" }}>CONTACT INFO</div>
             <div className="space-y-2">
               {fields.map((f, i) => (
                 <div key={i} className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
-                  <f.icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#7B809A" }} />
+                  <f.icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#4B5563" }} />
                   <span className="text-gray-400 w-28 flex-shrink-0">{f.label}</span>
                   <span className="truncate text-gray-800/80">{f.value}</span>
                 </div>
@@ -156,7 +156,7 @@ function PartnerDrawer({ partner, onClose, onApprove, onRejectRequest, isActing 
           {/* Application message */}
           {partner.message && (
             <div>
-              <div className="text-xs font-medium mb-2" style={{ color: "#7B809A" }}>APPLICATION MESSAGE</div>
+              <div className="text-xs font-medium mb-2" style={{ color: "#4B5563" }}>APPLICATION MESSAGE</div>
               <div className="text-xs p-3 rounded-lg leading-relaxed" style={{ backgroundColor: "#FFFFFF", color: "#9CA3AF", border: "1px solid #E9ECEF" }}>
                 "{partner.message}"
               </div>
@@ -166,7 +166,7 @@ function PartnerDrawer({ partner, onClose, onApprove, onRejectRequest, isActing 
           {/* Rejection reason (if rejected) */}
           {partner.status === "rejected" && partner.rejectionReason && (
             <div>
-              <div className="text-xs font-medium mb-2 text-red-400">REJECTION REASON</div>
+              <div className="text-xs font-medium mb-2 text-red-600">REJECTION REASON</div>
               <div className="text-xs p-3 rounded-lg leading-relaxed" style={{ backgroundColor: "rgba(239,68,68,0.08)", color: "#FCA5A5", border: "1px solid rgba(239,68,68,0.2)" }}>
                 {partner.rejectionReason}
               </div>
@@ -176,7 +176,7 @@ function PartnerDrawer({ partner, onClose, onApprove, onRejectRequest, isActing 
           {/* Links */}
           <div className="flex gap-2">
             <Link href={`/partner/${partner.id}`}>
-              <Button variant="outline" size="sm" className="flex-1 h-8 text-xs gap-1.5 border-teal-500/30 text-teal-400 hover:bg-teal-500/10">
+              <Button variant="outline" size="sm" className="flex-1 h-8 text-xs gap-1.5 border-teal-500/30 text-teal-700 hover:bg-teal-500/10">
                 <ExternalLink className="w-3 h-3" /> View Public Profile
               </Button>
             </Link>
@@ -186,12 +186,12 @@ function PartnerDrawer({ partner, onClose, onApprove, onRejectRequest, isActing 
           {partner.status === "pending" && (onApprove || onRejectRequest) && (
             <div className="flex gap-2 pt-2 border-t" style={{ borderColor: "#E9ECEF" }}>
               {onApprove && (
-                <Button size="sm" disabled={isActing} onClick={onApprove} className="flex-1 h-9 text-xs font-bold text-[#344767]" style={{ backgroundColor: "#10B981" }}>
+                <Button size="sm" disabled={isActing} onClick={onApprove} className="flex-1 h-9 text-xs font-bold text-[#1F2937]" style={{ backgroundColor: "#10B981" }}>
                    Approve
                 </Button>
               )}
               {onRejectRequest && (
-                <Button size="sm" disabled={isActing} onClick={onRejectRequest} variant="outline" className="flex-1 h-9 text-xs font-heading border-red-500/30 text-red-400 hover:bg-red-500/10">
+                <Button size="sm" disabled={isActing} onClick={onRejectRequest} variant="outline" className="flex-1 h-9 text-xs font-heading border-red-500/30 text-red-600 hover:bg-red-500/10">
                    Reject
                 </Button>
               )}
@@ -209,21 +209,21 @@ function PartnerCard({ partner, onOpen }: { partner: any; onOpen: () => void }) 
   return (
     <div
       className="rounded-xl border p-3.5 cursor-pointer transition-all hover:border-teal-500/30 group"
-      style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF" }}
+      style={{ backgroundColor: "#F8FAFC", borderColor: "#E9ECEF" }}
       onClick={onOpen}
     >
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-[#344767] flex-shrink-0" style={{ backgroundColor: "#00B5B820" }}>
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-[#1F2937] flex-shrink-0" style={{ backgroundColor: "#00B5B820" }}>
           {partner.businessName?.[0]?.toUpperCase() ?? "?"}
         </div>
         <div className="flex-1 min-w-0">
           <div className="font-medium text-gray-800 text-sm truncate">{partner.businessName}</div>
-          <div className="text-xs mt-0.5 truncate" style={{ color: "#7B809A" }}>{partner.businessType}  {partner.serviceArea}</div>
+          <div className="text-xs mt-0.5 truncate" style={{ color: "#4B5563" }}>{partner.businessType}  {partner.serviceArea}</div>
         </div>
-        <ChevronRight className="w-3.5 h-3.5 flex-shrink-0 group-hover:text-teal-400 transition-colors" style={{ color: "#2A4A6F" }} />
+        <ChevronRight className="w-3.5 h-3.5 flex-shrink-0 group-hover:text-teal-700 transition-colors" style={{ color: "#2A4A6F" }} />
       </div>
       {partner.contactEmail && (
-        <div className="flex items-center gap-1.5 mt-2 text-xs" style={{ color: "#7B809A" }}>
+        <div className="flex items-center gap-1.5 mt-2 text-xs" style={{ color: "#4B5563" }}>
           <Mail className="w-3 h-3" />
           <span className="truncate">{partner.contactEmail}</span>
         </div>
@@ -282,7 +282,7 @@ export default function ApplicationPipeline() {
           <div key={stage.key} className="rounded-xl border p-4" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
             <div className="flex items-center gap-2 mb-1">
               <stage.icon className="w-4 h-4" style={{ color: stage.color }} />
-              <span className="text-xs" style={{ color: "#7B809A" }}>{stage.label}</span>
+              <span className="text-xs" style={{ color: "#4B5563" }}>{stage.label}</span>
             </div>
             <div className="font-heading text-3xl" style={{ color: stage.color }}>{items.length}</div>
           </div>
@@ -291,7 +291,7 @@ export default function ApplicationPipeline() {
         <div className="rounded-xl border p-4" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
           <div className="flex items-center gap-2 mb-1">
             <CheckCircle className="w-4 h-4 text-teal-500" />
-            <span className="text-xs" style={{ color: "#7B809A" }}>Onboarding Rate</span>
+            <span className="text-xs" style={{ color: "#4B5563" }}>Onboarding Rate</span>
           </div>
           <div className="font-heading text-3xl text-teal-500">
             {(() => {

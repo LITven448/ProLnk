@@ -87,10 +87,10 @@ const upcoming = [
 ];
 
 const typeMeta: Record<string, { icon: React.ReactElement; color: string; bg: string }> = {
-  "Feature Release": { icon: <Rocket className="w-3 h-3" />, color: "text-teal-300", bg: "bg-teal-500/20 border-teal-500/30" },
+  "Feature Release": { icon: <Rocket className="w-3 h-3" />, color: "text-teal-700", bg: "bg-teal-500/20 border-teal-500/30" },
   "Bug Fix": { icon: <Bug className="w-3 h-3" />, color: "text-orange-300", bg: "bg-orange-500/20 border-orange-500/30" },
-  "Performance": { icon: <Zap className="w-3 h-3" />, color: "text-yellow-300", bg: "bg-yellow-500/20 border-yellow-500/30" },
-  "Security": { icon: <Shield className="w-3 h-3" />, color: "text-blue-300", bg: "bg-blue-500/20 border-blue-500/30" },
+  "Performance": { icon: <Zap className="w-3 h-3" />, color: "text-amber-700", bg: "bg-yellow-500/20 border-yellow-500/30" },
+  "Security": { icon: <Shield className="w-3 h-3" />, color: "text-teal-700", bg: "bg-blue-500/20 border-blue-500/30" },
 };
 
 export default function PlatformChangelog() {
@@ -106,7 +106,7 @@ export default function PlatformChangelog() {
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         {/* Header */}
         <div>
-          <h1 className="text-3xl font-bold text-white">Platform Changelog</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Platform Changelog</h1>
           <p className="text-gray-400 mt-1">What's new in ProLnk</p>
         </div>
 
@@ -118,7 +118,7 @@ export default function PlatformChangelog() {
             { label: "Bugs Fixed", value: totalFixes.toString(), sub: "since launch" },
           ].map((s) => (
             <div key={s.label} className="bg-[#0F1E35] border border-[#1E3A5F] rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-white">{s.value}</div>
+              <div className="text-2xl font-bold text-gray-900">{s.value}</div>
               <div className="text-gray-400 text-xs mt-1">{s.label}</div>
               <div className="text-gray-500 text-xs">{s.sub}</div>
             </div>
@@ -136,7 +136,7 @@ export default function PlatformChangelog() {
                 className="bg-gradient-to-r from-teal-600/10 to-blue-600/10 border border-teal-500/30 rounded-xl p-6"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl font-bold text-white">{r.version}</span>
+                  <span className="text-2xl font-bold text-gray-900">{r.version}</span>
                   <span
                     className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded-full border ${meta.bg} ${meta.color}`}
                   >
@@ -149,15 +149,15 @@ export default function PlatformChangelog() {
                 <ul className="space-y-2 mb-4">
                   {r.changes.map((c) => (
                     <li key={c} className="flex items-start gap-2 text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-teal-400 mt-0.5 shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-teal-700 mt-0.5 shrink-0" />
                       {c}
                     </li>
                   ))}
                 </ul>
                 <div className="flex items-center gap-4 text-xs text-gray-400">
-                  <span className="text-teal-400 font-medium">{r.newFeatures} new features</span>
+                  <span className="text-teal-700 font-medium">{r.newFeatures} new features</span>
                   <span>{r.bugFixes} bug fixes</span>
-                  <a href="#" className="text-blue-400 hover:text-blue-300 ml-auto">
+                  <a href="#" className="text-blue-400 hover:text-teal-700 ml-auto">
                     Release notes →
                   </a>
                 </div>
@@ -167,7 +167,7 @@ export default function PlatformChangelog() {
 
         {/* Version history accordion */}
         <div>
-          <h2 className="text-white font-semibold text-lg mb-4">Version History</h2>
+          <h2 className="text-gray-900 font-semibold text-lg mb-4">Version History</h2>
           <div className="space-y-2">
             {releases
               .filter((r) => !r.featured)
@@ -181,7 +181,7 @@ export default function PlatformChangelog() {
                       onClick={() => setOpen(isOpen ? null : r.version)}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-white font-semibold">{r.version}</span>
+                        <span className="text-gray-900 font-semibold">{r.version}</span>
                         <span
                           className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full border ${meta.bg} ${meta.color}`}
                         >
@@ -198,17 +198,17 @@ export default function PlatformChangelog() {
                       </div>
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-4 bg-[#0A1628]/40">
+                      <div className="px-5 pb-4 bg-[#F8FAFC]/40">
                         <ul className="space-y-2 mb-3">
                           {r.changes.map((c) => (
                             <li key={c} className="flex items-start gap-2 text-gray-300 text-sm">
-                              <CheckCircle className="w-4 h-4 text-teal-400 mt-0.5 shrink-0" />
+                              <CheckCircle className="w-4 h-4 text-teal-700 mt-0.5 shrink-0" />
                               {c}
                             </li>
                           ))}
                         </ul>
                         <div className="flex items-center gap-4 text-xs text-gray-400 pt-2 border-t border-[#1E3A5F]">
-                          <span className="text-teal-400 font-medium">{r.newFeatures} new features</span>
+                          <span className="text-teal-700 font-medium">{r.newFeatures} new features</span>
                           <span>{r.bugFixes} bug fixes</span>
                         </div>
                       </div>
@@ -221,7 +221,7 @@ export default function PlatformChangelog() {
 
         {/* Upcoming features */}
         <div className="bg-[#0F1E35] border border-[#1E3A5F] rounded-xl p-5">
-          <h2 className="text-white font-semibold text-lg mb-4">Upcoming Features</h2>
+          <h2 className="text-gray-900 font-semibold text-lg mb-4">Upcoming Features</h2>
           <div className="space-y-3">
             {upcoming.map((u) => (
               <div
@@ -229,13 +229,13 @@ export default function PlatformChangelog() {
                 className="flex items-center justify-between py-3 border-b border-[#1E3A5F] last:border-0"
               >
                 <div>
-                  <p className="text-white text-sm font-medium">{u.title}</p>
+                  <p className="text-gray-900 text-sm font-medium">{u.title}</p>
                   <p className="text-gray-500 text-xs mt-0.5">{u.timeline}</p>
                 </div>
                 <span
                   className={`text-xs font-semibold px-2 py-1 rounded-full border ${
                     u.status === "In development"
-                      ? "bg-blue-500/20 border-blue-500/30 text-blue-300"
+                      ? "bg-blue-500/20 border-blue-500/30 text-teal-700"
                       : "bg-gray-500/20 border-gray-500/30 text-gray-400"
                   }`}
                 >
@@ -256,15 +256,15 @@ export default function PlatformChangelog() {
 
         {/* Feature request form */}
         <div className="bg-[#0F1E35] border border-[#1E3A5F] rounded-xl p-5">
-          <h2 className="text-white font-semibold text-lg mb-1">Suggest a Feature</h2>
+          <h2 className="text-gray-900 font-semibold text-lg mb-1">Suggest a Feature</h2>
           <p className="text-gray-400 text-sm mb-4">Have an idea? Submit it and vote on others.</p>
           {submitted ? (
             <div className="text-center py-6">
-              <CheckCircle className="w-10 h-10 text-teal-400 mx-auto mb-2" />
-              <p className="text-white font-medium">Feature request submitted!</p>
+              <CheckCircle className="w-10 h-10 text-teal-700 mx-auto mb-2" />
+              <p className="text-gray-900 font-medium">Feature request submitted!</p>
               <p className="text-gray-400 text-sm mt-1">We review all submissions weekly.</p>
               <button
-                className="mt-3 text-teal-400 text-sm hover:text-teal-300"
+                className="mt-3 text-teal-700 text-sm hover:text-teal-700"
                 onClick={() => { setSubmitted(false); setFeedback({ title: "", desc: "", priority: "Medium" }); }}
               >
                 Submit another
@@ -273,14 +273,14 @@ export default function PlatformChangelog() {
           ) : (
             <div className="space-y-3">
               <input
-                className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-teal-500"
+                className="w-full bg-[#F8FAFC] border border-[#1E3A5F] rounded-lg px-4 py-2.5 text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-teal-500"
                 placeholder="Feature title"
                 value={feedback.title}
                 onChange={(e) => setFeedback({ ...feedback, title: e.target.value })}
               />
               <textarea
                 rows={3}
-                className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-teal-500 resize-none"
+                className="w-full bg-[#F8FAFC] border border-[#1E3A5F] rounded-lg px-4 py-2.5 text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-teal-500 resize-none"
                 placeholder="Describe the feature and why it matters..."
                 value={feedback.desc}
                 onChange={(e) => setFeedback({ ...feedback, desc: e.target.value })}
@@ -293,7 +293,7 @@ export default function PlatformChangelog() {
                     onClick={() => setFeedback({ ...feedback, priority: p })}
                     className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
                       feedback.priority === p
-                        ? "bg-teal-500/20 border-teal-500/50 text-teal-300"
+                        ? "bg-teal-500/20 border-teal-500/50 text-teal-700"
                         : "border-[#1E3A5F] text-gray-400 hover:border-gray-500"
                     }`}
                   >
@@ -302,7 +302,7 @@ export default function PlatformChangelog() {
                 ))}
               </div>
               <button
-                className="w-full bg-teal-500 hover:bg-teal-400 text-white font-semibold py-2.5 rounded-lg transition-colors disabled:opacity-40"
+                className="w-full bg-teal-500 hover:bg-teal-400 text-gray-900 font-semibold py-2.5 rounded-lg transition-colors disabled:opacity-40"
                 disabled={!feedback.title || !feedback.desc}
                 onClick={() => setSubmitted(true)}
               >

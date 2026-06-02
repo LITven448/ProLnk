@@ -40,13 +40,13 @@ function StepDot({ n, current, label }: { n: number; current: number; label: str
   return (
     <div className="flex flex-col items-center gap-1">
       <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
-        done   ? "bg-teal-500 text-white" :
-        active ? "bg-[#0A1628] text-white" :
+        done   ? "bg-teal-500 text-gray-900" :
+        active ? "bg-[#F8FAFC] text-gray-900" :
                  "bg-gray-100 text-gray-400"
       }`}>
         {done ? <CheckCircle className="w-4 h-4" /> : n}
       </div>
-      <span className={`text-[10px] font-medium ${active ? "text-[#0A1628]" : "text-gray-400"}`}>{label}</span>
+      <span className={`text-[10px] font-medium ${active ? "text-[#F8FAFC]" : "text-gray-400"}`}>{label}</span>
     </div>
   );
 }
@@ -140,7 +140,7 @@ export default function DealComposer() {
         <div className="px-6 pt-6 pb-4 border-b border-gray-100 bg-white flex-shrink-0">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-xl font-bold text-[#0A1628]">Deal Composer</h1>
+              <h1 className="text-xl font-bold text-[#F8FAFC]">Deal Composer</h1>
               <p className="text-sm text-gray-500 mt-0.5">Create a manual deal page and send to a homeowner</p>
             </div>
             {step < 4 && (
@@ -177,7 +177,7 @@ export default function DealComposer() {
           {/* ── Step 1: Issue Details ── */}
           {step === 1 && (
             <div className="max-w-lg space-y-5">
-              <h2 className="text-base font-bold text-[#0A1628]">What's the issue?</h2>
+              <h2 className="text-base font-bold text-[#F8FAFC]">What's the issue?</h2>
 
               {/* Category */}
               <div>
@@ -189,9 +189,9 @@ export default function DealComposer() {
                       onClick={() => { setCategory(c.category); setIssueType(""); }}
                       className="px-3 py-2 rounded-xl text-xs font-medium border transition-all text-left"
                       style={{
-                        backgroundColor: category === c.category ? "#0A1628" : "transparent",
+                        backgroundColor: category === c.category ? "#F8FAFC" : "transparent",
                         color: category === c.category ? "#fff" : "#6B7280",
-                        borderColor: category === c.category ? "#0A1628" : "#E5E7EB",
+                        borderColor: category === c.category ? "#F8FAFC" : "#E5E7EB",
                       }}
                     >
                       {c.category}
@@ -230,7 +230,7 @@ export default function DealComposer() {
                   <button
                     onClick={generateDescription}
                     disabled={!issueType || generatingAI}
-                    className="flex items-center gap-1 text-xs text-[#00B5B8] hover:text-[#0A1628] disabled:opacity-40"
+                    className="flex items-center gap-1 text-xs text-[#00B5B8] hover:text-[#F8FAFC] disabled:opacity-40"
                   >
                     {generatingAI ? <Loader2 className="w-3 h-3 animate-spin" /> : <Sparkles className="w-3 h-3" />}
                     AI Generate
@@ -274,8 +274,8 @@ export default function DealComposer() {
               </div>
 
               <Button
-                className="w-full text-white gap-2"
-                style={{ backgroundColor: "#0A1628" }}
+                className="w-full text-gray-900 gap-2"
+                style={{ backgroundColor: "#F8FAFC" }}
                 disabled={!category || !issueType || !issueDesc}
                 onClick={() => setStep(2)}
               >
@@ -287,7 +287,7 @@ export default function DealComposer() {
           {/* ── Step 2: Partner Assignment ── */}
           {step === 2 && (
             <div className="max-w-lg space-y-5">
-              <h2 className="text-base font-bold text-[#0A1628]">Assign Partners</h2>
+              <h2 className="text-base font-bold text-[#F8FAFC]">Assign Partners</h2>
 
               {/* Referring Partner */}
               <div>
@@ -303,7 +303,7 @@ export default function DealComposer() {
                         borderColor: fieldPartnerId === p.id ? "#3B82F6" : "#E5E7EB",
                       }}
                     >
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-gray-900 text-xs font-bold flex-shrink-0">
                         {(p.businessName || p.name || "P")[0].toUpperCase()}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -344,7 +344,7 @@ export default function DealComposer() {
                         borderColor: receivingPartnerId === p.id ? "#22C55E" : "#E5E7EB",
                       }}
                     >
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-gray-900 text-xs font-bold flex-shrink-0">
                         {(p.businessName || p.name || "P")[0].toUpperCase()}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -360,8 +360,8 @@ export default function DealComposer() {
               <div className="flex gap-3">
                 <Button variant="outline" onClick={() => setStep(1)} className="flex-1">Back</Button>
                 <Button
-                  className="flex-1 text-white gap-2"
-                  style={{ backgroundColor: "#0A1628" }}
+                  className="flex-1 text-gray-900 gap-2"
+                  style={{ backgroundColor: "#F8FAFC" }}
                   disabled={!fieldPartnerId}
                   onClick={() => setStep(3)}
                 >
@@ -374,7 +374,7 @@ export default function DealComposer() {
           {/* ── Step 3: Homeowner Info ── */}
           {step === 3 && (
             <div className="max-w-lg space-y-5">
-              <h2 className="text-base font-bold text-[#0A1628]">Homeowner Info</h2>
+              <h2 className="text-base font-bold text-[#F8FAFC]">Homeowner Info</h2>
               <p className="text-sm text-gray-500">Optional — used to pre-fill the deal page and send notifications.</p>
 
               <div className="space-y-3">
@@ -411,8 +411,8 @@ export default function DealComposer() {
               <div className="flex gap-3">
                 <Button variant="outline" onClick={() => setStep(2)} className="flex-1">Back</Button>
                 <Button
-                  className="flex-1 text-white gap-2"
-                  style={{ backgroundColor: "#0A1628" }}
+                  className="flex-1 text-gray-900 gap-2"
+                  style={{ backgroundColor: "#F8FAFC" }}
                   onClick={handleCreate}
                   disabled={createDealMutation.isPending}
                 >
@@ -443,11 +443,11 @@ export default function DealComposer() {
                   <span className="text-xs text-gray-600 flex-1 truncate font-mono">{dealUrl}</span>
                   <button
                     onClick={() => { navigator.clipboard.writeText(dealUrl); toast.success("Link copied!"); }}
-                    className="flex-shrink-0 text-[#00B5B8] hover:text-[#0A1628]"
+                    className="flex-shrink-0 text-[#00B5B8] hover:text-[#F8FAFC]"
                   >
                     <Copy className="w-4 h-4" />
                   </button>
-                  <a href={dealUrl} target="_blank" rel="noreferrer" className="flex-shrink-0 text-[#00B5B8] hover:text-[#0A1628]">
+                  <a href={dealUrl} target="_blank" rel="noreferrer" className="flex-shrink-0 text-[#00B5B8] hover:text-[#F8FAFC]">
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
@@ -482,7 +482,7 @@ export default function DealComposer() {
                     )}
                   </div>
                   <Button
-                    className="w-full mt-3 text-white gap-2"
+                    className="w-full mt-3 text-gray-900 gap-2"
                     style={{ backgroundColor: "#00B5B8" }}
                     onClick={handleSend}
                     disabled={sending || sendDealMutation.isPending}
@@ -505,8 +505,8 @@ export default function DealComposer() {
                   Create Another
                 </Button>
                 <Button
-                  className="flex-1 text-white gap-2"
-                  style={{ backgroundColor: "#0A1628" }}
+                  className="flex-1 text-gray-900 gap-2"
+                  style={{ backgroundColor: "#F8FAFC" }}
                   onClick={() => window.open("/admin/deals", "_self")}
                 >
                   View All Deals

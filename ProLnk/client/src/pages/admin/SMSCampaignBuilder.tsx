@@ -87,7 +87,7 @@ export default function SMSCampaignBuilder() {
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
             <div style={{
               width: 44, height: 44, borderRadius: 12,
-              background: "linear-gradient(135deg, #6D28D9, #7C3AED)",
+              background: "linear-gradient(135deg, #6D28D9, #0D9488)",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}>
               <MessageSquare size={22} color="#fff" />
@@ -295,7 +295,7 @@ export default function SMSCampaignBuilder() {
                     disabled={!message.trim()}
                     style={{
                       flex: 2,
-                      background: message.trim() ? "linear-gradient(135deg, #6D28D9, #7C3AED)" : "#1E293B",
+                      background: message.trim() ? "linear-gradient(135deg, #6D28D9, #0D9488)" : "#1E293B",
                       color: message.trim() ? "#fff" : "#475569",
                       border: "none", borderRadius: 10, fontWeight: 700, fontSize: 14,
                     }}

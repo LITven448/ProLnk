@@ -54,7 +54,7 @@ function TierProgress({ referralCount }: { referralCount: number }) {
   const needed = referralCount >= 25 ? 0 : referralCount >= 10 ? toGold : toSilver;
   return (
     <div>
-      <div className="flex justify-between text-xs mb-1" style={{ color: "#7B809A" }}>
+      <div className="flex justify-between text-xs mb-1" style={{ color: "#4B5563" }}>
         <span>Tier Progress</span>
         {needed > 0 && <span style={{ color: "#00B5B8" }}>{needed} to {nextTier}</span>}
       </div>
@@ -80,9 +80,9 @@ function PPSBar({ score, partnerId }: { score: number | null; partnerId: number 
         <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(100, s)}%`, backgroundColor: color }} />
       </div>
       <span className="text-xs font-mono w-7 text-right" style={{ color }}>{s}</span>
-      <Info className="w-3 h-3 cursor-help" style={{ color: "#7B809A" }} />
+      <Info className="w-3 h-3 cursor-help" style={{ color: "#4B5563" }} />
       {showTooltip && (
-        <div className="absolute left-0 top-6 z-50 w-64 rounded-xl border p-3 shadow-xl text-xs" style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF" }}>
+        <div className="absolute left-0 top-6 z-50 w-64 rounded-xl border p-3 shadow-xl text-xs" style={{ backgroundColor: "#F8FAFC", borderColor: "#E9ECEF" }}>
           <p className="font-semibold text-gray-800 mb-2">PPS Breakdown</p>
           {breakdown ? (
             <div className="space-y-1.5">
@@ -105,12 +105,12 @@ function PPSBar({ score, partnerId }: { score: number | null; partnerId: number 
                 </div>
               ))}
               <div className="border-t pt-1.5 mt-1.5 flex justify-between" style={{ borderColor: "#E9ECEF" }}>
-                <span style={{ color: "#7B809A" }}>Total PPS</span>
+                <span style={{ color: "#4B5563" }}>Total PPS</span>
                 <span className="font-bold" style={{ color: "#00B5B8" }}>{breakdown.total}/105</span>
               </div>
             </div>
           ) : (
-            <p style={{ color: "#7B809A" }}>Loading breakdown...</p>
+            <p style={{ color: "#4B5563" }}>Loading breakdown...</p>
           )}
         </div>
       )}
@@ -176,7 +176,7 @@ export default function PartnerIntelligence() {
           <div key={s.label} className="rounded-xl border p-4" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
             <div className="flex items-center gap-2 mb-2">
               <s.icon className="w-4 h-4" style={{ color: s.color }} />
-              <span className="text-xs" style={{ color: "#7B809A" }}>{s.label}</span>
+              <span className="text-xs" style={{ color: "#4B5563" }}>{s.label}</span>
             </div>
             <div className="font-heading text-3xl" style={{ color: s.color }}>{s.value}</div>
           </div>
@@ -188,10 +188,10 @@ export default function PartnerIntelligence() {
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
           <div className="flex items-center gap-2 mb-4">
             <Trophy className="w-4 h-4" style={{ color: "#D4AF37" }} />
-            <h3 className="font-bold text-[#344767] text-base">Top Performers</h3>
+            <h3 className="font-bold text-[#1F2937] text-base">Top Performers</h3>
           </div>
           <div className="space-y-3">
-            {top5.length === 0 && <p className="text-xs text-center py-4" style={{ color: "#7B809A" }}>No partners yet</p>}
+            {top5.length === 0 && <p className="text-xs text-center py-4" style={{ color: "#4B5563" }}>No partners yet</p>}
             {top5.map((p: any, i: number) => (
               <div key={p.id} className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-heading flex-shrink-0" style={{
@@ -202,7 +202,7 @@ export default function PartnerIntelligence() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-sm font-medium text-gray-800 truncate">{p.businessName}</div>
-                  <div className="text-xs" style={{ color: "#7B809A" }}>{p.referralCount ?? 0} referrals</div>
+                  <div className="text-xs" style={{ color: "#4B5563" }}>{p.referralCount ?? 0} referrals</div>
                 </div>
                 <TierBadge tier={p.tier} />
               </div>
@@ -212,13 +212,13 @@ export default function PartnerIntelligence() {
 
         {/* Tier distribution */}
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-          <h3 className="font-bold text-[#344767] text-base mb-4">Tier Distribution</h3>
+          <h3 className="font-bold text-[#1F2937] text-base mb-4">Tier Distribution</h3>
           <div className="h-40">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={Object.entries(tierDist).map(([tier, count]) => ({ tier: tier.charAt(0).toUpperCase() + tier.slice(1), count }))} margin={{ top: 0, right: 0, bottom: 0, left: -20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#E9ECEF" vertical={false} />
-                <XAxis dataKey="tier" tick={{ fill: "#7B809A", fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#7B809A", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <XAxis dataKey="tier" tick={{ fill: "#4B5563", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fill: "#4B5563", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip contentStyle={{ backgroundColor: "#FFFFFF", border: "1px solid #E9ECEF", borderRadius: 8, color: "#fff" }} />
                 <Bar dataKey="count" radius={[4, 4, 0, 0]} fill="#00B5B8" />
               </BarChart>
@@ -226,9 +226,9 @@ export default function PartnerIntelligence() {
           </div>
           <div className="mt-3 grid grid-cols-3 gap-2">
             {Object.entries(tierDist).map(([tier, count]) => (
-              <div key={tier} className="rounded-lg p-2 text-center" style={{ backgroundColor: "#0A1628" }}>
+              <div key={tier} className="rounded-lg p-2 text-center" style={{ backgroundColor: "#F8FAFC" }}>
                 <div className="font-heading text-lg" style={{ color: TIER_COLORS[tier] }}>{count}</div>
-                <div className="text-xs capitalize" style={{ color: "#7B809A" }}>{tier}</div>
+                <div className="text-xs capitalize" style={{ color: "#4B5563" }}>{tier}</div>
               </div>
             ))}
           </div>
@@ -238,13 +238,13 @@ export default function PartnerIntelligence() {
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
           <div className="flex items-center gap-2 mb-4">
             <AlertTriangle className="w-4 h-4" style={{ color: "#EF4444" }} />
-            <h3 className="font-bold text-[#344767] text-base">Churn Risk</h3>
+            <h3 className="font-bold text-[#1F2937] text-base">Churn Risk</h3>
           </div>
           {churnRisk.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-8 text-center">
               <Star className="w-8 h-8 mb-2" style={{ color: "#10B981" }} />
               <p className="text-sm font-medium text-gray-800">All partners healthy</p>
-              <p className="text-xs mt-1" style={{ color: "#7B809A" }}>No churn risk detected</p>
+              <p className="text-xs mt-1" style={{ color: "#4B5563" }}>No churn risk detected</p>
             </div>
           ) : (
             <div className="space-y-2">
@@ -252,7 +252,7 @@ export default function PartnerIntelligence() {
                 <div key={p.id} className="flex items-center gap-3 p-2.5 rounded-lg" style={{ backgroundColor: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.15)" }}>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-medium text-gray-800 truncate">{p.businessName}</div>
-                    <div className="text-xs" style={{ color: "#7B809A" }}>Health: {p.healthScore}/100</div>
+                    <div className="text-xs" style={{ color: "#4B5563" }}>Health: {p.healthScore}/100</div>
                   </div>
                   <TierBadge tier={p.tier} />
                 </div>
@@ -266,13 +266,13 @@ export default function PartnerIntelligence() {
       <div className="rounded-xl border" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
         <div className="flex items-center gap-3 p-4 border-b" style={{ borderColor: "#E9ECEF" }}>
           <div className="relative flex-1 max-w-xs">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style={{ color: "#7B809A" }} />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style={{ color: "#4B5563" }} />
             <Input
               placeholder="Search partners..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-8 h-8 text-sm border-0 text-gray-800 placeholder:text-slate-500"
-              style={{ backgroundColor: "#0A1628" }}
+              className="pl-8 h-8 text-sm border-0 text-gray-800 placeholder:text-gray-500"
+              style={{ backgroundColor: "#F8FAFC" }}
             />
           </div>
           <div className="flex items-center gap-2 ml-auto">
@@ -288,7 +288,7 @@ export default function PartnerIntelligence() {
               {recalculating ? "Recalculating..." : "Recalculate All Scores"}
             </Button>
           </div>
-          <div className="flex items-center gap-2 text-xs" style={{ color: "#7B809A" }}>
+          <div className="flex items-center gap-2 text-xs" style={{ color: "#4B5563" }}>
             <Filter className="w-3.5 h-3.5" />
             Sort:
             {(["health", "referrals", "jobs", "commission", "pps"] as const).map((s) => (
@@ -312,16 +312,16 @@ export default function PartnerIntelligence() {
             <thead>
               <tr style={{ borderBottom: "1px solid #1E3A5F" }}>
                 {["Partner", "Type", "Tier", "Health", "PPS", "Referrals", "Jobs", "Commission Owed", ""].map((h) => (
-                  <th key={h} className="text-left px-4 py-3 text-xs font-medium" style={{ color: "#7B809A" }}>{h}</th>
+                  <th key={h} className="text-left px-4 py-3 text-xs font-medium" style={{ color: "#4B5563" }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {isLoading && (
-                <tr><td colSpan={9} className="px-4 py-8 text-center text-sm" style={{ color: "#7B809A" }}>Loading partners...</td></tr>
+                <tr><td colSpan={9} className="px-4 py-8 text-center text-sm" style={{ color: "#4B5563" }}>Loading partners...</td></tr>
               )}
               {!isLoading && filtered.length === 0 && (
-                <tr><td colSpan={9} className="px-4 py-8 text-center text-sm" style={{ color: "#7B809A" }}>No partners found</td></tr>
+                <tr><td colSpan={9} className="px-4 py-8 text-center text-sm" style={{ color: "#4B5563" }}>No partners found</td></tr>
               )}
               {filtered.map((p: any) => (
                 <>
@@ -333,33 +333,33 @@ export default function PartnerIntelligence() {
                   >
                     <td className="px-4 py-3">
                       <div className="font-medium text-gray-800">{p.businessName}</div>
-                      <div className="text-xs" style={{ color: "#7B809A" }}>{p.contactEmail}</div>
+                      <div className="text-xs" style={{ color: "#4B5563" }}>{p.contactEmail}</div>
                     </td>
                     <td className="px-4 py-3 text-xs" style={{ color: "#9CA3AF" }}>{p.businessType}</td>
                     <td className="px-4 py-3"><TierBadge tier={p.tier} /></td>
                     <td className="px-4 py-3 w-32"><HealthBar score={p.healthScore} /></td>
                     <td className="px-4 py-3 w-36"><PPSBar score={p.priorityScore ?? null} partnerId={p.id} /></td>
-                    <td className="px-4 py-3 font-bold text-[#344767]">{p.referralCount ?? 0}</td>
-                    <td className="px-4 py-3 font-bold text-[#344767]">{p.jobCount ?? 0}</td>
+                    <td className="px-4 py-3 font-bold text-[#1F2937]">{p.referralCount ?? 0}</td>
+                    <td className="px-4 py-3 font-bold text-[#1F2937]">{p.jobCount ?? 0}</td>
                     <td className="px-4 py-3 font-heading" style={{ color: "#10B981" }}>${Number(p.commissionOwed ?? 0).toFixed(2)}</td>
                     <td className="px-4 py-3">
-                      {expandedId === p.id ? <ChevronUp className="w-4 h-4" style={{ color: "#7B809A" }} /> : <ChevronDown className="w-4 h-4" style={{ color: "#7B809A" }} />}
+                      {expandedId === p.id ? <ChevronUp className="w-4 h-4" style={{ color: "#4B5563" }} /> : <ChevronDown className="w-4 h-4" style={{ color: "#4B5563" }} />}
                     </td>
                   </tr>
                   {expandedId === p.id && (
-                    <tr key={`${p.id}-exp`} style={{ backgroundColor: "#0A1628" }}>
+                    <tr key={`${p.id}-exp`} style={{ backgroundColor: "#F8FAFC" }}>
                       <td colSpan={9} className="px-6 py-4">
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                           <div>
-                            <div className="text-xs mb-1" style={{ color: "#7B809A" }}>Service Area</div>
+                            <div className="text-xs mb-1" style={{ color: "#4B5563" }}>Service Area</div>
                             <div className="text-sm text-gray-800">{p.serviceArea}</div>
                           </div>
                           <div>
-                            <div className="text-xs mb-1" style={{ color: "#7B809A" }}>Contact</div>
+                            <div className="text-xs mb-1" style={{ color: "#4B5563" }}>Contact</div>
                             <div className="text-sm text-gray-800">{p.contactPhone}</div>
                           </div>
                           <div>
-                            <div className="text-xs mb-1" style={{ color: "#7B809A" }}>Opportunities Generated</div>
+                            <div className="text-xs mb-1" style={{ color: "#4B5563" }}>Opportunities Generated</div>
                             <div className="text-sm font-heading" style={{ color: "#8B5CF6" }}>{p.opportunitiesGenerated ?? 0}</div>
                           </div>
                           <div>
@@ -367,7 +367,7 @@ export default function PartnerIntelligence() {
                           </div>
                           <div className="col-span-2 lg:col-span-4 pt-2 border-t flex justify-end" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
                             <Link href={`/admin/partners/${p.id}/report`}>
-                              <Button size="sm" className="gap-1.5 bg-[#00B5B8] hover:bg-[#009a9d] text-white">
+                              <Button size="sm" className="gap-1.5 bg-[#00B5B8] hover:bg-[#009a9d] text-gray-900">
                                 <FileText className="w-3.5 h-3.5" /> Export Performance Report
                               </Button>
                             </Link>

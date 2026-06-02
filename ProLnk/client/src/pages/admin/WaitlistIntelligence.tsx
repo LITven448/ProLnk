@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const TEAL = "#2DD4BF";
-const NAVY = "#0A1628";
+const NAVY = "#F8FAFC";
 
 const URGENCY_LABELS: Record<string, string> = {
   urgent: "Urgent",
@@ -42,15 +42,15 @@ function StatCard({ icon: Icon, label, value, sub, color = TEAL }: {
   icon: React.ElementType; label: string; value: string | number; sub?: string; color?: string;
 }) {
   return (
-    <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+    <div className="bg-white rounded-2xl border border-gray-200 p-5">
       <div className="flex items-center gap-3 mb-3">
         <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${color}20` }}>
           <Icon className="w-5 h-5" style={{ color }} />
         </div>
-        <p className="text-sm text-slate-400 font-medium">{label}</p>
+        <p className="text-sm text-gray-500 font-medium">{label}</p>
       </div>
-      <p className="text-3xl font-black text-white">{value}</p>
-      {sub && <p className="text-xs text-slate-500 mt-1">{sub}</p>}
+      <p className="text-3xl font-black text-gray-900">{value}</p>
+      {sub && <p className="text-xs text-gray-500 mt-1">{sub}</p>}
     </div>
   );
 }
@@ -60,11 +60,11 @@ function BarRow({ label, value, max, color = TEAL, icon }: { label: string; valu
   return (
     <div className="flex items-center gap-3">
       {icon && <span className="text-base w-5 text-center flex-shrink-0">{icon}</span>}
-      <span className="text-xs text-slate-400 w-28 shrink-0 truncate">{label}</span>
-      <div className="flex-1 bg-slate-700 rounded-full h-2 overflow-hidden">
+      <span className="text-xs text-gray-500 w-28 shrink-0 truncate">{label}</span>
+      <div className="flex-1 bg-gray-100 rounded-full h-2 overflow-hidden">
         <div className="h-2 rounded-full transition-all duration-500" style={{ width: `${pct}%`, backgroundColor: color }} />
       </div>
-      <span className="text-xs font-bold text-slate-300 w-8 text-right">{value}</span>
+      <span className="text-xs font-bold text-gray-700 w-8 text-right">{value}</span>
     </div>
   );
 }
@@ -74,7 +74,7 @@ function Sparkline({ data, color = TEAL }: { data: number[]; color?: string }) {
     return (
       <div className="flex items-end gap-0.5 h-10">
         {Array.from({ length: 14 }).map((_, i) => (
-          <div key={i} className="flex-1 bg-slate-700 rounded-sm" style={{ height: "20%" }} />
+          <div key={i} className="flex-1 bg-gray-100 rounded-sm" style={{ height: "20%" }} />
         ))}
       </div>
     );
@@ -105,22 +105,22 @@ function FunnelStep({ label, value, total, color, isFirst }: { label: string; va
     <div className="flex items-center gap-3">
       <div className="flex-1">
         <div className="flex items-center justify-between mb-1">
-          <span className="text-xs font-medium text-slate-300">{label}</span>
+          <span className="text-xs font-medium text-gray-700">{label}</span>
           <span className="text-xs font-bold" style={{ color }}>{value.toLocaleString()}</span>
         </div>
-        <div className="h-6 bg-slate-700/60 rounded-lg overflow-hidden relative">
+        <div className="h-6 bg-gray-100 rounded-lg overflow-hidden relative">
           <div
             className="h-full rounded-lg transition-all duration-700 flex items-center pl-2"
             style={{ width: `${Math.max(conversionPct, 2)}%`, backgroundColor: color }}
           >
-            {conversionPct > 15 && <span className="text-xs font-bold text-white">{conversionPct}%</span>}
+            {conversionPct > 15 && <span className="text-xs font-bold text-gray-900">{conversionPct}%</span>}
           </div>
-          {conversionPct <= 15 && <span className="absolute left-[calc(max(2%,_4px)+4px)] top-1/2 -translate-y-1/2 text-xs font-bold text-slate-300">{conversionPct}%</span>}
+          {conversionPct <= 15 && <span className="absolute left-[calc(max(2%,_4px)+4px)] top-1/2 -translate-y-1/2 text-xs font-bold text-gray-700">{conversionPct}%</span>}
         </div>
       </div>
       {!isFirst && (
         <div className="w-12 text-right">
-          <span className="text-xs text-slate-500">{isFirst ? "—" : `${conversionPct}%`}</span>
+          <span className="text-xs text-gray-500">{isFirst ? "—" : `${conversionPct}%`}</span>
         </div>
       )}
     </div>
@@ -130,8 +130,8 @@ function FunnelStep({ label, value, total, color, isFirst }: { label: string; va
 function VaultBadge({ label, value, color = "#6366f1" }: { label: string; value?: string | number | null; color?: string }) {
   if (!value && value !== 0) return null;
   return (
-    <div className="flex flex-col bg-slate-700/60 border border-slate-600/60 rounded-lg px-2.5 py-1.5 min-w-0">
-      <span className="text-xs text-slate-500 font-medium truncate">{label}</span>
+    <div className="flex flex-col bg-gray-100 border border-gray-200 rounded-lg px-2.5 py-1.5 min-w-0">
+      <span className="text-xs text-gray-500 font-medium truncate">{label}</span>
       <span className="text-xs font-bold truncate" style={{ color }}>{String(value)}</span>
     </div>
   );
@@ -151,11 +151,11 @@ function HomeHealthVault({ r }: { r: any }) {
   return (
     <tr>
       <td colSpan={7} className="px-5 pb-4 pt-0 bg-indigo-900/10">
-        <div className="border border-indigo-500/20 rounded-xl p-4 bg-slate-800/60">
+        <div className="border border-indigo-500/20 rounded-xl p-4 bg-white">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-lg bg-indigo-600/80 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-white" /></div>
+            <div className="w-6 h-6 rounded-lg bg-indigo-600/80 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-gray-900" /></div>
             <p className="text-sm font-bold text-indigo-300">Home Health Vault</p>
-            <span className="text-xs text-slate-500">{r.address}, {r.city}, {r.state} {r.zipCode}</span>
+            <span className="text-xs text-gray-500">{r.address}, {r.city}, {r.state} {r.zipCode}</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
             {[
@@ -168,7 +168,7 @@ function HomeHealthVault({ r }: { r: any }) {
                 <p className="text-xs font-bold mb-2" style={{ color: section.color }}>{section.label}</p>
                 <div className="space-y-1">
                   {section.items.map(([label, val]) => <VaultBadge key={label} label={label as string} value={val as string} color={section.color} />)}
-                  {section.issues && <div className="text-xs text-red-400 bg-red-500/10 rounded px-2 py-1 mt-1">⚠ {section.issues}</div>}
+                  {section.issues && <div className="text-xs text-red-600 bg-red-500/10 rounded px-2 py-1 mt-1">⚠ {section.issues}</div>}
                 </div>
               </div>
             ))}
@@ -330,32 +330,32 @@ export default function WaitlistIntelligence() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6">
+      <div className="min-h-screen bg-[#F8FAFC] p-6">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
           <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
             <div>
-              <h1 className="text-2xl font-black text-white">Waitlist Intelligence</h1>
-              <p className="text-sm text-slate-400 mt-1">Conversion analytics, geographic heat map, and launch readiness</p>
+              <h1 className="text-2xl font-black text-gray-900">Waitlist Intelligence</h1>
+              <p className="text-sm text-gray-500 mt-1">Conversion analytics, geographic heat map, and launch readiness</p>
             </div>
             <div className="flex items-center gap-3 flex-wrap">
-              <button onClick={handleExportCSV} className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-teal-500/40 bg-teal-500/10 text-sm text-teal-300 hover:bg-teal-500/20 transition-colors">
+              <button onClick={handleExportCSV} className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-teal-500/40 bg-teal-500/10 text-sm text-teal-700 hover:bg-teal-500/20 transition-colors">
                 <Download className="w-4 h-4" /> Export CSV
               </button>
-              <button onClick={() => refetch()} className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-600 text-sm text-slate-400 hover:bg-slate-700/60 transition-colors">
+              <button onClick={() => refetch()} className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-gray-300 text-sm text-gray-500 hover:bg-gray-100 transition-colors">
                 <RefreshCw className="w-4 h-4" /> Refresh
               </button>
               <div className="flex items-center gap-2 bg-teal-500/10 border border-teal-500/30 rounded-xl px-4 py-2">
                 <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-                <span className="text-sm font-semibold text-teal-300">{totalSignups.toLocaleString()} total signups</span>
+                <span className="text-sm font-semibold text-teal-700">{totalSignups.toLocaleString()} total signups</span>
               </div>
             </div>
           </div>
 
           {isLoading ? (
             <div className="flex items-center justify-center h-64">
-              <div className="text-slate-500">Loading intelligence data...</div>
+              <div className="text-gray-500">Loading intelligence data...</div>
             </div>
           ) : (
             <>
@@ -369,67 +369,67 @@ export default function WaitlistIntelligence() {
 
               {/* Daily Sparkline + Growth */}
               <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="md:col-span-2 bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+                <div className="md:col-span-2 bg-white rounded-2xl border border-gray-200 p-5">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h2 className="text-sm font-bold text-white">Daily Signups — Last 14 Days</h2>
-                      <p className="text-xs text-slate-500 mt-0.5">Combined pros + homeowners</p>
+                      <h2 className="text-sm font-bold text-gray-900">Daily Signups — Last 14 Days</h2>
+                      <p className="text-xs text-gray-500 mt-0.5">Combined pros + homeowners</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-black text-white">{last7}</div>
-                      <div className={`text-xs font-semibold ${weekGrowth >= 0 ? "text-teal-400" : "text-red-400"}`}>
+                      <div className="text-2xl font-black text-gray-900">{last7}</div>
+                      <div className={`text-xs font-semibold ${weekGrowth >= 0 ? "text-teal-700" : "text-red-600"}`}>
                         {weekGrowth >= 0 ? "+" : ""}{weekGrowth}% vs prev week
                       </div>
                     </div>
                   </div>
                   <Sparkline data={dailySignups} color={TEAL} />
-                  <div className="flex justify-between mt-2 text-xs text-slate-600">
+                  <div className="flex justify-between mt-2 text-xs text-gray-400">
                     <span>14 days ago</span>
-                    <span className="text-slate-500">{avgDailySignups.toFixed(1)} avg/day</span>
+                    <span className="text-gray-500">{avgDailySignups.toFixed(1)} avg/day</span>
                     <span>Today</span>
                   </div>
                 </div>
 
                 {/* Launch Calculator */}
-                <div className={`bg-slate-800/60 rounded-2xl border p-5 ${riskLevel === "high" ? "border-red-500/40" : riskLevel === "medium" ? "border-amber-500/40" : "border-teal-500/40"}`}>
+                <div className={`bg-white rounded-2xl border p-5 ${riskLevel === "high" ? "border-red-500/40" : riskLevel === "medium" ? "border-amber-500/40" : "border-teal-500/40"}`}>
                   <div className="flex items-center gap-2 mb-3">
-                    <Target className={`w-5 h-5 ${riskLevel === "high" ? "text-red-400" : riskLevel === "medium" ? "text-amber-400" : "text-teal-400"}`} />
-                    <h2 className="text-sm font-bold text-white">Launch Calculator</h2>
+                    <Target className={`w-5 h-5 ${riskLevel === "high" ? "text-red-600" : riskLevel === "medium" ? "text-amber-700" : "text-teal-700"}`} />
+                    <h2 className="text-sm font-bold text-gray-900">Launch Calculator</h2>
                   </div>
                   <div className="space-y-3">
                     <div>
-                      <div className="text-xs text-slate-400 mb-1">Progress to {WAITLIST_GOAL} pro goal</div>
-                      <div className="h-2.5 bg-slate-700 rounded-full overflow-hidden">
+                      <div className="text-xs text-gray-500 mb-1">Progress to {WAITLIST_GOAL} pro goal</div>
+                      <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
                         <div className="h-full rounded-full" style={{ width: `${Math.min(100, ((proData?.pros?.total ?? 0) / WAITLIST_GOAL) * 100)}%`, background: TEAL }} />
                       </div>
                       <div className="flex justify-between text-xs mt-1">
-                        <span className="text-teal-400 font-semibold">{proData?.pros?.total ?? 0} joined</span>
-                        <span className="text-slate-500">{remaining} remaining</span>
+                        <span className="text-teal-700 font-semibold">{proData?.pros?.total ?? 0} joined</span>
+                        <span className="text-gray-500">{remaining} remaining</span>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div className="bg-slate-700/60 rounded-lg p-2">
-                        <div className="text-slate-400">Avg Daily Rate</div>
-                        <div className="text-white font-bold">{avgDailySignups.toFixed(1)}/day</div>
+                      <div className="bg-gray-100 rounded-lg p-2">
+                        <div className="text-gray-500">Avg Daily Rate</div>
+                        <div className="text-gray-900 font-bold">{avgDailySignups.toFixed(1)}/day</div>
                       </div>
-                      <div className="bg-slate-700/60 rounded-lg p-2">
-                        <div className="text-slate-400">Days to Close</div>
-                        <div className={`font-bold ${riskLevel === "high" ? "text-red-400" : riskLevel === "medium" ? "text-amber-400" : "text-teal-400"}`}>
+                      <div className="bg-gray-100 rounded-lg p-2">
+                        <div className="text-gray-500">Days to Close</div>
+                        <div className={`font-bold ${riskLevel === "high" ? "text-red-600" : riskLevel === "medium" ? "text-amber-700" : "text-teal-700"}`}>
                           {daysToClose !== null ? `${daysToClose}d` : "—"}
                         </div>
                       </div>
                     </div>
                     {projectedCloseDate && (
-                      <div className="bg-slate-700/40 rounded-lg p-2.5 text-xs">
-                        <div className="text-slate-400 mb-0.5">Projected close date</div>
-                        <div className="text-white font-bold flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5 text-teal-400" />
+                      <div className="bg-gray-100/40 rounded-lg p-2.5 text-xs">
+                        <div className="text-gray-500 mb-0.5">Projected close date</div>
+                        <div className="text-gray-900 font-bold flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5 text-teal-700" />
                           {projectedCloseDate}
                         </div>
                       </div>
                     )}
                     {riskLevel !== "low" && (
-                      <div className={`flex items-start gap-2 text-xs p-2.5 rounded-lg ${riskLevel === "high" ? "bg-red-500/10 border border-red-500/20 text-red-400" : "bg-amber-500/10 border border-amber-500/20 text-amber-400"}`}>
+                      <div className={`flex items-start gap-2 text-xs p-2.5 rounded-lg ${riskLevel === "high" ? "bg-red-500/10 border border-red-500/20 text-red-600" : "bg-amber-500/10 border border-amber-500/20 text-amber-700"}`}>
                         <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
                         <span>{riskLevel === "high" ? "At current rate, 90+ days to fill. Consider marketing push." : "30–90 days at current rate. Accelerate referral program."}</span>
                       </div>
@@ -447,12 +447,12 @@ export default function WaitlistIntelligence() {
               </div>
 
               {/* Tab Navigation */}
-              <div className="flex gap-1 bg-slate-800/60 border border-slate-700/60 rounded-xl p-1 mb-6 overflow-x-auto">
+              <div className="flex gap-1 bg-white border border-gray-200 rounded-xl p-1 mb-6 overflow-x-auto">
                 {TABS.map(t => (
                   <button
                     key={t.id}
                     onClick={() => setActiveTab(t.id)}
-                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${activeTab === t.id ? "bg-teal-500/20 text-teal-300 border border-teal-500/40" : "text-slate-400 hover:text-slate-200"}`}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${activeTab === t.id ? "bg-teal-500/20 text-teal-700 border border-teal-500/40" : "text-gray-500 hover:text-gray-800"}`}
                   >
                     {t.icon} {t.label}
                   </button>
@@ -463,10 +463,10 @@ export default function WaitlistIntelligence() {
               {activeTab === "funnel" && (
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Conversion Funnel */}
-                  <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+                  <div className="bg-white rounded-2xl border border-gray-200 p-5">
                     <div className="flex items-center gap-2 mb-5">
-                      <Activity className="w-5 h-5 text-teal-400" />
-                      <h2 className="font-bold text-white">Conversion Funnel</h2>
+                      <Activity className="w-5 h-5 text-teal-700" />
+                      <h2 className="font-bold text-gray-900">Conversion Funnel</h2>
                     </div>
                     <div className="space-y-3">
                       {funnelData.map((step, i) => (
@@ -480,17 +480,17 @@ export default function WaitlistIntelligence() {
                         />
                       ))}
                     </div>
-                    <div className="mt-5 pt-4 border-t border-slate-700/60">
+                    <div className="mt-5 pt-4 border-t border-gray-200">
                       <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="bg-slate-700/60 rounded-lg p-3">
-                          <div className="text-slate-400 mb-1">Visitor → Completion</div>
-                          <div className="text-white font-bold text-lg">
+                        <div className="bg-gray-100 rounded-lg p-3">
+                          <div className="text-gray-500 mb-1">Visitor → Completion</div>
+                          <div className="text-gray-900 font-bold text-lg">
                             {funnelData[0].value > 0 ? Math.round((funnelData[2].value / funnelData[0].value) * 100) : 0}%
                           </div>
                         </div>
-                        <div className="bg-slate-700/60 rounded-lg p-3">
-                          <div className="text-slate-400 mb-1">Completion → Charter</div>
-                          <div className="text-amber-400 font-bold text-lg">
+                        <div className="bg-gray-100 rounded-lg p-3">
+                          <div className="text-gray-500 mb-1">Completion → Charter</div>
+                          <div className="text-amber-700 font-bold text-lg">
                             {funnelData[2].value > 0 ? Math.round((funnelData[3].value / funnelData[2].value) * 100) : 0}%
                           </div>
                         </div>
@@ -500,10 +500,10 @@ export default function WaitlistIntelligence() {
 
                   {/* Referral Sources */}
                   <div className="space-y-4">
-                    <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+                    <div className="bg-white rounded-2xl border border-gray-200 p-5">
                       <div className="flex items-center gap-2 mb-4">
                         <TrendingUp className="w-5 h-5 text-blue-400" />
-                        <h2 className="font-bold text-white">Referral Sources</h2>
+                        <h2 className="font-bold text-gray-900">Referral Sources</h2>
                       </div>
                       <div className="space-y-2.5">
                         {Object.entries(refSources).map(([source, count]) => (
@@ -518,17 +518,17 @@ export default function WaitlistIntelligence() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+                    <div className="bg-white rounded-2xl border border-gray-200 p-5">
                       <div className="flex items-center gap-2 mb-4">
                         <Clock className="w-5 h-5 text-orange-400" />
-                        <h2 className="font-bold text-white">Urgency Level</h2>
+                        <h2 className="font-bold text-gray-900">Urgency Level</h2>
                       </div>
                       <div className="space-y-2.5">
                         {(analytics?.byUrgency ?? []).map((u: any) => (
                           <BarRow key={u.urgency} label={URGENCY_LABELS[u.urgency] ?? u.urgency} value={u.count}
                             max={Math.max(...(analytics?.byUrgency ?? []).map((x: any) => x.count), 1)} color="#F97316" />
                         ))}
-                        {(analytics?.byUrgency ?? []).length === 0 && <p className="text-xs text-slate-500 text-center py-4">No data yet</p>}
+                        {(analytics?.byUrgency ?? []).length === 0 && <p className="text-xs text-gray-500 text-center py-4">No data yet</p>}
                       </div>
                     </div>
                   </div>
@@ -539,17 +539,17 @@ export default function WaitlistIntelligence() {
               {activeTab === "geo" && (
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Top 10 Cities Heat Map (text-based) */}
-                  <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 overflow-hidden">
-                    <div className="p-5 border-b border-slate-700/60">
+                  <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                    <div className="p-5 border-b border-gray-200">
                       <div className="flex items-center gap-2">
                         <Flame className="w-5 h-5 text-orange-400" />
-                        <h2 className="font-bold text-white">Top Cities by Signups</h2>
-                        <span className="text-xs text-slate-500 ml-1">Geographic heat map</span>
+                        <h2 className="font-bold text-gray-900">Top Cities by Signups</h2>
+                        <span className="text-xs text-gray-500 ml-1">Geographic heat map</span>
                       </div>
                     </div>
                     <div className="p-5 space-y-3">
                       {topCities.length === 0 ? (
-                        <p className="text-sm text-slate-500 text-center py-8">No city data yet</p>
+                        <p className="text-sm text-gray-500 text-center py-8">No city data yet</p>
                       ) : (
                         topCities.map((city, i) => {
                           const maxCount = topCities[0]?.count ?? 1;
@@ -557,15 +557,15 @@ export default function WaitlistIntelligence() {
                           const heatColor = i === 0 ? "#EF4444" : i < 3 ? "#F97316" : i < 6 ? "#F59E0B" : TEAL;
                           return (
                             <div key={city.city} className="flex items-center gap-3">
-                              <div className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black text-white flex-shrink-0`} style={{ background: heatColor }}>
+                              <div className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black text-gray-900 flex-shrink-0`} style={{ background: heatColor }}>
                                 {i + 1}
                               </div>
                               <div className="flex-1">
                                 <div className="flex items-center justify-between mb-1">
-                                  <span className="text-sm font-medium text-white">{city.city}, {city.state}</span>
+                                  <span className="text-sm font-medium text-gray-900">{city.city}, {city.state}</span>
                                   <span className="text-xs font-bold" style={{ color: heatColor }}>{city.count}</span>
                                 </div>
-                                <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                                   <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, background: heatColor }} />
                                 </div>
                               </div>
@@ -577,44 +577,44 @@ export default function WaitlistIntelligence() {
                   </div>
 
                   {/* ZIP Code Density */}
-                  <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 overflow-hidden">
-                    <div className="p-5 border-b border-slate-700/60">
+                  <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                    <div className="p-5 border-b border-gray-200">
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-teal-400" />
-                        <h2 className="font-bold text-white">ZIP Code Density</h2>
-                        <span className="text-xs text-slate-500 ml-1">Top 20 ZIPs</span>
+                        <MapPin className="w-5 h-5 text-teal-700" />
+                        <h2 className="font-bold text-gray-900">ZIP Code Density</h2>
+                        <span className="text-xs text-gray-500 ml-1">Top 20 ZIPs</span>
                       </div>
                     </div>
                     <div className="overflow-x-auto">
                       <table className="w-full">
-                        <thead className="bg-slate-900/40">
+                        <thead className="bg-gray-50">
                           <tr>
                             {["ZIP", "City", "ST", "Signups", "Heat"].map(h => (
-                              <th key={h} className={`px-4 py-2.5 text-xs font-semibold text-slate-500 uppercase tracking-wide ${h === "Signups" || h === "Heat" ? "text-right" : "text-left"}`}>{h}</th>
+                              <th key={h} className={`px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide ${h === "Signups" || h === "Heat" ? "text-right" : "text-left"}`}>{h}</th>
                             ))}
                           </tr>
                         </thead>
                         <tbody>
                           {byZip.length === 0 ? (
-                            <tr><td colSpan={5} className="text-center text-slate-500 py-8 text-sm">No ZIP data yet</td></tr>
+                            <tr><td colSpan={5} className="text-center text-gray-500 py-8 text-sm">No ZIP data yet</td></tr>
                           ) : (
                             byZip.slice(0, 20).map((z: any, i: number) => {
                               const maxZip = byZip[0]?.count ?? 1;
                               const pct = Math.round((z.count / maxZip) * 100);
                               return (
-                                <tr key={z.zip} className="border-b border-slate-700/40 hover:bg-slate-700/20 transition-colors">
+                                <tr key={z.zip} className="border-b border-gray-200/40 hover:bg-gray-100/20 transition-colors">
                                   <td className="px-4 py-3">
                                     <div className="flex items-center gap-1.5">
                                       {i < 3 && <span className="w-2 h-2 rounded-full bg-teal-400 inline-block" />}
-                                      <code className="font-mono font-bold text-slate-200">{z.zip}</code>
+                                      <code className="font-mono font-bold text-gray-800">{z.zip}</code>
                                     </div>
                                   </td>
-                                  <td className="px-4 py-3 text-slate-400 text-xs">{z.city || "—"}</td>
-                                  <td className="px-4 py-3 text-slate-500 text-xs">{z.state || "—"}</td>
-                                  <td className="px-4 py-3 text-right font-bold text-teal-400">{z.count}</td>
+                                  <td className="px-4 py-3 text-gray-500 text-xs">{z.city || "—"}</td>
+                                  <td className="px-4 py-3 text-gray-500 text-xs">{z.state || "—"}</td>
+                                  <td className="px-4 py-3 text-right font-bold text-teal-700">{z.count}</td>
                                   <td className="px-4 py-3 text-right">
                                     <div className="flex items-center justify-end gap-2">
-                                      <div className="w-16 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                      <div className="w-16 h-2 bg-gray-100 rounded-full overflow-hidden">
                                         <div className="h-full rounded-full bg-teal-400 transition-all" style={{ width: `${pct}%` }} />
                                       </div>
                                     </div>
@@ -629,53 +629,53 @@ export default function WaitlistIntelligence() {
                   </div>
 
                   {/* Launch Markets */}
-                  <div className="md:col-span-2 bg-slate-800/60 rounded-2xl border border-slate-700/60 overflow-hidden">
-                    <div className="p-5 border-b border-slate-700/60">
+                  <div className="md:col-span-2 bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                    <div className="p-5 border-b border-gray-200">
                       <div className="flex items-center gap-2">
                         <MapPin className="w-5 h-5 text-indigo-400" />
-                        <h2 className="font-bold text-white">Launch Markets</h2>
-                        <span className="text-xs text-slate-500">Click a market to bulk-invite homeowners</span>
+                        <h2 className="font-bold text-gray-900">Launch Markets</h2>
+                        <span className="text-xs text-gray-500">Click a market to bulk-invite homeowners</span>
                       </div>
                     </div>
                     <div className="p-5 space-y-3">
                       {Object.entries(marketGroups).length === 0 ? (
-                        <p className="text-sm text-slate-500 text-center py-8">No market data yet</p>
+                        <p className="text-sm text-gray-500 text-center py-8">No market data yet</p>
                       ) : (
                         Object.entries(marketGroups).sort((a, b) => (b[1] as number) - (a[1] as number)).map(([market, count]) => {
                           const countNum = count as number;
                           return (
-                            <div key={market} className="border border-slate-700/60 rounded-xl overflow-hidden">
+                            <div key={market} className="border border-gray-200 rounded-xl overflow-hidden">
                               <button
-                                className="w-full flex items-center gap-3 p-3 hover:bg-slate-700/30 transition-colors text-left"
+                                className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors text-left"
                                 onClick={() => setExpandedMarket(expandedMarket === market ? null : market)}
                               >
                                 <div className="flex-1">
                                   <div className="flex items-center justify-between mb-1.5">
-                                    <span className="text-sm font-semibold text-white">{market || "Unknown"}</span>
-                                    <span className="text-xs font-bold text-slate-400">{countNum} homeowners</span>
+                                    <span className="text-sm font-semibold text-gray-900">{market || "Unknown"}</span>
+                                    <span className="text-xs font-bold text-gray-500">{countNum} homeowners</span>
                                   </div>
-                                  <div className="w-full bg-slate-700 rounded-full h-1.5 overflow-hidden">
+                                  <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
                                     <div className="h-1.5 rounded-full" style={{ width: `${Math.round((countNum / maxMarketCount) * 100)}%`, backgroundColor: TEAL }} />
                                   </div>
                                 </div>
-                                {expandedMarket === market ? <ChevronUp className="w-4 h-4 text-slate-400 shrink-0" /> : <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />}
+                                {expandedMarket === market ? <ChevronUp className="w-4 h-4 text-gray-500 shrink-0" /> : <ChevronDown className="w-4 h-4 text-gray-500 shrink-0" />}
                               </button>
                               {expandedMarket === market && (
-                                <div className="px-4 pb-4 bg-slate-900/30 border-t border-slate-700/60">
-                                  <p className="text-xs text-slate-400 mt-3 mb-3">
-                                    Send launch invitations to the top <strong className="text-white">{Math.min(countNum, inviteLimit)}</strong> pending homeowners in {market}, sorted by priority score.
+                                <div className="px-4 pb-4 bg-gray-50/30 border-t border-gray-200">
+                                  <p className="text-xs text-gray-500 mt-3 mb-3">
+                                    Send launch invitations to the top <strong className="text-gray-900">{Math.min(countNum, inviteLimit)}</strong> pending homeowners in {market}, sorted by priority score.
                                   </p>
                                   <div className="flex items-center gap-3 mb-3">
-                                    <label className="text-xs text-slate-400">Invite up to:</label>
+                                    <label className="text-xs text-gray-500">Invite up to:</label>
                                     <input type="number" min={1} max={500} value={inviteLimit}
                                       onChange={e => setInviteLimit(Math.max(1, Math.min(500, parseInt(e.target.value) || 50)))}
-                                      className="w-20 bg-slate-800 border border-slate-600 rounded-lg px-2 py-1.5 text-sm text-center text-slate-200 outline-none focus:ring-1 focus:ring-teal-500" />
-                                    <span className="text-xs text-slate-500">homeowners</span>
+                                      className="w-20 bg-white border border-gray-300 rounded-lg px-2 py-1.5 text-sm text-center text-gray-800 outline-none focus:ring-1 focus:ring-teal-500" />
+                                    <span className="text-xs text-gray-500">homeowners</span>
                                   </div>
                                   <Button
                                     onClick={() => { setInvitingMarket(market); bulkInvite.mutate({ market, limit: inviteLimit, origin: window.location.origin }); }}
                                     disabled={bulkInvite.isPending && invitingMarket === market}
-                                    className="w-full text-white text-sm bg-teal-600 hover:bg-teal-700"
+                                    className="w-full text-gray-900 text-sm bg-teal-600 hover:bg-teal-700"
                                   >
                                     {bulkInvite.isPending && invitingMarket === market ? "Sending invites..." : <><Send className="w-4 h-4 mr-1.5" /> Invite {market} Homeowners</>}
                                   </Button>
@@ -693,13 +693,13 @@ export default function WaitlistIntelligence() {
               {/* Tab: Trades */}
               {activeTab === "trades" && (
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+                  <div className="bg-white rounded-2xl border border-gray-200 p-5">
                     <div className="flex items-center gap-2 mb-4">
-                      <BarChart3 className="w-5 h-5 text-teal-400" />
-                      <h2 className="font-bold text-white">Trade Distribution</h2>
+                      <BarChart3 className="w-5 h-5 text-teal-700" />
+                      <h2 className="font-bold text-gray-900">Trade Distribution</h2>
                     </div>
                     {tradeDistribution.length === 0 ? (
-                      <p className="text-sm text-slate-500 text-center py-8">No trade data yet</p>
+                      <p className="text-sm text-gray-500 text-center py-8">No trade data yet</p>
                     ) : (
                       <div className="space-y-2.5">
                         {tradeDistribution.map(([trade, count]) => (
@@ -716,17 +716,17 @@ export default function WaitlistIntelligence() {
                     )}
                   </div>
 
-                  <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60 p-5">
+                  <div className="bg-white rounded-2xl border border-gray-200 p-5">
                     <div className="flex items-center gap-2 mb-4">
-                      <BarChart3 className="w-5 h-5 text-purple-400" />
-                      <h2 className="font-bold text-white">Primary Motivation</h2>
+                      <BarChart3 className="w-5 h-5 text-gray-600" />
+                      <h2 className="font-bold text-gray-900">Primary Motivation</h2>
                     </div>
                     <div className="space-y-2.5">
                       {(analytics?.byMotivation ?? []).map((m: any) => (
                         <BarRow key={m.motivation} label={MOTIVATION_LABELS[m.motivation] ?? m.motivation} value={m.count}
                           max={Math.max(...(analytics?.byMotivation ?? []).map((x: any) => x.count), 1)} color="#8B5CF6" />
                       ))}
-                      {(analytics?.byMotivation ?? []).length === 0 && <p className="text-xs text-slate-500 text-center py-4">No data yet</p>}
+                      {(analytics?.byMotivation ?? []).length === 0 && <p className="text-xs text-gray-500 text-center py-4">No data yet</p>}
                     </div>
                   </div>
                 </div>
@@ -734,47 +734,47 @@ export default function WaitlistIntelligence() {
 
               {/* Tab: Referrals */}
               {activeTab === "referrals" && (
-                <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60">
-                  <div className="p-5 border-b border-slate-700/60">
+                <div className="bg-white rounded-2xl border border-gray-200">
+                  <div className="p-5 border-b border-gray-200">
                     <div className="flex items-center gap-2">
-                      <Trophy className="w-5 h-5 text-amber-400" />
-                      <h2 className="font-bold text-white">Referral Leaderboard</h2>
-                      <span className="text-xs text-slate-500 ml-1">Top advocates driving organic growth</span>
+                      <Trophy className="w-5 h-5 text-amber-700" />
+                      <h2 className="font-bold text-gray-900">Referral Leaderboard</h2>
+                      <span className="text-xs text-gray-500 ml-1">Top advocates driving organic growth</span>
                     </div>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-slate-700/60">
+                        <tr className="border-b border-gray-200">
                           {["Rank", "Homeowner", "Email", "Referral Code", "Referrals", "Priority Score"].map((h, i) => (
-                            <th key={h} className={`px-5 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide ${i >= 4 ? "text-right" : "text-left"}`}>{h}</th>
+                            <th key={h} className={`px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide ${i >= 4 ? "text-right" : "text-left"}`}>{h}</th>
                           ))}
                         </tr>
                       </thead>
                       <tbody>
                         {topReferrers.length === 0 ? (
-                          <tr><td colSpan={6} className="text-center text-slate-500 py-8 text-sm">No referrals yet — share the waitlist link!</td></tr>
+                          <tr><td colSpan={6} className="text-center text-gray-500 py-8 text-sm">No referrals yet — share the waitlist link!</td></tr>
                         ) : (
                           topReferrers.map((r: any, i: number) => (
-                            <tr key={r.referralCode} className="border-b border-slate-700/40 hover:bg-slate-700/20 transition-colors">
+                            <tr key={r.referralCode} className="border-b border-gray-200/40 hover:bg-gray-100/20 transition-colors">
                               <td className="px-5 py-3">
                                 <div className="flex items-center gap-1">
-                                  {i < 3 && <Trophy className={`w-4 h-4 ${i === 0 ? "text-amber-400" : i === 1 ? "text-slate-400" : "text-amber-700"}`} />}
-                                  <span className="font-bold text-slate-300">#{i + 1}</span>
+                                  {i < 3 && <Trophy className={`w-4 h-4 ${i === 0 ? "text-amber-700" : i === 1 ? "text-gray-500" : "text-amber-700"}`} />}
+                                  <span className="font-bold text-gray-700">#{i + 1}</span>
                                 </div>
                               </td>
-                              <td className="px-5 py-3 font-medium text-white">{r.name}</td>
-                              <td className="px-5 py-3 text-slate-400">{r.email}</td>
+                              <td className="px-5 py-3 font-medium text-gray-900">{r.name}</td>
+                              <td className="px-5 py-3 text-gray-500">{r.email}</td>
                               <td className="px-5 py-3">
                                 <div className="flex items-center gap-1.5">
-                                  <code className="text-xs bg-slate-700 px-2 py-0.5 rounded font-mono text-teal-400">{r.code}</code>
-                                  <button onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/waitlist/homeowner?ref=${r.code}`); toast.success("Referral link copied!"); }} className="text-slate-500 hover:text-slate-300 transition-colors">
+                                  <code className="text-xs bg-gray-100 px-2 py-0.5 rounded font-mono text-teal-700">{r.code}</code>
+                                  <button onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/waitlist/homeowner?ref=${r.code}`); toast.success("Referral link copied!"); }} className="text-gray-500 hover:text-gray-700 transition-colors">
                                     <Copy className="w-3.5 h-3.5" />
                                   </button>
                                 </div>
                               </td>
                               <td className="px-5 py-3 text-right">
-                                <Badge className="bg-teal-500/20 text-teal-300 border-0">{r.referrals}</Badge>
+                                <Badge className="bg-teal-500/20 text-teal-700 border-0">{r.referrals}</Badge>
                               </td>
                               <td className="px-5 py-3 text-right font-bold text-indigo-400">{r.score}</td>
                             </tr>
@@ -788,26 +788,26 @@ export default function WaitlistIntelligence() {
 
               {/* Tab: Recent Signups */}
               {activeTab === "recent" && (
-                <div className="bg-slate-800/60 rounded-2xl border border-slate-700/60">
-                  <div className="p-5 border-b border-slate-700/60">
+                <div className="bg-white rounded-2xl border border-gray-200">
+                  <div className="p-5 border-b border-gray-200">
                     <div className="flex items-center gap-2">
-                      <TrendingUp className="w-5 h-5 text-teal-400" />
-                      <h2 className="font-bold text-white">Recent Signups</h2>
-                      <span className="text-xs text-slate-500 ml-1">Last 20 homeowners</span>
+                      <TrendingUp className="w-5 h-5 text-teal-700" />
+                      <h2 className="font-bold text-gray-900">Recent Signups</h2>
+                      <span className="text-xs text-gray-500 ml-1">Last 20 homeowners</span>
                     </div>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-slate-700/60">
+                        <tr className="border-b border-gray-200">
                           {["Name", "Location", "Market", "Projects", "Score", "Status", "Joined"].map((h, i) => (
-                            <th key={h} className={`px-5 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide ${i === 4 ? "text-right" : "text-left"}`}>{h}</th>
+                            <th key={h} className={`px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide ${i === 4 ? "text-right" : "text-left"}`}>{h}</th>
                           ))}
                         </tr>
                       </thead>
                       <tbody>
                         {recentSignups.length === 0 ? (
-                          <tr><td colSpan={7} className="text-center text-slate-500 py-8 text-sm">No signups yet</td></tr>
+                          <tr><td colSpan={7} className="text-center text-gray-500 py-8 text-sm">No signups yet</td></tr>
                         ) : (
                           recentSignups.flatMap((r: any) => {
                             const projects = typeof r.desiredProjects === "string"
@@ -818,47 +818,47 @@ export default function WaitlistIntelligence() {
                             return [
                               <tr
                                 key={r.id}
-                                className={`border-b border-slate-700/40 transition-colors cursor-pointer ${isExpanded ? "bg-indigo-900/20" : "hover:bg-slate-700/20"}`}
+                                className={`border-b border-gray-200/40 transition-colors cursor-pointer ${isExpanded ? "bg-indigo-900/20" : "hover:bg-gray-100/20"}`}
                                 onClick={() => setExpandedVault(isExpanded ? null : r.id)}
                               >
                                 <td className="px-5 py-3">
                                   <div className="flex items-center gap-2">
                                     <div>
-                                      <p className="font-medium text-white">{r.firstName} {r.lastName}</p>
-                                      <p className="text-xs text-slate-500">{r.email}</p>
+                                      <p className="font-medium text-gray-900">{r.firstName} {r.lastName}</p>
+                                      <p className="text-xs text-gray-500">{r.email}</p>
                                     </div>
                                     {hasVaultData && (
                                       <span className="ml-1 px-1.5 py-0.5 bg-indigo-500/20 text-indigo-300 rounded text-xs font-semibold border border-indigo-500/30" title="Has Home Health Vault data">🏠</span>
                                     )}
                                   </div>
                                 </td>
-                                <td className="px-5 py-3 text-slate-400 text-xs">{r.city}, {r.state} {r.zipCode}</td>
+                                <td className="px-5 py-3 text-gray-500 text-xs">{r.city}, {r.state} {r.zipCode}</td>
                                 <td className="px-5 py-3">
                                   {r.launchMarket
                                     ? <span className="px-2 py-0.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-medium border border-indigo-500/20">{r.launchMarket}</span>
-                                    : <span className="text-slate-600 text-xs">—</span>}
+                                    : <span className="text-gray-400 text-xs">—</span>}
                                 </td>
                                 <td className="px-5 py-3">
                                   <div className="flex flex-wrap gap-1">
                                     {projects.slice(0, 2).map((p: string) => (
-                                      <span key={p} className="px-1.5 py-0.5 bg-slate-700 text-slate-400 rounded text-xs">{p}</span>
+                                      <span key={p} className="px-1.5 py-0.5 bg-gray-100 text-gray-500 rounded text-xs">{p}</span>
                                     ))}
-                                    {projects.length > 2 && <span className="text-xs text-slate-500">+{projects.length - 2}</span>}
+                                    {projects.length > 2 && <span className="text-xs text-gray-500">+{projects.length - 2}</span>}
                                   </div>
                                 </td>
                                 <td className="px-5 py-3 text-right font-bold text-indigo-400">{r.priorityScore}</td>
                                 <td className="px-5 py-3">
                                   <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
-                                    r.status === "invited" ? "bg-blue-500/20 text-blue-300" :
-                                    r.status === "approved" ? "bg-teal-500/20 text-teal-300" :
-                                    r.status === "rejected" ? "bg-red-500/20 text-red-400" :
-                                    "bg-amber-500/20 text-amber-300"
+                                    r.status === "invited" ? "bg-blue-500/20 text-teal-700" :
+                                    r.status === "approved" ? "bg-teal-500/20 text-teal-700" :
+                                    r.status === "rejected" ? "bg-red-500/20 text-red-600" :
+                                    "bg-amber-500/20 text-amber-700"
                                   }`}>{r.status}</span>
                                 </td>
-                                <td className="px-5 py-3 text-xs text-slate-500">
+                                <td className="px-5 py-3 text-xs text-gray-500">
                                   <div className="flex items-center gap-1">
                                     {r.createdAt ? new Date(r.createdAt).toLocaleDateString() : "—"}
-                                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-indigo-400" /> : <ChevronDown className="w-3.5 h-3.5 text-slate-600" />}
+                                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-indigo-400" /> : <ChevronDown className="w-3.5 h-3.5 text-gray-400" />}
                                   </div>
                                 </td>
                               </tr>,

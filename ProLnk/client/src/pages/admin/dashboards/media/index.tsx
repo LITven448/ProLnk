@@ -3,7 +3,7 @@ import { D } from "@/components/DashboardShared";
 
 const BASE = "/admin/media-dash";
 const COLOR = "#FBB140";
-const ACCENT = "#7928CA";
+const ACCENT = "#0D9488";
 
 const AD_DATA = [8, 12, 10, 16, 22, 28, 31, 27, 34, 41, 48, 56];
 

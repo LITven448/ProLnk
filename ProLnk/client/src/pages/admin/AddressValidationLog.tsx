@@ -30,17 +30,17 @@ const INVALID_REPORT = [
 
 const TODAY_STATS = [
   { label: "Validations Today", value: 147, sub: null,      color: "#00D4FF" },
-  { label: "Valid",             value: 138, sub: "94%",     color: "#82D616" },
+  { label: "Valid",             value: 138, sub: "94%",     color: "#16A34A" },
   { label: "Invalid",          value: 6,   sub: "4%",      color: "#EA0606" },
   { label: "Corrected",        value: 3,   sub: "2%",      color: "#FBB140" },
 ];
 
 function ResultBadge({ result }: { result: string }) {
   if (result === "valid")
-    return <Badge variant="outline" className="border-green-500/50 text-green-400 text-xs">Valid</Badge>;
+    return <Badge variant="outline" className="border-green-500/50 text-green-700 text-xs">Valid</Badge>;
   if (result === "corrected")
     return <Badge variant="outline" className="border-yellow-500/50 text-yellow-400 text-xs">Corrected</Badge>;
-  return <Badge variant="outline" className="border-red-500/50 text-red-400 text-xs">Invalid</Badge>;
+  return <Badge variant="outline" className="border-red-500/50 text-red-600 text-xs">Invalid</Badge>;
 }
 
 export default function AddressValidationLog() {
@@ -55,21 +55,21 @@ export default function AddressValidationLog() {
           <div className="flex items-center gap-3">
             <div
               className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(135deg, #00D4FF25, #7928CA25)" }}
+              style={{ background: "linear-gradient(135deg, #00D4FF25, #0D948825)" }}
             >
               <MapPin className="w-6 h-6" style={{ color: "#00D4FF" }} />
             </div>
             <div>
-              <h1 className="text-2xl font-black text-white tracking-tight">Address Validation</h1>
+              <h1 className="text-2xl font-black text-gray-900 tracking-tight">Address Validation</h1>
               <p className="text-sm text-muted-foreground mt-0.5">Smarty Streets Integration</p>
             </div>
           </div>
           <div
             className="flex items-center gap-2 px-3 py-1.5 rounded-full border"
-            style={{ background: "#82D61615", borderColor: "#82D61640" }}
+            style={{ background: "#16A34A15", borderColor: "#16A34A40" }}
           >
-            <Wifi className="h-3.5 w-3.5" style={{ color: "#82D616" }} />
-            <span className="text-xs font-bold" style={{ color: "#82D616" }}>
+            <Wifi className="h-3.5 w-3.5" style={{ color: "#16A34A" }} />
+            <span className="text-xs font-bold" style={{ color: "#16A34A" }}>
               Connected — Smarty Streets API responding normally
             </span>
           </div>
@@ -88,7 +88,7 @@ export default function AddressValidationLog() {
                   <span className="text-xs text-muted-foreground">{s.label}</span>
                 </div>
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-black text-white">{s.value}</span>
+                  <span className="text-2xl font-black text-gray-900">{s.value}</span>
                   {s.sub && <span className="text-sm font-bold" style={{ color: s.color }}>{s.sub}</span>}
                 </div>
               </CardContent>
@@ -105,7 +105,7 @@ export default function AddressValidationLog() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-between text-sm mb-2">
-              <span className="text-white font-medium">147 of 10,000 free lookups used</span>
+              <span className="text-gray-900 font-medium">147 of 10,000 free lookups used</span>
               <a
                 href="#"
                 className="text-xs font-bold"
@@ -119,7 +119,7 @@ export default function AddressValidationLog() {
                 className="h-full rounded-full transition-all"
                 style={{
                   width: `${usedPct}%`,
-                  background: "linear-gradient(90deg, #00D4FF, #7928CA)",
+                  background: "linear-gradient(90deg, #00D4FF, #0D9488)",
                 }}
               />
             </div>
@@ -178,7 +178,7 @@ export default function AddressValidationLog() {
         <Card className="border border-border">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-sm">
-              <XCircle className="h-4 w-4 text-red-400" />
+              <XCircle className="h-4 w-4 text-red-600" />
               <span className="font-bold uppercase tracking-widest text-muted-foreground text-xs">
                 Invalid Address Report
               </span>
@@ -206,7 +206,7 @@ export default function AddressValidationLog() {
                               ? "border-yellow-500/50 text-yellow-400 text-xs"
                               : row.issue === "Typo"
                               ? "border-blue-500/50 text-blue-400 text-xs"
-                              : "border-red-500/50 text-red-400 text-xs"
+                              : "border-red-500/50 text-red-600 text-xs"
                           }
                         >
                           {row.issue}
@@ -226,13 +226,13 @@ export default function AddressValidationLog() {
           className="rounded-2xl flex items-center justify-center border"
           style={{
             height: 160,
-            background: "linear-gradient(135deg, #0A1628 0%, #0e2040 100%)",
+            background: "linear-gradient(135deg, #F8FAFC 0%, #0e2040 100%)",
             borderColor: "#ffffff15",
           }}
         >
           <div className="text-center">
             <Globe className="h-8 w-8 mx-auto mb-2" style={{ color: "#00D4FF" }} />
-            <p className="text-sm font-bold text-white">Address validation coverage: 99.9% of US addresses</p>
+            <p className="text-sm font-bold text-gray-900">Address validation coverage: 99.9% of US addresses</p>
             <p className="text-xs text-muted-foreground mt-1">Interactive coverage map — coming soon</p>
           </div>
         </div>

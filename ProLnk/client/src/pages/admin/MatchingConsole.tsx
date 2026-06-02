@@ -8,7 +8,7 @@ import {
   Award, ChevronDown, ChevronUp, Inbox,
 } from "lucide-react";
 
-const NAVY = "#0A1628";
+const NAVY = "#F8FAFC";
 const TEAL = "#0D9488";
 
 type RankedPartner = {
@@ -44,7 +44,7 @@ function MatchPanel({ opportunityId }: { opportunityId: number }) {
         </Button>
         <Button
           size="sm"
-          className="text-white"
+          className="text-gray-900"
           style={{ backgroundColor: TEAL }}
           onClick={() => createOffer.mutate({ opportunityId })}
           disabled={createOffer.isPending}
@@ -67,11 +67,11 @@ function MatchPanel({ opportunityId }: { opportunityId: number }) {
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-gray-900 shrink-0"
                     style={{ backgroundColor: i === 0 ? TEAL : "#94A3B8" }}>
                     {i + 1}
                   </span>
-                  <span className="font-semibold text-sm text-[#0A1628] truncate">
+                  <span className="font-semibold text-sm text-[#F8FAFC] truncate">
                     {p.businessName ?? `Partner #${p.partnerId}`}
                   </span>
                 </div>
@@ -108,7 +108,7 @@ function OpportunityRow({ opp }: { opp: any }) {
       >
         <div className="min-w-0">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-[#0A1628] capitalize truncate">
+            <span className="font-bold text-[#F8FAFC] capitalize truncate">
               {(opp.opportunityCategory ?? opp.opportunityType ?? "Opportunity").replace(/_/g, " ")}
             </span>
             <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 capitalize">
@@ -150,7 +150,7 @@ export default function MatchingConsole() {
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${TEAL}15` }}>
             <Target className="w-5 h-5" style={{ color: TEAL }} />
           </div>
-          <h1 className="text-2xl font-bold text-[#0A1628]">Matching Console</h1>
+          <h1 className="text-2xl font-bold text-[#F8FAFC]">Matching Console</h1>
         </div>
         <p className="text-sm text-gray-500 mb-6 ml-13">
           Run the matching engine on any opportunity, review ranked partners, and dispatch the first offer.
@@ -167,7 +167,7 @@ export default function MatchingConsole() {
             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${NAVY}08` }}>
               <Inbox className="w-7 h-7 text-gray-300" />
             </div>
-            <h3 className="font-bold text-[#0A1628]">No opportunities yet</h3>
+            <h3 className="font-bold text-[#F8FAFC]">No opportunities yet</h3>
             <p className="text-sm text-gray-500 mt-1">Homeowner job requests will appear here for matching.</p>
           </div>
         )}

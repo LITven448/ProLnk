@@ -80,10 +80,10 @@ const scoreColor = (s: number) =>
 
 const tierBadge = (tier: Partner["tier"]) => {
   const map: Record<Partner["tier"], string> = {
-    Charter: "bg-amber-500/20 text-amber-400",
-    Founding: "bg-teal-500/20 text-teal-400",
+    Charter: "bg-amber-500/20 text-amber-700",
+    Founding: "bg-teal-500/20 text-teal-700",
     L3: "bg-blue-500/20 text-blue-400",
-    L4: "bg-slate-600 text-slate-300",
+    L4: "bg-slate-600 text-gray-700",
   };
   return map[tier];
 };
@@ -103,15 +103,15 @@ export default function PartnerHealthDashboard() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#F8FAFC] p-6 space-y-8">
 
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <Heart className="w-6 h-6 text-teal-400" />
+          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <Heart className="w-6 h-6 text-teal-700" />
             Partner Health Dashboard
           </h1>
-          <p className="text-slate-400 mt-1 text-sm">Engagement, NPS, completion rate, and at-risk partner tracking</p>
+          <p className="text-gray-500 mt-1 text-sm">Engagement, NPS, completion rate, and at-risk partner tracking</p>
         </div>
 
         {/* KPI Cards */}
@@ -123,20 +123,20 @@ export default function PartnerHealthDashboard() {
             { label: "Avg NPS",          value: `${avgNps}/10`,             icon: Star,        color: "#818cf8" },
             { label: "Avg Completion",   value: `${avgCompletion}%`,        icon: TrendingUp,  color: "#2dd4bf" },
           ].map((k) => (
-            <div key={k.label} className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+            <div key={k.label} className="bg-white rounded-xl p-5 border border-gray-200">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{k.label}</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-gray-500">{k.label}</span>
                 <k.icon className="w-4 h-4" style={{ color: k.color }} />
               </div>
-              <div className="text-2xl font-bold text-white">{k.value}</div>
+              <div className="text-2xl font-bold text-gray-900">{k.value}</div>
             </div>
           ))}
         </div>
 
         {/* Activity Heatmap */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
-          <h2 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-            <Activity className="w-4 h-4 text-teal-400" />
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <h2 className="text-gray-900 font-semibold text-base mb-4 flex items-center gap-2">
+            <Activity className="w-4 h-4 text-teal-700" />
             Partner Activity Heatmap — Last 8 Weeks
           </h2>
           <div className="overflow-x-auto">
@@ -144,13 +144,13 @@ export default function PartnerHealthDashboard() {
               {/* Day labels top */}
               <div className="flex gap-1 mb-1 ml-10">
                 {DAY_LABELS.map((d) => (
-                  <div key={d} className="w-8 text-center text-xs text-slate-500">{d}</div>
+                  <div key={d} className="w-8 text-center text-xs text-gray-500">{d}</div>
                 ))}
               </div>
               {/* Rows */}
               {HEATMAP.map((week, wi) => (
                 <div key={wi} className="flex items-center gap-1 mb-1">
-                  <div className="w-8 text-right text-xs text-slate-500 pr-1">{WEEK_LABELS[wi]}</div>
+                  <div className="w-8 text-right text-xs text-gray-500 pr-1">{WEEK_LABELS[wi]}</div>
                   {week.map((val, di) => (
                     <div
                       key={di}
@@ -163,11 +163,11 @@ export default function PartnerHealthDashboard() {
               ))}
               {/* Legend */}
               <div className="flex items-center gap-2 mt-3 ml-10">
-                <span className="text-xs text-slate-500">Less</span>
+                <span className="text-xs text-gray-500">Less</span>
                 {[0, 1, 2, 3, 4].map((v) => (
                   <div key={v} className="w-5 h-5 rounded-sm" style={{ background: heatColor(v) }} />
                 ))}
-                <span className="text-xs text-slate-500">More</span>
+                <span className="text-xs text-gray-500">More</span>
               </div>
             </div>
           </div>
@@ -176,19 +176,19 @@ export default function PartnerHealthDashboard() {
         <div className="grid lg:grid-cols-2 gap-6">
 
           {/* At-Risk Partners */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700 flex items-center justify-between">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-red-400" />
+          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+              <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 text-red-600" />
                 At-Risk Partners
               </h2>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 font-semibold">
+              <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-600 font-semibold">
                 {AT_RISK.length} inactive &gt;30d
               </span>
             </div>
-            <div className="divide-y divide-slate-700/50">
+            <div className="divide-y divide-gray-200/50">
               {AT_RISK.map((p) => (
-                <div key={p.id} className="flex items-center gap-4 px-6 py-4 hover:bg-slate-700/30 transition-colors">
+                <div key={p.id} className="flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm"
                     style={{ background: scoreColor(p.healthScore) + "22", color: scoreColor(p.healthScore) }}
@@ -197,10 +197,10 @@ export default function PartnerHealthDashboard() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5">
-                      <span className="font-medium text-white text-sm">{p.name}</span>
+                      <span className="font-medium text-gray-900 text-sm">{p.name}</span>
                       <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${tierBadge(p.tier)}`}>{p.tier}</span>
                     </div>
-                    <div className="text-xs text-slate-400 mt-0.5">
+                    <div className="text-xs text-gray-500 mt-0.5">
                       {p.trade} · Last active {p.lastActive} · {p.daysInactive}d inactive
                     </div>
                   </div>
@@ -209,8 +209,8 @@ export default function PartnerHealthDashboard() {
                     disabled={reachedOut.has(p.id)}
                     className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors ${
                       reachedOut.has(p.id)
-                        ? "bg-slate-700 text-slate-500 cursor-not-allowed"
-                        : "bg-teal-500/20 text-teal-400 hover:bg-teal-500/30"
+                        ? "bg-gray-100 text-gray-500 cursor-not-allowed"
+                        : "bg-teal-500/20 text-teal-700 hover:bg-teal-500/30"
                     }`}
                   >
                     <Mail className="w-3 h-3" />
@@ -222,30 +222,30 @@ export default function PartnerHealthDashboard() {
           </div>
 
           {/* Top Performers */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <Star className="w-4 h-4 text-amber-400" />
+          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-200">
+              <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+                <Star className="w-4 h-4 text-amber-700" />
                 Top Performers This Month
               </h2>
             </div>
-            <div className="divide-y divide-slate-700/50">
+            <div className="divide-y divide-gray-200/50">
               {TOP_PERFORMERS.map((p, i) => (
-                <div key={p.id} className="flex items-center gap-4 px-6 py-4 hover:bg-slate-700/30 transition-colors">
-                  <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${i < 3 ? "bg-amber-500/20 text-amber-400" : "bg-slate-700 text-slate-400"}`}>
+                <div key={p.id} className="flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
+                  <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${i < 3 ? "bg-amber-500/20 text-amber-700" : "bg-gray-100 text-gray-500"}`}>
                     {i + 1}
                   </span>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5">
-                      <span className="font-medium text-white text-sm">{p.name}</span>
+                      <span className="font-medium text-gray-900 text-sm">{p.name}</span>
                       <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${tierBadge(p.tier)}`}>{p.tier}</span>
                     </div>
-                    <div className="text-xs text-slate-400 mt-0.5">
+                    <div className="text-xs text-gray-500 mt-0.5">
                       {p.trade} · NPS {p.nps}/10 · {p.completionRate}% completion
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-bold text-white">{p.jobsThisMonth} jobs</div>
+                    <div className="text-sm font-bold text-gray-900">{p.jobsThisMonth} jobs</div>
                     <div className="text-xs" style={{ color: scoreColor(p.healthScore) }}>
                       Score {p.healthScore}
                     </div>
@@ -255,15 +255,15 @@ export default function PartnerHealthDashboard() {
             </div>
 
             {/* Mini score distribution */}
-            <div className="px-6 py-4 border-t border-slate-700">
-              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+            <div className="px-6 py-4 border-t border-gray-200">
+              <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3 flex items-center gap-1.5">
                 <BarChart2 className="w-3 h-3" />
                 Engagement Score Distribution
               </div>
               <div className="flex items-end gap-1.5 h-20">
                 {ENGAGEMENT_DIST.map((d) => (
                   <div key={d.range} className="flex-1 flex flex-col items-center gap-1">
-                    <span className="text-xs text-slate-400">{d.count}</span>
+                    <span className="text-xs text-gray-500">{d.count}</span>
                     <div
                       className="w-full rounded-t-sm transition-all"
                       style={{
@@ -271,7 +271,7 @@ export default function PartnerHealthDashboard() {
                         background: d.range === "81–100" ? "#2dd4bf" : d.range === "61–80" ? "#34d399" : d.range === "41–60" ? "#f59e0b" : d.range === "21–40" ? "#fb923c" : "#ef4444",
                       }}
                     />
-                    <span className="text-xs text-slate-500 leading-tight text-center">{d.range}</span>
+                    <span className="text-xs text-gray-500 leading-tight text-center">{d.range}</span>
                   </div>
                 ))}
               </div>
@@ -281,17 +281,17 @@ export default function PartnerHealthDashboard() {
         </div>
 
         {/* All Partners Table */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <Users className="w-4 h-4 text-teal-400" />
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <Users className="w-4 h-4 text-teal-700" />
               All Partners Health Overview
             </h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-700 text-slate-400 text-xs uppercase tracking-wider">
+                <tr className="border-b border-gray-200 text-gray-500 text-xs uppercase tracking-wider">
                   <th className="text-left px-6 py-3">Partner</th>
                   <th className="text-left px-4 py-3">Trade</th>
                   <th className="text-left px-4 py-3">Tier</th>
@@ -304,24 +304,24 @@ export default function PartnerHealthDashboard() {
               </thead>
               <tbody>
                 {PARTNERS.map((p) => (
-                  <tr key={p.id} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
-                    <td className="px-6 py-3 font-medium text-white">{p.name}</td>
-                    <td className="px-4 py-3 text-slate-300">{p.trade}</td>
+                  <tr key={p.id} className="border-b border-gray-200/50 hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-3 font-medium text-gray-900">{p.name}</td>
+                    <td className="px-4 py-3 text-gray-700">{p.trade}</td>
                     <td className="px-4 py-3">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${tierBadge(p.tier)}`}>{p.tier}</span>
                     </td>
                     <td className="px-4 py-3 text-center">
                       <div className="inline-flex items-center gap-2">
-                        <div className="w-16 h-1.5 rounded-full bg-slate-700 overflow-hidden">
+                        <div className="w-16 h-1.5 rounded-full bg-gray-100 overflow-hidden">
                           <div className="h-full rounded-full" style={{ width: `${p.healthScore}%`, background: scoreColor(p.healthScore) }} />
                         </div>
                         <span className="text-xs font-bold" style={{ color: scoreColor(p.healthScore) }}>{p.healthScore}</span>
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-center text-slate-300">{p.nps}/10</td>
-                    <td className="px-4 py-3 text-center text-slate-300">{p.completionRate}%</td>
-                    <td className="px-4 py-3 text-right text-white font-semibold">{p.jobsThisMonth}</td>
-                    <td className={`px-6 py-3 text-right text-xs ${p.daysInactive > 30 ? "text-red-400" : p.daysInactive > 14 ? "text-amber-400" : "text-slate-400"}`}>
+                    <td className="px-4 py-3 text-center text-gray-700">{p.nps}/10</td>
+                    <td className="px-4 py-3 text-center text-gray-700">{p.completionRate}%</td>
+                    <td className="px-4 py-3 text-right text-gray-900 font-semibold">{p.jobsThisMonth}</td>
+                    <td className={`px-6 py-3 text-right text-xs ${p.daysInactive > 30 ? "text-red-600" : p.daysInactive > 14 ? "text-amber-700" : "text-gray-500"}`}>
                       {p.lastActive}
                     </td>
                   </tr>

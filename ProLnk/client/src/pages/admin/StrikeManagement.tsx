@@ -33,7 +33,7 @@ const STRIKE_REASONS = [
 type StandingBadge = { label: string; color: string; bg: string; icon: React.ReactNode };
 
 function getStanding(strikeCount: number, status: string): StandingBadge {
-  if (status === "rejected") return { label: "Suspended", color: "#7C3AED", bg: "#EDE9FE", icon: <ShieldOff className="w-3 h-3" /> };
+  if (status === "rejected") return { label: "Suspended", color: "#0D9488", bg: "#EDE9FE", icon: <ShieldOff className="w-3 h-3" /> };
   if (strikeCount >= 2) return { label: "Final Warning", color: "#EF4444", bg: "#FEE2E2", icon: <AlertTriangle className="w-3 h-3" /> };
   if (strikeCount === 1) return { label: "1 Strike", color: "#F97316", bg: "#FFF7ED", icon: <AlertTriangle className="w-3 h-3" /> };
   return { label: "Good Standing", color: "#059669", bg: "#D1FAE5", icon: <ShieldCheck className="w-3 h-3" /> };

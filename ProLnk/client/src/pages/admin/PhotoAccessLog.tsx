@@ -22,7 +22,7 @@ export default function PhotoAccessLog() {
   const ACTION_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
     upload: { label: "Upload", color: "#059669", bg: "#D1FAE5" },
     view: { label: "View", color: "#0284C7", bg: "#E0F2FE" },
-    download: { label: "Download", color: "#7C3AED", bg: "#EDE9FE" },
+    download: { label: "Download", color: "#0D9488", bg: "#EDE9FE" },
     analyze: { label: "AI Analyze", color: "#D97706", bg: "#FEF3C7" },
     delete: { label: "Delete", color: "#DC2626", bg: "#FEE2E2" },
   };

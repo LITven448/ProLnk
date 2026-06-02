@@ -57,7 +57,7 @@ const SEASONAL_CAMPAIGNS = [
     id: "fall_prep",
     season: "Fall",
     icon: CloudRain,
-    color: "#7C3AED",
+    color: "#0D9488",
     bg: "#FAF5FF",
     title: "Fall Storm Prep",
     desc: "Pre-winter weatherization — roof inspection, gutter cleaning, furnace check.",
@@ -105,7 +105,7 @@ const WINBACK_SEQUENCE = [
 const STATS = [
   { label: "Homeowners Enrolled",   value: "1,201", icon: Users,      color: "#059669" },
   { label: "Campaigns Active",      value: "2",     icon: Play,       color: "#0891b2" },
-  { label: "Avg Open Rate",         value: "34%",   icon: BarChart2,  color: "#7C3AED" },
+  { label: "Avg Open Rate",         value: "34%",   icon: BarChart2,  color: "#0D9488" },
   { label: "Win-Back Candidates",   value: "23",    icon: UserX,      color: "#d97706" },
 ];
 
@@ -131,7 +131,7 @@ const TICKER_ITEMS = [
 // ── Audience segments ─────────────────────────────────────────────────────────
 const AUDIENCE_SEGMENTS = [
   { label: "All Partners",  count: 214, color: "#0891b2" },
-  { label: "HVAC Only",     count: 67,  color: "#7C3AED" },
+  { label: "HVAC Only",     count: 67,  color: "#0D9488" },
   { label: "DFW North",     count: 94,  color: "#059669" },
   { label: "At-Risk",       count: 23,  color: "#d97706" },
 ];
@@ -167,7 +167,7 @@ const SCHEDULE_BLOCKS: Record<string, { label: string; color: string }[]> = {
   Mon: [{ label: "Summer HVAC Email", color: "#d97706" }, { label: "Win-Back Day-0", color: "#6B7280" }],
   Tue: [],
   Wed: [{ label: "Win-Back Day-7 SMS", color: "#0891b2" }],
-  Thu: [{ label: "Referral Nudge", color: "#7C3AED" }],
+  Thu: [{ label: "Referral Nudge", color: "#0D9488" }],
   Fri: [{ label: "Summer HVAC SMS", color: "#d97706" }],
   Sat: [],
   Sun: [{ label: "Weekly Digest", color: "#059669" }],
@@ -227,10 +227,10 @@ export default function CampaignCenter() {
     <div className="p-6 max-w-6xl mx-auto space-y-6">
 
       {/* ── Live Ticker ────────────────────────────────────────────────────── */}
-      <div className="bg-[#0A1628] rounded-xl overflow-hidden flex items-center gap-0">
+      <div className="bg-[#F8FAFC] rounded-xl overflow-hidden flex items-center gap-0">
         <div className="bg-[#1e3a5f] px-3 py-2 flex items-center gap-1.5 flex-shrink-0">
           <Zap className="w-3.5 h-3.5 text-yellow-400" />
-          <span className="text-[10px] font-bold text-yellow-300 uppercase tracking-wider">Live</span>
+          <span className="text-[10px] font-bold text-amber-700 uppercase tracking-wider">Live</span>
         </div>
         <div className="flex-1 overflow-hidden">
           <div
@@ -250,7 +250,7 @@ export default function CampaignCenter() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-2">
-            <Megaphone className="w-6 h-6 text-[#0A1628]" />
+            <Megaphone className="w-6 h-6 text-[#F8FAFC]" />
             Campaign Center
           </h1>
           <p className="text-sm text-gray-500 mt-1">Seasonal homeowner check-ins and partner win-back automation sequences</p>
@@ -288,7 +288,7 @@ export default function CampaignCenter() {
               onClick={() => setActiveSegment(i)}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border transition-all ${
                 activeSegment === i
-                  ? "text-white border-transparent shadow"
+                  ? "text-gray-900 border-transparent shadow"
                   : "bg-gray-50 text-gray-600 border-gray-200 hover:border-gray-300"
               }`}
               style={activeSegment === i ? { backgroundColor: seg.color, borderColor: seg.color } : {}}
@@ -296,7 +296,7 @@ export default function CampaignCenter() {
               {seg.label}
               <span
                 className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
-                  activeSegment === i ? "bg-white/20 text-white" : "bg-gray-200 text-gray-600"
+                  activeSegment === i ? "bg-white/20 text-gray-900" : "bg-gray-200 text-gray-600"
                 }`}
               >
                 {seg.count}
@@ -393,7 +393,7 @@ export default function CampaignCenter() {
                         <div key={i} className="flex items-start gap-3">
                           <div className="flex flex-col items-center">
                             <div
-                              className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                              className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-gray-900"
                               style={{ backgroundColor: campaign.color }}
                             >
                               {i + 1}
@@ -480,7 +480,7 @@ export default function CampaignCenter() {
                   <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center flex-shrink-0">
                       <div
-                        className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                        className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-gray-900"
                         style={{ backgroundColor: step.color }}
                       >
                         {i + 1}
@@ -583,7 +583,7 @@ export default function CampaignCenter() {
                       >
                         <div className="flex items-center justify-between mb-1.5">
                           <div className="flex items-center gap-1.5">
-                            <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isWinner ? "bg-emerald-500 text-white" : "bg-gray-300 text-gray-600"}`}>
+                            <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isWinner ? "bg-emerald-500 text-gray-900" : "bg-gray-300 text-gray-600"}`}>
                               {letter}
                             </span>
                             {isWinner && <Star className="w-3 h-3 text-amber-500 fill-amber-400" />}
@@ -626,7 +626,7 @@ export default function CampaignCenter() {
                     {SCHEDULE_BLOCKS[day].map((block, i) => (
                       <div
                         key={i}
-                        className="px-1.5 py-1 rounded text-[10px] font-semibold text-white leading-tight"
+                        className="px-1.5 py-1 rounded text-[10px] font-semibold text-gray-900 leading-tight"
                         style={{ backgroundColor: block.color }}
                       >
                         {block.label}
@@ -645,7 +645,7 @@ export default function CampaignCenter() {
           <div>
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-sm font-bold text-gray-700 flex items-center gap-2">
-                <PlusCircle className="w-4 h-4 text-[#7C3AED]" /> Create Automation Flow
+                <PlusCircle className="w-4 h-4 text-[#0D9488]" /> Create Automation Flow
               </h3>
               <Button
                 size="sm"
@@ -658,14 +658,14 @@ export default function CampaignCenter() {
             </div>
 
             {showFlowForm && (
-              <div className="bg-white rounded-2xl border border-[#7C3AED]/30 shadow-sm p-5 space-y-4">
+              <div className="bg-white rounded-2xl border border-[#0D9488]/30 shadow-sm p-5 space-y-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div>
                     <label className="text-xs font-semibold text-gray-600 block mb-1">Trigger Event</label>
                     <select
                       value={flowTrigger}
                       onChange={(e) => setFlowTrigger(e.target.value)}
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/40"
                     >
                       <option value="homeowner_signup">Homeowner Signup</option>
                       <option value="partner_inactive_60">Partner Inactive 60d</option>
@@ -679,7 +679,7 @@ export default function CampaignCenter() {
                     <select
                       value={flowMsgType}
                       onChange={(e) => setFlowMsgType(e.target.value)}
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/40"
                     >
                       <option value="email">Email</option>
                       <option value="sms">SMS</option>
@@ -692,7 +692,7 @@ export default function CampaignCenter() {
                     <select
                       value={flowDelay}
                       onChange={(e) => setFlowDelay(e.target.value)}
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/40"
                     >
                       {["0","1","3","7","14","21","30"].map((d) => (
                         <option key={d} value={d}>{d === "0" ? "Immediately" : `${d} days`}</option>
@@ -704,7 +704,7 @@ export default function CampaignCenter() {
                     <select
                       value={flowTemplate}
                       onChange={(e) => setFlowTemplate(e.target.value)}
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/40"
                     >
                       {FLOW_TEMPLATES.map((t) => (
                         <option key={t} value={t}>{t}</option>
@@ -714,7 +714,7 @@ export default function CampaignCenter() {
                 </div>
                 <div className="bg-gray-50 rounded-xl p-3 text-xs text-gray-500">
                   <span className="font-semibold text-gray-700">Preview: </span>
-                  When a <span className="font-semibold text-[#7C3AED]">{flowTrigger.replace(/_/g, " ")}</span> event fires,
+                  When a <span className="font-semibold text-[#0D9488]">{flowTrigger.replace(/_/g, " ")}</span> event fires,
                   send a <span className="font-semibold text-[#0891b2]">{flowMsgType}</span> using the{" "}
                   <span className="font-semibold text-gray-700">"{flowTemplate}"</span> template{" "}
                   {flowDelay === "0" ? "immediately" : `after ${flowDelay} days`}.
@@ -722,7 +722,7 @@ export default function CampaignCenter() {
                 <div className="flex justify-end">
                   <Button
                     onClick={handleCreateFlow}
-                    className="bg-[#7C3AED] hover:bg-[#6d28d9] text-white gap-2"
+                    className="bg-[#0D9488] hover:bg-[#6d28d9] text-gray-900 gap-2"
                   >
                     <Send className="w-3.5 h-3.5" /> Create Flow
                   </Button>

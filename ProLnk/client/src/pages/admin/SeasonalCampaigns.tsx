@@ -59,8 +59,8 @@ const MONTHLY_CHART = SEASON_CALENDAR.map(m => ({
 const STATUS_STYLES: Record<string, string> = {
   active: "bg-emerald-500/20 text-emerald-400",
   scheduled: "bg-blue-500/20 text-blue-400",
-  completed: "bg-slate-500/20 text-slate-400",
-  paused: "bg-amber-500/20 text-amber-400",
+  completed: "bg-slate-500/20 text-gray-500",
+  paused: "bg-amber-500/20 text-amber-700",
 };
 
 const EMPTY_CAMPAIGN = {
@@ -94,16 +94,16 @@ export default function SeasonalCampaigns() {
       {/* KPIs */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {[
-          { label: "Total Leads Generated", value: totalLeads.toLocaleString(), icon: Target, color: "text-teal-400", bg: "bg-teal-500/10" },
+          { label: "Total Leads Generated", value: totalLeads.toLocaleString(), icon: Target, color: "text-teal-700", bg: "bg-teal-500/10" },
           { label: "Active Campaigns", value: activeCampaigns, icon: CheckCircle, color: "text-emerald-400", bg: "bg-emerald-500/10" },
-          { label: "Avg Open Rate", value: `${avgOpenRate.toFixed(1)}%`, icon: Mail, color: "text-amber-400", bg: "bg-amber-500/10" },
+          { label: "Avg Open Rate", value: `${avgOpenRate.toFixed(1)}%`, icon: Mail, color: "text-amber-700", bg: "bg-amber-500/10" },
           { label: "Scheduled (Upcoming)", value: CAMPAIGNS.filter(c => c.status === "scheduled").length, icon: Clock, color: "text-blue-400", bg: "bg-blue-500/10" },
         ].map(k => (
           <div key={k.label} className="rounded-xl border border-white/10 p-4 bg-[#0D1F3C]">
             <div className={`p-1.5 rounded-lg ${k.bg} w-fit mb-3`}>
               <k.icon className={`w-4 h-4 ${k.color}`} />
             </div>
-            <div className="text-xs text-slate-400 mb-1">{k.label}</div>
+            <div className="text-xs text-gray-500 mb-1">{k.label}</div>
             <div className={`text-2xl font-bold ${k.color}`}>{k.value}</div>
           </div>
         ))}
@@ -113,14 +113,14 @@ export default function SeasonalCampaigns() {
       <div className="rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-900/20 to-[#0D1F3C] p-4 mb-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-amber-500/20">
-            <CloudLightning className="w-5 h-5 text-amber-400" />
+            <CloudLightning className="w-5 h-5 text-amber-700" />
           </div>
           <div>
-            <div className="font-bold text-white text-sm">Storm Season Response</div>
-            <div className="text-xs text-slate-400 mt-0.5">Deploy emergency campaign to all partners in an affected area within minutes</div>
+            <div className="font-bold text-gray-900 text-sm">Storm Season Response</div>
+            <div className="text-xs text-gray-500 mt-0.5">Deploy emergency campaign to all partners in an affected area within minutes</div>
           </div>
         </div>
-        <Button onClick={() => setShowStorm(true)} className="gap-2 bg-amber-600 hover:bg-amber-700 text-white text-sm flex-shrink-0">
+        <Button onClick={() => setShowStorm(true)} className="gap-2 bg-amber-600 hover:bg-amber-700 text-gray-900 text-sm flex-shrink-0">
           <CloudLightning className="w-4 h-4" /> Deploy Storm Alert
         </Button>
       </div>
@@ -129,7 +129,7 @@ export default function SeasonalCampaigns() {
       <div className="flex gap-1 mb-5 bg-[#0D1F3C] rounded-xl p-1 border border-white/10 w-fit">
         {(["campaigns", "calendar"] as const).map(v => (
           <button key={v} onClick={() => setActiveView(v)}
-            className={`text-xs font-medium py-2 px-5 rounded-lg capitalize transition-all ${activeView === v ? "bg-teal-500/20 text-teal-400" : "text-slate-400 hover:text-white"}`}>
+            className={`text-xs font-medium py-2 px-5 rounded-lg capitalize transition-all ${activeView === v ? "bg-teal-500/20 text-teal-700" : "text-gray-500 hover:text-gray-900"}`}>
             {v === "campaigns" ? "Active Campaigns" : "Season Calendar"}
           </button>
         ))}
@@ -139,8 +139,8 @@ export default function SeasonalCampaigns() {
         <div className="space-y-4">
           {/* Create button */}
           <div className="flex items-center justify-between">
-            <span className="text-xs text-slate-400">{CAMPAIGNS.length} campaigns total</span>
-            <Button onClick={() => setShowCreate(true)} className="gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm">
+            <span className="text-xs text-gray-500">{CAMPAIGNS.length} campaigns total</span>
+            <Button onClick={() => setShowCreate(true)} className="gap-2 bg-teal-600 hover:bg-teal-700 text-gray-900 text-sm">
               <Plus className="w-4 h-4" /> Create Campaign
             </Button>
           </div>
@@ -159,13 +159,13 @@ export default function SeasonalCampaigns() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h3 className="font-semibold text-white text-sm">{c.name}</h3>
+                        <h3 className="font-semibold text-gray-900 text-sm">{c.name}</h3>
                         <span className={`text-xs px-2 py-0.5 rounded-full ${STATUS_STYLES[c.status]}`}>{c.status}</span>
                         <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: `${tradeColor}20`, color: tradeColor }}>{c.trade}</span>
                         <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: `${seasonColor}20`, color: seasonColor }}>{c.season}</span>
                       </div>
-                      <p className="text-xs text-slate-400 mb-2 truncate">"{c.message}"</p>
-                      <div className="flex items-center gap-3 text-xs text-slate-500 flex-wrap">
+                      <p className="text-xs text-gray-500 mb-2 truncate">"{c.message}"</p>
+                      <div className="flex items-center gap-3 text-xs text-gray-500 flex-wrap">
                         <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {c.startDate} – {c.endDate}</span>
                         {c.leadsGenerated > 0 && <span className="flex items-center gap-1"><Target className="w-3 h-3" /> {c.leadsGenerated.toLocaleString()} leads</span>}
                         {c.openRate > 0 && <span className="flex items-center gap-1"><Mail className="w-3 h-3" /> {c.openRate}% open</span>}
@@ -175,10 +175,10 @@ export default function SeasonalCampaigns() {
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
                     {c.status === "active" && (
-                      <Button size="sm" variant="outline" className="h-7 text-xs border-white/10 text-slate-300 hover:text-white" onClick={() => toast.success(`${c.name} paused`)}>Pause</Button>
+                      <Button size="sm" variant="outline" className="h-7 text-xs border-white/10 text-gray-700 hover:text-gray-900" onClick={() => toast.success(`${c.name} paused`)}>Pause</Button>
                     )}
                     {c.status === "scheduled" && (
-                      <Button size="sm" className="h-7 text-xs bg-teal-600 hover:bg-teal-700 text-white" onClick={() => toast.success(`${c.name} launched`)}>Launch</Button>
+                      <Button size="sm" className="h-7 text-xs bg-teal-600 hover:bg-teal-700 text-gray-900" onClick={() => toast.success(`${c.name} launched`)}>Launch</Button>
                     )}
                   </div>
                 </div>
@@ -187,30 +187,30 @@ export default function SeasonalCampaigns() {
                 {c.leadsGenerated > 0 && (
                   <div className="mt-3 grid grid-cols-3 gap-3 pt-3 border-t border-white/5">
                     <div>
-                      <div className="text-xs text-slate-500 mb-1">Leads Generated</div>
+                      <div className="text-xs text-gray-500 mb-1">Leads Generated</div>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 bg-white/5 rounded-full h-1.5">
                           <div className="bg-teal-400 h-1.5 rounded-full" style={{ width: `${Math.min(100, (c.leadsGenerated / 1200) * 100)}%` }} />
                         </div>
-                        <span className="text-xs font-medium text-white">{c.leadsGenerated.toLocaleString()}</span>
+                        <span className="text-xs font-medium text-gray-900">{c.leadsGenerated.toLocaleString()}</span>
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs text-slate-500 mb-1">Open Rate</div>
+                      <div className="text-xs text-gray-500 mb-1">Open Rate</div>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 bg-white/5 rounded-full h-1.5">
                           <div className="bg-amber-400 h-1.5 rounded-full" style={{ width: `${c.openRate}%` }} />
                         </div>
-                        <span className="text-xs font-medium text-white">{c.openRate}%</span>
+                        <span className="text-xs font-medium text-gray-900">{c.openRate}%</span>
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs text-slate-500 mb-1">Click Rate</div>
+                      <div className="text-xs text-gray-500 mb-1">Click Rate</div>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 bg-white/5 rounded-full h-1.5">
                           <div className="bg-purple-400 h-1.5 rounded-full" style={{ width: `${c.clickRate * 3}%` }} />
                         </div>
-                        <span className="text-xs font-medium text-white">{c.clickRate}%</span>
+                        <span className="text-xs font-medium text-gray-900">{c.clickRate}%</span>
                       </div>
                     </div>
                   </div>
@@ -228,7 +228,7 @@ export default function SeasonalCampaigns() {
             {Object.entries(TRADE_COLORS).map(([trade, color]) => {
               const Icon = TRADE_ICONS[trade] || Target;
               return (
-                <div key={trade} className="flex items-center gap-1.5 text-xs text-slate-300">
+                <div key={trade} className="flex items-center gap-1.5 text-xs text-gray-700">
                   <Icon className="w-3.5 h-3.5" style={{ color }} />
                   {trade}
                 </div>
@@ -243,10 +243,10 @@ export default function SeasonalCampaigns() {
               return (
                 <div key={m.month} className={`rounded-xl border p-3 ${isCurrentMonth ? "border-teal-500/50 bg-teal-500/5" : "border-white/10 bg-[#0D1F3C]"}`}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className={`text-sm font-bold ${isCurrentMonth ? "text-teal-400" : "text-white"}`}>{m.month}</span>
-                    {isCurrentMonth && <span className="text-xs px-1.5 py-0.5 rounded-full bg-teal-500/20 text-teal-400">Now</span>}
+                    <span className={`text-sm font-bold ${isCurrentMonth ? "text-teal-700" : "text-gray-900"}`}>{m.month}</span>
+                    {isCurrentMonth && <span className="text-xs px-1.5 py-0.5 rounded-full bg-teal-500/20 text-teal-700">Now</span>}
                   </div>
-                  <div className="text-xs text-slate-400 mb-2">{m.label}</div>
+                  <div className="text-xs text-gray-500 mb-2">{m.label}</div>
                   <div className="flex flex-wrap gap-1">
                     {m.seasons.map(trade => {
                       const color = TRADE_COLORS[trade] || "#00B5B8";
@@ -271,7 +271,7 @@ export default function SeasonalCampaigns() {
 
           {/* Lead Volume Chart */}
           <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C]">
-            <h3 className="font-bold text-white text-sm mb-4">Monthly Lead Volume by Season</h3>
+            <h3 className="font-bold text-gray-900 text-sm mb-4">Monthly Lead Volume by Season</h3>
             <div className="h-56">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData} margin={{ top: 0, right: 0, bottom: 0, left: -10 }}>
@@ -289,7 +289,7 @@ export default function SeasonalCampaigns() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="flex items-center gap-6 mt-2 text-xs text-slate-500 justify-center">
+            <div className="flex items-center gap-6 mt-2 text-xs text-gray-500 justify-center">
               {[["Spring (Mar–May)", "#10B981"], ["Summer (Jun–Aug)", "#F59E0B"], ["Fall (Sep–Oct)", "#F97316"], ["Winter (Nov–Feb)", "#3B82F6"]].map(([label, color]) => (
                 <span key={label} className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: color }} />
@@ -307,60 +307,60 @@ export default function SeasonalCampaigns() {
           <div className="rounded-2xl border border-white/10 bg-[#0D1F3C] w-full max-w-lg max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between p-5 border-b border-white/10">
               <div className="flex items-center gap-2">
-                <Plus className="w-5 h-5 text-teal-400" />
-                <h2 className="font-bold text-white">Create Campaign</h2>
+                <Plus className="w-5 h-5 text-teal-700" />
+                <h2 className="font-bold text-gray-900">Create Campaign</h2>
               </div>
-              <button onClick={() => setShowCreate(false)} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
+              <button onClick={() => setShowCreate(false)} className="text-gray-500 hover:text-gray-900"><X className="w-5 h-5" /></button>
             </div>
             <div className="p-5 space-y-4">
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Campaign Name *</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Campaign Name *</label>
                 <Input value={newCampaign.name} onChange={e => setNewCampaign({ ...newCampaign, name: e.target.value })}
-                  className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500" placeholder="e.g., Summer HVAC Tune-Up Push" />
+                  className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500" placeholder="e.g., Summer HVAC Tune-Up Push" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1">Target Trade</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Target Trade</label>
                   <select value={newCampaign.trade} onChange={e => setNewCampaign({ ...newCampaign, trade: e.target.value })}
-                    className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#F8FAFC] text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500">
                     {Object.keys(TRADE_ICONS).map(t => <option key={t} value={t}>{t}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1">Season</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Season</label>
                   <select value={newCampaign.season} onChange={e => setNewCampaign({ ...newCampaign, season: e.target.value })}
-                    className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#F8FAFC] text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500">
                     {["Spring", "Summer", "Fall", "Winter", "Year-Round"].map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1">Start Date</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Start Date</label>
                   <Input type="date" value={newCampaign.startDate} onChange={e => setNewCampaign({ ...newCampaign, startDate: e.target.value })}
-                    className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500" />
+                    className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500" />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1">End Date</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">End Date</label>
                   <Input type="date" value={newCampaign.endDate} onChange={e => setNewCampaign({ ...newCampaign, endDate: e.target.value })}
-                    className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500" />
+                    className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500" />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Message Template</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Message Template</label>
                 <Textarea value={newCampaign.message} onChange={e => setNewCampaign({ ...newCampaign, message: e.target.value })}
-                  className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500"
+                  className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500"
                   placeholder="Get your AC ready before the heat hits. Schedule your tune-up today." rows={3} />
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Geo Targeting (zip codes or metro area)</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Geo Targeting (zip codes or metro area)</label>
                 <Input value={newCampaign.geoTarget} onChange={e => setNewCampaign({ ...newCampaign, geoTarget: e.target.value })}
-                  className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500" placeholder="e.g., DFW metro, 75001-75099" />
-                <div className="flex items-center gap-1 mt-1 text-xs text-slate-500"><MapPin className="w-3 h-3" /> Leave blank to target all regions</div>
+                  className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500" placeholder="e.g., DFW metro, 75001-75099" />
+                <div className="flex items-center gap-1 mt-1 text-xs text-gray-500"><MapPin className="w-3 h-3" /> Leave blank to target all regions</div>
               </div>
             </div>
             <div className="flex items-center justify-end gap-3 p-5 border-t border-white/10">
-              <Button variant="outline" onClick={() => setShowCreate(false)} className="border-white/10 text-slate-300 hover:text-white">Cancel</Button>
+              <Button variant="outline" onClick={() => setShowCreate(false)} className="border-white/10 text-gray-700 hover:text-gray-900">Cancel</Button>
               <Button
                 onClick={() => {
                   if (!newCampaign.name) { toast.error("Campaign name is required"); return; }
@@ -368,7 +368,7 @@ export default function SeasonalCampaigns() {
                   setShowCreate(false);
                   setNewCampaign({ ...EMPTY_CAMPAIGN });
                 }}
-                className="bg-teal-600 hover:bg-teal-700 text-white"
+                className="bg-teal-600 hover:bg-teal-700 text-gray-900"
               >
                 Create Campaign
               </Button>
@@ -383,24 +383,24 @@ export default function SeasonalCampaigns() {
           <div className="rounded-2xl border border-amber-500/40 bg-[#0D1F3C] w-full max-w-md">
             <div className="flex items-center justify-between p-5 border-b border-amber-500/20">
               <div className="flex items-center gap-2">
-                <CloudLightning className="w-5 h-5 text-amber-400" />
-                <h2 className="font-bold text-white">Storm Season Response</h2>
+                <CloudLightning className="w-5 h-5 text-amber-700" />
+                <h2 className="font-bold text-gray-900">Storm Season Response</h2>
               </div>
-              <button onClick={() => setShowStorm(false)} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
+              <button onClick={() => setShowStorm(false)} className="text-gray-500 hover:text-gray-900"><X className="w-5 h-5" /></button>
             </div>
             <div className="p-5 space-y-4">
               <div className="rounded-lg p-3 bg-amber-500/10 border border-amber-500/20">
-                <p className="text-xs text-amber-300">This will immediately blast all partners in the targeted area with a storm response campaign and open your platform for emergency leads.</p>
+                <p className="text-xs text-amber-700">This will immediately blast all partners in the targeted area with a storm response campaign and open your platform for emergency leads.</p>
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Affected Zip Code(s) or Metro</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Affected Zip Code(s) or Metro</label>
                 <Input value={stormZip} onChange={e => setStormZip(e.target.value)}
-                  className="bg-[#0A1628] border-white/10 text-white focus:border-amber-500" placeholder="e.g., 75001, 75002 or DFW" />
+                  className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-amber-500" placeholder="e.g., 75001, 75002 or DFW" />
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Storm Type</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Storm Type</label>
                 <select value={stormType} onChange={e => setStormType(e.target.value)}
-                  className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-amber-500">
+                  className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#F8FAFC] text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-500">
                   <option value="hail">Hail Storm (Roofing priority)</option>
                   <option value="wind">High Winds (Roofing + Fencing)</option>
                   <option value="flood">Flash Flooding (Plumbing + Remediation)</option>
@@ -408,12 +408,12 @@ export default function SeasonalCampaigns() {
                   <option value="general">General Severe Weather (All trades)</option>
                 </select>
               </div>
-              <div className="rounded-lg p-3 bg-[#0A1628] border border-white/5 text-xs text-slate-400">
-                <strong className="text-white">Preview message:</strong> "A severe storm has been detected in your area. ProLnk partners are standing by — respond to homeowner leads now. Claim available jobs before they're gone."
+              <div className="rounded-lg p-3 bg-[#F8FAFC] border border-white/5 text-xs text-gray-500">
+                <strong className="text-gray-900">Preview message:</strong> "A severe storm has been detected in your area. ProLnk partners are standing by — respond to homeowner leads now. Claim available jobs before they're gone."
               </div>
             </div>
             <div className="flex items-center justify-end gap-3 p-5 border-t border-amber-500/20">
-              <Button variant="outline" onClick={() => setShowStorm(false)} className="border-white/10 text-slate-300 hover:text-white">Cancel</Button>
+              <Button variant="outline" onClick={() => setShowStorm(false)} className="border-white/10 text-gray-700 hover:text-gray-900">Cancel</Button>
               <Button
                 onClick={() => {
                   if (!stormZip) { toast.error("Zip code or metro area is required"); return; }
@@ -421,7 +421,7 @@ export default function SeasonalCampaigns() {
                   setShowStorm(false);
                   setStormZip("");
                 }}
-                className="bg-amber-600 hover:bg-amber-700 text-white gap-2"
+                className="bg-amber-600 hover:bg-amber-700 text-gray-900 gap-2"
               >
                 <CloudLightning className="w-4 h-4" /> Deploy Alert Now
               </Button>

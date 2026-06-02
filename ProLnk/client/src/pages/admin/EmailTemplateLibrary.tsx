@@ -154,9 +154,9 @@ const CATEGORIES: TemplateCategory[] = [
 
 function TypeBadge({ type }: { type: TemplateType }) {
   const styles: Record<TemplateType, string> = {
-    Email: "bg-blue-900/40 text-blue-300 border-blue-700/40",
+    Email: "bg-blue-900/40 text-teal-700 border-blue-700/40",
     SMS: "bg-green-900/40 text-green-300 border-green-700/40",
-    "Email+SMS": "bg-purple-900/40 text-purple-300 border-purple-700/40",
+    "Email+SMS": "bg-purple-900/40 text-gray-600 border-purple-700/40",
     Push: "bg-orange-900/40 text-orange-300 border-orange-700/40",
   };
   const icons: Record<TemplateType, typeof Mail> = {
@@ -186,21 +186,21 @@ function TemplateCard({
   onPreview: (id: string) => void;
 }) {
   return (
-    <div className={`bg-slate-800/60 border rounded-xl p-5 transition-all ${template.active ? "border-slate-700/60" : "border-slate-700/30 opacity-60"}`}>
+    <div className={`bg-white border rounded-xl p-5 transition-all ${template.active ? "border-gray-200" : "border-gray-200/30 opacity-60"}`}>
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex-1 min-w-0">
-          <p className="font-semibold text-white text-sm truncate">{template.name}</p>
+          <p className="font-semibold text-gray-900 text-sm truncate">{template.name}</p>
           <div className="flex items-center gap-2 mt-1.5">
             <TypeBadge type={template.type} />
           </div>
         </div>
         <button
           onClick={() => onToggle(template.id)}
-          className="shrink-0 text-slate-400 hover:text-teal-400 transition-colors"
+          className="shrink-0 text-gray-500 hover:text-teal-700 transition-colors"
           title={template.active ? "Pause template" : "Activate template"}
         >
           {template.active ? (
-            <ToggleRight className="w-6 h-6 text-teal-400" />
+            <ToggleRight className="w-6 h-6 text-teal-700" />
           ) : (
             <ToggleLeft className="w-6 h-6" />
           )}
@@ -208,7 +208,7 @@ function TemplateCard({
       </div>
 
       <div className="flex items-center gap-4 mb-4">
-        <div className="flex items-center gap-1.5 text-xs text-slate-400">
+        <div className="flex items-center gap-1.5 text-xs text-gray-500">
           <Clock className="w-3 h-3" />
           <span>{template.lastUsed}</span>
         </div>
@@ -229,14 +229,14 @@ function TemplateCard({
       <div className="flex items-center gap-2">
         <button
           onClick={() => onPreview(template.id)}
-          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors"
+          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors"
         >
           <Eye className="w-3.5 h-3.5" />
           Preview
         </button>
         <button
           onClick={() => onEdit(template.id)}
-          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-teal-500/20 text-teal-300 hover:bg-teal-500/30 border border-teal-500/30 transition-colors"
+          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-teal-500/20 text-teal-700 hover:bg-teal-500/30 border border-teal-500/30 transition-colors"
         >
           <Edit3 className="w-3.5 h-3.5" />
           Edit
@@ -265,47 +265,47 @@ function InlineEditor({
   }
 
   return (
-    <div className="bg-slate-800 border border-teal-500/30 rounded-2xl p-6 space-y-5">
+    <div className="bg-white border border-teal-500/30 rounded-2xl p-6 space-y-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Edit3 className="w-4 h-4 text-teal-400" />
-          <h3 className="font-bold text-white">{template.name}</h3>
+          <Edit3 className="w-4 h-4 text-teal-700" />
+          <h3 className="font-bold text-gray-900">{template.name}</h3>
         </div>
-        <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
+        <button onClick={onClose} className="text-gray-500 hover:text-gray-900 transition-colors">
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {template.type !== "SMS" && (
         <div>
-          <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Subject Line</label>
+          <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Subject Line</label>
           <input
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors"
+            className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors"
             placeholder="Email subject..."
           />
         </div>
       )}
 
       <div>
-        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Body</label>
+        <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Body</label>
         <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
           rows={8}
-          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors resize-none font-mono"
+          className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors resize-none font-mono"
           placeholder="Template body..."
         />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Available Variables</label>
+        <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Available Variables</label>
         <div className="flex flex-wrap gap-2">
           {template.variables.map((v) => (
             <span
               key={v}
-              className="flex items-center gap-1 px-2 py-1 rounded-md text-xs bg-slate-700 text-teal-300 font-mono border border-slate-600 cursor-pointer hover:bg-slate-600 transition-colors"
+              className="flex items-center gap-1 px-2 py-1 rounded-md text-xs bg-gray-100 text-teal-700 font-mono border border-gray-300 cursor-pointer hover:bg-gray-200 transition-colors"
               onClick={() => setBody((prev) => prev + v)}
               title="Click to insert"
             >
@@ -319,19 +319,19 @@ function InlineEditor({
       <div className="flex items-center gap-3 pt-1">
         <button
           onClick={handleSendTest}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 text-white hover:bg-slate-600 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-900 hover:bg-gray-200 transition-colors"
         >
-          {testSent ? <Check className="w-4 h-4 text-green-400" /> : <Send className="w-4 h-4" />}
+          {testSent ? <Check className="w-4 h-4 text-green-700" /> : <Send className="w-4 h-4" />}
           {testSent ? "Test Sent!" : "Send Test"}
         </button>
         <button
           onClick={() => onSave(template.id, subject, body)}
-          className="flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-bold bg-teal-500 text-[#0A1628] hover:bg-teal-400 transition-colors"
+          className="flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-bold bg-teal-500 text-[#F8FAFC] hover:bg-teal-400 transition-colors"
         >
           <Check className="w-4 h-4" />
           Save Template
         </button>
-        <button onClick={onClose} className="ml-auto text-sm text-slate-400 hover:text-white transition-colors">
+        <button onClick={onClose} className="ml-auto text-sm text-gray-500 hover:text-gray-900 transition-colors">
           Cancel
         </button>
       </div>
@@ -342,26 +342,26 @@ function InlineEditor({
 function PreviewModal({ template, onClose }: { template: Template; onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg shadow-2xl">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700">
+      <div className="bg-gray-50 border border-gray-200 rounded-2xl w-full max-w-lg shadow-2xl">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
           <div className="flex items-center gap-2">
-            <Eye className="w-4 h-4 text-slate-400" />
-            <span className="font-bold text-white text-sm">{template.name}</span>
+            <Eye className="w-4 h-4 text-gray-500" />
+            <span className="font-bold text-gray-900 text-sm">{template.name}</span>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
+          <button onClick={onClose} className="text-gray-500 hover:text-gray-900 transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
         <div className="p-6 space-y-4">
           {template.type !== "SMS" && template.subject && (
             <div>
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Subject</p>
-              <p className="text-sm font-semibold text-white">{template.subject}</p>
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Subject</p>
+              <p className="text-sm font-semibold text-gray-900">{template.subject}</p>
             </div>
           )}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Body</p>
-            <div className="bg-slate-800 rounded-xl p-4 text-sm text-slate-200 whitespace-pre-wrap leading-relaxed font-mono">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Body</p>
+            <div className="bg-white rounded-xl p-4 text-sm text-gray-800 whitespace-pre-wrap leading-relaxed font-mono">
               {template.body}
             </div>
           </div>
@@ -428,8 +428,8 @@ export default function EmailTemplateLibrary() {
               <Mail className="w-5 h-5 text-blue-400" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">Template Library</h1>
-              <p className="text-sm text-slate-400">Every message your platform sends</p>
+              <h1 className="text-2xl font-bold text-gray-900">Template Library</h1>
+              <p className="text-sm text-gray-500">Every message your platform sends</p>
             </div>
           </div>
 
@@ -452,8 +452,8 @@ export default function EmailTemplateLibrary() {
               onClick={() => setActiveCategory(cat)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeCategory === cat
-                  ? "bg-teal-500 text-[#0A1628]"
-                  : "bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700"
+                  ? "bg-teal-500 text-[#F8FAFC]"
+                  : "bg-white text-gray-500 hover:text-gray-900 hover:bg-gray-100"
               }`}
             >
               {cat}
@@ -490,9 +490,9 @@ export default function EmailTemplateLibrary() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="bg-slate-800 rounded-xl p-12 text-center">
-            <Mail className="w-10 h-10 text-slate-600 mx-auto mb-3" />
-            <p className="text-slate-400">No templates in this category yet.</p>
+          <div className="bg-white rounded-xl p-12 text-center">
+            <Mail className="w-10 h-10 text-gray-400 mx-auto mb-3" />
+            <p className="text-gray-500">No templates in this category yet.</p>
           </div>
         )}
       </div>

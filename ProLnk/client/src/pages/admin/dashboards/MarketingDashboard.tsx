@@ -17,7 +17,7 @@ export default function MarketingDashboard() {
           <AlertTriangle className="w-4 h-4 flex-shrink-0" style={{ color: "#00D4FF" }} />
           <div>
             <span className="text-xs font-bold" style={{ color: "#00D4FF" }}>Pre-Launch Mode</span>
-            <span className="text-xs ml-2" style={{ color: "#7B809A" }}>Data shown represents projections and targets. Live metrics will populate after launch.</span>
+            <span className="text-xs ml-2" style={{ color: "#4B5563" }}>Data shown represents projections and targets. Live metrics will populate after launch.</span>
           </div>
         </div>
 

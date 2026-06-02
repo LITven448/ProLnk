@@ -16,7 +16,7 @@ const REPORT_OPTIONS: Array<{
   color: string;
 }> = [
   { key: "partners", label: "Partners Report", description: "All partner accounts, tiers, contact info, and status", icon: Users, color: "#1B4FD8" },
-  { key: "opportunities", label: "Opportunities Report", description: "AI-detected leads with confidence scores and routing history", icon: Briefcase, color: "#7C3AED" },
+  { key: "opportunities", label: "Opportunities Report", description: "AI-detected leads with confidence scores and routing history", icon: Briefcase, color: "#0D9488" },
   { key: "commissions", label: "Commissions Report", description: "All commission records, amounts, and payment status", icon: DollarSign, color: "#059669" },
   { key: "jobs", label: "Jobs Report", description: "Logged jobs with service addresses, values, and completion status", icon: FileText, color: "#D97706" },
   { key: "leads", label: "TrustyPro Leads", description: "Homeowner leads from TrustyPro scans and requests", icon: Home, color: "#DC2626" },

@@ -14,9 +14,9 @@ import { toast } from "sonner";
 
 const METRICS = [
   { label: "30-Day Retention", value: "97.9%", sub: "+0.4% vs last month", icon: Activity, color: "text-emerald-400", bg: "bg-emerald-500/10" },
-  { label: "60-Day Retention", value: "94.2%", sub: "+1.1% vs last month", icon: TrendingUp, color: "text-teal-400", bg: "bg-teal-500/10" },
+  { label: "60-Day Retention", value: "94.2%", sub: "+1.1% vs last month", icon: TrendingUp, color: "text-teal-700", bg: "bg-teal-500/10" },
   { label: "90-Day Retention", value: "91.8%", sub: "-0.3% vs last month", icon: Users, color: "text-blue-400", bg: "bg-blue-500/10" },
-  { label: "Avg Partner LTV", value: "$2,847", sub: "$238/mo avg", icon: DollarSign, color: "text-amber-400", bg: "bg-amber-500/10" },
+  { label: "Avg Partner LTV", value: "$2,847", sub: "$238/mo avg", icon: DollarSign, color: "text-amber-700", bg: "bg-amber-500/10" },
 ];
 
 const CAMPAIGNS = [
@@ -56,7 +56,7 @@ const COHORT_DATA = [
 const CHANNEL_STYLES: Record<string, string> = {
   Email: "bg-blue-500/20 text-blue-400",
   SMS: "bg-emerald-500/20 text-emerald-400",
-  "Email+SMS": "bg-purple-500/20 text-purple-400",
+  "Email+SMS": "bg-purple-500/20 text-gray-600",
 };
 
 const EMPTY_FORM = { trigger: "", channel: "Email", message: "" };
@@ -90,9 +90,9 @@ export default function RetentionCampaigns() {
             <div className={`p-1.5 rounded-lg ${m.bg} w-fit mb-3`}>
               <m.icon className={`w-4 h-4 ${m.color}`} />
             </div>
-            <div className="text-xs text-slate-400 mb-1">{m.label}</div>
+            <div className="text-xs text-gray-500 mb-1">{m.label}</div>
             <div className={`text-2xl font-bold ${m.color}`}>{m.value}</div>
-            <div className="text-xs text-slate-500 mt-1">{m.sub}</div>
+            <div className="text-xs text-gray-500 mt-1">{m.sub}</div>
           </div>
         ))}
       </div>
@@ -103,18 +103,18 @@ export default function RetentionCampaigns() {
           <Heart className="w-5 h-5 text-emerald-400" />
         </div>
         <div>
-          <div className="font-bold text-white text-sm">This month: 4 partners re-engaged via automated campaigns.</div>
-          <div className="text-xs text-slate-400 mt-0.5">Revenue saved: <span className="text-emerald-400 font-semibold">$4,280</span></div>
+          <div className="font-bold text-gray-900 text-sm">This month: 4 partners re-engaged via automated campaigns.</div>
+          <div className="text-xs text-gray-500 mt-0.5">Revenue saved: <span className="text-emerald-400 font-semibold">$4,280</span></div>
         </div>
         <div className="ml-auto">
-          <Button onClick={() => setShowCreate(true)} className="gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm">
+          <Button onClick={() => setShowCreate(true)} className="gap-2 bg-teal-600 hover:bg-teal-700 text-gray-900 text-sm">
             <Plus className="w-4 h-4" /> New Campaign
           </Button>
         </div>
       </div>
 
       {/* Campaign Cards */}
-      <h2 className="text-sm font-bold text-white mb-3">Active Campaigns</h2>
+      <h2 className="text-sm font-bold text-gray-900 mb-3">Active Campaigns</h2>
       <div className="space-y-4 mb-8">
         {CAMPAIGNS.map(c => {
           const isPaused = paused.has(c.id);
@@ -124,24 +124,24 @@ export default function RetentionCampaigns() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-2">
-                    <span className="font-semibold text-white text-sm">{c.name}</span>
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${isPaused ? "bg-amber-500/20 text-amber-400" : "bg-emerald-500/20 text-emerald-400"}`}>
+                    <span className="font-semibold text-gray-900 text-sm">{c.name}</span>
+                    <span className={`text-xs px-2 py-0.5 rounded-full ${isPaused ? "bg-amber-500/20 text-amber-700" : "bg-emerald-500/20 text-emerald-400"}`}>
                       {isPaused ? "Paused" : "Active"}
                     </span>
                     <span className={`text-xs px-2 py-0.5 rounded-full flex items-center gap-1 ${CHANNEL_STYLES[c.channel]}`}>
                       <ChannelIcon className="w-2.5 h-2.5" /> {c.channel}
                     </span>
                   </div>
-                  <div className="text-xs text-slate-400 mb-3">
-                    Trigger: <span className="text-slate-300">{c.trigger}</span>
+                  <div className="text-xs text-gray-500 mb-3">
+                    Trigger: <span className="text-gray-700">{c.trigger}</span>
                   </div>
                   <div className="flex items-center gap-5 flex-wrap">
                     <div>
-                      <div className="text-xs text-slate-500 mb-1">Last Sent</div>
-                      <div className="text-sm font-bold text-white">{c.lastSent.toLocaleString()}</div>
+                      <div className="text-xs text-gray-500 mb-1">Last Sent</div>
+                      <div className="text-sm font-bold text-gray-900">{c.lastSent.toLocaleString()}</div>
                     </div>
                     <div>
-                      <div className="text-xs text-slate-500 mb-1">{c.channel === "SMS" ? "Click Rate" : "Open Rate"}</div>
+                      <div className="text-xs text-gray-500 mb-1">{c.channel === "SMS" ? "Click Rate" : "Open Rate"}</div>
                       <div className="flex items-center gap-2">
                         <div className="w-24 bg-white/5 rounded-full h-1.5">
                           <div
@@ -149,7 +149,7 @@ export default function RetentionCampaigns() {
                             style={{ width: `${c.openRate}%` }}
                           />
                         </div>
-                        <span className="text-sm font-bold text-white">{c.openRate}%</span>
+                        <span className="text-sm font-bold text-gray-900">{c.openRate}%</span>
                       </div>
                     </div>
                   </div>
@@ -157,14 +157,14 @@ export default function RetentionCampaigns() {
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <Button
                     size="sm" variant="outline"
-                    className="h-7 text-xs border-white/10 text-slate-300 hover:text-white gap-1"
+                    className="h-7 text-xs border-white/10 text-gray-700 hover:text-gray-900 gap-1"
                     onClick={() => toast.info("Edit campaign (coming soon)")}
                   >
                     <Edit className="w-3 h-3" /> Edit
                   </Button>
                   <Button
                     size="sm" variant="outline"
-                    className={`h-7 text-xs border-white/10 gap-1 ${isPaused ? "text-emerald-400 hover:text-emerald-300" : "text-amber-400 hover:text-amber-300"}`}
+                    className={`h-7 text-xs border-white/10 gap-1 ${isPaused ? "text-emerald-400 hover:text-emerald-300" : "text-amber-700 hover:text-amber-700"}`}
                     onClick={() => togglePause(c.id)}
                   >
                     {isPaused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
@@ -180,10 +180,10 @@ export default function RetentionCampaigns() {
       {/* Retention Cohort Chart */}
       <div className="rounded-xl border border-white/10 p-5 bg-[#0D1F3C] mb-6">
         <div className="flex items-center gap-2 mb-1">
-          <Award className="w-4 h-4 text-teal-400" />
-          <h2 className="text-sm font-bold text-white">90-Day Retention Curves — 2026 Cohorts</h2>
+          <Award className="w-4 h-4 text-teal-700" />
+          <h2 className="text-sm font-bold text-gray-900">90-Day Retention Curves — 2026 Cohorts</h2>
         </div>
-        <p className="text-xs text-slate-400 mb-5">Partner retention rate over first 90 days by signup cohort</p>
+        <p className="text-xs text-gray-500 mb-5">Partner retention rate over first 90 days by signup cohort</p>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={COHORT_DATA} margin={{ top: 4, right: 16, bottom: 0, left: -10 }}>
@@ -209,29 +209,29 @@ export default function RetentionCampaigns() {
           <div className="rounded-2xl border border-white/10 bg-[#0D1F3C] w-full max-w-lg">
             <div className="flex items-center justify-between p-5 border-b border-white/10">
               <div className="flex items-center gap-2">
-                <Plus className="w-5 h-5 text-teal-400" />
-                <h2 className="font-bold text-white">New Retention Campaign</h2>
+                <Plus className="w-5 h-5 text-teal-700" />
+                <h2 className="font-bold text-gray-900">New Retention Campaign</h2>
               </div>
-              <button onClick={() => setShowCreate(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setShowCreate(false)} className="text-gray-500 hover:text-gray-900">
                 <X className="w-5 h-5" />
               </button>
             </div>
             <div className="p-5 space-y-4">
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Trigger Condition *</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Trigger Condition *</label>
                 <Input
                   value={form.trigger}
                   onChange={e => setForm({ ...form, trigger: e.target.value })}
-                  className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500"
+                  className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500"
                   placeholder="e.g., No jobs in 14 days"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Channel</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Channel</label>
                 <select
                   value={form.channel}
                   onChange={e => setForm({ ...form, channel: e.target.value })}
-                  className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full border border-white/10 rounded-lg px-3 py-2 text-sm bg-[#F8FAFC] text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 >
                   <option value="Email">Email</option>
                   <option value="SMS">SMS</option>
@@ -239,18 +239,18 @@ export default function RetentionCampaigns() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Message Template *</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1">Message Template *</label>
                 <Textarea
                   value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}
-                  className="bg-[#0A1628] border-white/10 text-white focus:border-teal-500"
+                  className="bg-[#F8FAFC] border-white/10 text-gray-900 focus:border-teal-500"
                   placeholder="Write your message to partners..."
                   rows={4}
                 />
               </div>
             </div>
             <div className="flex items-center justify-end gap-3 p-5 border-t border-white/10">
-              <Button variant="outline" onClick={() => setShowCreate(false)} className="border-white/10 text-slate-300 hover:text-white">
+              <Button variant="outline" onClick={() => setShowCreate(false)} className="border-white/10 text-gray-700 hover:text-gray-900">
                 Cancel
               </Button>
               <Button
@@ -260,7 +260,7 @@ export default function RetentionCampaigns() {
                   setShowCreate(false);
                   setForm({ ...EMPTY_FORM });
                 }}
-                className="bg-teal-600 hover:bg-teal-700 text-white"
+                className="bg-teal-600 hover:bg-teal-700 text-gray-900"
               >
                 Create Campaign
               </Button>

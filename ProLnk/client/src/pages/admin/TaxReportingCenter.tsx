@@ -57,13 +57,13 @@ export default function TaxReportingCenter() {
               <FileText className="w-6 h-6" style={{ color: "#F5E642" }} />
             </div>
             <div>
-              <h1 className="text-2xl font-black text-white tracking-tight">Tax Reporting Center</h1>
+              <h1 className="text-2xl font-black text-gray-900 tracking-tight">Tax Reporting Center</h1>
               <p className="text-sm text-muted-foreground mt-0.5">1099 compliance and partner tax management</p>
             </div>
           </div>
           <Badge
             variant="outline"
-            className="border-yellow-400/50 text-yellow-300 px-3 py-1 text-xs font-bold"
+            className="border-yellow-400/50 text-amber-700 px-3 py-1 text-xs font-bold"
           >
             Powered by Tax1099
           </Badge>
@@ -80,15 +80,15 @@ export default function TaxReportingCenter() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-5">
               <div className="text-center p-4 rounded-xl" style={{ background: "#ffffff08" }}>
-                <div className="text-3xl font-black text-white">{requiring}</div>
+                <div className="text-3xl font-black text-gray-900">{requiring}</div>
                 <div className="text-sm text-muted-foreground mt-1">Partners requiring 1099</div>
               </div>
               <div className="text-center p-4 rounded-xl" style={{ background: "#ffffff08" }}>
-                <div className="text-3xl font-black" style={{ color: "#82D616" }}>{filed}</div>
+                <div className="text-3xl font-black" style={{ color: "#16A34A" }}>{filed}</div>
                 <div className="text-sm text-muted-foreground mt-1">Forms filed</div>
               </div>
               <div className="text-center p-4 rounded-xl" style={{ background: "#ffffff08" }}>
-                <div className="text-3xl font-black text-red-400">Jan 31</div>
+                <div className="text-3xl font-black text-red-600">Jan 31</div>
                 <div className="text-sm text-muted-foreground mt-1">Deadline — 2026</div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function TaxReportingCenter() {
                         const pct = Math.min((p.ytd / 600) * 100, 100);
                         return (
                           <tr key={p.name} className="border-b border-border/50 hover:bg-muted/20">
-                            <td className="py-2.5 px-4 font-medium text-white">{p.name}</td>
+                            <td className="py-2.5 px-4 font-medium text-gray-900">{p.name}</td>
                             <td className="py-2.5 px-4 text-right font-mono text-sm">{fmt(p.ytd)}</td>
                             <td className="py-2.5 px-4">
                               <div className="flex items-center gap-2">
@@ -144,16 +144,16 @@ export default function TaxReportingCenter() {
                             </td>
                             <td className="py-2.5 px-4 text-center">
                               {p.requires
-                                ? <Badge variant="outline" className="border-red-500/50 text-red-400 text-xs">Yes</Badge>
+                                ? <Badge variant="outline" className="border-red-500/50 text-red-600 text-xs">Yes</Badge>
                                 : <span className="text-xs text-muted-foreground">No</span>}
                             </td>
                             <td className="py-2.5 px-4 text-center">
                               {p.status === "filed"
-                                ? <Badge variant="outline" className="border-green-500/50 text-green-400 text-xs">Filed</Badge>
+                                ? <Badge variant="outline" className="border-green-500/50 text-green-700 text-xs">Filed</Badge>
                                 : p.status === "pending"
                                 ? <Badge variant="outline" className="border-yellow-500/50 text-yellow-400 text-xs">Pending</Badge>
                                 : p.status === "not-filed"
-                                ? <Badge variant="outline" className="border-red-500/50 text-red-400 text-xs">Not Filed</Badge>
+                                ? <Badge variant="outline" className="border-red-500/50 text-red-600 text-xs">Not Filed</Badge>
                                 : <span className="text-xs text-muted-foreground">—</span>}
                             </td>
                           </tr>
@@ -207,7 +207,7 @@ export default function TaxReportingCenter() {
                 <p className="text-xs text-muted-foreground mb-3">
                   Send a bulk W-9 request to all partners who haven't yet submitted their tax information.
                 </p>
-                <Button className="w-full gap-2" size="sm" style={{ background: "#F5E642", color: "#0A1628" }}>
+                <Button className="w-full gap-2" size="sm" style={{ background: "#F5E642", color: "#F8FAFC" }}>
                   <Send className="h-3.5 w-3.5" />
                   Collect W-9 (Bulk)
                 </Button>
@@ -231,7 +231,7 @@ export default function TaxReportingCenter() {
                       <Badge variant="outline" className="text-xs border-blue-500/40 text-blue-400">Proj.</Badge>
                     )}
                   </div>
-                  <div className="text-xl font-black text-white">{fmt(q.amount)}</div>
+                  <div className="text-xl font-black text-gray-900">{fmt(q.amount)}</div>
                   <div className="text-xs text-muted-foreground mt-0.5">total payouts</div>
                 </CardContent>
               </Card>
@@ -251,7 +251,7 @@ export default function TaxReportingCenter() {
               {CHECKLIST.map((item) => (
                 <div key={item.label} className="flex items-center gap-3">
                   {item.ok
-                    ? <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                    ? <CheckCircle className="h-4 w-4 text-green-700 flex-shrink-0" />
                     : <AlertTriangle className="h-4 w-4 text-yellow-400 flex-shrink-0" />}
                   <span className="text-sm text-foreground/90">{item.label}</span>
                   {item.note && (

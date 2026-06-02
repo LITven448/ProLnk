@@ -23,10 +23,10 @@ function fmtCurrency(n: number) {
 }
 
 function healthColor(score: number) {
-  if (score >= 80) return "text-teal-400";
+  if (score >= 80) return "text-teal-700";
   if (score >= 60) return "text-yellow-400";
   if (score >= 40) return "text-orange-400";
-  return "text-red-400";
+  return "text-red-600";
 }
 
 function healthBg(score: number) {
@@ -91,9 +91,9 @@ const STAGE_COLORS: Record<PipelineStage, string> = {
 
 const STAGE_BADGE: Record<PipelineStage, string> = {
   New: "bg-blue-500/20 text-blue-400",
-  Active: "bg-teal-500/20 text-teal-400",
-  Completed: "bg-green-500/20 text-green-400",
-  Churned: "bg-red-500/20 text-red-400",
+  Active: "bg-teal-500/20 text-teal-700",
+  Completed: "bg-green-500/20 text-green-700",
+  Churned: "bg-red-500/20 text-red-600",
 };
 
 const MOCK_HOMEOWNERS = [
@@ -400,28 +400,28 @@ export default function HomeownerCRM() {
       <div className="p-6 space-y-6 max-w-7xl mx-auto">
         <div className="flex items-center justify-between flex-wrap gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Users className="w-6 h-6 text-teal-400" />
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <Users className="w-6 h-6 text-teal-700" />
               Homeowner CRM
             </h1>
-            <p className="text-slate-400 text-sm mt-1">Full homeowner lifecycle — history, health scores, and re-engagement</p>
+            <p className="text-gray-500 text-sm mt-1">Full homeowner lifecycle — history, health scores, and re-engagement</p>
           </div>
           <div className="flex items-center gap-2">
-            <div className="flex gap-1 p-1 rounded-lg border border-slate-700 bg-[#0A1628]">
+            <div className="flex gap-1 p-1 rounded-lg border border-gray-200 bg-[#F8FAFC]">
               <button
                 onClick={() => setViewMode("table")}
-                className={`px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 transition-all ${viewMode === "table" ? "bg-teal-500/20 text-teal-400" : "text-slate-400 hover:text-slate-200"}`}
+                className={`px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 transition-all ${viewMode === "table" ? "bg-teal-500/20 text-teal-700" : "text-gray-500 hover:text-gray-800"}`}
               >
                 <LayoutList className="w-3.5 h-3.5" /> Table
               </button>
               <button
                 onClick={() => setViewMode("kanban")}
-                className={`px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 transition-all ${viewMode === "kanban" ? "bg-teal-500/20 text-teal-400" : "text-slate-400 hover:text-slate-200"}`}
+                className={`px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 transition-all ${viewMode === "kanban" ? "bg-teal-500/20 text-teal-700" : "text-gray-500 hover:text-gray-800"}`}
               >
                 <Columns className="w-3.5 h-3.5" /> Kanban
               </button>
             </div>
-            <Button onClick={exportCSV} className="bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 border border-teal-500/30">
+            <Button onClick={exportCSV} className="bg-teal-500/20 hover:bg-teal-500/30 text-teal-700 border border-teal-500/30">
               <Download className="w-4 h-4 mr-2" /> Export CSV
             </Button>
           </div>
@@ -429,13 +429,13 @@ export default function HomeownerCRM() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Total Homeowners", value: MOCK_HOMEOWNERS.length, icon: <Users className="w-5 h-5 text-teal-400" />, color: "text-teal-400", bg: "bg-teal-500/10" },
-            { label: "Total Revenue", value: fmtCurrency(totalSpend), icon: <DollarSign className="w-5 h-5 text-amber-400" />, color: "text-amber-400", bg: "bg-amber-500/10" },
+            { label: "Total Homeowners", value: MOCK_HOMEOWNERS.length, icon: <Users className="w-5 h-5 text-teal-700" />, color: "text-teal-700", bg: "bg-teal-500/10" },
+            { label: "Total Revenue", value: fmtCurrency(totalSpend), icon: <DollarSign className="w-5 h-5 text-amber-700" />, color: "text-amber-700", bg: "bg-amber-500/10" },
             { label: "High Value (5k+)", value: highValue, icon: <Star className="w-5 h-5 text-yellow-400" />, color: "text-yellow-400", bg: "bg-yellow-500/10" },
-            { label: "At Risk", value: atRisk, icon: <AlertTriangle className="w-5 h-5 text-red-400" />, color: "text-red-400", bg: "bg-red-500/10" },
+            { label: "At Risk", value: atRisk, icon: <AlertTriangle className="w-5 h-5 text-red-600" />, color: "text-red-600", bg: "bg-red-500/10" },
           ].map((s) => (
-            <div key={s.label} className={`rounded-xl p-4 border border-slate-700 ${s.bg}`}>
-              <div className="flex items-center gap-2 mb-2">{s.icon}<span className="text-xs text-slate-400">{s.label}</span></div>
+            <div key={s.label} className={`rounded-xl p-4 border border-gray-200 ${s.bg}`}>
+              <div className="flex items-center gap-2 mb-2">{s.icon}<span className="text-xs text-gray-500">{s.label}</span></div>
               <div className={`text-2xl font-black ${s.color}`}>{s.value}</div>
             </div>
           ))}
@@ -443,9 +443,9 @@ export default function HomeownerCRM() {
 
         <div className="flex flex-wrap gap-3 items-center">
           <div className="relative flex-1 min-w-60">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
             <input
-              className="w-full bg-[#0F1E35] border border-slate-700 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
+              className="w-full bg-[#0F1E35] border border-gray-200 rounded-lg pl-9 pr-4 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder="Search name, email, address, ZIP..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -458,8 +458,8 @@ export default function HomeownerCRM() {
                 onClick={() => setActiveFilter(f.value)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                   activeFilter === f.value
-                    ? "bg-teal-500 text-white"
-                    : "bg-[#0F1E35] border border-slate-700 text-slate-400 hover:border-teal-500/50"
+                    ? "bg-teal-500 text-gray-900"
+                    : "bg-[#0F1E35] border border-gray-200 text-gray-500 hover:border-teal-500/50"
                 }`}
               >
                 {f.label}
@@ -470,7 +470,7 @@ export default function HomeownerCRM() {
 
         {selectedIds.size > 0 && (
           <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-teal-500/30 bg-teal-500/5">
-            <span className="text-teal-400 text-sm font-semibold">{selectedIds.size} selected</span>
+            <span className="text-teal-700 text-sm font-semibold">{selectedIds.size} selected</span>
             <div className="flex gap-2 ml-2">
               <button
                 onClick={() => { toast.success(`Email sent to ${selectedIds.size} homeowners`); clearSelection(); }}
@@ -486,30 +486,30 @@ export default function HomeownerCRM() {
               </button>
               <button
                 onClick={() => { exportCSV(); clearSelection(); }}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-500/15 text-slate-400 text-xs font-medium border border-slate-500/25 hover:bg-slate-500/25 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-500/15 text-gray-500 text-xs font-medium border border-slate-500/25 hover:bg-slate-500/25 transition-colors"
               >
                 <Download className="w-3 h-3" /> Export
               </button>
             </div>
-            <button onClick={clearSelection} className="ml-auto text-slate-500 hover:text-slate-300">
+            <button onClick={clearSelection} className="ml-auto text-gray-500 hover:text-gray-700">
               <X className="w-4 h-4" />
             </button>
           </div>
         )}
 
         {viewMode === "table" && (
-          <div className="bg-[#0F1E35] rounded-xl border border-slate-700 overflow-hidden">
+          <div className="bg-[#0F1E35] rounded-xl border border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-700">
+                  <tr className="border-b border-gray-200">
                     <th className="px-4 py-3 w-8">
                       <button
                         onClick={() => {
                           if (selectedIds.size === filtered.length) clearSelection();
                           else setSelectedIds(new Set(filtered.map(h => h.id)));
                         }}
-                        className="text-slate-400 hover:text-teal-400 transition-colors"
+                        className="text-gray-500 hover:text-teal-700 transition-colors"
                       >
                         {selectedIds.size === filtered.length && filtered.length > 0
                           ? <CheckSquare className="w-4 h-4" />
@@ -517,57 +517,57 @@ export default function HomeownerCRM() {
                         }
                       </button>
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Homeowner</th>
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Location</th>
-                    <th className="text-center px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Homes</th>
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Last Service</th>
-                    <th className="text-right px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Total Spend</th>
-                    <th className="text-center px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Health</th>
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Join Date</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Homeowner</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</th>
+                    <th className="text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Homes</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Last Service</th>
+                    <th className="text-right px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Total Spend</th>
+                    <th className="text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Health</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Join Date</th>
                     <th className="px-4 py-3" />
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-700/50">
+                <tbody className="divide-y divide-gray-200/50">
                   {filtered.length === 0 ? (
                     <tr>
-                      <td colSpan={9} className="px-4 py-12 text-center text-slate-500">No homeowners match your filters</td>
+                      <td colSpan={9} className="px-4 py-12 text-center text-gray-500">No homeowners match your filters</td>
                     </tr>
                   ) : filtered.map((h) => (
                     <tr
                       key={h.id}
-                      className={`hover:bg-slate-700/20 cursor-pointer transition-colors ${selectedIds.has(h.id) ? "bg-teal-500/5" : ""}`}
+                      className={`hover:bg-gray-100/20 cursor-pointer transition-colors ${selectedIds.has(h.id) ? "bg-teal-500/5" : ""}`}
                       onClick={() => setSelectedHomeowner(h)}
                     >
                       <td className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => toggleSelect(h.id)} className="text-slate-400 hover:text-teal-400 transition-colors">
-                          {selectedIds.has(h.id) ? <CheckSquare className="w-4 h-4 text-teal-400" /> : <Square className="w-4 h-4" />}
+                        <button onClick={() => toggleSelect(h.id)} className="text-gray-500 hover:text-teal-700 transition-colors">
+                          {selectedIds.has(h.id) ? <CheckSquare className="w-4 h-4 text-teal-700" /> : <Square className="w-4 h-4" />}
                         </button>
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-sm shrink-0">
+                          <div className="w-9 h-9 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-700 font-bold text-sm shrink-0">
                             {h.name[0]}
                           </div>
                           <div>
-                            <div className="text-white font-medium text-sm">{h.name}</div>
-                            <div className="text-slate-400 text-xs">{h.email}</div>
+                            <div className="text-gray-900 font-medium text-sm">{h.name}</div>
+                            <div className="text-gray-500 text-xs">{h.email}</div>
                           </div>
                         </div>
                       </td>
                       <td className="px-4 py-3">
-                        <div className="flex items-center gap-1 text-slate-300 text-xs">
-                          <MapPin className="w-3 h-3 text-slate-500" />
+                        <div className="flex items-center gap-1 text-gray-700 text-xs">
+                          <MapPin className="w-3 h-3 text-gray-500" />
                           {h.city}, {h.state} {h.zip}
                         </div>
                       </td>
                       <td className="px-4 py-3 text-center">
-                        <div className="flex items-center justify-center gap-1 text-slate-300 text-sm">
-                          <Home className="w-3.5 h-3.5 text-slate-500" />
+                        <div className="flex items-center justify-center gap-1 text-gray-700 text-sm">
+                          <Home className="w-3.5 h-3.5 text-gray-500" />
                           {h.homes}
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-slate-400 text-xs">{fmtDate(h.lastService)}</td>
-                      <td className="px-4 py-3 text-right font-semibold text-amber-400">{fmtCurrency(h.totalSpend)}</td>
+                      <td className="px-4 py-3 text-gray-500 text-xs">{fmtDate(h.lastService)}</td>
+                      <td className="px-4 py-3 text-right font-semibold text-amber-700">{fmtCurrency(h.totalSpend)}</td>
                       <td className="px-4 py-3">
                         <div className="flex flex-col items-center gap-1">
                           <div className="flex items-center gap-2">
@@ -577,11 +577,11 @@ export default function HomeownerCRM() {
                           <span className={`text-xs ${healthColor(h.healthScore)}`}>{healthLabel(h.healthScore)}</span>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-slate-400 text-xs">{fmtDate(h.joinDate)}</td>
+                      <td className="px-4 py-3 text-gray-500 text-xs">{fmtDate(h.joinDate)}</td>
                       <td className="px-4 py-3">
                         <button
                           onClick={(e) => { e.stopPropagation(); setMessageTarget(h); }}
-                          className="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-400 text-xs transition-colors"
+                          className="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-700 text-xs transition-colors"
                         >
                           <MessageSquare className="w-3 h-3" /> Msg
                         </button>
@@ -602,24 +602,24 @@ export default function HomeownerCRM() {
                 <div key={stage} className={`rounded-xl border p-4 ${STAGE_COLORS[stage]}`}>
                   <div className="flex items-center justify-between mb-4">
                     <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${STAGE_BADGE[stage]}`}>{stage}</span>
-                    <span className="text-xs text-slate-500">{stageItems.length}</span>
+                    <span className="text-xs text-gray-500">{stageItems.length}</span>
                   </div>
                   <div className="space-y-3">
                     {stageItems.map((h) => (
                       <button
                         key={h.id}
                         onClick={() => setSelectedHomeowner(h)}
-                        className="w-full text-left rounded-lg p-3 bg-[#0A1628] border border-slate-700 hover:border-teal-500/40 transition-all"
+                        className="w-full text-left rounded-lg p-3 bg-[#F8FAFC] border border-gray-200 hover:border-teal-500/40 transition-all"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <div className="w-7 h-7 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-xs shrink-0">
+                          <div className="w-7 h-7 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-700 font-bold text-xs shrink-0">
                             {h.name[0]}
                           </div>
-                          <span className="text-white text-xs font-semibold truncate">{h.name}</span>
+                          <span className="text-gray-900 text-xs font-semibold truncate">{h.name}</span>
                         </div>
-                        <div className="text-slate-400 text-xs truncate">{h.city}, {h.state}</div>
+                        <div className="text-gray-500 text-xs truncate">{h.city}, {h.state}</div>
                         <div className="flex items-center justify-between mt-2">
-                          <span className="text-amber-400 text-xs font-semibold">{fmtCurrency(h.totalSpend)}</span>
+                          <span className="text-amber-700 text-xs font-semibold">{fmtCurrency(h.totalSpend)}</span>
                           <div className="flex items-center gap-1">
                             <span className={`text-xs font-bold ${healthColor(h.healthScore)}`}>{h.healthScore}</span>
                             <HealthSparkline score={h.healthScore} />
@@ -628,7 +628,7 @@ export default function HomeownerCRM() {
                       </button>
                     ))}
                     {stageItems.length === 0 && (
-                      <div className="text-xs text-slate-600 text-center py-4">No homeowners</div>
+                      <div className="text-xs text-gray-400 text-center py-4">No homeowners</div>
                     )}
                   </div>
                 </div>
@@ -638,21 +638,21 @@ export default function HomeownerCRM() {
         )}
 
         <Dialog open={!!selectedHomeowner} onOpenChange={() => setSelectedHomeowner(null)}>
-          <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-[#0A1628] border border-slate-700 text-white">
+          <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-[#F8FAFC] border border-gray-200 text-gray-900">
             {selectedHomeowner && (
               <>
                 <DialogHeader>
                   <DialogTitle className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold">
+                    <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-700 font-bold">
                       {selectedHomeowner.name[0]}
                     </div>
                     <div>
-                      <div className="text-white">{selectedHomeowner.name}</div>
-                      <div className="text-sm text-slate-400 font-normal">{selectedHomeowner.address}, {selectedHomeowner.city}, {selectedHomeowner.state}</div>
+                      <div className="text-gray-900">{selectedHomeowner.name}</div>
+                      <div className="text-sm text-gray-500 font-normal">{selectedHomeowner.address}, {selectedHomeowner.city}, {selectedHomeowner.state}</div>
                     </div>
                     <div className="ml-auto flex gap-2 flex-wrap">
                       {selectedHomeowner.tags.map((t) => (
-                        <span key={t} className="px-2 py-0.5 rounded-full text-xs font-medium bg-teal-500/20 text-teal-300">{t}</span>
+                        <span key={t} className="px-2 py-0.5 rounded-full text-xs font-medium bg-teal-500/20 text-teal-700">{t}</span>
                       ))}
                     </div>
                   </DialogTitle>
@@ -661,66 +661,66 @@ export default function HomeownerCRM() {
                 <div className="space-y-5 py-2">
                   <div className="grid grid-cols-4 gap-3">
                     {[
-                      { label: "Total Spend", value: fmtCurrency(selectedHomeowner.totalSpend), color: "text-amber-400" },
-                      { label: "Jobs Done", value: selectedHomeowner.jobsCompleted, color: "text-teal-400" },
+                      { label: "Total Spend", value: fmtCurrency(selectedHomeowner.totalSpend), color: "text-amber-700" },
+                      { label: "Jobs Done", value: selectedHomeowner.jobsCompleted, color: "text-teal-700" },
                       { label: "Health Score", value: selectedHomeowner.healthScore, color: healthColor(selectedHomeowner.healthScore) },
                       { label: "Avg Rating", value: selectedHomeowner.avgRating > 0 ? `${selectedHomeowner.avgRating} ★` : "—", color: "text-yellow-400" },
                     ].map((s) => (
-                      <div key={s.label} className="bg-[#0F1E35] rounded-lg p-3 text-center border border-slate-700">
+                      <div key={s.label} className="bg-[#0F1E35] rounded-lg p-3 text-center border border-gray-200">
                         <div className={`text-xl font-black ${s.color}`}>{s.value}</div>
-                        <div className="text-xs text-slate-400 mt-0.5">{s.label}</div>
+                        <div className="text-xs text-gray-500 mt-0.5">{s.label}</div>
                       </div>
                     ))}
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="flex items-center gap-2 text-slate-300 text-sm">
-                      <Mail className="w-4 h-4 text-slate-500" />{selectedHomeowner.email}
+                    <div className="flex items-center gap-2 text-gray-700 text-sm">
+                      <Mail className="w-4 h-4 text-gray-500" />{selectedHomeowner.email}
                     </div>
-                    <div className="flex items-center gap-2 text-slate-300 text-sm">
-                      <Phone className="w-4 h-4 text-slate-500" />{selectedHomeowner.phone}
+                    <div className="flex items-center gap-2 text-gray-700 text-sm">
+                      <Phone className="w-4 h-4 text-gray-500" />{selectedHomeowner.phone}
                     </div>
-                    <div className="flex items-center gap-2 text-slate-300 text-sm">
-                      <Home className="w-4 h-4 text-slate-500" />{selectedHomeowner.homes} home{selectedHomeowner.homes > 1 ? "s" : ""} registered
+                    <div className="flex items-center gap-2 text-gray-700 text-sm">
+                      <Home className="w-4 h-4 text-gray-500" />{selectedHomeowner.homes} home{selectedHomeowner.homes > 1 ? "s" : ""} registered
                     </div>
-                    <div className="flex items-center gap-2 text-slate-300 text-sm">
-                      <Calendar className="w-4 h-4 text-slate-500" />Joined {fmtDate(selectedHomeowner.joinDate)}
+                    <div className="flex items-center gap-2 text-gray-700 text-sm">
+                      <Calendar className="w-4 h-4 text-gray-500" />Joined {fmtDate(selectedHomeowner.joinDate)}
                     </div>
                   </div>
 
                   {selectedHomeowner.prosUsed.length > 0 && (
                     <div>
-                      <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
-                        <Wrench className="w-4 h-4 text-teal-400" /> Pros Used
+                      <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-1">
+                        <Wrench className="w-4 h-4 text-teal-700" /> Pros Used
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {selectedHomeowner.prosUsed.map((p) => (
-                          <span key={p} className="px-2.5 py-1 rounded-full text-xs bg-slate-700/60 text-slate-300">{p}</span>
+                          <span key={p} className="px-2.5 py-1 rounded-full text-xs bg-gray-100 text-gray-700">{p}</span>
                         ))}
                       </div>
                     </div>
                   )}
 
                   <div>
-                    <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
-                      <Activity className="w-4 h-4 text-teal-400" /> Job History
+                    <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-1">
+                      <Activity className="w-4 h-4 text-teal-700" /> Job History
                     </h3>
                     <div className="space-y-2">
                       {selectedHomeowner.jobHistory.map((job, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 bg-[#0F1E35] rounded-lg border border-slate-700 text-sm">
+                        <div key={i} className="flex items-center justify-between p-3 bg-[#0F1E35] rounded-lg border border-gray-200 text-sm">
                           <div className="flex items-center gap-3">
                             <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                              job.status === "completed" ? "bg-teal-500/20 text-teal-400" : "bg-red-500/20 text-red-400"
+                              job.status === "completed" ? "bg-teal-500/20 text-teal-700" : "bg-red-500/20 text-red-600"
                             }`}>{job.status}</span>
                             <div>
-                              <div className="text-white font-medium">{job.trade}</div>
-                              <div className="text-slate-400 text-xs">{job.pro}</div>
+                              <div className="text-gray-900 font-medium">{job.trade}</div>
+                              <div className="text-gray-500 text-xs">{job.pro}</div>
                             </div>
                           </div>
                           <div className="flex items-center gap-4 text-right">
                             <div>
-                              <div className="text-amber-400 font-semibold">{fmtCurrency(job.amount)}</div>
-                              <div className="text-slate-500 text-xs">{fmtDate(job.date)}</div>
+                              <div className="text-amber-700 font-semibold">{fmtCurrency(job.amount)}</div>
+                              <div className="text-gray-500 text-xs">{fmtDate(job.date)}</div>
                             </div>
                             {job.rating && (
                               <div className="flex items-center gap-1 text-yellow-400 text-sm">
@@ -734,20 +734,20 @@ export default function HomeownerCRM() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
-                      <Zap className="w-4 h-4 text-teal-400" /> Last 30 Days Activity
+                    <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-1">
+                      <Zap className="w-4 h-4 text-teal-700" /> Last 30 Days Activity
                     </h3>
                     <div className="relative pl-5 space-y-0">
                       {selectedHomeowner.recentActivity.map((a, i) => (
                         <div key={i} className="relative pb-3">
                           {i < selectedHomeowner.recentActivity.length - 1 && (
-                            <div className="absolute left-[-12px] top-5 w-px h-full bg-slate-700" />
+                            <div className="absolute left-[-12px] top-5 w-px h-full bg-gray-100" />
                           )}
                           <div className="flex items-start gap-3">
                             <span className="text-base leading-none mt-0.5 flex-shrink-0">{activityIcon[a.type] ?? "📌"}</span>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm text-slate-200 leading-snug">{a.event}</p>
-                              <p className="text-xs text-slate-500 mt-0.5">{fmtDate(a.date)}</p>
+                              <p className="text-sm text-gray-800 leading-snug">{a.event}</p>
+                              <p className="text-xs text-gray-500 mt-0.5">{fmtDate(a.date)}</p>
                             </div>
                           </div>
                         </div>
@@ -756,22 +756,22 @@ export default function HomeownerCRM() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
-                      <MessageSquare className="w-4 h-4 text-teal-400" /> Recent Communications
+                    <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-1">
+                      <MessageSquare className="w-4 h-4 text-teal-700" /> Recent Communications
                     </h3>
                     <div className="space-y-2">
                       {selectedHomeowner.communications.map((c, i) => (
-                        <div key={i} className="flex items-start gap-3 p-3 bg-[#0F1E35] rounded-lg border border-slate-700 text-sm">
+                        <div key={i} className="flex items-start gap-3 p-3 bg-[#0F1E35] rounded-lg border border-gray-200 text-sm">
                           <div className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
-                            c.type === "email" ? "bg-blue-500/20 text-blue-400" : "bg-green-500/20 text-green-400"
+                            c.type === "email" ? "bg-blue-500/20 text-blue-400" : "bg-green-500/20 text-green-700"
                           }`}>
                             {c.type === "email" ? <Mail className="w-3 h-3" /> : <Phone className="w-3 h-3" />}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-white font-medium truncate">{c.subject}</div>
-                            <div className="text-slate-400 text-xs">{c.preview}</div>
+                            <div className="text-gray-900 font-medium truncate">{c.subject}</div>
+                            <div className="text-gray-500 text-xs">{c.preview}</div>
                           </div>
-                          <div className="text-slate-500 text-xs shrink-0">{fmtDate(c.date)}</div>
+                          <div className="text-gray-500 text-xs shrink-0">{fmtDate(c.date)}</div>
                         </div>
                       ))}
                     </div>
@@ -779,9 +779,9 @@ export default function HomeownerCRM() {
                 </div>
 
                 <DialogFooter className="gap-2">
-                  <Button variant="outline" className="border-slate-600 text-slate-400" onClick={() => setSelectedHomeowner(null)}>Close</Button>
+                  <Button variant="outline" className="border-gray-300 text-gray-500" onClick={() => setSelectedHomeowner(null)}>Close</Button>
                   <Button
-                    className="bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 border border-teal-500/30"
+                    className="bg-teal-500/20 hover:bg-teal-500/30 text-teal-700 border border-teal-500/30"
                     onClick={() => { setMessageTarget(selectedHomeowner); setSelectedHomeowner(null); }}
                   >
                     <Send className="w-4 h-4 mr-2" /> Send Message
@@ -793,25 +793,25 @@ export default function HomeownerCRM() {
         </Dialog>
 
         <Dialog open={!!messageTarget} onOpenChange={() => { setMessageTarget(null); setMessageText(""); }}>
-          <DialogContent className="max-w-md bg-[#0A1628] border border-slate-700 text-white">
+          <DialogContent className="max-w-md bg-[#F8FAFC] border border-gray-200 text-gray-900">
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-teal-400" />
+                <MessageSquare className="w-5 h-5 text-teal-700" />
                 Message {messageTarget?.name}
               </DialogTitle>
             </DialogHeader>
             <div className="space-y-3 py-2">
-              <div className="text-xs text-slate-400">Via email to <span className="text-teal-400">{messageTarget?.email}</span></div>
+              <div className="text-xs text-gray-500">Via email to <span className="text-teal-700">{messageTarget?.email}</span></div>
               <textarea
-                className="w-full h-28 bg-[#0F1E35] border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-teal-500 resize-none"
+                className="w-full h-28 bg-[#0F1E35] border border-gray-200 rounded-lg p-3 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 resize-none"
                 placeholder="Type your message..."
                 value={messageText}
                 onChange={(e) => setMessageText(e.target.value)}
               />
             </div>
             <DialogFooter>
-              <Button variant="outline" className="border-slate-600 text-slate-400" onClick={() => { setMessageTarget(null); setMessageText(""); }}>Cancel</Button>
-              <Button className="bg-teal-500 hover:bg-teal-600 text-white" onClick={sendMessage}>
+              <Button variant="outline" className="border-gray-300 text-gray-500" onClick={() => { setMessageTarget(null); setMessageText(""); }}>Cancel</Button>
+              <Button className="bg-teal-500 hover:bg-teal-600 text-gray-900" onClick={sendMessage}>
                 <Send className="w-4 h-4 mr-2" /> Send
               </Button>
             </DialogFooter>

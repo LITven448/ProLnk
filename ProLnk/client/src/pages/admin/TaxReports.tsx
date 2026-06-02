@@ -133,7 +133,7 @@ export default function TaxReports() {
         {/* Summary cards */}
         <div className="grid grid-cols-3 gap-4">
           {[
-            { label: `Total Paid (${year})`, value: `$${totalPaid.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, icon: DollarSign, color: "text-[#82D616]", bg: "bg-[#82D616]/10" },
+            { label: `Total Paid (${year})`, value: `$${totalPaid.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, icon: DollarSign, color: "text-[#16A34A]", bg: "bg-[#16A34A]/10" },
             { label: "1099 Required", value: above1099.length, icon: FileText, color: "text-amber-400", bg: "bg-amber-400/10" },
             { label: "Below Threshold", value: below1099.length, icon: CheckCircle, color: "text-green-500", bg: "bg-green-500/10" },
           ].map(m => (
@@ -177,7 +177,7 @@ export default function TaxReports() {
                         <td className="px-4 py-3 font-medium text-foreground">{r.partner.businessName || "--"}</td>
                         <td className="px-4 py-3 text-muted-foreground text-xs">{r.partner.contactEmail}</td>
                         <td className="px-4 py-3 text-right font-mono text-foreground">{r.paidCount}</td>
-                        <td className="px-4 py-3 text-right font-mono font-bold text-[#82D616]">
+                        <td className="px-4 py-3 text-right font-mono font-bold text-[#16A34A]">
                           ${r.total.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </td>
                       </tr>

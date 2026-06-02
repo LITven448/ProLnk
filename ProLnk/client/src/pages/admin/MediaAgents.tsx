@@ -61,11 +61,11 @@ export default function MediaAgents() {
     <AdminLayout>
       <div className="p-6 space-y-6">
         <div>
-          <h1 className="text-2xl font-bold text-[#344767] flex items-center gap-2">
+          <h1 className="text-2xl font-bold text-[#1F2937] flex items-center gap-2">
             <Bot className="w-6 h-6 text-[#FBB140]" />
             ProLnk Media — AI Agents
           </h1>
-          <p className="text-sm text-[#7B809A] mt-1">
+          <p className="text-sm text-[#4B5563] mt-1">
             Automated agents powering content generation, advertiser matching, and campaign optimization for ProLnk Media.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function MediaAgents() {
               <Zap className="w-8 h-8 text-yellow-500 shrink-0" />
               <div>
                 <div className="text-2xl font-bold text-yellow-600">0</div>
-                <div className="text-xs text-[#7B809A]">Active</div>
+                <div className="text-xs text-[#4B5563]">Active</div>
               </div>
             </CardContent>
           </Card>
@@ -85,7 +85,7 @@ export default function MediaAgents() {
               <Clock className="w-8 h-8 text-zinc-400 shrink-0" />
               <div>
                 <div className="text-2xl font-bold text-zinc-500">{MEDIA_AGENTS.length}</div>
-                <div className="text-xs text-[#7B809A]">Planned</div>
+                <div className="text-xs text-[#4B5563]">Planned</div>
               </div>
             </CardContent>
           </Card>
@@ -94,7 +94,7 @@ export default function MediaAgents() {
               <Bot className="w-8 h-8 text-[#FBB140] shrink-0" />
               <div>
                 <div className="text-2xl font-bold text-[#FBB140]">{MEDIA_AGENTS.length}</div>
-                <div className="text-xs text-[#7B809A]">Total Agents</div>
+                <div className="text-xs text-[#4B5563]">Total Agents</div>
               </div>
             </CardContent>
           </Card>
@@ -114,7 +114,7 @@ export default function MediaAgents() {
                       <AgentIcon className="w-5 h-5" style={{ color: agent.color }} />
                     </div>
                     <div>
-                      <CardTitle className="text-sm font-semibold text-[#344767]">{agent.name}</CardTitle>
+                      <CardTitle className="text-sm font-semibold text-[#1F2937]">{agent.name}</CardTitle>
                       <div className="flex items-center gap-1 text-xs mt-0.5 text-zinc-400">
                         <Clock className="w-3 h-3" />
                         Planned
@@ -123,17 +123,17 @@ export default function MediaAgents() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <p className="text-xs text-[#7B809A] leading-relaxed">{agent.description}</p>
+                  <p className="text-xs text-[#4B5563] leading-relaxed">{agent.description}</p>
                   <div>
-                    <div className="text-xs font-medium text-[#344767] mb-1.5">Triggers</div>
+                    <div className="text-xs font-medium text-[#1F2937] mb-1.5">Triggers</div>
                     <div className="flex flex-wrap gap-1">
                       {agent.triggers.map((t) => (
-                        <Badge key={t} variant="outline" className="text-[10px] border-[#E9ECEF] text-[#7B809A]">{t}</Badge>
+                        <Badge key={t} variant="outline" className="text-[10px] border-[#E9ECEF] text-[#4B5563]">{t}</Badge>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <div className="text-xs font-medium text-[#344767] mb-1.5">Outputs</div>
+                    <div className="text-xs font-medium text-[#1F2937] mb-1.5">Outputs</div>
                     <div className="flex flex-wrap gap-1">
                       {agent.outputs.map((o) => (
                         <Badge key={o} variant="outline" className="text-[10px]" style={{ borderColor: agent.color + "60", color: agent.color }}>{o}</Badge>

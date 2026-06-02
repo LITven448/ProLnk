@@ -92,7 +92,7 @@ function PreviewBanner({ title, body, priority }: { title: string; body: string;
         <p className="font-semibold text-sm" style={{ color: s.color }}>{title || "Announcement title"}</p>
         <p className="text-xs text-[#94A3B8] mt-0.5">{body || "Announcement body text will appear here..."}</p>
       </div>
-      <button className="flex-shrink-0 text-[#4B5563] hover:text-white"><X className="w-4 h-4" /></button>
+      <button className="flex-shrink-0 text-[#4B5563] hover:text-gray-900"><X className="w-4 h-4" /></button>
     </div>
   );
 }
@@ -122,7 +122,7 @@ export default function AnnouncementCenter() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] text-white px-4 py-8 max-w-5xl mx-auto">
+      <div className="min-h-screen bg-[#F8FAFC] text-gray-900 px-4 py-8 max-w-5xl mx-auto">
 
         {/* Header */}
         <div className="flex items-start justify-between mb-8 gap-4">
@@ -137,7 +137,7 @@ export default function AnnouncementCenter() {
           </div>
           <button
             onClick={handleEmergency}
-            className="flex items-center gap-2 bg-[#EF4444] hover:bg-[#DC2626] text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors flex-shrink-0"
+            className="flex items-center gap-2 bg-[#EF4444] hover:bg-[#DC2626] text-gray-900 px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors flex-shrink-0"
           >
             <Zap className="w-4 h-4" />
             Emergency Broadcast
@@ -191,7 +191,7 @@ export default function AnnouncementCenter() {
                 value={title}
                 onChange={e => setTitle(e.target.value)}
                 placeholder="Announcement title..."
-                className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#4B5563] focus:outline-none focus:border-[#00B5B8]"
+                className="w-full bg-[#F8FAFC] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-gray-900 placeholder-[#4B5563] focus:outline-none focus:border-[#00B5B8]"
               />
             </div>
             <div>
@@ -201,7 +201,7 @@ export default function AnnouncementCenter() {
                 onChange={e => setBody(e.target.value)}
                 rows={3}
                 placeholder="Announcement body text..."
-                className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#4B5563] focus:outline-none focus:border-[#00B5B8] resize-none"
+                className="w-full bg-[#F8FAFC] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-gray-900 placeholder-[#4B5563] focus:outline-none focus:border-[#00B5B8] resize-none"
               />
             </div>
 
@@ -212,7 +212,7 @@ export default function AnnouncementCenter() {
                   <select
                     value={audience}
                     onChange={e => setAudience(e.target.value)}
-                    className="w-full appearance-none bg-[#0A1628] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00B5B8] pr-8"
+                    className="w-full appearance-none bg-[#F8FAFC] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#00B5B8] pr-8"
                   >
                     {AUDIENCES.map(a => <option key={a}>{a}</option>)}
                   </select>
@@ -269,12 +269,12 @@ export default function AnnouncementCenter() {
               <div>
                 <label className="block text-xs text-[#94A3B8] mb-1.5 font-medium">Start Date</label>
                 <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)}
-                  className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00B5B8]" />
+                  className="w-full bg-[#F8FAFC] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#00B5B8]" />
               </div>
               <div>
                 <label className="block text-xs text-[#94A3B8] mb-1.5 font-medium">End Date (optional)</label>
                 <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)}
-                  className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#00B5B8]" />
+                  className="w-full bg-[#F8FAFC] border border-[#1E3A5F] rounded-xl px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#00B5B8]" />
               </div>
             </div>
 
@@ -288,14 +288,14 @@ export default function AnnouncementCenter() {
             <div className="flex gap-3 pt-1">
               <button
                 onClick={() => setPreviewing(p => !p)}
-                className="flex items-center gap-2 border border-[#1E3A5F] hover:border-[#00B5B8] text-[#94A3B8] hover:text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors"
+                className="flex items-center gap-2 border border-[#1E3A5F] hover:border-[#00B5B8] text-[#94A3B8] hover:text-gray-900 px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors"
               >
                 <Eye className="w-4 h-4" />
                 {previewing ? "Hide Preview" : "Preview"}
               </button>
               <button
                 onClick={handlePublish}
-                className="flex items-center gap-2 bg-[#00B5B8] hover:bg-[#009EA1] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors"
+                className="flex items-center gap-2 bg-[#00B5B8] hover:bg-[#009EA1] text-gray-900 px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors"
               >
                 <Send className="w-4 h-4" />
                 Publish

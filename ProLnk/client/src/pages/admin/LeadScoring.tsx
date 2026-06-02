@@ -10,10 +10,10 @@ import {
 } from "lucide-react";
 
 function scoreColor(score: number) {
-  if (score >= 75) return "text-green-400";
+  if (score >= 75) return "text-green-700";
   if (score >= 50) return "text-yellow-400";
   if (score >= 30) return "text-orange-400";
-  return "text-red-400";
+  return "text-red-600";
 }
 
 function scoreBg(score: number) {
@@ -30,9 +30,9 @@ function scoreLabel(score: number) {
 }
 
 function scoreBadge(score: number) {
-  if (score >= 75) return "bg-green-500/20 text-green-400 border border-green-500/30";
+  if (score >= 75) return "bg-green-500/20 text-green-700 border border-green-500/30";
   if (score >= 50) return "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30";
-  return "bg-red-500/20 text-red-400 border border-red-500/30";
+  return "bg-red-500/20 text-red-600 border border-red-500/30";
 }
 
 const MOCK_LEADS = [
@@ -320,17 +320,17 @@ export default function LeadScoring() {
       <div className="p-6 space-y-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
-            <Brain className="w-5 h-5 text-purple-400" />
+            <Brain className="w-5 h-5 text-gray-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-white">AI Lead Scoring</h1>
-            <p className="text-sm text-slate-400">Every lead scored 0–100 with breakdown, routing rules, and override capability</p>
+            <h1 className="text-2xl font-bold text-gray-900">AI Lead Scoring</h1>
+            <p className="text-sm text-gray-500">Every lead scored 0–100 with breakdown, routing rules, and override capability</p>
           </div>
           <div className="ml-auto flex items-center gap-3">
             <button
               onClick={batchRescore}
               disabled={rescoring}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 text-purple-400 text-sm font-medium border border-purple-500/25 transition-colors disabled:opacity-60"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 text-gray-600 text-sm font-medium border border-purple-500/25 transition-colors disabled:opacity-60"
             >
               <RefreshCw className={`w-4 h-4 ${rescoring ? "animate-spin" : ""}`} />
               {rescoring ? `Re-scoring... ${rescoreProgress}%` : "Batch Re-score"}
@@ -341,10 +341,10 @@ export default function LeadScoring() {
         {rescoring && (
           <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-purple-400 font-semibold">Re-scoring {leads.length} leads...</span>
-              <span className="text-sm text-purple-300 font-bold">{rescoreProgress}%</span>
+              <span className="text-sm text-gray-600 font-semibold">Re-scoring {leads.length} leads...</span>
+              <span className="text-sm text-gray-600 font-bold">{rescoreProgress}%</span>
             </div>
-            <div className="h-2 rounded-full bg-slate-700">
+            <div className="h-2 rounded-full bg-gray-100">
               <div
                 className="h-full rounded-full bg-purple-500 transition-all duration-200"
                 style={{ width: `${rescoreProgress}%` }}
@@ -355,30 +355,30 @@ export default function LeadScoring() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { label: "Avg Score", value: avgScore, icon: <Brain className="w-4 h-4 text-purple-400" />, color: "text-purple-400", bg: "bg-purple-500/10" },
-            { label: "Auto-Accept (75+)", value: autoAccept, icon: <CheckCircle className="w-4 h-4 text-green-400" />, color: "text-green-400", bg: "bg-green-500/10" },
+            { label: "Avg Score", value: avgScore, icon: <Brain className="w-4 h-4 text-gray-600" />, color: "text-gray-600", bg: "bg-purple-500/10" },
+            { label: "Auto-Accept (75+)", value: autoAccept, icon: <CheckCircle className="w-4 h-4 text-green-700" />, color: "text-green-700", bg: "bg-green-500/10" },
             { label: "Needs Review (50-74)", value: needsReview, icon: <AlertTriangle className="w-4 h-4 text-yellow-400" />, color: "text-yellow-400", bg: "bg-yellow-500/10" },
-            { label: "Auto-Reject (<50)", value: autoReject, icon: <XCircle className="w-4 h-4 text-red-400" />, color: "text-red-400", bg: "bg-red-500/10" },
+            { label: "Auto-Reject (<50)", value: autoReject, icon: <XCircle className="w-4 h-4 text-red-600" />, color: "text-red-600", bg: "bg-red-500/10" },
           ].map((s) => (
-            <div key={s.label} className={`rounded-xl p-4 border border-slate-700 ${s.bg}`}>
-              <div className="flex items-center gap-2 mb-2">{s.icon}<span className="text-xs text-slate-400">{s.label}</span></div>
+            <div key={s.label} className={`rounded-xl p-4 border border-gray-200 ${s.bg}`}>
+              <div className="flex items-center gap-2 mb-2">{s.icon}<span className="text-xs text-gray-500">{s.label}</span></div>
               <div className={`text-2xl font-black ${s.color}`}>{s.value}</div>
             </div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+          <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-5">
             <div className="flex items-center gap-2 mb-1">
-              <Sliders className="w-4 h-4 text-purple-400" />
-              <span className="text-sm font-semibold text-white">Live Score Simulator</span>
+              <Sliders className="w-4 h-4 text-gray-600" />
+              <span className="text-sm font-semibold text-gray-900">Live Score Simulator</span>
             </div>
-            <p className="text-xs text-slate-500 mb-5">Adjust sliders to preview how component values affect the total score</p>
+            <p className="text-xs text-gray-500 mb-5">Adjust sliders to preview how component values affect the total score</p>
             <div className="space-y-4">
               {SIM_FIELDS.map(({ key, label, max }) => (
                 <div key={key}>
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs text-slate-400">{label}</span>
+                    <span className="text-xs text-gray-500">{label}</span>
                     <span className={`text-xs font-bold ${scoreColor(Math.round((simValues[key] / max) * 100))}`}>
                       {simValues[key]}/{max}
                     </span>
@@ -395,8 +395,8 @@ export default function LeadScoring() {
                 </div>
               ))}
             </div>
-            <div className="mt-5 pt-4 border-t border-slate-700 flex items-center justify-between">
-              <span className="text-sm text-slate-300 font-semibold">Simulated Score</span>
+            <div className="mt-5 pt-4 border-t border-gray-200 flex items-center justify-between">
+              <span className="text-sm text-gray-700 font-semibold">Simulated Score</span>
               <div className="flex items-center gap-3">
                 <div className={`text-3xl font-black ${scoreColor(simulatedScore)}`}>{simulatedScore}</div>
                 <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${scoreBadge(simulatedScore)}`}>
@@ -406,38 +406,38 @@ export default function LeadScoring() {
             </div>
           </div>
 
-          <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+          <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-5">
             <div className="flex items-center gap-2 mb-1">
-              <Activity className="w-4 h-4 text-teal-400" />
-              <span className="text-sm font-semibold text-white">Recent Decisions</span>
+              <Activity className="w-4 h-4 text-teal-700" />
+              <span className="text-sm font-semibold text-gray-900">Recent Decisions</span>
             </div>
-            <p className="text-xs text-slate-500 mb-4">Last 10 leads scored and routed</p>
+            <p className="text-xs text-gray-500 mb-4">Last 10 leads scored and routed</p>
             <div className="space-y-2 max-h-72 overflow-y-auto">
               {RECENT_DECISIONS.map((d, i) => (
-                <div key={i} className="flex items-center gap-3 p-2.5 rounded-lg bg-[#0A1628] border border-slate-700/50">
+                <div key={i} className="flex items-center gap-3 p-2.5 rounded-lg bg-[#F8FAFC] border border-gray-200/50">
                   <div className={`text-lg font-black w-9 text-center shrink-0 ${scoreColor(d.score)}`}>{d.score}</div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-white text-xs font-semibold truncate">{d.homeowner}</span>
-                      <span className="text-slate-500 text-xs shrink-0">{d.trade}</span>
+                      <span className="text-gray-900 text-xs font-semibold truncate">{d.homeowner}</span>
+                      <span className="text-gray-500 text-xs shrink-0">{d.trade}</span>
                     </div>
                     <span className={`text-xs font-medium ${
-                      d.outcome === "Auto-Accept" ? "text-green-400"
+                      d.outcome === "Auto-Accept" ? "text-green-700"
                       : d.outcome === "Review Queue" ? "text-yellow-400"
-                      : "text-red-400"
+                      : "text-red-600"
                     }`}>{d.outcome}</span>
                   </div>
-                  <span className="text-xs text-slate-600 shrink-0">{d.time}</span>
+                  <span className="text-xs text-gray-400 shrink-0">{d.time}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+        <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-2 mb-4">
-            <BarChart3 className="w-4 h-4 text-slate-400" />
-            <span className="text-sm font-semibold text-white">Score Distribution</span>
+            <BarChart3 className="w-4 h-4 text-gray-500" />
+            <span className="text-sm font-semibold text-gray-900">Score Distribution</span>
           </div>
           <div className="flex gap-2 items-end h-20">
             {[
@@ -450,24 +450,24 @@ export default function LeadScoring() {
               const pct = Math.round((b.count / maxCount) * 100);
               return (
                 <div key={b.range} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-xs text-slate-400">{b.count}</span>
+                  <span className="text-xs text-gray-500">{b.count}</span>
                   <div className={`w-full rounded-t-md ${b.color}`} style={{ height: `${Math.max(4, pct * 0.7)}px` }} />
-                  <span className="text-xs text-slate-500">{b.range}</span>
+                  <span className="text-xs text-gray-500">{b.range}</span>
                 </div>
               );
             })}
           </div>
         </div>
 
-        <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+        <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-2 mb-3">
-            <Sliders className="w-4 h-4 text-teal-400" />
-            <span className="text-sm font-semibold text-white">Routing Rules</span>
+            <Sliders className="w-4 h-4 text-teal-700" />
+            <span className="text-sm font-semibold text-gray-900">Routing Rules</span>
           </div>
           <div className="flex flex-wrap gap-3">
             {[
               { label: "Score ≥ 75", action: "Auto-Accept → Broadcast to top 5 matched pros", color: "border-green-500/30 bg-green-500/10 text-green-300" },
-              { label: "Score 50–74", action: "Review Queue → Admin approval before routing", color: "border-yellow-500/30 bg-yellow-500/10 text-yellow-300" },
+              { label: "Score 50–74", action: "Review Queue → Admin approval before routing", color: "border-yellow-500/30 bg-yellow-500/10 text-amber-700" },
               { label: "Score < 50", action: "Auto-Reject → Homeowner sent onboarding tips", color: "border-red-500/30 bg-red-500/10 text-red-300" },
             ].map((r) => (
               <div key={r.label} className={`flex-1 min-w-52 rounded-lg p-3 border text-sm ${r.color}`}>
@@ -480,9 +480,9 @@ export default function LeadScoring() {
 
         <div className="flex flex-wrap gap-3 items-center">
           <div className="relative flex-1 min-w-52">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
             <input
-              className="w-full bg-[#0F1E35] border border-slate-700 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
+              className="w-full bg-[#0F1E35] border border-gray-200 rounded-lg pl-9 pr-4 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder="Search homeowner, trade, address..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -494,7 +494,7 @@ export default function LeadScoring() {
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium capitalize transition-all ${
-                  filter === f ? "bg-teal-500 text-white" : "bg-[#0F1E35] border border-slate-700 text-slate-400 hover:border-teal-500/50"
+                  filter === f ? "bg-teal-500 text-gray-900" : "bg-[#0F1E35] border border-gray-200 text-gray-500 hover:border-teal-500/50"
                 }`}
               >
                 {f}
@@ -517,24 +517,24 @@ export default function LeadScoring() {
                     <div className={`text-3xl font-black ${scoreColor(effectiveScore)}`}>{effectiveScore}</div>
                     <div className={`text-xs font-medium ${scoreColor(effectiveScore)}`}>{scoreLabel(effectiveScore)}</div>
                     {lead.overrideScore !== null && (
-                      <div className="text-xs text-slate-400 mt-0.5">overridden</div>
+                      <div className="text-xs text-gray-500 mt-0.5">overridden</div>
                     )}
                   </div>
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-white font-semibold">{lead.homeowner}</span>
+                      <span className="text-gray-900 font-semibold">{lead.homeowner}</span>
                       <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${scoreBadge(effectiveScore)}`}>
                         {scoreLabel(effectiveScore)}
                       </span>
-                      <span className="px-2 py-0.5 rounded-full text-xs bg-slate-600/50 text-slate-300">{lead.trade}</span>
+                      <span className="px-2 py-0.5 rounded-full text-xs bg-slate-600/50 text-gray-700">{lead.trade}</span>
                     </div>
-                    <div className="text-slate-400 text-xs mt-0.5 truncate">{lead.description}</div>
-                    <div className="flex flex-wrap gap-3 mt-1.5 text-xs text-slate-400">
+                    <div className="text-gray-500 text-xs mt-0.5 truncate">{lead.description}</div>
+                    <div className="flex flex-wrap gap-3 mt-1.5 text-xs text-gray-500">
                       <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{lead.address}</span>
                       <span className="flex items-center gap-1"><DollarSign className="w-3 h-3" />${lead.budget.toLocaleString()} budget</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{new Date(lead.receivedAt).toLocaleDateString()}</span>
-                      <span className={`capitalize font-medium ${lead.urgency === "high" ? "text-red-400" : lead.urgency === "medium" ? "text-yellow-400" : "text-slate-400"}`}>
+                      <span className={`capitalize font-medium ${lead.urgency === "high" ? "text-red-600" : lead.urgency === "medium" ? "text-yellow-400" : "text-gray-500"}`}>
                         {lead.urgency} urgency
                       </span>
                     </div>
@@ -543,24 +543,24 @@ export default function LeadScoring() {
                   <div className="flex items-center gap-2 shrink-0">
                     <button
                       onClick={(e) => { e.stopPropagation(); setOverrideTarget(lead); setOverrideValue(String(effectiveScore)); }}
-                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 text-xs border border-purple-500/20 transition-colors"
+                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-gray-600 text-xs border border-purple-500/20 transition-colors"
                     >
                       <Sliders className="w-3 h-3" /> Override
                     </button>
                     {lead.overrideScore !== null && (
                       <button
                         onClick={(e) => { e.stopPropagation(); clearOverride(lead.id); }}
-                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs border border-red-500/20 transition-colors"
+                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-600 text-xs border border-red-500/20 transition-colors"
                       >
                         <XCircle className="w-3 h-3" /> Clear
                       </button>
                     )}
-                    {expanded ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                    {expanded ? <ChevronUp className="w-4 h-4 text-gray-500" /> : <ChevronDown className="w-4 h-4 text-gray-500" />}
                   </div>
                 </div>
 
                 {expanded && (
-                  <div className="border-t border-slate-700/50 p-4 space-y-4">
+                  <div className="border-t border-gray-200/50 p-4 space-y-4">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                       {[
                         { label: "Verification", score: lead.components.verification, max: 30, desc: `Email ${lead.verifiedEmail ? "✓" : "✗"} · Phone ${lead.verifiedPhone ? "✓" : "✗"} · Address ${lead.verifiedAddress ? "✓" : "✗"}` },
@@ -568,25 +568,25 @@ export default function LeadScoring() {
                         { label: "Urgency", score: lead.components.urgency, max: 20, desc: `${lead.urgency} priority` },
                         { label: "History", score: lead.components.history, max: 20, desc: `${lead.pastJobs} past jobs · ${lead.avgRating > 0 ? lead.avgRating + "★ avg" : "no ratings"}` },
                       ].map((c) => (
-                        <div key={c.label} className="bg-[#0A1628] rounded-lg p-3 border border-slate-700">
+                        <div key={c.label} className="bg-[#F8FAFC] rounded-lg p-3 border border-gray-200">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs text-slate-400">{c.label}</span>
+                            <span className="text-xs text-gray-500">{c.label}</span>
                             <span className={`text-sm font-bold ${scoreColor(Math.round((c.score / c.max) * 100))}`}>{c.score}/{c.max}</span>
                           </div>
-                          <div className="h-1.5 rounded-full bg-slate-700 mb-2">
+                          <div className="h-1.5 rounded-full bg-gray-100 mb-2">
                             <div
                               className={`h-full rounded-full ${c.score / c.max >= 0.7 ? "bg-green-500" : c.score / c.max >= 0.4 ? "bg-yellow-500" : "bg-red-500"}`}
                               style={{ width: `${(c.score / c.max) * 100}%` }}
                             />
                           </div>
-                          <div className="text-xs text-slate-500">{c.desc}</div>
+                          <div className="text-xs text-gray-500">{c.desc}</div>
                         </div>
                       ))}
                     </div>
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="w-4 h-4 text-teal-400" />
-                        <span className="text-slate-300">Predicted completion rate: </span>
+                        <TrendingUp className="w-4 h-4 text-teal-700" />
+                        <span className="text-gray-700">Predicted completion rate: </span>
                         <span className={`font-bold ${scoreColor(lead.predictedCompletion)}`}>{lead.predictedCompletion}%</span>
                       </div>
                     </div>
@@ -597,34 +597,34 @@ export default function LeadScoring() {
           })}
         </div>
 
-        <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+        <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-2 mb-4">
-            <TrendingUp className="w-4 h-4 text-teal-400" />
-            <span className="text-sm font-semibold text-white">Historical Scoring Accuracy</span>
-            <span className="text-xs text-slate-400 ml-auto">Last 90 days · 170 scored leads</span>
+            <TrendingUp className="w-4 h-4 text-teal-700" />
+            <span className="text-sm font-semibold text-gray-900">Historical Scoring Accuracy</span>
+            <span className="text-xs text-gray-500 ml-auto">Last 90 days · 170 scored leads</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left py-2 text-xs text-slate-400 font-semibold uppercase tracking-wide">Score Range</th>
-                  <th className="text-center py-2 text-xs text-slate-400 font-semibold uppercase tracking-wide">Leads</th>
-                  <th className="text-center py-2 text-xs text-slate-400 font-semibold uppercase tracking-wide">Predicted Completion</th>
-                  <th className="text-center py-2 text-xs text-slate-400 font-semibold uppercase tracking-wide">Actual Completion</th>
-                  <th className="text-center py-2 text-xs text-slate-400 font-semibold uppercase tracking-wide">Accuracy</th>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-2 text-xs text-gray-500 font-semibold uppercase tracking-wide">Score Range</th>
+                  <th className="text-center py-2 text-xs text-gray-500 font-semibold uppercase tracking-wide">Leads</th>
+                  <th className="text-center py-2 text-xs text-gray-500 font-semibold uppercase tracking-wide">Predicted Completion</th>
+                  <th className="text-center py-2 text-xs text-gray-500 font-semibold uppercase tracking-wide">Actual Completion</th>
+                  <th className="text-center py-2 text-xs text-gray-500 font-semibold uppercase tracking-wide">Accuracy</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-700/50">
+              <tbody className="divide-y divide-gray-200/50">
                 {HISTORICAL_ACCURACY.map((row) => {
                   const accuracy = Math.round((1 - Math.abs(row.predicted - row.actual) / row.predicted) * 100);
                   return (
-                    <tr key={row.range} className="hover:bg-slate-700/20">
-                      <td className="py-2.5 font-semibold text-white">{row.range}</td>
-                      <td className="py-2.5 text-center text-slate-300">{row.count}</td>
-                      <td className="py-2.5 text-center text-slate-300">{row.predicted}%</td>
-                      <td className="py-2.5 text-center text-slate-300">{row.actual}%</td>
+                    <tr key={row.range} className="hover:bg-gray-100/20">
+                      <td className="py-2.5 font-semibold text-gray-900">{row.range}</td>
+                      <td className="py-2.5 text-center text-gray-700">{row.count}</td>
+                      <td className="py-2.5 text-center text-gray-700">{row.predicted}%</td>
+                      <td className="py-2.5 text-center text-gray-700">{row.actual}%</td>
                       <td className="py-2.5 text-center">
-                        <span className={`font-bold ${accuracy >= 90 ? "text-green-400" : accuracy >= 80 ? "text-yellow-400" : "text-red-400"}`}>
+                        <span className={`font-bold ${accuracy >= 90 ? "text-green-700" : accuracy >= 80 ? "text-yellow-400" : "text-red-600"}`}>
                           {accuracy}%
                         </span>
                       </td>
@@ -637,39 +637,39 @@ export default function LeadScoring() {
         </div>
 
         <Dialog open={!!overrideTarget} onOpenChange={() => { setOverrideTarget(null); setOverrideValue(""); }}>
-          <DialogContent className="max-w-sm bg-[#0A1628] border border-slate-700 text-white">
+          <DialogContent className="max-w-sm bg-[#F8FAFC] border border-gray-200 text-gray-900">
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2">
-                <Sliders className="w-5 h-5 text-purple-400" />
+                <Sliders className="w-5 h-5 text-gray-600" />
                 Override Score
               </DialogTitle>
             </DialogHeader>
             <div className="space-y-3 py-2">
-              <div className="text-sm text-slate-300">
-                Setting manual score for <span className="text-white font-semibold">{overrideTarget?.homeowner}</span>
+              <div className="text-sm text-gray-700">
+                Setting manual score for <span className="text-gray-900 font-semibold">{overrideTarget?.homeowner}</span>
               </div>
-              <div className="text-xs text-slate-400">
+              <div className="text-xs text-gray-500">
                 AI score: <span className={`font-bold ${scoreColor(overrideTarget?.score ?? 0)}`}>{overrideTarget?.score}</span>
                 {overrideTarget?.overrideScore !== null && (
-                  <> · Current override: <span className="text-purple-400 font-bold">{overrideTarget?.overrideScore}</span></>
+                  <> · Current override: <span className="text-gray-600 font-bold">{overrideTarget?.overrideScore}</span></>
                 )}
               </div>
               <input
                 type="number"
                 min="0"
                 max="100"
-                className="w-full bg-[#0F1E35] border border-slate-700 rounded-lg px-3 py-2 text-white text-lg text-center font-bold focus:outline-none focus:ring-1 focus:ring-purple-500"
+                className="w-full bg-[#0F1E35] border border-gray-200 rounded-lg px-3 py-2 text-gray-900 text-lg text-center font-bold focus:outline-none focus:ring-1 focus:ring-purple-500"
                 placeholder="0–100"
                 value={overrideValue}
                 onChange={(e) => setOverrideValue(e.target.value)}
               />
-              <div className="text-xs text-slate-500">
+              <div className="text-xs text-gray-500">
                 ≥75 = Auto-Accept · 50–74 = Review · &lt;50 = Auto-Reject
               </div>
             </div>
             <DialogFooter>
-              <Button variant="outline" className="border-slate-600 text-slate-400" onClick={() => { setOverrideTarget(null); setOverrideValue(""); }}>Cancel</Button>
-              <Button className="bg-purple-500 hover:bg-purple-600 text-white" onClick={applyOverride}>Apply Override</Button>
+              <Button variant="outline" className="border-gray-300 text-gray-500" onClick={() => { setOverrideTarget(null); setOverrideValue(""); }}>Cancel</Button>
+              <Button className="bg-purple-500 hover:bg-purple-600 text-gray-900" onClick={applyOverride}>Apply Override</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

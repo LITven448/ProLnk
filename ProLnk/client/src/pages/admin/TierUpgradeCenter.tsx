@@ -37,10 +37,10 @@ const TIER_THRESHOLDS: Record<Tier, number> = {
 };
 
 const TIER_COLORS: Record<Tier, string> = {
-  New: "bg-slate-500/20 text-slate-400",
+  New: "bg-slate-500/20 text-gray-500",
   Rising: "bg-blue-500/20 text-blue-400",
-  Pro: "bg-teal-500/20 text-teal-400",
-  Elite: "bg-purple-500/20 text-purple-400",
+  Pro: "bg-teal-500/20 text-teal-700",
+  Elite: "bg-purple-500/20 text-gray-600",
   Legend: "bg-yellow-500/20 text-yellow-400",
 };
 
@@ -153,18 +153,18 @@ export default function TierUpgradeCenter() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6 bg-[#0A1628] min-h-screen">
+      <div className="p-6 space-y-6 bg-[#F8FAFC] min-h-screen">
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Trophy className="h-6 w-6 text-teal-400" />
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <Trophy className="h-6 w-6 text-teal-700" />
               Tier Upgrade Center
             </h1>
-            <p className="text-slate-400 mt-1">Pros who have hit job count thresholds for their next tier</p>
+            <p className="text-gray-500 mt-1">Pros who have hit job count thresholds for their next tier</p>
           </div>
           <Button
             onClick={sendAllInvites}
-            className="bg-teal-600 hover:bg-teal-500 text-white"
+            className="bg-teal-600 hover:bg-teal-500 text-gray-900"
           >
             <Send className="h-4 w-4 mr-2" />
             Send All Upgrade Invites ({eligible.filter((p) => !p.inviteSent).length})
@@ -176,13 +176,13 @@ export default function TierUpgradeCenter() {
           {TIER_ORDER.map((tier) => {
             const Icon = TIER_ICON_COMPS[tier];
             return (
-              <Card key={tier} className="bg-slate-800/60 border-slate-700">
+              <Card key={tier} className="bg-white border-gray-200">
                 <CardContent className="pt-4 pb-3">
                   <div className="flex items-center gap-1.5 mb-2">
-                    <Icon className="h-3.5 w-3.5 text-slate-400" />
-                    <span className="text-xs text-slate-400">{tier}</span>
+                    <Icon className="h-3.5 w-3.5 text-gray-500" />
+                    <span className="text-xs text-gray-500">{tier}</span>
                   </div>
-                  <div className="text-2xl font-bold text-white">{tierCounts[tier]}</div>
+                  <div className="text-2xl font-bold text-gray-900">{tierCounts[tier]}</div>
                   <Badge className={`mt-1 text-[10px] border-0 ${TIER_COLORS[tier]}`}>{tier}</Badge>
                 </CardContent>
               </Card>
@@ -193,9 +193,9 @@ export default function TierUpgradeCenter() {
         {/* Charts Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Donut Chart - Tier Distribution */}
-          <Card className="bg-slate-800/60 border-slate-700">
+          <Card className="bg-white border-gray-200">
             <CardHeader className="pb-2">
-              <CardTitle className="text-white text-sm font-semibold">Tier Distribution</CardTitle>
+              <CardTitle className="text-gray-900 text-sm font-semibold">Tier Distribution</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={220}>
@@ -228,10 +228,10 @@ export default function TierUpgradeCenter() {
           </Card>
 
           {/* Bar Chart - Monthly Upgrades */}
-          <Card className="bg-slate-800/60 border-slate-700">
+          <Card className="bg-white border-gray-200">
             <CardHeader className="pb-2">
-              <CardTitle className="text-white text-sm font-semibold flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-teal-400" /> Monthly Upgrades
+              <CardTitle className="text-gray-900 text-sm font-semibold flex items-center gap-2">
+                <TrendingUp className="h-4 w-4 text-teal-700" /> Monthly Upgrades
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -253,8 +253,8 @@ export default function TierUpgradeCenter() {
         {/* Upgrade Pipeline - Near Threshold */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <TrendingUp className="h-4 w-4 text-amber-400" />
-            <h2 className="text-white font-semibold">Upgrade Pipeline — 1–3 Jobs from Next Tier</h2>
+            <TrendingUp className="h-4 w-4 text-amber-700" />
+            <h2 className="text-gray-900 font-semibold">Upgrade Pipeline — 1–3 Jobs from Next Tier</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {NEAR_THRESHOLD.filter(p => p.jobsLeft <= 3).slice(0, 5).map(p => {
@@ -262,24 +262,24 @@ export default function TierUpgradeCenter() {
               const pct = Math.round((p.jobsCompleted / p.jobsNeeded) * 100);
               const isNudged = nudgedIds.has(p.id);
               return (
-                <Card key={p.id} className="bg-slate-800/60 border-amber-700/40 border">
+                <Card key={p.id} className="bg-white border-amber-700/40 border">
                   <CardContent className="pt-4 pb-3">
                     <div className="flex items-start justify-between mb-2">
                       <div>
-                        <p className="font-semibold text-white text-sm">{p.name}</p>
-                        <p className="text-xs text-slate-400">{p.trade}</p>
+                        <p className="font-semibold text-gray-900 text-sm">{p.name}</p>
+                        <p className="text-xs text-gray-500">{p.trade}</p>
                       </div>
-                      <Badge className="bg-amber-500/20 text-amber-400 border-0 text-[10px]">{p.jobsLeft} left</Badge>
+                      <Badge className="bg-amber-500/20 text-amber-700 border-0 text-[10px]">{p.jobsLeft} left</Badge>
                     </div>
                     <div className="flex items-center gap-1.5 mb-2">
                       <Badge className={`text-[10px] border-0 ${TIER_COLORS[p.currentTier]}`}>{p.currentTier}</Badge>
-                      <ArrowUpCircle className="h-3 w-3 text-teal-400" />
+                      <ArrowUpCircle className="h-3 w-3 text-teal-700" />
                       {next && <Badge className={`text-[10px] border-0 ${TIER_COLORS[next]}`}>{next}</Badge>}
                     </div>
-                    <Progress value={pct} className="h-1 mb-3 bg-slate-700 [&>div]:bg-amber-400" />
+                    <Progress value={pct} className="h-1 mb-3 bg-gray-100 [&>div]:bg-amber-400" />
                     <Button
                       size="sm"
-                      className="w-full h-7 text-xs bg-amber-600 hover:bg-amber-500 text-white"
+                      className="w-full h-7 text-xs bg-amber-600 hover:bg-amber-500 text-gray-900"
                       disabled={isNudged}
                       onClick={() => nudge(p.id, p.name)}
                     >
@@ -295,38 +295,38 @@ export default function TierUpgradeCenter() {
         {/* Partners Near Threshold Table */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <Users className="h-4 w-4 text-slate-400" />
-            <h2 className="text-white font-semibold">All Partners Near Threshold</h2>
+            <Users className="h-4 w-4 text-gray-500" />
+            <h2 className="text-gray-900 font-semibold">All Partners Near Threshold</h2>
           </div>
-          <Card className="bg-slate-800/60 border-slate-700 overflow-hidden">
+          <Card className="bg-white border-gray-200 overflow-hidden">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left px-4 py-3 text-slate-400 font-medium">Partner</th>
-                  <th className="text-left px-4 py-3 text-slate-400 font-medium">Trade</th>
-                  <th className="text-left px-4 py-3 text-slate-400 font-medium">Current Tier</th>
-                  <th className="text-left px-4 py-3 text-slate-400 font-medium">Progress</th>
-                  <th className="text-center px-4 py-3 text-slate-400 font-medium">Jobs Left</th>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left px-4 py-3 text-gray-500 font-medium">Partner</th>
+                  <th className="text-left px-4 py-3 text-gray-500 font-medium">Trade</th>
+                  <th className="text-left px-4 py-3 text-gray-500 font-medium">Current Tier</th>
+                  <th className="text-left px-4 py-3 text-gray-500 font-medium">Progress</th>
+                  <th className="text-center px-4 py-3 text-gray-500 font-medium">Jobs Left</th>
                 </tr>
               </thead>
               <tbody>
                 {NEAR_THRESHOLD.map(p => {
                   const pct = Math.round((p.jobsCompleted / p.jobsNeeded) * 100);
                   return (
-                    <tr key={p.id} className="border-b border-slate-700/50 last:border-0">
-                      <td className="px-4 py-3 text-white font-medium">{p.name}</td>
-                      <td className="px-4 py-3 text-slate-400">{p.trade}</td>
+                    <tr key={p.id} className="border-b border-gray-200/50 last:border-0">
+                      <td className="px-4 py-3 text-gray-900 font-medium">{p.name}</td>
+                      <td className="px-4 py-3 text-gray-500">{p.trade}</td>
                       <td className="px-4 py-3">
                         <Badge className={`text-[10px] border-0 ${TIER_COLORS[p.currentTier]}`}>{p.currentTier}</Badge>
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
-                          <Progress value={pct} className="h-1.5 w-24 bg-slate-700 [&>div]:bg-teal-400" />
-                          <span className="text-xs text-slate-400">{pct}%</span>
+                          <Progress value={pct} className="h-1.5 w-24 bg-gray-100 [&>div]:bg-teal-400" />
+                          <span className="text-xs text-gray-500">{pct}%</span>
                         </div>
                       </td>
                       <td className="px-4 py-3 text-center">
-                        <span className={`text-xs font-bold ${p.jobsLeft <= 1 ? "text-teal-400" : p.jobsLeft <= 2 ? "text-amber-400" : "text-slate-300"}`}>
+                        <span className={`text-xs font-bold ${p.jobsLeft <= 1 ? "text-teal-700" : p.jobsLeft <= 2 ? "text-amber-700" : "text-gray-700"}`}>
                           {p.jobsLeft}
                         </span>
                       </td>
@@ -342,20 +342,20 @@ export default function TierUpgradeCenter() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <Trophy className="h-4 w-4 text-yellow-400" />
-            <h2 className="text-white font-semibold">Recent Tier Upgrades 🎉</h2>
+            <h2 className="text-gray-900 font-semibold">Recent Tier Upgrades 🎉</h2>
           </div>
           <div className="space-y-2">
             {CELEBRATION_LOG.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700">
+              <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-200">
                 <span className="text-lg">🎉</span>
                 <div className="flex-1">
-                  <span className="text-white font-semibold text-sm">{item.name}</span>
-                  <span className="text-slate-400 text-sm"> upgraded </span>
+                  <span className="text-gray-900 font-semibold text-sm">{item.name}</span>
+                  <span className="text-gray-500 text-sm"> upgraded </span>
                   <Badge className={`text-[10px] border-0 ${TIER_COLORS[item.from]}`}>{item.from}</Badge>
-                  <span className="text-slate-400 text-sm mx-1">→</span>
+                  <span className="text-gray-500 text-sm mx-1">→</span>
                   <Badge className={`text-[10px] border-0 ${TIER_COLORS[item.to]}`}>{item.to}</Badge>
                 </div>
-                <span className="text-xs text-slate-500">{item.date}</span>
+                <span className="text-xs text-gray-500">{item.date}</span>
               </div>
             ))}
           </div>
@@ -364,39 +364,39 @@ export default function TierUpgradeCenter() {
         {eligible.length > 0 && (
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <CheckCircle className="h-4 w-4 text-teal-400" />
-              <h2 className="text-white font-semibold">Ready to Upgrade ({eligible.length})</h2>
+              <CheckCircle className="h-4 w-4 text-teal-700" />
+              <h2 className="text-gray-900 font-semibold">Ready to Upgrade ({eligible.length})</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {eligible.map((pro) => {
                 const next = nextTier(pro.currentTier);
                 const NextIcon = next ? TIER_ICON_COMPS[next] : Crown;
                 return (
-                  <Card key={pro.id} className="bg-slate-800/60 border-teal-700/40 border">
+                  <Card key={pro.id} className="bg-white border-teal-700/40 border">
                     <CardContent className="pt-5 pb-4">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <p className="font-semibold text-white">{pro.name}</p>
-                          <p className="text-xs text-slate-400">{pro.trade} · ⭐ {pro.rating}</p>
+                          <p className="font-semibold text-gray-900">{pro.name}</p>
+                          <p className="text-xs text-gray-500">{pro.trade} · ⭐ {pro.rating}</p>
                         </div>
                         {pro.inviteSent
                           ? <Badge className="bg-emerald-500/20 text-emerald-400 border-0 text-xs">Sent</Badge>
-                          : <Badge className="bg-teal-500/20 text-teal-400 border-0 text-xs">Ready</Badge>
+                          : <Badge className="bg-teal-500/20 text-teal-700 border-0 text-xs">Ready</Badge>
                         }
                       </div>
                       <div className="flex items-center gap-2 mb-3">
                         <Badge className={`text-xs border-0 ${TIER_COLORS[pro.currentTier]}`}>{pro.currentTier}</Badge>
-                        <ArrowUpCircle className="h-3.5 w-3.5 text-teal-400" />
+                        <ArrowUpCircle className="h-3.5 w-3.5 text-teal-700" />
                         {next && <Badge className={`text-xs border-0 ${TIER_COLORS[next]}`}>{next}</Badge>}
                       </div>
-                      <div className="mb-1 flex justify-between text-xs text-slate-400">
+                      <div className="mb-1 flex justify-between text-xs text-gray-500">
                         <span>{pro.jobsCompleted} jobs completed</span>
                         <span>Target: {pro.jobsNeeded}</span>
                       </div>
-                      <Progress value={100} className="h-1.5 mb-4 bg-slate-700 [&>div]:bg-teal-400" />
+                      <Progress value={100} className="h-1.5 mb-4 bg-gray-100 [&>div]:bg-teal-400" />
                       <Button
                         size="sm"
-                        className="w-full bg-teal-600 hover:bg-teal-500 text-white h-8"
+                        className="w-full bg-teal-600 hover:bg-teal-500 text-gray-900 h-8"
                         disabled={pro.inviteSent || sending === pro.id}
                         onClick={() => sendInvite(pro.id)}
                       >
@@ -419,33 +419,33 @@ export default function TierUpgradeCenter() {
         {inProgress.length > 0 && (
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Users className="h-4 w-4 text-slate-400" />
-              <h2 className="text-white font-semibold">In Progress ({inProgress.length})</h2>
+              <Users className="h-4 w-4 text-gray-500" />
+              <h2 className="text-gray-900 font-semibold">In Progress ({inProgress.length})</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {inProgress.map((pro) => {
                 const next = nextTier(pro.currentTier);
                 const pct = Math.min(100, Math.round((pro.jobsCompleted / pro.jobsNeeded) * 100));
                 return (
-                  <Card key={pro.id} className="bg-slate-800/40 border-slate-700">
+                  <Card key={pro.id} className="bg-white border-gray-200">
                     <CardContent className="pt-5 pb-4">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <p className="font-semibold text-white">{pro.name}</p>
-                          <p className="text-xs text-slate-400">{pro.trade} · ⭐ {pro.rating}</p>
+                          <p className="font-semibold text-gray-900">{pro.name}</p>
+                          <p className="text-xs text-gray-500">{pro.trade} · ⭐ {pro.rating}</p>
                         </div>
-                        <Badge className="bg-slate-700 text-slate-300 border-0 text-xs">{pct}%</Badge>
+                        <Badge className="bg-gray-100 text-gray-700 border-0 text-xs">{pct}%</Badge>
                       </div>
                       <div className="flex items-center gap-2 mb-3">
                         <Badge className={`text-xs border-0 ${TIER_COLORS[pro.currentTier]}`}>{pro.currentTier}</Badge>
-                        <ArrowUpCircle className="h-3.5 w-3.5 text-slate-500" />
+                        <ArrowUpCircle className="h-3.5 w-3.5 text-gray-500" />
                         {next && <Badge className={`text-xs border-0 ${TIER_COLORS[next]}`}>{next}</Badge>}
                       </div>
-                      <div className="mb-1 flex justify-between text-xs text-slate-400">
+                      <div className="mb-1 flex justify-between text-xs text-gray-500">
                         <span>{pro.jobsCompleted} / {pro.jobsNeeded} jobs</span>
                         <span>{pro.jobsNeeded - pro.jobsCompleted} remaining</span>
                       </div>
-                      <Progress value={pct} className="h-1.5 bg-slate-700 [&>div]:bg-slate-500" />
+                      <Progress value={pct} className="h-1.5 bg-gray-100 [&>div]:bg-slate-500" />
                     </CardContent>
                   </Card>
                 );

@@ -126,8 +126,8 @@ export default function PatentDisclosure() {
 <title>ProLnk Patent & IP Disclosure — Confidential</title>
 <style>
   body { font-family: 'Georgia', serif; max-width: 800px; margin: 0 auto; padding: 40px; color: #111; }
-  h1 { font-size: 24px; border-bottom: 2px solid #0A1628; padding-bottom: 8px; }
-  h2 { font-size: 18px; color: #0A1628; margin-top: 32px; }
+  h1 { font-size: 24px; border-bottom: 2px solid #F8FAFC; padding-bottom: 8px; }
+  h2 { font-size: 18px; color: #F8FAFC; margin-top: 32px; }
   h3 { font-size: 14px; color: #444; margin-top: 16px; }
   .meta { font-size: 12px; color: #666; margin-bottom: 8px; }
   .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
@@ -188,7 +188,7 @@ ${PATENTS.map(p => `
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white mb-1">Patent & IP Disclosure</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-1">Patent & IP Disclosure</h1>
           <p className="text-gray-400 text-sm">
             Confidential — For internal use, investor due diligence, and M&A purposes only.
           </p>
@@ -196,7 +196,7 @@ ${PATENTS.map(p => `
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 border-white/20 text-gray-300 hover:text-white"
+          className="gap-2 border-white/20 text-gray-300 hover:text-gray-900"
           onClick={handleExportPDF}
         >
           <Download className="w-4 h-4" />
@@ -212,7 +212,7 @@ ${PATENTS.map(p => `
               <Shield className="w-5 h-5 text-indigo-400" />
             </div>
             <div className="flex-1">
-              <h2 className="text-white font-semibold mb-1">4 Patent Applications — V12 Updated</h2>
+              <h2 className="text-gray-900 font-semibold mb-1">4 Patent Applications — V12 Updated</h2>
               <p className="text-gray-400 text-sm leading-relaxed">
                 ProLnk has identified four novel, defensible workflows eligible for utility patent protection.
                 PAT-001 through PAT-003 were identified in V11. PAT-004 (Zero-Self-Reporting Payment Collection)
@@ -232,7 +232,7 @@ ${PATENTS.map(p => `
 
       {/* Patent Applications */}
       <div className="space-y-6">
-        <h2 className="text-lg font-semibold text-white">Patent Applications</h2>
+        <h2 className="text-lg font-semibold text-gray-900">Patent Applications</h2>
         {PATENTS.map((patent) => {
           const Icon = patent.icon;
           const isExpanded = expandedId === patent.id;
@@ -272,7 +272,7 @@ ${PATENTS.map(p => `
                           <Badge className="bg-emerald-600/30 text-emerald-300 text-xs border-0">NEW</Badge>
                         )}
                       </div>
-                      <CardTitle className="text-white text-base leading-snug">{patent.title}</CardTitle>
+                      <CardTitle className="text-gray-900 text-base leading-snug">{patent.title}</CardTitle>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
@@ -280,7 +280,7 @@ ${PATENTS.map(p => `
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-gray-500 hover:text-white h-7 px-2"
+                      className="text-gray-500 hover:text-gray-900 h-7 px-2"
                       onClick={() => setExpandedId(isExpanded ? null : patent.id)}
                     >
                       {isExpanded ? "Collapse" : "Expand"}
@@ -330,7 +330,7 @@ ${PATENTS.map(p => `
           <div className="flex items-start gap-3">
             <CreditCard className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
             <div>
-              <h3 className="text-white font-semibold mb-2">V12 Architecture — Patent Attorney Briefing Notes</h3>
+              <h3 className="text-gray-900 font-semibold mb-2">V12 Architecture — Patent Attorney Briefing Notes</h3>
               <div className="space-y-2 text-sm text-gray-400">
                 <p>
                   <strong className="text-gray-300">Core Innovation (Claim 20):</strong> The homeowner check-in is an independent third-party confirmation that cannot be colluded with the partner. This makes it a structurally superior trigger for commission collection compared to any partner-controlled event (invoice submission, job close button). The patent should emphasize the independence of the trigger.
@@ -354,7 +354,7 @@ ${PATENTS.map(p => `
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-yellow-400" />
-          <h2 className="text-lg font-semibold text-white">Trade Secrets (Not for Patent Filing)</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Trade Secrets (Not for Patent Filing)</h2>
         </div>
         <p className="text-sm text-gray-400">
           The following proprietary elements are better protected as trade secrets than patents, as disclosure through
@@ -367,7 +367,7 @@ ${PATENTS.map(p => `
                 <div className="flex items-start gap-3">
                   <Lock className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-white font-medium text-sm mb-1">{secret.title}</p>
+                    <p className="text-gray-900 font-medium text-sm mb-1">{secret.title}</p>
                     <p className="text-gray-400 text-sm leading-relaxed">{secret.description}</p>
                   </div>
                 </div>
@@ -380,7 +380,7 @@ ${PATENTS.map(p => `
       {/* Recommended Actions */}
       <Card className="bg-gray-900 border-white/10">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-gray-900 flex items-center gap-2">
             <FileText className="w-4 h-4 text-indigo-400" />
             Recommended Next Steps (V12 Updated)
           </CardTitle>

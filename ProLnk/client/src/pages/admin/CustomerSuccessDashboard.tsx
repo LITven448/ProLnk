@@ -10,7 +10,7 @@ import {
 } from "recharts";
 
 const D = {
-  bg: "#0A1628",
+  bg: "#F8FAFC",
   surface: "#0F1E36",
   card: "#152540",
   border: "#1E3A5F",

@@ -72,8 +72,8 @@ function RingScore({ score }: { score: number }) {
           strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" />
       </svg>
       <div className="text-center z-10">
-        <p className="text-4xl font-bold text-white">{score}</p>
-        <p className="text-xs text-slate-400">/ 100</p>
+        <p className="text-4xl font-bold text-gray-900">{score}</p>
+        <p className="text-xs text-gray-500">/ 100</p>
       </div>
     </div>
   );
@@ -99,13 +99,13 @@ export default function DataQualityMonitor() {
           <div className="max-w-6xl mx-auto flex items-start justify-between flex-wrap gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Database size={22} className="text-[#17C1E8]" />
+                <Database size={22} className="text-[#0D9488]" />
                 <h1 className="text-2xl font-bold text-slate-800">Data Quality Monitor</h1>
               </div>
-              <p className="text-slate-500 text-sm">Clean data drives better outcomes</p>
+              <p className="text-gray-500 text-sm">Clean data drives better outcomes</p>
             </div>
             <Button onClick={runAudit} disabled={running}
-              className="bg-[#17C1E8] hover:bg-[#0EA5D0] text-white gap-2 rounded-xl">
+              className="bg-[#0D9488] hover:bg-[#0EA5D0] text-gray-900 gap-2 rounded-xl">
               {running ? <><RefreshCw size={16} className="animate-spin" /> Running Audit…</> : <><Zap size={16} /> Run Full Audit Now</>}
             </Button>
           </div>
@@ -115,13 +115,13 @@ export default function DataQualityMonitor() {
 
           {/* Quality Score */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="md:col-span-1 bg-[#0A1628] rounded-2xl p-6 flex flex-col items-center">
-              <p className="text-slate-300 text-sm mb-4">Overall Quality Score</p>
+            <div className="md:col-span-1 bg-[#F8FAFC] rounded-2xl p-6 flex flex-col items-center">
+              <p className="text-gray-700 text-sm mb-4">Overall Quality Score</p>
               <RingScore score={overallScore} />
-              <Badge className="mt-4 bg-emerald-500 text-white border-none text-sm px-4">Good</Badge>
+              <Badge className="mt-4 bg-emerald-500 text-gray-900 border-none text-sm px-4">Good</Badge>
             </div>
             <div className="md:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
-              <p className="text-slate-600 font-semibold mb-4">Category Scores</p>
+              <p className="text-gray-400 font-semibold mb-4">Category Scores</p>
               <div className="space-y-4">
                 {CATEGORY_SCORES.map((c) => (
                   <div key={c.label}>
@@ -159,7 +159,7 @@ export default function DataQualityMonitor() {
                       {issue.action}
                     </Button>
                     <button onClick={() => setDismissed(d => [...d, i])}
-                      className="text-slate-400 hover:text-slate-600 text-xs px-2">✕</button>
+                      className="text-gray-500 hover:text-gray-400 text-xs px-2">✕</button>
                   </div>
                 </div>
               ))}
@@ -178,7 +178,7 @@ export default function DataQualityMonitor() {
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-100 text-left text-slate-500 text-xs uppercase tracking-wide">
+                  <tr className="border-b border-slate-100 text-left text-gray-500 text-xs uppercase tracking-wide">
                     <th className="px-5 py-3">Entity</th>
                     <th className="px-5 py-3">Records</th>
                     <th className="px-5 py-3">Fields Tracked</th>
@@ -191,8 +191,8 @@ export default function DataQualityMonitor() {
                   {COMPLETENESS.map((row) => (
                     <tr key={row.entity} className="hover:bg-slate-50 transition-colors">
                       <td className="px-5 py-3 font-medium text-slate-800">{row.entity}</td>
-                      <td className="px-5 py-3 text-slate-500">{row.total.toLocaleString()}</td>
-                      <td className="px-5 py-3 text-slate-500">{row.fields}</td>
+                      <td className="px-5 py-3 text-gray-500">{row.total.toLocaleString()}</td>
+                      <td className="px-5 py-3 text-gray-500">{row.fields}</td>
                       <td className="px-5 py-3">
                         <div className="flex items-center gap-2">
                           <div className="w-20 h-1.5 rounded-full bg-slate-100 overflow-hidden">
@@ -204,9 +204,9 @@ export default function DataQualityMonitor() {
                           </span>
                         </div>
                       </td>
-                      <td className="px-5 py-3 text-slate-500">{row.trend}</td>
+                      <td className="px-5 py-3 text-gray-500">{row.trend}</td>
                       <td className="px-5 py-3">
-                        <button className="text-[#17C1E8] hover:underline text-xs font-medium flex items-center gap-1">
+                        <button className="text-[#0D9488] hover:underline text-xs font-medium flex items-center gap-1">
                           Fix <ChevronRight size={12} />
                         </button>
                       </td>
@@ -220,7 +220,7 @@ export default function DataQualityMonitor() {
           {/* Duplicate Detection */}
           <section>
             <h2 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-              <Search size={18} className="text-slate-500" /> Duplicate Detection
+              <Search size={18} className="text-gray-500" /> Duplicate Detection
             </h2>
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
               <div className="flex items-center gap-3 mb-4 bg-amber-50 border border-amber-200 rounded-xl p-3">
@@ -246,8 +246,8 @@ export default function DataQualityMonitor() {
           </section>
 
           {/* Last Audit */}
-          <section className="bg-white rounded-2xl border border-slate-200 shadow-sm px-5 py-4 flex items-center gap-3 text-sm text-slate-600">
-            <Clock size={16} className="text-slate-400" />
+          <section className="bg-white rounded-2xl border border-slate-200 shadow-sm px-5 py-4 flex items-center gap-3 text-sm text-gray-400">
+            <Clock size={16} className="text-gray-500" />
             <span>
               Full data audit completed <strong>May 14 at 2:00 AM</strong>.{" "}
               Next scheduled: <strong>May 21</strong>.

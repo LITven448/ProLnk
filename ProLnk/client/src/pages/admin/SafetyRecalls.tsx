@@ -302,7 +302,7 @@ export default function SafetyRecalls() {
                           <p className="text-xs leading-relaxed" style={{ color: T.muted }}>{recall.matchMethod}</p>
                           <div className="mt-3 flex items-center gap-2 flex-wrap">
                             <span className="text-[10px] px-2 py-1 rounded" style={{ backgroundColor: "#DBEAFE", color: "#1D4ED8" }}>AI Photo Analysis</span>
-                            <span className="text-[10px] px-2 py-1 rounded" style={{ backgroundColor: "#F3E8FF", color: "#7C3AED" }}>Model Recognition</span>
+                            <span className="text-[10px] px-2 py-1 rounded" style={{ backgroundColor: "#F3E8FF", color: "#0D9488" }}>Model Recognition</span>
                             <span className="text-[10px] px-2 py-1 rounded" style={{ backgroundColor: "#FEF3C7", color: "#D97706" }}>CPSC Database</span>
                           </div>
                         </div>

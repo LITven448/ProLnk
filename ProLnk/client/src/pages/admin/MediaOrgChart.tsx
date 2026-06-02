@@ -365,7 +365,7 @@ export default function MediaOrgChart() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <span
                       style={{
-                        background: pos.type === "Human" ? "#1A73E822" : "#0d948822",
+                        background: pos.type === "Human" ? "#0D948822" : "#0d948822",
                         color: pos.type === "Human" ? T.blue : "#0d9488",
                         fontSize: 11,
                         fontWeight: 700,

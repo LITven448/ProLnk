@@ -107,7 +107,7 @@ const BADGE_LEVELS = [
   { level: "bronze",   label: "Bronze",       checkpoints: "1-2",  color: "#92400E", bg: "#FEF3C7",  desc: "Basic identity confirmed. Proceed with caution." },
   { level: "silver",   label: "Silver",       checkpoints: "3-4",  color: "#6B7280", bg: "#F3F4F6",  desc: "Licensed and insured. Solid foundation." },
   { level: "gold",     label: "Gold",         checkpoints: "5-6",  color: "#D97706", bg: "#FFFBEB",  desc: "Fully vetted professional. Recommended for most projects." },
-  { level: "platinum", label: "Platinum",     checkpoints: "7/7",  color: "#7C3AED", bg: "#F5F3FF",  desc: "All 7 checkpoints passed. Highest trust tier on the platform." },
+  { level: "platinum", label: "Platinum",     checkpoints: "7/7",  color: "#0D9488", bg: "#F5F3FF",  desc: "All 7 checkpoints passed. Highest trust tier on the platform." },
 ];
 
 const PPS_SIGNALS = [
@@ -116,7 +116,7 @@ const PPS_SIGNALS = [
     label: "Platform Tier",
     maxPts: 30,
     icon: Crown,
-    color: "#7C3AED",
+    color: "#0D9488",
     bg: "#F5F3FF",
     description: "Enterprise=30, Company=24, Crew=18, Pro=12, Scout=6",
     why: "Higher-tier partners have made a greater financial and operational commitment to the platform. Skin in the game = higher routing priority.",

@@ -15,7 +15,7 @@ export default function TrustyProOverview() {
       label: "Registered Homeowners",
       value: homeownerStats?.totalHomeowners ?? 0,
       icon: Users,
-      color: "#82D616",
+      color: "#16A34A",
       bg: "linear-gradient(195deg, #66BB6A, #43A047)",
       sub: "Total accounts created",
     },
@@ -23,8 +23,8 @@ export default function TrustyProOverview() {
       label: "Photo Scans Submitted",
       value: "—",
       icon: Camera,
-      color: "#17C1E8",
-      bg: "linear-gradient(195deg, #49a3f1, #1A73E8)",
+      color: "#0D9488",
+      bg: "linear-gradient(195deg, #49a3f1, #0D9488)",
       sub: "AI-analyzed home photos",
     },
     {
@@ -39,7 +39,7 @@ export default function TrustyProOverview() {
       label: "Avg. Home Health Score",
       value: "—",
       icon: TrendingUp,
-      color: "#7928CA",
+      color: "#0D9488",
       bg: "linear-gradient(195deg, #ab47bc, #8e24aa)",
       sub: "Across all scanned homes",
     },
@@ -53,28 +53,28 @@ export default function TrustyProOverview() {
       title: "Photo Upload & AI Analysis",
       description: "Homeowners upload photos of their home. AI scans for maintenance needs, aging systems, and improvement opportunities.",
       status: "Live",
-      statusColor: "#82D616",
+      statusColor: "#16A34A",
       href: "/admin/trustypro-scans",
     },
     {
       title: "Home Health Score",
       description: "A 0-100 score across roof, HVAC, plumbing, exterior, and landscaping — updated after every scan.",
       status: "Live",
-      statusColor: "#82D616",
+      statusColor: "#16A34A",
       href: "/admin/home-health",
     },
     {
       title: "Automated Pro Matching",
       description: "When a homeowner needs work, TrustyPro automatically matches them with the highest-rated available ProLnk partner.",
       status: "Live",
-      statusColor: "#82D616",
+      statusColor: "#16A34A",
       href: "/admin/trustypro-leads",
     },
     {
       title: "Homeowner CRM",
       description: "Full homeowner profile management — contact info, property details, scan history, and matched pro records.",
       status: "Live",
-      statusColor: "#82D616",
+      statusColor: "#16A34A",
       href: "/admin/homeowners",
     },
     {
@@ -88,7 +88,7 @@ export default function TrustyProOverview() {
       title: "TrustyPro Commercial",
       description: "Property managers and HOAs manage multiple units, track service history, and dispatch vetted pros at scale.",
       status: "Coming Soon",
-      statusColor: "#7B809A",
+      statusColor: "#4B5563",
       href: "/admin/commercial",
     },
   ];
@@ -145,7 +145,7 @@ export default function TrustyProOverview() {
           {/* Feature Status */}
           <div className="rounded-2xl p-6 shadow-sm" style={{ backgroundColor: T.surface, border: `1px solid ${T.border}` }}>
             <div className="flex items-center gap-2 mb-5">
-              <BadgeCheck className="w-5 h-5" style={{ color: "#82D616" }} />
+              <BadgeCheck className="w-5 h-5" style={{ color: "#16A34A" }} />
               <h3 className="font-bold text-base" style={{ color: T.text }}>Platform Features</h3>
             </div>
             <div className="space-y-3">
@@ -219,10 +219,10 @@ export default function TrustyProOverview() {
           <h3 className="font-bold text-base mb-4" style={{ color: T.text }}>Quick Actions</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { label: "Homeowner CRM", href: "/admin/homeowners", icon: Users, color: "#82D616" },
-              { label: "TrustyPro Leads", href: "/admin/trustypro-leads", icon: Shield, color: "#17C1E8" },
+              { label: "Homeowner CRM", href: "/admin/homeowners", icon: Users, color: "#16A34A" },
+              { label: "TrustyPro Leads", href: "/admin/trustypro-leads", icon: Shield, color: "#0D9488" },
               { label: "Photo Scans", href: "/admin/trustypro-scans", icon: Camera, color: "#FBB140" },
-              { label: "Home Health Data", href: "/admin/home-health", icon: TrendingUp, color: "#7928CA" },
+              { label: "Home Health Data", href: "/admin/home-health", icon: TrendingUp, color: "#0D9488" },
             ].map((link) => {
               const Icon = link.icon;
               return (

@@ -289,8 +289,8 @@ function TemplateEditor({
         <div className="px-5 py-4 border-t border-gray-100 flex items-center justify-between flex-shrink-0">
           <button onClick={onClose} className="text-sm text-gray-400 hover:text-gray-600">Cancel</button>
           <Button
-            className="text-white gap-2"
-            style={{ backgroundColor: "#0A1628" }}
+            className="text-gray-900 gap-2"
+            style={{ backgroundColor: "#F8FAFC" }}
             onClick={() => { onSave({ ...template, body, subject: subject || undefined, delay }); toast.success("Template saved!"); onClose(); }}
           >
             <Save className="w-4 h-4" /> Save Template
@@ -421,7 +421,7 @@ export default function CommsTimeline() {
         <div className="px-6 pt-6 pb-4 border-b border-gray-100 bg-white">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-xl font-bold text-[#0A1628]">Comms Timeline</h1>
+              <h1 className="text-xl font-bold text-[#F8FAFC]">Comms Timeline</h1>
               <p className="text-sm text-gray-500 mt-0.5">Every message ProLnk sends — templates, triggers, and delivery log</p>
             </div>
           </div>
@@ -429,7 +429,7 @@ export default function CommsTimeline() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3 mb-4">
             {[
-              { label: "Templates", value: templates.length, color: "#0A1628" },
+              { label: "Templates", value: templates.length, color: "#F8FAFC" },
               { label: "SMS Templates", value: templates.filter(t => t.channel === "sms").length, color: "#10B981" },
               { label: "Email Templates", value: templates.filter(t => t.channel === "email").length, color: "#3B82F6" },
             ].map(({ label, value, color }) => (
@@ -449,7 +449,7 @@ export default function CommsTimeline() {
                 className="flex-1 py-2 text-sm font-medium rounded-lg transition-all capitalize"
                 style={{
                   backgroundColor: activeTab === tab ? "#fff" : "transparent",
-                  color: activeTab === tab ? "#0A1628" : "#9CA3AF",
+                  color: activeTab === tab ? "#F8FAFC" : "#9CA3AF",
                   boxShadow: activeTab === tab ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
                 }}
               >
@@ -473,9 +473,9 @@ export default function CommsTimeline() {
                       onClick={() => setFilterChannel(c)}
                       className="text-xs px-2.5 py-1 rounded-full border transition-all"
                       style={{
-                        backgroundColor: filterChannel === c ? "#0A1628" : "transparent",
+                        backgroundColor: filterChannel === c ? "#F8FAFC" : "transparent",
                         color: filterChannel === c ? "#fff" : "#6B7280",
-                        borderColor: filterChannel === c ? "#0A1628" : "#E5E7EB",
+                        borderColor: filterChannel === c ? "#F8FAFC" : "#E5E7EB",
                       }}
                     >
                       {c === "all" ? "All" : c === "in_app" ? "In-App" : c.toUpperCase()}
@@ -490,9 +490,9 @@ export default function CommsTimeline() {
                       onClick={() => setFilterRecipient(r)}
                       className="text-xs px-2.5 py-1 rounded-full border transition-all capitalize"
                       style={{
-                        backgroundColor: filterRecipient === r ? "#0A1628" : "transparent",
+                        backgroundColor: filterRecipient === r ? "#F8FAFC" : "transparent",
                         color: filterRecipient === r ? "#fff" : "#6B7280",
-                        borderColor: filterRecipient === r ? "#0A1628" : "#E5E7EB",
+                        borderColor: filterRecipient === r ? "#F8FAFC" : "#E5E7EB",
                       }}
                     >
                       {r === "all" ? "All" : r.replace("_", " ")}

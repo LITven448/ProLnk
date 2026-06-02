@@ -104,13 +104,13 @@ export default function B2BDataExchange() {
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
-              <Database className="w-6 h-6 text-[#0A1628]" />B2B Data Exchange
+              <Database className="w-6 h-6 text-[#F8FAFC]" />B2B Data Exchange
             </h1>
             <p className="text-sm text-gray-500 mt-1">
               Manage inbound data partnerships and outbound data exports for analytics, integrations, and business intelligence.
             </p>
           </div>
-          <Badge className="bg-[#0A1628] text-white">Enterprise Feature</Badge>
+          <Badge className="bg-[#F8FAFC] text-gray-900">Enterprise Feature</Badge>
         </div>
 
         {/* Stats Row */}
@@ -141,7 +141,7 @@ export default function B2BDataExchange() {
               onClick={() => setActiveTab(tab)}
               className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors capitalize ${
                 activeTab === tab
-                  ? "border-[#0A1628] text-[#0A1628]"
+                  ? "border-[#F8FAFC] text-[#F8FAFC]"
                   : "border-transparent text-gray-500 hover:text-gray-700"
               }`}
             >
@@ -193,7 +193,7 @@ export default function B2BDataExchange() {
                             <RefreshCw className="w-3 h-3 mr-1" />Sync Now
                           </Button>
                         ) : (
-                          <Button size="sm" className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90 text-xs">
+                          <Button size="sm" className="bg-[#F8FAFC] text-gray-900 hover:bg-[#F8FAFC]/90 text-xs">
                             <Zap className="w-3 h-3 mr-1" />Configure
                           </Button>
                         )}
@@ -247,7 +247,7 @@ export default function B2BDataExchange() {
                       )}
                       Export CSV
                     </Button>
-                    <Button size="sm" className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90 text-xs">
+                    <Button size="sm" className="bg-[#F8FAFC] text-gray-900 hover:bg-[#F8FAFC]/90 text-xs">
                       <Upload className="w-3 h-3 mr-1" />Webhook
                     </Button>
                   </div>

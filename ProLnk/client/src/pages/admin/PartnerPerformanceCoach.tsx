@@ -70,8 +70,8 @@ const COACH_TIPS: CoachTip[] = [
 
 const ACTION_COLORS: Record<AtRiskPartner["action"], string> = {
   "Send Check-in":  "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30",
-  "Offer Training": "bg-amber-500/20 text-amber-400 hover:bg-amber-500/30",
-  "Schedule Call":  "bg-purple-500/20 text-purple-400 hover:bg-purple-500/30",
+  "Offer Training": "bg-amber-500/20 text-amber-700 hover:bg-amber-500/30",
+  "Schedule Call":  "bg-purple-500/20 text-gray-600 hover:bg-purple-500/30",
 };
 
 const ACTION_ICONS: Record<AtRiskPartner["action"], typeof MessageSquare> = {
@@ -89,11 +89,11 @@ const TIP_ICON_MAP: Record<CoachTip["icon"], typeof Brain> = {
 };
 
 const TIP_ICON_COLOR: Record<CoachTip["icon"], string> = {
-  alert: "text-red-400",
-  trend: "text-teal-400",
-  star:  "text-amber-400",
+  alert: "text-red-600",
+  trend: "text-teal-700",
+  star:  "text-amber-700",
   clock: "text-blue-400",
-  zap:   "text-purple-400",
+  zap:   "text-gray-600",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -108,15 +108,15 @@ export default function PartnerPerformanceCoach() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] p-6 space-y-8">
+      <div className="min-h-screen bg-[#F8FAFC] p-6 space-y-8">
 
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <Brain className="w-6 h-6 text-teal-400" />
+          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <Brain className="w-6 h-6 text-teal-700" />
             Performance Coach
           </h1>
-          <p className="text-slate-400 mt-1 text-sm">AI-powered insights for every partner</p>
+          <p className="text-gray-500 mt-1 text-sm">AI-powered insights for every partner</p>
         </div>
 
         {/* KPI strip */}
@@ -127,12 +127,12 @@ export default function PartnerPerformanceCoach() {
             { label: "Coaching Actions Sent", value: "38 this week",           color: "#818cf8", icon: MessageSquare },
             { label: "Active Partners",     value: "157",                      color: "#2dd4bf", icon: Users         },
           ].map((k) => (
-            <div key={k.label} className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+            <div key={k.label} className="bg-white rounded-xl p-5 border border-gray-200">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{k.label}</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-gray-500">{k.label}</span>
                 <k.icon className="w-4 h-4" style={{ color: k.color }} />
               </div>
-              <div className="text-2xl font-bold text-white">{k.value}</div>
+              <div className="text-2xl font-bold text-gray-900">{k.value}</div>
             </div>
           ))}
         </div>
@@ -140,35 +140,35 @@ export default function PartnerPerformanceCoach() {
         <div className="grid lg:grid-cols-2 gap-6">
 
           {/* At-Risk Partners */}
-          <div className="bg-slate-800 rounded-xl border border-red-500/30 overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-700 flex items-center justify-between bg-red-500/5">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-red-400" />
+          <div className="bg-white rounded-xl border border-red-500/30 overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between bg-red-500/5">
+              <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 text-red-600" />
                 At-Risk Partners
               </h2>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 font-semibold">
+              <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-600 font-semibold">
                 {AT_RISK.length} flagged
               </span>
             </div>
-            <div className="divide-y divide-slate-700/50">
+            <div className="divide-y divide-gray-200/50">
               {AT_RISK.map((p) => {
                 const ActionIcon = ACTION_ICONS[p.action];
                 return (
-                  <div key={p.id} className="flex items-center gap-4 px-6 py-4 hover:bg-slate-700/30 transition-colors">
+                  <div key={p.id} className="flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
                     {/* Risk score bubble */}
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm bg-red-500/15 text-red-400">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm bg-red-500/15 text-red-600">
                       {p.riskScore}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-sm font-medium text-white">{p.name}</div>
-                      <div className="text-xs text-slate-400 mt-0.5">{p.trade} · {p.issue}</div>
+                      <div className="text-sm font-medium text-gray-900">{p.name}</div>
+                      <div className="text-xs text-gray-500 mt-0.5">{p.trade} · {p.issue}</div>
                     </div>
                     <button
                       onClick={() => markActioned(p.id)}
                       disabled={actioned.has(p.id)}
                       className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors whitespace-nowrap ${
                         actioned.has(p.id)
-                          ? "bg-slate-700 text-slate-500 cursor-not-allowed"
+                          ? "bg-gray-100 text-gray-500 cursor-not-allowed"
                           : ACTION_COLORS[p.action]
                       }`}
                     >
@@ -182,9 +182,9 @@ export default function PartnerPerformanceCoach() {
           </div>
 
           {/* Performance Distribution */}
-          <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
-            <h2 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-teal-400" />
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h2 className="text-gray-900 font-semibold text-base mb-4 flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-teal-700" />
               Performance Distribution
             </h2>
             <ResponsiveContainer width="100%" height={220}>
@@ -209,29 +209,29 @@ export default function PartnerPerformanceCoach() {
         </div>
 
         {/* Top Performers Leaderboard */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-amber-400" />
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <Trophy className="w-4 h-4 text-amber-700" />
               Top Performers
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-slate-700">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-gray-100">
             {TOP_PERFORMERS.map((p) => (
-              <div key={p.rank} className="bg-slate-800 px-5 py-4 flex flex-col gap-2">
+              <div key={p.rank} className="bg-white px-5 py-4 flex flex-col gap-2">
                 <div className="flex items-center gap-2">
                   <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                    p.rank === 1 ? "bg-amber-500/20 text-amber-400" :
-                    p.rank === 2 ? "bg-slate-400/20 text-slate-300" :
+                    p.rank === 1 ? "bg-amber-500/20 text-amber-700" :
+                    p.rank === 2 ? "bg-slate-400/20 text-gray-700" :
                     p.rank === 3 ? "bg-orange-400/20 text-orange-400" :
-                    "bg-slate-700 text-slate-400"
+                    "bg-gray-100 text-gray-500"
                   }`}>
                     {p.rank}
                   </span>
-                  <span className="text-sm font-semibold text-white truncate">{p.name}</span>
+                  <span className="text-sm font-semibold text-gray-900 truncate">{p.name}</span>
                 </div>
-                <div className="text-xs text-slate-400">{p.trade}</div>
-                <div className="text-xs text-teal-300 font-medium">{p.metric}</div>
+                <div className="text-xs text-gray-500">{p.trade}</div>
+                <div className="text-xs text-teal-700 font-medium">{p.metric}</div>
                 <span
                   className="self-start text-xs px-2 py-0.5 rounded-full font-semibold"
                   style={{ background: p.badgeColor + "22", color: p.badgeColor }}
@@ -244,26 +244,26 @@ export default function PartnerPerformanceCoach() {
         </div>
 
         {/* AI Coaching Tips Feed */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-700">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
-              <Brain className="w-4 h-4 text-purple-400" />
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-gray-900 font-semibold text-base flex items-center gap-2">
+              <Brain className="w-4 h-4 text-gray-600" />
               AI Coaching Tips
             </h2>
           </div>
-          <div className="divide-y divide-slate-700/50">
+          <div className="divide-y divide-gray-200/50">
             {COACH_TIPS.map((tip) => {
               const Icon = TIP_ICON_MAP[tip.icon];
               return (
-                <div key={tip.id} className="flex items-start gap-4 px-6 py-4 hover:bg-slate-700/20 transition-colors">
+                <div key={tip.id} className="flex items-start gap-4 px-6 py-4 hover:bg-gray-100/20 transition-colors">
                   <div className={`mt-0.5 flex-shrink-0 ${TIP_ICON_COLOR[tip.icon]}`}>
                     <Icon className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-slate-200 leading-relaxed">{tip.text}</p>
-                    <span className="text-xs text-slate-500 mt-1 block">{tip.time}</span>
+                    <p className="text-sm text-gray-800 leading-relaxed">{tip.text}</p>
+                    <span className="text-xs text-gray-500 mt-1 block">{tip.time}</span>
                   </div>
-                  <button className="flex-shrink-0 text-xs px-3 py-1.5 rounded-lg font-semibold bg-teal-500/20 text-teal-400 hover:bg-teal-500/30 transition-colors whitespace-nowrap">
+                  <button className="flex-shrink-0 text-xs px-3 py-1.5 rounded-lg font-semibold bg-teal-500/20 text-teal-700 hover:bg-teal-500/30 transition-colors whitespace-nowrap">
                     Take Action
                   </button>
                 </div>
@@ -273,9 +273,9 @@ export default function PartnerPerformanceCoach() {
         </div>
 
         {/* Coaching Automations */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-6">
-          <h2 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-            <Zap className="w-4 h-4 text-amber-400" />
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <h2 className="text-gray-900 font-semibold text-base mb-4 flex items-center gap-2">
+            <Zap className="w-4 h-4 text-amber-700" />
             Coaching Automations
           </h2>
           <div className="space-y-4">
@@ -295,19 +295,19 @@ export default function PartnerPerformanceCoach() {
                 toggle: () => setWeeklyTips((v) => !v),
               },
             ].map((rule) => (
-              <div key={rule.id} className="flex items-start gap-4 p-4 bg-slate-700/30 rounded-xl border border-slate-700/50">
+              <div key={rule.id} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200/50">
                 <button onClick={rule.toggle} className="flex-shrink-0 mt-0.5">
                   {rule.value
-                    ? <ToggleRight className="w-8 h-8 text-teal-400" />
-                    : <ToggleLeft  className="w-8 h-8 text-slate-500" />
+                    ? <ToggleRight className="w-8 h-8 text-teal-700" />
+                    : <ToggleLeft  className="w-8 h-8 text-gray-500" />
                   }
                 </button>
                 <div className="flex-1">
-                  <div className="text-sm font-semibold text-white">{rule.label}</div>
-                  <div className="text-xs text-slate-400 mt-0.5 leading-relaxed">{rule.description}</div>
+                  <div className="text-sm font-semibold text-gray-900">{rule.label}</div>
+                  <div className="text-xs text-gray-500 mt-0.5 leading-relaxed">{rule.description}</div>
                 </div>
                 <span className={`flex-shrink-0 text-xs px-2 py-0.5 rounded-full font-semibold ${
-                  rule.value ? "bg-teal-500/20 text-teal-400" : "bg-slate-700 text-slate-500"
+                  rule.value ? "bg-teal-500/20 text-teal-700" : "bg-gray-100 text-gray-500"
                 }`}>
                   {rule.value ? "Active" : "Off"}
                 </span>

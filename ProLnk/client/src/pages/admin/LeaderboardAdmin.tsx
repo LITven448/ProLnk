@@ -91,10 +91,10 @@ export default function LeaderboardAdmin() {
               className="w-10 h-10 rounded-xl flex items-center justify-center"
               style={{ background: "linear-gradient(135deg, #F59E0B22, #F59E0B44)", border: "1px solid #F59E0B30" }}
             >
-              <Trophy className="w-5 h-5 text-amber-400" />
+              <Trophy className="w-5 h-5 text-amber-700" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">Leaderboard Admin</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Leaderboard Admin</h1>
               <p className="text-sm" style={{ color: "#8B91A8" }}>Configure rankings and rewards</p>
             </div>
           </div>
@@ -125,11 +125,11 @@ export default function LeaderboardAdmin() {
         >
           <div className="flex items-center gap-2">
             <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm font-semibold text-green-400">Live</span>
+            <span className="text-sm font-semibold text-green-700">Live</span>
           </div>
-          <div className="text-sm text-white"><span style={{ color: "#8B91A8" }}>Partners ranked:</span> <strong>112</strong></div>
-          <div className="text-sm text-white"><span style={{ color: "#8B91A8" }}>Resets:</span> <strong>June 1, 2026</strong></div>
-          <div className="text-sm text-white"><span style={{ color: "#8B91A8" }}>Period:</span> <strong>{period}</strong></div>
+          <div className="text-sm text-gray-900"><span style={{ color: "#8B91A8" }}>Partners ranked:</span> <strong>112</strong></div>
+          <div className="text-sm text-gray-900"><span style={{ color: "#8B91A8" }}>Resets:</span> <strong>June 1, 2026</strong></div>
+          <div className="text-sm text-gray-900"><span style={{ color: "#8B91A8" }}>Period:</span> <strong>{period}</strong></div>
         </div>
 
         {/* Config grid */}
@@ -140,8 +140,8 @@ export default function LeaderboardAdmin() {
             style={{ background: "#13161E", border: "1px solid #252A3A" }}
           >
             <div className="flex items-center gap-2 mb-5">
-              <Settings className="w-4 h-4 text-purple-400" />
-              <h2 className="text-base font-bold text-white">Category Weights</h2>
+              <Settings className="w-4 h-4 text-gray-600" />
+              <h2 className="text-base font-bold text-gray-900">Category Weights</h2>
               <span
                 className="ml-auto text-xs font-semibold px-2 py-0.5 rounded-full"
                 style={{
@@ -156,7 +156,7 @@ export default function LeaderboardAdmin() {
               {weightEntries.map(({ key, label, color }) => (
                 <div key={key}>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-white font-medium">{label}</span>
+                    <span className="text-gray-900 font-medium">{label}</span>
                     <span className="font-bold" style={{ color }}>{weights[key]}%</span>
                   </div>
                   <input
@@ -180,7 +180,7 @@ export default function LeaderboardAdmin() {
               className="rounded-2xl p-5"
               style={{ background: "#13161E", border: "1px solid #252A3A" }}
             >
-              <h2 className="text-base font-bold text-white mb-4">Reset Period</h2>
+              <h2 className="text-base font-bold text-gray-900 mb-4">Reset Period</h2>
               <div className="flex gap-2">
                 {PERIODS.map(p => (
                   <button
@@ -210,7 +210,7 @@ export default function LeaderboardAdmin() {
               ].map(({ label, sub, val, set }) => (
                 <div key={label} className="flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-sm font-semibold text-white">{label}</p>
+                    <p className="text-sm font-semibold text-gray-900">{label}</p>
                     <p className="text-xs mt-0.5" style={{ color: "#8B91A8" }}>{sub}</p>
                   </div>
                   <button
@@ -235,8 +235,8 @@ export default function LeaderboardAdmin() {
           style={{ background: "#13161E", border: "1px solid #252A3A" }}
         >
           <div className="flex items-center gap-2 mb-5">
-            <Star className="w-4 h-4 text-amber-400" />
-            <h2 className="text-base font-bold text-white">Prize Configuration</h2>
+            <Star className="w-4 h-4 text-amber-700" />
+            <h2 className="text-base font-bold text-gray-900">Prize Configuration</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {prizes.map((prize, i) => (
@@ -252,7 +252,7 @@ export default function LeaderboardAdmin() {
                   >
                     {i + 1}
                   </div>
-                  <span className="text-sm font-bold text-white">{prize.tier}</span>
+                  <span className="text-sm font-bold text-gray-900">{prize.tier}</span>
                 </div>
                 <input
                   type="text"
@@ -263,7 +263,7 @@ export default function LeaderboardAdmin() {
                     setPrizes(updated);
                   }}
                   className="w-full text-sm rounded-lg px-3 py-2 font-medium"
-                  style={{ background: "#0A1628", color: prize.color, border: `1px solid ${prize.color}40` }}
+                  style={{ background: "#F8FAFC", color: prize.color, border: `1px solid ${prize.color}40` }}
                 />
               </div>
             ))}
@@ -276,8 +276,8 @@ export default function LeaderboardAdmin() {
           style={{ background: "#13161E", border: "1px solid #252A3A" }}
         >
           <div className="flex items-center gap-2 mb-5">
-            <Users className="w-4 h-4 text-cyan-400" />
-            <h2 className="text-base font-bold text-white">Current Top 10</h2>
+            <Users className="w-4 h-4 text-teal-700" />
+            <h2 className="text-base font-bold text-gray-900">Current Top 10</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -291,15 +291,15 @@ export default function LeaderboardAdmin() {
               <tbody>
                 {TOP_10.map((row, i) => (
                   <tr key={i} style={{ borderBottom: "1px solid #1A1E2A" }}>
-                    <td className="py-3 pr-4 font-bold text-white">
+                    <td className="py-3 pr-4 font-bold text-gray-900">
                       {i < 3 ? RANK_MEDALS[i] : `#${row.rank}`}
                     </td>
-                    <td className="py-3 pr-4 font-semibold text-white">{row.name}</td>
-                    <td className="py-3 pr-4 font-bold text-amber-400">{row.score.toLocaleString()}</td>
-                    <td className="py-3 pr-4 text-white">{row.jobs}</td>
-                    <td className="py-3 pr-4 text-green-400 font-semibold">{row.commission}</td>
+                    <td className="py-3 pr-4 font-semibold text-gray-900">{row.name}</td>
+                    <td className="py-3 pr-4 font-bold text-amber-700">{row.score.toLocaleString()}</td>
+                    <td className="py-3 pr-4 text-gray-900">{row.jobs}</td>
+                    <td className="py-3 pr-4 text-green-700 font-semibold">{row.commission}</td>
                     <td className="py-3 pr-4 text-blue-400">{row.response}</td>
-                    <td className="py-3 pr-4 text-white">{row.rating}</td>
+                    <td className="py-3 pr-4 text-gray-900">{row.rating}</td>
                   </tr>
                 ))}
               </tbody>
@@ -313,8 +313,8 @@ export default function LeaderboardAdmin() {
           style={{ background: "#13161E", border: "1px solid #252A3A" }}
         >
           <div className="flex items-center gap-2 mb-5">
-            <Trophy className="w-4 h-4 text-amber-400" />
-            <h2 className="text-base font-bold text-white">Historical Winners</h2>
+            <Trophy className="w-4 h-4 text-amber-700" />
+            <h2 className="text-base font-bold text-gray-900">Historical Winners</h2>
           </div>
           <div className="space-y-3">
             {HISTORICAL.map((h, i) => (
@@ -326,14 +326,14 @@ export default function LeaderboardAdmin() {
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🥇</span>
                   <div>
-                    <p className="text-sm font-bold text-white">{h.winner}</p>
+                    <p className="text-sm font-bold text-gray-900">{h.winner}</p>
                     <p className="text-xs" style={{ color: "#8B91A8" }}>{h.month}</p>
                   </div>
                 </div>
                 <div className="flex gap-6 text-sm flex-wrap">
-                  <div><span style={{ color: "#8B91A8" }}>Score</span> <strong className="text-white">{h.score.toLocaleString()}</strong></div>
-                  <div><span style={{ color: "#8B91A8" }}>Jobs</span> <strong className="text-white">{h.jobs}</strong></div>
-                  <div><span style={{ color: "#8B91A8" }}>Commission</span> <strong className="text-green-400">{h.commission}</strong></div>
+                  <div><span style={{ color: "#8B91A8" }}>Score</span> <strong className="text-gray-900">{h.score.toLocaleString()}</strong></div>
+                  <div><span style={{ color: "#8B91A8" }}>Jobs</span> <strong className="text-gray-900">{h.jobs}</strong></div>
+                  <div><span style={{ color: "#8B91A8" }}>Commission</span> <strong className="text-green-700">{h.commission}</strong></div>
                 </div>
               </div>
             ))}
@@ -353,12 +353,12 @@ export default function LeaderboardAdmin() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#EF444420" }}>
-                <AlertTriangle className="w-5 h-5 text-red-400" />
+                <AlertTriangle className="w-5 h-5 text-red-600" />
               </div>
-              <h2 className="text-lg font-bold text-white">Reset Leaderboard?</h2>
+              <h2 className="text-lg font-bold text-gray-900">Reset Leaderboard?</h2>
             </div>
             <p className="text-sm mb-6" style={{ color: "#8B91A8" }}>
-              This will archive current rankings and start fresh. <strong className="text-white">112 partners</strong> will be affected and their scores will be reset to zero.
+              This will archive current rankings and start fresh. <strong className="text-gray-900">112 partners</strong> will be affected and their scores will be reset to zero.
             </p>
             <div className="flex gap-3">
               <button

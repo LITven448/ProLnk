@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const D = {
-  bg: "#0A1628",
+  bg: "#F8FAFC",
   surface: "#0F1D35",
   card: "#162035",
   border: "#1E2D4A",

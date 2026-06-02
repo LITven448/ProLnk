@@ -155,24 +155,24 @@ const MOCK_OPPORTUNITIES: Opportunity[] = [
 const TRIGGER_CONFIG: Record<TriggerType, { label: string; icon: React.ReactNode; color: string; bgColor: string }> = {
   weather_event:    { label: "Weather Event",     icon: <CloudLightning className="w-4 h-4" />, color: "text-blue-400",   bgColor: "bg-blue-500/20" },
   hvac_season:      { label: "HVAC Season",        icon: <Thermometer className="w-4 h-4" />,    color: "text-orange-400", bgColor: "bg-orange-500/20" },
-  roof_aging:       { label: "Roof Aging",          icon: <Home className="w-4 h-4" />,            color: "text-amber-400",  bgColor: "bg-amber-500/20" },
-  appliance_recall: { label: "Appliance Recall",   icon: <AlertTriangle className="w-4 h-4" />,  color: "text-red-400",    bgColor: "bg-red-500/20" },
-  storm_aftermath:  { label: "Storm Aftermath",    icon: <Wind className="w-4 h-4" />,            color: "text-purple-400", bgColor: "bg-purple-500/20" },
-  seasonal_demand:  { label: "Seasonal Demand",    icon: <Leaf className="w-4 h-4" />,            color: "text-green-400",  bgColor: "bg-green-500/20" },
+  roof_aging:       { label: "Roof Aging",          icon: <Home className="w-4 h-4" />,            color: "text-amber-700",  bgColor: "bg-amber-500/20" },
+  appliance_recall: { label: "Appliance Recall",   icon: <AlertTriangle className="w-4 h-4" />,  color: "text-red-600",    bgColor: "bg-red-500/20" },
+  storm_aftermath:  { label: "Storm Aftermath",    icon: <Wind className="w-4 h-4" />,            color: "text-gray-600", bgColor: "bg-purple-500/20" },
+  seasonal_demand:  { label: "Seasonal Demand",    icon: <Leaf className="w-4 h-4" />,            color: "text-green-700",  bgColor: "bg-green-500/20" },
 };
 
 const URGENCY_STYLES = {
-  critical: "bg-red-500/20 text-red-400 border-red-500/30",
+  critical: "bg-red-500/20 text-red-600 border-red-500/30",
   high:     "bg-orange-500/20 text-orange-400 border-orange-500/30",
   medium:   "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-  low:      "bg-slate-500/20 text-slate-400 border-slate-500/30",
+  low:      "bg-slate-500/20 text-gray-500 border-slate-500/30",
 };
 
 const STATUS_STYLES: Record<Status, string> = {
-  new:        "bg-teal-500/20 text-teal-400",
-  launched:   "bg-green-500/20 text-green-400",
+  new:        "bg-teal-500/20 text-teal-700",
+  launched:   "bg-green-500/20 text-green-700",
   monitoring: "bg-blue-500/20 text-blue-400",
-  closed:     "bg-slate-500/20 text-slate-400",
+  closed:     "bg-slate-500/20 text-gray-500",
 };
 
 type AutoTriggerKey = TriggerType;
@@ -227,16 +227,16 @@ export default function OpportunityDetector() {
         <div className="flex items-center justify-between flex-wrap gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
-              <Zap className="w-5 h-5 text-purple-400" />
+              <Zap className="w-5 h-5 text-gray-600" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">AI Opportunity Detector</h1>
-              <p className="text-sm text-slate-400">Storm events, aging assets, seasonal demand — auto-detected and ready to launch</p>
+              <h1 className="text-2xl font-bold text-gray-900">AI Opportunity Detector</h1>
+              <p className="text-sm text-gray-500">Storm events, aging assets, seasonal demand — auto-detected and ready to launch</p>
             </div>
           </div>
           <button
             onClick={() => setShowSettings(true)}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0F1E35] border border-slate-700 text-slate-400 hover:border-teal-500/50 text-sm transition-colors"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0F1E35] border border-gray-200 text-gray-500 hover:border-teal-500/50 text-sm transition-colors"
           >
             <Settings className="w-4 h-4" /> Auto-Trigger Rules
           </button>
@@ -245,23 +245,23 @@ export default function OpportunityDetector() {
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { label: "Est. Revenue Pipeline", value: `$${(totalRevenue / 1000).toFixed(0)}K`, icon: <DollarSign className="w-4 h-4 text-amber-400" />, color: "text-amber-400", bg: "bg-amber-500/10" },
-            { label: "Est. Leads Available", value: totalLeads.toLocaleString(), icon: <Target className="w-4 h-4 text-teal-400" />, color: "text-teal-400", bg: "bg-teal-500/10" },
-            { label: "Active Campaigns", value: launched, icon: <Rocket className="w-4 h-4 text-green-400" />, color: "text-green-400", bg: "bg-green-500/10" },
-            { label: "Critical (Unactioned)", value: critical, icon: <AlertTriangle className="w-4 h-4 text-red-400" />, color: "text-red-400", bg: "bg-red-500/10" },
+            { label: "Est. Revenue Pipeline", value: `$${(totalRevenue / 1000).toFixed(0)}K`, icon: <DollarSign className="w-4 h-4 text-amber-700" />, color: "text-amber-700", bg: "bg-amber-500/10" },
+            { label: "Est. Leads Available", value: totalLeads.toLocaleString(), icon: <Target className="w-4 h-4 text-teal-700" />, color: "text-teal-700", bg: "bg-teal-500/10" },
+            { label: "Active Campaigns", value: launched, icon: <Rocket className="w-4 h-4 text-green-700" />, color: "text-green-700", bg: "bg-green-500/10" },
+            { label: "Critical (Unactioned)", value: critical, icon: <AlertTriangle className="w-4 h-4 text-red-600" />, color: "text-red-600", bg: "bg-red-500/10" },
           ].map((s) => (
-            <div key={s.label} className={`rounded-xl p-4 border border-slate-700 ${s.bg}`}>
-              <div className="flex items-center gap-2 mb-2">{s.icon}<span className="text-xs text-slate-400">{s.label}</span></div>
+            <div key={s.label} className={`rounded-xl p-4 border border-gray-200 ${s.bg}`}>
+              <div className="flex items-center gap-2 mb-2">{s.icon}<span className="text-xs text-gray-500">{s.label}</span></div>
               <div className={`text-2xl font-black ${s.color}`}>{s.value}</div>
             </div>
           ))}
         </div>
 
         {/* Trigger type breakdown */}
-        <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+        <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-2 mb-4">
-            <BarChart3 className="w-4 h-4 text-slate-400" />
-            <span className="text-sm font-semibold text-white">Active Trigger Sources</span>
+            <BarChart3 className="w-4 h-4 text-gray-500" />
+            <span className="text-sm font-semibold text-gray-900">Active Trigger Sources</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {Object.entries(TRIGGER_CONFIG).map(([key, cfg]) => {
@@ -274,7 +274,7 @@ export default function OpportunityDetector() {
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
                     filterType === key
                       ? `${cfg.bgColor} ${cfg.color} border-current`
-                      : "bg-slate-700/40 text-slate-400 border-slate-700 hover:border-slate-500"
+                      : "bg-gray-100/40 text-gray-500 border-gray-200 hover:border-slate-500"
                   }`}
                 >
                   {cfg.icon}
@@ -293,26 +293,26 @@ export default function OpportunityDetector() {
               key={s}
               onClick={() => setFilterStatus(s)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium capitalize transition-all ${
-                filterStatus === s ? "bg-teal-500 text-white" : "bg-[#0F1E35] border border-slate-700 text-slate-400 hover:border-teal-500/50"
+                filterStatus === s ? "bg-teal-500 text-gray-900" : "bg-[#0F1E35] border border-gray-200 text-gray-500 hover:border-teal-500/50"
               }`}
             >
               {s}
             </button>
           ))}
-          <span className="text-xs text-slate-500 ml-2">{filtered.length} opportunities</span>
+          <span className="text-xs text-gray-500 ml-2">{filtered.length} opportunities</span>
         </div>
 
         {/* Opportunity cards */}
         <div className="space-y-3">
           {filtered.length === 0 ? (
-            <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-12 text-center">
-              <Zap className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-              <p className="text-slate-400">No opportunities match your filters</p>
+            <div className="bg-[#0F1E35] rounded-xl border border-gray-200 p-12 text-center">
+              <Zap className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+              <p className="text-gray-500">No opportunities match your filters</p>
             </div>
           ) : filtered.map((opp) => {
             const trigCfg = TRIGGER_CONFIG[opp.type];
             return (
-              <div key={opp.id} className="bg-[#0F1E35] rounded-xl border border-slate-700 hover:border-slate-600 transition-colors">
+              <div key={opp.id} className="bg-[#0F1E35] rounded-xl border border-gray-200 hover:border-gray-300 transition-colors">
                 <div className="p-4">
                   <div className="flex items-start gap-4 flex-wrap">
                     {/* Trigger icon */}
@@ -323,7 +323,7 @@ export default function OpportunityDetector() {
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <span className="text-white font-semibold">{opp.title}</span>
+                        <span className="text-gray-900 font-semibold">{opp.title}</span>
                         <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${URGENCY_STYLES[opp.urgency]}`}>
                           {opp.urgency}
                         </span>
@@ -331,28 +331,28 @@ export default function OpportunityDetector() {
                           {opp.status}
                         </span>
                         {autoTriggers[opp.type] && (
-                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-teal-500/10 text-teal-700 border border-teal-500/20">
                             auto-trigger on
                           </span>
                         )}
                       </div>
 
-                      <p className="text-slate-400 text-xs leading-relaxed mb-2">{opp.description}</p>
+                      <p className="text-gray-500 text-xs leading-relaxed mb-2">{opp.description}</p>
 
                       <div className="flex flex-wrap gap-4 text-xs">
-                        <span className="flex items-center gap-1 text-slate-300">
-                          <MapPin className="w-3 h-3 text-slate-500" /> {opp.zip} — {opp.city}, {opp.state}
+                        <span className="flex items-center gap-1 text-gray-700">
+                          <MapPin className="w-3 h-3 text-gray-500" /> {opp.zip} — {opp.city}, {opp.state}
                         </span>
-                        <span className="flex items-center gap-1 text-teal-400 font-medium">
+                        <span className="flex items-center gap-1 text-teal-700 font-medium">
                           <Target className="w-3 h-3" /> {opp.estimatedLeads} est. leads
                         </span>
-                        <span className="flex items-center gap-1 text-slate-300">
-                          <Users className="w-3 h-3 text-slate-500" /> {opp.proCount} pros in area
+                        <span className="flex items-center gap-1 text-gray-700">
+                          <Users className="w-3 h-3 text-gray-500" /> {opp.proCount} pros in area
                         </span>
-                        <span className="flex items-center gap-1 text-amber-400 font-medium">
+                        <span className="flex items-center gap-1 text-amber-700 font-medium">
                           <DollarSign className="w-3 h-3" /> ${opp.estimatedRevenue.toLocaleString()} est. revenue
                         </span>
-                        <span className="flex items-center gap-1 text-slate-400">
+                        <span className="flex items-center gap-1 text-gray-500">
                           <Clock className="w-3 h-3" /> Detected {new Date(opp.detectedAt).toLocaleDateString()}
                         </span>
                       </div>
@@ -363,13 +363,13 @@ export default function OpportunityDetector() {
                       {opp.status === "new" && (
                         <button
                           onClick={() => setLaunchTarget(opp)}
-                          className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white text-xs font-semibold transition-colors"
+                          className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-gray-900 text-xs font-semibold transition-colors"
                         >
                           <Rocket className="w-3.5 h-3.5" /> Launch Campaign
                         </button>
                       )}
                       {opp.status === "launched" && (
-                        <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-green-500/20 text-green-400 text-xs font-semibold border border-green-500/30">
+                        <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-green-500/20 text-green-700 text-xs font-semibold border border-green-500/30">
                           <CheckCircle className="w-3.5 h-3.5" /> Launched
                         </div>
                       )}
@@ -379,7 +379,7 @@ export default function OpportunityDetector() {
                         </div>
                       )}
                       {opp.status === "closed" && (
-                        <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-500/20 text-slate-400 text-xs font-semibold border border-slate-500/30">
+                        <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-500/20 text-gray-500 text-xs font-semibold border border-slate-500/30">
                           Closed
                         </div>
                       )}
@@ -393,41 +393,41 @@ export default function OpportunityDetector() {
 
         {/* Launch confirmation */}
         <Dialog open={!!launchTarget} onOpenChange={() => setLaunchTarget(null)}>
-          <DialogContent className="max-w-md bg-[#0A1628] border border-slate-700 text-white">
+          <DialogContent className="max-w-md bg-[#F8FAFC] border border-gray-200 text-gray-900">
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2">
-                <Rocket className="w-5 h-5 text-teal-400" />
+                <Rocket className="w-5 h-5 text-teal-700" />
                 Launch Campaign
               </DialogTitle>
             </DialogHeader>
             {launchTarget && (
               <div className="space-y-4 py-2">
-                <div className="bg-[#0F1E35] rounded-lg p-4 border border-slate-700 space-y-2 text-sm">
-                  <div className="text-white font-semibold">{launchTarget.title}</div>
-                  <div className="text-slate-400 text-xs">{launchTarget.description}</div>
+                <div className="bg-[#0F1E35] rounded-lg p-4 border border-gray-200 space-y-2 text-sm">
+                  <div className="text-gray-900 font-semibold">{launchTarget.title}</div>
+                  <div className="text-gray-500 text-xs">{launchTarget.description}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-center text-sm">
-                  <div className="bg-[#0F1E35] rounded-lg p-3 border border-slate-700">
-                    <div className="text-teal-400 font-bold text-lg">{launchTarget.estimatedLeads}</div>
-                    <div className="text-slate-400 text-xs">Est. Leads</div>
+                  <div className="bg-[#0F1E35] rounded-lg p-3 border border-gray-200">
+                    <div className="text-teal-700 font-bold text-lg">{launchTarget.estimatedLeads}</div>
+                    <div className="text-gray-500 text-xs">Est. Leads</div>
                   </div>
-                  <div className="bg-[#0F1E35] rounded-lg p-3 border border-slate-700">
-                    <div className="text-slate-300 font-bold text-lg">{launchTarget.proCount}</div>
-                    <div className="text-slate-400 text-xs">Pros Notified</div>
+                  <div className="bg-[#0F1E35] rounded-lg p-3 border border-gray-200">
+                    <div className="text-gray-700 font-bold text-lg">{launchTarget.proCount}</div>
+                    <div className="text-gray-500 text-xs">Pros Notified</div>
                   </div>
-                  <div className="bg-[#0F1E35] rounded-lg p-3 border border-slate-700">
-                    <div className="text-amber-400 font-bold text-lg">${(launchTarget.estimatedRevenue / 1000).toFixed(0)}K</div>
-                    <div className="text-slate-400 text-xs">Est. Revenue</div>
+                  <div className="bg-[#0F1E35] rounded-lg p-3 border border-gray-200">
+                    <div className="text-amber-700 font-bold text-lg">${(launchTarget.estimatedRevenue / 1000).toFixed(0)}K</div>
+                    <div className="text-gray-500 text-xs">Est. Revenue</div>
                   </div>
                 </div>
-                <div className="text-xs text-slate-400 bg-teal-500/10 border border-teal-500/20 rounded-lg p-3">
-                  This will send targeted outreach to <strong className="text-white">{launchTarget.proCount} matched pros</strong> and queue homeowner match requests in the <strong className="text-white">{launchTarget.zip}</strong> area.
+                <div className="text-xs text-gray-500 bg-teal-500/10 border border-teal-500/20 rounded-lg p-3">
+                  This will send targeted outreach to <strong className="text-gray-900">{launchTarget.proCount} matched pros</strong> and queue homeowner match requests in the <strong className="text-gray-900">{launchTarget.zip}</strong> area.
                 </div>
               </div>
             )}
             <DialogFooter>
-              <Button variant="outline" className="border-slate-600 text-slate-400" onClick={() => setLaunchTarget(null)}>Cancel</Button>
-              <Button className="bg-teal-500 hover:bg-teal-400 text-white" onClick={() => launchTarget && launchCampaign(launchTarget.id)}>
+              <Button variant="outline" className="border-gray-300 text-gray-500" onClick={() => setLaunchTarget(null)}>Cancel</Button>
+              <Button className="bg-teal-500 hover:bg-teal-400 text-gray-900" onClick={() => launchTarget && launchCampaign(launchTarget.id)}>
                 <Rocket className="w-4 h-4 mr-2" /> Launch Now
               </Button>
             </DialogFooter>
@@ -436,33 +436,33 @@ export default function OpportunityDetector() {
 
         {/* Auto-trigger settings */}
         <Dialog open={showSettings} onOpenChange={setShowSettings}>
-          <DialogContent className="max-w-lg bg-[#0A1628] border border-slate-700 text-white">
+          <DialogContent className="max-w-lg bg-[#F8FAFC] border border-gray-200 text-gray-900">
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2">
-                <Settings className="w-5 h-5 text-teal-400" />
+                <Settings className="w-5 h-5 text-teal-700" />
                 Auto-Trigger Rules
               </DialogTitle>
             </DialogHeader>
             <div className="space-y-3 py-2">
-              <p className="text-xs text-slate-400">When auto-trigger is ON for a type, campaigns launch automatically. When OFF, opportunities appear in the queue for manual review.</p>
+              <p className="text-xs text-gray-500">When auto-trigger is ON for a type, campaigns launch automatically. When OFF, opportunities appear in the queue for manual review.</p>
               {(Object.keys(TRIGGER_CONFIG) as TriggerType[]).map((key) => {
                 const cfg = TRIGGER_CONFIG[key];
                 const isOn = autoTriggers[key];
                 return (
-                  <div key={key} className="flex items-center justify-between p-3 bg-[#0F1E35] rounded-lg border border-slate-700">
+                  <div key={key} className="flex items-center justify-between p-3 bg-[#0F1E35] rounded-lg border border-gray-200">
                     <div className="flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${cfg.bgColor} ${cfg.color}`}>
                         {cfg.icon}
                       </div>
                       <div>
-                        <div className="text-white text-sm font-medium">{cfg.label}</div>
-                        <div className="text-slate-500 text-xs">{isOn ? "Auto-launches campaigns" : "Manual approval required"}</div>
+                        <div className="text-gray-900 text-sm font-medium">{cfg.label}</div>
+                        <div className="text-gray-500 text-xs">{isOn ? "Auto-launches campaigns" : "Manual approval required"}</div>
                       </div>
                     </div>
                     <button
                       onClick={() => toggleAutoTrigger(key)}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                        isOn ? "bg-teal-500/20 text-teal-400 border border-teal-500/30" : "bg-slate-700/50 text-slate-400 border border-slate-600"
+                        isOn ? "bg-teal-500/20 text-teal-700 border border-teal-500/30" : "bg-gray-100/50 text-gray-500 border border-gray-300"
                       }`}
                     >
                       {isOn ? <ToggleRight className="w-4 h-4" /> : <ToggleLeft className="w-4 h-4" />}
@@ -473,7 +473,7 @@ export default function OpportunityDetector() {
               })}
             </div>
             <DialogFooter>
-              <Button className="bg-teal-500 hover:bg-teal-600 text-white w-full" onClick={() => { setShowSettings(false); toast.success("Auto-trigger settings saved"); }}>
+              <Button className="bg-teal-500 hover:bg-teal-600 text-gray-900 w-full" onClick={() => { setShowSettings(false); toast.success("Auto-trigger settings saved"); }}>
                 Save Settings
               </Button>
             </DialogFooter>

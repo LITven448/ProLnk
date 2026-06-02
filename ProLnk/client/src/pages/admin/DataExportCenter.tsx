@@ -29,7 +29,7 @@ const PRESETS: ExportPreset[] = [
     lastExported: "May 14, 2026",
     rowCount: 312,
     icon: Users,
-    iconColor: "text-teal-400",
+    iconColor: "text-teal-700",
   },
   {
     id: "commissions",
@@ -39,7 +39,7 @@ const PRESETS: ExportPreset[] = [
     lastExported: "May 13, 2026",
     rowCount: 2847,
     icon: DollarSign,
-    iconColor: "text-green-400",
+    iconColor: "text-green-700",
   },
   {
     id: "homeowners",
@@ -59,7 +59,7 @@ const PRESETS: ExportPreset[] = [
     lastExported: "May 10, 2026",
     rowCount: 891,
     icon: BarChart2,
-    iconColor: "text-purple-400",
+    iconColor: "text-gray-600",
   },
   {
     id: "revenue",
@@ -69,7 +69,7 @@ const PRESETS: ExportPreset[] = [
     lastExported: "May 1, 2026",
     rowCount: 24,
     icon: BarChart2,
-    iconColor: "text-amber-400",
+    iconColor: "text-amber-700",
   },
   {
     id: "1099",
@@ -106,9 +106,9 @@ const FIELD_OPTIONS: Record<string, string[]> = {
 
 function FormatBadge({ format }: { format: ExportFormat }) {
   const colors: Record<ExportFormat, string> = {
-    CSV: "bg-teal-500/20 text-teal-300 border border-teal-500/30",
+    CSV: "bg-teal-500/20 text-teal-700 border border-teal-500/30",
     Excel: "bg-green-500/20 text-green-300 border border-green-500/30",
-    JSON: "bg-purple-500/20 text-purple-300 border border-purple-500/30",
+    JSON: "bg-purple-500/20 text-gray-600 border border-purple-500/30",
   };
   const icons: Record<ExportFormat, React.ElementType> = {
     CSV: FileText,
@@ -156,15 +156,15 @@ export default function DataExportCenter() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen bg-[#0A1628] text-white p-6 space-y-8">
+      <div className="min-h-screen bg-[#F8FAFC] text-gray-900 p-6 space-y-8">
         <div>
-          <h1 className="text-2xl font-bold text-white">Data Export Center</h1>
-          <p className="text-slate-400 text-sm mt-1">Get your data out in any format</p>
+          <h1 className="text-2xl font-bold text-gray-900">Data Export Center</h1>
+          <p className="text-gray-500 text-sm mt-1">Get your data out in any format</p>
         </div>
 
         {/* Export Presets */}
         <section>
-          <h2 className="text-lg font-semibold text-white mb-4">Export Presets</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Export Presets</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {PRESETS.map(preset => {
               const Icon = preset.icon;
@@ -180,13 +180,13 @@ export default function DataExportCenter() {
                         <Icon size={18} className={preset.iconColor} />
                       </div>
                       <div>
-                        <div className="font-semibold text-white text-sm">{preset.name}</div>
+                        <div className="font-semibold text-gray-900 text-sm">{preset.name}</div>
                         <FormatBadge format={preset.format} />
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-400 text-xs leading-relaxed">{preset.description}</p>
-                  <div className="flex items-center justify-between text-xs text-slate-500">
+                  <p className="text-gray-500 text-xs leading-relaxed">{preset.description}</p>
+                  <div className="flex items-center justify-between text-xs text-gray-500">
                     <span className="flex items-center gap-1">
                       <Clock size={11} />
                       {preset.lastExported}
@@ -196,7 +196,7 @@ export default function DataExportCenter() {
                   <button
                     onClick={() => handleExportPreset(preset.id)}
                     disabled={isExporting}
-                    className="w-full mt-1 flex items-center justify-center gap-2 bg-teal-500/20 hover:bg-teal-500/30 border border-teal-500/40 text-teal-300 text-sm font-medium rounded-lg py-2 transition-colors disabled:opacity-60"
+                    className="w-full mt-1 flex items-center justify-center gap-2 bg-teal-500/20 hover:bg-teal-500/30 border border-teal-500/40 text-teal-700 text-sm font-medium rounded-lg py-2 transition-colors disabled:opacity-60"
                   >
                     {isExporting ? (
                       <>
@@ -219,48 +219,48 @@ export default function DataExportCenter() {
         {/* Custom Export Builder */}
         <section className="bg-[#111C30] border border-white/10 rounded-xl p-6 space-y-6">
           <div className="flex items-center gap-2">
-            <Filter size={18} className="text-teal-400" />
-            <h2 className="text-lg font-semibold text-white">Custom Export Builder</h2>
+            <Filter size={18} className="text-teal-700" />
+            <h2 className="text-lg font-semibold text-gray-900">Custom Export Builder</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs text-slate-400 mb-1.5">Date From</label>
+              <label className="block text-xs text-gray-500 mb-1.5">Date From</label>
               <input
                 type="date"
                 value={dateFrom}
                 onChange={e => setDateFrom(e.target.value)}
-                className="w-full bg-[#0A1628] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500/50"
+                className="w-full bg-[#F8FAFC] border border-white/10 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-teal-500/50"
               />
             </div>
             <div>
-              <label className="block text-xs text-slate-400 mb-1.5">Date To</label>
+              <label className="block text-xs text-gray-500 mb-1.5">Date To</label>
               <input
                 type="date"
                 value={dateTo}
                 onChange={e => setDateTo(e.target.value)}
-                className="w-full bg-[#0A1628] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500/50"
+                className="w-full bg-[#F8FAFC] border border-white/10 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-teal-500/50"
               />
             </div>
             <div>
-              <label className="block text-xs text-slate-400 mb-1.5">Entity Type</label>
+              <label className="block text-xs text-gray-500 mb-1.5">Entity Type</label>
               <div className="relative">
                 <select
                   value={entityType}
                   onChange={e => handleEntityChange(e.target.value)}
-                  className="w-full bg-[#0A1628] border border-white/10 rounded-lg px-3 py-2 text-sm text-white appearance-none focus:outline-none focus:border-teal-500/50"
+                  className="w-full bg-[#F8FAFC] border border-white/10 rounded-lg px-3 py-2 text-sm text-gray-900 appearance-none focus:outline-none focus:border-teal-500/50"
                 >
                   {ENTITY_TYPES.map(e => (
                     <option key={e} value={e}>{e}</option>
                   ))}
                 </select>
-                <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
               </div>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs text-slate-400 mb-2">Fields to Include</label>
+            <label className="block text-xs text-gray-500 mb-2">Fields to Include</label>
             <div className="flex flex-wrap gap-2">
               {FIELD_OPTIONS[entityType].map(field => {
                 const checked = selectedFields.includes(field);
@@ -270,8 +270,8 @@ export default function DataExportCenter() {
                     onClick={() => toggleField(field)}
                     className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
                       checked
-                        ? "bg-teal-500/20 border-teal-500/50 text-teal-300"
-                        : "bg-white/5 border-white/10 text-slate-400 hover:border-white/20"
+                        ? "bg-teal-500/20 border-teal-500/50 text-teal-700"
+                        : "bg-white/5 border-white/10 text-gray-500 hover:border-white/20"
                     }`}
                   >
                     {checked && <CheckCircle size={10} className="inline mr-1" />}
@@ -284,7 +284,7 @@ export default function DataExportCenter() {
 
           <div className="flex items-center gap-4">
             <div>
-              <label className="block text-xs text-slate-400 mb-1.5">Format</label>
+              <label className="block text-xs text-gray-500 mb-1.5">Format</label>
               <div className="flex gap-2">
                 {(["CSV", "Excel", "JSON"] as ExportFormat[]).map(f => (
                   <button
@@ -292,8 +292,8 @@ export default function DataExportCenter() {
                     onClick={() => setExportFormat(f)}
                     className={`px-4 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
                       exportFormat === f
-                        ? "bg-teal-500/20 border-teal-500/50 text-teal-300"
-                        : "bg-white/5 border-white/10 text-slate-400 hover:border-white/20"
+                        ? "bg-teal-500/20 border-teal-500/50 text-teal-700"
+                        : "bg-white/5 border-white/10 text-gray-500 hover:border-white/20"
                     }`}
                   >
                     {f}
@@ -305,7 +305,7 @@ export default function DataExportCenter() {
               <button
                 onClick={handleBuildExport}
                 disabled={buildState === "building" || selectedFields.length === 0}
-                className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-6 py-2 rounded-lg transition-colors disabled:opacity-60"
+                className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-gray-900 font-semibold text-sm px-6 py-2 rounded-lg transition-colors disabled:opacity-60"
               >
                 {buildState === "building" ? (
                   <><Loader2 size={15} className="animate-spin" />Building…</>
@@ -321,11 +321,11 @@ export default function DataExportCenter() {
 
         {/* Export History */}
         <section>
-          <h2 className="text-lg font-semibold text-white mb-4">Export History</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Export History</h2>
           <div className="bg-[#111C30] border border-white/10 rounded-xl overflow-hidden">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-white/10 text-slate-400 text-xs uppercase tracking-wider">
+                <tr className="border-b border-white/10 text-gray-500 text-xs uppercase tracking-wider">
                   <th className="text-left px-5 py-3 font-medium">Export Type</th>
                   <th className="text-left px-5 py-3 font-medium">Date</th>
                   <th className="text-right px-5 py-3 font-medium">Rows</th>
@@ -336,12 +336,12 @@ export default function DataExportCenter() {
               <tbody className="divide-y divide-white/5">
                 {EXPORT_HISTORY.map(row => (
                   <tr key={row.id} className="hover:bg-white/3 transition-colors">
-                    <td className="px-5 py-3 text-white font-medium">{row.type}</td>
-                    <td className="px-5 py-3 text-slate-400">{row.date}</td>
-                    <td className="px-5 py-3 text-slate-300 text-right">{row.rows.toLocaleString()}</td>
-                    <td className="px-5 py-3 text-slate-300 text-right">{row.size}</td>
+                    <td className="px-5 py-3 text-gray-900 font-medium">{row.type}</td>
+                    <td className="px-5 py-3 text-gray-500">{row.date}</td>
+                    <td className="px-5 py-3 text-gray-700 text-right">{row.rows.toLocaleString()}</td>
+                    <td className="px-5 py-3 text-gray-700 text-right">{row.size}</td>
                     <td className="px-5 py-3 text-right">
-                      <button className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 text-xs font-medium transition-colors">
+                      <button className="inline-flex items-center gap-1 text-teal-700 hover:text-teal-700 text-xs font-medium transition-colors">
                         <Download size={12} />
                         Download
                       </button>
@@ -356,19 +356,19 @@ export default function DataExportCenter() {
         {/* API Access */}
         <section className="bg-[#111C30] border border-white/10 rounded-xl p-6">
           <div className="flex items-center gap-2 mb-3">
-            <Terminal size={18} className="text-teal-400" />
-            <h2 className="text-base font-semibold text-white">API Access</h2>
+            <Terminal size={18} className="text-teal-700" />
+            <h2 className="text-base font-semibold text-gray-900">API Access</h2>
           </div>
-          <p className="text-slate-400 text-sm mb-4">Use our API to automate data exports and integrate with your BI tools.</p>
-          <div className="bg-[#0A1628] border border-white/10 rounded-lg p-4 font-mono text-xs text-slate-300 overflow-x-auto">
-            <span className="text-teal-400">curl</span>{" "}
-            <span className="text-amber-400">-X GET</span>{" "}
+          <p className="text-gray-500 text-sm mb-4">Use our API to automate data exports and integrate with your BI tools.</p>
+          <div className="bg-[#F8FAFC] border border-white/10 rounded-lg p-4 font-mono text-xs text-gray-700 overflow-x-auto">
+            <span className="text-teal-700">curl</span>{" "}
+            <span className="text-amber-700">-X GET</span>{" "}
             <span className="text-green-300">"https://api.prolnk.io/v1/export/partners?format=csv&from=2026-01-01&to=2026-05-14"</span>{" "}
             \<br />
-            {"  "}<span className="text-amber-400">-H</span>{" "}
+            {"  "}<span className="text-amber-700">-H</span>{" "}
             <span className="text-green-300">"Authorization: Bearer YOUR_API_KEY"</span>{" "}
             \<br />
-            {"  "}<span className="text-amber-400">-o</span>{" "}
+            {"  "}<span className="text-amber-700">-o</span>{" "}
             <span className="text-green-300">partners_export.csv</span>
           </div>
         </section>

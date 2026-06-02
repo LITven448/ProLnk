@@ -2,8 +2,8 @@ import CompanyDashboard, { CompanyDashboardConfig } from "../CompanyDashboard";
 import { D } from "@/components/DashboardShared";
 
 const BASE = "/admin/tp";
-const COLOR = "#82D616";
-const ACCENT = "#17C1E8";
+const COLOR = "#16A34A";
+const ACCENT = "#0D9488";
 
 const SCAN_DATA = [12, 18, 14, 24, 31, 42, 38, 47, 52, 61, 74, 89];
 

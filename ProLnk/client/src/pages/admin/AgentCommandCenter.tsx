@@ -17,7 +17,7 @@ const AGENT_GROUPS = [
     agents: ["Deployment & Infra","Error Handler","Data Pipeline","Testing Agent","Performance Monitor","Compliance Checker"],
   },
   {
-    label: "Financial",      color: "#82D616", icon: DollarSign,
+    label: "Financial",      color: "#16A34A", icon: DollarSign,
     agents: ["Commission Calculator","Payout Processor","Revenue Analyzer","Cost Tracker","Fraud Detector","Tax Helper","Audit Log"],
   },
   {
@@ -29,7 +29,7 @@ const AGENT_GROUPS = [
     agents: ["Onboarding Flow","Support Responder","Feedback Collector","Retention Optimizer","Upsell Manager","Community Builder","Success Tracker"],
   },
   {
-    label: "Intelligence",   color: "#7928CA", icon: Brain,
+    label: "Intelligence",   color: "#0D9488", icon: Brain,
     agents: ["Market Analyzer","User Behavior Analyzer","Predictive Modeler","Recommendation Engine","Data Warehouse"],
   },
   {
@@ -116,13 +116,13 @@ const MOCK_ERRORS = [
 function StopAllModal({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-      <div className="rounded-2xl p-6 max-w-sm w-full mx-4" style={{ background: "#0A1628", border: "1px solid #EA060640" }}>
+      <div className="rounded-2xl p-6 max-w-sm w-full mx-4" style={{ background: "#F8FAFC", border: "1px solid #EA060640" }}>
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#EA060618" }}>
-            <Square className="w-5 h-5 text-red-400" />
+            <Square className="w-5 h-5 text-red-600" />
           </div>
           <div>
-            <p className="font-bold text-white">Emergency Stop All Agents</p>
+            <p className="font-bold text-gray-900">Emergency Stop All Agents</p>
             <p className="text-xs text-muted-foreground">This will halt all running agent processes</p>
           </div>
         </div>
@@ -141,7 +141,7 @@ function StopAllModal({ onConfirm, onCancel }: { onConfirm: () => void; onCancel
           </button>
           <button
             onClick={onConfirm}
-            className="flex-1 py-2 rounded-lg text-sm font-bold text-white transition-colors"
+            className="flex-1 py-2 rounded-lg text-sm font-bold text-gray-900 transition-colors"
             style={{ background: "#EA0606", border: "1px solid #EA060660" }}
           >
             Stop All Agents
@@ -256,7 +256,7 @@ export default function AgentCommandCenter() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: "Total Agents",       value: 47,                             color: "#00D4FF" },
-            { label: "Active",             value: data?.activeAgents ?? 34,       color: "#82D616" },
+            { label: "Active",             value: data?.activeAgents ?? 34,       color: "#16A34A" },
             { label: "Standby",            value: 47 - (data?.activeAgents ?? 34),color: "#FBB140" },
             { label: "Errors (24h)",       value: 3,                              color: "#EA0606" },
           ].map(stat => (
@@ -273,7 +273,7 @@ export default function AgentCommandCenter() {
             <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "#00D4FF18" }}>
               <Send className="w-4 h-4" style={{ color: "#00D4FF" }} />
             </div>
-            <h2 className="font-bold text-sm text-white">Manual Trigger</h2>
+            <h2 className="font-bold text-sm text-gray-900">Manual Trigger</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Agent selector */}
@@ -282,7 +282,7 @@ export default function AgentCommandCenter() {
               <button
                 onClick={() => setAgentDropdown(d => !d)}
                 className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm text-left"
-                style={{ background: "#0A1628", border: "1px solid #ffffff18", color: selectedAgent ? "#e2e8f0" : "#5a7a94" }}
+                style={{ background: "#F8FAFC", border: "1px solid #ffffff18", color: selectedAgent ? "#e2e8f0" : "#5a7a94" }}
               >
                 <span className="truncate">{selectedAgent || "Choose an agent…"}</span>
                 <ChevronDown className="w-4 h-4 flex-shrink-0 text-muted-foreground" />
@@ -290,7 +290,7 @@ export default function AgentCommandCenter() {
               {agentDropdown && (
                 <div
                   className="absolute z-20 mt-1 w-full rounded-xl overflow-y-auto shadow-xl"
-                  style={{ background: "#0A1628", border: "1px solid #ffffff18", maxHeight: "220px" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #ffffff18", maxHeight: "220px" }}
                 >
                   {AGENT_GROUPS.map(group => (
                     <div key={group.label}>
@@ -320,7 +320,7 @@ export default function AgentCommandCenter() {
                 onChange={e => setAgentParams(e.target.value)}
                 placeholder='{"key":"value"}'
                 className="w-full px-3 py-2 rounded-lg text-sm font-mono focus:outline-none"
-                style={{ background: "#0A1628", border: "1px solid #ffffff18", color: "#e2e8f0" }}
+                style={{ background: "#F8FAFC", border: "1px solid #ffffff18", color: "#e2e8f0" }}
               />
             </div>
 
@@ -328,8 +328,8 @@ export default function AgentCommandCenter() {
             <div className="flex items-end">
               <button
                 onClick={runAgent}
-                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold text-white transition-all"
-                style={{ background: "linear-gradient(135deg, #00D4FF, #7928CA)", boxShadow: "0 0 20px #00D4FF30" }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold text-gray-900 transition-all"
+                style={{ background: "linear-gradient(135deg, #00D4FF, #0D9488)", boxShadow: "0 0 20px #00D4FF30" }}
               >
                 <Play className="w-4 h-4" />
                 Run Agent
@@ -343,10 +343,10 @@ export default function AgentCommandCenter() {
           {/* Batch operations */}
           <div className="rounded-2xl p-5" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "#82D61618" }}>
-                <Zap className="w-4 h-4" style={{ color: "#82D616" }} />
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "#16A34A18" }}>
+                <Zap className="w-4 h-4" style={{ color: "#16A34A" }} />
               </div>
-              <h2 className="font-bold text-sm text-white">Batch Operations</h2>
+              <h2 className="font-bold text-sm text-gray-900">Batch Operations</h2>
             </div>
             <div className="space-y-3">
               <div>
@@ -355,7 +355,7 @@ export default function AgentCommandCenter() {
                   value={selectedGroup}
                   onChange={e => setSelectedGroup(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none mb-3"
-                  style={{ background: "#0A1628", border: "1px solid #ffffff18", color: "#e2e8f0" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #ffffff18", color: "#e2e8f0" }}
                 >
                   <option value="">Select a group…</option>
                   {AGENT_GROUPS.map(g => (
@@ -364,8 +364,8 @@ export default function AgentCommandCenter() {
                 </select>
                 <button
                   onClick={() => runBatch(selectedGroup)}
-                  className="w-full py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
-                  style={{ background: "#82D61620", border: "1px solid #82D61640", color: "#82D616" }}
+                  className="w-full py-2 rounded-lg text-sm font-semibold text-gray-900 transition-all hover:opacity-90"
+                  style={{ background: "#16A34A20", border: "1px solid #16A34A40", color: "#16A34A" }}
                 >
                   Run All {selectedGroup ? `${selectedGroup} ` : ""}Agents
                 </button>
@@ -373,7 +373,7 @@ export default function AgentCommandCenter() {
               <div className="grid grid-cols-2 gap-2 pt-1">
                 {[
                   { label: "Run Morning Cycle", color: "#00D4FF", action: () => runCycle.mutate(), loading: runCycle.isPending },
-                  { label: "Storm Scan",         color: "#7928CA", action: () => triggerStormScan.mutate({ state: stormState }), loading: triggerStormScan.isPending },
+                  { label: "Storm Scan",         color: "#0D9488", action: () => triggerStormScan.mutate({ state: stormState }), loading: triggerStormScan.isPending },
                 ].map(item => (
                   <button
                     key={item.label}
@@ -398,7 +398,7 @@ export default function AgentCommandCenter() {
               <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "#FBB14018" }}>
                 <Calendar className="w-4 h-4" style={{ color: "#FBB140" }} />
               </div>
-              <h2 className="font-bold text-sm text-white">Schedule Future Run</h2>
+              <h2 className="font-bold text-sm text-gray-900">Schedule Future Run</h2>
             </div>
             <div className="space-y-3">
               <div>
@@ -407,7 +407,7 @@ export default function AgentCommandCenter() {
                   value={selectedAgent}
                   onChange={e => setSelectedAgent(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none"
-                  style={{ background: "#0A1628", border: "1px solid #ffffff18", color: selectedAgent ? "#e2e8f0" : "#5a7a94" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #ffffff18", color: selectedAgent ? "#e2e8f0" : "#5a7a94" }}
                 >
                   <option value="">Choose an agent…</option>
                   {AGENT_GROUPS.map(g => (
@@ -426,7 +426,7 @@ export default function AgentCommandCenter() {
                   value={scheduleAt}
                   onChange={e => setScheduleAt(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none"
-                  style={{ background: "#0A1628", border: "1px solid #ffffff18", color: "#e2e8f0" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #ffffff18", color: "#e2e8f0" }}
                 />
               </div>
               <button
@@ -445,11 +445,11 @@ export default function AgentCommandCenter() {
           <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: "1px solid #ffffff10" }}>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" style={{ color: "#00D4FF" }} />
-              <h2 className="font-bold text-sm text-white">Recent Command History</h2>
+              <h2 className="font-bold text-sm text-gray-900">Recent Command History</h2>
             </div>
             <button
               onClick={() => setHistory(MOCK_HISTORY)}
-              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-gray-900 transition-colors"
             >
               <RotateCcw className="w-3 h-3" />
               Reset
@@ -462,7 +462,7 @@ export default function AgentCommandCenter() {
                   {entry.status === "running"
                     ? <RefreshCw className="w-4 h-4 animate-spin" style={{ color: "#00D4FF" }} />
                     : entry.status === "success"
-                    ? <CheckCircle className="w-4 h-4" style={{ color: "#82D616" }} />
+                    ? <CheckCircle className="w-4 h-4" style={{ color: "#16A34A" }} />
                     : <XCircle className="w-4 h-4" style={{ color: "#EA0606" }} />}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -493,7 +493,7 @@ export default function AgentCommandCenter() {
         <div className="rounded-2xl overflow-hidden" style={{ background: "#0D1F38", border: "1px solid #ffffff12" }}>
           <div className="flex items-center gap-2 px-5 py-4" style={{ borderBottom: "1px solid #ffffff10" }}>
             <Terminal className="w-4 h-4" style={{ color: "#EA0606" }} />
-            <h2 className="font-bold text-sm text-white">Error Log</h2>
+            <h2 className="font-bold text-sm text-gray-900">Error Log</h2>
             <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#EA060618", color: "#EA0606" }}>
               {MOCK_ERRORS.length} errors
             </span>
@@ -508,7 +508,7 @@ export default function AgentCommandCenter() {
                   <XCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-red-500" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-xs font-semibold text-white">{err.agent}</span>
+                      <span className="text-xs font-semibold text-gray-900">{err.agent}</span>
                       <code className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "#EA060618", color: "#EA0606" }}>{err.code}</code>
                       <span className="text-[10px] text-muted-foreground">{err.time}</span>
                       {err.retried && (
@@ -523,7 +523,7 @@ export default function AgentCommandCenter() {
                   <div className="px-5 pb-4">
                     <pre
                       className="text-[10px] font-mono p-3 rounded-lg leading-relaxed overflow-x-auto"
-                      style={{ background: "#0A1628", color: "#EA0606", border: "1px solid #EA060620" }}
+                      style={{ background: "#F8FAFC", color: "#EA0606", border: "1px solid #EA060620" }}
                     >{err.stack}</pre>
                   </div>
                 )}
@@ -535,12 +535,12 @@ export default function AgentCommandCenter() {
         {/* ── Emergency Stop ────────────────────────────────────────────────────── */}
         <div className="rounded-2xl p-5 flex items-center justify-between" style={{ background: "#EA060608", border: "1px solid #EA060630" }}>
           <div>
-            <p className="font-bold text-white text-sm">Emergency Stop</p>
+            <p className="font-bold text-gray-900 text-sm">Emergency Stop</p>
             <p className="text-xs text-muted-foreground mt-0.5">Immediately halt all 47 agents. Use only in a production incident.</p>
           </div>
           <button
             onClick={() => setShowStopModal(true)}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-gray-900 transition-all hover:opacity-90"
             style={{ background: "#EA0606", boxShadow: "0 0 20px #EA060640" }}
           >
             <Square className="w-4 h-4" />

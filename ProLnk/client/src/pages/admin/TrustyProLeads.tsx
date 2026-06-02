@@ -8,7 +8,7 @@ import { toast } from "sonner";
 
 const STATUS_CONFIG: Record<string, { label: string; bg: string; text: string }> = {
   new:        { label: "New",        bg: "#DBEAFE", text: "#1D4ED8" },
-  analyzing:  { label: "Analyzing",  bg: "#EDE9FE", text: "#7C3AED" },
+  analyzing:  { label: "Analyzing",  bg: "#EDE9FE", text: "#0D9488" },
   matched:    { label: "Matched",    bg: "#D1FAE5", text: "#059669" },
   contacted:  { label: "Contacted",  bg: "#FEF3C7", text: "#D97706" },
   closed:     { label: "Closed",     bg: "#F3F4F6", text: "#6B7280" },
@@ -60,7 +60,7 @@ export default function TrustyProLeads() {
             { label: "Total Leads", value: leads.length, icon: Home, color: "#1B4FD8" },
             { label: "New Leads", value: newCount, icon: Clock, color: "#D97706" },
             { label: "Matched", value: matchedCount, icon: CheckCircle, color: "#059669" },
-            { label: "AI Scans", value: scanCount, icon: Camera, color: "#7C3AED" },
+            { label: "AI Scans", value: scanCount, icon: Camera, color: "#0D9488" },
           ].map((stat, i) => (
             <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: stat.color + "18" }}>

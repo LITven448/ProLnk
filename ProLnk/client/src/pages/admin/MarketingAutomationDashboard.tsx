@@ -166,7 +166,7 @@ const CAMPAIGNS = [
 // Audience segments
 const AUDIENCE_SEGMENTS = [
   { label: "All Partners",  count: 214, color: "#0891b2" },
-  { label: "HVAC Only",     count: 67,  color: "#7C3AED" },
+  { label: "HVAC Only",     count: 67,  color: "#0D9488" },
   { label: "DFW North",     count: 94,  color: "#059669" },
   { label: "At-Risk",       count: 23,  color: "#d97706" },
 ];

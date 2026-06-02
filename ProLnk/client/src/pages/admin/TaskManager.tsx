@@ -30,18 +30,18 @@ const PRIORITY_STYLE: Record<Priority, { bg: string; color: string; border: stri
   Critical: { bg: "#FFF0F0", color: "#EA0606", border: "#EA060630" },
   High:     { bg: "#FFF4ED", color: "#f97316", border: "#f9731630" },
   Med:      { bg: "#FFF8E6", color: "#FBB140", border: "#FBB14030" },
-  Low:      { bg: "#F0FAF0", color: "#82D616", border: "#82D61630" },
+  Low:      { bg: "#F0FAF0", color: "#16A34A", border: "#16A34A30" },
 };
 
 const CAT_STYLE: Record<Category, { bg: string; color: string }> = {
-  Marketing: { bg: "#F3EEFF", color: "#7928CA" },
-  Ops:       { bg: "#E8F9FC", color: "#17C1E8" },
-  Tech:      { bg: "#E8F0FD", color: "#1A73E8" },
+  Marketing: { bg: "#F3EEFF", color: "#0D9488" },
+  Ops:       { bg: "#E8F9FC", color: "#0D9488" },
+  Tech:      { bg: "#E8F0FD", color: "#0D9488" },
   Finance:   { bg: "#FFF8E6", color: "#FBB140" },
   Legal:     { bg: "#FFF0F0", color: "#EA0606" },
 };
 
-const ASSIGNEE_COLORS = ["#17C1E8","#82D616","#7928CA","#FBB140","#EA0606","#1A73E8","#f97316"];
+const ASSIGNEE_COLORS = ["#0D9488","#16A34A","#0D9488","#FBB140","#EA0606","#0D9488","#f97316"];
 
 const INIT_TASKS: Task[] = [
   { id: 1,  title: "Review 3 pending insurance claims",            priority: "Critical", assignee: "Andrew F.",    initials: "AF", dueDate: "Today",   category: "Legal",     status: "todo",       automated: false },

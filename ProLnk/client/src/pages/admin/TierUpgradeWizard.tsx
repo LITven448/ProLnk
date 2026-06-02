@@ -144,7 +144,7 @@ export default function TierUpgradeWizard() {
   if (completed) {
     return (
       <AdminLayout>
-        <div className="p-6 bg-[#0A1628] min-h-screen flex items-center justify-center">
+        <div className="p-6 bg-[#F8FAFC] min-h-screen flex items-center justify-center">
           <div style={{ textAlign: "center", maxWidth: 480 }}>
             <div style={{
               width: 72, height: 72, borderRadius: "50%",
@@ -162,7 +162,7 @@ export default function TierUpgradeWizard() {
             </p>
             <Button
               onClick={() => { setStep(1); setPartnerFound(false); setSearchQuery(""); setSelectedTier(null); setSelectedReason(""); setNotes(""); setConfirmInput(""); setCompleted(false); }}
-              className="bg-teal-600 hover:bg-teal-500 text-white"
+              className="bg-teal-600 hover:bg-teal-500 text-gray-900"
             >
               Run Another Upgrade
             </Button>
@@ -174,15 +174,15 @@ export default function TierUpgradeWizard() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6 bg-[#0A1628] min-h-screen">
+      <div className="p-6 space-y-6 bg-[#F8FAFC] min-h-screen">
 
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <Layers className="h-6 w-6 text-teal-400" />
+          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <Layers className="h-6 w-6 text-teal-700" />
             Tier Upgrade Wizard
           </h1>
-          <p className="text-slate-400 mt-1">Manual tier adjustment with audit trail</p>
+          <p className="text-gray-500 mt-1">Manual tier adjustment with audit trail</p>
         </div>
 
         {/* Step indicator */}
@@ -228,8 +228,8 @@ export default function TierUpgradeWizard() {
         {step === 1 && (
           <Card className="bg-[#0F1F38] border-[#1E293B]">
             <CardHeader>
-              <CardTitle className="text-white text-lg flex items-center gap-2">
-                <Search className="h-5 w-5 text-teal-400" />
+              <CardTitle className="text-gray-900 text-lg flex items-center gap-2">
+                <Search className="h-5 w-5 text-teal-700" />
                 Step 1 — Find Partner
               </CardTitle>
             </CardHeader>
@@ -240,12 +240,12 @@ export default function TierUpgradeWizard() {
                   onChange={e => { setSearchQuery(e.target.value); setPartnerFound(false); }}
                   placeholder="Partner name or ID..."
                   style={{
-                    flex: 1, background: "#0A1628", border: "1px solid #334155",
+                    flex: 1, background: "#F8FAFC", border: "1px solid #334155",
                     borderRadius: 8, padding: "10px 14px", color: "#E2E8F0",
                     fontSize: 14, outline: "none",
                   }}
                 />
-                <Button onClick={handleSearch} className="bg-teal-600 hover:bg-teal-500 text-white">
+                <Button onClick={handleSearch} className="bg-teal-600 hover:bg-teal-500 text-gray-900">
                   <Search className="h-4 w-4 mr-2" />
                   Search
                 </Button>
@@ -253,7 +253,7 @@ export default function TierUpgradeWizard() {
 
               {partnerFound && (
                 <div style={{
-                  background: "#0A1628", border: "1px solid #0D9488",
+                  background: "#F8FAFC", border: "1px solid #0D9488",
                   borderRadius: 12, padding: "16px 20px",
                 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -289,7 +289,7 @@ export default function TierUpgradeWizard() {
                     </div>
                   </div>
                   <div style={{ marginTop: 14, textAlign: "right" as const }}>
-                    <Button onClick={() => setStep(2)} className="bg-teal-600 hover:bg-teal-500 text-white">
+                    <Button onClick={() => setStep(2)} className="bg-teal-600 hover:bg-teal-500 text-gray-900">
                       Select This Partner
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
@@ -304,14 +304,14 @@ export default function TierUpgradeWizard() {
         {step === 2 && (
           <Card className="bg-[#0F1F38] border-[#1E293B]">
             <CardHeader>
-              <CardTitle className="text-white text-lg flex items-center gap-2">
-                <User className="h-5 w-5 text-teal-400" />
+              <CardTitle className="text-gray-900 text-lg flex items-center gap-2">
+                <User className="h-5 w-5 text-teal-700" />
                 Step 2 — Current Status
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div style={{
-                background: "#0A1628", borderRadius: 12, padding: "16px 20px",
+                background: "#F8FAFC", borderRadius: 12, padding: "16px 20px",
                 border: "1px solid #1E293B",
                 display: "grid", gridTemplateColumns: "1fr 1fr 1fr",
                 gap: 16,
@@ -341,7 +341,7 @@ export default function TierUpgradeWizard() {
                   value={selectedReason}
                   onChange={e => setSelectedReason(e.target.value)}
                   style={{
-                    width: "100%", background: "#0A1628", border: "1px solid #334155",
+                    width: "100%", background: "#F8FAFC", border: "1px solid #334155",
                     borderRadius: 8, padding: "10px 14px", color: "#E2E8F0",
                     fontSize: 14, outline: "none",
                   }}
@@ -363,7 +363,7 @@ export default function TierUpgradeWizard() {
                   placeholder="Add context for audit trail..."
                   rows={3}
                   style={{
-                    width: "100%", background: "#0A1628", border: "1px solid #334155",
+                    width: "100%", background: "#F8FAFC", border: "1px solid #334155",
                     borderRadius: 8, padding: "10px 14px", color: "#E2E8F0",
                     fontSize: 14, outline: "none", resize: "vertical" as const,
                     boxSizing: "border-box" as const,
@@ -372,13 +372,13 @@ export default function TierUpgradeWizard() {
               </div>
 
               <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <Button variant="ghost" onClick={() => setStep(1)} className="text-slate-400">
+                <Button variant="ghost" onClick={() => setStep(1)} className="text-gray-500">
                   Back
                 </Button>
                 <Button
                   disabled={!selectedReason}
                   onClick={() => setStep(3)}
-                  className="bg-teal-600 hover:bg-teal-500 text-white disabled:opacity-40"
+                  className="bg-teal-600 hover:bg-teal-500 text-gray-900 disabled:opacity-40"
                 >
                   Continue <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
@@ -391,8 +391,8 @@ export default function TierUpgradeWizard() {
         {step === 3 && (
           <Card className="bg-[#0F1F38] border-[#1E293B]">
             <CardHeader>
-              <CardTitle className="text-white text-lg flex items-center gap-2">
-                <Layers className="h-5 w-5 text-teal-400" />
+              <CardTitle className="text-gray-900 text-lg flex items-center gap-2">
+                <Layers className="h-5 w-5 text-teal-700" />
                 Step 3 — Select New Tier
               </CardTitle>
             </CardHeader>
@@ -404,7 +404,7 @@ export default function TierUpgradeWizard() {
                     key={tier.key}
                     onClick={() => setSelectedTier(tier.key)}
                     style={{
-                      background: selected ? tier.bgColor : "#0A1628",
+                      background: selected ? tier.bgColor : "#F8FAFC",
                       border: `1px solid ${selected ? tier.borderColor : "#1E293B"}`,
                       borderRadius: 12, padding: "14px 18px", cursor: "pointer",
                       transition: "all 0.15s",
@@ -446,11 +446,11 @@ export default function TierUpgradeWizard() {
                 );
               })}
               <div style={{ display: "flex", gap: 10, justifyContent: "flex-end", marginTop: 4 }}>
-                <Button variant="ghost" onClick={() => setStep(2)} className="text-slate-400">Back</Button>
+                <Button variant="ghost" onClick={() => setStep(2)} className="text-gray-500">Back</Button>
                 <Button
                   disabled={!selectedTier}
                   onClick={() => setStep(4)}
-                  className="bg-teal-600 hover:bg-teal-500 text-white disabled:opacity-40"
+                  className="bg-teal-600 hover:bg-teal-500 text-gray-900 disabled:opacity-40"
                 >
                   Preview Impact <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
@@ -463,15 +463,15 @@ export default function TierUpgradeWizard() {
         {step === 4 && selectedTierInfo && (
           <Card className="bg-[#0F1F38] border-[#1E293B]">
             <CardHeader>
-              <CardTitle className="text-white text-lg flex items-center gap-2">
-                <ArrowRight className="h-5 w-5 text-teal-400" />
+              <CardTitle className="text-gray-900 text-lg flex items-center gap-2">
+                <ArrowRight className="h-5 w-5 text-teal-700" />
                 Step 4 — Impact Preview
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div style={{
                 display: "flex", alignItems: "center", gap: 12,
-                background: "#0A1628", borderRadius: 10, padding: "14px 18px",
+                background: "#F8FAFC", borderRadius: 10, padding: "14px 18px",
                 border: "1px solid #1E293B",
               }}>
                 <div style={{
@@ -515,8 +515,8 @@ export default function TierUpgradeWizard() {
               </div>
 
               <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <Button variant="ghost" onClick={() => setStep(3)} className="text-slate-400">Back</Button>
-                <Button onClick={() => setStep(5)} className="bg-teal-600 hover:bg-teal-500 text-white">
+                <Button variant="ghost" onClick={() => setStep(3)} className="text-gray-500">Back</Button>
+                <Button onClick={() => setStep(5)} className="bg-teal-600 hover:bg-teal-500 text-gray-900">
                   Review & Confirm <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
               </div>
@@ -528,14 +528,14 @@ export default function TierUpgradeWizard() {
         {step === 5 && selectedTierInfo && (
           <Card className="bg-[#0F1F38] border-[#1E293B]">
             <CardHeader>
-              <CardTitle className="text-white text-lg flex items-center gap-2">
-                <Shield className="h-5 w-5 text-teal-400" />
+              <CardTitle className="text-gray-900 text-lg flex items-center gap-2">
+                <Shield className="h-5 w-5 text-teal-700" />
                 Step 5 — Confirm Upgrade
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div style={{
-                background: "#0A1628", borderRadius: 12, padding: "16px 20px",
+                background: "#F8FAFC", borderRadius: 12, padding: "16px 20px",
                 border: "1px solid #1E293B",
               }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: "#64748B", marginBottom: 12, textTransform: "uppercase" as const, letterSpacing: 0.5 }}>
@@ -569,7 +569,7 @@ export default function TierUpgradeWizard() {
                   onChange={e => setConfirmInput(e.target.value)}
                   placeholder="CONFIRM"
                   style={{
-                    width: "100%", background: "#0A1628", border: "1px solid #334155",
+                    width: "100%", background: "#F8FAFC", border: "1px solid #334155",
                     borderRadius: 8, padding: "10px 14px", color: "#E2E8F0",
                     fontSize: 14, outline: "none", boxSizing: "border-box" as const,
                     fontFamily: "monospace",
@@ -578,11 +578,11 @@ export default function TierUpgradeWizard() {
               </div>
 
               <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <Button variant="ghost" onClick={() => setStep(4)} className="text-slate-400">Back</Button>
+                <Button variant="ghost" onClick={() => setStep(4)} className="text-gray-500">Back</Button>
                 <Button
                   onClick={handleConfirm}
                   disabled={confirmInput !== "CONFIRM"}
-                  className="bg-teal-600 hover:bg-teal-500 text-white disabled:opacity-40"
+                  className="bg-teal-600 hover:bg-teal-500 text-gray-900 disabled:opacity-40"
                 >
                   <CheckCircle className="h-4 w-4 mr-2" />
                   Confirm Upgrade
@@ -595,8 +595,8 @@ export default function TierUpgradeWizard() {
         {/* Audit Log */}
         <Card className="bg-[#0F1F38] border-[#1E293B]">
           <CardHeader>
-            <CardTitle className="text-white text-base flex items-center gap-2">
-              <Clock className="h-4 w-4 text-slate-400" />
+            <CardTitle className="text-gray-900 text-base flex items-center gap-2">
+              <Clock className="h-4 w-4 text-gray-500" />
               Recent Manual Upgrades
             </CardTitle>
           </CardHeader>

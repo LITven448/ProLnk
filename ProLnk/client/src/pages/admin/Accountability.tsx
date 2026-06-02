@@ -18,7 +18,7 @@ const GOALS = [
   },
   {
     category: "TrustyPro",
-    color: "#82D616",
+    color: "#16A34A",
     items: [
       { label: "Homeowner Signups", target: 500, current: 287, unit: "homeowners" },
       { label: "Home Profiles Created", target: 400, current: 198, unit: "profiles" },

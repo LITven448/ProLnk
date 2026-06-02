@@ -16,8 +16,8 @@ import { toast } from "sonner";
 
 const STATUS_COLORS: Record<string, string> = {
   pending: "#FBB140",
-  processing: "#17C1E8",
-  complete: "#82D616",
+  processing: "#0D9488",
+  complete: "#16A34A",
   failed: "#EA0606",
 };
 
@@ -39,7 +39,7 @@ function ScanDetailModal({ scan, onClose }: { scan: any; onClose: () => void }) 
         </div>
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white" style={{ background: "linear-gradient(135deg, #49a3f1, #1A73E8)" }}>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white" style={{ background: "linear-gradient(135deg, #49a3f1, #0D9488)" }}>
               {(scan.homeownerName || "H")[0].toUpperCase()}
             </div>
             <div>
@@ -59,7 +59,7 @@ function ScanDetailModal({ scan, onClose }: { scan: any; onClose: () => void }) 
             </div>
             <div className="rounded-xl p-3" style={{ backgroundColor: T.bg }}>
               <div className="text-xs mb-1" style={{ color: T.muted }}>Health Score</div>
-              <div className="text-sm font-bold" style={{ color: scan.healthScore >= 70 ? "#82D616" : scan.healthScore >= 40 ? "#FBB140" : "#EA0606" }}>{scan.healthScore != null ? `${scan.healthScore}/100` : "—"}</div>
+              <div className="text-sm font-bold" style={{ color: scan.healthScore >= 70 ? "#16A34A" : scan.healthScore >= 40 ? "#FBB140" : "#EA0606" }}>{scan.healthScore != null ? `${scan.healthScore}/100` : "—"}</div>
             </div>
             <div className="rounded-xl p-3" style={{ backgroundColor: T.bg }}>
               <div className="text-xs mb-1" style={{ color: T.muted }}>Submitted</div>
@@ -98,7 +98,7 @@ export default function TrustyProScans() {
       label: "Total Scans",
       value: scans?.total ?? "—",
       icon: Camera,
-      bg: "linear-gradient(195deg, #49a3f1, #1A73E8)",
+      bg: "linear-gradient(195deg, #49a3f1, #0D9488)",
       sub: "All time",
     },
     {
@@ -131,7 +131,7 @@ export default function TrustyProScans() {
         {/* Header */}
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(195deg, #49a3f1, #1A73E8)" }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(195deg, #49a3f1, #0D9488)" }}>
               <Camera className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -235,7 +235,7 @@ export default function TrustyProScans() {
                     <tr key={scan.id} className="transition-colors hover:opacity-80" style={{ borderBottom: `1px solid ${T.border}` }}>
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: "linear-gradient(135deg, #49a3f1, #1A73E8)" }}>
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: "linear-gradient(135deg, #49a3f1, #0D9488)" }}>
                             {(scan.homeownerName || "H")[0].toUpperCase()}
                           </div>
                           <div>
@@ -280,7 +280,7 @@ export default function TrustyProScans() {
                                 className="h-full rounded-full"
                                 style={{
                                   width: `${scan.healthScore}%`,
-                                  backgroundColor: scan.healthScore >= 70 ? "#82D616" : scan.healthScore >= 40 ? "#FBB140" : "#EA0606",
+                                  backgroundColor: scan.healthScore >= 70 ? "#16A34A" : scan.healthScore >= 40 ? "#FBB140" : "#EA0606",
                                 }}
                               />
                             </div>
@@ -306,10 +306,10 @@ export default function TrustyProScans() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="p-1.5 rounded-lg transition-all hover:opacity-80"
-                              style={{ backgroundColor: "#82D61615" }}
+                              style={{ backgroundColor: "#16A34A15" }}
                               title="Download report"
                             >
-                              <Download className="w-3.5 h-3.5" style={{ color: "#82D616" }} />
+                              <Download className="w-3.5 h-3.5" style={{ color: "#16A34A" }} />
                             </a>
                           )}
                         </div>

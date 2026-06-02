@@ -63,7 +63,7 @@ export default function GeographicExpansionTracker() {
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
             <div style={{
               width: 44, height: 44, borderRadius: 12,
-              background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+              background: "linear-gradient(135deg, #0D9488, #6D28D9)",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}>
               <MapPin size={22} color="#fff" />
@@ -283,7 +283,7 @@ export default function GeographicExpansionTracker() {
                 }}>
                   <div style={{
                     width: 28, height: 28, borderRadius: "50%",
-                    background: item.active ? "#7C3AED" : "#1E293B",
+                    background: item.active ? "#0D9488" : "#1E293B",
                     border: item.active ? "3px solid #A78BFA" : "2px solid #334155",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginBottom: 10,

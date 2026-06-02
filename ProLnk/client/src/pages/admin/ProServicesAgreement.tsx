@@ -241,7 +241,7 @@ export default function ProServicesAgreement() {
             <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
               <div className="flex items-center gap-2 mb-1">
                 <Icon className={`w-4 h-4 ${color}`} />
-                <span className="text-xs" style={{ color: "#7B809A" }}>{label}</span>
+                <span className="text-xs" style={{ color: "#4B5563" }}>{label}</span>
               </div>
               <p className="text-2xl font-bold text-gray-800">{isLoading ? "..." : value}</p>
             </div>
@@ -250,10 +250,10 @@ export default function ProServicesAgreement() {
 
         {/* Info card */}
         <div className="rounded-xl border p-4 flex items-start gap-3" style={{ backgroundColor: "#FFFFFF", borderColor: "#E9ECEF" }}>
-          <FileText className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+          <FileText className="w-5 h-5 text-teal-700 shrink-0 mt-0.5" />
           <div>
             <p className="text-sm font-medium text-gray-800">How to use this tool</p>
-            <p className="text-xs mt-1" style={{ color: "#7B809A" }}>
+            <p className="text-xs mt-1" style={{ color: "#4B5563" }}>
               Select any approved partner to generate a pre-filled Pro Services Agreement with their business name, Partner ID, Lead Source Tag (ProLnk-{"{id}"}), tier details, and commission rates. Download as .txt and upload to DocuSign, HelloSign, or PandaDoc for e-signature. Each agreement is unique to the partner.
             </p>
           </div>
@@ -266,22 +266,22 @@ export default function ProServicesAgreement() {
             placeholder="Search approved partners..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9 border-slate-700 bg-slate-800 text-gray-800 placeholder:text-slate-500"
+            className="pl-9 border-gray-200 bg-white text-gray-800 placeholder:text-gray-500"
           />
         </div>
 
         {/* Partner list */}
         <div className="rounded-xl border overflow-hidden" style={{ borderColor: "#E9ECEF" }}>
-          <div className="px-4 py-3 border-b flex items-center justify-between" style={{ backgroundColor: "#0A1628", borderColor: "#E9ECEF" }}>
+          <div className="px-4 py-3 border-b flex items-center justify-between" style={{ backgroundColor: "#F8FAFC", borderColor: "#E9ECEF" }}>
             <span className="text-xs font-semibold text-gray-800">Approved Partners</span>
-            <span className="text-xs" style={{ color: "#7B809A" }}>{filtered.length} partners</span>
+            <span className="text-xs" style={{ color: "#4B5563" }}>{filtered.length} partners</span>
           </div>
           {isLoading ? (
             <div className="p-8 text-center text-gray-400 text-sm">Loading partners...</div>
           ) : filtered.length === 0 ? (
             <div className="p-8 text-center text-gray-400 text-sm">No approved partners found</div>
           ) : (
-            <div className="divide-y divide-slate-700">
+            <div className="divide-y divide-gray-200">
               {filtered.map((partner: any) => (
                 <div key={partner.id} className="flex items-center gap-4 px-4 py-3 hover:bg-white/5 transition-colors" style={{ backgroundColor: "#FFFFFF" }}>
                   <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-gray-800 shrink-0"
@@ -290,7 +290,7 @@ export default function ProServicesAgreement() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-800 truncate">{partner.businessName}</p>
-                    <p className="text-xs truncate" style={{ color: "#7B809A" }}>
+                    <p className="text-xs truncate" style={{ color: "#4B5563" }}>
                       {partner.contactName}  Partner #{partner.id}  Tag: ProLnk-{partner.id}
                     </p>
                   </div>
@@ -302,7 +302,7 @@ export default function ProServicesAgreement() {
                       size="sm"
                       variant="outline"
                       onClick={() => handleGenerate(partner)}
-                      className="gap-1.5 text-xs border-slate-600 text-slate-300 hover:bg-white/10"
+                      className="gap-1.5 text-xs border-gray-300 text-gray-700 hover:bg-white/10"
                     >
                       <Eye className="w-3.5 h-3.5" /> Generate
                     </Button>

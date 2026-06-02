@@ -1193,6 +1193,71 @@ export async function sendProMatchedNotification(homeownerEmail: string, opts: {
   });
 }
 
+// ─── Proactive AI Opportunity (the signature moat) ──────────────────────────────
+// "We noticed something at your home" — TrustyPro proactively reaches a homeowner
+// after AI photo/scan analysis detects an actionable issue, showing the finding,
+// a (best-effort) "what it could look like fixed" rendering, and a one-click CTA
+// that opts the homeowner into a real quote. Brand: TrustyPro. Fully no-op without
+// a RESEND_API_KEY (sendEmail guards that) — never throws into the analysis flow.
+export async function sendProactiveOpportunityNotification(opts: {
+  homeownerEmail: string;
+  homeownerName?: string;
+  propertyAddress?: string;
+  trade: string;
+  headline: string;
+  description: string;
+  estimatedCostRange?: string;
+  renderingUrl?: string | null;
+  beforePhotoUrl?: string | null;
+  acceptUrl: string;
+}): Promise<boolean> {
+  const firstName = opts.homeownerName?.split(" ")[0] || "there";
+  const address = opts.propertyAddress ? ` at <strong style="color:#1e293b;">${opts.propertyAddress}</strong>` : "";
+  const renderBlock = opts.renderingUrl
+    ? `
+          <p style="color:#64748b;line-height:1.6;margin:24px 0 8px;font-weight:600;color:#1e293b;">Here's what it could look like fixed:</p>
+          <div style="display:flex;gap:8px;margin:8px 0 20px;">
+            ${opts.beforePhotoUrl ? `<div style="flex:1;text-align:center;"><img src="${opts.beforePhotoUrl}" alt="Now" style="width:100%;border-radius:8px;border:1px solid #e2e8f0;" /><div style="font-size:11px;color:#94a3b8;margin-top:4px;">Now</div></div>` : ""}
+            <div style="flex:1;text-align:center;"><img src="${opts.renderingUrl}" alt="After" style="width:100%;border-radius:8px;border:2px solid #0891b2;" /><div style="font-size:11px;color:#0891b2;font-weight:600;margin-top:4px;">After (AI preview)</div></div>
+          </div>`
+    : "";
+  return sendEmail({
+    from: FROM_TRUSTYPRO,
+    to: opts.homeownerEmail,
+    subject: `We noticed something at your home — ${opts.trade}`,
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
+        <div style="background:linear-gradient(135deg,#1e3a5f,#0891b2);padding:32px;text-align:center;">
+          <div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-1px;">TrustyPro</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">AI Home Watch</div>
+        </div>
+        <div style="padding:32px;">
+          <h2 style="color:#1e293b;margin:0 0 8px;">We noticed something, ${firstName}.</h2>
+          <p style="color:#64748b;line-height:1.6;">Our AI reviewed recent photos${address} and spotted an opportunity worth your attention.</p>
+          <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:8px;padding:20px;margin:20px 0;">
+            <div style="font-weight:700;color:#0e7490;margin-bottom:6px;">${opts.headline}</div>
+            <div style="color:#475569;line-height:1.6;font-size:14px;">${opts.description}</div>
+            <div style="display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid #ccfbf1;">
+              <span style="color:#64748b;font-size:13px;">Trade</span>
+              <span style="color:#1e293b;font-weight:600;">${opts.trade}</span>
+            </div>
+            ${opts.estimatedCostRange ? `<div style="display:flex;justify-content:space-between;margin-top:8px;"><span style="color:#64748b;font-size:13px;">Typical cost</span><span style="color:#1e293b;font-weight:600;">${opts.estimatedCostRange}</span></div>` : ""}
+          </div>
+          ${renderBlock}
+          <p style="color:#64748b;line-height:1.6;">Want a no-obligation quote from a verified local pro? One tap and we'll match you — you're never charged for the match.</p>
+          <div style="text-align:center;margin:24px 0;">
+            <a href="${opts.acceptUrl}" style="background:#0891b2;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;display:inline-block;">Yes, get me a quote →</a>
+          </div>
+          <p style="color:#94a3b8;font-size:12px;text-align:center;">No pressure — if it's nothing, ignore this email and nothing happens.</p>
+        </div>
+        <div style="background:#f1f5f9;padding:20px 32px;text-align:center;">
+          <p style="color:#94a3b8;font-size:12px;margin:0;">© 2026 TrustyPro · DFW, Texas</p>
+        </div>
+      </div>
+    `,
+  });
+}
+
 // ─── Partner Password Reset ────────────────────────────────────────────────────
 export async function sendPartnerPasswordReset(opts: {
   to: string;

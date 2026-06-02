@@ -215,6 +215,21 @@ export const photoPipelineRouter = router({
         .set({ analysisStatus: sessionStatus, analysisResult: JSON.stringify(aggregate) })
         .where(eq(photoSessions.id, input.sessionId));
 
+      // ── Signature moat: fire proactive homeowner outreach off the back of the
+      // analysis. Fully async + defensive — it reads findings off the session it
+      // just stored, decides actionability, and (if warranted) emails the
+      // homeowner. It must NEVER break or block the analysis response. ──
+      if (analyzedCount > 0) {
+        void (async () => {
+          try {
+            const { processAnalyzedPhotos } = await import("../proactive-outreach");
+            await processAnalyzedPhotos({ sessionId: input.sessionId });
+          } catch (e) {
+            console.error("[PhotoPipeline] proactive outreach failed (suppressed):", e);
+          }
+        })();
+      }
+
       if (analyzedCount === 0) {
         return { status: "failed", message: "Analysis failed for all photos in this session." };
       }
@@ -227,6 +242,14 @@ export const photoPipelineRouter = router({
         totalOpportunities,
         highPriorityCount,
       };
+    }),
+
+  // ── Admin: manually fire proactive outreach for a session (testable trigger) ──
+  triggerProactiveOutreach: adminProcedure
+    .input(z.object({ sessionId: z.number() }))
+    .mutation(async ({ input }) => {
+      const { processAnalyzedPhotos } = await import("../proactive-outreach");
+      return processAnalyzedPhotos({ sessionId: input.sessionId });
     }),
 
   // ── Get Home Health Vault scores ────────────────────────────────────────────

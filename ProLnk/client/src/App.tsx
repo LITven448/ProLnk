@@ -398,6 +398,7 @@ const AdminPayoutHistory = lazy(() => import("./pages/admin/PayoutHistory"));
 const SeasonalCampaigns = lazy(() => import("./pages/admin/SeasonalCampaigns"));
 const PaymentMonitor = lazy(() => import("./pages/admin/PaymentMonitor"));
 const AdminCoverageMap = lazy(() => import("./pages/admin/AdminCoverageMap"));
+const CoverageGapAnalysis = lazy(() => import("./pages/admin/CoverageGapAnalysis"));
 const PlatformIntelligence = lazy(() => import("@/pages/admin/PlatformIntelligence"));
 const CompetitorIntelligence = lazy(() => import("@/pages/admin/CompetitorIntelligence"));
 const TaskManager = lazy(() => import("@/pages/admin/TaskManager"));
@@ -1166,6 +1167,7 @@ function Router() {
       <Route path="/admin/seasonal-campaigns" component={SeasonalCampaigns} />
       <Route path="/admin/payment-monitor" component={PaymentMonitor} />
       <Route path="/admin/coverage-map" component={AdminCoverageMap} />
+      <Route path="/admin/coverage-gaps" component={CoverageGapAnalysis} />
       <Route path="/dashboard/service-area" component={ServiceAreaManager} />
       <Route path="/dashboard/forecast" component={EarningsForecast} />
       <Route path="/dashboard/earnings-detail" component={EarningsDeepDive} />

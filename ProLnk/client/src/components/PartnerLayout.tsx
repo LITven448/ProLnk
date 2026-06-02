@@ -99,6 +99,7 @@ const NAV_ITEMS = [
       { label: "Recruit",       href: "/dashboard/referral" },
       { label: "Community",     href: "/dashboard/community" },
       { label: "Networking Events", href: "/dashboard/events" },
+      { label: "Scout Dashboard", href: "/scout" },
       { label: "Scout Assessment", href: "/dashboard/scout-assessment" },
       { label: "Marketing Kit", href: "/dashboard/marketing-kit" },
       { label: "AI Assistant",  href: "/dashboard/ai" },

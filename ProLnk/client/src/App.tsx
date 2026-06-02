@@ -45,6 +45,7 @@ const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
 const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
 const PartnerOffers = lazy(() => import("./pages/PartnerOffers"));
+const ScoutDashboard = lazy(() => import("./pages/ScoutDashboard"));
 const RequestService = lazy(() => import("./pages/RequestService"));
 const RequestStatus = lazy(() => import("./pages/RequestStatus"));
 const MatchingConsole = lazy(() => import("./pages/admin/MatchingConsole"));
@@ -729,7 +730,7 @@ const WAITLIST_ALLOWED = new Set([
   "/login", "/admin-login", "/partner-login", "/partner-forgot-password",
   "/set-password", "/pricing", "/pricing/standard",
   "/partner-agreement", "/ach-authorization",
-  "/partner/offers", "/request-service",
+  "/partner/offers", "/request-service", "/scout",
 ]);
 
 function WaitlistGuard() {
@@ -796,6 +797,7 @@ function Router() {
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />
       <Route path="/partner/offers" component={PartnerOffers} />
+      <Route path="/scout" component={ScoutDashboard} />
       <Route path="/request-service" component={RequestService} />
       <Route path="/my-request/:id" component={RequestStatus} />
       <Route path="/dashboard/leads" component={InboundLeads} />

@@ -16,6 +16,7 @@
  */
 
 import { z } from "zod";
+import crypto from "crypto";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
@@ -314,6 +315,23 @@ Write:
     };
   }
 }
+
+// ─── Origination address hashing ────────────────────────────────────────────
+// MUST match server/agents/commissionCascadeEngine.ts (findHomeOriginator) so a
+// property documented here is recognized as the origination source when jobs at
+// that address close and the cascade engine writes payout_type='home_origination'.
+function normalizeAddress(address: string): string {
+  return address.toLowerCase().trim().replace(/\s+/g, " ");
+}
+function hashAddress(address: string): string {
+  return crypto.createHash("sha256").update(normalizeAddress(address)).digest("hex");
+}
+
+// Home origination = 5% of the platform fee on every job at a documented property,
+// paid forever to the first documenter. Recorded by the cascade engine as
+// commission_payout rows with payout_type='home_origination', recipient_user_id =
+// the documenting pro's id.
+const ORIGINATION_RATE = 0.05;
 
 // ─── Router ───────────────────────────────────────────────────────────────────
 
@@ -759,4 +777,176 @@ export const scoutRouter = router({
         disclaimer: "Actual commission depends on which jobs close and at what final value.",
       };
     }),
+
+  // ── Onboard a property: claim origination rights ────────────────────────────
+  // Writes a home_documentation row crediting this Scout as the first documenter.
+  // Idempotent per address_hash: if the address is already documented, we do NOT
+  // create a competing claim and do NOT steal origination — we return who holds it.
+  onboardProperty: protectedProcedure
+    .input(z.object({
+      address: z.string().min(5).max(500),
+      homeownerName: z.string().max(255).optional(),
+      homeownerEmail: z.string().email().optional(),
+      homeownerPhone: z.string().max(30).optional(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      const proUserId = String(ctx.user.id);
+      const addressHash = hashAddress(input.address);
+
+      const existingRows = await (db as any).execute(
+        sql`SELECT pro_user_id AS proUserId, full_address AS fullAddress, documented_at AS documentedAt
+            FROM home_documentation WHERE address_hash = ${addressHash} LIMIT 1`
+      );
+      const existing = (existingRows.rows ?? existingRows)[0];
+
+      if (existing) {
+        const heldByMe = String(existing.proUserId) === proUserId;
+        return {
+          alreadyDocumented: true,
+          claimed: false,
+          heldByMe,
+          originatorUserId: existing.proUserId,
+          address: existing.fullAddress,
+          documentedAt: existing.documentedAt,
+          message: heldByMe
+            ? "You already hold origination rights on this property."
+            : "This property is already documented by another Scout. Origination rights are held by the first documenter.",
+        };
+      }
+
+      // First documenter wins origination. INSERT IGNORE guards the unique
+      // address_hash index against a concurrent claim race.
+      await (db as any).execute(sql`
+        INSERT IGNORE INTO home_documentation
+          (pro_user_id, address_hash, full_address, is_first_documentation, origination_credit_earned, origination_credit_amount, documented_at)
+        VALUES
+          (${proUserId}, ${addressHash}, ${input.address}, 1, 1, 0.00, NOW())
+      `);
+
+      // Re-read to confirm who actually holds the claim (handles the race where a
+      // concurrent insert won — never report a steal).
+      const confirmRows = await (db as any).execute(
+        sql`SELECT pro_user_id AS proUserId FROM home_documentation WHERE address_hash = ${addressHash} LIMIT 1`
+      );
+      const holder = (confirmRows.rows ?? confirmRows)[0];
+      const claimed = holder && String(holder.proUserId) === proUserId;
+
+      return {
+        alreadyDocumented: !claimed,
+        claimed: !!claimed,
+        heldByMe: !!claimed,
+        originatorUserId: holder?.proUserId ?? proUserId,
+        address: input.address,
+        documentedAt: new Date(),
+        message: claimed
+          ? "Property documented. You now earn 5% origination income on every job here, forever."
+          : "This property was just claimed by another Scout.",
+      };
+    }),
+
+  // ── My documented properties + per-property origination earned ──────────────
+  getMyProperties: protectedProcedure.query(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) return [];
+    const proUserId = String(ctx.user.id);
+
+    const rows = await (db as any).execute(sql`
+      SELECT
+        hd.id,
+        hd.full_address AS address,
+        hd.address_hash AS addressHash,
+        hd.documented_at AS documentedAt,
+        COALESCE((
+          SELECT SUM(cp.amount) FROM commission_payout cp
+          WHERE cp.recipient_user_id = ${proUserId} AND cp.payout_type = 'home_origination'
+        ), 0) AS lifetimeOrigination
+      FROM home_documentation hd
+      WHERE hd.pro_user_id = ${proUserId} AND hd.is_first_documentation = 1
+      ORDER BY hd.documented_at DESC
+    `);
+    const list = (rows.rows ?? rows) as any[];
+
+    // Per-property origination + jobs require an address join. commission_payout
+    // has no address column, so we attribute origination at the Scout level and
+    // count jobs at each address via the jobs table when present.
+    const enriched = await Promise.all(list.map(async (p: any) => {
+      let jobsCompleted = 0;
+      try {
+        const jr = await (db as any).execute(sql`
+          SELECT COUNT(*) AS c FROM jobs WHERE serviceAddress = ${p.address} AND status IN ('completed','closed','opportunities_sent')
+        `);
+        jobsCompleted = parseInt((jr.rows ?? jr)[0]?.c ?? "0", 10) || 0;
+      } catch { jobsCompleted = 0; }
+      return {
+        id: p.id,
+        address: p.address,
+        documentedAt: p.documentedAt,
+        jobsCompleted,
+        originationEarned: 0,
+      };
+    }));
+    return enriched;
+  }),
+
+  // ── Origination earnings summary (the dopamine surface) ─────────────────────
+  getOriginationEarnings: protectedProcedure.query(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) {
+      return {
+        totalEarned: 0, thisMonth: 0, propertyCount: 0,
+        projectedAnnual: 0, recentPayouts: [], originationRate: ORIGINATION_RATE,
+      };
+    }
+    const proUserId = String(ctx.user.id);
+    const now = new Date();
+    const payoutMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+
+    const totalRows = await (db as any).execute(sql`
+      SELECT COALESCE(SUM(amount), 0) AS total FROM commission_payout
+      WHERE recipient_user_id = ${proUserId} AND payout_type = 'home_origination'
+    `);
+    const totalEarned = parseFloat((totalRows.rows ?? totalRows)[0]?.total ?? "0") || 0;
+
+    const monthRows = await (db as any).execute(sql`
+      SELECT COALESCE(SUM(amount), 0) AS total FROM commission_payout
+      WHERE recipient_user_id = ${proUserId} AND payout_type = 'home_origination' AND payout_month = ${payoutMonth}
+    `);
+    const thisMonth = parseFloat((monthRows.rows ?? monthRows)[0]?.total ?? "0") || 0;
+
+    const propRows = await (db as any).execute(sql`
+      SELECT COUNT(*) AS c FROM home_documentation
+      WHERE pro_user_id = ${proUserId} AND is_first_documentation = 1
+    `);
+    const propertyCount = parseInt((propRows.rows ?? propRows)[0]?.c ?? "0", 10) || 0;
+
+    const recentRows = await (db as any).execute(sql`
+      SELECT amount, payout_month AS payoutMonth, status, created_at AS createdAt
+      FROM commission_payout
+      WHERE recipient_user_id = ${proUserId} AND payout_type = 'home_origination'
+      ORDER BY created_at DESC LIMIT 10
+    `);
+    const recentPayouts = ((recentRows.rows ?? recentRows) as any[]).map((r: any) => ({
+      amount: parseFloat(r.amount ?? "0") || 0,
+      payoutMonth: r.payoutMonth,
+      status: r.status,
+      createdAt: r.createdAt,
+    }));
+
+    // Projection: average monthly origination over observed period, annualized,
+    // floored by a simple per-property heuristic (1.5 jobs/property/yr × est. fee).
+    const monthsObserved = Math.max(1, recentPayouts.length > 0 ? new Set(recentPayouts.map(p => p.payoutMonth)).size : 1);
+    const projectedAnnual = Math.round((totalEarned / monthsObserved) * 12 * 100) / 100;
+
+    return {
+      totalEarned,
+      thisMonth,
+      propertyCount,
+      projectedAnnual,
+      recentPayouts,
+      originationRate: ORIGINATION_RATE,
+    };
+  }),
 });

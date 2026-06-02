@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
+import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import {
@@ -61,8 +62,10 @@ type Offer = {
 function OfferCard({ offer, onResponded }: { offer: Offer; onResponded: () => void }) {
   const respond = trpc.matching.respondToOffer.useMutation({
     onSuccess: (data) => {
-      if (data.status === "accepted") toast.success("Offer accepted — the job is yours.");
-      else toast.success("Offer declined — routing to the next partner.");
+      if (data.status === "accepted") {
+        toast.success("Offer accepted — the job is yours.");
+        track("offer_accepted", { offerId: offer.offerId });
+      } else toast.success("Offer declined — routing to the next partner.");
       onResponded();
     },
     onError: (err) => toast.error(`Failed: ${err.message}`),

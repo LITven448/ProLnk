@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { trpc } from "@/lib/trpc";
+import { track } from "@/lib/analytics";
 import { useState } from "react";
 import {
   MessageSquare,
@@ -330,6 +331,7 @@ export default function HomeownerMessages() {
         ? { ...t, messages: [...t.messages, msg], lastMessage: replyText.trim(), lastTime: "Just now" }
         : t
     ));
+    track("chat_message_sent", { threadId: activeThreadId, kind: "reply" });
     setReplyText("");
   }
 
@@ -348,6 +350,7 @@ export default function HomeownerMessages() {
         ? { ...t, messages: [...t.messages, msg], lastMessage: text, lastTime: "Just now" }
         : t
     ));
+    track("chat_message_sent", { threadId: activeThreadId, kind: "quick_reply" });
   }
 
   function sendQuoteRequest() {
@@ -589,7 +592,7 @@ export default function HomeownerMessages() {
                     key={t.id}
                     thread={t}
                     active={activeThreadId === t.id}
-                    onClick={() => setActiveThreadId(t.id)}
+                    onClick={() => { setActiveThreadId(t.id); track("chat_opened", { threadId: t.id }); }}
                   />
                 ))}
               </div>

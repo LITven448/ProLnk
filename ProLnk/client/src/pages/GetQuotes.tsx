@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
+import { track } from "@/lib/analytics";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -247,6 +248,7 @@ export default function GetQuotes() {
 
   const submitMutation = trpc.waitlist.joinHomeWaitlist.useMutation({
     onSuccess: () => {
+      track("homeowner_request_submitted", { source: "get_quotes" });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     },

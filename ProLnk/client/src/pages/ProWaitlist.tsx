@@ -6,6 +6,7 @@ import ProLnkLogo from "@/components/ProLnkLogo";
 import BackToTop from "@/components/BackToTop";
 import { FadeUp, FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/ScrollAnimations";
 import { trpc } from "@/lib/trpc";
+import { track } from "@/lib/analytics";
 import { Link } from "wouter";
 import { toast } from "sonner";
 import {
@@ -908,6 +909,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
       localStorage.setItem("prolnk_referral_code", code);
       localStorage.setItem("prolnk_user_email", vars.email);
       setReferralLink(`${base}/join?ref=${code}`);
+      track("pro_waitlist_submitted", { referred: Boolean(vars.referredBy) });
       setStep("success");
     },
     onError: (e: { message?: string }) => toast.error(e.message || "Something went wrong."),

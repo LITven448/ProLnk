@@ -7,6 +7,7 @@
 import { useState } from "react";
 import { useParams, useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
+import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
@@ -55,6 +56,7 @@ export default function ScoutAssessmentWizard() {
     onSuccess: (data) => {
       setAssessmentId(data.assessmentId);
       setStep("zones");
+      track("scout_property_onboarded", { assessmentId: data.assessmentId });
       toast.success("Assessment started!");
     },
     onError: (e) => toast.error(e.message),

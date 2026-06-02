@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
+import { track } from "@/lib/analytics";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -80,6 +81,7 @@ export default function HomeownerWaitlistForm() {
     onSuccess: () => {
       const code = `HO${Date.now().toString(36).toUpperCase().slice(-6)}`;
       setReferralLink(`${window.location.origin}/home-waitlist?ref=${code}`);
+      track("homeowner_request_submitted", { source: "homeowner_waitlist_form" });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     },

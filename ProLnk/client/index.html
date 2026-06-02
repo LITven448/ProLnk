@@ -72,18 +72,16 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+      // Service worker permanently disabled (caused stale-cache + redirect breakage).
+      // Actively unregister any existing SW and clear its caches so browsers self-heal.
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js', { scope: '/' })
-            .then(reg => console.log('[SW] Registered, scope:', reg.scope))
-            .catch(err => console.warn('[SW] Registration failed:', err));
-        });
+        navigator.serviceWorker.getRegistrations()
+          .then(regs => regs.forEach(r => r.unregister())).catch(() => {});
+        if (window.caches) {
+          caches.keys().then(keys => keys.forEach(k => caches.delete(k))).catch(() => {});
+        }
       }
     </script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
 
 </html>

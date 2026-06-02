@@ -130,6 +130,7 @@ import { commissionsRouter } from "./routers/commissions";
 import { partnerOAuthRouter } from "./routers/partnerOAuth";
 import { photoUploadRouter } from "./routers/photoUpload";
 import { makeRequestTrackingToken, verifyRequestTrackingToken } from "./_core/requestToken";
+import { demoRouter } from "./routers/demo";
 
 // -- Admin guard --
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -355,6 +356,7 @@ export const appRouter = router({
   propertyEnrichment: propertyEnrichmentRouter,
   smartRoute: smartRouteRouter,
   matching: matchingRouter,
+  demo: demoRouter,
   adminDisputes: adminDisputesRouter,
   adminNotifications: adminNotificationsRouter,
   checkr: checkrRouter,

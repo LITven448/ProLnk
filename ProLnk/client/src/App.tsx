@@ -31,6 +31,7 @@ const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
 const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import RewardfulScript from "@/components/RewardfulScript";
+import DemoModePanel from "@/components/DemoModePanel";
 
 // Pages -- lazy loaded (all admin, dashboard, homeowner, feature pages)
 const ApiDocs = lazy(() => import("./pages/ApiDocs"));
@@ -721,6 +722,60 @@ const LazyFallback = () => (
   </div>
 );
 
+// -- Preview / Demo mode --------------------------------------------------------
+// Visiting any path with ?preview=<KEY> (matching VITE_PREVIEW_KEY) sets a
+// persistent flag (localStorage + cookie) that lets the tester through the
+// WaitlistGuard to the FULL product. ?preview=off clears it. When the flag is
+// absent, behavior is identical to the public waitlist gate.
+export const PREVIEW_KEY: string =
+  (import.meta as any).env?.VITE_PREVIEW_KEY || "prolnk-preview-2026";
+const PREVIEW_STORAGE_KEY = "prolnk_preview";
+
+function setPreviewCookie(on: boolean) {
+  if (typeof document === "undefined") return;
+  if (on) {
+    document.cookie = `${PREVIEW_STORAGE_KEY}=1; path=/; max-age=${60 * 60 * 24 * 90}; SameSite=Lax`;
+  } else {
+    document.cookie = `${PREVIEW_STORAGE_KEY}=; path=/; max-age=0; SameSite=Lax`;
+  }
+}
+
+function readPreviewCookie(): boolean {
+  if (typeof document === "undefined") return false;
+  return document.cookie.split(";").some((c) => c.trim().startsWith(`${PREVIEW_STORAGE_KEY}=1`));
+}
+
+// Process ?preview= on every load, then report whether preview mode is active.
+export function resolvePreviewMode(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const param = params.get("preview");
+    if (param === "off") {
+      window.localStorage.removeItem(PREVIEW_STORAGE_KEY);
+      setPreviewCookie(false);
+      return false;
+    }
+    if (param && param === PREVIEW_KEY) {
+      window.localStorage.setItem(PREVIEW_STORAGE_KEY, "1");
+      setPreviewCookie(true);
+      return true;
+    }
+    return window.localStorage.getItem(PREVIEW_STORAGE_KEY) === "1" || readPreviewCookie();
+  } catch {
+    return false;
+  }
+}
+
+export function isPreviewActive(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(PREVIEW_STORAGE_KEY) === "1" || readPreviewCookie();
+  } catch {
+    return false;
+  }
+}
+
 const WAITLIST_ALLOWED = new Set([
   "/apply", "/apply-v2",
   "/join", "/pro-waitlist", "/home-waitlist", "/referral", "/dashboard",
@@ -740,6 +795,9 @@ function WaitlistGuard() {
   const [location, navigate] = useLocation();
   useEffect(() => {
     const search = typeof window !== "undefined" ? window.location.search : "";
+    // Preview/Demo bypass: a valid ?preview=<KEY> (or a previously set flag) lets
+    // the tester through to the FULL product. Public (no flag) is unaffected.
+    if (resolvePreviewMode()) return;
     if (location === "/") {
       const isTrustyPro = (window as any).__BRAND__ === "trustypro";
       navigate((isTrustyPro ? "/waitlist/homeowner" : "/pro-waitlist") + search, { replace: true });
@@ -1419,6 +1477,7 @@ function AppContent() {
       <Router />
       <CookieConsentBanner />
       <GlobalSupportChat />
+      <DemoModePanel />
     </>
   );
 }

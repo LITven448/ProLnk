@@ -60,6 +60,9 @@ export async function ensureJobOffersInfra(): Promise<void> {
     `ALTER TABLE \`opportunities\` MODIFY \`jobId\` int NULL`,
     `ALTER TABLE \`opportunities\` MODIFY \`sourcePartnerId\` int NULL`,
     `ALTER TABLE \`jobOffers\` ADD \`reminderSentAt\` timestamp NULL`,
+    `ALTER TABLE \`opportunities\` ADD \`parentOpportunityId\` int`,
+    `ALTER TABLE \`opportunities\` ADD \`approvedProjectValue\` decimal(12,2)`,
+    `ALTER TABLE \`opportunities\` ADD \`postedComponentTotal\` decimal(12,2)`,
   ];
   for (const s of stmts) {
     try {

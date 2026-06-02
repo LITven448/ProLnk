@@ -5,10 +5,12 @@
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { getDb } from "../db";
-import { exchangeJobs, exchangeBids, partners, partnerNotifications } from "../../drizzle/schema";
-import { eq, desc, and, ne, sql } from "drizzle-orm";
+import { exchangeJobs, exchangeBids, partners, partnerNotifications, opportunities } from "../../drizzle/schema";
+import { eq, desc, and, ne, sql, inArray } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { notifyOwner } from "../_core/notification";
+import { decomposeProject } from "../exchange-decomposition";
+import { createOfferForOpportunity, ensureJobOffersInfra } from "./matching";
 
 export const exchangeRouter = router({
   // Pre-launch public job submission — stores via owner notification, no auth required
@@ -247,5 +249,191 @@ export const exchangeRouter = router({
       }
 
       return { success: true };
+    }),
+
+  // -- Multi-trade Exchange decomposition -----------------------------------
+  // A Scout (or homeowner) posts a large multi-trade project. AI breaks it into
+  // trade components; each becomes its own FIXED-price child opportunity that is
+  // routed to the best-matched pro through the existing offer/accept/cascade system.
+  postProject: protectedProcedure
+    .input(z.object({
+      scope: z.string().min(10),
+      // Homeowner-approved total. ProLnk takes its % off this full approved value.
+      approvedTotal: z.number().min(100),
+      // Total the Scout posts components against (margin = approvedTotal - postedTotal).
+      // Defaults to approvedTotal when omitted (no margin held back).
+      postedTotal: z.number().min(100).optional(),
+      zip: z.string().min(3).max(20),
+      address: z.string().optional(),
+      title: z.string().max(255).optional(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+      await ensureJobOffersInfra();
+
+      const postedTotal = input.postedTotal ?? input.approvedTotal;
+      if (postedTotal > input.approvedTotal) {
+        throw new TRPCError({ code: "BAD_REQUEST", message: "Posted total cannot exceed approved total" });
+      }
+
+      const { components, decomposed } = await decomposeProject({
+        scope: input.scope,
+        totalValue: postedTotal,
+        propertyZip: input.zip,
+        address: input.address,
+      });
+
+      const submittedByUserId = ctx.user?.id ?? null;
+      const title = input.title?.trim() || input.scope.slice(0, 120);
+
+      // Parent project opportunity (status "project" — never offered directly).
+      const parentRes = await (db as any).execute(
+        `INSERT INTO opportunities
+           (intakeSource, opportunityType, opportunityCategory, description,
+            jobZip, jobAddress, estimatedJobValue, submittedByUserId,
+            approvedProjectValue, postedComponentTotal,
+            adminReviewStatus, status, routingPosition)
+         VALUES ('exchange', 'Project', 'Project', ?, ?, ?, ?, ?, ?, ?, 'approved', 'project', 0)`,
+        [
+          title,
+          input.zip,
+          input.address ?? null,
+          String(input.approvedTotal),
+          submittedByUserId,
+          String(input.approvedTotal),
+          String(postedTotal),
+        ]
+      );
+      const parentId = (parentRes?.[0]?.insertId ?? parentRes?.insertId) as number;
+      if (!parentId) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Failed to create project" });
+
+      const childResults: Array<{ opportunityId: number; trade: string; estimatedValue: number; offerId: number | null }> = [];
+      for (const c of components) {
+        const childRes = await (db as any).execute(
+          `INSERT INTO opportunities
+             (intakeSource, opportunityType, opportunityCategory, description,
+              jobZip, jobAddress, estimatedJobValue, submittedByUserId,
+              parentOpportunityId, adminReviewStatus, status, routingPosition)
+           VALUES ('exchange', ?, ?, ?, ?, ?, ?, ?, ?, 'approved', 'new', 0)`,
+          [
+            c.trade,
+            c.trade,
+            c.description,
+            input.zip,
+            input.address ?? null,
+            String(c.estimatedValue),
+            submittedByUserId,
+            parentId,
+          ]
+        );
+        const childId = (childRes?.[0]?.insertId ?? childRes?.insertId) as number;
+        let offerId: number | null = null;
+        if (childId) {
+          try {
+            // Reuse the existing matching/cascade engine — best match first, 24h, cascade on decline.
+            offerId = await createOfferForOpportunity(childId);
+          } catch (err) {
+            console.warn("[exchange.postProject] auto-offer failed for child", childId, err);
+          }
+        }
+        childResults.push({ opportunityId: childId, trade: c.trade, estimatedValue: c.estimatedValue, offerId });
+      }
+
+      try {
+        await notifyOwner({
+          title: `New Exchange Project Posted: ${title}`,
+          content: `Approved $${input.approvedTotal} / posted $${postedTotal} / ${components.length} trade components in ${input.zip}.`,
+        });
+      } catch {}
+
+      return {
+        projectId: parentId,
+        decomposed,
+        approvedTotal: input.approvedTotal,
+        postedTotal,
+        scoutMargin: Math.round((input.approvedTotal - postedTotal) * 100) / 100,
+        components: childResults,
+      };
+    }),
+
+  // Watch a project assemble: parent + each child's status and assigned pro.
+  getProject: protectedProcedure
+    .input(z.object({ projectId: z.number() }))
+    .query(async ({ input }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      const [parent] = await db
+        .select({
+          id: opportunities.id,
+          description: opportunities.description,
+          jobZip: opportunities.jobZip,
+          jobAddress: opportunities.jobAddress,
+          status: opportunities.status,
+          approvedProjectValue: opportunities.approvedProjectValue,
+          postedComponentTotal: opportunities.postedComponentTotal,
+          createdAt: opportunities.createdAt,
+        })
+        .from(opportunities)
+        .where(eq(opportunities.id, input.projectId))
+        .limit(1);
+      if (!parent) throw new TRPCError({ code: "NOT_FOUND", message: "Project not found" });
+
+      const children = await db
+        .select({
+          id: opportunities.id,
+          trade: opportunities.opportunityCategory,
+          description: opportunities.description,
+          estimatedValue: opportunities.estimatedJobValue,
+          status: opportunities.status,
+          assignedPartnerId: opportunities.assignedPartnerId,
+          receivingPartnerId: opportunities.receivingPartnerId,
+        })
+        .from(opportunities)
+        .where(eq(opportunities.parentOpportunityId, input.projectId))
+        .orderBy(opportunities.id);
+
+      const partnerIds = Array.from(
+        new Set(
+          children
+            .map((c) => c.assignedPartnerId ?? c.receivingPartnerId)
+            .filter((x): x is number => typeof x === "number")
+        )
+      );
+      const partnerRows = partnerIds.length
+        ? await db
+            .select({ id: partners.id, businessName: partners.businessName, tier: partners.tier })
+            .from(partners)
+            .where(inArray(partners.id, partnerIds))
+        : [];
+      const partnerById = new Map(partnerRows.map((p) => [p.id, p]));
+
+      const approved = parent.approvedProjectValue != null ? Number(parent.approvedProjectValue) : null;
+      const posted = parent.postedComponentTotal != null ? Number(parent.postedComponentTotal) : null;
+
+      return {
+        id: parent.id,
+        title: parent.description,
+        zip: parent.jobZip,
+        address: parent.jobAddress,
+        status: parent.status,
+        approvedTotal: approved,
+        postedTotal: posted,
+        scoutMargin: approved != null && posted != null ? Math.round((approved - posted) * 100) / 100 : null,
+        createdAt: parent.createdAt,
+        components: children.map((c) => {
+          const pid = c.assignedPartnerId ?? c.receivingPartnerId;
+          const p = pid != null ? partnerById.get(pid) : undefined;
+          return {
+            opportunityId: c.id,
+            trade: c.trade,
+            description: c.description,
+            estimatedValue: c.estimatedValue != null ? Number(c.estimatedValue) : null,
+            status: c.status,
+            assignedPartner: p ? { id: p.id, businessName: p.businessName, tier: p.tier } : null,
+          };
+        }),
+      };
     }),
 });

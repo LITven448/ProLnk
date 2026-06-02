@@ -224,6 +224,14 @@ export const opportunities = mysqlTable("opportunities", {
   homeownerPhone: varchar("homeownerPhone", { length: 30 }),
   // Optional FK to the user who submitted (homeowner) or the Scout-source partner
   submittedByUserId: int("submittedByUserId"),
+  // --- Exchange multi-trade decomposition ---
+  // When set, this opportunity is a child trade-component of a parent Exchange project
+  // opportunity (status "project"). Null for standalone opportunities.
+  parentOpportunityId: int("parentOpportunityId"),
+  // On a parent project: the homeowner-approved total value the Scout posts against.
+  approvedProjectValue: decimal("approvedProjectValue", { precision: 12, scale: 2 }),
+  // On a parent project: sum of the posted child component values (Scout's posted total).
+  postedComponentTotal: decimal("postedComponentTotal", { precision: 12, scale: 2 }),
   // Partner ultimately assigned to this job (set on offer acceptance)
   assignedPartnerId: int("assignedPartnerId"),
   assignedAt: timestamp("assignedAt"),

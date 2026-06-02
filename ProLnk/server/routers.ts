@@ -478,6 +478,33 @@ export const appRouter = router({
         };
       }),
 
+    // -- Proactive AI outreach: homeowner one-click opt-in → real opportunity. --
+    // Token-gated by the outreach fingerprint (mirrors the customerDeals / request
+    // tracking unguessable-token pattern): the fingerprint is a 64-char SHA-256
+    // that's only delivered to the homeowner in the outreach email. THIS is the
+    // moat's conversion step — AI-found issue → homeowner opt-in → matched pro.
+    acceptProactiveQuote: publicProcedure
+      .input(z.object({ token: z.string().min(16).max(64) }))
+      .mutation(async ({ input }) => {
+        const { acceptProactiveQuote } = await import("./proactive-outreach");
+        try {
+          const result = await acceptProactiveQuote(input.token);
+          if (!result.opportunityId) {
+            throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Could not create request" });
+          }
+          const trackingToken = makeRequestTrackingToken(result.opportunityId);
+          return {
+            opportunityId: result.opportunityId,
+            alreadyAccepted: result.alreadyAccepted,
+            trade: result.trade,
+            trackingToken,
+          };
+        } catch (err) {
+          if (err instanceof TRPCError) throw err;
+          throw new TRPCError({ code: "NOT_FOUND", message: "Outreach not found or expired" });
+        }
+      }),
+
     // -- Profile --
     saveProfile: protectedProcedure
       .input(z.object({

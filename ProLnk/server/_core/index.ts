@@ -582,6 +582,21 @@ async function startServer() {
       createContext,
     })
   );
+
+  // Sentry-aware Express error handler (no-ops capture when SENTRY_DSN unset).
+  app.use((err: unknown, _req: express.Request, res: express.Response, next: express.NextFunction) => {
+    if (res.headersSent) return next(err);
+    if (process.env.SENTRY_DSN) {
+      try {
+        Sentry.captureException(err);
+      } catch {
+        // never let error reporting mask the original error
+      }
+    }
+    console.error("[Express Error]", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  });
+
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);

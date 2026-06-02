@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { captureError } from "@/lib/analytics";
 import { AlertTriangle, RotateCcw, Home } from "lucide-react";
 import { Component, ReactNode } from "react";
 
@@ -30,6 +31,7 @@ class ErrorBoundary extends Component<Props, State> {
       stack: error.stack,
       componentStack: info.componentStack,
     });
+    captureError(error, { componentStack: info.componentStack, source: "react_error_boundary" });
     this.setState({ errorInfo: info.componentStack });
   }
 

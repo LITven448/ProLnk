@@ -12,13 +12,11 @@ if (typeof window !== "undefined") {
   };
 }
 
-import { initSentry } from "@/lib/sentry";
-import { initPostHog } from "@/lib/posthog";
+import { initObservability, captureError } from "@/lib/analytics";
 import { trpc } from "@/lib/trpc";
 import { HelmetProvider } from "react-helmet-async";
 
-initSentry();
-initPostHog();
+initObservability();
 import { UNAUTHED_ERR_MSG } from '@shared/const';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink, TRPCClientError } from "@trpc/client";
@@ -57,6 +55,7 @@ queryClient.getQueryCache().subscribe(event => {
     const error = event.query.state.error;
     redirectToLoginIfUnauthorized(error);
     console.error("[API Query Error]", error);
+    captureError(error, { source: "trpc_query" });
   }
 });
 
@@ -65,6 +64,7 @@ queryClient.getMutationCache().subscribe(event => {
     const error = event.mutation.state.error;
     redirectToLoginIfUnauthorized(error);
     console.error("[API Mutation Error]", error);
+    captureError(error, { source: "trpc_mutation" });
   }
 });
 

@@ -179,6 +179,7 @@ const ExchangeHome = lazy(() => import("./pages/ExchangeHome"));
 const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
 const ExchangeMyBids = lazy(() => import("./pages/ExchangeMyBids"));
 const ExchangePostJob = lazy(() => import("./pages/ExchangePostJob"));
+const ExchangeProject = lazy(() => import("./pages/ExchangeProject"));
 const ExchangeProfile = lazy(() => import("./pages/ExchangeProfile"));
 const ExchangeContractors = lazy(() => import("./pages/ExchangeContractors"));
 const PublicLeaderboard = lazy(() => import("./pages/Leaderboard"));
@@ -731,6 +732,7 @@ const WAITLIST_ALLOWED = new Set([
   "/set-password", "/pricing", "/pricing/standard",
   "/partner-agreement", "/ach-authorization",
   "/partner/offers", "/request-service", "/scout",
+  "/exchange/project",
 ]);
 
 function WaitlistGuard() {
@@ -1099,6 +1101,7 @@ function Router() {
       <Route path="/exchange/contractors" component={ExchangeContractors} />
       <Route path="/exchange/my-bids" component={ExchangeMyBids} />
       <Route path="/exchange/post" component={ExchangePostJob} />
+      <Route path="/exchange/project" component={ExchangeProject} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
       <Route path="/my-home/milestones" component={TrustyProComingSoon} />

@@ -273,6 +273,10 @@ export default function GetQuotes() {
       toast.error("Please fill in all fields before submitting.");
       return;
     }
+    const desc = description.trim();
+    const serviceNeeded = desc
+      ? `${serviceType} — ${desc}`.slice(0, 255)
+      : serviceType;
     submitMutation.mutate({
       firstName: "Quote",
       lastName: "Request",
@@ -281,7 +285,7 @@ export default function GetQuotes() {
       city: "TBD",
       state: "TX",
       zipCode: zipCode.trim(),
-      serviceNeeded: serviceType,
+      serviceNeeded,
     });
   };
 

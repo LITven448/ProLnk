@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import { useAuth } from "@/_core/hooks/useAuth";
 import TrustyProLogo from "@/components/TrustyProLogo";
 import { Link, useLocation } from "wouter";
 import {
@@ -551,6 +552,7 @@ export default function PhotoScan() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
   const [, navigate] = useLocation();
+  const { user } = useAuth();
 
   useEffect(() => {
     document.title = "Free AI Home Scan — TrustyPro | Find Issues Before They Cost You";
@@ -634,6 +636,7 @@ export default function PhotoScan() {
         homeownerName: contact.name || undefined,
         homeownerEmail: contact.email || undefined,
         homeownerPhone: contact.phone || undefined,
+        ...(user?.id ? { userId: user.id } : {}),
       });
     } catch (err: unknown) {
       setUploading(false);

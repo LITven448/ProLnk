@@ -106,7 +106,7 @@ export default function HomeownerDashboard() {
     if (primaryProperty?.sqft) pts += 10;
     if (primaryProperty?.bedrooms) pts += 5;
     if (primaryProperty?.bathrooms) pts += 5;
-    if (primaryProperty?.systems && JSON.parse(primaryProperty.systems || '[]').length > 0) pts += 10;
+    if (Array.isArray(primaryProperty?.homeSystems) && primaryProperty.homeSystems.length > 0) pts += 10;
     if (profile?.consentTerms) pts += 10;
     if (setupComplete) pts += 10;
     return Math.min(pts, 100);

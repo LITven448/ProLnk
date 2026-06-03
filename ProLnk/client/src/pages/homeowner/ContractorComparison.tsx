@@ -365,7 +365,7 @@ export default function ContractorComparison() {
                         {q.averageRating && (
                           <div className="flex items-center gap-1 mt-1">
                             <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                            <span className="text-xs text-slate-400">{Number(q.averageRating).toFixed(1)} ({q.reviewCount})</span>
+                            <span className="text-xs text-slate-400">{q.averageRating != null ? Number(q.averageRating).toFixed(1) : "—"} ({q.reviewCount})</span>
                           </div>
                         )}
                         <p className="text-xs text-slate-600 mt-1">{q.serviceCategory} · {new Date(q.createdAt).toLocaleDateString()}</p>

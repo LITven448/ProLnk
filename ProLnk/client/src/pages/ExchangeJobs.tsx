@@ -202,6 +202,48 @@ const SEED_JOBS = [
   },
 ];
 
+type JobCardData = (typeof SEED_JOBS)[number] & { isReal?: boolean };
+
+function bucketSize(value: number): string {
+  if (value < 5000) return "Under $5K";
+  if (value < 25000) return "$5K–$25K";
+  if (value < 100000) return "$25K–$100K";
+  return "$100K+";
+}
+
+function daysAgo(dateStr: string | Date | null | undefined): number {
+  if (!dateStr) return 0;
+  const ts = new Date(dateStr).getTime();
+  if (isNaN(ts)) return 0;
+  return Math.max(0, Math.floor((Date.now() - ts) / 86400000));
+}
+
+function mapLiveJobToCard(j: any): JobCardData {
+  const value = Number(j.totalValue) || 0;
+  const deadlineTs = j.deadline ? new Date(j.deadline).getTime() : NaN;
+  const within14 =
+    !isNaN(deadlineTs) && deadlineTs - Date.now() <= 14 * 86400000 && deadlineTs - Date.now() > 0;
+  return {
+    id: j.id,
+    title: j.title,
+    posterType: j.clientName || j.postedByBusinessName || "ProLnk Client",
+    location: j.location || "",
+    budget: value ? `$${value.toLocaleString()}` : "Open",
+    deadline: !isNaN(deadlineTs)
+      ? `Bid by ${new Date(j.deadline).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`
+      : "Open",
+    trade: j.tradeCategory || "",
+    size: bucketSize(value),
+    description: j.description || "",
+    urgency: within14 ? "Urgent" : "Active",
+    applicants: Number(j.bidsCount) || 0,
+    postedDaysAgo: daysAgo(j.createdAt),
+    views: 0,
+    distanceMiles: 0,
+    isReal: true,
+  };
+}
+
 function hoursUntilDeadline(deadlineStr: string): number | null {
   if (!deadlineStr || deadlineStr === "Ongoing") return null;
   const stripped = deadlineStr.replace(/^Bid by\s*/i, "");
@@ -317,7 +359,7 @@ function BidModal({
   onClose,
   onSuccess,
 }: {
-  job: (typeof SEED_JOBS)[0];
+  job: JobCardData;
   onClose: () => void;
   onSuccess: () => void;
 }) {
@@ -327,17 +369,41 @@ function BidModal({
   const [timeline, setTimeline] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitBid = trpc.exchange.publicSubmitBid.useMutation({
+  const publicSubmitBid = trpc.exchange.publicSubmitBid.useMutation({
+    onSuccess: () => {
+      onSuccess();
+      onClose();
+    },
+  });
+  const submitBid = trpc.exchange.submitBid.useMutation({
     onSuccess: () => {
       onSuccess();
       onClose();
     },
   });
 
+  const useRealBid = job.isReal === true;
+  const pending = useRealBid ? submitBid.isPending : publicSubmitBid.isPending;
+  const error = useRealBid ? submitBid.error : publicSubmitBid.error;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const bidAmount = Number(price);
+    if (useRealBid) {
+      const fullMessage = `${name ? name + " — " : ""}${email ? email + "\n" : ""}Timeline: ${timeline}\n\n${message}`;
+      submitBid.mutate(
+        { jobId: job.id, bidAmount, message: fullMessage },
+        {
+          onError: () => {
+            const fallbackMessage = `Proposed Price: $${price}\nTimeline: ${timeline}\n\n${message}`;
+            publicSubmitBid.mutate({ jobId: job.id, jobTitle: job.title, name, email, message: fallbackMessage });
+          },
+        }
+      );
+      return;
+    }
     const fullMessage = `Proposed Price: $${price}\nTimeline: ${timeline}\n\n${message}`;
-    submitBid.mutate({ jobId: job.id, jobTitle: job.title, name, email, message: fullMessage });
+    publicSubmitBid.mutate({ jobId: job.id, jobTitle: job.title, name, email, message: fullMessage });
   };
 
   return (
@@ -471,17 +537,17 @@ function BidModal({
             />
           </div>
 
-          {submitBid.error && (
-            <p className="text-xs text-red-400">{submitBid.error.message || "Submission failed. Please try again."}</p>
+          {error && (
+            <p className="text-xs text-red-400">{error.message || "Submission failed. Please try again."}</p>
           )}
 
           <button
             type="submit"
-            disabled={submitBid.isPending}
+            disabled={pending}
             className="w-full py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60"
             style={{ backgroundColor: "#F59E0B" }}
           >
-            {submitBid.isPending ? "Submitting..." : "Submit Bid"}
+            {pending ? "Submitting..." : "Submit Bid"}
           </button>
           <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
             Bidding opens Q3 2026 — we'll follow up when it's live.
@@ -513,7 +579,7 @@ function JobCard({
   saved,
   onToggleSave,
 }: {
-  job: (typeof SEED_JOBS)[0];
+  job: JobCardData;
   onBidSubmitted: () => void;
   saved: boolean;
   onToggleSave: () => void;
@@ -839,6 +905,10 @@ export default function ExchangeJobs() {
   const [savedJobs, setSavedJobs] = useState<Set<number>>(new Set());
   const [myBidsCount, setMyBidsCount] = useState(0);
 
+  const { data: liveJobs } = trpc.exchange.listJobs.useQuery({ limit: 50 });
+  const sourceJobs: JobCardData[] =
+    liveJobs && liveJobs.length ? liveJobs.map(mapLiveJobToCard) : SEED_JOBS;
+
   const toggleSave = (id: number) => {
     setSavedJobs((prev) => {
       const next = new Set(prev);
@@ -849,7 +919,7 @@ export default function ExchangeJobs() {
   };
 
   const filtered = useMemo(() => {
-    const base = SEED_JOBS.filter((j) => {
+    const base = sourceJobs.filter((j) => {
       if (tradeFilter !== "All Trades" && j.trade !== tradeFilter) return false;
       if (sizeFilter !== "All Sizes" && j.size !== sizeFilter) return false;
       if (urgencyFilter !== "All" && j.urgency !== urgencyFilter) return false;
@@ -868,7 +938,7 @@ export default function ExchangeJobs() {
       }
       return 0;
     });
-  }, [tradeFilter, sizeFilter, urgencyFilter, cityFilter, sortBy]);
+  }, [sourceJobs, tradeFilter, sizeFilter, urgencyFilter, cityFilter, sortBy]);
 
   return (
     <div
@@ -929,7 +999,7 @@ export default function ExchangeJobs() {
                 className="hidden md:inline-flex items-center px-3 py-1 rounded-full text-sm font-bold"
                 style={{ backgroundColor: "rgba(245,158,11,0.15)", color: "#F59E0B" }}
               >
-                {SEED_JOBS.length} Jobs
+                {sourceJobs.length} Jobs
               </span>
             </div>
             <p style={{ color: "rgba(255,255,255,0.5)" }} className="text-sm">

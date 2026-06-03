@@ -54,6 +54,7 @@ const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
 const MyReferrals = lazy(() => import("./pages/MyReferrals"));
 const MyNetworkDashboard = lazy(() => import("./pages/FoundingNetworkDashboard"));
+const EnergyEfficiencyGuide = lazy(() => import("./pages/homeowner/EnergyEfficiencyGuide"));
 const ProPassManager = lazy(() => import("./pages/ProPassManager"));
 const BriefcaseManager = lazy(() => import("./pages/BriefcaseManager"));
 const ScoutAssessmentWizard = lazy(() => import("./pages/ScoutAssessmentWizard"));
@@ -1078,6 +1079,12 @@ function Router() {
       <Route path="/trustypro/home-health" component={HomeHealthDashboard} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />
       <Route path="/trustypro/book" component={BookPro} />
+      <Route path="/trustypro/leads" component={InboundLeads} />
+      <Route path="/trustypro/reviews" component={PartnerReviews} />
+      <Route path="/trustypro/profile" component={PartnerProfileEditor} />
+      <Route path="/trustypro/settings" component={PartnerSettings} />
+      <Route path="/trustypro/forgot-password" component={PartnerForgotPassword} />
+      <Route path="/homeowner/energy-efficiency-guide" component={EnergyEfficiencyGuide} />
       <Route path="/my-home" component={HomeownerDashboard} />
       <Route path="/my-home/offers" component={HomeownerOffers} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />

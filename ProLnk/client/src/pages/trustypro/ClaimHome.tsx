@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 import {
   Search, Home, CheckCircle, ArrowRight, Upload, Calendar,
   Shield, Star, Award, TrendingUp, Loader2, ChevronRight, X,
@@ -206,16 +208,57 @@ function StepPreview({ property, onClaim, onBack }: { property: Property; onClai
   );
 }
 
+function parseAddress(full: string): { address: string; city: string; state: string; zipCode: string } {
+  const parts = full.split(",").map((p) => p.trim()).filter(Boolean);
+  const address = parts[0] || full.trim();
+  const city = parts[1] || "Unknown";
+  let state = "TX";
+  let zipCode = "00000";
+  const tail = parts[2] || "";
+  const stateZip = tail.match(/([A-Za-z]{2})\s*(\d{5})/);
+  if (stateZip) {
+    state = stateZip[1].toUpperCase();
+    zipCode = stateZip[2];
+  } else {
+    const zipOnly = full.match(/\b(\d{5})\b/);
+    if (zipOnly) zipCode = zipOnly[1];
+    const stOnly = tail.match(/\b([A-Za-z]{2})\b/);
+    if (stOnly) state = stOnly[1].toUpperCase();
+  }
+  return { address: address.slice(0, 500), city: city.slice(0, 100), state: state.slice(0, 2), zipCode };
+}
+
 function StepVerify({ property, onDone, onBack }: { property: Property; onDone: () => void; onBack: () => void }) {
   const [serviceDate, setServiceDate] = useState("");
   const [hasPhoto, setHasPhoto] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
-  const [loading, setLoading] = useState(false);
+
+  const claimMutation = trpc.waitlist.joinHomeWaitlist.useMutation({
+    onSuccess: () => onDone(),
+    onError: (e: any) => {
+      if (e?.message?.includes("already")) {
+        onDone();
+      } else {
+        toast.error(e?.message ?? "Could not save this claim. Please try again.");
+      }
+    },
+  });
+  const loading = claimMutation.isPending;
 
   const handleSubmit = () => {
     if (!serviceDate || !confirmed) return;
-    setLoading(true);
-    setTimeout(() => { setLoading(false); onDone(); }, 1200);
+    const { address, city, state, zipCode } = parseAddress(property.address);
+    const slug = address.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "").slice(0, 40) || "claim";
+    claimMutation.mutate({
+      firstName: "Claimed",
+      lastName: "Home",
+      email: `claim+${slug}-${zipCode}@trustypro.io`,
+      address,
+      city,
+      state,
+      zipCode,
+      serviceNeeded: `Pro home claim — serviced ${serviceDate}`.slice(0, 255),
+    });
   };
 
   return (

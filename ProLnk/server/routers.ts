@@ -4244,7 +4244,29 @@ Return JSON only.`,
           },
         });
         const content = response.choices[0]?.message?.content;
-        const parsed = typeof content === 'string' ? JSON.parse(content) : content;
+        const parsePhotoAnalysis = (raw: unknown): any => {
+          if (raw && typeof raw === 'object') return raw;
+          if (typeof raw !== 'string') return null;
+          let text = raw.trim();
+          const fenceMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
+          if (fenceMatch) text = fenceMatch[1].trim();
+          const first = text.indexOf('{');
+          const last = text.lastIndexOf('}');
+          if (first !== -1 && last !== -1 && last > first) text = text.slice(first, last + 1);
+          try {
+            return JSON.parse(text);
+          } catch {
+            return null;
+          }
+        };
+        const parsed = parsePhotoAnalysis(content) ?? {
+          roomLabel: null,
+          photoQualityFlag: 'ok',
+          photoQualityNote: '',
+          issues: [],
+          overallCondition: 'unknown',
+          summary: 'We could not automatically analyze these photos. Please try again with clearer images.',
+        };
         // Generate AI transformation images for transformation-track issues (cap at 3 to avoid timeout)
         if (parsed?.issues && Array.isArray(parsed.issues)) {
           const { generateImage } = await import('./_core/imageGeneration');

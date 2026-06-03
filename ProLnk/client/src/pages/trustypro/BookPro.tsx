@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { trpc } from "@/lib/trpc";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { toast } from "sonner";
 import {
   Star, Shield, BadgeCheck, ChevronRight, Clock, CheckCircle,
   ChevronDown, Calendar, Zap, Wrench, ArrowRight, Loader2,
@@ -78,12 +81,23 @@ export default function BookPro() {
   const proReviews = 312;
   const proResponse = "< 2 hrs";
 
+  const { user } = useAuth();
+
   const [selectedTier, setSelectedTier] = useState("full");
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
   const [confirmed, setConfirmed] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [booked, setBooked] = useState(false);
+
+  const bookMutation = trpc.quickQuote.submit.useMutation({
+    onSuccess: () => {
+      setBooked(true);
+    },
+    onError: (e: any) => {
+      toast.error(e?.message ?? "Booking failed. Please try again.");
+    },
+  });
+  const loading = bookMutation.isPending;
 
   const tier = SERVICE_TIERS.find((t) => t.id === selectedTier)!;
   const slotDay = selectedDate !== null ? SLOTS[selectedDate] : null;
@@ -95,9 +109,35 @@ export default function BookPro() {
     : null;
 
   const handleBook = () => {
-    if (!selectedDate === null || !selectedSlot) return;
-    setLoading(true);
-    setTimeout(() => { setLoading(false); setBooked(true); }, 1400);
+    if (selectedDate === null || !selectedSlot) return;
+
+    const homeownerName = (user?.name as string)?.trim() || "";
+    const homeownerEmail = (user?.email as string)?.trim() || "";
+    if (homeownerName.length < 2 || !homeownerEmail) {
+      toast.error("Please sign in to your TrustyPro account to confirm a booking.");
+      navigate("/trustypro/login");
+      return;
+    }
+
+    const propertyAddress = (user?.address as string)?.trim() || "On file with TrustyPro account";
+    const propertyZipCode = (user?.zipCode as string)?.trim() || "00000";
+    const slotLabel = slotDay ? `${slotDay.label} at ${selectedSlot}` : selectedSlot;
+    const serviceDescription =
+      `Booking request: ${tier.label} ($${tier.price}) with ${proName} (${proTrade}). ` +
+      `Requested ${slotLabel}.`;
+
+    const urgency = selectedTier === "emergency" ? "emergency" : "within_48h";
+
+    bookMutation.mutate({
+      homeownerName,
+      homeownerEmail,
+      propertyAddress,
+      propertyZipCode: /^\d{5}$/.test(propertyZipCode) ? propertyZipCode : "00000",
+      serviceCategory: proTrade,
+      serviceDescription,
+      urgency,
+      targetPartnerId: proId ? Number(proId) || undefined : undefined,
+    });
   };
 
   if (booked) {

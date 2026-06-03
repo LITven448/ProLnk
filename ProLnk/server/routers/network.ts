@@ -35,6 +35,16 @@ function hashAddress(address: string): string {
     .digest("hex");
 }
 
+// Normalize a db.execute() result into a rows array across driver shapes.
+// mysql2 returns [rows, fields]; some drivers return { rows }.
+function asRows(res: any): any[] {
+  if (!res) return [];
+  if (Array.isArray(res.rows)) return res.rows;
+  if (Array.isArray(res) && Array.isArray(res[0])) return res[0];
+  if (Array.isArray(res)) return res;
+  return [];
+}
+
 // ─── Router ───────────────────────────────────────────────────────────────────
 
 export const networkRouter = router({
@@ -69,7 +79,7 @@ export const networkRouter = router({
     const rows = await (db as any).execute(
       sql`SELECT 1 AS ok FROM pro_network_profile WHERE user_id = ${ctx.user.id} LIMIT 1`
     );
-    return { isMember: ((rows.rows ?? rows).length > 0) };
+    return { isMember: asRows(rows).length > 0 };
   }),
 
   // Protected: enroll a new pro and build their upline chain
@@ -187,7 +197,7 @@ export const networkRouter = router({
     const profileRows = await (db as any).execute(
       sql`SELECT * FROM pro_network_profile WHERE user_id = ${ctx.user.id} LIMIT 1`
     );
-    const profile = (profileRows.rows ?? profileRows)[0];
+    const profile = asRows(profileRows)[0];
     if (!profile) return null;
 
     const currentMonth = new Date().toISOString().slice(0, 7);
@@ -200,7 +210,7 @@ export const networkRouter = router({
       GROUP BY payout_type
     `);
     const incomeByType: Record<string, number> = {};
-    for (const r of (incomeRows.rows ?? incomeRows)) {
+    for (const r of asRows(incomeRows)) {
       incomeByType[r.payout_type] = Number(r.total ?? 0);
     }
 
@@ -210,7 +220,7 @@ export const networkRouter = router({
         SUM(CASE WHEN levels_above = 1 THEN 1 ELSE 0 END) as direct
       FROM pro_upline_chain WHERE upline_user_id = ${ctx.user.id}
     `);
-    const downline = (downlineRows.rows ?? downlineRows)[0];
+    const downline = asRows(downlineRows)[0];
 
     // Direct referrals with their info
     const directRows = await (db as any).execute(sql`
@@ -239,7 +249,7 @@ export const networkRouter = router({
       monthlyTotal: Object.values(incomeByType).reduce((a, b) => a + b, 0),
       directReferrals: Number(downline?.direct ?? 0),
       totalDownline: Number(downline?.total ?? 0),
-      directReferralList: (directRows.rows ?? directRows).map((r: any) => ({
+      directReferralList: asRows(directRows).map((r: any) => ({
         businessName: r.businessName,
         trade: r.businessType,
         level: Number(r.network_level),
@@ -264,7 +274,7 @@ export const networkRouter = router({
         ORDER BY cp.created_at DESC
         LIMIT ${input.limit}
       `);
-      return (rows.rows ?? rows).map((r: any) => ({
+      return asRows(rows).map((r: any) => ({
         id: r.id,
         payoutType: r.payout_type,
         amount: Number(r.amount),

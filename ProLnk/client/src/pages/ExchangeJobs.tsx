@@ -1164,7 +1164,7 @@ export default function ExchangeJobs() {
       </div>
 
       {/* Floating Post a Job FAB */}
-      <Link href="/exchange/post-job">
+      <Link href="/exchange/post">
         <button
           className="fixed bottom-7 right-7 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm font-bold text-[#0A1628] shadow-2xl transition-all hover:scale-105 active:scale-95"
           style={{

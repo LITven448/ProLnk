@@ -54,6 +54,9 @@ const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
 const MyReferrals = lazy(() => import("./pages/MyReferrals"));
 const MyNetworkDashboard = lazy(() => import("./pages/FoundingNetworkDashboard"));
+const ProPassManager = lazy(() => import("./pages/ProPassManager"));
+const BriefcaseManager = lazy(() => import("./pages/BriefcaseManager"));
+const ScoutAssessmentWizard = lazy(() => import("./pages/ScoutAssessmentWizard"));
 const MatchHistory = lazy(() => import("./pages/MatchHistory"));
 const ProLnkApp = lazy(() => import("./pages/ProLnkApp"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
@@ -794,7 +797,11 @@ const WAITLIST_ALLOWED = new Set([
 
 function WaitlistGuard() {
   const [location, navigate] = useLocation();
+  const { isAuthenticated, loading } = useAuth();
   useEffect(() => {
+    // Logged-in users (partners/admins) bypass the public waitlist gate entirely.
+    if (loading) return;
+    if (isAuthenticated) return;
     const search = typeof window !== "undefined" ? window.location.search : "";
     // Preview/Demo bypass: a valid ?preview=<KEY> (or a previously set flag) lets
     // the tester through to the FULL product. Public (no flag) is unaffected.
@@ -813,7 +820,7 @@ function WaitlistGuard() {
     if (WAITLIST_ALLOWED.has(location)) return;
     const isTrustyPro = (window as any).__BRAND__ === "trustypro";
     navigate((isTrustyPro ? "/waitlist/homeowner" : "/pro-waitlist") + search, { replace: true });
-  }, [location, navigate]);
+  }, [location, navigate, isAuthenticated, loading]);
   return null;
 }
 
@@ -867,6 +874,10 @@ function Router() {
       <Route path="/dashboard/referrals" component={MyReferrals} />
       <Route path="/network" component={MyNetworkDashboard} />
       <Route path="/founding" component={MyNetworkDashboard} />
+      <Route path="/partner-settings" component={PartnerSettings} />
+      <Route path="/dashboard/pro-pass" component={ProPassManager} />
+      <Route path="/dashboard/briefcase" component={BriefcaseManager} />
+      <Route path="/dashboard/scout-assessment" component={ScoutAssessmentWizard} />
       <Route path="/match-history" component={MatchHistory} />
       <Route path="/job/new" component={LogJob} />
       <Route path="/job-log" component={JobLog} />

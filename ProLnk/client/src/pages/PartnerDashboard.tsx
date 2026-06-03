@@ -520,7 +520,7 @@ export default function PartnerDashboard() {
     );
   }
 
-  if (!profileData) {
+  if (!profileData || !((profileData as any).stats ?? (profileData as any).partner)) {
     return (
       <PartnerLayout>
         <div className="max-w-lg mx-auto py-24 px-6 text-center">
@@ -568,7 +568,7 @@ export default function PartnerDashboard() {
     );
   }
 
-  const partner = profileData.partner;
+  const partner = (profileData as any).stats ?? (profileData as any).partner;
 
   if (partner.status === "pending") {
     return (

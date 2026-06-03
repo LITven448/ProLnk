@@ -62,6 +62,16 @@ export const networkRouter = router({
       };
     }),
 
+  // Protected: lightweight membership check for gating the founding-network UI tab
+  getMyAccess: protectedProcedure.query(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) return { isMember: false };
+    const rows = await (db as any).execute(
+      sql`SELECT 1 AS ok FROM pro_network_profile WHERE user_id = ${ctx.user.id} LIMIT 1`
+    );
+    return { isMember: ((rows.rows ?? rows).length > 0) };
+  }),
+
   // Protected: enroll a new pro and build their upline chain
   enroll: protectedProcedure
     .input(z.object({

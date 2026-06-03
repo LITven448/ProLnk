@@ -139,6 +139,25 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const { user: authUser, loading, isAuthenticated, logout } = useAuth();
   const { data: partnerProfile } = trpc.partners.getMyProfile.useQuery(undefined, { enabled: isAuthenticated });
+  const { data: networkAccess } = trpc.network.getMyAccess.useQuery(undefined, { enabled: isAuthenticated });
+  const isNetworkMember = !!networkAccess?.isMember;
+  const navItems = isNetworkMember
+    ? [
+        ...NAV_ITEMS,
+        {
+          icon: Trophy,
+          label: "Founding Network",
+          href: "/network",
+          exact: false,
+          sub: [
+            { label: "My Referrals", href: "/network" },
+            { label: "Referral Link", href: "/network" },
+            { label: "Network Income", href: "/network" },
+            { label: "Payout History", href: "/network" },
+          ],
+        },
+      ]
+    : NAV_ITEMS;
   const strikeCount = partnerProfile?.partner?.strikeCount ?? 0;
   const standingLabel = strikeCount === 0 ? "Good Standing" : strikeCount === 1 ? "Warning" : strikeCount === 2 ? "Final Warning" : "Suspended";
   const standingColor = strikeCount === 0 ? "#059669" : strikeCount === 1 ? "#D97706" : strikeCount === 2 ? "#EF4444" : "#7C3AED";
@@ -153,9 +172,9 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
   };
 
   const getActiveParent = () => {
-    return NAV_ITEMS.find(item =>
+    return navItems.find(item =>
       item.sub?.some(s => isActive(s.href, s.href === "/dashboard"))
-    ) ?? NAV_ITEMS.find(item => isActive(item.href, item.exact));
+    ) ?? navItems.find(item => isActive(item.href, item.exact));
   };
 
   if (loading) {
@@ -232,7 +251,7 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
           {/* Primary Nav -- 5 items */}
           <nav className="flex-1 px-2 py-4 overflow-y-auto">
             <div className="space-y-0.5">
-              {NAV_ITEMS.map((item) => {
+              {navItems.map((item) => {
                 const active = item.sub
                   ? item.sub.some(s => isActive(s.href, s.href === "/dashboard"))
                   : isActive(item.href, item.exact);
@@ -327,7 +346,7 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
                 </div>
                 <nav className="flex-1 px-3 py-4 overflow-y-auto">
                   <div className="space-y-0.5">
-                    {NAV_ITEMS.map((item) => {
+                    {navItems.map((item) => {
                       const active = item.sub
                         ? item.sub.some(s => isActive(s.href, s.href === "/dashboard"))
                         : isActive(item.href, item.exact);

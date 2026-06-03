@@ -53,6 +53,7 @@ const MatchingConsole = lazy(() => import("./pages/admin/MatchingConsole"));
 const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
 const MyReferrals = lazy(() => import("./pages/MyReferrals"));
+const MyNetworkDashboard = lazy(() => import("./pages/FoundingNetworkDashboard"));
 const MatchHistory = lazy(() => import("./pages/MatchHistory"));
 const ProLnkApp = lazy(() => import("./pages/ProLnkApp"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
@@ -864,6 +865,8 @@ function Router() {
       <Route path="/dashboard/leads" component={InboundLeads} />
       <Route path="/leads/marketplace" component={LeadMarketplace} />
       <Route path="/dashboard/referrals" component={MyReferrals} />
+      <Route path="/network" component={MyNetworkDashboard} />
+      <Route path="/founding" component={MyNetworkDashboard} />
       <Route path="/match-history" component={MatchHistory} />
       <Route path="/job/new" component={LogJob} />
       <Route path="/job-log" component={JobLog} />

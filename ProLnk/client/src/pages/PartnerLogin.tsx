@@ -13,7 +13,12 @@ export default function PartnerLogin() {
   const loginMutation = trpc.partnerAuth.login.useMutation({
     onSuccess: (data: any) => {
       const isAdmin = data?.partner?.tier === "admin";
-      navigate(isAdmin ? "/admin" : "/dashboard");
+      const next = new URLSearchParams(window.location.search).get("next");
+      if (next && next.startsWith("/")) {
+        navigate(next);
+      } else {
+        navigate(isAdmin ? "/admin" : "/dashboard");
+      }
     },
     onError: (e) => setError(e.message || "Invalid email or password."),
   });

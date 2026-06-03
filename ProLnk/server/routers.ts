@@ -3883,7 +3883,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       if (totalReferrals === 5) alerts.push({ alertType: 'milestone_5refs', title: '[LINK] 5 Referrals Sent!', body: 'You\'ve sent 5 referrals to the network. Partners who send 10+ referrals earn 40% more in commissions.', severity: 'success' });
 
       // Check for deals expiring within 24 hours
-      const expiringDeals = await db.execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE receivingPartnerId = ${partner.id} AND status = 'sent' AND expiresAt IS NOT NULL AND expiresAt > NOW() AND expiresAt < DATE_ADD(NOW(), INTERVAL 24 HOUR)`);
+      const expiringDeals = await db.execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE receivingPartnerId = ${partner.id} AND status = 'sent' AND leadExpiresAt IS NOT NULL AND leadExpiresAt > NOW() AND leadExpiresAt < DATE_ADD(NOW(), INTERVAL 24 HOUR)`);
       const expiringCount = Number(expiringDeals[0]?.[0]?.cnt ?? 0);
       if (expiringCount > 0) {
         alerts.push({ alertType: 'deal_expiring', title: `${expiringCount} deal${expiringCount > 1 ? 's' : ''} expiring in 24 hours`, body: `You have ${expiringCount} inbound lead${expiringCount > 1 ? 's' : ''} that will expire soon. Accept or pass now to keep your response rate high.`, severity: 'warning' });

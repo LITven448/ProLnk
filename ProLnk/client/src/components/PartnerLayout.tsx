@@ -56,7 +56,7 @@ const NAV_ITEMS = [
       { label: "Quote Builder", href: "/dashboard/quote-builder" },
       { label: "Performance",   href: "/dashboard/performance" },
       { label: "Upsell Playbook", href: "/dashboard/upsell" },
-      { label: "Bid Board",     href: "/dashboard/bid-board" },
+      { label: "Job Board",     href: "/exchange/jobs" },
       { label: "Log a Job",     href: "/job/new" },
       { label: "Job History",   href: "/jobs" },
     ],

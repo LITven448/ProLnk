@@ -905,13 +905,6 @@ export default function ExchangeJobs() {
         </div>
       </nav>
 
-      {/* Coming Soon Banner */}
-      <div
-        className="text-center py-2.5 text-xs font-semibold tracking-wider"
-        style={{ backgroundColor: "#F59E0B", color: "#0A1628" }}
-      >
-        COMING Q3 2026 &nbsp;·&nbsp; JOIN THE WAITLIST TO BE FIRST &nbsp;·&nbsp; PREVIEW LISTINGS BELOW
-      </div>
 
       {/* Header */}
       <section className="max-w-6xl mx-auto px-6 pt-12 pb-8">

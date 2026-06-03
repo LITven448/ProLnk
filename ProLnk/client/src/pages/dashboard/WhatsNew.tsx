@@ -134,7 +134,7 @@ const CHANGELOG: ChangelogEntry[] = [
     title: "Home Health Vault",
     detail:
       "The Home Health Vault is now open. Document systems, appliances, and service history for every home you work on. Each entry stakes your origination rights and builds the permanent data asset that pays you long-term.",
-    cta: { label: "Open Vault", href: "/vault" },
+    cta: { label: "Open Vault", href: "/home-health-vault" },
   },
   {
     id: "photo-scan-ai",
@@ -492,7 +492,7 @@ function FeatureSpotlightCard() {
               Try Photo Scan <ArrowUpRight size={12} />
             </span>
           </Link>
-          <Link href="/vault">
+          <Link href="/home-health-vault">
             <span className="text-xs font-semibold text-gray-400 flex items-center gap-1 hover:text-white transition-colors">
               View Vault <ChevronRight size={12} />
             </span>

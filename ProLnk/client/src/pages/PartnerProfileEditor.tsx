@@ -173,8 +173,8 @@ export default function PartnerProfileEditor() {
   };
 
   useEffect(() => {
-    if (profileData?.partner) {
-      const p = profileData.partner;
+    if (profileData?.stats) {
+      const p = profileData.stats;
       setForm({
         businessName: p.businessName ?? "",
         serviceArea: p.serviceArea ?? "",
@@ -213,7 +213,7 @@ export default function PartnerProfileEditor() {
     );
   }
 
-  const partner = profileData?.partner;
+  const partner = profileData?.stats;
   if (!partner) {
     return (
       <PartnerLayout>

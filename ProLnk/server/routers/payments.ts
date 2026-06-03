@@ -51,6 +51,7 @@ import {
 import { notifyOwner } from "../_core/notification";
 import { sendPayoutConfirmation } from "../email";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow } from "../_core/dbRows";
 import { getDb } from "../db";
 import { TRPCError } from "@trpc/server";
 import Stripe from "stripe";
@@ -174,7 +175,7 @@ export const paymentsRouter = router({
         WHERE hp.userId = ${ctx.user.id}
         LIMIT 1
       `);
-      const homeowner = (hoRows.rows || hoRows)[0];
+      const homeowner = firstRow(hoRows);
       if (!homeowner) throw new TRPCError({ code: "NOT_FOUND", message: "Homeowner profile not found" });
 
       // Get deal details
@@ -183,7 +184,7 @@ export const paymentsRouter = router({
                referringPartnerId, receivingPartnerId
         FROM customerDeals WHERE id = ${input.dealId} LIMIT 1
       `);
-      const deal = (dealRows.rows || dealRows)[0];
+      const deal = firstRow(dealRows);
       if (!deal) throw new TRPCError({ code: "NOT_FOUND", message: "Deal not found" });
 
       // Create or retrieve Stripe customer for homeowner
@@ -248,7 +249,7 @@ export const paymentsRouter = router({
                referringPartnerId, receivingPartnerId, homeownerEmail, homeownerName
         FROM customerDeals WHERE token = ${input.token} LIMIT 1
       `);
-      const deal = (dealRows.rows || dealRows)[0];
+      const deal = firstRow(dealRows);
       if (!deal) throw new TRPCError({ code: "NOT_FOUND", message: "Deal not found" });
       // Create or retrieve Stripe customer for this homeowner email
       const existingCustomers = await getStripe().customers.list({ email: input.homeownerEmail, limit: 1 });
@@ -319,7 +320,7 @@ export const paymentsRouter = router({
         SELECT hp.id, hp.stripeCustomerId
         FROM homeownerProfiles hp WHERE hp.userId = ${ctx.user.id} LIMIT 1
       `);
-      const homeowner = (hoRows.rows || hoRows)[0];
+      const homeowner = firstRow(hoRows);
       if (!homeowner) throw new TRPCError({ code: "NOT_FOUND", message: "Homeowner not found" });
 
       // Get deal with partner info
@@ -329,7 +330,7 @@ export const paymentsRouter = router({
         JOIN partners p ON cd.referringPartnerId = p.id
         WHERE cd.id = ${input.dealId} LIMIT 1
       `);
-      const deal = (dealRows.rows || dealRows)[0];
+      const deal = firstRow(dealRows);
       if (!deal) throw new TRPCError({ code: "NOT_FOUND", message: "Deal not found" });
 
       // Retrieve payment method details from Stripe
@@ -442,7 +443,7 @@ export const paymentsRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
 
       // Get job payment
@@ -454,7 +455,7 @@ export const paymentsRouter = router({
         AND jp.receivingPartnerId = ${partner.id}
         LIMIT 1
       `);
-      const jp = (jpRows.rows || jpRows)[0];
+      const jp = firstRow(jpRows);
       if (!jp) throw new TRPCError({ code: "NOT_FOUND", message: "Job payment not found" });
       if (jp.isInsuranceJob) throw new TRPCError({ code: "BAD_REQUEST", message: "Insurance jobs use ACH flow — use signAchAuthorization instead" });
       if (jp.status !== "pending") throw new TRPCError({ code: "BAD_REQUEST", message: `Cannot charge deposit: payment status is ${jp.status}` });
@@ -465,7 +466,7 @@ export const paymentsRouter = router({
         WHERE jobPaymentId = ${jp.id} AND milestoneType = 'deposit' AND status = 'scheduled'
         LIMIT 1
       `);
-      const depositMilestone = (msRows.rows || msRows)[0];
+      const depositMilestone = firstRow(msRows);
       if (!depositMilestone) throw new TRPCError({ code: "NOT_FOUND", message: "Deposit milestone not found" });
 
       if (!jp.stripePaymentMethodId) {
@@ -558,14 +559,14 @@ export const paymentsRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id, businessName, contactEmail FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
 
       // Get job payment to confirm commission amount
       const jpRows = await (db as any).execute(sql`
         SELECT * FROM jobPayments WHERE id = ${input.jobPaymentId} AND dealId = ${input.dealId} LIMIT 1
       `);
-      const jp = (jpRows.rows || jpRows)[0];
+      const jp = firstRow(jpRows);
       if (!jp) throw new TRPCError({ code: "NOT_FOUND", message: "Job payment not found" });
       if (!jp.isInsuranceJob) throw new TRPCError({ code: "BAD_REQUEST", message: "This deal is not an insurance job" });
 
@@ -657,7 +658,7 @@ Date: ${new Date().toISOString()}
         WHERE jp.dealId = ${input.dealId}
         LIMIT 1
       `);
-      const jp = (jpRows.rows || jpRows)[0];
+      const jp = firstRow(jpRows);
       if (!jp) {
         // No payment record — job may have been handled outside platform
         return { success: false, reason: "no_payment_record" };
@@ -687,14 +688,14 @@ Date: ${new Date().toISOString()}
         WHERE jp.dealId = ${input.dealId}
         LIMIT 1
       `);
-      const jp = (rows.rows || rows)[0];
+      const jp = firstRow(rows);
       if (!jp) return null;
 
       // Get milestones
       const msRows = await (db as any).execute(sql`
         SELECT * FROM paymentMilestones WHERE jobPaymentId = ${jp.id} ORDER BY id ASC
       `);
-      const milestones = msRows.rows || msRows;
+      const milestones = asRows(msRows);
 
       return { payment: jp, milestones };
     }),
@@ -709,7 +710,7 @@ Date: ${new Date().toISOString()}
       const partnerRows = await (db as any).execute(sql`
         SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return null;
 
       const rows = await (db as any).execute(sql`
@@ -717,7 +718,7 @@ Date: ${new Date().toISOString()}
         WHERE partnerId = ${partner.id} AND dealId = ${input.dealId}
         ORDER BY createdAt DESC LIMIT 1
       `);
-      return (rows.rows || rows)[0] ?? null;
+      return firstRow(rows) ?? null;
     }),
 
   // ── PARTNER: Create ACH SetupIntent (bank account collection) ────────────────
@@ -731,7 +732,7 @@ Date: ${new Date().toISOString()}
         SELECT id, contactEmail, businessName, stripeConnectAccountId FROM partners
         WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
 
       // Create or retrieve Stripe customer for partner (for ACH debit)
@@ -793,7 +794,7 @@ Date: ${new Date().toISOString()}
       ORDER BY jp.createdAt DESC
       LIMIT 200
     `);
-    const payments = rows.rows || rows;
+    const payments = asRows(rows);
 
     const statsRows = await (db as any).execute(sql`
       SELECT
@@ -806,7 +807,7 @@ Date: ${new Date().toISOString()}
         SUM(CASE WHEN isInsuranceJob = 1 THEN platformFeeAmount ELSE 0 END) as insuranceCommissions
       FROM jobPayments
     `);
-    const stats = (statsRows.rows || statsRows)[0] ?? {};
+    const stats = firstRow(statsRows) ?? {};
 
     return { payments, stats };
   }),
@@ -822,7 +823,7 @@ Date: ${new Date().toISOString()}
         SELECT id, contactEmail, businessName, stripeConnectAccountId, stripeConnectStatus
         FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
 
       let accountId = partner.stripeConnectAccountId as string | null;
@@ -861,7 +862,7 @@ Date: ${new Date().toISOString()}
       SELECT id, stripeConnectAccountId, stripeConnectStatus, bankAccountLast4, payoutReadyAt
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (rows.rows || rows)[0];
+    const partner = firstRow(rows);
     if (!partner) return null;
 
     if (partner.stripeConnectAccountId && partner.stripeConnectStatus === 'pending') {
@@ -888,7 +889,7 @@ Date: ${new Date().toISOString()}
     const partnerRows = await (db as any).execute(sql`
       SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return { earnings: [], stats: {} };
 
     const rows = await (db as any).execute(sql`
@@ -900,7 +901,7 @@ Date: ${new Date().toISOString()}
       ORDER BY jp.createdAt DESC
       LIMIT 100
     `);
-    const earnings = rows.rows || rows;
+    const earnings = asRows(rows);
 
     const statsRows = await (db as any).execute(sql`
       SELECT
@@ -911,7 +912,7 @@ Date: ${new Date().toISOString()}
       FROM jobPayments
       WHERE referringPartnerId = ${partner.id} OR receivingPartnerId = ${partner.id}
     `);
-    const stats = (statsRows.rows || statsRows)[0] ?? {};
+    const stats = firstRow(statsRows) ?? {};
 
     return { earnings, stats };
   }),
@@ -930,12 +931,12 @@ Date: ${new Date().toISOString()}
         LEFT JOIN homeownerPaymentMethods hpm ON jp.homeownerId = hpm.homeownerId AND hpm.isDefault = 1
         WHERE jp.dealId = ${input.dealId} LIMIT 1
       `);
-      const jp = (rows.rows || rows)[0];
+      const jp = firstRow(rows);
       if (!jp) return null;
       const msRows = await (db as any).execute(sql`
         SELECT * FROM paymentMilestones WHERE jobPaymentId = ${jp.id} ORDER BY id ASC
       `);
-      return { payment: jp, milestones: msRows.rows || msRows };
+      return { payment: jp, milestones: asRows(msRows) };
     }),
 
   // ── ADMIN: Get investor metrics aggregates ────────────────────────────────────
@@ -983,10 +984,10 @@ Date: ${new Date().toISOString()}
     ]);
 
     return {
-      gmv: (gmvRows.rows || gmvRows)[0] ?? {},
-      partners: (partnerRows.rows || partnerRows)[0] ?? {},
-      commissions: (commRows.rows || commRows)[0] ?? {},
-      monthlyGrowth: growthRows.rows || growthRows,
+      gmv: firstRow(gmvRows) ?? {},
+      partners: firstRow(partnerRows) ?? {},
+      commissions: firstRow(commRows) ?? {},
+      monthlyGrowth: asRows(growthRows),
     };
   }),
 
@@ -1004,7 +1005,7 @@ Date: ${new Date().toISOString()}
         LEFT JOIN partners p ON jp.receivingPartnerId = p.id
         WHERE jp.id = ${input.jobPaymentId} LIMIT 1
       `);
-      const jp = (jpRows.rows || jpRows)[0];
+      const jp = firstRow(jpRows);
       if (!jp) throw new TRPCError({ code: "NOT_FOUND" });
       if (jp.status === "paid_out") throw new TRPCError({ code: "BAD_REQUEST", message: "Already paid out" });
 
@@ -1030,7 +1031,7 @@ Date: ${new Date().toISOString()}
       // Send payout confirmation email
       try {
         const partnerRows = await (db as any).execute(sql`SELECT p.businessName, u.email FROM partners p LEFT JOIN users u ON p.userId = u.id WHERE p.id = ${jp.receivingPartnerId} LIMIT 1`);
-        const partner = (partnerRows.rows || partnerRows)[0];
+        const partner = firstRow(partnerRows);
         if (partner?.email) {
           await sendPayoutConfirmation({
             to: partner.email,
@@ -1070,7 +1071,7 @@ Date: ${new Date().toISOString()}
       const partnerRows = await (db as any).execute(sql`
         SELECT id, businessName FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
 
       // Verify the partner is the receiving partner on this deal
@@ -1082,7 +1083,7 @@ Date: ${new Date().toISOString()}
         WHERE jp.dealId = ${input.dealId} AND jp.receivingPartnerId = ${partner.id}
         LIMIT 1
       `);
-      const jp = (jpRows.rows || jpRows)[0];
+      const jp = firstRow(jpRows);
       if (!jp) throw new TRPCError({ code: "NOT_FOUND", message: "Job payment not found or not authorized" });
       if (!jp.isInsuranceJob) throw new TRPCError({ code: "BAD_REQUEST", message: "This deal is not flagged as an insurance job" });
       if (jp.status === "insurance_completed" || jp.status === "paid_out") {
@@ -1129,20 +1130,20 @@ Date: ${new Date().toISOString()}
         SELECT p.*, u.email FROM partners p LEFT JOIN users u ON p.userId = u.id
         WHERE p.userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: 'NOT_FOUND', message: 'Partner profile not found' });
       // Check for existing pending request
       const existingRows = await (db as any).execute(sql`
         SELECT id FROM payoutRequests WHERE partnerId = ${partner.id} AND status = 'pending' LIMIT 1
       `);
-      const existing = (existingRows.rows || existingRows)[0];
+      const existing = firstRow(existingRows);
       if (existing) throw new TRPCError({ code: 'BAD_REQUEST', message: 'You already have a pending payout request. Please wait for it to be reviewed.' });
       // Check available balance (total pending commissions)
       const balanceRows = await (db as any).execute(sql`
         SELECT COALESCE(SUM(amount), 0) as pendingBalance
         FROM commissions WHERE receivingPartnerId = ${partner.id} AND paid = 0
       `);
-      const pendingBalance = parseFloat((balanceRows.rows || balanceRows)[0]?.pendingBalance ?? '0');
+      const pendingBalance = parseFloat(firstRow(balanceRows)?.pendingBalance ?? '0');
       if (input.requestedAmount > pendingBalance) {
         throw new TRPCError({ code: 'BAD_REQUEST', message: `Requested amount exceeds your available balance of $${pendingBalance.toFixed(2)}` });
       }
@@ -1166,12 +1167,12 @@ Date: ${new Date().toISOString()}
     const db = await getDb();
     if (!db) return [];
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return [];
     const rows = await (db as any).execute(sql`
       SELECT * FROM payoutRequests WHERE partnerId = ${partner.id} ORDER BY createdAt DESC LIMIT 20
     `);
-    return (rows.rows || rows) as any[];
+    return (asRows(rows)) as any[];
   }),
 
   // ── ADMIN: Get all payout requests ───────────────────────────────────────
@@ -1190,7 +1191,7 @@ Date: ${new Date().toISOString()}
         WHERE ${whereClause}
         ORDER BY pr.createdAt DESC LIMIT 100
       `);
-      return (rows.rows || rows) as any[];
+      return (asRows(rows)) as any[];
     }),
 
   // ── ADMIN: Approve or reject a payout request ────────────────────────────
@@ -1212,7 +1213,7 @@ Date: ${new Date().toISOString()}
         LEFT JOIN users u ON p.userId = u.id
         WHERE pr.id = ${input.requestId} LIMIT 1
       `);
-      const req = (reqRows.rows || reqRows)[0];
+      const req = firstRow(reqRows);
       if (!req) throw new TRPCError({ code: 'NOT_FOUND' });
       if (req.status !== 'pending') throw new TRPCError({ code: 'BAD_REQUEST', message: 'Request is no longer pending' });
 
@@ -1271,7 +1272,7 @@ async function processBalanceCharge(
     WHERE jobPaymentId = ${jp.id} AND milestoneType = 'final_balance' AND status = 'scheduled'
     LIMIT 1
   `);
-  const balanceMilestone = (msRows.rows || msRows)[0];
+  const balanceMilestone = firstRow(msRows);
   if (!balanceMilestone) return { success: false, reason: "no_balance_milestone" };
 
   if (!jp.stripePaymentMethodId) {
@@ -1291,7 +1292,7 @@ async function processBalanceCharge(
       SELECT stripeConnectAccountId, stripeConnectStatus FROM partners
       WHERE id = ${jp.receivingPartnerId} LIMIT 1
     `);
-    const receivingPartner = (partnerRows.rows || partnerRows)[0];
+    const receivingPartner = firstRow(partnerRows);
 
     const paymentConfig: Stripe.PaymentIntentCreateParams = {
       amount: balanceMilestone.amountCents,
@@ -1354,7 +1355,7 @@ async function processBalanceCharge(
       AND payingPartnerId = ${jp.receivingPartnerId}
     LIMIT 1
   `);
-  const commAlreadyExists = ((existingComm.rows || existingComm)[0] != null);
+  const commAlreadyExists = (firstRow(existingComm) != null);
 
   if (!commAlreadyExists && jp.referringPartnerId && parseFloat(jp.referringPartnerCommission || "0") > 0) {
     await (db as any).execute(sql`
@@ -1389,7 +1390,7 @@ async function processInsuranceCommissionPull(
     WHERE jobPaymentId = ${jp.id} AND status = 'signed'
     ORDER BY createdAt DESC LIMIT 1
   `);
-  const auth = (authRows.rows || authRows)[0];
+  const auth = firstRow(authRows);
   if (!auth) return { success: false, reason: "no_ach_authorization" };
 
   const commissionCents = Math.round(parseFloat(jp.platformFeeAmount || "0") * 100);
@@ -1398,7 +1399,7 @@ async function processInsuranceCommissionPull(
   const partnerRows = await (db as any).execute(sql`
     SELECT contactEmail FROM partners WHERE id = ${jp.referringPartnerId} LIMIT 1
   `);
-  const partner = (partnerRows.rows || partnerRows)[0];
+  const partner = firstRow(partnerRows);
 
   let paymentIntent: Stripe.PaymentIntent;
   try {

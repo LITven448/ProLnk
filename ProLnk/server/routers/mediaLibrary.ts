@@ -1,9 +1,21 @@
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 import { protectedProcedure } from "../_core/trpc";
 import { router } from "../_core/trpc";
 import { getDb } from "../db";
 import { mediaLibrary } from "../../drizzle/schema";
 import { eq, desc, and, sql, like } from "drizzle-orm";
+
+async function assertOwnsMediaItem(db: any, id: number, ctx: any) {
+  const [item] = await db.select().from(mediaLibrary).where(eq(mediaLibrary.id, id)).limit(1);
+  if (!item) {
+    throw new TRPCError({ code: "NOT_FOUND", message: "Media item not found." });
+  }
+  if (ctx.user.role !== "admin" && item.uploaderId !== ctx.user.id) {
+    throw new TRPCError({ code: "FORBIDDEN", message: "Not authorized for this media item." });
+  }
+  return item;
+}
 import { storagePut } from "../storage";
 
 export const mediaLibraryRouter = router({
@@ -91,8 +103,9 @@ export const mediaLibraryRouter = router({
   // Delete media item
   deleteItem: protectedProcedure
     .input(z.object({ id: z.number() }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const db = await getDb();
+      await assertOwnsMediaItem(db, input.id, ctx);
       await db.delete(mediaLibrary).where(eq(mediaLibrary.id, input.id));
       return { success: true };
     }),
@@ -104,8 +117,9 @@ export const mediaLibraryRouter = router({
       aiTags: z.string(),
       aiDescription: z.string(),
     }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const db = await getDb();
+      await assertOwnsMediaItem(db, input.id, ctx);
       await db.update(mediaLibrary)
         .set({
           aiAnalyzed: true,

@@ -12,8 +12,8 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { sql } from "drizzle-orm";
-import { router, publicProcedure } from "../_core/trpc";
-import { getDb } from "../db";
+import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
+import { getDb, getPartnerByUserId } from "../db";
 import { sdk } from "../_core/sdk";
 import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import { getSessionCookieOptions } from "../_core/cookies";
@@ -266,22 +266,28 @@ export const partnerAuthRouter = router({
     }),
 
   // --- Photo Consent Management ---
-  getPhotoConsent: publicProcedure
-    .input(z.object({ partnerId: z.number() }))
-    .query(async ({ input }) => {
-      const consent = await getPartnerConsent(input.partnerId);
+  // Bound to the authenticated caller's own partner — the partnerId from input is
+  // ignored to prevent reading/altering another partner's consent (IDOR).
+  getPhotoConsent: protectedProcedure
+    .input(z.object({ partnerId: z.number() }).optional())
+    .query(async ({ ctx }) => {
+      const partner = await getPartnerByUserId(ctx.user.id);
+      if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
+      const consent = await getPartnerConsent(partner.id);
       return { hasConsent: !!consent, consent: consent ?? null };
     }),
 
-  grantPhotoConsent: publicProcedure
+  grantPhotoConsent: protectedProcedure
     .input(z.object({
-      partnerId: z.number(),
+      partnerId: z.number().optional(),
       consentPhotoStorage: z.boolean().default(true),
       consentAiAnalysis: z.boolean().default(true),
       consentLeadRouting: z.boolean().default(true),
     }))
     .mutation(async ({ input, ctx }) => {
-      const success = await recordPartnerConsent(input.partnerId, {
+      const partner = await getPartnerByUserId(ctx.user.id);
+      if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
+      const success = await recordPartnerConsent(partner.id, {
         consentVersion: "1.0",
         ipAddress: (ctx.req?.headers?.["x-forwarded-for"] as string)?.split(",")[0]?.trim() || ctx.req?.socket?.remoteAddress || undefined,
         userAgent: ctx.req?.headers?.["user-agent"] || undefined,
@@ -292,10 +298,12 @@ export const partnerAuthRouter = router({
       return { success };
     }),
 
-  revokePhotoConsent: publicProcedure
-    .input(z.object({ partnerId: z.number() }))
-    .mutation(async ({ input }) => {
-      const success = await revokePartnerConsent(input.partnerId);
+  revokePhotoConsent: protectedProcedure
+    .input(z.object({ partnerId: z.number() }).optional())
+    .mutation(async ({ ctx }) => {
+      const partner = await getPartnerByUserId(ctx.user.id);
+      if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
+      const success = await revokePartnerConsent(partner.id);
       return { success };
     }),
 });

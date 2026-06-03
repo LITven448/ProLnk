@@ -33,7 +33,7 @@ const CHECKLIST = [
 ];
 
 const QUICK_LINKS = [
-  { href: "/admin/waitlist-new", label: "Waitlist Manager", icon: Users, gradient: BADGE_GRADIENTS.blue },
+  { href: "/admin/waitlist", label: "Waitlist Manager", icon: Users, gradient: BADGE_GRADIENTS.blue },
   { href: "/admin/finance", label: "Financial Center", icon: DollarSign, gradient: BADGE_GRADIENTS.green },
   { href: "/admin/pipeline", label: "Application Pipeline", icon: GitBranch, gradient: BADGE_GRADIENTS.cyan },
   { href: "/admin/partners", label: "Partner Intelligence", icon: Handshake, gradient: BADGE_GRADIENTS.orange },
@@ -346,7 +346,7 @@ export default function CommandCenter() {
                 </p>
               </div>
               <Link
-                href="/admin/waitlist-new"
+                href="/admin/waitlist"
                 className="flex items-center gap-1 text-xs font-semibold no-underline"
                 style={{ color: T.accent }}
               >

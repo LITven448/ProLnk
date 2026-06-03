@@ -284,7 +284,7 @@ export default function NetworkVisualization() {
                 Each direct recruit earning <span className="text-teal-400 font-semibold">$1,000/mo</span> = <span className="text-teal-400 font-semibold">$70/mo</span> passive income for you — forever.
               </p>
             </div>
-            <Link href="/dashboard/founding-network">
+            <Link href="/founding-network">
               <span
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all hover:opacity-90"
                 style={{ background: "#14b8a6", color: "#0A1628" }}

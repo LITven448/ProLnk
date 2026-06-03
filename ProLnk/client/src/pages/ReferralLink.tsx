@@ -106,7 +106,7 @@ export default function ReferralLink() {
   const [copiedPreset, setCopiedPreset] = useState<string | null>(null);
   const qrRef = useRef<SVGSVGElement>(null);
 
-  const partner = profile?.partner;
+  const partner = profile?.stats;
   const baseUrl = window.location.origin;
   // Prefer the network system's referral code (6-char), fall back to legacy partner-id format
   const referralCode = networkData?.referralCode ?? (partner ? `partner-${partner.id}` : "loading");

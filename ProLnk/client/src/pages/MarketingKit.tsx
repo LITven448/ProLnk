@@ -693,7 +693,7 @@ export default function MarketingKit() {
   const { user } = useAuth();
   const { data: partner } = trpc.partners.getMyProfile.useQuery();
 
-  const partnerCode = partner?.partner?.id ? `P${partner.partner.id}` : "YOUR_CODE";
+  const partnerCode = partner?.stats?.id ? `P${partner.stats.id}` : "YOUR_CODE";
   const referralLink = `${window.location.origin}/ref/${partnerCode}`;
 
   return (
@@ -766,7 +766,7 @@ export default function MarketingKit() {
           <TabsContent value="print">
             <div className="grid md:grid-cols-2 gap-4">
               {PRINT_MATERIALS.map(item => (
-                <PrintCard key={item.id} item={item} referralLink={referralLink} businessName={partner?.partner?.businessName ?? user?.name ?? 'Your Business'} />
+                <PrintCard key={item.id} item={item} referralLink={referralLink} businessName={partner?.stats?.businessName ?? user?.name ?? 'Your Business'} />
               ))}
             </div>
             <div className="mt-4 p-4 rounded-2xl border" style={{ borderColor: T.border, background: `${T.teal}08` }}>

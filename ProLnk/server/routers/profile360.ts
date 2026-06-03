@@ -5,6 +5,20 @@ import { getDb } from "../db";
 import { partner360Profiles, homeowner360Profiles, partners, users, homeownerProfiles, properties } from "../../drizzle/schema";
 import { eq, sql } from "drizzle-orm";
 
+// ─── Sensitive-field stripping helpers ───────────────────────────────────────
+
+function safeUser<T extends Record<string, any> | null | undefined>(u: T): T {
+  if (!u) return u;
+  const { adminPasswordHash, stripeCustomerId, passwordHash, ...rest } = u as Record<string, any>;
+  return rest as T;
+}
+
+function safePartner<T extends Record<string, any> | null | undefined>(p: T): T {
+  if (!p) return p;
+  const { bankAccountLast4, stripeConnectAccountId, ...rest } = p as Record<string, any>;
+  return rest as T;
+}
+
 // ─── Completeness scoring helpers ─────────────────────────────────────────────
 
 function computePartnerScore(data: Record<string, unknown>): number {
@@ -132,7 +146,7 @@ export const profile360Router = router({
     const [partnerRow] = await db.select().from(partners).where(eq(partners.userId, ctx.user.id)).limit(1);
     if (!partnerRow) return null;
     const [profile] = await db.select().from(partner360Profiles).where(eq(partner360Profiles.partnerId, partnerRow.id)).limit(1);
-    return { partner: partnerRow, profile: profile ?? null };
+    return { partner: safePartner(partnerRow), profile: profile ?? null };
   }),
 
   upsertPartner360: protectedProcedure
@@ -175,7 +189,7 @@ export const profile360Router = router({
       profile360: profile ?? null,
       homeProfile: homeProfile ?? null,
       properties: userProps,
-      user: ctx.user,
+      user: safeUser(ctx.user as Record<string, any>),
     };
   }),
 
@@ -223,7 +237,7 @@ export const profile360Router = router({
         const userRow = partnerRow.userId
           ? (await db.select().from(users).where(eq(users.id, partnerRow.userId)).limit(1))[0]
           : null;
-        return { type: "partner" as const, partner: partnerRow, profile360: profile360 ?? null, user: userRow ?? null };
+        return { type: "partner" as const, partner: safePartner(partnerRow), profile360: profile360 ?? null, user: safeUser(userRow ?? null) };
       } else {
         const [userRow] = await db.select().from(users).where(eq(users.id, input.id)).limit(1);
         if (!userRow) return null;
@@ -232,7 +246,7 @@ export const profile360Router = router({
         const userProps = homeProfile
           ? await db.select().from(properties).where(eq(properties.ownerId, homeProfile.id)).limit(10)
           : [];
-        return { type: "homeowner" as const, user: userRow, profile360: profile360 ?? null, homeProfile: homeProfile ?? null, properties: userProps };
+        return { type: "homeowner" as const, user: safeUser(userRow), profile360: profile360 ?? null, homeProfile: homeProfile ?? null, properties: userProps };
       }
     }),
 
@@ -250,7 +264,7 @@ export const profile360Router = router({
         const rows = await db.select().from(partners).limit(input.limit).offset(input.offset);
         const profiles = await db.select().from(partner360Profiles);
         const profileMap = new Map(profiles.map(p => [p.partnerId, p]));
-        return rows.map(p => ({ ...p, profile360: profileMap.get(p.id) ?? null }));
+        return rows.map(p => ({ ...safePartner(p), profile360: profileMap.get(p.id) ?? null }));
       } else {
         const rows = await db.select().from(homeownerProfiles).limit(input.limit).offset(input.offset);
         const profiles = await db.select().from(homeowner360Profiles);

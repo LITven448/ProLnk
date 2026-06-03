@@ -47,6 +47,7 @@
  */
 
 import { getDb } from "./db";
+import { asRows, firstRow } from "./_core/dbRows";
 import { sql } from "drizzle-orm";
 import { notifyOwner } from "./_core/notification";
 import { aiHandled, dashboard, escalate } from "./notify";
@@ -106,7 +107,7 @@ export async function registerHomeOrigination(opts: {
     WHERE propertyAddressHash = ${addressHash}
     LIMIT 1
   `);
-  const existing = (existingRows.rows || existingRows)[0];
+  const existing = firstRow(existingRows);
 
   if (existing) {
     // Already registered — original partner keeps origination
@@ -170,7 +171,7 @@ export async function processJobNetworkCommissions(opts: {
         AND fps.status = 'active'
         AND nc.networkLevel BETWEEN 1 AND 4
     `);
-    const networkMembers = networkRows.rows || networkRows;
+    const networkMembers = asRows(networkRows);
 
     for (const member of networkMembers) {
       const rate = levelRates[member.networkLevel] ?? 0;
@@ -235,7 +236,7 @@ export async function processOriginationCommission(opts: {
         AND p.status = 'approved'
       LIMIT 1
     `);
-    const originator = (originatorRows.rows || originatorRows)[0];
+    const originator = firstRow(originatorRows);
     if (!originator) return { originatorPartnerId: null, commissionAmount: 0 };
 
     // Only pay origination if house is active on TrustyPro
@@ -307,7 +308,7 @@ export async function processSubscriptionNetworkCommissions(billingPeriod: strin
         AND p.subscriptionFee > 0
         AND p.trialStatus = 'active'
     `);
-    const payingPartners = payingRows.rows || payingRows;
+    const payingPartners = asRows(payingRows);
 
     for (const partner of payingPartners) {
       const subscriptionAmount = parseFloat(partner.subscriptionFee || "0");
@@ -323,7 +324,7 @@ export async function processSubscriptionNetworkCommissions(billingPeriod: strin
           AND fps.status = 'active'
           AND nc.networkLevel BETWEEN 1 AND 4
       `);
-      const networkMembers = networkRows.rows || networkRows;
+      const networkMembers = asRows(networkRows);
 
       for (const member of networkMembers) {
         const rate = levelRates[member.networkLevel] ?? 0;
@@ -339,7 +340,7 @@ export async function processSubscriptionNetworkCommissions(billingPeriod: strin
             AND billingPeriod = ${billingPeriod}
           LIMIT 1
         `);
-        if ((dupCheck.rows || dupCheck)[0]) continue;
+        if (firstRow(dupCheck)) continue;
 
         await (db as any).execute(sql`
           INSERT INTO subscriptionNetworkCommissions (
@@ -382,7 +383,7 @@ export async function enrollFoundingPartner(opts: {
   const countRows = await (db as any).execute(sql`
     SELECT COUNT(*) as cnt FROM foundingPartnerStatus WHERE status != 'churned'
   `);
-  const currentCount = parseInt((countRows.rows || countRows)[0]?.cnt ?? "0");
+  const currentCount = parseInt(firstRow(countRows)?.cnt ?? "0");
 
   if (currentCount >= 100) {
     return { success: false, enrollmentNumber: null, message: "Founding partner enrollment window is closed (100/100 slots filled)" };
@@ -392,7 +393,7 @@ export async function enrollFoundingPartner(opts: {
   const existingRows = await (db as any).execute(sql`
     SELECT id FROM foundingPartnerStatus WHERE partnerId = ${opts.partnerId} LIMIT 1
   `);
-  if ((existingRows.rows || existingRows)[0]) {
+  if (firstRow(existingRows)) {
     return { success: false, enrollmentNumber: null, message: "Partner is already a founding partner" };
   }
 
@@ -452,7 +453,7 @@ export async function buildNetworkChain(opts: {
       WHERE nc.memberPartnerId = ${opts.recruitingPartnerId}
         AND nc.isActive = 1
     `);
-    const existingChain = chainRows.rows || chainRows;
+    const existingChain = asRows(chainRows);
 
     for (const chain of existingChain) {
       const newLevel = chain.networkLevel + 1;
@@ -471,7 +472,7 @@ export async function buildNetworkChain(opts: {
     const fpRows = await (db as any).execute(sql`
       SELECT id FROM foundingPartnerStatus WHERE partnerId = ${opts.recruitingPartnerId} AND status = 'active' LIMIT 1
     `);
-    if ((fpRows.rows || fpRows)[0]) {
+    if (firstRow(fpRows)) {
       await (db as any).execute(sql`
         INSERT IGNORE INTO partnerNetworkChain (
           foundingPartnerId, memberPartnerId, networkLevel, recruitedByPartnerId
@@ -517,7 +518,7 @@ export async function checkFoundingPartnerRequirements(partnerId: number): Promi
     LEFT JOIN proPassCards pp ON pp.partnerId = p.id AND pp.status = 'active'
     WHERE p.id = ${partnerId} LIMIT 1
   `);
-  const partner = (partnerRows.rows || partnerRows)[0];
+  const partner = firstRow(partnerRows);
   if (!partner) return { meetsAll: false, progress: {} as any, missingItems: ["Partner not found"] };
 
   const homesAdded = parseInt(partner.homesAdded ?? "0");
@@ -581,5 +582,5 @@ export async function getFoundingPartnerEarnings(partnerId: number) {
     WHERE fps.partnerId = ${partnerId}
     LIMIT 1
   `);
-  return (rows.rows || rows)[0] ?? null;
+  return firstRow(rows) ?? null;
 }

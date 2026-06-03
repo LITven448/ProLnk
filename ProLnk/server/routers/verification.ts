@@ -15,8 +15,9 @@
  */
 import { z } from "zod";
 import { sql } from "drizzle-orm";
-import { router, protectedProcedure } from "../_core/trpc";
+import { router, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { asRows, firstRow } from "../_core/dbRows";
 
 // --- Helpers ------------------------------------------------------------------
 const CHECKPOINT_WEIGHTS: Record<string, number> = {
@@ -59,7 +60,7 @@ async function upsertVerification(partnerId: number, updates: Record<string, any
   const rows = await (db as any).execute(sql`
     SELECT * FROM partnerVerifications WHERE partnerId = ${partnerId} LIMIT 1
   `);
-  const current = (rows.rows || rows)[0] || {};
+  const current = firstRow(rows) || {};
 
   const merged = { ...current, ...updates };
 
@@ -86,7 +87,7 @@ async function upsertVerification(partnerId: number, updates: Record<string, any
     const newRows = await (db as any).execute(sql`
       SELECT * FROM partnerVerifications WHERE partnerId = ${partnerId} LIMIT 1
     `);
-    return (newRows.rows || newRows)[0];
+    return firstRow(newRows);
   } else {
     // Update
     await (db as any).execute(sql`
@@ -111,17 +112,17 @@ export const verificationRouter = router({
     const partnerRows = await (db as any).execute(sql`
       SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return null;
 
     const rows = await (db as any).execute(sql`
       SELECT * FROM partnerVerifications WHERE partnerId = ${partner.id} LIMIT 1
     `);
-    return (rows.rows || rows)[0] || null;
+    return firstRow(rows) || null;
   }),
 
   // Admin: get verification for any partner
-  adminGetVerification: protectedProcedure
+  adminGetVerification: adminProcedure
     .input(z.object({ partnerId: z.number() }))
     .query(async ({ input }) => {
       const db = await getDb();
@@ -132,11 +133,11 @@ export const verificationRouter = router({
         JOIN partners p ON pv.partnerId = p.id
         WHERE pv.partnerId = ${input.partnerId} LIMIT 1
       `);
-      return (rows.rows || rows)[0] || null;
+      return firstRow(rows) || null;
     }),
 
   // Admin: list all partners with verification status
-  adminListVerifications: protectedProcedure
+  adminListVerifications: adminProcedure
     .input(z.object({
       limit: z.number().default(50),
       offset: z.number().default(0),
@@ -179,13 +180,13 @@ export const verificationRouter = router({
       `);
 
       return {
-        partners: rows.rows || rows,
-        total: (countRows.rows || countRows)[0]?.total || 0,
+        partners: asRows(rows),
+        total: firstRow(countRows)?.total || 0,
       };
     }),
 
   // Admin: update a specific checkpoint
-  adminUpdateCheckpoint: protectedProcedure
+  adminUpdateCheckpoint: adminProcedure
     .input(z.object({
       partnerId: z.number(),
       checkpoint: z.enum([
@@ -302,7 +303,7 @@ export const verificationRouter = router({
       const rows = await (db as any).execute(sql`
         SELECT * FROM partnerVerifications WHERE partnerId = ${input.partnerId} LIMIT 1
       `);
-      const current = (rows.rows || rows)[0];
+      const current = firstRow(rows);
       if (current) {
         const checkpointFields = Object.keys(CHECKPOINT_WEIGHTS);
         const checkpointCount = checkpointFields.filter(f => current[f]).length;

@@ -982,7 +982,7 @@ function StormOpportunityAlert() {
             Quarter-sized hail reported. Roofing, siding, and gutter jobs are surging in your service area.
             Homeowners are requesting estimates right now.
           </p>
-          <Link href="/inbound-leads">
+          <Link href="/leads">
             <span
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all"
               style={{ background: "#ef4444", color: "#fff" }}

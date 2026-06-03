@@ -22,12 +22,26 @@ import { getDb } from "../db";
 import { partnerIntegrations, photoIntakeQueue } from "../../drizzle/schema";
 import { eq, desc } from "drizzle-orm";
 
+// Project only client-safe integration fields — never expose access/refresh tokens
+// or webhook secrets (stored inside metadata) to the client.
+function toSafeIntegration(i: any) {
+  return {
+    id: i.id,
+    source: i.source,
+    status: i.status,
+    externalAccountName: i.externalAccountName ?? null,
+    lastSyncAt: i.lastSyncAt ?? null,
+    createdAt: i.connectedAt ?? null,
+  };
+}
+
 export const integrationsRouter = createTRPCRouter({
   // --- Partner: List my integrations -----------------------------------------
   listMine: protectedProcedure.query(async ({ ctx }) => {
     const partner = await getPartnerByUserId(ctx.user.id);
     if (!partner) return [];
-    return getIntegrationsByPartnerId(partner.id);
+    const integrations = await getIntegrationsByPartnerId(partner.id);
+    return integrations.map(toSafeIntegration);
   }),
 
   // --- Partner: Connect an integration ---------------------------------------
@@ -120,10 +134,11 @@ export const integrationsRouter = createTRPCRouter({
     const db = await getDb();
     if (!db) return [];
 
-    return db
+    const all = await db
       .select()
       .from(partnerIntegrations)
       .orderBy(desc(partnerIntegrations.connectedAt));
+    return all.map((i) => ({ ...toSafeIntegration(i), partnerId: i.partnerId }));
   }),
 
   // --- Admin: Get global intake queue stats ----------------------------------

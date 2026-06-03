@@ -194,7 +194,7 @@ export default function SpringHomeChecklist() {
                 {pct === 100 && '✅ Your home is spring-ready. Well done.'}
               </p>
               {done < total && (
-                <Link href="/request-quote">
+                <Link href="/get-quotes">
                   <button className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 rounded-lg text-sm font-medium transition-colors">
                     Book contractors for unchecked items →
                   </button>
@@ -269,7 +269,7 @@ export default function SpringHomeChecklist() {
           <div className="mt-10 bg-gradient-to-br from-teal-900/40 to-slate-800/60 border border-teal-700/30 rounded-2xl p-8 text-center">
             <p className="text-2xl font-bold text-white mb-2">Need help with any of these items?</p>
             <p className="text-slate-400 mb-5">ProLnk connects you with licensed, vetted DFW contractors — HVAC, roofing, plumbing, foundation, pest, and more. Free to request, no obligation.</p>
-            <Link href="/request-quote">
+            <Link href="/get-quotes">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-xl text-white font-semibold transition-colors">
                 Find a Contractor →
               </button>

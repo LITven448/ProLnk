@@ -165,7 +165,7 @@ export default function FallHomeChecklist() {
                 {pct === 100 && '✅ Your home is winter-ready. Well done.'}
               </p>
               {done < total && (
-                <Link href="/request-quote">
+                <Link href="/get-quotes">
                   <button className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg text-sm font-medium transition-colors">
                     Book contractors for unchecked items →
                   </button>
@@ -245,7 +245,7 @@ export default function FallHomeChecklist() {
           <div className="mt-10 bg-gradient-to-br from-orange-900/40 to-slate-800/60 border border-orange-700/30 rounded-2xl p-8 text-center">
             <p className="text-2xl font-bold text-white mb-2">Need help winterizing your home?</p>
             <p className="text-slate-400 mb-5">ProLnk connects DFW homeowners with licensed contractors for HVAC, plumbing, insulation, roofing, and more. Get matched in minutes.</p>
-            <Link href="/request-quote">
+            <Link href="/get-quotes">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-xl text-white font-semibold transition-colors">
                 Find a Winter-Ready Contractor →
               </button>

@@ -65,7 +65,7 @@ function statusBadge(status: VerificationStatus) {
 export default function PartnerVerification() {
   const { data: profileData, isLoading } = trpc.partners.getMyProfile.useQuery();
 
-  const partner = (profileData as any)?.partner ?? profileData;
+  const partner = (profileData as any)?.stats ?? profileData;
 
   const items = useMemo((): VerificationItem[] => {
     if (!partner) return [];

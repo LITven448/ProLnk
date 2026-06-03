@@ -1,6 +1,7 @@
 import { adminProcedure, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { router } from "../_core/trpc";
-import { getDb } from "../db";
+import { TRPCError } from "@trpc/server";
+import { getDb, getPartnerByUserId } from "../db";
 import {
   partners,
   proUplineChain,
@@ -105,10 +106,18 @@ export const commissionsRouter = router({
         period: z.string().regex(/^\d{4}-\d{2}$/),
       })
     )
-    .query(async ({ input }) => {
+    .query(async ({ input, ctx }) => {
       const { partnerId, period } = input;
       const db = await getDb();
       if (!db) return { period, totalEarned: 0, payoutCount: 0, payoutTypes: [] };
+
+      // Ownership guard (prevent IDOR): non-admins may only read their own earnings.
+      if (ctx.user.role !== "admin") {
+        const ownPartner = await getPartnerByUserId(ctx.user.id);
+        if (!ownPartner || ownPartner.id !== partnerId) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "Not authorized to view these earnings." });
+        }
+      }
 
       const payouts = await db.query.commissionPayout.findMany({
         where: and(

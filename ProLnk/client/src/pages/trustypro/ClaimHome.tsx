@@ -364,7 +364,7 @@ function StepSuccess({ property }: { property: Property }) {
 
       <div className="flex gap-3">
         <button
-          onClick={() => navigate("/trustypro/project-gallery")}
+          onClick={() => navigate("/trustypro/gallery")}
           className="flex-1 py-3 rounded-xl text-sm font-bold border transition-colors hover:border-violet-500 text-white"
           style={{ borderColor: BORDER }}
         >

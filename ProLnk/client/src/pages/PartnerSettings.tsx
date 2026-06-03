@@ -94,7 +94,7 @@ function ProfileTab() {
     onSuccess: () => toast.success("Profile saved"),
     onError: (e) => toast.error(e.message),
   });
-  const partner = profileData?.partner as any;
+  const partner = profileData?.stats as any;
   const [form, setForm] = useState({
     businessName: "",
     contactPhone: "",
@@ -200,7 +200,7 @@ function NotificationsTab() {
     onSuccess: () => toast.success("Notification preferences saved"),
     onError: (e) => toast.error(e.message),
   });
-  const partner = profileData?.partner as any;
+  const partner = profileData?.stats as any;
   const prefs = (partner?.notificationPrefs ?? {}) as Record<string, boolean>;
 
   const SECTIONS = [
@@ -575,7 +575,7 @@ function AccountTab() {
 
   const handleDownload = () => {
     setDownloading(true);
-    const partner = (profileData as any)?.partner ?? {};
+    const partner = (profileData as any)?.stats ?? {};
     const rows = [
       ["Field", "Value"],
       ["Name", partner.contactName ?? user?.name ?? ""],

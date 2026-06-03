@@ -11,6 +11,7 @@
 
 import { z } from "zod";
 import { publicProcedure, protectedProcedure, router } from "../_core/trpc";
+import { asRows, firstRow } from "../_core/dbRows";
 import { getDb } from "../db";
 import { sql, eq, and, lt, inArray, isNotNull } from "drizzle-orm";
 import { customerDeals } from "../../drizzle/schema";
@@ -36,7 +37,7 @@ async function rawQuery(query: string, params: any[] = []) {
       return `'${String(p).replace(/'/g, "''")}'`;
     })
   ));
-  return result.rows || result;
+  return asRows(result);
 }
 
 // --- Router ------------------------------------------------------------------
@@ -69,7 +70,7 @@ export const customerDealsRouter = router({
         LIMIT 1
       `);
 
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal) return null;
 
       // Check expiry
@@ -94,14 +95,14 @@ export const customerDealsRouter = router({
           WHERE partnerId = ${deal.receivingPartnerId} AND isPublic = 1 AND flagged = 0
           ORDER BY createdAt DESC LIMIT 10
         `);
-        reviews = reviewRows.rows || reviewRows;
+        reviews = asRows(reviewRows);
 
         const ratingRows = await (db as any).execute(sql`
           SELECT AVG(rating) as avgRating, COUNT(*) as reviewCount
           FROM partnerReviews
           WHERE partnerId = ${deal.receivingPartnerId} AND isPublic = 1 AND flagged = 0
         `);
-        const rData = (ratingRows.rows || ratingRows)[0];
+        const rData = firstRow(ratingRows);
         avgRating = parseFloat(rData?.avgRating || "0").toFixed(1);
         reviewCount = rData?.reviewCount || 0;
       }
@@ -144,7 +145,7 @@ export const customerDealsRouter = router({
       const rows = await (db as any).execute(sql`
         SELECT id, status, expiresAt FROM customerDeals WHERE token = ${input.token} LIMIT 1
       `);
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal) return { success: false, error: "Deal not found" };
       if (deal.status === "expired") return { success: false, error: "This offer has expired" };
       if (deal.status === "declined") return { success: false, error: "This offer was declined" };
@@ -169,7 +170,7 @@ export const customerDealsRouter = router({
           LEFT JOIN partners rp ON cd.receivingPartnerId = rp.id
           WHERE cd.token = ${input.token} LIMIT 1
         `);
-        const fullDeal = (fullRows.rows || fullRows)[0];
+        const fullDeal = firstRow(fullRows);
         if (fullDeal && input.homeownerPhone) {
           // Homeowner confirmation SMS
           const { sendDealNotification: _unused, ...notifs } = await import('../notifications');
@@ -253,7 +254,7 @@ export const customerDealsRouter = router({
         SELECT id, receivingPartnerId, homeownerName, homeownerEmail
         FROM customerDeals WHERE token = ${input.token} LIMIT 1
       `);
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal || !deal.receivingPartnerId) return { success: false, error: "Deal not found" };
 
       await (db as any).execute(sql`
@@ -298,7 +299,7 @@ export const customerDealsRouter = router({
       const rows = await (db as any).execute(sql`
         SELECT id, status FROM customerDeals WHERE token = ${input.token} LIMIT 1
       `);
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal) return { success: false, error: "Deal not found" };
       if (["declined", "expired"].includes(deal.status)) {
         return { success: false, error: "This deal is no longer active" };
@@ -398,8 +399,8 @@ export const customerDealsRouter = router({
       `);
 
       return {
-        deals: rows.rows || rows,
-        total: (countRows.rows || countRows)[0]?.total || 0,
+        deals: asRows(rows),
+        total: firstRow(countRows)?.total || 0,
       };
     }),
 
@@ -420,7 +421,7 @@ export const customerDealsRouter = router({
         WHERE cd.token = ${input.token}
         LIMIT 1
       `);
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal) throw new Error("Deal not found");
 
       const baseUrl = process.env.APP_BASE_URL || "https://prolnk.io";
@@ -590,7 +591,7 @@ export const customerDealsRouter = router({
         ORDER BY cd.createdAt DESC
         LIMIT 50
       `);
-      return (rows.rows || rows) as any[];
+      return (asRows(rows)) as any[];
     }),
 
   // -- Protected: Generate surgical AI fix for a specific issue in a deal photo --
@@ -663,7 +664,7 @@ export const customerDealsRouter = router({
         SUM(CASE WHEN status = 'job_closed' THEN actualJobValue ELSE 0 END) as totalRevenue
       FROM customerDeals
     `);
-    return (rows.rows || rows)[0] || {};
+    return firstRow(rows) || {};
   }),
 });
 

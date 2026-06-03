@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { insertIdOf } from "../_core/dbRows";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { notifyOwner } from "../_core/notification";
@@ -96,8 +97,7 @@ export const featuredAdvertisersRouter = router({
           VALUES (${bn},${cn},${ce},${cp},${cat},${zipCodesJson},${mf},${st},
                   ${bt},${bs},${bct},${bcu},${blu},${sod},${sos},${sie},${sd},${ed},${notes})
         `) as any;
-        const r = Array.isArray(result[0]) ? result[0] : result;
-        return { id: (r as any).insertId ?? 0 };
+        return { id: insertIdOf(result) ?? 0 };
       }
     }),
 

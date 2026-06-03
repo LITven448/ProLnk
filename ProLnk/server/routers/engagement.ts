@@ -1,7 +1,8 @@
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 import { publicProcedure, protectedProcedure } from "../_core/trpc";
 import { router } from "../_core/trpc";
-import { getDb } from "../db";
+import { getDb, getPartnerByUserId } from "../db";
 import { partnerCheckIns, partnerSpotlights, notificationPreferences } from "../../drizzle/schema";
 import { eq, desc, and, sql } from "drizzle-orm";
 
@@ -98,9 +99,19 @@ export const engagementRouter = router({
 
   deleteSpotlight: protectedProcedure
     .input(z.object({ id: z.number() }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
+
+      const partner = await getPartnerByUserId(ctx.user.id);
+      const [spotlight] = await db.select().from(partnerSpotlights)
+        .where(eq(partnerSpotlights.id, input.id)).limit(1);
+      if (!spotlight) return { success: true };
+      const isAdmin = ctx.user.role === "admin";
+      if (!isAdmin && (!partner || spotlight.partnerId !== partner.id)) {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Not authorized to delete this spotlight." });
+      }
+
       await db.delete(partnerSpotlights).where(eq(partnerSpotlights.id, input.id));
       return { success: true };
     }),
@@ -108,26 +119,27 @@ export const engagementRouter = router({
   // ── Notification Preferences ──
   // Schema stores per-(userId, channel, category) rows
   getNotificationPreferences: protectedProcedure
-    .input(z.object({ userId: z.number() }))
-    .query(async ({ input }) => {
+    .input(z.object({ userId: z.number().optional() }).optional())
+    .query(async ({ ctx }) => {
       const db = await getDb();
       if (!db) return [];
       return db.select().from(notificationPreferences)
-        .where(eq(notificationPreferences.userId, input.userId));
+        .where(eq(notificationPreferences.userId, ctx.user.id));
     }),
 
   updateNotificationPreference: protectedProcedure
     .input(z.object({
-      userId: z.number(),
+      userId: z.number().optional(),
       channel: z.enum(["email", "sms", "push", "in_app"]),
       category: z.string(),
       enabled: z.boolean(),
       frequency: z.enum(["instant", "daily_digest", "weekly_digest", "never"]).optional(),
     }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
-      const { userId, channel, category, enabled, frequency } = input;
+      const { channel, category, enabled, frequency } = input;
+      const userId = ctx.user.id;
       const existing = await db.select().from(notificationPreferences)
         .where(and(
           eq(notificationPreferences.userId, userId),

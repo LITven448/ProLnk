@@ -1,6 +1,7 @@
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure } from "../_core/trpc";
-import { getDb } from "../db";
+import { getDb, getPartnerByUserId } from "../db";
 import {
   propertyProfiles,
   partnerPerformanceScores,
@@ -100,9 +101,18 @@ export const dataIntelligenceRouter = router({
 
   upsertPartnerPerformanceScore: protectedProcedure
     .input(z.object({ partnerId: z.number() }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
+
+      // Admin-or-owner guard: non-admins may only recompute their own score.
+      if (ctx.user.role !== "admin") {
+        const ownPartner = await getPartnerByUserId(ctx.user.id);
+        if (!ownPartner || ownPartner.id !== input.partnerId) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "Not authorized to update this partner's score." });
+        }
+      }
+
       // Compute score from live data
       const partnerOpps = await db
         .select()

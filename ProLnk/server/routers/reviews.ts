@@ -7,8 +7,9 @@
  */
 import { z } from "zod";
 import { sql } from "drizzle-orm";
-import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
+import { router, publicProcedure, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { asRows, firstRow } from "../_core/dbRows";
 import crypto from "crypto";
 
 export const reviewsRouter = router({
@@ -31,14 +32,14 @@ export const reviewsRouter = router({
         SELECT id, receivingPartnerId, homeownerName, homeownerEmail
         FROM customerDeals WHERE token = ${input.token} LIMIT 1
       `);
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal || !deal.receivingPartnerId) return { success: false, error: "Deal not found" };
 
       // Check if already reviewed
       const existing = await (db as any).execute(sql`
         SELECT id FROM partnerReviews WHERE dealId = ${deal.id} LIMIT 1
       `);
-      if ((existing.rows || existing).length > 0) return { success: false, error: "Already reviewed" };
+      if (asRows(existing).length > 0) return { success: false, error: "Already reviewed" };
 
       await (db as any).execute(sql`
         INSERT INTO partnerReviews
@@ -94,14 +95,14 @@ export const reviewsRouter = router({
         WHERE cd.token = ${input.dealToken}
         LIMIT 1
       `);
-      const deal = (rows.rows || rows)[0];
+      const deal = firstRow(rows);
       if (!deal) return { success: false, error: "Deal not found or not your deal" };
 
       // Check if already reviewed
       const existing = await (db as any).execute(sql`
         SELECT id FROM homeownerReviews WHERE dealId = ${deal.id} LIMIT 1
       `);
-      if ((existing.rows || existing).length > 0) return { success: false, error: "Already reviewed" };
+      if (asRows(existing).length > 0) return { success: false, error: "Already reviewed" };
 
       await (db as any).execute(sql`
         INSERT INTO homeownerReviews
@@ -128,7 +129,7 @@ export const reviewsRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return { reviews: [], total: 0, avgRating: 0 };
 
       const rows = await (db as any).execute(sql`
@@ -145,17 +146,17 @@ export const reviewsRouter = router({
         FROM partnerReviews
         WHERE partnerId = ${partner.id} AND isPublic = 1
       `);
-      const stats = (countRows.rows || countRows)[0] || {};
+      const stats = firstRow(countRows) || {};
 
       return {
-        reviews: rows.rows || rows,
+        reviews: asRows(rows),
         total: stats.total || 0,
         avgRating: parseFloat(stats.avgRating) || 0,
       };
     }),
 
   // -- Protected: Admin -- get all reviews with partner info ---------------------
-  adminGetAll: protectedProcedure
+  adminGetAll: adminProcedure
     .input(z.object({ limit: z.number().default(50), offset: z.number().default(0) }))
     .query(async ({ input }) => {
       const db = await getDb();
@@ -173,13 +174,13 @@ export const reviewsRouter = router({
         SELECT COUNT(*) as total FROM partnerReviews
       `);
       return {
-        reviews: rows.rows || rows,
-        total: (countRows.rows || countRows)[0]?.total || 0,
+        reviews: asRows(rows),
+        total: firstRow(countRows)?.total || 0,
       };
     }),
 
   // -- Protected: Admin -- flag/unflag a review -----------------------------------
-  adminFlagReview: protectedProcedure
+  adminFlagReview: adminProcedure
     .input(z.object({ reviewId: z.number(), flagged: z.boolean() }))
     .mutation(async ({ input }) => {
       const db = await getDb();
@@ -211,7 +212,7 @@ export const reviewsRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new Error("Partner not found");
 
       const token = crypto.randomBytes(32).toString("hex");
@@ -257,7 +258,7 @@ export const reviewsRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return { requests: [], total: 0 };
 
       const rows = await (db as any).execute(sql`
@@ -272,8 +273,8 @@ export const reviewsRouter = router({
         SELECT COUNT(*) as total FROM reviewRequests WHERE partnerId = ${partner.id}
       `);
       return {
-        requests: rows.rows || rows,
-        total: (countRows.rows || countRows)[0]?.total || 0,
+        requests: asRows(rows),
+        total: firstRow(countRows)?.total || 0,
       };
     }),
 
@@ -294,7 +295,7 @@ export const reviewsRouter = router({
           AND (rr.expiresAt IS NULL OR rr.expiresAt > NOW())
         LIMIT 1
       `);
-      const req = (rows.rows || rows)[0];
+      const req = firstRow(rows);
       if (!req) return null;
       return req;
     }),
@@ -326,7 +327,7 @@ export const reviewsRouter = router({
           AND (rr.expiresAt IS NULL OR rr.expiresAt > NOW())
         LIMIT 1
       `);
-      const req = (rows.rows || rows)[0];
+      const req = firstRow(rows);
       if (!req) return { success: false, error: "Review link not found or expired" };
 
       // Mark review request as submitted and store rating data
@@ -344,7 +345,7 @@ export const reviewsRouter = router({
         SELECT COUNT(*) as cnt, COALESCE(AVG(rating), 0) as avg
         FROM partnerReviews WHERE partnerId = ${req.partnerId} AND isPublic = 1
       `);
-      const existing = (existingRatingRows.rows || existingRatingRows)[0] || {};
+      const existing = firstRow(existingRatingRows) || {};
       const existingCount = parseInt(existing.cnt) || 0;
       const existingAvg = parseFloat(existing.avg) || 0;
       const newAvg = ((existingAvg * existingCount) + input.rating) / (existingCount + 1);

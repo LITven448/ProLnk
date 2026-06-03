@@ -20,6 +20,7 @@ import crypto from "crypto";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow, insertIdOf } from "../_core/dbRows";
 import { getDb } from "../db";
 import { invokeLLM, VLM_MODELS } from "../_core/llm";
 import { generateImage } from "../_core/imageGeneration";
@@ -367,7 +368,7 @@ export const scoutRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id, businessName, status, isScout FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner || partner.status !== "approved") {
         throw new TRPCError({ code: "FORBIDDEN", message: "Only approved partners can create assessments" });
       }
@@ -389,7 +390,7 @@ export const scoutRouter = router({
           ${input.assessmentType}, ${input.assessmentFeeCharged ?? null}, 'in_progress', NOW()
         )
       `);
-      const assessmentId = (result.rows || result).insertId ?? result.insertId;
+      const assessmentId = insertIdOf(result);
 
       // Create all 12 zone records (pending)
       for (const zone of ASSESSMENT_ZONES) {
@@ -410,7 +411,7 @@ export const scoutRouter = router({
       if (!db) return null;
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
 
       const assessmentRows = await (db as any).execute(sql`
         SELECT a.*, p.businessName as scoutBusinessName
@@ -420,18 +421,18 @@ export const scoutRouter = router({
           AND (a.scoutPartnerId = ${partner?.id ?? 0} OR ${ctx.user.role === "admin" ? 1 : 0} = 1)
         LIMIT 1
       `);
-      const assessment = (assessmentRows.rows || assessmentRows)[0];
+      const assessment = firstRow(assessmentRows);
       if (!assessment) throw new TRPCError({ code: "NOT_FOUND" });
 
       const zonesRows = await (db as any).execute(sql`
         SELECT * FROM assessmentZones WHERE assessmentId = ${input.assessmentId} ORDER BY zoneNumber ASC
       `);
-      const zones = zonesRows.rows || zonesRows;
+      const zones = asRows(zonesRows);
 
       const findingsRows = await (db as any).execute(sql`
         SELECT * FROM assessmentFindings WHERE assessmentId = ${input.assessmentId} ORDER BY urgency ASC, id ASC
       `);
-      const findings = findingsRows.rows || findingsRows;
+      const findings = asRows(findingsRows);
 
       return { assessment, zones, findings };
     }),
@@ -462,7 +463,7 @@ export const scoutRouter = router({
         WHERE a.id = ${input.assessmentId} AND p.userId = ${ctx.user.id}
         LIMIT 1
       `);
-      const assessment = (assessmentRows.rows || assessmentRows)[0];
+      const assessment = firstRow(assessmentRows);
       if (!assessment) throw new TRPCError({ code: "NOT_FOUND", message: "Assessment not found" });
 
       const zone = ASSESSMENT_ZONES.find(z => z.number === input.zoneNumber);
@@ -498,7 +499,7 @@ export const scoutRouter = router({
       const zoneRows = await (db as any).execute(sql`
         SELECT id FROM assessmentZones WHERE assessmentId = ${input.assessmentId} AND zoneNumber = ${input.zoneNumber} LIMIT 1
       `);
-      const zoneId = (zoneRows.rows || zoneRows)[0]?.id;
+      const zoneId = firstRow(zoneRows)?.id;
 
       // Insert findings
       for (const finding of analysis.findings) {
@@ -554,20 +555,20 @@ export const scoutRouter = router({
         WHERE a.id = ${input.assessmentId} AND p.userId = ${ctx.user.id}
         LIMIT 1
       `);
-      const assessment = (assessmentRows.rows || assessmentRows)[0];
+      const assessment = firstRow(assessmentRows);
       if (!assessment) throw new TRPCError({ code: "NOT_FOUND" });
 
       // Get all findings
       const findingsRows = await (db as any).execute(sql`
         SELECT * FROM assessmentFindings WHERE assessmentId = ${input.assessmentId} ORDER BY urgency ASC
       `);
-      const allFindings = findingsRows.rows || findingsRows;
+      const allFindings = asRows(findingsRows);
 
       // Get zone results
       const zonesRows = await (db as any).execute(sql`
         SELECT * FROM assessmentZones WHERE assessmentId = ${input.assessmentId} ORDER BY zoneNumber
       `);
-      const zoneResults = zonesRows.rows || zonesRows;
+      const zoneResults = asRows(zonesRows);
 
       // Generate report
       const report = await generateHomeIntelligenceReport(
@@ -628,7 +629,7 @@ export const scoutRouter = router({
                     ${`[Scout Assessment Finding] ${finding.componentName}: ${finding.description}`},
                     'complete', 'opportunities_sent', ${input.assessmentId})
           `);
-          const jobId = (jobResult.rows || jobResult).insertId ?? jobResult.insertId;
+          const jobId = insertIdOf(jobResult);
 
           await (db as any).execute(sql`
             INSERT INTO opportunities (
@@ -706,7 +707,7 @@ export const scoutRouter = router({
       if (!db) return [];
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return [];
 
       const whereStatus = input.status === "all" ? sql`1=1` : sql`a.status = ${input.status}`;
@@ -719,7 +720,7 @@ export const scoutRouter = router({
         ORDER BY a.createdAt DESC
         LIMIT ${input.limit}
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Admin: list all assessments ─────────────────────────────────────────────
@@ -736,7 +737,7 @@ export const scoutRouter = router({
         JOIN partners p ON a.scoutPartnerId = p.id
         ORDER BY a.createdAt DESC LIMIT ${input.limit}
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Get commission estimate for Scout ───────────────────────────────────────
@@ -750,7 +751,7 @@ export const scoutRouter = router({
         SELECT p.platformFeeRate, p.commissionRate, p.tier
         FROM partners p WHERE p.userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return null;
 
       const findingsRows = await (db as any).execute(sql`
@@ -758,7 +759,7 @@ export const scoutRouter = router({
                COUNT(*) as findingCount
         FROM assessmentFindings WHERE assessmentId = ${input.assessmentId}
       `);
-      const stats = (findingsRows.rows || findingsRows)[0];
+      const stats = firstRow(findingsRows);
       if (!stats) return null;
 
       const totalJobValue = parseFloat(stats.totalRepairCost || "0");
@@ -800,7 +801,7 @@ export const scoutRouter = router({
         sql`SELECT pro_user_id AS proUserId, full_address AS fullAddress, documented_at AS documentedAt
             FROM home_documentation WHERE address_hash = ${addressHash} LIMIT 1`
       );
-      const existing = (existingRows.rows ?? existingRows)[0];
+      const existing = firstRow(existingRows);
 
       if (existing) {
         const heldByMe = String(existing.proUserId) === proUserId;
@@ -831,7 +832,7 @@ export const scoutRouter = router({
       const confirmRows = await (db as any).execute(
         sql`SELECT pro_user_id AS proUserId FROM home_documentation WHERE address_hash = ${addressHash} LIMIT 1`
       );
-      const holder = (confirmRows.rows ?? confirmRows)[0];
+      const holder = firstRow(confirmRows);
       const claimed = holder && String(holder.proUserId) === proUserId;
 
       return {
@@ -867,7 +868,7 @@ export const scoutRouter = router({
       WHERE hd.pro_user_id = ${proUserId} AND hd.is_first_documentation = 1
       ORDER BY hd.documented_at DESC
     `);
-    const list = (rows.rows ?? rows) as any[];
+    const list = asRows(rows) as any[];
 
     // Per-property origination + jobs require an address join. commission_payout
     // has no address column, so we attribute origination at the Scout level and
@@ -878,7 +879,7 @@ export const scoutRouter = router({
         const jr = await (db as any).execute(sql`
           SELECT COUNT(*) AS c FROM jobs WHERE serviceAddress = ${p.address} AND status IN ('completed','closed','opportunities_sent')
         `);
-        jobsCompleted = parseInt((jr.rows ?? jr)[0]?.c ?? "0", 10) || 0;
+        jobsCompleted = parseInt(firstRow(jr)?.c ?? "0", 10) || 0;
       } catch { jobsCompleted = 0; }
       return {
         id: p.id,
@@ -908,19 +909,19 @@ export const scoutRouter = router({
       SELECT COALESCE(SUM(amount), 0) AS total FROM commission_payout
       WHERE recipient_user_id = ${proUserId} AND payout_type = 'home_origination'
     `);
-    const totalEarned = parseFloat((totalRows.rows ?? totalRows)[0]?.total ?? "0") || 0;
+    const totalEarned = parseFloat(firstRow(totalRows)?.total ?? "0") || 0;
 
     const monthRows = await (db as any).execute(sql`
       SELECT COALESCE(SUM(amount), 0) AS total FROM commission_payout
       WHERE recipient_user_id = ${proUserId} AND payout_type = 'home_origination' AND payout_month = ${payoutMonth}
     `);
-    const thisMonth = parseFloat((monthRows.rows ?? monthRows)[0]?.total ?? "0") || 0;
+    const thisMonth = parseFloat(firstRow(monthRows)?.total ?? "0") || 0;
 
     const propRows = await (db as any).execute(sql`
       SELECT COUNT(*) AS c FROM home_documentation
       WHERE pro_user_id = ${proUserId} AND is_first_documentation = 1
     `);
-    const propertyCount = parseInt((propRows.rows ?? propRows)[0]?.c ?? "0", 10) || 0;
+    const propertyCount = parseInt(firstRow(propRows)?.c ?? "0", 10) || 0;
 
     const recentRows = await (db as any).execute(sql`
       SELECT amount, payout_month AS payoutMonth, status, created_at AS createdAt
@@ -928,7 +929,7 @@ export const scoutRouter = router({
       WHERE recipient_user_id = ${proUserId} AND payout_type = 'home_origination'
       ORDER BY created_at DESC LIMIT 10
     `);
-    const recentPayouts = ((recentRows.rows ?? recentRows) as any[]).map((r: any) => ({
+    const recentPayouts = (asRows(recentRows) as any[]).map((r: any) => ({
       amount: parseFloat(r.amount ?? "0") || 0,
       payoutMonth: r.payoutMonth,
       status: r.status,

@@ -190,7 +190,7 @@ export default function SavingsTracker() {
             </div>
             <span className="text-sm font-bold text-white">Savings Tracker</span>
           </div>
-          <Link href="/trustypro/referral">
+          <Link href="/dashboard/referral">
             <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-400 text-[#0A1628] hover:bg-teal-300 transition-colors">
               <Share2 className="w-3.5 h-3.5" />
               Invite & Save
@@ -466,7 +466,7 @@ export default function SavingsTracker() {
               ))}
             </div>
 
-            <Link href="/trustypro/referral">
+            <Link href="/dashboard/referral">
               <button className="w-full flex items-center justify-center gap-2 bg-teal-400 text-[#0A1628] px-5 py-3 rounded-xl text-sm font-bold hover:bg-teal-300 transition-colors">
                 <Users className="w-4 h-4" />
                 Invite Your Neighbors

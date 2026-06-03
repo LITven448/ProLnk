@@ -9,6 +9,7 @@ import { TRPCError } from "@trpc/server";
 import { sql } from "drizzle-orm";
 import { processedStripeEvents } from "../../drizzle/schema";
 import { router, protectedProcedure, publicProcedure, adminProcedure } from "../_core/trpc";
+import { asRows, firstRow } from "../_core/dbRows";
 import { getDb } from "../db";
 import Stripe from "stripe";
 import type { Request, Response } from "express";
@@ -69,7 +70,7 @@ export const stripeRouter = router({
              payoutReadyAt, trialStatus, trialStartedAt, trialEndsAt, subscriptionPlan
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (rows.rows || rows)[0];
+    const partner = firstRow(rows);
     if (!partner) return null;
     return {
       ...partner,
@@ -87,7 +88,7 @@ export const stripeRouter = router({
         SELECT id, contactEmail, businessName, stripeConnectAccountId
         FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (rows.rows || rows)[0];
+      const partner = firstRow(rows);
       if (!partner) throw new Error("Partner profile not found");
 
       let accountId = partner.stripeConnectAccountId as string | null;
@@ -125,7 +126,7 @@ export const stripeRouter = router({
     const rows = await db.execute(sql`
       SELECT id, stripeConnectAccountId FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (rows.rows || rows)[0];
+    const partner = firstRow(rows);
     if (!partner?.stripeConnectAccountId) return { status: "not_connected" };
 
     const account = await stripe.accounts.retrieve(partner.stripeConnectAccountId);
@@ -163,7 +164,7 @@ export const stripeRouter = router({
         SELECT id, contactEmail, contactName, businessName, tier
         FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (rows.rows || rows)[0];
+      const partner = firstRow(rows);
       if (!partner) throw new Error("Partner profile not found");
 
       const product = TIER_PRODUCTS[input.tier];
@@ -230,7 +231,7 @@ export const stripeRouter = router({
              isExempt, monthlyCommissionEarned
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    return (rows.rows || rows)[0] ?? null;
+    return firstRow(rows) ?? null;
   }),
 
   // --- Admin: payout queue --------------------------------------------------
@@ -253,7 +254,7 @@ export const stripeRouter = router({
       ORDER BY c.createdAt DESC
       LIMIT 100
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 
   // --- Admin: process single payout ----------------------------------------
@@ -270,7 +271,7 @@ export const stripeRouter = router({
         LEFT JOIN partners rp ON c.receivingPartnerId = rp.id
         WHERE c.id = ${input.commissionId} LIMIT 1
       `);
-      const commission = (cRows.rows || cRows)[0];
+      const commission = firstRow(cRows);
       if (!commission) throw new Error("Commission not found");
       if (commission.paid) throw new Error("Already paid");
 
@@ -311,7 +312,7 @@ export const stripeRouter = router({
         SELECT id, stripeConnectAccountId, stripeConnectStatus
         FROM partners WHERE id = ${input.partnerId} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
       if (!partner.stripeConnectAccountId || partner.stripeConnectStatus !== "active") {
         throw new TRPCError({ code: "PRECONDITION_FAILED", message: "Partner does not have an active Stripe Connect account" });
@@ -321,7 +322,7 @@ export const stripeRouter = router({
         SELECT id, amount FROM commissions
         WHERE receivingPartnerId = ${input.partnerId} AND paid = 0
       `);
-      const pending = commRows.rows || commRows;
+      const pending = asRows(commRows);
       if (pending.length === 0) throw new TRPCError({ code: "PRECONDITION_FAILED", message: "No pending commissions" });
 
       const totalAmount = pending.reduce((sum: number, c: any) => sum + parseFloat(c.amount ?? "0"), 0);
@@ -373,7 +374,7 @@ export const stripeRouter = router({
         GROUP BY c.receivingPartnerId, p.stripeConnectAccountId
         HAVING SUM(c.amount) >= 25
       `);
-      const eligible = eligibleRows.rows || eligibleRows;
+      const eligible = asRows(eligibleRows);
 
       let processed = 0;
       let totalPaid = 0;
@@ -424,7 +425,7 @@ export const stripeRouter = router({
       SELECT id, stripeConnectAccountId, stripeConnectStatus
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
 
     if (!partner.stripeConnectAccountId || partner.stripeConnectStatus !== "active") {
@@ -435,7 +436,7 @@ export const stripeRouter = router({
       SELECT id, amount FROM commissions
       WHERE receivingPartnerId = ${partner.id} AND paid = 0
     `);
-    const pending = commRows.rows || commRows;
+    const pending = asRows(commRows);
     if (pending.length === 0) throw new TRPCError({ code: "PRECONDITION_FAILED", message: "No pending commissions to pay out" });
 
     const totalAmount = pending.reduce((sum: number, c: any) => sum + parseFloat(c.amount ?? "0"), 0);
@@ -478,7 +479,7 @@ export const stripeRouter = router({
     const partnerRows = await db.execute(sql`
       SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return { payouts: [], totalPaid: 0 };
 
     const rows = await db.execute(sql`
@@ -488,13 +489,13 @@ export const stripeRouter = router({
       ORDER BY paidAt DESC
       LIMIT 20
     `);
-    const payouts = rows.rows || rows;
+    const payouts = asRows(rows);
 
     const totalRows = await db.execute(sql`
       SELECT SUM(amount) as total FROM commissions
       WHERE receivingPartnerId = ${partner.id} AND paid = 1
     `);
-    const totalPaid = parseFloat((totalRows.rows || totalRows)[0]?.total ?? "0");
+    const totalPaid = parseFloat(firstRow(totalRows)?.total ?? "0");
 
     return { payouts, totalPaid };
   }),
@@ -510,7 +511,7 @@ export const stripeRouter = router({
              payoutReadyAt, monthlyCommissionEarned
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return null;
 
     const commRows = await db.execute(sql`
@@ -520,7 +521,7 @@ export const stripeRouter = router({
         COUNT(CASE WHEN paid = 0 THEN 1 END) as pendingCount
       FROM commissions WHERE receivingPartnerId = ${partner.id}
     `);
-    const commStats = (commRows.rows || commRows)[0] ?? {};
+    const commStats = firstRow(commRows) ?? {};
 
     const pendingBalance = parseFloat(commStats.pendingBalance ?? "0");
     const trialEndsAt = partner.trialEndsAt ? new Date(partner.trialEndsAt) : null;
@@ -558,12 +559,12 @@ export const stripeRouter = router({
         COUNT(CASE WHEN paid = 0 THEN 1 END) as pendingCount
       FROM commissions
     `);
-    const stats = (statsRows.rows || statsRows)[0] || {};
+    const stats = firstRow(statsRows) || {};
 
     const connRows = await db.execute(sql`
       SELECT COUNT(*) as cnt FROM partners WHERE stripeConnectStatus = 'active'
     `);
-    const connectedPartnerCount = (connRows.rows || connRows)[0]?.cnt ?? 0;
+    const connectedPartnerCount = firstRow(connRows)?.cnt ?? 0;
 
     return {
       totalPaid: parseFloat(stats.totalPaid ?? "0"),
@@ -613,7 +614,7 @@ export const stripeRouter = router({
             FROM commissions
             WHERE paid = 0 AND receivingPartnerId IS NOT NULL
           `);
-          const stats = (statsRows.rows || statsRows)[0] ?? {};
+          const stats = firstRow(statsRows) ?? {};
           pendingPartners = parseInt(stats.partnerCount ?? "0", 10);
           totalAmount = parseFloat(stats.total ?? "0");
         } catch {
@@ -724,7 +725,7 @@ export const stripeRouter = router({
       const rows = await db.execute(sql`
         SELECT stripeCustomerId FROM users WHERE id = ${ctx.user.id} LIMIT 1
       `);
-      const user = (rows.rows || rows)[0];
+      const user = firstRow(rows);
       let customerId: string = user?.stripeCustomerId;
       if (!customerId) {
         const customer = await stripe.customers.create({
@@ -772,7 +773,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
       const existing = await db.execute(sql`
         SELECT id FROM processedStripeEvents WHERE eventId = ${event.id} LIMIT 1
       `);
-      const rows = existing.rows || existing;
+      const rows = asRows(existing);
       if (rows.length > 0) {
         console.log(`[Stripe Webhook] Duplicate event ${event.id} — skipping`);
         return res.json({ received: true, duplicate: true });
@@ -805,7 +806,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
         const pRows = await db.execute(sql`
           SELECT id FROM partners WHERE stripeConnectAccountId = ${account.id} LIMIT 1
         `);
-        const partnerId = (pRows.rows || pRows)[0]?.id;
+        const partnerId = firstRow(pRows)?.id;
         if (partnerId) {
           // REV-03: auto-trigger approved commissions that were waiting for Connect
           const pendingRows = await db.execute(sql`
@@ -815,7 +816,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
               AND paid = 0
             LIMIT 20
           `);
-          const pending = pendingRows.rows || pendingRows;
+          const pending = asRows(pendingRows);
           let autoPaid = 0;
           for (const comm of pending) {
             try {

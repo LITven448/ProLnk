@@ -420,7 +420,7 @@ export default function HomeHealthDashboard() {
               <CheckSquare className="w-4 h-4 text-teal-400" />
               <p className="font-bold text-white">Recent Pro Activity</p>
             </div>
-            <Link href="/trustypro/jobs">
+            <Link href="/jobs">
               <span className="text-xs font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1">
                 View All <ChevronRight className="w-3.5 h-3.5" />
               </span>

@@ -84,7 +84,7 @@ export default function UpgradeSuccess() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const t = params.get("tier") ?? (profile as any)?.partner?.tier ?? "pro";
+    const t = params.get("tier") ?? (profile as any)?.stats?.tier ?? "pro";
     setTier(t);
     const timer = setTimeout(() => setAnimIn(true), 100);
     return () => clearTimeout(timer);

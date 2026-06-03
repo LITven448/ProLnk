@@ -7,6 +7,7 @@ import { z } from "zod";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow } from "../_core/dbRows";
 import { getDb } from "../db";
 import {
   enrollFoundingPartner,
@@ -26,7 +27,7 @@ export const foundingPartnerRouter = router({
     const rows = await (db as any).execute(sql`
       SELECT COUNT(*) as cnt FROM foundingPartnerStatus WHERE status != 'churned'
     `);
-    const enrolled = parseInt((rows.rows || rows)[0]?.cnt ?? "0");
+    const enrolled = parseInt(firstRow(rows)?.cnt ?? "0");
     return {
       enrolled,
       remaining: Math.max(0, 100 - enrolled),
@@ -40,7 +41,7 @@ export const foundingPartnerRouter = router({
     const db = await getDb();
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) throw new TRPCError({ code: "NOT_FOUND" });
     return checkFoundingPartnerRequirements(partner.id);
   }),
@@ -50,12 +51,12 @@ export const foundingPartnerRouter = router({
     const db = await getDb();
     if (!db) return null;
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return null;
     const fpRows = await (db as any).execute(sql`
       SELECT * FROM foundingPartnerStatus WHERE partnerId = ${partner.id} LIMIT 1
     `);
-    const fpStatus = (fpRows.rows || fpRows)[0];
+    const fpStatus = firstRow(fpRows);
     if (!fpStatus) return null;
     return getFoundingPartnerEarnings(partner.id);
   }),
@@ -65,7 +66,7 @@ export const foundingPartnerRouter = router({
     const db = await getDb();
     if (!db) return [];
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return [];
 
     const rows = await (db as any).execute(sql`
@@ -81,7 +82,7 @@ export const foundingPartnerRouter = router({
       ORDER BY nc.networkLevel ASC, p.jobsLogged DESC
       LIMIT 100
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 
   // ── Get my origination rights (homes I own) ──────────────────────────────────
@@ -91,7 +92,7 @@ export const foundingPartnerRouter = router({
       const db = await getDb();
       if (!db) return [];
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return [];
 
       const rows = await (db as any).execute(sql`
@@ -104,7 +105,7 @@ export const foundingPartnerRouter = router({
         ORDER BY ho.totalOriginationEarned DESC
         LIMIT ${input.limit}
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Get network earnings breakdown ───────────────────────────────────────────
@@ -116,7 +117,7 @@ export const foundingPartnerRouter = router({
       const db = await getDb();
       if (!db) return null;
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return null;
 
       const dateFilter = input.period === "this_month"
@@ -146,9 +147,9 @@ export const foundingPartnerRouter = router({
       ]);
 
       return {
-        jobCommissions: jobComms.rows || jobComms,
-        subscriptionCommissions: subComms.rows || subComms,
-        originationCommissions: (origComms.rows || origComms)[0] ?? { total: 0, cnt: 0 },
+        jobCommissions: asRows(jobComms),
+        subscriptionCommissions: asRows(subComms),
+        originationCommissions: firstRow(origComms) ?? { total: 0, cnt: 0 },
       };
     }),
 
@@ -178,7 +179,7 @@ export const foundingPartnerRouter = router({
         WHERE ${whereClause}
         ORDER BY fps.enrollmentNumber ASC
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Admin: view network for a founding partner ───────────────────────────────
@@ -198,7 +199,7 @@ export const foundingPartnerRouter = router({
         WHERE nc.foundingPartnerId = ${input.foundingPartnerId}
         ORDER BY nc.networkLevel, nc.joinedAt
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Admin: manually process subscription commissions for a billing period ────

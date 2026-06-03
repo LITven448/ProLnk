@@ -62,7 +62,7 @@ export default function EarningsTracker() {
     company:    { label: "Company",    cap: null, keepRate: 0.60, color: "bg-amber-100 text-amber-700" },
     enterprise: { label: "Enterprise", cap: null, keepRate: 0.78, color: "bg-[#0A1628]/10 text-[#0A1628]" },
   };
-  const partnerTier = (profileData?.partner as any)?.tier ?? "scout";
+  const partnerTier = (profileData?.stats as any)?.tier ?? "scout";
   const tierInfo = TIER_CONFIG[partnerTier] ?? TIER_CONFIG.scout;
 
   // Aggregate earnings from commissions (paid = boolean)
@@ -134,8 +134,8 @@ export default function EarningsTracker() {
       ...ytdCommissions.map((c: any) => [
         "ProLnk LLC",
         "XX-XXXXXXX",
-        profileData?.partner?.businessName ?? "Partner",
-        profileData?.partner?.contactEmail ?? "",
+        profileData?.stats?.businessName ?? "Partner",
+        profileData?.stats?.contactEmail ?? "",
         Number(c.amount ?? 0).toFixed(2),
         year,
       ]),
@@ -221,7 +221,7 @@ export default function EarningsTracker() {
         const resetDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
         const daysLeft = Math.ceil((resetDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
         const tierCap = TIER_CONFIG[partnerTier]?.cap;
-        const monthlyEarned = Number(profileData?.partner?.monthlyCommissionEarned ?? 0);
+        const monthlyEarned = Number(profileData?.stats?.monthlyCommissionEarned ?? 0);
         const capPct = tierCap ? Math.min(100, Math.round((monthlyEarned / tierCap) * 100)) : 0;
         return (
           <div className="mx-4 mt-3 bg-white rounded-xl border border-gray-100 shadow-sm p-3">

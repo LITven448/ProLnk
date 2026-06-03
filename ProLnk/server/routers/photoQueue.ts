@@ -14,6 +14,7 @@ import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { getDb } from "../db";
+import { insertIdOf, firstRow, asRows } from "../_core/dbRows";
 import { sql } from "drizzle-orm";
 import { runWaterfallAnalysis, runWaterfallBatch, type PhotoInput } from "../photoWaterfall";
 
@@ -34,7 +35,7 @@ async function getOfferCountForAddress(address: string, windowDays = 30): Promis
         AND offerGenerated = 1 
         AND createdAt > ${cutoff}`
   );
-  return Number(rows?.[0]?.cnt ?? 0);
+  return Number(firstRow(rows)?.cnt ?? 0);
 }
 
 async function checkIssueResolved(address: string, category: string): Promise<boolean> {
@@ -48,7 +49,7 @@ async function checkIssueResolved(address: string, category: string): Promise<bo
         AND serviceType LIKE ${`%${category}%`}
         AND createdAt > ${cutoff}`
   );
-  return Number(rows?.[0]?.cnt ?? 0) > 0;
+  return Number(firstRow(rows)?.cnt ?? 0) > 0;
 }
 
 // ─── Router ───────────────────────────────────────────────────────────────────
@@ -96,7 +97,7 @@ export const photoQueueRouter = router({
                     ${input.photoAgeMonths ?? null}, ${input.partnerId ?? null}, ${input.jobId ?? null},
                     'pending', ${Date.now()}, ${Date.now()})`
       );
-      const queueItemId = (insertResult as any).insertId;
+      const queueItemId = insertIdOf(insertResult);
 
       // Run waterfall analysis asynchronously
       setImmediate(async () => {
@@ -233,7 +234,7 @@ export const photoQueueRouter = router({
             VALUES (${input.photos[0]?.source ?? "manual_upload"}, ${input.photos.length}, 
                     'queued', ${ctx.user.id}, ${Date.now()}, ${Date.now()})`
       );
-      const batchId = (batchResult as any).insertId;
+      const batchId = insertIdOf(batchResult);
 
       // Queue all photos as pending
       for (const photo of input.photos) {
@@ -340,11 +341,11 @@ export const photoQueueRouter = router({
       ]);
 
       const statusMap: Record<string, number> = {};
-      for (const row of (statusCounts as any[]) ?? []) {
+      for (const row of asRows(statusCounts)) {
         statusMap[row.status] = Number(row.cnt);
       }
 
-      const cost = (costSummary as any[])?.[0] ?? {};
+      const cost = firstRow(costSummary) ?? {};
 
       return {
         queue: {

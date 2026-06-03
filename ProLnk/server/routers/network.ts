@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
-import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
+import { router, publicProcedure, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { NETWORK_RATES } from "../../shared/const";
@@ -23,8 +23,7 @@ async function getUniqueReferralCode(db: any): Promise<string> {
     const existing = await db.execute(
       sql`SELECT id FROM pro_network_profile WHERE referral_code = ${code} LIMIT 1`
     );
-    const rows = existing.rows ?? existing;
-    if (!rows[0]) return code;
+    if (!asRows(existing)[0]) return code;
   }
   throw new Error("Could not generate unique referral code");
 }
@@ -62,7 +61,7 @@ export const networkRouter = router({
         WHERE np.referral_code = ${input.code.toUpperCase()}
         LIMIT 1
       `);
-      const row = (rows.rows ?? rows)[0];
+      const row = asRows(rows)[0];
       if (!row) return null;
       return {
         name: row.contactName || row.businessName,
@@ -96,7 +95,7 @@ export const networkRouter = router({
       const existing = await (db as any).execute(
         sql`SELECT id FROM pro_network_profile WHERE user_id = ${ctx.user.id} LIMIT 1`
       );
-      if ((existing.rows ?? existing)[0]) {
+      if (asRows(existing)[0]) {
         throw new TRPCError({ code: "CONFLICT", message: "Already enrolled in the network." });
       }
 
@@ -110,7 +109,7 @@ export const networkRouter = router({
         const selfCheck = await (db as any).execute(
           sql`SELECT user_id FROM pro_network_profile WHERE referral_code = ${code} LIMIT 1`
         );
-        const referrerRow = (selfCheck.rows ?? selfCheck)[0];
+        const referrerRow = asRows(selfCheck)[0];
         if (!referrerRow) throw new TRPCError({ code: "NOT_FOUND", message: "Referral code not found." });
         if (referrerRow.user_id === ctx.user.id) {
           throw new TRPCError({ code: "BAD_REQUEST", message: "You cannot use your own referral code." });
@@ -120,7 +119,7 @@ export const networkRouter = router({
         const circularCheck = await (db as any).execute(
           sql`SELECT id FROM pro_upline_chain WHERE pro_user_id = ${referrerRow.user_id} AND upline_user_id = ${ctx.user.id} LIMIT 1`
         );
-        if ((circularCheck.rows ?? circularCheck)[0]) {
+        if (asRows(circularCheck)[0]) {
           throw new TRPCError({ code: "BAD_REQUEST", message: "Circular referral detected." });
         }
 
@@ -130,7 +129,7 @@ export const networkRouter = router({
         const referrerProfile = await (db as any).execute(
           sql`SELECT network_level FROM pro_network_profile WHERE user_id = ${referrerUserId} LIMIT 1`
         );
-        const referrerLevel = Number((referrerProfile.rows ?? referrerProfile)[0]?.network_level ?? 4);
+        const referrerLevel = Number(asRows(referrerProfile)[0]?.network_level ?? 4);
 
         if (referrerLevel === 1) networkLevel = 2;       // Charter → Founding Partner
         else if (referrerLevel === 2) networkLevel = 3;  // Founding → Growth Pro
@@ -142,7 +141,7 @@ export const networkRouter = router({
         const count = await (db as any).execute(
           sql`SELECT COUNT(*) as cnt FROM pro_network_profile WHERE network_level = 1`
         );
-        const cnt = Number((count.rows ?? count)[0]?.cnt ?? 0);
+        const cnt = Number(asRows(count)[0]?.cnt ?? 0);
         if (cnt >= NETWORK_RATES.charterPartnerMax) {
           networkLevel = 2; // Overflow to Founding Partner
         }
@@ -302,7 +301,7 @@ export const networkRouter = router({
     }),
 
   // Internal: process commissions after homeowner confirms a job
-  processJobCommissions: protectedProcedure
+  processJobCommissions: adminProcedure
     .input(z.object({
       jobId: z.string(),
       proUserId: z.string(),
@@ -318,7 +317,7 @@ export const networkRouter = router({
       const proRows = await (db as any).execute(
         sql`SELECT * FROM pro_network_profile WHERE user_id = ${input.proUserId} LIMIT 1`
       );
-      const pro = (proRows.rows ?? proRows)[0];
+      const pro = asRows(proRows)[0];
       if (!pro) return { success: false, reason: "Pro not enrolled in network" };
 
       const proLevel = Number(pro.network_level);
@@ -343,7 +342,7 @@ export const networkRouter = router({
         ORDER BY uc.levels_above ASC
       `);
 
-      for (const upline of (uplineRows.rows ?? uplineRows)) {
+      for (const upline of asRows(uplineRows)) {
         const uplineLevel = Number(upline.upline_network_level);
         const maxDepth = NETWORK_RATES.networkDepth[uplineLevel as keyof typeof NETWORK_RATES.networkDepth] ?? 0;
 
@@ -370,7 +369,7 @@ export const networkRouter = router({
       const existingDoc = await (db as any).execute(
         sql`SELECT id FROM home_documentation WHERE address_hash = ${addressHash} LIMIT 1`
       );
-      const isFirst = !(existingDoc.rows ?? existingDoc)[0];
+      const isFirst = !asRows(existingDoc)[0];
 
       await (db as any).execute(sql`
         INSERT IGNORE INTO home_documentation
@@ -401,7 +400,7 @@ export const networkRouter = router({
       const eventRows = await (db as any).execute(
         sql`SELECT id FROM job_commission_event WHERE job_id = ${input.jobId} LIMIT 1`
       );
-      const eventId = (eventRows.rows ?? eventRows)[0]?.id;
+      const eventId = asRows(eventRows)[0]?.id;
 
       // Insert commission_payout rows
       for (const p of networkPayouts) {
@@ -467,7 +466,7 @@ export const networkRouter = router({
     `);
 
     const byLevel: Record<number, number> = {};
-    for (const r of (levelCounts.rows ?? levelCounts)) {
+    for (const r of asRows(levelCounts)) {
       byLevel[Number(r.network_level)] = Number(r.cnt);
     }
 
@@ -481,8 +480,8 @@ export const networkRouter = router({
     return {
       byLevel,
       totalPros: Object.values(byLevel).reduce((a, b) => a + b, 0),
-      pendingPayoutTotal: Number((pendingTotal.rows ?? pendingTotal)[0]?.total ?? 0),
-      pros: (pros.rows ?? pros).map((r: any) => ({
+      pendingPayoutTotal: Number(asRows(pendingTotal)[0]?.total ?? 0),
+      pros: asRows(pros).map((r: any) => ({
         userId: r.user_id,
         businessName: r.businessName,
         trade: r.businessType,

@@ -24,6 +24,7 @@ import { z } from "zod";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow, insertIdOf } from "../_core/dbRows";
 import { getDb } from "../db";
 import { storagePut } from "../storage";
 import { notifyOwner } from "../_core/notification";
@@ -79,7 +80,7 @@ export async function runProPassQuarterlyReview(): Promise<{
       WHERE pp.status = 'active'
         AND (pp.nextReviewDueAt IS NULL OR pp.nextReviewDueAt <= ${now})
     `);
-    const rows = passes.rows || passes;
+    const rows = asRows(passes);
 
     for (const pass of rows) {
       try {
@@ -149,11 +150,11 @@ export const proPassRouter = router({
     const db = await getDb();
     if (!db) return { passes: [], limit: 1, used: 0 };
     const partnerRows = await (db as any).execute(sql`SELECT id, tier FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return { passes: [], limit: 1, used: 0 };
 
     const rows = await (db as any).execute(sql`SELECT * FROM proPassCards WHERE partnerId = ${partner.id} ORDER BY firstName, lastName`);
-    const passes = rows.rows || rows;
+    const passes = asRows(rows);
     const limit = TIER_PASS_LIMITS[partner.tier] ?? 1;
 
     return { passes, limit, used: passes.length };
@@ -182,12 +183,12 @@ export const proPassRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       const partnerRows = await (db as any).execute(sql`SELECT id, tier, status FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner || partner.status !== "approved") throw new TRPCError({ code: "FORBIDDEN" });
 
       // Check pass limit
       const countRows = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proPassCards WHERE partnerId = ${partner.id}`);
-      const usedCount = parseInt((countRows.rows || countRows)[0]?.cnt ?? "0");
+      const usedCount = parseInt(firstRow(countRows)?.cnt ?? "0");
       const limit = TIER_PASS_LIMITS[partner.tier] ?? 1;
       if (usedCount >= limit) {
         throw new TRPCError({
@@ -223,7 +224,7 @@ export const proPassRouter = router({
           'pending', 0, ${new Date(Date.now() + 90 * 24 * 60 * 60 * 1000)}
         )
       `);
-      const passId = (result.rows || result).insertId ?? result.insertId;
+      const passId = insertIdOf(result);
 
       return {
         passId,
@@ -266,7 +267,7 @@ export const proPassRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN" });
 
       const { passId, ...updates } = input;
@@ -309,7 +310,7 @@ export const proPassRouter = router({
 
       // Recalculate score
       const passRows = await (db as any).execute(sql`SELECT * FROM proPassCards WHERE id = ${passId} LIMIT 1`);
-      const pass = (passRows.rows || passRows)[0];
+      const pass = firstRow(passRows);
       if (pass) {
         const newScore = calculatePassScore(pass);
         const newStatus = newScore >= 50 ? "active" : "pending";
@@ -335,7 +336,7 @@ export const proPassRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN" });
 
       const checkDate = new Date(input.checkDate);
@@ -354,7 +355,7 @@ export const proPassRouter = router({
 
       // Recalculate score
       const passRows = await (db as any).execute(sql`SELECT * FROM proPassCards WHERE id = ${input.passId} LIMIT 1`);
-      const pass = (passRows.rows || passRows)[0];
+      const pass = firstRow(passRows);
       if (pass) {
         const newScore = calculatePassScore(pass);
         const newStatus = newScore >= 50 ? "active" : "pending";
@@ -384,7 +385,7 @@ export const proPassRouter = router({
         WHERE pp.passCode = ${input.passCode}
         LIMIT 1
       `);
-      const pass = (rows.rows || rows)[0];
+      const pass = firstRow(rows);
       if (!pass) return { valid: false, reason: "Pro Pass not found" };
       if (pass.status !== "active") return { valid: false, reason: `Pro Pass is ${pass.status}`, name: `${pass.firstName} ${pass.lastName}` };
 

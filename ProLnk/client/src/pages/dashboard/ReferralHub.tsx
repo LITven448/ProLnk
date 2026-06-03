@@ -168,13 +168,13 @@ export default function ReferralHub() {
     enabled: !!user,
   });
 
-  const referralCode = partner?.referralCode ?? "partner123";
+  const referralCode = partner?.stats?.referralCode ?? "partner123";
   const referralLink = `prolnk.io/join?ref=${referralCode}`;
   const fullReferralLink = `${window.location.origin}/apply?ref=${referralCode}`;
 
   const stats: ReferralStats = {
     referralCode,
-    partnersReferred: partner?.partnersReferred ?? 0,
+    partnersReferred: partner?.stats?.partnersReferred ?? 0,
     homesOriginated: 0,
     overrideCommissionsEarned: 0,
     referralCommissionsEarned: parseFloat(partner?.totalCommissionEarned ?? "0"),

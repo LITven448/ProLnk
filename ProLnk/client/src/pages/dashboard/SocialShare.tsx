@@ -299,7 +299,7 @@ export default function SocialShare() {
   const { data: partner } = trpc.partners.getMyProfile.useQuery();
   const [activeFilter, setActiveFilter] = useState<Post["platform"] | "all">("all");
 
-  const partnerCode = partner?.partner?.id ? `P${partner.partner.id}` : "YOUR_CODE";
+  const partnerCode = partner?.stats?.id ? `P${partner.stats.id}` : "YOUR_CODE";
   const referralLink = `${window.location.origin}/ref/${partnerCode}`;
 
   const allPosts = buildPosts(referralLink, partnerCode);

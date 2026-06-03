@@ -23,6 +23,7 @@ import { z } from "zod";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow, insertIdOf } from "../_core/dbRows";
 import { getDb } from "../db";
 import { n8n } from "../n8n-triggers";
 import { notifyOwner } from "../_core/notification";
@@ -81,7 +82,7 @@ export const projectBidsRouter = router({
                platformFeeRate, isExempt, stripeConnectStatus
         FROM partners WHERE userId = ${ctx.user.id} AND status = 'approved' LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN", message: "Only approved partners can submit project bids" });
 
       const totalEstimatedValue = input.lineItems.reduce((s, li) => s + li.estimatedCost, 0);
@@ -98,7 +99,7 @@ export const projectBidsRouter = router({
           ${input.homeownerName ?? null}, ${input.homeownerEmail ?? null}, ${input.homeownerPhone ?? null}
         )
       `);
-      const jobId = (jobResult.rows || jobResult).insertId ?? (jobResult as any).insertId;
+      const jobId = insertIdOf(jobResult);
 
       // Insert a record in the projectBids table (for GC dashboard tracking)
       const bidResult = await (db as any).execute(sql`
@@ -116,7 +117,7 @@ export const projectBidsRouter = router({
           ${input.confidence}, 'pending_review'
         )
       `);
-      const bidId = (bidResult.rows || bidResult).insertId ?? (bidResult as any).insertId;
+      const bidId = insertIdOf(bidResult);
 
       // Create one opportunity per line item — each becomes a separately routable lead
       const opportunityIds: number[] = [];
@@ -133,7 +134,7 @@ export const projectBidsRouter = router({
             'pending_review', 'pending', ${item.estimatedCost.toFixed(2)}, 0
           )
         `);
-        const oppId = (oppResult.rows || oppResult).insertId ?? (oppResult as any).insertId;
+        const oppId = insertIdOf(oppResult);
         opportunityIds.push(oppId);
       }
 
@@ -170,7 +171,7 @@ export const projectBidsRouter = router({
     const partnerRows = await (db as any).execute(sql`
       SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return [];
 
     const rows = await (db as any).execute(sql`
@@ -187,7 +188,7 @@ export const projectBidsRouter = router({
       ORDER BY pb.createdAt DESC
       LIMIT 50
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 
   // ── Get a single bid (for detail view) ──────────────────────────────────────
@@ -200,7 +201,7 @@ export const projectBidsRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return null;
 
       const bidRows = await (db as any).execute(sql`
@@ -209,7 +210,7 @@ export const projectBidsRouter = router({
           AND (pb.submittingPartnerId = ${partner.id} OR ${ctx.user.role === "admin" ? 1 : 0} = 1)
         LIMIT 1
       `);
-      const bid = (bidRows.rows || bidRows)[0];
+      const bid = firstRow(bidRows);
       if (!bid) return null;
 
       const oppRows = await (db as any).execute(sql`
@@ -219,7 +220,7 @@ export const projectBidsRouter = router({
         WHERE o.jobId = ${bid.jobId}
         ORDER BY o.createdAt ASC
       `);
-      const opportunities = oppRows.rows || oppRows;
+      const opportunities = asRows(oppRows);
 
       return { ...bid, opportunities };
     }),
@@ -248,7 +249,7 @@ export const projectBidsRouter = router({
         ORDER BY pb.createdAt DESC
         LIMIT ${input.limit}
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Admin: approve a bid (dispatches all its opportunities) ─────────────────
@@ -270,7 +271,7 @@ export const projectBidsRouter = router({
         JOIN partners p ON pb.submittingPartnerId = p.id
         WHERE pb.id = ${input.bidId} LIMIT 1
       `);
-      const bid = (bidRows.rows || bidRows)[0];
+      const bid = firstRow(bidRows);
       if (!bid) throw new TRPCError({ code: "NOT_FOUND" });
 
       // Mark all opportunities as admin-approved (ready for dispatch)
@@ -326,7 +327,7 @@ export const projectBidsRouter = router({
     const partnerRows = await (db as any).execute(sql`
       SELECT id, serviceZipCodes, businessType FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return [];
 
     // Get approved bid opportunities not yet assigned to this partner
@@ -344,7 +345,7 @@ export const projectBidsRouter = router({
       ORDER BY pb.createdAt DESC
       LIMIT 50
     `);
-    const opps = rows.rows || rows;
+    const opps = asRows(rows);
 
     // Filter by partner's zip codes (client-side for now — add DB index query when zip data is reliable)
     let partnerZips: string[] = [];
@@ -367,7 +368,7 @@ export const projectBidsRouter = router({
       const rows = await (db as any).execute(sql`
         SELECT platformFeeRate, commissionRate, tier FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const p = (rows.rows || rows)[0];
+      const p = firstRow(rows);
       if (!p) return null;
       const platformFee = input.totalJobValue * parseFloat(p.platformFeeRate);
       const referralCommission = platformFee * parseFloat(p.commissionRate);

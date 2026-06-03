@@ -18,6 +18,7 @@ import { z } from "zod";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow, insertIdOf } from "../_core/dbRows";
 import { getDb } from "../db";
 import { notifyOwner } from "../_core/notification";
 import { createPartnerNotification } from "../db";
@@ -57,7 +58,7 @@ export const bidBoardRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id, businessName, commissionRate FROM partners WHERE userId = ${ctx.user.id} AND status = 'approved' LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN", message: "Only approved partners can post to the Bid Board" });
 
       // Set bidding deadline (default 7 days if not specified)
@@ -83,7 +84,7 @@ export const bidBoardRouter = router({
           ${parseFloat(partner.commissionRate || "0.40") * 0.12}
         )
       `);
-      const projectId = (result.rows || result).insertId ?? result.insertId;
+      const projectId = insertIdOf(result);
 
       // Notify admin
       notifyOwner({
@@ -110,7 +111,7 @@ export const bidBoardRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id, serviceZipCodes, businessType FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return { projects: [], total: 0 };
 
       // Build filter
@@ -134,12 +135,12 @@ export const bidBoardRouter = router({
         ORDER BY p.totalEstimatedValue DESC, p.createdAt DESC
         LIMIT ${input.limit} OFFSET ${input.offset}
       `);
-      const projects = rows.rows || rows;
+      const projects = asRows(rows);
 
       const countRows = await (db as any).execute(sql`
         SELECT COUNT(*) as total FROM bidBoardProjects WHERE status = 'open' AND biddingDeadline > NOW()
       `);
-      const total = (countRows.rows || countRows)[0]?.total ?? 0;
+      const total = firstRow(countRows)?.total ?? 0;
 
       return { projects, total };
     }),
@@ -164,7 +165,7 @@ export const bidBoardRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT id, businessName FROM partners WHERE userId = ${ctx.user.id} AND status = 'approved' LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN" });
 
       // Check project is open
@@ -172,7 +173,7 @@ export const bidBoardRouter = router({
         SELECT id, submittingPartnerId, projectTitle, biddingDeadline, status
         FROM bidBoardProjects WHERE id = ${input.projectId} LIMIT 1
       `);
-      const project = (projectRows.rows || projectRows)[0];
+      const project = firstRow(projectRows);
       if (!project) throw new TRPCError({ code: "NOT_FOUND" });
       if (project.status !== "open") throw new TRPCError({ code: "BAD_REQUEST", message: "This project is no longer accepting bids" });
       if (new Date(project.biddingDeadline) < new Date()) throw new TRPCError({ code: "BAD_REQUEST", message: "Bidding deadline has passed" });
@@ -182,7 +183,7 @@ export const bidBoardRouter = router({
       const existingRows = await (db as any).execute(sql`
         SELECT id FROM bidSubmissions WHERE projectId = ${input.projectId} AND biddingPartnerId = ${partner.id} AND status != 'withdrawn' LIMIT 1
       `);
-      if ((existingRows.rows || existingRows)[0]) throw new TRPCError({ code: "BAD_REQUEST", message: "You already have an active bid on this project" });
+      if (firstRow(existingRows)) throw new TRPCError({ code: "BAD_REQUEST", message: "You already have an active bid on this project" });
 
       const result = await (db as any).execute(sql`
         INSERT INTO bidSubmissions (
@@ -196,7 +197,7 @@ export const bidBoardRouter = router({
           ${input.bidDescription ?? null}, 'submitted'
         )
       `);
-      const bidId = (result.rows || result).insertId ?? result.insertId;
+      const bidId = insertIdOf(result);
 
       // Update bid count on project
       await (db as any).execute(sql`
@@ -223,12 +224,12 @@ export const bidBoardRouter = router({
       if (!db) return [];
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) return [];
 
       // Only project owner or admin can see all bids
       const projectRows = await (db as any).execute(sql`SELECT submittingPartnerId FROM bidBoardProjects WHERE id = ${input.projectId} LIMIT 1`);
-      const project = (projectRows.rows || projectRows)[0];
+      const project = firstRow(projectRows);
       if (!project) return [];
       if (project.submittingPartnerId !== partner.id && ctx.user.role !== "admin") return [];
 
@@ -241,7 +242,7 @@ export const bidBoardRouter = router({
         WHERE b.projectId = ${input.projectId} AND b.status != 'withdrawn'
         ORDER BY b.bidAmount ASC
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Award a bid ─────────────────────────────────────────────────────────────
@@ -255,17 +256,17 @@ export const bidBoardRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN" });
 
       const projectRows = await (db as any).execute(sql`
         SELECT * FROM bidBoardProjects WHERE id = ${input.projectId} AND submittingPartnerId = ${partner.id} LIMIT 1
       `);
-      const project = (projectRows.rows || projectRows)[0];
+      const project = firstRow(projectRows);
       if (!project) throw new TRPCError({ code: "NOT_FOUND" });
 
       const bidRows = await (db as any).execute(sql`SELECT * FROM bidSubmissions WHERE id = ${input.bidId} AND projectId = ${input.projectId} LIMIT 1`);
-      const bid = (bidRows.rows || bidRows)[0];
+      const bid = firstRow(bidRows);
       if (!bid) throw new TRPCError({ code: "NOT_FOUND" });
 
       // Award bid
@@ -306,7 +307,7 @@ export const bidBoardRouter = router({
     const db = await getDb();
     if (!db) return [];
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return [];
     const rows = await (db as any).execute(sql`
       SELECT b.*, p.projectTitle, p.propertyAddress, p.totalEstimatedValue, p.propertyType, p.status as projectStatus
@@ -315,7 +316,7 @@ export const bidBoardRouter = router({
       WHERE b.biddingPartnerId = ${partner.id}
       ORDER BY b.submittedAt DESC LIMIT 50
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 
   // ── My posted projects ──────────────────────────────────────────────────────
@@ -323,7 +324,7 @@ export const bidBoardRouter = router({
     const db = await getDb();
     if (!db) return [];
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return [];
     const rows = await (db as any).execute(sql`
       SELECT p.*,
@@ -332,6 +333,6 @@ export const bidBoardRouter = router({
       WHERE p.submittingPartnerId = ${partner.id}
       ORDER BY p.createdAt DESC LIMIT 50
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 });

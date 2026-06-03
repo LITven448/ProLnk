@@ -601,8 +601,8 @@ export default function TrustyProSite() {
             <span className="font-black text-white">TrustyPro</span>
           </div>
           <div className="flex items-center gap-6 text-gray-500 text-sm">
-            <a href="/legal/privacy" className="hover:text-gray-300">Privacy</a>
-            <a href="/legal/terms" className="hover:text-gray-300">Terms</a>
+            <a href="/privacy" className="hover:text-gray-300">Privacy</a>
+            <a href="/terms" className="hover:text-gray-300">Terms</a>
             <a href="mailto:support@trustypro.io" className="hover:text-gray-300 flex items-center gap-1">
               <Mail className="w-3.5 h-3.5" /> support@trustypro.io
             </a>

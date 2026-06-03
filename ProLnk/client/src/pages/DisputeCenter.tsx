@@ -49,7 +49,7 @@ export default function DisputeCenter() {
   const { data: commissions = [] } = trpc.partners.getPaidCommissions.useQuery();
   const { data: myDisputes = [], refetch } = trpc.partners.getMyDisputes.useQuery();
   const { data: partnerProfile } = trpc.partners.getMyProfile.useQuery();
-  const strikeCount = Number((partnerProfile as any)?.partner?.strikeCount ?? 0);
+  const strikeCount = Number((partnerProfile as any)?.stats?.strikeCount ?? 0);
 
   const fileDispute = trpc.partners.openDispute.useMutation({
     onSuccess: () => {

@@ -27,6 +27,7 @@
  */
 
 import { getDb } from "./db";
+import { asRows } from "./_core/dbRows";
 import { sql, and, lt, gt, eq, isNull, isNotNull } from "drizzle-orm";
 import {
   partners,
@@ -88,7 +89,7 @@ async function hasRecentlySent(
   const rows = await (db as any).execute(
     sql`SELECT id FROM marketingEmailLog WHERE userId = ${userId} AND campaignKey = ${campaignKey} AND sentAt > ${cutoff} LIMIT 1`
   ) as any;
-  const arr = Array.isArray(rows) ? rows : rows?.rows ?? [];
+  const arr = asRows(rows);
   return arr.length > 0;
 }
 
@@ -124,7 +125,7 @@ export async function runWeeklyPartnerDigest(): Promise<{ sent: number; errors: 
           LIMIT 500`
     ) as any;
 
-    const partnerRows = Array.isArray(activePartners) ? activePartners : activePartners?.rows ?? [];
+    const partnerRows = asRows(activePartners);
 
     for (const partner of partnerRows) {
       try {
@@ -310,7 +311,7 @@ export async function runReferralNudgeEngine(): Promise<{ sent: number; errors: 
           LIMIT 200`
     ) as any;
 
-    const rows = Array.isArray(stalePartners) ? stalePartners : stalePartners?.rows ?? [];
+    const rows = asRows(stalePartners);
 
     for (const partner of rows) {
       try {
@@ -327,7 +328,7 @@ export async function runReferralNudgeEngine(): Promise<{ sent: number; errors: 
               ORDER BY cnt DESC
               LIMIT 3`
         ) as any;
-        const oppRows = Array.isArray(topOpps) ? topOpps : topOpps?.rows ?? [];
+        const oppRows = asRows(topOpps);
         const topCategories = oppRows.map((r: any) => r.opportunityCategory);
 
         const html = buildReferralNudgeHtml({
@@ -451,7 +452,7 @@ export async function runDealExpiryUrgencyPush(): Promise<{ sent: number; errors
           LIMIT 200`
     ) as any;
 
-    const rows = Array.isArray(expiringDeals) ? expiringDeals : expiringDeals?.rows ?? [];
+    const rows = asRows(expiringDeals);
 
     for (const deal of rows) {
       try {
@@ -570,7 +571,7 @@ export async function runNpsFollowUpSequence(): Promise<{ sent: number; errors: 
           LIMIT 200`
     ) as any;
 
-    const rows = Array.isArray(recentSurveys) ? recentSurveys : recentSurveys?.rows ?? [];
+    const rows = asRows(recentSurveys);
 
     for (const survey of rows) {
       try {
@@ -769,7 +770,7 @@ export async function runLeaderboardBroadcast(): Promise<{ sent: boolean; error?
           LIMIT 5`
     ) as any;
 
-    const rows = Array.isArray(top5) ? top5 : top5?.rows ?? [];
+    const rows = asRows(top5);
     if (rows.length === 0) return { sent: false, error: "No partners found" };
 
     const leaderList = rows.map((r: any, i: number) =>
@@ -816,7 +817,7 @@ export async function runScanReEngagement(): Promise<{ sent: number; errors: num
           LIMIT 200`
     ) as any;
 
-    const rows = Array.isArray(staleScans) ? staleScans : staleScans?.rows ?? [];
+    const rows = asRows(staleScans);
 
     for (const row of rows) {
       try {
@@ -832,7 +833,7 @@ export async function runScanReEngagement(): Promise<{ sent: number; errors: num
               ORDER BY urgencyLevel ASC
               LIMIT 3`
         ) as any;
-        const offerRows = Array.isArray(offers) ? offers : offers?.rows ?? [];
+        const offerRows = asRows(offers);
 
         const html = buildScanReEngagementHtml({
           name: row.firstName || "Homeowner",

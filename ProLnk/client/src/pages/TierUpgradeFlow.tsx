@@ -293,7 +293,7 @@ export default function TierUpgradeFlow() {
   const [showConfetti, setShowConfetti] = useState(false);
 
   const { data: partner } = trpc.partners.getMyProfile.useQuery();
-  const currentTierId = (partner as any)?.partner?.tier ?? "waitlist";
+  const currentTierId = (partner as any)?.stats?.tier ?? "waitlist";
   const current = currentTierConfig(currentTierId);
   const next = nextTier(currentTierId);
 

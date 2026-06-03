@@ -20,6 +20,7 @@
  */
 
 import { getDb } from "./db";
+import { asRows, firstRow } from "./_core/dbRows";
 import { sql } from "drizzle-orm";
 import { notifyOwner } from "./_core/notification";
 
@@ -58,7 +59,7 @@ export async function processHomeownerCheckin(
         LEFT JOIN partners p ON p.id = o.receivingPartnerId
         WHERE o.id = ${opportunityId} LIMIT 1`
   );
-  const opp = (oppRows.rows || oppRows)[0];
+  const opp = firstRow(oppRows);
   if (!opp) return { flagged: false };
 
   // Log the check-in
@@ -77,7 +78,7 @@ export async function processHomeownerCheckin(
           OR serviceAddress LIKE CONCAT('%', (SELECT address FROM properties WHERE id = ${opp.propertyId ?? 0} LIMIT 1), '%'))
         LIMIT 1`
   );
-  const jobLogged = (jobRows.rows || jobRows).length > 0;
+  const jobLogged = asRows(jobRows).length > 0;
 
   if (!jobLogged) {
     // Homeowner confirmed job done but partner never logged it → circumvention signal
@@ -119,7 +120,7 @@ export async function runAddressCrossRefScan(): Promise<CircumventionScanResult>
           WHERE prop.id = o.propertyId
           LIMIT 50`
     );
-    const rows = suspicious.rows || suspicious;
+    const rows = asRows(suspicious);
     for (const row of rows) {
       result.flagsDetected++;
       await flagCircumvention(db, {
@@ -150,7 +151,7 @@ async function flagCircumvention(db: any, flag: CircumventionFlag): Promise<void
             AND createdAt > DATE_SUB(NOW(), INTERVAL 7 DAY)
           LIMIT 1`
     );
-    if ((existing.rows || existing).length > 0) return; // Already flagged
+    if (asRows(existing).length > 0) return; // Already flagged
 
     // Insert the flag
     await (db as any).execute(
@@ -163,7 +164,7 @@ async function flagCircumvention(db: any, flag: CircumventionFlag): Promise<void
     const partnerRows = await (db as any).execute(
       sql`SELECT strikeCount, businessName FROM partners WHERE id = ${flag.partnerId} LIMIT 1`
     );
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return;
 
     const newStrikeCount = (partner.strikeCount ?? 0) + 1;
@@ -239,7 +240,7 @@ export async function runCircumventionSweep(): Promise<CircumventionScanResult> 
           GROUP BY o.receivingPartnerId, o.homeownerId
           HAVING cnt >= 3`
     );
-    const rows = repeatRows.rows || repeatRows;
+    const rows = asRows(repeatRows);
     for (const row of rows) {
       result.flagsDetected++;
       await flagCircumvention(db, {
@@ -272,7 +273,7 @@ export async function getFlagsForAdmin(status?: string): Promise<any[]> {
         ORDER BY cf.createdAt DESC
         LIMIT 100`
   );
-  return rows.rows || rows;
+  return asRows(rows);
 }
 
 /**

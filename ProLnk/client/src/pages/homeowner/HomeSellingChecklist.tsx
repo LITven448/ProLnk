@@ -212,7 +212,7 @@ export default function HomeSellingChecklist() {
             <p style={{ color: "#9ca3af", fontSize: 14, marginBottom: 18 }}>
               Ready to tackle your checklist? Get quotes from vetted DFW pros instantly.
             </p>
-            <Link href="/homeowner-signup">
+            <Link href="/home-waitlist">
               <button style={{
                 background: "#14b8a6", color: "#fff", border: "none",
                 borderRadius: 10, padding: "14px 32px", fontSize: 15,

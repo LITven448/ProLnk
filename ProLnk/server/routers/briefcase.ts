@@ -17,6 +17,7 @@ import { z } from "zod";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { asRows, firstRow, insertIdOf } from "../_core/dbRows";
 import { getDb } from "../db";
 import { storagePut } from "../storage";
 import { notifyOwner } from "../_core/notification";
@@ -71,7 +72,7 @@ export async function runBriefcaseQuarterlyReview(): Promise<{
       WHERE cb.status IN ('active','restricted')
         AND (cb.nextReviewDueAt IS NULL OR cb.nextReviewDueAt <= ${now})
     `);
-    const rows = briefcases.rows || briefcases;
+    const rows = asRows(briefcases);
 
     for (const briefcase of rows) {
       try {
@@ -121,7 +122,7 @@ export async function runBriefcaseQuarterlyReview(): Promise<{
         const updatedBriefcase = await (db as any).execute(sql`
           SELECT * FROM companyBriefcases WHERE id = ${briefcase.id} LIMIT 1
         `);
-        const current = (updatedBriefcase.rows || updatedBriefcase)[0];
+        const current = firstRow(updatedBriefcase);
         const newScore = calculateBriefcaseScore(current);
         const newStatus = criticalIssues.length > 0 ? "restricted" : (issues.length > 0 ? "active" : "active");
 
@@ -178,15 +179,15 @@ export const briefcaseRouter = router({
     const db = await getDb();
     if (!db) return null;
     const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) return null;
 
     const rows = await (db as any).execute(sql`SELECT * FROM companyBriefcases WHERE partnerId = ${partner.id} LIMIT 1`);
-    const briefcase = (rows.rows || rows)[0];
+    const briefcase = firstRow(rows);
     if (!briefcase) return null;
 
     const docsRows = await (db as any).execute(sql`SELECT * FROM briefcaseDocuments WHERE briefcaseId = ${briefcase.id} ORDER BY documentType`);
-    const documents = docsRows.rows || docsRows;
+    const documents = asRows(docsRows);
 
     return { briefcase, documents };
   }),
@@ -196,12 +197,12 @@ export const briefcaseRouter = router({
     const db = await getDb();
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
     const partnerRows = await (db as any).execute(sql`SELECT id, businessName FROM partners WHERE userId = ${ctx.user.id} AND status = 'approved' LIMIT 1`);
-    const partner = (partnerRows.rows || partnerRows)[0];
+    const partner = firstRow(partnerRows);
     if (!partner) throw new TRPCError({ code: "FORBIDDEN", message: "Only approved partners can create a briefcase" });
 
     // Check if briefcase already exists
     const existing = await (db as any).execute(sql`SELECT id FROM companyBriefcases WHERE partnerId = ${partner.id} LIMIT 1`);
-    if ((existing.rows || existing)[0]) throw new TRPCError({ code: "BAD_REQUEST", message: "Briefcase already exists" });
+    if (firstRow(existing)) throw new TRPCError({ code: "BAD_REQUEST", message: "Briefcase already exists" });
 
     const slug = partner.businessName.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 50) + "-" + nanoid(6);
     const nextReview = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000);
@@ -210,7 +211,7 @@ export const briefcaseRouter = router({
       INSERT INTO companyBriefcases (partnerId, briefcaseSlug, briefcaseScore, status, nextReviewDueAt)
       VALUES (${partner.id}, ${slug}, 0, 'draft', ${nextReview})
     `);
-    const briefcaseId = (result.rows || result).insertId ?? result.insertId;
+    const briefcaseId = insertIdOf(result);
 
     return { briefcaseId, slug, message: "Briefcase created. Start uploading your credentials." };
   }),
@@ -240,11 +241,11 @@ export const briefcaseRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       const partnerRows = await (db as any).execute(sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN" });
 
       const briefcaseRows = await (db as any).execute(sql`SELECT id FROM companyBriefcases WHERE partnerId = ${partner.id} LIMIT 1`);
-      const briefcase = (briefcaseRows.rows || briefcaseRows)[0];
+      const briefcase = firstRow(briefcaseRows);
       if (!briefcase) throw new TRPCError({ code: "NOT_FOUND", message: "Initialize your briefcase first" });
 
       // Upload file
@@ -259,7 +260,7 @@ export const briefcaseRouter = router({
       const existing = await (db as any).execute(sql`
         SELECT id FROM briefcaseDocuments WHERE briefcaseId = ${briefcase.id} AND documentType = ${input.documentType} LIMIT 1
       `);
-      const existingDoc = (existing.rows || existing)[0];
+      const existingDoc = firstRow(existing);
 
       if (existingDoc) {
         await (db as any).execute(sql`
@@ -339,7 +340,7 @@ export const briefcaseRouter = router({
       const docRows = await (db as any).execute(sql`
         SELECT d.*, b.partnerId FROM briefcaseDocuments d JOIN companyBriefcases b ON d.briefcaseId = b.id WHERE d.id = ${input.documentId} LIMIT 1
       `);
-      const doc = (docRows.rows || docRows)[0];
+      const doc = firstRow(docRows);
       if (!doc) throw new TRPCError({ code: "NOT_FOUND" });
 
       const newStatus = input.approved ? "verified" : "rejected";
@@ -372,7 +373,7 @@ export const briefcaseRouter = router({
 
       // Recalculate briefcase score
       const briefcaseRows = await (db as any).execute(sql`SELECT * FROM companyBriefcases WHERE id = ${doc.briefcaseId} LIMIT 1`);
-      const briefcase = (briefcaseRows.rows || briefcaseRows)[0];
+      const briefcase = firstRow(briefcaseRows);
       if (briefcase) {
         const newScore = calculateBriefcaseScore(briefcase);
         const newBriefcaseStatus = newScore >= 60 ? "active" : newScore >= 30 ? "restricted" : "draft";
@@ -400,7 +401,7 @@ export const briefcaseRouter = router({
         WHERE cb.briefcaseSlug = ${input.slug} AND cb.status IN ('active','restricted')
         LIMIT 1
       `);
-      const briefcase = (rows.rows || rows)[0];
+      const briefcase = firstRow(rows);
       if (!briefcase) return null;
 
       // Get verified documents (don't expose private file URLs publicly)
@@ -411,7 +412,7 @@ export const briefcaseRouter = router({
         WHERE briefcaseId = ${briefcase.id} AND verificationStatus = 'verified'
         ORDER BY documentType
       `);
-      const verifiedDocs = docsRows.rows || docsRows;
+      const verifiedDocs = asRows(docsRows);
 
       // Get Pro Pass summary (just counts, not personal info)
       const passRows = await (db as any).execute(sql`
@@ -421,7 +422,7 @@ export const briefcaseRouter = router({
                SUM(CASE WHEN osha10Certified = 1 OR osha30Certified = 1 THEN 1 ELSE 0 END) as oshaCount
         FROM proPassCards WHERE partnerId = ${briefcase.partnerId} AND status = 'active'
       `);
-      const passSummary = (passRows.rows || passRows)[0];
+      const passSummary = firstRow(passRows);
 
       return {
         businessName: briefcase.businessName,
@@ -458,7 +459,7 @@ export const briefcaseRouter = router({
       )
       ORDER BY cb.updatedAt DESC LIMIT 100
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 
   // ── Admin: run quarterly review manually ────────────────────────────────────

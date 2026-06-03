@@ -220,7 +220,7 @@ export default function PortfolioDashboard() {
             color={T.amber}
             icon={Megaphone}
             gradient={BADGE_GRADIENTS.orange}
-            href="/admin/media-dash/executive"
+            href="/admin/dashboard/executive"
             kpis={[
               { label: "Est. Media Revenue", value: Math.round(platformGMV * 0.15), prefix: "$" },
               { label: "Active Advertisers",  value: 0 },

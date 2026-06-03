@@ -237,7 +237,7 @@ export const waitlistRouter = router({
           ).catch(() => {});
         }
 
-        const rates = TIER_RATES[tier as keyof typeof TIER_RATES];
+        const rates = TIER_RATES[tier as keyof typeof TIER_RATES] ?? TIER_RATES.waitlist;
 
         sendProWaitlistConfirmation({
           to: input.email,
@@ -305,7 +305,7 @@ export const waitlistRouter = router({
 
       const row = rows[0];
       const tier = (row.tier as string) || "standard";
-      const rates = TIER_RATES[tier as keyof typeof TIER_RATES];
+      const rates = TIER_RATES[tier as keyof typeof TIER_RATES] ?? TIER_RATES.waitlist;
       const position = row.waitlistPosition || 1;
 
       // Calculate tier upgrade path

@@ -11,8 +11,9 @@
 import { z } from "zod";
 import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
-import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { router, protectedProcedure, publicProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { asRows, firstRow, insertIdOf } from "../_core/dbRows";
 
 export const facilityRouter = router({
 
@@ -46,7 +47,7 @@ export const facilityRouter = router({
           ${input.website ?? null}, ${input.facilityCount}, 'pending', 'basic'
         )
       `);
-      const facilityId = (result.rows || result).insertId ?? result.insertId;
+      const facilityId = insertIdOf(result);
 
       // Set default requirements based on facility type
       const defaults = {
@@ -94,7 +95,7 @@ export const facilityRouter = router({
         WHERE fr.facilityId = ${input.facilityId}
         LIMIT 1
       `);
-      const requirements = (reqRows.rows || reqRows)[0];
+      const requirements = firstRow(reqRows);
       if (!requirements || requirements.facilityStatus !== "active") {
         throw new TRPCError({ code: "FORBIDDEN", message: "Facility access not active" });
       }
@@ -121,11 +122,13 @@ export const facilityRouter = router({
         LIMIT 20
       `);
 
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // ── Pre-approve a vendor ─────────────────────────────────────────────────────
-  approveVendor: protectedProcedure
+  // Admin-only: facilityAccounts has no owner/user linkage, so there is no clean
+  // way to verify the caller manages this facility — restrict to admins.
+  approveVendor: adminProcedure
     .input(z.object({
       facilityId: z.number().int().positive(),
       briefcaseId: z.number().int().positive(),
@@ -164,6 +167,6 @@ export const facilityRouter = router({
           AND fa.expiresAt > NOW()
         ORDER BY p.businessName
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 });

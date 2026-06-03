@@ -21,7 +21,7 @@ export default function NetworkIncomeSummary() {
   const { data: partner } = trpc.partners.getMyProfile.useQuery(undefined, {
     retry: false,
   });
-  const referralCode = partner?.referralCode ?? "";
+  const referralCode = partner?.stats?.referralCode ?? "";
 
   const { data, isLoading } = trpc.networkOverrides.getOverrideIncome.useQuery(
     { referralCode },

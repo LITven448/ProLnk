@@ -12,7 +12,7 @@
 
 import { getDb } from "./db";
 import { sql } from "drizzle-orm";
-import { asRows } from "./_core/dbRows";
+import { asRows, firstRow, insertIdOf } from "./_core/dbRows";
 import { notifyOwner } from "./_core/notification";
 import { pushNetworkAlert } from "./_core/push";
 import { sendStormAlertToHomeowner, sendStormAlertToPro } from "./email";
@@ -214,7 +214,7 @@ async function findAffectedProperties(db: any, affectedAreas: string[]): Promise
   const rows = await db.execute(
     sql.raw(`SELECT id, address, zip, city, state FROM properties WHERE state IN (${stateList}) LIMIT 500`)
   );
-  return (rows.rows || rows) as any[];
+  return asRows(rows) as any[];
 }
 
 /**
@@ -224,7 +224,7 @@ async function upsertStormEvent(db: any, event: StormEvent): Promise<number> {
   const existing = await db.execute(
     sql`SELECT id FROM stormEvents WHERE eventId = ${event.id} LIMIT 1`
   );
-  const row = (existing.rows || existing)[0];
+  const row = firstRow(existing);
 
   if (row?.id) {
     await db.execute(
@@ -248,7 +248,7 @@ async function upsertStormEvent(db: any, event: StormEvent): Promise<number> {
        ${event.expires ? new Date(event.expires) : null},
        'actual')`
   );
-  return (result.rows || result)[0]?.insertId ?? result.insertId;
+  return insertIdOf(result);
 }
 
 /**
@@ -286,7 +286,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
       const recentCheck = await db.execute(
         sql`SELECT id, leadsGenerated FROM stormEvents WHERE eventId = ${event.id} AND createdAt > DATE_SUB(NOW(), INTERVAL 6 HOUR) LIMIT 1`
       );
-      const existing = (recentCheck.rows || recentCheck)[0];
+      const existing = firstRow(recentCheck);
       if (existing?.leadsGenerated > 0) {
         console.log(`[StormAgent] Skipping already-processed event: ${event.eventType}`);
         continue;

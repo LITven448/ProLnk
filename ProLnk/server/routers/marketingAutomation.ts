@@ -6,6 +6,7 @@ import { router, protectedProcedure } from "../_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
+import { asRows, firstRow } from "../_core/dbRows";
 
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
   if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
@@ -31,7 +32,7 @@ export const marketingAutomationRouter = router({
           LIMIT 100`
     ) as any;
 
-    const rows = Array.isArray(stats) ? stats : stats?.rows ?? [];
+    const rows = asRows(stats);
     return rows.map((r: any) => ({
       campaignKey: r.campaignKey as string,
       totalSent: Number(r.totalSent ?? 0),
@@ -55,7 +56,7 @@ export const marketingAutomationRouter = router({
           FROM marketingEmailLog`
     ) as any;
 
-    const row = Array.isArray(result) ? result[0] : (result?.rows ?? [])[0];
+    const row = firstRow(result);
     return {
       totalEmailsSent: Number(row?.totalEmailsSent ?? 0),
       emailsThisWeek: Number(row?.emailsThisWeek ?? 0),

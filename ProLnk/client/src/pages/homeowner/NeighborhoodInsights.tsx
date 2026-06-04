@@ -189,7 +189,7 @@ export default function NeighborhoodInsights() {
               <p className="text-white font-semibold text-sm">Share Your Home Health</p>
               <p className="text-slate-400 text-xs mt-0.5">Earn $25 when a neighbor joins TrustyPro using your link</p>
             </div>
-            <Link href="/homeowner/referral">
+            <Link href="/my-home/referral">
               <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white text-xs shrink-0">
                 Get Link
               </Button>

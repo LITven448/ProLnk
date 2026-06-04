@@ -264,7 +264,7 @@ export default function MarketIntelligenceFeed() {
             <p className="text-sm font-semibold text-white">Your rates vs. market</p>
             <p className="text-xs text-slate-400 mt-0.5">You charge $155/hr — 9% above the DFW average. Consider your positioning.</p>
           </div>
-          <Link href="/partner/settings">
+          <Link href="/dashboard/settings">
             <a className="flex items-center gap-2 text-teal-400 hover:text-teal-300 text-sm font-medium transition-colors">
               Adjust my rates
               <ChevronRight className="w-4 h-4" />

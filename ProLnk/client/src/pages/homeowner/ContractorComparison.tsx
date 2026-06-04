@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import {
   GitCompare, Star, Loader2, DollarSign, CheckCircle, Clock,
@@ -249,6 +249,7 @@ function ProCard({ contractor, onRemove, onRequest }: { contractor: Contractor; 
 }
 
 export default function ContractorComparison() {
+  const [, navigate] = useLocation();
   const [serviceType, setServiceType] = useState("Plumbing");
   const [selected, setSelected] = useState<Contractor[]>(MOCK_CONTRACTORS.slice(0, 3));
   const [tableView, setTableView] = useState(false);
@@ -270,7 +271,7 @@ export default function ContractorComparison() {
 
   const handleRequest = (id: number) => {
     setRequestedId(id);
-    setTimeout(() => setRequestedId(null), 2000);
+    navigate(`/my-home/request-pro?partnerId=${id}`);
   };
 
   if (isLoading) {
@@ -495,7 +496,7 @@ export default function ContractorComparison() {
           )}
 
           <div className="text-center pt-2">
-            <Link href="/my-home/directory">
+            <Link href="/my-home/pros">
               <button className="inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors">
                 See more pros in your area <ArrowRight className="w-4 h-4" />
               </button>

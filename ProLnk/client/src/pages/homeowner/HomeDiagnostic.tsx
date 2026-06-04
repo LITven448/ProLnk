@@ -753,11 +753,11 @@ export default function HomeDiagnostic() {
                     </div>
                   </div>
 
-                  {result.quote.breakdown.length > 0 && (
+                  {(result.quote.breakdown?.length ?? 0) > 0 && (
                     <div className="space-y-1">
                       <p className="text-xs font-medium text-gray-600">Materials breakdown:</p>
                       <div className="bg-white rounded-lg border border-green-200 divide-y divide-gray-100">
-                        {result.quote.breakdown.slice(0, 6).map((item, i) => (
+                        {(result.quote.breakdown ?? []).slice(0, 6).map((item, i) => (
                           <div key={i} className="flex items-center justify-between px-3 py-2 text-xs">
                             <span className="text-gray-700">{item.item} × {item.qty} {item.unit}</span>
                             <span className="font-medium text-gray-900">${item.lineMin}–${item.lineMax}</span>

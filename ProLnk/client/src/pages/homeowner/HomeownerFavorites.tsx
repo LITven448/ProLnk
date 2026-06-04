@@ -115,7 +115,7 @@ export default function HomeownerFavorites() {
                 ? "Try a different search term."
                 : "When you find a contractor you love, save them here for easy access."}
             </p>
-            <Link href="/my-home/find-a-pro">
+            <Link href="/my-home/pros">
               <Button className="bg-cyan-500 hover:bg-cyan-600 text-white">
                 Find a Pro
               </Button>
@@ -211,7 +211,7 @@ export default function HomeownerFavorites() {
                       </a>
                     )}
                     <Link
-                      href={`/my-home/request-a-pro?partnerId=${fav.partnerId}`}
+                      href={`/my-home/request-pro?partnerId=${fav.partnerId}`}
                       className="ml-auto flex items-center gap-1.5 text-xs font-semibold text-white bg-cyan-500/20 hover:bg-cyan-500/30 px-3 py-1.5 rounded-lg transition-all"
                     >
                       Book Again <ChevronRight className="w-3.5 h-3.5" />

@@ -177,8 +177,8 @@ export default function ReferralHub() {
     partnersReferred: partner?.stats?.partnersReferred ?? 0,
     homesOriginated: 0,
     overrideCommissionsEarned: 0,
-    referralCommissionsEarned: parseFloat(partner?.totalCommissionEarned ?? "0"),
-    totalPassiveIncome: parseFloat(partner?.totalCommissionEarned ?? "0"),
+    referralCommissionsEarned: parseFloat(partner?.stats?.totalCommissionEarned ?? "0"),
+    totalPassiveIncome: parseFloat(partner?.stats?.totalCommissionEarned ?? "0"),
     nextMilestone: 5,
     nextMilestoneReward: "Scout Badge + $25 bonus",
   };

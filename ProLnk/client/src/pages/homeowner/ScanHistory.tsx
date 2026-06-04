@@ -85,8 +85,9 @@ export default function ScanHistory() {
         ) : (
           <div className="space-y-3">
             {scans.map((scan: any, idx: number) => {
-              const analysis = typeof scan.analysisJson === 'string' ? JSON.parse(scan.analysisJson) : scan.analysisJson;
-              const photos: string[] = typeof scan.photoUrls === 'string' ? JSON.parse(scan.photoUrls) : scan.photoUrls ?? [];
+              const safeParse = (v: any, fb: any) => { if (v == null) return fb; if (typeof v !== 'string') return v; try { return JSON.parse(v); } catch { return fb; } };
+              const analysis = safeParse(scan.analysisJson, null);
+              const photos: string[] = safeParse(scan.photoUrls, []);
               const isOpen = expanded === idx;
               return (
                 <div key={scan.id} className="bg-white rounded-2xl border border-slate-100 overflow-hidden">

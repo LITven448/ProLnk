@@ -1148,7 +1148,7 @@ export default function PartnerHome() {
               Welcome back, {status.firstName}
             </h1>
             <p className="text-gray-400 text-sm mt-0.5">
-              {status.businessType || "Home Service Professional"} · {status.primaryCity}, {status.primaryState}
+              {status.trade || "Home Service Professional"} · {status.city}, {status.state}
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -1311,7 +1311,7 @@ export default function PartnerHome() {
               </div>
             ) : (
               <div className="space-y-2">
-                {status.referrals.map((ref: { firstName: string; businessType: string; joinedAt?: string }, i: number) => (
+                {status.referrals.map((ref: { firstName: string; trade: string; joinedAt?: string }, i: number) => (
                   <div
                     key={i}
                     className="flex items-center justify-between px-3 py-2.5 rounded-xl"
@@ -1323,7 +1323,7 @@ export default function PartnerHome() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-white">{ref.firstName}</p>
-                        <p className="text-xs text-gray-500">{ref.businessType}</p>
+                        <p className="text-xs text-gray-500">{ref.trade}</p>
                       </div>
                     </div>
                     <span className="text-xs text-green-400 font-medium">+7% override</span>

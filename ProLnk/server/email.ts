@@ -377,6 +377,7 @@ export async function sendStormAlertToHomeowner(opts: {
   const severityColor = opts.severity === "Extreme" ? "#dc2626" : opts.severity === "Severe" ? "#ea580c" : "#d97706";
   await sendEmail({
     to: opts.homeownerEmail,
+    from: FROM_TRUSTYPRO,
     subject: `⚡ Storm Alert for Your Property — ${opts.stormType}`,
     html: `
       <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
@@ -527,7 +528,7 @@ export async function sendProWaitlistConfirmation(opts: {
     <div style="font-size:34px;font-weight:900;color:#ffffff;letter-spacing:-1.5px;line-height:1;">ProLnk</div>
     <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Founding Partner Network</div>
     <div style="display:inline-block;background:${tierBadgeColor};color:#0A1628;font-size:12px;font-weight:800;padding:7px 22px;border-radius:100px;margin-top:20px;letter-spacing:0.8px;text-transform:uppercase;">${tierLabel}</div>
-    <div style="color:#ffffff;font-size:28px;font-weight:900;margin-top:22px;line-height:1.2;">Your Charter Spot is Reserved</div>
+    <div style="color:#ffffff;font-size:28px;font-weight:900;margin-top:22px;line-height:1.2;">Your ${tierLabel} Spot is Reserved</div>
     <div style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:6px;">One of a limited number of founding professionals in DFW</div>
   </div>
 

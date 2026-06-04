@@ -879,6 +879,8 @@ function Router() {
       <Route path="/dashboard/pro-pass" component={ProPassManager} />
       <Route path="/dashboard/briefcase" component={BriefcaseManager} />
       <Route path="/dashboard/scout-assessment" component={ScoutAssessmentWizard} />
+      <Route path="/dashboard/scout-assessment/:assessmentId" component={ScoutAssessmentWizard} />
+      <Route path="/dashboard/scout" component={ScoutDashboard} />
       <Route path="/match-history" component={MatchHistory} />
       <Route path="/job/new" component={LogJob} />
       <Route path="/job-log" component={JobLog} />

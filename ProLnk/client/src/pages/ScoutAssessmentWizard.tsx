@@ -293,10 +293,10 @@ export default function ScoutAssessmentWizard() {
             </div>
           )}
           <div className="flex gap-3">
-            <Button className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold" onClick={() => navigate(`/dashboard/bid-board/new?assessmentId=${assessmentId}`)}>
-              Post to Bid Board
+            <Button className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold" onClick={() => navigate(`/exchange/post?assessmentId=${assessmentId}`)}>
+              Post to Job Board
             </Button>
-            <Button variant="outline" className="flex-1 border-gray-600 text-gray-300" onClick={() => navigate(`/dashboard/scout`)}>
+            <Button variant="outline" className="flex-1 border-gray-600 text-gray-300" onClick={() => navigate(`/scout`)}>
               Back to Assessments
             </Button>
           </div>

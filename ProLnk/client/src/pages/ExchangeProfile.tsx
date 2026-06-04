@@ -130,7 +130,7 @@ export default function ExchangeProfile() {
       author: r.homeownerName ?? "Homeowner",
       rating: r.rating,
       text: r.reviewText ?? "",
-      date: new Date(r.createdAt).toLocaleDateString("en-US", { month: "short", year: "numeric" }),
+      date: r.createdAt ? new Date(r.createdAt).toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "",
     })) ?? DEMO_PARTNER.reviews,
     verifications: {
       licenseVerified: !!profileData.partner.licenseVerified,

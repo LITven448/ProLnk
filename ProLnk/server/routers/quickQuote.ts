@@ -102,7 +102,9 @@ export const quickQuoteRouter = router({
           ),
           or(
             eq(quickQuoteRequests.status, 'pending'),
-            eq(quickQuoteRequests.status, 'sent')
+            eq(quickQuoteRequests.status, 'sent'),
+            eq(quickQuoteRequests.status, 'quoted'),
+            eq(quickQuoteRequests.status, 'declined')
           )
         )
       )

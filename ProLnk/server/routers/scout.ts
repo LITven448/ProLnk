@@ -687,7 +687,10 @@ export const scoutRouter = router({
       // Send report email via Resend (if configured)
       try {
         const reportUrl = `${process.env.APP_BASE_URL}/scout-reports/${input.assessmentId}`;
-        await sendScoutReportEmail(input.homeownerEmail, input.homeownerName, reportUrl, input.propertyAddress);
+        const addrRow = firstRow(await (db as any).execute(
+          sql`SELECT propertyAddress FROM scoutAssessments WHERE id = ${input.assessmentId} LIMIT 1`
+        ));
+        await sendScoutReportEmail(input.homeownerEmail, input.homeownerName, reportUrl, addrRow?.propertyAddress);
       } catch (error) {
         console.warn("[Scout] Failed to send report email:", error);
         // Don't fail the operation if email fails

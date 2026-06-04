@@ -26,6 +26,7 @@ import * as crypto from "crypto";
 import * as db from "../db";
 import { sdk } from "./sdk";
 import { getSessionCookieOptions } from "./cookies";
+import { firstRow } from "./dbRows";
 import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import { ENV } from "./env";
 
@@ -179,7 +180,7 @@ export function registerOAuthRoutes(app: Express) {
     const pwRows = await (dbConn as any).execute(
       `SELECT passwordHash FROM userPasswords WHERE openId = ? LIMIT 1`, [openId]
     );
-    const storedHash = (pwRows.rows ?? pwRows)[0]?.passwordHash ?? (pwRows[0]?.[0]?.passwordHash ?? pwRows[0]?.passwordHash);
+    const storedHash = firstRow(pwRows)?.passwordHash;
     if (!storedHash) {
       return res.status(401).json({ error: "This account uses Google sign-in. Please continue with Google." });
     }

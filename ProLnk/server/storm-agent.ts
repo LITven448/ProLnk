@@ -12,6 +12,7 @@
 
 import { getDb } from "./db";
 import { sql } from "drizzle-orm";
+import { asRows } from "./_core/dbRows";
 import { notifyOwner } from "./_core/notification";
 import { pushNetworkAlert } from "./_core/push";
 import { sendStormAlertToHomeowner, sendStormAlertToPro } from "./email";
@@ -352,7 +353,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
                 AND u.email IS NOT NULL
               LIMIT 50`
         ).catch(() => ({ rows: [] })) as any;
-        const homeowners = (homeownerRows.rows ?? homeownerRows) as any[];
+        const homeowners = asRows(homeownerRows);
         const dashboardUrl = 'https://prolnk.xyz/my-home';
         for (const ho of homeowners.slice(0, 50)) {
           sendStormAlertToHomeowner({
@@ -381,7 +382,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
                   AND p.serviceZipCodes IS NOT NULL
                 LIMIT 100`)
           ).catch(() => ({ rows: [] })) as any;
-          const pros = (proRows.rows ?? proRows) as any[];
+          const pros = asRows(proRows);
           // Filter pros whose service zip codes overlap with affected zips
           const filteredPros = pros.filter((pro: any) => {
             const proZips = (pro.serviceZipCodes ?? '').split(/[,\s]+/).filter(Boolean);

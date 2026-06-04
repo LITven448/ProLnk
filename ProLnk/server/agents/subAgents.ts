@@ -13,6 +13,7 @@
 
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
+import { asRows, firstRow } from "../_core/dbRows";
 import { invokeLLM } from "../_core/llm";
 import { dashboard, aiHandled } from "../notify";
 import { queryPropertyHistory, recordPropertyCondition } from "../graphiti";
@@ -352,7 +353,7 @@ export async function runAlertTriageAgentFromDb(): Promise<{
       ORDER BY createdAt DESC
       LIMIT 50
     `);
-    const alerts: any[] = rows.rows ?? rows ?? [];
+    const alerts: any[] = asRows(rows);
 
     const categorized = { critical: [] as any[], warning: [] as any[], info: [] as any[] };
     for (const row of alerts) {
@@ -389,7 +390,7 @@ export async function runOutreachAgent(params: { partnerId: number; reason: stri
         WHERE id = ${params.partnerId}
         LIMIT 1
       `);
-      const row = (rows.rows ?? rows)[0];
+      const row = firstRow(rows);
       if (row) {
         partnerName = row.fullName ?? partnerName;
         trade = row.trade ?? trade;

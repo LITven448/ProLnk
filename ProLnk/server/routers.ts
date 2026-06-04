@@ -3,6 +3,7 @@ import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
+import { asRows, firstRow } from "./_core/dbRows";
 import { systemRouter } from "./_core/systemRouter";
 import { integrationsRouter } from "./routers/integrations";
 import { customerDealsRouter } from "./routers/customerDeals";
@@ -1663,7 +1664,7 @@ export const appRouter = router({
         const existing = await db.execute(
           sql`SELECT id FROM partnerReviews WHERE dealId = ${input.dealId} LIMIT 1`
         ) as any;
-        if ((existing.rows ?? existing)?.[0]) throw new TRPCError({ code: 'CONFLICT', message: 'Already reviewed' });
+        if (firstRow(existing)) throw new TRPCError({ code: 'CONFLICT', message: 'Already reviewed' });
         await db.execute(
           sql`INSERT INTO partnerReviews
             (dealId, partnerId, homeownerName, homeownerEmail, rating, reviewText,
@@ -1699,7 +1700,7 @@ export const appRouter = router({
             WHERE hp.userId = ${ctx.user.id}
             LIMIT 1`
       ) as any;
-      const profile = (profileRows.rows ?? profileRows)?.[0];
+      const profile = firstRow(profileRows);
 
       // Get all home systems
       const sysRows = await db.execute(
@@ -1709,7 +1710,7 @@ export const appRouter = router({
             WHERE homeownerProfileId = ${profile?.id ?? 0}
             ORDER BY healthScore ASC`
       ) as any;
-      const systems = (sysRows.rows ?? sysRows) as any[];
+      const systems = asRows(sysRows);
 
       if (systems.length === 0) {
         return {
@@ -2048,7 +2049,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 const userRows = await (db2 as any).execute(
                   sql2`SELECT userId FROM partners WHERE id = ${partner.id} LIMIT 1`
                 );
-                const userId = (userRows.rows ?? userRows)[0]?.userId;
+                const userId = firstRow(userRows)?.userId;
                 if (!userId) return;
                 const { NETWORK_RATES } = await import("../shared/const");
                 const addrHash = createHash("sha256")
@@ -2058,7 +2059,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 const proRows = await (db2 as any).execute(
                   sql2`SELECT * FROM pro_network_profile WHERE user_id = ${userId} LIMIT 1`
                 );
-                const pro = (proRows.rows ?? proRows)[0];
+                const pro = firstRow(proRows);
                 if (!pro) return;
                 const proLevel = Number(pro.network_level);
                 const ownRate = NETWORK_RATES.ownJob[proLevel as keyof typeof NETWORK_RATES.ownJob] ?? 0.005;
@@ -2074,7 +2075,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 const eventRows = await (db2 as any).execute(
                   sql2`SELECT id FROM job_commission_event WHERE job_id = ${String(input.opportunityId)} LIMIT 1`
                 );
-                const eventId = (eventRows.rows ?? eventRows)[0]?.id;
+                const eventId = firstRow(eventRows)?.id;
                 if (!eventId) return;
                 // Own-job payout
                 await (db2 as any).execute(sql2`
@@ -2089,7 +2090,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                   JOIN pro_network_profile np ON np.user_id = uc.upline_user_id
                   WHERE uc.pro_user_id = ${userId}
                 `);
-                for (const upline of (uplineRows.rows ?? uplineRows)) {
+                for (const upline of asRows(uplineRows)) {
                   const ul = Number(upline.upline_network_level);
                   if (!upline.subscription_active) continue;
                   if (Number(upline.jobs_completed_this_month) < NETWORK_RATES.minimumJobsPerMonth) continue;
@@ -2123,7 +2124,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 const existingDoc = await (db2 as any).execute(
                   sql2`SELECT id FROM home_documentation WHERE address_hash = ${addrHash} LIMIT 1`
                 );
-                const isFirst = !(existingDoc.rows ?? existingDoc)[0];
+                const isFirst = !firstRow(existingDoc);
                 await (db2 as any).execute(sql2`
                   INSERT IGNORE INTO home_documentation
                     (pro_user_id, address_hash, full_address, is_first_documentation, origination_credit_earned, origination_credit_amount, documented_at)
@@ -3548,7 +3549,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         } else {
           rows = await db.execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
         }
-        return (Array.isArray(rows) ? rows : rows.rows ?? []) as any[];
+        return asRows(rows) as any[];
       }),
     getFsmWebhookStats: adminProcedure.query(async () => {
       const db = await getDb();
@@ -3562,7 +3563,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
           SUM(CASE WHEN status = 'error' THEN 1 ELSE 0 END) as errors
         FROM fsmWebhookEvents
       `);
-      const r = (Array.isArray(rows) ? rows[0] : (rows.rows ?? [])[0]) ?? {};
+      const r = firstRow(rows) ?? {};
       return {
         total: Number(r.total ?? 0),
         matched: Number(r.matched ?? 0),
@@ -3577,7 +3578,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       const db = await getDb();
       if (!db) return [];
       const rows = await db.execute(sql`SELECT * FROM webhookSubscriptions ORDER BY createdAt DESC`);
-      return (Array.isArray(rows) ? rows : rows.rows ?? []) as any[];
+      return asRows(rows) as any[];
     }),
     createWebhookSubscription: adminProcedure
       .input(z.object({

@@ -17,6 +17,7 @@
 
 import { getDb } from "./db";
 import { sql } from "drizzle-orm";
+import { asRows } from "./_core/dbRows";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const APP_BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.io";
@@ -124,7 +125,7 @@ export async function runSeasonalReminderCampaign(): Promise<{ sent: number; err
     `)
   ).catch(() => ({ rows: [] })) as any;
 
-  const homeowners = (rows.rows ?? rows) as any[];
+  const homeowners = asRows(rows);
   let sent = 0;
   let errors = 0;
   const dashboardUrl = `${APP_BASE_URL}/my-home`;
@@ -206,7 +207,7 @@ export async function runWinBackCampaign(): Promise<{ sent: number; errors: numb
     `)
   ).catch(() => ({ rows: [] })) as any;
 
-  const homeowners = (rows.rows ?? rows) as any[];
+  const homeowners = asRows(rows);
   let sent = 0;
   let errors = 0;
   const dashboardUrl = `${APP_BASE_URL}/my-home`;
@@ -287,7 +288,7 @@ export async function runTierMilestoneNotifications(): Promise<{ sent: number; e
     `)
   ).catch(() => ({ rows: [] })) as any;
 
-  const pros = (rows.rows ?? rows) as any[];
+  const pros = asRows(rows);
   let sent = 0;
   let errors = 0;
   const dashboardUrl = `${APP_BASE_URL}/dashboard/tier-progress`;

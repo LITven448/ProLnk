@@ -5,6 +5,7 @@ import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { createLogger } from "../_core/logger";
 import { buildPartnerActivation } from "../partner-activation";
+import { initiateBackgroundCheck } from "./checkr";
 
 const log = createLogger("WaitlistAdmin");
 
@@ -276,11 +277,29 @@ export const waitlistAdminRouter = router({
           UPDATE proWaitlist SET status = 'active', activatedAt = NOW() WHERE id = ${input.id}
         `);
 
+        // Auto-initiate the background check on activation. Safe no-op until
+        // CHECKR_API_KEY is set (initiateBackgroundCheck catches + returns nulls);
+        // never blocks activation.
+        let backgroundCheck: { invitationUrl: string | null; candidateId: string | null } =
+          { invitationUrl: null, candidateId: null };
+        try {
+          backgroundCheck = await initiateBackgroundCheck({
+            partnerEmail: app.email,
+            firstName: app.firstName,
+            lastName: app.lastName,
+            phone: app.phone,
+            partnerId,
+          });
+        } catch (e) {
+          console.warn("[activate] background check init failed (non-fatal):", e);
+        }
+
         return {
           success: true,
           partnerId,
           businessType: payload.businessType,
           serviceZipCodes: payload.serviceZipCodes,
+          backgroundCheck,
           warnings,
         };
       });

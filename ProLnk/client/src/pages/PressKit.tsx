@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
+import { trpc } from "@/lib/trpc";
 import {
   Download, Mail, Copy, CheckCircle, Newspaper,
   Image, BarChart3, Users, Globe, Zap, Building2,
@@ -74,13 +75,23 @@ export default function PressKit() {
   const [submitting, setSubmitting] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const captureLead = trpc.waitlist.joinSimpleWaitlist.useMutation();
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmitting(true);
     const subject = `Interview Request — ${form.outlet}`;
     const body = `Name: ${form.name}\nOutlet: ${form.outlet}\nEmail: ${form.email}\n\n${form.message}`;
-    window.location.href = `mailto:press@prolnk.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setTimeout(() => { setSubmitted(true); setSubmitting(false); }, 500);
+    captureLead.mutate(
+      { name: form.outlet ? `${form.name} (${form.outlet})` : form.name, email: form.email },
+      {
+        onSettled: () => {
+          window.location.href = `mailto:press@prolnk.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          setSubmitted(true);
+          setSubmitting(false);
+        },
+      }
+    );
   }
 
   function copyBoilerplate() {

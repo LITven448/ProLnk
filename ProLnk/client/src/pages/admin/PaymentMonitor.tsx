@@ -48,8 +48,6 @@ function fmtDate(ts: string | null) {
 
 export default function PaymentMonitor() {
   const [autoRefresh, setAutoRefresh] = useState(true);
-  const [retrying, setRetrying] = useState<string | null>(null);
-  const [triggeringPayout, setTriggeringPayout] = useState(false);
 
   const { data: overview, isLoading, refetch } = trpc.payments.adminGetPaymentOverview.useQuery(undefined, {
     refetchInterval: autoRefresh ? 30000 : false,
@@ -57,6 +55,18 @@ export default function PaymentMonitor() {
 
   const adminTriggerPayout = trpc.payments.adminTriggerPayout.useMutation({
     onSuccess: () => { toast.success("Payout triggered successfully"); refetch(); },
+    onError: (e: any) => toast.error(e.message),
+  });
+
+  const triggerPayouts = trpc.stripeConnect.triggerPayouts.useMutation({
+    onSuccess: (r: any) => {
+      if (r?.enabled === false) {
+        toast.info(`Payouts disabled${r.reason ? `: ${r.reason}` : ""}`);
+      } else {
+        toast.success(`Payout run complete — ${r?.paid ?? 0} paid, ${r?.skipped ?? 0} skipped, ${r?.errors ?? 0} errors`);
+      }
+      refetch();
+    },
     onError: (e: any) => toast.error(e.message),
   });
 
@@ -88,14 +98,11 @@ export default function PaymentMonitor() {
         </div>
         <Button
           className="gap-2 text-sm font-bold bg-teal-600 hover:bg-teal-700 text-white"
-          onClick={() => {
-            setTriggeringPayout(true);
-            setTimeout(() => { setTriggeringPayout(false); toast.success("Manual payout batch queued for 47 eligible partners"); }, 1200);
-          }}
-          disabled={triggeringPayout}
+          onClick={() => triggerPayouts.mutate()}
+          disabled={triggerPayouts.isPending}
         >
           <Zap className="w-4 h-4" />
-          {triggeringPayout ? "Queuing..." : "Trigger Manual Payout"}
+          {triggerPayouts.isPending ? "Running..." : "Trigger Manual Payout"}
         </Button>
       </div>
 
@@ -123,6 +130,7 @@ export default function PaymentMonitor() {
             <XCircle className="w-4 h-4 text-red-400" />
             <h3 className="font-bold text-white text-sm">Failed Payments</h3>
             <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-400">{FAILED_PAYMENTS.length} failed</span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-700 text-slate-400 ml-auto">Sample data — retry not yet wired</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -147,14 +155,11 @@ export default function PaymentMonitor() {
                       {p.canRetry ? (
                         <Button
                           size="sm"
-                          className="h-7 text-xs gap-1.5 bg-amber-600 hover:bg-amber-700 text-white"
-                          disabled={retrying === p.id}
-                          onClick={() => {
-                            setRetrying(p.id);
-                            setTimeout(() => { setRetrying(null); toast.success(`Retry queued for ${p.partner}`); }, 1000);
-                          }}
+                          variant="outline"
+                          className="h-7 text-xs gap-1.5 border-amber-600/40 text-amber-400 hover:bg-amber-600/10"
+                          onClick={() => toast.info("Per-row retry is not yet wired — use Trigger Manual Payout to run the live disbursement batch")}
                         >
-                          <RotateCcw className="w-3 h-3" /> {retrying === p.id ? "Retrying..." : "Retry"}
+                          <RotateCcw className="w-3 h-3" /> Retry
                         </Button>
                       ) : (
                         <span className="text-xs text-slate-500">Max attempts reached</span>
@@ -175,6 +180,7 @@ export default function PaymentMonitor() {
             <AlertTriangle className="w-4 h-4 text-amber-400" />
             <h3 className="font-bold text-white text-sm">Active Disputes</h3>
             <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400">{DISPUTES.length} open</span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-700 text-slate-400 ml-auto">Sample data</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">

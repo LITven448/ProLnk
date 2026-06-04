@@ -156,7 +156,7 @@ export default function NeighborhoodInsights() {
               </p>
               <p className="text-slate-400 text-xs mt-0.5">Includes HVAC components, electrical panels, and water heater valves.</p>
             </div>
-            <Link href="/homeowner/recalls">
+            <Link href="/home-health-vault">
               <button className="text-red-400 hover:text-red-300 text-xs flex items-center gap-1 whitespace-nowrap">
                 Check home <ChevronRight className="w-3 h-3" />
               </button>

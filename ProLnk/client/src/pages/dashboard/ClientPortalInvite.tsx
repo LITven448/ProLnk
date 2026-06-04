@@ -52,6 +52,8 @@ export default function ClientPortalInvite() {
 
   function handleSend() {
     if (!form.name || !form.phone || !form.job) return;
+    const msg = form.message || personalMsg;
+    navigator.clipboard.writeText(msg);
     setSent(true);
     setTimeout(() => setSent(false), 3000);
     setForm({ name: "", phone: "", email: "", job: "", message: "" });
@@ -62,8 +64,11 @@ export default function ClientPortalInvite() {
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         {/* Header */}
         <div>
-          <h1 className="text-3xl font-bold text-white">Client Portal</h1>
-          <p className="text-gray-400 mt-1">Give your customers a window into their job</p>
+          <div className="flex items-center gap-2">
+            <h1 className="text-3xl font-bold text-white">Client Portal</h1>
+            <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-bold">Preview</span>
+          </div>
+          <p className="text-gray-400 mt-1">Give your customers a window into their job — automated invites are coming soon</p>
         </div>
 
         {/* Analytics banner */}
@@ -164,11 +169,11 @@ export default function ClientPortalInvite() {
             >
               {sent ? (
                 <>
-                  <CheckCircle className="w-5 h-5" /> Portal link sent via SMS!
+                  <CheckCircle className="w-5 h-5" /> Invite message copied — paste to your client
                 </>
               ) : (
                 <>
-                  <Send className="w-5 h-5" /> Send Portal Link
+                  <Send className="w-5 h-5" /> Copy Portal Invite
                 </>
               )}
             </button>
@@ -194,7 +199,10 @@ export default function ClientPortalInvite() {
 
         {/* Active portals table */}
         <div>
-          <h2 className="text-white font-semibold text-lg mb-4">Active Portals</h2>
+          <div className="flex items-center gap-2 mb-4">
+            <h2 className="text-white font-semibold text-lg">Active Portals</h2>
+            <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-700 text-slate-400 font-semibold">Sample data</span>
+          </div>
           <div className="bg-[#0F1E35] border border-[#1E3A5F] rounded-xl overflow-hidden">
             <table className="w-full text-sm">
               <thead>

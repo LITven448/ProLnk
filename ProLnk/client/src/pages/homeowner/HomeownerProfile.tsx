@@ -456,7 +456,7 @@ export default function HomeownerProfile() {
               <p className="text-xs text-gray-400 mt-0.5">Manage cards and billing preferences securely</p>
             </div>
           </div>
-          <Link href="/my-home/payment">
+          <Link href="/my-home/invoices">
             <Button variant="outline" size="sm" className="gap-1.5 text-purple-400 border-purple-400/30 hover:bg-purple-400/10 flex-shrink-0">
               Manage <ArrowRight className="w-3.5 h-3.5" />
             </Button>

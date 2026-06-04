@@ -399,7 +399,7 @@ export default function TrustyProApp() {
               >
                 <p className="text-xs text-gray-400">Need help?</p>
                 <button
-                  onClick={() => navigate("/trustypro/support")}
+                  onClick={() => navigate("/help")}
                   className="flex items-center gap-1.5 text-xs font-semibold transition-colors hover:opacity-80"
                   style={{ color: PURPLE }}
                 >
@@ -435,7 +435,7 @@ export default function TrustyProApp() {
                 Homeowner Portal
               </button>
               <button
-                onClick={() => navigate("/trustypro/support")}
+                onClick={() => navigate("/help")}
                 className="text-xs text-gray-500 hover:text-white transition-colors"
               >
                 Need help?

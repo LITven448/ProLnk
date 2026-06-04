@@ -113,8 +113,10 @@ export default function InsuranceClaimAssistant() {
   };
 
   const handleSend = () => {
+    const s = claimSummary();
+    if (s) navigator.clipboard.writeText(s);
     setSent(true);
-    setTimeout(() => setSent(false), 3000);
+    setTimeout(() => setSent(false), 4000);
   };
 
   const canAdvance = [
@@ -135,8 +137,11 @@ export default function InsuranceClaimAssistant() {
                 <FileCheck className="w-6 h-6 text-teal-400" />
               </div>
               <div>
-                <h1 className="text-2xl font-black text-white tracking-tight">Insurance Claim Assistant</h1>
-                <p className="text-sm text-slate-400">AI-powered claim documentation in 4 steps</p>
+                <div className="flex items-center gap-2">
+                  <h1 className="text-2xl font-black text-white tracking-tight">Insurance Claim Assistant</h1>
+                  <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-bold">Preview</span>
+                </div>
+                <p className="text-sm text-slate-400">AI-powered claim documentation in 4 steps — preview of an upcoming feature</p>
               </div>
             </div>
           </div>
@@ -375,7 +380,7 @@ export default function InsuranceClaimAssistant() {
                     <button onClick={handleSend}
                       className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-white text-sm font-bold transition-colors">
                       {sent ? <CheckCircle className="w-4 h-4" /> : <Send className="w-4 h-4" />}
-                      {sent ? "Sent!" : "Send to Insurance"}
+                      {sent ? "Copied — send to your carrier" : "Copy for Insurance"}
                     </button>
                   </div>
                 </div>
@@ -461,7 +466,7 @@ export default function InsuranceClaimAssistant() {
             ) : (
               <button onClick={handleSend}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-white text-sm font-bold transition-colors">
-                <Send className="w-4 h-4" /> Submit Claim
+                {sent ? <CheckCircle className="w-4 h-4" /> : <Send className="w-4 h-4" />} {sent ? "Copied to clipboard" : "Copy Claim Summary"}
               </button>
             )}
           </div>

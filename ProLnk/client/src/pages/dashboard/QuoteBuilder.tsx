@@ -72,6 +72,23 @@ export default function QuoteBuilder() {
   }
 
   function handleSend() {
+    const lineText = lines
+      .filter(l => l.description)
+      .map(l => `${l.description} — ${l.qty} ${l.unit} × $${l.price} = $${(l.qty * l.price).toFixed(2)}`)
+      .join("\n");
+    const quoteText = [
+      `Quote for ${homeowner || "homeowner"}${address ? ` — ${address}` : ""}`,
+      `Service: ${serviceType}`,
+      "",
+      lineText,
+      laborHours ? `Labor: ${laborHours} hrs × $${laborRate}/hr = $${laborSubtotal.toFixed(2)}` : "",
+      `Subtotal: $${subtotal.toFixed(2)}`,
+      `TX Sales Tax (8.25%): $${tax.toFixed(2)}`,
+      `Total: $${total.toFixed(2)}`,
+      notes ? `\nNotes: ${notes}` : "",
+      `\nValid for ${validity} days.`,
+    ].filter(Boolean).join("\n");
+    navigator.clipboard.writeText(quoteText);
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   }
@@ -87,8 +104,9 @@ export default function QuoteBuilder() {
         <div className="flex items-center gap-2 mb-1">
           <FileText className="w-6 h-6 text-teal-400" />
           <h1 className="text-2xl font-bold text-white">Quote Builder</h1>
+          <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-bold">Preview</span>
         </div>
-        <p className="text-slate-400 text-sm">Win more jobs with professional proposals</p>
+        <p className="text-slate-400 text-sm">Win more jobs with professional proposals — sending is coming soon</p>
       </div>
 
       {/* Stats banner */}
@@ -266,8 +284,8 @@ export default function QuoteBuilder() {
               <div className="flex items-center gap-3 bg-green-500/10 border border-green-500/30 rounded-lg p-4">
                 <CheckCircle className="w-5 h-5 text-green-400" />
                 <div>
-                  <p className="text-green-400 font-semibold text-sm">Quote sent via SMS + Email</p>
-                  <p className="text-slate-400 text-xs">Homeowner will receive a link to review and accept</p>
+                  <p className="text-green-400 font-semibold text-sm">Quote copied to clipboard</p>
+                  <p className="text-slate-400 text-xs">Paste it into a text or email to your homeowner — in-app delivery is coming soon</p>
                 </div>
               </div>
             ) : (
@@ -275,8 +293,8 @@ export default function QuoteBuilder() {
                 onClick={handleSend}
                 className="w-full bg-teal-500 hover:bg-teal-400 text-white font-semibold py-3 text-base"
               >
-                <Send className="w-4 h-4 mr-2" />
-                Send Quote
+                <Copy className="w-4 h-4 mr-2" />
+                Copy Quote
               </Button>
             )}
           </CardContent>

@@ -21,6 +21,7 @@ import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { queryKnowledge } from "../knowledge";
+import { firstRow } from "../_core/dbRows";
 
 // ─── Data fetchers ────────────────────────────────────────────────────────────
 
@@ -73,11 +74,11 @@ async function getPlatformSnapshot() {
     ]);
 
     return {
-      partners: (partnersResult.rows || partnersResult)[0] ?? {},
-      jobs30d: (jobsResult.rows || jobsResult)[0] ?? {},
-      opps30d: (oppsResult.rows || oppsResult)[0] ?? {},
-      commissions: (commissionsResult.rows || commissionsResult)[0] ?? {},
-      waitlist: (waitlistResult.rows || waitlistResult)[0] ?? {},
+      partners: firstRow(partnersResult) ?? {},
+      jobs30d: firstRow(jobsResult) ?? {},
+      opps30d: firstRow(oppsResult) ?? {},
+      commissions: firstRow(commissionsResult) ?? {},
+      waitlist: firstRow(waitlistResult) ?? {},
     };
   } catch (err) {
     console.error("[ExecutiveTier] Data fetch error:", err);
@@ -161,12 +162,12 @@ export async function runCFOAgent(): Promise<{
         SELECT SUM(subscriptionFee) as mrr FROM partners
         WHERE status = 'approved' AND subscriptionFee > 0
       `);
-      subscriptionMrr = parseFloat((subRows.rows || subRows)[0]?.mrr ?? "0");
+      subscriptionMrr = parseFloat(firstRow(subRows)?.mrr ?? "0");
 
       const adRows = await db.execute(sql`
         SELECT SUM(monthlyFee) as mrr FROM featuredAdvertisers WHERE status = 'active'
       `);
-      advertiserMrr = parseFloat((adRows.rows || adRows)[0]?.mrr ?? "0");
+      advertiserMrr = parseFloat(firstRow(adRows)?.mrr ?? "0");
     }
   } catch {}
 
@@ -212,10 +213,10 @@ export async function runCOOAgent(): Promise<{
   try {
     if (db) {
       const stuckRows = await db.execute(sql`SELECT COUNT(*) as cnt FROM jobs WHERE aiAnalysisStatus = 'processing' AND updatedAt < DATE_SUB(NOW(), INTERVAL 30 MINUTE)`);
-      stuckJobs = parseInt((stuckRows.rows || stuckRows)[0]?.cnt ?? "0");
+      stuckJobs = parseInt(firstRow(stuckRows)?.cnt ?? "0");
 
       const reviewRows = await db.execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE adminReviewStatus = 'pending_review'`);
-      pendingReview = parseInt((reviewRows.rows || reviewRows)[0]?.cnt ?? "0");
+      pendingReview = parseInt(firstRow(reviewRows)?.cnt ?? "0");
     }
   } catch {}
 

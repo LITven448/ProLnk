@@ -12,6 +12,7 @@ import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { dashboard } from "../notify";
+import { asRows, firstRow } from "../_core/dbRows";
 
 // ─── Targeting Agent ──────────────────────────────────────────────────────────
 
@@ -33,7 +34,7 @@ export async function runTargetingAgent(): Promise<{
       ORDER BY homeownerCount DESC
       LIMIT 20
     `);
-    const zips = homeownerZips.rows || homeownerZips;
+    const zips = asRows(homeownerZips);
 
     // Get active advertiser categories
     const advertiserRows = await (db as any).execute(sql`
@@ -42,7 +43,7 @@ export async function runTargetingAgent(): Promise<{
       WHERE status = 'active'
       GROUP BY category
     `);
-    const advertisers = advertiserRows.rows || advertiserRows;
+    const advertisers = asRows(advertiserRows);
 
     // Calculate real match scoring
     const totalHomeowners = zips.reduce((s: number, z: any) => s + parseInt(z.homeownerCount || "0"), 0);
@@ -111,7 +112,7 @@ export async function runPerformanceAgent(): Promise<{
       WHERE status = 'active' AND impressions > 0
       ORDER BY clicks DESC
     `);
-    const advertisers = rows.rows || rows;
+    const advertisers = asRows(rows);
 
     const withCtr = advertisers.map((a: any) => ({
       ...a,
@@ -157,7 +158,7 @@ export async function generateAdvertiserReport(advertiserId: number): Promise<{
     const rows = await (db as any).execute(sql`
       SELECT * FROM featuredAdvertisers WHERE id = ${advertiserId} LIMIT 1
     `);
-    const advertiser = (rows.rows || rows)[0];
+    const advertiser = firstRow(rows);
     if (!advertiser) throw new Error("Advertiser not found");
 
     const ctr = advertiser.impressions > 0 ? ((advertiser.clicks / advertiser.impressions) * 100).toFixed(2) : "0";
@@ -225,7 +226,7 @@ export async function runAdvertiserRetentionAgent(): Promise<{
           OR (endDate IS NOT NULL AND endDate < DATE_ADD(NOW(), INTERVAL 30 DAY))
         )
     `);
-    const advertisers = rows.rows || rows;
+    const advertisers = asRows(rows);
 
     const atRisk = advertisers.map((a: any) => {
       const ctr = a.impressions > 0 ? (a.clicks / a.impressions) * 100 : 0;

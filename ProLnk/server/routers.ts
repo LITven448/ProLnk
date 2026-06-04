@@ -450,7 +450,7 @@ export const appRouter = router({
           WHERE o.id = ${input.id}
           LIMIT 1
         `);
-        const o = (rows.rows || rows)[0];
+        const o = firstRow(rows);
         if (!o) throw new TRPCError({ code: 'NOT_FOUND', message: 'Request not found' });
 
         // Derive a homeowner-friendly stage from internal status/assignment.
@@ -3234,7 +3234,7 @@ Answer concisely and helpfully. If asked about specific real-time account data (
           ORDER BY lastJobDate ASC
           LIMIT 100
         `);
-        return (rows.rows || rows) as any[];
+        return asRows(rows);
       }),
     // 1099 report: all paid commissions with partner infoo
     getAllPaidCommissions: adminProcedure.query(async () => {
@@ -3249,7 +3249,7 @@ Answer concisely and helpfully. If asked about specific real-time account data (
         WHERE c.paid = 1
         ORDER BY c.paidAt DESC
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
     markCommissionPaid: adminProcedure
@@ -4464,7 +4464,7 @@ Return JSON only.`,
                           p.responseRate DESC
                         LIMIT 1`
                   ) as any;
-                  const matched = (matchRows.rows || matchRows)[0];
+                  const matched = firstRow(matchRows);
                   if (matched?.id) matchedPartnerId = matched.id;
                 } catch (_e) { /* auto-match is best-effort */ }
               }
@@ -4571,7 +4571,7 @@ Return JSON only.`,
         });
         // Get position for confirmation
         const leadCountResult = await db.execute(sql`SELECT COUNT(*) as cnt FROM homeownerLeads`);
-        const leadPosition = Number((leadCountResult?.rows?.[0] as any)?.cnt ?? 1);
+        const leadPosition = Number((firstRow(leadCountResult) as any)?.cnt ?? 1);
         return { success: true, position: leadPosition };
       }),
 
@@ -5434,11 +5434,11 @@ Return a JSON object with:
         const statusFilter = input.status && input.status !== 'all' ? input.status : null;
         let rows: any[];
         if (statusFilter) {
-          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
-          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+          const r = await db.execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = asRows(r);
         } else {
-          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
-          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+          const r = await db.execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = asRows(r);
         }
         return rows;
       }),
@@ -5451,11 +5451,11 @@ Return a JSON object with:
         const statusFilter = input.status && input.status !== 'all' ? input.status : null;
         let rows: any[];
         if (statusFilter) {
-          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
-          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+          const r = await db.execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = asRows(r);
         } else {
-          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
-          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+          const r = await db.execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = asRows(r);
         }
         return rows;
       }),

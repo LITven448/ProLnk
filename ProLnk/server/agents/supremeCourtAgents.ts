@@ -13,6 +13,7 @@
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
+import { asRows, firstRow } from "../_core/dbRows";
 import { dashboard, escalate } from "../notify";
 
 // ─── Privacy Agent ────────────────────────────────────────────────────────────
@@ -36,14 +37,14 @@ export async function runPrivacyAgent(): Promise<{
         WHERE dataDeleteRequestedAt IS NOT NULL
           AND dataDeleteRequestedAt < DATE_SUB(NOW(), INTERVAL 45 DAY)
       `);
-      overdueRequests = parseInt((deleteRows.rows || deleteRows)[0]?.cnt ?? "0");
+      overdueRequests = parseInt(firstRow(deleteRows)?.cnt ?? "0");
 
       const exportRows = await (db as any).execute(sql`
         SELECT COUNT(*) as cnt FROM partners
         WHERE dataExportRequestedAt IS NOT NULL
           AND dataExportRequestedAt < DATE_SUB(NOW(), INTERVAL 30 DAY)
       `);
-      pendingDataRequests = parseInt((exportRows.rows || exportRows)[0]?.cnt ?? "0");
+      pendingDataRequests = parseInt(firstRow(exportRows)?.cnt ?? "0");
 
       // Check SMS consent compliance
       const smsRows = await (db as any).execute(sql`
@@ -98,13 +99,13 @@ export async function runBrandSafetyAgent(): Promise<{
         WHERE status = 'approved'
           AND (strikeCount >= 2 OR (rating < 3.0 AND reviewCount >= 3))
       `);
-      qualityIssues = parseInt((riskRows.rows || riskRows)[0]?.cnt ?? "0");
+      qualityIssues = parseInt(firstRow(riskRows)?.cnt ?? "0");
 
       // Advertiser review
       const advertiserRows = await (db as any).execute(sql`
         SELECT COUNT(*) as cnt FROM featuredAdvertisers WHERE status = 'active'
       `);
-      const activeAdvertisers = parseInt((advertiserRows.rows || advertiserRows)[0]?.cnt ?? "0");
+      const activeAdvertisers = parseInt(firstRow(advertiserRows)?.cnt ?? "0");
 
       if (activeAdvertisers === 0) {
         risks.push("ProLnk Media has no active advertisers yet — no brand risk but no revenue either");
@@ -154,7 +155,7 @@ export async function runEthicsReviewer(): Promise<{
         ORDER BY leadsReceived DESC
         LIMIT 20
       `);
-      const topPartners = routingRows.rows || routingRows;
+      const topPartners = asRows(routingRows);
 
       // Check if top 10% of partners are getting 90% of leads (Pareto concentration)
       if (topPartners.length > 5) {

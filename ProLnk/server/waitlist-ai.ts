@@ -14,6 +14,7 @@
 
 import { getDb } from "./db";
 import { sql } from "drizzle-orm";
+import { asRows, firstRow, insertIdOf } from "./_core/dbRows";
 import { invokeLLM } from "./_core/llm";
 import { notifyOwner } from "./_core/notification";
 
@@ -109,8 +110,8 @@ export async function sendWaitlistProgressEmails(targetList: "pro" | "homeowner"
   // Get platform stats
   const [proCountResult] = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist`);
   const [homeCountResult] = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeWaitlist`);
-  const proCount = parseInt((proCountResult.rows || proCountResult)[0]?.cnt ?? "0");
-  const homeCount = parseInt((homeCountResult.rows || homeCountResult)[0]?.cnt ?? "0");
+  const proCount = parseInt(firstRow(proCountResult)?.cnt ?? "0");
+  const homeCount = parseInt(firstRow(homeCountResult)?.cnt ?? "0");
 
   // Generate email
   const email = await generateWaitlistProgressEmail({
@@ -143,14 +144,14 @@ export async function sendWaitlistProgressEmails(targetList: "pro" | "homeowner"
       NOW()
     )
   `);
-  const campaignId = (campaignResult.rows || campaignResult).insertId ?? campaignResult.insertId;
+  const campaignId = insertIdOf(campaignResult);
 
   // Get recipients
   const table = targetList === "pro" ? "proWaitlist" : "homeWaitlist";
   const recipientRows = await (db as any).execute(
     sql.raw(`SELECT email, firstName FROM ${table} WHERE status = 'waitlisted' OR status IS NULL LIMIT 5000`)
   );
-  const recipients = (recipientRows.rows || recipientRows) as Array<{ email: string; firstName: string }>;
+  const recipients = asRows(recipientRows) as Array<{ email: string; firstName: string }>;
 
   let sent = 0;
   let failed = 0;

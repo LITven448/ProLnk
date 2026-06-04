@@ -15,6 +15,7 @@ import { router, protectedProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { geocodeAddress, distanceMiles } from "../geocoding";
 import { queryPropertyHistory, queryPartnerBehavior } from "../graphiti";
+import { asRows } from "../_core/dbRows";
 
 export interface SmartRouteCandidate {
   partnerId: number;
@@ -53,7 +54,7 @@ export async function smartRouteOpportunity(opts: {
     ORDER BY priorityScore DESC
     LIMIT 20
   `);
-  const candidates = candidateRows.rows || candidateRows;
+  const candidates = asRows(candidateRows);
 
   const scored: SmartRouteCandidate[] = [];
 

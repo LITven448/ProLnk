@@ -3,6 +3,7 @@ import * as crypto from "crypto";
 import { getDb } from "../db";
 import { partners, commissionPayout } from "../../drizzle/schema";
 import { eq, sql } from "drizzle-orm";
+import { firstRow } from "../_core/dbRows";
 import { Decimal } from "decimal.js";
 
 const N8N_WEBHOOK_SECRET = process.env.N8N_WEBHOOK_SECRET || "";
@@ -57,7 +58,7 @@ export function registerN8nWebhooks(app: Express) {
         LIMIT 1
       `);
 
-      if (existingPayment?.rows?.[0]) {
+      if (firstRow(existingPayment)) {
         console.log(`[n8n] Job payment already exists for homeowner=${homeownerId}, pro=${proId}`);
         return res.json({ success: true, message: "Lead already matched" });
       }
@@ -159,7 +160,7 @@ export function registerN8nWebhooks(app: Express) {
         const partnerRows = await (dbConn as any).execute(sql`
           SELECT monthlyCommissionEarned FROM partners WHERE id = ${parseInt(referrerId)} LIMIT 1
         `);
-        const partner = (partnerRows.rows || partnerRows)[0];
+        const partner = firstRow(partnerRows);
 
         if (partner) {
           const newEarnings = new Decimal(partner.monthlyCommissionEarned?.toString() || "0").add(bonusAmount);

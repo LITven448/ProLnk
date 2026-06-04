@@ -12,6 +12,7 @@ export const nightlyPayoutSweep = inngest.createFunction(
     logger.info("Starting nightly payout sweep");
     const result = await step.run("run-payout-sweep", async () => {
       const { getDb } = await import("./db");
+      const { asRows } = await import("./_core/dbRows");
       const Stripe = (await import("stripe")).default;
       const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", { apiVersion: "2025-02-24.acacia" as any });
 
@@ -34,7 +35,7 @@ export const nightlyPayoutSweep = inngest.createFunction(
           AND jp.stripeTransferId IS NULL
         LIMIT 50
       `);
-      const payments = rows.rows || rows;
+      const payments = asRows(rows);
 
       let swept = 0;
       let errors = 0;

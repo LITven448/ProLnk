@@ -9,6 +9,7 @@ import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { runStormScan, fetchStormAlerts, checkTomorrowIoAlerts, fetchTomorrowIoForecast } from "../storm-agent";
 import { withAgentRun } from "../agents/agentLogger";
+import { asRows, firstRow } from "../_core/dbRows";
 
 export const stormAgentRouter = router({
   // --- Get recent storm events (admin) ---
@@ -19,7 +20,7 @@ export const stormAgentRouter = router({
     const rows = await db.execute(
       sql`SELECT * FROM stormEvents ORDER BY createdAt DESC LIMIT 50`
     );
-    return (rows.rows || rows) as any[];
+    return asRows(rows);
   }),
 
   // --- Get storm leads for a specific event ---
@@ -36,7 +37,7 @@ export const stormAgentRouter = router({
             WHERE sl.stormEventId = ${input.stormEventId}
             ORDER BY sl.priority DESC, sl.createdAt ASC LIMIT 200`
       );
-      return (rows.rows || rows) as any[];
+      return asRows(rows);
     }),
 
   // --- Manual storm scan trigger (admin) ---
@@ -73,7 +74,7 @@ export const stormAgentRouter = router({
         MAX(createdAt) as lastScanAt
       FROM stormEvents`
     ) as any[];
-    const row = (totals?.rows || totals)?.[0] ?? totals;
+    const row = firstRow(totals) ?? {};
     return {
       totalEvents: Number(row?.totalEvents ?? 0),
       totalLeads: Number(row?.totalLeads ?? 0),

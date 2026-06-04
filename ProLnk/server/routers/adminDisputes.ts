@@ -7,6 +7,7 @@ import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { asRows } from "../_core/dbRows";
 
 export const adminDisputesRouter = router({
 
@@ -36,7 +37,7 @@ export const adminDisputesRouter = router({
         ORDER BY c.disputeOpenedAt DESC
         LIMIT ${input.limit}
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   resolveCommissionDispute: protectedProcedure

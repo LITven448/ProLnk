@@ -14,6 +14,7 @@ import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { dashboard, aiHandled } from "../notify";
+import { asRows, firstRow } from "../_core/dbRows";
 import { searchUserMemory, addAgentMemory } from "../memory";
 import { sendEmail } from "../email";
 
@@ -39,7 +40,7 @@ export async function runPartnerLifecycleManager(): Promise<{
         AND p.approvedAt > DATE_SUB(NOW(), INTERVAL 7 DAY)
         AND p.jobsLogged = 0
     `);
-    const newPartners = newPartnerRows.rows || newPartnerRows;
+    const newPartners = asRows(newPartnerRows);
     newOnboarded = newPartners.length;
 
     // At-risk partners (approved > 30 days, never logged a job)
@@ -52,7 +53,7 @@ export async function runPartnerLifecycleManager(): Promise<{
         AND p.lastActiveAt < DATE_SUB(NOW(), INTERVAL 30 DAY)
       LIMIT 20
     `);
-    const atRiskPartners = atRiskRows.rows || atRiskRows;
+    const atRiskPartners = asRows(atRiskRows);
     atRisk = atRiskPartners.length;
 
     // Win-back: partners who were active, then went silent for 30+ days
@@ -66,7 +67,7 @@ export async function runPartnerLifecycleManager(): Promise<{
         AND p.lastActiveAt > DATE_SUB(NOW(), INTERVAL 60 DAY)
       LIMIT 10
     `);
-    const winBackPartners = winBackRows.rows || winBackRows;
+    const winBackPartners = asRows(winBackRows);
 
     for (const partner of winBackPartners.slice(0, 5)) {
       const earnings = parseFloat(partner.totalCommissionEarned || "0");
@@ -122,7 +123,7 @@ export async function runPartnerLifecycleManager(): Promise<{
         AND p.updatedAt > DATE_SUB(NOW(), INTERVAL 24 HOUR)
       LIMIT 10
     `);
-    const milestonePartners = milestoneRows.rows || milestoneRows;
+    const milestonePartners = asRows(milestoneRows);
     milestonesSent = milestonePartners.length;
 
     if (atRisk > 0) {
@@ -165,7 +166,7 @@ export async function runHomeownerAcquisitionManager(): Promise<{
         AND u.email IS NOT NULL
       LIMIT 20
     `);
-    const incomplete = incompleteRows.rows || incompleteRows;
+    const incomplete = asRows(incompleteRows);
     const outreachSent = incomplete.length;
 
     // Check conversion rate from postcard → signup
@@ -176,7 +177,7 @@ export async function runHomeownerAcquisitionManager(): Promise<{
       FROM postcardQueue
       WHERE sentAt > DATE_SUB(NOW(), INTERVAL 30 DAY)
     `);
-    const pcData = (postcardConversionRows.rows || postcardConversionRows)[0];
+    const pcData = firstRow(postcardConversionRows);
     const conversionRate = pcData?.total > 0
       ? `${Math.round((pcData.converted / pcData.total) * 100)}%`
       : "No data yet";
@@ -187,7 +188,7 @@ export async function runHomeownerAcquisitionManager(): Promise<{
       WHERE zipCode IS NOT NULL
       GROUP BY zipCode ORDER BY cnt DESC LIMIT 5
     `);
-    const topZips = (zipRows.rows || zipRows).map((r: any) => r.zipCode).filter(Boolean);
+    const topZips = asRows(zipRows).map((r: any) => r.zipCode).filter(Boolean);
 
     return { outreachSent, conversionRate, topConvertingZips: topZips };
   } catch {

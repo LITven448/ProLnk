@@ -12,6 +12,7 @@
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { dashboard } from "../notify";
+import { firstRow } from "../_core/dbRows";
 
 export async function runDataIntegrityCheck(): Promise<{
   issues: string[];
@@ -33,7 +34,7 @@ export async function runDataIntegrityCheck(): Promise<{
         AND leadExpiresAt < NOW()
         AND updatedAt < DATE_SUB(NOW(), INTERVAL 48 HOUR)
     `);
-    const stuckCount = parseInt((stuckRows.rows || stuckRows)[0]?.cnt ?? "0");
+    const stuckCount = parseInt(firstRow(stuckRows)?.cnt ?? "0");
     if (stuckCount > 0) {
       // Auto-fix: expire them
       await (db as any).execute(sql`
@@ -52,7 +53,7 @@ export async function runDataIntegrityCheck(): Promise<{
       WHERE status = 'approved'
         AND (serviceZipCodes IS NULL OR serviceZipCodes = '[]' OR serviceZipCodes = '')
     `);
-    const noZipCount = parseInt((noZipRows.rows || noZipRows)[0]?.cnt ?? "0");
+    const noZipCount = parseInt(firstRow(noZipRows)?.cnt ?? "0");
     if (noZipCount > 0) {
       issues.push(`${noZipCount} approved partners have no service ZIP codes — they cannot receive leads`);
       flagged += noZipCount;
@@ -64,7 +65,7 @@ export async function runDataIntegrityCheck(): Promise<{
       WHERE status = 'pending'
         AND createdAt < DATE_SUB(NOW(), INTERVAL 7 DAY)
     `);
-    const oldStormCount = parseInt((oldStormRows.rows || oldStormRows)[0]?.cnt ?? "0");
+    const oldStormCount = parseInt(firstRow(oldStormRows)?.cnt ?? "0");
     if (oldStormCount > 0) {
       await (db as any).execute(sql`
         UPDATE stormLeads SET status = 'expired', updatedAt = NOW()
@@ -81,7 +82,7 @@ export async function runDataIntegrityCheck(): Promise<{
       WHERE aiAnalysisStatus = 'processing'
         AND updatedAt < DATE_SUB(NOW(), INTERVAL 30 MINUTE)
     `);
-    const stuckJobCount = parseInt((stuckJobRows.rows || stuckJobRows)[0]?.cnt ?? "0");
+    const stuckJobCount = parseInt(firstRow(stuckJobRows)?.cnt ?? "0");
     if (stuckJobCount > 0) {
       await (db as any).execute(sql`
         UPDATE jobs SET aiAnalysisStatus = 'failed', updatedAt = NOW()
@@ -98,7 +99,7 @@ export async function runDataIntegrityCheck(): Promise<{
       WHERE commissionType = 'referral_commission'
         AND receivingPartnerId IS NULL
     `);
-    const orphanCommCount = parseInt((orphanCommRows.rows || orphanCommRows)[0]?.cnt ?? "0");
+    const orphanCommCount = parseInt(firstRow(orphanCommRows)?.cnt ?? "0");
     if (orphanCommCount > 0) {
       issues.push(`${orphanCommCount} referral_commission records have no receiving partner — these won't pay out`);
       flagged += orphanCommCount;

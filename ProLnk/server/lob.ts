@@ -174,11 +174,12 @@ export async function processPostcardQueue(limit = 50): Promise<{
   if (!db) return { processed: 0, sent: 0, failed: 0, skipped: 0 };
 
   const { sql } = await import("drizzle-orm");
+  const { asRows } = await import("./_core/dbRows");
 
   const queueRows = await (db as any).execute(sql`
     SELECT * FROM postcardQueue WHERE status = 'queued' ORDER BY createdAt ASC LIMIT ${limit}
   `);
-  const queue = queueRows.rows || queueRows;
+  const queue = asRows(queueRows);
 
   let sent = 0, failed = 0, skipped = 0;
 
@@ -250,6 +251,7 @@ export async function queuePostcardFromFSMJob(jobData: {
 }): Promise<boolean> {
   const { getDb } = await import("./db");
   const { sql } = await import("drizzle-orm");
+  const { firstRow } = await import("./_core/dbRows");
   const db = await getDb();
   if (!db) return false;
 
@@ -260,7 +262,7 @@ export async function queuePostcardFromFSMJob(jobData: {
     SELECT 1 FROM homeWaitlist WHERE LOWER(address) LIKE LOWER(${`%${jobData.address.slice(0, 20)}%`})
     LIMIT 1
   `);
-  if ((existingRows.rows || existingRows)[0]) return false; // Already in system
+  if (firstRow(existingRows)) return false; // Already in system
 
   // Check if postcard already queued for this address
   const dupRows = await (db as any).execute(sql`
@@ -271,7 +273,7 @@ export async function queuePostcardFromFSMJob(jobData: {
       AND createdAt > DATE_SUB(NOW(), INTERVAL 90 DAY)
     LIMIT 1
   `);
-  if ((dupRows.rows || dupRows)[0]) return false; // Already queued recently
+  if (firstRow(dupRows)) return false; // Already queued recently
 
   await (db as any).execute(sql`
     INSERT INTO postcardQueue (

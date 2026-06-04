@@ -12,6 +12,7 @@ import PDFDocument from "pdfkit";
 import QRCode from "qrcode";
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
+import { asRows, firstRow } from "./dbRows";
 
 const BRAND_DARK = "#0A1628";
 const BRAND_GOLD = "#D4AF37";
@@ -41,7 +42,7 @@ export async function generateHomePassportPdf(
         LEFT JOIN homeownerProfiles hp ON hp.id = p.ownerId
         WHERE p.id = ${propertyId} LIMIT 1`
   );
-  const prop = (propRows.rows || propRows)[0];
+  const prop = firstRow(propRows);
   if (!prop) throw new Error(`Property #${propertyId} not found`);
 
   // ── Fetch service history ────────────────────────────────────────────────────
@@ -52,13 +53,13 @@ export async function generateHomePassportPdf(
         WHERE j.serviceAddress LIKE ${`%${prop.address ?? ""}%`}
         ORDER BY j.createdAt DESC LIMIT 50`
   );
-  const jobs = (jobRows.rows || jobRows) as any[];
+  const jobs = asRows(jobRows);
 
   // ── Fetch improvements ───────────────────────────────────────────────────────
   const improvRows = await (db as any).execute(
     sql`SELECT * FROM propertyImprovements WHERE propertyId = ${propertyId} ORDER BY completedYear DESC`
   );
-  const improvements = (improvRows.rows || improvRows) as any[];
+  const improvements = asRows(improvRows);
 
   // ── Generate QR code ─────────────────────────────────────────────────────────
   let qrDataUrl: string | null = null;

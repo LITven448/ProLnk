@@ -41,6 +41,7 @@ import { sql } from "drizzle-orm";
 import type Stripe from "stripe";
 import { router, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { asRows } from "../_core/dbRows";
 
 // ── Gate ─────────────────────────────────────────────────────────────────────
 
@@ -71,7 +72,7 @@ async function getStripe(): Promise<Stripe | null> {
 
 async function execRows(db: any, query: ReturnType<typeof sql>): Promise<any[]> {
   const res = await db.execute(query);
-  return res.rows || res || [];
+  return asRows(res);
 }
 
 // ── Connected-account onboarding ──────────────────────────────────────────────

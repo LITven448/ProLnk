@@ -12,6 +12,7 @@
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { escalate, dashboard } from "../notify";
+import { asRows } from "../_core/dbRows";
 
 export interface AuditResult {
   largeCommissions: number;
@@ -42,7 +43,7 @@ export async function runCommissionAudit(): Promise<AuditResult> {
       WHERE c.amount > 10000 AND c.paid = 0
       ORDER BY c.amount DESC
     `);
-    const large = largeRows.rows || largeRows;
+    const large = asRows(largeRows);
     result.largeCommissions = large.length;
     if (large.length > 0) {
       await escalate(
@@ -59,7 +60,7 @@ export async function runCommissionAudit(): Promise<AuditResult> {
       GROUP BY opportunityId, commissionType
       HAVING cnt > 1
     `);
-    const dupes = dupeRows.rows || dupeRows;
+    const dupes = asRows(dupeRows);
     result.potentialDuplicates = dupes.length;
     if (dupes.length > 0) {
       await dashboard(
@@ -78,7 +79,7 @@ export async function runCommissionAudit(): Promise<AuditResult> {
       GROUP BY p.id
       HAVING pendingAmount >= 25
     `);
-    const noConnect = noConnectRows.rows || noConnectRows;
+    const noConnect = asRows(noConnectRows);
     result.partnersMissingConnect = noConnect.length;
     if (noConnect.length > 0) {
       await dashboard(

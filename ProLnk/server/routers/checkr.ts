@@ -20,6 +20,7 @@ import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { notifyOwner } from "../_core/notification";
+import { asRows, firstRow } from "../_core/dbRows";
 
 const CHECKR_API_KEY = process.env.CHECKR_API_KEY ?? "";
 const CHECKR_BASE = "https://api.checkr.com/v1";
@@ -125,7 +126,7 @@ export async function handleCheckrWebhook(payload: any): Promise<void> {
       const partnerRows = await (db as any).execute(sql`
         SELECT businessName, contactEmail FROM partners WHERE checkrCandidateId = ${candidateId} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (partner) {
         await notifyOwner({
           title: `⚠️ Background Check: ${status.toUpperCase()} — ${partner.businessName}`,
@@ -149,7 +150,7 @@ export const checkrRouter = router({
     const rows = await (db as any).execute(sql`
       SELECT checkrCandidateId, backgroundCheckVerifiedAt FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
-    const partner = (rows.rows || rows)[0];
+    const partner = firstRow(rows);
     if (!partner) return null;
 
     // Get Pro Pass background check status
@@ -158,7 +159,7 @@ export const checkrRouter = router({
         SELECT backgroundCheckStatus, backgroundCheckDate, backgroundCheckExpiresAt
         FROM proPassCards WHERE checkrCandidateId = ${partner.checkrCandidateId} LIMIT 1
       `);
-      return (passRows.rows || passRows)[0] ?? null;
+      return firstRow(passRows) ?? null;
     }
     return { backgroundCheckStatus: "not_submitted" };
   }),
@@ -177,7 +178,7 @@ export const checkrRouter = router({
       const partnerRows = await (db as any).execute(sql`
         SELECT contactEmail, contactName, businessName FROM partners WHERE id = ${input.partnerId} LIMIT 1
       `);
-      const partner = (partnerRows.rows || partnerRows)[0];
+      const partner = firstRow(partnerRows);
       if (!partner) throw new TRPCError({ code: "NOT_FOUND" });
 
       const nameParts = (partner.contactName || partner.businessName || "").split(" ");
@@ -210,6 +211,6 @@ export const checkrRouter = router({
         AND (p.checkrCandidateId IS NULL OR pp.backgroundCheckStatus NOT IN ('clear'))
       ORDER BY p.approvedAt DESC LIMIT 100
     `);
-    return rows.rows || rows;
+    return asRows(rows);
   }),
 });

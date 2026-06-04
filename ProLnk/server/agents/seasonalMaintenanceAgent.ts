@@ -12,6 +12,7 @@ import { getDb } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { queryPropertyHistory } from "../graphiti";
+import { asRows } from "../_core/dbRows";
 
 const DFW_SEASONAL_CONTEXT: Record<string, string> = {
   spring: "In DFW, spring brings hail season (April-June), severe thunderstorms, and extreme pollen. HVAC tune-up season as heat approaches. Check roof and gutters after winter.",
@@ -128,7 +129,7 @@ export async function runSeasonalMaintenanceForAllHomeowners(): Promise<{
         AND u.email IS NOT NULL
       LIMIT 100
     `);
-    const homeowners = homeownerRows.rows || homeownerRows;
+    const homeowners = asRows(homeownerRows);
 
     for (const ho of homeowners) {
       try {

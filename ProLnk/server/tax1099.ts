@@ -163,6 +163,7 @@ export async function runAnnual1099Filing(taxYear: number): Promise<{
 }> {
   const { getDb } = await import("./db");
   const { sql } = await import("drizzle-orm");
+  const { asRows } = await import("./_core/dbRows");
   const db = await getDb();
   if (!db) return { filed: 0, skipped: 0, errors: ["Database unavailable"] };
 
@@ -182,7 +183,7 @@ export async function runAnnual1099Filing(taxYear: number): Promise<{
     HAVING totalEarned >= 600
     ORDER BY totalEarned DESC
   `);
-  const partners = rows.rows || rows;
+  const partners = asRows(rows);
 
   for (const partner of partners) {
     if (!partner.w9CompletedAt) {

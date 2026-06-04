@@ -8,6 +8,7 @@ import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { asRows, firstRow } from "../_core/dbRows";
 
 export const adminNotificationsRouter = router({
   // Get notifications for admin dashboard
@@ -31,7 +32,7 @@ export const adminNotificationsRouter = router({
         ORDER BY createdAt DESC
         LIMIT ${input.limit}
       `);
-      return rows.rows || rows;
+      return asRows(rows);
     }),
 
   // Mark notifications read
@@ -82,9 +83,9 @@ export const adminNotificationsRouter = router({
       `),
     ]);
 
-    const stats = (statsRows.rows || statsRows)[0] ?? {};
-    const pending = (pendingRows.rows || pendingRows)[0] ?? {};
-    const payouts = (recentPayouts.rows || recentPayouts)[0] ?? {};
+    const stats = firstRow(statsRows) ?? {};
+    const pending = firstRow(pendingRows) ?? {};
+    const payouts = firstRow(recentPayouts) ?? {};
 
     return {
       ...stats,

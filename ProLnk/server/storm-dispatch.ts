@@ -10,6 +10,7 @@
 
 import { getDb } from "./db";
 import { sql } from "drizzle-orm";
+import { asRows, insertIdOf } from "./_core/dbRows";
 import { dispatchLeadToPartner } from "./intake-router";
 import { createPartnerNotification } from "./db";
 import { aiHandled } from "./notify";
@@ -70,7 +71,7 @@ export async function dispatchPendingStormLeads(options?: {
       ORDER BY se.severity DESC, sl.priority DESC, sl.id ASC
       LIMIT ${limit}
     `);
-    const leads = leadsRows.rows || leadsRows;
+    const leads = asRows(leadsRows);
 
     for (const lead of leads) {
       try {
@@ -91,7 +92,7 @@ export async function dispatchPendingStormLeads(options?: {
             LIMIT 5
           `)
         );
-        const partners = partnerRows.rows || partnerRows;
+        const partners = asRows(partnerRows);
 
         if (!partners.length) {
           // No matching partner — mark as skipped
@@ -115,7 +116,7 @@ export async function dispatchPendingStormLeads(options?: {
             'complete', 'opportunities_sent'
           )
         `);
-        const jobId = (jobResult.rows || jobResult).insertId ?? jobResult.insertId;
+        const jobId = insertIdOf(jobResult);
 
         // Create opportunity
         const estimatedValue = estimateStormJobValue(lead.tradeCategory, lead.severity);
@@ -133,7 +134,7 @@ export async function dispatchPendingStormLeads(options?: {
             ${JSON.stringify(partners.map((p: any) => p.id))}
           )
         `);
-        const oppId = (oppResult.rows || oppResult).insertId ?? oppResult.insertId;
+        const oppId = insertIdOf(oppResult);
 
         // Dispatch to top partner
         await dispatchLeadToPartner(oppId, partners[0].id, 0);

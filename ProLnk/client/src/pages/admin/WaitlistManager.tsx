@@ -95,7 +95,6 @@ export default function WaitlistManager() {
   const [massEmailSubject, setMassEmailSubject] = useState("");
   const [massEmailBody, setMassEmailBody] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState("");
-  const [sendingMassEmail, setSendingMassEmail] = useState(false);
   const [selectedPros, setSelectedPros] = useState<Set<number>>(new Set());
   const [showFilters, setShowFilters] = useState(false);
   const [exportingPros, setExportingPros] = useState(false);
@@ -232,23 +231,8 @@ export default function WaitlistManager() {
     setSelectedPros(new Set());
   }
 
-  async function handleSendMassEmail() {
-    if (!massEmailSubject.trim() || !massEmailBody.trim()) { toast.error("Subject and message are required"); return; }
-    const targetEmails = (pros.data || []).filter((p: any) => p.status === "pending").map((p: any) => p.email).filter(Boolean);
-    if (targetEmails.length === 0) { toast.error("No pending applicants to email"); return; }
-    if (!window.confirm(`Send email to ${targetEmails.length} pending applicants?`)) return;
-    setSendingMassEmail(true);
-    try {
-      await new Promise(r => setTimeout(r, 800));
-      toast.success(`Launch email queued for ${targetEmails.length} applicants`);
-      setMassEmailOpen(false);
-      setMassEmailSubject("");
-      setMassEmailBody("");
-    } catch {
-      toast.error("Failed to send email batch");
-    } finally {
-      setSendingMassEmail(false);
-    }
+  function handleSendMassEmail() {
+    toast.error("Bulk email isn't wired up yet — no backend send exists, so nothing was sent. Coming soon.");
   }
 
   function buildCsv(rows: any[], headers: string[]): string {
@@ -382,9 +366,10 @@ export default function WaitlistManager() {
             <div className="flex items-center gap-2 flex-wrap">
               <button
                 onClick={() => setMassEmailOpen(true)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold bg-teal-500/20 hover:bg-teal-500/30 border border-teal-500/40 text-teal-700 transition-colors"
+                title="Coming soon — bulk email not yet wired to a backend send"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold bg-gray-200 hover:bg-gray-300 border border-gray-300 text-gray-500 transition-colors"
               >
-                <Send className="w-3.5 h-3.5" /> Send Launch Email
+                <Send className="w-3.5 h-3.5" /> Launch Email (soon)
               </button>
               <a
                 href="/admin/charter-tracking"
@@ -894,6 +879,9 @@ export default function WaitlistManager() {
               <button onClick={() => setMassEmailOpen(false)} className="text-gray-500 hover:text-gray-900 text-xl font-bold leading-none">&times;</button>
             </div>
             <div className="px-6 py-4 space-y-4">
+              <div className="rounded-lg bg-amber-50 border border-amber-300 px-3 py-2 text-xs text-amber-800">
+                Bulk email isn't wired to a backend send yet — composing here will <span className="font-semibold">not</span> send anything. Coming soon.
+              </div>
               <div>
                 <label className="text-xs font-semibold text-gray-500 mb-1 block">Email Template</label>
                 <select
@@ -934,13 +922,12 @@ export default function WaitlistManager() {
               <button onClick={() => setMassEmailOpen(false)} className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-500 hover:bg-gray-100">Cancel</button>
               <button
                 onClick={handleSendMassEmail}
-                disabled={sendingMassEmail || !massEmailSubject.trim() || !massEmailBody.trim()}
-                className="px-4 py-2 text-sm rounded-lg bg-teal-600 text-gray-900 font-semibold hover:bg-teal-700 disabled:opacity-50 flex items-center gap-2"
+                disabled
+                title="Coming soon — bulk email not yet wired to a backend send"
+                className="px-4 py-2 text-sm rounded-lg bg-gray-300 text-gray-500 font-semibold disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
               >
-                {sendingMassEmail
-                  ? <span className="w-3.5 h-3.5 inline-block animate-spin border border-white border-t-transparent rounded-full" />
-                  : <Send className="w-3.5 h-3.5" />}
-                {sendingMassEmail ? "Sending..." : "Send Email"}
+                <Send className="w-3.5 h-3.5" />
+                Send Email (coming soon)
               </button>
             </div>
           </div>

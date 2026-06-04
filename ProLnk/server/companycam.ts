@@ -23,6 +23,7 @@
 
 import { getDb } from "./db";
 import { sql } from "drizzle-orm";
+import { firstRow } from "./_core/dbRows";
 import { enqueuePhoto } from "./intake-router";
 
 const COMPANYCAM_BASE = "https://api.companycam.com/v2";
@@ -163,7 +164,7 @@ export async function handleCompanyCamWebhook(payload: any): Promise<void> {
     WHERE source = 'companycam' AND externalAccountId = ${companyId} AND status = 'active'
     LIMIT 1
   `);
-  const integration = (integrationRows.rows || integrationRows)[0];
+  const integration = firstRow(integrationRows);
   if (!integration) {
     console.log(`[CompanyCam] No integration found for company ${companyId}`);
     return;

@@ -36,6 +36,7 @@ import sharp from "sharp";
 import { getDb } from "./db";
 import { photoAccessLog, partnerPhotoConsent } from "../drizzle/schema";
 import { sql } from "drizzle-orm";
+import { firstRow } from "./_core/dbRows";
 
 // ── 1. EXIF Metadata Stripping ────────────────────────────────────────────────
 
@@ -143,7 +144,7 @@ export async function validateHomeownerPhotoAccess(
             AND j.homeownerEmail = ${homeownerEmail}
           LIMIT 1`
     );
-    const row = (rows.rows || rows)[0];
+    const row = firstRow(rows);
     return !!row;
   } catch {
     return false;
@@ -170,7 +171,7 @@ export async function getPartnerConsent(partnerId: number) {
     const rows = await (db as any).execute(
       sql`SELECT * FROM partnerPhotoConsent WHERE partnerId = ${partnerId} AND revokedAt IS NULL LIMIT 1`
     );
-    const row = (rows.rows || rows)[0];
+    const row = firstRow(rows);
     return row ?? null;
   } catch {
     return null;

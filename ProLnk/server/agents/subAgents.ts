@@ -41,7 +41,7 @@ export async function enforceOriginationLock(opts: {
       WHERE LOWER(address) LIKE LOWER(${`%${opts.propertyAddress.slice(0, 20)}%`})
       LIMIT 1
     `);
-    const existingProfile = (profileRows.rows || profileRows)[0];
+    const existingProfile = firstRow(profileRows);
 
     if (!existingProfile) {
       // First visit to this address — create property profile with originator
@@ -75,7 +75,7 @@ export async function enforceOriginationLock(opts: {
       ORDER BY cnt DESC
       LIMIT 1
     `);
-    const original = (originRows.rows || originRows)[0];
+    const original = firstRow(originRows);
 
     const lockedPartnerId = original?.sourcePartnerId ?? opts.sourcePartnerId;
 
@@ -112,13 +112,13 @@ export async function runProfileCompletionAgent(): Promise<{
           OR (SELECT COUNT(*) FROM partnerIntegrations WHERE partnerId = partners.id) = 0
         )
     `);
-    const incompletePartners = parseInt((incompletePartnerRows.rows || incompletePartnerRows)[0]?.cnt ?? "0");
+    const incompletePartners = parseInt(firstRow(incompletePartnerRows)?.cnt ?? "0");
 
     // Homeowners without completed setup
     const incompleteHoRows = await db.execute(sql`
       SELECT COUNT(*) as cnt FROM homeownerProfiles WHERE setupComplete = 0
     `);
-    const incompleteHomeowners = parseInt((incompleteHoRows.rows || incompleteHoRows)[0]?.cnt ?? "0");
+    const incompleteHomeowners = parseInt(firstRow(incompleteHoRows)?.cnt ?? "0");
 
     if (incompletePartners > 10) {
       await dashboard(
@@ -158,7 +158,7 @@ export async function runReferralAgent(): Promise<{
       ORDER BY p.partnersReferred DESC
       LIMIT 10
     `);
-    const referrers = referralRows.rows || referralRows;
+    const referrers = asRows(referralRows);
 
     // Network tier bonus rates
     const BONUS_RATES: Record<string, number> = {
@@ -259,7 +259,7 @@ export async function runWarrantyTrackerAgent(): Promise<{
       LIMIT 100
     `).catch(() => ({ rows: [] }));
 
-    const logs = warrantyRows.rows || warrantyRows;
+    const logs = asRows(warrantyRows);
 
     // Typical warranty periods
     const warrantyPeriods: Record<string, number> = {

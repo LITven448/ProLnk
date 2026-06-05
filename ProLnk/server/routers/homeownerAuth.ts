@@ -76,10 +76,11 @@ export const homeownerAuthRouter = router({
         `);
       }
 
-      // Store the password hash in the same place the app already stores passwords.
+      // Store the password hash in userPasswords (id has no auto-increment → explicit).
+      const pwId = Number(firstRow(await db.execute(sql`SELECT COALESCE(MAX(id),0)+1 AS n FROM userPasswords`))?.n ?? 1);
       await db.execute(sql`
-        INSERT INTO userPasswords (openId, passwordHash)
-        VALUES (${openId}, ${passwordHash})
+        INSERT INTO userPasswords (id, openId, passwordHash)
+        VALUES (${pwId}, ${openId}, ${passwordHash})
         ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), updatedAt = NOW()
       `);
 

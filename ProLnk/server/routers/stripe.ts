@@ -30,30 +30,30 @@ const stripe = new Proxy({} as Stripe, {
 // These price IDs must be created in the Stripe dashboard.
 // We use lookup keys to avoid hardcoding price IDs.
 export const TIER_PRODUCTS = {
-  pro: {
-    name: "ProLnk Pro",
-    amount: 2900, // $29/month in cents
-    lookupKey: "prolnk_pro_monthly",
-    tier: "pro" as const,
+  core: {
+    name: "ProLnk Core",
+    amount: 9900, // $99/month in cents
+    lookupKey: "prolnk_core_monthly",
+    tier: "core" as const,
     keepRate: 0.40,
   },
-  crew: {
-    name: "ProLnk Crew",
-    amount: 7900, // $79/month
-    lookupKey: "prolnk_crew_monthly",
-    tier: "crew" as const,
+  pro: {
+    name: "ProLnk Pro",
+    amount: 14900, // $149/month
+    lookupKey: "prolnk_pro_monthly",
+    tier: "pro" as const,
     keepRate: 0.50,
   },
-  company: {
-    name: "ProLnk Company",
-    amount: 14900, // $149/month
-    lookupKey: "prolnk_company_monthly",
-    tier: "company" as const,
+  business: {
+    name: "ProLnk Business",
+    amount: 24900, // $249/month
+    lookupKey: "prolnk_business_monthly",
+    tier: "business" as const,
     keepRate: 0.60,
   },
   enterprise: {
     name: "ProLnk Enterprise",
-    amount: 29900, // $299/month
+    amount: 0, // custom / contact sales
     lookupKey: "prolnk_enterprise_monthly",
     tier: "enterprise" as const,
     keepRate: 0.60,
@@ -153,7 +153,9 @@ export const stripeRouter = router({
   // --- Wave 25: Create tier subscription checkout session -------------------
   createTierCheckout: protectedProcedure
     .input(z.object({
-      tier: z.enum(["pro", "crew", "company", "enterprise"]),
+      // Accept any tier string; legacy/gamified keys (scout/crew/company) resolve
+      // via the alias map below or fail gracefully rather than 400 at validation.
+      tier: z.string(),
       origin: z.string(),
     }))
     .mutation(async ({ ctx, input }) => {
@@ -167,7 +169,17 @@ export const stripeRouter = router({
       const partner = firstRow(rows);
       if (!partner) throw new Error("Partner profile not found");
 
-      const product = TIER_PRODUCTS[input.tier];
+      // Map legacy/gamified tier keys onto the canonical subscription products.
+      const TIER_ALIAS: Record<string, keyof typeof TIER_PRODUCTS> = {
+        crew: "business", company: "business", scout: "core",
+      };
+      const resolvedTier = (TIER_PRODUCTS as any)[input.tier]
+        ? (input.tier as keyof typeof TIER_PRODUCTS)
+        : TIER_ALIAS[input.tier];
+      const product = resolvedTier ? TIER_PRODUCTS[resolvedTier] : undefined;
+      if (!product || product.amount <= 0) {
+        throw new TRPCError({ code: "BAD_REQUEST", message: "That plan isn't available for self-serve checkout. Contact sales for Enterprise." });
+      }
 
       // Create or retrieve Stripe price via lookup key
       let priceId: string;
@@ -213,9 +225,9 @@ export const stripeRouter = router({
           partner_id: String(partner.id),
           partner_email: partner.contactEmail,
           partner_name: partner.contactName || partner.businessName,
-          target_tier: input.tier,
+          target_tier: resolvedTier,
         },
-        success_url: `${input.origin}/dashboard/upgrade?success=1&tier=${input.tier}`,
+        success_url: `${input.origin}/dashboard/upgrade?success=1&tier=${resolvedTier}`,
         cancel_url: `${input.origin}/dashboard/upgrade?cancelled=1`,
       });
 
@@ -527,7 +539,7 @@ export const stripeRouter = router({
     const trialEndsAt = partner.trialEndsAt ? new Date(partner.trialEndsAt) : null;
     const trialDaysLeft = trialEndsAt ? Math.max(0, Math.ceil((trialEndsAt.getTime() - Date.now()) / 86400000)) : null;
 
-    const TIER_AMOUNTS: Record<string, number> = { scout: 0, pro: 29, crew: 79, company: 149, enterprise: 299 };
+    const TIER_AMOUNTS: Record<string, number> = { scout: 0, core: 99, pro: 149, business: 249, enterprise: 0, crew: 79, company: 149 };
     const subscriptionAmount = TIER_AMOUNTS[partner.tier ?? "scout"] ?? 0;
 
     return {
@@ -660,6 +672,12 @@ export const stripeRouter = router({
         success_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout/success?tier=${input.partnerId ? "founding" : "charter"}`,
         cancel_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout/cancel`,
         metadata: { partnerId: String(input.partnerId || ""), type: "founding_network" },
+        subscription_data: {
+          metadata: {
+            type: "founding_network_subscription",
+            partnerId: String(input.partnerId ?? ""),
+          },
+        },
       });
       return { url: session.url, sessionId: session.id };
     }),
@@ -676,8 +694,8 @@ export const stripeRouter = router({
       }
       const stripeProduct = await stripe.products.create({
         name: product.name,
-        description: tierKey === "company"
-          ? "$149/mo locked forever. 60% commission keep, 4-level network income, 90-day free trial."
+        description: tierKey === "business"
+          ? "ProLnk Business — 60% commission keep, 4-level network income."
           : `ProLnk ${tierKey.charAt(0).toUpperCase() + tierKey.slice(1)} subscription.`,
         metadata: { tier: tierKey },
       });
@@ -1081,13 +1099,32 @@ export async function handleStripeWebhook(req: Request, res: Response) {
   // Subscription payment — trigger subscription commission cascade
   if (event.type === "invoice.paid") {
     const invoice = event.data.object as Stripe.Invoice;
-    if (invoice.metadata?.type === "founding_network_subscription") {
+
+    // Subscription invoices carry no top-level metadata — resolve the parent
+    // subscription's metadata (set in createFoundingNetworkCheckout via subscription_data).
+    let subscriptionType: string | undefined;
+    let subscriptionPartnerId: string | undefined;
+    const subscriptionId = (invoice as any).subscription as string | null;
+    if (subscriptionId) {
+      try {
+        const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+        subscriptionType = subscription.metadata?.type;
+        subscriptionPartnerId = subscription.metadata?.partnerId;
+      } catch (e) {
+        console.warn("[Stripe Webhook] Could not retrieve subscription for invoice.paid:", e);
+      }
+    }
+
+    if (subscriptionType === "founding_network_subscription") {
       const subscriberEmail = invoice.customer_email || "";
       const subscriptionAmount = (invoice.amount_paid || 0) / 100;
 
       const invoiceDb = await getDb();
       let subscribingPartnerId: number | null = null;
-      if (invoiceDb && subscriberEmail) {
+      if (subscriptionPartnerId && /^\d+$/.test(subscriptionPartnerId)) {
+        subscribingPartnerId = parseInt(subscriptionPartnerId, 10);
+      }
+      if (!subscribingPartnerId && invoiceDb && subscriberEmail) {
         try {
           const subRows = await (invoiceDb as any).execute(sql`
             SELECT id FROM proWaitlist WHERE email = ${subscriberEmail} LIMIT 1

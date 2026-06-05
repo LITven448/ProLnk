@@ -13,20 +13,38 @@ const BG = "#F7FFFE";
 
 export default function HomeownerLogin() {
   const [, navigate] = useLocation();
+  const [mode, setMode] = useState<"login" | "create">("login");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
-  const loginMutation = trpc.partnerAuth.login.useMutation({
+  const loginMutation = trpc.homeownerAuth.login.useMutation({
     onSuccess: () => navigate("/trustypro/home-health"),
     onError: (e) => setError(e.message || "Invalid email or password. Please try again."),
   });
 
+  const registerMutation = trpc.homeownerAuth.register.useMutation({
+    onSuccess: () => navigate("/trustypro/home-health"),
+    onError: (e) => setError(e.message || "Could not create your account. Please try again."),
+  });
+
+  const isPending = loginMutation.isPending || registerMutation.isPending;
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
-    loginMutation.mutate({ email, password });
+    if (mode === "create") {
+      if (password.length < 8) {
+        setError("Password must be at least 8 characters.");
+        return;
+      }
+      registerMutation.mutate({ name, email, password, phone: phone || undefined });
+    } else {
+      loginMutation.mutate({ email, password });
+    }
   }
 
   return (
@@ -57,12 +75,48 @@ export default function HomeownerLogin() {
               <Home className="w-6 h-6" style={{ color: TEAL }} />
             </div>
             <div>
-              <h1 className="text-xl font-black text-gray-900">Welcome Back</h1>
-              <p className="text-xs text-gray-500">Homeowner Login</p>
+              <h1 className="text-xl font-black text-gray-900">
+                {mode === "create" ? "Create Your Account" : "Welcome Back"}
+              </h1>
+              <p className="text-xs text-gray-500">
+                {mode === "create" ? "Homeowner Sign Up" : "Homeowner Login"}
+              </p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {mode === "create" && (
+              <>
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 mb-1.5">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Jane Homeowner"
+                    required
+                    minLength={2}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 focus:outline-none focus:ring-2 transition-shadow"
+                    style={{ "--tw-ring-color": TEAL } as React.CSSProperties}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 mb-1.5">
+                    Phone <span className="font-normal text-gray-400">(optional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="(555) 555-5555"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 focus:outline-none focus:ring-2 transition-shadow"
+                    style={{ "--tw-ring-color": TEAL } as React.CSSProperties}
+                  />
+                </div>
+              </>
+            )}
             <div>
               <label className="block text-xs font-bold text-gray-700 mb-1.5">
                 Email Address
@@ -113,18 +167,18 @@ export default function HomeownerLogin() {
 
             <button
               type="submit"
-              disabled={loginMutation.isPending}
+              disabled={isPending}
               className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60"
               style={{ backgroundColor: TEAL }}
             >
-              {loginMutation.isPending ? (
+              {isPending ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Signing In…
+                  {mode === "create" ? "Creating Account…" : "Signing In…"}
                 </>
               ) : (
                 <>
-                  Sign In to My Home
+                  {mode === "create" ? "Create Account" : "Sign In to My Home"}
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
@@ -136,15 +190,20 @@ export default function HomeownerLogin() {
               <div className="w-full border-t border-gray-100" />
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white px-3 text-xs text-gray-400">New to TrustyPro?</span>
+              <span className="bg-white px-3 text-xs text-gray-400">
+                {mode === "create" ? "Already have an account?" : "New to TrustyPro?"}
+              </span>
             </div>
           </div>
 
           <button
-            onClick={() => navigate("/trustypro/waitlist")}
+            onClick={() => {
+              setError("");
+              setMode(mode === "create" ? "login" : "create");
+            }}
             className="w-full py-3.5 rounded-xl text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
           >
-            Create Free Home Profile
+            {mode === "create" ? "Sign In Instead" : "Create Free Home Profile"}
           </button>
 
           <div className="mt-5 flex items-center justify-center gap-5 text-xs text-gray-400">

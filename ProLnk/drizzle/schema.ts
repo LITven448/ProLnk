@@ -136,6 +136,11 @@ export const partners = mysqlTable("partners", {
   licenseExpiresAt: timestamp("licenseExpiresAt"),
   licenseVerifiedAt: timestamp("licenseVerifiedAt"),
   backgroundCheckVerifiedAt: timestamp("backgroundCheckVerifiedAt"),
+  // Trust Model Phase 1 — account type branch ('individual' | 'company')
+  accountType: varchar("accountType", { length: 20 }),
+  // Company signup: business license + signed staff-vetting attestation
+  businessLicenseNo: varchar("businessLicenseNo", { length: 100 }),
+  staffVettingAttestedAt: timestamp("staffVettingAttestedAt"),
   // Google Review
   googleReviewUrl: varchar("googleReviewUrl", { length: 1000 }),
   // CCPA / data export

@@ -242,7 +242,7 @@ export const partnerAuthRouter = router({
       if (!db) return { sent: true }; // silent fail
       const result = await db.execute(sql`
         SELECT id, contactName, contactEmail FROM partners
-        WHERE contactEmail = ${input.email} AND status = 'approved'
+        WHERE contactEmail = ${input.email} AND passwordHash IS NOT NULL
         LIMIT 1
       `);
       const partner = firstRow(result);

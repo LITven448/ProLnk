@@ -38,6 +38,8 @@ import { commandCenterRouter } from "./routers/commandCenter";
 import { briefcaseRouter } from "./routers/briefcase";
 import { scoutRouter } from "./routers/scout";
 import { proPassRouter } from "./routers/proPass";
+import { rosterRouter } from "./routers/roster";
+import { ensureClearanceInfra } from "./clearance";
 import { foundingPartnerRouter } from "./routers/foundingPartner";
 import { networkOverridesRouter } from "./routers/networkOverrides";
 import { bidBoardRouter } from "./routers/bidBoard";
@@ -55,6 +57,7 @@ import { rewardfulRouter } from "./routers/rewardful";
 import { analyticsAdminRouter } from "./routers/analyticsAdmin";
 import { automationRulesRouter } from "./routers/automationRules";
 import { partnerAuthRouter } from "./routers/partnerAuth";
+import { homeownerAuthRouter } from "./routers/homeownerAuth";
 import { diagnosticAgentRouter } from "./routers/diagnosticAgent";
 import { engagementRouter } from "./routers/engagement";
 import { integrationWebhooksRouter } from "./routers/integrationWebhooks";
@@ -165,6 +168,10 @@ const applySchema = z.object({
   referredByCode: z.string().optional(), // 6-char network ref code OR legacy "partner-42" format
   businessMailingAddress: z.string().optional(),
   agreementAccepted: z.boolean().optional(),
+  // Trust Model Phase 1 — signup branch
+  accountType: z.enum(["individual", "company"]).optional(),
+  businessLicenseNo: z.string().max(100).optional(),
+  staffVettingAttested: z.boolean().optional(),
 });
 
 // -- AI Analysis Helper --
@@ -351,6 +358,7 @@ export const appRouter = router({
   briefcase: briefcaseRouter,
   scout: scoutRouter,
   proPass: proPassRouter,
+  roster: rosterRouter,
   foundingPartner: foundingPartnerRouter,
   networkOverrides: networkOverridesRouter,
   bidBoard: bidBoardRouter,
@@ -365,6 +373,7 @@ export const appRouter = router({
   rewardful: rewardfulRouter,
   commissions: commissionsRouter,
   partnerOAuth: partnerOAuthRouter,
+  homeownerAuth: homeownerAuthRouter,
   photoUpload: photoUploadRouter,
   homeowner: router({
     // -- Structured job intake → opportunity record (matching engine entry point) --
@@ -1878,6 +1887,9 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
           throw new TRPCError({ code: "CONFLICT", message: "An application with this email already exists." });
         }
 
+        // Self-heal the Trust Model Phase 1 columns so this works without a migration.
+        await ensureClearanceInfra();
+
         // Resolve referrer partner ID from referral code (format: "partner-{id}")
         let referredByPartnerId: number | null = null;
         if (input.referredByCode) {
@@ -1902,6 +1914,9 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
           status: "pending",
           tier: "scout",
           referredByPartnerId,
+          accountType: input.accountType ?? "individual",
+          businessLicenseNo: input.accountType === "company" ? (input.businessLicenseNo ?? null) : null,
+          staffVettingAttestedAt: input.accountType === "company" && input.staffVettingAttested ? new Date() : null,
         });
 
         // Increment referring partner's partnersReferred count and mark referral click as converted

@@ -67,6 +67,10 @@ export default function Apply() {
   const [addrState, setAddrState] = useState("TX");
   const [addrZip, setAddrZip] = useState("");
   const [serviceRadius, setServiceRadius] = useState("25");
+  // Trust Model Phase 1 — Individual vs Company branch
+  const [accountType, setAccountType] = useState<"individual" | "company" | null>(null);
+  const [businessLicenseNo, setBusinessLicenseNo] = useState("");
+  const [staffVettingAttested, setStaffVettingAttested] = useState(false);
   const trackClick = trpc.referralTracking.trackClick.useMutation();
 
   useEffect(() => {
@@ -94,11 +98,18 @@ export default function Apply() {
       toast.error("Please fill in your service address (city and zip required)");
       return;
     }
+    if (accountType === "company" && !staffVettingAttested) {
+      toast.error("Please confirm the staff-vetting attestation to continue");
+      return;
+    }
     const composed = `${addressParts.join(", ")} (${serviceRadius}mi radius)`;
     applyMutation.mutate({
       ...data,
       serviceArea: composed,
       referredByCode: referralCode ?? undefined,
+      accountType: accountType ?? "individual",
+      businessLicenseNo: accountType === "company" ? (businessLicenseNo || undefined) : undefined,
+      staffVettingAttested: accountType === "company" ? staffVettingAttested : undefined,
     });
   };
 
@@ -300,6 +311,34 @@ export default function Apply() {
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
+                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-widest mb-4">Are you an individual or a company?</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setAccountType("individual")}
+                      className={`text-left rounded-xl border p-4 transition ${accountType === "individual" ? "border-[#0d9488] bg-[#0d9488]/5 ring-2 ring-[#0d9488]/30" : "border-gray-300 bg-white hover:border-gray-400"}`}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <Users className="w-4 h-4 text-[#0d9488]" />
+                        <span className="font-semibold text-gray-900">Individual / Solo</span>
+                      </div>
+                      <p className="text-xs text-gray-500">Handyman or 1–2 person operation. You hold your own clearance.</p>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setAccountType("company")}
+                      className={`text-left rounded-xl border p-4 transition ${accountType === "company" ? "border-[#0d9488] bg-[#0d9488]/5 ring-2 ring-[#0d9488]/30" : "border-gray-300 bg-white hover:border-gray-400"}`}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <Shield className="w-4 h-4 text-[#0d9488]" />
+                        <span className="font-semibold text-gray-900">Company</span>
+                      </div>
+                      <p className="text-xs text-gray-500">Multi-employee. You build a roster and credential your crew.</p>
+                    </button>
+                  </div>
+                </div>
+
+                <div>
                   <p className="text-xs text-gray-500 font-semibold uppercase tracking-widest mb-4">Business Information</p>
                   <div className="space-y-4">
                     <div>
@@ -406,6 +445,37 @@ export default function Apply() {
                     </div>
                   </div>
                 </div>
+
+                {accountType === "company" && (
+                  <div>
+                    <p className="text-xs text-gray-500 font-semibold uppercase tracking-widest mb-4">Company Verification</p>
+                    <div className="space-y-4">
+                      <div>
+                        <Label htmlFor="businessLicenseNo" className="text-sm font-medium text-gray-700 mb-1.5 block">Business License Number <span className="text-gray-400 font-normal">(optional)</span></Label>
+                        <Input
+                          id="businessLicenseNo"
+                          placeholder="e.g. TX-CON-1234567"
+                          value={businessLicenseNo}
+                          onChange={e => setBusinessLicenseNo(e.target.value)}
+                          className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-[#0d9488]"
+                        />
+                        <p className="text-xs text-gray-400 mt-1">Your legal entity / qualifying-party license. You can upload the document after approval.</p>
+                      </div>
+                      <div className="flex items-start gap-3 p-3 bg-[#0d9488]/5 border border-[#0d9488]/30 rounded-xl">
+                        <input
+                          type="checkbox"
+                          id="staffVettingAttestation"
+                          checked={staffVettingAttested}
+                          onChange={e => setStaffVettingAttested(e.target.checked)}
+                          className="mt-0.5 h-4 w-4 rounded border-gray-300 accent-[#0d9488] cursor-pointer flex-shrink-0"
+                        />
+                        <label htmlFor="staffVettingAttestation" className="text-xs text-gray-700 leading-relaxed cursor-pointer">
+                          <span className="font-semibold text-gray-900">Staff-vetting attestation.</span> I confirm my company vets and credentials our field staff per ProLnk requirements, and that any worker dispatched to a job site will hold the required clearance.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex items-start gap-3 p-3 bg-gray-50 border border-gray-200 rounded-xl">
                   <input

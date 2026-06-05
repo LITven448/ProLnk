@@ -29,6 +29,12 @@ import { getDb } from "../db";
 import { storagePut } from "../storage";
 import { notifyOwner } from "../_core/notification";
 import { nanoid } from "nanoid";
+import { computeTier } from "../clearance";
+
+// ─── Clearance tier label (Phase 1: 0/1) ───────────────────────────────────────
+function tierLabel(tier: number): string {
+  return tier >= 1 ? "Home-Ready" : "Listed";
+}
 
 // ─── Pass limits by tier ──────────────────────────────────────────────────────
 
@@ -156,6 +162,13 @@ export const proPassRouter = router({
     const rows = await (db as any).execute(sql`SELECT * FROM proPassCards WHERE partnerId = ${partner.id} ORDER BY firstName, lastName`);
     const passes = asRows(rows);
     const limit = TIER_PASS_LIMITS[partner.tier] ?? 1;
+
+    // Surface the computed clearance tier (Phase 1: 0 Listed / 1 Home-Ready).
+    for (const p of passes) {
+      const tier = await computeTier({ passId: p.id });
+      p.clearanceTier = tier;
+      p.clearanceTierLabel = tierLabel(tier);
+    }
 
     return { passes, limit, used: passes.length };
   }),
@@ -374,7 +387,7 @@ export const proPassRouter = router({
       if (!db) return null;
 
       const rows = await (db as any).execute(sql`
-        SELECT pp.firstName, pp.lastName, pp.role, pp.photoUrl, pp.passScore, pp.status,
+        SELECT pp.id, pp.firstName, pp.lastName, pp.role, pp.photoUrl, pp.passScore, pp.status,
                pp.clearanceLevel, pp.backgroundCheckStatus, pp.backgroundCheckExpiresAt,
                pp.osha10Certified, pp.osha30Certified, pp.epa608CertType,
                pp.contractorLicenseNumber, pp.contractorLicenseState, pp.contractorLicenseExpiresAt,
@@ -387,6 +400,7 @@ export const proPassRouter = router({
       `);
       const pass = firstRow(rows);
       if (!pass) return { valid: false, reason: "Pro Pass not found" };
+      const clearanceTier = await computeTier({ passId: pass.id });
       if (pass.status !== "active") return { valid: false, reason: `Pro Pass is ${pass.status}`, name: `${pass.firstName} ${pass.lastName}` };
 
       // Check background check expiry
@@ -401,6 +415,8 @@ export const proPassRouter = router({
         role: pass.role,
         photoUrl: pass.photoUrl,
         passScore: pass.passScore,
+        clearanceTier,
+        clearanceTierLabel: tierLabel(clearanceTier),
         clearanceLevel: pass.clearanceLevel,
         backgroundCheckStatus: pass.backgroundCheckStatus,
         backgroundCheckExpiresAt: pass.backgroundCheckExpiresAt,

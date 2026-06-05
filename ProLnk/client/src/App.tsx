@@ -57,6 +57,7 @@ const MyNetworkDashboard = lazy(() => import("./pages/FoundingNetworkDashboard")
 const EnergyEfficiencyGuide = lazy(() => import("./pages/homeowner/EnergyEfficiencyGuide"));
 const ProPassManager = lazy(() => import("./pages/ProPassManager"));
 const BriefcaseManager = lazy(() => import("./pages/BriefcaseManager"));
+const CredentialInvite = lazy(() => import("./pages/CredentialInvite"));
 const ScoutAssessmentWizard = lazy(() => import("./pages/ScoutAssessmentWizard"));
 const MatchHistory = lazy(() => import("./pages/MatchHistory"));
 const ProLnkApp = lazy(() => import("./pages/ProLnkApp"));
@@ -850,6 +851,7 @@ function Router() {
       <Route path="/quotes/compare" component={QuoteComparison} />
       <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
       <Route path="/join/:slug" component={JoinBySlug} />
+      <Route path="/credential/:token" component={CredentialInvite} />
       <Route path="/join" component={JoinLanding} />
       <Route path="/pro/join" component={JoinLanding} />
       <Route path="/referral" component={ReferralLanding} />

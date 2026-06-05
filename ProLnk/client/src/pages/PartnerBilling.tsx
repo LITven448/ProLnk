@@ -13,10 +13,10 @@ import { toast } from "sonner";
 
 const TIER_META: Record<string, { label: string; color: string; amount: number }> = {
   scout:      { label: "Scout",      color: "bg-gray-100 text-gray-700",     amount: 0 },
-  pro:        { label: "Pro",        color: "bg-blue-100 text-blue-700",     amount: 29 },
-  crew:       { label: "Crew",       color: "bg-indigo-100 text-indigo-700", amount: 79 },
-  company:    { label: "Company",    color: "bg-purple-100 text-purple-700", amount: 149 },
-  enterprise: { label: "Enterprise", color: "bg-amber-100 text-amber-800",   amount: 299 },
+  core:       { label: "Core",       color: "bg-blue-100 text-blue-700",     amount: 99 },
+  pro:        { label: "Pro",        color: "bg-indigo-100 text-indigo-700", amount: 149 },
+  business:   { label: "Business",   color: "bg-purple-100 text-purple-700", amount: 249 },
+  enterprise: { label: "Enterprise", color: "bg-amber-100 text-amber-800",   amount: 0 },
 };
 
 function fmt(amount: number) {

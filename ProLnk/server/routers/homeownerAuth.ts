@@ -21,7 +21,7 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 import { sql } from "drizzle-orm";
 import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
-import { getDb, getUserByOpenId, upsertUser } from "../db";
+import { getDb, getUserByOpenId } from "../db";
 import { sdk } from "../_core/sdk";
 import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import { getSessionCookieOptions } from "../_core/cookies";
@@ -60,14 +60,21 @@ export const homeownerAuthRouter = router({
 
       const passwordHash = await bcrypt.hash(input.password, 10);
 
-      // Create/locate the user record (id assigned by upsertUser, mirroring oauth.ts).
-      await upsertUser({
-        openId,
-        name: input.name,
-        email: input.email.toLowerCase(),
-        loginMethod: "homeowner_password",
-        lastSignedIn: new Date(),
-      });
+      // Create/locate the user record. users.id has NO auto-increment in this DB,
+      // so assign it explicitly (MAX+1) — upsertUser's plain insert fails here.
+      const emailLc = input.email.toLowerCase();
+      let userId: number;
+      const existingUserRow = firstRow(await db.execute(sql`SELECT id FROM users WHERE openId = ${openId} LIMIT 1`));
+      if (existingUserRow?.id) {
+        userId = Number(existingUserRow.id);
+        await db.execute(sql`UPDATE users SET name = ${input.name}, email = ${emailLc}, lastSignedIn = NOW() WHERE id = ${userId}`).catch(() => {});
+      } else {
+        userId = Number(firstRow(await db.execute(sql`SELECT COALESCE(MAX(id),0)+1 AS n FROM users`))?.n ?? 1);
+        await db.execute(sql`
+          INSERT INTO users (id, openId, name, email, loginMethod, lastSignedIn)
+          VALUES (${userId}, ${openId}, ${input.name}, ${emailLc}, 'homeowner_password', NOW())
+        `);
+      }
 
       // Store the password hash in the same place the app already stores passwords.
       await db.execute(sql`
@@ -76,18 +83,14 @@ export const homeownerAuthRouter = router({
         ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), updatedAt = NOW()
       `);
 
-      // Create the homeownerProfiles row if one doesn't already exist for this user.
-      const user = await getUserByOpenId(openId);
-      if (user) {
-        const existingProfile = await db.execute(sql`
-          SELECT id FROM homeownerProfiles WHERE userId = ${user.id} LIMIT 1
+      // Create the homeownerProfiles row if one doesn't already exist (id also explicit).
+      const existingProfile = firstRow(await db.execute(sql`SELECT id FROM homeownerProfiles WHERE userId = ${userId} LIMIT 1`));
+      if (!existingProfile) {
+        const profileId = Number(firstRow(await db.execute(sql`SELECT COALESCE(MAX(id),0)+1 AS n FROM homeownerProfiles`))?.n ?? 1);
+        await db.execute(sql`
+          INSERT INTO homeownerProfiles (id, userId, displayName, phone, createdAt, updatedAt)
+          VALUES (${profileId}, ${userId}, ${input.name}, ${input.phone ?? null}, NOW(), NOW())
         `);
-        if (!firstRow(existingProfile)) {
-          await db.execute(sql`
-            INSERT INTO homeownerProfiles (userId, displayName, phone, createdAt, updatedAt)
-            VALUES (${user.id}, ${input.name}, ${input.phone ?? null}, NOW(), NOW())
-          `);
-        }
       }
 
       const sessionToken = await sdk.createSessionToken(openId, {

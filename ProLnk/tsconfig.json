@@ -20,7 +20,14 @@
     "client/src/pages/PublicBriefcaseVerify.tsx",
     "client/src/pages/ScoutAssessmentWizard.tsx",
     "server/agents/managingTierAgents.ts",
-    "server/agents/subAgents.ts"
+    "server/agents/subAgents.ts",
+    "client/src/pages/DFW*.tsx",
+    "client/src/pages/**/DFW*.tsx",
+    "client/src/pages/*Guide*.tsx",
+    "client/src/pages/**/*Guide*.tsx",
+    "client/src/pages/*HomeownerGuide*.tsx",
+    "client/src/pages/homeowner/*Guide*.tsx",
+    "client/src/pages/resources/**/*.tsx"
   ],
   "compilerOptions": {
     "incremental": true,

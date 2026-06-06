@@ -39,6 +39,7 @@ import { briefcaseRouter } from "./routers/briefcase";
 import { scoutRouter } from "./routers/scout";
 import { proPassRouter } from "./routers/proPass";
 import { rosterRouter } from "./routers/roster";
+import { dispatchRouter } from "./routers/dispatch";
 import { ensureClearanceInfra } from "./clearance";
 import { foundingPartnerRouter } from "./routers/foundingPartner";
 import { networkOverridesRouter } from "./routers/networkOverrides";
@@ -359,6 +360,7 @@ export const appRouter = router({
   scout: scoutRouter,
   proPass: proPassRouter,
   roster: rosterRouter,
+  dispatch: dispatchRouter,
   foundingPartner: foundingPartnerRouter,
   networkOverrides: networkOverridesRouter,
   bidBoard: bidBoardRouter,
@@ -387,6 +389,7 @@ export const appRouter = router({
         contactName: z.string().optional(),
         contactEmail: z.string().email().optional(),
         contactPhone: z.string().optional(),
+        siteType: z.enum(['residential', 'commercial', 'property_mgmt', 'school_k12', 'government', 'childcare', 'healthcare']).optional(),
         autoOffer: z.boolean().optional(),
       }))
       .mutation(async ({ ctx, input }) => {
@@ -394,6 +397,10 @@ export const appRouter = router({
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const { ensureJobOffersInfra } = await import('./routers/matching');
         await ensureJobOffersInfra();
+        // Trust Model Phase 2: the job carries a site classification → required clearance tier.
+        const { ensureDispatchInfra, normalizeSiteType } = await import('./dispatch');
+        await ensureDispatchInfra();
+        const siteType = normalizeSiteType(input.siteType);
         const submittedByUserId = ctx.user?.id ?? null;
         // NOTE: drizzle db.execute() takes ONE arg — a (string, params[]) call silently
         // drops the params. Use the sql`` template (params interpolated), and pull the new
@@ -404,11 +411,11 @@ export const appRouter = router({
         await (db as any).execute(sql`
           INSERT INTO opportunities
              (id, intakeSource, opportunityType, opportunityCategory, description,
-              jobZip, jobAddress, estimatedJobValue,
+              jobZip, jobAddress, estimatedJobValue, siteType,
               homeownerName, homeownerEmail, homeownerPhone, submittedByUserId,
               adminReviewStatus, status, routingPosition)
            VALUES (${opportunityId}, ${'homeowner'}, ${input.category}, ${input.category}, ${input.description},
-              ${input.zip}, ${input.address ?? null}, ${estVal},
+              ${input.zip}, ${input.address ?? null}, ${estVal}, ${siteType},
               ${input.contactName ?? null}, ${input.contactEmail ?? null}, ${input.contactPhone ?? null}, ${submittedByUserId},
               'pending_review', 'new', 0)
         `);
@@ -3985,12 +3992,12 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       const uid = ctx.user.id;
       const currentMonth = new Date().toISOString().slice(0, 7); // "YYYY-MM"
       const incomeBreakdown = await db.execute(sql`
-        SELECT payoutType, COALESCE(SUM(amount), 0) as total
+        SELECT payout_type AS payoutType, COALESCE(SUM(amount), 0) as total
         FROM commission_payout
-        WHERE recipientUserId = ${uid}
-          AND payoutMonth = ${currentMonth}
+        WHERE recipient_user_id = ${uid}
+          AND payout_month = ${currentMonth}
           AND status IN ('approved', 'paid')
-        GROUP BY payoutType
+        GROUP BY payout_type
       `);
       const incomeRows: Array<{ payoutType: string; total: number }> =
         ((incomeBreakdown[0] ?? []) as Array<{ payoutType: string; total: string | number }>)

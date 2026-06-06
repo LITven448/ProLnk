@@ -61,6 +61,27 @@ const SCHEMA_TWEAKS = [
   // data_deletion_requests — CCPA/GDPR deletion requests recorded by
   // partnerAuth.requestAccountDeletion. RECORD-ONLY; deletion stays a manual admin action.
   "CREATE TABLE IF NOT EXISTS `data_deletion_requests` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` VARCHAR(255) NOT NULL, `reason` TEXT NULL, `status` VARCHAR(20) NOT NULL DEFAULT 'pending', `requestedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)",
+  // commission_payout — HIGH drift: db.query.commissionPayout.findMany() in
+  // commissions.getEarnings selects ALL declared cols; missing this column threw
+  // "Unknown column 'stripe_transfer_id'" on the partner earnings page.
+  "ALTER TABLE `commission_payout` ADD COLUMN `stripe_transfer_id` VARCHAR(255) NULL",
+  // homeWaitlist — declared-but-missing intake fields (schema/prod parity).
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `isRental` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `companyName` VARCHAR(255) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `companyEin` VARCHAR(20) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `propertyManagerName` VARCHAR(255) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `propertyManagerPhone` VARCHAR(30) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `recentImprovements` JSON NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `homeStyle` VARCHAR(100) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `exteriorColor` VARCHAR(100) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `primaryPainPoint` VARCHAR(255) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `hearAboutUs` VARCHAR(255) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `additionalNotes` TEXT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `consentSms` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `consentPush` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `consentMarketing` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `preferredContact` VARCHAR(20) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `source` VARCHAR(100) NULL",
 ];
 
 async function applySchemaTweaks(db: any): Promise<void> {

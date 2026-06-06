@@ -71,6 +71,28 @@ export default function HomeownerWaitlistForm() {
   const [serviceNeeded, setServiceNeeded] = useState("");
   const [additionalNotes, setAdditionalNotes] = useState("");
 
+  // Home Health Vault — optional property enrichment
+  const [showVault, setShowVault] = useState(false);
+  const [homeType, setHomeType] = useState("");
+  const [yearBuilt, setYearBuilt] = useState("");
+  const [squareFootage, setSquareFootage] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
+  const [bathrooms, setBathrooms] = useState("");
+  const [stories, setStories] = useState("");
+  const [garageSpaces, setGarageSpaces] = useState("");
+  const [ownershipStatus, setOwnershipStatus] = useState("");
+  const [yearsOwned, setYearsOwned] = useState("");
+  const [overallCondition, setOverallCondition] = useState("");
+  const [hasPool, setHasPool] = useState(false);
+  const [hasBasement, setHasBasement] = useState(false);
+  const [hasAttic, setHasAttic] = useState(false);
+  const [roofType, setRoofType] = useState("");
+  const [roofAge, setRoofAge] = useState("");
+  const [hvacType, setHvacType] = useState("");
+  const [hvacAge, setHvacAge] = useState("");
+  const [waterHeaterType, setWaterHeaterType] = useState("");
+  const [waterHeaterAge, setWaterHeaterAge] = useState("");
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const ref = params.get("ref");
@@ -125,6 +147,11 @@ export default function HomeownerWaitlistForm() {
     const composedService = additionalNotes.trim()
       ? `${serviceNeeded} | Notes: ${additionalNotes.trim()}`
       : serviceNeeded;
+    const num = (v: string) => {
+      const n = parseInt(v.replace(/[^0-9]/g, ""), 10);
+      return Number.isFinite(n) ? n : undefined;
+    };
+    const str = (v: string) => (v.trim() ? v.trim() : undefined);
     submitMutation.mutate({
       firstName: firstName.trim(),
       lastName: lastName.trim(),
@@ -136,6 +163,25 @@ export default function HomeownerWaitlistForm() {
       zipCode: zipNorm,
       serviceNeeded: composedService,
       referredBy: referralCode ?? undefined,
+      homeType: str(homeType),
+      yearBuilt: num(yearBuilt),
+      squareFootage: num(squareFootage),
+      bedrooms: num(bedrooms),
+      bathrooms: str(bathrooms),
+      stories: num(stories),
+      garageSpaces: num(garageSpaces),
+      ownershipStatus: str(ownershipStatus),
+      yearsOwned: num(yearsOwned),
+      overallCondition: str(overallCondition),
+      hasPool: hasPool || undefined,
+      hasBasement: hasBasement || undefined,
+      hasAttic: hasAttic || undefined,
+      roofType: str(roofType),
+      roofAge: num(roofAge),
+      hvacType: str(hvacType),
+      hvacAge: num(hvacAge),
+      waterHeaterType: str(waterHeaterType),
+      waterHeaterAge: num(waterHeaterAge),
     });
   };
 
@@ -382,6 +428,258 @@ export default function HomeownerWaitlistForm() {
                 rows={3}
                 className="bg-white/5 border-white/20 text-white placeholder:text-white/30 resize-none"
               />
+            </div>
+
+            {/* Home Health Vault — optional property enrichment */}
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setShowVault((v) => !v)}
+                className="w-full flex items-center justify-between px-4 py-3.5 text-left"
+              >
+                <span className="flex items-center gap-2">
+                  <Home className="w-4 h-4 text-indigo-400" />
+                  <span className="text-white/80 text-sm font-medium">
+                    Tell us about your home <span className="text-white/30">(optional)</span>
+                  </span>
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-white/40 transition-transform ${showVault ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {showVault && (
+                <div className="px-4 pb-5 pt-1 space-y-5 border-t border-white/10">
+                  <p className="text-white/40 text-xs leading-relaxed pt-3">
+                    The more we know about your home, the better we can match you and track its health over time. Every field here is optional.
+                  </p>
+
+                  {/* Property basics */}
+                  <div>
+                    <p className="text-white/50 text-xs font-semibold uppercase tracking-wide mb-3">Property basics</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="col-span-2">
+                        <Label className="text-white/70 text-sm mb-1.5 block">Home Type</Label>
+                        <div className="relative">
+                          <select
+                            value={homeType}
+                            onChange={(e) => setHomeType(e.target.value)}
+                            className="w-full h-11 px-3 pr-8 rounded-md bg-white/5 border border-white/20 text-white text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          >
+                            <option value="" className="bg-gray-900 text-white/50">Select...</option>
+                            <option value="single_family" className="bg-gray-900 text-white">Single Family</option>
+                            <option value="townhouse" className="bg-gray-900 text-white">Townhouse</option>
+                            <option value="condo" className="bg-gray-900 text-white">Condo</option>
+                            <option value="multi_family" className="bg-gray-900 text-white">Multi-Family</option>
+                            <option value="mobile_manufactured" className="bg-gray-900 text-white">Mobile / Manufactured</option>
+                            <option value="other" className="bg-gray-900 text-white">Other</option>
+                          </select>
+                          <ChevronDown className="w-4 h-4 text-white/40 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                        </div>
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Year Built</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={yearBuilt}
+                          onChange={(e) => setYearBuilt(e.target.value)}
+                          placeholder="1998"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Square Footage</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={squareFootage}
+                          onChange={(e) => setSquareFootage(e.target.value)}
+                          placeholder="2400"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Bedrooms</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={bedrooms}
+                          onChange={(e) => setBedrooms(e.target.value)}
+                          placeholder="3"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Bathrooms</Label>
+                        <div className="relative">
+                          <select
+                            value={bathrooms}
+                            onChange={(e) => setBathrooms(e.target.value)}
+                            className="w-full h-11 px-3 pr-8 rounded-md bg-white/5 border border-white/20 text-white text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          >
+                            <option value="" className="bg-gray-900 text-white/50">Select...</option>
+                            {["1", "1.5", "2", "2.5", "3", "3.5", "4+"].map((b) => (
+                              <option key={b} value={b} className="bg-gray-900 text-white">{b}</option>
+                            ))}
+                          </select>
+                          <ChevronDown className="w-4 h-4 text-white/40 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                        </div>
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Stories</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={stories}
+                          onChange={(e) => setStories(e.target.value)}
+                          placeholder="2"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Garage Spaces</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={garageSpaces}
+                          onChange={(e) => setGarageSpaces(e.target.value)}
+                          placeholder="2"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Ownership</Label>
+                        <div className="relative">
+                          <select
+                            value={ownershipStatus}
+                            onChange={(e) => setOwnershipStatus(e.target.value)}
+                            className="w-full h-11 px-3 pr-8 rounded-md bg-white/5 border border-white/20 text-white text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          >
+                            <option value="" className="bg-gray-900 text-white/50">Select...</option>
+                            <option value="own" className="bg-gray-900 text-white">Own</option>
+                            <option value="rent" className="bg-gray-900 text-white">Rent</option>
+                            <option value="manage" className="bg-gray-900 text-white">Manage</option>
+                          </select>
+                          <ChevronDown className="w-4 h-4 text-white/40 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                        </div>
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Years Owned</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={yearsOwned}
+                          onChange={(e) => setYearsOwned(e.target.value)}
+                          placeholder="5"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <Label className="text-white/70 text-sm mb-1.5 block">Overall Condition</Label>
+                        <div className="relative">
+                          <select
+                            value={overallCondition}
+                            onChange={(e) => setOverallCondition(e.target.value)}
+                            className="w-full h-11 px-3 pr-8 rounded-md bg-white/5 border border-white/20 text-white text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          >
+                            <option value="" className="bg-gray-900 text-white/50">Select...</option>
+                            <option value="excellent" className="bg-gray-900 text-white">Excellent</option>
+                            <option value="good" className="bg-gray-900 text-white">Good</option>
+                            <option value="fair" className="bg-gray-900 text-white">Fair</option>
+                            <option value="needs_work" className="bg-gray-900 text-white">Needs Work</option>
+                          </select>
+                          <ChevronDown className="w-4 h-4 text-white/40 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3">
+                      {[
+                        { label: "Pool", checked: hasPool, set: setHasPool },
+                        { label: "Basement", checked: hasBasement, set: setHasBasement },
+                        { label: "Attic", checked: hasAttic, set: setHasAttic },
+                      ].map((f) => (
+                        <label key={f.label} className="flex items-center gap-2 text-white/70 text-sm cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={f.checked}
+                            onChange={(e) => f.set(e.target.checked)}
+                            className="w-4 h-4 rounded border-white/30 bg-white/5 accent-indigo-500"
+                          />
+                          {f.label}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Systems & age */}
+                  <div>
+                    <p className="text-white/50 text-xs font-semibold uppercase tracking-wide mb-3">Systems &amp; age</p>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="col-span-2">
+                        <Label className="text-white/70 text-sm mb-1.5 block">Roof Type</Label>
+                        <Input
+                          value={roofType}
+                          onChange={(e) => setRoofType(e.target.value)}
+                          placeholder="Asphalt shingle"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">Roof Age (yrs)</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={roofAge}
+                          onChange={(e) => setRoofAge(e.target.value)}
+                          placeholder="8"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <Label className="text-white/70 text-sm mb-1.5 block">HVAC Type</Label>
+                        <Input
+                          value={hvacType}
+                          onChange={(e) => setHvacType(e.target.value)}
+                          placeholder="Central air"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">HVAC Age (yrs)</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={hvacAge}
+                          onChange={(e) => setHvacAge(e.target.value)}
+                          placeholder="6"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <Label className="text-white/70 text-sm mb-1.5 block">Water Heater Type</Label>
+                        <Input
+                          value={waterHeaterType}
+                          onChange={(e) => setWaterHeaterType(e.target.value)}
+                          placeholder="Gas tank"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-white/70 text-sm mb-1.5 block">WH Age (yrs)</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          value={waterHeaterAge}
+                          onChange={(e) => setWaterHeaterAge(e.target.value)}
+                          placeholder="4"
+                          className="bg-white/5 border-white/20 text-white placeholder:text-white/30 h-11"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Privacy badge */}

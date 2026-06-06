@@ -104,6 +104,29 @@ const HomeWaitlistSchema = z.object({
   zipCode: z.string().regex(/^\d{5}(-\d{4})?$/),
   serviceNeeded: z.string().min(1).max(255),
   referredBy: z.string().max(20).optional(),
+  // Home Health Vault — optional property enrichment (additive, never required)
+  homeType: z.string().max(50).optional(),
+  yearBuilt: z.coerce.number().int().min(1700).max(2100).optional(),
+  squareFootage: z.coerce.number().int().min(0).max(1_000_000).optional(),
+  lotSizeSqFt: z.coerce.number().int().min(0).max(100_000_000).optional(),
+  bedrooms: z.coerce.number().int().min(0).max(100).optional(),
+  bathrooms: z.string().max(10).optional(),
+  stories: z.coerce.number().int().min(0).max(100).optional(),
+  garageSpaces: z.coerce.number().int().min(0).max(50).optional(),
+  hasPool: z.boolean().optional(),
+  hasBasement: z.boolean().optional(),
+  hasAttic: z.boolean().optional(),
+  ownershipStatus: z.string().max(50).optional(),
+  yearsOwned: z.coerce.number().int().min(0).max(200).optional(),
+  overallCondition: z.string().max(100).optional(),
+  roofType: z.string().max(100).optional(),
+  roofAge: z.coerce.number().int().min(0).max(200).optional(),
+  hvacType: z.string().max(100).optional(),
+  hvacAge: z.coerce.number().int().min(0).max(200).optional(),
+  waterHeaterType: z.string().max(100).optional(),
+  waterHeaterAge: z.coerce.number().int().min(0).max(200).optional(),
+  projectTimeline: z.string().max(255).optional(),
+  estimatedBudget: z.string().max(50).optional(),
 });
 
 const SimpleWaitlistSchema = z.object({
@@ -400,18 +423,52 @@ export const waitlistRouter = router({
 
         const homeId = Math.floor(Math.random() * 2_000_000_000) + 1;
 
+        const homeSystems: Record<string, string | number> = {};
+        if (input.roofType !== undefined) homeSystems.roofType = input.roofType;
+        if (input.roofAge !== undefined) homeSystems.roofAge = input.roofAge;
+        if (input.hvacType !== undefined) homeSystems.hvacType = input.hvacType;
+        if (input.hvacAge !== undefined) homeSystems.hvacAge = input.hvacAge;
+        if (input.waterHeaterType !== undefined) homeSystems.waterHeaterType = input.waterHeaterType;
+        if (input.waterHeaterAge !== undefined) homeSystems.waterHeaterAge = input.waterHeaterAge;
+
+        const columns: Record<string, unknown> = {
+          id: homeId,
+          firstName: input.firstName,
+          lastName: input.lastName,
+          email: input.email,
+          phone: input.phone ?? null,
+          address: input.address,
+          city: input.city,
+          state: input.state,
+          zipCode: input.zipCode,
+          homeType: input.homeType ?? "single_family",
+          desiredProjects: JSON.stringify([input.serviceNeeded]),
+          projectTimeline: input.projectTimeline ?? "just_exploring",
+          ownershipStatus: input.ownershipStatus ?? "own",
+          ownershipType: "primary_residence",
+          status: "pending",
+          referredBy: input.referredBy ?? null,
+        };
+        if (input.yearBuilt !== undefined) columns.yearBuilt = input.yearBuilt;
+        if (input.squareFootage !== undefined) columns.squareFootage = input.squareFootage;
+        if (input.lotSizeSqFt !== undefined) columns.lotSizeSqFt = input.lotSizeSqFt;
+        if (input.bedrooms !== undefined) columns.bedrooms = input.bedrooms;
+        if (input.bathrooms !== undefined) columns.bathrooms = input.bathrooms;
+        if (input.stories !== undefined) columns.stories = input.stories;
+        if (input.garageSpaces !== undefined) columns.garageSpaces = input.garageSpaces;
+        if (input.hasPool !== undefined) columns.hasPool = input.hasPool ? 1 : 0;
+        if (input.hasBasement !== undefined) columns.hasBasement = input.hasBasement ? 1 : 0;
+        if (input.hasAttic !== undefined) columns.hasAttic = input.hasAttic ? 1 : 0;
+        if (input.yearsOwned !== undefined) columns.yearsOwned = input.yearsOwned;
+        if (input.overallCondition !== undefined) columns.overallCondition = input.overallCondition;
+        if (input.estimatedBudget !== undefined) columns.estimatedBudget = input.estimatedBudget;
+        if (Object.keys(homeSystems).length > 0) columns.homeSystems = JSON.stringify(homeSystems);
+
+        const colNames = Object.keys(columns);
+        const placeholders = colNames.map(() => "?").join(", ");
         await pool.query(
-          `INSERT INTO homeWaitlist (
-            id, firstName, lastName, email, phone, address, city, state, zipCode, homeType,
-            desiredProjects, projectTimeline, ownershipStatus, ownershipType, status, referredBy
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [
-            homeId,
-            input.firstName, input.lastName, input.email, input.phone ?? null,
-            input.address, input.city, input.state, input.zipCode, "single_family",
-            JSON.stringify([input.serviceNeeded]), "just_exploring", "own", "primary_residence",
-            "pending", input.referredBy ?? null
-          ]
+          `INSERT INTO homeWaitlist (${colNames.map((c) => `\`${c}\``).join(", ")}) VALUES (${placeholders})`,
+          colNames.map((c) => columns[c])
         );
 
         sendHomeownerWaitlistConfirmation({

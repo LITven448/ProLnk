@@ -82,6 +82,23 @@ export async function ensureDbSequences(): Promise<void> {
       "ALTER TABLE `partners` ADD COLUMN `weeklyDigest` TINYINT(1) NOT NULL DEFAULT 1",
       "ALTER TABLE `partners` ADD COLUMN `emailEnabled` TINYINT(1) NOT NULL DEFAULT 1",
       "ALTER TABLE `partners` ADD COLUMN `smsEnabled` TINYINT(1) NOT NULL DEFAULT 1",
+      // homeWaitlist — Home Health Vault property enrichment captured at intake.
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `yearBuilt` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `squareFootage` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `lotSizeSqFt` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `bedrooms` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `bathrooms` VARCHAR(10) NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `stories` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `garageSpaces` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `hasPool` TINYINT(1) NULL DEFAULT 0",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `hasBasement` TINYINT(1) NULL DEFAULT 0",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `hasAttic` TINYINT(1) NULL DEFAULT 0",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `ownershipStatus` VARCHAR(255) NULL DEFAULT 'own'",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `yearsOwned` INT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `overallCondition` TEXT NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `homeSystems` JSON NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `estimatedBudget` VARCHAR(50) NULL",
+      "ALTER TABLE `homeWaitlist` ADD COLUMN `projectTimeline` VARCHAR(255) NULL DEFAULT 'just_exploring'",
     ];
     for (const s of tweaks) {
       try { await (db as any).execute(sql.raw(s)); } catch { /* already applied */ }

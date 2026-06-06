@@ -467,6 +467,319 @@ export const adminExtrasRouter = router({
       return { success: true, previousTier: partner.tier, newTier: input.newTier };
     }),
 
+  // ── Strategic Overview: Daily Ops Snapshot ────────────────────────────────
+  getDailyOpsSnapshot: adminProcedure.query(async () => {
+    const db = await getDb();
+    const empty = {
+      actionRequired: {
+        pendingApplications: 0, overduePayouts: 0, expiringCois: 0,
+        expiringLicenses: 0, staleLeads: 0, partnersAtTwoStrikes: 0,
+        expiringAdvertiserContracts: 0,
+      },
+      yesterday: {
+        proLinkNet: 0, platformFeeRevenue: 0, newSignups: 0, leadsDispatched: 0,
+      },
+    };
+    if (!db) return empty;
+    try {
+      const rows = await (db as any).execute(sql`
+        SELECT
+          (SELECT COUNT(*) FROM partners WHERE status = 'pending') AS pendingApplications,
+          (SELECT COUNT(*) FROM commissions WHERE paid = 0 AND DATEDIFF(NOW(), createdAt) > 7) AS overduePayouts,
+          (SELECT COUNT(*) FROM opportunities WHERE status = 'pending' AND adminReviewStatus = 'approved' AND DATEDIFF(NOW(), createdAt) >= 1) AS staleLeads,
+          (SELECT COUNT(*) FROM featuredAdvertisers WHERE status = 'active' AND endDate IS NOT NULL AND endDate <= DATE_ADD(NOW(), INTERVAL 30 DAY)) AS expiringAdvertiserContracts,
+          (SELECT COUNT(*) FROM proWaitlist WHERE DATE(createdAt) = CURDATE()) AS proSignupsToday,
+          (SELECT COUNT(*) FROM homeWaitlist WHERE DATE(createdAt) = CURDATE()) AS homeSignupsToday,
+          (SELECT COALESCE(SUM(CAST(amount AS DECIMAL(12,2))), 0) FROM commissions WHERE commissionType = 'prolink_net' AND DATE(createdAt) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)) AS proLinkNetY,
+          (SELECT COALESCE(SUM(CAST(amount AS DECIMAL(12,2))), 0) FROM commissions WHERE commissionType = 'platform_fee' AND DATE(createdAt) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)) AS platformFeeY,
+          (SELECT COUNT(*) FROM proWaitlist WHERE DATE(createdAt) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)) AS signupsY,
+          (SELECT COUNT(*) FROM opportunities WHERE DATE(sentAt) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)) AS leadsDispatchedY
+      `);
+      const r = ((rows[0] ?? rows) as any[])[0] ?? {};
+      return {
+        actionRequired: {
+          pendingApplications: Number(r.pendingApplications ?? 0),
+          overduePayouts: Number(r.overduePayouts ?? 0),
+          expiringCois: 0,
+          expiringLicenses: 0,
+          staleLeads: Number(r.staleLeads ?? 0),
+          partnersAtTwoStrikes: 0,
+          expiringAdvertiserContracts: Number(r.expiringAdvertiserContracts ?? 0),
+        },
+        yesterday: {
+          proLinkNet: Number(r.proLinkNetY ?? 0),
+          platformFeeRevenue: Number(r.platformFeeY ?? 0),
+          newSignups: Number(r.signupsY ?? 0),
+          leadsDispatched: Number(r.leadsDispatchedY ?? 0),
+        },
+      };
+    } catch {
+      return empty;
+    }
+  }),
+
+  // ── Strategic Overview: ProLnk Stream Stats ───────────────────────────────
+  getProLnkStreamStats: adminProcedure.query(async () => {
+    const db = await getDb();
+    const empty = {
+      tiers: [] as { tier: string; mrr: number; partnerCount: number }[],
+      commissionQueue: { total: 0, count: 0 },
+      funnel: { dispatched: 0, accepted: 0, completed: 0, paid: 0 },
+      health: { healthy: 0, oneStrike: 0, twoStrikes: 0, suspended: 0, pending: 0 },
+      topPartners: [] as { businessName: string; tier: string; leadsCount: number; rating: number; totalEarned: number }[],
+    };
+    if (!db) return empty;
+    try {
+      const [tierRows, queueRows, funnelRows, healthRows, topRows] = await Promise.all([
+        (db as any).execute(sql`
+          SELECT tier, COUNT(*) AS partnerCount,
+            SUM(CAST(subscriptionFee AS DECIMAL(12,2))) AS mrr
+          FROM partners WHERE status = 'approved'
+          GROUP BY tier ORDER BY mrr DESC
+        `),
+        (db as any).execute(sql`
+          SELECT COUNT(*) AS count, COALESCE(SUM(CAST(amount AS DECIMAL(12,2))), 0) AS total
+          FROM commissions WHERE paid = 0
+        `),
+        (db as any).execute(sql`
+          SELECT
+            SUM(CASE WHEN sentAt IS NOT NULL THEN 1 ELSE 0 END) AS dispatched,
+            SUM(CASE WHEN acceptedAt IS NOT NULL THEN 1 ELSE 0 END) AS accepted,
+            SUM(CASE WHEN status = 'completed' OR jobClosedAt IS NOT NULL THEN 1 ELSE 0 END) AS completed,
+            SUM(CASE WHEN status = 'converted' THEN 1 ELSE 0 END) AS paid
+          FROM opportunities
+          WHERE createdAt >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+        `),
+        (db as any).execute(sql`
+          SELECT
+            SUM(CASE WHEN status = 'approved' THEN 1 ELSE 0 END) AS healthy,
+            SUM(CASE WHEN status = 'suspended' THEN 1 ELSE 0 END) AS suspended,
+            SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending
+          FROM partners
+        `),
+        (db as any).execute(sql`
+          SELECT businessName, tier, leadsCount,
+            CAST(rating AS DECIMAL(3,2)) AS rating,
+            CAST(totalCommissionEarned AS DECIMAL(12,2)) AS totalEarned
+          FROM partners WHERE status = 'approved'
+          ORDER BY totalCommissionEarned DESC LIMIT 10
+        `),
+      ]);
+      const q = ((queueRows[0] ?? queueRows) as any[])[0] ?? {};
+      const f = ((funnelRows[0] ?? funnelRows) as any[])[0] ?? {};
+      const h = ((healthRows[0] ?? healthRows) as any[])[0] ?? {};
+      return {
+        tiers: ((tierRows[0] ?? tierRows) as any[]).map((t: any) => ({
+          tier: t.tier, mrr: Number(t.mrr ?? 0), partnerCount: Number(t.partnerCount ?? 0),
+        })),
+        commissionQueue: { total: Number(q.total ?? 0), count: Number(q.count ?? 0) },
+        funnel: {
+          dispatched: Number(f.dispatched ?? 0), accepted: Number(f.accepted ?? 0),
+          completed: Number(f.completed ?? 0), paid: Number(f.paid ?? 0),
+        },
+        health: {
+          healthy: Number(h.healthy ?? 0), oneStrike: 0, twoStrikes: 0,
+          suspended: Number(h.suspended ?? 0), pending: Number(h.pending ?? 0),
+        },
+        topPartners: ((topRows[0] ?? topRows) as any[]).map((p: any) => ({
+          businessName: p.businessName, tier: p.tier,
+          leadsCount: Number(p.leadsCount ?? 0), rating: Number(p.rating ?? 0),
+          totalEarned: Number(p.totalEarned ?? 0),
+        })),
+      };
+    } catch {
+      return empty;
+    }
+  }),
+
+  // ── Strategic Overview: TrustyPro Stream Stats ────────────────────────────
+  getTrustyProStreamStats: adminProcedure.query(async () => {
+    const db = await getDb();
+    const empty = {
+      profiles: { total: 0, today: 0, last7: 0 },
+      aiScans: { total: 0, completed: 0, processing: 0, failed: 0, today: 0 },
+      quotes: { total: 0, pending: 0, quoted: 0, accepted: 0 },
+      churnRisk: 0,
+      stormWatch: { events7d: 0, leads7d: 0 },
+    };
+    if (!db) return empty;
+    try {
+      const [profileRows, scanRows, quoteRows, stormRows] = await Promise.all([
+        (db as any).execute(sql`
+          SELECT COUNT(*) AS total,
+            SUM(CASE WHEN DATE(createdAt) = CURDATE() THEN 1 ELSE 0 END) AS today,
+            SUM(CASE WHEN createdAt >= DATE_SUB(NOW(), INTERVAL 7 DAY) THEN 1 ELSE 0 END) AS last7
+          FROM homeWaitlist
+        `),
+        (db as any).execute(sql`
+          SELECT COUNT(*) AS total,
+            SUM(CASE WHEN overallCondition IS NOT NULL AND overallCondition != '' THEN 1 ELSE 0 END) AS completed,
+            SUM(CASE WHEN overallCondition IS NULL OR overallCondition = '' THEN 1 ELSE 0 END) AS processing,
+            SUM(CASE WHEN photoQualityFlag = 'failed' THEN 1 ELSE 0 END) AS failed,
+            SUM(CASE WHEN DATE(createdAt) = CURDATE() THEN 1 ELSE 0 END) AS today
+          FROM homeownerScanHistory
+        `),
+        (db as any).execute(sql`
+          SELECT COUNT(*) AS total,
+            SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending,
+            SUM(CASE WHEN status IN ('sent', 'accepted', 'completed', 'converted') THEN 1 ELSE 0 END) AS quoted,
+            SUM(CASE WHEN status IN ('accepted', 'completed', 'converted') THEN 1 ELSE 0 END) AS accepted
+          FROM opportunities WHERE intakeSource IN ('homeowner', 'scout')
+        `),
+        (db as any).execute(sql`
+          SELECT
+            (SELECT COUNT(*) FROM stormEvents WHERE detectedAt >= DATE_SUB(NOW(), INTERVAL 7 DAY)) AS events7d,
+            (SELECT COALESCE(SUM(leadsGenerated), 0) FROM stormEvents WHERE detectedAt >= DATE_SUB(NOW(), INTERVAL 7 DAY)) AS leads7d
+        `),
+      ]);
+      const p = ((profileRows[0] ?? profileRows) as any[])[0] ?? {};
+      const s = ((scanRows[0] ?? scanRows) as any[])[0] ?? {};
+      const q = ((quoteRows[0] ?? quoteRows) as any[])[0] ?? {};
+      const st = ((stormRows[0] ?? stormRows) as any[])[0] ?? {};
+      return {
+        profiles: { total: Number(p.total ?? 0), today: Number(p.today ?? 0), last7: Number(p.last7 ?? 0) },
+        aiScans: {
+          total: Number(s.total ?? 0), completed: Number(s.completed ?? 0),
+          processing: Number(s.processing ?? 0), failed: Number(s.failed ?? 0), today: Number(s.today ?? 0),
+        },
+        quotes: {
+          total: Number(q.total ?? 0), pending: Number(q.pending ?? 0),
+          quoted: Number(q.quoted ?? 0), accepted: Number(q.accepted ?? 0),
+        },
+        churnRisk: 0,
+        stormWatch: { events7d: Number(st.events7d ?? 0), leads7d: Number(st.leads7d ?? 0) },
+      };
+    } catch {
+      return empty;
+    }
+  }),
+
+  // ── Strategic Overview: Advertiser Stream Stats ───────────────────────────
+  getAdvertiserStreamStats: adminProcedure.query(async () => {
+    const db = await getDb();
+    const empty = {
+      totals: {
+        active: 0, mrr: 0, totalImpressions: 0, totalClicks: 0,
+        pendingApplications: 0, expiringContracts: 0,
+      },
+      advertisers: [] as {
+        id: number; businessName: string; tier: string; monthlyFee: number;
+        impressions: number; clicks: number; ctr: string; status: string;
+      }[],
+    };
+    if (!db) return empty;
+    try {
+      const [totalRows, advRows] = await Promise.all([
+        (db as any).execute(sql`
+          SELECT
+            SUM(CASE WHEN status = 'active' THEN 1 ELSE 0 END) AS active,
+            SUM(CASE WHEN status = 'active' THEN CAST(monthlyFee AS DECIMAL(12,2)) ELSE 0 END) AS mrr,
+            COALESCE(SUM(impressions), 0) AS totalImpressions,
+            COALESCE(SUM(clicks), 0) AS totalClicks,
+            SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pendingApplications,
+            SUM(CASE WHEN status = 'active' AND endDate IS NOT NULL AND endDate <= DATE_ADD(NOW(), INTERVAL 30 DAY) THEN 1 ELSE 0 END) AS expiringContracts
+          FROM featuredAdvertisers
+        `),
+        (db as any).execute(sql`
+          SELECT id, businessName, category AS tier,
+            CAST(monthlyFee AS DECIMAL(12,2)) AS monthlyFee,
+            impressions, clicks, status
+          FROM featuredAdvertisers
+          WHERE status = 'active'
+          ORDER BY CAST(monthlyFee AS DECIMAL(12,2)) DESC
+          LIMIT 100
+        `),
+      ]);
+      const t = ((totalRows[0] ?? totalRows) as any[])[0] ?? {};
+      return {
+        totals: {
+          active: Number(t.active ?? 0),
+          mrr: Number(t.mrr ?? 0),
+          totalImpressions: Number(t.totalImpressions ?? 0),
+          totalClicks: Number(t.totalClicks ?? 0),
+          pendingApplications: Number(t.pendingApplications ?? 0),
+          expiringContracts: Number(t.expiringContracts ?? 0),
+        },
+        advertisers: ((advRows[0] ?? advRows) as any[]).map((a: any) => {
+          const imp = Number(a.impressions ?? 0);
+          const clk = Number(a.clicks ?? 0);
+          return {
+            id: Number(a.id), businessName: a.businessName, tier: a.tier ?? "",
+            monthlyFee: Number(a.monthlyFee ?? 0), impressions: imp, clicks: clk,
+            ctr: imp > 0 ? ((clk / imp) * 100).toFixed(1) : "0.0",
+            status: a.status,
+          };
+        }),
+      };
+    } catch {
+      return empty;
+    }
+  }),
+
+  // ── Strategic Overview: Affiliate Stream Stats ────────────────────────────
+  getAffiliateStreamStats: adminProcedure.query(async () => {
+    const db = await getDb();
+    const empty = {
+      clicks: { today: 0, last7: 0, last30: 0 },
+      estimatedEarnings30d: 0,
+      missingAffiliateUrl: 0,
+      catalog: [] as { category: string; products: number; active: number; hasAffiliateUrl: number }[],
+      topCategories: [] as { category: string; clicks: number }[],
+    };
+    if (!db) return empty;
+    try {
+      const [clickRows, missingRows, catalogRows, topRows] = await Promise.all([
+        (db as any).execute(sql`
+          SELECT
+            SUM(CASE WHEN DATE(clickedAt) = CURDATE() THEN 1 ELSE 0 END) AS today,
+            SUM(CASE WHEN clickedAt >= DATE_SUB(NOW(), INTERVAL 7 DAY) THEN 1 ELSE 0 END) AS last7,
+            SUM(CASE WHEN clickedAt >= DATE_SUB(NOW(), INTERVAL 30 DAY) THEN 1 ELSE 0 END) AS last30,
+            COALESCE(SUM(CASE WHEN clickedAt >= DATE_SUB(NOW(), INTERVAL 30 DAY) THEN CAST(price AS DECIMAL(12,2)) ELSE 0 END), 0) AS value30
+          FROM productClicks pc
+          LEFT JOIN affiliateProducts ap ON ap.id = pc.productSuggestionId
+        `),
+        (db as any).execute(sql`
+          SELECT COUNT(*) AS c FROM affiliateProducts
+          WHERE isActive = 1 AND (affiliateUrl IS NULL OR affiliateUrl = '')
+        `),
+        (db as any).execute(sql`
+          SELECT repairCategory AS category,
+            COUNT(*) AS products,
+            SUM(CASE WHEN isActive = 1 THEN 1 ELSE 0 END) AS active,
+            SUM(CASE WHEN isActive = 1 AND affiliateUrl IS NOT NULL AND affiliateUrl != '' THEN 1 ELSE 0 END) AS hasAffiliateUrl
+          FROM affiliateProducts
+          GROUP BY repairCategory
+          ORDER BY products DESC
+        `),
+        (db as any).execute(sql`
+          SELECT ap.repairCategory AS category, COUNT(*) AS clicks
+          FROM productClicks pc
+          JOIN affiliateProducts ap ON ap.id = pc.productSuggestionId
+          WHERE pc.clickedAt >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+          GROUP BY ap.repairCategory
+          ORDER BY clicks DESC
+          LIMIT 10
+        `),
+      ]);
+      const c = ((clickRows[0] ?? clickRows) as any[])[0] ?? {};
+      const value30 = Number(c.value30 ?? 0);
+      return {
+        clicks: { today: Number(c.today ?? 0), last7: Number(c.last7 ?? 0), last30: Number(c.last30 ?? 0) },
+        estimatedEarnings30d: Math.round(value30 * 0.03 * 0.04 * 100) / 100,
+        missingAffiliateUrl: Number(((missingRows[0] ?? missingRows) as any[])[0]?.c ?? 0),
+        catalog: ((catalogRows[0] ?? catalogRows) as any[]).map((r: any) => ({
+          category: r.category, products: Number(r.products ?? 0),
+          active: Number(r.active ?? 0), hasAffiliateUrl: Number(r.hasAffiliateUrl ?? 0),
+        })),
+        topCategories: ((topRows[0] ?? topRows) as any[]).map((r: any) => ({
+          category: r.category, clicks: Number(r.clicks ?? 0),
+        })),
+      };
+    } catch {
+      return empty;
+    }
+  }),
+
   getStormWatchData: adminProcedure.query(async () => {
     const db = await getDb();
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });

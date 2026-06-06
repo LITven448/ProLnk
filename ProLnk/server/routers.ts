@@ -2988,6 +2988,119 @@ Answer concisely and helpfully. If asked about specific real-time account data (
       return getNetworkStats();
     }),
 
+    // Photo Access Log — audit trail of photo access events (PhotoAccessLog.tsx)
+    getPhotoAccessLog: adminProcedure
+      .input(z.object({
+        limit: z.number().default(50),
+        offset: z.number().default(0),
+      }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return { items: [] as any[], total: 0 };
+        try {
+          const rows = await db.execute(sql`
+            SELECT pa.id, pa.accessType AS action, pa.accessedByRole AS role,
+                   pa.jobId, pa.ipAddress, pa.accessedAt AS createdAt,
+                   COALESCE(p.businessName, u.name, u.email, 'System') AS accessorName
+            FROM photoAccessLog pa
+            LEFT JOIN partners p ON p.id = pa.accessedByPartnerId
+            LEFT JOIN users u ON u.id = pa.accessedByUserId
+            ORDER BY pa.accessedAt DESC
+            LIMIT ${input.limit} OFFSET ${input.offset}
+          `);
+          const countRows = await db.execute(sql`SELECT COUNT(*) AS total FROM photoAccessLog`);
+          const total = Number(firstRow(countRows)?.total ?? 0);
+          return { items: asRows(rows), total };
+        } catch {
+          return { items: [] as any[], total: 0 };
+        }
+      }),
+
+    // Photo consent stats — partner consent counts (PhotoAccessLog.tsx)
+    getConsentStats: adminProcedure.query(async () => {
+      const db = await getDb();
+      const empty = { total: 0, consented: 0, pending: 0, revoked: 0 };
+      if (!db) return empty;
+      try {
+        const partnerRows = await db.execute(sql`SELECT COUNT(*) AS c FROM partners WHERE status = 'approved'`);
+        const consentRows = await db.execute(sql`
+          SELECT
+            SUM(CASE WHEN revokedAt IS NULL THEN 1 ELSE 0 END) AS consented,
+            SUM(CASE WHEN revokedAt IS NOT NULL THEN 1 ELSE 0 END) AS revoked
+          FROM partnerPhotoConsent
+        `);
+        const totalPartners = Number(firstRow(partnerRows)?.c ?? 0);
+        const c = firstRow(consentRows) ?? {};
+        const consented = Number(c.consented ?? 0);
+        const revoked = Number(c.revoked ?? 0);
+        return {
+          total: totalPartners,
+          consented,
+          pending: Math.max(0, totalPartners - consented - revoked),
+          revoked,
+        };
+      } catch {
+        return empty;
+      }
+    }),
+
+    // Photo scans — homeowner photo scan submissions (TrustyProScans.tsx)
+    getPhotoScans: adminProcedure
+      .input(z.object({
+        search: z.string().optional(),
+        status: z.string().optional(),
+      }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        const empty = { items: [] as any[], total: 0, pending: 0, completed: 0, avgScore: 0 };
+        if (!db) return empty;
+        try {
+          const search = input.search?.trim();
+          const searchClause = search
+            ? sql`AND (h.homeownerEmail LIKE ${"%" + search + "%"} OR p.address LIKE ${"%" + search + "%"} OR CAST(h.id AS CHAR) LIKE ${"%" + search + "%"})`
+            : sql``;
+          const rows = await db.execute(sql`
+            SELECT h.id, h.homeownerEmail, h.overallCondition, h.photoUrls,
+                   h.createdAt, h.photoQualityFlag, p.address
+            FROM homeownerScanHistory h
+            LEFT JOIN properties p ON p.id = h.propertyId
+            WHERE 1=1 ${searchClause}
+            ORDER BY h.createdAt DESC
+            LIMIT 200
+          `);
+          const scoreOf = (cond: string | null): number | null =>
+            cond === "good" ? 85 : cond === "fair" ? 65 : cond === "poor" ? 40 : null;
+          const mapStatus = (cond: string | null, flag: string | null): string => {
+            if (flag === "failed") return "failed";
+            if (!cond) return "pending";
+            return "complete";
+          };
+          let items = asRows(rows).map((r: any) => ({
+            id: r.id,
+            homeownerName: r.homeownerEmail ? String(r.homeownerEmail).split("@")[0] : null,
+            homeownerEmail: r.homeownerEmail ?? null,
+            address: r.address ?? null,
+            photoCount: Array.isArray(r.photoUrls) ? r.photoUrls.length : 0,
+            status: mapStatus(r.overallCondition ?? null, r.photoQualityFlag ?? null),
+            healthScore: scoreOf(r.overallCondition ?? null),
+            createdAt: r.createdAt ? new Date(r.createdAt).toISOString() : null,
+            aiSummary: null as string | null,
+            reportUrl: null as string | null,
+          }));
+          if (input.status) items = items.filter((i) => i.status === input.status);
+          const total = items.length;
+          const pending = items.filter((i) => i.status === "pending").length;
+          const completed = items.filter((i) => i.status === "complete").length;
+          const scored = items.filter((i) => i.healthScore != null);
+          const avgScore = scored.length
+            ? Math.round(scored.reduce((a, i) => a + (i.healthScore ?? 0), 0) / scored.length)
+            : 0;
+          return { items, total, pending, completed, avgScore };
+        } catch {
+          return empty;
+        }
+      }),
+
     // Admin: manually trigger PPS recalculation for all partners
     recalculatePartnerScores: adminProcedure.mutation(async () => {
       const result = await recalculateAllPartnerScores();

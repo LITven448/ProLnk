@@ -10,6 +10,7 @@
  *   agentActivityLog. Logging must NEVER break an agent run — all failures swallowed.
  */
 import { getDb } from "../db";
+import { sql } from "drizzle-orm";
 
 export type KnownAgentTier =
   | "Founding Network"
@@ -118,17 +119,9 @@ export async function recordAgentActivity(params: {
     const db = await getDb();
     if (!db) return;
     await (db as any).execute(
-      `INSERT INTO \`agentActivityLog\`
+      sql`INSERT INTO \`agentActivityLog\`
         (\`agentId\`, \`action\`, \`outcome\`, \`details\`, \`durationMs\`, \`costCents\`)
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [
-        params.agentId,
-        params.action.slice(0, 255),
-        params.outcome ?? "success",
-        params.details ? params.details.slice(0, 2000) : null,
-        Math.max(0, Math.round(params.durationMs ?? 0)),
-        Math.max(0, Math.round(params.costCents ?? 0)),
-      ],
+       VALUES (${params.agentId}, ${params.action.slice(0, 255)}, ${params.outcome ?? "success"}, ${params.details ? params.details.slice(0, 2000) : null}, ${Math.max(0, Math.round(params.durationMs ?? 0))}, ${Math.max(0, Math.round(params.costCents ?? 0))})`,
     );
   } catch {
     // Logging must never break an agent run.

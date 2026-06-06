@@ -4,6 +4,7 @@ import { invokeLLM } from "../_core/llm";
 import { ENV } from "../_core/env";
 import { notify } from "../notify";
 import { getDb } from "../db";
+import { sql } from "drizzle-orm";
 import {
   type SupportBrand,
   renderKnowledge,
@@ -85,8 +86,7 @@ async function getKnowledgeBlock(brand: SupportBrand): Promise<string> {
     const db = await getDb();
     if (db) {
       const rows: any = await (db as any).execute(
-        `SELECT \`knowledge\` FROM \`support_knowledge\` WHERE \`brand\` = ? LIMIT 1`,
-        [brand]
+        sql`SELECT \`knowledge\` FROM \`support_knowledge\` WHERE \`brand\` = ${brand} LIMIT 1`
       );
       const list = Array.isArray(rows) ? rows[0] : rows?.rows ?? rows;
       const text = Array.isArray(list) ? list[0]?.knowledge : list?.knowledge;
@@ -173,8 +173,7 @@ export const supportChatRouter = router({
         const db = await getDb();
         if (db) {
           const rows: any = await (db as any).execute(
-            `SELECT \`knowledge\`, \`updatedAt\` FROM \`support_knowledge\` WHERE \`brand\` = ? LIMIT 1`,
-            [brand]
+            sql`SELECT \`knowledge\`, \`updatedAt\` FROM \`support_knowledge\` WHERE \`brand\` = ${brand} LIMIT 1`
           );
           const list = Array.isArray(rows) ? rows[0] : rows?.rows ?? rows;
           const text = Array.isArray(list) ? list[0]?.knowledge : list?.knowledge;
@@ -209,15 +208,13 @@ export const supportChatRouter = router({
       try {
         if (trimmed.length === 0) {
           await (db as any).execute(
-            `DELETE FROM \`support_knowledge\` WHERE \`brand\` = ?`,
-            [input.brand]
+            sql`DELETE FROM \`support_knowledge\` WHERE \`brand\` = ${input.brand}`
           );
           return { ok: true, cleared: true };
         }
         await (db as any).execute(
-          `INSERT INTO \`support_knowledge\` (\`brand\`, \`knowledge\`) VALUES (?, ?)
-           ON DUPLICATE KEY UPDATE \`knowledge\` = VALUES(\`knowledge\`), \`updatedAt\` = CURRENT_TIMESTAMP`,
-          [input.brand, trimmed]
+          sql`INSERT INTO \`support_knowledge\` (\`brand\`, \`knowledge\`) VALUES (${input.brand}, ${trimmed})
+           ON DUPLICATE KEY UPDATE \`knowledge\` = VALUES(\`knowledge\`), \`updatedAt\` = CURRENT_TIMESTAMP`
         );
         return { ok: true, cleared: false };
       } catch (err) {

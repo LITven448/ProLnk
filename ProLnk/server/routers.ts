@@ -395,28 +395,23 @@ export const appRouter = router({
         const { ensureJobOffersInfra } = await import('./routers/matching');
         await ensureJobOffersInfra();
         const submittedByUserId = ctx.user?.id ?? null;
-        const result = await (db as any).execute(
-          `INSERT INTO opportunities
-             (intakeSource, opportunityType, opportunityCategory, description,
+        // NOTE: drizzle db.execute() takes ONE arg — a (string, params[]) call silently
+        // drops the params. Use the sql`` template (params interpolated), and pull the new
+        // id from the sequence (id has a sequence-default, so insertId is unreliable).
+        const estVal = input.estimatedValue != null ? String(input.estimatedValue) : null;
+        const idRow = await (db as any).execute(sql`SELECT NEXTVAL(\`seq_opportunities\`) AS id`);
+        const opportunityId = Number(firstRow(idRow)?.id);
+        await (db as any).execute(sql`
+          INSERT INTO opportunities
+             (id, intakeSource, opportunityType, opportunityCategory, description,
               jobZip, jobAddress, estimatedJobValue,
               homeownerName, homeownerEmail, homeownerPhone, submittedByUserId,
               adminReviewStatus, status, routingPosition)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending_review', 'new', 0)`,
-          [
-            submittedByUserId ? 'homeowner' : 'homeowner',
-            input.category,
-            input.category,
-            input.description,
-            input.zip,
-            input.address ?? null,
-            input.estimatedValue != null ? String(input.estimatedValue) : null,
-            input.contactName ?? null,
-            input.contactEmail ?? null,
-            input.contactPhone ?? null,
-            submittedByUserId,
-          ]
-        );
-        const opportunityId = (result?.[0]?.insertId ?? result?.insertId) as number;
+           VALUES (${opportunityId}, ${'homeowner'}, ${input.category}, ${input.category}, ${input.description},
+              ${input.zip}, ${input.address ?? null}, ${estVal},
+              ${input.contactName ?? null}, ${input.contactEmail ?? null}, ${input.contactPhone ?? null}, ${submittedByUserId},
+              'pending_review', 'new', 0)
+        `);
         try {
           await notifyOwner({
             title: 'New Homeowner Job Request',

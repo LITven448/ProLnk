@@ -5,6 +5,7 @@
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { getDb } from "../db";
+import { firstRow } from "../_core/dbRows";
 import { exchangeJobs, exchangeBids, partners, partnerNotifications, opportunities } from "../../drizzle/schema";
 import { eq, desc, and, ne, sql, inArray } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
@@ -288,46 +289,29 @@ export const exchangeRouter = router({
       const title = input.title?.trim() || input.scope.slice(0, 120);
 
       // Parent project opportunity (status "project" — never offered directly).
-      const parentRes = await (db as any).execute(
-        `INSERT INTO opportunities
-           (intakeSource, opportunityType, opportunityCategory, description,
+      const parentIdRow = await (db as any).execute(sql`SELECT NEXTVAL(\`seq_opportunities\`) AS id`);
+      const parentId = Number(firstRow(parentIdRow)?.id) as number;
+      await (db as any).execute(
+        sql`INSERT INTO opportunities
+           (id, intakeSource, opportunityType, opportunityCategory, description,
             jobZip, jobAddress, estimatedJobValue, submittedByUserId,
             approvedProjectValue, postedComponentTotal,
             adminReviewStatus, status, routingPosition)
-         VALUES ('exchange', 'Project', 'Project', ?, ?, ?, ?, ?, ?, ?, 'approved', 'project', 0)`,
-        [
-          title,
-          input.zip,
-          input.address ?? null,
-          String(input.approvedTotal),
-          submittedByUserId,
-          String(input.approvedTotal),
-          String(postedTotal),
-        ]
+         VALUES (${parentId}, 'exchange', 'Project', 'Project', ${title}, ${input.zip}, ${input.address ?? null}, ${String(input.approvedTotal)}, ${submittedByUserId}, ${String(input.approvedTotal)}, ${String(postedTotal)}, 'approved', 'project', 0)`
       );
-      const parentId = (parentRes?.[0]?.insertId ?? parentRes?.insertId) as number;
       if (!parentId) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Failed to create project" });
 
       const childResults: Array<{ opportunityId: number; trade: string; estimatedValue: number; offerId: number | null }> = [];
       for (const c of components) {
-        const childRes = await (db as any).execute(
-          `INSERT INTO opportunities
-             (intakeSource, opportunityType, opportunityCategory, description,
+        const childIdRow = await (db as any).execute(sql`SELECT NEXTVAL(\`seq_opportunities\`) AS id`);
+        const childId = Number(firstRow(childIdRow)?.id) as number;
+        await (db as any).execute(
+          sql`INSERT INTO opportunities
+             (id, intakeSource, opportunityType, opportunityCategory, description,
               jobZip, jobAddress, estimatedJobValue, submittedByUserId,
               parentOpportunityId, adminReviewStatus, status, routingPosition)
-           VALUES ('exchange', ?, ?, ?, ?, ?, ?, ?, ?, 'approved', 'new', 0)`,
-          [
-            c.trade,
-            c.trade,
-            c.description,
-            input.zip,
-            input.address ?? null,
-            String(c.estimatedValue),
-            submittedByUserId,
-            parentId,
-          ]
+           VALUES (${childId}, 'exchange', ${c.trade}, ${c.trade}, ${c.description}, ${input.zip}, ${input.address ?? null}, ${String(c.estimatedValue)}, ${submittedByUserId}, ${parentId}, 'approved', 'new', 0)`
         );
-        const childId = (childRes?.[0]?.insertId ?? childRes?.insertId) as number;
         let offerId: number | null = null;
         if (childId) {
           try {

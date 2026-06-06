@@ -17,6 +17,7 @@
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { sql } from "drizzle-orm";
+import { firstRow } from "../_core/dbRows";
 import { router, publicProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { createOfferForOpportunity, ensureJobOffersInfra } from "./matching";
@@ -143,28 +144,17 @@ export const demoRouter = router({
         let opportunityId = await findDemoOpportunity(db, req);
         let created = false;
         if (!opportunityId) {
-          const result = await (db as any).execute(
-            `INSERT INTO opportunities
-               (intakeSource, opportunityType, opportunityCategory, description,
+          const idRow = await (db as any).execute(sql`SELECT NEXTVAL(\`seq_opportunities\`) AS id`);
+          const newOppId = Number(firstRow(idRow)?.id);
+          await (db as any).execute(
+            sql`INSERT INTO opportunities
+               (id, intakeSource, opportunityType, opportunityCategory, description,
                 jobZip, jobAddress, estimatedJobValue,
                 homeownerName, homeownerEmail, homeownerPhone, submittedByUserId,
                 adminReviewStatus, status, routingPosition)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending_review', 'new', 0)`,
-            [
-              "homeowner",
-              req.category,
-              req.category,
-              req.description,
-              req.zip,
-              req.address,
-              String(req.estimatedValue),
-              req.name,
-              req.email,
-              req.phone,
-              null,
-            ]
+             VALUES (${newOppId}, 'homeowner', ${req.category}, ${req.category}, ${req.description}, ${req.zip}, ${req.address}, ${String(req.estimatedValue)}, ${req.name}, ${req.email}, ${req.phone}, ${null}, 'pending_review', 'new', 0)`
           );
-          opportunityId = Number((result?.[0]?.insertId ?? result?.insertId) as number);
+          opportunityId = newOppId;
           created = true;
         }
 

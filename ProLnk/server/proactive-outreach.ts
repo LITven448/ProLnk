@@ -20,6 +20,8 @@
  */
 
 import crypto from "crypto";
+import { sql } from "drizzle-orm";
+import { firstRow } from "./_core/dbRows";
 import type { Detection, PhotoScanResult } from "./photo-intelligence";
 
 async function getDb() {
@@ -253,16 +255,9 @@ async function recordBaseline(opts: {
   });
   try {
     await (db as any).execute(
-      `INSERT IGNORE INTO proactiveOutreach
+      sql`INSERT IGNORE INTO proactiveOutreach
          (sessionId, findingFingerprint, outcome, propertyAddress, homeownerEmail, homeownerName, emailSent)
-       VALUES (?, ?, 'baseline_clean', ?, ?, ?, 0)`,
-      [
-        opts.sessionId ?? null,
-        fp,
-        opts.propertyAddress ?? null,
-        opts.homeownerEmail ?? null,
-        opts.homeownerName ?? null,
-      ]
+       VALUES (${opts.sessionId ?? null}, ${fp}, 'baseline_clean', ${opts.propertyAddress ?? null}, ${opts.homeownerEmail ?? null}, ${opts.homeownerName ?? null}, 0)`
     );
   } catch {
     // tracking write failed — non-fatal.
@@ -311,8 +306,7 @@ export async function processAnalyzedPhotos(
     if (db) {
       try {
         const existing = (await (db as any).execute(
-          `SELECT id FROM proactiveOutreach WHERE findingFingerprint = ? LIMIT 1`,
-          [fingerprint]
+          sql`SELECT id FROM proactiveOutreach WHERE findingFingerprint = ${fingerprint} LIMIT 1`
         )) as any;
         const rows = existing?.rows ?? existing?.[0] ?? existing;
         if (Array.isArray(rows) && rows.length > 0) {
@@ -342,25 +336,13 @@ export async function processAnalyzedPhotos(
     if (db) {
       try {
         await (db as any).execute(
-          `INSERT IGNORE INTO proactiveOutreach
+          sql`INSERT IGNORE INTO proactiveOutreach
              (sessionId, findingFingerprint, outcome, trade, severity, category,
               estimatedCostRange, propertyAddress, homeownerEmail, homeownerName,
               renderingUrl, beforePhotoUrl, payload, emailSent)
-           VALUES (?, ?, 'sent', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)`,
-          [
-            input.sessionId ?? null,
-            fingerprint,
-            payload.trade,
-            payload.severity,
-            payload.category,
-            payload.estimatedCostRange ?? null,
-            propertyAddress ?? null,
-            homeownerEmail ?? null,
-            homeownerName ?? null,
-            renderingUrl ?? null,
-            beforePhotoUrl ?? null,
-            JSON.stringify(payload),
-          ]
+           VALUES (${input.sessionId ?? null}, ${fingerprint}, 'sent', ${payload.trade}, ${payload.severity}, ${payload.category},
+              ${payload.estimatedCostRange ?? null}, ${propertyAddress ?? null}, ${homeownerEmail ?? null}, ${homeownerName ?? null},
+              ${renderingUrl ?? null}, ${beforePhotoUrl ?? null}, ${JSON.stringify(payload)}, 0)`
         );
       } catch {
         // tracking write failed — proceed to email anyway (best-effort outreach).
@@ -390,7 +372,7 @@ export async function processAnalyzedPhotos(
       });
       if (emailSent && db) {
         await (db as any)
-          .execute(`UPDATE proactiveOutreach SET emailSent = 1 WHERE findingFingerprint = ?`, [fingerprint])
+          .execute(sql`UPDATE proactiveOutreach SET emailSent = 1 WHERE findingFingerprint = ${fingerprint}`)
           .catch(() => {});
       }
     }
@@ -416,10 +398,9 @@ export async function acceptProactiveQuote(fingerprint: string): Promise<AcceptP
   if (!db) throw new Error("Database unavailable");
 
   const res = (await (db as any).execute(
-    `SELECT id, opportunityId, trade, category, severity, estimatedCostRange,
+    sql`SELECT id, opportunityId, trade, category, severity, estimatedCostRange,
             propertyAddress, homeownerEmail, homeownerName, acceptedAt
-     FROM proactiveOutreach WHERE findingFingerprint = ? LIMIT 1`,
-    [fingerprint]
+     FROM proactiveOutreach WHERE findingFingerprint = ${fingerprint} LIMIT 1`
   )) as any;
   const rows = res?.rows ?? res?.[0] ?? res;
   const row = Array.isArray(rows) ? rows[0] : null;
@@ -439,30 +420,25 @@ export async function acceptProactiveQuote(fingerprint: string): Promise<AcceptP
   }. Homeowner opted in via proactive outreach.`;
   const estimatedValue = parseCostMidpoint(row.estimatedCostRange);
 
-  const insertRes = (await (db as any).execute(
-    `INSERT INTO opportunities
-       (intakeSource, opportunityType, opportunityCategory, description,
-        jobAddress, estimatedJobValue,
-        homeownerName, homeownerEmail,
-        adminReviewStatus, status, routingPosition)
-     VALUES ('proactive', ?, ?, ?, ?, ?, ?, ?, 'pending_review', 'new', 0)`,
-    [
-      category,
-      category,
-      description,
-      row.propertyAddress ?? null,
-      estimatedValue != null ? String(estimatedValue) : null,
-      row.homeownerName ?? null,
-      row.homeownerEmail ?? null,
-    ]
-  )) as any;
-  const opportunityId = Number(insertRes?.[0]?.insertId ?? insertRes?.insertId ?? 0) || null;
+  const idRow = await (db as any).execute(sql`SELECT NEXTVAL(\`seq_opportunities\`) AS id`);
+  const newOppId = Number(firstRow(idRow)?.id) || null;
+  const estJobValue = estimatedValue != null ? String(estimatedValue) : null;
+  if (newOppId) {
+    await (db as any).execute(
+      sql`INSERT INTO opportunities
+         (id, intakeSource, opportunityType, opportunityCategory, description,
+          jobAddress, estimatedJobValue,
+          homeownerName, homeownerEmail,
+          adminReviewStatus, status, routingPosition)
+       VALUES (${newOppId}, 'proactive', ${category}, ${category}, ${description}, ${row.propertyAddress ?? null}, ${estJobValue}, ${row.homeownerName ?? null}, ${row.homeownerEmail ?? null}, 'pending_review', 'new', 0)`
+    );
+  }
+  const opportunityId = newOppId;
 
   if (opportunityId) {
     await (db as any)
       .execute(
-        `UPDATE proactiveOutreach SET opportunityId = ?, outcome = 'accepted', acceptedAt = CURRENT_TIMESTAMP WHERE findingFingerprint = ?`,
-        [opportunityId, fingerprint]
+        sql`UPDATE proactiveOutreach SET opportunityId = ${opportunityId}, outcome = 'accepted', acceptedAt = CURRENT_TIMESTAMP WHERE findingFingerprint = ${fingerprint}`
       )
       .catch(() => {});
     try {

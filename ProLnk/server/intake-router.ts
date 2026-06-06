@@ -14,7 +14,7 @@
 import { ENV } from './_core/env';
 import { getDb, createPartnerNotification } from "./db";
 import { photoIntakeQueue, partnerIntegrations, jobs, opportunities, partners } from "../drizzle/schema";
-import { eq, and, lt } from "drizzle-orm";
+import { eq, and, lt, sql } from "drizzle-orm";
 import { invokeLLM, type Message, type ImageContent, type TextContent } from "./_core/llm";
 import { notifyOwner } from "./_core/notification";
 import { pushNewLead } from "./_core/push";
@@ -338,8 +338,7 @@ export async function dispatchLeadToPartner(
     // Email notification to partner about the new lead
     try {
       const [partnerRow] = await (db as any).execute(
-        `SELECT p.businessName, u.email, u.name FROM partners p LEFT JOIN users u ON u.id = p.userId WHERE p.id = ? LIMIT 1`,
-        [targetPartnerId]
+        sql`SELECT p.businessName, u.email, u.name FROM partners p LEFT JOIN users u ON u.id = p.userId WHERE p.id = ${targetPartnerId} LIMIT 1`
       ) as any[];
       const pRow = partnerRow?.[0];
       if (pRow?.email) {
@@ -359,14 +358,13 @@ export async function dispatchLeadToPartner(
     // Schedule homeowner check-in email 48 hours after dispatch
     try {
       const [checkinRow] = await (db as any).execute(
-        `SELECT j.serviceAddress, u.email, u.name, par.businessName
+        sql`SELECT j.serviceAddress, u.email, u.name, par.businessName
          FROM opportunities o
          LEFT JOIN jobs j ON j.id = o.jobId
          LEFT JOIN properties p ON p.address = j.serviceAddress
          LEFT JOIN users u ON u.id = p.userId
-         LEFT JOIN partners par ON par.id = ?
-         WHERE o.id = ? LIMIT 1`,
-        [targetPartnerId, opportunityId]
+         LEFT JOIN partners par ON par.id = ${targetPartnerId}
+         WHERE o.id = ${opportunityId} LIMIT 1`
       ) as any[];
       const cRow = checkinRow?.[0];
       if (cRow?.email && cRow?.serviceAddress) {

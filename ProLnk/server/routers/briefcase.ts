@@ -302,8 +302,7 @@ export const briefcaseRouter = router({
 
       if (statusField) {
         await (db as any).execute(
-          `UPDATE companyBriefcases SET \`${statusField}\` = 'pending', updatedAt = NOW() WHERE id = ?`,
-          [briefcase.id]
+          sql`UPDATE companyBriefcases SET ${sql.raw(`\`${statusField}\``)} = 'pending', updatedAt = NOW() WHERE id = ${briefcase.id}`
         );
       }
 
@@ -366,8 +365,7 @@ export const briefcaseRouter = router({
 
       if (statusField) {
         await (db as any).execute(
-          `UPDATE companyBriefcases SET \`${statusField}\` = ?, updatedAt = NOW() WHERE id = ?`,
-          [newStatus, doc.briefcaseId]
+          sql`UPDATE companyBriefcases SET ${sql.raw(`\`${statusField}\``)} = ${newStatus}, updatedAt = NOW() WHERE id = ${doc.briefcaseId}`
         );
       }
 

@@ -12,7 +12,7 @@
  */
 
 import { z } from "zod";
-import { and, desc, eq, gt, inArray, isNull, lt } from "drizzle-orm";
+import { and, desc, eq, gt, inArray, isNull, lt, sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { router, protectedProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
@@ -84,9 +84,8 @@ async function notifyPartner(
   if (!db) return;
   try {
     await (db as any).execute(
-      `INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl, metadata)
-       VALUES (?, 'new_lead', ?, ?, '/partner/offers', ?)`,
-      [partnerId, title, message, JSON.stringify(metadata)]
+      sql`INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl, metadata)
+       VALUES (${partnerId}, 'new_lead', ${title}, ${message}, '/partner/offers', ${JSON.stringify(metadata)})`
     );
   } catch {
     // partnerNotifications uses a non-auto-increment id in some envs; fall back silently.

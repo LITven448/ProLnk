@@ -27,6 +27,7 @@ import * as db from "../db";
 import { sdk } from "./sdk";
 import { getSessionCookieOptions } from "./cookies";
 import { firstRow } from "./dbRows";
+import { sql } from "drizzle-orm";
 import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import { ENV } from "./env";
 
@@ -150,11 +151,10 @@ export function registerOAuthRoutes(app: Express) {
     // Store password hash — stored in a dedicated table not in schema yet; use raw SQL
     const dbConn = await db.getDb();
     if (dbConn) {
-      await (dbConn as any).execute(
-        `INSERT INTO userPasswords (openId, passwordHash) VALUES (?, ?)
-         ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), updatedAt = NOW()`,
-        [openId, passwordHash]
-      );
+      await (dbConn as any).execute(sql`
+        INSERT INTO userPasswords (openId, passwordHash) VALUES (${openId}, ${passwordHash})
+        ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), updatedAt = NOW()
+      `);
     }
 
     await createSession(res, req, openId, name);
@@ -178,7 +178,7 @@ export function registerOAuthRoutes(app: Express) {
     if (!dbConn) return res.status(503).json({ error: "Database unavailable" });
 
     const pwRows = await (dbConn as any).execute(
-      `SELECT passwordHash FROM userPasswords WHERE openId = ? LIMIT 1`, [openId]
+      sql`SELECT passwordHash FROM userPasswords WHERE openId = ${openId} LIMIT 1`
     );
     const storedHash = firstRow(pwRows)?.passwordHash;
     if (!storedHash) {

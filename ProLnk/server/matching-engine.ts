@@ -32,6 +32,7 @@
  */
 
 import { getDb } from "./db";
+import { sql } from "drizzle-orm";
 import { getZipInfo } from "../shared/dfw-zipcodes";
 
 export const SCORING_WEIGHTS = {
@@ -300,9 +301,8 @@ export async function rankPartnersForOpportunity(opportunityId: number): Promise
   if (!db) return [];
 
   const oppRows = (await (db as any).execute(
-    `SELECT id, opportunityCategory, opportunityType, jobZip, estimatedJobValue, sourcePartnerId
-     FROM opportunities WHERE id = ? LIMIT 1`,
-    [opportunityId]
+    sql`SELECT id, opportunityCategory, opportunityType, jobZip, estimatedJobValue, sourcePartnerId
+     FROM opportunities WHERE id = ${opportunityId} LIMIT 1`
   )) as any;
   const oppRow = oppRows?.[0]?.[0] ?? oppRows?.rows?.[0] ?? oppRows?.[0];
   if (!oppRow) return [];

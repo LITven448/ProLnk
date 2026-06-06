@@ -293,8 +293,7 @@ export const verificationRouter = router({
           // Use raw query for dynamic field name
           const fieldSql = field;
           await (db as any).execute(
-            `UPDATE partnerVerifications SET \`${fieldSql}\` = ?, updatedAt = ? WHERE partnerId = ?`,
-            [value, now, input.partnerId]
+            sql`UPDATE partnerVerifications SET ${sql.raw(`\`${fieldSql}\``)} = ${value}, updatedAt = ${now} WHERE partnerId = ${input.partnerId}`
           );
         }
       }

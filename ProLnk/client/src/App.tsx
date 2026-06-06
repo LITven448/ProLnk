@@ -46,6 +46,7 @@ const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
 const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
 const PartnerOffers = lazy(() => import("./pages/PartnerOffers"));
+const PartnerDispatch = lazy(() => import("./pages/PartnerDispatch"));
 const ScoutDashboard = lazy(() => import("./pages/ScoutDashboard"));
 const RequestService = lazy(() => import("./pages/RequestService"));
 const RequestStatus = lazy(() => import("./pages/RequestStatus"));
@@ -870,6 +871,7 @@ function Router() {
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />
       <Route path="/partner/offers" component={PartnerOffers} />
+      <Route path="/partner/dispatch" component={PartnerDispatch} />
       <Route path="/scout" component={ScoutDashboard} />
       <Route path="/request-service" component={RequestService} />
       <Route path="/my-request/:id" component={RequestStatus} />

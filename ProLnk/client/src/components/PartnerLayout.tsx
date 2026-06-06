@@ -49,6 +49,7 @@ const NAV_ITEMS = [
     sub: [
       { label: "Inbox",         href: "/dashboard/inbox" },
       { label: "Job Offers",    href: "/partner/offers" },
+      { label: "Dispatch",      href: "/partner/dispatch" },
       { label: "Quote Requests", href: "/dashboard/quote-inbox" },
       { label: "Schedule",      href: "/dashboard/schedule" },
       { label: "Inbound Leads", href: "/dashboard/leads" },

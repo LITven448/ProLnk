@@ -89,6 +89,10 @@ async function validateEnvironment() {
 async function startServer() {
   await validateEnvironment();
 
+  // Self-heal the "no AUTO_INCREMENT on id" problem (sequence-default ids).
+  // Idempotent + guarded — no-op once applied; never blocks boot.
+  import("./ensureDbSequences").then(m => m.ensureDbSequences()).catch(() => {});
+
   const app = express();
   const server = createServer(app);
   // Trust proxy for proper rate limiting behind reverse proxy

@@ -61,12 +61,27 @@ export async function ensureDbSequences(): Promise<void> {
       }
     }
 
-    // Targeted schema fixes also applied to prod on Night 6.
+    // Targeted schema fixes also applied to prod (Night 6 + day run).
     const tweaks = [
       "ALTER TABLE `opportunities` MODIFY `jobId` int NULL",
       "ALTER TABLE `opportunities` MODIFY `sourcePartnerId` int NULL",
+      "ALTER TABLE `opportunities` ADD COLUMN `siteType` VARCHAR(32) NULL DEFAULT 'residential'",
       "ALTER TABLE `partnerReviews` ADD COLUMN `replyText` TEXT NULL",
       "ALTER TABLE `partnerReviews` ADD COLUMN `repliedAt` TIMESTAMP NULL",
+      // partners drifted from schema.ts — these 12 columns broke every full partner
+      // select (completeJob, getConnectStatus, etc.). Re-apply idempotently.
+      "ALTER TABLE `partners` ADD COLUMN `accountType` VARCHAR(20) NULL",
+      "ALTER TABLE `partners` ADD COLUMN `businessLicenseNo` VARCHAR(100) NULL",
+      "ALTER TABLE `partners` ADD COLUMN `staffVettingAttestedAt` TIMESTAMP NULL",
+      "ALTER TABLE `partners` ADD COLUMN `newLead` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `leadExpired` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `commissionPaid` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `tierUpgrade` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `newReview` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `broadcastMessages` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `weeklyDigest` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `emailEnabled` TINYINT(1) NOT NULL DEFAULT 1",
+      "ALTER TABLE `partners` ADD COLUMN `smsEnabled` TINYINT(1) NOT NULL DEFAULT 1",
     ];
     for (const s of tweaks) {
       try { await (db as any).execute(sql.raw(s)); } catch { /* already applied */ }

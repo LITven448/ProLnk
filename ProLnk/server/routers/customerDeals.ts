@@ -382,8 +382,8 @@ export const customerDealsRouter = router({
           cd.id, cd.token, cd.status, cd.issueType, cd.issueCategory,
           cd.issueDescriptionShort, cd.photoUrl, cd.aiConfidence,
           cd.estimatedValueLow, cd.estimatedValueHigh,
-          cd.homeownerName, cd.homeownerCity, cd.homeownerZip,
-          cd.viewCount, cd.scheduledAt, cd.expiresAt,
+          cd.homeownerName, cd.homeownerEmail, cd.homeownerCity, cd.homeownerZip,
+          cd.viewCount, cd.scheduledAt, cd.expiresAt, cd.actualJobValue,
           cd.emailSentAt, cd.smsSentAt, cd.createdAt,
           rp.businessName AS receivingPartnerName,
           sp.businessName AS referringPartnerName

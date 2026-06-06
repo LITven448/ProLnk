@@ -44,7 +44,11 @@ export const waitlistAdminRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
       const result = await db.execute(
-        sql`SELECT id, firstName, lastName, email, phone, address, city, state, homeType, desiredProjects, projectTimeline, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT 1000`
+        sql`SELECT id, firstName, lastName, email, phone, address, city, state, homeType, desiredProjects, projectTimeline,
+                   yearBuilt, squareFootage, lotSizeSqFt, bedrooms, bathrooms, stories, garageSpaces,
+                   hasPool, hasBasement, hasAttic, ownershipStatus, yearsOwned, overallCondition, homeSystems, estimatedBudget,
+                   createdAt
+            FROM homeWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
       return (result?.[0] || []) as Array<{
@@ -59,6 +63,22 @@ export const waitlistAdminRouter = router({
         homeType: string;
         desiredProjects: string;
         projectTimeline: string;
+        // Home Health Vault property enrichment (captured at intake)
+        yearBuilt?: number | null;
+        squareFootage?: number | null;
+        lotSizeSqFt?: number | null;
+        bedrooms?: number | null;
+        bathrooms?: string | null;
+        stories?: number | null;
+        garageSpaces?: number | null;
+        hasPool?: number | null;
+        hasBasement?: number | null;
+        hasAttic?: number | null;
+        ownershipStatus?: string | null;
+        yearsOwned?: number | null;
+        overallCondition?: string | null;
+        homeSystems?: unknown;
+        estimatedBudget?: string | null;
         createdAt: Date;
         position?: number;
       }>;

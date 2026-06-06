@@ -19,6 +19,7 @@
  */
 import { z } from "zod";
 import bcrypt from "bcryptjs";
+import crypto from "crypto";
 import { sql } from "drizzle-orm";
 import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
 import { getDb, getUserByOpenId } from "../db";
@@ -26,10 +27,31 @@ import { sdk } from "../_core/sdk";
 import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import { getSessionCookieOptions } from "../_core/cookies";
 import { firstRow } from "../_core/dbRows";
+import { sendHomeownerPasswordReset } from "../email";
 import { TRPCError } from "@trpc/server";
+
+const APP_BASE_URL = process.env.APP_BASE_URL ?? "https://trustypro.io";
 
 function makeOpenId(email: string) {
   return `homeowner_${email.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
+}
+
+/**
+ * Self-healing migration: the userPasswords table predates the homeowner reset
+ * flow and has no reset-token columns. We add them idempotently (each ALTER is
+ * try/catch'd so a re-run on an already-migrated table is a no-op) and call this
+ * at the top of every reset procedure rather than relying on a separate migration.
+ */
+let resetInfraReady = false;
+async function ensureResetInfra(db: Awaited<ReturnType<typeof getDb>>) {
+  if (resetInfraReady || !db) return;
+  try {
+    await db.execute(sql`ALTER TABLE userPasswords ADD COLUMN resetToken VARCHAR(64) NULL`);
+  } catch { /* column already exists */ }
+  try {
+    await db.execute(sql`ALTER TABLE userPasswords ADD COLUMN resetTokenExpiry TIMESTAMP NULL`);
+  } catch { /* column already exists */ }
+  resetInfraReady = true;
 }
 
 export const homeownerAuthRouter = router({
@@ -172,4 +194,79 @@ export const homeownerAuthRouter = router({
       profile,
     };
   }),
+
+  // --- Request a password reset (forgot password) ---
+  // Always returns { success: true } regardless of whether the account exists,
+  // to avoid leaking which emails are registered.
+  requestPasswordReset: publicProcedure
+    .input(z.object({ email: z.string().email() }))
+    .mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) return { success: true as const };
+      await ensureResetInfra(db);
+
+      const openId = makeOpenId(input.email);
+      const pwRow = firstRow(await db.execute(sql`
+        SELECT openId FROM userPasswords WHERE openId = ${openId} AND passwordHash IS NOT NULL LIMIT 1
+      `));
+      if (!pwRow) return { success: true as const };
+
+      const user = await getUserByOpenId(openId);
+      const token = crypto.randomBytes(32).toString("hex");
+      const expiry = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+
+      await db.execute(sql`
+        UPDATE userPasswords
+        SET resetToken = ${token}, resetTokenExpiry = ${expiry}
+        WHERE openId = ${openId}
+      `);
+
+      const resetUrl = `${APP_BASE_URL}/trustypro/reset-password?token=${token}`;
+      await sendHomeownerPasswordReset({
+        to: input.email.toLowerCase(),
+        homeownerName: user?.name || "there",
+        resetUrl,
+      });
+
+      return { success: true as const };
+    }),
+
+  // --- Reset password using a token from the emailed link ---
+  resetPassword: publicProcedure
+    .input(z.object({
+      token: z.string().min(1),
+      newPassword: z.string().min(8),
+    }))
+    .mutation(async ({ input, ctx }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+      await ensureResetInfra(db);
+
+      const row = firstRow(await db.execute(sql`
+        SELECT openId FROM userPasswords
+        WHERE resetToken = ${input.token} AND resetTokenExpiry > NOW()
+        LIMIT 1
+      `));
+      if (!row?.openId) {
+        throw new TRPCError({ code: "UNAUTHORIZED", message: "Invalid or expired reset link" });
+      }
+      const openId = row.openId as string;
+
+      const passwordHash = await bcrypt.hash(input.newPassword, 10);
+      await db.execute(sql`
+        UPDATE userPasswords
+        SET passwordHash = ${passwordHash}, resetToken = NULL, resetTokenExpiry = NULL, updatedAt = NOW()
+        WHERE openId = ${openId}
+      `);
+
+      const user = await getUserByOpenId(openId);
+      const sessionToken = await sdk.createSessionToken(openId, {
+        name: user?.name ?? "",
+        expiresInMs: ONE_YEAR_MS,
+      });
+      const cookieOptions = getSessionCookieOptions(ctx.req);
+      ctx.res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
+
+      return { success: true as const };
+    }),
 });

@@ -12,13 +12,19 @@ const BG = "#F7FFFE";
 
 export default function HomeownerLogin() {
   const [, navigate] = useLocation();
-  const [mode, setMode] = useState<"login" | "create">("login");
+  const [mode, setMode] = useState<"login" | "create" | "forgot">("login");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [resetSent, setResetSent] = useState(false);
+
+  const forgotMutation = trpc.homeownerAuth.requestPasswordReset.useMutation({
+    onSuccess: () => setResetSent(true),
+    onError: () => setResetSent(true),
+  });
 
   const loginMutation = trpc.homeownerAuth.login.useMutation({
     onSuccess: () => navigate("/trustypro/home-health"),
@@ -75,14 +81,87 @@ export default function HomeownerLogin() {
             </div>
             <div>
               <h1 className="text-xl font-black text-gray-900">
-                {mode === "create" ? "Create Your Account" : "Welcome Back"}
+                {mode === "create" ? "Create Your Account" : mode === "forgot" ? "Reset Password" : "Welcome Back"}
               </h1>
               <p className="text-xs text-gray-500">
-                {mode === "create" ? "Homeowner Sign Up" : "Homeowner Login"}
+                {mode === "create" ? "Homeowner Sign Up" : mode === "forgot" ? "We'll email you a reset link" : "Homeowner Login"}
               </p>
             </div>
           </div>
 
+          {mode === "forgot" ? (
+            resetSent ? (
+              <div className="text-center py-4">
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                  style={{ backgroundColor: TEAL_LIGHT }}
+                >
+                  <CheckCircle className="w-7 h-7" style={{ color: TEAL }} />
+                </div>
+                <h2 className="text-lg font-black text-gray-900 mb-2">Check Your Email</h2>
+                <p className="text-sm text-gray-500 mb-6">
+                  If an account exists for <strong>{email}</strong>, we've sent a link to reset your password. The link expires in 1 hour.
+                </p>
+                <button
+                  onClick={() => {
+                    setResetSent(false);
+                    setMode("login");
+                  }}
+                  className="w-full py-3.5 rounded-xl text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
+                >
+                  Back to Sign In
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  forgotMutation.mutate({ email });
+                }}
+                className="space-y-4"
+              >
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 mb-1.5">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 focus:outline-none focus:ring-2 transition-shadow"
+                    style={{ "--tw-ring-color": TEAL } as React.CSSProperties}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={forgotMutation.isPending}
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60"
+                  style={{ backgroundColor: TEAL }}
+                >
+                  {forgotMutation.isPending ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      Send Reset Link
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMode("login")}
+                  className="w-full py-3.5 rounded-xl text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
+                >
+                  Back to Sign In
+                </button>
+              </form>
+            )
+          ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             {mode === "create" && (
               <>
@@ -153,6 +232,22 @@ export default function HomeownerLogin() {
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
+              {mode === "login" && (
+                <div className="text-right mt-1.5">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setError("");
+                      setResetSent(false);
+                      setMode("forgot");
+                    }}
+                    className="text-xs font-semibold hover:underline"
+                    style={{ color: TEAL }}
+                  >
+                    Forgot password?
+                  </button>
+                </div>
+              )}
             </div>
 
             {error && (
@@ -183,27 +278,32 @@ export default function HomeownerLogin() {
               )}
             </button>
           </form>
+          )}
 
-          <div className="relative my-5">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-100" />
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-white px-3 text-xs text-gray-400">
-                {mode === "create" ? "Already have an account?" : "New to TrustyPro?"}
-              </span>
-            </div>
-          </div>
+          {mode !== "forgot" && (
+            <>
+              <div className="relative my-5">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-100" />
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="bg-white px-3 text-xs text-gray-400">
+                    {mode === "create" ? "Already have an account?" : "New to TrustyPro?"}
+                  </span>
+                </div>
+              </div>
 
-          <button
-            onClick={() => {
-              setError("");
-              setMode(mode === "create" ? "login" : "create");
-            }}
-            className="w-full py-3.5 rounded-xl text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
-          >
-            {mode === "create" ? "Sign In Instead" : "Create Free Home Profile"}
-          </button>
+              <button
+                onClick={() => {
+                  setError("");
+                  setMode(mode === "create" ? "login" : "create");
+                }}
+                className="w-full py-3.5 rounded-xl text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                {mode === "create" ? "Sign In Instead" : "Create Free Home Profile"}
+              </button>
+            </>
+          )}
 
           <div className="mt-5 flex items-center justify-center gap-5 text-xs text-gray-400">
             <span className="flex items-center gap-1">

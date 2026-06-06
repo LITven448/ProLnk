@@ -296,6 +296,7 @@ const TrustyProWaitlist = lazy(() => import("./pages/trustypro/TrustyProWaitlist
 const PhotoScan = lazy(() => import("./pages/trustypro/PhotoScan"));
 const HomeHealthDashboard = lazy(() => import("./pages/trustypro/HomeHealthDashboard"));
 const HomeownerLogin = lazy(() => import("./pages/trustypro/HomeownerLogin"));
+const ResetPassword = lazy(() => import("./pages/trustypro/ResetPassword"));
 const TrustyProHomeownerDashboard = lazy(() => import("./pages/trustypro/HomeownerDashboard"));
 const PropertySetup = lazy(() => import("./pages/trustypro/PropertySetup"));
 const TrustyProDirectory = lazy(() => import("./pages/homeowner/TrustyProDirectory"));
@@ -1074,6 +1075,7 @@ function Router() {
       <Route path="/trustypro/claim" component={ClaimHome} />
       <Route path="/trustypro/login" component={TrustyProLogin} />
       <Route path="/trustypro/homeowner-login" component={HomeownerLogin} />
+      <Route path="/trustypro/reset-password" component={ResetPassword} />
       <Route path="/trustypro/dashboard" component={TrustyProHomeownerDashboard} />
       <Route path="/trustypro/waitlist" component={TrustyProWaitlist} />
       <Route path="/pro/waitlist" component={ProWaitlist} />

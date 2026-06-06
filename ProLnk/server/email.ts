@@ -1260,6 +1260,20 @@ export async function sendProactiveOpportunityNotification(opts: {
 }
 
 // ─── Partner Password Reset ────────────────────────────────────────────────────
+// ─── TrustyPro Homeowner Password Reset ──────────────────────────────────────
+export async function sendHomeownerPasswordReset(opts: {
+  to: string;
+  homeownerName: string;
+  resetUrl: string;
+}) {
+  return sendEmail({
+    from: FROM_TRUSTYPRO,
+    to: opts.to,
+    subject: `Reset your TrustyPro password`,
+    html: `<div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#1e3a5f,#00B5B8);padding:32px;text-align:center;"><div style="font-size:28px;font-weight:800;color:#fff;">TrustyPro</div><p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:14px;">Your Trusted Home Network</p></div><div style="padding:32px;"><h2 style="color:#0f172a;margin:0 0 8px;">Reset Your Password</h2><p style="color:#475569;line-height:1.7;">Hi ${opts.homeownerName}, we received a request to reset your TrustyPro account password. Click the button below to set a new password.</p><div style="text-align:center;margin:24px 0;"><a href="${opts.resetUrl}" style="background:#00B5B8;color:#fff;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Reset Password</a></div><p style="color:#94a3b8;font-size:13px;">This link expires in 1 hour. If you did not request a password reset, you can safely ignore this email — your password will stay the same.</p></div><div style="background:#f1f5f9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 TrustyPro - DFW, Texas</p></div></div>`,
+  });
+}
+
 export async function sendPartnerPasswordReset(opts: {
   to: string;
   partnerName: string;

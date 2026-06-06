@@ -2490,8 +2490,8 @@ Answer concisely and helpfully. If asked about specific real-time account data (
       if (!partner?.id) return [];
       const rows = await db.execute(
         sql`SELECT pr.id, pr.rating, pr.reviewText, pr.ratingPunctuality, pr.ratingQuality,
-            pr.ratingCommunication, pr.ratingValue, pr.serviceType, pr.createdAt,
-            pr.replyText, pr.repliedAt, pr.homeownerEmail
+            pr.ratingCommunication, pr.ratingValue, pr.createdAt,
+            pr.homeownerEmail
             FROM partnerReviews pr
             WHERE pr.partnerId = ${partner.id} AND pr.flagged = false
             ORDER BY pr.createdAt DESC LIMIT 50`
@@ -3496,14 +3496,14 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
             receivingPartnerPhone: receivingPartner.contactPhone ?? undefined,
             receivingPartnerEmail: receivingPartner.contactEmail ?? undefined,
             issueType: opp.opportunityType ?? opp.opportunityCategory ?? "Service Request",
-            serviceCity: opp.serviceAddress ?? "",
+            serviceCity: opp.jobAddress ?? "",
             estimatedJobValue: opp.estimatedJobValue ? Number(opp.estimatedJobValue) : undefined,
             expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
           }).catch(() => {});
           if (receivingPartner.contactPhone) {
             sendLeadAlertSMS(receivingPartner.contactPhone, {
               trade: opp.opportunityType ?? opp.opportunityCategory ?? "Service Request",
-              address: opp.serviceAddress ?? "your service area",
+              address: opp.jobAddress ?? "your service area",
               estimatedValue: opp.estimatedJobValue ? Number(opp.estimatedJobValue) : 0,
               dashboardUrl: `${process.env.APP_BASE_URL ?? "https://prolnk.xyz"}/dashboard/leads/${input.opportunityId}`,
             }).catch(() => {});
@@ -4959,7 +4959,7 @@ Return a JSON object with:
         const stats = await getPartnerStats(input.partnerId);
         const earnedCommissions = await getEarnedCommissionsByPartnerId(input.partnerId);
         const reviewRows = await db.execute(
-          sql`SELECT id, rating, ratingPunctuality, ratingQuality, ratingCommunication, ratingValue, reviewText, serviceType, createdAt FROM partnerReviews WHERE partnerId = ${input.partnerId} AND flagged = false ORDER BY createdAt DESC LIMIT 20`
+          sql`SELECT id, rating, ratingPunctuality, ratingQuality, ratingCommunication, ratingValue, reviewText, createdAt FROM partnerReviews WHERE partnerId = ${input.partnerId} AND flagged = false ORDER BY createdAt DESC LIMIT 20`
         );
         const reviews = (reviewRows[0] as any[]) ?? [];
         const jobRows = await db.execute(
@@ -6116,11 +6116,10 @@ Return a JSON object with:
         if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
         const normalized = input.address.toLowerCase().trim().replace(/\s+/g, " ");
         const hash = crypto.createHash("sha256").update(normalized).digest("hex");
-        const id = Math.floor(Math.random() * 2_000_000_000) + 1;
         try {
           await pool.query(
-            "INSERT INTO home_documentation (id, pro_user_id, full_address, address_hash, is_first_documentation, origination_credit_earned) VALUES (?, ?, ?, ?, 1, 1)",
-            [id, String(ctx.user.id ?? ""), input.address, hash]
+            "INSERT INTO home_documentation (pro_user_id, full_address, address_hash, is_first_documentation, origination_credit_earned) VALUES (?, ?, ?, 1, 1)",
+            [String(ctx.user.id ?? ""), input.address, hash]
           );
           return { success: true, message: "Origination rights claimed!" };
         } catch (e: any) {

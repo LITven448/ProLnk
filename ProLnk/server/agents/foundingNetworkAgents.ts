@@ -188,7 +188,7 @@ export async function runCommissionDistributionAgent(params: {
     const platformFee = Math.round(jobValue * Math.min(Math.max(platformFeeRate, 0.06), 0.15) * 100) / 100;
 
     const [proRows] = await pool.execute<any[]>(
-      `SELECT p.userId, p.referredByUserId, p.referralCode FROM pro_network_profile p
+      `SELECT p.user_id AS userId, p.referred_by_user_id AS referredByUserId, p.referral_code AS referralCode FROM pro_network_profile p
        JOIN proWaitlist w ON w.email = ?
        LIMIT 1`,
       [completingProEmail]
@@ -200,8 +200,8 @@ export async function runCommissionDistributionAgent(params: {
       const proUserId = proRows[0].userId;
 
       const [chainRows] = await pool.execute<any[]>(
-        `SELECT uplineUserId as userId, levelsAbove as level FROM pro_upline_chain
-         WHERE proUserId = ? AND levelsAbove <= 4 ORDER BY levelsAbove`,
+        `SELECT upline_user_id AS userId, levels_above AS level FROM pro_upline_chain
+         WHERE pro_user_id = ? AND levels_above <= 4 ORDER BY levels_above`,
         [proUserId]
       ).catch(() => [[]] as any);
 
@@ -210,7 +210,7 @@ export async function runCommissionDistributionAgent(params: {
 
     const addressHash = Buffer.from(propertyAddress.toLowerCase().trim()).toString('hex').slice(0, 64);
     const [originRows] = await pool.execute<any[]>(
-      `SELECT proUserId FROM home_documentation WHERE addressHash = ? AND isFirstDocumentation = 1 LIMIT 1`,
+      `SELECT pro_user_id AS proUserId FROM home_documentation WHERE address_hash = ? AND is_first_documentation = 1 LIMIT 1`,
       [addressHash]
     ).catch(() => [[]] as any);
 
@@ -268,10 +268,10 @@ export async function runOriginationLockAgent(params: {
     if (!pool) return { locked: false, isNewClaim: false };
 
     const [existingRows] = await pool.execute<any[]>(
-      `SELECT d.proUserId, w.email as proEmail
+      `SELECT d.pro_user_id AS proUserId, w.email as proEmail
        FROM home_documentation d
-       LEFT JOIN proWaitlist w ON w.email = d.proUserId
-       WHERE d.addressHash = ? LIMIT 1`,
+       LEFT JOIN proWaitlist w ON w.email = d.pro_user_id
+       WHERE d.address_hash = ? LIMIT 1`,
       [addressHash]
     );
 
@@ -283,7 +283,7 @@ export async function runOriginationLockAgent(params: {
 
     await pool.execute(
       `INSERT INTO home_documentation
-         (proUserId, addressHash, fullAddress, isFirstDocumentation, originationCreditEarned, originationCreditAmount, documentedAt)
+         (pro_user_id, address_hash, full_address, is_first_documentation, origination_credit_earned, origination_credit_amount, documented_at)
        VALUES (?, ?, ?, 1, 0, 0.00, NOW())`,
       [proEmail, addressHash, normalizedAddress]
     );
@@ -318,14 +318,14 @@ export async function runPhotoAttributionAgent(params: {
     const addressHash = Buffer.from(normalizedAddress).toString('hex').slice(0, 64);
 
     const [existing] = await pool.execute<any[]>(
-      `SELECT id FROM home_documentation WHERE addressHash = ? LIMIT 1`,
+      `SELECT id FROM home_documentation WHERE address_hash = ? LIMIT 1`,
       [addressHash]
     );
 
     if (!existing.length) {
       await pool.execute(
         `INSERT INTO home_documentation
-           (proUserId, addressHash, fullAddress, isFirstDocumentation, originationCreditEarned, originationCreditAmount, documentedAt)
+           (pro_user_id, address_hash, full_address, is_first_documentation, origination_credit_earned, origination_credit_amount, documented_at)
          VALUES (?, ?, ?, 1, 1, 0.25, NOW())`,
         [uploaderEmail, addressHash, normalizedAddress]
       );
@@ -352,7 +352,7 @@ export async function runGenealogyAgent(partnerId: number): Promise<GenealogyRes
     if (!pool) return emptyResult;
 
     const [rootRows] = await pool.execute<any[]>(
-      `SELECT id, userId, referralCode, networkLevel, referredByUserId FROM pro_network_profile WHERE id = ? LIMIT 1`,
+      `SELECT id, user_id AS userId, referral_code AS referralCode, network_level AS networkLevel, referred_by_user_id AS referredByUserId FROM pro_network_profile WHERE id = ? LIMIT 1`,
       [partnerId]
     );
 
@@ -364,7 +364,7 @@ export async function runGenealogyAgent(partnerId: number): Promise<GenealogyRes
     let currentUserId = root.referredByUserId;
     for (let level = 1; level <= 4 && currentUserId; level++) {
       const [upRows] = await pool.execute<any[]>(
-        `SELECT id, userId, referralCode, networkLevel, referredByUserId FROM pro_network_profile WHERE userId = ? LIMIT 1`,
+        `SELECT id, user_id AS userId, referral_code AS referralCode, network_level AS networkLevel, referred_by_user_id AS referredByUserId FROM pro_network_profile WHERE user_id = ? LIMIT 1`,
         [currentUserId]
       ).catch(() => [[]] as any);
 
@@ -379,8 +379,8 @@ export async function runGenealogyAgent(partnerId: number): Promise<GenealogyRes
     for (let depth = 1; depth <= 4 && currentLevel.length; depth++) {
       const placeholders = currentLevel.map(() => '?').join(',');
       const [downRows] = await pool.execute<any[]>(
-        `SELECT id, userId, referralCode, networkLevel FROM pro_network_profile
-         WHERE referredByUserId IN (${placeholders}) LIMIT 100`,
+        `SELECT id, user_id AS userId, referral_code AS referralCode, network_level AS networkLevel FROM pro_network_profile
+         WHERE referred_by_user_id IN (${placeholders}) LIMIT 100`,
         currentLevel
       ).catch(() => [[]] as any);
 

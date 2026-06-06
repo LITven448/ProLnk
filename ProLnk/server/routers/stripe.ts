@@ -1137,12 +1137,18 @@ export async function handleStripeWebhook(req: Request, res: Response) {
       }
 
       if (subscribingPartnerId) {
-        import("../agents/commissionCascadeEngine").then(({ distributeSubscriptionCommissions }) => {
-          distributeSubscriptionCommissions({
+        // Await so the cascade completes within the handler instead of racing the
+        // HTTP response. The processed-event guard above already prevents double
+        // distribution on Stripe retries.
+        try {
+          const { distributeSubscriptionCommissions } = await import("../agents/commissionCascadeEngine");
+          await distributeSubscriptionCommissions({
             subscribingPartnerId: subscribingPartnerId as number,
             subscriptionAmount,
-          }).catch((e: Error) => console.error("[Stripe webhook] Subscription commission failed:", e));
-        });
+          });
+        } catch (e) {
+          console.error("[Stripe webhook] Subscription commission failed:", e);
+        }
       } else {
         console.warn(`[Stripe Webhook] invoice.paid: no partnerId resolved for "${subscriberEmail}" — subscription cascade skipped`);
       }

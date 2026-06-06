@@ -1,5 +1,4 @@
-import React from 'react';
-import type React from "react";
+import React from "react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";

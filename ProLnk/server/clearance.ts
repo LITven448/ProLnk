@@ -1,11 +1,11 @@
 /**
  * Trust Model — Phase 1 clearance helpers (self-healing DDL + computed tier).
  *
- * The roster/credential tables in this DB were created by raw SQL (0004) and the
- * production DB has NO auto-increment on `id` for raw-SQL tables — so callers
- * assign ids explicitly via `SELECT COALESCE(MAX(id),0)+1`. These helpers add the
- * Phase-1 columns idempotently (mirroring the app's ensureXInfra() self-heal
- * pattern) so no migration is required, and expose `computeTier()`.
+ * The roster/credential tables in this DB were created by raw SQL (0004). The
+ * production DB now has a sequence-default on `id`, so inserts that OMIT `id` get
+ * one auto-assigned (concurrency-safe). These helpers add the Phase-1 columns
+ * idempotently (mirroring the app's ensureXInfra() self-heal pattern) so no
+ * migration is required, and expose `computeTier()`.
  *
  * Tier ladder (Phase 1 only surfaces 0/1; 2/3 are Phase 2/3):
  *   0 = Listed     (on a roster, nothing verified)
@@ -120,17 +120,6 @@ export async function cacheEmployeeTier(employeeId: number, tier: number): Promi
   } catch {
     // best-effort cache only
   }
-}
-
-/** Next explicit id for a raw-SQL table that has no auto-increment in prod. */
-export async function nextId(table: "partnerEmployees" | "proPassCards"): Promise<number> {
-  const db = await getDb();
-  if (!db) return 1;
-  const rows = await (db as any).execute(
-    `SELECT COALESCE(MAX(id),0)+1 AS nextId FROM \`${table}\``,
-  );
-  const r = firstRow(rows);
-  return Number(r?.nextId ?? 1);
 }
 
 export { asRows, firstRow };

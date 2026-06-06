@@ -298,7 +298,7 @@ export async function updateJobAiAnalysis(jobId: number, analysis: any) {
 export async function closeOpportunityWithJobValue(opportunityId: number, jobValue: number) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  await db.update(opportunities).set({ status: 'closed', jobValue, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
+  await db.update(opportunities).set({ status: 'closed', actualJobValue: jobValue, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
 }
 
 export async function createBroadcast(data: any) {

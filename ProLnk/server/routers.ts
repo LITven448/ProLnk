@@ -2045,14 +2045,14 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         try {
           const db = await getDb();
           if (db) {
-            const oppRows = await db.execute(sql`SELECT homeownerEmail, homeownerName, serviceType, serviceAddress FROM opportunities WHERE id = ${input.opportunityId} LIMIT 1`) as any;
+            const oppRows = await db.execute(sql`SELECT homeownerEmail, homeownerName, opportunityType, jobAddress FROM opportunities WHERE id = ${input.opportunityId} LIMIT 1`) as any;
             const opp = oppRows?.[0]?.[0] ?? oppRows?.[0];
             if (opp?.homeownerEmail) {
               const reviewUrl = `${ENV.appBaseUrl}/review/${input.opportunityId}`;
-              sendReviewRequest({ to: opp.homeownerEmail, homeownerName: opp.homeownerName ?? 'Homeowner', proName: partner.contactName ?? partner.businessName, businessName: partner.businessName, tradeType: opp.serviceType ?? 'home service', reviewUrl }).catch(() => {});
+              sendReviewRequest({ to: opp.homeownerEmail, homeownerName: opp.homeownerName ?? 'Homeowner', proName: partner.contactName ?? partner.businessName, businessName: partner.businessName, tradeType: opp.opportunityType ?? 'home service', reviewUrl }).catch(() => {});
             }
             // Fire network commission engine if homeowner confirmed
-            if (opp?.serviceAddress) {
+            if (opp?.jobAddress) {
               const { networkRouter } = await import("./routers/network");
               // We use the internal procedure directly — avoids full tRPC overhead
               import("./db").then(async ({ getDb: getDb2 }) => {
@@ -2068,7 +2068,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 if (!userId) return;
                 const { NETWORK_RATES } = await import("../shared/const");
                 const addrHash = createHash("sha256")
-                  .update((opp.serviceAddress as string).toLowerCase().replace(/\s+/g, " ").trim())
+                  .update((opp.jobAddress as string).toLowerCase().replace(/\s+/g, " ").trim())
                   .digest("hex");
                 const currentMonth = new Date().toISOString().slice(0, 7);
                 const proRows = await (db2 as any).execute(
@@ -2143,7 +2143,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 await (db2 as any).execute(sql2`
                   INSERT IGNORE INTO home_documentation
                     (pro_user_id, address_hash, full_address, is_first_documentation, origination_credit_earned, origination_credit_amount, documented_at)
-                  VALUES (${userId}, ${addrHash}, ${opp.serviceAddress}, ${isFirst ? 1 : 0}, ${isFirst ? 1 : 0}, ${isFirst ? 0.25 : 0.00}, NOW())
+                  VALUES (${userId}, ${addrHash}, ${opp.jobAddress}, ${isFirst ? 1 : 0}, ${isFirst ? 1 : 0}, ${isFirst ? 0.25 : 0.00}, NOW())
                 `);
                 if (isFirst) {
                   await (db2 as any).execute(sql2`

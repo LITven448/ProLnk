@@ -60,8 +60,8 @@ export const homeownerAuthRouter = router({
 
       const passwordHash = await bcrypt.hash(input.password, 10);
 
-      // Create/locate the user record. users.id has NO auto-increment in this DB,
-      // so assign it explicitly (MAX+1) — upsertUser's plain insert fails here.
+      // Create/locate the user record. The DB sequence-default assigns users.id
+      // when omitted — do NOT compute MAX+1 (it collides with the sequence).
       const emailLc = input.email.toLowerCase();
       let userId: number;
       const existingUserRow = firstRow(await db.execute(sql`SELECT id FROM users WHERE openId = ${openId} LIMIT 1`));
@@ -69,28 +69,27 @@ export const homeownerAuthRouter = router({
         userId = Number(existingUserRow.id);
         await db.execute(sql`UPDATE users SET name = ${input.name}, email = ${emailLc}, lastSignedIn = NOW() WHERE id = ${userId}`).catch(() => {});
       } else {
-        userId = Number(firstRow(await db.execute(sql`SELECT COALESCE(MAX(id),0)+1 AS n FROM users`))?.n ?? 1);
         await db.execute(sql`
-          INSERT INTO users (id, openId, name, email, loginMethod, lastSignedIn)
-          VALUES (${userId}, ${openId}, ${input.name}, ${emailLc}, 'homeowner_password', NOW())
+          INSERT INTO users (openId, name, email, loginMethod, lastSignedIn)
+          VALUES (${openId}, ${input.name}, ${emailLc}, 'homeowner_password', NOW())
         `);
+        const created = await getUserByOpenId(openId);
+        userId = Number(created?.id);
       }
 
-      // Store the password hash in userPasswords (id has no auto-increment → explicit).
-      const pwId = Number(firstRow(await db.execute(sql`SELECT COALESCE(MAX(id),0)+1 AS n FROM userPasswords`))?.n ?? 1);
+      // Store the password hash in userPasswords (id assigned by sequence-default).
       await db.execute(sql`
-        INSERT INTO userPasswords (id, openId, passwordHash)
-        VALUES (${pwId}, ${openId}, ${passwordHash})
+        INSERT INTO userPasswords (openId, passwordHash)
+        VALUES (${openId}, ${passwordHash})
         ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), updatedAt = NOW()
       `);
 
-      // Create the homeownerProfiles row if one doesn't already exist (id also explicit).
+      // Create the homeownerProfiles row if one doesn't already exist (id by sequence-default).
       const existingProfile = firstRow(await db.execute(sql`SELECT id FROM homeownerProfiles WHERE userId = ${userId} LIMIT 1`));
       if (!existingProfile) {
-        const profileId = Number(firstRow(await db.execute(sql`SELECT COALESCE(MAX(id),0)+1 AS n FROM homeownerProfiles`))?.n ?? 1);
         await db.execute(sql`
-          INSERT INTO homeownerProfiles (id, userId, displayName, phone, createdAt, updatedAt)
-          VALUES (${profileId}, ${userId}, ${input.name}, ${input.phone ?? null}, NOW(), NOW())
+          INSERT INTO homeownerProfiles (userId, displayName, phone, createdAt, updatedAt)
+          VALUES (${userId}, ${input.name}, ${input.phone ?? null}, NOW(), NOW())
         `);
       }
 

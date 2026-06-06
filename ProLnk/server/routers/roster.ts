@@ -26,7 +26,7 @@ import { notifyOwner } from "../_core/notification";
 import { sendEmail, FROM_PROLNK } from "../email";
 import { sendSms } from "../notifications";
 import { initiateBackgroundCheck } from "./checkr";
-import { ensureClearanceInfra, computeTier, cacheEmployeeTier, nextId } from "../clearance";
+import { ensureClearanceInfra, computeTier, cacheEmployeeTier } from "../clearance";
 
 const BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.xyz";
 
@@ -92,17 +92,23 @@ export const rosterRouter = router({
       const partner = await resolveCallerPartner(ctx.user.id);
       if (!partner) throw new TRPCError({ code: "FORBIDDEN", message: "No partner profile for this account." });
 
-      const id = await nextId("partnerEmployees");
+      // id is assigned by the DB sequence-default — omit it. We stamp a unique
+      // rowToken so we can read the new id back without MAX+1.
+      const rowToken = nanoid(32);
       await (db as any).execute(sql`
         INSERT INTO partnerEmployees (
-          id, partnerId, firstName, lastName, email, phone, role,
-          employmentType, isActive, rosterStatus, computedTier, createdAt, updatedAt
+          partnerId, firstName, lastName, email, phone, role,
+          employmentType, isActive, rosterStatus, computedTier, inviteToken, createdAt, updatedAt
         ) VALUES (
-          ${id}, ${partner.id}, ${input.firstName}, ${input.lastName},
+          ${partner.id}, ${input.firstName}, ${input.lastName},
           ${input.email ?? null}, ${input.phone ?? null}, ${input.role ?? null},
-          ${input.employmentType}, 1, 'active', 0, NOW(), NOW()
+          ${input.employmentType}, 1, 'active', 0, ${rowToken}, NOW(), NOW()
         )
       `);
+      const createdRows = await (db as any).execute(sql`
+        SELECT id FROM partnerEmployees WHERE inviteToken = ${rowToken} LIMIT 1
+      `);
+      const id = Number(firstRow(createdRows)?.id);
 
       return {
         employeeId: id,
@@ -239,21 +245,57 @@ export const rosterRouter = router({
         throw new TRPCError({ code: "BAD_REQUEST", message: "No email on file — ask your company to add one." });
       }
 
+      // Idempotency guard: Checkr is paid — never re-trigger if a check is already
+      // running or finished. Short-circuit and return the existing status instead.
+      const rosterStatus = String(emp.rosterStatus ?? "");
+      let existingCheckStatus: string | null = null;
+      let existingCandidateId: string | null = null;
+      if (emp.proPassId) {
+        const passRows = await (db as any).execute(sql`
+          SELECT backgroundCheckStatus, checkrCandidateId
+          FROM proPassCards WHERE id = ${emp.proPassId} LIMIT 1
+        `);
+        const pass = firstRow(passRows);
+        existingCheckStatus = pass?.backgroundCheckStatus ?? null;
+        existingCandidateId = pass?.checkrCandidateId ?? null;
+      }
+      const checkInFlight =
+        rosterStatus === "in_progress" ||
+        rosterStatus === "complete" ||
+        !!existingCandidateId ||
+        (existingCheckStatus != null &&
+          existingCheckStatus !== "not_submitted" &&
+          existingCheckStatus !== "");
+      if (checkInFlight) {
+        return {
+          success: true,
+          invitationUrl: null,
+          alreadyStarted: true,
+          backgroundCheckStatus: existingCheckStatus ?? "in_progress",
+          message: "A background check is already underway for you — no need to start another.",
+        };
+      }
+
       // Ensure the employee has a ProPass to own the (portable) check result.
       let passId: number | null = emp.proPassId ?? null;
       if (!passId) {
-        passId = await nextId("proPassCards");
         const passCode = nanoid(16);
+        // id is assigned by the DB sequence-default — omit it, then read it back
+        // by the unique passCode (mirrors proPass.createPass).
         await (db as any).execute(sql`
           INSERT INTO proPassCards (
-            id, partnerId, employeeId, passCode, firstName, lastName, email, phone,
+            partnerId, employeeId, passCode, firstName, lastName, email, phone,
             status, passScore, backgroundCheckStatus
           ) VALUES (
-            ${passId}, ${emp.partnerId}, ${emp.id}, ${passCode},
+            ${emp.partnerId}, ${emp.id}, ${passCode},
             ${emp.firstName}, ${emp.lastName}, ${emp.email}, ${emp.phone ?? null},
             'pending', 0, 'not_submitted'
           )
         `);
+        const newPassRows = await (db as any).execute(sql`
+          SELECT id FROM proPassCards WHERE passCode = ${passCode} LIMIT 1
+        `);
+        passId = Number(firstRow(newPassRows)?.id);
         await (db as any).execute(sql`
           UPDATE partnerEmployees SET proPassId = ${passId}, updatedAt = NOW() WHERE id = ${emp.id}
         `);

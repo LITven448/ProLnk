@@ -111,7 +111,7 @@ export const networkRouter = router({
         );
         const referrerRow = asRows(selfCheck)[0];
         if (!referrerRow) throw new TRPCError({ code: "NOT_FOUND", message: "Referral code not found." });
-        if (referrerRow.user_id === ctx.user.id) {
+        if (String(referrerRow.user_id) === String(ctx.user.id)) {
           throw new TRPCError({ code: "BAD_REQUEST", message: "You cannot use your own referral code." });
         }
 

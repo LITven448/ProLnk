@@ -40,8 +40,8 @@ export default function NotificationCenter() {
   const [filter, setFilter] = useState<"all" | "unread" | "email">("unread");
 
   // Fetch notifications from notificationLog table
-  const notifications = trpc.admin.getNotifications.useQuery({ filter, limit: 100 });
-  const markRead = trpc.admin.markNotificationsRead.useMutation({
+  const notifications = trpc.adminNotifications.getNotifications.useQuery({ filter, limit: 100 });
+  const markRead = trpc.adminNotifications.markNotificationsRead.useMutation({
     onSuccess: () => notifications.refetch(),
   });
 

@@ -3101,6 +3101,41 @@ Answer concisely and helpfully. If asked about specific real-time account data (
         }
       }),
 
+    // CCPA/GDPR data deletion requests workqueue (DeletionRequests.tsx)
+    getDeletionRequests: adminProcedure
+      .input(z.object({ status: z.enum(["all", "pending", "processed"]).default("pending") }).optional())
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return { items: [] as any[], total: 0 };
+        try {
+          const status = input?.status ?? "pending";
+          const statusClause = status === "all" ? sql`` : sql`WHERE status = ${status}`;
+          const rows = await db.execute(sql`
+            SELECT id, email, reason, status, requestedAt
+            FROM data_deletion_requests
+            ${statusClause}
+            ORDER BY requestedAt DESC
+            LIMIT 500
+          `);
+          const items = asRows(rows);
+          return { items, total: items.length };
+        } catch {
+          return { items: [] as any[], total: 0 };
+        }
+      }),
+
+    // Mark a deletion request as handled — updates status flag only, does NOT delete user data (DeletionRequests.tsx)
+    markDeletionRequestProcessed: adminProcedure
+      .input(z.object({ id: z.number().int(), status: z.enum(["pending", "processed"]).default("processed") }))
+      .mutation(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return { success: true };
+        await db.execute(sql`
+          UPDATE data_deletion_requests SET status = ${input.status} WHERE id = ${input.id}
+        `);
+        return { success: true };
+      }),
+
     // Admin: manually trigger PPS recalculation for all partners
     recalculatePartnerScores: adminProcedure.mutation(async () => {
       const result = await recalculateAllPartnerScores();

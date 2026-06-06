@@ -430,6 +430,7 @@ const ProLnkMediaSite = lazy(() => import("@/pages/media/ProLnkMediaSite"));
 const MediaSiteLazy = () => <Suspense fallback={<div style={{background:"#050508",minHeight:"100vh"}} />}><ProLnkMediaSite /></Suspense>;
 const SecurityTrustCenter = lazy(() => import("@/pages/SecurityTrustCenter"));
 const PhotoAccessLog = lazy(() => import("@/pages/admin/PhotoAccessLog"));
+const DeletionRequests = lazy(() => import("@/pages/admin/DeletionRequests"));
 const PartnerCheckIns = lazy(() => import("./pages/admin/PartnerCheckIns"));
 const PartnerSpotlightsAdmin = lazy(() => import("./pages/admin/PartnerSpotlights"));
 const NotificationCenterAdmin = lazy(() => import("./pages/admin/NotificationCenter"));
@@ -1005,6 +1006,7 @@ function Router() {
       <Route path="/admin/trustypro" component={TrustyProOverview} />
       <Route path="/admin/trustypro-scans" component={TrustyProScans} />
       <Route path="/admin/photo-access-log" component={PhotoAccessLog} />
+      <Route path="/admin/deletion-requests" component={DeletionRequests} />
       <Route path="/admin/home-intelligence" component={HomeIntelligence} />
       <Route path="/admin/knowledge-graph" component={KnowledgeGraph} />
       <Route path="/admin/business-packet" component={BusinessPacket} />

@@ -16,6 +16,56 @@ import { getDb } from "../db";
 
 let ran = false;
 
+// Idempotent targeted schema fixes (Night 6 + day run). These run on EVERY boot,
+// independent of the sequence-migration marker below, because new tweaks are added
+// over time and must reach an already-migrated DB too. Each ALTER is cheap and the
+// per-statement try/catch swallows "already exists" — so re-running is a no-op.
+const SCHEMA_TWEAKS = [
+  "ALTER TABLE `opportunities` MODIFY `jobId` int NULL",
+  "ALTER TABLE `opportunities` MODIFY `sourcePartnerId` int NULL",
+  "ALTER TABLE `opportunities` ADD COLUMN `siteType` VARCHAR(32) NULL DEFAULT 'residential'",
+  "ALTER TABLE `partnerReviews` ADD COLUMN `replyText` TEXT NULL",
+  "ALTER TABLE `partnerReviews` ADD COLUMN `repliedAt` TIMESTAMP NULL",
+  // partners drifted from schema.ts — these 12 columns broke every full partner
+  // select (completeJob, getConnectStatus, etc.). Re-apply idempotently.
+  "ALTER TABLE `partners` ADD COLUMN `accountType` VARCHAR(20) NULL",
+  "ALTER TABLE `partners` ADD COLUMN `businessLicenseNo` VARCHAR(100) NULL",
+  "ALTER TABLE `partners` ADD COLUMN `staffVettingAttestedAt` TIMESTAMP NULL",
+  "ALTER TABLE `partners` ADD COLUMN `newLead` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `leadExpired` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `commissionPaid` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `tierUpgrade` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `newReview` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `broadcastMessages` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `weeklyDigest` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `emailEnabled` TINYINT(1) NOT NULL DEFAULT 1",
+  "ALTER TABLE `partners` ADD COLUMN `smsEnabled` TINYINT(1) NOT NULL DEFAULT 1",
+  // homeWaitlist — Home Health Vault property enrichment captured at intake.
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `yearBuilt` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `squareFootage` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `lotSizeSqFt` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `bedrooms` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `bathrooms` VARCHAR(10) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `stories` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `garageSpaces` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `hasPool` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `hasBasement` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `hasAttic` TINYINT(1) NULL DEFAULT 0",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `ownershipStatus` VARCHAR(255) NULL DEFAULT 'own'",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `yearsOwned` INT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `overallCondition` TEXT NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `homeSystems` JSON NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `estimatedBudget` VARCHAR(50) NULL",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `projectTimeline` VARCHAR(255) NULL DEFAULT 'just_exploring'",
+  "ALTER TABLE `homeWaitlist` ADD COLUMN `homeType` VARCHAR(50) NULL DEFAULT 'single_family'",
+];
+
+async function applySchemaTweaks(db: any): Promise<void> {
+  for (const s of SCHEMA_TWEAKS) {
+    try { await (db as any).execute(sql.raw(s)); } catch { /* already applied */ }
+  }
+}
+
 export async function ensureDbSequences(): Promise<void> {
   if (ran) return;
   ran = true;
@@ -23,10 +73,15 @@ export async function ensureDbSequences(): Promise<void> {
     const db = await getDb();
     if (!db) return;
 
-    // Cheap marker: if seq_userPasswords already exists, assume migration done.
+    // Targeted schema tweaks run EVERY boot (idempotent), even on a migrated DB —
+    // this is what reaches prod when a new column is added to the list.
+    await applySchemaTweaks(db);
+
+    // Cheap marker: if seq_userPasswords already exists, the sequence migration is
+    // done — skip the expensive 121-table pass (but tweaks above already ran).
     try {
       await (db as any).execute(sql`SELECT NEXTVAL(\`seq_userPasswords\`)`);
-      return; // already migrated
+      return; // sequences already migrated
     } catch {
       // marker sequence missing -> run the migration
     }
@@ -59,49 +114,6 @@ export async function ensureDbSequences(): Promise<void> {
       } catch (e: any) {
         console.warn(`[ensureDbSequences] ${t}: ${e?.message ?? e}`);
       }
-    }
-
-    // Targeted schema fixes also applied to prod (Night 6 + day run).
-    const tweaks = [
-      "ALTER TABLE `opportunities` MODIFY `jobId` int NULL",
-      "ALTER TABLE `opportunities` MODIFY `sourcePartnerId` int NULL",
-      "ALTER TABLE `opportunities` ADD COLUMN `siteType` VARCHAR(32) NULL DEFAULT 'residential'",
-      "ALTER TABLE `partnerReviews` ADD COLUMN `replyText` TEXT NULL",
-      "ALTER TABLE `partnerReviews` ADD COLUMN `repliedAt` TIMESTAMP NULL",
-      // partners drifted from schema.ts — these 12 columns broke every full partner
-      // select (completeJob, getConnectStatus, etc.). Re-apply idempotently.
-      "ALTER TABLE `partners` ADD COLUMN `accountType` VARCHAR(20) NULL",
-      "ALTER TABLE `partners` ADD COLUMN `businessLicenseNo` VARCHAR(100) NULL",
-      "ALTER TABLE `partners` ADD COLUMN `staffVettingAttestedAt` TIMESTAMP NULL",
-      "ALTER TABLE `partners` ADD COLUMN `newLead` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `leadExpired` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `commissionPaid` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `tierUpgrade` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `newReview` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `broadcastMessages` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `weeklyDigest` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `emailEnabled` TINYINT(1) NOT NULL DEFAULT 1",
-      "ALTER TABLE `partners` ADD COLUMN `smsEnabled` TINYINT(1) NOT NULL DEFAULT 1",
-      // homeWaitlist — Home Health Vault property enrichment captured at intake.
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `yearBuilt` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `squareFootage` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `lotSizeSqFt` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `bedrooms` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `bathrooms` VARCHAR(10) NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `stories` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `garageSpaces` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `hasPool` TINYINT(1) NULL DEFAULT 0",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `hasBasement` TINYINT(1) NULL DEFAULT 0",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `hasAttic` TINYINT(1) NULL DEFAULT 0",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `ownershipStatus` VARCHAR(255) NULL DEFAULT 'own'",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `yearsOwned` INT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `overallCondition` TEXT NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `homeSystems` JSON NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `estimatedBudget` VARCHAR(50) NULL",
-      "ALTER TABLE `homeWaitlist` ADD COLUMN `projectTimeline` VARCHAR(255) NULL DEFAULT 'just_exploring'",
-    ];
-    for (const s of tweaks) {
-      try { await (db as any).execute(sql.raw(s)); } catch { /* already applied */ }
     }
 
     console.log(`[ensureDbSequences] done — ${ok} tables sequenced.`);

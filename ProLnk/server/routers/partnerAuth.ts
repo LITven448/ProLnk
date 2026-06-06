@@ -19,6 +19,7 @@ import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import { getSessionCookieOptions } from "../_core/cookies";
 import { TRPCError } from "@trpc/server";
 import { sendPartnerPasswordReset } from "../email";
+import { dashboard } from "../notify";
 import { getPartnerConsent, recordPartnerConsent, revokePartnerConsent } from "../photoSecurity";
 
 function makeOpenId(email: string) {
@@ -263,6 +264,53 @@ export const partnerAuthRouter = router({
         resetUrl,
       });
       return { sent: true };
+    }),
+
+  // --- Request account deletion (CCPA/GDPR) ---
+  // RECORD-ONLY: this stores a pending deletion request and notifies admins.
+  // It NEVER deletes user/partner data — deletion stays a manual admin action.
+  // Enumeration-safe: always returns success regardless of whether the email exists.
+  requestAccountDeletion: publicProcedure
+    .input(z.object({
+      email: z.string().email().toLowerCase(),
+      reason: z.string().max(1000).optional(),
+    }))
+    .mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) return { success: true as const }; // enumeration-safe silent success
+
+      // Idempotently ensure the requests table exists (matches ensureDbSequences tweak).
+      try {
+        await db.execute(sql`
+          CREATE TABLE IF NOT EXISTS data_deletion_requests (
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            email VARCHAR(255) NOT NULL,
+            reason TEXT NULL,
+            status VARCHAR(20) NOT NULL DEFAULT 'pending',
+            requestedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+          )
+        `);
+      } catch { /* already exists */ }
+
+      try {
+        await db.execute(sql`
+          INSERT INTO data_deletion_requests (email, reason, status)
+          VALUES (${input.email}, ${input.reason ?? null}, 'pending')
+        `);
+      } catch (e) {
+        console.warn('[partnerAuth] deletion request insert failed (non-fatal):', e);
+      }
+
+      // Surface to admin NotificationCenter (Tier 2 — dashboard, no email). Non-blocking.
+      dashboard(
+        "Account deletion request",
+        `A CCPA/GDPR account deletion request was submitted for ${input.email}.` +
+          (input.reason ? `\n\nReason: ${input.reason}` : "") +
+          `\n\nThis is RECORD-ONLY. Process manually within 45 days.`,
+        "data_deletion_request",
+      ).catch(() => {});
+
+      return { success: true as const };
     }),
 
   // --- Photo Consent Management ---

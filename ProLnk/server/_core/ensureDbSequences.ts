@@ -58,6 +58,9 @@ const SCHEMA_TWEAKS = [
   "ALTER TABLE `homeWaitlist` ADD COLUMN `estimatedBudget` VARCHAR(50) NULL",
   "ALTER TABLE `homeWaitlist` ADD COLUMN `projectTimeline` VARCHAR(255) NULL DEFAULT 'just_exploring'",
   "ALTER TABLE `homeWaitlist` ADD COLUMN `homeType` VARCHAR(50) NULL DEFAULT 'single_family'",
+  // data_deletion_requests — CCPA/GDPR deletion requests recorded by
+  // partnerAuth.requestAccountDeletion. RECORD-ONLY; deletion stays a manual admin action.
+  "CREATE TABLE IF NOT EXISTS `data_deletion_requests` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` VARCHAR(255) NOT NULL, `reason` TEXT NULL, `status` VARCHAR(20) NOT NULL DEFAULT 'pending', `requestedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)",
 ];
 
 async function applySchemaTweaks(db: any): Promise<void> {

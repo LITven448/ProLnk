@@ -16,7 +16,7 @@ import {
   Copy, Share2, Twitter, Linkedin, MessageSquare, Lock, Calendar,
   User, Building2, Search, MapPin,
 } from "lucide-react";
-import { SERVICE_CATEGORIES, TIER_LABELS } from "@/data/serviceCategories";
+import { SERVICE_CATEGORIES } from "@/data/serviceCategories";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";

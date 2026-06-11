@@ -15,9 +15,10 @@ import {
   Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
   XCircle, Award, Target, Lock, RefreshCw, BarChart3, Megaphone, Wrench, Plug,
   Bot, Brain, CalendarDays, PieChart, MessageSquare, Sparkles,
-  MapPin, Layers, TrendingDown, CheckCircle, ChevronRight, Play, Pause, Briefcase,
+  MapPin, Layers, TrendingDown, ChevronRight, Play, Pause, Briefcase,
   Hammer, TreePine
 } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
@@ -527,7 +528,7 @@ function EarningsEstimator() {
           {mode === "referring" ? "Estimate based on network averages. Actual results vary by trade, service area, and photo volume." : "Platform fee applies only to ProLnk-verified job sources. Actual results vary."}
         </p>
         <button
-          onClick={() => { setPhotosPerMonth([15]); setAvgJobValue([1500]); setReceivedJobs([5]); setTier("Growth"); setMode("referring"); }}
+          onClick={() => { setPhotosPerMonth([15]); setAvgJobValue([1500]); setReceivedJobs([5]); setTier("Founding"); setMode("referring"); }}
           className="text-xs text-gray-400 hover:text-gray-600 underline underline-offset-2 ml-3 flex-shrink-0"
         >
           Reset
@@ -1151,6 +1152,7 @@ function WhyProLnkSection() {
 export default function Home() {
   const { user } = useAuth();
   const { isTrustyPro } = useDomain();
+  const reducedMotion = useReducedMotion();
   const isAdmin = user?.role === "admin";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -1308,13 +1310,79 @@ export default function Home() {
 
       {/* — 1. Hero — */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
-        <div className="absolute inset-0">
-          <img
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.img
             src="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp"
             alt="Home service AI analysis"
             className="w-full h-full object-cover object-center"
+            animate={reducedMotion ? undefined : { scale: [1, 1.05] }}
+            transition={reducedMotion ? undefined : { duration: 14, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           />
+          {!reducedMotion && (
+            <motion.div
+              aria-hidden="true"
+              className="absolute inset-0 pointer-events-none"
+              style={{ opacity: 0.5, willChange: "transform" }}
+              animate={{ y: ["-4%", "104%"] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
+            >
+              <div
+                className="absolute left-0 right-0 top-0 h-[2px]"
+                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(45,212,191,0.9) 30%, rgba(45,212,191,0.9) 70%, transparent 100%)", boxShadow: "0 0 14px 3px rgba(45,212,191,0.35)" }}
+              />
+            </motion.div>
+          )}
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(5,13,26,0.92) 0%, rgba(5,13,26,0.80) 55%, rgba(5,13,26,0.35) 100%)" }} />
+          <div className="hidden md:block absolute pointer-events-none" style={{ top: "24%", right: "5%" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={reducedMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -6, 0] }}
+              transition={reducedMotion ? { duration: 0.6, delay: 1.0 } : { opacity: { duration: 0.6, delay: 1.0 }, y: { duration: 5, delay: 1.6, repeat: Infinity, ease: "easeInOut" } }}
+              className="relative px-3.5 py-2.5 text-xs text-white/90"
+              style={{ backgroundColor: "rgba(5,13,26,0.45)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", border: "1px solid rgba(45,212,191,0.25)" }}
+            >
+              <motion.span
+                aria-hidden="true"
+                className="absolute -top-px -left-px w-3 h-3 border-t-2 border-l-2"
+                style={{ borderColor: "#2DD4BF" }}
+                animate={reducedMotion ? undefined : { opacity: [1, 0.4, 1] }}
+                transition={reducedMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.span
+                aria-hidden="true"
+                className="absolute -bottom-px -right-px w-3 h-3 border-b-2 border-r-2"
+                style={{ borderColor: "#2DD4BF" }}
+                animate={reducedMotion ? undefined : { opacity: [1, 0.4, 1] }}
+                transition={reducedMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <span className="font-semibold" style={{ color: "#2DD4BF" }}>⌖</span> Roof wear detected — <span className="font-bold text-white">$8,400</span> referral value
+            </motion.div>
+          </div>
+          <div className="hidden md:block absolute pointer-events-none" style={{ top: "58%", right: "9%" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={reducedMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -6, 0] }}
+              transition={reducedMotion ? { duration: 0.6, delay: 1.6 } : { opacity: { duration: 0.6, delay: 1.6 }, y: { duration: 5.5, delay: 2.2, repeat: Infinity, ease: "easeInOut" } }}
+              className="relative px-3.5 py-2.5 text-xs text-white/90"
+              style={{ backgroundColor: "rgba(5,13,26,0.45)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", border: "1px solid rgba(45,212,191,0.25)" }}
+            >
+              <motion.span
+                aria-hidden="true"
+                className="absolute -top-px -left-px w-3 h-3 border-t-2 border-l-2"
+                style={{ borderColor: "#2DD4BF" }}
+                animate={reducedMotion ? undefined : { opacity: [1, 0.4, 1] }}
+                transition={reducedMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              />
+              <motion.span
+                aria-hidden="true"
+                className="absolute -bottom-px -right-px w-3 h-3 border-b-2 border-r-2"
+                style={{ borderColor: "#2DD4BF" }}
+                animate={reducedMotion ? undefined : { opacity: [1, 0.4, 1] }}
+                transition={reducedMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              />
+              <span className="font-semibold" style={{ color: "#2DD4BF" }}>✓</span> Lead routed to a roofing partner
+            </motion.div>
+          </div>
         </div>
 
         <div className="relative container py-28 md:py-36">
@@ -1341,12 +1409,15 @@ export default function Home() {
             <FadeUp delay={0.45}>
               <div className="flex flex-col sm:flex-row gap-3 items-start">
                 <Link href="/apply">
-                  <button
-                    className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none"
+                  <motion.button
+                    className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none"
                     style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
+                    whileHover={reducedMotion ? undefined : { scale: 1.04, y: -2 }}
+                    whileTap={reducedMotion ? undefined : { scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
                   >
-                    Join the Founding Network <ArrowRight className="w-4 h-4" />
-                  </button>
+                    Join the Founding Network <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </motion.button>
                 </Link>
               </div>
               <p className="text-xs text-white/40 mt-2">No payment required. Lock in your founding spot — pricing & activation details coming soon.</p>

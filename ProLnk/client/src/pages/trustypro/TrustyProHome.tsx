@@ -15,6 +15,7 @@ import {
   useScroll,
   useTransform,
   useInView,
+  useReducedMotion,
   AnimatePresence,
 } from "framer-motion";
 
@@ -254,12 +255,12 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
             </div>
             <motion.button
               onClick={onScan}
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
+              className="group inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
               style={{ backgroundColor: ACCENT }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Join the Waitlist — Be First In Line <ArrowRight className="w-5 h-5" />
+              Join the Waitlist — Be First In Line <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </motion.button>
             <p className="mt-4 text-sm text-gray-500">
               Need a pro now?{" "}
@@ -432,6 +433,110 @@ function ScanDemoCarousel() {
   );
 }
 
+// --- Hero Floating Visual --------------------------------------------------------------------
+const HERO_CHIPS = [
+  { text: "✓ Background-checked pros", pos: "top-[12%] left-[2%] sm:left-[4%]", delay: 0.9, dur: 5.2 },
+  { text: "Roof · HVAC · Plumbing",    pos: "top-[38%] right-[1%] sm:right-[3%]", delay: 1.15, dur: 6.4 },
+  { text: "✓ Licensed & insured",      pos: "bottom-[18%] left-[6%] sm:left-[10%]", delay: 1.4, dur: 5.8 },
+];
+
+function HeroFloatVisual() {
+  const reduced = useReducedMotion();
+  return (
+    <div className="relative w-full max-w-2xl">
+      <motion.img
+        src={CDN.heroModel}
+        alt="Architectural house model"
+        className="w-full object-contain relative z-[1]"
+        style={{ maxHeight: 460, mixBlendMode: "multiply", filter: "drop-shadow(0 8px 32px rgba(79,70,229,0.10))" }}
+        animate={reduced ? undefined : { y: [0, -8, 0] }}
+        transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute rounded-[50%]"
+        style={{
+          left: "24%", width: "52%", height: 26, bottom: 2,
+          background: "radial-gradient(ellipse at center, rgba(15,23,42,0.16) 0%, rgba(15,23,42,0) 70%)",
+        }}
+        animate={reduced ? undefined : { scaleX: [1, 0.9, 1], opacity: [0.85, 0.6, 0.85] }}
+        transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {HERO_CHIPS.map((chip) => (
+        <motion.div
+          key={chip.text}
+          className={`absolute z-[2] ${chip.pos} px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-gray-700 shadow-lg border border-white/60`}
+          style={{ backgroundColor: "rgba(255,255,255,0.72)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={reduced ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -6, 0] }}
+          transition={reduced
+            ? { duration: 0.5, delay: chip.delay }
+            : { opacity: { duration: 0.6, delay: chip.delay }, y: { duration: chip.dur, repeat: Infinity, ease: "easeInOut", delay: chip.delay } }}
+        >
+          {chip.text}
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+// --- Live Beta Progress ------------------------------------------------------------------------
+function BetaProgress({ count, cap, spotsRemaining }: { count: number; cap: number; spotsRemaining: number }) {
+  const { count: animated, ref } = useCountUp(spotsRemaining);
+  const pct = cap > 0 ? Math.min(100, Math.max(0, (count / cap) * 100)) : 0;
+  return (
+    <div ref={ref} className="max-w-xs mx-auto mb-6">
+      <div className="flex items-center justify-between text-xs font-bold mb-1.5">
+        <span style={{ color: ACCENT }}>{Math.round(animated).toLocaleString()} beta spots left</span>
+        <span className="text-gray-400">{count.toLocaleString()} / {cap.toLocaleString()} claimed</span>
+      </div>
+      <div className="h-1.5 rounded-full bg-gray-200 overflow-hidden">
+        <motion.div
+          className="h-full rounded-full"
+          style={{ backgroundColor: ACCENT }}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${pct}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: EASE }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// --- Sticky Mobile CTA ---------------------------------------------------------------------------
+function StickyMobileCta({ onJoin }: { onJoin: () => void }) {
+  const [visible, setVisible]     = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.9);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <AnimatePresence>
+      {visible && !dismissed && (
+        <motion.div
+          className="fixed bottom-0 left-0 right-0 z-[60] md:hidden px-4 pb-4 pt-2"
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 80, opacity: 0 }}
+          transition={{ duration: 0.3, ease: EASE }}
+        >
+          <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl shadow-2xl p-2">
+            <button onClick={onJoin} className="flex-1 py-3 rounded-xl text-sm font-black text-white" style={{ backgroundColor: ACCENT }}>
+              Join the Free Waitlist
+            </button>
+            <button onClick={() => setDismissed(true)} aria-label="Dismiss" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors">
+              <X className="w-4 h-4 text-gray-500" />
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 // --- Main --------------------------------------------------------------------------------------
 const SERVICE_TYPES = [
   "Kitchen Remodel", "Bathroom Upgrade", "Exterior / Curb Appeal",
@@ -525,10 +630,11 @@ export default function TrustyProHome() {
     setIntakeOpen(true);
     setIntakeStep(1);
     setSuccessData(null);
+    const u = user as { name?: string; email?: string } | null | undefined;
     setIntakeForm({
-      firstName: (user?.name?.split(" ")[0]) ?? "",
-      lastName: (user?.name?.split(" ").slice(1).join(" ")) ?? "",
-      email: user?.email ?? "",
+      firstName: (u?.name?.split(" ")[0]) ?? "",
+      lastName: (u?.name?.split(" ").slice(1).join(" ")) ?? "",
+      email: u?.email ?? "",
       phone: "",
       address: "", city: "", state: "", zipCode: "",
       propertyData: null,
@@ -933,6 +1039,7 @@ export default function TrustyProHome() {
                       {joinWaitlist.isPending ? <><Loader2 className="w-4 h-4 animate-spin" /> Joining...</> : "Join the Waitlist"}
                     </button>
                   </div>
+                  <p className="text-[11px] text-center text-gray-400">✓ Free for homeowners · ✓ Every pro background-checked · ✓ DFW local</p>
                 </div>
               )}
 
@@ -1132,6 +1239,15 @@ export default function TrustyProHome() {
             </p>
           </motion.div>
 
+          {/* Live beta capacity */}
+          {betaStatus.data && betaIsOpen && (
+            <BetaProgress
+              count={betaStatus.data.count ?? 0}
+              cap={betaStatus.data.cap ?? 1000}
+              spotsRemaining={betaSpotsRemaining}
+            />
+          )}
+
           {/* Primary CTA */}
           <motion.div
             className="flex flex-col items-center gap-4"
@@ -1139,13 +1255,15 @@ export default function TrustyProHome() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.42 }}
           >
-            <button
+            <motion.button
               onClick={goToWizard}
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
+              className="group inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
               style={{ backgroundColor: ACCENT }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
             >
-              Join the Waitlist <ArrowRight className="w-5 h-5" />
-            </button>
+              Join the Waitlist <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </motion.button>
 
             {/* Trust badges */}
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -1182,12 +1300,7 @@ export default function TrustyProHome() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.55 }}
         >
-          <img
-            src={CDN.heroModel}
-            alt="Architectural house model"
-            className="w-full max-w-2xl object-contain"
-            style={{ maxHeight: 460, mixBlendMode: "multiply", filter: "drop-shadow(0 8px 32px rgba(79,70,229,0.10))" }}
-          />
+          <HeroFloatVisual />
         </motion.div>
 
         {/* Marquee ticker */}
@@ -1221,12 +1334,12 @@ export default function TrustyProHome() {
                 </p>
               <motion.button
                 onClick={goToWizard}
-                className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                className="group mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: ACCENT }}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Join the Waitlist <ArrowRight className="w-4 h-4" />
+                Join the Waitlist <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </motion.button>
               </div>
             </AnimSection>
@@ -1339,12 +1452,12 @@ export default function TrustyProHome() {
           <AnimSection variants={fadeUp} className="text-center mt-10">
             <motion.button
               onClick={goToWizard}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
               style={{ backgroundColor: ACCENT }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Join the Waitlist — It's Free <ArrowRight className="w-4 h-4" />
+              Join the Waitlist — It's Free <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </motion.button>
             <p className="text-xs text-gray-400 mt-3">Free • No account required • Results in under 60 seconds</p>
           </AnimSection>
@@ -1612,12 +1725,12 @@ export default function TrustyProHome() {
           <AnimSection variants={fadeUp} className="text-center mt-10">
             <motion.button
               onClick={goToWizard}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
               style={{ backgroundColor: ACCENT }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Reserve Your Vault — Join the Waitlist <ArrowRight className="w-4 h-4" />
+              Reserve Your Vault — Join the Waitlist <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </motion.button>
           </AnimSection>
         </div>
@@ -1813,6 +1926,7 @@ Join the TrustyPro waitlist today. We'll build your home profile, save your spot
         @keyframes marquee-tp { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .animate-marquee-tp { animation: marquee-tp 30s linear infinite; }
       `}</style>
+      <StickyMobileCta onJoin={openIntake} />
       <SupportChatWidget
         mode="homeowner"
         accentColor="#4F46E5"

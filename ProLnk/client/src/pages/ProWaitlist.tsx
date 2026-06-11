@@ -4,6 +4,7 @@ import { getLoginUrl } from "@/const";
 import { useAuth } from "@/_core/hooks/useAuth";
 import ProLnkLogo from "@/components/ProLnkLogo";
 import BackToTop from "@/components/BackToTop";
+import { motion, useReducedMotion } from "framer-motion";
 import { FadeUp, FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/ScrollAnimations";
 import { trpc } from "@/lib/trpc";
 import { track } from "@/lib/analytics";
@@ -342,12 +343,12 @@ function PricingSection() {
   return (
     <div className="container">
       {/* Header */}
-      <div className="text-center mb-14">
+      <FadeUp className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Pick Your Plan</h2>
         <p className="text-gray-500 max-w-xl mx-auto text-lg">
           Flat monthly fee plus a 10% platform fee on closed jobs. No contracts. Upgrade or cancel anytime.
         </p>
-      </div>
+      </FadeUp>
 
       {/* Tier Cards */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-14">
@@ -1213,6 +1214,14 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             >
               {join.isPending ? "Joining..." : "Join the Waitlist"}
             </button>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 mt-4">
+              {["No payment required", "DFW founding cohort", "Cancel anytime"].map((badge) => (
+                <span key={badge} className="inline-flex items-center gap-1.5 text-xs text-gray-500">
+                  <CheckCircle className="h-3.5 w-3.5 text-[#0A1628] shrink-0" />
+                  {badge}
+                </span>
+              ))}
+            </div>
           </>
         )}
       </div>
@@ -1256,6 +1265,46 @@ function CharterInviteBanner({ code }: { code: string }) {
 }
 
 // --- Main Landing Page -------------------------------------------------------------
+function StickyMobileCTA({ onJoin }: { onJoin: () => void }) {
+  const [visible, setVisible] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (dismissed || !visible) return null;
+
+  return (
+    <motion.div
+      className="fixed bottom-0 inset-x-0 z-[60] md:hidden"
+      initial={prefersReducedMotion ? { opacity: 0 } : { y: 80, opacity: 0 }}
+      animate={prefersReducedMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div className="flex items-center gap-2 px-3 py-2.5 border-t border-white/10 shadow-[0_-4px_16px_rgba(0,0,0,0.25)]" style={{ backgroundColor: "#0A1628", paddingBottom: "max(0.625rem, env(safe-area-inset-bottom))" }}>
+        <button
+          onClick={onJoin}
+          className="flex-1 inline-flex items-center justify-center gap-2 py-3 text-sm font-bold text-[#0A1628] bg-[#F5E642] hover:opacity-90 transition-opacity rounded-none"
+        >
+          Claim Your Founding Spot <ArrowRight className="h-4 w-4" />
+        </button>
+        <button
+          onClick={() => setDismissed(true)}
+          aria-label="Dismiss"
+          className="p-2 text-white/50 hover:text-white transition-colors"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function ProWaitlist() {
   const { user } = useAuth();
   const [showWaitlist, setShowWaitlist] = useState(false);
@@ -1292,6 +1341,7 @@ export default function ProWaitlist() {
     });
     return () => observer.disconnect();
   }, []);
+  const prefersReducedMotion = useReducedMotion();
   const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60000 });
   const totalSignups = publicCounts?.pros ?? 0;
   const TOTAL_NETWORK_SPOTS = 2125;
@@ -1390,13 +1440,15 @@ export default function ProWaitlist() {
               Waitlist Open
             </span>
             <div className="flex-1 bg-white/10 rounded-full h-1.5 overflow-hidden min-w-0">
-              <div
-                className="h-1.5 rounded-full transition-all duration-700 bg-[#F5E642]"
-                style={{ width: `${spotsPercent}%` }}
+              <motion.div
+                className="h-1.5 rounded-full bg-[#F5E642]"
+                initial={prefersReducedMotion ? false : { width: 0 }}
+                animate={{ width: `${spotsPercent}%` }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
             <span className="text-white/60 text-xs whitespace-nowrap">
-              {totalSignups} / {TOTAL_NETWORK_SPOTS} joined
+              <CountUp target={totalSignups} duration={1.2} /> / {TOTAL_NETWORK_SPOTS} joined
             </span>
           </div>
           <span
@@ -1414,10 +1466,13 @@ export default function ProWaitlist() {
       {/* -- 1. Hero -- */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
         <div className="absolute inset-0">
-          <img
+          <motion.img
             src="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp"
             alt="Home service AI analysis"
             className="w-full h-full object-cover object-center"
+            initial={false}
+            animate={prefersReducedMotion ? { scale: 1 } : { scale: [1, 1.04] }}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 12, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(5,13,26,0.92) 0%, rgba(5,13,26,0.80) 55%, rgba(5,13,26,0.35) 100%)" }} />
         </div>
@@ -1446,10 +1501,10 @@ export default function ProWaitlist() {
             <FadeUp delay={0.45}>
               <span onClick={openWaitlist} className="cursor-pointer">
                 <button
-                  className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:opacity-90"
+                  className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:opacity-90 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
                   style={{ backgroundColor: "#0A1628", color: "white", border: "2px solid #F5E642" }}
                 >
-                  Join the Waitlist <ArrowRight className="h-5 w-5" />
+                  Join the Waitlist <ArrowRight className="h-5 w-5 transition-transform motion-safe:group-hover:translate-x-1" />
                 </button>
               </span>
             </FadeUp>
@@ -1457,7 +1512,7 @@ export default function ProWaitlist() {
             <FadeIn delay={0.6}>
               <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-white/10">
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white">{spotsRemaining.toLocaleString()}</div>
+                  <div className="text-2xl font-heading font-bold text-white"><CountUp target={spotsRemaining} duration={1.6} /></div>
                   <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">of {TOTAL_NETWORK_SPOTS.toLocaleString()} founding spots left</div>
                 </div>
                 <div className="hidden sm:block w-px h-10 bg-white/10" />
@@ -1479,10 +1534,10 @@ export default function ProWaitlist() {
       {/* -- 2. How It Works -- */}
       <section id="how-it-works" className="py-24 bg-white">
         <div className="container">
-          <div className="text-center mb-16">
+          <FadeUp className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Four Steps. Zero Extra Work.</h2>
             <p className="text-gray-500 max-w-lg mx-auto text-lg">No new workflow. No extra selling. Just photos you're already taking -- and an engine that never stops.</p>
-          </div>
+          </FadeUp>
           <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { step: "01", title: "Finish a Job", desc: "Complete your normal work. Take 1-3 wide-angle photos of the property before you leave.", icon: Camera },
@@ -1603,8 +1658,8 @@ export default function ProWaitlist() {
 
           <div className="text-center mt-12">
             <span onClick={openWaitlist} className="cursor-pointer">
-              <button className="px-8 py-4 text-sm font-bold text-[#0A1628] transition-all hover:brightness-110 rounded-none" style={{ backgroundColor: "#F5E642" }}>
-                Join the Waitlist <ArrowRight className="w-4 h-4 inline ml-2" />
+              <button className="group px-8 py-4 text-sm font-bold text-[#0A1628] transition-all hover:brightness-110 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98] rounded-none" style={{ backgroundColor: "#F5E642" }}>
+                Join the Waitlist <ArrowRight className="w-4 h-4 inline ml-2 transition-transform motion-safe:group-hover:translate-x-1" />
               </button>
             </span>
           </div>
@@ -1617,12 +1672,12 @@ export default function ProWaitlist() {
       {/* -- 3. Who Can Join -- */}
       <section id="who-can-join" className="py-24" style={{ backgroundColor: "#FAFAF9" }}>
         <div className="container">
-          <div className="text-center mb-16">
+          <FadeUp className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Built for the Trades</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
               Any licensed, insured home service business in DFW. If you work at people's homes, you belong here.
             </p>
-          </div>
+          </FadeUp>
           <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {WHO_CAN_JOIN.map((group) => (
               <StaggerItem key={group.group}>
@@ -1662,6 +1717,7 @@ export default function ProWaitlist() {
       {/* Scout Standalone Subscription */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="container max-w-6xl mx-auto px-4">
+          <FadeUp>
           <div className="rounded-2xl border-2 border-[#0A1628] overflow-hidden">
             <div className="bg-[#0A1628] px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
               <div className="flex-1">
@@ -1730,12 +1786,14 @@ export default function ProWaitlist() {
               </div>
             </div>
           </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* -- 5. Guarantee & FAQ -- */}
       <section id="guarantee" className="py-16" style={{ backgroundColor: "#FAFAF9" }}>
         <div className="container max-w-5xl mx-auto">
+          <FadeUp>
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
               <div className="text-4xl mb-4">🛡️</div>
@@ -1770,6 +1828,7 @@ export default function ProWaitlist() {
               </div>
             </div>
           </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -1789,10 +1848,10 @@ export default function ProWaitlist() {
           <FadeUp delay={0.25}>
             <span onClick={openWaitlist} className="cursor-pointer">
               <button
-                className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
+                className="group inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
                 style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
               >
-                Join the Waitlist <ArrowRight className="h-5 w-5" />
+                Join the Waitlist <ArrowRight className="h-5 w-5 transition-transform motion-safe:group-hover:translate-x-1" />
               </button>
             </span>
           </FadeUp>
@@ -1827,6 +1886,7 @@ export default function ProWaitlist() {
       {showWaitlist && (
         <ProWaitlistModal onClose={() => setShowWaitlist(false)} charterCode={charterCode} />
       )}
+      <StickyMobileCTA onJoin={openWaitlist} />
       <BackToTop />
     </div>
   );

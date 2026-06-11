@@ -15,7 +15,6 @@ import {
   useScroll,
   useTransform,
   useInView,
-  useReducedMotion,
   AnimatePresence,
 } from "framer-motion";
 
@@ -433,27 +432,15 @@ function ScanDemoCarousel() {
   );
 }
 
-// --- Hero Floating Visual --------------------------------------------------------------------
+// --- Hero Visual --------------------------------------------------------------------
 function HeroFloatVisual() {
-  const reduced = useReducedMotion();
   return (
     <div className="relative w-full max-w-2xl">
-      <motion.img
+      <img
         src={CDN.heroModel}
         alt="Architectural house model"
         className="w-full object-contain relative z-[1]"
         style={{ maxHeight: 460, mixBlendMode: "multiply", filter: "drop-shadow(0 8px 32px rgba(79,70,229,0.10))" }}
-        animate={reduced ? undefined : { y: [0, -8, 0] }}
-        transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute rounded-[50%]"
-        style={{
-          left: "24%", width: "52%", height: 26, bottom: 2,
-          background: "radial-gradient(ellipse at center, rgba(15,23,42,0.16) 0%, rgba(15,23,42,0) 70%)",
-        }}
-        animate={reduced ? undefined : { scaleX: [1, 0.9, 1], opacity: [0.85, 0.6, 0.85] }}
-        transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
     </div>
   );

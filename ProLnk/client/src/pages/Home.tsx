@@ -23,7 +23,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 
 // --- Design tokens ------------------------------------------------------------
-// Deep slate: #1E293B  Emerald accent: #059669  Teal: #0D9488  Warm ivory bg: #FAFAF8
+// Deep slate: #1E293B (CTA hover #0F172A)  Bronze accents: #8A5A24/#9A6A2F/#B08544/#C89B5A, tint #F5EDE0, border #D9C7A8  Warm ivory bg: #FAFAF8 / sand #F7F2EA
 
 // --- Pricing — 4 founding network tiers (Charter/Founding/L3/L4) ----------------------------
 const PRICING_TIERS = [
@@ -382,37 +382,37 @@ function PricingSection() {
               onClick={() => setActiveTierIdx(idx)}
               className={`relative rounded-2xl p-7 flex flex-col border-2 cursor-pointer transition-all ${
                 isCharter
-                  ? "border-teal-500 shadow-xl"
+                  ? "border-[#B08544] shadow-xl"
                   : activeTierIdx === idx
                   ? "border-[#1E293B] shadow-xl scale-[1.02]"
                   : "border-gray-200 shadow-sm hover:border-gray-400"
               }`}
               style={
                 isCharter
-                  ? { boxShadow: "0 0 0 2px #0D9488, 0 8px 40px rgba(13,148,136,0.25), inset 0 3px 0 #0D9488" }
+                  ? { boxShadow: "0 0 0 2px #9A6A2F, 0 8px 40px rgba(154,106,47,0.25), inset 0 3px 0 #9A6A2F" }
                   : activeTierIdx === idx
-                  ? { boxShadow: "0 0 0 2px #1E293B, 0 8px 32px rgba(30,41,59,0.15), inset 0 3px 0 #059669" }
+                  ? { boxShadow: "0 0 0 2px #1E293B, 0 8px 32px rgba(30,41,59,0.15), inset 0 3px 0 #9A6A2F" }
                   : {}
               }
             >
               {isCharter && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white" style={{ background: "#0D9488" }}>
+                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white" style={{ background: "#9A6A2F" }}>
                     Most Valuable
                   </span>
                 </div>
               )}
               {!isCharter && tier.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white bg-emerald-600">
+                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white bg-[#9A6A2F]">
                     Recommended
                   </span>
                 </div>
               )}
               <div className="mb-4">
-                <h3 className={`text-2xl font-heading font-bold ${isCharter ? "text-teal-700" : "text-gray-900"}`}>{tier.name}</h3>
+                <h3 className={`text-2xl font-heading font-bold ${isCharter ? "text-[#8A5A24]" : "text-gray-900"}`}>{tier.name}</h3>
                 <p className="text-sm text-gray-500 mt-0.5">{tier.subtitle}</p>
-                <p className="text-xs font-semibold mt-1" style={{ color: isCharter ? "#0D9488" : "#6B7280" }}>{tierSpotsLabel}</p>
+                <p className="text-xs font-semibold mt-1" style={{ color: isCharter ? "#8A5A24" : "#6B7280" }}>{tierSpotsLabel}</p>
               </div>
               <div className="mb-4">
                 {tier.monthlyFee === null ? (
@@ -427,8 +427,8 @@ function PricingSection() {
                 )}
               </div>
               <div className="flex items-center gap-1.5 mb-2 pb-3 border-b border-gray-100">
-                <TrendingUp className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span className="text-xs font-bold text-emerald-700">60% commission keep — every closed job</span>
+                <TrendingUp className="h-4 w-4 text-[#9A6A2F] shrink-0" />
+                <span className="text-xs font-bold text-[#8A5A24]">60% commission keep — every closed job</span>
               </div>
               <ul className="space-y-2 mb-6 flex-1">
                 {tier.features.map((feature) => (
@@ -447,7 +447,7 @@ function PricingSection() {
                       ? "bg-[#1E293B] text-white hover:opacity-90"
                       : "border-2 border-[#1E293B] text-slate-900 hover:bg-[#1E293B] hover:text-white"
                   }`}
-                  style={isCharter ? { background: "#0D9488" } : {}}
+                  style={isCharter ? { background: "#1E293B" } : {}}
                   onClick={(e) => e.stopPropagation()}
                 >
                   {tier.cta}
@@ -565,7 +565,7 @@ function PricingSection() {
               </div>
             </div>
             <Link href="/apply">
-              <button className="px-8 py-3 bg-emerald-600 text-white font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
+              <button className="px-8 py-3 bg-[#C89B5A] text-[#1E293B] font-bold text-sm tracking-wide hover:bg-[#B08544] transition-all rounded-none shrink-0">
                 Join the Waitlist
               </button>
             </Link>
@@ -580,9 +580,9 @@ function PricingSection() {
         <div className="relative flex items-center gap-6">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-gray-200" />
           <div className="flex items-center gap-3 shrink-0">
-            <div className="w-2 h-2 rounded-full bg-emerald-400" />
+            <div className="w-2 h-2 rounded-full bg-[#B08544]" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Commercial &amp; Enterprise</span>
-            <div className="w-2 h-2 rounded-full bg-emerald-400" />
+            <div className="w-2 h-2 rounded-full bg-[#B08544]" />
           </div>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gray-200 to-gray-200" />
         </div>
@@ -590,15 +590,15 @@ function PricingSection() {
 
       {/* ── PROLNK EXCHANGE BANNER ─────────────────────────────────────────── */}
       <div className="max-w-4xl mx-auto mb-12">
-        <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #1E293B 0%, #1F3D3A 60%, #134E4A 100%)" }}>
+        <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #1E293B 0%, #334155 60%, #3B3327 100%)" }}>
           <div className="p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-3">
-                <div className="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest" style={{ background: "rgba(52,211,153,0.15)", color: "#34D399" }}>New Platform</div>
+                <div className="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest" style={{ background: "rgba(200,155,90,0.15)", color: "#C89B5A" }}>New Platform</div>
                 <div className="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-white/10 text-white/60">Coming Soon</div>
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2">
-                ProLnk <span style={{ color: "#34D399" }}>Exchange</span>
+                ProLnk <span style={{ color: "#C89B5A" }}>Exchange</span>
               </h3>
               <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-lg">
                 The commercial-grade job board and broker network for GCs, property managers, HOAs, and multi-site operators. Post jobs, bid on commercial contracts, and connect with verified commercial-grade trade partners — all in one place.
@@ -613,7 +613,7 @@ function PricingSection() {
               <Link href="/apply">
                 <button
                   className="group flex items-center gap-2 px-7 py-3.5 font-bold text-sm tracking-wide transition-all rounded-none"
-                  style={{ background: "#059669", color: "#FFFFFF" }}
+                  style={{ background: "#C89B5A", color: "#1E293B" }}
                 >
                   Apply Now
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -658,13 +658,13 @@ function PricingSection() {
           </div>
 
           {/* Commercial Crew — Featured */}
-          <div className="rounded-2xl border-2 bg-[#1E293B] p-7 flex flex-col relative overflow-hidden" style={{ borderColor: "#0D9488" }}>
-            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "#0D9488" }} />
+          <div className="rounded-2xl border-2 bg-[#1E293B] p-7 flex flex-col relative overflow-hidden" style={{ borderColor: "#B08544" }}>
+            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "#B08544" }} />
             <div className="absolute top-4 right-4">
-              <span className="px-2.5 py-1 rounded-full text-xs font-bold" style={{ background: "#059669", color: "#FFFFFF" }}>Most Popular</span>
+              <span className="px-2.5 py-1 rounded-full text-xs font-bold" style={{ background: "transparent", color: "#B08544", border: "1px solid #B08544" }}>Most Popular</span>
             </div>
             <div className="mb-5">
-              <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#34D399" }}>Commercial Crew</div>
+              <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#C89B5A" }}>Commercial Crew</div>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-4xl font-heading font-bold text-white">$899</span>
                 <span className="text-white/50 text-sm">/mo</span>
@@ -674,12 +674,12 @@ function PricingSection() {
             <ul className="space-y-2.5 flex-1 mb-7">
               {["Up to 15 crew members","Unlimited AI-analyzed jobs","Commercial + residential routing","ProLnk Exchange early access","Dedicated account manager","Volume lead bundles","6% platform fee on closed jobs"].map((f) => (
                 <li key={f} className="flex items-start gap-2 text-sm text-white/80">
-                  <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#34D399" }} />{f}
+                  <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#C89B5A" }} />{f}
                 </li>
               ))}
             </ul>
             <Link href="/exchange/commercial">
-              <button className="w-full py-3 rounded-none font-bold text-sm tracking-wide transition-all" style={{ background: "#059669", color: "#FFFFFF" }}>
+              <button className="w-full py-3 rounded-none font-bold text-sm tracking-wide transition-all" style={{ background: "#C89B5A", color: "#1E293B" }}>
                 Get Early Access
               </button>
             </Link>
@@ -721,8 +721,8 @@ function PricingSection() {
 const TIER_COLORS: Record<string, string> = {
   enterprise: "#7C3AED",
   company: "#1E293B",
-  crew: "#1D4ED8",
-  pro: "#059669",
+  crew: "#8A5A24",
+  pro: "#9A6A2F",
   scout: "#6B7280",
 };
 const TIER_LABELS: Record<string, string> = {
@@ -871,8 +871,8 @@ function WhyProLnkSection() {
         <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {advantages.map((adv) => (
             <StaggerItem key={adv.title}>
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-full hover:shadow-md transition-shadow border-l-4" style={{ borderLeftColor: "#059669" }}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "#05966920" }}>
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-full hover:shadow-md transition-shadow border-l-4" style={{ borderLeftColor: "#9A6A2F" }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "#9A6A2F20" }}>
                   <adv.icon className="w-6 h-6" style={{ color: "#1E293B" }} />
                 </div>
                 <h4 className="font-heading font-bold text-gray-900 mb-2">{adv.title}</h4>
@@ -896,11 +896,11 @@ function WhyProLnkSection() {
                 { label: "Angi / HomeAdvisor", cost: 542, max: 600, color: "#EF4444" },
                 { label: "Thumbtack", cost: 250, max: 600, color: "#F97316" },
                 { label: "Google Ads / LSA", cost: 168, max: 600, color: "#64748B" },
-                { label: "ProLnk (commission-only)", cost: 120, max: 600, color: "#34D399" },
+                { label: "ProLnk (commission-only)", cost: 120, max: 600, color: "#C89B5A" },
               ].map((item) => (
                 <div key={item.label}>
                   <div className="flex justify-between items-center mb-1.5">
-                    <span className="text-sm font-semibold" style={{ color: item.color === "#34D399" ? "#34D399" : "white" }}>{item.label}</span>
+                    <span className="text-sm font-semibold" style={{ color: item.color === "#C89B5A" ? "#C89B5A" : "white" }}>{item.label}</span>
                     <span className="text-sm font-bold" style={{ color: item.color }}>${item.cost}</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
@@ -1026,13 +1026,13 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-3">
             <Link href="/trustypro">
-              <Button variant="ghost" className="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1.5">
+              <Button variant="ghost" className="text-sm font-medium text-[#9A6A2F] hover:text-[#8A5A24] flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro
               </Button>
             </Link>
             <Link href="/advertise">
-              <Button variant="ghost" className="text-sm font-medium" style={{ color: "#00B5B8" }}>Advertise</Button>
+              <Button variant="ghost" className="text-sm font-medium" style={{ color: "#9A6A2F" }}>Advertise</Button>
             </Link>
             {!isTrustyPro && (
               <Link href="/dashboard">
@@ -1072,7 +1072,7 @@ export default function Home() {
             </div>
             {!isTrustyPro && (
               <Link href="/trustypro" className="block">
-                <Button variant="ghost" className="w-full text-sm text-blue-600 flex items-center justify-center gap-1.5">
+                <Button variant="ghost" className="w-full text-sm text-[#9A6A2F] flex items-center justify-center gap-1.5">
                   <Shield className="w-3.5 h-3.5" />
                   TrustyPro — Homeowner Portal
                 </Button>
@@ -1080,7 +1080,7 @@ export default function Home() {
             )}
             {!isTrustyPro && (
               <Link href="/admin" className="block">
-                <Button variant="ghost" className="w-full text-sm flex items-center justify-center gap-1.5" style={{ color: "#065F46", backgroundColor: "#ECFDF5", border: "1px solid #A7F3D0" }}>
+                <Button variant="ghost" className="w-full text-sm flex items-center justify-center gap-1.5" style={{ color: "#8A5A24", backgroundColor: "#F5EDE0", border: "1px solid #D9C7A8" }}>
                   <Lock className="w-3.5 h-3.5" />
                   Admin Portal
                 </Button>
@@ -1100,28 +1100,14 @@ export default function Home() {
             animate={reducedMotion ? undefined : { scale: [1, 1.05] }}
             transition={reducedMotion ? undefined : { duration: 14, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           />
-          {!reducedMotion && (
-            <motion.div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none"
-              style={{ opacity: 0.35, willChange: "transform" }}
-              animate={{ y: ["-4%", "104%"] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-            >
-              <div
-                className="absolute left-0 right-0 top-0 h-[2px]"
-                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(45,212,191,0.9) 30%, rgba(45,212,191,0.9) 70%, transparent 100%)", boxShadow: "0 0 14px 3px rgba(45,212,191,0.35)" }}
-              />
-            </motion.div>
-          )}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(15,23,42,0.92) 0%, rgba(17,43,49,0.78) 55%, rgba(13,148,136,0.18) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(15,23,42,0.92) 0%, rgba(30,41,59,0.78) 55%, rgba(30,41,59,0.18) 100%)" }} />
         </div>
 
         <div className="relative container py-28 md:py-36">
           <div className="max-w-2xl">
             <FadeUp delay={0.1}>
               <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 mb-8 tracking-widest uppercase animate-pulse"
-                style={{ backgroundColor: "rgba(52,211,153,0.15)", color: "#34D399", border: "1px solid rgba(52,211,153,0.3)" }}>
+                style={{ backgroundColor: "rgba(200,155,90,0.15)", color: "#C89B5A", border: "1px solid rgba(200,155,90,0.3)" }}>
                 DFW Beta Launch — Founding Partner Spots Available
               </span>
             </FadeUp>
@@ -1143,7 +1129,7 @@ export default function Home() {
                 <Link href="/apply">
                   <motion.button
                     className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none"
-                    style={{ backgroundColor: "#059669", color: "#FFFFFF" }}
+                    style={{ backgroundColor: "#C89B5A", color: "#1E293B" }}
                     whileHover={reducedMotion ? undefined : { scale: 1.04, y: -2 }}
                     whileTap={reducedMotion ? undefined : { scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 22 }}
@@ -1180,8 +1166,8 @@ export default function Home() {
               </div>
               <p className="text-xs text-slate-500 mt-3 italic">DFW launch — 4-tier Founding Network: Charter(25) · Founding(100) · Level 3(400) · Level 4(1,600). 2,125 total. Lock in your rate before we open to the public.</p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.25)", color: "#34D399" }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(200,155,90,0.12)", border: "1px solid rgba(200,155,90,0.25)", color: "#C89B5A" }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C89B5A] animate-pulse shrink-0" />
                   {waitlistPros > 0
                     ? `${waitlistPros} pro${waitlistPros !== 1 ? "s" : ""} on waitlist — ${(2125 - waitlistPros).toLocaleString()} spots left`
                     : "2,125 founding spots available — be first"}
@@ -1237,7 +1223,7 @@ export default function Home() {
                 >
                   <span className="text-xs font-semibold text-center leading-tight">{trade.label}</span>
                   {selectedTrade === trade.label && (
-                    <span className="text-[10px] font-bold text-emerald-400">~${trade.roi.toLocaleString()}/mo</span>
+                    <span className="text-[10px] font-bold text-[#C89B5A]">~${trade.roi.toLocaleString()}/mo</span>
                   )}
                 </button>
               </StaggerItem>
@@ -1279,7 +1265,7 @@ export default function Home() {
               <StaggerItem key={item.step}>
                 <div className="relative p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1 h-full">
                   <div className="absolute top-6 right-6 text-6xl font-heading font-black opacity-[0.04] text-gray-900 select-none">{item.step}</div>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: "#059669" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: "#9A6A2F" }}>
                     <item.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">{item.title}</h3>
@@ -1293,13 +1279,13 @@ export default function Home() {
 
       {/* — 2.5. The ProLnk Engine — */}
       <section id="the-engine" className="py-24 relative overflow-hidden" style={{ backgroundColor: "#1E293B" }}>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #3B82F6 0%, transparent 50%), radial-gradient(circle at 80% 70%, #7C3AED 0%, transparent 50%)" }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #C89B5A 0%, transparent 50%), radial-gradient(circle at 80% 70%, #7C3AED 0%, transparent 50%)" }} />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="container relative">
           <FadeUp>
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-6">
-                <Radar className="w-4 h-4 text-emerald-400" />
+                <Radar className="w-4 h-4 text-[#C89B5A]" />
                 <span className="text-xs font-bold text-white/80 uppercase tracking-wider">Patent-Pending Technology</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">The ProLnk Engine</h2>
@@ -1315,7 +1301,7 @@ export default function Home() {
                 icon: Eye,
                 title: "Photo Intelligence",
                 desc: "Every photo is analyzed across 65+ trade categories. AI identifies aging equipment, damage patterns, deferred maintenance, and upgrade potential invisible to the human eye.",
-                color: "#3B82F6",
+                color: "#C89B5A",
                 stat: "65+",
                 statLabel: "Trade Categories",
               },
@@ -1331,7 +1317,7 @@ export default function Home() {
                 icon: Clock,
                 title: "Asset Aging Engine",
                 desc: "Tracks equipment age from photos. When a water heater, HVAC unit, or roof approaches end-of-life, generates proactive replacement leads.",
-                color: "#0D9488",
+                color: "#B08544",
                 stat: "12+",
                 statLabel: "Asset Categories",
               },
@@ -1369,11 +1355,11 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   {[
-                    { step: "1", label: "You take a photo", icon: Camera, color: "#34D399" },
-                    { step: "2", label: "AI detects 3 opportunities", icon: Eye, color: "#3B82F6" },
+                    { step: "1", label: "You take a photo", icon: Camera, color: "#C89B5A" },
+                    { step: "2", label: "AI detects 3 opportunities", icon: Eye, color: "#C89B5A" },
                     { step: "3", label: "6 months later: storm hits", icon: CloudLightning, color: "#8B5CF6" },
-                    { step: "4", label: "Engine matches your photo", icon: Radar, color: "#0D9488" },
-                    { step: "5", label: "You earn again", icon: DollarSign, color: "#10B981" },
+                    { step: "4", label: "Engine matches your photo", icon: Radar, color: "#B08544" },
+                    { step: "5", label: "You earn again", icon: DollarSign, color: "#C89B5A" },
                   ].map((s) => (
                     <div key={s.step} className="text-center">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: `${s.color}20` }}>
@@ -1390,7 +1376,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/apply">
-              <button className="px-8 py-4 text-sm font-bold text-white transition-all hover:brightness-110 rounded-none" style={{ backgroundColor: "#059669" }}>
+              <button className="px-8 py-4 text-sm font-bold text-white transition-all hover:brightness-110 rounded-none" style={{ backgroundColor: "#C89B5A", color: "#1E293B" }}>
                 Start Building Your Photo Library <ArrowRight className="w-4 h-4 inline ml-2" />
               </button>
             </Link>
@@ -1429,7 +1415,7 @@ export default function Home() {
                 ))}
               </div>
               <Link href="/apply">
-                <button className="px-6 py-3 rounded-xl bg-[#1E293B] text-white font-bold text-sm hover:bg-[#1E293B]/90 transition-colors flex items-center gap-2">
+                <button className="px-6 py-3 rounded-xl bg-[#1E293B] text-white font-bold text-sm hover:bg-[#0F172A] transition-colors flex items-center gap-2">
                   Start Detecting Opportunities <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>
@@ -1442,13 +1428,13 @@ export default function Home() {
       </section>
 
       {/* — Passive Income Engine — */}
-      <section id="passive-income" className="py-24" style={{ background: "linear-gradient(135deg, #1E293B 0%, #134E4A 60%, #1E293B 100%)" }}>
+      <section id="passive-income" className="py-24" style={{ background: "linear-gradient(135deg, #1E293B 0%, #3B3327 60%, #1E293B 100%)" }}>
         <div className="container">
           <FadeUp>
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 mb-6">
-                <TrendingUp className="w-4 h-4 text-emerald-400" />
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Multiplied Returns</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C89B5A]/30 bg-[#C89B5A]/10 mb-6">
+                <TrendingUp className="w-4 h-4 text-[#C89B5A]" />
+                <span className="text-xs font-bold text-[#C89B5A] uppercase tracking-wider">Multiplied Returns</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">You Do the Job Once.<br />ProLnk Pays You Forever.</h2>
               <p className="text-white/60 max-w-2xl mx-auto text-lg">Most referral platforms pay you once. ProLnk is built differently — your photos and your network create two compounding income streams that run in the background while you focus on your own work.</p>
@@ -1457,10 +1443,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
             <FadeUp delay={0.1}>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-8 h-full">
-                <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[#9A6A2F] flex items-center justify-center mb-6">
                   <Camera className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Stream 1 — Photo Origination</div>
+                <div className="text-xs font-bold text-[#C89B5A] uppercase tracking-wider mb-2">Stream 1 — Photo Origination</div>
                 <h3 className="text-2xl font-heading font-bold text-white mb-3">Your Photos. Their Jobs. Your Commission.</h3>
                 <p className="text-white/60 text-sm leading-relaxed mb-6">
                   Every time you upload job photos, our AI scans the entire property and generates referral leads for other trades. When any of those leads close — whether it’s a roofer, an HVAC tech, or a landscaper — you earn a commission on that job. You never lifted a finger for it.
@@ -1472,7 +1458,7 @@ export default function Home() {
                     { label: "Painting job photo", result: "AI flags gutter damage → Gutter partner closes $900 job → you earn $36" },
                   ].map((ex, i) => (
                     <div key={i} className="rounded-xl bg-white/5 border border-white/10 p-4">
-                      <div className="text-xs font-semibold text-emerald-400 mb-1">{ex.label}</div>
+                      <div className="text-xs font-semibold text-[#C89B5A] mb-1">{ex.label}</div>
                       <div className="text-xs text-white/60 leading-relaxed">{ex.result}</div>
                     </div>
                   ))}
@@ -1481,10 +1467,10 @@ export default function Home() {
             </FadeUp>
             <FadeUp delay={0.2}>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-8 h-full">
-                <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[#9A6A2F] flex items-center justify-center mb-6">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Stream 2 — Network Growth</div>
+                <div className="text-xs font-bold text-[#C89B5A] uppercase tracking-wider mb-2">Stream 2 — Network Growth</div>
                 <h3 className="text-2xl font-heading font-bold text-white mb-3">Refer a Pro. Earn From Their Network.</h3>
                 <p className="text-white/60 text-sm leading-relaxed mb-6">
                   When you refer another pro who joins ProLnk, you earn a referral bonus every time they generate a closed job. The more pros you bring in, the more your passive income compounds — without doing any additional work.
@@ -1496,7 +1482,7 @@ export default function Home() {
                     { label: "Your network grows", result: "More pros = more photos = more AI detections = more commissions flowing to you" },
                   ].map((ex, i) => (
                     <div key={i} className="rounded-xl bg-white/5 border border-white/10 p-4">
-                      <div className="text-xs font-semibold text-emerald-400 mb-1">{ex.label}</div>
+                      <div className="text-xs font-semibold text-[#C89B5A] mb-1">{ex.label}</div>
                       <div className="text-xs text-white/60 leading-relaxed">{ex.result}</div>
                     </div>
                   ))}
@@ -1505,18 +1491,18 @@ export default function Home() {
             </FadeUp>
           </div>
           <FadeUp delay={0.3}>
-            <div className="max-w-3xl mx-auto rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-8 text-center">
-              <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-6">The Compounding Effect</div>
+            <div className="max-w-3xl mx-auto rounded-2xl border border-[#C89B5A]/20 bg-[#C89B5A]/5 p-8 text-center">
+              <div className="text-xs font-bold text-[#C89B5A] uppercase tracking-wider mb-6">The Compounding Effect</div>
               <div className="grid grid-cols-3 gap-6 mb-6">
                 <div>
                   <div className="text-3xl font-heading font-black text-white mb-1">1 Job</div>
                   <div className="text-xs text-white/50">You complete your trade</div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <ArrowRight className="w-6 h-6 text-emerald-400" />
+                  <ArrowRight className="w-6 h-6 text-[#C89B5A]" />
                 </div>
                 <div>
-                  <div className="text-3xl font-heading font-black text-emerald-400 mb-1">5–12 Leads</div>
+                  <div className="text-3xl font-heading font-black text-[#C89B5A] mb-1">5–12 Leads</div>
                   <div className="text-xs text-white/50">AI generates for other trades</div>
                 </div>
               </div>
@@ -1526,10 +1512,10 @@ export default function Home() {
                   <div className="text-xs text-white/50">Extra work required</div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <ArrowRight className="w-6 h-6 text-emerald-400" />
+                  <ArrowRight className="w-6 h-6 text-[#C89B5A]" />
                 </div>
                 <div>
-                  <div className="text-3xl font-heading font-black text-emerald-400 mb-1">$50–$400</div>
+                  <div className="text-3xl font-heading font-black text-[#C89B5A] mb-1">$50–$400</div>
                   <div className="text-xs text-white/50">Passive commissions per job</div>
                 </div>
               </div>
@@ -1557,11 +1543,11 @@ export default function Home() {
           </FadeUp>
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {[
-              { group: "Outdoor & Lawn", icon: TreePine, color: "#16a34a", bg: "#f0fdf4", border: "#bbf7d0", count: 10, top: ["Lawn Care", "Landscaping", "Tree Removal", "Irrigation", "Hardscaping"] },
-              { group: "Home Maintenance", icon: Wrench, color: "#1d4ed8", bg: "#eff6ff", border: "#bfdbfe", count: 12, top: ["Handyman", "Roofing", "HVAC", "Plumbing", "Electrical"] },
+              { group: "Outdoor & Lawn", icon: TreePine, color: "#475569", bg: "#F8FAFC", border: "#CBD5E1", count: 10, top: ["Lawn Care", "Landscaping", "Tree Removal", "Irrigation", "Hardscaping"] },
+              { group: "Home Maintenance", icon: Wrench, color: "#8A5A24", bg: "#F5EDE0", border: "#D9C7A8", count: 12, top: ["Handyman", "Roofing", "HVAC", "Plumbing", "Electrical"] },
               { group: "Cleaning & Restoration", icon: Sparkles, color: "#0891b2", bg: "#ecfeff", border: "#a5f3fc", count: 10, top: ["House Cleaning", "Pressure Washing", "Carpet Cleaning", "Mold Remediation", "Junk Removal"] },
               { group: "Specialty Trades", icon: Hammer, color: "#7c3aed", bg: "#f5f3ff", border: "#ddd6fe", count: 12, top: ["Painting", "Pool Service", "Pest Control", "Kitchen Remodel", "Flooring & Tile"] },
-              { group: "Home Technology", icon: Zap, color: "#0d9488", bg: "#f0fdfa", border: "#99f6e4", count: 6, top: ["Smart Home", "EV Charger", "Generator", "Home Theater", "Solar"] },
+              { group: "Home Technology", icon: Zap, color: "#57534E", bg: "#FAFAF9", border: "#D6D3D1", count: 6, top: ["Smart Home", "EV Charger", "Generator", "Home Theater", "Solar"] },
               { group: "Pet & Animal", icon: Users, color: "#db2777", bg: "#fdf2f8", border: "#fbcfe8", count: 4, top: ["Pet Waste Removal", "Dog Walking", "Pet Grooming", "Wildlife Removal"] },
             ].map((item) => (
               <StaggerItem key={item.group}>
@@ -1613,7 +1599,7 @@ export default function Home() {
         <div className="container">
           <FadeUp>
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#8A5A24] bg-[#F5EDE0] border border-[#D9C7A8] px-4 py-2 rounded-full mb-4">
                 <Plug className="w-3.5 h-3.5" /> Works With Your Existing Tools
               </div>
               <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">
@@ -1645,7 +1631,7 @@ export default function Home() {
               <FadeUp key={item.title}>
                 <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 h-full">
                   <div className="w-10 h-10 rounded-xl bg-[#1E293B] flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-emerald-400" />
+                    <item.icon className="w-5 h-5 text-[#C89B5A]" />
                   </div>
                   <h3 className="text-base font-heading font-bold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{item.body}</p>
@@ -1677,7 +1663,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-14 items-center">
               <FadeUp>
                 <div>
-                  <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full mb-6">
+                  <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#8A5A24] bg-[#F5EDE0] border border-[#D9C7A8] px-4 py-2 rounded-full mb-6">
                     <RefreshCw className="w-3.5 h-3.5" /> FSM Integration
                   </div>
                   <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-5">
@@ -1693,7 +1679,7 @@ export default function Home() {
                       { icon: DollarSign, title: "Retroactive Commission Potential", desc: "A roofer with 3 years of job photos could have hundreds of undetected opportunities already waiting." },
                     ].map((item) => (
                       <div key={item.title} className="flex gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-[#9A6A2F] flex items-center justify-center shrink-0">
                           <item.icon className="w-5 h-5 text-white" />
                         </div>
                         <div>
@@ -1704,7 +1690,7 @@ export default function Home() {
                     ))}
                   </div>
                   <Link href="/apply">
-                    <button className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold text-white hover:opacity-90 transition-all" style={{ backgroundColor: "#059669" }}>
+                    <button className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold text-white hover:opacity-90 transition-all" style={{ backgroundColor: "#1E293B" }}>
                       Connect Your FSM — It's Free <ArrowRight className="w-4 h-4" />
                     </button>
                   </Link>
@@ -1718,18 +1704,18 @@ export default function Home() {
                       {
                         label: "Before Photos",
                         icon: Camera,
-                        color: "#3B82F6",
+                        color: "#B08544",
                         desc: "Document the property condition before you start. AI captures baseline data for the entire home — not just your work area.",
                         badge: "Required",
-                        badgeColor: "bg-blue-100 text-blue-800",
+                        badgeColor: "bg-[#F5EDE0] text-[#8A5A24]",
                       },
                       {
                         label: "After Photos",
                         icon: CheckCircle,
-                        color: "#10B981",
+                        color: "#B08544",
                         desc: "Prove your work quality and capture the finished state. AI compares before/after to track improvements and detect adjacent needs.",
                         badge: "Required",
-                        badgeColor: "bg-emerald-100 text-emerald-800",
+                        badgeColor: "bg-[#F5EDE0] text-[#8A5A24]",
                       },
                       {
                         label: "FSM Historical Import",
@@ -1742,10 +1728,10 @@ export default function Home() {
                       {
                         label: "Current Job Photos",
                         icon: Zap,
-                        color: "#0D9488",
+                        color: "#B08544",
                         desc: "Every job you complete from today forward. Upload at job close and the AI scans immediately.",
                         badge: "Ongoing",
-                        badgeColor: "bg-teal-100 text-teal-800",
+                        badgeColor: "bg-[#F5EDE0] text-[#8A5A24]",
                       },
                     ].map((item) => (
                       <div key={item.label} className="flex gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
@@ -1774,7 +1760,7 @@ export default function Home() {
         <div className="container">
           <FadeUp>
             <div className="text-center mb-14 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#8A5A24] bg-[#F5EDE0] border border-[#D9C7A8] px-4 py-2 rounded-full mb-4">
                 <BadgeCheck className="w-3.5 h-3.5" /> TrustyPro Certified
               </div>
               <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">
@@ -1885,13 +1871,13 @@ export default function Home() {
           </StaggerChildren>
           <FadeUp>
             <div className="max-w-3xl mx-auto bg-[#1E293B] rounded-2xl p-8 text-center">
-              <BadgeCheck className="w-10 h-10 text-emerald-400 mx-auto mb-3" />
+              <BadgeCheck className="w-10 h-10 text-[#C89B5A] mx-auto mb-3" />
               <h3 className="text-2xl font-heading font-bold text-white mb-2">Your Badge Lives on Your TrustyPro Profile</h3>
               <p className="text-slate-400 text-sm leading-relaxed max-w-xl mx-auto mb-6">
                 Every homeowner who scans their home through TrustyPro sees your badge before they see your price. Bronze gets you in the door. Platinum makes you the obvious choice. Badges are earned through verified performance — homeowners know they can't be bought.
               </p>
               <Link href="/apply">
-                <button className="px-8 py-3 text-sm font-bold bg-emerald-600 text-white hover:opacity-90 transition-all rounded-none">
+                <button className="px-8 py-3 text-sm font-bold bg-[#C89B5A] text-[#1E293B] hover:bg-[#B08544] transition-all rounded-none">
                   Start Earning Your Badge
                 </button>
               </Link>
@@ -1905,7 +1891,7 @@ export default function Home() {
         <div className="container">
           <FadeUp>
             <div className="text-center mb-14 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#8A5A24] bg-[#F5EDE0] border border-[#D9C7A8] px-4 py-2 rounded-full mb-4">
                 <Target className="w-3.5 h-3.5" /> Why ProLnk Is Different
               </div>
               <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">
@@ -1941,7 +1927,7 @@ export default function Home() {
                     <tr key={row.feature} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                       <td className="px-6 py-3.5 font-medium text-gray-900">{row.feature}</td>
                       <td className="px-6 py-3.5 text-center">
-                        <span className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold">
+                        <span className="inline-flex items-center gap-1.5 text-[#8A5A24] font-semibold">
                           <CheckCircle className="w-4 h-4" />{row.prolnk}
                         </span>
                       </td>
@@ -1966,7 +1952,7 @@ export default function Home() {
               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-8">What Partners Say</h2>
               <div className="space-y-5">
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-dashed border-gray-200 text-center">
-                  <div className="w-12 h-12 rounded-full bg-emerald-600/10 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#9A6A2F]/10 flex items-center justify-center mx-auto mb-4">
                     <Star className="w-6 h-6 text-slate-900" />
                   </div>
                   <h4 className="font-heading font-bold text-gray-900 mb-2">Be the First to Share Your Story</h4>
@@ -2013,13 +1999,13 @@ export default function Home() {
                     "Applies to first-time partners only",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="h-4 w-4 text-emerald-400 shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-[#C89B5A] shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link href="/apply">
-                  <button className="w-full py-3 text-sm font-bold bg-emerald-600 text-white hover:opacity-90 transition-all rounded-none">
+                  <button className="w-full py-3 text-sm font-bold bg-[#C89B5A] text-[#1E293B] hover:bg-[#B08544] transition-all rounded-none">
                     Join the Waitlist
                   </button>
                 </Link>
@@ -2028,7 +2014,7 @@ export default function Home() {
               {/* Founding Partner Spot Counter */}
               <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <Award className="w-6 h-6 text-emerald-400" />
+                  <Award className="w-6 h-6 text-[#B08544]" />
                   <div>
                     <h4 className="font-heading font-bold text-gray-900">Founding Partner Spots</h4>
                     <p className="text-xs text-gray-500">Lock in your current rate forever</p>
@@ -2082,13 +2068,13 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">Three Reasons Not to Wait</h2>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-                  <Lock className="w-8 h-8 text-emerald-700 mx-auto mb-3" />
+                <div className="rounded-2xl border border-[#D9C7A8] bg-[#F5EDE0] p-6 text-center">
+                  <Lock className="w-8 h-8 text-[#8A5A24] mx-auto mb-3" />
                   <h3 className="font-heading font-bold text-gray-900 mb-2">Price Locked Forever</h3>
                   <p className="text-sm text-gray-600">Founding price ($149/mo) is locked at your join date — it will never increase, no matter what we charge future members.</p>
                 </div>
-                <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6 text-center">
-                  <Award className="w-8 h-8 text-teal-700 mx-auto mb-3" />
+                <div className="rounded-2xl border border-[#D9C7A8] bg-[#F5EDE0] p-6 text-center">
+                  <Award className="w-8 h-8 text-[#8A5A24] mx-auto mb-3" />
                   <h3 className="font-heading font-bold text-gray-900 mb-2">Charter Spots Go First</h3>
                   <p className="text-sm text-gray-600">Charter members (spots 1–25) get maximum cascade depth in the 4-level network — the highest possible passive income position. Only 25 exist, ever.</p>
                 </div>
@@ -2100,8 +2086,8 @@ export default function Home() {
               </div>
               <div className="text-center mt-8">
                 <Link href="/partner-checkout">
-                  <button className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none" style={{ backgroundColor: "#059669", color: "#FFFFFF" }}>
-                    Secure Your Spot Now <ArrowRight className="w-4 h-4" />
+                  <button className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 rounded-none" style={{ backgroundColor: "#1E293B", color: "#FFFFFF" }}>
+                    Secure Your Spot Now <ArrowRight className="w-4 h-4 text-[#C89B5A]" />
                   </button>
                 </Link>
                 <p className="text-xs text-gray-400 mt-3">
@@ -2131,7 +2117,7 @@ export default function Home() {
               <Link href="/apply">
                 <button
                   className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
-                  style={{ backgroundColor: "#059669", color: "#FFFFFF" }}
+                  style={{ backgroundColor: "#C89B5A", color: "#1E293B" }}
                 >
                   Apply Now — It's Free <ArrowRight className="h-5 w-5" />
                 </button>

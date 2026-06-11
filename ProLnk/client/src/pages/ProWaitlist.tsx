@@ -21,9 +21,9 @@ import { SERVICE_CATEGORIES } from "@/data/serviceCategories";
 import { Button } from "@/components/ui/button";
 
 // --- Design tokens ------------------------------------------------------------
-// Backgrounds: white #FFFFFF / warm ivory #FAFAF8, soft emerald-50/teal-50 tints
+// Backgrounds: white #FFFFFF / warm ivory #FAFAF8, soft stone-50 #FAFAF9 / warm sand #F7F2EA tints
 // Text: slate-900 headings, slate-600 body
-// Accent: emerald #059669 / teal #0D9488 — primary CTA emerald-600
+// Accent: bronze family — deep #8A5A24, primary #9A6A2F, mid #B08544, light #C89B5A, tint #F5EDE0, border #D9C7A8. Primary CTAs charcoal #1E293B (hover #0F172A), bronze #C89B5A arrows
 // Dark (sparingly, final CTA only): deep slate #1E293B
 
 // --- Pricing -- Core $99/40%, Pro $149/50%, Business $249/60%, Enterprise custom ------
@@ -287,13 +287,13 @@ function PricingSection() {
             onClick={() => setActiveTierIdx(idx)}
             className={`relative rounded-2xl p-7 flex flex-col border-2 cursor-pointer transition-all ${
               activeTierIdx === idx
-                ? "border-emerald-600 shadow-xl scale-[1.02]"
+                ? "border-[#9A6A2F] shadow-xl scale-[1.02]"
                 : "border-gray-200 shadow-sm hover:border-gray-400"
             }`}
           >
             {tier.popular && (
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white bg-emerald-600 rounded-full">
+                <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-[#9A6A2F] border border-[#B08544] bg-[#FAFAF8] rounded-full">
                   Most Popular
                 </span>
               </div>
@@ -315,15 +315,15 @@ function PricingSection() {
               )}
             </div>
             <div className="flex items-center gap-1.5 mb-4 pb-4 border-b border-gray-100">
-              <TrendingUp className="h-4 w-4 text-emerald-700" />
-              <span className="text-sm font-bold text-emerald-700">
+              <TrendingUp className="h-4 w-4 text-[#9A6A2F]" />
+              <span className="text-sm font-bold text-[#9A6A2F]">
                 {tier.keepRate != null ? `Keep ${(tier.keepRate * 100).toFixed(0)}% of every referral` : "Negotiated keep rate"}
               </span>
             </div>
             <ul className="space-y-2 mb-6 flex-1">
               {tier.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-emerald-700" />
+                  <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#9A6A2F]" />
                   {feature}
                 </li>
               ))}
@@ -332,8 +332,8 @@ function PricingSection() {
                 onClick={(e) => { e.stopPropagation(); document.dispatchEvent(new CustomEvent("open-pro-waitlist")); }}
                 className={`w-full py-3 text-sm font-bold tracking-wide transition-all rounded-none ${
                   activeTierIdx === idx
-                    ? "bg-emerald-600 text-white hover:opacity-90"
-                    : "border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white"
+                    ? "bg-[#1E293B] text-white hover:bg-[#0F172A]"
+                    : "border-2 border-[#1E293B] text-slate-900 hover:bg-[#1E293B] hover:text-white"
                 }`}
               >
                 {tier.cta}
@@ -358,13 +358,13 @@ function PricingSection() {
               <div
                 key={addon.id}
                 className={`rounded-xl border-2 p-5 transition-all cursor-pointer ${
-                  isOn ? "border-emerald-600 bg-emerald-600/[0.03]" : "border-gray-200 hover:border-gray-400"
+                  isOn ? "border-[#9A6A2F] bg-[#F5EDE0]" : "border-gray-200 hover:border-gray-400"
                 }`}
                 onClick={() => toggleAddon(addon.id)}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2.5">
-                    <div className={`p-2 rounded-lg ${ isOn ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500" }`}>
+                    <div className={`p-2 rounded-lg ${ isOn ? "bg-[#9A6A2F] text-white" : "bg-gray-100 text-gray-500" }`}>
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
@@ -373,7 +373,7 @@ function PricingSection() {
                     </div>
                   </div>
                   <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 ${
-                    isOn ? "border-emerald-600 bg-emerald-600" : "border-gray-300"
+                    isOn ? "border-[#9A6A2F] bg-[#9A6A2F]" : "border-gray-300"
                   }`}>
                     {isOn && <CheckCircle className="h-3 w-3 text-white" />}
                   </div>
@@ -406,7 +406,7 @@ function PricingSection() {
       {/* Live Total */}
       {(addOnTotal > 0 || activeTierIdx > 0) && (
         <div className="max-w-4xl mx-auto mb-10">
-          <div className="rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="rounded-2xl bg-gradient-to-r from-[#1E293B] to-[#334155] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Your Estimated Monthly</div>
               <div className="flex items-baseline gap-2">
@@ -419,7 +419,7 @@ function PricingSection() {
                 {"  plus 10% platform fee on closed jobs"}
               </div>
             </div>
-            <button onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))} className="px-8 py-3 bg-white text-emerald-700 font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
+            <button onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))} className="px-8 py-3 bg-white text-slate-900 font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
                 Join the Waitlist
               </button>
           </div>
@@ -433,10 +433,10 @@ function PricingSection() {
 
 // --- Partner Spotlight Section --------------------------------------------------
 const TIER_COLORS: Record<string, string> = {
-  enterprise: "#0F766E",
-  business: "#0D9488",
-  pro: "#059669",
-  core: "#10B981",
+  enterprise: "#8A5A24",
+  business: "#9A6A2F",
+  pro: "#9A6A2F",
+  core: "#B08544",
 };
 const TIER_LABELS: Record<string, string> = {
   enterprise: "Enterprise",
@@ -450,7 +450,7 @@ function PartnerSpotlightSection() {
     <section id="spotlight" className="py-24 bg-white">
       <div className="container">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase mb-3 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full">Founding Cohort</span>
+          <span className="inline-block text-xs font-bold tracking-widest text-[#9A6A2F] uppercase mb-3 px-3 py-1 bg-[#FAFAF8] border border-[#B08544]/50 rounded-full">Founding Cohort</span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">The DFW founding cohort is forming</h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
             We're hand-selecting the first verified pros across the Dallas–Fort Worth metro. Spots are limited — early members get first access when we launch.
@@ -458,17 +458,17 @@ function PartnerSpotlightSection() {
         </div>
         <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
-            <CheckCircle className="w-8 h-8 mx-auto mb-3 text-emerald-700" />
+            <CheckCircle className="w-8 h-8 mx-auto mb-3 text-[#9A6A2F]" />
             <div className="font-heading font-bold text-gray-900 text-sm">Checkr background-verified</div>
             <div className="text-xs text-gray-500 mt-1">Every pro is screened before they join.</div>
           </div>
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
-            <HomeIcon className="w-8 h-8 mx-auto mb-3 text-emerald-700" />
+            <HomeIcon className="w-8 h-8 mx-auto mb-3 text-[#9A6A2F]" />
             <div className="font-heading font-bold text-gray-900 text-sm">DFW first</div>
             <div className="text-xs text-gray-500 mt-1">Launching across the Dallas–Fort Worth metro.</div>
           </div>
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
-            <Star className="w-8 h-8 mx-auto mb-3 text-emerald-700" />
+            <Star className="w-8 h-8 mx-auto mb-3 text-[#9A6A2F]" />
             <div className="font-heading font-bold text-gray-900 text-sm">Patent-pending engine</div>
             <div className="text-xs text-gray-500 mt-1">AI finds leads in your job photos automatically.</div>
           </div>
@@ -480,10 +480,10 @@ function PartnerSpotlightSection() {
 
 // --- Tier badge config for success state --------------------------------------
 const TIER_BADGE_CONFIG: Record<string, { label: string; badge: string; color: string; bg: string; border: string }> = {
-  business:   { label: "Business Member",  badge: "BUSINESS",       color: "#0D9488", bg: "bg-teal-50",    border: "border-teal-200" },
-  pro:        { label: "Pro Member",       badge: "PRO MEMBER",     color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
-  core:       { label: "Core Member",      badge: "CORE",           color: "#10B981", bg: "bg-emerald-50", border: "border-emerald-100" },
-  enterprise: { label: "Enterprise Member", badge: "ENTERPRISE",    color: "#0F766E", bg: "bg-teal-50",    border: "border-teal-200" },
+  business:   { label: "Business Member",  badge: "BUSINESS",       color: "#9A6A2F", bg: "bg-[#F5EDE0]",    border: "border-[#D9C7A8]" },
+  pro:        { label: "Pro Member",       badge: "PRO MEMBER",     color: "#9A6A2F", bg: "bg-[#F5EDE0]", border: "border-[#D9C7A8]" },
+  core:       { label: "Core Member",      badge: "CORE",           color: "#B08544", bg: "bg-[#F5EDE0]", border: "border-[#D9C7A8]" },
+  enterprise: { label: "Enterprise Member", badge: "ENTERPRISE",    color: "#8A5A24", bg: "bg-[#F5EDE0]",    border: "border-[#D9C7A8]" },
 };
 
 // --- Success State Component --------------------------------------------------
@@ -568,9 +568,9 @@ function SuccessState({
       </div>
 
       {/* Referral code + URL */}
-      <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl p-4 mb-4">
+      <div className="bg-gradient-to-br from-[#1E293B] to-[#3B3327] rounded-xl p-4 mb-4">
         <p className="text-white font-semibold text-sm mb-1 flex items-center gap-2">
-          <Users className="w-4 h-4 text-emerald-200" /> Your Referral Code
+          <Users className="w-4 h-4 text-[#C89B5A]" /> Your Referral Code
         </p>
         <p className="text-white/50 text-xs mb-3">Share your link and move up the waitlist priority queue.</p>
 
@@ -671,7 +671,7 @@ function SuccessState({
       {referralCode && (
         <a
           href={`/waitlist-status?ref=${referralCode}`}
-          className="w-full flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl text-sm font-semibold hover:bg-emerald-700 transition-colors mb-3"
+          className="w-full flex items-center justify-center gap-2 px-5 py-2.5 bg-[#1E293B] text-white rounded-xl text-sm font-semibold hover:bg-[#0F172A] transition-colors mb-3"
         >
           View My Referral Dashboard <ArrowRight className="w-4 h-4" />
         </a>
@@ -720,7 +720,7 @@ function TradeSearchDropdown({
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 bg-white text-left flex items-center justify-between"
+        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 bg-white text-left flex items-center justify-between"
       >
         <span className={selected.length > 0 ? "text-gray-900" : "text-gray-400"}>
           {selected.length > 0
@@ -767,13 +767,13 @@ function TradeSearchDropdown({
                       type="checkbox"
                       checked={checked}
                       onChange={() => onToggle(cat.id)}
-                      className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600/30 flex-shrink-0"
+                      className="rounded border-gray-300 text-[#9A6A2F] focus:ring-[#9A6A2F]/30 flex-shrink-0"
                     />
                     <div className="min-w-0 flex-1">
                       <span className="text-sm text-gray-800 font-medium">{cat.name}</span>
                       <p className="text-xs text-gray-400 truncate">{cat.description}</p>
                     </div>
-                    {checked && <CheckCircle size={14} className="text-emerald-700 flex-shrink-0" />}
+                    {checked && <CheckCircle size={14} className="text-[#9A6A2F] flex-shrink-0" />}
                   </label>
                 );
               })}
@@ -790,13 +790,13 @@ function TradeSearchDropdown({
                 type="checkbox"
                 checked={selected.includes("other")}
                 onChange={() => onToggle("other")}
-                className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600/30 flex-shrink-0"
+                className="rounded border-gray-300 text-[#9A6A2F] focus:ring-[#9A6A2F]/30 flex-shrink-0"
               />
               <div className="min-w-0 flex-1">
                 <span className="text-sm text-gray-800 font-medium">Other (describe below)</span>
                 <p className="text-xs text-gray-400">Tell us about your trade in the notes section</p>
               </div>
-              {selected.includes("other") && <CheckCircle size={14} className="text-emerald-700 flex-shrink-0" />}
+              {selected.includes("other") && <CheckCircle size={14} className="text-[#9A6A2F] flex-shrink-0" />}
             </label>
           </div>
         </div>
@@ -842,8 +842,8 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
     onError: (e: { message?: string }) => toast.error(e.message || "Something went wrong."),
   });
   const set = (k: keyof typeof form) => (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setForm(p => ({ ...p, [k]: e.target.value }));
-  const inputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 mb-3";
-  const selectCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 mb-3 text-gray-700 bg-white";
+  const inputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 mb-3";
+  const selectCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 mb-3 text-gray-700 bg-white";
 
   const toggleTrade = (id: string) => {
     setSelectedTrades(prev =>
@@ -870,8 +870,8 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             {/* Owner(s) Info */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Owner(s) Information</p>
             <div className="grid grid-cols-2 gap-3 mb-3">
-              <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" />
-              <input placeholder="Last name" value={form.lastName} onChange={set("lastName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" />
+              <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
+              <input placeholder="Last name" value={form.lastName} onChange={set("lastName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
             </div>
             <input placeholder="Email address *" type="email" value={form.email} onChange={set("email")} className={inputCls} />
             <input placeholder="Phone number *" value={form.phone} onChange={set("phone")} className={inputCls} />
@@ -905,19 +905,19 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                   onClick={() => setWorkStyle(value)}
                   className={`w-full flex items-start gap-3 rounded-xl border-2 px-4 py-3 text-left transition-all ${
                     workStyle === value
-                      ? "border-emerald-600 bg-emerald-600/5"
+                      ? "border-[#9A6A2F] bg-[#F5EDE0]/60"
                       : "border-gray-200 hover:border-gray-300 bg-white"
                   }`}
                 >
-                  <div className={`mt-0.5 shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${workStyle === value ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500"}`}>
+                  <div className={`mt-0.5 shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${workStyle === value ? "bg-[#9A6A2F] text-white" : "bg-gray-100 text-gray-500"}`}>
                     <Icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className={`text-sm font-semibold ${workStyle === value ? "text-emerald-700" : "text-gray-800"}`}>{label}</div>
+                    <div className={`text-sm font-semibold ${workStyle === value ? "text-[#8A5A24]" : "text-gray-800"}`}>{label}</div>
                     <div className="text-xs text-gray-500 leading-relaxed mt-0.5">{desc}</div>
                   </div>
                   {workStyle === value && (
-                    <CheckCircle className="w-4 h-4 text-emerald-700 shrink-0 ml-auto mt-1" />
+                    <CheckCircle className="w-4 h-4 text-[#9A6A2F] shrink-0 ml-auto mt-1" />
                   )}
                 </button>
               ))}
@@ -941,7 +941,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                       onClick={() => setForm(p => ({ ...p, employeeCount: value }))}
                       className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                         form.employeeCount === value
-                          ? "bg-emerald-600 text-white border-emerald-600"
+                          ? "bg-[#9A6A2F] text-white border-[#9A6A2F]"
                           : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
                       }`}
                     >
@@ -963,7 +963,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 {selectedTrades.map(id => {
                   const cat = SERVICE_CATEGORIES.find(c => c.id === id);
                   return (
-                    <span key={id} className="inline-flex items-center gap-1 bg-emerald-600/10 text-emerald-700 text-xs font-medium px-2 py-1 rounded-full">
+                    <span key={id} className="inline-flex items-center gap-1 bg-[#F5EDE0] text-[#8A5A24] text-xs font-medium px-2 py-1 rounded-full">
                       {cat ? `${cat.icon} ${cat.name}` : id}
                       <button onClick={() => toggleTrade(id)} className="hover:text-red-500 leading-none">&times;</button>
                     </span>
@@ -974,7 +974,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
 
             {/* Business Details */}
             <div className="mb-3">
-              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 text-gray-700 bg-white">
+              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 text-gray-700 bg-white">
                 <option value="">Years in business</option>
                 <option value="0-1">Less than 1 year</option>
                 <option value="1-3">1 - 3 years</option>
@@ -1011,9 +1011,9 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-1">Business Address</p>
             <input placeholder="Street address *" value={form.businessAddress} onChange={set("businessAddress")} className={inputCls} />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
-              <input placeholder="City *" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 col-span-1" />
-              <input placeholder="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" maxLength={2} />
-              <input placeholder="ZIP *" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" />
+              <input placeholder="City *" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 col-span-1" />
+              <input placeholder="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" maxLength={2} />
+              <input placeholder="ZIP *" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
             </div>
 
             {/* Service Radius */}
@@ -1074,7 +1074,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 type="checkbox"
                 checked={smsOptIn}
                 onChange={(e) => setSmsOptIn(e.target.checked)}
-                className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600/30 mt-0.5"
+                className="rounded border-gray-300 text-[#9A6A2F] focus:ring-[#9A6A2F]/30 mt-0.5"
               />
               <span className="text-xs text-gray-600 leading-relaxed">
                 Text me when ProLnk launches in my area. <span className="text-gray-400">Message &amp; data rates may apply. Reply STOP to opt out.</span>
@@ -1127,7 +1127,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 });
               }}
               disabled={join.isPending}
-              className="w-full py-3 rounded-none text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors disabled:opacity-50"
+              className="w-full py-3 rounded-none text-sm font-bold text-white bg-[#1E293B] hover:bg-[#0F172A] transition-colors disabled:opacity-50"
             >
               {join.isPending ? "Joining..." : "Join the Waitlist"}
             </button>
@@ -1173,9 +1173,9 @@ function StickyMobileCTA({ onJoin }: { onJoin: () => void }) {
       <div className="flex items-center gap-2 px-3 py-2.5 border-t border-gray-200 bg-white shadow-[0_-4px_16px_rgba(0,0,0,0.08)]" style={{ paddingBottom: "max(0.625rem, env(safe-area-inset-bottom))" }}>
         <button
           onClick={onJoin}
-          className="flex-1 inline-flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors rounded-none"
+          className="flex-1 inline-flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-[#1E293B] hover:bg-[#0F172A] transition-colors rounded-none"
         >
-          Join the Waitlist <ArrowRight className="h-4 w-4" />
+          Join the Waitlist <ArrowRight className="h-4 w-4 text-[#C89B5A]" />
         </button>
         <button
           onClick={() => setDismissed(true)}
@@ -1264,7 +1264,7 @@ export default function ProWaitlist() {
                 href={item.href}
                 className={`transition-colors font-medium ${
                   activeSection === item.id
-                    ? "text-emerald-700 border-b-2 border-emerald-600 pb-0.5"
+                    ? "text-[#8A5A24] border-b-2 border-[#9A6A2F] pb-0.5"
                     : "text-gray-500 hover:text-gray-900"
                 }`}
               >
@@ -1274,13 +1274,13 @@ export default function ProWaitlist() {
           </div>
           <div className="hidden md:flex items-center gap-3">
             <a href="https://trustypro.io">
-              <Button variant="ghost" className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1.5">
+              <Button variant="ghost" className="text-sm font-medium text-[#9A6A2F] hover:text-[#8A5A24] flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro — Homeowners
               </Button>
             </a>
             
-            <Button onClick={openWaitlist} className="text-sm font-semibold text-white rounded-none px-5 bg-emerald-600 hover:bg-emerald-700">
+            <Button onClick={openWaitlist} className="text-sm font-semibold text-white rounded-none px-5 bg-[#1E293B] hover:bg-[#0F172A]">
               Join the Waitlist
             </Button>
           </div>
@@ -1298,11 +1298,11 @@ export default function ProWaitlist() {
             <div className="flex gap-3 pt-2">
               
               <span onClick={openWaitlist} className="flex-1 cursor-pointer">
-                <Button className="w-full text-sm text-white rounded-none font-semibold bg-emerald-600 hover:bg-emerald-700">Join the Waitlist</Button>
+                <Button className="w-full text-sm text-white rounded-none font-semibold bg-[#1E293B] hover:bg-[#0F172A]">Join the Waitlist</Button>
               </span>
             </div>
             <a href="https://trustypro.io" className="block">
-              <Button variant="ghost" className="w-full text-sm text-teal-600 flex items-center justify-center gap-1.5">
+              <Button variant="ghost" className="w-full text-sm text-[#9A6A2F] flex items-center justify-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro — Homeowner Waitlist
               </Button>
@@ -1313,19 +1313,19 @@ export default function ProWaitlist() {
       </nav>
 
       {/* -- Urgency Bar -- */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 py-2 px-4">
+      <div className="bg-gradient-to-r from-[#1E293B] to-[#334155] py-2 px-4">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <span className="text-white text-xs font-black uppercase tracking-wider whitespace-nowrap">
               Waitlist Open
             </span>
-            <span className="text-emerald-50 text-xs whitespace-nowrap">
+            <span className="text-slate-300 text-xs whitespace-nowrap">
               <CountUp target={totalSignups} duration={1.2} /> pros already on the waitlist · Founding cohort · DFW
             </span>
           </div>
           <span
             onClick={openWaitlist}
-            className="cursor-pointer text-xs font-bold text-emerald-700 bg-white px-3 py-1 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="cursor-pointer text-xs font-bold text-[#8A5A24] bg-white px-3 py-1 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             Join the Waitlist →
           </span>
@@ -1343,14 +1343,14 @@ export default function ProWaitlist() {
             animate={prefersReducedMotion ? { scale: 1 } : { scale: [1, 1.04] }}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 12, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(30,41,59,0.92) 0%, rgba(30,41,59,0.78) 50%, rgba(13,148,136,0.35) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(30,41,59,0.92) 0%, rgba(30,41,59,0.78) 50%, rgba(30,41,59,0.35) 100%)" }} />
         </div>
 
         <div className="relative container py-28 md:py-36">
           <div className="max-w-2xl">
             <FadeUp delay={0.1}>
               <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 mb-8 tracking-widest uppercase"
-                style={{ backgroundColor: "rgba(16,185,129,0.15)", color: "#6EE7B7", border: "1px solid rgba(16,185,129,0.35)" }}>
+                style={{ backgroundColor: "rgba(200,155,90,0.15)", color: "#C89B5A", border: "1px solid rgba(200,155,90,0.35)" }}>
                 Patent Pending  DFW Launch
               </span>
             </FadeUp>
@@ -1370,8 +1370,8 @@ export default function ProWaitlist() {
             <FadeUp delay={0.45}>
               <span onClick={openWaitlist} className="cursor-pointer">
                 <button
-                  className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:bg-emerald-700 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
-                  style={{ backgroundColor: "#059669", color: "white" }}
+                  className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:bg-[#B08544] motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
+                  style={{ backgroundColor: "#C89B5A", color: "#1E293B" }}
                 >
                   Join the Waitlist <ArrowRight className="h-5 w-5 transition-transform motion-safe:group-hover:translate-x-1" />
                 </button>
@@ -1417,8 +1417,8 @@ export default function ProWaitlist() {
               <StaggerItem key={item.step}>
                 <div className="relative p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow h-full">
                   <div className="absolute top-6 right-6 text-6xl font-heading font-black opacity-[0.04] text-gray-900 select-none">{item.step}</div>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-emerald-100">
-                    <item.icon className="h-6 w-6 text-emerald-700" />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-[#F5EDE0]">
+                    <item.icon className="h-6 w-6 text-[#9A6A2F]" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">{item.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
@@ -1430,14 +1430,14 @@ export default function ProWaitlist() {
       </section>
 
       {/* -- 2.5. The ProLnk Engine -- */}
-      <section id="the-engine" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #ECFDF5 0%, #F0FDFA 100%)" }}>
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #059669 0%, transparent 50%), radial-gradient(circle at 80% 70%, #0D9488 0%, transparent 50%)" }} />
+      <section id="the-engine" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #FAFAF9 0%, #F7F2EA 100%)" }}>
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #9A6A2F 0%, transparent 50%), radial-gradient(circle at 80% 70%, #9A6A2F 0%, transparent 50%)" }} />
         <div className="container relative">
           <FadeUp>
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-200 bg-white mb-6">
-                <Radar className="w-4 h-4 text-emerald-600" />
-                <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Patent-Pending Technology</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D9C7A8] bg-white mb-6">
+                <Radar className="w-4 h-4 text-[#9A6A2F]" />
+                <span className="text-xs font-bold text-[#8A5A24] uppercase tracking-wider">Patent-Pending Technology</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">The ProLnk Engine</h2>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">
@@ -1452,7 +1452,7 @@ export default function ProWaitlist() {
                 icon: Eye,
                 title: "Photo Intelligence",
                 desc: "Every photo is analyzed for 50+ opportunity types. AI identifies aging equipment, damage patterns, and upgrade potential invisible to the human eye.",
-                color: "#059669",
+                color: "#9A6A2F",
                 stat: "50+",
                 statLabel: "Detection Types",
               },
@@ -1460,7 +1460,7 @@ export default function ProWaitlist() {
                 icon: CloudLightning,
                 title: "Storm Watch Engine",
                 desc: "Monitors NOAA weather data in real time. When severe weather hits, cross-references your photo database to identify properties at risk.",
-                color: "#0D9488",
+                color: "#9A6A2F",
                 stat: "24/7",
                 statLabel: "Weather Monitoring",
               },
@@ -1468,7 +1468,7 @@ export default function ProWaitlist() {
                 icon: Clock,
                 title: "Asset Aging Engine",
                 desc: "Tracks equipment age from photos. When a water heater, HVAC unit, or roof approaches end-of-life, generates proactive replacement leads.",
-                color: "#0F766E",
+                color: "#8A5A24",
                 stat: "12+",
                 statLabel: "Asset Categories",
               },
@@ -1476,7 +1476,7 @@ export default function ProWaitlist() {
                 icon: AlertTriangle,
                 title: "Safety Recall Engine",
                 desc: "Monitors CPSC manufacturer recalls. When a recalled product is identified in your photos, generates high-priority safety leads.",
-                color: "#10B981",
+                color: "#B08544",
                 stat: "100%",
                 statLabel: "Recall Coverage",
               },
@@ -1506,11 +1506,11 @@ export default function ProWaitlist() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   {[
-                    { step: "1", label: "You take a photo", icon: Camera, color: "#059669" },
-                    { step: "2", label: "AI detects 3 opportunities", icon: Eye, color: "#0D9488" },
-                    { step: "3", label: "6 months later: storm hits", icon: CloudLightning, color: "#0F766E" },
-                    { step: "4", label: "Engine matches your photo", icon: Radar, color: "#14B8A6" },
-                    { step: "5", label: "You earn again", icon: DollarSign, color: "#10B981" },
+                    { step: "1", label: "You take a photo", icon: Camera, color: "#9A6A2F" },
+                    { step: "2", label: "AI detects 3 opportunities", icon: Eye, color: "#9A6A2F" },
+                    { step: "3", label: "6 months later: storm hits", icon: CloudLightning, color: "#8A5A24" },
+                    { step: "4", label: "Engine matches your photo", icon: Radar, color: "#B08544" },
+                    { step: "5", label: "You earn again", icon: DollarSign, color: "#B08544" },
                   ].map((s) => (
                     <div key={s.step} className="text-center">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: `${s.color}20` }}>
@@ -1527,8 +1527,8 @@ export default function ProWaitlist() {
 
           <div className="text-center mt-12">
             <span onClick={openWaitlist} className="cursor-pointer">
-              <button className="group px-8 py-4 text-sm font-bold text-white transition-all hover:bg-emerald-700 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98] rounded-none bg-emerald-600">
-                Join the Waitlist <ArrowRight className="w-4 h-4 inline ml-2 transition-transform motion-safe:group-hover:translate-x-1" />
+              <button className="group px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#0F172A] motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98] rounded-none bg-[#1E293B]">
+                Join the Waitlist <ArrowRight className="w-4 h-4 inline ml-2 text-[#C89B5A] transition-transform motion-safe:group-hover:translate-x-1" />
               </button>
             </span>
           </div>
@@ -1552,13 +1552,13 @@ export default function ProWaitlist() {
               <StaggerItem key={group.group}>
                 <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-1.5 h-6 rounded-full flex-shrink-0 bg-emerald-500" />
+                    <div className="w-1.5 h-6 rounded-full flex-shrink-0 bg-[#B08544]" />
                     <h3 className="text-base font-heading font-bold text-gray-900">{group.group}</h3>
                   </div>
                   <div className="space-y-1.5">
                     {group.categories.map((cat) => (
                       <div key={cat} className="flex items-center gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-teal-600" />
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#9A6A2F]" />
                         {cat}
                       </div>
                     ))}
@@ -1570,7 +1570,7 @@ export default function ProWaitlist() {
           <div className="mt-10 text-center">
             <p className="text-gray-500 text-sm mb-4">Don't see your trade? We're adding new categories every month.</p>
             <span onClick={openWaitlist} className="cursor-pointer">
-              <button className="px-6 py-3 text-sm font-semibold border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all rounded-none">
+              <button className="px-6 py-3 text-sm font-semibold border-2 border-[#1E293B] text-slate-900 hover:bg-[#1E293B] hover:text-white transition-all rounded-none">
                 Apply Anyway -- We'll Review Your Category
               </button>
             </span>
@@ -1588,10 +1588,10 @@ export default function ProWaitlist() {
         <div className="container max-w-5xl mx-auto">
           <FadeUp>
           <div className="grid md:grid-cols-2 gap-10 items-start">
-            <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-[#1E293B] to-[#3B3327] rounded-2xl p-8 text-white">
               <div className="text-4xl mb-4">🛡️</div>
               <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
-              <p className="text-emerald-50 text-sm leading-relaxed mb-5">
+              <p className="text-slate-300 text-sm leading-relaxed mb-5">
                 If you don't receive at least <strong className="text-white">3 qualified inbound leads</strong> in your first 30 days, we'll refund your first month. No questions asked.
               </p>
               <ul className="space-y-2 mb-6">
@@ -1600,14 +1600,14 @@ export default function ProWaitlist() {
                   "Refund issued within 5 business days",
                   "Applies to first-time partners only",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-emerald-50">
+                  <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
                     <CheckCircle className="h-4 w-4 text-white shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
               <span onClick={openWaitlist} className="cursor-pointer">
-                <button className="w-full py-3 text-sm font-bold bg-white text-emerald-700 hover:opacity-90 transition-all rounded-none">
+                <button className="w-full py-3 text-sm font-bold bg-white text-slate-900 hover:opacity-90 transition-all rounded-none">
                   Join the Waitlist
                 </button>
               </span>
@@ -1641,8 +1641,8 @@ export default function ProWaitlist() {
           <FadeUp delay={0.25}>
             <span onClick={openWaitlist} className="cursor-pointer">
               <button
-                className="group inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:bg-emerald-500 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
-                style={{ backgroundColor: "#059669", color: "white" }}
+                className="group inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:bg-[#B08544] motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
+                style={{ backgroundColor: "#C89B5A", color: "#1E293B" }}
               >
                 Join the Waitlist <ArrowRight className="h-5 w-5 transition-transform motion-safe:group-hover:translate-x-1" />
               </button>
@@ -1663,7 +1663,7 @@ export default function ProWaitlist() {
               <Link href="/trustypro/waitlist" className="hover:text-white transition-colors">TrustyPro</Link>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-gray-600">
-              <p>&copy; 2026 ProLnk. All rights reserved. &nbsp;&nbsp; <span className="text-emerald-400 font-semibold">Patent Pending</span></p>
+              <p>&copy; 2026 ProLnk. All rights reserved. &nbsp;&nbsp; <span className="text-[#C89B5A] font-semibold">Patent Pending</span></p>
               <div className="flex gap-4 flex-wrap justify-center">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>

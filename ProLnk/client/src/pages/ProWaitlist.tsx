@@ -19,12 +19,12 @@ import {
 } from "lucide-react";
 import { SERVICE_CATEGORIES } from "@/data/serviceCategories";
 import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { Badge } from "@/components/ui/badge";
 
 // --- Design tokens ------------------------------------------------------------
-// Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
-// Hero/final CTA bg: #050d1a
+// Backgrounds: white #FFFFFF / warm ivory #FAFAF8, soft emerald-50/teal-50 tints
+// Text: slate-900 headings, slate-600 body
+// Accent: emerald #059669 / teal #0D9488 — primary CTA emerald-600
+// Dark (sparingly, final CTA only): deep slate #1E293B
 
 // --- Pricing -- Core $99/40%, Pro $149/50%, Business $249/60%, Enterprise custom ------
 const PRICING_TIERS = [
@@ -165,7 +165,7 @@ const ADD_ONS = [
     name: "TrustyPro Connect",
     price: 49,
     unit: "/mo",
-    description: "Unlock Scout capabilities on top of your Core, Pro, or Business plan. Onboard homeowners to TrustyPro, coordinate bids on multi-trade projects, and earn permanent origination rights on every property you bring to the network.",
+    description: "Onboard homeowners to TrustyPro and coordinate bids on multi-trade projects on top of your Core, Pro, or Business plan.",
     icon: Star,
     perUnit: false,
   },
@@ -233,77 +233,6 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-// --- ROI Calculator (compact) -------------------------------------------------
-function ROICalculator() {
-  const [jobsPerMonth, setJobsPerMonth] = useState([20]);
-  const [avgJobValue, setAvgJobValue] = useState([1200]);
-  const [tier, setTier] = useState<"core" | "pro" | "business" | "enterprise">("pro");
-
-  const tierData = {
-    core: { keep: 0.40, fee: 99, cap: null },
-    pro: { keep: 0.50, fee: 149, cap: null },
-    business: { keep: 0.60, fee: 249, cap: null },
-    enterprise: { keep: 0.60, fee: 0, cap: null },
-  };
-  const t = tierData[tier];
-  const platformFee = 0.10;
-  const conversionRate = 0.15;
-  const leadsGenerated = Math.round(jobsPerMonth[0] * conversionRate);
-  const grossCommission = leadsGenerated * avgJobValue[0] * platformFee * t.keep;
-  const capped = grossCommission;
-  const net = Math.max(0, capped - t.fee);
-
-  return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 max-w-2xl mx-auto">
-      <h3 className="text-xl font-heading text-gray-900 mb-6">See What You'd Earn</h3>
-      <div className="grid sm:grid-cols-2 gap-6 mb-6">
-        <div>
-          <div className="flex justify-between items-center mb-2">
-            <label className="text-sm font-semibold text-gray-700">Jobs per month</label>
-            <span className="text-lg font-heading font-bold text-[#0A1628]">{jobsPerMonth[0]}</span>
-          </div>
-          <Slider value={jobsPerMonth} onValueChange={setJobsPerMonth} min={5} max={100} step={5} className="w-full" />
-        </div>
-        <div>
-          <div className="flex justify-between items-center mb-2">
-            <label className="text-sm font-semibold text-gray-700">Average job value</label>
-            <span className="text-lg font-heading font-bold text-[#0A1628]">${avgJobValue[0].toLocaleString()}</span>
-          </div>
-          <Slider value={avgJobValue} onValueChange={setAvgJobValue} min={200} max={5000} step={100} className="w-full" />
-        </div>
-      </div>
-      <div className="flex gap-2 mb-6 flex-wrap">
-        {(["core", "pro", "business", "enterprise"] as const).map((t) => {
-          const tierLabel = { core: "Core", pro: "Pro", business: "Business", enterprise: "Enterprise" }[t];
-          return (
-            <button
-              key={t}
-              onClick={() => setTier(t)}
-              className={`flex-1 min-w-[100px] py-2 rounded-lg text-sm font-semibold transition-all ${tier === t ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
-            >
-              {tierLabel}
-            </button>
-          );
-        })}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="bg-gray-50 rounded-xl p-4 text-center">
-          <div className="text-2xl font-heading font-bold text-gray-800">{leadsGenerated}</div>
-          <div className="text-xs text-gray-500 mt-1">Leads / Month</div>
-        </div>
-        <div className="bg-gray-50 rounded-xl p-4 text-center">
-          <div className="text-2xl font-heading font-bold text-gray-800">${Math.round(capped).toLocaleString()}</div>
-          <div className="text-xs text-gray-500 mt-1">Gross Commission</div>
-        </div>
-        <div className="bg-[#0A1628] rounded-xl p-4 text-center">
-          <div className="text-2xl font-heading font-bold text-[#F5E642]">${Math.round(net).toLocaleString()}</div>
-          <div className="text-xs text-white/70 mt-1">Net Monthly</div>
-        </div>
-      </div>
-      <p className="text-xs text-gray-400 mt-4 text-center">Estimates only. Based on ~15% photo-to-lead conversion and 10% platform fee.</p>
-    </div>
-  );
-}
 // --- Pricing Section (tiers + add-ons) --------------------------------------------
 function PricingSection() {
   const [selectedAddOns, setSelectedAddOns] = useState<Record<string, number>>({});
@@ -358,14 +287,14 @@ function PricingSection() {
             onClick={() => setActiveTierIdx(idx)}
             className={`relative rounded-2xl p-7 flex flex-col border-2 cursor-pointer transition-all ${
               activeTierIdx === idx
-                ? "border-[#0A1628] shadow-xl scale-[1.02]"
+                ? "border-emerald-600 shadow-xl scale-[1.02]"
                 : "border-gray-200 shadow-sm hover:border-gray-400"
             }`}
           >
             {tier.popular && (
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-[#0A1628] bg-[#F5E642]">
-                  Recommended
+                <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white bg-emerald-600 rounded-full">
+                  Most Popular
                 </span>
               </div>
             )}
@@ -386,15 +315,15 @@ function PricingSection() {
               )}
             </div>
             <div className="flex items-center gap-1.5 mb-4 pb-4 border-b border-gray-100">
-              <TrendingUp className="h-4 w-4 text-[#0A1628]" />
-              <span className="text-sm font-bold text-[#0A1628]">
+              <TrendingUp className="h-4 w-4 text-emerald-700" />
+              <span className="text-sm font-bold text-emerald-700">
                 {tier.keepRate != null ? `Keep ${(tier.keepRate * 100).toFixed(0)}% of every referral` : "Negotiated keep rate"}
               </span>
             </div>
             <ul className="space-y-2 mb-6 flex-1">
               {tier.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#0A1628]" />
+                  <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-emerald-700" />
                   {feature}
                 </li>
               ))}
@@ -403,8 +332,8 @@ function PricingSection() {
                 onClick={(e) => { e.stopPropagation(); document.dispatchEvent(new CustomEvent("open-pro-waitlist")); }}
                 className={`w-full py-3 text-sm font-bold tracking-wide transition-all rounded-none ${
                   activeTierIdx === idx
-                    ? "bg-[#0A1628] text-white hover:opacity-90"
-                    : "border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white"
+                    ? "bg-emerald-600 text-white hover:opacity-90"
+                    : "border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white"
                 }`}
               >
                 {tier.cta}
@@ -429,13 +358,13 @@ function PricingSection() {
               <div
                 key={addon.id}
                 className={`rounded-xl border-2 p-5 transition-all cursor-pointer ${
-                  isOn ? "border-[#0A1628] bg-[#0A1628]/[0.03]" : "border-gray-200 hover:border-gray-400"
+                  isOn ? "border-emerald-600 bg-emerald-600/[0.03]" : "border-gray-200 hover:border-gray-400"
                 }`}
                 onClick={() => toggleAddon(addon.id)}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2.5">
-                    <div className={`p-2 rounded-lg ${ isOn ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-500" }`}>
+                    <div className={`p-2 rounded-lg ${ isOn ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500" }`}>
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
@@ -444,7 +373,7 @@ function PricingSection() {
                     </div>
                   </div>
                   <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 ${
-                    isOn ? "border-[#0A1628] bg-[#0A1628]" : "border-gray-300"
+                    isOn ? "border-emerald-600 bg-emerald-600" : "border-gray-300"
                   }`}>
                     {isOn && <CheckCircle className="h-3 w-3 text-white" />}
                   </div>
@@ -477,7 +406,7 @@ function PricingSection() {
       {/* Live Total */}
       {(addOnTotal > 0 || activeTierIdx > 0) && (
         <div className="max-w-4xl mx-auto mb-10">
-          <div className="rounded-2xl border-2 border-[#0A1628] bg-[#0A1628] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Your Estimated Monthly</div>
               <div className="flex items-baseline gap-2">
@@ -490,15 +419,12 @@ function PricingSection() {
                 {"  plus 10% platform fee on closed jobs"}
               </div>
             </div>
-            <button onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))} className="px-8 py-3 bg-[#F5E642] text-[#0A1628] font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
+            <button onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))} className="px-8 py-3 bg-white text-emerald-700 font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
                 Join the Waitlist
               </button>
           </div>
         </div>
       )}
-
-      {/* Earnings Calculator */}
-      <ROICalculator />
 
       <p className="text-center text-sm text-gray-400 mt-8">All plans include FSM integration. No contracts -- upgrade or cancel anytime.</p>
     </div>
@@ -507,10 +433,10 @@ function PricingSection() {
 
 // --- Partner Spotlight Section --------------------------------------------------
 const TIER_COLORS: Record<string, string> = {
-  enterprise: "#7C3AED",
-  business: "#0A1628",
-  pro: "#1D4ED8",
-  core: "#059669",
+  enterprise: "#0F766E",
+  business: "#0D9488",
+  pro: "#059669",
+  core: "#10B981",
 };
 const TIER_LABELS: Record<string, string> = {
   enterprise: "Enterprise",
@@ -524,25 +450,25 @@ function PartnerSpotlightSection() {
     <section id="spotlight" className="py-24 bg-white">
       <div className="container">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-bold tracking-widest text-[#0A1628] uppercase mb-3 px-3 py-1 bg-[#F5E642] rounded-full">Founding Network</span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">The DFW founding network is forming</h2>
+          <span className="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase mb-3 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full">Founding Cohort</span>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">The DFW founding cohort is forming</h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            We're hand-selecting the first verified pros across the Dallas–Fort Worth metro. Founding members lock in lifetime rates and permanent network income rights before public launch.
+            We're hand-selecting the first verified pros across the Dallas–Fort Worth metro. Spots are limited — early members get first access when we launch.
           </p>
         </div>
         <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
-            <CheckCircle className="w-8 h-8 mx-auto mb-3 text-[#0A1628]" />
+            <CheckCircle className="w-8 h-8 mx-auto mb-3 text-emerald-700" />
             <div className="font-heading font-bold text-gray-900 text-sm">Checkr background-verified</div>
             <div className="text-xs text-gray-500 mt-1">Every pro is screened before they join.</div>
           </div>
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
-            <HomeIcon className="w-8 h-8 mx-auto mb-3 text-[#0A1628]" />
+            <HomeIcon className="w-8 h-8 mx-auto mb-3 text-emerald-700" />
             <div className="font-heading font-bold text-gray-900 text-sm">DFW first</div>
             <div className="text-xs text-gray-500 mt-1">Launching across the Dallas–Fort Worth metro.</div>
           </div>
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 text-center">
-            <Star className="w-8 h-8 mx-auto mb-3 text-[#0A1628]" />
+            <Star className="w-8 h-8 mx-auto mb-3 text-emerald-700" />
             <div className="font-heading font-bold text-gray-900 text-sm">Patent-pending engine</div>
             <div className="text-xs text-gray-500 mt-1">AI finds leads in your job photos automatically.</div>
           </div>
@@ -554,10 +480,10 @@ function PartnerSpotlightSection() {
 
 // --- Tier badge config for success state --------------------------------------
 const TIER_BADGE_CONFIG: Record<string, { label: string; badge: string; color: string; bg: string; border: string }> = {
-  business:   { label: "Business Member",  badge: "BUSINESS",       color: "#7C3AED", bg: "bg-purple-50",  border: "border-purple-200" },
-  pro:        { label: "Pro Member",       badge: "PRO MEMBER",     color: "#0A1628", bg: "bg-[#0A1628]/5", border: "border-[#0A1628]/20" },
-  core:       { label: "Core Member",      badge: "CORE",           color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
-  enterprise: { label: "Enterprise Member", badge: "ENTERPRISE",    color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
+  business:   { label: "Business Member",  badge: "BUSINESS",       color: "#0D9488", bg: "bg-teal-50",    border: "border-teal-200" },
+  pro:        { label: "Pro Member",       badge: "PRO MEMBER",     color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
+  core:       { label: "Core Member",      badge: "CORE",           color: "#10B981", bg: "bg-emerald-50", border: "border-emerald-100" },
+  enterprise: { label: "Enterprise Member", badge: "ENTERPRISE",    color: "#0F766E", bg: "bg-teal-50",    border: "border-teal-200" },
 };
 
 // --- Success State Component --------------------------------------------------
@@ -600,7 +526,7 @@ function SuccessState({
         <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
           <CheckCircle className="w-8 h-8 text-green-600" />
         </div>
-        <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the ProLnk waitlist!</h2>
+        <h2 className="text-2xl font-bold text-slate-900 mb-1">You're on the ProLnk waitlist!</h2>
         <p className="text-gray-500 text-sm">Confirmation sent to {email}</p>
       </div>
 
@@ -620,7 +546,7 @@ function SuccessState({
             <div className="text-5xl font-heading font-black" style={{ color: tierConf.color }}>
               #{data.position ?? "—"}
             </div>
-            <div className="text-xs text-gray-500 font-medium">Network Position</div>
+            <div className="text-xs text-gray-500 font-medium">Waitlist Position</div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3 pt-3 border-t border-gray-200/60">
@@ -642,20 +568,20 @@ function SuccessState({
       </div>
 
       {/* Referral code + URL */}
-      <div className="bg-[#0A1628] rounded-xl p-4 mb-4">
+      <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl p-4 mb-4">
         <p className="text-white font-semibold text-sm mb-1 flex items-center gap-2">
-          <Users className="w-4 h-4 text-[#F5E642]" /> Your Referral Code
+          <Users className="w-4 h-4 text-emerald-200" /> Your Referral Code
         </p>
         <p className="text-white/50 text-xs mb-3">Share your link and move up the waitlist priority queue.</p>
 
         {/* Code copy row */}
         <div className="flex items-center gap-2 mb-2">
           <div className="flex-1 bg-white/10 rounded-lg px-3 py-2 flex items-center justify-between">
-            <span className="text-[#F5E642] text-base font-black tracking-widest font-mono">{referralCode}</span>
+            <span className="text-white text-base font-black tracking-widest font-mono">{referralCode}</span>
             <button
               onClick={() => { navigator.clipboard.writeText(referralCode); toast.success("Code copied!"); }}
               aria-label="Copy referral code"
-              className="text-white/60 hover:text-[#F5E642] transition-colors ml-2"
+              className="text-white/60 hover:text-white transition-colors ml-2"
             >
               <Copy className="w-3.5 h-3.5" />
             </button>
@@ -668,7 +594,7 @@ function SuccessState({
           <button
             onClick={() => { navigator.clipboard.writeText(refUrl); toast.success("Link copied!"); }}
             aria-label="Copy referral link"
-            className="text-white/60 hover:text-[#F5E642] transition-colors flex-shrink-0"
+            className="text-white/60 hover:text-white transition-colors flex-shrink-0"
           >
             <Copy className="w-3.5 h-3.5" />
           </button>
@@ -703,7 +629,7 @@ function SuccessState({
           </a>
           <button
             onClick={() => { navigator.clipboard.writeText(refUrl); toast.success("Copied!"); }}
-            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-[#F5E642]/20 hover:bg-[#F5E642]/30 transition-colors text-[#F5E642]"
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors text-white"
           >
             <Share2 className="w-4 h-4" />
             <span className="text-[9px] font-semibold">Copy</span>
@@ -745,7 +671,7 @@ function SuccessState({
       {referralCode && (
         <a
           href={`/waitlist-status?ref=${referralCode}`}
-          className="w-full flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0A1628] text-white rounded-xl text-sm font-semibold hover:bg-[#1a2a40] transition-colors mb-3"
+          className="w-full flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl text-sm font-semibold hover:bg-emerald-700 transition-colors mb-3"
         >
           View My Referral Dashboard <ArrowRight className="w-4 h-4" />
         </a>
@@ -794,7 +720,7 @@ function TradeSearchDropdown({
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 bg-white text-left flex items-center justify-between"
+        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 bg-white text-left flex items-center justify-between"
       >
         <span className={selected.length > 0 ? "text-gray-900" : "text-gray-400"}>
           {selected.length > 0
@@ -841,13 +767,13 @@ function TradeSearchDropdown({
                       type="checkbox"
                       checked={checked}
                       onChange={() => onToggle(cat.id)}
-                      className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30 flex-shrink-0"
+                      className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600/30 flex-shrink-0"
                     />
                     <div className="min-w-0 flex-1">
                       <span className="text-sm text-gray-800 font-medium">{cat.name}</span>
                       <p className="text-xs text-gray-400 truncate">{cat.description}</p>
                     </div>
-                    {checked && <CheckCircle size={14} className="text-[#0A1628] flex-shrink-0" />}
+                    {checked && <CheckCircle size={14} className="text-emerald-700 flex-shrink-0" />}
                   </label>
                 );
               })}
@@ -864,13 +790,13 @@ function TradeSearchDropdown({
                 type="checkbox"
                 checked={selected.includes("other")}
                 onChange={() => onToggle("other")}
-                className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30 flex-shrink-0"
+                className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600/30 flex-shrink-0"
               />
               <div className="min-w-0 flex-1">
                 <span className="text-sm text-gray-800 font-medium">Other (describe below)</span>
                 <p className="text-xs text-gray-400">Tell us about your trade in the notes section</p>
               </div>
-              {selected.includes("other") && <CheckCircle size={14} className="text-[#0A1628] flex-shrink-0" />}
+              {selected.includes("other") && <CheckCircle size={14} className="text-emerald-700 flex-shrink-0" />}
             </label>
           </div>
         </div>
@@ -916,8 +842,8 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
     onError: (e: { message?: string }) => toast.error(e.message || "Something went wrong."),
   });
   const set = (k: keyof typeof form) => (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setForm(p => ({ ...p, [k]: e.target.value }));
-  const inputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 mb-3";
-  const selectCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 mb-3 text-gray-700 bg-white";
+  const inputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 mb-3";
+  const selectCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 mb-3 text-gray-700 bg-white";
 
   const toggleTrade = (id: string) => {
     setSelectedTrades(prev =>
@@ -938,23 +864,14 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
           />
         ) : (
           <>
-            {charterCode && (
-              <div className="mb-4 rounded-xl bg-[#0A1628] px-4 py-3 flex items-center gap-3">
-                <span className="text-xl">🏆</span>
-                <div>
-                  <div className="text-[#F5E642] text-sm font-black">Charter Member Invite</div>
-                  <div className="text-white/70 text-xs">Code: <span className="font-mono text-white/90">{charterCode}</span> — Position #1-25 reserved</div>
-                </div>
-              </div>
-            )}
-            <h2 className="text-2xl font-bold text-[#0A1628] mb-1">Join the ProLnk Waitlist</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-1">Join the ProLnk Waitlist</h2>
             <p className="text-gray-500 text-sm mb-5">Be among the first service pros to get access when we launch in your area.</p>
 
             {/* Owner(s) Info */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Owner(s) Information</p>
             <div className="grid grid-cols-2 gap-3 mb-3">
-              <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30" />
-              <input placeholder="Last name" value={form.lastName} onChange={set("lastName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30" />
+              <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" />
+              <input placeholder="Last name" value={form.lastName} onChange={set("lastName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" />
             </div>
             <input placeholder="Email address *" type="email" value={form.email} onChange={set("email")} className={inputCls} />
             <input placeholder="Phone number *" value={form.phone} onChange={set("phone")} className={inputCls} />
@@ -988,19 +905,19 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                   onClick={() => setWorkStyle(value)}
                   className={`w-full flex items-start gap-3 rounded-xl border-2 px-4 py-3 text-left transition-all ${
                     workStyle === value
-                      ? "border-[#0A1628] bg-[#0A1628]/5"
+                      ? "border-emerald-600 bg-emerald-600/5"
                       : "border-gray-200 hover:border-gray-300 bg-white"
                   }`}
                 >
-                  <div className={`mt-0.5 shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${workStyle === value ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-500"}`}>
+                  <div className={`mt-0.5 shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${workStyle === value ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500"}`}>
                     <Icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className={`text-sm font-semibold ${workStyle === value ? "text-[#0A1628]" : "text-gray-800"}`}>{label}</div>
+                    <div className={`text-sm font-semibold ${workStyle === value ? "text-emerald-700" : "text-gray-800"}`}>{label}</div>
                     <div className="text-xs text-gray-500 leading-relaxed mt-0.5">{desc}</div>
                   </div>
                   {workStyle === value && (
-                    <CheckCircle className="w-4 h-4 text-[#0A1628] shrink-0 ml-auto mt-1" />
+                    <CheckCircle className="w-4 h-4 text-emerald-700 shrink-0 ml-auto mt-1" />
                   )}
                 </button>
               ))}
@@ -1024,7 +941,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                       onClick={() => setForm(p => ({ ...p, employeeCount: value }))}
                       className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                         form.employeeCount === value
-                          ? "bg-[#0A1628] text-white border-[#0A1628]"
+                          ? "bg-emerald-600 text-white border-emerald-600"
                           : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
                       }`}
                     >
@@ -1046,7 +963,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 {selectedTrades.map(id => {
                   const cat = SERVICE_CATEGORIES.find(c => c.id === id);
                   return (
-                    <span key={id} className="inline-flex items-center gap-1 bg-[#0A1628]/10 text-[#0A1628] text-xs font-medium px-2 py-1 rounded-full">
+                    <span key={id} className="inline-flex items-center gap-1 bg-emerald-600/10 text-emerald-700 text-xs font-medium px-2 py-1 rounded-full">
                       {cat ? `${cat.icon} ${cat.name}` : id}
                       <button onClick={() => toggleTrade(id)} className="hover:text-red-500 leading-none">&times;</button>
                     </span>
@@ -1057,7 +974,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
 
             {/* Business Details */}
             <div className="mb-3">
-              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 text-gray-700 bg-white">
+              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 text-gray-700 bg-white">
                 <option value="">Years in business</option>
                 <option value="0-1">Less than 1 year</option>
                 <option value="1-3">1 - 3 years</option>
@@ -1094,9 +1011,9 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-1">Business Address</p>
             <input placeholder="Street address *" value={form.businessAddress} onChange={set("businessAddress")} className={inputCls} />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
-              <input placeholder="City *" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 col-span-1" />
-              <input placeholder="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30" maxLength={2} />
-              <input placeholder="ZIP *" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30" />
+              <input placeholder="City *" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30 col-span-1" />
+              <input placeholder="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" maxLength={2} />
+              <input placeholder="ZIP *" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-600/30" />
             </div>
 
             {/* Service Radius */}
@@ -1157,7 +1074,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 type="checkbox"
                 checked={smsOptIn}
                 onChange={(e) => setSmsOptIn(e.target.checked)}
-                className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30 mt-0.5"
+                className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600/30 mt-0.5"
               />
               <span className="text-xs text-gray-600 leading-relaxed">
                 Text me when ProLnk launches in my area. <span className="text-gray-400">Message &amp; data rates may apply. Reply STOP to opt out.</span>
@@ -1210,18 +1127,11 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 });
               }}
               disabled={join.isPending}
-              className="w-full py-3 rounded-none text-sm font-bold text-[#0A1628] bg-[#F5E642] hover:opacity-90 transition-opacity disabled:opacity-50"
+              className="w-full py-3 rounded-none text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors disabled:opacity-50"
             >
               {join.isPending ? "Joining..." : "Join the Waitlist"}
             </button>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 mt-4">
-              {["No payment required", "DFW founding cohort", "Cancel anytime"].map((badge) => (
-                <span key={badge} className="inline-flex items-center gap-1.5 text-xs text-gray-500">
-                  <CheckCircle className="h-3.5 w-3.5 text-[#0A1628] shrink-0" />
-                  {badge}
-                </span>
-              ))}
-            </div>
+            <p className="text-center text-xs text-gray-500 mt-4">No payment required · Cancel anytime</p>
           </>
         )}
       </div>
@@ -1237,32 +1147,6 @@ const VALID_CHARTER_CODES = [
   "CHARTER-58FA78E8", "CHARTER-A7BF7415", "CHARTER-4203A78A", "CHARTER-F90E151D", "CHARTER-2765498B",
   "CHARTER-BCB57B1F", "CHARTER-13A2DA1A", "CHARTER-BA8E75A6", "CHARTER-4A37423B", "CHARTER-71DEB259",
 ];
-
-// --- Charter Invite Banner --------------------------------------------------------
-function CharterInviteBanner({ code }: { code: string }) {
-  return (
-    <div className="bg-[#0A1628] border-b-4 border-[#F5E642] py-5 px-4">
-      <div className="container flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-[#F5E642] text-lg">🏆</span>
-            <span className="text-[#F5E642] text-base font-black tracking-wide">You've been personally invited for a Charter Member spot</span>
-          </div>
-          <p className="text-white/80 text-sm mb-1">
-            This exclusive link reserves your position in the first 25 founding members.
-          </p>
-          <p className="text-[#F5E642]/90 text-sm font-semibold">
-            Charter members get the same $149/mo rate — locked forever with priority position #1-25
-          </p>
-        </div>
-        <div className="shrink-0 bg-[#F5E642]/10 border border-[#F5E642]/30 rounded-lg px-4 py-2 text-center">
-          <div className="text-[10px] font-black text-[#F5E642] tracking-widest uppercase mb-0.5">Invite Code</div>
-          <div className="text-[#F5E642] font-mono text-xs font-bold">{code}</div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // --- Main Landing Page -------------------------------------------------------------
 function StickyMobileCTA({ onJoin }: { onJoin: () => void }) {
@@ -1286,17 +1170,17 @@ function StickyMobileCTA({ onJoin }: { onJoin: () => void }) {
       animate={prefersReducedMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="flex items-center gap-2 px-3 py-2.5 border-t border-white/10 shadow-[0_-4px_16px_rgba(0,0,0,0.25)]" style={{ backgroundColor: "#0A1628", paddingBottom: "max(0.625rem, env(safe-area-inset-bottom))" }}>
+      <div className="flex items-center gap-2 px-3 py-2.5 border-t border-gray-200 bg-white shadow-[0_-4px_16px_rgba(0,0,0,0.08)]" style={{ paddingBottom: "max(0.625rem, env(safe-area-inset-bottom))" }}>
         <button
           onClick={onJoin}
-          className="flex-1 inline-flex items-center justify-center gap-2 py-3 text-sm font-bold text-[#0A1628] bg-[#F5E642] hover:opacity-90 transition-opacity rounded-none"
+          className="flex-1 inline-flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors rounded-none"
         >
-          Claim Your Founding Spot <ArrowRight className="h-4 w-4" />
+          Join the Waitlist <ArrowRight className="h-4 w-4" />
         </button>
         <button
           onClick={() => setDismissed(true)}
           aria-label="Dismiss"
-          className="p-2 text-white/50 hover:text-white transition-colors"
+          className="p-2 text-gray-400 hover:text-gray-700 transition-colors"
         >
           <X className="h-4 w-4" />
         </button>
@@ -1344,10 +1228,6 @@ export default function ProWaitlist() {
   const prefersReducedMotion = useReducedMotion();
   const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60000 });
   const totalSignups = publicCounts?.pros ?? 0;
-  const TOTAL_NETWORK_SPOTS = 2125;
-  const spotsUsed = totalSignups;
-  const spotsRemaining = Math.max(0, TOTAL_NETWORK_SPOTS - totalSignups);
-  const spotsPercent = Math.min(100, Math.round((spotsUsed / TOTAL_NETWORK_SPOTS) * 100));
 
   return (
     <div className="min-h-screen bg-white">
@@ -1384,7 +1264,7 @@ export default function ProWaitlist() {
                 href={item.href}
                 className={`transition-colors font-medium ${
                   activeSection === item.id
-                    ? "text-[#0A1628] border-b-2 border-[#0A1628] pb-0.5"
+                    ? "text-emerald-700 border-b-2 border-emerald-600 pb-0.5"
                     : "text-gray-500 hover:text-gray-900"
                 }`}
               >
@@ -1394,13 +1274,13 @@ export default function ProWaitlist() {
           </div>
           <div className="hidden md:flex items-center gap-3">
             <a href="https://trustypro.io">
-              <Button variant="ghost" className="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1.5">
+              <Button variant="ghost" className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro — Homeowners
               </Button>
             </a>
             
-            <Button onClick={openWaitlist} className="text-sm font-semibold text-white rounded-none px-5" style={{ backgroundColor: "#0A1628" }}>
+            <Button onClick={openWaitlist} className="text-sm font-semibold text-white rounded-none px-5 bg-emerald-600 hover:bg-emerald-700">
               Join the Waitlist
             </Button>
           </div>
@@ -1418,11 +1298,11 @@ export default function ProWaitlist() {
             <div className="flex gap-3 pt-2">
               
               <span onClick={openWaitlist} className="flex-1 cursor-pointer">
-                <Button className="w-full text-sm text-white rounded-none font-semibold" style={{ backgroundColor: "#0A1628" }}>Join the Waitlist</Button>
+                <Button className="w-full text-sm text-white rounded-none font-semibold bg-emerald-600 hover:bg-emerald-700">Join the Waitlist</Button>
               </span>
             </div>
             <a href="https://trustypro.io" className="block">
-              <Button variant="ghost" className="w-full text-sm text-blue-600 flex items-center justify-center gap-1.5">
+              <Button variant="ghost" className="w-full text-sm text-teal-600 flex items-center justify-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro — Homeowner Waitlist
               </Button>
@@ -1433,38 +1313,27 @@ export default function ProWaitlist() {
       </nav>
 
       {/* -- Urgency Bar -- */}
-      <div className="bg-[#0A1628] border-b border-white/10 py-2 px-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 py-2 px-4">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-3 flex-1 min-w-0">
-            <span className="text-[#F5E642] text-xs font-black uppercase tracking-wider whitespace-nowrap">
+            <span className="text-white text-xs font-black uppercase tracking-wider whitespace-nowrap">
               Waitlist Open
             </span>
-            <div className="flex-1 bg-white/10 rounded-full h-1.5 overflow-hidden min-w-0">
-              <motion.div
-                className="h-1.5 rounded-full bg-[#F5E642]"
-                initial={prefersReducedMotion ? false : { width: 0 }}
-                animate={{ width: `${spotsPercent}%` }}
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              />
-            </div>
-            <span className="text-white/60 text-xs whitespace-nowrap">
-              <CountUp target={totalSignups} duration={1.2} /> / {TOTAL_NETWORK_SPOTS} joined
+            <span className="text-emerald-50 text-xs whitespace-nowrap">
+              <CountUp target={totalSignups} duration={1.2} /> pros already on the waitlist · Founding cohort · DFW
             </span>
           </div>
           <span
             onClick={openWaitlist}
-            className="cursor-pointer text-xs font-bold text-[#0A1628] bg-[#F5E642] px-3 py-1 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="cursor-pointer text-xs font-bold text-emerald-700 bg-white px-3 py-1 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             Join the Waitlist →
           </span>
         </div>
       </div>
 
-      {/* -- Charter Invite Banner -- */}
-      {charterCode && <CharterInviteBanner code={charterCode} />}
-
       {/* -- 1. Hero -- */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#1E293B" }}>
         <div className="absolute inset-0">
           <motion.img
             src="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp"
@@ -1474,14 +1343,14 @@ export default function ProWaitlist() {
             animate={prefersReducedMotion ? { scale: 1 } : { scale: [1, 1.04] }}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 12, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(5,13,26,0.92) 0%, rgba(5,13,26,0.80) 55%, rgba(5,13,26,0.35) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(30,41,59,0.92) 0%, rgba(30,41,59,0.78) 50%, rgba(13,148,136,0.35) 100%)" }} />
         </div>
 
         <div className="relative container py-28 md:py-36">
           <div className="max-w-2xl">
             <FadeUp delay={0.1}>
               <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 mb-8 tracking-widest uppercase"
-                style={{ backgroundColor: "rgba(245,230,66,0.15)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.3)" }}>
+                style={{ backgroundColor: "rgba(16,185,129,0.15)", color: "#6EE7B7", border: "1px solid rgba(16,185,129,0.35)" }}>
                 Patent Pending  DFW Launch
               </span>
             </FadeUp>
@@ -1501,8 +1370,8 @@ export default function ProWaitlist() {
             <FadeUp delay={0.45}>
               <span onClick={openWaitlist} className="cursor-pointer">
                 <button
-                  className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:opacity-90 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
-                  style={{ backgroundColor: "#0A1628", color: "white", border: "2px solid #F5E642" }}
+                  className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:bg-emerald-700 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
+                  style={{ backgroundColor: "#059669", color: "white" }}
                 >
                   Join the Waitlist <ArrowRight className="h-5 w-5 transition-transform motion-safe:group-hover:translate-x-1" />
                 </button>
@@ -1512,8 +1381,8 @@ export default function ProWaitlist() {
             <FadeIn delay={0.6}>
               <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-white/10">
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white"><CountUp target={spotsRemaining} duration={1.6} /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">of {TOTAL_NETWORK_SPOTS.toLocaleString()} founding spots left</div>
+                  <div className="text-2xl font-heading font-bold text-white"><CountUp target={totalSignups} duration={1.6} /></div>
+                  <div className="text-xs text-slate-300 mt-0.5 uppercase tracking-wider">pros already on the waitlist</div>
                 </div>
                 <div className="hidden sm:block w-px h-10 bg-white/10" />
                 <div className="text-center">
@@ -1548,8 +1417,8 @@ export default function ProWaitlist() {
               <StaggerItem key={item.step}>
                 <div className="relative p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow h-full">
                   <div className="absolute top-6 right-6 text-6xl font-heading font-black opacity-[0.04] text-gray-900 select-none">{item.step}</div>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: "#F5E642" }}>
-                    <item.icon className="h-6 w-6 text-[#0A1628]" />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-emerald-100">
+                    <item.icon className="h-6 w-6 text-emerald-700" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">{item.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
@@ -1561,17 +1430,17 @@ export default function ProWaitlist() {
       </section>
 
       {/* -- 2.5. The ProLnk Engine -- */}
-      <section id="the-engine" className="py-24 relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #3B82F6 0%, transparent 50%), radial-gradient(circle at 80% 70%, #7C3AED 0%, transparent 50%)" }} />
+      <section id="the-engine" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #ECFDF5 0%, #F0FDFA 100%)" }}>
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #059669 0%, transparent 50%), radial-gradient(circle at 80% 70%, #0D9488 0%, transparent 50%)" }} />
         <div className="container relative">
           <FadeUp>
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-6">
-                <Radar className="w-4 h-4 text-[#F5E642]" />
-                <span className="text-xs font-bold text-white/80 uppercase tracking-wider">Patent-Pending Technology</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-200 bg-white mb-6">
+                <Radar className="w-4 h-4 text-emerald-600" />
+                <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Patent-Pending Technology</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">The ProLnk Engine</h2>
-              <p className="text-white/60 max-w-2xl mx-auto text-lg">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">The ProLnk Engine</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto text-lg">
                 Four autonomous AI engines work 24/7 to turn your job photos into a continuous stream of revenue -- long after you leave the property.
               </p>
             </div>
@@ -1583,7 +1452,7 @@ export default function ProWaitlist() {
                 icon: Eye,
                 title: "Photo Intelligence",
                 desc: "Every photo is analyzed for 50+ opportunity types. AI identifies aging equipment, damage patterns, and upgrade potential invisible to the human eye.",
-                color: "#3B82F6",
+                color: "#059669",
                 stat: "50+",
                 statLabel: "Detection Types",
               },
@@ -1591,7 +1460,7 @@ export default function ProWaitlist() {
                 icon: CloudLightning,
                 title: "Storm Watch Engine",
                 desc: "Monitors NOAA weather data in real time. When severe weather hits, cross-references your photo database to identify properties at risk.",
-                color: "#8B5CF6",
+                color: "#0D9488",
                 stat: "24/7",
                 statLabel: "Weather Monitoring",
               },
@@ -1599,7 +1468,7 @@ export default function ProWaitlist() {
                 icon: Clock,
                 title: "Asset Aging Engine",
                 desc: "Tracks equipment age from photos. When a water heater, HVAC unit, or roof approaches end-of-life, generates proactive replacement leads.",
-                color: "#F59E0B",
+                color: "#0F766E",
                 stat: "12+",
                 statLabel: "Asset Categories",
               },
@@ -1607,21 +1476,21 @@ export default function ProWaitlist() {
                 icon: AlertTriangle,
                 title: "Safety Recall Engine",
                 desc: "Monitors CPSC manufacturer recalls. When a recalled product is identified in your photos, generates high-priority safety leads.",
-                color: "#EF4444",
+                color: "#10B981",
                 stat: "100%",
                 statLabel: "Recall Coverage",
               },
             ].map((engine) => (
               <StaggerItem key={engine.title}>
-                <div className="rounded-2xl p-6 h-full border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: `${engine.color}25` }}>
+                <div className="rounded-2xl p-6 h-full border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: `${engine.color}1A` }}>
                     <engine.icon className="w-6 h-6" style={{ color: engine.color }} />
                   </div>
-                  <h3 className="text-lg font-heading font-bold text-white mb-2">{engine.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-4">{engine.desc}</p>
-                  <div className="pt-4 border-t border-white/10">
+                  <h3 className="text-lg font-heading font-bold text-slate-900 mb-2">{engine.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{engine.desc}</p>
+                  <div className="pt-4 border-t border-gray-100">
                     <p className="text-2xl font-heading font-bold" style={{ color: engine.color }}>{engine.stat}</p>
-                    <p className="text-xs text-white/40 uppercase tracking-wider">{engine.statLabel}</p>
+                    <p className="text-xs text-slate-400 uppercase tracking-wider">{engine.statLabel}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -1630,17 +1499,17 @@ export default function ProWaitlist() {
 
           <FadeUp>
             <div className="max-w-4xl mx-auto">
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+              <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-xl font-heading font-bold text-white mb-2">How One Photo Becomes Recurring Revenue</h3>
-                  <p className="text-white/50 text-sm">Your photos don't expire. They keep working inside the engine.</p>
+                  <h3 className="text-xl font-heading font-bold text-slate-900 mb-2">How One Photo Becomes Recurring Revenue</h3>
+                  <p className="text-slate-500 text-sm">Your photos don't expire. They keep working inside the engine.</p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   {[
-                    { step: "1", label: "You take a photo", icon: Camera, color: "#F5E642" },
-                    { step: "2", label: "AI detects 3 opportunities", icon: Eye, color: "#3B82F6" },
-                    { step: "3", label: "6 months later: storm hits", icon: CloudLightning, color: "#8B5CF6" },
-                    { step: "4", label: "Engine matches your photo", icon: Radar, color: "#F59E0B" },
+                    { step: "1", label: "You take a photo", icon: Camera, color: "#059669" },
+                    { step: "2", label: "AI detects 3 opportunities", icon: Eye, color: "#0D9488" },
+                    { step: "3", label: "6 months later: storm hits", icon: CloudLightning, color: "#0F766E" },
+                    { step: "4", label: "Engine matches your photo", icon: Radar, color: "#14B8A6" },
                     { step: "5", label: "You earn again", icon: DollarSign, color: "#10B981" },
                   ].map((s) => (
                     <div key={s.step} className="text-center">
@@ -1648,7 +1517,7 @@ export default function ProWaitlist() {
                         <s.icon className="w-5 h-5" style={{ color: s.color }} />
                       </div>
                       <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: s.color }}>Step {s.step}</p>
-                      <p className="text-xs text-white/60 leading-snug">{s.label}</p>
+                      <p className="text-xs text-slate-600 leading-snug">{s.label}</p>
                     </div>
                   ))}
                 </div>
@@ -1658,7 +1527,7 @@ export default function ProWaitlist() {
 
           <div className="text-center mt-12">
             <span onClick={openWaitlist} className="cursor-pointer">
-              <button className="group px-8 py-4 text-sm font-bold text-[#0A1628] transition-all hover:brightness-110 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98] rounded-none" style={{ backgroundColor: "#F5E642" }}>
+              <button className="group px-8 py-4 text-sm font-bold text-white transition-all hover:bg-emerald-700 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98] rounded-none bg-emerald-600">
                 Join the Waitlist <ArrowRight className="w-4 h-4 inline ml-2 transition-transform motion-safe:group-hover:translate-x-1" />
               </button>
             </span>
@@ -1670,7 +1539,7 @@ export default function ProWaitlist() {
       <PartnerSpotlightSection />
 
       {/* -- 3. Who Can Join -- */}
-      <section id="who-can-join" className="py-24" style={{ backgroundColor: "#FAFAF9" }}>
+      <section id="who-can-join" className="py-24" style={{ backgroundColor: "#FAFAF8" }}>
         <div className="container">
           <FadeUp className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Built for the Trades</h2>
@@ -1683,13 +1552,13 @@ export default function ProWaitlist() {
               <StaggerItem key={group.group}>
                 <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-1.5 h-6 rounded-full flex-shrink-0 bg-[#F5E642]" />
+                    <div className="w-1.5 h-6 rounded-full flex-shrink-0 bg-emerald-500" />
                     <h3 className="text-base font-heading font-bold text-gray-900">{group.group}</h3>
                   </div>
                   <div className="space-y-1.5">
                     {group.categories.map((cat) => (
                       <div key={cat} className="flex items-center gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#0A1628]" />
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-teal-600" />
                         {cat}
                       </div>
                     ))}
@@ -1701,7 +1570,7 @@ export default function ProWaitlist() {
           <div className="mt-10 text-center">
             <p className="text-gray-500 text-sm mb-4">Don't see your trade? We're adding new categories every month.</p>
             <span onClick={openWaitlist} className="cursor-pointer">
-              <button className="px-6 py-3 text-sm font-semibold border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white transition-all rounded-none">
+              <button className="px-6 py-3 text-sm font-semibold border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all rounded-none">
                 Apply Anyway -- We'll Review Your Category
               </button>
             </span>
@@ -1714,91 +1583,15 @@ export default function ProWaitlist() {
         <PricingSection />
       </section>
 
-      {/* Scout Standalone Subscription */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="container max-w-6xl mx-auto px-4">
-          <FadeUp>
-          <div className="rounded-2xl border-2 border-[#0A1628] overflow-hidden">
-            <div className="bg-[#0A1628] px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#F5E642]">Scout Subscription</span>
-                  <span className="bg-[#F5E642]/20 text-[#F5E642] text-xs font-bold px-2.5 py-0.5 rounded-full">$99/mo standalone</span>
-                </div>
-                <h3 className="text-xl font-bold text-white">Not a service pro? Earn from every job you bring in.</h3>
-              </div>
-            </div>
-            <div className="p-6 md:p-8 bg-white">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                    Scouts find opportunities, onboard homeowners, and coordinate bids — without doing the work themselves.
-                    You earn origination rights on every property you bring to the network: <strong>5% of the platform fee
-                    on every job at that address, forever</strong> — even if you never touch it again.
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                    {[
-                      { label: "Permanent origination rights", detail: "5% of platform fee on every job at properties you onboard — forever" },
-                      { label: "Coordinate multi-trade bids", detail: "Scope the job, get homeowner approval, post to the Exchange with your margin built in" },
-                      { label: "Onboard homeowners to TrustyPro", detail: "Pre-move-in repairs, new construction walkthroughs, insurance inspections" },
-                      { label: "Referral commissions on closed jobs", detail: "Every time a job closes at a property you brought in, you earn" },
-                      { label: "Access the ProLnk Exchange job board", detail: "Post and coordinate large residential and commercial projects" },
-                      { label: "Scout dashboard", detail: "Track your properties, origination income, and active bid coordination in one place" },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#0A1628]" />
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900">{item.label}</div>
-                          <div className="text-xs text-gray-500 mt-0.5">{item.detail}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                    <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2">Built for</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {["Real estate agents", "Home inspectors", "Insurance adjusters", "Property managers", "GCs needing subs"].map((who) => (
-                        <span key={who} className="bg-white border border-gray-200 text-gray-600 text-xs px-2.5 py-1 rounded-full">{who}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="bg-[#0A1628]/5 rounded-xl p-5 mb-4">
-                    <p className="text-xs font-semibold text-[#0A1628] uppercase tracking-wider mb-3">Origination income example</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      A Scout who onboards <strong>200 homes</strong>, each generating 3 jobs/year at $3,500 average,
-                      earns <strong className="text-[#0A1628]">$9,450/year in passive origination income</strong> — growing with every property added, compounding for the life of the platform.
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => document.dispatchEvent(new CustomEvent("open-pro-waitlist"))}
-                    className="w-full py-3.5 bg-[#0A1628] text-white font-bold text-sm tracking-wide hover:opacity-90 transition-opacity rounded-none mb-3"
-                  >
-                    Apply as Scout — $99/mo
-                  </button>
-                  <p className="text-center text-xs text-gray-400">90-day free trial · month-to-month · cancel anytime</p>
-                  <div className="mt-5 pt-5 border-t border-gray-100">
-                    <p className="text-xs text-gray-400 font-semibold mb-1">Already a service pro?</p>
-                    <p className="text-xs text-gray-500">Add TrustyPro Connect to your existing plan for $49/mo instead.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* -- 5. Guarantee & FAQ -- */}
-      <section id="guarantee" className="py-16" style={{ backgroundColor: "#FAFAF9" }}>
+      <section id="guarantee" className="py-16" style={{ backgroundColor: "#FAFAF8" }}>
         <div className="container max-w-5xl mx-auto">
           <FadeUp>
           <div className="grid md:grid-cols-2 gap-10 items-start">
-            <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-2xl p-8 text-white">
               <div className="text-4xl mb-4">🛡️</div>
               <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-5">
+              <p className="text-emerald-50 text-sm leading-relaxed mb-5">
                 If you don't receive at least <strong className="text-white">3 qualified inbound leads</strong> in your first 30 days, we'll refund your first month. No questions asked.
               </p>
               <ul className="space-y-2 mb-6">
@@ -1807,14 +1600,14 @@ export default function ProWaitlist() {
                   "Refund issued within 5 business days",
                   "Applies to first-time partners only",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                    <CheckCircle className="h-4 w-4 text-[#F5E642] shrink-0" />
+                  <li key={item} className="flex items-center gap-2 text-sm text-emerald-50">
+                    <CheckCircle className="h-4 w-4 text-white shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
               <span onClick={openWaitlist} className="cursor-pointer">
-                <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
+                <button className="w-full py-3 text-sm font-bold bg-white text-emerald-700 hover:opacity-90 transition-all rounded-none">
                   Join the Waitlist
                 </button>
               </span>
@@ -1833,7 +1626,7 @@ export default function ProWaitlist() {
       </section>
 
       {/* -- 6. Final CTA -- */}
-      <section className="py-24" style={{ backgroundColor: "#050d1a" }}>
+      <section className="py-24" style={{ backgroundColor: "#1E293B" }}>
         <div className="container text-center">
           <FadeUp>
             <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
@@ -1848,8 +1641,8 @@ export default function ProWaitlist() {
           <FadeUp delay={0.25}>
             <span onClick={openWaitlist} className="cursor-pointer">
               <button
-                className="group inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
-                style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
+                className="group inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:bg-emerald-500 motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]"
+                style={{ backgroundColor: "#059669", color: "white" }}
               >
                 Join the Waitlist <ArrowRight className="h-5 w-5 transition-transform motion-safe:group-hover:translate-x-1" />
               </button>
@@ -1859,7 +1652,7 @@ export default function ProWaitlist() {
       </section>
 
       {/* -- Footer -- */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
+      <footer className="bg-slate-800 text-slate-400 py-12">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <ProLnkLogo height={28} variant="dark" className="shrink-0" />
@@ -1870,7 +1663,7 @@ export default function ProWaitlist() {
               <Link href="/trustypro/waitlist" className="hover:text-white transition-colors">TrustyPro</Link>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-gray-600">
-              <p>&copy; 2026 ProLnk. All rights reserved. &nbsp;&nbsp; <span className="text-[#F5E642] font-semibold">Patent Pending</span></p>
+              <p>&copy; 2026 ProLnk. All rights reserved. &nbsp;&nbsp; <span className="text-emerald-400 font-semibold">Patent Pending</span></p>
               <div className="flex gap-4 flex-wrap justify-center">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>

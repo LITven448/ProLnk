@@ -434,12 +434,6 @@ function ScanDemoCarousel() {
 }
 
 // --- Hero Floating Visual --------------------------------------------------------------------
-const HERO_CHIPS = [
-  { text: "✓ Background-checked pros", pos: "top-[12%] left-[2%] sm:left-[4%]", delay: 0.9, dur: 5.2 },
-  { text: "Roof · HVAC · Plumbing",    pos: "top-[38%] right-[1%] sm:right-[3%]", delay: 1.15, dur: 6.4 },
-  { text: "✓ Licensed & insured",      pos: "bottom-[18%] left-[6%] sm:left-[10%]", delay: 1.4, dur: 5.8 },
-];
-
 function HeroFloatVisual() {
   const reduced = useReducedMotion();
   return (
@@ -461,20 +455,6 @@ function HeroFloatVisual() {
         animate={reduced ? undefined : { scaleX: [1, 0.9, 1], opacity: [0.85, 0.6, 0.85] }}
         transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
-      {HERO_CHIPS.map((chip) => (
-        <motion.div
-          key={chip.text}
-          className={`absolute z-[2] ${chip.pos} px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-gray-700 shadow-lg border border-white/60`}
-          style={{ backgroundColor: "rgba(255,255,255,0.72)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}
-          initial={{ opacity: 0, y: 12 }}
-          animate={reduced ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -6, 0] }}
-          transition={reduced
-            ? { duration: 0.5, delay: chip.delay }
-            : { opacity: { duration: 0.6, delay: chip.delay }, y: { duration: chip.dur, repeat: Infinity, ease: "easeInOut", delay: chip.delay } }}
-        >
-          {chip.text}
-        </motion.div>
-      ))}
     </div>
   );
 }

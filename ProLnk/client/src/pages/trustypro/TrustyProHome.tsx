@@ -582,6 +582,12 @@ export default function TrustyProHome() {
   });
   const betaIsOpen = betaStatus.data?.isOpen !== false;
   const betaSpotsRemaining = betaStatus.data?.spotsRemaining ?? 1000;
+  // Public waitlist totals (includes the server-side external-list display offset)
+  const publicCounts = trpc.waitlist.getPublicCounts.useQuery(undefined, {
+    refetchOnWindowFocus: false,
+    staleTime: 60 * 1000,
+  });
+  const homesOnWaitlist = publicCounts.data?.homes ?? 0;
 
   const joinWaitlist = trpc.waitlist.joinHomeWaitlist.useMutation({
     onSuccess: (data: { success: true; position: number }) => {
@@ -1202,7 +1208,9 @@ export default function TrustyProHome() {
               ))}
             </div>
             <p className="text-sm font-bold" style={{ color: ACCENT }}>
-              Founding network forming in DFW — limited founding spots remaining
+              {homesOnWaitlist > 0
+                ? `${homesOnWaitlist.toLocaleString()} homes already on the waitlist — DFW`
+                : "Founding network forming in DFW — limited founding spots remaining"}
             </p>
           </motion.div>
 

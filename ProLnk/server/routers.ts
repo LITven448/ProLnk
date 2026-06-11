@@ -5271,13 +5271,20 @@ Return a JSON object with:
       .query(async ({ ctx }) => waitlistRouter.createCaller(ctx).getBetaCount()),
 
     getPublicCounts: publicProcedure.query(async () => {
+      // Display offsets for signups collected OFF-PLATFORM (owner's external
+      // lists, not yet imported into this DB). Applied to the PUBLIC counters
+      // only — admin lists/exports remain raw DB truth, and the beta-capacity
+      // counter is untouched. REMOVE these once the external lists are imported,
+      // or the totals will double-count.
+      const EXTERNAL_LIST_OFFSET_PROS = 489;
+      const EXTERNAL_LIST_OFFSET_HOMES = 4678;
       const pool = await getPool();
-      if (!pool) return { pros: 0, homes: 0 };
+      if (!pool) return { pros: EXTERNAL_LIST_OFFSET_PROS, homes: EXTERNAL_LIST_OFFSET_HOMES };
       const [proRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
       const [homeRows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist");
       return {
-        pros: Number((proRows as any[])[0]?.cnt ?? 0),
-        homes: Number((homeRows as any[])[0]?.cnt ?? 0),
+        pros: Number((proRows as any[])[0]?.cnt ?? 0) + EXTERNAL_LIST_OFFSET_PROS,
+        homes: Number((homeRows as any[])[0]?.cnt ?? 0) + EXTERNAL_LIST_OFFSET_HOMES,
       };
     }),
 

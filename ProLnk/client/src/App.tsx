@@ -811,10 +811,11 @@ function WaitlistGuard() {
     // Preview/Demo bypass: a valid ?preview=<KEY> (or a previously set flag) lets
     // the tester through to the FULL product. Public (no flag) is unaffected.
     if (resolvePreviewMode()) return;
-    // Root renders the full marketing landing (award redesign) for both brands.
-    // The funnel is preserved: Home's primary CTA is /apply (allowed) and
-    // TrustyProHome embeds the live homeowner waitlist form.
-    if (location === "/") return;
+    if (location === "/") {
+      const isTrustyPro = (window as any).__BRAND__ === "trustypro";
+      navigate((isTrustyPro ? "/waitlist/homeowner" : "/pro-waitlist") + search, { replace: true });
+      return;
+    }
     if (location.startsWith("/admin")) return;
     if (location.startsWith("/dashboard")) return;
     if (location.startsWith("/my-home")) return;

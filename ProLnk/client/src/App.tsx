@@ -804,18 +804,21 @@ function WaitlistGuard() {
   const [location, navigate] = useLocation();
   const { isAuthenticated, loading } = useAuth();
   useEffect(() => {
-    // Logged-in users (partners/admins) bypass the public waitlist gate entirely.
     if (loading) return;
-    if (isAuthenticated) return;
     const search = typeof window !== "undefined" ? window.location.search : "";
-    // Preview/Demo bypass: a valid ?preview=<KEY> (or a previously set flag) lets
-    // the tester through to the FULL product. Public (no flag) is unaffected.
-    if (resolvePreviewMode()) return;
-    if (location === "/") {
+    // Root ALWAYS goes to the public waitlist site — for everyone, including
+    // logged-in users (owner directive: prolnk.xyz must show the waitlist page).
+    // ?preview=<KEY> still bypasses for full-product testing.
+    if (location === "/" && !resolvePreviewMode()) {
       const isTrustyPro = (window as any).__BRAND__ === "trustypro";
       navigate((isTrustyPro ? "/waitlist/homeowner" : "/pro-waitlist") + search, { replace: true });
       return;
     }
+    // Logged-in users (partners/admins) bypass the rest of the public gate.
+    if (isAuthenticated) return;
+    // Preview/Demo bypass: a valid ?preview=<KEY> (or a previously set flag) lets
+    // the tester through to the FULL product. Public (no flag) is unaffected.
+    if (resolvePreviewMode()) return;
     if (location.startsWith("/admin")) return;
     if (location.startsWith("/dashboard")) return;
     if (location.startsWith("/my-home")) return;

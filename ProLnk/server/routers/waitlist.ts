@@ -605,7 +605,9 @@ export const waitlistRouter = router({
   getBetaCount: publicProcedure.query(async () => {
     const pool = await getPool();
     if (!pool) return { count: 0, spotsRemaining: 1000, isOpen: true, cap: 1000 };
-    const [rows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist WHERE serviceNeeded LIKE '%BETA: yes%'");
+    // serviceNeeded has no column of its own — the intake maps it into the
+    // desiredProjects JSON (see joinHomeWaitlist), so the BETA marker lands there.
+    const [rows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist WHERE desiredProjects LIKE '%BETA: yes%'");
     const count = Number((rows as any[])[0]?.cnt ?? 0);
     const cap = 1000;
     return {

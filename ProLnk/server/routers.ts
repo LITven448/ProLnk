@@ -51,7 +51,7 @@ import { adminNotificationsRouter } from "./routers/adminNotifications";
 import { checkrRouter } from "./routers/checkr";
 import { facilityRouter } from "./routers/facility";
 import { projectBidsRouter } from "./routers/projectBids";
-import { waitlistRouter } from "./routers/waitlist";
+import { waitlistRouter, UpdateProProfileSchema } from "./routers/waitlist";
 import { propertyRouter } from "./routers/property";
 import { waitlistAdminRouter } from "./routers/waitlistAdmin";
 import { rewardfulRouter } from "./routers/rewardful";
@@ -5243,6 +5243,12 @@ Return a JSON object with:
         email: z.string().email().toLowerCase(),
       }))
       .mutation(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).joinSimpleWaitlist(input)),
+
+    // Step-2 profile enrichment for /apply-v2 — existed on the inner router but
+    // was never exposed on this mounted wrapper, so step 2 of signup 404'd.
+    updateProWaitlistProfile: publicProcedure
+      .input(UpdateProProfileSchema)
+      .mutation(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).updateProWaitlistProfile(input)),
 
     getWaitlistStatus: publicProcedure
       .input(z.object({

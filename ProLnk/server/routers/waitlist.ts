@@ -137,7 +137,7 @@ const SimpleWaitlistSchema = z.object({
 // Step-2 enrichment for the 2-step signup at /apply-v2.
 // Public + keyed by the email/id created in step 1. Purely additive — does NOT
 // touch the joinProWaitlist required-field contract, so the live modal is unaffected.
-const UpdateProProfileSchema = z.object({
+export const UpdateProProfileSchema = z.object({
   email: z.string().email().toLowerCase(),
   id: z.number().int().optional(),
   businessName: z.string().max(255).optional(),

@@ -308,6 +308,8 @@ function ParallaxImage({ src, alt, className }: { src: string; alt: string; clas
       <motion.img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         style={{ y, scale: 1.18 }}
         className="w-full h-full object-cover"
       />
@@ -335,9 +337,9 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
       onTouchMove={e => { if (dragging.current) update(e.touches[0].clientX); }}
       onTouchEnd={() => { dragging.current = false; }}
     >
-      <img src={after}  alt="After"  className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+      <img src={after}  alt="Home exterior after renovation"  loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" draggable={false} />
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img src={before} alt="Before" className="absolute inset-0 h-full object-cover" style={{ width: `${10000/pos}%`, maxWidth: "none" }} draggable={false} />
+        <img src={before} alt="Home exterior before renovation" loading="lazy" decoding="async" className="absolute inset-0 h-full object-cover" style={{ width: `${10000/pos}%`, maxWidth: "none" }} draggable={false} />
       </div>
       <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-xl z-10" style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-2xl flex items-center justify-center">
@@ -355,6 +357,8 @@ const SCAN_TABS = [
   {
     label: "Interior",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp",
+    w: 2048,
+    h: 1143,
     issues: [
       { label: "Water Damage", color: "#ef4444" },
       { label: "Floor Refinishing", color: "#f59e0b" },
@@ -365,6 +369,8 @@ const SCAN_TABS = [
   {
     label: "Front Yard",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
+    w: 1920,
+    h: 1072,
     issues: [
       { label: "Driveway Crack", color: "#ef4444" },
       { label: "Gutter Sagging", color: "#f59e0b" },
@@ -375,6 +381,8 @@ const SCAN_TABS = [
   {
     label: "Back Yard",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
+    w: 1920,
+    h: 1072,
     issues: [
       { label: "Fence Damage", color: "#ef4444" },
       { label: "Deck Wear", color: "#f59e0b" },
@@ -413,6 +421,10 @@ function ScanDemoCarousel() {
         <img
           src={tab.img}
           alt={`TrustyPro AI scan -- ${tab.label}`}
+          width={tab.w}
+          height={tab.h}
+          loading="lazy"
+          decoding="async"
           className="w-full object-cover"
           style={{ maxHeight: 480 }}
         />
@@ -438,7 +450,12 @@ function HeroFloatVisual() {
     <div className="relative w-full max-w-2xl">
       <img
         src={CDN.heroModel}
-        alt="Architectural house model"
+        alt="Architectural house model held in a hand"
+        width={1024}
+        height={708}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         className="w-full object-contain relative z-[1]"
         style={{ maxHeight: 460, mixBlendMode: "multiply", filter: "drop-shadow(0 8px 32px rgba(79,70,229,0.10))" }}
       />
@@ -701,13 +718,13 @@ export default function TrustyProHome() {
         <meta property="og:title" content="TrustyPro — Vetted Home Service Pros, AI-Matched" />
         <meta property="og:description" content="Get matched with verified, background-checked home service professionals using AI. The smart way to find plumbers, HVAC, electricians and more in DFW." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://trustypro.io" />
-        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp" />
+        <meta property="og:url" content="https://trustypro.io/" />
+        <meta property="og:image" content="https://prolnk-property-photos-596916982650-us-east-2-an.s3.us-east-2.amazonaws.com/assets/house-model-hand.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TrustyPro — Vetted Home Service Pros, AI-Matched" />
         <meta name="twitter:description" content="Get matched with verified, background-checked home service professionals using AI. The smart way to find plumbers, HVAC, electricians and more in DFW." />
-        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp" />
-        <link rel="canonical" href="https://trustypro.io" />
+        <meta name="twitter:image" content="https://prolnk-property-photos-596916982650-us-east-2-an.s3.us-east-2.amazonaws.com/assets/house-model-hand.png" />
+        <link rel="canonical" href="https://trustypro.io/" />
       </Helmet>
 
       {/* -- INTAKE MODAL ------------------------------------------------------ */}
@@ -731,7 +748,7 @@ export default function TrustyProHome() {
             >
               {/* Header */}
               <div className="px-8 pt-8 pb-5 border-b border-gray-100">
-                <button onClick={closeIntake} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors z-10">
+                <button onClick={closeIntake} aria-label="Close" className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors z-10">
                   <X className="w-4 h-4 text-gray-600" />
                 </button>
                 {intakeStep < 5 ? (
@@ -828,8 +845,9 @@ export default function TrustyProHome() {
                 <div className="px-8 py-6 space-y-4">
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">First Name *</label>
+                      <label htmlFor="tp-first-name" className="block text-xs font-bold text-gray-700 mb-1">First Name *</label>
                       <input
+                        id="tp-first-name"
                         type="text" placeholder="Jane"
                         value={intakeForm.firstName}
                         onChange={e => setIntakeForm(f => ({ ...f, firstName: e.target.value }))}
@@ -837,8 +855,9 @@ export default function TrustyProHome() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">Last Name *</label>
+                      <label htmlFor="tp-last-name" className="block text-xs font-bold text-gray-700 mb-1">Last Name *</label>
                       <input
+                        id="tp-last-name"
                         type="text" placeholder="Smith"
                         value={intakeForm.lastName}
                         onChange={e => setIntakeForm(f => ({ ...f, lastName: e.target.value }))}
@@ -847,8 +866,9 @@ export default function TrustyProHome() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
+                    <label htmlFor="tp-email" className="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
                     <input
+                      id="tp-email"
                       type="email" placeholder="jane@example.com"
                       value={intakeForm.email}
                       onChange={e => setIntakeForm(f => ({ ...f, email: e.target.value }))}
@@ -856,8 +876,9 @@ export default function TrustyProHome() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">Phone <span className="text-gray-400 font-normal">(optional, for launch alerts)</span></label>
+                    <label htmlFor="tp-phone" className="block text-xs font-bold text-gray-700 mb-1">Phone <span className="text-gray-400 font-normal">(optional, for launch alerts)</span></label>
                     <input
+                      id="tp-phone"
                       type="tel" placeholder="(214) 555-0100"
                       value={intakeForm.phone}
                       onChange={e => setIntakeForm(f => ({ ...f, phone: e.target.value }))}
@@ -969,8 +990,9 @@ export default function TrustyProHome() {
               {intakeStep === 4 && (
                 <div className="px-8 py-6 space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">Anything else we should know? <span className="text-gray-400 font-normal">(optional)</span></label>
+                    <label htmlFor="tp-notes" className="block text-xs font-bold text-gray-700 mb-1">Anything else we should know? <span className="text-gray-400 font-normal">(optional)</span></label>
                     <textarea
+                      id="tp-notes"
                       rows={3}
                       placeholder="e.g. Trying to finish before family visits in March, looking for eco-friendly materials, recently bought the home..."
                       value={intakeForm.notes}
@@ -1045,7 +1067,8 @@ export default function TrustyProHome() {
                       <input
                         readOnly
                         value="https://trustypro.io"
-                        className="flex-1 text-xs text-gray-700 bg-transparent outline-none truncate"
+                        aria-label="TrustyPro share link"
+                        className="flex-1 text-xs text-gray-700 bg-transparent outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 rounded truncate"
                       />
                       <button
                         onClick={() => { navigator.clipboard.writeText("https://trustypro.io").then(() => setCopyStatus("copied")); setTimeout(() => setCopyStatus("idle"), 1800); }}
@@ -1497,6 +1520,8 @@ export default function TrustyProHome() {
                       key={activeService}
                       src={SERVICES[activeService].image}
                       alt={SERVICES[activeService].title}
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover"
                       initial={{ opacity: 0, scale: 1.06 }}
                       animate={{ opacity: 1, scale: 1 }}

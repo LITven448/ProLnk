@@ -16,7 +16,7 @@ const TIERS = [
     price: 99,
     keep: 40,
     tagline: "For solo pros getting started with AI-matched leads.",
-    color: "#0EA5E9",
+    color: "#D9C7A8",
     popular: false,
     cta: "Start Free Trial",
     features: [
@@ -36,7 +36,7 @@ const TIERS = [
     price: 149,
     keep: 50,
     tagline: "For growing businesses that want more leads and a bigger cut.",
-    color: "#14B8A6",
+    color: "#C89B5A",
     popular: true,
     cta: "Start Free Trial",
     features: [
@@ -54,7 +54,7 @@ const TIERS = [
     price: 249,
     keep: 60,
     tagline: "For established companies running at full scale.",
-    color: "#F59E0B",
+    color: "#B08544",
     popular: false,
     cta: "Start Free Trial",
     features: [
@@ -121,7 +121,7 @@ export default function Pricing() {
   const [billing] = useState<"monthly">("monthly");
 
   return (
-    <div className="min-h-screen bg-[#0A1628] text-white">
+    <div className="min-h-screen bg-[#1E293B] text-white">
       <Helmet>
         <title>ProLnk Pricing — Keep up to 60% of Every Referral Commission</title>
         <meta name="description" content="Simple month-to-month pricing for home service pros. Plans from $99/mo with a 90-day free trial. Keep up to 60% of every commission, AI-matched leads, and real-time payment tracking. No contracts." />
@@ -147,7 +147,7 @@ export default function Pricing() {
             </div>
           </Link>
           <Link href="/apply">
-            <button className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-semibold px-5 py-2 rounded-xl text-sm transition-colors">
+            <button className="bg-white hover:bg-[#F5EDE0] text-[#0F172A] font-semibold px-5 py-2 rounded-xl text-sm transition-colors">
               Apply Now
             </button>
           </Link>
@@ -157,12 +157,12 @@ export default function Pricing() {
       {/* Hero */}
       <section className="pt-16 pb-12 text-center px-6">
         <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs text-white/60 mb-6">
-          <Zap className="w-3.5 h-3.5 text-[#0EA5E9]" />
+          <Zap className="w-3.5 h-3.5 text-[#C89B5A]" />
           90-day free trial on all plans · No credit card required
         </div>
         <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
           Simple pricing.<br />
-          <span className="text-[#0EA5E9]">Keep more of what you earn.</span>
+          <span className="text-[#C89B5A]">Keep more of what you earn.</span>
         </h1>
         <p className="text-white/60 text-lg max-w-xl mx-auto">
           AI-matched leads, real-time payment tracking, and commission rates that scale with your business.
@@ -172,7 +172,7 @@ export default function Pricing() {
       {/* Background check notice */}
       <section className="max-w-3xl mx-auto px-6 pb-6">
         <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-          <Shield className="w-5 h-5 text-[#0EA5E9] shrink-0 mt-0.5" />
+          <Shield className="w-5 h-5 text-[#C89B5A] shrink-0 mt-0.5" />
           <div>
             <span className="text-sm font-semibold text-white/90">One-time $35 background check required for all plans.</span>
             <span className="text-sm text-white/50 ml-1">Processed automatically through Checkr. Most results in 24–48 hours. Account activates the moment your check clears — no manual review needed.</span>
@@ -188,13 +188,13 @@ export default function Pricing() {
               key={tier.id}
               className={`relative rounded-2xl border bg-white/5 backdrop-blur-sm flex flex-col ${
                 tier.popular
-                  ? "border-[#14B8A6]/60 ring-1 ring-[#14B8A6]/30"
+                  ? "border-[#C89B5A]/60 ring-1 ring-[#C89B5A]/30"
                   : "border-white/10"
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#14B8A6] text-white text-xs font-bold px-4 py-1 rounded-full">
+                  <span className="bg-[#C89B5A] text-white text-xs font-bold px-4 py-1 rounded-full">
                     Most Popular
                   </span>
                 </div>
@@ -227,7 +227,7 @@ export default function Pricing() {
                     className="w-full py-3 rounded-xl font-bold text-sm transition-all"
                     style={{
                       backgroundColor: tier.popular ? tier.color : "transparent",
-                      color: tier.popular ? "#fff" : tier.color,
+                      color: tier.popular ? "#1E293B" : tier.color,
                       border: `1.5px solid ${tier.color}`,
                     }}
                   >
@@ -309,7 +309,7 @@ export default function Pricing() {
             </div>
             <div className="shrink-0">
               <a href="mailto:hello@prolnk.xyz">
-                <button className="bg-white text-[#0A1628] font-bold px-6 py-3 rounded-xl text-sm hover:bg-white/90 transition-colors">
+                <button className="bg-white text-[#0F172A] font-bold px-6 py-3 rounded-xl text-sm hover:bg-white/90 transition-colors">
                   Contact Sales
                 </button>
               </a>
@@ -353,7 +353,7 @@ export default function Pricing() {
                   {row.vals.map((val, j) => (
                     <td key={j} className="py-3 text-center">
                       {val === "✓" ? (
-                        <Check className="w-4 h-4 mx-auto text-[#0EA5E9]" />
+                        <Check className="w-4 h-4 mx-auto text-[#C89B5A]" />
                       ) : val === "—" ? (
                         <span className="text-white/20">—</span>
                       ) : (
@@ -399,11 +399,11 @@ export default function Pricing() {
 
       {/* Bottom CTA */}
       <section className="border-t border-white/10 py-16 text-center px-6">
-        <Star className="w-8 h-8 text-[#0EA5E9] mx-auto mb-4" />
+        <Star className="w-8 h-8 text-[#C89B5A] mx-auto mb-4" />
         <h2 className="text-2xl font-black mb-3">Start your 90-day free trial</h2>
         <p className="text-white/50 text-sm mb-6 max-w-sm mx-auto">No credit card. No contracts. Full platform access from day one.</p>
         <Link href="/apply">
-          <button className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-colors inline-flex items-center gap-2">
+          <button className="bg-white hover:bg-[#F5EDE0] text-[#0F172A] font-bold px-8 py-3.5 rounded-xl text-sm transition-colors inline-flex items-center gap-2">
             Apply to Join ProLnk
             <ArrowRight className="w-4 h-4" />
           </button>

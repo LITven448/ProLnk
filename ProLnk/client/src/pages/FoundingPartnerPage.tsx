@@ -24,9 +24,9 @@ const CHARTER_TOTAL = 25;
 const WAITLIST_CAPACITY = 500;
 
 const TIERS = [
-  { name: "Charter Member", slots: 25, range: "Positions 1–25", color: "text-amber-400", bg: "bg-amber-400/10", border: "border-amber-400/30" },
-  { name: "Founding Member", slots: 100, range: "Positions 26–125", color: "text-teal-400", bg: "bg-teal-400/10", border: "border-teal-400/30" },
-  { name: "Level 3 Partner", slots: 400, range: "Positions 126–525", color: "text-indigo-400", bg: "bg-indigo-400/10", border: "border-indigo-400/30" },
+  { name: "Charter Member", slots: 25, range: "Positions 1–25", color: "text-[#C89B5A]", bg: "bg-[#C89B5A]/10", border: "border-[#C89B5A]/30" },
+  { name: "Founding Member", slots: 100, range: "Positions 26–125", color: "text-[#B08544]", bg: "bg-[#B08544]/10", border: "border-[#B08544]/30" },
+  { name: "Level 3 Partner", slots: 400, range: "Positions 126–525", color: "text-[#D9C7A8]", bg: "bg-[#D9C7A8]/10", border: "border-[#D9C7A8]/30" },
   { name: "Level 4 Partner", slots: 1600, range: "Positions 526–2,125", color: "text-gray-300", bg: "bg-gray-700/50", border: "border-gray-600/50" },
 ];
 
@@ -69,7 +69,7 @@ const TESTIMONIALS = [
     trade: "HVAC Technician",
     location: "DFW",
     tier: "Charter Member",
-    tierColor: "text-amber-400",
+    tierColor: "text-[#C89B5A]",
     quote: "Joined early to lock in the rate. The origination rights alone make it worth it.",
   },
   {
@@ -77,7 +77,7 @@ const TESTIMONIALS = [
     trade: "Electrician",
     location: "Dallas",
     tier: "Founding Member",
-    tierColor: "text-teal-400",
+    tierColor: "text-[#C89B5A]",
     quote: "Referred 8 pros in my first month. That's passive income every time they work.",
   },
   {
@@ -85,7 +85,7 @@ const TESTIMONIALS = [
     trade: "Roofer",
     location: "Fort Worth",
     tier: "Level 3 Partner",
-    tierColor: "text-indigo-400",
+    tierColor: "text-[#D9C7A8]",
     quote: "The 90-day trial sold me. $0 risk, unlimited upside.",
   },
 ];
@@ -99,8 +99,8 @@ function getTierForPosition(pos: number) {
 
 function getSpotColor(filled: number, total: number) {
   const pct = filled / total;
-  if (pct < 0.25) return { bar: "bg-green-500", text: "text-green-400", label: "Spots available" };
-  if (pct < 0.75) return { bar: "bg-yellow-500", text: "text-yellow-400", label: "Filling fast" };
+  if (pct < 0.25) return { bar: "bg-[#C89B5A]", text: "text-[#C89B5A]", label: "Spots available" };
+  if (pct < 0.75) return { bar: "bg-[#B08544]", text: "text-[#B08544]", label: "Filling fast" };
   return { bar: "bg-red-500", text: "text-red-400", label: "Almost full" };
 }
 
@@ -138,8 +138,8 @@ function CountdownTimer() {
         { label: "Seconds", val: timeLeft.s },
       ].map((unit, i) => (
         <div key={i} className="text-center">
-          <div className="bg-gray-900 border border-teal-500/30 rounded-lg px-3 py-2 min-w-[52px]">
-            <div className="text-2xl font-black text-teal-400 tabular-nums">
+          <div className="bg-gray-900 border border-[#C89B5A]/30 rounded-lg px-3 py-2 min-w-[52px]">
+            <div className="text-2xl font-black text-[#C89B5A] tabular-nums">
               {String(unit.val).padStart(2, "0")}
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function FoundingPartnerPage() {
   const nextTier = getTierForPosition(filled + 1);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0A1628" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#1E293B" }}>
       <Helmet>
         <title>Join the ProLnk Founding Network — 2,125 Spots Available</title>
         <meta name="description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
@@ -207,20 +207,20 @@ export default function FoundingPartnerPage() {
 
       {/* Nav */}
       <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
-        <button onClick={() => navigate("/")} className="font-black text-teal-400 text-xl">ProLnk</button>
-        <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-white" onClick={() => navigate(user ? "/dashboard" : "/partner-checkout")}>
+        <button onClick={() => navigate("/")} className="font-black text-[#C89B5A] text-xl">ProLnk</button>
+        <Button size="sm" className="bg-white hover:bg-[#F5EDE0] text-[#0F172A]" onClick={() => navigate(user ? "/dashboard" : "/partner-checkout")}>
           {user ? "My Dashboard" : "Claim Your Spot"}
         </Button>
       </nav>
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center">
-        <Badge className="bg-teal-500/10 text-teal-400 border-teal-500/20 mb-6 text-sm px-4 py-1.5">
+        <Badge className="bg-[#C89B5A]/10 text-[#C89B5A] border-[#C89B5A]/20 mb-6 text-sm px-4 py-1.5">
           Founding Partner Program · {filled.toLocaleString()}/{TOTAL_SLOTS.toLocaleString()} spots filled
         </Badge>
         <h1 className="text-6xl font-black text-white leading-tight mb-6">
           The pros who build ProLnk<br />
-          <span className="text-teal-400">get rewarded for life.</span>
+          <span className="text-[#C89B5A]">get rewarded for life.</span>
         </h1>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
           2,125 founding spots — across 4 tiers. Once the waitlist closes, this status is gone forever.
@@ -250,10 +250,10 @@ export default function FoundingPartnerPage() {
         {/* Charter invite code */}
         {!user && (
           <div className="max-w-sm mx-auto mb-6">
-            <div className="bg-amber-400/5 border border-amber-400/30 rounded-xl p-4">
+            <div className="bg-[#C89B5A]/5 border border-[#C89B5A]/30 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-3">
-                <Tag className="w-4 h-4 text-amber-400" />
-                <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">Charter Invite Code</span>
+                <Tag className="w-4 h-4 text-[#C89B5A]" />
+                <span className="text-[#C89B5A] text-xs font-bold uppercase tracking-wider">Charter Invite Code</span>
                 <span className="text-gray-600 text-xs">(optional)</span>
               </div>
               <input
@@ -264,14 +264,14 @@ export default function FoundingPartnerPage() {
                 maxLength={8}
                 className={`w-full bg-gray-900 border rounded-lg px-3 py-2 text-sm font-mono tracking-widest text-center text-white placeholder-gray-600 outline-none transition-colors ${
                   codeValid
-                    ? "border-amber-400 ring-1 ring-amber-400/40"
+                    ? "border-[#C89B5A] ring-1 ring-[#C89B5A]/40"
                     : codeError
                     ? "border-red-500/60"
-                    : "border-gray-700 focus:border-amber-400/60"
+                    : "border-gray-700 focus:border-[#C89B5A]/60"
                 }`}
               />
               {codeValid && (
-                <p className="text-amber-400 text-xs text-center mt-2 flex items-center justify-center gap-1">
+                <p className="text-[#C89B5A] text-xs text-center mt-2 flex items-center justify-center gap-1">
                   <CheckCircle className="w-3.5 h-3.5" />
                   Charter code applied — you'll be placed in positions 1–25
                 </p>
@@ -288,14 +288,14 @@ export default function FoundingPartnerPage() {
           <Button
             size="lg"
             onClick={() => navigate(charterCode && codeValid ? `/partner-checkout?code=${charterCode}` : "/partner-checkout")}
-            className="bg-teal-500 hover:bg-teal-400 text-white font-black text-xl px-12 py-5 h-auto rounded-xl"
+            className="bg-white hover:bg-[#F5EDE0] text-[#0F172A] font-black text-xl px-12 py-5 h-auto rounded-xl"
           >
             {codeValid ? "Claim Charter Spot" : "Claim Your Founding Spot"}
             <ArrowRight className="w-6 h-6 ml-2" />
           </Button>
         ) : myStatus.data ? (
-          <div className="bg-teal-500/10 border border-teal-500/30 rounded-2xl p-6 max-w-sm mx-auto">
-            <div className="text-teal-400 font-black text-2xl mb-1">
+          <div className="bg-[#C89B5A]/10 border border-[#C89B5A]/30 rounded-2xl p-6 max-w-sm mx-auto">
+            <div className="text-[#C89B5A] font-black text-2xl mb-1">
               {getTierForPosition(myStatus.data.enrollmentNumber ?? 9999).name} #{myStatus.data.enrollmentNumber}
             </div>
             <div className="text-gray-400 text-sm">{myStatus.data.status === "trial" ? "Trial period active" : "Active member"}</div>
@@ -304,7 +304,7 @@ export default function FoundingPartnerPage() {
           <Button
             size="lg"
             onClick={() => navigate("/partner-checkout")}
-            className="bg-teal-500 hover:bg-teal-400 text-white font-black text-xl px-12 py-5 h-auto rounded-xl"
+            className="bg-white hover:bg-[#F5EDE0] text-[#0F172A] font-black text-xl px-12 py-5 h-auto rounded-xl"
           >
             Claim Your Founding Spot →
           </Button>
@@ -313,10 +313,10 @@ export default function FoundingPartnerPage() {
 
       {/* ── Why Join Now — Urgency Section ── */}
       <section className="max-w-4xl mx-auto px-6 py-10">
-        <div className="bg-gradient-to-br from-gray-900 to-[#0A1628] border border-amber-400/20 rounded-3xl overflow-hidden">
-          <div className="px-8 py-6 border-b border-amber-400/20 flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-400/10 flex items-center justify-center">
-              <Flame className="w-5 h-5 text-amber-400" />
+        <div className="bg-gradient-to-br from-gray-900 to-[#1E293B] border border-[#C89B5A]/20 rounded-3xl overflow-hidden">
+          <div className="px-8 py-6 border-b border-[#C89B5A]/20 flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#C89B5A]/10 flex items-center justify-center">
+              <Flame className="w-5 h-5 text-[#C89B5A]" />
             </div>
             <div>
               <h2 className="text-xl font-black text-white">Why Join Now</h2>
@@ -325,18 +325,18 @@ export default function FoundingPartnerPage() {
           </div>
 
           {/* Charter urgency */}
-          <div className="px-8 py-5 border-b border-gray-800 bg-amber-400/5">
+          <div className="px-8 py-5 border-b border-gray-800 bg-[#C89B5A]/5">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
-                <span className="text-amber-400 font-black text-sm">Charter Member</span>
-                <span className="bg-amber-400/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-400/30">Positions 1–25</span>
+                <span className="text-[#C89B5A] font-black text-sm">Charter Member</span>
+                <span className="bg-[#C89B5A]/10 text-[#C89B5A] text-[10px] font-bold px-2 py-0.5 rounded-full border border-[#C89B5A]/30">Positions 1–25</span>
               </div>
               <div className="text-right">
-                <div className="text-amber-400 font-black text-lg">{Math.max(0, CHARTER_TOTAL - Math.min(filled, CHARTER_TOTAL))} of {CHARTER_TOTAL} left</div>
+                <div className="text-[#C89B5A] font-black text-lg">{Math.max(0, CHARTER_TOTAL - Math.min(filled, CHARTER_TOTAL))} of {CHARTER_TOTAL} left</div>
               </div>
             </div>
             <div className="h-2 bg-gray-800 rounded-full overflow-hidden mb-1">
-              <div className="h-full bg-amber-400 rounded-full" style={{ width: `${Math.min(100, (Math.min(filled, CHARTER_TOTAL) / CHARTER_TOTAL) * 100)}%` }} />
+              <div className="h-full bg-[#C89B5A] rounded-full" style={{ width: `${Math.min(100, (Math.min(filled, CHARTER_TOTAL) / CHARTER_TOTAL) * 100)}%` }} />
             </div>
             <p className="text-gray-500 text-xs mt-2">Charter members get 1.5% home origination rights — a permanent revenue stream no other tier can access after the program closes.</p>
           </div>
@@ -346,43 +346,43 @@ export default function FoundingPartnerPage() {
             {[
               {
                 icon: Lock,
-                color: "text-teal-400",
-                bg: "bg-teal-400/10",
+                color: "text-[#C89B5A]",
+                bg: "bg-[#C89B5A]/10",
                 title: "$149/mo locked forever",
                 desc: "Platform price goes to $199/mo post-launch. Yours never changes.",
               },
               {
                 icon: Clock,
-                color: "text-blue-400",
-                bg: "bg-blue-400/10",
+                color: "text-[#C89B5A]",
+                bg: "bg-[#C89B5A]/10",
                 title: "90-day free trial",
                 desc: "Start building your network before your first payment is ever due.",
               },
               {
                 icon: DollarSign,
-                color: "text-green-400",
-                bg: "bg-green-400/10",
+                color: "text-[#C89B5A]",
+                bg: "bg-[#C89B5A]/10",
                 title: "60% commission keep",
                 desc: "Highest keep rate on the platform — locked in for every job, forever.",
               },
               {
                 icon: Users,
-                color: "text-purple-400",
-                bg: "bg-purple-400/10",
+                color: "text-[#D9C7A8]",
+                bg: "bg-[#D9C7A8]/10",
                 title: "4-level network income",
                 desc: "Earn on every job and every subscription your recruits generate, 4 levels deep.",
               },
               {
                 icon: Award,
-                color: "text-amber-400",
-                bg: "bg-amber-400/10",
+                color: "text-[#C89B5A]",
+                bg: "bg-[#C89B5A]/10",
                 title: "Founding status — permanent",
                 desc: "Cannot be replicated, transferred, or granted to anyone after the waitlist closes.",
               },
               {
                 icon: Home,
-                color: "text-indigo-400",
-                bg: "bg-indigo-400/10",
+                color: "text-[#D9C7A8]",
+                bg: "bg-[#D9C7A8]/10",
                 title: "1.5% origination rights",
                 desc: "Document any home and earn forever on every job at that address.",
               },
@@ -436,12 +436,12 @@ export default function FoundingPartnerPage() {
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {FOUNDING_BENEFITS.map((benefit, i) => (
-            <div key={i} className="bg-gray-900 rounded-2xl p-5 border border-gray-800 hover:border-teal-500/30 transition-all">
-              <div className="w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-400 mb-4">
+            <div key={i} className="bg-gray-900 rounded-2xl p-5 border border-gray-800 hover:border-[#C89B5A]/30 transition-all">
+              <div className="w-12 h-12 bg-[#C89B5A]/10 rounded-xl flex items-center justify-center text-[#C89B5A] mb-4">
                 {benefit.icon}
               </div>
               <div className="flex items-start gap-2 mb-2">
-                <CheckCircle className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                <CheckCircle className="w-4 h-4 text-[#C89B5A] shrink-0 mt-0.5" />
                 <h3 className="font-bold text-white text-sm leading-snug">{benefit.title}</h3>
               </div>
               <p className="text-gray-400 text-xs leading-relaxed pl-6">{benefit.description}</p>
@@ -466,7 +466,7 @@ export default function FoundingPartnerPage() {
                 <div className="text-gray-500 text-xs mt-0.5">60% keep rate</div>
               </div>
               <div className="text-right">
-                <div className="text-teal-400 font-black text-xl">$2,160</div>
+                <div className="text-[#C89B5A] font-black text-xl">$2,160</div>
                 <div className="text-gray-500 text-xs">you keep</div>
               </div>
             </div>
@@ -476,7 +476,7 @@ export default function FoundingPartnerPage() {
                 <div className="text-gray-500 text-xs mt-0.5">7% of the 12% platform fee</div>
               </div>
               <div className="text-right">
-                <div className="text-indigo-400 font-black text-xl">+$25</div>
+                <div className="text-[#D9C7A8] font-black text-xl">+$25</div>
                 <div className="text-gray-500 text-xs">passive to you</div>
               </div>
             </div>
@@ -486,7 +486,7 @@ export default function FoundingPartnerPage() {
                 <div className="text-gray-500 text-xs mt-0.5">4% of the 12% platform fee</div>
               </div>
               <div className="text-right">
-                <div className="text-indigo-400 font-black text-xl">+$14</div>
+                <div className="text-[#D9C7A8] font-black text-xl">+$14</div>
                 <div className="text-gray-500 text-xs">passive to you</div>
               </div>
             </div>
@@ -496,17 +496,17 @@ export default function FoundingPartnerPage() {
                 <div className="text-gray-500 text-xs mt-0.5">2% of the 12% platform fee</div>
               </div>
               <div className="text-right">
-                <div className="text-indigo-400 font-black text-xl">+$7</div>
+                <div className="text-[#D9C7A8] font-black text-xl">+$7</div>
                 <div className="text-gray-500 text-xs">passive to you</div>
               </div>
             </div>
-            <div className="px-6 py-5 flex items-center justify-between bg-teal-500/5">
+            <div className="px-6 py-5 flex items-center justify-between bg-[#C89B5A]/5">
               <div>
                 <div className="text-white font-black">Total this month</div>
                 <div className="text-gray-500 text-xs mt-0.5">1 job + 3 recruits each doing 1 job</div>
               </div>
               <div className="text-right">
-                <div className="text-teal-400 font-black text-2xl">$2,206</div>
+                <div className="text-[#C89B5A] font-black text-2xl">$2,206</div>
                 <div className="text-gray-500 text-xs">$46 passive from your 3 recruits</div>
               </div>
             </div>
@@ -526,7 +526,7 @@ export default function FoundingPartnerPage() {
           </div>
           <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-800">
             <div className="p-6">
-              <h3 className="font-bold text-teal-400 mb-4 flex items-center gap-2">
+              <h3 className="font-bold text-[#C89B5A] mb-4 flex items-center gap-2">
                 <TrendingUp className="w-4 h-4" />
                 Job Commissions (% of platform fee)
               </h3>
@@ -539,13 +539,13 @@ export default function FoundingPartnerPage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center justify-between py-2 border-b border-gray-800 last:border-0">
                     <span className="text-gray-300 text-sm">{item.level}</span>
-                    <span className="font-bold text-teal-400">{item.rate}</span>
+                    <span className="font-bold text-[#C89B5A]">{item.rate}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="p-6">
-              <h3 className="font-bold text-indigo-400 mb-4 flex items-center gap-2">
+              <h3 className="font-bold text-[#D9C7A8] mb-4 flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 Subscription Commissions (monthly)
               </h3>
@@ -558,12 +558,12 @@ export default function FoundingPartnerPage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center justify-between py-2 border-b border-gray-800 last:border-0">
                     <span className="text-gray-300 text-sm">{item.level}</span>
-                    <span className="font-bold text-indigo-400">{item.rate}</span>
+                    <span className="font-bold text-[#D9C7A8]">{item.rate}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-4 bg-gray-800/50 rounded-xl p-3">
-                <div className="flex items-center gap-2 text-teal-300 text-xs">
+                <div className="flex items-center gap-2 text-[#D9C7A8] text-xs">
                   <Home className="w-3.5 h-3.5 shrink-0" />
                   Home Origination Rights: <strong>1.5%</strong> of platform fee per job, any documented address, forever
                 </div>
@@ -580,7 +580,7 @@ export default function FoundingPartnerPage() {
         <div className="grid md:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t, i) => (
             <div key={i} className="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-              <div className="flex items-start gap-1 mb-4 text-amber-400">
+              <div className="flex items-start gap-1 mb-4 text-[#C89B5A]">
                 {[...Array(5)].map((_, si) => <Star key={si} className="w-4 h-4 fill-current" />)}
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-5">"{t.quote}"</p>
@@ -602,7 +602,7 @@ export default function FoundingPartnerPage() {
             <div className="grid md:grid-cols-2 gap-3">
               {(p?.requirements ?? []).map((req: string, i: number) => (
                 <div key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                  <CheckCircle className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-[#C89B5A] shrink-0 mt-0.5" />
                   {req}
                 </div>
               ))}
@@ -620,24 +620,24 @@ export default function FoundingPartnerPage() {
               {Object.entries(requirements.data.progress)
                 .filter(([k]) => typeof requirements.data.progress[k as keyof typeof requirements.data.progress] === "boolean")
                 .map(([key, value]) => (
-                  <div key={key} className={`flex items-center gap-2 text-sm ${value ? "text-green-400" : "text-gray-500"}`}>
+                  <div key={key} className={`flex items-center gap-2 text-sm ${value ? "text-[#C89B5A]" : "text-gray-500"}`}>
                     {value ? <CheckCircle className="w-4 h-4" /> : <div className="w-4 h-4 rounded-full border border-gray-600" />}
                     {key.replace(/([A-Z])/g, " $1").replace(/^has /, "")}
                   </div>
                 ))}
-              <div className={`flex items-center gap-2 text-sm ${requirements.data.progress.homesAdded >= 15 ? "text-green-400" : "text-gray-500"}`}>
+              <div className={`flex items-center gap-2 text-sm ${requirements.data.progress.homesAdded >= 15 ? "text-[#C89B5A]" : "text-gray-500"}`}>
                 {requirements.data.progress.homesAdded >= 15 ? <CheckCircle className="w-4 h-4" /> : <div className="w-4 h-4 rounded-full border border-gray-600" />}
                 Homes added: {requirements.data.progress.homesAdded}/15
               </div>
-              <div className={`flex items-center gap-2 text-sm ${requirements.data.progress.prosReferred >= 5 ? "text-green-400" : "text-gray-500"}`}>
+              <div className={`flex items-center gap-2 text-sm ${requirements.data.progress.prosReferred >= 5 ? "text-[#C89B5A]" : "text-gray-500"}`}>
                 {requirements.data.progress.prosReferred >= 5 ? <CheckCircle className="w-4 h-4" /> : <div className="w-4 h-4 rounded-full border border-gray-600" />}
                 Pros referred: {requirements.data.progress.prosReferred}/5
               </div>
             </div>
             {requirements.data.meetsAll ? (
-              <div className="bg-teal-500/10 border border-teal-500/30 rounded-xl p-4 text-center">
-                <CheckCircle className="w-8 h-8 text-teal-400 mx-auto mb-2" />
-                <p className="text-teal-400 font-semibold">All requirements met! Contact ProLnk to activate your Founding Partner status.</p>
+              <div className="bg-[#C89B5A]/10 border border-[#C89B5A]/30 rounded-xl p-4 text-center">
+                <CheckCircle className="w-8 h-8 text-[#C89B5A] mx-auto mb-2" />
+                <p className="text-[#C89B5A] font-semibold">All requirements met! Contact ProLnk to activate your Founding Partner status.</p>
               </div>
             ) : (
               <p className="text-gray-500 text-xs">Complete all requirements above to qualify for Founding Partner enrollment.</p>
@@ -648,7 +648,7 @@ export default function FoundingPartnerPage() {
 
       {/* Final CTA */}
       <section className="max-w-3xl mx-auto px-6 py-16 text-center">
-        <div className="bg-gradient-to-b from-teal-500/10 to-transparent border border-teal-500/20 rounded-3xl p-12">
+        <div className="bg-gradient-to-b from-[#C89B5A]/10 to-transparent border border-[#C89B5A]/20 rounded-3xl p-12">
           <h2 className="text-4xl font-black text-white mb-3">
             {remaining > 0 ? `${remaining.toLocaleString()} spots left.` : "Enrollment closed."}
           </h2>
@@ -662,7 +662,7 @@ export default function FoundingPartnerPage() {
             <Button
               size="lg"
               onClick={() => navigate(user ? "/dashboard/onboarding" : "/partner-checkout")}
-              className="bg-teal-500 hover:bg-teal-400 text-white font-black text-lg px-10 py-4 h-auto rounded-xl"
+              className="bg-white hover:bg-[#F5EDE0] text-[#0F172A] font-black text-lg px-10 py-4 h-auto rounded-xl"
             >
               {user ? "Complete My Application" : "Claim Your Founding Spot →"}
               {!user && <ArrowRight className="w-5 h-5 ml-2" />}

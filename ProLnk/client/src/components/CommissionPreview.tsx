@@ -24,7 +24,7 @@ export default function CommissionPreview({ partnerEmail }: { partnerEmail?: str
   const l1NetworkEarning = platformFee * 0.07;
   const subscriptionEarning = 149 * 0.12; // L1 subscription override
 
-  const preview = trpc.commissionCascade.preview.useQuery({
+  const preview = trpc.commissionCascade.previewJob.useQuery({
     jobValue,
     platformFeeRate: feeRate,
     completingProEmail: "demo@example.com",

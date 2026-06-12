@@ -386,11 +386,13 @@ function PricingSection() {
                   >
                     <span className="text-xs text-gray-600 font-medium">{addon.unitLabel}:</span>
                     <button
+                      aria-label={`Decrease ${addon.unitLabel}`}
                       className="w-6 h-6 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 flex items-center justify-center text-sm font-bold"
                       onClick={() => setAddonQty(addon.id, qty - 1)}
                     >-</button>
                     <span className="text-sm font-bold text-gray-900 w-4 text-center">{qty}</span>
                     <button
+                      aria-label={`Increase ${addon.unitLabel}`}
                       className="w-6 h-6 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 flex items-center justify-center text-sm font-bold"
                       onClick={() => setAddonQty(addon.id, Math.min(qty + 1, addon.unitMax ?? 20))}
                     >+</button>
@@ -658,7 +660,7 @@ function SuccessState({
                 <div className="text-xs text-gray-500">{step.desc}</div>
               </div>
               {step.href && (
-                <a href={step.href} className="shrink-0">
+                <a href={step.href} aria-label={step.title} className="shrink-0">
                   <ArrowRight className="w-4 h-4 text-gray-400" />
                 </a>
               )}
@@ -742,10 +744,11 @@ function TradeSearchDropdown({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search trades…"
-                className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none"
+                aria-label="Search trades"
+                className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none focus-visible:ring-2 focus-visible:ring-[#9A6A2F]/30 rounded"
               />
               {query && (
-                <button onClick={() => setQuery("")} className="text-gray-400 hover:text-gray-600 text-base leading-none">&times;</button>
+                <button onClick={() => setQuery("")} aria-label="Clear search" className="text-gray-400 hover:text-gray-600 text-base leading-none">&times;</button>
               )}
             </div>
           </div>
@@ -870,11 +873,11 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             {/* Owner(s) Info */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Owner(s) Information</p>
             <div className="grid grid-cols-2 gap-3 mb-3">
-              <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
-              <input placeholder="Last name" value={form.lastName} onChange={set("lastName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
+              <input placeholder="First name *" aria-label="First name" value={form.firstName} onChange={set("firstName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
+              <input placeholder="Last name" aria-label="Last name" value={form.lastName} onChange={set("lastName")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
             </div>
-            <input placeholder="Email address *" type="email" value={form.email} onChange={set("email")} className={inputCls} />
-            <input placeholder="Phone number *" value={form.phone} onChange={set("phone")} className={inputCls} />
+            <input placeholder="Email address *" aria-label="Email address" type="email" value={form.email} onChange={set("email")} className={inputCls} />
+            <input placeholder="Phone number *" aria-label="Phone number" value={form.phone} onChange={set("phone")} className={inputCls} />
 
             {/* How Do You Work */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 mt-3">How do you work? *</p>
@@ -954,7 +957,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
 
             {/* Company Info */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-2">Company Information</p>
-            <input placeholder="Company name *" value={form.companyName} onChange={set("companyName")} className={inputCls} />
+            <input placeholder="Company name *" aria-label="Company name" value={form.companyName} onChange={set("companyName")} className={inputCls} />
 
             {/* Trades Multi-Select */}
             <TradeSearchDropdown selected={selectedTrades} onToggle={toggleTrade} />
@@ -965,7 +968,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                   return (
                     <span key={id} className="inline-flex items-center gap-1 bg-[#F5EDE0] text-[#8A5A24] text-xs font-medium px-2 py-1 rounded-full">
                       {cat ? `${cat.icon} ${cat.name}` : id}
-                      <button onClick={() => toggleTrade(id)} className="hover:text-red-500 leading-none">&times;</button>
+                      <button onClick={() => toggleTrade(id)} aria-label={`Remove ${cat ? cat.name : id}`} className="hover:text-red-500 leading-none">&times;</button>
                     </span>
                   );
                 })}
@@ -974,7 +977,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
 
             {/* Business Details */}
             <div className="mb-3">
-              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 text-gray-700 bg-white">
+              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} aria-label="Years in business" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 text-gray-700 bg-white">
                 <option value="">Years in business</option>
                 <option value="0-1">Less than 1 year</option>
                 <option value="1-3">1 - 3 years</option>
@@ -983,7 +986,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 <option value="10+">10+ years</option>
               </select>
             </div>
-            <select value={form.estimatedJobsPerMonth} onChange={set("estimatedJobsPerMonth")} className={selectCls}>
+            <select value={form.estimatedJobsPerMonth} onChange={set("estimatedJobsPerMonth")} aria-label="Estimated jobs per month" className={selectCls}>
               <option value="">Estimated jobs per month</option>
               <option value="1-5">1 - 5</option>
               <option value="6-15">6 - 15</option>
@@ -994,7 +997,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
 
             {/* Current Software */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-2">Field Software <span className="text-gray-300 font-normal normal-case">(optional)</span></p>
-            <select value={form.currentSoftware} onChange={set("currentSoftware")} className={selectCls}>
+            <select value={form.currentSoftware} onChange={set("currentSoftware")} aria-label="Field service software" className={selectCls}>
               <option value="">What software do you use to manage jobs?</option>
               <option value="ServiceTitan">ServiceTitan</option>
               <option value="Jobber">Jobber</option>
@@ -1009,16 +1012,16 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             </select>
             {/* Business Address */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-1">Business Address</p>
-            <input placeholder="Street address *" value={form.businessAddress} onChange={set("businessAddress")} className={inputCls} />
+            <input placeholder="Street address *" aria-label="Street address" value={form.businessAddress} onChange={set("businessAddress")} className={inputCls} />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
-              <input placeholder="City *" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 col-span-1" />
-              <input placeholder="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" maxLength={2} />
-              <input placeholder="ZIP *" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
+              <input placeholder="City *" aria-label="City" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30 col-span-1" />
+              <input placeholder="State" aria-label="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" maxLength={2} />
+              <input placeholder="ZIP *" aria-label="ZIP code" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#9A6A2F]/30" />
             </div>
 
             {/* Service Radius */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-1">Service Radius</p>
-            <select value={form.serviceRadiusMiles} onChange={set("serviceRadiusMiles")} className={selectCls + " mb-3"}>
+            <select value={form.serviceRadiusMiles} onChange={set("serviceRadiusMiles")} aria-label="Service radius in miles" className={selectCls + " mb-3"}>
               {["10","15","25","35","50","75","100","150","200"].map(r => (
                 <option key={r} value={r}>{r} miles</option>
               ))}
@@ -1081,7 +1084,7 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
               </span>
             </label>
 
-            <select value={form.hearAboutUs} onChange={set("hearAboutUs")} className={selectCls + " mb-5"}>
+            <select value={form.hearAboutUs} onChange={set("hearAboutUs")} aria-label="How did you hear about us" className={selectCls + " mb-5"}>
               <option value="">How did you hear about us?</option>
               <option value="Google Search">Google Search</option>
               <option value="Social Media (Facebook/Instagram)">Social Media (Facebook/Instagram)</option>
@@ -1338,6 +1341,11 @@ export default function ProWaitlist() {
           <motion.img
             src="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp"
             alt="Home service AI analysis"
+            width={2048}
+            height={1143}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover object-center"
             initial={false}
             animate={prefersReducedMotion ? { scale: 1 } : { scale: [1, 1.04] }}

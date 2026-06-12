@@ -11,29 +11,29 @@ const TIER_CONFIG: Record<
 > = {
   charter: {
     label: "Charter Member",
-    color: "#22c55e",
-    bg: "rgba(34,197,94,0.12)",
+    color: "#C89B5A",
+    bg: "rgba(200,155,90,0.12)",
     subscriptionRate: "12%",
     jobRate: "7%",
   },
   founding: {
     label: "Founding Member",
-    color: "#3b82f6",
-    bg: "rgba(59,130,246,0.12)",
+    color: "#B08544",
+    bg: "rgba(176,133,68,0.12)",
     subscriptionRate: "6%",
     jobRate: "4%",
   },
   level3: {
     label: "Level 3 Partner",
-    color: "#f59e0b",
-    bg: "rgba(245,158,11,0.12)",
+    color: "#D9C7A8",
+    bg: "rgba(217,199,168,0.12)",
     subscriptionRate: "3%",
     jobRate: "2%",
   },
   level4: {
     label: "Level 4 Partner",
-    color: "#8b5cf6",
-    bg: "rgba(139,92,246,0.12)",
+    color: "#F5EDE0",
+    bg: "rgba(245,237,224,0.12)",
     subscriptionRate: "1.5%",
     jobRate: "1%",
   },
@@ -59,9 +59,9 @@ function Avatar({ name }: { name: string }) {
     <div
       className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-3"
       style={{
-        background: "rgba(245,230,66,0.15)",
-        color: "#F5E642",
-        border: "2px solid rgba(245,230,66,0.3)",
+        background: "rgba(200,155,90,0.15)",
+        color: "#C89B5A",
+        border: "2px solid rgba(200,155,90,0.3)",
       }}
     >
       {initials}
@@ -75,14 +75,14 @@ function CountdownSpots({ spotsRemaining }: { spotsRemaining: number }) {
     <div
       className="rounded-xl p-4"
       style={{
-        background: "rgba(245,158,11,0.08)",
-        border: "1px solid rgba(245,158,11,0.25)",
+        background: "rgba(200,155,90,0.08)",
+        border: "1px solid rgba(200,155,90,0.25)",
       }}
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <Clock size={14} style={{ color: "#f59e0b" }} />
-          <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "#f59e0b" }}>
+          <Clock size={14} style={{ color: "#C89B5A" }} />
+          <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "#C89B5A" }}>
             Founding Network
           </span>
         </div>
@@ -94,7 +94,7 @@ function CountdownSpots({ spotsRemaining }: { spotsRemaining: number }) {
       >
         <div
           className="h-2 rounded-full transition-all"
-          style={{ width: `${pct}%`, background: "#f59e0b" }}
+          style={{ width: `${pct}%`, background: "#C89B5A" }}
         />
       </div>
       <p className="text-xs text-gray-500 mt-1">
@@ -145,13 +145,13 @@ export default function ReferralLanding() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#0A1628" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "#1E293B" }}>
       {/* Header */}
       <header
         className="px-4 py-4 flex items-center justify-between"
         style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
       >
-        <span className="text-lg font-black tracking-tight" style={{ color: "#F5E642" }}>
+        <span className="text-lg font-black tracking-tight" style={{ color: "#C89B5A" }}>
           ProLnk
         </span>
         <button
@@ -200,15 +200,15 @@ export default function ReferralLanding() {
 
               <div
                 className="rounded-xl p-4 text-left"
-                style={{ background: "rgba(245,230,66,0.06)", border: "1px solid rgba(245,230,66,0.15)" }}
+                style={{ background: "rgba(200,155,90,0.06)", border: "1px solid rgba(200,155,90,0.15)" }}
               >
                 <p className="text-xs font-medium mb-2" style={{ color: "#9ca3af" }}>
                   Join before {partnerName.split(" ")[0]} fills their network
                 </p>
                 <p className="text-sm font-bold text-white leading-snug">
                   When you join, {partnerName.split(" ")[0]} earns{" "}
-                  <span style={{ color: "#F5E642" }}>{tierCfg.subscriptionRate}</span> of your{" "}
-                  <span style={{ color: "#F5E642" }}>$149/mo</span> — and you get the same when you recruit.
+                  <span style={{ color: "#C89B5A" }}>{tierCfg.subscriptionRate}</span> of your{" "}
+                  <span style={{ color: "#C89B5A" }}>$149/mo</span> — and you get the same when you recruit.
                 </p>
               </div>
             </div>
@@ -234,9 +234,9 @@ export default function ReferralLanding() {
             <div className="flex items-center gap-2 mb-4">
               <div
                 className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(245,230,66,0.1)" }}
+                style={{ background: "rgba(200,155,90,0.1)" }}
               >
-                <Shield size={14} style={{ color: "#F5E642" }} />
+                <Shield size={14} style={{ color: "#C89B5A" }} />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">What you get as a founding member</p>
@@ -253,7 +253,7 @@ export default function ReferralLanding() {
                 "Charter member badge on your partner profile",
               ].map((benefit) => (
                 <div key={benefit} className="flex items-start gap-2">
-                  <Check size={13} className="flex-shrink-0 mt-0.5" style={{ color: "#22c55e" }} />
+                  <Check size={13} className="flex-shrink-0 mt-0.5" style={{ color: "#C89B5A" }} />
                   <p className="text-xs" style={{ color: "#d1d5db" }}>{benefit}</p>
                 </div>
               ))}
@@ -264,20 +264,20 @@ export default function ReferralLanding() {
           <div className="grid grid-cols-3 gap-3">
             {[
               {
-                icon: <Zap size={16} style={{ color: "#F5E642" }} />,
-                bg: "rgba(245,230,66,0.1)",
+                icon: <Zap size={16} style={{ color: "#C89B5A" }} />,
+                bg: "rgba(200,155,90,0.1)",
                 title: "60% Keep",
                 desc: "On every referral closed",
               },
               {
-                icon: <Users size={16} style={{ color: "#3b82f6" }} />,
-                bg: "rgba(59,130,246,0.1)",
+                icon: <Users size={16} style={{ color: "#B08544" }} />,
+                bg: "rgba(176,133,68,0.1)",
                 title: "4 Levels Deep",
                 desc: "Network income on recruits",
               },
               {
-                icon: <Lock size={16} style={{ color: "#22c55e" }} />,
-                bg: "rgba(34,197,94,0.1)",
+                icon: <Lock size={16} style={{ color: "#C89B5A" }} />,
+                bg: "rgba(200,155,90,0.1)",
                 title: "$149 Locked",
                 desc: "Price never goes up",
               },
@@ -306,7 +306,7 @@ export default function ReferralLanding() {
           <button
             onClick={handleClaimSpot}
             className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl text-base font-black transition-all hover:opacity-90"
-            style={{ background: "#F5E642", color: "#0A1628" }}
+            style={{ background: "#FFFFFF", color: "#0F172A" }}
           >
             Claim Your Spot
             <ArrowRight size={18} />
@@ -314,7 +314,7 @@ export default function ReferralLanding() {
 
           <p className="text-xs text-center" style={{ color: "#4b5563" }}>
             Licensed home service pros only · Texas DFW market ·{" "}
-            <span style={{ color: "#F5E642" }}>Founding rates end at 500 members</span>
+            <span style={{ color: "#C89B5A" }}>Founding rates end at 500 members</span>
           </p>
         </div>
       </main>

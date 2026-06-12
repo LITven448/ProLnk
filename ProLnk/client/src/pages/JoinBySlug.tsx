@@ -6,7 +6,7 @@ import { TrustyProLogo } from "@/components/TrustyProLogo";
 
 /**
  * /join/:slug — brand-aware referral landing
- * ProLnk side: light hero with navy + teal accents (logo renders natively).
+ * ProLnk side: light hero with slate + bronze accents (logo renders natively).
  * TrustyPro side: white + indigo, friendly.
  */
 export default function JoinBySlug() {
@@ -24,7 +24,7 @@ export default function JoinBySlug() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <Loader2 className={`w-10 h-10 animate-spin ${isTrustyPro ? "text-[#4F46E5]" : "text-teal-500"}`} />
+        <Loader2 className={`w-10 h-10 animate-spin ${isTrustyPro ? "text-[#4F46E5]" : "text-[#C89B5A]"}`} />
       </div>
     );
   }
@@ -47,10 +47,10 @@ export default function JoinBySlug() {
       <div className="min-h-screen bg-white flex flex-col px-6">
         <header className="py-6 max-w-6xl w-full mx-auto"><Link href="/"><ProLnkLogo height={52} /></Link></header>
         <main className="flex-1 flex flex-col items-center justify-center -mt-12 text-center">
-          <div className="w-16 h-16 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center mb-6"><Sparkles className="w-8 h-8 text-teal-600" /></div>
+          <div className="w-16 h-16 rounded-2xl bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center mb-6"><Sparkles className="w-8 h-8 text-[#8A5A24]" /></div>
           <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Referral link not found</h1>
           <p className="text-gray-600 text-lg mb-8 max-w-md">This link doesn't exist or may have changed.</p>
-          <Link href="/pro-waitlist" className="inline-flex items-center gap-2 px-8 py-4 bg-[#0A1628] hover:bg-[#1E293B] text-white font-bold text-lg rounded-xl transition-colors shadow-lg shadow-[#0A1628]/20">Join the Waitlist <ArrowRight className="w-5 h-5" /></Link>
+          <Link href="/pro-waitlist" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1E293B] hover:bg-[#0F172A] text-white font-bold text-lg rounded-xl transition-colors shadow-lg shadow-[#1E293B]/20">Join the Waitlist <ArrowRight className="w-5 h-5" /></Link>
         </main>
       </div>
     );
@@ -94,23 +94,23 @@ export default function JoinBySlug() {
   // ── ProLnk (pro) — LIGHT design so original brand logo renders correctly ─
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
-      {/* Soft teal-tinted background, no dark bg so the original logo just works */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-cyan-50" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-200/30 rounded-full blur-[120px] -mr-32 -mt-32" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-200/20 rounded-full blur-[120px] -ml-32 -mb-32" />
+      {/* Soft bronze-tinted background, no dark bg so the original logo just works */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F5EDE0] via-white to-[#F7F2EA]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D9C7A8]/30 rounded-full blur-[120px] -mr-32 -mt-32" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#D9C7A8]/20 rounded-full blur-[120px] -ml-32 -mb-32" />
 
       {/* Subtle confetti accents */}
-      <div className="absolute top-[15%] left-[12%] w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-      <div className="absolute top-[30%] right-[18%] w-1.5 h-1.5 rounded-full bg-cyan-400/70" />
-      <div className="absolute bottom-[20%] right-[12%] w-2 h-2 rounded-full bg-teal-300 animate-pulse" />
-      <div className="absolute bottom-[35%] left-[25%] w-1.5 h-1.5 rounded-full bg-cyan-400" />
+      <div className="absolute top-[15%] left-[12%] w-2 h-2 rounded-full bg-[#C89B5A] animate-pulse" />
+      <div className="absolute top-[30%] right-[18%] w-1.5 h-1.5 rounded-full bg-[#C89B5A]/70" />
+      <div className="absolute bottom-[20%] right-[12%] w-2 h-2 rounded-full bg-[#D9C7A8] animate-pulse" />
+      <div className="absolute bottom-[35%] left-[25%] w-1.5 h-1.5 rounded-full bg-[#C89B5A]" />
 
       {/* Header — original logo renders natively on light bg */}
       <header className="relative z-10 py-8 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/"><ProLnkLogo height={52} /></Link>
           <div className="hidden sm:flex items-center gap-2 text-gray-500 text-xs font-medium">
-            <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#C89B5A] animate-pulse" />
             DFW Founding Network — Live
           </div>
         </div>
@@ -121,27 +121,27 @@ export default function JoinBySlug() {
 
           {/* Invite badge floating above card */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-teal-100 border border-teal-200 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-teal-700" />
-              <span className="text-teal-800 text-xs font-black uppercase tracking-[0.2em]">You're Invited</span>
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-[#8A5A24]" />
+              <span className="text-[#8A5A24] text-xs font-black uppercase tracking-[0.2em]">You're Invited</span>
             </div>
           </div>
 
           {/* Main card */}
-          <div className="bg-white rounded-3xl border border-gray-200 shadow-2xl shadow-[#0A1628]/10 p-8 md:p-12 text-center relative overflow-hidden">
+          <div className="bg-white rounded-3xl border border-gray-200 shadow-2xl shadow-[#1E293B]/10 p-8 md:p-12 text-center relative overflow-hidden">
             {/* Avatar */}
             <div className="relative inline-block mb-6">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0A1628] to-[#1E293B] flex items-center justify-center shadow-2xl shadow-[#0A1628]/30 ring-4 ring-teal-300">
-                <span className="text-4xl font-black text-teal-300">{data.firstName.charAt(0).toUpperCase()}</span>
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0F172A] to-[#1E293B] flex items-center justify-center shadow-2xl shadow-[#1E293B]/30 ring-4 ring-[#D9C7A8]">
+                <span className="text-4xl font-black text-[#C89B5A]">{data.firstName.charAt(0).toUpperCase()}</span>
               </div>
-              <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-teal-400 border-2 border-white flex items-center justify-center">
-                <UserCheck className="w-4 h-4 text-[#0A1628]" />
+              <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-[#C89B5A] border-2 border-white flex items-center justify-center">
+                <UserCheck className="w-4 h-4 text-[#1E293B]" />
               </div>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-2 leading-[1.05] tracking-tight">
               {data.firstName} just<br />
-              <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">pulled you in.</span>
+              <span className="bg-gradient-to-r from-[#8A5A24] to-[#B08544] bg-clip-text text-transparent">pulled you in.</span>
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg mt-4 mb-2 leading-relaxed max-w-lg mx-auto">
@@ -154,38 +154,38 @@ export default function JoinBySlug() {
 
             {/* Benefits — clear bulleted list */}
             <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-6 md:p-7 mb-8 max-w-xl mx-auto text-left">
-              <p className="text-teal-700 text-[11px] font-black uppercase tracking-[0.18em] mb-4 text-center">What You Get</p>
+              <p className="text-[#8A5A24] text-[11px] font-black uppercase tracking-[0.18em] mb-4 text-center">What You Get</p>
               <ul className="space-y-3.5">
                 <li className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-teal-100 border border-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5"><Lock className="w-3 h-3 text-teal-700" /></div>
+                  <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><Lock className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
                     <div className="text-gray-900 text-sm font-bold">90 days free, then $149/mo locked for life</div>
                     <div className="text-gray-500 text-xs mt-0.5">Top-tier subscription (normally $249/mo) — saving you $1,200/year, forever.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-teal-100 border border-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5"><TrendingUp className="w-3 h-3 text-teal-700" /></div>
+                  <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><TrendingUp className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
                     <div className="text-gray-900 text-sm font-bold">60% commission keep on every closed job</div>
                     <div className="text-gray-500 text-xs mt-0.5">Paid from the platform fee (3–12% of job value) — bonus income on top of what you'd normally charge.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-teal-100 border border-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5"><Users className="w-3 h-3 text-teal-700" /></div>
+                  <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><Users className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
                     <div className="text-gray-900 text-sm font-bold">Bonus from pros you invite</div>
                     <div className="text-gray-500 text-xs mt-0.5">When you invite another pro to ProLnk, you earn a small share of the platform fees from their work. Same applies to anyone they invite, up to 4 layers deep. Every member gets this — regardless of when you joined.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-teal-100 border border-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5"><HomeIcon className="w-3 h-3 text-teal-700" /></div>
+                  <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><HomeIcon className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
                     <div className="text-gray-900 text-sm font-bold">Home Origination Bonus — permanent</div>
                     <div className="text-gray-500 text-xs mt-0.5">Every homeowner you bring onto TrustyPro pays you a permanent share of platform fees on every future job at their home. Recurring revenue, forever.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-teal-100 border border-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5"><Award className="w-3 h-3 text-teal-700" /></div>
+                  <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><Award className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
                     <div className="text-gray-900 text-sm font-bold">TrustyPro Certified badge</div>
                     <div className="text-gray-500 text-xs mt-0.5">The credential homeowners search for.</div>
@@ -196,21 +196,21 @@ export default function JoinBySlug() {
 
             <Link
               href={`/pro-waitlist?ref=${data.referralCode}`}
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#0A1628] hover:bg-[#1E293B] text-white font-black text-lg rounded-2xl transition-all shadow-2xl shadow-[#0A1628]/30 hover:shadow-2xl hover:shadow-[#0A1628]/40 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#1E293B] hover:bg-[#0F172A] text-white font-black text-lg rounded-2xl transition-all shadow-2xl shadow-[#1E293B]/30 hover:shadow-2xl hover:shadow-[#1E293B]/40 hover:-translate-y-0.5"
             >
               Claim My Spot
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <p className="text-gray-500 text-xs mt-6 max-w-md mx-auto leading-relaxed">
-              Founding members lock in lifetime benefits. Public launch pricing will be $249/mo — your spot saves you <span className="text-teal-700 font-bold">$1,200 per year</span>, with override + origination income on top.
+              Founding members lock in lifetime benefits. Public launch pricing will be $249/mo — your spot saves you <span className="text-[#8A5A24] font-bold">$1,200 per year</span>, with override + origination income on top.
             </p>
           </div>
 
           {/* Proof line below card */}
           <div className="text-center mt-8">
             <p className="text-gray-500 text-xs font-medium tracking-wide">
-              <span className="text-teal-600">●</span> Founding network active in DFW — verified pros only
+              <span className="text-[#8A5A24]">●</span> Founding network active in DFW — verified pros only
             </p>
           </div>
 

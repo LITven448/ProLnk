@@ -7,11 +7,11 @@ import {
   DollarSign, TrendingUp,
 } from "lucide-react";
 
-const NAVY = "#0A1628";
-const NAVY2 = "#0f1e35";
-const TEAL = "#14b8a6";
-const TEAL_DIM = "rgba(20,184,166,0.12)";
-const YELLOW = "#F5E642";
+const SLATE = "#1E293B";
+const SLATE2 = "#0F172A";
+const BRONZE = "#C89B5A";
+const BRONZE_DIM = "rgba(200,155,90,0.12)";
+const SAND = "#D9C7A8";
 const TEXT = "#e2e8f0";
 const MUTED = "#94a3b8";
 const BORDER = "rgba(255,255,255,0.08)";
@@ -81,7 +81,7 @@ function StepCard({
   tag: string;
   accent?: string;
 }) {
-  const color = accent ?? TEAL;
+  const color = accent ?? BRONZE;
   return (
     <div style={{
       position: "relative",
@@ -96,8 +96,8 @@ function StepCard({
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
         <div style={{
           width: 48, height: 48, borderRadius: 12,
-          background: `rgba(20,184,166,0.12)`,
-          border: `1px solid rgba(20,184,166,0.25)`,
+          background: `rgba(200,155,90,0.12)`,
+          border: `1px solid rgba(200,155,90,0.25)`,
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
           <Icon size={22} color={color} />
@@ -113,7 +113,7 @@ function StepCard({
       </div>
       <div style={{
         display: "inline-flex", alignSelf: "flex-start",
-        background: `rgba(20,184,166,0.1)`, border: `1px solid rgba(20,184,166,0.2)`,
+        background: `rgba(200,155,90,0.1)`, border: `1px solid rgba(200,155,90,0.2)`,
         borderRadius: 100, padding: "4px 12px",
       }}>
         <span style={{ color, fontSize: 11, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase" }}>{tag}</span>
@@ -136,19 +136,19 @@ export default function HowItWorks() {
         <meta name="description" content="Learn how ProLnk works for contractors and homeowners. AI-powered lead matching, 60% job keep rate, and a 4-level network income system for trade professionals." />
       </Helmet>
 
-      <div style={{ background: NAVY, minHeight: "100vh", fontFamily: "'Inter', sans-serif", color: TEXT }}>
+      <div style={{ background: SLATE, minHeight: "100vh", fontFamily: "'Inter', sans-serif", color: TEXT }}>
 
         {/* Nav */}
         <nav style={{ padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: `1px solid ${BORDER}` }}>
           <Link href="/">
-            <span style={{ fontWeight: 800, fontSize: 20, color: TEAL, cursor: "pointer", letterSpacing: "-0.5px" }}>ProLnk</span>
+            <span style={{ fontWeight: 800, fontSize: 20, color: BRONZE, cursor: "pointer", letterSpacing: "-0.5px" }}>ProLnk</span>
           </Link>
           <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
             <Link href="/faq"><span style={{ color: MUTED, fontSize: 14, cursor: "pointer" }}>FAQ</span></Link>
             <Link href="/commission-calculator"><span style={{ color: MUTED, fontSize: 14, cursor: "pointer" }}>Calculator</span></Link>
             <Link href="/join">
               <span style={{
-                background: TEAL, color: "#000", fontWeight: 700, fontSize: 13,
+                background: "#FFFFFF", color: "#0F172A", fontWeight: 700, fontSize: 13,
                 padding: "8px 18px", borderRadius: 8, cursor: "pointer",
               }}>Join Network</span>
             </Link>
@@ -157,8 +157,8 @@ export default function HowItWorks() {
 
         {/* Hero */}
         <div style={{ textAlign: "center", padding: "72px 24px 64px" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: TEAL_DIM, border: `1px solid rgba(20,184,166,0.2)`, borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
-            <span style={{ color: TEAL, fontSize: 12, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>Platform Overview</span>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: BRONZE_DIM, border: `1px solid rgba(200,155,90,0.2)`, borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
+            <span style={{ color: BRONZE, fontSize: 12, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>Platform Overview</span>
           </div>
           <h1 style={{ fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 800, margin: "0 0 16px", letterSpacing: "-1.5px", lineHeight: 1.05 }}>
             How ProLnk Works
@@ -176,12 +176,12 @@ export default function HowItWorks() {
               <div style={{ flex: 1, height: 1, background: BORDER }} />
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{
-                  width: 36, height: 36, borderRadius: 8, background: TEAL_DIM,
-                  border: `1px solid rgba(20,184,166,0.25)`, display: "flex", alignItems: "center", justifyContent: "center",
+                  width: 36, height: 36, borderRadius: 8, background: BRONZE_DIM,
+                  border: `1px solid rgba(200,155,90,0.25)`, display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <Briefcase size={18} color={TEAL} />
+                  <Briefcase size={18} color={BRONZE} />
                 </div>
-                <span style={{ fontSize: 13, fontWeight: 700, color: TEAL, textTransform: "uppercase", letterSpacing: "0.07em" }}>For Contractors</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: BRONZE, textTransform: "uppercase", letterSpacing: "0.07em" }}>For Contractors</span>
               </div>
               <div style={{ flex: 1, height: 1, background: BORDER }} />
             </div>
@@ -199,34 +199,34 @@ export default function HowItWorks() {
               <div style={{ flex: 1, height: 1, background: BORDER }} />
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{
-                  width: 36, height: 36, borderRadius: 8, background: "rgba(245,230,66,0.1)",
-                  border: `1px solid rgba(245,230,66,0.2)`, display: "flex", alignItems: "center", justifyContent: "center",
+                  width: 36, height: 36, borderRadius: 8, background: "rgba(217,199,168,0.1)",
+                  border: `1px solid rgba(217,199,168,0.2)`, display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <CheckCircle size={18} color={YELLOW} />
+                  <CheckCircle size={18} color={SAND} />
                 </div>
-                <span style={{ fontSize: 13, fontWeight: 700, color: YELLOW, textTransform: "uppercase", letterSpacing: "0.07em" }}>For Homeowners</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: SAND, textTransform: "uppercase", letterSpacing: "0.07em" }}>For Homeowners</span>
               </div>
               <div style={{ flex: 1, height: 1, background: BORDER }} />
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, maxWidth: 900, margin: "0 auto" }}>
               {HOMEOWNER_STEPS.map((s) => (
-                <StepCard key={s.num} {...s} accent={YELLOW} />
+                <StepCard key={s.num} {...s} accent={SAND} />
               ))}
             </div>
           </div>
 
           {/* INCOME CALCULATOR TEASER */}
           <div style={{
-            background: `linear-gradient(135deg, ${NAVY2} 0%, rgba(20,184,166,0.06) 100%)`,
-            border: `1px solid rgba(20,184,166,0.2)`,
+            background: `linear-gradient(135deg, ${SLATE2} 0%, rgba(200,155,90,0.06) 100%)`,
+            border: `1px solid rgba(200,155,90,0.2)`,
             borderRadius: 20,
             padding: "48px 40px",
             marginBottom: 88,
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-              <TrendingUp size={20} color={TEAL} />
-              <span style={{ fontSize: 12, fontWeight: 700, color: TEAL, textTransform: "uppercase", letterSpacing: "0.06em" }}>Network Income Preview</span>
+              <TrendingUp size={20} color={BRONZE} />
+              <span style={{ fontSize: 12, fontWeight: 700, color: BRONZE, textTransform: "uppercase", letterSpacing: "0.06em" }}>Network Income Preview</span>
             </div>
             <h2 style={{ margin: "0 0 8px", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 800, letterSpacing: "-0.5px" }}>
               Build passive income while you work.
@@ -243,7 +243,7 @@ export default function HowItWorks() {
                 <input
                   type="range" min={1} max={50} value={recruits}
                   onChange={(e) => setRecruits(Number(e.target.value))}
-                  style={{ width: "100%", accentColor: TEAL }}
+                  style={{ width: "100%", accentColor: BRONZE }}
                 />
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: MUTED, marginTop: 4 }}>
                   <span>1</span><span>50</span>
@@ -256,7 +256,7 @@ export default function HowItWorks() {
                 <input
                   type="range" min={1000} max={20000} step={500} value={avgJob}
                   onChange={(e) => setAvgJob(Number(e.target.value))}
-                  style={{ width: "100%", accentColor: TEAL }}
+                  style={{ width: "100%", accentColor: BRONZE }}
                 />
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: MUTED, marginTop: 4 }}>
                   <span>$1K</span><span>$20K</span>
@@ -266,13 +266,13 @@ export default function HowItWorks() {
 
             <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
               <div style={{
-                background: TEAL_DIM, border: `1px solid rgba(20,184,166,0.3)`,
+                background: BRONZE_DIM, border: `1px solid rgba(200,155,90,0.3)`,
                 borderRadius: 14, padding: "20px 28px",
                 display: "flex", alignItems: "center", gap: 14,
               }}>
-                <DollarSign size={28} color={TEAL} />
+                <DollarSign size={28} color={BRONZE} />
                 <div>
-                  <div style={{ fontSize: 32, fontWeight: 900, color: TEAL, lineHeight: 1 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: BRONZE, lineHeight: 1 }}>
                     +${passiveMonthly.toLocaleString()}<span style={{ fontSize: 16, fontWeight: 500 }}>/mo</span>
                   </div>
                   <div style={{ fontSize: 12, color: MUTED, marginTop: 4 }}>
@@ -283,9 +283,9 @@ export default function HowItWorks() {
               <Link href="/commission-calculator">
                 <span style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  border: `1px solid ${TEAL}`, color: TEAL, fontWeight: 700, fontSize: 14,
+                  border: `1px solid ${BRONZE}`, color: BRONZE, fontWeight: 700, fontSize: 14,
                   padding: "14px 28px", borderRadius: 10, cursor: "pointer",
-                  background: "rgba(20,184,166,0.05)",
+                  background: "rgba(200,155,90,0.05)",
                 }}>
                   Full 5-Stream Calculator <ArrowRight size={16} />
                 </span>
@@ -296,8 +296,8 @@ export default function HowItWorks() {
           {/* BOTTOM CTA */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             <div style={{
-              background: `linear-gradient(135deg, rgba(20,184,166,0.15) 0%, rgba(20,184,166,0.05) 100%)`,
-              border: `1px solid rgba(20,184,166,0.25)`,
+              background: `linear-gradient(135deg, rgba(200,155,90,0.15) 0%, rgba(200,155,90,0.05) 100%)`,
+              border: `1px solid rgba(200,155,90,0.25)`,
               borderRadius: 16, padding: "32px 28px",
             }}>
               <h3 style={{ margin: "0 0 10px", fontSize: 20, fontWeight: 700 }}>Ready to join?</h3>
@@ -307,7 +307,7 @@ export default function HowItWorks() {
               <Link href="/join">
                 <span style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  background: TEAL, color: "#000", fontWeight: 700, fontSize: 14,
+                  background: "#FFFFFF", color: "#0F172A", fontWeight: 700, fontSize: 14,
                   padding: "12px 24px", borderRadius: 10, cursor: "pointer",
                 }}>
                   Claim Your Spot <ArrowRight size={16} />

@@ -17,10 +17,10 @@ const TIERS = [
     rank: "Standard",
     rankDesc: "Standard position in lead queue",
     popular: false,
-    color: "#60a5fa",
-    borderColor: "border-blue-400/40",
-    accentBg: "from-blue-500/10 to-blue-600/5",
-    badgeColor: "bg-blue-500/20 text-blue-300",
+    color: "#D9C7A8",
+    borderColor: "border-[#D9C7A8]/40",
+    accentBg: "from-[#D9C7A8]/10 to-[#D9C7A8]/5",
+    badgeColor: "bg-[#D9C7A8]/20 text-[#D9C7A8]",
     icon: Zap,
     features: [
       { label: "40% commission keep on every job you close", highlight: true },
@@ -41,10 +41,10 @@ const TIERS = [
     rank: "Priority",
     rankDesc: "Priority position — ahead of all Scout members",
     popular: true,
-    color: "#14b8a6",
-    borderColor: "border-teal-500/40",
-    accentBg: "from-teal-500/10 to-teal-600/5",
-    badgeColor: "bg-teal-500/20 text-teal-300",
+    color: "#C89B5A",
+    borderColor: "border-[#C89B5A]/40",
+    accentBg: "from-[#C89B5A]/10 to-[#C89B5A]/5",
+    badgeColor: "bg-[#C89B5A]/20 text-[#D9C7A8]",
     icon: Star,
     features: [
       { label: "55% commission keep on every job you close", highlight: true },
@@ -67,10 +67,10 @@ const TIERS = [
     rank: "Top",
     rankDesc: "Top of queue — first access to every lead",
     popular: false,
-    color: "#F5E642",
-    borderColor: "border-[#F5E642]/40",
-    accentBg: "from-[#F5E642]/10 to-[#F5E642]/5",
-    badgeColor: "bg-[#F5E642]/20 text-[#F5E642]",
+    color: "#B08544",
+    borderColor: "border-[#B08544]/40",
+    accentBg: "from-[#B08544]/10 to-[#B08544]/5",
+    badgeColor: "bg-[#B08544]/20 text-[#D9C7A8]",
     icon: Building2,
     features: [
       { label: "65% commission keep on every job you close", highlight: true },
@@ -181,10 +181,10 @@ const COMPARISON = [
 
 export default function PostFoundingPricing() {
   return (
-    <div className="min-h-screen bg-[#060D1A] text-white">
+    <div className="min-h-screen bg-[#1E293B] text-white">
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#060D1A]/90 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1E293B]/90 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
             <ProLnkLogo className="h-7 w-auto cursor-pointer" />
@@ -196,7 +196,7 @@ export default function PostFoundingPricing() {
               </span>
             </Link>
             <Link href="/partner-signup">
-              <button className="bg-teal-500 hover:bg-teal-400 text-white px-5 py-2 rounded-xl text-sm font-semibold transition-colors">
+              <button className="bg-white hover:bg-[#F5EDE0] text-[#0F172A] px-5 py-2 rounded-xl text-sm font-semibold transition-colors">
                 Join Now
               </button>
             </Link>
@@ -205,17 +205,17 @@ export default function PostFoundingPricing() {
       </nav>
 
       {/* Founding Network Banner */}
-      <div className="bg-gradient-to-r from-[#F5E642]/20 to-teal-500/20 border-b border-[#F5E642]/30 pt-16">
+      <div className="bg-gradient-to-r from-[#C89B5A]/20 to-[#C89B5A]/10 border-b border-[#C89B5A]/30 pt-16">
         <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <Crown className="w-5 h-5 text-[#F5E642] shrink-0" />
+            <Crown className="w-5 h-5 text-[#C89B5A] shrink-0" />
             <p className="text-sm font-medium text-white">
-              <span className="text-[#F5E642] font-bold">Founding Network still open</span> — $149/mo locked forever with 60% commission keep.
+              <span className="text-[#C89B5A] font-bold">Founding Network still open</span> — $149/mo locked forever with 60% commission keep.
               This page shows pricing <span className="italic">after</span> the founding network closes.
             </p>
           </div>
           <Link href="/founding-partner">
-            <button className="shrink-0 bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-5 py-2 rounded-xl text-sm font-bold transition-colors flex items-center gap-2 whitespace-nowrap">
+            <button className="shrink-0 bg-[#C89B5A] hover:bg-[#B08544] text-[#1E293B] px-5 py-2 rounded-xl text-sm font-bold transition-colors flex items-center gap-2 whitespace-nowrap">
               Claim Founding Spot <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
@@ -241,7 +241,7 @@ export default function PostFoundingPricing() {
             className="text-5xl md:text-6xl font-black mb-4 leading-tight"
           >
             Simple{" "}
-            <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#C89B5A] to-[#D9C7A8] bg-clip-text text-transparent">
               Pricing Tiers
             </span>
           </motion.h1>
@@ -268,11 +268,11 @@ export default function PostFoundingPricing() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative rounded-3xl border p-8 bg-gradient-to-br ${tier.accentBg} ${tier.borderColor} ${tier.popular ? "shadow-2xl shadow-teal-500/10" : ""}`}
+                className={`relative rounded-3xl border p-8 bg-gradient-to-br ${tier.accentBg} ${tier.borderColor} ${tier.popular ? "shadow-2xl shadow-[#C89B5A]/10" : ""}`}
               >
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-xs font-bold px-5 py-2 rounded-full flex items-center gap-2">
+                    <div className="bg-gradient-to-r from-[#C89B5A] to-[#B08544] text-[#1E293B] text-xs font-bold px-5 py-2 rounded-full flex items-center gap-2">
                       <Sparkles className="w-3 h-3" /> Most Popular
                     </div>
                   </div>
@@ -295,14 +295,14 @@ export default function PostFoundingPricing() {
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="bg-white/5 rounded-xl p-3">
                     <div className="flex items-center gap-1.5 mb-1">
-                      <DollarSign className="w-3.5 h-3.5 text-teal-400" />
+                      <DollarSign className="w-3.5 h-3.5 text-[#C89B5A]" />
                       <span className="text-white/40 text-xs">Commission keep</span>
                     </div>
                     <span className="text-white font-black text-2xl">{tier.commissionKeep}</span>
                   </div>
                   <div className="bg-white/5 rounded-xl p-3">
                     <div className="flex items-center gap-1.5 mb-1">
-                      <Users className="w-3.5 h-3.5 text-teal-400" />
+                      <Users className="w-3.5 h-3.5 text-[#C89B5A]" />
                       <span className="text-white/40 text-xs">Team seats</span>
                     </div>
                     <span className="text-white font-black text-xl">{tier.seats}</span>
@@ -317,7 +317,7 @@ export default function PostFoundingPricing() {
 
                 <div className="bg-white/5 rounded-xl p-3 mb-6">
                   <div className="flex items-center gap-1.5 mb-1">
-                    <TrendingUp className="w-3.5 h-3.5 text-teal-400" />
+                    <TrendingUp className="w-3.5 h-3.5 text-[#C89B5A]" />
                     <span className="text-white/40 text-xs">Lead queue priority</span>
                   </div>
                   <span className="text-white font-semibold text-sm">{tier.rank}</span>
@@ -327,8 +327,8 @@ export default function PostFoundingPricing() {
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((f, fi) => (
                     <li key={fi} className={`flex items-start gap-2.5 text-sm ${f.highlight ? "text-white" : "text-white/50"}`}>
-                      <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${f.highlight ? "bg-teal-500/20" : "bg-white/5"}`}>
-                        <Check className={`w-2.5 h-2.5 ${f.highlight ? "text-teal-400" : "text-white/30"}`} />
+                      <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${f.highlight ? "bg-[#C89B5A]/20" : "bg-white/5"}`}>
+                        <Check className={`w-2.5 h-2.5 ${f.highlight ? "text-[#C89B5A]" : "text-white/30"}`} />
                       </div>
                       <span className={f.highlight ? "font-medium" : ""}>{f.label}</span>
                     </li>
@@ -338,7 +338,7 @@ export default function PostFoundingPricing() {
                 <Link href="/partner-signup">
                   <button className={`w-full py-4 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 ${
                     tier.popular
-                      ? "bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white shadow-lg shadow-teal-500/20"
+                      ? "bg-gradient-to-r from-white to-white hover:from-[#F5EDE0] hover:to-[#F5EDE0] text-[#0F172A] shadow-lg shadow-[#C89B5A]/20"
                       : "bg-white/10 hover:bg-white/15 text-white"
                   }`}>
                     Start {tier.name} <ArrowRight className="w-4 h-4" />
@@ -391,7 +391,7 @@ export default function PostFoundingPricing() {
       <section className="py-20 px-6 bg-gradient-to-b from-transparent to-white/[0.02]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-[#F5E642]/10 border border-[#F5E642]/20 rounded-full px-4 py-2 text-sm text-[#F5E642] mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#C89B5A]/10 border border-[#C89B5A]/20 rounded-full px-4 py-2 text-sm text-[#C89B5A] mb-6">
               <AlertTriangle className="w-4 h-4" />
               Founding Network still open — closes at 500 applications
             </div>
@@ -410,7 +410,7 @@ export default function PostFoundingPricing() {
                 <tr className="border-b border-white/10 bg-white/5">
                   <th className="text-left px-6 py-4 text-white/40 font-medium">Feature</th>
                   <th className="px-4 py-4 text-center">
-                    <div className="inline-flex items-center gap-1.5 bg-[#F5E642]/20 text-[#F5E642] px-3 py-1.5 rounded-full text-xs font-bold">
+                    <div className="inline-flex items-center gap-1.5 bg-[#C89B5A]/20 text-[#C89B5A] px-3 py-1.5 rounded-full text-xs font-bold">
                       <Crown className="w-3 h-3" /> Founding
                     </div>
                   </th>
@@ -425,7 +425,7 @@ export default function PostFoundingPricing() {
                   <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                     <td className="px-6 py-4 text-white/60 font-medium">{row.feature}</td>
                     <td className="px-4 py-4 text-center">
-                      <span className={`font-bold ${row.foundingWins ? "text-[#F5E642]" : "text-white/60"}`}>{row.founding}</span>
+                      <span className={`font-bold ${row.foundingWins ? "text-[#C89B5A]" : "text-white/60"}`}>{row.founding}</span>
                     </td>
                     <td className="px-4 py-4 text-center text-white/40">{row.scout}</td>
                     <td className="px-4 py-4 text-center text-white/40">{row.crew}</td>
@@ -439,7 +439,7 @@ export default function PostFoundingPricing() {
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/founding-partner">
-              <button className="bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-8 py-4 rounded-2xl font-bold transition-all flex items-center gap-2 justify-center">
+              <button className="bg-[#C89B5A] hover:bg-[#B08544] text-[#1E293B] px-8 py-4 rounded-2xl font-bold transition-all flex items-center gap-2 justify-center">
                 <Crown className="w-5 h-5" />
                 Claim Founding Spot — $149/mo, 60% keep, locked forever
               </button>
@@ -456,14 +456,14 @@ export default function PostFoundingPricing() {
       {/* Final CTA */}
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-white/5 to-[#0A1628] border border-white/10 rounded-3xl p-12">
+          <div className="bg-gradient-to-br from-white/5 to-[#0F172A] border border-white/10 rounded-3xl p-12">
             <h2 className="text-3xl font-black text-white mb-4">Ready to start?</h2>
             <p className="text-white/50 mb-8 text-lg">
               Every plan includes unlimited lead matching and the full 5-stream income system. No per-lead fees. Ever.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/partner-signup">
-                <button className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white px-10 py-4 rounded-2xl font-bold text-base transition-all shadow-lg shadow-teal-500/25 inline-flex items-center gap-3">
+                <button className="bg-gradient-to-r from-white to-white hover:from-[#F5EDE0] hover:to-[#F5EDE0] text-[#0F172A] px-10 py-4 rounded-2xl font-bold text-base transition-all shadow-lg shadow-[#C89B5A]/25 inline-flex items-center gap-3">
                   Join Now <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>

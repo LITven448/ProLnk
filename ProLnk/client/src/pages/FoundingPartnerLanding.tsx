@@ -4,10 +4,10 @@ import { CheckCircle, Users, TrendingUp, Shield, Zap, Lock, Star, ChevronDown, C
 import { trpc } from "@/lib/trpc";
 
 const TIERS = [
-  { name: "Charter Member", count: 25, color: "#E8A020", desc: "The founding 25. Highest network position, maximum commission depth." },
-  { name: "Founding Member", count: 100, color: "#3B82F6", desc: "First wave of approved professionals. Same locked benefits." },
-  { name: "Level 3 Partner", count: 400, color: "#10B981", desc: "Growing network body. Full founding benefits." },
-  { name: "Level 4 Partner", count: 1600, color: "#8B5CF6", desc: "Broadest tier. Complete founding package secured." },
+  { name: "Charter Member", count: 25, color: "#C89B5A", desc: "The founding 25. Highest network position, maximum commission depth." },
+  { name: "Founding Member", count: 100, color: "#B08544", desc: "First wave of approved professionals. Same locked benefits." },
+  { name: "Level 3 Partner", count: 400, color: "#D9C7A8", desc: "Growing network body. Full founding benefits." },
+  { name: "Level 4 Partner", count: 1600, color: "#F5EDE0", desc: "Broadest tier. Complete founding package secured." },
 ];
 
 const BENEFITS = [
@@ -42,7 +42,7 @@ export default function FoundingPartnerLanding() {
   const spotsLeft = Math.max(0, 2125 - totalSignups);
 
   return (
-    <div style={{ background: "#080C14", minHeight: "100vh", fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>
+    <div style={{ background: "#1E293B", minHeight: "100vh", fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>
       
       {/* Nav */}
       <nav style={{ padding: "16px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(245,240,232,0.06)" }}>
@@ -50,7 +50,7 @@ export default function FoundingPartnerLanding() {
         <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
           <Link href="/tier-benefits"><span style={{ fontSize: 14, color: "rgba(245,240,232,0.6)", cursor: "pointer" }}>View All Tiers</span></Link>
           <Link href="/apply">
-            <button style={{ background: "#E8A020", color: "#080C14", border: "none", borderRadius: 100, padding: "10px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}>
+            <button style={{ background: "#FFFFFF", color: "#0F172A", border: "none", borderRadius: 100, padding: "10px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}>
               Apply Now →
             </button>
           </Link>
@@ -59,12 +59,12 @@ export default function FoundingPartnerLanding() {
 
       {/* Hero */}
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "80px 24px 60px", textAlign: "center" }}>
-        <div style={{ display: "inline-block", border: "1px solid rgba(232,160,32,0.4)", borderRadius: 100, padding: "5px 16px", fontSize: 11, letterSpacing: "0.12em", color: "#E8A020", textTransform: "uppercase", marginBottom: 28 }}>
+        <div style={{ display: "inline-block", border: "1px solid rgba(200,155,90,0.4)", borderRadius: 100, padding: "5px 16px", fontSize: 11, letterSpacing: "0.12em", color: "#C89B5A", textTransform: "uppercase", marginBottom: 28 }}>
           ✦ Founding Network — {spotsLeft.toLocaleString()} of 2,125 spots remaining
         </div>
         <h1 style={{ fontSize: "clamp(40px,6vw,72px)", fontWeight: 900, lineHeight: 1.05, marginBottom: 24 }}>
           The First 2,125 Pros<br />
-          <span style={{ color: "#E8A020" }}>Own the Network Forever.</span>
+          <span style={{ color: "#C89B5A" }}>Own the Network Forever.</span>
         </h1>
         <p style={{ fontSize: "clamp(16px,2vw,20px)", color: "rgba(245,240,232,0.65)", maxWidth: 660, margin: "0 auto 40px", lineHeight: 1.6 }}>
           ProLnk is building a closed, invitation-only commission network for qualified home service professionals. 
@@ -72,7 +72,7 @@ export default function FoundingPartnerLanding() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/apply">
-            <button style={{ background: "#E8A020", color: "#080C14", border: "none", borderRadius: 100, padding: "16px 40px", fontSize: 17, fontWeight: 700, cursor: "pointer" }}>
+            <button style={{ background: "#FFFFFF", color: "#0F172A", border: "none", borderRadius: 100, padding: "16px 40px", fontSize: 17, fontWeight: 700, cursor: "pointer" }}>
               Apply to Join →
             </button>
           </Link>
@@ -105,8 +105,8 @@ export default function FoundingPartnerLanding() {
           <h2 style={{ textAlign: "center", fontSize: "clamp(28px,4vw,42px)", fontWeight: 800, marginBottom: 48 }}>The Founding Package</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24 }}>
             {BENEFITS.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderLeft: "3px solid #E8A020", borderRadius: 16, padding: "24px 20px" }}>
-                <Icon style={{ width: 22, height: 22, color: "#E8A020", marginBottom: 12 }} />
+              <div key={title} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderLeft: "3px solid #C89B5A", borderRadius: 16, padding: "24px 20px" }}>
+                <Icon style={{ width: 22, height: 22, color: "#C89B5A", marginBottom: 12 }} />
                 <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>{title}</div>
                 <div style={{ fontSize: 14, color: "rgba(245,240,232,0.6)", lineHeight: 1.6 }}>{desc}</div>
               </div>
@@ -126,11 +126,11 @@ export default function FoundingPartnerLanding() {
             <span>Relationship</span><span style={{ textAlign: "center" }}>Job Commission</span><span style={{ textAlign: "center" }}>Subscription</span><span style={{ textAlign: "right" }}>On $600 fee</span>
           </div>
           {NETWORK_RATES.map((row, i) => (
-            <div key={row.level} style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", padding: "16px 20px", borderTop: "1px solid rgba(255,255,255,0.06)", background: i === 0 ? "rgba(232,160,32,0.06)" : "transparent" }}>
+            <div key={row.level} style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", padding: "16px 20px", borderTop: "1px solid rgba(255,255,255,0.06)", background: i === 0 ? "rgba(200,155,90,0.06)" : "transparent" }}>
               <span style={{ fontSize: 15, fontWeight: i === 0 ? 700 : 400 }}>{row.level}</span>
-              <span style={{ textAlign: "center", color: "#E8A020", fontWeight: 700 }}>{row.job}</span>
-              <span style={{ textAlign: "center", color: "#E8A020", fontWeight: 700 }}>{row.sub}</span>
-              <span style={{ textAlign: "right", color: "#10B981", fontWeight: 600 }}>{row.example}</span>
+              <span style={{ textAlign: "center", color: "#C89B5A", fontWeight: 700 }}>{row.job}</span>
+              <span style={{ textAlign: "center", color: "#C89B5A", fontWeight: 700 }}>{row.sub}</span>
+              <span style={{ textAlign: "right", color: "#C89B5A", fontWeight: 600 }}>{row.example}</span>
             </div>
           ))}
         </div>
@@ -159,13 +159,13 @@ export default function FoundingPartnerLanding() {
       {/* CTA */}
       <div style={{ textAlign: "center", padding: "60px 24px 80px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <h2 style={{ fontSize: "clamp(32px,5vw,56px)", fontWeight: 900, marginBottom: 20 }}>
-          Don\'t Wait Until It\'s<br /><span style={{ color: "#E8A020" }}>Permanently Closed.</span>
+          Don\'t Wait Until It\'s<br /><span style={{ color: "#C89B5A" }}>Permanently Closed.</span>
         </h2>
         <p style={{ color: "rgba(245,240,232,0.6)", fontSize: 17, marginBottom: 32 }}>
           {spotsLeft.toLocaleString()} founding slots remaining. When they fill, the program closes forever.
         </p>
         <Link href="/apply">
-          <button style={{ background: "#E8A020", color: "#080C14", border: "none", borderRadius: 100, padding: "18px 48px", fontSize: 18, fontWeight: 700, cursor: "pointer" }}>
+          <button style={{ background: "#FFFFFF", color: "#0F172A", border: "none", borderRadius: 100, padding: "18px 48px", fontSize: 18, fontWeight: 700, cursor: "pointer" }}>
             Apply for Founding Network →
           </button>
         </Link>

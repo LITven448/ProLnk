@@ -799,6 +799,16 @@ export default function WaitlistStatus() {
               <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-green-500/20 text-green-400">{status.referrals.length}</span>
             )}
           </div>
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="p-3 rounded-xl text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <div className="text-2xl font-black text-white">{status.referralCount ?? 0}</div>
+              <div className="text-xs text-gray-500 mt-0.5">Pros referred · ProLnk</div>
+            </div>
+            <div className="p-3 rounded-xl text-center" style={{ background: "rgba(200,155,90,0.08)", border: "1px solid rgba(200,155,90,0.25)" }}>
+              <div className="text-2xl font-black" style={{ color: "#C89B5A" }}>{status.homeownerReferralCount ?? 0}</div>
+              <div className="text-xs text-gray-500 mt-0.5">Homeowners referred · TrustyPro</div>
+            </div>
+          </div>
           {!status.referrals || status.referrals.length === 0 ? (
             <div className="text-center py-6">
               <p className="text-gray-500 text-sm mb-2">No referrals yet</p>

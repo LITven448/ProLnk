@@ -5424,7 +5424,7 @@ Return a JSON object with:
         let rows: any[] = [];
         if (input.email) {
           const [r] = await pool.query(
-            "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
+            "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, homeownerReferralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
             [input.email.toLowerCase()]
           );
           rows = r as any[];
@@ -5432,7 +5432,7 @@ Return a JSON object with:
         if (!rows[0] && input.referralCode) {
           // Try referralCode column first, then fall back to ID
           const [r] = await pool.query(
-            "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
+            "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, homeownerReferralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
             [input.referralCode.toUpperCase()]
           );
           rows = r as any[];
@@ -5440,7 +5440,7 @@ Return a JSON object with:
             const numId = Number(input.referralCode.replace(/\D/g, '')) || 0;
             if (numId) {
               const [r2] = await pool.query(
-                "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE id = ? LIMIT 1",
+                "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, homeownerReferralCount, createdAt FROM proWaitlist WHERE id = ? LIMIT 1",
                 [numId]
               );
               rows = r2 as any[];
@@ -5486,6 +5486,7 @@ Return a JSON object with:
           referralCode: actualReferralCode,
           referredBy: row.referredBy,
           referralCount,
+          homeownerReferralCount: row.homeownerReferralCount || 0,
           referrals: (refRows as any[]).map(r => ({ firstName: r.firstName, trade: r.trade })),
           upgradeMessage,
           spotsToCharter: Math.max(0, 25 - position),

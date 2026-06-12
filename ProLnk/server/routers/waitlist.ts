@@ -310,13 +310,13 @@ export const waitlistRouter = router({
       let rows: any[];
       if (input.email) {
         const [r] = await pool.query(
-          "SELECT id, firstName, lastName, email, businessType as trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
+          "SELECT id, firstName, lastName, email, businessType as trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, homeownerReferralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
           [input.email]
         );
         rows = r as any[];
       } else if (input.referralCode) {
         const [r] = await pool.query(
-          "SELECT id, firstName, lastName, email, businessType as trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
+          "SELECT id, firstName, lastName, email, businessType as trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, homeownerReferralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
           [input.referralCode.toUpperCase()]
         );
         rows = r as any[];
@@ -363,6 +363,7 @@ export const waitlistRouter = router({
         position,
         totalSignups,
         referralCount,
+        homeownerReferralCount: row.homeownerReferralCount || 0,
         rates,
         upgradeMessage,
         referrals: (refRows as any[]).map(r => ({
@@ -671,7 +672,10 @@ export const waitlistRouter = router({
     .query(async ({ input }) => {
       const pool = await getPool();
       if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
-      const [rows] = await pool.query("SELECT firstName, businessType, referralCode FROM proWaitlist WHERE customSlug = ? LIMIT 1", [input.slug.toLowerCase()]);
+      const [rows] = await pool.query(
+        "SELECT firstName, businessType, referralCode FROM proWaitlist WHERE customSlug = ? OR referralCode = ? LIMIT 1",
+        [input.slug.toLowerCase(), input.slug.toUpperCase()]
+      );
       const row = (rows as any[])[0];
       if (!row) return { found: false as const };
       return { found: true as const, firstName: row.firstName as string, businessType: row.businessType as string, referralCode: row.referralCode as string };

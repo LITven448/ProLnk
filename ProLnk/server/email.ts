@@ -586,7 +586,7 @@ export async function sendProWaitlistConfirmation(opts: {
         <p style="color:rgba(255,255,255,0.5);font-size:12px;margin:0;line-height:1.5;">Send to homeowners in your area. Every home that signs up through you pays a permanent Home Origination Bonus — recurring revenue from their property forever.</p>
       </div>
 
-      <a href="${refLink}" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 26px;border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;">View Your Referral Hub →</a>
+      <a href="${statusUrl}" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 26px;border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;">View Your Referral Hub →</a>
     </div>
 
     <!-- What happens next timeline -->

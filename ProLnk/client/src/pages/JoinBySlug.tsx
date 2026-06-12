@@ -82,6 +82,11 @@ export default function JoinBySlug() {
               <p className="text-gray-500 text-base mb-10 leading-relaxed">{data.firstName} will be notified when you sign up, and you'll get early access as TrustyPro launches in your area.</p>
               <Link href={`/waitlist/homeowner?ref=${data.referralCode}`} className="inline-flex items-center gap-2 px-10 py-4 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-black text-lg rounded-xl transition-all shadow-lg shadow-[#4F46E5]/30 hover:shadow-xl hover:shadow-[#4F46E5]/40 hover:-translate-y-0.5">Join the Waitlist <ArrowRight className="w-5 h-5" /></Link>
               <p className="text-gray-400 text-xs mt-8 max-w-xs mx-auto">Free for homeowners — always. We're funded by pros, never by you.</p>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <p className="text-gray-500 text-sm">Are you a home-service professional?</p>
+                <a href={`https://prolnk.xyz/apply?ref=${data.referralCode}`} className="inline-flex items-center gap-1.5 mt-1 text-[#4F46E5] hover:text-[#4338CA] font-bold text-sm">Join the ProLnk pro network instead <ArrowRight className="w-4 h-4" /></a>
+              </div>
             </div>
           </div>
         </main>
@@ -205,6 +210,11 @@ export default function JoinBySlug() {
             <p className="text-gray-500 text-xs mt-6 max-w-md mx-auto leading-relaxed">
               Founding members lock in lifetime benefits. Public launch pricing will be $249/mo — your spot saves you <span className="text-[#8A5A24] font-bold">$1,200 per year</span>, with override + origination income on top.
             </p>
+
+            <div className="mt-8 pt-6 border-t border-gray-100">
+              <p className="text-gray-500 text-sm">Not a pro — own a home in DFW?</p>
+              <a href={`https://trustypro.io/waitlist/homeowner?ref=${data.referralCode}`} className="inline-flex items-center gap-1.5 mt-1 text-[#8A5A24] hover:text-[#B08544] font-bold text-sm">Join TrustyPro as a homeowner (free) <ArrowRight className="w-4 h-4" /></a>
+            </div>
           </div>
 
           {/* Proof line below card */}

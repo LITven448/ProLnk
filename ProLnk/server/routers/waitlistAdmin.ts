@@ -16,7 +16,7 @@ export const waitlistAdminRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
       const result = await db.execute(
-        sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, tier, referredBy, smsOptIn, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT 1000`
+        sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, tier, referredBy, referralCode, customSlug, referralCount, homeownerReferralCount, smsOptIn, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
       return (result?.[0] || []) as Array<{
@@ -30,6 +30,10 @@ export const waitlistAdminRouter = router({
         trades: string;
         tier?: string;
         referredBy?: string;
+        referralCode?: string;
+        customSlug?: string;
+        referralCount?: number;
+        homeownerReferralCount?: number;
         smsOptIn: boolean;
         adminNotes?: string;
         createdAt: Date;
@@ -47,7 +51,7 @@ export const waitlistAdminRouter = router({
         sql`SELECT id, firstName, lastName, email, phone, address, city, state, homeType, desiredProjects, projectTimeline,
                    yearBuilt, squareFootage, lotSizeSqFt, bedrooms, bathrooms, stories, garageSpaces,
                    hasPool, hasBasement, hasAttic, ownershipStatus, yearsOwned, overallCondition, homeSystems, estimatedBudget,
-                   createdAt
+                   referredBy, createdAt
             FROM homeWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
@@ -79,6 +83,7 @@ export const waitlistAdminRouter = router({
         overallCondition?: string | null;
         homeSystems?: unknown;
         estimatedBudget?: string | null;
+        referredBy?: string | null;
         createdAt: Date;
         position?: number;
       }>;

@@ -471,6 +471,20 @@ export const waitlistRouter = router({
           colNames.map((c) => columns[c])
         );
 
+        // Credit the referring partner/charter member for a homeowner referral.
+        // referredBy may be their referralCode OR their customSlug. Never blocks
+        // the signup — purely additive tracking (homeownerReferralCount column).
+        if (input.referredBy) {
+          try {
+            await pool.query(
+              "UPDATE proWaitlist SET homeownerReferralCount = homeownerReferralCount + 1 WHERE referralCode = ? OR customSlug = ? LIMIT 1",
+              [input.referredBy.toUpperCase(), input.referredBy.toLowerCase()]
+            );
+          } catch (err) {
+            console.error("[waitlist] homeowner referral credit failed", { ref: input.referredBy, error: (err as Error)?.message });
+          }
+        }
+
         sendHomeownerWaitlistConfirmation({
           to: input.email,
           firstName: input.firstName,

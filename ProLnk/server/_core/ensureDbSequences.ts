@@ -90,6 +90,9 @@ const SCHEMA_TWEAKS = [
   // Charter/partner homeowner-referral tracking: count of TrustyPro homeowners a
   // member referred (the pro `referralCount` tracks pro referrals only).
   "ALTER TABLE `proWaitlist` ADD COLUMN `homeownerReferralCount` INT NOT NULL DEFAULT 0",
+  // primaryGoal stores `more_leads|<free-text notes>` (notes capped at 500); the
+  // original varchar(100) overflowed and hard-failed live signups. Widen + nullable.
+  "ALTER TABLE `proWaitlist` MODIFY COLUMN `primaryGoal` VARCHAR(1000) NULL",
 ];
 
 async function applySchemaTweaks(db: any): Promise<void> {

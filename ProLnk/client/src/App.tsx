@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
+import { trpc } from "@/lib/trpc";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";

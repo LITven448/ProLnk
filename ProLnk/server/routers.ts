@@ -5191,6 +5191,11 @@ Return a JSON object with:
         primaryCity: z.string().min(1).max(100),
         primaryState: z.string().min(2).max(2),
         referredBy: z.string().max(20).optional(),
+        // These exist on the inner ProWaitlistSchema; without them here the
+        // wrapper silently STRIPPED what the signup form collects.
+        workStyle: z.enum(["solo", "owner", "scout"]).optional(),
+        employeeCount: z.string().max(20).optional(),
+        notes: z.string().max(500).optional(),
       }))
       .mutation(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).joinProWaitlist(input)),
 

@@ -1225,11 +1225,10 @@ export default function TrustyProHome() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.38 }}
           >
-            <div className="flex -space-x-1.5">
-              {["👩","👨","👩‍🦳","👨‍🦱","👩‍💼"].map((e, i) => (
-                <div key={i} className="w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center text-sm border-2 border-white text-xs">{e}</div>
-              ))}
-            </div>
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full rounded-full opacity-60 animate-ping" style={{ backgroundColor: ACCENT }} />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full" style={{ backgroundColor: ACCENT }} />
+            </span>
             <p className="text-sm font-bold" style={{ color: ACCENT }}>
               {homesOnWaitlist > 0
                 ? `${homesOnWaitlist.toLocaleString()} homes already on the waitlist — DFW`
@@ -1555,38 +1554,34 @@ export default function TrustyProHome() {
       {/* -- BENEFITS ---------------------------------------------------------- */}
       <section id="benefits" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <AnimSection variants={fadeLeft}>
-              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Benefits</span>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Why Choose TrustyPro</h2>
-              <p className="mt-4 text-gray-500 text-lg leading-relaxed">We combine AI technology, verified professionals, and a seamless process to transform everyday spaces into lasting impressions.</p>
-            </AnimSection>
-            <motion.div
-              className="space-y-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={staggerContainer}
-            >
-              {BENEFITS.map((b, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-gray-50 rounded-2xl p-5 flex gap-4 items-start"
-                  variants={staggerItem}
-                  whileHover={{ x: 4 }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: ACCENT_LIGHT }}>
-                    <b.icon className="w-5 h-5" style={{ color: ACCENT }} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">{b.title}</h3>
-                    <p className="mt-1 text-sm text-gray-500 leading-relaxed">{b.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+          <AnimSection variants={fadeUp} className="max-w-2xl mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Benefits</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Why Choose TrustyPro</h2>
+            <p className="mt-4 text-gray-500 text-lg leading-relaxed">We combine AI technology, verified professionals, and a seamless process to transform everyday spaces into lasting impressions.</p>
+          </AnimSection>
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={staggerContainer}
+          >
+            {BENEFITS.map((b, i) => (
+              <motion.div
+                key={i}
+                className="bg-gray-50 rounded-2xl p-6 h-full"
+                variants={staggerItem}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.25 }}
+              >
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: ACCENT_LIGHT }}>
+                  <b.icon className="w-5 h-5" style={{ color: ACCENT }} />
+                </div>
+                <h3 className="font-bold text-gray-900 leading-snug">{b.title}</h3>
+                <p className="mt-2 text-sm text-gray-500 leading-relaxed">{b.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 

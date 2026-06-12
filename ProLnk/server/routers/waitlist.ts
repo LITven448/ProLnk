@@ -278,7 +278,7 @@ export const waitlistRouter = router({
           sendWaitlistConfirmSMS(input.phone, input.firstName, position).catch(() => {});
         }
 
-        automations.partnerWaitlistJoined({ email: input.email, tier, position, referralCode }).catch(() => {});
+        automations.partnerWaitlistJoined({ email: input.email, tier, position, referralCode, trade: input.trade, city: input.primaryCity }).catch(() => {});
 
         notifyOwner({
           title: `New ProLnk Pro Signup: ${input.firstName} ${input.lastName} (${input.trade})`,
@@ -474,6 +474,7 @@ export const waitlistRouter = router({
         sendHomeownerWaitlistConfirmation({
           to: input.email,
           firstName: input.firstName,
+          address: input.address,
           city: input.city,
           serviceNeeded: input.serviceNeeded,
           position,
@@ -481,7 +482,7 @@ export const waitlistRouter = router({
           console.error("[waitlist] Email send failed for Homeowner waitlist", { email: input.email, error: err?.message });
         });
 
-        automations.homeownerWaitlistJoined({ email: input.email, city: input.city, serviceNeeded: input.serviceNeeded }).catch(() => {});
+        automations.homeownerWaitlistJoined({ email: input.email, city: input.city, state: input.state, serviceNeeded: input.serviceNeeded }).catch(() => {});
 
         notifyOwner({
           title: `New TrustyPro Homeowner Signup: ${input.firstName} ${input.lastName}`,

@@ -168,14 +168,30 @@ export default function ReferralHub() {
     enabled: !!user,
   });
 
-  const referralCode = partner?.stats?.referralCode ?? "partner123";
-  const referralLink = `prolnk.io/join?ref=${referralCode}`;
-  const fullReferralLink = `${window.location.origin}/apply?ref=${referralCode}`;
+  const email = user?.email ?? "";
+  const { data: waitlist } = trpc.proWaitlist.getWaitlistStatus.useQuery(
+    { email },
+    { enabled: !!email }
+  );
+
+  const referralCode = partner?.stats?.referralCode ?? waitlist?.referralCode ?? "";
+  const referralLink = referralCode ? `prolnk.xyz/join/${referralCode}` : "prolnk.xyz/join";
+  const fullReferralLink = referralCode
+    ? `https://prolnk.xyz/join/${referralCode}`
+    : "https://prolnk.xyz/join";
+  const homeownerReferralLink = referralCode
+    ? `https://trustypro.io/join/${referralCode}`
+    : "https://trustypro.io/join";
+
+  const personalize = (t: string) => t.replace(/prolnk\.io\/join\?ref=partner123/g, referralLink);
+
+  const partnersReferred = partner?.stats?.partnersReferred ?? waitlist?.referralCount ?? 0;
+  const homeownersReferred = waitlist?.homeownerReferralCount ?? 0;
 
   const stats: ReferralStats = {
     referralCode,
-    partnersReferred: partner?.stats?.partnersReferred ?? 0,
-    homesOriginated: 0,
+    partnersReferred,
+    homesOriginated: homeownersReferred,
     overrideCommissionsEarned: 0,
     referralCommissionsEarned: parseFloat(partner?.stats?.totalCommissionEarned ?? "0"),
     totalPassiveIncome: parseFloat(partner?.stats?.totalCommissionEarned ?? "0"),
@@ -184,9 +200,9 @@ export default function ReferralHub() {
   };
 
   const l1Count = stats.partnersReferred;
-  const l2Count = l1Count * 2;
-  const l3Count = l2Count * 2;
-  const l4Count = l3Count * 2;
+  const l2Count = 0;
+  const l3Count = 0;
+  const l4Count = 0;
   const totalNetworkSize = l1Count + l2Count + l3Count + l4Count;
   const monthlyNetworkIncome = calcNetworkIncome(l1Count, l2Count, l3Count, l4Count);
 
@@ -274,23 +290,25 @@ export default function ReferralHub() {
                   <span className="text-slate-400 text-sm font-medium uppercase tracking-wide">Network Value</span>
                 </div>
                 <p className="text-3xl font-bold text-white">
-                  Your network is worth{" "}
-                  <span className="text-teal-400">
-                    ${totalNetworkSize > 0 ? monthlyNetworkIncome.toLocaleString() : "247"}/month
-                  </span>{" "}
-                  in passive income
+                  You've referred{" "}
+                  <span className="text-teal-400">{partnersReferred} {partnersReferred === 1 ? "pro" : "pros"}</span>
+                  {homeownersReferred > 0 && (
+                    <> &amp; <span style={{ color: "#C89B5A" }}>{homeownersReferred} {homeownersReferred === 1 ? "homeowner" : "homeowners"}</span></>
+                  )}
                 </p>
                 <p className="text-slate-400 text-sm mt-1">
-                  {totalNetworkSize > 0
-                    ? `Based on ${totalNetworkSize} partners across 4 levels`
-                    : "Estimated at 8 active partners — grows every time you refer someone"}
+                  {partnersReferred + homeownersReferred > 0
+                    ? "Every referral builds permanent network income."
+                    : "Share your links below to start building your network."}
                 </p>
               </div>
-              <div className="text-right shrink-0">
-                <p className="text-slate-500 text-xs mb-1">Leaderboard position</p>
-                <p className="text-2xl font-bold text-teal-400">#47</p>
-                <p className="text-slate-400 text-xs">of 112 partners this month</p>
-              </div>
+              {waitlist?.position ? (
+                <div className="text-right shrink-0">
+                  <p className="text-slate-500 text-xs mb-1">Waitlist position</p>
+                  <p className="text-2xl font-bold text-teal-400">#{waitlist.position}</p>
+                  <p className="text-slate-400 text-xs">{waitlist.tierLabel ?? waitlist.tier}</p>
+                </div>
+              ) : null}
             </div>
           </CardContent>
         </Card>
@@ -304,7 +322,7 @@ export default function ReferralHub() {
               Your Referral Impact
             </CardTitle>
             <p className="text-xs text-slate-400">
-              L2–L4 counts are projected at 2× each level until real downstream data loads.
+              Live network counts. L2–L4 populate as the pros you recruit start recruiting their own.
             </p>
           </CardHeader>
           <CardContent className="space-y-5">
@@ -381,11 +399,23 @@ export default function ReferralHub() {
             <p className="text-xs text-slate-400">Share this link to grow your network and earn passive overrides.</p>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center gap-2 bg-slate-900 rounded-lg px-4 py-3 border border-slate-700">
-              <span className="font-mono text-teal-300 text-sm flex-1 truncate">{referralLink}</span>
-              <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs shrink-0">
-                47 clicks this month
-              </Badge>
+            <div>
+              <p className="text-[11px] uppercase tracking-wide text-teal-400 font-semibold mb-1.5">Recruit pros · ProLnk</p>
+              <div className="flex items-center gap-2 bg-slate-900 rounded-lg px-4 py-3 border border-slate-700">
+                <span className="font-mono text-teal-300 text-sm flex-1 truncate">{referralLink}</span>
+                <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs shrink-0">
+                  {partnersReferred} referred
+                </Badge>
+              </div>
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-wide font-semibold mb-1.5" style={{ color: "#C89B5A" }}>Recruit homeowners · TrustyPro</p>
+              <div className="flex items-center gap-2 bg-slate-900 rounded-lg px-4 py-3 border border-slate-700">
+                <span className="font-mono text-sm flex-1 truncate" style={{ color: "#C89B5A" }}>{homeownerReferralLink.replace("https://", "")}</span>
+                <Badge className="text-xs shrink-0" style={{ background: "rgba(200,155,90,0.18)", color: "#C89B5A", border: "1px solid rgba(200,155,90,0.4)" }}>
+                  {homeownersReferred} referred
+                </Badge>
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button onClick={copyLink}
@@ -416,75 +446,44 @@ export default function ReferralHub() {
           </CardContent>
         </Card>
 
-        {/* Referral Pipeline + Leaderboard */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Pipeline Kanban */}
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-                <Users className="w-4 h-4 text-teal-400" />
-                Referral Pipeline
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-3 gap-3">
-                {REFERRAL_PIPELINE.map((col) => (
-                  <div key={col.label} className={`rounded-xl p-3 border ${col.color}`}>
-                    <div className="flex items-center justify-between mb-3">
-                      <p className="text-xs text-slate-400 font-medium">{col.label}</p>
-                      <Badge variant="outline" className={`text-xs border-current ${col.badgeColor}`}>
-                        {col.count}
-                      </Badge>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {col.people.map((initials) => (
-                        <div
-                          key={initials}
-                          className="w-7 h-7 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-[10px] font-bold text-slate-300"
-                        >
-                          {initials}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+        {/* Your Direct Referrals (real data) */}
+        <Card className="bg-slate-800 border-slate-700">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+              <Users className="w-4 h-4 text-teal-400" />
+              Your Direct Referrals
+              {(waitlist?.referrals?.length ?? 0) > 0 && (
+                <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs ml-1">
+                  {waitlist?.referrals?.length}
+                </Badge>
+              )}
+            </CardTitle>
+            <p className="text-xs text-slate-400">Pros who joined ProLnk through your link.</p>
+          </CardHeader>
+          <CardContent>
+            {(waitlist?.referrals?.length ?? 0) === 0 ? (
+              <div className="text-center py-8">
+                <p className="text-slate-400 text-sm mb-1">No referrals yet</p>
+                <p className="text-xs text-slate-500">Share your link above — each pro who joins shows up here.</p>
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Leaderboard Position */}
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-                <Trophy className="w-4 h-4 text-amber-400" />
-                Leaderboard Position
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="bg-slate-900 rounded-xl p-4 border border-amber-500/20 text-center">
-                <p className="text-slate-400 text-sm">You're</p>
-                <p className="text-5xl font-bold text-amber-400 my-1">#47</p>
-                <p className="text-slate-400 text-sm">of 112 partners by referral earnings this month</p>
-              </div>
+            ) : (
               <div className="space-y-2">
-                {["#44 — Alex M.", "#45 — James T.", "#46 — Sandra K."].map((entry, i) => (
-                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400">
-                    <span>{entry}</span>
-                  </div>
-                ))}
-                <div className="flex items-center justify-between px-3 py-2 bg-teal-500/10 border border-teal-500/30 rounded-lg text-sm">
-                  <span className="text-teal-300 font-semibold">#47 — You</span>
-                  <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs">Current</Badge>
-                </div>
-                {["#48 — Marcus D.", "#49 — Priya N."].map((entry, i) => (
-                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400">
-                    <span>{entry}</span>
+                {waitlist?.referrals?.map((r: any, i: number) => (
+                  <div key={i} className="flex items-center gap-3 px-3 py-2.5 bg-slate-900 rounded-lg">
+                    <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center text-sm font-bold text-teal-300">
+                      {r.firstName?.[0] ?? "?"}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm text-white truncate">{r.firstName}</p>
+                      <p className="text-xs text-slate-500 truncate">{r.trade}</p>
+                    </div>
+                    <Check className="w-4 h-4 text-teal-400 ml-auto shrink-0" />
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            )}
+          </CardContent>
+        </Card>
 
         {/* Commission Calculator */}
         <Card className="bg-slate-800 border-slate-700">
@@ -555,14 +554,14 @@ export default function ReferralHub() {
                   <Button
                     size="sm"
                     variant="outline"
-                    onClick={() => copyPost(post.platform, post.text)}
+                    onClick={() => copyPost(post.platform, personalize(post.text))}
                     className="border-slate-600 text-slate-300 hover:bg-slate-700 text-xs h-7 gap-1"
                   >
                     {copiedPost === post.platform ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3" />}
                     {copiedPost === post.platform ? "Copied!" : "Copy"}
                   </Button>
                 </div>
-                <p className="text-slate-300 text-sm leading-relaxed">{post.text}</p>
+                <p className="text-slate-300 text-sm leading-relaxed">{personalize(post.text)}</p>
               </div>
             ))}
           </CardContent>

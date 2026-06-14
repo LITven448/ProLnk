@@ -169,9 +169,12 @@ export default function ReferralHub() {
   });
 
   const email = user?.email ?? "";
+  const urlCode = typeof window !== "undefined"
+    ? (new URLSearchParams(window.location.search).get("code") || new URLSearchParams(window.location.search).get("ref") || "")
+    : "";
   const { data: waitlist } = trpc.proWaitlist.getWaitlistStatus.useQuery(
-    { email },
-    { enabled: !!email }
+    urlCode ? { referralCode: urlCode } : { email },
+    { enabled: !!urlCode || !!email }
   );
 
   const referralCode = partner?.stats?.referralCode ?? waitlist?.referralCode ?? "";

@@ -305,11 +305,12 @@ export default function ReferralHub() {
                     : "Share your links below to start building your network."}
                 </p>
               </div>
-              {waitlist?.position ? (
+              {(waitlist?.tierLabel || waitlist?.tier) ? (
                 <div className="text-right shrink-0">
-                  <p className="text-slate-500 text-xs mb-1">Waitlist position</p>
-                  <p className="text-2xl font-bold text-teal-400">#{waitlist.position}</p>
-                  <p className="text-slate-400 text-xs">{waitlist.tierLabel ?? waitlist.tier}</p>
+                  <p className="text-slate-500 text-xs mb-1">Your level</p>
+                  <div className="inline-block px-4 py-1.5 rounded-full text-sm font-bold" style={{ background: "rgba(45,212,191,0.15)", color: "#5eead4", border: "1px solid rgba(45,212,191,0.4)" }}>
+                    {waitlist.tierLabel ?? waitlist.tier}
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -343,24 +344,11 @@ export default function ReferralHub() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex">
               <div className="flex-1 rounded-xl p-4 border border-teal-500/30 bg-teal-500/10">
                 <p className="text-xs text-teal-400 font-semibold uppercase tracking-wide mb-1">Total Network Size</p>
                 <p className="text-3xl font-bold text-teal-300">{totalNetworkSize}</p>
-                <p className="text-xs text-teal-500 mt-0.5">partners across all 4 levels</p>
-              </div>
-              <div className="flex-1 rounded-xl p-4 border border-purple-500/30 bg-purple-500/10">
-                <p className="text-xs text-purple-400 font-semibold uppercase tracking-wide mb-1">Monthly Passive Income</p>
-                <p className="text-3xl font-bold text-purple-300">
-                  {totalNetworkSize > 0 ? `$${monthlyNetworkIncome.toLocaleString()}` : "—"}
-                </p>
-                <p className="text-xs text-purple-500 mt-0.5">estimated at avg 8 jobs/mo per pro</p>
-              </div>
-              <div className="flex-1 rounded-xl p-4 border border-amber-500/30 bg-amber-500/10">
-                <p className="text-xs text-amber-400 font-semibold uppercase tracking-wide mb-1">Next Tier: {nextTier.label}</p>
-                <p className="text-3xl font-bold text-amber-300">{toNextTier}</p>
-                <p className="text-xs text-amber-500 mt-0.5">more partners to unlock</p>
-                <Progress value={Math.min(tierProgress, 100)} className="h-1.5 mt-2" />
+                <p className="text-xs text-teal-500 mt-0.5">people in your network across all 4 levels</p>
               </div>
             </div>
           </CardContent>
@@ -488,55 +476,6 @@ export default function ReferralHub() {
           </CardContent>
         </Card>
 
-        {/* Commission Calculator */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
-              <DollarSign className="w-4 h-4 text-green-400" />
-              Commission Calculator
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Number of referrals earning</label>
-                <Input
-                  type="number"
-                  value={calcPros}
-                  onChange={(e) => setCalcPros(e.target.value)}
-                  className="bg-slate-900 border-slate-700 text-white"
-                  min={1}
-                />
-              </div>
-              <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Each earns per month ($)</label>
-                <Input
-                  type="number"
-                  value={calcEarnings}
-                  onChange={(e) => setCalcEarnings(e.target.value)}
-                  className="bg-slate-900 border-slate-700 text-white"
-                  min={0}
-                />
-              </div>
-            </div>
-            <div className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3">
-              <p className="text-slate-400 text-sm">
-                If {calcPros} of your referrals each earn ${parseInt(calcEarnings).toLocaleString()}/month, you earn:
-              </p>
-              {overrideBreakdown.map((row) => (
-                <div key={row.level} className="flex items-center justify-between">
-                  <span className="text-slate-400 text-sm">{row.level} override</span>
-                  <span className="text-white font-semibold">${row.monthly.toLocaleString()}/mo</span>
-                </div>
-              ))}
-              <div className="pt-2 border-t border-slate-700 flex items-center justify-between">
-                <span className="text-white font-bold">Total monthly passive</span>
-                <span className="text-teal-400 font-bold text-xl">${totalOverride.toLocaleString()}/mo</span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Viral Content Kit */}
         <Card className="bg-slate-800 border-slate-700">
           <CardHeader className="pb-3">
@@ -631,8 +570,7 @@ export default function ReferralHub() {
               <div className="bg-slate-900 rounded-xl p-4 border border-slate-700">
                 <p className="text-slate-300 text-sm leading-relaxed italic">
                   "Hey! I'm building passive income through ProLnk — it pays me on every job at every home I've documented.
-                  There are only {toNextTier > 0 ? toNextTier : "a few"} spots left at the {nextTier.label} level.
-                  Sign up with my link: {referralLink}"
+                  Early access is open now. Sign up with my link: {referralLink}"
                 </p>
                 <Button
                   size="sm"

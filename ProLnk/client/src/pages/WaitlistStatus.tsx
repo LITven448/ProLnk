@@ -423,9 +423,6 @@ function EmailLookup() {
           <p className="text-sm" style={{ color: "#6b7280" }}>Enter your email or referral code below</p>
         </div>
 
-        {/* Urgency */}
-        <UrgencyTimer prosCount={prosCount} homesCount={homesCount} />
-
         {/* Lookup form */}
         <div
           className="rounded-2xl p-5"
@@ -640,11 +637,6 @@ export default function WaitlistStatus() {
             <TierProgressBar position={status.position} tier={tier} />
           </div>
 
-          <div className="mt-5 space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Founding Network — Live Tier Fill</p>
-            <FoundingTierBars prosCount={prosCount} />
-            <UrgencyTimer prosCount={prosCount} homesCount={homesCount} />
-          </div>
         </motion.div>
 
         {/* Referral Link — enhanced share section */}

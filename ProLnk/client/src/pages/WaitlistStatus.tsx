@@ -824,38 +824,6 @@ export default function WaitlistStatus() {
           )}
         </motion.div>
 
-        {/* Leaderboard */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="p-5 rounded-2xl"
-          style={{ background: "#1a1d27", border: "1px solid rgba(255,255,255,0.08)" }}
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <Star size={18} className="text-amber-400" />
-            <h2 className="font-bold text-white">Top Referrers</h2>
-          </div>
-          {!leaderboard || leaderboard.length === 0 ? (
-            <p className="text-gray-500 text-sm text-center py-4">Leaderboard loading...</p>
-          ) : (
-            <div className="space-y-2">
-              {leaderboard.map((entry: any) => (
-                <div key={entry.rank} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.04)" }}>
-                  <span className="text-xs font-bold w-6 text-center" style={{ color: entry.rank <= 3 ? "#f59e0b" : "#6b7280" }}>#{entry.rank}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm text-white truncate">{entry.name}</p>
-                    <p className="text-xs text-gray-500">{entry.trade} · {entry.city}, {entry.state}</p>
-                  </div>
-                  <span className="text-xs font-bold text-green-400 flex items-center gap-1">
-                    <Users size={11} /> {entry.referralCount}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </motion.div>
-
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

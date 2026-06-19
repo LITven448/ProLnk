@@ -43,7 +43,7 @@ const TIER_CONFIG = {
   },
 };
 
-const OVERRIDE_RATES = [1.0, 0.8, 0.6, 0.4];
+const OVERRIDE_RATES = [7, 4, 2, 1];
 
 function TierBadge({ tier }: { tier: string }) {
   const cfg = TIER_CONFIG[tier as keyof typeof TIER_CONFIG];
@@ -276,7 +276,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
   );
 }
 
-function NetworkTree({ levels, commissionRate }: { levels: number; commissionRate: number }) {
+function NetworkTree({ levels, keepRate }: { levels: number; keepRate: number }) {
   if (levels === 0) {
     return (
       <div className="p-4 rounded-xl text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
@@ -293,10 +293,10 @@ function NetworkTree({ levels, commissionRate }: { levels: number; commissionRat
           <div className="w-8 h-8 rounded-full bg-green-500/30 flex items-center justify-center text-xs font-bold text-green-400">You</div>
           <div>
             <p className="text-sm text-white font-medium">Your own jobs</p>
-            <p className="text-xs text-gray-400">{commissionRate}% of every job you close</p>
+            <p className="text-xs text-gray-400">{keepRate}% of the platform fee on jobs you complete</p>
           </div>
         </div>
-        <span className="text-green-400 font-bold text-sm">{commissionRate}%</span>
+        <span className="text-green-400 font-bold text-sm">{keepRate}%</span>
       </div>
 
       {OVERRIDE_RATES.slice(0, levels).map((rate, i) => (
@@ -306,12 +306,13 @@ function NetworkTree({ levels, commissionRate }: { levels: number; commissionRat
           <div className="flex-1 p-3 rounded-lg flex items-center justify-between" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
             <div>
               <p className="text-sm text-white">L{i + 1} — Every pro you{i === 0 ? " directly recruit" : "r recruit's recruit" + (i > 1 ? "s" : "")}</p>
-              <p className="text-xs text-gray-500">Forever, on every job they close</p>
+              <p className="text-xs text-gray-500">Override on the platform fee of every job they close</p>
             </div>
             <span className="text-amber-400 font-bold text-sm">{rate}%</span>
           </div>
         </div>
       ))}
+      <p className="text-[11px] text-gray-600 mt-2 leading-relaxed">The platform fee is 6–15% of the job value. All percentages above are a share of that fee.</p>
     </div>
   );
 }
@@ -464,9 +465,9 @@ function EmailLookup() {
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>Tier overview</p>
           <div className="space-y-2">
             {[
-              { label: "Charter", color: "#fbbf24", bg: "rgba(251,191,36,0.1)", slots: "25 total", commission: "25%" },
-              { label: "Founding", color: "#2dd4bf", bg: "rgba(45,212,191,0.1)", slots: "100 total", commission: "20%" },
-              { label: "Level 3", color: "#a78bfa", bg: "rgba(167,139,250,0.1)", slots: "400 total", commission: "15%" },
+              { label: "Charter", color: "#fbbf24", bg: "rgba(251,191,36,0.1)", slots: "25 total", commission: "60% keep" },
+              { label: "Founding", color: "#2dd4bf", bg: "rgba(45,212,191,0.1)", slots: "100 total", commission: "60% keep" },
+              { label: "Level 3", color: "#a78bfa", bg: "rgba(167,139,250,0.1)", slots: "400 total", commission: "60% keep" },
             ].map(({ label, color, bg, slots, commission }) => (
               <div
                 key={label}
@@ -755,23 +756,7 @@ export default function WaitlistStatus() {
             <h2 className="font-bold text-white">Your Commission Structure</h2>
           </div>
           <p className="text-xs text-gray-500 mb-4">As a {tier} Partner at position #{status.position}</p>
-          <NetworkTree levels={status.overrideLevels} commissionRate={status.commissionRate} />
-        </motion.div>
-
-        {/* Earnings Calculator */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="p-5 rounded-2xl"
-          style={{ background: "#1a1d27", border: "1px solid rgba(255,255,255,0.08)" }}
-        >
-          <div className="flex items-center gap-2 mb-1">
-            <TrendingUp size={18} className="text-blue-400" />
-            <h2 className="font-bold text-white">Earnings Calculator</h2>
-          </div>
-          <p className="text-xs text-gray-500 mb-4">Estimate your passive income based on your network</p>
-          <EarningsCalculator commissionRate={status.commissionRate} overrideLevels={status.overrideLevels} />
+          <NetworkTree levels={status.overrideLevels} keepRate={Math.round((status.keepRate ?? 0.6) * 100)} />
         </motion.div>
 
         {/* Referrals */}

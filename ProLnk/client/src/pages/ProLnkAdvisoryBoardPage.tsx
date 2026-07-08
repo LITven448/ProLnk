@@ -7,14 +7,14 @@ export default function ProLnkAdvisoryBoardPage() {
     { type: "Home Services Operator", icon: "🔧", detail: "Franchise owner, trade business exec, or field operations leader — help shape pro experience and market fit" },
     { type: "DFW Real Estate Pro", icon: "🏠", detail: "Realtor, broker, or title professional — unlock co-marketing, referral income, and local launch support" },
     { type: "AI / ML Expert", icon: "🤖", detail: "ML engineer or AI product leader — guide matching algorithm, predictive models, and 47-agent architecture" },
-    { type: "Growth SaaS Operator", icon: "📈", detail: "Scaled a marketplace or SaaS to $10M+ ARR — advise on GTM, pricing, and Series A positioning" },
+    { type: "Growth SaaS Operator", icon: "📈", detail: "Scaled a marketplace or SaaS to $10M+ ARR — advise on GTM, pricing, and growth strategy" },
   ];
 
   const benefits = [
-    { label: "Equity Grant", icon: "💎", detail: "0.1–0.25% vested over 2 years" },
-    { label: "Charter Access", icon: "🥇", detail: "Founding Pro status + locked $149/mo rate" },
+    { label: "Equity Grant", icon: "💎", detail: "Meaningful advisor equity — terms discussed individually" },
+    { label: "Early Access", icon: "🥇", detail: "Full platform access from day one" },
     { label: "Revenue Share", icon: "💰", detail: "Referral commissions on your network" },
-    { label: "Brand Visibility", icon: "📣", detail: "Listed on prolnk.io advisory page" },
+    { label: "Brand Visibility", icon: "📣", detail: "Listed on prolnk.xyz advisory page" },
   ];
 
   return (
@@ -64,7 +64,7 @@ export default function ProLnkAdvisoryBoardPage() {
 
         <div style={{ background: "#0d1f3c", borderRadius: 14, padding: "1.5rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
           <div style={{ fontWeight: 700, marginBottom: "0.5rem" }}>📬 Apply to Join</div>
-          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>andrew@lit-ventures.com — Subject: "ProLnk Advisory"</div>
+          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>hello@prolnk.xyz — Subject: "ProLnk Advisory"</div>
         </div>
       </div>
     </div>

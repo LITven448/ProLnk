@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const deductionFields = [
   { key: 'miles', label: '🚗 Business Miles Driven', unit: 'miles', rate: 0.67, note: '2026 IRS rate: 67¢/mile' },
-  { key: 'subscription', label: '📱 ProLnk Subscription', unit: 'months', rate: 149, note: '$149/mo fully deductible' },
+  { key: 'subscription', label: '📱 ProLnk Subscription', unit: 'months', rate: 149, note: '$149/mo Pro plan fully deductible' },
   { key: 'tools', label: '🔧 Tools & Equipment', unit: 'dollars', rate: 1, note: 'Section 179: 100% deductible year of purchase' },
   { key: 'phone', label: '📞 Phone Bill (annual)', unit: 'dollars', rate: 0.7, note: 'Avg 70% business use applied' },
   { key: 'insurance', label: '🛡️ General Liability Insurance', unit: 'dollars', rate: 1, note: 'Fully deductible' },
@@ -78,7 +78,7 @@ export default function PartnerTaxDeductionMaximizer() {
               <tbody>
                 {[
                   ['🚗 Vehicle (mileage)', '18,000 mi × $0.67 = $12,060', 'Keep a mileage log — required by IRS'],
-                  ['📱 ProLnk subscription', '$149 × 12 = $1,788', 'Fully deductible business expense'],
+                  ['📱 ProLnk subscription', '$149 (Pro plan) × 12 = $1,788', 'Fully deductible business expense'],
                   ['🔧 Tools & equipment', 'Up to full purchase price', 'Section 179 — 100% deduction in year of purchase'],
                   ['📞 Phone (70% business)', '$100/mo × 70% × 12 = $840', 'Document business use %'],
                   ['🛡️ Liability insurance', 'Full premium', 'Fully deductible — no limit'],

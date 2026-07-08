@@ -10,8 +10,10 @@ export default function ProJobProfitCalculator() {
   const [insurance, setInsurance] = useState(80);
   const [targetMonthlyNet, setTargetMonthlyNet] = useState(3000);
 
-  const prolnkShare = Math.round(jobValue * 0.28);
-  const proKeeps = Math.round(jobValue * 0.60);
+  const platformFee = Math.round(jobValue * 0.10);
+  const feeEarnback = Math.round(platformFee * 0.60);
+  const prolnkShare = platformFee - feeEarnback;
+  const proKeeps = jobValue - prolnkShare;
   const laborCost = laborHours * laborRate;
   const totalCosts = materials + laborCost + fuelCost + toolWear + insurance;
   const netWithProLnk = proKeeps - totalCosts;
@@ -92,14 +94,14 @@ export default function ProJobProfitCalculator() {
             </div>
           </div>
           <div>
-            <label style={labelStyle}>PROLNK COMMISSION (28%)</label>
+            <label style={labelStyle}>PROLNK NET PLATFORM COST</label>
             <div style={{
               background: '#F0F0ED', border: '1px solid #D4D4CC', borderRadius: '6px',
               padding: '8px 12px', fontSize: '15px', color: '#DC2626', fontWeight: '600',
             }}>
               -${prolnkShare.toLocaleString()}
             </div>
-            <div style={{ fontSize: '11px', color: '#94A3B8', marginTop: '4px' }}>You keep 60% = ${proKeeps.toLocaleString()}</div>
+            <div style={{ fontSize: '11px', color: '#94A3B8', marginTop: '4px' }}>10% platform fee, with 60% earned back on Business — you keep ${proKeeps.toLocaleString()}</div>
           </div>
           <div>
             <label style={labelStyle}>MATERIALS COST</label>
@@ -180,7 +182,7 @@ export default function ProJobProfitCalculator() {
               WITH PROLNK ⚡
             </div>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8' }}>You keep (60%)</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>You keep (after net fee)</div>
               <div style={{ fontSize: '20px', fontWeight: '700', color: '#F1F5F9' }}>${proKeeps.toLocaleString()}</div>
             </div>
             <div style={{ marginBottom: '8px' }}>

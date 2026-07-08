@@ -3,12 +3,12 @@ import { ArrowRight, TrendingUp, DollarSign, Users, Star } from "lucide-react";
 type Row = { label: string; prolnk: string; w2: string; solo: string; angi: string; thumbtack: string };
 
 const rows: Row[] = [
-  { label: "Keep % of earnings", prolnk: "60%", w2: "55–65%", solo: "65–75%", angi: "35–55%", thumbtack: "40–60%" },
-  { label: "Passive income", prolnk: "Yes — 4 levels", w2: "None", solo: "None", angi: "None", thumbtack: "None" },
-  { label: "Upfront costs", prolnk: "$149/mo", w2: "None", solo: "Tools only", angi: "$300+/mo", thumbtack: "$150+/mo" },
+  { label: "Keep % of earnings", prolnk: "90%+", w2: "55–65%", solo: "65–75%", angi: "35–55%", thumbtack: "40–60%" },
+  { label: "Passive income", prolnk: "Yes — referral overrides", w2: "None", solo: "None", angi: "None", thumbtack: "None" },
+  { label: "Upfront costs", prolnk: "From $99/mo", w2: "None", solo: "Tools only", angi: "$300+/mo", thumbtack: "$150+/mo" },
   { label: "Lead quality", prolnk: "AI-matched", w2: "N/A", solo: "Self-sourced", angi: "Shared leads", thumbtack: "Shared leads" },
   { label: "Network effect", prolnk: "Grows forever", w2: "None", solo: "None", angi: "None", thumbtack: "None" },
-  { label: "Avg monthly extra", prolnk: "$2,160–$6,100+", w2: "$0", solo: "$800–$2K", angi: "-$300 net", thumbtack: "-$150 net" },
+  { label: "Cost per won job", prolnk: "Lowest", w2: "N/A", solo: "Marketing spend", angi: "-$300 net", thumbtack: "-$150 net" },
 ];
 
 type Scenario = { title: string; detail: string; result: string; note: string };
@@ -17,20 +17,20 @@ const scenarios: Scenario[] = [
   {
     title: "Part-Time",
     detail: "5 jobs/mo × $3,000 avg",
-    result: "$2,160/mo kept",
-    note: "60% commission on $3,000 avg job value",
+    result: "$600/mo net cost",
+    note: "10% platform fee ($1,500) minus up to 60% earned back on the Business plan",
   },
   {
     title: "Full-Time",
     detail: "15 jobs/mo × $5,000 avg",
-    result: "$5,400/mo kept",
-    note: "60% commission on $5,000 avg job value",
+    result: "$3,000/mo net cost",
+    note: "vs. $7,500+ in equivalent pay-per-lead fees for the same volume elsewhere",
   },
   {
-    title: "With Network of 10",
-    detail: "Full-time + 10 referred pros",
-    result: "+$700/mo passive",
-    note: "4-level override on your network's jobs",
+    title: "With Referrals",
+    detail: "Full-time + pros you refer",
+    result: "Overrides stack",
+    note: "Earn a share of platform fees from jobs completed by pros you referred",
   },
 ];
 
@@ -113,19 +113,19 @@ export default function ProIncomeComparison() {
           </div>
           <h2 className="text-3xl font-bold text-white mb-3">Ready to Keep More of What You Earn?</h2>
           <p className="text-gray-300 mb-8 max-w-md mx-auto">
-            Join the waitlist. Charter members lock in $149/mo forever and keep 60% from day one.
+            Early access is open. Plans from $99/mo — and the pro completing the job earns back up to 60% of the platform fee.
           </p>
           <a
             href="/apply"
             className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1B2A4A] font-bold px-8 py-4 rounded-xl transition-colors text-lg"
           >
-            Join ProLnk — Keep 60%
+            Join the ProLnk Waitlist
             <ArrowRight className="w-5 h-5" />
           </a>
           <div className="mt-6 flex justify-center gap-6 text-sm text-gray-400">
             <span className="flex items-center gap-1"><Star className="w-4 h-4 text-[#F59E0B]" /> No contracts</span>
             <span className="flex items-center gap-1"><Star className="w-4 h-4 text-[#F59E0B]" /> Cancel anytime</span>
-            <span className="flex items-center gap-1"><Star className="w-4 h-4 text-[#F59E0B]" /> 500-member limit</span>
+            <span className="flex items-center gap-1"><Star className="w-4 h-4 text-[#F59E0B]" /> Early access open</span>
           </div>
         </div>
       </div>

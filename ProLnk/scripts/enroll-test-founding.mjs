@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 const DATABASE_URL =
   process.env.DATABASE_URL ||
-  "mysql://3WV8GtPKfZxaGP8.root:rSBWEK1mFOtftyG8@gateway01.us-east-1.prod.aws.tidbcloud.com:4000/prolnk";
+  process.env.DATABASE_URL;
 
 const TEST_EMAIL = "founding.test@prolnk.xyz";
 const MONTH = new Date().toISOString().slice(0, 7); // YYYY-MM

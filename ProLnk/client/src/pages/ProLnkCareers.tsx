@@ -154,10 +154,10 @@ export default function ProLnkCareers() {
             We are growing fast. If you believe in the mission and think you can add something we have not thought of yet, reach out. We read every message.
           </p>
           <a
-            href="mailto:careers@prolnk.io"
+            href="mailto:hello@prolnk.xyz"
             style={{ background: '#fff', color: '#1e3a5f', border: 'none', borderRadius: 10, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer', textDecoration: 'none', display: 'inline-block' }}
           >
-            careers@prolnk.io
+            hello@prolnk.xyz
           </a>
         </div>
 

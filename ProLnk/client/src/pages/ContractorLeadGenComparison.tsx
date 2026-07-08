@@ -4,14 +4,14 @@ const platforms = [
   {
     name: 'ProLnk',
     logo: '🔵',
-    costModel: 'Match fee on hire only',
+    costModel: 'Platform fee on hire only',
     leadQuality: '⭐⭐⭐⭐⭐',
     coverage: 'DFW + expanding',
     exclusivity: '✅ Exclusive',
     responseTime: '< 2 hrs avg',
-    monthlyCost: '$149 flat + match fee',
+    monthlyCost: 'From $99/mo + platform fee',
     recommended: true,
-    verdict: 'Best for contractors who want quality leads and multiple income streams.',
+    verdict: 'Best for contractors who want quality, exclusive leads at a flat monthly price.',
   },
   {
     name: 'Angi (formerly Angie\’s List)',
@@ -191,7 +191,7 @@ export default function ContractorLeadGenComparison() {
               </thead>
               <tbody>
                 {[
-                  { name: 'ProLnk', monthly: '$149 + match', annual: '$1,800+', close: '~60%', costPerJob: '$50–120', highlight: true },
+                  { name: 'ProLnk', monthly: 'From $99', annual: '$1,200+', close: '~60%', costPerJob: '$50–120', highlight: true },
                   { name: 'Angi', monthly: '$500', annual: '$6,000', close: '~18%', costPerJob: '$280–400', highlight: false },
                   { name: 'HomeAdvisor', monthly: '$475', annual: '$5,700', close: '~18%', costPerJob: '$265–380', highlight: false },
                   { name: 'Thumbtack', monthly: '$350', annual: '$4,200', close: '~25%', costPerJob: '$140–210', highlight: false },
@@ -208,12 +208,12 @@ export default function ContractorLeadGenComparison() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: 12, color: '#555', marginTop: 16 }}>Estimates based on industry averages and self-reported contractor data. Match fees vary by job size and tier.</p>
+          <p style={{ fontSize: 12, color: '#555', marginTop: 16 }}>Estimates based on industry averages and self-reported contractor data. The ProLnk platform fee is 6–15% of job value, varying by job size and plan.</p>
         </section>
 
         <section style={{ background: '#F5E642', borderRadius: 16, padding: 44, textAlign: 'center' }}>
           <h2 style={{ fontSize: 30, fontWeight: 900, color: '#0A1628', marginBottom: 12 }}>Stop Paying for Leads You Don't Win</h2>
-          <p style={{ color: '#1a1a2e', fontSize: 16, lineHeight: 1.7, marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>ProLnk is the only platform where you pay nothing until you're actually hired. Join 500 charter partners.</p>
+          <p style={{ color: '#1a1a2e', fontSize: 16, lineHeight: 1.7, marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>ProLnk is the only platform where you pay nothing until you're actually hired. Early access is open — join the waitlist.</p>
           <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 10, padding: '16px 40px', fontSize: 17, fontWeight: 800, cursor: 'pointer' }}>Join the Waitlist →</button>
         </section>
       </div>

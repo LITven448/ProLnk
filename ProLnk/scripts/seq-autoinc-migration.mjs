@@ -1,5 +1,5 @@
 import mysql from "mysql2/promise";
-const url="mysql://3WV8GtPKfZxaGP8.root:rSBWEK1mFOtftyG8@gateway01.us-east-1.prod.aws.tidbcloud.com:4000/prolnk".replace(/\?.*$/,"");
+const url=process.env.DATABASE_URL.replace(/\?.*$/,"");
 const c=await mysql.createConnection({uri:url,ssl:{rejectUnauthorized:false}});
 // All non-auto-inc INT id tables with a key
 const [cols]=await c.execute(`

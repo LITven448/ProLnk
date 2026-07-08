@@ -1,59 +1,30 @@
-# ProLnk Commission Tiers & Pricing
+# ProLnk Commission Tiers & Pricing — CANONICAL (2026-07-08)
 
-## Subscription Tiers
+> Supersedes all earlier versions of this file (older drafts described retired $29–$299 ladders
+> with 40–78% keeps — those numbers are dead and must never be quoted).
 
-| Tier | Monthly Fee | Commission Keep Rate | Weekly Lead Cap | Max ZIP Codes | Seats |
-|------|-------------|---------------------|-----------------|---------------|-------|
-| Scout (free) | $0 | 40% | 5 leads | 5 ZIPs | 1 |
-| Pro | $29/month | 55% | 15 leads | 15 ZIPs | 3 |
-| Crew | $79/month | 65% | 30 leads | 30 ZIPs | 5 |
-| Company | $149/month | 72% | 60 leads | 60 ZIPs | 15 |
-| Enterprise | $299/month | 78% | Unlimited | Unlimited | Unlimited |
+## Subscription tiers (purchased; set price + keep rate)
+| Tier | Monthly Fee | Keep Rate (of platform fee, on jobs the pro completes) |
+|------|-------------|-------------------------------------------------------|
+| Core | $99/mo | 40% |
+| Pro | $149/mo | 50% |
+| Business | $249/mo | 60% |
+| Enterprise | custom | 60% |
 
-## Commission Math
+**Scout** is a separate program (field agents who document homes): **$99/mo standalone, or $49/mo as an add-on** for existing pro members. Scouts earn perpetual **home-origination income (5% of platform fee)** on homes they bring in, not a keep rate.
 
-Platform fee rate: 12% of job value (standard)
-- Jobs over $50,000: max 6% platform fee
-- Jobs $10,000-$50,000: max 8% platform fee  
-- Jobs $2,500-$10,000: max 10% platform fee
-- Standard jobs: 12% platform fee
+## Commission math (all % are of the PLATFORM FEE)
+- Platform fee = **6–15% of job value** (clamped in code).
+- Completing pro keeps their tier % (above). Founding-network members keep 60% at $149/mo locked.
+- Network job override up the recruiter chain: **L1 7% · L2 4% · L3 2% · L4 1%**.
+- Subscription override on recruits' subs: **12% / 6% / 3% / 1.5%**.
+- Home origination: **5%**, perpetual, to whoever first documented the home.
+- **ProLnk floor: ≥20% of the platform fee, always** (cascade skips deepest levels rather than breach it).
 
-### Example: $3,000 roofing job, Scout tier partner as referrer
-- Platform fee: $3,000 × 12% = $360
-- Scout referring partner keeps: $360 × 40% = $144
-- ProLnk nets: $360 × 60% = $216
-- Receiving partner payout: $3,000 - $360 = $2,640
-
-### Example: $3,000 roofing job, Enterprise tier referrer
-- Platform fee: $3,000 × 12% = $360
-- Enterprise referring partner keeps: $360 × 78% = $280.80
-- ProLnk nets: $360 × 22% = $79.20
-
-## Monthly Commission Cap
-- Scout tier: $500/month cap on referral commissions
-- All other tiers: No cap
-
-## Exempt Partners
-- Founding/exempt partners: 0% platform fee, 100% commission keep
-- For legacy/grandfathered arrangements only
-
-## Payouts
+## Payouts (unchanged, operational)
 - Nightly sweep at 2:30 AM server time
 - Minimum payout threshold: $25
 - Requires active Stripe Connect account
-- Partners must have completed W-9 on file
-- 1099-NEC issued annually for partners earning $600+
 
-## Pro Pass Limits by Tier
-- Scout: 1 Pro Pass included
-- Pro: 3 Pro Passes included
-- Crew: 5 Pro Passes included
-- Company: 15 Pro Passes included
-- Enterprise: Unlimited Pro Passes
-
-## Founding Partner Benefits
-- 90 days free access
-- Enterprise plan features at Crew plan price
-- Founding Partner badge (increases PPS by 5 points for 12 months)
-- Sales incentive program eligibility (onboarding bonuses for new partners/homeowners)
-- Priority routing for 12 months
+## Never say publicly
+Charter/Founding/L3/L4 structure, spot counts, "72%", "locked forever" scarcity, or network-income calculators. Network position is internal; it governs override eligibility/depth only.

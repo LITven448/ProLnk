@@ -14,8 +14,8 @@ const YELLOW = "#F5E642";
 const MUTED = "#64748b";
 
 const STATS = [
-  { value: "2,125", label: "Founding Network Spots", icon: Users },
-  { value: "5", label: "Income Streams per Partner", icon: DollarSign },
+  { value: "Open", label: "Early Access Waitlist", icon: Users },
+  { value: "$99/mo", label: "Pro Plans Starting At", icon: DollarSign },
   { value: "47", label: "AI Agents Running 24/7", icon: Brain },
   { value: "130+", label: "Database Tables", icon: Network },
 ];
@@ -42,9 +42,9 @@ const PAIN_POINTS = [
 ];
 
 const VALUES = [
-  { icon: Shield, title: "Contractor-First", desc: "We built for the trade professional, not the VC. 60% of job value stays with the pro." },
+  { icon: Shield, title: "Contractor-First", desc: "We built for the trade professional, not the VC. Simple, transparent pricing — no pay-per-lead games." },
   { icon: Brain, title: "AI-Powered", desc: "47 autonomous agents handle matching, alerts, payouts — so contractors work, not admin." },
-  { icon: Heart, title: "Community-Owned", desc: "The founding network earns overrides forever. Your recruits make you money while you sleep." },
+  { icon: Heart, title: "Community-Driven", desc: "Pros who help grow the network share in its success through referral rewards." },
   { icon: Lock, title: "Privacy-First", desc: "Homeowner data is never sold. The Home Health Vault is controlled by the homeowner." },
 ];
 
@@ -52,7 +52,7 @@ const TEAM = [
   {
     name: "Andrew Frakes",
     role: "Founder & CEO",
-    bio: "DFW-based entrepreneur and systems architect. Built ProLnk to give home service professionals the business infrastructure they deserve — AI matching, network income, and data that compounds.",
+    bio: "DFW-based entrepreneur and systems architect. Built ProLnk to give home service professionals the business infrastructure they deserve — AI matching, referral rewards, and data that compounds.",
     initials: "AF",
     color: TEAL,
   },
@@ -67,7 +67,7 @@ const TEAM = [
   {
     name: "Head of Partners — Hiring",
     role: "Head of Partner Success",
-    bio: "This role owns the founding network relationship end-to-end — onboarding, activation, and retention. Ideal candidate has led contractor or trade-professional success at scale.",
+    bio: "This role owns the pro member relationship end-to-end — onboarding, activation, and retention. Ideal candidate has led contractor or trade-professional success at scale.",
     initials: "?",
     color: "#f59e0b",
     isOpen: true,
@@ -75,10 +75,10 @@ const TEAM = [
 ];
 
 const TIMELINE = [
-  { year: "2024", event: "ProLnk concept developed — network income model for home services trades" },
+  { year: "2024", event: "ProLnk concept developed — a contractor-first network for home services trades" },
   { year: "Q1 2025", event: "TrustyPro AI photo scan technology built — GPT-4o Vision analyzes home photos" },
   { year: "Q2 2025", event: "130+ database tables, tRPC API, TiDB Cloud infrastructure deployed" },
-  { year: "May 2026", event: "Founding Network waitlist launch — 2,125 charter spots available" },
+  { year: "May 2026", event: "Waitlist launch — early access opens for DFW pros and homeowners" },
   { year: "Q3 2026", event: "Lead matching algorithm goes live — first pro-homeowner matches" },
   { year: "2027", event: "Home Health Vault data licensing to insurance and mortgage industries" },
 ];
@@ -88,7 +88,7 @@ export default function About() {
     <>
       <Helmet>
         <title>About ProLnk — The AI-Powered Home Services Network</title>
-        <meta name="description" content="ProLnk connects home service professionals with homeowners through AI-powered matching, 5-stream income, and a 4-level referral network." />
+        <meta name="description" content="ProLnk connects home service professionals with homeowners through AI-powered matching, transparent pricing, and a network built around the pro." />
       </Helmet>
 
       <div style={{ background: NAVY, minHeight: "100vh", fontFamily: "'Inter', sans-serif" }}>
@@ -99,7 +99,7 @@ export default function About() {
           </Link>
           <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
             <Link href="/"><span style={{ color: "#94a3b8", fontSize: 14, cursor: "pointer" }}>Home</span></Link>
-            <Link href="/founding-partner"><span style={{ color: "#94a3b8", fontSize: 14, cursor: "pointer" }}>Join Network</span></Link>
+            <Link href="/pro-waitlist"><span style={{ color: "#94a3b8", fontSize: 14, cursor: "pointer" }}>Join Network</span></Link>
             <Link href="/partner-signup">
               <span style={{ background: TEAL, color: NAVY, padding: "8px 20px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
                 Get Started
@@ -119,12 +119,12 @@ export default function About() {
             <span style={{ color: TEAL }}>home services deserves.</span>
           </h1>
           <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px" }}>
-            ProLnk is the first home services marketplace built around the contractor — with AI matching, permanent income streams, and a 4-level referral network that keeps paying.
+            ProLnk is the first home services marketplace built around the contractor — with AI matching, transparent pricing, and referral rewards for the pros who help the network grow.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/founding-partner">
+            <Link href="/pro-waitlist">
               <span style={{ background: YELLOW, color: NAVY, padding: "14px 32px", borderRadius: 10, fontSize: 15, fontWeight: 800, cursor: "pointer", display: "inline-block" }}>
-                Join the Founding Network
+                Join the Pro Waitlist
               </span>
             </Link>
             <Link href="/get-quotes">
@@ -199,10 +199,10 @@ export default function About() {
                 Home service contractors are the backbone of America's housing infrastructure. They fix roofs, clear drains, and keep the lights on — yet they've historically been exploited by lead-gen platforms that charge $80/lead and deliver nothing.
               </p>
               <p style={{ color: "#94a3b8", lineHeight: 1.8, marginBottom: 24 }}>
-                ProLnk flips that model. Contractors join a network, refer other contractors, and build permanent income streams that compound over time. We handle AI matching, payment processing, and homeowner acquisition — you do the work and keep 60%.
+                ProLnk flips that model. Contractors join a network, get matched to real local jobs, and are rewarded for referring other great pros. We handle AI matching, payment processing, and homeowner acquisition — you do the work.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {["No pay-per-lead fees", "60% commission keep rate", "4-level referral overrides that pay forever", "AI lead matching — no cold outreach needed"].map(item => (
+                {["No pay-per-lead fees", "Simple platform fee of 6–15% of job value", "Members earn back up to 60% of the platform fee", "AI lead matching — no cold outreach needed"].map(item => (
                   <div key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <CheckCircle style={{ width: 16, height: 16, color: TEAL, flexShrink: 0 }} />
                     <span style={{ color: "#cbd5e1", fontSize: 14 }}>{item}</span>
@@ -211,13 +211,13 @@ export default function About() {
               </div>
             </div>
             <div style={{ background: "linear-gradient(135deg, rgba(20,184,166,0.1), rgba(8,145,178,0.05))", border: "1px solid rgba(20,184,166,0.2)", borderRadius: 20, padding: 36 }}>
-              <div style={{ fontSize: 14, color: TEAL, fontWeight: 700, marginBottom: 20 }}>THE NETWORK INCOME MODEL</div>
+              <div style={{ fontSize: 14, color: TEAL, fontWeight: 700, marginBottom: 20 }}>WHY PROS JOIN</div>
               {[
-                { stream: "Stream 1", desc: "Direct commission from every matched job", rate: "Up to 70% keep" },
-                { stream: "Stream 2", desc: "Override on your recruits' job earnings", rate: "1–4 levels deep" },
-                { stream: "Stream 3", desc: "Monthly subscription override from referrals", rate: "10% recurring" },
-                { stream: "Stream 4", desc: "Per-lead fee for homeowners you source", rate: "$25–100/lead" },
-                { stream: "Stream 5", desc: "Permanent Home Vault origination rights", rate: "Forever" },
+                { stream: "Matched jobs", desc: "AI-matched local leads sent straight to you", rate: "No cold outreach" },
+                { stream: "Fair economics", desc: "Simple platform fee of 6–15% of job value", rate: "No pay-per-lead" },
+                { stream: "Rewards", desc: "Earn back up to 60% of the platform fee", rate: "Grows with your plan" },
+                { stream: "Referrals", desc: "Rewards for great pros you bring in", rate: "Help the network grow" },
+                { stream: "Home Health Vault", desc: "Document homes and build lasting client trust", rate: "Built in" },
               ].map((s, i) => (
                 <div key={s.stream} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: i < 4 ? 16 : 0 }}>
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: "rgba(20,184,166,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -273,8 +273,8 @@ export default function About() {
                   <div style={{ fontSize: 13, color: member.color, fontWeight: 600, marginBottom: 12 }}>{member.role}</div>
                   <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{member.bio}</p>
                   {member.isOpen && (
-                    <a href="mailto:andrew@lit-ventures.com" style={{ display: "inline-block", marginTop: 16, color: TEAL, fontSize: 12, fontWeight: 700, textDecoration: "none" }}>
-                      Apply → andrew@lit-ventures.com
+                    <a href="mailto:hello@prolnk.xyz" style={{ display: "inline-block", marginTop: 16, color: TEAL, fontSize: 12, fontWeight: 700, textDecoration: "none" }}>
+                      Apply → hello@prolnk.xyz
                     </a>
                   )}
                 </div>
@@ -319,9 +319,11 @@ export default function About() {
                 ))}
               </div>
               <div style={{ marginTop: 24 }}>
-                <a href="https://trustypro.io" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: TEAL, fontSize: 14, fontWeight: 700, textDecoration: "none" }}>
-                  Visit TrustyPro.io <ChevronRight style={{ width: 14, height: 14 }} />
-                </a>
+                <Link href="/trustypro">
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 6, color: TEAL, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+                    Explore TrustyPro <ChevronRight style={{ width: 14, height: 14 }} />
+                  </span>
+                </Link>
               </div>
             </div>
             <div style={{ background: "linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.04))", border: "1px solid rgba(99,102,241,0.15)", borderRadius: 20, padding: 32, textAlign: "center" }}>
@@ -346,14 +348,14 @@ export default function About() {
               Ready to own your income?
             </h2>
             <p style={{ color: "#94a3b8", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
-              Join 2,125 contractors building the founding network. Charter spots are limited and will never be available again at these terms.
+              Join the DFW contractors already on the waitlist. Early access is open — be first in line when matching goes live.
             </p>
-            <Link href="/founding-partner">
+            <Link href="/pro-waitlist">
               <span style={{ background: YELLOW, color: NAVY, padding: "16px 40px", borderRadius: 12, fontSize: 16, fontWeight: 900, cursor: "pointer", display: "inline-block" }}>
-                Claim Your Founding Spot →
+                Join the Waitlist →
               </span>
             </Link>
-            <p style={{ color: MUTED, fontSize: 12, marginTop: 16 }}>90-day free trial · $149/mo locked · Cancel anytime</p>
+            <p style={{ color: MUTED, fontSize: 12, marginTop: 16 }}>Plans from $99/mo · Cancel anytime</p>
           </div>
         </div>
 
@@ -365,7 +367,7 @@ export default function About() {
             {" · "}
             <Link href="/legal/terms-of-service"><span style={{ color: TEAL, cursor: "pointer" }}>Terms</span></Link>
             {" · "}
-            <a href="mailto:andrew@lit-ventures.com" style={{ color: TEAL }}>Contact</a>
+            <a href="mailto:hello@prolnk.xyz" style={{ color: TEAL }}>Contact</a>
           </p>
         </div>
       </div>

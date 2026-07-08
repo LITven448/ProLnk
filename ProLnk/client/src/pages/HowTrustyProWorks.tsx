@@ -173,7 +173,7 @@ export default function HowTrustyProWorks() {
         <div style={{ background: '#0A1628', borderRadius: 16, padding: '44px 36px', textAlign: 'center' }}>
           <div style={{ fontSize: 24, fontWeight: 800, color: '#FFFFFF', marginBottom: 12 }}>Your home has a health score. Find out what it is.</div>
           <p style={{ color: '#93C5FD', marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>
-            Join the homeowner waitlist. TrustyPro launches in DFW first — early members get priority access and founding pricing.
+            Join the homeowner waitlist. TrustyPro launches in DFW first — early members get priority access at launch.
           </p>
           <a href="/waitlist/homeowner" style={{ display: 'inline-block', background: '#3B82F6', color: '#FFFFFF', fontWeight: 700, fontSize: 16, padding: '14px 40px', borderRadius: 8, textDecoration: 'none' }}>
             Join the Homeowner Waitlist →

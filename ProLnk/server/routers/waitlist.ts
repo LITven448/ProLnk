@@ -629,7 +629,12 @@ export const waitlistRouter = router({
     const [rows] = await pool.query(
       "SELECT COUNT(*) as cnt FROM homeWaitlist WHERE desiredProjects LIKE '%BETA: yes%' OR desiredProjects LIKE '%beta:true%'"
     );
-    const count = Number((rows as any[])[0]?.cnt ?? 0);
+    // Display buffer (owner request, same pattern as EXTERNAL_LIST_OFFSET_*):
+    // starts the public counter at +221. REMOVE when real volume arrives.
+    // Note: the program auto-closes at cap, so with this buffer it closes
+    // after 1000 - 221 = 779 REAL testers.
+    const BETA_DISPLAY_OFFSET = 221;
+    const count = Number((rows as any[])[0]?.cnt ?? 0) + BETA_DISPLAY_OFFSET;
     const cap = 1000;
     return {
       count,

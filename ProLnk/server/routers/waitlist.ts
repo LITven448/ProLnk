@@ -623,7 +623,12 @@ export const waitlistRouter = router({
     if (!pool) return { count: 0, spotsRemaining: 1000, isOpen: true, cap: 1000 };
     // serviceNeeded has no column of its own — the intake maps it into the
     // desiredProjects JSON (see joinHomeWaitlist), so the BETA marker lands there.
-    const [rows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist WHERE desiredProjects LIKE '%BETA: yes%'");
+    // Two intake forms wrote two marker formats: TrustyProHome (live) writes
+    // "beta:true"; the older TrustyProWaitlist wrote "BETA: yes". Count both —
+    // matching only one kept this counter at 0 while real testers signed up.
+    const [rows] = await pool.query(
+      "SELECT COUNT(*) as cnt FROM homeWaitlist WHERE desiredProjects LIKE '%BETA: yes%' OR desiredProjects LIKE '%beta:true%'"
+    );
     const count = Number((rows as any[])[0]?.cnt ?? 0);
     const cap = 1000;
     return {

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ProLnk — Pro App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: #E2E5EA;
+    background-image: radial-gradient(circle at 50% 0%, #EEF1F5, #DCE0E6);
+    -webkit-font-smoothing: antialiased;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; overflow: hidden;
+  }
+  #stage { transform-origin: center center; }
+  /* hide scrollbars inside app */
+  ::-webkit-scrollbar { width: 0; height: 0; background: transparent; }
+  * { scrollbar-width: none; }
+  input { font-family: inherit; }
+  button { font-family: inherit; }
+
+  @keyframes plpulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+  @keyframes plspin { to { transform: rotate(360deg); } }
+  @keyframes pltoast { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes plpush { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: translateX(0); } }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="prolnk-data.jsx"></script>
+<script type="text/babel" src="prolnk-ui.jsx"></script>
+<script type="text/babel" src="prolnk-screens-core.jsx"></script>
+<script type="text/babel" src="prolnk-screens-growth.jsx"></script>
+<script type="text/babel" src="prolnk-onboarding.jsx"></script>
+<script src="image-slot.js"></script>
+<script type="text/babel" src="prolnk-app.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+const W = 390, H = 844;
+
+function PhoneFrame() {
+  const [statusDark, setStatusDark] = React.useState(false);
+  return (
+    <div style={{
+      width: W, height: H, borderRadius: 54, position: 'relative',
+      background: statusDark ? '#0F172A' : '#F8FAFC',
+      boxShadow: '0 50px 100px rgba(15,23,42,0.28), 0 0 0 11px #0B0E14, 0 0 0 12px #1E2530',
+      overflow: 'hidden',
+    }}>
+      {/* dynamic island */}
+      <div style={{ position: 'absolute', top: 11, left: '50%', transform: 'translateX(-50%)', width: 120, height: 35, borderRadius: 22, background: '#000', zIndex: 300 }} />
+      {/* status bar */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 250, pointerEvents: 'none' }}>
+        <IOSStatusBar dark={statusDark} />
+      </div>
+      {/* app surface */}
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        <App onStatus={setStatusDark} />
+      </div>
+      {/* home indicator */}
+      <div style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)', width: 134, height: 5, borderRadius: 99, background: statusDark ? 'rgba(255,255,255,0.55)' : 'rgba(15,23,42,0.28)', zIndex: 300, pointerEvents: 'none' }} />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('stage')).render(<PhoneFrame />);
+
+// fit to viewport
+function fit() {
+  const pad = 24;
+  const s = Math.min(1, (window.innerHeight - pad * 2) / H, (window.innerWidth - pad * 2) / W);
+  document.getElementById('stage').style.transform = `scale(${s})`;
+}
+window.addEventListener('resize', fit);
+fit();
+</script>
+</body>
+</html>

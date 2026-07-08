@@ -656,8 +656,6 @@ export const waitlistRouter = router({
         throw new TRPCError({ code: "NOT_FOUND", message: "Email not found on waitlist. Sign up first." });
       }
 
-      try { await pool.query("ALTER TABLE proWaitlist ADD COLUMN customSlug VARCHAR(64) UNIQUE", []); } catch {}
-
       const [existing] = await pool.query("SELECT id FROM proWaitlist WHERE customSlug = ? LIMIT 1", [slug]);
       if ((existing as any[])[0]) {
         throw new TRPCError({ code: "CONFLICT", message: "This slug is already taken. Try another." });

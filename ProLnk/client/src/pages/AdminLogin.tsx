@@ -12,17 +12,21 @@ import ProLnkLogo from "@/components/ProLnkLogo";
  */
 export default function AdminLogin() {
   const [, navigate] = useLocation();
+  const utils = trpc.useUtils();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const loginMutation = trpc.partnerAuth.login.useMutation({
-    onSuccess: (data: any) => {
+    onSuccess: async (data: any) => {
       const isAdmin = data?.partner?.tier === "admin";
       if (!isAdmin) {
         setError("This sign-in is for admins only. Partners, use /partner-login.");
         return;
       }
+      // Refresh the cached auth.me (still null from before login) so /admin
+      // recognizes the new session instead of bouncing to the sign-in screen.
+      await utils.auth.me.invalidate();
       navigate("/admin");
     },
     onError: (e) => setError(e.message || "Invalid email or password."),

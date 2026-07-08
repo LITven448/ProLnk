@@ -187,19 +187,23 @@ export const commissionsRouter = router({
       const feeRate = new Decimal(input.platformFeeRate ?? DEFAULT_PLATFORM_FEE_RATE.toNumber());
       const platformFeeGross = jobValueDecimal.mul(feeRate);
 
-      // Record the job commission event
-      const [event] = await db
+      // Record the job commission event.
+      // MySQL Drizzle has no .returning() (Postgres-only API — crashed at runtime),
+      // and this PK is a plain int (no autoincrement), so generate the id here —
+      // same pattern as the waitlist inserts. Decimals serialized for the driver.
+      const eventId = Math.floor(Math.random() * 2_000_000_000) + 1;
+      await db
         .insert(jobCommissionEvent)
         .values({
+          id: eventId,
           proUserId: sourceProId,
           jobId,
-          jobValue: jobValueDecimal,
+          jobValue: jobValueDecimal.toFixed(2),
           jobCompletedAt: new Date(),
-          platformFeeGross,
-          platformFeeNet: platformFeeGross,
+          platformFeeGross: platformFeeGross.toFixed(2),
+          platformFeeNet: platformFeeGross.toFixed(2),
           status: "pending",
-        })
-        .returning();
+        });
 
       const distributions: CommissionDistribution[] = [];
 
@@ -241,12 +245,13 @@ export const commissionsRouter = router({
 
       for (const dist of distributions) {
         await db.insert(commissionPayout).values({
-          jobCommissionEventId: event.id,
+          id: Math.floor(Math.random() * 2_000_000_000) + 1,
+          jobCommissionEventId: eventId,
           recipientUserId: dist.recipientUserId,
           sourceProUserId: sourceProId,
           payoutType: dist.payoutType,
-          rateApplied: dist.rateApplied,
-          amount: dist.amount,
+          rateApplied: dist.rateApplied.toString(),
+          amount: dist.amount.toFixed(2),
           status: "pending",
           payoutMonth,
         });
@@ -255,12 +260,12 @@ export const commissionsRouter = router({
         const partner = await db.query.partners.findFirst({ where: eq(partners.id, pid) });
         if (partner) {
           const updated = new Decimal(partner.monthlyCommissionEarned?.toString() || "0").add(dist.amount);
-          await db.update(partners).set({ monthlyCommissionEarned: updated }).where(eq(partners.id, pid));
+          await db.update(partners).set({ monthlyCommissionEarned: updated.toFixed(2) }).where(eq(partners.id, pid));
         }
       }
 
       return {
-        jobCommissionEventId: event.id,
+        jobCommissionEventId: eventId,
         distributions: distributions.map((d) => ({
           ...d,
           amount: d.amount.toDecimalPlaces(2).toNumber(),

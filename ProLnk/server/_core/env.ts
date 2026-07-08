@@ -13,5 +13,11 @@ export const ENV = {
   fromEmail: process.env.FROM_EMAIL || "ProLnk <hello@prolnk.xyz>",
 };
 
+// An empty JWT secret makes every forged session token verify successfully.
+// Refuse to boot in production rather than run with forgeable auth.
+if (ENV.isProduction && !ENV.cookieSecret) {
+  throw new Error("FATAL: JWT_SECRET is not set — refusing to start with forgeable sessions.");
+}
+
 // render deploy test 1778190741
 // render deploy trigger 1778282773

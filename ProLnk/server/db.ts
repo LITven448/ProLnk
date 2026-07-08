@@ -5,9 +5,15 @@ import {
   InsertUser, users, partners, jobs, opportunities, commissions, broadcasts, industryRates,
   Partner, InsertPartner, InsertJob, InsertOpportunity, photoIntakeQueue,
 } from "../drizzle/schema";
+import * as schema from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
-let _db: ReturnType<typeof drizzle> | null = null;
+let _db: ReturnType<typeof makeDb> | null = null;
+// drizzle() without the schema leaves db.query.* undefined at RUNTIME — every
+// db.query.<table> call (commissions router etc.) crashed. Schema must be passed.
+function makeDb(pool: ReturnType<typeof mysql.createPool>) {
+  return drizzle(pool, { schema, mode: "default" });
+}
 let _pool: ReturnType<typeof mysql.createPool> | null = null;
 
 export async function getDb() {
@@ -23,12 +29,11 @@ export async function getDb() {
         connectionLimit: 10,
         queueLimit: 0,
         enableKeepAlive: true,
-        keepAliveInitialDelayMs: 0,
-        connectionTimeout: 10000,
-        acquireTimeout: 10000,
+        keepAliveInitialDelay: 0,
+        connectTimeout: 10000,
         charset: 'utf8mb4',
       });
-      _db = drizzle(_pool);
+      _db = makeDb(_pool);
       // Ensure charterInvites table exists (idempotent)
       await _pool!.query(`CREATE TABLE IF NOT EXISTS charterInvites (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -298,7 +303,7 @@ export async function updateJobAiAnalysis(jobId: number, analysis: any) {
 export async function closeOpportunityWithJobValue(opportunityId: number, jobValue: number) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  await db.update(opportunities).set({ status: 'closed', actualJobValue: jobValue, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
+  await db.update(opportunities).set({ status: 'closed', actualJobValue: jobValue.toFixed(2), updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
 }
 
 export async function createBroadcast(data: any) {
@@ -348,7 +353,7 @@ export async function upsertIndustryRate(data: any) {
 export async function getPhotoQueue() {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(photoIntakeQueue).orderBy(desc(photoIntakeQueue.createdAt));
+  return db.select().from(photoIntakeQueue).orderBy(desc(photoIntakeQueue.receivedAt));
 }
 
 export async function getPhotoQueueStats() {

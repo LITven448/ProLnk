@@ -6,12 +6,17 @@ import ProLnkLogo from "@/components/ProLnkLogo";
 
 export default function PartnerLogin() {
   const [, navigate] = useLocation();
+  const utils = trpc.useUtils();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const loginMutation = trpc.partnerAuth.login.useMutation({
-    onSuccess: (data: any) => {
+    onSuccess: async (data: any) => {
+      // The session cookie is now set, but the auth.me query cache still holds
+      // the pre-login null — which made the dashboard render signed-out ("session
+      // not sticking"). Refresh it before navigating.
+      await utils.auth.me.invalidate();
       const isAdmin = data?.partner?.tier === "admin";
       const next = new URLSearchParams(window.location.search).get("next");
       if (next && next.startsWith("/")) {

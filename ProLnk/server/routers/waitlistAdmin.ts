@@ -19,7 +19,7 @@ export const waitlistAdminRouter = router({
         sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, tier, referredBy, referralCode, customSlug, referralCount, homeownerReferralCount, smsOptIn, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
-      return (result?.[0] || []) as Array<{
+      return (result?.[0] || []) as unknown as Array<{
         id: number;
         firstName: string;
         lastName: string;
@@ -55,7 +55,7 @@ export const waitlistAdminRouter = router({
             FROM homeWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
-      return (result?.[0] || []) as Array<{
+      return (result?.[0] || []) as unknown as Array<{
         id: number;
         firstName: string;
         lastName: string;
@@ -101,9 +101,9 @@ export const waitlistAdminRouter = router({
         db.execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE referredBy IS NOT NULL`),
       ]);
 
-      const proSignups = Number((proResult?.[0]?.[0] as any)?.cnt ?? 0);
-      const homeSignups = Number((homeResult?.[0]?.[0] as any)?.cnt ?? 0);
-      const referrals = Number((referralResult?.[0]?.[0] as any)?.cnt ?? 0);
+      const proSignups = Number(((proResult as any)?.[0]?.[0])?.cnt ?? 0);
+      const homeSignups = Number(((homeResult as any)?.[0]?.[0])?.cnt ?? 0);
+      const referrals = Number(((referralResult as any)?.[0]?.[0])?.cnt ?? 0);
 
       return {
         totalSignups: proSignups + homeSignups,
@@ -134,14 +134,14 @@ export const waitlistAdminRouter = router({
           const proResult = await db.execute(
             sql`SELECT 'pro' as source, id, firstName, lastName, email, businessName FROM proWaitlist WHERE firstName LIKE ${searchTerm} OR lastName LIKE ${searchTerm} OR email LIKE ${searchTerm} LIMIT 50`
           );
-          if (proResult?.[0]) results.push(...proResult[0]);
+          if (proResult?.[0]) results.push(...((proResult[0] as unknown) as any[]));
         }
 
         if (input.source === "home" || input.source === "all") {
           const homeResult = await db.execute(
             sql`SELECT 'home' as source, id, firstName, lastName, email, address FROM homeWaitlist WHERE firstName LIKE ${searchTerm} OR lastName LIKE ${searchTerm} OR email LIKE ${searchTerm} LIMIT 50`
           );
-          if (homeResult?.[0]) results.push(...homeResult[0]);
+          if (homeResult?.[0]) results.push(...((homeResult[0] as unknown) as any[]));
         }
 
         return results;
@@ -193,7 +193,7 @@ export const waitlistAdminRouter = router({
         `
       );
 
-      return (result?.[0] || []) as Array<{
+      return (result?.[0] || []) as unknown as Array<{
         date: string;
         source: string;
         count: number;
@@ -244,7 +244,7 @@ export const waitlistAdminRouter = router({
                  trades, serviceZipCodes, serviceRadiusMiles, primaryCity, primaryState
           FROM proWaitlist WHERE id = ${input.id} LIMIT 1
         `);
-        const app = (appRows?.[0]?.[0] ?? null) as {
+        const app = ((appRows as any)?.[0]?.[0] ?? null) as {
           firstName: string; lastName: string; email: string; phone?: string;
           businessName: string; businessType?: string; trades?: unknown;
           serviceZipCodes?: unknown; serviceRadiusMiles?: number;
@@ -258,12 +258,12 @@ export const waitlistAdminRouter = router({
 
         // Link to an existing user if one matches this email.
         const userRows = await db.execute(sql`SELECT id FROM users WHERE email = ${app.email} LIMIT 1`);
-        const userId = (userRows?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
+        const userId = ((userRows as any)?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
 
         // Idempotent: update existing partner (by email) into a matchable state,
         // otherwise insert a fresh one.
         const existingRows = await db.execute(sql`SELECT id FROM partners WHERE contactEmail = ${app.email} LIMIT 1`);
-        const existingId = (existingRows?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
+        const existingId = ((existingRows as any)?.[0]?.[0] as { id?: number } | undefined)?.id ?? null;
 
         let partnerId: number;
         if (existingId) {
@@ -295,7 +295,7 @@ export const waitlistAdminRouter = router({
             )
           `);
           const idRow = await db.execute(sql`SELECT id FROM partners WHERE contactEmail = ${app.email} LIMIT 1`);
-          partnerId = Number((idRow?.[0]?.[0] as { id?: number } | undefined)?.id ?? 0);
+          partnerId = Number(((idRow as any)?.[0]?.[0] as { id?: number } | undefined)?.id ?? 0);
         }
 
         await db.execute(sql`

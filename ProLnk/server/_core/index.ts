@@ -584,6 +584,21 @@ async function startServer() {
     createExpressMiddleware({
       router: appRouter,
       createContext,
+      // tRPC swallows procedure errors into its own JSON response, so the Express
+      // error handler below never sees them. Without this hook, failed signups/
+      // payments alert nobody (bit us in prod: silent signup failures).
+      onError({ error, path, type }) {
+        const code = (error as { code?: string }).code;
+        if (code === "BAD_REQUEST" || code === "UNAUTHORIZED" || code === "FORBIDDEN" || code === "NOT_FOUND" || code === "CONFLICT") return;
+        console.error(`[tRPC] ${type} ${path ?? "<unknown>"} failed:`, error);
+        if (process.env.SENTRY_DSN) {
+          try {
+            Sentry.captureException(error, { tags: { trpcPath: path ?? "unknown", trpcType: type } });
+          } catch {
+            // never let error reporting mask the original error
+          }
+        }
+      },
     })
   );
 

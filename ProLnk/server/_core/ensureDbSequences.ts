@@ -93,6 +93,8 @@ const SCHEMA_TWEAKS = [
   // primaryGoal stores `more_leads|<free-text notes>` (notes capped at 500); the
   // original varchar(100) overflowed and hard-failed live signups. Widen + nullable.
   "ALTER TABLE `proWaitlist` MODIFY COLUMN `primaryGoal` VARCHAR(1000) NULL",
+  // Moved here from an inline ALTER inside claimSlug (DDL on the hot request path).
+  "ALTER TABLE `proWaitlist` ADD COLUMN `customSlug` VARCHAR(64) UNIQUE",
 ];
 
 async function applySchemaTweaks(db: any): Promise<void> {

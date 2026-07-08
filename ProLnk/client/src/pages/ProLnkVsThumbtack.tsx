@@ -5,7 +5,7 @@ const painPoints = [
     emoji: '💸',
     problem: 'Pay to bid — no guarantee',
     thumbtack: 'Pay $8–$40 per lead before you even talk to the homeowner. No refunds if they ghost you.',
-    prolnk: 'Zero upfront lead fees. You only pay a commission when the job closes — 28% of match value.',
+    prolnk: 'Zero upfront lead fees. You only pay a platform fee when the job closes — 6–15% of job value, with up to 60% of it earned back.',
   },
   {
     emoji: '🎲',
@@ -35,12 +35,12 @@ const painPoints = [
 
 const comparison = [
   { feature: 'Lead fees', prolnk: '$0 upfront', thumbtack: '$8–$40 per lead' },
-  { feature: 'Commission structure', prolnk: '60% keep on job value', thumbtack: 'N/A — you set your price' },
+  { feature: 'Platform fee', prolnk: '6–15% of job value, up to 60% back', thumbtack: 'N/A — you set your price' },
   { feature: 'Passive income', prolnk: '4-level cascade ♾️', thumbtack: 'None' },
   { feature: 'Photo-to-lead AI', prolnk: '✅ Yes', thumbtack: '❌ No' },
   { feature: 'Background check', prolnk: '✅ Required', thumbtack: '⚠️ Optional' },
   { feature: 'Network income', prolnk: '✅ Yes', thumbtack: '❌ No' },
-  { feature: 'Monthly cost', prolnk: '$149/mo (locked)', thumbtack: '$0 (but pay per lead)' },
+  { feature: 'Monthly cost', prolnk: 'From $99/mo', thumbtack: '$0 (but pay per lead)' },
   { feature: 'Lead exclusivity', prolnk: 'AI-matched to you', thumbtack: 'Sold to 3–5 pros' },
   { feature: 'Verification badge', prolnk: '✅ Licensed + insured', thumbtack: 'Self-reported' },
 ];
@@ -140,9 +140,9 @@ export default function ProLnkVsThumbtack() {
               <div>Avg job: $700</div>
               <div style={{ borderTop: '1px solid #58D68D', marginTop: 12, paddingTop: 12 }}>
                 <strong>Closed 4 jobs = $2,800 gross</strong><br />
-                60% keep = $2,016<br />
-                Minus $149/mo sub = <strong style={{ color: '#2A7A3B' }}>$1,867 net</strong><br />
-                <em>Plus network income on top</em>
+                Platform fee (10%) with 60% earned back = ~$112<br />
+                Minus $99/mo sub = <strong style={{ color: '#2A7A3B' }}>~$2,589 net</strong><br />
+                <em>Plus referral overrides on top</em>
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function ProLnkVsThumbtack() {
             Stop paying to bid. Start earning on every match.
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 17, marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>
-            ProLnk partners earn more per job, build passive income, and never pay upfront for leads. Join before the waitlist closes.
+            ProLnk partners earn more per job, build referral income, and never pay upfront for leads. Early access is open — join the waitlist.
           </p>
           <a
             href="/apply"

@@ -171,7 +171,7 @@ export default function TrustyProForPartners() {
             <CardContent className="p-8">
               <div className="text-4xl text-yellow-400 mb-3">"</div>
               <p className="text-[#0A1628] text-lg font-medium leading-relaxed mb-4">
-                The homeowners I get through TrustyPro already understand their HVAC system better than most homeowners I meet in the field. They know the age, the service history, and what the AI recommended. My close rate on those leads is nearly double what I get anywhere else.
+                A homeowner who has already scanned their home — who knows the system age, the service history, and what the AI recommended? That is the warmest lead in this industry. It is exactly why I joined the ProLnk waitlist.
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#0A1628] flex items-center justify-center text-yellow-400 font-bold">M</div>
@@ -195,7 +195,7 @@ export default function TrustyProForPartners() {
               Apply to Join ProLnk <ArrowRight size={18} className="ml-2" />
             </Button>
           </a>
-          <p className="text-xs text-gray-400 mt-4">Charter partner spots are limited. Waitlist closes at 500 applications.</p>
+          <p className="text-xs text-gray-400 mt-4">Early access is open — DFW pros are activated first.</p>
         </div>
       </div>
     </div>

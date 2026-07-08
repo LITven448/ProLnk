@@ -131,13 +131,13 @@ export default function ProLnkForSeniors() {
             Join the TrustyPro Waitlist
           </h3>
           <p style={{ color: '#cbd5e0', fontSize: 16, marginBottom: 24 }}>
-            Founding members lock in the lowest rate and get priority onboarding. DFW only — limited spots.
+            Early members get priority onboarding when TrustyPro launches. Early access is open — DFW first.
           </p>
           <a
             href="/waitlist/homeowner"
             style={{ display: 'inline-block', background: '#e8b400', color: '#1a2744', fontWeight: 800, fontSize: 20, padding: '16px 48px', borderRadius: 50, textDecoration: 'none' }}
           >
-            Reserve My Spot →
+            Join the Waitlist →
           </a>
         </div>
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const faqs = [
   { q: 'Is ProLnk free for homeowners?', a: 'Yes — homeowners never pay to post a need or receive quotes. You only pay the pro you hire.' },
   { q: 'How fast do I get matched?', a: 'Most homeowners receive their first match within 2 hours of posting. Our AI works 24/7.' },
-  { q: 'How does ProLnk make money?', a: 'Pros pay a match fee only when they are connected to a homeowner who hires them. No lead fees, no subscriptions.' },
+  { q: 'How does ProLnk make money?', a: 'Pros pay a monthly membership starting at $99/mo, plus a platform fee of 6–15% of job value only when they win work. No pay-per-lead fees, ever.' },
   { q: 'What trades are on ProLnk?', a: 'Plumbing, electrical, HVAC, roofing, painting, landscaping, flooring, general contracting, and 40+ more categories.' },
   { q: 'Is my personal information safe?', a: 'Your contact details are never shared until you approve a match. ProLnk is CCPA and GDPR compliant.' },
   { q: 'What if I’m not satisfied with the pro?', a: 'ProLnk has a dispute resolution process backed by our Satisfaction Guarantee program.' },
@@ -11,11 +11,11 @@ const faqs = [
 ];
 
 const incomeStreams = [
-  { emoji: '💼', title: 'Direct Match Commission', desc: '12–70% of match value, scaling with your tier from New to Elite.' },
-  { emoji: '🌐', title: 'Pro Network Override', desc: '1–4% of earnings from pros you recruit into your network, 4 levels deep.' },
-  { emoji: '🔄', title: 'Subscription Override', desc: '10% recurring share of the $149/mo subscription from every pro you refer.' },
-  { emoji: '🏠', title: 'Homeowner Override', desc: '$25–100 per qualified homeowner lead you bring to the platform.' },
-  { emoji: '🏦', title: 'Home Origination Rights', desc: 'Permanent revenue share whenever a home you onboarded generates platform fees.' },
+  { emoji: '💼', title: 'Matched Jobs', desc: 'AI-matched local jobs with a simple platform fee of 6–15% of job value — the pro completing the job keeps 40–60% of that fee back, depending on plan.' },
+  { emoji: '🌐', title: 'Pro Network Override', desc: 'A share of platform fees from jobs completed by pros you recruit, up to 4 levels deep.' },
+  { emoji: '🔄', title: 'Subscription Override', desc: '12% of the monthly subscription from every pro you refer directly.' },
+  { emoji: '🏠', title: 'Homeowner Referrals', desc: 'Rewards for qualified homeowner leads you bring to the platform.' },
+  { emoji: '🏦', title: 'Home Origination Rights', desc: 'A permanent 5% share of the platform fee whenever a home you onboarded generates fees.' },
 ];
 
 export default function WhatIsProLnk() {
@@ -83,15 +83,15 @@ export default function WhatIsProLnk() {
                 <li>Licensed contractors in 40+ trade categories</li>
                 <li>Want higher quality leads than Angi or Thumbtack</li>
                 <li>Looking to build a scalable income system</li>
-                <li>Interested in 5 streams of platform income</li>
+                <li>Interested in referral rewards and origination rights</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section style={{ background: '#0A1628', borderRadius: 16, padding: 40, marginBottom: 60, color: '#fff' }}>
-          <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>The 5 Income Streams for Partners</h2>
-          <p style={{ color: '#a0aec0', marginBottom: 28, fontSize: 15 }}>ProLnk isn't just a lead platform — it's a network income system with five ways to earn.</p>
+          <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>How Partners Earn</h2>
+          <p style={{ color: '#a0aec0', marginBottom: 28, fontSize: 15 }}>ProLnk isn't just a lead platform — pros are rewarded for the work they do and the network they help build.</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {incomeStreams.map((s, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 16, background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '16px 20px' }}>

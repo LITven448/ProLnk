@@ -60,7 +60,7 @@ export default function ProLnkForInsuranceAgents() {
         <div style={{ background: '#F5E642', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Become a ProLnk Insurance Partner</h3>
           <p style={{ color: '#0A1628', marginBottom: 4 }}>Join the DFW network serving policyholders with vetted pros.</p>
-          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 partners@prolnk.io</p>
+          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 hello@prolnk.xyz</p>
         </div>
       </div>
     </div>

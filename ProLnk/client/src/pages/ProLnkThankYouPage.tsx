@@ -12,14 +12,14 @@ const roleNextSteps = {
   ],
   partner: [
     { icon: '📧', step: 'Check email — partner welcome + onboarding checklist sent' },
-    { icon: '📋', step: 'Submit license and insurance docs within 48 hours to secure your spot' },
+    { icon: '📋', step: 'Submit license and insurance docs early to speed up your activation' },
     { icon: '🔗', step: 'Share your partner referral link — each pro you recruit = override income for life' },
     { icon: '🗺️', step: 'Set your service territory and trade categories in your dashboard' },
-    { icon: '💰', step: 'Charter Founding rate: $149/mo locked — price rises at 500 partners' },
+    { icon: '💰', step: 'Plans from $99/mo — pick Core, Pro, or Business when activation opens' },
   ],
   both: [
     { icon: '📧', step: 'Two emails incoming — one for each role' },
-    { icon: '📋', step: 'Complete partner verification first (time-sensitive for Charter rate)' },
+    { icon: '📋', step: 'Complete partner verification first — verified pros are activated first' },
     { icon: '🏠', step: 'Add your home to the Vault — you earn origination rights on your own property' },
     { icon: '🔗', step: 'Your dual-role referral link earns on both homeowner and partner conversions' },
     { icon: '⭐', step: 'Dual-role members get priority matching and dedicated onboarding support' },
@@ -28,7 +28,7 @@ const roleNextSteps = {
 
 const accelerators = [
   { icon: '👥', title: 'Refer 3 Homeowners', desc: 'Move up 15 spots in the match queue + earn origination rights on their homes' },
-  { icon: '🔧', title: 'Refer 1 Partner', desc: 'Earn 10% of their monthly subscription + override income on their matches forever' },
+  { icon: '🔧', title: 'Refer 1 Partner', desc: 'Earn 12% of their monthly subscription + override income on their matches' },
   { icon: '🏠', title: 'Add Your Home to the Vault', desc: 'Permanent origination rights — earn every time a pro is matched to your address' },
   { icon: '📸', title: 'Complete Full Home Profile', desc: 'Priority placement in matching algorithm when your service need goes live' },
 ];

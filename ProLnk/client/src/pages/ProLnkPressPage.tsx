@@ -4,29 +4,29 @@ const mediaTypes = [
   {
     label: '📰 Print / Online News',
     kit: 'Press Kit: Company fact sheet, founder bio, DFW launch stats, high-res logo pack',
-    contact: 'press@prolnk.io',
+    contact: 'hello@prolnk.xyz',
   },
   {
     label: '📺 TV / Broadcast',
     kit: 'Press Kit: B-roll footage request, executive interview availability, platform demo video link',
-    contact: 'press@prolnk.io',
+    contact: 'hello@prolnk.xyz',
   },
   {
     label: '🎙️ Podcast / Audio',
     kit: 'Press Kit: Founder talking points, mission soundbites, show notes template, headshot pack',
-    contact: 'press@prolnk.io',
+    contact: 'hello@prolnk.xyz',
   },
   {
     label: '📱 Social / Digital',
     kit: 'Press Kit: Social media assets, launch graphics, stat cards, shareable milestone images',
-    contact: 'press@prolnk.io',
+    contact: 'hello@prolnk.xyz',
   },
 ];
 
 const milestones = [
-  { icon: '🗓️', label: 'May 2026', event: 'DFW Waitlist Opens — 500 homeowner spots, 25 Charter pro spots' },
+  { icon: '🗓️', label: 'May 2026', event: 'DFW Waitlist Opens — early access for pros and homeowners' },
   { icon: '🏠', label: 'Target: Q2 2026', event: '5,000 homes registered in Home Health Vault' },
-  { icon: '💰', label: 'Seed Round', event: 'Raising seed capital to fund DFW go-live and Texas statewide expansion' },
+  { icon: '🤖', label: 'AI Platform', event: '47 autonomous AI agents built to power matching, alerts, and operations' },
   { icon: '🚀', label: 'Q3 2026', event: 'Full platform launch — live matching, payments, AI agent activation' },
 ];
 
@@ -83,7 +83,7 @@ export default function ProLnkPressPage() {
         <div style={{ background: '#F5E642', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Press Contact</h3>
           <p style={{ color: '#0A1628', marginBottom: 4 }}>For all media inquiries, interviews, and press assets:</p>
-          <p style={{ color: '#0A1628', fontWeight: 700, fontSize: 18 }}>📧 press@prolnk.io</p>
+          <p style={{ color: '#0A1628', fontWeight: 700, fontSize: 18 }}>📧 hello@prolnk.xyz</p>
           <p style={{ color: '#0A1628', fontSize: 13, marginTop: 8 }}>Response within 24 hours guaranteed</p>
         </div>
       </div>

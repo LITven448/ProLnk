@@ -22,7 +22,7 @@ export default function ProLnkPartnerProgram() {
     {
       type: "HOA Management",
       icon: "🏘️",
-      detail: "Give residents access to ProLnk vetted contractors. Streamline common area maintenance bids. Charter partnership pricing available for HOAs with 100+ units."
+      detail: "Give residents access to ProLnk vetted contractors. Streamline common area maintenance bids. Volume partnership pricing available for HOAs with 100+ units."
     },
   ];
 
@@ -39,7 +39,7 @@ export default function ProLnkPartnerProgram() {
           <div style={{ fontSize: "2.8rem", fontWeight: 800, color: "#F5E642" }}>ProLnk</div>
           <div style={{ fontSize: "1.4rem", color: "#94a3b8", marginTop: "0.4rem" }}>Partner Program — Grow Together in DFW</div>
           <div style={{ display: "inline-block", background: "#1a3a5c", border: "2px solid #F5E642", color: "#F5E642", padding: "0.4rem 1.2rem", borderRadius: 20, fontWeight: 700, marginTop: "1rem", fontSize: "0.9rem" }}>
-            🌟 Founding Partner Slots — Limited Availability
+            🌟 Partner Program — Early Access Open
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export default function ProLnkPartnerProgram() {
 
         <div style={{ background: "#0d1f3c", borderRadius: 14, padding: "1.5rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
           <div style={{ fontWeight: 700, marginBottom: "0.5rem" }}>📬 Start a Partnership Conversation</div>
-          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>andrew@lit-ventures.com — Subject: "ProLnk Partner"</div>
+          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>hello@prolnk.xyz — Subject: "ProLnk Partner"</div>
         </div>
       </div>
     </div>

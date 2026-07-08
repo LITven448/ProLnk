@@ -4,13 +4,13 @@ const categories = ["Costs & Fees", "Getting Paid", "Service Area", "Matching Al
 
 const faqs: Record<string, { q: string; a: string }[]> = {
   "Costs & Fees": [
-    { q: "How much does ProLnk cost?", a: "Charter membership is $149/month — locked for life. You get unlimited lead access, network income eligibility, and full platform tools." },
-    { q: "Are there per-lead fees on top of the subscription?", a: "No per-lead fees for Charter members. Your $149/mo covers all matched leads within your service area and specialty." },
-    { q: "Can I cancel anytime?", a: "Yes. Cancel anytime from your dashboard. Your Charter rate is locked only while the subscription is active — re-subscribing after cancellation is at the current rate." },
+    { q: "How much does ProLnk cost?", a: "Plans start at $99/month: Core $99, Pro $149, Business $249, and custom Enterprise pricing. Every plan includes lead access and full platform tools." },
+    { q: "Are there per-lead fees on top of the subscription?", a: "No per-lead fees on any plan. Your subscription covers all matched leads within your service area and specialty — ProLnk charges a platform fee of 6–15% of job value only when you win work." },
+    { q: "Can I cancel anytime?", a: "Yes. Cancel anytime from your dashboard with no cancellation fee. If you re-subscribe later, current pricing applies." },
   ],
   "Getting Paid": [
     { q: "When do I get paid after a job?", a: "Funds are released within 48 hours of job completion confirmation. Payment goes to your connected bank account via Stripe." },
-    { q: "How does the 4-level network income pay out?", a: "Network overrides are calculated monthly and paid on the 1st of the following month. All 4 levels aggregate into a single payout." },
+    { q: "How do referral overrides pay out?", a: "Referral overrides are calculated monthly and paid on the 1st of the following month, aggregated into a single payout." },
     { q: "What forms do I need for taxes?", a: "If you earn over $20K/year through ProLnk, you will receive a 1099-NEC by January 31. Earnings are tracked in your dashboard year-round." },
   ],
   "Service Area": [
@@ -68,8 +68,8 @@ export default function ProLnkFAQPros() {
         <div style={{ marginTop: 48, background: "#1E2D45", borderRadius: 16, padding: 28, display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ fontSize: 40 }}>💰</div>
           <div style={{ flex: 1 }}>
-            <p style={{ fontWeight: 700, color: "#F5E642", marginBottom: 4 }}>Charter Membership — $149/mo locked forever</p>
-            <p style={{ color: "#94A3B8", fontSize: 13 }}>Join before waitlist closes at 500 Charter members</p>
+            <p style={{ fontWeight: 700, color: "#F5E642", marginBottom: 4 }}>Membership from $99/mo</p>
+            <p style={{ color: "#94A3B8", fontSize: 13 }}>Early access is open — join the waitlist today</p>
           </div>
           <button style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, cursor: "pointer" }}>
             Join Now

@@ -68,7 +68,7 @@ export default function ProLnkForMilitary() {
             {[
               { point: 'Veteran-owned businesses are trusted in the trades community', icon: '⭐' },
               { point: 'GI Bill may fund trade certifications needed to qualify for ProLnk', icon: '🎓' },
-              { point: 'Strong candidate for Charter or Founding membership before waitlist fills', icon: '🏅' },
+              { point: 'Early access is open — veterans make strong first-wave members', icon: '🏅' },
               { point: 'Military discipline translates directly to lead follow-up and job completion rates', icon: '📈' },
             ].map(p => (
               <div key={p.point} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
@@ -106,9 +106,9 @@ export default function ProLnkForMilitary() {
 
         <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #1d4ed8)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🎖️</div>
-          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9' }}>Apply for Charter Membership</h3>
-          <p style={{ color: '#93c5fd', marginBottom: 8 }}>Charter membership closes at 25 partners. Veterans are strong candidates — apply before the waitlist fills.</p>
-          <p style={{ color: '#64748b', fontSize: 13, marginBottom: 24 }}>Lock in $149/mo rate before Charter closes and launch date pricing applies.</p>
+          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9' }}>Join the Waitlist</h3>
+          <p style={{ color: '#93c5fd', marginBottom: 8 }}>Early access is open. Veterans bring the trust this network is built on — apply today.</p>
+          <p style={{ color: '#64748b', fontSize: 13, marginBottom: 24 }}>Plans from $99/mo when the platform goes live.</p>
           <a href="/apply" style={{ display: 'inline-block', background: '#fff', color: '#1d4ed8', padding: '14px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
             Apply Now — Honor the Opportunity →
           </a>

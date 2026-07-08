@@ -22,13 +22,13 @@ export default function ProLnkGuaranteeExplainer() {
       covered: true,
       icon: '✅',
       title: 'Covered — Every Pro is Verified',
-      detail: 'All Charter pros are verified licensed and insured before their first match. License numbers are on file. If credentials are found to be invalid, you receive a full refund and the pro is removed from the platform.',
+      detail: 'All ProLnk pros are verified licensed and insured before their first match. License numbers are on file. If credentials are found to be invalid, you receive a full refund and the pro is removed from the platform.',
     },
     timing: {
       covered: false,
       icon: '⚠️',
       title: 'Partial Coverage',
-      detail: 'ProLnk guarantees match speed and response times but cannot guarantee specific completion dates for complex projects. If a Charter pro misses a committed deadline without notice, file a dispute for review.',
+      detail: 'ProLnk guarantees match speed and response times but cannot guarantee specific completion dates for complex projects. If a pro misses a committed deadline without notice, file a dispute for review.',
     },
     scope: {
       covered: false,

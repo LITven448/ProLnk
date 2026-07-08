@@ -674,6 +674,51 @@ const TrustyProVsInspection = lazy(() => import("./pages/TrustyProVsInspection")
 const TrustyProVsZillow = lazy(() => import("./pages/TrustyProVsZillow"));
 const WhyChooseProLnk = lazy(() => import("./pages/WhyChooseProLnk"));
 const WhyTrustyPro = lazy(() => import("./pages/WhyTrustyPro"));
+const About = lazy(() => import("./pages/About"));
+const ContractorLeadGenComparison = lazy(() => import("./pages/ContractorLeadGenComparison"));
+const HowTrustyProWorks = lazy(() => import("./pages/HowTrustyProWorks"));
+const PartnerFAQGeneral = lazy(() => import("./pages/PartnerFAQ"));
+const PartnerTaxDeductionMaximizer = lazy(() => import("./pages/PartnerTaxDeductionMaximizer"));
+const ProIncomeComparison = lazy(() => import("./pages/ProIncomeComparison"));
+const ProJobProfitCalculator = lazy(() => import("./pages/ProJobProfitCalculator"));
+const ProLnkAdvisoryBoardPage = lazy(() => import("./pages/ProLnkAdvisoryBoardPage"));
+const ProLnkB2BPartnershipPage = lazy(() => import("./pages/ProLnkB2BPartnershipPage"));
+const ProLnkCareers = lazy(() => import("./pages/ProLnkCareers"));
+const ProLnkContactPage = lazy(() => import("./pages/ProLnkContactPage"));
+const ProLnkDataPrivacy = lazy(() => import("./pages/ProLnkDataPrivacy"));
+const ProLnkDisputeResolution = lazy(() => import("./pages/ProLnkDisputeResolution"));
+const ProLnkFAQPros = lazy(() => import("./pages/ProLnkFAQPros"));
+const ProLnkForContractors = lazy(() => import("./pages/ProLnkForContractors"));
+const ProLnkForInsuranceAgents = lazy(() => import("./pages/ProLnkForInsuranceAgents"));
+const ProLnkForMilitary = lazy(() => import("./pages/ProLnkForMilitary"));
+const ProLnkForPros = lazy(() => import("./pages/ProLnkForPros"));
+const ProLnkForRealEstateAgents = lazy(() => import("./pages/ProLnkForRealEstateAgents"));
+const ProLnkForSeniors = lazy(() => import("./pages/ProLnkForSeniors"));
+const ProLnkGettingStartedPro = lazy(() => import("./pages/ProLnkGettingStartedPro"));
+const ProLnkGuaranteeExplainer = lazy(() => import("./pages/ProLnkGuaranteeExplainer"));
+const ProLnkMobileAppComingSoon = lazy(() => import("./pages/ProLnkMobileAppComingSoon"));
+const ProLnkNationalExpansionPage = lazy(() => import("./pages/ProLnkNationalExpansionPage"));
+const ProLnkNewsletterPage = lazy(() => import("./pages/ProLnkNewsletterPage"));
+const ProLnkPartnerProgram = lazy(() => import("./pages/ProLnkPartnerProgram"));
+const ProLnkPressPage = lazy(() => import("./pages/ProLnkPressPage"));
+const ProLnkPricingTransparency = lazy(() => import("./pages/ProLnkPricingTransparency"));
+const ProLnkPrivacyPolicySummary = lazy(() => import("./pages/ProLnkPrivacyPolicySummary"));
+const ProLnkReferralPage = lazy(() => import("./pages/ProLnkReferralPage"));
+const ProLnkSpreadTheWordPage = lazy(() => import("./pages/ProLnkSpreadTheWordPage"));
+const ProLnkTermsOfService = lazy(() => import("./pages/ProLnkTermsOfService"));
+const ProLnkThankYouPage = lazy(() => import("./pages/ProLnkThankYouPage"));
+const ProLnkVisionPage = lazy(() => import("./pages/ProLnkVisionPage"));
+const ProLnkVsAngi = lazy(() => import("./pages/ProLnkVsAngi"));
+const ProLnkVsHomeAdvisor = lazy(() => import("./pages/ProLnkVsHomeAdvisor"));
+const ProLnkVsThumbtack = lazy(() => import("./pages/ProLnkVsThumbtack"));
+const ProTestimonials = lazy(() => import("./pages/ProTestimonials"));
+const TrustyProForHOAs = lazy(() => import("./pages/TrustyProForHOAs"));
+const TrustyProForLandlords = lazy(() => import("./pages/TrustyProForLandlords"));
+const TrustyProForPartners = lazy(() => import("./pages/TrustyProForPartners"));
+const TrustyProForPropertyManagersPage = lazy(() => import("./pages/TrustyProForPropertyManagers"));
+const TrustyProPartnerAlignment = lazy(() => import("./pages/TrustyProPartnerAlignment"));
+const TrustyProPricingPage = lazy(() => import("./pages/TrustyProPricing"));
+const WhatIsProLnk = lazy(() => import("./pages/WhatIsProLnk"));
 const FenceInstallationGuide = lazy(() => import('./pages/homeowner/FenceInstallationGuide'));
 const PoolMaintenanceGuide = lazy(() => import('./pages/homeowner/PoolMaintenanceGuide'));
 const NetworkGrowthPlaybook = lazy(() => import('./pages/partner/NetworkGrowthPlaybook'));
@@ -870,6 +915,20 @@ const WAITLIST_ALLOWED = new Set([
   "/resources/seasonal-strategy", "/review-policy", "/roadmap", "/safety",
   "/trust-and-safety", "/verified-pro-badge", "/vs/google", "/vs/nextdoor",
   "/vs/traditional-contractor", "/why-prolnk", "/why-trustypro",
+  // Marketing/info pages routed July 2026 (content-audited)
+  "/about", "/careers", "/contact", "/what-is-prolnk", "/vision",
+  "/testimonials", "/thank-you", "/newsletter", "/press-inquiries",
+  "/advisory-board", "/expansion", "/mobile-app", "/guarantee",
+  "/dispute-resolution", "/data-privacy", "/privacy-summary", "/terms-full",
+  "/pricing-transparency", "/for-pros", "/for-contractors", "/for-military",
+  "/for-seniors", "/for-realtors", "/for-insurers", "/faq/pros",
+  "/getting-started-pro", "/pro-income-comparison", "/referral-program",
+  "/spread-the-word", "/partner-program", "/partners/faq", "/partners/b2b",
+  "/guides/lead-gen-comparison", "/resources/tax-deductions",
+  "/resources/job-profit-calculator", "/vs/angi", "/vs/homeadvisor",
+  "/vs/thumbtack", "/trustypro/how-it-works", "/trustypro/plans",
+  "/trustypro/for-hoas", "/trustypro/for-landlords", "/trustypro/for-partners",
+  "/trustypro/for-property-managers", "/trustypro/partner-alignment",
 ]);
 
 function WaitlistGuard() {
@@ -1482,6 +1541,51 @@ function Router() {
       <Route path="/trustypro/vs-zillow" component={TrustyProVsZillow} />
       <Route path="/why-prolnk" component={WhyChooseProLnk} />
       <Route path="/why-trustypro" component={WhyTrustyPro} />
+      <Route path="/about" component={About} />
+      <Route path="/careers" component={ProLnkCareers} />
+      <Route path="/contact" component={ProLnkContactPage} />
+      <Route path="/what-is-prolnk" component={WhatIsProLnk} />
+      <Route path="/vision" component={ProLnkVisionPage} />
+      <Route path="/testimonials" component={ProTestimonials} />
+      <Route path="/thank-you" component={ProLnkThankYouPage} />
+      <Route path="/newsletter" component={ProLnkNewsletterPage} />
+      <Route path="/press-inquiries" component={ProLnkPressPage} />
+      <Route path="/advisory-board" component={ProLnkAdvisoryBoardPage} />
+      <Route path="/expansion" component={ProLnkNationalExpansionPage} />
+      <Route path="/mobile-app" component={ProLnkMobileAppComingSoon} />
+      <Route path="/guarantee" component={ProLnkGuaranteeExplainer} />
+      <Route path="/dispute-resolution" component={ProLnkDisputeResolution} />
+      <Route path="/data-privacy" component={ProLnkDataPrivacy} />
+      <Route path="/privacy-summary" component={ProLnkPrivacyPolicySummary} />
+      <Route path="/terms-full" component={ProLnkTermsOfService} />
+      <Route path="/pricing-transparency" component={ProLnkPricingTransparency} />
+      <Route path="/for-pros" component={ProLnkForPros} />
+      <Route path="/for-contractors" component={ProLnkForContractors} />
+      <Route path="/for-military" component={ProLnkForMilitary} />
+      <Route path="/for-seniors" component={ProLnkForSeniors} />
+      <Route path="/for-realtors" component={ProLnkForRealEstateAgents} />
+      <Route path="/for-insurers" component={ProLnkForInsuranceAgents} />
+      <Route path="/faq/pros" component={ProLnkFAQPros} />
+      <Route path="/getting-started-pro" component={ProLnkGettingStartedPro} />
+      <Route path="/pro-income-comparison" component={ProIncomeComparison} />
+      <Route path="/referral-program" component={ProLnkReferralPage} />
+      <Route path="/spread-the-word" component={ProLnkSpreadTheWordPage} />
+      <Route path="/partner-program" component={ProLnkPartnerProgram} />
+      <Route path="/partners/faq" component={PartnerFAQGeneral} />
+      <Route path="/partners/b2b" component={ProLnkB2BPartnershipPage} />
+      <Route path="/guides/lead-gen-comparison" component={ContractorLeadGenComparison} />
+      <Route path="/resources/tax-deductions" component={PartnerTaxDeductionMaximizer} />
+      <Route path="/resources/job-profit-calculator" component={ProJobProfitCalculator} />
+      <Route path="/vs/angi" component={ProLnkVsAngi} />
+      <Route path="/vs/homeadvisor" component={ProLnkVsHomeAdvisor} />
+      <Route path="/vs/thumbtack" component={ProLnkVsThumbtack} />
+      <Route path="/trustypro/how-it-works" component={HowTrustyProWorks} />
+      <Route path="/trustypro/plans" component={TrustyProPricingPage} />
+      <Route path="/trustypro/for-hoas" component={TrustyProForHOAs} />
+      <Route path="/trustypro/for-landlords" component={TrustyProForLandlords} />
+      <Route path="/trustypro/for-partners" component={TrustyProForPartners} />
+      <Route path="/trustypro/for-property-managers" component={TrustyProForPropertyManagersPage} />
+      <Route path="/trustypro/partner-alignment" component={TrustyProPartnerAlignment} />
       <Route path="/waitlist-status" component={WaitlistStatus} />
       <Route path="/waitlist/status" component={WaitlistStatus} />
       <Route path="/content-library" component={ContentLibrary} />

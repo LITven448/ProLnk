@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const milestones = [
-  { year: '2026', label: 'DFW Launch + Texas Expansion', emoji: '🚀', detail: 'Waitlist converts to active platform. DFW goes live, Houston and Austin launch before year end. First 1,000 founding partners locked in.' },
+  { year: '2026', label: 'DFW Launch + Texas Expansion', emoji: '🚀', detail: 'Waitlist converts to active platform. DFW goes live, Houston and Austin launch before year end. The first wave of DFW partners is activated.' },
   { year: '2027', label: 'National Rollout Begins', emoji: '🗺️', detail: '25 major metros live. Home Health Vault reaches 100K homes. AI matching model has processed 500K+ jobs — accuracy improves dramatically.' },
   { year: '2028', label: 'AI Predictive Maintenance', emoji: '🤖', detail: 'ProLnk moves from reactive to proactive. AI recommends maintenance before failure — flagging HVAC age, roof wear cycles, plumbing pressure anomalies.' },
   { year: '2029', label: 'TrustyPro Visual Scanning Mainstream', emoji: '📡', detail: 'TrustyPro visual scanning deployed nationally. Contractors scan homes at job completion. 3D structural data in 1M+ Home Health Vaults.' },
@@ -23,8 +23,8 @@ const visions = [
     type: 'Partner',
     emoji: '🤝',
     future: [
-      'Founding Partners who locked in at $149/mo never see a rate increase — ever.',
-      'A network built today compounds for years. Each new pro you recruit earns you 4 levels deep.',
+      'Plans stay simple and transparent — from $99/mo, with no pay-per-lead fees.',
+      'A network built today compounds for years. Pros you refer earn you overrides as they grow.',
       'As ProLnk expands nationally, your network expands with it — no extra work required.',
       'The partner network becomes a generational income asset — one you can transfer and build upon.',
     ],
@@ -119,7 +119,7 @@ export default function ProLnkVisionPage() {
 
         <div style={{ textAlign: 'center', marginTop: 48 }}>
           <button style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 36px', fontWeight: 800, fontSize: 16, cursor: 'pointer' }}>
-            Join the Founding Network →
+            Join the Waitlist →
           </button>
         </div>
       </div>

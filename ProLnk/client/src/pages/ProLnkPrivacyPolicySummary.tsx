@@ -22,7 +22,7 @@ const sections: Record<Concern, { emoji: string; summary: string; details: strin
     details: [
       '🔧 Matched contractors see your name, phone, and job description only',
       '🤖 AI matching system uses anonymized job data to improve accuracy',
-      '📊 Aggregate analytics shared with investors — never individual records',
+      '📊 Only aggregate, anonymized statistics are ever shared — never individual records',
       '🚫 ProLnk does NOT sell your data to advertisers or data brokers',
       '⚖️ Law enforcement access requires valid court order — you are notified',
     ],
@@ -38,7 +38,7 @@ const sections: Record<Concern, { emoji: string; summary: string; details: strin
       '🔒 Right to restrict: limit how your data is used for AI training',
       '👶 No data collected from users under 18 — accounts auto-flagged',
     ],
-    action: 'Exercise rights: email privacy@prolnk.io with subject line "Data Rights Request"',
+    action: 'Exercise rights: email hello@prolnk.xyz with subject line "Data Rights Request"',
   },
   'data deletion': {
     emoji: '🗑️',
@@ -50,7 +50,7 @@ const sections: Record<Concern, { emoji: string; summary: string; details: strin
       '📧 You receive email confirmation when deletion is complete',
       '🔄 Deleting account does not forfeit owed commissions — paid first',
     ],
-    action: 'Request deletion: Account → Settings → Delete My Account, or email privacy@prolnk.io',
+    action: 'Request deletion: Account → Settings → Delete My Account, or email hello@prolnk.xyz',
   },
 };
 
@@ -97,7 +97,7 @@ export default function ProLnkPrivacyPolicySummary() {
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '16px 20px' }}>
           <p style={{ color: '#94A3B8', fontSize: 13, margin: 0 }}>
-            🛡️ ProLnk is compliant with CCPA, Texas HB 4 (TDPSA), and GDPR where applicable. Full policy: prolnk.io/privacy
+            🛡️ ProLnk is compliant with CCPA, Texas HB 4 (TDPSA), and GDPR where applicable. Full policy: prolnk.xyz/privacy
           </p>
         </div>
       </div>

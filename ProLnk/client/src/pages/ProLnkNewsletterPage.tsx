@@ -6,12 +6,12 @@ const interests = [
     label: 'Contractor / Partner',
     topics: [
       'How to maximize your match rate on ProLnk',
-      'Understanding your 5-stream income breakdown',
+      'Understanding your earnings and referral overrides',
       'DFW trade market demand by zip code',
       'Referral tactics that top-earning partners use',
       'Platform updates affecting partner accounts',
     ],
-    reason: 'Partners who read the weekly newsletter close 23% more matches on average. We publish the data. You use it.',
+    reason: 'We publish DFW trade demand data every week. Partners on the waitlist use it to plan where the work will be.',
   },
   {
     id: 'homeowner',
@@ -32,8 +32,8 @@ const interests = [
       'Platform growth metrics and waitlist milestones',
       'DFW real estate market analysis and service demand',
       'ProLnk unit economics and path to profitability',
-      'Seed round updates and investor news',
-      'Network income system performance data',
+      'Company milestones and product news',
+      'Referral network performance data',
     ],
     reason: 'Investors tracking ProLnk use the newsletter to follow traction signals before the public announcement.',
   },
@@ -41,7 +41,7 @@ const interests = [
 
 const recent = [
   'DFW Roofing Demand Surges 34% After April Hail Season',
-  'Charter Partners: How 3 Electricians Hit $8K Extra Income in Month One',
+  'Meet the Waitlist: 3 DFW Electricians on Why They Signed Up',
   'Home Health Score vs Zillow Zestimate: What the Data Shows',
   'Waitlist Update: 400 Partners, 3,200 Homes and Counting',
 ];

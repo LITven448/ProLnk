@@ -4,7 +4,7 @@ export default function ProLnkReferralPage() {
   const [referralCount, setReferralCount] = useState(5);
 
   const creditPerHomeowner = 50;
-  const origRightsPerHome = 0.015;
+  const origRightsPerHome = 0.05;
   const avgAnnualPlatformFees = 240;
 
   const totalCredit = referralCount * creditPerHomeowner;
@@ -58,7 +58,7 @@ export default function ProLnkReferralPage() {
             <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
               <div style={{ fontSize: '32px', fontWeight: 900, color: '#166534' }}>${annualOrigRights.toFixed(0)}/yr</div>
               <div style={{ fontSize: '13px', color: '#14532d' }}>Origination Rights Revenue</div>
-              <div style={{ fontSize: '11px', color: '#166534', marginTop: '4px' }}>1.5% of platform fees · permanent</div>
+              <div style={{ fontSize: '11px', color: '#166534', marginTop: '4px' }}>5% of platform fees · permanent</div>
             </div>
           </div>
           <div style={{ background: '#f1f5f9', borderRadius: '10px', padding: '14px', textAlign: 'center', fontSize: '13px', color: '#475569' }}>

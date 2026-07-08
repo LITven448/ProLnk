@@ -4,20 +4,20 @@ const SUBURBS = ['Frisco', 'Plano', 'McKinney', 'Allen', 'Prosper', 'Celina', 'L
 
 const TEMPLATES: Record<string, Record<string, string>> = {
   facebook: {
-    homeowner: (suburb: string) => `🏠 Hey {suburb} neighbors — found a game-changer for home services. ProLnk matches you with vetted local pros (no more random Google searches). Free for homeowners. If you're in {suburb}, get on the list now → prolnk.io #DFW #HomeServices #{suburb}`.replace(/{suburb}/g, suburb),
-    partner: (suburb: string) => `🔧 Fellow pros in {suburb} — I just locked in a founding position with ProLnk. This is the lead platform I've been waiting for. No bidding wars, no fake leads. Apply before the 500-slot waitlist closes → prolnk.io/apply #HomePro #{suburb}`.replace(/{suburb}/g, suburb),
+    homeowner: (suburb: string) => `🏠 Hey {suburb} neighbors — found a game-changer for home services. ProLnk matches you with vetted local pros (no more random Google searches). Free for homeowners. If you're in {suburb}, get on the list now → prolnk.xyz #DFW #HomeServices #{suburb}`.replace(/{suburb}/g, suburb),
+    partner: (suburb: string) => `🔧 Fellow pros in {suburb} — I just joined the ProLnk waitlist. This is the lead platform I've been waiting for. No bidding wars, no fake leads. Early access is open → prolnk.xyz/apply #HomePro #{suburb}`.replace(/{suburb}/g, suburb),
   },
   instagram: {
     homeowner: (suburb: string) => `Stop guessing which contractor to call 🔧\nProLnk matches {suburb} homeowners with trusted local pros — fast.\n👇 Link in bio\n#DFWHomes #{suburb}Life #HomeServices #ProLnk #DFW`.replace(/{suburb}/g, suburb),
-    partner: (suburb: string) => `Building my business in {suburb} 💼\nJust locked in my spot on @ProLnk — charter members earn 25% commission + 4-level overrides.\nWaitlist closes at 500. I'm in. Are you?\n#HomePro #ProLnk #{suburb}`.replace(/{suburb}/g, suburb),
+    partner: (suburb: string) => `Building my business in {suburb} 💼\nJust joined the @ProLnk waitlist — exclusive AI-matched leads, no pay-per-lead fees, referral rewards.\nEarly access is open. I'm in. Are you?\n#HomePro #ProLnk #{suburb}`.replace(/{suburb}/g, suburb),
   },
   linkedin: {
-    homeowner: (suburb: string) => `Sharing something useful for anyone who owns a home in the {suburb}/DFW area:\n\nProLnk is launching a homeowner matching platform — you describe your service need, and vetted local pros compete for your job.\n\nNo cold calls. No guessing. Free for homeowners.\n\nI'm on the waitlist → prolnk.io`.replace(/{suburb}/g, suburb),
-    partner: (suburb: string) => `I've been in home services in {suburb} for years. What's broken: finding quality leads without paying per click for garbage.\n\nProLnk changes that — I just secured a Founding Member position. 20% commission, 4-level network income, leads piped directly to my dashboard.\n\nThe 500-slot waitlist is almost full. Apply → prolnk.io/apply`.replace(/{suburb}/g, suburb),
+    homeowner: (suburb: string) => `Sharing something useful for anyone who owns a home in the {suburb}/DFW area:\n\nProLnk is launching a homeowner matching platform — you describe your service need, and vetted local pros compete for your job.\n\nNo cold calls. No guessing. Free for homeowners.\n\nI'm on the waitlist → prolnk.xyz`.replace(/{suburb}/g, suburb),
+    partner: (suburb: string) => `I've been in home services in {suburb} for years. What's broken: finding quality leads without paying per click for garbage.\n\nProLnk changes that — I just joined the waitlist. Exclusive AI-matched leads piped directly to my dashboard, with no pay-per-click fees.\n\nEarly access is open. Apply → prolnk.xyz/apply`.replace(/{suburb}/g, suburb),
   },
   text: {
-    homeowner: (suburb: string) => `Hey! If you need any home repairs in {suburb}, check out ProLnk. It matches you with real local pros, totally free for homeowners. prolnk.io`.replace(/{suburb}/g, suburb),
-    partner: (suburb: string) => `Hey, are you still doing home services in {suburb}? You should apply to ProLnk before the waitlist closes — 500 spots, then it's done. prolnk.io/apply`.replace(/{suburb}/g, suburb),
+    homeowner: (suburb: string) => `Hey! If you need any home repairs in {suburb}, check out ProLnk. It matches you with real local pros, totally free for homeowners. prolnk.xyz`.replace(/{suburb}/g, suburb),
+    partner: (suburb: string) => `Hey, are you still doing home services in {suburb}? You should get on the ProLnk waitlist — early access is open and DFW pros go first. prolnk.xyz/apply`.replace(/{suburb}/g, suburb),
   },
 };
 

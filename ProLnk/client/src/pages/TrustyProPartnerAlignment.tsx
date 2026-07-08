@@ -140,7 +140,7 @@ export default function TrustyProPartnerAlignment() {
           <div style={{ background: 'linear-gradient(135deg, #1e3a8a, #1e1b4b)', borderRadius: 16, padding: 32, textAlign: 'center', color: '#fff' }}>
             <div style={{ fontSize: 28, marginBottom: 12 }}>🔨</div>
             <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>For Licensed Pros</h3>
-            <p style={{ color: '#bfdbfe', fontSize: 14, marginBottom: 20 }}>Join as a Charter Partner. Lock in rates and start earning across all 5 income streams.</p>
+            <p style={{ color: '#bfdbfe', fontSize: 14, marginBottom: 20 }}>Join the pro waitlist. Get matched jobs, referral overrides, and origination rights.</p>
             <a
               href="/apply"
               style={{ display: 'inline-block', background: '#2563eb', color: '#fff', padding: '12px 28px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}

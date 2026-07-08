@@ -4,7 +4,7 @@ const steps = [
   { icon: '📝', title: 'Apply Online', desc: 'Submit your trade license number, insurance certificate, and basic business info.' },
   { icon: '🔍', title: 'Background Check (Checkr)', desc: 'Automated identity and criminal background check — typically completes in 24-48 hours.' },
   { icon: '👤', title: 'Build Your Profile', desc: 'Upload a professional photo, list your trades, define your service area and hourly rate.' },
-  { icon: '💳', title: 'Charter Tier Enrollment', desc: 'Activate your $149/mo Charter membership to unlock the match feed and full income system.' },
+  { icon: '💳', title: 'Choose Your Plan', desc: 'Pick a membership — Core $99/mo, Pro $149/mo, or Business $249/mo — to unlock the match feed and earning tools.' },
   { icon: '🔔', title: 'First Match Notification', desc: 'ProLnk AI sends your first homeowner match — review details and choose to accept or pass.' },
   { icon: '⭐', title: 'Complete Job + Get Rated', desc: 'Finish the job, homeowner rates you. Strong ratings unlock priority placement in future matches.' },
 ];

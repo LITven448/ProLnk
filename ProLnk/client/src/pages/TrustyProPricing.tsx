@@ -7,7 +7,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How does TrustyPro make money if homeowners don’t pay?',
-    a: 'Contractors (our "Partners") pay a monthly subscription of $149/month plus a commission on jobs they close through TrustyPro. This funds the entire platform. Homeowners never contribute to this.',
+    a: 'Contractors (our "Partners") pay a monthly subscription starting at $99/month (Core $99, Pro $149, Business $249) plus a platform fee of 6–15% of job value on jobs they close through TrustyPro. This funds the entire platform. Homeowners never contribute to this.',
   },
   {
     q: 'What happens to my home data?',
@@ -76,12 +76,12 @@ export default function TrustyProPricing() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div style={{ backgroundColor: '#fef3c7', borderRadius: 10, padding: 20, border: '1px solid #fcd34d' }}>
               <div style={{ fontWeight: 700, color: '#92400e', fontSize: 15, marginBottom: 8 }}>Partner Monthly Subscription</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#78350f', marginBottom: 4 }}>$149<span style={{ fontSize: 16, fontWeight: 400 }}>/mo</span></div>
-              <div style={{ fontSize: 13, color: '#92400e' }}>Paid by contractors (Partners), not homeowners</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#78350f', marginBottom: 4 }}>From $99<span style={{ fontSize: 16, fontWeight: 400 }}>/mo</span></div>
+              <div style={{ fontSize: 13, color: '#92400e' }}>Core $99 · Pro $149 · Business $249 — paid by contractors, not homeowners</div>
             </div>
             <div style={{ backgroundColor: '#f0fdf4', borderRadius: 10, padding: 20, border: '1px solid #86efac' }}>
               <div style={{ fontWeight: 700, color: '#166534', fontSize: 15, marginBottom: 8 }}>Commission on Closed Jobs</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#15803d', marginBottom: 4 }}>% of job</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#15803d', marginBottom: 4 }}>6–15% of job</div>
               <div style={{ fontSize: 13, color: '#166534' }}>Only when a job is won — zero if no work is awarded</div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function TrustyProPricing() {
               </thead>
               <tbody>
                 {[
-                  ['TrustyPro', '$0 always', '$149/mo + commission on wins', 'Commission on closed jobs'],
+                  ['TrustyPro', '$0 always', 'From $99/mo + fee on wins', 'Fee on closed jobs only'],
                   ['Angi', '$4–10/request', 'Per-lead fee', 'Lead marketplace'],
                   ['HomeAdvisor', 'Free basic', '$15–100/lead regardless of win', 'Pay per lead'],
                   ['Thumbtack', 'Free', '$3–50/quote sent', 'Pay per contact'],
@@ -149,7 +149,7 @@ export default function TrustyProPricing() {
         <div style={{ backgroundColor: '#0f172a', borderRadius: 12, padding: 36, textAlign: 'center', border: '1px solid #1e293b' }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🚀</div>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f8fafc', marginBottom: 8 }}>Ready to get started?</h2>
-          <p style={{ color: '#94a3b8', marginBottom: 24 }}>Join thousands of DFW homeowners getting smarter home maintenance — for free.</p>
+          <p style={{ color: '#94a3b8', marginBottom: 24 }}>Join the DFW homeowners signing up for smarter home maintenance — free for homeowners.</p>
           <a
             href="/waitlist/homeowner"
             style={{ backgroundColor: '#0ea5e9', color: '#fff', textDecoration: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, display: 'inline-block' }}

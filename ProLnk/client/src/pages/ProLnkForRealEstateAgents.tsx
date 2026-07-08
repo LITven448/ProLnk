@@ -64,7 +64,7 @@ export default function ProLnkForRealEstateAgents() {
         <div style={{ background: '#F5E642', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Partner with ProLnk</h3>
           <p style={{ color: '#0A1628', marginBottom: 4 }}>Join DFW's fastest-growing agent referral network.</p>
-          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 agents@prolnk.io</p>
+          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 hello@prolnk.xyz</p>
         </div>
       </div>
     </div>

@@ -7,32 +7,32 @@ export default function ProLnkContactPage() {
     {
       type: "I'm a Service Pro",
       icon: "🔧",
-      detail: "Join the DFW waitlist at prolnk.io/pro-signup. 490+ pros ahead of you — charter pricing locks at $149/mo. Questions? andrew@lit-ventures.com"
+      detail: "Join the DFW waitlist at prolnk.xyz/pro-waitlist. Early access is open — plans from $99/mo. Questions? hello@prolnk.xyz"
     },
     {
       type: "I'm a Homeowner",
       icon: "🏠",
-      detail: "Get your home on the ProLnk network at prolnk.io/homeowner. Free to join — get quotes from vetted pros. Questions? andrew@lit-ventures.com"
+      detail: "Get your home on the ProLnk network at prolnk.xyz/waitlist/homeowner. Free to join — get quotes from vetted pros. Questions? hello@prolnk.xyz"
     },
     {
       type: "Press & Media",
       icon: "📰",
-      detail: "ProLnk is the DFW home services platform raising a $2M seed round. For press inquiries, interviews, or story pitches: press@prolnk.io"
+      detail: "ProLnk is the AI-powered home services platform launching in DFW. For press inquiries, interviews, or story pitches: hello@prolnk.xyz"
     },
     {
       type: "Investor Inquiry",
       icon: "💼",
-      detail: "We're raising $2M seed. Deck available on request. Contact Andrew Frakes directly: andrew@lit-ventures.com — Subject: ProLnk Investor"
+      detail: "Interested in what we're building? Contact Andrew Frakes directly: hello@prolnk.xyz — Subject: ProLnk Investor"
     },
     {
       type: "Partnership",
       icon: "🤝",
-      detail: "Real estate agents, insurers, property managers, and HOAs — see our partner program at prolnk.io/partners or email andrew@lit-ventures.com"
+      detail: "Real estate agents, insurers, property managers, and HOAs — see our partner program at prolnk.xyz/partner-program or email hello@prolnk.xyz"
     },
     {
       type: "Technical Support",
       icon: "🛠️",
-      detail: "Platform issues, bug reports, or feature requests: support@prolnk.io. We respond within 24 hours during launch phase."
+      detail: "Platform issues, bug reports, or feature requests: hello@prolnk.xyz. We respond within 24 hours during launch phase."
     },
   ];
 
@@ -62,11 +62,11 @@ export default function ProLnkContactPage() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
           <div style={{ background: "#0d1f3c", borderRadius: 14, padding: "1.2rem", border: "1px solid #1e3a5f" }}>
             <div style={{ fontWeight: 700, marginBottom: "0.4rem" }}>🌐 Platform</div>
-            <div style={{ color: "#94a3b8", fontSize: "0.85rem" }}>prolnk.io · trustypro.io</div>
+            <div style={{ color: "#94a3b8", fontSize: "0.85rem" }}>prolnk.xyz</div>
           </div>
           <div style={{ background: "#0d1f3c", borderRadius: 14, padding: "1.2rem", border: "1px solid #1e3a5f" }}>
             <div style={{ fontWeight: 700, marginBottom: "0.4rem" }}>📧 General</div>
-            <div style={{ color: "#94a3b8", fontSize: "0.85rem" }}>andrew@lit-ventures.com</div>
+            <div style={{ color: "#94a3b8", fontSize: "0.85rem" }}>hello@prolnk.xyz</div>
           </div>
         </div>
       </div>

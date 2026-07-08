@@ -10,11 +10,11 @@ interface CompareRow {
 const rows: CompareRow[] = [
   { feature: 'Upfront lead cost', prolnk: '$0 — no pay per lead', angi: '$25–$300 per lead (win or lose)', prolnkGood: true },
   { feature: 'Lead quality guarantee', prolnk: 'Admin-reviewed, AI-screened homeowners', angi: 'Unverified homeowner submissions', prolnkGood: true },
-  { feature: 'Passive income streams', prolnk: '4-level network cascade + subscription overrides', angi: 'None', prolnkGood: true },
+  { feature: 'Referral rewards', prolnk: 'Referral overrides on pros you bring in', angi: 'None', prolnkGood: true },
   { feature: 'AI photo-to-lead', prolnk: 'Yes — AI detects home damage in photos', angi: 'No', prolnkGood: true },
-  { feature: 'Commission you keep', prolnk: '60% of all match earnings', angi: 'You set price — Angi charges for access, not commission', prolnkGood: true },
+  { feature: 'Platform fee', prolnk: '6–15% of job value — earn back up to 60% of it', angi: 'You set price — Angi charges for access, win or lose', prolnkGood: true },
   { feature: 'Background check', prolnk: 'Required for all active pros', angi: 'Optional — "screened" is a paid badge', prolnkGood: true },
-  { feature: 'Monthly platform cost', prolnk: '$149/mo flat — locked forever', angi: '$0 + pay $25–$300 per lead', prolnkGood: true },
+  { feature: 'Monthly platform cost', prolnk: 'From $99/mo flat — no per-lead fees', angi: '$0 + pay $25–$300 per lead', prolnkGood: true },
   { feature: 'Lead recycling', prolnk: 'Each lead assigned to 1 matched pro', angi: 'Same lead sold to 3–5 pros simultaneously', prolnkGood: true },
   { feature: 'Review system', prolnk: 'Verified post-job reviews only', angi: 'Open reviews — gameable and unverified', prolnkGood: true },
   { feature: 'Recourse for bad leads', prolnk: 'Admin dispute review + credit', angi: 'Limited — most complaints denied', prolnkGood: true },
@@ -105,10 +105,10 @@ export default function ProLnkVsAngi() {
               <div style={{ fontWeight: 800, fontSize: 18, color: '#FCD34D', marginBottom: 16 }}>ProLnk (10 leads)</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14, color: '#CBD5E1' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Upfront lead cost</span><span style={{ color: '#22C55E', fontWeight: 700 }}>$0</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Monthly subscription</span><span style={{ color: '#94A3B8' }}>$149/mo</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Monthly subscription (Pro plan)</span><span style={{ color: '#94A3B8' }}>$149/mo</span></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Effective cost per lead</span><span style={{ color: '#22C55E', fontWeight: 700 }}>$14.90</span></div>
                 <div style={{ borderTop: '1px solid #2D4A7A', paddingTop: 10, display: 'flex', justifyContent: 'space-between', fontWeight: 700 }}><span>Monthly lead spend</span><span style={{ color: '#22C55E' }}>$149</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Network income potential</span><span style={{ color: '#FCD34D', fontWeight: 700 }}>$200–$800+</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>Referral overrides</span><span style={{ color: '#FCD34D', fontWeight: 700 }}>Available</span></div>
               </div>
             </div>
           </div>
@@ -141,9 +141,9 @@ export default function ProLnkVsAngi() {
         {/* CTA */}
         <div style={{ textAlign: 'center', padding: '40px', background: '#1E3A5F', borderRadius: 16, border: '2px solid #FCD34D' }}>
           <h3 style={{ fontSize: 28, fontWeight: 900, margin: '0 0 12px', color: '#FCD34D' }}>Ready to Make the Switch?</h3>
-          <p style={{ color: '#94A3B8', margin: '0 0 28px', fontSize: 16 }}>Charter membership — only 500 spots available. $149/mo locked forever.</p>
+          <p style={{ color: '#94A3B8', margin: '0 0 28px', fontSize: 16 }}>Early access is open. Plans from $99/mo — no per-lead fees.</p>
           <a href="/apply" style={{ display: 'inline-block', padding: '16px 40px', background: '#FCD34D', color: '#0F172A', borderRadius: 8, fontWeight: 800, textDecoration: 'none', fontSize: 18 }}>
-            Apply for Charter Membership →
+            Join the Waitlist →
           </a>
           <div style={{ color: '#64748B', fontSize: 13, marginTop: 12 }}>No credit card required to apply</div>
         </div>

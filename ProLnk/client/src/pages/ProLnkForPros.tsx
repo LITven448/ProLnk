@@ -23,11 +23,11 @@ export default function ProLnkForPros() {
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔧</div>
           <h1 style={{ fontSize: 36, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>ProLnk for Service Pros</h1>
-          <p style={{ fontSize: 18, color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>No bidding wars. Pre-qualified leads. 5 income streams. Charter tier now open.</p>
+          <p style={{ fontSize: 18, color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>No bidding wars. Pre-qualified leads. Transparent pricing. Early access now open.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 16, marginBottom: 48 }}>
-          {[['🎯','Pre-Qualified Leads','Homeowners already vetted — no tire-kickers'],['💸','5 Income Streams','Direct jobs, referrals, subscriptions, overrides, origination'],['🚫','No Bidding Wars','Matched directly — not competing on price'],['🏆','Charter Tier Open','First 25 pros lock in lowest rate forever']].map(([icon,title,desc],i) => (
+          {[['🎯','Pre-Qualified Leads','Homeowners already vetted — no tire-kickers'],['💸','More Ways to Earn','Matched jobs, referral overrides, and origination rights'],['🚫','No Bidding Wars','Matched directly — not competing on price'],['🏆','Early Access Open','Join the waitlist to be first in line at launch']].map(([icon,title,desc],i) => (
             <div key={i} style={{ background: '#132040', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{title}</div>
@@ -58,15 +58,15 @@ export default function ProLnkForPros() {
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>Projected Year 1 ProLnk Income</div>
               <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642' }}>{income}</div>
-              <div style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Across all 5 income streams at Charter tier rates</div>
+              <div style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Estimated job revenue through ProLnk matching in your market</div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#F5E642', borderRadius: 16, padding: 32, textAlign: 'center' }}>
-          <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Secure Your Charter Spot</h3>
-          <p style={{ color: '#0A1628', marginBottom: 4 }}>Only 25 Charter spots available. First-come, first-served.</p>
-          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 pros@prolnk.io</p>
+          <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Join the Pro Waitlist</h3>
+          <p style={{ color: '#0A1628', marginBottom: 4 }}>Early access is open — first come, first served for launch activation.</p>
+          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 hello@prolnk.xyz</p>
         </div>
       </div>
     </div>

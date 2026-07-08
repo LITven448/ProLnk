@@ -93,7 +93,7 @@ export default function TrustyProForHOAs() {
           <p style={{ color: '#ede9fe', marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>
             Contact us directly to discuss your community's needs. We'll set up a pilot at no cost for the first 30 days.
           </p>
-          <a href="mailto:andrew@lit-ventures.com?subject=HOA Partnership Inquiry" style={{ display: 'inline-block', background: '#fff', color: '#7c3aed', fontWeight: 700, padding: '14px 36px', borderRadius: 8, textDecoration: 'none', fontSize: 16 }}>
+          <a href="mailto:hello@prolnk.xyz?subject=HOA Partnership Inquiry" style={{ display: 'inline-block', background: '#fff', color: '#7c3aed', fontWeight: 700, padding: '14px 36px', borderRadius: 8, textDecoration: 'none', fontSize: 16 }}>
             Email Us to Get Started →
           </a>
         </div>

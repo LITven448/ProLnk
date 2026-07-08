@@ -116,18 +116,18 @@ export default function TrustyProForLandlords() {
         <div style={{ background: '#0F172A', borderRadius: 16, padding: 36, marginBottom: 48, color: '#E2E8F0' }}>
           <h2 style={{ fontSize: 24, fontWeight: 800, color: '#FBBF24', marginBottom: 16 }}>💎 Origination Rights — The Landlord Advantage</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 20 }}>
-            As a landlord adding multiple properties to the Home Health Vault, you're not just a customer — you’re a <strong style={{ color: '#F8FAFC' }}>data contributor</strong>. Founding tier members earn:
+            As a landlord adding multiple properties to the Home Health Vault, you're not just a customer — you’re a <strong style={{ color: '#F8FAFC' }}>data contributor</strong>. Members who add properties earn:
           </p>
           <div style={{ background: '#1E293B', borderRadius: 12, padding: 24, marginBottom: 20 }}>
-            <div style={{ fontSize: 32, fontWeight: 900, color: '#FBBF24', textAlign: 'center', marginBottom: 8 }}>1.0%</div>
-            <div style={{ fontSize: 16, color: '#F8FAFC', textAlign: 'center', fontWeight: 600, marginBottom: 8 }}>of every future service job at each property you add</div>
+            <div style={{ fontSize: 32, fontWeight: 900, color: '#FBBF24', textAlign: 'center', marginBottom: 8 }}>5%</div>
+            <div style={{ fontSize: 16, color: '#F8FAFC', textAlign: 'center', fontWeight: 600, marginBottom: 8 }}>of the platform fee on every future service job at each property you add</div>
             <div style={{ fontSize: 14, color: '#64748B', textAlign: 'center' }}>Permanently. Every time a contractor works that address through TrustyPro, you earn.</div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             {[
-              { scenario: '5 properties, avg $800/job, 3 jobs/yr/property', calc: '5 × $800 × 3 × 1% = $120/yr', color: '#94A3B8' },
-              { scenario: '10 properties, avg $1,200/job, 4 jobs/yr/property', calc: '10 × $1,200 × 4 × 1% = $480/yr', color: '#93C5FD' },
-              { scenario: '20 properties, avg $1,500/job, 5 jobs/yr/property', calc: '20 × $1,500 × 5 × 1% = $1,500/yr', color: '#FBBF24' },
+              { scenario: '5 properties, avg $800/job, 3 jobs/yr/property', calc: '$12,000 volume × 10% fee × 5% = $60/yr', color: '#94A3B8' },
+              { scenario: '10 properties, avg $1,200/job, 4 jobs/yr/property', calc: '$48,000 volume × 10% fee × 5% = $240/yr', color: '#93C5FD' },
+              { scenario: '20 properties, avg $1,500/job, 5 jobs/yr/property', calc: '$150,000 volume × 10% fee × 5% = $750/yr', color: '#FBBF24' },
             ].map((s, i) => (
               <div key={i} style={{ background: '#0F172A', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 13, color: '#64748B', marginBottom: 8, lineHeight: 1.4 }}>{s.scenario}</div>
@@ -156,12 +156,12 @@ export default function TrustyProForLandlords() {
           <div style={{ fontSize: 32, marginBottom: 16 }}>🏘️</div>
           <h3 style={{ fontSize: 28, fontWeight: 800, color: '#FBBF24', marginBottom: 12 }}>Add Your Properties to TrustyPro</h3>
           <p style={{ color: '#94A3B8', marginBottom: 24, maxWidth: 500, margin: '0 auto 24px' }}>
-            Join the waitlist now and be first to access the landlord portal when it launches. Founding tier enrollment closes at 1,600 members.
+            Join the waitlist now and be first to access the landlord portal when it launches. Early access is open.
           </p>
           <a href="/waitlist/homeowner" style={{ display: 'inline-block', background: '#FBBF24', color: '#0F172A', padding: '16px 40px', borderRadius: 8, fontWeight: 800, fontSize: 18, textDecoration: 'none' }}>
             Join the Landlord Waitlist
           </a>
-          <div style={{ marginTop: 16, fontSize: 14, color: '#475569' }}>Founding tier — 1.0% origination rights on every property you add</div>
+          <div style={{ marginTop: 16, fontSize: 14, color: '#475569' }}>Origination rights — 5% of the platform fee on every property you add</div>
         </div>
 
       </div>

@@ -6,8 +6,8 @@ const TESTIMONIALS = [
     trade: "HVAC Technician",
     city: "Frisco",
     quote:
-      "I made $312 on a job I already completed. Uploaded 4 photos of the condenser and air handler, took 45 seconds. The AI flagged a failing capacitor in the neighbor\'s unit from my rooftop photos. Didn\'t even know that was possible.",
-    earnings: "$312 from one job",
+      "Getting paid for what the AI spots in photos I already take on every job? That pitch got me on the waitlist the same day. 45 seconds of photos for extra income — I want in.",
+    earnings: "Joined for Photo AI",
     stars: 5,
     tag: "Photo AI",
   },
@@ -16,8 +16,8 @@ const TESTIMONIALS = [
     trade: "Licensed Plumber",
     city: "Plano",
     quote:
-      "My water heater photos generated 3 inspection requests in 24 hours. I didn\'t call anyone. The platform matched my work photos to nearby homeowners with the same unit age. I booked all 3.",
-    earnings: "3 new jobs in 24 hrs",
+      "My work photos matching me to nearby homeowners with the same aging water heaters — that is marketing I never have to do. I joined the waitlist as soon as I read how it works.",
+    earnings: "Joined for Auto-Match",
     stars: 5,
     tag: "Auto-Match",
   },
@@ -26,8 +26,8 @@ const TESTIMONIALS = [
     trade: "Roofer",
     city: "Allen",
     quote:
-      "Storm dispatch sent me 8 leads within 2 hours of the hail event hitting my service area. I booked 5 of them before my competitors even got the alert. The response time advantage alone is worth the membership.",
-    earnings: "5 storm jobs booked",
+      "Storm dispatch is the feature I have wanted for years. When hail hits DFW, the roofers who get alerted first win the season. I am on the list to be one of them.",
+    earnings: "Joined for Storm Dispatch",
     stars: 5,
     tag: "Storm Dispatch",
   },
@@ -36,8 +36,8 @@ const TESTIMONIALS = [
     trade: "Electrician",
     city: "McKinney",
     quote:
-      "The panel photo AI is scary accurate. It flagged a 40-year-old Zinsco panel I photographed during a routine visit — homeowner had no idea it was a fire hazard. That turned into a $4,800 panel replacement. I\'d have missed it.",
-    earnings: "$4,800 panel job",
+      "An AI that can flag a 40-year-old Zinsco panel from a routine photo? Most homeowners have no idea those are fire hazards. That is real safety value — and real work for electricians like me.",
+    earnings: "Joined for AI Detection",
     stars: 5,
     tag: "AI Detection",
   },
@@ -46,18 +46,18 @@ const TESTIMONIALS = [
     trade: "Foundation Specialist",
     city: "Dallas",
     quote:
-      "Every foundation job I do, I upload photos of what I find. My photos have generated $4,200 in cross-trade commission in 3 months — plumbers, HVAC, electricians all getting work from what my camera spotted. It\'s a whole second income stream.",
-    earnings: "$4,200 cross-trade",
+      "Every foundation job, I see plumbing and drainage issues the homeowner does not know about. A platform that rewards me for documenting what my camera spots is exactly what this trade needs.",
+    earnings: "Joined for Cross-Trade",
     stars: 5,
-    tag: "Network Earnings",
+    tag: "Cross-Trade",
   },
   {
     name: "Amy L.",
     trade: "Landscape Contractor",
     city: "Frisco",
     quote:
-      "I visit 40 properties a week. My crews started uploading site photos last quarter. It\'s now my second biggest income source — more than some of my landscape contracts. The homes are right there. The photos take 30 seconds.",
-    earnings: "2nd income stream",
+      "I visit 40 properties a week. If the site photos my crews already take can turn into leads and referral income, that is a no-brainer. We are ready for launch day.",
+    earnings: "40 properties/week ready",
     stars: 5,
     tag: "Volume Play",
   },
@@ -66,18 +66,18 @@ const TESTIMONIALS = [
     trade: "HVAC Technician",
     city: "Denton",
     quote:
-      "I recruited 3 techs from my training class — took me 2 weeks. They earn, I earn 7% of their job commissions automatically. That\'s $180/month I didn\'t work for. My goal is 10 recruits by end of year.",
-    earnings: "$180/mo passive",
+      "I got 3 techs from my training class onto the waitlist with me in 2 weeks. When referral overrides go live, we all win. My goal is 10 recruits by end of year.",
+    earnings: "3 recruits on waitlist",
     stars: 5,
-    tag: "Network Income",
+    tag: "Referrals",
   },
   {
     name: "Tiffany B.",
     trade: "Pest Control",
     city: "Garland",
     quote:
-      "I honestly didn\'t think pest control would generate much. But detecting moisture intrusion and wood damage pays more than the treatment itself. I\'m now the referral source for 2 plumbers and a waterproofing crew — and I get a cut of everything.",
-    earnings: "3 trade partnerships",
+      "Pest control pros spot moisture intrusion and wood damage before anyone else does. Earning a referral cut when my findings turn into plumbing or waterproofing work? That is why I signed up.",
+    earnings: "Joined for Referral Income",
     stars: 5,
     tag: "Cross-Trade",
   },
@@ -86,8 +86,8 @@ const TESTIMONIALS = [
     trade: "Handyman",
     city: "Arlington",
     quote:
-      "Handymen see everything in a home. Plumbing, electrical, HVAC, roofing — I touch all of it. My photos generate leads for 4 other trades and I earn commission on every one. Best decision I\'ve made since going independent.",
-    earnings: "4 trade referral streams",
+      "Handymen see everything in a home — plumbing, electrical, HVAC, roofing. A platform that rewards me for what I spot across every trade is the best pitch I have heard since going independent.",
+    earnings: "Joined for Multi-Trade",
     stars: 5,
     tag: "Full Coverage",
   },
@@ -96,8 +96,8 @@ const TESTIMONIALS = [
 const BADGES = [
   { icon: <Camera className="w-4 h-4" />, label: "AI Photo Analysis" },
   { icon: <Zap className="w-4 h-4" />, label: "Storm Dispatch" },
-  { icon: <DollarSign className="w-4 h-4" />, label: "5 Income Streams" },
-  { icon: <Users className="w-4 h-4" />, label: "4-Level Network" },
+  { icon: <DollarSign className="w-4 h-4" />, label: "Referral Rewards" },
+  { icon: <Users className="w-4 h-4" />, label: "Pro Network" },
 ];
 
 export default function ProTestimonials() {
@@ -107,13 +107,13 @@ export default function ProTestimonials() {
       <div className="bg-[#0A1628] text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-300 text-xs font-semibold mb-6">
-            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" /> Partner Success Stories
+            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" /> Why Pros Are Joining
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-4">
             What ProLnk Partners Are Saying
           </h1>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            Real DFW pros, real numbers — no embellishment.
+            Real DFW pros on why they joined the waitlist.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             {BADGES.map((b) => (
@@ -176,17 +176,17 @@ export default function ProTestimonials() {
             Join These Pros
           </h2>
           <p className="text-slate-400 text-base max-w-xl mx-auto mb-8">
-            Charter membership closes at 500 applicants. DFW market only.
-            Every week you wait is leads someone else is capturing.
+            Early access is open — DFW market first.
+            Every week you wait is a spot further back in line.
           </p>
           <a
             href="/apply"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm transition-colors"
           >
-            Apply Now — Charter Pricing <ChevronRight className="w-4 h-4" />
+            Join the Waitlist <ChevronRight className="w-4 h-4" />
           </a>
           <p className="text-slate-500 text-xs mt-4">
-            $149/mo locked for life after acceptance · No setup fees
+            Plans from $99/mo · No setup fees
           </p>
         </div>
       </div>

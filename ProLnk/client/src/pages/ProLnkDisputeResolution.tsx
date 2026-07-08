@@ -28,7 +28,7 @@ export default function ProLnkDisputeResolution() {
       { icon: '📄', title: 'Review Your Quote', desc: 'Compare final invoice to the original quote. Identify line items that differ.' },
       { icon: '💬', title: 'In-App Resolution', desc: 'Message your pro directly — most pricing questions resolve within an hour.' },
       { icon: '🧑‍⚖️', title: 'Escalate to ProLnk', desc: 'If unresolved, ProLnk reviews DFW standard rates and mediates a fair amount.' },
-      { icon: '✅', title: 'Adjusted Payment', desc: 'If overcharge confirmed, difference is refunded. Charter pros are held to rate guidelines.' },
+      { icon: '✅', title: 'Adjusted Payment', desc: 'If overcharge confirmed, difference is refunded. Verified pros are held to rate guidelines.' },
     ],
     conduct: [
       { icon: '⚠️', title: 'Report Immediately', desc: 'Use the in-app Report button on the job screen. All reports go directly to our safety team.' },
@@ -78,7 +78,7 @@ export default function ProLnkDisputeResolution() {
                 : <button onClick={() => { setDisputeType(''); setPhase(0); }} style={{ background: '#F5E642', border: 'none', borderRadius: 8, padding: '10px 28px', color: '#0A1628', fontWeight: 700, cursor: 'pointer' }}>Start Over 🔄</button>
               }
             </div>
-            <p style={{ textAlign: 'center', marginTop: 20, color: '#475569', fontSize: 13 }}>Need help now? Tap Support in the app or email support@prolnk.io</p>
+            <p style={{ textAlign: 'center', marginTop: 20, color: '#475569', fontSize: 13 }}>Need help now? Tap Support in the app or email hello@prolnk.xyz</p>
           </div>
         )}
       </div>

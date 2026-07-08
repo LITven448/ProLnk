@@ -20,7 +20,7 @@ const featureMap: Record<string, { icon: string; items: string[] }> = {
 };
 
 const timeline = [
-  { phase: 'Q2 2026', label: 'Beta Testing', desc: 'Invite-only beta for founding pros', done: false },
+  { phase: 'Q2 2026', label: 'Beta Testing', desc: 'Invite-only beta for early waitlist pros', done: false },
   { phase: 'Q3 2026', label: 'iOS Launch', desc: 'App Store release for iPhone users', done: false },
   { phase: 'Q3 2026', label: 'Android Launch', desc: 'Google Play release alongside iOS', done: false },
   { phase: 'Q4 2026', label: 'Full Feature Set', desc: 'All vault and AI features live on mobile', done: false },

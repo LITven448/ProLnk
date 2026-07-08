@@ -16,13 +16,13 @@ export default function ProLnkPricingTransparency() {
 
   const priceData: Record<string, { low: string; high: string; typical: string; verify: string }> = {
     hvac_tune: { low: '$89', high: '$149', typical: '$119', verify: 'ProLnk checks against ACCA DFW seasonal rate schedule. Includes filter check, coil cleaning, refrigerant level check.' },
-    hvac_replace: { low: '$4,200', high: '$9,800', typical: '$6,500', verify: 'Charter pros submit equipment quotes pre-install. Brand, SEER rating, and labor all disclosed before work starts.' },
+    hvac_replace: { low: '$4,200', high: '$9,800', typical: '$6,500', verify: 'ProLnk pros submit equipment quotes pre-install. Brand, SEER rating, and labor all disclosed before work starts.' },
     plumb_leak: { low: '$150', high: '$450', typical: '$280', verify: 'Pro must diagnose and quote before opening walls or floors. No surprise charges for access.' },
     plumb_water: { low: '$800', high: '$2,200', typical: '$1,400', verify: 'Tank vs tankless pricing differs significantly. Pro specifies unit model and labor separately in the quote.' },
-    elec_panel: { low: '$1,800', high: '$4,500', typical: '$2,800', verify: 'Charter electricians disclose permit fees upfront. ProLnk requires itemized quote before any work.' },
+    elec_panel: { low: '$1,800', high: '$4,500', typical: '$2,800', verify: 'ProLnk electricians disclose permit fees upfront. ProLnk requires itemized quote before any work.' },
     elec_outlet: { low: '$75', high: '$225', typical: '$140', verify: 'Per-outlet pricing. Runs longer than 20ft may add to cost — pro quotes per linear foot.' },
     roof_inspect: { low: '$150', high: '$350', typical: '$225', verify: 'Inspection is separate from repair. ProLnk prohibits bundling inspection fees into repair quotes.' },
-    pest_quarterly: { low: '$85', high: '$175', typical: '$120', verify: 'DFW quarterly treatment rates are benchmarked quarterly. Charter pest pros agree to rate caps.' },
+    pest_quarterly: { low: '$85', high: '$175', typical: '$120', verify: 'DFW quarterly treatment rates are benchmarked quarterly. ProLnk pest pros agree to rate caps.' },
   };
 
   const selected = service ? priceData[service] : null;
@@ -76,7 +76,7 @@ export default function ProLnkPricingTransparency() {
           </div>
         )}
 
-        <p style={{ textAlign: 'center', marginTop: 32, color: '#475569', fontSize: 12 }}>Rates updated quarterly. Charter pros agree to DFW standard ranges at sign-up.</p>
+        <p style={{ textAlign: 'center', marginTop: 32, color: '#475569', fontSize: 12 }}>Rates updated quarterly. ProLnk pros agree to DFW standard ranges at sign-up.</p>
       </div>
     </div>
   );

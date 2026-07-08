@@ -39,9 +39,9 @@ const terms: Record<UserType, { title: string; rights: string[]; responsibilitie
       '🔒 Keep your referral links and credentials confidential',
     ],
     highlights: [
-      'Commission rates locked for Charter tier ($149/mo, 25 referrals)',
-      'Network income cascades 4 levels deep — no cap on depth',
-      'Charter tier closes at 500 applications — act before it’s full',
+      'Membership plans: Core $99/mo, Pro $149/mo, Business $249/mo',
+      'Referral overrides reach 4 levels deep — no cap on depth',
+      'Early access is open — join the waitlist to get activated first',
     ],
   },
   contractor: {
@@ -111,7 +111,7 @@ export default function ProLnkTermsOfService() {
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '16px 20px' }}>
           <p style={{ color: '#94A3B8', fontSize: 13, margin: 0, lineHeight: 1.6 }}>
-            ⚖️ Disputes are resolved via binding arbitration in Dallas, TX. Full terms at prolnk.io/legal. Last updated May 2026.
+            ⚖️ Disputes are resolved via binding arbitration in Dallas, TX. Full terms at prolnk.xyz/terms. Last updated May 2026.
           </p>
         </div>
       </div>

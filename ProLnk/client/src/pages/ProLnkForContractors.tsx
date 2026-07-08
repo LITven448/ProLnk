@@ -4,24 +4,25 @@ const differentiators = [
   { emoji: '🎯', label: 'Match-Based, Not Pay-Per-Lead', desc: 'You never pay for a lead unless you win the job. Angi charges $15–100 per lead whether you get hired or not.' },
   { emoji: '🚫', label: 'No Shared Leads', desc: 'On Thumbtack, up to 5 contractors get the same lead. On ProLnk, you get exclusive matches.' },
   { emoji: '🤖', label: 'AI-Powered Matching', desc: 'Our algorithm routes jobs based on your trade, location, availability, and specialization — not just who bids lowest.' },
-  { emoji: '💸', label: '5 Income Streams', desc: 'Beyond job income, earn from your network of pros, homeowner referrals, and permanent origination rights.' },
-  { emoji: '📈', label: 'Tier-Based Earnings Growth', desc: 'The more you complete, the higher your commission tier — from 12% at New to 70% at Elite status.' },
+  { emoji: '💸', label: 'More Ways to Earn', desc: 'Beyond job income, earn referral overrides from pros you bring in and origination rights on homes you document.' },
+  { emoji: '📈', label: 'Earn Back Your Platform Fees', desc: 'The pro completing the job keeps a share of the platform fee — 40% on Core, 50% on Pro, 60% on Business.' },
 ];
 
 const testimonials = [
-  { name: 'Marcus T.', trade: 'Master Plumber, Dallas TX', quote: 'I was spending $800/month on Angi leads and closing maybe 20%. ProLnk sends me jobs I actually win.', stars: 5 },
-  { name: 'Renee S.', trade: 'HVAC Contractor, Fort Worth', quote: 'The network income surprised me. I brought 3 friends on and now I earn from their jobs too. Game changer.', stars: 5 },
-  { name: 'DeShawn P.', trade: 'Licensed Electrician, Frisco', quote: 'Closed my first ProLnk job within 48 hours of joining. Haven\’t looked back.', stars: 5 },
+  { name: 'Marcus T.', trade: 'Master Plumber, Dallas TX', quote: 'I was spending $800/month on Angi leads and closing maybe 20%. A platform where I only pay when I win? I joined the waitlist the day I heard about it.', stars: 5 },
+  { name: 'Renee S.', trade: 'HVAC Contractor, Fort Worth', quote: 'The referral rewards sold me. I got 3 friends on the waitlist with me — we are ready for day one.', stars: 5 },
+  { name: 'DeShawn P.', trade: 'Licensed Electrician, Frisco', quote: 'Signed up in under five minutes. Exclusive matches instead of shared leads is exactly what this industry needs.', stars: 5 },
 ];
 
 export default function ProLnkForContractors() {
   const [jobsPerMonth, setJobsPerMonth] = useState(8);
   const [avgJobValue, setAvgJobValue] = useState(1200);
-  const [tier, setTier] = useState(0.12);
+  const [tier, setTier] = useState(0.40);
 
-  const directEarnings = jobsPerMonth * avgJobValue * tier;
-  const networkBonus = directEarnings * 0.15;
-  const totalMonthly = directEarnings + networkBonus;
+  const monthlyRevenue = jobsPerMonth * avgJobValue;
+  const platformFees = monthlyRevenue * 0.10;
+  const earnedBack = platformFees * tier;
+  const totalMonthly = monthlyRevenue - platformFees + earnedBack;
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#fff' }}>
@@ -33,7 +34,7 @@ export default function ProLnkForContractors() {
             <span style={{ color: '#F5E642' }}>Build Real Income.</span>
           </h1>
           <p style={{ fontSize: 19, color: '#c0c8d8', lineHeight: 1.7, marginBottom: 32 }}>
-            ProLnk is the only platform that matches you exclusively with homeowners who need exactly your trade — and pays you 5 ways to grow your business.
+            ProLnk is the only platform that matches you exclusively with homeowners who need exactly your trade — and rewards you for growing with the network.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '16px 36px', fontSize: 17, fontWeight: 800, cursor: 'pointer' }}>Join the Waitlist</button>
@@ -44,8 +45,8 @@ export default function ProLnkForContractors() {
 
       <div style={{ maxWidth: 880, margin: '0 auto', padding: '60px 24px' }}>
         <section style={{ marginBottom: 64 }}>
-          <h2 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, textAlign: 'center' }}>💰 Partner Income Calculator</h2>
-          <p style={{ color: '#a0aec0', textAlign: 'center', marginBottom: 36, fontSize: 15 }}>Estimate your monthly earnings based on your job volume and tier.</p>
+          <h2 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, textAlign: 'center' }}>💰 Partner Earnings Calculator</h2>
+          <p style={{ color: '#a0aec0', textAlign: 'center', marginBottom: 36, fontSize: 15 }}>Estimate what you keep each month based on your job volume and plan. Platform fee: 6–15% of job value (10% shown).</p>
           <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 36, border: '1px solid rgba(245,230,66,0.2)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginBottom: 32 }}>
               <div>
@@ -62,14 +63,12 @@ export default function ProLnkForContractors() {
               </div>
             </div>
             <div style={{ marginBottom: 28 }}>
-              <label style={{ display: 'block', fontSize: 14, fontWeight: 700, color: '#a0aec0', marginBottom: 12 }}>Your Partner Tier</label>
+              <label style={{ display: 'block', fontSize: 14, fontWeight: 700, color: '#a0aec0', marginBottom: 12 }}>Your Plan (fee keep rate)</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {[
-                  { label: 'New (12%)', value: 0.12 },
-                  { label: 'Rising (20%)', value: 0.20 },
-                  { label: 'Pro (35%)', value: 0.35 },
-                  { label: 'Expert (50%)', value: 0.50 },
-                  { label: 'Elite (70%)', value: 0.70 },
+                  { label: 'Core — keep 40% of fee', value: 0.40 },
+                  { label: 'Pro — keep 50% of fee', value: 0.50 },
+                  { label: 'Business — keep 60% of fee', value: 0.60 },
                 ].map(t => (
                   <button key={t.value} onClick={() => setTier(t.value)}
                     style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: tier === t.value ? '#F5E642' : 'rgba(255,255,255,0.2)', background: tier === t.value ? '#F5E642' : 'transparent', color: tier === t.value ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
@@ -80,16 +79,16 @@ export default function ProLnkForContractors() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, textAlign: 'center' }}>
               <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${Math.round(directEarnings).toLocaleString()}</div>
-                <div style={{ fontSize: 13, color: '#a0aec0', marginTop: 4 }}>Direct Match Earnings</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${Math.round(monthlyRevenue).toLocaleString()}</div>
+                <div style={{ fontSize: 13, color: '#a0aec0', marginTop: 4 }}>Monthly Job Revenue</div>
               </div>
               <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>+${Math.round(networkBonus).toLocaleString()}</div>
-                <div style={{ fontSize: 13, color: '#a0aec0', marginTop: 4 }}>Network Bonus (est.)</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>+${Math.round(earnedBack).toLocaleString()}</div>
+                <div style={{ fontSize: 13, color: '#a0aec0', marginTop: 4 }}>Platform Fees Earned Back</div>
               </div>
               <div style={{ background: '#F5E642', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628' }}>${Math.round(totalMonthly).toLocaleString()}</div>
-                <div style={{ fontSize: 13, color: '#0A1628', fontWeight: 700, marginTop: 4 }}>Total Monthly Income</div>
+                <div style={{ fontSize: 13, color: '#0A1628', fontWeight: 700, marginTop: 4 }}>You Keep (After Fees)</div>
               </div>
             </div>
             <p style={{ fontSize: 12, color: '#555', textAlign: 'center', marginTop: 16 }}>Estimates based on platform averages. Actual results vary by market and trade.</p>
@@ -127,9 +126,9 @@ export default function ProLnkForContractors() {
         </section>
 
         <section style={{ background: '#F5E642', borderRadius: 16, padding: 48, textAlign: 'center' }}>
-          <h2 style={{ fontSize: 32, fontWeight: 800, color: '#0A1628', marginBottom: 12 }}>Waitlist Is Open — 500 Spots Only</h2>
-          <p style={{ color: '#1a1a2e', fontSize: 16, marginBottom: 28, lineHeight: 1.7 }}>Charter partners lock in the highest commission tiers and lifetime pricing at $149/mo. Once 500 applications are in, waitlist closes.</p>
-          <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 10, padding: '16px 40px', fontSize: 17, fontWeight: 800, cursor: 'pointer' }}>Claim My Partner Spot →</button>
+          <h2 style={{ fontSize: 32, fontWeight: 800, color: '#0A1628', marginBottom: 12 }}>Early Access Is Open</h2>
+          <p style={{ color: '#1a1a2e', fontSize: 16, marginBottom: 28, lineHeight: 1.7 }}>Plans from $99/mo with no per-lead fees. Join the waitlist now to be first in line when matching goes live in DFW.</p>
+          <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 10, padding: '16px 40px', fontSize: 17, fontWeight: 800, cursor: 'pointer' }}>Join the Waitlist →</button>
         </section>
       </div>
     </div>

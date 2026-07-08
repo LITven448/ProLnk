@@ -10,8 +10,8 @@ const rows: CompareRow[] = [
   { feature: 'Lead model', prolnk: '$0 upfront — subscription only', ha: '$15–$300+ per lead regardless of outcome' },
   { feature: 'Leads sold to multiple pros', prolnk: 'Exclusive match — 1 lead → 1 pro', ha: 'Same lead sold to 4–6 contractors' },
   { feature: 'Lead verification', prolnk: 'AI + admin reviewed before delivery', ha: 'Self-reported homeowner data only' },
-  { feature: 'Passive / network income', prolnk: '4-level cascade + subscription override', ha: 'None' },
-  { feature: 'Platform fee transparency', prolnk: '$149/mo flat — no surprises', ha: 'Lead prices fluctuate, mandatory profile fees' },
+  { feature: 'Referral rewards', prolnk: 'Overrides on pros you refer', ha: 'None' },
+  { feature: 'Platform fee transparency', prolnk: 'From $99/mo flat — no surprises', ha: 'Lead prices fluctuate, mandatory profile fees' },
   { feature: 'Background check', prolnk: 'Required — verified by admin', ha: 'Optional "screened" badge — paid tier only' },
   { feature: 'Review integrity', prolnk: 'Post-job verified reviews', ha: 'Open review system — frequently gamed' },
   { feature: 'Customer service for lead disputes', prolnk: 'Human admin review within 48h', ha: 'Largely automated — most disputes denied' },
@@ -124,14 +124,14 @@ export default function ProLnkVsHomeAdvisor() {
               <h3 style={{ fontSize: 20, fontWeight: 800, color: '#FCD34D', margin: '0 0 20px' }}>ProLnk — 1 Year</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontSize: 14 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Profile listing fee</span><span style={{ color: '#22C55E' }}>$0</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Monthly subscription (12)</span><span style={{ color: '#94A3B8' }}>$1,788/yr</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Pro plan subscription (12 mo)</span><span style={{ color: '#94A3B8' }}>$1,788/yr</span></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Upfront lead cost</span><span style={{ color: '#22C55E' }}>$0</span></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Network earnings (est.)</span><span style={{ color: '#FCD34D' }}>+$3,000–$8,000</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Platform fees earned back</span><span style={{ color: '#FCD34D' }}>Up to 60% of fees</span></div>
                 <div style={{ borderTop: '1px solid #2D4A7A', paddingTop: 12, display: 'flex', justifyContent: 'space-between', fontWeight: 800 }}>
-                  <span>Net platform cost</span>
-                  <span style={{ color: '#22C55E', fontSize: 18 }}>−$1,788 to +$6,212</span>
+                  <span>Total platform cost</span>
+                  <span style={{ color: '#22C55E', fontSize: 18 }}>−$1,788</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#FCD34D', fontWeight: 700 }}><span>vs. HomeAdvisor savings</span><span>$15,662+</span></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#FCD34D', fontWeight: 700 }}><span>vs. HomeAdvisor savings</span><span>$15,000+</span></div>
               </div>
             </div>
           </div>
@@ -161,8 +161,8 @@ export default function ProLnkVsHomeAdvisor() {
               <h3 style={{ fontSize: 16, fontWeight: 700, color: '#14532D', margin: '0 0 8px' }}>What ProLnk Was Built to Fix</h3>
               <p style={{ color: '#166534', margin: 0, fontSize: 14, lineHeight: 1.7 }}>
                 ProLnk was built specifically because the pay-per-lead model fundamentally misaligns incentives — platforms make more money when they sell more leads, not when pros succeed. 
-                Our subscription model means we win when you win. 60% of your earnings stay with you. 
-                The network income system means your best move is to grow the platform, not game it.
+                Our subscription model means we win when you win — a simple 6–15% platform fee, with up to 60% of it earned back by the pro who completes the job. 
+                Referral rewards mean your best move is to grow the platform, not game it.
               </p>
             </div>
           </div>
@@ -171,9 +171,9 @@ export default function ProLnkVsHomeAdvisor() {
         {/* CTA */}
         <div style={{ textAlign: 'center', padding: '40px', background: '#1E3A5F', borderRadius: 16, border: '2px solid #FCD34D', marginTop: 48 }}>
           <h3 style={{ fontSize: 28, fontWeight: 900, margin: '0 0 12px', color: '#FCD34D' }}>Stop Paying Per Lead</h3>
-          <p style={{ color: '#94A3B8', margin: '0 0 28px', fontSize: 16 }}>Charter membership — $149/mo locked forever. Only 500 spots available.</p>
+          <p style={{ color: '#94A3B8', margin: '0 0 28px', fontSize: 16 }}>Early access is open. Plans from $99/mo — no per-lead fees.</p>
           <a href="/apply" style={{ display: 'inline-block', padding: '16px 40px', background: '#FCD34D', color: '#0F172A', borderRadius: 8, fontWeight: 800, textDecoration: 'none', fontSize: 18 }}>
-            Apply for Charter Membership →
+            Join the Waitlist →
           </a>
           <div style={{ color: '#64748B', fontSize: 13, marginTop: 12 }}>No credit card required to apply</div>
         </div>

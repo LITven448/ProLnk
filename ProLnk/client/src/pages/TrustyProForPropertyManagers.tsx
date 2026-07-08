@@ -70,7 +70,7 @@ export default function TrustyProForPropertyManagers() {
         <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
           <div style={{ fontSize: 24 }}>🏆</div>
           <div style={{ fontWeight: 800, color: "#0A1628", fontSize: 20, margin: "8px 0 4px" }}>Get Early Access in DFW</div>
-          <div style={{ color: "#1e3a5f", fontSize: 14 }}>Founding property managers receive lifetime scan credits + priority support.</div>
+          <div style={{ color: "#1e3a5f", fontSize: 14 }}>Early-access property managers receive bonus scan credits + priority support.</div>
         </div>
       </div>
     </div>

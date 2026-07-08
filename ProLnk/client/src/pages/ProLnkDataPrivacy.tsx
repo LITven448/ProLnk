@@ -162,7 +162,7 @@ export default function ProLnkDataPrivacy() {
 
         <div style={{ marginTop: 40, background: '#f3f4f6', borderRadius: 12, padding: 24 }}>
           <p style={{ fontSize: 13, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
-            For privacy questions or to exercise your rights, contact privacy@prolnk.io. Last updated May 2026. ProLnk does not sell personal data to any third party, ever.
+            For privacy questions or to exercise your rights, contact hello@prolnk.xyz. Last updated May 2026. ProLnk does not sell personal data to any third party, ever.
           </p>
         </div>
       </div>

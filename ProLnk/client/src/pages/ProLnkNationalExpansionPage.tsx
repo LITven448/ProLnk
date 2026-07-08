@@ -4,10 +4,10 @@ const markets = [
   {
     city: 'Dallas-Fort Worth',
     state: 'TX',
-    status: 'LIVE NOW',
+    status: 'WAITLIST OPEN',
     population: '7.8M',
     reason: 'Massive contractor shortage, explosive growth, high tech adoption, perfect density for AI matching.',
-    notify: 'You are already in the launch market — sign up today.',
+    notify: 'You are in the launch market — join the waitlist today.',
     color: '#F5E642',
   },
   {
@@ -16,7 +16,7 @@ const markets = [
     status: 'Q3 2026',
     population: '7.3M',
     reason: 'Second largest Texas metro, constant storm-driven repair demand, fragmented contractor market.',
-    notify: 'Join the Houston waitlist to lock your founding partner rate.',
+    notify: 'Join the Houston waitlist to be first in line for early access.',
     color: '#F5E64280',
   },
   {
@@ -34,7 +34,7 @@ const markets = [
     status: 'Q1 2027',
     population: '2.7M',
     reason: 'Military family density drives high turnover, strong trade workforce, underserved digital platform market.',
-    notify: 'Get notified when San Antonio opens — founders lock in now.',
+    notify: 'Get notified when San Antonio opens — waitlist members go first.',
     color: '#F5E64280',
   },
   {

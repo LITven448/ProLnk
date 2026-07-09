@@ -35,7 +35,7 @@ Last updated: 2026-04-29. Full audit against codebase — marked items verified 
 - [x] License and insurance upload with expiration tracking (ComplianceDocs.tsx)
 - [x] Tax estimator / earnings overview (TaxEstimator.tsx)
 
-### Exchange Marketplace (Previously Listed as "Fully Fake" — Actually Has Real Backend)
+### Exchange Marketplace (Previously Listed as "Fully Fake" — Actually Has Real Backend) (Exchange since SHELVED → future commercial)
 - [x] Exchange backend wired — exchangeRouter with 6 tRPC procedures (listJobs, postJob, submitBid, getMyJobs, getMyJobBids, awardBid)
 - [x] Exchange DB tables (exchangeJobs, exchangeBids) with full schema
 - [x] Exchange listing creation flow (PostJobModal, 3-step form)
@@ -133,16 +133,16 @@ Last updated: 2026-04-29. Full audit against codebase — marked items verified 
 ## ⚙️ User-Action Required (External Setup)
 
 - [ ] Add OPENAI_API_KEY to environment
-- [ ] Set APP_BASE_URL env var (e.g. https://prolnk.io)
-- [ ] Set FROM_EMAIL env var (e.g. ProLnk <noreply@prolnk.io>)
+- [ ] Set APP_BASE_URL env var (https://prolnk.xyz)
+- [ ] Set FROM_EMAIL env var (ProLnk <hello@prolnk.xyz>)
 - [ ] Verify custom email domain in Resend (add DNS records)
 - [ ] Set up Twilio account + add credentials to env
 - [ ] Test Stripe webhook endpoint end-to-end
 - [ ] Import and activate n8n workflows
-- [ ] Add VITE_SENTRY_DSN + SENTRY_DSN to environment
+- [x] Add VITE_SENTRY_DSN + SENTRY_DSN to environment
 - [ ] Add VITE_POSTHOG_KEY to environment
 - [ ] Set LANGGRAPH_URL env var (after deploying LangGraph container)
-- [ ] Push codebase to GitHub
+- [x] Push codebase to GitHub
 
 ---
 

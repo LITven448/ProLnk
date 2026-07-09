@@ -135,7 +135,7 @@ export default function PartnerFAQ() {
         <div style={{ marginTop: 32, backgroundColor: '#0A1628', borderRadius: 12, padding: 24, textAlign: 'center' }}>
           <p style={{ color: '#94A3B8', margin: '0 0 12px', fontSize: 14 }}>Still have questions?</p>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, margin: 0 }}>
-            📧 Email partners@prolnk.io — 24-hour response guaranteed
+            📧 Email partners@prolnk.xyz — 24-hour response guaranteed
           </p>
         </div>
       </div>

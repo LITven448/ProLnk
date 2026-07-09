@@ -31,11 +31,11 @@ const DEMO_TAG = "[DEMO]";
 const DFW_ZIPS = ["75201", "75202", "75204", "75206", "75230", "75001"];
 
 const DEMO_PARTNERS = [
-  { trade: "Plumbing", name: "[DEMO] Lone Star Plumbing", email: "demo+plumbing@prolnk.io", tier: "pro" },
-  { trade: "HVAC", name: "[DEMO] North Texas Air & Heat", email: "demo+hvac@prolnk.io", tier: "crew" },
-  { trade: "Electrical", name: "[DEMO] Metroplex Electric", email: "demo+electrical@prolnk.io", tier: "pro" },
-  { trade: "Roofing & Gutters", name: "[DEMO] DFW Roofing Co", email: "demo+roofing@prolnk.io", tier: "company" },
-  { trade: "Handyman", name: "[DEMO] Dallas Handyman Pros", email: "demo+handyman@prolnk.io", tier: "scout" },
+  { trade: "Plumbing", name: "[DEMO] Lone Star Plumbing", email: "demo+plumbing@prolnk.xyz", tier: "pro" },
+  { trade: "HVAC", name: "[DEMO] North Texas Air & Heat", email: "demo+hvac@prolnk.xyz", tier: "crew" },
+  { trade: "Electrical", name: "[DEMO] Metroplex Electric", email: "demo+electrical@prolnk.xyz", tier: "pro" },
+  { trade: "Roofing & Gutters", name: "[DEMO] DFW Roofing Co", email: "demo+roofing@prolnk.xyz", tier: "company" },
+  { trade: "Handyman", name: "[DEMO] Dallas Handyman Pros", email: "demo+handyman@prolnk.xyz", tier: "scout" },
 ];
 
 // Demo service requests — categories deliberately match demo pros' trades and a
@@ -48,7 +48,7 @@ const DEMO_REQUESTS = [
     description: "[DEMO] Kitchen sink is leaking under the cabinet and the disposal stopped working.",
     estimatedValue: 450,
     name: "[DEMO] Jordan Homeowner",
-    email: "demo.homeowner@prolnk.io",
+    email: "demo.homeowner@prolnk.xyz",
     phone: "214-555-0142",
   },
   {
@@ -58,7 +58,7 @@ const DEMO_REQUESTS = [
     description: "[DEMO] AC isn't cooling below 80 and is making a rattling noise — needs a diagnostic.",
     estimatedValue: 800,
     name: "[DEMO] Jordan Homeowner",
-    email: "demo.homeowner@prolnk.io",
+    email: "demo.homeowner@prolnk.xyz",
     phone: "214-555-0142",
   },
 ];
@@ -201,7 +201,7 @@ export const demoRouter = router({
       const oppRows = await db.execute(sql`
         SELECT id FROM opportunities
         WHERE homeownerName LIKE ${DEMO_TAG + "%"}
-           OR homeownerEmail = 'demo.homeowner@prolnk.io'
+           OR homeownerEmail = 'demo.homeowner@prolnk.xyz'
            OR description LIKE ${DEMO_TAG + "%"}
       `);
       const oppIds = ((oppRows as any) || []).map((r: any) => Number(r[0]?.id ?? r.id)).filter((n: number) => !!n);
@@ -217,7 +217,7 @@ export const demoRouter = router({
         const res = await db.execute(sql`
           DELETE FROM opportunities
           WHERE homeownerName LIKE ${DEMO_TAG + "%"}
-             OR homeownerEmail = 'demo.homeowner@prolnk.io'
+             OR homeownerEmail = 'demo.homeowner@prolnk.xyz'
              OR description LIKE ${DEMO_TAG + "%"}
         `);
         deletedOpps = Number((res as any)?.[0]?.affectedRows ?? oppIds.length);

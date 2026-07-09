@@ -90,19 +90,19 @@ const VIRAL_POSTS = [
     platform: "LinkedIn",
     icon: Linkedin,
     color: "text-blue-400",
-    text: "I've been using ProLnk for a few months and the passive income model is genuinely different. Every job I complete builds a permanent revenue stream — even after I move on. If you're a licensed contractor looking for smarter income, check it out. Limited founding partner spots left. prolnk.io/join?ref=partner123",
+    text: "I've been using ProLnk for a few months and the passive income model is genuinely different. Every job I complete builds a permanent revenue stream — even after I move on. If you're a licensed contractor looking for smarter income, check it out. Limited founding partner spots left. prolnk.xyz/join?ref=partner123",
   },
   {
     platform: "Facebook",
     icon: Share2,
     color: "text-blue-500",
-    text: "Hey [Trade] friends! Found a platform that actually pays you passive income from your photos. Called ProLnk — when you document a home, you're the originating pro FOREVER. Any future job at that address earns you a cut. Founding spots are almost gone. Use my link: prolnk.io/join?ref=partner123",
+    text: "Hey [Trade] friends! Found a platform that actually pays you passive income from your photos. Called ProLnk — when you document a home, you're the originating pro FOREVER. Any future job at that address earns you a cut. Founding spots are almost gone. Use my link: prolnk.xyz/join?ref=partner123",
   },
   {
     platform: "SMS",
     icon: MessageSquare,
     color: "text-green-400",
-    text: "Hey, thought of you — there's a new platform for contractors called ProLnk that pays passive income on every home you document. Founding partner rate is locked at $149/mo. Only a few spots left. Join with my link: prolnk.io/join?ref=partner123",
+    text: "Hey, thought of you — there's a new platform for contractors called ProLnk that pays passive income on every home you document. Founding partner rate is locked at $149/mo. Only a few spots left. Join with my link: prolnk.xyz/join?ref=partner123",
   },
 ];
 

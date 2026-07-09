@@ -34,7 +34,7 @@ ProLnk is a two-sided marketplace with intelligent waitlist management:
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/prolnk/platform.git
+git clone https://github.com/LITven448/ProLnk.git
 cd ProLnk
 
 # 2. Install dependencies
@@ -119,7 +119,7 @@ curl http://localhost:3000/setup
 **Backend**: Express + tRPC + Drizzle ORM
 **Database**: TiDB Cloud (MySQL-compatible)
 **Email**: Resend API
-**Deployment**: Railway (Auto-scaling)
+**Deployment**: Render (srv-d7ugk90sfn5c73b5pvd0)
 **Monitoring**: Sentry
 
 [See ARCHITECTURE.md for details →](./ARCHITECTURE.md)
@@ -203,21 +203,11 @@ npm run test:integration  # Integration tests
 
 ## Deployment
 
-### To Production (Railway)
+### To Production (Render)
+Render auto-deploys `main` on push.
 ```bash
-# 1. Push to main branch
-git add .
-git commit -m "Waitlist launch: Phase 1"
-git push origin main
-
-# 2. Railway auto-deploys
-#    ✓ Installs dependencies
-#    ✓ Builds code
-#    ✓ Deploys new version
-#    ✓ Migrates database (if needed)
-
-# 3. Verify deployment
-curl https://prolnk.io/api/health
+# Verify deployment
+curl https://prolnk.xyz/api/health
 # {"status": "ok"}
 ```
 
@@ -239,7 +229,7 @@ SENTRY_DSN=https://xxx@sentry.io/project
 
 # Server
 NODE_ENV=production
-APP_BASE_URL=https://prolnk.io
+APP_BASE_URL=https://prolnk.xyz
 PORT=3000
 ```
 
@@ -250,13 +240,13 @@ PORT=3000
 ### Health Checks
 ```bash
 # API health
-curl https://prolnk.io/api/health
+curl https://prolnk.xyz/api/health
 
 # Database connection
-curl https://prolnk.io/api/health/db
+curl https://prolnk.xyz/api/health/db
 
 # Email service
-curl https://prolnk.io/api/health/email
+curl https://prolnk.xyz/api/health/email
 ```
 
 ### Error Tracking
@@ -265,24 +255,13 @@ curl https://prolnk.io/api/health/email
 - **Performance Monitoring**: 20% sample rate
 
 ### Logs
-```bash
-# View live logs
-railway logs --follow
-
-# Search logs
-railway logs --grep "ERROR"
-
-# View recent errors
-railway logs --grep "INTERNAL_SERVER_ERROR"
-```
+Logs live in the Render dashboard (srv-d7ugk90sfn5c73b5pvd0) — use the Logs tab with text search (e.g. "ERROR", "INTERNAL_SERVER_ERROR").
 
 ---
 
 ## Testing
 
 ### Manual Testing Checklist
-See [TESTING_GUIDE_WAITLIST.md](./TESTING_GUIDE_WAITLIST.md)
-
 **Coverage:**
 - ✅ Unit tests (95%+ coverage on waitlist logic)
 - ✅ Integration tests (database, email, auth)
@@ -314,8 +293,6 @@ npm run test:perf               # Performance tests
 - ✅ Authentication properly implemented
 - ✅ Error messages don't leak information
 
-[Full report: SECURITY_AUDIT_WAITLIST.md](./SECURITY_AUDIT_WAITLIST.md)
-
 ---
 
 ## Performance Benchmarks
@@ -329,26 +306,19 @@ npm run test:perf               # Performance tests
 | Error rate (normal) | <0.1% | 0% | ✅ |
 | Uptime SLA | 99.9% | 99.99% | ✅ |
 
-[Detailed analysis: PERFORMANCE_OPTIMIZATION.md](./PERFORMANCE_OPTIMIZATION.md)
-
 ---
 
 ## Documentation
 
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)** — System design, data flow, database schema
 - **[API_DOCUMENTATION.md](./API_DOCUMENTATION.md)** — Complete API reference with examples
-- **[TESTING_GUIDE_WAITLIST.md](./TESTING_GUIDE_WAITLIST.md)** — Manual + automated test procedures
-- **[SECURITY_AUDIT_WAITLIST.md](./SECURITY_AUDIT_WAITLIST.md)** — Security findings & remediation
-- **[PERFORMANCE_OPTIMIZATION.md](./PERFORMANCE_OPTIMIZATION.md)** — Performance analysis & tuning
-- **[FINAL_DEPLOYMENT_CHECKLIST.md](./FINAL_DEPLOYMENT_CHECKLIST.md)** — Pre-launch verification
-- **[ENV_SETUP.md](./ENV_SETUP.md)** — Environment configuration
 
 ---
 
 ## Roadmap (Phase 2+)
 
 ### Upcoming Features
-- [ ] Commission calculation engine (Pro tier income tracking)
+- [x] Commission calculation engine (Pro tier income tracking) — built
 - [ ] Photo upload & AI scanning (TrustyPro home evaluation)
 - [ ] Payment processing (Stripe integration)
 - [ ] n8n automation workflows (lead routing, notifications)
@@ -401,15 +371,13 @@ git push origin feature/your-feature
 
 ## License
 
-**Proprietary** — All rights reserved. Contact andrew@prolnk.io for licensing.
+**Proprietary** — All rights reserved. Contact andrew@lit-ventures.com for licensing.
 
 ---
 
 ## Support
 
-**Email**: support@prolnk.io
-**Slack**: [Join workspace](https://prolnk.slack.com)
-**Issues**: [GitHub Issues](https://github.com/prolnk/platform/issues)
+**Email**: support@prolnk.xyz
 
 ---
 

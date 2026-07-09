@@ -16,7 +16,7 @@
  *   JWT_SECRET                         — already used for session signing
  *   GOOGLE_CLIENT_ID                   — Google OAuth app client ID
  *   GOOGLE_CLIENT_SECRET               — Google OAuth app secret
- *   APP_BASE_URL                       — e.g. https://prolnk.io
+ *   APP_BASE_URL                       — e.g. https://prolnk.xyz
  *
  * Password hashing: uses Node.js built-in crypto (pbkdf2) — no bcrypt dep needed.
  */
@@ -33,7 +33,7 @@ import { ENV } from "./env";
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID ?? "";
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET ?? "";
-const APP_BASE_URL = (process.env.APP_BASE_URL ?? "https://prolnk.io").replace(/\/$/, "");
+const APP_BASE_URL = (process.env.APP_BASE_URL ?? "https://prolnk.xyz").replace(/\/$/, "");
 
 // ─── Password hashing (pbkdf2, no external dep) ───────────────────────────────
 

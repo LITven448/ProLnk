@@ -216,10 +216,10 @@ export default function TierBenefits() {
         <meta property="og:title" content="ProLnk Tier Benefits — 2,125 Founding Spots, $149/mo Forever" />
         <meta property="og:description" content="All 4 tiers: $149/mo locked, 60% keep rate, 4-level network income. Charter members get exclusive origination rights." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://prolnk.io/tier-benefits" />
+        <meta property="og:url" content="https://prolnk.xyz/tier-benefits" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://prolnk.io/tier-benefits" />
+        <link rel="canonical" href="https://prolnk.xyz/tier-benefits" />
       </Helmet>
 
       {/* Nav */}

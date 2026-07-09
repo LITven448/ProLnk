@@ -29,7 +29,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "payments@prolnk.com",
+        "fromEmail": "payments@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "=💰 ${{ $json.amount }} commission paid — {{ $json.jobType }}",
         "emailFormat": "html",

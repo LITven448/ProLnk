@@ -1850,7 +1850,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         if (demoUser) {
           const existing = await getPartnerByUserId(demoUser.id);
           if (!existing) {
-            const byEmail = await getPartnerByEmail('demo@prolnk.io');
+            const byEmail = await getPartnerByEmail('demo@prolnk.xyz');
             if (byEmail) {
               await linkPartnerToUser(byEmail.id, demoUser.id);
             } else {
@@ -1860,7 +1860,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 businessType: 'Landscaping',
                 serviceArea: 'Dallas-Fort Worth, TX',
                 contactName: 'Demo Partner',
-                contactEmail: 'demo@prolnk.io',
+                contactEmail: 'demo@prolnk.xyz',
                 contactPhone: '(214) 555-0100',
                 website: null,
                 description: 'Demo partner account for ProLnk platform preview.',
@@ -2606,11 +2606,11 @@ Answer concisely and helpfully. If asked about specific real-time account data (
 
       const dfwZips = ["75201", "75202", "75204", "75206", "75230", "75001"];
       const demos = [
-        { trade: "Plumbing", name: "[DEMO] Lone Star Plumbing", email: "demo+plumbing@prolnk.io", tier: "pro" },
-        { trade: "HVAC", name: "[DEMO] North Texas Air & Heat", email: "demo+hvac@prolnk.io", tier: "crew" },
-        { trade: "Electrical", name: "[DEMO] Metroplex Electric", email: "demo+electrical@prolnk.io", tier: "pro" },
-        { trade: "Roofing & Gutters", name: "[DEMO] DFW Roofing Co", email: "demo+roofing@prolnk.io", tier: "company" },
-        { trade: "Handyman", name: "[DEMO] Dallas Handyman Pros", email: "demo+handyman@prolnk.io", tier: "scout" },
+        { trade: "Plumbing", name: "[DEMO] Lone Star Plumbing", email: "demo+plumbing@prolnk.xyz", tier: "pro" },
+        { trade: "HVAC", name: "[DEMO] North Texas Air & Heat", email: "demo+hvac@prolnk.xyz", tier: "crew" },
+        { trade: "Electrical", name: "[DEMO] Metroplex Electric", email: "demo+electrical@prolnk.xyz", tier: "pro" },
+        { trade: "Roofing & Gutters", name: "[DEMO] DFW Roofing Co", email: "demo+roofing@prolnk.xyz", tier: "company" },
+        { trade: "Handyman", name: "[DEMO] Dallas Handyman Pros", email: "demo+handyman@prolnk.xyz", tier: "scout" },
       ];
       const zipsJson = JSON.stringify(dfwZips);
       const results: Array<{ businessName: string; trade: string; partnerId: number; created: boolean }> = [];

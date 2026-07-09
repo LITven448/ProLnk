@@ -3,84 +3,26 @@ import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { ArrowRight, Check, Users, Zap, Lock } from "lucide-react";
 
-const TIER_CONFIG: Record<
-  string,
-  { label: string; color: string; bg: string; subOverride: string; jobOverride: string; badge: string }
-> = {
-  charter: {
-    label: "Charter Member",
-    color: "#22c55e",
-    bg: "rgba(34,197,94,0.12)",
-    subOverride: "12%",
-    jobOverride: "7%",
-    badge: "bg-green-900/60 text-green-300 border border-green-700/40",
-  },
-  founding: {
-    label: "Founding Member",
-    color: "#3b82f6",
-    bg: "rgba(59,130,246,0.12)",
-    subOverride: "6%",
-    jobOverride: "4%",
-    badge: "bg-blue-900/60 text-blue-300 border border-blue-700/40",
-  },
-  level3: {
-    label: "Level 3 Partner",
-    color: "#f59e0b",
-    bg: "rgba(245,158,11,0.12)",
-    subOverride: "3%",
-    jobOverride: "2%",
-    badge: "bg-amber-900/60 text-amber-300 border border-amber-700/40",
-  },
-  level4: {
-    label: "Level 4 Partner",
-    color: "#8b5cf6",
-    bg: "rgba(139,92,246,0.12)",
-    subOverride: "1.5%",
-    jobOverride: "1%",
-    badge: "bg-purple-900/60 text-purple-300 border border-purple-700/40",
-  },
-  waitlist: {
-    label: "Waitlist Member",
-    color: "#6b7280",
-    bg: "rgba(107,114,128,0.12)",
-    subOverride: "—",
-    jobOverride: "—",
-    badge: "bg-gray-800/60 text-gray-400 border border-gray-700/40",
-  },
-};
+const BRONZE = "#B08544";
+const BRONZE_BG = "rgba(176,133,68,0.12)";
 
-const TIER_BENEFITS: Record<string, string[]> = {
-  charter: [
-    "$149/mo founding rate locked forever",
-    "12% subscription override on every direct recruit",
-    "7% job commission override, 4-levels deep",
-    "First access to every new ProLnk feature",
-    "Founding member badge on your profile",
-  ],
-  founding: [
-    "$149/mo founding rate locked forever",
-    "6% subscription override on every direct recruit",
-    "4% job commission override, 4-levels deep",
-    "Priority lead routing in your service area",
-    "Founding member badge on your profile",
-  ],
-  level3: [
-    "$149/mo founding rate locked forever",
-    "3% subscription override on every direct recruit",
-    "2% job commission override, 4-levels deep",
-    "Verified contractor badge on your profile",
-  ],
-  level4: [
-    "$149/mo entry rate",
-    "1.5% subscription override on every direct recruit",
-    "1% job commission override, 4-levels deep",
-    "ProLnk contractor profile and lead access",
-  ],
-  waitlist: [
-    "Join the waitlist for early access",
-    "Founding rates still available while slots remain",
-  ],
-};
+const REFERRER_BADGE = "bg-amber-900/60 text-amber-200 border border-amber-700/40";
+
+const L1_SUBSCRIPTION_OVERRIDE = 0.12;
+
+const PLANS = [
+  { name: "Core", price: 99, keep: 40 },
+  { name: "Pro", price: 149, keep: 50 },
+  { name: "Business", price: 249, keep: 60 },
+];
+
+const PARTNER_BENEFITS = [
+  "Plans that fit your business — Core $99/mo · Pro $149/mo · Business $249/mo",
+  "Keep 40–60% of the platform fee on every closed job, by plan",
+  "Network override income on the pros you refer — 4 levels deep",
+  "AI-detected leads routed to your service area",
+  "Early access member badge on your profile",
+];
 
 function getRefFromUrl(): string | null {
   const params = new URLSearchParams(window.location.search);
@@ -97,7 +39,7 @@ function Avatar({ name }: { name: string }) {
   return (
     <div
       className="w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-black mx-auto mb-3"
-      style={{ background: "rgba(245,230,66,0.15)", color: "#F5E642", border: "2px solid rgba(245,230,66,0.3)" }}
+      style={{ background: BRONZE_BG, color: BRONZE, border: "2px solid rgba(176,133,68,0.3)" }}
     >
       {initials}
     </div>
@@ -121,13 +63,9 @@ export default function JoinLanding() {
     { enabled: !!refCode && refCode.length === 6 }
   );
 
-  const referrerTier = (referrer as any)?.tier ?? "charter";
-  const tierCfg = TIER_CONFIG[referrerTier] ?? TIER_CONFIG.charter;
   const referrerName = (referrer as any)?.name ?? null;
   const referrerBusiness = (referrer as any)?.businessName ?? null;
   const referrerTrade = (referrer as any)?.trade ?? null;
-
-  const monthlyPassive = 149 * 0.12;
 
   const handleApply = () => {
     navigate(refCode ? `/apply?ref=${refCode}` : "/apply");
@@ -140,7 +78,7 @@ export default function JoinLanding() {
         className="px-4 py-4 flex items-center justify-between"
         style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
       >
-        <span className="text-lg font-black tracking-tight" style={{ color: "#F5E642" }}>
+        <span className="text-lg font-black tracking-tight" style={{ color: BRONZE }}>
           ProLnk
         </span>
         <button
@@ -172,27 +110,27 @@ export default function JoinLanding() {
                 </p>
               )}
               <span
-                className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${tierCfg.badge}`}
+                className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${REFERRER_BADGE}`}
               >
-                {tierCfg.label}
+                ProLnk Partner
               </span>
 
               {/* Passive income callout */}
               <div
                 className="rounded-xl p-4"
-                style={{ background: "rgba(245,230,66,0.08)", border: "1px solid rgba(245,230,66,0.2)" }}
+                style={{ background: "rgba(176,133,68,0.08)", border: "1px solid rgba(176,133,68,0.2)" }}
               >
                 <p className="text-xs text-gray-400 mb-1">When you join through {referrerName.split(" ")[0]}:</p>
                 <p className="text-base font-bold text-white leading-snug">
                   {referrerName.split(" ")[0]} earns{" "}
-                  <span style={{ color: "#F5E642" }}>{tierCfg.subOverride}</span> of your{" "}
-                  <span style={{ color: "#F5E642" }}>$149/mo</span> subscription
+                  <span style={{ color: BRONZE }}>{Math.round(L1_SUBSCRIPTION_OVERRIDE * 100)}%</span> of your{" "}
+                  <span style={{ color: BRONZE }}>monthly</span> subscription
                 </p>
-                <p className="text-sm font-black mt-1" style={{ color: "#F5E642" }}>
-                  = ${monthlyPassive.toFixed(2)}/mo in passive income for them
+                <p className="text-sm font-black mt-1" style={{ color: BRONZE }}>
+                  Recurring passive income for them
                 </p>
                 <p className="text-xs text-gray-500 mt-2">
-                  You get the same deal when you recruit — {tierCfg.subOverride} of every person you bring in
+                  You get the same deal when you refer — {Math.round(L1_SUBSCRIPTION_OVERRIDE * 100)}% of every pro you bring in
                 </p>
               </div>
             </div>
@@ -207,7 +145,31 @@ export default function JoinLanding() {
             </div>
           )}
 
-          {/* Tier benefits */}
+          {/* Plans */}
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+          >
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>
+              Plans
+            </p>
+            <div className="space-y-2">
+              {PLANS.map((plan) => (
+                <div
+                  key={plan.name}
+                  className="flex items-center justify-between p-3 rounded-xl"
+                  style={{ background: BRONZE_BG, border: "1px solid rgba(176,133,68,0.25)" }}
+                >
+                  <p className="text-xs font-bold" style={{ color: BRONZE }}>{plan.name}</p>
+                  <p className="text-xs text-gray-300">
+                    ${plan.price}/mo · keep {plan.keep}% of the platform fee
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Partner benefits */}
           <div
             className="rounded-2xl p-5"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
@@ -215,26 +177,22 @@ export default function JoinLanding() {
             <div className="flex items-center gap-2 mb-4">
               <div
                 className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: tierCfg.bg }}
+                style={{ background: BRONZE_BG }}
               >
-                <Lock size={14} style={{ color: tierCfg.color }} />
+                <Lock size={14} style={{ color: BRONZE }} />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">
-                  {referrerName
-                    ? `What you get at ${tierCfg.label}`
-                    : "Founding Partner Benefits"}
-                </p>
-                <p className="text-xs text-gray-500">Locked in when you join today</p>
+                <p className="text-sm font-bold text-white">Partner Benefits</p>
+                <p className="text-xs text-gray-500">What you get when you join</p>
               </div>
             </div>
             <div className="space-y-2">
-              {(TIER_BENEFITS[referrerTier] ?? TIER_BENEFITS.charter).map((benefit) => (
+              {PARTNER_BENEFITS.map((benefit) => (
                 <div key={benefit} className="flex items-start gap-2">
                   <Check
                     size={13}
                     className="flex-shrink-0 mt-0.5"
-                    style={{ color: tierCfg.color }}
+                    style={{ color: BRONZE }}
                   />
                   <p className="text-xs text-gray-300">{benefit}</p>
                 </div>
@@ -246,22 +204,22 @@ export default function JoinLanding() {
           <div className="grid grid-cols-3 gap-3">
             {[
               {
-                icon: <Zap size={18} style={{ color: "#F5E642" }} />,
-                bg: "rgba(245,230,66,0.1)",
+                icon: <Zap size={18} style={{ color: BRONZE }} />,
+                bg: BRONZE_BG,
                 title: "AI Finds Leads",
                 desc: "Routed to your zip codes automatically",
               },
               {
                 icon: <Users size={18} style={{ color: "#3b82f6" }} />,
                 bg: "rgba(59,130,246,0.1)",
-                title: "Recruit & Earn",
-                desc: "4-level commission on every recruit",
+                title: "Refer & Earn",
+                desc: "Override income on 4 levels of referrals",
               },
               {
                 icon: <Lock size={18} style={{ color: "#22c55e" }} />,
                 bg: "rgba(34,197,94,0.1)",
-                title: "$149 Locked",
-                desc: "Founding rate, price never increases",
+                title: "Keep More",
+                desc: "Keep up to 60% of the platform fee",
               },
             ].map((c) => (
               <div
@@ -288,7 +246,7 @@ export default function JoinLanding() {
           <button
             onClick={handleApply}
             className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl text-base font-black transition-all hover:opacity-90"
-            style={{ background: "#F5E642", color: "#0A1628" }}
+            style={{ background: BRONZE, color: "#0A1628" }}
           >
             {referrerName
               ? `Join ${referrerName.split(" ")[0]}'s Network`
@@ -298,7 +256,7 @@ export default function JoinLanding() {
 
           <p className="text-xs text-gray-600 text-center">
             Licensed home service professionals only · Texas DFW market ·{" "}
-            <span style={{ color: "#F5E642" }}>Founding rates end at 500 members</span>
+            <span style={{ color: BRONZE }}>Early access is open</span>
           </p>
         </div>
       </main>

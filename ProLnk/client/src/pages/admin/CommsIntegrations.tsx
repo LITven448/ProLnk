@@ -10,12 +10,12 @@ import {
 
 // ─── Twilio Config ─────────────────────────────────────────────────────────────
 const TWILIO_EVENTS = [
-  { trigger: "Partner application approved", channel: "SMS", template: "Welcome to ProLnk! Your application has been approved. Log in at prolnk.io to complete setup.", agent: "Onboarding Agent" },
-  { trigger: "New inbound lead assigned", channel: "SMS", template: "New lead: [Address] needs [Service]. Respond within 2 hours to claim. View: prolnk.io/leads", agent: "Lead Routing Agent" },
+  { trigger: "Partner application approved", channel: "SMS", template: "Welcome to ProLnk! Your application has been approved. Log in at prolnk.xyz to complete setup.", agent: "Onboarding Agent" },
+  { trigger: "New inbound lead assigned", channel: "SMS", template: "New lead: [Address] needs [Service]. Respond within 2 hours to claim. View: prolnk.xyz/leads", agent: "Lead Routing Agent" },
   { trigger: "Commission paid", channel: "SMS", template: "Commission of $[amount] has been sent to your account for job at [address].", agent: "Financial Agent" },
-  { trigger: "Homeowner deal offer", channel: "SMS", template: "A pro near you can help with [service] at [address]. View offer: prolnk.io/deal/[token]", agent: "Communication Agent" },
-  { trigger: "Job photo AI analysis complete", channel: "SMS", template: "AI found [N] opportunities at [address]. View report: prolnk.io/my-home", agent: "Photo Analysis Agent" },
-  { trigger: "Partner tier upgrade", channel: "SMS", template: "Congrats! You've reached [Tier] status. New benefits unlocked. View: prolnk.io/dashboard/tier", agent: "Onboarding Agent" },
+  { trigger: "Homeowner deal offer", channel: "SMS", template: "A pro near you can help with [service] at [address]. View offer: prolnk.xyz/deal/[token]", agent: "Communication Agent" },
+  { trigger: "Job photo AI analysis complete", channel: "SMS", template: "AI found [N] opportunities at [address]. View report: prolnk.xyz/my-home", agent: "Photo Analysis Agent" },
+  { trigger: "Partner tier upgrade", channel: "SMS", template: "Congrats! You've reached [Tier] status. New benefits unlocked. View: prolnk.xyz/dashboard/tier", agent: "Onboarding Agent" },
 ];
 
 const TWILIO_SETUP = [
@@ -59,7 +59,7 @@ const SENDGRID_TEMPLATES = [
 ];
 
 const SENDGRID_SETUP = [
-  { step: 1, title: "Create SendGrid Account & Verify Domain", desc: "Sign up at sendgrid.com. Add prolnk.io as a sender domain. Complete DNS verification (CNAME records). This ensures emails land in inbox, not spam.", done: false },
+  { step: 1, title: "Create SendGrid Account & Verify Domain", desc: "Sign up at sendgrid.com. Add prolnk.xyz as a sender domain. Complete DNS verification (CNAME records). This ensures emails land in inbox, not spam.", done: false },
   { step: 2, title: "Add SENDGRID_API_KEY to Secrets", desc: "Create an API key in SendGrid with 'Mail Send' permissions. Add to Settings → Secrets.", done: false },
   { step: 3, title: "Set SENDGRID_FROM_EMAIL", desc: "Use noreply@prolnk.xyz or hello@prolnk.xyz. Add to Secrets.", done: false },
   { step: 4, title: "Create Email Templates in SendGrid", desc: "Build dynamic templates for each trigger above. Use {{partner_name}}, {{address}}, {{amount}} variables.", done: false },
@@ -278,11 +278,11 @@ export default function CommsIntegrations() {
                 <Shield className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-blue-900 text-sm">Critical: Domain Authentication</p>
-                  <p className="text-xs text-blue-700 mt-1">Without domain authentication, your emails will land in spam. Add these DNS records to prolnk.io:</p>
+                  <p className="text-xs text-blue-700 mt-1">Without domain authentication, your emails will land in spam. Add these DNS records to prolnk.xyz:</p>
                   <div className="mt-2 space-y-1 font-mono text-xs text-blue-800">
-                    <p>CNAME: em1234.prolnk.io → u1234567.wl234.sendgrid.net</p>
-                    <p>CNAME: s1._domainkey.prolnk.io → s1.domainkey.u1234567.wl234.sendgrid.net</p>
-                    <p>CNAME: s2._domainkey.prolnk.io → s2.domainkey.u1234567.wl234.sendgrid.net</p>
+                    <p>CNAME: em1234.prolnk.xyz → u1234567.wl234.sendgrid.net</p>
+                    <p>CNAME: s1._domainkey.prolnk.xyz → s1.domainkey.u1234567.wl234.sendgrid.net</p>
+                    <p>CNAME: s2._domainkey.prolnk.xyz → s2.domainkey.u1234567.wl234.sendgrid.net</p>
                   </div>
                   <p className="text-xs text-blue-600 mt-2">Exact values provided by SendGrid after domain setup.</p>
                 </div>

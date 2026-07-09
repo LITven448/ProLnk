@@ -50,7 +50,7 @@ export default function AccountDeletion() {
       setSubmitted(true);
     },
     onError: (err: any) => {
-      toast.error(err?.message || "Request failed. Please email support@prolnk.io directly.");
+      toast.error(err?.message || "Request failed. Please email support@prolnk.xyz directly.");
     },
   });
 
@@ -82,8 +82,8 @@ export default function AccountDeletion() {
           </p>
           <p className="text-xs text-gray-400">
             Questions? Email{" "}
-            <a href="mailto:privacy@prolnk.io" className="underline hover:text-gray-600">
-              privacy@prolnk.io
+            <a href="mailto:privacy@prolnk.xyz" className="underline hover:text-gray-600">
+              privacy@prolnk.xyz
             </a>
           </p>
         </div>

@@ -25,48 +25,41 @@ import { toast } from "sonner";
 // --- Design tokens ------------------------------------------------------------
 // Deep slate: #1E293B (CTA hover #0F172A)  Bronze accents: #8A5A24/#9A6A2F/#B08544/#C89B5A, tint #F5EDE0, border #D9C7A8  Warm ivory bg: #FAFAF8 / sand #F7F2EA
 
-// --- Pricing — 4 founding network tiers (Charter/Founding/L3/L4) ----------------------------
+// --- Pricing — Core / Pro / Business ----------------------------
 const PRICING_TIERS = [
   {
-    name: "Charter",
-    subtitle: "First 25 founding partners",
-    monthlyFee: 149,
-    commissionShare: 0.60,
+    name: "Core",
+    subtitle: "For solo pros getting started",
+    monthlyFee: 99,
+    commissionShare: 0.40,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
     popular: false,
-    cta: "Claim Charter Slot",
+    cta: "Join the Waitlist",
     features: [
-      "Locked at $149/mo — forever",
-      "60% Network Bonus on every closed job",
-      "No lead cap, no earnings cap",
-      "4-level network override income",
-      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
-      "Origination rights on referred homes",
+      "Keep 40% of the platform fee on every closed job",
+      "AI-detected leads in your service area",
+      "Network override income on referrals",
       "All service categories",
       "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Priority lead routing",
-      "Dedicated partner success manager",
+      "Standard email support",
     ],
   },
   {
-    name: "Founding",
-    subtitle: "Next 100 founding partners",
+    name: "Pro",
+    subtitle: "For established pros ready to grow",
     monthlyFee: 149,
-    commissionShare: 0.60,
+    commissionShare: 0.50,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
     popular: true,
-    cta: "Claim Founding Slot",
+    cta: "Join the Waitlist",
     features: [
-      "Locked at $149/mo — forever",
-      "60% Network Bonus on every closed job",
-      "No lead cap, no earnings cap",
-      "4-level network override income",
-      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
-      "Origination rights on referred homes",
+      "Keep 50% of the platform fee on every closed job",
+      "AI-detected leads in your service area",
+      "Network override income on referrals",
       "All service categories",
       "FSM integration (Jobber, HCP, ServiceTitan)",
       "Bundle offer matching",
@@ -74,48 +67,23 @@ const PRICING_TIERS = [
     ],
   },
   {
-    name: "Growth Member",
-    subtitle: "Next 400 founding partners",
-    monthlyFee: 149,
+    name: "Business",
+    subtitle: "For crews and multi-trade teams",
+    monthlyFee: 249,
     commissionShare: 0.60,
     photoCap: null,
     zipLimit: null,
     weeklyLeadCap: null,
     popular: false,
-    cta: "Claim L3 Slot",
+    cta: "Join the Waitlist",
     features: [
-      "Locked at $149/mo — forever",
-      "60% Network Bonus on every closed job",
-      "No lead cap, no earnings cap",
-      "4-level network override income",
-      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
-      "Origination rights on referred homes",
+      "Keep 60% of the platform fee on every closed job",
+      "AI-detected leads in your service area",
+      "Network override income on referrals",
       "All service categories",
       "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Deal Composer access",
-      "Priority email support",
-    ],
-  },
-  {
-    name: "Network Member",
-    subtitle: "Final 1,600 founding partners",
-    monthlyFee: 149,
-    commissionShare: 0.60,
-    photoCap: null,
-    zipLimit: null,
-    weeklyLeadCap: null,
-    popular: false,
-    cta: "Claim L4 Slot",
-    features: [
-      "Locked at $149/mo — forever",
-      "60% Network Bonus on every closed job",
-      "No lead cap, no earnings cap",
-      "4-level network override income",
-      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
-      "Origination rights on referred homes",
-      "All service categories",
-      "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Standard email support",
+      "Priority lead routing",
+      "Dedicated partner success manager",
     ],
   },
 ]
@@ -371,38 +339,24 @@ function PricingSection() {
       </div>
 
       {/* Tier Cards */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-14">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-14">
         {PRICING_TIERS.map((tier, idx) => {
-          const isCharter = tier.name === "Charter";
-          const tierSpotsTotal = [25, 100, 400, 1600][idx];
-          const tierSpotsLabel = isCharter ? "25 total — most prestigious" : `${tierSpotsTotal} slots`;
           return (
             <div
               key={tier.name}
               onClick={() => setActiveTierIdx(idx)}
               className={`relative rounded-2xl p-7 flex flex-col border-2 cursor-pointer transition-all ${
-                isCharter
-                  ? "border-[#B08544] shadow-xl"
-                  : activeTierIdx === idx
+                activeTierIdx === idx
                   ? "border-[#1E293B] shadow-xl scale-[1.02]"
                   : "border-gray-200 shadow-sm hover:border-gray-400"
               }`}
               style={
-                isCharter
-                  ? { boxShadow: "0 0 0 2px #9A6A2F, 0 8px 40px rgba(154,106,47,0.25), inset 0 3px 0 #9A6A2F" }
-                  : activeTierIdx === idx
+                activeTierIdx === idx
                   ? { boxShadow: "0 0 0 2px #1E293B, 0 8px 32px rgba(30,41,59,0.15), inset 0 3px 0 #9A6A2F" }
                   : {}
               }
             >
-              {isCharter && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white" style={{ background: "#9A6A2F" }}>
-                    Most Valuable
-                  </span>
-                </div>
-              )}
-              {!isCharter && tier.popular && (
+              {tier.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                   <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white bg-[#9A6A2F]">
                     Recommended
@@ -410,9 +364,8 @@ function PricingSection() {
                 </div>
               )}
               <div className="mb-4">
-                <h3 className={`text-2xl font-heading font-bold ${isCharter ? "text-[#8A5A24]" : "text-gray-900"}`}>{tier.name}</h3>
+                <h3 className="text-2xl font-heading font-bold text-gray-900">{tier.name}</h3>
                 <p className="text-sm text-gray-500 mt-0.5">{tier.subtitle}</p>
-                <p className="text-xs font-semibold mt-1" style={{ color: isCharter ? "#8A5A24" : "#6B7280" }}>{tierSpotsLabel}</p>
               </div>
               <div className="mb-4">
                 {tier.monthlyFee === null ? (
@@ -422,13 +375,13 @@ function PricingSection() {
                 ) : (
                   <>
                     <span className="text-3xl font-heading font-bold text-gray-900">${tier.monthlyFee}</span>
-                    <span className="text-sm text-gray-400">/mo locked</span>
+                    <span className="text-sm text-gray-400">/mo</span>
                   </>
                 )}
               </div>
               <div className="flex items-center gap-1.5 mb-2 pb-3 border-b border-gray-100">
                 <TrendingUp className="h-4 w-4 text-[#9A6A2F] shrink-0" />
-                <span className="text-xs font-bold text-[#8A5A24]">60% commission keep — every closed job</span>
+                <span className="text-xs font-bold text-[#8A5A24]">Keep {Math.round(tier.commissionShare * 100)}% of the platform fee</span>
               </div>
               <ul className="space-y-2 mb-6 flex-1">
                 {tier.features.map((feature) => (
@@ -438,16 +391,13 @@ function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Link href="/partner-checkout">
+              <Link href="/apply">
                 <button
                   className={`w-full py-3 text-sm font-bold tracking-wide transition-all rounded-none ${
-                    isCharter
-                      ? "text-white hover:opacity-90"
-                      : activeTierIdx === idx
+                    activeTierIdx === idx
                       ? "bg-[#1E293B] text-white hover:opacity-90"
                       : "border-2 border-[#1E293B] text-slate-900 hover:bg-[#1E293B] hover:text-white"
                   }`}
-                  style={isCharter ? { background: "#1E293B" } : {}}
                   onClick={(e) => e.stopPropagation()}
                 >
                   {tier.cta}
@@ -460,15 +410,7 @@ function PricingSection() {
 
       {/* Tier summary */}
       <div className="flex items-center justify-center gap-4 text-sm text-gray-500 max-w-6xl mx-auto -mt-8 mb-14 flex-wrap">
-        <span>Charter: <strong className="text-gray-700">25</strong></span>
-        <span className="text-gray-300">+</span>
-        <span>Founding: <strong className="text-gray-700">100</strong></span>
-        <span className="text-gray-300">+</span>
-        <span>Level 3: <strong className="text-gray-700">400</strong></span>
-        <span className="text-gray-300">+</span>
-        <span>Level 4: <strong className="text-gray-700">1,600</strong></span>
-        <span className="text-gray-300">=</span>
-        <span className="font-bold text-slate-900">2,125 total founding spots — all locked at $149/mo</span>
+        <span>Platform fee: <strong className="text-gray-700">6–15% of job value</strong> — your plan sets how much of that fee you keep.</span>
       </div>
 
       {/* Live Network Stats link */}
@@ -701,7 +643,7 @@ function PricingSection() {
                 </li>
               ))}
             </ul>
-            <Link href="/advertise">
+            <Link href="/contact">
               <button className="w-full py-3 rounded-none border-2 border-[#1E293B] text-slate-900 font-bold text-sm tracking-wide hover:bg-[#1E293B] hover:text-white transition-all">
                 Contact Sales
               </button>
@@ -961,20 +903,14 @@ export default function Home() {
 
   // Quick waitlist mutation removed — main site now uses direct apply flow
 
-  const { data: foundingData } = trpc.directory.getFoundingPartnerCount.useQuery();
   const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60000 });
   const waitlistPros = publicCounts?.pros ?? 0;
-  const rawSpotsRemaining = foundingData?.spotsRemaining ?? 94;
-  const spotsRemaining = rawSpotsRemaining;
-  const TOTAL_NETWORK = 2125; // Charter(25) + Founding(100) + L3(400) + L4(1600)
-  const spotsUsed = TOTAL_NETWORK - (spotsRemaining || 2125);
-  const spotsPercent = Math.round((spotsUsed / TOTAL_NETWORK) * 100);
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>ProLnk — The Home Services Partner Network | DFW Texas</title>
-        <meta name="description" content="Join the ProLnk Founding Network. Home service professionals earn commission from AI-detected leads at every property they document. 4-tier network, $149/mo locked rate, 90-day free trial." />
+        <meta name="description" content="Join the ProLnk partner network. Home service professionals earn commission from AI-detected leads at every property they document. Early access now open in DFW." />
         <meta property="og:title" content="ProLnk — Reach the Trades. Own the Neighborhood." />
         <meta property="og:description" content="AI-powered referral commissions for home service professionals in DFW. Upload job photos, earn passive income." />
         <meta property="og:type" content="website" />
@@ -1030,9 +966,6 @@ export default function Home() {
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro
               </Button>
-            </Link>
-            <Link href="/advertise">
-              <Button variant="ghost" className="text-sm font-medium" style={{ color: "#9A6A2F" }}>Advertise</Button>
             </Link>
             {!isTrustyPro && (
               <Link href="/dashboard">
@@ -1108,7 +1041,7 @@ export default function Home() {
             <FadeUp delay={0.1}>
               <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 mb-8 tracking-widest uppercase animate-pulse"
                 style={{ backgroundColor: "rgba(200,155,90,0.15)", color: "#C89B5A", border: "1px solid rgba(200,155,90,0.3)" }}>
-                DFW Beta Launch — Founding Partner Spots Available
+                DFW Beta Launch — Early Access Open
               </span>
             </FadeUp>
 
@@ -1134,11 +1067,11 @@ export default function Home() {
                     whileTap={reducedMotion ? undefined : { scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 22 }}
                   >
-                    Join the Founding Network <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    Join the DFW Waitlist <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </motion.button>
                 </Link>
               </div>
-              <p className="text-xs text-white/40 mt-2">No payment required. Lock in your founding spot — pricing & activation details coming soon.</p>
+              <p className="text-xs text-white/40 mt-2">No payment required. Join the waitlist — pricing & activation details coming soon.</p>
             </FadeUp>
 
             <FadeIn delay={0.6}>
@@ -1152,29 +1085,18 @@ export default function Home() {
                 <div className="w-px h-10 bg-white/10" />
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-white tabular-nums">
-                    <CountUp target={100} />
-                  </div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Founding Partner Spots</div>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white tabular-nums">
                     <CountUp target={30} suffix="-Day" />
                   </div>
                   <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Guarantee</div>
                 </div>
               </div>
-              <p className="text-xs text-slate-500 mt-3 italic">DFW launch — 4-tier Founding Network: Charter(25) · Founding(100) · Level 3(400) · Level 4(1,600). 2,125 total. Lock in your rate before we open to the public.</p>
+              <p className="text-xs text-slate-500 mt-3 italic">DFW launch — early access is open. Join the waitlist before we open to the public.</p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(200,155,90,0.12)", border: "1px solid rgba(200,155,90,0.25)", color: "#C89B5A" }}>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C89B5A] animate-pulse shrink-0" />
                   {waitlistPros > 0
-                    ? `${waitlistPros} pro${waitlistPros !== 1 ? "s" : ""} on waitlist — ${(2125 - waitlistPros).toLocaleString()} spots left`
-                    : "2,125 founding spots available — be first"}
-                </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.3)", color: "#fca5a5" }}>
-                  <AlertTriangle className="w-3 h-3 shrink-0" />
-                  Charter spots fill first — only 25 ever available
+                    ? `${waitlistPros} pro${waitlistPros !== 1 ? "s" : ""} already on the waitlist`
+                    : "Early access is open — be first"}
                 </div>
               </div>
             </FadeIn>
@@ -1957,11 +1879,11 @@ export default function Home() {
                   </div>
                   <h4 className="font-heading font-bold text-gray-900 mb-2">Be the First to Share Your Story</h4>
                   <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                    ProLnk is in its founding partner phase — launching in DFW. Real partner results will appear here as the network grows. We don't fabricate social proof.
+                    ProLnk is in its early access phase — launching in DFW. Real partner results will appear here as the network grows. We don't fabricate social proof.
                   </p>
                   <Link href="/apply">
                     <button className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white rounded-none transition-all hover:opacity-90" style={{ backgroundColor: "#1E293B" }}>
-                      Join as a Founding Partner <ArrowRight className="w-4 h-4" />
+                      Join the Waitlist <ArrowRight className="w-4 h-4" />
                     </button>
                   </Link>
                 </div>
@@ -1984,7 +1906,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Guarantee + Founding Partner */}
+            {/* Guarantee + Early Access */}
             <div className="space-y-6">
               <div className="bg-[#1E293B] rounded-2xl p-8 text-white">
                 <div className="text-4xl mb-4"></div>
@@ -2011,28 +1933,21 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Founding Partner Spot Counter */}
+              {/* Early Access Perks */}
               <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <Award className="w-6 h-6 text-[#B08544]" />
                   <div>
-                    <h4 className="font-heading font-bold text-gray-900">Founding Partner Spots</h4>
-                    <p className="text-xs text-gray-500">Lock in your current rate forever</p>
+                    <h4 className="font-heading font-bold text-gray-900">Early Access Membership</h4>
+                    <p className="text-xs text-gray-500">Join the DFW waitlist today</p>
                   </div>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-600">Spots remaining</span>
-                  <span className="text-xl font-heading font-bold text-slate-900">{spotsRemaining} <span className="text-sm font-normal text-gray-400">of 100</span></span>
-                </div>
-                <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden mb-3">
-                  <div className="h-2 rounded-full transition-all duration-700 bg-[#1E293B]" style={{ width: `${spotsPercent}%` }} />
                 </div>
                 <ul className="space-y-1.5">
                   {[
-                    "Locked-in pricing forever",
-                    "Founding Partner badge on your profile",
+                    "Early access member badge on your profile",
                     "Priority access to new platform features and markets",
                     "Early access to every new feature",
+                    "First in line when DFW matching goes live",
                   ].map((perk) => (
                     <li key={perk} className="flex items-center gap-2 text-xs text-gray-600">
                       <CheckCircle className="h-3.5 w-3.5 text-slate-900 shrink-0" />
@@ -2070,28 +1985,28 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="rounded-2xl border border-[#D9C7A8] bg-[#F5EDE0] p-6 text-center">
                   <Lock className="w-8 h-8 text-[#8A5A24] mx-auto mb-3" />
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">Price Locked Forever</h3>
-                  <p className="text-sm text-gray-600">Founding price ($149/mo) is locked at your join date — it will never increase, no matter what we charge future members.</p>
+                  <h3 className="font-heading font-bold text-gray-900 mb-2">Early Access Advantage</h3>
+                  <p className="text-sm text-gray-600">Waitlist members are first in line when DFW activates — first to onboard, first to receive leads.</p>
                 </div>
                 <div className="rounded-2xl border border-[#D9C7A8] bg-[#F5EDE0] p-6 text-center">
                   <Award className="w-8 h-8 text-[#8A5A24] mx-auto mb-3" />
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">Charter Spots Go First</h3>
-                  <p className="text-sm text-gray-600">Charter members (spots 1–25) get maximum cascade depth in the 4-level network — the highest possible passive income position. Only 25 exist, ever.</p>
+                  <h3 className="font-heading font-bold text-gray-900 mb-2">Build Your Network First</h3>
+                  <p className="text-sm text-gray-600">Network override income compounds with time — the earlier you start referring pros, the deeper your network grows.</p>
                 </div>
                 <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
                   <Clock className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">Waitlist Closes at 500</h3>
-                  <p className="text-sm text-gray-600">Founding network closes permanently when we hit 500 applications + 5,000 homes. After that, pricing resets and network position is gone.</p>
+                  <h3 className="font-heading font-bold text-gray-900 mb-2">DFW Activates Soon</h3>
+                  <p className="text-sm text-gray-600">We're launching Dallas–Fort Worth first. Early access spots are limited while we onboard the first wave of partners.</p>
                 </div>
               </div>
               <div className="text-center mt-8">
-                <Link href="/partner-checkout">
+                <Link href="/apply">
                   <button className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 rounded-none" style={{ backgroundColor: "#1E293B", color: "#FFFFFF" }}>
-                    Secure Your Spot Now <ArrowRight className="w-4 h-4 text-[#C89B5A]" />
+                    Join the Waitlist <ArrowRight className="w-4 h-4 text-[#C89B5A]" />
                   </button>
                 </Link>
                 <p className="text-xs text-gray-400 mt-3">
-                  {waitlistPros > 0 ? `${waitlistPros} pros already in — ${500 - waitlistPros} applications until waitlist closes` : "Be among the first 500"}
+                  {waitlistPros > 0 ? `${waitlistPros} pros already on the waitlist` : "Early access is open"}
                 </p>
               </div>
             </div>
@@ -2122,9 +2037,9 @@ export default function Home() {
                   Apply Now — It's Free <ArrowRight className="h-5 w-5" />
                 </button>
               </Link>
-              <Link href="/founding-partner">
+              <Link href="/pricing">
                 <button className="inline-flex items-center gap-2 px-6 py-5 text-sm font-semibold text-white/70 hover:text-white border border-white/20 hover:border-white/40 transition-all">
-                  View Founding Partner Benefits <ChevronRight className="h-4 w-4" />
+                  View Plans &amp; Pricing <ChevronRight className="h-4 w-4" />
                 </button>
               </Link>
             </div>
@@ -2142,7 +2057,6 @@ export default function Home() {
               <Link href="/partners" className="hover:text-white transition-colors">Directory</Link>
               <Link href="/dashboard" className="hover:text-white transition-colors">Partner Login</Link>
               <Link href="/trustypro" className="hover:text-white transition-colors">TrustyPro</Link>
-              <Link href="/advertise" className="hover:text-white transition-colors">Advertise</Link>
               <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
               <Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>

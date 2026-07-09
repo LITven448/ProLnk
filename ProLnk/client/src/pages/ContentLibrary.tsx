@@ -55,7 +55,7 @@ const EMAIL_SIGNATURE_HTML = `<table cellpadding="0" cellspacing="0" border="0" 
       <div style="color:#7B809A;font-size:12px;">[Your Trade] · ProLnk Founding Partner</div>
       <div style="margin-top:6px;">
         <a href="[YOUR_REFERRAL_LINK]" style="color:#00B5B8;text-decoration:none;font-size:12px;font-weight:600;">
-          prolnk.io/ref/[YOUR_CODE]
+          prolnk.xyz/ref/[YOUR_CODE]
         </a>
       </div>
       <div style="color:#7B809A;font-size:11px;margin-top:4px;">
@@ -357,7 +357,7 @@ export default function ContentLibrary() {
                       <td style={{ paddingLeft: "16px", verticalAlign: "top" }}>
                         <div style={{ fontWeight: 800, color: "#0A1628" }}>Your Name</div>
                         <div style={{ color: "#7B809A", fontSize: 12 }}>Plumbing · ProLnk Founding Partner</div>
-                        <div style={{ marginTop: 6 }}><span style={{ color: "#00B5B8", fontSize: 12, fontWeight: 600 }}>prolnk.io/ref/P1234</span></div>
+                        <div style={{ marginTop: 6 }}><span style={{ color: "#00B5B8", fontSize: 12, fontWeight: 600 }}>prolnk.xyz/ref/P1234</span></div>
                         <div style={{ color: "#7B809A", fontSize: 11, marginTop: 4 }}>(555) 000-0000 · Dallas, TX</div>
                       </td>
                     </tr>

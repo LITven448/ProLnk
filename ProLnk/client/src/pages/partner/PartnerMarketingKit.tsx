@@ -76,7 +76,7 @@ const emailTemplates = [
     type: 'Post-Call Follow-Up',
     icon: '✅',
     subject: 'Great talking — here\’s the ProLnk overview',
-    body: `Hi [Name],\n\nGreat connecting with you today! As promised, here are the links:\n\n🔗 Partner Overview: prolnk.io/partner\n🔗 Sign Up / Waitlist: prolnk.io/join\n🔗 Income Forecaster: prolnk.io/forecaster\n\nReminder of what we covered:\n• $149/month, locked for life during the waitlist\n• Charter tier: 1.5% origination rights\n• Founding tier: 1.0% origination rights\n• Network income compounds across 4 levels\n\nLet me know if you have any questions and I'll follow up in a few days.\n\nExcited to potentially work together,\n[Your Name]`,
+    body: `Hi [Name],\n\nGreat connecting with you today! As promised, here are the links:\n\n🔗 Partner Overview: prolnk.xyz/partner\n🔗 Sign Up / Waitlist: prolnk.xyz/join\n🔗 Income Forecaster: prolnk.xyz/forecaster\n\nReminder of what we covered:\n• $149/month, locked for life during the waitlist\n• Charter tier: 1.5% origination rights\n• Founding tier: 1.0% origination rights\n• Network income compounds across 4 levels\n\nLet me know if you have any questions and I'll follow up in a few days.\n\nExcited to potentially work together,\n[Your Name]`,
   },
 ];
 
@@ -96,7 +96,7 @@ PLUS: Refer other pros and earn override income on their matches — even while 
 Waitlist is open NOW. Spots are limited.
 
 📲 Text JOIN to [Number]
-🌐 prolnk.io/pros
+🌐 prolnk.xyz/pros
 
 Don't let your competitors get there first.`;
 

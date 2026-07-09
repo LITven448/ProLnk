@@ -3,7 +3,7 @@ import { ArrowLeft, FileText } from "lucide-react";
 
 const LAST_UPDATED = "March 29, 2026";
 const COMPANY = "ProLnk Technologies, LLC";
-const EMAIL = "legal@prolnk.com";
+const EMAIL = "legal@prolnk.xyz";
 
 export default function TermsOfService() {
   return (

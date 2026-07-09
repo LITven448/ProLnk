@@ -69,7 +69,7 @@ export default function PartnerQuickRefCard() {
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15 }}>⏰ Waitlist closes at 500 partners + 5,000 homes</div>
             <div style={{ color: '#9CA3AF', fontSize: 13, marginTop: 4 }}>All tiers locked at $149/mo · 60% keep rate</div>
           </div>
-          <div style={{ color: '#fff', fontSize: 13 }}>📧 partners@prolnk.io</div>
+          <div style={{ color: '#fff', fontSize: 13 }}>📧 partners@prolnk.xyz</div>
         </div>
       </div>
     </div>

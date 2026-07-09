@@ -116,7 +116,7 @@ export default function JoinBySlug() {
           <Link href="/"><ProLnkLogo height={52} /></Link>
           <div className="hidden sm:flex items-center gap-2 text-gray-500 text-xs font-medium">
             <span className="w-2 h-2 rounded-full bg-[#C89B5A] animate-pulse" />
-            DFW Founding Network — Live
+            DFW Early Access — Open
           </div>
         </div>
       </header>
@@ -150,11 +150,11 @@ export default function JoinBySlug() {
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg mt-4 mb-2 leading-relaxed max-w-lg mx-auto">
-              You've been hand-picked to join the ProLnk founding network — a closed group of {data.businessType ? `${data.businessType} and other` : ""} service pros locking in lifetime perks before public launch.
+              You've been hand-picked to join the ProLnk partner network — an invite-only group of {data.businessType ? `${data.businessType} and other` : ""} service pros getting early access before public launch.
             </p>
 
             <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto">
-              Only 2,125 founding spots exist. Your seat is reserved.
+              Early access is open — spots are limited. Your seat is reserved.
             </p>
 
             {/* Benefits — clear bulleted list */}
@@ -164,15 +164,15 @@ export default function JoinBySlug() {
                 <li className="flex gap-3 items-start">
                   <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><Lock className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
-                    <div className="text-gray-900 text-sm font-bold">90 days free, then $149/mo locked for life</div>
-                    <div className="text-gray-500 text-xs mt-0.5">Top-tier subscription (normally $249/mo) — saving you $1,200/year, forever.</div>
+                    <div className="text-gray-900 text-sm font-bold">90 days free, then plans from $99/mo</div>
+                    <div className="text-gray-500 text-xs mt-0.5">Pick the plan that fits your business when DFW activates.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
                   <div className="w-5 h-5 rounded-full bg-[#F5EDE0] border border-[#D9C7A8] flex items-center justify-center flex-shrink-0 mt-0.5"><TrendingUp className="w-3 h-3 text-[#8A5A24]" /></div>
                   <div>
-                    <div className="text-gray-900 text-sm font-bold">60% commission keep on every closed job</div>
-                    <div className="text-gray-500 text-xs mt-0.5">Paid from the platform fee (3–12% of job value) — bonus income on top of what you'd normally charge.</div>
+                    <div className="text-gray-900 text-sm font-bold">Keep up to 60% of the platform fee on every closed job</div>
+                    <div className="text-gray-500 text-xs mt-0.5">Paid from the platform fee (6–15% of job value) — bonus income on top of what you'd normally charge.</div>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -208,7 +208,7 @@ export default function JoinBySlug() {
             </Link>
 
             <p className="text-gray-500 text-xs mt-6 max-w-md mx-auto leading-relaxed">
-              Founding members lock in lifetime benefits. Public launch pricing will be $249/mo — your spot saves you <span className="text-[#8A5A24] font-bold">$1,200 per year</span>, with override + origination income on top.
+              Early members are first in line when DFW activates — with <span className="text-[#8A5A24] font-bold">override + origination income</span> on top of the jobs you close.
             </p>
 
             <div className="mt-8 pt-6 border-t border-gray-100">
@@ -220,7 +220,7 @@ export default function JoinBySlug() {
           {/* Proof line below card */}
           <div className="text-center mt-8">
             <p className="text-gray-500 text-xs font-medium tracking-wide">
-              <span className="text-[#8A5A24]">●</span> Founding network active in DFW — verified pros only
+              <span className="text-[#8A5A24]">●</span> Early access network active in DFW — verified pros only
             </p>
           </div>
 
@@ -229,7 +229,7 @@ export default function JoinBySlug() {
 
       <footer className="relative z-10 py-6 px-6 border-t border-gray-200">
         <div className="max-w-6xl mx-auto text-center text-gray-400 text-xs">
-          ProLnk Founding Network <span className="mx-2 text-gray-300">·</span> DFW, Texas
+          ProLnk Partner Network <span className="mx-2 text-gray-300">·</span> DFW, Texas
         </div>
       </footer>
     </div>

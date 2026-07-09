@@ -75,7 +75,7 @@ export default function PartnerComplianceGuide() {
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '18px 24px' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🛡️ When in Doubt</div>
-          <div style={{ color: '#9CA3AF', fontSize: 13, lineHeight: 1.6 }}>Add "results may vary" to any income reference. Disclose your relationship with ProLnk. Never make guarantees. Contact compliance@prolnk.io with specific questions before posting.</div>
+          <div style={{ color: '#9CA3AF', fontSize: 13, lineHeight: 1.6 }}>Add "results may vary" to any income reference. Disclose your relationship with ProLnk. Never make guarantees. Contact compliance@prolnk.xyz with specific questions before posting.</div>
         </div>
       </div>
     </div>

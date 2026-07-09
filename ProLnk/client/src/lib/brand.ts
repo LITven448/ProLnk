@@ -32,7 +32,7 @@ export const BRAND_CONFIGS: Record<Brand, BrandConfig> = {
     faviconEmoji: "🔗",
     defaultLoginRedirect: "/dashboard",
     waitlistPath: "/waitlist/pro",
-    supportEmail: "support@prolnk.io",
+    supportEmail: "support@prolnk.xyz",
     homePath: "/",
   },
   trustypro: {
@@ -58,7 +58,7 @@ export const BRAND_CONFIGS: Record<Brand, BrandConfig> = {
     faviconEmoji: "📺",
     defaultLoginRedirect: "/advertiser/dashboard",
     waitlistPath: "/advertise",
-    supportEmail: "media@prolnk.io",
+    supportEmail: "media@prolnk.xyz",
     homePath: "/advertise",
   },
 };

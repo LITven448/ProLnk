@@ -227,7 +227,7 @@ export default function SecurityTrustCenter() {
               </p>
               <p className="text-xs text-amber-600 mt-3">
                 Last updated: April 2026 · Consent version: 1.0 · Questions? Contact{" "}
-                <a href="mailto:privacy@prolnk.io" className="underline">privacy@prolnk.io</a>
+                <a href="mailto:privacy@prolnk.xyz" className="underline">privacy@prolnk.xyz</a>
               </p>
             </div>
           </div>
@@ -242,11 +242,11 @@ export default function SecurityTrustCenter() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
             <div>
               <p className="font-semibold text-gray-800 mb-1">Data Subject Requests</p>
-              <p>To request deletion, export, or correction of your data, email <a href="mailto:privacy@prolnk.io" className="text-teal-600 underline">privacy@prolnk.io</a>.</p>
+              <p>To request deletion, export, or correction of your data, email <a href="mailto:privacy@prolnk.xyz" className="text-teal-600 underline">privacy@prolnk.xyz</a>.</p>
             </div>
             <div>
               <p className="font-semibold text-gray-800 mb-1">Security Disclosures</p>
-              <p>To report a security vulnerability, email <a href="mailto:security@prolnk.io" className="text-teal-600 underline">security@prolnk.io</a>.</p>
+              <p>To report a security vulnerability, email <a href="mailto:security@prolnk.xyz" className="text-teal-600 underline">security@prolnk.xyz</a>.</p>
             </div>
             <div>
               <p className="font-semibold text-gray-800 mb-1">Consent Management</p>

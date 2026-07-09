@@ -167,7 +167,7 @@ export default function HousecallProIntegration() {
           <CardContent className="space-y-3">
             {[
               "Register ProLnk at developer.housecallpro.com  Create OAuth App",
-              "Set redirect URI: https://prolnk.io/api/oauth/housecallpro/callback",
+              "Set redirect URI: https://prolnk.xyz/api/oauth/housecallpro/callback",
               "Add HOUSECALLPRO_CLIENT_ID and HOUSECALLPRO_CLIENT_SECRET to ProLnk secrets",
               "Enable the polling job in server/intake-router.ts (already scaffolded)",
               "Partners connect via 'Connect Housecall Pro' in their Integration Settings",

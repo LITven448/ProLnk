@@ -122,7 +122,7 @@ export default function ProPassVerify() {
             <Home className="w-4 h-4 text-teal-400" />
             <span className="text-teal-400 font-black text-sm">ProLnk</span>
           </div>
-          <span className="text-gray-500 text-xs">prolnk.io/verify</span>
+          <span className="text-gray-500 text-xs">prolnk.xyz/verify</span>
         </div>
       </div>
     </div>

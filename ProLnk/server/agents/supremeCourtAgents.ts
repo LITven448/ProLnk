@@ -118,8 +118,8 @@ export async function runBrandSafetyAgent(): Promise<{
   }
 
   // Check email sender domain
-  if (!process.env.FROM_EMAIL?.includes("prolnk.io")) {
-    risks.push("Emails sending from resend.dev instead of @prolnk.io — brand and deliverability risk");
+  if (!process.env.FROM_EMAIL?.includes("prolnk.xyz")) {
+    risks.push("Emails sending from resend.dev instead of @prolnk.xyz — brand and deliverability risk");
   }
 
   return {

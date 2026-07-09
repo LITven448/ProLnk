@@ -47,7 +47,7 @@
       "typeVersion": 2,
       "position": [500, 200],
       "parameters": {
-        "fromEmail": "leads@prolnk.com",
+        "fromEmail": "leads@prolnk.xyz",
         "toEmail": "={{ $vars.partnerEmail }}",
         "subject": "🔔 New Lead: {{ $vars.opportunityType }} — Est. ${{ $vars.estimatedValue }}",
         "emailType": "html",
@@ -162,7 +162,7 @@
       "typeVersion": 2,
       "position": [1700, 400],
       "parameters": {
-        "fromEmail": "leads@prolnk.com",
+        "fromEmail": "leads@prolnk.xyz",
         "toEmail": "={{ $vars.partnerEmail }}",
         "subject": "⚠️ Last Chance: Lead Expiring Soon",
         "emailType": "html",

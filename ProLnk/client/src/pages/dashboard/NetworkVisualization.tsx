@@ -59,7 +59,7 @@ const LEVEL_EARNINGS = [
   { level: "L3", recruits: 3, avg: 412, pct: 2, monthly: 25 },
 ];
 
-const REFERRAL_LINK = "prolnk.io/join?ref=partner123";
+const REFERRAL_LINK = "prolnk.xyz/join?ref=partner123";
 
 export default function NetworkVisualization() {
   return (

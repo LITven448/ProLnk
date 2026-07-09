@@ -10,7 +10,7 @@ All endpoints are accessible via `/api/trpc` using POST requests with JSON paylo
 
 ```bash
 # Example: Join Pro Waitlist
-curl -X POST https://prolnk.io/api/trpc/waitlist.joinProWaitlist \
+curl -X POST https://prolnk.xyz/api/trpc/waitlist.joinProWaitlist \
   -H "Content-Type: application/json" \
   -d '{
     "firstName": "John",
@@ -101,7 +101,7 @@ Join the ProLnk professional network waitlist.
 
 **Example Request:**
 ```bash
-curl -X POST https://prolnk.io/api/trpc/waitlist.joinProWaitlist \
+curl -X POST https://prolnk.xyz/api/trpc/waitlist.joinProWaitlist \
   -H "Content-Type: application/json" \
   -d '{
     "firstName": "John",
@@ -195,7 +195,7 @@ Join the TrustyPro homeowner waitlist for home evaluations and projects.
 
 **Example Request:**
 ```bash
-curl -X POST https://prolnk.io/api/trpc/waitlist.joinHomeWaitlist \
+curl -X POST https://prolnk.xyz/api/trpc/waitlist.joinHomeWaitlist \
   -H "Content-Type: application/json" \
   -d '{
     "firstName": "Jane",
@@ -237,7 +237,7 @@ Quick email capture for TrustyPro homeowner waitlist (minimal info).
 
 **Example Request:**
 ```bash
-curl -X POST https://prolnk.io/api/trpc/waitlist.joinSimpleWaitlist \
+curl -X POST https://prolnk.xyz/api/trpc/waitlist.joinSimpleWaitlist \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Jane Smith",
@@ -484,7 +484,7 @@ Activate a waitlist entry and send invitation email.
 {
   id: number
   type: enum ['pro', 'home']
-  origin?: string (valid URL, default: 'https://prolnk.io')
+  origin?: string (valid URL, default: 'https://prolnk.xyz')
 }
 ```
 
@@ -623,7 +623,7 @@ Array<{
 
 **Example Request:**
 ```bash
-curl -X POST https://prolnk.io/api/trpc/analytics.getSignupTrends \
+curl -X POST https://prolnk.xyz/api/trpc/analytics.getSignupTrends \
   -H "Authorization: Bearer <session_token>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -666,7 +666,7 @@ Calculate estimated commission for a job value.
 ```typescript
 {
   jobValue: number (> 0)
-  sourceProTier: string (scout|pro|crew|company|enterprise)
+  sourceProTier: string (core|pro|business|enterprise)
 }
 ```
 
@@ -720,7 +720,7 @@ Get referral chain for a pro.
 **Response:**
 ```typescript
 Array<{
-  level: number (1=L1, 2=L2, 3=L3)
+  level: number (1–4, L1–L4)
   uplineUserId: string
   networkLevel: number
 }>
@@ -944,7 +944,7 @@ Verify if email domain qualifies for premium tier.
 {
   domain: string
   isPremium: boolean
-  suggestedTier: string (scout|pro)
+  suggestedTier: string (core|pro)
 }
 ```
 

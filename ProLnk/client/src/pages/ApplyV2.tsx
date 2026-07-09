@@ -10,9 +10,9 @@ const NAVY = "#0A1628";
 const YELLOW = "#F5E642";
 
 const TRUST = [
-  { icon: Lock, label: "$149/mo locked for life" },
-  { icon: Percent, label: "60% commission keep rate" },
-  { icon: Shield, label: "Founding network status" },
+  { icon: Lock, label: "Plans from $99/mo" },
+  { icon: Percent, label: "Keep up to 60% of the platform fee" },
+  { icon: Shield, label: "Early access status" },
 ];
 
 export default function ApplyV2() {
@@ -32,7 +32,7 @@ export default function ApplyV2() {
       <main className="container mx-auto px-4 py-10 sm:py-14">
         <div className="max-w-lg mx-auto text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-black mb-3" style={{ color: NAVY }}>
-            Join the ProLnk founding network
+            Join the ProLnk partner network
           </h1>
           <p className="text-gray-500 text-sm sm:text-base">
             Get your spot and your referral link in 30 seconds. Complete your

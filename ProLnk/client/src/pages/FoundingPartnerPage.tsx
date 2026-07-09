@@ -196,13 +196,13 @@ export default function FoundingPartnerPage() {
         <meta property="og:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
         <meta property="og:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://prolnk.io/founding-partner" />
+        <meta property="og:url" content="https://prolnk.xyz/founding-partner" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
         <meta name="twitter:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
-        <link rel="canonical" href="https://prolnk.io/founding-partner" />
+        <link rel="canonical" href="https://prolnk.xyz/founding-partner" />
       </Helmet>
 
       {/* Nav */}
@@ -681,7 +681,7 @@ export default function FoundingPartnerPage() {
       </section>
 
       <footer className="border-t border-gray-800 py-8 text-center text-gray-600 text-sm">
-        © 2026 ProLnk LLC · DFW, Texas · <a href="/legal/terms" className="hover:text-gray-400">Terms</a> · <a href="/legal/privacy" className="hover:text-gray-400">Privacy</a>
+        © 2026 ProLnk LLC · DFW, Texas · <a href="/terms" className="hover:text-gray-400">Terms</a> · <a href="/privacy" className="hover:text-gray-400">Privacy</a>
       </footer>
       <BackToTop />
     </div>

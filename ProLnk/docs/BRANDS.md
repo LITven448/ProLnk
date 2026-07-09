@@ -12,11 +12,11 @@ All brands share a single backend with host-based routing. Brand detection via `
 
 | Brand | Audience | Type | Domain |
 |-------|----------|------|--------|
-| ProLnk | Individual service professionals | B2B | prolnk.io (pending) / prolnk.xyz (live) |
-| ProLnk Exchange | Commercial contractors / job board | B2B | exchange.prolnk.io |
+| ProLnk | Individual service professionals | B2B | prolnk.xyz (canonical; prolnk.io retired-for-now — returns later) |
+| ProLnk Exchange | SHELVED → future commercial marketplace | B2B | — |
 | TrustyPro | Homeowners — consumer service requests | B2C | trustypro.io |
-| TrustyPro Commercial | Commercial property owners | B2B/B2C hybrid | commercial.trustypro.io |
-| ProLnk Media | Advertisers — real estate, title companies, adjacent businesses | B2B | media.prolnk.io |
+| TrustyPro Commercial | Commercial property owners (future, strategy-gated) | B2B/B2C hybrid | — |
+| ProLnk Media | Ad product within ProLnk Partners — real estate, title companies, adjacent businesses | B2B | — |
 | LNKD | Homeowner room scan → DIY product affiliate | B2C | lnkd.trustypro.io (TBD) |
 
 **Mobile Apps**:
@@ -31,14 +31,15 @@ All brands share a single backend with host-based routing. Brand detection via `
 
 **Target Market**: Individual home service professionals (plumbers, electricians, HVAC, roofers, etc.)
 **Position**: "Find quality leads, grow your business, build passive income"
-**Domain**: prolnk.io (pending Manus release) / prolnk.xyz (current live)
+**Domain**: prolnk.xyz (canonical; prolnk.io returns later when access restored)
 
 ### Brand Identity
 
 **Color Palette**:
-- Primary: #0066CC (professional blue)
-- Secondary: #F26419 (energetic orange)
-- Neutral: #333333 (dark gray)
+- Primary: slate #1E293B
+- Accent: bronze #9A6A2F
+- Background: warm white #FAFAF8
+- (NO yellow/green/blue)
 
 **Brand Voice**: Confident, peer-to-peer, action-oriented. Problem-solver focused.
 
@@ -83,7 +84,7 @@ A separate website (exchange.prolnk.io) that serves as a job board connecting jo
 
 **The Scout Role**: A Scout is a qualified user of ProLnk Exchange who can assess and quote large-scope jobs (residential or commercial), post them to the job board, and earn a fee when the job is filled by a ProLnk professional. Scouts do not have to be service professionals themselves — they can be project managers, estimators, or business development people who are good at finding and scoping work. This creates a fast path for large jobs to get matched quickly.
 
-**Integration with ProLnk**: Pros on Crew and Company subscription plans have access to ProLnk Exchange. When a job is posted to the Exchange, qualified pros in the relevant service area and trade category can bid. The Exchange feeds residential AND commercial jobs into the ProLnk matching engine.
+**Integration with ProLnk**: Pros on Business/Enterprise subscription plans have access to ProLnk Exchange. When a job is posted to the Exchange, qualified pros in the relevant service area and trade category can bid. The Exchange feeds residential AND commercial jobs into the ProLnk matching engine.
 
 ### Key Differences from ProLnk Core
 - Jobs posted by commercial clients or property managers (not individual homeowners)
@@ -117,7 +118,7 @@ A separate website (exchange.prolnk.io) that serves as a job board connecting jo
 ### Brand Identity
 
 **Color Palette**:
-- Primary: #1B8C6E (trustworthy green)
+- Primary: indigo #4F46E5
 - Secondary: #F9A825 (warm gold)
 - Neutral: #4A4A4A (medium gray)
 
@@ -312,8 +313,10 @@ request.headers.set('x-brand', brand);
 
 | Phase | Brands / Features | Timeline |
 |-------|------------------|----------|
-| Now (Render/Vite) | ProLnk waitlist, TrustyPro waitlist | Live |
-| Phase 1 (Azure MVP) | ProLnk full, TrustyPro full, ProLnk Network admin | Q3 2026 |
-| Phase 2 | Mobile apps (ProLnk App + TrustyPro App), ProLnk Exchange | Q4 2026 |
-| Phase 3 | TrustyPro Commercial, ProLnk Media | Q1 2027 |
-| Phase 4 | LNKD (room scan + affiliate) | Q2 2027 |
+| P0 (Render/Vite) | ProLnk waitlist, TrustyPro waitlist | Live |
+| P1 | ProLnk full, TrustyPro full, ProLnk Network admin | Q3 2026 |
+| P2 | Mobile apps (ProLnk App + TrustyPro App) | Q4 2026 |
+| P3 | ProLnk Partners (incl. Media ad product) | Q1 2027 |
+| P4 | TrustyPro Commercial (strategy-gated) | 2027 |
+| P5 | LNKD (room scan + affiliate) | 2027 |
+| P6 | ProLnk Exchange (future commercial marketplace — currently SHELVED) | TBD |

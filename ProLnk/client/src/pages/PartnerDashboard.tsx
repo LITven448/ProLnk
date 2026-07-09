@@ -598,7 +598,7 @@ export default function PartnerDashboard() {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2 font-heading">Application Not Approved</h2>
           <p className="text-gray-500 mb-6 max-w-sm text-sm">Contact us for more information about your application.</p>
-          <a href="mailto:partners@prolnk.com">
+          <a href="mailto:partners@prolnk.xyz">
             <Button variant="outline">Contact Support</Button>
           </a>
         </div>
@@ -867,7 +867,7 @@ export default function PartnerDashboard() {
             { icon: BarChart3,  label: "View My Stats",   sub: "Analytics & performance",   href: "/dashboard/analytics", color: "#8B5CF6" },
             { icon: Megaphone,  label: "Get More Leads",  sub: "Browse job exchange",       href: "/exchange/jobs",       color: "#1B4FD8" },
           ] as const).map((a) => {
-            const referralLink = `https://prolnk.io/join?ref=${partner.referralCode ?? partner.id}`;
+            const referralLink = `https://prolnk.xyz/join?ref=${partner.referralCode ?? partner.id}`;
             const handleClick = a.href === null
               ? (e: React.MouseEvent) => {
                   e.preventDefault();
@@ -913,7 +913,7 @@ export default function PartnerDashboard() {
                 { icon: BarChart3, label: "My Stats",    href: "/dashboard/analytics", color: "#8B5CF6" },
                 { icon: Megaphone, label: "More Leads",  href: "/exchange/jobs",       color: "#1B4FD8" },
               ] as const).map((a) => {
-                const referralLink = `https://prolnk.io/join?ref=${partner.referralCode ?? partner.id}`;
+                const referralLink = `https://prolnk.xyz/join?ref=${partner.referralCode ?? partner.id}`;
                 const handleTap = a.href === null
                   ? () => navigator.clipboard.writeText(referralLink).then(() => toast.success("Copied!"))
                   : undefined;

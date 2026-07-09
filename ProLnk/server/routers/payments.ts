@@ -595,7 +595,7 @@ Authorization Type: ${input.authorizationType === "standing" ? "Standing Authori
 ${input.maxPullAmount ? `Maximum Pull Amount: $${input.maxPullAmount.toFixed(2)}` : ""}
 
 This authorization is governed by the ProLnk Partner Agreement and NACHA Operating Rules.
-Partner may revoke this authorization by contacting support@prolnk.io at least 3 business
+Partner may revoke this authorization by contacting support@prolnk.xyz at least 3 business
 days before the scheduled debit.
 
 Signed: ${input.signerName}

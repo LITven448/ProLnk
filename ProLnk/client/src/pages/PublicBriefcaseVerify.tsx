@@ -162,7 +162,7 @@ export default function PublicBriefcaseVerify() {
 
         {/* Footer */}
         <div className="text-center">
-          <a href="https://prolnk.io" className="text-indigo-500 text-sm font-semibold hover:underline">
+          <a href="https://prolnk.xyz" className="text-indigo-500 text-sm font-semibold hover:underline">
             Verified by ProLnk Partner Network
           </a>
         </div>

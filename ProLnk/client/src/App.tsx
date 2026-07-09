@@ -28,7 +28,6 @@ import JoinLanding from "./pages/JoinLanding";
 import JoinBySlug from "./pages/JoinBySlug";
 import ReferralLanding from "./pages/ReferralLanding";
 const GetQuotes = lazy(() => import("./pages/GetQuotes"));
-const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
 const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import RewardfulScript from "@/components/RewardfulScript";
@@ -220,13 +219,6 @@ const Accountability = lazy(() => import("./pages/admin/Accountability"));
 const CompanyOrgChart = lazy(() => import("./pages/admin/CompanyOrgChart"));
 
 // 7 Company-level Executive Dashboards (top-level)
-const ExecutiveDashboard = lazy(() => import("./pages/admin/dashboards/ExecutiveDashboard"));
-const OperationsDashboard = lazy(() => import("./pages/admin/dashboards/OperationsDashboard"));
-const SalesDashboard = lazy(() => import("./pages/admin/dashboards/SalesDashboard"));
-const MarketingDashboard = lazy(() => import("./pages/admin/dashboards/MarketingDashboard"));
-const SupportDashboard = lazy(() => import("./pages/admin/dashboards/SupportDashboard"));
-const FinancialDashboard = lazy(() => import("./pages/admin/dashboards/FinancialDashboard"));
-const AIAgentsDashboard = lazy(() => import("./pages/admin/dashboards/AIAgentsDashboard"));
 
 // ProLnk Residential per-company dashboards
 const ProLnkExecutive = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkExecutive }; });
@@ -324,7 +316,6 @@ const HomeownerTimeline = lazy(() => import("./pages/homeowner/HomeownerTimeline
 const NpsSurvey = lazy(() => import("./pages/NpsSurvey"));
 
 const BusinessPlan = lazy(() => import("./pages/admin/BusinessPlan"));
-const InvestorDashboard = lazy(() => import("./pages/admin/InvestorDashboard"));
 const PatentDisclosure = lazy(() => import("./pages/admin/PatentDisclosure"));
 const CampaignCenter = lazy(() => import("./pages/admin/CampaignCenter"));
 const MarketingAutomationDashboard = lazy(() => import("./pages/admin/MarketingAutomationDashboard"));
@@ -342,7 +333,6 @@ const FeaturedAdvertisersAdmin = lazy(() => import("./pages/admin/FeaturedAdvert
 const AdvertisingPreview = lazy(() => import("./pages/admin/AdvertisingPreview"));
 const UnifiedInbox = lazy(() => import("./pages/UnifiedInbox"));
 const JobSchedule = lazy(() => import("./pages/JobSchedule"));
-const JobScheduler = lazy(() => import("./pages/JobScheduler"));
 const CommissionRates = lazy(() => import("./pages/CommissionRates"));
 const CommissionStrategy = lazy(() => import("./pages/admin/CommissionStrategy"));
 const TrustedProAlgorithm = lazy(() => import("./pages/admin/TrustedProAlgorithm"));
@@ -366,7 +356,6 @@ const TrueCostGuide = lazy(() => import("./pages/homeowner/TrueCostGuide"));
 const MaintenanceSchedule = lazy(() => import("./pages/homeowner/MaintenanceSchedule"));
 const SavingsTracker = lazy(() => import("./pages/homeowner/SavingsTracker"));
 const HomeValueImpact = lazy(() => import("./pages/homeowner/HomeValueImpact"));
-const PartnerLeaderboard = lazy(() => import("./pages/PartnerLeaderboard"));
 const PartnerHealthDashboard = lazy(() => import("./pages/admin/PartnerHealthDashboard"));
 const GeoExpansionMap = lazy(() => import("./pages/admin/GeoExpansionMap"));
 const RevenueForecast = lazy(() => import("./pages/admin/RevenueForecast"));
@@ -450,7 +439,6 @@ const AddressValidationLog = lazy(() => import("./pages/admin/AddressValidationL
 const PartnerPerformanceCoach = lazy(() => import("./pages/admin/PartnerPerformanceCoach"));
 const ProspectPipeline = lazy(() => import("./pages/admin/ProspectPipeline"));
 const MarketExpansionPlanner = lazy(() => import("./pages/admin/MarketExpansionPlanner"));
-const RevenueAnalytics = lazy(() => import("./pages/admin/RevenueAnalytics"));
 
 // New homeowner pages
 const NeighborhoodInsights = lazy(() => import("./pages/homeowner/NeighborhoodInsights"));
@@ -469,7 +457,6 @@ const HomeownerOnboarding = lazy(() => import("./pages/homeowner/HomeownerOnboar
 const EarningsForecast = lazy(() => import("./pages/dashboard/EarningsForecast"));
 const EarningsDeepDive = lazy(() => import("./pages/dashboard/EarningsDeepDive"));
 const NetworkVisualization = lazy(() => import("./pages/dashboard/NetworkVisualization"));
-const ReferralContest = lazy(() => import("./pages/dashboard/ReferralContest"));
 const JobPipeline = lazy(() => import("./pages/dashboard/JobPipeline"));
 const CertificationsLicenses = lazy(() => import("./pages/dashboard/CertificationsLicenses"));
 
@@ -616,10 +603,8 @@ const TPPropertyPreview = lazy(() => import("./pages/trustypro/app-preview/Prope
 const TPFindProPreview = lazy(() => import("./pages/trustypro/app-preview/FindProScreen"));
 const TPAlertsPreview = lazy(() => import("./pages/trustypro/app-preview/AlertsScreen"));
 const AgentAgreement = lazy(() => import("./pages/AgentAgreement"));
-const HomeHealthVaultExplainer = lazy(() => import("./pages/HomeHealthVaultExplainer"));
 const HomeHealthVaultForBuyers = lazy(() => import("./pages/HomeHealthVaultForBuyers"));
 const HomeHealthVaultForSellers = lazy(() => import("./pages/HomeHealthVaultForSellers"));
-const HowProLnkWorks = lazy(() => import("./pages/HowProLnkWorks"));
 const HowToGetHomeRepairQuotes = lazy(() => import("./pages/HowToGetHomeRepairQuotes"));
 const InsuranceForContractors = lazy(() => import("./pages/InsuranceForContractors"));
 const PartnerPricingStrategy = lazy(() => import("./pages/PartnerPricingStrategy"));
@@ -630,10 +615,8 @@ const ProLnkAIMatchingTechnology = lazy(() => import("./pages/ProLnkAIMatchingTe
 const ProLnkAPIPartnersPage = lazy(() => import("./pages/ProLnkAPIPartnersPage"));
 const ProLnkAccreditationPage = lazy(() => import("./pages/ProLnkAccreditationPage"));
 const ProLnkCommunityImpactPage = lazy(() => import("./pages/ProLnkCommunityImpactPage"));
-const ProLnkDataSecurityPage = lazy(() => import("./pages/ProLnkDataSecurityPage"));
 const ProLnkEnvironmentalImpact = lazy(() => import("./pages/ProLnkEnvironmentalImpact"));
 const ProLnkFAQHomeHealthVault = lazy(() => import("./pages/ProLnkFAQHomeHealthVault"));
-const ProLnkForPropertyManagers = lazy(() => import("./pages/ProLnkForPropertyManagers"));
 const ProLnkFounderStoryPage = lazy(() => import("./pages/ProLnkFounderStoryPage"));
 const ProLnkFounders = lazy(() => import("./pages/ProLnkFounders"));
 const ProLnkLegalFAQ = lazy(() => import("./pages/ProLnkLegalFAQ"));
@@ -895,14 +878,12 @@ const WAITLIST_ALLOWED = new Set([
   "/join", "/pro-waitlist", "/home-waitlist", "/referral", "/dashboard",
   "/waitlist/pro", "/waitlist/homeowner", "/waitlist/homeowner/status",
   "/waitlist-status", "/waitlist/status", "/success",
-  "/founding-partner", "/founding-network", "/leaderboard", "/network/leaderboard",
   "/privacy", "/terms", "/ccpa", "/cookies", "/security",
   "/trustypro", "/trustypro/waitlist", "/trustypro/app",
   "/login", "/admin-login", "/partner-login", "/partner-forgot-password",
-  "/set-password", "/pricing", "/pricing/standard",
+  "/set-password", "/pricing",
   "/partner-agreement", "/ach-authorization",
   "/partner/offers", "/request-service", "/scout",
-  "/exchange/project",
   // Marketing/info pages routed at launch cleanup (content-audited safe set)
   "/legal/agent-agreement", "/home-health-vault", "/home-health-vault/buyers",
   "/home-health-vault/sellers", "/how-it-works", "/guides/home-repair-quotes",
@@ -985,7 +966,6 @@ function Router() {
       <Route path="/checkout/cancel" component={CheckoutCancel} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/get-quotes" component={GetQuotes} />
-      <Route path="/quotes/compare" component={QuoteComparison} />
       <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
       <Route path="/join/:slug" component={JoinBySlug} />
       <Route path="/credential/:token" component={CredentialInvite} />
@@ -1067,7 +1047,6 @@ function Router() {
       <Route path="/account/delete" component={AccountDeletion} />
       <Route path="/dashboard/inbox" component={UnifiedInbox} />
       <Route path="/dashboard/schedule" component={JobSchedule} />
-      <Route path="/jobs/schedule" component={JobScheduler} />
       <Route path="/dashboard/commission-rates" component={CommissionRates} />
       <Route path="/dashboard/exchange" component={Exchange} />
       <Route path="/dashboard/exchange/profile/:id" component={ExchangeProfile} />
@@ -1150,15 +1129,6 @@ function Router() {
       <Route path="/admin/media-agents" component={MediaAgentsPage} />
       <Route path="/admin/media-org-chart" component={MediaOrgChartPage} />
       <Route path="/admin/media-revenue" component={MediaRevenuePage} />
-
-      {/* 7 Top-level Executive Dashboards */}
-      <Route path="/admin/dashboard/executive"  component={ExecutiveDashboard} />
-      <Route path="/admin/dashboard/operations" component={OperationsDashboard} />
-      <Route path="/admin/dashboard/sales"      component={SalesDashboard} />
-      <Route path="/admin/dashboard/marketing"  component={MarketingDashboard} />
-      <Route path="/admin/dashboard/support"    component={SupportDashboard} />
-      <Route path="/admin/dashboard/financial"  component={FinancialDashboard} />
-      <Route path="/admin/dashboard/agents"     component={AIAgentsDashboard} />
 
       {/* ProLnk Residential — 7 company dashboards */}
 
@@ -1268,7 +1238,6 @@ function Router() {
       <Route path="/admin/analytics-deep-dive" component={AnalyticsDeepDive} />
       <Route path="/admin/tasks" component={AdminTaskList} />
       <Route path="/admin/business-plan" component={BusinessPlan} />
-      <Route path="/admin/investor" component={InvestorDashboard} />
       <Route path="/admin/patent" component={PatentDisclosure} />
       <Route path="/admin/campaigns" component={CampaignCenter} />
       <Route path="/admin/marketing-automation" component={MarketingAutomationDashboard} />
@@ -1333,7 +1302,6 @@ function Router() {
       <Route path="/dashboard/community" component={CommunityForum} />
       <Route path="/leaderboard" component={PublicLeaderboard} />
       <Route path="/network/leaderboard" component={PublicLeaderboard} />
-      <Route path="/partner-leaderboard" component={PartnerLeaderboard} />
       <Route path="/my-home/true-cost" component={TrueCostGuide} />
       <Route path="/my-home/maintenance" component={MaintenanceSchedule} />
       <Route path="/my-home/savings" component={SavingsTracker} />
@@ -1395,7 +1363,6 @@ function Router() {
       <Route path="/dashboard/forecast" component={EarningsForecast} />
       <Route path="/dashboard/earnings-detail" component={EarningsDeepDive} />
       <Route path="/dashboard/network" component={NetworkVisualization} />
-      <Route path="/dashboard/contest" component={ReferralContest} />
       <Route path="/dashboard/jobs" component={JobPipeline} />
       <Route path="/dashboard/credentials" component={CertificationsLicenses} />
       <Route path="/dashboard/quote-inbox" component={PartnerQuoteInbox} />
@@ -1437,7 +1404,6 @@ function Router() {
       <Route path="/admin/performance-coach" component={PartnerPerformanceCoach} />
       <Route path="/admin/prospect-pipeline" component={ProspectPipeline} />
       <Route path="/admin/market-expansion" component={MarketExpansionPlanner} />
-      <Route path="/admin/revenue-analytics" component={RevenueAnalytics} />
 
       {/* Investor & Press */}
       <Route path="/investor" component={InvestorPage} />
@@ -1483,10 +1449,8 @@ function Router() {
       <Route path="/billing" component={PartnerBilling} />
       <Route path="/tier-benefits" component={TierBenefits} />
       <Route path="/legal/agent-agreement" component={AgentAgreement} />
-      <Route path="/home-health-vault" component={HomeHealthVaultExplainer} />
       <Route path="/home-health-vault/buyers" component={HomeHealthVaultForBuyers} />
       <Route path="/home-health-vault/sellers" component={HomeHealthVaultForSellers} />
-      <Route path="/how-it-works" component={HowProLnkWorks} />
       <Route path="/guides/home-repair-quotes" component={HowToGetHomeRepairQuotes} />
       <Route path="/resources/contractor-insurance" component={InsuranceForContractors} />
       <Route path="/resources/pricing-strategy" component={PartnerPricingStrategy} />
@@ -1497,10 +1461,8 @@ function Router() {
       <Route path="/partners/api" component={ProLnkAPIPartnersPage} />
       <Route path="/accreditation" component={ProLnkAccreditationPage} />
       <Route path="/community-impact" component={ProLnkCommunityImpactPage} />
-      <Route path="/security" component={ProLnkDataSecurityPage} />
       <Route path="/environmental-impact" component={ProLnkEnvironmentalImpact} />
       <Route path="/faq/home-health-vault" component={ProLnkFAQHomeHealthVault} />
-      <Route path="/for-property-managers" component={ProLnkForPropertyManagers} />
       <Route path="/founder-story" component={ProLnkFounderStoryPage} />
       <Route path="/founders" component={ProLnkFounders} />
       <Route path="/legal-faq" component={ProLnkLegalFAQ} />

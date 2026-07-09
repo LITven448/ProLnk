@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Cookie } from "lucide-react";
 
 const LAST_UPDATED = "March 29, 2026";
-const EMAIL = "privacy@prolnk.com";
+const EMAIL = "privacy@prolnk.xyz";
 
 export default function CookiePolicy() {
   return (

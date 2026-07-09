@@ -424,7 +424,7 @@ export const customerDealsRouter = router({
       const deal = firstRow(rows);
       if (!deal) throw new Error("Deal not found");
 
-      const baseUrl = process.env.APP_BASE_URL || "https://prolnk.io";
+      const baseUrl = process.env.APP_BASE_URL || "https://prolnk.xyz";
       const result = await sendDealNotification({
         homeownerName: deal.homeownerName || "Homeowner",
         homeownerEmail: deal.homeownerEmail || undefined,

@@ -15,7 +15,7 @@ import {
 const LINKS = [
   {
     label: "Main Referral",
-    url: "prolnk.io/join?ref=marcus-hvac",
+    url: "prolnk.xyz/join?ref=marcus-hvac",
     clicks: 247,
     signups: 18,
     earned: 2682,
@@ -24,7 +24,7 @@ const LINKS = [
   },
   {
     label: "Custom Campaign",
-    url: "prolnk.io/join?ref=marcus-storm",
+    url: "prolnk.xyz/join?ref=marcus-storm",
     clicks: 34,
     signups: 4,
     earned: 596,
@@ -106,7 +106,7 @@ export default function ReferralLinkManager() {
   function generateLink() {
     if (!campaign.trim()) return;
     const slug = campaign.trim().toLowerCase().replace(/\s+/g, "-");
-    setGeneratedUrl(`prolnk.io/join?ref=marcus-${slug}`);
+    setGeneratedUrl(`prolnk.xyz/join?ref=marcus-${slug}`);
     toast.success("Custom link generated!");
   }
 

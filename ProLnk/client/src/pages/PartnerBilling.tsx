@@ -323,7 +323,7 @@ export default function PartnerBilling() {
         </Card>
 
         <p className="text-xs text-gray-400 text-center">
-          Questions about billing? Contact support@prolnk.io
+          Questions about billing? Contact support@prolnk.xyz
         </p>
       </div>
     </PartnerLayout>

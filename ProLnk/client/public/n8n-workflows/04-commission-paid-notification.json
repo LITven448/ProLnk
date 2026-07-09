@@ -36,7 +36,7 @@
       "parameters": {
         "fromNumber": "={{ $env.TWILIO_FROM_NUMBER }}",
         "toNumber": "={{ $json.partner_phone }}",
-        "message": "💰 ProLnk: ${{ $json.amount }} commission paid! Job: {{ $json.job_type }} at {{ $json.address }}. View history: https://prolnk.io/dashboard/earnings"
+        "message": "💰 ProLnk: ${{ $json.amount }} commission paid! Job: {{ $json.job_type }} at {{ $json.address }}. View history: https://prolnk.xyz/dashboard/earnings"
       },
       "id": "send-sms",
       "name": "Send SMS",
@@ -47,12 +47,12 @@
     },
     {
       "parameters": {
-        "fromEmail": "commissions@prolnk.io",
+        "fromEmail": "commissions@prolnk.xyz",
         "fromName": "ProLnk",
         "toEmail": "={{ $json.partner_email }}",
         "subject": "💰 ${{ $json.amount }} commission paid to your account",
         "emailType": "html",
-        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Commission Paid!</h2><p>Hi {{ $json.partner_name }},</p><p>A commission of <strong>${{ $json.amount }}</strong> has been transferred to your bank account.</p><table style='width: 100%; border-collapse: collapse; margin: 16px 0;'><tr><td style='padding: 8px; color: #666;'>Job Type</td><td style='padding: 8px; font-weight: bold;'>{{ $json.job_type }}</td></tr><tr style='background: #f9f9f9;'><td style='padding: 8px; color: #666;'>Address</td><td style='padding: 8px;'>{{ $json.address }}</td></tr><tr><td style='padding: 8px; color: #666;'>Commission Rate</td><td style='padding: 8px;'>{{ $json.commission_rate }}%</td></tr><tr style='background: #f9f9f9;'><td style='padding: 8px; color: #666;'>Job Value</td><td style='padding: 8px;'>${{ $json.job_value }}</td></tr><tr><td style='padding: 8px; color: #666;'>Payout Date</td><td style='padding: 8px;'>{{ $json.paid_at }}</td></tr></table><a href='https://prolnk.io/dashboard/earnings' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>View Payout History →</a></body></html>"
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Commission Paid!</h2><p>Hi {{ $json.partner_name }},</p><p>A commission of <strong>${{ $json.amount }}</strong> has been transferred to your bank account.</p><table style='width: 100%; border-collapse: collapse; margin: 16px 0;'><tr><td style='padding: 8px; color: #666;'>Job Type</td><td style='padding: 8px; font-weight: bold;'>{{ $json.job_type }}</td></tr><tr style='background: #f9f9f9;'><td style='padding: 8px; color: #666;'>Address</td><td style='padding: 8px;'>{{ $json.address }}</td></tr><tr><td style='padding: 8px; color: #666;'>Commission Rate</td><td style='padding: 8px;'>{{ $json.commission_rate }}%</td></tr><tr style='background: #f9f9f9;'><td style='padding: 8px; color: #666;'>Job Value</td><td style='padding: 8px;'>${{ $json.job_value }}</td></tr><tr><td style='padding: 8px; color: #666;'>Payout Date</td><td style='padding: 8px;'>{{ $json.paid_at }}</td></tr></table><a href='https://prolnk.xyz/dashboard/earnings' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>View Payout History →</a></body></html>"
       },
       "id": "send-email",
       "name": "Send Email",

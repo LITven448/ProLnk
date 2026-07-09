@@ -14,7 +14,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://prolnk.io/api/trpc/admin.getInactivePartners",
+        "url": "https://prolnk.xyz/api/trpc/admin.getInactivePartners",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -46,12 +46,12 @@
     },
     {
       "parameters": {
-        "fromEmail": "andrew@prolnk.io",
+        "fromEmail": "andrew@prolnk.xyz",
         "fromName": "Andrew at ProLnk",
         "toEmail": "={{ $json.email }}",
         "subject": "We miss you, {{ $json.businessName }} — here's what you've been missing",
         "emailType": "html",
-        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Hi {{ $json.businessName }},</h2><p>It's been a while since we've seen you on ProLnk. Since you last logged in, there have been <strong>{{ $json.missedOpportunities }} opportunities</strong> in your service area that went to other partners.</p>{% if $json.lastCommissionAmount %}<p>Your last commission was <strong>${{ $json.lastCommissionAmount }}</strong>. There's more where that came from.</p>{% endif %}<p>It only takes 30 seconds to log a job photo and let our AI do the rest.</p><a href='https://prolnk.io/field-os' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>Log a Job Now →</a><p style='color: #666; font-size: 14px; margin-top: 24px;'>If you've moved or changed trades, reply and let me know — I'll update your profile. — Andrew</p></body></html>"
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Hi {{ $json.businessName }},</h2><p>It's been a while since we've seen you on ProLnk. Since you last logged in, there have been <strong>{{ $json.missedOpportunities }} opportunities</strong> in your service area that went to other partners.</p>{% if $json.lastCommissionAmount %}<p>Your last commission was <strong>${{ $json.lastCommissionAmount }}</strong>. There's more where that came from.</p>{% endif %}<p>It only takes 30 seconds to log a job photo and let our AI do the rest.</p><a href='https://prolnk.xyz/field-os' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>Log a Job Now →</a><p style='color: #666; font-size: 14px; margin-top: 24px;'>If you've moved or changed trades, reply and let me know — I'll update your profile. — Andrew</p></body></html>"
       },
       "id": "send-winback-email",
       "name": "Send Win-Back Email",

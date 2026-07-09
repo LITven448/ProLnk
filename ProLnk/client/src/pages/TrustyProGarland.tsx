@@ -1,9 +1,9 @@
 // SEO Metadata
 // title: Garland TX: Is Your 40-Year-Old Home Safe? Get a Free AI Health Score | TrustyPro
-// description: Garland homes average 41 years old. 65% of scans detect aging systems. Electrical panels, plumbing, and foundation movement are the top issues. Free AI scan today.
+// description: Garland homes average 41 years old. Aging systems are among the most common issues. Electrical panels, plumbing, and foundation movement top the list. Free AI scan today.
 // keywords: Garland TX home inspection, Garland electrical panel upgrade, Garland home health score, TrustyPro Garland, aging home maintenance Garland
 // og:title: Garland TX: Your Home Is Older Than the Average DFW Home — Here's What to Check
-// og:description: 65% of TrustyPro scans in Garland detect aging systems. Electrical panels, galvanized plumbing, and foundation cracks top the list.
+// og:description: Aging systems are among the most common issues in Garland homes. Electrical panels, galvanized plumbing, and foundation cracks top the list.
 // canonical: https://trustypro.io/garland
 
 import React, { useState } from "react";
@@ -44,8 +44,8 @@ export default function TrustyProGarland() {
           Garland TX: Your Home Is Older Than the Average DFW Home — Here's What to Check
         </h1>
         <p style={{ fontSize: "18px", opacity: 0.85, maxWidth: "620px", margin: "0 auto 36px", lineHeight: 1.6 }}>
-          Garland homes average 41 years old. 65% of our AI scans detect aging electrical, plumbing,
-          or foundation issues — most homeowners had no idea.
+          Garland homes average 41 years old. Aging electrical, plumbing, and foundation systems
+          are among the most common issues in Garland homes — most homeowners have no idea.
         </p>
         <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none", boxShadow: "0 4px 20px rgba(245,158,11,0.4)" }}>
           Get My Free Health Score →
@@ -57,7 +57,6 @@ export default function TrustyProGarland() {
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "40px", maxWidth: "900px", margin: "0 auto" }}>
           {[
             { stat: "41 yrs", label: "Avg Garland Home Age" },
-            { stat: "65%", label: "Scans Detect Aging Systems" },
             { stat: "#1", label: "Issue: Electrical Panels" },
             { stat: "380 PPM", label: "Hard Water Mineral Load" },
           ].map((s) => (

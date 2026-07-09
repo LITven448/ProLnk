@@ -71,7 +71,7 @@ export default function AdminLogin() {
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0A1628]/30 focus:border-[#0A1628]"
-                  placeholder="andrew@lit-ventures.com"
+                  placeholder="admin@prolnk.xyz"
                 />
               </div>
 

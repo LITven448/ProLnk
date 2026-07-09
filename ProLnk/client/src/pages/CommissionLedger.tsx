@@ -718,7 +718,7 @@ export default function CommissionLedger() {
         <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
           <p className="text-sm font-medium text-blue-800 mb-1">Payout Schedule</p>
           <p className="text-xs text-blue-600">
-            Commissions are processed on the 1st and 15th of each month. Pending commissions are paid once the referred job is marked closed and verified by ProLnk. Questions? Contact support@prolnk.io.
+            Commissions are processed on the 1st and 15th of each month. Pending commissions are paid once the referred job is marked closed and verified by ProLnk. Questions? Contact support@prolnk.xyz.
           </p>
         </div>
 

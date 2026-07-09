@@ -24,7 +24,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "noreply@prolnk.com",
+        "fromEmail": "noreply@prolnk.xyz",
         "toEmail": "={{ $json.homeownerEmail }}",
         "subject": "How did your {{ $json.serviceCategory }} service go?",
         "html": "<h2>Hi {{ $json.homeownerName }},</h2><p>It's been 30 days since {{ $json.partnerName }} completed your {{ $json.serviceCategory }} service. We'd love to hear how it went.</p><p><strong>On a scale of 0–10, how likely are you to recommend ProLnk to a friend?</strong></p><div style='display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;'>{{ $json.npsButtonsHtml }}</div><p>Your feedback helps us improve and reward our best partners.</p><p style='font-size:12px;color:#6B7280;'>If you have any issues, reply to this email directly.</p>"
@@ -62,8 +62,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "admin@prolnk.com",
-        "toEmail": "admin@prolnk.com",
+        "fromEmail": "admin@prolnk.xyz",
+        "toEmail": "admin@prolnk.xyz",
         "subject": "⚠️ Detractor NPS: {{ $json.homeownerName }} scored {{ $json.score }}/10",
         "text": "Homeowner {{ $json.homeownerName }} ({{ $json.homeownerEmail }}) gave a score of {{ $json.score }}/10 for {{ $json.partnerName }}'s {{ $json.serviceCategory }} service.\n\nComment: {{ $json.comment }}\n\nJob ID: {{ $json.jobId }}\nPartner: {{ $json.partnerName }}\n\nConsider reaching out to resolve any issues."
       },
@@ -75,7 +75,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "noreply@prolnk.com",
+        "fromEmail": "noreply@prolnk.xyz",
         "toEmail": "={{ $json.homeownerEmail }}",
         "subject": "Thank you for your feedback",
         "text": "Hi {{ $json.homeownerName }},\n\nThank you for sharing your experience. We're sorry it didn't meet your expectations. A member of our team will reach out within 24 hours to make it right.\n\n— ProLnk Team"
@@ -88,7 +88,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "noreply@prolnk.com",
+        "fromEmail": "noreply@prolnk.xyz",
         "toEmail": "={{ $json.homeownerEmail }}",
         "subject": "Thanks! Would you mind leaving a quick review?",
         "text": "Hi {{ $json.homeownerName }},\n\nThank you for the great score! We're thrilled you had a positive experience with {{ $json.partnerName }}.\n\nWould you mind sharing your experience with others? It only takes 30 seconds:\n{{ $json.reviewUrl }}\n\nThank you!\n— ProLnk Team"

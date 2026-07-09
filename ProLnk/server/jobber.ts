@@ -16,7 +16,7 @@
 const JOBBER_GRAPHQL = "https://api.getjobber.com/api/graphql";
 const CLIENT_ID = process.env.JOBBER_CLIENT_ID ?? "";
 const CLIENT_SECRET = process.env.JOBBER_CLIENT_SECRET ?? "";
-const REDIRECT_URI = `${process.env.APP_BASE_URL ?? "https://prolnk.io"}/api/integrations/jobber/callback`;
+const REDIRECT_URI = `${process.env.APP_BASE_URL ?? "https://prolnk.xyz"}/api/integrations/jobber/callback`;
 
 // ─── OAuth ────────────────────────────────────────────────────────────────────
 

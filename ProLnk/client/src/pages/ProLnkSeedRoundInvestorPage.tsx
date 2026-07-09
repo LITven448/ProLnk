@@ -74,7 +74,7 @@ export default function ProLnkSeedRoundInvestorPage() {
 
         <div style={{ background: "#0d1f3c", borderRadius: 14, padding: "1.5rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
           <div style={{ fontWeight: 700, marginBottom: "0.5rem" }}>📬 Request Pitch Deck</div>
-          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>andrew@lit-ventures.com · prolnk.io</div>
+          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>andrew@lit-ventures.com · prolnk.xyz</div>
         </div>
       </div>
     </div>

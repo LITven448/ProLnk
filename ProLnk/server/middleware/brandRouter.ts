@@ -5,7 +5,7 @@
  * All three products share the same Node.js/Express deployment.
  * The hostname determines which brand is shown.
  *
- * prolnk.io       → ProLnk (partner network, partner portal, admin)
+ * prolnk.xyz       → ProLnk (partner network, partner portal, admin)
  * trustypro.io    → TrustyPro (homeowner product, homeowner portal)
  * prolnkmedia.io  → ProLnk Media (advertiser product)
  * *.onrender.com  → ProLnk (development/staging)
@@ -38,7 +38,7 @@ export const BRAND_CONFIGS: Record<Brand, BrandConfig> = {
     logoText: "ProLnk",
     defaultPath: "/",
     waitlistPath: "/waitlist/pro",
-    supportEmail: "support@prolnk.io",
+    supportEmail: "support@prolnk.xyz",
   },
   trustypro: {
     name: "trustypro",
@@ -58,7 +58,7 @@ export const BRAND_CONFIGS: Record<Brand, BrandConfig> = {
     logoText: "ProLnk Media",
     defaultPath: "/advertise",
     waitlistPath: "/advertise",
-    supportEmail: "media@prolnk.io",
+    supportEmail: "media@prolnk.xyz",
   },
 };
 
@@ -70,7 +70,7 @@ function detectBrand(hostname: string): Brand {
 }
 
 export function brandMiddleware(req: Request, res: Response, next: NextFunction) {
-  const hostname = req.hostname || req.headers.host || "prolnk.io";
+  const hostname = req.hostname || req.headers.host || "prolnk.xyz";
   const brand = detectBrand(hostname);
   res.locals.brand = brand;
   res.locals.brandConfig = BRAND_CONFIGS[brand];

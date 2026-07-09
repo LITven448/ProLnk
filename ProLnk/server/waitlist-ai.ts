@@ -125,7 +125,7 @@ export async function sendWaitlistProgressEmails(targetList: "pro" | "homeowner"
         "Briefcase + Pro Pass credentialing",
         "Scout whole-home assessment system",
         "Bid Board marketplace",
-        "Domain separation (prolnk.io, trustypro.io, prolnkmedia.io)",
+        "Domain separation (prolnk.xyz, trustypro.io, prolnkmedia.io)",
       ],
       launchTimeline: "DFW founding partner onboarding opening soon",
     },

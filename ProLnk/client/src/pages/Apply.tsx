@@ -51,11 +51,11 @@ const HOW_IT_WORKS = [
   { step: "03", title: "Start Earning", desc: "Refer homeowners, receive matched leads, and earn commissions on every completed job." },
 ];
 
-const FOUNDING_PERKS = [
+const EARLY_ACCESS_PERKS = [
   { icon: Gift, title: "90-Day Free Trial", desc: "No credit card required. Full access from day one." },
-  { icon: Lock, title: "$149/mo Locked for Life", desc: "Founding rate never increases, even as we raise prices." },
-  { icon: Percent, title: "60% Commission Keep Rate", desc: "You keep 60 cents of every commission dollar earned through the network." },
-  { icon: Crown, title: "Founding Network Status", desc: "Permanent founding badge — priority placement, early access, network perks forever." },
+  { icon: Lock, title: "Early Access Pricing", desc: "Plans from $99/mo — pick the tier that fits your business at activation." },
+  { icon: Percent, title: "Keep Up to 60% of the Platform Fee", desc: "Your plan sets how much of ProLnk's fee you keep on every closed job." },
+  { icon: Crown, title: "Early Access Status", desc: "Early member badge — priority placement and first access to new features." },
 ];
 
 export default function Apply() {
@@ -167,7 +167,7 @@ export default function Apply() {
             </div>
           ) : null}
           <div className={`inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 text-sm text-amber-300 mb-5 ${referrerName ? "ml-3" : ""}`}>
-            <Award className="w-4 h-4" /><span>Founding Partner Applications — DFW Launch</span>
+            <Award className="w-4 h-4" /><span>Early Access Applications — DFW Launch</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4 leading-tight">
             Become a <span className="text-teal-400">ProLnk Partner</span>
@@ -176,7 +176,7 @@ export default function Apply() {
             Join the DFW network of verified home service professionals. Earn commissions, receive matched leads, and get TrustyPro Certified.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-200">
-            {["90-day free trial", "No credit card required", "24-hr approval", "Founding rate locked for life"].map((t, i) => (
+            {["90-day free trial", "No credit card required", "24-hr approval", "Early access open"].map((t, i) => (
               <div key={i} className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-400" /><span>{t}</span></div>
             ))}
           </div>
@@ -192,7 +192,7 @@ export default function Apply() {
             <div className="bg-gradient-to-br from-[#0A1628] to-[#0D1F3C] rounded-2xl p-6 border border-teal-400/20">
               <p className="text-xs text-teal-400 font-semibold uppercase tracking-widest mb-5">What you'll get</p>
               <div className="space-y-4">
-                {FOUNDING_PERKS.map((perk, i) => (
+                {EARLY_ACCESS_PERKS.map((perk, i) => (
                   <div key={i} className="flex gap-4 items-start">
                     <div className="w-9 h-9 rounded-xl bg-teal-400/15 border border-teal-400/25 flex items-center justify-center flex-shrink-0">
                       <perk.icon className="w-4 h-4 text-teal-300" />
@@ -206,7 +206,7 @@ export default function Apply() {
               </div>
               <div className="mt-5 pt-5 border-t border-white/10">
                 <p className="text-xs text-amber-400 font-semibold flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5" /> Founding partner spots are limited — waitlist closes at 500 partners
+                  <Award className="w-3.5 h-3.5" /> Early access open — join the DFW waitlist
                 </p>
               </div>
             </div>

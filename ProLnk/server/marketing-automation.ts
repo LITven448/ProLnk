@@ -20,7 +20,7 @@ import { sql } from "drizzle-orm";
 import { asRows } from "./_core/dbRows";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const APP_BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.io";
+const APP_BASE_URL = process.env.APP_BASE_URL ?? "https://prolnk.xyz";
 const FROM_EMAIL = process.env.FROM_EMAIL ?? "ProLnk <noreply@prolnk.xyz>";
 const FROM_TRUSTYPRO = process.env.FROM_EMAIL_TRUSTYPRO ?? "TrustyPro <noreply@trustypro.io>";
 const FROM_PROLNK = FROM_EMAIL;

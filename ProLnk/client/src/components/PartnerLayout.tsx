@@ -164,7 +164,7 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
   const standingColor = strikeCount === 0 ? "#059669" : strikeCount === 1 ? "#D97706" : strikeCount === 2 ? "#EF4444" : "#7C3AED";
   const standingBg = strikeCount === 0 ? "#D1FAE5" : strikeCount === 1 ? "#FEF3C7" : strikeCount === 2 ? "#FEE2E2" : "#EDE9FE";
 
-  const demoUser = { name: "Demo Partner", email: "demo@prolnk.com", openId: "demo_preview" };
+  const demoUser = { name: "Demo Partner", email: "demo@prolnk.xyz", openId: "demo_preview" };
   const user = isAuthenticated ? authUser : demoUser;
 
   const isActive = (href: string, exact?: boolean) => {
@@ -200,7 +200,7 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
           <p className="text-sm text-gray-500 mb-4">
             {partnerProfile.partner.suspensionReason || "Your account has been suspended. Please contact support to resolve this."}
           </p>
-          <a href="mailto:support@prolnk.io" className="inline-block px-5 py-2.5 rounded-xl text-sm font-semibold text-white" style={{ backgroundColor: "#0A1628" }}>
+          <a href="mailto:support@prolnk.xyz" className="inline-block px-5 py-2.5 rounded-xl text-sm font-semibold text-white" style={{ backgroundColor: "#0A1628" }}>
             Contact Support
           </a>
           <button onClick={logout} className="block mx-auto mt-3 text-xs text-gray-400 hover:text-gray-600 underline">

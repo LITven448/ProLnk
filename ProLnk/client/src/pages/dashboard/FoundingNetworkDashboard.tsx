@@ -558,7 +558,7 @@ export default function FoundingNetworkDashboard() {
     );
   }
 
-  const referralLink = `${typeof window !== "undefined" ? window.location.origin : "https://prolnk.io"}/join?ref=${data.referralCode}`;
+  const referralLink = `${typeof window !== "undefined" ? window.location.origin : "https://prolnk.xyz"}/join?ref=${data.referralCode}`;
   const actualRecruits = Array.isArray(data.referrals) ? data.referrals.length : 0;
 
   return (

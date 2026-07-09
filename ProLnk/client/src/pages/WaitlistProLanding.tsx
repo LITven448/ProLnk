@@ -339,7 +339,7 @@ export default function WaitlistProLanding() {
         <ProLnkLogo height={24} />
         <p className="text-white/30 text-xs mt-3">© 2026 ProLnk. DFW, Texas. All rights reserved.</p>
         <div className="flex justify-center gap-6 mt-3">
-          <a href="https://prolnk.io" className="text-white/30 hover:text-white/60 text-xs">ProLnk.io</a>
+          <a href="https://prolnk.xyz" className="text-white/30 hover:text-white/60 text-xs">ProLnk.io</a>
           <a href="/home-waitlist" className="text-white/30 hover:text-white/60 text-xs">Homeowner Waitlist</a>
         </div>
       </footer>

@@ -601,8 +601,8 @@ export const stripeRouter = router({
         });
         const link = await stripe.accountLinks.create({
           account: account.id,
-          refresh_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/dashboard/settings?stripe=refresh`,
-          return_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/dashboard/settings?stripe=success`,
+          refresh_url: `${process.env.APP_BASE_URL || "https://prolnk.xyz"}/dashboard/settings?stripe=refresh`,
+          return_url: `${process.env.APP_BASE_URL || "https://prolnk.xyz"}/dashboard/settings?stripe=success`,
           type: "account_onboarding",
         });
         return { url: link.url, accountId: account.id };
@@ -669,8 +669,8 @@ export const stripeRouter = router({
           },
           quantity: 1,
         }],
-        success_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout/success?tier=${input.partnerId ? "founding" : "charter"}`,
-        cancel_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout/cancel`,
+        success_url: `${process.env.APP_BASE_URL || "https://prolnk.xyz"}/checkout/success?tier=${input.partnerId ? "founding" : "charter"}`,
+        cancel_url: `${process.env.APP_BASE_URL || "https://prolnk.xyz"}/checkout/cancel`,
         metadata: { partnerId: String(input.partnerId || ""), type: "founding_network" },
         subscription_data: {
           metadata: {

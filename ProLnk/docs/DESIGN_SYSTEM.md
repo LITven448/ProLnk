@@ -1,6 +1,6 @@
 # Design System
 
-**Shared design system across all 5 ProLnk brands for consistency and efficiency.**
+**Shared design system across the 3 ProLnk pillars for consistency and efficiency.**
 
 ---
 
@@ -9,25 +9,21 @@
 ### ProLnk (Primary Brand)
 
 ```
-Primary Blue: #0066CC
-  - Buttons, links, primary actions
-  - Hex: 0066CC | RGB: 0, 102, 204 | HSL: 210°, 100%, 40%
+Primary Slate: #1E293B
+  - Buttons, links, primary actions (CTAs)
 
-Secondary Orange: #F26419
-  - Accents, highlights, success states
-  - Hex: F26419 | RGB: 242, 100, 25 | HSL: 20°, 94%, 52%
+Bronze Accent Family:
+  - Deep bronze: #8A5A24
+  - Bronze: #9A6A2F
+  - Mid bronze: #B08544
+  - Light bronze: #C89B5A
+  - Bronze tint: #F5EDE0
+  - Bronze border: #D9C7A8
 
-Dark Gray: #333333
-  - Body text, dark backgrounds
-  - Hex: 333333 | RGB: 51, 51, 51 | HSL: 0°, 0%, 20%
-
-Light Gray: #F5F5F5
-  - Card backgrounds, subtle backgrounds
-  - Hex: F5F5F5 | RGB: 245, 245, 245 | HSL: 0°, 0%, 96%
-
-White: #FFFFFF
-  - Primary background
-  - Hex: FFFFFF | RGB: 255, 255, 255 | HSL: 0°, 0%, 100%
+Backgrounds:
+  - White: #FFFFFF
+  - Warm ivory: #FAFAF8
+  - Sand: #F7F2EA
 ```
 
 ### Semantic Colors (All Brands)
@@ -43,12 +39,8 @@ Disabled: #D1D5DB (Gray)
 ### Brand Color Overrides
 
 **TrustyPro**:
-- Primary: #1B365D (Deep Navy)
+- Primary: #4F46E5 (Indigo)
 - Secondary: #F9A825 (Gold)
-
-**Home Health Vault**:
-- Primary: #059669 (Teal)
-- Secondary: #7C3AED (Purple)
 
 ---
 
@@ -168,9 +160,9 @@ full: 999px (pill buttons, avatars)
 ```
 
 **Specs**:
-- Primary: Blue (#0066CC) background, white text
+- Primary: Slate (#1E293B) background, white text
 - Secondary: Gray (#F5F5F5) background, dark text
-- Ghost: Transparent, blue text
+- Ghost: Transparent, bronze (#9A6A2F) text
 - Padding: sm=8px 12px, md=12px 16px, lg=16px 24px
 - Border radius: 8px
 - Font weight: 600
@@ -192,7 +184,7 @@ full: 999px (pill buttons, avatars)
 - Border radius: 8px
 - Padding: 12px 16px
 - Font size: 14px
-- Focus: Blue outline (#0066CC), border color: #0066CC
+- Focus: Slate outline (#1E293B), border color: #1E293B
 - Error: Red border (#EF4444), error message below
 
 ### Form
@@ -297,7 +289,7 @@ full: 999px (pill buttons, avatars)
 - Button size: 40px × 40px
 - Border radius: 4px
 - Gap: 8px
-- Active: Blue background, white text
+- Active: Slate (#1E293B) background, white text
 - Disabled: Gray background, gray text
 
 ### Tabs
@@ -315,7 +307,7 @@ full: 999px (pill buttons, avatars)
 
 **Specs**:
 - Tab padding: 12px 16px
-- Border bottom: 3px solid (blue for active, transparent for inactive)
+- Border bottom: 3px solid (bronze #9A6A2F for active, transparent for inactive)
 - Font weight: 600
 - Color: Dark for active, gray for inactive
 
@@ -385,7 +377,7 @@ Extra Large: 1536px (xl)
 - **Color Contrast**: 4.5:1 minimum for text, 3:1 for UI components
 - **Font Size**: Minimum 14px for body text
 - **Touch Targets**: 44px × 44px minimum
-- **Focus Indicator**: 2px solid blue outline
+- **Focus Indicator**: 2px solid slate (#1E293B) outline
 - **Focus Order**: Logical (left to right, top to bottom)
 
 ### Keyboard Navigation

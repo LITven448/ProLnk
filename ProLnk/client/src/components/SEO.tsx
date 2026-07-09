@@ -8,7 +8,7 @@ interface SEOProps {
   type?: "website" | "article";
 }
 
-const BASE_URL = "https://prolnk.io";
+const BASE_URL = "https://prolnk.xyz";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
 
 export default function SEO({ title, description, path = "/", image, type = "website" }: SEOProps) {

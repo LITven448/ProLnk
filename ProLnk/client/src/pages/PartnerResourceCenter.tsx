@@ -425,7 +425,7 @@ export default function PartnerResourceCenter() {
             <Link href="/partner-faq"><span className="hover:text-teal-400 cursor-pointer transition-colors">Partner FAQ</span></Link>
             <Link href="/partner-agreement"><span className="hover:text-teal-400 cursor-pointer transition-colors">Partner Agreement</span></Link>
             <Link href="/compliance"><span className="hover:text-teal-400 cursor-pointer transition-colors">Compliance & Legal</span></Link>
-            <a href="mailto:support@prolnk.io" className="hover:text-teal-400 transition-colors">support@prolnk.io</a>
+            <a href="mailto:support@prolnk.xyz" className="hover:text-teal-400 transition-colors">support@prolnk.xyz</a>
           </div>
         </div>
       </div>

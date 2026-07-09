@@ -499,7 +499,7 @@ export default function ReferralLink() {
               </span>
             </div>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Get a custom <span className="font-mono text-[#0A1628]">prolnk.io/{referralCode}</span> page you can share with a personal intro, your photo, and your referral link — no coding required.
+              Get a custom <span className="font-mono text-[#0A1628]">prolnk.xyz/{referralCode}</span> page you can share with a personal intro, your photo, and your referral link — no coding required.
             </p>
           </div>
         </div>

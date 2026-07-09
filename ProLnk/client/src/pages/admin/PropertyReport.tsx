@@ -271,7 +271,7 @@ export default function PropertyReport() {
             All detections are AI-assisted and should be verified by a licensed professional.
           </div>
           <div className="text-xs text-gray-400 mt-1">
-            © {new Date().getFullYear()} ProLnk · Dallas-Fort Worth, TX · prolnk.com
+            © {new Date().getFullYear()} ProLnk · Dallas-Fort Worth, TX · prolnk.xyz
           </div>
         </div>
       </div>

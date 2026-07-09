@@ -267,7 +267,7 @@ export default function NetworkTree() {
       <Helmet>
         <title>ProLnk Partner Network Tree — Your Recruiting Downline</title>
         <meta name="description" content="View your 4-level partner network tree and calculate override income potential." />
-        <link rel="canonical" href="https://prolnk.io/network-tree" />
+        <link rel="canonical" href="https://prolnk.xyz/network-tree" />
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 py-10">

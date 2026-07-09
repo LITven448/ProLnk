@@ -2,7 +2,7 @@
  * TrustyPro.io Full Website
  *
  * The standalone homeowner-facing product site.
- * Lives at trustypro.io (and /trustypro on prolnk.io for now).
+ * Lives at trustypro.io (and /trustypro on prolnk.xyz for now).
  *
  * Sections:
  *   - Hero: "Your home deserves a checkup"
@@ -198,13 +198,13 @@ export default function TrustyProSite() {
         <meta property="og:title" content="TrustyPro — Vetted Home Service Pros, AI-Matched" />
         <meta property="og:description" content="Get matched with verified, background-checked home service professionals using AI. The smart way to find plumbers, HVAC, electricians and more." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://trustypro.prolnk.io/" />
-        <meta property="og:image" content="https://trustypro.prolnk.io/og-image.png" />
+        <meta property="og:url" content="https://trustypro.prolnk.xyz/" />
+        <meta property="og:image" content="https://trustypro.prolnk.xyz/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TrustyPro — Vetted Home Service Pros, AI-Matched" />
         <meta name="twitter:description" content="Get matched with verified, background-checked home service professionals using AI. The smart way to find plumbers, HVAC, electricians and more." />
-        <meta name="twitter:image" content="https://trustypro.prolnk.io/og-image.png" />
-        <link rel="canonical" href="https://trustypro.prolnk.io/" />
+        <meta name="twitter:image" content="https://trustypro.prolnk.xyz/og-image.png" />
+        <link rel="canonical" href="https://trustypro.prolnk.xyz/" />
       </Helmet>
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 px-6 py-4">

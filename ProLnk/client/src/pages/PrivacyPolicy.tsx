@@ -3,7 +3,7 @@ import { ArrowLeft, Lock } from "lucide-react";
 
 const EFFECTIVE_DATE = "January 1, 2026";
 const COMPANY = "ProLnk Technologies, LLC";
-const PRIVACY_EMAIL = "privacy@prolnk.io";
+const PRIVACY_EMAIL = "privacy@prolnk.xyz";
 
 const sections = [
   {

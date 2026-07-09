@@ -452,8 +452,8 @@ function PartnerSpotlightSection() {
     <section id="spotlight" className="py-24 bg-white">
       <div className="container">
         <div className="text-center mb-10">
-          <span className="inline-block text-xs font-bold tracking-widest text-[#9A6A2F] uppercase mb-3 px-3 py-1 bg-[#FAFAF8] border border-[#B08544]/50 rounded-full">Founding Cohort</span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">The DFW founding cohort is forming</h2>
+          <span className="inline-block text-xs font-bold tracking-widest text-[#9A6A2F] uppercase mb-3 px-3 py-1 bg-[#FAFAF8] border border-[#B08544]/50 rounded-full">Early Access</span>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">The DFW early access group is forming</h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
             We're hand-selecting the first verified pros across the Dallas–Fort Worth metro. Spots are limited — early members get first access when we launch.
           </p>
@@ -1323,7 +1323,7 @@ export default function ProWaitlist() {
               Waitlist Open
             </span>
             <span className="text-slate-300 text-xs whitespace-nowrap">
-              <CountUp target={totalSignups} duration={1.2} /> pros already on the waitlist · Founding cohort · DFW
+              <CountUp target={totalSignups} duration={1.2} /> pros already on the waitlist · Early access · DFW
             </span>
           </div>
           <span
@@ -1667,7 +1667,6 @@ export default function ProWaitlist() {
             <div className="flex gap-6 text-sm">
               <span onClick={openWaitlist} className="hover:text-white transition-colors cursor-pointer">Join the Waitlist</span>
               <Link href="/partners" className="hover:text-white transition-colors">Directory</Link>
-              <Link href="/leaderboard" className="hover:text-white transition-colors">Leaderboard</Link>
               <Link href="/trustypro/waitlist" className="hover:text-white transition-colors">TrustyPro</Link>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-gray-600">
@@ -1675,7 +1674,6 @@ export default function ProWaitlist() {
               <div className="flex gap-4 flex-wrap justify-center">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
-                <Link href="/advertise" className="hover:text-white transition-colors">Advertise</Link>
                 <a href="mailto:hello@prolnk.xyz" className="hover:text-white transition-colors">Contact</a>
               </div>
             </div>

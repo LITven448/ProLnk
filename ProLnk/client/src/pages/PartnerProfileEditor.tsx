@@ -362,7 +362,7 @@ export default function PartnerProfileEditor() {
                 </button>
               </div>
               <p className="text-[10px] text-gray-400 mt-2">
-                Share this code when recruiting partners — you earn 12% of their $149/mo subscription.
+                Share this code when recruiting partners — you earn 12% of their monthly subscription.
               </p>
             </div>
           )}
@@ -808,7 +808,7 @@ export default function PartnerProfileEditor() {
         </div>
 
         {/* Photo Guide banner */}
-        <Link href="/photo-guide">
+        <Link href="/resources/photo-best-practices">
           <div className="mt-4 bg-gradient-to-r from-[#0A1628] to-[#1B4FD8] rounded-xl p-4 cursor-pointer hover:opacity-95 transition-opacity group">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">

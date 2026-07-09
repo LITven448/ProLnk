@@ -28,7 +28,7 @@ const FACT_SHEET = [
   { label: "Launch Market", value: "Dallas-Fort Worth Metro (800K+ homes)" },
   { label: "Mission", value: "Build the network economy for the $600B home services market" },
   { label: "Technology", value: "React 19, Node.js, TiDB, Claude AI, Railway Cloud" },
-  { label: "Press Contact", value: "press@prolnk.io" },
+  { label: "Press Contact", value: "press@prolnk.xyz" },
 ];
 
 const MILESTONES = [
@@ -86,7 +86,7 @@ export default function PressKit() {
       { name: form.outlet ? `${form.name} (${form.outlet})` : form.name, email: form.email },
       {
         onSettled: () => {
-          window.location.href = `mailto:press@prolnk.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          window.location.href = `mailto:press@prolnk.xyz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
           setSubmitted(true);
           setSubmitting(false);
         },
@@ -116,8 +116,8 @@ export default function PressKit() {
             <span style={{ fontWeight: 800, fontSize: 18, color: "#22c55e" }}>ProLnk</span>
             <span style={{ color: "#334155", fontSize: 12 }}>Press Room</span>
           </Link>
-          <a href="mailto:press@prolnk.io" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}>
-            <Mail size={14} /> press@prolnk.io
+          <a href="mailto:press@prolnk.xyz" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}>
+            <Mail size={14} /> press@prolnk.xyz
           </a>
         </header>
 
@@ -134,7 +134,7 @@ export default function PressKit() {
             analysts, and content creators covering PropTech, home services, and AI marketplaces.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="mailto:press@prolnk.io" style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "#22c55e", color: "#000", fontWeight: 700, fontSize: 14, padding: "12px 24px", borderRadius: 8, textDecoration: "none" }}>
+            <a href="mailto:press@prolnk.xyz" style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "#22c55e", color: "#000", fontWeight: 700, fontSize: 14, padding: "12px 24px", borderRadius: 8, textDecoration: "none" }}>
               <Mail size={14} /> Contact Press Team
             </a>
             <a href="#boilerplate" style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "transparent", color: "#94a3b8", fontWeight: 600, fontSize: 14, padding: "12px 24px", borderRadius: 8, border: "1px solid #1e293b", textDecoration: "none" }}>
@@ -208,7 +208,7 @@ export default function PressKit() {
         <section style={{ maxWidth: 860, margin: "0 auto 80px", padding: "0 24px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
             <h2 style={{ fontSize: 20, fontWeight: 800, color: "#f1f5f9", margin: 0 }}>Brand Assets</h2>
-            <a href="mailto:press@prolnk.io?subject=Logo%20Asset%20Request" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}>
+            <a href="mailto:press@prolnk.xyz?subject=Logo%20Asset%20Request" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}>
               <Mail size={13} /> Request full asset pack
             </a>
           </div>
@@ -230,7 +230,7 @@ export default function PressKit() {
                   <div style={{ fontSize: 13, fontWeight: 600, color: "#f1f5f9", marginBottom: 4 }}>{asset.name}</div>
                   <div style={{ fontSize: 11, color: "#475569", marginBottom: 10 }}>{asset.desc}</div>
                   <a
-                    href="mailto:press@prolnk.io?subject=Logo%20Asset%20Request"
+                    href="mailto:press@prolnk.xyz?subject=Logo%20Asset%20Request"
                     style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 12, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}
                   >
                     <Download size={12} /> Request file
@@ -241,7 +241,7 @@ export default function PressKit() {
           </div>
           <div style={{ marginTop: 16, padding: "14px 18px", background: "#0f172a", border: "1px solid #1e293b", borderRadius: 10, fontSize: 12, color: "#475569" }}>
             Available formats: PNG (transparent + white bg), SVG, PDF, AI source files. Usage guidelines included.
-            Contact <a href="mailto:press@prolnk.io" style={{ color: "#22c55e" }}>press@prolnk.io</a> for full brand kit.
+            Contact <a href="mailto:press@prolnk.xyz" style={{ color: "#22c55e" }}>press@prolnk.xyz</a> for full brand kit.
           </div>
         </section>
 
@@ -249,7 +249,7 @@ export default function PressKit() {
         <section style={{ maxWidth: 860, margin: "0 auto 80px", padding: "0 24px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
             <h2 style={{ fontSize: 20, fontWeight: 800, color: "#f1f5f9", margin: 0 }}>Key Screenshots</h2>
-            <a href="mailto:press@prolnk.io?subject=Screenshot%20Request" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}>
+            <a href="mailto:press@prolnk.xyz?subject=Screenshot%20Request" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#22c55e", textDecoration: "none", fontWeight: 600 }}>
               <Image size={13} /> Request hi-res images
             </a>
           </div>
@@ -329,7 +329,7 @@ export default function PressKit() {
             ))}
           </div>
           <p style={{ marginTop: 16, fontSize: 12, color: "#334155", textAlign: "center" }}>
-            Are you covering ProLnk? Let us know at <a href="mailto:press@prolnk.io" style={{ color: "#22c55e" }}>press@prolnk.io</a> — we'll link to your coverage here.
+            Are you covering ProLnk? Let us know at <a href="mailto:press@prolnk.xyz" style={{ color: "#22c55e" }}>press@prolnk.xyz</a> — we'll link to your coverage here.
           </p>
         </section>
 
@@ -430,7 +430,7 @@ export default function PressKit() {
               </form>
             )}
             <div style={{ marginTop: 22, borderTop: "1px solid #1e293b", paddingTop: 18, fontSize: 12, color: "#334155", textAlign: "center" }}>
-              Press contact: <a href="mailto:press@prolnk.io" style={{ color: "#22c55e" }}>press@prolnk.io</a> · Response within 24 hours
+              Press contact: <a href="mailto:press@prolnk.xyz" style={{ color: "#22c55e" }}>press@prolnk.xyz</a> · Response within 24 hours
             </div>
           </div>
         </section>

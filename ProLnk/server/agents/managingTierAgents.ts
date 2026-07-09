@@ -93,7 +93,7 @@ export async function runPartnerLifecycleManager(): Promise<{
       Your next job could generate leads automatically. Just take before/after photos like you always do.
     </p>
     <div style="text-align:center;margin:32px 0;">
-      <a href="https://prolnk.io/dashboard" style="background:#14b8a6;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;display:inline-block;">
+      <a href="https://prolnk.xyz/dashboard" style="background:#14b8a6;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;display:inline-block;">
         Log a Job Now →
       </a>
     </div>

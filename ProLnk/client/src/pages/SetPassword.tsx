@@ -159,8 +159,8 @@ export default function SetPassword() {
                 ) : (
                   <p className="text-gray-500 text-sm">
                     Please contact{" "}
-                    <a href="mailto:support@prolnk.io" className="text-[#0A1628] hover:underline font-semibold">
-                      support@prolnk.io
+                    <a href="mailto:support@prolnk.xyz" className="text-[#0A1628] hover:underline font-semibold">
+                      support@prolnk.xyz
                     </a>
                   </p>
                 )}

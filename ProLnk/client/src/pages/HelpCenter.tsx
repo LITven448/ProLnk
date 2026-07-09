@@ -288,7 +288,7 @@ export default function HelpCenter() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="mailto:support@prolnk.io"
+              href="mailto:support@prolnk.xyz"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
               style={{ backgroundColor: "#22d3ee", color: "#080f1e" }}
             >
@@ -296,7 +296,7 @@ export default function HelpCenter() {
               Email Support
             </a>
             <span className="text-xs text-white/30 self-center hidden sm:inline">
-              support@prolnk.io · Mon–Fri 9am–6pm EST
+              support@prolnk.xyz · Mon–Fri 9am–6pm EST
             </span>
           </div>
         </section>

@@ -160,7 +160,7 @@ function ScheduleModal({ deal, onClose }: { deal: any; onClose: () => void }) {
           className="w-full text-white py-6 text-base font-semibold rounded-xl"
           style={{ backgroundColor: "#0A1628" }}
           disabled={scheduleMut.isPending || !name || !phone}
-          onClick={() => scheduleMut.mutate({ token: deal.token, homeownerName: name, homeownerEmail: email || "noemail@prolnk.com", homeownerPhone: phone })}
+          onClick={() => scheduleMut.mutate({ token: deal.token, homeownerName: name, homeownerEmail: email || "noemail@prolnk.xyz", homeownerPhone: phone })}
         >
           {scheduleMut.isPending ? "Submitting..." : "Confirm — Schedule My Estimate"}
           <ArrowRight className="w-5 h-5 ml-2" />

@@ -363,7 +363,7 @@ export default function DataExportCenter() {
           <div className="bg-[#F8FAFC] border border-white/10 rounded-lg p-4 font-mono text-xs text-gray-700 overflow-x-auto">
             <span className="text-teal-700">curl</span>{" "}
             <span className="text-amber-700">-X GET</span>{" "}
-            <span className="text-green-300">"https://api.prolnk.io/v1/export/partners?format=csv&from=2026-01-01&to=2026-05-14"</span>{" "}
+            <span className="text-green-300">"https://api.prolnk.xyz/v1/export/partners?format=csv&from=2026-01-01&to=2026-05-14"</span>{" "}
             \<br />
             {"  "}<span className="text-amber-700">-H</span>{" "}
             <span className="text-green-300">"Authorization: Bearer YOUR_API_KEY"</span>{" "}

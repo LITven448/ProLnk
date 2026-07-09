@@ -15,7 +15,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "feedback@prolnk.com",
+        "fromEmail": "feedback@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "Quick question — how's ProLnk working for you?",
         "emailFormat": "html",

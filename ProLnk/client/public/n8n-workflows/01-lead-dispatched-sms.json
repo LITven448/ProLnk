@@ -37,7 +37,7 @@
       "parameters": {
         "fromNumber": "={{ $env.TWILIO_FROM_NUMBER }}",
         "toNumber": "={{ $json.partner_phone }}",
-        "message": "ProLnk: New lead for you! 🏠 {{ $json.homeowner_name }} at {{ $json.address }} needs {{ $json.job_type }}. Est. value: ${{ $json.estimated_value }}. Log in to accept: https://prolnk.io/dashboard/leads"
+        "message": "ProLnk: New lead for you! 🏠 {{ $json.homeowner_name }} at {{ $json.address }} needs {{ $json.job_type }}. Est. value: ${{ $json.estimated_value }}. Log in to accept: https://prolnk.xyz/dashboard/leads"
       },
       "id": "send-sms",
       "name": "Send Partner SMS",

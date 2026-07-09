@@ -366,7 +366,7 @@ export default function PartnerSuccessStories() {
             </div>
             <p className="text-slate-400 text-sm">
               Featured partners receive a ProLnk verified badge, priority placement in homeowner search results,
-              and a dedicated profile page linked from prolnk.io.
+              and a dedicated profile page linked from prolnk.xyz.
             </p>
           </div>
 

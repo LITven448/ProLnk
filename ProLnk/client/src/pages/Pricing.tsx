@@ -11,8 +11,8 @@ import { Check, ArrowRight, ChevronDown, ChevronUp, Zap, Building2, Star, Shield
 
 const TIERS = [
   {
-    id: "scout",
-    name: "Scout",
+    id: "core",
+    name: "Core",
     price: 99,
     keep: 40,
     tagline: "For solo pros getting started with AI-matched leads.",
@@ -40,11 +40,10 @@ const TIERS = [
     popular: true,
     cta: "Start Free Trial",
     features: [
-      "Everything in Scout, plus:",
+      "Everything in Core, plus:",
       "50% commission keep — 10 points more per job",
-      "Priority lead ranking over Scout members",
+      "Priority lead ranking over Core members",
       "3 user seats — manage your team in one account",
-      "ProLnk Exchange — bid on and post residential & commercial jobs",
       "Advanced lead filters by trade, zip, and job size",
     ],
   },
@@ -84,7 +83,7 @@ const ENTERPRISE = {
 const FAQS = [
   {
     q: "How does the commission pool work?",
-    a: "ProLnk takes 3–12% of the completed job value as a platform fee (varies by trade type and job size — in line with typical industry referral rates). Of that pool, you keep your tier's percentage. ProLnk always retains a minimum of 20% to cover platform operations, AI analysis, and lead sourcing. You keep 100% of everything you charge the homeowner — the platform fee is collected separately.",
+    a: "ProLnk takes 6–15% of the completed job value as a platform fee (varies by trade type and job size — in line with typical industry referral rates). Of that pool, you keep your tier's percentage. ProLnk always retains a minimum of 20% to cover platform operations, AI analysis, and lead sourcing. You keep 100% of everything you charge the homeowner — the platform fee is collected separately.",
   },
   {
     q: "Is there a background check requirement?",
@@ -340,7 +339,6 @@ export default function Pricing() {
                 { label: "PhotoScan AI",           vals: ["✓", "✓", "✓"] },
                 { label: "Storm alert leads",      vals: ["✓", "✓", "✓"] },
                 { label: "Lead ranking",           vals: ["Standard", "Priority", "Top"] },
-                { label: "ProLnk Exchange",        vals: ["—", "✓", "✓"] },
                 { label: "Advanced lead filters",  vals: ["—", "✓", "✓"] },
                 { label: "Custom territory",       vals: ["—", "—", "✓"] },
                 { label: "Dedicated account mgr",  vals: ["—", "—", "✓"] },

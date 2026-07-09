@@ -15,7 +15,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "alerts@prolnk.com",
+        "fromEmail": "alerts@prolnk.xyz",
         "toEmail": "={{ $env.ADMIN_EMAIL }}",
         "subject": "=⚠️ Dispute Opened — Commission #{{ $json.commissionId }} by {{ $json.partnerName }}",
         "emailFormat": "html",

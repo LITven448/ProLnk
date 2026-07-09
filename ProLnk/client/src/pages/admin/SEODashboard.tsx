@@ -37,7 +37,7 @@ const TOP_KEYWORDS: Keyword[] = [
   { keyword: "trustypro.io", volume: 1200, position: 1, clicks: 890, impressions: 1100, change: 0 },
   { keyword: "prolnk review", volume: 880, position: 3, clicks: 340, impressions: 820, change: 2 },
   { keyword: "home services DFW", volume: 3400, position: 7, clicks: 210, impressions: 2900, change: 4 },
-  { keyword: "prolnk.io", volume: 950, position: 2, clicks: 780, impressions: 940, change: 1 },
+  { keyword: "prolnk.xyz", volume: 950, position: 2, clicks: 780, impressions: 940, change: 1 },
   { keyword: "HouseCall Pro alternative", volume: 2200, position: 12, clicks: 95, impressions: 1800, change: -2 },
   { keyword: "licensed HVAC Frisco TX", volume: 1100, position: 14, clicks: 62, impressions: 940, change: 3 },
   { keyword: "home repair Dallas", volume: 5400, position: 18, clicks: 41, impressions: 4200, change: -1 },

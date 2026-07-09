@@ -769,13 +769,13 @@ export default function ProLnkMediaSite() {
         <meta property="og:title" content="ProLnk Media — Reach the Trades. Own the Neighborhood." />
         <meta property="og:description" content="Reach 500+ verified trade professionals and 12K+ DFW homeowners at the moment they're making buying decisions. Context-aware placements with first-party data." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://prolnk.io/media" />
+        <meta property="og:url" content="https://prolnk.xyz/media" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk Media — Reach the Trades. Own the Neighborhood." />
         <meta name="twitter:description" content="Reach 500+ verified trade professionals and 12K+ DFW homeowners at the moment they're making buying decisions." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
-        <link rel="canonical" href="https://prolnk.io/media" />
+        <link rel="canonical" href="https://prolnk.xyz/media" />
       </Helmet>
       <Nav onCta={() => setModalOpen(true)} />
       <Hero onCta={() => setModalOpen(true)} />

@@ -181,7 +181,7 @@ const INTEGRATIONS: IntegrationDef[] = [
     docsUrl: "/field",
     syncOptions: [],
     setupSteps: [
-      "Visit prolnk.com/field on your phone",
+      "Visit prolnk.xyz/field on your phone",
       "Tap 'Add to Home Screen' to install the app",
       "Log in with your ProLnk account",
       "Tap 'New Job' to start logging jobs and uploading photos",
@@ -429,7 +429,7 @@ export default function IntegrationSettings() {
     return acc;
   }, {});
 
-  const BASE_WEBHOOK_URL = `${typeof window !== "undefined" ? window.location.origin : "https://prolnk.io"}`;
+  const BASE_WEBHOOK_URL = `${typeof window !== "undefined" ? window.location.origin : "https://prolnk.xyz"}`;
   const PROLNK_API_KEY = "plnk_live_•••••••••••••••••••••••••";
 
   return (
@@ -550,7 +550,7 @@ export default function IntegrationSettings() {
                 </p>
               </div>
               <a
-                href="https://docs.prolnk.io/api"
+                href="https://docs.prolnk.xyz/api"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs text-teal-400 hover:text-teal-300 font-medium"

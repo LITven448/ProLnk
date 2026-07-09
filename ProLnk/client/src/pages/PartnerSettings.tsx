@@ -525,7 +525,7 @@ function IntegrationsTab() {
                 </span>
               ) : (
                 <a
-                  href="/dashboard/integration-settings"
+                  href="/dashboard/integrations"
                   className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-teal-400/10 text-teal-400 hover:bg-teal-400/20 transition-colors"
                 >
                   Connect →
@@ -536,7 +536,7 @@ function IntegrationsTab() {
         </div>
         <div className="mt-3">
           <a
-            href="/dashboard/integration-settings"
+            href="/dashboard/integrations"
             className="flex items-center gap-1.5 text-sm text-teal-400 hover:text-teal-300 font-medium"
           >
             Manage all integrations <ChevronRight className="w-3.5 h-3.5" />

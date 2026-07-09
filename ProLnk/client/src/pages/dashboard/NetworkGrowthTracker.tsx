@@ -52,7 +52,7 @@ const TREE_NODES: TreeNode[] = [
   { name: "Alicia H.", trade: "Roofing", subs: [{ name: "Kim J.", trade: "Roofing" }, { name: "Rex C.", trade: "Siding" }] },
 ];
 
-const REFERRAL_LINK = "https://prolnk.io/join?ref=PARTNER123";
+const REFERRAL_LINK = "https://prolnk.xyz/join?ref=PARTNER123";
 
 function ProgressBar({ value, max, color }: { value: number; max: number; color: string }) {
   const pct = Math.min(100, Math.round((value / max) * 100));

@@ -21,7 +21,7 @@ const ST_AUTH_BASE = "https://auth.servicetitan.io";
 const APP_KEY = process.env.SERVICETITAN_APP_KEY ?? "";
 const CLIENT_ID = process.env.SERVICETITAN_CLIENT_ID ?? "";
 const CLIENT_SECRET = process.env.SERVICETITAN_CLIENT_SECRET ?? "";
-const REDIRECT_URI = `${process.env.APP_BASE_URL ?? "https://prolnk.io"}/api/integrations/servicetitan/callback`;
+const REDIRECT_URI = `${process.env.APP_BASE_URL ?? "https://prolnk.xyz"}/api/integrations/servicetitan/callback`;
 
 // ─── OAuth ────────────────────────────────────────────────────────────────────
 

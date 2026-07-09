@@ -5,12 +5,12 @@
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     Cloudflare DNS                          │
-│  prolnk.io → prolnk-production.up.railway.app               │
-│  trustypro.prolnk.io → prolnk-production.up.railway.app     │
+│  prolnk.xyz → prolnk-platform.onrender.com                  │
+│  trustypro.io → prolnk-platform.onrender.com                │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
-│                      Railway (Prod)                          │
+│                       Render (Prod)                          │
 │  Node.js + Express + tRPC on Linux container                │
 └─────────────────────────────────────────────────────────────┘
          ↓                    ↓                    ↓
@@ -21,7 +21,7 @@
          ↓                    ↓                └───────────┘
     ┌──────────────────────────────────────────────────────┐
     │         Brand Detection (hostname)                    │
-    │  prolnk.io → window.__BRAND__ = 'prolnk'             │
+    │  prolnk.xyz → window.__BRAND__ = 'prolnk'            │
     │  trustypro → window.__BRAND__ = 'trustypro'          │
     └──────────────────────────────────────────────────────┘
          ↓                                        ↓
@@ -41,16 +41,16 @@
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
 | DNS | Cloudflare | Domain routing, SSL/TLS, DDoS protection |
-| Hosting | Railway | Container-based deployment, auto-scaling |
+| Hosting | Render | Container-based deployment (srv-d7ugk90sfn5c73b5pvd0) |
 | Frontend | React 19, Vite | UI rendering, dev experience |
 | Backend | Node.js, Express | HTTP server, middleware, static serving |
 | API | tRPC | Type-safe RPC, automatic Zod validation |
 | Database | TiDB Cloud | Distributed MySQL, high availability |
 | Email | Resend | Transactional email delivery |
 | Workflows | n8n | Lead matching, notifications, processing |
-| Authentication | JWT (WIP) | Session tokens, user verification |
-| Payments | Stripe (WIP) | Payment processing, commission payouts |
-| Monitoring | Railway Logs | Error tracking, performance monitoring |
+| Authentication | JWT | Session tokens, user verification (built) |
+| Payments | Stripe | Payment processing, commission payouts (built) |
+| Monitoring | Render Logs + Sentry | Error tracking, performance monitoring |
 
 ## Directory Structure
 
@@ -106,7 +106,7 @@ ProLnk/
 ├── vite.config.ts               # Vite build config
 ├── tsconfig.json                # TypeScript config
 ├── package.json                 # Dependencies and scripts
-├── railway.json                 # Railway deployment config
+├── vercel.json                  # Legacy deploy config (Render uses dashboard settings)
 │
 └── .claude/
     ├── settings.json            # Permissions for autonomous work
@@ -117,9 +117,9 @@ ProLnk/
 
 ### 1. HTTP Request Arrives
 ```
-curl https://prolnk.io/
-→ Cloudflare routes to prolnk-production.up.railway.app
-→ Railway container receives request
+curl https://prolnk.xyz/
+→ Cloudflare routes to prolnk-platform.onrender.com
+→ Render container receives request
 ```
 
 ### 2. Express Middleware
@@ -212,19 +212,26 @@ opportunities: {
 
 **Commission Cascade**:
 ```typescript
+// Canonical rates:
+// - Platform fee: 6–15% of job value
+// - Completing pro keeps 40% / 50% / 60% of the fee by tier (Core/Pro/Business)
+// - Network override: 7% / 4% / 2% / 1% of the platform fee (L1–L4)
+// - Subscription override: 12% / 6% / 3% / 1.5% (L1–L4)
+// - Origination: 5% of the platform fee, perpetual
+// - ProLnk floor: always retains ≥20% of the fee
 commissionPayout: {
   id: integer (PK)
   recipientUserId: integer (FK to partners)
   sourceProUserId: integer (FK to partners)
   jobCommissionEventId: integer (FK to opportunities)
   payoutType: enum (
-    'direct_match',      // 12-70% by tier
-    'network_l1',        // 1% from direct recruits
-    'network_l2',        // 0.5% from their recruits
-    'network_l3',        // 0.25%
-    'network_l4',        // 0.1%
-    'subscription_override', // 10% of $199/mo
-    'homeowner_override' // Per-lead fee
+    'direct_match',      // pro's keep: 40/50/60% of platform fee by tier
+    'network_l1',        // 7% of platform fee
+    'network_l2',        // 4% of platform fee
+    'network_l3',        // 2% of platform fee
+    'network_l4',        // 1% of platform fee
+    'subscription_override', // 12/6/3/1.5% by level
+    'origination'        // 5% of platform fee, perpetual
   )
   amount: decimal
   status: enum ('pending', 'processed', 'failed')
@@ -261,9 +268,9 @@ Code Change
      ↓
 git push origin main
      ↓
-GitHub webhook → Railway
+GitHub webhook → Render
      ↓
-Railway rebuilds Docker image
+Render rebuilds the service
      ↓
 npm install
 npm run build (Vite)
@@ -279,12 +286,12 @@ Zero-downtime deploy (old + new running, traffic switched)
 ## Scaling Considerations
 
 **Current Capacity**:
-- Single Railway container handles ~1,000 concurrent users
+- Single Render instance handles ~1,000 concurrent users
 - TiDB Cloud starter tier: 2 replicas, auto-failover
 - Cloudflare DDoS protection: 250K req/sec
 
 **Future Scaling**:
-- Multiple Railway containers behind load balancer
+- Multiple Render instances behind load balancer
 - TiDB cluster upgrade to standard tier (more replicas)
 - Redis for session caching + rate limiting
 - CDN for static assets (Cloudflare)

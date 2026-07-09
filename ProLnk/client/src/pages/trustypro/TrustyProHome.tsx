@@ -1232,7 +1232,7 @@ export default function TrustyProHome() {
             <p className="text-sm font-bold" style={{ color: ACCENT }}>
               {homesOnWaitlist > 0
                 ? `${homesOnWaitlist.toLocaleString()} homes already on the waitlist — DFW`
-                : "Founding network forming in DFW — limited founding spots remaining"}
+                : "Network forming in DFW — early access spots remaining"}
             </p>
           </motion.div>
 

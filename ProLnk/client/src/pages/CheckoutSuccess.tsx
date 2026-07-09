@@ -61,7 +61,7 @@ function TrialCountdown({ trialStart }: { trialStart: Date }) {
 
 function ReferralCopy({ email }: { email: string }) {
   const [copied, setCopied] = useState(false);
-  const link = `https://prolnk.io/join?ref=${encodeURIComponent(email)}`;
+  const link = `https://prolnk.xyz/join?ref=${encodeURIComponent(email)}`;
 
   function copy() {
     navigator.clipboard.writeText(link).then(() => {
@@ -221,7 +221,7 @@ export default function CheckoutSuccess() {
             </button>
           </Link>
           <div style={{ marginTop: 14, fontSize: 12, color: "rgba(245,240,232,0.3)" }}>
-            Questions? Email <a href="mailto:support@prolnk.io" style={{ color: "rgba(245,240,232,0.45)", textDecoration: "none" }}>support@prolnk.io</a>
+            Questions? Email <a href="mailto:support@prolnk.xyz" style={{ color: "rgba(245,240,232,0.45)", textDecoration: "none" }}>support@prolnk.xyz</a>
           </div>
         </div>
       </div>

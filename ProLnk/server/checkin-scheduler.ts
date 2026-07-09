@@ -19,7 +19,7 @@ import { getDb } from "./db";
 
 // Email helper (mirrors notifications.ts pattern)
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM_EMAIL = process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.com>";
+const FROM_EMAIL = process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.xyz>";
 
 async function sendEmail(params: { to: string; subject: string; html: string }): Promise<boolean> {
   if (!RESEND_API_KEY) {

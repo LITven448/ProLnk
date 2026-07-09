@@ -381,7 +381,7 @@ export default function ReferralFunnelTracker() {
               className="flex-1 rounded-xl px-3 py-2.5 text-xs font-mono truncate"
               style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)", color: "rgba(255,255,255,0.7)" }}
             >
-              {referralLink || "prolnk.io/join?ref=you"}
+              {referralLink || "prolnk.xyz/join?ref=you"}
             </div>
             <button
               onClick={handleCopy}

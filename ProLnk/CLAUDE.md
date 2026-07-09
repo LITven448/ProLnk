@@ -34,7 +34,7 @@ PORT=3000
 ```
 
 **Database Initialization**:
-- POST /setup endpoint creates 106 tables
+- POST /setup endpoint creates 130+ tables
 - Only runs once, subsequent calls are no-ops
 - Idempotent (safe to call multiple times)
 
@@ -44,19 +44,19 @@ PORT=3000
 
 | Brand | Audience | Domain |
 |-------|----------|--------|
-| ProLnk | Individual service professionals | prolnk.xyz (live) → prolnk.io (pending) |
-| ProLnk Exchange | Commercial contractors / job board | exchange.prolnk.io |
+| ProLnk | Individual service professionals | prolnk.xyz (canonical now; prolnk.io returns later when access restored) |
+| ProLnk Exchange | SHELVED → future commercial marketplace | — |
 | TrustyPro | Homeowners | trustypro.io (live) |
-| TrustyPro Commercial | Commercial property owners | commercial.trustypro.io |
-| ProLnk Media | Advertisers (real estate, title, mortgage) | media.prolnk.io |
+| TrustyPro Commercial | future (strategy-gated) | — |
+| ProLnk Media | Ad product inside ProLnk Partners | — |
 | LNKD | Room scan + affiliate product links | TBD |
-| ProLnk Network | Internal operator/admin (not a consumer brand) | network.prolnk.io |
+| ProLnk Network | Internal operator/admin (not a consumer brand) | network.prolnk.xyz |
 
 **Mobile Apps**: ProLnk App (service professionals), TrustyPro App (homeowners)
 
 **Note**: LIT Ventures is the investment group (parent company). It is NOT a brand and must not appear in routing or UI.
 
-**Domain note**: prolnk.io is currently locked in Manus (prior AI build platform). prolnk.xyz is the live domain until prolnk.io is released. The new Azure build must support both.
+**Domain note**: prolnk.xyz is the canonical domain. prolnk.io returns later when access is restored.
 
 ## Brand Routing (Current Vite/Render Stack)
 
@@ -150,7 +150,7 @@ const isDev = process.env.NODE_ENV === "development";
 const isProd = process.env.NODE_ENV === "production";
 ```
 
-## May 6 Scope
+## May 6 Scope (HISTORICAL — superseded)
 
 **Live Features**:
 - Waitlist signup for Pros

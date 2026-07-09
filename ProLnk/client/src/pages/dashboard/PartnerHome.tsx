@@ -1113,7 +1113,7 @@ export default function PartnerHome() {
 
   const tier = status.tier ?? "waitlist";
   const tierCfg = TIER_CONFIG[tier] ?? TIER_CONFIG.waitlist;
-  const referralLink = `${typeof window !== "undefined" ? window.location.origin : "https://prolnk.io"}/join?ref=${status.referralCode}`;
+  const referralLink = `${typeof window !== "undefined" ? window.location.origin : "https://prolnk.xyz"}/join?ref=${status.referralCode}`;
   const overrideLevels = OVERRIDE_LEVELS[tier] ?? 0;
   const isFoundingNetwork = tier !== "waitlist";
 

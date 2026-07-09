@@ -523,7 +523,7 @@ async function startServer() {
 
   // Sitemap.xml endpoint for SEO
   app.get("/sitemap.xml", async (_req, res) => {
-    const baseUrl = process.env.APP_BASE_URL || "https://prolnk.io";
+    const baseUrl = process.env.APP_BASE_URL || "https://prolnk.xyz";
     const staticRoutes = [
       { path: "/", priority: "1.0", changefreq: "weekly" },
       { path: "/apply", priority: "0.9", changefreq: "monthly" },

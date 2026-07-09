@@ -146,7 +146,7 @@ export default function ProLnkInvestorPage() {
           )}
           <div style={{ marginTop: 28, padding: 20, background: "#0A1628", borderRadius: 10, border: "1px solid #F5E642" }}>
             <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 4 }}>📧 Contact Us</div>
-            <div style={{ color: "#CBD5E1", fontSize: 14 }}>Reach out to andrew@prolnk.io to schedule a founder call and receive the full investor deck and financial model.</div>
+            <div style={{ color: "#CBD5E1", fontSize: 14 }}>Reach out to andrew@prolnk.xyz to schedule a founder call and receive the full investor deck and financial model.</div>
           </div>
         </div>
       </div>

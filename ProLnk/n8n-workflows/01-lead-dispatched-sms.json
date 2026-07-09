@@ -48,7 +48,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "noreply@prolnk.com",
+        "fromEmail": "noreply@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "=🔔 New Lead: {{ $json.opportunityType }} at {{ $json.serviceAddress }}",
         "emailFormat": "html",

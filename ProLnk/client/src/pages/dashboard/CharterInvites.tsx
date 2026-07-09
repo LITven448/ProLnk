@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Crown, Copy, Check, Users, Link as LinkIcon, Clock } from "lucide-react";
 import { toast } from "sonner";
 
-const BASE_URL = "https://prolnk.io/join/charter";
+const BASE_URL = "https://prolnk.xyz/join/charter";
 
 interface InviteCode {
   id: string;

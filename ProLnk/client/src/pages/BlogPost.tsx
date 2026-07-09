@@ -94,7 +94,7 @@ const SAMPLE_POST: BlogPostData = {
       <h2 className="text-white text-xl font-semibold pt-2">What to Do Now</h2>
       <p>
         Applications are reviewed on a rolling basis. Charter and Founding tiers are nearly full. L3 and L4 spots remain.
-        Once the waitlist closes, this rate structure closes with it. Apply at prolnk.io/apply — the form takes under two minutes.
+        Once the waitlist closes, this rate structure closes with it. Apply at prolnk.xyz/apply — the form takes under two minutes.
       </p>
     </div>
   ),

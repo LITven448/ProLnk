@@ -64,7 +64,7 @@ export async function generateHomePassportPdf(
   // ── Generate QR code ─────────────────────────────────────────────────────────
   let qrDataUrl: string | null = null;
   if (transferToken) {
-    const transferUrl = `${origin ?? "https://prolnk.io"}/passport/claim/${transferToken}`;
+    const transferUrl = `${origin ?? "https://prolnk.xyz"}/passport/claim/${transferToken}`;
     qrDataUrl = await QRCode.toDataURL(transferUrl, { width: 200, margin: 1 });
   }
 

@@ -104,7 +104,7 @@
       "typeVersion": 2,
       "position": [1100, 500],
       "parameters": {
-        "fromEmail": "system@prolnk.com",
+        "fromEmail": "system@prolnk.xyz",
         "toEmail": "={{ $env.ADMIN_EMAIL }}",
         "subject": "⚠️ Low NPS Score — Requires Follow-Up",
         "emailType": "html",

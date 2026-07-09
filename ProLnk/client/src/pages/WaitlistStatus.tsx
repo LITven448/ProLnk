@@ -280,7 +280,7 @@ function NetworkTree({ levels, keepRate }: { levels: number; keepRate: number })
   if (levels === 0) {
     return (
       <div className="p-4 rounded-xl text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-        <p className="text-gray-500 text-sm">All Founding Network members (Charter/Founding/L3/L4) earn 4 levels of network override override income.</p>
+        <p className="text-gray-500 text-sm">Members earn 4 levels of network override income.</p>
         <Link href="/waitlist-status?upgrade=1" className="text-amber-400 text-xs mt-2 inline-block hover:underline">How to unlock overrides →</Link>
       </div>
     );
@@ -465,9 +465,9 @@ function EmailLookup() {
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>Tier overview</p>
           <div className="space-y-2">
             {[
-              { label: "Charter", color: "#fbbf24", bg: "rgba(251,191,36,0.1)", slots: "25 total", commission: "60% keep" },
-              { label: "Founding", color: "#2dd4bf", bg: "rgba(45,212,191,0.1)", slots: "100 total", commission: "60% keep" },
-              { label: "Level 3", color: "#a78bfa", bg: "rgba(167,139,250,0.1)", slots: "400 total", commission: "60% keep" },
+              { label: "Charter", color: "#fbbf24", bg: "rgba(251,191,36,0.1)", slots: "Invite-only", commission: "60% keep" },
+              { label: "Founding", color: "#2dd4bf", bg: "rgba(45,212,191,0.1)", slots: "Invite-only", commission: "60% keep" },
+              { label: "Level 3", color: "#a78bfa", bg: "rgba(167,139,250,0.1)", slots: "Invite-only", commission: "60% keep" },
             ].map(({ label, color, bg, slots, commission }) => (
               <div
                 key={label}
@@ -543,7 +543,7 @@ export default function WaitlistStatus() {
   const homesCount = publicCounts?.homes;
   const [emailNotify, setEmailNotify] = useState(true);
 
-  const referralLink = status ? `https://prolnk.io/apply?ref=${status.referralCode}` : "";
+  const referralLink = status ? `https://prolnk.xyz/apply?ref=${status.referralCode}` : "";
   const tier = status?.tier || "Standard";
   const tierCfg = TIER_CONFIG[tier as keyof typeof TIER_CONFIG] || TIER_CONFIG.Standard;
 
@@ -664,7 +664,7 @@ export default function WaitlistStatus() {
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Share on</p>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🚀 Just locked my spot in the ProLnk founding network — home services income system for pros. Limited charter spots still open. ${referralLink}`)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🚀 Just joined the ProLnk waitlist — the home services income network for pros. Early access is open. ${referralLink}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
@@ -694,7 +694,7 @@ export default function WaitlistStatus() {
                 Facebook
               </a>
               <a
-                href={`https://wa.me/?text=${encodeURIComponent(`Hey! I just got in on the ProLnk founding network — the new income platform for home service pros. Sign up before charter spots are gone: ${referralLink}`)}`}
+                href={`https://wa.me/?text=${encodeURIComponent(`Hey! I just joined the ProLnk waitlist — the new income platform for home service pros. Early access is open: ${referralLink}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
@@ -819,12 +819,10 @@ export default function WaitlistStatus() {
         >
           <Zap size={28} className="text-green-400 mx-auto mb-3" />
           <h3 className="text-xl font-bold text-white mb-2">
-            {tier === "Charter" ? "You're a Charter Partner!" : `Share to reach Charter status`}
+            Share your referral link
           </h3>
           <p className="text-gray-400 text-sm mb-4">
-            {tier === "Charter"
-              ? "You're in the top 100. Lock in your 2.0% commission rate and 4-level override network forever."
-              : `Charter Members (first 25 spots) earn 60% commission keep rate and 4 levels of network overriderrides. ${status.spotsToCharter > 0 ? `${status.spotsToCharter} spots remain — get 5 referrals to qualify.` : "Get 5 referrals to qualify."}`}
+            Referrals strengthen your network standing. Each pro who joins through your link builds your override income.
           </p>
           <CopyButton text={referralLink} label="Copy My Referral Link" />
           <div className="mt-3">

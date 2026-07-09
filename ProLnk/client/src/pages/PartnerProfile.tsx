@@ -116,7 +116,7 @@ export default function PartnerProfile() {
   const { partner, reviews, avgRating } = data;
 
   // -- Wave 19: SEO metadata --------------------------------------------------
-  const siteOrigin = typeof window !== "undefined" ? window.location.origin : "https://prolnk.io";
+  const siteOrigin = typeof window !== "undefined" ? window.location.origin : "https://prolnk.xyz";
   const canonicalUrl = `${siteOrigin}/partner/${partnerId}`;
   const siteName = "ProLnk";
   const logoUrl = `${siteOrigin}/prolnk-og.png`; // OG image for social sharing

@@ -151,7 +151,7 @@ export default function NetworkScreen() {
           <div style={{ fontSize: 11, color: COLORS.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>Your Referral Link</div>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <div style={{ flex: 1, background: COLORS.bg, borderRadius: 8, padding: "9px 12px", fontSize: 12, color: COLORS.text, border: `1px solid ${COLORS.border}`, overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>
-              prolnk.io/join?ref=marcus-hvac
+              prolnk.xyz/join?ref=marcus-hvac
             </div>
             <button onClick={handleCopy} style={{ background: copied ? COLORS.green : COLORS.yellow, color: COLORS.bg, border: "none", borderRadius: 8, padding: "9px 14px", fontSize: 13, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", transition: "background 0.2s" }}>
               {copied ? "✓ Copied" : "Copy"}

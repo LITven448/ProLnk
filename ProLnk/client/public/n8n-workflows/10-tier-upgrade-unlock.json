@@ -46,7 +46,7 @@
       "typeVersion": 2,
       "position": [500, 200],
       "parameters": {
-        "fromEmail": "partners@prolnk.com",
+        "fromEmail": "partners@prolnk.xyz",
         "toEmail": "={{ $vars.partnerEmail }}",
         "subject": "🎉 You've been upgraded to {{ $vars.newTier | upper }} tier!",
         "emailType": "html",
@@ -81,7 +81,7 @@
       "typeVersion": 2,
       "position": [700, 300],
       "parameters": {
-        "fromEmail": "system@prolnk.com",
+        "fromEmail": "system@prolnk.xyz",
         "toEmail": "={{ $env.ADMIN_EMAIL }}",
         "subject": "[ProLnk] Partner Tier Upgrade: {{ $vars.partnerName }}",
         "emailType": "text",

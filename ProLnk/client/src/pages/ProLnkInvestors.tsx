@@ -122,7 +122,7 @@ export default function ProLnkInvestors() {
           <p style={{ fontSize: 16, color: '#94a3b8', marginBottom: 20 }}>
             We are selectively building our Series A relationship pipeline now. Reach out early.
           </p>
-          <div style={{ color: '#60a5fa', fontSize: 17, fontWeight: 600 }}>investors@prolnk.io</div>
+          <div style={{ color: '#60a5fa', fontSize: 17, fontWeight: 600 }}>investors@prolnk.xyz</div>
         </div>
 
       </div>

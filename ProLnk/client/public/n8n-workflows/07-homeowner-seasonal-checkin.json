@@ -16,7 +16,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://prolnk.io/api/trpc/admin.getActiveHomeowners",
+        "url": "https://prolnk.xyz/api/trpc/admin.getActiveHomeowners",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -43,12 +43,12 @@
     },
     {
       "parameters": {
-        "fromEmail": "home@prolnk.io",
+        "fromEmail": "home@prolnk.xyz",
         "fromName": "ProLnk Home",
         "toEmail": "={{ $json.email }}",
         "subject": "🍂 Time for your seasonal home check-in",
         "emailType": "html",
-        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Hi {{ $json.name }},</h2><p>It's that time of year — a quick property scan now can save you thousands in repairs later.</p><p>Upload 3-5 photos of your home's exterior, roof, gutters, and any areas of concern. Our AI will scan for issues and match you with verified pros in your area.</p><a href='https://prolnk.io/trustypro/scan' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>Start Your Seasonal Scan →</a><p style='color: #666; font-size: 14px; margin-top: 24px;'>Takes less than 2 minutes. No obligation.</p></body></html>"
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Hi {{ $json.name }},</h2><p>It's that time of year — a quick property scan now can save you thousands in repairs later.</p><p>Upload 3-5 photos of your home's exterior, roof, gutters, and any areas of concern. Our AI will scan for issues and match you with verified pros in your area.</p><a href='https://prolnk.xyz/trustypro/scan' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>Start Your Seasonal Scan →</a><p style='color: #666; font-size: 14px; margin-top: 24px;'>Takes less than 2 minutes. No obligation.</p></body></html>"
       },
       "id": "send-checkin-email",
       "name": "Send Seasonal Check-In Email",

@@ -363,9 +363,9 @@ export default function About() {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "32px", textAlign: "center" }}>
           <p style={{ color: MUTED, fontSize: 12, margin: 0 }}>
             © 2026 ProLnk · DFW, Texas ·{" "}
-            <Link href="/legal/privacy-policy"><span style={{ color: TEAL, cursor: "pointer" }}>Privacy</span></Link>
+            <Link href="/privacy"><span style={{ color: TEAL, cursor: "pointer" }}>Privacy</span></Link>
             {" · "}
-            <Link href="/legal/terms-of-service"><span style={{ color: TEAL, cursor: "pointer" }}>Terms</span></Link>
+            <Link href="/terms"><span style={{ color: TEAL, cursor: "pointer" }}>Terms</span></Link>
             {" · "}
             <a href="mailto:hello@prolnk.xyz" style={{ color: TEAL }}>Contact</a>
           </p>

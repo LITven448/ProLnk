@@ -7,7 +7,7 @@ import { trpc } from "@/lib/trpc";
 const LAUNCH_DATE = new Date("2026-09-01T00:00:00");
 const SPRINT_END = new Date("2026-05-31T23:59:59"); // Sprint closes May 31
 
-const SHARE_URL = "https://prolnk.io/contest";
+const SHARE_URL = "https://prolnk.xyz/contest";
 const SHARE_TEXT = "DFW homeowners & service pros — sign up for ProLnk & TrustyPro and compete for $10,000 in prizes. Top 5 referrers win cash at the live launch event.";
 
 // ─── Spring Sprint data (would come from API in production) ─────────────────
@@ -375,7 +375,7 @@ function SpringSprintSection() {
         {/* Share button */}
         <div className="mb-6 text-center">
           <button
-            onClick={() => { navigator.clipboard.writeText("https://prolnk.io/contest"); toast.success("Contest link copied!"); }}
+            onClick={() => { navigator.clipboard.writeText("https://prolnk.xyz/contest"); toast.success("Contest link copied!"); }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-colors"
           >
             <Share2 className="w-4 h-4" />
@@ -606,7 +606,7 @@ export default function Contest() {
               I'm a Homeowner <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-          <p className="text-xs text-gray-400 mt-4">Questions? Contact us at hello@prolnk.io</p>
+          <p className="text-xs text-gray-400 mt-4">Questions? Contact us at hello@prolnk.xyz</p>
         </div>
       </div>
 

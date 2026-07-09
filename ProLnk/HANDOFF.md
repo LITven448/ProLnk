@@ -114,7 +114,7 @@ Deleted:
 
 [Chronological list of previous session handoffs]
 
-### Session 2026-05-05 (2 hours)
+### (historical — superseded) Session 2026-05-05 (2 hours)
 - Verified ProLnk homepage loads and renders correctly
 - Tested Pro signup form, filled in test data
 - Confirmed database initialization via /setup endpoint (106 tables created)

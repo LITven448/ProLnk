@@ -1,6 +1,6 @@
 // SEO Metadata
 // title: Dallas Homeowners: Get Your Home's AI Health Score Free | TrustyPro
-// description: Dallas homeowners: 41% of scans reveal foundation issues from Blackland Prairie clay. Hard water at 420 PPM destroys water heaters early. Get your free AI Home Health Score today.
+// description: Dallas homeowners: foundation issues from Blackland Prairie clay are among the most common findings. Hard water at 420 PPM destroys water heaters early. Get your free AI Home Health Score today.
 // keywords: Dallas home inspection, Dallas foundation issues, Dallas home health score, TrustyPro Dallas, home maintenance Dallas TX
 // og:title: Dallas Homeowners: Get Your Home's AI Health Score Free
 // og:description: Dallas homes average 28 years old. Our AI scans reveal hidden issues before they become expensive emergencies.
@@ -24,7 +24,7 @@ const testimonials = [
 ];
 
 const faqs = [
-  { q: "Why do Dallas homes have so many foundation issues?", a: "Dallas sits on Blackland Prairie clay — one of the most expansive soil types in North America. When wet seasons alternate with dry summers, the clay swells and shrinks, exerting enormous pressure on slab foundations. About 41% of TrustyPro scans in Dallas reveal active or historic foundation movement." },
+  { q: "Why do Dallas homes have so many foundation issues?", a: "Dallas sits on Blackland Prairie clay — one of the most expansive soil types in North America. When wet seasons alternate with dry summers, the clay swells and shrinks, exerting enormous pressure on slab foundations. Foundation movement is one of the most common issues TrustyPro scans reveal in Dallas homes." },
   { q: "How does hard water damage my home systems?", a: "Dallas municipal water averages 420 PPM of dissolved minerals — well above the 180 PPM soft water threshold. Over time, scale deposits clog water heater elements, reduce water pressure, and shorten appliance lifespan by 20-35%. TrustyPro tracks this and alerts you before failure." },
   { q: "Is the AI Health Score really free?", a: "Yes. The diagnostic scan is free. You only pay if you choose to hire a pro through TrustyPro, and pros compete on price so you get fair market rates." },
   { q: "How long does my home's health score last?", a: "Your score is dynamic — it updates as you log maintenance, add photos, and as your home ages. We recommend refreshing a full scan annually or after major weather events." },

@@ -573,7 +573,7 @@ export default function BusinessPacket() {
                   {[
                     "Stripe account ownership transfer (requires Stripe verification)",
                     "GitHub organization ownership transfer",
-                    "Domain registrar account (prolnk.io, trustypro.io)",
+                    "Domain registrar account (prolnk.xyz, trustypro.io)",
                     "Manus project ownership transfer",
                     "n8n instance credentials and workflow exports",
                     "Resend API key and domain verification",

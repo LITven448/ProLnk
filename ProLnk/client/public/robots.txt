@@ -6,4 +6,4 @@ Disallow: /field-os/
 Disallow: /my-home/
 Disallow: /api/
 
-Sitemap: https://prolnk.io/sitemap.xml
+Sitemap: https://prolnk.xyz/sitemap.xml

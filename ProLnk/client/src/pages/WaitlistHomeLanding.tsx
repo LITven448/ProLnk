@@ -226,7 +226,7 @@ export default function WaitlistHomeLanding() {
         </div>
         <p className="text-gray-400 text-xs">© 2026 TrustyPro by ProLnk. DFW, Texas. All rights reserved.</p>
         <div className="flex justify-center gap-6 mt-3">
-          <a href="https://prolnk.io" className="text-gray-400 hover:text-gray-600 text-xs">ProLnk.io</a>
+          <a href="https://prolnk.xyz" className="text-gray-400 hover:text-gray-600 text-xs">ProLnk.io</a>
           <a href="/waitlist/pro" className="text-gray-400 hover:text-gray-600 text-xs">Service Pro Waitlist</a>
         </div>
       </footer>

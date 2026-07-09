@@ -50,7 +50,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "team@prolnk.com",
+        "fromEmail": "team@prolnk.xyz",
         "toEmail": "={{ $json.contactEmail }}",
         "subject": "We miss you — there are leads waiting for you",
         "emailFormat": "html",

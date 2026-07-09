@@ -12,7 +12,7 @@ const OBJECTIONS = [
   },
   {
     q: "I need to talk to my business partner first.",
-    a: "Your spot is still reserved. Come back to prolnk.io/checkout anytime — no countdown pressure. But note: the 2,125 founding spots do fill on a first-come basis.",
+    a: "Your spot is still reserved. Come back to prolnk.xyz/checkout anytime — no countdown pressure. But note: the 2,125 founding spots do fill on a first-come basis.",
   },
   {
     q: "I'm worried about getting locked into something.",
@@ -102,7 +102,7 @@ export default function CheckoutCancel() {
               Resume checkout →
             </button>
           </Link>
-          <a href="mailto:support@prolnk.io?subject=Founding%20Network%20Question" style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 100, padding: "14px 28px", fontSize: 15, color: "#F5F0E8", textDecoration: "none", fontWeight: 600 }}>
+          <a href="mailto:support@prolnk.xyz?subject=Founding%20Network%20Question" style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 100, padding: "14px 28px", fontSize: 15, color: "#F5F0E8", textDecoration: "none", fontWeight: 600 }}>
             <MessageCircle style={{ width: 16, height: 16 }} />
             Have questions? Email us
           </a>

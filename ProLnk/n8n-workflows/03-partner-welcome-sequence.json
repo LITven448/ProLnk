@@ -15,7 +15,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "welcome@prolnk.com",
+        "fromEmail": "welcome@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "Welcome to ProLnk, {{ $json.partnerName }}! 🎉",
         "emailFormat": "html",
@@ -40,7 +40,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "tips@prolnk.com",
+        "fromEmail": "tips@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "=Quick tip: How {{ $json.partnerName }} can earn their first commission",
         "emailFormat": "html",
@@ -65,7 +65,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "tips@prolnk.com",
+        "fromEmail": "tips@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "Week 1 check-in — how's it going?",
         "emailFormat": "html",

@@ -29,7 +29,7 @@ import { enqueuePhoto } from "./intake-router";
 const COMPANYCAM_BASE = "https://api.companycam.com/v2";
 const CLIENT_ID = process.env.COMPANYCAM_CLIENT_ID ?? "";
 const CLIENT_SECRET = process.env.COMPANYCAM_CLIENT_SECRET ?? "";
-const REDIRECT_URI = `${process.env.APP_BASE_URL ?? "https://prolnk.io"}/api/integrations/companycam/callback`;
+const REDIRECT_URI = `${process.env.APP_BASE_URL ?? "https://prolnk.xyz"}/api/integrations/companycam/callback`;
 
 // ─── OAuth ────────────────────────────────────────────────────────────────────
 
@@ -108,7 +108,7 @@ export async function refreshCompanyCamToken(refreshToken: string): Promise<{
 // ─── Webhook Registration ─────────────────────────────────────────────────────
 
 export async function registerCompanyCamWebhook(accessToken: string): Promise<string | null> {
-  const webhookUrl = `${process.env.APP_BASE_URL ?? "https://prolnk.io"}/api/webhooks/companycam`;
+  const webhookUrl = `${process.env.APP_BASE_URL ?? "https://prolnk.xyz"}/api/webhooks/companycam`;
   try {
     const res = await fetch(`${COMPANYCAM_BASE}/webhooks`, {
       method: "POST",

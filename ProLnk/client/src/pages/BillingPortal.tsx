@@ -53,7 +53,7 @@ export default function BillingPortal() {
       toast.info("Redirecting to Stripe to complete cancellation…");
       setCancelOpen(false);
     } catch {
-      toast.error("Could not open cancellation flow. Please contact support@prolnk.io.");
+      toast.error("Could not open cancellation flow. Please contact support@prolnk.xyz.");
     } finally {
       setCancelling(false);
     }
@@ -268,7 +268,7 @@ export default function BillingPortal() {
 
         {/* Help */}
         <p className="text-xs text-gray-400 text-center">
-          Questions about billing? Contact us at support@prolnk.io
+          Questions about billing? Contact us at support@prolnk.xyz
         </p>
       </div>
 

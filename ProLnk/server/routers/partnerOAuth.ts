@@ -4,7 +4,7 @@ import { partners } from "../../drizzle/schema";
 import { z } from "zod";
 import * as crypto from "crypto";
 
-const APP_BASE_URL = (process.env.APP_BASE_URL ?? "https://prolnk.io").replace(/\/$/, "");
+const APP_BASE_URL = (process.env.APP_BASE_URL ?? "https://prolnk.xyz").replace(/\/$/, "");
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID ?? "";
 
 function generateReferralCode(): string {

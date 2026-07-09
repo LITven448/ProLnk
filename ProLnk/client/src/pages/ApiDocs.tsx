@@ -349,7 +349,7 @@ function EndpointBlock({ ep, baseUrl }: { ep: Endpoint; baseUrl: string }) {
 export default function ApiDocs() {
   const [activeGroup, setActiveGroup] = useState("Waitlist");
 
-  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://prolnk.io";
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://prolnk.xyz";
 
   const authExample = `Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`;
 
@@ -447,7 +447,7 @@ export default function ApiDocs() {
               </p>
               <div className="grid sm:grid-cols-3 gap-3 mb-4">
                 {[
-                  { label: "Base URL", value: "prolnk.io/api/trpc" },
+                  { label: "Base URL", value: "prolnk.xyz/api/trpc" },
                   { label: "Protocol", value: "HTTPS only" },
                   { label: "Format", value: "JSON (tRPC)" },
                 ].map((item) => (

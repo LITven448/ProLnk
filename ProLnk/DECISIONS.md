@@ -134,7 +134,7 @@ const result = await client.waitlist.submitPro.mutate({ ... });
 ## Decision 5: Railway for Hosting (No Kubernetes)
 
 **Date**: 2026-03-01
-**Status**: ✅ Implemented
+**Status**: ⚠️ SUPERSEDED 2026-05-07: migrated to Render (srv-d7ugk90sfn5c73b5pvd0)
 **Impact**: High
 
 **Decision**: Deploy to Railway (container platform) instead of AWS ECS or Kubernetes.
@@ -224,7 +224,7 @@ const result = await db
 ## Decision 7: Subdomain for TrustyPro Instead of Separate Zone
 
 **Date**: 2026-05-05
-**Status**: ✅ Decided (implementation pending)
+**Status**: ⚠️ SUPERSEDED: trustypro.io is its own domain
 **Impact**: Medium (Cost savings)
 
 **Decision**: Use trustypro.prolnk.io (subdomain) instead of trustypro.io (separate zone).
@@ -258,10 +258,10 @@ const result = await db
 
 ---
 
-## Decision 8: No Authentication in May 6 Scope
+## Decision 8: No Authentication in May 6 Scope (HISTORICAL — JWT auth since built)
 
 **Date**: 2026-04-20
-**Status**: ✅ Scoped
+**Status**: 🕰️ Historical (JWT auth built post-launch)
 **Impact**: High (reduces scope)
 
 **Decision**: Exclude JWT authentication from May 6 launch, waitlist only (no user accounts).
@@ -300,7 +300,7 @@ const result = await db
 ## Pending Decisions
 
 ### 1. Payment Processing Strategy
-**Status**: OPEN
+**Status**: DECIDED — Stripe Connect (Option A)
 **Options**:
 - Option A: Stripe Connect (partners receive payouts directly)
 - Option B: ProLnk manages payout (Stripe payout to company, then distribute)
@@ -310,7 +310,7 @@ const result = await db
 **Timeline**: Need decision before week 3
 
 ### 2. Lead Matching Algorithm
-**Status**: OPEN  
+**Status**: BUILT (matching-engine; consolidation pending)
 **Options**:
 - Option A: Rule-based (service type + location + tier)
 - Option B: ML-based (train on historical matches)
@@ -333,4 +333,4 @@ const result = await db
 
 ## Superseded Decisions
 
-None yet (this project is < 2 months old).
+5 (Railway → Render), 7 (TrustyPro subdomain → own domain), 8 (no-auth scope → JWT auth built).

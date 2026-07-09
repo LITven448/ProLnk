@@ -359,7 +359,7 @@ function generatePrintHTML(item: typeof PRINT_MATERIALS[0], businessName: string
 <div class="headline">${item.title}</div>
 <div class="body">${item.desc}<br><br>As a trusted ProLnk partner, I connect homeowners with the right professionals for every home service need. When your neighbors need work done, I make sure they get the best — and I earn a referral for every job that closes.</div>
 <div class="qr-section"><img src="${qrUrl}" width="100" height="100" alt="QR Code" /><div><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Scan to Get a Free Estimate</div><div class="qr-text">Or visit: ${referralLink}</div><div class="qr-text" style="margin-top:4px;">Reference code: ${referralLink.split('/').pop()}</div></div></div>
-<div class="footer">ProLnk Partner Network · prolnk.com · Powered by AI-driven home intelligence</div>
+<div class="footer">ProLnk Partner Network · prolnk.xyz · Powered by AI-driven home intelligence</div>
 </div></body></html>`;
 }
 

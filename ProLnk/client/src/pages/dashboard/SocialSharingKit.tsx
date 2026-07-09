@@ -37,7 +37,7 @@ function FacebookIcon({ size = 16 }: { size?: number }) {
 }
 
 // ─── Constants ──────────────────────────────────────────────────────────────────
-const REFERRAL_LINK = "prolnk.io/join?ref=partner123";
+const REFERRAL_LINK = "prolnk.xyz/join?ref=partner123";
 const PARTNER_CODE = "partner123";
 
 const STAT_CARDS = [
@@ -77,7 +77,7 @@ ProLnk changed that. AI pre-screens every homeowner before a lead reaches me. My
 
 If you're in the trades and tired of the old model, I'd love to connect.
 
-Apply through my link: prolnk.io/join?ref=${PARTNER_CODE}
+Apply through my link: prolnk.xyz/join?ref=${PARTNER_CODE}
 
 #HomeServices #Contractor #ProLnk #Trades #PassiveIncome`,
     tip: "Best posted Tuesday or Wednesday 8–10am for peak contractor engagement.",
@@ -109,7 +109,7 @@ ProLnk is an AI-powered home services marketplace — it matches verified contra
 
 I'm looking to connect with licensed contractors in the DFW area who want to build alongside me.
 
-Apply here: prolnk.io/join?ref=${PARTNER_CODE}
+Apply here: prolnk.xyz/join?ref=${PARTNER_CODE}
 
 #ProLnk #FoundingPartner #HomeServices #DFW #Contractor`,
     tip: "Tag 2–3 contractor colleagues in a comment for 4× more organic reach.",
@@ -125,7 +125,7 @@ I was skeptical at first — I've tried every lead service out there. But ProLnk
 I've done 84 jobs through the platform and my passive income from my network is up to $247/month on top of my regular work.
 
 If you're a contractor OR a homeowner who wants better pros — check this out:
-prolnk.io/join?ref=${PARTNER_CODE}
+prolnk.xyz/join?ref=${PARTNER_CODE}
 
 Real talk, this is the best thing I've joined in years.`,
     tip: "Post in local neighborhood Facebook groups for 5× more organic reach.",
@@ -141,7 +141,7 @@ ProLnk is a platform that vets home service pros (HVAC, plumbing, roofing, elect
 As one of the verified pros on the platform, I'm proud to say every job I do through ProLnk is tracked, rated, and backed.
 
 If you need work done on your home, use my link to get started:
-prolnk.io/join?ref=${PARTNER_CODE}
+prolnk.xyz/join?ref=${PARTNER_CODE}
 
 No cold calls. No strangers at your door. Just verified pros.`,
     tip: "This post targets homeowners directly — great for neighborhood groups.",
@@ -161,7 +161,7 @@ Then I found ProLnk. Pre-qualified leads. AI matching. A network structure that 
 I'm not quitting anytime soon.
 
 If you're in home services, reach out or use my link:
-prolnk.io/join?ref=${PARTNER_CODE}`,
+prolnk.xyz/join?ref=${PARTNER_CODE}`,
     tip: "Pain → solution → result stories convert 3–5× better than product posts.",
   },
   {
@@ -174,7 +174,7 @@ That's what 6 months on ProLnk looks like. 🏠⚡
 
 DM me if you're in the trades and want in on the founding partner network.
 
-Link in bio → prolnk.io/join?ref=${PARTNER_CODE}
+Link in bio → prolnk.xyz/join?ref=${PARTNER_CODE}
 
 #HomeServices #Contractor #SideIncome #Trades #ProLnk #DFW`,
     tip: "Pair with a before/after photo of a completed job for 2× saves.",
@@ -196,14 +196,14 @@ Only 500 founding partner spots. Link in bio.
     id: "sms_1",
     platform: "SMS",
     label: "Contractor Invite",
-    body: `Hey [Name], heard of ProLnk? AI home services platform — I'm a founding partner. Only 500 spots. Check it out: prolnk.io/join?ref=${PARTNER_CODE}`,
+    body: `Hey [Name], heard of ProLnk? AI home services platform — I'm a founding partner. Only 500 spots. Check it out: prolnk.xyz/join?ref=${PARTNER_CODE}`,
     tip: "98% open rate vs. 20% for email. Text existing contractor contacts directly.",
   },
   {
     id: "sms_2",
     platform: "SMS",
     label: "Homeowner Invite",
-    body: `Hey [Name]! If you ever need a contractor, check out ProLnk. I'm a verified pro on it — fast quotes, vetted contractors: prolnk.io/join?ref=${PARTNER_CODE}`,
+    body: `Hey [Name]! If you ever need a contractor, check out ProLnk. I'm a verified pro on it — fast quotes, vetted contractors: prolnk.xyz/join?ref=${PARTNER_CODE}`,
     tip: "Great for sending to neighbors and past homeowner clients.",
   },
 ];

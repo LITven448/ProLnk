@@ -496,7 +496,7 @@ export default function APIGuide() {
             Need a custom integration or have questions about the API?
           </p>
           <a
-            href="mailto:support@prolnk.io"
+            href="mailto:support@prolnk.xyz"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#22d3ee", color: "#080f1e" }}
           >

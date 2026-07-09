@@ -26,9 +26,9 @@ const WEBHOOK_EVENTS = [
 ];
 
 const SETUP_STEPS = [
-  { step: 1, title: "Register ProLnk as a Jobber Developer App", desc: "Go to developer.getjobber.com  Create App  Set redirect URI to https://prolnk.io/api/oauth/jobber/callback", done: false },
+  { step: 1, title: "Register ProLnk as a Jobber Developer App", desc: "Go to developer.getjobber.com  Create App  Set redirect URI to https://prolnk.xyz/api/oauth/jobber/callback", done: false },
   { step: 2, title: "Copy Client ID & Secret", desc: "Add JOBBER_CLIENT_ID and JOBBER_CLIENT_SECRET to ProLnk secrets. These are already wired into the integration settings page.", done: false },
-  { step: 3, title: "Configure Webhooks in Jobber Dashboard", desc: "Subscribe to JOB_COMPLETED and VISIT_COMPLETED. Set endpoint to https://prolnk.io/api/webhooks/jobber", done: false },
+  { step: 3, title: "Configure Webhooks in Jobber Dashboard", desc: "Subscribe to JOB_COMPLETED and VISIT_COMPLETED. Set endpoint to https://prolnk.xyz/api/webhooks/jobber", done: false },
   { step: 4, title: "Partners Connect via OAuth", desc: "Partners click 'Connect Jobber' in their ProLnk Integration Settings. They approve access in Jobber. ProLnk stores their OAuth token. Done.", done: false },
 ];
 

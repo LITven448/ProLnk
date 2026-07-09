@@ -934,7 +934,7 @@ export default function ProLnkMedia() {
                   We review all applications within 48 hours. No commitment required.
                 </p>
                 <a
-                  href="mailto:media@prolnk.io?subject=Book%20a%20Call%20-%20ProLnk%20Media"
+                  href="mailto:media@prolnk.xyz?subject=Book%20a%20Call%20-%20ProLnk%20Media"
                   className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 font-semibold text-sm transition-colors whitespace-nowrap"
                 >
                   <Zap className="w-4 h-4" /> Prefer to talk? Email us to book a call

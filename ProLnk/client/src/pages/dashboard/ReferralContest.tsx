@@ -70,7 +70,7 @@ const SOCIAL_POSTS = [
     color: "#0a66c2",
     bg: "rgba(10,102,194,0.1)",
     border: "rgba(10,102,194,0.25)",
-    text: "Just locked in my founding spot on ProLnk — the new home services marketplace with a 4-level network income system. Partners earn overrides on every job their network does, 4 levels deep. Spots are extremely limited before the waitlist closes at 500. If you're a home service pro, this is worth 5 minutes of your time: prolnk.io/join?ref=partner123",
+    text: "Just locked in my founding spot on ProLnk — the new home services marketplace with a 4-level network income system. Partners earn overrides on every job their network does, 4 levels deep. Spots are extremely limited before the waitlist closes at 500. If you're a home service pro, this is worth 5 minutes of your time: prolnk.xyz/join?ref=partner123",
   },
   {
     platform: "SMS",
@@ -78,7 +78,7 @@ const SOCIAL_POSTS = [
     color: "#22c55e",
     bg: "rgba(34,197,94,0.1)",
     border: "rgba(34,197,94,0.25)",
-    text: "Hey — grabbed you a founding spot on ProLnk before they close the waitlist. Lock in $149/mo forever + earn passive income on your network. prolnk.io/join?ref=partner123",
+    text: "Hey — grabbed you a founding spot on ProLnk before they close the waitlist. Lock in $149/mo forever + earn passive income on your network. prolnk.xyz/join?ref=partner123",
   },
   {
     platform: "Email",
@@ -86,11 +86,11 @@ const SOCIAL_POSTS = [
     color: "#f59e0b",
     bg: "rgba(245,158,11,0.1)",
     border: "rgba(245,158,11,0.25)",
-    text: "Subject: I saved you a founding partner spot\n\nHey,\n\nI've been using ProLnk and wanted to pass along my founding invite before the waitlist closes. You lock in the $149/mo rate forever and earn network overrides 4 levels deep — meaning every pro you bring in (and every pro they bring in) puts money in your pocket monthly.\n\nGrab your spot here: prolnk.io/join?ref=partner123\n\nOnly ~450 spots left.",
+    text: "Subject: I saved you a founding partner spot\n\nHey,\n\nI've been using ProLnk and wanted to pass along my founding invite before the waitlist closes. You lock in the $149/mo rate forever and earn network overrides 4 levels deep — meaning every pro you bring in (and every pro they bring in) puts money in your pocket monthly.\n\nGrab your spot here: prolnk.xyz/join?ref=partner123\n\nOnly ~450 spots left.",
   },
 ];
 
-const REFERRAL_LINK = "prolnk.io/join?ref=partner123";
+const REFERRAL_LINK = "prolnk.xyz/join?ref=partner123";
 
 export default function ReferralContest() {
   const { days, hours, mins, secs } = useCountdown(CONTEST_END);

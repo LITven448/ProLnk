@@ -17,7 +17,7 @@ import {
 } from "recharts";
 
 const CHECKLIST = [
-  { label: "Waitlist live (prolnk.io)", done: true, icon: Globe },
+  { label: "Waitlist live (prolnk.xyz)", done: true, icon: Globe },
   { label: "Pro signup form", done: true, icon: UserPlus },
   { label: "Homeowner signup form", done: true, icon: Home },
   { label: "Confirmation emails (Resend)", done: true, icon: Mail },

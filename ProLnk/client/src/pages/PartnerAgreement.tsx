@@ -417,7 +417,7 @@ export default function PartnerAgreement() {
           )}
 
           <p className="text-slate-600 text-xs text-center mt-6">
-            © 2026 ProLnk Inc. | Dallas, TX | legal@prolnk.io
+            © 2026 ProLnk Inc. | Dallas, TX | legal@prolnk.xyz
           </p>
         </div>
       </div>

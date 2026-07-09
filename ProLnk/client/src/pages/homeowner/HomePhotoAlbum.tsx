@@ -42,7 +42,7 @@ export default function HomePhotoAlbum() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   function handleCopyLink() {
-    navigator.clipboard.writeText("https://prolnk.io/home/share/abc123def456").catch(() => {});
+    navigator.clipboard.writeText("https://prolnk.xyz/home/share/abc123def456").catch(() => {});
     setLinkCopied(true);
     setTimeout(() => setLinkCopied(false), 2000);
   }
@@ -198,7 +198,7 @@ export default function HomePhotoAlbum() {
           <p style={{ color: "#8B91A8", fontSize: 13, margin: "0 0 14px" }}>Generate a shareable link for contractors, inspectors, or insurance providers</p>
           <div style={{ display: "flex", gap: 10 }}>
             <div style={{ flex: 1, background: "#13161E", border: "1px solid #252A3A", borderRadius: 8, padding: "10px 14px", color: "#8B91A8", fontSize: 13, fontFamily: "monospace" }}>
-              prolnk.io/home/share/abc123def456
+              prolnk.xyz/home/share/abc123def456
             </div>
             <button
               onClick={handleCopyLink}

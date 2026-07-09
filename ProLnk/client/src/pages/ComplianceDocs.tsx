@@ -69,7 +69,7 @@ function OverviewTab() {
 
       <InfoBox type="success">
         <strong>ProLnk is committed to full compliance</strong> with applicable federal and state laws including TCPA, RESPA, CCPA, and applicable IRS requirements. Questions? Email{" "}
-        <a href="mailto:legal@prolnk.io" className="underline">legal@prolnk.io</a>.
+        <a href="mailto:legal@prolnk.xyz" className="underline">legal@prolnk.xyz</a>.
       </InfoBox>
 
       <div>
@@ -197,7 +197,7 @@ function TcpaTab() {
         </ul>
         <InfoBox type="warning">
           <strong>Message &amp; data rates may apply.</strong> Message frequency varies. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for assistance. You will receive one final confirmation message after opting out. For help email{" "}
-          <a href="mailto:support@prolnk.io" className="underline">support@prolnk.io</a>.
+          <a href="mailto:support@prolnk.xyz" className="underline">support@prolnk.xyz</a>.
         </InfoBox>
         <p className="text-xs text-slate-500">
           Opt-out requests are processed within 24 hours. ProLnk honors all national Do-Not-Call (DNC) registry numbers. We do not use autodialed calls for marketing purposes.
@@ -210,11 +210,11 @@ function TcpaTab() {
           To be removed from all ProLnk communications (SMS, email, phone), contact us at:
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="mailto:optout@prolnk.io" className="flex items-center gap-2 px-4 py-2.5 bg-slate-800/60 border border-slate-600 rounded-lg text-sm text-slate-300 hover:border-teal-500/50 transition-colors">
-            <Mail className="w-4 h-4 text-slate-400" /> optout@prolnk.io
+          <a href="mailto:optout@prolnk.xyz" className="flex items-center gap-2 px-4 py-2.5 bg-slate-800/60 border border-slate-600 rounded-lg text-sm text-slate-300 hover:border-teal-500/50 transition-colors">
+            <Mail className="w-4 h-4 text-slate-400" /> optout@prolnk.xyz
           </a>
-          <a href="mailto:legal@prolnk.io" className="flex items-center gap-2 px-4 py-2.5 bg-slate-800/60 border border-slate-600 rounded-lg text-sm text-slate-300 hover:border-teal-500/50 transition-colors">
-            <Mail className="w-4 h-4 text-slate-400" /> legal@prolnk.io
+          <a href="mailto:legal@prolnk.xyz" className="flex items-center gap-2 px-4 py-2.5 bg-slate-800/60 border border-slate-600 rounded-lg text-sm text-slate-300 hover:border-teal-500/50 transition-colors">
+            <Mail className="w-4 h-4 text-slate-400" /> legal@prolnk.xyz
           </a>
         </div>
       </div>
@@ -422,7 +422,7 @@ function CcpaTab() {
 
       <InfoBox type="success">
         To exercise any CCPA right, use the Data Rights tab or email{" "}
-        <a href="mailto:privacy@prolnk.io" className="underline">privacy@prolnk.io</a>. We respond within 45 days. California residents may also contact the California Privacy Protection Agency at{" "}
+        <a href="mailto:privacy@prolnk.xyz" className="underline">privacy@prolnk.xyz</a>. We respond within 45 days. California residents may also contact the California Privacy Protection Agency at{" "}
         <a href="https://cppa.ca.gov" className="underline" target="_blank" rel="noopener noreferrer">cppa.ca.gov</a>.
       </InfoBox>
     </div>
@@ -611,8 +611,8 @@ export default function ComplianceDocs() {
                 <h1 className="text-lg font-bold text-white">Compliance & Legal</h1>
               </div>
             </div>
-            <a href="mailto:legal@prolnk.io" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-teal-400 transition-colors">
-              <Mail className="w-3.5 h-3.5" /> legal@prolnk.io
+            <a href="mailto:legal@prolnk.xyz" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-teal-400 transition-colors">
+              <Mail className="w-3.5 h-3.5" /> legal@prolnk.xyz
             </a>
           </div>
         </div>
@@ -646,11 +646,11 @@ export default function ComplianceDocs() {
 
                 <div className="mt-4 pt-4 border-t border-slate-700 space-y-2">
                   <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Contact</div>
-                  <a href="mailto:legal@prolnk.io" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-teal-400 py-1 transition-colors">
-                    <Mail className="w-3 h-3" /> legal@prolnk.io
+                  <a href="mailto:legal@prolnk.xyz" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-teal-400 py-1 transition-colors">
+                    <Mail className="w-3 h-3" /> legal@prolnk.xyz
                   </a>
-                  <a href="mailto:privacy@prolnk.io" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-teal-400 py-1 transition-colors">
-                    <Mail className="w-3 h-3" /> privacy@prolnk.io
+                  <a href="mailto:privacy@prolnk.xyz" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-teal-400 py-1 transition-colors">
+                    <Mail className="w-3 h-3" /> privacy@prolnk.xyz
                   </a>
                 </div>
               </div>
@@ -670,7 +670,7 @@ export default function ComplianceDocs() {
 
               <p className="text-xs text-slate-600 mt-4 text-center leading-relaxed">
                 Last updated May 2026. ProLnk, Inc. — Dallas, TX.{" "}
-                <a href="mailto:legal@prolnk.io" className="underline hover:text-slate-400">legal@prolnk.io</a>
+                <a href="mailto:legal@prolnk.xyz" className="underline hover:text-slate-400">legal@prolnk.xyz</a>
               </p>
             </div>
           </div>

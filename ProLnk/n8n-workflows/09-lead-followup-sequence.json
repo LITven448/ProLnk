@@ -45,7 +45,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "noreply@prolnk.com",
+        "fromEmail": "noreply@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "Reminder: New lead waiting for your response",
         "text": "Hi {{ $json.partnerName }},\n\nYou have a new lead from {{ $json.homeownerName }} that hasn't been accepted yet.\n\nService: {{ $json.serviceCategory }}\nLocation: {{ $json.city }}, TX\nEstimated Value: ${{ $json.estimatedValue }}\n\nThis lead expires in 48 hours. Accept it now:\n{{ $json.dealUrl }}\n\n— ProLnk Team"
@@ -87,7 +87,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "noreply@prolnk.com",
+        "fromEmail": "noreply@prolnk.xyz",
         "toEmail": "={{ $json.partnerEmail }}",
         "subject": "⚠️ Final notice: Lead expires in 24 hours",
         "text": "Hi {{ $json.partnerName }},\n\nThis is your final reminder. The lead from {{ $json.homeownerName }} expires in 24 hours.\n\nIf you don't accept, it will be reassigned to another partner.\n\nAccept now: {{ $json.dealUrl }}\n\n— ProLnk Team"
@@ -100,8 +100,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "admin@prolnk.com",
-        "toEmail": "admin@prolnk.com",
+        "fromEmail": "admin@prolnk.xyz",
+        "toEmail": "admin@prolnk.xyz",
         "subject": "Lead expired — reassignment needed",
         "text": "Lead for {{ $json.homeownerName }} ({{ $json.serviceCategory }}) was not accepted by {{ $json.partnerName }} within 72 hours.\n\nDeal ID: {{ $json.dealId }}\nPartner: {{ $json.partnerName }} ({{ $json.partnerEmail }})\n\nPlease reassign manually or trigger auto-reassignment."
       },

@@ -233,7 +233,7 @@ export const networkRouter = router({
       LIMIT 50
     `);
 
-    const appBaseUrl = process.env.APP_BASE_URL ?? "https://prolnk.io";
+    const appBaseUrl = process.env.APP_BASE_URL ?? "https://prolnk.xyz";
 
     return {
       referralCode: profile.referral_code as string,

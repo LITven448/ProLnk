@@ -122,7 +122,7 @@ function AchForm({
           for the platform commission on this insurance job. The debit will be initiated automatically upon
           homeowner confirmation of job completion via the TrustyPro check-in system. You will receive email
           notification when the debit is initiated. You may revoke this authorization by contacting
-          support@prolnk.io at least 3 business days before the scheduled debit.
+          support@prolnk.xyz at least 3 business days before the scheduled debit.
           This authorization is governed by the ProLnk Partner Agreement and NACHA Operating Rules.
         </p>
         <div className="flex items-start gap-2">

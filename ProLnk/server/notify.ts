@@ -103,7 +103,7 @@ export const aiHandled = (title: string, content: string, category?: string) =>
 export const dashboard = (title: string, content: string, category?: string) =>
   notify({ tier: "dashboard", title, content, category });
 
-/** Genuine escalation — email andrew@prolnk.io immediately */
+/** Genuine escalation — email andrew@prolnk.xyz immediately */
 export const escalate = (title: string, content: string, category?: string) =>
   notify({ tier: "email", title, content, category });
 

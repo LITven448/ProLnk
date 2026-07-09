@@ -91,7 +91,7 @@ const STATUS_CONFIG: Record<
     body: "This may be due to service area coverage, trade category, or current capacity limits. You're welcome to re-apply in 90 days.",
     next: [
       "Check your email for details from our team",
-      "Review partner requirements at prolnk.io/apply",
+      "Review partner requirements at prolnk.xyz/apply",
       "Re-apply in 90 days if your situation changes",
     ],
   },
@@ -388,8 +388,8 @@ export default function ApplicationStatus() {
 
         <p className="text-center text-xs text-gray-400 mt-8">
           Questions? Email{" "}
-          <a href="mailto:support@prolnk.io" className="underline hover:text-gray-600">
-            support@prolnk.io
+          <a href="mailto:support@prolnk.xyz" className="underline hover:text-gray-600">
+            support@prolnk.xyz
           </a>
         </p>
       </div>

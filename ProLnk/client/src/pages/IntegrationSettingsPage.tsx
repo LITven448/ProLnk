@@ -164,7 +164,7 @@ export default function IntegrationSettingsPage() {
         </div>
 
         <p className="text-center text-gray-600 text-xs">
-          More integrations coming soon. Request one at support@prolnk.io
+          More integrations coming soon. Request one at support@prolnk.xyz
         </p>
       </div>
     </PartnerLayout>

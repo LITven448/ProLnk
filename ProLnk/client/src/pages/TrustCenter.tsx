@@ -317,7 +317,7 @@ export default function TrustCenter() {
           <div className="flex items-center gap-4">
             <Link href="/privacy"><span className="text-xs" style={{ color: T.muted }}>Privacy Policy</span></Link>
             <Link href="/terms"><span className="text-xs" style={{ color: T.muted }}>Terms of Service</span></Link>
-            <a href="mailto:support@prolnk.com" className="text-xs" style={{ color: T.teal }}>Contact Us</a>
+            <a href="mailto:support@prolnk.xyz" className="text-xs" style={{ color: T.teal }}>Contact Us</a>
           </div>
         </div>
       </footer>

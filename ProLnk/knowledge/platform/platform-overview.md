@@ -14,7 +14,7 @@ ProLnk is a home service partner referral network. Service professionals earn co
 
 ## The Three Products
 
-**ProLnk** (prolnk.io) — The partner network for service professionals
+**ProLnk** (prolnk.xyz) — The partner network for service professionals
 - Partners log jobs and upload photos
 - AI detects cross-sell opportunities
 - Lead routing to qualified specialists
@@ -26,9 +26,9 @@ ProLnk is a home service partner referral network. Service professionals earn co
 - Connection to verified, background-checked contractors
 - Home Passport (permanent service history record)
 
-**ProLnk Media** (prolnkmedia.io) — Advertiser platform for businesses wanting to reach homeowners
+**ProLnk Partners** (third pillar) — Partner/advertiser platform for businesses wanting to reach homeowners
 - Real estate agents, mortgage brokers, insurance agents, home warranty companies
-- Three tiers: Connect ($199/mo), Preferred ($349/mo), Exclusive ($799/mo)
+- "ProLnk Media" = the advertising product within it (pricing TBD)
 - Impression/click analytics, territory exclusivity
 
 ## Who Partners Are
@@ -54,14 +54,17 @@ Scouts earn: Assessment fee (paid by homeowner) + origination commission on ever
 
 ## How Commissions Work
 
-Platform fee: 12% of job value (tiers by job size)
-Referring partner keeps: 40-78% of platform fee (depends on subscription tier)
-ProLnk keeps: 22-60% of platform fee
+Platform fee: 6–15% of job value (varies by trade and job size)
+Completing pro keeps: 40% (Core) / 50% (Pro) / 60% (Business) of the platform fee; Enterprise custom
+Network override: 7% / 4% / 2% / 1% of the platform fee (L1–L4)
+Subscription override: 12% / 6% / 3% / 1.5% (L1–L4)
+Origination: 5% of the platform fee, perpetual
+ProLnk floor: always retains ≥20% of the platform fee
 
-Example: $3,000 fence repair, Scout-tier referrer
+Example: $3,000 fence repair, Core-tier pro
 - Platform fee: $3,000 × 12% = $360
-- Referring partner earns: $360 × 40% = $144
-- ProLnk nets: $360 × 60% = $216
+- Completing pro earns: $360 × 40% = $144
+- Remainder covers network overrides, origination, and ProLnk's share (≥20% floor)
 
 Payouts: Nightly via Stripe Connect. $25 minimum.
 

@@ -71,9 +71,8 @@ Individual Pro Passes needed for school work:
 - Background checks (via Checkr): 1-5 business days depending on complexity
 - School/healthcare clearance: Up to 5 business days (requires enhanced review)
 
-## Pro Pass Clearance Levels
-1. **Residential** — Basic background check + license
-2. **Commercial** — Enhanced background check + OSHA preferred
-3. **School** — Criminal + sex offender + identity verification + OSHA
-4. **Healthcare** — School requirements + drug screen may be required
-5. **Government** — Most stringent — all of above + additional review
+## Pro Pass Clearance Levels (ProPass Tier 0–3)
+- **Tier 0** — Baseline onboarding (no clearance)
+- **Tier 1 (Residential)** — Basic background check + license
+- **Tier 2 (Commercial)** — Enhanced background check + OSHA preferred
+- **Tier 3 (School / Healthcare / Government)** — Criminal + sex offender + identity verification + OSHA; drug screen may be required (healthcare); most stringent additional review (government)

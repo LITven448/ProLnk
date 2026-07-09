@@ -19,7 +19,7 @@ The Telephone Consumer Protection Act (TCPA) regulates automated SMS and phone c
 ## Required STOP Handling
 ProLnk MUST handle opt-out keywords automatically:
 - STOP → Add to opt-out list immediately, confirm with: "You have been unsubscribed from ProLnk messages."
-- HELP → Reply with: "For help, contact support@prolnk.io. Reply STOP to unsubscribe."
+- HELP → Reply with: "For help, contact support@prolnk.xyz. Reply STOP to unsubscribe."
 - UNSUBSCRIBE → Same as STOP
 
 ## Consent Record Requirements

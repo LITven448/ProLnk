@@ -90,8 +90,10 @@ A ProLnk Scout is a certified property documentation specialist trained to condu
 
 ## Scout Commission Structure
 1. **Assessment fee** — set by Scout, paid directly by homeowner ($150-$2,000 depending on property type)
-2. **Origination commission** — Scout is locked as sourcePartnerId on all opportunities from the report; earns referral commission when jobs close
+2. **Origination commission** — Scout is locked as sourcePartnerId on all opportunities from the report; earns the perpetual home-origination override (5% of the platform fee) on jobs from homes they documented
 3. **GC/PM fee** (optional) — 8-12% of total project value if Scout project-manages the work
+
+Scout subscription: $99/mo standalone · $49/mo add-on (FINAL).
 
 ## Homeowner Consent
 Before beginning an assessment:

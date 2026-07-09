@@ -57,7 +57,7 @@ Use Stripe test keys for development:
 
 ```
 RESEND_API_KEY=re_[your_key]
-RESEND_DOMAIN=noreply@prolnk.io (verified sender)
+RESEND_DOMAIN=hello@prolnk.xyz (verified sender)
 ```
 
 ### API Reference
@@ -67,7 +67,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 await resend.emails.send({
-  from: 'noreply@prolnk.io',
+  from: 'hello@prolnk.xyz',
   to: recipient,
   subject: 'Welcome to ProLnk',
   html: template, // JSX or HTML string
@@ -88,7 +88,7 @@ Located in `/server/emails/`:
 ```typescript
 // server/routers/waitlist.ts
 await resend.emails.send({
-  from: 'noreply@prolnk.io',
+  from: 'hello@prolnk.xyz',
   to: formData.email,
   subject: 'Welcome to ProLnk',
   html: renderToString(<SignupConfirmation name={formData.name} />),
@@ -119,7 +119,7 @@ DATABASE_URL=mysql://[user]:[password]@gateway01.us-east-1.prod.aws.tidbcloud.co
 TIDB_HOST=gateway01.us-east-1.prod.aws.tidbcloud.com
 TIDB_PORT=4000
 TIDB_USER=[username from dashboard]
-TIDB_PASSWORD=[password - store in Railway secrets]
+TIDB_PASSWORD=[password - store in Render secrets]
 TIDB_DATABASE=prolnk
 ```
 
@@ -178,7 +178,7 @@ Current plan: Serverless tier (auto-scaling)
 
 ```
 CLOUDFLARE_API_TOKEN=[your_token]
-CLOUDFLARE_ZONE_ID=[prolnk.io zone ID]
+CLOUDFLARE_ZONE_ID=[prolnk.xyz zone ID]
 CLOUDFLARE_ACCOUNT_ID=[account ID]
 ```
 
@@ -186,10 +186,9 @@ CLOUDFLARE_ACCOUNT_ID=[account ID]
 
 | Name | Type | Target | Status |
 |------|------|--------|--------|
-| prolnk.io | CNAME | prolnk-production.up.railway.app | ✅ Active |
-| trustypro.prolnk.io | CNAME | prolnk-production.up.railway.app | ✅ Active |
-| api.prolnk.io | CNAME | prolnk-production.up.railway.app | 🔄 Planned |
-| www | CNAME | prolnk.io | ✅ Active |
+| prolnk.xyz | CNAME | prolnk-platform.onrender.com | ✅ Active |
+| trustypro.io | CNAME | prolnk-platform.onrender.com | ✅ Active |
+| www | CNAME | prolnk.xyz | ✅ Active |
 | mail | MX | (to be set up) | ❌ Pending |
 
 ### SSL/TLS
@@ -208,29 +207,18 @@ CLOUDFLARE_ACCOUNT_ID=[account ID]
 ### Configuration
 
 ```bash
-# Upgrade from free plan to prevent zone limit
-# Cost: $20/month (Pro) or $200/month (Business for more zones)
-
-# Current plan: Free (1 zone = prolnk.io only)
-# Solution: Use subdomain for trustypro.prolnk.io
+# prolnk.xyz + trustypro.io both point at the same Render service
+# (prolnk-platform.onrender.com); brand detection is host-based.
 ```
 
 ---
 
-## 5. Railway ✅
+## 5. Render ✅
 
 **Purpose**: Hosting, deployment
-**Status**: Production configured
+**Status**: Production configured (srv-d7ugk90sfn5c73b5pvd0)
 
-### Credentials
-
-```
-RAILWAY_API_TOKEN=[your_token]
-RAILWAY_PROJECT_ID=[project ID]
-RAILWAY_ENVIRONMENT_ID=[production environment]
-```
-
-### Environment Variables (Set in Railway Dashboard)
+### Environment Variables (Set in Render Dashboard)
 
 ```
 DATABASE_URL=mysql://...
@@ -250,7 +238,7 @@ PORT=3000
 
 ### Monitoring
 
-- Logs: Real-time streaming via Railway dashboard
+- Logs: Real-time streaming via Render dashboard
 - Metrics: CPU, memory, network usage
 - Alerts: Errors > threshold or health check fails
 
@@ -308,7 +296,7 @@ app.post('/api/webhooks/n8n/lead-qualified', async (req, res) => {
 
 1. Create n8n account (self-hosted or managed)
 2. Create workflows with HTTP nodes
-3. Add webhook URLs: `https://prolnk-production.up.railway.app/api/webhooks/n8n/[event]`
+3. Add webhook URLs: `https://prolnk.xyz/api/webhooks/n8n/[event]`
 4. Set webhook signatures for security
 
 ---
@@ -322,18 +310,18 @@ app.post('/api/webhooks/n8n/lead-qualified', async (req, res) => {
 
 - **Repo**: github.com/LITven448/ProLnk (private)
 - **Branch**: main (production)
-- **Deployment**: Connected to Railway
+- **Deployment**: Connected to Render
 
 ### Webhooks
 
-- Push to main → Trigger Railway deploy
+- Push to main → Trigger Render deploy
 - PR create/update → Run tests (future)
 - PR review → Require approval (future)
 
 ### Usage
 
 ```bash
-git push origin main  # Auto-deploys to Railway
+git push origin main  # Auto-deploys to Render
 git log --oneline  # View commit history
 git revert <commit>  # Revert a commit
 ```
@@ -373,7 +361,7 @@ git revert <commit>  # Revert a commit
 ```
 ┌──────────────┐
 │  ProLnk App  │
-│  (Railway)   │
+│  (Render)    │
 └──────┬───────┘
        │
        ├─ Stripe ────────── Payment processing
@@ -390,7 +378,7 @@ git revert <commit>  # Revert a commit
 ## Security Best Practices
 
 1. **Secrets Management**:
-   - Store all keys in Railway environment variables
+   - Store all keys in Render environment variables
    - Never commit secrets to git
    - Use `.env.example` (public) for documentation
 
@@ -453,5 +441,5 @@ console.log(result);
 | Resend | Emails not arriving | Verify sender email, check spam, review bounce log |
 | TiDB | Connection timeout | Check IP whitelist, verify credentials, test via MySQL CLI |
 | Cloudflare | DNS not resolving | Verify CNAME target, check zone settings, clear cache |
-| Railway | Deploy fails | Check build logs, verify environment variables, test locally |
+| Render | Deploy fails | Check build logs, verify environment variables, test locally |
 | n8n | Webhook not triggered | Verify URL, test signature validation, check logs |

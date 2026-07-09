@@ -8,10 +8,10 @@
 
 ### 1. Deployment & Infrastructure Agent ✅
 **Status**: Implemented
-**Responsibility**: Railway deployments, Cloudflare config, database migrations
+**Responsibility**: Render deployments, Cloudflare config, database migrations
 
 **Capabilities**:
-- Monitor Railway health
+- Monitor Render health
 - Execute database migrations
 - Configure DNS and SSL
 - Manage environment variables
@@ -143,12 +143,8 @@
 **Algorithm**:
 1. Collect all jobs closed in previous month
 2. For each job, walk recruitedBy upline chain (L1 → L2 → L3 → L4)
-3. Apply cascade rates based on networkLevel:
-   - Charter: 5% / 3% / 1.5% / 0.5%
-   - Founding: 4% / 2% / 1% / —
-   - Level 3: 3% / 1.5% / — / —
-   - Level 4: 2% / — / — / —
-4. Check home for originationOwner, calculate origination payout (1.5% Charter or 1.0% Founding)
+3. Apply flat per-level cascade rates: L1 7% / L2 4% / L3 2% / L4 1% of the platform fee
+4. Check home for originationOwner, calculate origination payout (5% of the platform fee, perpetual)
 5. Enforce 20% floor: Verify ProLnk retains ≥20% of platform fee. If breached, reduce cascade proportionally from deepest level first
 6. Enforce $25 minimum: Earnings <$25 roll forward with status='rolled_forward', accumulate until crossing $25
 7. Queue payouts: Update all status='pending' to status='approved' for processor

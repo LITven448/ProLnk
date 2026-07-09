@@ -16,7 +16,7 @@
 - tradeType (plumber, electrician, hvac, etc.)
 - serviceAreaZips (JSON array of zip codes)
 - serviceRadius (miles)
-- tier (1-5, commission tier)
+- subscriptionTier (core/pro/business/enterprise — sets price + keep rate); networkPosition (charter/founding/l3/l4 — INTERNAL, override depth only)
 - yearsExperience, licensedStates, insuranceInfo
 - monthlyEarnings, lifetimeEarnings
 - rating (0-5), reviewCount

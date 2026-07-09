@@ -13,7 +13,7 @@ The PPS (0-105) determines which partner receives a lead first.
 ### PPS Components
 | Signal | Max Points | How It's Calculated |
 |--------|-----------|---------------------|
-| Tier | 30 | Scout=6, Pro=12, Crew=18, Company=24, Enterprise=30 |
+| Tier | 30 | Core=10, Pro=20, Business/Enterprise=30 (PLACEHOLDER — Andrew to confirm) |
 | Close Rate | 20 | % of accepted leads that convert to completed jobs |
 | Acceptance Rate | 15 | % of leads accepted vs. declined |
 | Photos Uploaded | 15 | Volume of photos uploaded to the platform |
@@ -56,10 +56,9 @@ The PPS (0-105) determines which partner receives a lead first.
 - Auto-routes to next partner if not accepted
 - Opportunity marked "expired" if routing queue exhausted
 
-## Weekly Lead Caps by Tier
-- Scout: 5 leads/week
-- Pro: 15 leads/week
-- Crew: 30 leads/week
-- Company: 60 leads/week
+## Weekly Lead Caps by Tier (PLACEHOLDER — confirm)
+- Core: 15 leads/week
+- Pro: 30 leads/week
+- Business: 60 leads/week
 - Enterprise: Unlimited
 - Caps reset every Monday

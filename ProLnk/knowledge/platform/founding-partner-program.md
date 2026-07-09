@@ -1,3 +1,5 @@
+> INTERNAL ONLY — never public or chatbot-quotable.
+
 # ProLnk Founding Partner Program
 
 ## What Is a Founding Partner?
@@ -9,10 +11,10 @@ Founding Partners are the people who believed in the platform early, helped buil
 ## The 9 Founding Partner Benefits
 
 ### 1. Locked Subscription Rate — $149/month forever
-Gets the $249/month feature set (Company+/Elite plan) at the $149/month founder price. This rate is locked permanently and cannot be changed even as ProLnk raises prices. After 90 days free trial at launch.
+Gets the $249/month feature set (Business-level feature set) at the $149/month founder price. This rate is locked permanently and cannot be changed even as ProLnk raises prices. After 90 days free trial at launch.
 
 ### 2. Maximum Commission Keep Rate
-Founding Partners keep 78% of every referral commission — the highest rate on the platform (normally Enterprise tier). Every job a partner in their network completes, the founding partner's originating commission keeps 78%.
+Founding Partners keep 60% of every referral commission — the highest rate on the platform (Business-tier keep). Every job a partner in their network completes, the founding partner's originating commission keeps 60%.
 
 ### 3. Network Job Commissions — from ProLnk's platform fee
 Every time a pro in the founding partner's network closes a job, the founding partner earns a % of ProLnk's platform fee:
@@ -25,12 +27,12 @@ Every time a pro in the founding partner's network closes a job, the founding pa
 **CRITICAL NOTE:** These cuts come from ProLnk's share of the fee. They do NOT reduce what the doing pro earned or what the homeowner paid.
 
 **Example:** $5,000 HVAC job with 12% platform fee = $600 fee
-- Pro who did job keeps 55% of $600 = $330
-- ProLnk's gross share = $270
+- Pro who did job keeps 60% of $600 = $360
+- ProLnk's gross share = $240
 - FP (Level 1 above that pro) earns: $600 × 7% = $42
 - FP at Level 2: $600 × 4% = $24
 - Total to FP network: $66
-- ProLnk net: $270 - $66 = $204
+- ProLnk net: $240 - $66 = $174
 
 ### 4. Network Subscription Commissions — monthly, recurring
 Founding Partners earn from their network's monthly subscriptions:
@@ -39,16 +41,16 @@ Founding Partners earn from their network's monthly subscriptions:
 - Level 3: 3%
 - Level 4: 1.5%
 
-Applies to any subscription tier (not just $149). If their Level 1 recruit is on the $299/month plan, they earn 12% × $299 = $35.88/month.
+Applies to any subscription tier (not just $149). If their Level 1 recruit is on the $249/mo Business plan, they earn 12% × $249 = $29.88/month.
 
-### 5. Home Origination Rights — 1.5% of platform fee, forever
-Every address a founding partner documents becomes permanently theirs. They earn 1.5% of every platform fee on every job at that address, forever, as long as:
+### 5. Home Origination Rights — 5% of platform fee, forever
+Every address a founding partner documents becomes permanently theirs. They earn 5% of every platform fee on every job at that address, forever, as long as:
 - The house is documented in the ProLnk system
 - The originating founding partner remains an active member
 
 This applies even if ProLnk corporate later convinces the homeowner to join TrustyPro — the original documenting partner is still the originator.
 
-**Example:** Partner documents 200 homes in DFW over 3 years. Each home gets $800 average in annual platform fees. At 1.5%, that's $200 homes × $800 fees × 1.5% = $2,400/year in pure origination income.
+**Example:** Partner documents 200 homes in DFW over 3 years. Each home gets $800 average in annual platform fees. At 5%, that's 200 homes × $800 fees × 5% = $8,000/year in pure origination income.
 
 ### 6. Priority Lead Routing
 Highest PPS (Partner Priority Score) weight in the network. When multiple partners match a lead, founding partners get first offer.
@@ -97,4 +99,4 @@ These aren't arbitrary — they're the minimum contribution needed to build a hi
 
 - Total slots: 100
 - Cannot earn this status after the window closes
-- Check current availability at prolnk.io/founding-partner
+- Internal — invitation only.

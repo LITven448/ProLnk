@@ -820,12 +820,11 @@ const LazyFallback = () => (
 );
 
 // -- Preview / Demo mode --------------------------------------------------------
-// Visiting any path with ?preview=<KEY> (matching VITE_PREVIEW_KEY) sets a
-// persistent flag (localStorage + cookie) that lets the tester through the
-// WaitlistGuard to the FULL product. ?preview=off clears it. When the flag is
-// absent, behavior is identical to the public waitlist gate.
-export const PREVIEW_KEY: string =
-  (import.meta as any).env?.VITE_PREVIEW_KEY || "prolnk-preview-2026";
+// Visiting any path with ?preview=<KEY> sets a persistent flag (localStorage +
+// cookie) that lets the tester through the WaitlistGuard to the FULL product.
+// ?preview=off clears it. The KEY IS NEVER EMBEDDED IN THIS BUNDLE — the value
+// from the URL is validated by the server (waitlist.validatePreviewKey against
+// process.env.PREVIEW_KEY), so reading the JS gives an attacker nothing.
 const PREVIEW_STORAGE_KEY = "prolnk_preview";
 
 function setPreviewCookie(on: boolean) {
@@ -842,26 +841,47 @@ function readPreviewCookie(): boolean {
   return document.cookie.split(";").some((c) => c.trim().startsWith(`${PREVIEW_STORAGE_KEY}=1`));
 }
 
-// Process ?preview= on every load, then report whether preview mode is active.
+// Synchronous check: is preview mode already active? (reads the stored flag only —
+// no key comparison, so no secret is needed on the client.)
 export function resolvePreviewMode(): boolean {
   if (typeof window === "undefined") return false;
   try {
-    const params = new URLSearchParams(window.location.search);
-    const param = params.get("preview");
+    const param = new URLSearchParams(window.location.search).get("preview");
     if (param === "off") {
       window.localStorage.removeItem(PREVIEW_STORAGE_KEY);
       setPreviewCookie(false);
       return false;
     }
-    if (param && param === PREVIEW_KEY) {
-      window.localStorage.setItem(PREVIEW_STORAGE_KEY, "1");
-      setPreviewCookie(true);
-      return true;
-    }
     return window.localStorage.getItem(PREVIEW_STORAGE_KEY) === "1" || readPreviewCookie();
   } catch {
     return false;
   }
+}
+
+// Server-validated activation. When ?preview=<value> is present and not yet
+// activated, ask the server whether the value is valid; on success, persist the
+// flag and reload without the param. The key never lives in this bundle.
+let previewValidationStarted = false;
+export function ensurePreviewValidated(): void {
+  if (typeof window === "undefined" || previewValidationStarted) return;
+  try {
+    const param = new URLSearchParams(window.location.search).get("preview");
+    if (!param || param === "off") return;
+    if (window.localStorage.getItem(PREVIEW_STORAGE_KEY) === "1" || readPreviewCookie()) return;
+    previewValidationStarted = true;
+    fetch(`/api/trpc/waitlist.validatePreviewKey?input=${encodeURIComponent(JSON.stringify({ json: { key: param } }))}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (d?.result?.data?.json?.valid) {
+          window.localStorage.setItem(PREVIEW_STORAGE_KEY, "1");
+          setPreviewCookie(true);
+          const url = new URL(window.location.href);
+          url.searchParams.delete("preview");
+          window.location.replace(url.toString());
+        }
+      })
+      .catch(() => {});
+  } catch {}
 }
 
 export function isPreviewActive(): boolean {
@@ -915,6 +935,7 @@ const WAITLIST_ALLOWED = new Set([
 function WaitlistGuard() {
   const [location, navigate] = useLocation();
   const { isAuthenticated, loading } = useAuth();
+  useEffect(() => { ensurePreviewValidated(); }, []);
   useEffect(() => {
     if (loading) return;
     const search = typeof window !== "undefined" ? window.location.search : "";

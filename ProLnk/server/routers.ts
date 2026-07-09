@@ -2762,9 +2762,13 @@ Answer concisely and helpfully. If asked about specific real-time account data (
         jobValue: z.number().positive(),
         completionDate: z.string().optional(),
         notes: z.string().optional(),
-        platformFeeRate: z.number().min(0.06).max(0.15).default(0.1),
+        // platformFeeRate is NO LONGER accepted from the client — it was a trust
+        // hole (a pro could send the lowest fee on every job). The rate is now
+        // derived server-side from the service type (see server/config/platformFees).
       }))
       .mutation(async ({ input, ctx }) => {
+        const { getPlatformFeeRate } = await import("./config/platformFees");
+        const platformFeeRate = getPlatformFeeRate(input.jobType);
         const partner = await getPartnerByUserId(ctx.user.id);
         if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
 
@@ -2789,15 +2793,15 @@ Answer concisely and helpfully. If asked about specific real-time account data (
           completingProId: partner.id,
           propertyAddress: input.propertyAddress,
           jobValue: input.jobValue,
-          platformFeeRate: input.platformFeeRate,
+          platformFeeRate,
         }).catch((e: Error) => ({
           success: false,
           message: e.message,
           jobId,
           distributions: [],
-          platformFee: Math.round(input.jobValue * input.platformFeeRate * 100) / 100,
+          platformFee: Math.round(input.jobValue * platformFeeRate * 100) / 100,
           totalDistributed: 0,
-          prolnkRetains: Math.round(input.jobValue * input.platformFeeRate * 100) / 100,
+          prolnkRetains: Math.round(input.jobValue * platformFeeRate * 100) / 100,
         }));
 
         const { automations } = await import("./webhooks/n8nAutomation");
@@ -5280,6 +5284,10 @@ Return a JSON object with:
 
     getBetaCount: publicProcedure
       .query(async ({ ctx }) => waitlistRouter.createCaller(ctx).getBetaCount()),
+
+    validatePreviewKey: publicProcedure
+      .input(z.object({ key: z.string().min(1).max(200) }))
+      .query(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).validatePreviewKey(input)),
 
     getPublicCounts: publicProcedure.query(async () => {
       // Display offsets for signups collected OFF-PLATFORM (owner's external

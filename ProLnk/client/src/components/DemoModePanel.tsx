@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
-import { PREVIEW_KEY, isPreviewActive } from "@/App";
+import { isPreviewActive } from "@/App";
 
 const JOURNEYS: Array<{ label: string; path: string }> = [
   { label: "Request Service", path: "/request-service" },
@@ -66,7 +66,7 @@ export default function DemoModePanel() {
 
           <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
             <button
-              onClick={() => seed.mutate({ previewKey: PREVIEW_KEY })}
+              onClick={() => seed.mutate()}
               disabled={busy}
               style={{
                 flex: 1, background: "#22c55e", color: "#0a0f08", border: "none",
@@ -77,7 +77,7 @@ export default function DemoModePanel() {
               {seed.isPending ? "Seeding…" : "Seed demo data"}
             </button>
             <button
-              onClick={() => reset.mutate({ previewKey: PREVIEW_KEY })}
+              onClick={() => reset.mutate()}
               disabled={busy}
               style={{
                 flex: 1, background: "#1c2030", color: "#cbd5e1", border: "1px solid #2a2f3a",

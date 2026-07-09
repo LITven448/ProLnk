@@ -18,7 +18,7 @@ import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { sql } from "drizzle-orm";
 import { firstRow } from "../_core/dbRows";
-import { router, publicProcedure } from "../_core/trpc";
+import { router, publicProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import { createOfferForOpportunity, ensureJobOffersInfra } from "./matching";
 import { makeRequestTrackingToken } from "../_core/requestToken";
@@ -121,10 +121,10 @@ async function findDemoOpportunity(db: any, req: (typeof DEMO_REQUESTS)[number])
 }
 
 export const demoRouter = router({
-  seedAll: publicProcedure
-    .input(z.object({ previewKey: z.string() }))
-    .mutation(async ({ input }) => {
-      assertPreviewKey(input.previewKey);
+  seedAll: adminProcedure
+    .mutation(async () => {
+      // Writes [DEMO]-tagged data into the prod DB — admin-only (was gated by a
+      // preview key that shipped in the client bundle).
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
       await ensureJobOffersInfra();
@@ -189,10 +189,8 @@ export const demoRouter = router({
       };
     }),
 
-  reset: publicProcedure
-    .input(z.object({ previewKey: z.string() }))
-    .mutation(async ({ input }) => {
-      assertPreviewKey(input.previewKey);
+  reset: adminProcedure
+    .mutation(async () => {
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
       await ensureJobOffersInfra();

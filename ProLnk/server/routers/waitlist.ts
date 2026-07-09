@@ -618,6 +618,15 @@ export const waitlistRouter = router({
 
   // Public query — returns count of homeowners who opted into beta program
   // Used by waitlist form to hide the beta checkbox once 1,000 spots are filled
+  // Validates a preview passcode server-side so the key is never shipped in the
+  // client bundle. Compares against process.env.PREVIEW_KEY (server-only, NOT VITE_).
+  validatePreviewKey: publicProcedure
+    .input(z.object({ key: z.string().min(1).max(200) }))
+    .query(async ({ input }) => {
+      const secret = process.env.PREVIEW_KEY;
+      return { valid: Boolean(secret) && input.key === secret };
+    }),
+
   getBetaCount: publicProcedure.query(async () => {
     const pool = await getPool();
     if (!pool) return { count: 0, spotsRemaining: 1000, isOpen: true, cap: 1000 };

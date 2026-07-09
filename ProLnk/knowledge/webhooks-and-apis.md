@@ -155,7 +155,7 @@ All webhooks are mounted at `POST /api/webhooks/*` and handled by `server/webhoo
 | `payoutRequested` | partnerId, amount, bankAccount | Route to finance team |
 | `complianceWarning` | partnerId, docType, expiryDate | Remind to renew license/COI |
 
-**Endpoint Pattern:** `POST https://n8n.prolnk.io/webhook/...`
+**Endpoint Pattern:** `POST https://<current n8n host — TBD>/webhook/...`
 
 ### Email Notifications (Resend)
 **Service:** `server/email.ts` & `server/notifications.ts`  
@@ -278,7 +278,7 @@ All webhooks are mounted at `POST /api/webhooks/*` and handled by `server/webhoo
 Before deploying:
 
 - [ ] Set `APP_BASE_URL` env var (used in emails + redirects)
-- [ ] Set `FROM_EMAIL` env var (e.g., `ProLnk <noreply@prolnk.io>`)
+- [ ] Set `FROM_EMAIL` env var (`ProLnk <hello@prolnk.xyz>`)
 - [ ] Configure Resend custom domain + DNS records
 - [ ] Rotate `JWT_SECRET` if exposed
 - [ ] Set `OPENAI_API_KEY` for AI features

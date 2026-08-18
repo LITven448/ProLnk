@@ -1,6 +1,7 @@
 # Sunbelt Partner Expansion Map — ProLnk / TrustyPro
 
-**Prepared:** August 2026
+**Prepared:** August 2026 · **Rev 2** (moving/junk re-ranked; art category added; electronics expanded)
+**Selection principle (per Andrew, Aug 2026):** partner selection is **conditional on API/feed quality** — a partner with a clean, dimension-rich feed or partner API outranks a bigger name with a worse integration surface.
 **Scope:** Catalog partners (product feeds for Shop + AI room-rendering engine) and service partners (move-in/move-out and recurring home-services moments) for the Sunbelt rollout: **TX first → GA, FL, AZ, NC, TN, NV**.
 
 **How to read this document**
@@ -58,6 +59,11 @@ These are mostly **direct-pitch-only** — which is exactly why they're differen
 | **GE Appliances** | Direct-from-brand appliance sales | National | **Public** — geappliances.com/for-affiliates-and-creators | Rate unverified (program confirmed active) | Brand-direct product data incl. dimensions/spec sheets — good for rendering kitchens | **B** |
 | **Samsung** | Appliances + TVs direct | National | Public — CJ/FlexOffers | **Up to 6.4%**, 14–30-day cookie | Brand product data via network feed | **B** |
 | **Whirlpool** | Appliances direct | National | Public | **2%**, monthly PayPal payout | Network feed | **C** (thin rate; HD/Lowe's carry Whirlpool anyway) |
+| **LG Electronics** | TVs, audio, appliances direct | National | **Public — CJ Affiliate (US)** | **6% home electronics, up to 12% appliances**, 14-day cookie, monthly CJ payout (~$48 avg referral per directory listings) | CJ product feed with brand-direct specs/dimensions — strong for rendering kitchens/media walls | **A/B — best direct-brand electronics economics on this list** |
+| **Crutchfield** | TVs, audio, smart home; renter-relevant AV | National ship-to | Public (network) | **From ~2.16% (variable by link/product)**, **60-day cookie** — longest in the category | **Yes — product feed / link manager** with rich specs (Crutchfield's product data is famously detailed) | **B** (feed quality + 60-day cookie offset the modest rate) |
+| **Abt Electronics** | Independent electronics/appliance retailer, white-glove delivery | Chicago-based, ships national | Public (network) | **~6%+ on appliances** — highest big-ticket appliance rate found | Network feed | **B** (margin leader for appliance SKUs; no Sunbelt stores, ship-only) |
+
+**Renter shop-shelf note:** for the TV/audio/smart-device shelf, the economics rank **LG (6–12%) > Abt (~6%) > Samsung (≤6.4%) > Crutchfield (~2%+, 60-day cookie) > Best Buy (0.5–1%, 1-day)**. Best Buy stays listed for brand coverage only; LG + Samsung direct programs should carry the rendered-scene electronics.
 
 ---
 
@@ -81,7 +87,24 @@ These are mostly **direct-pitch-only** — which is exactly why they're differen
 
 ---
 
-## 6. Smart Home / Security
+## 6. Wall Art & Prints (rendering-native category)
+
+Art is the most rendering-friendly category on the map: flat rectangular products with known dimensions, high-resolution imagery by definition, and print-on-demand fulfillment (no stock-outs). Every rendered room needs walls filled — this category converts empty-wall pixels directly into commission.
+
+| Partner | Offer | Program status | Commission | Feed/API | Tier |
+|---|---|---|---|---|---|
+| **Minted** | Independent-artist prints + framed art, premium positioning | **Public — Impact** (US-audience requirement; no coupon sites) | **~15% per sale** — the margin leader of the category | Impact product feed (images/sizes/frames) | **A** |
+| **Great Big Canvas** | 700,000+ canvas/framed pieces, custom sizing | **Public — FlexOffers/networks** | Commission on all purchases (rate unverified — historically high single digits to ~10%) | Network feed; huge catalog with size variants — ideal render fill | **A** |
+| **Society6** | Artist marketplace; art prints + 30+ decor products (throws, pillows — bonus decor SKUs) | **Public — ShareASale** | **~5%** (some listings higher), **30-day cookie**, no minimum payout | **Yes — product feed via ShareASale dashboard** | **B** |
+| **iCanvas** | Large-format canvas art, aggressive pricing | Affiliate program via network (ShareASale historically; rate **unverified**, directory listings suggest ~8–10%) | Unverified | Network feed expected; verify feed quality at signup | **B** |
+| **Art.com** | Legacy poster/print giant (Walmart-owned since 2018) | Program status **unverified** — historic affiliate program; confirm whether it now routes through Walmart's affiliate (Impact) | Unverified | Unverified — if routed via Walmart/Impact, feed exists | **C** (verify before effort) |
+| **Fine Art America (Pixels.com)** | Largest print-on-demand art marketplace; millions of works | Public-facing partner/API options — FAA is one of the few art platforms with a **real developer API** for product/print data | Rate unverified | **Yes — API** (the "real feed/API POD" ask) | **B — best POD API candidate; verify commercial terms** |
+
+**Category call:** Minted (15%, Impact feed) + Great Big Canvas (volume + size variants) are the launch pair; add Society6 for eclectic/renter-aesthetic range. Art fills every render at near-zero integration cost.
+
+---
+
+## 7. Smart Home / Security
 
 | Partner | Offer | Geo strength | Program status | Commission | Feed/API | Tier |
 |---|---|---|---|---|---|---|
@@ -92,21 +115,25 @@ These are mostly **direct-pitch-only** — which is exactly why they're differen
 
 ---
 
-## 7. Move-Adjacent Services
+## 8. Move-Adjacent Services
 
-| Partner | Offer | Geo strength | Program status | Commission | Feed/API | Tier |
-|---|---|---|---|---|---|---|
-| **SpareFoot** | Storage marketplace — **one integration lists Extra Space, Public Storage, CubeSmart, and thousands of independents** | National; deep Sunbelt inventory | Public — FlexOffers ("SpareFoot Storage Affiliate Program"); pays on reserved + moved-in units | Per-move-in bounty (rate unverified; historically ~$20–40 range) | Searchable inventory API/widget | **A** (the efficient path — skip pitching the REITs individually at this stage) |
-| **Extra Space Storage** | #1 storage REIT | National; strong TX/FL/AZ | No clear public affiliate found — direct/B2B partnerships possible at scale | Unverified | Via SpareFoot | **C** (direct only when volume justifies cutting out the aggregator) |
-| **Public Storage** | Largest storage brand | National | No public affiliate found — direct-pitch at scale | Unverified | Via SpareFoot | **C** |
-| **CubeSmart** | Storage REIT + 3rd-party management | National, FL-strong | No public affiliate found | Unverified | Via SpareFoot | **C** |
-| **HireAHelper** | Moving-labor marketplace (load/unload crews) | National; strong Sunbelt crew supply | **Public — hireahelper.com/affiliate: $10 per booked job**, free to join (affiliate-support@hireahelper.com, 800-995-5003) | **$10/booking** (flat) | Booking API/widget available | **A** (instant move-in monetization; also explore their partner API for deeper embed) |
-| **College HUNKS Hauling Junk & Moving** | Junk removal + moving; 200+ US locations | National franchise; good TX/FL/GA coverage | **Two doors:** public affiliate (**up to $5/lead**, uncapped) AND a **National Accounts Program for property management** — NationalAccounts@chhj.com | $5/lead (affiliate); national-account terms direct-negotiated | N/A — service dispatch | **A** (pitch National Accounts with the 60K-home portfolio; the affiliate program is the fallback) |
-| **1-800-GOT-JUNK?** | Junk removal, biggest brand | National franchise | No public affiliate; **national accounts/direct partnership** route | Direct-negotiated (unverified) | N/A | **B** (second junk brand for coverage/pricing tension) |
+Re-ranked Aug 2026 on Andrew's API/feed-quality criterion: partners with a real partner API or platform-integration surface lead; franchise national-accounts programs follow; lead-bounty affiliates last.
+
+| Rank | Partner | Offer | Geo strength | Program status | Commission | Feed/API | Tier |
+|---|---|---|---|---|---|---|---|
+| 1 | **LoadUp** | Tech-forward junk removal — largest **non-franchise** junk network, nationwide | National incl. all 7 target states | **Confirmed two-track:** public affiliate via **ShareASale** (custom integrations/tracking) AND **LoadUp Enterprise** — an **end-to-end API shopping-cart integration** to sell junk-removal at point of purchase (goloadup.com/partners) | Affiliate rev-share (rate unverified); Enterprise terms direct-negotiated | **Yes — partner API confirmed** — the only junk player with a true embed; passes the API-quality gate outright | **A — lead junk partner** |
+| 2 | **HireAHelper** | Moving-labor marketplace (load/unload crews) | National; strong Sunbelt crew supply | **Public — hireahelper.com/affiliate: $10 per booked job**, free to join (affiliate-support@hireahelper.com, 800-995-5003) | **$10/booking** (flat) | Booking API/widget available | **A** (instant move-in monetization) |
+| 3 | **Bellhop** | Tech-first full-service + labor-only moving; app-based ops | **Chattanooga-born, Sunbelt-dense** — strong TX/GA/FL/NC/TN metro coverage | **Bellhop Preferred Partners** (getbellhops.com/bellhop-nation): per-mover-per-hour revenue share, weekly direct deposit, no long-term contract; also does platform lead partnerships (e.g., Move Matcher) | Per-mover-per-hour share (rate unverified) | Tech-forward booking stack; API/deep-link integration plausible — raise in the partner call | **A** (geography matches the expansion map almost exactly) |
+| 4 | **SpareFoot** | Storage marketplace — one integration lists Extra Space, Public Storage, CubeSmart + thousands of independents | National; deep Sunbelt inventory | Public — FlexOffers; pays on reserved + moved-in units | Per-move-in bounty (unverified; historically ~$20–40) | Searchable inventory API/widget | **A** (skip pitching storage REITs individually) |
+| 5 | **Two Men and a Truck** | Largest US moving franchise; ~47-state footprint | National; deep TX/Southeast franchise density | **No public affiliate** — route is the **National Accounts / corporate relocation team** (twomenandatruck.com/national-accounts) | Direct-negotiated (unverified) | N/A — dispatch relationship, not feed | **B** (brand-trust anchor for full-service moves; slower enterprise deal) |
+| 6 | **PODS** | Container moving + storage hybrid | National; strong Sunbelt | **No affiliate program** (confirmed absent from Awin/Rakuten/etc.) — direct/B2B partnership only | Direct-negotiated (unverified) | N/A | **B** (unique container product for staggered move-ins; pitch their B2B team directly) |
+| 7 | **1-800-GOT-JUNK?** | Junk removal, biggest brand | National franchise | No public affiliate; national accounts/direct route | Direct-negotiated (unverified) | N/A | **C** (LoadUp's API relegates this to coverage/pricing tension) |
+| 8 | **College HUNKS Hauling Junk & Moving** | Junk + moving; 200+ locations | National franchise; good TX/FL/GA coverage | Public affiliate (up to **$5/lead**) + National Accounts (NationalAccounts@chhj.com) | $5/lead; national-account terms direct | N/A — no API | **C — demoted per Andrew (Aug 2026)**; keep as backup supply for markets where LoadUp/Bellhop coverage is thin |
+| — | **Extra Space / Public Storage / CubeSmart** | Storage REITs | National | No public affiliates found — direct at scale only | Unverified | Via SpareFoot | **C** (direct only when volume justifies cutting out the aggregator) |
 
 ---
 
-## 8. Recurring Home Services (marketplace partners — partner vs. compete flag)
+## 9. Recurring Home Services (marketplace partners — partner vs. compete flag)
 
 These are potential **suppliers or referral partners inside the TrustyPro marketplace** — but several run their own consumer funnels and could see ProLnk as a competitor. Flagged accordingly.
 
@@ -122,7 +149,7 @@ These are potential **suppliers or referral partners inside the TrustyPro market
 
 ---
 
-## 9. Warranty / Protection (brief)
+## 10. Warranty / Protection (brief)
 
 | Partner | Offer | Program status | Commission | Tier |
 |---|---|---|---|---|
@@ -144,10 +171,10 @@ These are potential **suppliers or referral partners inside the TrustyPro market
 | 6 | **Rooms To Go** | Store map mirrors the 7-state expansion plan; join the public affiliate now, negotiate the direct room-package deal in parallel. |
 | 7 | **Sherwin-Williams** | Zero-cost differentiator: official color data in every render + store referral; direct pitch to their digital/visualizer partnerships team. |
 | 8 | **HireAHelper** | $10/booked-move revenue live within days — monetizes the move-in moment while bigger deals cook. |
-| 9 | **College HUNKS (National Accounts)** | Property-management-native junk+moving partner; the 60K-home portfolio is exactly what NationalAccounts@chhj.com exists for. |
+| 9 | **LoadUp (Enterprise API)** | The only junk-removal partner with a true point-of-purchase API — passes the feed/API-quality gate; replaces College HUNKS per Andrew (Aug 2026). |
 | 10 | **American Home Shield (Frontdoor)** | $30/sale + recurring warranty attach across every managed door; negotiate direct to bypass the real-estate-lead exclusion. |
 
-*(Mattress Firm, SimpliSafe, SpareFoot, and Terminix are all fast, public, low-effort signups — batch them the same week as #1–3 even though they didn't make the top-10 narrative slots. Total "live in 60 days" target: 14 programs.)*
+*(Fast, public, low-effort signups to batch the same week as #1–3: Mattress Firm, SimpliSafe, SpareFoot, Terminix, **LG Electronics (CJ)**, **Minted (Impact)**, and **Great Big Canvas** — plus a Bellhop Preferred Partners application. Total "live in 60 days" target: 18 programs.)*
 
 ---
 

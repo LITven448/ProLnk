@@ -14,7 +14,7 @@ Priority: **P0** = blocks AMH pilot / launch · **P1** = blocks scale or revenue
 | 1.1 | Pro onboarding: application, trades, ZIPs, subscription selection | P0 | ⚠️ | Live in old platform; verify rebuild parity |
 | 1.2 | Subscription billing (Core $99 / Pro $149 / Business $249; Scout $99/$49 add-on) | P0 | ⚠️ | Live `stripe.ts` TIER_PRODUCTS — must survive processor migration (§5.2) |
 | 1.3 | **Vendor intake v2 (operator program):** company size, per-individual licenses, property types served (rental/residential/both), capacity, markets, FSM used | P0 | ❌ | Designed in AMH docs only |
-| 1.4 | **Vendor pricing model: subscriber vs per-work-order fee (NO free tier)** — price points | P0 | 🔶 | Andrew to set $/mo and $/job; engine must support both |
+| 1.4 | **Vendor pricing model (DECIDED Aug 2026):** $99–$249/mo ladder (AMH-exclusive vendors min $99); non-subscribers $5–$8/work order vendor-charged | P0 | ⚠️ | Decided; DEV to implement both billing paths |
 | 1.5 | Verification: license (state API), insurance COI parse + expiry monitor, background check (Checkr acct + billing to pro) | P0 | ⚠️ | `dispatch.ts`/`clearance.ts` live; Checkr production account + webhooks unverified |
 | 1.6 | Fail-closed site-type clearance gating (residential/commercial/school/gov) | P1 | ✅ | Live; legal review before launch still owed |
 | 1.7 | Referral/job lifecycle: claim → quote → schedule → complete → paid | P0 | ✅ | Verify in rebuild |
@@ -51,7 +51,7 @@ Priority: **P0** = blocks AMH pilot / launch · **P1** = blocks scale or revenue
 | 3.5 | Renter-pays services (cleaning, mounting, etc.) — skip approval path | P1 | ❌ | |
 | 3.6 | Move-out comparison (assisted-manual OK for pilot) + dispute packet export | P1 | ❌ | |
 | 3.7 | Moving-In hub (Utility Valet handoff link v1; deep integration v2) | P0 | ❌ | v1 = referral link, 1 day |
-| 3.8 | Renters insurance embed (required-by-lease flag, proof auto-filed to operator) | P1 | ❌ | Partner needed (§6.3) |
+| 3.8 | Renters insurance embed (required-by-lease flag, proof auto-filed to operator) | P1 | ⚠️ | Partner = Utility Valet's existing insurance partner (Patrick) — integration only, no partner search |
 | 3.9 | Shop tab: curated commerce shelf over renter's room photo | P2 | ❌ | Depends on 2.7 |
 | 3.10 | Rent-builds-credit partner enroll | P2 | ❌ | Partner (Esusu-type) — later |
 
@@ -62,7 +62,7 @@ Priority: **P0** = blocks AMH pilot / launch · **P1** = blocks scale or revenue
 | 4.1 | Thin pilot version: approval queue + detail (AI triage, cost band, entry OK) + approve/deny + assign (in-house crew vs vendor) | P0 | ❌ | ONE screen done well = pilot-ready |
 | 4.2 | Pilot metrics reporting (cost/WO, approval time, turn days, disputes, adoption) | P0 | ❌ | The pilot IS these numbers |
 | 4.3 | Auto-approval rules engine (NTE by trade/urgency) + audit trail (who/when/rule) | P1 | ❌ | Manual approve OK at pilot volume |
-| 4.4 | Full dashboard: Overview KPIs, Assets/capex, Turns, Compliance, Vendors, Procurement, Reports | P1 | ❌ | Full spec exists |
+| 4.4 | Full dashboard: Overview KPIs, Assets/capex, Turns, Compliance, Vendors, Procurement, Reports | P0 | ❌ | ANDREW MANDATE Aug 2026: full dashboard live within 120 days — sequence: approval queue first, remaining screens ship during pilot |
 | 4.5 | Roles/SSO (org admin/regional/PM/field-tech), SAML/Okta | P1 | ❌ | Pilot = simple accounts |
 | 4.6 | Bulk address import (CSV) + attribution tagging at creation (origination source) | P0 | ❌ | Attribution = every future revenue split; must exist Day 1 |
 | 4.7 | PMS sync: v1 CSV/scheduled read; v2 read-write (Yardi/RealPage/AppFolio per operator) | P1 | ❌ | v1 for pilot |

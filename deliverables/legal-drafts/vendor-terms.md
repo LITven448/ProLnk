@@ -16,8 +16,8 @@ These Vendor Terms of Service (these "**Terms**") govern participation in the pl
 
 2.1 **Paid participation only.** Access to receive Work Orders requires, at Vendor's election:
 
-- **(a) Subscription Plan:** **$[SUB_PRICE]** per month (plan tiers and inclusions per the current pricing page, [PLAN_SCHEDULE]); or
-- **(b) Per-Work-Order Plan:** a fee of **$[WO_FEE]** (or **[WO_FEE_%]% of the Work Order value**, whichever the pricing page specifies for the trade/category) per accepted Work Order, deducted at settlement.
+- **(a) Subscription Plan:** **$$99/mo (matches existing Core tier)** per month (plan tiers and inclusions per the current pricing page, [PLAN_SCHEDULE]); or
+- **(b) Per-Work-Order Plan:** a fee of **$$5–$8 per work order (vendor-charged; final TBD)** (or **[WO_FEE_%]% of the Work Order value**, whichever the pricing page specifies for the trade/category) per accepted Work Order, deducted at settlement.
 
 2.2 Subscription fees are billed in advance and are non-refundable except as required by law. Platform may change pricing on [30] days' notice, effective at Vendor's next renewal. Vendor may switch plans effective at the next billing cycle. Taxes are Vendor's responsibility.
 

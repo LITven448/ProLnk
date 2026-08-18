@@ -1,6 +1,6 @@
 # Vendor Intake v2 — Operator Program Onboarding Spec
 
-**Scope source:** PLATFORM_MASTER_AUDIT item **1.3** (vendor intake v2: company size, per-individual licenses, property types served, capacity, markets, FSM used) + item **1.4** (pricing: subscriber vs per-work-order fee, **no free tier** — price points still owed by Andrew, shown here as `[SUB_PRICE]` and `[WO_FEE]`).
+**Scope source:** PLATFORM_MASTER_AUDIT item **1.3** (vendor intake v2: company size, per-individual licenses, property types served, capacity, markets, FSM used) + item **1.4** (pricing: subscriber vs per-work-order fee, **no free tier** — price points still owed by Andrew, shown here as `$99/mo (matches existing Core tier)` and `$5–$8 per work order (vendor-charged; final TBD)`).
 **Purpose:** onboard service companies into the operator program (e.g., AMH pilot vendor pool) so they can appear in the operator dashboard's vendor picklist. **Fail-closed:** no dispatch until license + insurance + background verification pass (canonical spec §3.5).
 **Relation to existing pro onboarding (audit 1.1):** this is a separate, richer flow for operator-program vendors; it does not replace Core/Pro/Business pro signup.
 
@@ -53,7 +53,7 @@ Multi-step wizard, 8 steps + review/submit. Progress bar, save-and-resume, per-s
 - **R-1.3.8.4** Company submission may proceed with checks pending (see §4), but attestation "I am legally authorized to work in the United States" is collected per individual (work-auth, never citizenship — canonical §3.5).
 
 ### R-1.3.9 Plan Selection (Step 9)
-- **R-1.3.9.1** Exactly two options, **no free tier**: (a) **Subscription** `[SUB_PRICE]`/mo, unlimited operator work orders; (b) **Per-work-order** `[WO_FEE]` deducted/netted per completed work order (audit 5.4). Radio, required.
+- **R-1.3.9.1** Exactly two options, **no free tier**: (a) **Subscription** `$99/mo (matches existing Core tier)`/mo, unlimited operator work orders; (b) **Per-work-order** `$5–$8 per work order (vendor-charged; final TBD)` deducted/netted per completed work order (audit 5.4). Radio, required.
 - **R-1.3.9.2** Subscription starts billing at **activation**, not at submission. Per-WO vendors add no card at signup; fee nets from payouts.
 - **R-1.3.9.3** Plan switchable later (monthly boundary); engine must support both concurrently (audit 1.4).
 - **R-1.3.9.4** Price points are 🔶 Andrew's decision; build with config values, no hardcoding.
@@ -132,6 +132,6 @@ Dispatch eligibility is computed, not stored: `company_active AND individual.bg_
 
 ## 7. Open Questions
 
-1. **Biggest:** `[SUB_PRICE]` and `[WO_FEE]` are unset (audit decision #1, Andrew) — pricing UI, billing engine config, and per-WO netting math (audit 5.4) all block on these numbers, and the netting interacts with the processor migration decision (5.2). Need both numbers and the processor pick before Step 9 + activation billing can be finished.
+1. **Biggest:** `$99/mo (matches existing Core tier)` and `$5–$8 per work order (vendor-charged; final TBD)` are unset (audit decision #1, Andrew) — pricing UI, billing engine config, and per-WO netting math (audit 5.4) all block on these numbers, and the netting interacts with the processor migration decision (5.2). Need both numbers and the processor pick before Step 9 + activation billing can be finished.
 2. Which states' license registries have usable verification APIs for the pilot (TX TDLR/TSBPE?) vs. manual admin verification only?
 3. Is workers'-comp exemption acceptable to the pilot operator (AMH may contractually require WC regardless of state exemption)?

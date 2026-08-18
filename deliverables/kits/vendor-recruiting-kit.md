@@ -1,7 +1,7 @@
 # Vendor Recruiting Kit — Operator-Branded Vendor Onboarding
 
 **Owner:** [OPS_LEAD_NAME] · **Brand:** ProLnk (pro side) · **Audit ref:** PLATFORM_MASTER_AUDIT §10.2
-**Purpose:** everything needed to onboard an anchor operator's existing vendors onto ProLnk via operator-branded invitations. Placeholders: `[OPERATOR_NAME]`, `[SUB_PRICE]`/mo, `[WO_FEE]`/work-order, `[PAYOUT_TIMING]`.
+**Purpose:** everything needed to onboard an anchor operator's existing vendors onto ProLnk via operator-branded invitations. Placeholders: `[OPERATOR_NAME]`, `$99/mo (matches existing Core tier)`/mo, `$5–$8 per work order (vendor-charged; final TBD)`/work-order, `[PAYOUT_TIMING]`.
 
 **Sending rules:** all email from hello@prolnk.xyz with operator co-branding. SMS only to numbers with captured opt-in (TCPA) — vendor invites sent at operator's direction to their existing vendor list qualify as business outreach, but include STOP language on every message.
 
@@ -30,7 +30,7 @@ Every request comes with resident photos, AI-triaged: what the issue is, which t
 ProLnk also serves homeowners and other properties in your area. Once you're verified, you can opt into jobs beyond [OPERATOR_NAME]'s portfolio — same app, same payout rails.
 
 **4. No per-lead fees. Ever.**
-You never pay to see or bid a job. Pricing is a flat [SUB_PRICE]/mo subscription or a simple [WO_FEE] per completed work order — you choose. No commissions skimmed per lead, no pay-to-play ranking.
+You never pay to see or bid a job. Pricing is a flat $99/mo (same as existing Core tier) subscription or a simple $5–$8 per work order (vendor-charged; final TBD) per completed work order — you choose. No commissions skimmed per lead, no pay-to-play ranking.
 
 ### How it works (3 steps)
 1. **Accept your invite** — 10 minutes: business info, trades, service area.
@@ -42,7 +42,7 @@ You never pay to see or bid a job. Pricing is a flat [SUB_PRICE]/mo subscription
 > Questions first? Reply to your invite email or text [SUPPORT_PHONE].
 
 ### Landing page FAQ (short version)
-- **Does this cost anything to see?** No. Signing up and getting verified is free. You only pay when you're actively taking work: [SUB_PRICE]/mo or [WO_FEE]/completed work order.
+- **Does this cost anything to see?** No. Signing up and getting verified is free. You only pay when you're actively taking work: $99/mo (same as existing Core tier) or $5–$8 per work order (vendor-charged; final TBD)/completed work order.
 - **Will I lose my direct relationship with [OPERATOR_NAME]?** No — you're still their vendor. ProLnk is the pipe the work flows through, not a middleman renegotiating your rates.
 - **What if I don't join?** Work orders will increasingly dispatch through the platform. Invited vendors keep priority; unverified vendors can't receive platform dispatches.
 - **How fast do I get paid?** Payouts release on confirmed completion and land via direct deposit in [PAYOUT_TIMING].
@@ -64,7 +64,7 @@ You never pay to see or bid a job. Pricing is a flat [SUB_PRICE]/mo subscription
 > What changes for you:
 > - **Work orders reach you faster**, with resident photos and an AI read on the issue before you roll a truck.
 > - **You keep your [OPERATOR_NAME] work** — and can opt into new homeowner demand nearby.
-> - **No per-lead fees.** Flat [SUB_PRICE]/mo or [WO_FEE] per completed work order. Your choice.
+> - **No per-lead fees.** Flat $99/mo (same as existing Core tier) or $5–$8 per work order (vendor-charged; final TBD) per completed work order. Your choice.
 >
 > Setup takes about 10 minutes.
 >
@@ -119,11 +119,11 @@ You never pay to see or bid a job. Pricing is a flat [SUB_PRICE]/mo subscription
 
 ### Email 5 — Subscription upgrade pitch (Day 14 after go-live, if on per-work-order pricing)
 **Subject:** You've done [N] work orders — the math says switch
-**Preheader:** Flat [SUB_PRICE]/mo beats [WO_FEE] each at your volume.
+**Preheader:** Flat $99/mo (same as existing Core tier) beats $5–$8 per work order (vendor-charged; final TBD) each at your volume.
 
 > [FIRST_NAME] —
 >
-> In your first two weeks you've completed **[N] work orders** at [WO_FEE] each — that's [N×WO_FEE]. At your pace, the flat **[SUB_PRICE]/mo subscription** is the cheaper way to run, and it adds:
+> In your first two weeks you've completed **[N] work orders** at $5–$8 per work order (vendor-charged; final TBD) each — that's [N×WO_FEE]. At your pace, the flat **$99/mo (same as existing Core tier) subscription** is the cheaper way to run, and it adds:
 >
 > - **Unlimited work orders** — no per-job fee, ever.
 > - **[SUB_BENEFIT_2 — e.g., higher queue weighting on non-portfolio homeowner jobs]**
@@ -165,8 +165,8 @@ You never pay to see or bid a job. Pricing is a flat [SUB_PRICE]/mo subscription
 
 **What does it cost?**
 Two options, your choice, switch anytime:
-- **[SUB_PRICE]/mo** — unlimited work orders, no per-job fee.
-- **[WO_FEE] per completed work order** — pay only when you work.
+- **$99/mo (same as existing Core tier)** — unlimited work orders, no per-job fee.
+- **$5–$8 per work order (vendor-charged; final TBD) per completed work order** — pay only when you work.
 Signing up, verification, and seeing jobs are always free. There are **no per-lead fees** and no commission taken from your invoice for portfolio work orders.
 
 **What do I need to get verified?**

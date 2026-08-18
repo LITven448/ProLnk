@@ -62,7 +62,7 @@ It is not a generic mood board. It is *their* room, furnished with *your* invent
 
 | Term | Proposal |
 |---|---|
-| Commission | **[RATE]% of attributed net sales** (net of returns/cancellations) — benchmark range for furniture affiliate deals is roughly 3–8%; propose starting at [RATE]% with volume step-ups |
+| Commission | **30% (AMH anchor rate; ~20% for future non-anchor operators — Andrew, Aug 2026) of attributed net sales** (net of returns/cancellations) — benchmark range for furniture affiliate deals is roughly 3–8%; propose starting at 30% (AMH anchor rate; ~20% for future non-anchor operators — Andrew, Aug 2026) with volume step-ups |
 | Attribution | Last-touch, tap-through from rendering or move-in placement, **[30]-day attribution window** |
 | Tracking | Unique tracking parameters per session/SKU; monthly reconciliation report; NFM audit rights |
 | Feed | Product images, dimensions, SKUs, pricing, availability — daily or API refresh; category priority: living room, bedroom, dining, mattresses |

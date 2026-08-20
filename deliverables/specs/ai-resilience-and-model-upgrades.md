@@ -41,6 +41,21 @@ Renders are **inspiration only**. The professional owns the actual scope and quo
 - ALLOWED: generate a finished/repaired future state — new shingles, repaired siding, cleaned exterior, new paint
 - NEVER: generate, alter, enhance, or "clean up" imagery of the existing damage or current condition. The original photo is the evidentiary record and stays untouched.
 
+**The three photo classes.** Rules differ by class; the class is set at creation and never changes.
+
+| Class | What it is | Evidentiary? | In exports? | Disposition |
+|---|---|---|---|---|
+| `documentation` | Move-In Shield captures, condition/scan photos | Yes — timestamped, immutable | Yes | Retained per policy; never user-deletable during tenancy |
+| `job_record` | Real before/after photos of completed work | Yes — proof of work, warranty evidence | Yes | Retained; feeds portfolio + Home Vault history |
+| `render` | AI visualizations and upgrade suggestions | **No — never** | **Never** | Homeowner accepts / rejects / deletes |
+
+Renders behave like AI findings: they arrive in the homeowner's file as **suggestions**, sit alongside "AI found a possible issue," and the homeowner triages them.
+- **Accept** → saved to their ideas/projects area, can convert to a job request
+- **Reject** → archived, hidden from the feed, retained as preference signal (informs future suggestions)
+- **Delete** → hard-deleted, honors CCPA/TDPSA deletion; no soft-delete, no retention of the image
+
+Because a render is never evidentiary, the export filter is simple: exports include `documentation` and `job_record` only. A render cannot reach a claim file, dispute packet, or move-out comparison by any path.
+
 **Rule 1a — Renders live outside the evidence chain.** This is the technical control that makes the above safe:
 ```ts
 // Renders are a separate record type in separate storage. They are NEVER
@@ -160,3 +175,14 @@ No claim depends on a named vendor. The registry is the concrete embodiment of "
 4. Golden test set (blocked on Andrew sourcing ~500 labeled photos)
 5. Promotion gate + shadow mode (needs #4 to be meaningful)
 6. Continuous eval dashboard
+
+
+---
+
+## APPENDIX — Real job photos are the golden test set
+
+`job_record` before/after pairs are labeled training data we already own: a before photo, the trade and scope actually performed, the real invoice value, and an after photo confirming the outcome. That is precisely the structure the golden test set needs (audit 7.2).
+
+**Use them:** export completed jobs that have a before photo + confirmed trade + final invoice, and treat the recorded work as ground truth for what the AI should have detected and what it should have estimated. This validates both triage accuracy and cost-band accuracy against real money — stronger than hand-labeling, because the label is what a professional actually did and charged.
+
+Sourcing ~500 labeled photos is on the founder's task list; the completed-job archive may already satisfy most of it.

@@ -36,23 +36,36 @@ Example prompt context: *"Single-family, built 2019, North Texas hail belt, comp
 
 Renders are **inspiration only**. The professional owns the actual scope and quote. Policy encoded in three rules:
 
-**Rule 1 — Never render an insurance-related or structural finding.** Currently only implied by `offerTrack`. Make it explicit in `runTier4Renderings()`:
-```ts
-const RENDER_BLOCKED_CATEGORIES = new Set([
-  "roofing", "foundation", "structural", "electrical", "plumbing",
-  "hvac", "mold_remediation", "safety_hazard", "insurance_claim_candidate",
-]);
+**Rule 1 — Render the AFTER, never the BEFORE.** The dividing line is not job type — restoration work is legitimately worth visualizing ("here's your house with the new roof"). The rule is that the *current condition* is evidence and must never be synthesized or altered.
 
-const transformationOpps = opportunities
-  .filter(o =>
-    o.offerTrack === "transformation" &&
-    !o.isInsuranceClaim &&                                   // hard exclusion
-    !RENDER_BLOCKED_CATEGORIES.has((o.category ?? "").toLowerCase()) &&
-    o.transformationPrompt?.trim()
-  )
-  .slice(0, options.maxRenderings ?? 2);
+- ALLOWED: generate a finished/repaired future state — new shingles, repaired siding, cleaned exterior, new paint
+- NEVER: generate, alter, enhance, or "clean up" imagery of the existing damage or current condition. The original photo is the evidentiary record and stays untouched.
+
+**Rule 1a — Renders live outside the evidence chain.** This is the technical control that makes the above safe:
+```ts
+// Renders are a separate record type in separate storage. They are NEVER
+// included in: Move-In Shield packets, move-out comparison exports,
+// insurance claim exports, dispute packets, or operator documentation exports.
+interface RenderedImage {
+  id: number;
+  sourcePhotoId: number;        // links to the original, never replaces it
+  storageClass: "render";       // separate bucket from "documentation"
+  excludeFromExports: true;     // enforced at the export layer, not by convention
+  watermarked: boolean;         // must be true to be servable
+}
 ```
-Renders stay in the discretionary lane: paint, landscaping, patio, deck, outdoor lighting, hardscape, fencing.
+Export functions filter on `storageClass === "documentation"`. A render cannot reach a claim file or a dispute packet even if a user tries to attach one.
+
+**Rule 1b — Constrained scope for restoration renders.** Free-form beautification on a repair job invites the "you promised me that" dispute. Restoration prompts are scope-locked:
+```ts
+const RESTORATION_PROMPT_GUARD = `
+Show ONLY the completed repair described. Match existing materials, profile,
+and color family. Do NOT add, remove, or restyle anything else: no new windows,
+no changed rooflines, no added landscaping, no altered trim colors.`;
+```
+Applied whenever the opportunity is `offerTrack === "repair"`. Discretionary transformation renders (paint, landscaping, patio, deck, lighting, fencing) keep the open-ended prompt.
+
+**Rule 1c — Insurance-flagged findings render only the repaired state, never enter an export, and carry the label.** With 1a and 1b enforced, a roof-replacement visualization is a sales tool rather than a liability — the damage photo stays authentic, the render stays labeled and quarantined from every claim path.
 
 **Rule 2 — Label it, subtly.** Not a heavy overlay. A thin bottom bar, 12px, "AI visualization — actual results will vary." Applied server-side at composite time so it cannot be skipped. If the watermark step fails, return no image rather than an unlabeled one.
 Rationale: the label is not about what we promise in-app — it is about the image after it leaves the app. Screenshotted, texted, forwarded to a contractor or an adjuster, the picture arrives with no context. The label travels with it.

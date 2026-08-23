@@ -94,12 +94,12 @@ Score 1–3 on each; pursue 12+:
 | Platform engineering | $0.40M | $0.60M | $0.80M | $1.00M | $1.20M |
 | Sales & marketing | $0 | $0.50M | $1.10M | $1.80M | $2.90M |
 | G&A allocation (10%) | $0.09M | $0.34M | $0.74M | $1.20M | $1.92M |
-| One-time commercial build | $0.40M | — | — | — | — |
-| **Total cost** | **$1.17M** | **$2.15M** | **$4.21M** | **$6.58M** | **$10.19M** |
-| **Profit** | **($0.27M)** | **$1.25M** | **$3.19M** | **$5.42M** | **$9.01M** |
-| **Margin** | — | 37% | 43% | 45% | 47% |
+| One-time commercial build | $0.025M | — | — | — | — |
+| **Total cost** | **$0.80M** | **$2.15M** | **$4.21M** | **$6.58M** | **$10.19M** |
+| **Profit** | **$0.11M** | **$1.25M** | **$3.19M** | **$5.42M** | **$9.01M** |
+| **Margin** | 12% | 37% | 43% | 45% | 47% |
 
-**Year 1 is an investment year and should be.** The $400K commercial build is largely covered by design-partner fees; the rest buys a product line where customer #2 carries ~82% contribution margin.
+**Year 1 is profitable from the first customer.** The commercial build costs ~$25K in cash — the dev team is equity-compensated and AI-assisted, so the build is paid in dilution and calendar time rather than payroll. A single $150K design-partner fee covers it six times over. **Do not let a low build cost pull pricing down: price on value delivered, not cost incurred.** The real constraint on this build is not dollars, it is dev-weeks that would otherwise go to the 120-day launch.
 
 **Valuation:** $19.2M ARR at enterprise SaaS multiples of 6–10× revenue = **$115–190M** as a standalone business, independent of the residential platform.
 
@@ -140,7 +140,8 @@ Practical constraints, stated honestly: those contractors are contractually boun
 
 ## 8 · Risks
 
-- **Focus.** Every hour on commercial is an hour off the 120-day residential launch. **Sell now, build after Day 120.** Non-negotiable.
+- **Focus — the actual cost of this build.** At ~$25K cash the dollars are trivial; the binding constraint is dev-weeks. Every one spent on commercial is one off the 120-day residential launch. **Sell now, build after Day 120.** Non-negotiable.
+- **Third-party integrations are the estimate risk.** Client FM system connections (ServiceChannel, Corrigo) depend on someone else's API docs, sandbox access, and partner approval — none of which move faster because you code faster. Scope them explicitly and cap how many are included in a pilot.
 - **Custom-build creep.** One code fork and the margin structure collapses. Configuration or nothing.
 - **Vendor adoption below model.** Mitigate with the license-offset structure so the customer is financially motivated to drive it.
 - **Support underpricing.** Mission-critical SLAs mean real 24/7 on-call. Define tiers in writing before signing.

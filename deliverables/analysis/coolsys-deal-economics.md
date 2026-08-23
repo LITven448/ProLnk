@@ -53,19 +53,15 @@
 ## Costs to serve
 
 ### One-time build (commercial configuration)
-The enterprise console is being built for AMH regardless. This is the *incremental* commercial work:
+The enterprise console is being built for AMH regardless. The incremental commercial work — tenant configuration layer, dispatch board + SLA escalation, refrigerant/EPA 608 module, FM system integrations, subcontractor mobile variant, vendor registry and bulk import — is estimated by the founder at **~$25,000 in cash cost**.
 
-| Item | Cost |
-|---|---|
-| Tenant/persona configuration layer | $60,000 |
-| Dispatch board + SLA escalation engine | $90,000 |
-| Refrigerant/EPA 608 compliance module | $70,000 |
-| Client FM system integrations (ServiceChannel, Corrigo) | $80,000 |
-| Subcontractor mobile app (commercial variant) | $60,000 |
-| Vendor registry + bulk import/migration | $40,000 |
-| **Total one-time** | **~$400,000** |
+That figure reflects an equity-compensated, AI-assisted dev team: the build is paid in dilution and calendar time, not payroll. It is a genuine structural margin advantage and the model uses it.
 
-**The $150K pilot fee plus $100K implementation covers ~60% of this.** The remainder is a real investment — justified only if this becomes a repeatable product line, since customer #2 reuses all of it.
+**Two caveats that are real regardless of build speed:**
+- **Integrations are the wildcard.** ServiceChannel/Corrigo connections depend on third-party API access, sandboxes, and partner approval. Cap the number included in the pilot contract.
+- **The binding cost is dev-weeks, not dollars** — every one competes with the 120-day launch.
+
+**Pricing implication: do not discount because the build is cheap.** The $150K pilot fee covers the build six times over. Price on the value delivered — the DSO reduction alone dwarfs the fee.
 
 ### Annual cost to serve CoolSys
 | Item | Cost |
@@ -88,9 +84,9 @@ Sales cost is separate: expect $120–150K in commission/comp allocated against 
 |---|---|---|
 | Revenue | $880,000 | $1,483,000 |
 | Cost to serve | $352,000 | $352,000 |
-| One-time build (amortized over 3 yrs) | $133,000 | $133,000 |
-| **Contribution profit** | **~$395,000** | **~$998,000** |
-| **Contribution margin** | **~45%** | **~67%** |
+| One-time build (amortized over 3 yrs) | $8,000 | $8,000 |
+| **Contribution profit** | **~$520,000** | **~$1,123,000** |
+| **Contribution margin** | **~59%** | **~76%** |
 
 *Contribution margin = revenue minus direct cost to serve, before shared G&A, founder comp, and company overhead.*
 

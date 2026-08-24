@@ -104,6 +104,17 @@ A signed operator delivers **doors under contract** on day one. Revenue comes fr
 
 Modeled engagement ramp: **35% → 50% → 60% → 65% → 70%.** Operator-mandated onboarding at move-in (the lease addendum path) is what drives this; without it, assume half these rates.
 
+## The supply unit is the FIRM, not the individual pro
+
+This is the correction that reshapes the model. ProLnk does not bill per technician:
+- **Each subcontractor business pays a company subscription** — $99 / $149 / $249 ladder, ~$149 average
+- **Each additional ProPass (individual technician credential) inside that firm is +$20/month**
+- Roughly 30% of firms stay on the per-work-order model instead of subscribing
+
+So a 6-tech firm pays ~$149 + (5 × $20) = **$249/month**, not 6 × $149. Sign firms, and their whole roster comes with them.
+
+**Service ratio: 20 properties per active professional** (revised from 15:1).
+
 **Volume assumptions**
 
 | | Y1 (2027) | Y2 | Y3 | Y4 | Y5 (2031) |
@@ -112,51 +123,58 @@ Modeled engagement ramp: **35% → 50% → 60% → 65% → 70%.** Operator-manda
 | Engagement rate | 35% | 50% | 60% | 65% | 70% |
 | **Engaged rental doors** | 21,350 | 87,500 | 210,000 | 357,500 | 560,000 |
 | Homeowner homes | 8,000 | 30,000 | 75,000 | 150,000 | 250,000 |
-| **Active pros** | 2,000 | 6,500 | 15,000 | 26,000 | 40,000 |
+| Total engaged properties | 29,350 | 117,500 | 285,000 | 507,500 | 810,000 |
+| **Active pros** (20:1) | 1,470 | 5,875 | 14,250 | 25,375 | 40,500 |
+| **Subcontractor firms** (~4 techs avg) | 370 | 1,470 | 3,560 | 6,340 | 10,125 |
 | Commercial tenants | 1 | 3 | 7 | 12 | 20 |
 
 **Revenue by stream ($M)**
 
 | Stream | Y1 | Y2 | Y3 | Y4 | Y5 |
 |---|---|---|---|---|---|
-| Pro subscriptions | 3.2 | 10.8 | 25.2 | 44.3 | 69.6 |
-| Platform fees on jobs | 1.1 | 5.1 | 13.2 | 25.1 | 42.8 |
+| Firm subscriptions + ProPass seats | 0.6 | 2.6 | 6.3 | 11.1 | 17.8 |
+| Platform fees — homeowner jobs | 0.7 | 2.7 | 7.0 | 14.4 | 24.8 |
+| Platform fees — renter-paid services | 0.2 | 0.9 | 2.2 | 3.9 | 6.3 |
+| Operator work-order fees (rental maintenance) | 0.3 | 1.4 | 3.7 | 6.7 | 11.2 |
 | Affiliate & rendering commerce | 0.5 | 2.4 | 7.0 | 15.5 | 29.0 |
 | Insurance / warranty / financing referrals | 0.3 | 1.2 | 3.2 | 6.5 | 11.0 |
-| Operator program (vendor subs + WO fees) | 0.8 | 2.6 | 5.5 | 8.5 | 12.0 |
-| Renters services & move-in economics | 0.2 | 1.0 | 2.5 | 4.7 | 7.8 |
+| Move-in economics (utility, renters insurance) | 0.2 | 0.8 | 2.0 | 3.8 | 6.7 |
 | Data licensing | — | 0.5 | 2.0 | 4.5 | 11.2 |
 | **TrustyPro Exchange (commercial)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 |
-| **TOTAL REVENUE** | **7.0** | **26.9** | **66.0** | **121.1** | **202.6** |
+| **TOTAL REVENUE** | **3.7** | **15.9** | **40.8** | **78.4** | **137.2** |
+
+*Operator revenue share (AMH 30%, others ~20%) is carried in cost of revenue, not netted above.*
 
 **P&L ($M)**
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 |
 |---|---|---|---|---|---|
-| Revenue | 7.0 | 26.9 | 66.0 | 121.1 | 202.6 |
-| Cost of revenue | 1.8 | 6.2 | 14.5 | 25.4 | 40.5 |
-| **Gross profit** | **5.2** | **20.7** | **51.5** | **95.7** | **162.1** |
-| Gross margin | 74% | 77% | 78% | 79% | 80% |
-| Engineering | 1.8 | 4.0 | 7.0 | 10.0 | 13.0 |
-| Sales & marketing | 1.5 | 5.5 | 13.0 | 22.0 | 34.0 |
-| Support & operations | 1.2 | 3.2 | 7.0 | 12.0 | 18.0 |
-| G&A | 0.9 | 1.8 | 3.3 | 5.5 | 8.5 |
-| **EBITDA** | **(0.2)** | **6.2** | **21.2** | **46.2** | **88.6** |
-| **EBITDA margin** | — | 23% | 32% | 38% | 44% |
+| Revenue | 3.7 | 15.9 | 40.8 | 78.4 | 137.2 |
+| Cost of revenue (incl. operator shares) | 1.1 | 4.1 | 9.8 | 17.2 | 28.8 |
+| **Gross profit** | **2.6** | **11.8** | **31.0** | **61.2** | **108.4** |
+| Gross margin | 70% | 74% | 76% | 78% | 79% |
+| Engineering | 1.5 | 3.2 | 5.5 | 8.0 | 11.0 |
+| Sales & marketing | 1.0 | 3.5 | 8.5 | 15.0 | 24.0 |
+| Support & operations | 0.8 | 2.2 | 5.0 | 9.0 | 14.0 |
+| G&A | 0.6 | 1.3 | 2.4 | 4.0 | 6.5 |
+| **EBITDA** | **(1.3)** | **1.6** | **9.6** | **25.2** | **52.9** |
+| **EBITDA margin** | — | 10% | 24% | 32% | 39% |
 
-**Valuation at Y5:** $202.6M revenue at 8–10× = **$1.6–2.0B**. At marketplace multiples of 5–6×, **$1.0–1.2B**.
+**Valuation at Y5:** $137.2M revenue at 8–10× = **$1.1–1.4B**. At marketplace multiples of 5–6×, **$690–820M**.
+
+**Why this is lower than the prior draft, and why that is correct.** The earlier version billed subscriptions per individual professional (40,000 × ~$145/mo ≈ $70M). The actual model bills the *firm* — ~10,000 firms at ~$149 plus $20 per additional seat ≈ $18M. That is a $52M correction on a single line. Better to find it here than in diligence.
 
 **Reconciliation to the prior model — this is the same curve, pulled forward.** The earlier 15-year model reached ~$234M in Year 7. This plan reaches ~$203M in **Year 5**. Nothing about the underlying economics changed; starting at 61,000 contracted doors instead of 15,000 **compresses the timeline by roughly 24 months.** That is precisely the "channel acceleration pulls the curve forward" thesis, now expressed in the numbers.
 
-## The binding constraint is no longer demand — it is pros
+## The supply constraint got much smaller — this is the real win in the correction
 
-At Y5 this model requires **40,000 active professionals**. Today you have ~500. That is the single hardest number in this document, and every projection above depends on it:
+At 20:1 and firm-level contracting, Y5 needs **~10,000 subcontractor firms**, not 40,000 individually recruited professionals. That is a fundamentally different — and achievable — recruiting problem:
 
-- At the modeled 15:1 ratio, 810,000 engaged properties technically call for ~54,000 pros. The 40,000 above already assumes some capacity strain and higher utilization per pro.
-- **If pros lag, platform fees and job revenue lag with them** — roughly $43M of Y5 revenue sits directly on this line, and pro subscriptions ($70M) are the largest single stream in the entire model.
-- Recruiting 40,000 professionals one at a time is not achievable on this timeline. **This is why the commercial crossover strategy exists** — one home-services rollup or restoration franchisor credentials thousands at once. Supply must be won in blocks, exactly like demand.
+- **~2,000 firms per year at maturity**, and firms arrive in blocks. One home-services rollup, restoration franchisor, or insurance repair network delivers hundreds to thousands at once.
+- Firm-level subscriptions are **stickier than individual ones.** A shop with twelve ProPass seats, its compliance documents on file, and its job history in the platform does not casually churn.
+- Each firm signed adds capacity for ~80 properties (4 techs × 20). Ten thousand firms covers 800,000 properties — the model closes on itself.
 
-**Practical read: treat pro recruitment as a first-class growth function from Day 1, with the same seriousness as operator sales.**
+**This is precisely what the commercial white-label strategy is for.** Every commercial tenant credentials its vendor network into the shared layer; those firms are then available on the residential side. Supply is won in blocks, exactly like demand.
 
 # 5 · The three-engine strategy
 

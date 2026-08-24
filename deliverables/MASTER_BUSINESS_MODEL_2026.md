@@ -81,6 +81,50 @@ Every product line below runs on the same spine: a verified professional, a docu
 42. **HOA / community portal** licensing
 43. **Inspector & clipboard channel** — Scout-tier subscriptions and origination residuals
 
+## Money movement — scales with GMV, not headcount
+44. **Escrow float** — interest earned on job funds held between authorization and release. At $500M+ annual GMV with typical hold periods this is a material, near-zero-cost line.
+45. **Payment processing spread** — margin between processor cost and the rate charged to pros/vendors
+46. **Pro fast-pay (residential)** — 1.5–3% for same-week payout instead of standard terms. Stream 32 covers commercial only; the residential pro network wants this more.
+47. **Chargeback / dispute handling fees**
+
+## Consumer recurring — currently absent from the model entirely
+48. **Homeowner maintenance plan** — $15–30/month consumer subscription: seasonal reminders, priority scheduling, annual inspection, documented Vault. **This is the largest missing stream.** At 250,000 homes and 20% attach, roughly $12M/yr of high-margin recurring revenue.
+49. **Premium Vault / records tier** — extended storage, transferable home history, document concierge
+50. **Recall monitoring service** — nameplate registry matched against CPSC recall data, sold as a safety subscription
+
+## Real estate transaction — high value per event
+51. **Agent referral fees** — 25–35% of the agent's commission when a homeowner buys or sells. The app knows about the move before anyone else does.
+52. **Listing-ready reports** — pre-sale condition report and repair punch list generated from existing Vault data
+53. **Title / mortgage referral** commissions
+
+## Rental fintech — standard in this category, currently unbuilt
+54. **Deposit alternative products** — Rhino/Jetty/LeaseLock-style deposit replacement, sold at lease signing
+55. **Furniture rental referrals** — CORT, Feather, and similar at move-in
+
+## Energy & utility
+56. **Retail energy provider switching** — commissions in deregulated markets (Texas especially)
+57. **Solar and efficiency referrals**; utility rebate program fees paid per completed measure
+
+## Marketplace & platform
+58. **Sponsored placement / advertising** — brands paying for product placement inside AI renderings and the shop shelf. Distinct from affiliate commission on the sale; this is paid positioning.
+59. **Featured-pro placement** — visibility upsell above the subscription tier
+60. **API / integration access fees** for partners consuming the platform
+
+## Insurance & IP
+61. **Pro insurance commissions** — E&O, general liability, commercial auto placed to your own pro network through a broker partnership
+62. **Warranty administration** — becoming the administrator rather than the referrer, earning the underwriting margin
+63. **Patent licensing** — licensing the commission cascade, portable credential, or origination-attribution mechanisms to non-competing operators
+
+---
+
+## What is actually in the five-year forecast
+
+**In the base case:** streams 1–4, 8–12, 17–24, 27–31, and a conservative slice of 36–37.
+
+**Documented but NOT forecast** (deliberate — they need volume, partners, licenses, or regulatory work first): 5–7, 13–16, 25–26, 32–35, 38–43, and all of 44–63.
+
+**Read that as a floor, not a ceiling.** The $137M Year-5 figure is built on roughly a third of the identified streams. The largest unmodeled opportunities, in order of size: the homeowner maintenance plan (#48), escrow float and payment spread (#44–45), agent referral fees (#51), sponsored placement (#58), and data tiers 3–5 (#38–40). Together they plausibly add **$30–60M** to Year 5 — but each requires a partner, a license, or a build that does not exist yet, so none belong in a forecast an investor will diligence.
+
 ---
 
 # 3 · Unit economics

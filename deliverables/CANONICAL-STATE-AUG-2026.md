@@ -53,12 +53,39 @@ Two independent axes. Everything follows from these:
 
 ## 1.4 · Commission and fees
 
-**Residential (homeowner jobs)**
-- Platform fee charged to the **pro**, collected **after the pro is paid**
+**Residential (homeowner jobs) — SETTLED**
+
+The pro pays a flat platform fee set by their subscription tier. **The fee does not come back to them.** There is no "keep rate," no rebate, no pool share for the pro.
+
+| Tier | Monthly | Platform fee |
+|---|---|---|
+| Starter | $0 | 15% |
+| Solo | $99 | 10% |
+| Team | $189 | 9% |
+| Business | $349 | 8% |
+
+- Charged to the **pro**, collected **after the pro is paid**
 - Never visible to the homeowner; does not change the homeowner's price
-- Rate is a flat percentage of the job — see open item O-3 for the final number
+- Disclosed to pros at signup
 - **No repeat-customer discount.** Retention comes from product value, not price
-- Fee is disclosed to pros at signup
+- Materials stay in the fee base — trade sales commissions are calculated on total collected
+
+**What happens to the fee (the "commission pool")**
+
+The fee ProLnk collects is the pool. ProLnk pays out of it only when someone else has a claim:
+
+| Claim | Share of the pool | When it applies |
+|---|---|---|
+| Home / photo origination | 5% | Founding network only |
+| Upline L1 / L2 / L3 / L4 | 7% / 4% / 2% / 1% | Founding network only, residential + Scout jobs only |
+| **ProLnk retains** | **the remainder** | Always |
+
+- **If nobody referred the pro and no origination claim exists, ProLnk keeps 100% of the pool.** That is the normal case for the vast majority of pros.
+- Maximum possible payout is 19% of the pool, so **ProLnk retains at least 81% in the worst case.**
+- The **≥20% retention floor** stays in place as a safety mechanism, but with the pro's keep rate retired it can no longer trigger. It existed only because the pro's 40–60% share used to come out of this same pool first.
+- **Effective ProLnk take on a residential job: 8.1%–10% of job value** (Solo tier), depending on whether a founding cascade applies.
+
+**RETIRED: the keep-rate model.** "40 / 50 / 60% commission keep" is gone. Every surface must say the plain fee instead: *"10% platform fee — you keep 90% of every job."* `commissionKeepRate` in the database and `keepRate` in `stripe.ts` are to be removed and existing partner rows migrated.
 
 **Commercial — SETTLED**
 - The licensing company (CoolSys) pays an annual license fee **plus $3 per work order**
@@ -160,25 +187,9 @@ Plus **four functioning marketing websites**: residential · commercial · partn
 
 # PART 2 — STILL OPEN
 
-Everything else has been decided. **One item blocks the financial model and the code.**
+Everything material has been decided. The remaining items are research tasks, not founder decisions.
 
-## 🔴 O-1 · The fee model — THE ONLY REAL BLOCKER
-
-Two incompatible descriptions exist, and one of them is live on the website today.
-
-**Version A — what the live site says** (`/pricing` FAQ, verbatim):
-> "ProLnk takes 6–15% of the completed job value as a platform fee (varies by trade type and job size). Of that pool, you keep your tier's percentage. ProLnk always retains a minimum of 20%."
-
-So: the fee varies **by trade and by job size** → creates a commission pool → the pro who did the job keeps their tier's share of that pool (40/50/60%) → ProLnk retains the rest, never below 20%.
-On a $1,000 job: $100 pool → Core pro gets $40 back → ProLnk nets $60 before upline overrides.
-
-**Version B — what was discussed here:**
-One flat rate per subscription tier, no pool, no rebate. Starter 15% · Solo 10% · Team 9% · Business 8%. The pro simply pays that percentage.
-On a $1,000 job at Solo: ProLnk takes $100, pro keeps $900. Done.
-
-**These cannot both ship.** Version A is what the code and site do now. Version B is simpler to explain, simpler to build, and gives pros a clean reason to upgrade — but adopting it means rewriting the pricing page copy, retiring `commissionKeepRate`, and migrating existing partner rows.
-
-**Needed: pick A or B.** Everything downstream waits on this — the model, the rates memo, the commission engine fix list, and the pricing page.
+**Nothing is blocking. The fee model was settled: flat rate per tier, no keep rate, pool distributed only to origination and upline claims.** See §1.4.
 
 ## 🟡 Open, but not blocking — assigned to research, not to the founder
 

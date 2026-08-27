@@ -60,12 +60,16 @@ Two independent axes. Everything follows from these:
 - **No repeat-customer discount.** Retention comes from product value, not price
 - Fee is disclosed to pros at signup
 
-**Commercial**
-- **3% on work ProLnk sourced and priced only.** Zero on work the vendor quoted themselves
-- Additionally under discussion: $3–5 per work order paid by the licensing company
+**Commercial — SETTLED**
+- The licensing company (CoolSys) pays an annual license fee **plus $3 per work order**
+- **Vendors locked to that licensee work for FREE** and see only that licensee's jobs
+- A vendor who wants other work pays a subscription and unlocks the marketplace
+- **ProLnk takes 3% only on commercial jobs it sources for that vendor OUTSIDE their licensing company.** Zero on the licensee's own work, zero on work the vendor quoted themselves
+- The residential 6–15% floor/clamp does **not** apply to commercial. Commercial needs its own fee path in code
 
-**Rental / operator work orders**
+**Rental / operator work orders — SETTLED**
 - **$3 per work order, paid by the rental company** (not the vendor)
+- The pro pays nothing on rental work orders. Their subscription is their only cost, and only if they want work beyond that licensee
 - Plus an annual license fee — $150–300K depending on portfolio
 - ProLnk's renter revenue comes primarily from **commerce**: furniture, electronics, art, decor, rugs, plus utilities and move-out services
 - Renter-initiated small jobs (cleaning, mounting) — renter pays the pro, residential fee applies
@@ -102,7 +106,8 @@ Two independent axes. Everything follows from these:
 
 ## 1.6 · Licensing to organizations
 
-- **Large operators (>10,000 doors):** free or low license + **30% revenue share** on partner streams, **paid partner-direct, never through ProLnk's P&L**
+- **Large operators (>10,000 doors):** free or low license + **30% revenue share** on partner streams
+- **SETTLED — the partner's share is split at settlement and paid automatically. It never lands in ProLnk's account.** ProLnk's percentage is therefore 100% margin, with no remittance ledger, no monthly payout run, and no clawback exposure on the partner's portion
 - **Small operators (<10,000 doors):** **$1.50–2.50 per door per month, no revenue share**
 - **The 30% is the price of becoming their resident platform** — not a marketing incentive. The contract must specify that TrustyPro *is* the resident app: in the lease flow, in their portal, at move-in
 - White-label pricing is set separately from all pro subscriptions
@@ -118,6 +123,8 @@ A free vendor portal gives you **one company's work**. ProLnk gives you that com
 | Rental doors (all types incl. multifamily) | 61,000 | 250,000 | 550,000 | 850,000 | 1,100,000 |
 | Homeowner homes | 10,000 | 30,000 | 100,000 | 350,000 | 550,000 |
 | Resident engagement | 85% | → | → | → | 95% |
+
+**Engagement is high by design, not by promotion.** The app is issued as part of the move-in process and used again at move-out, so effectively the whole resident base is in it. AMH earns share on move-in commerce (furniture, electronics, rugs, beds) and on move-out services (movers, storage, cleaning).
 
 ## 1.9 · Products that must exist
 
@@ -138,7 +145,7 @@ Plus **four functioning marketing websites**: residential · commercial · partn
 - **Care plans / homeowner subscription** — deferred until the platform is established. Builder origination economics must be rebuilt without them.
 - **Repeat-customer discount** — rejected.
 - **Subscription override** — removed entirely.
-- **Move-out marketplace** (free report + checklist → movers, painters, cleaners, stagers, storage) — **IN**, work delivered by the pro network and affiliate partners depending on need.
+- **Move-in checklist** (new home) and **move-out / pre-sale checklist** (selling or preparing to sell) — **IN.** These are checklists inside the app, not a separate marketplace product. Work is delivered by the pro network or affiliate partners depending on what the job needs. Both generate jobs and affiliate revenue as a by-product.
 
 ## 1.11 · Legal and patent constraints
 
@@ -153,33 +160,31 @@ Plus **four functioning marketing websites**: residential · commercial · partn
 
 # PART 2 — STILL OPEN
 
-**Do not guess at these. Flag them and ask.**
+Everything else has been decided. **One item blocks the financial model and the code.**
 
-**O-1 · Keep rate.** Five different tier/keep-rate systems exist in live code (`stripe.ts`, `Pricing.tsx`, `PostFoundingPricing.tsx`, `dfw-zipcodes.ts`, `adminExtras.ts`) with conflicting rates and even conflicting price points ($29/$79/$149/$299 vs $99/$149/$249), including a free Scout tier that contradicts policy. **Recommendation: delete keep rates entirely and use the flat per-tier job fee in §1.5.** Needs a decision.
+## 🔴 O-1 · The fee model — THE ONLY REAL BLOCKER
 
-**O-2 · Does the pro pay a platform fee on rental work orders?** Or is the rental company's $3/WO + license the only take on that job?
+Two incompatible descriptions exist, and one of them is live on the website today.
 
-**O-3 · Final residential rate.** Flat 10% recommended. Open: whether to add a per-job cap (suggested $2,500) now or later.
+**Version A — what the live site says** (`/pricing` FAQ, verbatim):
+> "ProLnk takes 6–15% of the completed job value as a platform fee (varies by trade type and job size). Of that pool, you keep your tier's percentage. ProLnk always retains a minimum of 20%."
 
-**O-4 · Materials in the fee base.** Fee currently charged on the full quoted amount including materials. Market commission benchmarks support this, but on a $30K roof with $18K of materials the effective take on labor is ~20%. A cap solves it. Undecided.
+So: the fee varies **by trade and by job size** → creates a commission pool → the pro who did the job keeps their tier's share of that pool (40/50/60%) → ProLnk retains the rest, never below 20%.
+On a $1,000 job: $100 pool → Core pro gets $40 back → ProLnk nets $60 before upline overrides.
 
-**O-5 · Background check margin.** Decided: charge with margin. Amount not set.
+**Version B — what was discussed here:**
+One flat rate per subscription tier, no pool, no rebate. Starter 15% · Solo 10% · Team 9% · Business 8%. The pro simply pays that percentage.
+On a $1,000 job at Solo: ProLnk takes $100, pro keeps $900. Done.
 
-**O-6 · Commercial-only and commercial+residential bundle pricing.** Not set.
+**These cannot both ship.** Version A is what the code and site do now. Version B is simpler to explain, simpler to build, and gives pros a clean reason to upgrade — but adopting it means rewriting the pricing page copy, retiring `commissionKeepRate`, and migrating existing partner rows.
 
-**O-7 · Starter tier at $0 + 15%.** Proposed, not approved.
+**Needed: pick A or B.** Everything downstream waits on this — the model, the rates memo, the commission engine fix list, and the pricing page.
 
-**O-8 · Pro-to-property ratio.** Founder says 20:1. Code says 40–60 homes per partner (`TARGET_PARTNER_TO_HOMEOWNER_RATIO`). At 1.6M engaged properties this is the difference between 32,000 and 80,000 pros.
+## 🟡 Open, but not blocking — assigned to research, not to the founder
 
-**O-9 · Average firm size for modeling.** Research: industry average is 12 employees, but 60% are solo and ~70% have fewer than 10.
-
-**O-10 · Trade cost-band table.** Needed for AI triage estimates and operator dashboard cost bands — a different table from rates. Not yet built.
-
-**O-11 · 120-day scope.** Business OS, Partner Portal and Facility roughly double the original plan. The dev team has not been told. Nothing has been cut to make room.
-
-**O-12 · Commercial commission mechanics.** Whether the 3% is instead of or in addition to $3–5/WO; whether it steps down on large jobs.
-
----
+- **O-6 · Commercial and bundle subscription pricing.** Benchmarking underway.
+- **O-9 · Average firm size for modeling.** Research so far: industry average is 12 employees, but 60% are solo operators and ~70% have fewer than 10.
+- **O-10 · Trade cost-band table.** The typical-cost-by-trade data behind AI triage estimates ("leaking P-trap — $120–180") and the operator dashboard's cost bands. Being built.
 
 # PART 3 — KNOWN CONTRADICTIONS TO FIX
 
@@ -191,3 +196,12 @@ Found by a verified cross-check of the design documents against the repo. Full d
 4. **The 30% share is documented two ways** — paid partner-direct (design) vs. collected and remitted through cost of revenue (repo). These are opposite structures.
 5. **Maintenance marketplace is 3%-of-spend in one document and $5–8/work-order in another** — a 7× difference, with a different party paying.
 6. **The ProLnk Platform Strategy doc's pricing table says "no commission on residential referrals."** That is wrong — residential carries the platform fee. Correct that document.
+
+## Resolved since this document was written
+- **Websites fixed** — branch `website-fixes`. Per-domain identity, TrustyPro routing unblocked, ten pricing pages collapsed to one config, orphaned tier ladder removed, pro ratio corrected to 20:1, regression test added. `keepRate` deliberately retained pending O-1.
+- **The 6% floor** applies to residential only. Commercial requires its own fee path.
+- **Materials** stay in the fee base — roofers already pay ~12% to salespeople on total collected.
+- **Background checks:** ~10% rebate from Checkr, not a markup on the pro.
+- **Starter tier** ($0 + 15%) approved.
+- **Pro-to-property ratio:** 20:1.
+- **120-day scope:** Business OS, Partner Portal and Facility all in. Pilot date moves if needed; scope does not get cut.

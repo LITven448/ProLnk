@@ -205,57 +205,58 @@ Residential job fees apply on residential work; the 3% sourced-job fee applies o
 
 **Volume assumptions**
 
-| | Y1 (2027) | Y2 | Y3 | Y4 | Y5 (2031) |
-|---|---|---|---|---|---|
-| Rental doors contracted | 61,000 | 250,000 | 550,000 | 850,000 | 1,100,000 |
-| Engagement | 85% | 88% | 91% | 93% | 95% |
-| **Engaged rental doors** | 51,850 | 220,000 | 500,500 | 790,500 | 1,045,000 |
-| Homeowner homes | 10,000 | 30,000 | 100,000 | 350,000 | 550,000 |
-| **Total engaged properties** | 61,850 | 250,000 | 600,500 | 1,140,500 | 1,595,000 |
-| Active pros (20:1) | 3,093 | 12,500 | 30,025 | 57,025 | 79,750 |
-| **Subcontractor firms** (~3 techs avg) | 1,030 | 4,170 | 10,000 | 19,000 | 26,600 |
-| Commercial tenants | 1 | 3 | 7 | 12 | 20 |
+| | Y1 (2027) | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 (2033) |
+|---|---|---|---|---|---|---|---|
+| Rental doors contracted | 61,000 | 250,000 | 550,000 | 850,000 | 1,100,000 | 1,400,000 | 1,700,000 |
+| Engagement | 85% | 88% | 91% | 93% | 95% | 95% | 95% |
+| **Engaged rental doors** | 51,850 | 220,000 | 500,500 | 790,500 | 1,045,000 | 1,330,000 | 1,615,000 |
+| Homeowner homes | 10,000 | 30,000 | 100,000 | 350,000 | 550,000 | 800,000 | 1,100,000 |
+| **Total engaged properties** | 61,850 | 250,000 | 600,500 | 1,140,500 | 1,595,000 | 2,130,000 | 2,715,000 |
+| Active pros (20:1) | 3,093 | 12,500 | 30,025 | 57,025 | 79,750 | 106,500 | 135,750 |
+| **Subcontractor firms** (~3 techs avg) | 1,030 | 4,170 | 10,000 | 19,000 | 26,600 | 35,500 | 45,250 |
+| Commercial tenants | 1 | 3 | 7 | 12 | 20 | 28 | 35 |
 
 Engagement is high by design: the app is issued as part of move-in and used again at move-out, so effectively the whole resident base is in it.
 
 **Revenue by stream ($M)**
 
-| Stream | Y1 | Y2 | Y3 | Y4 | Y5 |
-|---|---|---|---|---|---|
-| Subscriptions + ProPass seats | 1.5 | 5.9 | 14.2 | 26.9 | 37.7 |
-| Platform fees — homeowner jobs | 1.0 | 3.0 | 10.3 | 37.3 | 60.4 |
-| Platform fees — renter-paid services | 0.6 | 2.4 | 5.6 | 9.8 | 13.0 |
-| Rental work-order fees ($3/WO, paid by operator) | 0.4 | 1.7 | 3.8 | 5.9 | 7.8 |
-| Operator licensing fees | 0.2 | 0.6 | 1.4 | 2.2 | 3.0 |
-| **Renter commerce** (furniture, electronics, decor) | 1.0 | 4.4 | 10.0 | 15.8 | 20.9 |
-| Homeowner affiliate commerce | 0.4 | 1.5 | 6.0 | 24.5 | 44.0 |
-| Insurance / warranty / financing referrals | 0.3 | 1.2 | 3.5 | 9.0 | 15.0 |
-| Data licensing | — | 0.5 | 2.5 | 7.0 | 12.0 |
-| **TrustyPro Exchange (commercial)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 |
-| **TOTAL REVENUE** | **6.3** | **24.6** | **64.7** | **150.4** | **233.0** |
+| Stream | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
+|---|---|---|---|---|---|---|---|
+| Subscriptions + ProPass seats | 1.5 | 5.9 | 14.2 | 26.9 | 37.7 | 50.3 | 64.1 |
+| Platform fees — homeowner jobs | 1.0 | 3.0 | 10.3 | 37.3 | 60.4 | 90.6 | 128.2 |
+| Platform fees — renter-paid services | 0.6 | 2.4 | 5.6 | 9.8 | 13.0 | 17.1 | 21.5 |
+| Rental work-order fees ($3/WO) | 0.4 | 1.7 | 3.8 | 5.9 | 7.8 | 10.0 | 12.1 |
+| Operator licensing fees | 0.2 | 0.6 | 1.4 | 2.2 | 3.0 | 4.0 | 5.0 |
+| Renter commerce | 1.0 | 4.4 | 10.0 | 15.8 | 20.9 | 27.9 | 35.5 |
+| Homeowner affiliate commerce | 0.4 | 1.5 | 6.0 | 24.5 | 44.0 | 68.0 | 99.0 |
+| Insurance / warranty / financing referrals | 0.3 | 1.2 | 3.5 | 9.0 | 15.0 | 21.0 | 28.0 |
+| Data licensing | — | 0.5 | 2.5 | 7.0 | 12.0 | 18.0 | 25.0 |
+| **TrustyPro Exchange (commercial)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
+| **TOTAL REVENUE** | **6.3** | **24.6** | **64.7** | **150.4** | **233.0** | **333.8** | **452.0** |
 
 *Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
 **P&L ($M)**
 
-Cost structure reflects the actual business: an equity-compensated, AI-assisted dev team, no office, and founder-led sales through Year 1. Engineering is a fraction of a normal SaaS company at this revenue because the build is paid in dilution and calendar time, not payroll.
+Engineering is carried at **cash cost**, not notional cost. The founding dev team is equity-compensated, so Year 1–2 engineering is a fraction of a market payroll. Paid hires phase in after the Series A.
 
-| | Y1 | Y2 | Y3 | Y4 | Y5 |
-|---|---|---|---|---|---|
-| Revenue | 6.3 | 24.6 | 64.7 | 150.4 | 233.0 |
-| Cost of revenue | 1.4 | 5.2 | 12.9 | 28.6 | 42.0 |
-| **Gross profit** | **4.9** | **19.4** | **51.8** | **121.8** | **191.0** |
-| Gross margin | 78% | 79% | 80% | 81% | 82% |
-| Engineering | 0.4 | 1.5 | 4.0 | 8.0 | 12.0 |
-| Sales & marketing | 0.5 | 3.5 | 10.0 | 22.0 | 34.0 |
-| Support & operations | 0.9 | 3.0 | 8.0 | 15.0 | 21.0 |
-| G&A | 0.6 | 1.6 | 4.0 | 8.0 | 11.0 |
-| **EBITDA** | **2.5** | **9.8** | **25.8** | **68.8** | **113.0** |
-| **EBITDA margin** | **40%** | **40%** | **40%** | **46%** | **48%** |
+| | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
+|---|---|---|---|---|---|---|---|
+| Revenue | 6.3 | 24.6 | 64.7 | 150.4 | 233.0 | 333.8 | 452.0 |
+| Cost of revenue | 1.4 | 5.2 | 12.9 | 28.6 | 42.0 | 58.0 | 77.0 |
+| **Gross profit** | **4.9** | **19.4** | **51.8** | **121.8** | **191.0** | **275.8** | **375.0** |
+| Gross margin | 78% | 79% | 80% | 81% | 82% | 83% | 83% |
+| Engineering (cash) | 0.3 | 1.5 | 5.0 | 10.0 | 15.0 | 18.0 | 21.0 |
+| Sales & marketing | 1.5 | 5.0 | 13.0 | 27.0 | 40.0 | 55.0 | 72.0 |
+| Support & operations | 1.2 | 3.5 | 9.0 | 16.0 | 22.0 | 30.0 | 39.0 |
+| G&A | 0.8 | 2.0 | 4.5 | 8.5 | 12.0 | 16.0 | 21.0 |
+| **EBITDA** | **1.1** | **7.4** | **20.3** | **60.3** | **102.0** | **156.8** | **222.0** |
+| **EBITDA margin** | **17%** | **30%** | **31%** | **40%** | **44%** | **47%** | **49%** |
 
-**Profitable from Year 1.** Support is the largest Y1 line, not engineering — 61,000 doors generate real ticket volume from day one, and that is the one cost that cannot be paid in equity. Cost of revenue is payment processing, AI inference, hosting, and background-check costs.
+**Profitable from Year 1** — because the build is equity-funded and the cost structure is genuinely light: no offices, no fleet, no inventory.
 
-**Valuation at Y5:** $233M revenue at 8–10× = **$1.9–2.3B**. At marketplace multiples of 5–6×, **$1.2–1.4B**.
+**Valuation at Y5:** $233M revenue at 8–10× = **$1.9–2.3B**
+**Valuation at Y7:** $452M revenue at 8–10× = **$3.6–4.5B**. On earnings, $222M EBITDA at 18–22× = **$4.0–4.9B**.
 
 **What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 
@@ -270,6 +271,48 @@ At 20:1 and firm-level contracting, Y5 needs **~26,600 subcontractor firms** cov
 - Each firm signed adds capacity for ~60 properties (3 techs × 20). About 26,600 firms covers 1.6M properties — the model closes on itself.
 
 **This is precisely what the commercial white-label strategy is for.** Every commercial tenant credentials its vendor network into the shared layer; those firms are then available on the residential side. Supply is won in blocks, exactly like demand.
+
+# 4b · Founder compensation
+
+Two separate questions: what you are **paid to work here**, and what you take **as the owner**. They are taxed differently, restricted differently, and confusing them is how founders get in trouble with investors.
+
+## Salary — market rate by stage
+
+| Stage | Market founder/CEO salary |
+|---|---|
+| Pre-raise / bootstrapped | $0–150K |
+| Post Series A | $175–250K |
+| Post Series B | $250–350K |
+| Growth / late stage | $350–500K |
+
+Investors expect a founder to take a real but unremarkable salary. Under-paying yourself signals poor judgment; over-paying is the fastest way to lose the room in a board meeting. **At Series A, $200K is the number nobody argues with.**
+
+## Distributions — the part that actually matters
+
+If you do not raise, you own the company and its earnings are yours:
+
+| | Y1 | Y3 | Y5 | Y7 |
+|---|---|---|---|---|
+| EBITDA | $1.1M | $20.3M | $102M | $222M |
+| Realistic distribution ceiling* | ~$0.5M | ~$8M | ~$45M | ~$110M |
+
+*After reinvestment, working capital, reserves, and taxes. Roughly half of EBITDA is the practical maximum without starving growth.
+
+**But every dollar taken out is a dollar not spent on sales and engineering**, and this model's growth assumes reinvestment. Taking $45M out in Year 5 does not leave Year 7 at $452M.
+
+## The trade-off, stated plainly
+
+| | Raise capital | Stay bootstrapped |
+|---|---|---|
+| Salary | $200–250K | Whatever the business supports |
+| Distributions | **Restricted or prohibited** — investors will require it | Yours |
+| Growth | Faster; funds parallel enterprise sales cycles | Slower; self-funded |
+| Where your money comes from | The exit | Annual cash flow |
+| Y7 outcome | Smaller % of a much larger company | All of a smaller one |
+
+**Practical recommendation:** pay yourself **$0–120K until AMH is live**, then **$200K after the Series A**. Treat distributions as unavailable while you are growing. Your wealth in this plan is the equity — at a $3.6–4.5B Year 7 valuation, even 60% ownership is a number no salary approaches.
+
+**Structure this with a CPA before drawing anything.** Salary versus distribution has real payroll-tax consequences, the right answer depends on your entity type, and an S-corp with an unreasonably low salary and large distributions is a known audit trigger.
 
 # 5 · The three-engine strategy
 

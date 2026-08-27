@@ -148,65 +148,72 @@ A signed operator delivers **doors under contract** on day one. Revenue comes fr
 
 Modeled engagement ramp: **35% → 50% → 60% → 65% → 70%.** Operator-mandated onboarding at move-in (the lease addendum path) is what drives this; without it, assume half these rates.
 
-## The supply unit is the FIRM, not the individual pro
+## Pricing model (settled)
 
-This is the correction that reshapes the model. ProLnk does not bill per technician:
-- **Each subcontractor business pays a company subscription** — $99 / $149 / $249 ladder, ~$149 average
-- **Each additional ProPass (individual technician credential) inside that firm is +$20/month**
-- Roughly 30% of firms stay on the per-work-order model instead of subscribing
+The pro pays a flat platform fee set by their tier. **It does not come back to them** — the keep-rate model is retired. That fee is the commission pool; ProLnk pays out of it only where an origination or upline claim exists (founding network only, capped at 2,125 members, residential and Scout jobs only). **With no claim, ProLnk keeps 100%.** Maximum possible payout is 19%, so ProLnk retains at least 81% in the worst case.
 
-So a 6-tech firm pays ~$149 + (5 × $20) = **$249/month**, not 6 × $149. Sign firms, and their whole roster comes with them.
+| Tier | Monthly | Job fee | Share of pros |
+|---|---|---|---|
+| Starter | $0 | 15% | 40% |
+| Solo | $99 | 10% | 35% |
+| Team | $189 | 9% | 18% |
+| Business | $349 | 8% | 7% |
 
-**Service ratio: 20 properties per active professional** (revised from 15:1).
+**Lane fees:** commercial +$99/mo · enterprise (rental) +$49/mo · licensee-invited vendors 20% off
+**Add-ons:** ProPass $20/mo · seat $29/mo · 10-ZIP pack $25/mo
+**Weighted effective take: ~11.1% of job value** after blended tier mix and cascade leakage.
 
 **Volume assumptions**
 
 | | Y1 (2027) | Y2 | Y3 | Y4 | Y5 (2031) |
 |---|---|---|---|---|---|
-| **Rental doors contracted** | **61,000** | 175,000 | 350,000 | 550,000 | 800,000 |
-| Engagement rate | 35% | 50% | 60% | 65% | 70% |
-| **Engaged rental doors** | 21,350 | 87,500 | 210,000 | 357,500 | 560,000 |
-| Homeowner homes | 8,000 | 30,000 | 75,000 | 150,000 | 250,000 |
-| Total engaged properties | 29,350 | 117,500 | 285,000 | 507,500 | 810,000 |
-| **Active pros** (20:1) | 1,470 | 5,875 | 14,250 | 25,375 | 40,500 |
-| **Subcontractor firms** (~4 techs avg) | 370 | 1,470 | 3,560 | 6,340 | 10,125 |
+| Rental doors contracted | 61,000 | 250,000 | 550,000 | 850,000 | 1,100,000 |
+| Engagement | 85% | 88% | 91% | 93% | 95% |
+| **Engaged rental doors** | 51,850 | 220,000 | 500,500 | 790,500 | 1,045,000 |
+| Homeowner homes | 10,000 | 30,000 | 100,000 | 350,000 | 550,000 |
+| **Total engaged properties** | 61,850 | 250,000 | 600,500 | 1,140,500 | 1,595,000 |
+| Active pros (20:1) | 3,093 | 12,500 | 30,025 | 57,025 | 79,750 |
+| **Subcontractor firms** (~3 techs avg) | 1,030 | 4,170 | 10,000 | 19,000 | 26,600 |
 | Commercial tenants | 1 | 3 | 7 | 12 | 20 |
+
+Engagement is high by design: the app is issued as part of move-in and used again at move-out, so effectively the whole resident base is in it.
 
 **Revenue by stream ($M)**
 
 | Stream | Y1 | Y2 | Y3 | Y4 | Y5 |
 |---|---|---|---|---|---|
-| Firm subscriptions + ProPass seats | 0.6 | 2.6 | 6.3 | 11.1 | 17.8 |
-| Platform fees — homeowner jobs | 0.7 | 2.7 | 7.0 | 14.4 | 24.8 |
-| Platform fees — renter-paid services | 0.2 | 0.9 | 2.2 | 3.9 | 6.3 |
-| Operator work-order fees (rental maintenance) | 0.3 | 1.4 | 3.7 | 6.7 | 11.2 |
-| Affiliate & rendering commerce | 0.5 | 2.4 | 7.0 | 15.5 | 29.0 |
-| Insurance / warranty / financing referrals | 0.3 | 1.2 | 3.2 | 6.5 | 11.0 |
-| Move-in economics (utility, renters insurance) | 0.2 | 0.8 | 2.0 | 3.8 | 6.7 |
-| Data licensing | — | 0.5 | 2.0 | 4.5 | 11.2 |
+| Subscriptions + ProPass seats | 1.5 | 5.9 | 14.2 | 26.9 | 37.7 |
+| Platform fees — homeowner jobs | 1.0 | 3.0 | 10.3 | 37.3 | 60.4 |
+| Platform fees — renter-paid services | 0.6 | 2.4 | 5.6 | 9.8 | 13.0 |
+| Rental work-order fees ($3/WO, paid by operator) | 0.4 | 1.7 | 3.8 | 5.9 | 7.8 |
+| Operator licensing fees | 0.2 | 0.6 | 1.4 | 2.2 | 3.0 |
+| **Renter commerce** (furniture, electronics, decor) | 1.0 | 4.4 | 10.0 | 15.8 | 20.9 |
+| Homeowner affiliate commerce | 0.4 | 1.5 | 6.0 | 24.5 | 44.0 |
+| Insurance / warranty / financing referrals | 0.3 | 1.2 | 3.5 | 9.0 | 15.0 |
+| Data licensing | — | 0.5 | 2.5 | 7.0 | 12.0 |
 | **TrustyPro Exchange (commercial)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 |
-| **TOTAL REVENUE** | **3.7** | **15.9** | **40.8** | **78.4** | **137.2** |
+| **TOTAL REVENUE** | **6.3** | **24.6** | **64.7** | **150.4** | **233.0** |
 
-*Operator revenue share (AMH 30%, others ~20%) is carried in cost of revenue, not netted above.*
+*Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
 **P&L ($M)**
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 |
 |---|---|---|---|---|---|
-| Revenue | 3.7 | 15.9 | 40.8 | 78.4 | 137.2 |
-| Cost of revenue (incl. operator shares) | 1.1 | 4.1 | 9.8 | 17.2 | 28.8 |
-| **Gross profit** | **2.6** | **11.8** | **31.0** | **61.2** | **108.4** |
-| Gross margin | 70% | 74% | 76% | 78% | 79% |
-| Engineering | 1.5 | 3.2 | 5.5 | 8.0 | 11.0 |
-| Sales & marketing | 1.0 | 3.5 | 8.5 | 15.0 | 24.0 |
-| Support & operations | 0.8 | 2.2 | 5.0 | 9.0 | 14.0 |
-| G&A | 0.6 | 1.3 | 2.4 | 4.0 | 6.5 |
-| **EBITDA** | **(1.3)** | **1.6** | **9.6** | **25.2** | **52.9** |
-| **EBITDA margin** | — | 10% | 24% | 32% | 39% |
+| Revenue | 6.3 | 24.6 | 64.7 | 150.4 | 233.0 |
+| Cost of revenue | 1.4 | 5.2 | 12.9 | 28.6 | 42.0 |
+| **Gross profit** | **4.9** | **19.4** | **51.8** | **121.8** | **191.0** |
+| Gross margin | 78% | 79% | 80% | 81% | 82% |
+| Engineering | 2.0 | 4.5 | 8.0 | 12.0 | 16.0 |
+| Sales & marketing | 1.5 | 5.0 | 13.0 | 27.0 | 40.0 |
+| Support & operations | 1.2 | 3.5 | 9.0 | 16.0 | 22.0 |
+| G&A | 0.8 | 2.0 | 4.5 | 8.5 | 12.0 |
+| **EBITDA** | **(0.6)** | **4.4** | **17.3** | **58.3** | **101.0** |
+| **EBITDA margin** | — | 18% | 27% | 39% | 43% |
 
-**Valuation at Y5:** $137.2M revenue at 8–10× = **$1.1–1.4B**. At marketplace multiples of 5–6×, **$690–820M**.
+**Valuation at Y5:** $233M revenue at 8–10× = **$1.9–2.3B**. At marketplace multiples of 5–6×, **$1.2–1.4B**.
 
-**Why this is lower than the prior draft, and why that is correct.** The earlier version billed subscriptions per individual professional (40,000 × ~$145/mo ≈ $70M). The actual model bills the *firm* — ~10,000 firms at ~$149 plus $20 per additional seat ≈ $18M. That is a $52M correction on a single line. Better to find it here than in diligence.
+**What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 
 **Reconciliation to the prior model — this is the same curve, pulled forward.** The earlier 15-year model reached ~$234M in Year 7. This plan reaches ~$203M in **Year 5**. Nothing about the underlying economics changed; starting at 61,000 contracted doors instead of 15,000 **compresses the timeline by roughly 24 months.** That is precisely the "channel acceleration pulls the curve forward" thesis, now expressed in the numbers.
 

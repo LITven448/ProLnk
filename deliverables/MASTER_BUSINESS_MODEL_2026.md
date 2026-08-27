@@ -88,7 +88,7 @@ Every product line below runs on the same spine: a verified professional, a docu
 47. **Chargeback / dispute handling fees**
 
 ## Consumer recurring — currently absent from the model entirely
-48. **Homeowner maintenance plan** — $15–30/month consumer subscription: seasonal reminders, priority scheduling, annual inspection, documented Vault. **This is the largest missing stream.** At 250,000 homes and 20% attach, roughly $12M/yr of high-margin recurring revenue.
+48. **Homeowner maintenance plan / care plan** — $15–30/month consumer subscription. **DECIDED OUT for now** (Aug 2026): not viable until the platform is established and care plans can actually be delivered. Revisit post-launch. Note that the builder-channel origination economics were originally built on this line and must be rebuilt without it.
 49. **Premium Vault / records tier** — extended storage, transferable home history, document concierge
 50. **Recall monitoring service** — nameplate registry matched against CPSC recall data, sold as a safety subscription
 
@@ -131,12 +131,14 @@ Every product line below runs on the same spine: a verified professional, a docu
 
 | Unit | Value | Notes |
 |---|---|---|
-| Per professional | ~$3,500–7,500/yr | Subscription + platform fees; matures with job volume |
-| Per homeowner home (mature) | ~$555/yr blended | Early-cohort homes run $100–200 |
-| Per rental door | ~$35–70/yr net | After 30% operator share |
+| Per subcontractor firm | ~$1,400/yr | Blended subscription + ProPass seats across the tier mix |
+| Per homeowner home (mature) | ~$290/yr | Platform fees ~$110 + affiliate ~$80 + referrals ~$27 + data, at maturity |
+| Per engaged rental door | ~$40/yr | $3/WO fees + renter-paid services + commerce, net of nothing (operator share is paid direct) |
 | Per qualified data record | $20–40/yr | Tier 1; rises sharply at Tiers 2–3 |
-| Per commercial tenant | ~$1.4M/yr | ~76% contribution margin at steady state |
-| Pro-to-home ratio | 1 : 15 | Drives supply planning |
+| Per commercial tenant | ~$1.0M/yr | ~76% contribution margin at steady state |
+| **Service ratio** | **1 pro : 20 properties** | Founder-set. Drives all supply planning |
+| Average firm size | ~3 technicians | Industry: 12 average, but 60% are solo and ~70% have fewer than 10 |
+| Effective platform take | ~11.1% of job value | Blended across tier mix, net of founding-network cascade |
 
 ---
 
@@ -146,7 +148,7 @@ Every product line below runs on the same spine: a verified professional, a docu
 
 A signed operator delivers **doors under contract** on day one. Revenue comes from **engaged doors** — residents who actually activated the app. These are not the same number, and conflating them is the fastest way to build a forecast that misses.
 
-Modeled engagement ramp: **35% → 50% → 60% → 65% → 70%.** Operator-mandated onboarding at move-in (the lease addendum path) is what drives this; without it, assume half these rates.
+Modeled engagement ramp: **85% → 95%.** The app is issued as part of the move-in process and used again at move-out, so effectively the whole resident base is in it — this is structural, not the result of the operator promoting an optional download. If an operator will not make it the resident channel, model that account at 40–50% instead.
 
 ## Pricing model (settled)
 
@@ -158,6 +160,44 @@ The pro pays a flat platform fee set by their tier. **It does not come back to t
 | Solo | $99 | 10% | 35% |
 | Team | $189 | 9% | 18% |
 | Business | $349 | 8% | 7% |
+
+## Three packages: Residential Only · Commercial Only · Combined
+
+Commercial contractors pay materially more for software than residential ones — the market runs **$150–1,000/mo mid-market**, with Buildertrend at $299 / $499 / $900. ProLnk undercuts all of it and still carries a far better margin, because the platform is shared across all three products.
+
+### Residential Only
+| Tier | Monthly | Job fee |
+|---|---|---|
+| Starter | $0 | 15% |
+| Solo | $99 | 10% |
+| Team | $189 | 9% |
+| Business | $349 | 8% |
+
+### Commercial Only
+Subscription plus **3% only on commercial work ProLnk sources and prices** — nothing on the licensee's own work, nothing on work the vendor quoted themselves.
+
+| Tier | Monthly | Sourced-job fee | Undercuts |
+|---|---|---|---|
+| Commercial Solo | $149 | 3% | — |
+| Commercial Team | $279 | 3% | Buildertrend Standard $299 |
+| Commercial Business | $449 | 3% | Buildertrend Pro $499 |
+
+### Combined — Residential + Commercial
+| Tier | Monthly | Separately | You save |
+|---|---|---|---|
+| Combined Solo | $199 | $248 | $49/mo |
+| Combined Team | $379 | $468 | $89/mo |
+| Combined Business | $649 | $798 | $149/mo |
+
+Residential job fees apply on residential work; the 3% sourced-job fee applies on commercial work. One account, both lanes.
+
+### Modifiers
+- **Licensee-invited vendors: 20% off any package** — when CoolSys or AMH tells their vendors to join, that discount is the reason they do
+- **Licensee-locked vendors: free** — they see only that licensee's jobs. This is an acquisition channel, not a revenue line
+- **Enterprise (rental) lane: +$49/mo** on any package — requires background check and insurance minimums
+- **Add-ons:** ProPass $20/mo · dashboard seat $29/mo · 10-ZIP coverage pack $25/mo
+
+**Why the commercial rate is only 3%:** commercial tickets are 10–50× residential. Three percent of a $20,000 refrigeration job is $600 — more than 10% of a typical residential job — and a percentage in the residential range would drive vendors straight off the platform on their biggest work. Higher base, lower rate.
 
 **Lane fees:** commercial +$99/mo · enterprise (rental) +$49/mo · licensee-invited vendors 20% off
 **Add-ons:** ProPass $20/mo · seat $29/mo · 10-ZIP pack $25/mo
@@ -198,18 +238,22 @@ Engagement is high by design: the app is issued as part of move-in and used agai
 
 **P&L ($M)**
 
+Cost structure reflects the actual business: an equity-compensated, AI-assisted dev team, no office, and founder-led sales through Year 1. Engineering is a fraction of a normal SaaS company at this revenue because the build is paid in dilution and calendar time, not payroll.
+
 | | Y1 | Y2 | Y3 | Y4 | Y5 |
 |---|---|---|---|---|---|
 | Revenue | 6.3 | 24.6 | 64.7 | 150.4 | 233.0 |
 | Cost of revenue | 1.4 | 5.2 | 12.9 | 28.6 | 42.0 |
 | **Gross profit** | **4.9** | **19.4** | **51.8** | **121.8** | **191.0** |
 | Gross margin | 78% | 79% | 80% | 81% | 82% |
-| Engineering | 2.0 | 4.5 | 8.0 | 12.0 | 16.0 |
-| Sales & marketing | 1.5 | 5.0 | 13.0 | 27.0 | 40.0 |
-| Support & operations | 1.2 | 3.5 | 9.0 | 16.0 | 22.0 |
-| G&A | 0.8 | 2.0 | 4.5 | 8.5 | 12.0 |
-| **EBITDA** | **(0.6)** | **4.4** | **17.3** | **58.3** | **101.0** |
-| **EBITDA margin** | — | 18% | 27% | 39% | 43% |
+| Engineering | 0.4 | 1.5 | 4.0 | 8.0 | 12.0 |
+| Sales & marketing | 0.5 | 3.5 | 10.0 | 22.0 | 34.0 |
+| Support & operations | 0.9 | 3.0 | 8.0 | 15.0 | 21.0 |
+| G&A | 0.6 | 1.6 | 4.0 | 8.0 | 11.0 |
+| **EBITDA** | **2.5** | **9.8** | **25.8** | **68.8** | **113.0** |
+| **EBITDA margin** | **40%** | **40%** | **40%** | **46%** | **48%** |
+
+**Profitable from Year 1.** Support is the largest Y1 line, not engineering — 61,000 doors generate real ticket volume from day one, and that is the one cost that cannot be paid in equity. Cost of revenue is payment processing, AI inference, hosting, and background-check costs.
 
 **Valuation at Y5:** $233M revenue at 8–10× = **$1.9–2.3B**. At marketplace multiples of 5–6×, **$1.2–1.4B**.
 
@@ -219,24 +263,24 @@ Engagement is high by design: the app is issued as part of move-in and used agai
 
 ## The supply constraint got much smaller — this is the real win in the correction
 
-At 20:1 and firm-level contracting, Y5 needs **~10,000 subcontractor firms**, not 40,000 individually recruited professionals. That is a fundamentally different — and achievable — recruiting problem:
+At 20:1 and firm-level contracting, Y5 needs **~26,600 subcontractor firms** covering ~79,750 professionals — recruited as firms, not one pro at a time. That is a fundamentally different — and achievable — recruiting problem:
 
-- **~2,000 firms per year at maturity**, and firms arrive in blocks. One home-services rollup, restoration franchisor, or insurance repair network delivers hundreds to thousands at once.
+- **~5,000 firms per year at maturity**, and firms arrive in blocks. One home-services rollup, restoration franchisor, or insurance repair network delivers hundreds to thousands at once.
 - Firm-level subscriptions are **stickier than individual ones.** A shop with twelve ProPass seats, its compliance documents on file, and its job history in the platform does not casually churn.
-- Each firm signed adds capacity for ~80 properties (4 techs × 20). Ten thousand firms covers 800,000 properties — the model closes on itself.
+- Each firm signed adds capacity for ~60 properties (3 techs × 20). About 26,600 firms covers 1.6M properties — the model closes on itself.
 
 **This is precisely what the commercial white-label strategy is for.** Every commercial tenant credentials its vendor network into the shared layer; those firms are then available on the residential side. Supply is won in blocks, exactly like demand.
 
 # 5 · The three-engine strategy
 
 **Engine 1 — Enterprise (Portfolio + Exchange). Funds everything.**
-Few customers, high value, fast cash, 2–4 quarter cycles. By Y5 this is $27M of high-margin revenue. Its real job is earlier: it pays for the build while the consumer side is still small, and it delivers *supply and demand in blocks* — one operator signature is 60,000 homes; one commercial signature can credential thousands of contractors.
+Few customers, high value, fast cash, 2–4 quarter cycles. By Y5 this is **$30M** of high-margin revenue (commercial $19.2M + operator licensing $3.0M + rental work-order fees $7.8M). Its real job is earlier: it pays for the build while the consumer side is small, and it delivers *supply and demand in blocks* — one operator signature is 61,000 homes; one commercial signature can credential thousands of contractors.
 
 **Engine 2 — Consumer marketplace (TrustyPro + ProLnk). The volume.**
-Low ARPU, high count, slow to build, largest at scale. $62M by Y5 and the overwhelming majority of the Y10–Y15 picture. Enterprise channels are what make it grow without consumer marketing spend.
+Low ARPU, high count, largest at scale. **$191M by Y5** — subscriptions, platform fees, and commerce — and the overwhelming majority of the Y10–Y15 picture. Enterprise channels are what make it grow without consumer marketing spend.
 
 **Engine 3 — Data. Zero today, terminal value tomorrow.**
-$3.8M by Y5 at Tier 1 pricing only. The value is in what it does to the multiple: at Tier 3 (risk participation), documented homes are worth $75–300 each per year. This engine is entirely dependent on the first two producing consented, verified, seasoned records — which is why the consent chain and provenance tagging are Day-1 requirements, not later features.
+**$12M by Y5** at Tier 1 pricing only. The value is in what it does to the multiple: at Tier 3 (risk participation), documented homes are worth $75–300 each per year. Entirely dependent on the first two producing consented, verified, seasoned records — which is why the consent chain and provenance tagging are Day-1 requirements, not later features.
 
 **The order matters: enterprise buys time, consumer builds the asset, data prices the company.**
 
@@ -246,16 +290,16 @@ $3.8M by Y5 at Tier 1 pricing only. The value is in what it does to the multiple
 
 | Assumption | Base | Downside | Impact |
 |---|---|---|---|
-| AMH signs and deploys full portfolio Y1 | 61,000 doors | Phased to 20K | Y1 revenue $7.0M → ~$4.5M; delays the whole curve ~12 months |
-| **Resident engagement rate** | 35% → 70% | Half those rates | **Y5 revenue −$60M+** — the most sensitive line in the model |
-| **Pro network reaches 40,000** | Yes | 20,000 | Y5 revenue −$70M; job fulfillment constrained |
-| Vendor subscription adoption (commercial) | 40% | 20% | Y5 commercial $19.2M → ~$13M |
-| Homeowner ARPU | $200 ramping to $555 | $120 | Y5 total −$10M |
-| Affiliate commerce per home | $60 owner / $12 rental | Half | Y5 total −$4.8M |
-| Data multiple realized | 8–10× | 5–6× | Y5 valuation $710M → $440M |
-| Pro network growth | 15,000 by Y5 | 8,000 | Y5 total −$13M and constrains job fulfillment |
+| AMH signs and deploys full portfolio Y1 | 61,000 doors | Phased to 20K | Y1 revenue $6.3M → ~$3.5M; delays the whole curve ~12 months |
+| **Resident engagement** | 85% → 95% | 45% | **Y5 revenue −$55M** — still the most sensitive line |
+| **Pro network reaches 79,750** (26,600 firms) | Yes | Half | Y5 revenue −$60M; job fulfillment constrained, homeowner NPS falls |
+| Homeowner homes reach 550K | Yes | 250K | Y5 revenue −$70M — the hardest number in the plan |
+| Homeowner affiliate per home | $80/yr | $40 | Y5 total −$22M |
+| Renter commerce per door | $20/yr | $10 | Y5 total −$10M |
+| Commercial tenants by Y5 | 20 | 8 | Y5 total −$11M |
+| Data multiple realized | 8–10× | 5–6× | Y5 valuation $1.9–2.3B → $1.2–1.4B |
 
-**Two lines now dominate the model's outcome: resident engagement rate and pro network growth.** Doors under contract are the easy part — AMH delivers 61,000 with one signature. Turning those into engaged residents (operator-mandated onboarding at move-in) and having enough verified pros to serve them are the two places this plan actually gets won or lost. Every channel strategy — builders, warranty, inspectors, HOAs, commercial crossover — exists to de-risk those two lines.
+**Three lines decide this model:** resident engagement, homeowner home count, and pro network growth. Doors under contract are the easy part — one signature delivers 61,000. Turning those into engaged residents, winning 550,000 homeowners, and having enough verified firms to serve 1.6M properties are where the plan is actually won or lost. Every channel strategy — builders, warranty, inspectors, HOAs, commercial crossover — exists to de-risk those three.
 
 ---
 
@@ -265,13 +309,13 @@ $3.8M by Y5 at Tier 1 pricing only. The value is in what it does to the multiple
 |---|---|---|---|---|
 | Now → AMH signed | $0–2M strategic only | — | 0–2% | Only from someone who brings doors |
 | Post-pilot (~12 mo) | $15–20M | $200–300M post | 6–9% | Sales team, paid engineering, support at 61K-door scale, pro recruitment engine |
-| Y2–Y3 (~350K doors) | $40–60M *(optional)* | $800M–1.5B | 4–7% | Pro network build-out, MGA/risk layer, category land-grab — or skip if cash-flowing |
+| Y2–Y3 (~550K doors) | $40–60M *(optional)* | $1.0–1.8B | 3–6% | Pro network build-out, MGA/risk layer, category land-grab — or skip entirely, since the business funds itself from Y1 |
 
 **Note on the larger A:** serving 61,000 doors in Year 1 requires support and engineering capacity earlier than the prior plan assumed. The raise moves from $10–15M to $15–20M, but at a higher valuation because AMH is already live — net dilution is roughly unchanged.
 
 **Total dilution across both rounds: 10–16%**, plus a 7–8% option pool negotiated at the A. Founder retains roughly 63–72% post-B.
 
-**Y1 is near-breakeven and Y2 is profitable in this model** — meaning the raise buys speed, not survival. That is the strongest possible negotiating position.
+**Y1 is profitable at ~40% EBITDA in this model** — meaning the raise buys speed, not survival. Every round is optional. That is the strongest possible negotiating position, and it is a direct consequence of the equity dev team and the absence of consumer acquisition spend.
 
 ---
 

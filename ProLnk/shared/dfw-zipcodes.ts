@@ -223,18 +223,20 @@ export const DFW_ZIP_CODES: DFWZipCode[] = [
 
 // ── Tier-based zip code limits ────────────────────────────────────────────────
 export const TIER_ZIP_LIMITS: Record<string, number> = {
-  scout:      3,   // Free — can only cover 3 zip codes (hyper-local)
-  pro:        8,   // $29/mo — covers a neighborhood cluster
-  crew:       20,  // $79/mo — covers a full city quadrant
-  company:    50,  // $149/mo — covers most of DFW
-  enterprise: 999, // $299/mo — unlimited coverage
+  starter:    5,   // $0/mo  — hyper-local, pay-per-job
+  solo:       8,   // $99/mo — a neighborhood cluster
+  team:       20,  // $189/mo — a city quadrant
+  business:   50,  // $349/mo — most of a metro
+  enterprise: 999, // custom — unlimited coverage
+  // Legacy aliases retained until partner records are migrated.
+  scout: 5, pro: 8, crew: 20, company: 50,
 };
 
 // ── Recommended ratio: 1 active partner per 40–60 homeowners per zip ─────────
 export const TARGET_PARTNER_TO_HOMEOWNER_RATIO = {
-  min: 40, // 1 partner per 40 homeowners minimum (ensures partners get enough jobs)
-  max: 60, // 1 partner per 60 homeowners maximum (ensures homeowners get fast response)
-  ideal: 50,
+  min: 15,   // 1 partner per 15 properties minimum
+  max: 25,   // 1 partner per 25 properties maximum
+  ideal: 20, // founder-set service ratio
 };
 
 // ── DFW submarket groupings for coverage analysis ────────────────────────────

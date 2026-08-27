@@ -3,6 +3,7 @@ import { trpc } from "@/lib/trpc";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
+import { applyDomainMeta } from "./lib/domainMeta";
 import { useEffect, useState, Suspense, lazy } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import SupportChatWidget from "./components/SupportChatWidget";
@@ -734,34 +735,48 @@ const TreeServiceGuide = lazy(() => import('./pages/homeowner/TreeServiceGuide')
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
+
+  // Per-domain <title>/meta. One bundle serves both brands, so index.html
+  // cannot carry the right identity on its own.
+  useEffect(() => {
+    applyDomainMeta();
+  }, []);
+
   useEffect(() => {
     const hostname = window.location.hostname;
     const isTrustyPro =
       hostname === "trustypro.io" ||
       hostname === "www.trustypro.io" ||
       hostname.endsWith(".trustypro.io");
-    if (isTrustyPro) {
-      // trustypro.io/waitlist → homeowner waitlist
-      if (location === "/waitlist" || location === "/waitlist/") {
-        navigate("/waitlist/homeowner", { replace: true });
-        return;
-      }
-      // Allow /waitlist/* paths through
-      if (location.startsWith("/waitlist")) return;
-      // Allow /trustypro/* paths through
-      if (location.startsWith("/trustypro")) return;
-      // Allow homeowner job-request intake on the trustypro brand
-      if (location.startsWith("/request-service")) return;
-      // Allow homeowner request status tracking on the trustypro brand
-      if (location.startsWith("/my-request")) return;
-      // trustypro.io root → stay at / (TrustyProHome renders via Router below)
-      if (location === "/" || location === "") return;
-      // Any unmatched trustypro.io path → redirect to root
-      navigate("/", { replace: true });
+    if (!isTrustyPro) return;
+
+    // trustypro.io/waitlist → homeowner waitlist
+    if (location === "/waitlist" || location === "/waitlist/") {
+      navigate("/waitlist/homeowner", { replace: true });
+      return;
     }
+
+    // Pro-side routes that must not render on the consumer brand.
+    // Previously this was an ALLOW-list, which silently redirected every
+    // unlisted TrustyPro URL to the homepage. Inverted: everything renders
+    // except these, and these cross-link to prolnk.xyz instead of vanishing.
+    const PRO_ONLY = [
+      "/apply", "/apply-v2", "/application-status",
+      "/pro-waitlist", "/waitlist/pro", "/pro/join",
+      "/checkout", "/partner", "/partners", "/referral",
+      "/admin", "/dashboard",
+      "/pricing/standard", "/resources/pricing-strategy",
+    ];
+    if (PRO_ONLY.some(pfx => location === pfx || location.startsWith(pfx + "/"))) {
+      window.location.href = `https://prolnk.xyz${location}`;
+      return;
+    }
+    // Everything else renders normally on trustypro.io.
   }, [location, navigate]);
+
   return null;
 }
+
 
 // /login — Email/password login form (OAuth fallback when VITE_OAUTH_PORTAL_URL not set)
 function LoginRedirect() {
@@ -1295,7 +1310,8 @@ function Router() {
       <Route path="/admin/api-credits" component={ApiCreditsGuide} />
       <Route path="/admin/payment-flows" component={PaymentFlowDiagrams} />
       <Route path="/pricing" component={Pricing} />
-      <Route path="/pricing/standard" component={PostFoundingPricing} />
+      {/* Consolidated into /pricing — one pricing source. */}
+      <Route path="/pricing/standard">{() => { window.location.replace("/pricing"); return null; }}</Route>
 
       {/* Fallback */}
       <Route path="/docs/api" component={ApiDocs} />
@@ -1489,7 +1505,7 @@ function Router() {
       <Route path="/legal-faq" component={ProLnkLegalFAQ} />
       <Route path="/mission" component={ProLnkMission} />
       <Route path="/partner-quality" component={ProLnkPartnerQuality} />
-      <Route path="/pricing/homeowners" component={ProLnkPricingExplained} />
+      <Route path="/pricing/homeowners">{() => { window.location.replace("/trustypro/plans"); return null; }}</Route>
       <Route path="/resources/seasonal-strategy" component={ProLnkProSeasonalStrategy} />
       <Route path="/review-policy" component={ProLnkReviewPolicy} />
       <Route path="/roadmap" component={ProLnkRoadmap} />
@@ -1541,7 +1557,7 @@ function Router() {
       <Route path="/data-privacy" component={ProLnkDataPrivacy} />
       <Route path="/privacy-summary" component={ProLnkPrivacyPolicySummary} />
       <Route path="/terms-full" component={ProLnkTermsOfService} />
-      <Route path="/pricing-transparency" component={ProLnkPricingTransparency} />
+      <Route path="/pricing-transparency">{() => { window.location.replace("/pricing"); return null; }}</Route>
       <Route path="/for-pros" component={ProLnkForPros} />
       <Route path="/for-contractors" component={ProLnkForContractors} />
       <Route path="/for-military" component={ProLnkForMilitary} />

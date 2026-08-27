@@ -30,33 +30,56 @@ const stripe = new Proxy({} as Stripe, {
 // These price IDs must be created in the Stripe dashboard.
 // We use lookup keys to avoid hardcoding price IDs.
 export const TIER_PRODUCTS = {
-  core: {
-    name: "ProLnk Core",
-    amount: 9900, // $99/month in cents
-    lookupKey: "prolnk_core_monthly",
-    tier: "core" as const,
-    keepRate: 0.40,
+  // Mirrors client/src/config/pricing.ts — keep the two in sync.
+  //
+  // `jobFeePct` is the platform fee the pro pays on a job, and is the number
+  // shown to pros. `keepRate` is retained ONLY because partners.commissionKeepRate
+  // is written from it and the cascade engine reads that column; it is derived
+  // from jobFeePct so the two can never disagree again.
+  //
+  // TODO(founder decision pending): once the keep-rate model is formally retired,
+  // drop `keepRate` here, drop the commissionKeepRate write below, and migrate
+  // existing partner rows. Do not remove before the commission model is settled —
+  // this column feeds live payout math.
+  starter: {
+    name: "ProLnk Starter",
+    amount: 0, // no monthly charge — 15% per job
+    lookupKey: "prolnk_starter_monthly",
+    tier: "starter" as const,
+    jobFeePct: 15,
+    keepRate: 0.85, // pro keeps 85% of job value
   },
-  pro: {
-    name: "ProLnk Pro",
-    amount: 14900, // $149/month
-    lookupKey: "prolnk_pro_monthly",
-    tier: "pro" as const,
-    keepRate: 0.50,
+  solo: {
+    name: "ProLnk Solo",
+    amount: 9900, // $99/month in cents
+    lookupKey: "prolnk_solo_monthly",
+    tier: "solo" as const,
+    jobFeePct: 10,
+    keepRate: 0.90,
+  },
+  team: {
+    name: "ProLnk Team",
+    amount: 18900, // $189/month
+    lookupKey: "prolnk_team_monthly",
+    tier: "team" as const,
+    jobFeePct: 9,
+    keepRate: 0.91,
   },
   business: {
     name: "ProLnk Business",
-    amount: 24900, // $249/month
+    amount: 34900, // $349/month
     lookupKey: "prolnk_business_monthly",
     tier: "business" as const,
-    keepRate: 0.60,
+    jobFeePct: 8,
+    keepRate: 0.92,
   },
   enterprise: {
     name: "ProLnk Enterprise",
     amount: 0, // custom / contact sales
     lookupKey: "prolnk_enterprise_monthly",
     tier: "enterprise" as const,
-    keepRate: 0.60,
+    jobFeePct: 8,
+    keepRate: 0.92,
   },
 } as const;
 
@@ -171,7 +194,7 @@ export const stripeRouter = router({
 
       // Map legacy/gamified tier keys onto the canonical subscription products.
       const TIER_ALIAS: Record<string, keyof typeof TIER_PRODUCTS> = {
-        crew: "business", company: "business", scout: "core",
+        core: "solo", pro: "team", crew: "team", company: "business", scout: "starter",
       };
       const resolvedTier = (TIER_PRODUCTS as any)[input.tier]
         ? (input.tier as keyof typeof TIER_PRODUCTS)
@@ -979,7 +1002,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
           VALUES (
             ${parseInt(partnerId)}, 'system',
             ${`[SUCCESS] Welcome to ${product.name}!`},
-            ${`Your account has been upgraded to the ${targetTier.charAt(0).toUpperCase() + targetTier.slice(1)} tier. You now keep ${Math.round(product.keepRate * 100)}% of every referral commission.`},
+            ${`Your account has been upgraded to the ${targetTier.charAt(0).toUpperCase() + targetTier.slice(1)} tier. Your platform fee is now ${product.jobFeePct}% per job — you keep the rest.`},
             '/dashboard/tier'
           )
         `);

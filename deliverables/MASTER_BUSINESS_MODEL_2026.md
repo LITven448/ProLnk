@@ -210,53 +210,102 @@ Residential job fees apply on residential work; the 3% sourced-job fee applies o
 | Rental doors contracted | 61,000 | 250,000 | 550,000 | 850,000 | 1,100,000 | 1,400,000 | 1,700,000 |
 | Engagement | 85% | 88% | 91% | 93% | 95% | 95% | 95% |
 | **Engaged rental doors** | 51,850 | 220,000 | 500,500 | 790,500 | 1,045,000 | 1,330,000 | 1,615,000 |
+| Rental move-ins (35% turnover) | 18,148 | 77,000 | 175,175 | 276,675 | 365,750 | 465,500 | 565,250 |
 | Homeowner homes | 10,000 | 30,000 | 100,000 | 350,000 | 550,000 | 800,000 | 1,100,000 |
+| Homeowner moves (9% turnover) | 900 | 2,700 | 9,000 | 31,500 | 49,500 | 72,000 | 99,000 |
 | **Total engaged properties** | 61,850 | 250,000 | 600,500 | 1,140,500 | 1,595,000 | 2,130,000 | 2,715,000 |
 | Active pros (20:1) | 3,093 | 12,500 | 30,025 | 57,025 | 79,750 | 106,500 | 135,750 |
-| **Subcontractor firms** (~3 techs avg) | 1,030 | 4,170 | 10,000 | 19,000 | 26,600 | 35,500 | 45,250 |
-| Commercial tenants | 1 | 3 | 7 | 12 | 20 | 28 | 35 |
+| **Subcontractor firms** (3 techs avg) | 1,031 | 4,167 | 10,008 | 19,008 | 26,583 | 35,500 | 45,250 |
+| Rental mix | 40% multifamily / 60% single-family | | | | | | |
 
-Engagement is high by design: the app is issued as part of move-in and used again at move-out, so effectively the whole resident base is in it.
+## Every revenue line, built from unit economics
+
+Each line below is **attach rate × unit value × volume**. The basis is stated so any number can be challenged on its assumption rather than taken on faith.
+
+| # | Stream | Unit economics |
+|---|---|---|
+| 1 | Pro subscriptions + ProPass + lanes | $127/firm/month blended (40% Starter $0 · 35% Solo $99 · 18% Team $189 · 7% Business $349; plus seat overage and 15%/25% lane attach) |
+| 2 | Platform fees — homeowner jobs | 1.5 jobs/home/yr × $600–700 avg × 11.1% effective |
+| 3 | Platform fees — renter-paid services | 0.4 jobs/door/yr × $250–310 × 11.1% |
+| 4 | Rental work-order fees | 2.5 work orders/door/yr × $3, paid by operator |
+| 5 | Operator licensing | ~$200K per operator; 1→18 operators |
+| 6 | **Utility connections** | **Multifamily:** $6/door/mo net, 40% bulk-deal penetration. **Single-family:** 2 services × $65 × 40% ProLnk share, per move-in |
+| 7 | Renter furniture / electronics / decor | $30 per move-in (40% purchase × $500 captured × 15% margin) + $6/door/yr ongoing |
+| 8 | Renters insurance | 60% attach × $27 commission, **haircut 50%** for licensing constraints |
+| 9 | Moving companies (renter) | 30% of move-ins × $80 referral |
+| 10 | Storage (renter) | 15% of move-ins × $80 |
+| 11 | Rent reporting | 20% enrollment × $3/mo net |
+| 12 | Security / smart home (renter) | 5% of doors/yr × $100 |
+| 13 | Homeowner furniture / appliances / decor | $10 → $50/home/yr, ramping with the rendering engine |
+| 14 | Homeowner moving & storage | 9% turnover × $200 |
+| 15 | Consumer financing | 8% of homes finance a ~$8,000 project × 2.5% |
+| 16 | Home warranty referral | 8% attach × $75 |
+| 17 | Homeowner insurance referral | 5% attach × $125 |
+| 18 | Security / smart home (homeowner) | 4%/yr × $125 |
+| 19 | Solar / energy efficiency | 1%/yr × $300 |
+| 20 | Data licensing | $28 per qualified record; 15%→55% of properties qualify as data matures |
+| 21 | Commercial (Exchange) | 1→35 tenants, per the commercial business plan |
 
 **Revenue by stream ($M)**
 
-| Stream | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
-|---|---|---|---|---|---|---|---|
-| Subscriptions + ProPass seats | 1.5 | 5.9 | 14.2 | 26.9 | 37.7 | 50.3 | 64.1 |
-| Platform fees — homeowner jobs | 1.0 | 3.0 | 10.3 | 37.3 | 60.4 | 90.6 | 128.2 |
-| Platform fees — renter-paid services | 0.6 | 2.4 | 5.6 | 9.8 | 13.0 | 17.1 | 21.5 |
-| Rental work-order fees ($3/WO) | 0.4 | 1.7 | 3.8 | 5.9 | 7.8 | 10.0 | 12.1 |
-| Operator licensing fees | 0.2 | 0.6 | 1.4 | 2.2 | 3.0 | 4.0 | 5.0 |
-| Renter commerce | 1.0 | 4.4 | 10.0 | 15.8 | 20.9 | 27.9 | 35.5 |
-| Homeowner affiliate commerce | 0.4 | 1.5 | 6.0 | 24.5 | 44.0 | 68.0 | 99.0 |
-| Insurance / warranty / financing referrals | 0.3 | 1.2 | 3.5 | 9.0 | 15.0 | 21.0 | 28.0 |
-| Data licensing | — | 0.5 | 2.5 | 7.0 | 12.0 | 18.0 | 25.0 |
-| **TrustyPro Exchange (commercial)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
-| **TOTAL REVENUE** | **6.3** | **24.6** | **64.7** | **150.4** | **233.0** | **333.8** | **452.0** |
+| # | Stream | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Subscriptions + seats + lanes | 1.6 | 6.4 | 15.3 | 29.0 | 40.6 | 54.1 | 69.1 |
+| 2 | Platform fees — homeowner | 1.0 | 3.1 | 10.3 | 37.3 | 60.5 | 90.6 | **128.2** |
+| 3 | Platform fees — renter services | 0.6 | 2.5 | 6.0 | 9.8 | 13.5 | 17.7 | 22.2 |
+| 4 | Rental work-order fees | 0.4 | 1.7 | 3.8 | 5.9 | 7.8 | 10.0 | 12.1 |
+| 5 | Operator licensing | 0.2 | 0.6 | 1.2 | 1.8 | 2.4 | 3.0 | 3.6 |
+| 6 | **Utility connections** | 0.9 | 4.0 | 9.8 | 16.6 | 23.5 | 29.8 | **36.2** |
+| 7 | Renter furniture / decor | 0.9 | 3.6 | 8.3 | 13.0 | 17.2 | 22.0 | 26.7 |
+| 8 | Renters insurance | 0.4 | 1.8 | 4.1 | 6.4 | 8.5 | 10.8 | 13.1 |
+| 9 | Moving (renter) | 0.4 | 1.9 | 4.2 | 6.6 | 8.8 | 11.2 | 13.6 |
+| 10 | Storage (renter) | 0.2 | 0.9 | 2.1 | 3.3 | 4.4 | 5.6 | 6.8 |
+| 11 | Rent reporting | 0.4 | 1.6 | 3.6 | 5.7 | 7.5 | 9.6 | 11.6 |
+| 12 | Security (renter) | 0.3 | 1.1 | 2.5 | 4.0 | 5.2 | 6.7 | 8.1 |
+| 13 | Homeowner furniture / decor | 0.1 | 0.5 | 2.5 | 12.3 | 23.1 | 36.8 | **55.0** |
+| 14 | Homeowner moving & storage | 0.2 | 0.5 | 1.8 | 6.3 | 9.9 | 14.4 | 19.8 |
+| 15 | Consumer financing | 0.2 | 0.5 | 1.6 | 5.6 | 8.8 | 12.8 | 17.6 |
+| 16 | Home warranty referral | 0.1 | 0.2 | 0.6 | 2.1 | 3.3 | 4.8 | 6.6 |
+| 17 | Homeowner insurance referral | 0.1 | 0.2 | 0.6 | 2.2 | 3.4 | 5.0 | 6.9 |
+| 18 | Security (homeowner) | 0.1 | 0.2 | 0.5 | 1.8 | 2.8 | 4.0 | 5.5 |
+| 19 | Solar / energy | — | 0.1 | 0.3 | 1.1 | 1.7 | 2.4 | 3.3 |
+| 20 | Data licensing | — | 0.5 | 3.0 | 8.0 | 14.0 | 21.0 | 29.0 |
+| 21 | **Commercial (Exchange)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
+| | **TOTAL REVENUE** | **8.7** | **34.9** | **89.4** | **190.7** | **285.9** | **399.1** | **528.5** |
 
 *Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
 **P&L ($M)**
 
-Engineering is carried at **cash cost**, not notional cost. The founding dev team is equity-compensated, so Year 1–2 engineering is a fraction of a market payroll. Paid hires phase in after the Series A.
+Engineering is carried at **cash cost** — the founding dev team is equity-compensated, with paid hires phasing in after the Series A.
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|---|---|
-| Revenue | 6.3 | 24.6 | 64.7 | 150.4 | 233.0 | 333.8 | 452.0 |
-| Cost of revenue | 1.4 | 5.2 | 12.9 | 28.6 | 42.0 | 58.0 | 77.0 |
-| **Gross profit** | **4.9** | **19.4** | **51.8** | **121.8** | **191.0** | **275.8** | **375.0** |
-| Gross margin | 78% | 79% | 80% | 81% | 82% | 83% | 83% |
+| Revenue | 8.7 | 34.9 | 89.4 | 190.7 | 285.9 | 399.1 | 528.5 |
+| Cost of revenue (18%) | 1.6 | 6.3 | 16.1 | 34.3 | 51.5 | 71.8 | 95.1 |
+| **Gross profit** | **7.1** | **28.6** | **73.3** | **156.4** | **234.4** | **327.3** | **433.4** |
+| Gross margin | 82% | 82% | 82% | 82% | 82% | 82% | 82% |
 | Engineering (cash) | 0.3 | 1.5 | 5.0 | 10.0 | 15.0 | 18.0 | 21.0 |
-| Sales & marketing | 1.5 | 5.0 | 13.0 | 27.0 | 40.0 | 55.0 | 72.0 |
-| Support & operations | 1.2 | 3.5 | 9.0 | 16.0 | 22.0 | 30.0 | 39.0 |
-| G&A | 0.8 | 2.0 | 4.5 | 8.5 | 12.0 | 16.0 | 21.0 |
-| **EBITDA** | **1.1** | **7.4** | **20.3** | **60.3** | **102.0** | **156.8** | **222.0** |
-| **EBITDA margin** | **17%** | **30%** | **31%** | **40%** | **44%** | **47%** | **49%** |
+| Sales & marketing | 2.0 | 5.9 | 15.2 | 32.4 | 48.6 | 67.8 | 89.9 |
+| Support & operations | 1.5 | 3.1 | 8.0 | 17.2 | 25.7 | 35.9 | 47.6 |
+| G&A | 1.0 | 1.7 | 4.5 | 9.5 | 14.3 | 20.0 | 26.4 |
+| **EBITDA** | **2.3** | **16.4** | **40.6** | **87.3** | **130.8** | **185.6** | **248.5** |
+| **EBITDA margin** | **26%** | **47%** | **45%** | **46%** | **46%** | **47%** | **47%** |
 
-**Profitable from Year 1** — because the build is equity-funded and the cost structure is genuinely light: no offices, no fleet, no inventory.
+## Reconciliation to the prior version
 
-**Valuation at Y5:** $233M revenue at 8–10× = **$1.9–2.3B**
-**Valuation at Y7:** $452M revenue at 8–10× = **$3.6–4.5B**. On earnings, $222M EBITDA at 18–22× = **$4.0–4.9B**.
+The earlier model used **top-down per-door averages** ($20/door renter commerce, $80/home homeowner affiliate) as placeholders. This version computes every stream from its own unit economics. The difference:
+
+| | Y1 | Y3 | Y5 | Y7 |
+|---|---|---|---|---|
+| Prior (top-down) | 6.3 | 64.7 | 233.0 | 452.0 |
+| **This version (bottom-up)** | **8.7** | **89.4** | **285.9** | **528.5** |
+| Difference | +38% | +38% | +23% | +17% |
+
+The placeholders were understating affiliate revenue, mainly because they treated utility connections as a one-time event when Utility Valet's published model is **recurring monthly revenue share** (~$20/door/month to the property manager on bulk-internet deals).
+
+**Valuation at Y5:** $285.9M revenue at 8–10× = **$2.3–2.9B**
+**Valuation at Y7:** $528.5M revenue at 8–10× = **$4.2–5.3B**. On earnings, $248.5M EBITDA at 18–22× = **$4.5–5.5B**.
 
 **What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 

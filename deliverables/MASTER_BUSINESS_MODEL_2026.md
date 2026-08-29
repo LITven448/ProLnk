@@ -396,6 +396,89 @@ If you do not raise, you own the company and its earnings are yours:
 
 **Structure this with a CPA before drawing anything.** Salary versus distribution has real payroll-tax consequences, the right answer depends on your entity type, and an S-corp with an unreasonably low salary and large distributions is a known audit trigger.
 
+# 4c · Exit plan
+
+## What the company is worth, by year
+
+| | Y3 | Y5 | Y7 |
+|---|---|---|---|
+| Revenue | $90.4M | $299.9M | $560.5M |
+| EBITDA | $41.2M | $139.5M | $269.6M |
+| **On revenue (8–10×)** | **$720M–900M** | **$2.4–3.0B** | **$4.5–5.6B** |
+| **On earnings (18–22×)** | **$740M–910M** | **$2.5–3.1B** | **$4.9–5.9B** |
+| Realistic window | Too early | **Prime** | **Prime** |
+
+**Year 3 is sellable but shouldn't be sold.** At $90M revenue the data asset is immature, the validation study isn't done, and you'd be selling the collection engine before it has collected anything worth the premium.
+
+**Years 5–7 are the window.** By Year 5 the data is seasoned, the operator base is proven, and margins are at 47%. By Year 7 you have 2.7M documented properties — a position nobody can replicate quickly, because it took seven years of collection to build.
+
+## Who buys, and why
+
+### Data & analytics strategics — the highest multiple
+| Buyer | Why | What they'd pay for |
+|---|---|---|
+| **Verisk** (~$3B rev) | Insurance data incumbent with no interior-condition dataset | The records, and the collection engine |
+| **CoreLogic / Cotality** (~$1.7B rev) | ~140M properties of commodity public-records data; this is the differentiated layer they can't build | Data + distribution |
+| **Moody's** | Building property underwriting solutions | Condition data feeding risk models |
+| **ICE / Black Knight** | Mortgage and servicing data | Collateral condition |
+| **TransUnion · Experian · LexisNexis Risk** | Property data enrichment | Records at scale |
+
+**These pay the highest multiple** because they buy a dataset that plugs into an existing distribution machine. They value what you *have*, not what you *do*.
+
+### Insurance carriers — strategic, not financial
+Progressive, Allstate, State Farm, Travelers, Chubb, plus insurtechs Hippo and Kin. They buy for **underwriting advantage and loss prevention**, not revenue. A carrier that can price roof and HVAC risk better than competitors has an edge worth more than the acquisition. *(You've had inbound interest here already.)*
+
+### Proptech & rental platforms
+RealPage (Thoma Bravo), Yardi, AppFolio, Entrata, SmartRent, Zillow. They buy the **operator relationships and resident layer** — the piece they've each tried and failed to build.
+
+### Services & marketplace
+ServiceTitan, Angi, Thumbtack, Lessen, Frontdoor/AHS, Home Depot, Lowe's. They buy **the pro network and the demand engine.** Generally the lowest multiple of the four groups.
+
+### Private equity
+Vista, Thoma Bravo, Insight, Bain, Blackstone. They buy **EBITDA at 45%+ margins with recurring revenue** — a clean platform for further rollup. Lower multiple than a strategic, but faster and cleaner to close.
+
+### IPO
+Viable from **Year 5** at ~$300M revenue and 47% margins. Realistic only with two or three years of clean audited financials and a repeatable enterprise sales motion.
+
+## Should the business be split so the data can be sold separately?
+
+**Sum-of-the-parts, Year 7:**
+
+| Segment | Revenue | Multiple | Value |
+|---|---|---|---|
+| Pro subscriptions | $69M | 8–10× | $552–690M |
+| Platform fees (homeowner + renter) | $150M | 5–7× | $750M–1.05B |
+| Work-order fees + operator licensing | $16M | 6–8× | $96–128M |
+| Affiliate & commerce | $206M | 3–4× | $618–824M |
+| **Data licensing** | **$61M** | **10–12×** | **$610–732M** |
+| Commercial white-label | $34M | 8–10× | $272–340M |
+| **Sum of parts** | | | **$2.9–3.8B** |
+| **Sold whole** | $560M | 8–10× | **$4.5–5.6B** |
+
+**The whole is worth $1–2B more than the parts. Do not break it up.**
+
+The reason is structural: **the data has no value without the collection engine.** A buyer purchasing the data business alone acquires a depreciating asset — records that age out with nothing replenishing them. They will discount heavily for that dependency, or demand a long-term collection agreement that hands most of the value back to you anyway.
+
+**But build for optionality anyway.** Legal separation now is premature and costly; operational separation costs almost nothing and preserves the choice:
+
+1. **Track the data P&L separately from day one** — revenue, direct costs, contracts, and the consent chain attributable to it
+2. **Hold the data IP as distinctly licensable** — qualified-record schema, consent framework, vintage tracking. It should be *carve-out-able*, not carved out
+3. **Write data rights into every operator, resident, and vendor agreement** as separable rights rather than bundled ones
+4. **Keep the attribution registry clean** — it is the ledger that proves which records you actually own the rights to
+
+Do those four and a carve-out becomes a decision rather than a reorganization. Skip them and separating later means renegotiating every contract you have signed.
+
+## The exit sequence to plan around
+
+| | |
+|---|---|
+| **Now → Y1** | Prove the AMH pilot. Do not take inbound seriously — you have no leverage until the numbers exist |
+| **Y2–Y3** | Series A closed, 3+ operators live, validation study underway. Expect unsolicited interest; decline it |
+| **Y4–Y5** | Data seasoned, margins at 46%. **First real window.** Run a process rather than responding to one buyer |
+| **Y6–Y7** | 2.7M properties, $270M EBITDA. **Maximum leverage.** Strategic auction between a data incumbent and an insurance carrier is the highest-value path |
+
+**The single thing that most raises the exit price:** the validation study. A buyer paying for 2.7M records is buying a hypothesis. A buyer paying for 2.7M records *with proven loss-ratio improvement* is buying a business case — and that difference is worth more than a full year of revenue growth.
+
 # 5 · The three-engine strategy
 
 **Engine 1 — Enterprise (Portfolio + Exchange). Funds everything.**

@@ -73,7 +73,7 @@ Already built or specced and directly reusable: vendor intake v2, license/insura
 
 **1. Platform license floor + per-work-order variable (recommended)**
 - Annual license: **$150K–500K** depending on seats and scope
-- Plus **$3–8 per work order** routed to a subcontractor
+- Plus **$3 per work order** routed to a subcontractor, paid by the licensee
 - Rough volume math: 45,000 locations × 2–4 service events/year ≈ 90K–180K work orders; if even a third are subbed out, that's 30K–60K × $5 ≈ **$150K–300K/yr variable** on top of the license
 - Why this one: the floor covers your cost to serve, the variable grows with them, and it's easy for a CFO to model
 

@@ -69,7 +69,7 @@ This converts enterprise sales from cold outreach into sponsor-led introductions
 
 **Tier 1 — build the model on these**
 1. **Platform license** — $150K–500K/yr per tenant, scaled by seats and locations. Predictable, high margin, the base of the P&L.
-2. **Per-work-order fee** — $3–8 per subcontracted WO. Grows with the customer without a new negotiation.
+2. **Per-work-order fee** — $3 per subcontracted WO, paid by the licensee. Grows with the customer without a new negotiation.
 3. **Vendor subscriptions** — $99–$249/mo, paid by vendors, and it is **your** revenue across every tenant. This is the network layer monetized, and it is the stream that compounds.
 4. **Implementation / integration fee** — $25K–100K one-time per tenant. Covers the cost to serve and qualifies serious buyers.
 

@@ -55,7 +55,7 @@
 - Every split rounds half-up to cents; sum(distributions) + platform_retained == platform_fee EXACTLY, per job, every time. Property-based test: 10,000 random (job_value, fee_rate, upline-depth) triples, assert the identity holds.
 
 ### V12 — Per-work-order vendor fee (new model, 5.4)
-- Non-subscriber vendor completes operator job: work-order fee $5–$8 per work order (vendor-charged; final TBD) netted from vendor payout, recorded as platform revenue, NOT part of the cascade base
+- Operator work order completed: **$3 work-order fee billed to the OPERATOR** (never netted from the vendor's payout), recorded as platform revenue, NOT part of the cascade base. The vendor's payout is unreduced.
 
 ## Sign-off protocol
 Engine passes when: V1–V12 green in CI, the V11 property test runs 10k cases clean, and a dry-run payout over one week of staging data reconciles to the penny. Only then does real money move.

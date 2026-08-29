@@ -205,7 +205,7 @@ Found by a verified cross-check of the design documents against the repo. Full d
 2. **AMH model applies attach rates to all 61,000 doors** with no engagement haircut — overstating every stream by ~2.9×.
 3. **35% turnover and 35% engagement are different rates that should multiply, not substitute.**
 4. **The 30% share is documented two ways** — paid partner-direct (design) vs. collected and remitted through cost of revenue (repo). These are opposite structures.
-5. **Maintenance marketplace is 3%-of-spend in one document and $5–8/work-order in another** — a 7× difference, with a different party paying.
+5. ~~Maintenance marketplace 3%-of-spend vs $5–8/work-order~~ — **RESOLVED.** The operator pays **$3 per work order**. Vendors are never charged per work order. The $5–8 vendor-charged fee is retired everywhere.
 6. **The ProLnk Platform Strategy doc's pricing table says "no commission on residential referrals."** That is wrong — residential carries the platform fee. Correct that document.
 
 ## Resolved since this document was written

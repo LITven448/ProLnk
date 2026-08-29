@@ -28,7 +28,7 @@ Every product line below runs on the same spine: a verified professional, a docu
 1. **Pro subscriptions** — Core $99 / Pro $149 / Business $249 per month
 2. **Scout add-on** — $99 first / $49 additional
 3. **Platform fee on jobs** — job value × fee rate, clamped 6–15%
-4. **Per-work-order fees** — $5–8 charged to non-subscriber vendors in operator programs
+4. **Rental work-order fees** — $3 per work order, paid by the rental company. Vendors are never charged per work order.
 5. **Credential verification** — background checks and license/COI monitoring (ProPass)
 6. **Financing referral** — commission on job financing (Wisetack tier now, large-ticket later)
 7. **Supply/GPO rebates** — volume rebates on parts and materials
@@ -60,7 +60,7 @@ Every product line below runs on the same spine: a verified professional, a docu
 
 ## TrustyPro Exchange — commercial white-label
 27. **Platform license** — $150–500K per tenant annually
-28. **Per-work-order fee** — $3–8 per subcontracted order
+28. **Per-work-order fee (commercial)** — $3 per subcontracted order, paid by the licensing company
 29. **Vendor subscriptions** — $99–249/mo, ProLnk revenue across all tenants
 30. **Implementation / integration** — $25–100K one-time
 31. **Credential verification** — per-vendor annual

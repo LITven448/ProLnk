@@ -19,12 +19,21 @@ Full detail in `deliverables/legal-drafts/RATES-MEMO.md`. Summary:
 
 | Item | Decision |
 |---|---|
-| Operator-program vendor subscriptions | **$99 / $149 / $249 per month ladder** (AMH-exclusive vendors minimum $99/mo). NO free vendor tier. |
-| Non-subscriber vendors | **$5–8 per work order, charged to the vendor** (netted from payout) |
-| AMH revenue share | **30%** on vendor subscriptions + net commerce; data share tiered **up to a 30% ceiling** on qualified records |
-| Future (non-Patrick) operators | ~**20%** share |
+| **Pro subscription ladder** | **Starter $0 (15%/job) · Solo $99 (10%) · Team $189 (9%) · Business $349 (8%)**. Replaces Core/Pro/Business $99/$149/$249. |
+| **Platform fee** | Flat % per tier, charged to the pro, collected AFTER the pro is paid. **The keep-rate model is retired** — no rebate back to the pro. |
+| **The fee is the commission pool** | ProLnk pays out of it only on origination (5%) and upline (7/4/2/1%), founding network only, residential + Scout jobs only. **No claim = ProLnk keeps 100%.** Max payout 19%. |
+| Add-ons | ProPass $20/mo · dashboard seat $29/mo · 10-ZIP pack $25/mo |
+| Work-type upgrades | Rental work +$49/mo · Commercial work +$99/mo · licensee-invited vendors 20% off |
+| **Rental work orders** | **$3 per work order, paid by the rental company** (not the vendor). Vendors pay nothing on rental work orders. |
+| **Licensee-locked vendors** | **FREE** — see only that licensee's work. Pay only to unlock other work. |
+| Commercial | Licensee pays annual license + $3/WO. ProLnk takes **3% only on commercial jobs it sources OUTSIDE the licensee**. The 6–15% residential clamp does NOT apply to commercial — it needs its own fee path. |
+| AMH revenue share | **30%**, **split at settlement and paid partner-direct** — never through ProLnk's P&L, no remittance ledger |
+| Future (non-Patrick) operators | ~**20%** share, or **$1.50–2.50/door/month with no share** for operators under 10,000 doors |
 | Channel partner (Utility Valet / Patrick, L1) | **5%** of platform fee on channel-originated homes (perpetual), **7%** on channel-originated pros. NO subscription share. |
-| Homeowner-side pro pricing | **UNCHANGED** — Core $99 / Pro $149 / Business $249; Scout $99/$49. Do not touch. |
+| Founding network | **Capped at 2,125** (Charter 25 · Founding 100 · L3 400 · L4 1,600), $149/mo locked for life. Override applies to residential + Scout jobs ONLY. **Subscription override REMOVED.** |
+| Payments | **Split at settlement, no escrow hold.** Partner shares never land in ProLnk's account. |
+
+**Pricing lives in ONE place:** `client/src/config/pricing.ts` (branch `website-fixes`). A regression test fails the build if a price is hardcoded elsewhere. Five conflicting tier systems previously existed in code — see that branch.
 
 The engine must support **two distinct structures simultaneously**: (a) the pro-network cascade per canonical spec §3.2–3.3, and (b) the operator/AMH share model. They are separate intentional models — keep them isolated in code and ledgers.
 
@@ -32,7 +41,7 @@ The engine must support **two distinct structures simultaneously**: (a) the pro-
 
 1. **`renters-p0-build-spec.md`** — TrustyPro Renters end-to-end: operator-branded invite, resident gating (NO prices / NO vendor names / NO marketplace content in resident sessions — test-enforced), Move-In Shield guided capture with a **photo-durability release gate** (backup + restore + corruption drills must pass before ship), maintenance request → AI triage → operator approval → dispatch → tracker, Utility Valet handoff link.
 2. **`operator-dashboard-pilot-spec.md`** — thin pilot dashboard: approval queue, claim detail with AI triage + cost band, approve/deny/assign (in-house crew vs vendor), pilot metrics screens (cost/WO, approval time, turn days, adoption). **Andrew mandate: full dashboard live within 120 days — approval queue ships first, remaining screens during pilot.**
-3. **`vendor-intake-spec.md`** — vendor intake v2: company size, per-individual licenses, property types served, capacity, markets, FSM used; wired to the subscription ladder + per-WO fee above.
+3. **`vendor-intake-spec.md`** — vendor intake v2: company size, per-individual licenses, property types served, capacity, markets, FSM used; wired to the subscription ladder above; no per-WO vendor charge.
 4. **`rendering-engine-v1.md`** and **`home-health-score-and-nameplate-ocr.md`** — Phase 2, do not start; read for architecture awareness only.
 5. **`builder-edition-design-brief.md`** — prototype design brief (Claude design), not a build order yet.
 6. **`120-day-launch-plan.md`** — **the schedule.** 90-day build in 4 phases with hard gates, 30-day test protocol, five go/no-go criteria. Feature freeze Day 76. Read it first; it sequences everything on this page.
@@ -52,7 +61,7 @@ The engine must support **two distinct structures simultaneously**: (a) the pro-
 
 ## 6 · Payments direction
 
-- Migrating OFF Stripe. Direction: **Moov now → Adyen at scale** (`deliverables/analysis/payment-processor-comparison.md`). Andrew signs the contract; build the escrow-style hold → release on the new rails, refunds/disputes flow, and per-WO fee netting.
+- Migrating OFF Stripe. Direction: **Moov now → Adyen at scale** (`deliverables/analysis/payment-processor-comparison.md`). Andrew signs the contract; build **split-at-settlement payouts (no escrow hold)**, refunds/disputes flow, and operator-billed work-order fees.
 - **Do not build new features on `stripe.ts`.**
 
 ## 7 · Legal & compliance (drafts done, counsel pass pending)

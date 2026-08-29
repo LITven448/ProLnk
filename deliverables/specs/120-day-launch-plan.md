@@ -12,8 +12,8 @@
 - TrustyPro homeowner core: add home → photos → AI findings → request → match → track → pay → review; Home Vault v1
 - TrustyPro Renters: full P0 (invite, resident gating, Move-In Shield, maintenance request, tracker, Utility Valet handoff)
 - Operator dashboard: approval queue + assignment + pilot metrics (thin version done perfectly)
-- Vendor program: intake v2, $99–$249 subscriptions, $5–8 per-work-order fee, no free tier
-- Payments: new processor live, escrow-style hold/release, all ledgers (pro cascade, operator share, channel partner)
+- Vendor program: intake v2, tier ladder ($0 Starter / $99 Solo / $189 Team / $349 Business), lane upgrades, licensee-locked vendors free. Vendors are never charged per work order.
+- Payments: new processor live, **split-at-settlement payouts (no escrow hold)**, all ledgers (pro cascade, operator share, channel partner)
 - Data plumbing: attribution registry, PII stripping/masking, consent chain, qualified-record schema v1
 - AI: triage with versioned output contract + golden test set; Move-In Shield cataloguer (human-QA loop OK); agent audit complete
 - Trust & safety: security baseline, E&O/cyber bound, legal doc set through counsel, support playbook staffed
@@ -61,7 +61,7 @@
 **Track B — Operator dashboard + vendor program (per operator-dashboard-pilot-spec.md / vendor-intake-spec.md):**
 - Approval queue + claim detail + approve/deny/assign (in-house crew vs vendor)
 - Pilot metrics screens (cost/WO, approval time, turn days, adoption) — the pilot IS these numbers
-- Vendor intake v2 + subscription billing ($99–$249) + per-WO fee netting on the new processor
+- Vendor intake v2 + subscription billing (Starter/Solo/Team/Business + work-type upgrades) on the new processor; operator-billed work-order fees
 - PII stripping/masking pipeline (promised in every partner doc — must be real)
 
 **Homeowner side in parallel (smaller):** rebuild-parity check on the core journey; Home Vault v1 record store; seasonal alerts wiring if time allows (else defer).
@@ -70,7 +70,7 @@
 
 ## PHASE 3 — Money, hardening, ops (Days 46–75)
 
-- Payments migration complete: hold/release live on new rails; Stripe fully retired; refunds/disputes flow + reserve policy
+- Payments migration complete: split-at-settlement live on new rails; Stripe fully retired; refunds/disputes flow + reserve policy
 - All three ledgers reconciling to the penny: pro cascade, operator share (subs/commerce/move-out/data), channel partner (Patrick L1)
 - Move-In Shield durability hardening: backup verification, restore drill, corruption checks
 - Security baseline provable: encryption, backups + tested restore, audit logs, access controls; security questionnaire pack updated to match reality

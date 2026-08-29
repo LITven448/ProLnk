@@ -269,44 +269,44 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 17 | Homeowner insurance referral | 0.1 | 0.2 | 0.6 | 2.2 | 3.4 | 5.0 | 6.9 |
 | 18 | Security (homeowner) | 0.1 | 0.2 | 0.5 | 1.8 | 2.8 | 4.0 | 5.5 |
 | 19 | Solar / energy | — | 0.1 | 0.3 | 1.1 | 1.7 | 2.4 | 3.3 |
-| 20 | **Data licensing** | — | 0.5 | 4.0 | 14.0 | 28.0 | 42.0 | **58.0** |
+| 20 | **Data licensing** | — | 0.5 | 4.0 | 14.0 | 28.0 | 42.0 | **61.0** |
 | 21 | **Commercial (Exchange)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
-| | **TOTAL REVENUE** | **8.7** | **34.9** | **90.4** | **196.7** | **299.9** | **420.1** | **557.5** |
+| | **TOTAL REVENUE** | **8.7** | **34.9** | **90.4** | **196.7** | **299.9** | **420.1** | **560.5** |
 
 *Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
 ## Data licensing, in detail
 
-This is the thesis, so it should not be a single averaged line.
+This is the thesis, so it is modeled from the buyer stack rather than a single blended price. Full analysis in `deliverables/analysis/data-buyer-stack.md`.
 
-**Records are not interchangeable.** A homeowner record carries the ownership relationship, transaction history, and the person who actually holds the insurance policy. A rental record carries condition and failure data but the resident is transient and the operator owns the property. Homeowner records price at roughly **2×**.
+**The correction that matters: data licensing is non-exclusive.** The same record licenses to many buyers at once — carriers, reinsurers, mortgage servicers, warranty underwriters, equipment manufacturers, AVM platforms, iBuyers, climate analytics, retail, utilities, lead generation. Realistic simultaneous licensing is **5–8 buyer types per record**.
+
+**Record values (base case, 5–6 buyer types):** homeowner **$62/yr**, rental **$30/yr** before the operator share. Homeowner records price at ~2× because they carry the ownership relationship, transaction history, and the actual policyholder.
 
 | | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|
 | Homeowner properties | 100,000 | 350,000 | 550,000 | 800,000 | 1,100,000 |
 | Qualified share | 25% | 40% | 50% | 55% | 60% |
-| Price per record | $45 | $50 | $55 | $58 | $60 |
-| **Homeowner data revenue** | **$1.1M** | **$7.0M** | **$15.1M** | **$25.5M** | **$39.6M** |
+| Price per record | $45 | $52 | $58 | $60 | $62 |
+| **Homeowner data revenue** | **$1.1M** | **$7.3M** | **$16.0M** | **$26.4M** | **$40.9M** |
 | Rental properties (engaged) | 500,500 | 790,500 | 1,045,000 | 1,330,000 | 1,615,000 |
 | Qualified share | 25% | 40% | 50% | 55% | 60% |
 | Price per record | $22 | $25 | $28 | $29 | $30 |
 | Gross rental data | $2.8M | $7.9M | $14.6M | $21.2M | $29.1M |
 | Less operator share (~30%) | ($0.8M) | ($2.4M) | ($4.4M) | ($6.4M) | ($8.7M) |
 | **Net rental data revenue** | **$2.0M** | **$5.5M** | **$10.2M** | **$14.8M** | **$20.4M** |
-| **TOTAL DATA LICENSING** | **$3.1M** | **$12.5M** | **$25.3M** | **$40.3M** | **$60.0M** |
-| *(modeled conservatively at)* | *$4.0M* | *$14.0M* | *$28.0M* | *$42.0M* | *$58.0M* |
+| **TOTAL DATA LICENSING** | **$3.1M** | **$12.8M** | **$26.2M** | **$41.2M** | **$61.3M** |
+| *(modeled at)* | *$4.0M* | *$14.0M* | *$28.0M* | *$42.0M* | *$61.0M* |
 
-**Where this sits against the tier progression:** $30–60 per record is **Tier 1 into early Tier 2** — basic licensing plus the beginning of embedded distribution. It does not assume Tier 3.
+**Market context.** CoreLogic earns ~$1.7B/yr across ~140M properties — roughly **$12 per property** for *commodity* public-records data that every competitor also sells. ProLnk holds condition with photo evidence, equipment by make/model/serial, dated repair outcomes, and consent. Differentiated data prices above commodity data.
 
-**The upside not in the model: Tier 3, risk participation.** At $75–300 per record, if even 15% of Year 7's 1.6M qualified records supported a risk-sharing arrangement, that is **another $35–45M**. But Tier 3 means becoming an MGA — insurance licensing, capital reserves, actuarial capability. That is a separate business built on top of this one, and it does not belong in a base forecast.
+**Two sources of upside not modeled:**
+- **Carriers pay per pull, not per year.** Underwriting data is billed transactionally — each quote, each renewal. A home quoted by four carriers annually generates multiple pulls. Modeled here as a flat annual fee, which understates it.
+- **Tier 3 risk participation** at $75–300/record. That means becoming an MGA — licensing, reserves, actuarial capability. A separate business, correctly excluded from a base forecast.
 
-**What gates every dollar of this line:**
-1. **Consent chain live from Day 1** — records collected before the consent language ships cannot be licensed, and re-consenting an installed base is far harder than consenting at invite. This is audit item 8.4 and it is not built.
-2. **Qualified-record schema in code** — audit 8.1, exists in documents only.
-3. **Vintage tracking** — you cannot retroactively season data. It has to start with the first record.
-4. **The validation study** — carriers buy proven loss-ratio improvement, not records. Nothing prices above Tier 1 without it.
+**What gates every dollar:** consent language live from the first resident (records collected before it can never be licensed) · qualified-record schema in code · vintage tracking from record one (data cannot be seasoned retroactively) · the validation study (carriers buy proven loss-ratio improvement, not records) · a data advisor before the schema locks. **All five are cheap now and impossible to fix retroactively.**
 
-**Reality check against your own thesis:** you have said 3M documented homes ≈ a $1B data-only company. At Year 7 this model has 2.7M properties producing $58M of data revenue. A pure data business at that revenue, at the 10–12× multiple high-margin data companies carry, is **$580–700M** — consistent with the thesis, and reached while the data is still only one of twenty-one revenue lines.
+**Reality check against your own thesis:** you have said 3M documented homes ≈ a $1B data-only company. At Year 7 this model has 2.7M properties producing $61M of data revenue. A pure data business at that revenue, at the 10–12× multiple high-margin data companies carry, is **$610–730M** — consistent with the thesis, and reached while the data is still only one of twenty-one revenue lines.
 
 **P&L ($M)**
 
@@ -314,7 +314,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|---|---|
-| Revenue | 8.7 | 34.9 | 90.4 | 196.7 | 299.9 | 420.1 | 557.5 |
+| Revenue | 8.7 | 34.9 | 90.4 | 196.7 | 299.9 | 420.1 | 560.5 |
 | Cost of revenue | 1.6 | 6.3 | 16.2 | 34.9 | 52.4 | 73.0 | 96.5 |
 | **Gross profit** | **7.1** | **28.6** | **74.2** | **161.8** | **247.5** | **347.1** | **461.0** |
 | Gross margin | 82% | 82% | 82% | 82% | 83% | 83% | 83% |
@@ -322,7 +322,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 | Sales & marketing | 2.0 | 5.9 | 15.4 | 33.4 | 51.0 | 71.4 | 94.8 |
 | Support & operations | 1.5 | 3.1 | 8.1 | 17.7 | 27.0 | 37.8 | 50.2 |
 | G&A | 1.0 | 1.7 | 4.5 | 9.8 | 15.0 | 21.0 | 27.9 |
-| **EBITDA** | **2.3** | **16.4** | **41.2** | **90.9** | **139.5** | **198.9** | **267.1** |
+| **EBITDA** | **2.3** | **16.4** | **41.2** | **90.9** | **139.5** | **198.9** | **269.6** |
 | **EBITDA margin** | **26%** | **47%** | **46%** | **46%** | **47%** | **47%** | **48%** |
 
 ## Reconciliation to the prior version
@@ -338,7 +338,7 @@ The earlier model used **top-down per-door averages** ($20/door renter commerce,
 The placeholders were understating affiliate revenue, mainly because they treated utility connections as a one-time event when Utility Valet's published model is **recurring monthly revenue share** (~$20/door/month to the property manager on bulk-internet deals).
 
 **Valuation at Y5:** $299.9M revenue at 8–10× = **$2.4–3.0B**
-**Valuation at Y7:** $557.5M revenue at 8–10× = **$4.5–5.6B**. On earnings, $267.1M EBITDA at 18–22× = **$4.8–5.9B**.
+**Valuation at Y7:** $560.5M revenue at 8–10× = **$4.5–5.6B**. On earnings, $269.6M EBITDA at 18–22× = **$4.9–5.9B**.
 
 **What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 

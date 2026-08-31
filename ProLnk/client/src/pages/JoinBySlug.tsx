@@ -13,7 +13,10 @@ export default function JoinBySlug() {
   const { slug } = useParams<{ slug: string }>();
   const { data, isLoading, isError } = trpc.waitlist.resolveSlug.useQuery(
     { slug: slug ?? "" },
-    { enabled: !!slug, retry: false }
+    // Retry transient failures. A database blip previously rendered as
+    // "Referral link not found", which is indistinguishable from a bad code
+    // and led pros to believe their links were permanently dead.
+    { enabled: !!slug, retry: 2, retryDelay: 500 }
   );
 
   const isTrustyPro =
@@ -29,7 +32,7 @@ export default function JoinBySlug() {
     );
   }
 
-  if (isError || !data?.found) {
+  if (data && !data.found) {
     if (isTrustyPro) {
       return (
         <div className="min-h-screen bg-white flex flex-col px-6">

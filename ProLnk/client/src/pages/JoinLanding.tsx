@@ -19,7 +19,6 @@ const PLANS = [
 const PARTNER_BENEFITS = [
   "Plans that fit your business — Core $99/mo · Pro $149/mo · Business $249/mo",
   "Keep 40–60% of the platform fee on every closed job, by plan",
-  "Network override income on the pros you refer — 4 levels deep",
   "AI-detected leads routed to your service area",
   "Early access member badge on your profile",
 ];

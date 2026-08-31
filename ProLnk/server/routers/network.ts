@@ -55,7 +55,7 @@ export const networkRouter = router({
       const db = await getDb();
       if (!db) return null;
       const rows = await (db as any).execute(sql`
-        SELECT p.businessName, p.businessType, p.contactName, np.networkLevel
+        SELECT p.businessName, p.businessType, p.contactName, np.network_level AS networkLevel
         FROM pro_network_profile np
         JOIN partners p ON p.userId = np.user_id
         WHERE np.referral_code = ${input.code.toUpperCase()}

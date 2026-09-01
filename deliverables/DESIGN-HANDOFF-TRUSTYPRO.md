@@ -90,7 +90,11 @@ One of the four sites. Consumer register, not the contractor voice. *(The live t
 
 **Real company brands used as fictional.** AMH and D.R. Horton are real companies in active conversations. The builder brief currently calls D.R. Horton "a fictional builder" — it is not. Use invented names (e.g. "Sunbelt Homes") in any prototype that might be shown to a different builder.
 
-**Care plans.** Deferred until the platform is established. The screen exists; do not market it, and do not build builder economics that depend on it.
+**Care plans — remove the remnants.** Deferred until the platform is established. Two places still reference it and both need rewording: the homeowner referral screen rewards "a free month of TrustyPro Care" (→ shop credit or points), and the builder journey ends at "Warranty ends → TrustyPro Care" (→ scheduled maintenance).
+
+**Gamification rule, refined:** the old "nothing gamified" was too broad. **Never gamify anything that carries trust** — no points on Move-In Shield completion, no streaks on maintenance requests, no badges on deposit protection. Points and quests are fine on optional seasonal maintenance and referrals, on both sides.
+
+**Renter prices — the boundary.** A renter paying for their own cleaning **must** see what they'll pay. The gate is about marketplace, not money: ✅ price for services they personally buy · ❌ vendor names · ❌ prices for operator-paid maintenance · ❌ quote comparison.
 
 ---
 

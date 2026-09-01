@@ -87,6 +87,8 @@ User and tenant lookup, impersonation (audited), job and payment inspection, ref
 
 **Patent-pending features in public marketing.** **Virtual Badge**, **ProPass site-type gating**, and **Scout origination** are not yet filed as continuations. The non-provisional is due around **March 2027.** Design them, prototype them, show them under NDA — do not put them on a public marketing page.
 
+**Scout add-on must not promise origination rights.** The current copy sells "permanent origination rights… forever" to any $49 buyer. **The 5% origination override is founding-network only.** Scout sells address claiming and photo capture — not a perpetual revenue right.
+
 **Real company brands used as fictional.** CoolSys and AMH are real companies in live conversations. Use invented names in any prototype that could be shown to a competitor of theirs.
 
 ---
@@ -155,7 +157,7 @@ The fee ProLnk collects is called the **commission pool**. ProLnk pays out of it
 
 ## The founding network — strictly limited, never marketed
 
-- **Capped at 2,125 total**: Charter 25 · Founding 100 · L3 400 · L4 1,600
+- **Capped at 2,125 total**: Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600
 - All at **$149/mo locked for life**, and they receive Business-tier features at that price
 - Roughly **12 members enrolled today**. Free to join the waitlist, paid at launch
 - Override applies to **residential homeowner jobs and Scout jobs only** — never commercial, never rental work orders

@@ -102,7 +102,7 @@ The fee ProLnk collects is the pool. ProLnk pays out of it only when someone els
 - Renter-initiated small jobs (cleaning, mounting) — renter pays the pro, residential fee applies
 
 **Founding network — strictly limited**
-- **2,125 spots total** (Charter 25 · Founding 100 · L3 400 · L4 1,600), all at $149/mo locked for life
+- **2,125 spots total** (Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600), all at $149/mo locked for life
 - Override applies to **residential homeowner jobs and Scout jobs ONLY** — never commercial, never rental work orders
 - 4 levels: 7% / 4% / 2% / 1% of the platform fee
 - **Home-origination override (5%, perpetual): founding network only**
@@ -137,10 +137,10 @@ The fee ProLnk collects is the pool. ProLnk pays out of it only when someone els
 
 ## 1.6 · Licensing to organizations
 
-- **Large operators (>10,000 doors):** free or low license + **30% revenue share** on partner streams
+- **Large operators (>10,000 doors):** free or low license + **20% revenue share** on partner streams, vendor subscriptions, and data licensing
 - **SETTLED — the partner's share is split at settlement and paid automatically. It never lands in ProLnk's account.** ProLnk's percentage is therefore 100% margin, with no remittance ledger, no monthly payout run, and no clawback exposure on the partner's portion
 - **Small operators (<10,000 doors):** **$1.50–2.50 per door per month, no revenue share**
-- **The 30% is the price of becoming their resident platform** — not a marketing incentive. The contract must specify that TrustyPro *is* the resident app: in the lease flow, in their portal, at move-in
+- **The 20% is the price of becoming their resident platform** — not a marketing incentive. The contract must specify that TrustyPro *is* the resident app: in the lease flow, in their portal, at move-in
 - White-label pricing is set separately from all pro subscriptions
 
 ## 1.7 · Why a pro pays when partner portals are free

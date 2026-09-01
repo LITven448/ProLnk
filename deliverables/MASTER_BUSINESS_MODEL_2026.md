@@ -243,7 +243,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 17 | Homeowner insurance referral | 5% attach × $125 |
 | 18 | Security / smart home (homeowner) | 4%/yr × $125 |
 | 19 | Solar / energy efficiency | 1%/yr × $300 |
-| 20 | **Data licensing** | Split by record type. **Homeowner records** are worth ~2× rental: full ownership relationship, transaction history, and the policyholder is the person you have. Homeowner $45→$60/record; rental $22→$30/record. Qualified share climbs 25%→60% as documentation deepens. Operator share (up to 30%) deducted on rental records only. |
+| 20 | **Data licensing** | Split by record type. **Homeowner records** are worth ~2× rental: full ownership relationship, transaction history, and the policyholder is the person you have. Homeowner $45→$60/record; rental $22→$30/record. Qualified share climbs 25%→60% as documentation deepens. Operator share (20%) deducted on rental records only. |
 | 21 | Commercial (Exchange) | 1→35 tenants, per the commercial business plan |
 
 **Revenue by stream ($M)**
@@ -269,9 +269,9 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 17 | Homeowner insurance referral | 0.1 | 0.2 | 0.6 | 2.2 | 3.4 | 5.0 | 6.9 |
 | 18 | Security (homeowner) | 0.1 | 0.2 | 0.5 | 1.8 | 2.8 | 4.0 | 5.5 |
 | 19 | Solar / energy | — | 0.1 | 0.3 | 1.1 | 1.7 | 2.4 | 3.3 |
-| 20 | **Data licensing** | — | 0.5 | 4.0 | 14.0 | 28.0 | 42.0 | **61.0** |
+| 20 | **Data licensing** | — | 0.5 | 4.0 | 14.0 | 28.0 | 43.0 | **64.0** |
 | 21 | **Commercial (Exchange)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
-| | **TOTAL REVENUE** | **8.4** | **33.6** | **87.4** | **191.9** | **293.7** | **412.1** | **550.8** |
+| | **TOTAL REVENUE** | **8.4** | **33.6** | **87.4** | **191.9** | **293.7** | **413.1** | **553.8** |
 
 *Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
@@ -293,10 +293,10 @@ This is the thesis, so it is modeled from the buyer stack rather than a single b
 | Qualified share | 25% | 40% | 50% | 55% | 60% |
 | Price per record | $22 | $25 | $28 | $29 | $30 |
 | Gross rental data | $2.8M | $7.9M | $14.6M | $21.2M | $29.1M |
-| Less operator share (~30%) | ($0.8M) | ($2.4M) | ($4.4M) | ($6.4M) | ($8.7M) |
-| **Net rental data revenue** | **$2.0M** | **$5.5M** | **$10.2M** | **$14.8M** | **$20.4M** |
-| **TOTAL DATA LICENSING** | **$3.1M** | **$12.8M** | **$26.2M** | **$41.2M** | **$61.3M** |
-| *(modeled at)* | *$4.0M* | *$14.0M* | *$28.0M* | *$42.0M* | *$61.0M* |
+| Less operator share (20%) | ($0.6M) | ($1.6M) | ($2.9M) | ($4.2M) | ($5.8M) |
+| **Net rental data revenue** | **$2.2M** | **$6.3M** | **$11.7M** | **$17.0M** | **$23.3M** |
+| **TOTAL DATA LICENSING** | **$3.3M** | **$13.6M** | **$27.7M** | **$43.4M** | **$64.2M** |
+| *(modeled at)* | *$4.0M* | *$14.0M* | *$28.0M* | *$43.0M* | *$64.0M* |
 
 **Market context.** CoreLogic earns ~$1.7B/yr across ~140M properties — roughly **$12 per property** for *commodity* public-records data that every competitor also sells. ProLnk holds condition with photo evidence, equipment by make/model/serial, dated repair outcomes, and consent. Differentiated data prices above commodity data.
 
@@ -314,7 +314,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|---|---|
-| Revenue | 8.4 | 33.6 | 87.4 | 191.9 | 293.7 | 412.1 | 550.8 |
+| Revenue | 8.4 | 33.6 | 87.4 | 191.9 | 293.7 | 413.1 | 553.8 |
 | Cost of revenue | 1.6 | 6.3 | 16.2 | 34.9 | 52.4 | 73.0 | 96.5 |
 | **Gross profit** | **7.1** | **28.6** | **74.2** | **161.8** | **247.5** | **347.1** | **461.0** |
 | Gross margin | 82% | 82% | 82% | 82% | 83% | 83% | 83% |
@@ -322,7 +322,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 | Sales & marketing | 2.0 | 5.9 | 15.4 | 33.4 | 51.0 | 71.4 | 94.8 |
 | Support & operations | 1.5 | 3.1 | 8.1 | 17.7 | 27.0 | 37.8 | 50.2 |
 | G&A | 1.0 | 1.7 | 4.5 | 9.8 | 15.0 | 21.0 | 27.9 |
-| **EBITDA** | **2.1** | **15.4** | **39.0** | **87.2** | **134.4** | **192.5** | **261.1** |
+| **EBITDA** | **2.1** | **15.4** | **39.0** | **87.2** | **134.4** | **193.4** | **263.7** |
 | **EBITDA margin** | **26%** | **47%** | **46%** | **46%** | **47%** | **47%** | **48%** |
 
 ## Reconciliation to the prior version
@@ -338,7 +338,7 @@ The earlier model used **top-down per-door averages** ($20/door renter commerce,
 The placeholders were understating affiliate revenue, mainly because they treated utility connections as a one-time event when Utility Valet's published model is **recurring monthly revenue share** (~$20/door/month to the property manager on bulk-internet deals).
 
 **Valuation at Y5:** $299.9M revenue at 8–10× = **$2.4–3.0B**
-**Valuation at Y7:** $550.8M revenue at 8–10× = **$4.4–5.5B**. On earnings, $261.1M EBITDA at 18–22× = **$4.7–5.7B**.
+**Valuation at Y7:** $553.8M revenue at 8–10× = **$4.4–5.5B**. On earnings, $263.7M EBITDA at 18–22× = **$4.7–5.8B**.
 
 **What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 

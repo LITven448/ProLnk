@@ -27,10 +27,10 @@ Full detail in `deliverables/legal-drafts/RATES-MEMO.md`. Summary:
 | **Rental work orders** | **$3 per work order, paid by the rental company** (not the vendor). Vendors pay nothing on rental work orders. |
 | **Licensee-locked vendors** | **FREE** — see only that licensee's work. Pay only to unlock other work. |
 | Commercial | Licensee pays annual license + $3/WO. ProLnk takes **3% only on commercial jobs it sources OUTSIDE the licensee**. The 6–15% residential clamp does NOT apply to commercial — it needs its own fee path. |
-| AMH revenue share | **30%**, **split at settlement and paid partner-direct** — never through ProLnk's P&L, no remittance ledger |
+| AMH revenue share | **20%**, **split at settlement and paid partner-direct** — never through ProLnk's P&L, no remittance ledger |
 | Future (non-Patrick) operators | ~**20%** share, or **$1.50–2.50/door/month with no share** for operators under 10,000 doors |
 | Channel partner (Utility Valet / Patrick, L1) | **5%** of platform fee on channel-originated homes (perpetual), **7%** on channel-originated pros. NO subscription share. |
-| Founding network | **Capped at 2,125** (Charter 25 · Founding 100 · L3 400 · L4 1,600), $149/mo locked for life. Override applies to residential + Scout jobs ONLY. **Subscription override REMOVED.** |
+| Founding network | **Capped at 2,125** (Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600), $149/mo locked for life. Override applies to residential + Scout jobs ONLY. **Subscription override REMOVED.** |
 | Payments | **Split at settlement, no escrow hold.** Partner shares never land in ProLnk's account. |
 
 **Pricing lives in ONE place:** `client/src/config/pricing.ts` (branch `website-fixes`). A regression test fails the build if a price is hardcoded elsewhere. Five conflicting tier systems previously existed in code — see that branch.

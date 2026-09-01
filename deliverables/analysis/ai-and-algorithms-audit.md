@@ -49,7 +49,7 @@ A partner who has never set `weeklyLeadCap` (null → 0) therefore gets maximum 
 
 ### 6. Cold-start burial — new pros can never enter the rotation
 `rating == null` → 0 points. `avgLeadResponseHours == null` → 0 points. A brand-new partner starts 25 points behind an established one, and there is **no randomization, round-robin, or exploration term** in `rankPartners()` — it is a deterministic sort. So the same partner wins every lead in a ZIP until they hit a cap (and per #5, many have no cap).
-Consequence: new pros get no leads → build no history → never rank → churn. This is a supply-side death spiral, and it also conflicts with fair-distribution expectations for founding members. Fix: neutral priors for unrated partners (e.g. score at the median, not zero) plus a small exploration allocation.
+Consequence: new pros get no leads → build no history → never rank → churn. This is a supply-side death spiral, and it also conflicts with fair-distribution expectations for founding firms. Fix: neutral priors for unrated partners (e.g. score at the median, not zero) plus a small exploration allocation.
 
 ### 7. Home Health Score is not a scoring engine
 `homeHealthScore.ts` in full: a pure function over issues **supplied by the caller**, with no database read, no persistence, no history — and it is a `publicProcedure` (unauthenticated).

@@ -80,7 +80,7 @@ User and tenant lookup, impersonation (audited), job and payment inspection, ref
 
 # 5 · Never show publicly
 
-**The network override.** L1/L2/L3/L4 income, downline, "4 levels deep," recruiting language. It is an internal structural incentive limited to **2,125 founding members** and is **never marketed.** *(It was live on the public /join page and has been removed.)*
+**The network override.** L1/L2/L3/L4 income, downline, "4 levels deep," recruiting language. It is an internal structural incentive limited to **2,125 founding firms** and is **never marketed.** *(It was live on the public /join page and has been removed.)*
 
 **"Keep rate" language — retired.** Say the plain fee: *"10% platform fee — you keep 90% of every job."* Never "you keep 40% of the commission."
 
@@ -157,8 +157,9 @@ The fee ProLnk collects is called the **commission pool**. ProLnk pays out of it
 ## The founding network — strictly limited, never marketed
 
 - **Capped at 2,125 total**: Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600
-- All at **$149/mo locked for life**, and they receive Business-tier features at that price
-- Roughly **12 members enrolled today**. Free to join the waitlist, paid at launch
+- All at **$149/mo base locked for life**, receiving Business-tier features at that price
+- **The lock is on the base rate only.** Extra ZIPs, ProPasses, seats, and the commercial upgrade are billed at current rates and can rise
+- Roughly **12 firms enrolled today**. Free to join the waitlist, paid at launch
 - Override applies to **residential homeowner jobs and Scout jobs only** — never commercial, never rental work orders
 - **Home-origination override (5%, perpetual): founding network only**
 - **Subscription override: removed entirely. It does not exist.**

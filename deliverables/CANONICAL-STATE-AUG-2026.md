@@ -107,7 +107,7 @@ The fee ProLnk collects is the pool. ProLnk pays out of it only when someone els
 - **Home-origination override (5%, perpetual): founding network only**
 - **Subscription override: REMOVED. Does not exist.**
 - ~12 members enrolled today; free to join the waitlist, paid at launch
-- Founding members get Business-tier features at the $149 price
+- Founding firms get Business-tier features at the $149 price
 - **Never marketed publicly.** Internal structural incentive only
 - ProLnk retains ≥20% of the platform fee as a floor
 

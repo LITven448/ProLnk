@@ -30,7 +30,7 @@ Full detail in `deliverables/legal-drafts/RATES-MEMO.md`. Summary:
 | AMH revenue share | **20%**, **split at settlement and paid partner-direct** — never through ProLnk's P&L, no remittance ledger |
 | Future (non-Patrick) operators | ~**20%** share, or **$1.50–2.50/door/month with no share** for operators under 10,000 doors |
 | Channel partner (Utility Valet / Patrick, L1) | **5%** of platform fee on channel-originated homes (perpetual), **7%** on channel-originated pros. NO subscription share. |
-| Founding network | **Capped at 2,125** (Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600), $149/mo locked for life. Override applies to residential + Scout jobs ONLY. **Subscription override REMOVED.** |
+| Founding network | **Capped at 2,125 FIRMS** (Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600), **$149/mo base locked for life — add-ons at current pricing.** Override applies to residential + Scout jobs ONLY. **Subscription override REMOVED.** |
 | Payments | **Split at settlement, no escrow hold.** Partner shares never land in ProLnk's account. |
 
 **Pricing lives in ONE place:** `client/src/config/pricing.ts` (branch `website-fixes`). A regression test fails the build if a price is hardcoded elsewhere. Five conflicting tier systems previously existed in code — see that branch.

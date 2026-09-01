@@ -52,7 +52,7 @@
 |---|---|
 | **Licensee-invited vendors** | **20% off** the entire subscription. A CoolSys-invited pro on Team + Commercial pays **$230/mo** instead of $288 |
 | **Licensee-locked vendors** | **FREE.** They see only that licensee's work. They pay only when they want work from anyone else |
-| **Founding network members** | **$149/mo locked for life**, with Business-tier features at that price |
+| **Founding network firms** (2,125 max) | **$149/mo base locked for life**, Business-tier features included. **Add-ons — extra ZIPs, ProPasses, seats, commercial upgrade — at current pricing and subject to increase.** |
 
 ---
 
@@ -130,7 +130,7 @@
 
 # 5 · FOUNDING NETWORK
 
-**Capped at 2,125 members. Never marketed publicly.**
+**Capped at 2,125 FIRMS — companies, not individuals. Never marketed publicly.**
 
 | Tier | Cap |
 |---|---|
@@ -139,11 +139,23 @@
 | **Cornerstone** | 400 |
 | **Keystone** | 1,600 |
 
-- **$149/mo locked for life**, Business-tier features at that price
+- **$149/mo base locked for life**, with Business-tier features at that price
+- **The lock covers the base subscription only.** Additional ZIP codes, ProPasses, dashboard seats, and the commercial upgrade are charged at **current pricing** and are **subject to future increases**
 - Override applies to **residential homeowner jobs and Scout jobs only** — never commercial, never rental work orders
 - **Home-origination override (5%, perpetual): founding network only**
 - **Subscription override: removed entirely. It does not exist**
-- Roughly 12 members enrolled today. Free to join the waitlist, paid at launch
+- Roughly 12 firms enrolled today. Free to join the waitlist, paid at launch
+
+## What the founding price lock actually covers
+
+| Locked at $149/mo for life | Charged at current pricing, and can increase |
+|---|---|
+| Base subscription | Additional ZIP codes ($25 / 10 ZIPs) |
+| Business-tier features | Additional ProPasses ($20 each) |
+| Their override and origination rights | Additional dashboard seats ($29 each) |
+| | Add Commercial Work (+$99/mo) |
+
+**The lock is on the base rate, not the account.** A founding firm that grows to 20 technicians pays $149 plus 19 ProPasses at whatever the rate is then. That keeps the promise honest and keeps your exposure capped — 2,125 base subscriptions, not 2,125 unlimited accounts.
 
 ---
 

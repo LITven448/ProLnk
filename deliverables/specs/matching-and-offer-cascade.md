@@ -36,7 +36,7 @@ A firm must pass all of these to enter the ranking:
 | **Subscription tier** | **15** | Starter 0 · Solo 7 · Team 11 · Business 15 |
 | **Capacity headroom** | **10** | Remaining weekly capacity as a share of their cap. An unset cap uses the default (25), never "unlimited" |
 | **Tenure on platform** | **5** | Rises over the first 24 months, then flat. Rewards staying, not just arriving early |
-| **Documentation quality** | **5** | Share of completed jobs with full photo documentation. This is the lever that feeds the data asset — reward it here rather than penalizing its absence with price |
+| **Documentation quality** | **5–15** | Share of completed jobs with full photo documentation. **Start at 5, tunable upward.** This is the lever that feeds the data asset — reward it here rather than penalizing its absence with price. Raising it to 15 (taking points from tier and tenure) is the single strongest tool for lifting documentation rates across the network |
 | **Trade match strength** | **5** | Exact specialty beats adjacent trade |
 
 **New-firm ramp:** firms with fewer than 5 lifetime jobs receive a small decaying boost (+5 at zero, decaying to +1) so they can enter rotation and build history. Without it, new firms never rank, never get work, never build a record, and churn.
@@ -64,7 +64,7 @@ A firm must pass all of these to enter the ranking:
 - **Window timeout** → small penalty to the responsiveness score
 - Three consecutive timeouts → temporary reduction in offer priority, with an in-app notice explaining why
 
-**Anti-hoarding:** a firm may hold at most **3 live offers** at once. Without this, the top-ranked firms in a dense ZIP would sit on every job and block the queue.
+**Anti-hoarding — not capped at launch.** A firm may hold unlimited live offers initially. **Watch for it:** if the top-ranked firms in a dense ZIP start holding many offers at once and letting them expire, the queue stalls and everyone below them starves. Add a cap (3 is the natural number) the first time that pattern appears. Instrument it from day one so the pattern is visible before it hurts.
 
 **Exhaustion:** if the ranked list runs out with no acceptance:
 1. Widen the search radius by 50% and re-rank

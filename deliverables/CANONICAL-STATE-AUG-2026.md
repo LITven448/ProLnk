@@ -24,10 +24,10 @@ Two independent axes. Everything follows from these:
 
 ## 1.2 · The three products
 
-**ProLnk** — one app, every professional. Lanes unlock by subscription and clearance:
-- Residential lane (base)
-- Enterprise lane (rental/PM work orders) — requires background check + insurance minimums
-- Commercial lane — requires commercial trade verification + higher coverage
+**ProLnk** — one app, every professional. **Work types** unlock by subscription and clearance:
+- Residential work (included in every plan)
+- Add Rental Work (rental/PM work orders) — requires background check + insurance minimums
+- Add Commercial Work — requires commercial trade verification + higher coverage
 
 **TrustyPro** — one app, every property occupant. Gated by who you are: homeowner mode, renter mode.
 

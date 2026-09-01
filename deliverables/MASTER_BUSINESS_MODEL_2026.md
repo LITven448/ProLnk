@@ -234,7 +234,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 8 | Renters insurance | 60% attach × $27 commission, **haircut 50%** for licensing constraints |
 | 9 | Moving companies (renter) | 30% of move-ins × $80 referral |
 | 10 | Storage (renter) | 15% of move-ins × $80 |
-| 11 | Rent reporting | 20% enrollment × $3/mo net |
+| 11 | Rent reporting | Renter pays $3/mo; **ProLnk nets $0.50/mo** × 20% enrollment |
 | 12 | Security / smart home (renter) | 5% of doors/yr × $100 |
 | 13 | Homeowner furniture / appliances / decor | $10 → $50/home/yr, ramping with the rendering engine |
 | 14 | Homeowner moving & storage | 9% turnover × $200 |
@@ -260,7 +260,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 8 | Renters insurance | 0.4 | 1.8 | 4.1 | 6.4 | 8.5 | 10.8 | 13.1 |
 | 9 | Moving (renter) | 0.4 | 1.9 | 4.2 | 6.6 | 8.8 | 11.2 | 13.6 |
 | 10 | Storage (renter) | 0.2 | 0.9 | 2.1 | 3.3 | 4.4 | 5.6 | 6.8 |
-| 11 | Rent reporting | 0.4 | 1.6 | 3.6 | 5.7 | 7.5 | 9.6 | 11.6 |
+| 11 | Rent reporting | 0.1 | 0.3 | 0.6 | 0.9 | 1.3 | 1.6 | 1.9 |
 | 12 | Security (renter) | 0.3 | 1.1 | 2.5 | 4.0 | 5.2 | 6.7 | 8.1 |
 | 13 | Homeowner furniture / decor | 0.1 | 0.5 | 2.5 | 12.3 | 23.1 | 36.8 | **55.0** |
 | 14 | Homeowner moving & storage | 0.2 | 0.5 | 1.8 | 6.3 | 9.9 | 14.4 | 19.8 |
@@ -271,7 +271,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 19 | Solar / energy | — | 0.1 | 0.3 | 1.1 | 1.7 | 2.4 | 3.3 |
 | 20 | **Data licensing** | — | 0.5 | 4.0 | 14.0 | 28.0 | 42.0 | **61.0** |
 | 21 | **Commercial (Exchange)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
-| | **TOTAL REVENUE** | **8.7** | **34.9** | **90.4** | **196.7** | **299.9** | **420.1** | **560.5** |
+| | **TOTAL REVENUE** | **8.4** | **33.6** | **87.4** | **191.9** | **293.7** | **412.1** | **550.8** |
 
 *Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
@@ -314,7 +314,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|---|---|
-| Revenue | 8.7 | 34.9 | 90.4 | 196.7 | 299.9 | 420.1 | 560.5 |
+| Revenue | 8.4 | 33.6 | 87.4 | 191.9 | 293.7 | 412.1 | 550.8 |
 | Cost of revenue | 1.6 | 6.3 | 16.2 | 34.9 | 52.4 | 73.0 | 96.5 |
 | **Gross profit** | **7.1** | **28.6** | **74.2** | **161.8** | **247.5** | **347.1** | **461.0** |
 | Gross margin | 82% | 82% | 82% | 82% | 83% | 83% | 83% |
@@ -322,7 +322,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 | Sales & marketing | 2.0 | 5.9 | 15.4 | 33.4 | 51.0 | 71.4 | 94.8 |
 | Support & operations | 1.5 | 3.1 | 8.1 | 17.7 | 27.0 | 37.8 | 50.2 |
 | G&A | 1.0 | 1.7 | 4.5 | 9.8 | 15.0 | 21.0 | 27.9 |
-| **EBITDA** | **2.3** | **16.4** | **41.2** | **90.9** | **139.5** | **198.9** | **269.6** |
+| **EBITDA** | **2.1** | **15.4** | **39.0** | **87.2** | **134.4** | **192.5** | **261.1** |
 | **EBITDA margin** | **26%** | **47%** | **46%** | **46%** | **47%** | **47%** | **48%** |
 
 ## Reconciliation to the prior version
@@ -338,7 +338,7 @@ The earlier model used **top-down per-door averages** ($20/door renter commerce,
 The placeholders were understating affiliate revenue, mainly because they treated utility connections as a one-time event when Utility Valet's published model is **recurring monthly revenue share** (~$20/door/month to the property manager on bulk-internet deals).
 
 **Valuation at Y5:** $299.9M revenue at 8–10× = **$2.4–3.0B**
-**Valuation at Y7:** $560.5M revenue at 8–10× = **$4.5–5.6B**. On earnings, $269.6M EBITDA at 18–22× = **$4.9–5.9B**.
+**Valuation at Y7:** $550.8M revenue at 8–10× = **$4.4–5.5B**. On earnings, $261.1M EBITDA at 18–22× = **$4.7–5.7B**.
 
 **What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 

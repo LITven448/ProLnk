@@ -208,7 +208,7 @@ Found by a verified cross-check of the design documents against the repo. Full d
 1. **The engine has a hard 6% floor.** A 3% commercial rate is silently clamped to 6% — double the contracted take, no error raised. The 1.5% tier is unreachable. There is no bracket or tier concept in the code at all.
 2. **AMH model applies attach rates to all 61,000 doors** with no engagement haircut — overstating every stream by ~2.9×.
 3. **35% turnover and 35% engagement are different rates that should multiply, not substitute.**
-4. **The 30% share is documented two ways** — paid partner-direct (design) vs. collected and remitted through cost of revenue (repo). These are opposite structures.
+4. ~~The share is documented two ways~~ — **RESOLVED.** The operator share is **20%**, split at settlement and paid partner-direct. It never enters ProLnk revenue or cost, so no remittance ledger is required.
 5. ~~Maintenance marketplace 3%-of-spend vs $5–8/work-order~~ — **RESOLVED.** The operator pays **$3 per work order**. Vendors are never charged per work order. The $5–8 vendor-charged fee is retired everywhere.
 6. **The ProLnk Platform Strategy doc's pricing table says "no commission on residential referrals."** That is wrong — residential carries the platform fee. Correct that document.
 

@@ -131,7 +131,7 @@ One of the four sites. Consumer register, not the contractor voice. *(The live t
 ### Operator side
 - **$3 per work order, paid by the rental company.** Vendors are never charged.
 - **Annual license: $150–300K** for large operators, or **$1.50–2.50 per door per month with no revenue share** for operators under 10,000 doors.
-- **Operators over 10,000 doors take 30% of partner-stream revenue**, split at settlement and **paid partner-direct** — it never touches ProLnk's books. The 30% is the price of becoming their resident platform, not a marketing incentive.
+- **Operators over 10,000 doors take 20%** — of partner streams, vendor subscriptions, and data licensing alike. Split at settlement and **paid partner-direct**, so it never touches ProLnk's books. The 20% is the price of becoming their resident platform, not a marketing incentive.
 
 ### The data layer
 Every documented property becomes a licensable record. **Homeowner records are worth ~2× rental records** — the ownership relationship, transaction history, and the actual policyholder. Records license **non-exclusively to 5–8 buyer types at once**: insurance carriers, reinsurers, mortgage servicers, warranty underwriters, equipment manufacturers, AVM platforms, iBuyers, climate analytics.

@@ -54,7 +54,7 @@ Every product line below runs on the same spine: a verified professional, a docu
 ## TrustyPro Portfolio — rental operators
 22. **Operator-program vendor subscriptions** — $99 / $149 / $249 per month
 23. **Per-work-order fees** on non-subscriber vendors
-24. **Net commerce share** after operator revenue share (AMH 30%; future operators ~20%)
+24. **Net commerce share** after operator revenue share (**20%** for all operators)
 25. **Per-door license** — future non-anchor operators, ~$2/door/month
 26. **Move-out / turn services** revenue
 
@@ -152,7 +152,7 @@ Modeled engagement ramp: **85% → 95%.** The app is issued as part of the move-
 
 ## Pricing model (settled)
 
-The pro pays a flat platform fee set by their tier. **It does not come back to them** — the keep-rate model is retired. That fee is the commission pool; ProLnk pays out of it only where an origination or upline claim exists (founding network only, capped at 2,125 members, residential and Scout jobs only). **With no claim, ProLnk keeps 100%.** Maximum possible payout is 19%, so ProLnk retains at least 81% in the worst case.
+The pro pays a flat platform fee set by their tier. **It does not come back to them** — the keep-rate model is retired. That fee is the commission pool; ProLnk pays out of it only where an origination or upline claim exists (founding network only — **Charter 25 · Founding 100 · Cornerstone 400 · Keystone 1,600**, 2,125 total — residential and Scout jobs only). **With no claim, ProLnk keeps 100%.** Maximum possible payout is 19%, so ProLnk retains at least 81% in the worst case.
 
 | Tier | Monthly | Job fee | Share of pros |
 |---|---|---|---|

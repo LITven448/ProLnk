@@ -23,19 +23,18 @@
 
 | Add-on | Price | Requires |
 |---|---|---|
-| **Add Rental Work** | **+$49/mo** | Background check + insurance minimums (entering occupied homes) |
 | **Add Commercial Work** | **+$99/mo** | Commercial trade verification + higher coverage limits |
 
-**Residential is included in every plan.** These are additions, not alternatives.
+**Residential — which covers homeowner jobs and rental properties — is included in every plan.** Commercial is the only upgrade.
 
 ## What each combination costs
 
 | | Solo | Team | Business |
 |---|---|---|---|
-| Residential only | **$99** | **$189** | **$349** |
-| Residential + Commercial | **$198** | **$288** | **$448** |
-| Residential + Rental | **$148** | **$238** | **$398** |
-| **All three** | **$247** | **$337** | **$497** |
+| **Residential** (homeowner + rental) | **$99** | **$189** | **$349** |
+| **Residential + Commercial** | **$198** | **$288** | **$448** |
+
+**There is no rental-only or commercial-only plan.** Residential is the base and includes rental-property work orders — same trades, same pros. Commercial is the single upgrade.
 
 ## Add-ons, any tier
 

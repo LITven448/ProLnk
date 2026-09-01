@@ -25,8 +25,7 @@ Two independent axes. Everything follows from these:
 ## 1.2 · The three products
 
 **ProLnk** — one app, every professional. **Work types** unlock by subscription and clearance:
-- Residential work (included in every plan)
-- Add Rental Work (rental/PM work orders) — requires background check + insurance minimums
+- **Residential work** — homeowner jobs **and rental-property work orders**. Included in every plan. Rental is residential trades; it is not a separate purchase.
 - Add Commercial Work — requires commercial trade verification + higher coverage
 
 **TrustyPro** — one app, every property occupant. Gated by who you are: homeowner mode, renter mode.
@@ -128,7 +127,6 @@ The fee ProLnk collects is the pool. ProLnk pays out of it only when someone els
 **Add-ons, any tier:** extra ProPass $20/mo · extra seat $29/mo · extra ZIP pack (10) $25/mo
 
 **Work-type upgrades** (the term "lane" is retired — say "work types" or name them directly):
-- **Add Rental Work — +$49/mo.** Requires background check + insurance minimums (entering occupied homes)
 - **Add Commercial Work — +$99/mo.** Requires commercial trade verification + higher coverage
 - **Clearance packs** (school, healthcare, municipal, federal) priced per screening
 - **Licensee-invited vendors get 20% off** their whole subscription — a CoolSys- or AMH-invited pro at Team + Commercial pays $230/mo instead of $288

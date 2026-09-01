@@ -224,7 +224,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 
 | # | Stream | Unit economics |
 |---|---|---|
-| 1 | Pro subscriptions + ProPass + lanes | $127/firm/month blended (40% Starter $0 · 35% Solo $99 · 18% Team $189 · 7% Business $349; plus seat overage and 15%/25% lane attach) |
+| 1 | Pro subscriptions + ProPass + lanes | $115/firm/month blended (40% Starter $0 · 35% Solo $99 · 18% Team $189 · 7% Business $349; plus seat overage and 15% commercial-upgrade attach). Residential covers homeowner **and** rental work — there is no separate rental upgrade. |
 | 2 | Platform fees — homeowner jobs | 1.5 jobs/home/yr × $600–700 avg × 11.1% effective |
 | 3 | Platform fees — renter-paid services | 0.4 jobs/door/yr × $250–310 × 11.1% |
 | 4 | Rental work-order fees | 2.5 work orders/door/yr × $3, paid by operator |
@@ -250,7 +250,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 
 | # | Stream | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Subscriptions + seats + lanes | 1.6 | 6.4 | 15.3 | 29.0 | 40.6 | 54.1 | 69.1 |
+| 1 | Subscriptions + seats + commercial upgrade | 1.4 | 5.8 | 13.8 | 26.2 | 36.7 | 48.9 | 62.4 |
 | 2 | Platform fees — homeowner | 1.0 | 3.1 | 10.3 | 37.3 | 60.5 | 90.6 | **128.2** |
 | 3 | Platform fees — renter services | 0.6 | 2.5 | 6.0 | 9.8 | 13.5 | 17.7 | 22.2 |
 | 4 | Rental work-order fees | 0.4 | 1.7 | 3.8 | 5.9 | 7.8 | 10.0 | 12.1 |
@@ -271,7 +271,7 @@ Each line below is **attach rate × unit value × volume**. The basis is stated 
 | 19 | Solar / energy | — | 0.1 | 0.3 | 1.1 | 1.7 | 2.4 | 3.3 |
 | 20 | **Data licensing** | — | 0.5 | 4.0 | 14.0 | 28.0 | 43.0 | **64.0** |
 | 21 | **Commercial (Exchange)** | 0.9 | 3.4 | 7.4 | 12.0 | 19.2 | 26.9 | 33.6 |
-| | **TOTAL REVENUE** | **8.4** | **33.6** | **87.4** | **191.9** | **293.7** | **413.1** | **553.8** |
+| | **TOTAL REVENUE** | **8.2** | **33.0** | **85.9** | **189.1** | **289.8** | **407.9** | **547.1** |
 
 *Operator revenue shares are split at settlement and paid partner-direct — they never enter ProLnk revenue or cost.*
 
@@ -314,7 +314,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 
 | | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7 |
 |---|---|---|---|---|---|---|---|
-| Revenue | 8.4 | 33.6 | 87.4 | 191.9 | 293.7 | 413.1 | 553.8 |
+| Revenue | 8.2 | 33.0 | 85.9 | 189.1 | 289.8 | 407.9 | 547.1 |
 | Cost of revenue | 1.6 | 6.3 | 16.2 | 34.9 | 52.4 | 73.0 | 96.5 |
 | **Gross profit** | **7.1** | **28.6** | **74.2** | **161.8** | **247.5** | **347.1** | **461.0** |
 | Gross margin | 82% | 82% | 82% | 82% | 83% | 83% | 83% |
@@ -322,7 +322,7 @@ Engineering is carried at **cash cost** — the founding dev team is equity-comp
 | Sales & marketing | 2.0 | 5.9 | 15.4 | 33.4 | 51.0 | 71.4 | 94.8 |
 | Support & operations | 1.5 | 3.1 | 8.1 | 17.7 | 27.0 | 37.8 | 50.2 |
 | G&A | 1.0 | 1.7 | 4.5 | 9.8 | 15.0 | 21.0 | 27.9 |
-| **EBITDA** | **2.1** | **15.4** | **39.0** | **87.2** | **134.4** | **193.4** | **263.7** |
+| **EBITDA** | **1.9** | **14.8** | **37.5** | **84.4** | **130.5** | **188.2** | **257.0** |
 | **EBITDA margin** | **26%** | **47%** | **46%** | **46%** | **47%** | **47%** | **48%** |
 
 ## Reconciliation to the prior version
@@ -338,7 +338,7 @@ The earlier model used **top-down per-door averages** ($20/door renter commerce,
 The placeholders were understating affiliate revenue, mainly because they treated utility connections as a one-time event when Utility Valet's published model is **recurring monthly revenue share** (~$20/door/month to the property manager on bulk-internet deals).
 
 **Valuation at Y5:** $299.9M revenue at 8–10× = **$2.4–3.0B**
-**Valuation at Y7:** $553.8M revenue at 8–10× = **$4.4–5.5B**. On earnings, $263.7M EBITDA at 18–22× = **$4.7–5.8B**.
+**Valuation at Y7:** $547.1M revenue at 8–10× = **$4.4–5.5B**. On earnings, $257.0M EBITDA at 18–22× = **$4.6–5.7B**.
 
 **What changed from the prior draft.** Three things move the number up: the fee model (the pro's 40–60% keep-rate rebate is retired, so ProLnk retains 81–100% of the pool instead of 40–60%), the volume plan (1.1M doors and 550K homes by Y5, up from 800K/250K), and engagement (85–95%, because the app ships as part of move-in rather than as an optional download). Firm count also rises with the 20:1 service ratio.
 

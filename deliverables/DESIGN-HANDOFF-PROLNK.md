@@ -8,9 +8,8 @@
 
 **One app, every service professional.** Not three products — one product where what you can see depends on what you've paid for and what you've been cleared for.
 
-**Three work types:**
-- **Residential work** — homeowner jobs. Included in every plan.
-- **Add Rental Work (+$49/mo)** — work orders from rental companies like AMH. Requires background check and insurance minimums, because these pros enter occupied homes.
+**Two work types:**
+- **Residential work** — homeowner jobs **and rental-property work orders**. Included in every plan. Same trades, same pros.
 - **Add Commercial Work (+$99/mo)** — requires commercial trade verification and higher coverage limits.
 
 The gate isn't arbitrary — it reflects what each kind of work actually requires. The fee is what you charge for access once they qualify.
@@ -105,7 +104,7 @@ User and tenant lookup, impersonation (audited), job and payment inspection, ref
 **Starter is not a free tier — you pay when you earn.** 60% of contractors are solo operators, and a fixed monthly charge before first revenue is a real barrier. Break-even against Solo lands around $2,000/month of work, so upgrading is a math decision, not a sales pitch.
 
 **Add-ons:** ProPass $20/mo · dashboard seat $29/mo · 10-ZIP pack $25/mo
-**Work types:** Add Rental Work +$49/mo · Add Commercial Work +$99/mo
+**Work type:** Add Commercial Work +$99/mo
 **Licensee-invited vendors: 20% off** the whole subscription. A CoolSys-invited pro on Team + Commercial pays $230/mo instead of $288.
 **Vendors locked to one licensee's work: free.**
 

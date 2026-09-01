@@ -23,7 +23,7 @@ Full detail in `deliverables/legal-drafts/RATES-MEMO.md`. Summary:
 | **Platform fee** | Flat % per tier, charged to the pro, collected AFTER the pro is paid. **The keep-rate model is retired** — no rebate back to the pro. |
 | **The fee is the commission pool** | ProLnk pays out of it only on origination (5%) and upline (7/4/2/1%), founding network only, residential + Scout jobs only. **No claim = ProLnk keeps 100%.** Max payout 19%. |
 | Add-ons | ProPass $20/mo · dashboard seat $29/mo · 10-ZIP pack $25/mo |
-| Work-type upgrades | Rental work +$49/mo · Commercial work +$99/mo · licensee-invited vendors 20% off |
+| Work-type upgrade | **Add Commercial Work +$99/mo** · licensee-invited vendors 20% off |
 | **Rental work orders** | **$3 per work order, paid by the rental company** (not the vendor). Vendors pay nothing on rental work orders. |
 | **Licensee-locked vendors** | **FREE** — see only that licensee's work. Pay only to unlock other work. |
 | Commercial | Licensee pays annual license + $3/WO. ProLnk takes **3% only on commercial jobs it sources OUTSIDE the licensee**. The 6–15% residential clamp does NOT apply to commercial — it needs its own fee path. |

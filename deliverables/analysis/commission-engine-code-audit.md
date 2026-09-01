@@ -98,7 +98,7 @@ Also well covered by the existing suite (beyond the vectors): snake_case persist
 
 ---
 
-## 5. Operator (AMH 30%) revenue share — absence confirmed
+## 5. Operator (20%) revenue share — absence confirmed
 
 Searched `origin/main:ProLnk/server` for `AMH`, `operator` share/ledger patterns, `0.3`/`30%` revenue-share terms: **no matches**. No cascade level, payout type, rate constant, or ledger implements an operator revenue share, and `payout_type` values across all three writers are limited to `own_job`, `network_l1–l4`, `home_origination`, `photo_origination`, `subscription_l1–l4`. This matches expectation (V10 / test-vector rule 6): the operator share is a separate ledger to be built outside the cascade, and nothing in the cascade code would need untangling first. (The only 30%-adjacent figure in code, `platform_fee_net = gross × 0.85` at `network.ts:397`, is a legacy processing-cost assumption in the F1 path slated for deletion, not an operator share.)
 
